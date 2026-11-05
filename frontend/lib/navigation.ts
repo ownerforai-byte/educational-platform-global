@@ -405,6 +405,22 @@ export const QUICK_LINKS = [
 ] as const;
 
 /**
+ * APP_TABS — the app frame: the five thumb destinations on a phone (bottom
+ * tab bar) and the same five icons in the tablet rail.
+ *
+ * Hrefs must already exist in NAV_SECTIONS (the navigation test enforces it),
+ * so mobile, tablet and desktop can never disagree about where a tab lands.
+ * The rung of each tab is read from the registry via quickLinkMinTier.
+ */
+export const APP_TABS = [
+  { href: "/home",     label: "Home",     short: "Home",     icon: Home },
+  { href: "/subjects", label: "Learn",    short: "Learn",    icon: BookOpen },
+  { href: "/chat",     label: "Ask Veer", short: "Ask",      icon: Sparkles },
+  { href: "/quiz",     label: "Practice", short: "Practice", icon: Target },
+  { href: "/profile",  label: "You",      short: "You",      icon: User },
+] as const;
+
+/**
  * Returns the minimum plan tier needed for a quick link.
  * Looks up the href in NAV_SECTIONS so quick links and the sidebar
  * always agree on who can reach a destination.

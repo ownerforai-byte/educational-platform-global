@@ -1556,6 +1556,12 @@ body {
    Fixed chrome (AI widget, back button) uses these together with
    viewport-fit=cover so nothing lands under the gesture bar. */
 .pb-safe-bottom { padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px)); }
+/* Clears the phone bottom tab bar (56px bar + its safe-area padding) so page
+   content and the footer never sit under the fixed app frame. Scoped below md
+   so the tablet rail / desktop sidebar keep their normal page padding. */
+@media (max-width: 767px) {
+  .pb-tabbar { padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px)); }
+}
 .pt-safe-top { padding-top: env(safe-area-inset-top, 0px); }
 
 /* Hide horizontal scrollbars on phone quick-nav strips (still scrollable). */
@@ -1568,6 +1574,12 @@ body {
 /* Chat panel docked above the launcher (launcher top edge = 5rem above the
    gesture bar, so 5.5rem leaves a 0.5rem gap). */
 .bottom-safe-panel { bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px)); }
+/* Phone tab bar clearance: floating chrome rides above the 56px bottom tab
+   bar instead of sitting on top of it (2.25rem bar + 1.5rem gap = 3.75rem). */
+@media (max-width: 767px) {
+  .bottom-safe { bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px)); }
+  .bottom-safe-panel { bottom: calc(9.25rem + env(safe-area-inset-bottom, 0px)); }
+}
 
 /* Mobile <768: ensure body type never falls below 13 px (WCAG) */
 @media (max-width: 767px) {

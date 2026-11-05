@@ -1,0 +1,164 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Synonyms and Antonyms</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Synonyms Antonyms</div>
+    <h1 class="doc">Synonyms and Antonyms</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Synonyms Antonyms</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>vocabulary</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>synonyms-antonyms</p></section>
+<section class="field"><h2>Relevance</h2><p><code>82</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;What Are Synonyms and Antonyms?&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Synonyms&lt;/b&gt; are words that have the same or similar meanings in certain contexts (e.g., big/large, happy/joyful, smart/intelligent). &lt;b&gt;Antonyms&lt;/b&gt; are words with opposite meanings (e.g., hot/cold, brave/cowardly, abundant/scarse). In the NEB Class 11 English examination, synonym and antonym questions typically carry 3-6 marks and appear in objective (MCQ) and subjective (one-word substitution) formats. Mastering synonyms and antonyms is essential for vocabulary expansion, improving writing quality, and performing well in comprehension passages where precise word choice matters.&lt;/p&gt;</li><li>&lt;h2&gt;Types of Synonyms&lt;/h2&gt;</li><li>&lt;p&gt;Synonyms can be classified into several types: &lt;b&gt;Absolute synonyms&lt;/b&gt; — words that are interchangeable in all contexts (rare in English — 'lift' and 'elevator' are close but used in different registers). &lt;b&gt;Relative synonyms&lt;/b&gt; — words with similar meanings but different connotations, registers, or collocations (e.g., 'slim' vs. 'thin' vs. 'skinny' — all mean 'not fat' but with different emotional overtones). &lt;b&gt;Contextual synonyms&lt;/b&gt; — words that are synonyms only in specific contexts (e.g., 'start' and 'begin' are synonyms when referring to an action, but not when 'start' means 'engine ignition'). NEB exams typically test relative and contextual synonyms.&lt;/p&gt;</li><li>&lt;h2&gt;Types of Antonyms&lt;/h2&gt;</li><li>&lt;p&gt;Antonyms can be classified into three types: &lt;b&gt;Gradable antonyms&lt;/b&gt; — words that exist on a spectrum and can be modified (hot/cold — something can be very hot or slightly cold). &lt;b&gt;Complementary antonyms&lt;/b&gt; — words that are absolute opposites with no middle ground (dead/alive, present/absent, true/false). &lt;b&gt;Converse antonyms&lt;/b&gt; — words that express a reciprocal relationship (buy/sell, teacher/student, above/below). Understanding these types helps students choose the correct antonym in context. NEB exams may ask students to identify antonyms from a list or to choose the best opposite for a word in a given sentence.&lt;/p&gt;</li><li>&lt;h2&gt;Strategies for Learning Synonyms and Antonyms&lt;/h2&gt;</li><li>&lt;p&gt;Effective strategies include: (1) &lt;b&gt;Learning in context&lt;/b&gt; — study words as they appear in sentences, not in isolation. Context reveals the appropriate register and connotation. (2) &lt;b&gt;Word families&lt;/b&gt; — learn related words together (happy, happiness, happily, unhappy, unhappy, happiness). This builds understanding of word formation and relationship. (3) &lt;b&gt;Flashcards&lt;/b&gt; — write the word on one side, synonyms/antonyms and example sentences on the other. (4) &lt;b&gt;Reading widely&lt;/b&gt; — exposure to diverse texts naturally builds vocabulary. (5) &lt;b&gt;Using a thesaurus wisely&lt;/b&gt; — a thesaurus lists synonyms but does not explain connotations — always check usage in context. (6) &lt;b&gt;Regular review&lt;/b&gt; — spaced repetition is essential for long-term retention.&lt;/p&gt;</li><li>&lt;h2&gt;Common Synonym/Antonym Patterns in NEB Exams&lt;/h2&gt;</li><li>&lt;p&gt;NEB exams frequently test the following word pairs and patterns: &lt;b&gt;Abstract nouns from adjectives&lt;/b&gt;: happy → happiness, sad → sadness, kind → kindness. &lt;b&gt;Opposite prefixes&lt;/b&gt;: happy/unhappy, possible/impossible, careful/careless, honest/dishonest. &lt;b&gt;Contextual meaning&lt;/b&gt;: The word 'bright' has different antonyms depending on context — 'bright light' (antonym: dim) vs. 'bright student' (antonym: dull) vs. 'bright future' (antonym: bleak). NEB exams sometimes test this contextual sensitivity by providing a sentence and asking for the appropriate synonym or antonym.&lt;/p&gt;</li><li>&lt;h2&gt;Avoiding Common Mistakes&lt;/h2&gt;</li><li>&lt;p&gt;Common errors in synonym/antonym questions: (1) &lt;b&gt;Choosing a word with the wrong connotation&lt;/b&gt; — 'slim' and 'fat' are antonyms, but 'skinny' and 'fat' are not appropriate in formal contexts. (2) &lt;b&gt;Ignoring context&lt;/b&gt; — choosing a synonym that fits the dictionary definition but not the specific sentence. (3) &lt;b&gt;Confusing synonyms with related words&lt;/b&gt; — 'result' and 'consequence' are related but not perfect synonyms. (4) &lt;b&gt;Choosing antonyms from the wrong category&lt;/b&gt; — 'hot' and 'cold' are gradable antonyms; 'hot' and 'spicy' are not antonyms (spicy describes taste, hot describes temperature). (5) &lt;b&gt;Using words that are too extreme&lt;/b&gt; — the antonym of 'small' is 'large', not 'enormous' (which implies a different degree). Always choose the most precise and context-appropriate word.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Synonym vs. Equivalent: A synonym is a single word with nearly the same meaning as another word in most contexts (big ≈ large). An equivalent may be a phrase or expression that conveys the same idea (very big ≈ enormous). In NEB exams, synonym questions ask for a single-word replacement. One-word substitution is related but more specific — it provides a definition and asks for the single word that matches it.</li><li>Antonym vs. Opposite: An antonym is a specific vocabulary term for a word with the opposite meaning (hot/cold, brave/cowardly). An 'opposite' is a broader concept that includes antonyms but also refers to anything contrary. In NEB exams, use 'antonym' when referring to vocabulary relationships. Some words have multiple antonyms depending on context — 'light' (weight) → antonym: heavy; 'light' (illumination) → antonym: dark.</li><li>Contextual synonym vs. Absolute synonym: Absolute synonyms (words interchangeable in ALL contexts) are extremely rare in English. Most so-called synonyms are contextual — they are interchangeable only in specific situations. For example, 'begin' and 'start' are often synonyms, but 'start the car' is correct while 'begin the car' is not. NEB exams sometimes test this distinction by providing a sentence where only one of two similar words is appropriate.</li><li>Gradable vs. Complementary antonyms: Gradable antonyms (hot/cold, big/small) exist on a continuum — something can be more or less of either. Complementary antonyms (dead/alive, present/absent) are absolute opposites — something cannot be both or neither. This distinction matters in NEB exams because it affects how antonyms are used in sentences. For example, 'not hot' does not necessarily mean 'cold' (it could be warm), but 'not dead' necessarily means 'alive' (in the complementary pair).</li><li>Connotation vs. Denotation in synonym selection: Two words may have the same denotation (dictionary definition) but different connotations (emotional/cultural associations). 'Thin' and 'slim' both mean 'not fat', but 'slim' has a positive connotation while 'thin' can be neutral or negative. In NEB synonym questions, the correct choice depends on the connotation that fits the context, not just the dictionary definition.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Choose the correct synonym for 'benevolent' in the context: 'The benevolent donor gave generously to the orphanage.' (a) cruel (b) kind (c) poor (d) generous. [Answer: (d) generous — while 'kind' is related, 'generous' is the more precise synonym in this context of giving. The word 'benevolent' specifically means well-meaning and kindly, especially in giving. In NEB exams, choose the MOST precise synonym, not just any related word.] — Note: This tests contextual synonym selection.</li><li>Choose the correct antonym for 'abundant' in the context: 'The region has abundant rainfall throughout the year.' (a) plentiful (b) scarce (c) wet (d) seasonal. [Answer: (b) scarce — 'abundant' means existing in large quantities. Its direct antonym is 'scarce' (insufficient, rare). 'Plentiful' is a synonym, not an antonym. 'Seasonal' and 'wet' are unrelated in this context.] — Note: Always eliminate synonyms first when looking for antonyms.</li><li>Provide the antonym for each word: (a) courage (b) wisdom (c) prosperity (d) honesty. [Answer: (a) cowardice (b) folly/foolishness (c) poverty/adversity (d) dishonesty. Note: The antonym should match the part of speech — all given words are nouns, so the antonyms should also be nouns.] — This tests understanding of noun-form antonyms.</li><li>Choose the correct synonym for 'transparent' in the context: 'The transparent explanation satisfied everyone.' (a) clear (b) see-through (c) invisible (d) dishonest. [Answer: (a) clear — in this context, 'transparent' means 'easy to understand' (figurative), not 'see-through' (literal). The context 'explanation satisfied everyone' indicates the figurative meaning. NEB exams frequently test words with both literal and figurative meanings.] — Note: Context determines which meaning (and therefore which synonym) is appropriate.</li><li>Find the odd one out: (a) happy (b) joyful (c) elated (d) sorrowful (e) cheerful. [Answer: (d) sorrowful — it is an antonym of the others, not a synonym. All other words (happy, joyful, elated, cheerful) convey positive emotion, while 'sorrowful' conveys sadness. This is a common NEB question type that tests both vocabulary and analytical thinking.] — Note: Odd-one-out questions require identifying the word that does not share the common feature.</li><li>Choose the correct antonym for 'meticulous': (a) careful (b) careless (c) detailed (d) precise. [Answer: (b) careless — 'meticulous' means showing great attention to detail; very careful and precise. Its antonym is 'careless' (not giving enough attention to detail). 'Careful', 'detailed', and 'precise' are all synonyms or near-synonyms of 'meticulous', not antonyms.] — Note: Three of the four options are synonyms, making this a test of careful reading.</li><li>Provide the synonym for each word in context: (a) The journey was ARDUOUS. (b) She gave an ARTICULATE speech. (c) The solution was ELUSIVE. (d) His manner was BURGEONING. [Answer: (a) difficult/tough/hard — 'arduous' means involving hard effort. (b) clear/explicit/eloquent — 'articulate' means expressing ideas clearly. (c) elusive/hard to catch — wait, 'elusive' means hard to find/catch/achieve. Synonym: evasive/difficult to capture. (d) 'burgeoning' means growing/rapidly developing. Synonym: growing/flourishing. Note: Word (d) may be a trick — 'burgeoning' is not commonly used as a manner description; it typically modifies things that grow (a burgeoning industry). This tests advanced vocabulary.] — Note: All answers should be precise and context-appropriate.</li><li>Choose the word that is most nearly opposite in meaning to 'benevolent': (a) kind (b) malevolent (c) generous (d) helpful. [Answer: (b) malevolent — 'benevolent' means well-meaning and kindly. 'Malevolent' means having or showing a wish to do evil to others. Options (a), (c), and (d) are all synonyms of 'benevolent', making (b) the clear antonym. This is a straightforward antonym question that tests knowledge of Latin-derived vocabulary.] — Note: 'Malevolent' shares the same Latin root as 'benevolent' (bene = good, mal = bad), making the relationship between the words more transparent for students who know etymology.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>English has an unusually large number of synonyms compared to many languages, largely because it draws from three major sources: Old English (Germanic), Latin (via French), and Greek. This triple heritage means that English often has a native word, a Latin-derived formal word, and a Greek-derived technical word for the same concept (e.g., 'kingly' (Old English), 'royal' (Latin), 'regal' (Greek)).</li><li>In the NEB English examination, synonym and antonym questions typically carry 3-6 marks and appear in both objective (MCQ) and subjective formats. The ability to choose the most precise synonym or antonym in context is a skill that develops through extensive reading and deliberate vocabulary practice.</li><li>The concept of contextual synonymy — that words are synonyms only in certain contexts — is a sophisticated linguistic insight that many language learners miss. Nepali students often assume that because two words share a dictionary definition, they are interchangeable in all contexts, which leads to errors in both writing and comprehension.</li><li>The study of word relationships (synonymy, antonymy, hyponymy, meronymy) is a core part of lexical semantics, a branch of linguistics that has been systematically studied since the mid-20th century. Understanding these relationships helps learners organise vocabulary more effectively and improves both receptive (reading) and productive (writing/speaking) skills.</li><li>Word formation through prefixes and suffixes creates systematic relationships between words that can be exploited for vocabulary learning. For example, knowing that 'happy' → 'unhappy' (prefix un-) and 'happy' → 'happiness' (suffix -ness) helps students predict the meaning and form of related words, making vocabulary acquisition more efficient.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>vocabulary</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>vocabulary</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

@@ -1,0 +1,528 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Vectors</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Lessons</div>
+    <h1 class="doc">Vectors</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Lessons</span></div>
+  </header>
+  <p>Physics quantities split into two families: scalars, fully described by magnitude alone (mass, time, energy), and vectors, which demand direction as well (displacement, force, velocity). The NEB Class 11 Physics unit on vectors builds the complete toolkit — laws of vector addition, resolution into components, unit vectors, and the scalar (dot) and vector (cross) products — that later units like dynamics, circular motion and gravitation depend on.</p>
+<h3>📚 Complete Vector Conceptual Problems &amp; Solutions</h3>
+<h4>Problem 1: Perpendicular Vectors in 2D</h4>
+<p><strong>Question:</strong> Two vectors <strong>A</strong> = 3î + 0ĵ and <strong>B</strong> = 0î + 4ĵ are perpendicular. Find their resultant and prove they are perpendicular.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Given: <strong>A</strong> = (3, 0), <strong>B</strong> = (0, 4)</li>
+<li>Resultant <strong>R</strong> = <strong>A</strong> + <strong>B</strong> = (3+0, 0+4) = (3, 4)</li>
+<li>Magnitude |<strong>R</strong>| = √(3² + 4²) = √(9 + 16) = √25 = 5</li>
+<li>Dot Product: <strong>A</strong>·<strong>B</strong> = (3)(0) + (0)(4) = 0</li>
+<li>Since <strong>A</strong>·<strong>B</strong> = 0, vectors are perpendicular (θ = 90°)</li>
+</ol>
+<p><strong>Answer:</strong> <strong>R</strong> = 3î + 4ĵ, |<strong>R</strong>| = 5, <strong>A</strong>·<strong>B</strong> = 0 (Perpendicular) <strong>Formula:</strong> For perpendicular vectors: |<strong>R</strong>| = √(A² + B²), <strong>A</strong>·<strong>B</strong> = 0</p>
+<hr />
+<h4>Problem 2: Parallel Vectors</h4>
+<p><strong>Question:</strong> Vectors <strong>A</strong> = 5î + 0ĵ and <strong>B</strong> = 3î + 0ĵ are parallel. Find their resultant.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Given: <strong>A</strong> = (5, 0), <strong>B</strong> = (3, 0)</li>
+<li>Resultant <strong>R</strong> = <strong>A</strong> + <strong>B</strong> = (5+3, 0+0) = (8, 0)</li>
+<li>Magnitude |<strong>R</strong>| = √(8² + 0²) = 8</li>
+<li>Direction: Same as <strong>A</strong> and <strong>B</strong> (along X-axis)</li>
+<li>Dot Product: <strong>A</strong>·<strong>B</strong> = (5)(3) + (0)(0) = 15 = |<strong>A</strong>||<strong>B</strong>|cos0° = 5×3×1 = 15</li>
+</ol>
+<p><strong>Answer:</strong> <strong>R</strong> = 8î, |<strong>R</strong>| = 8, θ = 0° <strong>Formula:</strong> For parallel vectors: |<strong>R</strong>| = |<strong>A</strong>| + |<strong>B</strong>|, θ = 0°</p>
+<hr />
+<h4>Problem 3: Antiparallel Vectors</h4>
+<p><strong>Question:</strong> Vectors <strong>A</strong> = 4î + 0ĵ and <strong>B</strong> = -3î + 0ĵ are antiparallel. Find their resultant.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Given: <strong>A</strong> = (4, 0), <strong>B</strong> = (-3, 0)</li>
+<li>Resultant <strong>R</strong> = <strong>A</strong> + <strong>B</strong> = (4-3, 0+0) = (1, 0)</li>
+<li>Magnitude |<strong>R</strong>| = √(1² + 0²) = 1</li>
+<li>Direction: Same as <strong>A</strong> (positive X)</li>
+<li>Dot Product: <strong>A</strong>·<strong>B</strong> = (4)(-3) + (0)(0) = -12 = |<strong>A</strong>||<strong>B</strong>|cos180° = 4×3×(-1) = -12</li>
+</ol>
+<p><strong>Answer:</strong> <strong>R</strong> = 1î, |<strong>R</strong>| = 1, θ = 180° <strong>Formula:</strong> For antiparallel: |<strong>R</strong>| = ||<strong>A</strong>| - |<strong>B</strong>|| (if |<strong>A</strong>| &gt; |<strong>B</strong>|), θ = 180°</p>
+<hr />
+<h4>Problem 4: 3D Vector Addition</h4>
+<p><strong>Question:</strong> Find the resultant of vectors <strong>A</strong> = 2î + 3ĵ - k̂ and <strong>B</strong> = -î + 4ĵ + 2k̂.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Given: <strong>A</strong> = (2, 3, -1), <strong>B</strong> = (-1, 4, 2)</li>
+<li>Resultant <strong>R</strong> = <strong>A</strong> + <strong>B</strong> = (2-1, 3+4, -1+2) = (1, 7, 1)</li>
+<li>Magnitude |<strong>R</strong>| = √(1² + 7² + 1²) = √(1 + 49 + 1) = √51 ≈ 7.14</li>
+<li>Direction cosines: cosα = 1/√51, cosβ = 7/√51, cosγ = 1/√51</li>
+<li>Verify: cos²α + cos²β + cos²γ = (1 + 49 + 1)/51 = 51/51 = 1 ✓</li>
+</ol>
+<p><strong>Answer:</strong> <strong>R</strong> = î + 7ĵ + k̂, |<strong>R</strong>| = √51 ≈ 7.14 <strong>Formula:</strong> <strong>R</strong> = (Aₓ+Bₓ, A_y+B_y, A_z+B_z)</p>
+<hr />
+<h4>Problem 5: Negative Vector</h4>
+<p><strong>Question:</strong> If vector <strong>A</strong> = 5î + 12ĵ, find -<strong>A</strong> and verify |<strong>A</strong>| = |-<strong>A</strong>|.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Given: <strong>A</strong> = (5, 12)</li>
+<li>-<strong>A</strong> = (-5, -12)</li>
+<li>|<strong>A</strong>| = √(5² + 12²) = √(25 + 144) = √169 = 13</li>
+<li>|-<strong>A</strong>| = √((-5)² + (-12)²) = √(25 + 144) = √169 = 13</li>
+<li>Conclusion: |<strong>A</strong>| = |-<strong>A</strong>|, but directions are opposite</li>
+</ol>
+<p><strong>Answer:</strong> -<strong>A</strong> = -5î - 12ĵ, |<strong>A</strong>| = |-<strong>A</strong>| = 13 <strong>Formula:</strong> -<strong>A</strong> = (-Aₓ, -A_y, -A_z), |-<strong>A</strong>| = |<strong>A</strong>|</p>
+<hr />
+<h4>Problem 6: Unit Vector</h4>
+<p><strong>Question:</strong> Find the unit vector in the direction of <strong>A</strong> = 3î - 4ĵ + 12k̂.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Given: <strong>A</strong> = (3, -4, 12)</li>
+<li>|<strong>A</strong>| = √(3² + (-4)² + 12²) = √(9 + 16 + 144) = √169 = 13</li>
+<li>Â = <strong>A</strong>/|<strong>A</strong>| = (3/13, -4/13, 12/13)</li>
+<li>Â = (0.23, -0.31, 0.92) approximately</li>
+<li>Verify: |Â| = √((3/13)² + (-4/13)² + (12/13)²) = √(169/169) = 1 ✓</li>
+</ol>
+<p><strong>Answer:</strong> Â = (3/13)î - (4/13)ĵ + (12/13)k̂ <strong>Formula:</strong> Â = <strong>A</strong>/|<strong>A</strong>|, |Â| = 1</p>
+<hr />
+<h4>Problem 7: Vector Subtraction</h4>
+<p><strong>Question:</strong> Given <strong>A</strong> = 7î + 2ĵ and <strong>B</strong> = 3î - 4ĵ, find <strong>A</strong> - <strong>B</strong>.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Given: <strong>A</strong> = (7, 2), <strong>B</strong> = (3, -4)</li>
+<li><strong>A</strong> - <strong>B</strong> = <strong>A</strong> + (-<strong>B</strong>) = (7-3, 2-(-4)) = (4, 6)</li>
+<li>|<strong>A</strong> - <strong>B</strong>| = √(4² + 6²) = √(16 + 36) = √52 = 2√13 ≈ 7.21</li>
+<li>Alternative: <strong>A</strong> - <strong>B</strong> = (7î + 2ĵ) - (3î - 4ĵ) = (7-3)î + (2+4)ĵ = 4î + 6ĵ</li>
+</ol>
+<p><strong>Answer:</strong> <strong>A</strong> - <strong>B</strong> = 4î + 6ĵ, |<strong>A</strong> - <strong>B</strong>| = 2√13 <strong>Formula:</strong> <strong>A</strong> - <strong>B</strong> = (Aₓ-Bₓ, A_y-B_y)</p>
+<hr />
+<h4>Problem 8: Angle Between Vectors</h4>
+<p><strong>Question:</strong> Vectors <strong>A</strong> = 2î + 2ĵ and <strong>B</strong> = -2î + 2ĵ. Find the angle between them.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Given: <strong>A</strong> = (2, 2), <strong>B</strong> = (-2, 2)</li>
+<li>|<strong>A</strong>| = √(2² + 2²) = √8 = 2√2</li>
+<li>|<strong>B</strong>| = √((-2)² + 2²) = √8 = 2√2</li>
+<li><strong>A</strong>·<strong>B</strong> = (2)(-2) + (2)(2) = -4 + 4 = 0</li>
+<li>cosθ = (<strong>A</strong>·<strong>B</strong>)/(|<strong>A</strong>||<strong>B</strong>|) = 0/(2√2 × 2√2) = 0</li>
+<li>θ = cos⁻¹(0) = 90°</li>
+</ol>
+<p><strong>Answer:</strong> θ = 90°, Vectors are perpendicular <strong>Formula:</strong> cosθ = (<strong>A</strong>·<strong>B</strong>)/(|<strong>A</strong>||<strong>B</strong>|)</p>
+<hr />
+<h4>Problem 9: Resultant of Three Vectors</h4>
+<p><strong>Question:</strong> Find the resultant of <strong>A</strong> = 2î, <strong>B</strong> = 3ĵ, and <strong>C</strong> = -4k̂.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Given: <strong>A</strong> = (2, 0, 0), <strong>B</strong> = (0, 3, 0), <strong>C</strong> = (0, 0, -4)</li>
+<li><strong>R</strong> = <strong>A</strong> + <strong>B</strong> + <strong>C</strong> = (2+0+0, 0+3+0, 0+0-4) = (2, 3, -4)</li>
+<li>|<strong>R</strong>| = √(2² + 3² + (-4)²) = √(4 + 9 + 16) = √29 ≈ 5.39</li>
+<li>Direction cosines: cosα = 2/√29, cosβ = 3/√29, cosγ = -4/√29</li>
+</ol>
+<p><strong>Answer:</strong> <strong>R</strong> = 2î + 3ĵ - 4k̂, |<strong>R</strong>| = √29</p>
+<hr />
+<h4>Problem 10: Cross Product Magnitude</h4>
+<p><strong>Question:</strong> Vectors <strong>A</strong> = 3î + 0ĵ and <strong>B</strong> = 0î + 4ĵ. Find |<strong>A</strong> × <strong>B</strong>|.</p>
+<p><strong>Solution:</strong></p>
+<ol>
+<li>Given: <strong>A</strong> = (3, 0, 0), <strong>B</strong> = (0, 4, 0)</li>
+<li>|<strong>A</strong>| = 3, |<strong>B</strong>| = 4, θ = 90° (perpendicular)</li>
+<li>|<strong>A</strong> × <strong>B</strong>| = |<strong>A</strong>||<strong>B</strong>|sinθ = 3 × 4 × sin90° = 12 × 1 = 12</li>
+<li>Component form: <strong>A</strong> × <strong>B</strong> = (0, 0, 12) = 12k̂</li>
+<li>Alternative: Using determinant formula for <strong>A</strong> × <strong>B</strong></li>
+</ol>
+<p><strong>Answer:</strong> |<strong>A</strong> × <strong>B</strong>| = 12, <strong>A</strong> × <strong>B</strong> = 12k̂ <strong>Formula:</strong> |<strong>A</strong> × <strong>B</strong>| = |<strong>A</strong>||<strong>B</strong>|sinθ</p>
+<hr />
+<h3>🎯 Visualization Guide</h3>
+<h4>Understanding Negative Vectors</h4>
+<p>When a vector has a negative component, it points in the opposite direction of the corresponding positive axis:</p>
+<ul>
+<li><strong>Positive X (+X or X):</strong> Points right (standard)</li>
+<li><strong>Negative X (-X or X'):</strong> Points left (opposite)</li>
+<li><strong>Positive Y (+Y or Y):</strong> Points up</li>
+<li><strong>Negative Y (-Y or Y'):</strong> Points down</li>
+<li><strong>Positive Z (+Z or Z):</strong> Points out of page (right-hand rule)</li>
+<li><strong>Negative Z (-Z or Z'):</strong> Points into page</li>
+</ul>
+<h4>All Cases Visualized</h4>
+<h4>1. Perpendicular Vectors (θ = 90°)</h4>
+<ul>
+<li><strong>Visual:</strong> Two vectors at right angles</li>
+<li><strong>Resultant:</strong> Forms hypotenuse of right triangle</li>
+<li><strong>Dot Product:</strong> A·B = 0</li>
+<li><strong>Magnitude:</strong> |R| = √(A² + B²) (Pythagorean theorem)</li>
+<li><strong>Example:</strong> A = 3î, B = 4ĵ → R = 3î + 4ĵ, |R| = 5</li>
+</ul>
+<h4>2. Parallel Vectors - Same Direction (θ = 0°)</h4>
+<ul>
+<li><strong>Visual:</strong> Two vectors pointing same way</li>
+<li><strong>Resultant:</strong> Sum of magnitudes in same direction</li>
+<li><strong>Dot Product:</strong> A·B = |A||B| (maximum)</li>
+<li><strong>Magnitude:</strong> |R| = |A| + |B|</li>
+<li><strong>Example:</strong> A = 5î, B = 3î → R = 8î, |R| = 8</li>
+</ul>
+<h4>3. Parallel Vectors - Opposite Direction (θ = 180°)</h4>
+<ul>
+<li><strong>Visual:</strong> Two vectors pointing opposite ways</li>
+<li><strong>Resultant:</strong> Difference of magnitudes</li>
+<li><strong>Dot Product:</strong> A·B = -|A||B| (minimum)</li>
+<li><strong>Magnitude:</strong> |R| = ||A| - |B||</li>
+<li><strong>Example:</strong> A = 5î, B = -3î → R = 2î, |R| = 2</li>
+</ul>
+<h4>4. General Case (0° &lt; θ &lt; 180°)</h4>
+<ul>
+<li><strong>Visual:</strong> Two vectors at angle θ</li>
+<li><strong>Resultant:</strong> Parallelogram law: R = √(A² + B² + 2ABcosθ)</li>
+<li><strong>Dot Product:</strong> A·B = |A||B|cosθ</li>
+<li><strong>Angle:</strong> θ = cos⁻¹[(A·B)/(|A||B|)]</li>
+<li><strong>Example:</strong> A = 5, B = 7, θ = 60° → R = √(25 + 49 + 35) = √109 ≈ 10.44</li>
+</ul>
+<h4>3D Coordinate System (X, X', Y, Y', Z, Z')</h4>
+<ul>
+<li><strong>X-axis:</strong> Red, positive right, negative left (X')</li>
+<li><strong>Y-axis:</strong> Green, positive up, negative down (Y')</li>
+<li><strong>Z-axis:</strong> Blue, positive forward, negative backward (Z')</li>
+<li><strong>Origin:</strong> (0, 0, 0) - where all axes meet</li>
+<li><strong>Octants:</strong> 8 regions defined by positive/negative combinations of X, Y, Z</li>
+</ul>
+<h4>Resultant Vector Behavior</h4>
+<ol>
+<li><strong>Resultant always originates from origin</strong> when adding vectors from origin</li>
+<li><strong>Resultant direction</strong> is between the two original vectors</li>
+<li><strong>Resultant magnitude</strong> ranges from minimum (|A| - |B|) to maximum (|A| + |B|)</li>
+<li><strong>Triangle law:</strong> Place vectors head-to-tail, resultant closes the triangle</li>
+<li><strong>Parallelogram law:</strong> Resultant is diagonal of parallelogram formed by two vectors</li>
+</ol>
+<h3>📊 Comparison Table: Vector Cases</h3>
+<table><thead><tr><th>Case</th><th>Angle</th><th>Dot Product</th><th>Resultant Magnitude</th><th>Visualization</th></tr></thead><tbody><tr><td>Parallel (Same)</td><td>0°</td><td>A·B = +</td><td>A</td><td></td><td>B</td><td></td><td></td><td>R</td><td>=</td><td>A</td><td>+</td><td>B</td><td></td><td>Both vectors same direction</td></tr><tr><td>Perpendicular</td><td>90°</td><td>A·B = 0</td><td></td><td>R</td><td>= √(A² + B²)</td><td>Vectors at right angles</td></tr><tr><td>Antiparallel</td><td>180°</td><td>A·B = -</td><td>A</td><td></td><td>B</td><td></td><td></td><td>R</td><td>=</td><td></td><td>A</td><td>-</td><td>B</td><td></td><td></td><td>Vectors opposite direction</td></tr><tr><td>Acute</td><td>0° &lt; θ &lt; 90°</td><td>A·B &gt; 0</td><td></td><td>A</td><td>+</td><td>B</td><td>&gt;</td><td>R</td><td>&gt; √(A² + B²)</td><td>Angle less than 90°</td></tr><tr><td>Obtuse</td><td>90° &lt; θ &lt; 180°</td><td>A·B &lt; 0</td><td>√(A² + B²) &gt;</td><td>R</td><td>&gt;</td><td></td><td>A</td><td>-</td><td>B</td><td></td><td></td><td>Angle more than 90°</td></tr></tbody></table>
+<h3>🧮 Key Formulas Reference</h3>
+<h4>Vector Addition</h4>
+<ul>
+<li><strong>R = A + B = (Aₓ+Bₓ)î + (A_y+B_y)ĵ + (A_z+B_z)k̂</strong></li>
+<li><strong>|R| = √(Rₓ² + R_y² + R_z²)</strong></li>
+</ul>
+<h4>Vector Subtraction</h4>
+<ul>
+<li><strong>A - B = A + (-B) = (Aₓ-Bₓ)î + (A_y-B_y)ĵ + (A_z-B_z)k̂</strong></li>
+</ul>
+<h4>Dot Product (Scalar Product)</h4>
+<ul>
+<li><strong>A·B = |A||B|cosθ = AₓBₓ + A_yB_y + A_zB_z</strong></li>
+<li><strong>cosθ = (A·B)/(|A||B|)</strong></li>
+<li><strong>θ = cos⁻¹[(A·B)/(|A||B|)]</strong></li>
+</ul>
+<h4>Cross Product (Vector Product)</h4>
+<ul>
+<li><strong>A × B = |A||B|sinθ n̂</strong></li>
+<li><strong>|A × B| = √[(A_yB_z - A_zB_y)² + (A_zBₓ - AₓB_z)² + (AₓB_y - A_yBₓ)²]</strong></li>
+<li><strong>Direction:</strong> Right-hand rule (perpendicular to both A and B)</li>
+</ul>
+<h4>Magnitude</h4>
+<ul>
+<li><strong>|A| = √(Aₓ² + A_y² + A_z²)</strong></li>
+<li><strong>Unit vector: Â = A/|A|</strong></li>
+</ul>
+<h4>Direction Cosines</h4>
+<ul>
+<li><strong>cosα = Aₓ/|A|, cosβ = A_y/|A|, cosγ = A_z/|A|</strong></li>
+<li><strong>cos²α + cos²β + cos²γ = 1</strong></li>
+</ul>
+<h4>Angle Between Two Vectors</h4>
+<ul>
+<li><strong>θ = cos⁻¹[(A·B)/(|A||B|)]</strong></li>
+</ul>
+<h4>Projection</h4>
+<ul>
+<li><strong>Scalar projection of A on B: A·B̂ = |A|cosθ</strong></li>
+<li><strong>Vector projection of A on B: (A·B̂)B̂ = (|A|cosθ)B̂</strong></li>
+</ul>
+<h3>🎓 Practical Tips</h3>
+<ol>
+<li><strong>Always draw diagrams</strong> - Visualize vectors before calculating</li>
+<li><strong>Check units</strong> - Ensure all components have consistent units</li>
+<li><strong>Verify with special cases</strong> - Test your answer with known cases (parallel, perpendicular)</li>
+<li><strong>Use direction cosines</strong> - They always satisfy cos²α + cos²β + cos²γ = 1</li>
+<li><strong>Remember:</strong> Vector addition is commutative (A + B = B + A) but subtraction is not (A - B ≠ B - A)</li>
+<li><strong>Dot product:</strong> A·B = B·A (commutative), A·A = |A|²</li>
+<li><strong>Cross product:</strong> A × B = -(B × A) (anti-commutative), A × A = 0</li>
+<li><strong>Negative vectors:</strong> |-A| = |A|, but direction is opposite</li>
+</ol>
+<h3>🔍 Common Misconceptions</h3>
+<p>❌ <strong>Wrong:</strong> Adding magnitudes directly: |A + B| = |A| + |B| (only true if parallel) ✅ <strong>Right:</strong> |A + B| = √(A² + B² + 2ABcosθ)</p>
+<p>❌ <strong>Wrong:</strong> Vectors with same magnitude are equal ✅ <strong>Right:</strong> Vectors are equal only if both magnitude AND direction are same</p>
+<p>❌ <strong>Wrong:</strong> Dot product result is a vector ✅ <strong>Right:</strong> Dot product is a scalar (single number)</p>
+<p>❌ <strong>Wrong:</strong> Cross product is commutative: A × B = B × A ✅ <strong>Right:</strong> Cross product is anti-commutative: A × B = -(B × A)</p>
+<p>❌ <strong>Wrong:</strong> A vector with negative component is smaller ✅ <strong>Right:</strong> Negative sign indicates direction, not smaller magnitude</p>
+<p>❌ <strong>Wrong:</strong> Resultant can be outside the span of two vectors ✅ <strong>Right:</strong> Resultant always lies between the two vectors in direction</p>
+<h3>What Is a Vector? — Understanding the Core Idea</h3>
+<p>A <strong>vector</strong> is a quantity that has both <strong>magnitude</strong> (size) and <strong>direction</strong>. It is represented by an arrow: the length of the arrow shows the magnitude, and the arrowhead shows the direction. A <strong>scalar</strong> has only magnitude — no direction. This distinction is fundamental:</p>
+<table><thead><tr><th>Scalar</th><th>Vector</th></tr></thead><tbody><tr><td>Mass (5 kg)</td><td>Displacement (5 m north)</td></tr><tr><td>Time (10 s)</td><td>Velocity (10 m/s east)</td></tr><tr><td>Temperature (30°C)</td><td>Force (30 N upward)</td></tr><tr><td>Energy (100 J)</td><td>Acceleration (9.8 m/s² downward)</td></tr><tr><td>Speed (50 km/h)</td><td>Momentum (50 kg·m/s forward)</td></tr></tbody></table>
+<p><strong>Why direction matters:</strong> Two cars can both travel at 50 km/h (same speed — a scalar), but if one goes north and the other south, their <strong>velocities</strong> are completely different vectors. Speed tells you how fast; velocity tells you how fast <em>and in which direction</em>. This is why vectors are essential for describing motion, forces, and fields.</p>
+<h4>Types of Vectors</h4>
+<p>Vectors come in several important types:</p>
+<ul>
+<li><strong>Position vector</strong> — locates a point relative to the origin. If a point is at (x, y, z), its position vector is <strong>r</strong> = x<strong>î</strong> + y<strong>ĵ</strong> + z<strong>k̂</strong>.</li>
+<li><strong>Displacement vector</strong> — the change in position from one point to another. It depends only on the start and end points, not the path taken.</li>
+<li><strong>Unit vector</strong> — a vector with magnitude exactly 1, used to indicate direction. The unit vectors along the axes are <strong>î</strong> (x-axis), <strong>ĵ</strong> (y-axis), and <strong>k̂</strong> (z-axis). Any vector can be written as its magnitude times its unit vector: <strong>A</strong> = |A|·<strong>Â</strong>.</li>
+<li><strong>Null (zero) vector</strong> — a vector with zero magnitude and no defined direction. It results from adding a vector to its negative: <strong>A</strong> + (−<strong>A</strong>) = <strong>0</strong>.</li>
+<li><strong>Equal vectors</strong> — vectors with the same magnitude <em>and</em> the same direction, regardless of where they start.</li>
+<li><strong>Negative vector</strong> — a vector with the same magnitude but exactly opposite direction: −<strong>A</strong>.</li>
+<li><strong>Parallel vectors</strong> — vectors pointing in the same or exactly opposite directions. They differ only by a scalar multiple.</li>
+<li><strong>Collinear vectors</strong> — vectors that lie along the same line (parallel or antiparallel).</li>
+<li><strong>Coplanar vectors</strong> — vectors that lie in the same plane.</li>
+<li><strong>Free vector</strong> — a vector whose position in space is irrelevant; only magnitude and direction matter. Most vectors in physics are free vectors.</li>
+</ul>
+<h4>How to Represent a Vector</h4>
+<p>A vector in 3D space is written in component form:</p>
+<pre><code>A = Aₓî + A_yĵ + A_zk̂</code></pre>
+<p>where Aₓ, A_y, A_z are the <strong>components</strong> along the x, y, and z axes. The <strong>magnitude</strong> is found by the 3D Pythagorean theorem:</p>
+<pre><code>|A| = √(Aₓ² + A_y² + A_z²)</code></pre>
+<p>The <strong>direction</strong> is described by <strong>direction cosines</strong> — the cosines of the angles the vector makes with each axis:</p>
+<pre><code>cos α = Aₓ/|A|,  cos β = A_y/|A|,  cos γ = A_z/|A|</code></pre>
+<p>These always satisfy the identity: cos²α + cos²β + cos²γ = 1.</p>
+<h3>Addition and Resolution</h3>
+<h4>Triangle Law of Addition</h4>
+<p>Vectors add by the <strong>triangle law</strong>: place the tail of the second vector at the head of the first. The resultant vector closes the triangle — it goes from the tail of the first to the head of the second. This is why <strong>A</strong> + <strong>B</strong> = <strong>B</strong> + <strong>A</strong> (addition is commutative).</p>
+<h4>Parallelogram Law of Addition</h4>
+<p>Equivalently, the <strong>parallelogram law</strong> states: if two vectors <strong>A</strong> and <strong>B</strong> act at a point with angle θ between them, the resultant is the diagonal of the parallelogram they form. The magnitude of the resultant is:</p>
+<pre><code>R = √(A² + B² + 2AB cos θ)</code></pre>
+<p>and its direction is given by:</p>
+<pre><code>tan φ = (B sin θ) / (A + B cos θ)</code></pre>
+<p>where φ is the angle the resultant makes with <strong>A</strong>.</p>
+<p><strong>Special cases:</strong></p>
+<ul>
+<li>θ = 0° (parallel): R = A + B (maximum)</li>
+<li>θ = 90° (perpendicular): R = √(A² + B²)</li>
+<li>θ = 180° (antiparallel): R = |A − B| (minimum)</li>
+</ul>
+<h4>Polygon Law of Addition</h4>
+<p>The <strong>polygon law</strong> generalises addition to any number of vectors: place them head-to-tail in sequence, and the resultant closes the polygon — it goes from the tail of the first to the head of the last. If the polygon closes exactly (head of last meets tail of first), the resultant is zero.</p>
+<h4>Resolution into Components</h4>
+<p>Any vector can be <strong>resolved</strong> (split) into perpendicular components. A vector of magnitude A at angle θ above the x-axis has:</p>
+<pre><code>Aₓ = A cos θ   (horizontal component)
+A_y = A sin θ   (vertical component)</code></pre>
+<p>In 3D, a vector <strong>A</strong> with direction cosines cos α, cos β, cos γ has components:</p>
+<pre><code>Aₓ = |A| cos α,  A_y = |A| cos β,  A_z = |A| cos γ</code></pre>
+<p><strong>Why resolution matters:</strong> Components are independent — motion along x does not affect motion along y. This is the key to projectile motion: the horizontal component (constant velocity) and vertical component (constant acceleration) are solved separately, then combined.</p>
+<h4>Unit Vectors</h4>
+<p>Unit vectors <strong>î</strong>, <strong>ĵ</strong>, <strong>k̂</strong> have magnitude 1 along the x, y, and z axes. They let us write any vector compactly:</p>
+<pre><code>A = Aₓî + A_yĵ + A_zk̂</code></pre>
+<p>The unit vector in the direction of <strong>A</strong> is:</p>
+<pre><code>Â = A / |A| = (Aₓî + A_yĵ + A_zk̂) / √(Aₓ² + A_y² + A_z²)</code></pre>
+<h3>Scalar (Dot) Product</h3>
+<p>The <strong>dot product</strong> of two vectors produces a <strong>scalar</strong>:</p>
+<pre><code>A · B = |A||B| cos θ = AₓBₓ + A_yB_y + A_zB_z</code></pre>
+<p><strong>Geometric meaning:</strong> A · B = |A| × (projection of B onto A) = |B| × (projection of A onto B). It measures how much two vectors <em>align</em>.</p>
+<p><strong>Key properties:</strong></p>
+<ul>
+<li>A · B = 0 means the vectors are <strong>perpendicular</strong> (θ = 90°)</li>
+<li>A · A = |A|² (the dot product of a vector with itself gives its magnitude squared)</li>
+<li>A · B = B · A (commutative)</li>
+<li><strong>î</strong> · <strong>î</strong> = <strong>ĵ</strong> · <strong>ĵ</strong> = <strong>k̂</strong> · <strong>k̂</strong> = 1; <strong>î</strong> · <strong>ĵ</strong> = <strong>ĵ</strong> · <strong>k̂</strong> = <strong>k̂</strong> · <strong>î</strong> = 0</li>
+</ul>
+<p><strong>Physics example:</strong> Work W = <strong>F</strong> · <strong>d</strong> = Fd cos θ. Only the component of force <em>along</em> the displacement does work. If you push a wall (θ = 90°), no work is done because cos 90° = 0.</p>
+<h3>Vector (Cross) Product</h3>
+<p>The <strong>cross product</strong> of two vectors produces a <strong>vector</strong> perpendicular to both:</p>
+<pre><code>A × B = |A||B| sin θ · n̂</code></pre>
+<p>where <strong>n̂</strong> is the unit vector perpendicular to the plane containing <strong>A</strong> and <strong>B</strong>, given by the <strong>right-hand rule</strong>: curl your fingers from <strong>A</strong> toward <strong>B</strong>, and your thumb points along <strong>A</strong> × <strong>B</strong>.</p>
+<p>In component form:</p>
+<pre><code>A × B = (A_yB_z − A_zB_y)î + (A_zBₓ − AₓB_z)ĵ + (AₓB_y − A_yBₓ)k̂</code></pre>
+<p><strong>Key properties:</strong></p>
+<ul>
+<li>|A × B| = area of the parallelogram spanned by <strong>A</strong> and <strong>B</strong></li>
+<li>A × B = 0 means the vectors are <strong>parallel</strong> (θ = 0° or 180°)</li>
+<li>A × B = −(B × A) — <strong>anti-commutative</strong>, order matters!</li>
+<li><strong>î</strong> × <strong>ĵ</strong> = <strong>k̂</strong>, <strong>ĵ</strong> × <strong>k̂</strong> = <strong>î</strong>, <strong>k̂</strong> × <strong>î</strong> = <strong>ĵ</strong> (cyclic)</li>
+<li><strong>î</strong> × <strong>î</strong> = <strong>ĵ</strong> × <strong>ĵ</strong> = <strong>k̂</strong> × <strong>k̂</strong> = <strong>0</strong></li>
+</ul>
+<p><strong>Physics examples:</strong></p>
+<ul>
+<li>Torque: <strong>τ</strong> = <strong>r</strong> × <strong>F</strong> — the rotational effect of a force</li>
+<li>Angular momentum: <strong>L</strong> = <strong>r</strong> × <strong>p</strong></li>
+<li>Magnetic force: <strong>F</strong> = q(<strong>v</strong> × <strong>B</strong>)</li>
+</ul>
+<h3>Comparison Table</h3>
+<table><thead><tr><th>Feature</th><th>Dot product A · B</th><th>Cross product A × B</th></tr></thead><tbody><tr><td>Result type</td><td>Scalar</td><td>Vector (perpendicular to both)</td></tr><tr><td>Magnitude</td><td>AB cos θ</td><td>AB sin θ</td></tr><tr><td>Zero when</td><td>Vectors parallel (θ = 0°)</td><td>Vectors parallel or antiparallel (θ = 0°/180°)</td></tr><tr><td>Maximum when</td><td>Parallel</td><td>Perpendicular (θ = 90°)</td></tr><tr><td>Commutative?</td><td>Yes (A·B = B·A)</td><td>No (A×B = −B×A)</td></tr><tr><td>Physics example</td><td>Work W = F · d</td><td>Torque τ = r × F</td></tr></tbody></table>
+<h3>Worked Calculation</h3>
+<pre><code>Question: Forces of 3 N and 4 N act on a body with 60 degrees
+between them. Find the resultant.
+
+Step 1: R^2 = A^2 + B^2 + 2AB cosθ
+            = 3^2 + 4^2 + 2(3)(4)(cos60)
+Step 2: cos60 = 0.5, so R^2 = 9 + 16 + 24(0.5) = 25 + 12 = 37
+Step 3: R = √37 ≈ 6.08 N
+
+Compare: if θ were 90 degrees, R = √(9+16) = 5 N exactly.</code></pre>
+<h4>Cross Product Example</h4>
+<pre><code>Question: A = (1, 0, 0) and B = (0, 1, 0). Find A × B.
+
+Step 1: A × B = (A_yB_z − A_zB_y, A_zBₓ − AₓB_z, AₓB_y − A_yBₓ)
+Step 2: = (0×0 − 0×1, 0×0 − 1×0, 1×1 − 0×0)
+Step 3: = (0, 0, 1) = k̂
+
+Answer: A × B = k̂ — the unit vector along the z-axis,
+perpendicular to both the x-axis and y-axis vectors.</code></pre>
+<h3>Key points</h3>
+<ul>
+<li>Equal vectors share magnitude and direction; position is irrelevant.</li>
+<li>Components are independent: motion along x does not affect y.</li>
+<li>A · B = AₓBₓ + A_yB_y + A_zB_z gives an easy computational shortcut.</li>
+<li>|A × B| equals the area of the parallelogram spanned by A and B; the dot product gives projection.</li>
+<li>Subtraction is addition of the negative: A − B = A + (−B).</li>
+<li>The resultant of two vectors lies between them in direction, never outside their span.</li>
+<li>The cross product is perpendicular to both original vectors — use the right-hand rule for direction.</li>
+<li>A unit vector Â = A/|A| gives direction without magnitude.</li>
+<li>Direction cosines always satisfy cos²α + cos²β + cos²γ = 1.</li>
+</ul>
+<h3>Common mistakes</h3>
+<ul>
+<li>Treating the dot product's result as a vector, or forgetting the cross product produces one.</li>
+<li>Using the angle between a vector and the y-axis when tables list angles from the x-axis.</li>
+<li>Writing A × B = B × A — the order matters because of the sign change.</li>
+<li>Adding magnitudes arithmetically (3 N + 4 N = 7 N) instead of vectorially unless directions coincide.</li>
+<li>Forgetting that the resultant of two vectors lies between them in direction, never outside their span.</li>
+<li>Confusing speed (scalar) with velocity (vector) — direction is what makes them different.</li>
+<li>Using the right-hand rule backwards — curl from A to B, not B to A.</li>
+<li>Forgetting that A · A = |A|², not |A|.</li>
+</ul>
+  <nav class="pager"><a href="quantity-of-heat.html" title="Quantity of Heat">‹ Quantity of Heat</a><a class="mid" href="../../../_subjects/class-11-physics.html">Physics</a><span></span></nav>
+</div></body></html>

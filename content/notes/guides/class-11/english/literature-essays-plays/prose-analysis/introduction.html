@@ -1,0 +1,165 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Prose Analysis</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Prose Analysis</div>
+    <h1 class="doc">Prose Analysis</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Prose Analysis</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>literature-essays-plays</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>prose-analysis</p></section>
+<section class="field"><h2>Relevance</h2><p><code>88</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;What Is Prose Analysis?&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Prose analysis&lt;/b&gt; is the examination of non-poetic written works — including short stories, essays, excerpts from novels, and speeches — to understand their meaning, structure, and literary techniques. In the NEB Class 11 English syllabus, prose analysis covers both fictional prose (short stories, novel excerpts) and non-fictional prose (essays, speeches, narratives). Students are expected to analyse characters, themes, setting, narrative technique, and the author's purpose. Prose analysis is tested through comprehension questions, critical appreciation, and essay-type responses in NEB exams.&lt;/p&gt;</li><li>&lt;h2&gt;Analyzing Characters in Prose&lt;/h2&gt;</li><li>&lt;p&gt;Character analysis involves examining: &lt;b&gt;Physical description&lt;/b&gt; — how the character looks (reveals personality through appearance). &lt;b&gt;Dialogue&lt;/b&gt; — what the character says (reveals thoughts, education, attitude). &lt;b&gt;Action&lt;/b&gt; — what the character does (reveals true character through behaviour). &lt;b&gt;Thoughts&lt;/b&gt; — what the character thinks (direct insight into motivation). &lt;b&gt;Reaction of others&lt;/b&gt; — how other characters respond (reveals the character's impact). Characters can be &lt;b&gt;round&lt;/b&gt; (complex, developed, capable of change) or &lt;b&gt;flat&lt;/b&gt; (simple, one-dimensional). Characters can be &lt;b&gt;dynamic&lt;/b&gt; (undergo significant change) or &lt;b&gt;static&lt;/b&gt; (remain essentially the same). In NEB exams, character sketches should include specific textual evidence to support each trait described.&lt;/p&gt;</li><li>&lt;h2&gt;Understanding Setting in Prose&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Setting&lt;/b&gt; is the time and place in which a story occurs. Setting analysis involves: &lt;b&gt;Physical setting&lt;/b&gt; — where the story takes place (city, village, forest, room). &lt;b&gt;Temporal setting&lt;/b&gt; — when the story takes place (historical period, season, time of day). &lt;b&gt;Social setting&lt;/b&gt; — the cultural and social environment (class structure, customs, beliefs). &lt;b&gt;Psychological setting&lt;/b&gt; — the emotional atmosphere that reflects characters' inner states. Setting is not merely backdrop — it often influences plot, shapes characters, and reinforces themes. For example, a stormy night may create tension and mirror a character's turmoil. In NEB exams, setting questions ask students to identify the setting and explain its significance to the story.&lt;/p&gt;</li><li>&lt;h2&gt;Identifying Theme in Prose&lt;/h2&gt;</li><li>&lt;p&gt;The &lt;b&gt;theme&lt;/b&gt; of a prose work is its central message or insight about life. To identify theme: (1) Look for recurring ideas, images, or symbols throughout the work. (2) Consider the conflict and its resolution — what does the outcome suggest? (3) Examine character development — what does the character learn or fail to learn? (4) Consider the title — it often hints at the theme. Express the theme as a complete, universal statement: 'Love requires sacrifice' (theme) vs. 'Love' (topic). Common prose themes include: good vs. evil, coming of age, social injustice, the power of knowledge, the conflict between tradition and modernity, human nature, and moral choices. NEB exams frequently ask: 'What is the theme of the story?'&lt;/p&gt;</li><li>&lt;h2&gt;Narrative Techniques in Prose&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Narrative techniques&lt;/b&gt; are the methods authors use to tell a story. Key techniques: &lt;b&gt;Point of view&lt;/b&gt; — who tells the story (first person 'I', third person limited, third person omniscient). &lt;b&gt;Flashback&lt;/b&gt; — interrupting the present narrative to show past events. &lt;b&gt;Foreshadowing&lt;/b&gt; — hints or clues about future events. &lt;b&gt;Flashforward&lt;/b&gt; — jumping ahead to show future events. &lt;b&gt;Irony&lt;/b&gt; — contrast between expectation and reality (verbal, situational, dramatic). &lt;b&gt;Symbolism&lt;/b&gt; — objects or actions representing abstract ideas. &lt;b&gt;Dialogue&lt;/b&gt; — conversation between characters that reveals personality and advances plot. &lt;b&gt;Internal monologue&lt;/b&gt; — a character's inner thoughts presented directly. In NEB exams, students should be able to identify these techniques and explain how they contribute to the story's meaning and effect.&lt;/p&gt;</li><li>&lt;h2&gt;Plot Structure in Prose&lt;/h2&gt;</li><li>&lt;p&gt;The &lt;b&gt;plot&lt;/b&gt; is the sequence of events in a story, typically following this structure: &lt;b&gt;Exposition&lt;/b&gt; — introduction of characters, setting, and basic situation. &lt;b&gt;Rising action&lt;/b&gt; — events that build tension and develop the central conflict. &lt;b&gt;Climax&lt;/b&gt; — the turning point or moment of highest tension. &lt;b&gt;Falling action&lt;/b&gt; — events that follow the climax and lead toward resolution. &lt;b&gt;Resolution (denouement)&lt;/b&gt; — the conclusion where conflicts are resolved. Some stories have &lt;b&gt;open endings&lt;/b&gt; (leaving the resolution ambiguous) or &lt;b&gt;circular endings&lt;/b&gt; (returning to the beginning). Understanding plot structure helps students answer questions about the story's development, the significance of specific events, and the author's narrative choices.&lt;/p&gt;</li><li>&lt;h2&gt;Analyzing Author's Purpose and Style&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Author's purpose&lt;/b&gt; is why the author wrote the work: to inform, to persuade, to entertain, to express emotion, or to critique society. &lt;b&gt;Author's style&lt;/b&gt; encompasses the distinctive features of their writing: diction (word choice), syntax (sentence structure), tone, use of literary devices, and pacing. To analyse style: (1) Note whether sentences are long and complex or short and abrupt. (2) Examine word choices — are they formal, informal, technical, poetic? (3) Identify recurring patterns — repeated images, sounds, or structures. (4) Consider the effect of these choices on the reader. In NEB exams, students may be asked: 'What is the author's purpose?' or 'How does the author create mood in this passage?' Answering requires both identification of techniques and explanation of their effect.&lt;/p&gt;</li><li>&lt;h2&gt;Prose Analysis in NEB Exams&lt;/h2&gt;</li><li>&lt;p&gt;Prose analysis in the NEB English examination appears in several formats: (1) &lt;b&gt;Unseen passage comprehension&lt;/b&gt; — answering questions about a prose passage not studied in class (8-12 marks). (2) &lt;b&gt;Critical appreciation&lt;/b&gt; — writing a detailed analysis of a studied prose piece (8-10 marks). (3) &lt;b&gt;Character sketch&lt;/b&gt; — describing a character's traits with textual evidence (5-8 marks). (4) &lt;b&gt;Theme analysis&lt;/b&gt; — explaining the central message of a prose work (5-8 marks). To succeed, students should: read actively (annotate while reading), memorise key quotations from studied texts, practise writing character sketches and thematic analyses, and learn to support every claim with textual evidence.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Plot vs. Story: The story is the complete sequence of events in chronological order (what happened). The plot is the specific arrangement of those events as presented by the author (how the author chose to tell it). A story might be told out of order (using flashbacks), but the plot is what the reader actually experiences. For example, in 'The Gift of the Magi' by O. Henry, the story includes the couple's poverty, their gifts, the sacrifices — but the plot reveals the ending first (the sold hair and watch chain) and then flashes back to show how each sacrifice occurred, creating dramatic irony.</li><li>Theme vs. Moral: A theme is the central idea or insight about life that a work explores — it is implicit and complex. A moral is an explicit lesson or instruction — usually a simple statement of right and wrong. Fables and parables typically have morals ('Honesty is the best policy'). Literary short stories and novels typically have themes ('The corruption of power destroys the individual'). In NEB exams, always express theme as a complete, nuanced statement — never simply name it as a single word.</li><li>Setting vs. Context: Setting is the specific time and place of a narrative (19th-century London, a rainy afternoon in a village). Context is the broader historical, cultural, and social background that shapes the work's meaning (Victorian social norms, the Industrial Revolution's impact on rural communities). Setting is part of the story's world; context is the real-world background that informs the story. In NEB exams, setting questions focus on the story's world; context questions require knowledge of the historical period.</li><li>Round vs. Complex: A round character is well-developed with multiple traits, capable of surprise, and psychologically realistic. A complex character is similar but may also involve contradictions or moral ambiguity. All round characters are complex, but not all complex characters are round (a flat character can have one complex trait). In NEB exams, 'round' is the more commonly tested term. A round character example: Ebenezer Scrooge (changes from miserly to generous). A flat character example: a stereotypical villain who exists only to oppose the hero.</li><li>Omniscient vs. Limited third-person: Third-person omniscient narration has access to the thoughts and feelings of ALL characters (the narrator knows everything). Third-person limited narration follows ONE character closely, sharing only that character's thoughts and perceptions. In omniscient narration, the narrator may jump between characters' perspectives. In limited narration, the reader only knows what the focal character knows. Identifying the narrative perspective is a common NEB exam question about prose technique.</li><li>Climax vs. Crisis: The crisis is the moment of greatest tension or the turning point in the conflict — the point of no return. The climax is the peak of the story's tension, where the conflict is resolved (or the resolution begins). In some stories, the crisis and climax are the same moment; in others, they are distinct. For example, in a mystery story, the crisis might be discovering the murderer (the turning point), while the climax is the confrontation with the murderer (the peak of tension). NEB exams may ask students to identify the climax, which is typically the most dramatic and emotionally intense moment.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Identify the narrative perspective in this passage: 'She could not have known that he was watching her from the window. He saw her hesitation, the way her hand trembled as she reached for the letter, and he felt a pang of regret for the role he had played in creating this moment of uncertainty.' [Answer: Third-person omniscient — the narrator has access to both characters' inner thoughts: 'She could not have known' (her perspective) and 'he felt a pang of regret' (his perspective). The narrator knows more than either character, jumping between their internal states.] — Note: Third-person limited would only follow one character's thoughts.</li><li>What is the theme of a short story in which a poor father sells his only possession (a watch) to buy his daughter hair combs, while she sells her hair to buy him a chain for his watch? [Answer: The theme is that true love involves selfless sacrifice — the greatest gifts are those given without expectation of return, and the irony of their sacrifices reveals that love transcends material value. The story (O. Henry's 'The Gift of the Magi') also explores the theme of the irony of fate and the poverty that makes meaningful sacrifice necessary.] — Note: The theme is a complete statement about love and sacrifice, not just 'love' or 'sacrifice' (which are topics).</li><li>Describe the setting and its significance in this passage: 'The house stood at the edge of the cliff, its windows staring blankly at the sea below. The wind howled around its corners, and the salt spray had weathered the paint to a grey, skeletal bareness. Inside, the rooms were empty save for a single chair facing the window.' [Answer: The setting is a isolated, weathered house on a cliff edge, facing the sea. The significance: The house's isolation mirrors emotional or psychological loneliness. The 'staring blankly' windows personify the house as empty and vacant. The 'grey, skeletal bareness' suggests decay and abandonment. The single chair facing the window implies a solitary figure waiting or contemplating — the setting creates an atmosphere of desolation, loneliness, and perhaps despair. The sea below represents both freedom and danger, adding to the tension.] — Note: Good setting analysis connects physical description to emotional and thematic significance.</li><li>Identify the literary device in this sentence and explain its effect: 'The classroom was a zoo — children ran wild, shouting and chasing each other between the desks.' [Answer: The device is metaphor — the classroom is directly compared to a zoo without 'like' or 'as'. The effect is to vividly convey the chaotic, uncontrollable nature of the children's behaviour. A zoo suggests wild animals, disorder, and lack of human control — all qualities attributed to the classroom. The metaphor makes the chaos more concrete and memorable than a literal description would. It also carries a mildly humorous tone, comparing school children to zoo animals.] — Note: Always explain the effect, not just name the device.</li><li>What is the exposition in a story about a boy who discovers a magical object that grants wishes, but each wish has an unintended consequence? [Answer: The exposition establishes the main character (the boy), the setting (his ordinary life, perhaps a small town), the initial situation (his desire or problem that motivates him), and introduces the magical object. The exposition should answer: Who is the protagonist? Where and when does the story take place? What is the normal world before the magical event? What is the inciting incident that disrupts the normal world?] — Note: Exposition is the introductory section that provides background information before the main action begins.</li><li>Distinguish between the flat and round characters in a story where: (A) The stern headmaster who enforces rules without exception. (B) The rebellious student who challenges authority but secretly cares for a younger sibling. [Answer: The headmaster is a FLAT character — he is built around a single trait (strictness) and does not develop or change. He is easily described in one sentence. The student is a ROUND character — they have multiple traits (rebellious, caring, secretive) that create complexity and psychological depth. The student is capable of surprising the reader (rebellious but caring) in a convincing way. This contrast between flat and round characters is a common NEB exam question type.] — Note: Round characters are more developed and capable of change; flat characters are simple and one-dimensional.</li><li>What narrative technique is used when a story begins with the line: 'Looking back at it now, I realise that everything changed the day I found the letter.' [Answer: This opening uses flashback (or analepsis) — the narrator is looking back from a later point in time at events that happened in the past. The phrase 'Looking back at it now' signals that the narrator is recounting past events from a present perspective. This technique creates suspense (what was in the letter?) and establishes a reflective, retrospective tone. It also allows the narrator to provide commentary and interpretation of past events, which adds depth to the narrative.] — Note: Flashback is different from foreshadowing — flashback looks backward; foreshadowing hints at the future.</li><li>Explain how the author creates mood in this passage: 'The corridor stretched before them, endless and dimly lit. Each step echoed on the stone floor, louder than the last, as though the building itself were listening. The air was cold and carried the faint, metallic scent of old pipes. Somewhere deep within the walls, a door creaked open and shut again, though no one was there to open it.' [Answer: The author creates a mood of unease and suspense through several techniques: (1) Visual imagery — 'dimly lit', 'endless' corridor creates a sense of darkness and infinite space, evoking fear of the unknown. (2) Auditory imagery — 'echoed', 'louder than the last' creates tension through sound. (3) Personification — 'the building itself were listening' gives the building conscious awareness, creating a sense of being watched. (4) Olfactory imagery — 'metallic scent of old pipes' creates an unsettling, industrial atmosphere. (5) Suspenseful action — the door 'creaked open and shut again' with no visible cause creates fear and mystery. The cumulative effect is a mood of dread and apprehension, as though the setting itself is hostile.] — Note: Good mood analysis identifies multiple techniques and explains their cumulative effect.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Prose analysis as a taught skill in Nepali schools draws from both British literary criticism traditions and Indian academic practices. The NEB English syllabus includes both Western prose (short stories by O. Henry, Roald Dahl, etc.) and Nepali prose in translation, exposing students to diverse narrative traditions and analytical frameworks.</li><li>In the NEB English examination, prose analysis questions typically carry 10-20 marks across comprehension, critical appreciation, and character/theme analysis. The ability to support analytical claims with textual evidence is the key differentiator between high-scoring and low-scoring answers.</li><li>The distinction between plot and story is a fundamental concept in narratology (the study of narrative structure), developed by Russian formalist theorists in the early 20th century. This distinction is essential for NEB students because it helps them understand why authors arrange events in specific ways rather than simply telling events in chronological order.</li><li>Theme identification is one of the most challenging skills in prose analysis because it requires moving from specific story details to universal statements about life. Students often provide topics (single words like 'love', 'freedom') instead of themes (complete statements like 'Freedom requires personal sacrifice'). NEB examiners reward complete thematic statements with higher marks.</li><li>The concept of the 'unreliable narrator' — a narrator whose credibility is compromised by bias, ignorance, or deception — is a sophisticated literary technique that appears in advanced NEB prose analysis questions. Students who can identify and explain an unreliable narrator demonstrate deep understanding of narrative perspective.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>literature</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>literature</p></section>
+<section class="field"><h2>Visual Type</h2><p>heisenberg-uncertainty</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

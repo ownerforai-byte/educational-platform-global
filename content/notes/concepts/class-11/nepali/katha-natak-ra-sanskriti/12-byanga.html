@@ -1,0 +1,171 @@
+<!doctype html><html><head><meta charset="utf-8"><title>व्यङ्ग्य र हास्यव्यङ्ग्य</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Nepali  /  Katha Natak Ra Sanskriti</div>
+    <h1 class="doc">व्यङ्ग्य र हास्यव्यङ्ग्य</h1>
+    <div class="meta"><span>Class 11</span><span>Nepali</span><span>Katha Natak Ra Sanskriti</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>katha-natak-ra-sanskriti</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>व्यंग्य-र-हास्यव्यंग्य</p></section>
+<section class="field"><h2>Relevance</h2><p><code>96</code></p></section>
+<section class="field"><h2>Source</h2><p>authored</p></section>
+<section class="field"><h2>Summary</h2><p>व्यङ्ग्य हाँसो होइन, चोट देखाउने कला हो। हास्यव्यङ्ग्यले हाँसोबाट बेथिति देखाउँछ। प्रो उत्तरले कसलाई हाँसो लाग्छ र कसको बानी चिरिएको छ भन्ने कुरा लेख्छ।</p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>व्यङ्ग्य के हो।</strong> व्यङ्ग्यले सिधै गाली गर्दैन। उल्टो प्रशंसा, बढाइ वा हाँसोबाट कमजोरी देखाउँछ। भन्न खोजेको कुरा र भनिएको कुराको दुरी नै व्यङ्ग्य हो। लौ आयो ताजा खबर मा ताजा शब्द मीठो छ, तर हल्लाको रोग तीतो छ। त्यो दुरी व्यङ्ग्य हो।</li><li><strong>हास्य र व्यङ्ग्य।</strong> हास्यले हाँसो मात्र दिन्छ। व्यङ्ग्यले हाँसो पछि सोचाइ दिन्छ। हास्यव्यङ्ग्य दुवै सँगै हुन्छ। हाँसो नआए पनि चोट आए व्यङ्ग्य हुन सक्छ। हाँसो आएर केही नसोच्नुपर्‍यो भने हास्य मात्र हो। परीक्षामा यो छुट्याइ अनिवार्य छ।</li><li><strong>लक्ष्य।</strong> व्यङ्ग्य मानिसको जात वा शरीर होइन। बानी, ढोंग, हल्ला, घुस र देखावटीपन लक्ष्य हुन्। लक्ष्य बिर्सिएर पात्रलाई गाली लेख्नुभयो भने व्यङ्ग्य होइन, अपमान हुन्छ। प्रो उत्तरले लक्ष्यको नाम दिन्छ — हल्लामा दौडिने बानी।</li><li><strong>औजार।</strong> अतिशयोक्ति — सानो कुरालाई आकाशसम्म पुर्‍याउने। विरोधाभास — मुखले अर्कै, कामले अर्कै। अनुकरण — पात्रको बोली नक्कल गरेर खोक्रोपन देखाउने। लौ आयो भन्ने हतार अनुकरणको स्वर हो। औजारको नामसँगै पाठको एक उदाहरण दिनुहोस्।</li><li><strong>स्वर।</strong> व्यङ्ग्यको वाक्य प्रायः छोटो हुन्छ। दोहोरिन्छ। श्रोता आफैँले अर्थ जोड्छ। लेखकले यसको मतलब यो हो भनेर लामो व्याख्या गरे व्यङ्ग्य मर्छ। तर परीक्षाको उत्तरमा तपाईंले त्यो मतलब लेख्नुपर्छ। रचनाभित्र नभनिएको कुरा उत्तरमा भनिन्छ।</li><li><strong>सीमा।</strong> व्यङ्ग्यले संस्थाको ढोंग चिरोस, मानिसको अपमान नगरोस्। गरिबी, जात, लिङ्ग र अपाङ्गता हाँसोको विषय होइनन्। ती हाँसोमा परे रचना कमजोर हुन्छ र अन्यायमा सर्छ। यो सीमा उत्तरको अन्तिम वाक्य बनाउन सकिन्छ।</li><li><strong>नेपाली परम्परा।</strong> भैरव अर्याल जस्ता हास्यव्यङ्ग्यकारको नाम आउँछ। नाममात्र नलेख्नुहोस्। उनले के को ढोंग हाँसे भन्ने एक वाक्य थप्नुहोस्। नजाँचेको उद्धरण नबनाउनुहोस्। पाठ्य पाठको उदाहरण सुरक्षित छ।</li><li><strong>ढाँचा।</strong> परिभाषा। हास्यसँग फरक। लक्ष्य। एउटा औजार र पाठ्य उदाहरण। सीमा। व्यङ्ग्य सुधारका लागि हो भन्ने अन्तिम वाक्य।</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>व्यङ्ग्य भनिएको र भन्न खोजेको कुराको दुरी हो।</li><li>हास्यले हाँसो दिन्छ। व्यङ्ग्यले सोचाइ दिन्छ।</li><li>लक्ष्य बानी र ढोंग हुन्, जात वा शरीर होइनन्।</li><li>अतिशयोक्ति, विरोधाभास र अनुकरण औजार हुन्।</li><li>लेखकले अर्थ नखोले पनि उत्तरले अर्थ लेख्नुपर्छ।</li><li>गरिबी र जात हाँसोको विषय होइनन्।</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>प्रशंसाजस्तो देखिएर चोट दिने कला व्यङ्ग्य हो।</li><li>हाँसो पछि सुधारको आग्रह नआए व्यङ्ग्य अपूरो हुन्छ।</li><li>लक्ष्य बिग्रे अपमान बन्छ।</li><li>पाठको संवाद व्यङ्ग्यको सबैभन्दा बलियो प्रमाण हो।</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>लौ आयो ताजा खबर — ताजा शब्द लोभ हो। नाटकले त्यो लोभलाई हल्लाको रोग देखाउँछ।</li><li>अतिशयोक्ति — एउटा गफले गाउँ उठ्यो भन्ने बोलीले हतारको बानी ठूलो पारेर देखाउँछ।</li><li>सीमा — कसैको थर हाँसेर होइन, हल्ला बाँड्ने बानी हाँसेर व्यङ्ग्य लेखिन्छ।</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ हाँसो आएपछि सबै व्यङ्ग्य हुन् — ✅ हाँसो पछि सोचाइ नआए हास्य मात्र हो</li><li>❌ व्यङ्ग्य सिधा गाली हो — ✅ सिधा गालीले दुरी मेट्छ। व्यङ्ग्य दुरीमा बाँच्छ</li><li>❌ जातको नक्कल पनि व्यङ्ग्य हो — ✅ त्यो अपमान हो। लक्ष्य ढोंग हुनुपर्छ</li><li>❌ लेखकले अर्थ नभनेकाले उत्तरमा पनि नलेख्ने — ✅ रचनाभित्र लुकेको अर्थ उत्तरमा खोल्नुपर्छ</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>परिभाषा एक वाक्यमा कण्ठ गर्नुहोस् — भनिएको र भन्न खोजेको कुराको दुरी।</li><li>पाठबाट एक संवाद राखेर यसको लुकेको अर्थ लेख्नुहोस्।</li><li>लक्ष्य शब्द अनिवार्य लेख्नुहोस्। लक्ष्य नभएको व्यङ्ग्य उत्तर अधुरो हुन्छ।</li><li>हास्य र व्यङ्ग्य को फरक सोधिए दुई स्तम्भ बनाउनुहोस्।</li><li>अन्तिम वाक्य सुधारको लेख्नुहोस्। हाँसोमात्रैमा नसकाउनुहोस्।</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>व्यङ्ग्य सामाजिक कमजोरी देखाउने साहित्यिक तरिका हो।</li><li>अतिशयोक्ति सानो दोषलाई ठूलो बनाएर देखाइन्छ।</li><li>विरोधाभासमा बोली र काम मिलेका हुँदैनन्।</li><li>व्यङ्ग्यको सफलता पाठकले ढोंग चिन्नु हो।</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>नेपालका क्षेत्रीय बोलीको नक्कल गरेर हाँसो निकाल्नु व्यङ्ग्य होइन। बोली विविधता हो। ढोंग व्यङ्ग्यको विषय हो।</li><li>हास्यव्यङ्ग्यले सबै जातिका ढोंग देख्न सक्छ। एउटा समुदायलाई मात्र हाँसोको थलो नबनाउनुहोस्।</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>भैरव अर्यालको उद्धरण नजाँची नबनाउनुहोस्। काम एक वाक्यमा लेख्नुहोस्।</li><li>व्यङ्ग्य लेख्दा परीक्षाको भाषा शालीन राख्नुहोस्।</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>हास्य र व्यङ्ग्यको फरक उदाहरणसहित लेख्नुहोस्।</li><li>लौ आयो ताजा खबर मा व्यङ्ग्यको लक्ष्य के हो, लेख्नुहोस्।</li><li>व्यङ्ग्य कहिले अपमान बन्छ, दुई वाक्यमा लेख्नुहोस्।</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>व्यङ्ग्य के हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>सिधा गाली</li><li>भनिएको र भन्न खोजेको कुराको दुरी</li><li>केवल छन्द</li><li>केवल समाचार</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>उल्टो बोलीबाट चोट देखाउनु व्यङ्ग्य हो।</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>हास्य र व्यङ्ग्यको फरक के हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>केही फरक छैन</li><li>व्यङ्ग्यले हाँसो पछि सोचाइ दिन्छ</li><li>हास्य मात्र साहित्य हो</li><li>व्यङ्ग्यमा लक्ष्य हुँदैन</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>हाँसो मात्र आए हास्य। सोचाइ पनि आए व्यङ्ग्य।</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>व्यङ्ग्यको उचित लक्ष्य कुन हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>कसैको जात</li><li>हल्लामा दौडिने बानी</li><li>कसैको शरीर</li><li>गरिबी</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>लक्ष्य ढोंग र बानी हुन्। जात, शरीर र गरिबी हाँसोको विषय होइनन्।</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>अतिशयोक्तिले के गर्छ?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>दोषलाई ठूलो पारेर देखाउँछ</li><li>तथ्य लुकाउँछ मात्र</li><li>मिति लेख्छ</li><li>चिठी बन्द गर्छ</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>सानो हल्लालाई आकाश पुर्‍याउँदा बानी स्पष्ट देखिन्छ।</p></div></div></div></section>
+  <nav class="pager"><a href="11-bidha.html" title="कथा, कविता र नाटकका विधागत विशेषता">‹ कथा, कविता र नाटकका विधागत विशेषता</a><a class="mid" href="../../../../../_subjects/class-11-nepali.html">Nepali</a><a href="13-sanskriti.html" title="नेपाली सांस्कृतिक विविधता, चाडपर्व र परम्परा">नेपाली सांस्कृतिक विविधता, चाडपर्व र परम्परा ›</a></nav>
+</div></body></html>

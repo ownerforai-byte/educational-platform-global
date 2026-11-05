@@ -1,0 +1,179 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Variation in g due to Altitude and Depth</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Backup Physics 2026 09 22</div>
+    <h1 class="doc">Variation in g due to Altitude and Depth</h1>
+    <div class="meta"><span>Backup Physics 2026 09 22</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>gravitation</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>variation-g-altitude-depth</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Duplicate Type</h2><p><code>2</code></p></section>
+<section class="field"><h2>Tab Group</h2><p>variation-of-g-due-to-altitude-and-depth</p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>g above the surface (altitude):</strong> at height h above Earth's surface, g' = GM/(R+h)² = g(R/(R+h))². As h increases, g decreases. For small h (h ≪ R), a binomial expansion gives g' ≈ g(1 − 2h/R) — a useful approximation.</li><li><strong>g below the surface (depth):</strong> at depth d, only the mass inside the concentric sphere of radius (R−d) contributes: g' = g(1 − d/R) — gravity DECREASES linearly with depth. At the centre (d = R), g' = 0.</li><li><strong>Why they differ:</strong> above the surface, whole-earth mass acts from a larger distance (1/r² law); below the surface, the shell above the point exerts zero net force (shell theorem) and only the inner sphere matters, whose mass scales as (R−d)³ while distance scales as (R−d) — giving linear decrease.</li><li><strong>Worked example — altitude:</strong> at h = R (one Earth radius up), g' = g(R/2R)² = g/4 = 2.45 m/s². At h = 100 km, using the small-h formula, the fractional decrease is 2h/R = 2×100/6400 = 0.031, so g' ≈ 9.5 m/s².</li><li><strong>Worked example — depth:</strong> at d = R/2 (3200 km deep), g' = g(1 − 1/2) = g/2 = 4.9 m/s². At d = R (centre) → g' = 0 (weightlessness, though pressure is immense).</li><li><strong>Graphs (NEB favourite):</strong> g vs r rises linearly from 0 at the centre to g at the surface, then falls as 1/r² beyond the surface. The maximum value of g on Earth is at the surface.</li><li><strong>Other causes of variation:</strong> (1) rotation of Earth: g reduced by ω²R cos²λ (λ = latitude), maximum at the equator; (2) shape: Earth is an oblate spheroid — g is larger at the poles (≈9.832) than the equator (≈9.78); (3) local density anomalies (mountains, mineral deposits) cause tiny local changes used in geophysics.</li><li><strong>Altitude formula for satellites:</strong> for an orbit at height h, effective r = R + h: v = √(GM/(R+h)) and the orbital g is g' = GM/(R+h)² — the same g formula used at that radius.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ 'g increases with altitude.' ✅ Above the surface g DEcreases as 1/(R+h)²; below the surface it also decreases (linearly). g is max at the surface.</li><li>❌ 'From height h, g falls by h/R.' ✅ The small-h approximation is 2h/R (from the square), not h/R. At h = 100 km, that is ≈ 3%.</li><li>❌ 'Deep inside Earth, g keeps growing.' ✅ It decreases linearly: g' = g(1 − d/R), zero at the centre. The shell above you pulls equally in all directions (zero net).</li><li>❌ 'g is the same at poles and equator.' ✅ Rotation and the oblate shape make g slightly larger at the poles (~0.5% difference).</li><li>❌ 'At altitude 6400 km, g is half of surface.' ✅ At h = R, g' = g/4 — the height doubles the distance, so the square halves twice.</li><li>❌ 'Weightlessness in orbit means no gravity.' ✅ Astronauts at 400 km still feel ~88% of surface gravity — they float because they are in free fall around Earth.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Find g at a height of 1000 km (R = 6400 km, g = 9.8).</li><li>Find g at a depth of 1000 km.</li><li>At what height is g reduced by 1%? (Use the small-h formula.)</li><li>Compare g at the equator and pole given Earth's rotation speed at equator ≈ 465 m/s.</li><li>Show that g at h = R is g/4.</li><li>Sketch the g–r graph from the centre of Earth to 3R and label all key values.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Mines and boreholes show g decreasing with depth, exactly as the shell theorem predicts — gravity direction reverses inside Earth for local asymmetry reasons.</li><li>GOCE and GRACE satellites mapped tiny variations in Earth's g (from density differences) to model the interior and global water distribution.</li><li>At Earth's centre, g = 0 but pressure is ~3.6 million atmospheres — so you'd be crushed, not weightless in the usual sense.</li><li>The international gravity formula accounts for latitude: g(λ) ≈ 9.7803(1 + 0.0053 sin²λ) m/s².</li><li>Astronauts in low Earth orbit experience ~0.9 g of gravity yet float — free fall, not absence of gravity, explains weightlessness.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>gravitation</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>gravitation</p></section>
+<section class="field"><h2>Examples</h2><ul><li>h = R: g' = g/4 = 2.45 m/s².</li><li>h = 200 km: g' ≈ g(1 − 2×200/6400) = 9.8 × 0.9375 = 9.2 m/s² (ISS altitude ≈ 400 km → ≈8.7 m/s²).</li><li>d = R/2: g' = g/2 = 4.9 m/s².</li><li>d = R: g' = 0.</li><li>Equator vs pole: g_eq ≈ 9.78, g_pole ≈ 9.83 — difference ≈ 0.5%.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Find the value of g at a height of 3200 km above Earth's surface (g = 9.8, R = 6400 km).</li><li>Find g at a depth of 3200 km below Earth's surface.</li><li>At what height will g reduce to 81% of its surface value?</li><li>At what depth will g reduce to 50% of its surface value?</li><li>Compute the percentage change in g at the top of Mount Everest (h ≈ 8.8 km).</li><li>Explain with a diagram how g varies from the centre of Earth to a distance far beyond the surface.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>g at altitude h: g' = g(R/(R+h))²</li><li>Small-h approximation: g' ≈ g(1 − 2h/R)</li><li>g at depth d: g' = g(1 − d/R)</li><li>g at latitude λ due to rotation: g' = g − ω²R cos²λ</li><li>g inside a uniform sphere: g' = g·r/R (r ≤ R)</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Above the surface: g' = g(R/(R+h))² — decreases as 1/(R+h)².</li><li>Below the surface: g' = g(1 − d/R) — decreases linearly to zero at the centre.</li><li>g is maximum at the surface.</li><li>Rotation and oblateness also reduce g at the equator.</li><li>The g–r graph: linear rise inside, 1/r² fall outside.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>g varies with altitude (g' = g(R/(R+h))²), depth (g' = g(1 − d/R)), and latitude. Above the surface g falls as the inverse square of distance; below the surface the shell theorem makes it fall linearly to zero at the centre. The g–r graph is a straight rise then a 1/r² fall.</p></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Small-height formula: g' ≈ g(1 − 2h/R) — remember the factor 2.</li><li>Shell theorem is the tool for points inside Earth — shells outside contribute zero net force.</li><li>g at poles is slightly greater than at the equator due to rotation and oblateness.</li><li>NEB asks to derive both formulas and to sketch the g–r graph.</li><li>Satellite problems use r = R + h in g = GM/r² too.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>At altitude h, g' = g(R/(R+h))².</li><li>At depth d, g' = g(1 − d/R).</li><li>g is maximum at Earth's surface.</li><li>Inside a uniform sphere, g varies linearly with distance from the centre.</li><li>Rotation and non-spherical shape cause additional small variations of g with latitude.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>At altitude: g' = g(R/(R+h))²; at depth: g' = g(1 − d/R).</li><li>g is maximum at the surface and falls on both sides (linear inside, 1/r² outside).</li><li>The small-height approximation g' ≈ g(1 − 2h/R) has a factor of 2.</li><li>Shell theorem: shells outside the point contribute zero net field.</li><li>Rotation reduces g at the equator: g' = g − ω²R cos²λ.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>h = R → g/4; d = R/2 → g/2 — memorise these anchor values.</li><li>Percentage change at small h ≈ (2h/R)×100%.</li><li>For depth use linear term only — no square.</li><li>Inside the sphere r ≤ R: g' = g·r/R (direct proportion).</li><li>Weight at centre of Earth: zero apparent weight (g = 0).</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Deriving g' = g(1 − 2h/R) from the binomial expansion is frequently asked.</li><li>Sketch-the-graph questions (inside + outside) appear in exams.</li><li>Numericals mixing altitude and depth are standard.</li><li>The rotation term g' = g − ω²R cos²λ is a common short answer.</li><li>Comparing g at poles vs equator is a favourite conceptual MCQ.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>At a height equal to Earth's radius, the value of g is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>g</li><li>g/2</li><li>g/4</li><li>zero</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>At the centre of Earth, the value of g is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>9.8</li><li>zero</li><li>g/2</li><li>2g</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Inside a uniform sphere, g varies with distance r from the centre as:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>1/r²</li><li>linearly (∝ r)</li><li>1/r</li><li>constantly</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>The value of g is slightly larger at the:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>equator</li><li>poles</li><li>centre</li><li>mountains</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>At depth d, g' is given by:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>g(1 − d/R)</li><li>g(R/(R+d))²</li><li>g(1−2d/R)</li><li>g·d/R</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Altitude: g' = g(R/(R+h))² (inverse-square fall above the surface).</li><li>Depth: g' = g(1 − d/R) (linear fall inside).</li><li>g is maximum at Earth's surface.</li><li>Rotation and ellipticity cause small latitude variations.</li><li>The g–r graph is triangular-like: linear rise then inverse-square fall.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Derive the altitude formula and its small-h approximation.</li><li>Derive the depth formula using the shell theorem.</li><li>Solve 5 mixed altitude/depth numericals.</li><li>Sketch and label the g–r graph from centre to beyond the surface.</li><li>Compute the effect of rotation on g at the equator.</li></ul></section>
+  <nav class="pager"><a href="03-gravitational-potential-energy.html" title="Gravitational Potential and Potential Energy">‹ Gravitational Potential and Potential Energy</a><a class="mid" href="../../../_subjects/general-backup-physics-2026-09-22.html">Backup Physics 2026 09 22</a><a href="04-variation-g-altitude-depth.html" title="Variation in g due to Altitude and Depth">Variation in g due to Altitude and Depth ›</a></nav>
+</div></body></html>

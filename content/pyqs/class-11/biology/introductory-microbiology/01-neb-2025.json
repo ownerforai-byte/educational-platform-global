@@ -1,0 +1,59 @@
+{
+  "title": "NEB Class 11 Biology — Introductory Microbiology — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "introductory-microbiology",
+  "origin": "curated NEB-pattern set covering every topic of the class-11 introductory microbiology unit",
+  "questions": [
+    {
+      "id": "bio-mic-2025-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Describe the structure of a bacterial cell and state the function of any three parts.",
+      "solution": "A bacterial cell has a cell envelope of capsule (in some), cell wall of peptidoglycan and plasma membrane; inside lie the nucleoid — a single circular DNA without histones — 70S ribosomes, plasmids, inclusion bodies and storage granules. Many bear flagella for movement, pili for attachment and conjugation, and some form endospores.\nFunctions: the capsule protects against drying and phagocytosis and helps adhesion; the cell wall gives shape and resists osmotic lysis; flagella provide motility; pili transfer DNA during conjugation; ribosomes carry out protein synthesis."
+    },
+    {
+      "id": "bio-mic-2025-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Explain the modes of nutrition in bacteria and describe the bacterial growth curve.",
+      "solution": "Autotrophic bacteria make their own food — photoautotrophs use light (cyanobacteria) and chemoautotrophs oxidise inorganic compounds (Nitrosomonas). Heterotrophic bacteria depend on organic matter: saprophytes decompose dead material, parasites live on hosts and pathogens cause disease.\nIn a closed culture the growth curve has four phases: lag (cells adapt and enzymes are induced, no division), log or exponential (fastest doubling under ample food), stationary (growth equals death as nutrients fall and waste accumulates) and decline or death phase."
+    },
+    {
+      "id": "bio-mic-2025-3",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Give the characteristic features of cyanobacteria and their economic importance.",
+      "solution": "Cyanobacteria are prokaryotic, photosynthetic and mostly blue-green; they contain chlorophyll a with phycocyanin and phycoerythrin, have no flagella, and store food as cyanophycean starch. Some form filaments with heterocysts for nitrogen fixation, and many secrete mucilage.\nImportance: they fix atmospheric nitrogen (Anabaena, Nostoc) and are used as biofertiliser in paddy fields, add organic matter and improve soil fertility, serve as protein-rich food (Spirulina) and are used in sewage treatment. On the other hand, heavy growth in nutrient-rich water causes blooms that deoxygenate the water and release toxins."
+    },
+    {
+      "id": "bio-mic-2025-4",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Draw the general structure of a virus and explain why viruses are regarded as a link between living and non-living things.",
+      "solution": "A virus has a nucleic acid core — either DNA or RNA, never both — enclosed in a protein coat, the capsid, built of subunits called capsomeres; some also have an envelope derived from the host membrane.\nThey behave as non-living outside a host: they have no cytoplasm, ribosomes or metabolism, do not respire, cannot reproduce independently and can be crystallised and stored like a chemical (tobacco mosaic virus). Yet inside a suitable host they replicate, mutate and evolve and show host specificity, so they sit on the border between living and non-living.",
+      "diagram": "<svg viewBox=\"0 0 500 300\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"100%\" style=\"max-width:500px\"><polygon points=\"250,20 310,55 310,120 250,155 190,120 190,55\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n   <rect x=\"230\" y=\"155\" width=\"40\" height=\"14\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n   <rect x=\"232\" y=\"169\" width=\"36\" height=\"14\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n   <line x1=\"250\" y1=\"60\" x2=\"250\" y2=\"120\" stroke=\"#9ca3af\"/>\n   <path d=\"M240 82 q10 -14 20 0 q-10 14 -20 0\" fill=\"#9ca3af\"/>\n   <rect x=\"225\" y=\"196\" width=\"50\" height=\"10\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n   <path d=\"M232 206 l-22 44 M242 206 l-8 46 M258 206 l8 46 M268 206 l22 44\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n   <text x=\"320\" y=\"50\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Head (capsid of capsomeres)</text>\n   <line x1=\"315\" y1=\"46\" x2=\"290\" y2=\"58\" stroke=\"#9ca3af\"/>\n   <text x=\"320\" y=\"80\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Nucleic acid core (DNA or RNA)</text>\n   <line x1=\"315\" y1=\"76\" x2=\"262\" y2=\"86\" stroke=\"#9ca3af\"/>\n   <text x=\"320\" y=\"160\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Collar and sheath</text>\n   <line x1=\"315\" y1=\"156\" x2=\"270\" y2=\"170\" stroke=\"#9ca3af\"/>\n   <text x=\"320\" y=\"205\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Base plate</text>\n   <line x1=\"315\" y1=\"201\" x2=\"278\" y2=\"201\" stroke=\"#9ca3af\"/>\n   <text x=\"120\" y=\"270\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Tail fibres (adsorption to host)</text>\n   <line x1=\"200\" y1=\"262\" x2=\"226\" y2=\"216\" stroke=\"#9ca3af\"/></svg>",
+      "diagramCaption": "Figure: general structure of a virus as seen in a bacteriophage — nucleic acid core inside a capsid of capsomeres, with collar, sheath, base plate and tail fibres for adsorption."
+    },
+    {
+      "id": "bio-mic-2025-5",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Describe the lytic cycle of a bacteriophage.",
+      "solution": "1. Adsorption: the phage tail fibres recognise and attach to specific receptors on the bacterial wall.\n2. Penetration: the tail sheath contracts and injects the phage DNA into the bacterium, leaving the capsid outside.\n3. Biosynthesis: host DNA is degraded and the phage DNA directs the host machinery to make phage DNA and proteins.\n4. Maturation: heads, tails and DNA are assembled into new virions.\n5. Lysis: phage lysozyme bursts the cell, releasing many progeny phages that infect new bacteria.\nIn the lysogenic cycle the phage DNA instead integrates into the bacterial chromosome as a prophage and is copied with it until induction triggers the lytic cycle."
+    },
+    {
+      "id": "bio-mic-2025-6",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "State four impacts of biotechnology in the field of microbiology.",
+      "solution": "1. Recombinant bacteria such as E. coli produce human insulin, growth hormone and interferon, giving pure products in bulk.\n2. Fermentation industries use microbes to make antibiotics (penicillin from Penicillium), alcohol, citric acid, vitamins and enzymes.\n3. Gene cloning, PCR and DNA probes let pathogens be detected quickly and vaccines and gene therapy developed.\n4. Engineered microbes carry out bioremediation of oil spills and industrial waste and produce biogas, while microbial genomics helps trace outbreaks.\nRisks such as escape of engineered strains and antibiotic-resistance genes mean such work needs strict containment."
+    }
+  ]
+}

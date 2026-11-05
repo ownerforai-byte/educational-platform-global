@@ -1,0 +1,75 @@
+{
+  "title": "NEB Class 12 Biology — Organisms And Environment — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "organisms-and-environment",
+  "origin": "curated NEB-pattern set covering every topic of the class-12 organisms and environment unit",
+  "questions": [
+    {
+      "id": "bio-org-2025-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Describe the adaptations of desert plants and desert animals to water scarcity.",
+      "solution": "Desert plants (xerophytes): thick waxy cuticle and sunken stomata reduce transpiration, leaves reduced to spines with photosynthesis in the green stem, deep tap roots or wide shallow roots, water stored in succulent tissue, and a short life cycle completed after rain.\nDesert animals: nocturnal habit and burrowing to escape heat, water from metabolic oxidation of fats (kangaroo rat), concentrated urine and dry faeces to conserve water, a thick skin or scales, and aestivation or dormancy in the hottest period; camels store fat in the hump and tolerate high body temperature, conserving water."
+    },
+    {
+      "id": "bio-org-2025-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Explain exponential and logistic population growth, defining r and K.",
+      "solution": "Exponential growth occurs when resources are unlimited: dN/dt = rN, giving N = N₀e^{rt}, an accelerating J-shaped curve where r is the intrinsic rate of natural increase (births minus deaths per individual).\nLogistic growth occurs when resources are limited: dN/dt = rN(K − N)/K, giving a sigmoid S-shaped curve that levels off at K, the carrying capacity — the maximum population the environment can support. Growth is fastest at N = K/2. Real populations follow logistic growth: initial slow phase, rapid growth, and a plateau as competition, disease and predation increase.",
+      "diagram": "<svg viewBox=\"0 0 520 290\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"100%\" style=\"max-width:520px\"><line x1=\"60\" y1=\"240\" x2=\"480\" y2=\"240\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n   <line x1=\"60\" y1=\"240\" x2=\"60\" y2=\"30\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n   <path d=\"M60 238 q90 -6 130 -40 q60 -50 120 -110 q40 -40 90 -52\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" stroke=\"#6b7280\"/>\n   <path d=\"M60 238 q100 -8 150 -30 q60 -28 90 -70 q25 -45 20 -88\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" stroke=\"#111827\" stroke-width=\"2\"/>\n   <line x1=\"60\" y1=\"62\" x2=\"480\" y2=\"62\" stroke=\"#9ca3af\" stroke-dasharray=\"5 4\"/>\n   <text x=\"380\" y=\"56\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">K (carrying capacity)</text>\n   <text x=\"300\" y=\"120\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Logistic (S-shaped)</text>\n   <text x=\"330\" y=\"205\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Exponential (J-shaped)</text>\n   <text x=\"430\" y=\"262\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">time</text>\n   <text x=\"8\" y=\"40\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">N</text>\n   <text x=\"90\" y=\"272\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">dN/dt = rN</text>\n   <text x=\"90\" y=\"286\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">dN/dt = rN(K−N)/K</text></svg>",
+      "diagramCaption": "Figure: exponential (J-shaped) growth under unlimited resources and logistic (S-shaped) growth that levels off at the carrying capacity K."
+    },
+    {
+      "id": "bio-org-2025-3",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Describe five types of population interaction with one example each.",
+      "solution": "Mutualism (+, +): both benefit — alga and fungus in a lichen; fig and its pollinating wasp.\nCompetition (−, −): both are harmed — two grass species competing for water and light, or barnacles on a rock.\nPredation (+, −): the predator gains and the prey is killed — tiger and deer; the prey evolves defences such as spines or camouflage.\nParasitism (+, −): the parasite gains, the host is harmed — Cuscuta on a host plant, Plasmodium in man.\nCommensalism (+, 0): one gains, the other is unaffected — an orchid growing on a mango branch, or barnacles on a whale's skin."
+    },
+    {
+      "id": "bio-org-2025-4",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Describe the structure and function of an ecosystem, and the steps of decomposition.",
+      "solution": "Structure: abiotic components (light, temperature, water, soil, nutrients) and biotic components — producers, consumers of the first, second and third order, and decomposers.\nFunction: productivity (gross and net primary production), decomposition, energy flow through food chains and nutrient cycling, all driven by the one-way flow of energy from the sun and the cycling of matter.\nDecomposition steps: fragmentation of detritus by detritivores, leaching of soluble inorganic nutrients, catabolism by bacterial and fungal enzymes, humification forming humus, and mineralisation releasing inorganic nutrients back to the soil; it is faster in warm, moist, aerobic conditions."
+    },
+    {
+      "id": "bio-org-2025-5",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "What is ecological succession? Differentiate hydrarch from xerarch succession and define pioneer and climax community.",
+      "solution": "Ecological succession is the gradual, directional replacement of one community by another at a site until a stable community establishes.\nHydrarch succession begins in water: phytoplankton → submerged plants → floating plants → reed swamp → marsh meadow → scrub → forest as sediment and organic matter fill the water body. Xerarch succession begins on bare rock: lichens → mosses → grasses → shrubs → trees, as the rock weathers into soil. Both are autogenic, driven by the organisms themselves changing conditions.\nThe pioneer community is the first to colonise (lichen on rock, phytoplankton in water); the climax community is the final stable community in equilibrium with the climate, such as a forest."
+    },
+    {
+      "id": "bio-org-2025-6",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Describe the carbon and phosphorus cycles and state how human activity disturbs them.",
+      "solution": "Carbon: CO2 is fixed by photosynthesis, passed through food chains, returned by respiration and decomposition, and exchanged with the oceans and carbonate rocks; some carbon is buried as fossil fuel.\nPhosphorus: it has no gaseous phase. Phosphate is released by weathering of rock, absorbed by plants, passed to animals, returned in excreta and dead matter, and deposited in sediments as calcium phosphate or guano — a sedimentary cycle.\nHuman disturbance: burning fossil fuels and deforestation add CO2 faster than it is fixed, driving global warming; mining rock phosphate, harvesting crops and excessive fertiliser use and runoff accelerate phosphorus loss to water, causing eutrophication."
+    },
+    {
+      "id": "bio-org-2025-7",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Explain energy flow and ecological pyramids, and state one limitation of each type of pyramid.",
+      "solution": "Energy flows one way: sunlight → producers → herbivores → carnivores, and is lost as heat at every transfer. According to the ten per cent law only about 10% passes to the next level, so food chains rarely have more than four or five links.\nPyramids of number: can be inverted (many insects on one tree) and do not show energy. Pyramids of biomass: can be inverted in aquatic ecosystems where phytoplankton biomass is small but turnover is rapid. Pyramids of energy: always upright, since energy decreases at each step, and are the most reliable representation of trophic structure."
+    },
+    {
+      "id": "bio-org-2025-8",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "Define population density and name three attributes used to describe a population besides density.",
+      "solution": "Population density is the number of individuals of a species per unit area or volume at a given time (N/A or N/V).\nThree other attributes: natality or birth rate and mortality or death rate, which decide growth; age distribution — the proportion of pre-reproductive, reproductive and post-reproductive individuals, shown as an age pyramid; and dispersion, the spatial pattern (clumped, uniform or random). Sex ratio and immigration or emigration also change population size, and density can be measured by counting, quadrat sampling or mark–recapture."
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Processes: PCR, Gel Electrophoresis</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 12  /  Biology  /  Biotech Principles</div>
+    <h1 class="doc">Processes: PCR, Gel Electrophoresis</h1>
+    <div class="meta"><span>Class 12</span><span>Biology</span><span>Biotech Principles</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>biotech-principles</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>biotech-processes</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Visual Type</h2><p>dna-double-helix</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>PCR copies a chosen stretch of the double helix. Gel electrophoresis then sorts the copies by size.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li>PCR makes many copies of one chosen stretch of DNA. It does not copy the whole genome unless the primers are aimed at the whole genome. Two primers mark the ends of the target.</li><li>Each cycle has three temperature steps. Near 94 °C the two strands separate. The heat replaces a helicase. Near 50 to 65 °C, depending on the primer, the primers bind. At 72 °C a thermostable polymerase extends the primers. Taq polymerase, from Thermus aquaticus, survives the hot step that would destroy an ordinary polymerase.</li><li>The tube must contain template DNA, two primers, dNTPs, Taq polymerase and magnesium ions. Miss any one and the reaction stops. Magnesium is a cofactor for the polymerase.</li><li>If every molecule is copied, the count follows N = N0 × 2^n. Ten cycles give 2^10 = 1024 copies from one molecule. Twenty cycles give about a million. Thirty cycles give about a billion. Real reactions slow down once primers or dNTPs run low.</li><li>Gel electrophoresis sorts the products by size. DNA is negatively charged, so it moves toward the anode in an agarose gel. Smaller fragments slip through the gel faster and travel farther. A lane of known sizes, the ladder, turns distance into a length.</li><li>A linear DNA with n restriction sites gives n + 1 bands if every site is cut. A circular plasmid with n sites gives n bands. The pattern of bands is a restriction map you can read. The DNA is seen after a stain that fluoresces under ultraviolet light.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Notes</h2><ul><li>PCR makes many copies of one chosen stretch of DNA. It does not copy the whole genome unless the primers are aimed at the whole genome. Two primers mark the ends of the target.</li><li>Each cycle has three temperature steps. Near 94 °C the two strands separate. The heat replaces a helicase. Near 50 to 65 °C, depending on the primer, the primers bind. At 72 °C a thermostable polymerase extends the primers. Taq polymerase, from Thermus aquaticus, survives the hot step that would destroy an ordinary polymerase.</li><li>The tube must contain template DNA, two primers, dNTPs, Taq polymerase and magnesium ions. Miss any one and the reaction stops. Magnesium is a cofactor for the polymerase.</li><li>If every molecule is copied, the count follows N = N0 × 2^n. Ten cycles give 2^10 = 1024 copies from one molecule. Twenty cycles give about a million. Thirty cycles give about a billion. Real reactions slow down once primers or dNTPs run low.</li><li>Gel electrophoresis sorts the products by size. DNA is negatively charged, so it moves toward the anode in an agarose gel. Smaller fragments slip through the gel faster and travel farther. A lane of known sizes, the ladder, turns distance into a length.</li><li>A linear DNA with n restriction sites gives n + 1 bands if every site is cut. A circular plasmid with n sites gives n bands. The pattern of bands is a restriction map you can read. The DNA is seen after a stain that fluoresces under ultraviolet light.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>PCR does not use a helicase. Strand separation is done by heat, which is why the polymerase must be thermostable.</li><li>Both primers are required. One primer does not define a segment that doubles each cycle.</li><li>DNA moves to the positive electrode, the anode, because the backbone is negative. It does not move to the cathode.</li><li>A brighter band is not automatically a longer fragment. Brightness follows how many molecules are there. Distance follows size.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>PCR cycle: about 94 °C separate, about 50–65 °C anneal, 72 °C extend.</li><li>Taq polymerase comes from Thermus aquaticus.</li><li>N = N0 × 2^n when efficiency is complete.</li><li>DNA migrates to the anode. Smaller fragments go farther.</li><li>Linear DNA: n sites → n + 1 fragments. Circular: n sites → n fragments.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Heat, not an enzyme, separates the strands in PCR.</li><li>The primers decide which stretch is amplified.</li><li>Gel position reports size. Band intensity reports amount.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>One virus genome amplified for 20 cycles yields about 10^6 copies of the target, enough to detect.</li><li>A small restriction fragment runs ahead of a large one in the same agarose lane.</li><li>A plasmid cut at one site opens into a single linear band, not two.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Taq remains active after the 94 °C step because its source organism lives in hot springs.</li><li>At a complete efficiency, each cycle doubles the number of target molecules.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>N = N0 × 2^n</li><li>2^10 = 1024, so 10 cycles multiply one molecule about a thousand-fold.</li><li>Distance travelled in the gel decreases as fragment size increases.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Name the three temperatures and what happens at each.</li><li>Calculate the copies after 10 cycles from a single template.</li><li>Explain which electrode DNA moves toward, and why a short fragment wins the race.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Why is an ordinary DNA polymerase a poor choice for PCR?</li><li>A reaction includes template, Taq and dNTPs, but no primers. What is produced?</li><li>Two bands appear after a circular plasmid is cut. How many sites were cut?</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Write the three temperatures in order and attach one event to each. A bare list of numbers is weaker.</li><li>If a count is asked, start from N = N0 × 2^n and show the power of two. Do not jump to the final figure.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Hot spring bacterium → Taq survives 94 °C.</li><li>Anode attracts DNA. Small goes far.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Say 'about 94 °C' and '72 °C'. Annealing is a range because it depends on the primer.</li><li>Do not call the gel a sequencer. It sorts by size. It does not read the bases.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Magnesium ions belong in the ingredients list.</li><li>The doubling formula assumes every molecule is copied. Late cycles are less perfect.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Strands are separated in PCR by</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Helicase</li><li>Heat near 94 °C</li><li>Ligase</li><li>A restriction enzyme</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Taq polymerase is used because it</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Cuts palindromes</li><li>Survives the denaturation step</li><li>Is an RNA primer</li><li>Stains the gel</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>From one molecule, 10 perfect PCR cycles produce</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>10 copies</li><li>20 copies</li><li>1024 copies</li><li>2 copies</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>In agarose gel electrophoresis, DNA moves toward</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>The cathode, because it is positive</li><li>The anode, because it is negative</li><li>Neither electrode</li><li>The loading well only</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Three-step PCR cycle</li><li>Taq and Thermus aquaticus</li><li>Exponential copy number</li><li>Agarose separation by size</li><li>Reading a restriction pattern</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Compute 2^10 and 2^20 from one starting molecule.</li><li>Predict band count for a circular plasmid cut at 1 site and at 3 sites.</li></ul></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>One DNA molecule is amplified by PCR for 10 cycles at full efficiency. How many target copies are present at the end?</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Use N = N0 × 2^n.</li><li>N0 = 1 and n = 10, so N = 2^10.</li><li>2^10 = 1024.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>1024 copies.</p></div></div></div></section>
+<section class="field"><h2>Summary</h2><p>PCR doubles a primer-defined target each cycle: strands separate near 94 °C, primers bind, and Taq polymerase extends them at 72 °C. The yield is N0 × 2^n while the reaction is efficient. The copies are then separated on an agarose gel, where negatively charged DNA runs to the anode and smaller pieces travel farther.</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Strands are separated in PCR by</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Helicase</li><li>Heat near 94 °C</li><li>Ligase</li><li>A restriction enzyme</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Taq polymerase is used because it</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Cuts palindromes</li><li>Survives the denaturation step</li><li>Is an RNA primer</li><li>Stains the gel</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>From one molecule, 10 perfect PCR cycles produce</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>10 copies</li><li>20 copies</li><li>1024 copies</li><li>2 copies</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>In agarose gel electrophoresis, DNA moves toward</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>The cathode, because it is positive</li><li>The anode, because it is negative</li><li>Neither electrode</li><li>The loading well only</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+  <nav class="pager"><a href="02-tools-biotech.html" title="Tools: Restriction Enzymes, Vectors">‹ Tools: Restriction Enzymes, Vectors</a><a class="mid" href="../../../../../_subjects/class-12-biology.html">Biology</a><span></span></nav>
+</div></body></html>

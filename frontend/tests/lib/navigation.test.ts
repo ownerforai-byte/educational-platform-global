@@ -1,7 +1,13 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { NAV_SECTIONS, QUICK_LINKS, quickLinkMinTier } from "@/lib/navigation";
+import {
+  APP_TABS,
+  NAV_HREFS,
+  NAV_SECTIONS,
+  QUICK_LINKS,
+  quickLinkMinTier,
+} from "@/lib/navigation";
 import { collectRoutes, routeExists } from "../helpers/route-tree";
 
 /**
@@ -116,14 +122,22 @@ describe("navigation menu", () => {
     }
   });
 
-  it("keeps one quick-items strip, removes the broken duplicate, and omits Search", () => {
+  it("mounts one app frame and drives it from the shared registry", () => {
     const read = (p: string) => readFileSync(path.resolve(p), "utf8");
     const shell = read("components/layout/app-shell.tsx");
-    const mobileQuickNav = read("components/layout/mobile-quick-nav.tsx");
+    const tabBar = read("components/layout/bottom-tab-bar.tsx");
 
-    expect(shell.match(/<MobileQuickNav\s*\/>/g)).toHaveLength(1);
+    // One app frame, never a second competing quick-nav strip.
+    expect(shell.match(/<BottomTabBar\s*\/>/g)).toHaveLength(1);
     expect(shell).not.toContain("QuickAccessBar");
-    expect(mobileQuickNav).toContain("QUICK_LINKS");
-    expect(mobileQuickNav).not.toContain('{ href: "/search", label: "Search" }');
+    expect(shell).not.toContain("MobileQuickNav");
+    expect(tabBar).toContain("APP_TABS");
+
+    // Every tab is a real page and a real registry destination, so phone,
+    // tablet and desktop can never disagree about where a tab lands.
+    for (const tab of APP_TABS) {
+      expect(NAV_HREFS, `tab ${tab.href} is missing from NAV_SECTIONS`).toContain(tab.href);
+      expect(routeExists(tab.href), `tab ${tab.href} has no page`).toBe(true);
+    }
   });
 });

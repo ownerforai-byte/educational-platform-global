@@ -1,0 +1,158 @@
+<!doctype html><html><head><meta charset="utf-8"><title>NEB Class 11 Mock Exam 01 — Physics, Chemistry, Biology, Mathematics</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Exams</div>
+    <h1 class="doc">NEB Class 11 Mock Exam 01 — Physics, Chemistry, Biology, Mathematics</h1>
+    <div class="meta"><span>Exams</span></div>
+  </header>
+  <section class="field"><h2>SLUG</h2><p>exam-01</p></section>
+<section class="field"><h2>Duration Min</h2><p><code>60</code></p></section>
+<section class="field"><h2>Questions</h2><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q01</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Enzymes, the biological catalysts that speed up reactions in cells, are chemically which class of biomolecules?</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Carbohydrates</li><li>Lipids</li><li>Proteins</li><li>Nucleic acids</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Enzymes are globular proteins; only a few RNA molecules (ribozymes) act catalytically outside this rule.</p></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q02</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Which organelle is called the powerhouse of the eukaryotic cell because it carries out aerobic respiration?</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Ribosome</li><li>Mitochondrion</li><li>Golgi body</li><li>Lysosome</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Mitochondria generate ATP through oxidative phosphorylation.</p></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q03</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The system of binomial nomenclature used to name every species scientifically was introduced by:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Charles Darwin</li><li>R. H. Whittaker</li><li>Carolus Linnaeus</li><li>Carl Woese</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Linnaeus introduced binomial nomenclature; Whittaker proposed the five-kingdom system and Woese the three domains.</p></dd></div></dl></div></div><div class="item"><span class="idx">4.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q04</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>A lichen is a dual organism produced by symbiosis between:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>An alga and a fungus</li><li>A moss and a fungus</li><li>A bacterium and an alga</li><li>A fungus and a bryophyte</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>0</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>The algal partner photosynthesises while the fungal partner absorbs water and minerals and gives shelter.</p></dd></div></dl></div></div><div class="item"><span class="idx">5.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q05</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Spirogyra, recognised by its ribbon-shaped spiral chloroplasts, belongs to:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Brown algae</li><li>Red algae</li><li>Blue-green algae</li><li>Green algae</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>3</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Spirogyra is a filamentous member of Chlorophyceae, the green algae.</p></dd></div></dl></div></div><div class="item"><span class="idx">6.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q06</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>How many moles are present in 44 g of carbon dioxide (molar mass 44 g/mol)?</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>0.5 mol</li><li>1 mol</li><li>2 mol</li><li>44 mol</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>n = m/M = 44/44 = 1 mol.</p></dd></div></dl></div></div><div class="item"><span class="idx">7.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q07</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>What volume does 0.5 mol of an ideal gas occupy at STP?</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>5.6 L</li><li>11.2 L</li><li>22.4 L</li><li>44.8 L</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>At STP one mole occupies 22.4 L, so 0.5 mol occupies 11.2 L.</p></dd></div></dl></div></div><div class="item"><span class="idx">8.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q08</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>According to Bohr's model, the ratio of the radius of the n = 2 orbit to that of the n = 1 orbit of hydrogen is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>2 : 1</li><li>4 : 1</li><li>8 : 1</li><li>16 : 1</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Radius is proportional to n², so r₂/r₁ = 4/1.</p></dd></div></dl></div></div><div class="item"><span class="idx">9.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q09</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>For a d subshell, the azimuthal quantum number l has the value:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>0</li><li>1</li><li>2</li><li>3</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>l = 0, 1, 2, 3 correspond to s, p, d, f respectively.</p></dd></div></dl></div></div><div class="item"><span class="idx">10.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q10</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The maximum number of electrons that the M shell (n = 3) can accommodate is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>8</li><li>10</li><li>18</li><li>32</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Capacity = 2n² = 2 × 9 = 18 electrons for n = 3.</p></dd></div></dl></div></div><div class="item"><span class="idx">11.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q11</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The discriminant of the quadratic equation 2x² − 5x + 3 = 0 is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>−7</li><li>1</li><li>24</li><li>49</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>D = b² − 4ac = 25 − 24 = 1, so roots are real, distinct and rational.</p></dd></div></dl></div></div><div class="item"><span class="idx">12.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q12</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>If α and β are the roots of x² − 7x + 10 = 0, then α + β equals:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>−7</li><li>7</li><li>10</li><li>−10</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Sum of roots = −b/a = 7 for this equation.</p></dd></div></dl></div></div><div class="item"><span class="idx">13.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q13</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>For every x in [−1, 1], sin⁻¹x + cos⁻¹x equals:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>0</li><li>π/4</li><li>π/2</li><li>π</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Inverse sine and cosine are complementary on [−1, 1]: their sum is π/2.</p></dd></div></dl></div></div><div class="item"><span class="idx">14.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q14</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The general solution of the equation sin θ = 0 is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>θ = nπ/2</li><li>θ = nπ</li><li>θ = 2nπ</li><li>θ = (2n + 1)π/2</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Sine vanishes at every integer multiple of π, n ∈ ℤ.</p></dd></div></dl></div></div><div class="item"><span class="idx">15.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q15</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The sum of the infinite geometric series 1 + 1/2 + 1/4 + 1/8 + … is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>3/2</li><li>2</li><li>5/2</li><li>Diverges</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>S∞ = a/(1 − r) = 1/(1 − 1/2) = 2 since |r| &lt; 1.</p></dd></div></dl></div></div><div class="item"><span class="idx">16.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q16</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Two forces of 3 N and 4 N act at right angles to each other. The magnitude of their resultant is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>1 N</li><li>5 N</li><li>7 N</li><li>12 N</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>R = √(3² + 4²) = 5 N when θ = 90° so the cross term vanishes.</p></dd></div></dl></div></div><div class="item"><span class="idx">17.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q17</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Which of the following products of two vectors yields a scalar quantity?</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Cross product A × B</li><li>Dot product A · B</li><li>Vector sum A + B</li><li>Difference A − B</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>The dot product AB cos θ is scalar; cross products, sums and differences of vectors are vector quantities.</p></dd></div></dl></div></div><div class="item"><span class="idx">18.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q18</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The escape velocity from the surface of the Earth is approximately:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>7.9 km/s</li><li>9.8 km/s</li><li>11.2 km/s</li><li>42.1 km/s</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>v_e = √(2gR) ≈ 11.2 km/s for Earth; 7.9 km/s is the near-surface orbital velocity.</p></dd></div></dl></div></div><div class="item"><span class="idx">19.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q19</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>How much heat is required to raise the temperature of 2 kg of water by 10 °C? (c = 4200 J kg⁻¹ °C⁻¹)</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>4200 J</li><li>8400 J</li><li>21000 J</li><li>84000 J</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>3</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Q = mcΔT = 2 × 4200 × 10 = 84,000 J.</p></dd></div></dl></div></div><div class="item"><span class="idx">20.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e1-q20</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>During the melting of ice at 0 °C and normal pressure, the temperature of the ice-water mixture:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Increases steadily</li><li>Decreases steadily</li><li>Remains constant</li><li>First rises then falls</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Latent heat of fusion is absorbed without any temperature change until all ice melts.</p></dd></div></dl></div></div></section>
+  <nav class="pager"><span></span><a class="mid" href="../../_subjects/general-exams.html">Exams</a><a href="exam-02.html" title="NEB Class 11 Mock Exam 02 — Physics, Chemistry, Biology, Mathematics">NEB Class 11 Mock Exam 02 — Physics, Chemistr… ›</a></nav>
+</div></body></html>

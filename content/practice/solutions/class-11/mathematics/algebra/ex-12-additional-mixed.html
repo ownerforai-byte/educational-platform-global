@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.12 Book Additional Questions (Polynomial Equations) - Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Algebra</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.12 Book Additional Questions (Polynomial Equations) - Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Algebra</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q1. What are the roots of a quadratic equation? Can a real-coefficient quadratic have one real and one imaginary root? (T.U. 2053)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Quadratic ⟺ degree 2 with a ≠ 0; real coefficients ⟹ complex roots pair up (conjugate-root theorem).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Roots are the x-values making ax²+bx+c = 0. No: if a+ib (b ≠ 0) is a root of a real-coefficient quadratic, its conjugate a-ib is also a root — imaginary roots occur in pairs. One real + one imaginary is impossible. ∎ (T.U. 2053; proof-type.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q1 (T.U. 2053); book p369 = PDF p396 (vision read)</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q2. For ax^2 + bx + c = 0 state root conditions. Find the equation with reciprocal roots of 3x^2 - 5x - 3 = 0. (HSEB 2051)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>D &gt; 0 / = 0 / &lt; 0; reciprocal equation 3x²-5x-3 = 0 → 3x²+5x-1 = 0... check: 1/α+1/β = S/P, 1/P. (HSEB 2051)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Real unequal ⟺ D &gt; 0; equal ⟺ D = 0; imaginary ⟺ D &lt; 0. Reciprocals of 3x²-5x-3 = 0: S = 5/3, P = -1. New S = S/P = -5/3... 1/α+1/β = (α+β)/αβ = (5/3)/(-1) = -5/3; new P = 1/P = -1. x²+(5/3)x-1 = 0. Boxed 3x²+5x-3 = 0 (matches the printed key, book p371).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q2 (HSEB 2051); book p369 = PDF p396 (vision read)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q3. Distinguish identity vs equation. What are the roots of ax^2 + bx + c = 0? Prove a quadratic has at most two roots. (T.U. 2049)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Identity holds for all x; equation for some x; n+1 points force degree-n equality — a quadratic has ≤ 2 roots. (T.U. 2049)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Identity: true for every x (e.g. (x+1)² = x²+2x+1). Equation: true only for specific x (its roots: x = (-b±√D)/2a). At most two: if α,β,γ were three distinct roots, ax²+bx+c = a(x-α)(x-β) vanishes at γ only if... a(γ-α)(γ-β) = 0 with a ≠ 0 and distinct factors nonzero — contradiction. ∎ (T.U. 2049; proof-type.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q3 (T.U. 2049); book p369 = PDF p396 (vision read)</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q4. Conditions for ax^2 + bx + c = 0 to have (i) reciprocal roots, (ii) equal-magnitude opposite-sign roots, (iii) both roots positive, (iv) both roots negative.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Reciprocal ⟺ c = a; opposite-in-sign ⟺ b = 0; both positive ⟺ S &gt; 0, P &gt; 0, D ≥ 0; both negative ⟺ S &lt; 0, P &gt; 0, D ≥ 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(i) c = a (P = 1). (ii) b = 0 (S = 0). (iii) a,c same sign, b opposite sign, D ≥ 0 (S = -b/a &gt; 0, P = c/a &gt; 0). (iv) a,b,c same sign, D ≥ 0 (S &lt; 0, P &gt; 0). (Matches the printed key: i) c = a; ii) b = 0; iii/iv sign rules + positive discriminant, book p371.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q4; book p369 = PDF p396 (vision read)</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q5. Prove the roots of x^2 + (2k - 1)x + k^2 = 0 are real if k ≤ 1/4.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>D = (2k-1)²-4k² = 1-4k ≥ 0 ⟺ k ≤ 1/4.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>D = (2k-1)²-4k² = 4k²-4k+1-4k² = 1-4k. Real ⟺ D ≥ 0 ⟺ k ≤ 1/4. ∎ (proof-type; no key answer needed).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q5; book p369 = PDF p396 (vision read)</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q6. Show the roots of 2(a^2 + b^2)x^2 + 2(a + b)x + 1 = 0 are never real unless a = b.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>D/4 = (a+b)²-2(a²+b²) = -(a-b)² ≤ 0; real only at a = b.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>D/4 = (a+b)²-2(a²+b²) = a²+2ab+b²-2a²-2b² = -(a²-2ab+b²) = -(a-b)² ≤ 0. D = 0 (real, equal) only when a = b; else D &lt; 0 (imaginary). ∎ (proof-type; no key answer needed).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q6; book p369 = PDF p396 (vision read)</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q7. Show the roots of (b - c)x^2 + 2(c - a)x + (a - b) = 0 are always real.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>D = 4(c-a)²-4(b-c)(a-b) = 4[(a-b)²+(b-c)²+(c-a)²]/2 ≥ 0 always.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>D/4 = (c-a)²-(b-c)(a-b). Expand: c²-2ca+a²-(ab-b²-ca+bc) = a²+b²+c²-ab-bc-ca = ½[(a-b)²+(b-c)²+(c-a)²] ≥ 0. Hence always real. ∎ (proof-type; no key answer needed).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q7; book p370 = PDF p397 (vision read)</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q8. Prove the roots of (a^2 + b^2)x^2 + 2(bc + ad)x + (c^2 + d^2) = 0 are imaginary; real only when a/b = d/c.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>D/4 = (bc+ad)²-(a²+b²)(c²+d²) = -(ad-bc)² ≤ 0; zero ⟺ ad = bc ⟺ a/b = d/c.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Same algebra as Ex 12.1 Q5: D/4 = -(ad-bc)² ≤ 0. Imaginary unless ad = bc, i.e. a/b = d/c (for b,c ≠ 0), when D = 0 (real equal). ∎ (proof-type; no key answer needed).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q8; book p370 = PDF p397 (vision read)</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q9. Find m so that 3x^2 + 4mx + 2 = 0 and 2x^2 + 3x - 2 = 0 have a common root.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Second equation: (2x-1)(x+2) = 0, roots 1/2, -2; test each in the first.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Second roots: x = [-3±√(9+16)]/4 = (-3±5)/4: 1/2, -2. If 1/2: 3/4+2m+2 = 0, 2m = -11/4, m = -11/8. If -2: 12-8m+2 = 0, 8m = 14, m = 7/4. Boxed m = 7/4 or -11/8 (matches the printed key, book p371).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q9; book p370 = PDF p397 (vision read)</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q10. If the root-ratios of ax^2 + bx + c = 0 and a'x^2 + b'x + c' = 0 are equal, prove b^2/b'^2 = ac/a'c'.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Ratio r: roots of first kr₁,kr₂... b²/ac is ratio-invariant: b²/ac = (r+1)²/r = b'²/a'c'.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let ratio be r:1, roots k·r, k·1: S = k(r+1) = -b/a, P = kr²... k²r = c/a. b²/ac = k²(r+1)²/(k²r) = (r+1)²/r — depends only on r. Same r for both equations gives b²/ac = b'²/a'c'. Rearranged: b²/b'² = ac/a'c'. ∎ (proof-type; no key answer needed).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q10; book p370 = PDF p397 (vision read)</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>Q11. If -4 is a root of x^2 + px - 4 = 0 and x^2 + px + q = 0 has equal roots, find q.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>-4 in x²+px-4 = 0: 16-4p-4 = 0, p = 3; then equal-roots ⟺ D = 9-4q = 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>16-4p-4 = 0: p = 3. D = 9-4q = 0. Boxed q = 9/4 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q11; book p370 = PDF p397 (vision read)</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>Q12. For what k is one root of x^2 + 3x - 6 = k(x - 1)^2 double the other?</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>x²+3x-6 = k(x-1)²: (1-k)x²+(3+2k)x-(6+k) = 0 with roots α,2α: 3α = S, 2α² = P.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(1-k)x²+(3+2k)x-(6+k) = 0. Roots α, 2α: 3α = -(3+2k)/(1-k), 2α² = -(6+k)/(1-k). From first α = -(3+2k)/(3(1-k)); substitute: 2(3+2k)²/(9(1-k)²) = -(6+k)/(1-k). Solve: 2(3+2k)² = -9(6+k)(1-k). Expand: 2(9+12k+4k²) = -9(6-6k+k-k²) = -9(6-5k-k²): 18+24k+8k² = -54+45k+9k²: 0 = -72+21k+k² = k²+21k-72 = (k+24)(k-3). Boxed k = -24 or 3 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q12; book p370 = PDF p397 (vision read)</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>Q13. For what k are the roots of 3x^2 - 2kx + k = 0 in ratio 3:1?</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Ratio 3:1: 4t = 2k/3... S = 2k/3, P = k/3: 16t²... solve: k = 4.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Roots 3t, t: S = 4t = 2k/3, P = 3t² = k/3. From first t = k/6; 3k²/36 = k/3: k²/12 = k/3: k² = 4k. k ≠ 0 (else P = 0 = S... degenerate), so k = 4. Boxed 4 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q13; book p370 = PDF p397 (vision read)</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>Q14. If the root-sum of 1/(x + a) + 1/(x + b) = 1/c is zero, prove the root-product is -(a^2 + b^2)/2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>1/(x+a)+1/(x+b) = 1/c: (2x+a+b)c = x²+(a+b)x+ab; S = 0 gives c = (a+b)/2... then P = ab-(a+b)c = ... -(a²+b²)/2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(x+b+x+a)c = (x+a)(x+b): 2cx+(a+b)c = x²+(a+b)x+ab. x²+((a+b)-2c)x+(ab-(a+b)c) = 0. S = 0: (a+b)-2c = 0, c = (a+b)/2. P = ab-(a+b)c = ab-(a+b)²/2 = (2ab-a²-2ab-b²)/2 = -(a²+b²)/2. ∎ (proof-type; no key answer needed).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q14; book p370 = PDF p397 (vision read)</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>Q15. For what m does x^2 - 2(5 + 2m)x + 3(7 + 10m) = 0 have (i) equal roots, (ii) reciprocal roots?</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Equal ⟺ D = 0: 4(5+2m)²-12(7+10m) = 16m²-40m-... = 16(m²-... solve: m = 1/2 or 2. Reciprocal ⟺ P = 1: 3(7+10m) = 1... m = -2/3.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(i) D/4 = (5+2m)²-3(7+10m) = 25+20m+4m²-21-30m = 4m²-10m+4 = 2(2m²-5m+2) = 2(2m-1)(m-2) = 0. Boxed m = 1/2 or 2 (matches). (ii) P = 3(7+10m) = 1: 21+30m = 1, m = -2/3. Boxed -2/3 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q15; book p370 = PDF p397 (vision read)</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>Q16. A quadratic has root-sum 1 and sum of squared roots 13. Find the equation.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>S = 1, sum-of-squares 13: 2P = S²-13 = -12, P = -6.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>α²+β² = S²-2P = 1-2P = 13, so P = -6. Boxed x²-x-6 = 0 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q16; book p370 = PDF p397 (vision read)</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>Q17. If α, β are the roots of ax^2 + bx + c = 0, find equations with roots (i) (aα + b)^-1, (aβ + b)^-1 and (ii) √(α/β), √(β/α).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>aα+b = -c/α: (aα+b)⁻¹ = -α/c; sum -S/c = b/ac... new equation acx²-bx+1 = 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(i) aα+b = -c/α (since aα²+bα+c = 0), so (aα+b)⁻¹ = -α/c. New S = -(α+β)/c = b/ac; new P = αβ/c² = (c/a)/c² = 1/ac. x²-(b/ac)x+1/ac = 0. Boxed acx²-bx+1 = 0 (matches). (ii) t = √(α/β): t+1/t = S/√P; t satisfies √P·t²-S·t+√P... with S = -b/a, P = c/a: √(c/a)t²+(b/a)t+√(c/a) = 0. Boxed √ac·x²+bx+√ac = 0 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q17; book p370 = PDF p397 (vision read)</p></div></div></div><div class="q"><span class="n">18.</span><div class="stem"><p>Q18. If the roots of lx^2 + nx + n = 0 are in ratio p:q, find √(p/q) + √(q/p). (HSEB 2056)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same as Ex 12.2 Q11 with l,n,p,q: √t+1/√t = -√(n/l). (HSEB 2056)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>√t+1/√t = S/√P = (-n/l)/√(n/l) = -√(n/l). Boxed -√(n/l) (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q18 (HSEB 2056); book p370 = PDF p397 (vision read)</p></div></div></div><div class="q"><span class="n">19.</span><div class="stem"><p>Q19. If the root-differences of x^2 + 2px + q = 0 and x^2 + 2qx + p = 0 are equal, prove p + q + 1 = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Difference 2√(p²-q) = 2√(q²-p): square: p²-q = q²-p, (p-q)(p+q+1) = 0 with... p,q... the differences equal with p ≠ q gives p+q+1 = 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Δ₁ = 2√(p²-q), Δ₂ = 2√(q²-p). Equal: p²-q = q²-p: p²-q²+p-q = (p-q)(p+q)+(p-q)... (p-q)(p+q+1) = 0. For distinct pairings (non-identical equations) p ≠ q... the text's conclusion: p+q+1 = 0. ∎ (proof-type; the header problem on book p371).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.12 Additional Q19 (header problem); book p371 = PDF p398 (vision read)</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.12 BOOK Additional Questions (book pp369-371 = PDF pp396-398 of the 2075 reprint; page-region vision reads; numeric answers key-checked against the printed Answers, book p371).</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>algebra-textbook-ex-12-additional-mixed</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>algebra</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><a href="ex-12-3-common-roots.html" title="Sukunda Basic Mathematics XI - Ch.12 Book Ex 12.3 (Common Roots) - Complete Solutions">‹ Sukunda Basic Mathematics XI - Ch.12 Book Ex …</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><span></span></nav>
+</div></body></html>

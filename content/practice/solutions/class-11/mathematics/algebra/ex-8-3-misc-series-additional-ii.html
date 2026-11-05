@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.8 Book Ex 8.3 Q5-Q9 + Additional (AG Series, Misc) - Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Algebra</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.8 Book Ex 8.3 Q5-Q9 + Additional (AG Series, Misc) - Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Algebra</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q5(a). Sum to infinity: 1-1/2+1/4-1/8+...</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>r = -1/2: S = 1/(3/2) = 2/3.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>a = 1, r = -1/2. S = 1/(1+1/2) = 2/3 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q5(a); book p230 = PDF p257 (vision read)</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q5(b). Sum to infinity: 16-8+4-...</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>a = 16, r = -1/2: S = 16/(3/2) = 32/3.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>a = 16, r = -1/2. S = 16/(1+1/2) = 32/3 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q5(b); book p230 = PDF p257 (vision read)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q5(c). Sum to infinity: 3/5+4/5^2+3/5^3+4/5^4+3/5^5+4/5^6+...</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Interlaced 3/5^r and 4/5^r: sum each GP separately, common denominator 24.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Odd positions: 3/5+3/5^3+... = (3/5)/(1-1/25) = (3/5)/(24/25) = 15/24. Even positions: 4/25+4/5^4+... = (4/25)/(24/25) = 4/24. Total = 19/24 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q5(c); book p230 = PDF p257 (vision read)</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q5(d). Sum to infinity (|x| &gt; 1): a/x+b/x^2+a/x^3+b/x^4+...</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Pair a/x^{2k-1}+b/x^{2k} = (ax+b)/x^{2k}: one GP with ratio 1/x^2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Group pairs: (ax+b)/x^2+(ax+b)/x^4+... with first term (ax+b)/x^2 and ratio 1/x^2 (|x| &gt; 1 so it converges). S = ((ax+b)/x^2)/(1-1/x^2) = (ax+b)/(x^2-1) (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q5(d); book p230 = PDF p257 (vision read)</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q5(e). Sum to infinity: 1+3/4+7/16+15/64+...</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>T_r = (2^r-1)/2^{2r-2}: split into 4·(1/2)^r minus (1/4)^{r-1}.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>T_r = (2^r-1)/2^{2r-2} = 4(1/2)^r-(1/4)^{r-1} (check r = 3: 4/8-1/16 = 7/16). S = 4·(1/2)/(1/2)-1/(1-1/4) = 4-4/3 = 8/3 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q5(e); book p230 = PDF p257 (vision read)</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q6(a). Sum to infinity (-1 &lt; x &lt; 1): 1+3x+5x^2+7x^3+...</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>(1-x)S shifts the arithmetico-geometric series into a plain GP: S = (1+x)/(1-x)^2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>S = 1+3x+5x^2+...; xS = x+3x^2+5x^3+.... Subtracting: (1-x)S = 1+2x+2x^2+... = 1+2x/(1-x) = (1+x)/(1-x). So S = (1+x)/(1-x)^2 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q6(a); book p230 = PDF p257 (vision read)</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q6(b). Sum to infinity (-1 &lt; a &lt; 1): 1-5a+9a^2-13a^3+...</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same shift trick with ratio -a: (1+a)S = 1-4a/(1+a).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>S = 1-5a+9a^2-...; -aS = -a+5a^2-9a^3+.... Adding: (1+a)S = 1-4a+4a^2-4a^3+... = 1-4a/(1+a) = (1-3a)/(1+a). So S = (1-3a)/(1+a)^2 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q6(b); book p230 = PDF p257 (vision read)</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q7(a). Sum to n terms: 1+2/2+3/2^2+4/2^3+...</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same shift with x = 1/2: S = 4-(n+2)/2^{n-1}; check n = 1 gives 1.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Arithmetico-geometric with x = 1/2: S = (1-(n+1)/2^n+n/2^{n+1})/(1/2)^2 = 4-(n+1)/2^{n-2}+n/2^{n-1} = 4-n/2^{n-1}-1/2^{n-2} (matches the printed key; n = 1 gives 4-2-1 = 1).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q7(a); book p231 = PDF p258 (vision read)</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q7(b). Sum to n terms: 1+4/5+7/5^2+10/5^3+...</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>x = 1/5 version: constant 3·(25/16)-2·(5/4) = 35/16; check n = 1 gives 1.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>T_r = (3r-2)/5^{r-1}. S = 3(1+2x+3x^2+...+nx^{n-1})-2(1+x+...+x^{n-1}) with x = 1/5. Using the finite AG and GP sums: S = 35/16-(12n+7)/(16·5^{n-1}) (matches the printed key; n = 1 gives (35-19)/16 = 1; n = 2 gives 1.8 = 1+4/5).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q7(b); book p231 = PDF p258 (vision read)</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q8. If a, b, c are in A.P. and x, y, z are in G.P., prove that x^{b-c}·y^{c-a}·z^{a-b} = 1.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Take logs: the lny coefficient telescopes to zero and the lnr coefficient is a+c-2b = 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Put x = y/r, z = yr (common ratio r). log LHS = (b-c)(lny-lnr)+(c-a)lny+(a-b)(lny+lnr) = lny(b-c+c-a+a-b)+lnr(-b+c+a-b) = (a+c-2b)lnr = 0 since a, b, c are in A.P. Hence LHS = 1.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q8; book p231 = PDF p258 (vision read)</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>Q9. If p, q, r are in A.P., prove that the qth term is the G.M. between the pth and rth terms of the same G.P.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>(p+r)/2 = q makes the GM of the pth and rth terms exactly the qth term.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>G.P.: first term A, ratio R. pth term = AR^{p-1}, rth = AR^{r-1}; their GM = AR^{(p+r-2)/2}. Since p, q, r in A.P., (p+r)/2 = q, so the GM is AR^{q-1}, the qth term.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Ex 8.3 Q9; book p231 = PDF p258 (vision read)</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>AQ1. If a, b, c are in H.P., prove that a/(a-b) = (a+c)/(a-c).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>a/(a-b) vs (a+c)/(a-c): cross-multiplying reduces to ab+bc = 2ac, the HP condition.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Cross-multiplying: a(a-c) = (a+c)(a-b) iff a^2-ac = a^2-ab+ac-bc iff ab+bc = 2ac iff 1/c+1/a = 2/b, which is exactly the H.P. condition (1/a, 1/b, 1/c in A.P.).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q1; book p231 = PDF p258 (vision read)</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>AQ2. If a, b, c are in A.P., x is the G.M. between a and b, and y is the G.M. between b and c, prove that b^2 is the A.M. between x^2 and y^2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>AM of x^2, y^2 is b(a+c)/2 = b·b: the AP relation a+c = 2b does the whole job.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>x^2 = ab, y^2 = bc. Their AM is (ab+bc)/2 = b(a+c)/2 = b·2b/2 = b^2 (using a+c = 2b).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q2; book p231 = PDF p258 (vision read)</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>AQ3. If the A.M. of two positive numbers a and b is twice their G.M., show that a:b = (2+sqrt(3)):(2-sqrt(3)).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>t+1/t = 4 with t = sqrt(a/b) gives t = 2±sqrt(3); squaring preserves the ratio form.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(a+b)/2 = 2sqrt(ab), so a+b = 4sqrt(ab). Put t = sqrt(a/b) &gt; 1: t+1/t = 4, so t^2-4t+1 = 0, t = 2+sqrt(3). Then a:b = t^2:1 = (2+sqrt(3))^2:1 = (2+sqrt(3)):(2-sqrt(3)) since (2+sqrt(3))(2-sqrt(3)) = 1.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q3; book p231 = PDF p258 (vision read)</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>AQ4. A rubber ball is dropped from 16 ft; each rebound rises to 3/4 of the previous height. Total distance before rest?</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>16 down + 2×(up GP with a = 12, r = 3/4): 16+2·48 = 112 ft.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Down: 16. Up-and-down bounces: 2(16·3/4+16·(3/4)^2+...) = 2·12/(1-3/4) = 2·48 = 96. Total = 16+96 = 112 ft (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q4; book p231 = PDF p258 (vision read)</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>AQ5. Square side 16 cm; successive squares join midpoints indefinitely. Sum of all perimeters?</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Midpoint joining halves the area, so sides shrink by 1/sqrt(2): perimeters form a GP with r = 1/sqrt(2).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Sides: 16, 16/sqrt(2), ... (area halves each time). Perimeters: 64, 64/sqrt(2), ... with r = 1/sqrt(2). Sum = 64/(1-1/sqrt(2)) = 64sqrt(2)/(sqrt(2)-1) = 64(2+sqrt(2)) cm (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q5; book p231 = PDF p258 (vision read)</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>AQ6(a). Find the nth term and sum of 5+7+13+31+85+...</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Second differences triple each time: T_r-4 is a GP with ratio 3.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Differences 2, 6, 18, 54 (ratio 3): T_r = 4+3^{r-1} (T_1 = 5 ✓). S_n = 4n+(3^n-1)/2 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q6(a); book p231 = PDF p258 (vision read)</p></div></div></div><div class="q"><span class="n">18.</span><div class="stem"><p>AQ6(b). Find the nth term and sum of 1^2.2+2^2.3+3^2.4+...</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>r^2(r+1) = r^3+r^2: cube-sum plus square-sum factor into n(n+1)(n+2)(3n+1)/12.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>T_r = r^2(r+1) = r^3+r^2. S_n = [n(n+1)/2]^2+n(n+1)(2n+1)/6 = n(n+1)(3n^2+7n+2)/12 = n(n+1)(n+2)(3n+1)/12 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.8 Additional Q6(b); book p231 = PDF p258 (vision read)</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.8 BOOK Exercise 8.3 Q5-Q9 + Additional Q1-Q6 (book pp230-231 = PDF pp257-258 of the 2075 reprint; page-region vision reads; every numeric answer key-checked against the printed Answers, p231).</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>algebra-textbook-ex-8-3-misc-series-additional-ii</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>algebra</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><a href="ex-8-2-infinite-geometric-series.html" title="Sukunda Basic Mathematics XI - Ch.8 Book Ex 8.2 (Infinite Geometric Series) - Complete Solutions">‹ Sukunda Basic Mathematics XI - Ch.8 Book Ex 8…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-8-3-power-sums-i.html" title="Sukunda Basic Mathematics XI - Ch.8 Book Ex 8.3 Q1-Q4 (Power Sums) - Complete Solutions">Sukunda Basic Mathematics XI - Ch.8 Book Ex 8… ›</a></nav>
+</div></body></html>

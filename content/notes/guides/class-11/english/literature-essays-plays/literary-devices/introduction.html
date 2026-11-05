@@ -1,0 +1,164 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Literary Devices</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Literary Devices</div>
+    <h1 class="doc">Literary Devices</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Literary Devices</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>literature-essays-plays</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>literary-devices</p></section>
+<section class="field"><h2>Relevance</h2><p><code>92</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;What Are Literary Devices?&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Literary devices&lt;/b&gt; are techniques that writers use to convey meaning, create effects, and enhance the aesthetic quality of their writing. They go beyond literal language to produce deeper meanings, vivid imagery, and emotional impact. In the NEB Class 11 English syllabus, literary devices are tested through identification, explanation, and application in both prose and poetry passages. Mastery of these devices is essential for literary analysis and comprehension answers.&lt;/p&gt;</li><li>&lt;h2&gt;Metaphor&lt;/h2&gt;</li><li>&lt;p&gt;A &lt;b&gt;metaphor&lt;/b&gt; is a direct comparison between two unlike things without using 'like' or 'as'. It asserts that one thing IS another. Examples: 'All the world's a stage' (Shakespeare — the world is compared to a stage). 'Time is a thief' (time steals moments from our lives). 'Her voice was music to his ears' (her voice is compared to music). Metaphors create vivid imagery by linking two unrelated ideas, forcing the reader to see one thing in terms of another. Unlike similes, metaphors are more direct and powerful because they state the comparison as fact.&lt;/p&gt;</li><li>&lt;h2&gt;Simile&lt;/h2&gt;</li><li>&lt;p&gt;A &lt;b&gt;simile&lt;/b&gt; is a comparison between two unlike things using 'like' or 'as'. Examples: 'Her smile was like sunshine' (her smile is compared to sunshine using 'like'). 'He runs as fast as a cheetah' (his speed is compared to a cheetah using 'as'). 'As brave as a lion' (bravery compared to a lion's courage). Similes are more explicit than metaphors because they signal the comparison with 'like' or 'as'. They help readers visualise qualities by connecting them to familiar images. In NEB exams, distinguishing simile from metaphor is a common question.&lt;/p&gt;</li><li>&lt;h2&gt;Personification&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Personification&lt;/b&gt; is giving human qualities, emotions, or actions to non-human things (animals, objects, ideas, natural forces). Examples: 'The wind whispered through the trees' (wind cannot literally whisper). 'The sun smiled down on the valley' (the sun cannot literally smile). 'Opportunity knocked on the door' (opportunity cannot literally knock). 'The mountains stood like sentinels' (mountains given human role). Personification brings non-living things to life, making descriptions more vivid and emotionally resonant. It is one of the most frequently identified literary devices in NEB comprehension passages.&lt;/p&gt;</li><li>&lt;h2&gt;Imagery&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Imagery&lt;/b&gt; is descriptive language that appeals to the five senses: sight, sound, smell, taste, and touch. &lt;b&gt;Visual imagery&lt;/b&gt; (sight): 'The golden sunset painted the sky in shades of orange and pink.' &lt;b&gt;Auditory imagery&lt;/b&gt; (sound): 'The rain tapped a rhythmic beat against the windowpane.' &lt;b&gt;Olfactory imagery&lt;/b&gt; (smell): 'The aroma of freshly baked bread filled the kitchen.' &lt;b&gt;Gustatory imagery&lt;/b&gt; (taste): 'The lemon was so sour that her lips pucker'd.' &lt;b&gt;Tactile imagery&lt;/b&gt; (touch): 'The rough bark scratched his palms.' Imagery creates vivid mental pictures and sensory experiences, immersing the reader in the text. Identifying the type of imagery used is a common NEB question.&lt;/p&gt;</li><li>&lt;h2&gt;Alliteration&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Alliteration&lt;/b&gt; is the repetition of the same initial consonant sound in closely connected words. Examples: 'The fair field filled with fan' (alliterative f-sound). 'Peter Piper picked a peck of pickled peppers.' 'The wild wind whistled through the wires.' Alliteration creates rhythm, musicality, and emphasis. It is commonly used in poetry, slogans, and brand names ('Coca-Cola', 'PayPal'). In NEB exams, alliteration is identified by noting the repeated consonant sounds at the beginning of words in a phrase or sentence. Note: it is the sound, not just the letter, that matters — 'ph' in 'phone' and 'philosophy' creates alliteration even though the letters differ.&lt;/p&gt;</li><li>&lt;h2&gt;Assonance&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Assonance&lt;/b&gt; is the repetition of vowel sounds in closely connected words. Examples: 'The rain in Spain stays mainly in the plain' (repetition of the long 'a' sound). 'Hear the mellow wedding bells' (repetition of the 'eh' sound). 'Deep into that darkness peering' (repetition of the long 'e' sound). Assonance creates internal rhyme and musical quality in prose and poetry. It is similar to alliteration but focuses on vowel sounds rather than consonant sounds. NEB exams may ask students to identify assonance in a given passage, especially in poetry excerpts.&lt;/p&gt;</li><li>&lt;h2&gt;Oxymoron&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Oxymoron&lt;/b&gt; is a figure of speech that combines two contradictory or opposing terms. Examples: 'bittersweet' (both bitter and sweet). 'Deafening silence' (silence that is loud). 'Living death' (death that is alive). 'Open secret' (a secret that is known by many). 'Jumbo shrimp' (a tiny giant). Oxymorons create paradoxical meaning, often expressing complex emotions or ideas that cannot be captured by a single word. They are frequently used in literature to convey emotional ambiguity. In NEB exams, oxymoron questions ask students to identify pairs of contradictory terms and explain their combined meaning.&lt;/p&gt;</li><li>&lt;h2&gt;Hyperbole&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Hyperbole&lt;/b&gt; is deliberate exaggeration for emphasis or effect, not meant to be taken literally. Examples: 'I've told you a million times' (not literally a million). 'This bag weighs a ton' (not literally one ton). 'I'm so hungry I could eat a horse' (extreme exaggeration of hunger). 'He runs faster than the speed of light' (physically impossible). Hyperbole is used to create strong impressions, humour, or emotional intensity. It is common in both everyday speech and literary writing. In NEB comprehension questions, students must recognise hyperbole and understand that it is exaggeration, not factual statement.&lt;/p&gt;</li><li>&lt;h2&gt;Irony&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Irony&lt;/b&gt; is a contrast between expectation and reality. There are three main types: (1) &lt;b&gt;Verbal irony&lt;/b&gt; — saying the opposite of what is meant (sarcasm is a form of verbal irony). Example: 'What a beautiful day!' said during a thunderstorm. (2) &lt;b&gt;Situational irony&lt;/b&gt; — when the outcome is opposite to what was expected. Example: A fire station burning down. (3) &lt;b&gt;Dramatic irony&lt;/b&gt; — when the audience knows something the characters do not. Example: In Romeo and Juliet, the audience knows Juliet is not really dead, but Romeo does not. Irony is a sophisticated literary device frequently tested in NEB literature questions.&lt;/p&gt;</li><li>&lt;h2&gt;Symbolism&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Symbolism&lt;/b&gt; is the use of objects, characters, or events to represent abstract ideas or qualities. A symbol stands for something beyond its literal meaning. Examples: A &lt;b&gt;dove&lt;/b&gt; symbolises peace. A &lt;b&gt;rose&lt;/b&gt; symbolises love. &lt;b&gt;Light&lt;/b&gt; symbolises knowledge or hope; &lt;b&gt;darkness&lt;/b&gt; symbolises ignorance or despair. In literature, symbols add depth and layers of meaning. A 'road' may symbolise life's journey; 'water' may symbolise purification or rebirth. NEB exams often ask students to interpret symbols in poems and prose passages, requiring understanding of both literal and figurative meaning.&lt;/p&gt;</li><li>&lt;h2&gt;Allusion&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Allusion&lt;/b&gt; is a brief reference to a person, place, event, literary work, or myth that the writer assumes the reader will recognise. Examples: 'He was a real Romeo with the ladies' (allusion to Shakespeare's romantic hero). 'This situation is an Odyssey' (allusion to Homer's long journey). 'She felt like a Cinderella' (allusion to the fairy tale). Allusions enrich texts by connecting them to a broader cultural or literary tradition. In NEB exams, students may be asked to identify allusions and explain their significance, particularly in poetry and prose passages that reference mythology, history, or famous literature.&lt;/p&gt;</li><li>&lt;h2&gt;Pun&lt;/h2&gt;</li><li>&lt;p&gt;A &lt;b&gt;pun&lt;/b&gt; is a play on words that exploits multiple meanings or similar sounds for humorous or rhetorical effect. Examples: 'I'm reading a book about anti-gravity — it's impossible to put down.' ('put down' means both 'stop reading' and 'place on a surface'). 'The baker was outstanding in his field.' ('outstanding' means both 'excellent' and 'standing outside'). Puns are common in witty dialogue, advertising slogans, and humorous writing. While less common in serious literature, puns may appear in NEB comprehension passages, especially in humorous or satirical texts.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Metaphor vs. Simile: A simile compares using 'like' or 'as' ('Her smile is like sunshine'). A metaphor states a direct comparison without 'like' or 'as' ('Her smile is sunshine'). Both compare two unlike things, but the metaphor is more direct and powerful. In NEB exams, confusing these two is a common error — always check for 'like' or 'as' to identify a simile.</li><li>Personification vs. Anthropomorphism: Personification gives human qualities to non-human things (abstract ideas, objects, nature): 'The wind whispered.' Anthropomorphism gives human form or behaviour to animals or objects in a more literal sense: 'The cat wore a hat and spoke English.' Personification is a figure of speech; anthropomorphism is often used in fables and children's stories where animals literally act like humans.</li><li>Hyperbole vs. Exaggeration: Hyperbole IS deliberate exaggeration for effect — the two terms are often used interchangeably. However, 'hyperbole' is the literary term for intentional, recognised exaggeration, while 'exaggeration' can refer to any overstatement, intentional or not. In NEB exams, use 'hyperbole' when identifying the literary device.</li><li>Irony vs. Coincidence: Irony involves a contrast between expectation and reality — there is often an element of intention or meaningful reversal. Coincidence is a chance occurrence of events that seem related but have no causal connection. 'It's ironic that the fire station burned down' (expected safety, unexpected destruction). 'It was a coincidence that we met at the airport' (chance event, no ironic contrast). Students often confuse these in comprehension questions.</li><li>Symbol vs. Allegory: A symbol is a single object or element that represents something beyond itself (a dove = peace). An allegory is an entire narrative in which characters, events, and settings symbolise abstract ideas or moral qualities (Animal Farm by George Orwell is an allegory for the Russian Revolution). A symbol is a part; an allegory is a whole. NEB exams may ask students to distinguish between these two related ideas.</li><li>Oxymoron vs. Paradox: An oxymoron is a pair of contradictory words placed together ('bittersweet', 'deafening silence'). A paradox is a statement that seems contradictory but reveals a deeper truth ('The more you know, the less you understand'). Oxymoron is a figure of speech (two words); paradox is a logical statement (a sentence or idea). Both involve contradiction, but at different levels of language.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Identify the literary device: 'The wind whispered secrets through the ancient trees.' [Answer: Personification — the wind is given the human ability to whisper and keep secrets.] — Note: Also contains imagery (auditory).</li><li>Identify the literary device: 'Her heart was a stone.' [Answer: Metaphor — her heart is directly compared to a stone, suggesting coldness or hardness. No 'like' or 'as' is used.] — Note: Could also be interpreted as symbolism (stone = emotional coldness).</li><li>Identify the literary device: 'I've told you a thousand times not to interrupt.' [Answer: Hyperbole — the speaker has not literally told the listener a thousand times; this is deliberate exaggeration for emphasis.] — Note: Identify the exaggerated element and explain its purpose.</li><li>Identify the literary device: 'She is as brave as a lion.' [Answer: Simile — comparison using 'as...as' between her bravery and a lion's courage.] — Note: Distinguish from metaphor by the presence of 'as'.</li><li>Identify the literary device: 'What a brilliant plan — said no one ever.' [Answer: Irony (verbal) — the speaker means the opposite of what is said; the plan was not brilliant at all.] — Note: This is sarcastic verbal irony.</li><li>Identify the literary device: 'The beautiful terrible storm raged across the valley.' [Answer: Oxymoron — 'beautiful' and 'terrible' are contradictory terms placed together, suggesting the storm was both awe-inspiring and destructive.] — Note: The contrast creates a complex, layered meaning.</li><li>Identify the literary device: 'The earth opened its mouth and swallowed the house.' [Answer: Personification — the earth is given human qualities (mouth, the ability to open and swallow).] — Note: This creates a vivid, almost mythical image of nature's power.</li><li>Identify the literary device: 'The light of knowledge dispelled the darkness of ignorance.' [Answer: Symbolism — 'light' symbolises knowledge/understanding; 'darkness' symbolises ignorance/unawareness.] — Note: Also contains metaphor (knowledge as light), but the symbolic reading is the primary literary effect.</li><li>Write a sentence using each of the following devices: (a) Alliteration (b) Simile (c) Oxymoron (d) Personification. [Answer: (a) 'Peter Piper picked a peck of pickled peppers.' (b) 'She swims like a fish.' (c) 'The moment was bittersweet.' (d) 'The flowers danced in the breeze.'] — Note: Each sentence must correctly demonstrate the specified device.</li><li>Explain the effect of the metaphor in this line: 'Hope is the thing with feathers that perches in the soul.' (Emily Dickinson) [Answer: The metaphor compares hope to a bird ('thing with feathers') that lives inside the soul. The effect is to portray hope as something light, resilient, and ever-present — a bird that sings without words, offering comfort even in the darkest circumstances. The metaphor makes the abstract concept of hope tangible and emotionally resonant.]</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The study of literary devices (figures of speech) dates back to ancient Greek rhetoric, particularly the works of Aristotle and Quintilian, who categorised over a hundred different figures of speech. Many of these categories persist in modern literary analysis.</li><li>In the NEB English examination, literary device identification and explanation questions typically carry 3-6 marks across reading comprehension and literature sections. Students who can accurately identify and explain devices earn high marks in both objective and descriptive questions.</li><li>Some literary devices are universal across languages and cultures (metaphor, simile, personification), while others are language-specific. Nepali poetry and prose use equivalent devices (उपमा for simile, रूपक for metaphor, व्यङ्क्ति for personification), which helps Nepali students recognise and understand English literary devices.</li><li>The distinction between metaphor and simile is one of the most frequently tested concepts in NEB English exams. Understanding that a metaphor is a direct comparison (A is B) while a simile is an explicit comparison (A is like B) is fundamental to literary analysis.</li><li>Literary devices are not limited to literature — they appear in everyday language, advertising, politics, and media. Recognising devices in daily life (e.g., puns in advertising slogans, hyperbole in political speeches) deepens students' understanding and appreciation of literary technique.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>literature</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>literature</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

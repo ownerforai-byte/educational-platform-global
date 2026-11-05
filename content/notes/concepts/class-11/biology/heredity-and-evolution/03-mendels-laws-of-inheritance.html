@@ -1,0 +1,220 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Mendel's laws of inheritance</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Biology  /  Heredity And Evolution</div>
+    <h1 class="doc">Mendel's laws of inheritance</h1>
+    <div class="meta"><span>Class 11</span><span>Biology</span><span>Heredity And Evolution</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>heredity-and-evolution</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>mendels-laws-of-inheritance</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Gregor Mendel - Father of Genetics</h4></li><li>Mendel conducted experiments on pea plants (Pisum sativum) from 1856-1863. He studied 7 pairs of contrasting characters.</li><li><h4>2. Key Terms</h4></li><li><ul>
+<li><strong>Gene</strong>: Unit of heredity, determines a trait</li>
+</ul></li><li><ul>
+<li><strong>Allele</strong>: Alternative form of a gene</li>
+</ul></li><li><ul>
+<li><strong>Dominant</strong>: Expressed when present (capital letter)</li>
+</ul></li><li><ul>
+<li><strong>Recessive</strong>: Expressed only when homozygous (lowercase)</li>
+</ul></li><li><ul>
+<li><strong>Genotype</strong>: Genetic makeup (e.g., TT, Tt, tt)</li>
+</ul></li><li><ul>
+<li><strong>Phenotype</strong>: Physical appearance</li>
+</ul></li><li><ul>
+<li><strong>Homozygous</strong>: Same alleles (TT or tt)</li>
+</ul></li><li><ul>
+<li><strong>Heterozygous</strong>: Different alleles (Tt)</li>
+</ul></li><li><ul>
+<li><strong>Monohybrid cross</strong>: Cross involving one trait</li>
+</ul></li><li><ul>
+<li><strong>Dihybrid cross</strong>: Cross involving two traits</li>
+</ul></li><li><h4>3. Mendel's First Law - Law of Segregation</h4></li><li>During gamete formation, the two alleles for each gene separate (segregate) so that each gamete receives only one allele.</li><li>Monohybrid cross ratio: Genotypic 1:2:1, Phenotypic 3:1</li><li><h4>4. Mendel's Second Law - Law of Independent Assortment</h4></li><li>Genes for different traits assort independently during gamete formation (applies to genes on different chromosomes).</li><li>Dihybrid cross ratio: Phenotypic 9:3:3:1</li><li><h4>5. Test Cross</h4></li><li>Cross between dominant phenotype and homozygous recessive to determine genotype.</li><li><h4>6. Entrance Exam Focus</h4></li><li>Solve Punnett squares; Calculate ratios; Distinguish between laws.</li><li>Mendel used pea plants because the traits were easy to score and the flowers could be crossed by hand and then self-pollinated.</li><li>The law of dominance says that in a heterozygote one allele masks the other, so the recessive trait stays hidden in that generation.</li><li>The law of segregation says the two alleles of a gene separate when gametes form, so each gamete carries only one allele of that gene.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>x Dominant traits are more common. x Dominant just means expressed when present.</li><li>x Independent assortment applies to all genes. x Only applies to genes on different chromosomes.</li><li>x 3:1 ratio always means homozygous dominant. x Could be heterozygous.</li><li>Segregation is about one gene's two alleles. Independent assortment is about two genes.</li><li>3:1 is a phenotype ratio. The genotype ratio of that monohybrid is 1:2:1.</li><li>A test cross is with the recessive parent, not with another heterozygote.</li><li>Peas were chosen because traits were discrete. Not every character behaves this cleanly.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Cross TT x tt - find F1 and F2 genotypic and phenotypic ratios.</li><li>In peas, tall (T) is dominant to short (t). Cross Tt x Tt. What fraction is homozygous?</li><li>A dihybrid cross TtRr x TtRr gives what phenotypic ratio?</li><li>How do you determine if a tall plant is TT or Tt?</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Monohybrid phenotypic ratio: 3:1</li><li>Dihybrid phenotypic ratio: 9:3:3:1</li><li>Test cross ratio: 1:1</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Gregor Mendel worked on the garden pea Pisum sativum from 1856 to 1863 with seven pairs of contrasting characters and formulated the two laws of classical inheritance. The law of segregation states that the two alleles of a gene separate during gamete formation so that each gamete receives one allele, which gives an F2 genotypic ratio of 1:2:1 and a phenotypic ratio of 3:1 in a monohybrid cross. The law of independent assortment states that genes on different chromosomes assort independently during meiosis, giving the 9:3:3:1 F2 phenotypic ratio in a dihybrid cross. Punnett squares, ratio identification and test crosses are the calculation skills tested in NEB entrance papers.</p></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>A gene is the unit of heredity; an allele is one of the alternative forms of that gene, written with a capital letter for the dominant allele and the matching lowercase letter for the recessive one.</li><li>Genotype is the genetic makeup (TT, Tt, tt) and phenotype is the observable trait; a dominant allele is expressed even in a heterozygote.</li><li>Homozygous (TT or tt) means two identical alleles; heterozygous (Tt) means two different alleles and shows the dominant phenotype.</li><li>Law of segregation: the pair of alleles separates during gamete formation, so each gamete carries only one allele of each gene.</li><li>Law of independent assortment: alleles of genes on different chromosomes assort independently during meiosis; linked genes on the same chromosome are the exception.</li><li>A test cross between an individual showing the dominant phenotype and a homozygous recessive individual reveals the genotype — a 1:1 ratio means heterozygous, all dominant means homozygous dominant.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Dominance does not mean 'more common'; it only means the allele is expressed when a single copy is present.</li><li>Independent assortment applies to genes on different chromosomes, not to every gene in the organism.</li><li>A 3:1 phenotypic ratio alone does not prove that a parent is homozygous — a test cross is needed to confirm the genotype.</li><li>A dominant allele is expressed in the heterozygote, the recessive allele is masked but can still be inherited and passed to the offspring.</li><li>A monohybrid cross follows one pair of contrasting characters, whereas a dihybrid cross follows two characters considered together.</li><li>Homozygous parents (TT x tt) produce an F1 in which every offspring is Tt and shows only the dominant phenotype.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Draw Punnett squares for TT x tt, Tt x Tt and Tt x tt and state the genotypic and phenotypic ratios of the F2.</li><li>In a cross of Tt x Tt, calculate the fraction of F2 offspring that are homozygous and the probability of a short (recessive) plant.</li><li>Determine the phenotype ratio produced by a dihybrid cross TtRr x TtRr and say what fraction shows both dominant traits.</li><li>Find the genotype of a tall pea plant by test-crossing it with a homozygous recessive plant, and interpret a 1:1 ratio and an all-dominant offspring ratio.</li><li>Given two phenotypically normal parents who have produced a child with a recessive trait, deduce the possible genotype of each parent.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Monohybrid cross Tt x Tt: F2 genotypes 1 TT : 2 Tt : 1 tt, phenotypes 3 tall : 1 short.</li><li>Dihybrid cross TtRr x TtRr: F2 phenotypes 9 : 3 : 3 : 1 (9 round-yellow, 3 round-green, 3 wrinkled-yellow, 1 wrinkled-green).</li><li>A Tt x Tt parent forms T and t gametes in equal numbers, giving a 1:1 ratio of the two gamete types.</li><li>A test cross ratio of 1:1 identifies the unknown dominant parent as heterozygous.</li><li>Genotypic and phenotypic ratios differ only where dominance makes two different genotypes look identical (TT and Tt look the same).</li><li>Sutton and Boveri later supplied the chromosomal basis for Mendel's factors, establishing that genes are carried on chromosomes.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Independent assortment fails for genes carried on the same chromosome; such linked genes are inherited together unless crossing over separates them.</li><li>Dominant does not mean common, stronger or better — a recessive phenotype appears only in homozygotes.</li><li>A 3:1 F2 ratio is expected only when the sample is large, fertilisation is random and dominance is complete; small samples deviate by chance.</li><li>A test cross works only with a homozygous recessive partner, since that parent can supply only the recessive allele.</li><li>Mendel published his work in 1866 but it was largely ignored until it was rediscovered around 1900, long after the chromosome basis of heredity was established.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Ratio decoder: 3:1 = monohybrid F2 phenotype, 1:2:1 = monohybrid F2 genotype, 9:3:3:1 = dihybrid F2 phenotype, 1:1 = test cross.</li><li>In a Tt x Tt square, three of the four boxes look alike (TT, TT, Tt) because dominance hides the difference.</li><li>If a recessive phenotype appears in the offspring, both parents must carry a recessive allele.</li><li>In dihybrid questions 9/16 of the F2 shows both dominant traits — it is the most common single class.</li><li>Count the letters in the Punnett square, then multiply out to 16 boxes for a dihybrid.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Monohybrid and dihybrid Punnett-square problems are the highest-frequency 5-mark items in the heredity section; state the genotype and phenotype ratios separately.</li><li>One-mark MCQs ask for the meaning of a term (gene, allele, homozygous, genotype) or the ratio produced by a named cross.</li><li>Statement-based MCQs test the exceptions: 'independent assortment applies to all genes' and 'dominant traits are more common' are both false.</li><li>Test cross questions give an offspring ratio and ask for the parent's genotype; a 1:1 ratio indicates heterozygosity.</li><li>Ratio-identification MCQs with a printed cross (1:2:1, 3:1, 9:3:3:1, 1:1) are frequently set as one-mark items.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Cross TT x tt and state the F1 genotype, the F1 phenotype and the F2 genotypic and phenotypic ratios.</li><li>In a Tt x Tt cross, what fraction of the F2 is homozygous and what fraction shows the recessive phenotype?</li><li>A dihybrid cross TtRr x TtRr gives what phenotypic ratio, and what fraction shows both dominant traits?</li><li>How would you determine whether a tall pea plant is TT or Tt?</li><li>Two phenotypically normal parents produce a child with a recessive disorder. What can you infer about their genotypes?</li><li>Explain why Mendel's second law does not hold for genes located on the same chromosome.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A tall pea plant (T) crossed with a short pea plant (t) produces only tall offspring. The genotype of the tall parent is most likely:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>tt</li><li>Tt</li><li>TT</li><li>Either Tt or TT</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>All tall offspring from a short (tt) parent means the tall parent supplied only T alleles, so it must be homozygous dominant TT. A Tt parent would have given a 1:1 ratio of tall and short.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>The phenotypic ratio obtained in the F2 generation of a monohybrid cross is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>1:1</li><li>3:1</li><li>1:2:1</li><li>9:3:3:1</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>3:1 is the F2 phenotypic ratio of a monohybrid cross with complete dominance. 1:2:1 is its genotypic ratio, 1:1 comes from a test cross and 9:3:3:1 from a dihybrid cross.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>In a test cross with a homozygous recessive plant, a heterozygous dominant parent produces:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>All dominant offspring</li><li>All recessive offspring</li><li>A 1:1 dominant to recessive ratio</li><li>A 3:1 ratio</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Tt x tt gives one-half Tt (dominant) and one-half tt (recessive), a 1:1 ratio that identifies the unknown dominant parent as heterozygous.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>The law of independent assortment applies to:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>All genes in a cell</li><li>Only genes on the same chromosome</li><li>Genes located on different chromosomes</li><li>Only dominant genes</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Genes on different chromosomes assort independently during meiosis. Genes on the same chromosome are linked and are inherited together unless crossing over separates them.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>In the dihybrid cross TtRr x TtRr the F2 offspring occur in the genotypic ratio:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>9:3:3:1</li><li>1:2:1</li><li>1:4:6:4:1</li><li>1:1:1:1</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>1:4:6:4:1 is the genotypic (and phenotypic) ratio of the F2 dihybrid, while 9:3:3:1 is the phenotypic ratio produced when dominance is complete.</p></div></div></div></section>
+<section class="field"><h2>Examples</h2><ul><li>Mendel used pea plants because the traits were easy to score and the flowers could be crossed by hand and then self-pollinated.</li><li>The law of dominance says that in a heterozygote one allele masks the other, so the recessive trait stays hidden in that generation.</li><li>The law of segregation says the two alleles of a gene separate when gametes form, so each gamete carries only one allele of that gene.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Mendel used pea plants because the traits were easy to score and the flowers could be crossed by hand and then self-pollinated.</li><li>The law of dominance says that in a heterozygote one allele masks the other, so the recessive trait stays hidden in that generation.</li><li>The law of segregation says the two alleles of a gene separate when gametes form, so each gamete carries only one allele of that gene.</li><li>Independent assortment says alleles of different genes separate independently when those genes are unlinked and sit far apart.</li><li>A monohybrid cross of two heterozygotes gives a phenotypic ratio of three dominant to one recessive when dominance is complete.</li><li>A dihybrid cross of two double heterozygotes gives nine to three to three to one when the two genes assort independently.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Do not swap the two sides of a contrast.</li><li>A formula or a sequence is worthless if the example contradicts it.</li></ul></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A monohybrid heterozygote cross gives the phenotype ratio</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>9:3:3:1</li><li>3:1</li><li>1:1</li><li>1:2:1 only, with no 3:1 phenotype</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Segregation says that</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Alleles of one gene separate into different gametes</li><li>All gametes get both alleles</li><li>Genes never mutate</li><li>Only dominant alleles enter pollen</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Independent assortment applies cleanly when genes are</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>On different chromosomes or far apart</li><li>The same allele</li><li>Always lethal</li><li>Inside a bacterium's capsule</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>A test cross uses</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>The homozygous recessive</li><li>Two dominant phenotypes only</li><li>A fungus</li><li>No gametes</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Two heterozygous tall plants are crossed. What phenotype ratio is expected if tall is dominant?</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Each parent is Tt.</li><li>Gametes are T and t, in equal share, by segregation.</li><li>Offspring are TT, Tt, Tt, tt.</li><li>Three show the dominant phenotype and one the recessive, so 3:1.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>3 tall : 1 dwarf.</p></div></div></div></section>
+<section class="field"><h2>Visual Type</h2><p>three-domains</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>Dominance, segregation, independent assortment. Pea ratios 3:1 and 9:3:3:1.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li><h4>1. Gregor Mendel - Father of Genetics</h4></li><li>Mendel conducted experiments on pea plants (Pisum sativum) from 1856-1863. He studied 7 pairs of contrasting characters.</li><li><h4>2. Key Terms</h4></li><li><ul>
+<li><strong>Gene</strong>: Unit of heredity, determines a trait</li>
+</ul></li><li><ul>
+<li><strong>Allele</strong>: Alternative form of a gene</li>
+</ul></li><li><ul>
+<li><strong>Dominant</strong>: Expressed when present (capital letter)</li>
+</ul></li><li><ul>
+<li><strong>Recessive</strong>: Expressed only when homozygous (lowercase)</li>
+</ul></li><li><ul>
+<li><strong>Genotype</strong>: Genetic makeup (e.g., TT, Tt, tt)</li>
+</ul></li><li><ul>
+<li><strong>Phenotype</strong>: Physical appearance</li>
+</ul></li><li><ul>
+<li><strong>Homozygous</strong>: Same alleles (TT or tt)</li>
+</ul></li><li><ul>
+<li><strong>Heterozygous</strong>: Different alleles (Tt)</li>
+</ul></li><li><ul>
+<li><strong>Monohybrid cross</strong>: Cross involving one trait</li>
+</ul></li><li><ul>
+<li><strong>Dihybrid cross</strong>: Cross involving two traits</li>
+</ul></li><li><h4>3. Mendel's First Law - Law of Segregation</h4></li><li>During gamete formation, the two alleles for each gene separate (segregate) so that each gamete receives only one allele.</li><li>Monohybrid cross ratio: Genotypic 1:2:1, Phenotypic 3:1</li><li><h4>4. Mendel's Second Law - Law of Independent Assortment</h4></li><li>Genes for different traits assort independently during gamete formation (applies to genes on different chromosomes).</li><li>Dihybrid cross ratio: Phenotypic 9:3:3:1</li><li><h4>5. Test Cross</h4></li><li>Cross between dominant phenotype and homozygous recessive to determine genotype.</li><li><h4>6. Entrance Exam Focus</h4></li><li>Solve Punnett squares; Calculate ratios; Distinguish between laws.</li><li>Mendel used pea plants because the traits were easy to score and the flowers could be crossed by hand and then self-pollinated.</li><li>The law of dominance says that in a heterozygote one allele masks the other, so the recessive trait stays hidden in that generation.</li><li>The law of segregation says the two alleles of a gene separate when gametes form, so each gamete carries only one allele of that gene.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Bounds</h2><ul><li>Class 11 boundary: stop at the characters in this note.</li><li>Do not invent a rank or a count.</li></ul></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../_subjects/class-11-biology.html">Biology</a><a href="04-incomplete-dominance-and-codominance.html" title="Incomplete dominance and codominance">Incomplete dominance and codominance ›</a></nav>
+</div></body></html>

@@ -1,0 +1,202 @@
+{
+  "title": "Covalent bond and coordinate covalent bond; properties of…",
+  "unitSlug": "chemical-bonding-and-shapes-of-molecules",
+  "topicSlug": "covalent-bond-and-coordinate-covalent-bond-properties-of-covalent-compounds",
+  "topicTitle": "Covalent bond and coordinate covalent bond; properties of covalent compounds",
+  "relevance": 100,
+  "source": "authored-v2",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "## 1. Sharing instead of transferring\nA covalent bond forms when two atoms each contribute one electron to a shared pair, so that both count the pair towards their own octet. The driving force is the same as in every bond — a lower total energy — but the mechanism is different: neither atom can afford to lose or gain electrons outright.\n\n**Why carbon is the archetype.** Carbon has four valence electrons: it would need to lose four (too costly) or gain four (equally costly), so it shares instead, forming four bonds and reaching an octet in CH₄, CO₂ and every organic compound.\n\n**What the shared pair looks like.** Two atomic orbitals overlap, and the region of overlap has increased electron density between the nuclei. That density is attracted by both nuclei at once, which is the energy that pays for the bond. The greater the overlap (as long as repulsion does not dominate), the stronger the bond.\n\n**The hook.** Petroleum, plastics, cotton, urea and even the graphite in a pencil are covalent structures. Their low melting points and poor conductivity — the reason plastic handles exist on cooking pans — follow directly from having molecules rather than a lattice of ions.",
+    "## 2. Bond order: single, double and triple\n| Bond order | Shared pairs | Carbon example | Length / pm | Energy / kJ mol⁻¹ | Rotation about the bond |\n| --- | --- | --- | --- | --- | --- |\n| 1 | 1 (σ) | C—C (ethane) | 154 | 348 | free |\n| 2 | 2 (σ + π) | C=C (ethene) | 134 | 614 | blocked |\n| 3 | 3 (σ + 2π) | C≡C (ethyne) | 120 | 839 | blocked |\n\n**Diatomic examples worth memorising.**\n\n| Molecule | Bond order | Length / pm | Energy / kJ mol⁻¹ |\n| --- | --- | --- | --- |\n| H₂ | 1 | 74 | 436 |\n| O₂ | 2 | 121 | 498 |\n| N₂ | 3 | 110 | 945 |\n| Cl₂ | 1 | 199 | 243 |\n\n**Two consequences.** (i) A higher bond order means a shorter, stronger bond, but each additional pair adds less than the previous one — the σ bond carries most of the strength. (ii) A π bond blocks rotation, which is why ethene has a rigid planar shape and cis/trans isomers exist while ethane does not.",
+    "```svg\n<svg viewBox=\"0 0 900 640\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Single, double and triple bonds compared\">\n  <rect width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n  <text x=\"450\" y=\"34\" font-family=\"Georgia,serif\" font-size=\"23\" text-anchor=\"middle\" fill=\"#111\">Bond order: more shared pairs, shorter and stronger</text>\n  <text x=\"450\" y=\"58\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#555\">carbon–carbon bonds shown; lengths in pm, energies in kJ mol⁻¹</text>\n\n  <!-- single -->\n  <line x1=\"140\" y1=\"140\" x2=\"260\" y2=\"140\" stroke=\"#111\" stroke-width=\"2.6\"/>\n  <text x=\"200\" y=\"118\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"15\" text-anchor=\"middle\" fill=\"#111\">C—C</text>\n  <text x=\"200\" y=\"180\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">bond order 1</text>\n  <text x=\"200\" y=\"202\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">154 pm · 348</text>\n  <text x=\"200\" y=\"224\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" text-anchor=\"middle\" fill=\"#6b7280\">ethane, freely rotating</text>\n\n  <!-- double -->\n  <line x1=\"440\" y1=\"136\" x2=\"560\" y2=\"136\" stroke=\"#111\" stroke-width=\"2.6\"/>\n  <line x1=\"440\" y1=\"146\" x2=\"560\" y2=\"146\" stroke=\"#111\" stroke-width=\"2.6\"/>\n  <text x=\"500\" y=\"118\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"15\" text-anchor=\"middle\" fill=\"#111\">C=C</text>\n  <text x=\"500\" y=\"180\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">bond order 2</text>\n  <text x=\"500\" y=\"202\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">134 pm · 614</text>\n  <text x=\"500\" y=\"224\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" text-anchor=\"middle\" fill=\"#6b7280\">ethene, no rotation</text>\n\n  <!-- triple -->\n  <line x1=\"740\" y1=\"132\" x2=\"860\" y2=\"132\" stroke=\"#111\" stroke-width=\"2.6\"/>\n  <line x1=\"740\" y1=\"141\" x2=\"860\" y2=\"141\" stroke=\"#111\" stroke-width=\"2.6\"/>\n  <line x1=\"740\" y1=\"150\" x2=\"860\" y2=\"150\" stroke=\"#111\" stroke-width=\"2.6\"/>\n  <text x=\"800\" y=\"114\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"15\" text-anchor=\"middle\" fill=\"#111\">C≡C</text>\n  <text x=\"800\" y=\"180\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">bond order 3</text>\n  <text x=\"800\" y=\"202\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">120 pm · 839</text>\n  <text x=\"800\" y=\"224\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" text-anchor=\"middle\" fill=\"#6b7280\">ethyne, linear</text>\n\n  <!-- diatomic examples -->\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" fill=\"#111\">\n    <text x=\"80\" y=\"300\" font-weight=\"bold\">The same rule in diatomic molecules</text>\n    <text x=\"80\" y=\"328\">H—H\torder 1\t74 pm\t436 kJ mol⁻¹</text>\n    <text x=\"80\" y=\"352\">O=O\torder 2\t121 pm\t498 kJ mol⁻¹</text>\n    <text x=\"80\" y=\"376\">N≡N\torder 3\t110 pm\t945 kJ mol⁻¹</text>\n  </g>\n\n  <g stroke=\"#9ca3af\" stroke-width=\"1.2\" stroke-dasharray=\"5 5\">\n    <line x1=\"80\" y1=\"256\" x2=\"820\" y2=\"256\"/>\n  </g>\n\n  <g font-family=\"Georgia,serif\" font-size=\"14\" fill=\"#374151\">\n    <text x=\"80\" y=\"440\">Rule: as bond order rises by one, length falls by roughly 10–15 % and energy rises by 60–80 %.</text>\n    <text x=\"80\" y=\"464\">The first bond is the strongest per pair gained; the second and third add less than proportionally.</text>\n    <text x=\"80\" y=\"500\">N₂ is the extreme case: three bonds, 945 kJ mol⁻¹, which is why nitrogen is so unreactive</text>\n    <text x=\"80\" y=\"524\">and why nitrogen fixation (Haber, lightning, bacteria) needs so much energy.</text>\n  </g>\n  <text x=\"450\" y=\"588\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" text-anchor=\"middle\" fill=\"#6b7280\">A π bond is weaker than the σ bond it accompanies, so double bonds react before single bonds.</text>\n</svg>\n```\n**Figure 2 — bond order at a glance.** Going from single to double to triple, the length falls and the strength rises, but the increments shrink. This is the quantitative basis for comparing reactivity: the second bond of a double bond breaks more easily, which is why alkenes add reagents that alkanes ignore.",
+    "## 3. The coordinate (dative) covalent bond\nA coordinate bond is an ordinary covalent bond in which **both** shared electrons come from one atom. The donor supplies a lone pair; the acceptor supplies an empty orbital. It is written with an arrow A→B, from donor to acceptor.\n\n**Conditions.** (1) The donor must have a complete lone pair. (2) The acceptor must have an empty orbital or be a positive ion. (3) The two must be close enough for overlap.\n\n| Species | Donor | Acceptor | Donated pair | Note |\n| --- | --- | --- | --- | --- |\n| NH₄⁺ | NH₃ (N lone pair) | H⁺ | 1 | all four N–H bonds then identical |\n| H₃O⁺ | H₂O (O lone pair) | H⁺ | 1 | explains why water is basic towards protons |\n| CO | O (one pair) | C (empty orbital) | 1 | carbon ends with an octet but only three bonds |\n| O₃ | one O (lone pair) | the other O | 1 | gives two equivalent O–O bonds in resonance |\n| SO₂ | S lone pair on O | S | 1 | with the second O it produces two equivalent S–O bonds |\n| NH₃·BF₃ | NH₃ (N lone pair) | BF₃ (empty 2p on B) | 1 | BF₃'s incomplete octet is filled |\n\n**The exam point.** Once formed, a coordinate bond is indistinguishable from a normal covalent bond: the four N–H bonds in NH₄⁺ have equal length and the ion is tetrahedral. The arrow records *origin*, not a weaker bond.\n\n**Why it matters practically.** Dative bonding explains Lewis acids and bases (BF₃ accepts, NH₃ donates), the basicity of water and ammonia, and the metal–ligand bonds in complexes where all the electrons come from the ligand.",
+    "```svg\n<svg viewBox=\"0 0 900 640\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Covalent bond formation in hydrogen and a dative bond in ammonium\">\n  <rect width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n  <text x=\"450\" y=\"34\" font-family=\"Georgia,serif\" font-size=\"23\" text-anchor=\"middle\" fill=\"#111\">Two ways to share: ordinary and dative</text>\n  <text x=\"450\" y=\"58\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#555\">left: one electron from each atom · right: both electrons from one atom</text>\n\n  <text x=\"220\" y=\"106\" font-family=\"Georgia,serif\" font-size=\"15\" text-anchor=\"middle\" fill=\"#111\">H₂ — ordinary covalent bond</text>\n  <circle cx=\"150\" cy=\"180\" r=\"34\" fill=\"none\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n  <circle cx=\"290\" cy=\"180\" r=\"34\" fill=\"none\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n  <circle cx=\"186\" cy=\"180\" r=\"6\" fill=\"#111\"/><circle cx=\"254\" cy=\"180\" r=\"6\" fill=\"#111\"/>\n  <text x=\"150\" y=\"186\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1d4ed8\">H</text>\n  <text x=\"290\" y=\"186\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1d4ed8\">H</text>\n  <text x=\"220\" y=\"238\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">one electron each → one shared pair</text>\n  <text x=\"220\" y=\"260\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">bond length 74 pm · 436 kJ mol⁻¹</text>\n\n  <text x=\"690\" y=\"106\" font-family=\"Georgia,serif\" font-size=\"15\" text-anchor=\"middle\" fill=\"#111\">NH₄⁺ — one dative bond</text>\n  <circle cx=\"690\" cy=\"200\" r=\"26\" fill=\"#15803d\"/>\n  <text x=\"690\" y=\"206\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"15\" text-anchor=\"middle\" fill=\"#fff\">N</text>\n  <g stroke=\"#111\" stroke-width=\"2.2\">\n    <line x1=\"690\" y1=\"174\" x2=\"690\" y2=\"140\"/>\n    <line x1=\"716\" y1=\"200\" x2=\"750\" y2=\"200\"/>\n    <line x1=\"664\" y1=\"200\" x2=\"630\" y2=\"200\"/>\n  </g>\n  <g stroke=\"#b91c1c\" stroke-width=\"2.6\" stroke-dasharray=\"6 4\" marker-end=\"url(#d1)\">\n    <defs><marker id=\"d1\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#b91c1c\"/></marker></defs>\n    <line x1=\"690\" y1=\"226\" x2=\"690\" y2=\"262\"/>\n  </g>\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#111\">\n    <text x=\"690\" y=\"132\">H</text><text x=\"762\" y=\"205\">H</text><text x=\"618\" y=\"205\">H</text><text x=\"690\" y=\"282\">H</text>\n  </g>\n  <text x=\"742\" y=\"250\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#b91c1c\">N donates its lone pair</text>\n  <text x=\"690\" y=\"322\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">NH₃ + H⁺ → NH₄⁺: all four N–H bonds</text>\n  <text x=\"690\" y=\"344\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">end up identical (109.5° tetrahedral)</text>\n\n  <g font-family=\"Georgia,serif\" font-size=\"14\" fill=\"#374151\">\n    <text x=\"80\" y=\"420\">The dative bond is not a different kind of bond — once formed it is indistinguishable</text>\n    <text x=\"80\" y=\"444\">from the others. The label records only where the electron pair came from.</text>\n  </g>\n\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" fill=\"#111\">\n    <text x=\"80\" y=\"500\" font-weight=\"bold\">Conditions for a dative bond</text>\n    <text x=\"80\" y=\"526\">1. the donor atom has a complete lone pair (N, O, S in a lower oxidation state)</text>\n    <text x=\"80\" y=\"550\">2. the acceptor has an empty orbital (H⁺, BF₃, a transition-metal ion)</text>\n    <text x=\"80\" y=\"574\">3. the two are held close enough for the pair to be shared</text>\n  </g>\n</svg>\n```\n**Figure 1 — ordinary versus dative sharing.** In H₂ each atom contributes one electron; in NH₄⁺ nitrogen contributes both electrons of one pair. After formation the four N–H bonds are equivalent, which is why the arrow is a bookkeeping device rather than a description of the final molecule.",
+    "![Ball-and-stick model of the ammonium ion](https://upload.wikimedia.org/wikipedia/commons/8/89/Ammonium-3D-balls.png)\n\n**Figure 4 — the ammonium ion.** Four equivalent N–H bonds in a tetrahedron, even though one was formed by donation of nitrogen's lone pair; the positive charge is delocalised over the ion. *Source: Wikimedia Commons, [Ammonium-3D-balls.png](https://commons.wikimedia.org/wiki/File:Ammonium-3D-balls.png), public domain.*",
+    "## 4. Formal charge: the bookkeeping of covalent structures\nFormal charge treats shared electrons as if they were split evenly, and is used to check which Lewis structure is most reasonable.\n\n$$FC = V - L - \\tfrac{1}{2}S$$\n\nwhere V = valence electrons in the free atom, L = lone-pair electrons on that atom, S = shared (bonding) electrons.\n\n| Species | Atom | V | L | S | Formal charge |\n| --- | --- | --- | --- | --- | --- |\n| NH₄⁺ | N | 5 | 0 | 8 | +1 |\n| H₃O⁺ | O | 6 | 2 | 6 | +1 |\n| CO | C | 4 | 2 | 6 | −1 |\n| CO | O | 6 | 2 | 6 | +1 |\n| O₃ | central O | 6 | 2 | 6 | +1 |\n\n**How to use it.** Prefer the structure with (i) the smallest formal charges, (ii) negative formal charge on the more electronegative atom, and (iii) no like charges on adjacent atoms. Sum of formal charges must equal the overall charge of the species — that is the arithmetic check.\n\n**Formal charge is not oxidation number.** Formal charge splits shared pairs equally; oxidation number gives the whole pair to the more electronegative atom. In CO, carbon's formal charge is −1 while its oxidation number is +2.",
+    "## 5. Polarity: when sharing is unequal\nA purely covalent bond has equal sharing. When the two atoms differ in electronegativity, the shared pair sits closer to the more electronegative atom and the bond becomes polar, with a partial positive and partial negative end (δ⁺, δ⁻).\n\n| ΔEN | Character | Example |\n| --- | --- | --- |\n| 0 | pure covalent | H₂, Cl₂, C–C |\n| 0 < ΔEN < 0.4 | essentially non-polar | C–H (0.35) |\n| 0.4 – 1.7 | polar covalent | HCl (0.96), HF (1.78) |\n| > 1.7 | predominantly ionic | NaCl (2.23), MgO (2.13) |\n\n**Bond polarity versus molecular polarity.** A molecule's dipole moment is the vector sum of its bond dipoles, so geometry decides:\n\n| Molecule | Bond dipoles | Shape | Net dipole | Result |\n| --- | --- | --- | --- | --- |\n| CO₂ | two C=O | linear, 180° | cancel | non-polar overall |\n| H₂O | two O–H | bent, 104.5° | add | 1.85 D, polar |\n| CCl₄ | four C–Cl | tetrahedral | cancel | non-polar |\n| CHCl₃ | three C–Cl, one C–H | tetrahedral, unequal | do not cancel | polar |\n| NH₃ | three N–H | pyramidal | add | 1.47 D |\n\n**The rule.** Symmetrical arrangements cancel; unsymmetrical ones do not. This is why CO₂ is a gas with no dipole moment while water's dipole gives it hydrogen bonding and a boiling point 200 °C higher than a molecule of comparable mass should have.",
+    "![Ball-and-stick model of the water molecule](https://upload.wikimedia.org/wikipedia/commons/b/b4/Water-3D-balls.png)\n\n**Figure 3 — water, a polar covalent molecule.** Two O–H bonds at 104.5° with two lone pairs on oxygen; the bent shape plus the electronegativity difference gives a net dipole moment of 1.85 D. *Source: Wikimedia Commons, [Water-3D-balls.png](https://commons.wikimedia.org/wiki/File:Water-3D-balls.png), author Benjah-bmm27, public domain.*",
+    "## 6. Properties of covalent compounds\n| Property | Observation | Explanation |\n| --- | --- | --- |\n| Melting and boiling point | low (H₂O 100 °C, CH₄ −162 °C, CO₂ sublimes at −78 °C) | only weak intermolecular forces need breaking, not covalent bonds |\n| Electrical conductivity | non-conductors when pure, solid or molten | no free ions and no mobile electrons |\n| Solubility | generally insoluble in water, soluble in organic solvents | \"like dissolves like\": non-polar solutes suit non-polar solvents |\n| Hardness | soft and usually brittle, unless polymeric | molecular crystals cleave easily |\n| Isomerism | common | the directionality of covalent bonds allows different arrangements |\n| Exceptions | graphite conducts; diamond is hardest known; SiO₂ melts at 1710 °C | network covalent solids, where the whole crystal is one giant covalent structure |\n\n**The exception that carries marks.** In a *molecular* covalent solid the covalent bonds are inside molecules and the forces between molecules are weak, so melting is easy. In a *network* covalent solid (diamond, SiO₂, SiC) every atom is covalently bonded to its neighbours throughout the crystal, so melting requires breaking covalent bonds — which is why quartz melts at 1710 °C while CO₂ (same period, molecular) sublimes below room temperature.",
+    "## 7. Ionic compared with covalent, side by side\n| Property | Ionic compound | Covalent compound |\n| --- | --- | --- |\n| Particles present | ions in a lattice | discrete molecules (or a network) |\n| Bonding force | electrostatic attraction | shared electron pairs |\n| Melting point | high (NaCl 801 °C) | low (CHCl₃ −63 °C), unless network |\n| Hardness | hard and brittle | soft, waxy or brittle |\n| Conductivity (solid) | none | none |\n| Conductivity (molten / solution) | conducts | does not conduct (no ions) |\n| Solubility | usually in water | usually in organic solvents |\n| Rate of reaction | fast (ions already formed) | slower, bonds must break |\n| Formula meaning | simplest ion ratio | actual number of atoms in a molecule |\n\n**Two quick discriminators.** (i) Melt it: if it needs a Bunsen flame and conducts when molten, it is ionic. (ii) Dissolve it in water and test conductivity — an ionic solid gives a conducting solution, a covalent molecular solid gives a non-conducting one (unless it reacts, like HCl).",
+    "## 8. Summary map and self-check\n**The topic on one card.**\n\n| Question | Answer |\n| --- | --- |\n| Covalent bond? | shared electron pair, one electron from each atom |\n| Bond order? | number of shared pairs; 1, 2, 3 → shorter and stronger |\n| Single/double/triple lengths (C–C)? | 154 / 134 / 120 pm |\n| Coordinate bond? | both electrons from the donor (NH₄⁺, H₃O⁺, CO, O₃) |\n| Formal charge? | FC = V − L − S/2; use it to choose the best Lewis structure |\n| Polarity? | ΔEN > 0.4 gives a polar bond; geometry decides the molecular dipole |\n| CO₂ versus H₂O? | CO₂ linear, dipoles cancel, non-polar; H₂O bent, polar |\n| Properties? | low melting point, non-conducting, soluble in organic solvents |\n| The exception? | network covalent solids (diamond, SiO₂) melt very high |\n\n**Self-check.**\n1. Draw Lewis structures for N₂, HCN and H₂O₂ and state the bond order of each bond.\n2. Explain, with the electron bookkeeping, why the four N–H bonds of NH₄⁺ are identical although one is dative.\n3. Calculate the formal charge on each atom in H₃O⁺ and in CO.\n4. Why is CO₂ non-polar while H₂O is polar? Use geometry in your answer.\n5. Give one property that distinguishes a molecular covalent solid from a network covalent solid, with an example of each."
+  ],
+  "confusion": [
+    "❌ A dative bond is weaker than a normal covalent bond. ✅ It is identical once formed; the arrow only records where the pair came from.",
+    "❌ CO₂ is polar because C=O bonds are polar. ✅ The linear geometry cancels the two bond dipoles, so the molecule is non-polar.",
+    "❌ All covalent compounds have low melting points. ✅ Network covalent solids (diamond, SiO₂, SiC) melt extremely high.",
+    "❌ Formal charge and oxidation number are the same. ✅ Formal charge splits shared pairs equally; oxidation number gives the pair to the more electronegative atom."
+  ],
+  "bounds": [
+    "Covers only: covalent bond, coordinate covalent bond, properties of covalent compounds (within Chemical Bonding and Shapes of Molecules).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "Draw Lewis structures for N₂, HCN and CO and assign formal charges.",
+    "Explain why NH₄⁺ has four identical bonds although one is dative.",
+    "Compare CO₂ and H₂O in terms of bond polarity and molecular dipole.",
+    "Distinguish molecular from network covalent solids with two examples and one property each."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Covalent bond and coordinate covalent bond; properties of…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  ],
+  "examples": [],
+  "practiceQuestions": [],
+  "keyPoints": [
+    "Covalent bond = shared pair, each atom contributing one electron.",
+    "Bond order 1/2/3 → C–C 154/134/120 pm, 348/614/839 kJ mol⁻¹.",
+    "Coordinate bond: both electrons from the donor; NH₄⁺, H₃O⁺, CO, O₃, NH₃·BF₃.",
+    "A dative bond is indistinguishable from an ordinary covalent bond once formed.",
+    "Formal charge FC = V − L − S/2; sums to the overall charge.",
+    "ΔEN > 0.4 gives a polar bond; molecular geometry decides the net dipole (CO₂ 0 D, H₂O 1.85 D).",
+    "Molecular covalent solids melt low and do not conduct; network solids (diamond, SiO₂) melt very high."
+  ],
+  "summary": "A covalent bond is a shared electron pair, formed because the overlap region has increased electron density that both nuclei attract. Bond order counts the shared pairs: for carbon, single/double/triple bonds are 154/134/120 pm and 348/614/839 kJ mol⁻¹, so more sharing means shorter and stronger, with diminishing returns. A coordinate (dative) bond is the same bond formed when one atom donates both electrons; NH₄⁺, H₃O⁺, CO, O₃ and NH₃·BF₃ are the standard examples, and once formed the dative bond is indistinguishable from the rest. Formal charge, FC = V − L − S/2, is the bookkeeping used to choose between Lewis structures, and it is not the same as oxidation number. Unequal sharing gives polar bonds, and geometry decides whether those dipoles cancel: CO₂ is linear and non-polar, H₂O is bent and polar (1.85 D). Molecular covalent compounds melt low, do not conduct and dissolve in organic solvents, while network covalent solids such as diamond and SiO₂ melt very high because covalent bonds must be broken throughout the crystal.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Covalent bond and coordinate covalent bond; properties of…\"?",
+      "options": [
+        "Covalent bond",
+        "Coordinate covalent bond",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Covalent bond is listed among the official sub-ideas of Covalent bond and coordinate covalent bond; properties of…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Covalent bond and coordinate covalent bond; properties of…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "numericals": [
+    "**N1 — Contraction on raising bond order.**\n*Given.* C–C 154 pm, C=C 134 pm, C≡C 120 pm.\n*Formula.* percentage change = (length difference / single-bond length) × 100.\n*Substitution.* 154 → 134: (20/154) × 100 = 13.0 %; 154 → 120: (34/154) × 100 = 22.1 %.\n*Answer.* **13.0 % and 22.1 % shorter** than the single bond — while the energy rises 76 % and 141 %.",
+    "**N2 — Formal charge on nitrogen in NH₄⁺.**\n*Given.* N has 5 valence electrons; in NH₄⁺ it has no lone pair and shares 8 electrons in four bonds.\n*Formula.* FC = V − L − S/2.\n*Substitution.* FC = 5 − 0 − 8/2 = +1.\n*Answer.* **+1**, which matches the overall charge of the ion (each H is 0).",
+    "**N3 — Formal charges in carbon monoxide.**\n*Given.* C: V = 4, one lone pair (L = 2), shares 6 electrons; O: V = 6, one lone pair (L = 2), shares 6.\n*Formula.* FC = V − L − S/2.\n*Substitution.* C: 4 − 2 − 3 = −1; O: 6 − 2 − 3 = +1.\n*Answer.* **C = −1, O = +1**, summing to zero; the negative charge on carbon explains why CO binds metals through carbon.",
+    "**N4 — Ionic character of the O–H bond in water.**\n*Given.* μ(H₂O) = 1.85 D = 6.17 × 10⁻³⁰ C m; bond length ≈ 95.7 pm = 9.57 × 10⁻¹¹ m; e = 1.602 × 10⁻¹⁹ C.\n*Formula.* q = μ/d; percentage ionic character = (q/e) × 100.\n*Substitution.* q = 6.17 × 10⁻³⁰/9.57 × 10⁻¹¹ = 6.45 × 10⁻²⁰ C; (6.45 × 10⁻²⁰/1.602 × 10⁻¹⁹) × 100 = 40 %.\n*Answer.* **≈ 40 % ionic character** per O–H bond — polar covalent, not ionic.",
+    "**N5 — Energy of one N≡N bond in electronvolts.**\n*Given.* Bond energy of N₂ = 945 kJ mol⁻¹; N_A = 6.022 × 10²³ mol⁻¹; 1 eV = 1.602 × 10⁻¹⁹ J.\n*Formula.* E(per molecule) = bond energy/N_A; E(eV) = E(J)/1.602 × 10⁻¹⁹.\n*Substitution.* 945 000/6.022 × 10²³ = 1.57 × 10⁻¹⁸ J; 1.57 × 10⁻¹⁸/1.602 × 10⁻¹⁹ = 9.80.\n*Answer.* **9.80 eV per molecule**, which is why nitrogen fixation needs a catalyst at 400–500 °C.",
+    "**N6 — Classifying bonds from electronegativity.**\n*Given.* Pauling values: H 2.20, Cl 3.16, F 3.98, C 2.55.\n*Formula.* ΔEN = |EN₁ − EN₂|; < 0.4 non-polar, 0.4–1.7 polar covalent, > 1.7 ionic.\n*Substitution.* C–H: 0.35; H–Cl: 0.96; H–F: 1.78.\n*Answer.* **C–H essentially non-polar, H–Cl polar covalent, H–F predominantly ionic** — the trend follows fluorine's electronegativity."
+  ],
+  "mcs": [
+    {
+      "question": "A covalent bond is formed by:",
+      "options": [
+        "transfer of electrons",
+        "sharing of an electron pair between atoms",
+        "attraction between ions",
+        "delocalised electrons in a lattice"
+      ],
+      "answer": "B",
+      "explanation": "Each atom contributes one electron (or one atom contributes both, in a dative bond) and both count the pair towards their octet."
+    },
+    {
+      "question": "Going from a single to a triple carbon–carbon bond, the bond length:",
+      "options": [
+        "increases",
+        "decreases",
+        "stays the same",
+        "first increases then decreases"
+      ],
+      "answer": "B",
+      "explanation": "154 → 134 → 120 pm, while the bond energy rises from 348 to 839 kJ mol⁻¹."
+    },
+    {
+      "question": "In a coordinate covalent bond:",
+      "options": [
+        "each atom contributes one electron",
+        "one atom contributes both electrons of the shared pair",
+        "electrons are transferred completely",
+        "no electrons are shared"
+      ],
+      "answer": "B",
+      "explanation": "The donor supplies a lone pair to an acceptor with an empty orbital, as in NH₃ + H⁺ → NH₄⁺."
+    },
+    {
+      "question": "The four N–H bonds in NH₄⁺ are:",
+      "options": [
+        "three normal and one dative, with different lengths",
+        "all identical",
+        "all ionic",
+        "two long and two short"
+      ],
+      "answer": "B",
+      "explanation": "Once formed, the dative bond is indistinguishable from the others; the ion is a regular tetrahedron."
+    },
+    {
+      "question": "The formal charge on the central oxygen in H₃O⁺ is:",
+      "options": [
+        "0",
+        "+1",
+        "−1",
+        "+2"
+      ],
+      "answer": "B",
+      "explanation": "FC = 6 − 2 − 6/2 = +1, matching the ion's overall charge."
+    },
+    {
+      "question": "CO₂ has no net dipole moment because:",
+      "options": [
+        "the C=O bonds are non-polar",
+        "the molecule is linear and the bond dipoles cancel",
+        "oxygen and carbon have equal electronegativity",
+        "it is ionic"
+      ],
+      "answer": "B",
+      "explanation": "Each C=O bond is polar, but the 180° geometry makes the two vectors sum to zero; water's bent shape does not cancel."
+    },
+    {
+      "question": "Which property is typical of a molecular covalent compound?",
+      "options": [
+        "high melting point",
+        "conducts electricity when molten",
+        "low melting point and non-conducting",
+        "forms a lattice of ions"
+      ],
+      "answer": "C",
+      "explanation": "Only weak intermolecular forces hold molecules together, and there are no mobile ions or electrons."
+    },
+    {
+      "question": "Diamond melts at a very high temperature although it is covalent because:",
+      "options": [
+        "it contains ions",
+        "it is a network covalent solid, so covalent bonds must be broken throughout",
+        "it has hydrogen bonds",
+        "it is metallic"
+      ],
+      "answer": "B",
+      "explanation": "In a network solid every atom is covalently bonded to its neighbours, unlike a molecular solid such as CO₂."
+    },
+    {
+      "question": "Which species contains a dative bond?",
+      "options": [
+        "CH₄",
+        "NH₄⁺",
+        "NaCl",
+        "H₂"
+      ],
+      "answer": "B",
+      "explanation": "Ammonium forms when NH₃ donates its lone pair to H⁺; H₃O⁺, CO and O₃ are the other standard examples."
+    },
+    {
+      "question": "The bond order of the N–N bond in N₂ is:",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "1.5"
+      ],
+      "answer": "C",
+      "explanation": "N≡N shares three pairs, length 110 pm and energy 945 kJ mol⁻¹ — the strongest common diatomic bond."
+    }
+  ],
+  "formulas": [
+    "bond order = number of shared pairs",
+    "FC = V − L − S/2",
+    "μ = q × d; percentage ionic character = (q/e) × 100"
+  ]
+}

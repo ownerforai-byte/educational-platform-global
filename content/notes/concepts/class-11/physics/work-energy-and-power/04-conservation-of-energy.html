@@ -1,0 +1,205 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Conservation of Energy</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Work Energy And Power</div>
+    <h1 class="doc">Conservation of Energy</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Work Energy And Power</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>work-energy-and-power</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>conservation-of-energy</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>Law of conservation of energy:</strong> Energy can neither be created nor destroyed; it can only be transformed from one form to another or transferred between systems. The total energy of an isolated system remains constant over time.</li><li><strong>Mechanical energy conservation:</strong> When only conservative forces (gravity, spring force, electrostatic force) act on a system, mechanical energy E = K + U is conserved: ΔK + ΔU = 0, or K_i + U_i = K_f + U_f.</li><li><strong>Potential energy types:</strong> Gravitational PE near Earth: U_g = mgh (h = height above reference). Elastic PE of a spring: U_s = ½kx² (x = compression/extension from natural length). For a universal gravitational field: U = -GMm/r.</li><li><strong>Non-conservative forces and energy loss:</strong> Friction, air resistance, and viscous drag are non-conservative. They convert mechanical energy into thermal energy (heat). Work done by non-conservative forces: W_nc = ΔE_mech = E_final - E_initial.</li><li><strong>Total energy conservation including heat:</strong> Even with friction, total energy is conserved if you include thermal energy: ΔK + ΔU + ΔE_thermal = 0. The first law of thermodynamics: ΔU_internal = Q - W, where Q is heat added, W is work done BY the system.</li><li><strong>Pendulum energy conservation:</strong> For a simple pendulum (mass m, length L, angle θ): At the bottom, K = ½mv², U = 0. At the extremes, v = 0, K = 0, U = mgL(1-cosθ). With no air resistance: ½mv² + mgL(1-cosθ) = constant.</li><li><strong>Spring-mass system:</strong> For a mass m on a spring with constant k: At equilibrium, K = ½mv², U = 0. At max extension x = A, v = 0, K = 0, U = ½kA². Energy oscillates: ½mv² + ½kx² = ½kA² = constant.</li><li><strong>Roller coaster physics:</strong> At the top of a hill, the car has maximum PE (mgh) and minimum KE. At the bottom, maximum KE and minimum PE. Total energy constant (neglecting friction). Minimum speed at top of vertical loop: v ≥ √(gr) to stay on track.</li><li><strong>Energy in collisions:</strong> In elastic collisions, both momentum and KE are conserved. In inelastic collisions, momentum is conserved but KE is not (some converts to heat/sound). In perfectly inelastic collisions, objects stick together and KE loss is maximum.</li><li><strong>Conservation of energy in nuclear reactions:</strong> Mass-energy equivalence E = mc² shows mass is another form of energy. In nuclear fission/fusion, the total mass of products is less than reactants — the mass defect Δm appears as kinetic energy of products: ΔE = Δmc².</li><li><strong>Power and energy relationship:</strong> Power is the rate of energy transfer: P = dE/dt. If power is constant, E = Pt. If power varies, E = ∫P dt. Energy delivered is the area under the P-t curve.</li><li><strong>Real-world energy transformations:</strong> Chemical energy (fuel) → thermal (burning) → mechanical (engine) → electrical (generator) → electromagnetic (light) → thermal (absorber). At each step, some energy becomes heat (second law).</li><li><strong>Reference point for potential energy:</strong> Gravitational PE is defined relative to a chosen zero level. The choice is arbitrary — only differences in PE matter. Usually we set U = 0 at the lowest point in the problem or at ground level.</li><li><h2>Conservation of energy</h2>
+<h3>1. Introduction</h3>
+<p>Physical picture of <strong>Conservation of energy</strong> — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Work, Energy and Power fill pass.</p>
+<h3>2. Concepts and laws</h3>
+<h4>Conservation of energy</h4>
+<p>Each law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).</li><li><h3>3. Derivation block</h3>
+<p>Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs &quot;derive / establish / show that&quot; are answered here, not elsewhere.</p>
+<p><strong>Table 1 — Law and result sheet</strong></p>
+<table><thead><tr><th>Law or result</th><th>Statement (words)</th><th>Equation + symbols</th><th>SI units</th><th>When it holds</th></tr></thead><tbody></tbody></table></li><li><h3>4. Formula and units table</h3>
+<p><strong>Table 2 — Quantities and graph reading</strong></p>
+<table><thead><tr><th>Quantity</th><th>Symbol + SI unit</th><th>Graph (slope or area meaning)</th><th>Worked angle</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 3 — Summary and marks map</strong></p>
+<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table>
+<p>Every formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).</li><li><h3>5. Diagrams and figures</h3>
+<ul>
+<li><strong>D1</strong> — Conservation of energy — free-body and field picture (authored SVG — English labels, viewBox 900×640)</li>
+<li><strong>D2</strong> — Conservation of energy — graph or second construction (authored SVG — axes, units and labels)</li>
+<li><strong>D3</strong> — Conservation of energy — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
+<li><strong>D4</strong> — Conservation of energy — apparatus or application figure (curated external — license recorded at fill)</li>
+</ul>
+<p>Slots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.</li><li><h3>6. Worked numericals</h3>
+<p>≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.</p>
+<h3>7. Key terms, signs and traps</h3>
+<p>Sign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).</li><li><h3>8. Exam Zone and self-check</h3>
+<p>NEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</p>
+<p>Key-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Energy is NOT created or destroyed — it only transforms. When a pendulum stops swinging due to friction, the energy doesn't 'disappear'; it becomes thermal energy in the air and the pivot. The FIRST law of thermodynamics says energy is conserved in all processes.</li><li>Conservation of mechanical energy (K + U = constant) ONLY holds when ALL forces are conservative. If there is ANY friction, air resistance, or non-conservative force, mechanical energy is NOT conserved. You must include W_nc or track thermal energy.</li><li>Potential energy is NOT absolute — it is defined relative to an arbitrary zero point. A ball on a table has U = mgh relative to the floor, but U = mg(h+H) relative to the basement. Only PE differences matter physically.</li><li>In a collision, momentum is ALWAYS conserved (if no external forces). Kinetic energy is ONLY conserved in perfectly ELASTIC collisions. Many students think KE is always conserved in collisions — it is NOT. Real collisions are usually somewhat inelastic.</li><li>The work-energy theorem (W_net = ΔK) and energy conservation (ΔK + ΔU = -W_nc) are DIFFERENT. The first is about NET work changing kinetic energy. The second is about total mechanical energy. With conservative forces, W_net = -ΔU, so W_net + ΔU = ΔK, which is the work-energy theorem.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>A 2 kg block slides down a frictionless incline of height 5 m. Find its speed at the bottom. Solution: U_i = mgh = 2 × 9.8 × 5 = 98 J. K_i = 0. At bottom: U_f = 0. K_f = U_i → ½mv² = 98 → v² = 196/2 = 98 → v = √98 = 9.9 m/s.</li><li>A 0.5 kg block on a spring (k = 200 N/m) is compressed 0.1 m and released. Find max speed. Solution: U_s = ½kx² = ½×200×0.01 = 1 J. At equilibrium, all U_s → K. ½mv² = 1 → v² = 4 → v = 2 m/s. Amplitude of oscillation = 0.1 m.</li><li>A 1000 kg car moving at 20 m/s brakes to a stop. The brakes heat up with 80% of the KE going to thermal energy in the brakes. How much heat is generated? Solution: KE_initial = ½×1000×400 = 200,000 J = 200 kJ. Heat = 0.8 × 200 kJ = 160 kJ.</li><li>A ball is dropped from height h = 10 m and bounces back to height 7.5 m. Find the coefficient of restitution e and the fraction of energy lost. Solution: Speed before impact = √(2gh) = √(196) = 14 m/s. Speed after = √(2g×7.5) = √(147) = 12.1 m/s. e = v_after/v_before = 12.1/14 = 0.86. Energy lost = 1 - e² = 1 - 0.74 = 26%.</li><li>A 5 kg block slides down a rough 30° incline of length 4 m with μ = 0.2. Find its speed at the bottom. Solution: Height drop = 4 sin 30° = 2 m. U_i = mgh = 5×9.8×2 = 98 J. Work by friction: W_f = -μmg cosθ × s = -0.2×5×9.8×cos30°×4 = -0.2×5×9.8×0.866×4 = -34 J. ΔK = U_i + W_f = 98 - 34 = 64 J. v = √(2×64/5) = √(128/5) = 5.06 m/s.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The law of conservation of energy is the first law of thermodynamics and applies to ALL physical processes — mechanics, electromagnetism, thermodynamics, quantum mechanics, general relativity. It is the most fundamental and universal law in physics.</li><li>Emmy Noether proved (1918) that conservation of energy is a consequence of time translation symmetry: the laws of physics are the same at all times. This is Noether's theorem — every continuous symmetry implies a conserved quantity.</li><li>Perpetual motion machines of the first kind (producing energy without input) are IMPOSSIBLE because they violate energy conservation. No known process in the universe creates net energy from nothing.</li><li>The total energy of the universe is a subtle concept in cosmology. In an expanding universe, energy conservation is not globally well-defined in the same way. However, in local physics, energy conservation is exact and tested to incredible precision.</li><li>Energy exists in many forms: kinetic, gravitational potential, elastic potential, chemical, nuclear, electromagnetic, thermal, rest mass energy (mc²), etc. All can be converted into each other, subject to the laws of physics.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>work-energy-and-power</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>work-energy-and-power</p></section>
+<section class="field"><h2>Examples</h2><ul><li>Pendulum: A 2 kg bob is released from 0.5 m above the lowest point. Speed at bottom: mgh = ½mv² → v = √(2×9.8×0.5) = 3.13 m/s.</li><li>Spring-mass: A 0.5 kg mass on a spring (k = 200 N/m) compressed 0.1 m. Max speed: ½kA² = ½mv² → v = √(200×0.01/0.5) = 2 m/s.</li><li>Roller coaster: A 500 kg car starts at 20 m height. Speed at bottom: v = √(2×9.8×20) = 19.8 m/s.</li><li>Free fall: A 1 kg stone dropped from 45 m. Speed at ground: v = √(2×9.8×45) = 29.7 m/s.</li><li>Inclined plane: A 3 kg block slides down a smooth 30° slope of length 10 m. Speed at bottom: v = √(2×9.8×5) = 9.9 m/s (h = 10 sin 30° = 5 m).</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>A 0.2 kg ball is dropped from 15 m. Find its speed just before hitting the ground.</li><li>A 1.5 kg mass on a spring (k = 300 N/m) is stretched 0.2 m and released. Find the maximum speed.</li><li>A 600 kg roller coaster car starts at 25 m height. Find its speed at the bottom and at 10 m height.</li><li>A 0.5 kg pendulum bob is pulled to 30° from vertical (length 1.2 m). Find its speed at the lowest point.</li><li>A 2 kg block slides down a rough 40° slope (μ_k = 0.2) of length 8 m. Find the speed at the bottom.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Mechanical energy conservation: K_i + U_i = K_f + U_f (only conservative forces)</li><li>Work-energy theorem: W_net = ΔK = ½mv_f² − ½mv_i²</li><li>Work by non-conservative forces: W_nc = ΔE_mech = (K_f + U_f) − (K_i + U_i)</li><li>Gravitational PE: U_g = mgh (near Earth); U = −GMm/r (universal)</li><li>Elastic PE: U_s = ½kx²; total spring energy: ½mv² + ½kx² = ½kA²</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Mechanical energy (K + U) is conserved ONLY when all forces are conservative.</li><li>Friction and air resistance are non-conservative — they convert mechanical energy to heat.</li><li>The work-energy theorem (W_net = ΔK) holds for ALL forces, conservative or not.</li><li>Total energy (including thermal) is always conserved — this is the first law of thermodynamics.</li><li>Choose the reference level for PE at the lowest point to simplify calculations.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Energy cannot be created or destroyed — only transformed. When only conservative forces act, mechanical energy (K + U) is conserved. Non-conservative forces (friction) convert mechanical energy to heat, but total energy is always conserved. The work-energy theorem (W_net = ΔK) is the key tool for solving problems.</p></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Mechanical energy conservation requires ALL forces to be conservative — one friction force breaks it.</li><li>The reference level for gravitational PE is arbitrary — only differences matter.</li><li>In a spring-mass system, energy oscillates between kinetic and potential: ½mv² + ½kx² = constant.</li><li>The work-energy theorem is more general than mechanical energy conservation — it works with friction.</li><li>NEB frequently asks: 'Find the speed at the bottom' — use mgh = ½mv² for smooth surfaces.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>The law of conservation of energy: energy cannot be created or destroyed, only transformed.</li><li>Mechanical energy (K + U) is conserved when only conservative forces do work.</li><li>The work-energy theorem states that the net work on a body equals its change in kinetic energy.</li><li>Non-conservative forces (friction) convert mechanical energy into thermal energy.</li><li>Total energy (mechanical + thermal + other forms) is always conserved in an isolated system.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Mechanical energy conservation requires ALL forces to be conservative — one friction force breaks it.</li><li>The work-energy theorem (W_net = ΔK) works for ALL forces — it is more general than energy conservation.</li><li>The reference level for gravitational PE is arbitrary — choose it at the lowest point to simplify.</li><li>In a spring-mass system, energy oscillates: ½mv² + ½kx² = ½kA² = constant.</li><li>NEB frequently asks: 'Find the speed at the bottom' — use mgh = ½mv² for smooth surfaces.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Smooth surface shortcut: mgh = ½mv² — mass cancels, so v = √(2gh) independent of mass.</li><li>Spring shortcut: ½kA² = ½mv² — max speed v = A√(k/m).</li><li>Pendulum shortcut: v_max = √(2gL(1−cosθ)) — depends on L and θ, not mass.</li><li>Rough slope shortcut: mgh − μmg cos θ × d = ½mv² — friction does negative work.</li><li>Work-energy shortcut: W_net = ΔK — always works, even with friction.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Mechanical energy conservation (K_i + U_i = K_f + U_f) is the most common problem type.</li><li>Work-energy theorem (W_net = ΔK) is more general — use it when friction is present.</li><li>Pendulum and spring problems are standard — know the energy oscillation formulas.</li><li>Roller coaster and free-fall problems use mgh = ½mv² (smooth surface).</li><li>NEB asks both numerical problems and conceptual questions about energy transformation.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A 2 kg ball is dropped from 20 m. Its speed just before hitting the ground is: (g = 10 m/s²)</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>10 m/s</li><li>20 m/s</li><li>30 m/s</li><li>40 m/s</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A spring (k = 400 N/m) is compressed 0.1 m. A 0.5 kg mass is placed against it. The maximum speed is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>2 m/s</li><li>2.83 m/s</li><li>4 m/s</li><li>8 m/s</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Which statement about energy is correct?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Mechanical energy is always conserved</li><li>Friction increases mechanical energy</li><li>Total energy is always conserved in an isolated system</li><li>Potential energy depends on the path taken</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>A pendulum of length 1 m is pulled to 60°. The speed at the lowest point is: (g = 10 m/s²)</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>2 m/s</li><li>3.16 m/s</li><li>4 m/s</li><li>5 m/s</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>A 1 kg block slides down a rough 30° slope (μ_k = 0.2) of length 4 m. The speed at the bottom is: (g = 10 m/s²)</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>4 m/s</li><li>5 m/s</li><li>6 m/s</li><li>8 m/s</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Energy cannot be created or destroyed — only transformed from one form to another.</li><li>Mechanical energy (K + U) is conserved when only conservative forces do work.</li><li>The work-energy theorem (W_net = ΔK) holds for all forces, conservative or not.</li><li>Non-conservative forces convert mechanical energy into thermal energy.</li><li>Total energy (mechanical + thermal + other) is always conserved in an isolated system.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Solve 5 free-fall problems using mgh = ½mv².</li><li>Solve 5 pendulum problems finding speed at the lowest point.</li><li>Solve 5 spring-mass problems finding maximum speed.</li><li>Solve 5 roller coaster problems finding speed at different heights.</li><li>Solve 5 rough-slope problems using the work-energy theorem with friction.</li></ul></section>
+<section class="field"><h2>Nepali</h2><dl class="obj"><div class="kv"><dt>Notes</dt><dd><ul><li><strong>ऊर्जा संरक्षण नियम:</strong> ऊर्जा न सिर्जना हुन सक्छ न नष्ट। यो केवल एउटै रूपबाट अर्को रूपमा रूपान्तरित हुन सक्छ वा प्रणालीहरू बीच हस्तान्तरित हुन सक्छ। एक अलग प्रणालीको कुल ऊर्जा समयसाथ स्थिर रहन्छ।</li><li><strong>यान्त्रिक ऊर्जा संरक्षण:</strong> जब केवल रूढिगत (conservative) बलहरू (गुरुत्वाकर्षण, स्प्रिङ बल, स्थिरविद्युत बल) प्रणालीमा कार्य गर्छन्, यान्त्रिक ऊर्जा E = K + U संरक्षित रहन्छ: ΔK + ΔU = 0, वा K_i + U_i = K_f + U_f।</li><li><strong>स्थितिज ऊर्जाको प्रकारहरू:</strong> पृथ्वीको नजिक गुरुत्वाकर्षण स्थितिज ऊर्जा: U_g = mgh (h = सन्दर्भबाटको उचाइ)। स्प्रिङको प्रत्यास्थ स्थितिज ऊर्जा: U_s = ½kx² (x = प्राकृतिक लम्बाईबाट संकुचन/विस्तार)।</li></ul></dd></div><div class="kv"><dt>Important Statements</dt><dd><ul><li>ऊर्जा संरक्षण भनेको कुल ऊर्जा (गतिज + स्थितिज + तापीय + अन्य) अलग प्रणालीमा स्थिर रहन्छ।</li><li>गतिज ऊर्जा K = ½mv², स्थितिज ऊर्जा U = mgh (पृथ्वीको नजिक)।</li><li>कार्य-ऊर्जा प्रमेय: W_net = ΔK — यो सबै बलहरू (रूढिगत र अरूढिगत दुवै) को लागि मानिन्छ।</li></ul></dd></div></dl></section>
+<section class="field"><h2>Grammar</h2><dl class="obj"><div class="kv"><dt>Notes</dt><dd><ul><li>Conservation (noun): the act of preserving something. Conserved (adjective): kept constant.</li><li>Energy (noun): capacity to do work. Uncountable in physics context.</li><li>Potential energy (noun phrase): stored energy due to position.</li></ul></dd></div><div class="kv"><dt>Important Statements</dt><dd><ul><li>In physics, 'conservation of energy' is a fundamental principle, not just a suggestion.</li><li>The word 'conserved' means 'remains constant over time', not 'saved' in the everyday sense.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Source</h2><p>skeleton-v2</p></section>
+  <nav class="pager"><a href="04-conservation-energy.html" title="Conservation of Energy">‹ Conservation of Energy</a><a class="mid" href="../../../../../_subjects/class-11-physics.html">Physics</a><a href="05-collisions.html" title="Elastic and Inelastic Collisions">Elastic and Inelastic Collisions ›</a></nav>
+</div></body></html>

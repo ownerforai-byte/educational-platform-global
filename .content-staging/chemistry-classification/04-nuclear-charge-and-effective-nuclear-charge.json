@@ -1,0 +1,192 @@
+{
+  "title": "Nuclear charge and effective nuclear charge",
+  "unitSlug": "classification-of-elements-and-periodic-table",
+  "topicSlug": "nuclear-charge-and-effective-nuclear-charge",
+  "topicTitle": "Nuclear charge and effective nuclear charge",
+  "relevance": 100,
+  "source": "authored-v2",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "## 1. Two charges and three symbols\nThree numbers get mixed up in this topic and they are not interchangeable.\n\n| Symbol | Name | Meaning | Value for Cl |\n| --- | --- | --- | --- |\n| Z | atomic number | protons in the nucleus | 17 |\n| σ | shielding (screening) constant | how much of Z the other electrons cancel, in units of e | 10.90 |\n| Zeff | effective nuclear charge | Z − σ, the pull the electron actually feels | 6.10 |\n\n**Nuclear charge is a fact; Zeff is a model.** The nucleus really does carry +17e. How much of that reaches a given electron depends on where the other electrons are, which is an approximation — so Zeff always comes with \"by Slater's rules\" or \"by Clementi's calculation\" attached. The two methods differ by up to about one unit for the same atom, and both are accepted in exams as long as you say which you used.\n\n**Units.** Z, σ and Zeff are all pure numbers, because they are counts of elementary charges. Zeff = 6.10 means \"the electron behaves as though the nucleus were +6.10e\", not that 6.10 protons are visible.",
+    "**Nuclear charge.** The total positive charge of the nucleus is Ze, where Z is the atomic number and e the elementary charge; it is the nucleus's pull on the electron cloud.",
+    "## 2. Shielding: why inner electrons cancel the nucleus",
+    "**Shielding effect.** Inner-shell electrons repel outer electrons and cancel part of the nuclear pull; this screening is greatest in multi-electron atoms.",
+    "**Effective nuclear charge.** Zeff = Z − σ, where σ is the shielding constant; outer electrons feel this reduced attraction rather than the full nuclear charge.",
+    "## 3. Slater's rules: the weighting each electron gets\nSlater's rules assign a screening contribution to every other electron, depending on where it sits relative to the electron you are interested in (the *target* electron).\n\n| Other electron's position | Contribution to σ | Reason |\n| --- | --- | --- |\n| same shell, to the right of the target | 0 | it does not screen an electron outside it |\n| same shell, to the left, or same subshell | 0.35 (1s partner: 0.30) | poor screening — same average distance |\n| *n* − 1 shell | 0.85 | good screening |\n| *n* − 2 shell and deeper | 1.00 | nearly complete screening |\n| for an *n*s or *n*p target, electrons in (*n*−1)d or (*n*−2)f | 1.00 | they lie inside the s/p orbital |\n\n**Procedure.** (1) Write the full configuration in groups: (1s)(2s,2p)(3s,3p)(3d)(4s,4p)… (2) Identify the target group. (3) Add the contributions from the table. (4) Subtract from Z.\n\n**Why the weights exist.** An electron screens another only if it spends most of its time *between* that electron and the nucleus. Core electrons do; same-shell electrons sit at the same average radius and therefore barely screen each other. That is the entire physical content of the 0.35/0.85/1.00 numbers.",
+    "## 4. Worked once, slowly: the 3s electron of sodium\nNa: Z = 11, configuration (1s²)(2s²2p⁶)(3s¹). Target: the single 3s electron.\n\n| Group | Electrons | Weight | Contribution |\n| --- | --- | --- | --- |\n| 3s | 0 others in the group | 0.35 | 0.00 |\n| 2s, 2p (*n* − 1) | 8 | 0.85 | 6.80 |\n| 1s (*n* − 2) | 2 | 1.00 | 2.00 |\n| **σ** | | | **8.80** |\n\nZeff = 11 − 8.80 = **2.20**.\n\n**Read the number, not just the arithmetic.** Sodium's valence electron is held by only +2.2e out of a possible +11e — about 20 % of the nuclear charge. That is why sodium loses its outer electron at 496 kJ/mol, why it is a strong reducing agent, and why it is larger (186 pm) than magnesium (160 pm) even though magnesium has one proton more.",
+    "## 5. Worked again: the 3p electron of chlorine, and the group-1 pattern\nFor Cl (Z = 17, (1s²)(2s²2p⁶)(3s²3p⁵), target 3p): six other electrons in the same shell → 6 × 0.35 = 2.10; eight in *n* = 2 → 6.80; two in *n* = 1 → 2.00; σ = 10.90, Zeff = **6.10**.\n\nThe same machinery gives the group-1 column, and the pattern is the point of the whole topic:\n\n| Species | Target | σ | Zeff |\n| --- | --- | --- | --- |\n| Li | 2s | 2(0.85) + 0 = 1.70 | 1.30 |\n| Na | 3s | 8(0.85) + 2(1.00) = 8.80 | 2.20 |\n| K | 4s | 8(0.85) + 10(1.00) = 16.80 | 2.20 |\n| Rb | 5s | 8(0.85) + 28(1.00) = 34.80 | 2.20 |\n\n**Two conclusions, both examinable.** (i) Across a period Zeff rises sharply (Li 1.30 → Ne 5.85; Na 2.20 → Cl 6.10) because each added electron screens only 0.35. (ii) Down a group Zeff is *almost constant* — the added shell screens as fast as Z grows — so the size increase down a group is caused by the extra shell, not by a weaker pull.",
+    "```svg\n<svg viewBox=\"0 0 900 640\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"One chlorine valence electron screened by ten core electrons\">\n  <rect width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n  <text x=\"450\" y=\"34\" font-family=\"Georgia,serif\" font-size=\"23\" text-anchor=\"middle\" fill=\"#111\">Chlorine: what the 3p electron actually feels</text>\n  <text x=\"450\" y=\"58\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#555\">Z = 17 protons, 10 core electrons, 7 valence electrons</text>\n\n  <!-- nucleus -->\n  <circle cx=\"450\" cy=\"250\" r=\"42\" fill=\"#ef4444\" opacity=\"0.92\"/>\n  <text x=\"450\" y=\"245\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"20\" text-anchor=\"middle\" fill=\"#fff\" font-weight=\"bold\">+17</text>\n  <text x=\"450\" y=\"266\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" text-anchor=\"middle\" fill=\"#fff\">Z e</text>\n\n  <!-- core shell -->\n  <circle cx=\"450\" cy=\"250\" r=\"96\" fill=\"none\" stroke=\"#6b7280\" stroke-width=\"1.6\" stroke-dasharray=\"6 5\"/>\n  <circle cx=\"450\" cy=\"250\" r=\"126\" fill=\"none\" stroke=\"#6b7280\" stroke-width=\"1.6\" stroke-dasharray=\"6 5\"/>\n  <text x=\"450\" y=\"150\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">n = 2 core: 8 electrons screen 0.85 each</text>\n  <text x=\"450\" y=\"118\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">n = 1 core: 2 electrons screen 1.00 each</text>\n\n  <!-- valence shell -->\n  <circle cx=\"450\" cy=\"250\" r=\"196\" fill=\"none\" stroke=\"#1d4ed8\" stroke-width=\"2\" stroke-dasharray=\"3 6\"/>\n  <circle cx=\"646\" cy=\"250\" r=\"12\" fill=\"#1d4ed8\"/>\n  <text x=\"740\" y=\"244\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#1d4ed8\">3p electron</text>\n  <text x=\"740\" y=\"264\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" text-anchor=\"middle\" fill=\"#1d4ed8\">feels +6.10 e</text>\n\n  <!-- pull arrow -->\n  <g stroke=\"#1d4ed8\" stroke-width=\"2.4\" marker-end=\"url(#arr)\">\n    <defs><marker id=\"arr\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#1d4ed8\"/></marker></defs>\n    <line x1=\"626\" y1=\"250\" x2=\"500\" y2=\"250\"/>\n  </g>\n  <text x=\"560\" y=\"238\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" text-anchor=\"middle\" fill=\"#1d4ed8\">net attraction</text>\n\n  <!-- arithmetic -->\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" fill=\"#111\">\n    <text x=\"60\" y=\"404\">σ = 6(0.35) + 8(0.85) + 2(1.00)</text>\n    <text x=\"60\" y=\"426\" fill=\"#374151\">    = 2.10 + 6.80 + 2.00 = 10.90</text>\n    <text x=\"60\" y=\"456\" font-weight=\"bold\">Zeff = 17 − 10.90 = 6.10</text>\n    <text x=\"60\" y=\"486\" fill=\"#6b7280\">Same-shell electrons screen poorly (0.35); n−1 electrons screen better (0.85);</text>\n    <text x=\"60\" y=\"506\" fill=\"#6b7280\">n−2 and deeper screen almost fully (1.00).</text>\n  </g>\n\n  <g font-family=\"Georgia,serif\" font-size=\"14\" fill=\"#374151\">\n    <text x=\"60\" y=\"552\">Consequence: chlorine is small (99 pm) and greedy for one more electron —</text>\n    <text x=\"60\" y=\"576\">high ionisation energy (1251 kJ/mol), high electron affinity (349 kJ/mol).</text>\n  </g>\n</svg>\n```\n**Figure 1 — the bookkeeping behind Zeff.** The red nucleus carries +17e; the two grey dashed shells of core electrons cancel 10.9e of it, so the 3p electron is held by an apparent +6.1e. This single number explains chlorine's radius, its ionisation energy and its electronegativity — the whole of the next topic.",
+    "![Chart of effective nuclear charge for elements across the periodic table](https://upload.wikimedia.org/wikipedia/commons/7/78/Effective_Nuclear_Charge_All.svg)\n\n**Figure 4 — Zeff across the whole table.** The sawtooth is the signature: each new period drops back to about +1 to +2 and then climbs again. Compare it with the ionisation-energy and radius graphs in the next topic — they are the same sawtooth, inverted. *Source: Wikimedia Commons, [Effective Nuclear Charge All.svg](https://commons.wikimedia.org/wiki/File:Effective_Nuclear_Charge_All.svg), author T.vanschaik, CC BY-SA 4.0 — attribution and share-alike required.*",
+    "```svg\n<svg viewBox=\"0 0 900 640\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Bar chart of effective nuclear charge across periods 2 and 3\">\n  <rect width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n  <text x=\"450\" y=\"34\" font-family=\"Georgia,serif\" font-size=\"23\" text-anchor=\"middle\" fill=\"#111\">Effective nuclear charge rises across a period</text>\n  <text x=\"450\" y=\"58\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#555\">Slater values for the outermost electron; note the two starting points</text>\n\n  <!-- axes -->\n  <line x1=\"110\" y1=\"520\" x2=\"840\" y2=\"520\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n  <line x1=\"110\" y1=\"120\" x2=\"110\" y2=\"520\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n  <text x=\"70\" y=\"128\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#374151\">7.0</text>\n  <text x=\"70\" y=\"328\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#374151\">3.5</text>\n  <text x=\"70\" y=\"522\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#374151\">0</text>\n  <text x=\"60\" y=\"330\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#374151\" transform=\"rotate(-90 60 330)\">Zeff</text>\n\n  <!-- period 2 bars: Li 1.30 Ne 5.85 -->\n  <g fill=\"#1d4ed8\">\n    <rect x=\"150\" y=\"446\" width=\"34\" height=\"74\"/>\n    <rect x=\"200\" y=\"409\" width=\"34\" height=\"111\"/>\n    <rect x=\"250\" y=\"372\" width=\"34\" height=\"148\"/>\n    <rect x=\"300\" y=\"334\" width=\"34\" height=\"186\"/>\n    <rect x=\"350\" y=\"297\" width=\"34\" height=\"223\"/>\n    <rect x=\"400\" y=\"260\" width=\"34\" height=\"260\"/>\n    <rect x=\"450\" y=\"223\" width=\"34\" height=\"297\"/>\n    <rect x=\"500\" y=\"186\" width=\"34\" height=\"334\"/>\n  </g>\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#111\" text-anchor=\"middle\">\n    <text x=\"167\" y=\"540\">Li</text><text x=\"217\" y=\"540\">Be</text><text x=\"267\" y=\"540\">B</text><text x=\"317\" y=\"540\">C</text>\n    <text x=\"367\" y=\"540\">N</text><text x=\"417\" y=\"540\">O</text><text x=\"467\" y=\"540\">F</text><text x=\"517\" y=\"540\">Ne</text>\n    <text x=\"167\" y=\"436\">1.30</text><text x=\"517\" y=\"176\">5.85</text>\n  </g>\n\n  <!-- period 3 bars: Na 2.20 Cl 6.10 -->\n  <g fill=\"#f59e0b\">\n    <rect x=\"600\" y=\"403\" width=\"34\" height=\"117\"/>\n    <rect x=\"650\" y=\"368\" width=\"34\" height=\"152\"/>\n    <rect x=\"700\" y=\"332\" width=\"34\" height=\"188\"/>\n    <rect x=\"750\" y=\"296\" width=\"34\" height=\"224\"/>\n    <rect x=\"800\" y=\"196\" width=\"34\" height=\"324\"/>\n  </g>\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#111\" text-anchor=\"middle\">\n    <text x=\"617\" y=\"540\">Na</text><text x=\"667\" y=\"540\">Mg</text><text x=\"717\" y=\"540\">Al</text><text x=\"767\" y=\"540\">Si</text><text x=\"817\" y=\"540\">Cl</text>\n    <text x=\"617\" y=\"394\">2.20</text><text x=\"817\" y=\"186\">6.10</text>\n  </g>\n\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" fill=\"#111\">\n    <rect x=\"150\" y=\"574\" width=\"14\" height=\"14\" fill=\"#1d4ed8\"/><text x=\"172\" y=\"586\">period 2 (Li → Ne)</text>\n    <rect x=\"330\" y=\"574\" width=\"14\" height=\"14\" fill=\"#f59e0b\"/><text x=\"352\" y=\"586\">period 3 (Na → Cl)</text>\n  </g>\n  <text x=\"470\" y=\"612\" font-family=\"Georgia,serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#6b7280\">+0.65 per element across a period, but Na starts higher than Li: a new shell screens less well than the same shell.</text>\n</svg>\n```\n**Figure 2 — the trend in numbers.** Across a period each added proton raises Z by 1 while the added same-shell electron screens only about 0.35, so Zeff climbs by roughly 0.65 per step. Down a group the value is nearly constant (Li 1.30, Na 2.20, K 2.20), which is why the *shell number*, not Zeff, decides the size of atoms down a group.",
+    "## 6. Penetration versus shielding: why 4s fills before 3d\nZeff as calculated above is an average. The finer point is that orbitals of the same atom have different *radial* distributions: an s electron has a small but real probability of being found close to the nucleus (it *penetrates*), a p electron less, a d electron almost none.\n\n| Orbital | Penetration | Shielding felt | Energy consequence |\n| --- | --- | --- | --- |\n| 1s | highest | almost none | tightly bound |\n| 2s > 2p | 2s penetrates more | 2s feels larger Zeff | 2s below 2p |\n| 3s > 3p > 3d | 3d barely penetrates | 3d feels a smaller Zeff than 3s | in period 4, 4s < 3d |\n| 4s > 4p > 4d > 4f | 4f penetrates least | f electrons are well screened | 5f and 6d nearly degenerate |\n\n**The consequence that shapes the table.** For potassium and calcium the 4s orbital is lower in energy than 3d, so 4s fills first — which is why period 4 begins with two s-block elements before the transition series. The 3d subshell then fills from Sc to Zn. Once filled, 3d drops below 4s — the reason transition metals lose 4s electrons first when they ionise, despite 4s having filled first.\n\n**State it as a sentence.** \"4s fills before 3d because it penetrates the core more and therefore feels a larger Zeff; the order reverses after filling because the nuclear charge has risen.\" That sentence answers a five-mark question.",
+    "![Diagram of an atom showing the nucleus, shielding electrons and the effective nuclear charge on the outer electron](https://upload.wikimedia.org/wikipedia/commons/c/c6/Effective_nuclear_charge_diagram.svg)\n\n**Figure 3 — the same idea as Figure 1, drawn generically.** Use it when a question asks you to *describe* shielding rather than calculate it: the nucleus is fixed, the core electrons cancel part of its pull, and the outer electron responds only to the remainder. *Source: Wikimedia Commons, [Effective nuclear charge diagram.svg](https://commons.wikimedia.org/wiki/File:Effective_nuclear_charge_diagram.svg), author FrozenMan, CC0 (public-domain dedication).*",
+    "## 7. What Zeff explains, in one table\n| Observation | Explanation through Zeff |\n| --- | --- |\n| atomic radius falls across a period | Zeff rises, same shell → electrons pulled in (Li 152 → F 71 pm) |\n| atomic radius rises down a group | new shell; Zeff roughly constant (Li 152 → Cs 265 pm) |\n| ionisation energy rises across a period | higher Zeff holds the electron more tightly (Na 496 → Cl 1251 kJ/mol) |\n| ionisation energy falls down a group | outer electron in a higher shell, Zeff unchanged (Li 520 → Cs 376 kJ/mol) |\n| cation smaller than its atom | losing electrons raises Zeff per remaining electron (Na 186 → Na⁺ 102 pm) |\n| anion larger than its atom | added electron lowers Zeff per electron (Cl 99 → Cl⁻ 181 pm) |\n| Na⁺ (102 pm) smaller than F⁻ (133 pm) | isoelectronic, but Na⁺ has Z = 11 and F⁻ has Z = 9 |\n| transition metals show variable oxidation states | 3d and 4s energies are close, so several electrons are removable |\n\n**The isoelectronic rule, stated once.** For species with the same number of electrons, the one with the larger Z has the larger Zeff and therefore the smaller radius: N³⁻ (171) > O²⁻ (140) > F⁻ (133) > Na⁺ (102) > Mg²⁺ (72) > Al³⁺ (53 pm).",
+    "## 8. Summary map and self-check\n**The topic on one card.**\n\n| Question | Answer |\n| --- | --- |\n| Nuclear charge? | +Ze; Z protons |\n| Shielding constant? | σ, the part of the nuclear charge cancelled by other electrons |\n| Effective nuclear charge? | Zeff = Z − σ |\n| Slater weights? | same shell 0.35 (1s: 0.30), *n* − 1: 0.85, deeper: 1.00 |\n| Na 3s? | σ = 8.80, Zeff = 2.20 |\n| Cl 3p? | σ = 10.90, Zeff = 6.10 |\n| Across a period? | Zeff rises ≈ 0.65 per element |\n| Down a group? | Zeff nearly constant (Li 1.30, Na 2.20, K 2.20) |\n| Why 4s before 3d? | 4s penetrates further and feels a larger Zeff |\n| What it explains? | radius, ionisation energy, isoelectronic sizes, variable oxidation states |\n\n**Self-check.**\n1. Calculate Zeff for the 2p electron of fluorine and for the 4s electron of potassium, showing every weight.\n2. Explain, using Zeff, why Na⁺ is smaller than F⁻ although both have 10 electrons.\n3. Why does Zeff stay nearly constant down group 1 while the atomic radius grows by more than 100 pm?\n4. State, in one sentence, why 4s fills before 3d and why 4s empties first when a transition metal ionises.\n5. Give three properties that Zeff explains and one that it does not explain on its own."
+  ],
+  "confusion": [
+    "❌ Zeff equals the number of valence electrons. ✅ Zeff is a charge felt by one electron, obtained from Z minus the shielding of all the others.",
+    "❌ Zeff increases down a group because Z increases. ✅ Z increases, but the added shell screens almost all of it, so Zeff stays near +2.",
+    "❌ Inner electrons screen exactly 1.00 each. ✅ Only shells two or more levels in screen 1.00; the n−1 shell screens 0.85.",
+    "❌ 3d fills before 4s because d comes after s in the alphabet of subshells. ✅ 4s penetrates further and feels a higher Zeff in K and Ca."
+  ],
+  "bounds": [
+    "Limit to remember: mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev)."
+  ],
+  "practice": [
+    "Calculate Zeff for the valence electron of F, Mg and K, showing every Slater weight.",
+    "Explain why the ionic radius of Na⁺ is smaller than that of F⁻ although both are isoelectronic.",
+    "Why is Zeff nearly constant down group 1, and what then causes the increase in atomic radius?"
+  ],
+  "universalFacts": [
+    "Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
+    "Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.",
+    "Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
+  ],
+  "examples": [],
+  "practiceQuestions": [],
+  "formulas": [
+    "Zeff = Z − σ",
+    "σ = Σ (0.35 × same-shell) + Σ (0.85 × (n−1)) + Σ (1.00 × deeper)",
+    "E (eV) = IE / (N_A × 1.602 × 10⁻¹⁹)"
+  ],
+  "numericals": [
+    "**N1 — Zeff for the 3s electron of sodium.**\n*Given.* Na: Z = 11; configuration (1s²)(2s²2p⁶)(3s¹).\n*Formula.* Zeff = Z − σ, with σ = Σ(weight × number of electrons) for all electrons inside or level with the target.\n*Substitution.* σ = 8(0.85) + 2(1.00) = 6.80 + 2.00 = 8.80; Zeff = 11 − 8.80.\n*Answer.* **Zeff = 2.20** — the valence electron feels about one-fifth of the nuclear charge.",
+    "**N2 — Zeff for the 3p electron of chlorine.**\n*Given.* Cl: Z = 17; configuration (1s²)(2s²2p⁶)(3s²3p⁵); target 3p.\n*Formula.* σ = 0.35 × (same-shell electrons other than the target) + 0.85 × (n−1) + 1.00 × (deeper).\n*Substitution.* σ = 6(0.35) + 8(0.85) + 2(1.00) = 2.10 + 6.80 + 2.00 = 10.90; Zeff = 17 − 10.90.\n*Answer.* **Zeff = 6.10** — nearly three times sodium's, which is why chlorine is small and strongly electron-attracting.",
+    "**N3 — Zeff for the 4s electron of potassium, and the group comparison.**\n*Given.* K: Z = 19; configuration (1s²)(2s²2p⁶)(3s²3p⁶)(4s¹); the 3s and 3p shells are in the n−1 group (8 electrons), the rest (10 electrons) are deeper.\n*Formula.* σ = 8(0.85) + 10(1.00); Zeff = Z − σ.\n*Substitution.* σ = 6.80 + 10.00 = 16.80; Zeff = 19 − 16.80 = 2.20.\n*Answer.* **Zeff = 2.20**, identical to sodium's — yet K is far larger (227 pm vs 186 pm) because the valence electron is in n = 4.",
+    "**N4 — From Zeff to an ionisation energy in electronvolts.**\n*Given.* Na: IE₁ = 496 kJ mol⁻¹; N_A = 6.022 × 10²³ mol⁻¹; 1 eV = 1.602 × 10⁻¹⁹ J.\n*Formula.* E(per atom) = IE/N_A; E(eV) = E(J)/1.602 × 10⁻¹⁹.\n*Substitution.* 496 000/6.022 × 10²³ = 8.24 × 10⁻¹⁹ J; 8.24 × 10⁻¹⁹/1.602 × 10⁻¹⁹ = 5.14.\n*Answer.* **5.14 eV per atom** (8.24 × 10⁻¹⁹ J) — the energy needed to remove an electron held by Zeff = 2.20.",
+    "**N5 — Isoelectronic size comparison.**\n*Given.* Na⁺ and F⁻ both have 10 electrons; r(Na⁺) = 102 pm, r(F⁻) = 133 pm; Z = 11 and 9.\n*Formula.* ratio = r(smaller)/r(larger); Zeff comparison at fixed electron count.\n*Substitution.* 102/133 = 0.77; Zeff(Na⁺) = 11 − 4.15 = 6.85 vs Zeff(F⁻) = 9 − 4.15 = 4.85.\n*Answer.* **Na⁺ is 0.77 times the size of F⁻** because two extra protons raise Zeff by 2 at the same electron count.",
+    "**N6 — Zeff for magnesium, and the Na/Mg step.**\n*Given.* Mg: Z = 12; configuration (1s²)(2s²2p⁶)(3s²); target 3s, with one same-shell electron.\n*Formula.* σ = 0.35(1) + 0.85(8) + 1.00(2).\n*Substitution.* σ = 0.35 + 6.80 + 2.00 = 9.15; Zeff = 12 − 9.15 = 2.85.\n*Answer.* **Zeff = 2.85**, up 0.65 from sodium's 2.20 — matching the ~0.65 per-element step seen across a period."
+  ],
+  "keyPoints": [
+    "Zeff = Z − σ; nuclear charge is exact, Zeff is a model and must name its method.",
+    "Slater weights: same shell 0.35 (1s: 0.30), n−1: 0.85, n−2 and deeper: 1.00.",
+    "Worked values: Na 3s 2.20, Mg 3s 2.85, Cl 3p 6.10, K 4s 2.20.",
+    "Across a period Zeff rises ≈ 0.65 per element; down a group it is almost constant.",
+    "Penetration (s > p > d > f) explains why 4s fills before 3d and empties first on ionisation.",
+    "Isoelectronic series shrink as Z rises: N³⁻ > O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺."
+  ],
+  "summary": "The nucleus carries +Ze, but an electron feels only Zeff = Z − σ, where σ is the shielding constant of the other electrons. Slater's rules weight that screening: 0.35 for same-shell electrons (0.30 for the 1s partner), 0.85 for the n−1 shell and 1.00 for deeper shells, which gives Na 3s Zeff = 2.20, Cl 3p Zeff = 6.10 and K 4s Zeff = 2.20. Across a period Zeff rises by about 0.65 per element because each added electron screens only 0.35; down a group it stays nearly constant, so size is set by the shell number. Penetration explains the ordering 4s below 3d in potassium and calcium. Zeff is the single number behind the trends of the next topic: radius, ionisation energy, electron affinity, electronegativity and the sizes of isoelectronic ions.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Nuclear charge and effective nuclear charge\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "mcs": [
+    {
+      "question": "Effective nuclear charge is defined as:",
+      "options": [
+        "Z + σ",
+        "Z − σ",
+        "σ − Z",
+        "Z × σ"
+      ],
+      "answer": "B",
+      "explanation": "Zeff is the nuclear charge minus the part cancelled by the screening of other electrons."
+    },
+    {
+      "question": "In Slater's rules, an electron in the same shell (other than the target) contributes to σ:",
+      "options": [
+        "0.35",
+        "0.85",
+        "1.00",
+        "0"
+      ],
+      "answer": "A",
+      "explanation": "Same-shell electrons screen poorly (0.35, or 0.30 for the 1s partner) because they are at about the same distance from the nucleus."
+    },
+    {
+      "question": "The Zeff on the 3s electron of sodium is:",
+      "options": [
+        "1.30",
+        "2.20",
+        "6.10",
+        "8.80"
+      ],
+      "answer": "B",
+      "explanation": "σ = 8(0.85) + 2(1.00) = 8.80, so Zeff = 11 − 8.80 = 2.20."
+    },
+    {
+      "question": "Zeff on the 3p electron of chlorine is approximately:",
+      "options": [
+        "2.20",
+        "4.85",
+        "6.10",
+        "10.90"
+      ],
+      "answer": "C",
+      "explanation": "σ = 6(0.35) + 8(0.85) + 2(1.00) = 10.90; Zeff = 17 − 10.90 = 6.10."
+    },
+    {
+      "question": "Across a period from left to right, Zeff:",
+      "options": [
+        "decreases",
+        "increases by about 0.65 per element",
+        "stays constant",
+        "increases by 1.00 per element"
+      ],
+      "answer": "B",
+      "explanation": "Z rises by 1 while the added same-shell electron screens only 0.35, so the net rise is about 0.65."
+    },
+    {
+      "question": "Down group 1 from Li to Cs, Zeff on the valence electron:",
+      "options": [
+        "rises steeply",
+        "stays roughly constant",
+        "falls to zero",
+        "doubles"
+      ],
+      "answer": "B",
+      "explanation": "Li 1.30, Na 2.20, K 2.20, Rb 2.20 — the added shell screens almost as much as Z grows, so size is governed by shell number."
+    },
+    {
+      "question": "4s fills before 3d mainly because:",
+      "options": [
+        "4s is larger",
+        "4s penetrates the core and feels a larger Zeff",
+        "3d has more electrons",
+        "4s has lower principal quantum number"
+      ],
+      "answer": "B",
+      "explanation": "Penetration lowers the energy of 4s below 3d in K and Ca; after filling, the order reverses."
+    },
+    {
+      "question": "Which pair is isoelectronic and correctly ordered by size?",
+      "options": [
+        "Na⁺ > F⁻",
+        "F⁻ > Na⁺",
+        "Na⁺ = F⁻",
+        "Cl⁻ < Cl"
+      ],
+      "answer": "B",
+      "explanation": "Both have 10 electrons; F⁻ has the smaller Z and therefore the smaller Zeff, so it is larger (133 pm vs 102 pm)."
+    },
+    {
+      "question": "The screening constant σ for a valence electron can never:",
+      "options": [
+        "equal zero",
+        "exceed Z",
+        "be non-integer",
+        "be calculated by Slater's rules"
+      ],
+      "answer": "B",
+      "explanation": "σ counts other electrons, which cannot outnumber the protons in a neutral atom; σ < Z always, so Zeff > 0."
+    },
+    {
+      "question": "Which property is NOT directly explained by Zeff?",
+      "options": [
+        "atomic radius",
+        "first ionisation energy",
+        "colour of transition-metal ions",
+        "size of isoelectronic ions"
+      ],
+      "answer": "C",
+      "explanation": "Colour comes from d–d splitting in a ligand field; Zeff contributes to the trend in radii, IE and isoelectronic sizes."
+    }
+  ]
+}

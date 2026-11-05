@@ -572,3 +572,88 @@ raw full suites green, `npm run check:all` green.
   `frontend/lib/site-index.ts`.
 - **ISR**: topic landing pages (`/topics/[topicSlug]`) use
   `export const revalidate = 86400`.
+
+
+---
+
+## § Pro Upgrade Plan — 8 Phases (2026-11)
+
+> Added 2026-11-05. Based on a full repo audit. P0 = do first, P1 = next,
+> P2 = polish/growth. [x] = done, [ ] = not done. Any agent can pick up
+> where the last one left off by finding the next unchecked box.
+
+### Phase 1 — Content Rights & Privacy (P0)
+
+- [ ] P0  Verify rights for every ingested book / OCR'd guide / hosted PDF; keep a SOURCES.md ledger
+- [ ] P0  Move KB + OCR corpus out of the public repo (private repo, git submodule, or Supabase Storage loaded at deploy)
+- [x] P0  Delete backend/kb/books/_ingest-report.json local paths (leaks C:\Users\ASUS\Downloads\...)
+- [ ] P0  Split licenses: MIT for code, separate CONTENT_LICENSE.md for notes/diagrams (+ attribution page in app)
+- [ ] P1  Takedown/contact page + process so a rights-holder can reach you
+- [ ] P0  Revoke the leftover Puter token (README: still in history, expires 2026-12-04) or rewrite history
+
+### Phase 2 — Repo Organization
+
+- [x] P0  Rewrite README: live URL, screenshots/GIF, architecture diagram, 5-minute quickstart, badges
+- [ ] P0  Create /docs: ARCHITECTURE.md, API.md, DEPLOYMENT.md, CONTENT_PIPELINE.md
+- [x] P0  Declutter root: move *-plan.md, PLANS.md, AUDIT_REPORT.md, ENRICHMENT_PLAN.md etc. to /docs/archive
+- [ ] P1  Move AI-agent tooling folders (.trae, .commandcode, .frontbuff, tokenkit-out, graphify files) out of the default view or gitignore them; keep one AGENTS.md
+- [ ] P1  Shorten very long Nepali filenames in content/notes (they exceed 255 bytes)
+- [ ] P1  frontend/lib has 158 flat files, mostly static data: move to content/ or features/<name>/data
+- [ ] P1  Remove dead routes (r-notes-disabled, ravikishan-notes-disabled); consolidate overlapping AI entry points
+- [ ] P1  Add SECURITY.md, CODE_OF_CONDUCT.md, issue templates, CODEOWNERS, Dependabot, release notes/CHANGELOG
+- [ ] P1  Stop committing build output/binaries: manifest.json (7.5MB), _index.json (6.7MB), play-store/*.aab
+- [ ] P2  Branch cleanup: archive merged ones, protect main
+
+### Phase 3 — Lightweight Enforced
+
+- [ ] P0  Run a bundle analyzer on the top 10 routes; record first-load JS per route
+- [ ] P0  Check if any client page fetches the 7.5MB manifest.json; if yes, split it per class/subject/topic
+- [ ] P0  Tighten Lighthouse budgets in steps (perf 0.7 -> 0.85, LCP 4s -> 2.5s, CLS 0.1) and add a per-route JS budget in CI
+- [ ] P1  Verify react-query-devtools is not in the production bundle
+- [ ] P1  Lazy-load heavy libs everywhere (three/r3f/xr, gsap, mathjs, highlight.js, katex) and drop what's unused
+- [ ] P1  Move large PDFs/DOCX/HTML out of public/ to a CDN/object storage; stream or lazy-fetch on demand
+- [ ] P2  Image pipeline audit (AVIF/WebP, dimensions), font subsetting for Devanagari
+- [ ] P2  Add Vercel Speed Insights / Web Vitals reporting from real users
+
+### Phase 4 — Real App Feel (PWA)
+
+- [x] P0  Manifest: add id, shortcuts (Continue studying, Quiz, Ask Veer, PYQs), screenshots, real maskable icon, short_name <= 12 chars, remove junk fields, review prefer_related_applications
+- [x] P0  Custom "Install app" prompt (beforeinstallprompt) + iOS "Add to Home Screen" hint
+- [ ] P1  Web Push (VAPID): streak-about-to-break, exam countdown, daily plan reminders, new notes; user-controlled times
+- [ ] P1  Offline: let students download a chapter/subject for offline; queue progress + quiz results and sync when online
+- [ ] P1  Generate the SW precache list from the build instead of a hand-written 16-route list; add an in-app "update available" toast
+- [ ] P2  Badging API (streak/unread), share target, periodic content refresh
+
+### Phase 5 — Reliability & Brand
+
+- [x] P0  Choose ONE product name + logo; use it in manifest, cache names, Play listing, README, package names
+- [ ] P0  Custom domain for frontend and API (e.g. app.yourdomain.com / api.yourdomain.com)
+- [ ] P1  Replace the cron-ping workaround: always-on backend plan, or move hot read endpoints to edge/serverless
+- [ ] P1  Public status page + uptime monitoring + alerting on /health, error rate, AI failures
+- [ ] P1  Staging environment + preview deploys for backend; documented rollback
+- [ ] P2  Backups + restore drill for Supabase; migration runbook
+
+### Phase 6 — Quality Gates
+
+- [x] P0  Dependabot + secret scanning + CodeQL config files
+- [ ] P1  Automated accessibility checks (axe) on key pages in CI
+- [ ] P1  Coverage reporting with a threshold on core logic (auth, credits, progress, streaks)
+- [ ] P1  Grow Playwright e2e beyond one smoke spec: login -> lesson -> quiz -> Veer -> bookmark -> offline
+- [ ] P2  Visual regression tests for core pages
+
+### Phase 7 — AI Tutor (Veer) Quality & Safety
+
+- [ ] P0  Add a fallback provider + health-based failover so one vendor outage doesn't take the tutor down
+- [ ] P0  Build a regression set from your own PYQs/solved questions (~100-200 Q&A) and score answers on every prompt/model change
+- [ ] P1  Hard per-user daily ceiling even for signed-in users, on top of credits
+- [ ] P1  Embed the tutor inside lessons and quizzes ("Explain", "Hint", "Why was I wrong?")
+- [ ] P1  Answer modes (step-by-step, exam-answer 8-mark format, quick revision) + thumbs up/down feedback
+- [ ] P2  Citations back to the exact note/PYQ used in the answer
+
+### Phase 8 — Growth, Money, Reach
+
+- [ ] P1  Privacy-friendly product analytics (Plausible/PostHog): signup->first lesson->quiz funnel, D1/D7/D30 retention
+- [ ] P1  Nepali UI language toggle (no i18n framework today; content is already bilingual in places)
+- [ ] P2  Local payments for premium (eSewa / Khalti / Fonepay); today premium is request + manual approval
+- [ ] P2  SEO for public pages (sitemap, structured data), shareable result/streak cards
+- [ ] P2  Teacher/class tools (assign, class progress) if you want school adoption

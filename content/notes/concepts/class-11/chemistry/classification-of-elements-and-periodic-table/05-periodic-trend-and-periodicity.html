@@ -1,0 +1,173 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Periodic Trend and Periodicity: Radii, Ionization Energy, Electron Affinity, Electronegativity, Metallic Character</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Chemistry  /  Classification Of Elements And Periodic Table</div>
+    <h1 class="doc">Periodic Trend and Periodicity: Radii, Ionization Energy, Electron Affinity, Electronegativity, Metallic Character</h1>
+    <div class="meta"><span>Class 11</span><span>Chemistry</span><span>Classification Of Elements And Periodic Table</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>classification-of-elements-and-periodic-table</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-elec</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Meaning of periodicity</h4></li><li>Periodicity is the recurrence of similar physical and chemical properties at regular intervals when elements are arranged in order of atomic number. Its cause is the periodic repetition of the <em>valence-shell electronic configuration</em>: trends across a period follow from increasing Z_eff, trends down a group from increasing n and increasing shielding.</li><li><h4>2. Atomic radii</h4></li><li>Radius is measured as covalent radius (half the bond length in a homonuclear molecule), metallic radius (half the distance between neighbouring metal atoms) or van der Waals radius (from non-bonded contacts — the largest). <strong>Across a period the radius decreases</strong> (Li 152 → F 64 pm) because nuclear charge rises faster than shielding; <strong>down a group it increases</strong> (Li → Cs) because a new shell is added. Period 4 shows a normal contraction after the d-block, and the 5d series follows the 4d series closely — the lanthanide contraction (poor 4f shielding).</li><li><h4>3. Ionic radii</h4></li><li>• A cation is smaller than its parent atom (Na 186 pm → Na⁺ 95 pm); an anion is larger (Cl 99 pm → Cl⁻ 181 pm) because added electrons increase repulsion while the nuclear charge is unchanged.</li><li>• Down a group the ionic radius increases for the same charge (Li⁺ &lt; Na⁺ &lt; K⁺ &lt; Rb⁺ &lt; Cs⁺); across a period ions of the same charge get smaller.</li><li>• <strong>Isoelectronic series</strong> (same number of electrons): radius decreases as nuclear charge increases, N³⁻ &gt; O²⁻ &gt; F⁻ &gt; Ne &gt; Na⁺ &gt; Mg²⁺ &gt; Al³⁺; for one element Fe³⁺ &lt; Fe²⁺.</li><li><h4>4. Ionisation energy (IE)</h4></li><li>The minimum energy needed to remove the most loosely bound electron from an isolated gaseous atom; measured in kJ mol⁻¹ or eV per atom (H: 1312 kJ mol⁻¹ = 13.6 eV). <strong>It increases across a period</strong> (Li 520 → Ne 2081 kJ mol⁻¹) because Z_eff rises and size falls, and <strong>decreases down a group</strong> as size increases. Anomalies: Be &gt; B and N &gt; O (2s² stability; 2p pairing repulsion in oxygen), repeated as Mg &gt; Al and P &gt; S. Successive IEs always increase (IE₁ &lt; IE₂ &lt; IE₃), and a large jump marks the end of a shell — Na IE₁ = 496, IE₂ = 4562 kJ mol⁻¹.</li><li><h4>5. Electron affinity (EA)</h4></li><li>The energy change when a gaseous atom gains an electron, X(g) + e⁻ → X⁻(g); EA is often reported as the energy <em>released</em>, so state the sign convention in answers. It generally becomes more exothermic <strong>across a period</strong> and less so <strong>down a group</strong> as size and shielding increase. Chlorine has a higher EA than fluorine (349 vs 328 kJ mol⁻¹) because F's very small 2p shell causes extra electron–electron repulsion. Noble gases have ~zero or positive EA, and Be and N have very small values because of filled/half-filled stability.</li><li><h4>6. Electronegativity (EN)</h4></li><li>The tendency of an atom in a molecule to attract the shared electron pair. Pauling's scale takes F = 4.0 (highest), O = 3.5, N = 3.0, H = 2.1, Cs ≈ 0.7; the Mulliken scale uses (IE + EA)/2. <strong>EN increases across a period and decreases down a group</strong>; noble gases are assigned little or no value. Bond polarity follows from ΔEN: &gt; 1.7 usually ionic, &lt; 0.5 essentially non-polar covalent (HF, ΔEN = 1.9, is polar covalent).</li><li><h4>7. Metallic and non-metallic character</h4></li><li>Metallic character <strong>decreases across a period</strong> (Na → Cl) and <strong>increases down a group</strong> (Li → Cs): metals lose electrons easily (low IE), non-metals gain them (high IE, high EA/EN). Consequences: oxide character moves from basic → amphoteric → acidic across a period, and the diagonal pairs (Li–Mg, Be–Al, B–Si) show metallic character reappearing diagonally.</li><li><h4>8. Applications</h4></li><li>• Reactivity predictions: alkali metals become more reactive down the group (low IE); halogen oxidising power falls from F to I (high EA/EN mainly for F and Cl).</li><li>• Explains the acidic/basic character of oxides, the amphoteric behaviour of Al₂O₃ and the change from ionic NaCl to covalent AlCl₃ across period 3.</li><li>• Used in materials selection (semiconductors Si, Ge), in predicting bond polarity and dipole moments, and in understanding ion sizes for crystal packing and complex formation.</li><li><h4>9. Limitations of the trends</h4></li><li>All the trends are <em>general</em>, not exact: the Be/B, N/O, Mg/Al and P/S breaks come from penetration and pairing, and the d- and f-blocks show many irregularities (Cr, Cu, lanthanide contraction, poor 4f shielding, relativistic effects in heavy elements). Radii are not directly measurable and covalent, metallic and van der Waals values differ by 0.5–1 Å, so only one consistent type may be compared. Electron affinity depends on the stated convention, and electronegativity values differ between scales (Pauling, Mulliken, Allred–Rochow), with noble-gas values ill-defined. Above all, trends are qualitative — quantitative prediction needs quantum calculations or Z_eff with accurate shielding.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ Atomic radius increases across a period. ✅ It decreases because Z_eff rises faster than shielding.</li><li>❌ An anion is smaller than its parent atom. ✅ It is larger — added electrons increase repulsion while nuclear charge stays the same.</li><li>❌ IE increases smoothly across a period. ✅ Be &gt; B and N &gt; O (also Mg &gt; Al, P &gt; S) are standard breaks from 2s² stability and 2p pairing.</li><li>❌ Fluorine has the highest electron affinity. ✅ Chlorine does (349 vs 328 kJ mol⁻¹) because of extra repulsion in F's tiny 2p shell.</li><li>❌ Electronegativity is directly measurable. ✅ It is a derived, scale-dependent parameter (Pauling, Mulliken, Allred–Rochow).</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Arrange N³⁻, O²⁻, F⁻, Na⁺ and Mg²⁺ in order of increasing radius and justify the order.</li><li>Why is the electron affinity of chlorine greater than that of fluorine?</li><li>Explain the variation of metallic character across a period and down a group with examples.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0785em;">I</span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.0713em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8213em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">+</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.0158em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8213em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">:</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8213em;"></span><span class="mord"><span class="mord mathnormal">e</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8213em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.0713em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8213em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span></span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="mclose">)</span></span></span></span></span></li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">electronegativity (Mulliken)</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≈</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0785em;">I</span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord mathnormal">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8623em;vertical-align:-0.1944em;"></span><span class="mord">1.7</span><span class="mspace"> </span><span class="mord text"><span class="mord">ionic</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0.5</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.7224em;vertical-align:-0.0391em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">1.7</span><span class="mspace"> </span><span class="mord text"><span class="mord">polar covalent</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">Δ</span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">0.5</span><span class="mspace"> </span><span class="mord text"><span class="mord">non-polar</span></span></span></span></span></span></li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>H IE₁ = 1312 kJ mol⁻¹ (13.6 eV); He has the highest IE₁ (2372 kJ mol⁻¹); Cs one of the lowest (~376 kJ mol⁻¹).</li><li>F is the most electronegative element (Pauling 4.0); Cs/Fr least (~0.7).</li><li>Isoelectronic radii: N³⁻ &gt; O²⁻ &gt; F⁻ &gt; Na⁺ &gt; Mg²⁺ &gt; Al³⁺.</li><li>answer pattern for &quot;Periodic trend and periodicity: atomic radii, ionic radii…&quot;: define → method → result. Structure earns the marks on 6–10 mark questions.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li><strong>Problem:</strong> Arrange Mg²⁺, Na⁺, F⁻, O²⁻ in decreasing size. <strong>Solution:</strong> they are isoelectronic (10 electrons), so the smallest nuclear charge gives the largest radius → O²⁻ (Z = 8) &gt; F⁻ (9) &gt; Na⁺ (11) &gt; Mg²⁺ (12).</li><li><strong>Problem:</strong> Which has the higher first ionisation energy, Be or B? <strong>Solution:</strong> Be (899 kJ mol⁻¹) &gt; B (801 kJ mol⁻¹), since Be's 2s² is a filled subshell and its electron penetrates closer to the nucleus than B's 2p electron.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Explain every trend with Z_eff (across) and n plus shielding (down) — the mark is for the reason, not the direction.</li><li>Quote the anomaly pairs Be–B, N–O, Mg–Al and P–S with reasons; they are frequently examined.</li><li>State the radius type and the electronegativity scale whenever numbers are quoted.</li></ul></section>
+<section class="field"><h2>Visual Type</h2><p>periodic-trends</p></section>
+<section class="field"><h2>Key Points</h2><ul><li>• Periodic trend</li><li>• Periodicity: atomic radii</li><li>• Ionic radii</li><li>• Ionization energy</li><li>• Electron affinity</li><li>• Electronegativity</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><p class="empty">—</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following is a distinct sub-topic under &quot;Periodic trend and periodicity: atomic radii, ionic radii…&quot;?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Periodic trend</li><li>Periodicity: atomic radii</li><li>Unrelated topic</li><li>None of the above</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Periodic trend is listed among the official sub-ideas of Periodic trend and periodicity: atomic radii, ionic radii…; the others are not part of this topic.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A common examiner point on &quot;Periodic trend and periodicity: atomic radii, ionic radii…&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div></section>
+<section class="field"><h2>Source</h2><p>generated</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
+<section class="field"><h2>Bounds</h2><ul><li>Covers only: periodic trend, periodicity: atomic radii, ionic radii, ionization energy (within Classification of Elements and Periodic Table).</li><li>Out of scope here: topics of neighbouring units in Chemistry — don't mix them.</li><li>State the limit / condition where a formula or rule stops being valid before applying it.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Periodic trend and periodicity: atomic radii, ionic radii… (Classification of Elements and Periodic Table, Chemistry, class-11-notes) covers Periodic trend, periodicity: atomic radii, ionic radii. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.</p></section>
+  <nav class="pager"><a href="05-periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-elec.html" title="Periodic trend and periodicity: atomic radii, ionic radii, ionization energy, electron affinity, electronegativity, metallic characters (general trend and explanation only)">‹ Periodic trend and periodicity: atomic radii,…</a><a class="mid" href="../../../../../_subjects/class-11-chemistry.html">Chemistry</a><span></span></nav>
+</div></body></html>

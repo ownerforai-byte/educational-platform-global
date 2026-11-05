@@ -1,0 +1,164 @@
+<!doctype html><html><head><meta charset="utf-8"><title>C,Q and MCQ</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Mechanics</div>
+    <h1 class="doc">C,Q and MCQ</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Mechanics</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>mechanics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>c-q-and-mcq</p></section>
+<section class="field"><h2>Relevance</h2><p><code>40</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;Conceptual Question&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;1. Are there only seven fundamental quantities? Explain.&lt;/b&gt;&lt;/p&gt;</li><li>&lt;p&gt;&lt;b&gt;Ans:&lt;/b&gt; No. To choose fundamental quantities is arbitrary and so we can consider other fundamental quantities like density, velocity, acceleration, force etc.&lt;/p&gt;</li><li>&lt;p&gt;&lt;b&gt;2. Can a quantity have different dimensions in different system of units? Explain.&lt;/b&gt;&lt;/p&gt;</li><li>&lt;p&gt;&lt;b&gt;Ans:&lt;/b&gt; No. This is because dimension of a physical quantity represents its nature which can not be changed according to systems of unit.&lt;/p&gt;</li><li>&lt;p&gt;&lt;b&gt;3. What is the dimension of 'x' by the equation F = AsinBx + C sin Dt, where F is given in terms of 'x' and displacement?&lt;/b&gt;&lt;/p&gt;</li><li>&lt;p&gt;&lt;b&gt;Ans:&lt;/b&gt; As we know that angle has no dimension so we can write [Bx]=1 and [Dt]=1&lt;/p&gt;</li><li>&lt;p&gt;[B] = [1/x] = [Lâ»Â¹]&lt;/p&gt;</li><li>&lt;p&gt;[D] = [1/t] = [Tâ»Â¹]&lt;/p&gt;</li><li>&lt;p&gt;Now, [D/B] = [Tâ»Â¹/Lâ»Â¹] = [LTâ»Â¹]&lt;/p&gt;</li><li>&lt;p&gt;Therefore [B] = [Lâ»Â¹] and [D] = [Tâ»Â¹]&lt;/p&gt;</li><li>&lt;h3&gt;4. Find the dimensions of Planck's constant 'h' from the given equation Î» = h/p, where Î» is wave length and P is momentum of a photon.&lt;/h3&gt;</li><li>&lt;p&gt;&lt;b&gt;Ans:&lt;/b&gt; Given&lt;/p&gt;</li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6944em;"></span><span class="mord mathnormal">λ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.2519em;vertical-align:-0.8804em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">p</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">h</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></li><li>&lt;p&gt;[h] = [Î»Ã—P] = [L Ã— MLTâ»Â¹] = [MLÂ²Tâ»Â¹]&lt;/p&gt;</li><li>&lt;p&gt;According to the principle of homogeneity of dimension, we have [y] = [a] = [ctÂ²]&lt;/p&gt;</li><li>&lt;p&gt;Therefore, [y] = [t] = [ctÂ²]&lt;/p&gt;</li><li>&lt;h3&gt;5. If y = a + bt + ctÂ², where y is the distance and t is the time. What is the dimension and unit of c?&lt;/h3&gt;</li><li>&lt;p&gt;&lt;b&gt;Ans:&lt;/b&gt; Given&lt;/p&gt;</li><li>&lt;p&gt;y = a + bt + ctÂ²&lt;/p&gt;</li><li>&lt;p&gt;or [b] = [y]/[t] Or, [c] = [LTâ»Â²]. According to the principle of homogeneity of the formula, PV = RT.&lt;/p&gt;</li><li>&lt;h3&gt;6. Check the correctness of the formula, PV = RT.&lt;/h3&gt;</li><li>&lt;p&gt;&lt;b&gt;Ans:&lt;/b&gt; [L.H.S.] = [PV]&lt;/p&gt;</li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.3669em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mord"><span class="mord mathnormal">L</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mclose">]</span></span></span></span></span></li><li>&lt;p&gt;[RHS] = [RT] = [MLÂ²Tâ»Â²]&lt;/p&gt;</li><li>&lt;p&gt;From (i) and (ii), we have [L.H.S.] = [R.H.S.]. Hence, the given equation is dimensionally correct.&lt;/p&gt;</li><li>&lt;h3&gt;7. What is the difference between mN, Nm and mm?&lt;/h3&gt;</li><li>&lt;p&gt;&lt;b&gt;Ans:&lt;/b&gt; mN represents millinewton which is the unit of force. mN = 10â»Â³ N&lt;/p&gt;</li><li>&lt;p&gt;Nm represents newton meter which is the unit of energy. 1 Nm = 10â»â¹ m represents nanometer which is the unit of distance and its 1 nm represents nanometer.&lt;/p&gt;</li><li>&lt;h3&gt;8. Justify the unit [T] + [T] and [T] âˆ’ [T] = [T] show that if time is added to another time again time is obtained so this reaction justified.&lt;/h3&gt;</li><li>&lt;p&gt;&lt;b&gt;Ans:&lt;/b&gt; The relation [T] + [T] = [T] and [T] âˆ’ [T] = [T].&lt;/p&gt;</li><li>&lt;h2&gt;Exercise (Each Question Contains 1 Mark)&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Group A&lt;/b&gt; (Symbols in brackets indicate nature of questions: [R=Remember, U=Understanding, A=Application &amp; HA=Higher Ability based].)&lt;/p&gt;</li><li>&lt;h3&gt;Multiple Choice Questions&lt;/h3&gt;</li><li>&lt;p&gt;1. Which of the following quantities has its unit as newton second? [R]&lt;br&gt;a. energy b. torque c. momentum d. angular momentum&lt;/p&gt;</li><li>&lt;p&gt;2. Which of the following has no dimension but unit? [R]&lt;br&gt;a. ferni b. angstrom c. momentum d. angular momentum&lt;/p&gt;</li><li>&lt;p&gt;3. The number of significant digits has least number of significant digits in 0.002002 is: [R]&lt;br&gt;a. 6 b. 4 c. 7 d. 2&lt;/p&gt;</li><li>&lt;p&gt;4. Which of the following numbers has least number of significant figures? [R]&lt;br&gt;a. 0.80760 b. 80200 c. 08076 d. 8.0267&lt;/p&gt;</li><li>&lt;p&gt;5. In the relation: dy/dt = 2Ï‰ sin (Ï‰t + Ï†â‚€), the dimensional formula for (Ï‰t + Ï†â‚€) is [R]&lt;br&gt;a. [MLT] b. [MLTâ°] c. [MLâ°Tâ°] d. [Mâ°Lâ°Tâ°]&lt;/p&gt;</li><li>&lt;p&gt;6. If frequency (F), velocity (V) and density (D) are considered as fundamental units, the dimensional formula for momentum will be [R]&lt;br&gt;a. [DVFÂ²] b. [DVâ´Fâ»Â¹] c. [DÂ²VÂ²Fâ»Â¹] d. [DVâ´Fâ»Â¹]&lt;/p&gt;</li><li>&lt;p&gt;7. If force (F), acceleration (a) and time (T) be taken as the fundamental physical quantities, the dimensions of length on this system are [R]&lt;br&gt;a. [FATÂ²] b. [FTÂ²] c. [ATÂ²] d. [FAÂ²]&lt;/p&gt;</li><li>&lt;p&gt;8. The dimensions of a/b in the equation P = a âˆ’ tÂ²/bx, where P is pressure, x is distance and t is time, are: [R]&lt;br&gt;a. [MTâ»Â²] b. [MÂ²LTâ»Â³] c. [MLÂ³Tâ»Â¹] d. [LTâ»Â³]&lt;/p&gt;</li><li>&lt;h3&gt;MCQ Answer Key&lt;/h3&gt;</li><li>&lt;table&gt;&lt;tr&gt;&lt;th&gt;Q&lt;/th&gt;&lt;th&gt;Ans&lt;/th&gt;&lt;th&gt;Q&lt;/th&gt;&lt;th&gt;Ans&lt;/th&gt;&lt;th&gt;Q&lt;/th&gt;&lt;th&gt;Ans&lt;/th&gt;&lt;th&gt;Q&lt;/th&gt;&lt;th&gt;Ans&lt;/th&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;(c)&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;(a)&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;(b)&lt;/td&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;(a)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5&lt;/td&gt;&lt;td&gt;(c)&lt;/td&gt;&lt;td&gt;6&lt;/td&gt;&lt;td&gt;(d)&lt;/td&gt;&lt;td&gt;7&lt;/td&gt;&lt;td&gt;(d)&lt;/td&gt;&lt;td&gt;8&lt;/td&gt;&lt;td&gt;(a)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;9&lt;/td&gt;&lt;td&gt;(a)&lt;/td&gt;&lt;td&gt;10&lt;/td&gt;&lt;td&gt;(x)&lt;/td&gt;&lt;td&gt;11&lt;/td&gt;&lt;td&gt;(b)&lt;/td&gt;&lt;td&gt;12&lt;/td&gt;&lt;td&gt;(c)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;13&lt;/td&gt;&lt;td&gt;(b)&lt;/td&gt;&lt;td&gt;14&lt;/td&gt;&lt;td&gt;(a)&lt;/td&gt;&lt;td&gt;15&lt;/td&gt;&lt;td&gt;(c)&lt;/td&gt;&lt;td&gt;16&lt;/td&gt;&lt;td&gt;(d)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;17&lt;/td&gt;&lt;td&gt;(a)&lt;/td&gt;&lt;td&gt;18&lt;/td&gt;&lt;td&gt;(c)&lt;/td&gt;&lt;td&gt;19&lt;/td&gt;&lt;td&gt;(b)&lt;/td&gt;&lt;td&gt;20&lt;/td&gt;&lt;td&gt;(b)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;21&lt;/td&gt;&lt;td&gt;(c)&lt;/td&gt;&lt;td&gt;22&lt;/td&gt;&lt;td&gt;(a)&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</li><li>&lt;h3&gt;Stop to Think â€” Answers&lt;/h3&gt;</li><li>&lt;p&gt;1.1 I may be a particle or a body. I am a particle in comparison to the school house and a body in comparison to my pen. Mass, length, volume, area etc are all physical quantities which describe my physical properties.&lt;/p&gt;</li><li>&lt;p&gt;1.2 All physical quantities are measurable so no one example be possible.&lt;/p&gt;</li><li>&lt;p&gt;1.3 The smallest unit for distance is fermi and Megaparsec is the largest unit.&lt;/p&gt;</li><li>&lt;p&gt;1.4 Yes&lt;/p&gt;</li><li>&lt;p&gt;1.5 Work, energy, torque etc.&lt;/p&gt;</li><li>&lt;p&gt;1.6 Significant figure in this case is 2.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Do not confuse this concept with similar-sounding terms. Check definitions carefully.</li><li>Always verify the conditions under which the formula applies — many formulas have restricted domains.</li><li>Sign conventions matter. Define your coordinate system before applying equations.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Solve one basic problem using the key formula from this topic.</li><li>Try a numerical problem where you must choose the correct formula from two similar options.</li><li>Apply this concept to a real-world situation and explain each step.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>This concept is fundamental and appears in multiple contexts across the subject.</li><li>Understanding the derivation helps more than memorizing the final formula.</li><li>Always check units and dimensions when applying this concept.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>mechanics</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>mechanics</p></section>
+  <nav class="pager"><a href="05-neb-2024.html" title="NEB Class 11 Physics — Mechanics — 2024">‹ NEB Class 11 Physics — Mechanics — 2024</a><a class="mid" href="../../../../../_subjects/class-11-physics.html">Physics</a><span></span></nav>
+</div></body></html>

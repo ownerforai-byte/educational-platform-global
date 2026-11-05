@@ -1,0 +1,171 @@
+<!doctype html><html><head><meta charset="utf-8"><title>पाठ ११ — रारा भ्रमण (दैनिकी)</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Nepali  /  Sahitya Adhyayan</div>
+    <h1 class="doc">पाठ ११ — रारा भ्रमण (दैनिकी)</h1>
+    <div class="meta"><span>Class 11</span><span>Nepali</span><span>Sahitya Adhyayan</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>sahitya-adhyayan</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>पाठ-११-रारा-भ्रमण-दैनिकी</p></section>
+<section class="field"><h2>Relevance</h2><p><code>97</code></p></section>
+<section class="field"><h2>Source</h2><p>authored</p></section>
+<section class="field"><h2>Summary</h2><p>रारा भ्रमण दैनिकी हो। मिति, बाटो, देखेको कुरा र त्यसबेलाको मन सँगै लेखिन्छन्। रारा मुगुको ताल हो, नेपालको ठूलो ताल। प्रो दैनिकीले नक्सा मात्र होइन, थकान, अचम्म र सिकाइ पनि लेख्छ।</p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>विधा।</strong> दैनिकी दिनको लेख हो। मिति हुन्छ। क्रम बाटोको क्रम हो। निबन्धले विषय छान्छ। दैनिकीले दिनले दिएको कुरा लेख्छ। पछि सच्याएर चमत्कार थप्नु दैनिकीको स्वभाव होइन। जे भयो, जुन क्रममा भयो, त्यही लेखिन्छ। मनको वाक्य पनि त्यही दिनको हुनुपर्छ।</li><li><strong>रारा कहाँ हो।</strong> रारा मुगु जिल्लामा छ। कर्णालीतिरको उच्च भूगोल हो। यो नेपालको ठूलो ताल हो र रारा राष्ट्रिय निकुञ्जभित्र पर्छ। वरिपरि वन र डाँडा छन्। सहरबाट पुग्न लामो बाटो लाग्छ। उत्तरमा मुगु र कर्णाली नलेखे भ्रमण अधुरो देखिन्छ। गहिराइ र क्षेत्रफलको सङ्ख्या नजाँची नलेख्नुहोस्। ठूलो ताल भन्नु सुरक्षित र ठीक हो।</li><li><strong>बाटो पनि रचना हो।</strong> दैनिकी ताल देखेपछि मात्र सुरु हुँदैन। बस, पैदल, उकालो, खाना, थकान र स्थानीय भेट बाटोका घटना हुन्। प्रो दैनिकीले बाटोलाई काट्दैन। बाटोले नै मुलुकको दूरी देखाउँछ। काठमाडौंबाट मुगु टाढा छ भन्ने अनुभव एउटा शिक्षा हो।</li><li><strong>के हेर्ने।</strong> पानीको रङ, वरपरको वन, चरा, मौन, बस्ती र संरक्षणको नियम। ताल सुन्दर छ भन्ने वाक्य एउटै काफी छ। दोस्रो वाक्यमा के कारणले सुन्दर लाग्यो लेख्नुहोस्। तेस्रो वाक्यमा के नबिगार्ने लेख्नुहोस्। सौन्दर्य, कारण र कर्तव्य तीनै भए दैनिकी परिपक्व हुन्छ।</li><li><strong>मानिस नछुटाउनु।</strong> निकुञ्जमा बाटो देखाउने मानिस, होमस्टे, स्थानीय नाम र भाषा दैनिकीका पात्र हुन्। दृश्य मात्र लेखेर मानिस नलेखे भ्रमण पोस्टकार्ड हुन्छ। नेपालको पश्चिम र कर्णालीलाई सुनसान नक्सा नबनाउनुहोस्। त्यहाँ बस्ने मानिस छन्।</li><li><strong>मिति र अनुच्छेद।</strong> हरेक दिनको सुरुमा मिति लेख्नुहोस्। एक दिन एक अनुच्छेद वा छुटै खण्ड। भाषा सामान्य भूतमा बस्छ — पुग्यौँ, देख्यौँ, लाग्यो। वर्तमानमा लेखे दैनिकी रिपोर्टजस्तो हुन्छ।</li><li><strong>पर्यापर्यटनसँग जोड।</strong> रारा हेर्न जाँदा फोहोर फिर्ता ल्याउने, बाटो नछोड्ने र स्थानीय नियम मान्ने कुरा दिनको अन्तिममा आउन सक्छ। त्यो वाक्यले दैनिकीलाई पाठ सातसँग जोड्छ।</li><li><strong>ढाँचा।</strong> मिति। कहाँबाट कहाँ। के देख्यो। को भेटियो। के लाग्यो। भोलिका लागि के बाँकी छ। यो छ लाइन दैनिकीको हड्डी हो।</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>विधा दैनिकी हो। मिति र दिनको क्रम अनिवार्य छ।</li><li>रारा मुगुमा छ र नेपालको ठूलो ताल हो।</li><li>बाटो, थकान र भेट पनि रचना हुन्।</li><li>सौन्दर्यसँगै कारण र कर्तव्य लेख्नुहोस्।</li><li>स्थानीय मानिसलाई नक्साबाट नहटाउनुहोस्।</li><li>भाषा सामान्य भूतमा हुन्छ।</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>दैनिकी पछि सजाएको निबन्ध होइन। दिनको क्रम हो।</li><li>रारा कर्णालीको भूगोल र संरक्षण दुवैको कथा हो।</li><li>दूरी आफैँमा अनुभव हो।</li><li>सुन्दर ठाउँ लेख्दा त्यहाँ बस्ने मानिसको मर्यादा चाहिन्छ।</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>मिति — २०८२ कात्तिक ३। आज उकालो चढ्दा घुँडा थक्यो। ताल देख्दा थकान छोटो लाग्यो।</li><li>कारण — पानी निलो देखिनुको पछि आकाश र वरपरको वन छन्। एउटा वाक्यमा कारण आए दैनिकी गहिरो हुन्छ।</li><li>कर्तव्य — बोतल तालकिनारमा छोडिएन। झोलामै फर्काइयो।</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ दैनिकी भनेको निबन्धलाई मिति टाँस्नु हो — ✅ दिनको वास्तविक क्रम चाहिन्छ</li><li>❌ रारा पोखराको ताल हो — ✅ रारा मुगुमा छ</li><li>❌ सुन्दर छ भन्ने वाक्य दोहोर्‍याए काफी हुन्छ — ✅ कारण र कर्तव्य पनि चाहिन्छ</li><li>❌ नजाँचेको गहिराइ लेख्दा प्रो देखिन्छ — ✅ नजाँचेको सङ्ख्या नलेख्नुहोस्</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>पहिलो लाइनमै मुगु र दैनिकी दुई शब्द राख्नुहोस्।</li><li>उत्तर तीन दिनमा बाँड्नु पर्‍यो भने यात्रा, ताल, फर्किने दिन छुट्याउनुहोस्।</li><li>एउटा थकानको वाक्य र एउटा अचम्मको वाक्य सँगै राख्नुहोस्।</li><li>स्थानीय व्यक्तिको एउटा काम लेख्नुहोस् — बाटो देखाउनु, खाना, कथा।</li><li>वर्तमान कालमा लेखिएको छ भने भूतमा सार्नुहोस्।</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>रारा मुगु जिल्लामा पर्छ र नेपालको ठूलो ताल हो।</li><li>रारा राष्ट्रिय निकुञ्ज संरक्षण क्षेत्र हो।</li><li>दैनिकीमा मिति र कालक्रम अनिवार्य हुन्छन्।</li><li>सामान्य भूत दैनिकीको स्वाभाविक काल हो।</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>कर्णालीका जिल्लाको आफ्नै भाषा, चाड र कठिन बाटो छ। रारा लेख्दा त्यो भूगोललाई दुर्गम भनेर अपमान नगर्नुहोस्। टाढा भन्नुहोस्, सानो नभन्नुहोस्।</li><li>पश्चिम नेपालको यात्रा देशको विविधता हो। काठमाडौंको आँखाले मात्र देश ननाप्नुहोस्।</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>पाठको यात्राक्रम र साथीको नाम पाठ्यपुस्तकबाट मिलाउनुहोस्।</li><li>तालको सङ्ख्या कण्ठ नभए नलेख्नुहोस्। ठाउँ र अनुभव काफी छन्।</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>रारा भ्रमणको एक दिन दैनिकीको रूपमा लेख्नुहोस्।</li><li>दैनिकी र निबन्धको तीन फरक लेख्नुहोस्।</li><li>रारा जस्ता ठाउँमा पर्यटकको कर्तव्य के हो, पाठको भावबाट लेख्नुहोस्।</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>रारा भ्रमण कुन विधा हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>दैनिकी</li><li>वक्तृता</li><li>कविता</li><li>जीवनी</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>मिति र दिनको क्रममा लेखिने भ्रमण दैनिकी हो।</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>रारा कहाँ छ?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>पोखरा</li><li>मुगु</li><li>जनकपुर</li><li>इलाम</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>रारा मुगु जिल्लामा छ र कर्णालीको उच्च भूगोलमा पर्छ।</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>दैनिकीको काल प्रायः कुन हुन्छ?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>सामान्य भूत</li><li>आज्ञार्थ</li><li>केवल भविष्यत्</li><li>केवल विधिलिङ्ग</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>भइसकेको दिन लेखिने भएकाले देख्यौँ, पुग्यौँ जस्ता भूत रूप चल्छन्।</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>प्रो दैनिकीले सौन्दर्यसँगै के लेख्छ?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>कारण र कर्तव्य</li><li>केवल नारा</li><li>केवल मूल्य सूची</li><li>केवल कविता</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>किन सुन्दर लाग्यो र के नबिगार्ने भन्ने वाक्यले दैनिकी गहिरो हुन्छ।</p></div></div></div></section>
+  <nav class="pager"><a href="20-krishishala.html" title="पाठ १० — कृषिशालामा एक दिन (संवाद)">‹ पाठ १० — कृषिशालामा एक दिन (संवाद)</a><a class="mid" href="../../../../../_subjects/class-11-nepali.html">Nepali</a><a href="22-jalsrot-urja.html" title="पाठ १२ — जलस्रोत र ऊर्जा (वक्तृता)">पाठ १२ — जलस्रोत र ऊर्जा (वक्तृता) ›</a></nav>
+</div></body></html>

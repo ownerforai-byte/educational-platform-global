@@ -1,0 +1,96 @@
+{
+  "title": "Probability: independent cases, mathematical and empirica…",
+  "unitSlug": "statistics-and-probability",
+  "topicSlug": "probability-independent-cases-mathematical-and-empirical-definition-of-probability-two-basic-law",
+  "topicTitle": "Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Fact.** Mathematical probability of an event E is P(E) = n(E)/n(S), where n(E) is the number of favourable outcomes and n(S) is the number of equally likely outcomes in the sample space.",
+    "**Fact.** Empirical probability uses observed frequency: P(E) is approximately the number of times E occurred divided by the number of trials. It approaches the mathematical value only as the number of trials grows.",
+    "**Fact.** Addition law: P(A∪B) = P(A) + P(B) − P(A∩B). When A and B are mutually exclusive, P(A∩B) = 0, so P(A∪B) = P(A) + P(B).",
+    "**Fact.** Multiplication law: P(A∩B) = P(A) P(B|A). If A and B are independent, P(B|A) = P(B), so P(A∩B) = P(A) P(B). Independence is not the same as being mutually exclusive.",
+    "**Fact.** The complement satisfies P(A') = 1 − P(A). For a discrete experiment the probabilities of all outcomes add to 1.",
+    "# Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)\n\n## 1. Introduction and motivation\nWhat the tool **Probability** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Statistics and Probability fill pass.\n\n## 2. Definitions and theorems\n### Probability: independent cases\n### mathematical and empirical definition of probability\n### two basic laws of probability (without proof)\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
+    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
+    "## 4. Methods and standard forms\n**Table 2 — Counts and distributions**\n\n| Case | Rule or formula | Worked example | Trap |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
+    "## 5. Figures and graphs\n- **F1** — Probability — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Probability — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Probability — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
+    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
+    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+  ],
+  "confusion": [
+    "❌ answer with no steps → ✅ show each step and box the result.",
+    "❌ skip the key fact → ✅ p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b).."
+  ],
+  "bounds": [
+    "Limit to remember: p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b)."
+  ],
+  "practice": [
+    "one worked example for \"Probability: independent cases, mathematical and empirica…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).",
+    "Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B).",
+    "Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Probability: independent cases, mathematical and empirica…\" with one example.",
+    "compare \"Probability\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Probability: independent cases, mathematical and empirica…\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "P(A∪B) = P(A)+P(B)−P(A∩B)",
+    "P(A∩B) = P(A)P(B|A)",
+    "P(A') = 1 − P(A)"
+  ],
+  "numericals": [
+    "Use  P(A∪B) = P(A)+P(B)−P(A∩B)  — pick reasonable values, solve, and check the units.",
+    "Use  P(A∩B) = P(A)P(B|A)  — pick reasonable values, solve, and check the units.",
+    "Use  P(A') = 1 − P(A)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Probability",
+    "• Independent cases",
+    "• Mathematical",
+    "• Empirical definition of probability",
+    "• Two basic laws of probability",
+    "• Without proof"
+  ],
+  "summary": "Probability covers essential principles and applications. Probability â€” Definitions and Basic Laws covers essential principles and applications.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Probability: independent cases, mathematical and empirica…\"?",
+      "options": [
+        "Probability",
+        "Independent cases",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Probability is listed among the official sub-ideas of Probability: independent cases, mathematical and empirica…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Probability: independent cases, mathematical and empirica…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
+  "importantConcepts": [],
+  "animation3D": "statistics-and-probability",
+  "motionGraphics": "statistics-and-probability",
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": []
+}

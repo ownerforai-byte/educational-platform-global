@@ -1,0 +1,173 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Efflorescent, Deliquescent and Hygroscopic Solids; Crystallization, Crystal Growth and Water of Crystallization</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Chemistry  /  States Of Matter</div>
+    <h1 class="doc">Efflorescent, Deliquescent and Hygroscopic Solids; Crystallization, Crystal Growth and Water of Crystallization</h1>
+    <div class="meta"><span>Class 11</span><span>Chemistry</span><span>States Of Matter</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>states-of-matter</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>efflorescent-deliquescent-and-hygroscopic-solids-crystallization-and-crystal-growth-water-of-cry</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Water of crystallisation — the concept behind the three classes</h4></li><li>Water of crystallisation is water chemically combined in a fixed stoichiometric ratio inside a crystal lattice (not merely adsorbed). Examples: CuSO₄·5H₂O (blue vitriol), Na₂CO₃·10H₂O (washing soda), Na₂SO₄·10H₂O (Glauber's salt), MgCl₂·6H₂O, CaSO₄·2H₂O (gypsum), FeSO₄·7H₂O. It is usually driven off by heating, and the loss of mass gives the number of water molecules per formula unit (gravimetric determination); the anhydrous salt often differs in colour and crystal shape.</li><li><h4>2. Efflorescent solids</h4></li><li>Efflorescent substances lose their water of crystallisation (wholly or partly) spontaneously in dry air and crumble to a powder, because the vapour pressure of the hydrate exceeds the water-vapour pressure of the atmosphere. Examples: Na₂SO₄·10H₂O → Na₂SO₄ (white powder); Na₂CO₃·10H₂O → Na₂CO₃·H₂O; CuSO₄·5H₂O fades from blue towards pale blue/white; alum. Hot, dry weather speeds it up, so such salts must be stored in sealed containers.</li><li><h4>3. Deliquescent and hygroscopic solids</h4></li><li><strong>Deliquescent</strong> solids absorb moisture from the air, dissolve in it and form a saturated solution (a puddle) — CaCl₂, MgCl₂, NaOH, KOH, FeCl₃·6H₂O, ZnCl₂. <strong>Hygroscopic</strong> substances absorb or adsorb moisture and become damp without dissolving — concentrated H₂SO₄, P₄O₁₀, CaO (quicklime), CuO, silica gel, glycerol. Hygroscopic materials are used as <strong>drying agents/desiccants</strong> (silica-gel sachets, conc. H₂SO₄ in desiccators, quicklime in packaging). Whether a salt deliquesces depends on humidity: the air must exceed its deliquescence relative humidity (NaCl ≈ 75% RH, CaCl₂ ≈ 30% RH), so a 'deliquescent' salt may simply effloresce or remain unchanged in dry air.</li><li><h4>4. Crystallization and crystal growth</h4></li><li><strong>Crystallisation</strong> is the formation of a pure solid in crystalline form from a solution, melt or vapour: the solution is saturated and then supersaturated by cooling or slow evaporation, after which <strong>nucleation</strong> begins and <strong>crystal growth</strong> follows. Good crystals need slow, steady growth — slow cooling, a clean solution, a suitable solvent, undisturbed conditions and sometimes a seed crystal. Large single crystals are grown by slow evaporation (sugar, alum, KDP), by the Czochralski pulling technique from a melt (silicon and germanium for electronics), by zone refining, or from the vapour (sublimation and chemical vapour transport).</li><li><h4>5. Applications</h4></li><li>• Recrystallisation is the standard laboratory purification technique; soluble impurities stay behind in the mother liquor.</li><li>• Industrial crystallisation produces salt, sugar, urea, fertilisers and pharmaceutical crystals, where crystal habit and size control tablet manufacture and food texture.</li><li>• Single-crystal growth supplies semiconductor wafers, quartz oscillators, laser and detector crystals and gemstones; crystallisation is also used in water softening (scale removal) and freeze-drying.</li><li>• Desiccants and drying agents (silica gel, CaCl₂, P₄O₁₀, H₂SO₄) protect instruments and goods from moisture and are essential for analytical weighing, while anti-caking agents stop efflorescent salts from caking.</li><li><h4>6. Limitations</h4></li><li>• The three terms describe behaviour, not a rigorous classification: the same substance can deliquesce in humid air and effloresce in dry air (Na₂SO₄ and Na₂CO₃ hydrates both do), because humidity, temperature and the hydrate's vapour pressure decide the outcome.</li><li>• Efflorescence may stop at a lower hydrate rather than reach the anhydrous salt, so equations assuming complete dehydration can be wrong.</li><li>• Deliquescence occurs only above the substance's critical relative humidity; below it the solid merely adsorbs a little water.</li><li>• Determining water of crystallisation by heating fails if the substance decomposes or hydrolyses (MgCl₂·6H₂O loses HCl and water when heated strongly) or if the sample also picks up atmospheric moisture.</li><li>• Crystallisation cannot remove impurities that co-crystallise as mixed (isomorphous) crystals, is slow, and always loses some product in the mother liquor, lowering the yield.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ Efflorescent, deliquescent and hygroscopic mean the same. ✅ Efflorescent solids <em>lose</em> water to the air, deliquescent solids <em>absorb water and dissolve</em>, hygroscopic solids <em>absorb water and become damp</em>.</li><li>❌ Deliquescence happens in any weather. ✅ It requires air humidity above the deliquescence relative humidity (≈30% for CaCl₂, ≈75% for NaCl).</li><li>❌ Water of crystallisation is moisture sticking to a crystal. ✅ It is chemically combined in a definite ratio and forms part of the crystal structure.</li><li>❌ Any solid that becomes damp is deliquescent. ✅ Hygroscopic solids only become moist; deliquescent solids dissolve into a solution.</li><li>❌ Fast cooling gives the best crystals. ✅ Slow, undisturbed growth gives larger, purer crystals; rapid cooling gives many small crystals.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Distinguish efflorescent, deliquescent and hygroscopic substances with two examples of each.</li><li>Explain water of crystallisation and describe how it is determined experimentally.</li><li>Why does washing soda turn to powder on standing in dry air? Write the equation.</li><li>Give four applications of crystallisation and crystal growth in industry and the laboratory.</li><li>State the limitations of the efflorescent/deliquescent/hygroscopic classification.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord text"><span class="mord">Efflorescence: </span></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">10</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mord"><span class="mord mathnormal">a</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">s</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">10</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="mclose">)</span></span></span></span></span></li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Dehydration: </span></span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">5</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mopen">(</span><span class="mord text"><span class="mord">blue</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mord mathnormal">u</span><span class="mord mathnormal" style="margin-right:0.0576em;">S</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord text"><span class="mord">white</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord">5</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span></span></span></span></span></li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">water</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.3074em;vertical-align:-0.8804em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">moles of anhydrous salt</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">mass lost on heating</span></span><span class="mord">/18</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>CuSO₄·5H₂O turns white on heating and blue again on adding water — the classic reversible hydration test.</li><li>Deliquescence relative humidity: about 30% for CaCl₂ and 75% for NaCl.</li><li>Silica gel can absorb roughly 40% of its own mass of water and is regenerated by heating.</li><li>answer pattern for &quot;Efflorescent, deliquescent and hygroscopic solids; crysta…&quot;: define → method → result. Structure earns the marks on 6–10 mark questions.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li><strong>Problem:</strong> 2.86 g of hydrated sodium carbonate loses 1.62 g on strong heating; the anhydrous salt has M = 106 g mol⁻¹. Find n. <strong>Solution:</strong> anhydrous mass = 1.24 g → 0.0117 mol; water = 1.62/18 = 0.09 mol → n = 0.09/0.0117 ≈ 7.7, i.e. ≈ 8 (illustrating that heating experiments need care, since washing soda is normally the decahydrate).</li><li><strong>Problem:</strong> Why is CaCl₂ unsuitable for drying ammonia? <strong>Solution:</strong> CaCl₂ is deliquescent but forms the addition compound CaCl₂·8NH₃, so it would remove ammonia as well; conc. H₂SO₄ or quicklime is used instead.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Keep one example of each class ready: efflorescent — Na₂SO₄·10H₂O; deliquescent — CaCl₂; hygroscopic — conc. H₂SO₄ or silica gel.</li><li>Tie efflorescence and deliquescence to humidity: both depend on the vapour-pressure balance between hydrate and atmosphere.</li><li>State that crystallisation is used for purification and that slow growth yields large, pure crystals.</li></ul></section>
+<section class="field"><h2>Visual Type</h2><p>crystallization</p></section>
+<section class="field"><h2>Key Points</h2><ul><li>• Efflorescent</li><li>• Deliquescent</li><li>• Hygroscopic solids</li><li>• Crystallization</li><li>• Crystal growth</li><li>• Water of crystallization</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><p class="empty">—</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following is a distinct sub-topic under &quot;Efflorescent, deliquescent and hygroscopic solids; crysta…&quot;?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Efflorescent</li><li>Deliquescent</li><li>Unrelated topic</li><li>None of the above</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Efflorescent is listed among the official sub-ideas of Efflorescent, deliquescent and hygroscopic solids; crysta…; the others are not part of this topic.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A common examiner point on &quot;Efflorescent, deliquescent and hygroscopic solids; crysta…&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div></section>
+<section class="field"><h2>Source</h2><p>generated</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
+<section class="field"><h2>Bounds</h2><ul><li>Covers only: efflorescent, deliquescent, hygroscopic solids, crystallization (within States of Matter).</li><li>Out of scope here: topics of neighbouring units in Chemistry — don't mix them.</li><li>State the limit / condition where a formula or rule stops being valid before applying it.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Efflorescent, deliquescent and hygroscopic solids; crysta… (States of Matter, Chemistry, class-11-notes) covers Efflorescent, deliquescent, hygroscopic solids. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.</p></section>
+  <nav class="pager"><a href="08-efflorescent-deliquescent-and-hygroscopic-solids-crystallization-and-crystal-growth-water-of-cry.html" title="Efflorescent, deliquescent and hygroscopic solids; crystallization and crystal growth; water of crystallization">‹ Efflorescent, deliquescent and hygroscopic so…</a><a class="mid" href="../../../../../_subjects/class-11-chemistry.html">Chemistry</a><a href="09-introduction-to-unit-crystal-lattice-and-unit-cell.html" title="Introduction to unit crystal lattice and unit cell">Introduction to unit crystal lattice and unit… ›</a></nav>
+</div></body></html>

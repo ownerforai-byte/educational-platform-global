@@ -1,0 +1,164 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Geostationary Satellite</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Backup Physics 2026 09 22</div>
+    <h1 class="doc">Geostationary Satellite</h1>
+    <div class="meta"><span>Backup Physics 2026 09 22</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>gravitation</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>geostationary-satellite</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Duplicate Type</h2><p><code>2</code></p></section>
+<section class="field"><h2>Tab Group</h2><p>geostationary-satellite</p></section>
+<section class="field"><h2>Animation3 D</h2><p>gravitation</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>gravitation</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Notes</dt><dd><ul><li><strong>Geostationary satellite:</strong> a satellite that appears stationary relative to a point on the Earth's equator. It must satisfy three conditions: (1) orbit in the plane of the equator (equatorial plane), (2) orbit in the same direction as Earth's rotation (west → east), and (3) have a period exactly equal to Earth's rotation period (T = 24 hours).</li><li><strong>Height above Earth:</strong> using T = 2π√(r³/GM) with T = 86400 s → r ≈ 4.22×10⁷ m from the centre → altitude h = r − R ≈ 35,800 km above the surface. This is about 5.6 Earth radii.</li><li><strong>Orbital speed:</strong> v₀ = 2πr/T = 2π×4.22×10⁷/86400 ≈ 3.07 km/s. It matches Earth's angular speed: the satellite and the point below rotate together, so the satellite hangs over the same longitude.</li><li><strong>Only the equator works:</strong> a satellite over the equator is the only way the orbit plane can contain both the satellite and Earth's rotation axis while keeping the satellite fixed over one point. An inclined orbit would carry the satellite north and south each day.</li><li><strong>Why 24 h is exact:</strong> for T = T_Earth, the angular speeds match: ω_sat = ω_Earth. From r³ = GMT²/4π² the altitude is fixed (~35,800 km) — there is a unique geostationary height.</li><li><strong>Applications:</strong> communications satellites (broadcast, TV, internet), weather satellites (HIMAWARI, INSAT type), and some navigation augmentation systems. Their fixed position means ground dishes never need to move.</li><li><strong>Geostationary vs geosynchronous:</strong> a geosynchronous satellite has a 24-h period but may have an inclined or elliptical orbit, so it drifts north/south in the sky. A geostationary satellite is a special geosynchronous satellite confined to the equatorial plane at fixed longitude.</li><li><strong>Energy at geostationary orbit:</strong> for m = 1000 kg, U = −GMm/r ≈ −9.4×10⁹ J, E_total = −GMm/2r ≈ −4.7×10⁹ J. Launching to this height needs a large boost — the standard launch uses a geostationary transfer orbit (GTO) followed by an apogee burn.</li></ul></dd></div><div class="kv"><dt>Confusion</dt><dd><ul><li>❌ 'Any 24-hour satellite is geostationary.' ✅ A geostationary satellite must ALSO be equatorial, circular, and west-to-east. A geosynchronous one just matches the 24-h period.</li><li>❌ 'Geostationary orbit can be at any height above the equator.' ✅ There is exactly ONE geostationary altitude: ≈ 35,800 km. It is set by Earth's rotation period.</li><li>❌ 'A geostationary satellite stays above one spot because it has no gravity.' ✅ It stays because its orbital period exactly equals Earth's rotation; gravity still holds it in orbit at v ≈ 3.07 km/s.</li><li>❌ 'The satellite is stationary in space.' ✅ It moves at 3.07 km/s; it is stationary only relative to the rotating Earth.</li><li>❌ 'At high latitudes people see it overhead.' ✅ A geostationary satellite is always over the equator — at high latitudes it appears low on the horizon, and near the poles it is not visible at all.</li><li>❌ 'The Moon is a geostationary satellite.' ✅ The Moon has a 27.3-day period and an inclined orbit — it is not geostationary.</li></ul></dd></div><div class="kv"><dt>Practice</dt><dd><ul><li>Verify the geostationary altitude using T = 86400 s, G and M.</li><li>Compute the orbital speed of a geostationary satellite.</li><li>Explain why the orbit must be equatorial for a satellite to be geostationary.</li><li>Distinguish between geostationary and geosynchronous satellites.</li><li>Find the total energy of a 500 kg satellite in geostationary orbit.</li><li>Why are weather and communication satellites placed in geostationary orbits?</li></ul></dd></div><div class="kv"><dt>Universal Facts</dt><dd><ul><li>Arthur C. Clarke proposed the geostationary orbit in 1945 (in Wireless World); it is sometimes called the Clarke orbit.</li><li>The first geostationary satellite was Syncom 3 (1964), used to broadcast the 1964 Tokyo Olympics.</li><li>The geostationary belt (~35,800 km over the equator) is a limited resource — equatorial countries claim sovereignty over its orbital slots above their territories.</li><li>Typical geostationary satellites weigh thousands of kg at launch; most is fuel used to reach and maintain the orbit.</li><li>Solar wind and gravitational pull of the Moon/Sun slowly tilt geostationary orbits; station-keeping burns correct this.</li></ul></dd></div><div class="kv"><dt>Examples</dt><dd><ul><li>Altitude: r = (GMT²/4π²)^(1/3) ≈ 4.22×10⁷ m; h = r − R ≈ 35,800 km.</li><li>Speed: v = 2πr/T ≈ 3.07 km/s.</li><li>Period: exactly 24 hours (matches Earth's rotation).</li><li>Angular speed: ω = 2π/86400 ≈ 7.27×10⁻⁵ rad/s, equal to Earth's.</li><li>View: always over the SAME point on the equator — ideal for fixed dish antennas.</li></ul></dd></div><div class="kv"><dt>Practice Questions</dt><dd><ul><li>Calculate the radius and altitude of a geostationary orbit using G, M and T = 24 h.</li><li>What is the orbital speed of a satellite in geostationary orbit?</li><li>Why must a geostationary satellite lie in the equatorial plane?</li><li>Distinguish between geostationary and geosynchronous satellites with a diagram.</li><li>Find the total energy and kinetic energy of a 2000 kg satellite in geostationary orbit.</li><li>A satellite has a 24-h period but an inclined orbit. Is it geostationary? Explain.</li></ul></dd></div><div class="kv"><dt>Formulas</dt><dd><ul><li>Geostationary radius: r = (GMT²/4π²)^(1/3) ≈ 4.22×10⁷ m</li><li>Altitude: h = r − R ≈ 35,800 km</li><li>Orbital speed: v = 2πr/T ≈ 3.07 km/s</li><li>Angular speed: ω = 2π/T_Earth ≈ 7.27×10⁻⁵ rad/s</li><li>Energy: U = −GMm/r; E_total = −GMm/2r</li></ul></dd></div><div class="kv"><dt>Key Points</dt><dd><ul><li>A geostationary satellite orbits in the equatorial plane, west-to-east, with T = 24 h.</li><li>Its unique altitude is ≈ 35,800 km (r ≈ 4.22×10⁷ m).</li><li>v ≈ 3.07 km/s — matches Earth's rotation, so it appears fixed overhead.</li><li>Applications: communication, broadcasting, weather satellites.</li><li>Geosynchronous ≠ geostationary — geosynchronous only matches the period.</li></ul></dd></div><div class="kv"><dt>Summary</dt><dd><p>A geostationary satellite orbits in the equatorial plane west-to-east with a 24-hour period, so it appears fixed over one point on the equator. It sits at a unique altitude of 35,800 km (r = 4.22×10⁷ m) and moves at 3.07 km/s. Geostationary orbits are vital for communications and weather satellites.</p></dd></div><div class="kv"><dt>Special Notes</dt><dd><ul><li>The key difference from geosynchronous: geostationary also requires the equatorial plane and zero inclination.</li><li>Altitude 35,800 km = about 5.6 Earth radii.</li><li>At high latitudes geostationary satellites appear low on the horizon.</li><li>To reach geostationary orbit rockets use a transfer ellipse + apogee burn.</li><li>NEB asks to compute the geostationary radius from the period or vice versa.</li></ul></dd></div><div class="kv"><dt>Important Statements</dt><dd><ul><li>A geostationary satellite has a period of 24 hours and orbits the equator west-to-east.</li><li>Its orbital radius is fixed: r ≈ 4.22×10⁷ m (altitude ≈ 35,800 km).</li><li>The orbital speed is ≈ 3.07 km/s, matching Earth's rotation.</li><li>Geostationary satellites appear fixed above a single point on the equator.</li><li>They are used for communication, broadcasting and weather monitoring.</li></ul></dd></div><div class="kv"><dt>Important Notes</dt><dd><ul><li>Geostationary = equatorial + circular + west-to-east + 24-h period.</li><li>Unique altitude: 35,800 km; unique radius: 4.22×10⁷ m.</li><li>The satellite appears fixed above one point on the equator.</li><li>v ≈ 3.07 km/s; ω matches Earth's rotation (7.27×10⁻⁵ rad/s).</li><li>Geosynchronous is a 24-h orbit but not necessarily equatorial.</li></ul></dd></div><div class="kv"><dt>Exam Short Tricks</dt><dd><ul><li>Memorise: geostationary altitude ≈ 36,000 km (35,800 km more precisely).</li><li>From T to r: r = (GMT²/4π²)^(1/3) — plug 86400 s directly.</li><li>Speed shortcut: v = 2πr/T or v = √(GM/r); both give ≈ 3 km/s.</li><li>If T = 24 h BUT orbit is inclined — it's geosynchronous, not geostationary (quick MCQ trap).</li><li>Energy: just use E = −GMm/2r; KE = GMm/2r.</li></ul></dd></div><div class="kv"><dt>Exam Notes</dt><dd><ul><li>Computing the geostationary orbit radius from T = 24 h is a classic numerical.</li><li>Conditions for a geostationary orbit are a frequent short-answer question.</li><li>Geosynchronous vs geostationary distinction appears in MCQs.</li><li>Applications (telecom, weather, broadcasting) are direct marks.</li><li>Energy in geostationary orbit is tested together with satellite topic.</li></ul></dd></div><div class="kv"><dt>Mcs</dt><dd><div class="q"><span class="n">1.</span><div class="stem"><p>A geostationary satellite has an orbital period of:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>12 h</li><li>24 h</li><li>90 min</li><li>27 days</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>The altitude of a geostationary satellite is approximately:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>36,000 km</li><li>6,400 km</li><li>1,000 km</li><li>4.22×10⁶ m</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>A geostationary satellite must orbit:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>in any plane</li><li>in the equatorial plane west-to-east</li><li>in polar orbit</li><li>in any inclined plane</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>The orbital speed of a geostationary satellite is about:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>7.9 km/s</li><li>3.07 km/s</li><li>11.2 km/s</li><li>1 km/s</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>A satellite with a 24-h period but inclined orbit is called:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>geostationary</li><li>geosynchronous</li><li>polar</li><li>low Earth orbit</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></dd></div><div class="kv"><dt>Important Concepts</dt><dd><ul><li>A geostationary satellite is equatorial, west-to-east, and has T = 24 h.</li><li>Its radius r ≈ 4.22×10⁷ m; altitude ≈ 35,800 km.</li><li>v ≈ 3.07 km/s; it appears fixed over one equator point.</li><li>Geostationary orbits are unique — one height satisfies T = 24 h.</li><li>Used for communications, broadcasting and weather satellites.</li></ul></dd></div><div class="kv"><dt>Important Tasks</dt><dd><ul><li>Derive the geostationary orbital radius from T = 24 h.</li><li>Compute altitude, speed and angular speed of the orbit.</li><li>Distinguish geosynchronous and geostationary with examples.</li><li>Calculate K, U and E for a satellite at geostationary height.</li><li>Explain why geostationary orbits suit communication satellites.</li></ul></dd></div><div class="kv"><dt>Exercises</dt><dd><p class="empty">—</p></dd></div><div class="kv"><dt>Visualization</dt><dd><p class="empty">—</p></dd></div></dl></section>
+<section class="field"><h2>Original Content</h2><dl class="obj"><div class="kv"><dt>Notes</dt><dd><ul><li><strong>Geostationary satellite:</strong> a satellite that appears stationary relative to a point on the Earth's equator. It must satisfy three conditions: (1) orbit in the plane of the equator (equatorial plane), (2) orbit in the same direction as Earth's rotation (west → east), and (3) have a period exactly equal to Earth's rotation period (T = 24 hours).</li><li><strong>Height above Earth:</strong> using T = 2π√(r³/GM) with T = 86400 s → r ≈ 4.22×10⁷ m from the centre → altitude h = r − R ≈ 35,800 km above the surface. This is about 5.6 Earth radii.</li><li><strong>Orbital speed:</strong> v₀ = 2πr/T = 2π×4.22×10⁷/86400 ≈ 3.07 km/s. It matches Earth's angular speed: the satellite and the point below rotate together, so the satellite hangs over the same longitude.</li><li><strong>Only the equator works:</strong> a satellite over the equator is the only way the orbit plane can contain both the satellite and Earth's rotation axis while keeping the satellite fixed over one point. An inclined orbit would carry the satellite north and south each day.</li><li><strong>Why 24 h is exact:</strong> for T = T_Earth, the angular speeds match: ω_sat = ω_Earth. From r³ = GMT²/4π² the altitude is fixed (~35,800 km) — there is a unique geostationary height.</li><li><strong>Applications:</strong> communications satellites (broadcast, TV, internet), weather satellites (HIMAWARI, INSAT type), and some navigation augmentation systems. Their fixed position means ground dishes never need to move.</li><li><strong>Geostationary vs geosynchronous:</strong> a geosynchronous satellite has a 24-h period but may have an inclined or elliptical orbit, so it drifts north/south in the sky. A geostationary satellite is a special geosynchronous satellite confined to the equatorial plane at fixed longitude.</li><li><strong>Energy at geostationary orbit:</strong> for m = 1000 kg, U = −GMm/r ≈ −9.4×10⁹ J, E_total = −GMm/2r ≈ −4.7×10⁹ J. Launching to this height needs a large boost — the standard launch uses a geostationary transfer orbit (GTO) followed by an apogee burn.</li></ul></dd></div><div class="kv"><dt>Confusion</dt><dd><ul><li>❌ 'Any 24-hour satellite is geostationary.' ✅ A geostationary satellite must ALSO be equatorial, circular, and west-to-east. A geosynchronous one just matches the 24-h period.</li><li>❌ 'Geostationary orbit can be at any height above the equator.' ✅ There is exactly ONE geostationary altitude: ≈ 35,800 km. It is set by Earth's rotation period.</li><li>❌ 'A geostationary satellite stays above one spot because it has no gravity.' ✅ It stays because its orbital period exactly equals Earth's rotation; gravity still holds it in orbit at v ≈ 3.07 km/s.</li><li>❌ 'The satellite is stationary in space.' ✅ It moves at 3.07 km/s; it is stationary only relative to the rotating Earth.</li><li>❌ 'At high latitudes people see it overhead.' ✅ A geostationary satellite is always over the equator — at high latitudes it appears low on the horizon, and near the poles it is not visible at all.</li><li>❌ 'The Moon is a geostationary satellite.' ✅ The Moon has a 27.3-day period and an inclined orbit — it is not geostationary.</li></ul></dd></div><div class="kv"><dt>Practice</dt><dd><ul><li>Verify the geostationary altitude using T = 86400 s, G and M.</li><li>Compute the orbital speed of a geostationary satellite.</li><li>Explain why the orbit must be equatorial for a satellite to be geostationary.</li><li>Distinguish between geostationary and geosynchronous satellites.</li><li>Find the total energy of a 500 kg satellite in geostationary orbit.</li><li>Why are weather and communication satellites placed in geostationary orbits?</li></ul></dd></div><div class="kv"><dt>Universal Facts</dt><dd><ul><li>Arthur C. Clarke proposed the geostationary orbit in 1945 (in Wireless World); it is sometimes called the Clarke orbit.</li><li>The first geostationary satellite was Syncom 3 (1964), used to broadcast the 1964 Tokyo Olympics.</li><li>The geostationary belt (~35,800 km over the equator) is a limited resource — equatorial countries claim sovereignty over its orbital slots above their territories.</li><li>Typical geostationary satellites weigh thousands of kg at launch; most is fuel used to reach and maintain the orbit.</li><li>Solar wind and gravitational pull of the Moon/Sun slowly tilt geostationary orbits; station-keeping burns correct this.</li></ul></dd></div><div class="kv"><dt>Examples</dt><dd><ul><li>Altitude: r = (GMT²/4π²)^(1/3) ≈ 4.22×10⁷ m; h = r − R ≈ 35,800 km.</li><li>Speed: v = 2πr/T ≈ 3.07 km/s.</li><li>Period: exactly 24 hours (matches Earth's rotation).</li><li>Angular speed: ω = 2π/86400 ≈ 7.27×10⁻⁵ rad/s, equal to Earth's.</li><li>View: always over the SAME point on the equator — ideal for fixed dish antennas.</li></ul></dd></div><div class="kv"><dt>Practice Questions</dt><dd><ul><li>Calculate the radius and altitude of a geostationary orbit using G, M and T = 24 h.</li><li>What is the orbital speed of a satellite in geostationary orbit?</li><li>Why must a geostationary satellite lie in the equatorial plane?</li><li>Distinguish between geostationary and geosynchronous satellites with a diagram.</li><li>Find the total energy and kinetic energy of a 2000 kg satellite in geostationary orbit.</li><li>A satellite has a 24-h period but an inclined orbit. Is it geostationary? Explain.</li></ul></dd></div><div class="kv"><dt>Formulas</dt><dd><ul><li>Geostationary radius: r = (GMT²/4π²)^(1/3) ≈ 4.22×10⁷ m</li><li>Altitude: h = r − R ≈ 35,800 km</li><li>Orbital speed: v = 2πr/T ≈ 3.07 km/s</li><li>Angular speed: ω = 2π/T_Earth ≈ 7.27×10⁻⁵ rad/s</li><li>Energy: U = −GMm/r; E_total = −GMm/2r</li></ul></dd></div><div class="kv"><dt>Key Points</dt><dd><ul><li>A geostationary satellite orbits in the equatorial plane, west-to-east, with T = 24 h.</li><li>Its unique altitude is ≈ 35,800 km (r ≈ 4.22×10⁷ m).</li><li>v ≈ 3.07 km/s — matches Earth's rotation, so it appears fixed overhead.</li><li>Applications: communication, broadcasting, weather satellites.</li><li>Geosynchronous ≠ geostationary — geosynchronous only matches the period.</li></ul></dd></div><div class="kv"><dt>Summary</dt><dd><p>A geostationary satellite orbits in the equatorial plane west-to-east with a 24-hour period, so it appears fixed over one point on the equator. It sits at a unique altitude of 35,800 km (r = 4.22×10⁷ m) and moves at 3.07 km/s. Geostationary orbits are vital for communications and weather satellites.</p></dd></div><div class="kv"><dt>Special Notes</dt><dd><ul><li>The key difference from geosynchronous: geostationary also requires the equatorial plane and zero inclination.</li><li>Altitude 35,800 km = about 5.6 Earth radii.</li><li>At high latitudes geostationary satellites appear low on the horizon.</li><li>To reach geostationary orbit rockets use a transfer ellipse + apogee burn.</li><li>NEB asks to compute the geostationary radius from the period or vice versa.</li></ul></dd></div><div class="kv"><dt>Important Statements</dt><dd><ul><li>A geostationary satellite has a period of 24 hours and orbits the equator west-to-east.</li><li>Its orbital radius is fixed: r ≈ 4.22×10⁷ m (altitude ≈ 35,800 km).</li><li>The orbital speed is ≈ 3.07 km/s, matching Earth's rotation.</li><li>Geostationary satellites appear fixed above a single point on the equator.</li><li>They are used for communication, broadcasting and weather monitoring.</li></ul></dd></div><div class="kv"><dt>Important Notes</dt><dd><ul><li>Geostationary = equatorial + circular + west-to-east + 24-h period.</li><li>Unique altitude: 35,800 km; unique radius: 4.22×10⁷ m.</li><li>The satellite appears fixed above one point on the equator.</li><li>v ≈ 3.07 km/s; ω matches Earth's rotation (7.27×10⁻⁵ rad/s).</li><li>Geosynchronous is a 24-h orbit but not necessarily equatorial.</li></ul></dd></div><div class="kv"><dt>Exam Short Tricks</dt><dd><ul><li>Memorise: geostationary altitude ≈ 36,000 km (35,800 km more precisely).</li><li>From T to r: r = (GMT²/4π²)^(1/3) — plug 86400 s directly.</li><li>Speed shortcut: v = 2πr/T or v = √(GM/r); both give ≈ 3 km/s.</li><li>If T = 24 h BUT orbit is inclined — it's geosynchronous, not geostationary (quick MCQ trap).</li><li>Energy: just use E = −GMm/2r; KE = GMm/2r.</li></ul></dd></div><div class="kv"><dt>Exam Notes</dt><dd><ul><li>Computing the geostationary orbit radius from T = 24 h is a classic numerical.</li><li>Conditions for a geostationary orbit are a frequent short-answer question.</li><li>Geosynchronous vs geostationary distinction appears in MCQs.</li><li>Applications (telecom, weather, broadcasting) are direct marks.</li><li>Energy in geostationary orbit is tested together with satellite topic.</li></ul></dd></div><div class="kv"><dt>Mcs</dt><dd><div class="q"><span class="n">1.</span><div class="stem"><p>A geostationary satellite has an orbital period of:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>12 h</li><li>24 h</li><li>90 min</li><li>27 days</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>The altitude of a geostationary satellite is approximately:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>36,000 km</li><li>6,400 km</li><li>1,000 km</li><li>4.22×10⁶ m</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>A geostationary satellite must orbit:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>in any plane</li><li>in the equatorial plane west-to-east</li><li>in polar orbit</li><li>in any inclined plane</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>The orbital speed of a geostationary satellite is about:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>7.9 km/s</li><li>3.07 km/s</li><li>11.2 km/s</li><li>1 km/s</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>A satellite with a 24-h period but inclined orbit is called:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>geostationary</li><li>geosynchronous</li><li>polar</li><li>low Earth orbit</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></dd></div><div class="kv"><dt>Important Concepts</dt><dd><ul><li>A geostationary satellite is equatorial, west-to-east, and has T = 24 h.</li><li>Its radius r ≈ 4.22×10⁷ m; altitude ≈ 35,800 km.</li><li>v ≈ 3.07 km/s; it appears fixed over one equator point.</li><li>Geostationary orbits are unique — one height satisfies T = 24 h.</li><li>Used for communications, broadcasting and weather satellites.</li></ul></dd></div><div class="kv"><dt>Important Tasks</dt><dd><ul><li>Derive the geostationary orbital radius from T = 24 h.</li><li>Compute altitude, speed and angular speed of the orbit.</li><li>Distinguish geosynchronous and geostationary with examples.</li><li>Calculate K, U and E for a satellite at geostationary height.</li><li>Explain why geostationary orbits suit communication satellites.</li></ul></dd></div><div class="kv"><dt>Exercises</dt><dd><p class="empty">—</p></dd></div><div class="kv"><dt>Visualization</dt><dd><p class="empty">—</p></dd></div></dl></section>
+  <nav class="pager"><a href="08-potential-and-kinetic-energy-of-the-satellite.html" title="Potential and Kinetic Energy of the Satellite">‹ Potential and Kinetic Energy of the Satellite</a><a class="mid" href="../../../_subjects/general-backup-physics-2026-09-22.html">Backup Physics 2026 09 22</a><a href="09-gps-2.html" title="GPS">GPS ›</a></nav>
+</div></body></html>

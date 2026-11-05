@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.2 Additional Questions Q9-Q24 (inverse/composite/logic mixed review) - Solutions Part B</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Algebra</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.2 Additional Questions Q9-Q24 (inverse/composite/logic mixed review) - Solutions Part B</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Algebra</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>AQ9(a). Show that f:[-2,0]-&gt;R defined by f(x) = x^2 is one-one but not onto.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>On [-2,0] every number is non-positive, so x1^2 = x2^2 forces x1 = x2 - the sign ambiguity of squares disappears.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>One-one: let x1, x2 in [-2,0] with x1^2 = x2^2. Then |x1| = |x2|; since both are &lt;= 0, x1 = -|x1| = -|x2| = x2. So f is one-one. Not onto: f(x) = x^2 &gt;= 0 always (range is [0,4]), so e.g. -1 in R has no pre-image. Hence one-one but not onto.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q9(a); book p114 = PDF p141 OCR conf 0.94</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>AQ9(b). Let f:[0,inf)-&gt;R be defined by f(x) = |x|. The print asks to 'show it is one-one and onto' - assess honestly.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Read the codomain carefully: |x| on [0,inf) never goes negative, so 'onto R' as printed is FALSE - the intended codomain is [0,inf).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>One-one: on [0,inf), |x| = x, so f(x1) = f(x2) gives x1 = x2 - one-one holds. Onto R FAILS: range is [0,inf), so e.g. -1 in R has no pre-image. VERDICT: one-one yes, onto R no (print overstates). With the corrected codomain [0,inf), f(x) = x is bijective. FLAGGED as a print tension.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q9(b); book p114 = PDF p141 OCR; onto-R disproved, corrected codomain given</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>AQ10. Let R0 be the set of non-zero real numbers and f:R0-&gt;R0 be defined by f(x) = 1/x. Show that f is one-one and onto.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>f(f(x)) = x makes a function its own inverse - bijectivity follows for free.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>One-one: 1/x1 = 1/x2 gives x1 = x2 (multiply by x1.x2 != 0). Onto: for each y in R0, x = 1/y is in R0 and f(x) = y. So f is one-one and onto (indeed f(f(x)) = x).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q10; book p114 = PDF p141 OCR conf 0.94</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>AQ11. Define an inverse of a function. What condition makes a function have its inverse? Let f:R-&gt;R be defined by f(x) = 2x - 4. Find f^-1 and show that f(f^-1(x)) = f^-1(f(x)) = x.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Swap x and y, solve for y: the inverse undoes each operation in reverse order.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>A function has an inverse iff it is one-one and onto (bijective); f^-1 reverses every arrow. Here y = 2x - 4; swapping roles x = 2y - 4 gives y = (x+4)/2, so f^-1(x) = (x+4)/2 (the book prints this hint). Check: f(f^-1(x)) = 2.(x+4)/2 - 4 = x; f^-1(f(x)) = ((2x-4)+4)/2 = x.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q11; book p114 = PDF p141 OCR (hint printed in book)</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>AQ12 (T.U. 2053). Let f:R-&gt;R be defined by f(x) = x^3. Show that f is one-one and onto. Hence find f^-1.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Odd powers preserve order: cubes keep distinct numbers distinct and hit every real.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>One-one: x1^3 = x2^3 gives (taking real cube roots) x1 = x2. Onto: for each y in R, x = cubert(y) is real with f(x) = y. Hence bijective; f^-1(x) = cubert(x).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q12 (T.U. 2053); book p114 = PDF p141 OCR</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>AQ13. Let f:R-&gt;R be defined by f(x) = ax + b (a, b real). Find f^-1 and show that f(f^-1(x)) = f^-1(f(x)) = x.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>The inverse exists only if a != 0 (a = 0 makes f constant) - the book's 'a, b real' needs this hypothesis added.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Requires a != 0 (else f is constant, not bijective - hypothesis added). y = ax + b gives x = ay + b, so y = (x-b)/a: f^-1(x) = (x-b)/a. Check: f(f^-1(x)) = a.(x-b)/a + b = x; f^-1(f(x)) = ((ax+b)-b)/a = x.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q13; book p114 = PDF p141 OCR; a != 0 hypothesis added</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>AQ14 (HSEB 2054). Let f:R-&gt;R be defined by f(x) = 2x and g:R-&gt;R by g(x) = x + 1. Find (fog)(x) and (gof)(x). Are they one-one?</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Order matters in composition: doubling after adding 1 differs from adding 1 after doubling.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(fog)(x) = f(x+1) = 2x + 2. (gof)(x) = g(2x) = 2x + 1. Both are non-zero-slope linears, hence one-one: yes and yes. Matches the printed Answers key (p115): '2x+2, 2x+1; yes'.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q14 (HSEB 2054); book p114 = PDF p141 OCR; matches printed Answers key p115 (PDF p142)</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>AQ15. With f(x) = 2x^2 - 3 and g(x) = 3x + 2 determine (i) (fog)(x), (ii) (gof)(x), (iii) (fof)(x), (iv) (gog)(x). (f is cut off in the scan; 2x^2-3 is forced by the printed answers.)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Four compositions, one pair: expand each and match against the key - the key itself pins down f.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(i) (fog)(x) = 2(3x+2)^2 - 3 = 2(9x^2+12x+4) - 3 = 18x^2+24x+5. (ii) (gof)(x) = 3(2x^2-3) + 2 = 6x^2-7. (iii) (fof)(x) = 2(2x^2-3)^2 - 3 = 2(4x^4-12x^2+9) - 3 = 8x^4-24x^2+15. (iv) (gog)(x) = 3(3x+2) + 2 = 9x+8. All four match the printed Answers key (p115) exactly.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q15; book p114 = PDF p141 OCR (f reconstructed); all four match printed Answers key p115 (PDF p142)</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>AQ16(a). Prove that ~(p ^ (~p)) is a tautology.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>p AND (NOT p) is always false - negating it is always true. That is the whole proof.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Truth table: p=T: ~p=F, p^(~p)=F, ~(F)=T. p=F: ~p=T, p^(~p)=F, ~(F)=T. All-true column: tautology. Matches the printed key table (p115-116).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q16(a); book pp114-115 = PDF pp141-142; matches printed key table</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>AQ16(b). Prove that ~(p v (~p)) is a contradiction.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>p OR (NOT p) is always true - negating it is always false.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Truth table: p=T: ~p=F, p v (~p)=T, ~(T)=F. p=F: ~p=T, p v (~p)=T, ~(T)=F. All-false column: contradiction. Matches the printed key table.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q16(b); book pp114-115 = PDF pp141-142; matches printed key table</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>AQ16(c). Prove that (p v q) v (~p) is a tautology.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>If p is false, ~p is true and already makes the big OR true; if p is true, p itself does.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Truth table over p,q: whenever p=T, (p v q)=T so the whole is T; whenever p=F, ~p=T so the whole is T. All four rows true: tautology. Matches the printed key table.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q16(c); book pp114-115 = PDF pp141-142; matches printed key table</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>AQ16(d). Prove that ((~q) ^ p) ^ q is a contradiction. (Print header garbled as '((~q)~p)q'; the AND-AND reading is forced by the all-false key table.)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>(~q) AND q can never both hold - the whole conjunction dies whatever p is.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Truth table: the factor (~q)^q is F in every row (q=T: ~q=F; q=F: q=F), so ((~q)^p)^q is F in all four rows: contradiction. Matches the printed key table (all-false column, p116). FLAGGED: connective reading adopted via key; pending physical-book check.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q16(d); book pp114-115 = PDF pp141-142; reading via printed key table (all false)</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>AQ17. If f:R-{1}-&gt;R-{2} is defined by f(x) = 2x/(x-1), prove that f is one-one and onto.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Solve y = 2x/(x-1) for x: the forbidden denominator x = 1 maps exactly to the forbidden value y = 2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>One-one: 2x1/(x1-1) = 2x2/(x2-1) gives x1(x2-1) = x2(x1-1), i.e. x1 = x2. Onto: for y != 2, y = 2x/(x-1) gives x(y-2) = y... solve: yx - y = 2x, x(y-2) = y, x = y/(y-2) (defined since y != 2); and x != 1 since y/(y-2) = 1 would give y = y-2, impossible. So every y in R-{2} has pre-image y/(y-2) in R-{1}: onto.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q17; book p115 = PDF p142 OCR (two consistent reads)</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>AQ18. Is the following argument valid? All natural numbers are integers. x is not an integer. Therefore, x is not a natural number.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Modus tollens: being an integer is necessary for being a natural number, so failing it rules out the conclusion.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Valid (modus tollens). Form: P -&gt; Q (natural -&gt; integer); ~Q (x not integer); therefore ~P (x not natural). Denying the consequent necessarily denies the antecedent.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q18; book p115 = PDF p142 OCR</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>AQ19. Is the following argument valid? Some students of class XI are smart. Prakash is a student of class XI. Therefore, Prakash is smart.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>'Some' does not cover all: Prakash may sit in the non-smart part of the class.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Invalid. 'Some students are smart' only guarantees a smart subset; Prakash may belong to the complementary (non-smart) subset. The middle term is undistributed - no conclusion about Prakash follows.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q19; book p115 = PDF p142 OCR</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>AQ20. Prove that f:R-&gt;R defined by f(x) = 2x^3 - 1 is one-one and onto. Also find f^-1.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Strictly increasing (derivative 6x^2 &gt;= 0, zero only at a point) means injective; odd-degree means surjective.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>One-one: 2x1^3-1 = 2x2^3-1 gives x1^3 = x2^3, so x1 = x2 (real cube roots unique). Onto: for each y, x = cubert((y+1)/2) is real with f(x) = y. Inverse: y = 2x^3-1 gives x = ((y+1)/2)^(1/3), so f^-1(x) = ((x+1)/2)^(1/3). Matches the printed Answers key (p116): '((x+1)/2)^1/3'.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q20; book p115 = PDF p142 OCR; matches printed Answers key p116 (PDF p143, root glyph confirmed)</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>AQ21 [HSEB 2065]. If f,g:R-&gt;R are defined by f(x) = x^3 + 2 and g(x) = 4x - 1, find (fog)(x) and (gof)(x) and show that the composite functions are not commutative.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Compute both orders and compare: (4x-1)^3+2 versus 4x^3+7 are nowhere equal.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(fog)(x) = f(4x-1) = (4x-1)^3 + 2 = 64x^3-48x^2+12x+1. (gof)(x) = g(x^3+2) = 4(x^3+2)-1 = 4x^3+7. They differ (e.g. at x=0: 1 vs 7), so fog != gof: not commutative. Matches the printed Answers key (p116): 'No'.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q21 [HSEB 2065]; book p115 = PDF pp141-142 (ask confirmed by 350-dpi crop); matches key</p></div></div></div><div class="q"><span class="n">18.</span><div class="stem"><p>AQ22 [HSEB 2061]. From f(x) = 2x^3 - 3 and g(x) = 3x + 2 (x in R), determine (fog)(x) and (gof)(x). Are they one-one?</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Cubes preserve order, so both composites inherit one-one-ness from f and g.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(fog)(x) = 2(3x+2)^3 - 3 = 54x^3+108x^2+72x+13. (gof)(x) = 3(2x^3-3) + 2 = 6x^3-7. One-one: (fog)'(x) = 18(3x+2)^2 &gt;= 0 with equality only at x = -2/3, so strictly increasing: yes. (gof)'(x) = 18x^2 &gt;= 0 with equality only at 0, so strictly increasing: yes.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q22 [HSEB 2061]; book p115 = PDF p141 (statement confirmed by 350-dpi line image)</p></div></div></div><div class="q"><span class="n">19.</span><div class="stem"><p>AQ23. If f(x) = x^3 - 1 and g(x) = 2x - 3, compute (f^-1 o g)(2) and (f o g^-1)(1). (Notation read from a 350-dpi line image; OCR alone merges the -1s.)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Read the tiny -1s: the first ask inverts f, the second inverts g. Each answer checks by direct substitution.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>f^-1(x) = cubert(x+1); g^-1(x) = (x+3)/2. (f^-1 o g)(2) = f^-1(g(2)) = f^-1(1) = cubert(2) (since (cubert2)^3-1 = 1: verified). (f o g^-1)(1) = f(g^-1(1)) = f(2) = 7 (verified). Exact answers: cubert(2) and 7. NOTE: the printed key (p116) shows '23. 2, 7' - the '2' is almost certainly a dropped cube-root sign (cubert(2)), since the key's Q20 line proves the compositor prints ^{1/3}; pending physical-book confirmation.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q23; book p115 = PDF p141 (statement via 350-dpi image read); key p116 checked visually</p></div></div></div><div class="q"><span class="n">20.</span><div class="stem"><p>AQ24. If f,g,h:R-&gt;R are defined by f(x) = x + 1, g(x) = e^x and h(x) = log x, find the value of (h o (g o f))(1).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Evaluate inside-out: +1, then exponential, then log - the natural log exactly undoes e^.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>f(1) = 2; g(2) = e^2; h(e^2) = log(e^2) = 2 (natural log). So (h o (g o f))(1) = 2. Matches the printed Answers key (p116): '24. 2'.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.2 Additional Q24; book p115 = PDF p141 OCR; matches printed Answers key p116 (PDF p143)</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.2 Additional Questions Q9-Q24 (book pp114-115 = PDF pp141-142 of the 2075 reprint; OCR conf 0.94-0.95 + 220/350-dpi crops + direct line-image reads). Numeric answers verified against the printed Answers key pp115-116 (PDF pp142-143, key visually checked). Flags: AQ9(b) onto-R disproved as printed (corrected codomain given); AQ13 a != 0 added; AQ16(d) connective reading via key; AQ23 key '2' = dropped cubert (exact cubert(2) verified by substitution).</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>algebra-textbook-ex-2-additional-b</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>algebra</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><a href="ex-2-additional-functions-review-a.html" title="Sukunda Basic Mathematics XI - Ch.2 Additional Questions Q1-Q8 (functions review) - Solutions Part A">‹ Sukunda Basic Mathematics XI - Ch.2 Additiona…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-3-1-curve-sketching.html" title="Sukunda Basic Mathematics XI - Ch.3 Book Ex 3.1 (curve sketching) - Complete Solutions">Sukunda Basic Mathematics XI - Ch.3 Book Ex 3… ›</a></nav>
+</div></body></html>

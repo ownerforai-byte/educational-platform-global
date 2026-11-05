@@ -1,0 +1,164 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Reading Comprehension: Passage Analysis</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Passage Analysis</div>
+    <h1 class="doc">Reading Comprehension: Passage Analysis</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Passage Analysis</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>reading-and-comprehension</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>passage-analysis</p></section>
+<section class="field"><h2>Relevance</h2><p><code>91</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;Systematic Passage Analysis&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Systematic passage analysis&lt;/b&gt; is a structured approach to understanding and answering questions about an unseen prose passage. In the NEB Class 11 English examination, comprehension passages typically carry 10-15 marks and may include factual questions, inferential questions, vocabulary-in-context questions, and short-answer questions. A systematic approach ensures that students extract maximum information from the passage and answer all questions accurately and efficiently.&lt;/p&gt;</li><li>&lt;h2&gt;Step 1: Preview the Passage&lt;/h2&gt;</li><li>&lt;p&gt;Before reading in detail, spend 30-60 seconds previewing: (1) Read the &lt;b&gt;title&lt;/b&gt; (if given) — it often reveals the topic and sometimes the author's position. (2) Skim the &lt;b&gt;first paragraph&lt;/b&gt; — it usually introduces the topic and main idea. (3) Skim the &lt;b&gt;last paragraph&lt;/b&gt; — it often summarises or concludes the argument. (4) Note the &lt;b&gt;paragraph topics&lt;/b&gt; — read the first sentence of each paragraph to understand the structure. This preview takes 1-2 minutes and provides a mental framework for detailed reading.&lt;/p&gt;</li><li>&lt;h2&gt;Step 2: Active Reading&lt;/h2&gt;</li><li>&lt;p&gt;During active reading, engage with the text: (1) &lt;b&gt;Underline key terms&lt;/b&gt; — names, dates, technical terms, repeated ideas. (2) &lt;b&gt;Marginal notes&lt;/b&gt; — write brief summaries of each paragraph in the margin (2-3 words per paragraph). (3) &lt;b&gt;Note transitions&lt;/b&gt; — pay attention to words like 'however', 'therefore', 'moreover', 'nevertheless' — these signal shifts in argument or emphasis. (4) &lt;b&gt;Identify the author's stance&lt;/b&gt; — is the author supportive, critical, neutral, or balanced? (5) &lt;b&gt;Mark difficult words&lt;/b&gt; — circle words you don't know and try to infer their meaning from context. Active reading takes 3-5 minutes for a standard passage and significantly improves comprehension and retention.&lt;/p&gt;</li><li>&lt;h2&gt;Step 3: Answering Questions Strategically&lt;/h2&gt;</li><li>&lt;p&gt;When answering comprehension questions: (1) &lt;b&gt;Read the question first&lt;/b&gt; — this tells you what to look for. (2) &lt;b&gt;Locate the relevant section&lt;/b&gt; — scan the passage for keywords from the question. (3) &lt;b&gt;Read the surrounding sentences&lt;/b&gt; — one sentence may not contain enough information. (4) &lt;b&gt;Quote directly for factual questions&lt;/b&gt; — use the passage's exact words where possible. (5) &lt;b&gt;Paraphrase for inferential questions&lt;/b&gt; — express implied meaning in your own words. (6) &lt;b&gt;Keep answers concise&lt;/b&gt; — answer only what is asked; avoid unnecessary information. (7) &lt;b&gt;Check your answer&lt;/b&gt; — ensure it is supported by the passage, not your own opinion. This strategic approach saves time and improves accuracy.&lt;/p&gt;</li><li>&lt;h2&gt;Types of Comprehension Questions&lt;/h2&gt;</li><li>&lt;p&gt;NEB comprehension questions fall into these categories: &lt;b&gt;Factual recall&lt;/b&gt; — questions asking for information directly stated in the passage (Who? What? When? Where?). &lt;b&gt;Inference&lt;/b&gt; — questions asking for meaning that is implied but not directly stated (Why? How? What can be inferred?). &lt;b&gt;Vocabulary in context&lt;/b&gt; — questions asking for the meaning of a word or phrase as used in the passage. &lt;b&gt;Main idea&lt;/b&gt; — questions about the central theme or purpose of the passage. &lt;b&gt;Tone and attitude&lt;/b&gt; — questions about the author's feeling or perspective. &lt;b&gt;Structure&lt;/b&gt; — questions about how the passage is organised. &lt;b&gt;Application&lt;/b&gt; — questions asking students to apply ideas from the passage to a new situation. Different question types require different reading strategies and answer formats.&lt;/p&gt;</li><li>&lt;h2&gt;Handling Vocabulary-in-Context Questions&lt;/h2&gt;</li><li>&lt;p&gt;When asked to explain a word's meaning in context: (1) &lt;b&gt;Read the entire sentence&lt;/b&gt; containing the word. (2) &lt;b&gt;Read the sentences before and after&lt;/b&gt; — context extends beyond the immediate sentence. (3) &lt;b&gt;Look for context clues&lt;/b&gt; — definitions, examples, contrasts, and restatements that reveal meaning. (4) &lt;b&gt;Consider the word's root&lt;/b&gt; — knowing Latin or Greek roots can help (e.g., 'bene' = good, so 'benevolent' = good-willed). (5) &lt;b&gt;Eliminate obviously wrong options&lt;/b&gt; — in MCQ format, eliminate answers that don't fit the context. (6) &lt;b&gt;Substitute your answer&lt;/b&gt; — replace the word with your meaning in the sentence to check if it makes sense. Vocabulary-in-context questions test your ability to use surrounding information to determine meaning, not just recall dictionary definitions.&lt;/p&gt;</li><li>&lt;h2&gt;Writing Effective Short Answers&lt;/h2&gt;</li><li>&lt;p&gt;For short-answer comprehension questions (2-4 marks): (1) &lt;b&gt;Answer in complete sentences&lt;/b&gt; — even for short answers, use proper sentence structure. (2) &lt;b&gt;Be specific&lt;/b&gt; — include relevant details from the passage. (3) &lt;b&gt;Use textual evidence&lt;/b&gt; — reference specific parts of the passage to support your answer. (4) &lt;b&gt;Stay within the passage&lt;/b&gt; — do not bring in outside knowledge unless asked. (5) &lt;b&gt;Keep it concise&lt;/b&gt; — 2-4 sentences are usually sufficient for 2-4 mark questions. (6) &lt;b&gt;Address all parts&lt;/b&gt; — if a question has two parts, answer both. For longer answers (5-8 marks): write 4-6 sentences with clear structure (topic sentence, supporting details, conclusion). Always write in your own words when paraphrasing, and use direct quotes when the passage's exact wording is important.&lt;/p&gt;</li><li>&lt;h2&gt;Time Management in Comprehension&lt;/h2&gt;</li><li>&lt;p&gt;Effective time management for comprehension sections: (1) &lt;b&gt;Preview (1-2 minutes)&lt;/b&gt; — skim title, first/last paragraphs, and topic sentences. (2) &lt;b&gt;Active reading (3-5 minutes)&lt;/b&gt; — read carefully, underline key points, make marginal notes. (3) &lt;b&gt;Answer factual questions (2-3 minutes)&lt;/b&gt; — these are usually the easiest and fastest to answer. (4) &lt;b&gt;Answer inferential questions (3-5 minutes)&lt;/b&gt; — these require more thinking and evidence-gathering. (5) &lt;b&gt;Answer vocabulary questions (2-3 minutes)&lt;/b&gt; — use context clues and elimination. (6) &lt;b&gt;Review (2-3 minutes)&lt;/b&gt; — check answers for completeness and accuracy. Total time: approximately 15-20 minutes for a standard comprehension passage. Practising with a timer builds speed and accuracy.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Inference vs. Opinion: An inference is a logical conclusion drawn from evidence in the passage — it must be supported by the text. An opinion is a personal belief or judgment that may or may not be supported by the text. In NEB exams, inference questions require textual evidence; opinion questions ask for your personal response. Confusing these leads to answers that are either unsupported (opinion presented as inference) or redundant (stating the obvious).</li><li>Main idea vs. Topic sentence: The main idea is the central point of the entire passage — it may be stated explicitly in a topic sentence or implied throughout. The topic sentence is a single sentence (usually at the beginning of a paragraph) that states the paragraph's main point. The main idea of a passage may not have a single topic sentence — it may be developed across multiple paragraphs. In NEB exams, 'main idea' questions require synthesising information from the entire passage.</li><li>Author's purpose vs. Author's main idea: The author's purpose is WHY the author wrote the passage (to inform, to persuade, to entertain, to describe). The author's main idea is WHAT the author is saying (the central argument or message). Purpose is about function; main idea is about content. A passage may have the purpose of persuading with the main idea that 'vaccination is essential for public health.' These are related but distinct concepts tested in NEB comprehension questions.</li><li>Literal meaning vs. Figurative meaning: Literal meaning is the direct, dictionary definition of words — what they say on the surface. Figurative meaning is the implied, non-literal meaning — what the author suggests beyond the surface. In comprehension, literal questions ask for information directly stated; figurative questions ask for implied meaning (inferences, themes, symbolic interpretations). Students often miss figurative meaning by taking language too literally.</li><li>Summary vs. Paraphrase: A summary condenses the entire passage to its main ideas in significantly fewer words (1/3 to 1/4 length). A paraphrase restates a specific passage or sentence in your own words, maintaining approximately the same length. Summaries are selective (only main ideas); paraphrases are comprehensive (all details in new words). In NEB exams, summary questions ask for a condensed version; paraphrase questions ask for restatement of a specific passage.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Read this passage and answer: 'Urbanisation in Nepal has accelerated dramatically since the 1990s. Cities like Kathmandu, Pokhara, and Butwal have expanded rapidly, drawing migrants from rural areas in search of employment and education. However, this growth has outpaced infrastructure development, leading to traffic congestion, housing shortages, and environmental degradation. Many rural areas have been depopulated, with young people abandoning agriculture for urban livelihoods. Experts warn that without planned urban development, Nepal's cities face a crisis of sustainability.' (a) What is the main problem discussed? (b) What are the consequences? (c) What is the author's tone? [Answer: (a) Rapid urbanisation outpacing infrastructure development. (b) Traffic congestion, housing shortages, environmental degradation, rural depopulation. (c) Concerned/warning tone — the author presents facts but also warns about future crises, using words like 'however', 'outpaced', 'crisis of sustainability'.]</li><li>What does the word 'degradation' mean in this context? 'Environmental degradation has reached alarming levels in Kathmandu Valley.' [Answer: In this context, 'degradation' means deterioration, decline, or damage to the environment. The context clue 'alarming levels' indicates a negative process. The word derives from Latin 'de-' (down) + 'gradus' (step), literally meaning 'to step down' — in this context, the downward decline of environmental quality.] — Note: The answer must reflect the contextual usage, not just a dictionary definition.</li><li>Make an inference: 'She stared at the unopened envelope on the table, her fingers tracing the worn edges. The stamp was faded, as though the letter had been sitting there for months, perhaps years.' What can be inferred about the envelope? [Answer: The envelope contains something important and emotionally significant — perhaps a letter from someone distant or long-lost. The fact that it remains unopened suggests the person is afraid of what it might say, or is hesitant to confront whatever news it contains. The faded stamp indicates it has been kept for a very long time, suggesting it was saved as a precious keepsake.] — Note: The inference must be supported by textual evidence (unopened, faded stamp, tracing edges).</li><li>What is the author's purpose in this passage? 'The Himalayan region is experiencing unprecedented glacier melt due to rising global temperatures. This melting threatens water supply for millions of people downstream, including those in the Terai and northern India. Scientists urge immediate action on climate change to prevent catastrophic water scarcity in the coming decades.' [Answer: The author's purpose is to persuade and warn — to convince readers that glacier melt in the Himalayas is a serious threat requiring immediate climate action. The passage presents scientific evidence (unprecedented melt), identifies the consequence (water scarcity for millions), and calls for action (urge immediate action). This is not merely informative — the author is advocating for a specific response.] — Note: Purpose is 'to persuade/warn', not just 'to inform'.</li><li>Identify the organisational pattern: 'First, the government must invest in renewable energy infrastructure. Second, it must implement stricter emissions regulations. Third, public awareness campaigns must educate citizens about climate change. Finally, international cooperation is essential to share technology and resources.' [Answer: The organisational pattern is order of importance/sequential steps — the passage presents a series of actions in a logical sequence (first, second, third, finally). This is a problem-solution structure where each step builds on the previous one, creating a cumulative argument for comprehensive climate action.] — Note: The pattern is sequential/chronological in terms of policy steps, but also represents a logical argument structure.</li><li>Write a summary (50-70 words) of this passage: 'Social media has revolutionised communication, connecting billions of people across the globe. Platforms like Facebook, Instagram, and Twitter allow instant sharing of information, ideas, and experiences. However, excessive use has been linked to anxiety, depression, and reduced face-to-face interaction, particularly among young people. Cyberbullying and misinformation are growing concerns. Experts recommend balanced usage and digital literacy education to maximise benefits while minimising harms.' [Answer: Social media has transformed global communication by enabling instant connection and information sharing across platforms like Facebook and Twitter. However, excessive use correlates with mental health issues, reduced in-person interaction, cyberbullying, and misinformation, especially among youth. Experts advocate for balanced use and digital literacy education to harness social media's benefits while mitigating its risks.] — Note: The summary condenses the original to approximately half its length while preserving all key ideas.</li><li>Distinguish between the literal and figurative meaning of: 'The news hit him like a freight train.' [Answer: Literal meaning: A physical freight train struck him. Figurative meaning: The news had a devastating, shocking impact on him — it was overwhelming and life-altering, much like being struck by a powerful train. The metaphor compares the emotional impact of bad news to the physical force of a train, conveying suddenness, severity, and helplessness. The figurative meaning is the intended interpretation in this context.] — Note: Students must identify both meanings and explain why the figurative meaning is appropriate.</li><li>What structural feature creates tension in this passage? 'The door was locked. He tried the handle again — still locked. He pounded on the wood, shouting for help, but no one answered. The temperature was dropping, and darkness was closing in. Somewhere, a clock ticked. One tick. Two ticks. Three.' [Answer: The structural features creating tension are: (1) Repetition — 'He tried the handle again' creates a sense of escalating desperation. (2) Short, choppy sentences — 'Still locked.' 'No one answered.' — these create a staccato rhythm that mirrors panic and urgency. (3) Sensory details — 'temperature was dropping', 'darkness was closing in' — these create physical discomfort and fear. (4) The ticking clock at the end — this auditory detail creates suspense through anticipation of what comes next. The structure moves from action (trying the door) to desperation (pounding, shouting) to stillness (darkness, ticking), creating a crescendo of tension.] — Note: Good structural analysis connects form to effect.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The comprehension passage in NEB exams is typically drawn from contemporary non-fiction sources (newspapers, magazines, educational websites) or adapted literary excerpts. This reflects the exam's emphasis on real-world reading skills rather than purely literary analysis.</li><li>In the NEB English examination, comprehension typically carries 10-15 marks — making it one of the most heavily weighted sections. A strong performance in comprehension can significantly offset weaknesses in other areas, while poor comprehension skills can severely limit overall English scores.</li><li>The four-question pattern (factual, inferential, vocabulary, main idea) in NEB comprehension reflects Bloom's Taxonomy of cognitive levels, from lowest (remembering facts) to highest (evaluating and interpreting). Students who practise all four types develop comprehensive reading skills that transfer to all academic subjects.</li><li>The skill of making inferences from text is one of the most important reading competencies assessed in international educational evaluations (such as PISA). Students who can read between the lines — extracting meaning that is implied but not stated — perform better across all subjects, not just English.</li><li>Time management in comprehension is a tested skill in itself. The NEB exam's time allocation assumes that students can read a 250-350 word passage and answer 5-8 questions within 15-20 minutes. Students who practise with a timer develop the speed and accuracy needed to complete the comprehension section without rushing.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>reading-and-comprehension</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>reading-and-comprehension</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

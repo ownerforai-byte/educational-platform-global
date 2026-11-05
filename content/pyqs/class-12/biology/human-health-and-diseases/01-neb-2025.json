@@ -1,0 +1,65 @@
+{
+  "title": "NEB Class 12 Biology — Human Health And Diseases — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "human-health-and-diseases",
+  "origin": "curated NEB-pattern set covering every topic of the class-12 human health and diseases unit",
+  "questions": [
+    {
+      "id": "bio-hea-2025-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Name the pathogen and vector of malaria, describe its symptoms and give two control measures.",
+      "solution": "Pathogen: the protozoan Plasmodium — P. vivax, P. falciparum, P. malariae or P. ovale; vector: the female Anopheles mosquito.\nSymptoms: the classic cycle of chill and shivering followed by high fever and sweating every 48 or 72 hours, with headache, body ache, nausea and, in falciparum malaria, severe anaemia, jaundice, kidney failure and cerebral symptoms.\nControl: destroy breeding sites (drain stagnant water, fill pools, use larvivorous fish) and prevent bites with mosquito nets, screens, repellents and indoor residual spraying; treat patients promptly with antimalarials to cut the reservoir of gametocytes."
+    },
+    {
+      "id": "bio-hea-2025-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Describe the causative agent, vector and control of dengue and of filariasis.",
+      "solution": "Dengue: the dengue virus (a flavivirus, four serotypes) carried by Aedes aegypti, which breeds in clean stagnant water in containers and bites by day. It causes high fever, severe headache, pain behind the eyes, muscle and joint pain and rash; severe dengue brings bleeding and shock. Control: empty and cover water containers, use larvicides and nets, and search-and-destroy breeding sites.\nFilariasis: Wuchereria bancrofti, transmitted by Culex mosquito, with larvae developing in the lymphatics and blocking them, so the limb swells into elephantiasis. Control: mass drug administration with DEC and albendazole, mosquito nets and vector control."
+    },
+    {
+      "id": "bio-hea-2025-3",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Name the causative agents of typhoid, pneumonia, tuberculosis and the common cold, and give one preventive measure for each.",
+      "solution": "Typhoid: Salmonella typhi, spread by contaminated food and water; prevention is safe water, sanitation and food hygiene, with vaccination.\nPneumonia: Streptococcus pneumoniae and Haemophilus influenzae (also viruses); prevention by pneumococcal and Hib vaccine, and avoiding smoking.\nTuberculosis: Mycobacterium tuberculosis, spread by droplets; prevention by BCG vaccination, early case detection with DOTS treatment and ventilation.\nCommon cold: rhinoviruses and other respiratory viruses; prevention by hand washing, covering the mouth while coughing and avoiding close contact."
+    },
+    {
+      "id": "bio-hea-2025-4",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Differentiate innate from acquired immunity, naming the components of each.",
+      "solution": "Innate (non-specific) immunity is present from birth and acts the same way against any invader. Its barriers are physical (skin, mucous membranes, cilia), physiological (fever, acid in the stomach, lysozyme in tears), cellular (phagocytes such as macrophages and neutrophils, natural killer cells) and chemical (interferons, complement). It is immediate and has no memory.\nAcquired (specific) immunity develops after exposure to an antigen. It is carried out by lymphocytes — B cells making antibodies (humoral) and T cells acting directly or through cytokines (cell-mediated) — and has memory, so the second exposure brings a faster, stronger response. It is the basis of vaccination."
+    },
+    {
+      "id": "bio-hea-2025-5",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Define antigen and antibody and explain the primary and secondary immune responses.",
+      "solution": "An antigen is any foreign molecule — usually protein or polysaccharide on a pathogen or toxin — that the immune system recognises as non-self and that provokes an immune response. An antibody (immunoglobulin) is a Y-shaped protein made by plasma cells that binds specifically to that antigen; the variable regions give specificity.\nOn first exposure (primary response) there is a lag of several days while the right clone of B and T cells multiplies, producing a small amount of IgM antibody and memory cells. On the second exposure (secondary response) memory cells respond at once, so antibody appears sooner, rises higher and lasts longer, mostly IgG — which is exactly how vaccines protect."
+    },
+    {
+      "id": "bio-hea-2025-6",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "What is vaccination? Distinguish active from passive immunisation and explain herd immunity.",
+      "solution": "Vaccination is the deliberate introduction of an antigen — killed or weakened pathogen, a toxoid or a subunit — so that the body makes its own antibodies and memory cells without suffering the disease.\nActive immunisation: the person's own immune system responds, giving slow but long-lasting protection — vaccines such as BCG, measles, DPT. Passive immunisation: ready-made antibodies are given, giving immediate but short-lived protection — antitetanus serum, antivenom, or maternal antibodies through breast milk.\nHerd immunity is the indirect protection of unvaccinated people when a high proportion of the population is immune, which interrupts transmission; it is why coverage must stay high to protect newborns and those who cannot be vaccinated."
+    },
+    {
+      "id": "bio-hea-2025-7",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Explain allergy and autoimmune disease with one example each.",
+      "solution": "Allergy is an exaggerated immune response to a normally harmless antigen (allergen) such as pollen, dust mite, or a drug. IgE antibodies bind mast cells, and on re-exposure the allergen cross-links them so they release histamine, giving sneezing, itching, watery eyes, bronchospasm or, in anaphylaxis, a sudden dangerous drop in blood pressure; treatment is antihistamines, and adrenaline for anaphylaxis.\nAutoimmune disease occurs when the immune system loses tolerance and attacks the body's own tissue: in type 1 diabetes the β-cells of the pancreas are destroyed, in rheumatoid arthritis the joints are attacked, and in myasthenia gravis the acetylcholine receptors at the neuromuscular junction."
+    }
+  ]
+}

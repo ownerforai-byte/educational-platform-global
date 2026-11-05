@@ -1,0 +1,161 @@
+{
+  "title": "Trigonometric ratios and identities",
+  "unitSlug": "trigonometry",
+  "topicSlug": "trigonometric-ratios-and-identities",
+  "topicTitle": "Trigonometric ratios and identities",
+  "relevance": 100,
+  "notes": [
+    "### 1. Basic Trigonometric Ratios",
+    "In a right triangle with angle theta:",
+    "- sin theta = opposite/hypotenuse",
+    "- cos theta = adjacent/hypotenuse",
+    "- tan theta = opposite/adjacent = sin theta/cos theta",
+    "- cosec theta = 1/sin theta, sec theta = 1/cos theta, cot theta = 1/tan theta",
+    "### 2. Key Values",
+    "| theta | 0 | 30 | 45 | 60 | 90 |",
+    "| sin theta | 0 | 1/2 | 1/sqrt(2) | sqrt(3)/2 | 1 |",
+    "| cos theta | 1 | sqrt(3)/2 | 1/sqrt(2) | 1/2 | 0 |",
+    "| tan theta | 0 | 1/sqrt(3) | 1 | sqrt(3) | undefined |",
+    "### 3. Fundamental Identities",
+    "- sin^2 theta + cos^2 theta = 1",
+    "- 1 + tan^2 theta = sec^2 theta",
+    "- 1 + cot^2 theta = cosec^2 theta",
+    "### 4. Compound Angle Formulas",
+    "- sin(A +/- B) = sin A cos B +/- cos A sin B",
+    "- cos(A +/- B) = cos A cos B ∓ sin A sin B",
+    "- tan(A +/- B) = (tan A +/- tan B)/(1 ∓ tan A tan B)",
+    "### 5. Double Angle Formulas",
+    "- sin 2A = 2 sin A cos A",
+    "- cos 2A = cos^2 A - sin^2 A = 2cos^2 A - 1 = 1 - 2sin^2 A",
+    "- tan 2A = 2tan A/(1 - tan^2 A)",
+    "### 6. Entrance Exam Focus",
+    "Prove identities; Solve trig equations; Use compound/double angle formulas."
+  ],
+  "confusion": [
+    "x sin(A+B) = sin A + sin B. x Must use compound angle formula.",
+    "x tan 2A = 2 tan A. x tan 2A = 2tan A/(1-tan^2 A)."
+  ],
+  "practice": [
+    "Prove: sin^2 theta + cos^2 theta = 1",
+    "If sin theta = 3/5, find all other trig ratios.",
+    "Prove: sin(A+B)sin(A-B) = sin^2 A - sin^2 B",
+    "Solve: 2sin^2 x - sin x - 1 = 0 for 0 <= x <= 360 degrees"
+  ],
+  "formulas": [
+    "sin^2 theta + cos^2 theta = 1",
+    "sin(A +/- B) = sin A cos B +/- cos A sin B",
+    "cos 2A = cos^2 A - sin^2 A"
+  ],
+  "summary": "The six trigonometric ratios come from a right triangle: sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse and tan θ = sin θ/cos θ, with cosec, sec and cot their reciprocals, and their special values at 0°, 30°, 45°, 60° and 90° are tabulated. Three fundamental identities tie the ratios together: sin^2 θ + cos^2 θ = 1, 1 + tan^2 θ = sec^2 θ and 1 + cot^2 θ = cosec^2 θ. From these come the compound angle formulas sin(A ± B) = sin A cos B ± cos A sin B, cos(A ± B) = cos A cos B ∓ sin A sin B and tan(A ± B) = (tan A ± tan B)/(1 ∓ tan A tan B), and the double angle formulas sin 2A = 2 sin A cos A and cos 2A = cos^2 A - sin^2 A.",
+  "importantConcepts": [
+    "Ratios in a right triangle: sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse and tan θ = opposite/adjacent = sin θ/cos θ.",
+    "Reciprocal ratios: cosec θ = 1/sin θ, sec θ = 1/cos θ and cot θ = 1/tan θ = cos θ/sin θ.",
+    "The identity sin^2 θ + cos^2 θ = 1 and its two rearrangements 1 + tan^2 θ = sec^2 θ and 1 + cot^2 θ = cosec^2 θ.",
+    "Compound angles: sin(A ± B) = sin A cos B ± cos A sin B and cos(A ± B) = cos A cos B ∓ sin A sin B, where the two signs are always opposite for cosine.",
+    "Double angles as the case B = A: sin 2A = 2 sin A cos A, cos 2A = cos^2 A - sin^2 A = 2cos^2 A - 1 = 1 - 2sin^2 A, and tan 2A = 2 tan A/(1 - tan^2 A).",
+    "Standard values: sin 30° = 1/2, sin 45° = 1/sqrt(2), sin 60° = sqrt(3)/2, with cosine running in the reverse order and tan 45° = 1, tan 30° = 1/sqrt(3), tan 60° = sqrt(3)."
+  ],
+  "importantStatements": [
+    "In a right triangle sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse and tan θ = opposite/adjacent, while cosec θ, sec θ and cot θ are the reciprocals of sin, cos and tan.",
+    "The fundamental identities are sin^2 θ + cos^2 θ = 1, 1 + tan^2 θ = sec^2 θ and 1 + cot^2 θ = cosec^2 θ.",
+    "The compound angle formulas are sin(A ± B) = sin A cos B ± cos A sin B, cos(A ± B) = cos A cos B ∓ sin A sin B and tan(A ± B) = (tan A ± tan B)/(1 ∓ tan A tan B).",
+    "The double angle formulas are sin 2A = 2 sin A cos A, cos 2A = cos^2 A - sin^2 A = 2cos^2 A - 1 = 1 - 2sin^2 A and tan 2A = 2 tan A/(1 - tan^2 A).",
+    "If sin θ = 3/5 for an acute angle then cos θ = 4/5 and tan θ = 3/4, so a single known ratio and the quadrant determine all the others."
+  ],
+  "importantTasks": [
+    "Given one trigonometric ratio and the quadrant of the angle, find all the other ratios by applying the relevant identity and the signs of that quadrant.",
+    "Prove an identity by starting from one side and transforming it, line by line, into the other side using the fundamental identities.",
+    "Evaluate sin(A + B), cos 2A or tan 2A when the ratios of A and B are given, choosing the form of the formula that needs the least work.",
+    "Solve a trigonometric equation in a stated interval, first reducing it to sin x = c, cos x = c or tan x = c and then listing every solution in 0° <= x <= 360°."
+  ],
+  "keyPoints": [
+    "sin(A + B) is not sin A + sin B; the compound angle formula must be used instead.",
+    "In the cosine formula the signs are opposite, so cos(A + B) = cos A cos B - sin A sin B while cos(A - B) = cos A cos B + sin A sin B.",
+    "cos 2A has three forms, and the useful one is the one matching what you are given: 2cos^2 A - 1 if you know cos A, or 1 - 2sin^2 A if you know sin A.",
+    "tan 2A = 2 tan A/(1 - tan^2 A), not 2 tan A, and it is undefined when tan A = ±1.",
+    "tan θ = sin θ/cos θ requires cos θ != 0, which is why tan 90° is undefined while sin 90° = 1 and cos 90° = 0."
+  ],
+  "specialNotes": [
+    "sec 90° = 1/cos 90° and tan 90° = sin 90°/cos 90° are undefined because cos 90° = 0, and cosec 0° is undefined because sin 0° = 0.",
+    "The double angle formulas are just the compound angle formulas with B = A, so a proof of one family gives the other.",
+    "tan(A + B) needs 1 - tan A tan B != 0; when it is zero the sum is 90° (mod 180°) and the tangent is undefined even though sin and cos are well defined.",
+    "The identity sin(A + B) sin(A - B) = sin^2 A - sin^2 B is a product-to-sum result often asked as a proof, with the right side reached by expanding both factors.",
+    "Because the standard values are exact surds, exact answers should be left as fractions with surds rather than rounded decimals."
+  ],
+  "examShortTricks": [
+    "To get all the ratios from sin θ = 3/5, build the right triangle with hypotenuse 5, opposite 3 and adjacent 4, then read off cos = 4/5 and tan = 3/4.",
+    "For cos 2A choose 2cos^2 A - 1 or 1 - 2sin^2 A, since using cos^2 A - sin^2 A forces you to find the other ratio first.",
+    "When solving in 0° <= x <= 360°, remember that sin x = c and cos x = c give two angles each while tan x = c gives only one per period.",
+    "Fix the signs from the quadrant, where sin is positive in I and II, cos in I and IV, and tan in I and III, which is faster than calculation."
+  ],
+  "examNotes": [
+    "Finding the remaining ratios from one given ratio is the most common 2-mark question, and the quadrant must be stated.",
+    "Proving an identity is a standard 5-mark question, with marks for starting from one side, for each valid step, and for reaching the other side.",
+    "Evaluating sin(A + B) or cos 2A from given ratios is a 5-mark question, and the answer is left as an exact fraction with a surd.",
+    "MCQs give a value from the table of standard angles and ask for the ratio of another angle, or give an equation and ask for its solutions in a stated interval."
+  ],
+  "practiceQuestions": [
+    "Prove that sin^2 θ + cos^2 θ = 1.",
+    "If sin θ = 3/5 and θ is acute, find cos θ, tan θ, sec θ, cosec θ and cot θ.",
+    "Prove that sin(A + B) sin(A - B) = sin^2 A - sin^2 B.",
+    "Solve 2sin^2 x - sin x - 1 = 0 for 0° <= x <= 360°.",
+    "If cos A = 4/5 and sin B = 3/5 with A and B acute, find sin(A + B) and cos 2A."
+  ],
+  "mcs": [
+    {
+      "question": "If sin theta = 3/5 for an acute angle theta, then cos theta is",
+      "options": [
+        "3/4",
+        "4/5",
+        "5/4",
+        "4/3"
+      ],
+      "answer": "B",
+      "explanation": "The identity sin^2 theta + cos^2 theta = 1 gives cos^2 theta = 1 - 9/25 = 16/25, and cosine is positive in the first quadrant, so cos theta = 4/5. The 3/4 option is tan theta, not cos theta."
+    },
+    {
+      "question": "The solutions of 2sin^2 x - sin x - 1 = 0 for 0 <= x <= 360 degrees are",
+      "options": [
+        "x = 90° only",
+        "x = 30°, 150°, 210° and 330°",
+        "x = 90°, 210° and 330°",
+        "x = 210° and 330° only"
+      ],
+      "answer": "C",
+      "explanation": "Factorising gives (2 sin x + 1)(sin x - 1) = 0, so sin x = -1/2 or sin x = 1. In the given interval sin x = 1 gives x = 90° and sin x = -1/2 gives x = 210° and x = 330°."
+    },
+    {
+      "question": "If sin A = 3/5 and sin B = 4/5, then sin(A + B) sin(A - B) equals",
+      "options": [
+        "7/25",
+        "-7/25",
+        "24/25",
+        "0"
+      ],
+      "answer": "B",
+      "explanation": "The identity gives sin(A + B) sin(A - B) = sin^2 A - sin^2 B = 9/25 - 16/25 = -7/25. The value 24/25 comes from wrongly adding the two squares."
+    },
+    {
+      "question": "If cos A = 4/5, then cos 2A equals",
+      "options": [
+        "7/25",
+        "-7/25",
+        "9/25",
+        "24/25"
+      ],
+      "answer": "A",
+      "explanation": "Use cos 2A = 2cos^2 A - 1 = 2(16/25) - 1 = 32/25 - 25/25 = 7/25. Using cos 2A = 1 - 2sin^2 A with sin A = 3/5 gives the same result."
+    },
+    {
+      "question": "tan 2A is equal to",
+      "options": [
+        "2 tan A",
+        "2 tan A/(1 - tan^2 A)",
+        "tan A/2",
+        "2 tan A/(1 + tan^2 A)"
+      ],
+      "answer": "B",
+      "explanation": "The double angle formula is tan 2A = 2 tan A/(1 - tan^2 A), which comes from the compound angle formula. It is undefined when tan A = ±1, and the first option is the common error."
+    }
+  ]
+}

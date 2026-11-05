@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI — Ch.2 Book Ex 2.1 (Ordered pairs &amp; Cartesian products) — Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Algebra</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI — Ch.2 Book Ex 2.1 (Ordered pairs &amp; Cartesian products) — Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Algebra</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.2 BOOK Exercise 2.1 (pp 52-53 in the 2078 printing per the Sukunda index; our PDF is the 2075 reprint — page numbers may shift, question IDs are the book's own). Question statements via the Sci-Pi Pupil typed index, every computation independently re-verified; web-index errors corrected in-line (Q3 B×A vs A×B ambiguity flagged with both products; Q4(a) (b,a) typo fixed to (b,b)). PDF-verification of Q3's exact printed product order pending a bounded detector sweep.</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>algebra-textbook-ex-2-1-ordered-pairs</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>algebra</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q1(a). Identify whether (1,3) and (3,1) are equal.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Ordered pairs are equal iff first components match AND second components match — order matters, unlike sets.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>First components: 1 ≠ 3, so the pairs differ already. ✅ NOT equal. (Never swap-check sets here — (1,3) ≠ (3,1) is the canonical example.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q1(a)</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q1(b). Identify whether (a,b) and (a,b) are equal.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Identical pairs are trivially equal — the reflexive case examiners include to test the definition.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>First: a = a; second: b = b. ✅ Equal.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q1(b)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q1(c). Identify whether (1,a) and (1,x) are equal.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Distinct symbols denote distinct entries unless an equation says otherwise: a ≠ x as printed.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>First components match (1 = 1) but second components a, x are distinct symbols with no relation given. ✅ NOT equal.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q1(c)</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q1(d). Identify whether (x,x) and (y,y) are equal.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>(x,x) = (y,y) would force x = y by both components — with x, y unrelated, they differ.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Equality would require x = y (first components) and x = y (second) — not given. ✅ NOT equal.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q1(d)</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q2(a). Find x and y if (x+y, 3) = (1, x−y).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Equate components to get a 2×2 linear system; add the equations to kill y.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Step 1 — Equate: x+y = 1 …(i); 3 = x−y, i.e. x−y = 3 …(ii). Step 2 — Add (i)+(ii): 2x = 4 → x = 2. Step 3 — y = 1−x = −1. ✅ x = 2, y = −1. (Check: (2+(−1), 3) = (1, 3) and (1, 2−(−1)) = (1, 3) ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q2(a)</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q2(b). Find x and y if (x+2y, 3) = (−1, 2x−y).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same method with messier coefficients — substitute y from the simpler equation.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Step 1 — x+2y = −1 …(i); 3 = 2x−y, i.e. y = 2x−3 …(ii). Step 2 — Sub (ii) in (i): x+2(2x−3) = −1 → 5x−6 = −1 → x = 1. Step 3 — y = 2(1)−3 = −1. ✅ x = 1, y = −1. (Check: (1−2, 3) = (−1, 3); (−1, 2+1) = (−1, 3) ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q2(b)</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q2(c). Find x and y if (x−2, y+1) = (1, 0).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Decoupled equations — read each variable straight off.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>x−2 = 1 → x = 3; y+1 = 0 → y = −1. ✅ x = 3, y = −1.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q2(c)</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q2(d). Find x and y if (2x−1, −3) = (1, y+3).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Watch the sign: −3 = y+3 gives y = −6, not +6.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>2x−1 = 1 → x = 1; −3 = y+3 → y = −6. ✅ x = 1, y = −6.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q2(d)</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q3(a). If A = {1,2,3} and B = {a,b}, find A × A.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>A×A lists every first-set element against every first-set element: n(A)² pairs.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>A × A = {(1,1),(1,2),(1,3),(2,1),(2,2),(2,3),(3,1),(3,2),(3,3)} — 9 pairs. ✅</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q3(a)</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q3(b). With A, B as above, find B × B.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same construction on the 2-element set: 2² = 4 pairs.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>B × B = {(a,a),(a,b),(b,a),(b,b)} — 4 pairs. ✅</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q3(b)</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>Q3(c). With A, B as above, find B × A (web index prints 'B × A'; its worked solution shows A × B — both given).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Order matters: B×A ≠ A×B. The web index quotes 'B × A' but solves A × B — both products are given so the printed answer is covered either way.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>B × A (first from B, second from A) = {(a,1),(a,2),(a,3),(b,1),(b,2),(b,3)} — 6 pairs. For reference, A × B = {(1,a),(1,b),(2,a),(2,b),(3,a),(3,b)}. ✅ (Flag: confirm which product the printed book asks — the two differ by order throughout.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q3(c); order ambiguity flagged vs the web index</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>Q4(a). Let A = {a,b}, B = {b,c}, C = {c,d}. Find A × (B ∪ C).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Union first, then cross: B∪C = {b,c,d}, and A supplies the first components.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>B∪C = {b,c,d}. A×(B∪C) = {(a,b),(a,c),(a,d),(b,b),(b,c),(b,d)} — 6 pairs. ✅ (Web-index typo fixed: it prints (b,a), but a ∉ B∪C, so (b,a) is impossible; the correct pair is (b,b).)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q4(a)</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>Q4(b). With A, B, C as above, find A × (B ∩ C).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Intersection first: only c survives B∩C, so just 2 pairs.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>B∩C = {c}. A×{c} = {(a,c),(b,c)}. ✅</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q4(b)</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>Q4(c). With A, B, C as above, find (A × B) ∪ (A × C).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Distributive law preview: this union must equal Q4(a) — use it as a cross-check.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>A×B = {(a,b),(a,c),(b,b),(b,c)}; A×C = {(a,c),(a,d),(b,c),(b,d)}. Union = {(a,b),(a,c),(a,d),(b,b),(b,c),(b,d)} — identical to Q4(a), as A×(B∪C) = (A×B)∪(A×C) demands. ✅</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q4(c)</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>Q4(d). With A, B, C as above, find (A × B) ∩ (A × C).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Only pairs present in BOTH products survive: the ones whose second component is c.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Common to {(a,b),(a,c),(b,b),(b,c)} and {(a,c),(a,d),(b,c),(b,d)}: (a,c) and (b,c). ✅ {(a,c),(b,c)}. (Web index omits the comma — restored.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q4(d)</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>Q5(a). Let A = {a,b}, B = {c,d}, C = {d,e}. Verify A × (B ∪ C) = (A × B) ∪ (A × C).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>LHS–RHS verification: compute both sides fully, then compare as sets.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>LHS: B∪C = {c,d,e}; A×that = {(a,c),(a,d),(a,e),(b,c),(b,d),(b,e)}. RHS: (A×B)∪(A×C) = {(a,c),(a,d),(b,c),(b,d)} ∪ {(a,d),(a,e),(b,d),(b,e)} = {(a,c),(a,d),(a,e),(b,c),(b,d),(b,e)}. LHS = RHS. ✅ Verified.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q5(a)</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>Q5(b). With A, B, C as above, verify A × (B ∩ C) = (A × B) ∩ (A × C).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same drill for ∩: B∩C = {d} collapses the LHS to 2 pairs.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>LHS: B∩C = {d}; A×{d} = {(a,d),(b,d)}. RHS: {(a,c),(a,d),(b,c),(b,d)} ∩ {(a,d),(a,e),(b,d),(b,e)} = {(a,d),(b,d)}. LHS = RHS. ✅ Verified.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q5(b)</p></div></div></div><div class="q"><span class="n">18.</span><div class="stem"><p>Q6(a). Find the Cartesian product A × B where A = {x : x = 1,2,3} and B = {y : y = 3−x}.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Build B by evaluating the rule at each x in A — B's order follows x = 1, 2, 3.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>A = {1,2,3}. y = 3−x gives: x=1→2, x=2→1, x=3→0, so B = {2,1,0}. A×B = {(1,2),(1,1),(1,0),(2,2),(2,1),(2,0),(3,2),(3,1),(3,0)} — 9 pairs. ✅</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q6(a)</p></div></div></div><div class="q"><span class="n">19.</span><div class="stem"><p>Q6(b). Find A × B where A = {x : x = 0,1,2} and B = {y : y = x²}.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Squares grow fast: x = 2 gives y = 4, so B is not {0,1,2}.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>A = {0,1,2}. y = x² gives 0, 1, 4, so B = {0,1,4}. A×B = {(0,0),(0,1),(0,4),(1,0),(1,1),(1,4),(2,0),(2,1),(2,4)} — 9 pairs. ✅</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.1 Q6(b)</p></div></div></div></section>
+  <nav class="pager"><a href="ex-1-4-logic-statements-connectives.html" title="Sukunda Basic Mathematics XI — Ch.1 Ex 1.4 (Logic: statements, connectives, truth tables, negation, tautology/contradiction) — Complete Solutions">‹ Sukunda Basic Mathematics XI — Ch.1 Ex 1.4 (L…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-2-2-diagrams-piecewise-range.html" title="Sukunda Basic Mathematics XI — Ch.2 Book Ex 2.2 Q1 + Q4–Q10 (diagrams, piecewise evaluation, range, one-one/onto) — Complete Solutions">Sukunda Basic Mathematics XI — Ch.2 Book Ex 2… ›</a></nav>
+</div></body></html>

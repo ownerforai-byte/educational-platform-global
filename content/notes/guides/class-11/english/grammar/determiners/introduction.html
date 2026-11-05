@@ -1,0 +1,164 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Determiners</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Determiners</div>
+    <h1 class="doc">Determiners</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Determiners</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>grammar</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>determiners</p></section>
+<section class="field"><h2>Relevance</h2><p><code>80</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;What Are Determiners?&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Determiners&lt;/b&gt; are words placed before nouns to specify or quantify them. They answer questions like 'Which one?', 'How many?', or 'Whose?' Determiners include &lt;b&gt;articles&lt;/b&gt; (a, an, the), &lt;b&gt;demonstratives&lt;/b&gt; (this, that, these, those), &lt;b&gt;possessives&lt;/b&gt; (my, your, his, her, its, our, their), &lt;b&gt;quantifiers&lt;/b&gt; (some, any, many, much, few, little, several, all, both, each, every, either, neither), and &lt;b&gt;numbers&lt;/b&gt; (one, two, first, second). Determiners occupy the same position in the noun phrase and generally cannot be used together — only one determiner can precede a noun.&lt;/p&gt;</li><li>&lt;h2&gt;Articles: A, An, The&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Indefinite articles&lt;/b&gt; ('a', 'an') are used before singular, countable nouns when referring to something non-specific or mentioned for the first time. Use 'a' before consonant &lt;i&gt;sounds&lt;/i&gt; ('a university', 'a one-way street'). Use 'an' before vowel &lt;i&gt;sounds&lt;/i&gt; ('an hour', 'an MBA'). &lt;b&gt;Definite article&lt;/b&gt; ('the') is used for specific or previously mentioned nouns, unique things ('the sun'), superlatives ('the best'), and ordinal numbers ('the first'). &lt;b&gt;Zero article&lt;/b&gt; (no article) is used before generic plurals ('Dogs are loyal'), abstract nouns in general sense ('Honesty is good'), names of meals ('have breakfast'), most proper nouns ('Kathmandu is beautiful'), and languages ('I study English').&lt;/p&gt;</li><li>&lt;h2&gt;Some vs. Any: Quantifiers&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Some&lt;/b&gt; is used in affirmative sentences and offers/requests: 'I have &lt;b&gt;some&lt;/b&gt; books.' 'Would you like &lt;b&gt;some&lt;/b&gt; tea?' &lt;b&gt;Any&lt;/b&gt; is used in negative sentences and questions: 'I don't have &lt;b&gt;any&lt;/b&gt; money.' 'Do you have &lt;b&gt;any&lt;/b&gt; ideas?' However, 'some' is used in questions when offering or requesting: 'Would you like &lt;b&gt;some&lt;/b&gt; water?' (offering). 'Can I have &lt;b&gt;some&lt;/b&gt; help?' (request). 'Any' is also used in affirmative sentences with the meaning 'it doesn't matter which': 'Choose any book you like.' 'You can come any day.' This latter use is frequently tested.&lt;/p&gt;</li><li>&lt;h2&gt;Many vs. Much: Countable vs. Uncountable&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Many&lt;/b&gt; is used with &lt;b&gt;countable&lt;/b&gt; plural nouns: 'many books', 'many students', 'many ideas'. &lt;b&gt;Much&lt;/b&gt; is used with &lt;b&gt;uncountable&lt;/b&gt; nouns: 'much time', 'much water', 'much information'. In affirmative sentences, 'much' is less common than 'a lot of' — 'I have much time' sounds formal; 'I have a lot of time' is more natural. 'Many' and 'much' are more common in questions and negative sentences: 'How many students are there?' 'I don't have much time.' NEB exams frequently test the distinction through gap-filling exercises.&lt;/p&gt;</li><li>&lt;h2&gt;Few vs. A Few: Negative vs. Positive&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Few&lt;/b&gt; (without article) means 'not many' and has a &lt;b&gt;negative&lt;/b&gt; connotation: 'I have &lt;b&gt;few&lt;/b&gt; friends' = I almost have no friends (disappointment). &lt;b&gt;A few&lt;/b&gt; means 'some' and has a &lt;b&gt;positive&lt;/b&gt; connotation: 'I have &lt;b&gt;a few&lt;/b&gt; friends' = I have some friends (satisfaction). The same distinction applies to &lt;b&gt;little&lt;/b&gt; vs. &lt;b&gt;a little&lt;/b&gt; with uncountable nouns: 'I have &lt;b&gt;little&lt;/b&gt; hope' (negative) vs. 'I have &lt;b&gt;a little&lt;/b&gt; hope' (positive). This distinction is one of the most commonly tested topics in NEB exams.&lt;/p&gt;</li><li>&lt;h2&gt;Little vs. A Little: Uncountable Equivalents&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Little&lt;/b&gt; (without article) means 'not much' (negative): 'I have &lt;b&gt;little&lt;/b&gt; time' = I don't have enough time. &lt;b&gt;A little&lt;/b&gt; means 'some' (positive): 'I have &lt;b&gt;a little&lt;/b&gt; time' = I have some time available. &lt;b&gt;Fewer&lt;/b&gt; is used with countable nouns: 'fewer books', 'fewer students'. &lt;b&gt;Less&lt;/b&gt; is used with uncountable nouns: 'less water', 'less time'. However, 'less' is used with expressions of time, money, and distance as single quantities: 'less than 5 minutes', 'less than $10'. The distinction between 'fewer' and 'less' is frequently tested in NEB grammar exercises.&lt;/p&gt;</li><li>&lt;h2&gt;Each vs. Every: Individual vs. Group&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Each&lt;/b&gt; refers to individual members of a group, considered one by one: 'Each student &lt;b&gt;has&lt;/b&gt; a book.' (emphasising individuality). &lt;b&gt;Every&lt;/b&gt; refers to the group as a whole: 'Every student &lt;b&gt;has&lt;/b&gt; a book.' (emphasising the totality). 'Each' can be used with two items; 'every' requires three or more. 'Each' can be used as a pronoun ('Each of them went home'); 'every' cannot be used alone as a pronoun. 'Each' can be modified by 'other' ('each other'); 'every' cannot. Both take singular verbs.&lt;/p&gt;</li><li>&lt;h2&gt;Both vs. All: Two vs. Three or More&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Both&lt;/b&gt; refers to &lt;b&gt;two&lt;/b&gt; items: 'Both of my parents are teachers.' &lt;b&gt;All&lt;/b&gt; refers to &lt;b&gt;three or more&lt;/b&gt; items: 'All of my siblings are students.' 'Both' takes a plural verb; 'all' can take singular or plural depending on the noun: 'All of the water is gone' (uncountable, singular) vs. 'All of the students are here' (countable, plural). 'Both' can be used with 'and' (both X and Y); 'all' cannot. This basic distinction is tested frequently in NEB exams.&lt;/p&gt;</li><li>&lt;h2&gt;Either vs. Neither: Two Options&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Either&lt;/b&gt; means 'one or the other of two': 'You can choose &lt;b&gt;either&lt;/b&gt; book.' &lt;b&gt;Neither&lt;/b&gt; means 'not one nor the other of two': 'Neither of the books is interesting.' Both are used with &lt;b&gt;singular&lt;/b&gt; verbs: 'Either of them is acceptable.' 'Neither of them has arrived.' 'Either' can also mean 'any one of two' in affirmative contexts. 'Neither' is negative and cannot be used with another negative in the same clause (double negative error: 'I don't know neither' is wrong — use 'I don't know either').&lt;/p&gt;</li><li>&lt;h2&gt;Other, Another, the Other, the Others&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Other&lt;/b&gt; (without article) means 'additional' or 'different': 'I need &lt;b&gt;other&lt;/b&gt; information.' &lt;b&gt;Another&lt;/b&gt; = 'an + other' — one more of the same kind (singular, indefinite): 'I need &lt;b&gt;another&lt;/b&gt; pen.' &lt;b&gt;The other&lt;/b&gt; refers to the second of two specific items: 'One hand is dirty; &lt;b&gt;the other&lt;/b&gt; is clean.' &lt;b&gt;The others&lt;/b&gt; = 'the other + plural noun' — the remaining specific items: 'Some students passed; &lt;b&gt;the others&lt;/b&gt; failed.' &lt;b&gt;Others&lt;/b&gt; (without 'the') = additional people/things (general): 'Some people agree; &lt;b&gt;others&lt;/b&gt; disagree.' These four forms are frequently confused and tested.&lt;/p&gt;,     &quot;&lt;h2&gt;Quantifiers: Several, Various, Plenty Of&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Several&lt;/b&gt; means 'more than two but not many' — used with countable nouns: 'I have read &lt;b&gt;several&lt;/b&gt; novels.' &lt;b&gt;Various&lt;/b&gt; means 'different kinds' — used with countable nouns: 'I have &lt;b&gt;various&lt;/b&gt; hobbies.' &lt;b&gt;Plenty of&lt;/b&gt; means 'a large amount' — used with both countable and uncountable nouns: 'There is &lt;b&gt;plenty of&lt;/b&gt; time.' 'Plenty of' is more informal than 'enough'. &lt;b&gt;Lots of / a lot of&lt;/b&gt; are interchangeable and used with both types: 'lots of friends', 'lots of water'. In formal writing, prefer 'many' and 'much' over 'lots of'.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Few vs. A few: 'Few' is negative (almost none): 'I have few friends' = I am lonely. 'A few' is positive (some): 'I have a few friends' = I am not lonely. The article 'a' changes the meaning entirely. This distinction is tested in every NEB exam.</li><li>Little vs. A little: 'Little' is negative (not enough): 'I have little money' = I am poor. 'A little' is positive (some): 'I have a little money' = I am not broke. Same pattern as few/a few, but for uncountable nouns.</li><li>Much vs. Many: 'Much' is for uncountable nouns (much water, much time). 'Many' is for countable nouns (many books, many students). In affirmative sentences, 'a lot of' is often preferred over 'much' for a more natural sound: 'I have a lot of time' sounds more natural than 'I have much time'.</li><li>Other vs. Another vs. The other vs. The others: 'Other' (general additional): 'I need other help.' 'Another' (one more, singular): 'Give me another chance.' 'The other' (second of two, specific): 'One shoe is missing; the other is here.' 'The others' (remaining specific, plural): 'Three students passed; the others failed.' Each has a specific meaning and grammatical function.</li><li>Either vs. Neither: 'Either' = one or the other (positive, two items). 'Neither' = not one nor the other (negative, two items). 'Either of them is fine' vs. 'Neither of them is fine.' Remember: 'neither' is already negative, so do not use another negative in the same clause: 'I don't like neither' is wrong — use 'I don't like either' or 'I like neither'.</li><li>Less vs. Fewer: 'Fewer' is for countable nouns (fewer books, fewer students). 'Less' is for uncountable nouns (less water, less time). Exception: 'less' is used with time, money, and distance as single quantities (less than 5 minutes, less than $10). This exception is frequently tested in NEB exams.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Fill in the correct determiner: I have ___ (few/a few) friends in this city, but I am happy. [Answer: a few — positive meaning]</li><li>Fill in the correct determiner: She has ___ (little/a little) experience, but she is willing to learn. [Answer: a little — positive meaning]</li><li>Fill in the correct determiner: ___ (Much/Many) students passed the exam. [Answer: Many — countable plural]</li><li>Fill in the correct determiner: I don't have ___ (some/any) money. [Answer: any — negative sentence]</li><li>Fill in the correct determiner: Would you like ___ (some/any) tea? [Answer: some — offering]</li><li>Fill in the correct determiner: ___ (Each/Every) student has a textbook. [Answer: Each or Every — both correct; 'each' emphasises individuality]</li><li>Fill in the correct determiner: ___ (Either/Neither) of the answers is correct. [Answer: Neither — negative]</li><li>Fill in the correct determiner: One hand is dirty; ___ (another/the other) is clean. [Answer: the other — second of two]</li><li>Fill in the correct determiner: I need ___ (other/another) book. [Answer: another — one more]</li><li>Fill in the correct determiner: ___ (Less/Fewer) people attended the meeting this year. [Answer: Fewer — countable plural]</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The determiner system in English is relatively complex compared to many other languages. Nepali uses postpositions and suffixes to express similar concepts, but the quantifier system (few/a few, little/a little) does not exist in the same way, making these distinctions particularly challenging for Nepali speakers.</li><li>The distinction between 'few' and 'a few' (and 'little' and 'a little') is unique to English and Germanic languages. Most languages do not make this grammatical distinction between negative and positive quantification with the same lexical items.</li><li>In NEB English exams, determiner questions typically carry 3-5 marks in gap-filling and error correction sections. The most frequently tested distinctions are: few/a few, little/a little, much/many, some/any, and fewer/less.</li><li>The use of 'either' and 'neither' with singular verbs is a rule that often trips up students who expect plural verbs with words that seem to refer to multiple items. The key is that 'either' and 'neither' each refer to one item at a time.</li><li>Determiners are function words (closed class) — new determiners are rarely added to English. This means the system is relatively stable and finite, making it more manageable to learn than content words (nouns, verbs, adjectives) which are open class and constantly evolving.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>grammar</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>grammar</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

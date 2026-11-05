@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.5 Book Ex 5.1 Q7-Q12 + Additional (sum theorems) - Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Trigonometry</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.5 Book Ex 5.1 Q7-Q12 + Additional (sum theorems) - Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Trigonometry</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q7(a). If tan-1x+tan-1y+tan-1z = pi, prove that x+y+z = xyz. (T.U. 2050)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>tan of the sum is tan(pi) = 0: the numerator x+y+z-xyz must vanish. (T.U. 2050)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Take tan of both sides: tan(tan-1x+tan-1y+tan-1z) = tan(pi) = 0. The left side is (x+y+z-xyz)/(1-xy-yz-zx), so its numerator is 0 (denominator nonzero): x+y+z = xyz. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q7(a) (T.U. 2050); book p168 = PDF p195 (image read)</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q7(b). If tan-1x+tan-1y+tan-1z = pi/2, prove that xy+yz+zx = 1. (T.U. 2048, 2050)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>tan of pi/2 is undefined: the denominator 1-(xy+yz+zx) must vanish. (T.U. 2048, 2050)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>tan of the sum is tan(pi/2), undefined, while the expansion is (x+y+z-xyz)/(1-xy-yz-zx). Hence the denominator is 0: 1-(xy+yz+zx) = 0, i.e. xy+yz+zx = 1. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q7(b) (T.U. 2048, 2050); book p168 = PDF p195 (image read)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q8. If cos-1x+cos-1y+cos-1z = pi, show that x^2+y^2+z^2+2xyz = 1. (T.U. 2056 S)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>cos(A+B) = -cosC, then one squaring: the cross term 2xyz appears. (T.U. 2056 S)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Put A = cos-1x, B = cos-1y, C = cos-1z with A+B = pi-C. Then cos(A+B) = -cosC, i.e. xy-sqrt((1-x^2)(1-y^2)) = -z, i.e. xy+z = +sqrt((1-x^2)(1-y^2)) (non-negative here). Squaring: x^2y^2+2xyz+z^2 = 1-x^2-y^2+x^2y^2, i.e. x^2+y^2+z^2+2xyz = 1. Shown.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q8 (T.U. 2056 S); book pp168-169 = PDF pp195-196 (image read)</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q9(i). Prove that tan-1(3/5)+sin-1(3/5) = tan-1(27/11).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>tanA = 3/5 with tanB = 3/4: (27/20)/(11/20) = 27/11, and the sum stays under 90deg.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>tanA = 3/5 for A = tan-1(3/5); sinB = 3/5 gives cosB = 4/5 and tanB = 3/4 for B = sin-1(3/5). tan(A+B) = (3/5+3/4)/(1-(3/5)(3/4)) = (27/20)/(11/20) = 27/11. A ~ 30.96deg and B ~ 36.87deg are acute with sum ~ 67.8deg &lt; 90deg, so A+B = tan-1(27/11). Proved. (Confirmed against an independent NEB-video statement of the same question.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(i); book p169 = PDF p196 (image read)</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q9(ii). Prove that tan-1(1/3)+tan-1(1/5)+tan-1(1/7)+tan-1(1/8) = pi/4.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Pair them: (1/3,1/5) -&gt; 4/7 and (1/7,1/8) -&gt; 3/11, then (65/77)/(65/77) = 1.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>tan-1(1/3)+tan-1(1/5) = tan-1((8/15)/(14/15)) = tan-1(4/7); tan-1(1/7)+tan-1(1/8) = tan-1((15/56)/(55/56)) = tan-1(3/11). Then tan-1(4/7)+tan-1(3/11) = tan-1((65/77)/(65/77)) = tan-1(1) = pi/4, all sums acute with positive denominators. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(ii); book p169 = PDF p196 (image read)</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q9(iii). Prove that 2tan-1(1/3)+tan-1(1/7) = pi/4. (HSEB 2051)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Double 1/3 to 3/4 first (2.(1/3)/(1-1/9) = 3/4), then add 1/7 to reach exactly 1. (HSEB 2051)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>2tan-1(1/3) = tan-1(2.(1/3)/(1-1/9)) = tan-1((2/3)/(8/9)) = tan-1(3/4). Then tan-1(3/4)+tan-1(1/7) = tan-1((3/4+1/7)/(1-3/28)) = tan-1((25/28)/(25/28)) = tan-1(1) = pi/4. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(iii) (HSEB 2051); book p169 = PDF p196 (image read)</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q9(iv). Prove that 4(cot-13+cosec-1(sqrt(5))) = pi. (HSEB 2058)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>cot-13 = tan-1(1/3) and cosec-1(sqrt(5)) = tan-1(1/2): sum to tan-1(1) = pi/4, times 4. (HSEB 2058)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>cot-13 = tan-1(1/3). cosec-1(sqrt(5)) = sin-1(1/sqrt(5)); with sin = 1/sqrt(5), tan = (1/sqrt(5))/(2/sqrt(5)) = 1/2, so it equals tan-1(1/2). Sum: tan-1(1/3)+tan-1(1/2) = tan-1((5/6)/(5/6)) = tan-1(1) = pi/4. Times 4: pi. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(iv) (HSEB 2058); book p169 = PDF p196 (image read)</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q9(v). Prove that tan-11+tan-12+tan-13 = pi = 2(tan-11+tan-1(1/2)+tan-1(1/3)). (T.U. 2051, 54)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>tan-12+tan-13 = 3pi/4 (ratio -1 with sum past pi/2); the half-weight inner sum is pi/2. (T.U. 2051, 54)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>tan-12+tan-13: (2+3)/(1-6) = -1 with both acute and sum in (pi/2, pi), so 3pi/4; plus tan-11 = pi/4 gives pi. Inner: tan-1(1/2)+tan-1(1/3) = tan-1((5/6)/(5/6)) = tan-1(1) = pi/4; plus tan-11 = pi/2; doubled = pi. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q9(v) (T.U. 2051, 54); book p169 = PDF p196 (image read)</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q10(i). Prove that sin-1(sqrt((x-b)/(a-b))) = cos-1(sqrt((a-x)/(a-b))) = tan-1(sqrt((x-b)/(a-x))). (T.U. 2057 S)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>One parameter t = sin^2 of the first form: cos and tan drop out of 1-t. (T.U. 2057 S)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>For b &lt;= x &lt;= a put t = sin-1(sqrt((x-b)/(a-b))) =: u. Then cosu = +sqrt(1-(x-b)/(a-b)) = sqrt((a-x)/(a-b)), so u = cos-1(sqrt((a-x)/(a-b))); and tanu = sinu/cosu = sqrt((x-b)/(a-x)), so u = tan-1(sqrt((x-b)/(a-x))). All three equal u. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q10(i) (T.U. 2057 S); book p169 = PDF p196 (image read)</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q10(ii). Prove that cos-1x = 2sin-1(sqrt((1-x)/2)) = 2cos-1(sqrt((1+x)/2)).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Half-angle in sin^2/cos^2 form with t = cos-1x.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Put t = cos-1x, so x = cost. Then sqrt((1-x)/2) = sqrt((1-cost)/2) = sin(t/2) (t/2 in [0, pi/2], non-negative), so 2sin-1 of it is t. Likewise sqrt((1+x)/2) = cos(t/2), so 2cos-1 of it is t. Both equal cos-1x. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q10(ii); book p169 = PDF p196 (image read)</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>Q11. If sin-1x+sin-1y+sin-1z = pi, prove that x.sqrt(1-x^2)+y.sqrt(1-y^2)+z.sqrt(1-z^2) = 2xyz. (T.U. 2052)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>sin2A+sin2B+sin2C = 4sinAsinBsinC (proved in Ch.4 Ex 4.1 Q12(b)): halve it. (T.U. 2052)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Put A = sin-1x, B = sin-1y, C = sin-1z with A+B+C = pi. Then sin2A+sin2B+sin2C = 4sinAsinBsinC (Ch.4 Ex 4.1 Q12(b)), i.e. 2(x.sqrt(1-x^2)+y.sqrt(1-y^2)+z.sqrt(1-z^2)) = 4xyz since sinA = x and cosA = +sqrt(1-x^2) on the sin-1 range. Halving gives the result. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q11 (T.U. 2052); book p169 = PDF p196 (image read)</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>Q12. If sin-1x+sin-1y+sin-1z = pi/2, prove that x^2+y^2+z^2+2xyz = 1.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>sinC = cos(A+B): move xy over, then square once.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Put A = sin-1x, B = sin-1y, C = sin-1z with C = pi/2-(A+B). Then sinC = cos(A+B), i.e. z = sqrt((1-x^2)(1-y^2))-xy, i.e. z+xy = +sqrt((1-x^2)(1-y^2)) (non-negative). Squaring: z^2+2xyz+x^2y^2 = 1-x^2-y^2+x^2y^2, i.e. x^2+y^2+z^2+2xyz = 1. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Ex 5.1 Q12; book p169 = PDF p196 (image read)</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>AQ1(i). What is the domain of the inverse function tan-1x? (HSEB 2050)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>tan-1 eats every real number: domain (-inf, inf). (HSEB 2050)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>tan maps (-pi/2, pi/2) onto all real numbers, so its inverse tan-1x is defined for every real x: domain (-inf, inf). (The printed Answers, p171, confirm: x in (-inf, inf).)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q1(i) (HSEB 2050); book p170 = PDF p197 (image read); matches key</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>AQ1(ii). Find sin(cos-1(1/3)). (HSEB 2050)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>cos = 1/3 forces sin = 2sqrt(2)/3: the 1-2sqrt(2)-3 triangle. (HSEB 2050)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let t = cos-1(1/3) in [0, pi] with cost = 1/3 and sint &gt;= 0. Then sint = sqrt(1-1/9) = sqrt(8/9) = 2sqrt(2)/3. (The printed Answers, p171, confirm: 2sqrt(2)/3.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q1(ii) (HSEB 2050); book p170 = PDF p197 (image read); matches key</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>AQ1(iii). Prove that sin-1x = tan-1(x/sqrt(1-x^2)). (HSEB 2050)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>tan of sin-1x is opposite-over-adjacent: x over sqrt(1-x^2). (HSEB 2050)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Put t = sin-1x in [-pi/2, pi/2] with x in (-1, 1), so sint = x and cost = +sqrt(1-x^2) != 0. Then tant = sint/cost = x/sqrt(1-x^2) with t in (-pi/2, pi/2), so t = tan-1(x/sqrt(1-x^2)). Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q1(iii) (HSEB 2050); book p170 = PDF p197 (image read)</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>AQ2. Explain what the inverse circular function is. What are the domains and ranges of sin-1x, cos-1x and tan-1x so that they are functions of x?</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Restrict sin to [-pi/2, pi/2], cos to [0, pi], tan to (-pi/2, pi/2): one y per x.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>y = sinx (and cosx, tanx) is many-to-one, so its x-y swap is not a function. Restricting to one monotone branch gives a function: sin-1x has domain [-1, 1], range [-pi/2, pi/2]; cos-1x has domain [-1, 1], range [0, pi]; tan-1x has domain (-inf, inf), range (-pi/2, pi/2). (The printed Answers, p171, confirm all three domain-range lines.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q2; book p170 = PDF p197 (image read); matches key</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>AQ3. Prove that tan-1((a-b)/(1+ab))+tan-1((b-c)/(1+bc))+tan-1((c-a)/(1+ca)) = tan-1((a^2-b^2)/(1+a^2b^2))+tan-1((b^2-c^2)/(1+b^2c^2))+tan-1((c^2-a^2)/(1+c^2a^2)).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Both sides telescope to zero: each sum is three differences that cancel.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>LHS = (tan-1a-tan-1b)+(tan-1b-tan-1c)+(tan-1c-tan-1a) = 0 and RHS = (tan-1a^2-tan-1b^2)+(tan-1b^2-tan-1c^2)+(tan-1c^2-tan-1a^2) = 0 by the difference formula (where all pairwise products exceed -1). Both sides are 0. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q3; book p170 = PDF p197 (image read)</p></div></div></div><div class="q"><span class="n">18.</span><div class="stem"><p>AQ4(i). [Print says = 0: DISPROVED.] cot-1((ab+1)/(a-b))+cot-1((bc+1)/(b-c))+cot-1((ca+1)/(c-a)) = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>PRINT ERROR with counterexample: a = 3, b = 2, c = 1 gives pi, not 0. The correct identity equals pi.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Counterexample a = 3, b = 2, c = 1: arccot(7/1)+arccot(3/1)+arccot(4/(-2)) = arccot7+arccot3+arccot(-2) ~ 8.13deg+18.43deg+153.43deg = 180deg = pi, not 0. So the printed = 0 is false. Correct identity: for a &gt; b &gt; c with ab, bc, ca &gt; -1 the sum is pi, since cot-1(1/t) = tan-1t for t &gt; 0 and = pi+tan-1t for t &lt; 0, and tan-1((a-b)/(1+ab))+tan-1((b-c)/(1+bc))+tan-1((c-a)/(1+ca)) telescopes to 0. Filed as a print error with correction.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q4(i); book p170 = PDF p197 (image read); disproved by counterexample, corrected to pi</p></div></div></div><div class="q"><span class="n">19.</span><div class="stem"><p>AQ4(ii). Prove that cot-11+cot-12+cot-13 = pi/2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Each cot-1 is pi/2 minus a tan-1; the three tan-1 sum to pi by Q9(v).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>cot-1x = pi/2-tan-1x for every nonzero x. So the sum is 3pi/2-(tan-11+tan-12+tan-13) = 3pi/2-pi = pi/2, using Q9(v) (tan-11+tan-12+tan-13 = pi). Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q4(ii); book p170 = PDF p197 (image read)</p></div></div></div><div class="q"><span class="n">20.</span><div class="stem"><p>AQ4(iii). Prove that sec^2(tan-12)+cosec^2(cot-13) = 15.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>sec^2 = 1+tan^2 and csc^2 = 1+cot^2: 5+10 = 15.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>sec^2(tan-12) = 1+tan^2(tan-12) = 1+4 = 5. With p = cot-13, cotp = 3, so cosec^2p = 1+cot^2p = 1+9 = 10. Total 5+10 = 15. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q4(iii); book p170 = PDF p197 (image read)</p></div></div></div><div class="q"><span class="n">21.</span><div class="stem"><p>AQ4(iv). Prove that tan((1/2)sin-1(2x/(1+x^2))+(1/2)cos-1((1-y^2)/(1+y^2))) = (x+y)/(1-xy).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Both halves are double-angle masks: (1/2)sin-1(2x/(1+x^2)) = tan-1x and (1/2)cos-1((1-y^2)/(1+y^2)) = tan-1y.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>sin-1(2x/(1+x^2)) = 2tan-1x and cos-1((1-y^2)/(1+y^2)) = 2tan-1y (the standard t-substitution masks). Halving gives tan-1x+tan-1y, and tan of that sum is (x+y)/(1-xy). Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.5 Additional Q4(iv); book p170 = PDF p197 (image read)</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.5 BOOK Exercise 5.1 Q7-Q12 + Additional Questions (book pp169-170 = PDF pp196-197 of the 2075 reprint; statements via image reads; proofs carry validity conditions). Flags: Q9(i) independently confirmed (NEB video states the same question); AQ4(i) as printed (= 0) is FALSE - counterexample a=3,b=2,c=1 gives pi; corrected identity (= pi) proved.</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>trigonometry-textbook-ex-5-1-theorems-additional</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>trigonometry</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><a href="ex-5-1-inverse-proofs-and-equations.html" title="Sukunda Basic Mathematics XI - Ch.5 Book Ex 5.1 Q4-Q6 (inverse proofs and equations) - Complete Solutions">‹ Sukunda Basic Mathematics XI - Ch.5 Book Ex 5…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-5-1-inverse-values-and-rewrites.html" title="Sukunda Basic Mathematics XI - Ch.5 Book Ex 5.1 Q1-Q3 (inverse values and rewrites) - Complete Solutions">Sukunda Basic Mathematics XI - Ch.5 Book Ex 5… ›</a></nav>
+</div></body></html>

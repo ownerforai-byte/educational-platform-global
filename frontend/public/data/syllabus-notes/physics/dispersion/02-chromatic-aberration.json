@@ -1,0 +1,203 @@
+{
+  "title": "Chromatic and Spherical Aberration",
+  "unitSlug": "dispersion",
+  "topicSlug": "chromatic-aberration",
+  "topicTitle": "Chromatic and Spherical Aberration",
+  "relevance": 100,
+  "notes": [
+    "Chromatic aberration is colour fringing caused by a lens having different focal lengths for different wavelengths. In ordinary glass, blue/violet light is refracted more strongly than red, so their images do not share one focus.",
+    "Longitudinal chromatic aberration is the axial separation Δf=|fv−fr| of two colour foci. Transverse chromatic aberration is a wavelength-dependent lateral image displacement, often visible at the edge of a wide field.",
+    "Spherical aberration has a different cause: marginal and paraxial rays of the same colour focus at different points because the surface is spherical. It can be reduced with an aperture stop or aspheric surfaces.",
+    "Worked comparison: if red focuses at 50.0 cm and blue at 49.0 cm, longitudinal chromatic aberration is 1.0 cm. This is axial focus separation, not a 1 cm sideways image shift.",
+    "An achromatic doublet pairs converging crown glass with diverging flint glass so two selected colours focus together. Stopping down reduces marginal-ray error but does not remove material dispersion.",
+    "A single lens focuses violet closer to the lens than red, because violet has the higher index and a shorter focal length. The gap between those foci along the axis is the longitudinal chromatic aberration, about ω times the mean focal length."
+  ],
+  "confusion": [
+    "Stopping down does not make glass non-dispersive.",
+    "Primary achromatism reduces selected colour separation but may leave secondary spectrum.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+  ],
+  "practice": [
+    "Distinguish chromatic from spherical aberration by cause and remedy.",
+    "A lens has fv=14.8 cm and fr=15.2 cm. Find Δf.",
+    "Can a monochromatic image suffer spherical aberration?"
+  ],
+  "universalFacts": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness."
+  ],
+  "animation3D": "dispersion",
+  "motionGraphics": "dispersion",
+  "examples": [
+    "Red and blue foci at 20.4 cm and 20.0 cm have Δf=0.4 cm.",
+    "An achromatic doublet reduces colour separation; stopping down mainly reduces spherical aberration.",
+    "A single lens focuses violet closer to the lens than red, because violet has the higher index and a shorter focal length. The gap between those foci along the axis is the longitudinal chromatic aberration, about ω times the mean focal length.",
+    "The working relations are Longitudinal chromatic aberration ≈ ω f and Different colours have different focal lengths. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A lens has mean f = 20 cm and ω = 0.040. Estimate the longitudinal chromatic aberration."
+  ],
+  "practiceQuestions": [
+    "Distinguish chromatic from spherical aberration by cause and remedy.",
+    "A lens has fv=14.8 cm and fr=15.2 cm. Find Δf.",
+    "Can a monochromatic image suffer spherical aberration?"
+  ],
+  "formulas": [
+    "Longitudinal chromatic aberration: Δf=|fv−fr|.",
+    "For a thin lens in air: 1/f=(n−1)(1/R1−1/R2); n depends on wavelength."
+  ],
+  "keyPoints": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness.",
+    "Longitudinal chromatic aberration ≈ ω f",
+    "Different colours have different focal lengths",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
+  "summary": "Chromatic aberration comes from wavelength-dependent focal length; spherical aberration comes from paraxial–marginal focus separation. Their corrections differ.",
+  "specialNotes": [
+    "Stopping down does not make glass non-dispersive.",
+    "Primary achromatism reduces selected colour separation but may leave secondary spectrum."
+  ],
+  "importantStatements": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness."
+  ],
+  "importantNotes": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness."
+  ],
+  "examShortTricks": [
+    "Longitudinal chromatic aberration: Δf=|fv−fr|.",
+    "For a thin lens in air: 1/f=(n−1)(1/R1−1/R2); n depends on wavelength."
+  ],
+  "examNotes": [
+    "Distinguish chromatic from spherical aberration by cause and remedy.",
+    "A lens has fv=14.8 cm and fr=15.2 cm. Find Δf.",
+    "Can a monochromatic image suffer spherical aberration?"
+  ],
+  "importantConcepts": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Distinguish chromatic from spherical aberration by cause and remedy.",
+    "A lens has fv=14.8 cm and fr=15.2 cm. Find Δf.",
+    "Can a monochromatic image suffer spherical aberration?"
+  ],
+  "duplicateType": 2,
+  "specificConditions": [
+    "**Dispersion Definition:** Dispersion is the separation of white light into its constituent colors (spectrum) due to the dependence of the refractive index $n$ on the wavelength $\\lambda$ of light ($n(\\lambda)$).",
+    "**Cauchy's Equation:** For many transparent materials, the refractive index follows Cauchy's equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$. This explains why blue light ($\\lambda$ smaller) is refracted more than red light ($\\lambda$ larger).",
+    "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry."
+  ],
+  "tabGroup": "chromatic-and-spherical-aberration",
+  "visualType": "chromatic-aberration",
+  "mcs": [
+    {
+      "question": "Violet focuses",
+      "options": [
+        "Farther from a convex lens than red",
+        "Nearer than red",
+        "At the same point",
+        "Behind the object"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Longitudinal chromatic aberration is about",
+      "options": [
+        "ω f",
+        "f/ω",
+        "The aperture only",
+        "Zero for every lens"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The cause is",
+      "options": [
+        "One index for all colours",
+        "The index depending on colour",
+        "A plane mirror",
+        "Polarisation"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A screen at the yellow focus is",
+      "options": [
+        "Sharp for violet and red as well",
+        "A compromise, with colour blur",
+        "At the object",
+        "A prism"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Violet focuses",
+      "options": [
+        "Farther from a convex lens than red",
+        "Nearer than red",
+        "At the same point",
+        "Behind the object"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Longitudinal chromatic aberration is about",
+      "options": [
+        "ω f",
+        "f/ω",
+        "The aperture only",
+        "Zero for every lens"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The cause is",
+      "options": [
+        "One index for all colours",
+        "The index depending on colour",
+        "A plane mirror",
+        "Polarisation"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A screen at the yellow focus is",
+      "options": [
+        "Sharp for violet and red as well",
+        "A compromise, with colour blur",
+        "At the object",
+        "A prism"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A lens has mean f = 20 cm and ω = 0.040. Estimate the longitudinal chromatic aberration.",
+      "steps": [
+        "Longitudinal chromatic aberration ≈ ω f.",
+        "ω f = 0.040 × 20 cm.",
+        "The gap is 0.80 cm.",
+        "Violet focuses nearer the lens than red.",
+        "A screen cannot be sharp for both colours at once."
+      ],
+      "answer": "0.80 cm, with violet nearer the lens."
+    }
+  ]
+}

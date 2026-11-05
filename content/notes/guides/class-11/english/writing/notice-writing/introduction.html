@@ -1,0 +1,165 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Notice Writing</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Notice Writing</div>
+    <h1 class="doc">Notice Writing</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Notice Writing</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>writing</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>notice-writing</p></section>
+<section class="field"><h2>Relevance</h2><p><code>85</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;What Is a Notice?&lt;/h2&gt;</li><li>&lt;p&gt;A &lt;b&gt;notice&lt;/b&gt; is a brief, formal announcement posted in a public place or distributed to inform a specific group of people about an event, rule, or important information. In the NEB Class 11 English examination, notice writing is a commonly tested skill, typically carrying 5-8 marks. A well-written notice is concise, clear, and follows a standard format that includes a heading, date, body, and issuing authority.&lt;/p&gt;</li><li>&lt;h2&gt;Format of a Notice&lt;/h2&gt;</li><li>&lt;p&gt;The standard notice format includes: (1) &lt;b&gt;Heading/Title&lt;/b&gt; — the word 'NOTICE' centred at the top in capital letters. (2) &lt;b&gt;Issuer's name/organisation&lt;/b&gt; — the name of the school, institution, or authority issuing the notice. (3) &lt;b&gt;Date&lt;/b&gt; — the date of issue (usually placed below the heading or at the bottom left). (4) &lt;b&gt;Subject/Heading line&lt;/b&gt; — a concise title describing the notice's purpose (e.g., 'Annual Sports Day', 'School Closure Notice'). (5) &lt;b&gt;Body&lt;/b&gt; — the main content: what the notice is about, when and where it applies, any instructions or actions required. (6) &lt;b&gt;Signature and designation&lt;/b&gt; — the name and position of the person issuing the notice (e.g., 'Principal', 'School Captain', 'Head Boy'). The body should be 50-80 words — concise and to the point.&lt;/p&gt;</li><li>&lt;h2&gt;Key Features of a Notice&lt;/h2&gt;</li><li>&lt;p&gt;A notice must be: (1) &lt;b&gt;Concise&lt;/b&gt; — every word matters; avoid unnecessary details. (2) &lt;b&gt;Clear&lt;/b&gt; — the message should be understood immediately. (3) &lt;b&gt;Precise&lt;/b&gt; — include exact dates, times, and venues. (4) &lt;b&gt;Formal&lt;/b&gt; — use formal language; no contractions, slang, or emotional language. (5) &lt;b&gt;Action-oriented&lt;/b&gt; — state clearly what readers need to do (e.g., 'All students are requested to...', 'Participation is mandatory for...'). A notice is not an essay — it should not include explanations, anecdotes, or lengthy descriptions.&lt;/p&gt;</li><li>&lt;h2&gt;Types of Notices&lt;/h2&gt;</li><li>&lt;p&gt;Common types of notices in NEB exams include: (1) &lt;b&gt;Event notice&lt;/b&gt; — announcing a school event (sports day, function, visit). 'Annual Sports Day is scheduled for 15th November 2024. All students are required to participate.' (2) &lt;b&gt;Closure notice&lt;/b&gt; — informing about school closure. 'The school will remain closed on 15th August on account of Janai Purnima.' (3) &lt;b&gt;Instruction notice&lt;/b&gt; — giving specific instructions. 'All students must submit their project reports by Friday.' (4) &lt;b&gt;Lost and found notice&lt;/b&gt; — reporting a lost item or found object. 'A blue school bag has been found in the library. The owner may claim it from the office.' (5) &lt;b&gt;Safety notice&lt;/b&gt; — warning about a hazard. 'Caution: Wet floor. Please exercise care.'&lt;/p&gt;</li><li>&lt;h2&gt;Notice Writing Tips for NEB Exams&lt;/h2&gt;</li><li>&lt;p&gt;To score well in notice writing: (1) &lt;b&gt;Follow the format precisely&lt;/b&gt; — missing any element (date, heading, signature) costs marks. (2) &lt;b&gt;Keep the body within 50-80 words&lt;/b&gt; — too short loses content marks; too long wastes time. (3) &lt;b&gt;Use formal, impersonal language&lt;/b&gt; — 'It is informed that...' or 'All students are requested to...' (4) &lt;b&gt;Include all necessary details&lt;/b&gt; — date, time, venue, action required. (5) &lt;b&gt;Write the issuing authority's name and designation&lt;/b&gt; — e.g., 'Ramesh Sharma, School Captain'. (6) &lt;b&gt;Underline the heading&lt;/b&gt; — the word 'NOTICE' should be underlined and centred. These conventions are strictly followed by NEB examiners.&lt;/p&gt;</li><li>&lt;h2&gt;Common Mistakes in Notice Writing&lt;/h2&gt;</li><li>&lt;p&gt;Avoid these errors: (1) &lt;b&gt;Forgetting the word 'NOTICE'&lt;/b&gt; at the top. (2) &lt;b&gt;Writing in the first person&lt;/b&gt; ('I have decided...') — notices are impersonal. (3) &lt;b&gt;Using contractions&lt;/b&gt; ('don't', 'can't'). (4) &lt;b&gt;Making the body too long&lt;/b&gt; — a notice is not an essay. (5) &lt;b&gt;Forgetting the date&lt;/b&gt; — essential for any formal notice. (6) &lt;b&gt;Not mentioning the issuing authority&lt;/b&gt; — always sign off with name and designation. (7) &lt;b&gt;Using emotional language&lt;/b&gt; — notices are factual and formal. (8) &lt;b&gt;Writing an incomplete sentence&lt;/b&gt; — every sentence should be grammatically complete.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Notice vs. Letter: A notice is a public announcement meant for a broad audience (all students, all residents). A letter is a private communication to a specific person or authority. Notices are posted publicly; letters are sent privately. Notices use formal, impersonal language; letters (especially informal ones) use personal language.</li><li>Notice vs. Advertisement: A notice informs about an event, rule, or loss. An advertisement promotes a product, service, or event to attract customers. Notices are issued by institutions (schools, colleges, government offices). Advertisements are issued by businesses or individuals. Notices are formal; advertisements are persuasive and may use creative language.</li><li>Notice vs. Report: A notice announces information to a specific group. A report provides a detailed account of an event, investigation, or situation, usually for an authority. Notices are brief (50-80 words); reports are longer (150-200 words) and include observations, findings, and recommendations.</li><li>Date placement in notices: The date can appear either below the heading (top right or left) or at the bottom left of the notice. Both placements are acceptable in NEB exams, but consistency is key — do not place the date in different positions in different notices.</li><li>Signature in notices: A notice must be signed with the issuer's name and designation (e.g., 'Ramesh Sharma, School Captain'). Unlike letters, notices do not use complimentary closes ('Yours faithfully'). The signature is simply the name and title of the issuing authority.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Write a notice (50-80 words) announcing an Annual Sports Day on 15th November 2024. Include date, time, venue, and required action. [Answer: NOTICE | [Name of School] | Date: 1st November 2024 | ANNUAL SPORTS DAY | The Annual Sports Day of our school will be held on 15th November 2024 at the school ground starting at 9:00 AM. All students are requested to participate in the events and wear their respective house uniforms. Parents are also welcome to attend. All interested students should register with the Physical Education teacher by 10th November. | Ramesh Sharma, School Captain]</li><li>Write a notice informing students about the closure of school on 15th August for Janai Purnima. [Answer: NOTICE | [Name of School] | Date: 10th August 2024 | SCHOOL CLOSURE NOTICE | This is to inform all students that the school will remain closed on 15th August 2024 on the occasion of Janai Purnima. Classes will resume on 16th August. Students are advised to make use of this day for family functions and cultural observances. | Principal]</li><li>What is wrong with this notice? 'Hey everyone! We are having a fun event on Friday. Come to the hall at 10am. Don't miss it! Love, the student council.' [Answer: Multiple errors: (1) No 'NOTICE' heading, (2) Informal tone ('Hey everyone!', 'fun event', 'Love'), (3) No date of issue, (4) No issuing authority/signature with designation, (5) No specific school/organisation name. This reads like a social media post, not a formal notice.] — This is a classic example of what NEB examiners penalise.</li><li>Identify the missing element: 'NOTICE | ANNUAL MEETING | All members are requested to attend the annual meeting on 20th December at 4 PM in the conference hall. | Secretary' [Answer: The date of issue is missing. A notice must include the date on which it was issued, typically placed below the heading or at the bottom.] — Note: The date of the event (20th December) is different from the date of issue (when the notice was written). Both are important, but the date of issue is mandatory in the format.</li><li>Rewrite this notice body in formal language: 'The school is closed tomorrow because of heavy rain and flood. Students should stay home and stay safe. We will inform you when classes start again.' [Answer: 'This is to inform all students that the school will remain closed tomorrow, 12th November 2024, due to heavy rainfall and flooding in the area. Students are advised to remain indoors and avoid unnecessary travel. Further updates regarding the resumption of classes will be communicated through the school website.'] — Note the formal tone, precision, and absence of contractions.</li><li>Write a lost and found notice for a lost watch found in the school library. [Answer: NOTICE | [Name of School] | Date: 5th November 2024 | LOST AND FOUND | A wristwatch (silver band, black face) has been found in the school library on 4th November 2024. The owner is requested to claim it from the office after school hours by producing a description of the watch. | Librarian]</li><li>What is the correct closing for a notice? [Answer: Notices do not have a 'closing' like letters do. Instead, they end with the issuer's name and designation (e.g., 'Principal', 'School Captain', 'Head Boy'). This is a key difference from letter writing that students often confuse.] — Emphasise: NO 'Yours faithfully', NO 'Sincerely' in notices.</li><li>Write a notice (50-80 words) about a blood donation camp organised by the school. Include all required elements. [Answer: NOTICE | [Name of School] | Date: 1st November 2024 | BLOOD DONATION CAMP | A blood donation camp will be organised by the school in collaboration with the Red Cross on 10th November 2024 at the school auditorium from 10:00 AM to 4:00 PM. All students and staff who are eligible are encouraged to participate and contribute to this noble cause. For registration, contact the school office. | Nirmala Shrestha, Health Committee Chair]</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The notice as a formal document has its roots in ancient public announcements, including Roman edicts posted in public squares and medieval town criers. The modern notice format — with its heading, date, body, and signature — evolved during the British colonial period and was adopted in Nepali educational institutions.</li><li>In the NEB English examination, notice writing typically carries 5-8 marks. Strict adherence to format (NOTICE heading, date, body within word limit, issuing authority) is essential for full marks, as NEB examiners follow a precise marking scheme.</li><li>The 50-80 word limit for the body of a notice is a NEB convention. Students who write too much (treating it like an essay) or too little (under 40 words) lose marks for poor organisation or insufficient content respectively.</li><li>Notices are a practical life skill used in schools, offices, government institutions, and public spaces worldwide. Understanding how to write a clear, concise notice is valuable for civic participation and professional communication.</li><li>In Nepali, notice writing (सूचना लेखन) follows a similar format but uses Nepali language conventions and typically includes a more elaborate heading with the organisation's name and emblem. The English notice format is a direct inheritance of British administrative conventions.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>writing</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>writing</p></section>
+<section class="field"><h2>Visual Type</h2><p>contact-process-h2so4</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

@@ -1,0 +1,161 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Letter Writing</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Letter Writing</div>
+    <h1 class="doc">Letter Writing</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Letter Writing</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>writing</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>letter-writing</p></section>
+<section class="field"><h2>Relevance</h2><p><code>93</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;What Is Letter Writing?&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Letter writing&lt;/b&gt; is the art of composing written communication to convey information, express feelings, or make requests. In the NEB Class 11 English examination, letter writing is a heavily tested skill, typically carrying 8-12 marks. Students are expected to write two main types of letters: &lt;b&gt;Formal letters&lt;/b&gt; (to authorities, editors, principals) and &lt;b&gt;Informal letters&lt;/b&gt; (to friends, relatives). Each type has a distinct format, tone, and structure that must be followed precisely.&lt;/p&gt;</li><li>&lt;h2&gt;Formal Letter: Format and Structure&lt;/h2&gt;</li><li>&lt;p&gt;A &lt;b&gt;formal letter&lt;/b&gt; follows a strict format: (1) &lt;b&gt;Sender's address&lt;/b&gt; (top left, no date below). (2) &lt;b&gt;Date&lt;/b&gt; (below sender's address). (3) &lt;b&gt;Receiver's designation and address&lt;/b&gt; (below date). (4) &lt;b&gt;Salutation&lt;/b&gt;: 'Sir/Madam' (if name is unknown) or 'Dear Mr. Sharma' (if name is known). (5) &lt;b&gt;Subject&lt;/b&gt;: A concise line stating the purpose, preceded by 'Subject:' (e.g., 'Subject: Complaint about irregular water supply'). (6) &lt;b&gt;Body&lt;/b&gt;: Three paragraphs — opening (state purpose), middle (explain details), closing (request action/thank). (7) &lt;b&gt;Complimentary close&lt;/b&gt;: 'Yours faithfully' (if salutation is 'Sir/Madam') or 'Yours sincerely' (if salutation uses a name). (8) &lt;b&gt;Signature and name&lt;/b&gt;.&lt;/p&gt;</li><li>&lt;h2&gt;Formal Letter: Tone and Language&lt;/h2&gt;</li><li>&lt;p&gt;Formal letters require a &lt;b&gt;respectful, objective, and concise&lt;/b&gt; tone. Use formal language: no contractions ('do not' not 'don't'), no slang, no emotional language. Be direct and clear — state the purpose in the first paragraph. Use polite expressions: 'I would like to draw your attention to...', 'I kindly request you to...', 'I would be grateful if...'. Avoid imperative sentences ('Fix the problem now!') — use polite requests instead ('I request you to look into this matter'). Sign off with 'Yours faithfully' (unknown name) or 'Yours sincerely' (known name). The body should be 100-150 words for NEB exams.&lt;/p&gt;</li><li>&lt;h2&gt;Common Formal Letter Topics in NEB&lt;/h2&gt;</li><li>&lt;p&gt;Frequently assigned formal letter topics include: (1) &lt;b&gt;Letter to the editor&lt;/b&gt; — complaining about a civic issue (garbage disposal, water shortage, traffic, noise pollution). (2) &lt;b&gt;Letter to the principal&lt;/b&gt; — requesting permission for an event, complaining about facilities, suggesting improvements. (3) &lt;b&gt;Letter of complaint&lt;/b&gt; — to a company about defective products or poor service. (4) &lt;b&gt;Letter of application&lt;/b&gt; — applying for a job or scholarship. (5) &lt;b&gt;Letter of enquiry&lt;/b&gt; — asking for information about a course, product, or service. For each type, the format remains the same; only the content and specific expressions change.&lt;/p&gt;</li><li>&lt;h2&gt;Informal Letter: Format and Structure&lt;/h2&gt;</li><li>&lt;p&gt;An &lt;b&gt;informal letter&lt;/b&gt; to a friend or relative is less rigid in format but still follows a conventional structure: (1) &lt;b&gt;Sender's address&lt;/b&gt; (top right or left). (2) &lt;b&gt;Date&lt;/b&gt;. (3) &lt;b&gt;S salutation&lt;/b&gt;: 'Dear Ram,' 'Dear Sita,' 'Dear Mama,' 'Dear Bhaija.' (4) &lt;b&gt;Opening&lt;/b&gt;: Inquire about the recipient's well-being ('I hope this letter finds you in good health'). (5) &lt;b&gt;Body&lt;/b&gt;: Share news, express feelings, ask questions — written in a warm, personal tone. Use contractions ('I'm', 'don't'), exclamations, and casual expressions. (6) &lt;b&gt;Closing&lt;/b&gt;: 'Write soon', 'Give my regards to...', 'Love', 'Your friend'. (7) &lt;b&gt;Signature&lt;/b&gt;: First name only (e.g., 'Sita'). The body should be 100-120 words for NEB exams.&lt;/p&gt;</li><li>&lt;h2&gt;Informal Letter: Tone and Language&lt;/h2&gt;</li><li>&lt;p&gt;Informal letters use a &lt;b&gt;warm, personal, and conversational&lt;/b&gt; tone. You can use contractions, colloquial expressions, exclamations, and even abbreviations. Express genuine interest in the recipient's life. Share personal news, ask about family, reminisce about shared experiences. Use phrases like: 'How have you been?', 'I can't believe...', 'Guess what happened!', 'I miss you', 'Write back soon'. The key difference from formal letters is the emotional warmth and personal touch. Avoid formal language, rigid structure, or overly polite expressions.&lt;/p&gt;</li><li>&lt;h2&gt;Common Informal Letter Topics in NEB&lt;/h2&gt;</li><li>&lt;p&gt;Frequently assigned informal letter topics include: (1) &lt;b&gt;Letter to a friend&lt;/b&gt; — inviting them to visit, congratulating on an achievement, sharing news about school/exams, describing a festival. (2) &lt;b&gt;Letter to a relative&lt;/b&gt; — congratulating on a birth, wedding, or promotion; expressing sympathy for a loss; sharing family news. (3) &lt;b&gt;Letter of apology&lt;/b&gt; — to a friend for missing an event or failing to keep a promise. (4) &lt;b&gt;Letter of thanks&lt;/b&gt; — thanking someone for a gift, help, or hospitality. In all cases, the tone should be personal and heartfelt.&lt;/p&gt;</li><li>&lt;h2&gt;Key Differences: Formal vs. Informal Letters&lt;/h2&gt;</li><li>&lt;p&gt;The critical differences between formal and informal letters are: (1) &lt;b&gt;Salutation&lt;/b&gt;: 'Sir/Madam' (formal) vs. 'Dear Ram' (informal). (2) &lt;b&gt;Subject line&lt;/b&gt;: Required in formal letters, omitted in informal. (3) &lt;b&gt;Language&lt;/b&gt;: Formal and objective vs. informal and personal. (4) &lt;b&gt;Contractions&lt;/b&gt;: Avoided in formal, used in informal. (5) &lt;b&gt;Closing&lt;/b&gt;: 'Yours faithfully/sincerely' (formal) vs. 'Love', 'Your friend' (informal). (6) &lt;b&gt;Signature&lt;/b&gt;: Full name + designation (formal) vs. first name only (informal). (7) &lt;b&gt;Purpose&lt;/b&gt;: Official/business vs. personal/social. Students must identify the letter type from the question and apply the correct format.&lt;/p&gt;</li><li>&lt;h2&gt;Common Mistakes in Letter Writing&lt;/h2&gt;</li><li>&lt;p&gt;Avoid these common errors: (1) &lt;b&gt;Wrong closing&lt;/b&gt;: Using 'Yours faithfully' when you know the name (should be 'Yours sincerely'). (2) &lt;b&gt;Missing subject line&lt;/b&gt; in formal letters. (3) &lt;b&gt;Using informal language&lt;/b&gt; in formal letters (contractions, slang). (4) &lt;b&gt;Wrong address format&lt;/b&gt;: Putting date above address (should be below). (5) &lt;b&gt;Repeating information&lt;/b&gt; in the body instead of being concise. (6) &lt;b&gt;Forgetting to sign&lt;/b&gt; the letter. (7) &lt;b&gt;Mixing formal and informal elements&lt;/b&gt; — the most damaging error. (8) &lt;b&gt;Writing too much&lt;/b&gt; — keep the body within the word limit (100-150 words for formal, 100-120 for informal). Exceeding the word limit can result in mark deductions.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>writing</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>writing</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

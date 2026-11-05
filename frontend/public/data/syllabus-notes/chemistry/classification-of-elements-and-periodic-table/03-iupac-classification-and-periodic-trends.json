@@ -1,0 +1,98 @@
+{
+  "title": "IUPAC Classification of Elements",
+  "unitSlug": "classification-of-elements-and-periodic-table",
+  "topicSlug": "iupac-classification-of-elements",
+  "topicTitle": "IUPAC classification of elements",
+  "relevance": 100,
+  "notes": [
+    "### 1. Meaning — what IUPAC is and what it decides",
+    "IUPAC (International Union of Pure and Applied Chemistry) is the world authority that standardises chemical nomenclature, atomic weights and the format of the periodic table. Its classification of elements covers group numbering 1–18, the s/p/d/f block division, the metal–nonmetal–metalloid grouping, collective group names, and the naming of newly discovered elements.",
+    "### 2. IUPAC group numbering and collective names",
+    "• 18 groups numbered left to right and 7 periods; the old European (IA, IIA, … IB) and American (IA, IB, … VIIIA) systems were replaced by 1–18 to remove ambiguity.",
+    "• Collective names: Group 1 alkali metals (Li–Fr, H excluded), Group 2 alkaline earth metals (Be–Ra), Group 15 pnictogens (N–Bi), Group 16 chalcogens (O–Po), Group 17 halogens (F–At), Group 18 noble gases (He–Rn).",
+    "• Blocks: s-block (Groups 1–2 plus He), p-block (Groups 13–18 except He), d-block (Groups 3–12, transition metals), f-block (lanthanides 58–71 and actinides 90–103, inner transition metals).",
+    "### 3. IUPAC naming of new elements (Z > 100)",
+    "Discoverers propose a name and a two-letter symbol after independent verification. Until approval, a systematic name is built from digit roots — 0 nil, 1 un, 2 bi, 3 tri, 4 quad, 5 pent, 6 hex, 7 sept, 8 oct, 9 enn — joined in order with the suffix '-ium' (temporary three-letter symbols). Examples: 104 unnilquadium (Unq) → Rutherfordium (Rf); 113 ununtrium → Nihonium (Nh); 114 ununquadium → Flerovium (Fl); 115 → Moscovium (Mc); 116 ununhexium → Livermorium (Lv); 117 ununseptium → Tennessine (Ts); 118 ununoctium (Uuo) → Oganesson (Og).",
+    "### 4. Classification by physical and chemical character",
+    "• **Metals:** the majority (s-, d-, f-blocks and lower p-block) — lustre, malleability, conductivity, basic oxides.",
+    "• **Non-metals:** upper right of the p-block (C, N, O, F, P, S, Cl, Se, Br, I, noble gases) — acidic oxides, poor conductors.",
+    "• **Metalloids (semi-metals):** B, Si, Ge, As, Sb, Te (sometimes Po) — intermediate properties; the basis of semiconductors.",
+    "• **Representative (typical) elements:** s- and p-blocks; **transition elements:** d-block (variable oxidation states, coloured ions, catalysts); **inner transition:** f-block.",
+    "### 5. Applications",
+    "• One agreed numbering and block scheme makes international communication and literature searching unambiguous.",
+    "• Predicting chemistry from group position: Group 1 metals are strong reducing agents, Group 17 halogens strong oxidising agents, Group 18 inert; oxide character changes from basic to acidic across a period (Na₂O, MgO basic → Al₂O₃ amphoteric → SiO₂, P₄O₁₀, SO₃ acidic).",
+    "• Standard atomic weights (from terrestrial isotopic abundance) and systematic naming keep trade, industry and metrology consistent — for example in specifying semiconductor-grade silicon or alloy composition.",
+    "• The naming and verification procedure for superheavy elements is a direct product of this classification work.",
+    "### 6. Limitations",
+    "IUPAC classification is a labelling and standardisation scheme, not an explanation — it does not say *why* properties repeat (that needs Z_eff, quantum numbers and electronic configuration). Some boundaries are arbitrary: the metal–non-metal change is gradual and metalloid membership differs between sources; H sits in Group 1 yet resembles the halogens; He is a Group 18 noble gas with the s-block configuration 1s². The composition of Group 3 for periods 6 and 7 (La/Ac versus Lu/Lr) has been debated for decades, and the '-ium' systematic names are stopgaps, so older books still print them. The chemistry of elements with Z > 103 is largely predicted, not measured.",
+    "**Fact.** v = V₀ sin ωt; i = I₀ sin(ωt + φ); RMS V_rms = V₀/√2.",
+    "**Fact.** Impedance: pure R → Z = R; L → Z = ωL; C → Z = 1/(ωC); LCR resonance at ω₀ = 1/√(LC).",
+    "**Fact.** Average power P = V_rms I_rms cosφ; in pure L or C, average power over a cycle = 0."
+  ],
+  "formulas": [
+    "$$\\text{systematic name}=\\text{digit roots}+\\text{'-ium'}\\quad Z=118:\\ \\text{un}+\\text{un}+\\text{oct}+\\text{ium}=\\text{ununoctium}$$",
+    "$$0\\,\\text{nil},1\\,\\text{un},2\\,\\text{bi},3\\,\\text{tri},4\\,\\text{quad},5\\,\\text{pent},6\\,\\text{hex},7\\,\\text{sept},8\\,\\text{oct},9\\,\\text{enn}$$",
+    "V_rms = V₀/√2",
+    "Z_L = ωL, Z_C = 1/(ωC)",
+    "ω₀ = 1/√(LC)"
+  ],
+  "universalFacts": [
+    "Oganesson (Og, Z = 118) is named after Yuri Oganessian; Nihonium (Nh, 113) after Japan; Tennessine (Ts, 117) after Tennessee.",
+    "IUPAC numbering 1–18 was recommended in 1988 to replace the conflicting European and American schemes.",
+    "The f-block spans periods 6 and 7: lanthanides (58–71) and actinides (90–103).",
+    "v = V₀ sin ωt; i = I₀ sin(ωt + φ); RMS V_rms = V₀/√2.",
+    "Impedance: pure R → Z = R; L → Z = ωL; C → Z = 1/(ωC); LCR resonance at ω₀ = 1/√(LC).",
+    "Average power P = V_rms I_rms cosφ; in pure L or C, average power over a cycle = 0."
+  ],
+  "examples": [
+    "**Problem:** Systematic name and symbol for Z = 115. **Solution:** digits 1, 1, 5 → un + un + pent + ium = ununpentium (Uup); now permanently named Moscovium (Mc).",
+    "**Problem:** Predict the oxide character of period-3 oxides from the IUPAC group classification. **Solution:** Na₂O and MgO (Groups 1, 2) basic; Al₂O₃ (13) amphoteric; SiO₂ (14) weakly acidic; P₄O₁₀ and SO₃ (15, 16) strongly acidic."
+  ],
+  "importantNotes": [
+    "Learn the ten digit roots — the naming question is a standard 2-mark item.",
+    "Separate *nomenclature* from *block classification* in long answers, and describe IUPAC as a standardising authority.",
+    "Helium is the standard trap: 1s² configuration (s-block) yet a Group 18 member."
+  ],
+  "visualType": "periodic-table",
+  "confusion": [
+    "❌ IUPAC places helium in the p-block. ✅ He is 1s², i.e. s-block, but is classified in Group 18 because of closed-shell inertness.",
+    "❌ The '-ium' names are permanent. ✅ They are systematic temporary names used until a permanent name is approved (Unq → Rf).",
+    "❌ Hydrogen belongs unambiguously to Group 1. ✅ It is placed there but behaves partly like Group 17 and remains anomalous.",
+    "❌ Lanthanides and actinides are d-block elements. ✅ They are f-block (inner transition); La and Ac are sometimes treated as d-block.",
+    "❌ Metalloids are a fixed chemical class. ✅ Membership is conventional (B, Si, Ge, As, Sb, Te are the usual members)."
+  ],
+  "practice": [
+    "State the IUPAC group/period numbering and list the collective names of Groups 1, 2, 15, 16, 17 and 18.",
+    "Write the systematic IUPAC name and symbol for the elements with Z = 113, 116 and 118.",
+    "Classify elements into s, p, d and f blocks and explain how the IUPAC scheme removes ambiguity.",
+    "Why is helium classified in Group 18 although its configuration is 1s²?",
+    "Give the IUPAC classification into metals, non-metals and metalloids with two examples each.",
+    "State the limitations of the IUPAC classification of elements."
+  ],
+  "keyPoints": [
+    "• IUPAC classification of elements"
+  ],
+  "practiceQuestions": [],
+  "numericals": [
+    "Use  V_rms = V₀/√2  — pick reasonable values, solve, and check the units.",
+    "Use  Z_L = ωL, Z_C = 1/(ωC)  — pick reasonable values, solve, and check the units.",
+    "Use  ω₀ = 1/√(LC)  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"IUPAC classification of elements\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Limit to remember: v = v₀ sin ωt; i = i₀ sin(ωt + φ); rms v_rms = v₀/√2."
+  ],
+  "summary": "IUPAC classification of elements (Classification of Elements and Periodic Table, Chemistry, class-11-notes) covers IUPAC classification of elements. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
+}

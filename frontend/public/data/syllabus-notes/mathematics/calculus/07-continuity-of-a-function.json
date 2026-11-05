@@ -1,0 +1,29 @@
+{
+  "title": "Continuity of a Function",
+  "unitSlug": "calculus",
+  "topicSlug": "continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function",
+  "topicTitle": "Continuity of a function, types of discontinuity, graphs of discontinuous function",
+  "relevance": 100,
+  "notes": [
+    "**Definition:** A function $f(x)$ is continuous at $x = a$ if all three conditions hold: (i) $f(a)$ is defined, (ii) $\\lim_{x \\to a} f(x)$ exists, (iii) $\\lim_{x \\to a} f(x) = f(a)$.",
+    "**Informally:** A function is continuous at a point if you can draw its graph through that point without lifting your pencil.",
+    "**Continuity on an interval:** $f$ is continuous on $[a, b]$ if it is continuous at every point in $(a, b)$, right-continuous at $a$, and left-continuous at $b$.",
+    "**Continuity of standard functions:** All polynomial, rational (where defined), trigonometric (where defined), exponential, and logarithmic functions are continuous on their domains.",
+    "**Algebra of continuous functions:** If $f$ and $g$ are continuous at $x = a$, then $f + g$, $f - g$, $f \\cdot g$, and $f/g$ (if $g(a) \\neq 0$) are all continuous at $x = a$.",
+    "**Composition of continuous functions:** If $g$ is continuous at $a$ and $f$ is continuous at $g(a)$, then the composite function $f \\circ g$ is continuous at $a$.",
+    "**Intermediate Value Theorem:** If $f$ is continuous on $[a, b]$ and $f(a) \\neq f(b)$, then $f$ takes every value between $f(a)$ and $f(b)$ at least once on $[a, b]$."
+  ],
+  "confusion": [
+    "A function can be continuous at a point but not differentiable there (e.g., $f(x) = |x|$ at $x = 0$). Continuity is a weaker condition than differentiability.",
+    "A function can have a limit at a point without being continuous there — the function might be undefined at that point, or its value might differ from the limit."
+  ],
+  "practice": [
+    "Determine whether $f(x) = \\begin{cases} x^2 & x \\neq 1 \\\\ 3 & x = 1 \\end{cases}$ is continuous at $x = 1$.",
+    "Find the value of $k$ that makes $f(x) = \\begin{cases} kx + 1 & x \\leq 2 \\\\ x^2 & x > 2 \\end{cases}$ continuous at $x = 2$.",
+    "Use the Intermediate Value Theorem to show that $x^3 - x - 1 = 0$ has a root in $[1, 2]$."
+  ],
+  "universalFacts": [
+    "Continuity is essential for the Fundamental Theorem of Calculus, which connects derivatives and integrals.",
+    "The Intermediate Value Theorem guarantees the existence of solutions to equations but does not tell you how to find them."
+  ]
+}

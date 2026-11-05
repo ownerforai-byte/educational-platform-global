@@ -1,0 +1,292 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Immune system and immunity</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Biology  /  Human Health And Diseases</div>
+    <h1 class="doc">Immune system and immunity</h1>
+    <div class="meta"><span>Class 11</span><span>Biology</span><span>Human Health And Diseases</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>human-health-and-diseases</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>immune-system-and-immunity</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Immune System Overview</h4></li><li>The immune system protects the body against pathogens and foreign substances.</li><li><h4>2. Innate Immunity (Non-specific)</h4></li><li><ul>
+<li>Present from birth</li>
+</ul></li><li><ul>
+<li>First line of defense</li>
+</ul></li><li><ul>
+<li><strong>Physical barriers</strong>: Skin, mucous membranes</li>
+</ul></li><li><ul>
+<li><strong>Chemical barriers</strong>: Stomach acid, lysozyme in tears</li>
+</ul></li><li><ul>
+<li><strong>Phagocytes</strong>: Neutrophils, macrophages engulf pathogens</li>
+</ul></li><li><ul>
+<li><strong>Inflammation</strong>: Redness, swelling, heat, pain</li>
+</ul></li><li><ul>
+<li><strong>Fever</strong>: Elevated temperature inhibits pathogen growth</li>
+</ul></li><li><ul>
+<li><strong>Natural Killer cells</strong>: Destroy infected host cells</li>
+</ul></li><li><h4>3. Adaptive Immunity (Specific)</h4></li><li><ul>
+<li>Develops over lifetime</li>
+</ul></li><li><ul>
+<li>Specific to particular pathogens</li>
+</ul></li><li><ul>
+<li>Has memory (immunological memory)</li>
+</ul></li><li><ul>
+<li><strong>Humoral immunity</strong>: B cells produce antibodies</li>
+</ul></li><li><ul>
+<li><strong>Cell-mediated immunity</strong>: T cells destroy infected cells</li>
+</ul></li><li><h4>4. Antibodies (Immunoglobulins)</h4></li><li><ul>
+<li><strong>IgG</strong>: Most abundant, crosses placenta, long-term immunity</li>
+</ul></li><li><ul>
+<li><strong>IgM</strong>: First responder, large pentamer</li>
+</ul></li><li><ul>
+<li><strong>IgA</strong>: Mucosal immunity (tears, saliva, breast milk)</li>
+</ul></li><li><ul>
+<li><strong>IgE</strong>: Allergic reactions, parasitic infections</li>
+</ul></li><li><ul>
+<li><strong>IgD</strong>: B cell receptor</li>
+</ul></li><li><h4>5. Active vs Passive Immunity</h4></li><li><ul>
+<li><strong>Active</strong>: Body produces its own antibodies (infection or vaccination)</li>
+</ul></li><li><ul>
+<li><strong>Passive</strong>: Receives pre-made antibodies (mother to baby, antivenom)</li>
+</ul></li><li><h4>6. Vaccination</h4></li><li><ul>
+<li>Introduces weakened/killed antigen to stimulate active immunity</li>
+</ul></li><li><ul>
+<li>Creates memory cells for faster response on re-exposure</li>
+</ul></li><li><ul>
+<li>Herd immunity: When enough people are immune, disease spread is limited</li>
+</ul></li><li><h4>7. Autoimmune Diseases</h4></li><li><ul>
+<li>Immune system attacks body's own cells</li>
+</ul></li><li><ul>
+<li>Examples: Rheumatoid arthritis, Type 1 diabetes, Lupus, Multiple sclerosis</li>
+</ul></li><li><h4>8. Allergies</h4></li><li><ul>
+<li>Hypersensitive response to harmless antigens (allergens)</li>
+</ul></li><li><ul>
+<li>Mediated by IgE, mast cells release histamine</li>
+</ul></li><li><ul>
+<li>Examples: Hay fever, asthma, food allergies, anaphylaxis</li>
+</ul></li><li><h4>9. Entrance Exam Focus</h4></li><li>Distinguish innate vs adaptive; Identify antibody types; Explain vaccination principle.</li><li>Innate immunity is ready at birth: skin, mucus, acid in the stomach, and phagocytes that engulf invaders without learning their identity.</li><li>Adaptive immunity learns one particular antigen. Lymphocytes do that work, and they leave memory cells after the first meeting.</li><li>B cells make antibodies, and each antibody fits one antigen, so the response is specific rather than a general barrier.</li><li>T cells kill infected body cells and help other cells of the immune system respond to the same antigen.</li><li>A vaccine shows the immune system an antigen, or a harmless form of it, so memory cells form before the real infection arrives.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>x Innate immunity has memory. x Only adaptive immunity has immunological memory.</li><li>x Antibodies kill pathogens directly. x Antibodies mark pathogens for destruction.</li><li>x Vaccines cause the disease. x Vaccines use weakened/killed pathogens to build immunity.</li><li>An antibody is not an antibiotic. One is made by the body. The other is a drug.</li><li>Innate defence does not remember a particular measles virus.</li><li>A vaccine is prevention by memory. It is not a treatment given after the organs have already failed.</li><li>Fever can be a defence. It is not itself a pathogen.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Compare innate and adaptive immunity in a table.</li><li>Explain how antibodies work.</li><li>What is the difference between active and passive immunity?</li><li>Describe the mechanism of vaccination.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Innate immunity is ready at birth: skin, mucus, acid in the stomach, and phagocytes that engulf invaders without learning their identity.</li><li>Adaptive immunity learns one particular antigen. Lymphocytes do that work, and they leave memory cells after the first meeting.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>The immune system protects the body in two ways: innate (non-specific) immunity, which is present from birth and acts immediately, and adaptive (specific) immunity, which is acquired during life and carries immunological memory. Innate defences include physical and chemical barriers, phagocytes, inflammation, fever and natural killer cells, while adaptive immunity has a humoral branch in which B cells produce antibodies and a cell-mediated branch in which T cells destroy infected cells. Active immunity is the body's own antibody response to infection or vaccination, while passive immunity is the receipt of ready-made antibodies from a mother or from an antivenom. Failure of self-tolerance produces autoimmune disease and hypersensitivity to harmless antigens produces allergy.</p></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Innate immunity is the first, non-specific line of defence: physical barriers (skin, mucous membranes), chemical barriers (stomach acid, lysozyme in tears), phagocytes, inflammation, fever and natural killer cells.</li><li>Adaptive immunity is specific to particular antigens, develops over the lifetime, and has immunological memory; it has a humoral branch (B cells producing antibodies) and a cell-mediated branch (T cells killing infected cells).</li><li>Antibodies are immunoglobulins of five classes: IgG (most abundant, crosses the placenta, long-term immunity), IgM (first responder, large pentamer), IgA (mucosal immunity), IgE (allergy and parasites) and IgD (B-cell receptor).</li><li>Active immunity results from the body making its own antibodies after infection or vaccination — slow to start but long lasting; passive immunity is the receipt of ready-made antibodies — immediate but temporary.</li><li>Vaccination supplies a weakened, killed or subunit antigen that creates memory cells and herd immunity without causing the disease itself.</li><li>Autoimmunity is an attack on the body's own cells, while allergy is a hypersensitivity response to a harmless allergen mediated by IgE and histamine released from mast cells.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Only adaptive immunity has immunological memory; innate immunity responds in the same way every time and cannot be primed.</li><li>Antibodies do not normally kill pathogens directly — they bind and neutralise the antigen or tag the pathogen for phagocytosis and complement activation.</li><li>Vaccines do not cause the disease because they contain killed, weakened or non-pathogenic forms of the antigen.</li><li>IgM is the first antibody produced in a primary immune response and is a large pentamer with high binding strength.</li><li>IgG is the only immunoglobulin that crosses the placenta, giving natural passive immunity to the foetus and newborn.</li><li>Allergic reactions and defence against parasitic worms involve IgE, which triggers mast cells to release histamine.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Make a table comparing innate and adaptive immunity on at least five features: origin, specificity, memory, cells involved and speed of response.</li><li>Describe in sequence how an antibody neutralises or tags a pathogen for destruction.</li><li>Differentiate between active and passive immunity, giving two examples of each including one natural and one artificial case.</li><li>Describe the mechanism of vaccination and explain how herd immunity arises in a population.</li><li>Match each immunoglobulin class (IgG, IgM, IgA, IgE, IgD) to its main location and function.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Innate immunity: present at birth, non-specific, no memory. Adaptive immunity: acquired, antigen-specific, has memory.</li><li>The four classic signs of inflammation are redness, swelling, heat and pain, usually with some loss of function at the site.</li><li>Fever raises body temperature and slows the growth and reproduction of many pathogens.</li><li>IgG is the most abundant antibody in plasma, crosses the placenta and gives long-term immunity; IgA is found in tears, saliva, mucus and breast milk.</li><li>Natural passive immunity reaches the baby as maternal IgG through the placenta and as IgA in colostrum and breast milk.</li><li>Herd immunity arises when a large enough fraction of the population is immune, breaking the chain of transmission of infection.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Innate immunity has no memory, so the same innate response occurs on every exposure, which is why vaccination is needed for lasting protection.</li><li>Natural passive immunity from maternal antibodies is immediate but short-lived and creates no memory in the baby.</li><li>Only IgG crosses the placenta; IgA is instead transferred to the infant in colostrum and breast milk.</li><li>T lymphocytes do not produce antibodies — only plasma cells derived from B cells do; helper T cells coordinate the response instead.</li><li>Long-term protection is provided by memory cells rather than by antibody level alone, since antibody titres fall after an infection.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>'Born versus built': innate immunity is present at birth, adaptive immunity is built during life.</li><li>If a question mentions memory cells, the answer is adaptive or specific immunity.</li><li>Antibody mnemonics: G goes through the placenta, M is the first major responder, A is in secretions, E is for allergy and parasites, D is the B-cell receptor.</li><li>Active means your own body makes the antibodies (slow, lasting, memory); passive means ready-made antibodies are given (fast, temporary, no memory).</li><li>Vaccine gives a weakened or killed antigen and builds memory; antivenom or anti-tetanus serum supplies antibodies and is passive.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>The innate versus adaptive comparison table is the most common 5-mark structured question in this topic.</li><li>One-mark MCQs ask for the antibody class matched to a function: IgG placenta, IgM first, IgA mucosal, IgE allergy, IgD B-cell receptor.</li><li>Active versus passive immunity questions usually require two examples of each and an explanation of why one is longer lasting (2-3 marks).</li><li>Vaccination and herd immunity often form the last part of a 5-mark question on communicable disease.</li><li>Autoimmune disease and allergy questions test the difference between an attack on self and a response to a harmless antigen (2 marks each).</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Compare innate and adaptive immunity in a table of at least five features.</li><li>Explain how antibodies work to eliminate a pathogen.</li><li>What is the difference between active and passive immunity? Give one example of each.</li><li>Describe the mechanism of vaccination and how herd immunity develops.</li><li>List the five classes of immunoglobulin with one function of each.</li><li>Explain why an autoimmune disease develops and name two examples.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following features belongs only to adaptive immunity?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>It is present from birth</li><li>It has immunological memory</li><li>It uses neutrophils and macrophages</li><li>It acts as the first line of defence</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Only adaptive immunity forms memory cells after the first exposure. Innate immunity is present at birth, acts immediately and responds in the same non-specific way every time.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Which antibody class appears first in a primary immune response?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>IgG</li><li>IgA</li><li>IgM</li><li>IgE</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>IgM is secreted first because its large pentameric structure gives high binding strength; IgG follows and provides the long-term immunity.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>A newborn receives antibodies from its mother's milk. This is an example of:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Naturally acquired active immunity</li><li>Artificially acquired active immunity</li><li>Naturally acquired passive immunity</li><li>Artificially acquired passive immunity</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The baby receives ready-made IgA instead of producing it, so the transfer is natural (mother to infant) and passive (no memory cells are formed).</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>The main class of antibody involved in allergic reactions is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>IgG</li><li>IgE</li><li>IgM</li><li>IgD</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>IgE binds to mast cells; when the allergen binds to this IgE, the mast cells release histamine, producing sneezing, itching and rash, and in severe cases anaphylaxis.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Protection given by an antivenom injection is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Slow to act but long lasting</li><li>Immediate but temporary, with no memory cells formed</li><li>Slow and permanent</li><li>Effective only after the immune system makes memory cells</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>An antivenom supplies pre-formed antibodies, giving instant protection that is broken down over a few weeks. Immunity from a vaccine is slower to develop but produces memory cells.</p></div></div></div></section>
+<section class="field"><h2>Examples</h2><ul><li>Innate immunity is ready at birth: skin, mucus, acid in the stomach, and phagocytes that engulf invaders without learning their identity.</li><li>Adaptive immunity learns one particular antigen. Lymphocytes do that work, and they leave memory cells after the first meeting.</li><li>B cells make antibodies, and each antibody fits one antigen, so the response is specific rather than a general barrier.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Innate immunity is ready at birth: skin, mucus, acid in the stomach, and phagocytes that engulf invaders without learning their identity.</li><li>Adaptive immunity learns one particular antigen. Lymphocytes do that work, and they leave memory cells after the first meeting.</li><li>B cells make antibodies, and each antibody fits one antigen, so the response is specific rather than a general barrier.</li><li>T cells kill infected body cells and help other cells of the immune system respond to the same antigen.</li><li>A vaccine shows the immune system an antigen, or a harmless form of it, so memory cells form before the real infection arrives.</li><li>Specificity and memory are the two words that separate adaptive immunity from a wall of skin or a phagocyte that eats anything foreign.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Do not swap the two sides of a contrast.</li><li>A formula or a sequence is worthless if the example contradicts it.</li></ul></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Antibodies are produced by</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>B cells</li><li>Red cells as their only job</li><li>Viruses</li><li>The skin alone</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Innate immunity</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Remembers one virus for life as its defining trait</li><li>Is a general defence present from the start</li><li>Is the same thing as a vaccine brand</li><li>Occurs only in plants</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>A vaccine works mainly by</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Building memory against an antigen</li><li>Replacing the stomach</li><li>Killing every bacterium in the soil</li><li>Being an antibiotic</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Specificity means</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>One response fits a particular antigen</li><li>Every antibody fits every virus</li><li>Skin blocks sunlight only</li><li>There is no memory</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A child is vaccinated against a virus and later meets that virus. Which arm of immunity stops the second meeting quickly, and why?</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>The vaccine presented the antigen without the full disease.</li><li>B cells and T cells responded and left memory cells.</li><li>On the later meeting those memory cells respond faster and more strongly.</li><li>That is adaptive immunity. Skin alone would not know this virus from any other.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>Adaptive immunity, because of memory and specificity.</p></div></div></div></section>
+<section class="field"><h2>Visual Type</h2><p>bacterial-cell</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>Innate defence is general. Adaptive defence learns a particular antigen and remembers it.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li><h4>1. Immune System Overview</h4></li><li>The immune system protects the body against pathogens and foreign substances.</li><li><h4>2. Innate Immunity (Non-specific)</h4></li><li><ul>
+<li>Present from birth</li>
+</ul></li><li><ul>
+<li>First line of defense</li>
+</ul></li><li><ul>
+<li><strong>Physical barriers</strong>: Skin, mucous membranes</li>
+</ul></li><li><ul>
+<li><strong>Chemical barriers</strong>: Stomach acid, lysozyme in tears</li>
+</ul></li><li><ul>
+<li><strong>Phagocytes</strong>: Neutrophils, macrophages engulf pathogens</li>
+</ul></li><li><ul>
+<li><strong>Inflammation</strong>: Redness, swelling, heat, pain</li>
+</ul></li><li><ul>
+<li><strong>Fever</strong>: Elevated temperature inhibits pathogen growth</li>
+</ul></li><li><ul>
+<li><strong>Natural Killer cells</strong>: Destroy infected host cells</li>
+</ul></li><li><h4>3. Adaptive Immunity (Specific)</h4></li><li><ul>
+<li>Develops over lifetime</li>
+</ul></li><li><ul>
+<li>Specific to particular pathogens</li>
+</ul></li><li><ul>
+<li>Has memory (immunological memory)</li>
+</ul></li><li><ul>
+<li><strong>Humoral immunity</strong>: B cells produce antibodies</li>
+</ul></li><li><ul>
+<li><strong>Cell-mediated immunity</strong>: T cells destroy infected cells</li>
+</ul></li><li><h4>4. Antibodies (Immunoglobulins)</h4></li><li><ul>
+<li><strong>IgG</strong>: Most abundant, crosses placenta, long-term immunity</li>
+</ul></li><li><ul>
+<li><strong>IgM</strong>: First responder, large pentamer</li>
+</ul></li><li><ul>
+<li><strong>IgA</strong>: Mucosal immunity (tears, saliva, breast milk)</li>
+</ul></li><li><ul>
+<li><strong>IgE</strong>: Allergic reactions, parasitic infections</li>
+</ul></li><li><ul>
+<li><strong>IgD</strong>: B cell receptor</li>
+</ul></li><li><h4>5. Active vs Passive Immunity</h4></li><li><ul>
+<li><strong>Active</strong>: Body produces its own antibodies (infection or vaccination)</li>
+</ul></li><li><ul>
+<li><strong>Passive</strong>: Receives pre-made antibodies (mother to baby, antivenom)</li>
+</ul></li><li><h4>6. Vaccination</h4></li><li><ul>
+<li>Introduces weakened/killed antigen to stimulate active immunity</li>
+</ul></li><li><ul>
+<li>Creates memory cells for faster response on re-exposure</li>
+</ul></li><li><ul>
+<li>Herd immunity: When enough people are immune, disease spread is limited</li>
+</ul></li><li><h4>7. Autoimmune Diseases</h4></li><li><ul>
+<li>Immune system attacks body's own cells</li>
+</ul></li><li><ul>
+<li>Examples: Rheumatoid arthritis, Type 1 diabetes, Lupus, Multiple sclerosis</li>
+</ul></li><li><h4>8. Allergies</h4></li><li><ul>
+<li>Hypersensitive response to harmless antigens (allergens)</li>
+</ul></li><li><ul>
+<li>Mediated by IgE, mast cells release histamine</li>
+</ul></li><li><ul>
+<li>Examples: Hay fever, asthma, food allergies, anaphylaxis</li>
+</ul></li><li><h4>9. Entrance Exam Focus</h4></li><li>Distinguish innate vs adaptive; Identify antibody types; Explain vaccination principle.</li><li>Innate immunity is ready at birth: skin, mucus, acid in the stomach, and phagocytes that engulf invaders without learning their identity.</li><li>Adaptive immunity learns one particular antigen. Lymphocytes do that work, and they leave memory cells after the first meeting.</li><li>B cells make antibodies, and each antibody fits one antigen, so the response is specific rather than a general barrier.</li><li>T cells kill infected body cells and help other cells of the immune system respond to the same antigen.</li><li>A vaccine shows the immune system an antigen, or a harmless form of it, so memory cells form before the real infection arrives.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Bounds</h2><ul><li>Class 11 boundary: stop at the characters in this note.</li><li>Do not invent a rank or a count.</li></ul></section>
+  <nav class="pager"><a href="05-pathogens-and-diseases.html" title="Pathogens and diseases">‹ Pathogens and diseases</a><a class="mid" href="../../../../../_subjects/class-11-biology.html">Biology</a><span></span></nav>
+</div></body></html>

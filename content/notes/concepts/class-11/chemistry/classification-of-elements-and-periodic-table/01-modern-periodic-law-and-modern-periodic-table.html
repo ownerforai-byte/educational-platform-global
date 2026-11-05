@@ -1,0 +1,215 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Modern Periodic Law and Modern Periodic Table</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Chemistry  /  Classification Of Elements And Periodic Table</div>
+    <h1 class="doc">Modern Periodic Law and Modern Periodic Table</h1>
+    <div class="meta"><span>Class 11</span><span>Chemistry</span><span>Classification Of Elements And Periodic Table</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>classification-of-elements-and-periodic-table</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>modern-periodic-law-and-modern-periodic-table</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Historical Evolution of Periodic Classification</h4></li><li>• <strong>Dobereiner's Law of Triads (1829):</strong> Grouped elements into triads where atomic mass of middle element was roughly arithmetic mean of first and third (e.g., Li 7, Na 23, K 39; Ca 40, Sr 88, Ba 137; Cl 35.5, Br 80, I 127). Failed because only a few triads could be identified.</li><li>• <strong>Newlands' Law of Octaves (1865):</strong> When elements are arranged in order of increasing atomic mass, every eighth element shows similar physical and chemical properties like musical notes (Sa, Re, Ga, Ma...). Failed after Calcium (valid only up to Ca, Z=20) and could not accommodate noble gases discovered later.</li><li>• <strong>Lothar Meyer's Curve (1869):</strong> Plotted atomic volume against atomic weight. Alkali metals occupied sharp peaks; alkaline earth metals occupied descending curves; halogens occupied ascending slopes; transition metals occupied valleys.</li><li>• <strong>Mendeleev's Periodic Law (1869):</strong> 'The physical and chemical properties of elements are periodic functions of their atomic masses.' Mendeleev left gaps for undiscovered elements (Eka-Boron = Scandium, Eka-Aluminium = Gallium, Eka-Silicon = Germanium). Anomalies: Inverted pairs (Ar 39.9 before K 39.1; Co 58.9 before Ni 58.7; Te 127.6 before I 126.9), no fixed position for Hydrogen, isotopes could not be accommodated.</li><li><h4>2. Moseley's Experiment and Modern Periodic Law (1913)</h4></li><li>• English physicist Henry Moseley bombarded various metal anticathodes with high-speed cathode rays (electrons) and studied characteristic X-ray emission spectra.</li><li>• <strong>Moseley's Law:</strong> The square root of the frequency (√ν) of the characteristic X-ray spectral line is directly proportional to the atomic number (Z) of the target element:</li><li>  <span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1.04em;vertical-align:-0.1908em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8492em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord" style="padding-left:0.833em;"><span class="mord mathnormal" style="margin-right:0.0637em;">ν</span></span></span><span style="top:-2.8092em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.08em" viewBox="0 0 400000 1080" preserveAspectRatio="xMinYMin slice"><path d="M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.1908em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.0715em;">Z</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">b</span><span class="mclose">)</span></span></span></span></span></li><li>  where ν = frequency of K_α X-ray line, Z = atomic number (nuclear charge), a and b are constants characteristic of the spectral line series (screening constant b ≈ 1 for K-series).</li><li>• <strong>Fundamental Conclusion:</strong> Plot of √ν vs Z yields a straight line, whereas plot of √ν vs atomic mass (A) does not. This conclusively proved that <strong>atomic number (Z)</strong>, representing the net positive nuclear charge (number of protons), is the fundamental property governing the chemical identity of elements, NOT atomic mass.</li><li>• <strong>Statement of Modern Periodic Law:</strong> 'The physical and chemical properties of elements are periodic functions of their atomic numbers.'</li><li><h4>3. Resolution of Mendeleev's Anomalies by Modern Periodic Table</h4></li><li>• <strong>Anomalous Pairs Resolved:</strong> Argon (Z=18) naturally precedes Potassium (Z=19); Cobalt (Z=27) naturally precedes Nickel (Z=28); Tellurium (Z=52) naturally precedes Iodine (Z=53) purely by increasing atomic numbers, regardless of atomic weights.</li><li>• <strong>Position of Isotopes:</strong> Since isotopes share identical atomic numbers (same Z, different mass number A), they occupy one single position in the periodic table without conflict.</li><li>• <strong>Scientific Division into Blocks:</strong> Reflects filling of electron shells according to quantum mechanics (Aufbau principle, Pauli exclusion, Hund's rule).</li><li><h4>4. Structural Layout of the Long Form (Bohr's Form) Periodic Table</h4></li><li>• <strong>Periods (7 Horizontal Rows):</strong> Corresponds to principal quantum number n of outermost valence shell.</li><li><ul>
+<li>Period 1 (n=1): 2 elements (1s²)</li>
+</ul></li><li><ul>
+<li>Period 2 (n=2): 8 elements (2s² 2p⁶)</li>
+</ul></li><li><ul>
+<li>Period 3 (n=3): 8 elements (3s² 3p⁶)</li>
+</ul></li><li><ul>
+<li>Period 4 (n=4): 18 elements (4s² 3d¹⁰ 4p⁶)</li>
+</ul></li><li><ul>
+<li>Period 5 (n=5): 18 elements (5s² 4d¹⁰ 5p⁶)</li>
+</ul></li><li><ul>
+<li>Period 6 (n=6): 32 elements (6s² 4f¹⁴ 5d¹⁰ 6p⁶, including Lanthanides ₅₈Ce–₇₁Lu)</li>
+</ul></li><li><ul>
+<li>Period 7 (n=7): 32 elements (7s² 5f¹⁴ 6d¹⁰ 7p⁶, including Actinides ₉₀Th–₁₀₃Lr)</li>
+</ul></li><li>• <strong>Groups (18 Vertical Columns):</strong> Elements having identical outer electronic configurations and exhibiting similar chemical properties.</li><li>• <strong>IUPAC Nomenclature for Elements with Z &gt; 100:</strong> Uses numerical roots for digits: 0 = nil, 1 = un, 2 = bi, 3 = tri, 4 = quad, 5 = pent, 6 = hex, 7 = sept, 8 = oct, 9 = enn. Suffix '-ium'. Example: 104 = Unnilquadium (Unq), 118 = Ununoctium (Uuo / Oganesson).</li><li><h2>Modern periodic law and modern periodic table</h2>
+<h3>1. Introduction</h3>
+<p>Chemical picture of <strong>Modern periodic law and modern periodic table</strong> — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Classification of Elements and Periodic Table fill pass.</p>
+<h3>2. Concepts and definitions</h3>
+<h4>Modern periodic law and modern periodic table</h4>
+<p>Each definition exam-safe; each formula with its validity condition (§3, block II).</li><li><h3>3. Reaction and equation block</h3>
+<p>Balanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).</p>
+<p><strong>Table 1 — Classification and trends</strong></p>
+<table><thead><tr><th>Family or case</th><th>Rule or trend</th><th>Example</th><th>Exception</th></tr></thead><tbody></tbody></table></li><li><h3>4. Mechanism, IUPAC and structures</h3>
+<p>Organic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).</p>
+<p><strong>Table 2 — Distinguish and reagents</strong></p>
+<table><thead><tr><th>Pair or reagent</th><th>Test or point of difference</th><th>Observation</th><th>Example</th></tr></thead><tbody></tbody></table></li><li><h3>5. Diagrams and figures</h3>
+<ul>
+<li><strong>D1</strong> — Modern periodic law and modern periodic table — curve or trend plot (authored SVG, plotted from note data)</li>
+<li><strong>D2</strong> — Modern periodic law and modern periodic table — second structure, flow or plot (authored SVG — English labels)</li>
+<li><strong>D3</strong> — Modern periodic law and modern periodic table — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
+<li><strong>D4</strong> — Modern periodic law and modern periodic table — application or industrial figure (curated external — license recorded at fill)</li>
+</ul>
+<p>Slots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).</p>
+<p><strong>Table 3 — Summary and marks map</strong></p>
+<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table></li><li><h3>6. Worked problems</h3>
+<p>≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.</p>
+<h3>7. Key terms and reaction map</h3>
+<p>Named reactions, conversions and &quot;distinguish between&quot; pairs gathered where the reaction block points to them.</li><li><h3>8. Exam Zone and self-check</h3>
+<p>Named-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</p>
+<p>Reaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ Modern Periodic Law is based on atomic mass like Mendeleev's law. ✅ Modern Periodic Law is strictly based on atomic number (Z), discovered by Moseley via X-ray spectroscopy.</li><li>❌ Isotopes need separate positions in the modern periodic table. ✅ Isotopes possess identical atomic numbers, so they naturally share the exact same slot in the modern table.</li><li>❌ Cobalt was placed before Nickel by Mendeleev as an error. ✅ Mendeleev placed Co before Ni based on chemical properties despite Co being heavier (58.93 vs 58.69); modern table confirms Co (Z=27) correctly precedes Ni (Z=28).</li><li>❌ Moseley's graph plotted frequency ν against atomic weight. ✅ Moseley plotted the square root of frequency (√ν) against atomic number (Z), obtaining a perfect straight line: √ν = a(Z - b).</li><li>❌ Period number corresponds to total number of electrons. ✅ Period number corresponds directly to the principal quantum number (n) of the outermost valence electron shell.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>State Moseley's Law and derive its significance in formulating the Modern Periodic Table.</li><li>Write the IUPAC systematic name and symbol for elements with atomic numbers 108, 114, 117, and 119.</li><li>How does the Long Form of the Periodic Table resolve the position of isotopes and anomalous pairs of Mendeleev?</li><li>Calculate the maximum number of electrons and elements accommodated in the 4th, 5th, and 6th periods using quantum orbital capacities.</li><li>Predict the period, group, and block for the element having atomic number Z = 35 and Z = 56.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Henry Moseley established atomic number as the genuine identity of chemical elements in 1913, shortly before dying in World War I at age 27.</li><li>The 7 periods of the modern table correspond exactly to principal energy levels n = 1 to 7.</li><li>Periodicity in chemical properties arises from the periodic recurrence of similar valence shell electronic configurations.</li></ul></section>
+<section class="field"><h2>Visual Type</h2><p>periodic-table</p></section>
+<section class="field"><h2>Tab Group</h2><p>Periodic-Table-Trends-Learner-Notes</p></section>
+<section class="field"><h2>Source</h2><p>skeleton-v2</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../_subjects/class-11-chemistry.html">Chemistry</a><a href="02-classification-into-groups-periods-and-blocks.html" title="Classification into Groups, Periods and Blocks (s, p, d, f Blocks &amp; Metal Classifications)">Classification into Groups, Periods and Block… ›</a></nav>
+</div></body></html>

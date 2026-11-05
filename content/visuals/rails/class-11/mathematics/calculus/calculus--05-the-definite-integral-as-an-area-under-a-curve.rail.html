@@ -1,0 +1,166 @@
+<!doctype html><html><head><meta charset="utf-8"><title>calculus--05-the-definite-integral-as-an-area-under-a-curve.rail</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Calculus</div>
+    <h1 class="doc">calculus--05-the-definite-integral-as-an-area-under-a-curve.rail</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Calculus</span></div>
+  </header>
+  <section class="field"><h2>Schema</h2><p>home-rail/v1</p></section>
+<section class="field"><h2>Draft</h2><p><code>false</code></p></section>
+<section class="field"><h2>Class SLUG</h2><p>class-11-notes</p></section>
+<section class="field"><h2>Subject SLUG</h2><p>mathematics</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>calculus</p></section>
+<section class="field"><h2>Unit Title</h2><p>Calculus</p></section>
+<section class="field"><h2>Syllabus Topics</h2><ul><li>Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions</li><li>Continuity of a function, types of discontinuity, graphs of discontinuous function</li><li>Derivatives: derivative of a function, derivatives of algebraic, trigonometric, inverse trigonometric, exponential and logarithmic functions by definition (simple forms)</li><li>Rules of differentiation; derivatives of parametric and implicit functions; higher order derivatives</li><li>Geometric interpretation of derivative; monotonicity of a function, interval of monotonicity, extreme values of a function, concavity, points of inflection</li><li>Anti-derivatives: integration using basic integrals, integration by substitution and by parts methods</li><li>The definite integral; the definite integral as an area under the given curve; area between two curves</li></ul></section>
+<section class="field"><h2>Source</h2><p>platform</p></section>
+<section class="field"><h2>Agent Notes</h2><p>Generated by frontend/scripts/content/topic-rails.ts from concepts/05-the-definite-integral-as-an-area-under-a-curve.json (verbatim slices of that topic's concept record; idea-map diagram generated from its own headline ideas).</p></section>
+<section class="field"><h2>Card</h2><dl class="obj"><div class="kv"><dt>Tag</dt><dd><p>The definite integral as an area under a…</p></dd></div><div class="kv"><dt>Title</dt><dd><p>The definite integral as an area under a curve</p></dd></div><div class="kv"><dt>Href</dt><dd><p>/class-11-notes/mathematics/calculus</p></dd></div><div class="kv"><dt>Icon</dt><dd><p>Sigma</p></dd></div><div class="kv"><dt>Stat Key</dt><dd><p>pyq:mathematics</p></dd></div></dl></section>
+<section class="field"><h2>Rows</h2><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Concept</p></dd></div><div class="kv"><dt>Text</dt><dd><p>The definite integral int_a^b f(x)dx = lim(n-&gt;inf) sum f(xi*) Dx is the limit of the Riemann sums, and by the Fundamental Theorem of Calculus it equals F(b) - F(a) whenever F is an antiderivative of f, so differentiation and integration are inverse operations.…</p></dd></div><div class="kv"><dt>Figure</dt><dd><dl class="obj"><div class="kv"><dt>Svg</dt><dd><p>&lt;svg viewBox=&quot;0 0 900 640&quot; role=&quot;img&quot; aria-label=&quot;The definite integral as an area under a curve — quick idea map&quot;&gt;&lt;title&gt;The definite integral as an area under a curve — quick idea map&lt;/title&gt;&lt;rect x=&quot;180&quot; y=&quot;24&quot; width=&quot;540&quot; height=&quot;86&quot; rx=&quot;10&quot; fill=&quot;#e0f2fe&quot; stroke=&quot;#0369a1&quot; stroke-width=&quot;3&quot;/&gt;&lt;text x=&quot;450&quot; y=&quot;58&quot; text-anchor=&quot;middle&quot; font-size=&quot;23&quot; font-weight=&quot;bold&quot; fill=&quot;#0c4a6e&quot;&gt;The definite integral as an area under a curve&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;240&quot; y2=&quot;182&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;233,172 247,172 240,186&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;70&quot; y=&quot;190&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;240&quot; y=&quot;228&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;Definite integral as a&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;260&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;limit of Riemann sums:&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;292&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;int_a^b f(x)dx =&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;660&quot; y2=&quot;182&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;653,172 667,172 660,186&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;490&quot; y=&quot;190&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;660&quot; y=&quot;228&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;Fundamental Theorem of&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;260&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;Calculus: if F' = f then&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;292&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;int_a^b f(x)dx = F(b) -&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;240&quot; y2=&quot;392&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;233,382 247,382 240,396&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;70&quot; y=&quot;400&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;240&quot; y=&quot;438&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;int_a^b f(x)dx = F(b) -&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;470&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;F(a): the upper limit is&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;502&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;evaluated first and the…&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;660&quot; y2=&quot;392&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;653,382 667,382 660,396&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;490&quot; y=&quot;400&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;660&quot; y=&quot;438&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;The constant of&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;470&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;integration never appears&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;502&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;in a definite integral,&lt;/text&gt;&lt;/svg&gt;</p></dd></div><div class="kv"><dt>Caption</dt><dd><p>The definite integral as an area under a curve — quick idea map of this topic's headline ideas</p></dd></div></dl></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Formula</p></dd></div><div class="kv"><dt>Kind</dt><dd><p>formula</p></dd></div><div class="kv"><dt>Text</dt><dd><p>int_a^b f(x)dx = F(b) - F(a) Area = int_a^b |f(x)|dx</p></dd></div><div class="kv"><dt>Figure</dt><dd><dl class="obj"><div class="kv"><dt>Svg</dt><dd><p>&lt;svg viewBox=&quot;0 0 900 640&quot; role=&quot;img&quot; aria-label=&quot;The definite integral as an area under a curve — formula board&quot;&gt;&lt;title&gt;The definite integral as an area under a curve — formula board&lt;/title&gt;&lt;rect x=&quot;150&quot; y=&quot;24&quot; width=&quot;600&quot; height=&quot;80&quot; rx=&quot;10&quot; fill=&quot;#ecfdf5&quot; stroke=&quot;#047857&quot; stroke-width=&quot;3&quot;/&gt;&lt;text x=&quot;450&quot; y=&quot;58&quot; text-anchor=&quot;middle&quot; font-size=&quot;23&quot; font-weight=&quot;bold&quot; fill=&quot;#064e3b&quot;&gt;The definite integral as an area under a curve&lt;/text&gt;&lt;rect x=&quot;60&quot; y=&quot;150&quot; width=&quot;780&quot; height=&quot;150&quot; rx=&quot;10&quot; fill=&quot;#f0fdfa&quot; stroke=&quot;#0d9488&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;450&quot; y=&quot;196&quot; text-anchor=&quot;middle&quot; font-size=&quot;22&quot; fill=&quot;#134e4a&quot;&gt;int_a^b f(x)dx = F(b) - F(a)&lt;/text&gt;&lt;rect x=&quot;60&quot; y=&quot;320&quot; width=&quot;780&quot; height=&quot;150&quot; rx=&quot;10&quot; fill=&quot;#f0fdfa&quot; stroke=&quot;#0d9488&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;450&quot; y=&quot;366&quot; text-anchor=&quot;middle&quot; font-size=&quot;22&quot; fill=&quot;#134e4a&quot;&gt;Area = int_a^b |f(x)|dx&lt;/text&gt;&lt;/svg&gt;</p></dd></div><div class="kv"><dt>Caption</dt><dd><p>The definite integral as an area under a curve — formula board of this topic's own formulas</p></dd></div></dl></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Conditions</p></dd></div><div class="kv"><dt>Text</dt><dd><p>x Definite integral always positive. x Can be negative if curve is below x-axis.  ·  x int f(x)dx = F(x) + C (definite). x C cancels in definite integrals.</p></dd></div></dl></div></div><div class="item"><span class="idx">4.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Special cases</p></dd></div><div class="kv"><dt>Text</dt><dd><p>A definite integral can be negative, because the region below the x-axis contributes negatively; only the area given by int |f(x)|dx is never negative.  ·  The power rule for integration fails at n = -1, so int 1/x dx = ln|x| + C keeps the absolute value bars, and the integrand is undefined at x = 0.</p></dd></div></dl></div></div><div class="item"><span class="idx">5.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Solved</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Evaluate int_0^pi sin x dx.</p></dd></div></dl></div></div><div class="item"><span class="idx">6.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Limitation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>x Area = int f(x)dx always. x Use |f(x)| for total geometric area.</p></dd></div></dl></div></div><div class="item"><span class="idx">7.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Derivation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Evaluate a definite integral by finding an antiderivative F and computing F(b) - F(a) at the two limits.  ·  Find the area under a curve from a to b, deciding from the sign of f whether the answer is the integral itself or the integral of |f(x)|.</p></dd></div></dl></div></div><div class="item"><span class="idx">8.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Shortcut</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Strip the limits off, integrate, then put them back: write int sin x dx = -cos x first and finish with -cos b + cos a.  ·  int sin x dx = -cos x and int cos x dx = sin x, and the negative sign on cosine is the single most common source of lost marks.</p></dd></div></dl></div></div><div class="item"><span class="idx">9.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Board question</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Find the area under y = x^2 from x = 0 to x = 3.  ·  Evaluate int_1^e (1/x) dx.</p></dd></div></dl></div></div><div class="item"><span class="idx">10.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Hints</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Evaluating a standard definite integral is a 2-mark question, while one needing a substitution or a step by parts is a 5-mark question.  ·  Area under a curve and area bounded by two curves are the standard 5-mark application, and always require the limits of intersection first.</p></dd></div></dl></div></div><div class="item"><span class="idx">11.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Quick concepts</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Definite integral as a limit of Riemann sums: int_a^b f(x)dx = lim(n-&gt;inf) sum(i=1 to n) f(xi*) Dx, the signed area between the curve and the x-axis from a to b.  ·  Fundamental Theorem of Calculus: if F' = f then int_a^b f(x)dx = F(b) - F(a), so an antiderivative and a definite integral are two sides of one idea.  ·  Net area versus total area: the integral is signed, counting regions below the axis negatively, while the geometric area is int_a^b |f(x)|dx.  ·  Linearity: int_a^b [f(x) ± g(x)]dx = int_a^b f(x)dx ± int_a^b g(x)dx, and a constant multiple can be taken outside the integral.</p></dd></div></dl></div></div><div class="item"><span class="idx">12.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Key points</p></dd></div><div class="kv"><dt>Text</dt><dd><p>int_a^b f(x)dx = F(b) - F(a): the upper limit is evaluated first and the lower limit second, and the sign follows that order.  ·  The constant of integration never appears in a definite integral, because F(b) + C minus (F(a) + C) cancels it.  ·  int x^n dx = x^(n+1)/(n+1) + C, so the exponent n in the integrand becomes n + 1 in the antiderivative.  ·  When the curve crosses the axis inside [a, b], split the integral at the crossing point and use absolute values for the geometric area.</p></dd></div></dl></div></div><div class="item"><span class="idx">13.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More practice</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Find the area bounded by y = x and y = x^2.  ·  Evaluate int_0^2 (3x^2 - 4x + 1) dx and use the sign of the answer to describe the region.  ·  Evaluate int_0^1 (2x + 3)^2 dx by substitution.</p></dd></div></dl></div></div><div class="item"><span class="idx">14.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More hints</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Using the properties to simplify an integral, for example by reversing the limits, is a common 2 to 5 mark item.  ·  MCQs test the sign convention, so options giving a positive value where the curve lies below the axis act as distractors.</p></dd></div></dl></div></div><div class="item"><span class="idx">15.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>MCQ drill</p></dd></div><div class="kv"><dt>Text</dt><dd><p>The value of the definite integral from 0 to pi of sin x dx is → A  ·  The value of the definite integral from 1 to e of (1/x) dx is → B</p></dd></div></dl></div></div><div class="item"><span class="idx">16.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Study notes</p></dd></div><div class="kv"><dt>Text</dt><dd><h4>1. Definite Integral Definition  ·  int_a^b f(x)dx = lim(n-&gt;inf) sum[i=1 to n] f(xi*) Dx  ·  Represents the net area between f(x) and the x-axis from x = a to x = b.</h4></dd></div></dl></div></div><div class="item"><span class="idx">17.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Reversal and degeneracy: int_a^b f(x)dx = -int_b^a f(x)dx, and int_a^a f(x)dx = 0 for every integrable f.  ·  Standard antiderivatives: int x^n dx = x^(n+1)/(n+1) + C for n != -1, int 1/x dx = ln|x| + C, int e^x dx = e^x + C, int sin x dx = -cos x + C, int cos x dx = sin x + C.  ·  Reversing the limits changes the sign, so int_a^b f(x)dx = -int_b^a f(x)dx.</p></dd></div></dl></div></div><div class="item"><span class="idx">18.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>An antiderivative of a continuous f exists on [a, b] and the definite integral exists there too, so F(b) - F(a) is always well defined.  ·  int_a^b f(x)dx depends on the limits as well as on f, so two different integrals of the same function can differ in value and even in sign.  ·  Adding a constant to f changes the integral by that constant times (b - a), not by the constant itself.</p></dd></div></dl></div></div><div class="item"><span class="idx">19.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>int_a^b f(x)dx = lim(n-&gt;inf) sum(i=1 to n) f(xi*) Dx, the limit of the sums of areas of rectangles inscribed under the curve.  ·  If F is an antiderivative of f then int_a^b f(x)dx = F(b) - F(a); the constant of integration cancels because the same C appears in both terms.  ·  The value of a definite integral is the net area, since regions below the x-axis subtract, and the total geometric area is int_a^b |f(x)|dx.</p></dd></div></dl></div></div><div class="item"><span class="idx">20.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>int_a^a f(x)dx = 0, int_a^b f(x)dx = -int_b^a f(x)dx, and int_a^b [f(x) ± g(x)]dx = int_a^b f(x)dx ± int_a^b g(x)dx.  ·  The rule int x^n dx = x^(n+1)/(n+1) + C holds only for n != -1, so the case n = -1 must be treated separately as int 1/x dx = ln|x| + C.  ·  For area between curves, solve the intersection equation first, then integrate (top - bottom) over exactly that interval.</p></dd></div></dl></div></div><div class="item"><span class="idx">21.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Check the sign of your answer against the graph, since a curve below the axis over the whole interval must give a negative integral.  ·  Find the area bounded by two curves by locating their points of intersection and integrating the difference of the two functions between them.  ·  Use the properties of definite integrals to simplify an expression, for instance by reversing the limits or splitting a long integral into convenient pieces.</p></dd></div></dl></div></div></section>
+  <nav class="pager"><a href="calculus--05-geometric-interpretation-of-derivative-m-18adg7.rail.html" title="calculus--05-geometric-interpretation-of-derivative-m-18adg7.rail">‹ calculus--05-geometric-interpretation-of-deri…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="calculus--06-anti-derivatives-integration-using-basic-cc46ur.rail.html" title="calculus--06-anti-derivatives-integration-using-basic-cc46ur.rail">calculus--06-anti-derivatives-integration-usi… ›</a></nav>
+</div></body></html>

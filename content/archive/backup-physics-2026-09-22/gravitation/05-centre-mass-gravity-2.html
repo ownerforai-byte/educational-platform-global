@@ -1,0 +1,179 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Centre of Mass and Centre of Gravity</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Backup Physics 2026 09 22</div>
+    <h1 class="doc">Centre of Mass and Centre of Gravity</h1>
+    <div class="meta"><span>Backup Physics 2026 09 22</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>gravitation</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>centre-mass-gravity</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Duplicate Type</h2><p><code>2</code></p></section>
+<section class="field"><h2>Tab Group</h2><p>centre-of-mass-and-centre-of-gravity</p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>Centre of mass (COM):</strong> the point where the entire mass of a body (or system) may be considered to be concentrated for translational (linear) motion analysis. Position: R_cm = (Σ mᵢrᵢ)/(Σ mᵢ). For continuous bodies: R_cm = (∫r dm)/M.</li><li><strong>Centre of gravity (CG):</strong> the point where the entire weight of a body may be considered to act. In a uniform gravitational field, the CG coincides exactly with the COM. If the field is non-uniform (very large bodies, varying g), the CG may shift slightly relative to the COM.</li><li><strong>Why CG equals COM in uniform g:</strong> weight W = mg at each point, and since g is the same everywhere, the torque balance condition that defines the CG reduces to the same weighted average that defines the COM. The two centres coincide.</li><li><strong>Solved example — two masses:</strong> masses 2 kg at x = 0 and 8 kg at x = 3 m. COM: x_cm = (2×0 + 8×3)/(2+8) = 24/10 = 2.4 m. The COM is closer to the heavier mass.</li><li><strong>Solved example — system of three:</strong> 1 kg at (0,0), 2 kg at (2,0), 3 kg at (0,4). x_cm = (1×0 + 2×2 + 3×0)/6 = 4/6 = 0.67 m; y_cm = (1×0 + 2×0 + 3×4)/6 = 12/6 = 2 m. COM at (0.67, 2) m.</li><li><strong>Properties:</strong> (1) The COM of a uniform, symmetric body lies at its geometric centre. (2) The COM of two bodies lies on the line joining them. (3) For irregular bodies the COM can lie OUTSIDE the material (e.g., a ring, a boomerang, a bent L-shape). (4) The total linear momentum of a system equals M·V_cm — external forces alone can change V_cm.</li><li><strong>Finding CG experimentally (NEB practical):</strong> suspend the body from two different points; the two vertical lines through the suspension points intersect at the centre of gravity. Plumb lines are used — the intersection of the two suspension lines locates the CG.</li><li><strong>Applications:</strong> designing stable structures (ships, cars, tables) keeps the CG low and inside the base; balancing acts use alignment of the CG above the support; in projectiles, the COM follows a smooth parabola even if the object rotates; spacecraft alignment uses the COM.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ 'COM and CG are always at the material centre.' ✅ Only for uniform, symmetric bodies. A ring's COM is at its empty centre; an L-shaped body has its COM outside its material.</li><li>❌ 'COM and CG are always the same point.' ✅ They coincide in a UNIFORM gravitational field. For very large objects in a non-uniform field, they differ slightly.</li><li>❌ 'COM is a force point.' ✅ COM is a mass-weighted average position — a geometric point for translational dynamics, not a force.</li><li>❌ 'To find the COM, only the largest mass matters.' ✅ All masses contribute proportionally: R_cm = Σmᵢrᵢ/Σmᵢ.</li><li>❌ 'The COM moves when the body spins.' ✅ The COM of an isolated system moves uniformly (or stays still); spinning happens about the COM.</li><li>❌ 'The CG of an object must lie within the object.' ✅ It can lie outside the material — ring, hollow sphere, L-shape, boomerang.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Find the COM of masses 3 kg (at 0) and 7 kg (at 4 m).</li><li>Find the COM of three masses arranged in a right triangle.</li><li>Locate the COM of two identical rods joined in an L-shape.</li><li>Show CG = COM when g is uniform, using torque balance.</li><li>Explain how a circus performer keeps balance using CG.</li><li>Where is the COM of a uniform ring? Does it lie inside the material?</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The centre of mass concept lets us treat multi-body problems as single-particle problems — the basis of all rigid-body and celestial mechanics.</li><li>For a system of only two masses, the COM divides the line joining them in the inverse ratio of the masses.</li><li>In projectile motion, the COM follows the ideal parabola even when the projectile tumbles.</li><li>A body rotating freely rotates about its COM — this is why juggling clubs spin about their balance point.</li><li>Satellites and spacecraft align around their COM for stable attitude control — even small COM shifts change flight behaviour.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>gravitation</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>gravitation</p></section>
+<section class="field"><h2>Examples</h2><ul><li>Two masses: 2 kg at 0 and 8 kg at 3 → COM at 2.4 m (closer to the 8 kg).</li><li>Three masses: 1@(0,0), 2@(2,0), 3@(0,4) → COM at (0.67, 2).</li><li>Uniform rod: COM at length/2.</li><li>Uniform ring: COM at its centre (empty space).</li><li>L-shaped rod: COM lies outside the bend, inside the right angle area.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Masses of 2 kg and 6 kg are placed at x = 0 and x = 4 m. Find their centre of mass.</li><li>Three point masses 1 kg, 2 kg, 3 kg lie at (0,0), (3,0), (0,4) m. Find the COM.</li><li>Two uniform rods, each 1 m long and 1 kg, are joined at right angles forming an L. Find the COM of the L.</li><li>Explain when the centre of gravity differs from the centre of mass.</li><li>A 50 cm ruler is pivoted 10 cm from its edge; where is its centre of gravity?</li><li>Describe how you would locate the CG of an irregular-shaped lamina in the laboratory.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Centre of mass (discrete): R_cm = Σmᵢrᵢ / Σmᵢ</li><li>Centre of mass (continuous): R_cm = ∫r dm / ∫ dm</li><li>Two masses: x_cm = (m₁x₁ + m₂x₂)/(m₁ + m₂)</li><li>Velocity of COM: V_cm = Σmᵢvᵢ / M</li><li>Acceleration of COM: a_cm = Σmᵢaᵢ / M = F_ext / M</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>COM is a mass-weighted average position; CG is where the total weight acts.</li><li>In a uniform g, COM and CG coincide.</li><li>For uniform symmetric bodies, COM is at the geometric centre.</li><li>COM can lie outside the material (ring, L-shape, boomerang).</li><li>The motion of the COM is governed only by external forces.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>The centre of mass is the mass-weighted average position of a body or system: R_cm = Σmᵢrᵢ/M; the centre of gravity is the point where total weight acts. They coincide in a uniform gravitational field. The COM may lie outside the material and its motion is controlled only by external forces — the key to rigid-body and stability analysis.</p></section>
+<section class="field"><h2>Special Notes</h2><ul><li>In a uniform gravitational field the location of CG equals COM — that is almost always true in school problems.</li><li>For symmetric uniform bodies, COM = geometric centre (no calculation needed).</li><li>The COM of a system of two masses divides the connecting line inversely to the masses.</li><li>Suspend-and-plumb-line is the standard experiment to locate the CG.</li><li>NEB often asks to compute the COM of simple systems and to compare COM with CG.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>The centre of mass of a system is the mass-weighted average position: R_cm = Σmᵢrᵢ/Σmᵢ.</li><li>The centre of gravity is the point where the entire weight may be considered to act.</li><li>In a uniform gravitational field the centre of gravity coincides with the centre of mass.</li><li>For uniform symmetric bodies the COM is at the geometric centre.</li><li>External forces alone determine the motion of the centre of mass.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>COM is the mass-weighted average position — all masses contribute in proportion to their mass.</li><li>CG = COM in a uniform gravitational field.</li><li>COM of a uniform symmetric body is at its geometric centre.</li><li>The COM can lie outside the material — rings, L-shapes, hollow spheres.</li><li>The motion of the COM depends only on external forces.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>For two masses: COM divides the join inversely to the masses (closer to the heavier).</li><li>Uniform rod → COM at L/2; uniform square → centre; ring → centre (empty).</li><li>Velocity of COM: V_cm = P_total/M — total momentum divided by total mass.</li><li>To locate CG experimentally: hang from two points and mark the verticals.</li><li>External forces only change V_cm — internal forces (collisions, explosions) cannot.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>COM calculation for two/three point masses is a standard numerical.</li><li>Comparing COM and CG is a frequent short-answer question.</li><li>Locating CG by suspending a lamina is a common practical question.</li><li>COM of composite bodies (L-shape, rod + disk) appears in exams.</li><li>Know that the COM follows a parabola even for a spinning projectile.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The centre of mass of a uniform rod lies at its:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>one end</li><li>middle</li><li>quarter point</li><li>varies with length</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>In a uniform gravitational field, the centre of gravity:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>differs from COM</li><li>coincides with COM</li><li>is above the COM</li><li>is below the COM</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>The centre of mass of a uniform ring lies:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>on the ring</li><li>at the centre (outside the material)</li><li>outside the ring</li><li>at a point dependent on radius</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Masses 2 kg at x = 0 and 4 kg at x = 6 m have their COM at:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>2 m</li><li>3 m</li><li>4 m</li><li>6 m</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Which quantity governs the motion of the centre of mass?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>internal forces</li><li>external forces</li><li>friction only</li><li>contact forces only</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>COM = Σmᵢrᵢ/Σmᵢ; CG = point where total weight acts.</li><li>COM and CG coincide in uniform g.</li><li>Uniform symmetric bodies have COM at the geometric centre.</li><li>The COM can lie outside the material of the body.</li><li>External forces alone determine COM motion.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Compute the COM for two and three point-mass systems.</li><li>Compute the COM of composite uniform bodies (L-shape, rod + mass).</li><li>Describe the experimental method to find the CG of a lamina.</li><li>Explain the COM = CG condition.</li><li>Show that internal forces cannot change the velocity of the COM.</li></ul></section>
+  <nav class="pager"><a href="04-variation-of-g-due-to-altitude-and-depth.html" title="Variation of g Due to Altitude and Depth">‹ Variation of g Due to Altitude and Depth</a><a class="mid" href="../../../_subjects/general-backup-physics-2026-09-22.html">Backup Physics 2026 09 22</a><a href="05-centre-mass-gravity.html" title="Centre of Mass and Centre of Gravity">Centre of Mass and Centre of Gravity ›</a></nav>
+</div></body></html>

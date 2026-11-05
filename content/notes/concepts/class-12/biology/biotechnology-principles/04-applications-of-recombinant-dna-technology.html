@@ -1,0 +1,205 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Applications of recombinant DNA technology</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 12  /  Biology  /  Biotechnology Principles</div>
+    <h1 class="doc">Applications of recombinant DNA technology</h1>
+    <div class="meta"><span>Class 12</span><span>Biology</span><span>Biotechnology Principles</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>biotechnology-principles</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>applications-of-recombinant-dna-technology</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>generated</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
+<section class="field"><h2>Visual Type</h2><p>dna-double-helix</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>Applications of recombinant DNA all start from a gene carried on a double helix the host can copy.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li>Recombinant DNA is used wherever a cell can be instructed to make a molecule that is hard to collect from its natural source. The applications sit in medicine, farming, industry and the cleanup of pollutants.</li><li>In medicine the landmark product is human insulin made in E. coli, approved as Humulin in 1982. The amino-acid sequence is the human one, so the immune reactions that came with some animal insulins became less of a problem. The same logic produces other proteins: human growth hormone, and vaccines such as the hepatitis B surface antigen made in yeast.</li><li>Diagnosis uses the same toolkit. PCR amplifies a pathogen's DNA until a test can see it. ELISA detects an antigen or an antibody with an enzyme-linked reaction. One finds nucleic acid. The other finds protein. They answer different clinical questions.</li><li>Gene therapy delivers a working copy of a defective gene into a patient's somatic cells. The correction is for that person. It is not passed to children, because the germline is not the target of the permitted treatments. The first approved attempt, in 1990, was for ADA deficiency.</li><li>In agriculture the same technology produces Bt crops and other modified plants. In the environment, microbes have been designed or selected to break down oil and other pollutants, which is bioremediation. The microbe eats the waste. It does not make the waste vanish by a physical filter alone.</li><li>Every application still depends on the pipeline: a correct gene, a host that can express it, and a product that has been checked. A recombinant protein is not automatically safe or correctly folded. Purification and testing are part of the application, not paperwork after the science.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Notes</h2><ul><li>Recombinant DNA is used wherever a cell can be instructed to make a molecule that is hard to collect from its natural source. The applications sit in medicine, farming, industry and the cleanup of pollutants.</li><li>In medicine the landmark product is human insulin made in E. coli, approved as Humulin in 1982. The amino-acid sequence is the human one, so the immune reactions that came with some animal insulins became less of a problem. The same logic produces other proteins: human growth hormone, and vaccines such as the hepatitis B surface antigen made in yeast.</li><li>Diagnosis uses the same toolkit. PCR amplifies a pathogen's DNA until a test can see it. ELISA detects an antigen or an antibody with an enzyme-linked reaction. One finds nucleic acid. The other finds protein. They answer different clinical questions.</li><li>Gene therapy delivers a working copy of a defective gene into a patient's somatic cells. The correction is for that person. It is not passed to children, because the germline is not the target of the permitted treatments. The first approved attempt, in 1990, was for ADA deficiency.</li><li>In agriculture the same technology produces Bt crops and other modified plants. In the environment, microbes have been designed or selected to break down oil and other pollutants, which is bioremediation. The microbe eats the waste. It does not make the waste vanish by a physical filter alone.</li><li>Every application still depends on the pipeline: a correct gene, a host that can express it, and a product that has been checked. A recombinant protein is not automatically safe or correctly folded. Purification and testing are part of the application, not paperwork after the science.</li><li><h2>Applications of recombinant DNA technology</h2>
+<h3>1. Introduction</h3>
+<p>Opening frame for <strong>Applications of recombinant DNA technology</strong> — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Biotechnology — Principles and Processes fill pass.</p>
+<h3>2. Hierarchy body — every syllabus sub-point</h3>
+<h4>Applications of recombinant DNA technology</h4>
+<p>Fill order per concept: definition → structure → process → significance (§3.2). Step-by-step numbered points, Pioneer style.</li><li><h3>3. Classified tables</h3>
+<p><strong>Table 1 — Key ideas and worked angles</strong></p>
+<table><thead><tr><th>Idea</th><th>Statement</th><th>Where used</th><th>Worked example</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 2 — Key ideas and worked angles</strong></p>
+<table><thead><tr><th>Idea</th><th>Statement</th><th>Where used</th><th>Worked example</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 3 — Summary and marks map</strong></p>
+<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB marks trend</th></tr></thead><tbody></tbody></table>
+<p>Tables carry examples in every classification and characteristics row, ≤ 12 rows, and each is referenced from the body text (§3.3).</li><li><h3>4. Diagrams and figures</h3>
+<ul>
+<li><strong>D1</strong> — DNA processes and genetic-cross diagrams (authored SVG — English labels, viewBox 900×640)</li>
+<li><strong>D2</strong> — Applications of recombinant DNA technology — process or life-cycle flow (authored SVG — English labels)</li>
+<li><strong>D3</strong> — Applications of recombinant DNA technology — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
+<li><strong>D4</strong> — Applications of recombinant DNA technology — comparison or application figure (curated external — license recorded at fill)</li>
+</ul>
+<p>Figure slots are declared up front (§3.4): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y), every external figure license-recorded at fill.</li><li><h3>5. Worked examples and applications</h3>
+<p>≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass.</p>
+<h3>6. Key terms and statements</h3>
+<p>Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).</li><li><h3>7. Exam Zone</h3>
+<p>NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</li><li><h3>8. Summary and self-check</h3>
+<p>5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Humulin is human-sequence insulin from a microbe. It is not insulin extracted from cattle.</li><li>ELISA and PCR are not two names for one test. PCR copies DNA. ELISA detects antigen or antibody.</li><li>Somatic gene therapy is not inherited. Germline alteration is a different, and clinically disallowed, act.</li><li>Bioremediation uses living metabolism. It is not the same thing as Bt cotton.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Humulin, 1982: recombinant human insulin from E. coli.</li><li>Hepatitis B vaccine antigen can be made in yeast.</li><li>PCR detects nucleic acid. ELISA detects antigen or antibody.</li><li>ADA gene therapy in 1990 was somatic.</li><li>Bt crops and bioremediation are non-medical applications.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>The product matches the human gene because the human gene was the one cloned.</li><li>A diagnostic method has to match the molecule you are looking for.</li><li>Somatic correction ends with the patient.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>A diabetic patient receives insulin whose sequence came from the human gene expressed in bacteria.</li><li>Hepatitis B surface protein made by yeast becomes the antigen in a vaccine, with no need to grow the virus.</li><li>An oil spill is treated with microbes able to degrade hydrocarbons.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Yeast and bacteria are used as hosts because they grow fast and accept recombinant plasmids.</li><li>An enzyme-linked antibody test reports a protein. A polymerase reaction reports a nucleic acid.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Medicine path: human gene → host (E. coli or yeast) → fermentation → purified protein or vaccine antigen.</li><li>Diagnosis: PCR for DNA or RNA. ELISA for antigen or antibody.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Give three applications in three different fields.</li><li>Contrast PCR and ELISA in one line each.</li><li>Explain why recombinant insulin reduced the problem of animal insulin.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>What was Humulin, and in which year was it approved?</li><li>Why is ADA gene therapy described as somatic?</li><li>How can a recombinant microbe help after an oil spill?</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Spread the examples across medicine, diagnosis, agriculture and environment. Four fields score better than insulin repeated four times.</li><li>If insulin is your medical example, say the sequence is human and the host is bacterial.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>1982 Humulin. 1990 ADA.</li><li>PCR = nucleic acid. ELISA = protein.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Leave the Cry-protein mechanism to the Bt note. Here Bt is only one application on a longer list.</li><li>Do not describe germline editing as current therapy.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Yeast, not E. coli, is the usual teaching host for the hepatitis B surface antigen.</li><li>Bioremediation is an application of microbes, and recombinant strains are one version of it.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Humulin is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Animal insulin from cattle pancreas</li><li>Recombinant human insulin, approved in 1982</li><li>A restriction enzyme</li><li>A basmati patent</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>ELISA is used to detect</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A DNA sequence by doubling it</li><li>Antigen or antibody</li><li>Sticky ends</li><li>Soil pH</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>The 1990 ADA therapy altered</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Germ cells, so children inherited the fix</li><li>Somatic cells of the patient</li><li>Only the bacterial chromosome of E. coli in the gut</li><li>Cry genes in cotton</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Hepatitis B vaccine antigen in this topic is produced in</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Thermus aquaticus as the only host</li><li>Yeast</li><li>Agarose</li><li>A non-Bt refuge</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Recombinant insulin</li><li>Recombinant vaccines</li><li>PCR versus ELISA</li><li>Somatic gene therapy</li><li>Bioremediation</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Make a four-row table: field, example, host or tool, what is collected.</li><li>Write the difference between PCR and ELISA without using the pipeline steps.</li></ul></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A question asks for four applications of recombinant DNA technology. Give one from each of four fields, in steps.</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Medicine: human insulin made in E. coli.</li><li>Diagnosis: PCR to amplify a pathogen's nucleic acid, or ELISA to detect antigen or antibody.</li><li>Agriculture: a Bt crop that expresses a cry gene.</li><li>Environment: microbes that degrade oil or another pollutant.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>Insulin, a DNA or antibody test, a Bt crop, and bioremediation cover four fields.</p></div></div></div></section>
+<section class="field"><h2>Summary</h2><p>Recombinant DNA supplies human proteins such as insulin, vaccine antigens such as hepatitis B surface protein from yeast, and tests that either copy nucleic acid or detect antigen and antibody. Somatic gene therapy, Bt crops and bioremediation are the same idea outside the fermenter. The product still has to be the right molecule, made in a suitable host, and purified.</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Humulin is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Animal insulin from cattle pancreas</li><li>Recombinant human insulin, approved in 1982</li><li>A restriction enzyme</li><li>A basmati patent</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>ELISA is used to detect</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A DNA sequence by doubling it</li><li>Antigen or antibody</li><li>Sticky ends</li><li>Soil pH</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>The 1990 ADA therapy altered</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Germ cells, so children inherited the fix</li><li>Somatic cells of the patient</li><li>Only the bacterial chromosome of E. coli in the gut</li><li>Cry genes in cotton</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Hepatitis B vaccine antigen in this topic is produced in</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Thermus aquaticus as the only host</li><li>Yeast</li><li>Agarose</li><li>A non-Bt refuge</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+  <nav class="pager"><a href="03-processes-dna-isolation-pcr-gel-electrophoresis-gene-transfer.html" title="Processes: DNA isolation, PCR, gel electrophoresis, gene …">‹ Processes: DNA isolation, PCR, gel electropho…</a><a class="mid" href="../../../../../_subjects/class-12-biology.html">Biology</a><span></span></nav>
+</div></body></html>

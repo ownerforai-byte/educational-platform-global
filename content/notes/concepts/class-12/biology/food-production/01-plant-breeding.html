@@ -1,0 +1,181 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Plant Breeding</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 12  /  Biology  /  Food Production</div>
+    <h1 class="doc">Plant Breeding</h1>
+    <div class="meta"><span>Class 12</span><span>Biology</span><span>Food Production</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>food-production</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>plant-breeding</p></section>
+<section class="field"><h2>Relevance</h2><p><code>96</code></p></section>
+<section class="field"><h2>Source</h2><p>enriched</p></section>
+<section class="field"><h2>Visual Type</h2><p>plant-breeding-steps</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>Five steps in order: collect germplasm, choose parents, cross them, keep the best progeny, then test and release the variety.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li>Plant breeding is the deliberate production of a crop that is more useful than its parents. The usefulness is a stated target: more grain, a shorter plant that does not lodge, resistance to a named disease, a duration that fits the monsoon, or a seed with more protein. Simply keeping the heaviest heads from a field is selection. Breeding adds a controlled cross so that characters from two parents finish in one line.</li><li>The work has five steps, and the order is the answer. First the variability is collected. That collection is the germplasm: local varieties, old farmer seed, and wild relatives that still carry disease resistance the crop has lost. Second, the collection is evaluated and the parents are chosen, one of them usually the adapted crop, the other the donor of the missing character. Third, those parents are cross-pollinated. The flower that will be the female is emasculated before its own pollen is shed, dusted with the chosen pollen, and bagged so stray pollen cannot land. Fourth, the progeny are grown on and only the plants that actually combined the characters are kept. That selection is repeated down the generations until the line is stable. Fifth, the line is tested in more than one place and more than one season, released under a name, and the seed is multiplied for farmers.</li><li>The green-revolution cereals are the examples to attach to those steps. Semi-dwarf wheat, from programmes associated with Norman Borlaug, yielded heavily and stayed short enough not to fall over. Sonalika and Kalyan Sona are the wheat names used in this course. Semi-dwarf rice did the same for paddy: IR-8, Jaya and Ratna. Sugarcane shows a cross made for a region rather than for a single gene. Saccharum officinarum has thick stems and high sugar. Saccharum barberi grows in the north of the subcontinent. The hybrid was bred to keep the sugar and the thick stem and still grow in the north.</li><li>Disease resistance uses the same five steps with a resistant parent, often a wild relative. Himgiri wheat was produced against leaf rust, stripe rust and hill bunt. If no parent has the character, mutation breeding is the other door. Seeds or buds are treated with a chemical mutagen or with radiation, and a large number of plants are screened. Most are useless. A few carry a new resistant allele. Mung bean varieties resistant to yellow mosaic virus and powdery mildew were recovered that way. The mutagen does not aim the mutation. The screen does the choosing.</li><li>Biofortification aims the same method at nutritional quality instead of tonnes alone: more protein, a better amino-acid balance, more oil, more vitamins, or more iron and zinc. Atlas 66 is the high-protein wheat quoted for this. The plant is still bred by collection, choice of parents, crossing, selection and release. A transgenic line such as vitamin-A rice is a biotechnology product. It is worth knowing as a contrast, and it is not required to explain conventional breeding.</li><li>The steps fail in known ways. If the female flower is not emasculated in time, the seed is a self-pollination and the donor character never enters. If the two parents flower weeks apart, the cross cannot be made unless pollen is stored or the sowing dates are staggered. A line that tops the trial in one district can collapse in another because the rust race or the day length is different. The multi-location trial exists to catch that before the variety is named and sold.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Notes</h2><ul><li>Plant breeding is the deliberate production of a crop that is more useful than its parents. The usefulness is a stated target: more grain, a shorter plant that does not lodge, resistance to a named disease, a duration that fits the monsoon, or a seed with more protein. Simply keeping the heaviest heads from a field is selection. Breeding adds a controlled cross so that characters from two parents finish in one line.</li><li>The work has five steps, and the order is the answer. First the variability is collected. That collection is the germplasm: local varieties, old farmer seed, and wild relatives that still carry disease resistance the crop has lost. Second, the collection is evaluated and the parents are chosen, one of them usually the adapted crop, the other the donor of the missing character. Third, those parents are cross-pollinated. The flower that will be the female is emasculated before its own pollen is shed, dusted with the chosen pollen, and bagged so stray pollen cannot land. Fourth, the progeny are grown on and only the plants that actually combined the characters are kept. That selection is repeated down the generations until the line is stable. Fifth, the line is tested in more than one place and more than one season, released under a name, and the seed is multiplied for farmers.</li><li>The green-revolution cereals are the examples to attach to those steps. Semi-dwarf wheat, from programmes associated with Norman Borlaug, yielded heavily and stayed short enough not to fall over. Sonalika and Kalyan Sona are the wheat names used in this course. Semi-dwarf rice did the same for paddy: IR-8, Jaya and Ratna. Sugarcane shows a cross made for a region rather than for a single gene. Saccharum officinarum has thick stems and high sugar. Saccharum barberi grows in the north of the subcontinent. The hybrid was bred to keep the sugar and the thick stem and still grow in the north.</li><li>Disease resistance uses the same five steps with a resistant parent, often a wild relative. Himgiri wheat was produced against leaf rust, stripe rust and hill bunt. If no parent has the character, mutation breeding is the other door. Seeds or buds are treated with a chemical mutagen or with radiation, and a large number of plants are screened. Most are useless. A few carry a new resistant allele. Mung bean varieties resistant to yellow mosaic virus and powdery mildew were recovered that way. The mutagen does not aim the mutation. The screen does the choosing.</li><li>Biofortification aims the same method at nutritional quality instead of tonnes alone: more protein, a better amino-acid balance, more oil, more vitamins, or more iron and zinc. Atlas 66 is the high-protein wheat quoted for this. The plant is still bred by collection, choice of parents, crossing, selection and release. A transgenic line such as vitamin-A rice is a biotechnology product. It is worth knowing as a contrast, and it is not required to explain conventional breeding.</li><li>The steps fail in known ways. If the female flower is not emasculated in time, the seed is a self-pollination and the donor character never enters. If the two parents flower weeks apart, the cross cannot be made unless pollen is stored or the sowing dates are staggered. A line that tops the trial in one district can collapse in another because the rust race or the day length is different. The multi-location trial exists to catch that before the variety is named and sold.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Emasculation removes the anthers of the female parent. It is not the removal of petals, and it is not done to the male parent.</li><li>A mutagen does not 'create the variety the breeder wants'. It creates random changes. Selection keeps the rare useful one.</li><li>Sonalika is a wheat. IR-8, Jaya and Ratna are rices. Mixing the crop is a common error.</li><li>Bile is not involved here. Biofortification is a breeding target, not a fertiliser treatment.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Five steps: germplasm, choose parents, cross, select recombinants, test and release.</li><li>Emasculate, pollinate, bag.</li><li>Wheat: Sonalika, Kalyan Sona. Rice: IR-8, Jaya, Ratna.</li><li>Sugarcane: Saccharum officinarum crossed with Saccharum barberi.</li><li>Himgiri for rusts and hill bunt. Mutation breeding for mung bean virus and mildew. Atlas 66 for protein.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Germplasm is the collected variability. It includes wild relatives, not only the current crop.</li><li>The cross is made on an emasculated flower that is then bagged.</li><li>Release follows multi-location testing. A single good plot is not a variety.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>A tall local wheat is crossed with a short heavy-yielding parent, and only short, heavy progeny are kept.</li><li>Himgiri carries resistance to leaf rust, stripe rust and hill bunt into a wheat that farmers can grow.</li><li>North Indian sugarcane cultivation uses hybrids that inherited thick, high-sugar stems from S. officinarum and regional growth from S. barberi.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Semi-dwarf cereals yield more partly because the stem stays upright and the plant puts photosynthate into grain.</li><li>Wild relatives are kept in germplasm collections because cultivated varieties have lost alleles the wild plants still have.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Collect, choose, cross, select, release.</li><li>Female parent: emasculate, then pollinate, then bag.</li><li>S. officinarum (thick, sweet) with S. barberi (grows in the north).</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Write the five steps in order without skipping emasculation.</li><li>Match Sonalika, IR-8, Himgiri and Atlas 66 to the trait each is famous for.</li><li>Explain why a variety is tested in more than one district.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>What is emasculation, and when must it be done?</li><li>Why is a wild relative included in a germplasm collection?</li><li>How does mutation breeding differ from a planned cross?</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>The five steps in the right order, with one clause on emasculation inside the cross step, answer the method question.</li><li>Attach one named variety to wheat, one to rice, and the two Saccharum species to sugarcane.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Collect, choose, cross, select, release.</li><li>Wheat Sonalika. Rice IR-8. Protein Atlas 66. Rust Himgiri.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Bagging is part of the cross. An unbagged flower can be pollinated by an unknown plant, and the pedigree is then false.</li><li>Mutation breeding is still selection. The only change is that the new allele was induced rather than brought in by a parent.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Biofortification changes the quality of the harvested part. It is not the same target as yield, even though the steps look the same.</li><li>A transgenic vitamin-A rice is not the example to use when the question says conventional breeding.</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Five steps of breeding</li><li>Emasculation and bagging</li><li>Semi-dwarf wheat and rice</li><li>Sugarcane species cross</li><li>Disease resistance, mutation breeding and biofortification</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Memorise the five steps as a numbered list.</li><li>Make a four-row table of named varieties and the trait each carries.</li></ul></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A breeder wants a rice that keeps a local variety's taste and gains a short stem from a donor. List the steps and the one action that stops self-pollination.</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Collect germplasm that includes the local variety and the short-stem donor.</li><li>Evaluate both and choose them as parents.</li><li>Emasculate the flower of the female parent before its own pollen is released. Dust it with donor pollen and bag the flower. Bagging and emasculation are what stop a self-pollination.</li><li>Grow the progeny and keep only plants that combine the desired taste with the short stem. Repeat until the line no longer splits.</li><li>Test that line in more than one place and season, then release it and multiply seed.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>The five steps in order, with emasculation of the female flower before pollen shed, followed by bagging.</p></div></div></div></section>
+<section class="field"><h2>Bounds</h2><ul><li>Tissue-culture micropropagation and recombinant DNA methods are biotechnology topics. This note is conventional breeding plus induced mutation.</li><li>Named varieties are the course examples. Local seed catalogues change and are not required here.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Plant breeding collects germplasm, chooses parents, crosses them on an emasculated and bagged flower, selects the progeny that combined the characters, and releases the line only after tests in more than one place. Sonalika and Kalyan Sona are the wheat examples, IR-8, Jaya and Ratna the rice examples, and the sugarcane example is Saccharum officinarum crossed with Saccharum barberi. Himgiri adds rust resistance, mutation breeding produced resistant mung beans, and Atlas 66 is the high-protein wheat used for biofortification.</p></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Emasculation in a cross is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Removal of petals from the male parent</li><li>Removal of anthers from the female parent before self-pollen is shed</li><li>Bagging without removing anything</li><li>A mutagen treatment</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Sonalika is a variety of</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Wheat</li><li>Rice</li><li>Sugarcane</li><li>Mung bean</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>The breeding sequence is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Release, then collect germplasm, then cross</li><li>Mutagen first, in every programme</li><li>Collect, choose parents, cross, select, test and release</li><li>Bag the flower before choosing parents</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Himgiri wheat is the example for resistance to</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Drought only</li><li>Leaf rust, stripe rust and hill bunt</li><li>Yellow mosaic virus of mung bean</li><li>Low protein</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Emasculation in a cross is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Removal of petals from the male parent</li><li>Removal of anthers from the female parent before self-pollen is shed</li><li>Bagging without removing anything</li><li>A mutagen treatment</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Sonalika is a variety of</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Wheat</li><li>Rice</li><li>Sugarcane</li><li>Mung bean</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>The breeding sequence is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Release, then collect germplasm, then cross</li><li>Mutagen first, in every programme</li><li>Collect, choose parents, cross, select, test and release</li><li>Bag the flower before choosing parents</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Himgiri wheat is the example for resistance to</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Drought only</li><li>Leaf rust, stripe rust and hill bunt</li><li>Yellow mosaic virus of mung bean</li><li>Low protein</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../_subjects/class-12-biology.html">Biology</a><a href="02-single-cell-protein.html" title="Single Cell Protein">Single Cell Protein ›</a></nav>
+</div></body></html>

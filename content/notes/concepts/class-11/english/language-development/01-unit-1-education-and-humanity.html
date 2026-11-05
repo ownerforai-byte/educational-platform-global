@@ -1,0 +1,204 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Unit 1 — Education and Humanity</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Language Development</div>
+    <h1 class="doc">Unit 1 — Education and Humanity</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Language Development</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>language-development</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>unit-1-education-and-humanity</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Meaning of Education</h4></li><li>Education is the systematic process of facilitating learning, acquiring knowledge, skills, values, and habits. It is not merely schooling but a lifelong journey of personal and social development.</li><li><h4>2. Types of Education</h4></li><li><ul>
+<li><strong>Formal Education</strong>: Structured, curriculum-based learning in schools, colleges, and universities.</li>
+</ul></li><li><ul>
+<li><strong>Non-Formal Education</strong>: Organized learning outside the formal system (adult education, vocational training).</li>
+</ul></li><li><ul>
+<li><strong>Informal Education</strong>: Lifelong learning from family, peers, media, and life experiences.</li>
+</ul></li><li><h4>3. Education and Humanity</h4></li><li>True education must nurture humanity — empathy, ethical reasoning, and social responsibility. When education becomes purely job-oriented, it risks producing skilled but morally empty individuals.</li><li><h4>4. Goals of Education</h4></li><li><ul>
+<li>Intellectual: Developing critical thinking and creativity</li>
+</ul></li><li><ul>
+<li>Moral: Building character and ethical judgment</li>
+</ul></li><li><ul>
+<li>Social: Fostering cooperation and civic responsibility</li>
+</ul></li><li><ul>
+<li>Economic: Preparing for productive employment</li>
+</ul></li><li><h4>5. Education in Nepal</h4></li><li>Nepal's education system has evolved from traditional gurushekha to modern schooling. The National Education Plan 2019 emphasizes inclusive, equitable, and quality education for all.</li><li><h4>6. Entrance Exam Focus</h4></li><li>Common MCQs: Define education; Difference between formal and informal education; Role of education in nation-building.</li><li><h2>Unit 1 — Education and Humanity</h2>
+<h3>1. About the text and the author (kind: literary)</h3>
+<p>Reading frame for <strong>Unit 1 — Education and Humanity</strong> — what the piece is, verified author facts where the topic names one, and the map of what follows (english-plan.md §3a, block I). Author facts are verified at fill, never remembered. Unit: Section I — Language Development (Units 1–17).</li><li><h3>2. Summary</h3>
+<h4>Unit 1 — Education and Humanity</h4>
+<p>Full prose summary at fill (poems: stanza-wise summary table); it must match the prescribed textbook telling (§3a, block II).</li><li><h3>3. Classified tables</h3>
+<p><strong>Table 1 — Themes with evidence</strong></p>
+<table><thead><tr><th>Theme</th><th>Evidence from text</th><th>Significance</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 2 — Characters</strong></p>
+<table><thead><tr><th>Character</th><th>Traits</th><th>Evidence</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 3 — Devices and glossary</strong></p>
+<table><thead><tr><th>Device or word</th><th>Example line or meaning</th><th>Effect or usage sentence</th></tr></thead><tbody></tbody></table>
+<p>Glossary reaches ≥ 20 entries with usage sentences at fill (block V).</li><li><h3>4. Figures</h3>
+<ul>
+<li><strong>G1</strong> — Unit 1 — Education and Humanity — story-arc, character-web or setting map (authored SVG — English labels)</li>
+<li><strong>G2</strong> — Unit 1 — Education and Humanity — curated reference (author portrait where licensed, map or structure — license recorded at fill)</li>
+</ul></li><li><h3>5. Questions and answers</h3>
+<p>Short questions with model answers plus long questions with structured model answers (intro → points → conclusion) at fill; ≥ 10 short + 5 long per text (block VI).</li><li><h3>6. Exam Zone and self-check</h3>
+<p>Existing entrance-exam (CEE) material stays where it is — see the seeded exam fields of this file when present. One-paragraph essence plus quotations-to-remember table (block VII) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ Education = Schooling. ✅ Education is broader — it includes life experiences.</li><li>❌ Only formal education matters. ✅ Informal learning shapes attitudes and values.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Define education and explain its types with examples.</li><li>How does education contribute to humanity? Discuss.</li><li>What are the goals of education in a democratic society?</li></ul></section>
+<section class="field"><h2>Formulas</h2><p class="empty">—</p></section>
+<section class="field"><h2>Summary</h2><p>Unit 1 presents education as a systematic, lifelong process of learning rather than mere schooling. It classifies education into formal, non-formal and informal forms and links each type to everyday examples. The unit then argues that true education must build humanity - empathy, ethical reasoning and social responsibility - instead of producing purely job-ready skills. It closes with the four goals of education and the evolution of the education system in Nepal from gurushekha to modern schooling under the National Education Plan, 2019.</p></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Education as the systematic process of facilitating learning and acquiring knowledge, skills, values and habits</li><li>Formal, non-formal and informal education and the examples that distinguish them</li><li>Education and humanity: empathy, ethical reasoning and social responsibility</li><li>The four goals of education - intellectual, moral, social and economic</li><li>Nepal's shift from traditional gurushekha to modern schooling under the National Education Plan, 2019</li><li>Inclusive, equitable and quality education for all</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Education is not the same as schooling; it also includes life experiences.</li><li>Formal education is structured, curriculum-based learning in schools, colleges and universities.</li><li>Non-formal education is organized learning outside the formal system, such as adult education and vocational training.</li><li>Informal education is lifelong learning from family, peers, media and life experience.</li><li>When education becomes purely job-oriented, it risks producing skilled but morally empty individuals.</li><li>The National Education Plan, 2019 emphasizes inclusive, equitable and quality education for all.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Define education and explain its types with examples.</li><li>Differentiate between formal, non-formal and informal education with examples from daily life.</li><li>Explain how education contributes to humanity.</li><li>Discuss the goals of education in a democratic society.</li><li>Write about the role of education in nation-building.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Three types: formal (schools, colleges, universities), non-formal (adult education, vocational training), informal (family, peers, media, experience).</li><li>Education is a lifelong journey of personal and social development, not only a classroom activity.</li><li>Intellectual goal develops critical thinking and creativity; moral goal builds character and ethical judgment; social goal fosters cooperation and civic responsibility; economic goal prepares for productive employment.</li><li>Informal learning shapes attitudes and values even where there is no formal schooling.</li><li>Nepal's system evolved from gurushekha to modern schooling.</li><li>Common MCQ areas: define education, formal versus informal education, role of education in nation-building.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Never write 'Education means schooling' - the notes state that education is broader and includes life experiences.</li><li>Do not claim that only formal education matters; informal learning shapes attitudes and values.</li><li>In a humanity question, write empathy, ethical reasoning and social responsibility with one example for each.</li><li>Mention the National Education Plan, 2019 whenever the question refers to education in Nepal.</li><li>Match each goal to its keyword: intellectual = critical thinking, moral = character, social = cooperation, economic = employment.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Memory hook for the three types: Formal = inside school, Non-formal = organized but outside school, Informal = unorganized lifelong learning.</li><li>If an MCQ option says education happens only inside a classroom, reject it immediately.</li><li>Reusable one-line definition: 'Education is the systematic process of facilitating learning and acquiring knowledge, skills, values and habits.'</li><li>For goals-of-education questions, answer in four labelled points - intellectual, moral, social, economic - one sentence each.</li><li>For 'humanity' answers, use the trio empathy + ethical reasoning + social responsibility as your three points.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Definition of education is a short answer; types with examples and the humanity discussion are long answers.</li><li>MCQ traps: 'Education and schooling are the same' and 'Only formal education matters' are both false.</li><li>Write definitions as one complete sentence, then support them with examples from home, school and community.</li><li>This unit is content and vocabulary based; do not add grammar rules that are not in these notes.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Define education and explain its types with examples.</li><li>Differentiate between formal and informal education with at least three examples each.</li><li>How does education contribute to humanity? Discuss.</li><li>What are the intellectual, moral, social and economic goals of education?</li><li>Describe the evolution of education in Nepal from gurushekha to the modern system.</li><li>Write about the role of education in nation-building.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which statement best defines education?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>The process of obtaining a job</li><li>The systematic process of facilitating learning and acquiring knowledge, skills, values and habits</li><li>Only the memorization of textbook content</li><li>The teaching of reading and writing alone</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The notes define education as the systematic process of facilitating learning, acquiring knowledge, skills, values and habits. Options A, C and D narrow education to jobs, memorization or literacy only.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Informal education refers to learning gained from:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A school curriculum</li><li>A university laboratory</li><li>Family, peers, media and life experience</li><li>A vocational training institute</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Informal education is lifelong learning from family, peers, media and life experiences. A and B are formal, and D is non-formal because it is organized outside the formal system.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Which of the following is a goal of education listed in the unit?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Commercial profit</li><li>Intellectual development through critical thinking and creativity</li><li>Replacing all social values</li><li>Restricting education to job-oriented training</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The intellectual goal develops critical thinking and creativity. Restricting education to job-oriented training is what the notes warn against, since it risks producing skilled but morally empty individuals.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>The National Education Plan, 2019 in Nepal emphasizes:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Examination-based rote learning only</li><li>Inclusive, equitable and quality education for all</li><li>Education only in urban areas</li><li>Reducing the number of schools</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The notes state that the National Education Plan, 2019 emphasizes inclusive, equitable and quality education for all.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Non-formal education is best described as:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Organized learning outside the formal system, such as adult education and vocational training</li><li>Unplanned learning gained only from life experience</li><li>Learning from family and peers alone</li><li>Learning confined to a university</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Non-formal education is organized learning outside the formal system, such as adult education and vocational training. Option B describes informal education and option D describes formal higher education.</p></div></div></div></section>
+<section class="field"><h2>Source</h2><p>skeleton-v2</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../_subjects/class-11-english.html">English</a><a href="02-unit-2-communication.html" title="Unit 2 — Communication">Unit 2 — Communication ›</a></nav>
+</div></body></html>

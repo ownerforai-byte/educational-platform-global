@@ -1,0 +1,165 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Relative Velocity</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Backup Physics 2026 09 22</div>
+    <h1 class="doc">Relative Velocity</h1>
+    <div class="meta"><span>Backup Physics 2026 09 22</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>kinematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>relative-velocity</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>Definition of relative velocity:</strong> The velocity of an object B as measured from the reference frame of another moving object A. It is the velocity of B relative to A.</li><li><strong>Same direction (one-dimensional):</strong> If car A moves at velocity v_A and car B at v_B in the same direction, the velocity of B relative to A is v_{B/A} = v_B - v_A. If v_B &gt; v_A, B moves ahead relative to A; if v_B &lt; v_A, B falls behind.</li><li><strong>Opposite directions (one-dimensional):</strong> If A and B move toward each other with speeds v_A and v_B, the relative speed (magnitude of relative velocity) is v_{rel} = v_A + v_B. The direction of v_{B/A} is toward A if B is moving toward A.</li><li><strong>Vector form (two/three dimensions):</strong> \vec{v}_{B/A} = \vec{v}_B - \vec{v}_A. This is the velocity of B in the ground frame minus the velocity of A in the ground frame. In components: (v_{B/A})_x = v_{Bx} - v_{Ax}, etc.</li><li><strong>Relative velocity in 2D — Rain example:</strong> If rain falls vertically downward at speed v_r and a person runs horizontally at speed v_p, the rain appears to come at the person at an angle 	heta where tan	heta = v_p / v_r. The apparent speed is \sqrt{v_r^2 + v_p^2}.</li><li><strong>River crossing (boat relative to water vs. ground):</strong> Let \vec{v}_{bw} be the boat's velocity relative to the water (its heading and speed), and \vec{v}_{wg} be the water's velocity relative to ground (current). Then the boat's ground velocity is \vec{v}_{bg} = \vec{v}_{bw} + \vec{v}_{wg}. To reach a point directly across, the boat must angle upstream.</li><li><strong>Relative velocity of approach/separation:</strong> For two objects approaching, the rate at which their separation decreases is v_{rel} = v_A + v_B (if opposite directions) or |v_B - v_A| (if same direction). For collision problems, relative velocity is crucial.</li><li><strong>Frame of reference transformation:</strong> To transform from frame A to frame B, subtract the velocity of frame A: \vec{v}' = \vec{v} - \vec{v}_A. The laws of physics (Newton's laws) are the same in all inertial frames (Galilean relativity).</li><li><strong>Galilean velocity addition:</strong> In classical mechanics, velocities add vectorially: \vec{v}_{B/C} = \vec{v}_{B/A} + \vec{v}_{A/C}. This chain rule allows finding velocity of B relative to C via an intermediate frame A.</li><li><strong>Relative motion on an incline:</strong> If a block slides down an incline at speed v relative to the incline, and the incline itself moves (e.g., on a truck), the block's ground velocity is the vector sum of its velocity relative to the incline and the incline's velocity relative to ground.</li><li><strong>Closing speed vs. relative velocity:</strong> Closing speed is the rate at which the distance between two objects decreases. For objects moving directly toward each other, closing speed = |v_A| + |v_B|. This is the magnitude of the relative velocity only if they are on a collision course.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Relative velocity is NOT the same as the difference in speeds. For two cars moving at 60 km/h and 40 km/h in the SAME direction, the relative speed is 20 km/h, NOT 100 km/h. For opposite directions, the relative speed is the SUM (100 km/h).</li><li>When subtracting vectors, the ORDER MATTERS: \vec{v}_{B/A} = \vec{v}_B - \vec{v}_A. This is the velocity of B AS SEEN BY A. \vec{v}_{A/B} = \vec{v}_A - \vec{v}_B = -\vec{v}_{B/A}. They are equal in magnitude but opposite in direction.</li><li>A common mistake in river problems: students add the boat's speed to the current speed as scalars. You must add them as VECTORS: the boat's velocity relative to water PLUS water's velocity relative to ground. The angle matters!</li><li>In the rain problem, the rain does NOT change its actual velocity — it still falls vertically. Only the APPARENT velocity (relative to the moving person) is angled. The person tilts their umbrella forward to block the apparent rain.</li><li>Galilean relativity breaks down at speeds close to the speed of light (c). Einstein's special relativity replaces it with the Lorentz velocity addition formula: v = (v1 + v2)/(1 + v1v2/c^2). For everyday speeds (&lt;&lt; c), this reduces to Galilean addition.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Two trains A and B are moving on parallel tracks. Train A moves east at 60 km/h. Train B moves east at 80 km/h. Find the velocity of B relative to A, and the velocity of A relative to B. Solution: v_{B/A} = 80 - 60 = 20 km/h east (B moves ahead of A at 20 km/h). v_{A/B} = 60 - 80 = -20 km/h (20 km/h west, meaning A falls behind B).</li><li>Rain is falling vertically at 30 m/s. A man runs horizontally at 10 m/s. At what angle from vertical does the rain appear to fall? What is the apparent speed? Solution: tan	heta = v_man/v_rain = 10/30 = 1/3. 	heta = 	an^{-1}(1/3) = 18.4° from vertical. Apparent speed = \sqrt{30^2 + 10^2} = \sqrt{1000} = 31.6 m/s.</li><li>A boat's speed in still water is 5 m/s. The river flows at 3 m/s east. The boat wants to reach a point directly across the river (north). (a) At what angle must the boat head? (b) What is its ground speed? (c) Time to cross a 100 m wide river? Solution: (a) Boat must cancel eastward current: 5 sin	heta = 3 → 	heta = 36.9° west of north. (b) v_ground = 5 cos	heta = 5 × 0.8 = 4 m/s north. (c) t = width/v_ground = 100/4 = 25 s.</li><li>Two particles move on the x-axis. Particle A: x_A(t) = 2t + 1. Particle B: x_B(t) = -3t + 10. Find their relative velocity at t = 2 s. Solution: v_A = dx_A/dt = 2 m/s. v_B = dx_B/dt = -3 m/s. v_{B/A} = v_B - v_A = -3 - 2 = -5 m/s. The distance between them decreases at 5 m/s.</li><li>An airplane flies at 400 km/h relative to air. The wind blows at 100 km/h from the west (toward east). What is the plane's ground speed and direction if it heads (a) north? (b) northeast? Solution: (a) v_ground = \sqrt{400^2 + 100^2} = 412 km/h. Direction: tan	heta = 100/400 = 1/4 → 	heta = 14° east of north. (b) v_plane = 400/\sqrt{2} north + 400/\sqrt{2} east. v_wind = 100 east. v_ground = (400/\sqrt{2}) north + (400/\sqrt{2} + 100) east = 283 north + 383 east. Speed = \sqrt{283^2 + 383^2} = 476 km/h.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Galilean relativity (velocity addition v' = v - u) was the standard until Einstein's special relativity (1905) showed it is only an approximation valid for v ≪ c. At everyday speeds, the error is completely negligible.</li><li>Relative velocity is a fundamental concept in all of physics — from classical mechanics to electromagnetism (magnetic fields are electric fields viewed from a moving frame) to special relativity.</li><li>The principle of Galilean relativity: the laws of motion are identical in all inertial frames. If you toss a ball up in a moving train (constant velocity), it lands back in your hand — the ball has the train's forward velocity added to its motion.</li><li>In collision problems, the relative velocity of approach is often more useful than individual velocities. For elastic collisions, the relative velocity of separation equals the relative velocity of approach (in magnitude).</li><li>The concept of relative velocity explains why we don't feel Earth's orbital speed (30 km/s) or rotation speed (0.46 km/s at equator) — we move with the Earth, so our velocity relative to Earth is zero. Only in non-inertial frames (acceleration) do we feel fictitious forces.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>kinematics</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>kinematics</p></section>
+<section class="field"><h2>Visual Type</h2><p>relative-velocity</p></section>
+  <nav class="pager"><a href="01-instantaneous-velocity-and-acceleration.html" title="Instantaneous Velocity and Acceleration">‹ Instantaneous Velocity and Acceleration</a><a class="mid" href="../../../_subjects/general-backup-physics-2026-09-22.html">Backup Physics 2026 09 22</a><a href="03-equation-of-motion-graphical-2.html" title="Equation of Motion (Graphical)">Equation of Motion (Graphical) ›</a></nav>
+</div></body></html>

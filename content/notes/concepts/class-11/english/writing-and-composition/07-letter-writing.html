@@ -1,0 +1,186 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Letter Writing</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Writing And Composition</div>
+    <h1 class="doc">Letter Writing</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Writing And Composition</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>writing-and-composition</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>letter-writing</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Formal Letter Format</h4></li><li>Sender's address → Date → Receiver's address → Subject → Salutation (Sir/Madam) → Body → Closing (Yours faithfully) → Signature</li><li><h4>2. Informal Letter Format</h4></li><li>Date → Salutation (Dear Name) → Opening → Body → Closing (Love/Yours) → Signature</li><li><h4>3. Formal Letter Types</h4></li><li><ul>
+<li><strong>Application</strong>: For jobs, admissions, leaves</li>
+</ul></li><li><ul>
+<li><strong>Complaint</strong>: About products, services, conditions</li>
+</ul></li><li><ul>
+<li><strong>Inquiry</strong>: Asking for information</li>
+</ul></li><li><ul>
+<li><strong>Editor's Letter</strong>: Expressing opinion on public issues</li>
+</ul></li><li><h4>4. Informal Letter Types</h4></li><li><ul>
+<li><strong>Friendly letter</strong>: Catching up with friends/family</li>
+</ul></li><li><ul>
+<li><strong>Thank you letter</strong>: Expressing gratitude</li>
+</ul></li><li><ul>
+<li><strong>Congratulatory letter</strong>: Celebrating achievements</li>
+</ul></li><li><h4>5. Email Writing</h4></li><li>Subject line must be clear and concise. Use formal tone for professional emails. Keep paragraphs short.</li><li><h4>6. Entrance Exam Focus</h4></li><li>Write a formal letter to the editor about pollution in Kathmandu. Write an application for a scholarship.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ Formal letters need 'Dear Sir' without name. ✅ Use 'Dear Sir/Madam' if name unknown.</li><li>❌ Emails are informal. ✅ Professional emails require formal tone.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Write a formal letter to the editor complaining about poor road conditions.</li><li>Write an application for a scholarship to the principal.</li><li>Write an email to a friend about your summer vacation plans.</li></ul></section>
+<section class="field"><h2>Formulas</h2><p class="empty">—</p></section>
+<section class="field"><h2>Summary</h2><p>This chapter separates formal from informal letters and gives the part-by-part order of each. A formal letter runs sender's address, date, receiver's address, subject, salutation (Sir/Madam), body, closing (Yours faithfully) and signature, while an informal letter runs date, salutation (Dear Name), opening, body, closing (Love or Yours) and signature. It lists the common formal types - application, complaint, inquiry and editor's letter - and the informal types - friendly, thank-you and congratulatory letters - and ends with email conventions. In the entrance exam, expect either a formal letter to the editor or a scholarship application.</p></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Formal letter format: sender's address, date, receiver's address, subject, salutation, body, closing and signature</li><li>Informal letter format: date, salutation, opening, body, closing and signature</li><li>Formal letter types: application, complaint, inquiry and editor's letter</li><li>Informal letter types: friendly letter, thank-you letter and congratulatory letter</li><li>Salutation rules: 'Dear Sir/Madam' when the name is unknown, 'Dear Name' for a known person</li><li>Standard layouts: block style with every part on a new line, and semi-block style with indented body paragraphs</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>A formal letter closes with 'Yours faithfully' and carries a signature, while an informal letter closes with 'Love' or 'Yours'.</li><li>Use 'Dear Sir/Madam' when the name of the receiver is unknown.</li><li>A formal letter requires a subject line, placed between the receiver's address and the salutation.</li><li>Professional emails require a formal tone even though email is a digital medium.</li><li>An email subject line must be clear and concise, and its paragraphs should be kept short.</li><li>Applications are used for jobs, admissions and leaves; inquiry letters ask for information; complaint letters concern products, services or conditions.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Write a formal letter to the editor about pollution in Kathmandu.</li><li>Write an application for a scholarship to the principal.</li><li>Write a formal letter to the editor complaining about poor road conditions.</li><li>Write an inquiry letter asking for information.</li><li>Write an email to a friend about your summer vacation plans.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Formal order: sender's address, date, receiver's address, subject, salutation (Sir/Madam), body, closing (Yours faithfully), signature.</li><li>Informal order: date, salutation (Dear Name), opening, body, closing (Love or Yours), signature.</li><li>Formal types: application for jobs, admissions and leaves; complaint; inquiry; and editor's letter expressing opinion on a public issue.</li><li>Informal types: friendly letter for catching up, thank-you letter for gratitude, and congratulatory letter for celebrating achievements.</li><li>Email writing: a clear concise subject line, a formal tone for professional mail, and short paragraphs.</li><li>Exam tasks: a formal letter to the editor about pollution in Kathmandu, and an application for a scholarship.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Formal letters need 'Dear Sir/Madam' when no name is known, not a bare 'Dear Sir' with a missing name.</li><li>Emails are not automatically informal; a professional email requires a formal tone.</li><li>Never leave out the subject line of a formal letter - it is among the first things an examiner checks.</li><li>In a complaint or editor's letter, state the problem first, then the cause, then a suggested remedy, then a courteous request.</li><li>In an application, give your qualifications and the reason for applying before you make the request, and keep one clear request per letter.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Parts memory hook for a formal letter: 'Send Date Receive Subject Salute Body Close Sign'.</li><li>Layout shortcut: block style puts every part flush left on a new line; semi-block style indents the body paragraphs within the same arrangement.</li><li>If the receiver is named, such as the principal, write 'Dear Sir'; if the name is unknown, write 'Dear Sir/Madam'.</li><li>Time-saving formula for an editor's letter: problem, cause, suggestion, request - one paragraph each.</li><li>For an informal letter, open warmly and close with 'Love' or 'Yours'; 'Yours faithfully' belongs to formal letters only.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Format carries marks: address, date, subject, salutation, body, closing and signature must appear in the correct order.</li><li>MCQ traps: treating emails as informal, and writing 'Dear Sir/Madam' when a name has been given.</li><li>Keep the tone consistent from the salutation to the closing - formal letters stay formal, informal letters stay warm and conversational.</li><li>Block style is the safest layout in the exam because it is the hardest to mark incorrectly.</li><li>This chapter is about format, type and tone; do not add grammar rules that are not in these notes.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Write a formal letter to the editor complaining about poor road conditions.</li><li>Write a formal letter to the editor about pollution in Kathmandu.</li><li>Write an application for a scholarship to the principal.</li><li>Write an inquiry letter asking for details about a course.</li><li>Write an email to a friend about your summer vacation plans.</li><li>Write a thank-you letter to a friend who helped you during an illness.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>In a formal letter, the subject line is written:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>After the salutation</li><li>In the second paragraph</li><li>Before the salutation, below the receiver's address</li><li>After the signature</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The formal order given in the notes is sender's address, date, receiver's address, subject, salutation, body, closing and signature, so the subject comes before the salutation.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>If the name of the receiver is unknown, the correct salutation is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Dear Sir/Madam</li><li>My dear friend</li><li>Hello everyone</li><li>Good day to you all</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The notes instruct using 'Dear Sir/Madam' when the name is unknown. A named receiver is addressed directly instead.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Which of the following is a part of a formal letter but not of an informal letter?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Date</li><li>Salutation</li><li>Subject</li><li>Closing</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Date, salutation and closing appear in both formats, but the subject line is specific to the formal letter format.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>A letter written to a newspaper to express an opinion on a public issue is a(n):</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Editor's letter</li><li>Thank-you letter</li><li>Congratulatory letter</li><li>Friendly letter</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The editor's letter is the formal type used for expressing an opinion on a public issue. Thank-you, congratulatory and friendly letters are all informal types.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>According to the notes, a professional email requires:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A clear, concise subject line and a formal tone</li><li>Slang and no subject line</li><li>Very long unbroken paragraphs</li><li>An informal greeting such as hi</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Even though email is digital, professional emails require a formal tone, a clear and concise subject line and short paragraphs.</p></div></div></div></section>
+  <nav class="pager"><a href="07-article-writing.html" title="Article Writing">‹ Article Writing</a><a class="mid" href="../../../../../_subjects/class-11-english.html">English</a><a href="08-story-writing.html" title="Story Writing">Story Writing ›</a></nav>
+</div></body></html>

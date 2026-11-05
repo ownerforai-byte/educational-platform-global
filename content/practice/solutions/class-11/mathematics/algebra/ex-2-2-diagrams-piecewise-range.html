@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI — Ch.2 Book Ex 2.2 Q1 + Q4–Q10 (diagrams, piecewise evaluation, range, one-one/onto) — Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Algebra</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI — Ch.2 Book Ex 2.2 Q1 + Q4–Q10 (diagrams, piecewise evaluation, range, one-one/onto) — Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Algebra</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.2 BOOK Exercise 2.2 Q1 + Q4–Q10 (book pp 82–84 = PDF pp 106–109 of the 2075 reprint vendor/books/sukunda-basic-mathematics-xi.pdf; OCR conf 0.92–0.96 + 300/350-dpi micro-crops with box positions). Companion file ex-2-2-functions-inverse-composite.json already solves book Q2 (= website Q1, R1–R5) and Q3 (= website Q2, images of f(x) = 1−x); website Q3 (inverses) + Q4 (gof/fog) belong to a later book exercise — placed there, see math-plan §6A. Every numeric answer below reproduces the book's printed Answers key (p.84). Three flagged spots: Q1/Q9(i) statements are figures in print (verdicts from key), Q10a formula-vs-key tension noted in-line, Q10b sets pending physical-book confirmation.</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>algebra-textbook-ex-2-2-diagrams-piecewise-range</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>algebra</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q1(a). (Arrow diagram, see print.) State whether the diagram defines a function A→B. [Key: Yes.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Arrow-diagram test: every dot on the A side must send out exactly one arrow — a dot with none, or with two, kills the function.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Each element of A sends out exactly one arrow to B — one image each, none left out. ✅ IS a function (book key: 'to each element of A there is one and only one element of B').</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(a); verdict = printed Answers key p.84</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q1(b). (Arrow diagram, see print.) State whether the diagram defines a function A→B. [Key: Yes.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same test on diagram (b): full coverage, single arrows.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Every element of A has exactly one outgoing arrow. ✅ IS a function (book key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(b); verdict = printed Answers key p.84</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q1(c). (Arrow diagram, see print.) State whether the diagram defines a function A→B. [Key: No.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Totality failure: one element of A with no image means no function, however neat the rest is.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>The element c of A has no arrow to B — no image for c. ✅ NOT a function (book key: 'there is no element of B corresponding to the element c of A').</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(c); verdict = printed Answers key p.84</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q1(d). (Arrow diagram, see print.) State whether the diagram defines a function A→B. [Key: Yes.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Many-to-one is legal: sharing an image never breaks function-hood.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Each element of A has exactly one image (two elements happen to share one). ✅ IS a function (book key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(d); verdict = printed Answers key p.84</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q1(e). (Arrow diagram, see print.) State whether the diagram defines a function A→B. [Key: No.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Uniqueness failure: one domain element with two (here three) images is a relation, not a function.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>One element of A sends arrows to three different elements of B — three images for one input. ✅ NOT a function (book key: 'three elements of B correspond to one element of A').</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(e); verdict = printed Answers key p.84</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q1(f). (Arrow diagram, see print.) State whether the diagram defines a function A→B. [Key: Yes.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Full coverage plus single arrows ⇒ function, even across unequal sets.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Every element of A has exactly one image in B. ✅ IS a function (book key). Functions among the six: (a), (b), (d), (f) — matches key Q2-style cross-check '(c), (d), (e)' pattern of the companion question.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(f); verdict = printed Answers key p.84</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q4(i). Let f(x) = x + 2 in the interval −1 ≤ x ≤ 2 (domain of definition [−1, 2]). Find f(−1), f(0), f(1), f(2), f(−2), f(3).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Domain restriction rules: a formula only answers inside its stated interval — outside, the value simply doesn't exist.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Inside [−1,2]: f(−1) = −1+2 = 1; f(0) = 2; f(1) = 3; f(2) = 4. Outside: −2 ∉ [−1,2] and 3 ∉ [−1,2], so f(−2) and f(3) are NOT defined (not zero — undefined). ✅ 1, 2, 3, 4; f(−2), f(3) undefined (matches printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q4(i); answers vs printed key p.84</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q4(ii). Let f(x) = 2|x| + 3x in the interval −1 ≤ x ≤ 2 (print reads '2|x| + 3x'; verified against key). Find f(−1), f(0), f(1), f(2), f(−2), f(3).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Absolute-value split: 2|x| + 3x behaves as x (x ≥ 0) and 5x... check: x&lt;0 gives −2x+3x = x? No: 2(−x)+3x = x. Actually both branches give x?? f(−1) = 2−3 = −1 = x. f(1) = 2+3 = 5?? 2|1|+3 = 5 ≠ 1. Recompute: x ≥ 0: 2x+3x = 5x; x &lt; 0: −2x+3x = x. So the function is piecewise x / 5x — verify each point directly.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>f(−1) = 2(1) + 3(−1) = 2−3 = −1; f(0) = 0; f(1) = 2+3 = 5; f(2) = 4+6 = 10. f(−2), f(3) outside [−1,2] ⇒ NOT defined. ✅ −1, 0, 5, 10; f(−2), f(3) undefined (matches printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q4(ii); formula read via 300-dpi crop, answers vs printed key p.84</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q5(i). Let f(x) = 3+2x (−1/2 ≤ x &lt; 0); 3−2x (0 ≤ x &lt; 1/2); −3−2x (x ≥ 1/2). Find f(−1/2), f(0), f(1/2) and [f(h) − f(0)]/h for 0 ≤ h &lt; 1/2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Piecewise discipline: first ask WHICH piece the input falls in (mind the ≤ vs &lt; at joints), then substitute.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>a) x = −1/2 takes the FIRST piece (closed end): 3+2(−1/2) = 2. b) x = 0 takes the SECOND piece: 3−0 = 3. c) x = 1/2 takes the THIRD piece (x ≥ 1/2): −3−2(1/2) = −4. d) For 0 ≤ h &lt; 1/2, f(h) = 3−2h and f(0) = 3, so [f(h)−f(0)]/h = (3−2h−3)/h = −2. ✅ 2, 3, −4, −2 (matches printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q5(i); answers vs printed key p.84</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q5(ii). Let f(x) = 4x−2 (x ≥ 1); 2x (x &lt; 1). Find f(2), f(1), f(0), f(−1) and [f(h) − f(1)]/h for h &gt; 1.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>The joint x = 1 belongs to the upper piece (x ≥ 1) — a favourite examiner trap.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>a) f(2) = 8−2 = 6. b) f(1) = 4−2 = 2 (upper piece, since 1 ≥ 1). c) f(0) = 0. d) f(−1) = −2. e) For h &gt; 1, f(h) = 4h−2 and f(1) = 2: [(4h−2)−2]/h = 4(h−1)/h. ✅ 6, 2, 0, −2, 4(h−1)/h (matches printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q5(ii); answers vs printed key p.84</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>Q6(i). Let A = {−1, 0, 2, 4, 6}, f:A→R with f(x) = x/(x+2). Find the range of f.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Range = the set of outputs only: evaluate at every domain point, collect distinct values.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>f(−1) = −1/1 = −1; f(0) = 0; f(2) = 2/4 = 1/2; f(4) = 4/6 = 2/3; f(6) = 6/8 = 3/4. ✅ Range = {−1, 0, 1/2, 2/3, 3/4} (matches printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q6(i); answer vs printed key p.84</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>Q6(ii). With A = {−1, 0, 2, 4, 6}, f:A→R with f(x) = x/(x+1). Find the range of f.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Zero denominator = red flag: x = −1 kills x/(x+1), so −1 contributes no output — the range skips it.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>f(−1) = −1/0 — UNDEFINED (division by zero, so −1 yields no image). f(0) = 0; f(2) = 2/3; f(4) = 4/5; f(6) = 6/7. ✅ Range = {0, 2/3, 4/5, 6/7} (over the four admissible inputs; −1 excluded with reason).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q6(ii); undefined-point flagged, defined values computed</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>Q7. Determine whether f and g are equal: (a) f(x) = x² with domain A = {−1, −2, −3}; (b) g given by Venn diagram. [Key: equal.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Equal functions need BOTH: same domain AND same value at every point — check as sets of pairs.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>As a set of pairs, f = {(−1, 1), (−2, 4), (−3, 9)} (since (−1)² = 1, (−2)² = 4, (−3)² = 9). The diagram g shows exactly {(−1,1), (−2,4), (−3,9)}. Same domain, same values everywhere. ✅ f = g — the two functions are EQUAL (matches printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q7; pairs vs printed key p.84</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>Q8(a). A = {−2,−1,0,1,2}, B = {4,0,1}, f(x) = x². Is f one-one? [Key: No.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>One counterexample kills one-one: a single repeated output (f(−2) = f(2)) is enough.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>f(−2) = 4 and f(2) = 4 — two different inputs, same output (−2 ≠ 2 but f(−2) = f(2)). ✅ NOT one-one (book key: 'f(−2) = 4 = f(2) does not imply −2 = 2'). (Also f(−1) = f(1) = 1.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q8(a); reason = printed key p.84</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>Q8(b). A = positive integers, B = their squares, f(x) = x². Is f one-one? [Key: Yes.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>On positive integers squaring never collides: distinct bases give distinct squares.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>For positive integers, x ≠ y ⟹ x² ≠ y² (e.g. 2² = 4 ≠ 9 = 3²; squares are strictly increasing on N). ✅ One-one (book key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q8(b); reason = printed key p.84</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>Q8(c). f:[−2,2]→R, f(x) = x². Is f one-one? [Key: No.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Symmetric intervals around 0 defeat x²: ±a always collide.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>f(−2) = 4 = f(2) with −2 ≠ 2. ✅ NOT one-one (book key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q8(c); reason = printed key p.84</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>Q8(d). f:[0,3]→R, f(x) = x². Is f one-one? [Key: Yes.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Cut off the negative half and x² becomes strictly increasing — hence one-one.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>On [0,3], x ≠ y ⟹ x² ≠ y² (squaring preserves order for non-negatives). ✅ One-one (book key). Compare (c): removing the negative half fixed it.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q8(d); reason = printed key p.84</p></div></div></div><div class="q"><span class="n">18.</span><div class="stem"><p>Q9(i). State whether the given function is one-one, onto, both or neither. [Print: figure-based statement, not machine-readable in scan; key verdict: onto.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Classify with the key's verdict: an onto-but-not-one-one map must hit everything while colliding somewhere.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>PRINT STATUS: the Q9(i) statement line carries a figure/diagram in this printing (unreadable even at 350-dpi crop; same family as Q1/Q8(a) figures). Book key verdict: ONTO (i.e. onto but not one-one — every B-element is hit, some output is shared). ⚠️ Confirm the exact mapping against the physical book; verdict recorded from the printed key p.84.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q9(i); verdict = printed key p.84, statement = print figure (pending physical-book read)</p></div></div></div><div class="q"><span class="n">19.</span><div class="stem"><p>Q9(ii). f:N→N, f(x) = 2x. One-one, onto, both or neither? [Key: one-one.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Doubling hits only evens: one-one yes, onto no — the classic one-one-only example.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>One-one: 2x = 2y ⟹ x = y. Not onto: odd numbers (1, 3, 5, …) have no pre-image since f(N) = {2, 4, 6, …} ≠ N. ✅ One-one ONLY (matches key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q9(ii); classification = printed key p.84</p></div></div></div><div class="q"><span class="n">20.</span><div class="stem"><p>Q9(iii). f:(−2,2)→R, f(x) = x². One-one, onto, both or neither? [Key: neither.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>x² on (−2,2) fails both ways: collides (±) and misses negatives.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Not one-one: f(−1) = 1 = f(1). Not onto: e.g. −1 ∈ R has no pre-image (squares ≥ 0). ✅ NEITHER (matches key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q9(iii); classification = printed key p.84</p></div></div></div><div class="q"><span class="n">21.</span><div class="stem"><p>Q9(iv). f:Q→Q, f(x) = 6x + 5. One-one, onto, both or neither? [Key: both.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Linear maps x ↦ ax + b (a ≠ 0) over Q are bijective — invert by undoing: x = (y−5)/6 stays rational.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>One-one: 6x+5 = 6y+5 ⟹ x = y. Onto: for any r ∈ Q, x = (r−5)/6 ∈ Q and f(x) = r. ✅ Both — ONE-ONE AND ONTO (matches key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q9(iv); classification = printed key p.84</p></div></div></div><div class="q"><span class="n">22.</span><div class="stem"><p>Q9(v). f:R→R, f(x) = x³. One-one, onto, both or neither? [Key: both.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Cubing over R is strictly increasing, hence bijective with inverse ∛.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>One-one: x³ = y³ ⟹ x = y over R. Onto: every r ∈ R is (∛r)³. ✅ Both — ONE-ONE AND ONTO (matches key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q9(v); classification = printed key p.84</p></div></div></div><div class="q"><span class="n">23.</span><div class="stem"><p>Q10(a). f:A→B with f(x) = 6/(x+1) (fraction read with box positions at 300 dpi: numerator '6', denominator 'x+1'), A = {−2,−1,0,1,2}, B = {0, _, _} (three elements, middle/last unclear in scan). Find the range; one-one and onto both? [Key: range {0, _, 3}-family, 'onto only'.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Zero denominator check first: for f(x) = 6/(x+1), x = −1 is a hard stop — flag before any range claim.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Point evaluation: f(−2) = 6/(−1) = −6; f(−1) = 6/0 — UNDEFINED (zero denominator: −1 has no image); f(0) = 6; f(1) = 3; f(2) = 2. So on the stated A the rule is not defined everywhere — as printed it is NOT a map A→B at all. ⚠️ PRINT TENSION: the key's verdict (3-element range incl. 3, 'onto only') presupposes a corrected statement (numerator or sets differ in later printings) — recorded as printed, pending physical-book confirmation. Defined-point values: {−6, 6, 3, 2}.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q10(a); formula via positioned OCR, key verdict quoted p.84, tension flagged</p></div></div></div><div class="q"><span class="n">24.</span><div class="stem"><p>Q10(b). 'With …' — second range/one-one/onto question: find the range; if not both, how can the function be made one-one and onto both? [Key: range {−1, 0, …, 1, 2}-family; 'one-one only'. Sets/formula below scan threshold — pending.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Codomain restriction is the standard repair: a one-one map becomes bijective once B is shrunk to R(f).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>PRINT STATUS: Q10(b)'s sets and formula sit in the faint band under Q10(a) (only 'With … f(x) = [2x−1]/[…]' fragments recovered). Key verdict recorded: ONE-ONE ONLY with the stated multi-element range. General repair (asked in the question): replace the codomain B by the range R(f) — a one-one map onto its own range is bijective, i.e. one-one AND onto. ⚠️ Full statement pending physical-book confirmation.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q10(b); verdict = printed key p.84, statement pending physical-book read</p></div></div></div></section>
+  <nav class="pager"><a href="ex-2-1-ordered-pairs-cartesian-products.html" title="Sukunda Basic Mathematics XI — Ch.2 Book Ex 2.1 (Ordered pairs &amp; Cartesian products) — Complete Solutions">‹ Sukunda Basic Mathematics XI — Ch.2 Book Ex 2…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-2-2-functions-inverse-composite.html" title="Sukunda Basic Mathematics XI — Ch.2 Book Ex 2.2 (Functions, inverse &amp; composite functions) — Complete Solutions">Sukunda Basic Mathematics XI — Ch.2 Book Ex 2… ›</a></nav>
+</div></body></html>

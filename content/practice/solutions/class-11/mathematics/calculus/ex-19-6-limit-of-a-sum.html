@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.19 Book Ex 19.6 (Area as Limit of a Sum) - Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Calculus</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.19 Book Ex 19.6 (Area as Limit of a Sum) - Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Calculus</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q1. Find the area of the plane region bounded by y = x, from x = 0 to x = a and the x-axis, using the limit of a sum.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>A line through the origin: the sum of the first n natural numbers produces the n(n+1)/2 factor.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>h = a/n, so nh = a and the sample points are x = ih. Divide [0, L] into n equal parts of width h = L/n; the area is A = lim(n-&gt;inf) h [f(h) + f(2h) + ... + f(nh)] (right-endpoint rectangles), then use the standard sums 1+2+...+n = n(n+1)/2 and 1^2+2^2+...+n^2 = n(n+1)(2n+1)/6. Here f(x) = x, so A = lim(n-&gt;inf) h [h + 2h + ... + nh] = lim h^2 (1 + 2 + ... + n) = lim (a^2/n^2) * n(n+1)/2 = (a^2/2) lim (1 + 1/n) = a^2/2. Boxed (printed key p598). Geometric cross-check: a right triangle with legs a and a has area a^2/2.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q1; book p597 = PDF p624; key book p598 = PDF p625</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q2. Find the area of the plane region bounded by y = 4x, from x = 0 to x = a and the x-axis, using the limit of a sum.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Constant multiple of Q1's integrand: the 4 comes straight out of the limit.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>h = a/n. A = lim(n-&gt;inf) h [4h + 4(2h) + ... + 4(nh)] = 4h^2 (1 + 2 + ... + n) -&gt; 4 * (a^2/2) = 2a^2. Boxed (printed key p598). Cross-check: triangle with base a and height 4a has area 2a^2.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q2; book p597 = PDF p624; key book p598 = PDF p625</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q3. Find the area of the plane region bounded by y = 1 - x, from x = 0 to x = b and the x-axis, using the limit of a sum.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>A decreasing line: the sum splits into h*n (the constant part) minus the arithmetic-sum part.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>h = b/n. A = lim(n-&gt;inf) h [(1 - h) + (1 - 2h) + ... + (1 - nh)] = lim h [n - h(1 + 2 + ... + n)] = lim [nh - h^2 n(n+1)/2] = b - (b^2/2) lim (1 + 1/n) = b - b^2/2. Boxed (printed key p598). Cross-check (for 0 &lt; b &lt;= 1): a trapezium with parallel sides 1 and 1-b over width b, area b(2-b)/2 = b - b^2/2.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q3; book p597 = PDF p624; key book p598 = PDF p625</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q4. Find the area of the plane region bounded by y = 4x^2, from x = 0 to x = c and the x-axis, using the limit of a sum.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>A parabola: the sum of squares 1^2 + ... + n^2 = n(n+1)(2n+1)/6 supplies the 2/6 = 1/3 factor.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>h = c/n. A = lim(n-&gt;inf) h [4h^2 + 4(2h)^2 + ... + 4(nh)^2] = 4h^3 (1^2 + 2^2 + ... + n^2) = 4h^3 * n(n+1)(2n+1)/6 = (4c^3/6)(1 + 1/n)(2 + 1/n) -&gt; (4c^3/6)(1)(2) = 4c^3/3. Boxed (printed key p598). This is exactly integral 0 to c of 4x^2 dx = 4c^3/3, which is the point of the section.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q4; book p597 = PDF p624; key book p598 = PDF p625</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q5. Find the area of the plane region bounded by y = 4ax^2, from x = 0 to x = a and the x-axis, using the limit of a sum.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Q4 with the constant 4a in place of 4 and the upper limit named a as well - keep the two roles of a apart.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>h = a/n. A = lim(n-&gt;inf) h [4a h^2 + 4a(2h)^2 + ... + 4a(nh)^2] = 4a h^3 <em> n(n+1)(2n+1)/6 = (4a </em> a^3/6)(1 + 1/n)(2 + 1/n) -&gt; (4a^4/6)(2) = 4a^4/3. Boxed (printed key p598). Equivalent to integral 0 to a of 4ax^2 dx = 4a^4/3.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q5; book p597 = PDF p624; key book p598 = PDF p625</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q6. Find the area of the plane region bounded by y = e^x, from x = 0 to x = a and the x-axis, using the limit of a sum.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Geometric series instead of power sums: the sum of e^(ih) is a finite G.P. whose limit produces (e^a - 1).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>h = a/n. A = lim(n-&gt;inf) h [e^h + e^(2h) + ... + e^(nh)]. The bracket is a G.P. with first term e^h and ratio e^h, so it equals e^h (e^(nh) - 1)/(e^h - 1). Hence A = lim h e^h (e^a - 1)/(e^h - 1) = (e^a - 1) <em> lim [e^h </em> h/(e^h - 1)] = (e^a - 1) <em> 1 </em> 1 = e^a - 1, using lim(h-&gt;0) (e^h - 1)/h = 1. Boxed (printed key p598).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q6; book p597 = PDF p624; key book p598 = PDF p625</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q7. Find the area of the plane region bounded by y = e^(3x), from x = 0 to x = b and the x-axis, using the limit of a sum.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same G.P. limit with ratio e^(3h); the h/(e^(3h)-1) factor leaves the 1/3.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>h = b/n. A = lim(n-&gt;inf) h [e^(3h) + e^(6h) + ... + e^(3nh)] = lim h e^(3h) (e^(3b) - 1)/(e^(3h) - 1) = (e^(3b) - 1) lim [e^(3h) <em> h/(e^(3h) - 1)] = (e^(3b) - 1) </em> (1/3) = (1/3)(e^(3b) - 1), because lim(h-&gt;0) h/(e^(3h) - 1) = 1/3 (from lim (e^(3h)-1)/(3h) = 1). Boxed (printed key p598).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.6 Q7; book p597 = PDF p624; key book p598 = PDF p625</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.19 Antiderivatives, BOOK Exercise 19.6 (area as the limit of a sum / Riemann sums): all 7 items, each worked as an explicit Riemann-sum limit with the standard summation formulas, and every result matched to the printed Answers on book p598.</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>calculus-textbook-ex-19-6-limit-of-a-sum</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>calculus</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><a href="ex-19-5-definite-integrals.html" title="Sukunda Basic Mathematics XI - Ch.19 Book Ex 19.5 (Definite Integrals) - Complete Solutions">‹ Sukunda Basic Mathematics XI - Ch.19 Book Ex …</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-19-7-area-under-curves.html" title="Sukunda Basic Mathematics XI - Ch.19 Book Ex 19.7 (Area Under Curves) - Complete Solutions">Sukunda Basic Mathematics XI - Ch.19 Book Ex … ›</a></nav>
+</div></body></html>

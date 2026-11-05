@@ -1,0 +1,162 @@
+{
+  "title": "Function: domain and range of a function, inverse function",
+  "unitSlug": "algebra",
+  "topicSlug": "function-domain-and-range-of-a-function-inverse-function",
+  "topicTitle": "Function: domain and range of a function, inverse function",
+  "relevance": 100,
+  "notes": [
+    "### 1. Function Definition",
+    "A function f from set A to set B is a rule that assigns to each element of A exactly one element of B. Written as f: A -> B, where A is the domain and B is the codomain.",
+    "### 2. Domain and Range",
+    "- Domain: All possible input values (x-values) for which f is defined",
+    "- Range: All possible output values (y-values) that f produces",
+    "- Example: f(x) = sqrt(x-2) -> Domain: x >= 2, Range: y >= 0",
+    "### 3. Types of Functions",
+    "- One-to-one (Injective): Each output has exactly one input",
+    "- Onto (Surjective): Every element of codomain is mapped",
+    "- Bijective: Both one-to-one and onto",
+    "### 4. Inverse Function",
+    "If f: A -> B is bijective, the inverse f^-1: B -> A satisfies f^-1(f(x)) = x and f(f^-1(y)) = y.",
+    "To find f^-1: (1) Replace f(x) with y, (2) Solve for x, (3) interchange x and y.",
+    "### 5. Condition for Inverse to Exist",
+    "f must be one-to-one (horizontal line test) AND onto (range = codomain).",
+    "### 6. Graphical Property",
+    "The graph of f^-1 is the reflection of f across the line y = x.",
+    "### 7. Composite Function",
+    "(f o g)(x) = f(g(x)). Note: f o g != g o f in general.",
+    "### 8. Entrance Exam Formulas",
+    "- f(x) = ax + b -> f^-1(x) = (x-b)/a",
+    "- f(x) = x^2 (x>=0) -> f^-1(x) = sqrt(x)",
+    "- (f o f^-1)(x) = x and (f^-1 o f)(x) = x"
+  ],
+  "confusion": [
+    "x Every function has an inverse. x Only bijective functions have inverses.",
+    "x f^-1(x) = 1/f(x). x f^-1 is the inverse function, not reciprocal.",
+    "x Domain = Range always. x They can be different sets."
+  ],
+  "practice": [
+    "Find the domain and range of f(x) = 1/(x-3).",
+    "If f(x) = 2x + 5, find f^-1(x).",
+    "Show that f(x) = x^3 is one-to-one and find its inverse.",
+    "If f(x) = (x+1)/(x-1), find f o f."
+  ],
+  "formulas": [
+    "f^-1(f(x)) = x and f(f^-1(x)) = x",
+    "(f o g)(x) = f(g(x))"
+  ],
+  "summary": "A function f: A -> B assigns to every element of A exactly one element of B, where A is the domain and B the codomain, while the range is the set of outputs actually attained. Injective (one-to-one), surjective (onto) and bijective describe how far the outputs avoid collisions and cover the codomain, and only a bijective function has an inverse f^-1, satisfying f^-1(f(x)) = x and f(f^-1(y)) = y, whose graph is the reflection of f in the line y = x. The inverse is obtained by writing y = f(x), solving for x and interchanging x and y, and composition obeys (f o g)(x) = f(g(x)) with f o g generally different from g o f.",
+  "importantConcepts": [
+    "Domain: the set of all inputs x for which f is defined; range: the set of all output values f actually produces.",
+    "The codomain is the declared target B, while the range is only the subset of B that is actually hit by f.",
+    "Injective (one-to-one): different inputs give different outputs, tested by the horizontal line test on the graph.",
+    "Surjective (onto): every element of the codomain is the image of at least one input.",
+    "Bijective = injective + surjective; only a bijective function has an inverse f^-1: B -> A.",
+    "Composite function (f o g)(x) = f(g(x)); composition is associative but not commutative."
+  ],
+  "importantStatements": [
+    "A function f from set A to set B assigns to each element of A exactly one element of B, and is written f: A -> B with domain A and codomain B.",
+    "For f(x) = sqrt(x-2) the domain is x >= 2 and the range is y >= 0, because a square root is never negative.",
+    "If f: A -> B is bijective then f^-1 exists with f^-1(f(x)) = x and f(f^-1(y)) = y, so (f o f^-1)(x) = (f^-1 o f)(x) = x.",
+    "The graph of f^-1 is the reflection of the graph of f in the line y = x, so the point (a, b) on f becomes (b, a) on f^-1.",
+    "For f(x) = ax + b with a != 0 the inverse is f^-1(x) = (x - b)/a, and the branch f(x) = x^2 restricted to x >= 0 has inverse f^-1(x) = sqrt(x)."
+  ],
+  "importantTasks": [
+    "Find the domain and the range of a given function, naming the restriction imposed by every radical, denominator and logarithm.",
+    "Construct the inverse of a function by writing y = f(x), solving for x in terms of y, then interchanging x and y, and state the domain and range of the inverse.",
+    "Use the horizontal line test to decide whether a function is one-to-one, and hence whether an inverse can exist on the given domain.",
+    "Evaluate composite functions such as f o g and f o f, and test which of the two compositions returns the identity function.",
+    "Sketch a function and its inverse on the same axes, drawing the line y = x as the mirror line and labelling matched points."
+  ],
+  "keyPoints": [
+    "f^-1 denotes the inverse function, never the reciprocal 1/f(x).",
+    "Domain and range are generally different sets; the range of f is the domain of f^-1.",
+    "An inverse exists only for a bijective function, so a restriction is often needed first, as with x^2 on x >= 0.",
+    "Composition does not commute, since f o g and g o f are different functions in general.",
+    "Solving f(x) = k for x is the same work as finding f^-1(k), so the two skills are really one skill."
+  ],
+  "specialNotes": [
+    "For f(x) = 1/(x-3) the domain is every real x except 3, and the range is every real y except 0, because 0 is never attained.",
+    "x^2 on all of R is not one-to-one and so has no inverse; only the branch x >= 0, or x <= 0, does.",
+    "For f(x) = (x+1)/(x-1) one finds f(f(x)) = x, so the function is its own inverse and f^-1 = f.",
+    "A constant function on a set with more than one element is onto its image but not one-to-one, so it has no inverse.",
+    "Restricting the domain of f shrinks its range, and that is exactly what can turn it into the whole codomain and create an inverse."
+  ],
+  "examShortTricks": [
+    "If any horizontal line cuts the graph twice, f is not one-to-one and f^-1 does not exist, so stop immediately.",
+    "To sketch the inverse, swap the coordinates of a few known points instead of redoing the algebra from scratch.",
+    "Replace x by y, solve for x, then swap back: the three-step recipe works for every invertible function.",
+    "Verify the answer with f^-1(f(x)) = x; the result must come out to exactly x, never to a constant.",
+    "If the solved expression for x is the original formula with x and y exchanged, then f = f^-1."
+  ],
+  "examNotes": [
+    "Usually a 2-mark question with one mark for the domain and one for the range, and the restriction on x must be written as an explicit inequality.",
+    "Inverse computation is typically a 5-mark question, and sketching a function together with its inverse is a standard 5-mark graph question.",
+    "MCQs repeatedly test the distinction between f^-1(x) and 1/f(x), and the false claim that every function has an inverse.",
+    "Composite function questions in 5 and 10-mark sets often ask for the domain of f o g, which needs g to be defined and the range of g to lie inside the domain of f."
+  ],
+  "practiceQuestions": [
+    "Find the domain and the range of f(x) = 1/(x - 3).",
+    "If f(x) = 2x + 5, find f^-1(x) and state its domain and range.",
+    "Show that f(x) = x^3 is one-to-one on R and find f^-1(x).",
+    "If f(x) = (x + 1)/(x - 1), evaluate f o f and deduce whether f^-1 = f.",
+    "Find the domain of the composite function f o g for f(x) = sqrt(2 - x) and g(x) = x^2 - 1.",
+    "Determine the range of f(x) = (x - 1)^2 + 3 restricted to x >= 0."
+  ],
+  "mcs": [
+    {
+      "question": "What is the domain of f(x) = sqrt(x - 2)?",
+      "options": [
+        "x > 2",
+        "x >= 2",
+        "x <= 2",
+        "x < 2"
+      ],
+      "answer": "B",
+      "explanation": "A real square root requires x - 2 >= 0, so x >= 2. The endpoint x = 2 gives sqrt(0) = 0, which is defined, so the strict inequality in the first option is wrong."
+    },
+    {
+      "question": "If f(x) = 2x + 5, then f^-1(x) is",
+      "options": [
+        "(x + 5)/2",
+        "(x - 5)/2",
+        "2x + 5",
+        "(x - 5) x 2"
+      ],
+      "answer": "B",
+      "explanation": "Write y = 2x + 5, so x = (y - 5)/2, then interchange x and y to get f^-1(x) = (x - 5)/2. This matches the rule f^-1(x) = (x - b)/a."
+    },
+    {
+      "question": "If f(x) = (x + 1)/(x - 1), then f o f equals",
+      "options": [
+        "x",
+        "1/x",
+        "-x",
+        "x - 1"
+      ],
+      "answer": "A",
+      "explanation": "f(f(x)) = [(x+1)/(x-1) + 1] / [(x+1)/(x-1) - 1] = [2x/(x-1)] / [2/(x-1)] = x. So the function is its own inverse."
+    },
+    {
+      "question": "The graph of f^-1 is obtained from the graph of f by",
+      "options": [
+        "reflection in the y-axis",
+        "reflection in the x-axis",
+        "reflection in the line y = x",
+        "reflection in the line y = -x"
+      ],
+      "answer": "C",
+      "explanation": "The inverse interchanges inputs and outputs, so the point (a, b) of f becomes (b, a) of f^-1, which is exactly reflection in the line y = x."
+    },
+    {
+      "question": "An inverse function f^-1 exists only when f is",
+      "options": [
+        "one-to-one and onto its codomain",
+        "continuous on its domain",
+        "differentiable on its domain",
+        "a polynomial of degree 1"
+      ],
+      "answer": "A",
+      "explanation": "Only a bijective function, meaning one-to-one and onto, has an inverse. Continuity and differentiability are unrelated, and being linear only makes a function invertible, it is not the condition."
+    }
+  ]
+}

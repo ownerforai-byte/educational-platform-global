@@ -1,0 +1,171 @@
+<!doctype html><html><head><meta charset="utf-8"><title>समास — तत्पुरुष, कर्मधारय, द्वन्द्व र बहुव्रीहि</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Nepali  /  Bhasha Ra Vyakarana</div>
+    <h1 class="doc">समास — तत्पुरुष, कर्मधारय, द्वन्द्व र बहुव्रीहि</h1>
+    <div class="meta"><span>Class 11</span><span>Nepali</span><span>Bhasha Ra Vyakarana</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>bhasha-ra-vyakarana</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>समास-तत्पुरुष-कर्मधारय-द्वन्द्व-र-बहुव्रीहि</p></section>
+<section class="field"><h2>Relevance</h2><p><code>97</code></p></section>
+<section class="field"><h2>Source</h2><p>authored</p></section>
+<section class="field"><h2>Summary</h2><p>समास दुई वा बढी पद मिलेर एउटा पद बन्ने प्रक्रिया हो। विभक्ति लोप हुन्छ। तत्पुरुषमा उत्तरपद प्रधान हुन्छ, कर्मधारयमा विशेषण र विशेष्य मिल्छन्, द्वन्द्वमा दुवै पदको अर्थ रहन्छ, बहुव्रीहिमा अर्थ अर्कै कुनै पदमा जान्छ।</p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>समास के हो।</strong> छुट्टाछुट्टै पदलाई विभक्तिले जोड्दा वाक्य लामो हुन्छ। ती पदलाई एउटै शब्दजस्तो बनाएर विभक्ति लुकाइयो भने समास हुन्छ। राजाको पुत्र भन्ने ठाउँमा राजपुत्र। आमा र बाबु भन्ने ठाउँमा आमाबाबु। समासको अनिवार्य लक्षण विभक्तिको लोप हो। लोप भएन भने त्यो जोडिएको वाक्य मात्र हो, समास होइन।</li><li><strong>पूर्वपद र उत्तरपद।</strong> अगाडिको भाग पूर्वपद हो, पछाडिको उत्तरपद। राजपुत्र मा राज पूर्वपद हो, पुत्र उत्तरपद। समास चिन्दा सधैं सोध्नुहोस् — अर्थ कुन पदमा अडिएको छ। त्यही प्रश्नले प्रकार खुल्छ।</li><li><strong>तत्पुरुष।</strong> उत्तरपदको अर्थ प्रधान हुन्छ। पूर्वपदले उत्तरपदलाई केही सम्बन्धले बाँध्छ। राजपुत्र भनेको पुत्र नै हो, राजा होइन। देशभक्ति भनेको भक्ति हो। वनमानिस भनेको मानिस हो। विग्रह गर्दा बीचमा को, मा, बाट, का लागि जस्ता विभक्ति फर्किन्छन्। राजाको पुत्र। वनमा बस्ने मानिस।</li><li><strong>कर्मधारय।</strong> यो तत्पुरुषकै एउटा धार हो, तर दुवै पदले एउटै वस्तुलाई भन्छन्। एउटा विशेषण हुन्छ, अर्को विशेष्य। नीलकमल भनेको नीलो कमल हो। कमल नै नीलो हो, नीलो र कमल दुई थोक होइनन्। महाकवि, सत्कर्म, पीतअम्बर जस्ता रूप यसैमा पर्छन् जब अर्थ त्यही वस्तुमा रहन्छ। कर्मधारयको विग्रहमा त्यही, जस्तो, रूपी जस्ता शब्द आउँछन्।</li><li><strong>द्वन्द्व।</strong> दुवै पदको अर्थ जीवितै रहन्छ। र, अथवा, या को काम समास आफैँले गर्छ। आमाबाबु भनेको आमा र बाबु। रातदिन भनेको रात र दिन। रामसीता भनेको राम र सीता। इतरेतर द्वन्द्वमा पदहरू छुट्टिन्छन्। समाहार द्वन्द्वमा जोडी एउटै समूह बन्छ — खानापिना, हातखुट्टा। प्रश्नले र लगाएर विग्रह मागे द्वन्द्व हो।</li><li><strong>बहुव्रीहि।</strong> समस्त पदले पूर्वपद पनि होइन, उत्तरपद पनि होइन, अर्को कुनै व्यक्ति वा वस्तु जनाउँछ। अन्यपद प्रधान भनिन्छ। पीताम्बर भनेको पहेँलो कपडा मात्र होइन, पहेँलो कपडा लाग्ने जन। लम्बोदर भनेको लामो पेट भएको जन। चक्रपाणि भनेको हातमा चक्र भएको जन। विग्रहमा भएको, लाएको, धारण गरेको जस्ता शब्द आउँछन् र अन्त्यमा अर्को पद देखिन्छ।</li><li><strong>छुट्याउने चार प्रश्न।</strong> अर्थ पछाडिको पदमा मात्र हो भने तत्पुरुष। दुवै पद एउटै थोक हुन् भने कर्मधारय। दुवै पद जोडिएका छन् भने द्वन्द्व। अर्थ तेस्रो कुनै पदमा गयो भने बहुव्रीहि। यो चार प्रश्न उत्तरको पहिलो लाइन हो।</li><li><strong>विग्रह लेख्ने बानी।</strong> समासको नाम मात्र लेखेर छोड्नुभयो भने आधा अंक जान्छ। नाम, विग्रह, र कुन पद प्रधान भन्ने तीन कुरा सँगै लेख्नुहोस्। राजपुत्र — राजाको पुत्र — तत्पुरुष — उत्तरपद प्रधान।</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>समास हुन विभक्ति लोप हुनुपर्छ।</li><li>तत्पुरुषमा उत्तरपद प्रधान हुन्छ।</li><li>कर्मधारयमा विशेषण र विशेष्य एउटै वस्तु हुन्।</li><li>द्वन्द्वमा दुवै पदको अर्थ रहन्छ र विग्रहमा र आउँछ।</li><li>बहुव्रीहिमा अर्थ अन्य पदमा जान्छ।</li><li>उत्तरमा नाम, विग्रह र प्रधान पद तीनै लेख्नुहोस्।</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>कर्मधारय तत्पुरुषको विशेष प्रकार हो, छुट्टै विरोध होइन।</li><li>बहुव्रीहिको समस्त पद आफैँले भनेको चिज होइन, त्यो चिज भएको अर्को जन हो।</li><li>द्वन्द्वमा पदहरू समान स्तरका हुन्छन्। एउटाले अर्कोको विशेषण गर्दैन।</li><li>विग्रह समासलाई फेरि विभक्तिसहितको पदमा खोल्नु हो।</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>राजपुत्र। विग्रह — राजाको पुत्र। प्रकार — तत्पुरुष। प्रधान — उत्तरपद पुत्र।</li><li>नीलकमल। विग्रह — नीलो कमल। प्रकार — कर्मधारय। दुवै पद एउटै फूललाई भन्छन्।</li><li>आमाबाबु। विग्रह — आमा र बाबु। प्रकार — द्वन्द्व।</li><li>चक्रपाणि। विग्रह — चक्र हातमा भएको जन। प्रकार — बहुव्रीहि। अर्थ विष्णुजस्ता अन्य पदमा जान्छ।</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ नीलकमल तत्पुरुष मात्र भनेर छोडिन्छ — ✅ नीलो र कमल एउटै वस्तु भएकाले यो कर्मधारय हो</li><li>❌ पीताम्बर भनेको पहेँलो कपडा मात्र हो — ✅ अन्यलाई जनाउँदा यो बहुव्रीहि हो, कपडा आफैँ उत्तर होइन</li><li>❌ आमाबाबु मा आमा विशेषण हो — ✅ दुवै समान पद हुन्, त्यसैले द्वन्द्व हो</li><li>❌ विभक्ति देखिए पनि समास हुन्छ — ✅ विभक्ति लोप नभए समास हुँदैन</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>विग्रहमा र आयो भने द्वन्द्व। को, मा, बाट आयो र अर्थ पछाडि अडियो भने तत्पुरुष।</li><li>त्यही वस्तु भन्ने विग्रह आयो भने कर्मधारय। भएको जन आयो भने बहुव्रीहि।</li><li>प्रधान पद एक शब्दमा लेख्ने बानी बसाल्नुहोस् — उत्तरपद, दुवै, अन्यपद।</li><li>उदाहरण दुई दिनुहोस्, एउटा पाठ्यपुस्तकबाट र एउटा आफ्नो। एउटै उदाहरणले प्रकार नखुल्न सक्छ।</li><li>समास र सन्धि नझुक्नुहोस्। सन्धि वर्ण जोड्छ। समास पद जोड्छ।</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>समास संस्कृत व्याकरणबाट नेपालीमा आएको पदयोजना हो। विग्रह नेपाली वाक्यमा खोल्न सकिन्छ।</li><li>द्वन्द्वको विग्रहमा र, अथवा वा या अनिवार्यजस्तै आउँछ।</li><li>बहुव्रीहिलाई अन्यपदप्रधान समास भनिन्छ।</li><li>कर्मधारयमा विशेष्य प्रायः उत्तरपद हुन्छ र विशेषण पूर्वपद हुन्छ।</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>नेपालका थर, जात र ठाउँका नाममा पनि समास लुकेको हुन्छ। शर्मा, अधिकारी, पौडेल जस्ता थरको इतिहास सोध्दा समासको विग्रहले अर्थ खुल्छ। नामलाई हाँसोको विषय नबनाई संरचना हेर्नुहोस्।</li><li>मैथिली, भोजपुरी र नेपालीमा उस्तै तत्सम समास चल्छन्। तद्भव बोलीमा समास खुकुलो हुन्छ। दुवै नेपाली समाजको शब्दसम्पदा हुन्।</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>एउटा शब्द दुई प्रकारले विग्रह हुन सक्छ। पीताम्बर कपडा भन्दा कर्मधारय, व्यक्ति भन्दा बहुव्रीहि। प्रश्नको सन्दर्भ हेरेर प्रकार लेख्नुहोस्।</li><li>समास चिन्ने प्रश्नमा अर्थ नलेखिकन नाम मात्र नलेख्नुहोस्।</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>राजमहल, सत्कर्म, आमाबाबु, लम्बोदर र देशसेवा को समास नाम र विग्रह लेख्नुहोस्।</li><li>तत्पुरुष र कर्मधारयको फरक दुई उदाहरणसहित लेख्नुहोस्।</li><li>बहुव्रीहि किन अन्यपदप्रधान हो, चक्रपाणि उदाहरणले देखाउनुहोस्।</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>आमाबाबु कुन समास हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>तत्पुरुष</li><li>कर्मधारय</li><li>द्वन्द्व</li><li>बहुव्रीहि</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>आमा र बाबु दुवै अर्थ जोडिन्छन्। विग्रहमा र आउँछ। त्यसैले द्वन्द्व।</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>नीलकमल कुन समास हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>द्वन्द्व</li><li>बहुव्रीहि</li><li>कर्मधारय</li><li>अव्ययीभाव</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>नीलो कमल एउटै फूल हो। विशेषण र विशेष्य मिलेका छन्।</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>बहुव्रीहिमा कुन पद प्रधान हुन्छ?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>पूर्वपद मात्र</li><li>उत्तरपद मात्र</li><li>दुवै पद बराबर</li><li>समस्त पदबाहिरको अन्य पद</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>D</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>बहुव्रीहिको अर्थ तेस्रो पदमा जान्छ। त्यसैले अन्यपद प्रधान भनिन्छ।</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>राजपुत्र को विग्रह कुन हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>राजा र पुत्र</li><li>राजा रूपी पुत्र</li><li>राजाको पुत्र</li><li>पुत्र भएको राजा</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>अर्थ पुत्रमा अडिएको छ र बीचमा को लुकेको छ। तत्पुरुषको विग्रह राजाको पुत्र हो।</p></div></div></div></section>
+  <nav class="pager"><a href="12-kriyaprakarana.html" title="क्रियाप्रकरण — धातु, काल, वाच्य र सार्वनामिक क्रिया">‹ क्रियाप्रकरण — धातु, काल, वाच्य र सार्वनामिक …</a><a class="mid" href="../../../../../_subjects/class-11-nepali.html">Nepali</a><a href="14-shabda-parivartan.html" title="शब्द परिवर्तन — रूपान्तर, समानार्थक र विपरीतार्थक">शब्द परिवर्तन — रूपान्तर, समानार्थक र विपरीता… ›</a></nav>
+</div></body></html>

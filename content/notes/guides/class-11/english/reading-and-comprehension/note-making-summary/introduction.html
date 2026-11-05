@@ -1,0 +1,164 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Note-Making and Summary Writing</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Note Making Summary</div>
+    <h1 class="doc">Note-Making and Summary Writing</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Note Making Summary</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>reading-and-comprehension</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>note-making-summary</p></section>
+<section class="field"><h2>Relevance</h2><p><code>87</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;What Is Note-Making?&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Note-making&lt;/b&gt; is the process of extracting key information from a passage and organising it into a structured format using headings, sub-headings, and bullet points. In the NEB Class 11 English examination, note-making is a tested skill (typically 5-8 marks) that assesses a student's ability to identify important information, organise it logically, and present it concisely. Note-making is different from note-taking: note-making is done &lt;b&gt;after&lt;/b&gt; reading a passage, while note-taking is done &lt;b&gt;during&lt;/b&gt; a lecture or speech.&lt;/p&gt;</li><li>&lt;h2&gt;Format of Notes&lt;/h2&gt;</li><li>&lt;p&gt;A well-structured set of notes includes: (1) &lt;b&gt;Title&lt;/b&gt; — a concise heading that captures the main topic (e.g., 'THE IMPORTANCE OF READING NEWSPAPERS'). (2) &lt;b&gt;Main points&lt;/b&gt; — the key ideas from the passage, numbered or lettered (A, B, C...). (3) &lt;b&gt;Sub-points&lt;/b&gt; — supporting details under each main point, indented and numbered (1, 2, 3... or a, b, c...). (4) &lt;b&gt;Abbreviations&lt;/b&gt; — standard abbreviations can be used to save space (e.g., 'govt' for government, 'edu' for education, 'adv' for advantage, 'disadv' for disadvantage). The notes should fit on one page and use a clear hierarchical structure.&lt;/p&gt;</li><li>&lt;h2&gt;Steps in Note-Making&lt;/h2&gt;</li><li>&lt;p&gt;To make effective notes: (1) &lt;b&gt;Read the passage carefully&lt;/b&gt; — understand the main idea and structure before writing notes. (2) &lt;b&gt;Identify the main topics&lt;/b&gt; — look for the central themes or arguments (usually 3-5 main points). (3) &lt;b&gt;Create a title&lt;/b&gt; — write a concise heading that covers the entire passage. (4) &lt;b&gt;Write main points&lt;/b&gt; — phrase each main idea in a short heading (not a full sentence). (5) &lt;b&gt;Add sub-points&lt;/b&gt; — under each main point, add supporting details, examples, or evidence. (6) &lt;b&gt;Use abbreviations&lt;/b&gt; — replace long words with standard abbreviations. (7) &lt;b&gt;Review&lt;/b&gt; — check that the notes capture all key information and are logically organised. This process typically takes 10-15 minutes for a standard passage.&lt;/p&gt;</li><li>&lt;h2&gt;Summary Writing: Definition and Purpose&lt;/h2&gt;</li><li>&lt;p&gt;A &lt;b&gt;summary&lt;/b&gt; is a concise restatement of a passage's main ideas in the writer's own words. It is shorter than the original (typically 1/3 to 1/4 the length) and includes only the essential information, omitting examples, details, and repetitions. In the NEB exam, summary writing typically carries 5-8 marks. A good summary: (1) preserves the &lt;b&gt;main ideas&lt;/b&gt; in logical order, (2) is written in &lt;b&gt;your own words&lt;/b&gt; (not copied from the passage), (3) is &lt;b&gt;concise&lt;/b&gt; (usually 80-120 words for a 200-300 word passage), (4) uses &lt;b&gt;third person&lt;/b&gt; and &lt;b&gt;present tense&lt;/b&gt; (unless the passage is in past tense), (5) does &lt;b&gt;not include personal opinions&lt;/b&gt; or new information.&lt;/p&gt;</li><li>&lt;h2&gt;Steps in Summary Writing&lt;/h2&gt;</li><li>&lt;p&gt;To write an effective summary: (1) &lt;b&gt;Read the passage&lt;/b&gt; thoroughly to understand the main idea. (2) &lt;b&gt;Identify the main points&lt;/b&gt; — what are the key arguments or facts? (3) &lt;b&gt;Draft the summary&lt;/b&gt; — write the main points in your own words, following the passage's logical order. (4) &lt;b&gt;Eliminate details&lt;/b&gt; — remove examples, statistics, quotations, and repetitions. (5) &lt;b&gt;Check length&lt;/b&gt; — ensure the summary is approximately 1/3 to 1/4 of the original passage. (6) &lt;b&gt;Review for accuracy&lt;/b&gt; — ensure the summary faithfully represents the passage without adding personal interpretation. A common mistake is to copy sentences directly from the passage — this is never acceptable in a summary.&lt;/p&gt;</li><li>&lt;h2&gt;Difference Between Note-Making and Summary Writing&lt;/h2&gt;</li><li>&lt;p&gt;While both note-making and summary writing involve condensing information, they differ in format and purpose: &lt;b&gt;Note-making&lt;/b&gt; is presented in a &lt;b&gt;structured, hierarchical format&lt;/b&gt; with headings, sub-headings, and bullet points. It is a visual organisation of information. &lt;b&gt;Summary writing&lt;/b&gt; is presented as a &lt;b&gt;continuous paragraph&lt;/b&gt; in prose form. It is a condensed restatement of the passage's content. Note-making tests organisational skill; summary writing tests comprehension and paraphrasing skill. Both are commonly tested in NEB exams, sometimes together from the same passage.&lt;/p&gt;</li><li>&lt;h2&gt;Common Mistakes in Note-Making&lt;/h2&gt;</li><li>&lt;p&gt;Avoid these errors: (1) &lt;b&gt;Writing full sentences&lt;/b&gt; in notes — notes should use headings and phrases, not complete sentences. (2) &lt;b&gt;Including too many details&lt;/b&gt; — notes should be concise; omit examples and minor points. (3) &lt;b&gt;Poor organisation&lt;/b&gt; — main points should be logically ordered, with clear hierarchy between main and sub-points. (4) &lt;b&gt;No title&lt;/b&gt; — every set of notes must have a title. (5) &lt;b&gt;Copying from the passage&lt;/b&gt; — notes should paraphrase, not copy. (6) &lt;b&gt;Using abbreviations that are unclear&lt;/b&gt; — only use standard, widely understood abbreviations (govt, edu, adv, dis, approx, etc.).</li><li>&lt;h2&gt;Common Mistakes in Summary Writing&lt;/h2&gt;</li><li>&lt;p&gt;Avoid these errors: (1) &lt;b&gt;Copying sentences verbatim&lt;/b&gt; — a summary must be in your own words. (2) &lt;b&gt;Including minor details&lt;/b&gt; — examples, statistics, and illustrations should be omitted. (3) &lt;b&gt;Adding personal opinion&lt;/b&gt; — a summary is objective, not evaluative. (4) &lt;b&gt;Being too long&lt;/b&gt; — a summary should be approximately 1/3 to 1/4 of the original. (5) &lt;b&gt;Changing the meaning&lt;/b&gt; — ensure your summary accurately reflects the passage. (6) &lt;b&gt;Using first person&lt;/b&gt; — summaries are written in third person. (7) &lt;b&gt;Not using a title&lt;/b&gt; — a summary should have a concise title that captures its main idea.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Note-making vs. Note-taking: Note-making is done after reading a passage, organising information into a structured format with headings and sub-headings. Note-taking is done during a lecture or speech, capturing key points in real-time. Note-making is a structured academic skill; note-taking is a practical study skill.</li><li>Summary vs. Abstract: A summary condenses a passage's main ideas in the writer's own words (1/3 to 1/4 length). An abstract is a brief summary of a research paper or report, usually including the purpose, method, and findings. In NEB exams, 'summary' is the required term; 'abstract' is not used. Both are concise, but an abstract has a more rigid academic structure.</li><li>Notes vs. Outline: Notes are presented in a hierarchical format with headings, sub-headings, and bullet points (visual structure). An outline is a linear list of main points and sub-points, usually using Roman numerals and letters (I, A, 1, a). In NEB exams, 'notes' and 'outlines' are sometimes used interchangeably, but the expected format is the heading/sub-heading structure.</li><li>Paraphrasing vs. Summarising: Paraphrasing rewrites a specific passage or sentence in your own words (same length, same detail). Summarising condenses a longer passage to its main ideas (shorter length, fewer details). Paraphrasing preserves all the information; summarising selects only the most important information.</li><li>Main idea vs. Topic: The topic is the subject of the passage (one phrase: 'Environmental Pollution'). The main idea is what the author says about the topic (a complete sentence: 'Environmental pollution is the most pressing challenge facing developing nations today'). Notes should have a title (topic), while a summary should express the main idea in the opening sentence.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Make notes (with title and sub-headings) on this passage: 'Reading newspapers daily has become an essential habit for informed citizens. Newspapers provide up-to-date information on national and international events, help readers develop critical thinking, and broaden general knowledge. However, not all newspapers are reliable — some spread misinformation. Readers must choose reputable sources and cross-check facts.' [Answer: THE IMPORTANCE OF READING NEWSPAPERS | A. Daily reading habit | 1. Essential for informed citizenship | 2. Provides up-to-date national/international info | B. Benefits | 1. Develops critical thinking | 2. Broadens general knowledge | C. Caveats | 1. Some newspapers spread misinformation | 2. Readers must choose reputable sources | 3. Cross-checking facts is important]</li><li>Write a summary (80-120 words) of this passage: 'Education is the most powerful weapon which you can use to change the world. It is not merely about acquiring knowledge — it is about developing critical thinking, empathy, and the ability to solve problems. In Nepal, access to quality education remains uneven, with urban schools offering better resources than rural ones. Bridging this gap requires government investment in teacher training, infrastructure, and digital learning tools.' [Answer: Education is presented as the most powerful tool for societal change, going beyond knowledge acquisition to develop critical thinking and empathy. However, Nepal faces an educational inequality: urban schools have better resources than rural ones. The passage argues that closing this gap requires government investment in teacher training, infrastructure development, and digital learning tools to ensure equitable access to quality education for all children.] — Note: This is approximately 70 words, which is within the acceptable range for a short passage.</li><li>Identify the error in this set of notes: 'HEALTHY LIFESTYLE | 1. Eat good food | a. Fruits and vegetables are good | 2. Exercise | a. Run every day' [Answer: Issues: (1) Titles should be in ALL CAPS (already correct). (2) The notes are too brief and lack detail — 'Eat good food' is vague. (3) No sub-headings under main points — each main point should have at least 2 sub-points. (4) No abbreviations used where appropriate. A better version would include specific details and proper hierarchy.] — This tests the student's ability to evaluate the quality of note-making.</li><li>What is wrong with this summary? 'I think that reading newspapers is very important because it helps people know what is happening in the world. Also, I believe that newspapers can sometimes be wrong, so you should be careful about what you read. My friend says he reads the paper every day and learns a lot from it.' [Answer: Multiple errors: (1) First person ('I think', 'I believe', 'my friend') — summaries must be objective and third-person. (2) Personal opinion ('I think', 'I believe') — summaries should not include the writer's views. (3) Too informal — uses conversational language. (4) Includes irrelevant detail ('my friend says...'). A proper summary would be: 'Reading newspapers is important for staying informed about current events. However, the reliability of newspapers varies, and readers should critically evaluate the information they consume.']</li><li>Convert these full-sentence notes into abbreviated form: 'The government should invest more in education. This will help improve the quality of teaching. It will also help reduce the gap between urban and rural schools.' [Answer: The govt should invest more in edu. This will help improve quality of teaching. It will also help reduce gap between urban &amp; rural schools. — Note: 'govt' = government, 'edu' = education, '&amp;' = and. Standard abbreviations save space and are acceptable in note-making.] — This tests knowledge of common abbreviations used in note-making.</li><li>Write a title for a summary of this passage: 'Social media has transformed the way people communicate, learn, and access information. Platforms like Facebook, Twitter, and Instagram connect billions of users worldwide. However, excessive use of social media has been linked to anxiety, depression, and reduced attention spans, particularly among young people.' [Answer: 'THE IMPACT OF SOCIAL MEDIA ON MODERN LIFE' or 'SOCIAL MEDIA: BENEFITS AND RISKS' — The title should capture both the positive and negative aspects discussed in the passage. A title like 'Social Media' alone is too vague.] — Note: The title should be concise (5-8 words) and capture the passage's main theme.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Note-making as a formal academic skill was developed in the early 20th century by educators seeking to improve students' information-processing abilities. The structured format (headings, sub-headings, abbreviations) reflects the influence of library science and information organisation principles.</li><li>In the NEB English examination, note-making and summary writing are frequently tested together from the same passage, carrying a combined 10-16 marks. This makes them one of the highest-yield question types in the comprehension section.</li><li>The practice of summary writing has ancient roots — scholars in classical Greece and Rome practised condensed retelling of speeches and texts as a form of mental exercise. The modern summary, with its emphasis on conciseness and objectivity, evolved from these classical traditions.</li><li>Abbreviations in note-making (govt, edu, adv, dis, approx, etc.) are a practical convention that reflects the efficiency demands of academic and professional note-taking. Standardised abbreviations allow for faster writing and clearer organisation, making them an essential skill for students and professionals alike.</li><li>The distinction between note-making (structured, hierarchical) and summarising (continuous prose) reflects two different cognitive processes: categorisation and organisation (notes) versus synthesis and condensation (summary). Both are essential academic skills tested in NEB English.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>reading-and-comprehension</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>reading-and-comprehension</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

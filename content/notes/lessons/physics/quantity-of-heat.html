@@ -1,0 +1,258 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Quantity of Heat</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Lessons</div>
+    <h1 class="doc">Quantity of Heat</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Lessons</span></div>
+  </header>
+  <p>Heat is energy in transit — it always flows from a body at higher temperature to one at lower temperature until thermal equilibrium is reached. This NEB Class 11 unit quantifies that flow: specific heat capacity links heat to temperature change, latent heat governs phase changes at constant temperature, Newton's law of cooling describes how hot bodies cool, and the triple point pins down a universal reference state of water.</p>
+<h3>Heat vs Temperature — The Fundamental Distinction</h3>
+<p><strong>Temperature</strong> measures the average kinetic energy of the molecules in a body — it tells you <em>how hot</em> something is. <strong>Heat</strong> is the <em>total</em> energy transferred between bodies because of a temperature difference — it tells you <em>how much</em> energy flows. A large iceberg has a low temperature but contains enormous heat energy because of its huge mass; a tiny spark has a very high temperature but very little heat. This distinction is the foundation of the entire unit.</p>
+<p>The <strong>Zeroth law of thermodynamics</strong> makes temperature measurement possible: if body A is in thermal equilibrium with body C, and body B is also in equilibrium with C, then A and B are in equilibrium with each other. This is why a mercury thermometer works — it reaches the same temperature as whatever it touches, and we read that temperature from the mercury column.</p>
+<h3>Specific Heat and Calorimetry</h3>
+<p>The heat Q needed to warm mass m of a substance through ΔT is Q = mcΔT, where c is the specific heat capacity (water: c = 4200 J kg⁻¹ K⁻¹, or 1 cal g⁻¹ °C⁻¹). The <strong>principle of calorimetry</strong> states that in an insulated mixture, heat lost by hot bodies equals heat gained by cold bodies.</p>
+<h4>Why Water's High Specific Heat Matters</h4>
+<p>Water's c = 4200 J kg⁻¹ K⁻¹ is among the highest of any common substance — it takes 4200 J to raise just 1 kg of water by 1 K. This is why:</p>
+<ul>
+<li><strong>Oceans moderate climate</strong> — they absorb huge amounts of heat in summer and release it slowly in winter</li>
+<li><strong>Land heats and cools faster than sea</strong> — sand has c ≈ 800 J kg⁻¹ K⁻¹, about five times less than water</li>
+<li><strong>Steam burns are so dangerous</strong> — steam at 100°C carries far more energy than water at 100°C because of its latent heat</li>
+<li><strong>Cooling systems use water</strong> — car radiators and power plants exploit water's high heat capacity to absorb waste heat efficiently</li>
+</ul>
+<h4>The Calorimeter</h4>
+<p>A <strong>calorimeter</strong> is an insulated vessel (usually copper or glass) used to measure heat changes. Its own <strong>water equivalent</strong> w is the mass of water that would absorb the same heat as the calorimeter itself — this must be added to the water mass for accurate results. The water equivalent is found by:</p>
+<pre><code>w = m_c·c_c / c_w</code></pre>
+<p>where m_c is the calorimeter's mass and c_c its specific heat. For a copper calorimeter (c = 385 J kg⁻¹ K⁻¹) of mass 100 g, w = 0.1 × 385/4200 ≈ 0.0092 kg ≈ 9.2 g of water.</p>
+<h3>Latent Heat and Phase Changes</h3>
+<p>During melting or boiling the temperature stays constant while energy breaks bonds instead of raising temperature.</p>
+<table><thead><tr><th>Quantity</th><th>Symbol</th><th>Water value (approx.)</th><th>Formula</th></tr></thead><tbody><tr><td>Specific heat capacity</td><td>c</td><td>4200 J kg⁻¹ K⁻¹</td><td>Q = mcΔT</td></tr><tr><td>Specific latent heat of fusion</td><td>L_f</td><td>334–336 kJ/kg (80 cal/g)</td><td>Q = mL_f</td></tr><tr><td>Specific latent heat of vaporization</td><td>L_v</td><td>2260 kJ/kg (540 cal/g)</td><td>Q = mL_v</td></tr><tr><td>Triple point of water</td><td>—</td><td>273.16 K at 611.7 Pa</td><td>defines the kelvin</td></tr></tbody></table>
+<h4>Why Latent Heat Is So Large</h4>
+<p>The <strong>specific latent heat of fusion</strong> L_f is the energy needed to change 1 kg of a solid into liquid at the same temperature. For water, L_f ≈ 334 kJ/kg — this energy breaks the hydrogen bonds holding ice crystals together. The <strong>specific latent heat of vaporization</strong> L_v is the energy needed to change 1 kg of liquid into vapour at the same temperature. For water, L_v ≈ 2260 kJ/kg — nearly <strong>seven times</strong> the fusion value, because vaporisation must completely separate molecules against the strong intermolecular forces, not just rearrange them.</p>
+<p>This enormous L_v explains why:</p>
+<ul>
+<li><strong>Sweating cools you</strong> — evaporating sweat absorbs 2260 kJ per kg from your skin</li>
+<li><strong>Steam burns are worse than boiling water burns</strong> — steam releases its latent heat (2260 kJ/kg) <em>plus</em> its cooling heat when it condenses on skin</li>
+<li><strong>Boiling water takes much longer than melting ice</strong> — the same mass needs 6.8× more energy to vaporise than to melt</li>
+</ul>
+<h4>The Heating Curve</h4>
+<p>Heating ice from −10 °C to steam at 110 °C needs five stages summed in order:</p>
+<pre><code>Stage 1: Warm ice from −10°C to 0°C:  Q₁ = m·c_ice·ΔT = m × 2090 × 10
+Stage 2: Melt ice at 0°C:              Q₂ = m·L_f = m × 334,000
+Stage 3: Warm water from 0°C to 100°C: Q₃ = m·c_water·ΔT = m × 4200 × 100
+Stage 4: Boil water at 100°C:          Q₄ = m·L_v = m × 2,260,000
+Stage 5: Warm steam from 100°C to 110°C: Q₅ = m·c_steam·ΔT = m × 2010 × 10</code></pre>
+<p>Each stage uses its own c or L. The temperature <em>plateaus</em> during stages 2 and 4 — the energy goes into breaking bonds, not raising temperature.</p>
+<h4>The Triple Point</h4>
+<p>The <strong>triple point</strong> of water is the unique combination of temperature and pressure (273.16 K and 611.7 Pa) at which ice, liquid water, and water vapour coexist in equilibrium. The kelvin is <em>defined</em> so that the triple point of water is exactly 273.16 K — this is the fundamental reference for the entire temperature scale. Note: the triple point is <strong>not</strong> the same as the freezing point (273.15 K at 1 atm) — the freezing point is at standard pressure, while the triple point is at the much lower vapour pressure of 611.7 Pa.</p>
+<h3>Newton's Law of Cooling</h3>
+<p>Newton's law of cooling adds kinetics: the rate of fall of temperature is proportional to the excess over surroundings, dT/dt ∝ (T − T_s), valid for small excesses under forced convection conditions.</p>
+<h4>The Exponential Cooling Curve</h4>
+<p>The solution to dT/dt = −k(T − T_s) is:</p>
+<pre><code>T(t) = T_s + (T₀ − T_s)·e^(−kt)</code></pre>
+<p>where T₀ is the initial temperature, T_s the surroundings temperature, and k the cooling constant. The cooling curve is <strong>exponential decay</strong>:</p>
+<ul>
+<li><strong>Cooling is fastest at the start</strong> — when the excess (T − T_s) is largest</li>
+<li><strong>Cooling slows as T approaches T_s</strong> — the excess shrinks, so the rate drops</li>
+<li><strong>After a long time, T → T_s</strong> — the body reaches thermal equilibrium with its surroundings</li>
+</ul>
+<p>The cooling constant k depends on the surface area, the nature of the surface, and the surrounding medium. A larger surface area or a better conductor (like a metal pan vs. a ceramic bowl) gives a larger k and faster cooling.</p>
+<h3>Worked Calculation</h3>
+<pre><code>Question: 100 g of water at 80°C is mixed with 200 g at 20°C
+in a calorimeter of negligible heat capacity. Find the final
+temperature.
+
+Step 1: Heat lost = heat gained (calorimetry principle)
+        m1·c·(80 - T) = m2·c·(T - 20)
+Step 2: Cancel c and substitute masses:
+        100(80 - T) = 200(T - 20)
+Step 3: Expand: 8000 - 100T = 200T - 4000
+Step 4: Solve:   12000 = 300T → T = 40°C
+
+Answer: final temperature is 40°C.</code></pre>
+<h4>A More Challenging Example</h4>
+<pre><code>Question: How much heat is needed to convert 200 g of ice at
+−10°C into steam at 110°C?
+Given: c_ice = 2090 J/kg·K, c_water = 4200 J/kg·K,
+       c_steam = 2010 J/kg·K, L_f = 334 kJ/kg, L_v = 2260 kJ/kg.
+
+Step 1: Warm ice:  Q₁ = 0.2 × 2090 × 10 = 4180 J
+Step 2: Melt ice:  Q₂ = 0.2 × 334,000 = 66,800 J
+Step 3: Warm water: Q₃ = 0.2 × 4200 × 100 = 84,000 J
+Step 4: Boil water: Q₄ = 0.2 × 2,260,000 = 452,000 J
+Step 5: Warm steam: Q₅ = 0.2 × 2010 × 10 = 4020 J
+
+Total: Q = 4180 + 66,800 + 84,000 + 452,000 + 4020
+     = 611,000 J = 611 kJ
+
+Answer: 611 kJ of heat is needed.</code></pre>
+<p>Notice how the vaporisation stage (Q₄ = 452 kJ) dominates — it's 74% of the total energy, because breaking the intermolecular bonds in water requires so much energy.</p>
+<h3>Key points</h3>
+<ul>
+<li>Temperature measures average kinetic energy of molecules; heat is energy transferred because of a temperature difference.</li>
+<li>The Zeroth law makes thermometry possible: bodies in equilibrium with a third body are in equilibrium with each other.</li>
+<li>Temperature remains constant during a pure phase change despite continued heating.</li>
+<li>Vaporisation absorbs far more energy than fusion for the same mass (2260 vs ~336 kJ/kg).</li>
+<li>Newton's cooling curve is exponential-like: cooling is fast when the excess is large.</li>
+<li>The triple point (273.16 K, 611.7 Pa) defines the kelvin — it is not the same as the freezing point.</li>
+<li>Water's high specific heat (4200 J kg⁻¹ K⁻¹) is why oceans moderate climate and why water is used in cooling systems.</li>
+<li>The calorimeter's water equivalent must be added to the water mass for accurate measurements.</li>
+</ul>
+<h3>Common mistakes</h3>
+<ul>
+<li>Applying Q = mcΔT during a phase change, where ΔT = 0 and Q = mL must be used.</li>
+<li>Mixing up latent heats: fusion values are roughly seven times smaller than vaporisation values.</li>
+<li>Ignoring the calorimeter's own heat capacity in precise experiments.</li>
+<li>Sign errors in &quot;heat lost = heat gained&quot; — write both sides as positive magnitudes.</li>
+<li>Quoting the triple point as 273.15 K; the kelvin is defined so the triple point is exactly 273.16 K.</li>
+<li>Confusing the triple point with the freezing point — they differ in pressure (611.7 Pa vs 1 atm).</li>
+<li>Forgetting to include all five stages when heating ice to steam — each stage uses its own c or L.</li>
+<li>Assuming the cooling constant k is the same for all bodies — it depends on surface area, material, and surroundings.</li>
+</ul>
+  <nav class="pager"><a href="optics.html" title="Optics">‹ Optics</a><a class="mid" href="../../../_subjects/class-11-physics.html">Physics</a><a href="vectors.html" title="Vectors">Vectors ›</a></nav>
+</div></body></html>

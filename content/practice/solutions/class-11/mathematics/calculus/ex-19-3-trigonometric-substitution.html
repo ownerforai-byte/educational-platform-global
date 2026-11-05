@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.19 Book Ex 19.3 (Trigonometric Substitution) - Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Calculus</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.19 Book Ex 19.3 (Trigonometric Substitution) - Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Calculus</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q1(i). Find the indefinite integral: integral of dx / sqrt(1 - x^2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Standard inverse-sine form: the derivative of sin^-1 x is exactly 1/sqrt(1-x^2).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Recognise d/dx (sin^-1 x) = 1/sqrt(1-x^2), so integral dx/sqrt(1-x^2) = sin^-1 x + c. Derivation by substitution: put x = sin theta, dx = cos theta d theta, sqrt(1-x^2) = cos theta, giving integral d theta = theta + c = sin^-1 x + c. Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q1(i); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q1(ii). Find the indefinite integral: integral of dx / [x^2 sqrt(9 - x^2)].</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>For sqrt(a^2 - x^2) put x = a sin theta; here a = 3. The surviving cosec^2 theta integrates to -cot theta.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let x = 3 sin theta, dx = 3 cos theta d theta, sqrt(9-x^2) = 3 cos theta. Then x^2 sqrt(9-x^2) = 9 sin^2 theta <em> 3 cos theta = 27 sin^2 theta cos theta, so the integral is integral 3 cos theta d theta/(27 sin^2 theta cos theta) = (1/9) integral cosec^2 theta d theta = -(1/9) cot theta + c = -(1/9) sqrt(9-x^2)/x + c = -sqrt(9-x^2)/(9x) + c. Check: d/dx[-sqrt(9-x^2)/(9x)] = -1/9 [(-x/sqrt(9-x^2))</em>x - sqrt(9-x^2)]/x^2 = -1/9[(-x^2 - (9-x^2))/sqrt(9-x^2)]/x^2 = 1/(x^2 sqrt(9-x^2)). Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q1(ii); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q1(iii). Find the indefinite integral: integral of dx / (a^2 - x^2)^(3/2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>x = a sin theta collapses the 3/2 power to a cos^3 theta, leaving integral sec^2 theta d theta = tan theta.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let x = a sin theta, dx = a cos theta d theta, (a^2 - x^2)^(3/2) = (a^2 cos^2 theta)^(3/2) = a^3 cos^3 theta. Then the integral = integral a cos theta d theta/(a^3 cos^3 theta) = (1/a^2) integral sec^2 theta d theta = (1/a^2) tan theta + c = (1/a^2) * x/sqrt(a^2-x^2) + c = x/(a^2 sqrt(a^2-x^2)) + c. Check: d/dx[x/(a^2 sqrt(a^2-x^2))] = (1/a^2)[sqrt(a^2-x^2) + x^2/sqrt(a^2-x^2)]/(a^2-x^2) = (1/a^2)(a^2)/(a^2-x^2)^(3/2) = 1/(a^2-x^2)^(3/2). Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q1(iii); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q1(iv). Find the indefinite integral: integral of x^2 dx / sqrt(a^2 - x^2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same substitution, then the half-angle identity sin^2 theta = (1 - cos 2 theta)/2 turns it into two elementary integrals.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let x = a sin theta, dx = a cos theta d theta, sqrt(a^2-x^2) = a cos theta. Then integral x^2 dx/sqrt(a^2-x^2) = integral a^2 sin^2 theta * a cos theta d theta/(a cos theta) = a^2 integral sin^2 theta d theta = a^2 integral (1 - cos 2 theta)/2 d theta = (a^2/2)[theta - (sin 2 theta)/2] + c = (a^2/2)(theta - sin theta cos theta) + c = (a^2/2) sin^-1(x/a) - (1/2) x sqrt(a^2-x^2) + c (since a^2 sin theta cos theta = x sqrt(a^2-x^2)). Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q1(iv); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q2(i). Find the indefinite integral: integral of sqrt(x^2 - 9) dx / x.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>x = 3 sec theta turns sqrt(x^2-9) into 3 tan theta; the leftover sec theta tan^2 theta splits into sec theta sec^2 theta - sec theta.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let x = 3 sec theta, dx = 3 sec theta tan theta d theta, sqrt(x^2-9) = 3 tan theta. Then integral sqrt(x^2-9) dx/x = integral 3 tan theta <em> 3 sec theta tan theta d theta/(3 sec theta) = 3 integral tan^2 theta d theta = 3 integral (sec^2 theta - 1) d theta = 3(tan theta - theta) + c = sqrt(x^2-9) - 3 sec^-1(x/3) + c. Check: d/dx[sqrt(x^2-9)] = x/sqrt(x^2-9) and d/dx[-3 sec^-1(x/3)] = -3 </em> (1/3)/((x/3)sqrt(x^2/9-1)) = -3/x <em> ... = -(3</em>3)/(x sqrt(x^2-9)) = -9/(x sqrt(x^2-9)); the sum is (x^2-9)/(x sqrt(x^2-9)) = sqrt(x^2-9)/x. Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q2(i); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q2(ii). Find the indefinite integral: integral of dx / [x^2 sqrt(x^2 - a^2)].</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>x = a sec theta: the sec/tan factors cancel completely and leave a plain cosine.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let x = a sec theta, dx = a sec theta tan theta d theta, sqrt(x^2-a^2) = a tan theta. Then x^2 sqrt(x^2-a^2) = a^3 sec^2 theta tan theta, so the integral = integral a sec theta tan theta d theta/(a^3 sec^2 theta tan theta) = (1/a^2) integral cos theta d theta = (1/a^2) sin theta + c = (1/a^2) sqrt(x^2-a^2)/x + c = sqrt(x^2-a^2)/(a^2 x) + c. Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q2(ii); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q2(iii). Find the indefinite integral: integral of dx / (x^2 - a^2)^(3/2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>After x = a sec theta the integrand becomes sec theta/tan^2 theta = cosec theta cot theta, whose integral is -cosec theta.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let x = a sec theta, dx = a sec theta tan theta d theta, (x^2-a^2)^(3/2) = a^3 tan^3 theta. Then the integral = integral a sec theta tan theta d theta/(a^3 tan^3 theta) = (1/a^2) integral sec theta/tan^2 theta d theta = (1/a^2) integral cosec theta cot theta d theta = -(1/a^2) cosec theta + c = -(1/a^2) * x/sqrt(x^2-a^2) + c = -x/(a^2 sqrt(x^2-a^2)) + c. Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q2(iii); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q2(iv). Find the indefinite integral: integral of dx / sqrt(x^2 - 4).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Standard logarithmic form integral dx/sqrt(x^2 - a^2) = log|x + sqrt(x^2-a^2)|, here a = 2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Use the standard result (obtained by x = 2 sec theta, or by rationalising with u = x + sqrt(x^2-4)): integral dx/sqrt(x^2-4) = log|x + sqrt(x^2-4)| + c. Check: d/dx log|x + sqrt(x^2-4)| = [1 + x/sqrt(x^2-4)]/[x + sqrt(x^2-4)] = [sqrt(x^2-4) + x]/[sqrt(x^2-4)(x + sqrt(x^2-4))] = 1/sqrt(x^2-4). Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q2(iv); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q2(v). Find the indefinite integral: integral of x^3 dx / (x^2 - a^2)^(3/2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>The substitution x = a sec theta turns the whole thing into 4a integral cosec^2(2 theta) d theta; then cot 2 theta is converted back to x.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let x = a sec theta, dx = a sec theta tan theta d theta, x^3 = a^3 sec^3 theta, (x^2-a^2)^(3/2) = a^3 tan^3 theta. Then the integral = integral a^3 sec^3 theta * a sec theta tan theta d theta/(a^3 tan^3 theta) = a integral sec^4 theta/tan^2 theta d theta = a integral d theta/(sin^2 theta cos^2 theta) = 4a integral cosec^2(2 theta) d theta = -2a cot 2 theta + c. Now cot theta = a/sqrt(x^2-a^2), so cot 2 theta = (cot^2 theta - 1)/(2 cot theta) = (2a^2 - x^2)/(2a sqrt(x^2-a^2)). Hence -2a cot 2 theta = (x^2 - 2a^2)/sqrt(x^2-a^2) + c. Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q2(v); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q3(i). Find the indefinite integral: integral of dx / (x^2 + a^2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Standard inverse-tangent form; the a in the denominator comes out of the substitution x = a tan theta.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let x = a tan theta, dx = a sec^2 theta d theta, x^2 + a^2 = a^2 sec^2 theta. Then the integral = integral a sec^2 theta d theta/(a^2 sec^2 theta) = (1/a) integral d theta = (1/a) theta + c = (1/a) tan^-1(x/a) + c. Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q3(i); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>Q3(ii). Find the indefinite integral: integral of dx / [x^2 sqrt(x^2 + 1)].</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>x = tan theta gives integral sec theta/tan^2 theta d theta = -cosec theta, and cosec theta = sqrt(x^2+1)/x.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let x = tan theta, dx = sec^2 theta d theta, sqrt(x^2+1) = sec theta. Then x^2 sqrt(x^2+1) = tan^2 theta sec theta, so the integral = integral sec^2 theta d theta/(tan^2 theta sec theta) = integral sec theta/tan^2 theta d theta = integral (1/cos theta)(cos^2 theta/sin^2 theta) d theta = integral cos theta/sin^2 theta d theta = -1/sin theta + c = -cosec theta + c = -sqrt(x^2+1)/x + c. Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q3(ii); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>Q3(iii). Find the indefinite integral: integral of x^2 dx / (1 + x^2)^2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>x = tan theta makes the integrand sin^2 theta; the half-angle identity then gives two terms.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let x = tan theta, dx = sec^2 theta d theta, (1+x^2)^2 = sec^4 theta. Then integral x^2 dx/(1+x^2)^2 = integral tan^2 theta sec^2 theta d theta/sec^4 theta = integral sin^2 theta d theta = (1/2) integral (1 - cos 2 theta) d theta = (1/2)(theta - (sin 2 theta)/2) + c = (1/2)(theta - sin theta cos theta) + c = (1/2) tan^-1 x - (1/2) * x/(1+x^2) + c. Boxed (printed key p583 prints (1/2)tan^-1 x - (1/2) x/(x^2+1) + c).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q3(iii); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>Q3(iv). Find the indefinite integral: integral of dx / sqrt(a^2 + x^2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Standard logarithmic form integral dx/sqrt(a^2+x^2) = log|x + sqrt(a^2+x^2)|.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Substitute x = a tan theta: dx = a sec^2 theta d theta, sqrt(a^2+x^2) = a sec theta, so the integral = integral sec theta d theta = log|sec theta + tan theta| + c = log|sqrt(a^2+x^2)/a + x/a| + c = log|x + sqrt(a^2+x^2)| + c (the -log a is absorbed into c). Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q3(iv); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>Q3(v). Find the indefinite integral: integral of dx / [x sqrt(x^2 + 1)].</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>x = tan theta turns it into integral cosec theta d theta = log|tan(theta/2)|, then tan(theta/2) = (sec theta - 1)/tan theta is converted back.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let x = tan theta, dx = sec^2 theta d theta, sqrt(x^2+1) = sec theta. Then the integral = integral sec^2 theta d theta/(tan theta sec theta) = integral sec theta/tan theta d theta = integral cosec theta d theta = log|tan(theta/2)| + c. Using tan(theta/2) = (sec theta - 1)/tan theta = (sqrt(x^2+1) - 1)/x, the answer is log|(sqrt(x^2+1) - 1)/x| + c. Boxed (printed key p583). Equivalently -log|(sqrt(x^2+1)+1)/x| + c = -log|cosec theta + cot theta| + c, the same family.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q3(v); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>Q3(vi). Find the indefinite integral: integral of (tan^-1 x)/(1 + x^2) dx.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>The denominator is the derivative of tan^-1 x, so the whole integrand is u du with u = tan^-1 x.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let u = tan^-1 x, du = dx/(1+x^2). Then integral u du = u^2/2 + c = (1/2)(tan^-1 x)^2 + c. Check: d/dx = tan^-1 x * 1/(1+x^2). Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q3(vi); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>Q4(i). Find the indefinite integral: integral of sqrt((a + x)/(a - x)) dx.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Rationalise the numerator first: sqrt((a+x)/(a-x)) = (a+x)/sqrt(a^2-x^2), which splits into two standard forms.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Multiply numerator and denominator of the radicand's fraction by (a+x): sqrt((a+x)/(a-x)) = sqrt((a+x)^2/(a^2-x^2)) = (a+x)/sqrt(a^2-x^2) for a+x &gt; 0. So the integral = integral a dx/sqrt(a^2-x^2) + integral x dx/sqrt(a^2-x^2) = a sin^-1(x/a) - sqrt(a^2-x^2) + c. Check: d/dx = a/sqrt(a^2-x^2) + x/sqrt(a^2-x^2) = (a+x)/sqrt(a^2-x^2) = sqrt((a+x)/(a-x)). Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q4(i); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>Q4(ii). Find the indefinite integral: integral of sqrt(x/(a - x)) dx.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Substitute x = a sin^2 phi so that the radical becomes tan of a half-angle, leaving 2a integral sin^2 phi d phi.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let x = a sin^2 phi, so dx = 2a sin phi cos phi d phi and sqrt(x/(a-x)) = sin phi/cos phi. Then the integral = integral (sin phi/cos phi)(2a sin phi cos phi) d phi = 2a integral sin^2 phi d phi = a integral (1 - cos 2 phi) d phi = a(phi - sin phi cos phi) + c. Since phi = sin^-1 sqrt(x/a) and sin phi cos phi = sqrt(x/a) * sqrt((a-x)/a) = sqrt(x(a-x))/a, the answer is a sin^-1 sqrt(x/a) - sqrt(x(a-x)) + c. Boxed (printed key p583).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.19 Exercise 19.3 Q4(ii); book p582-583 = PDF p609-610; key book p583 = PDF p610</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.19 Antiderivatives, BOOK Exercise 19.3 (integration by trigonometric substitution - section C of the chapter): all 4 questions and 17 sub-parts of the printing, each solved step by step and verified by differentiation against the printed Answers on book p583.</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>calculus-textbook-ex-19-3-trigonometric-substitution</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>calculus</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><a href="ex-19-2-integration-by-substitution.html" title="Sukunda Basic Mathematics XI - Ch.19 Book Ex 19.2 (Integration by Substitution) - Complete Solutions">‹ Sukunda Basic Mathematics XI - Ch.19 Book Ex …</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-19-4-integration-by-parts.html" title="Sukunda Basic Mathematics XI - Ch.19 Book Ex 19.4 (Integration by Parts) - Complete Solutions">Sukunda Basic Mathematics XI - Ch.19 Book Ex … ›</a></nav>
+</div></body></html>

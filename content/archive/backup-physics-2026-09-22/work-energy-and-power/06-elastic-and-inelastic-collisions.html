@@ -1,0 +1,178 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Elastic and Inelastic Collisions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Backup Physics 2026 09 22</div>
+    <h1 class="doc">Elastic and Inelastic Collisions</h1>
+    <div class="meta"><span>Backup Physics 2026 09 22</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>work-energy-and-power</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>elastic-and-inelastic-collisions</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>Elastic collision:</strong> A collision in which both total momentum AND total kinetic energy are conserved. The bodies rebound without permanent deformation, no sound/heat is produced. The relative velocity of approach equals the relative velocity of separation: v₂ - v₁ = u₁ - u₂.</li><li><strong>Inelastic collision:</strong> A collision in which momentum is conserved but kinetic energy is NOT conserved. Some kinetic energy is converted to internal energy (heat, sound, deformation). The coefficient of restitution e &lt; 1.</li><li><strong>Perfectly inelastic collision:</strong> The extreme case where the colliding bodies stick together after collision and move with a common velocity. Momentum is conserved; KE loss is maximum (but not 100% because momentum must be conserved, so some KE remains as center-of-mass motion).</li><li><strong>One-dimensional elastic collision formulas:</strong> For masses m₁, m₂ with initial velocities u₁, u₂: v₁ = (m₁-m₂)u₁/(m₁+m₂) + 2m₂u₂/(m₁+m₂), v₂ = (m₂-m₁)u₂/(m₁+m₂) + 2m₁u₁/(m₁+m₂). These come from conservation of momentum + conservation of KE.</li><li><strong>Special case — equal masses (m₁ = m₂) in elastic collision:</strong> The masses exchange velocities! v₁ = u₂, v₂ = u₁. If m₂ was initially at rest (u₂ = 0), then v₁ = 0 (first mass stops) and v₂ = u₁ (second mass moves off with the first mass's original speed).</li><li><strong>Special case — very massive m₁, stationary m₂ (m₁ ≫ m₂, u₂ = 0):</strong> m₁ barely slows: v₁ ≈ u₁. m₂ shoots forward at v₂ ≈ 2u₁ (twice the initial speed). This is how a golf club hits a ball, or a bat hits a baseball.</li><li><strong>Coefficient of restitution (e):</strong> e = (relative speed of separation) / (relative speed of approach) = (v₂ - v₁)/(u₁ - u₂). For perfectly elastic: e = 1. For perfectly inelastic: e = 0. For inelastic: 0 &lt; e &lt; 1. e depends on the materials (e.g., tennis ball on concrete: e ≈ 0.75; steel on steel: e ≈ 0.9; putty: e ≈ 0).</li><li><strong>Energy loss in inelastic collisions:</strong> ΔK = K_f - K_i = -½ μ v_rel² (1 - e²), where μ = m₁m₂/(m₁+m₂) is the reduced mass and v_rel = u₁ - u₂ is the relative velocity. The energy lost goes to heat, sound, and permanent deformation.</li><li><strong>Two-dimensional collisions:</strong> Momentum is conserved as a vector: p_x and p_y separately. For elastic collisions, KE is also conserved. The scattering angles depend on the impact parameter. Center-of-mass frame analysis often simplifies 2D collisions.</li><li><strong>Center-of-mass frame:</strong> In the CM frame, total momentum is zero. In an elastic collision, the speeds of particles don't change, only their directions change. The scattering is isotropic for identical particles in the CM frame.</li><li><strong>Real-world applications:</strong> Car crash safety (crumple zones increase collision time, reduce force — KE is dissipated controllably). Billiards (nearly elastic). Newton's cradle (demonstrates momentum and energy transfer through elastic collisions). Sports (baseball, tennis, golf — coefficient of restitution of ball/racket/club matters).</li><li><strong>Explosion — reverse collision:</strong> An object at rest splits into fragments with kinetic energy. Momentum is conserved (total momentum before = 0, after = 0). KE after &gt; KE before — the energy comes from internal chemical/nuclear energy stored in the object. This is a 'reverse' inelastic collision.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>In a perfectly inelastic collision, the objects DO NOT lose ALL their kinetic energy. They lose the MAXIMUM possible KE consistent with momentum conservation. The center-of-mass kinetic energy (½Mv_cm²) MUST remain because momentum is conserved. Only the KE relative to the center of mass can be lost.</li><li>The coefficient of restitution e is NOT the ratio of final to initial KE. e = (v₂ - v₁)/(u₁ - u₂) is the ratio of relative speeds. The fraction of KE retained is e² (for equal masses) or a more complex formula for unequal masses. Many students confuse e with KE ratio.</li><li>Momentum is ALWAYS conserved in an isolated system (no external forces). Kinetic energy is ONLY conserved in perfectly elastic collisions. Students often think KE is always conserved in collisions — it is NOT. Real collisions are usually somewhat inelastic (0 &lt; e &lt; 1).</li><li>For a ball bouncing on the floor: The floor/earth is so massive it doesn't move. The ball's speed before and after impact relates by e = v_after/v_before. The ball loses (1-e²) of its KE each bounce. The floor provides the impulse to change momentum; the earth's recoil is negligible.</li><li>A collision where kinetic energy is 'gained' (superelastic) is possible if internal energy is released (explosion, chemical reaction, spring release). These are NOT standard collisions and require tracking internal energy changes.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>A 5 kg ball moving at 4 m/s collides elastically with a 3 kg ball at rest. Find their velocities after collision. Solution: m₁=5, m₂=3, u₁=4, u₂=0. v₁ = (5-3)/(5+3)×4 = 2/8×4 = 1 m/s. v₂ = 2×5/(5+3)×4 = 10/8×4 = 5 m/s. Check: KE_i = ½×5×16 = 40 J. KE_f = ½×5×1 + ½×3×25 = 2.5 + 37.5 = 40 J. Momentum: 5×4 = 5×1 + 3×5 = 20.</li><li>A 1000 kg car moving at 20 m/s rear-ends a stationary 1500 kg car. They stick together. Find (a) final velocity, (b) KE lost. Solution: (a) m₁u₁ = (m₁+m₂)v → 1000×20 = 2500v → v = 8 m/s. (b) KE_i = ½×1000×400 = 200,000 J. KE_f = ½×2500×64 = 80,000 J. Lost = 120,000 J = 60% of initial KE. Heat/sound/crushing.</li><li>A ball of mass m is dropped from height h onto a massive floor with coefficient of restitution e. To what height does it rebound? How many bounces until height &lt; h/10? Solution: Rebound height h₁ = e²h. After n bounces: h_n = e^(2n)h. For h_n &lt; h/10: e^(2n) &lt; 0.1 → 2n ln e &lt; ln 0.1 → n &gt; ln(0.1)/(2 ln e). If e = 0.8: n &gt; -2.3/(-0.44) = 5.2 → 6 bounces.</li><li>Two particles of mass m approach each other with equal speeds u in a perfectly elastic collision. One is deflected by 60° from its original direction. Find the final speeds. Solution: In CM frame, total momentum = 0. Elastic collision: speeds unchanged, only directions change. Initial CM speed = u. After: each has speed u. Angle between final velocities = 180° in CM frame. In lab frame, the deflection angle depends on initial configuration.</li><li>A golf club (m = 0.2 kg) moving at 50 m/s strikes a ball (m = 0.046 kg) at rest. e = 0.8. Find ball speed after impact. Solution: u₁ = 50, u₂ = 0. v₂ = (1+e)m₁u₁/(m₁+m₂) = 1.8×0.2×50/0.246 = 18/0.246 = 73.2 m/s. The ball travels faster than the club! This is why golf balls go so fast. v₁ = m₁u₁/m₁+m₂ × (1 - e×m₂/m₁) ≈ 40 m/s.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The coefficient of restitution e was introduced by Newton in the Principia. For elastic collisions, e = 1, and the relative velocity of separation equals the relative velocity of approach. This is a consequence of both momentum and kinetic energy conservation.</li><li>In any isolated system, total momentum is ALWAYS conserved (if no external forces). Kinetic energy is NOT always conserved. The only perfectly elastic collisions in nature are between fundamental particles (or at the atomic/molecular level where quantum mechanics makes collisions elastic).</li><li>In a perfectly inelastic collision, the maximum possible kinetic energy loss is ΔK_max = -½ μ v_rel², where μ = m₁m₂/(m₁+m₂) is the reduced mass. This is the kinetic energy in the center-of-mass frame, which is entirely lost as heat.</li><li>Newton's cradle works because the collisions between identical spheres are nearly elastic, and the equal-mass exchange property (v₁ = u₂, v₂ = u₁) transfers momentum and energy cleanly from one end to the other.</li><li>The classification of collisions (elastic, inelastic, perfectly inelastic) is an idealization. Real collisions have 0 &lt; e &lt; 1. The value of e depends on the materials: rubber on concrete e ≈ 0.8, steel on steel e ≈ 0.9, glass on glass e ≈ 0.6, putty e ≈ 0.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>work-energy-and-power</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>work-energy-and-power</p></section>
+<section class="field"><h2>Examples</h2><ul><li>Equal mass elastic: A 2 kg ball at 6 m/s hits a stationary 2 kg ball. After collision: first ball stops, second ball moves at 6 m/s (velocities exchanged).</li><li>Perfectly inelastic: A 3 kg ball at 4 m/s hits a stationary 1 kg ball. They stick together. Common velocity = (3×4 + 0)/(3+1) = 3 m/s. KE lost = ½×3×16 − ½×4×9 = 24 − 18 = 6 J.</li><li>Coefficient of restitution: A ball dropped from 5 m rebounds to 3.2 m. e = √(3.2/5) = 0.8.</li><li>Golf club: A 0.2 kg club at 50 m/s hits a 0.046 kg ball at rest (e = 0.8). Ball speed = 73.2 m/s (faster than the club!).</li><li>Newton's cradle: Pull one ball, release — one ball flies out the other end at the same speed. Pull two balls, two fly out.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>A 4 kg ball moving at 5 m/s collides elastically with a 2 kg ball at rest. Find their velocities after collision.</li><li>A 5 kg ball moving at 6 m/s hits a stationary 3 kg ball in a perfectly inelastic collision. Find the common velocity and the KE lost.</li><li>A ball is dropped from 10 m and rebounds to 6.4 m. Find the coefficient of restitution and the fraction of energy lost.</li><li>A 1 kg ball moving at 8 m/s collides with a stationary 4 kg ball. If e = 0.6, find the final velocities.</li><li>Explain why the ball in a golf shot travels faster than the club head.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Elastic collision (1D): v₁ = [(m₁−m₂)u₁ + 2m₂u₂]/(m₁+m₂); v₂ = [(m₂−m₁)u₂ + 2m₁u₁]/(m₁+m₂)</li><li>Perfectly inelastic: m₁u₁ + m₂u₂ = (m₁+m₂)v (common velocity v)</li><li>Coefficient of restitution: e = (v₂ − v₁)/(u₁ − u₂) = relative speed of separation / relative speed of approach</li><li>KE loss in inelastic collision: ΔK = ½μv_rel²(1 − e²), where μ = m₁m₂/(m₁+m₂)</li><li>Equal mass elastic (one at rest): v₁ = 0, v₂ = u₁ (velocities exchanged)</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Elastic collision: both momentum AND kinetic energy are conserved.</li><li>Inelastic collision: momentum conserved, kinetic energy NOT conserved (some → heat/sound).</li><li>Perfectly inelastic: bodies stick together, KE loss is maximum.</li><li>Coefficient of restitution e = 1 (elastic), e = 0 (perfectly inelastic), 0 &lt; e &lt; 1 (inelastic).</li><li>Equal-mass elastic collision (one at rest): the masses exchange velocities.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>In an elastic collision, both momentum and kinetic energy are conserved. In an inelastic collision, momentum is conserved but kinetic energy is not (some converts to heat/sound). In a perfectly inelastic collision, the bodies stick together and KE loss is maximum. The coefficient of restitution e measures the elasticity of the collision.</p></section>
+<section class="field"><h2>Special Notes</h2><ul><li>In a perfectly inelastic collision, the objects do NOT lose ALL their kinetic energy — only the KE relative to the center of mass can be lost.</li><li>The coefficient of restitution e depends on the materials, not on the velocities of the colliding bodies.</li><li>In an elastic collision between equal masses where one is initially at rest, the masses exchange velocities.</li><li>Momentum is conserved in ALL collisions (elastic and inelastic) as long as no external force acts.</li><li>NEB collision problems: always check whether the collision is elastic (use both conservation laws) or inelastic (use only momentum conservation).</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>In an elastic collision, both total momentum and total kinetic energy are conserved.</li><li>In an inelastic collision, momentum is conserved but kinetic energy is not — some converts to internal energy.</li><li>In a perfectly inelastic collision, the colliding bodies stick together and move with a common velocity.</li><li>The coefficient of restitution e = (relative speed of separation)/(relative speed of approach).</li><li>In the center-of-mass frame, total momentum is zero — this simplifies collision analysis.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>In a perfectly inelastic collision, the objects do NOT lose ALL their kinetic energy — only the KE relative to the center of mass can be lost.</li><li>The coefficient of restitution e depends on the materials, not on the velocities of the colliding bodies.</li><li>In an elastic collision between equal masses where one is initially at rest, the masses exchange velocities.</li><li>Momentum is conserved in ALL collisions (elastic and inelastic) as long as no external force acts.</li><li>NEB collision problems: always check whether the collision is elastic (use both conservation laws) or inelastic (use only momentum conservation).</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Equal mass shortcut: if m₁ = m₂ and the collision is elastic, the masses exchange velocities.</li><li>Perfectly inelastic shortcut: bodies stick together → use m₁u₁ + m₂u₂ = (m₁ + m₂)v to find the common velocity.</li><li>KE loss shortcut: ΔK = ½μv_rel²(1 − e²) — maximum when e = 0 (perfectly inelastic).</li><li>e = 1 → elastic (KE conserved); e = 0 → perfectly inelastic (maximum KE loss); 0 &lt; e &lt; 1 → inelastic.</li><li>CM frame shortcut: in the center-of-mass frame, total momentum is zero — simplifies 2D collision analysis.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>One-dimensional elastic collision formulas are standard — know how to derive and apply them.</li><li>Equal-mass elastic collision (one at rest): the moving mass stops, the stationary one moves off at the original speed.</li><li>Perfectly inelastic collision: find the common velocity using momentum conservation, then compute KE loss.</li><li>Coefficient of restitution problems: e = (v₂ − v₁)/(u₁ − u₂) — just the ratio of relative speeds.</li><li>NEB asks both numerical problems and conceptual questions about energy loss in collisions.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A 2 kg ball moving at 6 m/s hits a stationary 2 kg ball in an elastic collision. The final velocity of the first ball is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>0 m/s</li><li>6 m/s</li><li>3 m/s</li><li>12 m/s</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A 3 kg ball moving at 4 m/s hits a stationary 1 kg ball in a perfectly inelastic collision. Their common velocity is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>3 m/s</li><li>4 m/s</li><li>1 m/s</li><li>12 m/s</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>In an elastic collision, which quantity is conserved?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Momentum only</li><li>Kinetic energy only</li><li>Both momentum and kinetic energy</li><li>Neither momentum nor kinetic energy</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>The coefficient of restitution for a perfectly inelastic collision is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>0</li><li>1</li><li>Between 0 and 1</li><li>Greater than 1</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>A 1 kg ball moving at 10 m/s hits a stationary 9 kg ball elastically. The speed of the 9 kg ball after collision is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>1 m/s</li><li>2 m/s</li><li>5 m/s</li><li>10 m/s</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>In an elastic collision, both momentum and kinetic energy are conserved.</li><li>In an inelastic collision, momentum is conserved but kinetic energy is not (some converts to heat/sound).</li><li>In a perfectly inelastic collision, the bodies stick together and KE loss is maximum.</li><li>The coefficient of restitution e = (relative speed of separation)/(relative speed of approach).</li><li>In the center-of-mass frame, total momentum is zero — simplifies collision analysis.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Solve 5 one-dimensional elastic collision problems using the standard formulas.</li><li>Solve 5 perfectly inelastic collision problems finding the common velocity and KE loss.</li><li>Solve 3 equal-mass elastic collision problems using the velocity-exchange shortcut.</li><li>Solve 3 coefficient of restitution problems computing e from given velocities.</li><li>Solve 2 two-dimensional elastic collision problems using vector momentum conservation.</li></ul></section>
+<section class="field"><h2>Visual Type</h2><p>elastic-collisions</p></section>
+  <nav class="pager"><a href="05-conservative-and-non-conservative-forces.html" title="Conservative and Non-Conservative Forces">‹ Conservative and Non-Conservative Forces</a><a class="mid" href="../../../_subjects/general-backup-physics-2026-09-22.html">Backup Physics 2026 09 22</a><span></span></nav>
+</div></body></html>

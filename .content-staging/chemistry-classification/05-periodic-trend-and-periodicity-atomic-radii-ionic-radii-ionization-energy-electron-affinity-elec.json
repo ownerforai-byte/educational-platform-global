@@ -1,0 +1,192 @@
+{
+  "title": "Periodic trend and periodicity: atomic radii, ionic radii, ionization energy, electron affinity, electronegativity, metallic characters (general trend and explanation only)",
+  "unitSlug": "classification-of-elements-and-periodic-table",
+  "topicSlug": "periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-elec",
+  "topicTitle": "Periodic trend and periodicity: atomic radii, ionic radii, ionization energy, electron affinity, electronegativity, metallic characters (general trend and explanation only)",
+  "source": "authored-v2",
+  "generatedAt": "2026-10-29T07:20:23.341Z",
+  "notes": [
+    "## 1. What periodicity means\nA property is *periodic* when it repeats at regular intervals as Z increases. The modern table guarantees this: elements in the same group have the same outer configuration, and chemical behaviour is decided by the outer configuration, so behaviour repeats every time the configuration repeats.\n\n**The mechanism in one sentence.** Across a period, Zeff rises and the shell number stays fixed, so atoms contract and hold their electrons more tightly; down a group, a new shell is added and Zeff barely changes, so atoms expand and lose electrons more easily. Every trend in this topic is one of those two sentences applied to a measurable quantity.\n\n**The five quantities, and how each is measured.**\n\n| Quantity | Measured as | Units | Direction across a period | Direction down a group |\n| --- | --- | --- | --- | --- |\n| atomic radius | half the distance between bonded or nearest atoms | pm | decreases | increases |\n| ionic radius | from crystal-lattice geometry (X-ray) | pm | cation < atom, anion > atom | increases |\n| ionisation energy | energy to remove the loosest electron, in the gas phase | kJ mol⁻¹ | increases | decreases |\n| electron affinity | energy released when a gaseous atom gains an electron | kJ mol⁻¹ | generally increases | decreases |\n| electronegativity | Pauling scale from bond energies | dimensionless | increases | decreases |\n\n**Why \"in the gas phase\" keeps appearing.** Ionisation energy and electron affinity are defined for isolated gaseous atoms, because in a solid or a solution the surrounding charges would do work for you or against you. Quote the phase in a definition and you have already earned the mark.",
+    "## 2. Atomic radius: three definitions, one trend\nThere is no sharp edge to an atom, so \"radius\" must be defined operationally.\n\n| Type | Defined from | Use | Example |\n| --- | --- | --- | --- |\n| covalent radius | half the bond length in a homonuclear molecule | non-metals | r(C–C) = 154 pm → r(C) = 77 pm |\n| metallic radius | half the nearest-neighbour distance in the metal | metals | r(Na) = 186 pm |\n| van der Waals radius | half the closest approach of non-bonded atoms | noble gases, molecular crystals | always larger than the covalent radius |\n\n**Trend across period 3.** Na 186 → Mg 160 → Al 143 → Si 118 → P 110 → S 103 → Cl 99 pm. The fall is about 47 % from Na to Cl, driven entirely by Zeff rising while n stays 3.\n\n**Trend down group 1.** Li 152 → Na 186 → K 227 → Rb 248 → Cs 265 pm. Zeff is nearly constant (chapter 4: Li 1.30, Na 2.20, K 2.20), so the increase is caused by the extra shell, not by a weaker pull.\n\n**The comparison examiners like.** Na (186 pm) is larger than Cl (99 pm) although Cl has four more protons, because the added protons are in the same shell and the added electrons screen only weakly. Meanwhile K (227 pm) is larger than Na (186 pm) although Zeff is identical, because potassium's valence electron is in n = 4.",
+    "```svg\n<svg viewBox=\"0 0 900 640\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Atomic radius across periods 2 and 3\">\n  <rect width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n  <text x=\"450\" y=\"34\" font-family=\"Georgia,serif\" font-size=\"23\" text-anchor=\"middle\" fill=\"#111\">Atomic radius falls across a period, jumps at the next one</text>\n  <text x=\"450\" y=\"58\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#555\">commonly quoted covalent radii in pm; tables differ by a few pm, the trend does not</text>\n\n  <line x1=\"90\" y1=\"520\" x2=\"840\" y2=\"520\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n  <line x1=\"90\" y1=\"140\" x2=\"90\" y2=\"520\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n  <text x=\"52\" y=\"150\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#374151\">190</text>\n  <text x=\"52\" y=\"336\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#374151\">95</text>\n  <text x=\"60\" y=\"524\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#374151\">0</text>\n  <text x=\"46\" y=\"340\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#374151\" transform=\"rotate(-90 46 340)\">r / pm</text>\n\n  <!-- period 2: 152,112,85,77,75,73,71  scale: 1pm = 2.0px -->\n  <g fill=\"#1d4ed8\">\n    <rect x=\"140\" y=\"216\" width=\"38\" height=\"304\"/>\n    <rect x=\"196\" y=\"296\" width=\"38\" height=\"224\"/>\n    <rect x=\"252\" y=\"350\" width=\"38\" height=\"170\"/>\n    <rect x=\"308\" y=\"366\" width=\"38\" height=\"154\"/>\n    <rect x=\"364\" y=\"370\" width=\"38\" height=\"150\"/>\n    <rect x=\"420\" y=\"374\" width=\"38\" height=\"146\"/>\n    <rect x=\"476\" y=\"378\" width=\"38\" height=\"142\"/>\n  </g>\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#111\" text-anchor=\"middle\">\n    <text x=\"159\" y=\"540\">Li</text><text x=\"215\" y=\"540\">Be</text><text x=\"271\" y=\"540\">B</text><text x=\"327\" y=\"540\">C</text>\n    <text x=\"383\" y=\"540\">N</text><text x=\"439\" y=\"540\">O</text><text x=\"495\" y=\"540\">F</text>\n    <text x=\"159\" y=\"206\">152</text><text x=\"495\" y=\"368\">71</text>\n  </g>\n\n  <!-- period 3: 186,160,143,118,110,103,99 -->\n  <g fill=\"#f59e0b\">\n    <rect x=\"560\" y=\"148\" width=\"34\" height=\"372\"/>\n    <rect x=\"610\" y=\"200\" width=\"34\" height=\"320\"/>\n    <rect x=\"660\" y=\"234\" width=\"34\" height=\"286\"/>\n    <rect x=\"710\" y=\"284\" width=\"34\" height=\"236\"/>\n    <rect x=\"760\" y=\"300\" width=\"34\" height=\"220\"/>\n    <rect x=\"810\" y=\"314\" width=\"34\" height=\"206\"/>\n  </g>\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#111\" text-anchor=\"middle\">\n    <text x=\"577\" y=\"540\">Na</text><text x=\"627\" y=\"540\">Mg</text><text x=\"677\" y=\"540\">Al</text><text x=\"727\" y=\"540\">Si</text>\n    <text x=\"777\" y=\"540\">P</text><text x=\"827\" y=\"540\">S</text>\n    <text x=\"577\" y=\"138\">186</text><text x=\"827\" y=\"304\">99</text>\n  </g>\n\n  <path d=\"M495 370 Q 527 250 560 150\" fill=\"none\" stroke=\"#9ca3af\" stroke-width=\"2\" stroke-dasharray=\"6 5\"/>\n  <text x=\"540\" y=\"112\" font-family=\"Georgia,serif\" font-size=\"13\" fill=\"#b91c1c\" text-anchor=\"middle\">new shell → jump</text>\n\n  <text x=\"450\" y=\"588\" font-family=\"Georgia,serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#374151\">Within a period Zeff rises, so the same shell is pulled in; a new period starts a larger shell, so radius jumps.</text>\n</svg>\n```\n**Figure 1 — atomic radius, both directions at once.** Across a period the radius shrinks by roughly half (Na 186 → Cl 99 pm, a 47 % fall) because Zeff rises while the shell stays the same. Between periods it jumps back up because a new shell begins. A graph of radius against Z is therefore a sawtooth, not a slope.",
+    "![Graph of atomic radius against atomic number showing the sawtooth pattern](https://upload.wikimedia.org/wikipedia/commons/4/4e/Atomic_number_to_radius_graph.png)\n\n**Figure 4 — atomic radius against atomic number.** Compare this with Figure 3: the two graphs are mirror images, which is exactly what the Zeff argument predicts — a smaller atom holds its electron more tightly. *Source: Wikimedia Commons, [Atomic number to radius graph.png](https://commons.wikimedia.org/wiki/File:Atomic_number_to_radius_graph.png), author User:Dot145, CC BY 3.0 — attribution required.*",
+    "## 3. Ionic radii: why cations shrink and anions swell\nRemoving an electron raises the effective nuclear charge acting on each remaining electron, so a cation is always smaller than its atom; adding an electron lowers it, so an anion is always larger.\n\n| Species pair | Radius / pm | Change | Reason |\n| --- | --- | --- | --- |\n| Na → Na⁺ | 186 → 102 | −45 % | whole 3s shell lost, now 2s²2p⁶ |\n| Mg → Mg²⁺ | 160 → 72 | −55 % | two electrons lost, two shells gone |\n| Al → Al³⁺ | 143 → 53 | −63 % | three lost, core exposed |\n| Cl → Cl⁻ | 99 → 181 | +83 % | one electron added, Zeff per electron falls |\n| O → O²⁻ | 73 → 140 | +92 % | two added, strong inter-electronic repulsion |\n| N → N³⁻ | 75 → 171 | +128 % | three added, largest expansion in the period |\n\n**The isoelectronic series is the cleanest exam question.** All the species below have 10 electrons, so the only variable is Z: the larger the nucleus, the tighter the pull and the smaller the ion.\n\n| Ion | N³⁻ | O²⁻ | F⁻ | Na⁺ | Mg²⁺ | Al³⁺ |\n| --- | --- | --- | --- | --- | --- | --- |\n| Z | 7 | 8 | 9 | 11 | 12 | 13 |\n| r / pm | 171 | 140 | 133 | 102 | 72 | 53 |\n\n**Comparing across a series is not the same as comparing within a group.** Ionic radius rises down a group (Li⁺ 76 → K⁺ 138 pm) exactly as atomic radius does, because the shell count rises while Zeff stays roughly constant.",
+    "## 4. Ionisation energy: definition, factors and the two dips\n**Definition.** The first ionisation energy is the energy needed to remove one mole of electrons from one mole of gaseous atoms: X(g) → X⁺(g) + e⁻. The second ionisation energy removes the second electron from the *ion*, and is always larger than the first because the remaining electrons are held by a higher Zeff per electron.\n\n**The four factors, in the order you should write them.**\n1. **Nuclear charge (Z)** — more protons, higher IE.\n2. **Shielding (σ)** — more inner electrons, lower IE.\n3. **Shell number (n)** — the electron further out, lower IE.\n4. **Configuration** — half-filled and fully filled subshells are extra stable.\n\n**Period 3 values, with both dips explained.**\n\n| Element | Na | Mg | Al | Si | P | S | Cl | Ar |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n| IE₁ / kJ mol⁻¹ | 496 | 738 | 578 | 787 | 1012 | 1000 | 1251 | 1521 |\n| Outer configuration | 3s¹ | 3s² | 3p¹ | 3p² | 3p³ | 3p⁴ | 3p⁵ | 3p⁶ |\n\n**The Al dip.** Mg has a filled 3s² pair; in aluminium the 3p¹ electron is in a new, slightly higher subshell and is easier to remove. So IE(Mg) > IE(Al) although Z rises.\n\n**The S dip.** Phosphorus is 3p³, three unpaired electrons in three orbitals (Hund's rule). Sulphur is 3p⁴, so one orbital is doubly occupied and the pairing repulsion makes that electron easier to remove. So IE(P) > IE(S).\n\n**Down a group.** Li 520 → Na 496 → K 419 → Rb 403 → Cs 376 kJ mol⁻¹: a steady fall, because the electron is in a higher shell while Zeff is nearly constant. The same two exceptions (Be → B and N → O) occur in period 2.",
+    "```svg\n<svg viewBox=\"0 0 900 640\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"First ionisation energy across period 3 with two dips\">\n  <rect width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n  <text x=\"450\" y=\"34\" font-family=\"Georgia,serif\" font-size=\"23\" text-anchor=\"middle\" fill=\"#111\">First ionisation energy across period 3: two dips that need explaining</text>\n  <text x=\"450\" y=\"58\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#555\">kJ mol⁻¹; the overall rise is Zeff, the dips are electron configuration</text>\n\n  <line x1=\"100\" y1=\"520\" x2=\"840\" y2=\"520\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n  <line x1=\"100\" y1=\"120\" x2=\"100\" y2=\"520\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n  <text x=\"60\" y=\"130\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#374151\">1600</text>\n  <text x=\"66\" y=\"330\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#374151\">800</text>\n  <text x=\"70\" y=\"524\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#374151\">0</text>\n  <text x=\"50\" y=\"330\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#374151\" transform=\"rotate(-90 50 330)\">IE₁</text>\n\n  <!-- points: Na 496, Mg 738, Al 578, Si 787, P 1012, S 1000, Cl 1251, Ar 1521 -->\n  <polyline points=\"160,420 250,342 340,373 430,330 520,287 610,290 700,240 790,178\"\n            fill=\"none\" stroke=\"#1d4ed8\" stroke-width=\"2.6\"/>\n  <g fill=\"#1d4ed8\">\n    <circle cx=\"160\" cy=\"420\" r=\"6\"/><circle cx=\"250\" cy=\"342\" r=\"6\"/><circle cx=\"340\" cy=\"373\" r=\"6\"/>\n    <circle cx=\"430\" cy=\"330\" r=\"6\"/><circle cx=\"520\" cy=\"287\" r=\"6\"/><circle cx=\"610\" cy=\"290\" r=\"6\"/>\n    <circle cx=\"700\" cy=\"240\" r=\"6\"/><circle cx=\"790\" cy=\"178\" r=\"6\"/>\n  </g>\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#111\" text-anchor=\"middle\">\n    <text x=\"160\" y=\"540\">Na</text><text x=\"250\" y=\"540\">Mg</text><text x=\"340\" y=\"540\">Al</text><text x=\"430\" y=\"540\">Si</text>\n    <text x=\"520\" y=\"540\">P</text><text x=\"610\" y=\"540\">S</text><text x=\"700\" y=\"540\">Cl</text><text x=\"790\" y=\"540\">Ar</text>\n    <text x=\"160\" y=\"410\">496</text><text x=\"790\" y=\"168\">1521</text>\n  </g>\n\n  <!-- dip annotations -->\n  <g stroke=\"#b91c1c\" stroke-width=\"1.6\" fill=\"none\">\n    <path d=\"M250 320 L340 351\"/><path d=\"M520 265 L610 268\"/>\n  </g>\n  <g font-family=\"Georgia,serif\" font-size=\"13\" fill=\"#b91c1c\">\n    <text x=\"345\" y=\"300\">Al dip: 3p¹ is easier to remove</text>\n    <text x=\"345\" y=\"318\">than Mg's paired 3s²</text>\n    <text x=\"345\" y=\"252\" fill=\"#b91c1c\">S dip: 3p⁴ has a paired electron</text>\n    <text x=\"345\" y=\"270\" fill=\"#b91c1c\">that repels the one being removed</text>\n  </g>\n\n  <text x=\"450\" y=\"592\" font-family=\"Georgia,serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#374151\">Rule: across a period IE₁ rises; the exceptions are always about a paired electron or a change of subshell.</text>\n</svg>\n```\n**Figure 2 — the period-3 ionisation energies.** The trend is upward (496 → 1521 kJ/mol) but not monotonic: aluminium is *lower* than magnesium, and sulphur is *lower* than phosphorus. Every exception in the periodic table's trends has this shape — a configuration effect superimposed on the Zeff trend.",
+    "![Graph of first ionisation energy against atomic number for the whole periodic table](https://upload.wikimedia.org/wikipedia/commons/1/1d/First_Ionization_Energy.svg)\n\n**Figure 3 — first ionisation energy across all the elements.** The repeating sawtooth is periodicity itself: each new period starts with a low value (an easily lost s electron) and climbs to a peak at the noble gas. *Source: Wikimedia Commons, [First Ionization Energy.svg](https://commons.wikimedia.org/wiki/File:First_Ionization_Energy.svg), authors Sponk (PNG) and Glrx (SVG), CC BY 3.0 — attribution required.*",
+    "## 5. Electron affinity: definition and the chlorine anomaly\n**Definition.** The first electron affinity is the enthalpy change when one mole of gaseous atoms each gain an electron: X(g) + e⁻ → X⁻(g). A *negative* ΔH means energy is released and the atom has a stable anion; the magnitude is often quoted as a positive \"EA\".\n\n| Element | F | Cl | Br | I |\n| --- | --- | --- | --- | --- |\n| EA / kJ mol⁻¹ | 328 | 349 | 325 | 295 |\n| ΔH / kJ mol⁻¹ | −328 | −349 | −325 | −295 |\n\n**The anomaly.** Fluorine is the most electronegative element but chlorine has the larger electron affinity. Fluorine's atom is so small that the incoming electron is crowded into an already compact 2p shell, and the repulsion between electrons outweighs the extra nuclear pull. Chlorine's 3p shell is roomier, so the electron is accommodated with less repulsion.\n\n**Trend.** Across a period EA generally increases (halogens highest, noble gases ~zero, alkaline earths low or negative because a new subshell would have to start). Down a group it falls from Cl onward, with F the one exception at the top.",
+    "## 6. Electronegativity: pulling a shared pair\n**Definition.** Electronegativity is the tendency of an atom in a molecule to attract the shared pair of electrons towards itself. It is not a property of an isolated atom — it only exists inside a bond.\n\n**Pauling scale values that are worth knowing.** F 3.98 (highest) > O 3.44 > N 3.04 ≈ Cl 3.16 > Br 2.96 > C 2.55 > H 2.20 > P 2.19 > Si 1.90 > Al 1.61 > Mg 1.31 > Na 0.93.\n\n| Rule | Consequence |\n| --- | --- |\n| increases across a period | F > O > N > C > B > Li |\n| decreases down a group | F > Cl > Br > I (3.98 > 3.16 > 2.96 > 2.66) |\n| ΔEN > ~1.7 | mostly ionic (NaCl, ΔEN = 2.23) |\n| ΔEN ≈ 0.4–1.7 | polar covalent (HCl, ΔEN = 0.96) |\n| ΔEN < 0.4 | essentially non-polar (C–H, ΔEN = 0.35) |\n\n**The metallic character link.** Low electronegativity *is* metallic character expressed numerically: a metal gives up electrons, a non-metal takes them. So metallic character falls across a period (Na 0.93 → Cl 3.16) and rises down a group, which is the same statement as the two trends above.",
+    "## 7. Metallic character and the diagonal relationship\nMetallic character is the tendency to lose electrons and form cations. It falls left → right across a period and rises top → bottom down a group, so the two gradients combine into a diagonal.\n\n**The diagonal relationships** follow from that geometry: a move one step right and one step down gives an element with roughly the same charge/radius ratio and therefore similar chemistry.\n\n| Pair | Similarities | Why |\n| --- | --- | --- |\n| Li / Mg | both form nitrides on heating, carbonates decompose on heating, chlorides are soluble in ethanol | similar charge/radius ratio |\n| Be / Al | both amphoteric hydroxides, both form covalent chlorides that are dimeric, both passivated by oxide | similar polarising power |\n| B / Si | both form acidic oxides, both are semiconductors/metalloids | similar EN and size |\n\n**The exam sentence.** \"Metallic character decreases across a period because Zeff rises; it increases down a group because a new shell is added. The diagonal relationships arise where these two effects cancel, giving similar charge/radius ratios.\"\n\n**Acid-base character of oxides follows the same gradient.** Na₂O and MgO are basic, Al₂O₃ is amphoteric, SiO₂ is weakly acidic, and P₄O₁₀, SO₃ and Cl₂O₇ are strongly acidic — a row of the table read from left to right.",
+    "## 8. Summary map and self-check\n**The topic on one card.**\n\n| Property | Across a period | Down a group | Exception to quote |\n| --- | --- | --- | --- |\n| atomic radius | decreases | increases | none — but values differ between tables |\n| ionic radius | cation < atom, anion > atom | increases | isoelectronic series ordered by Z |\n| ionisation energy | increases | decreases | Al < Mg, S < P (Be < B, O < N) |\n| electron affinity | increases | decreases | Cl > F |\n| electronegativity | increases | decreases | noble gases undefined |\n| metallic character | decreases | increases | the diagonal pairs Li/Mg, Be/Al |\n\n**The one-line causes.** Across: Zeff rises at constant n. Down: n rises at constant Zeff. Every exception: a paired electron, a new subshell, or a small-atom repulsion.\n\n**Self-check.**\n1. Explain why IE(Al) < IE(Mg) and IE(S) < IE(P), naming the configuration in each case.\n2. Order Na⁺, Mg²⁺, F⁻ and O²⁻ by radius and justify with Zeff.\n3. Why does chlorine have a larger electron affinity than fluorine?\n4. Give two properties that increase across a period and two that decrease.\n5. Explain the Li/Mg diagonal relationship using charge/radius ratio."
+  ],
+  "practice": [
+    "Plot IE₁ against Z for period 3 and explain both dips in terms of configuration.",
+    "Order the isoelectronic species O²⁻, F⁻, Na⁺, Mg²⁺ by radius, with reasoning.",
+    "Explain the Li/Mg diagonal relationship in terms of charge/radius ratio.",
+    "State four trends that reverse when you go down a group instead of across a period, with one value each."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Periodic trend and periodicity: atomic radii, ionic radii…\"?",
+      "options": [
+        "Periodic trend",
+        "Periodicity: atomic radii",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Periodic trend is listed among the official sub-ideas of Periodic trend and periodicity: atomic radii, ionic radii…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Periodic trend and periodicity: atomic radii, ionic radii…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "numericals": [
+    "**N1 — Wavelength of light that could ionise sodium.**\n*Given.* IE₁(Na) = 496 kJ mol⁻¹; N_A = 6.022 × 10²³ mol⁻¹; h = 6.626 × 10⁻³⁴ J s; c = 3.00 × 10⁸ m s⁻¹.\n*Formula.* E(per atom) = IE/N_A; λ = hc/E.\n*Substitution.* E = 496 000/6.022 × 10²³ = 8.24 × 10⁻¹⁹ J; λ = (6.626 × 10⁻³⁴ × 3.00 × 10⁸)/(8.24 × 10⁻¹⁹) = 2.41 × 10⁻⁷ m.\n*Answer.* **λ = 241 nm**, in the ultraviolet — which is why visible light cannot ionise sodium.",
+    "**N2 — The aluminium dip, measured.**\n*Given.* IE₁(Mg) = 738 kJ mol⁻¹, IE₁(Al) = 578 kJ mol⁻¹.\n*Formula.* fall = IE(Mg) − IE(Al); percentage fall = (fall/IE(Mg)) × 100.\n*Substitution.* 738 − 578 = 160 kJ mol⁻¹; (160/738) × 100 = 21.7 %.\n*Answer.* **160 kJ mol⁻¹, a 21.7 % drop**, caused by removing Al's 3p¹ electron instead of one of Mg's paired 3s electrons.",
+    "**N3 — Contraction across period 3.**\n*Given.* r(Na) = 186 pm, r(Cl) = 99 pm.\n*Formula.* percentage decrease = (r(Na) − r(Cl))/r(Na) × 100.\n*Substitution.* (186 − 99)/186 × 100 = 46.8 %.\n*Answer.* **47 % smaller**, with Z rising from 11 to 17 in the same shell — the Zeff effect at constant n.",
+    "**N4 — Classifying a bond from electronegativity.**\n*Given.* Pauling values: Na 0.93, Cl 3.16, H 2.20.\n*Formula.* ΔEN = |EN₁ − EN₂|; > 1.7 ionic, 0.4–1.7 polar covalent, < 0.4 non-polar.\n*Substitution.* NaCl: 3.16 − 0.93 = 2.23; HCl: 3.16 − 2.20 = 0.96.\n*Answer.* **NaCl is predominantly ionic (2.23), HCl is polar covalent (0.96)** — the same chlorine, different partner, different bond type.",
+    "**N5 — Zeff as the cause of the radius trend.**\n*Given.* Slater values: Li 2s Zeff = 1.30, F 2p Zeff = 5.85.\n*Formula.* ratio = Zeff(F)/Zeff(Li).\n*Substitution.* 5.85/1.30 = 4.50.\n*Answer.* **Fluorine's valence electron feels 4.5 times the effective charge** that lithium's does, in the same shell — which is why the radius falls from 152 pm to 71 pm across period 2.",
+    "**N6 — The chlorine/fluorine electron-affinity anomaly.**\n*Given.* EA(F) = 328 kJ mol⁻¹, EA(Cl) = 349 kJ mol⁻¹.\n*Formula.* difference = EA(Cl) − EA(F); percentage = (difference/EA(F)) × 100.\n*Substitution.* 349 − 328 = 21 kJ mol⁻¹; (21/328) × 100 = 6.4 %.\n*Answer.* **Chlorine is 6.4 % higher**, because fluorine's 2p shell is too small to absorb an extra electron without strong repulsion."
+  ],
+  "mcs": [
+    {
+      "question": "Atomic radius across a period from left to right:",
+      "options": [
+        "increases",
+        "decreases",
+        "remains constant",
+        "first increases then decreases"
+      ],
+      "answer": "B",
+      "explanation": "Zeff rises while the shell number stays the same, so the atom contracts: Na 186 → Cl 99 pm."
+    },
+    {
+      "question": "Atomic radius down group 1 increases mainly because:",
+      "options": [
+        "Zeff rises sharply",
+        "a new shell is added while Zeff stays nearly constant",
+        "shielding decreases",
+        "nuclear charge decreases"
+      ],
+      "answer": "B",
+      "explanation": "Li 1.30, Na 2.20, K 2.20 — Zeff barely changes, so the extra shell dominates."
+    },
+    {
+      "question": "The first ionisation energy of aluminium is lower than that of magnesium because:",
+      "options": [
+        "Al has a larger nucleus",
+        "Al's 3p electron is in a higher, less tightly held subshell than Mg's paired 3s electron",
+        "Al has more shielding from 3d electrons",
+        "Mg is a metal"
+      ],
+      "answer": "B",
+      "explanation": "Mg: [Ne]3s²; Al: [Ne]3s²3p¹. The 3p electron is easier to remove despite the higher Z."
+    },
+    {
+      "question": "In period 3, the element with the lowest first ionisation energy is:",
+      "options": [
+        "Na",
+        "Al",
+        "Cl",
+        "Ar"
+      ],
+      "answer": "A",
+      "explanation": "Na (496 kJ mol⁻¹) is the lowest; Al (578) is the dip within the period, but still above Na."
+    },
+    {
+      "question": "Which ion has the smallest radius?",
+      "options": [
+        "N³⁻",
+        "O²⁻",
+        "F⁻",
+        "Na⁺"
+      ],
+      "answer": "D",
+      "explanation": "All are isoelectronic (10 e⁻); Na⁺ has the largest Z (11) and therefore the largest Zeff, so the smallest radius (102 pm)."
+    },
+    {
+      "question": "Chlorine has a higher electron affinity than fluorine because:",
+      "options": [
+        "Cl is more electronegative",
+        "F's small 2p shell causes strong electron–electron repulsion",
+        "Cl has fewer protons",
+        "F has a larger atomic radius"
+      ],
+      "answer": "B",
+      "explanation": "The order is Cl 349 > F 328 kJ mol⁻¹; electronegativity and electron affinity are different quantities."
+    },
+    {
+      "question": "Electronegativity is defined as:",
+      "options": [
+        "the energy to remove an electron",
+        "the energy released on gaining an electron",
+        "the tendency of a bonded atom to attract the shared pair",
+        "the charge felt by a valence electron"
+      ],
+      "answer": "C",
+      "explanation": "It is a property of an atom in a molecule, measured on the Pauling scale from bond energies."
+    },
+    {
+      "question": "Which oxide is amphoteric?",
+      "options": [
+        "Na₂O",
+        "MgO",
+        "Al₂O₃",
+        "SO₃"
+      ],
+      "answer": "C",
+      "explanation": "Al₂O₃ reacts with both acids and bases; the acidic character increases to the right of the period, basic to the left."
+    },
+    {
+      "question": "The diagonal relationship is best explained by:",
+      "options": [
+        "equal atomic masses",
+        "similar charge/radius ratio",
+        "equal electronegativity",
+        "identical configurations"
+      ],
+      "answer": "B",
+      "explanation": "Li/Mg and Be/Al have similar polarising power, hence similar chemistry (both Li and Mg form nitrides, for example)."
+    },
+    {
+      "question": "Which statement about ionic radii is correct?",
+      "options": [
+        "A cation is larger than its atom",
+        "An anion is larger than its atom",
+        "Both are smaller than the atom",
+        "Radius does not change on ionisation"
+      ],
+      "answer": "B",
+      "explanation": "Gaining an electron lowers Zeff per electron, so anions expand (Cl 99 → Cl⁻ 181 pm); cations contract."
+    }
+  ],
+  "summary": "Periodicity is the repetition of properties as the outer configuration repeats. Across a period, Zeff rises at constant shell number, so atomic radius falls (Na 186 → Cl 99 pm), ionisation energy rises (496 → 1521 kJ mol⁻¹), electron affinity and electronegativity rise, and metallic character falls. Down a group the shell number rises while Zeff stays nearly constant, so all of these reverse: radius grows (Li 152 → Cs 265 pm), ionisation energy falls (Li 520 → Cs 376). Cations are smaller and anions larger than their atoms, and isoelectronic ions shrink as Z rises (N³⁻ 171 > O²⁻ 140 > F⁻ 133 > Na⁺ 102 > Mg²⁺ 72 > Al³⁺ 53 pm). Exceptions are configuration effects: IE(Al) < IE(Mg) and IE(S) < IE(P) because of a change of subshell and of electron pairing, and EA(Cl) > EA(F) because fluorine's small 2p shell repels the incoming electron. The two gradients together create the diagonal pairs Li/Mg and Be/Al.",
+  "keyPoints": [
+    "Across a period Zeff rises at constant n → radius falls, IE and EN rise, metallic character falls.",
+    "Down a group n rises at nearly constant Zeff → radius rises, IE and EN fall, metallic character rises.",
+    "Atomic radius period 3: Na 186 → Cl 99 pm (47 % fall); group 1: Li 152 → Cs 265 pm.",
+    "Cations are smaller, anions larger than their atoms; isoelectronic ions shrink as Z rises.",
+    "IE exceptions: Al < Mg (3p¹) and S < P (3p⁴ pairing); same pattern in period 2 for B and O.",
+    "EA: Cl 349 > F 328 kJ mol⁻¹ because of small-shell repulsion in fluorine.",
+    "Electronegativity: F 3.98 > O 3.44 > N 3.04 ≈ Cl 3.16; ΔEN decides ionic versus covalent.",
+    "Diagonal relationships Li/Mg and Be/Al follow from similar charge/radius ratios."
+  ],
+  "formulas": [
+    "λ = hc/E, with E = IE/N_A",
+    "percentage change = |new − old| / old × 100",
+    "ΔEN = |EN₁ − EN₂|"
+  ],
+  "confusion": [
+    "❌ Atomic radius increases across a period because Z increases. ✅ Z rises but so does Zeff acting on the same shell, so the atom contracts.",
+    "❌ Ionisation energy always falls as Z increases across a period. ✅ It rises overall; the dips at Al and S are configuration effects.",
+    "❌ Fluorine has the highest electron affinity because it is most electronegative. ✅ Electronegativity and electron affinity are different; chlorine has the larger EA (349 vs 328 kJ/mol).",
+    "❌ Ionic radius always increases when electrons are gained. ✅ Anions expand, cations contract — the change in Zeff per electron decides it."
+  ]
+}

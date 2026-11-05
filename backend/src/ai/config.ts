@@ -52,6 +52,31 @@ export function getCloudflareAccountId(): string | undefined {
   return readKey("CF_ACCOUNT_ID") ?? readKey("R2_ACCOUNT_ID");
 }
 
+/* ── Free-tier LLM fallbacks (awesome-free-llm-apis) ─────────────────────── */
+
+/**
+ * First non-blank key among a free provider's accepted env var names.
+ * Providers in `free-llm-providers.ts` pass their alias list, so adding a
+ * provider never needs a new named getter here.
+ */
+export function getFreeLlmKey(envVars: readonly string[]): string | undefined {
+  for (const name of envVars) {
+    const key = readKey(name);
+    if (key) return key;
+  }
+  return undefined;
+}
+
+/**
+ * Owner switch for the free-tier fallback pool: `FREE_LLM_DISABLED=1` keeps
+ * every awesome-free-llm-apis provider (including the keyless one) out of the
+ * chain, so the owner's paid links answer alone.
+ */
+export function isFreeLlmDisabled(): boolean {
+  const flag = readKey("FREE_LLM_DISABLED")?.toLowerCase();
+  return flag === "1" || flag === "true" || flag === "yes";
+}
+
 /** True when at least one LLM provider key is configured. */
 export function hasAnyLlmKey(): boolean {
   return Boolean(

@@ -1,0 +1,173 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Thermal Equilibrium and Zeroth Law of Thermodynamics</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Heat And Temperature</div>
+    <h1 class="doc">Thermal Equilibrium and Zeroth Law of Thermodynamics</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Heat And Temperature</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>heat-and-temperature</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>thermal-equilibrium-and-zeroth-law</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>Thermal equilibrium is a state in which two or more systems have the same temperature and there is no net heat flow between them.</li><li>When two systems are in thermal equilibrium, they are at the same temperature, and no heat is transferred between them.</li><li>The Zeroth Law of Thermodynamics states that if two systems are each in thermal equilibrium with a third system, they are in thermal equilibrium with each other.</li><li>This law establishes temperature as a fundamental property that determines thermal equilibrium.</li><li>The Zeroth Law is essential for defining temperature and is the foundation for the other laws of thermodynamics.</li><li>Thermal contact is required for heat transfer between systems. When two systems are in thermal contact, they can exchange heat energy.</li><li>Diathermic walls allow heat to pass through, while adiabatic walls do not allow heat to pass through.</li><li>The Zeroth Law allows us to define temperature using thermometers, which measure the temperature of a system by bringing it into thermal equilibrium with the thermometer.</li><li>Temperature is a measure of the average kinetic energy of the molecules in a system.</li><li>The Zeroth Law is crucial for understanding the behavior of thermodynamic systems and is the basis for the definition of temperature.</li><li>Thermal equilibrium is a necessary condition for the application of the other laws of thermodynamics.</li><li>The Zeroth Law is essential for the design and analysis of thermodynamic systems and devices.</li><li>Thermal equilibrium is a dynamic state where the net heat flow between systems is zero, even though individual molecules may still be moving and transferring energy.</li><li>The Zeroth Law is the foundation for the concept of temperature and is essential for understanding the behavior of thermodynamic systems.</li></ul></section>
+<section class="field"><h2>Ui Config</h2><dl class="obj"><div class="kv"><dt>Allow Zoom</dt><dd><p><code>true</code></p></dd></div><div class="kv"><dt>Show Refresh</dt><dd><p><code>true</code></p></dd></div></dl></section>
+<section class="field"><h2>Specific Conditions</h2><ul><li><strong>Thermal Equilibrium:</strong> Two systems are in thermal equilibrium if there is no net heat flow between them when they are in thermal contact. This implies that their temperatures are equal.</li><li><strong>Zeroth Law of Thermodynamics:</strong> If system A is in thermal equilibrium with system C, and system B is in thermal equilibrium with system C, then system A is in thermal equilibrium with system B. This establishes temperature as a well-defined property.</li><li><strong>Thermal Contact:</strong> For heat transfer to occur between two systems, they must be in thermal contact. This means they must be able to exchange heat energy.</li><li><strong>Diathermic and Adiabatic Walls:</strong> Diathermic walls allow heat to pass through, while adiabatic walls do not. Systems separated by adiabatic walls cannot exchange heat.</li><li><strong>Thermometers:</strong> A thermometer measures the temperature of a system by bringing it into thermal equilibrium with the system. The thermometer's reading indicates the temperature of the system.</li><li><strong>Temperature Measurement:</strong> Temperature is a measure of the average kinetic energy of the molecules in a system. It determines the direction of heat flow: heat flows from higher temperature to lower temperature.</li><li><strong>Thermal Equilibrium and State Functions:</strong> In thermal equilibrium, the macroscopic properties of a system (such as temperature, pressure, and volume) are constant and do not change with time.</li><li><strong>Applications of Zeroth Law:</strong> The Zeroth Law is used to define temperature scales and to compare temperatures of different systems. It is essential for the design and analysis of thermodynamic systems and devices.</li><li><strong>Thermal Equilibrium in Real Systems:</strong> In real systems, thermal equilibrium is achieved when the net heat flow between systems is zero, even though individual molecules may still be transferring energy.</li><li><strong>Temperature and Heat Flow:</strong> Heat flows from a region of higher temperature to a region of lower temperature. When two systems are in thermal equilibrium, their temperatures are equal, and no net heat flow occurs.</li><li><strong>Thermal Equilibrium and Energy Transfer:</strong> In thermal equilibrium, the total energy of the system remains constant, and there is no net transfer of energy between the systems.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Thermal equilibrium condition: T_A = T_B = T_C</li><li>Zeroth Law of Thermodynamics: If T_A = T_C and T_B = T_C, then T_A = T_B</li><li>Heat transfer: Q = m c ΔT (for temperature changes)</li><li>Heat transfer in thermal equilibrium: Q_net = 0</li><li>Thermal equilibrium condition for two systems: ΔQ = 0</li><li>Temperature scales conversion: T(K) = T(°C) + 273.15</li><li>Temperature scales conversion: T(°F) = (9/5)T(°C) + 32</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Thermal equilibrium is a state in which two or more systems have the same temperature and there is no net heat flow between them.</li><li>The Zeroth Law of Thermodynamics states that if two systems are each in thermal equilibrium with a third system, they are in thermal equilibrium with each other.</li><li>The Zeroth Law establishes temperature as a fundamental property that determines thermal equilibrium.</li><li>Thermal contact is required for heat transfer between systems.</li><li>Diathermic walls allow heat to pass through, while adiabatic walls do not.</li><li>Thermometers measure the temperature of a system by bringing it into thermal equilibrium with the system.</li><li>Temperature is a measure of the average kinetic energy of the molecules in a system.</li><li>The Zeroth Law is essential for defining temperature and is the foundation for the other laws of thermodynamics.</li><li>Thermal equilibrium is a necessary condition for the application of the other laws of thermodynamics.</li><li>The Zeroth Law is crucial for the design and analysis of thermodynamic systems and devices.</li><li>Thermal equilibrium is a dynamic state where the net heat flow between systems is zero.</li><li>The Zeroth Law is the foundation for the concept of temperature and is essential for understanding the behavior of thermodynamic systems.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Thermal equilibrium is a state in which two or more systems have the same temperature and there is no net heat flow between them.</li><li>The Zeroth Law of Thermodynamics states that if two systems are each in thermal equilibrium with a third system, they are in thermal equilibrium with each other.</li><li>The Zeroth Law establishes temperature as a well-defined property that determines thermal equilibrium.</li><li>Thermal contact is required for heat transfer between systems.</li><li>Diathermic walls allow heat to pass through, while adiabatic walls do not.</li><li>Thermometers measure the temperature of a system by bringing it into thermal equilibrium with the system.</li><li>Temperature is a measure of the average kinetic energy of the molecules in a system.</li><li>The Zeroth Law is essential for defining temperature and is the foundation for the other laws of thermodynamics.</li><li>Thermal equilibrium is a necessary condition for the application of the other laws of thermodynamics.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Use the Zeroth Law to determine if two systems are in thermal equilibrium.</li><li>Understand that thermal equilibrium implies equal temperatures and no net heat flow.</li><li>Recognize that thermal contact is necessary for heat transfer between systems.</li><li>Distinguish between diathermic and adiabatic walls.</li><li>Use thermometers to measure temperature by bringing them into thermal equilibrium with the system.</li><li>Convert between temperature scales using T(K) = T(°C) + 273.15 and T(°F) = (9/5)T(°C) + 32.</li><li>Apply the Zeroth Law to solve problems involving thermal equilibrium.</li><li>Understand that thermal equilibrium is a dynamic state with no net heat flow.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Focus on understanding the Zeroth Law of Thermodynamics and its significance in defining temperature.</li><li>Practice problems involving thermal equilibrium and the application of the Zeroth Law.</li><li>Understand the importance of thermal contact and the distinction between diathermic and adiabatic walls.</li><li>Be able to explain how thermometers measure temperature using thermal equilibrium.</li><li>Apply the Zeroth Law to real-world scenarios involving thermal equilibrium.</li><li>Understand the significance of thermal equilibrium in the design and analysis of thermodynamic systems.</li><li>Be able to explain the relationship between thermal equilibrium and the other laws of thermodynamics.</li><li>Practice converting between different temperature scales.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Consider two cups of water at different temperatures. When they are placed in thermal contact, heat flows from the hotter cup to the cooler cup until they reach thermal equilibrium at the same temperature.</li><li>A thermometer is placed in a beaker of water. The thermometer reaches thermal equilibrium with the water, and its reading indicates the temperature of the water.</li><li>Two systems, A and B, are each in thermal equilibrium with a third system, C. According to the Zeroth Law, systems A and B are in thermal equilibrium with each other.</li><li>A metal rod is placed between two blocks of ice and steam. Heat flows from the steam to the ice until all three systems reach thermal equilibrium at the same temperature.</li><li>A thermostat in a room maintains the room temperature by allowing heat to flow in or out of the room until thermal equilibrium is achieved.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Solve problems involving thermal equilibrium and the application of the Zeroth Law.</li><li>Determine if two systems are in thermal equilibrium using the Zeroth Law.</li><li>Explain how thermometers measure temperature using thermal equilibrium.</li><li>Apply the Zeroth Law to real-world scenarios involving thermal equilibrium.</li><li>Convert between different temperature scales using the appropriate formulas.</li><li>Determine the final equilibrium temperature in problems involving heat transfer between systems.</li><li>Explain the significance of thermal equilibrium in the design and analysis of thermodynamic systems.</li><li>Apply the Zeroth Law to solve problems involving thermal contact and heat transfer.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Thermal equilibrium is a fundamental concept in thermodynamics that determines the direction of heat flow.</li><li>The Zeroth Law of Thermodynamics is essential for defining temperature and is the foundation for the other laws of thermodynamics.</li><li>Thermal contact is necessary for heat transfer between systems.</li><li>Diathermic and adiabatic walls play a crucial role in controlling heat transfer between systems.</li><li>Thermometers measure temperature by bringing them into thermal equilibrium with the system being measured.</li><li>Temperature is a measure of the average kinetic energy of the molecules in a system.</li><li>Thermal equilibrium is a necessary condition for the application of the other laws of thermodynamics.</li><li>The Zeroth Law is crucial for the design and analysis of thermodynamic systems and devices.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Distinguish between thermal equilibrium and the absence of heat flow. Thermal equilibrium implies equal temperatures and no net heat flow, but individual molecules may still be transferring energy.</li><li>Understand the significance of the Zeroth Law in defining temperature and establishing thermal equilibrium.</li><li>Apply the Zeroth Law correctly to determine if two systems are in thermal equilibrium.</li><li>Distinguish between diathermic and adiabatic walls and their roles in heat transfer.</li><li>Understand how thermometers measure temperature using thermal equilibrium.</li><li>Apply the Zeroth Law to real-world scenarios involving thermal equilibrium.</li><li>Convert between different temperature scales correctly.</li><li>Explain the relationship between thermal equilibrium and the other laws of thermodynamics.</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Thermal equilibrium and its conditions</li><li>The Zeroth Law of Thermodynamics and its significance</li><li>Thermal contact and heat transfer</li><li>Diathermic and adiabatic walls</li><li>Thermometers and temperature measurement</li><li>Temperature as a measure of average kinetic energy</li><li>Applications of the Zeroth Law in real-world scenarios</li><li>Thermal equilibrium in the design and analysis of thermodynamic systems</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Determine if two systems are in thermal equilibrium using the Zeroth Law.</li><li>Explain how thermometers measure temperature using thermal equilibrium.</li><li>Apply the Zeroth Law to solve problems involving thermal equilibrium.</li><li>Convert between different temperature scales using the appropriate formulas.</li><li>Determine the final equilibrium temperature in problems involving heat transfer between systems.</li><li>Explain the significance of thermal equilibrium in the design and analysis of thermodynamic systems.</li><li>Apply the Zeroth Law to real-world scenarios involving thermal equilibrium.</li><li>Understand the relationship between thermal equilibrium and the other laws of thermodynamics.</li></ul></section>
+<section class="field"><h2>Visual Type</h2><p>thermodynamics</p></section>
+  <nav class="pager"><a href="02-meaning-of-thermal-equilibrium-and-zeroth-law-of-thermodynamics.html" title="Thermal Equilibrium and Zeroth Law of Thermodynamics">‹ Thermal Equilibrium and Zeroth Law of Thermod…</a><a class="mid" href="../../../../../_subjects/class-11-physics.html">Physics</a><a href="02-thermal-equilibrium-zeroth-law.html" title="Thermal Equilibrium and Zeroth Law">Thermal Equilibrium and Zeroth Law ›</a></nav>
+</div></body></html>

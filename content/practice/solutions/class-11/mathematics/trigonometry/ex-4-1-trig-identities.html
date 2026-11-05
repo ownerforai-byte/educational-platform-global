@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.4 Book Ex 4.1 (trigonometrical identities) - Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Trigonometry</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.4 Book Ex 4.1 (trigonometrical identities) - Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Trigonometry</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q1(a). Prove that (tanA - secA + 1)/(tanA + secA - 1) = cosA/(1 + sinA).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Divide top and bottom by cosA, then cross-multiply: both sides become cosA times (sinA - cosA + 1).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Divide numerator and denominator by cosA: LHS = (sinA - 1 + cosA)/(sinA + 1 - cosA). Cross-check: (sinA+cosA-1)(1+sinA) = sinA+sin^2A+cosA+sinAcosA-1-sinA = sin^2A+cosA+sinAcosA-1 = -cos^2A+cosA+sinAcosA = cosA(1-cosA+sinA) = cosA(sinA-cosA+1) = RHS numerator times denominator. Hence equal. Proved. (Statement via 200-dpi image read; OCR had merged the fraction bars.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q1(a); book p142 = PDF p169 (200-dpi image read)</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q1(b). Prove that 1/cosA - 1/(secA+tanA) = 1/(secA-tanA) - 1/cosA.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>sec^2 - tan^2 = 1 makes the two unit fractions sum to exactly 2secA.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Rearranged: 2secA = 1/(secA-tanA) + 1/(secA+tanA). RHS = ((secA+tanA)+(secA-tanA))/((secA-tanA)(secA+tanA)) = 2secA/(sec^2A-tan^2A) = 2secA/1 = 2secA = LHS. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q1(b); book p142 = PDF p169 (200-dpi image read)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q2. If cosA + sinA = sqrt(2)cosA, show that cosA - sinA = sqrt(2)sinA.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Read sinA straight off the hypothesis: sinA = (sqrt(2)-1)cosA - then both target sides are the same multiple of cosA.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>From the hypothesis sinA = (sqrt(2)-1)cosA (cosA != 0, else 1 = 0). Then cosA - sinA = cosA-(sqrt(2)-1)cosA = (2-sqrt(2))cosA; and sqrt(2)sinA = sqrt(2)(sqrt(2)-1)cosA = (2-sqrt(2))cosA. Equal. Shown. (No squaring, so no sign ambiguity.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q2; book p142 = PDF p169 (image read)</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q3(a). Show that sin(B-C)/(sinB sinC) + sin(C-A)/(sinC sinA) + sin(A-B)/(sinA sinB) = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>sin(B-C)/(sinB sinC) = cotC - cotB: the three terms telescope to zero.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>sin(B-C)/(sinB sinC) = (sinBcosC-cosBsinC)/(sinBsinC) = cotC-cotB. Cyclically the others give cotA-cotC and cotB-cotA. Sum = 0. Shown.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q3(a); book p142 = PDF p169 (image read)</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q3(b). Show that cosA + cos(120deg+A) + cos(120deg-A) = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>cos(120+A)+cos(120-A) = 2cos120 cosA = -cosA: the pair eats the leading cosA.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>cos(120+A)+cos(120-A) = 2cos120deg.cosA = 2(-1/2)cosA = -cosA. Adding cosA gives 0. Shown.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q3(b); book p142 = PDF p169 (image read)</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q4(a). If tanx = k.tany, show that (k-1)sin(x+y) = (k+1)sin(x-y).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Componendo in disguise: write k = sinxcosy/(cosxsiny) and expand both sides to (k^2-1)cosxsiny.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>tanx = k.tany gives sinxcosy = k.cosxsiny. LHS = (k-1)(sinxcosy+cosxsiny) = (k-1)(k+1)cosxsiny. RHS = (k+1)(sinxcosy-cosxsiny) = (k+1)(k-1)cosxsiny. Equal. Shown.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q4(a); book p142 = PDF p169 (image read)</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q4(b). If sin(A+B) = k.sin(A-B), prove that (k-1)cotB = (k+1)cotA.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Solve for (k-1) and (k+1) from the hypothesis: both equal twice a product over the same denominator.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>k = (sinAcosB+cosAsinB)/(sinAcosB-cosAsinB) =: N/D. Then k-1 = 2cosAsinB/D and k+1 = 2sinAcosB/D. So (k-1)cotB = 2cosAcosB/D = (k+1)cotA. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q4(b); book p142 = PDF p169 (image read)</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q5(a). Prove that cos2A = (1-tan^2A)/(1+tan^2A).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Divide top and bottom by cos^2A: tan^2A appears and cos2A = cos^2 - sin^2 drops out.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(1-tan^2A)/(1+tan^2A) = ((cos^2A-sin^2A)/cos^2A)/((cos^2A+sin^2A)/cos^2A) = (cos^2A-sin^2A)/1 = cos2A. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q5(a); book p142 = PDF p169 (image read)</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q5(b). Prove that (1+cos2B)/sin2B = cotB.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Double-angle both parts: 2cos^2B over 2sinBcosB.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(1+cos2B)/sin2B = 2cos^2B/(2sinBcosB) = cosB/sinB = cotB. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q5(b); book p142 = PDF p169 (image read)</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q5(c). Prove that cos^2(A-120deg) + cos^2A + cos^2(A+120deg) = 3/2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Average of three 120-degree-shifted squares is 3/2: the cross terms cancel in pairs. (OCR misread '= 2'; the image confirms 3/2.)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>cos(A+-120) = -cosA/2 -/+ sqrt(3)sinA/2. Squaring: each = cos^2A/4 + 3sin^2A/4 -/+ cross term; the two cross terms (+sqrt(3)sinAcosA/2 and its negative) cancel. Sum = cos^2A + 2(cos^2A/4+3sin^2A/4) = (3/2)(cos^2A+sin^2A) = 3/2. Proved. (Book prints 3/2 - confirmed by image; OCR's '= 2' was a misread.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q5(c); book p142 = PDF p169 (200-dpi image read: '= 3/2')</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>Q6. If theta and phi are acute angles and cos2theta = (3cos2phi-1)/(3-cos2phi), show that tantheta = sqrt(2).tanphi.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Write cos2phi with t = tan^2phi, simplify to (1-2t)/(1+2t), then read tan^2theta = 2t off the half-angle form.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Put t = tan^2phi, so cos2phi = (1-t)/(1+t). RHS = (3(1-t)/(1+t)-1)/(3-(1-t)/(1+t)) = (2-4t)/(2+4t) = (1-2t)/(1+2t). Hence cos2theta = (1-2t)/(1+2t), and tan^2theta = (1-cos2theta)/(1+cos2theta) = 4t/2 = 2t. Acute angles give positive roots: tantheta = sqrt(2).tanphi. Shown.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q6; book p143 = PDF p170 (200-dpi image read)</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>Q7. If 2tanA = 3tanB, prove that tan(A-B) = sin2B/(5-cos2B).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>tan(A-B) with tanA = 3tanB/2 on top; on the bottom write everything with tanB via sin2B and cos2B.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>LHS = (tanA-tanB)/(1+tanAtanB) = (tanB/2)/((2+3tan^2B)/2) = tanB/(2+3tan^2B). RHS = (2tanB/(1+tan^2B))/(5-(1-tan^2B)/(1+tan^2B)) = 2tanB/(4+6tan^2B) = tanB/(2+3tan^2B). Equal. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q7; book p143 = PDF p170 (200-dpi image read)</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>Q8. If tan(theta/2) = sqrt((1-e)/(1+e)).tan(phi/2), prove that cosphi = (costheta-e)/(1-e.costheta).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Half-angle t-substitution plus k^2(1+e) = 1-e: numerator and denominator share the factor (1-e).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Put t = tan(phi/2), T = tan(theta/2) = k.t with k^2 = (1-e)/(1+e). Then (costheta-e)/(1-e.costheta) with costheta = (1-k^2t^2)/(1+k^2t^2): numerator = ((1-e)-k^2t^2(1+e))/(1+k^2t^2) = (1-e)(1-t^2)/(1+k^2t^2) since k^2(1+e) = 1-e; denominator = ((1-e)+k^2t^2(1+e))/(1+k^2t^2) = (1-e)(1+t^2)/(1+k^2t^2). Ratio = (1-t^2)/(1+t^2) = cosphi. Proved. (The orbital true-anomaly relation.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q8; book p143 = PDF p170 (200-dpi image read)</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>Q9(a). Prove that 8.sin20deg.sin40deg.sin80deg = sqrt(3).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>sin20.sin40.sin80 = sin60/4: the triple-angle product identity with theta = 20.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>sin(theta)sin(60-theta)sin(60+theta) = sin3theta/4 with theta = 20deg gives sin20sin40sin80 = sin60/4 = sqrt(3)/8. Times 8: sqrt(3). Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q9(a); book p143 = PDF p170 (image read)</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>Q9(b). Prove that 16.cos20deg.cos40deg.cos60deg.cos80deg = 1.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>cos20cos40cos80 = sin160/(8sin20) = 1/8; the cos60 factor halves it once more.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>cos60 = 1/2. cos20cos40cos80 = sin(8x20)/(8sin20) = sin160/sin... = sin20/(8sin20) = 1/8 (using costheta.cos2theta.cos4theta = sin8theta/(8sintheta)). Product = (1/8)(1/2) = 1/16; times 16 = 1. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q9(b); book p143 = PDF p170 (image read)</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>Q9(c). Prove that tan6deg.tan42deg.tan66deg.tan78deg = 1.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Pair them as (sqrt(5)-2)(sqrt(5)+2) = 1: exact surd values at 6/66 and 42/78 degrees.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>tan6tan66 = (cos60-cos72)/(cos60+cos72) = (1/2-sin18)/(1/2+sin18) = sqrt(5)-2 (with sin18 = (sqrt(5)-1)/4). tan42tan78 = (cos36-cos120)/(cos36+cos120) = (sin54+1/2)/(sin54-1/2) = sqrt(5)+2 (with sin54 = (sqrt(5)+1)/4). Product = (sqrt(5)-2)(sqrt(5)+2) = 5-4 = 1. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q9(c); book p143 = PDF p170 (image read)</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>Q10. If sin2x = 3.sin2y, prove that 2.tan(x-y) = tan(x+y).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Componendo-dividendo on sin2x/sin2y = 3/1 turns the ratio into tan(x+y)/tan(x-y) = 2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(sin2x+sin2y)/(sin2x-sin2y) = (3+1)/(3-1) = 2. LHS = (2sin(x+y)cos(x-y))/(2cos(x+y)sin(x-y)) = tan(x+y)/tan(x-y). So tan(x+y)/tan(x-y) = 2, i.e. tan(x+y) = 2tan(x-y). Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q10; book p143 = PDF p170</p></div></div></div><div class="q"><span class="n">18.</span><div class="stem"><p>Q11. Prove that ((cosA+cosB)/(sinA-sinB))^n + ((sinA+sinB)/(cosA-cosB))^n = 2cot^n((A-B)/2) or 0 according as n is even or odd.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Each bracket is +-cot((A-B)/2): same sign (even n) doubles, opposite signs (odd n) cancel.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(cosA+cosB)/(sinA-sinB) = (2cos((A+B)/2)cos((A-B)/2))/(2cos((A+B)/2)sin((A-B)/2)) = cot((A-B)/2). (sinA+sinB)/(cosA-cosB) = (2sin((A+B)/2)cos((A-B)/2))/(-2sin((A+B)/2)sin((A-B)/2)) = -cot((A-B)/2). Sum = cot^n + (-cot)^n = 2cot^n((A-B)/2) for even n, 0 for odd n. Proved. (Statement via 200-dpi image read; OCR had scrambled the denominators.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q11; book p143 = PDF p170 (200-dpi image read)</p></div></div></div><div class="q"><span class="n">19.</span><div class="stem"><p>Q12(a). If A+B+C = pi, prove that tan(B/2)tan(C/2) + tan(C/2)tan(A/2) + tan(A/2)tan(B/2) = 1.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>(A+B)/2 and C/2 are complementary: tan((A+B)/2) = cot(C/2) rearranges straight into the result.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(A+B)/2 = pi/2 - C/2, so (tan(A/2)+tan(B/2))/(1-tan(A/2)tan(B/2)) = tan((A+B)/2) = cot(C/2) = 1/tan(C/2). Cross-multiplying: tan(A/2)tan(C/2)+tan(B/2)tan(C/2) = 1-tan(A/2)tan(B/2). Rearranged: sum = 1. Proved. (Statement via 200-dpi image read; OCR had dropped the half-angles.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q12(a); book p143 = PDF p170 (200-dpi image read)</p></div></div></div><div class="q"><span class="n">20.</span><div class="stem"><p>Q12(b). If A+B+C = pi, prove that sin2A + sin2B + sin2C = 4.sinA.sinB.sinC.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Pair the first two sines, then fold sin2C in: cosC = -cos(A+B) makes the last step click.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>sin2A+sin2B = 2sin(A+B)cos(A-B) = 2sinC.cos(A-B). Add sin2C = 2sinCcosC: total = 2sinC(cos(A-B)+cosC) = 2sinC(cos(A-B)-cos(A+B)) = 2sinC.2sinAsinB = 4sinAsinBsinC. Proved.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q12(b); book p143 = PDF p170 (image read)</p></div></div></div><div class="q"><span class="n">21.</span><div class="stem"><p>Q13(a). If A+B+C = pi, prove that cos^2A + cos^2B + cos^2C = 1 - 2cosAcosBcosC.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Group cos^2A+cos^2B with the half-angle form, then let cosC = -cos(A+B) finish it - the book's own worked example uses this.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>cos^2A+cos^2B = 1+(cos2A+cos2B)/2 = 1+cos(A+B)cos(A-B) = 1-cosC.cos(A-B). Add cos^2C: 1-cosC.cos(A-B)+cos^2C = 1-cosC(cos(A-B)-cosC) = 1-cosC(cos(A-B)+cos(A+B)) = 1-2cosAcosBcosC. Proved. (Same proof as the book's worked example above Ex 4.1.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q13(a); book p143 = PDF p170 (image read)</p></div></div></div><div class="q"><span class="n">22.</span><div class="stem"><p>Q13(b). If A+B+C = pi, prove that sin^2(A/2) + sin^2(B/2) + sin^2(C/2) = 1 - 2sin(A/2)sin(B/2)sin(C/2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Apply the Q13(a) pattern to the half-angles X = A/2 etc. (X+Y+Z = pi/2): the cofunction flips cos into sin exactly where needed.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Put X = A/2, Y = B/2, Z = C/2 with X+Y+Z = pi/2. sin^2X+sin^2Y = 1-(cos2X+cos2Y)/2 = 1-cos(X+Y)cos(X-Y) = 1-sinZ.cos(X-Y). Add sin^2Z: 1-sinZ.cos(X-Y)+sin^2Z = 1-sinZ(cos(X-Y)-sinZ) = 1-sinZ(cos(X-Y)-cos(X+Y)) = 1-2sinXsinYsinZ. Proved. (Statement via 200-dpi image read; OCR had dropped the half-angles.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.4 Ex 4.1 Q13(b); book p143 = PDF p170 (200-dpi image read)</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.4 BOOK Exercise 4.1 (book pp142-143 = PDF pp169-170 of the 2075 reprint; OCR conf 0.94 + 200-dpi image reads of every garbled statement). All 13 questions (22 entries) solved with full proofs; identity corrections vs OCR: Q5(c) = 3/2 (image-confirmed), Q12(a)/Q13(b) half-angles restored (image-confirmed).</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>trigonometry-textbook-ex-4-1-identities</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>trigonometry</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-4-2-trig-equations.html" title="Sukunda Basic Mathematics XI - Ch.4 Book Ex 4.2 (trigonometrical equations) - Complete Solutions">Sukunda Basic Mathematics XI - Ch.4 Book Ex 4… ›</a></nav>
+</div></body></html>

@@ -1,0 +1,184 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Comprehension and Unseen Passage</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Writing And Composition</div>
+    <h1 class="doc">Comprehension and Unseen Passage</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Writing And Composition</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>writing-and-composition</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>comprehension-and-unseen-passage</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>generated</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>What it is:</strong> extracting and restating passage information — the trap is copying whole sentences; the skill is locate-then-restate.</li><li><strong>Method:</strong> skim for gist → scan for the question's keywords (the answer lives nearby) → answer in complete sentences with synonyms → match the question type (WH → answer the WH; 'Why' → 'Because…'; true/false → quote evidence) → verify against the text.</li><li><strong>Grammar of answers:</strong> convert passage nouns into clauses ('its existence' → 'that it exists'); use report frames ('the passage states that…'); keep the passage's tense zone; quote marks ONLY when demanded.</li><li><strong>Length discipline:</strong> 1-mark answers = one sentence; 2-mark answers = answer + reason/evidence.</li><li><strong>Full guide:</strong> Full model answers, starting-line banks and exam tips: [/knowledge/writing](/knowledge/writing).</li><li><strong>The four-step comprehension method:</strong> (1) SKIM — read the passage once quickly (60 seconds) to get the gist. Don't stop for unknown words. (2) SCAN — read the questions FIRST, then scan the passage for keywords related to each question. (3) LOCATE — find the exact sentence(s) that contain the answer. Underline them. (4) RESTATE — write the answer in YOUR OWN WORDS using complete sentences. Never copy the passage verbatim.</li><li><strong>Why copying is the #1 comprehension error:</strong> Examiners explicitly penalise copied sentences. If the passage says 'The river was polluted with industrial waste,' and you write 'The river was polluted with industrial waste,' you get ZERO marks for that answer. You must PARAPHRASE: 'Industrial waste had contaminated the river.' This proves you UNDERSTOOD the meaning, not just your ability to copy.</li><li><strong>Paraphrasing techniques for exam success:</strong> (1) <em>Synonym swap</em>: 'happy' → 'joyful', 'big' → 'large', 'sad' → 'sorrowful'. (2) <em>Word class change</em>: 'The government decided' → 'The government's decision was…' (3) <em>Voice change</em>: 'They built the bridge' → 'The bridge was built by them.' (4) <em>Clause reduction</em>: 'Although it was raining heavily, they went out' → 'Despite the heavy rain, they went out.' (5) <em>Active to passive</em>: 'The teacher gave the students homework' → 'The students were given homework by the teacher.'</li><li><strong>Question type mastery — WH questions:</strong> (1) <em>What</em> — answer with a noun or clause: 'What caused the flood?' → 'Heavy rainfall caused the flood.' (2) <em>Why</em> — answer with a reason: 'Why did she refuse?' → 'She refused because she had lost faith in the system.' (3) <em>How</em> — answer with a method or manner: 'How did they solve the problem?' → 'They solved it by combining traditional knowledge with modern techniques.' (4) <em>When/Where/Who</em> — direct factual answers. ALWAYS use complete sentences unless told otherwise.</li><li><strong>Question type mastery — true/false/not given:</strong> (1) <em>True</em> — the passage explicitly confirms the statement. (2) <em>False</em> — the passage explicitly contradicts the statement. (3) <em>Not Given</em> — the passage doesn't mention the information at all. 'Not Given' is different from 'False' — it means the information is simply absent, not wrong. This distinction is heavily tested.</li><li><strong>Question type mastery — short answer vs. long answer:</strong> (1) <em>Short answer</em> (1 mark): one sentence, direct to the point. (2) <em>Long answer</em> (2-3 marks): answer + supporting evidence/reason from the passage. For 2-mark questions, always include BOTH the answer AND the evidence. Format: 'X happened because Y [evidence from passage].' Don't just state the answer — justify it.</li><li><strong>Vocabulary-in-context questions:</strong> When asked 'What does the word X mean in the passage?', do NOT write a dictionary definition. Write what the word means IN THAT CONTEXT. 'In the passage, &quot;reluctant&quot; means unwilling or hesitating because the character had no choice but to agree despite her reservations.' Always anchor your answer in the passage's context.</li><li><strong>Inference questions — reading between the lines:</strong> Inference questions ask you to deduce something NOT explicitly stated. 'What can you infer about the author's attitude?' Strategy: (1) Find the sentence with the relevant information. (2) Ask 'what does this imply?' (3) Write the implication as your answer. Don't go beyond the text — stay close to the passage. 'The author's use of the word &quot;heartbreaking&quot; suggests they feel deep sorrow about the situation.'</li><li><strong>Reference questions — what does 'it/this/that' refer to?</strong> These questions ask you to identify what a pronoun or demonstrative refers to in context. Strategy: (1) Find the pronoun in the passage. (2) Look at the preceding sentence(s). (3) Identify the noun that the pronoun replaces. Answer: 'It refers to [the specific noun from the passage].' Never answer with another pronoun.</li><li><strong>Tone and attitude questions:</strong> 'What is the author's tone?' Possible answers: formal, informal, objective, subjective, sympathetic, critical, sarcastic, hopeful, pessimistic, nostalgic, indifferent. 'What is the author's attitude towards…?' Possible answers: positive, negative, neutral, ambivalent, critical, admiring. Always support your answer with a specific word or phrase from the passage.</li><li><strong>Main idea and title questions:</strong> (1) <em>Main idea</em>: Read the first and last sentence of each paragraph. The main idea is what connects ALL paragraphs. (2) <em>Title</em>: Choose a title that covers the WHOLE passage, not just one paragraph. A good title is specific but not too narrow. Bad title: 'Pollution in Kathmandu' (only covers one paragraph). Good title: 'Environmental Challenges in Urban Nepal' (covers all paragraphs).</li><li><strong>Comprehension time management:</strong> For a 30-mark comprehension section with a 300-400 word passage and 10-12 questions: (1) Spend 2 minutes skimming. (2) Read questions in 1 minute. (3) Each question takes 2-3 minutes (locate + restate + verify). (4) Leave 2 minutes for review. Total: ~30 minutes. Don't spend 10 minutes on one question — move on and come back. Speed and accuracy matter.</li><li><strong>The verification check — your last step:</strong> After writing every answer, go back to the passage and ask: (1) Does my answer match the passage? (2) Have I answered the question asked, not a different one? (3) Is my answer in my own words? (4) Is it in a complete sentence? (5) Does it fit the word limit? If any answer fails these checks, rewrite it. Verification catches 60% of comprehension errors.</li><li><h2>Comprehension and Unseen Passage</h2>
+<h3>1. About the text and the author (kind: writing)</h3>
+<p>Reading frame for <strong>Comprehension and Unseen Passage</strong> — what the piece is, verified author facts where the topic names one, and the map of what follows (english-plan.md §3a, block I). Author facts are verified at fill, never remembered. Unit: Writing and Composition.</li><li><h3>2. Format template and annotated specimen</h3>
+<p><strong>Format table</strong></p>
+<table><thead><tr><th>Part</th><th>What goes there</th><th>Example line</th></tr></thead><tbody></tbody></table>
+<p>The labelled-parts figure is declared below; the full specimen is written at fill (§3c).</li><li><h3>3. Figures</h3>
+<ul>
+<li><strong>G1</strong> — Comprehension and Unseen Passage — annotated format figure with labelled parts (authored SVG — English labels)</li>
+<li><strong>G2</strong> — Comprehension and Unseen Passage — curated model or layout reference (curated external — license recorded at fill)</li>
+</ul></li><li><h3>4. Models and vocabulary</h3>
+<p>Two complete model pieces per genre at fill, register table (formal vs informal), and the do-and-avoid table (block §3c).</li><li><h3>5. Exam Zone</h3>
+<p>NEB format-wise past patterns plus marking notes; existing entrance-exam (CEE) material stays where it is — see the seeded exam fields of this file when present.</li><li><h3>6. Summary and self-check</h3>
+<p>Format checklist, one-paragraph essence, self-check tasks.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Copying vs. paraphrasing: Copying = writing the exact words from the passage (0 marks). Paraphrasing = expressing the SAME MEANING in YOUR OWN WORDS (full marks). Example: Passage says 'The children played joyfully in the garden.' Copy: 'The children played joyfully in the garden' (wrong). Paraphrase: 'The kids had fun playing outdoors in the garden' (correct). Always paraphrase unless the question says 'quote from the passage.'</li><li>Inference vs. opinion: An inference is a LOGICAL conclusion drawn from evidence in the passage. An opinion is YOUR PERSONAL belief that may or may not be supported by the passage. Inference: 'The character was likely anxious because she kept checking her watch.' Opinion: 'I think the character was anxious because I get nervous too.' Inferences use passage evidence; opinions use personal experience. Examiners want inferences.</li><li>True vs. Not Given: True = the passage CONFIRMS the statement. False = the passage CONTRADICTS the statement. Not Given = the passage NEITHER confirms nor contradicts — the information is simply absent. Example: Passage says 'Rahul went to school.' Statement: 'Rahul walked to school.' This is NOT GIVEN — we know he went, but not HOW. Don't assume; stick to what's in the passage.</li><li>Short answer vs. long answer format: A short answer (1 mark) is one complete sentence that directly answers the question. A long answer (2-3 marks) is answer + evidence/reason. Format for long answers: 'The answer is X because Y [with reference to the passage].' For short answers, skip the 'because' — just state the answer directly. Over-answering short questions wastes time; under-answering long questions loses marks.</li><li>Main idea vs. topic: The TOPIC is what the passage is about (one word or phrase: 'deforestation'). The MAIN IDEA is what the passage says ABOUT the topic (a complete sentence: 'Deforestation in Nepal is accelerating due to population pressure and policy failures'). Don't confuse them — a topic is a label; a main idea is a claim.</li></ul></section>
+<section class="field"><h2>Bounds</h2><ul><li>Covers only: comprehension, unseen passage (within Writing and Composition).</li><li>Out of scope here: topics of neighbouring units in English — don't mix them.</li><li>State the limit / condition where a formula or rule stops being valid before applying it.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>one worked example for &quot;Comprehension and Unseen Passage&quot; — check units / edge cases.</li><li>recall card: definition → formula → limit → one error to avoid.</li><li>Read this passage (150 words) about 'The Benefits of Meditation' and answer: (a) in one sentence, what is the main idea? (b) paraphrase the sentence 'Regular meditation has been shown to reduce cortisol levels by up to 25%.' (c) infer the author's tone. (d) explain what 'mindfulness' means in the passage's context.</li><li>Read an unseen passage (200 words) on 'Urban Traffic Congestion'. Answer these questions: (1) What does 'it' refer to in the sentence 'This has led to increased pollution, which it exacerbates daily'? (2) True/False/Not Given: 'All vehicles contribute equally to pollution.' (3) What is the author's attitude towards government policy? (4) Summarise the main problem in 20 words.</li><li>Read the passage about 'The Changing Face of Nepali Education' and write answers to: (a) What does the word 'colonial' mean in paragraph 2? (b) Inference: What can you deduce about the author's educational background? (c) Main idea of paragraph 3 in your own words (no more than 15 words). (d) True/False: 'Technology has replaced the need for textbooks entirely.'</li><li>Practice with this 10-mark comprehension test: Read a 250-word passage on 'The Impact of Social Media on Teenagers'. Write answers to: (1) What is the passage mainly about? (2) In your own words, explain one negative effect mentioned. (3) True/False with reason. (4) What does the author imply about future trends? (5) Give a suitable title.</li><li>Read a passage about 'Climate Change in the Himalayas' and answer: (a) Paraphrase: 'Glacial melt has accelerated dramatically over the past decade.' (b) Inference: What impact does this have on downstream communities? (c) What does the passage suggest about human responsibility? (d) Choose the best title from: (i) Glaciers Melting (ii) Climate Change in the Himalayas (iii) Water Crisis.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>answer pattern for &quot;Comprehension and Unseen Passage&quot;: define → method → result. Structure earns the marks on 6–10 mark questions.</li><li>Comprehension skills are tested in virtually every English examination worldwide — NEB, CBSE, ICSE, Cambridge IGCSE, IELTS, TOEFL. The 'locate-then-restate' method (find the answer in the text, express it in your own words) is the universal standard across all these exams.</li><li>In the NEB English exam, comprehension typically carries 15-20 marks out of 60-80 total. It is the single highest-weighted section. Mastering comprehension technique can add 5-8 marks to your total score — more than any other single skill.</li><li>Research by reading specialists shows that students who practice 'active reading' (predicting, questioning, visualising, summarising) score 25-30% higher on comprehension tests than students who read passively. The four strategies above (skim-scan-locate-restate) are a practical application of active reading.</li><li>The most common comprehension error across all levels is copying from the passage. Studies of examiner reports show that 40-60% of students who lose marks in comprehension do so because they copied sentences instead of paraphrasing. This single habit is the biggest barrier to high comprehension scores.</li><li>Paraphrasing is a transferable skill — it is used not just in comprehension but also in summarisation, note-making, essay writing, and even in professional contexts like research and journalism. Mastering paraphrasing in exam preparation benefits your overall English proficiency.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Worked: identify given → pick sub-concept → apply standard form → check units / edges.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>state + explain the main idea of &quot;Comprehension and Unseen Passage&quot; with one example.</li><li>compare &quot;Comprehension&quot; with the related idea from a neighbouring unit.</li><li>solve / apply for &quot;Comprehension and Unseen Passage&quot; and verify the answer is plausible.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>• Comprehension</li><li>• Unseen Passage</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Comprehension and Unseen Passage (Writing and Composition, English, class-11-notes) covers Comprehension, Unseen Passage. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A common examiner point on &quot;Comprehension and Unseen Passage&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div></section>
+<section class="field"><h2>Animation3 D</h2><p>writing-and-composition</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>writing-and-composition</p></section>
+  <nav class="pager"><a href="12-summary-and-note-making.html" title="Summary and Note-making">‹ Summary and Note-making</a><a class="mid" href="../../../../../_subjects/class-11-english.html">English</a><a href="14-grammar-for-writing-sentences-clauses-punctuation.html" title="Grammar for Writing — sentences, clauses, punctuation">Grammar for Writing — sentences, clauses, pun… ›</a></nav>
+</div></body></html>

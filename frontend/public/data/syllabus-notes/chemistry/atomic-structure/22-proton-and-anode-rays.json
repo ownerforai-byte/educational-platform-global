@@ -1,0 +1,72 @@
+{
+  "title": "Discovery of the Proton — Anode Rays and Nuclear Transmutation",
+  "unitSlug": "atomic-structure",
+  "topicSlug": "discovery-of-proton-and-its-properties",
+  "topicTitle": "Discovery Of Proton And Its Properties",
+  "relevance": 80,
+  "notes": [
+    "### Focus of this tab",
+    "How the proton was found: Goldstein's anode (canal) rays, the mass spectrometry evidence, and Rutherford's 1919 transmutation — the second particle needed to build the nuclear atom.",
+    "### Anode (canal) rays, 1886",
+    "Goldstein used a perforated (perforated-cathode) discharge tube: besides cathode rays, a new radiation passed *through* the holes of the cathode in the direction opposite to cathode rays. Properties: travel in straight lines, deflected by E and B fields in the direction of *positive* charges, and the e/m value **depends on the gas** in the tube — so these are positive ions of the gas, not a universal particle.",
+    "### The lightest positive particle",
+    "With hydrogen in the tube the e/m is the largest observed (9.58 × 10⁷ C kg⁻¹), i.e. the lightest positive particle: the proton, with charge +1.602 × 10⁻¹⁹ C and mass 1.673 × 10⁻²⁷ kg = 1.00728 u ≈ 1836 electron masses. The proton is the nuclear constituent that carries the atomic number Z.",
+    "### Rutherford's transmutation (1919)",
+    "Bombarding nitrogen with α-particles produced protons and oxygen: $^{14}\\text{N}+\\,^{4}\\text{He}\\rightarrow\\,^{17}\\text{O}+\\,^{1}\\text{p}$. This was the first artificial nuclear reaction: it (i) proved protons exist inside nuclei, (ii) changed one element into another (contra Dalton), and (iii) named the particle 'proton' (from protos, first).",
+    "### Why the proton matters for structure",
+    "The nuclear charge Z counted in protons is the element's identity (Moseley); A = Z + N requires neutrons as well, since protons alone cannot account for the masses and stability of nuclei (electrostatic repulsion of like charges would fly apart — the strong interaction and neutrons are needed)."
+  ],
+  "confusion": [
+    "❌ Anode rays are a universal particle like cathode rays. ✅ Their e/m depends on the gas — they are positive ions of that gas; only the hydrogen ion (proton) is universal.",
+    "❌ Goldstein named and identified the proton fully. ✅ He discovered the rays; the proton was characterised later and named by Rutherford.",
+    "❌ The proton is 1837 times heavier than the electron. ✅ 1836 (the neutron is 1839)."
+  ],
+  "practice": [
+    "Describe the production and properties of anode rays.",
+    "Why does the e/m of anode rays vary with the gas while that of cathode rays does not?",
+    "Write Rutherford's nitrogen transmutation equation and state its two conclusions.",
+    "Give the charge, mass and e/m of the proton."
+  ],
+  "formulas": [
+    "$$\\frac{e}{m}\\ (\\text{proton})=9.58\\times10^{7}\\ \\text{C kg}^{-1};\\quad m_{p}=1.673\\times10^{-27}\\ \\text{kg}=1836\\,m_{e}$$",
+    "$$^{14}\\text{N}+^{4}\\text{He}\\rightarrow^{17}\\text{O}+^{1}\\text{p}$$"
+  ],
+  "universalFacts": [
+    "The proton's mass in u is 1.00728 — the basis of the amu scale (¹²C = 12 exactly).",
+    "Canal rays are also called positive rays; Aston's mass spectrograph (1919) developed from them.",
+    "Rutherford's transmutation opened nuclear chemistry: element synthesis beyond bismuth became possible."
+  ],
+  "examples": [
+    "**Problem:** Why do anode rays bend less than cathode rays in the same field? **Solution:** deflection ∝ q/m; the proton's q/m is ≈1836 times smaller than the electron's, so its curvature is correspondingly tiny."
+  ],
+  "importantNotes": [
+    "Contrast cathode rays (universal, gas-independent) with anode rays (gas-dependent ions) — a standard comparison question.",
+    "Quote the transmutation equation with the year 1919."
+  ],
+  "mcqs": [
+    {
+      "question": "The e/m of anode rays:",
+      "options": [
+        "Is constant for all gases",
+        "Depends on the gas taken",
+        "Is zero",
+        "Equals that of cathode rays"
+      ],
+      "answer": "B"
+    }
+  ],
+  "visualType": "anode-rays",
+  "source": "ravikishan",
+  "filename": "22-proton-and-anode-rays.json",
+  "keyPoints": [],
+  "importantStatements": [],
+  "examShortTricks": [],
+  "importantConcepts": [],
+  "practiceQuestions": [],
+  "summary": "The Proton — Discovery & Properties of Anode Rays covers essential principles and applications.",
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": [],
+  "animation3D": "chemistry",
+  "motionGraphics": "chemistry"
+}

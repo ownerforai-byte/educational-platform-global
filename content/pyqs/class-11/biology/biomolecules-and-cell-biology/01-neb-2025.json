@@ -1,0 +1,75 @@
+{
+  "title": "NEB Class 11 Biology — Biomolecules And Cell Biology — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "biomolecules-and-cell-biology",
+  "origin": "curated NEB-pattern set covering every topic of the class-11 biomolecules and cell biology unit",
+  "questions": [
+    {
+      "id": "bio-bm-2025-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "easy",
+      "question": "State one function each of carbohydrates, proteins, lipids and nucleic acids in living organisms.",
+      "solution": "Carbohydrates: the immediate source of energy (glucose in respiration) and structural material (cellulose in plant walls, starch and glycogen as storage).\nProteins: structural (collagen, keratin) and functional — enzymes, haemoglobin for transport, antibodies for defence, hormones.\nLipids: concentrated energy store (about twice the energy of carbohydrate per gram), insulation, phospholipids of membranes and steroid hormones.\nNucleic acids: DNA stores and transmits hereditary information; RNA carries that information and directs protein synthesis."
+    },
+    {
+      "id": "bio-bm-2025-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Give any four differences between a prokaryotic and a eukaryotic cell.",
+      "solution": "1. Nucleus: absent in prokaryotes (nucleoid region only), a true membrane-bound nucleus in eukaryotes.\n2. Membrane-bound organelles: absent in prokaryotes; mitochondria, plastids, ER and Golgi are present in eukaryotes.\n3. Ribosomes: 70S in prokaryotes, 80S in eukaryotes.\n4. Genetic material: circular, naked DNA without histones in prokaryotes; linear DNA wound on histone proteins in eukaryotes.\n5. Size and division: 1–10 µm, dividing by binary fission, against 10–100 µm dividing by mitosis/meiosis."
+    },
+    {
+      "id": "bio-bm-2025-3",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Describe the structure of a mitochondrion and explain why it is called the powerhouse of the cell.",
+      "solution": "A mitochondrion has two membranes. The smooth outer membrane encloses the intermembrane space; the inner membrane is folded into cristae that greatly increase its surface area, and the enclosed matrix holds Krebs-cycle enzymes, mitochondrial DNA and 70S ribosomes, so the organelle is semi-autonomous.\nIn aerobic respiration the Krebs cycle runs in the matrix and the electron transport chain with oxidative phosphorylation sits on the inner membrane; both generate ATP, the energy currency used for all cellular work — hence 'powerhouse'. Mitochondria also carry out β-oxidation of fatty acids and help regulate apoptosis and calcium.",
+      "diagram": "<svg viewBox=\"0 0 520 250\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"100%\" style=\"max-width:520px\"><ellipse cx=\"260\" cy=\"125\" rx=\"200\" ry=\"95\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n   <ellipse cx=\"260\" cy=\"125\" rx=\"180\" ry=\"76\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" stroke-dasharray=\"0\"/>\n   <path d=\"M150 125 q25 -38 50 0 q25 38 50 0 q25 -38 50 0 q25 38 50 0 q25 -38 50 0\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" stroke=\"#6b7280\"/>\n   <path d=\"M205 178 q25 -34 50 0 q25 34 50 0\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" stroke=\"#6b7280\"/>\n   <circle cx=\"300\" cy=\"112\" r=\"4\" fill=\"#6b7280\"/>\n   <text x=\"18\" y=\"30\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Mitochondrion (2 membranes)</text>\n   <text x=\"330\" y=\"40\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Outer membrane</text>\n   <line x1=\"325\" y1=\"44\" x2=\"300\" y2=\"62\" stroke=\"#9ca3af\"/>\n   <text x=\"345\" y=\"150\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Inner membrane</text>\n   <line x1=\"340\" y1=\"146\" x2=\"300\" y2=\"132\" stroke=\"#9ca3af\"/>\n   <text x=\"120\" y=\"228\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Cristae (ETC, ATP synthase)</text>\n   <line x1=\"175\" y1=\"220\" x2=\"215\" y2=\"180\" stroke=\"#9ca3af\"/>\n   <text x=\"205\" y=\"70\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Matrix</text>\n   <text x=\"205\" y=\"84\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">(Krebs enzymes, mtDNA, 70S ribosomes)</text></svg>",
+      "diagramCaption": "Figure: structure of a mitochondrion — the folded inner membrane (cristae) carries the electron transport chain, the matrix holds Krebs-cycle enzymes, mitochondrial DNA and 70S ribosomes."
+    },
+    {
+      "id": "bio-bm-2025-4",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "easy",
+      "question": "Which cell organelle is the actual site of protein synthesis, and where are the proteins meant for secretion made?",
+      "solution": "The ribosome — a non-membranous organelle of rRNA and protein — is the site of translation.\nRibosomes lying free in the cytoplasm make proteins used inside the cell, while ribosomes attached to the rough endoplasmic reticulum make proteins destined for secretion or for membranes; those proteins pass through the ER and Golgi before being exported in vesicles."
+    },
+    {
+      "id": "bio-bm-2025-5",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "State the chemical nature of the cell wall in plants, fungi and bacteria, and give two functions of the plant cell wall.",
+      "solution": "Plants: cellulose microfibrils embedded in a matrix of pectin and hemicellulose (a primary wall, sometimes thickened by lignin). Fungi: chitin. Bacteria: peptidoglycan (murein) with lipopolysaccharide in Gram-negative walls.\nFunctions in plants: it gives mechanical strength and fixed shape, and it resists osmotic bursting so the cell can build turgor pressure; it also protects against desiccation, pathogens and mechanical injury, and being fully permeable it does not block the movement of water and solutes."
+    },
+    {
+      "id": "bio-bm-2025-6",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Explain the phases of the cell cycle and give its significance.",
+      "solution": "Interphase occupies most of the cycle: G1 for growth and organelle synthesis, S for DNA replication and histone synthesis, and G2 for further growth and a checkpoint before division; a cell that stops dividing but stays metabolically active enters G0.\nThe M phase is karyokinesis — prophase, metaphase, anaphase, telophase — followed by cytokinesis, which divides the cytoplasm.\nSignificance: growth of the organism, replacement of worn-out cells, healing of wounds, maintenance of a constant chromosome number and the basis of vegetative reproduction."
+    },
+    {
+      "id": "bio-bm-2025-7",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Give four significance points of meiosis in sexually reproducing organisms.",
+      "solution": "1. It halves the chromosome number (2n → n), producing haploid gametes so that fertilisation restores the diploid number and the species count stays constant.\n2. Crossing over between homologous chromatids and independent assortment of homologues recombine alleles, creating genetic variation on which natural selection acts.\n3. Variation from meiosis plus random fertilisation is the basis of evolution and of the differences between siblings.\n4. It removes errors: pairing and separation of homologues, with checkpoints, help keep chromosome number and structure stable across generations."
+    },
+    {
+      "id": "bio-bm-2025-8",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Write the structure and functions of the Golgi apparatus and the lysosome.",
+      "solution": "Golgi apparatus: a stack of flattened, curved cisternae with a cis (forming) and a trans (maturing) face, surrounded by vesicles; in plants it is called a dictyosome. It modifies proteins and lipids received from the ER (glycosylation, addition of sulphate), sorts and packages them, forms secretory vesicles, produces lysosomes and supplies wall material in plant cells.\nLysosome: a single-membrane vesicle budded from the Golgi containing hydrolytic enzymes that work best at acidic pH. It digests material taken in by phagocytosis (heterophagy), recycles worn-out organelles (autophagy), and on cell death releases its enzymes in autolysis — hence the name 'suicide bags'."
+    }
+  ]
+}

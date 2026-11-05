@@ -1,0 +1,156 @@
+<!doctype html><html><head><meta charset="utf-8"><title>[</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Conjunctions</div>
+    <h1 class="doc">[</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Conjunctions</span></div>
+  </header>
+  <p>{   &quot;title&quot;: &quot;Conjunctions&quot;,   &quot;unitSlug&quot;: &quot;grammar&quot;,   &quot;topicSlug&quot;: &quot;conjunctions&quot;,   &quot;topicTitle&quot;: &quot;Conjunctions&quot;,   &quot;relevance&quot;: 82,   &quot;notes&quot;: [     &quot;&lt;h2&gt;What Are Conjunctions?&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Conjunctions&lt;/b&gt; are words that connect words, phrases, or clauses. They are essential for creating complex and compound sentences, and their correct use is fundamental to clear, coherent writing. Conjunctions are categorised into three main types: &lt;b&gt;coordinating&lt;/b&gt;, &lt;b&gt;subordinating&lt;/b&gt;, and &lt;b&gt;correlative&lt;/b&gt;. Mastery of conjunctions is essential for NEB English exams, where sentence combination and transformation questions are common.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Coordinating Conjunctions (FANBOYS)&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Coordinating conjunctions&lt;/b&gt; join elements of equal grammatical status — words, phrases, or independent clauses. The seven coordinating conjunctions are remembered by the acronym &lt;b&gt;FANBOYS&lt;/b&gt;: &lt;b&gt;For&lt;/b&gt; (reason/purpose), &lt;b&gt;And&lt;/b&gt; (addition), &lt;b&gt;Nor&lt;/b&gt; (negative addition), &lt;b&gt;But&lt;/b&gt; (contrast), &lt;b&gt;Or&lt;/b&gt; (alternative), &lt;b&gt;Yet&lt;/b&gt; (contrast/surprise), &lt;b&gt;So&lt;/b&gt; (result). When joining two independent clauses, a comma precedes the conjunction: 'I wanted to go, &lt;b&gt;but&lt;/b&gt; I was too tired.' When joining only two verbs or two objects, no comma is needed: 'She sang &lt;b&gt;and&lt;/b&gt; danced.'&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Subordinating Conjunctions&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Subordinating conjunctions&lt;/b&gt; introduce dependent (subordinate) clauses and connect them to independent (main) clauses. They express relationships of time, cause, condition, contrast, and purpose. &lt;b&gt;Time&lt;/b&gt;: when, while, as, before, after, until, since, once, whenever. &lt;b&gt;Cause/Reason&lt;/b&gt;: because, since, as, so that, in order that. &lt;b&gt;Condition&lt;/b&gt;: if, unless, provided that, as long as, only if. &lt;b&gt;Contrast&lt;/b&gt;: although, though, even though, whereas, while. &lt;b&gt;Purpose&lt;/b&gt;: so that, in order that, lest. Example: '&lt;b&gt;Although&lt;/b&gt; it was raining, we went out' (contrast). 'I will wait &lt;b&gt;until&lt;/b&gt; you return' (time).&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Punctuation with Subordinating Conjunctions&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;The placement of the subordinate clause determines punctuation. When the subordinate clause comes &lt;b&gt;before&lt;/b&gt; the main clause, use a comma: '&lt;b&gt;Because&lt;/b&gt; he studied hard, he passed the exam.' When the subordinate clause comes &lt;b&gt;after&lt;/b&gt; the main clause, no comma is needed: 'He passed the exam &lt;b&gt;because&lt;/b&gt; he studied hard.' This rule applies to all subordinating conjunctions. However, if the subordinate clause adds non-essential information, it may be set off with commas even when it follows the main clause.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Correlative Conjunctions&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Correlative conjunctions&lt;/b&gt; are pairs of conjunctions that work together to join equal grammatical elements. Common pairs: &lt;b&gt;either...or&lt;/b&gt; (alternative), &lt;b&gt;neither...nor&lt;/b&gt; (negative alternative), &lt;b&gt;both...and&lt;/b&gt; (addition), &lt;b&gt;not only...but also&lt;/b&gt; (addition with emphasis), &lt;b&gt;whether...or&lt;/b&gt; (alternative), &lt;b&gt;as...as&lt;/b&gt; (comparison), &lt;b&gt;so...that&lt;/b&gt; (result), &lt;b&gt;such...that&lt;/b&gt; (result). Key rule: correlative conjunctions require &lt;b&gt;parallel structure&lt;/b&gt;. 'Not only &lt;b&gt;did he study&lt;/b&gt;, but he also &lt;b&gt;passed&lt;/b&gt; with distinction.' Both parts must be grammatically parallel.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Parallel Structure with Correlative Conjunctions&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;Parallel structure (parallelism) is the principle that elements joined by correlative conjunctions must have the same grammatical form. Examples: Correct — 'She is not only &lt;b&gt;intelligent&lt;/b&gt; but also &lt;b&gt;hardworking&lt;/b&gt;.' (both adjectives). Wrong — 'She is not only &lt;b&gt;intelligent&lt;/b&gt; but also &lt;b&gt;hardworking&lt;/b&gt; person.' (mismatch). Correct — '&lt;b&gt;Either&lt;/b&gt; you &lt;b&gt;come&lt;/b&gt; with us &lt;b&gt;or&lt;/b&gt; you &lt;b&gt;stay&lt;/b&gt; here.' (both verbs). Wrong — 'Either you come with us or you &lt;b&gt;staying&lt;/b&gt; here.' Parallelism is essential for grammatical correctness and clarity in writing.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Contrast Conjunctions: Although vs. Though vs. Even Though&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Although&lt;/b&gt;, &lt;b&gt;though&lt;/b&gt;, and &lt;b&gt;even though&lt;/b&gt; all introduce concessive clauses (expressing contrast). They are largely interchangeable, with subtle differences: 'Although' is the most formal; 'though' is slightly less formal and can be used at the end of a sentence ('It was raining. We went out, though.'); 'even though' is the strongest and most emphatic. 'Although he was tired, he continued working' = 'Even though he was tired, he continued working.' However, 'even though' conveys a stronger sense of surprise or contrast.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Conditional Conjunctions: If, Unless, Provided That&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;Conditional conjunctions introduce conditions (if-clauses). &lt;b&gt;If&lt;/b&gt; is the most common: 'If it rains, we will stay indoors.' &lt;b&gt;Unless&lt;/b&gt; means 'if not': 'Unless it rains, we will go out.' (= If it does not rain, we will go out.) &lt;b&gt;Provided that&lt;/b&gt; / &lt;b&gt;providing that&lt;/b&gt; mean 'on the condition that': 'You can go, provided that you finish your work.' &lt;b&gt;As long as&lt;/b&gt; has the same meaning. 'Only if' emphasises a strict condition: 'I will help you only if you ask politely.' These conjunctions are frequently tested in sentence transformation exercises.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Time Conjunctions: When, While, As, Before, After, Until, Since&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;When&lt;/b&gt; is used for a specific point in time: 'When I arrived, the meeting had started.' &lt;b&gt;While&lt;/b&gt; is used for two simultaneous ongoing actions: 'While I was cooking, she was cleaning.' &lt;b&gt;As&lt;/b&gt; can mean 'while' (during the time that): 'As I walked home, it started to rain.' &lt;b&gt;Before&lt;/b&gt; and &lt;b&gt;after&lt;/b&gt; establish sequence: 'Lock the door before you leave.' 'After she finished, she went home.' &lt;b&gt;Until&lt;/b&gt; indicates continuation up to a point: 'Wait here until I return.' &lt;b&gt;Since&lt;/b&gt; indicates a starting point: 'I have lived here since 2015.' Note: 'since' as a time conjunction differs from 'since' as a causal conjunction ('since you are here, let us begin').&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Conjunctions of Purpose and Result&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;So that&lt;/b&gt; introduces purpose: 'I studied hard so that I could pass.' &lt;b&gt;In order that&lt;/b&gt; is more formal: 'She saved money in order that she could travel.' &lt;b&gt;So...that&lt;/b&gt; and &lt;b&gt;such...that&lt;/b&gt; introduce result: 'He ran so fast that he won the race.' 'It was such a beautiful day that we went out.' Note the difference: 'so' is used with adjectives/adverbs; 'such' is used with nouns. 'So beautiful a day' (formal) = 'Such a beautiful day' (common). Also: 'so that' (purpose) vs. 'so...that' (result) — different structures with different meanings.&lt;/p&gt; \n  ], \n  \&quot;confusion&quot;,&quot;:&quot;, [     &quot;Although vs. But: These two conjunctions should NEVER be used together in the same sentence. 'Although he was tired, but he continued working' is wrong. Use either 'Although he was tired, he continued working' OR 'He was tired, but he continued working.' This is one of the most common errors in NEB student writing.&quot;,     &quot;Because vs. So: Similar to although/but, 'because' and 'so' should not be used together. 'Because he was ill, so he did not come' is wrong. Use either 'Because he was ill, he did not come' OR 'He was ill, so he did not come.' This error is extremely common among Nepali-speaking students.&quot;,     &quot;While vs. Whilst: 'Whilst' is an older, more formal variant of 'while' used primarily in British English. In NEB exams, 'while' is always acceptable; 'whilst' is correct but uncommon. Do not confuse 'while' (time/concession) with 'since' (time starting point) or 'because' (reason).&quot;,     &quot;Unless vs. If not: 'Unless' means 'if...not' and introduces a negative condition. 'Unless you study, you will fail' = 'If you do not study, you will fail.' However, 'unless' cannot be used in positive conditionals — you cannot say 'I will go unless I am busy' to mean 'I will go if I am not busy' (this is awkward; prefer 'if I am not busy').&quot;,     &quot;So vs. Such: 'So' modifies adjectives and adverbs (so beautiful, so quickly). 'Such' modifies nouns (such a beautiful day, such quick work). 'So...that' and 'such...that' both express result but require different structures: 'The day was so beautiful that we went out' vs. 'It was such a beautiful day that we went out.' Mixing these structures is a common error.&quot;,     &quot;Neither vs. Nor: 'Neither' and 'nor' must be used as a pair (neither...nor). You cannot use 'neither' alone with 'or'. 'Neither Ram nor Shyam came' (correct). 'Neither Ram or Shyam came' (wrong). Also, 'neither' can stand alone: 'Ram did not come, and neither did Shyam' (formal) or 'Shyam didn't come either' (informal).&quot;   ],   &quot;practice&quot;,&quot;:&quot;, [     &quot;Join the sentences using 'although': He was tired. He continued working. [Answer: Although he was tired, he continued working.]&quot;,     &quot;Join the sentences using 'but': She is poor. She is honest. [Answer: She is poor but she is honest.]&quot;,     &quot;Join the sentences using 'not only...but also': He is intelligent. He is hardworking. [Answer: He is not only intelligent but also hardworking.]&quot;,     &quot;Join the sentences using 'so...that': The man was angry. He could not speak. [Answer: The man was so angry that he could not speak.]&quot;,     &quot;Fill in the correct conjunction: I will wait ___ you return. [Answer: until / till]&quot;,     &quot;Fill in the correct conjunction: ___ it was raining, we went out. [Answer: Although / Though / Even though]&quot;,     &quot;Fill in the correct conjunction: Study hard ___ you can pass the exam. [Answer: so that / in order that]&quot;,     &quot;Fill in the correct conjunction: You can borrow my book ___ you return it tomorrow. [Answer: provided that / as long as / on condition that]&quot;,     &quot;Correct the error: Although he was sick, but he came to class. [Answer: Although he was sick, he came to class. (Remove 'but')]&quot;,     &quot;Correct the error: Because it was raining, so we stayed home. [Answer: Because it was raining, we stayed home. (Remove 'so')]&quot;   ],   &quot;universalFacts&quot;,&quot;:&quot;, [     &quot;The coordinating conjunctions in English (and, but, or, for, nor, so, yet) derive from Old English and have remained largely unchanged for over a thousand years. The FANBOYS acronym is a modern pedagogical tool that has no historical basis.&quot;,     &quot;In Nepali, conjunctions (सम्बन्धबोधक) function differently from English. Nepali uses postpositions and suffixes for conjunction-like functions, and the concept of subordinating conjunctions does not exist in the same way. This structural difference makes English conjunctions particularly challenging for Nepali speakers.&quot;,     &quot;The error of using 'although' with 'but' (or 'because' with 'so') is extremely common among speakers of languages that do not have this prohibition. In Nepali, it is grammatically acceptable to use correlating conjunctions in pairs, which leads to interference in English writing.&quot;,     &quot;In NEB English exams, conjunction questions typically appear in sentence combination (3-5 marks), gap-filling (2-3 marks), and error correction (1-2 marks). Understanding parallel structure and the prohibition against double conjunctions is essential for full marks.&quot;,     &quot;Correlative conjunctions require strict parallelism, a rule that reflects a deeper principle of English syntax: elements joined by coordination must be grammatically equivalent. This principle extends beyond conjunctions to any coordinated structure in English.&quot;   ],   &quot;animation3D&quot;,&quot;:&quot;, &quot;grammar&quot;,   &quot;motionGraphics&quot;,&quot;:&quot;, &quot;grammar&quot;] }, &quot;\n&quot; ]</p>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

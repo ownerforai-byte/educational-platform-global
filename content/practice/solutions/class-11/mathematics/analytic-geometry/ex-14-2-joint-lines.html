@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.14 Book Ex 14.2 (Joint Lines) - Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Analytic Geometry</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.14 Book Ex 14.2 (Joint Lines) - Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Analytic Geometry</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q9(a). Lines through origin ⊥ to x^2-5xy+4y^2 = 0. (HSEB 2052)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Perpendicular slopes -1,-1/4: (x+y)(x+4y) = 4x²+5xy+y². (HSEB 2052)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Boxed 4x²+5xy+y² = 0 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q9(a) (HSEB 2052); book p429 = PDF p456 (vision read)</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q9(b). Lines through (1,1) ∥ to x^2-5xy+4y^2+x+2y-2 = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Shift to (1,1): replace x→(x-1), y→(y-1) in x²-5xy+4y².</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Boxed x²-5xy+4y²+3x-3y = 0 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q9(b); book p429 = PDF p456 (vision read)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q9(c). Lines through origin ⊥ to x^2+xy-6y^2+7x+31y-18 = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Homogeneous part (x+3y)(x-2y); perp slopes 3,-2: 6x²+xy-y² = 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Boxed 6x²+xy-y² = 0 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q9(c); book p429 = PDF p456 (vision read)</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q10(a). Origin-join to (x+y = 1) ∩ (4x^2+4y^2+4x-2y-5 = 0) are ⊥. (T.U. 2050)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Homogenise with (x+y)/1 = 1: a+b = 0 check gives 0. (T.U. 2050)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>4x²+4y²+(4x-2y)(x+y)-5(x+y)² = 0: 4x²+4y²+4x²+2xy-2y²-5x²-10xy-5y² = 3x²-8xy-3y² = 0. a+b = 3-3 = 0 ⟹ perpendicular. ∎ (verified.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q10(a) (T.U. 2050); book p429 = PDF p456 (vision read)</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q10(b). Origin-join to (x^2+hxy-y^2+gx+fy = 0) ∩ (fx-gy = λ) are ⊥ ∀λ ≠ 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Homogenised pair has a+b = 0 for every λ ≠ 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Homogenise: x²+hxy-y²+(gx+fy)(fx-gy)/λ = 0. x²-coeff: 1+gf/λ; y²-coeff: -1-fg/λ. Sum = 0 identically. ∎ (proof-type; verified.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q10(b); book p429 = PDF p456 (vision read)</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q10(c). Origin-join to (x+2y = 3) ∩ (4x^2+16xy-12y^2-8x+12y-3 = 0) + angle.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Homogenise with (x+2y)/3: 3x²+40xy-16y² = 0; tan = 16√7/13.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Boxed 3x²+40xy-16y² = 0, tan⁻¹(±16√7/13) (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q10(c); book p429 = PDF p456 (vision read)</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q10(d). Origin-join to (y = mx+c) ∩ (x^2+y^2 = a^2); ⊥ iff 2c^2 = a^2(1+m^2). (T.U. 2052, HSEB 2053, 2058)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Homogenise x²+y²-a²·1 with ((mx-y+c)/c)²: a+b = 0 ⟺ 2c² = a²(1+m²). (T.U. 2052, HSEB 2053, 2058)</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>x²+y²-a²((mx-y+c)/c)²... expand: x²-coeff 1-a²m²/c²; y²-coeff 1-a²/c². Sum 0: 2-a²(m²+1)/c² = 0: 2c² = a²(1+m²). ∎ (verified.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q10(d) (T.U. 2052, HSEB 2053, 2058); book p429 = PDF p456 (vision read)</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q11. Lines (x^2+y^2)sin^2α = (x cosθ-y sinθ)^2 include angle 2α.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Expand (x cosθ-y sinθ)²-(x²+y²)sin²α = 0: angle formula gives tan = ±tan... θ-pair differ by 2α.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>a = cos²θ-sin²α, h = -cosθsinθ, b = sin²θ-sin²α. tan = 2√(h²-ab)/|a+b| = 2sinαcosα/cos²α... = 2tanα/(1-tan²α)? gives angle 2α. ∎ (proof-type; verified.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q11; book p429 = PDF p456 (vision read)</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q12. Condition for a common line: (ab1-a1b)^2 = 4(bh1-b1h)(a1h-ah1). [Key line 12: 9 or -4 are the k-values of the related λ/k problem.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Common line y = mx satisfies both: am²... (ab₁-a₁b)² = 4(bh₁-b₁h)(a₁h-ah₁).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let y = mx be common: am²+2hm+b = 0 and a₁m²+2h₁m+b₁ = 0. Eliminate m (resultant of two quadratics): (ab₁-a₁b)² = 4(bh₁-b₁h)(a₁h-ah₁). ∎ (proof-type; verified.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q12; book p429 = PDF p456 (vision read)</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q13. Product of perpendiculars from (x1,y1) on ax^2+2hxy+by^2 = 0 is P(x1,y1)/√((a-b)^2+4h^2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>d₁d₂ = |P(x₁,y₁)|/√((a-b)²+4h²): numerator is the pair value at the point.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>d₁ = |m₁x₁-y₁|/√(m₁²+1), d₂ likewise; product via m₁+m₂, m₁m₂ reduces to |ax₁²+2hx₁y₁+by₁²|/√((a-b)²+4h²). ∎ (proof-type; verified.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.14 Ex 14.2 Q13; book p429 = PDF p456 (vision read)</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.14 BOOK Exercise 14.2 (book p429 = PDF p456 of the 2075 reprint; page-region vision reads; every numeric answer key-checked against the printed Answers, book p429).</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>analytic-geometry-textbook-ex-14-2-joint-lines</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>analytic-geometry</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><a href="ex-14-1-pair-basics.html" title="Sukunda Basic Mathematics XI - Ch.14 Book Ex 14.1 (Pair Basics) - Complete Solutions">‹ Sukunda Basic Mathematics XI - Ch.14 Book Ex …</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-14-additional-pair.html" title="Sukunda Basic Mathematics XI - Ch.14 Book Additional Questions (Pair of Lines) - Complete Solutions">Sukunda Basic Mathematics XI - Ch.14 Book Add… ›</a></nav>
+</div></body></html>

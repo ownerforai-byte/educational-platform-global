@@ -1,0 +1,207 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Frog: Blood vascular system (structure and working mechan…</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Biology  /  Faunal Diversity</div>
+    <h1 class="doc">Frog: Blood vascular system (structure and working mechan…</h1>
+    <div class="meta"><span>Class 11</span><span>Biology</span><span>Faunal Diversity</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>faunal-diversity</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>frog-blood-vascular-system-structure-and-working-mechanism-of-heart-respiratory-system-respirato</p></section>
+<section class="field"><h2>Relevance</h2><p><code>96</code></p></section>
+<section class="field"><h2>Source</h2><p>enriched</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
+<section class="field"><h2>Visual Type</h2><p>frog-organs</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>Three-chambered heart, with two atria and one ventricle leading into the truncus arteriosus, beside skin and lungs as the respiratory surfaces.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li>The frog's blood system is a closed system of vessels served by a three-chambered heart, and the circulation is an incomplete double circulation. Blood can be sent to the lungs and skin and returned, and it can be sent to the body and returned, but a single ventricle is the pump for both streams. The respiratory surfaces that refresh that blood are the skin, the lining of the mouth, and the lungs. Gills are the tadpole's organs. An adult frog in air does not use them.</li><li>On the dorsal side of the heart is the sinus venosus, a thin sac that receives the two anterior venae cavae and the posterior vena cava, so it holds blood returning from the body. It opens into the right atrium. The right atrium is larger than the left. The left atrium receives the pulmonary vein, which brings blood back from the lungs. Both atria open into one ventricle. The ventricle has thick walls and a spongy interior of muscular strands, the trabeculae, which keep the two incoming streams from mixing freely. From the ventricle a truncus arteriosus runs forward and divides into a left and a right branch. A spiral valve inside it helps aim the blood. Each branch supplies a carotid arch to the head, a systemic arch to the body, and a pulmocutaneous arch to the lung and the skin.</li><li>The working cycle follows those chambers. Deoxygenated blood from the body fills the sinus venosus and passes into the right atrium. Blood that has crossed the lungs fills the left atrium. The atria contract together and empty into the ventricle, venous blood lying more on the right side of the cavity and pulmonary blood more on the left, with the trabeculae limiting the blend. The ventricle then contracts. Blood leaves through the truncus. The stream that is poorer in oxygen is directed into the pulmocutaneous arches and therefore back to the lungs and the skin, where it can be refreshed. The stream that is richer in oxygen is directed into the systemic arches and the carotids. Mixing is reduced. It is not prevented. That is the reason the double circulation is called incomplete.</li><li>Three surfaces exchange gases in the adult, and which one dominates depends on where the frog is. The skin is thin, glandular and full of capillaries. It works in water, on land, and it is the surface that matters during hibernation, when the animal is still and the lungs are barely ventilated. The lining of the buccopharyngeal cavity exchanges a smaller amount while the floor of the mouth is moving. The lungs are a pair of elastic sacs, only lightly folded, opened from the buccopharyngeal cavity through the glottis. They are the main surface when the frog is active on land.</li><li>Lung ventilation has no diaphragm and no expanding ribcage. The floor of the mouth is the pump. For inspiration the glottis is shut, the nostrils are open, and the buccal floor drops, so air is drawn into the mouth. The nostrils then close, the glottis opens, and the buccal floor rises, pressing that air into the lungs. For expiration the lungs recoil, air returns to the mouth, the nostrils open, and the air leaves. Cutaneous exchange needs none of this pumping. Oxygen simply diffuses into the skin capillaries, and carbon dioxide diffuses out, as long as the skin is moist. A dry skin stops that path, which is why a frog in a dry box dies of respiratory failure before it dies of thirst alone.</li><li>The two systems meet at different doors of the heart. Blood refreshed in the lungs returns by the pulmonary vein to the left atrium. Blood refreshed in the skin returns with the ordinary body blood, by the venae cavae, to the sinus venosus and the right atrium. Skin respiration therefore does not fill the left atrium. A question that says 'all oxygenated blood enters the left atrium' is wrong for a frog, because cutaneous blood does not.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Notes</h2><ul><li>The frog's blood system is a closed system of vessels served by a three-chambered heart, and the circulation is an incomplete double circulation. Blood can be sent to the lungs and skin and returned, and it can be sent to the body and returned, but a single ventricle is the pump for both streams. The respiratory surfaces that refresh that blood are the skin, the lining of the mouth, and the lungs. Gills are the tadpole's organs. An adult frog in air does not use them.</li><li>On the dorsal side of the heart is the sinus venosus, a thin sac that receives the two anterior venae cavae and the posterior vena cava, so it holds blood returning from the body. It opens into the right atrium. The right atrium is larger than the left. The left atrium receives the pulmonary vein, which brings blood back from the lungs. Both atria open into one ventricle. The ventricle has thick walls and a spongy interior of muscular strands, the trabeculae, which keep the two incoming streams from mixing freely. From the ventricle a truncus arteriosus runs forward and divides into a left and a right branch. A spiral valve inside it helps aim the blood. Each branch supplies a carotid arch to the head, a systemic arch to the body, and a pulmocutaneous arch to the lung and the skin.</li><li>The working cycle follows those chambers. Deoxygenated blood from the body fills the sinus venosus and passes into the right atrium. Blood that has crossed the lungs fills the left atrium. The atria contract together and empty into the ventricle, venous blood lying more on the right side of the cavity and pulmonary blood more on the left, with the trabeculae limiting the blend. The ventricle then contracts. Blood leaves through the truncus. The stream that is poorer in oxygen is directed into the pulmocutaneous arches and therefore back to the lungs and the skin, where it can be refreshed. The stream that is richer in oxygen is directed into the systemic arches and the carotids. Mixing is reduced. It is not prevented. That is the reason the double circulation is called incomplete.</li><li>Three surfaces exchange gases in the adult, and which one dominates depends on where the frog is. The skin is thin, glandular and full of capillaries. It works in water, on land, and it is the surface that matters during hibernation, when the animal is still and the lungs are barely ventilated. The lining of the buccopharyngeal cavity exchanges a smaller amount while the floor of the mouth is moving. The lungs are a pair of elastic sacs, only lightly folded, opened from the buccopharyngeal cavity through the glottis. They are the main surface when the frog is active on land.</li><li>Lung ventilation has no diaphragm and no expanding ribcage. The floor of the mouth is the pump. For inspiration the glottis is shut, the nostrils are open, and the buccal floor drops, so air is drawn into the mouth. The nostrils then close, the glottis opens, and the buccal floor rises, pressing that air into the lungs. For expiration the lungs recoil, air returns to the mouth, the nostrils open, and the air leaves. Cutaneous exchange needs none of this pumping. Oxygen simply diffuses into the skin capillaries, and carbon dioxide diffuses out, as long as the skin is moist. A dry skin stops that path, which is why a frog in a dry box dies of respiratory failure before it dies of thirst alone.</li><li>The two systems meet at different doors of the heart. Blood refreshed in the lungs returns by the pulmonary vein to the left atrium. Blood refreshed in the skin returns with the ordinary body blood, by the venae cavae, to the sinus venosus and the right atrium. Skin respiration therefore does not fill the left atrium. A question that says 'all oxygenated blood enters the left atrium' is wrong for a frog, because cutaneous blood does not.</li><li><h2>Frog: Blood vascular system (structure and working mechanism of heart); respiratory system (respiratory organs and physiology of respiration)</h2>
+<h3>1. Introduction</h3>
+<p>Opening frame for <strong>Frog</strong> — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Faunal Diversity fill pass.</p>
+<h3>2. Hierarchy body — every syllabus sub-point</h3>
+<h4>Frog: Blood vascular system (structure and working mechanism of heart)</h4>
+<h4>respiratory system (respiratory organs and physiology of respiration)</h4>
+<p>Fill order per concept: definition → structure → process → significance (§3.2). Step-by-step numbered points, Pioneer style.</li><li><h3>3. Classified tables</h3>
+<p><strong>Table 1 — Characteristics</strong></p>
+<table><thead><tr><th>Part</th><th>Structure</th><th>Function</th><th>Exam note</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 2 — Process steps</strong></p>
+<table><thead><tr><th>Step</th><th>What happens</th><th>Where</th><th>Key enzyme or number</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 3 — Summary and marks map</strong></p>
+<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB marks trend</th></tr></thead><tbody></tbody></table>
+<p>Tables carry examples in every classification and characteristics row, ≤ 12 rows, and each is referenced from the body text (§3.3).</li><li><h3>4. Diagrams and figures</h3>
+<ul>
+<li><strong>D1</strong> — Frog heart structure and working-mechanism flow (authored SVG — English labels, viewBox 900×640)</li>
+<li><strong>D2</strong> — Frog — process or life-cycle flow (authored SVG — English labels)</li>
+<li><strong>D3</strong> — Frog — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
+<li><strong>D4</strong> — Frog — comparison or application figure (curated external — license recorded at fill)</li>
+</ul>
+<p>Figure slots are declared up front (§3.4): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y), every external figure license-recorded at fill.</li><li><h3>5. Worked examples and applications</h3>
+<p>≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass.</p>
+<h3>6. Key terms and statements</h3>
+<p>Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).</li><li><h3>7. Exam Zone</h3>
+<p>NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</li><li><h3>8. Summary and self-check</h3>
+<p>5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>The ventricle is single. Two atria do not make a four-chambered heart. The chambers that count are two atria plus one ventricle.</li><li>Oxygenated blood from the skin enters the right atrium, via the sinus venosus. Only pulmonary blood enters the left atrium.</li><li>The truncus arteriosus is part of the arterial exit. It is not a vein, and it is not a fourth chamber.</li><li>Adult frogs do not breathe with gills. Gills are larval. Hibernating adults rely on skin.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Sinus venosus, right atrium, left atrium, one ventricle, truncus arteriosus.</li><li>Incomplete double circulation: one ventricle, mixing reduced by trabeculae and the spiral valve.</li><li>Pulmocutaneous arch to lung and skin. Systemic arches to the body. Carotids to the head.</li><li>Respiratory surfaces: skin, buccal lining, lungs. No diaphragm.</li><li>Buccal floor pumps lung air. Skin respiration needs only moisture and blood flow.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>The right atrium receives body blood and cutaneous return. The left atrium receives pulmonary return.</li><li>Incomplete double circulation means two circuits and one ventricle, not a single circuit like a fish.</li><li>The buccal floor, not a diaphragm, ventilates the lungs.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>A frog under water closes its glottis and depends on skin capillaries.</li><li>A frog leaping on the bank fills its lungs by raising the floor of the mouth with the nostrils shut.</li><li>Blood leaving toward the head has been steered into the carotid arch by the spiral valve.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The sinus venosus is dorsal. It is easy to miss on a ventral dissection.</li><li>Pulmonary veins are the exception among veins: they carry oxygenated blood, and they enter the left atrium.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Body to sinus venosus to right atrium. Lungs to pulmonary vein to left atrium. Both to the ventricle. Ventricle to truncus.</li><li>Three arches on each side: carotid, systemic, pulmocutaneous.</li><li>Inspiration: nostrils open, floor down, then nostrils shut, floor up, air into lungs.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Name the chamber that receives the pulmonary vein and the chamber that receives the venae cavae.</li><li>Describe one inspiration and one expiration without using the word diaphragm.</li><li>Explain why cutaneous blood and pulmonary blood do not enter the same atrium.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>What makes the frog's double circulation incomplete?</li><li>Which arch carries blood to the lung and the skin?</li><li>Why does a dry skin stop cutaneous respiration?</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>The heart answer is a route: venae cavae, sinus venosus, right atrium, pulmonary vein, left atrium, ventricle, truncus, three arches.</li><li>The respiration answer must include the buccal pump and a separate sentence on skin. Lungs alone are incomplete.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Right atrium body, left atrium lungs, one ventricle, truncus out.</li><li>Floor down to fill the mouth. Floor up to fill the lungs.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Do not draw four chambers. The spiral valve is inside the truncus, not a wall that divides the ventricle into two.</li><li>Hibernation uses skin. Do not write that a hibernating frog breathes with lungs at the summer rate.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Trabeculae reduce mixing. They do not create a left and right ventricle.</li><li>The pulmocutaneous artery splits the job: one branch to the lung, one to the skin. Both leave from the same arch.</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Chambers of the frog heart</li><li>Path of blood through one beat</li><li>Incomplete double circulation</li><li>Skin, buccal lining and lungs</li><li>Buccal force-pump</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Write the heart route as eight arrows on one line.</li><li>Write inspiration as four actions: glottis, nostrils, floor, then the switch.</li></ul></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Trace a volume of blood from the posterior vena cava until part of it reaches the lungs, and say what is oxygenated on the way back.</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>The posterior vena cava enters the sinus venosus.</li><li>The sinus venosus empties into the right atrium.</li><li>The right atrium contracts into the single ventricle.</li><li>Ventricular contraction sends the less oxygenated blood into the pulmocutaneous arch.</li><li>That arch supplies the lung. Blood refreshed in the lung returns by the pulmonary vein to the left atrium, not to the sinus venosus.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>Posterior vena cava to sinus venosus to right atrium to ventricle to pulmocutaneous arch to the lung, and back by the pulmonary vein to the left atrium.</p></div></div></div></section>
+<section class="field"><h2>Bounds</h2><ul><li>Digestive organs are the previous note. The reproductive system of the frog is not this topic.</li><li>Arch names are limited to carotid, systemic and pulmocutaneous.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>The frog heart has a sinus venosus, a right atrium for body and skin blood, a left atrium for pulmonary blood, one spongy ventricle, and a truncus arteriosus with a spiral valve. The circulation is an incomplete double circulation because the streams meet in that single ventricle and mixing is only reduced. Gas exchange is by moist skin, the mouth lining, and lungs ventilated by the buccal floor, with no diaphragm. Skin blood returns to the right atrium. Lung blood returns to the left atrium.</p></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The pulmonary vein enters the</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Sinus venosus</li><li>Left atrium</li><li>Right atrium</li><li>Cloaca</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>The frog's double circulation is incomplete because</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>It has no heart</li><li>Blood passes through gills in the adult</li><li>There is a single ventricle where the streams can mix</li><li>Skin does not have capillaries</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Blood refreshed in the skin returns to the</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Left atrium, with the pulmonary vein</li><li>Right atrium, by way of the sinus venosus</li><li>Truncus arteriosus directly</li><li>Gall bladder</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Lung ventilation in the frog is pumped by the</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Diaphragm</li><li>Ribcage, as in a mammal</li><li>Spiral valve</li><li>Floor of the buccal cavity</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>D</p></div></div></div></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The pulmonary vein enters the</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Sinus venosus</li><li>Left atrium</li><li>Right atrium</li><li>Cloaca</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>The frog's double circulation is incomplete because</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>It has no heart</li><li>Blood passes through gills in the adult</li><li>There is a single ventricle where the streams can mix</li><li>Skin does not have capillaries</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Blood refreshed in the skin returns to the</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Left atrium, with the pulmonary vein</li><li>Right atrium, by way of the sinus venosus</li><li>Truncus arteriosus directly</li><li>Gall bladder</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Lung ventilation in the frog is pumped by the</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Diaphragm</li><li>Ribcage, as in a mammal</li><li>Spiral valve</li><li>Floor of the buccal cavity</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>D</p></div></div></div></section>
+  <nav class="pager"><a href="09-frog-rana-tigrina-habit-and-habitat-external-features-digestive-system-alimentary-canal-digestiv.html" title="Frog (Rana tigrina): Habit and habitat, external features…">‹ Frog (Rana tigrina): Habit and habitat, exter…</a><a class="mid" href="../../../../../_subjects/class-11-biology.html">Biology</a><a href="11-frog-reproductive-system-male-and-female-reproductive-organs.html" title="Frog: Reproductive system (male and female reproductive organs)">Frog: Reproductive system (male and female re… ›</a></nav>
+</div></body></html>

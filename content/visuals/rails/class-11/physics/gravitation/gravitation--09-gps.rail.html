@@ -1,0 +1,166 @@
+<!doctype html><html><head><meta charset="utf-8"><title>gravitation--09-gps.rail</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Gravitation</div>
+    <h1 class="doc">gravitation--09-gps.rail</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Gravitation</span></div>
+  </header>
+  <section class="field"><h2>Schema</h2><p>home-rail/v1</p></section>
+<section class="field"><h2>Draft</h2><p><code>false</code></p></section>
+<section class="field"><h2>Class SLUG</h2><p>class-11-notes</p></section>
+<section class="field"><h2>Subject SLUG</h2><p>physics</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>gravitation</p></section>
+<section class="field"><h2>Unit Title</h2><p>Gravitation</p></section>
+<section class="field"><h2>Syllabus Topics</h2><ul><li>Newton's law of gravitation</li><li>Gravitational field strength</li><li>Gravitational potential; gravitational potential energy</li><li>Variation in value of 'g' due to altitude and depth</li><li>Centre of mass and centre of gravity</li><li>Motion of a satellite: orbital velocity and time period of the satellite</li><li>Escape velocity</li><li>Potential and kinetic energy of the satellite</li><li>Geostationary satellite</li><li>GPS</li></ul></section>
+<section class="field"><h2>Source</h2><p>platform</p></section>
+<section class="field"><h2>Agent Notes</h2><p>Generated by frontend/scripts/content/topic-rails.ts from concepts/09-gps.json (verbatim slices of that topic's concept record; idea-map diagram generated from its own headline ideas).</p></section>
+<section class="field"><h2>Card</h2><dl class="obj"><div class="kv"><dt>Tag</dt><dd><p>GPS</p></dd></div><div class="kv"><dt>Title</dt><dd><p>GPS</p></dd></div><div class="kv"><dt>Href</dt><dd><p>/class-11-notes/physics/chapters/gravitation/topics/gps</p></dd></div><div class="kv"><dt>Icon</dt><dd><p>Atom</p></dd></div><div class="kv"><dt>Stat Key</dt><dd><p>pyq:physics</p></dd></div></dl></section>
+<section class="field"><h2>Rows</h2><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Concept</p></dd></div><div class="kv"><dt>Text</dt><dd><p>The Global Positioning System uses ≥ 4 satellites whose positions and times are known to compute a receiver's (x, y, z, t) by measuring signal travel times (d = c·Δt). The constellation orbits at ≈ 20,200 km with ≈ 12 h periods, and relativistic clock corrections of ~38 µs/day are essential to maintain metre-level accuracy.</p></dd></div><div class="kv"><dt>Figure</dt><dd><dl class="obj"><div class="kv"><dt>Svg</dt><dd><p>&lt;svg viewBox=&quot;0 0 900 640&quot; role=&quot;img&quot; aria-label=&quot;GPS — quick idea map&quot;&gt;&lt;title&gt;GPS — quick idea map&lt;/title&gt;&lt;rect x=&quot;180&quot; y=&quot;24&quot; width=&quot;540&quot; height=&quot;86&quot; rx=&quot;10&quot; fill=&quot;#e0f2fe&quot; stroke=&quot;#0369a1&quot; stroke-width=&quot;3&quot;/&gt;&lt;text x=&quot;450&quot; y=&quot;58&quot; text-anchor=&quot;middle&quot; font-size=&quot;23&quot; font-weight=&quot;bold&quot; fill=&quot;#0c4a6e&quot;&gt;GPS&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;240&quot; y2=&quot;182&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;233,172 247,172 240,186&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;70&quot; y=&quot;190&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;240&quot; y=&quot;228&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;GPS uses travel-time&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;260&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;ranging from ≥ 4&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;292&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;satellites to fix (x, y,&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;660&quot; y2=&quot;182&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;653,172 667,172 660,186&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;490&quot; y=&quot;190&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;660&quot; y=&quot;228&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;Satellite positions are&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;260&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;computed from orbital&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;292&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;mechanics (Kepler's laws).&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;240&quot; y2=&quot;392&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;233,382 247,382 240,396&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;70&quot; y=&quot;400&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;240&quot; y=&quot;438&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;GPS fixes position by&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;470&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;measuring radio signal&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;502&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;travel time from ≥ 4&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;660&quot; y2=&quot;392&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;653,382 667,382 660,396&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;490&quot; y=&quot;400&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;660&quot; y=&quot;438&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;Four satellites allow&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;470&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;solving the receiver clock&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;502&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;error as a fourth unknown.&lt;/text&gt;&lt;/svg&gt;</p></dd></div><div class="kv"><dt>Caption</dt><dd><p>GPS — quick idea map of this topic's headline ideas</p></dd></div></dl></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Formula</p></dd></div><div class="kv"><dt>Kind</dt><dd><p>formula</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Distance from delay: d = c × Δt GPS speed: v = √(GM/r) (r ≈ 26,600 km) GPS period: T = 2π√(r³/GM) ≈ 12 h sidereal</p></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Conditions</p></dd></div><div class="kv"><dt>Text</dt><dd><p>❌ 'GPS signal carries your position from the satellite.' ✅ The satellite only sends its OWN position + time. YOUR receiver computes your position by triangulating delays.  ·  ❌ 'Three satellites suffice for full 3D positioning.' ✅ Three give (x,y,z) only if the clock is perfect; a fourth is required for a practical unknown clock offset.</p></dd></div></dl></div></div><div class="item"><span class="idx">4.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Special cases</p></dd></div><div class="kv"><dt>Text</dt><dd><p>The fourth satellite is not for redundancy — it solves the unknown receiver clock offset.  ·  GPS satellites are NOT geostationary; they sit in inclined medium Earth orbits.</p></dd></div></dl></div></div><div class="item"><span class="idx">5.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Solved</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Distance from delay: signal travel 0.07 s → distance = 3×10⁸ × 0.07 = 21,000 km.  ·  GPS speed: v = √(GM/r) at r ≈ 26,600 km from Earth's centre ≈ 3.87 km/s.</p></dd></div></dl></div></div><div class="item"><span class="idx">6.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Limitation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>❌ 'GPS works by measuring signal strength.' ✅ It measures signal TRAVEL TIME (c × Δt), not strength.  ·  ❌ 'GPS satellites are geostationary.' ✅ They orbit at ≈ 20,200 km in inclined MEO orbits with ≈ 12 h periods — not geostationary.</p></dd></div></dl></div></div><div class="item"><span class="idx">7.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Derivation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Compute GPS satellite speed and period from its orbital radius.  ·  Explain the four-satellite requirement with unknowns.</p></dd></div></dl></div></div><div class="item"><span class="idx">8.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Shortcut</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Four satellites = four unknowns (x, y, z, t) — the key reasoning line.  ·  1 µs clock error ≈ 300 m of position error — instant conversion.</p></dd></div></dl></div></div><div class="item"><span class="idx">9.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Board question</p></dd></div><div class="kv"><dt>Text</dt><dd><p>A GPS satellite orbits at 20,200 km. Find its orbital speed and period.  ·  Why does a receiver need four satellites instead of three?</p></dd></div></dl></div></div><div class="item"><span class="idx">10.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Hints</p></dd></div><div class="kv"><dt>Text</dt><dd><p>The working principle of GPS (time-delay ranging) is a classic short answer.  ·  Why four satellites — guaranteed exam question.</p></dd></div><div class="kv"><dt>Figure</dt><dd><dl class="obj"><div class="kv"><dt>Svg</dt><dd><p>&lt;svg viewBox=&quot;0 0 900 640&quot; role=&quot;img&quot; aria-label=&quot;GPS — topic mind map&quot;&gt;&lt;title&gt;GPS — topic mind map&lt;/title&gt;&lt;rect x=&quot;180&quot; y=&quot;24&quot; width=&quot;540&quot; height=&quot;86&quot; rx=&quot;10&quot; fill=&quot;#ede9fe&quot; stroke=&quot;#6d28d9&quot; stroke-width=&quot;3&quot;/&gt;&lt;text x=&quot;450&quot; y=&quot;58&quot; text-anchor=&quot;middle&quot; font-size=&quot;23&quot; font-weight=&quot;bold&quot; fill=&quot;#4c1d95&quot;&gt;GPS&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;240&quot; y2=&quot;182&quot; stroke=&quot;#7c3aed&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;233,172 247,172 240,186&quot; fill=&quot;#7c3aed&quot;/&gt;&lt;rect x=&quot;70&quot; y=&quot;190&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f5f3ff&quot; stroke=&quot;#7c3aed&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;240&quot; y=&quot;224&quot; text-anchor=&quot;middle&quot; font-size=&quot;20&quot; font-weight=&quot;bold&quot; fill=&quot;#4c1d95&quot;&gt;GPS&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;290&quot; text-anchor=&quot;middle&quot; font-size=&quot;17&quot; fill=&quot;#5b21b6&quot;&gt;Definition&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;316&quot; text-anchor=&quot;middle&quot; font-size=&quot;17&quot; fill=&quot;#5b21b6&quot;&gt;Exam use&lt;/text&gt;&lt;/svg&gt;</p></dd></div><div class="kv"><dt>Caption</dt><dd><p>GPS — topic mind map of this topic's own sub-topics</p></dd></div></dl></dd></div></dl></div></div><div class="item"><span class="idx">11.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Quick concepts</p></dd></div><div class="kv"><dt>Text</dt><dd><p>GPS uses travel-time ranging from ≥ 4 satellites to fix (x, y, z, t).  ·  Satellite positions are computed from orbital mechanics (Kepler's laws).  ·  GPS satellites orbit at 20,200 km altitude with ~12 h periods.  ·  Relativistic corrections of ~38 µs/day keep clocks accurate.</p></dd></div></dl></div></div><div class="item"><span class="idx">12.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Key points</p></dd></div><div class="kv"><dt>Text</dt><dd><p>GPS fixes position by measuring radio signal travel time from ≥ 4 satellites.  ·  Four satellites allow solving the receiver clock error as a fourth unknown.  ·  GPS satellites orbit at ≈ 20,200 km in inclined MEO with ≈ 12 h periods.  ·  Relativistic corrections (~38 µs/day) are essential for metre-level accuracy.</p></dd></div></dl></div></div><div class="item"><span class="idx">13.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Universal facts</p></dd></div><div class="kv"><dt>Text</dt><dd><p>GPS was developed by the US Department of Defense and declared fully operational in 1995; it is freely available worldwide.  ·  The constellation was designed by military engineers using Newton's law and Kepler's equations — a textbook application of gravitational physics.</p></dd></div></dl></div></div><div class="item"><span class="idx">14.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More practice</p></dd></div><div class="kv"><dt>Text</dt><dd><p>If a GPS signal takes 65 ms to arrive, how far away is that satellite?  ·  Explain both special and general relativistic corrections to GPS clocks.  ·  Estimate the daily position error if all relativistic corrections were ignored.</p></dd></div></dl></div></div><div class="item"><span class="idx">15.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More hints</p></dd></div><div class="kv"><dt>Text</dt><dd><p>GPS orbit parameters (altitude, period) derive from satellite formulas — show the computation.  ·  Relativistic correction in GPS is a famous applied-physics question.</p></dd></div></dl></div></div><div class="item"><span class="idx">16.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Extra solved</p></dd></div><div class="kv"><dt>Text</dt><dd><p>GPS period ≈ 11 h 58 min (half a sidereal day).  ·  Clock offset: 1 µs error → position error ≈ 300 m.</p></dd></div></dl></div></div><div class="item"><span class="idx">17.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>MCQ drill</p></dd></div><div class="kv"><dt>Text</dt><dd><p>GPS determines a receiver's position by measuring: → B  ·  A GPS receiver needs at least how many satellites for a full fix? → C</p></dd></div></dl></div></div><div class="item"><span class="idx">18.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Study notes</p></dd></div><div class="kv"><dt>Text</dt><dd><p><strong>What GPS is:</strong> the Global Positioning System is a satellite-based navigation system that tells a receiver its exact 3D position on Earth. It uses the same gravitational/orbital physics as any satellite, which is why it lives in the gravitation chapter.  ·  <strong>Principle of position fixing:</strong> each GPS satellite broadcasts a radio signal stamped with its position and precise transmission time. The receiver measures the travel time of signals from at least four satellites and solves for (x, y, z, t) — the fourth equation corrects the receiver clock offset.  ·  <strong>How distance is measured:</strong> distance = speed of light × time delay. Since the receiver's clock is not atomic-precise, a fourth satellite provides the clock-error term, giving accuracy of a few metres.</p></dd></div></dl></div></div><div class="item"><span class="idx">19.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Applications: navigation, timing, mapping, geodesy.  ·  Clock error mapping: Δposition = c × Δt_clock  ·  Relativistic shift: Δt ≈ 38 µs/day (GR +45 µs, SR −7 µs)</p></dd></div></dl></div></div><div class="item"><span class="idx">20.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>GPS relies directly on satellite motion physics (v = √(GM/r), T = 2π√(r³/GM)).  ·  ❌ 'Relativistic corrections are too tiny to matter.' ✅ Without them GPS would be off by ~10 km/day. The effect is 38 µs/day — essential.  ·  ❌ 'Position accuracy is limited by the number of satellites visible.' ✅ With ≥ 4 satellites you can fix position; more satellites reduce error statistics but don't change the basic math.</p></dd></div></dl></div></div><div class="item"><span class="idx">21.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Relativity: 38 µs/day accumulated shift → ~10 km/day without correction.  ·  The relativistic effect: satellite clocks gain ~38 µs/day; compensation keeps GPS accurate.  ·  Error sources: ionosphere, multipath, clock drift, geometry (DOP).</p></dd></div></dl></div></div><div class="item"><span class="idx">22.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>NEB asks conceptual questions about the working principle and the satellite orbit numbers.  ·  GPS needs ≥ 4 satellites to solve x, y, z and clock error simultaneously.  ·  Each satellite broadcasts its own position and precise time; the receiver does the compute.</p></dd></div></dl></div></div><div class="item"><span class="idx">23.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>GPS orbit: altitude ≈ 20,200 km, period ≈ 12 h, speed ≈ 3.87 km/s.  ·  Relativistic corrections (~38 µs/day) are mandatory for GPS accuracy.  ·  Distance is derived from travel time (d = c·Δt), not from signal strength.</p></dd></div></dl></div></div></section>
+  <nav class="pager"><a href="gravitation--08-potential-and-kinetic-energy-of-the-satellite.rail.html" title="gravitation--08-potential-and-kinetic-energy-of-the-satellite.rail">‹ gravitation--08-potential-and-kinetic-energy-…</a><a class="mid" href="../../../../../_subjects/class-11-physics.html">Physics</a><a href="gravitation--exam-bank.rail.html" title="gravitation--exam-bank.rail">gravitation--exam-bank.rail ›</a></nav>
+</div></body></html>

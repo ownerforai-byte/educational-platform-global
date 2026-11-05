@@ -1,0 +1,183 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Temperature Scales</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Heat And Temperature</div>
+    <h1 class="doc">Temperature Scales</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Heat And Temperature</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>heat-and-temperature</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>temperature-scales</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>A temperature scale is a system for measuring temperature based on fixed reference points and equal divisions between them.</li><li>The three most commonly used temperature scales are Celsius (°C), Fahrenheit (°F), and Kelvin (K).</li><li>The Celsius scale was introduced by Anders Celsius in 1742, with the freezing point of water at 0°C and the boiling point at 100°C at standard atmospheric pressure.</li><li>The Fahrenheit scale was introduced by Daniel Gabriel Fahrenheit in 1720, with the freezing point of water at 32°F and the boiling point at 212°F at standard atmospheric pressure.</li><li>The Kelvin scale is the SI base unit of thermodynamic temperature, named after Lord Kelvin. It is an absolute scale with zero at absolute zero (0 K = -273.15°C).</li><li>The Kelvin scale has the same magnitude as the Celsius degree, meaning a change of 1°C is equivalent to a change of 1 K.</li><li>The triple point of water is the unique temperature and pressure at which solid, liquid, and vapor phases of water coexist in equilibrium: 273.16 K (0.01°C) at 611.657 Pa. This is the defining fixed point of the Kelvin scale.</li><li>Absolute zero is the theoretical temperature at which all molecular motion ceases. It is 0 K, -273.15°C, or -459.67°F. At absolute zero, the internal energy of a system is at its minimum.</li><li>The Kelvin scale is essential for scientific calculations, especially in gas laws, because it is an absolute scale.</li><li>The Reaumur scale and Rankine scale are less commonly used today but were historically significant.</li><li>Temperature scales are crucial for understanding and measuring thermal properties and for applying the laws of thermodynamics.</li><li>Temperature scales are used in various scientific and engineering applications to measure and control temperature accurately.</li><li>The conversion between different temperature scales is essential for international communication and collaboration in scientific research.</li><li>The Kelvin scale is used in scientific contexts because it is an absolute scale, making it suitable for thermodynamic calculations.</li><li>The Celsius scale is widely used in everyday life and scientific contexts due to its simplicity and intuitive reference points.</li><li>The Fahrenheit scale is primarily used in the United States for everyday temperature measurements.</li></ul></section>
+<section class="field"><h2>Ui Config</h2><dl class="obj"><div class="kv"><dt>Allow Zoom</dt><dd><p><code>true</code></p></dd></div><div class="kv"><dt>Show Refresh</dt><dd><p><code>true</code></p></dd></div></dl></section>
+<section class="field"><h2>Specific Conditions</h2><ul><li><strong>Temperature vs Heat Distinction:</strong> Temperature is an intensive property (average kinetic energy per particle, measured in K). Heat is extensive energy transferred due to temperature difference (measured in J).</li><li><strong>Absolute Temperature Requirement:</strong> In kinetic theory and gas laws (PV = nRT, &lt;KE&gt; = (3/2)kT), temperature must be in Kelvin (absolute scale).</li><li><strong>Triple Point Defines Kelvin:</strong> Since 2019, the Kelvin is defined by fixing Boltzmann's constant k = 1.380649 × 10⁻²³ J/K exactly. The triple point of water (273.16 K) is a reproducible reference.</li><li><strong>Conversion Formulas:</strong> K = °C + 273.15, °F = (9/5)°C + 32, °C = (°F - 32) × 5/9, K = (°F + 459.67) × 5/9</li><li><strong>Absolute Zero:</strong> 0 K = -273.15°C = -459.67°F. The theoretical temperature at which classical thermal motion ceases.</li><li><strong>Gas Thermometer:</strong> Uses a constant-volume gas thermometer to measure pressure of a fixed volume of gas, proportional to absolute temperature. Ideal gas law PV = nRT allows extrapolation to zero pressure for perfect accuracy.</li><li><strong>Platinum Resistance Thermometer:</strong> Uses the fact that electrical resistance of metals increases nearly linearly with temperature: R = R₀(1 + αT), where α is the temperature coefficient of resistance. Platinum is used due to its stability and near-linear behavior.</li><li><strong>Temperature Scale Characteristics:</strong></li><li><ul>
+<li>Celsius: Freezing point = 0°C, boiling point = 100°C at 1 atm, 100 equal divisions</li>
+</ul></li><li><ul>
+<li>Fahrenheit: Freezing point = 32°F, boiling point = 212°F at 1 atm, 180 equal divisions</li>
+</ul></li><li><ul>
+<li>Kelvin: Absolute scale, freezing point = 273.15 K, boiling point = 373.15 K, no degree symbol</li>
+</ul></li><li><ul>
+<li>Rankine: Absolute version of Fahrenheit, freezing point = 491.67°Ra, boiling point = 671.67°Ra</li>
+</ul></li><li><ul>
+<li>Reaumur: Rarely used, freezing point = 0°Ré, boiling point = 80°Ré</li>
+</ul></li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Conversion formulas:</li><li>K = °C + 273.15</li><li>°F = (9/5)°C + 32</li><li>°C = (°F - 32) × 5/9</li><li>K = (°F + 459.67) × 5/9</li><li>Temperature difference: ΔT(K) = ΔT(°C)</li><li>Ideal gas law: PV = nRT</li><li>Kinetic energy: &lt;KE&gt; = (3/2)kT</li><li>Resistance-temperature relation: R = R₀(1 + αT)</li><li>Triple point of water: 273.16 K (0.01°C) at 611.657 Pa</li><li>Absolute zero: 0 K = -273.15°C = -459.67°F</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Temperature scales provide a system for measuring temperature based on fixed reference points and equal divisions.</li><li>The Celsius scale has freezing point at 0°C and boiling point at 100°C at standard atmospheric pressure.</li><li>The Fahrenheit scale has freezing point at 32°F and boiling point at 212°F at standard atmospheric pressure.</li><li>The Kelvin scale is an absolute scale with zero at absolute zero (0 K = -273.15°C).</li><li>The Kelvin scale has the same magnitude as the Celsius degree, meaning a change of 1°C is equivalent to a change of 1 K.</li><li>The triple point of water is the unique temperature and pressure at which solid, liquid, and vapor phases coexist in equilibrium: 273.16 K (0.01°C) at 611.657 Pa.</li><li>Absolute zero is the theoretical temperature at which all classical molecular motion ceases: 0 K, -273.15°C, or -459.67°F.</li><li>The Kelvin scale is essential for scientific calculations, especially in gas laws, because it is an absolute scale.</li><li>The Reaumur and Rankine scales are less commonly used today but were historically significant.</li><li>Temperature scales are crucial for understanding and measuring thermal properties and for applying the laws of thermodynamics.</li><li>Conversion between different temperature scales is essential for international communication and collaboration in scientific research.</li><li>The Kelvin scale is used in scientific contexts because it is an absolute scale, making it suitable for thermodynamic calculations.</li><li>The Celsius scale is widely used in everyday life and scientific contexts due to its simplicity and intuitive reference points.</li><li>The Fahrenheit scale is primarily used in the United States for everyday temperature measurements.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Temperature is a measure of the average kinetic energy of particles: &lt;KE&gt; = (3/2)kT, where k is Boltzmann's constant.</li><li>The Kelvin scale is the SI base unit of thermodynamic temperature and is an absolute scale.</li><li>Absolute zero is the theoretical temperature at which all classical thermal motion ceases.</li><li>The triple point of water is the defining fixed point of the Kelvin scale: 273.16 K (0.01°C) at 611.657 Pa.</li><li>The Kelvin scale is essential for scientific calculations, especially in gas laws, because it is an absolute scale.</li><li>The Celsius scale is widely used in everyday life and scientific contexts due to its simplicity and intuitive reference points.</li><li>The Fahrenheit scale is primarily used in the United States for everyday temperature measurements.</li><li>Temperature scales are crucial for understanding and measuring thermal properties and for applying the laws of thermodynamics.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Use K = °C + 273.15 to convert between Celsius and Kelvin scales.</li><li>Use °F = (9/5)°C + 32 to convert between Celsius and Fahrenheit scales.</li><li>Use °C = (°F - 32) × 5/9 to convert between Fahrenheit and Celsius scales.</li><li>Use K = (°F + 459.67) × 5/9 to convert between Fahrenheit and Kelvin scales.</li><li>Remember that a temperature difference of 1°C is equivalent to a temperature difference of 1 K.</li><li>Absolute zero is 0 K, -273.15°C, or -459.67°F.</li><li>The triple point of water is 273.16 K (0.01°C) at 611.657 Pa.</li><li>The Kelvin scale is essential for scientific calculations, especially in gas laws.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Focus on understanding the characteristics and conversion formulas for different temperature scales.</li><li>Practice problems involving temperature scale conversions.</li><li>Understand the significance of absolute zero and the triple point of water in defining temperature scales.</li><li>Apply the Kelvin scale to scientific calculations, especially in gas laws.</li><li>Be able to explain the importance of using the Kelvin scale in thermodynamic calculations.</li><li>Understand the relationship between temperature and kinetic energy of particles.</li><li>Apply the conversion formulas to real-world scenarios involving temperature measurements.</li><li>Practice problems involving the use of different temperature scales in scientific and engineering contexts.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Convert 300 K to Celsius and Fahrenheit: T(°C) = 300 - 273.15 = 26.85°C, T(°F) = (9/5)(26.85) + 32 = 80.33°F.</li><li>Determine the temperature at which Celsius and Fahrenheit scales read the same: Set C = F in the conversion formula, solving for C = -40.</li><li>A faulty thermometer reads the freezing point of water as 5° and the boiling point as 95°. Convert a reading of 59° to the true Celsius temperature: Each faulty degree = 100/90 = 1.111°C. Offset from freezing = 54 faulty degrees. True temperature = 54 × (100/90) + 0 = 60°C.</li><li>An ideal gas at 0°C is heated at constant pressure until its volume doubles. Find the new temperature in °C and K: T₂ = 2T₁ = 546.3 K, which is 273.15°C.</li><li>The Sun's core temperature is about 1.5 × 10⁷ K. Express this in °C and °F: T(°C) ≈ 1.497 × 10⁷°C, T(°F) ≈ 2.695 × 10⁷°F.</li><li>Use a constant-volume gas thermometer to measure the temperature of a gas by measuring its pressure and applying the ideal gas law PV = nRT.</li><li>Use a platinum resistance thermometer to measure temperature by measuring the electrical resistance of a platinum wire and applying the resistance-temperature relation.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Convert temperatures between Celsius, Fahrenheit, and Kelvin scales.</li><li>Solve problems involving temperature scale conversions.</li><li>Determine the temperature at which different scales read the same value.</li><li>Apply the Kelvin scale to scientific calculations, especially in gas laws.</li><li>Use the triple point of water to define and understand the Kelvin scale.</li><li>Explain the significance of absolute zero in defining temperature scales.</li><li>Apply the conversion formulas to real-world scenarios involving temperature measurements.</li><li>Solve problems involving the use of different temperature scales in scientific and engineering contexts.</li><li>Calculate the temperature of a gas using a constant-volume gas thermometer.</li><li>Calculate the temperature using a platinum resistance thermometer.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Temperature is a measure of the average kinetic energy of particles: &lt;KE&gt; = (3/2)kT, where k is Boltzmann's constant.</li><li>There is no upper limit to temperature - particle speeds can increase without bound.</li><li>The Kelvin scale was originally defined by the triple point of water (273.16 K) and absolute zero (0 K). Since 2019, it is defined by fixing Boltzmann's constant k to exactly 1.380649 × 10⁻²³ J/K.</li><li>Different thermometric substances give slightly different scales because their expansion is not perfectly linear with temperature.</li><li>Gas thermometers are most accurate because ideal gases have perfectly linear behavior in the limit of zero pressure.</li><li>The Rankine scale (°Ra) is to Fahrenheit as Kelvin is to Celsius - it is the absolute temperature scale.</li><li>NASA uses Rankine in some engineering calculations alongside SI units.</li><li>Temperature scales are essential for understanding and measuring thermal properties and for applying the laws of thermodynamics.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Distinguish between temperature and heat. Temperature is an intensive property, while heat is energy transferred due to a temperature difference.</li><li>Understand that a temperature difference of 1°C is not the same as 1°F. ΔT(°C) = (5/9)ΔT(°F).</li><li>Remember that Kelvin is not written with a degree symbol (°K).</li><li>Understand that absolute zero is not just 'really cold' but the state where classical thermal motion ceases entirely.</li><li>Distinguish between the triple point of water (273.16 K) and the freezing point of water (273.15 K).</li><li>Apply the conversion formulas correctly between different temperature scales.</li><li>Understand the importance of using the Kelvin scale in scientific calculations, especially in gas laws.</li><li>Apply the triple point of water to define and understand the Kelvin scale.</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Temperature vs heat distinction</li><li>Characteristics of Celsius, Fahrenheit, and Kelvin scales</li><li>Conversion formulas between temperature scales</li><li>Absolute zero and its significance</li><li>Triple point of water and its role in defining the Kelvin scale</li><li>Applications of temperature scales in scientific and engineering contexts</li><li>Gas thermometers and platinum resistance thermometers</li><li>Importance of the Kelvin scale in thermodynamic calculations</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Convert temperatures between Celsius, Fahrenheit, and Kelvin scales.</li><li>Solve problems involving temperature scale conversions.</li><li>Determine the temperature at which different scales read the same value.</li><li>Apply the Kelvin scale to scientific calculations, especially in gas laws.</li><li>Use the triple point of water to define and understand the Kelvin scale.</li><li>Explain the significance of absolute zero in defining temperature scales.</li><li>Apply the conversion formulas to real-world scenarios involving temperature measurements.</li><li>Calculate the temperature of a gas using a constant-volume gas thermometer.</li><li>Calculate the temperature using a platinum resistance thermometer.</li></ul></section>
+<section class="field"><h2>Visual Type</h2><p>temperature-scales</p></section>
+  <nav class="pager"><a href="quantity-of-heat.html" title="Quantity of Heat">‹ Quantity of Heat</a><a class="mid" href="../../../../../_subjects/class-11-physics.html">Physics</a><span></span></nav>
+</div></body></html>

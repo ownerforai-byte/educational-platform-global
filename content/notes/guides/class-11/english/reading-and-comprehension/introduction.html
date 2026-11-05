@@ -1,0 +1,164 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Introduction to Short Stories</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Reading And Comprehension</div>
+    <h1 class="doc">Introduction to Short Stories</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Reading And Comprehension</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>reading-and-comprehension</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>introduction</p></section>
+<section class="field"><h2>Relevance</h2><p><code>30</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;What is a Short Story?&lt;/h2&gt;</li><li>&lt;p&gt;A &lt;b&gt;short story&lt;/b&gt; is a brief work of prose fiction that can normally be read in one sitting. It focuses on a &lt;b&gt;single incident, character, or idea&lt;/b&gt;, and develops it with economy of language. Unlike a novel, a short story usually has a limited number of characters, one central conflict, and one main effect. Edgar Allan Poe famously argued that a short story should aim at a &lt;i&gt;single effect&lt;/i&gt; — every word, every image, every detail should contribute to one unified impression.&lt;/p&gt;</li><li>&lt;h2&gt;Key Elements of a Short Story&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Plot&lt;/b&gt;: the sequence of events in the story — exposition, rising action, climax, falling action and resolution. &lt;b&gt;Character&lt;/b&gt;: the people (or animals, or forces) in the story; they can be &lt;b&gt;round&lt;/b&gt; (well developed, changing) or &lt;b&gt;flat&lt;/b&gt; (simple, unchanging). &lt;b&gt;Setting&lt;/b&gt;: the time and place of the action, which influences mood and conflict. &lt;b&gt;Theme&lt;/b&gt;: the central idea or message of the story — what the story means beyond its events. &lt;b&gt;Point of view&lt;/b&gt;: the perspective from which the story is told — first person (I), second person (you), or third person (he/she/they; limited or omniscient). &lt;b&gt;Conflict&lt;/b&gt;: the struggle at the heart of the story — internal (man vs self) or external (man vs man, man vs nature, man vs society).&lt;/p&gt;</li><li>&lt;h2&gt;How a Short Story is Built&lt;/h2&gt;</li><li>&lt;p&gt;A good short story starts with a &lt;b&gt;hook&lt;/b&gt; that creates curiosity, moves through rising tension to a &lt;b&gt;climax&lt;/b&gt; (the turning point), and ends with a &lt;b&gt;resolution&lt;/b&gt; — which may be closed (everything is settled) or open (leaving the reader to decide). Writers often use &lt;b&gt;foreshadowing&lt;/b&gt; (hints of what will come) and &lt;b&gt;symbolism&lt;/b&gt; (objects or actions standing for larger ideas) to deepen meaning.&lt;/p&gt;</li><li>&lt;h2&gt;Short Stories in the NEB English Syllabus&lt;/h2&gt;</li><li>&lt;p&gt;In the NEB (Nepal Education Board) English curriculum, short stories are studied to develop skills of comprehension, analysis and interpretation. Students are expected to identify the elements above, explain the theme in their own words, relate the story to real life, and answer questions about character, setting, plot and moral values.&lt;/p&gt;</li><li>&lt;h2&gt;The Six Universal Elements of Fiction&lt;/h2&gt;</li><li>&lt;p&gt;Every short story, regardless of culture or period, contains six fundamental elements: (1) &lt;b&gt;Character&lt;/b&gt; — who the story is about; (2) &lt;b&gt;Setting&lt;/b&gt; — when and where it takes place; (3) &lt;b&gt;Plot&lt;/b&gt; — what happens; (4) &lt;b&gt;Conflict&lt;/b&gt; — the central problem or tension; (5) &lt;b&gt;Theme&lt;/b&gt; — the underlying message; (6) &lt;b&gt;Style/Tone&lt;/b&gt; — how the author tells the story. These six elements work together like instruments in an orchestra: remove one and the story loses its coherence. When analysing any short story for an exam, systematically address each of these six elements to build a complete answer.&lt;/p&gt;</li><li>&lt;h2&gt;Types of Short Story&lt;/h2&gt;</li><li>&lt;p&gt;Short stories can be classified by their structure and intent: &lt;b&gt;Fable&lt;/b&gt; — a short tale with animals as characters, ending with a moral (e.g., Aesop's Fables). &lt;b&gt;Parable&lt;/b&gt; — a short narrative that illustrates a moral or spiritual lesson (often found in religious texts). &lt;b&gt;Anecdote&lt;/b&gt; — a brief account of an interesting or amusing incident. &lt;b&gt;Vignette&lt;/b&gt; — a short piece that captures a mood or moment rather than telling a complete story. &lt;b&gt;Sketch&lt;/b&gt; — a brief, impressionistic portrayal of a character or scene. &lt;b&gt;Flash fiction&lt;/b&gt; — an extremely short story (under 1,000 words) that delivers a complete narrative arc. Understanding which type you are reading helps you interpret the author's intentions and the story's effect on the reader.&lt;/p&gt;</li><li>&lt;h2&gt;Characterisation: Flat vs. Round, Static vs. Dynamic&lt;/h2&gt;</li><li>&lt;p&gt;W.E. Forster introduced the distinction between &lt;b&gt;flat characters&lt;/b&gt; and &lt;b&gt;round characters&lt;/b&gt;. A flat character is built around a single idea or quality — they are easily described in one sentence. A round character is complex, contradictory, and capable of surprising the reader in a convincing way. Similarly, a &lt;b&gt;static character&lt;/b&gt; does not change significantly during the story, while a &lt;b&gt;dynamic character&lt;/b&gt; undergoes an important inner change. Protagonists in literary short stories tend to be round and dynamic; supporting characters are often flat and static. In exam answers, always specify which type each character is and give textual evidence.&lt;/p&gt;</li><li>&lt;h2&gt;Setting and Atmosphere&lt;/h2&gt;</li><li>&lt;p&gt;Setting is more than just a backdrop — it shapes the mood (atmosphere), reflects the characters' psychological states, and can even function as a symbol. A stormy night may mirror a character's turmoil; a pristine garden may represent innocence. Key questions to ask about setting: &lt;b&gt;When&lt;/b&gt; does the story take place? &lt;b&gt;Where&lt;/b&gt; does it take place? How does the setting affect the characters' behaviour? How does the author use descriptive language (imagery, sensory details) to create atmosphere? In many classic stories — for example, those by Thomas Hardy or D.H. Lawrence — the landscape of rural England is as much a character as the people in the story.&lt;/p&gt;</li><li>&lt;h2&gt;Point of View and Narrative Voice&lt;/h2&gt;</li><li>&lt;p&gt;Point of view (POV) determines how the reader receives the story's information. &lt;b&gt;First-person POV&lt;/b&gt; (&quot;I&quot;) gives intimate access to the narrator's thoughts but limits knowledge of other characters. &lt;b&gt;Third-person limited&lt;/b&gt; (&quot;he/she&quot;) follows one character closely and shares their perceptions. &lt;b&gt;Third-person omniscient&lt;/b&gt; (&quot;he/she/they&quot;) gives access to the thoughts of multiple characters. &lt;b&gt;Second-person POV&lt;/b&gt; (&quot;you&quot;) is rare in fiction but creates a sense of direct address. The &lt;b&gt;reliable narrator&lt;/b&gt; tells the truth as they know it; an &lt;b&gt;unreliable narrator&lt;/b&gt; distorts or lies to the reader, creating irony. Identifying the narrative voice correctly is essential for understanding the author's intended meaning.&lt;/p&gt;</li><li>&lt;h2&gt;Literary Devices in Short Stories&lt;/h2&gt;</li><li>&lt;p&gt;Short story writers employ a rich array of literary devices: &lt;b&gt;Metaphor&lt;/b&gt; — a direct comparison without &quot;like&quot; or &quot;as&quot; (&quot;Life is a journey&quot;). &lt;b&gt;Simile&lt;/b&gt; — a comparison using &quot;like&quot; or &quot;as&quot; (&quot;Her smile was like sunshine&quot;). &lt;b&gt;Personification&lt;/b&gt; — giving human qualities to non-human things (&quot;The wind whispered through the trees&quot;). &lt;b&gt;Imagery&lt;/b&gt; — vivid sensory language that appeals to sight, sound, smell, taste, or touch. &lt;b&gt;Irony&lt;/b&gt; — a contrast between expectation and reality (situational, dramatic, or verbal). &lt;b&gt;Allusion&lt;/b&gt; — a reference to another literary work, historical event, or myth. &lt;b&gt;Hyperbole&lt;/b&gt; — deliberate exaggeration for effect. &lt;b&gt;Understatement&lt;/b&gt; — deliberately expressing less than is meant. These devices enrich the text and reward close reading.&lt;/p&gt;</li><li>&lt;h2&gt;Theme vs. Moral&lt;/h2&gt;</li><li>&lt;p&gt;A &lt;b&gt;theme&lt;/b&gt; is a central idea or insight about life that a story explores — it is implicit and often complex. Themes can be stated in a single sentence, such as &quot;Love can be both healing and destructive&quot; or &quot;Power corrupts those who seek it.&quot; A &lt;b&gt;moral&lt;/b&gt;, on the other hand, is an explicit lesson that the story teaches — it is usually a direct instruction: &quot;Honesty is the best policy.&quot; All stories have themes, but not all stories have morals. Fables and parables typically have morals; literary short stories tend to have themes. In exam answers, always express the theme as a complete, nuanced statement — never simply name it as a single word (&quot;friendship&quot;) without elaboration.&lt;/p&gt;</li><li>&lt;h2&gt;Understanding Conflict in Depth&lt;/h2&gt;</li><li>&lt;p&gt;Conflict is the engine of narrative. Without conflict, there is no story. The main types are: &lt;b&gt;Man vs. Man&lt;/b&gt; — a struggle between two characters (e.g., a hero and a villain). &lt;b&gt;Man vs. Self&lt;/b&gt; — an internal struggle within a character's mind (guilt, doubt, desire). &lt;b&gt;Man vs. Nature&lt;/b&gt; — a battle against natural forces (a storm, a wild animal, disease). &lt;b&gt;Man vs. Society&lt;/b&gt; — a character at odds with social norms, laws, or expectations. &lt;b&gt;Man vs. Fate/Supernatural&lt;/b&gt; — a struggle against destiny or forces beyond human control. Most stories contain a primary conflict and one or more secondary conflicts. Identifying and categorising conflict is a core skill in literary analysis and a frequent exam question.&lt;/p&gt;</li><li>&lt;h2&gt;The Importance of Opening and Closing Lines&lt;/h2&gt;</li><li>&lt;p&gt;In a short story, every word counts, but opening and closing lines carry special weight. A strong &lt;b&gt;opening&lt;/b&gt; establishes voice, setting, and conflict quickly — it is the author's promise to the reader. Consider the opening of Kafka's &lt;i&gt;The Metamorphosis&lt;/i&gt;: &quot;One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.&quot; The &lt;b&gt;closing&lt;/b&gt; resolves (or deliberately refuses to resolve) the tension and leaves the reader with a final impression. In exam preparation, memorise and analyse the opening and closing lines of the stories in your syllabus — they are prime material for close-reading answers.&lt;/p&gt;</li><li>&lt;h2&gt;How to Read a Short Story for Exam Preparation&lt;/h2&gt;</li><li>&lt;p&gt;Follow this systematic approach: &lt;b&gt;First reading&lt;/b&gt; — read for enjoyment and general understanding; note the overall impression. &lt;b&gt;Second reading&lt;/b&gt; — annotate actively: underline key passages, note literary devices, track character development, and mark the turning point (climax). &lt;b&gt;Third reading&lt;/b&gt; — focus on theme and craft: ask why the author made specific choices (structure, language, imagery). Prepare by writing a &lt;b&gt;summary&lt;/b&gt; of each story (150-200 words), a &lt;b&gt;character sketch&lt;/b&gt; of each major character, a &lt;b&gt;list of themes&lt;/b&gt; with supporting evidence, and &lt;b&gt;key quotations&lt;/b&gt; you can cite in your answers. This three-pass method ensures both comprehension and analytical depth.&lt;/p&gt;</li><li>&lt;h2&gt;Summary Writing: A Core Skill&lt;/h2&gt;</li><li>&lt;p&gt;Summary writing is a tested skill in the NEB English exam. A good summary: (1) preserves the &lt;b&gt;main events&lt;/b&gt; in chronological order; (2) omits minor details, dialogue, and examples; (3) is written in &lt;b&gt;your own words&lt;/b&gt;, not copied from the text; (4) maintains &lt;b&gt;third-person&lt;/b&gt; and &lt;b&gt;past tense&lt;/b&gt; (&quot;The protagonist faced...&quot;); (5) is concise — typically 150-200 words for a short story summary. A common mistake is to retell every detail; a summary is not a retelling but a distillation. Always check: does my summary include the main characters, the central conflict, and the resolution? If yes, it is on the right track.&lt;/p&gt;</li><li>&lt;h2&gt;Developing Critical Vocabulary&lt;/h2&gt;</li><li>&lt;p&gt;To write strong analytical answers, you need a working vocabulary of critical terms: &lt;b&gt;Protagonist&lt;/b&gt; — the main character. &lt;b&gt;Antagonist&lt;/b&gt; — the character or force opposing the protagonist. &lt;b&gt;Narrator&lt;/b&gt; — the voice telling the story (not always the author). &lt;b&gt;Exposition&lt;/b&gt; — the introductory section that provides background information. &lt;b&gt;Rising action&lt;/b&gt; — events that build tension toward the climax. &lt;b&gt;Climax&lt;/b&gt; — the turning point or moment of highest tension. &lt;b&gt;Falling action&lt;/b&gt; — events after the climax. &lt;b&gt;Resolution/Denouement&lt;/b&gt; — the conclusion where loose ends are tied up. &lt;b&gt;Epiphany&lt;/b&gt; — a sudden moment of insight or revelation experienced by a character. Using these terms accurately in your answers demonstrates deep understanding and impresses examiners.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Short story vs. novella: A short story is typically under 7,500 words and focuses on a single incident, while a novella is between 17,500 and 40,000 words and allows for more complex plots and character development.</li><li>Theme vs. subject: The &lt;b&gt;subject&lt;/b&gt; is what the story is about in one word (e.g., 'war', 'love', 'jealousy'). The &lt;b&gt;theme&lt;/b&gt; is what the story says about that subject — it is a complete statement (e.g., 'War destroys the innocence of youth'). Never write a theme as a single word in an exam.</li><li>Plot vs. story: The &lt;b&gt;story&lt;/b&gt; is everything that happens in the narrative world in chronological order. The &lt;b&gt;plot&lt;/b&gt; is the specific arrangement and selection of events as presented by the author — events may be reordered, skipped, or emphasised. A story might be told out of order (flashback, flashback within flashback), but the plot is what the reader actually experiences.</li><li>First-person narrator vs. author: The narrator is a fictional voice inside the text — not the author. Even when a story is written in first person ('I'), the 'I' is a character, not the real person who wrote the story. Confusing narrator with author leads to misinterpretation, especially with unreliable narrators.</li><li>Foreshadowing vs. flashback: &lt;b&gt;Foreshadowing&lt;/b&gt; provides hints or clues about events that will happen later in the story. &lt;b&gt;Flashback&lt;/b&gt; is a scene that interrupts the present action to show events from the past. One points forward; the other points backward. Both are common in short stories but serve very different narrative functions.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Read a short story from your syllabus and create a &lt;b&gt;plot diagram&lt;/b&gt; (Freytag's Pyramid): label the exposition, rising action, climax, falling action, and resolution with specific events from the story.</li><li>Choose two characters from a studied short story. Write a &lt;b&gt;comparative character sketch&lt;/b&gt; (150-200 words) identifying whether each is flat or round, static or dynamic, and support your analysis with specific actions or dialogue from the text.</li><li>Write a &lt;b&gt;summary&lt;/b&gt; (150-200 words) of any short story you have read. Follow these rules: use third person and past tense, include only main events, and do not copy sentences from the original. Then compare your summary with a partner's — what did each of you include or omit?</li><li>Identify the &lt;b&gt;point of view&lt;/b&gt; in three different short stories from your syllabus. For each, write a paragraph explaining (a) which POV is used, (b) why the author likely chose it, and (c) how the story would be different if told from a different POV.</li><li>Read the opening paragraph of a short story and list every &lt;b&gt;literary device&lt;/b&gt; you can find (metaphor, simile, imagery, symbolism, foreshadowing, etc.). Then write a short analysis (100 words) explaining how these devices create the story's initial atmosphere or mood.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The short story as a modern literary form was developed in the 19th century by writers such as Edgar Allan Poe, Guy de Maupassant, and Anton Chekhov. Poe argued that a true short story should be readable in a single sitting and should aim for a single, unified effect.</li><li>In the NEB English exam, short story questions typically carry high marks. You should be able to summarise, identify literary devices, analyse character and theme, and write critical appreciations — all of which require multiple readings and active preparation.</li><li>Famous short story collections studied in world literature include: Guy de Maupassant's &lt;i&gt;Tales of the Unexpected&lt;/i&gt;, Anton Chekhov's &lt;i&gt;The Lady with the Dog&lt;/i&gt;, Leo Tolstoy's &lt;i&gt;The Three Questions&lt;/i&gt;, and Katherine Mansfield's &lt;i&gt;The Garden Party&lt;/i&gt;. These stories exemplify economy of language and thematic depth.</li><li>The Japanese literary form called &lt;b&gt;haibun&lt;/b&gt; (prose interspersed with haiku) and the Argentine tradition of the &lt;i&gt;micro-cuento&lt;/i&gt; (micro-story) demonstrate that short fiction has deep roots across world cultures, not just in the Western tradition.</li><li>Many celebrated short stories were written in under a week — Ernest Hemingway's 'Hills Like White Elephants' is just 1,500 words yet contains layers of subtext about communication, choice, and relationships. This proves that in short fiction, what is left unsaid is often as important as what is stated.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>reading-and-comprehension</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>reading-and-comprehension</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

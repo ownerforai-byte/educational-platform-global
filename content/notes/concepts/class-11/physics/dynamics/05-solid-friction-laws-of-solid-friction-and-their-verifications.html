@@ -1,0 +1,202 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Solid Friction: Laws and Verification</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Dynamics</div>
+    <h1 class="doc">Solid Friction: Laws and Verification</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Dynamics</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>dynamics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>solid-friction-laws-of-solid-friction-and-their-verifications</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Animation3 D</h2><p>dynamics</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>friction</p></section>
+<section class="field"><h2>Visual Type</h2><p>friction-laws</p></section>
+<section class="field"><h2>Summary</h2><p>Solid friction opposes relative motion between surfaces in contact. The laws state that friction is independent of apparent area, proportional to normal reaction, and depends on surface nature. Static friction exceeds kinetic friction. Verified experimentally using inclined plane and horizontal surface methods.</p></section>
+<section class="field"><h2>Notes</h2><ul><li>Definition of Solid Friction: Force opposing relative motion (or tendency of motion) between two solid surfaces in contact. Acts tangentially at the interface. Always opposes actual or impending motion.</li><li>Types of Solid Friction: (1) Static friction — acts when bodies are at rest relative to each other; self-adjusting up to a maximum value f_s(max) = μ_s N. (2) Kinetic (dynamic) friction — acts during sliding; constant magnitude f_k = μ_k N. (3) Rolling friction — much smaller than sliding friction.</li><li>Law 1 — Independence of Apparent Area: The force of friction is independent of the apparent area of contact, provided the normal reaction remains the same. A brick lying flat or on its edge experiences the same frictional force if weight is unchanged.</li><li>Law 2 — Proportionality to Normal Reaction: The limiting frictional force is directly proportional to the normal reaction between the surfaces: f_max = μN, where μ is the coefficient of friction. This defines μ as the ratio f_max/N.</li><li>Law 3 — Dependence on Nature of Surfaces: Friction depends on the materials and roughness of the contacting surfaces. Smooth glass-on-glass has low μ; rubber-on-concrete has high μ. Lubrication reduces μ dramatically.</li><li>Law 4 — Static vs Kinetic: Limiting static friction is greater than kinetic friction (μ_s &gt; μ_k). Once motion begins, less force is needed to maintain it. This explains why starting a heavy object requires more effort than keeping it moving.</li><li>Law 5 — Direction of Friction: Friction always acts opposite to the direction of relative motion (kinetic) or impending motion (static). It is a passive force — it arises only in response to an applied force.</li><li>Verification by Horizontal Surface Method: Place a block on a horizontal table. Attach a spring balance horizontally. Pull gradually until the block just starts moving. Record the reading (= limiting friction f_max). Repeat with different weights on the block. Plot f_max vs N — straight line through origin confirms f ∝ N. Slope gives μ.</li><li>Verification by Inclined Plane Method: Place a block on an adjustable inclined plane. Gradually increase the angle θ until the block just begins to slide. At this critical angle (angle of repose), tan θ = μ. Measure θ for different surface combinations. Confirms μ depends on surface nature, not area or mass.</li><li>Coefficient of Friction Values: Steel on steel (dry): μ ≈ 0.6; wood on wood: μ ≈ 0.3–0.5; ice on ice: μ ≈ 0.03; rubber on dry concrete: μ ≈ 0.8; lubricated metal: μ ≈ 0.05.</li><li><h2>Solid friction: laws of solid friction and their verifications</h2>
+<h3>1. Introduction</h3>
+<p>Physical picture of <strong>Solid friction</strong> — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Dynamics fill pass.</p>
+<h3>2. Concepts and laws</h3>
+<h4>Solid friction: laws of solid friction and their verifications</h4>
+<p>Each law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).</li><li><h3>3. Derivation block</h3>
+<p>Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs &quot;derive / establish / show that&quot; are answered here, not elsewhere.</p>
+<p><strong>Table 1 — Law and result sheet</strong></p>
+<table><thead><tr><th>Law or result</th><th>Statement (words)</th><th>Equation + symbols</th><th>SI units</th><th>When it holds</th></tr></thead><tbody></tbody></table></li><li><h3>4. Formula and units table</h3>
+<p><strong>Table 2 — Cases and comparisons</strong></p>
+<table><thead><tr><th>Case</th><th>Condition</th><th>Governing equation</th><th>Worked angle</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 3 — Summary and marks map</strong></p>
+<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table>
+<p>Every formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).</li><li><h3>5. Diagrams and figures</h3>
+<ul>
+<li><strong>D1</strong> — Solid friction — free-body and field picture (authored SVG — English labels, viewBox 900×640)</li>
+<li><strong>D2</strong> — Solid friction — graph or second construction (authored SVG — axes, units and labels)</li>
+<li><strong>D3</strong> — Solid friction — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
+<li><strong>D4</strong> — Solid friction — apparatus or application figure (curated external — license recorded at fill)</li>
+</ul>
+<p>Slots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.</li><li><h3>6. Worked numericals</h3>
+<p>≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.</p>
+<h3>7. Key terms, signs and traps</h3>
+<p>Sign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).</li><li><h3>8. Exam Zone and self-check</h3>
+<p>NEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</p>
+<p>Key-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Specific Conditions</h2><ul><li>Normal Reaction Must Be Constant: Laws hold only when comparing surfaces under the same normal load. Changing N changes f proportionally but μ remains constant for given materials.</li><li>Dry Surfaces Assumed: Standard laws apply to dry (Coulomb) friction. Wet or lubricated surfaces follow fluid friction rules where viscosity matters.</li><li>Low Speeds: Kinetic friction is approximately constant at low speeds. At very high speeds, heating and surface deformation change μ.</li><li>Angle of Repose Equals Friction Angle: On an inclined plane, the angle at which sliding begins equals arctan(μ). This provides a direct experimental measure of μ without measuring forces.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Limiting static friction: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1.0496em;vertical-align:-0.3552em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.5198em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">ma</span><span class="mord mathnormal mtight">x</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3552em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">μ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></li><li>Kinetic friction: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0315em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal">μ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0315em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></li><li>Coefficient of friction: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mord">/</span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></li><li>Angle of repose: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6944em;"></span><span class="mop">tan</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">θ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span></span></span></span></li><li>Friction on incline (just sliding): <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">m</span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">sin</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">θ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mord mathnormal">m</span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">θ</span></span></span></span></li><li>Net force with friction: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2806em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">t</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.9694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight" style="margin-right:0.0197em;">ppl</span><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">d</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.1076em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0315em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Friction is independent of apparent contact area.</li><li>Limiting friction ∝ normal reaction (f_max = μN).</li><li>μ depends only on material pair and surface condition.</li><li>Static friction &gt; kinetic friction (μ_s &gt; μ_k).</li><li>Angle of repose θ satisfies tan θ = μ.</li><li>Friction always opposes relative or impending motion.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Statement 1: Limiting friction is directly proportional to the normal reaction between surfaces.</li><li>Statement 2: Friction is independent of the apparent area of contact for a given normal load.</li><li>Statement 3: Coefficient of friction depends solely on the nature and roughness of contacting surfaces.</li><li>Statement 4: Limiting static friction exceeds kinetic friction for the same pair of surfaces.</li><li>Statement 5: Angle of repose equals the angle whose tangent is the coefficient of static friction.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>μ is dimensionless — it is a ratio of two forces.</li><li>Real contact area is microscopic; friction arises from molecular adhesion and interlocking asperities.</li><li>Rolling friction coefficient is typically 100× smaller than sliding friction.</li><li>In NEB exams, verification experiments (horizontal pull and inclined plane) are frequently asked as long-answer questions.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>f ∝ N → plot f vs N → slope = μ.</li><li>tan(angle of repose) = μ — no force measurement needed.</li><li>Area doesn't matter — doubling area with same weight gives same friction.</li><li>μ_s &gt; μ_k — harder to start than to keep moving.</li><li>On incline: component of weight parallel = mg sin θ drives motion; friction = μ mg cos θ resists.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>NEB asks to describe verification of laws using either horizontal or inclined plane method with diagram.</li><li>Numerical problems typically give μ and ask for acceleration, stopping distance, or minimum force.</li><li>Distinguish clearly between static (self-adjusting ≤ μ_s N) and kinetic (constant = μ_k N) friction.</li><li>Always draw free-body diagram showing normal reaction, weight components, applied force, and friction direction.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Block (5 kg) on horizontal table, μ = 0.4. Limiting friction = 0.4 × 5 × 9.8 = 19.6 N. Applied force of 15 N produces no motion (static friction adjusts to 15 N). Applied force of 25 N causes acceleration: a = (25 − 0.4×5×9.8)/5 = (25−19.6)/5 = 1.08 m/s².</li><li>Inclined plane: Block slides at θ = 30°. μ = tan 30° = 0.577. Independent of block mass.</li><li>Car braking: μ = 0.7 on dry road. Maximum deceleration = μg = 0.7 × 9.8 ≈ 6.86 m/s². Stopping distance from 20 m/s: v²/(2μg) = 400/(2×6.86) ≈ 29 m.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Q1. State and explain the laws of solid friction.</li><li>Q2. Describe an experiment to verify that limiting friction is proportional to normal reaction.</li><li>Q3. Why is it easier to keep a body moving than to start it? Explain in terms of μ_s and μ_k.</li><li>Q4. A block of mass 10 kg rests on a horizontal surface with μ = 0.3. Find the minimum horizontal force to move it.</li><li>Q5. Derive the relation tan θ = μ for a body just about to slide on an inclined plane.</li><li>Q6. Explain why friction is independent of apparent area of contact.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Verify laws experimentally using spring balance and varying loads.</li><li>Calculate μ from angle of repose measurements.</li><li>Solve numericals involving friction on horizontal and inclined surfaces.</li><li>Compare static and kinetic friction scenarios.</li><li>Draw free-body diagrams for friction problems.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Amontons formulated the first two laws of friction in 1699; Coulomb added the distinction between static and kinetic friction in 1785.</li><li>Friction converts mechanical energy into heat — brakes get hot because of this.</li><li>Without friction, walking, driving, and holding objects would be impossible.</li><li>Gecko feet use van der Waals forces (not Coulomb friction) to climb smooth vertical surfaces.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Thinking friction depends on contact area: It does NOT for dry friction — only normal reaction matters.</li><li>Confusing μ_s and μ_k: μ_s applies to stationary/impending motion; μ_k applies during sliding. μ_s ≥ μ_k always.</li><li>Believing friction always opposes motion: Static friction can act in the direction of motion (e.g., car tire pushing forward on road).</li><li>Assuming μ &gt; 1 is impossible: μ can exceed 1 for very sticky surfaces (e.g., silicone rubber).</li><li>Forgetting friction is passive: It only exists in response to an applied force or tendency to move.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The force of limiting friction is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Proportional to area of contact</li><li>Independent of normal reaction</li><li>Proportional to normal reaction</li><li>Independent of surface nature</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Law 2 states f_max = μN — directly proportional to normal reaction.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Which is true about coefficients of friction?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>μ_k &gt; μ_s</li><li>μ_s = μ_k</li><li>μ_s &gt; μ_k</li><li>μ_s &lt; μ_k always</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Limiting static friction exceeds kinetic friction for the same surfaces.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Angle of repose θ is related to μ by:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>sin θ = μ</li><li>cos θ = μ</li><li>tan θ = μ</li><li>θ = μ</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>At the point of sliding on an incline, tan θ = μ.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Friction on a horizontal surface depends on:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Apparent area of contact</li><li>Speed of sliding</li><li>Normal reaction</li><li>Shape of the body</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Laws state friction ∝ N and is independent of area and speed (at low speeds).</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>To reduce friction between two surfaces, one should:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Increase normal force</li><li>Use rougher surfaces</li><li>Apply lubricant</li><li>Increase contact area</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Lubricants separate surfaces and replace solid friction with much lower fluid friction.</p></div></div></div></section>
+<section class="field"><h2>Source</h2><p>skeleton-v2</p></section>
+  <nav class="pager"><a href="05-solid-friction-laws-and-verifications.html" title="Solid Friction — Laws and Verification">‹ Solid Friction — Laws and Verification</a><a class="mid" href="../../../../../_subjects/class-11-physics.html">Physics</a><a href="05-solid-friction.html" title="Solid Friction">Solid Friction ›</a></nav>
+</div></body></html>

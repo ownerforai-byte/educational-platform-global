@@ -1,0 +1,208 @@
+<!doctype html><html><head><meta charset="utf-8"><title>IUCN Categories of Threatened Species</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Biology  /  Conservation Biology</div>
+    <h1 class="doc">IUCN Categories of Threatened Species</h1>
+    <div class="meta"><span>Class 11</span><span>Biology</span><span>Conservation Biology</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>conservation-biology</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>iucn-categories-of-threatened-species-meaning-of-extinct-endangered-vulnerable-rare-and-threaten</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>NEB Class 11 Biology</p></section>
+<section class="field"><h2>Notes</h2><ul><li>The IUCN Red List is the world's most comprehensive inventory of the global conservation status of biological species, maintained by the International Union for Conservation of Nature.</li><li>Extinct (EX): no reasonable doubt that the last individual has died; no surveys can find it.</li><li>Extinct in the Wild (EW): survives only in captivity or cultivation, with no natural population.</li><li>Critically Endangered (CR): extremely high risk of extinction in the wild; e.g., population &lt; 50 mature individuals or rapid decline.</li><li>Endangered (EN): very high risk of extinction in the wild; smaller populations or steeper declines than CR threshold.</li><li>Vulnerable (VU): high risk of extinction in the wild; larger populations than EN but still threatened.</li><li>Near Threatened (NT): close to qualifying for a threatened category.</li><li>Least Concern (LC): widespread and abundant; lowest risk of extinction.</li><li>Data Deficient (DD): insufficient information to assess extinction risk.</li><li>Not Evaluated (NE): not yet assessed against the criteria.</li><li><h2>IUCN categories of threatened species: meaning of extinct, endangered, vulnerable, rare and threatened species</h2>
+<h3>1. Introduction</h3>
+<p>Opening frame for <strong>IUCN categories of threatened species</strong> — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Conservation Biology fill pass.</p>
+<h3>2. Hierarchy body — every syllabus sub-point</h3>
+<h4>IUCN categories of threatened species: meaning of extinct</h4>
+<h4>endangered</h4>
+<h4>vulnerable</h4>
+<h4>rare and threatened species</h4>
+<p>Fill order per concept: definition → structure → process → significance (§3.2). Step-by-step numbered points, Pioneer style.</li><li><h3>3. Classified tables</h3>
+<p><strong>Table 1 — Classification at a glance</strong></p>
+<table><thead><tr><th>Group</th><th>Diagnostic features</th><th>Examples (≥ 2)</th><th>Economic importance</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 2 — Key ideas and worked angles</strong></p>
+<table><thead><tr><th>Idea</th><th>Statement</th><th>Where used</th><th>Worked example</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 3 — Summary and marks map</strong></p>
+<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB marks trend</th></tr></thead><tbody></tbody></table>
+<p>Tables carry examples in every classification and characteristics row, ≤ 12 rows, and each is referenced from the body text (§3.3).</li><li><h3>4. Diagrams and figures</h3>
+<ul>
+<li><strong>D1</strong> — Biodiversity-levels and protected-areas diagrams (authored SVG — English labels, viewBox 900×640)</li>
+<li><strong>D2</strong> — IUCN categories of threatened species — process or life-cycle flow (authored SVG — English labels)</li>
+<li><strong>D3</strong> — IUCN categories of threatened species — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
+<li><strong>D4</strong> — IUCN categories of threatened species — comparison or application figure (curated external — license recorded at fill)</li>
+</ul>
+<p>Figure slots are declared up front (§3.4): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y), every external figure license-recorded at fill.</li><li><h3>5. Worked examples and applications</h3>
+<p>≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass.</p>
+<h3>6. Key terms and statements</h3>
+<p>Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).</li><li><h3>7. Exam Zone</h3>
+<p>NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</li><li><h3>8. Summary and self-check</h3>
+<p>5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>IUCN Red List = global species conservation status inventory</li><li>EX: no living individuals remain</li><li>EW: survives only in captivity/cultivation</li><li>CR, EN, VU = threatened categories (in decreasing severity)</li><li>NT: close to threatened</li><li>LC: lowest risk</li><li>DD: insufficient data; NE: not evaluated</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ 'Threatened' is a single category. ✅ 'Threatened' collectively refers to CR, EN, and VU.</li><li>❌ Rare species are always endangered. ✅ Rarity alone doesn't imply endangerment; population trend matters.</li><li>❌ Extinct in the wild means extinct. ✅ EW species still survive in captivity.</li><li>❌ Data deficient means safe. ✅ DD means unknown risk, not low risk.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Tiger — Endangered (EN)</li><li>One-horned rhinoceros — Vulnerable (VU)</li><li>Red panda — Endangered (EN)</li><li>Snow leopard — Vulnerable (VU)</li><li>Dodo — Extinct (EX)</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>IUCN Red List founded in 1964</li><li>Over 150,000 species assessed</li><li>More than 42,000 species threatened with extinction</li><li>Nepal has 27 mammal species listed as threatened</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Define Extinct, Endangered, and Vulnerable per IUCN criteria.</li><li>What is the difference between EW and EX?</li><li>List the IUCN categories in order of decreasing extinction risk.</li><li>Why is 'Data Deficient' not the same as 'Least Concern'?</li><li>Name three threatened species of Nepal and their IUCN status.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>State the definition in one sentence, then give the example from the note.</li><li>Build the contrast the note uses.</li><li>Name one limit or cost.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>The IUCN Red List uses standardized categories (EX, EW, CR, EN, VU, NT, LC, DD, NE) to assess extinction risk. Understanding these categories is essential for prioritizing conservation action and policy.</p></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Extinct means no reasonable doubt that the last individual has died.</li><li>Endangered means a very high risk of extinction in the wild in the near future.</li><li>Vulnerable means a high risk, but not as immediate as endangered.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Extinct means no reasonable doubt that the last individual has died.</li><li>Endangered means a very high risk of extinction in the wild in the near future.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Lead with the definition, then the classification or the table.</li><li>Close with one cost, one control, or one exception.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Extinct means no reasonable doubt that the last individual has died.</li><li>Endangered means a very high risk of extinction in the wild in the near future.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Keep the course example attached to the right class.</li><li>A direction word (to sea, to fresh water, in-situ, ex-situ) is part of the mark.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Do not swap the two sides of the contrast.</li><li>The example organism has to be able to do the job you assign it.</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Extinct, endangered, vulnerable, rare an</li><li>Contrast</li><li>Example</li><li>Limit</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Write the contrast as two columns.</li><li>Add one Nepal or type-study example.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A species with no living individual left is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Vulnerable</li><li>Rare</li><li>Extinct</li><li>Threatened but common</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Endangered means</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A small stable population with no high risk</li><li>A very high risk of extinction in the wild</li><li>Already gone</li><li>Protected in a zoo only</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Threatened is best used as</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A synonym of extinct</li><li>The group that includes endangered and vulnerable</li><li>A rank safer than least concern</li><li>A habitat type</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Vulnerable compared with endangered is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A lower but still serious risk</li><li>The same word</li><li>Already extinct</li><li>Outside any risk</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A species with no living individual left is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Vulnerable</li><li>Rare</li><li>Extinct</li><li>Threatened but common</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Endangered means</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A small stable population with no high risk</li><li>A very high risk of extinction in the wild</li><li>Already gone</li><li>Protected in a zoo only</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Threatened is best used as</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A synonym of extinct</li><li>The group that includes endangered and vulnerable</li><li>A rank safer than least concern</li><li>A habitat type</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Vulnerable compared with endangered is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A lower but still serious risk</li><li>The same word</li><li>Already extinct</li><li>Outside any risk</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Place extinct, endangered, vulnerable and rare from the syllabus words, and say what threatened covers.</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Extinct: none left.</li><li>Endangered: very high risk in the wild.</li><li>Vulnerable: high risk, less immediate than endangered.</li><li>Rare: small population, not always in fast decline. Threatened covers the risk categories, including endangered and vulnerable.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>Extinct, then endangered, then vulnerable. Rare is a small population. Threatened is the risk group.</p></div></div></div></section>
+<section class="field"><h2>Visual Type</h2><p>iucn-ranks</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>Extinct, endangered, vulnerable, rare and threatened are not synonyms.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li>The IUCN Red List is the world's most comprehensive inventory of the global conservation status of biological species, maintained by the International Union for Conservation of Nature.</li><li>Extinct (EX): no reasonable doubt that the last individual has died; no surveys can find it.</li><li>Extinct in the Wild (EW): survives only in captivity or cultivation, with no natural population.</li><li>Critically Endangered (CR): extremely high risk of extinction in the wild; e.g., population &lt; 50 mature individuals or rapid decline.</li><li>Endangered (EN): very high risk of extinction in the wild; smaller populations or steeper declines than CR threshold.</li><li>Vulnerable (VU): high risk of extinction in the wild; larger populations than EN but still threatened.</li><li>Near Threatened (NT): close to qualifying for a threatened category.</li><li>Least Concern (LC): widespread and abundant; lowest risk of extinction.</li><li>Data Deficient (DD): insufficient information to assess extinction risk.</li><li>Not Evaluated (NE): not yet assessed against the criteria.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Bounds</h2><ul><li>Stay inside this topic's contrast.</li><li>Do not add a class 12 mechanism that the note does not use.</li></ul></section>
+  <nav class="pager"><a href="03-wildlife-importance-causes-of-extinction-and-conservation-strategies.html" title="Wildlife: Importance, Causes of Extinction and Conservation Strategies">‹ Wildlife: Importance, Causes of Extinction an…</a><a class="mid" href="../../../../../_subjects/class-11-biology.html">Biology</a><a href="05-endangered-species-in-nepal.html" title="Endangered Species in Nepal">Endangered Species in Nepal ›</a></nav>
+</div></body></html>

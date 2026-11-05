@@ -1,0 +1,156 @@
+<!doctype html><html><head><meta charset="utf-8"><title>[</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Prepositions</div>
+    <h1 class="doc">[</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Prepositions</span></div>
+  </header>
+  <p>{   &quot;title&quot;: &quot;Prepositions&quot;,   &quot;unitSlug&quot;: &quot;grammar&quot;,   &quot;topicSlug&quot;: &quot;prepositions&quot;,   &quot;topicTitle&quot;: &quot;Prepositions&quot;,   &quot;relevance&quot;: 85,   &quot;notes&quot;: [     &quot;&lt;h2&gt;What Is a Preposition?&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;A &lt;b&gt;preposition&lt;/b&gt; is a word (or group of words) that shows the relationship between a noun (or pronoun) and another word in the sentence. Prepositions typically indicate &lt;b&gt;time&lt;/b&gt; (at, on, in, before, after), &lt;b&gt;place&lt;/b&gt; (at, in, on, under, above, between), and &lt;b&gt;direction&lt;/b&gt; (to, into, towards, through, across). Prepositions are among the most frequently tested elements in NEB English exams, appearing in gap-filling, error correction, and transformation exercises.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Prepositions of Time&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;At&lt;/b&gt; is used for precise times: at 5 o'clock, at noon, at night, at midnight, at sunrise. &lt;b&gt;On&lt;/b&gt; is used for days and dates: on Monday, on 15th August, on my birthday, on Christmas Day. &lt;b&gt;In&lt;/b&gt; is used for months, years, seasons, centuries, and longer periods: in January, in 2024, in summer, in the 21st century. Exceptions: 'at night' (not 'in night'), 'at weekends' (British English), 'on weekends' (American English). 'During' is used with a period: during the war, during the movie. 'For' indicates duration: for two hours, for three days. 'Since' indicates a starting point: since Monday, since 1990.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Prepositions of Place&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;At&lt;/b&gt; is used for specific points or locations: at the door, at the station, at home, at the bottom. &lt;b&gt;In&lt;/b&gt; is used for enclosed spaces, larger areas, and containers: in the room, in Kathmandu, in the box, in the world. &lt;b&gt;On&lt;/b&gt; is used for surfaces and contact: on the table, on the wall, on the floor, on the page. &lt;b&gt;Under&lt;/b&gt; indicates something below and covered: under the table, under water. &lt;b&gt;Below&lt;/b&gt; indicates lower position but not necessarily covered: temperature below zero. &lt;b&gt;Above&lt;/b&gt; indicates higher position: temperature above freezing. &lt;b&gt;Over&lt;/b&gt; indicates movement across or covering: fly over the city, put a blanket over the baby.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Prepositions of Direction and Movement&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;To&lt;/b&gt; indicates movement toward a destination: go to school, send to Kathmandu. &lt;b&gt;Into&lt;/b&gt; indicates movement from outside to inside: jump into the pool, pour water into the glass. &lt;b&gt;Towards&lt;/b&gt; indicates direction without necessarily reaching the destination: walk towards the market. &lt;b&gt;Through&lt;/b&gt; indicates movement from one end to the other inside something: walk through the tunnel, drive through the forest. &lt;b&gt;Across&lt;/b&gt; indicates movement from one side to the other on a surface: swim across the river, walk across the street. &lt;b&gt;Along&lt;/b&gt; indicates movement following a line: walk along the riverbank, drive along the highway.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Common Prepositional Phrases (Fixed Collocations)&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;Many prepositions are used in fixed expressions that must be memorised. Common examples tested in NEB exams: &lt;b&gt;afraid of&lt;/b&gt;, &lt;b&gt;angry with&lt;/b&gt; (person) / &lt;b&gt;angry about&lt;/b&gt; (thing), &lt;b&gt;ask for&lt;/b&gt;, &lt;b&gt;believe in&lt;/b&gt;, &lt;b&gt;depend on&lt;/b&gt;, &lt;b&gt;discover&lt;/b&gt; (no preposition — direct object), &lt;b&gt;differ from&lt;/b&gt;, &lt;b&gt;excited about&lt;/b&gt;, &lt;b&gt;good at&lt;/b&gt; (skill), &lt;b&gt;good for&lt;/b&gt; (beneficial), &lt;b&gt;interested in&lt;/b&gt;, &lt;b&gt;join in&lt;/b&gt;, &lt;b&gt;laugh at&lt;/b&gt;, &lt;b&gt;listen to&lt;/b&gt;, &lt;b&gt;look at&lt;/b&gt;, &lt;b&gt;look for&lt;/b&gt; (search) vs. &lt;b&gt;look after&lt;/b&gt; (take care of), &lt;b&gt;married to&lt;/b&gt; (not 'with'), &lt;b&gt;pay for&lt;/b&gt;, &lt;b&gt;popular with&lt;/b&gt;, &lt;b&gt;suffer from&lt;/b&gt;, &lt;b&gt;think about&lt;/b&gt; / &lt;b&gt;think of&lt;/b&gt; / &lt;b&gt;think about&lt;/b&gt; (different nuances), &lt;b&gt;worry about&lt;/b&gt;, &lt;b&gt;wait for&lt;/b&gt;, &lt;b&gt;write to&lt;/b&gt; (a person) / &lt;b&gt;write in&lt;/b&gt; (a language).&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Prepositions After Adjectives&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;Certain adjectives are consistently followed by specific prepositions. &lt;b&gt;Accustomed to&lt;/b&gt;, &lt;b&gt;addicted to&lt;/b&gt;, &lt;b&gt;aware of&lt;/b&gt;, &lt;b&gt;capable of&lt;/b&gt;, &lt;b&gt;fond of&lt;/b&gt;, &lt;b&gt;guilty of&lt;/b&gt;, &lt;b&gt;ignorant of&lt;/b&gt;, &lt;b&gt;proud of&lt;/b&gt;, &lt;b&gt;ready for&lt;/b&gt;, &lt;b&gt;responsible for&lt;/b&gt;, &lt;b&gt;short of&lt;/b&gt;, &lt;b&gt;suspicious of&lt;/b&gt;, &lt;b&gt;similar to&lt;/b&gt;, &lt;b&gt;sorry for&lt;/b&gt;, &lt;b&gt;thankful for&lt;/b&gt;, &lt;b&gt;victorious over&lt;/b&gt;. These collocations are tested extensively in NEB gap-filling exercises. Memorising these pairings is essential for accuracy. Note that 'different from' (standard) vs. 'different to' (British informal) vs. 'different than' (American informal).&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Prepositions After Nouns&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;Certain nouns are consistently followed by specific prepositions. &lt;b&gt;Ability to&lt;/b&gt; (do something), &lt;b&gt;account of&lt;/b&gt; (because of), &lt;b&gt;admiration for&lt;/b&gt;, &lt;b&gt;affection for&lt;/b&gt;, &lt;b&gt;alternative to&lt;/b&gt;, &lt;b&gt;answer to&lt;/b&gt;, &lt;b&gt;attack on&lt;/b&gt;, &lt;b&gt;advantage of&lt;/b&gt;, &lt;b&gt;agreement with&lt;/b&gt; (person) / &lt;b&gt;agreement on&lt;/b&gt; (topic), &lt;b&gt;anger at&lt;/b&gt; (situation) / &lt;b&gt;anger with&lt;/b&gt; (person), &lt;b&gt;attempt to&lt;/b&gt; (do), &lt;b&gt;cause of&lt;/b&gt;, &lt;b&gt;change of&lt;/b&gt;, &lt;b&gt;choice between&lt;/b&gt;, &lt;b&gt;cause for&lt;/b&gt;, &lt;b&gt;confusion about&lt;/b&gt;, &lt;b&gt;death of&lt;/b&gt;, &lt;b&gt;decision to&lt;/b&gt;, &lt;b&gt;demand for&lt;/b&gt;, &lt;b&gt;disappointment with&lt;/b&gt; (person) / &lt;b&gt;disappointment at&lt;/b&gt; (situation), &lt;b&gt;experience in&lt;/b&gt;, &lt;b&gt;failure to&lt;/b&gt;, &lt;b&gt;interest in&lt;/b&gt;, &lt;b&gt;love for&lt;/b&gt;, &lt;b&gt;means of&lt;/b&gt;, &lt;b&gt;method of&lt;/b&gt;, &lt;b&gt;need for&lt;/b&gt;, &lt;b&gt;opinion of&lt;/b&gt;, &lt;b&gt;reason for&lt;/b&gt;, &lt;b&gt;replacement for&lt;/b&gt;, &lt;b&gt;result of&lt;/b&gt;, &lt;b&gt;respect for&lt;/b&gt;, &lt;b&gt;response to&lt;/b&gt;, &lt;b&gt;source of&lt;/b&gt;, &lt;b&gt;way to&lt;/b&gt; (do something).&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Prepositions After Verbs&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;Many verbs require specific prepositions. &lt;b&gt;Apologise for&lt;/b&gt;, &lt;b&gt;approve of&lt;/b&gt;, &lt;b&gt;belong to&lt;/b&gt;, &lt;b&gt;complain about&lt;/b&gt;, &lt;b&gt;consist of&lt;/b&gt;, &lt;b&gt;deceive&lt;/b&gt; (no preposition), &lt;b&gt;depend on&lt;/b&gt;, &lt;b&gt;dream of&lt;/b&gt;, &lt;b&gt;engage in&lt;/b&gt;, &lt;b&gt;ensure&lt;/b&gt; (no preposition), &lt;b&gt;insist on&lt;/b&gt;, &lt;b&gt;interfere with&lt;/b&gt;, &lt;b&gt;lead to&lt;/b&gt;, &lt;b&gt;listen to&lt;/b&gt;, &lt;b&gt;look after&lt;/b&gt;, &lt;b&gt;look at&lt;/b&gt;, &lt;b&gt;look for&lt;/b&gt;, &lt;b&gt;look into&lt;/b&gt;, &lt;b&gt;look upon&lt;/b&gt; (consider), &lt;b&gt;mention&lt;/b&gt; (no preposition), &lt;b&gt;observe&lt;/b&gt; (no preposition), &lt;b&gt;participate in&lt;/b&gt;, &lt;b&gt;refer to&lt;/b&gt;, &lt;b&gt;rely on&lt;/b&gt;, &lt;b&gt;result in&lt;/b&gt;, &lt;b&gt;speak to&lt;/b&gt; / &lt;b&gt;speak with&lt;/b&gt;, &lt;b&gt;talk to&lt;/b&gt; / &lt;b&gt;talk about&lt;/b&gt; / &lt;b&gt;talk with&lt;/b&gt;, &lt;b&gt;think about&lt;/b&gt; (consider) / &lt;b&gt;think of&lt;/b&gt; (have an opinion) / &lt;b&gt;think about&lt;/b&gt; (have in mind). Verbs without prepositions: &lt;b&gt;advise&lt;/b&gt;, &lt;b&gt;believe&lt;/b&gt;, &lt;b&gt;catch&lt;/b&gt;, &lt;b&gt;enter&lt;/b&gt;, &lt;b&gt;find&lt;/b&gt;, &lt;b&gt;help&lt;/b&gt;, &lt;b&gt;know&lt;/b&gt;, &lt;b&gt;make&lt;/b&gt;, &lt;b&gt;prefer&lt;/b&gt;, &lt;b&gt;sell&lt;/b&gt;, &lt;b&gt;win&lt;/b&gt;.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Prepositions vs. Particles in Phrasal Verbs&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;Some words function as both prepositions and particles (part of phrasal verbs). Distinguishing them is important. A &lt;b&gt;particle&lt;/b&gt; in a phrasal verb often changes the meaning entirely and cannot always be separated from the verb: 'give up' (stop), 'look after' (take care of). A &lt;b&gt;preposition&lt;/b&gt; always has an object: 'look at the picture' (object = 'the picture'). Key test: if you can insert a noun between the verb and the word, it's likely a particle (phrasal verb); if the word must be followed by its object, it's a preposition. 'Give up the habit' (particle) vs. 'Look at the board' (preposition).&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Common Preposition Errors by NEB Students&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;Frequent errors include: (1) 'Different than' instead of 'different from' (formal standard). (2) 'Married with' instead of 'married to'. (3) 'Discuss about' — 'discuss' takes a direct object, no preposition needed ('discuss the problem'). (4) 'Enter into the room' — 'enter' is transitive, no preposition needed ('enter the room'). (5) 'Meet with' for casual encounters — 'meet' is sufficient ('I met him yesterday'). (6) 'Belong to' confused with 'belong with'. (7) 'Supplied to' vs. 'supplied with'. These errors are commonly tested in NEB error correction and gap-filling exercises.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Prepositions in Idioms and Fixed Expressions&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;Many English idioms contain prepositions that must be learned as fixed expressions. &lt;b&gt;By heart&lt;/b&gt; (memorise), &lt;b&gt;in time&lt;/b&gt; (punctually) vs. &lt;b&gt;on time&lt;/b&gt; (at the scheduled time), &lt;b&gt;at risk&lt;/b&gt;, &lt;b&gt;on purpose&lt;/b&gt; (intentionally), &lt;b&gt;by chance&lt;/b&gt; (accidentally), &lt;b&gt;in need&lt;/b&gt;, &lt;b&gt;on sale&lt;/b&gt;, &lt;b&gt;at least&lt;/b&gt;, &lt;b&gt;at most&lt;/b&gt;, &lt;b&gt;in person&lt;/b&gt;, &lt;b&gt;on foot&lt;/b&gt; (walking), &lt;b&gt;by bus/car&lt;/b&gt; (transportation), &lt;b&gt;in charge&lt;/b&gt;, &lt;b&gt;on duty&lt;/b&gt;, &lt;b&gt;at home&lt;/b&gt;, &lt;b&gt;in love&lt;/b&gt;, &lt;b&gt;on fire&lt;/b&gt;, &lt;b&gt;at first&lt;/b&gt;, &lt;b&gt;in fear&lt;/b&gt;. These fixed expressions are tested in both gap-filling and comprehension passages.&lt;/p&gt; \n  ], \n  \&quot;confusion&quot;,&quot;:&quot;, [     &quot;In vs. On vs. At for time: 'In' is used for longer periods (in the morning, in January, in 2024). 'On' is used for specific days and dates (on Monday, on January 15th). 'At' is used for precise times (at 5 PM, at noon, at midnight). The key distinction: general → specific → precise.&quot;,     &quot;In vs. Into: 'In' indicates position inside something (The cat is in the box). 'Into' indicates movement from outside to inside (The cat jumped into the box). 'In' answers 'where?'; 'into' answers 'where to?'. 'Pour water in the glass' (position) vs. 'Pour water into the glass' (movement). The distinction is important in NEB gap-filling exercises.&quot;,     &quot;Between vs. Among: 'Between' is used for two distinct items or people (choose between tea and coffee). 'Among' is used for three or more items in a group (she distributed the books among the students). However, 'between' can also be used for more than two when individual items are considered separately (divide the cake between the three children).&quot;,     &quot;To vs. Into: 'To' indicates direction towards a destination (She went to the store). 'Into' indicates movement from outside to inside (She went into the store). 'To' focuses on the endpoint; 'into' focuses on the change of location/state. 'He threw the ball to me' (direction) vs. 'He threw the ball into the box' (into = inside).&quot;,     &quot;Under vs. Below: 'Under' indicates direct contact or coverage (The cat is under the table). 'Below' indicates a lower position but not necessarily in contact or covered (The temperature is below zero). 'Under' is used for position directly beneath; 'below' for a lower level or rank (below average, below the surface).&quot;,     &quot;Through vs. Across: 'Through' indicates movement from one end to the other inside something (walk through the tunnel, swim through the water). 'Across' indicates movement from one side to the other on a surface (walk across the street, swim across the river). 'Through' implies being surrounded; 'across' implies crossing a surface.&quot;   ],   &quot;practice&quot;,&quot;:&quot;, [     &quot;Fill in the correct preposition: She is good ___ mathematics. [Answer: at]&quot;,     &quot;Fill in the correct preposition: He is angry ___ his brother. [Answer: with (person) — 'about' if referring to a situation]&quot;,     &quot;Fill in the correct preposition: The book is ___ the table. [Answer: on]&quot;,     &quot;Fill in the correct preposition: We travelled ___ bus. [Answer: by]&quot;,     &quot;Fill in the correct preposition: She has been waiting ___ two hours. [Answer: for]&quot;,     &quot;Fill in the correct preposition: He is afraid ___ snakes. [Answer: of]&quot;,     &quot;Fill in the correct preposition: The cat jumped ___ the box. [Answer: into]&quot;,     &quot;Fill in the correct preposition: She distributed the chocolates ___ the children. [Answer: among]&quot;,     &quot;Fill in the correct preposition: He is married ___ a doctor. [Answer: to]&quot;,     &quot;Fill in the correct preposition: The meeting is scheduled ___ Monday. [Answer: on]&quot;   ],   &quot;universalFacts&quot;,&quot;:&quot;, [     &quot;Prepositions are among the most difficult elements of English for learners because many are arbitrary and must be memorised as collocations. Unlike nouns and verbs, prepositions have limited semantic transparency — there is no logical reason why we say 'angry with' a person but 'angry about' a situation.&quot;,     &quot;In Nepali, postpositions (not prepositions) serve a similar grammatical function, placed after the noun rather than before it. For example, 'कता' (location), 'सम्म' (until), 'बाट' (from) are postpositions. This structural difference contributes to difficulty in mastering English prepositions.&quot;,     &quot;Some prepositions in English have no direct equivalent in Nepali. For instance, the distinction between 'in', 'on', and 'at' for time has no equivalent in Nepali grammar, where a single time marker often suffices.&quot;,     &quot;In NEB English examinations, preposition gap-filling typically accounts for 3-5 marks. Mastery of fixed prepositional collocations (adjective + preposition, verb + preposition, noun + preposition) is the most effective preparation strategy.&quot;,     &quot;The phrasal verb phenomenon (verb + particle) is unique to Germanic languages like English. In Nepali, there are no equivalent particle constructions, making phrasal verbs particularly challenging for Nepali-speaking students.&quot;   ],   &quot;animation3D&quot;,&quot;:&quot;, &quot;grammar&quot;,   &quot;motionGraphics&quot;,&quot;:&quot;, &quot;grammar&quot;] }, &quot;\n&quot; ]</p>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

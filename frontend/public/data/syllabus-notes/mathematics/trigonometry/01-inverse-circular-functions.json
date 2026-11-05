@@ -1,0 +1,51 @@
+{
+  "title": "Inverse Circular Functions",
+  "unitSlug": "trigonometry",
+  "topicSlug": "inverse-circular-functions",
+  "topicTitle": "Inverse circular functions",
+  "relevance": 100,
+  "notes": [
+    "### 1. Why a principal branch is needed",
+    "Sine, cosine, and tangent are not one-to-one on all real numbers, so each inverse is defined only on a chosen branch. sin⁻¹x is the angle in [−π/2, π/2] whose sine is x, for x in [−1, 1].",
+    "### 2. Principal ranges",
+    "cos⁻¹x lies in [0, π]. tan⁻¹x lies in (−π/2, π/2). The principal value is the unique answer inside that range, so a positive ratio does not by itself decide the sign.",
+    "### 3. Complementary pairs",
+    "sin⁻¹x + cos⁻¹x = π/2 for x in [−1, 1]. tan⁻¹x + cot⁻¹x = π/2 for real x. Both angles in each pair sit inside their principal ranges and add to a right angle.",
+    "### 4. Addition of tan⁻¹",
+    "tan⁻¹x + tan⁻¹y = tan⁻¹((x+y)/(1−xy)) when xy < 1. If x > 0, y > 0, and xy > 1, the sum of the two principal values is greater than π/2, so add π to the tan⁻¹ of (x+y)/(1−xy).",
+    "### 5. A check with numbers",
+    "tan⁻¹(1) = π/4 and tan⁻¹(2) is positive, so their sum is greater than π/2. The formula tan⁻¹((1+2)/(1−2)) = tan⁻¹(−3) is the wrong branch, because the product xy = 2 is greater than 1.",
+    "# Inverse circular functions\n\n## 1. Introduction and motivation\nWhat the tool **Inverse circular functions** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Trigonometry fill pass.\n\n## 2. Definitions and theorems\n### Inverse circular functions\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
+    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
+    "## 4. Methods and standard forms\n**Table 2 — Identities and triangles**\n\n| Identity or rule | Condition | Worked example | Trap |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
+    "## 5. Figures and graphs\n- **F1** — Inverse circular functions — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Inverse circular functions — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Inverse circular functions — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
+    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
+    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+  ],
+  "confusion": [],
+  "practice": [],
+  "universalFacts": [],
+  "animation3D": "trigonometry",
+  "motionGraphics": "trigonometry",
+  "examples": [],
+  "practiceQuestions": [],
+  "formulas": [
+    "$\\sin^{-1}x + \\cos^{-1}x = \\frac{\\pi}{2}$ and $\\tan^{-1}x + \\cot^{-1}x = \\frac{\\pi}{2}$ for $x$ in the domain.",
+    "$\\tan^{-1}x + \\tan^{-1}y = \\tan^{-1}\\frac{x+y}{1-xy}$ when $xy < 1$.",
+    "Principal value ranges: $\\sin^{-1} \\in \\left[-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right]$, $\\cos^{-1} \\in [0, \\pi]$, $\\tan^{-1} \\in \\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right)$."
+  ],
+  "keyPoints": [
+    "The principal-value range of each inverse decides the sign of the answer — substituting a positive ratio into cos⁻¹ gives an angle in [0, π], never a negative one."
+  ],
+  "summary": "Inverse Circular Functions covers essential principles and applications.",
+  "specialNotes": [],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
+  "examNotes": [],
+  "mcs": [],
+  "importantConcepts": [],
+  "importantTasks": [],
+  "duplicateType": 1,
+  "source": "skeleton-v2"
+}

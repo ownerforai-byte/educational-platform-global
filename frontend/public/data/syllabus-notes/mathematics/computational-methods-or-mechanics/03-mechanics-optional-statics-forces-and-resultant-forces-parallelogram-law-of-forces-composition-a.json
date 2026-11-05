@@ -1,0 +1,73 @@
+{
+  "title": "Mechanics (optional): Statics — forces and resultant forc…",
+  "unitSlug": "computational-methods-or-mechanics",
+  "topicSlug": "mechanics-optional-statics-forces-and-resultant-forces-parallelogram-law-of-forces-composition-a",
+  "topicTitle": "Mechanics (optional): Statics — forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "# Mechanics (optional): Statics — forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point\n\n## 1. Introduction and motivation\nWhat the tool **Mechanics (optional)** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Computational Methods or Mechanics fill pass.\n\n## 2. Definitions and theorems\n### Mechanics (optional): Statics — forces and resultant forces\n### parallelogram law of forces\n### composition and resolution of forces\n### resultant of coplanar forces acting on a point\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
+    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
+    "## 4. Methods and standard forms\n**Table 2 — Theorem and method sheet**\n\n| Result or method | Hypotheses | Worked example | If the condition is dropped |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
+    "## 5. Figures and graphs\n- **F1** — Mechanics (optional) — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Mechanics (optional) — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Mechanics (optional) — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
+    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
+    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+  ],
+  "confusion": [
+    "❌ answer with no steps → ✅ show each step and box the result."
+  ],
+  "bounds": [],
+  "practice": [
+    "one worked example for \"Mechanics (optional): Statics — forces and resultant forc…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Mechanics (optional): Statics — forces and resultant forc…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Mechanics (optional): Statics — forces and resultant forc…\" with one example.",
+    "compare \"Mechanics\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Mechanics (optional): Statics — forces and resultant forc…\" and verify the answer is plausible."
+  ],
+  "formulas": [],
+  "numericals": [
+    "Set up the defining equation for \"Mechanics (optional): Statics — forces and resultant forc…\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "• Mechanics",
+    "• Optional",
+    "• : Statics — forces",
+    "• Resultant forces",
+    "• Parallelogram law of forces",
+    "• Composition"
+  ],
+  "summary": "Mechanics (optional): Statics — forces and resultant forc… (Computational Methods or Mechanics, Mathematics, class-11-notes) covers Mechanics, optional, : Statics — forces. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Mechanics (optional): Statics — forces and resultant forc…\"?",
+      "options": [
+        "Mechanics",
+        "Optional",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Mechanics",
+      "explanation": "Mechanics is listed among the official sub-ideas of Mechanics (optional): Statics — forces and resultant forc…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Mechanics (optional): Statics — forces and resultant forc…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ]
+}

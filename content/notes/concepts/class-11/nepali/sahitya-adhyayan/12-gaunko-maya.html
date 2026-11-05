@@ -1,0 +1,171 @@
+<!doctype html><html><head><meta charset="utf-8"><title>पाठ २ — गाउँको माया (सामाजिक कथा)</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Nepali  /  Sahitya Adhyayan</div>
+    <h1 class="doc">पाठ २ — गाउँको माया (सामाजिक कथा)</h1>
+    <div class="meta"><span>Class 11</span><span>Nepali</span><span>Sahitya Adhyayan</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>sahitya-adhyayan</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>पाठ-२-गाउँको-माया-सामाजिक-कथा</p></section>
+<section class="field"><h2>Relevance</h2><p><code>98</code></p></section>
+<section class="field"><h2>Source</h2><p>authored</p></section>
+<section class="field"><h2>Summary</h2><p>गाउँको माया सामाजिक कथा हो। पढेर सहर पुगेको मानिस गाउँ फर्कंदा मायालाई सुन्दर सम्झना मात्र होइन, साथीको गरिबी, ज्याला र ठालुको थिचोमिचो देख्छ। प्रो उत्तरले मायालाई जिम्मेवारीमा बदल्छ।</p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>विधा।</strong> यो सामाजिक कथा हो। सामाजिक कथामा नायकको प्रेमभन्दा समाजको चोट ठूलो हुन्छ। गाउँ, खेत, ज्याला, साथी र हैकम यसका सामान हुन्। कथा पढ्दा सोध्नुहोस् — यो दुख एउटा मानिसको मात्र हो कि धेरैको। धेरैको हो भने कथा सामाजिक हो।</li><li><strong>कथाको हड्डी।</strong> पढाइले सहर पुर्‍याएको मानिस लामो समयपछि गाउँ फर्कन्छ। बाटोमा बाल्यकालको साथी भेटिन्छ। साथी अरूको खेतमा काम गरेर बाँचेको हुन्छ। ज्याला बढाउने आवाज उठाउँदा ठालुहरूले गरिबलाई फुटाउँछन्। साथी लडिरहेको हुन्छ र गाउँको यथार्थ नाटकमा लेखिदेऊ भन्छ। घर पुग्नुअघि नै एउटा जिम्मेवारी काँधमा बसेको हुन्छ। घटनाको वाक्य पाठ्यपुस्तकको अनुच्छेदबाट मिलाउनुहोस्। हड्डी यो हो।</li><li><strong>शीर्षक।</strong> गाउँको माया भनेको खोला र फूलको रहर मात्र होइन। माया भनेको फर्किने कारण हुनु हो। जो गयो, उसले देखेन भने माया सम्झना मात्र रहन्छ। जो देख्छ, उसले साथीको काम लेख्नुपर्छ, बोल्नुपर्छ, वा बाँड्नुपर्छ। शीर्षक मीठो छ, कथा मीठो छैन। त्यो फरक नै प्रश्नको उत्तर हो।</li><li><strong>पात्रको काम।</strong> फर्कने पात्रले आँखाले हेर्छ। साथीले भोगले देखाउँछ। ठालु प्रत्यक्ष लामो संवादमा नआए पनि कथाको दबाब हो। प्रो उत्तरले पात्रको नाम पाठ्यपुस्तकबाट लेख्छ र हरेक पात्रको एक काम भन्छ। नामबिनाको उत्तर धमिलो हुन्छ।</li><li><strong>तीन पाटीको अर्थ।</strong> गाउँ फुटेको दृश्य कथाको बीच हो। एउटै दुख भएका मानिस छुट्टाछुट्टै हुँदा ठालुलाई सजिलो हुन्छ। एकताको कुरा भाषण होइन, ज्यालाको घटनाबाट देखाउनुहोस्। सामाजिक कथाको प्रमाण घटना हो।</li><li><strong>दृश्य लेख्ने बानी।</strong> कथामा खोला, कुवा, बाटो, झन्डा मेला जस्ता दृश्य हुन्छन्। दृश्य सजावट होइन। खोला सुन्दर पनि छ र गाउँको दुख बोक्ने बाटो पनि हो। उत्तरमा एउटा दृश्य उठाएर भन्नुहोस् — यो दृश्यले माया र यथार्थ सँगै ल्यायो।</li><li><strong>भाषा।</strong> संवाद ग्रामीण छ। ठालु, वनी, हली जस्ता शब्द समाजशास्त्र हुन्। शब्दार्थ लेख्दा पाठको वाक्य सम्झनुहोस्। मूल र व्युत्पन्न शब्द छुट्याउने व्याकरण पनि यसै पाठमा जोडिन्छ। रोपाइँ, एकता, बाल्यकाल व्युत्पन्न हुन्। काम, धान, फूल मूलतिर पर्छन्।</li><li><strong>प्रो उत्तर।</strong> सुरुमा विधा र विषय। अनि आदि, मध्य, अन्त्य तीन अनुच्छेद। अनि शीर्षकको अर्थ। अन्त्यमा एउटा वाक्य — पढेको मानिसको माया त्यतिबेला साँच्चै हुन्छ, जब उसले गाउँको आवाज बाहिर लैजान्छ।</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>विधा सामाजिक कथा हो। व्यक्तिभन्दा समाजको चोट ठूलो छ।</li><li>माया सम्झना मात्र होइन, फर्केर देख्ने जिम्मेवारी हो।</li><li>साथीको ज्याला र ठालुको फुटाउने चलन कथाको द्वन्द्व हो।</li><li>आदि, मध्य र अन्त्य छुट्याएर लेख्नुहोस्।</li><li>दृश्यले सौन्दर्य र दुख दुवै बोक्छ।</li><li>पढेको पात्रको काम भोगलाई भाषामा बदल्नु हो।</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>सामाजिक यथार्थ भनेको गरिबीलाई संयोग होइन, सम्बन्धको परिणाम देखाउनु हो।</li><li>शीर्षकको मिठास र कथाको तीतोपन बीचको फरक नै व्याख्या हो।</li><li>एकता भाषण होइन। फुटेको ज्यालाको घटनाले एकताको अर्थ खुल्छ।</li><li>पाठक जसले सहर पढ्यो, ऊ कथाको फर्कने पात्रसँग मिल्दोजुल्दो छ।</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>आदि — लामो समयपछि गाउँ फर्कने यात्रा र बाल्यकालको सम्झना।</li><li>मध्य — साथीसँगको भेट, ज्यालाको कुरा, गाउँ फुटेको समाचार।</li><li>अन्त्य — गाउँकै कथा लेखिदेऊ भन्ने जिम्मा र घरतिर लाग्दाको भारी।</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ गाउँको माया प्रकृति वर्णनको निबन्ध हो — ✅ यो कथा हो। प्रकृति छ, तर जोर गरिबी र साथीमा छ</li><li>❌ ठालुलाई नदेखिएकाले द्वन्द्व छैन — ✅ ठालुको असर साथीको कथामा छ। नदेखिएको पात्र पनि दबाब हुन सक्छ</li><li>❌ फर्कने पात्र नायक भएकाले साथी सहायक मात्र हो — ✅ साथीले यथार्थ ल्याउँछ। ऊ कथाको साक्षी हो</li><li>❌ सुन्दर खोलाको वर्णन नै मूल भाव हो — ✅ खोला सुन्दर छ, तर कथाले सुन्दरतामुनि गरिबी देखाउँछ</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>उत्तरको पहिलो लाइनमा सामाजिक कथा लेख्नुहोस्। विधा बिर्सिए भाव पनि हल्लिन्छ।</li><li>घटनाक्रम सोधिए आदि, मध्य, अन्त्य तीन थुप्रोमा लेख्नुहोस्। नौ वटा बुँदा कण्ठ नभए पनि तीन थुप्रोले अंक आउँछ।</li><li>शीर्षक व्याख्यामा माया शब्दको दुई अर्थ लेख्नुहोस् — सम्झना र जिम्मेवारी।</li><li>संवाद उद्धृत गर्दा छोटो अंश मात्र लिनुहोस् र त्यसपछि आफ्नै व्याख्या लेख्नुहोस्।</li><li>व्याकरण खण्डमा मूल र व्युत्पन्न छुट्याउँदा प्रत्यय देखाउनुहोस्। रोपाइँ बराबर रोप् जोड आइँ।</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>सामाजिक कथाको द्वन्द्व वर्ग, जात, ज्याला वा हैकमबाट आउँछ।</li><li>कथाको आदिले अवस्था देखाउँछ, मध्यले द्वन्द्व, अन्त्यले परिवर्तन वा जिम्मा।</li><li>शीर्षक सधैं मीठो अर्थमा मात्र खुल्दैन।</li><li>दृश्यले भाव लुकाउँछ। दृश्यको काम लेख्न सके व्याख्या गहिरो हुन्छ।</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>नेपालको गाउँ एकनासको छैन। पहाडको बारी, तराईको खेत र हिमालको गोठमा गरिबीको रूप फरक छ। कथा पहाडे गाउँको स्वर बोल्छ। उत्तरमा तराई र हिमाललाई नदेखेको जस्तो गरेर नलेख्नुहोस्।</li><li>जाति नलेखिकन पनि ठालु र हली को सम्बन्ध शक्ति हो। शक्तिलाई थरको गालीमा नबदल्नुहोस्। घटना लेख्नुहोस्।</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>पात्रको नाम र घटनाको क्रम पाठ्यपुस्तकसँग मिलाउनुहोस्। हड्डी ठीक भए पनि नाम उल्टो भए अंक काटिन्छ।</li><li>कथालाई राजनीतिक नारामा नसकाउनुहोस्। नारा होइन, पात्रको जिम्मा लेख्नुहोस्।</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>कथाको आदि, मध्य र अन्त्य आफ्नै शब्दमा लेख्नुहोस्।</li><li>गाउँको माया शीर्षक कति मीठो छ र कति तीतो, व्याख्या गर्नुहोस्।</li><li>पढेको मानिस गाउँ फर्किंदा के जिम्मेवारी लिन्छ भन्ने कुरा कथाबाट देखाउनुहोस्।</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>गाउँको माया कुन विधा हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>कविता</li><li>सामाजिक कथा</li><li>जीवनी</li><li>वक्तृता</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>पाठ सामाजिक कथा हो। समाजको गरिबी र हैकम यसको विषय हुन्।</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>शीर्षकको गहिरो अर्थ कुन हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>फूलको वर्णन</li><li>माया भनेको सम्झनासँगै जिम्मेवारी हो</li><li>सहर घृणा मात्र</li><li>परीक्षाको सम्झना</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>फर्कने पात्रले सुन्दर सम्झनासँगै साथीको दुख र लेख्ने जिम्मा पाउँछ।</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>सामाजिक कथाको द्वन्द्व प्रायः के बाट आउँछ?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>केवल संयोग</li><li>ज्याला, हैकम वा वर्गको सम्बन्ध</li><li>केवल प्रकृति</li><li>केवल प्रेम</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>यस कथामा ज्याला र ठालुको थिचोमिचो सामाजिक द्वन्द्व हो।</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>कथाको अन्त्य के तर्फ ढल्किन्छ?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>जिम्माबिनाको घुमफिर</li><li>गाउँको यथार्थ बाहिर लैजाने जिम्मा</li><li>ठालुको जय</li><li>पाठ बन्द गर्ने सल्लाह</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>साथीले गाउँकै कथा लेखिदेऊ भन्ने जिम्मा दिन्छ। माया काममा बदलिन्छ।</p></div></div></div></section>
+  <nav class="pager"><a href="11-पाठ-११-रारा-भ्रमण-दैनिकी.html" title="पाठ ११ — रारा भ्रमण (दैनिकी)">‹ पाठ ११ — रारा भ्रमण (दैनिकी)</a><a class="mid" href="../../../../../_subjects/class-11-nepali.html">Nepali</a><a href="12-पाठ-१२-जलस्रोत-र-ऊर्जा-वक्तृता.html" title="पाठ १२ — जलस्रोत र ऊर्जा (वक्तृता)">पाठ १२ — जलस्रोत र ऊर्जा (वक्तृता) ›</a></nav>
+</div></body></html>

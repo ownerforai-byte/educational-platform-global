@@ -1,0 +1,209 @@
+{
+  "title": "Chromatic and Spherical Aberration",
+  "unitSlug": "dispersion",
+  "topicSlug": "chromatic-and-spherical-aberration",
+  "topicTitle": "Chromatic and spherical aberration",
+  "relevance": 100,
+  "notes": [
+    "Chromatic aberration is colour fringing caused by a lens having different focal lengths for different wavelengths. In ordinary glass, blue/violet light is refracted more strongly than red, so their images do not share one focus.",
+    "Longitudinal chromatic aberration is the axial separation Δf=|fv−fr| of two colour foci. Transverse chromatic aberration is a wavelength-dependent lateral image displacement, often visible at the edge of a wide field.",
+    "Spherical aberration has a different cause: marginal and paraxial rays of the same colour focus at different points because the surface is spherical. It can be reduced with an aperture stop or aspheric surfaces.",
+    "Worked comparison: if red focuses at 50.0 cm and blue at 49.0 cm, longitudinal chromatic aberration is 1.0 cm. This is axial focus separation, not a 1 cm sideways image shift.",
+    "An achromatic doublet pairs converging crown glass with diverging flint glass so two selected colours focus together. Stopping down reduces marginal-ray error but does not remove material dispersion.",
+    "Spherical aberration is a monochromatic fault: rays through the edge of a lens meet the axis closer in than rays through the centre. Chromatic aberration is a colour fault. Stopping down the lens cuts the edge rays and reduces spherical aberration, but the image is dimmer.",
+    "# Chromatic and spherical aberration\n\n## 1. Introduction\nPhysical picture of **Chromatic and spherical aberration** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Dispersion fill pass.\n\n## 2. Concepts and laws\n### Chromatic and spherical aberration\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Chromatic and spherical aberration — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Chromatic and spherical aberration — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Chromatic and spherical aberration — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Chromatic and spherical aberration — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+  ],
+  "confusion": [
+    "Stopping down does not make glass non-dispersive.",
+    "Primary achromatism reduces selected colour separation but may leave secondary spectrum.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+  ],
+  "practice": [
+    "Distinguish chromatic from spherical aberration by cause and remedy.",
+    "A lens has fv=14.8 cm and fr=15.2 cm. Find Δf.",
+    "Can a monochromatic image suffer spherical aberration?"
+  ],
+  "universalFacts": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness."
+  ],
+  "animation3D": "dispersion",
+  "motionGraphics": "dispersion",
+  "examples": [
+    "Red and blue foci at 20.4 cm and 20.0 cm have Δf=0.4 cm.",
+    "An achromatic doublet reduces colour separation; stopping down mainly reduces spherical aberration.",
+    "Spherical aberration is a monochromatic fault: rays through the edge of a lens meet the axis closer in than rays through the centre. Chromatic aberration is a colour fault. Stopping down the lens cuts the edge rays and reduces spherical aberration, but the image is dimmer.",
+    "The working relations are Spherical aberration comes from the outer rays and A stop reduces spherical aberration and costs light. Name each symbol, convert the data into SI units, and only then substitute.",
+    "A lens brings paraxial rays to a focus 15.0 cm from the lens and marginal rays to 14.2 cm. Find the longitudinal spherical aberration."
+  ],
+  "practiceQuestions": [
+    "Distinguish chromatic from spherical aberration by cause and remedy.",
+    "A lens has fv=14.8 cm and fr=15.2 cm. Find Δf.",
+    "Can a monochromatic image suffer spherical aberration?"
+  ],
+  "formulas": [
+    "Longitudinal chromatic aberration: Δf=|fv−fr|.",
+    "For a thin lens in air: 1/f=(n−1)(1/R1−1/R2); n depends on wavelength."
+  ],
+  "keyPoints": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness.",
+    "Spherical aberration comes from the outer rays",
+    "A stop reduces spherical aberration and costs light",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
+  "summary": "Chromatic aberration comes from wavelength-dependent focal length; spherical aberration comes from paraxial–marginal focus separation. Their corrections differ.",
+  "specialNotes": [
+    "Stopping down does not make glass non-dispersive.",
+    "Primary achromatism reduces selected colour separation but may leave secondary spectrum."
+  ],
+  "importantStatements": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness."
+  ],
+  "importantNotes": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness."
+  ],
+  "examShortTricks": [
+    "Longitudinal chromatic aberration: Δf=|fv−fr|.",
+    "For a thin lens in air: 1/f=(n−1)(1/R1−1/R2); n depends on wavelength."
+  ],
+  "examNotes": [
+    "Distinguish chromatic from spherical aberration by cause and remedy.",
+    "A lens has fv=14.8 cm and fr=15.2 cm. Find Δf.",
+    "Can a monochromatic image suffer spherical aberration?"
+  ],
+  "importantConcepts": [
+    "Chromatic error depends on wavelength; spherical error depends on ray height.",
+    "Achromats correct two selected colours; aperture stops reject marginal rays.",
+    "Aperture reduction also reduces image brightness.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Distinguish chromatic from spherical aberration by cause and remedy.",
+    "A lens has fv=14.8 cm and fr=15.2 cm. Find Δf.",
+    "Can a monochromatic image suffer spherical aberration?"
+  ],
+  "duplicateType": 1,
+  "specificConditions": [
+    "**Dispersion Definition:** Dispersion is the separation of white light into its constituent colors (spectrum) due to the dependence of the refractive index $n$ on the wavelength $\\lambda$ of light ($n(\\lambda)$).",
+    "**Cauchy's Equation:** For many transparent materials, the refractive index follows Cauchy's equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$. This explains why blue light ($\\lambda$ smaller) is refracted more than red light ($\\lambda$ larger).",
+    "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry."
+  ],
+  "visualType": "chromatic-aberration",
+  "mcs": [
+    {
+      "question": "Spherical aberration remains even for",
+      "options": [
+        "One colour",
+        "No lens",
+        "A plane wave with no aperture",
+        "Zero aperture"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Marginal rays of a convex lens focus",
+      "options": [
+        "Farther out than paraxial rays",
+        "Nearer the lens than paraxial rays",
+        "At the object",
+        "On the principal axis behind the object"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A stop",
+      "options": [
+        "Increases spherical aberration",
+        "Reduces it and dims the image",
+        "Removes chromatic aberration completely",
+        "Changes the index"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Chromatic aberration needs",
+      "options": [
+        "More than one colour",
+        "One wavelength only",
+        "A plane mirror",
+        "No lens"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Spherical aberration remains even for",
+      "options": [
+        "One colour",
+        "No lens",
+        "A plane wave with no aperture",
+        "Zero aperture"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Marginal rays of a convex lens focus",
+      "options": [
+        "Farther out than paraxial rays",
+        "Nearer the lens than paraxial rays",
+        "At the object",
+        "On the principal axis behind the object"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A stop",
+      "options": [
+        "Increases spherical aberration",
+        "Reduces it and dims the image",
+        "Removes chromatic aberration completely",
+        "Changes the index"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Chromatic aberration needs",
+      "options": [
+        "More than one colour",
+        "One wavelength only",
+        "A plane mirror",
+        "No lens"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "A lens brings paraxial rays to a focus 15.0 cm from the lens and marginal rays to 14.2 cm. Find the longitudinal spherical aberration.",
+      "steps": [
+        "Longitudinal spherical aberration is the gap between the two foci.",
+        "15.0 − 14.2 = 0.80 cm.",
+        "Marginal rays focus nearer the lens.",
+        "A smaller aperture would reduce this gap.",
+        "This number is not the chromatic gap, which needs two colours."
+      ],
+      "answer": "0.80 cm."
+    }
+  ],
+  "source": "skeleton-v2"
+}

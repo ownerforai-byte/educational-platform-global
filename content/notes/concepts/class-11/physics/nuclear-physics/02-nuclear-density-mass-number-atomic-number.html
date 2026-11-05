@@ -1,0 +1,204 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Nuclear Density; Mass Number; Atomic Number</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Nuclear Physics</div>
+    <h1 class="doc">Nuclear Density; Mass Number; Atomic Number</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Nuclear Physics</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>nuclear-physics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>nuclear-density-mass-number-atomic-number</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>Mass Number (A): Total number of nucleons (protons + neutrons) in nucleus. A = Z + N. Dimensionless integer. Nuclei with same A but different Z are isobars.</li><li>Atomic Number (Z): Number of protons in nucleus = number of electrons in neutral atom. Determines element identity and chemical properties. Nuclei with same Z but different N are isotopes.</li><li>Neutron Number (N): Number of neutrons = A - Z. Nuclei with same N but different Z are isotones.</li><li>Nuclear Density: Density ρ = mass/volume. Nuclear mass ≈ A × m_p (m_p ≈ 1.67 × 10⁻²⁷ kg). Volume = (4/3)πR³ = (4/3)π(R₀A^(1/3))³ = (4/3)πR₀³A. Density ρ = A·m_p / ((4/3)πR₀³A) = 3m_p/(4πR₀³) — INDEPENDENT of A!</li><li>Nuclear Density Value: ρ ≈ 2.3 × 10¹⁷ kg/m³ — about 10¹⁴ times denser than ordinary matter. Comparable to neutron star density.</li><li>Nuclear Size: Radius R = R₀A^(1/3), R₀ ≈ 1.2 × 10⁻¹⁵ m. Volume ∝ A — nucleus grows linearly with nucleon count, explaining constant density.</li><li>Isobars, Isotopes, Isotones: Isobars: same A, different Z. Isotopes: same Z, different A (same element). Isotones: same N, different Z.</li><li>Nuclear Mass vs Atomic Mass: Nuclear mass = atomic mass - mass of Z electrons + binding energy of electrons/c² (electron binding negligible, ~eV scale vs MeV nuclear).</li><li><h2>Nuclear density; mass number; atomic number</h2>
+<h3>1. Introduction</h3>
+<p>Physical picture of <strong>Nuclear density; mass number; atomic number</strong> — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Nuclear Physics fill pass.</p>
+<h3>2. Concepts and laws</h3>
+<h4>Nuclear density</h4>
+<h4>mass number</h4>
+<h4>atomic number</h4>
+<p>Each law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).</li><li><h3>3. Derivation block</h3>
+<p>Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs &quot;derive / establish / show that&quot; are answered here, not elsewhere.</p>
+<p><strong>Table 1 — Law and result sheet</strong></p>
+<table><thead><tr><th>Law or result</th><th>Statement (words)</th><th>Equation + symbols</th><th>SI units</th><th>When it holds</th></tr></thead><tbody></tbody></table></li><li><h3>4. Formula and units table</h3>
+<p><strong>Table 2 — Constants and values</strong></p>
+<table><thead><tr><th>Constant or quantity</th><th>Value (CODATA/SI 2019)</th><th>Where used</th><th>Validity note</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 3 — Summary and marks map</strong></p>
+<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table>
+<p>Every formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).</li><li><h3>5. Diagrams and figures</h3>
+<ul>
+<li><strong>D1</strong> — Nuclear density; mass number; atomic number — decay or band-structure plot (authored SVG, plotted from note data)</li>
+<li><strong>D2</strong> — Nuclear density; mass number; atomic number — graph or second construction (authored SVG — axes, units and labels)</li>
+<li><strong>D3</strong> — Nuclear density; mass number; atomic number — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
+<li><strong>D4</strong> — Nuclear density; mass number; atomic number — apparatus or application figure (curated external — license recorded at fill)</li>
+</ul>
+<p>Slots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.</li><li><h3>6. Worked numericals</h3>
+<p>≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.</p>
+<h3>7. Key terms, signs and traps</h3>
+<p>Sign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).</li><li><h3>8. Exam Zone and self-check</h3>
+<p>NEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</p>
+<p>Key-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Specific Conditions</h2><ul><li>Constant Nuclear Density: The result ρ ≈ constant applies to all nuclei (light and heavy) — strong evidence that nuclear force saturates and nucleons are tightly packed.</li><li>Approximate Radius Formula: R = R₀A^(1/3) is empirical, valid for A &gt; ~10. Very light nuclei show deviations.</li><li>Atomic Mass Unit: 1 u = 1.6605 × 10⁻²⁷ kg = 931.5 MeV/c². Carbon-12 defined as exactly 12 u.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Mass number: A = Z + N</li><li>Neutron number: N = A - Z</li><li>Nuclear radius: R = R₀A^(1/3), R₀ ≈ 1.2 fm</li><li>Nuclear volume: V = (4/3)πR₀³A</li><li>Nuclear density: ρ = 3m_p/(4πR₀³) ≈ 2.3 × 10¹⁷ kg/m³</li><li>1 u = 1.6605 × 10⁻²⁷ kg = 931.5 MeV/c²</li><li>Atomic mass ≈ nuclear mass + Z·m_e</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>A = Z + N: mass number = protons + neutrons.</li><li>Z determines element identity; N determines neutron count.</li><li>Nuclear density ≈ 2.3 × 10¹⁷ kg/m³ — same for all nuclei.</li><li>Nuclear density is INDEPENDENT of mass number A.</li><li>Isotopes: same Z; Isobars: same A; Isotones: same N.</li><li>R = R₀A^(1/3): nuclear volume grows linearly with A.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Statement 1: Mass number A = Z + N where Z is atomic number and N is neutron number.</li><li>Statement 2: Atomic number Z equals proton number and defines the element.</li><li>Statement 3: Nuclear density ρ ≈ 2.3 × 10¹⁷ kg/m³ is approximately the same for all nuclei.</li><li>Statement 4: Nuclear density is independent of mass number A.</li><li>Statement 5: Nuclear radius R = R₀A^(1/3) with R₀ ≈ 1.2 fm.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Nuclear density being constant means nuclear force is short-range and saturates — each nucleon interacts only with nearest neighbors.</li><li>1 u = 931.5 MeV/c² is the key conversion for nuclear energy calculations.</li><li>Isotopes have same chemical properties (same Z/electron configuration) but different nuclear properties.</li><li>Nuclear density (~10¹⁷ kg/m³) is vastly greater than atomic density (~10³ kg/m³) because atom is mostly empty space.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Nuclear density is the SAME for all nuclei — memorize ≈ 2.3 × 10¹⁷ kg/m³.</li><li>R = R₀A^(1/3) — volume ∝ A, radius ∝ A^(1/3).</li><li>Isotopes: same Z; Isobars: same A; Isotones: same N.</li><li>1 u = 931.5 MeV/c² for mass-energy conversions.</li><li>N = A - Z for neutron count.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>NEB frequently asks for nuclear density calculation and why it is constant.</li><li>Distinguish isotopes, isobars, isotones — common conceptual question.</li><li>Calculate nuclear radius from mass number.</li><li>Understand atomic mass unit and MeV/c² conversion.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Nuclear density: ρ = 3(1.67×10⁻²⁷)/(4π(1.2×10⁻¹⁵)³) ≈ 2.3 × 10¹⁷ kg/m³.</li><li>Carbon-12: Z = 6, A = 12, N = 6. Radius R = 1.2 × 12^(1/3) ≈ 2.7 fm.</li><li>Uranium-238: Z = 92, A = 238, N = 146. Radius R = 1.2 × 238^(1/3) ≈ 7.4 fm.</li><li>Isotopes of hydrogen: ¹H (Z=1,N=0), ²H/D (Z=1,N=1), ³H/T (Z=1,N=2).</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Q1. Define mass number, atomic number, and neutron number with examples.</li><li>Q2. Show that nuclear density is independent of mass number A.</li><li>Q3. Calculate nuclear density and compare with ordinary matter density.</li><li>Q4. Distinguish between isotopes, isobars, and isotones with examples.</li><li>Q5. Calculate radius of gold nucleus (A = 197) and uranium nucleus (A = 238).</li><li>Q6. Convert 1 u to kg and to MeV/c².</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Calculate Z, N, A for given nuclides.</li><li>Compute nuclear density from fundamental constants.</li><li>Find nuclear radius using R = R₀A^(1/3).</li><li>Classify nuclides as isotopes/isobars/isotones.</li><li>Convert between u, kg, and MeV/c².</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>All nuclei have essentially the same density — unlike atoms whose densities vary widely.</li><li>Neutron stars have densities comparable to nuclear density — they are essentially giant nuclei held by gravity.</li><li>The constancy of nuclear density implies nuclear force saturates — each nucleon interacts with only a few neighbors.</li><li>1 u is defined such that carbon-12 atom has mass exactly 12 u.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Confusing mass number A with atomic mass: A is integer count; atomic mass is in u (includes mass defect).</li><li>Thinking isotopes have different chemical properties: Same Z → same electrons → same chemistry.</li><li>Believing nuclear density varies with element: It is constant (~10¹⁷ kg/m³) for all nuclei.</li><li>Confusing isobars (same A) with isotopes (same Z).</li><li>Thinking neutrons contribute to chemical properties: Neutrons affect mass/nuclear stability, not chemistry.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Nuclear density is approximately:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>10³ kg/m³</li><li>10¹⁷ kg/m³</li><li>10²⁰ kg/m³</li><li>10⁻¹⁷ kg/m³</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>ρ ≈ 2.3 × 10¹⁷ kg/m³ — same for all nuclei.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Nuclear density depends on mass number A as:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>ρ ∝ A</li><li>ρ ∝ A^(1/3)</li><li>ρ ∝ A⁰ (independent)</li><li>ρ ∝ 1/A</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>ρ = 3m_p/(4πR₀³) — independent of A.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Isotopes have same:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A</li><li>Z</li><li>N</li><li>Mass</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Isotopes have same atomic number Z but different A.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>1 atomic mass unit equals:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>931.5 MeV</li><li>931.5 MeV/c²</li><li>1.66 × 10⁻²⁷ kg</li><li>Both B and C</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>D</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>1 u = 1.6605 × 10⁻²⁷ kg = 931.5 MeV/c².</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Nuclear radius R = R₀A^(1/3) means volume is proportional to:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A</li><li>A^(1/3)</li><li>A²</li><li>1/A</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>V = (4/3)πR₀³A — volume directly proportional to mass number.</p></div></div></div></section>
+<section class="field"><h2>Animation3 D</h2><p>nuclear-structure</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>nucleus-composition</p></section>
+<section class="field"><h2>Visual Type</h2><p>nucleus-composition</p></section>
+<section class="field"><h2>Summary</h2><p>Mass number A = Z + N; atomic number Z defines element. Nuclear density ≈ 2.3 × 10¹⁷ kg/m³ is constant for all nuclei and independent of A. Nuclear radius R = R₀A^(1/3). Isotopes (same Z), isobars (same A), isotones (same N) classify nuclides.</p></section>
+<section class="field"><h2>Source</h2><p>skeleton-v2</p></section>
+  <nav class="pager"><a href="02-mass-energy-binding-energy.html" title="Mass-Energy and Binding Energy">‹ Mass-Energy and Binding Energy</a><a class="mid" href="../../../../../_subjects/class-11-physics.html">Physics</a><a href="03-atomic-mass-isotopes.html" title="Atomic mass; isotopes">Atomic mass; isotopes ›</a></nav>
+</div></body></html>

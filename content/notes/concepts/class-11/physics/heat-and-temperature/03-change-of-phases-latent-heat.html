@@ -1,0 +1,185 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Change of Phases and Latent Heat</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Heat And Temperature</div>
+    <h1 class="doc">Change of Phases and Latent Heat</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Heat And Temperature</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>heat-and-temperature</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>change-of-phases-latent-heat</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>Phase change is the transition of a substance from one state of matter to another (solid, liquid, or gas).</li><li>Latent heat is the amount of heat required to change the phase of a substance without changing its temperature.</li><li>During a phase change, the temperature of the substance remains constant even though heat is being added or removed.</li><li>The heat required for a phase change is given by Q = mL, where m is the mass of the substance and L is the latent heat.</li><li>There are six common phase changes: melting, freezing, vaporization, condensation, sublimation, and deposition.</li><li>Melting: the process of a solid turning into a liquid (e.g., ice melting into water).</li><li>Freezing: the process of a liquid turning into a solid (e.g., water freezing into ice).</li><li>Vaporization: the process of a liquid turning into a gas (e.g., water evaporating into steam).</li><li>Condensation: the process of a gas turning into a liquid (e.g., steam condensing into water).</li><li>Sublimation: the process of a solid turning directly into a gas (e.g., dry ice turning into carbon dioxide gas).</li><li>Deposition: the process of a gas turning directly into a solid (e.g., frost forming on a cold surface).</li><li>Latent heat of fusion (L_f): the heat required to change 1 kg of a substance from solid to liquid (or vice versa) at its melting point.</li><li>Latent heat of vaporization (L_v): the heat required to change 1 kg of a substance from liquid to gas (or vice versa) at its boiling point.</li><li>Latent heat of sublimation (L_s): the heat required to change 1 kg of a substance from solid to gas (or vice versa).</li><li>The latent heat values depend on the substance and the phase change involved.</li><li>For water at 1 atm: L_f = 334 × 10³ J/kg, L_v = 2260 × 10³ J/kg.</li><li>The latent heat of vaporization is generally much larger than the latent heat of fusion for a given substance.</li><li>The latent heat of sublimation is approximately equal to the sum of the latent heat of fusion and the latent heat of vaporization.</li><li>Phase diagrams show the conditions of temperature and pressure under which a substance exists in different phases.</li><li>The triple point is the unique temperature and pressure at which all three phases (solid, liquid, gas) of a substance coexist in equilibrium.</li><li>The critical point is the temperature and pressure above which a substance cannot exist as a liquid, no matter how much pressure is applied.</li><li>Phase changes are important in many natural phenomena and technological applications, such as weather patterns, climate change, and refrigeration.</li><li>The latent heat of vaporization decreases with increasing temperature and becomes zero at the critical temperature.</li><li>The latent heat of fusion is generally less than the latent heat of vaporization.</li><li>Phase changes are accompanied by changes in volume and density.</li><li>The energy required for a phase change is used to overcome intermolecular forces and to do work against external pressure.</li></ul></section>
+<section class="field"><h2>Ui Config</h2><dl class="obj"><div class="kv"><dt>Allow Zoom</dt><dd><p><code>true</code></p></dd></div><div class="kv"><dt>Show Refresh</dt><dd><p><code>true</code></p></dd></div></dl></section>
+<section class="field"><h2>Specific Conditions</h2><ul><li><strong>Phase Change Definition:</strong> Phase change is the transition of a substance from one state of matter to another without a change in temperature. The heat required or released during a phase change is called latent heat.</li><li><strong>Latent Heat:</strong> Latent heat is the amount of heat required to change the phase of a unit mass of a substance without changing its temperature. It is given by Q = mL, where m is the mass and L is the latent heat.</li><li><strong>Common Phase Changes:</strong></li><li><ul>
+<li>Melting: Solid to liquid (e.g., ice to water), L_f = 334 × 10³ J/kg for water</li>
+</ul></li><li><ul>
+<li>Freezing: Liquid to solid (e.g., water to ice), L_f = 334 × 10³ J/kg for water</li>
+</ul></li><li><ul>
+<li>Vaporization: Liquid to gas (e.g., water to steam), L_v = 2260 × 10³ J/kg for water</li>
+</ul></li><li><ul>
+<li>Condensation: Gas to liquid (e.g., steam to water), L_v = 2260 × 10³ J/kg for water</li>
+</ul></li><li><ul>
+<li>Sublimation: Solid to gas (e.g., dry ice to CO₂ gas), L_s ≈ L_f + L_v</li>
+</ul></li><li><ul>
+<li>Deposition: Gas to solid (e.g., frost formation), L_s ≈ L_f + L_v</li>
+</ul></li><li><strong>Phase Diagrams:</strong> A phase diagram shows the conditions of temperature and pressure under which a substance exists in different phases. It includes the triple point and critical point.</li><li><strong>Triple Point:</strong> The unique temperature and pressure at which all three phases (solid, liquid, gas) coexist in equilibrium. For water, it is 273.16 K (0.01°C) at 611.657 Pa.</li><li><strong>Critical Point:</strong> The temperature and pressure above which a substance cannot exist as a liquid, no matter how much pressure is applied. For water, it is 647 K (374°C) at 21.8 MPa.</li><li><strong>Energy Considerations:</strong> During a phase change, the heat added or removed is used to overcome intermolecular forces and to do work against external pressure. The temperature remains constant during a phase change.</li><li><strong>Latent Heat Values:</strong> Typical latent heat values: Water L_f = 334 kJ/kg, L_v = 2260 kJ/kg; Ice L_f = 334 kJ/kg; Steam L_v = 2260 kJ/kg; Copper L_f = 205 kJ/kg; Aluminum L_f = 397 kJ/kg.</li><li><strong>Phase Change and Volume:</strong> Phase changes are often accompanied by changes in volume and density. For example, water expands when it freezes, which is why ice floats on water.</li><li><strong>Applications of Phase Changes:</strong> Phase changes are important in many natural phenomena and technological applications, such as weather patterns, climate change, refrigeration, and air conditioning.</li><li><strong>Heat Transfer During Phase Changes:</strong> During a phase change, the heat transfer rate is given by Q = mL/t, where t is the time taken for the phase change.</li><li><strong>Phase Change and Energy:</strong> The energy required for a phase change is much larger than the energy required to change the temperature of a substance. This is why phase changes are important in energy storage and transfer systems.</li><li><strong>Phase Change and Temperature:</strong> The temperature of a substance remains constant during a phase change, even though heat is being added or removed. This is a key characteristic of phase changes.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Heat for phase change: Q = mL</li><li>Latent heat of fusion: L_f</li><li>Latent heat of vaporization: L_v</li><li>Latent heat of sublimation: L_s ≈ L_f + L_v</li><li>Heat transfer rate during phase change: Q = mL/t</li><li>Energy required for phase change: ΔU = mL</li><li>Phase change and temperature: ΔT = 0 during phase change</li><li>Specific latent heat: L = Q/m</li><li>Molar latent heat: L_m = Q/n</li><li>Triple point of water: T = 273.16 K, P = 611.657 Pa</li><li>Critical point of water: T = 647 K, P = 21.8 MPa</li><li>Phase change energy: ΔU = Q = mL</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Phase change is the transition of a substance from one state of matter to another without a change in temperature.</li><li>Latent heat is the amount of heat required to change the phase of a unit mass of a substance without changing its temperature.</li><li>During a phase change, the temperature of the substance remains constant even though heat is being added or removed.</li><li>There are six common phase changes: melting, freezing, vaporization, condensation, sublimation, and deposition.</li><li>Latent heat of fusion (L_f) is the heat required to change a substance from solid to liquid or vice versa.</li><li>Latent heat of vaporization (L_v) is the heat required to change a substance from liquid to gas or vice versa.</li><li>Latent heat of sublimation (L_s) is the heat required to change a substance from solid to gas or vice versa.</li><li>The latent heat values depend on the substance and the phase change involved.</li><li>Phase diagrams show the conditions of temperature and pressure under which a substance exists in different phases.</li><li>The triple point is the unique temperature and pressure at which all three phases coexist in equilibrium.</li><li>The critical point is the temperature and pressure above which a substance cannot exist as a liquid.</li><li>Phase changes are important in many natural phenomena and technological applications.</li><li>The latent heat of vaporization is generally much larger than the latent heat of fusion for a given substance.</li><li>Phase changes are accompanied by changes in volume and density.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Phase change is the transition of a substance from one state of matter to another without a change in temperature.</li><li>Latent heat is the amount of heat required to change the phase of a unit mass of a substance without changing its temperature.</li><li>During a phase change, the temperature of the substance remains constant even though heat is being added or removed.</li><li>The heat required for a phase change is given by Q = mL, where m is the mass of the substance and L is the latent heat.</li><li>The latent heat of vaporization is generally much larger than the latent heat of fusion for a given substance.</li><li>Phase diagrams show the conditions of temperature and pressure under which a substance exists in different phases.</li><li>The triple point is the unique temperature and pressure at which all three phases (solid, liquid, gas) coexist in equilibrium.</li><li>The critical point is the temperature and pressure above which a substance cannot exist as a liquid.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Use Q = mL to calculate the heat required or released during a phase change.</li><li>Remember that the temperature remains constant during a phase change.</li><li>Use typical latent heat values: Water L_f = 334 kJ/kg, L_v = 2260 kJ/kg.</li><li>Understand that the latent heat of sublimation is approximately equal to the sum of the latent heat of fusion and the latent heat of vaporization.</li><li>Use phase diagrams to determine the conditions under which a substance exists in different phases.</li><li>Identify the triple point and critical point on a phase diagram.</li><li>Apply the concept of latent heat to real-world scenarios involving phase changes.</li><li>Understand the significance of phase changes in natural phenomena and technological applications.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Focus on understanding the concept of phase change and the role of latent heat.</li><li>Practice problems involving the calculation of heat required or released during phase changes.</li><li>Understand the significance of the triple point and critical point on phase diagrams.</li><li>Apply the concept of latent heat to real-world scenarios involving phase changes.</li><li>Be able to explain the changes in volume and density that occur during phase changes.</li><li>Understand the importance of phase changes in natural phenomena and technological applications.</li><li>Apply the concept of phase change to problems involving energy transfer and temperature control.</li><li>Practice problems involving the use of phase diagrams to determine the conditions under which a substance exists in different phases.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Consider 1 kg of ice at 0°C that is melted into water at 0°C. The heat required is Q = mL_f = 1 kg × 334 × 10³ J/kg = 334 × 10³ J.</li><li>When 1 kg of water at 100°C is boiled into steam at 100°C, the heat required is Q = mL_v = 1 kg × 2260 × 10³ J/kg = 2260 × 10³ J.</li><li>A phase diagram for water shows the triple point at 273.16 K (0.01°C) and the critical point at 647 K (374°C).</li><li>Dry ice (solid CO₂) sublimates into CO₂ gas at room temperature, demonstrating a phase change from solid to gas without passing through the liquid phase.</li><li>Frost forms on a cold surface when water vapor in the air deposits directly into ice, demonstrating the phase change from gas to solid.</li><li>The energy required to melt 1 kg of ice at 0°C is 334 kJ, which is much larger than the energy required to raise the temperature of 1 kg of ice by 1°C (approximately 2.1 kJ).</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Solve problems involving the calculation of heat required or released during phase changes using Q = mL.</li><li>Apply the concept of latent heat to real-world scenarios involving phase changes.</li><li>Use phase diagrams to determine the conditions under which a substance exists in different phases.</li><li>Calculate the heat required or released during melting, freezing, vaporization, condensation, sublimation, and deposition.</li><li>Determine the final temperature and phase of a substance after a phase change.</li><li>Apply the concept of latent heat to problems involving energy transfer and temperature control.</li><li>Explain the changes in volume and density that occur during phase changes.</li><li>Use typical latent heat values to solve problems involving phase changes.</li><li>Apply the concept of phase change to problems involving the triple point and critical point.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Phase change is the transition of a substance from one state of matter to another without a change in temperature.</li><li>Latent heat is the amount of heat required to change the phase of a unit mass of a substance without changing its temperature.</li><li>During a phase change, the temperature of the substance remains constant even though heat is being added or removed.</li><li>The heat required for a phase change is given by Q = mL, where m is the mass of the substance and L is the latent heat.</li><li>The latent heat of vaporization is generally much larger than the latent heat of fusion for a given substance.</li><li>Phase diagrams show the conditions of temperature and pressure under which a substance exists in different phases.</li><li>The triple point is the unique temperature and pressure at which all three phases (solid, liquid, gas) coexist in equilibrium.</li><li>The critical point is the temperature and pressure above which a substance cannot exist as a liquid.</li><li>Phase changes are important in many natural phenomena and technological applications.</li><li>The latent heat of sublimation is approximately equal to the sum of the latent heat of fusion and the latent heat of vaporization.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Distinguish between phase change and temperature change. During a phase change, the temperature remains constant, while during a temperature change, the phase remains constant.</li><li>Understand that latent heat is the amount of heat required to change the phase of a substance without changing its temperature.</li><li>Apply the formula Q = mL correctly to calculate the heat required or released during a phase change.</li><li>Distinguish between the latent heat of fusion, vaporization, and sublimation.</li><li>Understand the significance of the triple point and critical point on phase diagrams.</li><li>Apply the concept of latent heat to real-world scenarios involving phase changes.</li><li>Understand the changes in volume and density that occur during phase changes.</li><li>Apply the concept of phase change to problems involving energy transfer and temperature control.</li><li>Use phase diagrams to determine the conditions under which a substance exists in different phases.</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Phase change and its types</li><li>Latent heat and its calculation</li><li>Phase diagrams and their interpretation</li><li>Triple point and critical point</li><li>Applications of phase changes in natural phenomena and technology</li><li>Energy considerations during phase changes</li><li>Changes in volume and density during phase changes</li><li>Heat transfer during phase changes</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Calculate the heat required or released during phase changes using Q = mL.</li><li>Apply the concept of latent heat to real-world scenarios involving phase changes.</li><li>Use phase diagrams to determine the conditions under which a substance exists in different phases.</li><li>Determine the final temperature and phase of a substance after a phase change.</li><li>Apply the concept of phase change to problems involving energy transfer and temperature control.</li><li>Explain the changes in volume and density that occur during phase changes.</li><li>Use typical latent heat values to solve problems involving phase changes.</li><li>Apply the concept of phase change to problems involving the triple point and critical point.</li></ul></section>
+<section class="field"><h2>Visual Type</h2><p>phase-diagrams</p></section>
+  <nav class="pager"><a href="02-thermal-equilibrium-zeroth-law.html" title="Thermal Equilibrium and Zeroth Law">‹ Thermal Equilibrium and Zeroth Law</a><a class="mid" href="../../../../../_subjects/class-11-physics.html">Physics</a><a href="03-thermal-equilibrium-as-a-working-principle-of-a-mercury-thermometer.html" title="Thermal Equilibrium — Mercury Thermometer">Thermal Equilibrium — Mercury Thermometer ›</a></nav>
+</div></body></html>

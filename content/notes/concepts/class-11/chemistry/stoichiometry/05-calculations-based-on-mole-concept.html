@@ -1,0 +1,198 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Calculations Based on Mole Concept</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Chemistry  /  Stoichiometry</div>
+    <h1 class="doc">Calculations Based on Mole Concept</h1>
+    <div class="meta"><span>Class 11</span><span>Chemistry</span><span>Stoichiometry</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>stoichiometry</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>calculations-based-on-mole-concept</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>Mole Concept Foundation: One mole contains exactly 6.022 × 10²³ entities (Avogadro's number Nₐ). The molar mass M (g/mol) of any substance equals its atomic or molecular mass numerically. This bridges the microscopic (atoms/molecules) and macroscopic (grams) worlds.</li><li>Mass-to-Moles Conversion: n = m/M where n = moles, m = mass in grams, M = molar mass in g/mol. Example: 36 g water (M = 18 g/mol) → n = 36/18 = 2 mol. This is the most fundamental stoichiometric calculation.</li><li>Moles-to-Particles Conversion: Number of particles N = n × Nₐ. Example: 0.5 mol CO₂ contains 0.5 × 6.022×10²³ = 3.011×10²³ molecules. Reverse: n = N/Nₐ when given particle count.</li><li>Molar Volume at STP: One mole of any ideal gas occupies 22.4 L at STP (0°C, 1 atm). n = V/22.4 for gases at STP. Example: 5.6 L O₂ at STP → n = 5.6/22.4 = 0.25 mol. Non-STP conditions require PV = nRT.</li><li>Percentage Composition: % of element = (mass of element in 1 mol compound / molar mass of compound) × 100. Example: In H₂O, %H = (2×1.008/18.015)×100 = 11.19%, %O = (16.00/18.015)×100 = 88.81%. Used to determine empirical formulas from experimental data.</li><li>Empirical Formula Determination: Step 1: Convert % composition to grams (assume 100 g sample). Step 2: Convert grams to moles for each element. Step 3: Divide all mole values by smallest mole value. Step 4: Multiply by integer if ratios are not whole numbers. Result gives simplest whole-number ratio of atoms.</li><li>Molecular Formula from Empirical: Molecular formula = (empirical formula)ₙ where n = molecular mass / empirical formula mass. Example: Empirical CH₂O (mass 30), molecular mass 180 → n = 180/30 = 6 → molecular formula C₆H₁₂O₆ (glucose).</li><li>Stoichiometric Calculations from Balanced Equations: Coefficients give mole ratios. For 2H₂ + O₂ → 2H₂O: 2 mol H₂ reacts with 1 mol O₂ to produce 2 mol H₂O. Convert given quantity to moles → use ratio → convert back to desired units.</li><li>Mass-Mass Stoichiometry: Given mass of reactant A, find mass of product B. Steps: mass A → moles A (÷M_A) → moles B (×ratio) → mass B (×M_B). Example: How much CO₂ from 100 g CaCO₃? CaCO₃→CaO+CO₂. n(CaCO₃)=100/100=1 mol → n(CO₂)=1 mol → m=44 g.</li><li>Mass-Volume Stoichiometry (Gases): For reactions involving gases, use molar volume. Example: Zn + 2HCl → ZnCl₂ + H₂. From 6.5 g Zn (0.1 mol), H₂ produced = 0.1 mol = 0.1×22.4 = 2.24 L at STP.</li><li>Solution Stoichiometry: Molarity M = n/V(L). n = M × V. Use in titration calculations: M₁V₁/n₁ = M₂V₂/n₂ where n₁,n₂ are coefficients. Example: 25 mL 0.1M NaOH neutralizes how many mL of 0.05M H₂SO₄? Ratio 2:1 → V = (0.1×25×1)/(0.05×2) = 25 mL.</li><li>Limiting Reagent Identification: Calculate moles of each reactant. Divide by coefficient in balanced equation. Smallest value identifies limiting reagent. All product calculations based on limiting reagent only. Excess reagent remains partially unreacted.</li><li>Theoretical Yield Calculation: Maximum possible product based on limiting reagent and stoichiometry. Actual yield is always less due to incomplete reactions, side reactions, and losses during purification.</li><li>Percentage Yield: % yield = (actual yield / theoretical yield) × 100. Industrial processes aim for &gt;90%. Low yields indicate inefficiency, side reactions, or equilibrium limitations. NEB frequently asks numerical problems combining limiting reagent and % yield.</li><li>Percentage Purity: % purity = (mass of pure substance / mass of impure sample) × 100. Impure samples require correction before stoichiometric calculations. Example: 80% pure limestone means only 80 g CaCO₃ per 100 g sample participates in reaction.</li><li><h2>Calculations based on mole concept</h2>
+<h3>1. Introduction</h3>
+<p>Chemical picture of <strong>Calculations based on mole concept</strong> — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Stoichiometry fill pass.</p>
+<h3>2. Concepts and definitions</h3>
+<h4>Calculations based on mole concept</h4>
+<p>Each definition exam-safe; each formula with its validity condition (§3, block II).</li><li><h3>3. Reaction and equation block</h3>
+<p>Balanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).</p>
+<p><strong>Table 1 — Reaction and preparation sheet</strong></p>
+<table><thead><tr><th>Reaction</th><th>Reactants</th><th>Conditions (T, P, catalyst)</th><th>Products + observation</th><th>Remark</th></tr></thead><tbody></tbody></table></li><li><h3>4. Mechanism, IUPAC and structures</h3>
+<p>Organic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).</p>
+<p><strong>Table 2 — Distinguish and reagents</strong></p>
+<table><thead><tr><th>Pair or reagent</th><th>Test or point of difference</th><th>Observation</th><th>Example</th></tr></thead><tbody></tbody></table></li><li><h3>5. Diagrams and figures</h3>
+<ul>
+<li><strong>D1</strong> — Calculations based on mole concept — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)</li>
+<li><strong>D2</strong> — Calculations based on mole concept — second structure, flow or plot (authored SVG — English labels)</li>
+<li><strong>D3</strong> — Calculations based on mole concept — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
+<li><strong>D4</strong> — Calculations based on mole concept — application or industrial figure (curated external — license recorded at fill)</li>
+</ul>
+<p>Slots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).</p>
+<p><strong>Table 3 — Summary and marks map</strong></p>
+<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table></li><li><h3>6. Worked problems</h3>
+<p>≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.</p>
+<h3>7. Key terms and reaction map</h3>
+<p>Named reactions, conversions and &quot;distinguish between&quot; pairs gathered where the reaction block points to them.</li><li><h3>8. Exam Zone and self-check</h3>
+<p>Named-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</p>
+<p>Reaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Specific Conditions</h2><ul><li>STP Definition: Standard Temperature and Pressure = 0°C (273.15 K) and 1 atm (101.325 kPa). Molar volume 22.4 L applies ONLY at STP. At other conditions use PV = nRT.</li><li>Ideal Gas Assumption: Molar volume and simple gas stoichiometry assume ideal behavior. Real gases deviate at high pressure or low temperature.</li><li>Balanced Equation Required: All stoichiometric calculations must start with a correctly balanced chemical equation. Unbalanced equations give wrong mole ratios.</li><li>Consistent Units: Always convert to moles first, then to target units. Mixing grams and liters without conversion causes errors.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.0404em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.109em;">M</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li><li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.109em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li><li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.2173em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8723em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">22.4</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.2222em;">V</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span> (gas at STP)</li><li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8056em;vertical-align:-0.0556em;"></span><span class="mord">%</span><span class="mord text"><span class="mord">element</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.2251em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8801em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">molar mass</span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">mass of element in 1 mol</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">100</span></span></span></span></li><li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.3612em;vertical-align:-0.4811em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8801em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">empirical formula mass</span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">molecular mass</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4811em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li><li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.9444em;vertical-align:-0.1944em;"></span><span class="mord">%</span><span class="mord text"><span class="mord">yield</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.4133em;vertical-align:-0.4811em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9322em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">theoretical yield</span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.4461em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">actual yield</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4811em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6444em;"></span><span class="mord">100</span></span></span></span></li><li><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">M</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.2154em;vertical-align:-0.52em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.2222em;">V</span><span class="mopen mtight">(</span><span class="mord mathnormal mtight">L</span><span class="mclose mtight">)</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>n = m/M is the gateway to all stoichiometric calculations.</li><li>Always convert to moles before applying mole ratios from balanced equations.</li><li>22.4 L/mol applies only to ideal gases at STP.</li><li>Empirical formula = simplest ratio; molecular formula = actual atom count.</li><li>Limiting reagent determines maximum product; excess reagent is leftover.</li><li>% yield compares actual vs theoretical; always ≤ 100%.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Statement 1: The mole concept provides the quantitative link between atomic-scale events and measurable laboratory quantities.</li><li>Statement 2: All stoichiometric calculations require conversion through moles as the intermediate step.</li><li>Statement 3: Percentage composition data enables determination of empirical and molecular formulas.</li><li>Statement 4: The limiting reagent controls the extent of reaction and maximum product formation.</li><li>Statement 5: Percentage yield measures the efficiency of a chemical process relative to theoretical maximum.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>NEB exam pattern: Most stoichiometry numericals follow mass→moles→ratio→moles→mass/volume sequence.</li><li>Common error: Forgetting to balance the equation before calculating mole ratios.</li><li>For hydrated salts (e.g., CuSO₄·5H₂O), include water molecules in molar mass calculation.</li><li>In combustion analysis, carbon converts to CO₂ and hydrogen to H₂O — use these to find C and H content.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Mass↔Moles: divide by M to get moles, multiply by M to get mass.</li><li>Gas at STP: divide liters by 22.4 for moles.</li><li>Empirical formula: %→g→mol→divide by smallest→whole number ratio.</li><li>Limiting reagent: moles/coefficient — smallest wins.</li><li>% yield = actual/theoretical × 100.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Practice at least 10 mass-mass, 5 mass-volume, and 5 solution stoichiometry problems.</li><li>Memorize common molar masses: H₂O=18, CO₂=44, NaOH=40, H₂SO₄=98, CaCO₃=100.</li><li>Show all unit conversions explicitly — marks awarded for method even if arithmetic fails.</li><li>Check answer plausibility: % yield &gt;100% means error; negative mass means wrong subtraction.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Calculate moles in 49 g H₂SO₄: n = 49/98 = 0.5 mol.</li><li>Volume of 0.25 mol NH₃ at STP: V = 0.25 × 22.4 = 5.6 L.</li><li>Empirical formula from 40% C, 6.67% H, 53.33% O: C=40/12=3.33, H=6.67/1=6.67, O=53.33/16=3.33 → divide by 3.33 → CH₂O.</li><li>From 2KClO₃→2KCl+3O₂, how much O₂ from 24.5 g KClO₃? n=24.5/122.5=0.2 mol KClO₃ → 0.3 mol O₂ → 6.72 L at STP.</li><li>If 10 g Mg reacts with excess HCl (Mg+2HCl→MgCl₂+H₂), theoretical H₂ = 10/24.3 = 0.412 mol = 9.22 L at STP. If actual = 8.5 L, % yield = 8.5/9.22×100 = 92.2%.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Q1. Calculate the number of moles in 88 g CO₂.</li><li>Q2. What volume does 3.011×10²³ molecules of N₂ occupy at STP?</li><li>Q3. Determine the empirical formula of a compound containing 82.76% C and 17.24% H.</li><li>Q4. How many grams of NaOH are needed to neutralize 0.1 mol H₂SO₄?</li><li>Q5. In the reaction N₂+3H₂→2NH₃, if 28 g N₂ and 6 g H₂ react, identify the limiting reagent and calculate mass of NH₃ formed.</li><li>Q6. A 5 g sample of impure CaCO₃ produces 1.12 L CO₂ at STP on heating. Calculate percentage purity.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Convert between mass, moles, particles, and gas volume fluently.</li><li>Determine empirical and molecular formulas from percentage composition data.</li><li>Solve mass-mass, mass-volume, and solution stoichiometry problems.</li><li>Identify limiting reagents and calculate theoretical and percentage yields.</li><li>Apply percentage purity corrections to real-world sample calculations.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Avogadro's number was determined experimentally by Jean Perrin (1908) using Brownian motion, confirming atomic theory.</li><li>The mole was redefined in 2019 as exactly 6.02214076×10²³ entities, fixing it as an exact constant.</li><li>Industrial ammonia synthesis (Haber process) achieves only ~15% single-pass yield but recycles unreacted gases for &gt;98% overall conversion.</li><li>Analytical chemistry relies entirely on stoichiometric calculations for quantitative determination of unknown concentrations.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Confusing molecular mass with molar mass: Molecular mass is dimensionless (relative); molar mass has units g/mol. Numerically equal but dimensionally different.</li><li>Using 22.4 L for non-STP conditions: Only valid at 0°C and 1 atm. Room temperature (25°C) gives ~24.5 L/mol.</li><li>Forgetting diatomic elements: H₂, N₂, O₂, F₂, Cl₂, Br₂, I₂ exist as molecules. Atomic mass ≠ molecular mass for these.</li><li>Mixing up empirical and molecular formulas: Empirical is simplest ratio; molecular is actual. They can be identical (H₂O) or different (C₆H₁₂O₆ vs CH₂O).</li><li>Assuming 100% yield in calculations: Theoretical yield is maximum possible; actual is always less. Never use actual yield to predict reactant needs.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Number of moles in 36 g water is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>1 mol</li><li>2 mol</li><li>3 mol</li><li>0.5 mol</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>n = m/M = 36/18 = 2 mol.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Volume of 1 mol gas at STP is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>11.2 L</li><li>22.4 L</li><li>24.5 L</li><li>44.8 L</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Standard molar volume at STP (0°C, 1 atm) = 22.4 L.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Empirical formula of glucose (C₆H₁₂O₆) is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>C₆H₁₂O₆</li><li>CH₂O</li><li>C₂H₄O₂</li><li>CHO</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Simplest ratio: divide all subscripts by 6 → CH₂O.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>In 2H₂ + O₂ → 2H₂O, if 4 mol H₂ and 3 mol O₂ react, limiting reagent is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>H₂</li><li>O₂</li><li>Both equal</li><li>Neither</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>H₂/O₂ ratio needed = 2:1. Available 4:3. H₂ needs 2 mol O₂ but 3 available → H₂ limits.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Percentage yield is calculated as:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Theoretical/Actual × 100</li><li>Actual/Theoretical × 100</li><li>(Actual−Theoretical)/Theoretical × 100</li><li>Actual + Theoretical</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>% yield = (actual yield / theoretical yield) × 100.</p></div></div></div></section>
+<section class="field"><h2>Source</h2><p>skeleton-v2</p></section>
+  <nav class="pager"><a href="04-mole-concept.html" title="Mole and its Relation with Mass, Volume and Number of Particles">‹ Mole and its Relation with Mass, Volume and N…</a><a class="mid" href="../../../../../_subjects/class-11-chemistry.html">Chemistry</a><a href="05-limiting-reactant.html" title="Limiting Reactant and Excess Reactant">Limiting Reactant and Excess Reactant ›</a></nav>
+</div></body></html>

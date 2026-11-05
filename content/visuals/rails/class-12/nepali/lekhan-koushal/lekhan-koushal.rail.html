@@ -1,0 +1,167 @@
+<!doctype html><html><head><meta charset="utf-8"><title>lekhan-koushal.rail</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 12  /  Nepali  /  Lekhan Koushal</div>
+    <h1 class="doc">lekhan-koushal.rail</h1>
+    <div class="meta"><span>Class 12</span><span>Nepali</span><span>Lekhan Koushal</span></div>
+  </header>
+  <section class="field"><h2>Schema</h2><p>home-rail/v1</p></section>
+<section class="field"><h2>Draft</h2><p><code>false</code></p></section>
+<section class="field"><h2>Class SLUG</h2><p>class-12-notes</p></section>
+<section class="field"><h2>Subject SLUG</h2><p>nepali</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>lekhan-koushal</p></section>
+<section class="field"><h2>Unit Title</h2><p>लेखन कौशल</p></section>
+<section class="field"><h2>Unit Hours</h2><p><code>10</code></p></section>
+<section class="field"><h2>Syllabus Topics</h2><ul><li>आवधिक निबन्ध लेखन</li><li>पत्र लेखन — आधिकारिक र अनौपचारिक (व्यावसायिक पत्र सहित)</li><li>प्रतिवेदन र सम्पादन लेखन</li><li>समीक्षा र सारांश लेखन</li><li>सृजनात्मक लेखन — कथा, कविता, संवाद</li></ul></section>
+<section class="field"><h2>Source</h2><p>platform</p></section>
+<section class="field"><h2>Agent Notes</h2><p>Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.</p></section>
+<section class="field"><h2>Card</h2><dl class="obj"><div class="kv"><dt>Tag</dt><dd><p>लेखन कौशल · Class 12</p></dd></div><div class="kv"><dt>Title</dt><dd><p>प्रतिवेदन र समीक्षा — तथ्य पहिले, निर्णय पछि</p></dd></div><div class="kv"><dt>Href</dt><dd><p>/class-12-notes/nepali</p></dd></div><div class="kv"><dt>Icon</dt><dd><p>Highlighter</p></dd></div><div class="kv"><dt>Stat Key</dt><dd><p>pyq:nepali</p></dd></div></dl></section>
+<section class="field"><h2>Rows</h2><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Concept</p></dd></div><div class="kv"><dt>Text</dt><dd><p>कक्षा १२ को लेखन व्यावसायिक हुन्छ: प्रतिवेदन (घटना/तथ्य — शीर्षक, प्रतिवेदक, ५W नेतृत्व, अवरोही क्रममा विवरण, निष्पक्ष स्वर), समीक्षा (कृति परिचय + शिल्प विश्लेषण + निर्णय), सारांश (मूलको एक तिहाइ, आफ्नै शब्द, क्रम कायम), व्यावसायिक पत्र (विषय-स्पष्ट, बुँदागत माग)। निबन्ध, चिठी, कथा-कविता-संवाद कक्षा ११ कै सीप उच्च परिष्कारसहित।</p></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Formula</p></dd></div><div class="kv"><dt>Kind</dt><dd><p>formula</p></dd></div><div class="kv"><dt>Text</dt><dd><p>प्रतिवेदन: शीर्षक + प्रतिवेदक + नेतृत्व (को/के/कहिले/कहाँ) + विवरण (किन/कसरी, अवरोही)  ·  समीक्षा: परिचय + शिल्प (कथानक/भाषा/पात्र) + निर्णय  ·  सारांश: पढ → रेखाङ्कन → आफ्नै शब्द (~१/३) → जाँच  ·  व्यावसायिक पत्र: विषय + सन्दर्भ + माग (बुँदागत) + विनीत</p></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Conditions</p></dd></div><div class="kv"><dt>Text</dt><dd><p>प्रतिवेदन वस्तुनिष्ठ हुनुपर्छ (प्रत्यक्षदर्शी स्वर, भूतकाल, उद्धरण श्रेयसहित)। सारांशमा मूलक्रम र अनुपात कायम; उदाहरण/मत हटाउने। समीक्षामा निर्णयलाई प्रमाण चाहिन्छ (दृश्य/प्रविधि उद्धृत)। व्यावसायिक पत्रमा एक विषय, छोटा अनुच्छेद।</p></dd></div></dl></div></div><div class="item"><span class="idx">4.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Special cases</p></dd></div><div class="kv"><dt>Text</dt><dd><p>सम्पादकीय/सम्पादन लेखनमा संस्थागत स्वर (व्यक्तिगत मत होइन)। पुस्तक समीक्षामा कथावस्तु संक्षेप + शिल्प + सिफारिस। चलचित्र समीक्षामा अभिनय/निर्देशन/छायाङ्कन छुट्टै मूल्याङ्कन। सारांशमा शीर्षक हुँदैन, आफ्नै शब्द अनिवार्य।</p></dd></div></dl></div></div><div class="item"><span class="idx">5.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Solved</p></dd></div><div class="kv"><dt>Text</dt><dd><p>विद्यालय कार्यक्रमको प्रतिवेदन: शीर्षक ('विज्ञान प्रदर्शनी सम्पन्न') + प्रतिवेदक/मिति → नेतृत्व (के, कहिले, कहाँ, को) → विवरण अवरोही क्रममा (उद्घाटन → प्रदर्शनी → पुरस्कार → समापन) → प्रत्यक्ष उद्धरण एक। पाँच W नेतृत्वमै, बाँकी तल — सम्पादकले तलबाट काटे पनि समाचार बाँच्छ।</p></dd></div></dl></div></div><div class="item"><span class="idx">6.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Limitation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>ढाँचाले विषयवस्तु जन्माउँदैन — तथ्यहीन प्रतिवेदन आकारले बच्दैन। अति-संक्षेपणले योग्यता/सन्दर्भ मार्छ (सारांशको झूट)। समीक्षामा मापदण्ड नखुलाउँदा निर्णय स्वेच्छाचारी देखिन्छ।</p></dd></div></dl></div></div><div class="item"><span class="idx">7.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Derivation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>अङ्क-योजनाबाट पछाडि: विषयवस्तु (तथ्य पूर्णता) + सङ्गठन (नेतृत्व-पहिलो, सुसङ्गत) + भाषा (संक्षिप्त, शुद्ध) → नेतृत्वमा पाँचै W किनभने सम्पादक तलबाट काट्छन्; सारांशमा अनुपात किनभने परीक्षक मूल-अनुच्छेदअनुसार जाँच्छन्।</p></dd></div></dl></div></div><div class="item"><span class="idx">8.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Shortcut</p></dd></div><div class="kv"><dt>Text</dt><dd><p>प्रतिवेदन: ५W नेतृत्वमा, विवरण अवरोही। सारांश: आफ्नै शब्द, एक तिहाइ, उदाहरण-मत हटाऊ। समीक्षा: निर्णयलाई दुई प्रमाण चाहिन्छ। व्यावसायिक पत्र: विषय-लाइनमै माग झल्कियोस्।</p></dd></div></dl></div></div><div class="item"><span class="idx">9.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Board question</p></dd></div><div class="kv"><dt>Text</dt><dd><p>NEB-style: कार्यक्रम प्रतिवेदन (शीर्षक + नेतृत्वसहित); अनुच्छेद सारांश निश्‍चित सीमामा; पुस्तक/चलचित्र समीक्षा निर्णयसहित; व्यावसायिक पत्र माग-बुँदासहित।</p></dd></div></dl></div></div></section>
+  <nav class="pager"><a href="lekhan-koushal--04-समावेशक-लेखन.rail.html" title="lekhan-koushal--04-समावेशक-लेखन.rail">‹ lekhan-koushal--04-समावेशक-लेखन.rail</a><a class="mid" href="../../../../../_subjects/class-12-nepali.html">Nepali</a><span></span></nav>
+</div></body></html>

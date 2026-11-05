@@ -1,0 +1,244 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Incomplete dominance and codominance</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Biology  /  Heredity And Evolution</div>
+    <h1 class="doc">Incomplete dominance and codominance</h1>
+    <div class="meta"><span>Class 11</span><span>Biology</span><span>Heredity And Evolution</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>heredity-and-evolution</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>incomplete-dominance-and-codominance</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Beyond Mendel - Non-Mendelian Inheritance</h4></li><li>Not all traits follow simple dominant-recessive patterns.</li><li><h4>2. Incomplete Dominance</h4></li><li><ul>
+<li>Neither allele is completely dominant</li>
+</ul></li><li><ul>
+<li>Heterozygote shows intermediate phenotype</li>
+</ul></li><li><ul>
+<li>Example: Snapdragon flowers - Red (RR) x White (WW) -&gt; Pink (RW)</li>
+</ul></li><li><ul>
+<li>Phenotypic ratio matches genotypic ratio: 1:2:1</li>
+</ul></li><li><h4>3. Codominance</h4></li><li><ul>
+<li>Both alleles are fully expressed in heterozygote</li>
+</ul></li><li><ul>
+<li>Neither masks the other</li>
+</ul></li><li><ul>
+<li>Example: ABO blood groups - IA and IB are codominant</li>
+</ul></li><li><ul>
+<li>Example: Roan cattle - red and white hairs both appear</li>
+</ul></li><li><h4>4. Multiple Alleles</h4></li><li><ul>
+<li>More than two alleles exist for a gene in the population</li>
+</ul></li><li><ul>
+<li>Individual still has only two alleles</li>
+</ul></li><li><ul>
+<li>Example: ABO blood groups - IA, IB, i (three alleles)</li>
+</ul></li><li><h4>5. Blood Group Inheritance</h4></li><li><ul>
+<li>IAIA or IAi = Group A</li>
+</ul></li><li><ul>
+<li>IBIB or IBi = Group B</li>
+</ul></li><li><ul>
+<li>IAIB = Group AB (codominance)</li>
+</ul></li><li><ul>
+<li>ii = Group O (recessive)</li>
+</ul></li><li><ul>
+<li>Anti-A antibodies in type B and O; Anti-B antibodies in type A and O</li>
+</ul></li><li><h4>6. Entrance Exam Focus</h4></li><li>Distinguish incomplete dominance vs codominance; Solve blood group crosses.</li><li>Incomplete dominance means the heterozygote is intermediate, so a red flower crossed with a white flower can give a pink flower.</li><li>Under incomplete dominance the phenotype ratio matches the genotype ratio, one to two to one, because the heterozygote looks unlike either parent.</li><li>Codominance means both alleles are fully expressed together, as in blood group AB where the A antigen and the B antigen are both on the cell.</li><li>ABO blood uses the alleles IA, IB and i. IA and IB are codominant with each other, and i is recessive to both of them.</li><li>A roan coat, with red hairs and white hairs on the same animal, is the coat example of codominance rather than a blended colour.</li><li>Neither incomplete dominance nor codominance overturns segregation. The alleles still separate. Only the look of the heterozygote changes.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>x Incomplete dominance = blending. x It's not permanent blending - alleles remain distinct.</li><li>x Codominance = incomplete dominance. x In codominance both show fully, not intermediate.</li><li>x Type AB can donate to anyone. x Type AB can ONLY receive, not donate.</li><li>Pink flowers are not a blend of the alleles themselves. Each allele stays whole and segregates.</li><li>AB blood is codominance, not incomplete dominance. Both antigens are present, not a halfway antigen.</li><li>1:2:1 here is both genotype and phenotype under incomplete dominance.</li><li>A recessive allele is not 'weak DNA'. It is an allele whose product does not show when the other is present.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Cross red snapdragon (RR) with white (WW). What are F1 and F2 ratios?</li><li>A type A father and type B mother have a type O child. What are parent genotypes?</li><li>Can a type AB parent and type O parent have a type O child? Why/why not?</li><li>Explain why codominance differs from incomplete dominance.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Incomplete dominance means the heterozygote is intermediate, so a red flower crossed with a white flower can give a pink flower.</li><li>Under incomplete dominance the phenotype ratio matches the genotype ratio, one to two to one, because the heterozygote looks unlike either parent.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Not every trait follows a simple dominant-recessive pattern, and these exceptions are grouped as non-Mendelian inheritance. In incomplete dominance neither allele is completely dominant, so the heterozygote shows an intermediate phenotype — red RR x white WW snapdragon gives pink RW — and the phenotypic ratio equals the genotypic ratio of 1:2:1. In codominance both alleles are fully and simultaneously expressed in the heterozygote, as with IA and IB in the ABO blood group system and in roan cattle. The ABO system also illustrates multiple allelism, in which three alleles (IA, IB and i) exist in the population although every individual carries only two.</p></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Incomplete dominance: neither allele is completely dominant, so the heterozygote shows an intermediate phenotype (Red RR x White WW gives Pink RW in snapdragon).</li><li>Codominance: both alleles are fully expressed at the same time in the heterozygote and neither masks the other, as in IA and IB in the ABO blood groups and in roan cattle.</li><li>Multiple alleles: more than two alleles of one gene exist in the population (IA, IB and i for ABO), but any individual still carries only two.</li><li>ABO phenotypes: IAIA or IAi = group A; IBIB or IBi = group B; IAIB = group AB (codominance); ii = group O (homozygous recessive).</li><li>The diagnostic feature of incomplete dominance is that the phenotypic ratio equals the genotypic ratio (1:2:1), because the heterozygote is distinguishable from both homozygotes.</li><li>Non-Mendelian inheritance is the collective term for all inheritance patterns that depart from simple complete-dominance segregation ratios.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Incomplete dominance is not permanent genetic blending; the two alleles remain distinct and segregate normally, so the F2 again gives 1:2:1.</li><li>In codominance both parental traits appear fully in the heterozygote, whereas in incomplete dominance a single intermediate phenotype appears.</li><li>A type AB individual carries the codominant alleles IA and IB, so the red cells carry both antigens and the plasma contains neither anti-A nor anti-B.</li><li>A type O individual is homozygous recessive (ii) and carries both anti-A and anti-B antibodies in the plasma.</li><li>For red blood cells a type AB person can donate to all four ABO groups but can receive only from AB, while a type O person can donate only to O yet can receive from all four.</li><li>Each individual carries at most two alleles of the ABO gene even though three (IA, IB, i) exist in the population.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Work out the F1 and F2 ratios for a cross between red (RR) and white (WW) snapdragon and account for each F2 phenotypic class.</li><li>Predict the possible blood groups of the children of a type A father and a type B mother who have a type O child, and state the parental genotypes.</li><li>Determine whether an AB x O cross can produce a type O child and justify the answer with genotypes rather than phenotypes.</li><li>Tabulate the genotype, the antigen on the red cells and the antibody in the plasma for all four ABO blood groups.</li><li>Classify each of the following as complete dominance, incomplete dominance or codominance: pink snapdragon, roan cattle, pea plant height and the ABO blood group.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Red x white snapdragon: the F1 are all pink, and pink x pink gives F2 of 1 red : 2 pink : 1 white.</li><li>Whenever the heterozygote can be told apart, the phenotypic ratio equals the genotypic ratio of 1:2:1.</li><li>Complete dominance gives a 1:2:1 genotypic ratio but a 3:1 phenotypic ratio, because TT and Tt look identical.</li><li>IAIB is the classic codominant genotype, since red cells of an AB person display both the A and the B antigen.</li><li>A group O child (ii) must receive an i allele from each parent, so both parents must carry i.</li><li>Roan and shell-pattern cattle show codominance, because the red and white hairs appear side by side rather than blending into an intermediate colour.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Incomplete dominance produces an intermediate phenotype, whereas codominance produces both parental phenotypes together; the two must not be confused.</li><li>Multiple allelism is a population-level idea, and a diploid individual carries only two alleles of a gene, one from each parent.</li><li>For red-cell transfusion AB is the universal donor and O the universal recipient, while for plasma the position reverses because AB plasma contains neither anti-A nor anti-B.</li><li>A recessive phenotype appears only in homozygotes, so it is a reliable clue for deducing parental genotypes from a child's blood group.</li><li>A trait that looks blended is not genetic blending; the two alleles remain separate units and segregate normally in the F2 generation.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Memory hook - 'Incomplete means in between, co-dominant means both show'.</li><li>Ratio check: 1:2:1 in both genotype and phenotype means incomplete dominance, while 1:2:1 genotype with 3:1 phenotype means complete dominance.</li><li>Blood group shortcut: an O child (ii) means both parents carry i, and an AB child (IAIB) means one parent gives IA and the other gives IB.</li><li>ABO allele order: IA and IB are codominant, while i is recessive to both of them.</li><li>To find parental genotypes, write the child's genotype first and then split each of its alleles between the two parents.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Distinguishing incomplete dominance from codominance is the most asked 1-2 mark item in this topic, usually with the snapdragon and ABO examples.</li><li>Blood group crosses are commonly set as a 5-mark question requiring every possible blood group of the children together with its probability.</li><li>Multiple allele MCQs ask how many alleles a gene has in a population versus how many one individual carries; the answer is three, but only two per individual.</li><li>Tabulating the four blood groups (genotype, antigen on the red cells, antibody in the plasma) is a very common 5-mark structured question.</li><li>Reasoning questions such as 'can an AB parent and an O parent have an O child?' require genotypes to be written out, not phenotypes.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Cross red snapdragon (RR) with white (WW); give the F1 and F2 genotypic and phenotypic ratios.</li><li>A type A father and a type B mother have a type O child; what are the genotypes of the parents?</li><li>Can an AB parent and an O parent have a type O child? Answer with genotypes.</li><li>Explain the difference between incomplete dominance and codominance, with one example of each.</li><li>List the genotype, the red-cell antigen and the plasma antibody for each of the four ABO blood groups.</li><li>A roan bull (red and white coat) is crossed with a white bull; what proportions of red, roan and white offspring are expected, and why?</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Red (RR) x white (WW) snapdragon plants produce only pink F1 offspring. When two F1 plants are crossed, the F2 phenotypic ratio is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>3 red : 1 white</li><li>1 red : 2 pink : 1 white</li><li>9 red : 3 pink : 3 white : 1</li><li>1 red : 1 white</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Because the heterozygote is distinguishable as pink, the phenotypic ratio equals the genotypic ratio of 1 RR : 2 RW : 1 WW, which is the signature of incomplete dominance.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Which of the following best distinguishes codominance from incomplete dominance?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Codominance occurs only in blood groups</li><li>In codominance both alleles are fully expressed, while the heterozygote of incomplete dominance shows an intermediate phenotype</li><li>Codominance occurs only in plants</li><li>Incomplete dominance involves the blending of genes</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Codominance expresses both parental traits together (IAIB blood type, roan cattle), whereas incomplete dominance gives one intermediate phenotype (pink snapdragon). Blending of genes is a misconception; alleles never blend.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>How many alleles of the ABO gene exist in the human population, and how many does one individual carry?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Three in the population, two in each individual</li><li>Two in the population, two in each individual</li><li>Three in the population, three in each individual</li><li>Four in the population, two in each individual</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>IA, IB and i are the three alleles found in the population, but a diploid individual carries only two, one contributed by each parent.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>A child with blood group O (genotype ii) is born to a type A father and a type B mother. The parental genotypes are:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>IAIA x IBIB</li><li>IAi x IBi</li><li>IAi x IBIB</li><li>IAIB x ii</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The O child must receive an i allele from each parent, so the type A and the type B parents must both be heterozygous. IAi x IBi gives 25 per cent each of A, B, AB and O.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Which statement about a type AB individual is correct?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Carries both anti-A and anti-B antibodies in the plasma</li><li>Has the recessive genotype ii</li><li>Carries codominant alleles IA and IB, so the red cells show both A and B antigens</li><li>Cannot donate red cells to any group</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>AB results from the codominant alleles IA and IB, and because the plasma holds neither anti-A nor anti-B, AB red cells can be donated to all four groups. Plasma, however, can be received only from AB.</p></div></div></div></section>
+<section class="field"><h2>Examples</h2><ul><li>Incomplete dominance means the heterozygote is intermediate, so a red flower crossed with a white flower can give a pink flower.</li><li>Under incomplete dominance the phenotype ratio matches the genotype ratio, one to two to one, because the heterozygote looks unlike either parent.</li><li>Codominance means both alleles are fully expressed together, as in blood group AB where the A antigen and the B antigen are both on the cell.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Incomplete dominance means the heterozygote is intermediate, so a red flower crossed with a white flower can give a pink flower.</li><li>Under incomplete dominance the phenotype ratio matches the genotype ratio, one to two to one, because the heterozygote looks unlike either parent.</li><li>Codominance means both alleles are fully expressed together, as in blood group AB where the A antigen and the B antigen are both on the cell.</li><li>ABO blood uses the alleles IA, IB and i. IA and IB are codominant with each other, and i is recessive to both of them.</li><li>A roan coat, with red hairs and white hairs on the same animal, is the coat example of codominance rather than a blended colour.</li><li>Neither incomplete dominance nor codominance overturns segregation. The alleles still separate. Only the look of the heterozygote changes.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Do not swap the two sides of a contrast.</li><li>A formula or a sequence is worthless if the example contradicts it.</li></ul></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Pink flowers from red and white parents are</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Incomplete dominance</li><li>Codominance of blood</li><li>A 9:3:3:1 dihybrid</li><li>Extinction</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Blood group AB is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Codominance of IA and IB</li><li>Incomplete dominance to a pink cell</li><li>A recessive genotype ii</li><li>A fungal mating type</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Under incomplete dominance the heterozygote phenotype ratio is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>3:1</li><li>1:2:1</li><li>9:3:3:1</li><li>All one class</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Segregation in these cases</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Stops working</li><li>Still separates the two alleles</li><li>Creates a third allele</li><li>Removes the gametes</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A pink flower, from incomplete dominance, is self-pollinated. Give the offspring colours.</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Pink is the heterozygote, call it RW.</li><li>Gametes are R and W.</li><li>Offspring are RR, RW, RW, WW.</li><li>That is one red, two pink, one white.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>1 red : 2 pink : 1 white.</p></div></div></div></section>
+<section class="field"><h2>Visual Type</h2><p>three-domains</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>Incomplete dominance blends the heterozygote. Codominance shows both alleles at once.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li><h4>1. Beyond Mendel - Non-Mendelian Inheritance</h4></li><li>Not all traits follow simple dominant-recessive patterns.</li><li><h4>2. Incomplete Dominance</h4></li><li><ul>
+<li>Neither allele is completely dominant</li>
+</ul></li><li><ul>
+<li>Heterozygote shows intermediate phenotype</li>
+</ul></li><li><ul>
+<li>Example: Snapdragon flowers - Red (RR) x White (WW) -&gt; Pink (RW)</li>
+</ul></li><li><ul>
+<li>Phenotypic ratio matches genotypic ratio: 1:2:1</li>
+</ul></li><li><h4>3. Codominance</h4></li><li><ul>
+<li>Both alleles are fully expressed in heterozygote</li>
+</ul></li><li><ul>
+<li>Neither masks the other</li>
+</ul></li><li><ul>
+<li>Example: ABO blood groups - IA and IB are codominant</li>
+</ul></li><li><ul>
+<li>Example: Roan cattle - red and white hairs both appear</li>
+</ul></li><li><h4>4. Multiple Alleles</h4></li><li><ul>
+<li>More than two alleles exist for a gene in the population</li>
+</ul></li><li><ul>
+<li>Individual still has only two alleles</li>
+</ul></li><li><ul>
+<li>Example: ABO blood groups - IA, IB, i (three alleles)</li>
+</ul></li><li><h4>5. Blood Group Inheritance</h4></li><li><ul>
+<li>IAIA or IAi = Group A</li>
+</ul></li><li><ul>
+<li>IBIB or IBi = Group B</li>
+</ul></li><li><ul>
+<li>IAIB = Group AB (codominance)</li>
+</ul></li><li><ul>
+<li>ii = Group O (recessive)</li>
+</ul></li><li><ul>
+<li>Anti-A antibodies in type B and O; Anti-B antibodies in type A and O</li>
+</ul></li><li><h4>6. Entrance Exam Focus</h4></li><li>Distinguish incomplete dominance vs codominance; Solve blood group crosses.</li><li>Incomplete dominance means the heterozygote is intermediate, so a red flower crossed with a white flower can give a pink flower.</li><li>Under incomplete dominance the phenotype ratio matches the genotype ratio, one to two to one, because the heterozygote looks unlike either parent.</li><li>Codominance means both alleles are fully expressed together, as in blood group AB where the A antigen and the B antigen are both on the cell.</li><li>ABO blood uses the alleles IA, IB and i. IA and IB are codominant with each other, and i is recessive to both of them.</li><li>A roan coat, with red hairs and white hairs on the same animal, is the coat example of codominance rather than a blended colour.</li><li>Neither incomplete dominance nor codominance overturns segregation. The alleles still separate. Only the look of the heterozygote changes.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Bounds</h2><ul><li>Class 11 boundary: stop at the characters in this note.</li><li>Do not invent a rank or a count.</li></ul></section>
+  <nav class="pager"><a href="03-mendels-laws-of-inheritance.html" title="Mendel's laws of inheritance">‹ Mendel's laws of inheritance</a><a class="mid" href="../../../../../_subjects/class-11-biology.html">Biology</a><span></span></nav>
+</div></body></html>

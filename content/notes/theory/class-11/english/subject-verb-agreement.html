@@ -1,0 +1,456 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Subject-Verb Agreement — Tricky Cases</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English</div>
+    <h1 class="doc">Subject-Verb Agreement — Tricky Cases</h1>
+    <div class="meta"><span>Class 11</span><span>English</span></div>
+  </header>
+  <section class="field"><h2>Notes</h2><ul><li><strong>Subject-Verb Agreement</strong> is one of the most tested grammar topics in NEB English. The basic rule is: singular subjects take singular verbs, plural subjects take plural verbs. However, many nouns break this rule — they look plural but take singular verbs, or look singular but take plural verbs.</li><li></li><li><h3>🔹 Looks Plural, Takes a Singular Verb</h3></li><li></li><li>These nouns end in <strong>-s</strong> but are actually singular and take <strong>is/was</strong>:</li><li></li><li><h4>📘 School Subjects / Science</h4></li><li><ul>
+<li><strong>Physics</strong> is my favorite subject.</li>
+</ul></li><li><ul>
+<li><strong>Mathematics</strong> is not difficult if you practice.</li>
+</ul></li><li><ul>
+<li><strong>Economics</strong> is a popular choice for commerce students.</li>
+</ul></li><li><ul>
+<li><strong>Genetics</strong> is a branch of biology.</li>
+</ul></li><li><ul>
+<li><strong>Robotics</strong> is an emerging field.</li>
+</ul></li><li></li><li><h4>🩺 Diseases</h4></li><li><ul>
+<li><strong>Measles</strong> is a contagious childhood disease.</li>
+</ul></li><li><ul>
+<li><strong>Mumps</strong> is caused by a virus.</li>
+</ul></li><li><ul>
+<li><strong>Diabetes</strong> is a chronic condition.</li>
+</ul></li><li><ul>
+<li><strong>Rabies</strong> is fatal if not treated.</li>
+</ul></li><li></li><li><h4>🎲 Games / Sports</h4></li><li><ul>
+<li><strong>Darts</strong> is a popular pub game.</li>
+</ul></li><li><ul>
+<li><strong>Billiards</strong> is played on a large table.</li>
+</ul></li><li><ul>
+<li><strong>Dominoes</strong> is a game of tiles.</li>
+</ul></li><li><ul>
+<li><strong>Gymnastics</strong> requires great flexibility.</li>
+</ul></li><li></li><li><h4>🌍 Countries / Places</h4></li><li><ul>
+<li><strong>The United States</strong> is a large country.</li>
+</ul></li><li><ul>
+<li><strong>The Netherlands</strong> is known for tulips.</li>
+</ul></li><li><ul>
+<li><strong>The Philippines</strong> is an archipelago.</li>
+</ul></li><li><ul>
+<li><strong>Headquarters</strong> is located in the city center.</li>
+</ul></li><li></li><li><h4>💰 Measurement Units (Time / Money / Distance)</h4></li><li><ul>
+<li><strong>Ten dollars</strong> is too much for a coffee.</li>
+</ul></li><li><ul>
+<li><strong>Five miles</strong> is a long distance to run.</li>
+</ul></li><li><ul>
+<li><strong>Three hours</strong> is a long flight.</li>
+</ul></li><li></li><li><h4>📰 Other Words</h4></li><li><ul>
+<li><strong>News</strong> is broadcast at 6 PM.</li>
+</ul></li><li><ul>
+<li><strong>Series</strong> is my favorite TV genre.</li>
+</ul></li><li><ul>
+<li><strong>Species</strong> is a biological classification.</li>
+</ul></li><li><ul>
+<li><strong>Crossroads</strong> is a busy intersection.</li>
+</ul></li><li></li><li><blockquote><p><strong>Rule:</strong> Words ending in <strong>-s</strong> that are names of academic subjects, diseases, games, countries, measurements, or abstract concepts often take <strong>singular verbs</strong>.</p></blockquote></li><li></li><li><h3>🔹 Looks Singular, Takes a Plural Verb</h3></li><li></li><li>These nouns have no <strong>-s</strong> but are actually plural and take <strong>are/were</strong>:</li><li></li><li><h4>👥 Groups of People</h4></li><li><ul>
+<li><strong>Police</strong> are investigating the crime.</li>
+</ul></li><li><ul>
+<li><strong>People</strong> are waiting outside.</li>
+</ul></li><li><ul>
+<li><strong>Clergy</strong> were present at the ceremony.</li>
+</ul></li><li><ul>
+<li><strong>Gentry</strong> are known for their generosity.</li>
+</ul></li><li><ul>
+<li><strong>Folk</strong> are traditional and colorful.</li>
+</ul></li><li></li><li><h4>🐄 Animals / Livestock</h4></li><li><ul>
+<li><strong>Cattle</strong> are grazing in the field.</li>
+</ul></li><li><ul>
+<li><strong>Poultry</strong> are kept for eggs and meat.</li>
+</ul></li><li><ul>
+<li><strong>Vermin</strong> are pests that destroy crops.</li>
+</ul></li><li></li><li><h4>💼 Work Groups (when focusing on members)</h4></li><li><ul>
+<li>The <strong>staff</strong> are having a meeting.</li>
+</ul></li><li><ul>
+<li>The <strong>crew</strong> are working hard.</li>
+</ul></li><li></li><li><blockquote><p><strong>Rule:</strong> Collective nouns that refer to groups of individuals often take <strong>plural verbs</strong> when emphasizing the members.</p></blockquote></li><li></li><li><h3>🔹 Compound Subjects Joined by 'And'</h3></li><li></li><li><h4>🍽️ One Single Meal / Dish → Singular Verb</h4></li><li>These foods are served and eaten together as one dish:</li><li><ul>
+<li><strong>Bread and butter</strong> is my daily breakfast.</li>
+</ul></li><li><ul>
+<li><strong>Rice and curry</strong> is a popular meal in Asia.</li>
+</ul></li><li><ul>
+<li><strong>Fish and chips</strong> is a famous British dish.</li>
+</ul></li><li><ul>
+<li><strong>Bacon and eggs</strong> is a heavy breakfast.</li>
+</ul></li><li><ul>
+<li><strong>Macaroni and cheese</strong> is comfort food.</li>
+</ul></li><li><ul>
+<li><strong>Strawberries and cream</strong> is served at tennis matches.</li>
+</ul></li><li></li><li><h4>🛒 Separate Food Items / Groceries → Plural Verb</h4></li><li>Same-sounding pairs, but here they're two separate items:</li><li><ul>
+<li>Bread and butter <strong>are</strong> both on the shopping list.</li>
+</ul></li><li><ul>
+<li>Milk and cookies <strong>are</strong> in the kitchen.</li>
+</ul></li><li><ul>
+<li>Apples and oranges <strong>grow</strong> on trees.</li>
+</ul></li><li></li><li><h4>🤝 One Concept or Idiom → Singular Verb</h4></li><li><ul>
+<li><strong>Law and order</strong> is important for a safe city.</li>
+</ul></li><li><ul>
+<li><strong>Peace and quiet</strong> is all I need.</li>
+</ul></li><li><ul>
+<li><strong>Trial and error</strong> is a great way to learn.</li>
+</ul></li><li><ul>
+<li><strong>Slow and steady</strong> wins the race.</li>
+</ul></li><li><ul>
+<li><strong>All work and no play</strong> makes Jack a dull boy.</li>
+</ul></li><li></li><li><h4>👫 Distinct People or Roles → Plural Verb</h4></li><li><ul>
+<li>My mom and dad <strong>are</strong> coming.</li>
+</ul></li><li><ul>
+<li>The teacher and the student <strong>were</strong> talking.</li>
+</ul></li><li><ul>
+<li>Fire and water <strong>do not</strong> mix.</li>
+</ul></li><li></li><li><h4>🏹 Two Objects Working as One Unit → Singular Verb</h4></li><li><ul>
+<li>A horse and carriage <strong>was</strong> outside.</li>
+</ul></li><li><ul>
+<li>A needle and thread <strong>is</strong> needed.</li>
+</ul></li><li><ul>
+<li>A bow and arrow <strong>was</strong> used.</li>
+</ul></li><li></li><li><h4>🎒 Different Objects / Tools → Plural Verb</h4></li><li><ul>
+<li>A pen and a pencil <strong>are</strong> on the desk.</li>
+</ul></li><li><ul>
+<li>The hammer and the wrench <strong>are</strong> in the box.</li>
+</ul></li><li><ul>
+<li>Shoes and socks <strong>are</strong> in the closet.</li>
+</ul></li><li></li><li><h4>🔍 How to Tell the Difference Quickly</h4></li><li>Look at the little word <strong>&quot;the&quot;</strong> or <strong>&quot;a&quot;</strong> in the sentence — it's a major clue:</li><li><ul>
+<li><strong>One article = Singular idea:</strong> &quot;The chef and owner is here.&quot; (one person, two jobs)</li>
+</ul></li><li><ul>
+<li><strong>Two articles = Plural people:</strong> &quot;The chef and the owner are here.&quot; (two different people)</li>
+</ul></li><li></li><li><blockquote><p><strong>Example:</strong> _Rice and curry is my favorite dish._ (one meal) vs. _Rice and curry are both sold at the market._ (two items)</p></blockquote></li><li></li><li><h3>🔹 Plural-Only Nouns: Clothing &amp; Tools</h3></li><li></li><li>These items have no singular form — they are always plural:</li><li></li><li><h4>👖 Clothing and Underwear</h4></li><li><ul>
+<li><strong>Pants</strong> — The pants <strong>are</strong> on the bed.</li>
+</ul></li><li><ul>
+<li><strong>Jeans</strong> — Blue jeans <strong>look</strong> great.</li>
+</ul></li><li><ul>
+<li><strong>Shorts</strong> — Running shorts <strong>are</strong> comfortable.</li>
+</ul></li><li><ul>
+<li><strong>Trousers</strong> — Black trousers <strong>match</strong> any shirt.</li>
+</ul></li><li><ul>
+<li><strong>Pajamas</strong> — My pajamas <strong>feel</strong> soft.</li>
+</ul></li><li><ul>
+<li><strong>Leggings</strong> — Yoga leggings <strong>stretch</strong> a lot.</li>
+</ul></li><li><ul>
+<li><strong>Tights</strong> — Warm tights <strong>keep</strong> you cozy.</li>
+</ul></li><li><ul>
+<li><strong>Briefs / Boxers / Underpants</strong> — These boxers <strong>are</strong> new.</li>
+</ul></li><li><ul>
+<li><strong>Overalls</strong> — Denim overalls <strong>are</strong> trendy.</li>
+</ul></li><li><ul>
+<li><strong>Slacks</strong> — Dress slacks <strong>are</strong> required for work.</li>
+</ul></li><li><ul>
+<li><strong>Suspenders</strong> — Clip-on suspenders <strong>hold</strong> up pants.</li>
+</ul></li><li></li><li><h4>✂️ Tools and Instruments</h4></li><li><ul>
+<li><strong>Scissors</strong> — Large scissors <strong>cut</strong> thick paper.</li>
+</ul></li><li><ul>
+<li><strong>Pliers</strong> — Needle-nose pliers <strong>grip</strong> wires tightly.</li>
+</ul></li><li><ul>
+<li><strong>Tweezers</strong> — Metal tweezers <strong>pick</strong> up small items.</li>
+</ul></li><li><ul>
+<li><strong>Tongs</strong> — Ice tongs <strong>are</strong> in the bucket.</li>
+</ul></li><li><ul>
+<li><strong>Shears</strong> — Hedge shears <strong>trim</strong> the bushes.</li>
+</ul></li><li><ul>
+<li><strong>Clippers</strong> — Nail clippers <strong>are</strong> sharp.</li>
+</ul></li><li><ul>
+<li><strong>Forceps</strong> — Medical forceps <strong>hold</strong> the bandages.</li>
+</ul></li><li><ul>
+<li><strong>Handcuffs</strong> — Steel handcuffs <strong>lock</strong> tight.</li>
+</ul></li><li><ul>
+<li><strong>Nutcrackers</strong> — Wooden nutcrackers <strong>crack</strong> walnuts easily.</li>
+</ul></li><li><ul>
+<li><strong>Bellows</strong> — Fireplace bellows <strong>blow</strong> air onto logs.</li>
+</ul></li><li></li><li><h4>🕶️ Gear for Eyes and Ears</h4></li><li><ul>
+<li><strong>Glasses / Spectacles</strong> — Reading glasses <strong>help</strong> you see.</li>
+</ul></li><li><ul>
+<li><strong>Sunglasses</strong> — Dark sunglasses <strong>block</strong> the sun.</li>
+</ul></li><li><ul>
+<li><strong>Goggles</strong> — Safety goggles <strong>protect</strong> your eyes.</li>
+</ul></li><li><ul>
+<li><strong>Binoculars</strong> — Heavy binoculars <strong>make</strong> birds look close.</li>
+</ul></li><li><ul>
+<li><strong>Headphones / Earphones</strong> — Wireless headphones <strong>play</strong> music clearly.</li>
+</ul></li><li></li><li><blockquote><p><strong>Rule:</strong> Two-part items that are always plural — no singular form exists. Use <strong>are/were</strong>, never <strong>is/was</strong>.</p></blockquote></li><li></li><li><h3>🔹 Indefinite Pronouns — The Agreement Rules</h3></li><li></li><li><h4>👤 SINGULAR (take singular verbs)</h4></li><li><ul>
+<li><strong>Each, every, either, neither</strong> → singular: 'Each of the students <strong>is</strong> present.'</li>
+</ul></li><li><ul>
+<li><strong>Someone, someone else, anyone, anyone else, no one, nobody, everyone, everybody</strong> → singular: 'Everyone <strong>is</strong> here.'</li>
+</ul></li><li><ul>
+<li><strong>Something, anything, nothing, everything</strong> → singular: 'Nothing <strong>is</strong> impossible.'</li>
+</ul></li><li><ul>
+<li><strong>One</strong> → singular: 'One <strong>must</strong> follow the rules.'</li>
+</ul></li><li></li><li><h4>👥 PLURAL (take plural verbs)</h4></li><li><ul>
+<li><strong>Both, few, several, many</strong> → plural: 'Both of them <strong>are</strong> coming.'</li>
+</ul></li><li><ul>
+<li><strong>All</strong> → depends on what follows: 'All of the cake <strong>is</strong> gone.' (singular) vs. 'All of the students <strong>are</strong> gone.' (plural)</li>
+</ul></li><li></li><li><blockquote><p><strong>Rule:</strong> Words like each, every, anyone, everyone, nobody, somebody ALWAYS take singular verbs — even when followed by 'of the students/people'.</p></blockquote></li><li></li><li><h3>🔹 'Of' Phrases — Finding the Real Subject</h3></li><li></li><li>In sentences like 'The list of items <strong>is</strong> long,' the subject is NOT 'items' — it's 'list.' The phrase 'of items' is just additional information. Common patterns:</li><li></li><li><ul>
+<li>The <strong>number</strong> of students <strong>is</strong> large. (The number = singular; a specific quantity)</li>
+</ul></li><li><ul>
+<li><strong>A number</strong> of students <strong>are</strong> absent. (A number = plural; many students)</li>
+</ul></li><li><ul>
+<li>The <strong>majority</strong> of the work <strong>is</strong> done. (The majority = singular when referring to a whole)</li>
+</ul></li><li><ul>
+<li><strong>Half</strong> of the pie <strong>is</strong> eaten. / <strong>Half</strong> of the students <strong>are</strong> absent.</li>
+</ul></li><li><ul>
+<li>One <strong>third</strong> of the population <strong>lives</strong> in cities. / One <strong>third</strong> of the voters <strong>support</strong> the plan.</li>
+</ul></li><li><ul>
+<li>None of the money <strong>has</strong> been spent. / None of the students <strong>have</strong> arrived.</li>
+</ul></li><li></li><li><blockquote><p><strong>Rule:</strong> In 'The [noun] of [plural noun]' constructions, the FIRST noun (not the one after 'of') is the subject. 'The number of' = singular. 'A number of' = plural.</p></blockquote></li><li></li><li><h3>🔹 Headings, Titles, and Quotations as Subjects</h3></li><li></li><li><ul>
+<li>The <strong>title</strong> of the book <strong>is</strong> 'Harry Potter.' (singular — title = subject)</li>
+</ul></li><li><ul>
+<li>'<strong>Himalaya</strong>' <strong>is</strong> a mountain range. (singular — the word itself)</li>
+</ul></li><li><ul>
+<li>'<strong>Les Misérables</strong>' <strong>is</strong> a famous novel. (singular — one title)</li>
+</ul></li><li><ul>
+<li>'<strong>The Rajiv Gandhi Award</strong>' <strong>was</strong> established in 1991. (singular)</li>
+</ul></li><li><ul>
+<li>'<strong>War and Peace</strong>' <strong>is</strong> Tolstoy's longest novel. (singular — one book)</li>
+</ul></li><li><ul>
+<li>'<strong>Tom and Jerry</strong>' <strong>is</strong> a classic cartoon. (singular — one show)</li>
+</ul></li><li></li><li><blockquote><p><strong>Rule:</strong> Titles, names of books/movies, and single entities take singular verbs — even if they contain 'and' or look plural.</p></blockquote></li><li></li><li><h3>🔹 Words That Are Always Singular</h3></li><li></li><li><ul>
+<li><strong>Mathematics, physics, economics, ethics, measles, mumps, tennis, billiards</strong> → singular</li>
+</ul></li><li><ul>
+<li><strong>The poor, the rich, the elderly, the young, the deaf, the blind</strong> → plural (referring to groups): 'The poor <strong>need</strong> help.'</li>
+</ul></li><li><ul>
+<li><strong>Dias, weeks, months, years, miles</strong> (as measurement) → singular: 'Ten miles <strong>is</strong> a long walk.'</li>
+</ul></li><li><ul>
+<li><strong>Measles, diabetes, malaria, gymnastics</strong> → singular: 'Malaria <strong>is</strong> a serious disease.'</li>
+</ul></li><li></li><li><h3>🔹 Collective Nouns — When Singular, When Plural</h3></li><li></li><li>Collective nouns like 'team', 'family', 'committee', 'government', 'class', 'board' can take EITHER singular or plural verbs depending on whether you mean the GROUP as a unit or the INDIVIDUAL MEMBERS:</li><li></li><li><ul>
+<li><strong>Singular (unit):</strong> 'The team <strong>wins</strong> the championship.' (the team as one entity)</li>
+</ul></li><li><ul>
+<li><strong>Plural (members):</strong> 'The team <strong>are</strong> arguing among themselves.' (individual members disagreeing)</li>
+</ul></li><li><ul>
+<li><strong>Singular:</strong> 'The government <strong>has</strong> announced a new policy.'</li>
+</ul></li><li><ul>
+<li><strong>Plural:</strong> 'The government <strong>are</strong> divided on this issue.'</li>
+</ul></li><li><ul>
+<li><strong>Singular:</strong> 'The class <strong>is</strong> going to the museum.'</li>
+</ul></li><li><ul>
+<li><strong>Plural:</strong> 'The class <strong>are</strong> wearing their uniforms.'</li>
+</ul></li><li></li><li><blockquote><p><strong>Rule:</strong> If the group acts as ONE UNIT → singular verb. If the members act INDIVIDUALLY → plural verb. Look for clues: 'themselves' often signals plural.</p></blockquote></li><li></li><li><h3>🔹 Inversion and Questions — Finding the Subject</h3></li><li></li><li>In inverted sentences (where the verb comes before the subject), find the REAL subject to get agreement right:</li><li></li><li><ul>
+<li><strong>There is</strong> a book on the table. / <strong>There are</strong> books on the table. (subject follows the verb)</li>
+</ul></li><li><ul>
+<li><strong>Here comes</strong> the bus. / <strong>Here come</strong> the buses. (subject follows the verb)</li>
+</ul></li><li><ul>
+<li><strong>Where is</strong> the manager? / <strong>Where are</strong> the managers?</li>
+</ul></li><li><ul>
+<li><strong>Under the tree sits</strong> a old man. / <strong>Under the tree sit</strong> three old men.</li>
+</ul></li><li><ul>
+<li><strong>On the wall hangs</strong> a painting. / <strong>On the wall hang</strong> three paintings.</li>
+</ul></li><li></li><li><blockquote><p><strong>Rule:</strong> In 'There is/are' and 'Here comes/come' constructions, the subject comes AFTER the verb. Match the verb to the subject that follows.</p></blockquote></li><li></li><li><h3>🔹 'And' vs. 'Or' / 'Nor' / 'Either…or' / 'Neither…nor'</h3></li><li></li><li><h4>AND — always plural (unless one idea)</h4></li><li><ul>
+<li>Ram and Shyam <strong>are</strong> coming. (plural — two people)</li>
+</ul></li><li><ul>
+<li>Bread and butter <strong>is</strong> my breakfast. (singular — one dish)</li>
+</ul></li><li></li><li><h4>OR / NOR / EITHER…OR / NEITHER…NOR — verb agrees with NEAREST subject</h4></li><li><ul>
+<li>Neither the teacher nor the students <strong>are</strong> present. (nearest = 'students' → plural)</li>
+</ul></li><li><ul>
+<li>Neither the students nor the teacher <strong>is</strong> present. (nearest = 'teacher' → singular)</li>
+</ul></li><li><ul>
+<li>Either the boys or the girl <strong>has</strong> won. (nearest = 'girl' → singular)</li>
+</ul></li><li><ul>
+<li>Either the girl or the boys <strong>have</strong> won. (nearest = 'boys' → plural)</li>
+</ul></li><li><ul>
+<li>Neither the captain nor the players <strong>were</strong> happy. (nearest = 'players' → plural)</li>
+</ul></li><li></li><li><blockquote><p><strong>Rule:</strong> With 'or/nor/either…or/neither…nor', the verb agrees with the subject CLOSEST to it. Always check which subject is nearest.</p></blockquote></li><li></li><li><h3>🔹 Quantifiers and Agreement</h3></li><li></li><li><ul>
+<li><strong>Many a</strong> + singular noun + singular verb: 'Many a student <strong>has</strong> failed.' (literary/formal)</li>
+</ul></li><li><ul>
+<li><strong>A number of</strong> + plural noun + plural verb: 'A number of students <strong>are</strong> absent.'</li>
+</ul></li><li><ul>
+<li><strong>The number of</strong> + plural noun + singular verb: 'The number of students <strong>is</strong> increasing.'</li>
+</ul></li><li><ul>
+<li><strong>Some, most, all, half</strong> + of + singular/plural noun → verb matches the noun: 'Some of the water <strong>is</strong> dirty.' / 'Some of the students <strong>are</strong> late.'</li>
+</ul></li><li><ul>
+<li><strong>None of</strong> + singular/plural → both acceptable, but singular is more formal: 'None of the answers <strong>is</strong> correct.' / 'None of the answers <strong>are</strong> correct.'</li>
+</ul></li><li></li><li><h3>📝 Quick Reference Table</h3></li><li></li><li>| Category | Examples | Verb | Example Sentence |</li><li>|----------|----------|------|------------------|</li><li>| Ends in -s but singular | Physics, Math, Economics | <strong>is</strong> | Physics <strong>is</strong> easy. |</li><li>| Diseases ending in -s | Measles, Mumps, Diabetes | <strong>is</strong> | Measles <strong>is</strong> contagious. |</li><li>| Games ending in -s | Darts, Billiards, Gymnastics | <strong>is</strong> | Darts <strong>is</strong> fun. |</li><li>| Countries with 'The' | The United States, The Philippines | <strong>is</strong> | The Philippines <strong>is</strong> an island nation. |</li><li>| Measurements | Ten dollars, Five miles | <strong>is</strong> | Ten dollars <strong>is</strong> enough. |</li><li>| Group nouns (plural) | Police, Cattle, People | <strong>are</strong> | The police <strong>are</strong> coming. |</li><li>| Compound (one idea) | Bread and butter, Law and order | <strong>is</strong> | Bread and butter <strong>is</strong> delicious. |</li><li>| Compound (two things) | A pen and a pencil, Mom and dad | <strong>are</strong> | Mom and dad <strong>are</strong> here. |</li><li>| Always plural | Scissors, Pants, Glasses | <strong>are</strong> | Scissors <strong>are</strong> sharp. |</li><li>| Indefinite pronouns | Each, everyone, nobody | <strong>is</strong> | Everyone <strong>is</strong> ready. |</li><li>| 'A number of' | A number of students | <strong>are</strong> | A number of students <strong>are</strong> absent. |</li><li>| 'The number of' | The number of students | <strong>is</strong> | The number of students <strong>is</strong> 50. |</li><li>| Collective noun (unit) | The team wins | <strong>wins</strong> | The team <strong>wins</strong> the match. |</li><li>| Collective noun (members) | The team argue | <strong>argue</strong> | The team <strong>are</strong> arguing. |</li><li>| 'Or/Nor' nearest subject | Neither teacher nor students | <strong>are</strong> | Neither the teacher nor the students <strong>are</strong> here. |</li><li></li><li><h3>✅ Practice Questions</h3></li><li></li><li><ol>
+<li>Physics _____ my favorite subject. (is/are)</li>
+</ol></li><li><ol>
+<li>The police _____ investigating the case. (is/are)</li>
+</ol></li><li><ol>
+<li>Bread and butter _____ my breakfast. (is/are)</li>
+</ol></li><li><ol>
+<li>My scissors _____ missing. (is/are)</li>
+</ol></li><li><ol>
+<li>The United States _____ a large country. (is/are)</li>
+</ol></li><li><ol>
+<li>Measles _____ a viral disease. (is/are)</li>
+</ol></li><li><ol>
+<li>The staff _____ having a meeting. (is/are)</li>
+</ol></li><li><ol>
+<li>Law and order _____ everyone's responsibility. (is/are)</li>
+</ol></li><li><ol>
+<li>Five miles _____ a long distance. (is/are)</li>
+</ol></li><li><ol>
+<li>The glasses _____ on the table. (is/are)</li>
+</ol></li><li><ol>
+<li>Each of the students _____ a textbook. (has/have)</li>
+</ol></li><li><ol>
+<li>Neither the boys nor the girl _____ at home. (is/are)</li>
+</ol></li><li><ol>
+<li>The number of applicants _____ increased. (has/have)</li>
+</ol></li><li><ol>
+<li>A number of reasons _____ given. (has/have)</li>
+</ol></li><li><ol>
+<li>The news _____ very encouraging. (is/are)</li>
+</ol></li><li><ol>
+<li>The couple _____ buying a new house. (is/are)</li>
+</ol></li><li><ol>
+<li>Rice and curry _____ my favorite meal. (is/are)</li>
+</ol></li><li><ol>
+<li>Ten dollars _____ too much to pay. (is/are)</li>
+</ol></li><li><ol>
+<li>There _____ a book and two pens on the desk. (is/are)</li>
+</ol></li><li><ol>
+<li>Neither the principal nor the teachers _____ aware of the plan. (was/were)</li>
+</ol></li><li></li><li><strong>Answers:</strong> 1. is, 2. are, 3. is, 4. are, 5. is, 6. is, 7. are, 8. is, 9. is, 10. are, 11. has, 12. is, 13. has, 14. have, 15. is, 16. are, 17. is, 18. is, 19. is (nearest = 'a book'), 20. were (nearest = 'teachers')</li></ul></section>
+  <nav class="pager"><a href="grammar-composition.html" title="English Grammar &amp; Composition Essentials">‹ English Grammar &amp; Composition Essentials</a><a class="mid" href="../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

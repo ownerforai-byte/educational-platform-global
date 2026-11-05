@@ -1,0 +1,173 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Liquid State: Physical Properties of Liquids</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Chemistry  /  States Of Matter</div>
+    <h1 class="doc">Liquid State: Physical Properties of Liquids</h1>
+    <div class="meta"><span>Class 11</span><span>Chemistry</span><span>States Of Matter</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>states-of-matter</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>liquid-state-physical-properties-of-liquids-evaporation-and-condensation-vapour-pressure-and-boi</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Meaning of the liquid state</h4></li><li>A liquid has a definite volume but no definite shape: molecules are close together (short intermolecular distances) and slide over one another, so a liquid can flow, is practically incompressible and shows short-range order only. Intermolecular forces are strong enough to hold the molecules together but not strong enough to fix them in a lattice, as in a solid.</li><li><h4>2. Evaporation and condensation</h4></li><li><strong>Evaporation</strong> is the escape of high-energy molecules from the <em>surface</em> of a liquid into the vapour phase at any temperature below the boiling point. It is endothermic (the liquid cools — earthen pots, sweating, petrichor), and its rate increases with temperature, surface area, wind/movement and dryness of the air, and decreases with humidity. <strong>Condensation</strong> is the reverse change of vapour to liquid, releasing the same latent heat; when the rates become equal a dynamic equilibrium is established and the vapour is said to be saturated (dew point for atmospheric condensation).</li><li><h4>3. Vapour pressure and boiling point</h4></li><li>Vapour pressure is the pressure exerted by the vapour when it is in dynamic equilibrium with its liquid at a given temperature. It depends only on the nature of the liquid and the temperature — <strong>not</strong> on the amount of liquid or the size of the container. Volatile liquids have high vapour pressure (ether, acetone, alcohol); water has 23.8 mm Hg at 25 °C and 760 mm Hg at 100 °C. Vapour pressure rises steeply with temperature; the quantitative relation is the Clausius–Clapeyron equation.</li><li><strong>Boiling</strong> occurs when the vapour pressure of the liquid becomes equal to the external (atmospheric) pressure; the temperature at that point is the boiling point, and heat supplied thereafter goes into converting liquid to vapour (latent heat of vaporisation) so the temperature stays constant. Consequences: boiling point rises with external pressure (pressure cooker) and falls in the mountains/vacuum (water boils below 100 °C at high altitude; vacuum distillation for heat-sensitive liquids).</li><li><h4>4. Surface tension</h4></li><li>Molecules in the bulk are pulled equally in all directions, but a surface molecule experiences a net inward pull, so the surface behaves like a stretched membrane and tends to minimise its area. Surface tension γ is the force per unit length acting along the surface (γ = F/l), with units N m⁻¹ or J m⁻². It decreases as temperature rises (becoming zero at the critical temperature) and is lowered by soaps and detergents. Consequences: spherical drops, capillary rise in narrow tubes (used by plants and blotting paper), meniscus shapes (water concave, mercury convex), flotation of light insects and needles, and the functioning of detergents and wetting agents.</li><li><h4>5. Viscosity</h4></li><li>Viscosity is the internal friction (resistance to flow) between adjacent layers of a liquid moving with different speeds; the coefficient of viscosity η has units N s m⁻² (Pa s) or poise (P), with 1 P = 0.1 Pa s. Viscosity arises from intermolecular attraction and decreases rapidly as temperature rises (for gases it increases). Examples: honey and glycerol flow slowly (high η), water and ether flow easily; engine oils are graded by SAE numbers according to their viscosity, and lubricating oil must be chosen for the operating temperature.</li><li><h4>6. Other physical properties (brief)</h4></li><li>Liquids are practically incompressible (very high bulk modulus), diffuse slowly compared with gases, conduct heat but not electricity (except molten salts/metals), and expand slightly on heating. Their thermal conductivity makes them useful as coolants (water, oil) and their low compressibility is the basis of hydraulic brakes and hydraulic lifts.</li><li><h4>7. Applications</h4></li><li>• <strong>Vapour pressure and boiling:</strong> distillation and fractional distillation, steam distillation, vacuum distillation of heat-sensitive liquids (petroleum fractions, glycerine), autoclaves and pressure cookers, and the working of refrigerants.</li><li>• <strong>Evaporation:</strong> cooling by evaporation (earthen pots, desert coolers, sweating), drying of paints and wet clothes, and evaporative humidifiers.</li><li>• <strong>Surface tension:</strong> detergents and soaps (lowering γ improves wetting and emulsification), waterproofing agents, flotation of insects, capillary rise in xylem and blotting paper, and mercury barometers where the convex meniscus must be corrected.</li><li>• <strong>Viscosity:</strong> selection of lubricating oils and greases for machines, engine-oil grades (SAE 30 etc.), flow of blood in vessels and the effect of temperature on it, pipeline transport of oil, and viscosity measurements to determine molar mass of polymers.</li><li><h4>8. Limitations</h4></li><li>There is no simple equation of state for liquids — the kinetic model that works for gases fails because liquids show short-range order and strong interactions; surface tension and viscosity are interpreted qualitatively (values depend on the measurement method and on impurities); vapour pressure is reduced by non-volatile solutes (Raoult's law), so impure samples give wrong boiling points, and the Clausius–Clapeyron treatment assumes that ΔH_vap is constant over the range (an approximation). Many real liquids are non-Newtonian (blood, paint, ketchup), so a single viscosity value is misleading, and near the critical temperature all these properties change drastically, which no simple description covers.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ Evaporation happens only at the boiling point. ✅ It occurs at every temperature from the liquid surface; boiling is evaporation throughout the bulk at the boiling point.</li><li>❌ Vapour pressure depends on how much liquid is present. ✅ It depends only on the liquid's nature and the temperature (and on the presence of solutes).</li><li>❌ Surface tension makes the surface a real skin. ✅ It is an inward pull on surface molecules that makes the surface behave like a stretched membrane.</li><li>❌ Glycerine is more viscous than water because it is denser. ✅ Viscosity comes from stronger intermolecular (H-bonding) attraction, not from density.</li><li>❌ A liquid boils when the vapour pressure exceeds the atmospheric pressure. ✅ Boiling starts when vapour pressure <em>equals</em> the external pressure (an overshoot just makes it boil faster).</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Distinguish between evaporation and boiling.</li><li>Explain why water boils below 100 °C on a mountain and above 100 °C in a pressure cooker.</li><li>State the limitations of the simple description of liquid properties.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.0556em;">γ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.0463em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0197em;">l</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace"> </span><span class="mopen">(</span><span class="mord"><span class="mord text"><span class="mord">N m</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8873em;"><span style="top:-3.1362em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mpunct">;</span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0359em;">η</span><span class="mspace"> </span><span class="mord text"><span class="mord">in Pa s</span></span><span class="mspace"> </span><span class="mopen">(</span><span class="mord">1</span><span class="mspace"> </span><span class="mord text"><span class="mord">poise</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">0.1</span><span class="mspace"> </span><span class="mord text"><span class="mord">Pa s</span></span><span class="mclose">)</span></span></span></span></span></li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:2.1963em;vertical-align:-0.836em;"></span><span class="mord text"><span class="mord">Clausius–Clapeyron: </span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">ln</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.4em;vertical-align:-0.95em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3603em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0077em;">R</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">Δ</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">vap</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">)</span></span></span></span></span></span></span></li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Capillary rise: </span></span><span class="mord mathnormal">h</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.2519em;vertical-align:-0.8804em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">r</span><span class="mord mathnormal">ρ</span><span class="mord mathnormal" style="margin-right:0.0359em;">g</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.0556em;">γ</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">cos</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.0278em;">θ</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Vapour pressure of water: 23.8 mm Hg at 25 °C, 760 mm Hg at 100 °C (normal boiling point).</li><li>Surface tension of water ≈ 72 mN m⁻¹ at 25 °C, falling to zero at the critical temperature (374 °C).</li><li>Viscosity of water ≈ 1.0 × 10⁻³ Pa s at 20 °C; glycerol ≈ 1.5 Pa s — about a thousand times greater.</li><li>answer pattern for &quot;Liquid state: physical properties of liquids — evaporatio…&quot;: define → method → result. Structure earns the marks on 6–10 mark questions.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li><strong>Problem:</strong> Why does a wet cloth dry faster on a windy day? <strong>Solution:</strong> wind removes the vapour layer above the surface, keeping the vapour pressure below saturation so the net evaporation rate stays high; higher temperature and larger exposed area act in the same direction.</li><li><strong>Problem:</strong> Estimate the boiling point of water at 8000 m where the pressure is about 0.36 atm. <strong>Solution:</strong> the boiling temperature is reached when vapour pressure equals 0.36 atm ≈ 274 mm Hg; from vapour-pressure tables this corresponds to about 72 °C — hence cooking takes much longer at altitude.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Remember the three marks-carrying definitions: vapour pressure (equilibrium), boiling point (vapour pressure = external pressure), surface tension (force per unit length).</li><li>For liquids, viscosity <em>decreases</em> with temperature, whereas for gases it increases — a standard one-mark comparison.</li><li>Syllabus asks for qualitative treatment only: describe causes, trends and applications, not derivations.</li></ul></section>
+<section class="field"><h2>Visual Type</h2><p>liquid-state</p></section>
+<section class="field"><h2>Key Points</h2><ul><li>• Liquid state</li><li>• Physical properties of liquids — evaporation</li><li>• Condensation</li><li>• Vapour pressure</li><li>• Boiling point</li><li>• Surface tension</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><p class="empty">—</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following is a distinct sub-topic under &quot;Liquid state: physical properties of liquids — evaporatio…&quot;?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Liquid state</li><li>Physical properties of liquids — evaporation</li><li>Unrelated topic</li><li>None of the above</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Liquid state is listed among the official sub-ideas of Liquid state: physical properties of liquids — evaporatio…; the others are not part of this topic.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A common examiner point on &quot;Liquid state: physical properties of liquids — evaporatio…&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div></section>
+<section class="field"><h2>Source</h2><p>generated</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
+<section class="field"><h2>Bounds</h2><ul><li>Covers only: liquid state, physical properties of liquids — evaporation, condensation, vapour pressure (within States of Matter).</li><li>Out of scope here: topics of neighbouring units in Chemistry — don't mix them.</li><li>State the limit / condition where a formula or rule stops being valid before applying it.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Liquid state: physical properties of liquids — evaporatio… (States of Matter, Chemistry, class-11-notes) covers Liquid state, physical properties of liquids — evaporation, condensation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.</p></section>
+  <nav class="pager"><a href="04-deviation-of-real-gas-from-ideality-solving-related-numerical-problems-based-on-gas-laws.html" title="Deviation of real gas from ideality (solving related numerical problems based on gas laws)">‹ Deviation of real gas from ideality (solving …</a><a class="mid" href="../../../../../_subjects/class-11-chemistry.html">Chemistry</a><a href="05-liquid-state-physical-properties-of-liquids-evaporation-and-condensation-vapour-pressure-and-boi.html" title="Liquid state: physical properties of liquids — evaporation and condensation, vapour pressure and boiling point, surface tension and viscosity (qualitative idea only)">Liquid state: physical properties of liquids … ›</a></nav>
+</div></body></html>

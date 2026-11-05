@@ -1,0 +1,180 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Environmental Science and Sustainability</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Biology  /  Biomolecules And Cell Biology</div>
+    <h1 class="doc">Environmental Science and Sustainability</h1>
+    <div class="meta"><span>Class 11</span><span>Biology</span><span>Biomolecules And Cell Biology</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>biomolecules-and-cell-biology</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>environmental-science-and-sustainability</p></section>
+<section class="field"><h2>Relevance</h2><p><code>87</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>A sustainable use takes no more of a resource, and dumps no more waste, than the system can replace or absorb.</li><li>Climate pressure, polluted air and water, loss of habitat and the using-up of freshwater and fertile soil are the four pressures named in this note.</li><li>Renewable resources renew if the harvest stays below the renewal. A forest cut faster than it grows is being used as if it were a mine.</li><li>Non-renewable resources, such as coal and oil, are not replaced on a human timescale. Sustainability then means using less and wasting less.</li><li>Reduce, reuse and recycle cut the demand and the rubbish. Community forestry in Nepal is a worked case of a renewable resource brought back under local rules.</li><li>A practice fails the test if it solves today's need by destroying the stock the next harvest depends on. That is the whole standard.</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Carbon cycle: exchange of carbon between atmosphere, oceans, and living organisms</li><li>Water cycle: evaporation, condensation, precipitation, runoff</li><li>Ecosystem services: provisioning, regulating, cultural, and supporting services</li><li>Sustainable development: meeting present needs without compromising future generations</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Climate change is driven primarily by greenhouse gas emissions (CO2, methane, nitrous oxide).</li><li>Sustainability requires balancing economic growth, social equity, and environmental protection.</li><li>Renewable energy sources (solar, wind, hydro) reduce reliance on fossil fuels.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Greenhouse gases trap heat in the atmosphere, causing global warming.</li><li>Deforestation reduces carbon sequestration capacity and disrupts water cycles.</li><li>Circular economy principles aim to minimize waste and maximize resource reuse.</li><li>Use no faster than renewal.</li><li>Forest, water, soil, fuel.</li><li>Reduce, reuse, recycle.</li><li>Community forestry as a case.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>The Paris Agreement (2015) sets targets to limit global warming to well below 2°C.</li><li>Biodiversity hotspots (e.g., Amazon rainforest, coral reefs) are critical for ecosystem resilience.</li><li>Sustainable agriculture practices (crop rotation, cover cropping) reduce environmental impact.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Climate change = greenhouse gases + global warming.</li><li>Sustainability = economic + social + environmental balance.</li><li>Ecosystem services = benefits humans derive from nature.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Connect environmental science with policy (e.g., carbon taxes, renewable energy mandates).</li><li>Understand the difference between renewable and non-renewable resources.</li><li>Consider the socio-economic dimensions of sustainability (equity, justice).</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>What is the primary driver of climate change?</li><li>Define sustainable development and its three pillars.</li><li>How does deforestation affect the carbon cycle?</li><li>Explain the concept of ecosystem services.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A forest cut faster than it grows is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Unsustainable</li><li>Automatically renewable whatever the rate</li><li>A vaccine</li><li>In-situ by definition</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Coal is treated here as</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Non-renewable on a human timescale</li><li>A crop</li><li>A living community</li><li>A wetland list</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Reduce, reuse, recycle mainly cuts</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Demand and waste</li><li>The number of kingdoms</li><li>Brain size</li><li>Spore types</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Community forestry aims at</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A renewable forest under local rules</li><li>Mining coal faster</li><li>Removing all vegetation</li><li>A single pesticide</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div></section>
+<section class="field"><h2>Confusion</h2><ul><li>Renewable does not mean infinite. A forest can be overcut.</li><li>Recycling is not a licence to waste more.</li><li>Community forestry is management, not a new species.</li><li>Pollution is a waste problem, not a separate planet from resource use.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>A sustainable use takes no more of a resource, and dumps no more waste, than the system can replace or absorb.</li><li>Climate pressure, polluted air and water, loss of habitat and the using-up of freshwater and fertile soil are the four pressures named in this note.</li><li>Renewable resources renew if the harvest stays below the renewal. A forest cut faster than it grows is being used as if it were a mine.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>A sustainable use takes no more of a resource, and dumps no more waste, than the system can replace or absorb.</li><li>Climate pressure, polluted air and water, loss of habitat and the using-up of freshwater and fertile soil are the four pressures named in this note.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>A sustainable use takes no more of a resource, and dumps no more waste, than the system can replace or absorb.</li><li>Climate pressure, polluted air and water, loss of habitat and the using-up of freshwater and fertile soil are the four pressures named in this note.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Give the character and one example.</li><li>State the contrast.</li><li>Name a use or a limit.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Order in a sequence is part of the answer.</li><li>Do not call a timberline a snowline.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Write the table.</li><li>Add one trap.</li></ul></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A forest cut faster than it grows is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Unsustainable</li><li>Automatically renewable whatever the rate</li><li>A vaccine</li><li>In-situ by definition</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Coal is treated here as</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Non-renewable on a human timescale</li><li>A crop</li><li>A living community</li><li>A wetland list</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Reduce, reuse, recycle mainly cuts</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Demand and waste</li><li>The number of kingdoms</li><li>Brain size</li><li>Spore types</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Community forestry aims at</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A renewable forest under local rules</li><li>Mining coal faster</li><li>Removing all vegetation</li><li>A single pesticide</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Why can a renewable forest still be used unsustainably?</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Renewal has a rate.</li><li>If the cut exceeds the growth, the stock falls.</li><li>The resource is renewable only when the harvest respects that rate.</li><li>Community forestry is one way of keeping the cut inside the growth.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>Because harvest can exceed regrowth.</p></div></div></div></section>
+<section class="field"><h2>Summary</h2><p>Sustainability keeps harvest and waste inside what the system can renew and absorb. Forests, water and soil are renewable only within a rate. Coal and oil are not renewed on a human timescale. Using less, reusing and recycling, as in a well-run community forest, is the practical test.</p></section>
+<section class="field"><h2>Visual Type</h2><p>nepal-vegetation</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>Sustainability means using a resource no faster than it is renewed.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li>A sustainable use takes no more of a resource, and dumps no more waste, than the system can replace or absorb.</li><li>Climate pressure, polluted air and water, loss of habitat and the using-up of freshwater and fertile soil are the four pressures named in this note.</li><li>Renewable resources renew if the harvest stays below the renewal. A forest cut faster than it grows is being used as if it were a mine.</li><li>Non-renewable resources, such as coal and oil, are not replaced on a human timescale. Sustainability then means using less and wasting less.</li><li>Reduce, reuse and recycle cut the demand and the rubbish. Community forestry in Nepal is a worked case of a renewable resource brought back under local rules.</li><li>A practice fails the test if it solves today's need by destroying the stock the next harvest depends on. That is the whole standard.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Bounds</h2><ul><li>Stay inside this class 11 topic.</li><li>Do not add an unsupported count.</li></ul></section>
+  <nav class="pager"><a href="ecology-and-ecosystems.html" title="Ecology and Ecosystems">‹ Ecology and Ecosystems</a><a class="mid" href="../../../../../_subjects/class-11-biology.html">Biology</a><a href="evolution-and-natural-selection.html" title="Evolution and Natural Selection">Evolution and Natural Selection ›</a></nav>
+</div></body></html>

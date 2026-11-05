@@ -1,0 +1,224 @@
+{
+  "title": "IUPAC Classification of Elements",
+  "unitSlug": "classification-of-elements-and-periodic-table",
+  "topicSlug": "iupac-classification-of-elements",
+  "topicTitle": "IUPAC classification of elements",
+  "relevance": 100,
+  "notes": [
+    "## 1. What IUPAC is, and what it actually owns",
+    "IUPAC (International Union of Pure and Applied Chemistry) is the world authority that standardises chemical nomenclature, atomic weights and the format of the periodic table. Its classification of elements covers group numbering 1–18, the s/p/d/f block division, the metal–nonmetal–metalloid grouping, collective group names, and the naming of newly discovered elements.",
+    "**A useful way to remember the boundary.** IUPAC owns *names and labels*: element names and symbols, group numbers, the definition of a mole, standard atomic weights, oxidation-state conventions. It does **not** own the physics: it cannot decree that an element is stable, cannot settle what the nucleus does, and in one notable case (§7) has not settled which elements belong in group 3.\n\n**The four things it standardises, in exam order.** (i) Element names and symbols, including the systematic placeholder names above Z = 100. (ii) Group numbering 1–18. (iii) Collective family names — alkali metals, halogens, noble gases, lanthanides, actinides. (iv) The definitions of the mole, the atomic mass unit and standard atomic weight, which is why \"Ar = 39.95\" means the same thing in Kathmandu and in Tokyo.",
+    "## 2. Group numbering: 1–18 replaced both older systems",
+    "• 18 groups numbered left to right and 7 periods; the old European (IA, IIA, … IB) and American (IA, IB, … VIIIA) systems were replaced by 1–18 to remove ambiguity.",
+    "• Collective names: Group 1 alkali metals (Li–Fr, H excluded), Group 2 alkaline earth metals (Be–Ra), Group 15 pnictogens (N–Bi), Group 16 chalcogens (O–Po), Group 17 halogens (F–At), Group 18 noble gases (He–Rn).",
+    "```svg\n<svg viewBox=\"0 0 900 640\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Translation between old and IUPAC group numbers\">\n  <rect width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n  <text x=\"450\" y=\"36\" font-family=\"Georgia,serif\" font-size=\"24\" text-anchor=\"middle\" fill=\"#111\">Same column, three names: translate before you answer</text>\n  <text x=\"450\" y=\"62\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#555\">Nepali textbooks print the old system; IUPAC prints 1-18. Every exam question uses one of these.</text>\n\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" fill=\"#111\" font-weight=\"bold\">\n    <text x=\"100\" y=\"102\">European (old)</text>\n    <text x=\"360\" y=\"102\">American (CAS)</text>\n    <text x=\"640\" y=\"102\">IUPAC 1988</text>\n  </g>\n  <line x1=\"80\" y1=\"114\" x2=\"820\" y2=\"114\" stroke=\"#9ca3af\" stroke-width=\"1.4\"/>\n\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" fill=\"#111\">\n    <text x=\"100\" y=\"142\">IA</text><text x=\"360\" y=\"142\">IA</text><text x=\"640\" y=\"142\" fill=\"#1d4ed8\">1</text>\n    <text x=\"100\" y=\"172\">IIA</text><text x=\"360\" y=\"172\">IIA</text><text x=\"640\" y=\"172\" fill=\"#1d4ed8\">2</text>\n    <text x=\"100\" y=\"202\">IIIB</text><text x=\"360\" y=\"202\">IIIB</text><text x=\"640\" y=\"202\" fill=\"#1d4ed8\">3</text>\n    <text x=\"100\" y=\"232\">IVB</text><text x=\"360\" y=\"232\">IVB</text><text x=\"640\" y=\"232\" fill=\"#1d4ed8\">4</text>\n    <text x=\"100\" y=\"262\">VB</text><text x=\"360\" y=\"262\">VB</text><text x=\"640\" y=\"262\" fill=\"#1d4ed8\">5</text>\n    <text x=\"100\" y=\"292\">VIB</text><text x=\"360\" y=\"292\">VIB</text><text x=\"640\" y=\"292\" fill=\"#1d4ed8\">6</text>\n    <text x=\"100\" y=\"322\">VIIB</text><text x=\"360\" y=\"322\">VIIB</text><text x=\"640\" y=\"322\" fill=\"#1d4ed8\">7</text>\n    <text x=\"100\" y=\"352\">VIIIB (1st)</text><text x=\"360\" y=\"352\">VIIIB</text><text x=\"640\" y=\"352\" fill=\"#1d4ed8\">8</text>\n    <text x=\"100\" y=\"382\">VIIIB (2nd)</text><text x=\"360\" y=\"382\">VIIIB</text><text x=\"640\" y=\"382\" fill=\"#1d4ed8\">9</text>\n    <text x=\"100\" y=\"412\">VIIIB (3rd)</text><text x=\"360\" y=\"412\">VIIIB</text><text x=\"640\" y=\"412\" fill=\"#1d4ed8\">10</text>\n    <text x=\"100\" y=\"442\">IB</text><text x=\"360\" y=\"442\">IB</text><text x=\"640\" y=\"442\" fill=\"#1d4ed8\">11</text>\n    <text x=\"100\" y=\"472\">IIB</text><text x=\"360\" y=\"472\">IIB</text><text x=\"640\" y=\"472\" fill=\"#1d4ed8\">12</text>\n    <text x=\"100\" y=\"502\">IIIA</text><text x=\"360\" y=\"502\">IIIA</text><text x=\"640\" y=\"502\" fill=\"#1d4ed8\">13</text>\n    <text x=\"100\" y=\"532\">IVA</text><text x=\"360\" y=\"532\">IVA</text><text x=\"640\" y=\"532\" fill=\"#1d4ed8\">14</text>\n    <text x=\"100\" y=\"562\">VA</text><text x=\"360\" y=\"562\">VA</text><text x=\"640\" y=\"562\" fill=\"#1d4ed8\">15</text>\n    <text x=\"100\" y=\"592\">VIA</text><text x=\"360\" y=\"592\">VIA</text><text x=\"640\" y=\"592\" fill=\"#1d4ed8\">16</text>\n    <text x=\"100\" y=\"622\">VIIA / 0</text><text x=\"360\" y=\"622\">VIIA / VIIIA</text><text x=\"640\" y=\"622\" fill=\"#1d4ed8\">17 / 18</text>\n  </g>\n\n  <g stroke=\"#cbd5e1\" stroke-width=\"1\">\n    <line x1=\"80\" y1=\"188\" x2=\"820\" y2=\"188\"/><line x1=\"80\" y1=\"338\" x2=\"820\" y2=\"338\"/>\n    <line x1=\"80\" y1=\"428\" x2=\"820\" y2=\"428\"/><line x1=\"80\" y1=\"488\" x2=\"820\" y2=\"488\"/>\n  </g>\n</svg>\n```\n**Figure 1 — the three numbering systems side by side.** Two traps live in this table. First, the **three columns of VIIIB** (Fe, Co, Ni; Ru, Rh, Pd; Os, Ir, Pt) collapse into IUPAC 8, 9 and 10 — one old label, three new numbers. Second, group 18 is \"0\" in the oldest European scheme and \"VIIIA\" in the CAS scheme, so \"group 0\" and \"group 18\" mean the same thing. Translate to 1–18 in your answer, then add the old label in brackets if the question used it.",
+    "![Comparison of IUPAC group numbering with the CAS system on a periodic table](https://upload.wikimedia.org/wikipedia/commons/c/cc/IUPAC_-_CAS_comparison.svg)\n\n**Figure 3 — IUPAC versus CAS numbering, drawn on the table itself.** The two systems disagree only in where the A/B letters and the three-column VIIIB sit; the columns are the same 18. *Source: Wikimedia Commons, [IUPAC - CAS comparison.svg](https://commons.wikimedia.org/wiki/File:IUPAC_-_CAS_comparison.svg), authors Cdang and Adrignola (derivative), CC BY-SA 3.0 (also GFDL) — attribution and share-alike required.*",
+    "## 3. Collective names and block names",
+    "• Blocks: s-block (Groups 1–2 plus He), p-block (Groups 13–18 except He), d-block (Groups 3–12, transition metals), f-block (lanthanides 58–71 and actinides 90–103, inner transition metals).",
+    "## 4. Naming new elements: the verification pipeline",
+    "Discoverers propose a name and a two-letter symbol after independent verification. Until approval, a systematic name is built from digit roots — 0 nil, 1 un, 2 bi, 3 tri, 4 quad, 5 pent, 6 hex, 7 sept, 8 oct, 9 enn — joined in order with the suffix '-ium' (temporary three-letter symbols). Examples: 104 unnilquadium (Unq) → Rutherfordium (Rf); 113 ununtrium → Nihonium (Nh); 114 ununquadium → Flerovium (Fl); 115 → Moscovium (Mc); 116 ununhexium → Livermorium (Lv); 117 ununseptium → Tennessine (Ts); 118 ununoctium (Uuo) → Oganesson (Og).",
+    "```svg\n<svg viewBox=\"0 0 900 640\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"How a new element gets its name\">\n  <rect width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n  <text x=\"450\" y=\"36\" font-family=\"Georgia,serif\" font-size=\"24\" text-anchor=\"middle\" fill=\"#111\">From a signal in a detector to a name on the table</text>\n  <text x=\"450\" y=\"62\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#555\">IUPAC does not discover elements; it adjudicates and names them</text>\n\n  <g font-family=\"Helvetica,Arial,sans-serif\">\n    <rect x=\"60\" y=\"96\" width=\"220\" height=\"86\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\" stroke-width=\"1.6\"/>\n    <text x=\"170\" y=\"124\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111\">Claim of discovery</text>\n    <text x=\"170\" y=\"146\" font-size=\"12\" text-anchor=\"middle\" fill=\"#555\">a few atoms, a decay chain,</text>\n    <text x=\"170\" y=\"164\" font-size=\"12\" text-anchor=\"middle\" fill=\"#555\">a specific Z</text>\n\n    <rect x=\"340\" y=\"96\" width=\"220\" height=\"86\" rx=\"10\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"1.6\"/>\n    <text x=\"450\" y=\"124\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111\">Joint IUPAC–IUPAP review</text>\n    <text x=\"450\" y=\"146\" font-size=\"12\" text-anchor=\"middle\" fill=\"#555\">independent verification of</text>\n    <text x=\"450\" y=\"164\" font-size=\"12\" text-anchor=\"middle\" fill=\"#555\">the evidence</text>\n\n    <rect x=\"620\" y=\"96\" width=\"220\" height=\"86\" rx=\"10\" fill=\"#f0fdf4\" stroke=\"#15803d\" stroke-width=\"1.6\"/>\n    <text x=\"730\" y=\"124\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111\">Credit assigned</text>\n    <text x=\"730\" y=\"146\" font-size=\"12\" text-anchor=\"middle\" fill=\"#555\">priority decided; labs</text>\n    <text x=\"730\" y=\"164\" font-size=\"12\" text-anchor=\"middle\" fill=\"#555\">invited to propose a name</text>\n\n    <g stroke=\"#374151\" stroke-width=\"1.8\" fill=\"none\" marker-end=\"url(#a2)\">\n      <defs><marker id=\"a2\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#374151\"/></marker></defs>\n      <path d=\"M280 139 L336 139\"/><path d=\"M560 139 L616 139\"/>\n      <path d=\"M730 182 L730 236\"/>\n    </g>\n\n    <rect x=\"560\" y=\"236\" width=\"340\" height=\"86\" rx=\"10\" fill=\"#fbcfe8\" stroke=\"#9d174d\" stroke-width=\"1.6\"/>\n    <text x=\"730\" y=\"264\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111\">Permanent name + 2-letter symbol</text>\n    <text x=\"730\" y=\"286\" font-size=\"12\" text-anchor=\"middle\" fill=\"#555\">approved by the IUPAC Council</text>\n    <text x=\"730\" y=\"304\" font-size=\"12\" text-anchor=\"middle\" fill=\"#555\">e.g. oganesson, Og (Z = 118)</text>\n\n    <g stroke=\"#374151\" stroke-width=\"1.8\" fill=\"none\" marker-end=\"url(#a2)\">\n      <path d=\"M560 279 L520 279\"/>\n    </g>\n\n    <rect x=\"180\" y=\"236\" width=\"340\" height=\"86\" rx=\"10\" fill=\"#f3f4f6\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n    <text x=\"350\" y=\"264\" font-size=\"14\" text-anchor=\"middle\" fill=\"#111\">Meanwhile: systematic name</text>\n    <text x=\"350\" y=\"286\" font-size=\"12\" text-anchor=\"middle\" fill=\"#555\">roots for the digits of Z + \"-ium\"</text>\n    <text x=\"350\" y=\"304\" font-size=\"12\" text-anchor=\"middle\" fill=\"#555\">Z = 118 → ununoctium, Uuo (retired)</text>\n  </g>\n\n  <g font-family=\"Georgia,serif\" font-size=\"14\" fill=\"#374151\">\n    <text x=\"60\" y=\"376\">Why the placeholder name matters: while a discovery is contested, chemists still need a label that carries no credit.</text>\n    <text x=\"60\" y=\"402\">The systematic name is that label — derived mechanically from Z, so nobody's priority claim is implied.</text>\n  </g>\n\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" fill=\"#111\">\n    <text x=\"60\" y=\"452\" font-weight=\"bold\">Roots used to build the placeholder</text>\n    <text x=\"60\" y=\"478\">0 nil · 1 un · 2 bi · 3 tri · 4 quad · 5 pent</text>\n    <text x=\"60\" y=\"502\">6 hex · 7 sept · 8 oct · 9 enn</text>\n    <text x=\"60\" y=\"538\" fill=\"#b91c1c\">Drop the connector \"i\" before a root starting with i: Z = 119 → ununennium (Uue), not ununennnium.</text>\n  </g>\n  <text x=\"450\" y=\"592\" font-family=\"Georgia,serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#6b7280\">Names since 2016: nihonium, moscovium, tennessine, oganesson — all replacing ununtrium-style placeholders.</text>\n</svg>\n```\n**Figure 2 — the naming pipeline.** Note the order: verification first, credit second, name third. A proposed name can be rejected on spelling or convention grounds (IUPAC asks for names of mythological concepts, minerals, places, properties or scientists), which is why several proposals have been returned to their discoverers.",
+    "## 5. Classification by physical and chemical character",
+    "• **Metals:** the majority (s-, d-, f-blocks and lower p-block) — lustre, malleability, conductivity, basic oxides.",
+    "• **Non-metals:** upper right of the p-block (C, N, O, F, P, S, Cl, Se, Br, I, noble gases) — acidic oxides, poor conductors.",
+    "• **Metalloids (semi-metals):** B, Si, Ge, As, Sb, Te (sometimes Po) — intermediate properties; the basis of semiconductors.",
+    "• **Representative (typical) elements:** s- and p-blocks; **transition elements:** d-block (variable oxidation states, coloured ions, catalysts); **inner transition:** f-block.",
+    "## 6. What counts as a recognised element: 118 and the admission rules\nAn element is recognised when a claim of discovery survives independent verification of its atomic number — not when a laboratory announces a signal. The working rules, in practice:\n\n| Stage | Who decides | What must be shown |\n| --- | --- | --- |\n| Claim | the discovering laboratory | a decay chain or atomic-number measurement consistent with the claimed Z |\n| Verification | joint IUPAC/IUPAP working party | reproducibility, and that earlier claims are excluded |\n| Credit | the working party | which laboratory(ies) have priority |\n| Naming | discoverers propose, IUPAC Council approves | a name and a two-letter symbol meeting the conventions |\n| Entry into the table | IUPAC | the element is added at its Z with its permanent name |\n\n**Where the count stands.** 118 elements are recognised, the last four — nihonium (113), moscovium (115), tennessine (117) and oganesson (118) — named in 2016. Everything beyond is extrapolation: predictions exist for Z = 119 and 120, and no claim has been verified.\n\n**The NEB-relevant point.** The syllabus prints \"up to Z = 118\" and still uses the systematic-name rules for Z > 100, so an exam question can ask you to name a hypothetical element (Z = 120 → unbinilium, Ubn) even though it does not exist. The rule is a naming rule, not a discovery claim.",
+    "## 7. The one place IUPAC has not ruled: group 3\nEvery chemistry student is taught that group 3 is Sc, Y, La, Ac — or Sc, Y, Lu, Lr, depending on which book they open. Both are printed in current textbooks and both are defensible.\n\n| Composition | Argument for | Argument against |\n| --- | --- | --- |\n| Sc, Y, **La, Ac** | La/Ac continue the +3 chemistry of Sc and Y most closely | La has no 4f electron (5d¹), so it does not begin the f-block |\n| Sc, Y, **Lu, Lr** | Lu/Lr complete the f¹⁴ series, giving a tidy 14-element block | Lu's chemistry is dominated by the filled 4f¹⁴ shell, unlike Sc and Y |\n| Sc, Y only (32-column form) | keeps the f-block entirely separate | removes the lanthanides from the main grid altogether |\n\n**What to write in an exam.** State the composition your textbook uses, then say in one sentence that the placement is conventional and that IUPAC has not issued a binding ruling. That single sentence is usually worth a mark, and it is factually correct: the IUPAC project on the group-3 question has not produced a decision that textbooks follow uniformly.\n\n**Why this matters for the f-block.** If La/Ac are in the main grid, the f-block is 14 columns wide (Ce–Lu, Th–Lr). If Lu/Lr are in the main grid, the f-block is 14 columns wide as Ce–Yb and Th–No. Either way the two series hold 14 members; the disagreement is about which 14.",
+    "## 8. Applications of the classification",
+    "• One agreed numbering and block scheme makes international communication and literature searching unambiguous.",
+    "• Predicting chemistry from group position: Group 1 metals are strong reducing agents, Group 17 halogens strong oxidising agents, Group 18 inert; oxide character changes from basic to acidic across a period (Na₂O, MgO basic → Al₂O₃ amphoteric → SiO₂, P₄O₁₀, SO₃ acidic).",
+    "• Standard atomic weights (from terrestrial isotopic abundance) and systematic naming keep trade, industry and metrology consistent — for example in specifying semiconductor-grade silicon or alloy composition.",
+    "• The naming and verification procedure for superheavy elements is a direct product of this classification work.",
+    "## 9. Limitations: what a classification cannot do",
+    "IUPAC classification is a labelling and standardisation scheme, not an explanation — it does not say *why* properties repeat (that needs Z_eff, quantum numbers and electronic configuration). Some boundaries are arbitrary: the metal–non-metal change is gradual and metalloid membership differs between sources; H sits in Group 1 yet resembles the halogens; He is a Group 18 noble gas with the s-block configuration 1s². The composition of Group 3 for periods 6 and 7 (La/Ac versus Lu/Lr) has been debated for decades, and the '-ium' systematic names are stopgaps, so older books still print them. The chemistry of elements with Z > 103 is largely predicted, not measured.",
+    "**Fact.** v = V₀ sin ωt; i = I₀ sin(ωt + φ); RMS V_rms = V₀/√2.",
+    "**Fact.** Impedance: pure R → Z = R; L → Z = ωL; C → Z = 1/(ωC); LCR resonance at ω₀ = 1/√(LC).",
+    "**Fact.** Average power P = V_rms I_rms cosφ; in pure L or C, average power over a cycle = 0.",
+    "![Clean 18-column periodic table with English element names and IUPAC group numbers](https://upload.wikimedia.org/wikipedia/commons/2/2e/Simple_Periodic_Table_Chart-en.svg)\n\n**Figure 4 — the table as IUPAC publishes it.** Group numbers 1–18 across the top, element symbols and names in English, lanthanides and actinides detached. This is the reference layout the numbered groups in Figure 1 refer to. *Source: Wikimedia Commons, [Simple Periodic Table Chart-en.svg](https://commons.wikimedia.org/wiki/File:Simple_Periodic_Table_Chart-en.svg), author User:Offnfopt, public domain.*",
+    "## 10. Summary map and self-check\n**The topic on one card.**\n\n| Question | Answer |\n| --- | --- |\n| What does IUPAC standardise? | names, symbols, group numbers 1–18, collective names, atomic weights |\n| Group numbering? | 1–18 left to right since 1988; replaces IA–VIIIA and 0–VIII |\n| Three-column VIIIB? | collapses into IUPAC 8, 9, 10 |\n| Group 0? | same as group 18, the noble gases |\n| Systematic names above Z = 100? | digit roots + \"-ium\" + first letters as symbol |\n| When does a name become official? | after independent verification and IUPAC Council approval |\n| How many elements are recognised? | 118, the last four named in 2016 |\n| Unsettled question? | which elements occupy group 3 (La/Ac or Lu/Lr) |\n| What IUPAC does NOT do? | explain trends — that is Zeff and shielding |\n\n**Self-check.**\n1. Convert European IVB, VIIIB (2nd column) and 0 into IUPAC group numbers.\n2. Write the systematic name and symbol for Z = 120 and Z = 117, then give the current permanent name for 117.\n3. Explain why a systematic name is used before approval, and why the connector \"i\" is dropped in ununennium.\n4. State the two candidate compositions of group 3 and one argument for each.\n5. Give three things IUPAC standardises and one thing it does not."
+  ],
+  "formulas": [
+    "$$\\text{systematic name}=\\text{digit roots}+\\text{'-ium'}\\quad Z=118:\\ \\text{un}+\\text{un}+\\text{oct}+\\text{ium}=\\text{ununoctium}$$",
+    "$$0\\,\\text{nil},1\\,\\text{un},2\\,\\text{bi},3\\,\\text{tri},4\\,\\text{quad},5\\,\\text{pent},6\\,\\text{hex},7\\,\\text{sept},8\\,\\text{oct},9\\,\\text{enn}$$",
+    "V_rms = V₀/√2",
+    "Z_L = ωL, Z_C = 1/(ωC)",
+    "ω₀ = 1/√(LC)"
+  ],
+  "universalFacts": [
+    "Oganesson (Og, Z = 118) is named after Yuri Oganessian; Nihonium (Nh, 113) after Japan; Tennessine (Ts, 117) after Tennessee.",
+    "IUPAC numbering 1–18 was recommended in 1988 to replace the conflicting European and American schemes.",
+    "The f-block spans periods 6 and 7: lanthanides (58–71) and actinides (90–103).",
+    "v = V₀ sin ωt; i = I₀ sin(ωt + φ); RMS V_rms = V₀/√2.",
+    "Impedance: pure R → Z = R; L → Z = ωL; C → Z = 1/(ωC); LCR resonance at ω₀ = 1/√(LC).",
+    "Average power P = V_rms I_rms cosφ; in pure L or C, average power over a cycle = 0."
+  ],
+  "examples": [
+    "**Problem:** Systematic name and symbol for Z = 115. **Solution:** digits 1, 1, 5 → un + un + pent + ium = ununpentium (Uup); now permanently named Moscovium (Mc).",
+    "**Problem:** Predict the oxide character of period-3 oxides from the IUPAC group classification. **Solution:** Na₂O and MgO (Groups 1, 2) basic; Al₂O₃ (13) amphoteric; SiO₂ (14) weakly acidic; P₄O₁₀ and SO₃ (15, 16) strongly acidic."
+  ],
+  "importantNotes": [
+    "Learn the ten digit roots — the naming question is a standard 2-mark item.",
+    "Separate *nomenclature* from *block classification* in long answers, and describe IUPAC as a standardising authority.",
+    "Helium is the standard trap: 1s² configuration (s-block) yet a Group 18 member."
+  ],
+  "visualType": "periodic-table",
+  "confusion": [
+    "❌ Group 0 and group 8 are the same. ✅ Group 0 is the old name for group 18; group 8 is an IUPAC column of the d-block.",
+    "❌ IUPAC decides which elements exist. ✅ It verifies claims of discovery and approves names; the nuclear physics decides what exists.",
+    "❌ The systematic name is the element's real name. ✅ It is a placeholder used until a permanent name is approved.",
+    "❌ Group 3 is settled as Sc, Y, La, Ac. ✅ Both La/Ac and Lu/Lr forms are printed; IUPAC has issued no binding ruling."
+  ],
+  "practice": [
+    "Convert European IA, IVB, VIIIB (third column) and 0 into IUPAC group numbers.",
+    "Write systematic names and symbols for Z = 112, 116 and 120, then give the current permanent names where they exist.",
+    "State the two candidate compositions of group 3 with one argument for each."
+  ],
+  "keyPoints": [
+    "IUPAC standardises names, symbols, group numbers, collective names and atomic weights — not the trends.",
+    "Groups are numbered 1–18 since 1988; old IA–VIIIA and 0–VIII labels still appear in textbooks.",
+    "The three-column VIIIB maps to IUPAC 8, 9 and 10 — the commonest translation error.",
+    "Systematic names above Z = 100 use digit roots + '-ium'; symbols take the first letters.",
+    "Permanent names follow verification and IUPAC Council approval; 118 elements are recognised.",
+    "Group 3 composition (La/Ac or Lu/Lr) is unsettled; state the convention and flag it.",
+    "11 symbols come from Latin names — Na, K, Fe, Cu, Ag, Sn, Sb, Au, Hg, Pb, W."
+  ],
+  "practiceQuestions": [],
+  "numericals": [
+    "**N1 — Systematic name for Z = 120.**\n*Given.* Z = 120, digits 1, 2, 0; roots 1 = un, 2 = bi, 0 = nil.\n*Formula.* name = (root of each digit, left to right) + \"ium\"; symbol = first letters, first capitalised.\n*Substitution.* un + bi + nil + ium → unbinilium; letters U, b, n → Ubn.\n*Answer.* **unbinilium, Ubn** — a placeholder name for an element that has not been verified.",
+    "**N2 — Systematic name for Z = 117, and its permanent name.**\n*Given.* Z = 117, digits 1, 1, 7; roots un, un, sept.\n*Formula.* the same digit-root rule; then the approved name.\n*Substitution.* un + un + sept + ium → ununseptium; letters U, u, s → Uus.\n*Answer.* Systematic **ununseptium (Uus)**; the approved permanent name since 2016 is **tennessine, Ts**.",
+    "**N3 — Converting a CAS group label to IUPAC.**\n*Given.* A text refers to group \"6A\" (CAS/older American system).\n*Formula.* for the A-series after the d-block: IUPAC group = CAS number + 10.\n*Substitution.* 6 + 10 = 16.\n*Answer.* **Group 16**, the chalcogens — O, S, Se, Te, Po. Check: 8A → 18, the noble gases.",
+    "**N4 — The three-column VIIIB.**\n*Given.* The old European scheme labels Fe, Co and Ni all as VIIIB.\n*Formula.* the three sub-columns map in order to consecutive IUPAC groups 8, 9, 10.\n*Substitution.* Fe → 8, Co → 9, Ni → 10; second row Ru → 8, Rh → 9, Pd → 10; third row Os → 8, Ir → 9, Pt → 10.\n*Answer.* **9 elements share one old label but occupy three IUPAC groups** — the single biggest reason to translate before answering.",
+    "**N5 — Symbols derived from Latin names.**\n*Given.* 11 elements have symbols that do not match their English names: Na, K, Fe, Cu, Ag, Sn, Sb, Au, Hg, Pb, W.\n*Formula.* percentage = (11 / 118) × 100.\n*Substitution.* (11 / 118) × 100 = 9.3 %.\n*Answer.* **≈ 9 %** — and every one of them is a common exam element, so the Latin forms are worth memorising: natrium, kalium, ferrum, cuprum, argentum, stannum, stibium, aurum, hydrargyrum, plumbum, wolfram.",
+    "**N6 — Reversing a systematic name.**\n*Given.* The systematic name is \"ununennium\".\n*Formula.* split into roots un | un | enn → digits 1, 1, 9 → Z = 119.\n*Substitution.* Z = 119 → period 8, group 1 (s-block) if it were ever made; symbol Uue.\n*Answer.* **Z = 119**, ununennium, symbol **Uue** — the next alkali metal after francium, and the lightest element not yet synthesised."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"IUPAC classification of elements\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "authored-v2",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Limit to remember: v = v₀ sin ωt; i = i₀ sin(ωt + φ); rms v_rms = v₀/√2."
+  ],
+  "summary": "IUPAC is the authority for labels, not for physics: it standardises element names and symbols, the 1–18 group numbering introduced in 1988, collective family names, and the atomic-weight and mole definitions. The numbering replaced two older schemes, and the awkward case is the old VIIIB, whose three columns become IUPAC groups 8, 9 and 10. Above Z = 100 a systematic placeholder name is built from digit roots (0 nil, 1 un, 2 bi, 3 tri, 4 quad, 5 pent, 6 hex, 7 sept, 8 oct, 9 enn) plus '-ium', with the symbol taken from the first letters; a permanent name follows only after independent verification and IUPAC Council approval. 118 elements are recognised, the last four named in 2016. One question remains open — whether group 3 contains La and Ac or Lu and Lr — and the honest answer states the convention and flags it as unsettled.",
+  "mcs": [
+    {
+      "question": "IUPAC numbers the groups of the long-form table:",
+      "options": [
+        "IA to VIIIA",
+        "1 to 18",
+        "0 to 17",
+        "1 to 8"
+      ],
+      "answer": "B",
+      "explanation": "Since 1988 the columns run 1–18 left to right; older European and CAS labels are still printed in many textbooks."
+    },
+    {
+      "question": "In the older European scheme, group '0' corresponds to IUPAC group:",
+      "options": [
+        "1",
+        "8",
+        "17",
+        "18"
+      ],
+      "answer": "D",
+      "explanation": "Group 0 is the noble gases, numbered 18 in the IUPAC system."
+    },
+    {
+      "question": "The element with Z = 113, now named nihonium, was previously called:",
+      "options": [
+        "ununtrium",
+        "ununquadium",
+        "ununpentium",
+        "ununoctium"
+      ],
+      "answer": "A",
+      "explanation": "Digits 1-1-3 give un-un-tri-ium = ununtrium (Uut)."
+    },
+    {
+      "question": "The systematic symbol for Z = 114 would be:",
+      "options": [
+        "Uuq",
+        "Uup",
+        "Uut",
+        "Uuo"
+      ],
+      "answer": "A",
+      "explanation": "un + un + quad → ununquadium, first letters U, u, q = Uuq; the element is now flerovium (Fl)."
+    },
+    {
+      "question": "Which statement about IUPAC is correct?",
+      "options": [
+        "It discovers new elements",
+        "It verifies claims and standardises names, symbols and weights",
+        "It determines the periodic trends",
+        "It publishes only organic nomenclature"
+      ],
+      "answer": "B",
+      "explanation": "IUPAC adjudicates and standardises; the physics of trends comes from Zeff and shielding, not from IUPAC."
+    },
+    {
+      "question": "Which group has three columns under the old VIIIB label but three IUPAC numbers?",
+      "options": [
+        "the noble gases",
+        "the iron/cobalt/nickel triad",
+        "the halogens",
+        "the alkali metals"
+      ],
+      "answer": "B",
+      "explanation": "VIIIB spans three columns → IUPAC 8, 9 and 10 (Fe/Co/Ni, Ru/Rh/Pd, Os/Ir/Pt)."
+    },
+    {
+      "question": "The number of elements officially recognised at present is:",
+      "options": [
+        "103",
+        "110",
+        "118",
+        "120"
+      ],
+      "answer": "C",
+      "explanation": "118 elements are recognised; the last four were named in 2016. Z = 119 and 120 exist only as predictions."
+    },
+    {
+      "question": "The collective name for group 15 is:",
+      "options": [
+        "chalcogens",
+        "pnictogens",
+        "halogens",
+        "icosagens"
+      ],
+      "answer": "B",
+      "explanation": "Group 15 = pnictogens (N, P, As, Sb, Bi); group 16 = chalcogens; group 17 = halogens; group 13 = icosagens."
+    },
+    {
+      "question": "The unsettled group-3 question concerns whether the third column contains:",
+      "options": [
+        "Sc, Y, La, Ac or Sc, Y, Lu, Lr",
+        "only Sc and Y",
+        "the halogens",
+        "the noble gases"
+      ],
+      "answer": "A",
+      "explanation": "Both La/Ac and Lu/Lr placements are printed; IUPAC has not issued a binding ruling, so state the convention and flag it."
+    },
+    {
+      "question": "In the systematic naming scheme, the connector 'i' of '-ium' is dropped:",
+      "options": [
+        "always",
+        "before a root beginning with i (1, 8, 9)",
+        "before a root beginning with q",
+        "never"
+      ],
+      "answer": "B",
+      "explanation": "Z = 119 → ununennium, not ununennnium; the same rule gives octium-style smooth joins."
+    }
+  ]
+}

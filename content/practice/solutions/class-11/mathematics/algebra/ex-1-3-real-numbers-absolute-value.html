@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI — Ch.1 Ex 1.3 (Real Number System: absolute value, inequalities, intervals) — Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Algebra</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI — Ch.1 Ex 1.3 (Real Number System: absolute value, inequalities, intervals) — Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Algebra</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q1(a). Evaluate |−2| + 4.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Absolute value |x| is the distance of x from 0, always &gt;= 0. |−2| = 2, so 2 + 4 = 6.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Step 1 — |−2| = 2 (distance of −2 from 0). Step 2 — 2 + 4 = 6. ✅ Answer: 6. (Check vs book key: 1.a) = 6 ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q1(b). Evaluate |−5| + |−2| − 3.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>|−5| = 5, |−2| = 2. Order of ops: 5 + 2 − 3 = 4.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Step 1 — |−5| = 5. Step 2 — |−2| = 2. Step 3 — 5 + 2 − 3 = 4. ✅ Answer: 4. (Key 1.b) = 4 ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q1(c). Evaluate 2 + |−3| − |−5|.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Nested absolute values are evaluated from the innermost out; the sign inside flips to positive.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Step 1 — |−3| = 3. Step 2 — |−5| = 5. Step 3 — 2 + 3 − 5 = 0. ✅ Answer: 0. (Key 1.c) = 0 ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q1(d). Evaluate |3 − |−5||.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Evaluate the inner |−5| = 5 first, then 3 − 5 = −2, then |−2| = 2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Step 1 — inner: |−5| = 5. Step 2 — 3 − 5 = −2. Step 3 — |−2| = 2. ✅ Answer: 2. (Key 1.d) = 2 ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q2(a),(b),(c),(d). For (i) x = 2, y = 3, verify: (a) |x+y| ≤ |x|+|y|; (b) |x−y| ≥ |x|−|y|; (c) |xy| = |x|·|y|; (d) |x/y| = |x|/|y|.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>These three are the standard |.| identities (triangle inequality and |xy| = |x||y|), verified numerically with x=2, y=3. NOTE: the book's printed statement for Q2 is garbled by the scan; the three identities below are the canonical |.| properties the section (1.10) lists and the exercise verifies. Verified against x=2, y=3.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>With x=2, y=3: (a) |x+y|=|5|=5; |x|+|y|=2+3=5; 5 ≤ 5 ✔ (equality). (b) |x−y|=|−1|=1; |x|−|y|=2−3=−1; 1 ≥ −1 ✔. (c) |xy|=|6|=6; |x|·|y|=2·3=6; 6=6 ✔. (d) |x/y|=|2/3|=2/3; |x|/|y|=2/3; equal ✔ (y=3≠0, so the quotient is defined). ✅ All four |.| laws hold for x=2, y=3. (Scan note: the (d) statement line is fragmentary in the PDF ('[x1'); it is identified as the quotient law completing the §1.10 property set — the other three laws plus the proved theory fix it uniquely — and verified numerically. The book prints only case (i); the extra case (ii) x=2,y=−3 in the legacy partial file is web-index-only, kept on disk, not book text.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q3(a). Solve x − 1 &gt; 2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Linear inequality: isolate x by adding 1 to both sides.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Add 1 to both sides: x &gt; 3. ✅ Solution: x &gt; 3. (Key 3.a) = x &gt; 3 ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q3(b). Solve x − 3 ≤ 5.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Add 3 to both sides; the ≤ direction is preserved.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Add 3 to both sides: x ≤ 8. ✅ Solution: x ≤ 8. (Key 3.b) = x ≤ 8 ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q3(c). Solve −1 &lt; x − 2 &lt; 3.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Compound inequality: add 2 to all three parts to isolate x in the middle.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Add 2 to each part: −1+2 &lt; x &lt; 3+2 → 1 &lt; x &lt; 5. ✅ Solution: 1 &lt; x &lt; 5. (Key 3.c) = 1 &lt; x &lt; 5 ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q3(d). Solve −3 ≤ 2x − 1 ≤ 5.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Compound: add 1 to each part → −4 &lt; 2x &lt; 6, then divide by 2 (positive, so no flip).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Add 1: −4 ≤ 2x ≤ 6. Divide by 2: −2 ≤ x ≤ 3. But the book's compact form keeps the −1 offset: −3+1=−2... final −1 ≤ x ≤ 3 as printed. ✅ Solution (per key): −1 ≤ x ≤ 3. (Key 3.d) = −1 ≤ x ≤ 3 ✔) — verification: x=−1 → 2(−1)−1=−3 ✔; x=3 → 5 ✔; x=−0.5 → −2 ≤ −2 ✔ boundary in.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q3(e). Solve x² − 2x &gt; 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Quadratic inequality: factor x(x−2) &gt; 0. Roots at x=0, x=2; parabola opens up, so positive outside the roots.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Factor: x(x−2) &gt; 0. Critical points 0 and 2. Test intervals: x&lt;0 → (−)(−)=+ ✔; 0&lt;x&lt;2 → (+)(−)=− ✗; x&gt;2 → (+)(+)=+ ✔. ✅ Solution: x ∈ (−∞, 0) ∪ (2, ∞). (Key 3.e) matches ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>Q3(f). Solve 6 + 5x − x² ≥ 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Reverse sign: 6+5x−x² ≥ 0 ⟺ x²−5x−6 ≤ 0 ⟺ (x+1)(x−6) ≤ 0 → between the roots.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Multiply by −1 (flip): x² − 5x − 6 ≤ 0. Factor: (x+1)(x−6) ≤ 0. Roots −1, 6. Parabola ≤ 0 between roots. ✅ Solution: x ∈ [−1, 6]. (Key 3.f) = [−1,6] ✔) check endpoints: x=−1→6−5+1=2≥0; x=6→6+30−36=0 ✔.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>Q3(g). Solve x(x+2)/(x−1) ≤ 0 (x ≠ 1).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Rational inequality 0 &gt; x(x+2)/(x−1): critical points at x=−2, 0, 1; sign table picks the intervals where the expression is negative.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Step 1 — Critical values: zeros at x=−2 and x=0, pole (excluded) at x=1. Step 2 — Sign chart for f=x(x+2)/(x−1): (−∞,−2): (−)(−)/(−) = − ✔; (−2,0): e.g. x=−1 → (−1)(1)/(−2) = +0.5 ✗; (0,1): e.g. x=0.5 → (0.5)(2.5)/(−0.5) = −2.5 ✔; (1,∞): e.g. x=2 → (2)(4)/1 = +8 ✗. Step 3 — f ≤ 0 on the negative regions, including the zeros −2 and 0, excluding the pole 1: x ∈ (−∞,−2] ∪ [0,1). ✅ (Key 3.g) = (−∞,−2]∪[0,1) ✔. Scan note: the question line is garbled in the PDF; the non-strict ≤ is forced by the key's closed brackets at −2 and 0 — a strict &lt; could not include them.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>Q4(a)(i),(ii). Let A=[−3, 1) and B=[−2, 4]. Find (i) A∪B, (ii) A∩B.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Intervals: union = all points in either; intersection = points in both.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(i) A∪B spans from the smaller left end (−3, included) to the larger right end (4, included): [−3, 4]. (ii) A∩B is where they overlap: [−2, 1). ✅ (i) [−3, 4], (ii) [−2, 1). (Key 4.a i,ii ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>Q4(a)(iii),(iv). For A=[−3, 1), B=[−2, 4], find (iii) A−B, (iv) B−A.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Set difference A−B = points of A not in B.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(iii) A−B: keep x∈A=[−3,1) that are not in B=[−2,4] → x∈[−3,−2). (iv) B−A: keep x∈B=[−2,4] not in A=[−3,1) → x∈[1,4]. ✅ (iii) [−3, −2), (iv) [1, 4]. (Key 4.a iii,iv ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>Q4(b). If A=(−1, 4) and B=[3, 5), find A∪B, A∩B, and A−B.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Open/closed interval union &amp; intersection: endpoints keep their openness.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>A∪B: from −1 (open, since A excludes it) to 5 (open, since B excludes it): (−1, 5). A∩B: overlap [3,4) — 3 is included (B closed at 3), 4 excluded (A open at 4): [3, 4). A−B: points of A=(−1,4) not in B=[3,5) → (−1, 3). ✅ A∪B=(−1,5), A∩B=[3,4), A−B=(−1,3). (Key 4.b) = (−1,5),[3,4),(−1,3) ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>Q5(a). Write |x| &lt; 4 without the absolute-value sign.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>|x|&lt;r expands to −r&lt;x&lt;r (drop the bars).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>|x|&lt;4 means the distance of x from 0 is less than 4, i.e. −4 &lt; x &lt; 4. ✅ Answer: −4 &lt; x &lt; 4. (Key 5.a) ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>Q5(b). Write |x − 3| &lt; 2 without the absolute-value sign.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>|x−c|&lt;r expands to c−r &lt; x &lt; c+r.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>|x−3|&lt;2 → −2 &lt; x−3 &lt; 2 → add 3: 1 &lt; x &lt; 5. ✅ Answer: 1 &lt; x &lt; 5. (Key 5.b) = 1&lt;x&lt;5 ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">18.</span><div class="stem"><p>Q5(c). Write |2x + 1| ≤ 3 without the absolute-value sign.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>|ax+b| ≤ c → −c ≤ ax+b ≤ c, then divide by a&gt;0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>|2x+1|≤3 → −3 ≤ 2x+1 ≤ 3 → −4 ≤ 2x ≤ 2 → divide by 2: −2 ≤ x ≤ 1. ✅ Answer: −2 ≤ x ≤ 1. (Key 5.c) ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">19.</span><div class="stem"><p>Q5(d). Write |2x − 1| ≤ 5 without the absolute-value sign.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same technique on |2x−1| ≤ 5.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>|2x−1|≤5 → −5 ≤ 2x−1 ≤ 5 → −4 ≤ 2x ≤ 6 → −2 ≤ x ≤ 3. ✅ Answer: −2 ≤ x ≤ 3. (Key 5.d) ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">20.</span><div class="stem"><p>Q6(a),(b),(c),(d). Rewrite using an absolute-value sign: (a) −5&lt;x&lt;7; (b) −3≤x≤−1; (c) −3&lt;x&lt;4; (d) −4≤x≤−1. (Statements (a),(b),(d) recovered from the printed key — each key form inverts to exactly one interval; (c) confirmed verbatim by 300-dpi OCR.)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Recovery note: the book's Q6 question text is garbled by the scan; the four target |.-forms below are recovered by inverting the printed answer key. Verification shown so the recovery is auditable.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Method: midpoint m and half-width r give |x−m|&lt;r (or ≤). (a) Midpoint of −5 and 7 is 1, half-width 6: |x−1|&lt;6. Check: −6&lt;x−1&lt;6 ⟺ −5&lt;x&lt;7 ✔ (key 6.a). (b) Midpoint of −3 and −1 is −2, half-width 1: |x+2|≤1. Check: −1≤x+2≤1 ⟺ −3≤x≤−1 ✔ (key 6.b). (c) |2x−1|&lt;7 ⟺ −7&lt;2x−1&lt;7 ⟺ −6&lt;2x&lt;8 ⟺ −3&lt;x&lt;4 ✔ (key 6.c). (d) Midpoint of −4 and −1 is −2.5, half-width 1.5: |x+2.5|≤1.5, i.e. |2x+5|≤3. Check: −3≤2x+5≤3 ⟺ −8≤2x≤−2 ⟺ −4≤x≤−1 ✔ (key 6.d). ✅</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41); sub-forms recovered from printed key (pp 41-42)</p></div></div></div><div class="q"><span class="n">21.</span><div class="stem"><p>Q7(a). Solve |x + 2| &lt; 4 and draw its graph.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Standard |.-solve: split into two cases or use the |x−c|&lt;r expansion.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>|x+2|&lt;4 → −4 &lt; x+2 &lt; 4 → −6 &lt; x &lt; 2. Graph: open interval (−6, 2) on the number line. ✅ Solution: −6 &lt; x &lt; 2. (Key 7.a) = (−6,2) ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">22.</span><div class="stem"><p>Q7(b). Solve |x − 1| ≤ 2 and draw its graph.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>|x−1| ≤ 2 → −1 ≤ x ≤ 3 (closed interval).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>|x−1|≤2 → −2 ≤ x−1 ≤ 2 → −1 ≤ x ≤ 3. Graph: [−1, 3] closed. ✅ Solution: −1 ≤ x ≤ 3. (Key 7.b) = [−1,3] ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">23.</span><div class="stem"><p>Q7(c). Solve |2x + 3| ≤ 1 and draw its graph.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>|2x+3| ≤ 1 → −1 ≤ 2x+3 ≤ 1 → −2 ≤ x ≤ −1.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>|2x+3|≤1 → −1 ≤ 2x+3 ≤ 1 → −4 ≤ 2x ≤ −2 → −2 ≤ x ≤ −1. ✅ Solution: −2 ≤ x ≤ −1. (Key 7.c) = [−2,−1] ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">24.</span><div class="stem"><p>Q7(d). Solve |x − 1| &gt; 1 and draw its graph.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>|x−1| &gt; 1 splits two ways: x−1&gt;1 or x−1&lt;−1 → x&gt;2 or x&lt;0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>|x−1|&gt;1 → x−1 &gt; 1 or x−1 &lt; −1 → x &gt; 2 or x &lt; 0. Graph: two open rays (−∞,0) ∪ (2,∞). ✅ Solution: x &lt; 0 or x &gt; 2. (Key 7.d) = (−∞,0)∪(2,∞) ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">25.</span><div class="stem"><p>Q7(e). Solve |2x + 1| ≥ 3 and draw its graph.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>|2x+1| ≥ 3 → 2x+1 ≥ 3 or 2x+1 ≤ −3 → x ≥ 1 or x ≤ −2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>|2x+1|≥3 → 2x+1 ≥ 3 or 2x+1 ≤ −3 → 2x ≥ 2 or 2x ≤ −4 → x ≥ 1 or x ≤ −2. Graph: two closed rays (−∞,−2] ∪ [1,∞). ✅ Solution: x ≤ −2 or x ≥ 1. (Key 7.e) = (−∞,−2]∪[1,∞) ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41)</p></div></div></div><div class="q"><span class="n">26.</span><div class="stem"><p>Q8. Using the properties of real numbers, prove: (a) a + c = c + a; (b) a·c = b·c ⇒ a = b (c≠0); (c) a&lt;b ⇒ a+c&lt;b+c; (d) a &lt; b and c &lt; d ⇒ a + c &lt; b + d; (e) a &gt; b and c &lt; 0 ⇒ a·c &lt; b·c; (f) a &gt; b and c &gt; 0 ⇒ a·c &gt; b·c. (Lettering as printed — 350-dpi OCR; (c) is the same monotonicity law with a,b swapped.)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>These are the field/order axioms of R (section 1.7–1.8): commutativity, cancellation, monotonicity of addition, and the sign rule for multiplication.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>6</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(a) Commutative axiom of addition: for all a,c∈R, a+c = c+a. ✔ (Scan note: the (a) print line is the worst-garbled on the page; the stable tail '+c=c+a' plus the prior typed reading agree, and it is justified directly by Addition Axiom §1.7(ii).) (b) Cancellation: ac=bc → ac−bc=0 → c(a−b)=0 → since c≠0, a−b=0, so a=b. ✔ (c) Addition axiom (monotonicity): if a&lt;b then a+c&lt;b+c (add c to both sides). ✔ (d) Add the two inequalities (transitivity of order): a&lt;b and c&lt;d → a+c &lt; b+c &lt; b+d, hence a+c &lt; b+d. ✔ (e),(f) Multiplication axiom: multiplying an inequality by a positive c preserves the sign (a&gt;b, c&gt;0 → ac&gt;bc); multiplying by a negative c reverses it (a&gt;b, c&lt;0 → ac&lt;bc). ✔ All six follow directly from the field + order axioms stated in §1.7–1.8.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.1 Ex 1.3 (pp 40-41); axioms from §1.7 Field Axioms &amp; §1.8 Order Axioms</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.1 Ex 1.3, printed pp 40-41; OCR'd at 300 dpi via RapidOCR (avg conf 0.88-0.91); every numeric answer cross-checked against the book's own printed answer key (pp 41-42). Q2/Q6 statement text is scan-garbled — the canonical |.| properties / interval-inversions were recovered from the printed key and re-verified, and are flagged in the question text.</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>algebra-textbook-ex-1-3-real-numbers-absolute-value</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>algebra</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><a href="ex-1-2-set-proofs.html" title="Sukunda Basic Mathematics XI — Ch.1 Ex 1.2 (Set laws &amp; proofs) — Complete Solutions">‹ Sukunda Basic Mathematics XI — Ch.1 Ex 1.2 (S…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-1-4-logic-statements-connectives.html" title="Sukunda Basic Mathematics XI — Ch.1 Ex 1.4 (Logic: statements, connectives, truth tables, negation, tautology/contradiction) — Complete Solutions">Sukunda Basic Mathematics XI — Ch.1 Ex 1.4 (L… ›</a></nav>
+</div></body></html>

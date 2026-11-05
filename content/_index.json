@@ -88484,6 +88484,79 @@
     "unitSlug": "trigonometry",
     "year": 2078
   },
+  "pyqs/class-11/biology/biomolecules-and-cell-biology/01-neb-2025.json": {
+    "title": "NEB Class 11 Biology — Biomolecules And Cell Biology — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "biomolecules-and-cell-biology",
+    "origin": "curated NEB-pattern set covering every topic of the class-11 biomolecules and cell biology unit",
+    "questions": [
+      {
+        "id": "bio-bm-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "easy",
+        "question": "State one function each of carbohydrates, proteins, lipids and nucleic acids in living organisms.",
+        "solution": "Carbohydrates: the immediate source of energy (glucose in respiration) and structural material (cellulose in plant walls, starch and glycogen as storage).\nProteins: structural (collagen, keratin) and functional — enzymes, haemoglobin for transport, antibodies for defence, hormones.\nLipids: concentrated energy store (about twice the energy of carbohydrate per gram), insulation, phospholipids of membranes and steroid hormones.\nNucleic acids: DNA stores and transmits hereditary information; RNA carries that information and directs protein synthesis."
+      },
+      {
+        "id": "bio-bm-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Give any four differences between a prokaryotic and a eukaryotic cell.",
+        "solution": "1. Nucleus: absent in prokaryotes (nucleoid region only), a true membrane-bound nucleus in eukaryotes.\n2. Membrane-bound organelles: absent in prokaryotes; mitochondria, plastids, ER and Golgi are present in eukaryotes.\n3. Ribosomes: 70S in prokaryotes, 80S in eukaryotes.\n4. Genetic material: circular, naked DNA without histones in prokaryotes; linear DNA wound on histone proteins in eukaryotes.\n5. Size and division: 1–10 µm, dividing by binary fission, against 10–100 µm dividing by mitosis/meiosis."
+      },
+      {
+        "id": "bio-bm-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the structure of a mitochondrion and explain why it is called the powerhouse of the cell.",
+        "solution": "A mitochondrion has two membranes. The smooth outer membrane encloses the intermembrane space; the inner membrane is folded into cristae that greatly increase its surface area, and the enclosed matrix holds Krebs-cycle enzymes, mitochondrial DNA and 70S ribosomes, so the organelle is semi-autonomous.\nIn aerobic respiration the Krebs cycle runs in the matrix and the electron transport chain with oxidative phosphorylation sits on the inner membrane; both generate ATP, the energy currency used for all cellular work — hence 'powerhouse'. Mitochondria also carry out β-oxidation of fatty acids and help regulate apoptosis and calcium."
+      },
+      {
+        "id": "bio-bm-2025-4",
+        "type": "mcq",
+        "marks": 2,
+        "difficulty": "easy",
+        "question": "Which cell organelle is the actual site of protein synthesis, and where are the proteins meant for secretion made?",
+        "solution": "The ribosome — a non-membranous organelle of rRNA and protein — is the site of translation.\nRibosomes lying free in the cytoplasm make proteins used inside the cell, while ribosomes attached to the rough endoplasmic reticulum make proteins destined for secretion or for membranes; those proteins pass through the ER and Golgi before being exported in vesicles."
+      },
+      {
+        "id": "bio-bm-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "State the chemical nature of the cell wall in plants, fungi and bacteria, and give two functions of the plant cell wall.",
+        "solution": "Plants: cellulose microfibrils embedded in a matrix of pectin and hemicellulose (a primary wall, sometimes thickened by lignin). Fungi: chitin. Bacteria: peptidoglycan (murein) with lipopolysaccharide in Gram-negative walls.\nFunctions in plants: it gives mechanical strength and fixed shape, and it resists osmotic bursting so the cell can build turgor pressure; it also protects against desiccation, pathogens and mechanical injury, and being fully permeable it does not block the movement of water and solutes."
+      },
+      {
+        "id": "bio-bm-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain the phases of the cell cycle and give its significance.",
+        "solution": "Interphase occupies most of the cycle: G1 for growth and organelle synthesis, S for DNA replication and histone synthesis, and G2 for further growth and a checkpoint before division; a cell that stops dividing but stays metabolically active enters G0.\nThe M phase is karyokinesis — prophase, metaphase, anaphase, telophase — followed by cytokinesis, which divides the cytoplasm.\nSignificance: growth of the organism, replacement of worn-out cells, healing of wounds, maintenance of a constant chromosome number and the basis of vegetative reproduction."
+      },
+      {
+        "id": "bio-bm-2025-7",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Give four significance points of meiosis in sexually reproducing organisms.",
+        "solution": "1. It halves the chromosome number (2n → n), producing haploid gametes so that fertilisation restores the diploid number and the species count stays constant.\n2. Crossing over between homologous chromatids and independent assortment of homologues recombine alleles, creating genetic variation on which natural selection acts.\n3. Variation from meiosis plus random fertilisation is the basis of evolution and of the differences between siblings.\n4. It removes errors: pairing and separation of homologues, with checkpoints, help keep chromosome number and structure stable across generations."
+      },
+      {
+        "id": "bio-bm-2025-8",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Write the structure and functions of the Golgi apparatus and the lysosome.",
+        "solution": "Golgi apparatus: a stack of flattened, curved cisternae with a cis (forming) and a trans (maturing) face, surrounded by vesicles; in plants it is called a dictyosome. It modifies proteins and lipids received from the ER (glycosylation, addition of sulphate), sorts and packages them, forms secretory vesicles, produces lysosomes and supplies wall material in plant cells.\nLysosome: a single-membrane vesicle budded from the Golgi containing hydrolytic enzymes that work best at acidic pH. It digests material taken in by phagocytosis (heterophagy), recycles worn-out organelles (autophagy), and on cell death releases its enzymes in autolysis — hence the name 'suicide bags'."
+      }
+    ]
+  },
   "pyqs/class-11/biology/biomolecules-and-cell-biology/05-neb-2020.json": {
     "examSource": "[NEB-pattern 2020]",
     "origin": "curated NEB-pattern set filling the 2020 gap for class-11 biomolecules",
@@ -88517,6 +88590,217 @@
     "unitSlug": "biomolecules-and-cell-biology",
     "year": 2020
   },
+  "pyqs/class-11/biology/biota-and-environment/01-neb-2025.json": {
+    "title": "NEB Class 11 Biology — Biota And Environment — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "biota-and-environment",
+    "origin": "curated NEB-pattern set covering every topic of the class-11 biota and environment unit",
+    "questions": [
+      {
+        "id": "bio-bio-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Differentiate primary from secondary aquatic adaptations with two examples each.",
+        "solution": "Primary aquatic animals live in water throughout their life and have never left it: streamlined body, gills for respiration, fins or cilia for locomotion, no eyelids or external ears, and kidneys that excrete ammonia. Examples: fish (Rohu), prawn.\nSecondary aquatic animals are originally land animals that have returned to water but retain land adaptations: they breathe by lungs, have hairs or feathers, four limbs modified into flippers or paddles, external ears may be reduced and they must surface to breathe. Examples: whale and dolphin (mammals), turtle and duck (reptile and bird)."
+      },
+      {
+        "id": "bio-bio-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe cursorial, fossorial, arboreal and volant adaptations with one example each.",
+        "solution": "Cursorial (running): long, strong hind limbs with reduced digits and light body; horse, hare.\nFossorial (burrowing): cylindrical body, short powerful forelimbs with claws, reduced eyes and ears, and a burrow habit; mole rat, earthworm-like mole.\nArboreal (tree-dwelling): prehensile hands or tail, opposable thumb, long limbs, claws or adhesive pads, forward-facing eyes for judging distance; monkey, tree frog.\nVolant (flying): wings of feathers or membrane, hollow or light bones, keeled sternum with strong flight muscles and acute vision; bird, bat. Gliding animals such as the flying squirrel use a patagium instead of true wings."
+      },
+      {
+        "id": "bio-bio-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Define reflex action, taxes and dominance–leadership in animal behaviour, with one example each.",
+        "solution": "Reflex action is an automatic, involuntary and rapid response to a stimulus, mediated by a reflex arc — receptor, sensory neurone, spinal cord centre, motor neurone and effector — without waiting for the brain, as when the pupil narrows in bright light or the hand is pulled back from a hot object.\nTaxes are directed, whole-body movements towards or away from a stimulus: phototaxis in Euglena moving to light and geotaxis in roots growing downwards.\nDominance and leadership: in a group one individual asserts priority over food, space or mates (the dominant bull) and others follow it, as the leading hen in a pecking order or the lead animal in a herd moving to water."
+      },
+      {
+        "id": "bio-bio-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain fish and bird migration with their causes and one method used to study migration.",
+        "solution": "Migration is the regular seasonal movement of animals between breeding and feeding or wintering grounds. Fish such as salmon and the Himalayan mahseer move upstream to spawn in cool, oxygen-rich water and return to feed in larger rivers or the sea (anadromous in salmon, catadromous in eel). Birds move between breeding grounds and warmer wintering areas when food and daylight fall in the north.\nCauses: shortage of food and water, cold, need for a safe spawning or nesting site and day length acting as the trigger. Methods of study: ringing or banding with numbered metal or colour rings, radio and satellite telemetry, and geolocators that record light levels; observations of flock direction and timing are recorded alongside."
+      },
+      {
+        "id": "bio-bio-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Write the sources, effects and control measures of air pollution.",
+        "solution": "Sources: burning of fossil fuels in industry, vehicles and brick kilns; smoke from biomass stoves; dust from roads, quarries and construction; sulphur and nitrogen oxides, carbon monoxide, hydrocarbons and particulate matter; also CFCs and methane.\nEffects: respiratory disease and asthma, eye irritation, acid rain, damage to crops and lichens, reduced visibility, corrosion of buildings, and contribution to global warming and ozone depletion.\nControl: shift to clean and renewable energy, fit catalytic converters and scrubbers, improve public transport, pave and water roads, ban open burning, plant green belts and enforce vehicle emission and industrial standards."
+      },
+      {
+        "id": "bio-bio-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain the chief sources and effects of water pollution and soil pollution, and suggest one control measure for each.",
+        "solution": "Water pollution: untreated sewage and industrial effluent, agricultural fertilisers and pesticides, hospital waste, bathing and washing, and solid waste dumping. Effects: oxygen depletion kills fish, nutrient enrichment causes blooms and eutrophication, heavy metals accumulate in the food chain, and pathogens spread cholera and typhoid. Control: treat sewage and industrial effluent before discharge and stop dumping waste into rivers.\nSoil pollution: excess chemical fertilisers and pesticides, plastic and polythene waste, industrial sludge, mine spoil and acid rain. Effects: loss of fertility and soil structure, death of soil organisms, crop contamination and groundwater pollution. Control: use organic manure and biofertilisers, adopt integrated pest management, and separate, compost and recycle solid waste."
+      },
+      {
+        "id": "bio-bio-2025-7",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What are pesticides? Describe their effects and state how their harm can be reduced.",
+        "solution": "Pesticides are chemicals used to kill pests — insecticides (organochlorines such as DDT, organophosphates), herbicides, fungicides and rodenticides.\nEffects: they kill non-target beneficial insects and pollinators, and persistent chlorinated compounds accumulate in soil, water and living tissue, increasing at each trophic level through biomagnification — the reason birds of prey suffered eggshell thinning. Exposure causes poisoning in farm workers, residues in food and milk, and development of resistant pests; runoff pollutes rivers and groundwater.\nReduction: integrated pest management with biological control, resistant varieties and careful timing; use of biopesticides such as neem and Bacillus thuringiensis; correct dose, protective clothing and safe disposal; and legal restriction or ban of persistent organochlorines."
+      }
+    ]
+  },
+  "pyqs/class-11/biology/conservation-biology/01-neb-2025.json": {
+    "title": "NEB Class 11 Biology — Conservation Biology — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "conservation-biology",
+    "origin": "curated NEB-pattern set covering every topic of the class-11 conservation biology unit",
+    "questions": [
+      {
+        "id": "bio-con-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "easy",
+        "question": "Define biodiversity and describe its three levels with an example of each.",
+        "solution": "Biodiversity is the variety and variability of living organisms at all levels of organisation, together with the ecological complexes they form.\nGenetic diversity: variation of genes within a species — different landraces of rice or varieties of apple.\nSpecies diversity: the number and relative abundance of species in an area — the many tree species of a Chitwan sal forest versus a single-species plantation.\nEcosystem or ecological diversity: the variety of habitats and communities — forests, grasslands, wetlands, rivers and alpine meadows within one country. Nepal, with all these within 147,000 km², ranks high in ecosystem diversity."
+      },
+      {
+        "id": "bio-con-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Name the categories of protected areas in Nepal with one example each and explain what a Ramsar site is.",
+        "solution": "Nepal's protected area system includes national parks (Chitwan, Sagarmatha, Bardia), wildlife reserves (Koshi Tappu, Parsa), conservation areas (Annapurna, Manaslu), hunting reserve (Dhorpatan) and buffer zones around parks; some areas are also designated as Ramsar sites.\nA Ramsar site is a wetland of international importance listed under the Ramsar Convention of 1971, on the basis of its waterfowl, fish, plant life or ecological role. Nepal has listed sites including Koshi Tappu, Beeshazar Tal, Ghodaghodi Tal, Jagadishpur Reservoir, Rara Lake, Phoksundo Lake and the Mai Pokhari, which obliges the country to conserve them and use them wisely."
+      },
+      {
+        "id": "bio-con-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Why does wildlife matter, what causes extinction, and what strategies conserve threatened species?",
+        "solution": "Wildlife matters for ecological balance — predators control prey, pollinators and seed dispersers keep forests regenerating, and each species is part of a food web; it also provides direct economic value through tourism, genetic resources and medicine, and has cultural and ethical value.\nCauses of extinction: habitat loss and fragmentation, overhunting and poaching, pollution, invasive species, climate change, disease and small population effects such as inbreeding.\nStrategies: protect and connect habitats through parks, corridors and community forests; enforce anti-poaching law and control trade; breed endangered species in captivity and reintroduce them; restore degraded habitat; involve local people through buffer zones and ecotourism; and monitor populations with research."
+      },
+      {
+        "id": "bio-con-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain the IUCN Red List categories of threatened species.",
+        "solution": "The IUCN Red List ranks the extinction risk of species. Extinct (EX): no individual remains. Extinct in the wild (EW): survives only in captivity. Critically endangered (CR): extremely high risk in the wild. Endangered (EN): very high risk. Vulnerable (VU): high risk of extinction. Near threatened (NT): close to qualifying. Least concern (LC): widespread and not currently at risk. Data deficient (DD): too little information to assess.\nCR, EN and VU together are 'threatened'. The categories are assigned from quantitative criteria — population size, rate of decline, range area and fragmentation — and are reviewed periodically, so they guide national law and conservation priority."
+      },
+      {
+        "id": "bio-con-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Name any five endangered or threatened animal species of Nepal and state the main threat to each.",
+        "solution": "Greater one-horned rhinoceros — poaching for horn and loss of grassland habitat.\nRoyal Bengal tiger — poaching for skin and bone and habitat fragmentation.\nRed panda — loss of bamboo forest and fur trade.\nSnow leopard — retaliatory killing over livestock and loss of prey.\nGharial — loss of river habitat, fishing nets and sand mining.\nOther threatened species include the wild elephant, musk deer, pangolin, Chinese pangolin, hispid hare, Bengal florican and the spiny babbler. Conservation relies on anti-poaching units, habitat protection, prey recovery, captive breeding and community participation."
+      },
+      {
+        "id": "bio-con-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Differentiate in-situ and ex-situ conservation and give two advantages and one limitation of each.",
+        "solution": "In-situ conservation keeps a species inside its natural habitat — national parks, reserves, conservation areas, community forests and wetlands.\nAdvantages: the whole community and its interactions are preserved, and populations keep evolving under natural selection; it protects watersheds and supports tourism. Limitation: it needs large areas and can fail if the habitat is degraded or the population is already very small.\nEx-situ conservation keeps the species outside its habitat — botanical gardens, zoos, seed and gene banks, tissue culture.\nAdvantages: it can save species whose habitat is gone and supplies material for reintroduction; it allows research and breeding. Limitation: only a few individuals are kept, genetic diversity is narrow and behaviour needed in the wild may be lost, so it cannot replace habitat protection."
+      },
+      {
+        "id": "bio-con-2025-7",
+        "type": "mcq",
+        "marks": 2,
+        "difficulty": "easy",
+        "question": "What does 'endangered species' mean, and how does it differ from a 'rare' species?",
+        "solution": "An endangered species is one whose population has fallen so low, or is declining so fast, that it faces a very high risk of extinction in the wild in the near future — for example the greater one-horned rhinoceros in Nepal.\nA rare species has a naturally small population or a very restricted range and may never have been abundant; it is not necessarily declining. Rare species are vulnerable because a single local disturbance can wipe out the whole population, so both categories need protection but for different reasons."
+      }
+    ]
+  },
+  "pyqs/class-11/biology/ecology/01-neb-2025.json": {
+    "title": "NEB Class 11 Biology — Ecology — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "ecology",
+    "origin": "curated NEB-pattern set covering every topic of the class-11 ecology unit",
+    "questions": [
+      {
+        "id": "bio-eco-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "easy",
+        "question": "Define ecology. Name the abiotic factors of a habitat and describe three biotic interactions.",
+        "solution": "Ecology is the study of the relationships between organisms and their environment, including other organisms.\nAbiotic factors include light, temperature, water, humidity, soil type and pH, oxygen, salinity and wind.\nBiotic interactions: mutualism, where both partners gain (alga and fungus in a lichen); parasitism, where one gains and harms the host (Plasmodium in man); competition, where individuals of the same or different species fight for the same limited resource and both lose something."
+      },
+      {
+        "id": "bio-eco-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the structural and functional components of a pond ecosystem.",
+        "solution": "Structure: abiotic components are water, dissolved oxygen and salts, light and temperature; producers are phytoplankton (algae) plus submerged, floating and marginal plants; consumers are zooplankton and insects (primary), frogs and small fish (secondary) and large fish (tertiary); decomposers are bacteria and fungi in the mud at the bottom.\nFunction: the four components carry out productivity (photosynthesis by phytoplankton), decomposition of organic debris, energy flow through the grazing food chain and nutrient cycling. Together the four components keep the pond running: energy enters as sunlight, passes through the food web and leaves as heat, while nutrients cycle within the pond. Being small, a pond responds sharply to nutrient input, so nutrient-rich runoff quickly causes blooms and eutrophication."
+      },
+      {
+        "id": "bio-eco-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Define food chain, food web and ecological pyramid. State the ten per cent law and give the pyramid of energy in a grassland.",
+        "solution": "A food chain is the sequence in which energy passes from producers through consumers (grass → grasshopper → frog → snake). A food web is the network of interconnected food chains in a community. An ecological pyramid is a graphical representation of numbers, biomass or energy at each trophic level.\nThe ten per cent law says only about 10% of the energy at one trophic level is transferred to the next; the rest is lost in respiration, heat, movement and undigested material. So a grassland energy pyramid is always upright, with producers at the base holding the greatest energy."
+      },
+      {
+        "id": "bio-eco-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Differentiate gross primary productivity from net primary productivity, and give one reason why a pyramid of numbers can be inverted.",
+        "solution": "Gross primary productivity (GPP) is the total organic matter fixed by producers by photosynthesis per unit time and area. Net primary productivity (NPP) is GPP minus the energy the producers use in respiration, so NPP = GPP − R; only NPP is available to consumers.\nA pyramid of numbers is inverted when one producer supports a great number of consumers, as when thousands of insects feed on a single large tree, or when many small parasites live on one large host. The pyramid of numbers is therefore not a reliable picture of energy flow."
+      },
+      {
+        "id": "bio-eco-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain the carbon cycle with reference to photosynthesis, respiration and fossil fuels.",
+        "solution": "Carbon is fixed as carbon dioxide by photosynthesis into organic compounds and returns to the atmosphere by respiration of plants and animals and by decomposition. Carbon dioxide also dissolves in water and is exchanged between the atmosphere and the oceans.\nSome organic carbon is buried and converted into coal, oil and gas over long periods; burning these fossil fuels, along with deforestation and forest fires, releases carbon fixed long ago, so atmospheric CO2 rises faster than photosynthesis can remove it. That imbalance is the main driver of the greenhouse effect and global warming."
+      },
+      {
+        "id": "bio-eco-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the nitrogen cycle, mentioning nitrogen fixation, nitrification, assimilation and denitrification.",
+        "solution": "Atmospheric nitrogen cannot be used directly by plants. Nitrogen-fixing bacteria — Rhizobium in root nodules and free-living Azotobacter and cyanobacteria — reduce it to ammonia (nitrogen fixation), and lightning and industrial fertiliser manufacture add fixed nitrogen too.\nNitrifying bacteria (Nitrosomonas, Nitrobacter) oxidise ammonia to nitrite and then nitrate (nitrification); plants absorb nitrate or ammonium and incorporate it into proteins (assimilation). Decomposers release ammonia from dead matter (ammonification), and denitrifying bacteria such as Pseudomonas convert nitrate back to nitrogen gas, closing the cycle."
+      },
+      {
+        "id": "bio-eco-2025-7",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is ecological succession? Differentiate hydrarch and xerarch succession and define climax community.",
+        "solution": "Ecological succession is the orderly, directional replacement of one community by another at a site over time, until a stable community forms.\nHydrarch succession starts in water — pioneer phytoplanktons give way to submerged, then floating and marginal plants, then reeds and finally land vegetation as soil builds up. Xerarch succession starts on bare rock: lichens weather the rock, mosses follow, then grasses, shrubs and trees.\nThe climax community is the final, self-perpetuating community in equilibrium with the climate of the area, such as a forest in a temperate region."
+      },
+      {
+        "id": "bio-eco-2025-8",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the adaptations of hydrophytes and xerophytes.",
+        "solution": "Hydrophytes live in or on water and are adapted to shortage of air and support: a thin cuticle, abundant air chambers (aerenchyma) for buoyancy and gas exchange, poorly developed xylem, stomata on the upper surface only or absent in submerged forms, and long flexible stems.\nXerophytes live in dry habitats and are adapted to conserve water: thick cuticle and waxy surfaces, sunken or hairy stomata, small or reduced leaves turned into spines, deep or widely spreading roots, water-storing succulent tissue and leaf fall in the dry season."
+      },
+      {
+        "id": "bio-eco-2025-9",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Write the causes, effects and control measures of the greenhouse effect and of acid rain.",
+        "solution": "Greenhouse effect: CO2, methane, nitrous oxide and CFCs from fossil fuels, deforestation, agriculture and industry trap outgoing infrared radiation, warming the surface. Effects: melting glaciers, rising sea level, floods and droughts, shifting crops and loss of biodiversity. Control: cut fossil-fuel use, plant forests, use renewable energy, improve efficiency and adopt the Paris-type commitments.\nAcid rain: sulphur dioxide and nitrogen oxides from burning coal, oil and vehicle fuel dissolve in rain to give sulphuric and nitric acid. Effects: acidified lakes kill fish, aluminium is released, forests are damaged, buildings and monuments corrode and soil nutrients are leached. Control: desulphurise fuels and flue gases, use catalytic converters, switch to cleaner energy and add lime to affected waters."
+      }
+    ]
+  },
   "pyqs/class-11/biology/ecology/04-neb-2021.json": {
     "examSource": "[NEB-pattern 2021]",
     "origin": "curated NEB-pattern set filling the 2021 gap for class-11 ecology",
@@ -88549,6 +88833,436 @@
     "title": "NEB Class 11 Biology — Ecology — 2021",
     "unitSlug": "ecology",
     "year": 2021
+  },
+  "pyqs/class-11/biology/evolutionary-biology/01-neb-2025.json": {
+    "title": "NEB Class 11 Biology — Evolutionary Biology — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "evolutionary-biology",
+    "origin": "curated NEB-pattern set covering every topic of the class-11 evolutionary biology unit",
+    "questions": [
+      {
+        "id": "bio-evo-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the Oparin–Haldane hypothesis of the origin of life and explain the significance of the Miller–Urey experiment.",
+        "solution": "Oparin and Haldane proposed that the primitive Earth had a reducing atmosphere of methane, ammonia, hydrogen and water vapour with no free oxygen, together with intense ultraviolet radiation, lightning and volcanic heat. These energy sources converted simple gases into organic molecules, which accumulated in the warm ocean as a 'hot dilute soup'; the molecules aggregated into coacervates — membranes enclosing a chemical system — and these became the first primitive cells.\nMiller and Urey passed electric sparks through a mixture of methane, ammonia, hydrogen and water vapour and obtained amino acids, proving experimentally that the organic building blocks of life can form abiotically under such conditions."
+      },
+      {
+        "id": "bio-evo-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Discuss any four lines of evidence of evolution.",
+        "solution": "Palaeontological: fossils in rock strata show a sequence of forms and connecting links such as Archaeopteryx, which has both reptilian and avian characters.\nMorphological and anatomical: homologous organs — forelimbs of a man, whale, bat and horse built on the same plan — indicate common ancestry, whereas analogous organs (wing of an insect and of a bird) show convergent adaptation.\nEmbryological: vertebrate embryos share gill slits and a tail at early stages, pointing to common descent.\nBiochemical and molecular: the same genetic code, similar proteins such as cytochrome c and similar blood pigments across species show relatedness, and the degree of difference measures how long lineages have been separate."
+      },
+      {
+        "id": "bio-evo-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain Lamarckism and state why it is rejected.",
+        "solution": "Lamarck proposed that organisms have an inborn urge to become more complex, that use of an organ strengthens it while disuse weakens it (use and disuse), and that such acquired characters are inherited by the offspring — the long neck of the giraffe arising from generations of stretching for high leaves.\nIt is rejected because acquired changes in body cells do not alter the genes of germ cells, so they are not inherited: Weismann cut the tails of mice for many generations and no tailless young appeared, and a blacksmith's strong arms do not produce strong-armed children. The theory also cannot explain why structures useless to the organism exist."
+      },
+      {
+        "id": "bio-evo-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "State Darwin's theory of natural selection and explain how neo-Darwinism differs from it.",
+        "solution": "Darwin's theory rests on overproduction of offspring, variation among them, a struggle for existence, survival of the fittest and inheritance of favourable variations, so that populations gradually change — descent with modification. Later forms of the theory add the modern understanding of heredity.\nNeo-Darwinism (the modern synthesis) explains variation as mutation and recombination rather than vague 'variation', identifies genes as the unit of inheritance, and treats evolution as a change in allele frequency in a population under selection, genetic drift, gene flow and mutation, supported by population genetics and the fossil record."
+      },
+      {
+        "id": "bio-evo-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Give the position of man in the animal kingdom with the characters that justify it.",
+        "solution": "Man (Homo sapiens) is placed in Kingdom Animalia, Phylum Chordata, Subphylum Vertebrata, Class Mammalia, Order Primates, Family Hominidae, Genus Homo, Species sapiens.\nJustification: animal — heterotrophic, no cell wall, moves; chordate — notochord, dorsal hollow nerve cord and gill slits at some stage; vertebrate — vertebral column and internal skeleton; mammal — hair, mammary glands, warm blood, diaphragm, three middle-ear bones and a four-chambered heart; primate — grasping hands, opposable thumb, forward-facing eyes with stereoscopic vision, large brain, nails instead of claws and usually one young per birth."
+      },
+      {
+        "id": "bio-evo-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Give four differences between old-world monkeys and new-world monkeys.",
+        "solution": "1. Nose: narrow, downward-pointing nostrils in old-world monkeys; broad, flat, sideways-facing nostrils in new-world monkeys.\n2. Tail: never prehensile in old-world monkeys; often prehensile (gripping) in new-world monkeys.\n3. Distribution: Africa and Asia against Central and South America.\n4. Teeth and thumb: old-world monkeys have two premolars and opposable thumbs; new-world monkeys have three premolars and thumbs that do not oppose as fully.\nExamples: rhesus monkey and baboon (old world); spider monkey and marmoset (new world)."
+      },
+      {
+        "id": "bio-evo-2025-7",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Differentiate apes from man, and trace the evolution of modern man from the anthropoid ancestor.",
+        "solution": "Apes have a semi-erect posture with longer arms than legs, a prognathous face with a prominent brow ridge, a C-shaped spine, a smaller brain (about 400–500 cm³), no chin and body hair; man is fully erect with longer legs, a flat face, an S-shaped spine, a brain of about 1,350–1,400 cm³, a chin and sparse hair, and possesses speech and culture.\nThe line runs Dryopithecus and Ramapithecus → Australopithecus africanus (bipedal, small brain) → Homo habilis (stone tools, 650 cm³) → Homo erectus (fire, larger brain, Java and Peking man) → Neanderthal man (burial, cold adaptation) → Cro-Magnon and finally Homo sapiens, with brain size, tool use and culture increasing along the line."
+      },
+      {
+        "id": "bio-evo-2025-8",
+        "type": "mcq",
+        "marks": 2,
+        "difficulty": "medium",
+        "question": "Distinguish homologous from analogous organs with one example each, and state what each proves.",
+        "solution": "Homologous organs have the same basic structure and embryonic origin but different functions — the forelimbs of man, bat, whale and horse. They show divergent evolution from a common ancestor.\nAnalogous organs have different structure and origin but similar function — the wing of an insect and the wing of a bird, or the eye of an octopus and of a fish. They show convergent evolution, in which unrelated organisms adapt to a similar way of life; they are evidence of adaptation, not of ancestry."
+      }
+    ]
+  },
+  "pyqs/class-11/biology/faunal-diversity/01-neb-2025.json": {
+    "title": "NEB Class 11 Biology — Faunal Diversity — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "faunal-diversity",
+    "origin": "curated NEB-pattern set covering every topic of the class-11 faunal diversity unit",
+    "questions": [
+      {
+        "id": "bio-fau-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Give an outline classification of Protista and the diagnostic features of Protozoa up to class with one example of each class.",
+        "solution": "Kingdom Protista is divided into protozoans (animal-like), algae (plant-like) and slime moulds (fungus-like).\nProtozoa are unicellular eukaryotic heterotrophs without a cell wall, moving by pseudopodia, flagella or cilia and often forming cysts.\nClasses: Rhizopoda or Sarcodina — move by pseudopodia, e.g. Amoeba; Mastigophora or Flagellata — move by flagella, e.g. Trypanosoma, Euglena; Ciliophora — move by cilia, e.g. Paramecium; Sporozoa — no locomotory organelle, parasitic with spore-like stages, e.g. Plasmodium."
+      },
+      {
+        "id": "bio-fau-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the structure and reproduction of Paramecium caudatum.",
+        "solution": "Paramecium is a slipper-shaped ciliate covered by a pellicle with cilia; it has two nuclei — a large macronucleus for metabolism and a small micronucleus for reproduction — a contractile vacuole for osmoregulation at each end, food vacuoles and a cytostome with an oral groove.\nAsexual reproduction is by transverse binary fission, sometimes preceded by conjugation. Sexual reproduction is conjugation: two individuals join at the oral grooves, their macronuclei degenerate and micronuclei undergo meiosis; a haploid nucleus from each migrates into the other, fuses to form a synkaryon, and the cells separate and divide — a way of exchanging genetic material and restoring vigour."
+      },
+      {
+        "id": "bio-fau-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "hard",
+        "question": "Describe the life cycle of Plasmodium vivax and name the vector.",
+        "solution": "The cycle has two hosts. In the female Anopheles mosquito (definitive host) gametocytes taken up with a blood meal fuse in the gut to form a zygote, which becomes a motile ookinete and then an oocyst full of sporozoites; these migrate to the salivary glands.\nWhen the mosquito bites, sporozoites enter the human liver and multiply asexually in liver cells (pre-erythrocytic phase), releasing merozoites into the blood. There they invade red cells, grow as trophozoites and divide into more merozoites, bursting the cells and causing the fever cycle; some become gametocytes, which are picked up by the next mosquito. Relapse follows from hypnozoites left in the liver."
+      },
+      {
+        "id": "bio-fau-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "State the economic importance of Plasmodium falciparum.",
+        "solution": "P. falciparum causes falciparum malaria, the most severe and often fatal form, with cerebral malaria, severe anaemia, kidney failure and pulmonary oedema. Its economic importance is entirely destructive: it removes productive days from adults, keeps children out of school, and reduces work capacity and learning; it drains household income for treatment and travel, and national budgets for drugs, nets and spraying.\nIn Nepal it threatens the Terai and inner-Terai districts and complicates irrigation and settlement projects, so malaria control is a public-health and development priority rather than a resource."
+      },
+      {
+        "id": "bio-fau-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain the levels of body organisation, body symmetry, body cavity and segmentation in animals with examples.",
+        "solution": "Organisation: cellular (Porifera), tissue (Cnidaria), organ (Platyhelminthes), organ system (Nematoda onwards).\nSymmetry: asymmetrical (sponges), radial (Hydra, starfish) and bilateral, where the body has a right and left half, a dorsal and ventral side and anterior and posterior ends — typical of active animals.\nBody cavity: acoelomate, with no cavity between gut and body wall (Platyhelminthes); pseudocoelomate, a cavity not lined by mesoderm (Nematoda); coelomate, a true cavity lined by mesoderm (Annelida onwards).\nSegmentation: metameric repetition of body parts along the axis, seen clearly in the earthworm, and as jointed segments in arthropods."
+      },
+      {
+        "id": "bio-fau-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Give the diagnostic features of any five animal phyla with one example each.",
+        "solution": "Porifera: cellular level, no organs, body wall perforated by ostia and a spongocoel with collar cells; Sycon.\nCnidaria: radial symmetry, tissue level, one opening surrounded by tentacles bearing nematocysts; Hydra, Aurelia.\nPlatyhelminthes: flat, bilaterally symmetrical, acoelomate, with flame cells and often a parasitic life cycle; Fasciola, Taenia.\nNematoda: unsegmented, cylindrical, pseudocoelomate, covered by a cuticle, sexes usually separate; Ascaris.\nAnnelida: metamerically segmented coelomate worms with setae and a closed circulatory system; Pheretima, Hirudinaria.\nArthropoda: jointed appendages, chitinous exoskeleton, segmented body and open circulation; Palaemon, butterfly.\nMollusca: soft body with a fleshy foot and mantle, often a calcareous shell and a radula; Pila, Octopus."
+      },
+      {
+        "id": "bio-fau-2025-7",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the digestive system of earthworm.",
+        "solution": "The alimentary canal is a straight tube: mouth in the first segment, buccal cavity, muscular pharynx that pumps in soil, oesophagus, muscular gizzard that grinds the food, and stomach, followed by the intestine which runs to the anus.\nThe intestine has an internal fold, the typhlosole, that increases absorptive surface, and its wall secretes enzymes; chloragogen cells store food and neutralise toxins. Digestion is extracellular: proteases, amylase and lipase act in the intestine at pH favourable for the enzymes. The worm feeds on soil rich in decayed organic matter and the undigested soil is egested as a cast — an albuminous soil deposit valuable to farmers."
+      },
+      {
+        "id": "bio-fau-2025-8",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the excretory and nervous systems of earthworm.",
+        "solution": "Excretion is by nephridia of three kinds: pharyngeal micronephridia, integumentary nephridia scattered on the body wall, and septal nephridia attached to the septa behind the clitellum. A nephridium has a nephrostome ciliated funnel, a coiled tubule and an external nephridiopore; it removes nitrogenous waste as urea, and the chloragogen cells help by converting ammonia into urea.\nThe nervous system is a dorsal cerebral ganglion in the third segment, a circumpharyngeal connectives ring and a ventral nerve cord with a ganglion in each segment; sense organs include photoreceptor cells, taste buds and epidermal receptor cells, and giant nerve fibres allow rapid withdrawal."
+      },
+      {
+        "id": "bio-fau-2025-9",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the reproductive system of earthworm and state four of its economic benefits.",
+        "solution": "Earthworm is hermaphrodite: male organs are two pairs of testes in segments 10 and 11, with seminal vesicles and vasa deferentia opening at the prostatic pores of segment 18; female organs are a pair of ovaries in segment 13 with oviducts opening at segment 14. Four pairs of spermathecae in segments 6–9 store sperm during mutual cross-fertilisation; two worms lie head to tail, exchange sperm, and later the clitellum secretes a cocoon into which eggs and stored sperm are shed, so fertilisation is external in the cocoon.\nBenefits: casts improve soil fertility and structure, burrows aerate and drain soil, worms are protein feed for poultry and fish, and they help degrade organic waste in vermicomposting; they also serve as bait and in the food chain."
+      },
+      {
+        "id": "bio-fau-2025-10",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the digestive and respiratory systems of frog.",
+        "solution": "Digestive: the mouth has a sticky tongue attached in front and numerous small, backwardly directed teeth on the upper jaw, with the internal nares opening into the buccal cavity. The oesophagus leads to a stomach with cardiac and pyloric parts, then the small intestine (duodenum, ileum) and large intestine opening into the cloaca. The liver with gall bladder, pancreas and salivary glands pour in secretions; digestion is completed in the intestine with absorption through villi.\nRespiratory: in water by moist skin and buccal lining; on land by lungs — a pair of simple sacs with internal folds, linked to the buccal cavity by the larynx and bronchi. Breathing is a buccal pump: air is drawn into the buccal cavity, the nares close, the floor rises and air is forced into the lungs, which is why a frog throbs even when resting."
+      },
+      {
+        "id": "bio-fau-2025-11",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "hard",
+        "question": "Describe the structure of a frog's heart and explain the working of the circulation.",
+        "solution": "The heart is three-chambered — two atria and one ventricle — lying in the pericardial cavity. The sinus venosus receives venous blood and opens into the right atrium; the left atrium receives oxygenated blood from the lungs; the ventricle is thin-walled with internal ridges that reduce mixing, and the truncus arteriosus leaves it and divides into carotid, systemic and pulmocutaneous arches.\nWorking: the sinus venosus pumps deoxygenated blood into the right atrium while pulmonary veins fill the left; both atria contract, sending blood into the ventricle. During ventricular contraction the blood is directed so that the pulmocutaneous arches receive the deoxygenated part (to lungs and skin) and the carotids receive the oxygenated part (to head), so mixing is partly avoided. Blood returns through the venae cavae and pulmonary veins, and the flow is unidirectional because of valves at each chamber junction."
+      },
+      {
+        "id": "bio-fau-2025-12",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the male and female reproductive systems of frog.",
+        "solution": "Male: a pair of yellowish oval testes attached to the kidney by the mesorchium, with vasa efferentia that run through the kidney into the ureter, which becomes the urinogenital duct opening into the cloaca; a vocal sac and nuptial thumb pad develop in breeding season.\nFemale: a pair of triangular ovaries above the kidneys with long, much-coiled oviducts, each opening into the coelom by a ciliated funnel and opening into the cloaca, plus a swollen oviduct during breeding. During amplexus, the male clasps the female and she releases eggs into the water, which the male fertilises externally; the zygotes hatch into tadpoles."
+      }
+    ]
+  },
+  "pyqs/class-11/biology/floral-diversity/01-neb-2025.json": {
+    "title": "NEB Class 11 Biology — Floral Diversity — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "floral-diversity",
+    "origin": "curated NEB-pattern set covering every topic of the class-11 floral diversity unit",
+    "questions": [
+      {
+        "id": "bio-flo-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "easy",
+        "question": "Name the three domains of life and state the rules of binomial nomenclature with one example.",
+        "solution": "The three domains are Archaea (prokaryotes of extreme habitats, with ether-linked membrane lipids and no peptidoglycan), Bacteria (prokaryotes with peptidoglycan walls) and Eukarya (nucleus and membrane-bound organelles).\nBinomial nomenclature, given by Linnaeus, names every organism with two Latinised words: the genus with a capital letter and the species in lower case, both italicised in print and underlined when handwritten, e.g. Mangifera indica for mango. The name is Latin, follows the rule of priority, and is the same worldwide, which is why scientific names avoid the confusion of local names."
+      },
+      {
+        "id": "bio-flo-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "State the basis of Whittaker's five kingdom classification, name the kingdoms with one example each, and give one merit and one demerit of the system.",
+        "solution": "Basis: cell structure (prokaryote or eukaryote), thallus organisation, mode of nutrition, reproduction and phylogenetic relationships.\nKingdoms: Monera (bacteria), Protista (Euglena), Fungi (Rhizopus), Plantae (mango), Animalia (earthworm).\nMerit: it separates prokaryotes from eukaryotes and autotrophs from heterotrophs, placing fungi in a kingdom of their own. Demerit: Protista and Fungi remain heterogeneous groups, and bacteria and cyanobacteria are kept together although they differ greatly."
+      },
+      {
+        "id": "bio-flo-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Give the diagnostic features of the four classes of fungi with one example each.",
+        "solution": "Phycomycetes: aseptate, coenocytic hyphae, spores non-motile or motile; Rhizopus and Mucor.\nAscomycetes (sac fungi): septate hyphae, sexual spores as ascospores inside an ascus, often budding; Penicillium, yeast.\nBasidiomycetes (club fungi): septate hyphae, basidiospores borne on a basidium; mushroom Agaricus, puffball.\nDeuteromycetes (fungi imperfecti): septate hyphae, only asexual reproduction by conidia, sexual stage unknown; Alternaria, Trichoderma."
+      },
+      {
+        "id": "bio-flo-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe reproduction in Mucor and in yeast.",
+        "solution": "Mucor reproduces vegetatively by fragmentation of the mycelium, asexually by non-motile sporangiospores formed inside a sporangium on a sporangiophore, and sexually by conjugation of two opposite strains: gametangia fuse, a thick-walled zygospore forms, undergoes meiosis and germinates into a new mycelium.\nYeast (Saccharomyces) multiplies mainly by budding — a small bud grows out, receives a nucleus and separates — and sometimes by fission. Sexually two haploid cells fuse and the diploid cell undergoes meiosis to form four ascospores inside an ascus."
+      },
+      {
+        "id": "bio-flo-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "How are edible mushrooms distinguished from poisonous ones, and what is the economic importance of fungi?",
+        "solution": "There is no single reliable field test. Edible forms such as Agaricus campestris and Pleurotus (oyster) are identified by species; deadly ones such as Amanita phalloides and A. muscaria carry amatoxins and must never be eaten. Warnings are only hints, not proof — never judge by colour, ring or volva alone.\nEconomic importance: food rich in protein and B vitamins, flavour and enzymes, antibiotics (penicillin), organic acids, vitamins, mycorrhizal partners for crops, decomposers that recycle nutrients and yeasts for bakery and brewing; on the other hand fungi spoil food, rot timber and cause crop and skin diseases."
+      },
+      {
+        "id": "bio-flo-2025-6",
+        "type": "mcq",
+        "marks": 2,
+        "difficulty": "easy",
+        "question": "What is a lichen? Name its two partners and state why lichens are used as pollution indicators.",
+        "solution": "A lichen is a symbiotic association of a fungus (mycobiont) and an alga or cyanobacterium (phycobiont). The fungus provides shelter, water and minerals; the alga photosynthesises and supplies food.\nLichens absorb water and gases directly over their whole surface and have no protective cuticle, so they accumulate sulphur dioxide and other pollutants and die or change form when air is polluted. Their presence therefore indicates clean air and their disappearance indicates pollution."
+      },
+      {
+        "id": "bio-flo-2025-7",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Give the characteristic pigments and reserve foods of green, brown and red algae, and describe reproduction in Spirogyra.",
+        "solution": "Chlorophyceae (green): chlorophyll a and b, reserve starch. Phaeophyceae (brown): chlorophyll a and c with fucoxanthin, reserve laminarin and mannitol. Rhodophyceae (red): chlorophyll a and d with phycoerythrin, reserve floridean starch.\nSpirogyra is a filamentous green alga with spiral chloroplasts. It multiplies asexually by fragmentation; sexually it reproduces by conjugation — in scalariform conjugation two filaments lie side by side and form a conjugation tube through which one gamete passes, and in lateral conjugation gametes of adjacent cells fuse. The zygote becomes a zygospore, undergoes meiosis and germinates into a new filament."
+      },
+      {
+        "id": "bio-flo-2025-8",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Why are bryophytes called amphibians of the plant kingdom? Describe the structure and reproduction of Marchantia.",
+        "solution": "Bryophytes live on land but need a film of water for the male gametes to swim to the archegonia, so they are called amphibians of the plant kingdom. The gametophyte is the dominant plant, vascular tissue is absent, and the sporophyte is dependent on the gametophyte.\nMarchantia has a dorsiventral thallus with a midrib, rhizoids and scales below, and pores on the upper surface. It reproduces asexually by gemmae formed in gemma cups, and sexually by antheridia and archegonia borne on umbrella-shaped gametophores; water carries the sperm, the zygote becomes a sporophyte whose capsule releases spores."
+      },
+      {
+        "id": "bio-flo-2025-9",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "State the distinguishing features of pteridophytes and describe the life cycle of Dryopteris.",
+        "solution": "Pteridophytes are the first true vascular plants: the sporophyte is dominant with true roots, stem and compound leaves, and spores are produced in sporangia, so they never form seeds.\nIn Dryopteris the sporophyte has a rhizome and large fronds whose underside bears sori with sporangia. Spores fall on damp soil and grow into a heart-shaped prothallus (gametophyte) bearing antheridia and archegonia; water carries the sperm to the egg, the zygote develops into a new sporophyte, and the prothallus dies — a clear alternation of generations."
+      },
+      {
+        "id": "bio-flo-2025-10",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Why are gymnosperms called naked-seeded plants? Describe reproduction in Pinus and give two economic uses.",
+        "solution": "Their ovules lie exposed on the megasporophylls of a cone, and after fertilisation the seeds remain uncovered on the cone scales because there is no ovary to enclose them.\nPinus is monoecious and heterosporous. Male cones bear microsporophylls producing pollen with air sacs that is carried by wind; female cones bear ovules with archegonia. Pollination occurs when pollen reaches the ovule, but fertilisation follows about a year later; the zygote develops into an embryo and the whole structure becomes a winged seed between the scale.\nUses: timber and pulp, resin, turpentine and rosin, and edible seeds (chilgoza from Pinus gerardiana)."
+      },
+      {
+        "id": "bio-flo-2025-11",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "easy",
+        "question": "Give four differences between a root and a stem, and name one modification of each with the plant.",
+        "solution": "1. Position: the root grows downwards under the soil, the stem grows upwards into air.\n2. Nodes and internodes: absent in the root, present in the stem.\n3. Leaves and buds: the root bears neither, the stem bears both.\n4. Branching and geotropism: root branching is endogenous and negatively phototropic; stem branching is exogenous and positively phototropic.\nModifications: the tap root of carrot is swollen for food storage; the stem of potato becomes an underground tuber while that of cucumber becomes a tendril for climbing."
+      },
+      {
+        "id": "bio-flo-2025-12",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "hard",
+        "question": "Write the taxonomic hierarchy and give the floral formula, one diagnostic flower character and one example of the families Brassicaceae, Fabaceae, Solanaceae and Liliaceae.",
+        "solution": "Hierarchy: Kingdom → Division → Class → Order → Family → Genus → Species.\nBrassicaceae: Br, ⊕, K 2+2, C 4, A 2+4, G(2); tetradynamous stamens and a siliqua fruit; Brassica campestris.\nFabaceae: Br, %, K(5), C 1+2+(2), A(9)+1, G 1; papilionaceous corolla and a legume pod with root nodules; Pisum sativum.\nSolanaceae: Br, ⊕, K(5), C(5), A 5, G(2); persistent calyx with axile placentation and a berry or capsule; Solanum tuberosum.\nLiliaceae: Br, ⊕, P 3+3, A 3+3, G(3); trimerous perianth with a superior ovary; Allium cepa."
+      }
+    ]
+  },
+  "pyqs/class-11/biology/introduction-to-biology/01-neb-2025.json": {
+    "title": "NEB Class 11 Biology — Introduction To Biology — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "introduction-to-biology",
+    "origin": "curated NEB-pattern set covering every topic of the class-11 introduction to biology unit",
+    "questions": [
+      {
+        "id": "bio-int-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "easy",
+        "question": "Define biology. Name its major branches and state the fields studied under pure and applied biology.",
+        "solution": "Biology is the science of living things — their structure, function, growth, origin, evolution, distribution and classification.\nMajor branches: morphology, anatomy, physiology, cytology, genetics, evolution, taxonomy and ecology, split by group into botany, zoology and microbiology.\nPure biology studies life for knowledge — taxonomy, genetics, evolution, physiology — while applied biology uses that knowledge for practical ends: medicine, agriculture, animal husbandry, forestry, fisheries, biotechnology, pharmacy and environmental management."
+      },
+      {
+        "id": "bio-int-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain the relationship of biology with chemistry, physics, mathematics and geography, giving one example each.",
+        "solution": "Chemistry: explains the molecules of life — the structure of DNA and the action of enzymes are chemistry applied to living systems, and biochemistry grew from this link.\nPhysics: explains how organisms work — osmosis and diffusion, the optics of the eye, the mechanics of muscle and bone, the electricity of nerve impulses.\nMathematics: turns observations into testable models — Mendelian ratios, population growth equations, statistics used to test whether results are significant.\nGeography and geology: explain where organisms live — climate, soil and landforms decide vegetation, and fossils in rock strata document evolution."
+      },
+      {
+        "id": "bio-int-2025-3",
+        "type": "mcq",
+        "marks": 2,
+        "difficulty": "easy",
+        "question": "What is the scientific method, and why is a control group necessary in an experiment?",
+        "solution": "The scientific method is an orderly way of gaining reliable knowledge: observation, a question, a hypothesis, a controlled experiment, collection and analysis of data, and a conclusion that may support or reject the hypothesis, after which results are reported so others can repeat them.\nA control group is treated exactly like the experimental group except for the one variable being tested. It shows what would have happened without the treatment, so any difference can be credited to that variable rather than to temperature, age or chance."
+      },
+      {
+        "id": "bio-int-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Why is the study of biology important for Nepal? Give four points.",
+        "solution": "1. Agriculture: most Nepalis depend on farming, so knowledge of crops, soil, pests, seeds and animal husbandry raises production and food security.\n2. Health: understanding pathogens, immunity and nutrition supports disease control, vaccination and public-health planning in remote districts.\n3. Natural resource management: forests, medicinal plants, biodiversity and watersheds need biological survey and conservation planning; biology also underlies ecotourism.\n4. Biotechnology and environment: tissue culture, biofertilisers, biogas and bioremediation open new employment and help control pollution, while biology teaches how to protect the Himalayan ecosystems on which the country's water and climate depend."
+      }
+    ]
+  },
+  "pyqs/class-11/biology/introductory-microbiology/01-neb-2025.json": {
+    "title": "NEB Class 11 Biology — Introductory Microbiology — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "introductory-microbiology",
+    "origin": "curated NEB-pattern set covering every topic of the class-11 introductory microbiology unit",
+    "questions": [
+      {
+        "id": "bio-mic-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the structure of a bacterial cell and state the function of any three parts.",
+        "solution": "A bacterial cell has a cell envelope of capsule (in some), cell wall of peptidoglycan and plasma membrane; inside lie the nucleoid — a single circular DNA without histones — 70S ribosomes, plasmids, inclusion bodies and storage granules. Many bear flagella for movement, pili for attachment and conjugation, and some form endospores.\nFunctions: the capsule protects against drying and phagocytosis and helps adhesion; the cell wall gives shape and resists osmotic lysis; flagella provide motility; pili transfer DNA during conjugation; ribosomes carry out protein synthesis."
+      },
+      {
+        "id": "bio-mic-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain the modes of nutrition in bacteria and describe the bacterial growth curve.",
+        "solution": "Autotrophic bacteria make their own food — photoautotrophs use light (cyanobacteria) and chemoautotrophs oxidise inorganic compounds (Nitrosomonas). Heterotrophic bacteria depend on organic matter: saprophytes decompose dead material, parasites live on hosts and pathogens cause disease.\nIn a closed culture the growth curve has four phases: lag (cells adapt and enzymes are induced, no division), log or exponential (fastest doubling under ample food), stationary (growth equals death as nutrients fall and waste accumulates) and decline or death phase."
+      },
+      {
+        "id": "bio-mic-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Give the characteristic features of cyanobacteria and their economic importance.",
+        "solution": "Cyanobacteria are prokaryotic, photosynthetic and mostly blue-green; they contain chlorophyll a with phycocyanin and phycoerythrin, have no flagella, and store food as cyanophycean starch. Some form filaments with heterocysts for nitrogen fixation, and many secrete mucilage.\nImportance: they fix atmospheric nitrogen (Anabaena, Nostoc) and are used as biofertiliser in paddy fields, add organic matter and improve soil fertility, serve as protein-rich food (Spirulina) and are used in sewage treatment. On the other hand, heavy growth in nutrient-rich water causes blooms that deoxygenate the water and release toxins."
+      },
+      {
+        "id": "bio-mic-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Draw the general structure of a virus and explain why viruses are regarded as a link between living and non-living things.",
+        "solution": "A virus has a nucleic acid core — either DNA or RNA, never both — enclosed in a protein coat, the capsid, built of subunits called capsomeres; some also have an envelope derived from the host membrane.\nThey behave as non-living outside a host: they have no cytoplasm, ribosomes or metabolism, do not respire, cannot reproduce independently and can be crystallised and stored like a chemical (tobacco mosaic virus). Yet inside a suitable host they replicate, mutate and evolve and show host specificity, so they sit on the border between living and non-living."
+      },
+      {
+        "id": "bio-mic-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the lytic cycle of a bacteriophage.",
+        "solution": "1. Adsorption: the phage tail fibres recognise and attach to specific receptors on the bacterial wall.\n2. Penetration: the tail sheath contracts and injects the phage DNA into the bacterium, leaving the capsid outside.\n3. Biosynthesis: host DNA is degraded and the phage DNA directs the host machinery to make phage DNA and proteins.\n4. Maturation: heads, tails and DNA are assembled into new virions.\n5. Lysis: phage lysozyme bursts the cell, releasing many progeny phages that infect new bacteria.\nIn the lysogenic cycle the phage DNA instead integrates into the bacterial chromosome as a prophage and is copied with it until induction triggers the lytic cycle."
+      },
+      {
+        "id": "bio-mic-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "State four impacts of biotechnology in the field of microbiology.",
+        "solution": "1. Recombinant bacteria such as E. coli produce human insulin, growth hormone and interferon, giving pure products in bulk.\n2. Fermentation industries use microbes to make antibiotics (penicillin from Penicillium), alcohol, citric acid, vitamins and enzymes.\n3. Gene cloning, PCR and DNA probes let pathogens be detected quickly and vaccines and gene therapy developed.\n4. Engineered microbes carry out bioremediation of oil spills and industrial waste and produce biogas, while microbial genomics helps trace outbreaks.\nRisks such as escape of engineered strains and antibiotic-resistance genes mean such work needs strict containment."
+      }
+    ]
+  },
+  "pyqs/class-11/biology/vegetation/01-neb-2025.json": {
+    "title": "NEB Class 11 Biology — Vegetation — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "vegetation",
+    "origin": "curated NEB-pattern set covering every topic of the class-11 vegetation unit",
+    "questions": [
+      {
+        "id": "bio-veg-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "easy",
+        "question": "Define vegetation and describe the main types of vegetation found in Nepal.",
+        "solution": "Vegetation means the plant cover of a region — the assemblage of plant communities growing there naturally, as distinct from a single flora or species list.\nNepal's vegetation follows altitude and rainfall: tropical and subtropical sal and mixed hardwood forests in the Terai and inner Terai up to about 1,000 m; temperate forests of oak, rhododendron, chestnut and alder from about 1,000–3,000 m; coniferous forests of pine, fir, spruce and juniper with birch higher up; alpine shrubs, meadows and cushion plants above the treeline; and almost no vegetation on the high Himalaya, where only mosses, lichens and snow algae survive."
+      },
+      {
+        "id": "bio-veg-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Differentiate in-situ from ex-situ conservation and give two examples of each in Nepal.",
+        "solution": "In-situ conservation protects species in their natural habitat, where they continue to evolve with the ecosystem: national parks and wildlife reserves (Chitwan National Park, Sagarmatha National Park), conservation areas and Ramsar sites, plus community forests and sacred groves.\nEx-situ conservation keeps species outside their habitat when the wild population is too small or its habitat is gone: botanical gardens (Godavari, Mahendra Ratna), seed banks, tissue-culture and zoo collections and captive breeding. In-situ is preferred because it preserves the whole community, while ex-situ is a safety net and a source of material for reintroduction."
+      },
+      {
+        "id": "bio-veg-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain how human activities affect natural vegetation and suggest three measures to reduce the damage.",
+        "solution": "People clear forest for farmland, settlements, roads and hydropower, cut trees for fuelwood and timber, overgraze pastures, set fires and quarry hillsides. Plantations of a single species replace mixed forest, invasive species such as Mikania and Lantana spread, and pollution plus climate change shift the tree line. The result is deforestation, soil erosion and landslides, drying of springs, loss of habitat and extinction of species.\nMeasures: protect remaining forest through community forestry and strict law enforcement, promote fuel alternatives, terrace farming, agroforestry and reforestation with native species, and plan roads and dams with environmental impact assessment and habitat corridors."
+      },
+      {
+        "id": "bio-veg-2025-4",
+        "type": "mcq",
+        "marks": 2,
+        "difficulty": "easy",
+        "question": "Which forest type dominates the Terai region of Nepal and which dominates the upper temperate zone?",
+        "solution": "The Terai, below about 1,000 m with high rainfall and warm temperature, carries tropical and subtropical deciduous forest dominated by sal (Shorea robusta) with sissoo, khair and tall grasses.\nThe upper temperate zone, roughly 2,000–3,000 m, carries broad-leaved temperate forest of oak, rhododendron and laurel, passing into conifers — pine, fir, spruce and hemlock — and finally birch and juniper near the treeline."
+      },
+      {
+        "id": "bio-veg-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Why is Nepal rich in floral diversity? Mention the role of protected areas in conserving vegetation.",
+        "solution": "Nepal spans only about 147,000 km² but rises from 60 m to 8,848 m, so it carries tropical, subtropical, temperate, subalpine and alpine climates within short distances; the monsoon adds a strong east–west rainfall gradient, and varied geology and soils add further niches. This is why the country holds a large share of the Himalayan flora, including many endemic and medicinal plants.\nProtected areas conserve whole vegetation types and their successions, keep habitats large enough for wildlife, protect watersheds and gene pools, and support research, tourism and local livelihoods; buffer zones and community forests extend protection beyond park boundaries."
+      }
+    ]
   },
   "pyqs/class-11/chemistry/chemical-bonding-and-shapes-of-molecules/05-neb-2021.json": {
     "examSource": "[NEB-pattern 2021]",
@@ -88880,6 +89594,258 @@
     "unitSlug": "gravitation",
     "year": 2020
   },
+  "pyqs/class-12/biology/biodiversity-and-conservation/01-neb-2025.json": {
+    "title": "NEB Class 12 Biology — Biodiversity And Conservation — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "biodiversity-and-conservation",
+    "origin": "curated NEB-pattern set covering every topic of the class-12 biodiversity and conservation unit",
+    "questions": [
+      {
+        "id": "bio-bdc-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "easy",
+        "question": "Define biodiversity and describe its three levels with an example of each.",
+        "solution": "Biodiversity is the variety of living organisms at all levels, together with the ecological complexes they form.\nGenetic diversity: variation of genes within a species, as among the many landraces of rice in Nepal.\nSpecies diversity: the number and abundance of species in a region — the hundreds of tree species in a tropical forest against a pine plantation.\nEcosystem diversity: the variety of habitats and communities — forests, grasslands, wetlands, rivers and alpine zones in one landscape. Diversity is measured by species richness (number of species) and evenness (relative abundance), combined in indices such as Simpson's or Shannon–Wiener."
+      },
+      {
+        "id": "bio-bdc-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain the latitudinal gradient and the species–area relationship.",
+        "solution": "Latitudinal gradient: species richness is greatest near the equator and falls towards the poles. Tropical regions have a long evolutionary history without glaciation, a warm and stable climate, high and reliable rainfall, greater productivity and more complex habitats, so more niches and hence more species can coexist.\nSpecies–area relationship: the number of species increases with the area sampled, following S = C A^z (or log S = log C + z log A), where z is about 0.1–0.2 for small areas and 0.6–1.2 for very large continents. The relationship is why small habitat fragments lose species quickly and why large protected areas conserve more diversity."
+      },
+      {
+        "id": "bio-bdc-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Give the four main causes of biodiversity loss with an explanation of each.",
+        "solution": "Habitat loss and fragmentation: the most important cause — forests cleared for farms, settlements and roads, wetlands drained, and remaining habitat broken into patches too small for large animals.\nOver-exploitation: hunting, poaching, fishing and logging beyond the rate of replacement, as with rhino horn, tiger bone and some medicinal plants.\nInvasive alien species: introduced plants and animals such as Mikania, water hyacinth, Lantana and tilapia outcompete or prey on natives.\nCo-extinction and secondary effects: when a host or partner species disappears its dependants follow, and pollution plus climate change add further pressure; small populations also suffer inbreeding and loss of genetic variation."
+      },
+      {
+        "id": "bio-bdc-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe in-situ conservation and the three zones of a biosphere reserve.",
+        "solution": "In-situ conservation protects species in their natural habitat, so the whole community and its interactions are preserved and populations keep evolving. It includes national parks, wildlife sanctuaries, biosphere reserves, conservation areas, community forests, sacred groves and Ramsar wetlands.\nA biosphere reserve has three zones: a core zone, legally protected and undisturbed, where no human activity is allowed except research; a buffer zone, where research, education and limited traditional use are permitted around the core; and a transition or manipulation zone, where settlements, farming, forestry and recreation are allowed with sustainable management. The design separates strict protection from the livelihoods of local people."
+      },
+      {
+        "id": "bio-bdc-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain ex-situ conservation with four methods and one limitation.",
+        "solution": "Ex-situ conservation keeps species outside their natural habitat. Methods: botanical and zoological gardens, where living plants and animals are maintained and bred; seed and gene banks, storing seeds at low temperature and humidity for decades; cryopreservation of embryos, sperm, ova and tissue in liquid nitrogen; and tissue culture, micropropagation and DNA banks for species difficult to store as seed.\nLimitation: only a small sample of individuals is kept, so genetic diversity is narrow, and behaviour, migration and ecological relationships needed for life in the wild cannot be preserved — hence it supplements but cannot replace in-situ conservation."
+      },
+      {
+        "id": "bio-bdc-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is the Red Data Book? Explain the IUCN categories with examples of Nepali species.",
+        "solution": "The Red Data Book (IUCN Red List) is the global record of the conservation status of species, based on quantitative criteria of population size, decline and range.\nCategories: Extinct, Extinct in the wild, Critically endangered, Endangered, Vulnerable, Near threatened, Least concern and Data deficient; the first three of the threatened group are the highest risk.\nNepali examples: the greater one-horned rhinoceros and red panda are endangered, the snow leopard and tiger are vulnerable or endangered depending on assessment, the gharial is critically endangered, and the spiny babbler is near threatened. The list guides legal protection and conservation priority in Nepal's National Parks and Wildlife Conservation Act."
+      },
+      {
+        "id": "bio-bdc-2025-7",
+        "type": "mcq",
+        "marks": 2,
+        "difficulty": "medium",
+        "question": "What is a biodiversity hotspot? Name the hotspot that includes Nepal and state its importance.",
+        "solution": "A biodiversity hotspot is a region with exceptionally high species richness and endemism that has already lost at least 70% of its original vegetation; 36 such hotspots hold a large share of the world's threatened species in a small area.\nNepal lies within the Himalaya hotspot, which also covers Bhutan, northern India, and parts of Pakistan, China and Myanmar. Its importance lies in the steep altitudinal range that packs tropical to alpine life into short distances, many endemic and medicinal plants, and the headwaters of rivers on which hundreds of millions of people depend."
+      }
+    ]
+  },
+  "pyqs/class-12/biology/biotechnology-applications/01-neb-2025.json": {
+    "title": "NEB Class 12 Biology — Biotechnology And Its Applications — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "biotechnology-applications",
+    "origin": "curated NEB-pattern set covering every topic of the class-12 biotechnology and its applications unit",
+    "questions": [
+      {
+        "id": "bio-bta-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain how Bt cotton is produced and why the Bt toxin does not harm the plant or human beings.",
+        "solution": "Genes for the Bt toxin — cryIAc and cryIIAb for cotton bollworm — are isolated from Bacillus thuringiensis and inserted into the cotton plant with a suitable vector and promoter, so the plant makes the toxin itself.\nThe toxin exists in the bacterium as an inactive protoxin crystal. In the alkaline gut of the insect larva it is converted to active toxin, which binds midgut epithelial cells and perforates them, so the larva stops feeding and dies. The mammalian stomach is acidic and has no receptor for the toxin and no such crystal, so the protoxin is digested harmlessly, making Bt cotton safe for people, animals and most non-target insects."
+      },
+      {
+        "id": "bio-bta-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain how RNA interference was used to make nematode-resistant tobacco.",
+        "solution": "The nematode Meloidogyne incognita infects tobacco roots and causes galls. A gene was introduced into the tobacco plant that produces both sense and antisense RNA of a nematode gene essential for its survival. The two RNAs base-pair into double-stranded RNA, which triggers RNA interference: the plant's Dicer cuts it into small interfering RNAs that guide degradation of the matching nematode mRNA.\nThe parasite's gene is therefore silenced when it feeds, the nematode cannot survive and the plant is protected. This uses no toxin and is specific to the target pest."
+      },
+      {
+        "id": "bio-bta-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the production of human insulin by recombinant DNA technology.",
+        "solution": "Insulin has two chains, A and B, linked by disulphide bonds. In the older method, the human genes for the A and B chains were inserted separately into E. coli plasmids, and each chain was produced and then joined chemically — the first recombinant insulin, Humulin.\nThe modern method inserts human proinsulin DNA with a C-peptide into a vector so that the bacteria secrete a single-chain proinsulin; the C-peptide is then removed enzymatically to give authentic human insulin. Recombinant insulin is identical to human insulin, so it avoids the allergic reactions caused by pig or cattle insulin and can be produced in unlimited quantity."
+      },
+      {
+        "id": "bio-bta-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is gene therapy? Explain its use in ADA deficiency.",
+        "solution": "Gene therapy corrects a genetic disease by introducing a normal gene into a patient's cells.\nIn severe combined immunodeficiency due to adenosine deaminase (ADA) deficiency, the ADA gene is faulty and toxic deoxyadenosine kills lymphocytes. A normal ADA gene is inserted into a retroviral vector and used to infect the patient's own bone marrow cells or lymphocytes, which are then returned to the blood, where they make the enzyme.\nBecause the corrected cells are blood cells with a limited life, the treatment must be repeated; a permanent cure would need the gene in stem cells, and enzyme replacement by injection is the alternative. In 1990 this was the first approved gene therapy."
+      },
+      {
+        "id": "bio-bta-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What are transgenic animals? Describe how they are produced and give four uses.",
+        "solution": "Transgenic animals carry a foreign gene that has been deliberately introduced into their genome and is passed on to offspring; the standard method is microinjection of the DNA into the pronucleus of a fertilised egg, which is then implanted into a surrogate mother.\nUses: producing biological products — goats secreting human antithrombin or sheep making alpha-1-antitrypsin in milk; studying gene function and human disease models; testing vaccine safety and drug toxicity before human trials; improving livestock for growth, milk or wool and conferring disease resistance; and producing organs or tissues as a source for transplantation, plus transgenic fish and birds for food."
+      },
+      {
+        "id": "bio-bta-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is biopiracy? Explain with two examples, and state how patent law and the Convention on Biological Diversity address it.",
+        "solution": "Biopiracy is the commercial exploitation of biological resources or traditional knowledge of a community without permission or without sharing the benefit with that community.\nExamples: the US patent on basmati rice lines and the patents on the wound-healing property of turmeric and on neem were challenged by India because they claimed knowledge already public in that country; similarly, patents on certain medicinal plants and on ayurvedic formulations have been disputed.\nThe Convention on Biological Diversity (1992) affirms national sovereignty over biological resources and requires prior informed consent and equitable benefit sharing, while WTO's TRIPS agreement and national patent law now demand disclosure of origin and allow revocation of patents lacking novelty."
+      }
+    ]
+  },
+  "pyqs/class-12/biology/biotechnology-principles/01-neb-2025.json": {
+    "title": "NEB Class 12 Biology — Biotechnology Principles And Processes — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "biotechnology-principles",
+    "origin": "curated NEB-pattern set covering every topic of the class-12 biotechnology principles and processes unit",
+    "questions": [
+      {
+        "id": "bio-btp-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is recombinant DNA technology? List its main steps.",
+        "solution": "Recombinant DNA technology is the construction of a new DNA molecule by joining DNA from two different sources and expressing it in a host organism.\nSteps: (1) identify and isolate the desired gene from a donor; (2) cut the gene and a vector with the same restriction enzyme to give complementary sticky ends; (3) ligate the gene into the vector; (4) introduce the recombinant DNA into a competent host cell; (5) select and screen the cells that took it up; (6) multiply them through preferential multiplication and gene isolation; (7) grow the culture in a bioreactor; (8) extract and purify the product by downstream processing."
+      },
+      {
+        "id": "bio-btp-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What are restriction endonucleases? Explain their naming and the role of sticky ends.",
+        "solution": "Restriction endonucleases are enzymes obtained from bacteria that recognise a specific palindromic sequence and cut DNA at or near it; bacteria make them as a defence against foreign DNA, protecting their own DNA by methylation. Each enzyme recognises one sequence, which is why they are called molecular scissors.\nNaming uses the organism of origin: EcoRI comes from E. coli strain RY13, the fifth enzyme found; HindIII from Haemophilus influenzae serotype d.\nMany cut a staggered cut, leaving short single-stranded overhangs — sticky ends — on both fragments. Because the same enzyme gives complementary overhangs on the gene and vector, the fragments can pair by base pairing and be sealed by DNA ligase."
+      },
+      {
+        "id": "bio-btp-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is a cloning vector? Describe the features of pBR322 and explain insertional inactivation.",
+        "solution": "A cloning vector is a small DNA molecule able to carry a foreign gene into a host and replicate there — plasmids, bacteriophages, cosmids, BACs or YACs.\npBR322 has an origin of replication that lets it multiply in E. coli, an ampicillin-resistance gene (bla) and a tetracycline-resistance gene as selectable markers, and several unique restriction sites including BamHI, PstI and EcoRI.\nInsertional inactivation: because the restriction sites lie within a marker gene, inserting the foreign fragment destroys that gene. An insert at the BamHI site disrupts the tetracycline gene, so recombinants grow on ampicillin but not on tetracycline — the failure to grow on tetracycline is what identifies them."
+      },
+      {
+        "id": "bio-btp-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe PCR and state why Taq polymerase is used.",
+        "solution": "PCR (polymerase chain reaction) amplifies a specific DNA segment in vitro. Denaturation: the template is heated to about 94 °C so the strands separate. Annealing: two synthetic primers, complementary to the flanking sequences, bind each strand at a lower temperature. Extension: DNA polymerase adds nucleotides from the primers to copy the template. The thermal cycle is repeated, and each cycle doubles the copies, so a billion-fold amplification takes about 30 cycles.\nTaq polymerase from the thermophilic bacterium Thermus aquaticus is used because it survives the repeated high denaturation temperature, so fresh enzyme need not be added each cycle."
+      },
+      {
+        "id": "bio-btp-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "How is DNA separated by gel electrophoresis? Why is DNA treated with a stain?",
+        "solution": "DNA fragments, being negatively charged because of their phosphate groups, are loaded into wells of an agarose gel placed in buffer and subjected to an electric field. The fragments migrate towards the anode, and their speed depends on size: small fragments move faster through the gel pores than large ones, so the fragment mixture separates into bands according to length, which can be visualised under UV light and compared with a standard ladder.\nEthidium bromide or SYBR Green is added because DNA itself is colourless; the dye intercalates between bases and fluoresces under ultraviolet light, so the bands become visible and can be photographed and measured."
+      },
+      {
+        "id": "bio-btp-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe bioreactors and downstream processing in biotechnology.",
+        "solution": "A bioreactor is a vessel in which the genetically modified organism is grown at controlled pH, temperature, oxygen and mixing so that the desired product accumulates — stirred-tank reactors with impellers, airlift and sparged reactors are common, in batch, fed-batch or continuous mode, with sterile conditions to prevent contamination.\nDownstream processing follows: the cells are separated by filtration or centrifugation, the product is extracted and purified by chromatography or precipitation, and it is formulated, quality-tested and packaged. It is often the most expensive step, because the product must be separated from thousands of other molecules and must meet purity and safety standards, and it decides whether a product is commercially viable."
+      }
+    ]
+  },
+  "pyqs/class-12/biology/environmental-issues/01-neb-2025.json": {
+    "title": "NEB Class 12 Biology — Environmental Issues — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "environmental-issues",
+    "origin": "curated NEB-pattern set covering every topic of the class-12 environmental issues unit",
+    "questions": [
+      {
+        "id": "bio-env-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain classical and photochemical smog, and give three control measures for air pollution.",
+        "solution": "Classical (London-type) smog forms in cold, humid air when smoke from coal burning mixes with fog, trapping sulphur dioxide and particulates; it irritates the lungs and cuts visibility.\nPhotochemical (Los Angeles-type) smog forms in strong sunlight when nitrogen oxides and hydrocarbons from vehicles react to produce ozone, peroxyacetyl nitrate and aldehydes, which irritate eyes and damage crops and rubber.\nControl: use cleaner fuel and renewable energy, fit catalytic converters and flue-gas scrubbers, expand public transport, control industrial emissions, avoid open burning and plant green belts. Air quality indices now track particulate matter, SO2, NO2, CO and ozone so that warnings and restrictions can be issued."
+      },
+      {
+        "id": "bio-env-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is eutrophication? Explain how sewage and fertiliser runoff cause it, and give BOD as a measure of water pollution.",
+        "solution": "Eutrophication is the nutrient enrichment of a water body, mainly by nitrate and phosphate, that leads to excessive growth of algae and plants.\nSewage and fertiliser runoff add these nutrients; an algal bloom shades the water and then dies, and its decomposition by bacteria consumes dissolved oxygen, so oxygen levels fall sharply, fish die and the water turns foul, with bad odour and toxins from cyanobacteria. The lake slowly fills with organic sediment.\nBiological oxygen demand (BOD) measures the oxygen used by microbes to oxidise the organic matter in a water sample over five days; clean water has a low BOD and polluted sewage-loaded water a high BOD, so BOD is a standard index of organic pollution."
+      },
+      {
+        "id": "bio-env-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe solid waste management with its main methods and their problems.",
+        "solution": "Solid waste — household, commercial, industrial, hospital and construction waste — is managed by the hierarchy of reduce, reuse, recycle and recover.\nMethods: segregation at source into biodegradable and non-biodegradable fractions; composting and vermicomposting of organic waste; recycling of paper, glass, metal and plastic; sanitary landfill with a clay or plastic liner, leachate collection and gas venting; and incineration with energy recovery for suitable waste, with hospital waste incinerated separately.\nProblems: open dumping breeds vectors and leaches leachate into groundwater, methane from landfills adds to the greenhouse effect, burning plastics releases dioxins, and recycling is limited by mixed waste and lack of markets — hence segregation and reduction are the priorities."
+      },
+      {
+        "id": "bio-env-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain the hazards of nuclear radiation and the safeguards against them.",
+        "solution": "Nuclear radiation comes from reactor accidents, waste from power plants and research, weapons testing and natural radon. Ionising radiation damages DNA, causing burns, radiation sickness, cancers, leukaemia, genetic defects and, at high dose, death; long-lived isotopes such as strontium-90 and caesium-137 enter the food chain and concentrate in bone and muscle, and accidents such as Chernobyl and Fukushima spread contamination over whole regions.\nSafeguards: strict design with multiple containment barriers, monitoring and dosimetry for workers, shielding and remote handling, safe storage of high-level waste for long periods in stable geological sites, and international safeguards on nuclear material; medical and industrial sources must be licensed and disposed of properly."
+      },
+      {
+        "id": "bio-env-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain the greenhouse effect, its causes and its consequences, and state two mitigation measures.",
+        "solution": "Greenhouse gases — carbon dioxide from fossil fuels and deforestation, methane from livestock and paddy fields, nitrous oxide from fertiliser, CFCs and water vapour — are transparent to incoming sunlight but absorb outgoing infrared radiation, warming the lower atmosphere.\nConsequences: rising average temperature, melting glaciers and polar ice, sea-level rise and coastal flooding, more frequent droughts, floods and heat waves, shifting crop belts, coral bleaching, spread of vector-borne disease and loss of biodiversity; Nepal sees retreating glaciers, expanding glacial lakes and more erratic monsoon.\nMitigation: cut fossil-fuel use and shift to solar, hydro and wind; plant and protect forests; improve efficiency and public transport; and adopt international commitments such as the Paris Agreement."
+      },
+      {
+        "id": "bio-env-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain ozone layer depletion — its causes, effects and control measures.",
+        "solution": "Ozone in the stratosphere absorbs harmful ultraviolet radiation. Chlorofluorocarbons released from refrigerators, air conditioners and aerosol sprays rise to the stratosphere, where ultraviolet light breaks them down and chlorine atoms catalytically destroy ozone — one chlorine atom can destroy thousands of ozone molecules; halons and nitrogen oxides add to the loss, producing the Antarctic ozone hole.\nEffects: more UV-B reaching the ground causes skin cancer, cataract, sunburn, weakened immunity, damage to phytoplankton, crops and materials.\nControl: the Montreal Protocol phased out CFCs and halons and they were replaced by HCFCs and HFCs; recovery of the ozone layer is now being observed, though HFCs are potent greenhouse gases and are being phased down under the Kigali Amendment."
+      },
+      {
+        "id": "bio-env-2025-7",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is rainwater harvesting? Describe its methods and its importance in Nepal.",
+        "solution": "Rainwater harvesting is the collection and storage of rain from roofs or catchments for later use and for recharging groundwater.\nMethods: roof catchment with gutters, first-flush diversion, storage tanks or jars; surface runoff collection in ponds, check dams, farm ponds and recharge pits; and recharge wells or trenches that send water into the aquifer.\nImportance in Nepal: hill settlements and the Terai face drying springs and falling water tables in the dry season, so harvesting supplies drinking water, irrigation and livestock water, reduces flooding and soil erosion, recharges springs and reduces dependence on distant sources; traditional dhunge dhara and pokhari systems are examples of the same idea."
+      },
+      {
+        "id": "bio-env-2025-8",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is wasteland development? Describe its causes and methods of reclamation.",
+        "solution": "Wasteland is degraded land that has lost its productivity — eroded slopes, gullied and ravine land, waterlogged and saline soil, mined and industrial spoil, and overgrazed pasture. Wasteland development restores such land to productive and ecological use.\nCauses: deforestation, overgrazing, unsuitable cultivation on steep slopes, faulty irrigation causing salinity and waterlogging, mining and industrial waste, and shifting cultivation.\nMethods: check dams, contour bunds, terracing and gully plugging to stop erosion; planting of hardy grasses and nitrogen-fixing trees, agroforestry and social forestry; drainage and gypsum treatment of saline-sodic soil; and legal protection with community participation, so that the land returns to fuel, fodder, food and groundwater recharge."
+      }
+    ]
+  },
   "pyqs/class-12/biology/genetics-and-evolution/02-neb-2023.json": {
     "examSource": "[NEB-pattern 2023]",
     "origin": "curated NEB-pattern set for class-12 biology genetics and evolution",
@@ -88954,6 +89920,168 @@
     "unitSlug": "heredity-and-evolution",
     "year": 2021
   },
+  "pyqs/class-12/biology/heredity-and-evolution/04-neb-2025.json": {
+    "title": "NEB Class 12 Biology — Heredity And Evolution — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "heredity-and-evolution",
+    "origin": "curated NEB-pattern set covering every topic of the class-12 heredity and evolution unit",
+    "questions": [
+      {
+        "id": "bio-her-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "State Mendel's law of segregation and explain how a monohybrid cross gives a 3:1 ratio. What is the use of a test cross?",
+        "solution": "The law of segregation says that the two alleles of a gene separate during gamete formation, so each gamete carries only one allele, and they reunite at random at fertilisation.\nIn a cross TT × tt the F1 is all Tt (tall). Each F1 plant forms T and t gametes in equal number, so the F2 from a self-cross is 1 TT : 2 Tt : 1 tt — three tall to one dwarf — because the single tt class is the only dwarf combination.\nA test cross — crossing the unknown individual with the homozygous recessive — reveals its genotype: if any dwarf offspring appear it was heterozygous, if all offspring are tall it was homozygous."
+      },
+      {
+        "id": "bio-her-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Differentiate incomplete dominance from codominance with one example each.",
+        "solution": "Incomplete dominance: neither allele is completely dominant, so the heterozygote shows an intermediate phenotype. In snapdragon, red (RR) crossed with white (rr) gives pink (Rr) F1, and F2 is 1 red : 2 pink : 1 white — the genotypic and phenotypic ratios are the same.\nCodominance: both alleles express themselves fully and independently in the heterozygote. In the human AB blood group, alleles I^A and I^B are codominant, so genotype I^A I^B gives blood group AB with both A and B antigens on the red cells, not an intermediate."
+      },
+      {
+        "id": "bio-her-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain linkage and crossing over, and state how recombination frequency is used to map genes.",
+        "solution": "Genes lying close together on the same chromosome tend to be inherited together — linkage, discovered by Morgan in Drosophila. Because they are physically joined, linked genes do not assort independently, so a dihybrid test cross gives fewer recombinant types than the expected 1:1:1:1.\nDuring prophase I of meiosis, homologous chromatids exchange segments at chiasmata — crossing over — which separates linked alleles. The proportion of recombinant offspring (recombination frequency) measures the distance between the genes: 1% recombination is defined as 1 map unit or centimorgan, so frequency is used to order genes and draw linkage maps."
+      },
+      {
+        "id": "bio-her-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "How is sex determined in human beings? Explain a cross showing the inheritance of red–green colour blindness.",
+        "solution": "Human sex is determined by the XY system: females are XX and produce only X eggs; males are XY and produce X and Y sperm in equal numbers. Fertilisation by an X sperm gives a girl (XX) and by a Y sperm gives a boy (XY), so the father determines the sex, with a 1:1 chance.\nColour blindness is X-linked recessive. Let X^C be normal and X^c colour-blind: a carrier mother X^C X^c × normal father X^C Y gives daughters all normal (half carriers) and sons half normal and half colour-blind, because a son has only his mother's X. A colour-blind daughter requires a colour-blind father as well."
+      },
+      {
+        "id": "bio-her-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "State the chromosome theory of inheritance and give the evidence that supports it.",
+        "solution": "Sutton and Boveri proposed that chromosomes are the carriers of Mendel's factors: chromosomes occur in pairs (homologues), behave exactly as Mendelian factors during meiosis — segregating and assorting independently — and each parent contributes one of each pair to the offspring.\nEvidence: the parallel behaviour of chromosomes and genes in meiosis; sex-linked inheritance in Drosophila, where Morgan showed that the white-eye gene travels with the X chromosome; the correspondence of recombination frequency with chromosome map distance; and the later proof that DNA is the genetic material (Griffith, Avery, Hershey–Chase), identifying the chemical nature of the chromosome."
+      },
+      {
+        "id": "bio-her-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe semi-conservative DNA replication and the evidence for it.",
+        "solution": "Replication begins at an origin where helicase unwinds the double helix, forming a replication fork. Each strand acts as a template: DNA polymerase adds complementary nucleotides in the 5′→3′ direction using deoxyribonucleoside triphosphates, primase lays an RNA primer, and the leading strand is made continuously while the lagging strand is made in Okazaki fragments that ligase joins. Each daughter molecule therefore has one old and one new strand; topoisomerase relieves the twisting strain.\nMeselson and Stahl grew E. coli in heavy ¹⁵N and then transferred it to ¹⁴N medium; after one generation all DNA was of intermediate density and after two there were equal intermediate and light bands — exactly the pattern predicted by semi-conservative, not conservative or dispersive, replication."
+      },
+      {
+        "id": "bio-her-2025-7",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain transcription and translation briefly, and state the central dogma.",
+        "solution": "Transcription makes RNA from a DNA template: RNA polymerase binds the promoter, unwinds the helix and adds complementary ribonucleotides to the growing RNA in the 5′→3′ direction, copying only one strand; in eukaryotes the transcript is processed — introns spliced out, a cap and poly-A tail added — and mRNA leaves the nucleus.\nTranslation makes protein on the ribosome: each mRNA codon is read and matched by the anticodon of a tRNA carrying its amino acid; initiation begins at the start codon AUG, elongation adds amino acids in order and termination stops at a stop codon, after which the chain folds into a protein.\nThe central dogma is DNA → RNA → protein: information flows from nucleic acid to protein, never back."
+      },
+      {
+        "id": "bio-her-2025-8",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "hard",
+        "question": "Explain the lac operon as an example of gene regulation.",
+        "solution": "The lac operon in E. coli consists of a promoter, an operator and three structural genes — lac Z (β-galactosidase), lac Y (permease) and lac A (transacetylase) — plus a regulatory gene, lac I, whose repressor protein binds the operator.\nWhen lactose is absent the repressor blocks RNA polymerase, so the genes are switched off. When lactose is present it binds the repressor and changes its shape so that it cannot bind the operator; RNA polymerase then transcribes the three genes as one polycistronic mRNA and the cell makes the enzymes to use lactose. This is negative control that is induced by the substrate, so the cell spends energy on the enzymes only when they are needed."
+      },
+      {
+        "id": "bio-her-2025-9",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "State the objectives and significance of the Human Genome Project.",
+        "solution": "Objectives: determine the complete DNA sequence of the human genome, identify all genes, map them and make the data freely available, along with the genomes of model organisms and the ethical, legal and social issues arising.\nSignificance: it produced the reference sequence of about 3 billion base pairs and roughly 20,000–25,000 genes; it showed that most DNA is non-coding and that humans differ from each other by less than 0.1%. That gives tools for finding disease genes and designing drugs, for genetic testing and counselling, for understanding human evolution and ancestry, and for agriculture and microbiology where the same methods are used."
+      },
+      {
+        "id": "bio-her-2025-10",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "State the Hardy–Weinberg principle, give its conditions and explain one use.",
+        "solution": "In a large, randomly mating population with no mutation, no migration and no selection, allele frequencies do not change from generation to generation: for two alleles p + q = 1 and the genotype frequencies are p² + 2pq + q² = 1.\nConditions: very large population, random mating, no mutation, no gene flow and no natural selection; the locus must not be under differential selection.\nUse: it gives the expected genotype frequencies, so a deviation reveals that selection, drift or inbreeding is acting. For example, if a recessive disorder affects 1 in 10,000 people, q² = 0.0001 gives q = 0.01 and the carrier frequency 2pq ≈ 2% — a result used in genetic counselling."
+      },
+      {
+        "id": "bio-her-2025-11",
+        "type": "mcq",
+        "marks": 2,
+        "difficulty": "medium",
+        "question": "What is adaptive radiation? Give one example.",
+        "solution": "Adaptive radiation is the rapid evolution of many divergent species from a single common ancestor when a new habitat or an opportunity with few competitors becomes available; the descendants evolve different structures and habits to occupy different niches.\nA classic example is Darwin's finches of the Galápagos, which radiated from one ancestral seed-eating bird into species with beaks specialised for seeds, nuts, insects and cactus — each adapted to a different food source."
+      }
+    ]
+  },
+  "pyqs/class-12/biology/human-health-and-diseases/01-neb-2025.json": {
+    "title": "NEB Class 12 Biology — Human Health And Diseases — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "human-health-and-diseases",
+    "origin": "curated NEB-pattern set covering every topic of the class-12 human health and diseases unit",
+    "questions": [
+      {
+        "id": "bio-hea-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Name the pathogen and vector of malaria, describe its symptoms and give two control measures.",
+        "solution": "Pathogen: the protozoan Plasmodium — P. vivax, P. falciparum, P. malariae or P. ovale; vector: the female Anopheles mosquito.\nSymptoms: the classic cycle of chill and shivering followed by high fever and sweating every 48 or 72 hours, with headache, body ache, nausea and, in falciparum malaria, severe anaemia, jaundice, kidney failure and cerebral symptoms.\nControl: destroy breeding sites (drain stagnant water, fill pools, use larvivorous fish) and prevent bites with mosquito nets, screens, repellents and indoor residual spraying; treat patients promptly with antimalarials to cut the reservoir of gametocytes."
+      },
+      {
+        "id": "bio-hea-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the causative agent, vector and control of dengue and of filariasis.",
+        "solution": "Dengue: the dengue virus (a flavivirus, four serotypes) carried by Aedes aegypti, which breeds in clean stagnant water in containers and bites by day. It causes high fever, severe headache, pain behind the eyes, muscle and joint pain and rash; severe dengue brings bleeding and shock. Control: empty and cover water containers, use larvicides and nets, and search-and-destroy breeding sites.\nFilariasis: Wuchereria bancrofti, transmitted by Culex mosquito, with larvae developing in the lymphatics and blocking them, so the limb swells into elephantiasis. Control: mass drug administration with DEC and albendazole, mosquito nets and vector control."
+      },
+      {
+        "id": "bio-hea-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Name the causative agents of typhoid, pneumonia, tuberculosis and the common cold, and give one preventive measure for each.",
+        "solution": "Typhoid: Salmonella typhi, spread by contaminated food and water; prevention is safe water, sanitation and food hygiene, with vaccination.\nPneumonia: Streptococcus pneumoniae and Haemophilus influenzae (also viruses); prevention by pneumococcal and Hib vaccine, and avoiding smoking.\nTuberculosis: Mycobacterium tuberculosis, spread by droplets; prevention by BCG vaccination, early case detection with DOTS treatment and ventilation.\nCommon cold: rhinoviruses and other respiratory viruses; prevention by hand washing, covering the mouth while coughing and avoiding close contact."
+      },
+      {
+        "id": "bio-hea-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Differentiate innate from acquired immunity, naming the components of each.",
+        "solution": "Innate (non-specific) immunity is present from birth and acts the same way against any invader. Its barriers are physical (skin, mucous membranes, cilia), physiological (fever, acid in the stomach, lysozyme in tears), cellular (phagocytes such as macrophages and neutrophils, natural killer cells) and chemical (interferons, complement). It is immediate and has no memory.\nAcquired (specific) immunity develops after exposure to an antigen. It is carried out by lymphocytes — B cells making antibodies (humoral) and T cells acting directly or through cytokines (cell-mediated) — and has memory, so the second exposure brings a faster, stronger response. It is the basis of vaccination."
+      },
+      {
+        "id": "bio-hea-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Define antigen and antibody and explain the primary and secondary immune responses.",
+        "solution": "An antigen is any foreign molecule — usually protein or polysaccharide on a pathogen or toxin — that the immune system recognises as non-self and that provokes an immune response. An antibody (immunoglobulin) is a Y-shaped protein made by plasma cells that binds specifically to that antigen; the variable regions give specificity.\nOn first exposure (primary response) there is a lag of several days while the right clone of B and T cells multiplies, producing a small amount of IgM antibody and memory cells. On the second exposure (secondary response) memory cells respond at once, so antibody appears sooner, rises higher and lasts longer, mostly IgG — which is exactly how vaccines protect."
+      },
+      {
+        "id": "bio-hea-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is vaccination? Distinguish active from passive immunisation and explain herd immunity.",
+        "solution": "Vaccination is the deliberate introduction of an antigen — killed or weakened pathogen, a toxoid or a subunit — so that the body makes its own antibodies and memory cells without suffering the disease.\nActive immunisation: the person's own immune system responds, giving slow but long-lasting protection — vaccines such as BCG, measles, DPT. Passive immunisation: ready-made antibodies are given, giving immediate but short-lived protection — antitetanus serum, antivenom, or maternal antibodies through breast milk.\nHerd immunity is the indirect protection of unvaccinated people when a high proportion of the population is immune, which interrupts transmission; it is why coverage must stay high to protect newborns and those who cannot be vaccinated."
+      },
+      {
+        "id": "bio-hea-2025-7",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain allergy and autoimmune disease with one example each.",
+        "solution": "Allergy is an exaggerated immune response to a normally harmless antigen (allergen) such as pollen, dust mite, or a drug. IgE antibodies bind mast cells, and on re-exposure the allergen cross-links them so they release histamine, giving sneezing, itching, watery eyes, bronchospasm or, in anaphylaxis, a sudden dangerous drop in blood pressure; treatment is antihistamines, and adrenaline for anaphylaxis.\nAutoimmune disease occurs when the immune system loses tolerance and attacks the body's own tissue: in type 1 diabetes the β-cells of the pancreas are destroyed, in rheumatoid arthritis the joints are attacked, and in myasthenia gravis the acetylcholine receptors at the neuromuscular junction."
+      }
+    ]
+  },
   "pyqs/class-12/biology/human-health-and-diseases/03-neb-2022.json": {
     "examSource": "[NEB-pattern 2022]",
     "origin": "curated NEB-pattern set for class-12 biology health and diseases",
@@ -88994,6 +90122,193 @@
     "title": "NEB Class 12 Biology — Human Health And Diseases — 2022",
     "unitSlug": "human-health-and-diseases",
     "year": 2022
+  },
+  "pyqs/class-12/biology/microbes-in-human-welfare/01-neb-2025.json": {
+    "title": "NEB Class 12 Biology — Microbes In Human Welfare — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "microbes-in-human-welfare",
+    "origin": "curated NEB-pattern set covering every topic of the class-12 microbes in human welfare unit",
+    "questions": [
+      {
+        "id": "bio-mhw-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "easy",
+        "question": "Name the microorganisms used in four household products and state what each does.",
+        "solution": "Curd: Lactobacillus bulgaricus and Streptococcus thermophilus ferment milk sugar to lactic acid, which curdles the casein and gives curd its taste; vitamin B12 is also increased.\nBread: Saccharomyces cerevisiae (baker's yeast) ferments sugar, and the CO2 released makes the dough rise while alcohol evaporates during baking.\nCheese: Lactococcus and Streptococcus with Propionibacterium shermanii give the flavour and the holes of Swiss cheese; Penicillium roqueforti gives blue cheese.\nFermented batter and beverages: Leuconostoc and yeasts ferment rice and black gram batter for idli and dosa, while yeast ferments palm sap for toddy. These microbes also preserve food by producing acid that inhibits spoilage organisms."
+      },
+      {
+        "id": "bio-mhw-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the industrial production of an antibiotic, of alcohol and of citric acid.",
+        "solution": "Antibiotic: Penicillium notatum or P. chrysogenum is grown in a stirred, aerated fermenter on a medium containing lactose and corn steep liquor; penicillin is secreted, extracted into an organic solvent at acid pH and purified as a salt. Antibiotics are also made by Streptomyces (streptomycin) and Cephalosporium.\nAlcohol: Saccharomyces cerevisiae ferments molasses or fruit juice anaerobically to ethanol, which is distilled to the required strength for beverages or fuel.\nCitric acid: Aspergillus niger ferments a sucrose or molasses medium in aerobic submerged culture; the acid is precipitated as calcium citrate and recovered. These products are made in large bioreactors with controlled pH, temperature and aeration."
+      },
+      {
+        "id": "bio-mhw-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "How are microbes used as biocontrol agents and as biofertilisers?",
+        "solution": "Biocontrol: Bacillus thuringiensis sprays kill caterpillars of moths and butterflies because its toxin paralyses the gut, while leaving other insects untouched; Trichoderma harzianum controls soil-borne fungal pathogens; the nuclear polyhedrosis virus attacks insect larvae; and ladybirds and Trichogramma are released to eat or parasitise pests. These agents reduce chemical pesticide load and do not leave residues.\nBiofertilisers: Rhizobium in legume root nodules, free-living Azotobacter and Azospirillum, and cyanobacteria such as Anabaena and Azolla fix atmospheric nitrogen; phosphate-solubilising bacteria release bound phosphorus and mycorrhizal fungi extend the root's reach for phosphorus and water."
+      },
+      {
+        "id": "bio-mhw-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain bioremediation and the production of biogas by microbes.",
+        "solution": "Bioremediation is the use of microorganisms to remove or neutralise pollutants: Pseudomonas and other bacteria break down oil spills and petroleum hydrocarbons, some strains degrade polychlorinated compounds and pesticides, and others remove heavy metals or cyanide from effluent. Fungi such as Aspergillus help compost organic waste, and phytoremediation uses plants together with rhizosphere microbes.\nBiogas: methanogens — Methanobacterium in anaerobic digestion — decompose cattle dung, sewage sludge and crop waste in a closed digester, producing biogas (about 60–70% methane and rest CO2) that is used for cooking, lighting or running engines. The spent slurry is a rich organic manure, so the process gives clean fuel and fertiliser while disposing of waste."
+      },
+      {
+        "id": "bio-mhw-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the stages of sewage water treatment.",
+        "solution": "Primary treatment (physical): bar screens and grit chambers remove solids, and the sewage passes to a settling tank where suspended matter settles as primary sludge and grease is skimmed off; the liquid still carries dissolved organic matter.\nSecondary or biological treatment: the effluent is aerated in an aeration tank where aerobic bacteria and fungi, forming flocs, digest the dissolved organic matter, and the biomass then settles in another tank — activated sludge. The clarified water has a much lower BOD and can be discharged. Anaerobic digestion of the sludge with methanogens produces biogas and digested sludge used as manure; sometimes a tertiary step of chemical treatment or filtration removes phosphorus, nitrogen or pathogens."
+      },
+      {
+        "id": "bio-mhw-2025-6",
+        "type": "mcq",
+        "marks": 2,
+        "difficulty": "easy",
+        "question": "Why do some cured and fermented foods keep better than fresh ones?",
+        "solution": "Fermenting microbes convert sugars into acids or alcohol — lactic acid in curd, pickles and sauerkraut, ethanol in wines — and so lower the pH or raise the alcohol level until most spoilage and pathogenic bacteria cannot grow. The food is therefore protected by the very process that gives it its flavour, and the useful microbes also outcompete spoilers for nutrients. This is why curd, cheese, fermented batter and pickles last much longer than raw milk, vegetables or batter."
+      }
+    ]
+  },
+  "pyqs/class-12/biology/organisms-and-environment/01-neb-2025.json": {
+    "title": "NEB Class 12 Biology — Organisms And Environment — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "organisms-and-environment",
+    "origin": "curated NEB-pattern set covering every topic of the class-12 organisms and environment unit",
+    "questions": [
+      {
+        "id": "bio-org-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the adaptations of desert plants and desert animals to water scarcity.",
+        "solution": "Desert plants (xerophytes): thick waxy cuticle and sunken stomata reduce transpiration, leaves reduced to spines with photosynthesis in the green stem, deep tap roots or wide shallow roots, water stored in succulent tissue, and a short life cycle completed after rain.\nDesert animals: nocturnal habit and burrowing to escape heat, water from metabolic oxidation of fats (kangaroo rat), concentrated urine and dry faeces to conserve water, a thick skin or scales, and aestivation or dormancy in the hottest period; camels store fat in the hump and tolerate high body temperature, conserving water."
+      },
+      {
+        "id": "bio-org-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain exponential and logistic population growth, defining r and K.",
+        "solution": "Exponential growth occurs when resources are unlimited: dN/dt = rN, giving N = N₀e^{rt}, an accelerating J-shaped curve where r is the intrinsic rate of natural increase (births minus deaths per individual).\nLogistic growth occurs when resources are limited: dN/dt = rN(K − N)/K, giving a sigmoid S-shaped curve that levels off at K, the carrying capacity — the maximum population the environment can support. Growth is fastest at N = K/2. Real populations follow logistic growth: initial slow phase, rapid growth, and a plateau as competition, disease and predation increase."
+      },
+      {
+        "id": "bio-org-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe five types of population interaction with one example each.",
+        "solution": "Mutualism (+, +): both benefit — alga and fungus in a lichen; fig and its pollinating wasp.\nCompetition (−, −): both are harmed — two grass species competing for water and light, or barnacles on a rock.\nPredation (+, −): the predator gains and the prey is killed — tiger and deer; the prey evolves defences such as spines or camouflage.\nParasitism (+, −): the parasite gains, the host is harmed — Cuscuta on a host plant, Plasmodium in man.\nCommensalism (+, 0): one gains, the other is unaffected — an orchid growing on a mango branch, or barnacles on a whale's skin."
+      },
+      {
+        "id": "bio-org-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the structure and function of an ecosystem, and the steps of decomposition.",
+        "solution": "Structure: abiotic components (light, temperature, water, soil, nutrients) and biotic components — producers, consumers of the first, second and third order, and decomposers.\nFunction: productivity (gross and net primary production), decomposition, energy flow through food chains and nutrient cycling, all driven by the one-way flow of energy from the sun and the cycling of matter.\nDecomposition steps: fragmentation of detritus by detritivores, leaching of soluble inorganic nutrients, catabolism by bacterial and fungal enzymes, humification forming humus, and mineralisation releasing inorganic nutrients back to the soil; it is faster in warm, moist, aerobic conditions."
+      },
+      {
+        "id": "bio-org-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is ecological succession? Differentiate hydrarch from xerarch succession and define pioneer and climax community.",
+        "solution": "Ecological succession is the gradual, directional replacement of one community by another at a site until a stable community establishes.\nHydrarch succession begins in water: phytoplankton → submerged plants → floating plants → reed swamp → marsh meadow → scrub → forest as sediment and organic matter fill the water body. Xerarch succession begins on bare rock: lichens → mosses → grasses → shrubs → trees, as the rock weathers into soil. Both are autogenic, driven by the organisms themselves changing conditions.\nThe pioneer community is the first to colonise (lichen on rock, phytoplankton in water); the climax community is the final stable community in equilibrium with the climate, such as a forest."
+      },
+      {
+        "id": "bio-org-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe the carbon and phosphorus cycles and state how human activity disturbs them.",
+        "solution": "Carbon: CO2 is fixed by photosynthesis, passed through food chains, returned by respiration and decomposition, and exchanged with the oceans and carbonate rocks; some carbon is buried as fossil fuel.\nPhosphorus: it has no gaseous phase. Phosphate is released by weathering of rock, absorbed by plants, passed to animals, returned in excreta and dead matter, and deposited in sediments as calcium phosphate or guano — a sedimentary cycle.\nHuman disturbance: burning fossil fuels and deforestation add CO2 faster than it is fixed, driving global warming; mining rock phosphate, harvesting crops and excessive fertiliser use and runoff accelerate phosphorus loss to water, causing eutrophication."
+      },
+      {
+        "id": "bio-org-2025-7",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain energy flow and ecological pyramids, and state one limitation of each type of pyramid.",
+        "solution": "Energy flows one way: sunlight → producers → herbivores → carnivores, and is lost as heat at every transfer. According to the ten per cent law only about 10% passes to the next level, so food chains rarely have more than four or five links.\nPyramids of number: can be inverted (many insects on one tree) and do not show energy. Pyramids of biomass: can be inverted in aquatic ecosystems where phytoplankton biomass is small but turnover is rapid. Pyramids of energy: always upright, since energy decreases at each step, and are the most reliable representation of trophic structure."
+      },
+      {
+        "id": "bio-org-2025-8",
+        "type": "mcq",
+        "marks": 2,
+        "difficulty": "easy",
+        "question": "Define population density and name three attributes used to describe a population besides density.",
+        "solution": "Population density is the number of individuals of a species per unit area or volume at a given time (N/A or N/V).\nThree other attributes: natality or birth rate and mortality or death rate, which decide growth; age distribution — the proportion of pre-reproductive, reproductive and post-reproductive individuals, shown as an age pyramid; and dispersion, the spatial pattern (clumped, uniform or random). Sex ratio and immigration or emigration also change population size, and density can be measured by counting, quadrat sampling or mark–recapture."
+      }
+    ]
+  },
+  "pyqs/class-12/biology/strategies-for-food-production/01-neb-2025.json": {
+    "title": "NEB Class 12 Biology — Strategies For Food Production — 2025",
+    "year": 2025,
+    "examSource": "[NEB-pattern 2025]",
+    "unitSlug": "strategies-for-food-production",
+    "origin": "curated NEB-pattern set covering every topic of the class-12 strategies for enhancement in food production unit",
+    "questions": [
+      {
+        "id": "bio-foo-2025-1",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is plant breeding? Describe its main steps.",
+        "solution": "Plant breeding is the deliberate genetic improvement of crop plants to raise yield and quality, and to add resistance to disease, pests and stress.\nSteps: (1) collection and evaluation of genetic variability — germplasm collection from wild relatives and landraces; (2) selection of parents with the desired characters; (3) hybridisation — crossing them to combine traits; (4) selection in the segregating generations, often by pedigree or bulk method, until the line is uniform; (5) testing for yield, quality and resistance in multi-location trials; (6) release and seed multiplication. Mutation breeding, polyploidy and, more recently, marker-assisted selection and genetic engineering speed up or widen the process."
+      },
+      {
+        "id": "bio-foo-2025-2",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Explain the types of hybridisation used in plant breeding and give two achievements of the green revolution in India and Nepal.",
+        "solution": "Hybridisation may be intraspecific (crossing two varieties of the same species), interspecific (two species of a genus) or intergeneric (two genera, used to transfer disease resistance from wild relatives). It may be a simple cross, a back-cross to recover the recurrent parent, or a three-way and double cross in self-pollinated crops.\nAchievements: semi-dwarf, fertiliser-responsive Mexican wheat (Sonora-64, Lerma Rojo) and IR8 rice raised yields several-fold and made the green revolution possible; in Nepal improved rice (Radha-4, Sabitri) and wheat varieties spread widely, and hybrid maize and disease-resistant varieties raised production — though at the cost of heavier input use."
+      },
+      {
+        "id": "bio-foo-2025-3",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is single cell protein? Name two organisms used and give its advantages.",
+        "solution": "Single cell protein (SCP) is protein extracted from the cells of microorganisms — algae, yeasts, fungi or bacteria — grown in bulk culture and used as a protein-rich food or feed supplement.\nOrganisms: the alga Spirulina and the yeast Saccharomyces cerevisiae; also Methylophilus methylotrophus (bacterium) and the fungus Fusarium.\nAdvantages: fast growth gives high yield on cheap substrates including waste (molasses, whey, methanol, straw hydrolysate); it is rich in protein and B vitamins and can be produced in a small area independent of weather; it recycles waste and reduces pollution. Limits are the cost of processing, possible nucleic acid excess and consumer acceptance."
+      },
+      {
+        "id": "bio-foo-2025-4",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "Describe animal husbandry with reference to cattle breeds and poultry management.",
+        "solution": "Animal husbandry is the scientific management of farm animals — feeding, breeding, housing, health care and record keeping — to obtain milk, meat, eggs, wool and draught power.\nCattle: indigenous breeds such as Sahiwal and Red Sindhi (disease-resistant, good for hot climates) and exotic Jersey and Holstein-Friesian (high milk yield) are crossed for combined merit; breeding is by artificial insemination, with attention to balanced feed, clean water, housing and vaccination against foot-and-mouth and haemorrhagic septicaemia.\nPoultry: layers such as Leghorn and broilers such as Plymouth Rock are raised with controlled temperature, balanced feed, clean litter, vaccination against Ranikhet and culling of diseased birds."
+      },
+      {
+        "id": "bio-foo-2025-5",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What are biofertilisers? Name three types and state their advantages.",
+        "solution": "Biofertilisers are preparations of living microorganisms that enrich the soil with nutrients, mainly nitrogen or phosphorus, when applied to seed or soil.\nTypes: nitrogen-fixing bacteria — Rhizobium (symbiotic in legume root nodules) and Azotobacter and Azospirillum (free-living); cyanobacteria such as Anabaena and Azolla (used in paddy fields); phosphate-solubilising bacteria and mycorrhizal fungi, which make insoluble phosphorus available.\nAdvantages: they are cheap, renewable and non-polluting, reduce the need for chemical nitrogen, improve soil structure and water holding, and are suited to small farmers; they have no harmful residues and often suppress soil-borne pathogens."
+      },
+      {
+        "id": "bio-foo-2025-6",
+        "type": "short",
+        "marks": 4,
+        "difficulty": "medium",
+        "question": "What is sustainable agriculture? Give four practices that make agriculture sustainable.",
+        "solution": "Sustainable agriculture is farming that meets present food needs without damaging the soil, water, biodiversity or climate on which future production depends — it balances productivity with ecological and social costs.\nPractices: crop rotation and mixed cropping with legumes to restore nitrogen; use of organic manure, compost and biofertilisers instead of only chemical fertiliser; integrated pest management with biological control and resistant varieties; conservation of soil and water by terracing, contour bunding and mulching; and agroforestry, drip irrigation and use of local seed to reduce inputs and risk."
+      }
+    ]
   },
   "pyqs/class-12/chemistry/chemical-kinetics/01-neb-2021.json": {
     "examSource": "[NEB-pattern 2021]",

@@ -1,0 +1,156 @@
+<!doctype html><html><head><meta charset="utf-8"><title>[</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Modals</div>
+    <h1 class="doc">[</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Modals</span></div>
+  </header>
+  <p>{   &quot;title&quot;: &quot;Modal Verbs&quot;,   &quot;unitSlug&quot;: &quot;grammar&quot;,   &quot;topicSlug&quot;: &quot;modals&quot;,   &quot;topicTitle&quot;: &quot;Modal Verbs&quot;,   &quot;relevance&quot;: 87,   &quot;notes&quot;: [     &quot;&lt;h2&gt;What Are Modal Verbs?&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Modal verbs&lt;/b&gt; (or modal auxiliaries) are a special class of helping verbs that express necessity, possibility, permission, ability, advice, or obligation. The primary modals are: &lt;b&gt;can, could, may, might, shall, should, will, would, must&lt;/b&gt;. Semi-modals include &lt;b&gt;ought to, need, have to, used to&lt;/b&gt;. Modals are unique because they do not change form for person or number (no -s in third person singular), they are followed by the base form of the main verb (without 'to', except 'ought to'), and they do not take -ing or -ed endings.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Can and Could: Ability and Permission&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Can&lt;/b&gt; expresses &lt;b&gt;ability&lt;/b&gt; in the present ('I &lt;b&gt;can&lt;/b&gt; swim') and &lt;b&gt;informal permission&lt;/b&gt; ('Can I borrow your pen?'). &lt;b&gt;Could&lt;/b&gt; is the past form of 'can' for ability ('I &lt;b&gt;could&lt;/b&gt; run fast when I was young'). For &lt;b&gt;polite requests&lt;/b&gt;, 'could' is softer and more polite than 'can' ('Could you help me?'). 'Could' also expresses &lt;b&gt;possibility&lt;/b&gt; in the present ('It &lt;b&gt;could&lt;/b&gt; rain tomorrow'). Note: 'Could' for permission is more tentative than 'can' — 'Could I leave?' suggests the speaker is asking for permission with more hesitation.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;May and Might: Permission and Possibility&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;May&lt;/b&gt; expresses &lt;b&gt;formal permission&lt;/b&gt; ('You &lt;b&gt;may&lt;/b&gt; leave now') and &lt;b&gt;possibility&lt;/b&gt; ('It &lt;b&gt;may&lt;/b&gt; rain today'). &lt;b&gt;Might&lt;/b&gt; expresses &lt;b&gt;remote possibility&lt;/b&gt; ('It &lt;b&gt;might&lt;/b&gt; rain, but I doubt it') and &lt;b&gt;polite suggestions&lt;/b&gt; ('You &lt;b&gt;might&lt;/b&gt; want to try this'). 'Might' is less certain than 'may'. In reported speech, 'may' becomes 'might': 'You may go' → He said I might go. For formal permission, 'may' is preferred in NEB exams: 'May I come in?' (not 'Might I come in?' — though grammatically possible, it is archaic). 'Might' is rarely used for permission in modern English.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Shall and Should: Suggestions and Obligation&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Shall&lt;/b&gt; is used with 'I' and 'we' for &lt;b&gt;future intention&lt;/b&gt; in formal English ('I shall return') and for &lt;b&gt;suggestions and offers&lt;/b&gt; in questions ('Shall we go?' = 'Do you suggest that we go?'). In modern English, especially American English, 'shall' is increasingly replaced by 'will'. &lt;b&gt;Should&lt;/b&gt; is the past form of 'shall' and is primarily used for &lt;b&gt;advice&lt;/b&gt; ('You &lt;b&gt;should&lt;/b&gt; study harder'), &lt;b&gt;obligation&lt;/b&gt; ('You &lt;b&gt;should&lt;/b&gt; apologise'), and &lt;b&gt;expectation&lt;/b&gt; ('He &lt;b&gt;should&lt;/b&gt; arrive by now'). 'Should' is one of the most frequently tested modals in NEB exams, especially in gap-filling and error correction.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Will and Would: Future and Politeness&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Will&lt;/b&gt; expresses &lt;b&gt;future actions&lt;/b&gt; ('I &lt;b&gt;will&lt;/b&gt; visit Kathmandu next week'), &lt;b&gt;willingness&lt;/b&gt; ('I will help you'), &lt;b&gt;promises&lt;/b&gt; ('I will never forget you'), and &lt;b&gt;predictions&lt;/b&gt; ('It will rain tomorrow'). &lt;b&gt;Would&lt;/b&gt; is the past form of 'will' and is used for &lt;b&gt;conditional statements&lt;/b&gt; ('If I had money, I would travel'), &lt;b&gt;polite requests&lt;/b&gt; ('Would you open the door?'), &lt;b&gt;past habits&lt;/b&gt; ('He would always help others'), and &lt;b&gt;reported speech&lt;/b&gt; ('She said she would come'). 'Would' is essential for the second and third conditionals. In NEB exams, distinguishing 'will' from 'would' in context is a common task.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Must and Have To: Obligation&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Must&lt;/b&gt; expresses &lt;b&gt;strong obligation&lt;/b&gt; from the speaker's perspective ('You &lt;b&gt;must&lt;/b&gt; stop at a red light') and &lt;b&gt;logical deduction&lt;/b&gt; ('He must be at home — his car is outside'). &lt;b&gt;Have to&lt;/b&gt; expresses &lt;b&gt;external obligation&lt;/b&gt; imposed by rules or circumstances ('I &lt;b&gt;have to&lt;/b&gt; wear a uniform at school'). The key difference: 'must' is subjective (speaker's authority); 'have to' is objective (external rule). 'Must' has no past form — use 'had to' for past obligation ('I had to finish the work yesterday'). For negative: 'must not' = prohibition ('You must not smoke here'); 'don't have to' = absence of obligation ('You don't have to come' = it's optional). This distinction is frequently tested.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Ought To: Moral Obligation&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Ought to&lt;/b&gt; expresses &lt;b&gt;moral duty or correct action&lt;/b&gt;. It is similar to 'should' but slightly stronger and more formal: 'You &lt;b&gt;ought to&lt;/b&gt; respect your elders.' 'You &lt;b&gt;ought to&lt;/b&gt; help those in need.' Unlike most modals, 'ought to' is followed by 'to' + base verb. The negative form is 'ought not to' (or 'oughtn't to'): 'You ought not to lie.' In questions: 'Ought I to go?' (formal). 'Ought' is less common in American English but appears in NEB exams, especially in transformation and gap-filling exercises.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Need and Dare: Semi-Modals&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Need&lt;/b&gt; and &lt;b&gt;dare&lt;/b&gt; can function as either modals or main verbs. As modals (used mainly in negative and interrogative forms): 'You &lt;b&gt;need not&lt;/b&gt; come' ( = don't have to). 'How &lt;b&gt; dare&lt;/b&gt; you speak to me like that!' As main verbs: 'You &lt;b&gt;need to&lt;/b&gt; study harder' ( = must). 'He &lt;b&gt;dares&lt;/b&gt; to disagree with me.' The modal use is more formal and literary; the main verb use is more common in everyday English. In NEB exams, 'need not' (modal) and 'don't need to' (main verb) are both correct but carry slightly different nuances.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Used To: Past Habits&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Used to&lt;/b&gt; + base verb expresses &lt;b&gt;past habits or states&lt;/b&gt; that are no longer true: 'I &lt;b&gt;used to&lt;/b&gt; play cricket every evening' (but I don't anymore). 'She &lt;b&gt;used to&lt;/b&gt; live in Pokhara' (but she doesn't now). The negative form is 'didn't use to' (not 'used not to' in informal English). The question form is 'Did you use to...?' (not 'Used you to...?'). 'Used to' differs from 'be used to' (accustomed to + -ing) and 'get used to' (becoming accustomed to + -ing). These three forms are frequently confused and tested in NEB exams.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;Modals of Deduction and Speculation&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;Modals are used to express degrees of certainty about the present or past. &lt;b&gt;Present deduction&lt;/b&gt;: 'He must be tired' (almost certain he is tired). 'He can't be tired' (almost certain he is NOT tired). 'He might be tired' (possible). &lt;b&gt;Past deduction&lt;/b&gt;: 'She must have forgotten' (almost certain she forgot). 'She can't have forgotten' (almost certain she did NOT forget). 'She might have forgotten' (possible). Note: 'must have + past participle' for positive deduction about the past; 'can't have + past participle' for negative deduction. 'Couldn't have' is also correct for negative past deduction. This topic is frequently tested in NEB gap-filling and transformation exercises.&lt;/p&gt; \n  ], \n  \&quot;confusion&quot;,&quot;:&quot;, [     &quot;Must vs. Have to: 'Must' expresses obligation from the speaker's authority (internal); 'have to' expresses obligation from external circumstances. 'I must lose weight' (I decide this). 'I have to lose weight' (my doctor told me). In the negative: 'must not' = prohibition; 'don't have to' = no obligation (it's optional).&quot;,     &quot;Can vs. May: 'Can' expresses ability ('I can swim') and informal permission ('Can I go?'). 'May' expresses formal permission ('May I come in?') and possibility ('It may rain'). In formal English and NEB exams, 'may' is preferred for permission. 'Can' for permission is considered informal and may be marked wrong in formal writing contexts.&quot;,     &quot;Should vs. Ought to: These are nearly interchangeable, but 'should' is more common in everyday English while 'ought to' is more formal and implies moral duty. 'You should/ought to apologise' — both correct. However, 'ought to' requires 'to' after it, while 'should' does not: 'should go' vs. 'ought to go'.&quot;,     &quot;Will vs. Would: 'Will' expresses future actions and willingness ('I will help you'). 'Would' is the past form used in conditionals ('If I were rich, I would travel'), polite requests ('Would you please...'), and past habits ('He would always help'). 'Would' never expresses simple future — that requires 'will'. Confusing these in conditional sentences is a common error.&quot;,     &quot;Must have vs. Should have: 'Must have + past participle' expresses logical deduction about the past ('He must have missed the bus' — I'm sure he missed it). 'Should have + past participle' expresses regret or criticism about the past ('He should have studied harder' — but he didn't). These have completely different meanings and are frequently confused.&quot;,     &quot;Used to vs. Be used to vs. Get used to: 'Used to + verb' (past habit): 'I used to smoke.' 'Be used to + -ing' (accustomed to): 'I am used to waking early.' 'Get used to + -ing' (becoming accustomed): 'I am getting used to the cold weather.' These three forms are often mixed up by students because they look similar but have different meanings and grammatical structures.&quot;   ],   &quot;practice&quot;,&quot;:&quot;, [     &quot;Fill in the correct modal: You ___ (must/should) stop at a red light. It's the law. [Answer: must]&quot;,     &quot;Fill in the correct modal: You ___ (needn't/don't need to) come if you're busy. [Answer: needn't / don't need to — both correct; 'needn't' is more formal]&quot;,     &quot;Fill in the correct modal: She ___ (can't/mustn't) have forgotten the meeting. She has an excellent memory. [Answer: can't — deduction about the past; 'mustn't' is for prohibition, not deduction]&quot;,     &quot;Fill in the correct modal: You ___ (should/ought to) apologise to her for being rude. [Answer: should / ought to — both correct; 'ought to' is more formal]&quot;,     &quot;Fill in the correct modal: I ___ (used to/was used to) play football every evening when I was young. [Answer: used to + base verb for past habit]&quot;,     &quot;Fill in the correct modal: He ___ (must have/should have) left already. His car is not in the parking lot. [Answer: must have — logical deduction about the past]&quot;,     &quot;Fill in the correct modal: You ___ (don't have to/must not) tell anyone. This is a secret. [Answer: must not — prohibition]&quot;,     &quot;Fill in the correct modal: ___ (Will/Would) you open the window, please? [Answer: Would — polite request]&quot;,     &quot;Fill in the correct modal: I ___ (can/may) borrow your dictionary, please? [Answer: May — formal permission; 'can' is informal]&quot;,     &quot;Fill in the correct modal: She ___ (is used to/getting used to) living in a hot climate now. [Answer: is used to — accustomed to; followed by -ing]&quot;   ],   &quot;universalFacts&quot;,&quot;:&quot;, [     &quot;Modal verbs are a distinctive feature of Germanic languages (English, German, Dutch). Most other language families express modal meanings through separate lexical verbs, particles, or context. This makes modals particularly challenging for Nepali speakers, who must learn a new grammatical category.&quot;,     &quot;The distinction between 'must' (internal obligation) and 'have to' (external obligation) has no direct equivalent in Nepali grammar, where a single verb (पर्नु) covers both meanings. This is a major source of interference errors.&quot;,     &quot;In NEB English exams, modal verbs are tested in gap-filling (3-4 marks), error correction (2-3 marks), and sentence transformation (2-3 marks). The modals of deduction (must have, can't have) and the distinction between 'must not' and 'don't have to' are the most frequently tested areas.&quot;,     &quot;The semi-modal 'used to' has a unique structure that differs from the similar-looking 'be used to' and 'get used to'. Mastering all three forms is essential because they are frequently confused in NEB exam questions.&quot;,     &quot;The modal 'shall' is declining in modern English, especially in American English, where 'will' has replaced it. However, 'shall' survives in formal questions ('Shall we dance?') and in legal/contractual language. NEB exams may still test traditional usage.&quot;   ],   &quot;animation3D&quot;,&quot;:&quot;, &quot;grammar&quot;,   &quot;motionGraphics&quot;,&quot;:&quot;, &quot;grammar&quot;] }, &quot;\n&quot; ]</p>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

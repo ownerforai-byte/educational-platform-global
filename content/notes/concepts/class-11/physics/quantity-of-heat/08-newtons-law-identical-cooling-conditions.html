@@ -1,0 +1,180 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Newton's Law of Cooling — Identical Cooling Conditions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Quantity Of Heat</div>
+    <h1 class="doc">Newton's Law of Cooling — Identical Cooling Conditions</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Quantity Of Heat</span></div>
+  </header>
+  <section class="field"><h2>Notes</h2><ul><li>Two liquids can be used to compare specific heats by cooling them in the same way. Identical conditions mean the same container shape, the same surface, the same room temperature, and the same temperature interval.</li><li>Under those conditions the surface factor K is the same for both, and the excess temperature follows the same history. The time spent in that interval then depends on the heat capacity.</li><li>From dθ/dt = −(K/mc) (θ − θ0), the time to pass between two temperatures is proportional to mc when K and the temperature limits are the same.</li><li>Therefore m1 c1 / t1 = m2 c2 / t2. The liquid that takes longer to cool through the same interval has the larger heat capacity.</li><li>If the containers differ, K differs and the times cannot be compared by this relation. If the intervals differ, the excess temperatures differ and the relation again fails.</li><li>The calorimeter itself has a heat capacity. A careful comparison uses the same calorimeter and includes its water equivalent on both sides, or uses masses large enough that the question says to neglect it.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Two liquids can be used to compare specific heats by cooling them in the same way. Identical conditions mean the same container shape, the same surface, the same room temperature, and the same temperature interval.</li><li>Under those conditions the surface factor K is the same for both, and the excess temperature follows the same history. The time spent in that interval then depends on the heat capacity.</li><li>Liquid A, mass 0.20 kg, cools from 70°C to 60°C in 4.0 min. Liquid B, mass 0.10 kg, takes 3.0 min for the same interval in the same cup. Find c_B / c_A.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Q1. Define Newton's Law of Cooling — Identical Cooling Conditions.</li><li>Q3. Problem on Newton's Law of Cooling — Identical Cooling Conditions.</li><li>What must be the same before m1 c1 / t1 = m2 c2 / t2?</li><li>Which liquid takes longer?</li><li>Why include the calorimeter?</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>(mc / t) proportional to the mean excess, under the same K</li><li>Same K and same interval: m1 c1 / t1 = m2 c2 / t2</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Connection of Newton's Law of Cooling — Identical Cooling Conditions to other topics</li><li>Same surface area and same surface nature.</li><li>Same surrounding temperature.</li><li>Compare over the same temperature interval.</li><li>Then m1 c1 / t1 = m2 c2 / t2.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Newton's Law of Cooling — Identical Cooling Conditions covers essential principles and applications.</p></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Water equivalent W lets you write the calorimeter as an extra mass of water.</li><li>Do not compare a covered cup with an open one.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Two liquids can be used to compare specific heats by cooling them in the same way. Identical conditions mean the same container shape, the same surface, the same room temperature, and the same temperature interval.</li><li>Under those conditions the surface factor K is the same for both, and the excess temperature follows the same history. The time spent in that interval then depends on the heat capacity.</li><li>From dθ/dt = −(K/mc) (θ − θ0), the time to pass between two temperatures is proportional to mc when K and the temperature limits are the same.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Newton's Law of Cooling — Identical Cooling Conditions is based on fundamental principles.</li><li>Write the temperature interval in the answer's conditions.</li><li>K cancels only when it is actually the same.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Recall the formula for Newton's Law of Cooling — Identical Cooling Conditions.</li><li>Same cup, same interval, same room.</li><li>Larger mc means a longer time.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Definition, then formula, then substitution.</li><li>A vector answer is incomplete without its direction.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>m1 c1 / t1 = m2 c2 / t2 requires</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Different rooms</li><li>The same K and the same temperature interval</li><li>Equal masses always</li><li>Boiling both liquids</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>If c is larger and m and the interval are unchanged, the cooling time</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Increases</li><li>Decreases</li><li>Is zero</li><li>Becomes independent of K</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Different container surfaces mainly change</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>The value of K</li><li>The definition of temperature</li><li>The mole</li><li>The sign of g</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>After a very long time both liquids reach</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Their initial temperatures</li><li>The surrounding temperature</li><li>Zero kelvin in this law</li><li>A temperature that depends on colour only</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Definition and significance of Newton's Law of Cooling — Identical Cooling Conditions.</li><li>Identical cooling</li><li>Comparison of specific heats</li><li>Same temperature interval</li><li>Water equivalent</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Copy the worked example and hide the result until the last step.</li><li>Name the unit of every term in the formula.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Same room is not enough if the cups have different surfaces.</li><li>Equal times do not mean equal specific heats unless the masses and the intervals match.</li><li>The law compares rates, not the final temperatures after an unlimited wait. Both end at room temperature.</li><li>A lid or a fan changes K.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Write (mc / t) proportional to the mean excess, under the same K and say what each symbol means.</li><li>Mark the known values, then substitute one step at a time.</li><li>Finish with the number, the unit, and the direction when the quantity has one.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>(mc / t) proportional to the mean excess, under the same K</li><li>Same K and same interval: m1 c1 / t1 = m2 c2 / t2</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>physics</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>physics</p></section>
+<section class="field"><h2>Duplicate Type</h2><p><code>1</code></p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>m1 c1 / t1 = m2 c2 / t2 requires</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Different rooms</li><li>The same K and the same temperature interval</li><li>Equal masses always</li><li>Boiling both liquids</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>If c is larger and m and the interval are unchanged, the cooling time</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Increases</li><li>Decreases</li><li>Is zero</li><li>Becomes independent of K</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Different container surfaces mainly change</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>The value of K</li><li>The definition of temperature</li><li>The mole</li><li>The sign of g</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>After a very long time both liquids reach</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Their initial temperatures</li><li>The surrounding temperature</li><li>Zero kelvin in this law</li><li>A temperature that depends on colour only</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Liquid A, mass 0.20 kg, cools from 70°C to 60°C in 4.0 min. Liquid B, mass 0.10 kg, takes 3.0 min for the same interval in the same cup. Find c_B / c_A.</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>The cup, the room and the interval match, so m c / t is the same for both.</li><li>m_A c_A / t_A = m_B c_B / t_B.</li><li>0.20 c_A / 4.0 = 0.10 c_B / 3.0.</li><li>0.050 c_A = 0.0333 c_B.</li><li>c_B / c_A = 0.050 / (0.10/3.0) = 0.050 × 30 = 1.5.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>c_B / c_A = 1.5.</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>94</code></p></section>
+<section class="field"><h2>Unit SLUG</h2><p>quantity-of-heat</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>08-newtons-law-identical-cooling-conditions</p></section>
+  <nav class="pager"><a href="07-newtons-law-rate-of-fall-of-temperature.html" title="Newton's Law of Cooling — Derivation of Rate of Fall of Temperature">‹ Newton's Law of Cooling — Derivation of Rate …</a><a class="mid" href="../../../../../_subjects/class-11-physics.html">Physics</a><a href="10-newtons-law-exponential-solution.html" title="Newton's Law of Cooling — Exponential Solution &amp; Graph">Newton's Law of Cooling — Exponential Solutio… ›</a></nav>
+</div></body></html>

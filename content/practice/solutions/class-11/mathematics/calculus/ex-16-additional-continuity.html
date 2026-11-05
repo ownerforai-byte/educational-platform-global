@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.16 Additional Questions (Continuity) - Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Calculus</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.16 Additional Questions (Continuity) - Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Calculus</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q1. Define the continuity of a function at a point, give an example of a continuous function at a point, and say whether f(x) = 1/(1 − x) is continuous at x = 1. [T.U. 2048]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>A rational function is continuous wherever its denominator is non-zero; a pole always breaks continuity.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Definition. f is continuous at x = a if (i) f(a) is defined, (ii) lim (x→a) f(x) exists, and (iii) lim (x→a) f(x) = f(a). Example. f(x) = x² at a = 2: f(2) = 4, the limit is 4, and the two agree, so f is continuous there. For f(x) = 1/(1 − x) at x = 1: f(1) = 1/0 is not defined and the one-sided limits are +∞ (from the left) and −∞ (from the right), so f is not continuous at x = 1. Boxed No (matches the printed key, book p486).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q1; book p486 = PDF p513; key book p486</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q2. When is f(x) said to be continuous at x = a? Discuss the continuity of f(x) = x² + 2 for x ≤ 5 and f(x) = 3x + 12 for x &gt; 5 at x = 5. (HSEB 2054)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Two branches meeting at the same value = continuity, even if the formula changes.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Condition: f is continuous at x = a iff f(a) is defined, lim (x→a) f(x) exists, and the two are equal. Here f(5) = 25 + 2 = 27; left limit 27; right limit 3(5) + 12 = 27. All equal, so f is continuous at x = 5. Boxed continuous (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q2; book p486 = PDF p513; key book p486</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q3(i). At what points is f(x) = (x + 1)/[(x − 2)(x − 3)] discontinuous?</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Discontinuities of a rational function are exactly the zeros of its denominator (where the numerator stays finite).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>The denominator vanishes when x − 2 = 0 or x − 3 = 0, i.e. x = 2 and x = 3. At each of these the numerator is non-zero (3 and 4), so the function has a vertical asymptote and no finite value. Hence f is discontinuous at x = 2 and x = 3. Boxed 2 and 3 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q3(i); book p486 = PDF p513; key book p486</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q3(ii). At what points is f(x) = (x + 1)/[(x − 2)(x − 3)] continuous?</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Everywhere else the denominator is non-zero, so the quotient of continuous functions is continuous.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>For every x other than 2 and 3 the denominator is non-zero; a quotient of continuous functions with non-zero denominator is continuous. Hence f is continuous at all real x except x = 2 and x = 3. Boxed continuous at all points except x = 2 and x = 3 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q3(ii); book p486 = PDF p513; key book p486</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q4. Discuss the continuity of f(x) at x = 0, where f(x) = x for x &gt; 0, f(x) = 1 for x = 0 and f(x) = −x for x &lt; 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>A V-shaped function with the apex value moved off the limit: common limit 0 but value 1.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Right limit: x → 0. Left limit: −x → 0. So lim (x→0) f(x) = 0, but f(0) = 1. Since limit ≠ value, f is discontinuous at x = 0 (a removable discontinuity; f becomes continuous if f(0) is redefined as 0). Boxed discontinuous (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q4; book p486 = PDF p513; key book p486</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q5. f(x) = 2x + 1 for x &lt; 1, 2 for x = 1, 3x for x &gt; 1. Calculate the left-hand and right-hand limits at x = 1. Is f continuous at x = 1? (HSEB 2051)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Compute both one-sided limits first, then compare with the printed value — the answer needs all three numbers.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>LHL: 2(1) + 1 = 3. RHL: 3(1) = 3. The limit is 3, but f(1) = 2 ≠ 3, so f is not continuous at x = 1. Boxed 3, 3, No (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q5; book p487 = PDF p514; key book p486</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q6. f(x) = 2 − x² for x &lt; 2, 3 for x = 2, x − 4 for x &gt; 2. Verify that the limit exists at x = 2. Is f continuous there? If not, how can it be made continuous? (T.U. 2050)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Here the branches agree (limit −2) but the printed value is 3: removable, repaired by setting f(2) = −2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>LHL: 2 − 4 = −2. RHL: 2 − 4 = −2. The limit exists and equals −2, but f(2) = 3 ≠ −2, so f is not continuous at x = 2. It becomes continuous on redefining f(2) = −2. Boxed No, because lim (x→2) f(x) ≠ f(2); redefine f(2) = −2 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q6; book p487 = PDF p514; key book p486</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q7. f(x) = (x² − x − 6)/(x² − 2x − 3) for x ≠ 3, f(x) = 5/3 at x = 3. Prove that f is discontinuous at x = 3. Can the definition at x = 3 be modified to make it continuous?</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>A 0/0 rational function: factor top and bottom, cancel, then compare the limit with the assigned value.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Factor: x² − x − 6 = (x − 3)(x + 2) and x² − 2x − 3 = (x − 3)(x + 1). For x ≠ 3, f(x) = (x + 2)/(x + 1), so lim (x→3) f(x) = 5/4. But f(3) = 5/3 ≠ 5/4, so f is discontinuous at x = 3. Since the limit exists, the discontinuity is removable: defining f(3) = 5/4 makes f continuous there. Boxed Yes, by defining f(3) = 5/4 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q7; book p487 = PDF p514; key book p486</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q8(i). f(x) = 1/2 + x for 0 &lt; x &lt; 1/2, 1/2 at x = 1/2, 3/2 − x for 1/2 &lt; x &lt; 1. Show that f has a removable discontinuity at x = 1/2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Removable discontinuity: both branches meet (limit 1) but the assigned value 1/2 sits below the gap.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>LHL: 1/2 + 1/2 = 1. RHL: 3/2 − 1/2 = 1. The limit is 1, but f(1/2) = 1/2 ≠ 1. A discontinuity whose two-sided limit exists is removable (fill the point with 1). ∎</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q8(i); book p487 = PDF p514</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q8(ii). f(x) = x² for 0 &lt; x &lt; 1, x for 1 ≤ x &lt; 2, (1/4)x³ for 2 ≤ x &lt; 3. Show that f is continuous at x = 1 and x = 2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Piecewise continuity at a join: match the two formulas at the junction point.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>At x = 1: f(1) = 1 (middle branch); left limit x² → 1; right limit x → 1. All equal → continuous. At x = 2: f(2) = (1/4)(2)³ = 2 (third branch); left limit x → 2; right limit (1/4)x³ → 2. All equal → continuous. ∎</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q8(ii); book p487 = PDF p514</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>Q8(iii). f(x) = 3 + 2x for −3/2 ≤ x &lt; 0, 3 − 2x for 0 ≤ x &lt; 3/2, −3 − 2x for x ≥ 3/2. Show that f is continuous at x = 0 but discontinuous at x = 3/2. (HSEB 2056)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>One branch continuous, the other jumping: check each join independently.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>At x = 0: f(0) = 3 − 0 = 3; left limit 3 + 0 = 3; right limit 3 − 0 = 3 → continuous. At x = 3/2: f(3/2) = −3 − 3 = −6 (third branch); left limit 3 − 2(3/2) = 0; right limit −3 − 2(3/2) = −6. Since the left limit 0 ≠ f(3/2) = −6, the limit does not exist and f is discontinuous at x = 3/2. ∎</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q8(iii); book p487 = PDF p514</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>Q8(iv). f(x) = 1 for x &gt; 0, 0 for x = 0, −1 for x &lt; 0. Show that f is discontinuous at x = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>The sign function: a jump discontinuity with one-sided limits +1 and −1.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Right limit: 1. Left limit: −1. Since the one-sided limits differ, lim (x→0) f(x) does not exist, so f cannot be continuous at x = 0. ∎</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q8(iv); book p487 = PDF p514</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>Q9(i). Find k so that f(x) = kx² (x ≤ 2), f(x) = 3 (x &gt; 2) is continuous at x = 2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Set the quadratic branch equal to the constant branch at the join.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Left limit and value: k(2)² = 4k. Right limit: 3. Continuity needs 4k = 3, so k = 3/4. Boxed k = 3/4 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q9(i); book p487 = PDF p514; key book p486</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>Q9(ii). Find a so that g(x) = ax + 5 (x ≤ 2), g(x) = x − 1 (x &gt; 2) is continuous at x = 2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Only one branch contains the constant: equate the other branch's value at the join to it.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Left limit: 2a + 5. Right limit: 2 − 1 = 1. Continuity needs 2a + 5 = 1, so 2a = −4 and a = −2. Boxed a = −2 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q9(ii); book p487 = PDF p514; key book p486</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>Q9(iii). Find p so that f(x) = 2px + 3 (x &lt; 1), f(x) = 1 − px² (x ≥ 1) is continuous at x = 1.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Linear on the left, quadratic on the right: both formulas contain p, so one equation solves it.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Left limit: 2p + 3. Right limit and value: 1 − p. Continuity needs 2p + 3 = 1 − p, so 3p = −2 and p = −2/3. Boxed p = −2/3 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q9(iii); book p487 = PDF p514; key book p486</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>Q9(iv). Find k so that f(x) = (x² − 9)/(x − 3) for x ≠ 3, f(x) = k for x = 3 is continuous at x = 3.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>The constant must reproduce the removable limit: factor x² − 9 = (x − 3)(x + 3).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>For x ≠ 3, (x² − 9)/(x − 3) = x + 3, so the limit at 3 is 6. Continuity requires k = 6. Boxed k = 6 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q9(iv); book p487 = PDF p514; key book p486</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>Q10. Let f(x) = 2x (x &lt; 2), 2 (x = 2), x² (x &gt; 2). Show that f has a removable discontinuity at x = 2. [Hint: removable iff lim (x→2⁻) f = lim (x→2⁺) f ≠ f(2).]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>The hint is the definition: equal one-sided limits that differ from the value = removable.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Left limit: 2(2) = 4. Right limit: 2² = 4. So lim (x→2) f(x) = 4, while f(2) = 2. The one-sided limits are equal but differ from the value, hence the discontinuity at x = 2 is removable (repair by setting f(2) = 4). ∎</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q10; book p488 = PDF p515</p></div></div></div><div class="q"><span class="n">18.</span><div class="stem"><p>Q11. What condition is necessary for f(x) to be continuous at x = a? Under what conditions is f discontinuous at x = a?</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Continuity needs three things at once; failing any one of them produces a discontinuity type.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Necessary and sufficient conditions: (i) f(a) is defined; (ii) lim (x→a) f(x) exists, i.e. lim (x→a⁻) f(x) = lim (x→a⁺) f(x) = L; (iii) L = f(a). f is discontinuous at x = a when any one fails: (a) f(a) undefined — e.g. 1/(x − 1) at x = 1 (infinite discontinuity); (b) the one-sided limits differ — e.g. |x|/x at 0 (jump discontinuity); (c) the limit exists but differs from f(a) — e.g. Q10 above (removable discontinuity).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q11; book p488 = PDF p515</p></div></div></div><div class="q"><span class="n">19.</span><div class="stem"><p>Q12. f(x) = 1 when x ≠ 0, f(x) = 2 when x = 0. Find lim (x→0) f(x) if it exists. Is f continuous at x = 0?</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Constant function with one moved point: the limit is 1 everywhere, the value at 0 is 2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>For x ≠ 0 the function equals 1, so both one-sided limits are 1 and lim (x→0) f(x) = 1. But f(0) = 2 ≠ 1, so f is not continuous at x = 0 (removable discontinuity). Boxed 1 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q12; book p488 = PDF p515 (worked in the text, pp488-489); key book p486</p></div></div></div><div class="q"><span class="n">20.</span><div class="stem"><p>Q13(i). Find the points of discontinuity of f(x) = (x + 1)/(x − 1).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Points of discontinuity of a rational function = zeros of the denominator (with a non-zero numerator).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>The denominator x − 1 vanishes at x = 1, where the numerator is 2 ≠ 0, so f has a vertical asymptote there. Discontinuous at x = 1. Boxed x = 1 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q13(i); book p489 = PDF p516; key book p486</p></div></div></div><div class="q"><span class="n">21.</span><div class="stem"><p>Q13(ii). Find the points of discontinuity of f(x) = (3x − 1)/(x³ − 5x² + 6x).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Factor the cubic denominator into its three linear roots.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Factor: x³ − 5x² + 6x = x(x² − 5x + 6) = x(x − 2)(x − 3). The denominator vanishes at x = 0, 2, 3, and at each the numerator 3x − 1 is non-zero (−1, 5, 8). Hence f is discontinuous at x = 0, 2, 3. Boxed x = 0, 2, 3 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Additional Questions (Continuity) Q13(ii); book p489 = PDF p516; key book p486</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.16 ADDITIONAL QUESTIONS (Continuity) — Q1-Q13 including all sub-parts (book pp486-489 = PDF pp513-516 of the 2075 reprint; page-region vision reads at 180 dpi in overlapping strips; every numeric answer checked against the printed Answers block, book p486).</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>calculus-textbook-ex-16-additional-continuity</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>calculus</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><a href="ex-16-4-continuity.html" title="Sukunda Basic Mathematics XI - Ch.16 Book Ex 16.4 (Continuity and Discontinuity) - Complete Solutions">‹ Sukunda Basic Mathematics XI - Ch.16 Book Ex …</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-16-additional-limits.html" title="Sukunda Basic Mathematics XI - Ch.16 Additional Questions (Limits) - Complete Solutions">Sukunda Basic Mathematics XI - Ch.16 Addition… ›</a></nav>
+</div></body></html>

@@ -1,0 +1,58 @@
+{
+  "title": "Electrolysis: qualitative aspect",
+  "unitSlug": "oxidation-and-reduction",
+  "topicSlug": "electrolysis-qualitative-aspect",
+  "topicTitle": "Electrolysis: qualitative aspect",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Fact.** Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.",
+    "**Fact.** Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q.",
+    "**Fact.** Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion.",
+    "# Electrolysis: qualitative aspect\n\n## 1. Introduction\nChemical picture of **Electrolysis** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Oxidation and Reduction fill pass.\n\n## 2. Concepts and definitions\n### Electrolysis: qualitative aspect\n\nEach definition exam-safe; each formula with its validity condition (§3, block II).",
+    "## 3. Reaction and equation block\nBalanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).\n\n**Table 1 — Relations and worked quantities**\n\n| Relation | Symbols + units | When it holds | Worked angle |\n| --- | --- | --- | --- |",
+    "## 4. Mechanism, IUPAC and structures\nOrganic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).\n\n**Table 2 — Distinguish and reagents**\n\n| Pair or reagent | Test or point of difference | Observation | Example |\n| --- | --- | --- | --- |",
+    "## 5. Diagrams and figures\n- **D1** — Electrolysis — plant or apparatus flow with conditions labelled (authored SVG)\n- **D2** — Electrolysis — second structure, flow or plot (authored SVG — English labels)\n- **D3** — Electrolysis — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Electrolysis — application or industrial figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
+    "## 6. Worked problems\n≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.\n\n## 7. Key terms and reaction map\nNamed reactions, conversions and \"distinguish between\" pairs gathered where the reaction block points to them.",
+    "## 8. Exam Zone and self-check\nNamed-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nReaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass."
+  ],
+  "confusion": [],
+  "bounds": [
+    "Limit to remember: electrochemical cell e = e_cathode − e_anode; δg = −nfe. standard: 25 °c, 1 m, 1 atm."
+  ],
+  "practice": [],
+  "universalFacts": [
+    "Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.",
+    "Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q.",
+    "Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion."
+  ],
+  "examples": [],
+  "practiceQuestions": [],
+  "formulas": [
+    "ΔG = −nFE",
+    "E = E° − (0.0592/n)log Q (25°C)",
+    "m = (M/F)Q"
+  ],
+  "numericals": [
+    "Use  ΔG = −nFE  — pick reasonable values, solve, and check the units.",
+    "Use  E = E° − (0.0592/n)log Q (25°C)  — pick reasonable values, solve, and check the units.",
+    "Use  m = (M/F)Q  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Electrolysis",
+    "• Qualitative aspect"
+  ],
+  "summary": "Electrolysis: qualitative aspect (Oxidation and Reduction, Chemistry, class-11-notes) covers Electrolysis, qualitative aspect. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Electrolysis: qualitative aspect\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ]
+}

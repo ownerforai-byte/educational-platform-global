@@ -1,0 +1,171 @@
+<!doctype html><html><head><meta charset="utf-8"><title>क्रियाप्रकरण — धातु, काल, वाच्य र सार्वनामिक क्रिया</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Nepali  /  Bhasha Ra Vyakarana</div>
+    <h1 class="doc">क्रियाप्रकरण — धातु, काल, वाच्य र सार्वनामिक क्रिया</h1>
+    <div class="meta"><span>Class 11</span><span>Nepali</span><span>Bhasha Ra Vyakarana</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>bhasha-ra-vyakarana</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>क्रियाप्रकरण-धातु-काल-वाच्य-र-सार्वनामिक-क्रिया</p></section>
+<section class="field"><h2>Relevance</h2><p><code>98</code></p></section>
+<section class="field"><h2>Source</h2><p>authored</p></section>
+<section class="field"><h2>Summary</h2><p>क्रिया वाक्यको मुटु हो। धातुले कामको बीउ दिन्छ, कालले समय दिन्छ, वाच्यले काम कसका तर्फबाट भनिएको हो देखाउँछ, र सार्वनामिक रूपले पुरुष तथा आदरसँग मेल गराउँछ। प्रो उत्तरमा धातु, काल र वाच्य तीनै नाम आउँछन्।</p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>धातु।</strong> धातु कामको मूल रूप हो, जसमा अझै पुरुष, काल र वचनको लुगा लागेको हुँदैन। गर्, खा, पढ्, जा, आउ, लेख् धातु हुन्। गर्छ, खायो, पढ्नेछ क्रियापद हुन्। धातुमा प्रत्यय र रुपायक जोडिएपछि मात्र ऊ वाक्यमा बस्न सक्छ। प्रश्नले धातु सोध्यो भने प्रत्यय झिकेर मूल लेख्नुहोस्। गर्थ्यो को धातु गर् हो।</li><li><strong>काल तीन धुरी।</strong> भूतमा काम भइसकेको वा हुँदै गरेको हुन्छ — गर्यो, गर्थ्यो, गरेको थियो। वर्तमानमा काम अहिलेको हो — गर्छ, गर्दै छ, गरेको छ। भविष्यत्मा काम आउन बाँकी हुन्छ — गर्नेछ, गर्ला, गरोस्। समय शब्दले काल धोका दिन सक्छ। हिजो पनि भन्ने बानी छ भने त्यो अभ्यस्त भूत हो, सामान्य भूत होइन।</li><li><strong>पक्ष सम्झने चार घर।</strong> सामान्यले कामलाई एक पटकको घटनाजस्तो भन्छ — खायो। अपूर्णले काम चलिरहेको देखाउँछ — खाइरहेको थियो, खान्थ्यो। पूर्णले काम सिद्धिइसकेको देखाउँछ — खाएको थियो, खाएको छ। अभ्यस्तले बानी देखाउँछ — खान्थ्यो, हरेक बिहान हिँड्थ्यो। परीक्षामा पक्षको नाम नलेखे कालको अंक अपुरो हुन्छ।</li><li><strong>वाच्य।</strong> कर्तृवाच्यमा कर्ता प्रधान हुन्छ र कर्ताको लिङ्ग, पुरुष, वचनसँग क्रिया मेल खान्छ। रामले भात खायो। कर्मवाच्यमा कर्म प्रधान हुन्छ र कर्ता प्रायः ले वा द्वारा सँग पछि सर्छ। भात खाइयो। रामद्वारा भात खाइयो। भाववाच्यमा कामको भाव प्रधान हुन्छ, निश्चित कर्म हुँदैन। यहाँ राम्ररी बसिन्छ। मस्तसँग नाचिन्छ।</li><li><strong>वाच्य बदल्ने विधि।</strong> कर्तृबाट कर्ममा जाँदा कर्मलाई अगाडि ल्याउनुहोस्, कर्तालाई द्वारा वा ले पछाडि सारिदिनुहोस्, र क्रियालाई कर्मवाच्यको रूप दिनुहोस्। केटाले चिठी लेख्यो भन्ने वाक्य कर्मवाच्यमा चिठी लेखियो हुन्छ। भाववाच्यमा वस्तु होइन, स्थिति भनिन्छ — बसिन्छ, हिँडिन्छ, गरिन्छ।</li><li><strong>सार्वनामिक क्रिया।</strong> क्रिया सर्वनामको पुरुष र आदरसँग बद्लिन्छ। म खान्छु। हामी खान्छौं। तँ खान्छस्। तिमी खान्छौ। तपाईं खानुहुन्छ। ऊ खान्छ। उनी खान्छन्। यी रूप कण्ठस्थ नभए लेखन र व्याकरण दुवै ढल्छन्। आदरको रूप छुट्टै सम्झनुहोस् — हुनुहुन्छ, गर्नुभयो, जानुहोला।</li><li><strong>अकर्मक र सकर्मक।</strong> कर्म नचाहिने क्रिया अकर्मक हो — हाँस्नु, दौडनु, निदाउनु। कर्म चाहिने क्रिया सकर्मक हो — खानु, लेख्नु, पढ्नु। के खायो, के लेख्यो भनेर सोध्न मिल्यो भने सकर्मक। नमिले अकर्मक। कर्मवाच्य प्रायः सकर्मकबाट बन्छ। भाववाच्य अकर्मकबाट पनि बन्छ।</li><li><strong>प्रो ढाँचा।</strong> क्रिया चिन्ने प्रश्नमा चार खुड्किलो लेख्नुहोस्। धातु के हो। काल के हो। पक्ष के हो। वाच्य के हो। अनि एक वाक्यमा किन। यो ढाँचाले छोटो प्रश्नलाई पनि पूर्ण उत्तर बनाउँछ।</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>धातु मूल हो। प्रत्यय लागेपछि त्यो क्रियापद हुन्छ।</li><li>काल तीन हुन् — भूत, वर्तमान, भविष्यत्।</li><li>पक्ष चार सम्झनुहोस् — सामान्य, अपूर्ण, पूर्ण, अभ्यस्त।</li><li>कर्तृवाच्यमा कर्ता प्रधान, कर्मवाच्यमा कर्म प्रधान, भाववाच्यमा भाव प्रधान।</li><li>सार्वनामिक क्रिया पुरुष र आदरसँग मेल खान्छ।</li><li>के भनेर सोध्न मिले सकर्मक, नमिले अकर्मक।</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>काल समय हो, पक्ष त्यो समयभित्र कामको अवस्था हो।</li><li>वाच्य परिवर्तनमा अर्थको हड्डी उही रहन्छ, प्रधान पद बदलिन्छ।</li><li>तपाईंको क्रिया आदरको बहुवचन रूप हो, सामान्य एकवचन होइन।</li><li>अभ्यस्त पक्ष बानी देखाउँछ। हरेक दिन गर्थ्यो सामान्य भूत होइन।</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>धातु गर्। भूत सामान्य — गर्यो। भूत अपूर्ण — गर्थ्यो। भूत पूर्ण — गरेको थियो। वर्तमान सामान्य — गर्छ। भविष्यत् — गर्नेछ।</li><li>कर्तृवाच्य — आमाले स्वेटर बुनुभयो। कर्मवाच्य — स्वेटर बुनियो। भाववाच्य — जाडोमा स्वेटर बनिन्छ।</li><li>म आउँछु, तिमी आउँछौ, तपाईं आउनुहुन्छ, उनी आउँछन्। धातु एउटै आउ हो, पुरुष र आदरले रूप खोलियो।</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ गर्थ्यो र गर्यो दुवै एउटै भूत हुन् — ✅ गर्यो सामान्य भूत हो, गर्थ्यो अपूर्ण वा अभ्यस्त भूत हो</li><li>❌ कर्मवाच्यमा कर्ता हराउनुपर्छ — ✅ कर्ता रहन सक्छ, तर द्वारा वा ले सँग गौण हुन्छ</li><li>❌ तपाईं आउँछ भन्ने रूप आदर हो — ✅ आदर रूप आउनुहुन्छ वा आउनुभयो हो</li><li>❌ भाववाच्य र कर्मवाच्य उस्तै हुन् — ✅ कर्मवाच्यमा कर्म हुन्छ, भाववाच्यमा कामको भाव मात्र हुन्छ</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>थ्यो, थिए, थिइन् देखेपछि अपूर्ण वा पूर्ण भूत सोच्नुहोस्। एक्लो यो, ई, ए प्रायः सामान्य भूत हो।</li><li>इयो, इन्छ, इन्छन् देखेपछि वाच्य जाँच गर्नुहोस्। खाइयो कर्मवाच्यको झन्डा हो।</li><li>वाच्य बदल्दा अर्थ नबिगारिकन प्रधान पद मात्र सार्नुहोस्। नयाँ खबर नथप्नुहोस्।</li><li>सार्वनामिक तालिका एउटा धातुमा कण्ठ गर्नुहोस्। अर्को धातुमा त्यही ढाँचा चढाउनुहोस्।</li><li>प्रश्नले रूप मागेपछि वाक्य नलेख्नुहोस्। रूप मागे वाक्य लेखे अंक काटिन्छ, वाक्य मागे रूप मात्र लेखे पनि काटिन्छ।</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>नेपाली क्रिया पुरुष, आदर, काल र वाच्य चारै कुराको योग हो।</li><li>सकर्मक क्रियाको प्रश्न के वा कसलाई बाट सोधिन्छ।</li><li>भाववाच्यमा कर्ता प्रायः देखिँदैन र क्रिया सामान्य रूपमा रहन्छ — बसिन्छ, हिँडिन्छ।</li><li>आज्ञार्थ र इच्छार्थ पनि क्रियाकै रूप हुन् — जाऊ, जाओस्, जाऊँ। ती भविष्यत्को आदेश हुन्, समाचार होइनन्।</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>नेपालका मातृभाषामा कालको झन्डा फरक हुन्छ। नेपाली सिक्ने विद्यार्थीले आफ्नो मातृभाषाको क्रिया गलत हो भनेर नसोच्नुहोस्। परीक्षाको मानक नेपाली रूप छुट्टै कण्ठ गर्नुहोस्, घरको बोलीलाई पनि सम्मान गर्नुहोस्।</li><li>पूर्वको आइन् र पश्चिमको आइन्, तराईको बा र पहाडको तपाईं — आदरको शब्द फरक सुनिन्छ। लेखनमा पाठ्यक्रमको मानक रूप लेख्नुहोस्।</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>पूर्ण वर्तमान गरेको छ हो। पूर्ण भूत गरेको थियो हो। छ र थियो नचिने काल उल्टिन्छ।</li><li>अज्ञार्थ हेर्दा कसलाई आदेश दिइँदै छ हेर्नुहोस्। तिमीलाई जाऊ, तपाईंलाई जानुहोस्।</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>धातु लेख बाट भूत सामान्य, भूत पूर्ण, वर्तमान सामान्य र भविष्यत् रूप लेख्नुहोस् — म, तिमी, तपाईं र उनी का लागि।</li><li>कर्तृवाच्यका तीन वाक्यलाई कर्मवाच्यमा बदल्नुहोस्।</li><li>गर्थ्यो, गरेको थियो र गर्यो को फरक एक एक वाक्यमा देखाउनुहोस्।</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>उनीहरू हरेक बिहान मन्दिर जान्थे। यो कुन पक्ष हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>सामान्य भूत</li><li>अभ्यस्त भूत</li><li>पूर्ण वर्तमान</li><li>भविष्यत्</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>हरेक बिहानले बानी देखाउँछ। जान्थे अभ्यस्त भूतको रूप हो।</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>चिठी लेखियो। यो कुन वाच्य हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>कर्तृवाच्य</li><li>कर्मवाच्य</li><li>भाववाच्य</li><li>सम्बोधन</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>कर्म चिठी अगाडि छ र क्रिया लेखियो कर्मवाच्यको रूप हो।</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>तपाईंले काम सक्नुभयो। क्रिया कुन आदरसँग मेल खाएको छ?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>तँ</li><li>तिमी</li><li>तपाईं</li><li>ऊ</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>सक्नुभयो तपाईं स्तरको आदर रूप हो।</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>खाएको थियो कुन काल र पक्ष हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>पूर्ण वर्तमान</li><li>पूर्ण भूत</li><li>सामान्य भविष्यत्</li><li>अपूर्ण वर्तमान</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>थियो भूतको झन्डा हो र खाएको ले काम सिद्धिइसकेको देखाउँछ। त्यसैले पूर्ण भूत।</p></div></div></div></section>
+  <nav class="pager"><a href="11-padaprakarana.html" title="पदप्रकरण — लिङ्ग, पुरुष, वचन, कारक र विभक्ति">‹ पदप्रकरण — लिङ्ग, पुरुष, वचन, कारक र विभक्ति</a><a class="mid" href="../../../../../_subjects/class-11-nepali.html">Nepali</a><a href="13-samas.html" title="समास — तत्पुरुष, कर्मधारय, द्वन्द्व र बहुव्रीहि">समास — तत्पुरुष, कर्मधारय, द्वन्द्व र बहुव्री… ›</a></nav>
+</div></body></html>

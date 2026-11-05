@@ -1,0 +1,186 @@
+<!doctype html><html><head><meta charset="utf-8"><title>mechanics</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Question Bank</div>
+    <h1 class="doc">mechanics</h1>
+    <div class="meta"><span>Question Bank</span></div>
+  </header>
+  <section class="field"><h2>Subject</h2><p>physics</p></section>
+<section class="field"><h2>Unit</h2><p>mechanics</p></section>
+<section class="field"><h2>Title Prefix</h2><p>NEB Class 11 Physics â€” Mechanics</p></section>
+<section class="field"><h2>Description</h2><p>Past year questions and model questions on Mechanics: Physical Quantities, Vectors, Kinematics, Dynamics, Work-Energy-Power, Circular Motion, Gravitation, Elasticity</p></section>
+<section class="field"><h2>Categories</h2><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Category</dt><dd><p>physical-quantities</p></dd></div><div class="kv"><dt>Questions</dt><dd><div class="q"><span class="n">1.</span><div class="stem"><p>What is the difference between accuracy and precision? Illustrate with an example.</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2024</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Model</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p><strong>Accuracy</strong> = how close a measurement is to the true value; <strong>Precision</strong> = how close repeated measurements are to each other.</p>
+<p>Example: A dartboard â€” if all darts cluster near the bullseye, the throws are both accurate and precise. If they cluster far from the bullseye, they are precise but inaccurate. If they are scattered widely around the bullseye, they are accurate on average but not precise.</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Accuracy relates to systematic error; precision relates to random error. More measurements improve precision but not accuracy.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>State the principle of homogeneity of dimensions. Check the dimensional consistency of the equation vÂ² = uÂ² + 2as.</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2023</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Past</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p><strong>Principle:</strong> An equation is dimensionally consistent only if the dimensions of every term on the LHS match those on the RHS.</p>
+<p>vÂ² â†’ [L Tâ»Â²]Â² = [LÂ²Tâ»Â²] uÂ² â†’ [L Tâ»Â²]Â² = [LÂ²Tâ»Â²] 2as â†’ [L Tâ»Â²][L] = [LÂ²Tâ»Â²]</p>
+<p>All three terms have dimensions [LÂ²Tâ»Â²], so the equation is <strong>dimensionally consistent</strong>. âœ“</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Dimensional consistency is necessary but not sufficient for correctness. A dimensionally correct equation could still be numerically wrong.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>How many seconds are there in a leap year (366 days)?</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2022</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Past</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>1 leap year = 366 days = 366 Ã— 24 Ã— 60 Ã— 60 = <strong>31,536,000 seconds</strong> (â‰ˆ 3.154 Ã— 10â· s).</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Standard conversion used in physics: 1 year = Ï€ Ã— 10â· s (approximate, for order-of-magnitude)</p></div></div></div></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Category</dt><dd><p>vectors</p></dd></div><div class="kv"><dt>Questions</dt><dd><div class="q"><span class="n">1.</span><div class="stem"><p>A vector A has magnitude 50 m and makes an angle of 37Â° with the positive x-axis. Find its rectangular components.</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2024</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Model</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Ax = A cos Î¸ = 50 Ã— cos 37Â° = 50 Ã— 0.7986 = <strong>39.93 m</strong> Ay = A sin Î¸ = 50 Ã— sin 37Â° = 50 Ã— 0.6018 = <strong>30.09 m</strong></p>
+<p>Using standard values: cos 37Â° â‰ˆ 4/5, sin 37Â° â‰ˆ 3/5 Ax = 50 Ã— (4/5) = 40 m, Ay = 50 Ã— (3/5) = 30 m</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>37Â° and 53Â° are standard angles in physics: cos 37Â° = 4/5, sin 37Â° = 3/5; cos 53Â° = 3/5, sin 53Â° = 4/5</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Define scalar product (dot product) and vector product (cross product) of two vectors. Give one example of each in physics.</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2023</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Past</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p><strong>Scalar (Dot) Product:</strong> AÂ·B = |A||B|cos Î¸ â€” result is a scalar. Example: Work W = FÂ·d</p>
+<p><strong>Vector (Cross) Product:</strong> AÃ—B = |A||B|sin Î¸ nÌ‚ (where nÌ‚ is perpendicular, right-hand rule) â€” result is a vector. Example: Torque Ï„ = rÃ—F</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Work is a dot product (scalar); torque and angular momentum are cross products (vectors)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Two forces P and Q are acting at a point. The magnitude of P is 10 N and Q is 20 N. If the angle between them is 60Â°, find the magnitude and direction of the resultant.</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2021</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Past</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Magnitude: R = âˆš(PÂ² + QÂ² + 2PQ cos Î¸) R = âˆš(10Â² + 20Â² + 2Ã—10Ã—20Ã—cos 60Â°) = âˆš(100 + 400 + 200) = âˆš700 = <strong>26.46 N</strong></p>
+<p>Direction: tan Î± = (Q sin Î¸)/(P + Q cos Î¸) tan Î± = (20 sin 60Â°)/(10 + 20 cos 60Â°) = (20Ã—0.866)/(10+10) = 17.32/20 = 0.866 Î± = <strong>40.89Â°</strong> from P.</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Resultant magnitude formula: RÂ² = PÂ² + QÂ² + 2PQ cos Î¸. This is the law of cosines applied to vector addition.</p></div></div></div></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>Category</dt><dd><p>kinematics</p></dd></div><div class="kv"><dt>Questions</dt><dd><div class="q"><span class="n">1.</span><div class="stem"><p>Define position, velocity, and acceleration in kinematics.</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2024</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Model</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p><strong>Position:</strong> Location of a particle relative to a reference frame (coordinate x, y, z). <strong>Velocity:</strong> Rate of change of position with time â€” v = dx/dt; SI unit m/s. <strong>Acceleration:</strong> Rate of change of velocity with time â€” a = dv/dt; SI unit m/sÂ².</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>All three are vectors. Velocity is the first derivative of position; acceleration is the second derivative.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A stone is dropped from a height of 200 m. Calculate: (i) the time it takes to hit the ground, (ii) its velocity on impact. (g = 10 m/sÂ²)</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2023</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Past</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Given: u = 0, s = 200 m, g = 10 m/sÂ²</p>
+<p>(i) Using s = ut + Â½gtÂ²: 200 = 0 + Â½(10)tÂ² â†’ tÂ² = 40 â†’ <strong>t = 6.32 s</strong></p>
+<p>(ii) Using vÂ² = uÂ² + 2gs: vÂ² = 0 + 2(10)(200) = 4000 â†’ <strong>v = 63.25 m/s</strong></p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Time of fall from height h: t = âˆš(2h/g). Impact velocity: v = âˆš(2gh). These are independent of mass (Galileo's principle)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>A projectile is fired horizontally from a tower 80 m high with velocity 20 m/s. Find: (i) time of flight, (ii) horizontal range, (iii) velocity on striking the ground.</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2022</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Past</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(i) Vertical motion: h = Â½gtÂ² â†’ 80 = Â½(10)tÂ² â†’ tÂ² = 16 â†’ <strong>t = 4 s</strong></p>
+<p>(ii) Horizontal range: R = u Ã— t = 20 Ã— 4 = <strong>80 m</strong></p>
+<p>(iii) Vertical velocity at impact: vy = gt = 10 Ã— 4 = 40 m/s Velocity = âˆš(vxÂ² + vyÂ²) = âˆš(20Â² + 40Â²) = âˆš(400+1600) = âˆš2000 = <strong>44.72 m/s</strong> at angle tanâ»Â¹(40/20) = 63.4Â° below horizontal.</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Horizontal projectile: horizontal velocity is constant; vertical motion is free fall. Range = uâˆš(2h/g)</p></div></div></div></dd></div></dl></div></div><div class="item"><span class="idx">4.</span><div class="body"><dl class="obj"><div class="kv"><dt>Category</dt><dd><p>dynamics</p></dd></div><div class="kv"><dt>Questions</dt><dd><div class="q"><span class="n">1.</span><div class="stem"><p>State Newton's three laws of motion. Give an example of each.</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2024</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Model</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p><strong>First Law (Inertia):</strong> A body at rest stays at rest, and a body in motion continues in a straight line at constant velocity unless acted on by an external force. <em>Example: passengers in a bus lurch forward when brakes are applied.</em></p>
+<p><strong>Second Law:</strong> F = ma. <em>Example: a cricket ball accelerates when a bat applies force.</em></p>
+<p><strong>Third Law:</strong> For every action, there is an equal and opposite reaction. <em>Example: a rocket pushes gas downward and is propelled upward.</em></p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>The three laws hold in inertial frames only; the third implies momentum and force conservation.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A block of mass 5 kg rests on a horizontal plane. The coefficient of static friction is 0.4. What horizontal force is needed to start the block moving? (g = 10 m/sÂ²)</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2023</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Past</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Normal reaction R = mg = 5 Ã— 10 = 50 N Limiting friction fs = Î¼s Ã— R = 0.4 Ã— 50 = 20 N</p>
+<p><strong>Force needed = 20 N</strong> â€” any horizontal force less than 20 N won't move the block.</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Maximum static friction fs = Î¼s Ã— R. Once motion starts, kinetic friction fk = Î¼k Ã— R (where Î¼k &lt; Î¼s)</p></div></div></div></dd></div></dl></div></div><div class="item"><span class="idx">5.</span><div class="body"><dl class="obj"><div class="kv"><dt>Category</dt><dd><p>work-energy-power</p></dd></div><div class="kv"><dt>Questions</dt><dd><div class="q"><span class="n">1.</span><div class="stem"><p>State and prove the work-energy theorem for a constant force.</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2023</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Model</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p><strong>Work-energy theorem:</strong> The work done by the net force on a body equals the change in its kinetic energy.</p>
+<p>Proof: Let a constant force F act on a body of mass m, producing acceleration a. From vÂ² = uÂ² + 2as:   W = FÂ·s = (ma)s = m(aÂ·s) From vÂ² = uÂ² + 2as â†’ as = (vÂ²-uÂ²)/2   W = m(vÂ²-uÂ²)/2 = Â½mvÂ² - Â½muÂ² = Î”KE</p>
+<p>Thus, work done = change in kinetic energy. Proved. âœ“</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Work-energy theorem applies to ALL forces (conservative and non-conservative). KE = Â½mvÂ²</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>An electric motor has a power output of 2 kW. How much time will it take to lift a 500 kg mass through 20 m? (g = 10 m/sÂ²)</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2022</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Past</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Work done W = mgh = 500 Ã— 10 Ã— 20 = 100,000 J = 10âµ J</p>
+<p>Power P = W/t â†’ t = W/P = 10âµ/2000 = <strong>50 seconds</strong></p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Power = Work/Time. 1 W = 1 J/s. 1 HP = 746 W</p></div></div></div></dd></div></dl></div></div><div class="item"><span class="idx">6.</span><div class="body"><dl class="obj"><div class="kv"><dt>Category</dt><dd><p>circular-motion</p></dd></div><div class="kv"><dt>Questions</dt><dd><div class="q"><span class="n">1.</span><div class="stem"><p>Define centripetal acceleration. Derive an expression for it.</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2023</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Model</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p><strong>Centripetal acceleration</strong> is the acceleration directed toward the center of a circular path. Derivation:</p>
+<p>Consider a particle moving in a circle of radius r with uniform speed v. In time Î”t, it moves through angle Î”Î¸. Change in velocity Î”v â‰ˆ v Î”Î¸ (for small Î”Î¸) Acceleration a = Î”v/Î”t = v(Î”Î¸/Î”t) = vÏ‰ = v(v/r) = <strong>vÂ²/r</strong></p>
+<p>Alternatively: a = Ï‰Â²r where Ï‰ is angular velocity.</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Centripetal force F = mvÂ²/r = mÏ‰Â²r always directed toward center. Not a new forceâ€”just net force providing centripetal acceleration.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A car takes a turn of radius 50 m at a speed of 10 m/s. What is the angular velocity and centripetal acceleration?</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2022</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Past</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Angular velocity Ï‰ = v/r = 10/50 = <strong>0.2 rad/s</strong></p>
+<p>Centripetal acceleration ac = vÂ²/r = 100/50 = <strong>2 m/sÂ²</strong></p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Ï‰ = v/r (rad/s). Period T = 2Ï€/Ï‰. Centripetal acceleration always points toward center.</p></div></div></div></dd></div></dl></div></div><div class="item"><span class="idx">7.</span><div class="body"><dl class="obj"><div class="kv"><dt>Category</dt><dd><p>gravitation</p></dd></div><div class="kv"><dt>Questions</dt><dd><div class="q"><span class="n">1.</span><div class="stem"><p>State Newton's law of gravitation. What is the gravitational constant G?</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2024</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Model</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p><strong>Newton's law of gravitation:</strong> Every particle of matter attracts every other particle with a force directly proportional to the product of their masses and inversely proportional to the square of the distance between them: F = GMm/rÂ².</p>
+<p><strong>G (gravitational constant):</strong> The constant of proportionality, G = 6.67 Ã— 10â»Â¹Â¹ NÂ·mÂ²/kgÂ². It is universal and applies everywhere in the universe.</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>G is one of the least precisely known constants. Gravitational force is always attractive and acts along the line joining the particles.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>What is escape velocity? Derive the expression for escape velocity of Earth. Hence calculate its value. (R = 6.4Ã—10â¶ m, g = 9.8 m/sÂ²)</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2023</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Past</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p><strong>Escape velocity</strong> is the minimum velocity needed to escape a planet's gravitational field without further propulsion.</p>
+<p>The work done to move a mass m from Earth's surface to infinity = GMm/R. This work = Â½mvâ‚‘Â² (initial kinetic energy)</p>
+<p>So: GMm/R = Â½mvâ‚‘Â² â†’ vâ‚‘ = âˆš(2GM/R) Using g = GM/RÂ² â†’ vâ‚‘ = âˆš(2gR)</p>
+<p>vâ‚‘ = âˆš(2 Ã— 9.8 Ã— 6.4Ã—10â¶) = âˆš(1.254Ã—10â¸) = <strong>11.2 km/s</strong></p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Escape velocity is independent of the mass of the escaping object. Orbital velocity = âˆš(gR/2) = vâ‚‘/âˆš2. For Earth: vâ‚‘ â‰ˆ 11.2 km/s</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Find the gravitational potential energy of a satellite of mass 200 kg orbiting at a height of 400 km above Earth's surface. (R = 6.4Ã—10â¶ m, M = 6Ã—10Â²â´ kg, G = 6.67Ã—10â»Â¹Â¹)</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2021</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Model</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Orbital radius r = R + h = 6.4Ã—10â¶ + 4Ã—10âµ = 6.8Ã—10â¶ m</p>
+<p>Gravitational potential energy U = -GMm/r U = -(6.67Ã—10â»Â¹Â¹ Ã— 6Ã—10Â²â´ Ã— 200)/(6.8Ã—10â¶) U = -(8.0Ã—10Â¹â¶)/(6.8Ã—10â¶) = <strong>-1.18 Ã— 10Â¹â° J</strong></p>
+<p>(Negative sign indicates the satellite is bound to Earth.)</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Gravitational PE = -GMm/r. Zero PE is defined at infinity. Total energy = KE + PE = -GMm/2r for circular orbit.</p></div></div></div></dd></div></dl></div></div><div class="item"><span class="idx">8.</span><div class="body"><dl class="obj"><div class="kv"><dt>Category</dt><dd><p>elasticity</p></dd></div><div class="kv"><dt>Questions</dt><dd><div class="q"><span class="n">1.</span><div class="stem"><p>Define stress, strain, and Young's modulus. What are their SI units?</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2023</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Model</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p><strong>Stress:</strong> Force per unit area (F/A). SI unit: <strong>Pascal (Pa)</strong> = N/mÂ². <strong>Strain:</strong> Fractional change in dimension (Î”L/L). SI unit: <strong>dimensionless</strong>. <strong>Young's modulus:</strong> Ratio of stress to strain (Y = stress/strain). SI unit: <strong>Pascal (Pa)</strong>.</p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Three elastic moduli: Young's modulus (tensile), Shear modulus (rigidity), Bulk modulus (compressibility). Steel has Y â‰ˆ 2Ã—10Â¹Â¹ Pa</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A steel wire of cross-sectional area 2 mmÂ² is stretched by 100 N force. Calculate the stress. If Young's modulus for steel is 2Ã—10Â¹Â¹ Pa, what is the strain?</p></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Year</div><div class="v"><p>2022</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>NEB Past</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Stress = F/A = 100 N / (2 Ã— 10â»â¶ mÂ²) = <strong>5 Ã— 10â· Pa</strong></p>
+<p>Strain = Stress / Y = (5 Ã— 10â·) / (2 Ã— 10Â¹Â¹) = <strong>2.5 Ã— 10â»â´</strong></p></div></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Elastic limit of steel â‰ˆ 10â¸ Pa. Hooke's law: stress âˆ strain up to elastic limit.</p></div></div></div></dd></div></dl></div></div></section>
+  <nav class="pager"><a href="heat-thermodynamics.html" title="heat-thermodynamics">‹ heat-thermodynamics</a><a class="mid" href="../../../_subjects/general-question-bank.html">Question Bank</a><a href="modern-physics.html" title="modern-physics">modern-physics ›</a></nav>
+</div></body></html>

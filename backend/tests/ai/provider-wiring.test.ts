@@ -51,7 +51,10 @@ describe("AIService provider registration & chain wiring", () => {
     const svc = new AIService() as any;
     const chain = svc.chainProviders();
     const names = chain.map((p: any) => p.name);
-    expect(names).toEqual(["groq", "gemini", "cerebras", "internal"]);
+    // The keyless free-tier links (LLM7.io, OVHcloud) are appended before the
+    // internal keyword engine: free fallbacks never jump an explicitly ordered
+    // link, and internal stays the last resort.
+    expect(names).toEqual(["groq", "gemini", "cerebras", "llm7", "ovh", "internal"]);
     restore();
   });
 

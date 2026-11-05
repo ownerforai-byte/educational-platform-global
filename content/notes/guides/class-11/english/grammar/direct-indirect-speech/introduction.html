@@ -1,0 +1,156 @@
+<!doctype html><html><head><meta charset="utf-8"><title>[</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Direct Indirect Speech</div>
+    <h1 class="doc">[</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Direct Indirect Speech</span></div>
+  </header>
+  <p>{   &quot;\&quot;title&quot;: &quot;\&quot;Direct and Indirect Speech&quot;,   &quot;\&quot;unitSlug&quot;: &quot;\&quot;grammar&quot;,   &quot;\&quot;topicSlug&quot;: &quot;\&quot;direct-indirect-speech&quot;,   &quot;\&quot;topicTitle&quot;: &quot;\&quot;Direct and Indirect Speech&quot;,   &quot;\&quot;relevance&quot;: 92,   &quot;\&quot;notes&quot;: [     &quot;\&quot;&lt;h2&gt;What Is Direct and Indirect Speech?&lt;/h2&gt;&quot;,     &quot;\&quot;&lt;p&gt;&lt;b&gt;Direct speech&lt;/b&gt; reports the exact words spoken by someone, enclosed in quotation marks. &lt;b&gt;Indirect speech&lt;/b&gt; (also called reported speech) reports what someone said without using their exact words, and without quotation marks. Direct: Rama said, 'I am happy.' Indirect: Rama said that he was happy. Converting between direct and indirect speech is a core grammar skill tested in NEB English exams through transformation and gap-filling exercises.&lt;/p&gt;&quot;,     &quot;\&quot;&lt;h2&gt;Rules for Conversion: General Changes&lt;/h2&gt;&quot;,     &quot;\&quot;&lt;p&gt;When converting direct to indirect speech, several systematic changes occur: (1) &lt;b&gt;Tense backshift&lt;/b&gt;: present → past, past → past perfect, will → would, can → could, may → might. (2) &lt;b&gt;Pronoun change&lt;/b&gt;: first person (I, we) changes according to the speaker; second person (you, your) changes according to the listener; third person (he, she, they) remains unchanged. (3) &lt;b&gt;Time/place words change&lt;/b&gt;: 'here' → 'there', 'now' → 'then', 'today' → 'that day', 'tomorrow' → 'the next day', 'yesterday' → 'the previous day', 'this' → 'that'. (4) &lt;b&gt;Remove quotation marks&lt;/b&gt; and the conjunction &lt;b&gt;'that'&lt;/b&gt; is often added (optional in informal English).&lt;/p&gt;&quot;,     &quot;\&quot;&lt;h2&gt;Tense Changes in Reported Speech&lt;/h2&gt;&quot;,     &quot;\&quot;&lt;p&gt;Present Simple → Past Simple: 'I &lt;b&gt;like&lt;/b&gt; apples' → He said he &lt;b&gt;liked&lt;/b&gt; apples. Present Continuous → Past Continuous: 'I &lt;b&gt;am reading&lt;/b&gt;' → She said she &lt;b&gt;was reading&lt;/b&gt;. Present Perfect → Past Perfect: 'I &lt;b&gt;have finished&lt;/b&gt;' → He said he &lt;b&gt;had finished&lt;/b&gt;. Past Simple → Past Perfect: 'I &lt;b&gt;wrote&lt;/b&gt;' → She said she &lt;b&gt;had written&lt;/b&gt;. Past Continuous → Past Perfect Continuous: 'I &lt;b&gt;was working&lt;/b&gt;' → He said he &lt;b&gt;had been working&lt;/b&gt;. Will → Would: 'I &lt;b&gt;will&lt;/b&gt; come' → She said she &lt;b&gt;would&lt;/b&gt; come. Can → Could: 'I &lt;b&gt;can&lt;/b&gt; swim' → He said he &lt;b&gt;could&lt;/b&gt; swim. May → Might: 'It &lt;b&gt;may&lt;/b&gt; rain' → She said it &lt;b&gt;might&lt;/b&gt; rain. Must → Had to: 'I &lt;b&gt;must&lt;/b&gt; go' → He said he &lt;b&gt;had to&lt;/b&gt; go.&lt;/p&gt;&quot;,     &quot;\&quot;&lt;h2&gt;Exceptions to Tense Backshifting&lt;/h2&gt;&quot;,     &quot;\&quot;&lt;p&gt;Tense backshifting is NOT done when: (1) The reporting verb is in &lt;b&gt;present&lt;/b&gt; or &lt;b&gt;future&lt;/b&gt; tense — 'He says&quot;, &quot;I am tired.&quot;,&quot; → He says that he &lt;b&gt;is&lt;&quot;,&quot;/b&gt; tired. (2) The reported statement is a &lt;b&gt;universal truth&lt;/&quot;,&quot;b&gt; or general fact —&quot;, &quot;The teacher said&quot;, &quot;The Earth revolves around the Sun.&quot;,&quot; → The teacher said that the Earth &lt;b&gt;revolves&lt;&quot;,&quot;/b&gt; around the Sun. (3) The reported event is still &lt;b&gt;relevant or true&lt;/&quot;,&quot;b&gt; at the time of reporting —&quot;, &quot;Columbus discovered America&quot;, &quot;→ He said that he &lt;b&gt;discovered&lt;&quot;,&quot;/b&gt; America (optional, but 'had discovered' is also correct). (4) Using modals that have no past form: &lt;b&gt;ought to, could, would, should, might, need&lt;/&quot;,&quot;b&gt; remain unchanged.&quot;, &quot;I &lt;b&gt;should&lt;&quot;,&quot;/b&gt; go' → He said he &lt;b&gt;should&lt;/&quot;,&quot;b&gt; go.&lt;&quot;,&quot;/p&gt;&quot;,     &quot;\&quot;&lt;h2&gt;Reporting Verbs and Their Forms&lt;/&quot;,&quot;h2&gt;&quot;,     &quot;\&quot;&lt;p&gt;The most common reporting verb is &lt;b&gt;'said'&lt;/b&gt;. When followed by an object (the person spoken to), use &lt;b&gt;'said to'&lt;/b&gt;: 'She said to me&quot;, &quot;I am coming.&quot;,&quot; → She told me that she was coming. Note: &quot;,&quot;tell&quot;,&quot; always takes an object; &quot;,&quot;say&quot;,&quot; does not. Other reporting verbs include: &lt;b&gt;asked&lt;&quot;,&quot;/b&gt; (for questions), &lt;b&gt;ordered/&quot;,&quot;ordered&lt;&quot;,&quot;/b&gt; (for commands), &lt;b&gt;requested&lt;/&quot;,&quot;b&gt; (for polite requests)&quot;, &quot;&lt;b&gt;advised&lt;&quot;,&quot;/b&gt; (for advice), &lt;b&gt;warned&lt;/&quot;,&quot;b&gt; (for warnings)&quot;, &quot;&lt;b&gt;promised&lt;&quot;,&quot;/b&gt; (for promises), &lt;b&gt;exclaimed&lt;/&quot;,&quot;b&gt; (for strong emotions)&quot;, &quot;&lt;b&gt;apologised&lt;&quot;,&quot;/b&gt; (for apologies). Choosing the right reporting verb preserves the tone of the original statement.&lt;/&quot;,&quot;p&gt;&quot;,     &quot;\&quot;&lt;h2&gt;Reported Questions&lt;/h2&gt;&quot;,     &quot;\&quot;&lt;p&gt;Yes/No questions use &lt;b&gt;'if'&lt;/b&gt; or &lt;b&gt;'whether'&lt;/b&gt; in reported speech: Direct: 'Are you coming?' → Indirect: She asked me &lt;b&gt;if&lt;/b&gt; I was coming. Wh-questions keep the question word: Direct: 'Where do you live?' → Indirect: He asked me &lt;b&gt;where&lt;/b&gt; I lived. Note: In reported questions, the word order changes from question order (verb before subject) to statement order (subject before verb): 'Where &lt;b&gt;do you live&lt;/b&gt;?' → 'He asked where I &lt;b&gt;lived&lt;/b&gt;.' (not 'where did I live'). This is one of the most commonly made errors in reported questions.&lt;/p&gt;&quot;,     &quot;\&quot;&lt;h2&gt;Reported Commands and Requests&lt;/h2&gt;&quot;,     &quot;\&quot;&lt;p&gt;Commands and requests are reported using the structure: subject + reporting verb + object + &lt;b&gt;to + infinitive&lt;/b&gt; (for affirmative) or &lt;b&gt;not to + infinitive&lt;/b&gt; (for negative). Direct: 'Close the door.' → Indirect: He told me &lt;b&gt;to close&lt;/b&gt; the door. Direct: 'Don't make noise.' → Indirect: He told me &lt;b&gt;not to make&lt;/b&gt; noise. Direct: 'Please help me.' → Indirect: She requested me &lt;b&gt;to help&lt;/b&gt; her. Direct: 'Never lie.' → Indirect: He advised me &lt;b&gt;not to lie&lt;/b&gt; ever. Reporting verbs for orders: ordered, commanded, instructed. For requests: requested, asked. For advice: advised, urged.&lt;/p&gt;&quot;,     &quot;\&quot;&lt;h2&gt;Reported Exclamations and Requests&lt;/h2&gt;&quot;,     &quot;\&quot;&lt;p&gt;Exclamatory sentences are converted to assertive sentences in reported speech. Direct: 'What a beautiful flower!' → Indirect: She exclaimed that it was a beautiful flower. Direct: 'Hurrah! We have won!' → Indirect: They exclaimed with joy that they had won. Direct: 'O! I am lost.' → Indirect: He exclaimed with sorrow that he was lost. Exclamatory words like 'Hurrah', 'Alas', 'Oh', 'O' are replaced by appropriate reporting verbs (exclaimed with joy, exclaimed with sorrow, etc.). The content is then reported in assertive form without the exclamatory structure.&lt;/p&gt;&quot;,     &quot;\&quot;&lt;h2&gt;Reported Speech with Complex Sentences&lt;/h2&gt;&quot;,     &quot;\&quot;&lt;p&gt;When the quoted sentence contains a subordinate clause, only the main clause undergoes tense change (if the reporting verb is in past tense). Direct: 'I know that he is honest,' said Ram. → Indirect: Ram said that he knew that he was honest. (Note: 'knew' is the reported form of 'know'; 'was' is the reported form of 'is'.) When the reporting verb is in present tense, NO tense change occurs in any part of the sentence. Direct: 'I will call you when I reach home,' says Rama. → Indirect: Rama says that he will call me when he reaches home. Both 'will call' and 'reaches' remain unchanged.&lt;/p&gt;&quot;,     &quot;\&quot;&lt;h2&gt;Common Errors in Reported Speech&lt;/h2&gt;&quot;,     &quot;\&quot;&lt;p&gt;Common errors include: (1) Forgetting to change the pronoun — 'Rama said&quot;, &quot;I am late.&quot;,&quot; → \&quot;Rama said that &lt;b&gt;I&lt;/b&gt; was late&quot;, &quot;(wrong) →&quot;, &quot;Rama said that &lt;b&gt;he&lt;/b&gt; was late&quot;, &quot;(right). (2) Not changing time expressions —&quot;, &quot;He said&quot;, &quot;I came yesterday.&quot;,&quot; → \&quot;He said he came yesterday&quot;, &quot;(wrong) →&quot;, &quot;He said he had come the previous day&quot;, &quot;(right). (3) Keeping question word order in reported questions —&quot;, &quot;She asked where did I live&quot;, &quot;(wrong) →&quot;, &quot;She asked where I lived&quot;, &quot;(right). (4) Using&quot;, &quot;that\&quot; with questions instead of \&quot;if/whether\&quot; — \&quot;He asked that I was coming&quot;, &quot;(wrong) →&quot;, &quot;He asked if I was coming&quot;, &quot;(right). (5) Using&quot;, &quot;say\&quot; with an object — \&quot;He said me to go&quot;, &quot;(wrong) →&quot;, &quot;He told me to go&quot;, &quot;(right).&lt;&quot;,&quot;/p&gt;\r\n  ]&quot;,   &quot;confusion&quot;,&quot;:&quot;, [     &quot;\&quot;Say vs. Tell in reported speech: 'Say' does not take a direct object (She said that she was tired). 'Tell' always takes an object (She told me that she was tired). Never write 'He said me' — it must be 'He told me' or 'He said to me'.&quot;,     &quot;\&quot;If vs. Whether in reported questions: Both can introduce yes/&quot;,&quot;no questions in reported speech&quot;, &quot;but&quot;, &quot;whether\&quot; is more formal and is required when followed by \&quot;or not\&quot; or when the alternative is explicit. \&quot;She asked if/whether I was coming.&quot;, &quot;She asked whether I was coming or not.&quot;, &quot;(&quot;,&quot;If\&quot; is generally not used with \&quot;or not\&quot; in formal writing.)&quot;,     &quot;\&quot;Tense change in universal truths: When reporting a universal truth or scientific fact, the tense does not change even if the reporting verb is in the past. \&quot;The teacher said&quot;, &quot;Water boils at 100°C.&quot;,&quot; → The teacher said that water boils at 100°C (NOT \&quot;boiled&quot;,&quot;). This exception is frequently tested in NEB exams.&quot;,     &quot;\&quot;Question word order in reported speech: In reported questions, the subject comes before the verb (statement order), not after (question order). Direct: 'Where do you live?' → Indirect: He asked where I lived (NOT 'where did I live'). This is one of the most persistent errors among students.&quot;,     &quot;\&quot;Reported commands with infinitive: When converting commands to reported speech, use 'to + base verb' for affirmative and 'not to + base verb' for negative. 'Don't touch that wire' → He warned me not to touch that wire. The reporting verb 'warned' conveys the urgency better than 'told'.&quot;,     &quot;\&quot;Same-tense reporting verbs: When the reporting verb is in present tense ('says', 'asks', 'tells'), no tense change occurs anywhere in the reported clause. 'He says&quot;, &quot;I am busy.&quot;,&quot; → He says that he is busy. This is different from past-tense reporting verbs, which trigger backshifting.&quot;   ],   &quot;\&quot;practice&quot;,&quot;:&quot;, [     &quot;\&quot;Convert to indirect speech: Rama said&quot;, &quot;I am reading a book.&quot;, [&quot;Answer: Rama said that he was reading a book.&quot;],&quot;,\r\n    &quot;,&quot;Convert to indirect speech: She said, 'I have finished my homework.' [Answer: She said that she had finished her homework.]&quot;,     &quot;\&quot;Convert to indirect speech: The teacher said, 'The sun rises in the east.' [Answer: The teacher said that the sun rises in the east. (universal truth — no tense change)]&quot;,     &quot;\&quot;Convert to indirect speech: 'Where do you live?' asked the policeman. [Answer: The policeman asked where I lived.] — Note the word order change from question to statement form.&quot;,     &quot;\&quot;Convert to indirect speech: He said, 'Please help me.' [Answer: He requested me to help him.] — Note: 'requested' or 'asked' is more appropriate than 'told' for polite requests.&quot;,     &quot;\&quot;Convert to indirect speech: She said, 'I will call you tomorrow.' [Answer: She said that she would call me the next day.] — 'will' → 'would', 'tomorrow' → 'the next day'.&quot;,     &quot;\&quot;Convert to indirect speech: 'Never steal again,' said the father. [Answer: The father warned his child not to steal again.]&quot;,     &quot;\&quot;Convert to indirect speech: She exclaimed, 'What a lovely dress!' [Answer: She exclaimed that it was a lovely dress.] — Exclamatory form changes to assertive.&quot;,     &quot;\&quot;Convert to indirect speech: He said, 'I was working when you called.' [Answer: He said that he had been working when I called.] — Past continuous → past perfect continuous; 'when you called' stays past simple (interrupting action).&quot;,     &quot;\&quot;Convert to indirect speech: 'Can you help me?' she asked. [Answer: She asked me if I could help her.] — Modal 'can' → 'could'; yes/no question uses 'if'.&quot;   ],   &quot;\&quot;universalFacts&quot;,&quot;:&quot;, [     &quot;\&quot;The concept of reported speech exists in all human languages, but the rules for tense shifting vary widely. English is unusual in systematically backshifting tenses in reported speech, while languages like Japanese and Mandarin Chinese do not change tense at all in reported clauses.&quot;,     &quot;\&quot;In Nepali, reported speech (कथन वाक्य) does not involve the same systematic tense changes as English. Nepali relies more on context and time markers, which makes reported speech transformation particularly challenging for Nepali-speaking students learning English.&quot;,     &quot;\&quot;The indirect question word order (subject before verb) in English is a key structural feature that distinguishes it from direct questions. This pattern is also found in embedded clauses: 'I know where he lives' (not 'where does he live').&quot;,     &quot;\&quot;In NEB English examinations, reported speech questions typically carry 5-8 marks across transformation exercises and gap-filling. Mastery of the rules for tense, pronoun, and time-word changes is essential for full marks.&quot;,     &quot;\&quot;The exception for universal truths in reported speech reflects a deep principle of English grammar: logical and permanent truths are not subject to temporal relativisation. This is why 'He said the Earth is round' is preferred over 'He said the Earth was round' in modern usage.&quot;   ],   &quot;\&quot;animation3D&quot;,&quot;:&quot;, &quot;\&quot;grammar&quot;,   &quot;\&quot;motionGraphics&quot;,&quot;:&quot;, &quot;\&quot;grammar&quot;] }, &quot;\n&quot; ]</p>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

@@ -1,0 +1,57 @@
+{
+  "title": "NEB Class 12 Biology — Biotechnology And Its Applications — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "biotechnology-applications",
+  "origin": "curated NEB-pattern set covering every topic of the class-12 biotechnology and its applications unit",
+  "questions": [
+    {
+      "id": "bio-bta-2025-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Explain how Bt cotton is produced and why the Bt toxin does not harm the plant or human beings.",
+      "solution": "Genes for the Bt toxin — cryIAc and cryIIAb for cotton bollworm — are isolated from Bacillus thuringiensis and inserted into the cotton plant with a suitable vector and promoter, so the plant makes the toxin itself.\nThe toxin exists in the bacterium as an inactive protoxin crystal. In the alkaline gut of the insect larva it is converted to active toxin, which binds midgut epithelial cells and perforates them, so the larva stops feeding and dies. The mammalian stomach is acidic and has no receptor for the toxin and no such crystal, so the protoxin is digested harmlessly, making Bt cotton safe for people, animals and most non-target insects."
+    },
+    {
+      "id": "bio-bta-2025-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Explain how RNA interference was used to make nematode-resistant tobacco.",
+      "solution": "The nematode Meloidogyne incognita infects tobacco roots and causes galls. A gene was introduced into the tobacco plant that produces both sense and antisense RNA of a nematode gene essential for its survival. The two RNAs base-pair into double-stranded RNA, which triggers RNA interference: the plant's Dicer cuts it into small interfering RNAs that guide degradation of the matching nematode mRNA.\nThe parasite's gene is therefore silenced when it feeds, the nematode cannot survive and the plant is protected. This uses no toxin and is specific to the target pest."
+    },
+    {
+      "id": "bio-bta-2025-3",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Describe the production of human insulin by recombinant DNA technology.",
+      "solution": "Insulin has two chains, A and B, linked by disulphide bonds. In the older method, the human genes for the A and B chains were inserted separately into E. coli plasmids, and each chain was produced and then joined chemically — the first recombinant insulin, Humulin.\nThe modern method inserts human proinsulin DNA with a C-peptide into a vector so that the bacteria secrete a single-chain proinsulin; the C-peptide is then removed enzymatically to give authentic human insulin. Recombinant insulin is identical to human insulin, so it avoids the allergic reactions caused by pig or cattle insulin and can be produced in unlimited quantity."
+    },
+    {
+      "id": "bio-bta-2025-4",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "What is gene therapy? Explain its use in ADA deficiency.",
+      "solution": "Gene therapy corrects a genetic disease by introducing a normal gene into a patient's cells.\nIn severe combined immunodeficiency due to adenosine deaminase (ADA) deficiency, the ADA gene is faulty and toxic deoxyadenosine kills lymphocytes. A normal ADA gene is inserted into a retroviral vector and used to infect the patient's own bone marrow cells or lymphocytes, which are then returned to the blood, where they make the enzyme.\nBecause the corrected cells are blood cells with a limited life, the treatment must be repeated; a permanent cure would need the gene in stem cells, and enzyme replacement by injection is the alternative. In 1990 this was the first approved gene therapy."
+    },
+    {
+      "id": "bio-bta-2025-5",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "What are transgenic animals? Describe how they are produced and give four uses.",
+      "solution": "Transgenic animals carry a foreign gene that has been deliberately introduced into their genome and is passed on to offspring; the standard method is microinjection of the DNA into the pronucleus of a fertilised egg, which is then implanted into a surrogate mother.\nUses: producing biological products — goats secreting human antithrombin or sheep making alpha-1-antitrypsin in milk; studying gene function and human disease models; testing vaccine safety and drug toxicity before human trials; improving livestock for growth, milk or wool and conferring disease resistance; and producing organs or tissues as a source for transplantation, plus transgenic fish and birds for food."
+    },
+    {
+      "id": "bio-bta-2025-6",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "What is biopiracy? Explain with two examples, and state how patent law and the Convention on Biological Diversity address it.",
+      "solution": "Biopiracy is the commercial exploitation of biological resources or traditional knowledge of a community without permission or without sharing the benefit with that community.\nExamples: the US patent on basmati rice lines and the patents on the wound-healing property of turmeric and on neem were challenged by India because they claimed knowledge already public in that country; similarly, patents on certain medicinal plants and on ayurvedic formulations have been disputed.\nThe Convention on Biological Diversity (1992) affirms national sovereignty over biological resources and requires prior informed consent and equitable benefit sharing, while WTO's TRIPS agreement and national patent law now demand disclosure of origin and allow revocation of patents lacking novelty."
+    }
+  ]
+}

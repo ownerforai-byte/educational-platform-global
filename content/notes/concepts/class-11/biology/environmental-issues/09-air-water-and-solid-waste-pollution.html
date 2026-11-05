@@ -1,0 +1,300 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Air, water, and solid waste pollution</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Biology  /  Environmental Issues</div>
+    <h1 class="doc">Air, water, and solid waste pollution</h1>
+    <div class="meta"><span>Class 11</span><span>Biology</span><span>Environmental Issues</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>environmental-issues</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>air-water-and-solid-waste-pollution</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Air Pollution</h4></li><li><ul>
+<li><strong>Primary pollutants</strong>: Directly emitted (SO2, NOx, CO, particulates)</li>
+</ul></li><li><ul>
+<li><strong>Secondary pollutants</strong>: Formed in atmosphere (ozone, acid rain)</li>
+</ul></li><li><ul>
+<li><strong>Sources</strong>: Vehicles, industries, burning fossil fuels, volcanic eruptions</li>
+</ul></li><li><ul>
+<li><strong>Effects</strong>: Respiratory diseases, acid rain, smog, global warming</li>
+</ul></li><li><ul>
+<li><strong>Control</strong>: Catalytic converters, scrubbers, renewable energy, afforestation</li>
+</ul></li><li><h4>2. Water Pollution</h4></li><li><ul>
+<li><strong>Point source</strong>: Single identifiable source (factory pipe)</li>
+</ul></li><li><ul>
+<li><strong>Non-point source</strong>: Diffuse runoff (agricultural chemicals)</li>
+</ul></li><li><ul>
+<li><strong>Organic waste</strong>: Sewage, food processing - increases BOD</li>
+</ul></li><li><ul>
+<li><strong>Eutrophication</strong>: Excess nutrients -&gt; algal bloom -&gt; oxygen depletion</li>
+</ul></li><li><ul>
+<li><strong>Heavy metals</strong>: Mercury (Minamata disease), Lead (neurotoxic)</li>
+</ul></li><li><ul>
+<li><strong>Control</strong>: Wastewater treatment, reduce chemical use, maintain riparian zones</li>
+</ul></li><li><h4>3. Solid Waste Management</h4></li><li><ul>
+<li><strong>Biodegradable</strong>: Food waste, paper, garden waste - compostable</li>
+</ul></li><li><ul>
+<li><strong>Non-biodegradable</strong>: Plastic, glass, metal - recycling needed</li>
+</ul></li><li><ul>
+<li><strong>Hazardous</strong>: Medical waste, batteries, electronics - special disposal</li>
+</ul></li><li><ul>
+<li><strong>Methods</strong>: Landfilling, incineration, composting, recycling, 3Rs (Reduce, Reuse, Recycle)</li>
+</ul></li><li><ul>
+<li><strong>E-waste</strong>: Rapidly growing problem with toxic components</li>
+</ul></li><li><h4>4. Acid Rain</h4></li><li><ul>
+<li>Caused by SO2 and NOx reacting with water vapor</li>
+</ul></li><li><ul>
+<li>Forms sulfuric and nitric acid in rain</li>
+</ul></li><li><ul>
+<li>Damages buildings, aquatic ecosystems, forests, soil</li>
+</ul></li><li><ul>
+<li>pH less than 5.6 is considered acid rain</li>
+</ul></li><li><h4>5. Greenhouse Effect and Global Warming</h4></li><li><ul>
+<li><strong>Greenhouse gases</strong>: CO2, CH4, N2O, CFCs, water vapor</li>
+</ul></li><li><ul>
+<li><strong>Enhanced greenhouse effect</strong>: Human activities increase GHG concentrations</li>
+</ul></li><li><ul>
+<li><strong>Effects</strong>: Rising temperatures, sea level rise, extreme weather, melting glaciers</li>
+</ul></li><li><ul>
+<li><strong>Kyoto Protocol (1997)</strong>: International agreement to reduce GHG emissions</li>
+</ul></li><li><ul>
+<li><strong>Paris Agreement (2015)</strong>: Limit warming to well below 2°C above pre-industrial</li>
+</ul></li><li><h4>6. Ozone Layer Depletion</h4></li><li><ul>
+<li><strong>Ozone (O3)</strong>: Protects Earth from harmful UV radiation</li>
+</ul></li><li><ul>
+<li><strong>CFCs (Chlorofluorocarbons)</strong>: Release chlorine atoms that destroy ozone</li>
+</ul></li><li><ul>
+<li><strong>Ozone hole</strong>: Over Antarctica, discovered in 1985</li>
+</ul></li><li><ul>
+<li><strong>Montreal Protocol (1987)</strong>: Phased out CFCs successfully</li>
+</ul></li><li><ul>
+<li><strong>Effects of depletion</strong>: Skin cancer, cataracts, immune suppression, crop damage</li>
+</ul></li><li><h4>7. Entrance Exam Focus</h4></li><li>Causes and effects of pollution types; Greenhouse gases; Ozone depletion mechanism.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>x Ozone is always bad. x Stratospheric ozone protects us; ground-level ozone is a pollutant.</li><li>x Global warming = ozone depletion. x Different problems with different causes.</li><li>x CO2 is the only greenhouse gas. x CH4, N2O, CFCs are also significant.</li><li>Sewage in a river is water pollution, not a method of treatment.</li><li>Composting is for organic waste. It does not make plastic disappear.</li><li>Smoke and sewage are different pollutants. One control does not fix both.</li><li>A landfill beside a well can become a water problem.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Explain the cause and effects of acid rain.</li><li>What is the greenhouse effect? List major greenhouse gases.</li><li>Describe the mechanism of ozone layer depletion.</li><li>How does eutrophication affect aquatic ecosystems?</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Air pollution comes from burning fuel, industry and dust. It harms lungs and can acidify rain.</li><li>Water pollution comes from sewage, factory effluent and farm runoff. It spreads cholera and kills fish.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Pollution of air, water and land has distinct sources, effects and control measures. Air pollutants are classified as primary, such as SO2, NOx, CO and particulates emitted directly, and secondary, such as ground-level ozone and acid rain, which form in the atmosphere. Water pollution from point and non-point sources causes organic pollution with a raised BOD, eutrophication and heavy-metal toxicity, while solid waste is managed by the 3Rs, landfilling, incineration and composting. At global scale, greenhouse gases drive the enhanced greenhouse effect, and ozone-depleting CFCs cause ozone-layer depletion, addressed by the Kyoto Protocol, the Paris Agreement and the Montreal Protocol respectively.</p></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Primary air pollutants (SO2, NOx, CO, smoke and dust particulates) are emitted directly, while secondary pollutants such as ground-level ozone and acid rain form in the atmosphere by chemical reaction.</li><li>Water pollution sources are point sources, a single identifiable outlet such as a factory pipe, and non-point sources, the diffuse runoff of fertilisers, pesticides and animal waste from farmland.</li><li>Organic pollution raises the biochemical oxygen demand (BOD) of water, and excess nutrients cause eutrophication: an algal bloom followed by decomposition that depletes oxygen and kills fish.</li><li>Solid waste is classified as biodegradable (food, paper and garden waste), non-biodegradable (plastic, glass and metal) and hazardous (batteries, e-waste and medical waste), and is managed by landfilling, incineration, composting, recycling and the 3Rs.</li><li>The enhanced greenhouse effect results from human activities raising the concentrations of CO2, CH4, N2O, CFCs and water vapour, while ozone-layer depletion results from CFCs releasing chlorine radicals that catalytically destroy stratospheric ozone.</li><li>International agreements include the Montreal Protocol (1987, phase-out of CFCs), the Kyoto Protocol (1997, greenhouse gas targets) and the Paris Agreement (2015, limiting warming to well below 2 °C above pre-industrial levels).</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Acid rain forms when SO2 and NOx react with water vapour and oxygen in the atmosphere to give sulfuric and nitric acids; rain with a pH below 5.6 is classified as acid rain.</li><li>Stratospheric ozone absorbs harmful UV-B radiation and protects life, but ground-level ozone is a harmful pollutant and a component of smog.</li><li>Global warming and ozone depletion are different problems with different causes; neither is responsible for the other.</li><li>CO2 is not the only greenhouse gas — CH4, N2O, CFCs and water vapour also absorb outgoing infrared radiation.</li><li>Eutrophication is aggravated by fertiliser and detergent phosphate runoff from agriculture and households, and it eventually causes fish kills.</li><li>The Montreal Protocol has been more successful than the Kyoto Protocol because it controlled specific, substitutable chemicals rather than a diffuse gas.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Explain the cause and the effects of acid rain, including the chemical reactions involved and one control measure.</li><li>Define the greenhouse effect, list the major greenhouse gases and describe the consequences of the enhanced greenhouse effect.</li><li>Describe the mechanism of ozone-layer depletion by CFCs and state the consequences of extra UV-B radiation reaching the surface.</li><li>Explain step by step how eutrophication develops in a lake and what happens to the aquatic ecosystem as a result.</li><li>Classify a list of solid wastes as biodegradable, non-biodegradable or hazardous and recommend a suitable disposal method for each.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Sources of air pollution are vehicles, industries, the burning of fossil fuels, brick kilns and volcanic eruptions.</li><li>Control of air pollution uses catalytic converters (CO to CO2 and NOx to N2), scrubbers that remove SO2, low-sulphur fuels, afforestation and renewable energy.</li><li>Eutrophication sequence: nutrient enrichment leads to an algal bloom, which blocks light, and the dead algae are decomposed by bacteria, raising BOD and lowering dissolved oxygen until fish die.</li><li>Heavy-metal pollutants are mercury, which caused Minamata disease, lead, which is neurotoxic, and cadmium, which damages the kidney; all are bioaccumulated along the food chain.</li><li>The 3Rs, Reduce, Reuse and Recycle, are preferred to landfilling, and composting of biodegradable waste returns nutrients to the soil.</li><li>E-waste contains lead, mercury and cadmium, so it must be collected and treated separately from ordinary municipal solid waste.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Ozone is not wholly harmful: stratospheric ozone shields life from UV-B, while ground-level ozone is a pollutant and oxidant that irritates the lungs.</li><li>Rain is naturally slightly acidic (pH about 5.6) because CO2 dissolves in it to form carbonic acid; only a pH below 5.6 counts as acid rain caused by SO2 and NOx.</li><li>Global warming and ozone depletion are separate problems: the ozone hole lies over Antarctica and is caused by CFCs, whereas warming is global and caused by greenhouse gases.</li><li>A high BOD means oxygen-poor, polluted water, because aerobic decomposers are using up the dissolved oxygen that fish and other aquatic animals need.</li><li>Incineration of plastic and mixed waste can release dioxins and furans, creating a new pollutant while destroying a resource, which is why the 3Rs are preferred.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Primary means printed at the source, secondary means made in the sky — ozone and acid rain are secondary pollutants.</li><li>Acid rain recipe: SO2 and NOx plus water vapour and oxygen give H2SO4 and HNO3; the cut-off is pH below 5.6.</li><li>Greenhouse gas list: CO2, CH4, N2O, CFCs and water vapour.</li><li>Eutrophication in one line: nutrients, then bloom, then algal death, then decomposition, then oxygen falls and fish die.</li><li>Ozone depletion in one line: CFC breaks down under UV, releases a chlorine radical, and O3 is destroyed — the O3 layer absorbs UV-B.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Global warming, ozone depletion and acid rain each appear as a 5-mark question on cause, effect and control; learn them in that order.</li><li>One-mark MCQs usually name a greenhouse gas, an ozone-depleting substance or a secondary pollutant, so O3, CH4, N2O and CFCs are the most asked.</li><li>Dates are frequently tested: Montreal Protocol 1987, Kyoto Protocol 1997, Paris Agreement 2015, and the Antarctic ozone hole reported in 1985.</li><li>Water pollution questions test point versus non-point sources, the meaning of BOD, and the correct sequence of events in eutrophication.</li><li>Solid waste questions ask for the 3Rs, the difference between biodegradable and non-biodegradable waste, and the special problems of e-waste.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Explain the cause and the effects of acid rain.</li><li>What is the greenhouse effect? List the major greenhouse gases.</li><li>Describe the mechanism of ozone-layer depletion.</li><li>How does eutrophication affect aquatic ecosystems? Explain step by step.</li><li>Differentiate between point and non-point sources of water pollution, giving examples.</li><li>What are the 3Rs, and how does e-waste differ from ordinary household solid waste?</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following is a secondary air pollutant?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Carbon monoxide</li><li>Sulphur dioxide</li><li>Ground-level ozone</li><li>Smoke</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Ground-level ozone forms when nitrogen oxides and volatile organic compounds react in sunlight. Carbon monoxide, sulphur dioxide and smoke are primary pollutants emitted directly from a source.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Rainwater is classified as acid rain when its pH is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Above 7</li><li>Below 5.6</li><li>Exactly 7</li><li>Always below 3</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Normal rain is about pH 5.6 because carbon dioxide forms carbonic acid in it, while acid rain produced by SO2 and NOx, which form H2SO4 and HNO3, falls below 5.6.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Which set correctly lists the main greenhouse gases?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>O2, N2, Ar and CO2</li><li>CO2, CH4, N2O, CFCs and water vapour</li><li>SO2, NOx, CO and particulates</li><li>O2, O3, H2 and He</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>CO2, CH4, N2O, CFCs and water vapour absorb outgoing infrared radiation. The substances in the third option are air pollutants, but they are not the main greenhouse gases.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Ozone-layer depletion is caused mainly by:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Carbon dioxide emissions from vehicles</li><li>Chlorofluorocarbons releasing chlorine radicals that destroy stratospheric ozone</li><li>Sulphur dioxide released by industries</li><li>Deforestation in the tropics</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Ultraviolet radiation breaks CFCs into chlorine radicals, which catalytically convert O3 to O2. The Montreal Protocol of 1987 phased out CFCs, and the Antarctic ozone hole was reported in 1985.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>In a lake receiving excess fertiliser runoff, eutrophication first leads to:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Rapid fish death caused by cold water</li><li>An algal bloom caused by nutrient enrichment</li><li>A rise in BOD caused by fish waste</li><li>An increase in dissolved oxygen at the surface</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Excess nitrates and phosphates trigger an algal bloom; when the algae die, aerobic decomposition raises the BOD and depletes dissolved oxygen, and the fish then die.</p></div></div></div></section>
+<section class="field"><h2>Examples</h2><ul><li>Air pollution comes from burning fuel, industry and dust. It harms lungs and can acidify rain.</li><li>Water pollution comes from sewage, factory effluent and farm runoff. It spreads cholera and kills fish.</li><li>Solid waste is household and industrial rubbish. Dumped waste breeds flies and leaks into groundwater.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Air pollution comes from burning fuel, industry and dust. It harms lungs and can acidify rain.</li><li>Water pollution comes from sewage, factory effluent and farm runoff. It spreads cholera and kills fish.</li><li>Solid waste is household and industrial rubbish. Dumped waste breeds flies and leaks into groundwater.</li><li>Control of air starts with cleaner burning and less dust.</li><li>Control of water is treatment before discharge, and toilets that do not open into a river.</li><li>Control of solid waste is reduce, separate, compost the organic fraction, and landfill the rest away from water.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Do not swap classes.</li><li>A sequence has an order. Do not rotate it.</li></ul></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Cholera is most directly tied to</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Polluted water</li><li>Noise</li><li>A seed bank</li><li>Alpine snow</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Organic solid waste is best</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Composted</li><li>Burned in a closed room</li><li>Thrown in a drinking source</li><li>Stored in a well</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Farm runoff is mainly a</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Water pollutant</li><li>Form of binomial nomenclature</li><li>Vaccine</li><li>Gymnosperm</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Dust and smoke are</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Air pollutants</li><li>The same thing as sewage</li><li>Ramsar sites</li><li>Heterocysts</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Match sewage, smoke and plastic waste to the right medium and one control.</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Sewage is water pollution. Treat it before it reaches a river.</li><li>Smoke is air pollution. Burn cleaner fuel and reduce dust.</li><li>Plastic is solid waste. It should not be composted as if it were food scraps. Reduce it and keep it out of water.</li><li>Each control fails if it is applied to the wrong medium.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>Treat sewage, clean the burning, and keep plastic out of soil and water.</p></div></div></div></section>
+<section class="field"><h2>Visual Type</h2><p>greenhouse-ozone</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>Air, water and solid waste each have a source, an effect and a control that is not the same sentence.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li><h4>1. Air Pollution</h4></li><li><ul>
+<li><strong>Primary pollutants</strong>: Directly emitted (SO2, NOx, CO, particulates)</li>
+</ul></li><li><ul>
+<li><strong>Secondary pollutants</strong>: Formed in atmosphere (ozone, acid rain)</li>
+</ul></li><li><ul>
+<li><strong>Sources</strong>: Vehicles, industries, burning fossil fuels, volcanic eruptions</li>
+</ul></li><li><ul>
+<li><strong>Effects</strong>: Respiratory diseases, acid rain, smog, global warming</li>
+</ul></li><li><ul>
+<li><strong>Control</strong>: Catalytic converters, scrubbers, renewable energy, afforestation</li>
+</ul></li><li><h4>2. Water Pollution</h4></li><li><ul>
+<li><strong>Point source</strong>: Single identifiable source (factory pipe)</li>
+</ul></li><li><ul>
+<li><strong>Non-point source</strong>: Diffuse runoff (agricultural chemicals)</li>
+</ul></li><li><ul>
+<li><strong>Organic waste</strong>: Sewage, food processing - increases BOD</li>
+</ul></li><li><ul>
+<li><strong>Eutrophication</strong>: Excess nutrients -&gt; algal bloom -&gt; oxygen depletion</li>
+</ul></li><li><ul>
+<li><strong>Heavy metals</strong>: Mercury (Minamata disease), Lead (neurotoxic)</li>
+</ul></li><li><ul>
+<li><strong>Control</strong>: Wastewater treatment, reduce chemical use, maintain riparian zones</li>
+</ul></li><li><h4>3. Solid Waste Management</h4></li><li><ul>
+<li><strong>Biodegradable</strong>: Food waste, paper, garden waste - compostable</li>
+</ul></li><li><ul>
+<li><strong>Non-biodegradable</strong>: Plastic, glass, metal - recycling needed</li>
+</ul></li><li><ul>
+<li><strong>Hazardous</strong>: Medical waste, batteries, electronics - special disposal</li>
+</ul></li><li><ul>
+<li><strong>Methods</strong>: Landfilling, incineration, composting, recycling, 3Rs (Reduce, Reuse, Recycle)</li>
+</ul></li><li><ul>
+<li><strong>E-waste</strong>: Rapidly growing problem with toxic components</li>
+</ul></li><li><h4>4. Acid Rain</h4></li><li><ul>
+<li>Caused by SO2 and NOx reacting with water vapor</li>
+</ul></li><li><ul>
+<li>Forms sulfuric and nitric acid in rain</li>
+</ul></li><li><ul>
+<li>Damages buildings, aquatic ecosystems, forests, soil</li>
+</ul></li><li><ul>
+<li>pH less than 5.6 is considered acid rain</li>
+</ul></li><li><h4>5. Greenhouse Effect and Global Warming</h4></li><li><ul>
+<li><strong>Greenhouse gases</strong>: CO2, CH4, N2O, CFCs, water vapor</li>
+</ul></li><li><ul>
+<li><strong>Enhanced greenhouse effect</strong>: Human activities increase GHG concentrations</li>
+</ul></li><li><ul>
+<li><strong>Effects</strong>: Rising temperatures, sea level rise, extreme weather, melting glaciers</li>
+</ul></li><li><ul>
+<li><strong>Kyoto Protocol (1997)</strong>: International agreement to reduce GHG emissions</li>
+</ul></li><li><ul>
+<li><strong>Paris Agreement (2015)</strong>: Limit warming to well below 2°C above pre-industrial</li>
+</ul></li><li><h4>6. Ozone Layer Depletion</h4></li><li><ul>
+<li><strong>Ozone (O3)</strong>: Protects Earth from harmful UV radiation</li>
+</ul></li><li><ul>
+<li><strong>CFCs (Chlorofluorocarbons)</strong>: Release chlorine atoms that destroy ozone</li>
+</ul></li><li><ul>
+<li><strong>Ozone hole</strong>: Over Antarctica, discovered in 1985</li>
+</ul></li><li><ul>
+<li><strong>Montreal Protocol (1987)</strong>: Phased out CFCs successfully</li>
+</ul></li><li><ul>
+<li><strong>Effects of depletion</strong>: Skin cancer, cataracts, immune suppression, crop damage</li>
+</ul></li><li><h4>7. Entrance Exam Focus</h4></li><li>Causes and effects of pollution types; Greenhouse gases; Ozone depletion mechanism.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Bounds</h2><ul><li>Stay on this class 11 topic.</li><li>Counts you cannot defend stay out.</li></ul></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../_subjects/class-11-biology.html">Biology</a><span></span></nav>
+</div></body></html>

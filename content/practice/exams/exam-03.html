@@ -1,0 +1,158 @@
+<!doctype html><html><head><meta charset="utf-8"><title>NEB Class 11 Mock Exam 03 — Physics, Chemistry, Biology, Mathematics</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Exams</div>
+    <h1 class="doc">NEB Class 11 Mock Exam 03 — Physics, Chemistry, Biology, Mathematics</h1>
+    <div class="meta"><span>Exams</span></div>
+  </header>
+  <section class="field"><h2>SLUG</h2><p>exam-03</p></section>
+<section class="field"><h2>Duration Min</h2><p><code>60</code></p></section>
+<section class="field"><h2>Questions</h2><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q01</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Which organelle contains its own DNA and ribosomes, supporting the endosymbiotic theory?</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Mitochondrion</li><li>Lysosome</li><li>Golgi apparatus</li><li>Vacuole</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>0</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Mitochondria (and plastids) carry their own circular DNA and 70S ribosomes, evidence of prokaryotic ancestry.</p></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q02</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The significance of meiosis in sexually reproducing organisms is that it produces:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Two identical diploid cells</li><li>Four haploid cells</li><li>Eight haploid cells</li><li>Two haploid cells</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>One meiotic division cycle yields four haploid daughter cells with new gene combinations.</p></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q03</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Dryopteris, the fern commonly studied for its vascular tissue and sori, is an example of:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Bryophyta</li><li>Pteridophyta</li><li>Gymnosperm</li><li>Thallophyta</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Ferns are seedless vascular plants — pteridophytes reproducing by spores in sori.</p></dd></div></dl></div></div><div class="item"><span class="idx">4.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q04</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Deuteromycetes are popularly called imperfect fungi because they:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Lack chitin in their walls</li><li>Have no known sexual stage</li><li>Cannot absorb nutrients</li><li>Are always unicellular</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>'Imperfect' refers only to the absence of an observed sexual reproductive phase.</p></dd></div></dl></div></div><div class="item"><span class="idx">5.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q05</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Yeast (Saccharomyces), an ascomycete, is economically important because it is used in:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Nitrogen fixation</li><li>Antibiotic production</li><li>Fermentation for baking and brewing</li><li>Water purification</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Yeast ferments sugars into ethanol and CO₂, driving baking and brewing industries.</p></dd></div></dl></div></div><div class="item"><span class="idx">6.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q06</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>In the reaction 2H₂ + O₂ → 2H₂O, if 4 mol H₂ react with 3 mol O₂, the limiting reactant is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>H₂</li><li>O₂</li><li>H₂O</li><li>Neither; both are fully consumed</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>0</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>4 mol H₂ requires exactly 2 mol O₂, and 3 mol O₂ is available; hydrogen is therefore consumed first and limits the water formed to 4 mol.</p></dd></div></dl></div></div><div class="item"><span class="idx">7.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q07</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The oxidation number of sulphur in H₂SO₄ is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>+2</li><li>+4</li><li>+6</li><li>−2</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>2(+1) + S + 4(−2) = 0 gives S = +6.</p></dd></div></dl></div></div><div class="item"><span class="idx">8.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q08</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>For an electron with principal quantum number n = 3, the allowed values of l are:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>0 only</li><li>1 and 2</li><li>0, 1 and 2</li><li>1, 2 and 3</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>l runs from 0 to n − 1, so n = 3 allows l = 0 (s), 1 (p) and 2 (d).</p></dd></div></dl></div></div><div class="item"><span class="idx">9.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q09</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The chemical bond formed by complete transfer of electrons from sodium to chlorine in NaCl is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Covalent bond</li><li>Coordinate bond</li><li>Metallic bond</li><li>Ionic bond</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>3</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Na loses one electron and Cl gains it; electrostatic attraction between Na⁺ and Cl⁻ forms the ionic bond.</p></dd></div></dl></div></div><div class="item"><span class="idx">10.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q10</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>By Graham's law of diffusion, the ratio of rates of diffusion of CH₄ (M = 16) and O₂ (M = 32) under identical conditions is approximately:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>1 : 2</li><li>1 : 1.41</li><li>1.41 : 1</li><li>2 : 1</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>r(CH₄)/r(O₂) = √(32/16) = √2 ≈ 1.41 : 1; lighter methane diffuses faster.</p></dd></div></dl></div></div><div class="item"><span class="idx">11.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q11</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The derivative of f(x) = x³ with respect to x is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>3x</li><li>x²</li><li>3x²</li><li>x⁴/4</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Power rule: d/dx xⁿ = n xⁿ⁻¹ gives 3x².</p></dd></div></dl></div></div><div class="item"><span class="idx">12.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q12</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>∫ 2x dx equals:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>x² + C</li><li>2x² + C</li><li>2 + C</li><li>x²/2 + C</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>0</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>∫xⁿ dx = xⁿ⁺¹/(n+1) + C so ∫2x dx = 2·x²/2 + C = x² + C.</p></dd></div></dl></div></div><div class="item"><span class="idx">13.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q13</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>A function satisfying f(−x) = f(x) for every x in its domain is called:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Odd</li><li>Even</li><li>Periodic</li><li>Monotonic</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Even functions like x² or cos x are symmetric about the y-axis; odd ones satisfy f(−x) = −f(x).</p></dd></div></dl></div></div><div class="item"><span class="idx">14.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q14</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The stationary points of f(x) = x³ − 3x² occur where f′(x) = 0, i.e. at:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>x = 0 only</li><li>x = 2 only</li><li>x = 0 and x = 2</li><li>x = −2 and x = 0</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>f′ = 3x² − 6x = 3x(x − 2) vanishes at x = 0 and x = 2.</p></dd></div></dl></div></div><div class="item"><span class="idx">15.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q15</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The standard limit lim(x→0) sin x / x equals:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>0</li><li>1</li><li>∞</li><li>Does not exist</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>This foundational trigonometric limit equals 1 when x is measured in radians.</p></dd></div></dl></div></div><div class="item"><span class="idx">16.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q16</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Neglecting air resistance, the horizontal range of a projectile launched with fixed speed is maximum at a projection angle of:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>30°</li><li>45°</li><li>60°</li><li>90°</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>R = u² sin 2θ/g peaks when 2θ = 90°, i.e. θ = 45°.</p></dd></div></dl></div></div><div class="item"><span class="idx">17.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q17</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The work done by the centripetal force on a body completing one full circle is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Maximum positive</li><li>Zero</li><li>Negative</li><li>Equal to mv²</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Centripetal force stays perpendicular to displacement at every instant, so W = ∫F·ds = 0.</p></dd></div></dl></div></div><div class="item"><span class="idx">18.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q18</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The orbital velocity of a satellite orbiting just above the Earth's surface is approximately:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>7.9 km/s</li><li>9.8 km/s</li><li>11.2 km/s</li><li>3.0 km/s</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>0</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>v_o = √(gR) ≈ 7.9 km/s near the surface; escape velocity is √2 times this.</p></dd></div></dl></div></div><div class="item"><span class="idx">19.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q19</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Young's modulus, the ratio of tensile stress to longitudinal strain, is expressed in SI units of:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>N/m</li><li>N/m²</li><li>m/N²</li><li>Dimensionless</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Stress (N/m²) divided by dimensionless strain leaves N/m², the pascal.</p></dd></div></dl></div></div><div class="item"><span class="idx">20.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e3-q20</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>According to the Stefan–Boltzmann law, the total energy radiated per second by a black body is proportional to:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>T</li><li>T²</li><li>T³</li><li>T⁴</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>3</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>E = σAT⁴: radiated power grows with the fourth power of absolute temperature.</p></dd></div></dl></div></div></section>
+  <nav class="pager"><a href="exam-02.html" title="NEB Class 11 Mock Exam 02 — Physics, Chemistry, Biology, Mathematics">‹ NEB Class 11 Mock Exam 02 — Physics, Chemistr…</a><a class="mid" href="../../_subjects/general-exams.html">Exams</a><span></span></nav>
+</div></body></html>

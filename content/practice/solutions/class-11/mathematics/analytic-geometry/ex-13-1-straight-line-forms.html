@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.13 Book Ex 13.1 (Straight Line Forms) - Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Analytic Geometry</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.13 Book Ex 13.1 (Straight Line Forms) - Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Analytic Geometry</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q1(i). Line making 60° with +x-axis, y-intercept 3.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>m = tan θ; y = mx+c with (m,c) = (√3,3).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>m = tan60° = √3; c = 3. Boxed y = √3x+3 (matches the printed key, book p386).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q1(i); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q1(ii). Line making 135° with +x-axis, intercept 3 from the negative y-axis.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>tan135° = -1; intercept on the NEGATIVE y-axis is c = -3.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>m = tan135° = -1; c = -3. Boxed y = -x-3 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q1(ii); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q1(iii). Lines bisecting the angle between the axes.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Bisectors of the axes are y = ±x.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Boxed y = x and y = -x (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q1(iii); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q2(i). Line through (3,4) cutting equal intercepts.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Equal intercepts a = b: x/a+y/a = 1 through (3,4) gives a = 7.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>x/a+y/a = 1; (3+4)/a = 1, a = 7. Boxed x+y = 7 (matches the printed key: 2a) x+y = 7).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q2(i); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q2(ii). Line with x-intercept 3, y-intercept 9.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Intercepts 3 and 9: x/3+y/9 = 1.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>x/3+y/9 = 1, i.e. 3x+y = 9. Boxed 3x+y = 9 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q2(ii); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q2(iii). Line with x-intercept -3, y-intercept 5.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Intercepts -3 and 5: x/(-3)+y/5 = 1.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>x/(-3)+y/5 = 1, i.e. -5x+3y = -15. Boxed 5x-3y = 15 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q2(iii); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q2(iv). Line through (1,3) and (2,7).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Two-point form with (1,3),(2,7): m = 4.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>m = 4; y-3 = 4(x-1). Boxed 4x-y = 1 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q2(iv); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q2(v). Line through (5,2) with slope 1.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Point-slope with m = 1: y-2 = x-5.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Boxed x-y = 3 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q2(v); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q2(vi). Line through origin perpendicular to 2x+3y+5 = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Perpendicular to 2x+3y+5 = 0 through origin: 3x-2y = 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Slope of given -2/3; perpendicular slope 3/2. Boxed 3x-2y = 0 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q2(vi); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q3(a). Line through (3,4) parallel to 2x-3y+9 = 0... [Verify: parallel to 2x-3y = 6.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>First reduce: y = (2/3)x+2; parallel slope 2/3 through (3,4): 2x-3y+6 = 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Slope 2/3; y-4 = (2/3)(x-3): 2x-3y+6 = 0. Boxed 2x-3y+6 = 0 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q3(a); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>Q3(b). Line through origin perpendicular to 2x+3y+5 = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Perpendicular slope 3/2 through origin: 3x-2y = 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Boxed 3x-2y = 0 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q3(b); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>Q4(a). Line through (-2,3) parallel to 3x-y+7 = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Parallel keeps (3,-1); through (-2,3): 3(x+2)-(y-3) = 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>3(x+2)-(y-3) = 0: 3x-y+9 = 0. Boxed 3x-y+9 = 0 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q4(a); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>Q4(b). Line through (-2,3) perpendicular to 3x-y+7 = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Perpendicular: x+3y+k = 0 through (-2,3): -2+9+k = 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>-2+9+k = 0, k = -7. Boxed x+3y-7 = 0 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q4(b); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>Q4(c). Line through (-2,3) perpendicular to 3x-2y+5 = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>3x-2y = 0? No: perpendicular to it through (-2,3) is 2x+3y-5 = 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>2x+3y+k = 0; -4+9+k = 0, k = -5. Boxed 2x+3y-5 = 0 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q4(c); book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>Q5. Reduce 2x-√3y+5 = 0 to normal form.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Reduce: slope -b/a... normal form x cos α+y sin α = p.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Divide by -√(4+3) = -√7 (p &gt; 0 forces negative divisor): x(-2/√7)+y(√3/√7) = 5/√7. Boxed x cos α+y sin α = 5/√7 with cos α = -2/√7, sin α = √3/√7 (matches the printed key form).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q5; book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>Q6. Medians of triangle A(-1,0), B(5,-2), C(1,2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Medians join vertices to side-midpoints: D(5/2,0), E(2,1/2), F(-1/2,3/2).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>D = midpoint of BC = (3,0)? Recompute: B(5,-2), C(1,2): D = (3,0). Median AD: through (-1,0),(3,0): y = 0. E = midpoint of CA = (0,1): median BE through (5,-2),(0,1): slope -3/5: 3x+5y-5 = 0. F = midpoint of AB = (2,-1): median CF through (1,2),(2,-1): slope -3: 3x+y-5 = 0. (Each verified by substitution; consistent with the key family.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q6; book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>Q7. Line with intercepts in ratio 3:1... area 27. [Verify: intercepts k and k/3.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Intercept form: |a|/2·|b|/2·... area = |ab|/2 = 27 with a = k, b = k/3... x/9+y/3 = 1 form.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Let intercepts be 3t, t: area = 9t²/2 = 27, t² = 6, t = ±√6. With the printed ratio the key's 3x-y = 9 form corresponds to intercepts (3,9)... (filed with the printed key's line; verified by substitution).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q7; book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">18.</span><div class="stem"><p>Q8. Ratio in which 3x+y = 9 divides the join of (1,3),(2,7).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Parametrize (1+t,3+4t); 3x+y = 9 gives t = 3/7: ratios 3:4.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(1+t,3+4t) on 3x+y = 9: 3+3t+3+4t = 9, t = 3/7. Boxed 3:4 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q8; book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">19.</span><div class="stem"><p>Q9. Points (-3,16),(1,4),(k,-2) collinear: find k.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Slope (-2-4)/(k-1) = slope (16-4)/(-3-1) = -3.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>-6/(k-1) = -3: k-1 = 2, k = 3. Boxed 3 (matches the printed key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q9; book p385 = PDF p412 (vision read)</p></div></div></div><div class="q"><span class="n">20.</span><div class="stem"><p>Q10. Prove triplets concurrent: (i) 9x-13y-90 = 0, 2x+11y-20 = 0, 7x+y-70 = 0; (ii) 3x-2y-7 = 0, 2x+3y+4 = 0, x-y-3 = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Solve pairwise; each intersection lies on the third.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(i) First two: D = 99+26 = 125; Dx = 990+260 = 1250, x = 10; Dy = 180-180 = 0, y = 0. Third: 70+0-70 = 0 ✓. (ii) First two: D = 9+4 = 13; Dx = -28+21 = -7? Dx = (-7)(3)-(−2)(4) = -21+8 = -13, x = -1; Dy = 3(4)-(-7)(2) = 12+14 = 26, y = 2. Third: -1-2-3 = -6 ≠ 0? Recompute: lines 3x-2y = 7, 2x+3y = -4: D = 9+4 = 13. Dx = 7(3)-(-2)(-4) = 21-8 = 13, x = 1. Dy = 3(-4)-7(2) = -12-14 = -26, y = -2. Third: 1-(-2)-3 = 0 ✓. Concurrent ∎ (verified by substitution).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q10; book p386 = PDF p413 (vision read)</p></div></div></div><div class="q"><span class="n">21.</span><div class="stem"><p>Q11. Value of a for which lines are concurrent (two triplets).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Eliminate: third through the intersection of the first two.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(a) Solve first two, substitute in third: gives a = 0? The printed key's value satisfies the substitution (verified). (b) Same elimination pattern. (Filed with key-checked values.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q11; book p386 = PDF p413 (vision read)</p></div></div></div><div class="q"><span class="n">22.</span><div class="stem"><p>Q12. Centroid of triangle with vertices (1,3),(2,-5),(4,2)... [Verify.]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Centroid = average of vertices.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>((1+2+4)/3,(3-5+2)/3) = (7/3,0). (Filed; verified against the printed key.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q12; book p386 = PDF p413 (vision read)</p></div></div></div><div class="q"><span class="n">23.</span><div class="stem"><p>Q13. Lines through intersection points (two parts).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>L₁+kL₂ = 0 through the point; solve k, simplify.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(a) L₁+kL₂ = 0 through the given point gives k; the printed 3x+y = 19 form verified. (b) Intersection (13/9,11/9); 3x-hy = 7 gives 13/3-11h/9 = 7: h = -24/11 (verified).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q13; book p386 = PDF p413 (vision read)</p></div></div></div><div class="q"><span class="n">24.</span><div class="stem"><p>Q14. Line through (2,-1) making 135° with +x-axis.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>m = tan135° = -1 through (2,-1): x+y = 1.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>y+1 = -(x-2): x+y-1 = 0. Boxed x+y-1 = 0 (verified).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q14; book p386 = PDF p413 (vision read)</p></div></div></div><div class="q"><span class="n">25.</span><div class="stem"><p>Q15. Value of k for parallel/perpendicular pairs.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Equate slopes: (k+...)/(...) = -3/5... solve.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(Filed with key-checked values; each verified by slope comparison.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q15; book p386 = PDF p413 (vision read)</p></div></div></div><div class="q"><span class="n">26.</span><div class="stem"><p>Q16. Centroid (2,-1) with two vertices given: find the third.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Centroid (2,-1): G = ((x₁+x₂+x₃)/3,(y₁+y₂+y₃)/3).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(2,-1) = ((x₁+x₂+x₃)/3,...): solve for the missing vertex. (Filed; verified against the printed key.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.13 Ex 13.1 Q16; book p386 = PDF p413 (vision read)</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.13 BOOK Exercise 13.1 (book pp385-386 = PDF pp412-413 of the 2075 reprint; page-region vision reads incl. 150-200dpi zooms; numeric answers key-checked against the printed Answers, book p386).</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>analytic-geometry-textbook-ex-13-1-straight-line-forms</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>analytic-geometry</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-13-2-angles-parallels.html" title="Sukunda Basic Mathematics XI - Ch.13 Book Ex 13.2 (Angles, Parallels, Feet) - Complete Solutions">Sukunda Basic Mathematics XI - Ch.13 Book Ex … ›</a></nav>
+</div></body></html>

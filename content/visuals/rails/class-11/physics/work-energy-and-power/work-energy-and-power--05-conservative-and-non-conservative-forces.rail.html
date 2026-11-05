@@ -1,0 +1,166 @@
+<!doctype html><html><head><meta charset="utf-8"><title>work-energy-and-power--05-conservative-and-non-conservative-forces.rail</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Work Energy And Power</div>
+    <h1 class="doc">work-energy-and-power--05-conservative-and-non-conservative-forces.rail</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Work Energy And Power</span></div>
+  </header>
+  <section class="field"><h2>Schema</h2><p>home-rail/v1</p></section>
+<section class="field"><h2>Draft</h2><p><code>false</code></p></section>
+<section class="field"><h2>Class SLUG</h2><p>class-11-notes</p></section>
+<section class="field"><h2>Subject SLUG</h2><p>physics</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>work-energy-and-power</p></section>
+<section class="field"><h2>Unit Title</h2><p>Work, Energy and Power</p></section>
+<section class="field"><h2>Syllabus Topics</h2><ul><li>Work done by a constant force and a variable force</li><li>Power</li><li>Work-energy theorem; kinetic and potential energy</li><li>Conservation of energy</li><li>Conservative and non-conservative forces</li><li>Elastic and inelastic collisions</li></ul></section>
+<section class="field"><h2>Source</h2><p>platform</p></section>
+<section class="field"><h2>Agent Notes</h2><p>Generated by frontend/scripts/content/topic-rails.ts from concepts/05-conservative-and-non-conservative-forces.json (verbatim slices of that topic's concept record; idea-map diagram generated from its own headline ideas).</p></section>
+<section class="field"><h2>Card</h2><dl class="obj"><div class="kv"><dt>Tag</dt><dd><p>Conservative and Non-Conservative Forces</p></dd></div><div class="kv"><dt>Title</dt><dd><p>Conservative and Non-Conservative Forces</p></dd></div><div class="kv"><dt>Href</dt><dd><p>/class-11-notes/physics/chapters/work-energy-and-power/topics/conservative-and-non-conservative-forces</p></dd></div><div class="kv"><dt>Icon</dt><dd><p>Atom</p></dd></div><div class="kv"><dt>Stat Key</dt><dd><p>pyq:physics</p></dd></div></dl></section>
+<section class="field"><h2>Rows</h2><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Concept</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Conservative forces (gravity, spring, electrostatic) do path-independent work and allow potential energy definition. Non-conservative forces (friction, air resistance) dissipate energy as heat. The general energy equation W_nc = ΔE_mech handles both types — if W_nc = 0, mechanical energy is conserved.</p></dd></div><div class="kv"><dt>Figure</dt><dd><dl class="obj"><div class="kv"><dt>Svg</dt><dd><p>&lt;svg viewBox=&quot;0 0 900 640&quot; role=&quot;img&quot; aria-label=&quot;Conservative and Non-Conservative Forces — quick idea map&quot;&gt;&lt;title&gt;Conservative and Non-Conservative Forces — quick idea map&lt;/title&gt;&lt;rect x=&quot;180&quot; y=&quot;24&quot; width=&quot;540&quot; height=&quot;86&quot; rx=&quot;10&quot; fill=&quot;#e0f2fe&quot; stroke=&quot;#0369a1&quot; stroke-width=&quot;3&quot;/&gt;&lt;text x=&quot;450&quot; y=&quot;58&quot; text-anchor=&quot;middle&quot; font-size=&quot;23&quot; font-weight=&quot;bold&quot; fill=&quot;#0c4a6e&quot;&gt;Conservative and Non-Conservative Forces&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;240&quot; y2=&quot;182&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;233,172 247,172 240,186&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;70&quot; y=&quot;190&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;240&quot; y=&quot;228&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;A force is conservative if&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;260&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;the work done depends only&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;292&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;on initial and final…&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;660&quot; y2=&quot;182&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;653,172 667,172 660,186&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;490&quot; y=&quot;190&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;660&quot; y=&quot;228&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;The work done by a&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;260&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;conservative force around&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;292&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;any closed loop is zero:&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;240&quot; y2=&quot;392&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;233,382 247,382 240,396&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;70&quot; y=&quot;400&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;240&quot; y=&quot;438&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;Conservative forces&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;470&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;(gravity, spring,&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;502&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;electrostatic) allow&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;660&quot; y2=&quot;392&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;653,382 667,382 660,396&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;490&quot; y=&quot;400&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;660&quot; y=&quot;438&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;Non-conservative forces&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;470&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;(friction, air resistance)&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;502&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;dissipate energy as heat.&lt;/text&gt;&lt;/svg&gt;</p></dd></div><div class="kv"><dt>Caption</dt><dd><p>Conservative and Non-Conservative Forces — quick idea map of this topic's headline ideas</p></dd></div></dl></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Formula</p></dd></div><div class="kv"><dt>Kind</dt><dd><p>formula</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Conservative force: work depends only on endpoints; ∮F·dr = 0 (closed loop) Non-conservative force: work depends on path; ∮F·dr ≠ 0 Work-energy relation: W_nc = ΔE_mech = (K_f + U_f) − (K_i + U_i)</p></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Conditions</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Friction does NOT have a potential energy. Many students try to write U_friction = μmgx or something similar. This is WRONG — friction is non-conservative, and the energy it 'removes' from the mechanical system becomes heat, not stored potential energy.  ·  A force being 'conservative' does NOT mean the total energy of the system is conserved. It means mechanical energy can be conserved IF that force is the ONLY force doing work. If you have conservative forces PLUS non-conservative forces, mechanical energy is not conserved even though some forces are conservative.</p></dd></div></dl></div></div><div class="item"><span class="idx">4.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Special cases</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Friction does NOT have a potential energy — the energy becomes heat, not stored PE.  ·  A conservative force does NOT guarantee energy conservation if non-conservative forces are also present.</p></dd></div></dl></div></div><div class="item"><span class="idx">5.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Solved</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Gravity is conservative: Lift a 5 kg mass 3 m up and lower it down. Net work = 0 (closed loop).  ·  Friction is non-conservative: Slide a 2 kg block 5 m on a surface (μ_k = 0.3). Work = −0.3 × 2 × 9.8 × 5 = −29.4 J (depends on path length).</p></dd></div></dl></div></div><div class="item"><span class="idx">6.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Limitation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Normal force and tension are NOT conservative forces — they are constraint forces that do zero work (they are perpendicular to displacement). They don't appear in the energy equation because W = 0, not because they have potential energy.  ·  The term 'non-conservative' does NOT mean 'energy is destroyed.' It means mechanical energy is converted to other forms (heat, sound) that are NOT tracked by potential energy. Total energy is ALWAYS conserved (first law).</p></dd></div></dl></div></div><div class="item"><span class="idx">7.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Derivation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Solve 5 problems classifying forces as conservative or non-conservative using the closed-loop test.  ·  Solve 5 mixed-system problems using W_nc = ΔE_mech.</p></dd></div></dl></div></div><div class="item"><span class="idx">8.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Shortcut</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Closed-loop test: if net work around a closed path is zero, the force is conservative.  ·  Path-independence shortcut: gravity, spring, and electrostatic forces are always conservative.</p></dd></div></dl></div></div><div class="item"><span class="idx">9.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Board question</p></dd></div><div class="kv"><dt>Text</dt><dd><p>A 2 kg block slides 5 m on a rough surface (μ_k = 0.3). Find the work done by friction and the thermal energy generated.  ·  A 1 kg ball is dropped from 20 m. Air resistance does −15 J of work. Find the speed at the ground.</p></dd></div></dl></div></div><div class="item"><span class="idx">10.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Hints</p></dd></div><div class="kv"><dt>Text</dt><dd><p>The closed-loop test is the standard way to justify whether a force is conservative.  ·  Gravity, spring, and electrostatic forces are always conservative — memorize these.</p></dd></div><div class="kv"><dt>Figure</dt><dd><dl class="obj"><div class="kv"><dt>Svg</dt><dd><p>&lt;svg viewBox=&quot;0 0 900 640&quot; role=&quot;img&quot; aria-label=&quot;Conservative and Non-Conservative Forces — topic mind map&quot;&gt;&lt;title&gt;Conservative and Non-Conservative Forces — topic mind map&lt;/title&gt;&lt;rect x=&quot;180&quot; y=&quot;24&quot; width=&quot;540&quot; height=&quot;86&quot; rx=&quot;10&quot; fill=&quot;#ede9fe&quot; stroke=&quot;#6d28d9&quot; stroke-width=&quot;3&quot;/&gt;&lt;text x=&quot;450&quot; y=&quot;58&quot; text-anchor=&quot;middle&quot; font-size=&quot;23&quot; font-weight=&quot;bold&quot; fill=&quot;#4c1d95&quot;&gt;Conservative and non-conservative forces&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;240&quot; y2=&quot;182&quot; stroke=&quot;#7c3aed&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;233,172 247,172 240,186&quot; fill=&quot;#7c3aed&quot;/&gt;&lt;rect x=&quot;70&quot; y=&quot;190&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f5f3ff&quot; stroke=&quot;#7c3aed&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;240&quot; y=&quot;224&quot; text-anchor=&quot;middle&quot; font-size=&quot;20&quot; font-weight=&quot;bold&quot; fill=&quot;#4c1d95&quot;&gt;Conservative&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;290&quot; text-anchor=&quot;middle&quot; font-size=&quot;17&quot; fill=&quot;#5b21b6&quot;&gt;Definition&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;316&quot; text-anchor=&quot;middle&quot; font-size=&quot;17&quot; fill=&quot;#5b21b6&quot;&gt;Exam use&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;660&quot; y2=&quot;182&quot; stroke=&quot;#7c3aed&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;653,172 667,172 660,186&quot; fill=&quot;#7c3aed&quot;/&gt;&lt;rect x=&quot;490&quot; y=&quot;190&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f5f3ff&quot; stroke=&quot;#7c3aed&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;660&quot; y=&quot;224&quot; text-anchor=&quot;middle&quot; font-size=&quot;20&quot; font-weight=&quot;bold&quot; fill=&quot;#4c1d95&quot;&gt;Non-conservative forces&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;290&quot; text-anchor=&quot;middle&quot; font-size=&quot;17&quot; fill=&quot;#5b21b6&quot;&gt;Definition&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;316&quot; text-anchor=&quot;middle&quot; font-size=&quot;17&quot; fill=&quot;#5b21b6&quot;&gt;Exam use&lt;/text&gt;&lt;/svg&gt;</p></dd></div><div class="kv"><dt>Caption</dt><dd><p>Conservative and Non-Conservative Forces — topic mind map of this topic's own sub-topics</p></dd></div></dl></dd></div></dl></div></div><div class="item"><span class="idx">11.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Quick concepts</p></dd></div><div class="kv"><dt>Text</dt><dd><p>A force is conservative if the work done depends only on initial and final positions, not the path.  ·  The work done by a conservative force around any closed loop is zero: ∮F·dr = 0.  ·  Non-conservative forces dissipate mechanical energy as heat, sound, or deformation.  ·  The general energy equation: W_nc = (K_f + U_f) − (K_i + U_i).</p></dd></div></dl></div></div><div class="item"><span class="idx">12.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Key points</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Conservative forces (gravity, spring, electrostatic) allow potential energy definition.  ·  Non-conservative forces (friction, air resistance) dissipate energy as heat.  ·  The closed-loop test: if net work around a closed path is zero, the force is conservative.  ·  When both types act, use W_nc = ΔE_mech (general energy equation).</p></dd></div></dl></div></div><div class="item"><span class="idx">13.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Universal facts</p></dd></div><div class="kv"><dt>Text</dt><dd><p>The fundamental forces of nature (gravity, electromagnetism, strong, weak) are all conservative at the fundamental level. Non-conservative forces like friction are emergent — they arise from many conservative interactions at the microscopic level, with energy going into microscopic degrees of freedom (heat).  ·  Noether's theorem: Conservation of energy is linked to time translation symmetry. Conservative forces are those derived from a potential that is time-independent. Time-dependent forces (like a time-varying field) can be non-conservative even if they are fundamental.</p></dd></div></dl></div></div><div class="item"><span class="idx">14.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More practice</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Explain why gravity is conservative but friction is not, using the closed-loop test.  ·  A spring (k = 400 N/m) is compressed 0.15 m and released. Find the maximum speed of a 0.5 kg mass.  ·  A 3 kg block slides down a rough 30° slope (μ_k = 0.2) of length 6 m. Find the speed at the bottom.</p></dd></div></dl></div></div><div class="item"><span class="idx">15.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More hints</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Friction and air resistance are always non-conservative — they dissipate energy.  ·  Mixed systems (conservative + non-conservative) use W_nc = ΔE_mech.</p></dd></div></dl></div></div><div class="item"><span class="idx">16.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Extra solved</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Mixed system: A 1 kg ball falls 10 m through air. Gravity does +98 J, air resistance does −20 J. Net work = 78 J = ΔK.  ·  Spring is conservative: Compress a spring (k = 500 N/m) by 0.2 m. Work done = ½kx² = 10 J stored as elastic PE.</p></dd></div></dl></div></div><div class="item"><span class="idx">17.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>MCQ drill</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Which of the following is a conservative force? → C  ·  A block slides 5 m on a rough surface (μ_k = 0.3) and returns to its starting point. The net work done by friction is: → C</p></dd></div></dl></div></div><div class="item"><span class="idx">18.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Study notes</p></dd></div><div class="kv"><dt>Text</dt><dd><p><strong>Conservative force definition:</strong> A force is conservative if the work done by it depends ONLY on the initial and final positions, not on the path taken. Equivalently, the work done around any closed loop is zero: ∮F·dr = 0.  ·  <strong>Path independence:</strong> For a conservative force, W = U_i - U_f = -(U_f - U_i) = -ΔU. The work is the negative of the change in potential energy. This means we can define a potential energy function U(r) such that F = -∇U (force is the negative gradient of potential).  ·  <strong>Examples of conservative forces:</strong> Gravity (near Earth: F = -mg, U = mgh), spring force (F = -kx, U = ½kx²), electrostatic force (F = kQq/r², U = kQq/r), uniform electric field (F = qE, U = qEy).</p></dd></div></dl></div></div><div class="item"><span class="idx">19.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Conservative forces allow potential energy definition: F = −∇U.  ·  Conservative force and PE: W = −ΔU (work = negative change in potential energy)  ·  Friction work: W_f = −μNd (always negative; energy dissipated as heat)</p></dd></div></dl></div></div><div class="item"><span class="idx">20.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Friction always does negative work — it removes mechanical energy from the system.  ·  Air resistance (drag) is non-conservative. The work done by drag depends on the path (speed profile). You CANNOT define a 'drag potential energy.' The energy lost to drag becomes heat in the air.  ·  Closed loop test: A 3 kg block slides around a 2 m × 2 m square (μ_k = 0.2). Net work = −0.2 × 3 × 9.8 × 8 = −47 J ≠ 0 (non-conservative).</p></dd></div></dl></div></div><div class="item"><span class="idx">21.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>The closed-loop test is the definitive way to classify a force as conservative or not.  ·  Normal force is conservative (work = 0 when displacement is perpendicular).  ·  NEB frequently asks: 'Is this force conservative? Justify using the closed-loop test.'</p></dd></div></dl></div></div><div class="item"><span class="idx">22.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Friction shortcut: always non-conservative — work = −μNd (depends on path length).  ·  Mixed systems: use W_nc = ΔE_mech — identify non-conservative forces first.  ·  PE definition: only conservative forces allow U to be defined (F = −∇U).</p></dd></div></dl></div></div><div class="item"><span class="idx">23.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>NEB asks both numerical problems and conceptual questions about force classification.  ·  A 10 kg block slides on a rough horizontal surface (μ_k = 0.3) from x=0 to x=5 m, then returns to x=0. Find total work done by friction. Solution: W_going = -μmgd = -0.3×10×9.8×5 = -147 J. W_returning = -147 J. Total W = -294 J ≠ 0. Friction is non-conservative. The energy is dissipated as heat.  ·  A 2 kg mass falls 10 m in air with air resistance. Its speed at the bottom is 12 m/s (instead of 14 m/s without air resistance). Find the work done by air resistance. Solution: Without drag: v = √(2gh) = √(196) = 14 m/s, KE = 196 J. With drag: KE = ½×2×144 = 144 J. Work by drag = ΔKE - W_gravity = 144 - 196 = -52 J.…</p></dd></div></dl></div></div></section>
+  <nav class="pager"><a href="work-energy-and-power--05-collisions.rail.html" title="work-energy-and-power--05-collisions.rail">‹ work-energy-and-power--05-collisions.rail</a><a class="mid" href="../../../../../_subjects/class-11-physics.html">Physics</a><a href="work-energy-and-power--06-elastic-and-inelastic-collisions.rail.html" title="work-energy-and-power--06-elastic-and-inelastic-collisions.rail">work-energy-and-power--06-elastic-and-inelast… ›</a></nav>
+</div></body></html>

@@ -1,0 +1,159 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Mind-Opening Practicals — Class 11 Biology</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Biology</div>
+    <h1 class="doc">Mind-Opening Practicals — Class 11 Biology</h1>
+    <div class="meta"><span>Class 11</span><span>Biology</span></div>
+  </header>
+  <section class="field"><h2>Subject</h2><p>biology</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>all-units</p></section>
+<section class="field"><h2>Exam Source</h2><p>Practical questions</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A 104°F fever endangers you, yet the pathogens die too. If heat harms both sides equally, why does raising body temperature ever HELP fight infection?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-bio11-biomol</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>biomolecules-and-cell-biology</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Fever denatures, not kills directly</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Asymmetric vulnerability: many pathogens (and their enzymes) are tuned to exactly 37°C with narrow tolerance, while your cells tolerate a few degrees more — fever pushes invaders off their optimum while your immune cells (which work FASTER warm: higher kinetic rates) accelerate. It is thermal warfare exploiting different denaturation curves. But past ~105°F your own proteins start failing — the weapon turns on its wielder, which is why extreme fever is an emergency.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Tube worms thrive at scalding, crushing deep-sea vents with no sunlight. Why can't a mammal simply evolve the same trick and colonise the vents?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-bio11-biota</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>easy</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>biota-and-environment</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Why no mammals in deep sea vents</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Energy economics: mammals burn enormous energy staying warm and active (endothermy), demanding rich, constant food — vent oases are tiny and patchy. Tube worms cheat by outsourcing: symbiotic bacteria chemosynthesise vent chemicals, feeding the worm passively at near-zero metabolic cost. A mammal's furnace can't run on a vent's trickle. Body plan sets the energy bill; only low-budget lifestyles fit extreme, food-poor addresses.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Keeping 100 tigers in zoos costs crores yearly; protecting one reserve shelters 100 wild tigers plus thousands of other species. Why is in-situ conservation overwhelmingly cheaper PER SPECIES saved?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-bio11-cons</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>conservation-biology</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Zoos vs habitat math</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Shared infrastructure: a reserve's forests, guards and water serve EVERY resident species simultaneously — the cost per species divides by thousands. A zoo replicates habitat per species at full price (custom diets, vets, enclosures) and preserves no ecological interactions (pollinators, prey webs). Ex-situ is an intensive-care unit: vital for the nearly extinct, absurd as a general strategy. Habitat protects relationships; cages protect individuals.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>An acre supports millions of grass blades, thousands of rabbits, but at most one fox. Why does body size so strictly cap population — and what breaks if you add ten foxes?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-bio11-eco</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>ecology</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Why big animals are rare</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>The 10% law compounds: each level keeps ~10% of the level below, so energy reaching foxes is ~0.1% of grass energy — enough for few large bodies. Bigger bodies also burn more per individual. Add ten foxes: rabbits crash, grass explodes then overgrazes, and foxes starve — the classic overshoot. Pyramid shape is thermodynamics, not preference: size concentrates energy demand while supply thins upward. Top predators are rare by arithmetic.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Penicillin worked universally in 1945; resistant strains appeared within years. Human evolution takes millennia. What TWO bacterial traits compress evolution into months?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-bio11-evo</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>evolutionary-biology</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Antibiotic resistance speed</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(1) Generation time ~20 minutes: a year holds 26,000 bacterial generations vs less than one human generation — selection iterates furiously. (2) Horizontal gene transfer: bacteria swap resistance plasmids directly, spreading a winning mutation through a population sideways in days, not waiting for inheritance. Antibiotics then provide brutal selection, killing 99.9% and crowning the survivors. Fast generations plus shared genes turn hospitals into evolution accelerators — finish every prescription course.</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Insects outnumber all other animal species combined by millions. What THREE design features make the insect body plan evolution's most successful experiment?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-bio11-fauna</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>easy</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>faunal-diversity</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Why insects rule</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Flight (first animals airborne — escape predators, colonise everywhere, find mates/morales efficiently), exoskeleton (armour + waterproofing + muscle-attachment in one cuticle, enabling tiny sizes), and metamorphosis (larva and adult occupy DIFFERENT niches — caterpillar eats leaves, butterfly sips nectar — so young never compete with parents). Small size + flight + life-stage division = multiply niches per species. Diversity follows design that avoids competing with itself.</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Nectar costs the plant precious sugar — given away free to insects. Why is this apparent waste actually cheaper than the wind-pollination alternative?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-bio11-flora</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>easy</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>floral-diversity</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Why flowers bribe</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Precision beats volume: wind pollination wastes 99.99% of pollen (broadcast billions, hit one stigma by luck — hence hay fever). A nectar bribe hires a guided courier that flies flower-to-flower of the SAME species, delivering most pollen on target. The sugar salary is tiny beside the saved pollen mountain. Flowers outsourced delivery; grasses pay the broadcast tax. Coevolution turned waste into wages.</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Viruses reproduce and evolve but don't eat, breathe or maintain themselves. If you must vote ALIVE or NOT — what single criterion decides your vote, and why do textbooks quarrel?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-bio11-intro</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>easy</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>introduction-to-biology</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Is a virus alive</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Vote hinges on METABOLISM vs REPLICATION: the alive-camp demands independent metabolism (viruses: none — inert crystals outside hosts); the other camp accepts replication-with-evolution (viruses: yes). Textbooks quarrel because 'life' is a human category, not a natural joint — viruses sit exactly on the definitional seam. The productive answer: viruses are obligate molecular parasites, evolving replicators without cells. The label matters less than the mechanism.</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Soap-and-water beats alcohol sanitiser against stomach bugs (norovirus) though sanitiser kills more germs on contact. What does soap REMOVE that sanitiser leaves behind?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-bio11-micro</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>introductory-microbiology</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Handwash vs sanitiser</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>The MICROBES THEMSELVES: soap molecules pry grease and debris off skin and water RINSES everything down the drain — physical removal, including non-enveloped viruses alcohol can't dissolve (norovirus lacks the lipid coat alcohol attacks). Sanitiser kills in place but leaves corpses, spores and chemicals on your hands — and fails on dirty/greasy hands where germs hide under grime. Removal beats murder when the enemy has armour.</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Mountains have a sharp TREELINE: lush forest below, zero trees above — though alpine flowers thrive higher. Same cold, same wind. What resource runs out for trees but not herbs?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-bio11-veg</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>vegetation</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Treeline mystery</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>A warm-enough GROWING SEASON for wood: trees must build perennial woody tissue and mature new shoots yearly, needing several warm weeks; above the treeline summers are too short/cold to ripen wood, so shoots freeze back annually. Herbs dodge this by living fast (complete life in weeks) or hibernating underground (perennial roots, disposable tops). The treeline is a time limit, not a cold limit — wood is slow capital that short summers can't fund.</p></div></div></div></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../_subjects/class-11-biology.html">Biology</a><span></span></nav>
+</div></body></html>

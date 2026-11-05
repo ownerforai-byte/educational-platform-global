@@ -1,0 +1,174 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Calculation of Empirical and Molecular Formula from Percentage Composition</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Chemistry  /  Stoichiometry</div>
+    <h1 class="doc">Calculation of Empirical and Molecular Formula from Percentage Composition</h1>
+    <div class="meta"><span>Class 11</span><span>Chemistry</span><span>Stoichiometry</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>stoichiometry</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-proble</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Meaning of the two formulas</h4></li><li>The <strong>empirical formula</strong> gives the simplest whole-number ratio of the atoms of each element present in a compound (CH₂O for glucose). The <strong>molecular formula</strong> gives the actual number of each kind of atom in one molecule (C₆H₁₂O₆ for glucose). They are related by an integer n: molecular formula = (empirical formula)ₙ, where <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.3612em;vertical-align:-0.4811em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8801em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">empirical formula mass</span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">molecular mass</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4811em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>, always a whole number (1, 2, 3 …).</li><li><h4>2. Standard procedure from percentage composition</h4></li><li>(1) Take the percentage of each element as its mass in 100 g of the compound. (2) Divide each mass by the atomic mass of that element to obtain the number of moles. (3) Divide all the mole values by the smallest one. (4) If the ratios are not whole numbers, multiply them by a suitable small integer (2, 3, …) to get the simplest whole-number ratio — this is the empirical formula. (5) Calculate the empirical formula mass and use n = molecular mass/empirical formula mass to write the molecular formula.</li><li><h4>3. Worked example (percentage composition)</h4></li><li>A compound contains 40% C, 6.67% H and 53.33% O with molecular mass 180. Moles: C = 40/12 = 3.33, H = 6.67/1 = 6.67, O = 53.33/16 = 3.33. Divide by 3.33 → C : H : O = 1 : 2 : 1 → empirical formula CH₂O, formula mass 30. n = 180/30 = 6, so the molecular formula is C₆H₁₂O₆ (glucose).</li><li><h4>4. Combustion analysis (organic compounds)</h4></li><li>An organic compound is burnt completely in excess oxygen; the CO₂ absorbed in KOH solution gives the mass of carbon (mass C = mass CO₂ × 12/44) and the H₂O absorbed in anhydrous CaCl₂ gives the mass of hydrogen (mass H = mass H₂O × 2/18). Any remaining mass is usually oxygen determined <strong>by difference</strong>. The masses of C and H are then converted to moles exactly as above, the formula is determined, and the molecular mass (from vapour density, M = 2 × VD) gives n.</li><li><h4>5. Related calculations</h4></li><li>• <strong>Percentage composition from a formula</strong> (the reverse calculation): % element = (n × atomic mass of element ÷ molar mass of compound) × 100.</li><li>• <strong>Hydrated salts:</strong> the water of crystallisation is found from the mass lost on heating and is included in the ratio (e.g. CuSO₄·5H₂O).</li><li>• <strong>Equivalent/mole-ratio problems:</strong> reacting masses or volumes are converted to moles and reduced to the simplest ratio to obtain a formula (e.g. determining x in FeₓOᵧ from oxidation data).</li><li><h4>6. Applications</h4></li><li>• Identification and characterisation of unknown organic and inorganic compounds in research and quality control.</li><li>• Pharmaceutical analysis (confirming that a drug matches its declared formula) and forensic/clinical analysis of unknown samples.</li><li>• Fuel, polymer, fertiliser and cement analysis, where the elemental composition fixes properties such as calorific value, degree of unsaturation or nutrient content.</li><li>• Foundation of instrumental methods — mass spectrometry gives the molecular mass, so an empirical formula from combustion analysis plus an MS molecular ion gives the molecular formula directly.</li><li><h4>7. Limitations</h4></li><li>• Rounding is dangerous: if the smallest quotient gives ratios near 0.5 (e.g. 1 : 1.5), the whole set must be multiplied by 2 (or 3 for 1 : 1.33 : 1.67) — stopping early gives the wrong formula.</li><li>• The result depends entirely on the accuracy of the percentage analysis. Errors propagate, especially for the element found 'by difference' (usually oxygen), which accumulates the errors of all the others.</li><li>• The empirical formula does <strong>not</strong> identify the compound. Many different compounds share one empirical formula — CH₂O represents formaldehyde, acetic acid, lactic acid and glucose — so the molecular mass (or mass-spectrometric data) is essential to fix the molecular formula.</li><li>• Molecular masses obtained from vapour density assume ideal-gas behaviour; association or dissociation (carboxylic acids, PCl₅, N₂O₄) gives an apparent molecular mass and hence a wrong n.</li><li>• The method suits pure, well-defined compounds. For non-stoichiometric compounds, polymers with a distribution of chain lengths, hydrates of variable composition and mixtures, no single empirical formula exists.</li><li>• Combustion analysis cannot distinguish elements present in small amounts (nitrogen, halogens, sulfur) unless special absorption trains or instrumental methods (CHN analyser) are used, and hygroscopic or volatile samples give poor data.</li><li><strong>Fact.</strong> 1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).</li><li><strong>Fact.</strong> n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.</li><li><strong>Fact.</strong> Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ Empirical and molecular formula are the same for every compound. ✅ They coincide only when n = 1; for glucose the empirical formula is CH₂O but the molecular formula is C₆H₁₂O₆.</li><li>❌ The empirical formula can be found without the molecular mass. ✅ It can — but the molecular formula needs the molecular mass (or vapour density) to give n.</li><li>❌ A ratio of 1 : 1.5 is acceptable as an empirical formula. ✅ Ratios must be whole numbers, so multiply by 2 to obtain 2 : 3.</li><li>❌ Oxygen must always be estimated directly. ✅ In combustion analysis oxygen is normally found by difference (total mass − mass of C − mass of H).</li><li>❌ Two compounds with the same empirical formula are the same substance. ✅ They may be isomers or entirely different compounds with different molecular masses.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>A compound contains 40% C, 6.67% H and 53.33% O and has molecular mass 180. Determine its empirical and molecular formula.</li><li>0.2 g of an organic compound on combustion gives 0.44 g CO₂ and 0.18 g H₂O. Find its empirical formula.</li><li>An oxide of nitrogen contains 30.4% nitrogen and has vapour density 46. Find its molecular formula.</li><li>A hydrated salt contains 36.1% water of crystallisation and its anhydrous salt has molar mass 120 g mol⁻¹. Find the number of water molecules per formula unit.</li><li>Explain why an empirical formula alone cannot identify a compound, with a suitable example.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">molecular formula</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord text"><span class="mord">empirical formula</span></span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.2519em;vertical-align:-0.8804em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3714em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">empirical formula mass</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord text"><span class="mord">molecular mass</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8804em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord text"><span class="mord">element</span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.113em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">100</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">%</span><span class="mord text"><span class="mord">element</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.1574em;vertical-align:-0.836em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">element</span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.836em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">;</span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">divide all values by the smallest</span></span></span></span></span></span></li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">mass of C</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord text"><span class="mord">mass of </span></span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0278em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">44</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">12</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">mass of H</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord text"><span class="mord">mass of </span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.0813em;">H</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3011em;"><span style="top:-2.55em;margin-left:-0.0813em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.0278em;">O</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.0074em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.3214em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">18</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></li><li>n = m / M</li><li>n = V / 22.4 (g at STP)</li><li>% yield = (actual / theoretical) × 100</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Glucose, fructose, formaldehyde, acetic acid and lactic acid all have the empirical formula CH₂O but different molecular formulas.</li><li>Molecular mass from vapour density: M = 2 × VD (hydrogen reference).</li><li>Modern instruments (CHN analysers and mass spectrometers) determine the empirical and molecular formula in minutes, but the arithmetic logic remains the same as the classical combustion-train method.</li><li>1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).</li><li>n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.</li><li>Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li><strong>Problem:</strong> 0.2 g of an organic compound gives 0.44 g CO₂ and 0.18 g H₂O. Find the empirical formula. <strong>Solution:</strong> mass C = 0.44 × 12/44 = 0.12 g (0.01 mol); mass H = 0.18 × 2/18 = 0.02 g (0.02 mol); oxygen by difference = 0.2 − 0.12 − 0.02 = 0.06 g = 0.00375 mol. Divide by 0.00375 → C : H : O = 2.67 : 5.33 : 1 → ×3 → 8 : 16 : 3, so the empirical formula is C₈H₁₆O₃ — illustrating how careful the ratio step must be.</li><li><strong>Problem:</strong> An oxide of nitrogen contains 30.4% N and has VD = 46. <strong>Solution:</strong> N = 30.4/14 = 2.17, O = 69.6/16 = 4.35 → divide by 2.17 → 1 : 2, empirical formula NO₂, formula mass 46; n = 92/46 = 2 → molecular formula N₂O₄.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Learn the sequence exactly: percentage → mass → moles → divide by the smallest → whole numbers → n → molecular formula.</li><li>Never leave a fractional ratio; multiply to whole numbers before computing the formula mass.</li><li>Remember the by-difference rule for oxygen and the conversion factors 12/44 for carbon and 2/18 for hydrogen.</li></ul></section>
+<section class="field"><h2>Visual Type</h2><p>empirical-molecular-formula</p></section>
+<section class="field"><h2>Key Points</h2><ul><li>• Calculation of empirical</li><li>• Molecular formula from % composition</li><li>• Solving related numerical problems</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><p class="empty">—</p></section>
+<section class="field"><h2>Numericals</h2><ul><li>Use  n = m / M  — pick reasonable values, solve, and check the units.</li><li>Use  n = V / 22.4 (g at STP)  — pick reasonable values, solve, and check the units.</li><li>Use  % yield = (actual / theoretical) × 100  — pick reasonable values, solve, and check the units.</li></ul></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following is a distinct sub-topic under &quot;Calculation of empirical and molecular formula from % com…&quot;?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Calculation of empirical</li><li>Molecular formula from % composition</li><li>Unrelated topic</li><li>None of the above</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Calculation of empirical is listed among the official sub-ideas of Calculation of empirical and molecular formula from % com…; the others are not part of this topic.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A common examiner point on &quot;Calculation of empirical and molecular formula from % com…&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div></section>
+<section class="field"><h2>Source</h2><p>generated</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
+<section class="field"><h2>Bounds</h2><ul><li>Covers only: calculation of empirical, molecular formula from % composition, solving related numerical problems (within Stoichiometry).</li><li>Out of scope here: topics of neighbouring units in Chemistry — don't mix them.</li><li>State the limit / condition where a formula or rule stops being valid before applying it.</li><li>Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses).</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Calculation of empirical and molecular formula from % com… (Stoichiometry, Chemistry, class-11-notes) covers Calculation of empirical, molecular formula from % composition, solving related numerical problems. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.</p></section>
+  <nav class="pager"><a href="06-yield-calculations.html" title="Theoretical Yield, Experimental Yield and Percentage Yield">‹ Theoretical Yield, Experimental Yield and Per…</a><a class="mid" href="../../../../../_subjects/class-11-chemistry.html">Chemistry</a><a href="07-theoretical-yield-experimental-yield-and-yield.html" title="Theoretical yield, experimental yield and % yield">Theoretical yield, experimental yield and % y… ›</a></nav>
+</div></body></html>

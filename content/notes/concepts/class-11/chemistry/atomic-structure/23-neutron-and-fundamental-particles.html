@@ -1,0 +1,180 @@
+<!doctype html><html><head><meta charset="utf-8"><title>The Neutron and the Fundamental Particles Table</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Chemistry  /  Atomic Structure</div>
+    <h1 class="doc">The Neutron and the Fundamental Particles Table</h1>
+    <div class="meta"><span>Class 11</span><span>Chemistry</span><span>Atomic Structure</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>atomic-structure</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>discovery-of-neutron-and-fundamental-particles</p></section>
+<section class="field"><h2>Relevance</h2><p><code>85</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>Focus of this tab</h4></li><li>Chadwick's discovery of the neutron and the complete subatomic-particle data table that the nuclear atom needs (electron, proton, neutron with charge, mass, discoverer and location).</li><li><h4>Why a third particle had to exist</h4></li><li>Mass problem: helium (Z = 2) should weigh 2 protons ≈ 2 u, but weighs 4 u. Charge problem: nitrogen (A = 14, Z = 7) would need 7 electrons inside the nucleus under a proton-only model, making the atom's magnetism and the electron's confinement impossible (uncertainty: electrons cannot be confined to 10⁻¹⁵ m). A neutral, massive particle was required.</li><li><h4>Chadwick's experiment (1932)</h4></li><li>Polonium's α-particles hit beryllium and released a highly penetrating, neutral radiation: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span><span class="mord text"><span class="mord">Be</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin"><span class="mbin">+</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">He</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8974em;vertical-align:-0.0833em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">12</span></span></span></span></span></span></span></span></span><span class="mord text"><span class="mord">C</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin"><span class="mbin">+</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.4306em;"></span><span class="mord text"><span class="mord">n</span></span></span></span></span>. The radiation knocked protons out of paraffin wax; by conservation of momentum and energy the unknown particle's mass was calculated as ≈1.15–1.16 u — close to the proton's. Being neutral, it was unaffected by E/B fields and could pass through centimetres of lead.</li><li><h4>The fundamental particles table (memorise)</h4></li><li>• Electron (e⁻): charge −1.602 × 10⁻¹⁹ C (−1 unit), mass 9.109 × 10⁻³¹ kg = 0.000549 u = 1/1837 of H; discovered by J. J. Thomson (1897); location: revolving in orbitals outside the nucleus.</li><li>• Proton (p): +1.602 × 10⁻¹⁹ C (+1), 1.673 × 10⁻²⁷ kg = 1.00728 u; Goldstein's rays/identified by Thomson, named by Rutherford (1919–20); location: nucleus.</li><li>• Neutron (n): 0, 1.675 × 10⁻²⁷ kg = 1.00867 u (heaviest of the three); Chadwick (1932); location: nucleus. Free neutrons β-decay (half-life ≈ 11 min) because they are slightly heavier than a proton plus an electron.</li><li><h4>What the trio explains</h4></li><li>Isotopes (same Z, different N), radioactivity (nuclear instability), nuclear stability (N/Z ratio ≈ 1 for light nuclei, rising to ≈1.5 for heavy), fission/fusion energy, and the notation ᴬZX that summarises every nuclide.</li><li>Mass number A, the isotope concept it makes possible, and the average-atomic-mass calculation — the accounting that sits on top of the fundamental particles.</li><li><h4>Mass number</h4></li><li>A = number of protons + number of neutrons = Z + N. It is always a whole number because it counts particles; the <em>atomic mass</em> measured for an element is usually not a whole number because it is a weighted average over isotopes (e.g. Cl = 35.45 u). Notation ᴬZX places A upper-left, Z lower-left.</li><li><h4>Isotopes (same Z, different A)</h4></li><li>• Hydrogen: ¹H protium, ²H deuterium (D, in heavy water D₂O), ³H tritium (radioactive) — the only element whose isotopes have separate names.</li><li>• Carbon: ¹²C (98.9%, the amu standard), ¹³C (NMR), ¹⁴C (dating). Chlorine: ³⁵Cl (75%), ³⁷Cl (25%). Uranium: ²³⁵U (fissile, 0.7%), ²³⁸U (99.3%).</li><li>• Chemical properties are almost identical (same electron configuration); physical properties differ with mass (density, diffusion rate, spectra — the D line shift identified deuterium).</li><li><h4>Average atomic mass (the numerical pattern)</h4></li><li>Average = Σ(abundance × isotopic mass). Cl: 0.75 × 35 + 0.25 × 37 = 35.5 u. Ne: 0.905 × 20 + 0.0027 × 21 + 0.0923 × 22 ≈ 20.18 u. Working backwards: given the average and one abundance, the second isotopic mass can be found.</li><li><h4>Separation and uses</h4></li><li>Because isotopes differ only in mass, separation uses mass-dependent processes: gaseous diffusion (UF₆) or centrifugation for ²³⁵U, electrolysis/distillation for D₂O. Uses: ¹⁴C dating, ¹³¹I thyroid therapy, ⁶⁰Co radiotherapy, D₂O as a neutron moderator, tracer studies in metabolism.</li><li><h4>Relation to Dalton's theory</h4></li><li>Isotopes violate Dalton's postulate that all atoms of an element are identical in mass; the nuclear model plus the neutron explains them — same proton count, different neutron count.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ The neutron is lighter than the proton. ✅ It is heavier (1.675 vs 1.673 × 10⁻²⁷ kg) — hence free-neutron β-decay.</li><li>❌ The neutron was discovered before the proton was named. ✅ Proton named 1919–20; neutron 1932.</li><li>❌ Neutrons carry a small charge. ✅ Exactly zero charge; that is why they penetrate deeply and leave no ion tracks.</li><li>❌ Mass number is the atomic mass. ✅ A is a whole-number particle count; atomic mass is the weighted average in u.</li><li>❌ Isotopes have different chemical properties. ✅ Nearly identical chemically; they differ in mass and nuclear stability.</li><li>❌ ²³⁵U and ²³⁸U are isobars. ✅ They are isotopes (same Z = 92); isobars need equal A.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Explain the mass and charge problems that predicted the neutron's existence.</li><li>Describe Chadwick's beryllium experiment with the nuclear equation.</li><li>Complete the fundamental-particles table (particle, charge, mass, discoverer, location).</li><li>Why is the N/Z ratio higher in heavy stable nuclei?</li><li>Why is the atomic mass of chlorine 35.5 and not a whole number?</li><li>List the three isotopes of hydrogen with one use of deuterium.</li><li>An element has 90% of an isotope of mass 20 and 10% of mass 22; find the average atomic mass and identify the element.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.9474em;vertical-align:-0.0833em;"></span><span class="mord"><span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">9</span></span></span></span></span></span></span></span></span><span class="mord text"><span class="mord">Be</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin"><span class="mbin">+</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8641em;"></span><span class="mord text"><span class="mord">He</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel"><span class="mrel">→</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">12</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.9474em;vertical-align:-0.0833em;"></span><span class="mord text"><span class="mord">C</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin"><span class="mbin">+</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">n</span></span><span class="mpunct">;</span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">Z</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span></span></span></span></span></li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">1.675</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.0585em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">27</span></span></span></span></span></span></span></span></span><span class="mspace"> </span><span class="mord text"><span class="mord">kg</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8694em;vertical-align:-0.2861em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">p</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2861em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.5806em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">m</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⇒</span><span class="mspace"> </span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">free neutron decays</span></span></span></span></span></span></li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.7667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.0715em;">Z</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8778em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.109em;">N</span><span class="mpunct">;</span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">average mass</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.6em;vertical-align:-0.55em;"></span><span class="mop op-symbol large-op" style="position:relative;top:0em;">∑</span><span class="mopen">(</span><span class="mord text"><span class="mord">abundance</span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">isotopic mass</span></span><span class="mclose">)</span></span></span></span></span></li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Chadwick received the 1935 Nobel Prize for the neutron; it made the fission chain reaction conceivable.</li><li>Neutron half-life outside the nucleus ≈ 10.7 min.</li><li>The neutron's magnetic moment is not zero (−1.91 nuclear magnetons) despite zero charge — evidence of internal quark structure.</li><li>¹²C defines the unified mass unit: 1 u = 1/12 mass of a ¹²C atom = 1.66 × 10⁻²⁷ kg.</li><li>Heavy water (D₂O) is used as moderator-cum-coolant in CANDU reactors.</li><li>Uranium enrichment to ≈3–5% ²³⁵U is what reactor fuel requires (weapons need ≈90%).</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li><strong>Problem:</strong> An atom has Z = 6 and A = 14. Give p, n, e and its isotope name. <strong>Solution:</strong> 6 protons, 8 neutrons, 6 electrons — carbon-14 (¹⁴C), the dating isotope.</li><li><strong>Problem:</strong> An element of average mass 10.8 consists of isotopes 10 and 11. Find abundances. <strong>Solution:</strong> let x be the 10-isotope fraction: 10x + 11(1 − x) = 10.8 → x = 0.2 → 20% mass-10 (boron).</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>The table (charge, mass, discoverer, location) is a guaranteed short-question — memorise all four columns.</li><li>Use the uncertainty principle (electron cannot fit in the nucleus) as the conceptual argument for the neutron.</li><li>Keep 'mass number' (integer count) and 'atomic mass' (average in u) strictly separate.</li><li>Attach the isotope discussion to Dalton's limitation — it is the standard link.</li><li>The Neutron — Discovery &amp; Fundamental Particle Characteristics is based on fundamental principles.</li></ul></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The particle with almost the same mass as a proton but zero charge is the:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Electron</li><li>Positron</li><li>Neutron</li><li>Neutrino</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Neutrons were discovered using bombardment of:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Nitrogen with protons</li><li>Beryllium with α-particles</li><li>Gold with electrons</li><li>Hydrogen with γ-rays</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>The number of neutrons in ⁴¹Ca (Z = 20) is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>20</li><li>21</li><li>41</li><li>61</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Visual Type</h2><p>atomic-particles</p></section>
+<section class="field"><h2>Source</h2><p>ravikishan</p></section>
+<section class="field"><h2>Filename</h2><p>23-neutron-and-fundamental-particles.json</p></section>
+<section class="field"><h2>Key Points</h2><ul><li>Connection of The Neutron — Discovery &amp; Fundamental Particle Characteristics to other topics</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Statement 1: Definition of The Neutron — Discovery &amp; Fundamental Particle Characteristics</li><li>Statement 2: Theorem related to The Neutron — Discovery &amp; Fundamental Particle Characteristics</li><li>Statement 3: Condition for The Neutron — Discovery &amp; Fundamental Particle Characteristics to be valid</li><li>Statement 4: Principle governing The Neutron — Discovery &amp; Fundamental Particle Characteristics</li><li>Statement 5: Corollary or consequence of The Neutron — Discovery &amp; Fundamental Particle Characteristics</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Recall the formula for The Neutron — Discovery &amp; Fundamental Particle Characteristics.</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Definition and significance of The Neutron — Discovery &amp; Fundamental Particle Characteristics.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Q1. Define The Neutron — Discovery &amp; Fundamental Particle Characteristics.</li><li>Q3. Problem on The Neutron — Discovery &amp; Fundamental Particle Characteristics.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>The Neutron — Discovery &amp; Fundamental Particle Characteristics covers essential principles and applications.</p></section>
+<section class="field"><h2>Special Notes</h2><p class="empty">—</p></section>
+<section class="field"><h2>Exam Notes</h2><p class="empty">—</p></section>
+<section class="field"><h2>Important Tasks</h2><p class="empty">—</p></section>
+<section class="field"><h2>Animation3 D</h2><p>chemistry</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>chemistry</p></section>
+  <nav class="pager"><a href="22-proton-and-anode-rays.html" title="Discovery of the Proton — Anode Rays and Nuclear Transmutation">‹ Discovery of the Proton — Anode Rays and Nucl…</a><a class="mid" href="../../../../../_subjects/class-11-chemistry.html">Chemistry</a><a href="24-atomic-number.html" title="Atomic Number — Meaning, Moseley's Evidence and Uses">Atomic Number — Meaning, Moseley's Evidence a… ›</a></nav>
+</div></body></html>

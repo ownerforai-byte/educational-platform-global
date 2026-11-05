@@ -1,0 +1,159 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Mind-Opening Practicals — Class 11 Chemistry</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Chemistry</div>
+    <h1 class="doc">Mind-Opening Practicals — Class 11 Chemistry</h1>
+    <div class="meta"><span>Class 11</span><span>Chemistry</span></div>
+  </header>
+  <section class="field"><h2>Subject</h2><p>chemistry</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>all-units</p></section>
+<section class="field"><h2>Exam Source</h2><p>Practical questions</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Salt is NaCl — why do governments force iodide into it? What single thyroid molecule makes this trace additive a public-health triumph?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-app</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>easy</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>applied-chemistry</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Why iodised salt</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Thyroxine (T4), the metabolism-setting hormone, needs FOUR iodine atoms per molecule — no iodine, no thyroxine, causing goitre and cretinism (irreversible mental impairment in children). Humans can't make iodine; mountain soils lack it. Adding micrograms of iodide to universal salt delivers the missing atom to everyone silently. Two-cent chemistry preventing brain damage at population scale: the cheapest molecule in medicine.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Benzene has THREE double bonds yet refuses addition reactions (unlike alkenes) and does substitution instead. What is it 'protecting' — and what energy price would addition charge?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-aro</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>aromatic-hydrocarbons</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Benzene's refusal</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>It protects AROMATICITY: the 6 π-electrons delocalised in a ring (Hückel 4n+2), worth ~150 kJ/mol of resonance stabilisation. Addition would saturate one double bond and destroy the ring current — paying the full aromaticity price. Substitution (replace H, keep all three double bonds) preserves the sextet. Benzene's chemistry is conservation of delocalisation: every reaction is audited against the ring's special stability.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Opposite charges attract — so why doesn't the electron spiral into the proton in a trillionth of a second? What quantum rule forbids the crash?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-atom</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>atomic-structure</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Why electrons don't crash</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>The Heisenberg/de Broglie confinement: squeezing an electron near the nucleus spikes its kinetic energy (Δx·Δp ≥ ħ/2) — localisation costs energy that outweighs Coulomb gain below ~the Bohr radius. Plus only standing-wave orbits fit (integer wavelengths around the nucleus); the 'crash trajectory' is not a valid wave. The atom is an equilibrium between attraction pulling in and quantum confinement pushing out. Classical orbits decay; quantum waves persist.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Ethanol (drinking alcohol) and dimethyl ether (toxic gas) share C₂H₆O. How can identical atoms be a beverage and a poison — and what does this prove about formulas?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-basic-org</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>basic-concept-of-organic-chemistry</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Same formula, different person</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Connectivity is identity: ethanol (C–C–O–H) offers an –OH for hydrogen bonding (liquid, drinkable in dilution); ether (C–O–C) hides oxygen centrally (gas, anaesthetic, toxic). Same atoms, different HANDSHAKES — properties emerge from structure, not composition. This is why molecular formulas alone are chemically illiterate: C₂H₆O names two strangers. Structure determines function — the founding lesson of all organic chemistry.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Carbon monoxide kills at tiny concentrations though oxygen is 200,000× more abundant in air. How does CO win a competition it should lose 200,000-to-1?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-bioinorg</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>bio-inorganic-chemistry</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Haemoglobin's iron trap</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Affinity, not abundance: haemoglobin binds CO ~250× more strongly than O₂ (better orbital overlap with iron). Each captured CO also locks neighbouring subunits in high-affinity mode (cooperative binding backfires), so a little CO disables whole haemoglobin molecules. At 0.1% CO in air, half your haemoglobin is captured — oxygen present but undeliverable. Poisoning is competitive binding where the trace gas holds the tighter grip.</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>If H₂O were LINEAR like CO₂, Earth's oceans, weather and life would be unrecognisable. Trace THREE planetary consequences of one bent molecule.</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-bond</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>chemical-bonding-and-shapes-of-molecules</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Water's bent empire</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(1) Polarity → hydrogen bonding → liquid water at Earth's temperatures (linear H₂O would boil near −100°C like H₂S); (2) high heat capacity → oceans buffer climate; (3) ice floats (H-bond lattice holds molecules apart) → lakes freeze top-down, insulating life below instead of freezing solid. One 104.5° angle underwrites oceans, climate stability and winter survival. Molecular geometry scales to planetary destiny.</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Haber plants run at 200 atmospheres — enormously expensive steel and energy. Using Le Chatelier, justify why the industry pays this price, and why it stops at 200 instead of 2000.</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-eq</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>chemical-equilibrium</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Haber pressure gamble</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>N₂ + 3H₂ ⇌ 2NH₃ shrinks 4 gas moles to 2: pressure squeezes equilibrium toward ammonia (fewer moles favoured). At 1 atm conversion is ~10%; at 200 atm it multiplies several-fold — billions in extra fertiliser. But costs scale too: thicker vessels, bigger compressors, safety margins. 200 atm is the economic optimum where marginal ammonia revenue equals marginal compression cost. Le Chatelier points the direction; accounting picks the pressure.</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Aluminium is the most abundant metal in Earth's crust, yet it was once costlier than gold (Napoleon's aluminium cutlery). What single chemical property delayed its age by a century?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-metals</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>chemistry-of-metals</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Aluminium paradox</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Its extreme reactivity: Al³⁺ clings to oxygen (ΔG of Al₂O₃ hugely negative), so carbon reduction — which freed iron and copper for millennia — cannot touch it. Only ELECTROLYSIS (Hall-Héroult, 1886), ripping oxygen off with electricity instead of carbon, unlocked it. Abundance never mattered; extractability did. The metal's age waited on cheap electricity, turning a precious curiosity into window frames within decades.</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>The same chlorine disinfects drinking water and killed soldiers as poison gas. What decides whether Cl₂ is a guardian or a weapon — dose, form, or target?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-nonmetals</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>easy</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>chemistry-of-non-metals</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Chlorine cleans and kills</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>All three, but FORM dominates: dissolved HOCl/OCl⁻ at ppm levels oxidises microbial enzymes selectively (guardian); inhaled Cl₂ gas floods lungs, forming HCl on wet tissue (weapon). Dose scales the damage; target vulnerability shapes it. Paracelsus' rule rules chemistry: no substance is purely safe or purely poisonous — chlorine's split personality is concentration plus delivery route, not a changed molecule.</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Mendeleev left GAPS in his table and predicted elements nobody had seen — risking ridicule. Why was a table with HOLES stronger than a complete list of known elements?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-class</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>easy</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>classification-of-elements</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Mendeleev's gamble</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Because holes are PREDICTIONS: a gap at mass ~72 with specified density, melting point and oxide formula (eka-silicon → germanium, found matching almost exactly) proves the pattern governs nature, not just catalogues it. A complete list describes; a gappy table dares. Mendeleev bet that periodicity was LAW — every confirmed prediction converted sceptics. Science rewards the framework that tells you what you're missing.</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>Atomic radius SHRINKS across a period but GROWS down a group — opposite trends from the same table. Explain both with the two competing forces.</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-periodic</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>classification-of-elements-and-periodic-table</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Atomic size zigzag</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Across a period: protons added to the SAME shell pull harder (rising effective nuclear charge) while shielding barely changes → contraction. Down a group: each row adds a whole NEW shell, and distance beats charge — outer electrons sit farther despite more protons → expansion. One table, two tug-of-wars: across, charge wins; down, distance wins. Every periodic trend is this kind of contest between nuclear pull and shell real estate.</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>Chemists count atoms in 'moles' (6.022×10²³) instead of billions. A dozen eggs works the same way. What practical weighing problem does the mole solve that direct counting never could?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-found</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>easy</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>foundation-and-fundamentals</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Mole as dozen</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Atoms are uncountable individually but weighable collectively: the mole converts particle counts into GRAMS via atomic mass (12 g carbon = 1 mol = 6.022×10²³ atoms). Reactions need atom RATIOS (2H₂ + O₂ → 2H₂O), and the mole lets you measure those ratios on a balance instead of counting particles for eternity. It is a dozen scaled to the atomic world — the bridge between the invisible equation and the visible weighing scale.</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>Tertiary carbocations form easily; methyl almost never. The positive charge is identical (+1). What do the neighbouring alkyl groups DO to the empty p-orbital?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-fund-org</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>fundamental-principles-of-organic-chemistry</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Carbocation stability order</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>They DONATE electron density through hyperconjugation (adjacent C–H σ bonds overlapping the empty p) and inductive release — spreading the deficiency over more atoms. Tertiary has 9 hyperconjugative C–H bonds feeding the centre; methyl has 3. More neighbours = more sharing = lower energy. Stability order 3° &gt; 2° &gt; 1° &gt; methyl is really a census of helpers: the charge never sits alone if alkyl groups can dilute it.</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>Natural gas (methane) burns with a clean blue flame; a petrol spill burns orange and sooty. Both are hydrocarbons meeting oxygen. What molecular difference smokes one and not the other?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-hydro</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>hydrocarbons</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Methane vs petrol flames</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>The carbon-to-hydrogen RATIO and chain length. Methane (CH₄, C:H = 1:4) mixes with air instantly as a gas and oxidises completely to CO₂ + H₂O. Petrol's long chains (∼C₈, more carbon per molecule) vaporise unevenly; in oxygen-starved zones carbon atoms find each other instead of oxygen — clustering into glowing soot (incandescence = orange). Soot is unburned carbon's confession: too much fuel skeleton, too little oxygen access.</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>Half the nitrogen atoms in your body passed through a Haber-Bosch factory. What natural bottleneck does industrial fixation bypass — and why can't legumes alone feed 8 billion?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-modern</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>easy</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>modern-chemical-manufactures</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Why fertilisers rule</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Usable nitrogen: N₂ gas is inert (triple bond ~945 kJ/mol), and only lightning plus nitrogen-fixing microbes trickle it into soil — far below crop demand at scale. Haber-Bosch brute-forces the triple bond with heat, pressure and catalysts, flooding fields with ammonia. Legumes fix nitrogen free but slowly and only on their own acres; factories concentrate centuries of bacterial work into hours. The green revolution is applied equilibrium chemistry feeding half of humanity.</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>Iron kept in dry air doesn't rust; in oxygen-free water it doesn't rust either. Rust demands BOTH. What electrochemical partnership makes each partner useless alone?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-redox</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>oxidation-and-reduction</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Rusting needs both</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Rusting is a mini-battery: iron oxidises at anodic spots (Fe → Fe²⁺ + 2e⁻) while OXYGEN + WATER accept those electrons at cathodic spots (O₂ + 2H₂O + 4e⁻ → 4OH⁻). No water = no electrolyte, circuit open. No oxygen = no electron acceptor, reaction stalls. Dry air lacks the ion highway; deaerated water lacks the electron sink. Rust proves corrosion is electrochemistry: two half-reactions holding hands across a water film.</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>Rice cooks faster in a pressure cooker at the same flame. The heat source is identical — so what does raised pressure change about WATER itself?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-states</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>states-of-matter</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Pressure cookers</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>It raises water's BOILING POINT (~121°C at 2 atm): liquid water can get hotter before escaping as steam, and hotter water cooks faster (reaction rates roughly double per 10°C). The flame's power is unchanged; the pressure edits water's phase boundary, letting liquid exist where it normally couldn't. At altitude the reverse bites: low pressure drops boiling below 100°C and rice refuses to cook. Same flame, different ceiling.</p></div></div></div><div class="q"><span class="n">18.</span><div class="stem"><p>You have 10 eggs and 3 cups of flour; one cake needs 2 eggs + 1 cup flour. How many cakes — and why does chemistry's limiting reagent decide everything from factories to airbags?</p></div><div class="kv"><div class="k">ID</div><div class="v"><p>prac-che11-stoich</p></div></div><div class="kv"><div class="k">Type</div><div class="v"><p>practical</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Difficulty</div><div class="v"><p>medium</p></div></div><div class="kv"><div class="k">Unit SLUG</div><div class="v"><p>stoichiometry</p></div></div><div class="kv"><div class="k">Concept</div><div class="v"><p>Limiting reagent in kitchen</p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>3 cakes (flour runs out; 4 eggs strand unused) — product is set by the scarcest input RATIO, not the biggest pile. Industry lives by this: excess cheap reactant (air's O₂) drives costly ones to full conversion; airbags meter NaN₃ against fixed gas volume. The limiting reagent is the bottleneck principle in chemical dress: output = min over inputs of (available ÷ required). Find the flour, find the future.</p></div></div></div></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../_subjects/class-11-chemistry.html">Chemistry</a><span></span></nav>
+</div></body></html>

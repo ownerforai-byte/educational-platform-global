@@ -1,0 +1,196 @@
+{
+  "title": "Specific latent heat of fusion and vaporization",
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "specific-latent-heat-of-fusion-and-vaporization",
+  "topicTitle": "Specific latent heat of fusion and vaporization",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "Specific latent heat L is the heat absorbed or released when 1 kg of a substance changes state at constant temperature. The heat is Q = m L, and there is no Δθ term while the change of state is going on.",
+    "The specific latent heat of fusion, L_f, is for melting or freezing. For ice at 0°C it is about 3.34 × 10^5 J/kg. Melting absorbs this heat. Freezing releases it.",
+    "The specific latent heat of vaporization, L_v, is for boiling or condensation. For water at 100°C it is about 2.26 × 10^6 J/kg, several times larger than L_f, because the molecules must be separated much further.",
+    "During melting the temperature stays at the melting point until all the solid has changed. The supplied energy increases the potential energy of the molecules, not the average kinetic energy that temperature tracks.",
+    "A warming problem that crosses a change of state is done in pieces: mc Δθ up to the change point, then m L, then mc Δθ in the new state. Leaving out m L is the usual error.",
+    "The same L applies to the reverse change. Condensing 1 kg of steam at 100°C releases m L_v, which is why a steam burn is severe compared with a burn from water at the same temperature.",
+    "# Specific latent heat of fusion and vaporization\n\n## 1. Introduction\nPhysical picture of **Specific latent heat of fusion and vaporization** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Quantity of Heat fill pass.\n\n## 2. Concepts and laws\n### Specific latent heat of fusion and vaporization\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Quantities and relations**\n\n| Quantity | Symbol + SI unit | Relation | Graph to read |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Specific latent heat of fusion and vaporization — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Specific latent heat of fusion and vaporization — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Specific latent heat of fusion and vaporization — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Specific latent heat of fusion and vaporization — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+  ],
+  "confusion": [
+    "❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar..",
+    "Latent heat is not specific heat. One happens at constant temperature.",
+    "Steam at 100°C carries extra energy m L_v that water at 100°C does not.",
+    "L_f and L_v are properties of the substance and the change, not of the mass. The mass sits outside, in Q = m L.",
+    "The temperature does not rise while ice is still melting in the mixture."
+  ],
+  "bounds": [
+    "Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar."
+  ],
+  "practice": [
+    "Write Q = m L and say what each symbol means.",
+    "Mark the known values, then substitute one step at a time.",
+    "Finish with the number, the unit, and the direction when the quantity has one."
+  ],
+  "universalFacts": [
+    "Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.",
+    "Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained.",
+    "Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀)."
+  ],
+  "examples": [
+    "Specific latent heat L is the heat absorbed or released when 1 kg of a substance changes state at constant temperature. The heat is Q = m L, and there is no Δθ term while the change of state is going on.",
+    "The specific latent heat of fusion, L_f, is for melting or freezing. For ice at 0°C it is about 3.34 × 10^5 J/kg. Melting absorbs this heat. Freezing releases it.",
+    "How much heat melts 0.20 kg of ice at 0°C and then warms the water to 20°C? Take L_f = 3.34 × 10^5 J/kg and c = 4200 J kg^-1 K^-1."
+  ],
+  "practiceQuestions": [
+    "Write Q for a change of state.",
+    "Why is a steam burn worse than a hot-water burn at 100°C?",
+    "What stays constant during boiling?"
+  ],
+  "formulas": [
+    "Q = mcΔT",
+    "Q = mL",
+    "cp = 1.5×cv + R (Mayer, for ideal gas)"
+  ],
+  "numericals": [
+    "How much heat melts 0.20 kg of ice at 0°C and then warms the water to 20°C? Take L_f = 3.34 × 10^5 J/kg and c = 4200 J kg^-1 K^-1."
+  ],
+  "keyPoints": [
+    "Latent heat changes the state at constant temperature.",
+    "Fusion is solid to liquid.",
+    "Vaporization is liquid to gas.",
+    "L is heat per unit mass."
+  ],
+  "summary": "Specific latent heat is the heat per unit mass for a change of state at constant temperature, Q = m L. Fusion covers melting and freezing. Vaporization covers boiling and condensation. A path that both changes state and changes temperature needs an m L term and an mc Δθ term.",
+  "mcqs": [
+    {
+      "question": "During melting, the temperature",
+      "options": [
+        "Rises steadily",
+        "Stays at the melting point until the solid is gone",
+        "Falls",
+        "Becomes the boiling point at once"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Q for vaporizing a mass m is",
+      "options": [
+        "mc Δθ",
+        "m L_v",
+        "L_v / m",
+        "m c L"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "L_v for water is larger than L_f mainly because",
+      "options": [
+        "Steam is colder",
+        "Molecules must be separated further",
+        "Mass changes",
+        "c is zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Condensing steam releases",
+      "options": [
+        "No energy",
+        "m L_v",
+        "Only mc",
+        "A temperature of 0 K"
+      ],
+      "answer": "B"
+    }
+  ],
+  "importantStatements": [
+    "Specific latent heat L is the heat absorbed or released when 1 kg of a substance changes state at constant temperature. The heat is Q = m L, and there is no Δθ term while the change of state is going on.",
+    "The specific latent heat of fusion, L_f, is for melting or freezing. For ice at 0°C it is about 3.34 × 10^5 J/kg. Melting absorbs this heat. Freezing releases it.",
+    "The specific latent heat of vaporization, L_v, is for boiling or condensation. For water at 100°C it is about 2.26 × 10^6 J/kg, several times larger than L_f, because the molecules must be separated much further."
+  ],
+  "examNotes": [
+    "Definition, then formula, then substitution.",
+    "A vector answer is incomplete without its direction."
+  ],
+  "examShortTricks": [
+    "Change of state: m L. Change of temperature: mc Δθ.",
+    "Do the journey in order."
+  ],
+  "specialNotes": [
+    "Values of L depend on the pressure. The quoted values are for standard atmospheric pressure.",
+    "Sublimation, solid to gas, has its own latent heat."
+  ],
+  "importantNotes": [
+    "Do not multiply L by a temperature change.",
+    "Keep ice at 0°C and steam at 100°C unless the question moves them further."
+  ],
+  "importantConcepts": [
+    "Latent heat of fusion",
+    "Latent heat of vaporization",
+    "Q = m L",
+    "Constant temperature"
+  ],
+  "importantTasks": [
+    "Copy the worked example and hide the result until the last step.",
+    "Name the unit of every term in the formula."
+  ],
+  "mcs": [
+    {
+      "question": "During melting, the temperature",
+      "options": [
+        "Rises steadily",
+        "Stays at the melting point until the solid is gone",
+        "Falls",
+        "Becomes the boiling point at once"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Q for vaporizing a mass m is",
+      "options": [
+        "mc Δθ",
+        "m L_v",
+        "L_v / m",
+        "m c L"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "L_v for water is larger than L_f mainly because",
+      "options": [
+        "Steam is colder",
+        "Molecules must be separated further",
+        "Mass changes",
+        "c is zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Condensing steam releases",
+      "options": [
+        "No energy",
+        "m L_v",
+        "Only mc",
+        "A temperature of 0 K"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "How much heat melts 0.20 kg of ice at 0°C and then warms the water to 20°C? Take L_f = 3.34 × 10^5 J/kg and c = 4200 J kg^-1 K^-1.",
+      "steps": [
+        "First change the state: Q1 = m L_f = 0.20 × 3.34 × 10^5 = 6.68 × 10^4 J.",
+        "The result is water at 0°C.",
+        "Then warm it: Q2 = mc Δθ = 0.20 × 4200 × 20 = 1.68 × 10^4 J.",
+        "Total heat is Q1 + Q2.",
+        "Q = 8.36 × 10^4 J."
+      ],
+      "answer": "8.36 × 10^4 J."
+    }
+  ]
+}

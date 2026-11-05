@@ -1,0 +1,183 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Aufbau Principle, Pauli's Exclusion Principle, Hund's Rule and Electronic Configurations (up to Z = 30)</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Chemistry  /  Atomic Structure</div>
+    <h1 class="doc">Aufbau Principle, Pauli's Exclusion Principle, Hund's Rule and Electronic Configurations (up to Z = 30)</h1>
+    <div class="meta"><span>Class 11</span><span>Chemistry</span><span>Atomic Structure</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>atomic-structure</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>aufbau-principle-pauli-s-exclusion-principle-hund-s-rule-and-electronic-configurations-of-atoms-</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Meaning</h4></li><li>These three rules distribute electrons among the orbitals of an atom in its ground state: Aufbau fixes the <em>order</em> of filling, Pauli fixes the <em>capacity</em> of an orbital, and Hund fixes <em>how degenerate orbitals are filled</em>.</li><li><h4>2. Aufbau principle and the (n + l) rule</h4></li><li>Electrons fill the available orbital of lowest energy first. Order is given by the <strong>Madelung (n + l) rule</strong>: smaller (n + l) first; for equal (n + l), smaller n first. Thus 4s (n + l = 4) fills before 3d (n + l = 5), giving 1s &lt; 2s &lt; 2p &lt; 3s &lt; 3p &lt; 4s &lt; 3d &lt; 4p &lt; 5s &lt; 4d &lt; 5p &lt; 6s &lt; 4f &lt; 5d &lt; 6p &lt; 7s &lt; 5f &lt; 6d &lt; 7p.</li><li><h4>3. Pauli's exclusion principle</h4></li><li>No two electrons in an atom can have all four quantum numbers identical; equivalently an orbital holds at most two electrons with opposite spins (↑↓). Consequences: subshell capacities 2, 6, 10, 14; shell capacity 2n².</li><li><h4>4. Hund's rule of maximum multiplicity</h4></li><li>Electrons enter degenerate orbitals (same n and l, e.g. the three 2p) singly with parallel spins before pairing; pairing starts only after every degenerate orbital has one electron. Reason: pairing costs Coulomb repulsion energy while parallel spins gain exchange energy. Example: N 2p³ = ↑ ↑ ↑ (three unpaired); O 2p⁴ = ↑↓ ↑ ↑ (two unpaired).</li><li><h4>5. Extra stability of half-filled and fully-filled subshells</h4></li><li>d⁵, d¹⁰, p³ and p⁶ arrangements gain exchange energy and symmetry, which explains the anomalies at Z = 24 and 29: Cr = [Ar]3d⁵4s¹ (not 3d⁴4s²) and Cu = [Ar]3d¹⁰4s¹ (not 3d⁹4s²). Similar anomalies occur at Nb, Mo, Ru, Rh, Pd, Ag, Pt and Au.</li><li><h4>6. Electronic configurations, Z = 1–30 (noble-gas shorthand)</h4></li><li>H 1s¹ · He 1s² · Li [He]2s¹ · Be [He]2s² · B [He]2s²2p¹ · C 2p² · N 2p³ · O 2p⁴ · F 2p⁵ · Ne 2p⁶ · Na [Ne]3s¹ · Mg 3s² · Al 3s²3p¹ · Si 3p² · P 3p³ · S 3p⁴ · Cl 3p⁵ · Ar 3p⁶ · K [Ar]4s¹ · Ca 4s² · Sc 3d¹4s² · Ti 3d²4s² · V 3d³4s² · Cr 3d⁵4s¹ · Mn 3d⁵4s² · Fe 3d⁶4s² · Co 3d⁷4s² · Ni 3d⁸4s² · Cu 3d¹⁰4s¹ · Zn 3d¹⁰4s².</li><li><h4>7. Configurations of ions</h4></li><li>Electrons are removed from the highest-n (outermost) shell first even though 4s filled before 3d: Fe ([Ar]3d⁶4s²) → Fe²⁺ ([Ar]3d⁶) → Fe³⁺ ([Ar]3d⁵, half-filled and extra stable); Cu ([Ar]3d¹⁰4s¹) → Cu⁺ ([Ar]3d¹⁰); Mn → Mn²⁺ ([Ar]3d⁵). This explains why Fe³⁺ and Mn²⁺ are the commonest oxidation states of those metals.</li><li><h4>8. Applications</h4></li><li>• Predicts valency, oxidation states and magnetic behaviour (Fe³⁺: 5 unpaired → paramagnetic; Zn²⁺: 3d¹⁰ → diamagnetic; Cu²⁺: 1 unpaired) and the colours of transition-metal ions.</li><li>• Explains the structure of the periodic table — s, p, d, f blocks and period lengths 2, 8, 8, 18, 18, 32 — and is the basis of hybridisation and complex chemistry.</li><li><h4>9. Limitations</h4></li><li>The (n + l) rule is only approximate — the many anomalous configurations of Cr, Cu, Nb, Mo, Ru, Rh, Pd, Ag, Pt, Au and of the lanthanides/actinides show that electron repulsion, exchange energy and relativistic effects decide the real order; the orbital energy order changes with Z and inside ions or ligand fields; Hund's rule has exceptions in excited states; Aufbau fails for heavy elements; and none of the rules predicts reactivity or reaction rates.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ 4s is always lower in energy than 3d. ✅ It fills first in neutral atoms, but in ions the 4s electrons are removed first (Fe²⁺ = 3d⁶).</li><li>❌ Pauli's principle forbids two electrons in one orbital. ✅ They may share an orbital if their spins are opposite (different mₛ).</li><li>❌ Hund's rule says electrons pair as soon as possible. ✅ Pairing begins only after every degenerate orbital holds one electron.</li><li>❌ Cr is [Ar]3d⁴4s². ✅ It is [Ar]3d⁵4s¹ because the half-filled d subshell wins on exchange energy.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>State Aufbau's principle, Pauli's exclusion principle and Hund's rule with one example each.</li><li>Apply the (n + l) rule to arrange 3d, 4s, 4p, 3p and 5s in order of filling.</li><li>Give the configurations of Z = 24, 26 and 29 and explain the anomalies.</li><li>Write Fe, Fe²⁺ and Fe³⁺ configurations and explain why Fe³⁺ is extra stable.</li><li>How many unpaired electrons occur in Mn²⁺ and Cu²⁺? State the magnetic behaviour of each.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord text"><span class="mord">Aufbau: smaller </span></span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.0197em;">l</span><span class="mclose">)</span><span class="mord text"><span class="mord"> first; tie</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">smaller </span></span><span class="mord mathnormal">n</span></span></span></span></span></li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">subshell capacity</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mopen">(</span><span class="mord">2</span><span class="mord mathnormal" style="margin-right:0.0197em;">l</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:2em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord text"><span class="mord">shell capacity</span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8641em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathnormal">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></span></li><li><span class="katex-display"><span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.24em;vertical-align:-0.2561em;"></span><span class="mord sqrt"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.9839em;"><span class="svg-align" style="top:-3.2em;"><span class="pstrut" style="height:3.2em;"></span><span class="mord" style="padding-left:1em;"><span class="mord mathnormal">n</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mord">2</span><span class="mclose">)</span></span></span><span style="top:-2.9439em;"><span class="pstrut" style="height:3.2em;"></span><span class="hide-tail" style="min-width:1.02em;height:1.28em;"><svg xmlns="http://www.w3.org/2000/svg" width="400em" height="1.28em" viewBox="0 0 400000 1296" preserveAspectRatio="xMinYMin slice"><path d="M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z"/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2561em;"><span></span></span></span></span></span><span class="mspace"> </span><span class="mord text"><span class="mord">BM</span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">unpaired electrons</span></span></span></span></span></span></li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Cr (24) = [Ar]3d⁵4s¹ and Cu (29) = [Ar]3d¹⁰4s¹ are the only anomalies within Z ≤ 30.</li><li>Fe³⁺ = [Ar]3d⁵ (5 unpaired); Zn²⁺ = [Ar]3d¹⁰ (0 unpaired).</li><li>answer pattern for &quot;Aufbau principle, Pauli's exclusion principle, Hund's rul…&quot;: define → method → result. Structure earns the marks on 6–10 mark questions.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li><strong>Problem:</strong> Configuration and magnetic behaviour of Cu²⁺. <strong>Solution:</strong> Cu = [Ar]3d¹⁰4s¹ → Cu²⁺ = [Ar]3d⁹ → one unpaired electron → paramagnetic, μ ≈ 1.73 BM.</li><li><strong>Problem:</strong> How many Zn electrons have l = 2? <strong>Solution:</strong> Zn = [Ar]3d¹⁰4s² — the 3d subshell (l = 2) holds 10 electrons.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>For ions always remove electrons from the highest-n shell first (4s before 3d) — a standard exam trap.</li><li>Explain the Cr/Cu anomalies with exchange energy and half-filled stability, not as arbitrary exceptions.</li></ul></section>
+<section class="field"><h2>Visual Type</h2><p>electronic-configuration</p></section>
+<section class="field"><h2>Key Points</h2><ul><li>• Aufbau principle</li><li>• Pauli's exclusion principle</li><li>• Hund's rule</li><li>• Electronic configurations of atoms</li><li>• Ions</li><li>• Up to atomic no. 30</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><p class="empty">—</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following is a distinct sub-topic under &quot;Aufbau principle, Pauli's exclusion principle, Hund's rul…&quot;?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Aufbau principle</li><li>Pauli's exclusion principle</li><li>Unrelated topic</li><li>None of the above</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Aufbau principle is listed among the official sub-ideas of Aufbau principle, Pauli's exclusion principle, Hund's rul…; the others are not part of this topic.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A common examiner point on &quot;Aufbau principle, Pauli's exclusion principle, Hund's rul…&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div></section>
+<section class="field"><h2>Source</h2><p>generated</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
+<section class="field"><h2>Bounds</h2><ul><li>Covers only: aufbau principle, pauli's exclusion principle, hund's rule, electronic configurations of atoms (within Atomic Structure).</li><li>Out of scope here: topics of neighbouring units in Chemistry — don't mix them.</li><li>State the limit / condition where a formula or rule stops being valid before applying it.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Aufbau principle, Pauli's exclusion principle, Hund's rul… (Atomic Structure, Chemistry, class-11-notes) covers Aufbau principle, Pauli's exclusion principle, Hund's rule. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.</p></section>
+  <nav class="pager"><a href="08-orbitals-shapes.html" title="Orbitals and the Shapes of s and p Orbitals">‹ Orbitals and the Shapes of s and p Orbitals</a><a class="mid" href="../../../../../_subjects/class-11-chemistry.html">Chemistry</a><a href="09-aufbau-principle-pauli-s-exclusion-principle-hund-s-rule-and-electronic-configurations-of-atoms-.html" title="Aufbau principle, Pauli's exclusion principle, Hund's rule and electronic configurations of atoms and ions (up to atomic no. 30)">Aufbau principle, Pauli's exclusion principle… ›</a></nav>
+</div></body></html>

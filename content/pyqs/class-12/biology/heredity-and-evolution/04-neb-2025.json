@@ -1,0 +1,99 @@
+{
+  "title": "NEB Class 12 Biology — Heredity And Evolution — 2025",
+  "year": 2025,
+  "examSource": "[NEB-pattern 2025]",
+  "unitSlug": "heredity-and-evolution",
+  "origin": "curated NEB-pattern set covering every topic of the class-12 heredity and evolution unit",
+  "questions": [
+    {
+      "id": "bio-her-2025-1",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "State Mendel's law of segregation and explain how a monohybrid cross gives a 3:1 ratio. What is the use of a test cross?",
+      "solution": "The law of segregation says that the two alleles of a gene separate during gamete formation, so each gamete carries only one allele, and they reunite at random at fertilisation.\nIn a cross TT × tt the F1 is all Tt (tall). Each F1 plant forms T and t gametes in equal number, so the F2 from a self-cross is 1 TT : 2 Tt : 1 tt — three tall to one dwarf — because the single tt class is the only dwarf combination.\nA test cross — crossing the unknown individual with the homozygous recessive — reveals its genotype: if any dwarf offspring appear it was heterozygous, if all offspring are tall it was homozygous."
+    },
+    {
+      "id": "bio-her-2025-2",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Differentiate incomplete dominance from codominance with one example each.",
+      "solution": "Incomplete dominance: neither allele is completely dominant, so the heterozygote shows an intermediate phenotype. In snapdragon, red (RR) crossed with white (rr) gives pink (Rr) F1, and F2 is 1 red : 2 pink : 1 white — the genotypic and phenotypic ratios are the same.\nCodominance: both alleles express themselves fully and independently in the heterozygote. In the human AB blood group, alleles I^A and I^B are codominant, so genotype I^A I^B gives blood group AB with both A and B antigens on the red cells, not an intermediate."
+    },
+    {
+      "id": "bio-her-2025-3",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Explain linkage and crossing over, and state how recombination frequency is used to map genes.",
+      "solution": "Genes lying close together on the same chromosome tend to be inherited together — linkage, discovered by Morgan in Drosophila. Because they are physically joined, linked genes do not assort independently, so a dihybrid test cross gives fewer recombinant types than the expected 1:1:1:1.\nDuring prophase I of meiosis, homologous chromatids exchange segments at chiasmata — crossing over — which separates linked alleles. The proportion of recombinant offspring (recombination frequency) measures the distance between the genes: 1% recombination is defined as 1 map unit or centimorgan, so frequency is used to order genes and draw linkage maps."
+    },
+    {
+      "id": "bio-her-2025-4",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "How is sex determined in human beings? Explain a cross showing the inheritance of red–green colour blindness.",
+      "solution": "Human sex is determined by the XY system: females are XX and produce only X eggs; males are XY and produce X and Y sperm in equal numbers. Fertilisation by an X sperm gives a girl (XX) and by a Y sperm gives a boy (XY), so the father determines the sex, with a 1:1 chance.\nColour blindness is X-linked recessive. Let X^C be normal and X^c colour-blind: a carrier mother X^C X^c × normal father X^C Y gives daughters all normal (half carriers) and sons half normal and half colour-blind, because a son has only his mother's X. A colour-blind daughter requires a colour-blind father as well."
+    },
+    {
+      "id": "bio-her-2025-5",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "State the chromosome theory of inheritance and give the evidence that supports it.",
+      "solution": "Sutton and Boveri proposed that chromosomes are the carriers of Mendel's factors: chromosomes occur in pairs (homologues), behave exactly as Mendelian factors during meiosis — segregating and assorting independently — and each parent contributes one of each pair to the offspring.\nEvidence: the parallel behaviour of chromosomes and genes in meiosis; sex-linked inheritance in Drosophila, where Morgan showed that the white-eye gene travels with the X chromosome; the correspondence of recombination frequency with chromosome map distance; and the later proof that DNA is the genetic material (Griffith, Avery, Hershey–Chase), identifying the chemical nature of the chromosome."
+    },
+    {
+      "id": "bio-her-2025-6",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Describe semi-conservative DNA replication and the evidence for it.",
+      "solution": "Replication begins at an origin where helicase unwinds the double helix, forming a replication fork. Each strand acts as a template: DNA polymerase adds complementary nucleotides in the 5′→3′ direction using deoxyribonucleoside triphosphates, primase lays an RNA primer, and the leading strand is made continuously while the lagging strand is made in Okazaki fragments that ligase joins. Each daughter molecule therefore has one old and one new strand; topoisomerase relieves the twisting strain.\nMeselson and Stahl grew E. coli in heavy ¹⁵N and then transferred it to ¹⁴N medium; after one generation all DNA was of intermediate density and after two there were equal intermediate and light bands — exactly the pattern predicted by semi-conservative, not conservative or dispersive, replication.",
+      "diagram": "<svg viewBox=\"0 0 620 280\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" width=\"100%\" style=\"max-width:620px\"><path d=\"M40 90 q120 0 240 0\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n   <path d=\"M40 200 q120 0 240 0\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n   <path d=\"M280 90 q60 -40 120 -40 h160\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n   <path d=\"M280 200 q60 40 120 40 h160\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n   <line x1=\"300\" y1=\"110\" x2=\"300\" y2=\"180\" stroke=\"#9ca3af\" stroke-dasharray=\"4 4\"/>\n   <path d=\"M420 50 h150\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" stroke-width=\"3\" stroke=\"#111827\"/>\n   <path d=\"M420 240 h150\" fill=\"none\" stroke=\"#374151\" stroke-width=\"1.6\" stroke-width=\"3\" stroke=\"#111827\"/>\n   <path d=\"M430 70 h40 M490 70 h40 M550 70 h40\" stroke=\"#6b7280\" stroke-width=\"2\"/>\n   <path d=\"M430 220 h40 M490 220 h40 M550 220 h40\" stroke=\"#6b7280\" stroke-width=\"2\"/>\n   <text x=\"20\" y=\"80\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Parent DNA (double helix)</text>\n   <text x=\"286\" y=\"140\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">helicase unwinds</text>\n   <text x=\"430\" y=\"40\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Leading strand — continuous 5′→3′</text>\n   <text x=\"430\" y=\"272\" font-size=\"11\" fill=\"#111827\" font-family=\"Segoe UI, Arial, sans-serif\">Lagging strand — Okazaki fragments</text>\n   <text x=\"418\" y=\"92\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">DNA polymerase</text>\n   <text x=\"418\" y=\"212\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">ligase joins the fragments</text>\n   <text x=\"20\" y=\"240\" font-size=\"9.5\" fill=\"#4b5563\" font-family=\"Segoe UI, Arial, sans-serif\">Each daughter molecule keeps one old strand and one new strand: semi-conservative replication.</text></svg>",
+      "diagramCaption": "Figure: DNA replication fork — helicase unwinds the helix, the leading strand is copied continuously, the lagging strand in Okazaki fragments that ligase joins."
+    },
+    {
+      "id": "bio-her-2025-7",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "Explain transcription and translation briefly, and state the central dogma.",
+      "solution": "Transcription makes RNA from a DNA template: RNA polymerase binds the promoter, unwinds the helix and adds complementary ribonucleotides to the growing RNA in the 5′→3′ direction, copying only one strand; in eukaryotes the transcript is processed — introns spliced out, a cap and poly-A tail added — and mRNA leaves the nucleus.\nTranslation makes protein on the ribosome: each mRNA codon is read and matched by the anticodon of a tRNA carrying its amino acid; initiation begins at the start codon AUG, elongation adds amino acids in order and termination stops at a stop codon, after which the chain folds into a protein.\nThe central dogma is DNA → RNA → protein: information flows from nucleic acid to protein, never back."
+    },
+    {
+      "id": "bio-her-2025-8",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "hard",
+      "question": "Explain the lac operon as an example of gene regulation.",
+      "solution": "The lac operon in E. coli consists of a promoter, an operator and three structural genes — lac Z (β-galactosidase), lac Y (permease) and lac A (transacetylase) — plus a regulatory gene, lac I, whose repressor protein binds the operator.\nWhen lactose is absent the repressor blocks RNA polymerase, so the genes are switched off. When lactose is present it binds the repressor and changes its shape so that it cannot bind the operator; RNA polymerase then transcribes the three genes as one polycistronic mRNA and the cell makes the enzymes to use lactose. This is negative control that is induced by the substrate, so the cell spends energy on the enzymes only when they are needed."
+    },
+    {
+      "id": "bio-her-2025-9",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "State the objectives and significance of the Human Genome Project.",
+      "solution": "Objectives: determine the complete DNA sequence of the human genome, identify all genes, map them and make the data freely available, along with the genomes of model organisms and the ethical, legal and social issues arising.\nSignificance: it produced the reference sequence of about 3 billion base pairs and roughly 20,000–25,000 genes; it showed that most DNA is non-coding and that humans differ from each other by less than 0.1%. That gives tools for finding disease genes and designing drugs, for genetic testing and counselling, for understanding human evolution and ancestry, and for agriculture and microbiology where the same methods are used."
+    },
+    {
+      "id": "bio-her-2025-10",
+      "type": "short",
+      "marks": 4,
+      "difficulty": "medium",
+      "question": "State the Hardy–Weinberg principle, give its conditions and explain one use.",
+      "solution": "In a large, randomly mating population with no mutation, no migration and no selection, allele frequencies do not change from generation to generation: for two alleles p + q = 1 and the genotype frequencies are p² + 2pq + q² = 1.\nConditions: very large population, random mating, no mutation, no gene flow and no natural selection; the locus must not be under differential selection.\nUse: it gives the expected genotype frequencies, so a deviation reveals that selection, drift or inbreeding is acting. For example, if a recessive disorder affects 1 in 10,000 people, q² = 0.0001 gives q = 0.01 and the carrier frequency 2pq ≈ 2% — a result used in genetic counselling."
+    },
+    {
+      "id": "bio-her-2025-11",
+      "type": "mcq",
+      "marks": 2,
+      "difficulty": "medium",
+      "question": "What is adaptive radiation? Give one example.",
+      "solution": "Adaptive radiation is the rapid evolution of many divergent species from a single common ancestor when a new habitat or an opportunity with few competitors becomes available; the descendants evolve different structures and habits to occupy different niches.\nA classic example is Darwin's finches of the Galápagos, which radiated from one ancestral seed-eating bird into species with beaks specialised for seeds, nuts, insects and cactus — each adapted to a different food source."
+    }
+  ]
+}

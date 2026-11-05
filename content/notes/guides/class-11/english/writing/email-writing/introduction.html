@@ -1,0 +1,165 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Email Writing</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Email Writing</div>
+    <h1 class="doc">Email Writing</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Email Writing</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>writing</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>email-writing</p></section>
+<section class="field"><h2>Relevance</h2><p><code>80</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;What Is Email Writing?&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Email writing&lt;/b&gt; is the composition of electronic messages for personal or professional communication. In the NEB Class 11 English examination, email writing (often grouped with letter writing) carries 5-8 marks. While emails share similarities with formal and informal letters, they have distinctive features: a &lt;b&gt;subject line&lt;/b&gt;, shorter body, and a more modern structure. Understanding the conventions of email writing is essential for both academic and real-world communication.&lt;/p&gt;</li><li>&lt;h2&gt;Structure of a Formal Email&lt;/h2&gt;</li><li>&lt;p&gt;A formal email follows this structure: (1) &lt;b&gt;Subject line&lt;/b&gt; — a concise phrase stating the purpose (e.g., 'Subject: Application for Scholarship Programme'). (2) &lt;b&gt;Salutation&lt;/b&gt;: 'Dear Sir/Madam' or 'Dear Mr. Sharma'. (3) &lt;b&gt;Opening&lt;/b&gt; — state the purpose clearly in the first sentence. (4) &lt;b&gt;Body&lt;/b&gt; — provide relevant details in 2-3 short paragraphs. (5) &lt;b&gt;Closing&lt;/b&gt; — 'Yours faithfully' (unknown name) or 'Yours sincerely' (known name). (6) &lt;b&gt;Signature&lt;/b&gt; — full name and contact information. The body should be 80-120 words for NEB exams. Unlike letters, emails do not require sender/receiver addresses at the top.&lt;/p&gt;</li><li>&lt;h2&gt;Structure of an Informal Email&lt;/h2&gt;</li><li>&lt;p&gt;An informal email to a friend or relative is less rigid: (1) &lt;b&gt;Subject line&lt;/b&gt; — optional but recommended (e.g., 'Subject: Weekend Plans'). (2) &lt;b&gt;Salutation&lt;/b&gt;: 'Dear Ram,' 'Hi Sita,'. (3) &lt;b&gt;Opening&lt;/b&gt; — personal greeting and well-wishes ('I hope you are doing well'). (4) &lt;b&gt;Body&lt;/b&gt; — share news, ask questions, express feelings in a warm tone. (5) &lt;b&gt;Closing&lt;/b&gt;: 'Write soon', 'Best wishes', 'Your friend'. (6) &lt;b&gt;Signature&lt;/b&gt; — first name only. Contractions, colloquial expressions, and exclamations are acceptable. The body should be 80-100 words for NEB exams.&lt;/p&gt;</li><li>&lt;h2&gt;Email vs. Letter: Key Differences&lt;/h2&gt;</li><li>&lt;p&gt;Key differences between email and letter writing: (1) &lt;b&gt;Addresses&lt;/b&gt; — letters require sender's and receiver's addresses; emails do not. (2) &lt;b&gt;Subject line&lt;/b&gt; — emails require a subject line; letters do not. (3) &lt;b&gt;Length&lt;/b&gt; — emails are generally shorter and more concise. (4) &lt;b&gt;Speed&lt;/b&gt; — emails are sent immediately; letters involve postal delay. (5) &lt;b&gt;Formality&lt;/b&gt; — both formal and informal emails exist, but even formal emails tend to be slightly less rigid than formal letters. (6) &lt;b&gt;Attachments&lt;/b&gt; — emails can include files; letters cannot. In NEB exams, if the question specifies 'email', follow email format; if it says 'letter', follow letter format. Using the wrong format costs marks.&lt;/p&gt;</li><li>&lt;h2&gt;Subject Line: The Most Important Element&lt;/h2&gt;</li><li>&lt;p&gt;The &lt;b&gt;subject line&lt;/b&gt; is unique to email and is critical for effective communication. A good subject line is: (1) &lt;b&gt;Concise&lt;/b&gt; — 5-10 words maximum. (2) &lt;b&gt;Informative&lt;/b&gt; — it should tell the reader exactly what the email is about. (3) &lt;b&gt;Specific&lt;/b&gt; — avoid vague subjects like 'Hello' or 'Important'. Examples: 'Subject: Request for Leave on 15th November' (good) vs. 'Subject: Something important' (bad). In NEB exams, omitting the subject line in an email question is a common error that costs marks. The subject line should be underlined or placed on its own line.&lt;/p&gt;</li><li>&lt;h2&gt;Common Email Topics in NEB Exams&lt;/h2&gt;</li><li>&lt;p&gt;Frequently assigned email topics include: (1) &lt;b&gt;Formal email to principal&lt;/b&gt; — requesting permission, applying for something, complaining about facilities. (2) &lt;b&gt;Formal email to editor&lt;/b&gt; — raising a civic issue. (3) &lt;b&gt;Informal email to friend&lt;/b&gt; — inviting, congratulating, sharing news. (4) &lt;b&gt;Informal email to relative&lt;/b&gt; — family news, festival greetings, apologies. (5) &lt;b&gt;Professional email&lt;/b&gt; — job application, enquiry about a course, product complaint. For each type, the format and tone change appropriately. Students must identify the email type from the question prompt and apply the correct conventions.&lt;/p&gt;</li><li>&lt;h2&gt;Tone and Language in Email Writing&lt;/h2&gt;</li><li>&lt;p&gt;Email tone depends on the recipient and purpose. &lt;b&gt;Formal emails&lt;/b&gt; require: respectful language, no contractions, clear and direct statements, polite requests ('I would like to...', 'I kindly request...'), and professional sign-offs. &lt;b&gt;Informal emails&lt;/b&gt; allow: contractions ('I'm', 'don't'), colloquial expressions, personal anecdotes, exclamations, and warm closings. A common error is mixing tones — writing an informal email with formal language or a formal email with casual expressions. Always match the tone to the recipient and purpose.&lt;/p&gt;</li><li>&lt;h2&gt;Common Mistakes in Email Writing&lt;/h2&gt;</li><li>&lt;p&gt;Avoid these errors: (1) &lt;b&gt;No subject line&lt;/b&gt; — the most common and damaging mistake in email writing. (2) &lt;b&gt;Wrong closing&lt;/b&gt; — using 'Yours faithfully' in an informal email, or 'Love' in a formal email. (3) &lt;b&gt;Writing too much&lt;/b&gt; — emails should be concise; the body should not exceed 120 words. (4) &lt;b&gt;Using letter format for email&lt;/b&gt; — including addresses and date placement from letter format. (5) &lt;b&gt;Informal language in formal emails&lt;/b&gt; — slang, contractions, emotional language. (6) &lt;b&gt;Vague subject line&lt;/b&gt; — 'Hello' or 'Important' instead of a descriptive subject. (7) &lt;b&gt;Forgetting the signature&lt;/b&gt; — always include your name and designation for formal emails.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Email vs. Letter format: Emails do not require sender's or receiver's addresses at the top. Emails require a subject line; letters do not. Emails use 'Yours faithfully/sincerely' like formal letters, but informal emails use casual closings like 'Love' or 'Your friend'. The key difference is the subject line — it is mandatory for emails and absent in letters.</li><li>Subject line placement: In emails, the subject line appears at the top, after the salutation or before it. In NEB exams, it is typically placed after the salutation: 'Dear Sir/Madam, Subject: ....' The subject line should be concise (5-10 words) and descriptive. Forgetting the subject line is the most common error in email writing questions.</li><li>Formal email vs. Formal letter: Formal emails are shorter and more direct than formal letters. They omit addresses but include a subject line. The tone is similarly formal in both, but emails are generally more concise. In NEB exams, if the question says 'email', do not write addresses; if it says 'letter', do include addresses.</li><li>Informal email vs. Informal letter: Informal emails are essentially the same as informal letters in tone and content. The main difference is the subject line (present in emails, absent in letters) and the absence of addresses (present in letters, absent in emails). Otherwise, both use warm, personal language and first-name signatures.</li><li>Yours faithfully vs. Yours sincerely in emails: The same rule applies as in letters — 'Yours faithfully' when the salutation is 'Dear Sir/Madam' (name unknown), 'Yours sincerely' when the salutation uses a name (e.g., 'Dear Mr. Sharma'). This distinction is tested in NEB exams even for email questions.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Write an appropriate subject line for a formal email to the principal requesting permission to organise a clean-up drive. [Answer: 'Subject: Request for Permission to Organise a Clean-Up Drive']</li><li>Identify the error: 'Dear Sir, I am writing this email to tell you that the school library needs more books. We don't have enough books for the students. Please do something about it. Yours faithfully, Ram.' [Answer: Three errors: (1) 'We don't' is a contraction — avoid in formal emails. (2) 'Please do something about it' is imperative and impolite — should be 'I kindly request you to consider adding more books.' (3) The tone is too informal for a formal email to the principal. A better version would use formal language throughout and a polite request.] — Note: The closing 'Yours faithfully' is correct since the salutation is 'Dear Sir'.</li><li>Write the opening sentence of a formal email to the editor of a newspaper complaining about garbage disposal in your area. [Answer: 'I am writing to bring to your kind attention the deteriorating garbage disposal situation in our locality, which has become a serious health hazard for residents.'] — Note: This is formal, clear, and states the purpose immediately.</li><li>Convert this informal email opening to formal: 'Hey! What's up? I was just thinking about you and wanted to say happy birthday!' [Answer: Formal: 'I hope this email finds you well. I am writing to wish you a happy birthday and send my warmest regards.'] — Note: This is a rare case where an informal email is converted to formal. In NEB exams, you may be asked to identify or correct tone mismatches.</li><li>Write a subject line for an informal email to a friend inviting them to your birthday celebration. [Answer: 'Subject: You are invited to my birthday party!' or 'Subject: Birthday Celebration this Saturday — Join Us!'] — Note: Subject lines in informal emails can be more creative but should still be descriptive.</li><li>What is wrong with this email body? 'Dear Principal, I want to tell you that our school needs a new computer lab. The old one has only 10 working computers and 30 students. This is not fair. We need more computers immediately. Yours faithfully, Sita.' [Answer: Issues: (1) 'I want to tell you' is too direct and demanding — use 'I would like to bring to your attention...' (2) 'This is not fair' is emotional and informal — use 'This is inadequate for the number of students.' (3) 'I need' and 'immediately' are demanding — use 'I kindly request that additional computers be provided.' (4) The body is too short and lacks supporting detail. A formal email should be respectful and well-reasoned.] — Note: This tests the student's ability to recognise inappropriate tone in formal emails.</li><li>Write the closing and signature for a formal email to a scholarship committee (name unknown). [Answer: 'Yours faithfully, [Full Name], [Class/Designation].' — Note: Since the name is unknown, 'Yours faithfully' is correct. Include full name and designation for a formal email.] — This tests the student's knowledge of the formal email closing convention.</li><li>Rewrite this email body to improve it: 'Dear Sir, I am writing about the science fair. It was very good and I learned a lot. The students did great projects. I hope we can have it next year too. Thanks.' [Answer: 'Dear Sir, I am writing to express my appreciation for the Annual Science Fair held on 10th November 2024. The event provided an excellent platform for students to showcase their scientific creativity and innovative projects. I would like to suggest that the science fair be organised annually to encourage continued student participation in scientific endeavour. Thank you for your efforts in making this event a success. Yours faithfully, [Name]'] — Note the improvements: formal language, specific details, a constructive suggestion, and a polite closing.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Email was invented in 1971 by Ray Tomlinson, who sent the first network email between two computers on the ARPANET (precursor to the Internet). The @ symbol was chosen to separate the user's name from the computer name — a convention that remains standard today.</li><li>In the NEB English examination, email writing is increasingly tested as digital communication becomes more common in academic and professional contexts. The inclusion of a subject line is the key differentiator between email and letter writing in exam questions.</li><li>The formal email format reflects broader trends in professional communication: brevity, clarity, and purpose-driven content. Unlike letters, which may include extended introductions and courteous flourishes, emails prioritise efficiency while maintaining politeness.</li><li>Email writing is a practical skill used in virtually all academic and professional contexts worldwide. The ability to write a clear, concise, and appropriately toned email is increasingly valued in higher education and the workplace.</li><li>In Nepali educational contexts, email writing is sometimes confused with letter writing because students are more familiar with traditional letter format. Understanding the distinct conventions of email (subject line, no addresses, shorter body) is essential for success in NEB exams.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>writing</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>writing</p></section>
+<section class="field"><h2>Visual Type</h2><p>contact-process-h2so4</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

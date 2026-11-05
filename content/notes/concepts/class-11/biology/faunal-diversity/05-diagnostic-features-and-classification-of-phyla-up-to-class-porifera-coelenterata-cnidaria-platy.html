@@ -1,0 +1,213 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Diagnostic features and classification of phyla (up to cl…</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Biology  /  Faunal Diversity</div>
+    <h1 class="doc">Diagnostic features and classification of phyla (up to cl…</h1>
+    <div class="meta"><span>Class 11</span><span>Biology</span><span>Faunal Diversity</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>faunal-diversity</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>diagnostic-features-and-classification-of-phyla-up-to-class-porifera-coelenterata-cnidaria-platy</p></section>
+<section class="field"><h2>Relevance</h2><p><code>96</code></p></section>
+<section class="field"><h2>Source</h2><p>enriched</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
+<section class="field"><h2>Visual Type</h2><p>animal-phyla</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>Nine phyla, each reduced to the one character that identifies it: pores, cnidocytes, no coelom, pseudocoelom, segments, jointed legs, mantle, water vascular system, notochord.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li>Each phylum below is identified by one diagnostic character, then taken only as far as class, with one example. The body-cavity words from the previous note are the sorting key: no cavity, a false cavity, or a true cavity.</li><li>Porifera are pore-bearing, cellular, and mostly marine, with a canal system, choanocytes, and a skeleton of spicules or spongin. Water enters by ostia and leaves by the osculum. Classes: Calcarea (Sycon, calcareous spicules), Hexactinellida (Euplectella, six-rayed silica spicules), Demospongiae (Spongilla, Euspongia). Spongilla is the freshwater example, so 'all sponges are marine' is false. Cnidaria have cnidocytes, radial symmetry, a diploblastic body and a gastrovascular cavity, and they alternate polyp and medusa or emphasise one of them. Classes: Hydrozoa (Hydra, Obelia), Scyphozoa (Aurelia), Anthozoa (sea anemone, coral, polyp only).</li><li>Platyhelminthes are dorsoventrally flat, bilateral, triploblastic and acoelomate, with flame cells and a blind gut, except the tapeworms, which have lost the gut. Classes: Turbellaria (Planaria, free living), Trematoda (Fasciola, the liver fluke), Cestoda (Taenia). Aschelminthes are cylindrical, pseudocoelomate, unsegmented, with a complete gut and separate sexes. In this course the class is Nematoda. Ascaris lives in the intestine. Wuchereria lives in lymph vessels and is carried by mosquitoes.</li><li>Annelida have metameric segments, a true coelom, a closed blood system, nephridia and setae or parapodia. Classes: Polychaeta (Nereis, many setae on parapodia), Oligochaeta (Pheretima, a few setae per segment in a ring), Hirudinea (Hirudinaria, the leech, no setae, anterior and posterior suckers). Arthropoda have jointed appendages, a chitinous exoskeleton, and an open blood system in a haemocoel. Classes used here: Crustacea (Palaemon, prawn), Insecta (Periplaneta, Apis, three pairs of legs), Arachnida (spider and scorpion, four pairs of legs), Chilopoda (Scolopendra, one pair of legs per segment), Diplopoda (Julus, two pairs per segment).</li><li>Mollusca have a soft unsegmented body, a mantle that may secrete a shell, a muscular foot, and, except in bivalves, a radula. Classes: Gastropoda (Pila, a coiled shell and a creeping foot), Pelecypoda or Bivalvia (Unio, two valves, no radula), Cephalopoda (Octopus, Sepia, the foot drawn out as arms, a reduced or lost shell). Echinodermata are marine, spiny-skinned, with a water vascular system and tube feet, and a calcite endoskeleton. The adult is radial and the larva is bilateral. Classes: Asteroidea (starfish), Ophiuroidea (brittle star), Echinoidea (sea urchin), Holothuroidea (sea cucumber), Crinoidea (feather star).</li><li>Chordata, at some stage of life, have a notochord, a dorsal hollow nerve cord, pharyngeal gill slits and a post-anal tail. The subphyla are Urochordata (Herdmania, notochord in the tail of the larva), Cephalochordata (Branchiostoma, notochord to the front of the head) and Vertebrata (notochord replaced by a vertebral column). Vertebrate classes: Cyclostomata (Petromyzon, jawless), Chondrichthyes (Scoliodon, cartilaginous), Osteichthyes (Labeo, bony), Amphibia (Rana), Reptilia (Calotes), Aves (Columba) and Mammalia. Hair and mammary glands mark the last class.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Notes</h2><ul><li>Each phylum below is identified by one diagnostic character, then taken only as far as class, with one example. The body-cavity words from the previous note are the sorting key: no cavity, a false cavity, or a true cavity.</li><li>Porifera are pore-bearing, cellular, and mostly marine, with a canal system, choanocytes, and a skeleton of spicules or spongin. Water enters by ostia and leaves by the osculum. Classes: Calcarea (Sycon, calcareous spicules), Hexactinellida (Euplectella, six-rayed silica spicules), Demospongiae (Spongilla, Euspongia). Spongilla is the freshwater example, so 'all sponges are marine' is false. Cnidaria have cnidocytes, radial symmetry, a diploblastic body and a gastrovascular cavity, and they alternate polyp and medusa or emphasise one of them. Classes: Hydrozoa (Hydra, Obelia), Scyphozoa (Aurelia), Anthozoa (sea anemone, coral, polyp only).</li><li>Platyhelminthes are dorsoventrally flat, bilateral, triploblastic and acoelomate, with flame cells and a blind gut, except the tapeworms, which have lost the gut. Classes: Turbellaria (Planaria, free living), Trematoda (Fasciola, the liver fluke), Cestoda (Taenia). Aschelminthes are cylindrical, pseudocoelomate, unsegmented, with a complete gut and separate sexes. In this course the class is Nematoda. Ascaris lives in the intestine. Wuchereria lives in lymph vessels and is carried by mosquitoes.</li><li>Annelida have metameric segments, a true coelom, a closed blood system, nephridia and setae or parapodia. Classes: Polychaeta (Nereis, many setae on parapodia), Oligochaeta (Pheretima, a few setae per segment in a ring), Hirudinea (Hirudinaria, the leech, no setae, anterior and posterior suckers). Arthropoda have jointed appendages, a chitinous exoskeleton, and an open blood system in a haemocoel. Classes used here: Crustacea (Palaemon, prawn), Insecta (Periplaneta, Apis, three pairs of legs), Arachnida (spider and scorpion, four pairs of legs), Chilopoda (Scolopendra, one pair of legs per segment), Diplopoda (Julus, two pairs per segment).</li><li>Mollusca have a soft unsegmented body, a mantle that may secrete a shell, a muscular foot, and, except in bivalves, a radula. Classes: Gastropoda (Pila, a coiled shell and a creeping foot), Pelecypoda or Bivalvia (Unio, two valves, no radula), Cephalopoda (Octopus, Sepia, the foot drawn out as arms, a reduced or lost shell). Echinodermata are marine, spiny-skinned, with a water vascular system and tube feet, and a calcite endoskeleton. The adult is radial and the larva is bilateral. Classes: Asteroidea (starfish), Ophiuroidea (brittle star), Echinoidea (sea urchin), Holothuroidea (sea cucumber), Crinoidea (feather star).</li><li>Chordata, at some stage of life, have a notochord, a dorsal hollow nerve cord, pharyngeal gill slits and a post-anal tail. The subphyla are Urochordata (Herdmania, notochord in the tail of the larva), Cephalochordata (Branchiostoma, notochord to the front of the head) and Vertebrata (notochord replaced by a vertebral column). Vertebrate classes: Cyclostomata (Petromyzon, jawless), Chondrichthyes (Scoliodon, cartilaginous), Osteichthyes (Labeo, bony), Amphibia (Rana), Reptilia (Calotes), Aves (Columba) and Mammalia. Hair and mammary glands mark the last class.</li><li><h2>Diagnostic features and classification of phyla (up to class): Porifera, Coelenterata (Cnidaria), Platyhelminthes, Aschelminthes (Nemathelminthes), Annelida, Arthropoda, Mollusca, Echinodermata and Chordata</h2>
+<h3>1. Introduction</h3>
+<p>Opening frame for <strong>Diagnostic features and classification of phyla (up to class)</strong> — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Faunal Diversity fill pass.</p>
+<h3>2. Hierarchy body — every syllabus sub-point</h3>
+<h4>Diagnostic features and classification of phyla (up to class): Porifera</h4>
+<h4>Coelenterata (Cnidaria)</h4>
+<h4>Platyhelminthes</h4>
+<h4>Aschelminthes (Nemathelminthes)</h4>
+<h4>Annelida</h4>
+<h4>Arthropoda</h4>
+<h4>Mollusca</h4>
+<h4>Echinodermata and Chordata</h4>
+<p>Fill order per concept: definition → structure → process → significance (§3.2). Step-by-step numbered points, Pioneer style.</li><li><h3>3. Classified tables</h3>
+<p><strong>Table 1 — Classification at a glance</strong></p>
+<table><thead><tr><th>Group</th><th>Diagnostic features</th><th>Examples (≥ 2)</th><th>Economic importance</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 2 — Characteristics</strong></p>
+<table><thead><tr><th>Part</th><th>Structure</th><th>Function</th><th>Exam note</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 3 — Summary and marks map</strong></p>
+<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB marks trend</th></tr></thead><tbody></tbody></table>
+<p>Tables carry examples in every classification and characteristics row, ≤ 12 rows, and each is referenced from the body text (§3.3).</li><li><h3>4. Diagrams and figures</h3>
+<ul>
+<li><strong>D1</strong> — Diagnostic features and classification of phyla (up to class) — structure (authored SVG — English labels, viewBox 900×640)</li>
+<li><strong>D2</strong> — Diagnostic features and classification of phyla (up to class) — process or life-cycle flow (authored SVG — English labels)</li>
+<li><strong>D3</strong> — Diagnostic features and classification of phyla (up to class) — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
+<li><strong>D4</strong> — Diagnostic features and classification of phyla (up to class) — comparison or application figure (curated external — license recorded at fill)</li>
+</ul>
+<p>Figure slots are declared up front (§3.4): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y), every external figure license-recorded at fill.</li><li><h3>5. Worked examples and applications</h3>
+<p>≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass.</p>
+<h3>6. Key terms and statements</h3>
+<p>Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).</li><li><h3>7. Exam Zone</h3>
+<p>NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</li><li><h3>8. Summary and self-check</h3>
+<p>5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Spongilla is a sponge that lives in fresh water. Marine life is not the diagnostic character of Porifera. Pores and choanocytes are.</li><li>Hydra is a cnidarian even though it lives in fresh water and has no medusa. Anthozoa also have no medusa. The class still stands.</li><li>A leech is an annelid without setae. Losing setae does not move it into the flatworms. It still has segments, a coelom and suckers.</li><li>Octopus is a mollusc. The shell is reduced. The mantle, the arms made from the foot, and the radula keep it in Cephalopoda.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Porifera: ostia, osculum, choanocytes. Classes Calcarea, Hexactinellida, Demospongiae.</li><li>Cnidaria: cnidocytes. Hydrozoa, Scyphozoa, Anthozoa.</li><li>Flatworms acoelomate with flame cells. Roundworms pseudocoelomate, class Nematoda.</li><li>Annelida segmented and coelomate. Arthropoda jointed, chitin, open circulation.</li><li>Mollusca mantle and foot. Echinodermata water vascular system. Chordata notochord.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Cnidocytes define Cnidaria. A polyp or a medusa is the body form, not the phylum character.</li><li>The notochord has to be present at some stage. In an adult frog it has already been replaced by vertebrae.</li><li>Bivalves have no radula. Every other molluscan class in this note has one.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Euplectella is a glass sponge, Hexactinellida, with six-rayed silica spicules.</li><li>Fasciola is a trematode. Taenia is a cestode and has no gut.</li><li>Nereis has parapodia. Pheretima has a clitellum and setae in rings. Hirudinaria has suckers.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>No echinoderm lives in fresh water. The phylum is entirely marine.</li><li>Insects have three pairs of walking legs. Spiders and scorpions have four pairs. That pair-count is the class split inside Arthropoda.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Pores, stings, flat, round, rings, joints, shell, tube feet, notochord.</li><li>Annelid classes: many bristles, few bristles, leech.</li><li>Chordate quartet: notochord, dorsal hollow nerve cord, gill slits, post-anal tail.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Give the phylum and class of Sycon, Aurelia, Taenia, Nereis, Pila and Asterias.</li><li>State one character that separates Oligochaeta from Hirudinea.</li><li>List the four chordate characters and say which subphylum keeps the notochord into adult life along the whole body.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Why is a leech not classified as a flatworm?</li><li>Which molluscan class lacks a radula, and why is Octopus still a mollusc?</li><li>Name the vertebrate classes that have a bony endoskeleton and jaws, starting from bony fish.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Write phylum, one diagnostic line, classes, one example. Do not write a life cycle unless the question asks.</li><li>For Chordata, give the four characters first, then the three subphyla, then the vertebrate classes if the question says 'up to class'.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Choanocyte means sponge. Cnidocyte means Cnidaria. Flame cell means flatworm.</li><li>Tube feet mean echinoderm. A notochord means chordate, even if the adult no longer shows it.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Aschelminthes is the syllabus name. Nematoda is the class name used for Ascaris and Wuchereria.</li><li>Pelecypoda and Bivalvia are the same class. Either label is acceptable with Unio as the example.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Taenia has no alimentary canal. Do not draw a blind gut for it. Absorption is through the body surface.</li><li>Branchiostoma keeps a notochord as an adult. Herdmania has it in the larva. A frog replaces it with a vertebral column.</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Diagnostic character of each phylum</li><li>Classes of Porifera, Cnidaria, Platyhelminthes and Annelida</li><li>Arthropod classes by legs and body regions</li><li>Molluscan mantle and radula</li><li>Chordate characters and vertebrate classes</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Make a nine-row table: phylum, diagnostic character, one class, one example.</li><li>Add a second line under Annelida and Arthropoda for the class characters only.</li></ul></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Assign Sycon, Hydra, Taenia, Ascaris, Pheretima, Apis, Unio, Asterias and Rana to phylum and class.</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Sycon is Porifera, class Calcarea, because the spicules are calcareous.</li><li>Hydra is Cnidaria, class Hydrozoa. Taenia is Platyhelminthes, class Cestoda.</li><li>Ascaris is Aschelminthes, class Nematoda. Pheretima is Annelida, class Oligochaeta.</li><li>Apis is Arthropoda, class Insecta. Unio is Mollusca, class Bivalvia.</li><li>Asterias is Echinodermata, class Asteroidea. Rana is Chordata, subphylum Vertebrata, class Amphibia.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>Calcarea, Hydrozoa, Cestoda, Nematoda, Oligochaeta, Insecta, Bivalvia, Asteroidea, Amphibia, in that organism order.</p></div></div></div></section>
+<section class="field"><h2>Bounds</h2><ul><li>Life cycles of Plasmodium, earthworm and frog are separate notes. This note is the classification grid only.</li><li>Orders and families are out of scope. Stop at class.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Nine phyla are recognised by pores, cnidocytes, a flat acoelomate body, a pseudocoelom, metameric segments, jointed chitinous appendages, a mantle, a water vascular system, and a notochord. Each is classified only to class: three sponge classes, three cnidarian classes, three flatworm classes, three annelid classes, five arthropod classes, three molluscan classes, five echinoderm classes, and the vertebrate classes under Chordata. Spongilla, Hydra and the leech are the usual traps, because habitat or a missing seta does not move them out of the phylum.</p></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Choanocytes identify</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Porifera</li><li>Cnidaria</li><li>Mollusca</li><li>Chordata</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Taenia is placed in</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Trematoda</li><li>Nematoda</li><li>Cestoda</li><li>Hirudinea</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>A leech stays in Annelida because it</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Has a radula and a mantle</li><li>Is segmented and coelomate, even without setae</li><li>Has cnidocytes</li><li>Has tube feet</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Which is a chordate character at some stage of life?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A water vascular system</li><li>Choanocytes</li><li>A chitinous exoskeleton</li><li>A notochord</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>D</p></div></div></div></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Choanocytes identify</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Porifera</li><li>Cnidaria</li><li>Mollusca</li><li>Chordata</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Taenia is placed in</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Trematoda</li><li>Nematoda</li><li>Cestoda</li><li>Hirudinea</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>A leech stays in Annelida because it</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Has a radula and a mantle</li><li>Is segmented and coelomate, even without setae</li><li>Has cnidocytes</li><li>Has tube feet</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Which is a chordate character at some stage of life?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A water vascular system</li><li>Choanocytes</li><li>A chitinous exoskeleton</li><li>A notochord</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>D</p></div></div></div></section>
+  <nav class="pager"><a href="04-frog.html" title="Frog">‹ Frog</a><a class="mid" href="../../../../../_subjects/class-11-biology.html">Biology</a><a href="05-frog-habit-and-habitat-external-features.html" title="Frog — Habit, Habitat and External Features">Frog — Habit, Habitat and External Features ›</a></nav>
+</div></body></html>

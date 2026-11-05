@@ -100,8 +100,10 @@ export function MobileNav() {
 
   return (
     <>
-      {/* Hamburger button — visible only on mobile (< lg) */}
-      <div className="lg:hidden">
+      {/* Hamburger button — phones only. From md up the persistent rail
+          sidebar carries the full navigation, so a second menu button would
+          just be a duplicate affordance. */}
+      <div className="md:hidden">
         <Button
           ref={triggerRef}
           variant="ghost"
@@ -122,7 +124,7 @@ export function MobileNav() {
           content bleed through the backdrop. */}
       {open && typeof document !== "undefined"
         ? createPortal(
-        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-label="Navigation menu">
+        <div className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true" aria-label="Navigation menu">
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-backdrop-in"

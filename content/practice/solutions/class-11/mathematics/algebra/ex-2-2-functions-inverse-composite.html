@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI — Ch.2 Book Ex 2.2 (Functions, inverse &amp; composite functions) — Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Algebra</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI — Ch.2 Book Ex 2.2 (Functions, inverse &amp; composite functions) — Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Algebra</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.2 BOOK Exercise 2.2 (pp 64-66 in the 2078 printing per the Sukunda index; our PDF is the 2075 reprint — page numbers may shift, question IDs are the book's own). Question statements via the Sci-Pi Pupil typed index (Exercise 2 page, 2023-08 printing), every computation independently re-verified by substitution.</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>algebra-textbook-ex-2-2-functions-inverse-composite</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>algebra</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q1(a). Let X = {a,b,c}, Y = {p,r,s}. Is R1 = {(a,p),(a,r),(b,r),(c,s)} a function from X to Y? Give reason.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>A relation X→Y is a function iff every element of X has exactly one image in Y — one output each, no element left without an image.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Check each element of X: a appears twice — (a,p) and (a,r), i.e. a has two images p and r. A function allows exactly one image per domain element. ✅ NOT a function (a violates uniqueness).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(a)</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q1(b). With X, Y as above, is R2 = {(a,p),(b,r)} a function? Give reason.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Totality matters too: every domain element must appear at least once as a first component.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>List first components: {a, b} — element c ∈ X has no pair, so no image for c. A function from X to Y must cover all of X. ✅ NOT a function (c has no image).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(b)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q1(c). With X, Y as above, is R3 = {(a,s),(b,s),(c,s)} a function? Give reason.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Many-to-one is allowed: distinct domain elements may share one image; only one-image-per-element and full coverage are required.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>First components: a→s, b→s, c→s. Every element of X appears exactly once as a first component. ✅ IS a function (constant function; many-to-one is legal).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(c)</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q1(d). With X, Y as above, is R4 = {(a,p),(b,p),(c,s)} a function? Give reason.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same test: each of a, b, c used exactly once ⇒ function, even though a and b share image p.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>a→p, b→p, c→s — all three domain elements covered exactly once. ✅ IS a function.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(d)</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q1(e). With X, Y as above, is R5 = {(a,p),(b,r),(c,s)} a function? Give reason.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>One-to-one onto a 3-element codomain subset: each domain element used once ⇒ function (bijective onto {p,r,s}).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>a→p, b→r, c→s — every element of X has exactly one image. ✅ IS a function.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q1(e)</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q2(a). If f: A→B with f(x) = 1−x, find the image of 1.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Image = function value at a point: substitute and simplify, watching fraction arithmetic.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>f(1) = 1 − 1 = 0. ✅ Image of 1 is 0.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q2 (x = 1)</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q2(b). With f(x) = 1−x as above, find the image of 3/2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>With fractions, keep a common denominator: 1 − 3/2 = (2−3)/2 = −1/2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>f(3/2) = 1 − 3/2 = (2 − 3)/2 = −1/2. ✅ Image of 3/2 is −1/2.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q2 (x = 3/2)</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q2(c). With f(x) = 1−x as above, find the image of −1.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Minus of a minus: 1 − (−1) = 1 + 1 = 2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>f(−1) = 1 − (−1) = 2. ✅ Image of −1 is 2.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q2 (x = −1)</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q2(d). With f(x) = 1−x as above, find the image of 2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Direct substitution: f(2) = 1 − 2 = −1.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>1</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>f(2) = 1 − 2 = −1. ✅ Image of 2 is −1.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q2 (x = 2)</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q3(a). Find a formula for the inverse function f⁻¹ if f: R→R, f(x) = x + 1.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Inverse by interchange: set y = f(x), swap to x = …, then solve for y.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Step 1 — Let y = x + 1. Step 2 — Interchange: x = y + 1. Step 3 — Solve: y = x − 1. ✅ f⁻¹(x) = x − 1. (Check: f(f⁻¹(x)) = (x−1)+1 = x ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q3(a)</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>Q3(b). Find f⁻¹ if f: R→R, f(x) = 2x + 3.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Linear inverse: after swapping, isolate y by undoing ×2 then −3.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Step 1 — y = 2x + 3. Step 2 — x = 2y + 3. Step 3 — 2y = x − 3, so y = (x−3)/2. ✅ f⁻¹(x) = (x−3)/2. (Check: 2·((x−3)/2)+3 = x ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q3(b)</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>Q3(c). Find f⁻¹ if f: R→R, f(x) = 2x + 5.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same template with constant 5: y = (x−5)/2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Step 1 — y = 2x + 5. Step 2 — x = 2y + 5. Step 3 — y = (x−5)/2. ✅ f⁻¹(x) = (x−5)/2. (Check: 2·((x−5)/2)+5 = x ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q3(c)</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>Q3(d). Find f⁻¹ if f: R→R, f(x) = x³ + 5.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Cubic inverse uses the real cube root: x = y³+5 ⇒ y = ∛(x−5).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Step 1 — y = x³ + 5. Step 2 — x = y³ + 5. Step 3 — y³ = x − 5, so y = ∛(x−5). ✅ f⁻¹(x) = ∛(x−5). (Check: (∛(x−5))³+5 = x ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q3(d)</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>Q3(e). Find f⁻¹ if f: R→R, f(x) = 3x − 2.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Undo 3x−2 in reverse: add 2, divide by 3.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Step 1 — y = 3x − 2. Step 2 — x = 3y − 2. Step 3 — 3y = x + 2, so y = (x+2)/3. ✅ f⁻¹(x) = (x+2)/3. (Check: 3·((x+2)/3)−2 = x ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q3(e)</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>Q4(a-i). Let f(x) = 2x + 1 and g(x) = 3x − 1. Find gof(x).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>gof means apply f first: g(f(x)) = 3(2x+1)−1.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>gof(x) = g[f(x)] = g(2x+1) = 3(2x+1) − 1 = 6x + 3 − 1. ✅ gof(x) = 6x + 2.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q4(a) gof</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>Q4(a-ii). With f, g as above, find fog(x).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>fog reverses the order: f(g(x)) = 2(3x−1)+1. Order matters — compare with gof.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>fog(x) = f[g(x)] = f(3x−1) = 2(3x−1) + 1 = 6x − 2 + 1. ✅ fog(x) = 6x − 1. (Note gof ≠ fog here.)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q4(a) fog</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>Q4(b-i). Let f(x) = 3x² − 4 and g(x) = 2x − 5. Find gof(x).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Substitute the whole quadratic into the linear outer function, then expand.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>gof(x) = g(3x²−4) = 2(3x²−4) − 5 = 6x² − 8 − 5. ✅ gof(x) = 6x² − 13.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q4(b) gof</p></div></div></div><div class="q"><span class="n">18.</span><div class="stem"><p>Q4(b-ii). With f, g as above, find fog(x).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Squaring a binomial: (2x−5)² = 4x² − 20x + 25 — middle term is 2·(2x)(−5).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>fog(x) = f(2x−5) = 3(2x−5)² − 4 = 3(4x² − 20x + 25) − 4 = 12x² − 60x + 75 − 4. ✅ fog(x) = 12x² − 60x + 71. (Check at x = 0: f(g(0)) = f(−5) = 3·25−4 = 71 ✔)</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q4(b) fog</p></div></div></div><div class="q"><span class="n">19.</span><div class="stem"><p>Q4(c-i). Let f(x) = x³ − 1 and g(x) = x². Find gof(x).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Power-then-power: g(f(x)) squares the whole cubic-minus-one; leave expanded or factored as the book accepts either.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>gof(x) = (x³−1)². ✅ gof(x) = (x³ − 1)² (= x⁶ − 2x³ + 1 expanded).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q4(c) gof</p></div></div></div><div class="q"><span class="n">20.</span><div class="stem"><p>Q4(c-ii). With f, g as above, find fog(x).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Reverse order collapses nicely: (x²)³ − 1 = x⁶ − 1.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>fog(x) = f(x²) = (x²)³ − 1 = x⁶ − 1. ✅ fog(x) = x⁶ − 1.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q4(c) fog</p></div></div></div><div class="q"><span class="n">21.</span><div class="stem"><p>Q4(d-i). Let f(x) = x² + 1 and g(x) = x⁵. Find gof(x).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Outer power 5: substitute the full quadratic-plus-one as the base.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>gof(x) = (x²+1)⁵. ✅ gof(x) = (x² + 1)⁵.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q4(d) gof</p></div></div></div><div class="q"><span class="n">22.</span><div class="stem"><p>Q4(d-ii). With f, g as above, find fog(x).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>(x⁵)² + 1 = x¹⁰ + 1 by the power-of-power rule.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>fog(x) = f(x⁵) = (x⁵)² + 1 = x¹⁰ + 1. ✅ fog(x) = x¹⁰ + 1.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics XI, Ch.2 Book Ex 2.2 Q4(d) fog</p></div></div></div></section>
+  <nav class="pager"><a href="ex-2-2-diagrams-piecewise-range.html" title="Sukunda Basic Mathematics XI — Ch.2 Book Ex 2.2 Q1 + Q4–Q10 (diagrams, piecewise evaluation, range, one-one/onto) — Complete Solutions">‹ Sukunda Basic Mathematics XI — Ch.2 Book Ex 2…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-2-3-inverse-algebra-composite-domain-range.html" title="Sukunda Basic Mathematics XI — Ch.2 Book Ex 2.3 (inverse images, algebra of functions, composites, domain &amp; range) — Complete Solutions">Sukunda Basic Mathematics XI — Ch.2 Book Ex 2… ›</a></nav>
+</div></body></html>

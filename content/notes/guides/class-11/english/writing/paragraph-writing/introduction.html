@@ -1,0 +1,164 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Paragraph Writing</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Paragraph Writing</div>
+    <h1 class="doc">Paragraph Writing</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Paragraph Writing</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>writing</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>paragraph-writing</p></section>
+<section class="field"><h2>Relevance</h2><p><code>88</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;What Is a Paragraph?&lt;/h2&gt;</li><li>&lt;p&gt;A &lt;b&gt;paragraph&lt;/b&gt; is a group of related sentences that develop a single central idea. It is the basic unit of composition in English writing. A well-written paragraph has three essential elements: a &lt;b&gt;topic sentence&lt;/b&gt; (states the main idea), &lt;b&gt;supporting sentences&lt;/b&gt; (provide details, examples, explanations), and a &lt;b&gt;concluding sentence&lt;/b&gt; (summarises or transitions). In NEB English exams, paragraph writing questions typically carry 5-8 marks and require students to write a coherent paragraph on a given topic within 100-150 words.&lt;/p&gt;</li><li>&lt;h2&gt;The Topic Sentence&lt;/h2&gt;</li><li>&lt;p&gt;The &lt;b&gt;topic sentence&lt;/b&gt; is usually the first sentence of the paragraph and states the main idea that the paragraph will develop. It should be specific enough to guide the paragraph but broad enough to allow development. A good topic sentence: 'Regular exercise has numerous physical and mental health benefits.' A weak topic sentence: 'Exercise is good.' The topic sentence acts as a promise to the reader about what the paragraph will discuss. In NEB exams, a clear topic sentence is essential for earning marks for organisation and coherence.&lt;/p&gt;</li><li>&lt;h2&gt;Supporting Sentences&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Supporting sentences&lt;/b&gt; develop the main idea introduced in the topic sentence. They can provide: &lt;b&gt;examples&lt;/b&gt; (e.g., 'For instance, running improves cardiovascular health'), &lt;b&gt;details&lt;/b&gt; (e.g., 'A 30-minute walk daily can reduce the risk of heart disease by 30%'), &lt;b&gt;explanations&lt;/b&gt; (e.g., 'Exercise releases endorphins, which improve mood and reduce stress'), &lt;b&gt;facts/statistics&lt;/b&gt; (e.g., 'According to WHO, physical inactivity is the fourth leading risk factor for global mortality'). Each supporting sentence should relate directly to the topic sentence. Unrelated sentences weaken the paragraph's coherence and cost marks.&lt;/p&gt;</li><li>&lt;h2&gt;The Concluding Sentence&lt;/h2&gt;</li><li>&lt;p&gt;The &lt;b&gt;concluding sentence&lt;/b&gt; wraps up the paragraph by restating the main idea in different words, summarising the key points, or providing a final thought. It should not introduce new information. Examples: 'Therefore, incorporating regular physical activity into daily routine is essential for maintaining overall health.' 'In summary, the benefits of exercise extend beyond physical fitness to mental well-being as well.' The concluding sentence gives the paragraph a sense of closure and helps the reader remember the main point.&lt;/p&gt;</li><li>&lt;h2&gt;Coherence and Unity&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Coherence&lt;/b&gt; means the paragraph flows logically — ideas connect smoothly and readers can follow the progression. &lt;b&gt;Unity&lt;/b&gt; means every sentence relates to the single main idea. Achieving coherence requires: (1) &lt;b&gt;Logical order&lt;/b&gt; — arrange supporting sentences in a sensible sequence (chronological, spatial, order of importance, cause-effect). (2) &lt;b&gt;Transitional words&lt;/b&gt; — use connectors like 'first', 'second', 'moreover', 'however', 'for example', 'consequently', 'in addition'. (3) &lt;b&gt;Pronoun reference&lt;/b&gt; — use pronouns (it, they, this, these) to avoid repetition and create links between sentences. A paragraph lacking coherence reads like a list of unrelated statements.&lt;/p&gt;</li><li>&lt;h2&gt;Types of Paragraphs&lt;/h2&gt;</li><li>&lt;p&gt;Paragraphs can be classified by their purpose: &lt;b&gt;Descriptive paragraph&lt;/b&gt; — paints a picture using sensory details (sight, sound, smell, touch, taste). 'The marketplace was a vibrant tapestry of colours and sounds — piles of bright red tomatoes, the pungent aroma of cumin and turmeric, the chatter of vendors hawking their wares.' &lt;b&gt;Narrative paragraph&lt;/b&gt; — tells a short story or recounts an event. 'That morning, I woke up to find the streets covered in a thin layer of snow, a rare sight in Kathmandu.' &lt;b&gt;Expository paragraph&lt;/b&gt; — explains or informs about a topic. 'Renewable energy sources, such as solar and hydroelectric power, are increasingly vital to Nepal's energy security.' &lt;b&gt;Argumentative paragraph&lt;/b&gt; — presents a claim with supporting evidence. 'School uniforms should be mandatory because they promote equality, reduce distraction, and foster school spirit.'&lt;/p&gt;</li><li>&lt;h2&gt;Organisational Patterns&lt;/h2&gt;</li><li>&lt;p&gt;Paragraphs can be organised using different patterns: &lt;b&gt;Chronological order&lt;/b&gt; — events in time sequence (first, then, next, finally). &lt;b&gt;Space order&lt;/b&gt; — description arranged by location (left to right, top to bottom, near to far). &lt;b&gt;Order of importance&lt;/b&gt; — most important to least important, or vice versa. &lt;b&gt;Compare and contrast&lt;/b&gt; — similarities and differences between two subjects. &lt;b&gt;Cause and effect&lt;/b&gt; — reasons and results. &lt;b&gt;Problem and solution&lt;/b&gt; — a problem and its possible solutions. Choosing the right organisational pattern depends on the paragraph's purpose and the nature of the topic. In NEB exams, a logical organisational pattern is essential for coherence marks.&lt;/p&gt;</li><li>&lt;h2&gt;Avoiding Common Paragraph Errors&lt;/h2&gt;</li><li>&lt;p&gt;Common errors in paragraph writing include: (1) &lt;b&gt;Fragment paragraphs&lt;/b&gt; — a single sentence that does not develop a full idea (more than one sentence is needed). (2) &lt;b&gt;Run-on paragraphs&lt;/b&gt; — a paragraph that is too long and tries to cover too many ideas (keep to one main idea per paragraph). (3) &lt;b&gt;Missing topic sentence&lt;/b&gt; — the reader cannot identify the main point. (4) &lt;b&gt;Irrelevant sentences&lt;/b&gt; — sentences that do not support the main idea. (5) &lt;b&gt;No conclusion&lt;/b&gt; — the paragraph ends abruptly without wrapping up. (6) &lt;b&gt;Poor transitions&lt;/b&gt; — sentences feel disconnected. (7) &lt;b&gt;Repetition&lt;/b&gt; — stating the same idea multiple times without adding new information. Each of these errors reduces the paragraph's effectiveness and earns fewer marks in NEB exams.&lt;/p&gt;</li><li>&lt;h2&gt;Paragraph Writing in NEB Exams&lt;/h2&gt;</li><li>&lt;p&gt;In the NEB English examination, paragraph writing is typically worth 5-8 marks. Students are given a topic (e.g., 'Write a paragraph on the benefits of reading newspapers') and expected to write 100-150 words. Marking criteria include: &lt;b&gt;Content&lt;/b&gt; (relevance and development of ideas), &lt;b&gt;Organisation&lt;/b&gt; (logical structure, coherence), &lt;b&gt;Linguistic accuracy&lt;/b&gt; (grammar, spelling, punctuation), and &lt;b&gt;Language&lt;/b&gt; (vocabulary, variety of sentences). A well-structured paragraph with relevant content, correct grammar, and smooth transitions can earn full or near-full marks. Practising paragraph writing on common topics is the best preparation strategy.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Paragraph vs. Essay: A paragraph develops a single main idea with topic sentence, supporting sentences, and conclusion. An essay develops multiple related ideas across multiple paragraphs with an introduction, body, and conclusion. A paragraph is a building block of an essay, not a complete composition on its own.</li><li>Topic sentence vs. Thesis statement: A topic sentence introduces the main idea of a single paragraph. A thesis statement introduces the main argument of an entire essay. Both serve as central statements, but at different levels of organisation. A paragraph can have only one topic sentence; an essay has one thesis statement.</li><li>Descriptive vs. Narrative paragraph: A descriptive paragraph focuses on painting a sensory picture (what something looks, sounds, smells like). A narrative paragraph focuses on telling a story or recounting events (what happened, in what order). A descriptive paragraph answers 'what is it like?'; a narrative paragraph answers 'what happened?'.</li><li>Unity vs. Coherence: Unity means all sentences relate to one main idea. Coherence means the sentences flow logically and connect smoothly. A paragraph can have unity (all sentences about exercise) but lack coherence (sentences in random order). Both are required for a good paragraph.</li><li>Concluding sentence vs. Summary: A concluding sentence wraps up the paragraph by restating the main idea or providing a final thought. A summary condenses the entire essay's main points. A paragraph's concluding sentence should not introduce new information — it should bring the paragraph to a natural close.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Write a topic sentence for a paragraph about 'The importance of vaccination.' [Answer: 'Vaccination is one of the most effective public health interventions for preventing infectious diseases.']</li><li>Identify the organisational pattern: 'First, the seeds must be sown in prepared soil. Next, they should be watered regularly. Then, the seedlings need sunlight. Finally, the plants will be ready for harvest.' [Answer: Chronological order — events in time sequence using 'first, next, then, finally'.]</li><li>Add a concluding sentence to this paragraph: 'Reading newspapers has many benefits. It keeps readers informed about current events and national affairs. It improves vocabulary and general knowledge. It also encourages critical thinking about social and political issues.' [Answer: 'Therefore, reading newspapers daily is a valuable habit that contributes to both personal development and informed citizenship.']</li><li>Identify the error: 'My favourite season is monsoon. It brings relief from the summer heat. I love the sound of rain on the rooftop. The smell of wet earth is wonderful. I enjoy walking in the rain with my umbrella.' [Answer: This paragraph lacks a concluding sentence. It ends abruptly after the last supporting detail without wrapping up the main idea.] — Note: The paragraph also has weak cohesion; adding transitional words would improve it.</li><li>Write a paragraph (5-6 sentences) on 'The advantages of learning English' using the PEEL structure. [Answer: 'Learning English offers numerous advantages in today's globalised world. First, English is the primary language of international business and diplomacy, making proficiency essential for career opportunities. For example, most multinational companies in Nepal require English fluency for employment. Additionally, the majority of online educational resources and scientific research are published in English, giving English speakers greater access to knowledge. Furthermore, English enables travel and cultural exchange by serving as a common language across different countries. In conclusion, mastering English opens doors to educational, professional, and cultural opportunities that would otherwise remain inaccessible.']</li><li>Identify the type of paragraph: 'The old temple stood at the edge of the village, its weathered stone walls covered in moss, its wooden doors creaking softly in the mountain breeze. Incense smoke curled from the small shrine at its entrance, carrying the faint scent of sandalwood.' [Answer: Descriptive paragraph — uses sensory details (sight: weathered stone, moss; sound: creaking doors, breeze; smell: sandalwood) to paint a vivid picture.] — Note: This paragraph also has a slightly atmospheric/narrative quality, but the primary purpose is description.</li><li>What is wrong with this paragraph? 'Education is important. Many people go to school. Schools have teachers. Learning is fun. Books are helpful. Exams are difficult. Education helps you get a job.' [Answer: This paragraph lacks a clear topic sentence, has no logical organisation, and the sentences are disconnected. It reads like a list of unrelated statements. A better paragraph would have a clear topic sentence, supporting sentences arranged logically, and a concluding sentence.] — This is a classic example of a 'list paragraph' that NEB examiners penalise heavily.</li><li>Rewrite this paragraph to improve coherence: 'Mobile phones are popular. They are useful. People use them for calling. They also take photos. Battery life is poor. They can be expensive.' [Answer: 'Mobile phones have become an essential part of modern life. They are useful for making calls, sending messages, and taking photos. However, they also have drawbacks: battery life is often poor, and high-quality models can be expensive. Despite these disadvantages, their convenience and versatility ensure that mobile phones remain indispensable in daily life.'] — Note the improvements: clear topic sentence, logical flow (benefits then drawbacks then conclusion), transitional words ('however', 'despite').</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The paragraph as a structural unit in English writing became standardised in the 17th and 18th centuries, as writers and printers sought to make texts more readable and organised. Before this period, texts were often written in long, unbroken blocks of prose.</li><li>In the NEB English examination, paragraph writing typically carries 5-8 marks. The marking criteria emphasise content relevance, organisation (unity and coherence), linguistic accuracy, and language use — all of which can be developed through regular practice.</li><li>The PEEL structure (Point, Evidence, Explanation, Link) is a widely taught framework in Nepali schools for building coherent paragraphs. It ensures that each paragraph has a clear focus, supporting details, and a connection back to the main idea.</li><li>Paragraph writing is a fundamental skill that extends far beyond exams. In academic, professional, and digital communication, the ability to organise ideas into well-structured paragraphs is essential for clear and effective writing.</li><li>The concept of paragraphing is not universal across languages. Some languages (e.g., Japanese) traditionally use different organisational structures, and even within European languages, paragraph conventions can vary. The English paragraph structure — with its emphasis on a clear topic sentence and logical development — is a relatively recent innovation in world writing traditions.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>writing</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>writing</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

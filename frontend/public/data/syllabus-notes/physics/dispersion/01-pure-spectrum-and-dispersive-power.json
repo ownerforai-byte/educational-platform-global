@@ -1,0 +1,209 @@
+{
+  "title": "Pure Spectrum and Dispersive Power",
+  "unitSlug": "dispersion",
+  "topicSlug": "pure-spectrum-and-dispersive-power",
+  "topicTitle": "Pure spectrum and dispersive power",
+  "relevance": 100,
+  "notes": [
+    "A prism forms a spectrum because refractive index varies with wavelength. In normal dispersion, violet has a larger index and deviation than red. A pure spectrum has narrow, well-separated colour images with little overlap.",
+    "For a thin prism, angular dispersion is Δδ=(nv−nr)A and yellow mean deviation is δy=(ny−1)A. Their ratio is ω=Δδ/δy=(nv−nr)/(ny−1).",
+    "Worked example: if δy=3° and ω=0.06, the red–violet spread is Δδ=0.18°. A material with twice the dispersive power gives twice the spread at the same mean deviation.",
+    "To obtain a purer spectrum, use a narrow slit, collimate the incident beam and focus the dispersed rays with a lens. A wide slit broadens each colour image and causes neighbouring bands to overlap.",
+    "A spectrometer uses a collimator slit and telescope to form and inspect a sharp spectrum. Resolution improves when the source image is narrow and the optical alignment is correct.",
+    "A pure spectrum is formed when each colour is brought to its own sharp image and those images do not overlap. A slit at the focus of a collimating lens sends parallel light into the prism, and a telescope then focuses each colour separately.",
+    "# Pure spectrum and dispersive power\n\n## 1. Introduction\nPhysical picture of **Pure spectrum and dispersive power** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Dispersion fill pass.\n\n## 2. Concepts and laws\n### Pure spectrum and dispersive power\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Constants and values**\n\n| Constant or quantity | Value (CODATA/SI 2019) | Where used | Validity note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Pure spectrum and dispersive power — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Pure spectrum and dispersive power — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Pure spectrum and dispersive power — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Pure spectrum and dispersive power — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+  ],
+  "confusion": [
+    "Do not equate a broad rainbow with a pure spectrum; slit width affects purity.",
+    "The thin-prism ratio assumes small deviations.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+  ],
+  "practice": [
+    "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
+    "Name two adjustments that improve spectral purity.",
+    "Why does a wide entrance slit reduce spectral purity?"
+  ],
+  "universalFacts": [
+    "A pure spectrum minimises overlap of adjacent colour images.",
+    "Dispersive power is relative spread, not absolute deviation.",
+    "Narrow slits improve resolution at the cost of brightness."
+  ],
+  "animation3D": "dispersion",
+  "motionGraphics": "dispersion",
+  "examples": [
+    "δy=3° and ω=0.06 give Δδ=0.18°.",
+    "Reducing slit width sharpens spectral lines but also reduces light intensity.",
+    "A pure spectrum is formed when each colour is brought to its own sharp image and those images do not overlap. A slit at the focus of a collimating lens sends parallel light into the prism, and a telescope then focuses each colour separately.",
+    "The working relations are A pure spectrum separates colours without overlap. and ω = (μ_v − μ_r)/(μ − 1). Name each symbol, convert the data into SI units, and only then substitute.",
+    "Crown glass has μ_v = 1.53, μ_r = 1.51 and mean μ = 1.52. Find ω and say what a pure spectrum requires."
+  ],
+  "practiceQuestions": [
+    "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
+    "Name two adjustments that improve spectral purity.",
+    "Why does a wide entrance slit reduce spectral purity?"
+  ],
+  "formulas": [
+    "Δδ=(nv−nr)A; δy=(ny−1)A.",
+    "ω=Δδ/δy=(nv−nr)/(ny−1)."
+  ],
+  "keyPoints": [
+    "A pure spectrum minimises overlap of adjacent colour images.",
+    "Dispersive power is relative spread, not absolute deviation.",
+    "Narrow slits improve resolution at the cost of brightness.",
+    "A pure spectrum separates colours without overlap.",
+    "ω = (μ_v − μ_r)/(μ − 1)",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
+  "summary": "A pure spectrum requires narrow, collimated light and well-separated colour images. Thin-prism dispersive power is ω=(nv−nr)/(ny−1).",
+  "specialNotes": [
+    "Do not equate a broad rainbow with a pure spectrum; slit width affects purity.",
+    "The thin-prism ratio assumes small deviations."
+  ],
+  "importantStatements": [
+    "A pure spectrum minimises overlap of adjacent colour images.",
+    "Dispersive power is relative spread, not absolute deviation.",
+    "Narrow slits improve resolution at the cost of brightness."
+  ],
+  "importantNotes": [
+    "A pure spectrum minimises overlap of adjacent colour images.",
+    "Dispersive power is relative spread, not absolute deviation.",
+    "Narrow slits improve resolution at the cost of brightness."
+  ],
+  "examShortTricks": [
+    "Δδ=(nv−nr)A; δy=(ny−1)A.",
+    "ω=Δδ/δy=(nv−nr)/(ny−1)."
+  ],
+  "examNotes": [
+    "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
+    "Name two adjustments that improve spectral purity.",
+    "Why does a wide entrance slit reduce spectral purity?"
+  ],
+  "importantConcepts": [
+    "A pure spectrum minimises overlap of adjacent colour images.",
+    "Dispersive power is relative spread, not absolute deviation.",
+    "Narrow slits improve resolution at the cost of brightness.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "A prism gives δy=2.4° and angular spread 0.12°. Find ω.",
+    "Name two adjustments that improve spectral purity.",
+    "Why does a wide entrance slit reduce spectral purity?"
+  ],
+  "duplicateType": 1,
+  "specificConditions": [
+    "**Dispersion Definition:** Dispersion is the separation of white light into its constituent colors (spectrum) due to the dependence of the refractive index $n$ on the wavelength $\\lambda$ of light ($n(\\lambda)$).",
+    "**Cauchy's Equation:** For many transparent materials, the refractive index follows Cauchy's equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$. This explains why blue light ($\\lambda$ smaller) is refracted more than red light ($\\lambda$ larger).",
+    "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry."
+  ],
+  "visualType": "power-concept",
+  "mcs": [
+    {
+      "question": "A pure spectrum has",
+      "options": [
+        "Overlapping colours",
+        "Each colour focused separately",
+        "No prism",
+        "One index for every colour"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The collimator makes the light",
+      "options": [
+        "Converge on the prism",
+        "Parallel through the prism",
+        "White again",
+        "Circularly polarised"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "ω equals",
+      "options": [
+        "(μ_v − μ_r)/(μ − 1)",
+        "μ_v + μ_r",
+        "A",
+        "The slit width"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "An impure spectrum is caused by",
+      "options": [
+        "Overlap of colour images",
+        "A narrow slit used correctly",
+        "Parallel rays",
+        "A single wavelength"
+      ],
+      "answer": "A"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "A pure spectrum has",
+      "options": [
+        "Overlapping colours",
+        "Each colour focused separately",
+        "No prism",
+        "One index for every colour"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The collimator makes the light",
+      "options": [
+        "Converge on the prism",
+        "Parallel through the prism",
+        "White again",
+        "Circularly polarised"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "ω equals",
+      "options": [
+        "(μ_v − μ_r)/(μ − 1)",
+        "μ_v + μ_r",
+        "A",
+        "The slit width"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "An impure spectrum is caused by",
+      "options": [
+        "Overlap of colour images",
+        "A narrow slit used correctly",
+        "Parallel rays",
+        "A single wavelength"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Crown glass has μ_v = 1.53, μ_r = 1.51 and mean μ = 1.52. Find ω and say what a pure spectrum requires.",
+      "steps": [
+        "ω = (1.53 − 1.51) / (1.52 − 1) = 0.020 / 0.52.",
+        "ω = 0.038.",
+        "A pure spectrum needs a narrow slit and parallel light through the prism.",
+        "The focusing lens then puts each colour in its own place.",
+        "Overlap of those images would make an impure spectrum."
+      ],
+      "answer": "0.038. A pure spectrum needs a slit, a collimator and a focusing lens so colours do not overlap."
+    }
+  ],
+  "source": "skeleton-v2"
+}

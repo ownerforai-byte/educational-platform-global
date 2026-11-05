@@ -1,0 +1,171 @@
+<!doctype html><html><head><meta charset="utf-8"><title>पाठ १२ — जलस्रोत र ऊर्जा (वक्तृता)</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Nepali  /  Sahitya Adhyayan</div>
+    <h1 class="doc">पाठ १२ — जलस्रोत र ऊर्जा (वक्तृता)</h1>
+    <div class="meta"><span>Class 11</span><span>Nepali</span><span>Sahitya Adhyayan</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>sahitya-adhyayan</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>पाठ-१२-जलस्रोत-र-ऊर्जा-वक्तृता</p></section>
+<section class="field"><h2>Relevance</h2><p><code>98</code></p></section>
+<section class="field"><h2>Source</h2><p>authored</p></section>
+<section class="field"><h2>Summary</h2><p>जलस्रोत र ऊर्जा वक्तृता हो। नेपालका नदी ऊर्जाको सम्भावना हुन् र बेहिसाब दोहन खतरा हो। प्रो वक्तृताले सम्बोधन, तथ्य, अपील र धन्यवाद मिलाउँछ। नदीलाई पूर्वी कोसी, मध्य गण्डकी र पश्चिम कर्णालीमा बाँडेर देशको विविधता देखाउँछ।</p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>विधा।</strong> वक्तृता सुन्नका लागि लेखिन्छ। वाक्य छोटा हुन्छन्। दोहोर्‍याइ हुन्छ। श्रोतालाई सोध्न मिल्छ। निबन्ध भन्दा सम्बोधन बढी हुन्छ। सुरुमा आदरणीय सभाध्यक्ष, गुरुवर्ग र साथीहरू। अन्त्यमा धन्यवाद। बीचमा मुद्दा।</li><li><strong>मुद्दा एक वाक्यमा।</strong> नेपाल जलस्रोतमा धनी देश हो, तर ऊर्जामा अझै गरिब अभ्यास गर्छ। खोला बग्छ। बत्ती काटिन्छ। यो विरोधाभास नै वक्तृताको केन्द्र हो। पहिलो मिनेटमै यो वाक्य भन्नुहोस्।</li><li><strong>तीन नदी क्षेत्र।</strong> पूर्वमा कोसी र त्यसका सहायक नदी। मध्यमा गण्डकी। पश्चिममा कर्णाली। तीनै हिमालबाट झर्छन् र तराई हुँदै बग्छन्। नामले वक्तृता देशैभरिको हुन्छ। एउटा खोलाको मात्र भाषण स्थानीय हुन्छ। तीन क्षेत्रको भाषण राष्ट्रिय हुन्छ।</li><li><strong>ऊर्जा के के हो।</strong> जलविद्युत् मुख्य हो। सिँचाइ कृषि ऊर्जा हो। खानेपानी जीवन ऊर्जा हो। माछा र जलयात्रा आम्दानी हुन्। एउटा खोलाको चार काम लेख्नुहोस्। बिजुली मात्र लेखे जलस्रोत सानो हुन्छ।</li><li><strong>खतरा।</strong> बाढी, पहिरो, अनियन्त्रित बालुवा झिकाइ, फोहोर, जथाभावी बाँध र लाभ एउटै ठाउँमा थुप्रिने चलन। हिमालको हिउँ पग्लने कुरा गर्दा पक्का नभएको डरलाग्दो सङ्ख्या नथोपर्नुहोस्। खतराको नाम लेख्नुहोस् र एउटा उदाहरण दिनुहोस्।</li><li><strong>न्याय।</strong> बिजुली बनेको गाउँ अँध्यारो हुन सक्छ। तराईले बाढी खेप्छ, निर्णय अर्कै ठाउँमा हुन सक्छ। प्रो वक्तृताले भन्छ — पानी जसको भूगोलमा बग्छ, लाभको एउटा हिस्सा त्यहीँ बस्नुपर्छ। यो वाक्यले भाषणलाई नैतिक बनाउँछ।</li><li><strong>अपील तीन वटा।</strong> विद्यालयमा पानी नफाल्ने बानी। स्थानीय तहमा खोला नमिच्ने नियम। ऊर्जा बनाउँदा बस्ती र माछालाई सोध्ने बाध्यता। अपील ठूलो नारा मात्र भए श्रोताले लैजान सक्दैन। सानो काम पनि दिनुहोस्।</li><li><strong>ढाँचा।</strong> सम्बोधन। मुद्दाको एक वाक्य। तीन नदी। चार उपयोग। दुई खतरा। तीन अपील। धन्यवाद। समय पाँच मिनेट भए यही काट्नुहोस्, नयाँ विषय नथप्नुहोस्।</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>विधा वक्तृता हो। सम्बोधन र धन्यवाद चाहिन्छ।</li><li>मुद्दा — जल धनी देश, ऊर्जाको कमजोर अभ्यास।</li><li>कोसी, गण्डकी र कर्णाली तीन क्षेत्र हुन्।</li><li>खोलाको काम बिजुली, सिँचाइ, खानेपानी र आम्दानी हुन्।</li><li>बाढी, फोहोर र अन्यायपूर्ण लाभ खतरा हुन्।</li><li>अपील सानो र गर्ननसकिने हुनुपर्छ।</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>वक्तृता कानका लागि लेखिन्छ। लामो वाक्य श्रोताले गुमाउँछ।</li><li>जलस्रोत भनेको बिजुली मात्र होइन।</li><li>नदी क्षेत्रको नामले भाषण राष्ट्रिय हुन्छ।</li><li>पानीको लाभ बग्ने ठाउँका मानिससँग पनि जोडिनुपर्छ।</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>सम्बोधन — आदरणीय सभाध्यक्ष, गुरुवर्ग र प्यारा साथीहरू।</li><li>मुद्दा — हाम्रो खोला बगेको छ, हाम्रो बत्ती अझै पनि पर्खिरहेको छ।</li><li>अपील — आजदेखि पिउने पानी नफालौँ। खोलाकिनारमा प्लास्टिक नछाडौँ।</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ वक्तृता निबन्ध जस्तै म बिना लेखिन्छ — ✅ सम्बोधन नभए वक्तृता हुँदैन</li><li>❌ जलस्रोत भनेको जलविद्युत् मात्र हो — ✅ सिँचाइ, खानेपानी र पारिस्थितिकी पनि जलस्रोत हुन्</li><li>❌ जति ठूलो बाँध त्यति ठूलो देशभक्ति — ✅ बस्ती, माछा र लाभको बाँडफाँड नसोधी बाँध अपूरो तर्क हो</li><li>❌ एउटा नदीको वर्णन काफी छ — ✅ कोसी, गण्डकी र कर्णालीले देशको फैलावट देखाउँछन्</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>कागजको माथि सम्बोधन र तल धन्यवाद पहिले लेख्नुहोस्। बीच भर्नुहोस्।</li><li>मुद्दा कण्ठ गर्नुहोस् — खोला बग्छ, बत्ती पर्खन्छ।</li><li>तीन नदीको नाम बीचको अनुच्छेदमा अनिवार्य राख्नुहोस्।</li><li>अङ्क दोहोर्‍याउनुहोस्। श्रोताले एक पटकमा समात्दैन। एउटै अपील दुई पटक भन्न मिल्छ।</li><li>समय छोटो भए खतरा एउटा र अपील दुई वटामा झार्नुहोस्। ढाँचा नछाड्नुहोस्।</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>नेपालका प्रमुख नदी प्रणाली कोसी, गण्डकी र कर्णाली हुन्।</li><li>हिमाल, पहाड र तराई तीनै पानीको यात्रामा पर्छन्।</li><li>जलविद्युत् नवीकरणीय ऊर्जाको एउटा रूप हो।</li><li>बाढी र खडेरी दुवै जल व्यवस्थापनको परीक्षा हुन्।</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>पूर्वको बाढी, मध्यपहाडको खोला र कर्णालीको टाढापन एउटै भाषणमा अटाउनु विविधता हो। एउटा उपत्यकाको पानीलाई देश नभन्नुहोस्।</li><li>तटीय बस्ती, मझी समुदाय र सिँचाइ गर्ने किसान पानीका साझेदार हुन्। उनीहरूको नाम अपीलमा राख्नुहोस्।</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>मेगावाटको सङ्ख्या कण्ठ नभए नलेख्नुहोस्। धनी सम्भावना भन्नुहोस्। झुटो सङ्ख्याभन्दा इमानदार वाक्य बलियो हुन्छ।</li><li>छिमेकी मुलुकलाई गाली गरेर भाषण नबढाउनुहोस्। आफ्नो उपयोग र न्यायमा बस्नुहोस्।</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>जलस्रोत र ऊर्जा शीर्षकमा पाँच मिनेटको वक्तृता लेख्नुहोस्।</li><li>कोसी, गण्डकी र कर्णालीको महत्व एक एक वाक्यमा लेख्नुहोस्।</li><li>जलविद्युत् बनाउँदा कुन न्याय बिर्सन हुँदैन, लेख्नुहोस्।</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>जलस्रोत र ऊर्जा कुन विधाको पाठ हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>वक्तृता</li><li>दैनिकी</li><li>चिठी</li><li>कविता</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>सम्बोधन, मुद्दा र अपील भएको रचना वक्तृता हो।</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>नेपालका तीन ठूला नदी प्रणाली कुन हुन्?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>कोसी, गण्डकी, कर्णाली</li><li>बागमती, विष्णुमती, मनोहरा</li><li>रारा, फेवा, तिलिचो</li><li>गङ्गा, यमुना, सरस्वती</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>पूर्व कोसी, मध्य गण्डकी र पश्चिम कर्णाली देशको जलनक्सा हुन्।</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>वक्तृताको सुरुवात के ले हुन्छ?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>धन्यवादले</li><li>सम्बोधनले</li><li>पादटिप्पणीले</li><li>केवल कविताले</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>श्रोतालाई सम्बोधन नगरे वक्तृता निबन्धजस्तो हुन्छ।</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>जलस्रोतलाई सानो पार्ने गल्ती कुन हो?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>सिँचाइ र खानेपानी पनि जोड्नु</li><li>बिजुली मात्र देख्नु</li><li>बाढीको खतरा लेख्नु</li><li>स्थानीय लाभ सोध्नु</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>खोलाको काम ऊर्जा, खेती, खानेपानी र जीवन सँगै हुन्।</p></div></div></div></section>
+  <nav class="pager"><a href="21-rara-bhraman.html" title="पाठ ११ — रारा भ्रमण (दैनिकी)">‹ पाठ ११ — रारा भ्रमण (दैनिकी)</a><a class="mid" href="../../../../../_subjects/class-11-nepali.html">Nepali</a><span></span></nav>
+</div></body></html>

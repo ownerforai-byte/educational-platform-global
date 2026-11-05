@@ -1,0 +1,208 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Earthworm: Reproductive systems (male and female reproduc…</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Biology  /  Faunal Diversity</div>
+    <h1 class="doc">Earthworm: Reproductive systems (male and female reproduc…</h1>
+    <div class="meta"><span>Class 11</span><span>Biology</span><span>Faunal Diversity</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>faunal-diversity</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>earthworm-reproductive-systems-male-and-female-reproductive-organs-copulation-cocoon-formation-a</p></section>
+<section class="field"><h2>Relevance</h2><p><code>96</code></p></section>
+<section class="field"><h2>Source</h2><p>enriched</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
+<section class="field"><h2>Visual Type</h2><p>earthworm-body</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>Clitellum on segments 14 to 16, the gland that secretes the cocoon. Male pores lie just behind it, on segment 18.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li>Pheretima is hermaphrodite. Each worm has a full male system and a full female system. Self-fertilisation is not the normal event. Two worms copulate, exchange sperm, and separate. Fertilisation happens later, outside the body, inside a cocoon. That sequence is the whole reproductive story.</li><li>The male organs are crowded into a few front segments. Two pairs of testes lie in segments 10 and 11, inside testis sacs. Sperm mature in two pairs of seminal vesicles in segments 11 and 12. Ciliated spermiducal funnels, also in segments 10 and 11, collect the sperm into vasa deferentia. Each side's duct runs back to segment 18, where it joins a prostate gland. The prostate secretion is the fluid in which the sperm leave. The male genital pores open on segment 18. Accessory glands on segments 17 and 19 serve the genital papillae that help the worms hold together.</li><li>The female organs are smaller. One pair of ovaries lies in segment 13. An ovarian funnel under each ovary leads into an oviduct, and the two oviducts meet to open at the single female genital pore on segment 14. Eggs are not stored for a long time. They are shed when a cocoon passes that segment. Four pairs of spermathecae, in segments 6, 7, 8 and 9, receive the partner's sperm during copulation. Each spermatheca has a larger ampulla and a narrow diverticulum, and the received sperm stays there until the cocoon is formed.</li><li>During copulation the two worms lie head to tail, ventral surface against ventral surface, so that the male pores of each are opposite the spermathecal pores of the other. Mucus and the setae hold them. Sperm and prostatic fluid pass into the spermathecae. No eggs move across. The worms then separate. A worm that has just copulated is carrying another worm's sperm, not embryos.</li><li>The cocoon is a product of the clitellum. Glands in segments 14 to 16 secrete a girdle of membrane and albumen. The worm wriggles backward and slips out of the girdle. As the girdle passes segment 14, eggs enter it. As it passes the spermathecal openings, the stored sperm enters. The ends of the girdle close, and the sealed cocoon is left in damp soil. Fertilisation, the actual fusion, takes place in the albumen inside that cocoon. Development is direct. A small worm emerges. There is no trochophore and no other larva.</li><li>The same animal that reproduces this way is useful in soil. Burrows let air and water deeper into the ground. Castings return mineral nutrients to the surface in a form roots can use, and they improve the crumb of the soil. Earthworms are the workforce of vermicompost. They are also bait and food for birds. They are not a crop pest in the sense of an insect that eats leaves. Their economic importance is the soil they leave behind them.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Notes</h2><ul><li>Pheretima is hermaphrodite. Each worm has a full male system and a full female system. Self-fertilisation is not the normal event. Two worms copulate, exchange sperm, and separate. Fertilisation happens later, outside the body, inside a cocoon. That sequence is the whole reproductive story.</li><li>The male organs are crowded into a few front segments. Two pairs of testes lie in segments 10 and 11, inside testis sacs. Sperm mature in two pairs of seminal vesicles in segments 11 and 12. Ciliated spermiducal funnels, also in segments 10 and 11, collect the sperm into vasa deferentia. Each side's duct runs back to segment 18, where it joins a prostate gland. The prostate secretion is the fluid in which the sperm leave. The male genital pores open on segment 18. Accessory glands on segments 17 and 19 serve the genital papillae that help the worms hold together.</li><li>The female organs are smaller. One pair of ovaries lies in segment 13. An ovarian funnel under each ovary leads into an oviduct, and the two oviducts meet to open at the single female genital pore on segment 14. Eggs are not stored for a long time. They are shed when a cocoon passes that segment. Four pairs of spermathecae, in segments 6, 7, 8 and 9, receive the partner's sperm during copulation. Each spermatheca has a larger ampulla and a narrow diverticulum, and the received sperm stays there until the cocoon is formed.</li><li>During copulation the two worms lie head to tail, ventral surface against ventral surface, so that the male pores of each are opposite the spermathecal pores of the other. Mucus and the setae hold them. Sperm and prostatic fluid pass into the spermathecae. No eggs move across. The worms then separate. A worm that has just copulated is carrying another worm's sperm, not embryos.</li><li>The cocoon is a product of the clitellum. Glands in segments 14 to 16 secrete a girdle of membrane and albumen. The worm wriggles backward and slips out of the girdle. As the girdle passes segment 14, eggs enter it. As it passes the spermathecal openings, the stored sperm enters. The ends of the girdle close, and the sealed cocoon is left in damp soil. Fertilisation, the actual fusion, takes place in the albumen inside that cocoon. Development is direct. A small worm emerges. There is no trochophore and no other larva.</li><li>The same animal that reproduces this way is useful in soil. Burrows let air and water deeper into the ground. Castings return mineral nutrients to the surface in a form roots can use, and they improve the crumb of the soil. Earthworms are the workforce of vermicompost. They are also bait and food for birds. They are not a crop pest in the sense of an insect that eats leaves. Their economic importance is the soil they leave behind them.</li><li><h2>Earthworm: Reproductive systems (male and female reproductive organs), copulation, cocoon formation and economic importance</h2>
+<h3>1. Introduction</h3>
+<p>Opening frame for <strong>Earthworm</strong> — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Faunal Diversity fill pass.</p>
+<h3>2. Hierarchy body — every syllabus sub-point</h3>
+<h4>Earthworm: Reproductive systems (male and female reproductive organs)</h4>
+<h4>copulation</h4>
+<h4>cocoon formation and economic importance</h4>
+<p>Fill order per concept: definition → structure → process → significance (§3.2). Step-by-step numbered points, Pioneer style.</li><li><h3>3. Classified tables</h3>
+<p><strong>Table 1 — Characteristics</strong></p>
+<table><thead><tr><th>Part</th><th>Structure</th><th>Function</th><th>Exam note</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 2 — Key ideas and worked angles</strong></p>
+<table><thead><tr><th>Idea</th><th>Statement</th><th>Where used</th><th>Worked example</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 3 — Summary and marks map</strong></p>
+<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB marks trend</th></tr></thead><tbody></tbody></table>
+<p>Tables carry examples in every classification and characteristics row, ≤ 12 rows, and each is referenced from the body text (§3.3).</li><li><h3>4. Diagrams and figures</h3>
+<ul>
+<li><strong>D1</strong> — Earthworm alimentary canal and organ systems (authored SVG — English labels, viewBox 900×640)</li>
+<li><strong>D2</strong> — Earthworm — process or life-cycle flow (authored SVG — English labels)</li>
+<li><strong>D3</strong> — Earthworm — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
+<li><strong>D4</strong> — Earthworm — comparison or application figure (curated external — license recorded at fill)</li>
+</ul>
+<p>Figure slots are declared up front (§3.4): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y), every external figure license-recorded at fill.</li><li><h3>5. Worked examples and applications</h3>
+<p>≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass.</p>
+<h3>6. Key terms and statements</h3>
+<p>Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).</li><li><h3>7. Exam Zone</h3>
+<p>NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</li><li><h3>8. Summary and self-check</h3>
+<p>5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Hermaphrodite does not mean self-fertilising. Pheretima exchanges sperm with another worm.</li><li>Fertilisation is not in the oviduct. It is in the cocoon, after both eggs and stored sperm have been shed into it.</li><li>Spermathecae store the partner's sperm. They are not the ovaries, and they are not the seminal vesicles.</li><li>The clitellum secretes the cocoon. It is not itself the cocoon, and it is not shed as a permanent organ.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Hermaphrodite, with cross-fertilisation in a cocoon.</li><li>Testes in segments 10 and 11. Seminal vesicles in 11 and 12. Male pores on 18.</li><li>Ovaries in segment 13. Female pore on 14.</li><li>Four pairs of spermathecae in segments 6 to 9, each with ampulla and diverticulum.</li><li>Direct development. Economic value is soil structure, castings and vermicompost.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Copulation exchanges sperm. It does not fertilise the eggs.</li><li>The cocoon receives eggs at segment 14 and sperm at the spermathecal pores.</li><li>There is no larval stage. The hatchling is a small worm.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>After copulation, sperm from the partner sits in the spermathecae of segments 6 to 9 until a cocoon is secreted.</li><li>A cocoon in damp soil yields a juvenile worm, not a larva that must metamorphose.</li><li>A vermicompost bed uses the same casting habit that fertilises a field.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The prostate gland opens at the male pore and adds fluid to the sperm. It is not a sperm store. The seminal vesicles are the store.</li><li>Accessory glands of segments 17 and 19 are not prostates. The prostate is the larger gland opening on segment 18.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Testes 10 and 11. Vesicles 11 and 12. Ovaries 13. Female pore 14. Male pores 18.</li><li>Spermathecae in 6, 7, 8 and 9.</li><li>Copulation, then cocoon, then fertilisation, then direct development.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>List male organs in the order sperm travels, from testis to male pore.</li><li>Explain when the egg meets the sperm.</li><li>Give three ways a field benefits from earthworms, none of them 'they eat pests'.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Why is a hermaphrodite earthworm still described as cross-fertilising?</li><li>What is stored in a spermatheca, and what is stored in a seminal vesicle?</li><li>Where does the albumen of the cocoon come from?</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Segment numbers for testes, ovaries, female pore, male pores and spermathecae earn the marks on a reproductive diagram.</li><li>Write the cocoon paragraph as a time order: secrete, slip backward, pick up eggs, pick up sperm, seal, leave in soil.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>10 and 11 testes, 13 ovaries, 14 eggs out, 18 sperm out.</li><li>Exchange first, fuse later, inside the cocoon.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Do not invent a larval stage. Direct development is a standard point against the marine annelid larva.</li><li>Prostate, accessory gland and spermatheca are three different structures. A labelled diagram that swaps them loses the segment numbers.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Seminal vesicles store the worm's own sperm. Spermathecae store the partner's sperm. The names are not interchangeable.</li><li>Economic importance in this course is soil fertility. Do not claim they fix nitrogen the way Rhizobium does.</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Hermaphrodite cross-fertilisation</li><li>Male organs and the prostate</li><li>Ovaries and spermathecae</li><li>Copulation and cocoon formation</li><li>Soil value of castings</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Draw a segment map from 6 to 18 marking only reproductive openings and organs.</li><li>Write five sentences in time order from copulation to hatching.</li></ul></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Put these events in order and say where each happens: fertilisation, storage of received sperm, secretion of the cocoon, copulation, hatching.</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Copulation comes first. Two worms exchange sperm on the ventral surface. Sperm enters the spermathecae of segments 6 to 9.</li><li>The received sperm is stored in the spermathecae. Eggs are still in segment 13.</li><li>The clitellum, segments 14 to 16, secretes the cocoon girdle with albumen.</li><li>As the worm slips backward, eggs enter from segment 14 and sperm enters from the spermathecae. The cocoon seals.</li><li>Fertilisation occurs in the cocoon, in the soil. Hatching releases a small worm. There is no larva.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>Copulation, storage in spermathecae, cocoon secretion, fertilisation in the cocoon, direct hatching.</p></div></div></div></section>
+<section class="field"><h2>Bounds</h2><ul><li>Nephridia and the nerve cord are the previous note. Digestion is the one before that.</li><li>Numbers are for Pheretima posthuma, not for every oligochaete.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Each Pheretima has testes in segments 10 and 11, seminal vesicles in 11 and 12, male pores on 18, ovaries in 13, a female pore on 14, and four pairs of spermathecae in segments 6 to 9. Copulation exchanges sperm into those spermathecae. The clitellum then secretes a cocoon that picks up eggs and the stored sperm as the worm wriggles out of it. Fertilisation is in the cocoon, and development is direct. Burrows and castings are the economic return: air, water and mineral crumbs in the soil.</p></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Fertilisation in Pheretima occurs</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Inside the seminal vesicle</li><li>In the cocoon</li><li>In the oviduct, before copulation</li><li>On the skin surface during hibernation</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Spermathecae store</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>The worm's own eggs</li><li>Bile</li><li>Sperm received from the partner</li><li>Soil eaten during feeding</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Testes of Pheretima lie in segments</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>10 and 11</li><li>14 and 15</li><li>17 and 19</li><li>6 and 7</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Development after the cocoon hatches is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A trochophore larva</li><li>Direct, producing a small worm</li><li>A tadpole</li><li>A medusa</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Fertilisation in Pheretima occurs</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Inside the seminal vesicle</li><li>In the cocoon</li><li>In the oviduct, before copulation</li><li>On the skin surface during hibernation</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Spermathecae store</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>The worm's own eggs</li><li>Bile</li><li>Sperm received from the partner</li><li>Soil eaten during feeding</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Testes of Pheretima lie in segments</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>10 and 11</li><li>14 and 15</li><li>17 and 19</li><li>6 and 7</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Development after the cocoon hatches is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A trochophore larva</li><li>Direct, producing a small worm</li><li>A tadpole</li><li>A medusa</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+  <nav class="pager"><a href="07-frog-reproductive-system-male-and-female-reproductive-organs.html" title="Frog — Reproductive System">‹ Frog — Reproductive System</a><a class="mid" href="../../../../../_subjects/class-11-biology.html">Biology</a><a href="09-frog-rana-tigrina-habit-and-habitat-external-features-digestive-system-alimentary-canal-digestiv.html" title="Frog (Rana tigrina): Habit and habitat, external features…">Frog (Rana tigrina): Habit and habitat, exter… ›</a></nav>
+</div></body></html>

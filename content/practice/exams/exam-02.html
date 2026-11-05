@@ -1,0 +1,158 @@
+<!doctype html><html><head><meta charset="utf-8"><title>NEB Class 11 Mock Exam 02 — Physics, Chemistry, Biology, Mathematics</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Exams</div>
+    <h1 class="doc">NEB Class 11 Mock Exam 02 — Physics, Chemistry, Biology, Mathematics</h1>
+    <div class="meta"><span>Exams</span></div>
+  </header>
+  <section class="field"><h2>SLUG</h2><p>exam-02</p></section>
+<section class="field"><h2>Duration Min</h2><p><code>60</code></p></section>
+<section class="field"><h2>Questions</h2><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q01</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Ribosomes are best described as the site of:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Lipid synthesis</li><li>Protein synthesis</li><li>Photosynthesis</li><li>Cellular digestion</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Ribosomes translate mRNA into polypeptides; they are non-membrane-bound organelles.</p></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q02</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The cell wall of a typical plant cell is composed mainly of:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Chitin</li><li>Peptidoglycan</li><li>Cellulose</li><li>Pectin only</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Plant walls are cellulose; chitin occurs in fungi and peptidoglycan in bacteria.</p></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q03</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Mucor, the black bread mould with coenocytic hyphae, is placed in which kingdom of the five-kingdom system?</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Monera</li><li>Protista</li><li>Fungi</li><li>Plantae</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Mucor is a phycomycete fungus with chitinous walls and absorptive nutrition.</p></dd></div></dl></div></div><div class="item"><span class="idx">4.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q04</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Pinus produces seeds but no fruits because its ovules lie exposed on megasporophylls; it is therefore classified as a:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Angiosperm</li><li>Bryophyte</li><li>Pteridophyte</li><li>Gymnosperm</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>3</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Gymnosperms bear naked seeds on cone scales without an ovary wall.</p></dd></div></dl></div></div><div class="item"><span class="idx">5.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q05</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Mustard (Brassica campestris), a crop widely grown in Nepal, belongs to the angiosperm family:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Fabaceae</li><li>Solanaceae</li><li>Liliaceae</li><li>Brassicaceae</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>3</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Brassica species are crucifers — family Brassicaceae with tetramerous flowers and tetradynamous stamens.</p></dd></div></dl></div></div><div class="item"><span class="idx">6.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q06</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The molecular mass of sulphuric acid, H₂SO₄, calculated from atomic masses (H = 1, S = 32, O = 16) is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>96 u</li><li>98 u</li><li>100 u</li><li>112 u</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>2(1) + 32 + 4(16) = 98 g/mol.</p></dd></div></dl></div></div><div class="item"><span class="idx">7.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q07</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The number of molecules contained in 2 moles of a gas is approximately:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>6.022 × 10²³</li><li>1.204 × 10²⁴</li><li>3.011 × 10²³</li><li>6.022 × 10²⁴</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>N = n × Nₐ = 2 × 6.022 × 10²³ = 1.2044 × 10²⁴ molecules.</p></dd></div></dl></div></div><div class="item"><span class="idx">8.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q08</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>Heisenberg's uncertainty principle places a fundamental limit on simultaneous measurement of position and momentum expressed as:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Δx·Δp ≥ h/2π</li><li>Δx·Δp ≥ h/4π</li><li>Δx·Δv ≥ h/π</li><li>Δx·Δp = 0 for electrons</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>The product of uncertainties can never fall below h/4π.</p></dd></div></dl></div></div><div class="item"><span class="idx">9.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q09</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The ground-state electronic configuration of chromium (Z = 24), which violates the simple Aufbau prediction, is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>[Ar] 3d⁴ 4s²</li><li>[Ar] 3d⁵ 4s¹</li><li>[Ar] 3d⁶ 4s⁰</li><li>[Ar] 3d³ 4s³</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>A half-filled 3d⁵ subshell gains extra exchange stability, pulling one 4s electron down.</p></dd></div></dl></div></div><div class="item"><span class="idx">10.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q10</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>According to VSEPR theory, the shape of the ammonia molecule NH₃ is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>Trigonal planar</li><li>Tetrahedral</li><li>Pyramidal</li><li>Linear</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Three bond pairs plus one lone pair around nitrogen give a pyramidal geometry.</p></dd></div></dl></div></div><div class="item"><span class="idx">11.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q11</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>If α and β are roots of x² − 5x + 6 = 0, then the product αβ equals:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>−5</li><li>5</li><li>6</li><li>−6</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Product of roots = c/a = 6/1 = 6 (indeed α = 2, β = 3).</p></dd></div></dl></div></div><div class="item"><span class="idx">12.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q12</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The quadratic equation whose roots are 2 and 3 is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>x² − 5x + 6 = 0</li><li>x² + 5x + 6 = 0</li><li>x² − 6x + 5 = 0</li><li>x² + 6x − 5 = 0</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>0</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Sum = 5, product = 6, so x² − (sum)x + product = x² − 5x + 6 = 0.</p></dd></div></dl></div></div><div class="item"><span class="idx">13.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q13</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The principal value branch (range) of cos⁻¹x is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>[−π/2, π/2]</li><li>(0, π)</li><li>[0, π]</li><li>(−π/2, π/2)</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Cosine inverse is defined on [−1, 1] with principal range [0, π].</p></dd></div></dl></div></div><div class="item"><span class="idx">14.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q14</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>If tan θ = tan α, the general solution for θ is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>θ = nπ ± α</li><li>θ = 2nπ ± α</li><li>θ = nπ + α</li><li>θ = (2n + 1)π/2 + α</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Tangent repeats every π, giving θ = nπ + α; the ± form belongs to squared equations like tan²θ = tan²α.</p></dd></div></dl></div></div><div class="item"><span class="idx">15.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q15</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The arithmetic mean of the two numbers 4 and 16 is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>8</li><li>10</li><li>12</li><li>6.4</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>AM = (4 + 16)/2 = 10; note GM would be 8 and HM 6.4.</p></dd></div></dl></div></div><div class="item"><span class="idx">16.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q16</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The cross product A × B of two parallel vectors has magnitude:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>AB</li><li>AB/2</li><li>Zero</li><li>Maximum possible</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>|A × B| = AB sin θ vanishes at θ = 0° or 180°.</p></dd></div></dl></div></div><div class="item"><span class="idx">17.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q17</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>For a body of mass m moving with speed v in a circle of radius r, the required centripetal force is:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>mv/r</li><li>mv²/r</li><li>mvr</li><li>mr/v²</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Newton's second law with centripetal acceleration v²/r gives F = mv²/r directed to the centre.</p></dd></div></dl></div></div><div class="item"><span class="idx">18.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q18</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The acceleration due to gravity at depth d below the Earth's surface (R = Earth's radius) becomes:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>g(R/(R+d))²</li><li>g(1 − d/R)</li><li>g(1 + d/R)</li><li>g R/(R − d)</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Inside a uniform sphere only the mass within radius (R − d) attracts, giving linear decrease g′ = g(1 − d/R).</p></dd></div></dl></div></div><div class="item"><span class="idx">19.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q19</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>The triple point of water, used to define the kelvin scale, lies at:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>273.15 K at 101.3 kPa</li><li>273.16 K at 0.61 kPa</li><li>0 K at vacuum</li><li>373.15 K at 101.3 kPa</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>Ice, liquid water and vapour coexist uniquely at 273.16 K and about 611.7 Pa.</p></dd></div></dl></div></div><div class="item"><span class="idx">20.</span><div class="body"><dl class="obj"><div class="kv"><dt>ID</dt><dd><p>e2-q20</p></dd></div><div class="kv"><dt>Prompt</dt><dd><p>According to Newton's law of cooling, the rate of loss of heat of a hot body is directly proportional to:</p></dd></div><div class="kv"><dt>Options</dt><dd><ul><li>The fourth power of its temperature</li><li>Its specific heat capacity</li><li>The excess of its temperature over surroundings</li><li>The surface area only</li></ul></dd></div><div class="kv"><dt>Correct Index</dt><dd><p><code>2</code></p></dd></div><div class="kv"><dt>Explanation</dt><dd><p>dT/dt ∝ (T − T_s): cooling is fastest when the temperature difference is largest.</p></dd></div></dl></div></div></section>
+  <nav class="pager"><a href="exam-01.html" title="NEB Class 11 Mock Exam 01 — Physics, Chemistry, Biology, Mathematics">‹ NEB Class 11 Mock Exam 01 — Physics, Chemistr…</a><a class="mid" href="../../_subjects/general-exams.html">Exams</a><a href="exam-03.html" title="NEB Class 11 Mock Exam 03 — Physics, Chemistry, Biology, Mathematics">NEB Class 11 Mock Exam 03 — Physics, Chemistr… ›</a></nav>
+</div></body></html>

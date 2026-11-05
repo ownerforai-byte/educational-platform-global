@@ -57,6 +57,7 @@ import { securityHeaders, LEGACY_STATIC_PAGE_CSP } from "./middleware/securityHe
 import { errorHandler, notFoundHandler } from "./middleware/errors";
 import { logRegisteredRoutes } from "./utils/routeDebug";
 import { hasAnyLlmKey } from "./ai/config";
+import { describeFreeLlmPresence } from "./ai/free-llm-providers";
 import {
   JSON_BODY_LIMIT,
   STATIC_PUBLIC_DIRS,
@@ -114,10 +115,12 @@ export function createApp(): express.Express {
   });
 
   // Lightweight AI availability probe for the chat status dot: a boolean only,
-  // no key material. Registered before /api/ai so it stays public.
+  // no key material. Registered before /api/ai so it stays public. A keyless
+  // free-tier link (LLM7.io / OVHcloud) counts as online too — the status dot
+  // must not claim the tutor is down while a free link can still answer.
   app.get("/api/ai/status", (_req, res) => {
     res.setHeader("Cache-Control", "no-store");
-    res.json({ online: hasAnyLlmKey() });
+    res.json({ online: hasAnyLlmKey() || describeFreeLlmPresence().live.length > 0 });
   });
 
   // Route-table dump: opt-in only (ROUTE_DEBUG=true) and never in production.

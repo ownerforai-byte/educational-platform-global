@@ -1,0 +1,276 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Applications in agriculture and medicine</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Biology  /  Biotechnology Applications</div>
+    <h1 class="doc">Applications in agriculture and medicine</h1>
+    <div class="meta"><span>Class 11</span><span>Biology</span><span>Biotechnology Applications</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>biotechnology-applications</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>applications-in-agriculture-and-medicine</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Agricultural Applications</h4></li><li><ul>
+<li><strong>Bt Cotton</strong>: Contains Bacillus thuringiensis gene for insect resistance</li>
+</ul></li><li><ul>
+<li><strong>Bt Corn</strong>: Pest-resistant corn expressing Bt toxin</li>
+</ul></li><li><ul>
+<li><strong>Golden Rice</strong>: Enhanced with vitamin A (beta-carotene)</li>
+</ul></li><li><ul>
+<li><strong>Herbicide-resistant crops</strong>: Tolerant to specific herbicides</li>
+</ul></li><li><ul>
+<li><strong>Delayed ripening tomatoes</strong>: Flavr Savr tomato</li>
+</ul></li><li><ul>
+<li><strong>Drought-resistant crops</strong>: Modified for water stress tolerance</li>
+</ul></li><li><h4>2. Medical Applications</h4></li><li><ul>
+<li><strong>Insulin</strong>: Produced by E. coli using rDNA technology (replaced animal insulin)</li>
+</ul></li><li><ul>
+<li><strong>Growth Hormone</strong>: For treating dwarfism</li>
+</ul></li><li><ul>
+<li><strong>Vaccines</strong>: Hepatitis B vaccine (yeast expression system)</li>
+</ul></li><li><ul>
+<li><strong>Gene Therapy</strong>: Treating genetic disorders by replacing faulty genes</li>
+</ul></li><li><ul>
+<li><strong>Monoclonal Antibodies</strong>: Cancer treatment, diagnostic tests</li>
+</ul></li><li><ul>
+<li><strong>CRISPR-Cas9</strong>: Gene editing for therapeutic purposes</li>
+</ul></li><li><h4>3. Transgenic Animals</h4></li><li><ul>
+<li><strong>GloFish</strong>: Fluorescent zebrafish (research)</li>
+</ul></li><li><ul>
+<li><strong>Transgenic mice</strong>: Disease models (cancer, Alzheimer's)</li>
+</ul></li><li><ul>
+<li><strong>Pharming</strong>: Animals producing pharmaceutical proteins in milk</li>
+</ul></li><li><ul>
+<li><strong>RoboCow</strong>: Producing human proteins in milk</li>
+</ul></li><li><h4>4. Biopiracy and Patents</h4></li><li><ul>
+<li><strong>Biopiracy</strong>: Unauthorized commercial use of biological resources</li>
+</ul></li><li><ul>
+<li><strong>Basmati rice case</strong>: US patent on Indian basmati (later revoked)</li>
+</ul></li><li><ul>
+<li><strong>Neem case</strong>: EU patent on neem derivatives (revoked)</li>
+</ul></li><li><ul>
+<li><strong>Wheat case</strong>: US patent on Indian wheat (revoked)</li>
+</ul></li><li><ul>
+<li><strong>Protected Biological Resources</strong>: Nepal has traditional knowledge databases</li>
+</ul></li><li><h4>5. Bioremediation</h4></li><li><ul>
+<li>Using microbes to clean up environmental pollutants</li>
+</ul></li><li><ul>
+<li>Oil-spill cleanup: Pseudomonas putida degrades hydrocarbons</li>
+</ul></li><li><ul>
+<li>Heavy metal removal: Bioaccumulation by certain microbes</li>
+</ul></li><li><h4>6. Entrance Exam Focus</h4></li><li>Applications of Bt crops; Insulin production; Biopiracy examples.</li><li>Agricultural biotechnology changes a crop or uses a microbe so the farm needs fewer sprays or yields more from the same land.</li><li>Bt cotton carries a bacterial gene, and the protein from that gene kills certain caterpillars that would otherwise eat the crop.</li><li>Medicine uses recombinant cells that carry the human gene to make human insulin for people who need it.</li><li>A vaccine can be a harmless antigen produced in a cultured cell, given so the body learns the antigen before infection.</li><li>Antibiotics first found in fungi and bacteria remain a medical use of microbes, and they treat a bacterial infection that is already underway.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>x GM means genetically modified. x GWO (genetically wrought organism) is NOT the same term.</li><li>x All transgenic animals are harmful. x Many provide medical benefits.</li><li>x Biopiracy is legal. x It's the unauthorized exploitation of indigenous knowledge.</li><li>Bt toxin is a protein aimed at certain insects. It is not a fertiliser.</li><li>Recombinant insulin is human insulin made by a microbe. It is not pig insulin by default.</li><li>An antibiotic does not vaccinate you. It treats a current bacterial infection.</li><li>A gene from a crop is not automatically unsafe, and it is not automatically owned by nobody.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>How is human insulin produced using recombinant DNA technology?</li><li>What is Bt cotton and how does it work?</li><li>Define biopiracy with examples from India/Nepal.</li><li>What are the applications of transgenic animals?</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Agricultural biotechnology changes a crop or uses a microbe so the farm needs fewer sprays or yields more from the same land.</li><li>Bt cotton carries a bacterial gene, and the protein from that gene kills certain caterpillars that would otherwise eat the crop.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Biotechnology applies the use of living organisms and their products to make or modify useful products, and in modern practice this means recombinant DNA technology. In agriculture, Bt crops carrying Bacillus thuringiensis genes give insect resistance, Golden Rice supplies provitamin A, and herbicide-resistant, delayed-ripening and drought-tolerant varieties raise yields and food quality. In medicine, recombinant DNA gives human insulin, growth hormone and hepatitis B vaccine, while gene therapy, monoclonal antibodies and CRISPR-Cas9 treat and diagnose disease at the genetic level. Transgenic animals serve as disease models and as factories producing therapeutic proteins, and the same tools clean up pollution through bioremediation, although the unauthorised use of indigenous knowledge raises the ethical problem of biopiracy.</p></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>A transgenic organism carries an artificially inserted gene from another organism, introduced through a suitable vector; Bt cotton, for example, expresses the cry gene of Bacillus thuringiensis.</li><li>The Bt toxin is a protein that becomes active only in the gut of susceptible insect larvae, which is why Bt crops are considered safe for humans and most other organisms.</li><li>Recombinant DNA technology produces human insulin and growth hormone in bacteria or yeast instead of extracting them from slaughtered cattle and pigs, as was done for earlier animal insulin.</li><li>Transgenic animals are used as disease models (transgenic mice for cancer and Alzheimer's), as producers of useful substances (pharming, with therapeutic proteins secreted in milk), and as aquarium or companion organisms (GloFish).</li><li>Biopiracy is the unauthorised commercial use of biological resources and traditional knowledge; the neem and basmati rice patent cases were challenged and the patents revoked.</li><li>Bioremediation uses organisms to remove pollutants — Pseudomonas species degrade oil hydrocarbons, and some microbes accumulate heavy metals such as mercury and cadmium.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Bt cotton contains the cry gene from Bacillus thuringiensis, whose toxin protein kills insect larvae that feed on the plant.</li><li>Golden Rice is engineered to accumulate beta-carotene (provitamin A) in the grain so that it can help combat vitamin A deficiency.</li><li>Human insulin made by recombinant DNA technology in Escherichia coli has the same biological activity as natural human insulin.</li><li>Monoclonal antibodies are produced by the fusion of a single antibody-producing B cell with a myeloma cell to form a hybridoma, and are used in cancer therapy and in diagnostic tests.</li><li>Gene therapy aims to correct a faulty gene by replacing, removing or silencing it using a suitable vector delivered to the affected tissue.</li><li>Biopiracy is the unauthorised commercial appropriation of biological resources and traditional knowledge without permission or benefit sharing, and it threatens national sovereignty.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Explain, step by step, how human insulin is produced using recombinant DNA technology, naming the restriction enzyme, vector, host organism and the joining of the A and B chains.</li><li>Describe how Bt cotton resists insect attack and explain why the toxin does not harm humans.</li><li>Define biopiracy and discuss the neem, basmati rice and wheat patent cases as disputes over the misappropriation of biological resources.</li><li>List the three main uses of transgenic animals and give one example of each use.</li><li>Describe how bioremediation can be used to clear an oil spill and how microbes remove heavy metals from contaminated sites.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Agricultural applications: Bt cotton, Bt corn, Golden Rice, herbicide-resistant crops, delayed-ripening tomato (Flavr Savr) and drought-resistant crops.</li><li>Medical applications: insulin, growth hormone for dwarfism, hepatitis B vaccine made in a yeast expression system, gene therapy, monoclonal antibodies and CRISPR-Cas9.</li><li>Flavr Savr, engineered to delay softening of tomatoes, was the first commercial GM food approved for sale, in 1994 in the United States.</li><li>CRISPR-Cas9 is a gene-editing tool in which a guide RNA directs a nuclease to a chosen DNA sequence, so that sequence can then be changed precisely.</li><li>Transgenic animals: GloFish (fluorescent zebrafish, a novelty and research organism), transgenic mice as disease models, and pharming animals that secrete therapeutic proteins in milk.</li><li>Bioremediation uses microbes such as Pseudomonas putida to degrade oil hydrocarbons, while other organisms bioaccumulate or biosorb heavy metals.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>The accepted terms are 'genetically modified organism' (GMO) and 'transgenic organism'; labels such as 'GWO' are not standard biology terms.</li><li>Bt toxin is activated only in the alkaline gut of susceptible insect larvae, which is the basis of its safety for humans, mammals and most other organisms.</li><li>Biopiracy is the unauthorised appropriation of biological resources without permission or benefit sharing; the neem and basmati rice patents were challenged and revoked.</li><li>Insulin extracted from slaughtered cattle and pigs was the earlier source, and recombinant DNA technology replaced it because the recombinant product is cheaper, purer and free of animal contaminants.</li><li>Flavr Savr (delayed-ripening tomato) reached the market before Bt crops, and Golden Rice targets a micronutrient deficiency rather than insect resistance.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>'Bt' means Bacillus thuringiensis, so Bt crops give insect resistance rather than disease resistance.</li><li>Insulin route: isolate the A and B chain genes, cut with a restriction enzyme, insert into plasmids, ligate A and B together, transform into E. coli, obtain proinsulin, then cleave to insulin.</li><li>Agriculture shortcut: Bt = insect, Herbicide-resistant = weed, Delayed-ripening = Flavr Savr, Golden Rice = vitamin A.</li><li>Three uses of transgenic animals: Model (disease models), Manufacture (pharming), Companion or aquarium (GloFish).</li><li>Biopiracy case tag: the neem and basmati rice patents were both revoked, so biopiracy can be challenged in law.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Bt crops, Golden Rice and herbicide-resistant crops are standard 2-5 mark agriculture questions; the cry gene, the target insect and the mode of action are asked repeatedly.</li><li>Insulin production by recombinant DNA is one of the highest-frequency 5-mark questions and expects a flow diagram from gene isolation to the final hormone.</li><li>One-mark MCQs ask for the source of a transgene: Bacillus thuringiensis for Bt, the Ti plasmid of Agrobacterium tumefaciens for plant transformation, and Escherichia coli as the host.</li><li>Biopiracy questions are usually 2-3 marks and want a definition plus a named case such as neem, basmati rice or turmeric.</li><li>Transgenic animals and bioremediation are usually set as 2-3 mark application questions rather than detailed process questions.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>How is human insulin produced using recombinant DNA technology?</li><li>What is Bt cotton and how does it protect the plant from insect pests?</li><li>Define biopiracy and give two examples of biopiracy cases from South Asia.</li><li>What are the applications of transgenic animals? Give one example of each.</li><li>How can bioremediation be used to control an oil spill?</li><li>Compare Bt crops with chemical pesticides for pest control, listing two advantages and one limitation.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The cry gene used in Bt cotton is obtained from:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Agrobacterium tumefaciens</li><li>Bacillus thuringiensis</li><li>Escherichia coli</li><li>Pseudomonas putida</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The cry gene of Bacillus thuringiensis codes for a toxin protein that kills susceptible insect larvae. Agrobacterium supplies the Ti plasmid used as a plant vector, and Pseudomonas putida is used in bioremediation.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Golden Rice has been genetically modified to increase:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Resistance to herbicides</li><li>The content of beta-carotene (provitamin A)</li><li>Resistance to insect pests</li><li>The time of ripening of the fruit</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Golden Rice accumulates beta-carotene, a precursor of vitamin A, in the grain and aims to reduce vitamin A deficiency. Bt crops target insect pests and herbicide-resistant crops target weeds.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>The first step in producing recombinant human insulin in bacteria is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Injecting the insulin into the host cell</li><li>Isolating the human insulin gene and cutting it with a restriction enzyme</li><li>Screening the cells for antibiotic resistance</li><li>Fermenting the bacteria at 37 degrees C</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The human A and B chain genes are isolated, amplified and cut with a restriction enzyme so that they can be inserted into a plasmid vector, which is then introduced into the host bacterium.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Biopiracy refers to:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>The scientific study of biodiversity</li><li>The authorised use of plant genes in research</li><li>The unauthorised commercial use of biological resources and traditional knowledge</li><li>The legal patenting of human genes</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Biopiracy is the unauthorised appropriation of genetic resources or indigenous knowledge for commercial gain, without permission or benefit sharing, as challenged in the neem and basmati rice patent cases.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Transgenic animals used to secrete therapeutic human proteins in their milk are an example of:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Bioremediation</li><li>Biopiracy</li><li>Pharming</li><li>Bioinformatics</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Pharming, or biopharming, uses transgenic animals as living factories that secrete human therapeutic proteins in milk; bioremediation instead uses organisms to clean up pollutants.</p></div></div></div></section>
+<section class="field"><h2>Examples</h2><ul><li>Agricultural biotechnology changes a crop or uses a microbe so the farm needs fewer sprays or yields more from the same land.</li><li>Bt cotton carries a bacterial gene, and the protein from that gene kills certain caterpillars that would otherwise eat the crop.</li><li>Medicine uses recombinant cells that carry the human gene to make human insulin for people who need it.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Agricultural biotechnology changes a crop or uses a microbe so the farm needs fewer sprays or yields more from the same land.</li><li>Bt cotton carries a bacterial gene, and the protein from that gene kills certain caterpillars that would otherwise eat the crop.</li><li>Medicine uses recombinant cells that carry the human gene to make human insulin for people who need it.</li><li>A vaccine can be a harmless antigen produced in a cultured cell, given so the body learns the antigen before infection.</li><li>Antibiotics first found in fungi and bacteria remain a medical use of microbes, and they treat a bacterial infection that is already underway.</li><li>The ethical line is consent, the safety of a released organism, and who owns a gene or a variety taken from a community.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Do not swap classes.</li><li>A sequence has an order. Do not rotate it.</li></ul></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Bt cotton is protected against</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Certain caterpillars</li><li>Drought by magic</li><li>All fungi by a wall of glass</li><li>Lack of DNA</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Recombinant human insulin is made</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>In a microbe given the human gene</li><li>Only by grinding a pancreas as the modern method</li><li>By a fern</li><li>By DDT</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>An antibiotic typically</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Kills or stops bacteria</li><li>Is a vaccine memory cell</li><li>Fixes nitrogen in every plant</li><li>Is a seed</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>A released engineered crop raises</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A safety and ownership question</li><li>No question of any kind</li><li>Only a spelling question</li><li>The timberline</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Separate what Bt cotton does from what recombinant insulin does.</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Bt cotton makes a protein that kills certain caterpillars in the field.</li><li>Recombinant insulin is a medicine made by cells that carry the human gene.</li><li>One is a crop protection. The other is a drug.</li><li>Neither is an antibiotic, and neither is a vaccine.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>Bt protects the crop from caterpillars. Recombinant insulin is a medicine.</p></div></div></div></section>
+<section class="field"><h2>Visual Type</h2><p>plant-breeding-steps</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>Agriculture uses better crops and microbes. Medicine uses insulin, vaccines and antibiotics made with living cells.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li><h4>1. Agricultural Applications</h4></li><li><ul>
+<li><strong>Bt Cotton</strong>: Contains Bacillus thuringiensis gene for insect resistance</li>
+</ul></li><li><ul>
+<li><strong>Bt Corn</strong>: Pest-resistant corn expressing Bt toxin</li>
+</ul></li><li><ul>
+<li><strong>Golden Rice</strong>: Enhanced with vitamin A (beta-carotene)</li>
+</ul></li><li><ul>
+<li><strong>Herbicide-resistant crops</strong>: Tolerant to specific herbicides</li>
+</ul></li><li><ul>
+<li><strong>Delayed ripening tomatoes</strong>: Flavr Savr tomato</li>
+</ul></li><li><ul>
+<li><strong>Drought-resistant crops</strong>: Modified for water stress tolerance</li>
+</ul></li><li><h4>2. Medical Applications</h4></li><li><ul>
+<li><strong>Insulin</strong>: Produced by E. coli using rDNA technology (replaced animal insulin)</li>
+</ul></li><li><ul>
+<li><strong>Growth Hormone</strong>: For treating dwarfism</li>
+</ul></li><li><ul>
+<li><strong>Vaccines</strong>: Hepatitis B vaccine (yeast expression system)</li>
+</ul></li><li><ul>
+<li><strong>Gene Therapy</strong>: Treating genetic disorders by replacing faulty genes</li>
+</ul></li><li><ul>
+<li><strong>Monoclonal Antibodies</strong>: Cancer treatment, diagnostic tests</li>
+</ul></li><li><ul>
+<li><strong>CRISPR-Cas9</strong>: Gene editing for therapeutic purposes</li>
+</ul></li><li><h4>3. Transgenic Animals</h4></li><li><ul>
+<li><strong>GloFish</strong>: Fluorescent zebrafish (research)</li>
+</ul></li><li><ul>
+<li><strong>Transgenic mice</strong>: Disease models (cancer, Alzheimer's)</li>
+</ul></li><li><ul>
+<li><strong>Pharming</strong>: Animals producing pharmaceutical proteins in milk</li>
+</ul></li><li><ul>
+<li><strong>RoboCow</strong>: Producing human proteins in milk</li>
+</ul></li><li><h4>4. Biopiracy and Patents</h4></li><li><ul>
+<li><strong>Biopiracy</strong>: Unauthorized commercial use of biological resources</li>
+</ul></li><li><ul>
+<li><strong>Basmati rice case</strong>: US patent on Indian basmati (later revoked)</li>
+</ul></li><li><ul>
+<li><strong>Neem case</strong>: EU patent on neem derivatives (revoked)</li>
+</ul></li><li><ul>
+<li><strong>Wheat case</strong>: US patent on Indian wheat (revoked)</li>
+</ul></li><li><ul>
+<li><strong>Protected Biological Resources</strong>: Nepal has traditional knowledge databases</li>
+</ul></li><li><h4>5. Bioremediation</h4></li><li><ul>
+<li>Using microbes to clean up environmental pollutants</li>
+</ul></li><li><ul>
+<li>Oil-spill cleanup: Pseudomonas putida degrades hydrocarbons</li>
+</ul></li><li><ul>
+<li>Heavy metal removal: Bioaccumulation by certain microbes</li>
+</ul></li><li><h4>6. Entrance Exam Focus</h4></li><li>Applications of Bt crops; Insulin production; Biopiracy examples.</li><li>Agricultural biotechnology changes a crop or uses a microbe so the farm needs fewer sprays or yields more from the same land.</li><li>Bt cotton carries a bacterial gene, and the protein from that gene kills certain caterpillars that would otherwise eat the crop.</li><li>Medicine uses recombinant cells that carry the human gene to make human insulin for people who need it.</li><li>A vaccine can be a harmless antigen produced in a cultured cell, given so the body learns the antigen before infection.</li><li>Antibiotics first found in fungi and bacteria remain a medical use of microbes, and they treat a bacterial infection that is already underway.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Bounds</h2><ul><li>Stay on this class 11 topic.</li><li>Counts you cannot defend stay out.</li></ul></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../_subjects/class-11-biology.html">Biology</a><span></span></nav>
+</div></body></html>

@@ -1,0 +1,180 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Applications of Banking</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Backup Physics 2026 09 22</div>
+    <h1 class="doc">Applications of Banking</h1>
+    <div class="meta"><span>Backup Physics 2026 09 22</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>circular-motion</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>banking-applications</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>Banking of roads:</strong> the practice of raising the outer edge of a curved road above the inner edge so that the normal reaction from the road surface provides part or all of the centripetal force needed to turn. This reduces reliance on friction and prevents skidding.</li><li><strong>Why banking is needed:</strong> on a flat road, the entire centripetal force must come from friction: F_c = μmg. At high speeds or on slippery roads, friction may be insufficient and the vehicle skids outward. Banking tilts the road so the normal force has a horizontal component pointing toward the center.</li><li><strong>Forces on a banked road:</strong> the road is tilted at angle θ. The normal reaction N acts perpendicular to the road surface. Resolving N: vertical component N cos θ balances weight (N cos θ = mg); horizontal component N sin θ provides centripetal force (N sin θ = mv²/r).</li><li><strong>Key equation — ideal banking angle (no friction needed):</strong> dividing the two equations: tan θ = v²/(rg). For a given radius r and design speed v, the road should be banked at angle θ = arctan(v²/(rg)). At this angle, no friction is required.</li><li><strong>Friction on a banked road:</strong> if the vehicle moves faster than the design speed, friction acts DOWN the slope (preventing outward skid). If slower, friction acts UP the slope (preventing inward sliding). The general formula: tan(θ + φ) = v²/(rg), where φ = arctan(μ).</li><li><strong>Maximum speed on a banked road with friction:</strong> v_max = √[rg(tan θ + μ)/(1 − μ tan θ)]. When μ = 0 (no friction), this reduces to v = √(rg tan θ). When θ = 0 (flat road), it reduces to v = √(μrg).</li><li><strong>Worked example — car on banked curve:</strong> a road of radius 100 m is banked at θ = 15°. Design speed (no friction): v = √(100 × 9.8 × tan 15°) = √(100 × 9.8 × 0.268) = √262.6 = 16.2 m/s (≈ 58 km/h).</li><li><strong>Worked example — with friction:</strong> same road with μ = 0.3. v_max = √[100 × 9.8 × (0.268 + 0.3)/(1 − 0.3 × 0.268)] = √[980 × 0.568 / 0.92] = √605 = 24.6 m/s (≈ 89 km/h).</li><li><strong>Railway banking (superelevation):</strong> railways use the same principle. The outer rail is raised by height h above the inner rail. For track gauge w and banking angle θ: tan θ ≈ h/w. This prevents wear on rails and ensures passenger comfort.</li><li><strong>NEB exam focus:</strong> deriving tan θ = v²/(rg); finding the design speed for a given banking angle; maximum speed with friction; railway superelevation problems.</li><li><strong>Force resolution on a banked road — detailed derivation:</strong> draw the FBD with N perpendicular to the road and mg vertically down. Resolve N into: vertical component N cos θ (balances weight) and horizontal component N sin θ (provides centripetal force). From N cos θ = mg: N = mg/cos θ. From N sin θ = mv²/r: (mg/cos θ) sin θ = mv²/r → mg tan θ = mv²/r → tan θ = v²/(rg). This derivation is the standard NEB proof.</li><li><strong>Friction on a banked road — general case:</strong> when friction is present, there are two limiting cases. Case 1 (going too fast): friction acts DOWN the slope, adding to the centripetal force. Case 2 (going too slow): friction acts UP the slope, preventing inward sliding. The general equation combining both: N sin θ ± f cos θ = mv²/r (horizontal) and N cos θ ∓ f sin θ = mg (vertical), where f = μN.</li><li><strong>Worked example — finding banking angle:</strong> a curve of radius 150 m is designed for 90 km/h (25 m/s). Required banking angle: tan θ = v²/(rg) = 625/(150 × 9.8) = 0.425 → θ = 23.0°. At this angle, a car can negotiate the curve without any friction.</li><li><strong>Worked example — height of outer rail:</strong> a railway track of gauge 1.5 m is banked at 5°. The height by which the outer rail is raised: h = w tan θ = 1.5 × tan 5° = 1.5 × 0.0875 = 0.131 m ≈ 13.1 cm. This is a typical NEB numerical problem.</li><li><strong>Why banking reduces tire wear:</strong> on a flat road, friction must provide all centripetal force, causing lateral tire stress. On a banked road at the design speed, the normal force provides the centripetal component — no lateral friction needed. This dramatically reduces tire wear and fuel consumption.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ 'Banking eliminates friction entirely.' ✅ Banking REDUCES friction requirement. At the design speed (tan θ = v²/(rg)), friction is zero. At other speeds, friction is still needed.</li><li>❌ 'A steeper bank angle is always better.' ✅ Too steep a bank angle causes problems at low speeds — the vehicle may slide inward. The ideal angle depends on the design speed.</li><li>❌ 'The normal force equals mg on a banked road.' ✅ The normal force is N = mg/cos θ, which is GREATER than mg because the road is tilted.</li><li>❌ 'Banking angle depends on the mass of the vehicle.' ✅ The ideal banking angle tan θ = v²/(rg) is independent of mass — it depends only on speed and radius.</li><li>❌ 'On a banked road, friction always acts up the slope.' ✅ Friction direction depends on speed: if v &gt; design speed, friction acts DOWN the slope; if v &lt; design speed, friction acts UP.</li><li>❌ 'A higher banking angle means a lower maximum speed.' ✅ A HIGHER banking angle INCREASES the maximum speed — more of the normal force contributes to centripetal force.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Derive tan θ = v²/(rg) for a frictionless banked road from force resolution.</li><li>Solve 5 problems finding the design speed for given radius and banking angle.</li><li>Solve 5 problems finding maximum speed with friction using v_max = √[rg(tan θ + μ)/(1 − μ tan θ)].</li><li>Solve 3 railway superelevation problems: find h given w and θ.</li><li>Solve 2 problems comparing flat vs banked roads for the same radius and speed.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The ideal banking angle is independent of the vehicle's mass — it depends only on speed and radius.</li><li>At the design speed on a banked road, no friction is needed to maintain the turn.</li><li>Banking increases the maximum safe speed compared to a flat road.</li><li>Railway superelevation uses the same principle: h = w tan θ, where w is the track gauge.</li><li>If a road is over-banked for the speed, vehicles tend to slide inward — friction must act up the slope.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>circular-motion</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>circular-motion</p></section>
+<section class="field"><h2>Examples</h2><ul><li>Design speed: A curve of radius 200 m is to be banked for a design speed of 72 km/h (20 m/s). Required angle: tan θ = 400/(200 × 9.8) = 0.204 → θ = 11.5°.</li><li>With friction: A 50 m radius curve is banked at 20°. With μ = 0.4, max speed: v_max = √[50 × 9.8 × (0.364 + 0.4)/(1 − 0.4 × 0.364)] = √[490 × 0.764 / 0.854] = √438 = 20.9 m/s.</li><li>Railway: Track gauge w = 1.5 m, banking angle θ = 3°. Superelevation h = w tan θ = 1.5 × 0.0524 = 0.0786 m ≈ 7.9 cm.</li><li>Flat vs banked: A car rounds a 50 m radius curve at 15 m/s. Flat road needs μ ≥ v²/(rg) = 225/490 = 0.46. Banked at 20° needs μ ≥ (v²/(rg) − tan 20°)/(1 + v²/(rg)tan 20°) = (0.46 − 0.364)/1.046 = 0.092 — much less friction needed.</li><li>Over-banked: A road is banked at 30° for 100 km/h. A truck travels at 60 km/h — it will tend to slide inward; friction must act up the slope.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>A curved road of radius 100 m is banked at 15°. Find the design speed (speed at which no friction is needed).</li><li>A road of radius 80 m is banked at 20°. If the coefficient of friction is 0.3, find the maximum safe speed.</li><li>A railway track of gauge 1.5 m is to be banked for a train moving at 54 km/h on a curve of radius 500 m. Find the superelevation (height difference between outer and inner rails).</li><li>A car of mass 1000 kg rounds a banked curve of radius 50 m at 20 m/s. If the banking angle is 25°, find the friction force acting on the car.</li><li>Show that the ideal banking angle is independent of the mass of the vehicle.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Ideal banking angle (no friction): tan θ = v²/(rg)</li><li>Maximum speed with friction: v_max = √[rg(tan θ + μ)/(1 − μ tan θ)]</li><li>Minimum speed with friction: v_min = √[rg(tan θ − μ)/(1 + μ tan θ)]</li><li>Railway superelevation: h = w tan θ, where w = track gauge</li><li>Normal force on banked road: N = mg/cos θ</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>The ideal banking angle tan θ = v²/(rg) is independent of vehicle mass.</li><li>At design speed, no friction is needed — the horizontal component of normal force provides all centripetal force.</li><li>Banking with friction increases the maximum safe speed beyond the design speed.</li><li>Railway superelevation h = w tan θ applies the same physics to train tracks.</li><li>Over-banking (θ too large for the speed) causes inward sliding; under-banking causes outward skidding.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Banking of roads tilts the road surface so the normal force provides part or all of the centripetal force. The ideal angle (no friction needed) is tan θ = v²/(rg), independent of mass. With friction, the maximum speed is v_max = √[rg(tan θ + μ)/(1 − μ tan θ)]. Railway tracks use superelevation h = w tan θ. Banking prevents skidding and reduces tire wear.</p></section>
+<section class="field"><h2>Special Notes</h2><ul><li>The design speed is the speed at which no friction is required — the most important concept.</li><li>Always check: if v²/(rg) &gt; tan θ, the vehicle needs additional friction downward (going too fast).</li><li>The formula v_max = √[rg(tan θ + μ)/(1 − μ tan θ)] requires μ tan θ &lt; 1 for physical validity.</li><li>Railway superelevation problems: h = w tan θ where w is the standard gauge (1.5 m in Nepal).</li><li>NEB frequently asks: 'Why are roads banked?' — answer: to reduce friction dependence and prevent skidding.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>The ideal banking angle is given by tan θ = v²/(rg), independent of the vehicle's mass.</li><li>On a banked road with friction, the maximum safe speed is v_max = √[rg(tan θ + μ)/(1 − μ tan θ)].</li><li>At the design speed, the horizontal component of the normal force alone provides the centripetal force.</li><li>Railway superelevation h = w tan θ uses the same centripetal force principle.</li><li>Banking reduces the reliance on friction, preventing skidding at higher speeds.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>The banking angle formula tan θ = v²/(rg) is derived by resolving the normal force into vertical and horizontal components.</li><li>When the road is banked, the normal force N = mg/cos θ is greater than the weight mg.</li><li>If μ tan θ ≥ 1, the denominator in v_max becomes zero or negative — the formula is invalid (extreme banking).</li><li>Railway wheels have flanges that prevent derailment — banking complements this by reducing lateral force.</li><li>NEB often combines banking with friction problems — practice both the no-friction and with-friction cases.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Design speed shortcut: v = √(rg tan θ) — square root of rg times tangent of angle.</li><li>Friction-free shortcut: if the problem says 'no friction needed', use tan θ = v²/(rg).</li><li>Railway shortcut: h = w tan θ — multiply gauge by tangent of banking angle.</li><li>Mass independence: the banking angle does NOT depend on mass — eliminate any option with mass.</li><li>Direction check: if v²/(rg) &gt; tan θ, friction acts down the slope (vehicle going too fast).</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Deriving tan θ = v²/(rg) is the most common NEB question — know the force resolution steps.</li><li>Maximum speed with friction problems are standard numerical questions.</li><li>Railway superelevation: know h = w tan θ and that w ≈ 1.5 m for standard gauge.</li><li>Conceptual questions: 'Why is a road banked?' — answer with centripetal force and friction reduction.</li><li>NEB may ask to compare flat vs banked roads — show the friction requirement is reduced.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The ideal banking angle for a curve of radius r at speed v is given by:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>tan θ = v/(rg)</li><li>tan θ = v²/(rg)</li><li>tan θ = rg/v²</li><li>tan θ = v²r/g</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>On a banked road at the design speed, the friction required is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Maximum</li><li>Zero</li><li>Equal to mg</li><li>Depends on mass</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>A road is banked at 30° for a curve of radius 100 m. The design speed is approximately: (g = 10 m/s²)</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>10 m/s</li><li>14 m/s</li><li>20 m/s</li><li>28 m/s</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>The railway superelevation h is related to gauge w and banking angle θ by:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>h = w sin θ</li><li>h = w cos θ</li><li>h = w tan θ</li><li>h = w cot θ</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>If a car travels faster than the design speed on a banked road, friction acts:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Up the slope</li><li>Down the slope</li><li>Vertically upward</li><li>Perpendicular to the road</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Ideal banking angle tan θ = v²/(rg) — derived from N sin θ = mv²/r and N cos θ = mg.</li><li>At design speed, friction is zero — the normal force alone provides centripetal force.</li><li>Maximum speed with friction: v_max = √[rg(tan θ + μ)/(1 − μ tan θ)].</li><li>Railway superelevation h = w tan θ applies the same centripetal force principle.</li><li>Banking is independent of vehicle mass — the same angle works for cars and trucks.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Derive tan θ = v²/(rg) by resolving the normal force.</li><li>Solve 5 problems finding design speed from banking angle and radius.</li><li>Solve 5 problems finding maximum speed with friction.</li><li>Solve 3 railway superelevation problems (find h or θ).</li><li>Compare flat vs banked road friction requirements for the same curve and speed.</li></ul></section>
+<section class="field"><h2>Simulation</h2><dl class="obj"><div class="kv"><dt>Title</dt><dd><p>Banked Road Simulator</p></dd></div><div class="kv"><dt>Description</dt><dd><p>Visualize a car on a banked curved road. See how the normal force resolves into vertical and horizontal components. Adjust speed, radius, banking angle, and friction coefficient. Observe when the car slips outward (too fast) or inward (too slow). Compare flat vs. banked road requirements.</p></dd></div><div class="kv"><dt>Parameters</dt><dd><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>v</p></dd></div><div class="kv"><dt>Label</dt><dd><p>Speed (m/s)</p></dd></div><div class="kv"><dt>Default</dt><dd><p><code>20</code></p></dd></div><div class="kv"><dt>Min</dt><dd><p><code>1</code></p></dd></div><div class="kv"><dt>Max</dt><dd><p><code>50</code></p></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>r</p></dd></div><div class="kv"><dt>Label</dt><dd><p>Curve radius (m)</p></dd></div><div class="kv"><dt>Default</dt><dd><p><code>100</code></p></dd></div><div class="kv"><dt>Min</dt><dd><p><code>10</code></p></dd></div><div class="kv"><dt>Max</dt><dd><p><code>500</code></p></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>θ</p></dd></div><div class="kv"><dt>Label</dt><dd><p>Banking angle (degrees)</p></dd></div><div class="kv"><dt>Default</dt><dd><p><code>15</code></p></dd></div><div class="kv"><dt>Min</dt><dd><p><code>0</code></p></dd></div><div class="kv"><dt>Max</dt><dd><p><code>60</code></p></dd></div></dl></div></div><div class="item"><span class="idx">4.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>μ</p></dd></div><div class="kv"><dt>Label</dt><dd><p>Coefficient of friction</p></dd></div><div class="kv"><dt>Default</dt><dd><p><code>0.3</code></p></dd></div><div class="kv"><dt>Min</dt><dd><p><code>0</code></p></dd></div><div class="kv"><dt>Max</dt><dd><p><code>1</code></p></dd></div></dl></div></div><div class="item"><span class="idx">5.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>m</p></dd></div><div class="kv"><dt>Label</dt><dd><p>Vehicle mass (kg)</p></dd></div><div class="kv"><dt>Default</dt><dd><p><code>1000</code></p></dd></div><div class="kv"><dt>Min</dt><dd><p><code>100</code></p></dd></div><div class="kv"><dt>Max</dt><dd><p><code>5000</code></p></dd></div></dl></div></div></dd></div><div class="kv"><dt>Outputs</dt><dd><ul><li>Design speed (no friction): v = √(rg tan θ)</li><li>Maximum speed with friction: v_max = √[rg(tan θ + μ)/(1 − μ tan θ)]</li><li>Minimum speed with friction: v_min = √[rg(tan θ − μ)/(1 + μ tan θ)]</li><li>Normal force: N = mg/cos θ (at design speed)</li><li>Friction requirement: f = m(v²/r − g tan θ) / cos θ</li><li>Flat road comparison: μ_required = v²/(rg)</li></ul></dd></div><div class="kv"><dt>Visual Elements</dt><dd><ul><li>3D cross-section of banked road with car</li><li>Force diagram: N (perpendicular to road), mg (down), f (along road surface)</li><li>Component arrows: N sin θ (horizontal, inward), N cos θ (vertical, up)</li><li>Speed indicator showing current vs. design speed</li><li>Slip warning: red highlight if v &gt; v_max or v &lt; v_min</li><li>Bar chart: friction required on flat vs. banked road</li></ul></dd></div></dl></section>
+<section class="field"><h2>Mindmap</h2><dl class="obj"><div class="kv"><dt>Central Concept</dt><dd><p>Banking of Roads</p></dd></div><div class="kv"><dt>Branches</dt><dd><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Topic</dt><dd><p>Why Banking?</p></dd></div><div class="kv"><dt>Subtopics</dt><dd><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>Problem on Flat Road</p></dd></div><div class="kv"><dt>Points</dt><dd><ul><li>All centripetal force from friction</li><li>F_c = μmg limits max speed</li><li>High friction → tire wear</li><li>Risk of skidding on wet roads</li></ul></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>Solution — Banking</p></dd></div><div class="kv"><dt>Points</dt><dd><ul><li>Tilt road at angle θ</li><li>Normal force has horizontal component</li><li>Reduces friction dependence</li><li>Increases safe speed limit</li></ul></dd></div></dl></div></div></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Topic</dt><dd><p>Ideal Banking (No Friction)</p></dd></div><div class="kv"><dt>Subtopics</dt><dd><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>Force Resolution</p></dd></div><div class="kv"><dt>Points</dt><dd><ul><li>N cos θ = mg (vertical balance)</li><li>N sin θ = mv²/r (centripetal)</li><li>Divide: tan θ = v²/(rg)</li></ul></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>Design Speed</p></dd></div><div class="kv"><dt>Points</dt><dd><ul><li>v = √(rg tan θ)</li><li>Independent of vehicle mass</li><li>Only depends on r and θ</li><li>The 'sweet spot' speed</li></ul></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>Key Insight</p></dd></div><div class="kv"><dt>Points</dt><dd><ul><li>At design speed: f = 0</li><li>Normal force alone provides F_c</li><li>No tire wear from lateral friction</li><li>Most efficient turning</li></ul></dd></div></dl></div></div></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>Topic</dt><dd><p>With Friction</p></dd></div><div class="kv"><dt>Subtopics</dt><dd><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>Going Too Fast (v &gt; v_design)</p></dd></div><div class="kv"><dt>Points</dt><dd><ul><li>Friction acts DOWN the slope</li><li>Prevents outward skidding</li><li>v_max = √[rg(tan θ + μ)/(1 − μ tan θ)]</li><li>Denominator: 1 − μ tan θ must be &gt; 0</li></ul></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>Going Too Slow (v &lt; v_design)</p></dd></div><div class="kv"><dt>Points</dt><dd><ul><li>Friction acts UP the slope</li><li>Prevents inward sliding</li><li>v_min = √[rg(tan θ − μ)/(1 + μ tan θ)]</li><li>Only matters if tan θ &gt; μ</li></ul></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>General Formulae</p></dd></div><div class="kv"><dt>Points</dt><dd><ul><li>N sin θ + f cos θ = mv²/r</li><li>N cos θ − f sin θ = mg</li><li>f ≤ μN</li><li>Combine to get v_max and v_min</li></ul></dd></div></dl></div></div></dd></div></dl></div></div><div class="item"><span class="idx">4.</span><div class="body"><dl class="obj"><div class="kv"><dt>Topic</dt><dd><p>Railway Banking</p></dd></div><div class="kv"><dt>Subtopics</dt><dd><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>Superelevation</p></dd></div><div class="kv"><dt>Points</dt><dd><ul><li>h = w tan θ</li><li>w = track gauge (1.5 m standard)</li><li>h = height difference between rails</li><li>Prevents rail wear and derailment</li></ul></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>Design</p></dd></div><div class="kv"><dt>Points</dt><dd><ul><li>Outer rail raised above inner rail</li><li>Same physics as road banking</li><li>Calculations identical</li><li>Critical for high-speed trains</li></ul></dd></div></dl></div></div></dd></div></dl></div></div><div class="item"><span class="idx">5.</span><div class="body"><dl class="obj"><div class="kv"><dt>Topic</dt><dd><p>NEB Exam Focus</p></dd></div><div class="kv"><dt>Subtopics</dt><dd><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>Derivations</p></dd></div><div class="kv"><dt>Points</dt><dd><ul><li>Derive tan θ = v²/(rg) from force resolution</li><li>Derive v_max with friction formula</li><li>Show mass independence</li><li>Derive superelevation h = w tan θ</li></ul></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>Numerical Problems</p></dd></div><div class="kv"><dt>Points</dt><dd><ul><li>Find θ for given v and r</li><li>Find v_max with friction</li><li>Find h for railway curves</li><li>Compare flat vs. banked road</li></ul></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>Name</dt><dd><p>Conceptual Questions</p></dd></div><div class="kv"><dt>Points</dt><dd><ul><li>Why bank roads?</li><li>Why is banking independent of mass?</li><li>What happens if v ≠ design speed?</li><li>Advantages of banking over flat roads</li></ul></dd></div></dl></div></div></dd></div></dl></div></div></dd></div></dl></section>
+<section class="field"><h2>Visual Type</h2><p>banked-road</p></section>
+  <nav class="pager"><a href="04-vertical-circle.html" title="Motion in a Vertical Circle">‹ Motion in a Vertical Circle</a><a class="mid" href="../../../_subjects/general-backup-physics-2026-09-22.html">Backup Physics 2026 09 22</a><a href="05-motion-in-a-vertical-circle-2.html" title="Motion in a Vertical Circle">Motion in a Vertical Circle ›</a></nav>
+</div></body></html>

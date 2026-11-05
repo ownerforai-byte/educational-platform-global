@@ -1,0 +1,208 @@
+{
+  "title": "Average Translational Kinetic Energy of Gas Molecule",
+  "unitSlug": "ideal-gas",
+  "topicSlug": "average-translational-kinetic-energy-of-gas-molecule",
+  "topicTitle": "Average translational kinetic energy of gas molecule",
+  "relevance": 100,
+  "notes": [
+    "Kinetic theory relates pressure to molecular motion: pV=(1/3)Nm⟨c²⟩. Combining this with pV=NkBT gives (1/2)m⟨c²⟩=(3/2)kBT, the average translational kinetic energy per molecule.",
+    "At fixed absolute temperature, different ideal-gas molecules have equal mean translational kinetic energy. Their speeds differ because a lighter molecule needs greater speed to have the same kinetic energy.",
+    "Per mole, the mean translational kinetic energy is (3/2)RT. At 300 K this is about (3/2)(8.314)(300)=3.74 kJ mol⁻¹, or 6.21×10⁻²¹ J per molecule.",
+    "The result is for translation only. In a monatomic ideal gas it accounts for all classical internal energy; diatomic and polyatomic gases can also store energy in rotation and vibration.",
+    "The root-mean-square speed follows from the same result: vrms=√(3kBT/m)=√(3RT/M). Use molecular mass with kB or molar mass with R.",
+    "The average translational kinetic energy of one ideal-gas molecule is (3/2) k T. It depends on the temperature and not on the mass. A hydrogen molecule and an oxygen molecule at the same temperature have the same average translational energy, and the hydrogen molecule is faster.",
+    "# Average translational kinetic energy of gas molecule\n\n## 1. Introduction\nPhysical picture of **Average translational kinetic energy of gas molecule** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Ideal Gas fill pass.\n\n## 2. Concepts and laws\n### Average translational kinetic energy of gas molecule\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Quantities and relations**\n\n| Quantity | Symbol + SI unit | Relation | Graph to read |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Average translational kinetic energy of gas molecule — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Average translational kinetic energy of gas molecule — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Average translational kinetic energy of gas molecule — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Average translational kinetic energy of gas molecule — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+  ],
+  "confusion": [
+    "Do not confuse kB per molecule with R per mole.",
+    "Polyatomic-gas internal energy may include rotational and vibrational modes.",
+    "A symbol is not a number until the unit is named.",
+    "A proportional relation is not an equality until the constant is included.",
+    "A vector answer needs a direction as well as a magnitude.",
+    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+  ],
+  "practice": [
+    "Find mean translational energy per molecule at 400 K using kB=1.38×10⁻²³ J K⁻¹.",
+    "Why do lighter molecules move faster at the same temperature?",
+    "Does (3/2)kBT include rotational energy?"
+  ],
+  "universalFacts": [
+    "Kelvin temperature sets mean translational kinetic energy.",
+    "Use kB per molecule and R per mole.",
+    "Molecular mass determines speeds, not mean energy at fixed T."
+  ],
+  "animation3D": "ideal-gas",
+  "motionGraphics": "ideal-gas",
+  "examples": [
+    "At 300 K, mean translational energy per mole≈3.74 kJ.",
+    "At equal temperature, helium and oxygen have equal mean translational energy, but helium has larger rms speed.",
+    "The average translational kinetic energy of one ideal-gas molecule is (3/2) k T. It depends on the temperature and not on the mass. A hydrogen molecule and an oxygen molecule at the same temperature have the same average translational energy, and the hydrogen molecule is faster.",
+    "The working relations are Average translational KE = (3/2) k T and k = R / N_A. Name each symbol, convert the data into SI units, and only then substitute.",
+    "Find the average translational kinetic energy at 300 K. Use k = 1.38 × 10^−23."
+  ],
+  "practiceQuestions": [
+    "Find mean translational energy per molecule at 400 K using kB=1.38×10⁻²³ J K⁻¹.",
+    "Why do lighter molecules move faster at the same temperature?",
+    "Does (3/2)kBT include rotational energy?"
+  ],
+  "formulas": [
+    "Per molecule: ⟨Etrans⟩=(3/2)kBT.",
+    "Per mole: ⟨Etrans⟩=(3/2)RT; vrms=√(3RT/M)."
+  ],
+  "keyPoints": [
+    "Kelvin temperature sets mean translational kinetic energy.",
+    "Use kB per molecule and R per mole.",
+    "Molecular mass determines speeds, not mean energy at fixed T.",
+    "Average translational KE = (3/2) k T",
+    "k = R / N_A",
+    "Convert units before substituting.",
+    "Quote the unit with the result."
+  ],
+  "summary": "Kinetic theory gives ⟨Etrans⟩=(3/2)kBT per molecule. Temperature fixes mean translational energy; molecular mass determines the associated speed distribution.",
+  "specialNotes": [
+    "Do not confuse kB per molecule with R per mole.",
+    "Polyatomic-gas internal energy may include rotational and vibrational modes."
+  ],
+  "importantStatements": [
+    "Kelvin temperature sets mean translational kinetic energy.",
+    "Use kB per molecule and R per mole.",
+    "Molecular mass determines speeds, not mean energy at fixed T."
+  ],
+  "importantNotes": [
+    "Kelvin temperature sets mean translational kinetic energy.",
+    "Use kB per molecule and R per mole.",
+    "Molecular mass determines speeds, not mean energy at fixed T."
+  ],
+  "examShortTricks": [
+    "Per molecule: ⟨Etrans⟩=(3/2)kBT.",
+    "Per mole: ⟨Etrans⟩=(3/2)RT; vrms=√(3RT/M)."
+  ],
+  "examNotes": [
+    "Find mean translational energy per molecule at 400 K using kB=1.38×10⁻²³ J K⁻¹.",
+    "Why do lighter molecules move faster at the same temperature?",
+    "Does (3/2)kBT include rotational energy?"
+  ],
+  "importantConcepts": [
+    "Kelvin temperature sets mean translational kinetic energy.",
+    "Use kB per molecule and R per mole.",
+    "Molecular mass determines speeds, not mean energy at fixed T.",
+    "Definition",
+    "Formula",
+    "Unit",
+    "Worked case"
+  ],
+  "importantTasks": [
+    "Find mean translational energy per molecule at 400 K using kB=1.38×10⁻²³ J K⁻¹.",
+    "Why do lighter molecules move faster at the same temperature?",
+    "Does (3/2)kBT include rotational energy?"
+  ],
+  "specificConditions": [
+    "**Equipartition Result:** The average translational kinetic energy per molecule is $\\langle KE_{trans} \rangle = \frac{3}{2} k_B T = \frac{3}{2} \frac{R}{N_A} T$. This comes from 3 translational degrees of freedom, each contributing $\frac{1}{2} k_B T$ via equipartition.",
+    "**Temperature Proportionality:** $\\langle KE_{trans} \rangle \\propto T$ — absolute temperature is a direct measure of average translational kinetic energy. This is why Kelvin scale is fundamental: at $T=0$, translational KE is zero (classically).",
+    "**Internal Energy of Monatomic Gas:** For a monatomic ideal gas, $U = N \\langle KE_{trans} \rangle = \frac{3}{2} nRT$. The internal energy is purely translational KE. For diatomic/polyatomic gases, $U$ includes rotational and vibrational contributions as well."
+  ],
+  "duplicateType": 1,
+  "mcs": [
+    {
+      "question": "Average translational KE depends on",
+      "options": [
+        "Mass and T",
+        "T only, for an ideal gas",
+        "Volume only",
+        "The shape of the container"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The formula is",
+      "options": [
+        "(3/2) k T",
+        "(1/2) k T",
+        "k/T",
+        "R T"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At the same temperature a hydrogen molecule is",
+      "options": [
+        "Slower than an oxygen molecule",
+        "Faster than an oxygen molecule",
+        "The same speed",
+        "At rest"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "k equals",
+      "options": [
+        "R",
+        "R/N_A",
+        "N_A",
+        "P V"
+      ],
+      "answer": "B"
+    }
+  ],
+  "mcqs": [
+    {
+      "question": "Average translational KE depends on",
+      "options": [
+        "Mass and T",
+        "T only, for an ideal gas",
+        "Volume only",
+        "The shape of the container"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The formula is",
+      "options": [
+        "(3/2) k T",
+        "(1/2) k T",
+        "k/T",
+        "R T"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At the same temperature a hydrogen molecule is",
+      "options": [
+        "Slower than an oxygen molecule",
+        "Faster than an oxygen molecule",
+        "The same speed",
+        "At rest"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "k equals",
+      "options": [
+        "R",
+        "R/N_A",
+        "N_A",
+        "P V"
+      ],
+      "answer": "B"
+    }
+  ],
+  "exercises": [
+    {
+      "question": "Find the average translational kinetic energy at 300 K. Use k = 1.38 × 10^−23.",
+      "steps": [
+        "KE = (3/2) k T.",
+        "(3/2) × 1.38 × 10^−23 = 2.07 × 10^−23.",
+        "Times 300 K gives 6.2 × 10^−21 J.",
+        "The mass is not in this formula.",
+        "A lighter molecule has a higher rms speed at this same energy."
+      ],
+      "answer": "6.2 × 10^−21 J."
+    }
+  ],
+  "source": "skeleton-v2"
+}

@@ -1,0 +1,210 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Unit 2 — Communication</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Language Development</div>
+    <h1 class="doc">Unit 2 — Communication</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Language Development</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>language-development</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>unit-2-communication</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. What is Communication?</h4></li><li>Communication is the exchange of information, ideas, feelings, and meaning between two or more people through symbols, signs, or behavior.</li><li><h4>2. Elements of Communication</h4></li><li><ul>
+<li><strong>Sender</strong>: The person who initiates the message</li>
+</ul></li><li><ul>
+<li><strong>Message</strong>: The content being communicated</li>
+</ul></li><li><ul>
+<li><strong>Channel/Medium</strong>: The method of transmission (verbal, written, digital)</li>
+</ul></li><li><ul>
+<li><strong>Receiver</strong>: The person who gets the message</li>
+</ul></li><li><ul>
+<li><strong>Feedback</strong>: The response from the receiver</li>
+</ul></li><li><ul>
+<li><strong>Noise</strong>: Any interference that distorts the message</li>
+</ul></li><li><h4>3. Types of Communication</h4></li><li><ul>
+<li><strong>Verbal</strong>: Spoken or written words</li>
+</ul></li><li><ul>
+<li><strong>Non-verbal</strong>: Body language, gestures, facial expressions</li>
+</ul></li><li><ul>
+<li><strong>Visual</strong>: Images, graphs, symbols</li>
+</ul></li><li><ul>
+<li><strong>Active Listening</strong>: Fully concentrating on what is being said</li>
+</ul></li><li><h4>4. Communication Barriers</h4></li><li>Physical (distance, noise), Psychological (prejudice, emotion), Semantic (language differences), Cultural (norms, values).</li><li><h4>5. Effective Communication Skills</h4></li><li>Clarity, conciseness, correctness, courtesy, and confidence are the 5 Cs of effective communication.</li><li><h4>6. Entrance Exam Focus</h4></li><li>MCQs: Identify elements of communication; Differentiate verbal and non-verbal; List barriers to communication.</li><li><h2>Unit 2 — Communication</h2>
+<h3>1. About the text and the author (kind: literary)</h3>
+<p>Reading frame for <strong>Unit 2 — Communication</strong> — what the piece is, verified author facts where the topic names one, and the map of what follows (english-plan.md §3a, block I). Author facts are verified at fill, never remembered. Unit: Section I — Language Development (Units 1–17).</li><li><h3>2. Summary</h3>
+<h4>Unit 2 — Communication</h4>
+<p>Full prose summary at fill (poems: stanza-wise summary table); it must match the prescribed textbook telling (§3a, block II).</li><li><h3>3. Classified tables</h3>
+<p><strong>Table 1 — Themes with evidence</strong></p>
+<table><thead><tr><th>Theme</th><th>Evidence from text</th><th>Significance</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 2 — Characters</strong></p>
+<table><thead><tr><th>Character</th><th>Traits</th><th>Evidence</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 3 — Devices and glossary</strong></p>
+<table><thead><tr><th>Device or word</th><th>Example line or meaning</th><th>Effect or usage sentence</th></tr></thead><tbody></tbody></table>
+<p>Glossary reaches ≥ 20 entries with usage sentences at fill (block V).</li><li><h3>4. Figures</h3>
+<ul>
+<li><strong>G1</strong> — Unit 2 — Communication — story-arc, character-web or setting map (authored SVG — English labels)</li>
+<li><strong>G2</strong> — Unit 2 — Communication — curated reference (author portrait where licensed, map or structure — license recorded at fill)</li>
+</ul></li><li><h3>5. Questions and answers</h3>
+<p>Short questions with model answers plus long questions with structured model answers (intro → points → conclusion) at fill; ≥ 10 short + 5 long per text (block VI).</li><li><h3>6. Exam Zone and self-check</h3>
+<p>Existing entrance-exam (CEE) material stays where it is — see the seeded exam fields of this file when present. One-paragraph essence plus quotations-to-remember table (block VII) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ Communication is only talking. ✅ It includes listening, observing, and interpreting.</li><li>❌ More words = better communication. ✅ Clarity and conciseness matter more.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Explain the elements of communication with a diagram.</li><li>What are the barriers to effective communication? How can they be overcome?</li><li>Differentiate between verbal and non-verbal communication.</li></ul></section>
+<section class="field"><h2>Formulas</h2><p class="empty">—</p></section>
+<section class="field"><h2>Summary</h2><p>Unit 2 defines communication as the exchange of information, ideas, feelings and meaning between two or more people through symbols, signs or behaviour. It sets out the six elements - sender, message, channel, receiver, feedback and noise - and the types, including verbal, non-verbal, visual and active listening. The unit then groups the barriers into physical, psychological, semantic and cultural, and closes with the 5 Cs of effective communication: clarity, conciseness, correctness, courtesy and confidence.</p></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Communication as the exchange of information, ideas, feelings and meaning through symbols, signs or behaviour</li><li>The six elements: sender, message, channel or medium, receiver, feedback and noise</li><li>Types of communication: verbal, non-verbal, visual and active listening</li><li>Four barriers: physical, psychological, semantic and cultural</li><li>The 5 Cs of effective communication: clarity, conciseness, correctness, courtesy and confidence</li><li>Active listening as fully concentrating on what is being said</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Communication is not only talking; it also includes listening, observing and interpreting.</li><li>Noise is any interference that distorts the message.</li><li>Verbal communication uses spoken or written words, while non-verbal communication uses body language, gestures and facial expressions.</li><li>Visual communication uses images, graphs and symbols.</li><li>More words do not make communication better; clarity and conciseness matter more.</li><li>Physical barriers include distance and noise, and semantic barriers arise from differences in language.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Explain the elements of communication with a diagram.</li><li>Differentiate between verbal and non-verbal communication with examples.</li><li>List the barriers to effective communication and explain how they can be overcome.</li><li>Explain the 5 Cs of effective communication with a short example for each.</li><li>Describe active listening and its importance in a face-to-face conversation.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Six elements in order: sender, message, channel or medium, receiver, feedback and noise.</li><li>The channel or medium is the method of transmission (verbal, written, digital), not the person who sends the message.</li><li>Non-verbal communication covers body language, gestures and facial expressions.</li><li>Four barriers: physical (distance, noise), psychological (prejudice, emotion), semantic (language differences), cultural (norms, values).</li><li>The 5 Cs of effective communication are clarity, conciseness, correctness, courtesy and confidence.</li><li>Feedback is the receiver's response and is what completes the communication process.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Do not answer 'Communication means talking only' - the notes explicitly reject this.</li><li>In a diagram, label all six elements and show noise interfering with the channel.</li><li>Do not write that more words make communication better; clarity and conciseness are what matter.</li><li>Keep the answers themselves clear and concise - the 5 Cs apply to your writing too.</li><li>Active listening belongs with the types in these notes; it is not one of the six elements and not a barrier.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Mnemonic for the six elements: 'Some Messages Change Hands, Not Fully' - Sender, Message, Channel, Receiver, Feedback, Noise.</li><li>Reject any option that defines communication as only speaking.</li><li>Barrier keyword test: distance or noise = physical; prejudice or emotion = psychological; language difference = semantic; norms or values = cultural.</li><li>For 5 Cs questions, write the five words in a single line first, then explain each - this prevents forgetting one.</li><li>If a question asks which element completes the process, the answer is feedback.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Elements with a diagram, barriers and types are all common question types in this unit.</li><li>MCQ traps: treating the medium as the person who sends the message, or treating noise as the feedback.</li><li>Open a long answer with a one-line definition of communication, then list the elements, then the barriers.</li><li>This unit is content and vocabulary based; do not add grammar rules that are not in these notes.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Explain the elements of communication with a suitable diagram.</li><li>What are the barriers to effective communication? How can they be overcome?</li><li>Differentiate between verbal and non-verbal communication with examples.</li><li>Explain the 5 Cs of effective communication.</li><li>Distinguish between physical, psychological, semantic and cultural barriers with one example of each.</li><li>Why is active listening important? Explain.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>In the communication process, the person who gets the message is the:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Sender</li><li>Channel</li><li>Receiver</li><li>Noise</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The receiver is the person who gets the message. The sender initiates it, the channel transmits it and noise is any interference that distorts it.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Which of the following is one of the six elements of communication?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Feedback</li><li>Ignorance</li><li>Silence</li><li>Memory</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The six elements are sender, message, channel, receiver, feedback and noise. Feedback is the response from the receiver.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Physical distance between two people is an example of:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A psychological barrier</li><li>A semantic barrier</li><li>A cultural barrier</li><li>A physical barrier</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>D</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Distance and noise are listed as physical barriers. Prejudice and emotion are psychological, language differences are semantic, and norms and values are cultural.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Active listening means:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Listening while preparing a reply</li><li>Fully concentrating on what is being said</li><li>Listening only to music</li><li>Repeating the speaker's words aloud</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The notes define active listening as fully concentrating on what is being said. It is also used to show that communication includes listening, observing and interpreting, not only talking.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Which of the following is NOT one of the 5 Cs of effective communication?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Clarity</li><li>Conciseness</li><li>Courtesy</li><li>Complexity</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>D</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The 5 Cs are clarity, conciseness, correctness, courtesy and confidence. Complexity is the opposite of conciseness and clarity.</p></div></div></div></section>
+<section class="field"><h2>Source</h2><p>skeleton-v2</p></section>
+  <nav class="pager"><a href="01-unit-1-education-and-humanity.html" title="Unit 1 — Education and Humanity">‹ Unit 1 — Education and Humanity</a><a class="mid" href="../../../../../_subjects/class-11-english.html">English</a><a href="03-unit-3-media-and-society.html" title="Unit 3 — Media and Society">Unit 3 — Media and Society ›</a></nav>
+</div></body></html>

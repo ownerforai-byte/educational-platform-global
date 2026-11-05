@@ -1,0 +1,164 @@
+<!doctype html><html><head><meta charset="utf-8"><title>How English Paragraphs Actually Work — the anatomy of connected writing</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Writing And Composition</div>
+    <h1 class="doc">How English Paragraphs Actually Work — the anatomy of connected writing</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Writing And Composition</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>writing-and-composition</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>how-paragraphs-work</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>The big idea:</strong> a paragraph is ONE idea, fully developed — not a fixed number of sentences. Every sentence inside exists to serve that single idea. If you start answering a new question, start a new paragraph.</li><li><strong>The 4-part anatomy:</strong> 1) TOPIC SENTENCE states the main idea (usually first); 2) SUPPORTING SENTENCES give reasons, facts, examples; 3) EXPLANATION/ANALYSIS links evidence back to the idea (this is the sentence weak writers skip); 4) CONCLUDING/LINK sentence rounds off or bridges to the next paragraph.</li><li><strong>The MEAL formula for any body paragraph:</strong> Main idea → Evidence → Analysis → Link. Say it, prove it, explain why the proof matters, connect onward. Works for essays, reports and answers alike.</li><li><strong>UNITY test:</strong> cover a paragraph and ask 'what is this about?' If you need two answers, split it. Every sentence that cannot be traced to the topic sentence is cut material.</li><li><strong>COHESION — the glue devices:</strong> pronoun reference (this policy, such measures), repeated key nouns (deliberate repetition of 'migration' anchors the paragraph), synonym chains (a student → the learner → this young person), and collocations that hold naturally in English.</li><li><strong>COHERENCE — logical order:</strong> time order (first, then, finally) for narration; order of importance (most → least) for arguments; spatial order (near → far) for description; problem → cause → solution for reports. Choose ONE order per paragraph and stay in it.</li><li><strong>TRANSITIONS — the traffic signals:</strong> adding (moreover, in addition), contrasting (however, on the contrary), cause/effect (therefore, as a result, consequently), exemplifying (for instance, namely), sequencing (firstly, subsequently), concluding (in short, to sum up). One or two per paragraph — a transition-heavy paragraph reads as nervous, not organised.</li><li><strong>WHY English paragraphs feel 'backwards' to new writers:</strong> English is writer-responsible — the topic sentence must come EARLY and announce the point directly. Many Nepali/Asian academic styles build up to the point at the end. In English, leading with the conclusion is a feature, not rudeness.</li><li><strong>Paragraph shape:</strong> the classic shape is diamond — broad opening statement, narrowing specifics in the middle, slight broadening at the close. Extremely long paragraphs (250+ words) and one-sentence paragraphs both look unbalanced in essays.</li><li><strong>Paragraph length rule of thumb:</strong> 4-8 sentences for essays; 2-3 for news writing; 1 for notices and warnings. Length follows function.</li><li><strong>Application to exam answers:</strong> in long-answer questions, a new marker expects a new paragraph per point: introduction paragraph → one paragraph per argument (MEAL) → conclusion. Examiners reward visible structure as much as content.</li><li><strong>From reading to writing — the transfer skill:</strong> to write better paragraphs, steal structure from what you read. Take any good article, underline topic sentences, circle transitions, and notice the evidence pattern. Then rebuild the paragraph skeleton with your own content — the fastest known way to internalise how English prose works.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ A paragraph is 'however many sentences the teacher said'. ✅ A paragraph is one idea developed — sentences follow the idea, not a count.</li><li>❌ Starting a new paragraph whenever you like. ✅ New paragraph = new idea, new time, new place, or new speaker.</li><li>❌ Piling transitions into every sentence ('Moreover... Furthermore... In addition...'). ✅ Use signals only where the logical relationship actually changes.</li><li>❌ Evidence without analysis ('...this shows nothing'). ✅ After every example, one sentence explains HOW it supports the main idea.</li><li>❌ Topic sentence at the end ('building up to the point'). ✅ In English, state the main idea first — early and explicitly.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>MEAL in action: MAIN — 'Public libraries remain essential in the digital age.' EVIDENCE — 'In 2024, the Kathmandu public library recorded over 200,000 visits.' ANALYSIS — 'This shows that free access to quiet study space, not books alone, is what communities still need.' LINK — 'Libraries, in short, have changed their job, not lost it.'</li><li>Cohesion chain: 'Migration has reshaped the valley. THIS FLOW of people has strained housing. SUCH PRESSURE has, in turn, driven up rents.' (pronoun + synonym glue)</li><li>Time order in narration: 'First the alarm failed. Then the bus was missed. By the time the exam began, panic had taken over.'</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>One paragraph = one controlling idea, announced early.</li><li>MEAL: Main idea → Evidence → Analysis → Link.</li><li>Unity (cut off-topic sentences) + cohesion (pronouns, synonyms, key-noun repetition) + coherence (one logical order).</li><li>Transitions are traffic signals, not decoration — sparing use.</li><li>English paragraphs lead with the conclusion (writer-responsible style).</li></ul></section>
+<section class="field"><h2>Summary</h2><p>English paragraphs work by announcing one controlling idea early, supporting it with evidence, ANALYSING the evidence, and linking onward — held together by pronoun/synonym glue and signalled by transitions, arranged in one clear logical order.</p></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Identify topic sentence, evidence and analysis in a published article paragraph.</li><li>Rewrite a jumbled 8-sentence paragraph in MEAL order and justify each move.</li><li>Write a 6-sentence paragraph on 'The value of morning exercise' using exactly two transitions.</li></ul></section>
+  <nav class="pager"><a href="01-grammar-master-mindmap.html" title="Grammar Master Mindmap — the whole of English grammar on one page">‹ Grammar Master Mindmap — the whole of English…</a><a class="mid" href="../../../../../_subjects/class-11-english.html">English</a><a href="01-informal-letter-writing.html" title="Informal Letter Writing — personal letter format">Informal Letter Writing — personal letter for… ›</a></nav>
+</div></body></html>

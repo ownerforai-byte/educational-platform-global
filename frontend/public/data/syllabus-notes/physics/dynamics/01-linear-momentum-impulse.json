@@ -1,0 +1,97 @@
+{
+  "title": "Linear momentum, impulse",
+  "unitSlug": "dynamics",
+  "topicSlug": "linear-momentum-impulse",
+  "topicTitle": "Linear momentum, impulse",
+  "source": "skeleton-v2",
+  "generatedAt": "2026-10-29T07:20:14.738Z",
+  "notes": [
+    "# Linear momentum, impulse\n\n## 1. Introduction\nPhysical picture of **Linear momentum** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Dynamics fill pass.\n\n## 2. Concepts and laws\n### Linear momentum\n### impulse\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
+    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
+    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
+    "## 5. Diagrams and figures\n- **D1** — Linear momentum — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Linear momentum — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Linear momentum — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Linear momentum — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
+    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
+    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+  ],
+  "examNotes": [
+    "Exam Tip 1: Theory answers should state BOTH $J = F\\Delta t$ and $J = \\Delta p$ and connect them — one-line answers lose marks.",
+    "Exam Tip 2: In numericals, convert grams to kg and quote directions ('opposite to initial motion') with magnitudes.",
+    "Exam Tip 3: Graph-reading impulse questions: label the base and height you used to compute the area.",
+    "Exam Tip 4: Safety-device explanations score full marks only with the chain: fixed $\\Delta p$ → longer $\\Delta t$ → smaller $F_{avg}$."
+  ],
+  "examShortTricks": [
+    "Trick 1: Rebounds: add the speeds in $\\Delta p = m(v_f + v_i)$ — sign flip doubles the effect.",
+    "Trick 2: 'Soft landing' MCQs: longer $\\Delta t$ ⇒ smaller $F$ ⇒ pick the option that stretches the time.",
+    "Trick 3: Recoil from rest: $V = mv/M$ instantly, with $V$ opposite the bullet.",
+    "Trick 4: Machine-gun/stream problems: average force = mass flow rate × exit speed ($n\\,mv$).",
+    "Trick 5: If a force–time curve has no nice shape, the answer is still its AREA — estimate with boxes if needed.",
+    "Trick 6: Impulsive force problems: always look for the 'short time' keyword — it implies $F_{avg} = \\Delta p/\\Delta t$ is the intended approach."
+  ],
+  "practiceQuestions": [
+    "Q2. Show that Newton's second law can be written as $F = dp/dt$ and state when this reduces to $F = ma$.",
+    "Q3. A 0.3 kg ball moving at 15 m/s is hit back along the same path at 25 m/s. Find the impulse delivered.",
+    "Q4. Explain, using the impulse–momentum theorem, why a crumple zone reduces injury in a crash.",
+    "Q5. From a given force–time graph (triangle), determine the final velocity of the struck body.",
+    "Q6. A 2 kg object is subjected to a force $F = 10t$ N. Find the change in momentum in 3 seconds.",
+    "Q7. Compare the impulse delivered by a constant force of 10 N for 5 s and a force $F = 2t$ for 5 s."
+  ],
+  "practice": [
+    "A 60 kg runner at 8 m/s is stopped in 0.5 s. Find the impulse and the average force. — $J = 480$ kg·m/s; $F = 960$ N.",
+    "A 0.5 kg ball hits a wall at 12 m/s and rebounds at 8 m/s. Find the impulse. — $\\Delta p = 0.5(8+12) = 10$ kg·m/s BACKWARD (note the sign reversal!).",
+    "From a triangular $F$–$t$ pulse peaking at 400 N over 0.02 s, find the impulse delivered to a 0.2 kg ball at rest. — Area $= \\frac{1}{2}(0.02)(400) = 4$ N·s → $v = 20$ m/s.",
+    "A 1000 kg car at 20 m/s crashes into a barrier that stops it in 0.4 s. Find the average force, and compare with a crumple-zone stop in 1.0 s. — 50 kN vs 20 kN.",
+    "A machine-gun fires 30 g bullets at 400 m/s, 10 per second. Find the average recoil force. — $F = n\\,mv = 10 \\times 12 = 120$ N."
+  ],
+  "mcs": [
+    {
+      "question": "The SI unit of impulse is:",
+      "options": [
+        "N",
+        "N/s",
+        "N·s",
+        "kg·m/s²"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "A 2 kg ball at 10 m/s bounces back at 10 m/s. The impulse magnitude is:",
+      "options": [
+        "0",
+        "20 N·s",
+        "40 N·s",
+        "10 N·s"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Doubling the collision time for the same momentum change makes the average force:",
+      "options": [
+        "Double",
+        "Half",
+        "Unchanged",
+        "Four times"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "$F = dp/dt$ reduces to $F = ma$ when:",
+      "options": [
+        "Velocity is high",
+        "Mass is constant",
+        "Force is constant",
+        "Momentum is constant"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A cricket player pulling hands back while catching reduces:",
+      "options": [
+        "The impulse",
+        "The momentum change",
+        "The average force",
+        "The ball's mass"
+      ],
+      "answer": "C"
+    }
+  ]
+}

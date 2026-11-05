@@ -1,0 +1,164 @@
+<!doctype html><html><head><meta charset="utf-8"><title>शव्द-स्रोत (Word Sources)</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Nepali  /  Bhasha Ra Vyakarana</div>
+    <h1 class="doc">शव्द-स्रोत (Word Sources)</h1>
+    <div class="meta"><span>Class 11</span><span>Nepali</span><span>Bhasha Ra Vyakarana</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>bhasha-ra-vyakarana</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>shabda-srot</p></section>
+<section class="field"><h2>Relevance</h2><p><code>30</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;p&gt;&lt;strong&gt;शब्दको परिभाषा (Definition of Word):&lt;/strong&gt; एउटा वा एउटाभन्दा बढी अक्षरहरू मिलेर बनेको अर्थबोधक ध्वनिमय संयोजनलाई 'शब्द' भनिन्छ। शब्द नै भाषाको सबैभन्दा सानो इकाइ हो, जसलाई अझ सानो भागमा विभाजित गर्दा अर्थ नहोस्। नेपाली भाषामा शब्दहरू विभिन्न स्रोतबाट आएका छन् जुन भाषाको समृद्धिमा योगदान पुगेका छन्।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;शब्दको उद्गम (Origin of Word):&lt;/strong&gt; शब्दको उद्गम भनेको कुन भाषा वा कुन मूलबाट शब्दले जन्म लिएको छ भन्ने कुरा हो। नेपाली भाषाको शब्दभण्डारमा संस्कृत, प्राकृत, अपभ्रंश र अन्य भाषाहरूबाट आएका शब्दहरू समावेश छन्। शब्दको स्रोत थाहा पाउनु भाषाको ऐतिहासिक विकास बुझ्न र शब्दको शुद्ध प्रयोग गर्नका लागि आवश्यक छ।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;शव्दको वर्गीकरण (Classification of Words by Source):&lt;/strong&gt; शब्दको उद्गम स्रोतको आधारमा शब्दहरूलाई मुख्यतया तीन भागमा वर्गीकरण गरिएको छ: (१) तत्सम शब्दहरू — जो संस्कृतका शुद्ध रूपमा नेपालीमा प्रयोग हुने, (२) तद्भव शब्दहरू — जो संस्कृतबाट नेपाली स्वरूपमा विकसित भएर आएका, (३) आगन्तुक शब्दहरू — जो अरबୀ-फारसी, अंग्रेजी वा अन्य भाषाबाट आएका हुन्।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;तत्सम शब्दहरू (Tatsama Words):&lt;/strong&gt; तत्सम शब्दहरू भनेको संस्कृतका ती शब्दहरू हुन् जुन उच्चारण, वर्तनी, लिङ्ग-वचन-विभक्ति सबै पक्षमा संस्कृतकै रूपमा नेपाली भाषामा प्रयोग हुन्छन्। उदाहरण: पुस्तक (पुस्तक), विद्यालय (विद्यालय), शिक्षक (शिक्षक), ज्ञान (ज्ञान), धर्म (धर्म), कर्म (कर्म), सत्य (सत्य), अस्तित्व (अस्तित्व), शासन (शासन), आत्म (आत्मा)। यी शब्दहरूको वर्तनी संस्कृत नियमअनुसार हुन्छ।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;तत्सम शब्दको पहिचान (Identifying Tatsama Words):&lt;/strong&gt; तत्सम शब्दहरू पहिचान गर्नका लागि निम्न आधारहरू प्रयोग गरिन्छ: (१) चन्द्रबिन्दु (ं) र विस्गर्ग (ः) भएको शब्द तत्सम हुन्छ, (२) श, ष, ञ, ठ, ड, ण जस्ता वर्णहरू संस्कृत वर्तनीमा हुन्छन्, (३) बहुवचनमा 'हरू', 'हरू' प्रत्यय थपिन्छ, (४) शब्दको सम्पूर्ण रूप संस्कृतमै पाइन्छ। उदाहरण: 'विद्या' → 'विद्याहरू', 'शिक्षा' → 'शिक्षाहरू'।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;तद्भव शब्दहरू (Tadbhava Words):&lt;/strong&gt; तद्भव शब्दहरू भनेको संस्कृतका ती शब्दहरू हुन् जुन कालक्रममा प्राकृत, अपभ्रंश हुँदै आधुनिक नेपाली भाषामा पुगेका र आफ्नो मूल रूप त्यागेर नयाँ रूप लिएका हुन्। 'तद्भव' शब्दको अर्थ 'यसबाट भएको' वा 'यसबाट निस्किएको' हो। उदाहरण: संस्कृत 'दुग्ध' → नेपाली 'दूध', 'पत्र' → 'चिट', 'नाग' → 'साप', 'मत्स्य' → 'माछा', 'गगन' → 'आकाश', 'अश्व' → 'घोडा'।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;तद्भव शब्दको पहिचान (Identifying Tadbhava Words):&lt;/strong&gt; तद्भव शब्द पहिचान गर्ने आधारहरू: (१) चन्द्रबिन्दु र विस्गर्ग हुँदैन, (२) र्रे (र्), रे (रे), ककार परिवर्तन हुन्छ, (३) श, ष, ज, भ, य, र, ल, व जस्ता संस्कृत वर्णहरू नेपालीमा परिवर्तित भएर आउँछन्, (४) शब्द छोटो र सरल हुन्छ, (५) शब्दको अन्त्यमा स्वतन्त्र स्वर हुन्छ। उदाहरण: 'चिट' (पत्र), 'साँवा' (श्याम), 'आँखा' (नेत्र), 'कान' (कर्ण)।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;तद्भव शब्दको परिवर्तन प्रकार (Types of Tadbhava Changes):&lt;/strong&gt; तद्भव शब्दहरूमा निम्न प्रकारका परिवर्तनहरू देखिन्छन्: (१) स्वर परिवर्तन — जैसे: गगन → आकाश, (२) व्यञ्जन परिवर्तन — जैसे: पत्र → चिट, (३) स्वर-व्यञ्जन दुवैको परिवर्तन — जैसे: नाग → साप, (४) रूप परिवर्तन — जैसे: वक्षस् → छाती, (५) शब्द लोप — जैसे: सन्तान → सन्तान, (६) शब्द थप — जैसे: पिता → बुबा/आमा, (७) अर्थ परिवर्तन — जैसे: अश्व → घोडा।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;आगन्तुक शब्दहरू (Aagantuk Words):&lt;/strong&gt; आगन्तुक शब्दहरू भनेको नेपाली भाषाको आफ्नै मूल नभएर अन्य भाषाहरूबाट लिएका शब्दहरू हुन्। यी शब्दहरू मुख्यतया दुई विभागमा पर्छन्: (क) स्वदेशी आगन्तुक — हिन्दी, उर्दू, बङ्गाली, मराठी, गुजराती, तमिल, तेलुगु, मल्यालम, सिन्धी लगायत भारतीय भाषाहरूबाट आएका, (ख) विदेशी आगन्तुक — अंग्रेजी, अरबी-फारसी, फ्रान्सेली, पोर्चुगীज, जर्मान, जापानी, चीनीबाट आएका।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;अरबी-फारसी आगन्तुक शब्दहरू (Arabic-Persian Loanwords):&lt;/strong&gt; इस्लामको प्रभाव र मुगलकालीन शासनकालमा अरबी-फारसी शब्दहरू नेपाली भाषामा प्रवेश गरे। उदाहरण: अल्लाह, अलफ़, अमीर, अद्ल, इल्म, इन्साफ, इसलाम, इकराम, इकबाल, इकरार, इज्जत, अहवाल, इबादत, हुकुम, नसीब, दौलत, जहान, फितना, किस्मत, ख्वाजा। यी शब्दहरू धर्म, प्रशासन, साहित्य र दैनिक बोलचालमा प्रयोग हुन्छन्।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;अंग्रेजी आगन्तुक शब्दहरू (English Loanwords):&lt;/strong&gt; अंग्रेजी शासनकाल र आधुनिकीकरणसँगै अंग्रेजी शब्दहरू नेपाली भाषामा व्यापक रूपमा प्रवेश गरे। उदाहरण: अफिस (office), अलमारी (almirah/cupboard), एम्बुलेन्स (ambulance), एनिमल (animal), एजुकेशन (education), एक्ट (act), एक्टर (actor), एडिट (edit), एडमिन (admin), एप (app), बेस (base), बोर्ड (board), कम्प्यूटर (computer), डिग्री (degree), एक्साम (exam), फोन (phone), हस्पितल (hospital), इन्जिन (engine), नेटवर्क (network)।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;अन्य विदेशी आगन्तुक शब्दहरू (Other Foreign Loanwords):&lt;/strong&gt; पोर्चुगिसबाट: केशर (cauliflower), काजू (cashew), प्याज (pyaz/onion), बोटल (bottle), जेब (pocket), ड्रेस (dress), बेल्ट (belt)। फ्रान्सेलीबाट: गोभी (cabbage), फ्रेन्च फ्राइज, ब्रेड (bread)। जर्मनबाट: बोक्स (box), बैग (bag)। जापानीबाट: सुशी (sushi), कमि (kami), टेकि (take)। चीनीबाट: नूडल्स (noodles)। यी शब्दहरू आधुनिक जीवन, खाना, पोशाक र प्रविधिसँग सम्बन्धित छन्।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;आगन्तुक शब्दको विशंस्कृतिकरण (Sanitization of Loanwords):&lt;/strong&gt; आगन्तुक शब्दहरू नेपाली भाषाको ढाँचामा परिर्वतन भएर विशंस्कृत हुँदै आएका छन्। जस्तै: अंग्रेजी 'pocket' → 'जेब', 'bag' → 'ब्याग', 'bus' → 'बस', 'car' → 'कार', 'phone' → 'फोन', 'computer' → 'कम्प्युटर', 'electric' → 'इलेक्ट्रिक', 'radio' → 'रेडियो'। यो प्रक्रियाले आगन्तुक शब्दहरू नेपाली उच्चारण, वर्तनी र व्याकरणसँग मिल्दै जान्छन्।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;आगन्तुक शब्दको उच्चारण नियम (Pronunciation Rules for Loanwords):&lt;/strong&gt; आगन्तुक शब्दहरू उच्चारण गर्दा नेपाली ध्वनि प्रणालीअनुसार परिवर्तन हुन्छ: (१) अंग्रेजी 'th' ध्वनि → 'थ' वा 'द' (the → थ, three → थ्री), (२) 'v' ध्वनि → 'ब' वा 'भ' (very → बेरी, van → बन), (३) 'f' ध्वनि → 'फ' (farm → फार्म), (४) 'w' ध्वनि → 'व' (water → वटर), (५) 'z' ध्वनि → 'ज' (zoo → झू)। यसले आगन्तुक शब्दहरू नेपाली भाषामा स्वाभाविक लाग्छ।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;शब्द निर्माणका माध्यमहरू (Means of Word Formation):&lt;/strong&gt; नेपाली भाषामा शब्द निर्माणका विभिन्न माध्यमहरू छन्: (१) उपसर्ग जोड्द्वारा — प्रति+पत्र = प्रतिलिपी, सम+गर् = समग्र, (२) प्रत्यय जोड्द्वारा — गुरु + य = गुरुय, राज + इन् = राजिन, (३) समास बनाउँद्वारा — राजा+पुरुष = राजapurush, (४) द्वन्द्व समास — राम+लक्ष्मण = रामलक्ष्मण, (५) तत्पुरुष समास — राजाको पुरुष = राजapurush, (६) कर्मधारय समास — सुन्दर घर = सुन्दरगृह।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;शब्दभण्डारको समृद्धि (Enrichment of Word Bank):&lt;/strong&gt; नेपाली भाषाको शब्दभण्डार संस्कृत, प्राकृत, अपभ्रंश, अरबो-फारसी, अंग्रेजी र स्थानीय भाषाहरूबाट आएका शब्दहरूले भरिपूर्ण छ। यी सबै स्रोतहरूले नेपाली भाषालाई समृद्ध बनाएका छन्। शब्दभण्डारको समृद्धिले भाषाको विकास र विस्तारमा मद्दत गर्छ, विभिन्न क्षेत्रहरू (विज्ञान, प्रविधि, कानून, प्रशासन) को शब्दावली विकास गर्न सहज बनाउँछ।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;शब्दको उद्गम र ऐतिहासिक विकास (Historical Development of Words):&lt;/strong&gt; शब्दहरूको उद्गम र विकास एक दीर्घ प्रक्रिया हो। मानव समुदायले सञ्चारका लागि शब्दहरूको प्रयोग सुरु गरेपछि शब्दहरूको विकास हुँदै गयो। शब्दहरू समयसँगै परिवर्तित हुँदै गए, नयाँ शब्दहरू थपिए, पुराना शब्दहरू लोप भए। नेपाली भाषामा पनि यही प्रक्रिया देखिन्छ: प्राचीन संस्कृतबाट → प्राकृत → अपभ्रंश → अवधी/बज्जिका → आधुनिक नेपाली।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;शब्दहरूको वर्तनी नियम (Spelling Rules of Words):&lt;/strong&gt; नेपाली शब्दहरूको वर्तनीका लागि निम्न नियमहरू प्रयोग हुन्छन्: (१) तत्सम शब्दहरूको वर्तनी संस्कृत नियमअनुसार हुन्छ, (२) तद्भव शब्दहरूको वर्तनी नेपाली उच्चारणअनुसार हुन्छ, (३) आगन्तुक शब्दहरूको वर्तनी तिनीहरूको मूल भाषाअनुसार हुन्छ तर नेपाली उच्चारणमा ढल्किन्छ, (४) चन्द्रबिन्दु र विस्गर्ग तत्सम शब्दमा मात्र प्रयोग हुन्छ, (५) नेपाली वर्तनी नियम अनुसार 'क्ष' र 'ज्ञ' को प्रयोग तत्सम शब्दमा हुन्छ।&lt;/p&gt;,     &quot;&lt;p&gt;&lt;strong&gt;शब्दको उच्चारण र ध्वनि परिवर्तन (Pronunciation and Sound Changes):&lt;/strong&gt; शब्दहरूको उच्चारण र वर्तनी शब्दको स्रोत र विकाससँग सम्बन्धित छ। तत्सम शब्दहरूको वर्तनी संस्कृत वर्तनी अनुसार हुन्छ, तद्भव शब्दहरूको वर्तनी नेपाली उच्चारण अनुसार हुन्छ, आगन्तुक शब्दहरूको वर्तनी तिनीहरूको मूल भाषा अनुसार हुन्छ तर नेपाली उच्चारणमा ढल्किन्छ। उदाहरण: अंग्रेजी 'knowledge' → 'नोलज' (नेपाली उच्चारण), 'समुद्र' → 'समुद' (तद्भव)।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;शब्द भण्डारको महत्व (Importance of Word Bank):&lt;/strong&gt; शब्दभण्डारको ज्ञान भाषा सीपको अभिन्न अंग हो। शब्दको स्रोत थाहा हुँदा शब्दको शुद्ध वर्तनी, उच्चारण र प्रयोग गर्न सकिन्छ। NEB परीक्षामा शब्दको स्रोत (तत्सम, तद्भव, आगन्तुक) पहिचान गर्ने प्रश्नहरू प्रायः आउँछन्। शब्दभण्डारको समृद्धिले भाषाको सौन्दर्य, प्रभावकारिता र विस्तारमा महत्वपूर्ण भूमिका खेल्छ।&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>तत्सम र तद्भव शब्दहरू एउटै हुन् — गलत। तत्सम शब्दहरू संस्कृतका शुद्ध रूपका हुन्छन् भने तद्भव शब्दहरू संस्कृतबाट विकसित भएका परिवर्तित रूपका हुन्छन्। तत्सममा चन्द्रबिन्दु/विस्गर्ग हुन्छ तर तद्भवमा हुँदैन।</li><li>आगन्तुक शब्द र तद्भव शब्दमा फरक छैन — गलत। आगन्तुक शब्दहरू अन्य भाषाहरूबाट आएका हुन्छन् भने तद्भव शब्दहरू संस्कृतबाट नेपालीमा विकसित भएर आएका हुन्छन्। दुवैको उद्गम स्रोत फरक हुन्छ।</li><li>नेपाली भाषामा आएका सबै शब्दहरू संस्कृतबाट आएका हुन् — गलत। नेपाली भाषामा अरबी-फारसी, अंग्रेजी, फ्रान्सेली, पोर्चुगिस, जर्मान लगायत धेरै भाषाहरूबाट शब्दहरू आएका छन्।</li><li>शब्दको स्रोत भनेको त्यसको अर्थ हो — गलत। शब्दको स्रोत भनेको त्यो शब्द कुन भाषाबाट आएको हो भन्ने हो, अर्थ होइन। स्रोत (source) = उद्गम स्थल।</li><li>आगन्तुक शब्दहरूमा चन्द्रबिन्दु र विस्गर्ग हुन्छ — गलत। आगन्तुक शब्दहरूमा चन्द्रबिन्दु र विस्गर्ग सामान्यतया हुँदैन। यी चिन्हहरू तत्सम शब्दहरूमा मात्र पाइन्छन्।</li><li>तद्भव शब्दहरू लामो र जटिल हुन्छन् — गलत। तद्भव शब्दहरू छोटो र सरल हुन्छन्, जबकि तत्सम शब्दहरू लामो र जटिल हुन्छन्। तद्भव शब्दहरू दैनिक बोलचालमा प्रयोग हुन्छन्।</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>तलका शब्दहरू तत्सम, तद्भव र आगन्तुक मध्ये कुन हो वर्गीकरण गर्नुहोस्: पुस्तक, दूध, इनजिन, अम्बा, साँवा, एम्बुलेन्स, विद्यालय, कागज, साप, ज्ञान, अलमारा, चिट, इल्म, माछा, एक्ट।</li><li>तलका तद्भव शब्दहरूको तत्सम (संस्कृत) रूप लेख्नुहोस्: चिट → ?, दूध → ?, साँवा → ?, माछा → ?, आकाश → ?, घोडा → ?, गाई → ?, बाख्रा → ?, हात्ती → ?, आँखा → ?</li><li>तलका शब्दहरूको आगन्तुक स्रोत लेख्नुहोस्: एम्बुलेन्स → ?, पोकट → ?, बंगुर → ?, अलमारा → ?, इल्म → ?, अदल → ?, काजू → ?, एनिमल → ?। कुन शब्द अंग्रेजीबाट, कुन अरबी-फारसीबाट आएको हो पहिचान गर्नुहोस्।</li><li>शब्द निर्माणका विभिन्न माध्यमहरू व्याख्या गर्दै प्रत्येकको दुईवटा उदाहरण दिनुहोस्: उपसर्ग जोड्द्वारा, प्रत्यय जोड्द्वारा, समास बनाउँद्वारा।</li><li>नेपाली भाषाको शब्द भण्डारमा कुन कुन भाषाहरूको योगदान रहेको छ? ५ वटा भाषाहरूको नाम र प्रत्येकबाट ३-३ उदाहरण सहित लेख्नुहोस्।</li><li>तलका शब्दहरू मध्ये तत्सम र आगन्तुक पहिचान गर्नुहोस् र कारण सहित लेख्नुहोस्: विद्या, अफिस, ज्ञान, बोर्ड, कर्म, फोन, धर्म, हस्पितल, सत्य, नेटवर्क।</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>नेपाली भाषाको शब्द भण्डारमा संस्कृत, अरबी-फारसी, अंग्रेजी र अन्य भारतीय भाषाहरूको योगदान छ।</li><li>तत्सम शब्दहरू संस्कृतका शुद्ध रूपका हुन्छन् भने तद्भव शब्दहरू संस्कृतबाट नेपाली रूपमा ढलेका हुन्छन्।</li><li>आगन्तुक शब्दहरूले नेपाली भाषालाई आधुनिकतासँग जोड्न मद्दत गरेका छन् र विशेष गरी विज्ञान, प्रविधि, प्रशासन क्षेत्रमा प्रयोग हुन्छन्।</li><li>शब्दहरूको स्रोत थाहा हुँदा भाषाको विकास, इतिहास, र सांस्कृतिक सम्पर्क बुझ्न मद्दत हुन्छ।</li><li>आगन्तुक शब्दहरू नेपाली भाषामा विशंस्कृत भएर आउँछन्, अर्थात् तिनीहरू नेपाली उच्चारण र व्याकरण अनुसार परिवर्तन हुन्छन्।</li><li>शब्द भण्डारको समृद्धिले भाषाको सौन्दर्य, अभिव्यक्ति क्षमता र विस्तारमा महत्वपूर्ण भूमिका खेल्छ।</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>bhasha-ra-vyakarana</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>bhasha-ra-vyakarana</p></section>
+  <nav class="pager"><a href="aagantuk-shabda.html" title="आगन्तुक शब्द (Loanwords)">‹ आगन्तुक शब्द (Loanwords)</a><a class="mid" href="../../../../../_subjects/class-11-nepali.html">Nepali</a><a href="swar-varna.html" title="स्वर वर्ण (Vowel Letters)">स्वर वर्ण (Vowel Letters) ›</a></nav>
+</div></body></html>

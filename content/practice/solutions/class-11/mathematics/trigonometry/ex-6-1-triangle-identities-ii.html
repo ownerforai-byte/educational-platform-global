@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.6 Book Ex 6.1 Q3-Q4 (triangle identities II) - Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Trigonometry</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.6 Book Ex 6.1 Q3-Q4 (triangle identities II) - Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Trigonometry</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q3(a). In any triangle, prove that (b+c)<em>cosA + (c+a)</em>cosB + (a+b)*cosC = a + b + c.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Regroup into the three projection pairs: (b<em>cosA + a</em>cosB) = c and friends.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Regroup the left side as (b<em>cosA + a</em>cosB) + (c<em>cosB + b</em>cosC) + (a<em>cosC + c</em>cosA). By the projection law b<em>cosA + a</em>cosB = c, c<em>cosB + b</em>cosC = a, and a<em>cosC + c</em>cosA = b. Adding gives c + a + b = a + b + c.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q3(a); book p186 = PDF p213-214 (vision read)</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q3(b). In any triangle, prove that b^2<em>sin2C + c^2</em>sin2B = 2ab*sinC. (T.U. 2051H)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Write everything with a = 2R<em>sinA: both sides become 8R^2</em>sinA<em>sinB</em>sinC.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Left side: b^2<em>2</em>sinC<em>cosC + c^2</em>2<em>sinB</em>cosB = 8R^2<em>sin^2B</em>sinC<em>cosC + 8R^2</em>sin^2C<em>sinB</em>cosB = 8R^2<em>sinB</em>sinC<em>(sinB</em>cosC + cosB<em>sinC) = 8R^2</em>sinB<em>sinC</em>sin(B+C) = 8R^2<em>sinA</em>sinB<em>sinC. Right side: 2</em>(2R<em>sinA)</em>(2R<em>sinB)</em>sinC = 8R^2<em>sinA</em>sinB*sinC. Both sides agree.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q3(b) (T.U. 2051H); book p186 = PDF p214 (vision read)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q3(c). In any triangle, prove that c^2<em>cos^2B + b^2</em>cos^2C + bc*cos(B-C) = (a^2 + b^2 + c^2)/2. (T.U. 2058S)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>The trick is (b<em>cosC + c</em>cosB)^2 = a^2: expand it to isolate c^2<em>cos^2B + b^2</em>cos^2C.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>From the projection law a = b<em>cosC + c</em>cosB, squaring gives a^2 = b^2<em>cos^2C + c^2</em>cos^2B + 2bc<em>cosB</em>cosC, so c^2<em>cos^2B + b^2</em>cos^2C = a^2 - 2bc<em>cosB</em>cosC. Substituting: left side = a^2 - 2bc<em>cosB</em>cosC + bc<em>cos(B-C) = a^2 - 2bc</em>cosB<em>cosC + bc</em>(cosB<em>cosC + sinB</em>sinC) = a^2 - bc<em>(cosB</em>cosC - sinB<em>sinC) = a^2 - bc</em>cos(B+C) = a^2 + bc<em>cosA. Since bc</em>cosA = (b^2+c^2-a^2)/2, this is a^2 + (b^2+c^2-a^2)/2 = (a^2+b^2+c^2)/2.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q3(c) (T.U. 2058S); book p186 = PDF p214 (vision read; the 1/2 on the right confirmed in print)</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q3(d). In any triangle, prove that (c - b<em>cosA)/(b - c</em>cosA) = cosB/cosC. (HSEB 2064)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>c - b<em>cosA = 2R</em>sinA*cosB: the sinA factor cancels in the ratio.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>c - b<em>cosA = 2R</em>sinC - 2R<em>sinB</em>cosA = 2R<em>[sin(A+B) - sinB</em>cosA] = 2R<em>sinA</em>cosB. Likewise b - c<em>cosA = 2R</em>sinB - 2R<em>sinC</em>cosA = 2R<em>[sin(A+C) - sinC</em>cosA] = 2R<em>sinA</em>cosC. Dividing (cosA != 0; if cosA = 0 both numerator and denominator reduce via the projection law) gives cosB/cosC.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q3(d) (HSEB 2064); book pp186-187 = PDF pp213-214 (vision read)</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q3(e). In any triangle, prove that (a - b<em>cosC)/(c - b</em>cosA) = sinC/sinA.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same 2R expansion as Q3(d): a - b<em>cosC = 2R</em>sinC*cosB, and the cosB cancels.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>a - b<em>cosC = 2R</em>sinA - 2R<em>sinB</em>cosC = 2R<em>[sin(B+C) - sinB</em>cosC] = 2R<em>cosB</em>sinC. From Q3(d), c - b<em>cosA = 2R</em>sinA<em>cosB. Dividing gives (2R</em>sinC<em>cosB)/(2R</em>sinA*cosB) = sinC/sinA.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q3(e); book p187 = PDF p214 (vision read)</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q4(a). In any triangle, prove that a^3<em>sin(B-C) + b^3</em>sin(C-A) + c^3*sin(A-B) = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Use cosB = (a^2+c^2-b^2)/(2ac): each product a^3<em>b</em>cosC collapses to a^2*(a^2+b^2-c^2)/2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Write sin(B-C) = sinB<em>cosC - cosB</em>sinC = (b<em>cosC - c</em>cosB)/(2R), so a^3<em>sin(B-C) = a^3</em>(b<em>cosC - c</em>cosB)/(2R). Summing cyclically and multiplying by 2R gives [a^3<em>b</em>cosC + b^3<em>c</em>cosA + c^3<em>a</em>cosB] - [a^3<em>c</em>cosB + b^3<em>a</em>cosC + c^3<em>b</em>cosA]. Now a^3<em>b</em>cosC = a^3<em>b</em>(a^2+b^2-c^2)/(2ab) = a^2<em>(a^2+b^2-c^2)/2, and cyclically; their sum is (1/2)</em>[sum a^4 + sum a^2<em>b^2 - sum a^2</em>c^2] = (1/2)<em>sum a^4 since the two mixed sums are equal. Likewise a^3</em>c<em>cosB = a^2</em>(a^2+c^2-b^2)/2, summing to the same (1/2)*sum a^4. Their difference is 0.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q4(a); book p187 = PDF p214 (vision read; cubes confirmed: a^3, b^3, c^3)</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q4(b). In any triangle, prove that [(b^2-c^2)/a^2]<em>sin2A + [(c^2-a^2)/b^2]</em>sin2B + [(a^2-b^2)/c^2]*sin2C = 0.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>[(b^2-c^2)/a^2]<em>sin2A reduces to 2</em>sin(B-C)<em>cosA; then sin(B-C)</em>cosA = (sin2C - sin2B)/2 telescopes.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(b^2-c^2)/a^2 = 4R^2<em>sin(B-C)</em>sinA/(4R^2<em>sin^2A) = sin(B-C)/sinA, so the first term is [sin(B-C)/sinA]</em>2<em>sinA</em>cosA = 2<em>sin(B-C)</em>cosA (and cyclically). Now 2<em>sin(B-C)</em>cosA = 2*[sin(B-C+A) + sin(B-C-A)]/2 = sin(pi-2C) + sin(-(pi-2B)) = sin2C - sin2B. Summing cyclically: (sin2C - sin2B) + (sin2A - sin2C) + (sin2B - sin2A) = 0.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q4(b); book p187 = PDF p214 (vision read; denominators a^2, b^2, c^2 confirmed)</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q4(c). In any triangle, prove that (a^2-b^2+c^2)<em>tanB = (a^2+b^2-c^2)</em>tanC = (b^2+c^2-a^2)*tanA.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Each leg equals abc/R: (a^2-b^2+c^2)<em>tanB = 2ac</em>sinB.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>a^2 - b^2 + c^2 = 2ac<em>cosB by the cosine rule, so the first expression is 2ac</em>cosB<em>tanB = 2ac</em>sinB = 2ac<em>(b/2R) = abc/R. Cyclically the second is 2ab</em>sinC = abc/R and the third is 2bc*sinA = abc/R. All three equal abc/R, hence are equal.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q4(c); book p187 = PDF pp214-215 (vision read)</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q4(d). In any triangle, prove that (cosB - cosC)/(cosA + 1) = (c - b)/a.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Sum-to-product on top and bottom: cosB - cosC = -2<em>cos(A/2)</em>sin((B-C)/2), cosA + 1 = 2*cos^2(A/2).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>cosB - cosC = -2<em>sin((B+C)/2)</em>sin((B-C)/2) = -2<em>cos(A/2)</em>sin((B-C)/2), and cosA + 1 = 2<em>cos^2(A/2). So the left side is -sin((B-C)/2)/cos(A/2). Meanwhile (c-b)/a = (sinC - sinB)/sinA = [2</em>cos((B+C)/2)<em>sin((C-B)/2)]/[2</em>sin(A/2)<em>cos(A/2)] = [2</em>sin(A/2)<em>(-sin((B-C)/2))]/[2</em>sin(A/2)*cos(A/2)] = -sin((B-C)/2)/cos(A/2). Both sides agree.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q4(d); book p187 = PDF p215 (vision read)</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q4(e). In any triangle, prove that (a<em>sinA + b</em>sinB + c<em>sinC)/(a</em>cosA + b<em>cosB + c</em>cosC) = R*(a^2+b^2+c^2)/(abc).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Numerator = 2R<em>sum sin^2, denominator = abc/(2R^2): their ratio is exactly R</em>(a^2+b^2+c^2)/(abc).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Numerator: a<em>sinA + b</em>sinB + c<em>sinC = 2R</em>(sin^2A + sin^2B + sin^2C) = 2R<em>(a^2+b^2+c^2)/(4R^2) = (a^2+b^2+c^2)/(2R). Denominator: a</em>cosA + b<em>cosB + c</em>cosC = 2R<em>(sinA</em>cosA + sinB<em>cosB + sinC</em>cosC) = R<em>(sin2A + sin2B + sin2C) = R</em>4<em>sinA</em>sinB<em>sinC = 4R</em>(a/2R)<em>(b/2R)</em>(c/2R) = abc/(2R^2). Dividing: [(a^2+b^2+c^2)/(2R)]/[abc/(2R^2)] = R*(a^2+b^2+c^2)/(abc).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q4(e); book p187 = PDF p215 (vision read)</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.6 BOOK Exercise 6.1 Q3-Q4 (book pp186-187 = PDF pp213-215 of the 2075 reprint; page-region vision reads; every identity proved from the sine/cosine/projection laws).</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>trigonometry-textbook-ex-6-1-triangle-identities-ii</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>trigonometry</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><a href="ex-6-1-triangle-identities-i.html" title="Sukunda Basic Mathematics XI - Ch.6 Book Ex 6.1 Q1-Q2 (triangle identities I) - Complete Solutions">‹ Sukunda Basic Mathematics XI - Ch.6 Book Ex 6…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-7-1-solution-of-triangle.html" title="Sukunda Basic Mathematics XI - Ch.7 Book Ex 7.1 (Solution of Triangle) - Complete Solutions">Sukunda Basic Mathematics XI - Ch.7 Book Ex 7… ›</a></nav>
+</div></body></html>

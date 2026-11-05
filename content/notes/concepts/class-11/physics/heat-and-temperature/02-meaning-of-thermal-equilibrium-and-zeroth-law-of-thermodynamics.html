@@ -1,0 +1,202 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Thermal Equilibrium and Zeroth Law of Thermodynamics</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Heat And Temperature</div>
+    <h1 class="doc">Thermal Equilibrium and Zeroth Law of Thermodynamics</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Heat And Temperature</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>heat-and-temperature</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>meaning-of-thermal-equilibrium-and-zeroth-law-of-thermodynamics</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Animation3 D</h2><p>heat-and-temperature</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>thermal-equilibrium</p></section>
+<section class="field"><h2>Visual Type</h2><p>zeroth-law</p></section>
+<section class="field"><h2>Summary</h2><p>Thermal equilibrium occurs when two bodies in contact have no net heat flow — they share the same temperature. The Zeroth Law states that if A is in thermal equilibrium with B, and B with C, then A is in equilibrium with C. This transitive property justifies temperature as a measurable state variable and validates thermometer use.</p></section>
+<section class="field"><h2>Notes</h2><ul><li>Thermal Contact: Two systems are in thermal contact when heat can flow between them through a diathermal (heat-conducting) wall. An adiabatic wall prevents heat transfer.</li><li>Thermal Equilibrium Definition: Two systems in thermal contact are in thermal equilibrium when there is no net flow of heat between them. Their macroscopic properties (pressure, volume, temperature) remain constant over time. This implies they have the same temperature.</li><li>Zeroth Law Statement: If system A is in thermal equilibrium with system B, and system B is in thermal equilibrium with system C, then system A is in thermal equilibrium with system C. This is the transitive property of thermal equilibrium.</li><li>Significance of Zeroth Law: It establishes temperature as a fundamental, measurable property of matter. Without this law, we could not define a universal temperature scale or trust thermometer readings across different systems.</li><li>Temperature as State Variable: The Zeroth Law allows us to assign a numerical value (temperature) to every system in equilibrium. All systems in mutual equilibrium share the same temperature value.</li><li>Thermometer Principle: A thermometer is system B. When placed in contact with system A, it reaches equilibrium and displays a reading. If two systems give the same reading on the same thermometer, they are in equilibrium with each other — guaranteed by the Zeroth Law.</li><li>Historical Context: Though logically prior to the First and Second Laws, the Zeroth Law was formulated last (Fowler, 1931). It was named 'Zeroth' because it underpins all thermodynamics but was recognized after the other laws were established.</li><li>Equilibrium vs Steady State: Thermal equilibrium requires NO net heat flow AND uniform temperature throughout. A metal rod with ends at different temperatures may have steady-state heat flow but is NOT in thermal equilibrium.</li><li>Practical Applications: Calibration of thermometers, defining fixed points (ice point, steam point), ensuring consistent temperature measurements across laboratories worldwide.</li><li><h2>Meaning of thermal equilibrium and Zeroth law of thermodynamics</h2>
+<h3>1. Introduction</h3>
+<p>Physical picture of <strong>Meaning of thermal equilibrium and Zeroth law of thermodynamics</strong> — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Heat and Temperature fill pass.</p>
+<h3>2. Concepts and laws</h3>
+<h4>Meaning of thermal equilibrium and Zeroth law of thermodynamics</h4>
+<p>Each law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).</li><li><h3>3. Derivation block</h3>
+<p>Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs &quot;derive / establish / show that&quot; are answered here, not elsewhere.</p>
+<p><strong>Table 1 — Law and result sheet</strong></p>
+<table><thead><tr><th>Law or result</th><th>Statement (words)</th><th>Equation + symbols</th><th>SI units</th><th>When it holds</th></tr></thead><tbody></tbody></table></li><li><h3>4. Formula and units table</h3>
+<p><strong>Table 2 — Cases and comparisons</strong></p>
+<table><thead><tr><th>Case</th><th>Condition</th><th>Governing equation</th><th>Worked angle</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 3 — Summary and marks map</strong></p>
+<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table>
+<p>Every formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).</li><li><h3>5. Diagrams and figures</h3>
+<ul>
+<li><strong>D1</strong> — Meaning of thermal equilibrium and Zeroth law of thermodynamics — free-body and field picture (authored SVG — English labels, viewBox 900×640)</li>
+<li><strong>D2</strong> — Meaning of thermal equilibrium and Zeroth law of thermodynamics — graph or second construction (authored SVG — axes, units and labels)</li>
+<li><strong>D3</strong> — Meaning of thermal equilibrium and Zeroth law of thermodynamics — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
+<li><strong>D4</strong> — Meaning of thermal equilibrium and Zeroth law of thermodynamics — apparatus or application figure (curated external — license recorded at fill)</li>
+</ul>
+<p>Slots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.</li><li><h3>6. Worked numericals</h3>
+<p>≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.</p>
+<h3>7. Key terms, signs and traps</h3>
+<p>Sign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).</li><li><h3>8. Exam Zone and self-check</h3>
+<p>NEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</p>
+<p>Key-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Specific Conditions</h2><ul><li>Diathermal Wall Required: Systems must be able to exchange heat to reach equilibrium. Adiabatic isolation prevents equilibrium establishment.</li><li>Time to Reach Equilibrium: Equilibrium is not instantaneous. Poor conductors take longer. The Zeroth Law applies only AFTER equilibrium is achieved.</li><li>Macroscopic Scale: Temperature and equilibrium are statistical concepts valid for large ensembles of particles. They lose meaning for single molecules.</li><li>No Phase Change During Measurement: If phase change occurs during thermometer contact, latent heat absorption/release affects the reading until phase transition completes.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Condition for thermal equilibrium: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0502em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li><li>Zeroth Law (transitivity): <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0502em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0502em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0715em;">C</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">⇒</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.8333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.1389em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3283em;"><span style="top:-2.55em;margin-left:-0.1389em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.0715em;">C</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li><li>Empirical temperature scales: Linear interpolation between fixed points, e.g., <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.3335em;vertical-align:-0.4451em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8884em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.2963em;"><span style="top:-2.357em;margin-left:-0.0785em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="katex-sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">am</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span><span class="mbin mtight">−</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3281em;"><span style="top:-2.357em;margin-left:-0.0785em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="katex-sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">ce</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.4101em;"><span class="pstrut" style="height:3em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0785em;">X</span><span class="mbin mtight">−</span><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.0785em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3281em;"><span style="top:-2.357em;margin-left:-0.0785em;margin-right:0.0714em;"><span class="pstrut" style="height:2.5em;"></span><span class="katex-sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight">ce</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.4451em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.6944em;"></span><span class="mord">100°</span><span class="mord mathnormal" style="margin-right:0.0715em;">C</span></span></span></span></li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Thermal equilibrium = no net heat flow = same temperature.</li><li>Zeroth Law provides transitivity: A~B and B~C implies A~C.</li><li>Temperature is a measurable state variable defined by Zeroth Law.</li><li>Thermometers work because of the Zeroth Law.</li><li>Equilibrium requires both thermal contact and sufficient time.</li><li>Zeroth Law was named last but is logically first in thermodynamics.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Statement 1: Two systems in thermal equilibrium have identical temperatures.</li><li>Statement 2: The Zeroth Law establishes temperature as a valid physical quantity.</li><li>Statement 3: Thermal equilibrium is a transitive relation among systems.</li><li>Statement 4: Thermometer calibration relies fundamentally on the Zeroth Law.</li><li>Statement 5: No net heat flow characterizes thermal equilibrium, not equal internal energies.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Equal temperature does NOT imply equal internal energy — different substances at same T can have vastly different U.</li><li>The Zeroth Law is empirical — it cannot be derived from more fundamental principles within classical thermodynamics.</li><li>In statistical mechanics, temperature emerges from the derivative of entropy with respect to energy: 1/T = ∂S/∂U.</li><li>NEB exams frequently ask to state and explain the Zeroth Law with its significance for temperature measurement.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Zeroth Law → Transitivity → Temperature definition → Thermometer validity.</li><li>Same T = equilibrium; different T = heat flows hot→cold.</li><li>Thermometer is the middle system (B) linking unknown (A) to scale (C).</li><li>Equilibrium ≠ steady state: equilibrium has zero net heat flow everywhere.</li><li>Zeroth came last historically but is foundational logically.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Define thermal equilibrium precisely: no net heat flow between systems in thermal contact.</li><li>State Zeroth Law verbatim and explain its role in defining temperature.</li><li>Explain why thermometers give reliable readings using Zeroth Law reasoning.</li><li>Distinguish thermal equilibrium from mechanical equilibrium (no net force) and chemical equilibrium (no net reaction).</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Hot coffee (80°C) in room (25°C): Heat flows from coffee to air until both reach ~25°C. At that point, thermal equilibrium is reached.</li><li>Clinical thermometer under tongue: Body (37°C) heats mercury until equilibrium. Reading stabilizes when T_mercury = T_body.</li><li>Three blocks A, B, C: A touches B until equilibrium (T_A=T_B). B touches C until equilibrium (T_B=T_C). Then A and C brought together — no heat flows, confirming T_A=T_C.</li><li>Ice-water mixture at 0°C: Ice and water coexist in thermal equilibrium. Adding heat melts ice without raising temperature until all ice melts.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Q1. Define thermal equilibrium. What condition must be satisfied?</li><li>Q2. State the Zeroth Law of Thermodynamics and explain its significance.</li><li>Q3. How does the Zeroth Law justify the use of thermometers?</li><li>Q4. Distinguish between thermal equilibrium and steady-state heat flow.</li><li>Q5. Why was the Zeroth Law formulated after the First and Second Laws?</li><li>Q6. Can two bodies at the same temperature have different internal energies? Explain.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Describe experimental setup demonstrating Zeroth Law with three bodies.</li><li>Explain thermometer calibration procedure referencing Zeroth Law.</li><li>Identify whether given scenarios represent equilibrium or steady state.</li><li>Relate Zeroth Law to practical temperature measurement situations.</li><li>Compare definitions of thermal, mechanical, and chemical equilibrium.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The Zeroth Law was coined by Ralph H. Fowler in 1931, decades after the First and Second Laws.</li><li>Temperature is one of the seven base quantities in the SI system (kelvin).</li><li>Absolute zero (0 K) is the theoretical limit where all thermal motion ceases — unattainable per Third Law.</li><li>The International Temperature Scale (ITS-90) defines temperature based on reproducible fixed points traceable to the Zeroth Law.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Thinking equal temperature means equal heat content: Temperature measures average kinetic energy per degree of freedom, not total energy.</li><li>Confusing equilibrium with no heat transfer ever: Equilibrium means no NET flow; microscopic exchanges continue constantly.</li><li>Believing Zeroth Law is trivial: Without it, temperature would lack mathematical foundation and thermometers would be unjustified.</li><li>Assuming equilibrium happens instantly: Real systems require finite time depending on conductivity and heat capacity.</li><li>Mixing up Zeroth and First Law: Zeroth defines temperature; First conserves energy. They address different concepts.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Two bodies are in thermal equilibrium when:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>They have same internal energy</li><li>No net heat flows between them</li><li>They are at same pressure</li><li>They have same mass</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Thermal equilibrium is defined by absence of net heat flow, which implies equal temperature.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>The Zeroth Law of Thermodynamics leads to the definition of:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Internal energy</li><li>Entropy</li><li>Temperature</li><li>Heat capacity</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Zeroth Law's transitivity allows temperature to be defined as a measurable state variable.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>If body A is in thermal equilibrium with B, and B with C, then:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A and C may exchange heat</li><li>A and C are in thermal equilibrium</li><li>Only B has defined temperature</li><li>Heat flows from A to C</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>This is the direct statement of the Zeroth Law — transitivity of thermal equilibrium.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>A thermometer works based on:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>First Law</li><li>Second Law</li><li>Zeroth Law</li><li>Conservation of momentum</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Thermometer reaches equilibrium with system; Zeroth Law guarantees consistency across measurements.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Which is TRUE about thermal equilibrium?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Requires adiabatic walls</li><li>Occurs instantaneously</li><li>Implies equal temperatures</li><li>Means equal internal energies</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Thermal equilibrium ⇔ same temperature. It requires diathermal contact and finite time.</p></div></div></div></section>
+<section class="field"><h2>Source</h2><p>skeleton-v2</p></section>
+  <nav class="pager"><a href="01-thermal-energy-heat-temperature.html" title="Thermal Energy, Heat and Temperature">‹ Thermal Energy, Heat and Temperature</a><a class="mid" href="../../../../../_subjects/class-11-physics.html">Physics</a><a href="02-thermal-equilibrium-and-zeroth-law-of-thermodynamics.html" title="Thermal Equilibrium and Zeroth Law of Thermodynamics">Thermal Equilibrium and Zeroth Law of Thermod… ›</a></nav>
+</div></body></html>

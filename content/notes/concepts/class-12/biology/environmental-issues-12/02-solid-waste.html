@@ -1,0 +1,177 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Solid Waste Management</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 12  /  Biology  /  Environmental Issues 12</div>
+    <h1 class="doc">Solid Waste Management</h1>
+    <div class="meta"><span>Class 12</span><span>Biology</span><span>Environmental Issues 12</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>environmental-issues-12</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>solid-waste</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>This note is about what to do with solid waste after it exists. The health risk and the treatment method depend on whether the waste can rot, whether it can be recycled, or whether it is infectious or full of metals. A single pit for everything fails all three.</li><li>Biodegradable waste is food, garden cuttings and paper that microbes can break down. If it is kept clean of plastic and glass it becomes compost, or it can go into a biogas digester where air-free decay produces methane that is burned as fuel and a slurry that can fertilise a field. That is recovery, not dumping.</li><li>Non-biodegradable waste does not join the compost. Glass, metal and many plastics are recycled only when they are dry and sorted. A plastic bottle in a compost heap does not become soil. It has to be collected as plastic. Contaminated recyclables, soaked in food, are often rejected and end up buried anyway, which is why the wet bin and the dry bin are separated at home.</li><li>Disposal of what cannot be recycled uses a sanitary landfill or a controlled incinerator. The landfill is lined, the leachate is taken out, the waste is covered, and the gas is managed. Incineration shrinks the volume and can heat water for electricity, but only if the temperature is high and the smoke is cleaned. Incomplete burning makes poisonous organic products and leaves a toxic ash that still needs a landfill.</li><li>Two streams injure people if they are treated as ordinary rubbish. Biomedical waste carries pathogens. It is autoclaved or burned in a dedicated incinerator, and sharps are contained so nobody is stuck by a needle. Electronic waste carries lead, mercury and cadmium. Informal open burning, which has been common where repair shops dump boards, puts those metals into the air and the ash. Recovery has to be a controlled process.</li><li>The public-health chain from a bad dump is short. Flies and rats move between waste and kitchens. Leachate reaches wells. Methane collects in pockets and can burn. Plastic blocks drains, so the next rain floods the lane with the same dirty water. Integrated management is just the decision to use compost, recycling, a proper landfill and special streams together, instead of one smoking pile.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Biogas is not compost. Biogas is methane from air-free decay. Compost is aerobic rotting that makes a soil conditioner.</li><li>Incineration does not make waste vanish. It makes ash, and bad incineration makes toxic smoke.</li><li>Paper can be recycled or composted. Soft plastic film is a different material and often is not composted.</li><li>Autoclaving hospital waste sterilises it. It does not recycle it into compost for vegetable beds.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Biodegradable → compost or biogas.</li><li>Dry recyclables → recycling, only if they were kept clean.</li><li>Sanitary landfill: liner, leachate collection, cover, gas control.</li><li>Incineration needs high temperature and smoke cleaning, and it still leaves ash.</li><li>Biomedical waste is sterilised or incinerated. E-waste metals are recovered, not openly burned.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>The treatment is chosen from the kind of waste, not from whichever truck arrived.</li><li>Methane is a useful fuel inside a digester and a hazard inside a dump.</li><li>Ash from an incinerator is still waste.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>A household wet bin of vegetable peels feeds a community compost pit.</li><li>A capped sanitary landfill pipes its gas away instead of letting it seep into nearby basements.</li><li>A broken phone sent to an open fire releases lead and plastic fumes. The same phone in a recovery line yields metals and a smaller residue.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Anaerobic digestion of organic waste produces methane.</li><li>Autoclave conditions used to sterilise infectious waste are moist heat under pressure, classically 121 °C.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Organic waste + air → compost. Organic waste without air → biogas (methane) + slurry.</li><li>Integrated route: segregate → compost or biogas, recycle, sanitary landfill or controlled incineration, separate biomedical and e-waste.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Decide the route for peels, a glass bottle, a used syringe and an old battery.</li><li>Contrast compost with biogas in one sentence each.</li><li>List what a sanitary landfill must have.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Why does an incinerator still need a landfill?</li><li>Why is open burning of circuit boards a health problem?</li><li>What goes wrong when food waste is mixed with paper meant for recycling?</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>If the question says 'methods', give compost, biogas, recycling, sanitary landfill and incineration, each with one limit.</li><li>Mention sharps and e-waste metals. They are the cases that show why segregation matters.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Air present → compost. Air absent → methane.</li><li>Incinerator ash still has to go somewhere.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>121 °C is the autoclave figure for sterilising infectious material. Do not quote it as a compost temperature.</li><li>This note is the methods. Categories and the case against open dumps sit beside it, but the answer here should name the process.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Slurry from a biogas plant is not raw sewage. It is the digested residue, and it still should be used with care.</li><li>A recycling mill rejects material that is mixed with rotting food. Sorting is part of recycling, not a courtesy.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Biogas from organic waste is mainly</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Sulphur dioxide</li><li>Methane produced without air</li><li>Stratospheric ozone</li><li>Leachate</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Composting differs from biogas production because composting</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Needs oxygen and makes a soil conditioner</li><li>Is done only to electronic boards</li><li>Produces a chlorine catalyst</li><li>Requires a catalytic converter</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>A controlled incinerator still leaves</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>No residue of any kind</li><li>Ash that must be disposed of</li><li>Only pure drinking water</li><li>Dobson units</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Used syringes should be</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Composted with vegetable peels</li><li>Sterilised or incinerated as biomedical waste</li><li>Burned on a household stove with batteries</li><li>Washed into a recharge pit</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Compost versus biogas</li><li>Recycling limits</li><li>Sanitary landfill equipment</li><li>Incineration and ash</li><li>Biomedical and e-waste routes</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Sort four household items onto the correct route.</li><li>Explain why methane is useful in a digester and dangerous in a dump.</li></ul></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Choose a route for kitchen peels, a clean glass bottle, a used needle and a discarded battery. Justify each in one step.</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Kitchen peels are biodegradable, so they go to compost or a biogas digester.</li><li>A clean glass bottle is a dry recyclable, so it goes to glass recycling, not to compost.</li><li>A used needle is biomedical sharps. It is contained and then autoclaved or incinerated.</li><li>A battery carries metals and does not go in the wet bin or an open fire. It goes to hazardous or electronic recovery.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>Peels to compost or biogas, glass to recycling, the needle to biomedical treatment, the battery to metal recovery.</p></div></div></div></section>
+<section class="field"><h2>Summary</h2><p>Solid waste is treated according to what it is. Clean organic waste becomes compost or biogas. Clean dry materials are recycled. The rest goes to a lined landfill or a high-temperature incinerator that still leaves ash. Hospital waste is sterilised or burned in a dedicated unit, and electronic waste is recovered so that lead, mercury and cadmium are not blown out of an open fire.</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Biogas from organic waste is mainly</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Sulphur dioxide</li><li>Methane produced without air</li><li>Stratospheric ozone</li><li>Leachate</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Composting differs from biogas production because composting</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Needs oxygen and makes a soil conditioner</li><li>Is done only to electronic boards</li><li>Produces a chlorine catalyst</li><li>Requires a catalytic converter</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>A controlled incinerator still leaves</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>No residue of any kind</li><li>Ash that must be disposed of</li><li>Only pure drinking water</li><li>Dobson units</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Used syringes should be</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Composted with vegetable peels</li><li>Sterilised or incinerated as biomedical waste</li><li>Burned on a household stove with batteries</li><li>Washed into a recharge pit</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+  <nav class="pager"><a href="01-air-water-pollution-12.html" title="Air and Water Pollution">‹ Air and Water Pollution</a><a class="mid" href="../../../../../_subjects/class-12-biology.html">Biology</a><a href="03-climate-change-12.html" title="Climate Change and Greenhouse Effect">Climate Change and Greenhouse Effect ›</a></nav>
+</div></body></html>

@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.16 Book Ex 16.1 (Limits by Substitution, Factorisation and Rationalisation) - Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Calculus</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.16 Book Ex 16.1 (Limits by Substitution, Factorisation and Rationalisation) - Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Calculus</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q1(a). Find the limit: lim (x→2) (2x² + 3x − 14).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>A polynomial is continuous everywhere, so the limit is just the value: substitute x = a.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>2x² + 3x − 14 is a polynomial, hence continuous at x = 2. Substitute: 2(2)² + 3(2) − 14 = 8 + 6 − 14 = 0. Boxed 0 (matches the printed key, book p466).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q1(a); book p465 = PDF p492 (vision read); key book p466 = PDF p493</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q1(b). Find the limit: lim (x→5) (x² + 2x − 9).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same substitution rule for any polynomial.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Polynomial → direct substitution: (5)² + 2(5) − 9 = 25 + 10 − 9 = 26. Boxed 26 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q1(b); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q1(c). Find the limit: lim (x→1) (3x² + 2x − 4)/(x² + 5x − 4).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Quotient of polynomials: substitute, provided the denominator is non-zero.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Denominator at x = 1: 1 + 5 − 4 = 2 ≠ 0, so substitute directly: numerator 3 + 2 − 4 = 1, denominator 2. Value = 1/2. Boxed 1/2 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q1(c); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q1(d). Find the limit: lim (x→3) (6x² + 3x − 12)/(2x² + x + 1).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Check the denominator first: if it is non-zero at the point, just substitute.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>At x = 3: numerator 6(9) + 9 − 12 = 54 + 9 − 12 = 51; denominator 2(9) + 3 + 1 = 22 ≠ 0. Value = 51/22. Boxed 51/22 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q1(d); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q2(a). Compute: lim (x→0) (4x³ − x² + 2x)/(3x² + 4x).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>0/0 form: cancel the common factor x (x ≠ 0 on the approach).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>At x = 0 both numerator and denominator vanish (0/0 form). Factor: numerator = x(4x² − x + 2), denominator = x(3x + 4). For x ≠ 0 cancel x: (4x² − x + 2)/(3x + 4). Now substitute x = 0: 2/4 = 1/2. Boxed 1/2 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(a); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q2(b). Compute: lim (x→4) (x³ − 64)/(x² − 16).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>x³ − a³ = (x − a)(x² + ax + a²) and x² − a² = (x − a)(x + a): cancel (x − 4).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>0/0 at x = 4. Factor: x³ − 64 = (x − 4)(x² + 4x + 16); x² − 16 = (x − 4)(x + 4). For x ≠ 4 cancel (x − 4): (x² + 4x + 16)/(x + 4). Substitute x = 4: (16 + 16 + 16)/8 = 48/8 = 6. Boxed 6 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(b); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q2(c). Compute: lim (x→a) (x^(2/3) − a^(2/3))/(x − a).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Treat x^(2/3) as (x^(1/3))², difference of squares, then x − a = (x^(1/3))³ − (a^(1/3))³.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Put u = x^(1/3), c = a^(1/3) (so u³ = x, c³ = a). The quotient becomes (u² − c²)/(u³ − c³) = (u − c)(u + c)/[(u − c)(u² + uc + c²)] = (u + c)/(u² + uc + c²) for u ≠ c. As x → a, u → c: (c + c)/(3c²) = 2c/(3c²) = 2/(3c) = (2/3)a^(−1/3). Boxed (2/3)a^(−1/3) (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(c); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q2(d). Compute: lim (x→1) (x² + 3x − 4)/(x − 1).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>x² + 3x − 4 = (x + 4)(x − 1): cancel the vanishing factor.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Numerator at x = 1 is 0, denominator 0. Factor: x² + 3x − 4 = (x + 4)(x − 1). Cancel (x − 1) for x ≠ 1: limit = lim (x + 4) = 5. Boxed 5 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(d); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q2(e). Compute: lim (x→2) (x² − 5x + 6)/(x² − x − 2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Factorise top and bottom; the (x − 2) factor cancels.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>0/0 at x = 2. x² − 5x + 6 = (x − 2)(x − 3); x² − x − 2 = (x − 2)(x + 1). Cancel (x − 2): (x − 3)/(x + 1) → (2 − 3)/(2 + 1) = −1/3. Boxed −1/3 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(e); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>Q2(f). Compute: lim (x→2) (x² − 4x + 4)/(x² − 7x + 10).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>If the numerator vanishes to a higher order, the limit is 0 — but only after cancelling the common factor.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>x² − 4x + 4 = (x − 2)²; x² − 7x + 10 = (x − 2)(x − 5). Cancel one (x − 2): (x − 2)/(x − 5) → 0/(2 − 5) = 0. Boxed 0 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(f); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">11.</span><div class="stem"><p>Q2(g). Compute: lim (x→a) (√(3x) − √(2x + a))/(2(x − a)).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>√A − √B forms: multiply by the conjugate (√A + √B); the difference of squares frees the (x − a) factor.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>At x = a: √(3a) − √(3a) = 0 (0/0 form). Rationalise the numerator: √(3x) − √(2x + a) = [3x − (2x + a)]/[√(3x) + √(2x + a)] = (x − a)/[√(3x) + √(2x + a)]. Therefore the quotient = 1/{2[√(3x) + √(2x + a)]} (for x ≠ a). As x → a: 1/[2(√(3a) + √(3a))] = 1/(4√(3a)). Boxed 1/(4√(3a)) (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(g); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">12.</span><div class="stem"><p>Q2(h). Compute: lim (x→a) (√(2x) − √(3x − a))/(√x − √a). [T.U. 2053 H]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Rationalise BOTH square-root differences; the (x − a) factors cancel and a minus sign survives.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Numerator: √(2x) − √(3x − a) = [2x − (3x − a)]/[√(2x) + √(3x − a)] = (a − x)/[√(2x) + √(3x − a)]. Denominator: √x − √a = (x − a)/[√x + √a]. Ratio = (a − x)(√x + √a)/[(x − a)(√(2x) + √(3x − a))] = −(√x + √a)/[√(2x) + √(3x − a)] (x ≠ a). As x → a: −(2√a)/(2√(2a)) = −√a/(√2·√a) = −1/√2. Boxed −1/√2 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(h); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">13.</span><div class="stem"><p>Q2(i). Compute: lim (x→1) (√(2x) − √(3 − x²))/(x − 1).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>After rationalising, x² + 2x − 3 = (x − 1)(x + 3) supplies the cancelling factor.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>At x = 1: √2 − √2 = 0, and the denominator is 0 (0/0 form). Rationalise: √(2x) − √(3 − x²) = [2x − (3 − x²)]/[√(2x) + √(3 − x²)] = (x² + 2x − 3)/[√(2x) + √(3 − x²)] = (x − 1)(x + 3)/[√(2x) + √(3 − x²)]. Cancel (x − 1): limit = (1 + 3)/(√2 + √2) = 4/(2√2) = √2. Boxed √2 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(i); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">14.</span><div class="stem"><p>Q2(j). Compute: lim (x→2) (√x − √(6 − x²))/(x − 2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>x − (6 − x²) = (x − 2)(x + 3): the conjugate frees a factor (x − 2).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>0/0 at x = 2. Rationalise: √x − √(6 − x²) = [x − (6 − x²)]/[√x + √(6 − x²)] = (x² + x − 6)/[√x + √(6 − x²)] = (x − 2)(x + 3)/[√x + √(6 − x²)]. Cancel (x − 2): limit = (2 + 3)/(√2 + √2) = 5/(2√2). Boxed 5/(2√2) (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(j); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">15.</span><div class="stem"><p>Q2(k). Compute: lim (x→64) (⁶√x − 2)/(³√x − 4).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Two different roots of the same x: substitute u = x^(1/6) to turn both into powers of one variable.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Put u = x^(1/6), so x = u⁶, ⁶√x = u and ³√x = x^(1/3) = u². As x → 64, u → 2. Quotient = (u − 2)/(u² − 4) = (u − 2)/[(u − 2)(u + 2)] = 1/(u + 2) (u ≠ 2) → 1/4. Boxed 1/4 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(k); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">16.</span><div class="stem"><p>Q2(l). Compute: lim (x→a) (√(3a − x) − √(x + a))/(4(x − a)).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>The conjugate gives (3a − x) − (x + a) = −2(x − a), which cancels the (x − a) in the denominator.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>At x = a the numerator is √(2a) − √(2a) = 0. Rationalise: [ (3a − x) − (x + a) ]/[√(3a − x) + √(x + a)] = (2a − 2x)/[√(3a − x) + √(x + a)] = −2(x − a)/[√(3a − x) + √(x + a)]. Divide by 4(x − a): −1/{2[√(3a − x) + √(x + a)]} → −1/[2(√(2a) + √(2a))] = −1/(4√(2a)). Boxed −1/(4√(2a)) (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q2(l); book p465 = PDF p492; key book p466</p></div></div></div><div class="q"><span class="n">17.</span><div class="stem"><p>Q3(a). Calculate: lim (x→∞) 2x²/(3x² + 2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Limit at infinity of a rational function: divide by the highest power of x; only the leading coefficients survive.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Divide numerator and denominator by x²: 2/(3 + 2/x²). As x → ∞, 2/x² → 0, so the limit is 2/3. Boxed 2/3 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q3(a); book p466 = PDF p493; key book p466</p></div></div></div><div class="q"><span class="n">18.</span><div class="stem"><p>Q3(b). Calculate: lim (x→∞) (3x² − 4)/(4x²).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Equal degrees → ratio of leading coefficients.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Divide by x²: (3 − 4/x²)/4 → 3/4 as x → ∞. Boxed 3/4 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q3(b); book p466 = PDF p493; key book p466</p></div></div></div><div class="q"><span class="n">19.</span><div class="stem"><p>Q3(c). Calculate: lim (x→∞) (4x² + 3x + 2)/(5x² + 4x − 3).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Lower-order terms are negligible at infinity; compare 4x² with 5x².</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Divide by x²: (4 + 3/x + 2/x²)/(5 + 4/x − 3/x²). Every term with 1/x or 1/x² → 0, leaving 4/5. Boxed 4/5 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q3(c); book p466 = PDF p493; key book p466</p></div></div></div><div class="q"><span class="n">20.</span><div class="stem"><p>Q3(d). Calculate: lim (x→∞) (5x² + 2x − 7)/(3x² + 5x + 2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same degree on both sides: the ratio of leading coefficients is the limit.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>2</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Divide by x²: (5 + 2/x − 7/x²)/(3 + 5/x + 2/x²) → 5/3. Boxed 5/3 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q3(d); book p466 = PDF p493; key book p466</p></div></div></div><div class="q"><span class="n">21.</span><div class="stem"><p>Q4(a). Calculate: lim (x→∞) (√x − √(x − 3)).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>∞ − ∞ form: rationalise. A fixed difference inside the roots gives 0 because the conjugate grows like 2√x.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Multiply by the conjugate: (x − (x − 3))/(√x + √(x − 3)) = 3/[√x + √(x − 3)]. As x → ∞ the denominator → ∞, so the quotient → 0. Boxed 0 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q4(a); book p466 = PDF p493; key book p466</p></div></div></div><div class="q"><span class="n">22.</span><div class="stem"><p>Q4(b). Calculate: lim (x→∞) (√(x − a) − √(x − b)). [T.U. 2048 H]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same argument for constants a, b: the numerator becomes the constant (b − a).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Conjugate: [(x − a) − (x − b)]/[√(x − a) + √(x − b)] = (b − a)/[√(x − a) + √(x − b)] → (b − a)/∞ = 0. Boxed 0 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q4(b); book p466 = PDF p493; key book p466</p></div></div></div><div class="q"><span class="n">23.</span><div class="stem"><p>Q4(c). Calculate: lim (x→∞) (√(3x) − √(x − 5)).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Here the two square-root terms have different growth (√(3x) vs √x), so the difference diverges.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Conjugate: [(3x) − (x − 5)]/[√(3x) + √(x − 5)] = (2x + 5)/[√(3x) + √(x − 5)]. Divide top and bottom by √x: (2√x + 5/√x)/(√3 + √(1 − 5/x)) → (2√x)/√3 → ∞. Equivalently √(3x) − √x = (√3 − 1)√x → ∞. Boxed ∞ (matches the key; the printed note adds that an infinite limit means the limit does not exist).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q4(c); book p466 = PDF p493; key book p466</p></div></div></div><div class="q"><span class="n">24.</span><div class="stem"><p>Q4(d). Calculate: lim (x→∞) √x(√x − √(x − a)). [T.U. 2052]</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>√x·(√x − √(x − a)) = a√x/(√x + √(x − a)): divide by √x to see the a/2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Inside: √x − √(x − a) = [x − (x − a)]/[√x + √(x − a)] = a/[√x + √(x − a)]. Multiply by √x: a√x/[√x + √(x − a)]. Divide numerator and denominator by √x: a/[1 + √(1 − a/x)] → a/(1 + 1) = a/2. Boxed a/2 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q4(d); book p466 = PDF p493; key book p466</p></div></div></div><div class="q"><span class="n">25.</span><div class="stem"><p>Q4(e). Calculate: lim (x→∞) (√(x − a) − √(bx)).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>With a coefficient b on the second root the growth rates differ: equality b = 1 is the only case that cancels.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Conjugate: [(x − a) − bx]/[√(x − a) + √(bx)] = [(1 − b)x − a]/[√(x − a) + √(bx)]. For b = 1 the numerator is the constant −a, so the quotient → 0. For b ≠ 1 divide by √x: [(1 − b)√x − a/√x]/[√(1 − a/x) + √b] → (1 − b)√x/(1 + √b). This is +∞ when 0 &lt; b &lt; 1, and −∞ when b &gt; 1 (the printed key states ∞ for b ≠ 1 and reminds that an infinite limit means the limit does not exist). Boxed 0 if b = 1; ∞ (i.e. no finite limit) if b ≠ 1 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q4(e); book p466 = PDF p493; key book p466</p></div></div></div><div class="q"><span class="n">26.</span><div class="stem"><p>Q5(a). Evaluate: lim (x→2) (x − √(8 − x²))/(√(x² + 12) − 4).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Double rationalisation: each 0/0 difference of squares yields the same (x² − 4), which cancels.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>At x = 2: (2 − 2)/(4 − 4) — 0/0 form. Numerator: x − √(8 − x²) = [x² − (8 − x²)]/[x + √(8 − x²)] = (2x² − 8)/[x + √(8 − x²)] = 2(x² − 4)/[x + √(8 − x²)]. Denominator: √(x² + 12) − 4 = [x² + 12 − 16]/[√(x² + 12) + 4] = (x² − 4)/[√(x² + 12) + 4]. Ratio = 2(x² − 4)/[x + √(8 − x²)] · [√(x² + 12) + 4]/(x² − 4) = 2[√(x² + 12) + 4]/[x + √(8 − x²)]. At x = 2: 2(4 + 4)/(2 + 2) = 16/4 = 4. Boxed 4 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q5(a); book p466 = PDF p493; key book p466</p></div></div></div><div class="q"><span class="n">27.</span><div class="stem"><p>Q5(b). Evaluate: lim (x→1) (x − √(2 − x²))/(2x − √(2 + 2x²)).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Both conjugates reduce to 2(x² − 1), so the factors cancel and the limit is the ratio of the remaining sums.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>At x = 1: (1 − 1)/(2 − 2) — 0/0 form. Numerator: x − √(2 − x²) = [x² − (2 − x²)]/[x + √(2 − x²)] = (2x² − 2)/[x + √(2 − x²)] = 2(x² − 1)/[x + √(2 − x²)]. Denominator: 2x − √(2 + 2x²) = [4x² − (2 + 2x²)]/[2x + √(2 + 2x²)] = (2x² − 2)/[2x + √(2 + 2x²)] = 2(x² − 1)/[2x + √(2 + 2x²)]. Ratio = [2(x² − 1)/(x + √(2 − x²))] · [(2x + √(2 + 2x²))/(2(x² − 1))] = (2x + √(2 + 2x²))/(x + √(2 − x²)). At x = 1: (2 + 2)/(1 + 1) = 4/2 = 2. Boxed 2 (matches the key).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.16 Ex 16.1 Q5(b); book p466 = PDF p493; key book p466</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.16 BOOK Exercise 16.1 (book pp465-466 = PDF pp492-493 of the 2075 reprint; full-page vision reads at 165-180 dpi, page split into overlapping strips; every numeric answer checked against the printed Answers block on book p466).</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>calculus-textbook-ex-16-1-limits-evaluation</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>calculus</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-16-2-trig-exp-log-limits.html" title="Sukunda Basic Mathematics XI - Ch.16 Book Ex 16.2 (Trigonometric, Exponential and Logarithmic Limits) - Complete Solutions">Sukunda Basic Mathematics XI - Ch.16 Book Ex … ›</a></nav>
+</div></body></html>

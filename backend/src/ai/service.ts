@@ -17,6 +17,13 @@ import {
   getCloudflareAiKey,
   getCloudflareAccountId,
 } from "./config";
+import {
+  FREE_LLM_PROVIDERS,
+  chatCompletionsUrl,
+  configuredFreeLlmProviders,
+  type FreeLlmProviderName,
+  type FreeLlmProviderSpec,
+} from "./free-llm-providers";
 
 const SITE = (process.env.FRONTEND_URL || PUBLIC_SITE_URL).replace(/\/$/, "");
 
@@ -50,7 +57,9 @@ export type SupportedProvider =
   | "groq"
   | "cloudflare"
   | "cerebras"
-  | "gemini";
+  | "gemini"
+  // Free-tier fallbacks from the awesome-free-llm-apis directory.
+  | FreeLlmProviderName;
  
 export interface AIChatMessage {
   role: "user" | "assistant" | "system";
@@ -792,6 +801,130 @@ class GroqProvider implements AIProvider {
 }
 
 /**
+ * Output ceiling for the free-tier fallbacks. Their free plans cap completion
+ * tokens far below the paid links (8K on most), and an over-limit request is
+ * rejected with a 400 instead of being clamped — so this stays a separate,
+ * env-overridable ceiling.
+ */
+function freeLlmMaxOutputTokens(): number {
+  return Number(process.env.FREE_LLM_MAX_OUTPUT_TOKENS) || Math.min(MAX_OUTPUT_TOKENS, 8192);
+}
+
+/**
+ * One transport for every OpenAI-compatible free-tier provider listed in
+ * `free-llm-providers.ts` (source: awesome-free-llm-apis). Swapping providers
+ * is a registry edit, not a new class: base URL, key and model id are the only
+ * things that differ between them.
+ *
+ * A keyless provider (LLM7.io, OVHcloud anonymous) sends no Authorization
+ * header at all; a keyed one that somehow arrives without a key is never
+ * registered in the first place, so this class does not special-case missing
+ * keys beyond that.
+ */
+class OpenAICompatProvider implements AIProvider {
+  readonly name: FreeLlmProviderName;
+  private apiUrl: string;
+  private model: string;
+  private apiKey: string;
+  private timeoutMs: number;
+  private label: string;
+  private lastFinishReason = "";
+
+  getLastFinishReason(): string {
+    return this.lastFinishReason;
+  }
+
+  constructor(spec: FreeLlmProviderSpec, apiKey: string) {
+    this.name = spec.name;
+    this.label = spec.label;
+    this.apiKey = apiKey;
+    this.apiUrl = chatCompletionsUrl(spec);
+    this.model = (process.env[spec.modelEnv] || spec.defaultModel).trim();
+    this.timeoutMs =
+      Number(process.env.FREE_LLM_TIMEOUT_MS || process.env[spec.timeoutEnv]) || 120000;
+  }
+
+  private headers(): Record<string, string> {
+    const headers: Record<string, string> = { "Content-Type": "application/json" };
+    // Keyless providers reject an empty bearer token — omit the header.
+    if (this.apiKey) headers.Authorization = `Bearer ${this.apiKey}`;
+    return headers;
+  }
+
+  private prepareMessages(messages: AIChatMessage[]): AIChatMessage[] {
+    const systemPrompts = messages
+      .filter((m) => m.role === "system")
+      .map((m) => m.content.trim())
+      .filter(Boolean);
+    const combinedSystem = systemPrompts.join("\n\n");
+    const rest = messages.filter((m) => m.role !== "system");
+    return combinedSystem ? [{ role: "system", content: combinedSystem }, ...rest] : rest;
+  }
+
+  private requestPayload(messages: AIChatMessage[], stream: boolean): string {
+    return JSON.stringify({
+      model: this.model,
+      messages: messages.map((m) => ({
+        role: m.role,
+        content: toOpenAIContent(m.content, m.images),
+      })),
+      max_tokens: freeLlmMaxOutputTokens(),
+      temperature: REPLY_TEMPERATURE,
+      stream,
+    });
+  }
+
+  async chat(messages: AIChatMessage[]): Promise<string> {
+    const res = await fetch(this.apiUrl, {
+      method: "POST",
+      headers: this.headers(),
+      body: this.requestPayload(this.prepareMessages(messages), false),
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`${this.label} error: ${res.status} ${text.slice(0, 200)}`);
+    }
+
+    const data = await res.json();
+    this.lastFinishReason = String(data?.choices?.[0]?.finish_reason ?? "");
+    const text = data?.choices?.[0]?.message?.content;
+    if (!text || !String(text).trim()) throw new Error(`Empty ${this.label} response`);
+    return String(text);
+  }
+
+  async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
+    this.lastFinishReason = "";
+    const res = await fetch(this.apiUrl, {
+      method: "POST",
+      headers: this.headers(),
+      body: this.requestPayload(this.prepareMessages(messages), true),
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`${this.label} stream error: ${res.status} ${text.slice(0, 200)}`);
+    }
+
+    for await (const event of sseEvents(res)) {
+      const finish = event?.choices?.[0]?.finish_reason;
+      if (finish) this.lastFinishReason = String(finish);
+      const chunk = event?.choices?.[0]?.delta?.content;
+      if (typeof chunk === "string" && chunk) yield chunk;
+    }
+  }
+
+  async search(query: string): Promise<AISearchResponse> {
+    // None of these providers has a web-search product of its own — delegate
+    // to the internal engine, mirroring the Groq/Cloudflare contract.
+    const internal = new InternalProvider();
+    return internal.search(query);
+  }
+}
+
+/**
  * Reject when `promise` does not settle within `ms` — one link of the
  * sequential provider chain must not eat the whole chain budget.
  */
@@ -1270,6 +1403,17 @@ export class AIService {
     } else if (ordered.length === 0 && this.providers.has("agnes")) {
       ordered.push("agnes");
     }
+    // Free-tier fallbacks (awesome-free-llm-apis) never jump the owner's order:
+    // they sit after every explicitly ordered link and BEFORE the internal
+    // keyword engine, which stays the last resort.
+    const freeLinks = FREE_LLM_PROVIDERS.map((spec) => spec.name).filter(
+      (name) => this.providers.has(name) && !ordered.includes(name),
+    );
+    if (freeLinks.length > 0) {
+      const internalAt = ordered.indexOf("internal");
+      if (internalAt >= 0) ordered.splice(internalAt, 0, ...freeLinks);
+      else ordered.push(...freeLinks);
+    }
     return ordered.map((n) => this.providers.get(n)!);
   }
 
@@ -1295,6 +1439,13 @@ export class AIService {
     const cfKey = getCloudflareAiKey();
     if (cfKey && this.hasCfAccount())
       this.providers.set("cloudflare", new CloudflareProvider(cfKey));
+
+    // Free-tier fallbacks — one OpenAI-compatible transport, one registry
+    // entry per provider. LLM7.io and OVHcloud register even with no LLM key
+    // at all (free anonymous tiers); FREE_LLM_DISABLED=1 keeps the pool out.
+    for (const { spec, apiKey } of configuredFreeLlmProviders()) {
+      this.providers.set(spec.name, new OpenAICompatProvider(spec, apiKey));
+    }
 
     if (defaultProvider && this.providers.has(defaultProvider)) {
       this.defaultProvider = defaultProvider;

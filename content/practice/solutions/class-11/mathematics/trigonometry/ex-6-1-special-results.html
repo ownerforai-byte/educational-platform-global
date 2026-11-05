@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.6 Book Ex 6.1 special results (Q6-Q12, Q14-Q15) - Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Trigonometry</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.6 Book Ex 6.1 special results (Q6-Q12, Q14-Q15) - Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Trigonometry</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Q6. If a^4 + b^4 + c^4 = 2c^2*(a^2+b^2), prove that C = 45 deg or 135 deg. (T.U. 2051) (HSEB 2056)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Move everything left: (a^2+b^2-c^2)^2 = 2a^2b^2, then cosC = +-1/sqrt(2).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>a^4 + b^4 + c^4 - 2a^2<em>c^2 - 2b^2</em>c^2 = 0. Add 2a^2<em>b^2 to both sides: (a^4 + b^4 + c^4 + 2a^2</em>b^2 - 2a^2<em>c^2 - 2b^2</em>c^2) = 2a^2<em>b^2, i.e. (a^2+b^2-c^2)^2 = 2a^2</em>b^2. So a^2+b^2-c^2 = +-sqrt(2)*ab, and cosC = (a^2+b^2-c^2)/(2ab) = +-sqrt(2)/2. With 0 &lt; C &lt; pi, C = 45 deg or 135 deg.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q6 (T.U. 2051) (HSEB 2056); book pp187-188 = PDF p215 (vision read)</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Q7. If (a+b+c)*(b+c-a) = 3bc, show that A = 60 deg.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>(b+c)^2 - a^2 = 3bc factors to b^2+c^2-a^2 = bc: read off cosA = 1/2.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>(a+b+c)*(b+c-a) = (b+c)^2 - a^2 = b^2 + c^2 + 2bc - a^2. Setting this equal to 3bc gives b^2 + c^2 - a^2 = bc, so cosA = (b^2+c^2-a^2)/(2bc) = 1/2. With 0 &lt; A &lt; pi, A = 60 deg.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q7; book p188 = PDF p215 (vision read)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Q8. If 1/(a+c) + 1/(b+c) = 3/(a+b+c), show that C = 60 deg. (T.U. 2054, HSEB 2053)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Clear denominators: (a+c)+(b+c) over product form collapses to (a+b)^2 = c^2 + 3ab.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Combining: [(b+c) + (a+c)]/[(a+c)(b+c)] = 3/(a+b+c), i.e. (a+b+2c)(a+b+c) = 3[(a+c)(b+c)]. Put s1 = a+b: (s1+2c)(s1+c) = 3[c^2 + c<em>s1 + ab], i.e. s1^2 + 3c</em>s1 + 2c^2 = 3c^2 + 3c*s1 + 3ab, so s1^2 = c^2 + 3ab. Hence (a+b)^2 = c^2 + 3ab, i.e. a^2 + b^2 - c^2 = ab, so cosC = 1/2 and C = 60 deg.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q8 (T.U. 2054, HSEB 2053); book p188 = PDF p215 (vision read)</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Q9. If the cosines of two of the angles of a triangle are proportional to the opposite sides, prove that the triangle is isosceles.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>cosA/a = cosB/b becomes sinB<em>cosA = sinA</em>cosB, i.e. sin(B-A) = 0.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Suppose cosA/a = cosB/b (the same argument works for any pair). Then b<em>cosA = a</em>cosB, i.e. 2R<em>sinB</em>cosA = 2R<em>sinA</em>cosB, so sinB<em>cosA - sinA</em>cosB = sin(B-A) = 0. With angles in (0, pi), B - A = 0, so A = B and the triangle is isosceles.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q9; book p188 = PDF p215 (vision read)</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Q10. If (cosA + 2cosC):(cosA + 2cosB) = sinB:sinC, prove that the triangle is either isosceles or right-angled.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Either cosA = 0 (right-angled) or the sine factors force B = C: factor, never divide blindly.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Cross-multiplying: (cosA + 2cosC)<em>sinC = (cosA + 2cosB)</em>sinB, i.e. cosA<em>(sinC - sinB) = 2</em>(sinB<em>cosB - sinC</em>cosC) = sin2B - sin2C. Now sin2B - sin2C = 2<em>cos(B+C)</em>sin(B-C) = -2<em>cosA</em>sin(B-C), and sinC - sinB = 2<em>cos((B+C)/2)</em>sin((C-B)/2) = 2<em>sin(A/2)</em>sin((C-B)/2). So 2<em>cosA</em>sin(A/2)<em>sin((C-B)/2) = -2</em>cosA<em>sin(B-C) = 4</em>cosA<em>sin((C-B)/2)</em>cos((C-B)/2). If cosA = 0 then A = 90 deg (right-angled). Otherwise divide by 2<em>cosA</em>sin((C-B)/2) (zero only if B = C, isosceles): sin(A/2) = 2<em>cos((C-B)/2). But |(C-B)/2| &lt; (B+C)/2 = (pi-A)/2 gives cos((C-B)/2) &gt; cos((pi-A)/2) = sin(A/2), so 2</em>cos((C-B)/2) &gt; sin(A/2) always and this case never occurs. Hence B = C (isosceles) or A = 90 deg (right-angled).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q10; book p188 = PDF p215 (vision read)</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Q11. If 2cosA = sinB/sinC, show that the triangle is isosceles.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>2<em>sinC</em>cosA = sinB expands to sin(C-A) = 0 via sinB = sin(A+C).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>2<em>sinC</em>cosA = sinB = sin(A+C) = sinA<em>cosC + cosA</em>sinC. Subtracting cosA<em>sinC: sinC</em>cosA = sinA<em>cosC, i.e. sinC</em>cosA - sinA*cosC = sin(C-A) = 0. With angles in (0, pi), C = A, so the triangle is isosceles.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q11; book p188 = PDF p215 (vision read)</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Q12. Prove that a^2, b^2, c^2 are in A.P. if sinA:sinC = sin(A-B):sin(B-C).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Translate both sides to cos2: the condition becomes cos2A + cos2C = 2cos2B, the AP condition.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>5</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>a^2, b^2, c^2 in A.P. means 2<em>sin^2B = sin^2A + sin^2C (dividing by 4R^2), i.e. (1-cos2B) = (1-cos2A)/2 + (1-cos2C)/2, i.e. cos2A + cos2C = 2cos2B. The given condition: sinA</em>sin(B-C) = sinC*sin(A-B). Left: [cos(A-B+C) - cos(A+B-C)]/2 = [cos(pi-2B) - cos(pi-2C)]/2 = (cos2C - cos2B)/2. Right: [cos(C-A+B) - cos(C+A-B)]/2 = [cos(pi-2A) - cos(pi-2B)]/2 = (cos2B - cos2A)/2. Equality gives cos2C - cos2B = cos2B - cos2A, i.e. cos2A + cos2C = 2cos2B, exactly the A.P. condition.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q12 (condition continues on book p188); book p188 = PDF pp215-216 (vision read)</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Q14. If 8R^2 = a^2 + b^2 + c^2, prove that the triangle is right angled. (T.U. 2057S)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>a^2+b^2+c^2 = 4R^2<em>(sum sin^2) = 8R^2</em>(1 + cosA<em>cosB</em>cosC): the 8R^2 forces a zero cosine.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>a^2 + b^2 + c^2 = 4R^2<em>(sin^2A + sin^2B + sin^2C). Since sin^2A + sin^2B + sin^2C = 2 + 2</em>cosA<em>cosB</em>cosC (standard identity), this equals 8R^2<em>(1 + cosA</em>cosB<em>cosC). Setting it equal to 8R^2 gives cosA</em>cosB*cosC = 0, so one angle is 90 deg: the triangle is right angled.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q14 (T.U. 2057S); book p188 = PDF p215-216 (vision read)</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Q15. If a = 10, b = 8, c = 6, find s, Delta, R and sin(B/2).</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>6-8-10 is the scaled 3-4-5 right triangle: s = 12, Delta = 24, R = 5 fall out immediately.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>s = (10+8+6)/2 = 12. Delta = sqrt[s(s-a)(s-b)(s-c)] = sqrt[12<em>2</em>4<em>6] = sqrt(576) = 24. R = abc/(4</em>Delta) = 480/96 = 5. sin(B/2) = sqrt[(s-a)(s-c)/(ac)] = sqrt[(12-10)(12-6)/(10*6)] = sqrt(12/60) = sqrt(1/5) = 1/sqrt(5). Matches the printed Answers (p190): 15. 12, 24, 5, 1/sqrt(5).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.6 Ex 6.1 Q15; book p188 = PDF p216 (vision read); matches key</p></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>s = 12, Delta = 24, R = 5, sin(B/2) = 1/sqrt(5)</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.6 BOOK Exercise 6.1 Q6-Q12 + Q14-Q15 (book p188 = PDF pp215-216 of the 2075 reprint; page-region vision reads; every result proved; Q15 key-checked against the printed Answers, p190).</p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>trigonometry-textbook-ex-6-1-special-results</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>trigonometry</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+  <nav class="pager"><a href="ex-6-1-half-angle-and-area.html" title="Sukunda Basic Mathematics XI - Ch.6 Book Ex 6.1 Q5 + Q13 (half-angle and area forms) - Complete Solutions">‹ Sukunda Basic Mathematics XI - Ch.6 Book Ex 6…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-6-1-triangle-identities-i.html" title="Sukunda Basic Mathematics XI - Ch.6 Book Ex 6.1 Q1-Q2 (triangle identities I) - Complete Solutions">Sukunda Basic Mathematics XI - Ch.6 Book Ex 6… ›</a></nav>
+</div></body></html>

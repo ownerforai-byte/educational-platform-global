@@ -1,0 +1,164 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Report Writing</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Report Writing</div>
+    <h1 class="doc">Report Writing</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Report Writing</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>writing</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>report-writing</p></section>
+<section class="field"><h2>Relevance</h2><p><code>83</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;What Is a Report?&lt;/h2&gt;</li><li>&lt;p&gt;A &lt;b&gt;report&lt;/b&gt; is a factual account of an event, situation, or investigation, written for a specific audience (usually a teacher, principal, or authority). In the NEB Class 11 English examination, report writing typically carries 5-8 marks. Unlike essays or letters, reports are objective, formal, and structured — they present facts and observations without personal opinion or emotional language. A good report answers the questions: What happened? When? Where? Who was involved? What were the results?&lt;/p&gt;</li><li>&lt;h2&gt;Format of a Report&lt;/h2&gt;</li><li>&lt;p&gt;The standard report format includes: (1) &lt;b&gt;Heading/Title&lt;/b&gt; — a clear, descriptive title (e.g., 'Report on the Annual Science Exhibition'). (2) &lt;b&gt;Date&lt;/b&gt; — the date of writing (placed below the title or at the end). (3) &lt;b&gt;Introduction&lt;/b&gt; — briefly state the purpose of the report and the event/situation being reported. (4) &lt;b&gt;Body&lt;/b&gt; — present the facts in a logical order (chronological, thematic, or by importance). Use headings and subheadings if the report is long. (5) &lt;b&gt;Conclusion&lt;/b&gt; — summarise the key findings or outcomes. (6) &lt;b&gt;Signature and designation&lt;/b&gt; — the reporter's name and role (e.g., 'Ramesh Sharma, Class Representative'). The body should be 100-150 words for NEB exams.&lt;/p&gt;</li><li>&lt;h2&gt;Key Features of Report Writing&lt;/h2&gt;</li><li>&lt;p&gt;A report must be: (1) &lt;b&gt;Objective&lt;/b&gt; — present facts without personal opinion or emotion. Use 'It was observed that...' instead of 'I think that...'. (2) &lt;b&gt;Concise&lt;/b&gt; — include only relevant information; avoid unnecessary details. (3) &lt;b&gt;Organised&lt;/b&gt; — use headings, subheadings, and logical order (chronological or thematic). (4) &lt;b&gt;Formal&lt;/b&gt; — use formal language; no contractions, slang, or informal expressions. (5) &lt;b&gt;Third-person&lt;/b&gt; — write in third person, not first person. (6) &lt;b&gt;Past tense&lt;/b&gt; — reports describe events that have already happened, so past tense is standard. These features distinguish reports from essays and narratives.&lt;/p&gt;</li><li>&lt;h2&gt;Types of Reports&lt;/h2&gt;</li><li>&lt;p&gt;Common types of reports in NEB exams include: (1) &lt;b&gt;Event report&lt;/b&gt; — reporting on a school event (sports day, function, visit). 'The Annual Sports Day was held on 15th November. The event began with the flag hoisting ceremony...' (2) &lt;b&gt;Incident report&lt;/b&gt; — reporting on an accident or unexpected event. 'An incident occurred on 10th November when a tree fell on the school boundary wall during the night storm...' (3) &lt;b&gt;Investigation report&lt;/b&gt; — reporting findings from an inquiry. 'An inquiry was conducted into the matter of missing laboratory equipment...' (4) &lt;b&gt;Progress report&lt;/b&gt; — reporting on the status of a project. 'The construction of the new science lab is 70% complete...' Each type follows the same basic format but differs in content and focus.&lt;/p&gt;</li><li>&lt;h2&gt;Writing an Event Report&lt;/h2&gt;</li><li>&lt;p&gt;An &lt;b&gt;event report&lt;/b&gt; describes a function, ceremony, or activity that took place. Structure: (1) &lt;b&gt;Opening&lt;/b&gt; — state the event, date, venue, and purpose. 'The Annual Cultural Festival of our school was held on 20th November 2024 in the school auditorium.' (2) &lt;b&gt;Body&lt;/b&gt; — describe the key activities in chronological order. 'The function began with the lighting of the ceremonial lamp by the principal. This was followed by cultural programmes including dance, drama, and song performances by students from different classes...' (3) &lt;b&gt;Conclusion&lt;/b&gt; — summarise the outcome and express satisfaction. 'The event concluded with the prize distribution ceremony at 5:00 PM. The festival was a great success, reflecting the artistic talent of the students.' Keep the language formal and factual.&lt;/p&gt;</li><li>&lt;h2&gt;Writing an Incident Report&lt;/h2&gt;</li><li>&lt;p&gt;An &lt;b&gt;incident report&lt;/b&gt; records an unexpected or unfortunate event. Structure: (1) &lt;b&gt;Opening&lt;/b&gt; — state what happened, when, and where. 'An accident occurred on the morning of 5th November 2024 at approximately 8:30 AM on the school campus.' (2) &lt;b&gt;Body&lt;/b&gt; — describe the sequence of events factually. 'A student from Class 10, Ram Maharjan, slipped on a wet floor near the science laboratory and fractured his left wrist. The incident was reported immediately to the school nurse...' (3) &lt;b&gt;Conclusion&lt;/b&gt; — state the outcome and any recommendations. 'The student was admitted to nearby hospital. It is recommended that warning signs be placed on wet floors to prevent similar incidents.' Maintain an objective, impersonal tone throughout.&lt;/p&gt;</li><li>&lt;h2&gt;Common Mistakes in Report Writing&lt;/h2&gt;</li><li>&lt;p&gt;Avoid these errors: (1) &lt;b&gt;Using first person&lt;/b&gt; ('I saw...', 'We organised...') — reports are third-person and objective. (2) &lt;b&gt;Including personal opinions&lt;/b&gt; ('I think the event was wonderful') — reports present facts, not feelings. (3) &lt;b&gt;Using contractions&lt;/b&gt; ('don't', 'wasn't') — use full forms. (4) &lt;b&gt;Making it too long&lt;/b&gt; — a report should be concise (100-150 words for NEB). (5) &lt;b&gt;Using emotional language&lt;/b&gt; ('tragic', 'heartbreaking') — remain objective. (6) &lt;b&gt;Omitting key details&lt;/b&gt; — date, time, venue, people involved must be mentioned. (7) &lt;b&gt;Not using headings&lt;/b&gt; — a report with headings is more professional and easier to read. (8) &lt;b&gt;Writing in present tense&lt;/b&gt; — reports about past events use past tense.&lt;/p&gt;</li><li>&lt;h2&gt;Report Writing in NEB Exams&lt;/h2&gt;</li><li>&lt;p&gt;In the NEB English examination, report writing typically carries 5-8 marks. Marking is based on: &lt;b&gt;Format&lt;/b&gt; (heading, date, structure), &lt;b&gt;Content&lt;/b&gt; (relevant facts, completeness), &lt;b&gt;Organisation&lt;/b&gt; (logical flow, headings), &lt;b&gt;Linguistic accuracy&lt;/b&gt; (grammar, spelling, punctuation), and &lt;b&gt;Tone&lt;/b&gt; (formal, objective, impersonal). Students who practise writing reports on common topics (events, incidents, investigations) are well-prepared for this question type. The key to success is maintaining objectivity and following the standard format precisely.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Report vs. Essay: A report presents facts objectively with headings and a structured format. An essay presents the author's argument or analysis with an introduction, body paragraphs, and conclusion. Reports use past tense and third person; essays may use first person (in narrative/descriptive essays) and present tense. Reports are formal and factual; essays can be personal and argumentative.</li><li>Report vs. Notice: A notice is a brief announcement (50-80 words) posted publicly to inform about an event or rule. A report is a detailed account (100-150 words) of an event that has already occurred. Notices use future or present tense (announcing what will happen); reports use past tense (describing what happened). Notices have a 'NOTICE' heading; reports have a descriptive title.</li><li>Report vs. Narrative: A report presents facts in an objective, formal tone with headings. A narrative tells a story with a plot, characters, and a chronological sequence, often using first person and emotional language. Reports answer 'what happened?'; narratives answer 'what happened and how did it feel?' In NEB exams, reports are always objective; narratives are personal and descriptive.</li><li>Third person in reports: Reports must be written in the third person (he, she, it, they, the student, the principal). Never use first person (I, we, my, our) in a report. This is because reports are objective accounts, not personal stories. Using 'I' or 'we' makes the report subjective and informal, which loses marks.</li><li>Date placement in reports: Unlike letters (date below sender's address), reports typically place the date below the title or at the end of the report. In NEB exams, either placement is acceptable, but the date must be present. Forgetting the date is a common error that costs marks.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Write a report (100-150 words) on the Annual Sports Day of your school. Include date, venue, key events, and outcome. [Answer: REPORT ON THE ANNUAL SPORTS DAY | The Annual Sports Day of [School Name] was held on 15th November 2024 at the school ground. The event began at 9:00 AM with the flag hoisting ceremony by the principal, followed by the athletes' oath taken by a representative from Class 11. Various competitive events were held, including 100m and 200m races, long jump, shot put, and relay races. Students from all classes participated enthusiastically. The event concluded with the prize distribution ceremony at 4:00 PM. Class 11 secured the overall championship trophy. The sports day was organised successfully and promoted physical fitness among students. | Sita Devkota, Sports Secretary]</li><li>Identify the error: 'I personally attended the science exhibition and found it very impressive. The students displayed remarkable creativity.' [Answer: Two errors: (1) First person ('I', 'my') — reports must use third person. (2) Personal opinion ('very impressive', 'remarkable creativity') — reports must be objective. Correction: 'The science exhibition was attended by faculty and students. The displays demonstrated considerable creativity and technical skill among the participants.']</li><li>What is wrong with this report opening? 'So, there was this really cool science fair yesterday at our school and a lot of students showed their projects.' [Answer: Multiple errors: (1) Informal language ('really cool', 'a lot of'). (2) Vague time reference ('yesterday' instead of specific date). (3) First person implication ('our school'). (4) No heading or formal structure. A proper opening would be: 'The Annual Science Exhibition was held on 10th November 2024 at the school auditorium. Over 50 students presented projects on various scientific topics.']</li><li>Write a report (100-150 words) on an accident that occurred in your school. [Answer: REPORT ON AN ACCIDENT AT SCHOOL | An accident occurred on the morning of 8th November 2024 at approximately 8:45 AM near the school's first-floor corridor. A student, Anisha Thapa of Class 10, slipped on a wet floor caused by a leaking pipe and fell, sustaining a minor injury to her right arm. The incident was immediately reported to the school nurse, who provided first aid. Anisha was then accompanied to a nearby clinic, where she was treated for a mild sprain. The leaking pipe has since been repaired, and warning signs have been placed in the area. It is recommended that routine maintenance checks be conducted to prevent similar incidents. | Ramesh Sharma, Head Boy]</li><li>What tense is typically used in report writing? [Answer: Past tense is typically used in report writing, as reports describe events that have already occurred. Examples: 'The event was held...', 'An accident occurred...', 'The principal addressed...'. However, present tense may be used for general facts or recommendations: 'It is recommended that warning signs be placed...' — the recommendation itself is a present action.] — Note: This is a key distinction from narrative writing, which may mix tenses.</li><li>Convert this informal description to report format: 'Yesterday we had a book fair and it was amazing! Lots of students bought books about science and history. The principal gave a nice speech about reading.' [Answer: REPORT ON THE ANNUAL BOOK FAIR | The Annual Book Fair was held on 12th November 2024 in the school courtyard. Over 200 students attended the event, which featured stalls from local publishers. A wide range of books on science, history, literature, and general knowledge were available for purchase. The principal delivered an address emphasising the importance of reading for intellectual development. The fair concluded at 2:00 PM with the collection of receipts and distribution of certificates to participating vendors. | Librarian]</li><li>What is the difference between a heading and a title in a report? [Answer: In report writing, the heading is typically the word 'REPORT' (or 'REPORT ON...') centred at the top, followed by a descriptive title line (e.g., 'ANNUAL SPORTS DAY 2024'). The heading identifies the document type; the title describes the specific content. Both are important for professional presentation. In NEB exams, omitting either can result in mark deductions.] — Note: Some students use 'NOTICE' instead of 'REPORT' by mistake, which is a format error.</li><li>Write a heading and opening paragraph for a report on a tree plantation drive organised by the school. [Answer: REPORT ON THE TREE PLANTATION DRIVE | A tree plantation drive was organised by [School Name] on 15th July 2024 on the school campus and surrounding area. The initiative, aimed at promoting environmental awareness and greening the campus, involved students from all classes, teachers, and local community members. A total of 200 saplings, including Neem, Pipal, and Sakura varieties, were planted during the event. The principal inaugurated the drive by planting the first sapling and urged students to take responsibility for environmental conservation. | Community Service Committee]</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Report writing has its origins in military and administrative record-keeping, dating back to ancient civilizations. The modern report format — with its structured headings, objective tone, and factual content — evolved from British colonial administrative practices, which were adopted in Nepali educational institutions.</li><li>In the NEB English examination, report writing typically carries 5-8 marks. The objective, formal tone and structured format make it a predictable and high-scoring question type for students who have practised the standard format.</li><li>The requirement for third-person, objective language in reports reflects a broader principle in academic and professional writing: separating facts from opinions. This distinction is fundamental to credible communication and is emphasised in NEB English curricula.</li><li>Report writing is a practical skill used in virtually every profession — medicine (incident reports), law (case reports), engineering (progress reports), business (annual reports), and journalism (news reports). Mastering report writing in school prepares students for these real-world applications.</li><li>The word limit for report bodies in NEB exams (100-150 words) reflects the principle that reports should be concise and focused. Unlike essays, which develop arguments in depth, reports summarise key facts efficiently — a skill valued in professional and academic contexts.</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>writing</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>writing</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

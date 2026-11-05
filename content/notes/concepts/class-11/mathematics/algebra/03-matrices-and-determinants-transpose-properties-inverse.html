@@ -1,0 +1,200 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Matrices and determinants: transpose, properties, inverse</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Algebra</div>
+    <h1 class="doc">Matrices and determinants: transpose, properties, inverse</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Algebra</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>algebra</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>matrices-and-determinants-transpose-properties-inverse</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li><h4>1. Matrix Definition</h4></li><li>A rectangular array of numbers arranged in rows and columns. Order: m x n (m rows, n columns).</li><li><h4>2. Types of Matrices</h4></li><li><ul>
+<li>Square: m = n</li>
+</ul></li><li><ul>
+<li>Diagonal: All non-diagonal elements are zero</li>
+</ul></li><li><ul>
+<li>Identity (I): Diagonal elements = 1, others = 0</li>
+</ul></li><li><ul>
+<li>Zero matrix: All elements = 0</li>
+</ul></li><li><ul>
+<li>Symmetric: A = A^T</li>
+</ul></li><li><ul>
+<li>Skew-symmetric: A = -A^T (diagonal elements = 0)</li>
+</ul></li><li><h4>3. Transpose</h4></li><li>Interchanging rows and columns: (A^T)_ij = A_ji</li><li><ul>
+<li>Properties: (A^T)^T = A, (A+B)^T = A^T + B^T, (AB)^T = B^T A^T</li>
+</ul></li><li><h4>4. Determinant (2x2 and 3x3)</h4></li><li><ul>
+<li>|A| = ad - bc for A = [[a,b],[c,d]]</li>
+</ul></li><li><ul>
+<li>|A| = 0 -&gt; singular matrix (no inverse)</li>
+</ul></li><li><ul>
+<li>|A| != 0 -&gt; non-singular (inverse exists)</li>
+</ul></li><li><h4>5. Inverse of a Matrix</h4></li><li>A^-1 = (1/|A|) x adj(A) where adj(A) is the adjoint (transpose of cofactor matrix).</li><li><h4>6. Cramer's Rule</h4></li><li>For system ax + by = e, cx + dy = f:</li><li>x = Dx/D, y = Dy/D where D = |A|, Dx replaces column 1 with constants, Dy replaces column 2.</li><li><h4>7. Entrance Exam Formulas</h4></li><li><ul>
+<li>|AB| = |A| x |B|</li>
+</ul></li><li><ul>
+<li>|A^T| = |A|</li>
+</ul></li><li><ul>
+<li>A x adj(A) = |A| x I</li>
+</ul></li><li><ul>
+<li>(A^-1)^T = (A^T)^-1</li>
+</ul></li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>x (AB)^T = A^T B^T. x (AB)^T = B^T A^T (order reverses!).</li><li>x Every matrix has an inverse. x Only square, non-singular matrices.</li><li>x AB = BA always. x Matrix multiplication is NOT commutative.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Find the transpose and determinant of A = [[2,3],[1,4]].</li><li>Find the inverse of A = [[1,2],[3,5]].</li><li>Solve using Cramer's rule: 2x + 3y = 8, x - y = 1.</li><li>If |A| = 5, find |adj(A)| for a 3x3 matrix.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>A^-1 = (1/|A|) adj(A)</li><li>Dx = det(replace col1 with constants), Dy = det(replace col2 with constants)</li></ul></section>
+<section class="field"><h2>Summary</h2><p>A matrix is a rectangular array of numbers of order m x n, and the special types that matter here are square, diagonal, identity, zero, symmetric (A = A^T) and skew-symmetric (A = -A^T, whose diagonal entries are all zero). The transpose interchanges rows and columns, (A^T)_ij = A_ji, with (AB)^T = B^T A^T, so the order reverses. The determinant of A = [[a,b],[c,d]] is ad - bc; |A| = 0 makes the matrix singular, and only a square matrix with |A| != 0 has an inverse, obtained as A^-1 = (1/|A|) adj(A), the same tool that gives Cramer's rule.</p></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Order m x n means m rows and n columns; a matrix is square only when m = n.</li><li>Transpose: (A^T)_ij = A_ji, so the order becomes n x m while the main diagonal is unchanged.</li><li>The determinant of A = [[a,b],[c,d]] is ad - bc; it is a single number attached to the whole matrix, not to its entries.</li><li>Singular matrix: |A| = 0, so no inverse exists. Non-singular: |A| != 0, so the inverse exists and is unique.</li><li>The adjoint adj(A) is the transpose of the cofactor matrix; A x adj(A) = |A| x I, hence A^-1 = (1/|A|) adj(A).</li><li>Cramer's rule: x = Dx/D and y = Dy/D, where D = |A| and Dx, Dy are D with column 1 or column 2 replaced by the constants.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>The transpose interchanges rows and columns and satisfies (A^T)^T = A, (A + B)^T = A^T + B^T and (AB)^T = B^T A^T.</li><li>For A = [[a,b],[c,d]] the determinant is |A| = ad - bc, and a matrix is singular exactly when |A| = 0.</li><li>A^-1 = (1/|A|) adj(A) exists if and only if A is square and |A| != 0, and the inverse it produces is unique.</li><li>Cramer's rule solves ax + by = e and cx + dy = f by x = Dx/D and y = Dy/D with D = |A|.</li><li>Determinants obey |AB| = |A| x |B| and |A^T| = |A|, while (A^-1)^T = (A^T)^-1 and A x A^-1 = I.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Find the transpose and the determinant of a 2x2 or 3x3 matrix, expanding a 3x3 determinant along the row or column with the most zeros.</li><li>Find A^-1 for a 2x2 matrix by the adjoint method, then verify the result by multiplying A A^-1 to obtain the identity matrix.</li><li>Solve a pair of linear equations by Cramer's rule, forming Dx and Dy by replacing the appropriate column with the constants.</li><li>Classify a given matrix as square, diagonal, identity, zero, symmetric or skew-symmetric, and confirm that a skew-symmetric matrix has a zero diagonal.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Matrix multiplication is not commutative, and (AB)^T = B^T A^T reverses the order for exactly the same reason.</li><li>Only square matrices can have an inverse, and only when |A| != 0; a rectangular matrix has neither determinant nor inverse.</li><li>The adjoint is the transpose of the cofactor matrix, not the cofactor matrix itself.</li><li>|A^T| = |A|, and a 3x3 determinant uses the cofactor signs + - + along the first row.</li><li>For an n x n matrix, |adj A| = |A|^(n-1), so for a 3x3 matrix the power is 2.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>A skew-symmetric matrix can also be symmetric only in the trivial case A = 0, since A = A^T = -A^T forces every entry to be zero.</li><li>Interchanging any two rows, or any two columns, of a matrix changes the sign of its determinant.</li><li>Multiplying one whole row of an n x n matrix by k multiplies its determinant by k, not by k^n.</li><li>The determinant of an odd-order skew-symmetric matrix is zero, even though the matrix itself need not be zero.</li><li>If |A| = 5 for a 3x3 matrix then |adj A| = 5^2 = 25, not 5, because the exponent is n - 1.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Expand a 3x3 determinant along the row with the most zeros, which keeps the signs and the arithmetic simple.</li><li>For a 2x2 matrix adj([[a,b],[c,d]]) = [[d,-b],[-c,a]], and A^-1 is that matrix divided by (ad - bc).</li><li>Cramer's rule is only a substitution: copy D and swap column 1 for the constants to get Dx, and column 2 for Dy.</li><li>If only |A| and |AB| are given, use |AB| = |A| x |B| and |A^T| = |A| instead of expanding anything.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Transpose questions are 1 to 2 marks and test the reversed order in (AB)^T rather than any computation.</li><li>Finding a 2x2 inverse, or solving a 2x2 system by Cramer's rule, is a standard 5-mark question.</li><li>Determinants of 3x3 matrices and the classification of matrices as symmetric or skew-symmetric are common 5-mark items.</li><li>MCQs often ask which of the given matrices is singular, or ask for the order and entries after a transpose.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Find the transpose and the determinant of A = [[2,3],[1,4]].</li><li>Find the inverse of A = [[1,2],[3,5]] and verify it by computing A A^-1.</li><li>Solve 2x + 3y = 8 and x - y = 1 by Cramer's rule.</li><li>If |A| = 5 for a 3x3 matrix, find |adj A| and state the general formula for |adj A|.</li><li>Show that A + A^T is always symmetric for any square matrix A.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>If A = [[2,3],[1,4]], then the determinant |A| is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>5</li><li>-5</li><li>11</li><li>1</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>|A| = ad - bc = 2(4) - 3(1) = 8 - 3 = 5. The value 11 comes from wrongly adding ad + bc.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>(AB)^T is equal to</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>A^T B^T</li><li>B^T A^T</li><li>AB</li><li>BA</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Transposition reverses the order of a product, because ((AB)^T)_ij = (AB)_ji = sum over k of B_jk A_ki, which is the ij entry of B^T A^T.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>The inverse of the matrix A = [[1,2],[3,5]] is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>[[5,-2],[-3,1]]</li><li>[[-5,2],[3,-1]]</li><li>[[5,2],[3,-1]]</li><li>[[-5,-2],[-3,-1]]</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>|A| = 1(5) - 2(3) = -1 and adj A = [[5,-2],[-3,1]], so A^-1 = (1/-1) adj A = [[-5,2],[3,-1]]. Multiplying A by this gives the identity matrix.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>If A is a 3x3 matrix with |A| = 5, then |adj A| equals</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>25</li><li>5</li><li>15</li><li>125</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The general rule is |adj A| = |A|^(n-1) for an n x n matrix, so with n = 3 this is 5^2 = 25 and not 5 or 5^3.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>A square matrix A has an inverse if and only if</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>|A| = 0</li><li>|A| != 0</li><li>A is symmetric</li><li>A is diagonal</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>A^-1 = (1/|A|) adj(A) requires a non-zero determinant. When |A| = 0 the matrix is singular and the division is impossible, while symmetry or diagonality says nothing about the determinant.</p></div></div></div></section>
+  <nav class="pager"><a href="03-function-domain-range.html" title="Function: Domain and Range">‹ Function: Domain and Range</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="04-curve-sketching-odd-and-even-functions-periodicity-symmetry-about-origin-x-and-y-axis-monotonici.html" title="Curve sketching: odd and even functions, periodicity, sym…">Curve sketching: odd and even functions, peri… ›</a></nav>
+</div></body></html>

@@ -1,0 +1,254 @@
+{
+  "title": "Ionic Bond and Its Properties",
+  "unitSlug": "chemical-bonding-and-shapes-of-molecules",
+  "topicSlug": "ionic-bond-and-its-properties",
+  "topicTitle": "Ionic bond and its properties",
+  "relevance": 100,
+  "notes": [
+    "## 1. What makes a bond ionic\nAn ionic bond is the electrostatic attraction between oppositely charged ions formed by electron transfer. Two conditions must hold at once:\n\n1. **A large electronegativity difference** — conventionally ΔEN > 1.7 — so that transfer, not sharing, is favoured.\n2. **A low ionisation energy for the metal and a high (favourable) electron affinity for the non-metal** — typically a group 1 or 2 metal with a group 16 or 17 non-metal.\n\n**The hook.** Table salt is the obvious case, but the same bond holds the enamel of your teeth (hydroxyapatite, Ca₅(PO₄)₃OH), the lime in Nepal's cement (CaO from limestone), and the fertiliser potash (KCl). All of them are hard, high-melting and electrically insulating when solid — the fingerprints of ionic bonding.\n\n**What an ionic bond is not.** It is not a shared pair, and it is not directional. Each ion attracts every oppositely charged ion around it, so the \"bond\" is the whole lattice, not a line between two atoms.",
+    "## 2. The three energy terms that decide the outcome\nForming an ionic solid from its elements involves paying two costs and collecting one large reward.\n\n| Term | What it is | Sign | NaCl value / kJ mol⁻¹ |\n| --- | --- | --- | --- |\n| Sublimation (or atomisation) of the metal | solid → gaseous atoms | positive (cost) | +108 |\n| Bond dissociation of the non-metal | ½Cl₂(g) → Cl(g) | positive (cost) | +122 |\n| Ionisation energy of the metal | M(g) → M⁺(g) + e⁻ | positive (cost) | +496 |\n| Electron affinity of the non-metal | X(g) + e⁻ → X⁻(g) | negative (gain) | −349 |\n| Lattice enthalpy | M⁺(g) + X⁻(g) → MX(s) | large negative (reward) | −787 |\n| **Standard enthalpy of formation** | M(s) + ½X₂(g) → MX(s) | **sum** | **−411** |\n\n**The key realisation.** The electron-transfer step on its own is *endothermic* for NaCl (+496 − 349 = +147 kJ mol⁻¹). Isolated Na⁺ and Cl⁻ ions are therefore less stable than the atoms. The compound forms only because the lattice enthalpy (−787) is large enough to pay that back and leave a net release of 411 kJ mol⁻¹.",
+    "## 3. Lattice enthalpy: definition, size and the two controlling factors\n**Definition.** The lattice enthalpy is the enthalpy change when one mole of a solid ionic compound is formed from its gaseous ions, or (with the opposite sign) the energy needed to separate it completely. It is always large and always dominates the accounting.\n\n**It depends on two things only** — the charges and the distance between the ion centres:\n\n$$\\Delta H_{lattice} \\propto \\frac{q_1 q_2}{r_1 + r_2}$$\n\n| Compound | Charges | r⁺ + r⁻ / pm | Lattice enthalpy / kJ mol⁻¹ | Melting point / °C |\n| --- | --- | --- | --- | --- |\n| NaF | 1 × 1 | 233 | 923 | 993 |\n| NaCl | 1 × 1 | 282 | 787 | 801 |\n| NaBr | 1 × 1 | 297 | 747 | 747 |\n| NaI | 1 × 1 | 318 | 704 | 661 |\n| MgO | 2 × 2 | 210 | 3795 | 2852 |\n| CaO | 2 × 2 | 239 | 3414 | 2572 |\n| LiF | 1 × 1 | 201 | 1030 | 845 |\n\n**Reading the table.** Down the sodium halides the charge product is constant and the radius grows, so the lattice enthalpy falls by roughly 10 % per step and the melting point follows. Switching from 1:1 to 2:2 (NaCl → MgO) quadruples the charge product and shrinks the distance, giving a lattice enthalpy nearly five times larger — which is why magnesia refractories survive temperatures that destroy salt.",
+    "```svg\n<svg viewBox=\"0 0 900 640\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Born-Haber cycle for sodium chloride\">\n  <rect width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n  <text x=\"450\" y=\"34\" font-family=\"Georgia,serif\" font-size=\"23\" text-anchor=\"middle\" fill=\"#111\">Born–Haber cycle for NaCl: why the compound forms at all</text>\n  <text x=\"450\" y=\"58\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#555\">all values in kJ mol⁻¹; Hess's law means the two routes give the same total</text>\n\n  <!-- elements -->\n  <rect x=\"80\" y=\"98\" width=\"250\" height=\"54\" rx=\"8\" fill=\"#f3f4f6\" stroke=\"#374151\" stroke-width=\"1.6\"/>\n  <text x=\"205\" y=\"132\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"15\" text-anchor=\"middle\" fill=\"#111\">Na(s) + ½Cl₂(g)</text>\n\n  <!-- gaseous atoms -->\n  <rect x=\"80\" y=\"212\" width=\"250\" height=\"54\" rx=\"8\" fill=\"#fef3c7\" stroke=\"#b45309\" stroke-width=\"1.6\"/>\n  <text x=\"205\" y=\"246\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"15\" text-anchor=\"middle\" fill=\"#111\">Na(g) + Cl(g)</text>\n\n  <!-- gaseous ions -->\n  <rect x=\"80\" y=\"336\" width=\"250\" height=\"54\" rx=\"8\" fill=\"#dbeafe\" stroke=\"#1d4ed8\" stroke-width=\"1.6\"/>\n  <text x=\"205\" y=\"370\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"15\" text-anchor=\"middle\" fill=\"#111\">Na⁺(g) + Cl⁻(g)</text>\n\n  <!-- solid -->\n  <rect x=\"80\" y=\"470\" width=\"250\" height=\"54\" rx=\"8\" fill=\"#bbf7d0\" stroke=\"#15803d\" stroke-width=\"1.6\"/>\n  <text x=\"205\" y=\"504\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"15\" text-anchor=\"middle\" fill=\"#111\">NaCl(s)</text>\n\n  <g stroke=\"#374151\" stroke-width=\"1.8\" fill=\"none\" marker-end=\"url(#c1)\">\n    <defs><marker id=\"c1\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#374151\"/></marker></defs>\n    <path d=\"M205 152 L205 208\"/><path d=\"M205 266 L205 332\"/><path d=\"M205 390 L205 466\"/>\n  </g>\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" fill=\"#111\">\n    <text x=\"225\" y=\"186\">sublimation Na(s) → Na(g)   +108</text>\n    <text x=\"225\" y=\"200\">½ dissociation Cl₂(g)   +122</text>\n    <text x=\"225\" y=\"304\">ionisation Na(g) → Na⁺   +496</text>\n    <text x=\"225\" y=\"322\">electron gain Cl → Cl⁻   −349</text>\n    <text x=\"225\" y=\"438\">lattice formation   −787</text>\n  </g>\n\n  <!-- direct route -->\n  <path d=\"M340 125 Q 700 300 340 497\" fill=\"none\" stroke=\"#9d174d\" stroke-width=\"2.4\" stroke-dasharray=\"8 6\"/>\n  <text x=\"700\" y=\"296\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" fill=\"#9d174d\">direct: ΔHf = −411</text>\n  <text x=\"700\" y=\"318\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" fill=\"#9d174d\">measured</text>\n\n  <!-- arithmetic -->\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" fill=\"#111\">\n    <text x=\"80\" y=\"562\">Sum of the indirect route:  108 + 122 + 496 − 349 − 787 = −410 kJ mol⁻¹</text>\n    <text x=\"80\" y=\"588\" fill=\"#6b7280\">The two routes agree within rounding, which is the check that the cycle is complete.</text>\n  </g>\n</svg>\n```\n**Figure 1 — the born–Haber cycle.** Four positive terms (sublimation, bond breaking, ionisation) and one large negative term (lattice formation). The lattice energy is the only term big enough to make the total exothermic, which is why ionic compounds exist as lattices rather than as separate ions.",
+    "## 4. The Born–Haber cycle, step by step\nA Born–Haber cycle applies Hess's law to the formation of an ionic solid: the enthalpy of formation measured directly must equal the sum of the steps taken indirectly.\n\n**Procedure.** (1) Write the formation equation with its measured ΔH_f. (2) Break it into: atomisation of the metal, atomisation of the non-metal, ionisation of the metal, electron gain by the non-metal, and lattice formation. (3) Sum and solve for whichever term is unknown — usually the electron affinity or the lattice enthalpy.\n\n**Worked for NaCl.** ΔH_f = +108 (sublimation) + 122 (½D of Cl₂) + 496 (IE of Na) − 349 (EA of Cl) + (−787) (lattice) = **−410 kJ mol⁻¹**, against a measured −411. The agreement is the check that no step has been double-counted.\n\n**What the cycle is used for in exams.** Given ΔH_f and four of the five terms, calculate the fifth. The arithmetic is trivial; the marks are for getting the signs and the direction of each arrow right. Atomisation and ionisation are always up (positive), lattice formation is always down (negative), and electron affinity is negative for a favourable gain.\n\n**One subtlety worth stating.** For magnesium chloride the *second* ionisation energy (+1451 kJ mol⁻¹) makes MgCl a poor deal and MgCl₂ the stable salt; for calcium, both ionisations are affordable and CaCl₂ forms readily. The cycle explains the formulae, not just the energies.",
+    "```svg\n<svg viewBox=\"0 0 900 640\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Sodium chloride lattice with six to six coordination\">\n  <rect width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n  <text x=\"450\" y=\"34\" font-family=\"Georgia,serif\" font-size=\"23\" text-anchor=\"middle\" fill=\"#111\">NaCl lattice: every ion is surrounded by six of the other kind</text>\n  <text x=\"450\" y=\"58\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#555\">2-D projection of the rock-salt structure; the third direction repeats the same pattern</text>\n\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\">\n    <!-- 5 x 5 grid alternating -->\n    <g>\n      <circle cx=\"150\" cy=\"130\" r=\"21\" fill=\"#1d4ed8\"/><text x=\"150\" y=\"135\" fill=\"#fff\">Na</text>\n      <circle cx=\"228\" cy=\"130\" r=\"25\" fill=\"#15803d\"/><text x=\"228\" y=\"135\" fill=\"#fff\">Cl</text>\n      <circle cx=\"306\" cy=\"130\" r=\"21\" fill=\"#1d4ed8\"/><text x=\"306\" y=\"135\" fill=\"#fff\">Na</text>\n      <circle cx=\"384\" cy=\"130\" r=\"25\" fill=\"#15803d\"/><text x=\"384\" y=\"135\" fill=\"#fff\">Cl</text>\n      <circle cx=\"462\" cy=\"130\" r=\"21\" fill=\"#1d4ed8\"/><text x=\"462\" y=\"135\" fill=\"#fff\">Na</text>\n\n      <circle cx=\"150\" cy=\"208\" r=\"25\" fill=\"#15803d\"/><text x=\"150\" y=\"213\" fill=\"#fff\">Cl</text>\n      <circle cx=\"228\" cy=\"208\" r=\"21\" fill=\"#1d4ed8\"/><text x=\"228\" y=\"213\" fill=\"#fff\">Na</text>\n      <circle cx=\"306\" cy=\"208\" r=\"25\" fill=\"#15803d\"/><text x=\"306\" y=\"213\" fill=\"#fff\">Cl</text>\n      <circle cx=\"384\" cy=\"208\" r=\"21\" fill=\"#1d4ed8\"/><text x=\"384\" y=\"213\" fill=\"#fff\">Na</text>\n      <circle cx=\"462\" cy=\"208\" r=\"25\" fill=\"#15803d\"/><text x=\"462\" y=\"213\" fill=\"#fff\">Cl</text>\n\n      <circle cx=\"150\" cy=\"286\" r=\"21\" fill=\"#1d4ed8\"/><text x=\"150\" y=\"291\" fill=\"#fff\">Na</text>\n      <circle cx=\"228\" cy=\"286\" r=\"25\" fill=\"#15803d\"/><text x=\"228\" y=\"291\" fill=\"#fff\">Cl</text>\n      <circle cx=\"306\" cy=\"286\" r=\"21\" fill=\"#1d4ed8\"/><text x=\"306\" y=\"291\" fill=\"#fff\">Na</text>\n      <circle cx=\"384\" cy=\"286\" r=\"25\" fill=\"#15803d\"/><text x=\"384\" y=\"291\" fill=\"#fff\">Cl</text>\n      <circle cx=\"462\" cy=\"286\" r=\"21\" fill=\"#1d4ed8\"/><text x=\"462\" y=\"291\" fill=\"#fff\">Na</text>\n\n      <circle cx=\"150\" cy=\"364\" r=\"25\" fill=\"#15803d\"/><text x=\"150\" y=\"369\" fill=\"#fff\">Cl</text>\n      <circle cx=\"228\" cy=\"364\" r=\"21\" fill=\"#1d4ed8\"/><text x=\"228\" y=\"369\" fill=\"#fff\">Na</text>\n      <circle cx=\"306\" cy=\"364\" r=\"25\" fill=\"#15803d\"/><text x=\"306\" y=\"369\" fill=\"#fff\">Cl</text>\n      <circle cx=\"384\" cy=\"364\" r=\"21\" fill=\"#1d4ed8\"/><text x=\"384\" y=\"369\" fill=\"#fff\">Na</text>\n      <circle cx=\"462\" cy=\"364\" r=\"25\" fill=\"#15803d\"/><text x=\"462\" y=\"369\" fill=\"#fff\">Cl</text>\n\n      <circle cx=\"150\" cy=\"442\" r=\"21\" fill=\"#1d4ed8\"/><text x=\"150\" y=\"447\" fill=\"#fff\">Na</text>\n      <circle cx=\"228\" cy=\"442\" r=\"25\" fill=\"#15803d\"/><text x=\"228\" y=\"447\" fill=\"#fff\">Cl</text>\n      <circle cx=\"306\" cy=\"442\" r=\"21\" fill=\"#1d4ed8\"/><text x=\"306\" y=\"447\" fill=\"#fff\">Na</text>\n      <circle cx=\"384\" cy=\"442\" r=\"25\" fill=\"#15803d\"/><text x=\"384\" y=\"447\" fill=\"#fff\">Cl</text>\n      <circle cx=\"462\" cy=\"442\" r=\"21\" fill=\"#1d4ed8\"/><text x=\"462\" y=\"447\" fill=\"#fff\">Na</text>\n    </g>\n  </g>\n\n  <!-- coordination callout -->\n  <g stroke=\"#9d174d\" stroke-width=\"2\" fill=\"none\">\n    <path d=\"M306 286 L306 208\"/><path d=\"M306 286 L306 364\"/>\n    <path d=\"M306 286 L228 286\"/><path d=\"M306 286 L384 286\"/>\n  </g>\n  <text x=\"700\" y=\"240\" font-family=\"Georgia,serif\" font-size=\"14\" fill=\"#9d174d\">2-D view shows four</text>\n  <text x=\"700\" y=\"262\" font-family=\"Georgia,serif\" font-size=\"14\" fill=\"#9d174d\">neighbours; the third</text>\n  <text x=\"700\" y=\"284\" font-family=\"Georgia,serif\" font-size=\"14\" fill=\"#9d174d\">direction adds two more</text>\n  <text x=\"700\" y=\"316\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" fill=\"#111\">coordination 6 : 6</text>\n\n  <g font-family=\"Georgia,serif\" font-size=\"14\" fill=\"#374151\">\n    <text x=\"560\" y=\"400\">No molecule of NaCl exists in the</text>\n    <text x=\"560\" y=\"424\">solid: the formula unit is a ratio,</text>\n    <text x=\"560\" y=\"448\">not a particle.</text>\n  </g>\n  <text x=\"450\" y=\"540\" font-family=\"Georgia,serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#374151\">Strong electrostatic attraction in every direction → high melting point, hardness, brittleness.</text>\n  <text x=\"450\" y=\"566\" font-family=\"Georgia,serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#374151\">Shift one layer and like charges meet → the crystal cleaves.</text>\n</svg>\n```\n**Figure 2 — the rock-salt lattice.** Each Na⁺ has six Cl⁻ neighbours at 282 pm and each Cl⁻ six Na⁺. There are no discrete NaCl molecules, which is why \"relative formula mass\" rather than \"molecular mass\" is the correct term for ionic compounds.",
+    "## 5. Structures and coordination numbers\nThe arrangement adopted is the one that packs the ions most efficiently given their relative sizes.\n\n| Structure | Example | Coordination | Radius ratio r⁺/r⁻ | Note |\n| --- | --- | --- | --- | --- |\n| Rock salt | NaCl, MgO, KBr | 6 : 6 | 0.41–0.73 | commonest; fcc arrangement of both ions |\n| Caesium chloride | CsCl, CsBr, NH₄Cl | 8 : 8 | > 0.73 | large cation, cubic holes |\n| Zinc blende | ZnS | 4 : 4 | < 0.41 | covalent contribution significant |\n| Rutile | TiO₂ | 6 : 3 | — | 1:2 stoichiometry |\n\n**Why the radius ratio matters.** A cation must be large enough to touch its neighbours without letting the anions overlap. If it is too small for the hole, the structure collapses to the next lower coordination. This is why NaCl (r⁺/r⁻ = 102/181 = 0.56) is 6:6 while CsCl (167/181 = 0.92) is 8:8.",
+    "![Ball-and-stick model of the caesium chloride lattice](https://upload.wikimedia.org/wikipedia/commons/9/9e/Caesium-chloride-3D-ionic.png)\n\n**Figure 4 — caesium chloride, coordination 8:8.** The larger Cs⁺ ion allows eight Cl⁻ neighbours instead of six, which is why CsCl adopts a different structure from NaCl although both are 1:1 salts. *Source: Wikimedia Commons, [Caesium-chloride-3D-ionic.png](https://commons.wikimedia.org/wiki/File:Caesium-chloride-3D-ionic.png), author Benjah-bmm27, public domain.*",
+    "![Ball-and-stick model of the sodium chloride lattice](https://upload.wikimedia.org/wikipedia/commons/e/e9/Sodium-chloride-3D-ionic.png)\n\n**Figure 3 — the same lattice in three dimensions.** Chloride and sodium alternate in all three directions; the octahedral arrangement around each ion is the 6:6 coordination of Figure 2. *Source: Wikimedia Commons, [Sodium-chloride-3D-ionic.png](https://commons.wikimedia.org/wiki/File:Sodium-chloride-3D-ionic.png), author Benjah-bmm27, public domain.*",
+    "## 6. Properties, each traced to the structure\nThis is where marks are most often lost: every property must be *explained*, not merely stated.\n\n| Property | Observation | Explanation from the lattice |\n| --- | --- | --- |\n| Melting point | high (NaCl 801 °C, MgO 2852 °C) | many strong attractions must be broken, and the lattice enthalpy sets the scale |\n| Hardness | hard but brittle | layers cannot slide: displacement brings like charges together, so the crystal cracks |\n| Electrical conductivity | poor when solid; good when molten or dissolved | ions are fixed in the lattice but mobile once freed |\n| Solubility | soluble in water, insoluble in hexane | ion–dipole attraction with water releases hydration energy comparable to the lattice enthalpy |\n| Crystal shape | regular cleavage planes | the lattice is periodic, so it breaks along planes of like charge |\n| Volatility | negligible | escaping requires breaking the whole lattice, not a single bond |\n\n**Two comparisons worth memorising.** MgO melts far above NaCl because of the 2:2 charge product. NaCl conducts when molten but not when solid — a solid ionic crystal has ions, but no *mobile* ions, which is the distinction the exam wants.",
+    "## 7. Fajans' rules: when an ionic bond becomes partly covalent\nNo bond is 100 % ionic. A small, highly charged cation distorts (polarises) a large anion's electron cloud, and the shared electron density that results is covalent character.\n\n**Fajans' rules, in the order they are examined.**\n1. **Smaller cation, more covalent character** — higher charge density (LiCl is more covalent than NaCl).\n2. **Larger anion, more covalent character** — its cloud is easier to distort (NaI more than NaCl).\n3. **Higher charge on either ion, more covalent character** — AlCl₃ is covalent, AlF₃ ionic.\n4. **Cation with a pseudo-noble-gas (d¹⁰) configuration, more covalent** — AgI and CuCl are notably covalent.\n\n| Pair | Which is more covalent | Reason |\n| --- | --- | --- |\n| NaCl / LiCl | LiCl | Li⁺ is much smaller |\n| NaCl / NaI | NaI | I⁻ is much larger and more polarisable |\n| MgCl₂ / AlCl₃ | AlCl₃ | higher cation charge |\n| NaCl / AgCl | AgCl | Ag⁺ is d¹⁰ and polarising |\n\n**The observable consequence.** AlCl₃ sublimes at 180 °C and dissolves in ether, whereas NaCl melts at 801 °C and dissolves in water — polarisation shows up directly in melting point and solubility.",
+    "## 8. Summary map and self-check\n**The topic on one card.**\n\n| Question | Answer |\n| --- | --- |\n| What holds an ionic solid together? | electrostatic attraction between oppositely charged ions in a lattice |\n| Condition for ionic bonding? | large ΔEN (> 1.7) plus a low-IE metal and a favourable-EA non-metal |\n| Why does an ionic solid form at all? | lattice enthalpy outweighs ionisation cost and electron-affinity gain |\n| Lattice enthalpy depends on? | charge product / distance: q₁q₂/(r₁ + r₂) |\n| Born–Haber cycle? | Hess's law over atomisation, ionisation, electron gain and lattice formation |\n| NaCl numbers? | +108, +122, +496, −349, −787 → ΔH_f = −411 kJ mol⁻¹ |\n| Why high melting points? | the whole lattice must be disrupted, and lattice enthalpy sets the scale |\n| Why brittle? | slipping a layer brings like charges together |\n| Conduction? | only when molten or dissolved, because the ions must be mobile |\n| Fajans' rules? | small/highly charged cation and large anion → covalent character |\n\n**Self-check.**\n1. Write the Born–Haber cycle for MgO and say which term changes most compared with NaCl.\n2. Explain why MgO melts at 2852 °C while NaCl melts at 801 °C, using the lattice-enthalpy expression.\n3. Why does solid NaCl not conduct electricity, while molten NaCl does?\n4. Use Fajans' rules to explain why AlCl₃ is covalent while NaCl is ionic.\n5. State the coordination numbers in NaCl and CsCl and relate them to the radius ratio."
+  ],
+  "confusion": [
+    "❌ Ionic compounds contain molecules of NaCl. ✅ The lattice contains ions only; the formula unit is a ratio.",
+    "❌ Electron transfer from Na to Cl releases energy overall. ✅ That step costs +147 kJ mol⁻¹; only lattice formation makes the compound stable.",
+    "❌ Ionic compounds conduct electricity in the solid state. ✅ Ions must be mobile, so conduction needs the molten or dissolved state.",
+    "❌ A larger lattice enthalpy always means a lower melting point. ✅ It is the reverse: larger lattice enthalpy means a higher melting point."
+  ],
+  "practice": [
+    "Draw and label a Born–Haber cycle for MgO and calculate ΔH_f from the given terms.",
+    "Explain why MgO melts at 2852 °C but NaCl at 801 °C.",
+    "Apply Fajans' rules to rank NaCl, LiCl and LiI by covalent character, with reasons.",
+    "State the coordination numbers of NaCl and CsCl and relate them to the radius ratio."
+  ],
+  "universalFacts": [
+    "Universal scientific fact for 02 ionic bond and its properties."
+  ],
+  "animation3D": "chemistry",
+  "motionGraphics": "chemistry",
+  "examples": [
+    "H₂O: sp³, 2BP+2LP → bent",
+    "CO₂: sp, 2BP+0LP → linear"
+  ],
+  "practiceQuestions": [
+    "Practice drawing Lewis structures for ionic and covalent compounds.",
+    "Practice using the mole concept to convert between mass, moles, and particles.",
+    "Practice identifying limiting reagents in stoichiometric calculations.",
+    "Practice calculating percent yield from experimental data.",
+    "Practice converting between molarity and molality.",
+    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
+    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
+    "Practice calculating pH of strong acid and strong base solutions.",
+    "Practice using pH, pOH, Ka, and Kb relationships.",
+    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
+    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
+    "Practice assigning oxidation numbers in compounds and ions.",
+    "Practice balancing redox reactions by ion-electron method.",
+    "Practice calculating cell potential using standard electrode potentials.",
+    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
+    "Practice applying ideal gas law to find P, V, T, or n.",
+    "Practice calculating rms speed and average kinetic energy of gases.",
+    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
+    "Practice calculating molarity and molality from given data.",
+    "Practice applying Raoult's law to ideal solutions.",
+    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
+    "Practice predicting molecular geometry using VSEPR theory.",
+    "Practice identifying hybridization from molecular geometry.",
+    "Practice drawing resonance structures for common molecules.",
+    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
+    "Practice identifying functional groups in organic molecules.",
+    "Practice writing mechanisms for free radical substitution of alkanes.",
+    "Practice writing mechanisms for electrophilic addition to alkenes.",
+    "Practice predicting products of electrophilic substitution on benzene.",
+    "Practice calculating empirical and molecular formulas from composition data.",
+    "Practice solving gas law problems combining multiple variables.",
+    "Practice calculating bond energy from reaction enthalpies.",
+    "Practice using Born-Haber cycles to calculate lattice energy.",
+    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+  ],
+  "formulas": [
+    "ΔH_f = ΔH_sub + ½ΔH_diss + IE + EA + ΔH_lattice",
+    "ΔH_lattice ∝ q₁q₂/(r₁ + r₂)",
+    "charge density = charge / radius"
+  ],
+  "keyPoints": [
+    "Ionic bond = electrostatic attraction between ions formed by transfer; needs ΔEN > ~1.7.",
+    "Born–Haber cycle sums atomisation, ionisation, electron gain and lattice formation via Hess's law.",
+    "NaCl: 108 + 122 + 496 − 349 − 787 = −411 kJ mol⁻¹.",
+    "Lattice enthalpy ∝ q₁q₂/(r₁ + r₂); MgO 3795 vs NaCl 787 kJ mol⁻¹.",
+    "Ionic solids: high melting, hard, brittle, non-conducting when solid, conducting when molten or aqueous.",
+    "Coordination from radius ratio: NaCl 6:6, CsCl 8:8, ZnS 4:4.",
+    "Fajans' rules: small/high-charge cation + large anion → covalent character (LiI, AlCl₃, AgCl)."
+  ],
+  "summary": "An ionic bond is the electrostatic attraction between ions formed by electron transfer, favoured when ΔEN exceeds about 1.7 and a low-ionisation-energy metal meets a non-metal with a favourable electron affinity. Formation is decided by the Born–Haber accounting: for NaCl, sublimation +108, bond dissociation +122, ionisation +496 and electron gain −349 sum to +377, so the ions alone would be unstable; lattice formation at −787 makes the overall ΔH_f −411 kJ mol⁻¹. Lattice enthalpy scales as q₁q₂/(r₁ + r₂), which is why MgO (3795 kJ mol⁻¹, m.p. 2852 °C) dwarfs NaCl (787, 801 °C). Ionic solids are hard, brittle, high-melting and insulating when solid but conducting when molten or dissolved, because their ions are fixed until the lattice is broken. Coordination follows the radius ratio: 6:6 for NaCl, 8:8 for CsCl. Fajans' rules explain why small, highly charged cations with large anions (LiI, AlCl₃, AgCl) show substantial covalent character.",
+  "specialNotes": [
+    "Specialized insight for 02 ionic bond and its properties."
+  ],
+  "importantStatements": [
+    "Key statement for 02 ionic bond and its properties."
+  ],
+  "importantNotes": [
+    "Important note regarding 02 ionic bond and its properties."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Ionic Bond and Its Properties."
+  ],
+  "examNotes": [],
+  "mcs": [
+    {
+      "question": "An ionic bond is formed by:",
+      "options": [
+        "sharing of electron pairs",
+        "transfer of electrons followed by electrostatic attraction",
+        "overlap of d orbitals",
+        "delocalisation of electrons"
+      ],
+      "answer": "B",
+      "explanation": "Metals lose electrons and non-metals gain them; the resulting ions attract electrostatically throughout the lattice."
+    },
+    {
+      "question": "Ionic bonding is favoured when the electronegativity difference is about:",
+      "options": [
+        "less than 0.4",
+        "0.4 to 1.7",
+        "greater than 1.7",
+        "exactly zero"
+      ],
+      "answer": "C",
+      "explanation": "Above about 1.7 the bond is predominantly ionic (NaCl, ΔEN = 2.23); below 0.4 it is essentially non-polar."
+    },
+    {
+      "question": "The lattice enthalpy of an ionic compound increases when:",
+      "options": [
+        "ionic charges increase and radii decrease",
+        "charges decrease and radii increase",
+        "only the cation is large",
+        "the compound is dissolved"
+      ],
+      "answer": "A",
+      "explanation": "ΔH_lattice ∝ q₁q₂/(r₁ + r₂); MgO's 2:2 charges and small radius give 3795 kJ mol⁻¹ against NaCl's 787."
+    },
+    {
+      "question": "In the Born–Haber cycle for NaCl, the step that makes the overall process exothermic is:",
+      "options": [
+        "sublimation of sodium",
+        "ionisation of sodium",
+        "lattice formation",
+        "bond dissociation of chlorine"
+      ],
+      "answer": "C",
+      "explanation": "Only the lattice enthalpy (−787 kJ mol⁻¹) is large enough to outweigh the four endothermic steps."
+    },
+    {
+      "question": "Solid NaCl does not conduct electricity because:",
+      "options": [
+        "it contains no ions",
+        "its ions are fixed in the lattice and cannot move",
+        "it is covalent",
+        "it has a low melting point"
+      ],
+      "answer": "B",
+      "explanation": "Conduction requires mobile charge carriers; melting or dissolving frees the ions and conduction begins."
+    },
+    {
+      "question": "Ionic crystals are brittle because:",
+      "options": [
+        "the bonds are weak",
+        "a displaced layer brings like charges adjacent, causing repulsion",
+        "they contain free electrons",
+        "they are amorphous"
+      ],
+      "answer": "B",
+      "explanation": "Sliding one plane moves Na⁺ next to Na⁺ and Cl⁻ next to Cl⁻; the repulsion cracks the crystal along cleavage planes."
+    },
+    {
+      "question": "CsCl has 8:8 coordination rather than NaCl's 6:6 because:",
+      "options": [
+        "caesium is a smaller ion",
+        "the radius ratio r⁺/r⁻ is large enough for a cubic hole",
+        "chlorine is divalent",
+        "CsCl is covalent"
+      ],
+      "answer": "B",
+      "explanation": "A large cation (r⁺/r⁻ ≈ 0.92) can accommodate eight chloride neighbours instead of six."
+    },
+    {
+      "question": "According to Fajans' rules, which compound has the most covalent character?",
+      "options": [
+        "NaCl",
+        "KCl",
+        "LiCl",
+        "LiI"
+      ],
+      "answer": "D",
+      "explanation": "Small cation plus large polarisable anion maximises distortion: LiI > LiCl > NaCl."
+    },
+    {
+      "question": "MgO has a much higher melting point than NaCl mainly because of:",
+      "options": [
+        "its larger ions",
+        "the 2:2 charge product and smaller interionic distance",
+        "its covalent character",
+        "hydrogen bonding"
+      ],
+      "answer": "B",
+      "explanation": "Both effects raise the lattice enthalpy (3795 vs 787 kJ mol⁻¹), so far more energy is needed to mobilise the ions."
+    },
+    {
+      "question": "Which statement about an ionic solid is correct?",
+      "options": [
+        "It contains discrete molecules",
+        "Its formula unit represents a ratio of ions, not a molecule",
+        "It conducts electricity when solid",
+        "It is held by shared electron pairs"
+      ],
+      "answer": "B",
+      "explanation": "There are no NaCl molecules in the lattice; the formula unit is the simplest ion ratio, which is why 'formula mass' is used."
+    }
+  ],
+  "importantConcepts": [
+    "Key concept 1 for 02 ionic bond and its properties."
+  ],
+  "importantTasks": [
+    "Task for studying 02 ionic bond and its properties."
+  ],
+  "duplicateType": 2,
+  "tabGroup": "02-ionic-bond-and-its-properties",
+  "mcqs": [
+    {
+      "question": "Question about 02 ionic bond and its properties?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "3d-model",
+    "component": "VSEPRModeler",
+    "desc": "3D molecular geometry predictor"
+  },
+  "visualType": "ionic-covalent-bond",
+  "source": "authored-v2",
+  "numericals": [
+    "**N1 — Enthalpy of formation of NaCl from the cycle.**\n*Given.* Sublimation of Na +108; ½D(Cl₂) +122; IE(Na) +496; EA(Cl) −349; lattice enthalpy −787 kJ mol⁻¹.\n*Formula.* ΔH_f = Σ(steps).\n*Substitution.* 108 + 122 + 496 − 349 − 787 = −410.\n*Answer.* **ΔH_f ≈ −411 kJ mol⁻¹** (measured −411), so the compound is thermodynamically stable with respect to its elements.",
+    "**N2 — Why MgO has a far larger lattice enthalpy than NaCl.**\n*Given.* Born–Landé proportionality ΔH_lattice ∝ q₁q₂/(r⁺ + r⁻); MgO: q₁q₂ = 2 × 2, r = 210 pm; NaCl: q₁q₂ = 1 × 1, r = 282 pm.\n*Formula.* ratio = (q₁q₂ ratio) × (distance ratio, inverted).\n*Substitution.* 4/1 × 282/210 = 5.37.\n*Answer.* **About 5.4 times larger** (measured 3795 vs 787 = 4.8), which is why MgO melts at 2852 °C against NaCl's 801 °C.",
+    "**N3 — Lattice energy on a per-gram basis.**\n*Given.* Lattice enthalpy of NaCl = 787 kJ mol⁻¹; M(NaCl) = 58.5 g mol⁻¹.\n*Formula.* energy per gram = ΔH_lattice / M.\n*Substitution.* 787/58.5 = 13.45.\n*Answer.* **13.5 kJ g⁻¹** — a useful number when comparing the heat needed to decompose equal masses of two salts.",
+    "**N4 — Charge density of two cations.**\n*Given.* r(Na⁺) = 102 pm, charge +1; r(Mg²⁺) = 72 pm, charge +2.\n*Formula.* charge density = charge / radius.\n*Substitution.* Na⁺: 1/102 = 0.0098; Mg²⁺: 2/72 = 0.0278; ratio = 2.84.\n*Answer.* **Mg²⁺ has 2.8 times the charge density of Na⁺** — the reason Mg²⁺ polarises anions more strongly and MgO is far harder.",
+    "**N5 — Predicting a lattice enthalpy from a known one.**\n*Given.* ΔH_lattice(LiF) = 1030 kJ mol⁻¹ at r = 201 pm; ΔH_lattice(CsI) is unknown, r = 383 pm; both are 1:1.\n*Formula.* ΔH_lattice ∝ 1/r, so ΔH(CsI) ≈ ΔH(LiF) × r(LiF)/r(CsI).\n*Substitution.* 1030 × 201/383 = 541.\n*Answer.* **≈ 541 kJ mol⁻¹** predicted (measured 604), showing how much of the fall down a group comes from radius alone.",
+    "**N6 — Coordination in the rock-salt unit cell.**\n*Given.* NaCl adopts a face-centred cubic arrangement with 4 formula units per unit cell.\n*Formula.* number of ions = formula units × ions per formula unit.\n*Substitution.* 4 × 2 = 8; of these 4 are Na⁺ and 4 are Cl⁻.\n*Answer.* **8 ions (4 Na⁺ + 4 Cl⁻) per unit cell**, each ion with 6 nearest neighbours of the opposite charge."
+  ]
+}

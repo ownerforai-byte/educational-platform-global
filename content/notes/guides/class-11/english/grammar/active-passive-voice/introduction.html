@@ -1,0 +1,161 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Active and Passive Voice</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Active Passive Voice</div>
+    <h1 class="doc">Active and Passive Voice</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Active Passive Voice</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>grammar</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>active-passive-voice</p></section>
+<section class="field"><h2>Relevance</h2><p><code>90</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;What Is Voice?&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Voice&lt;/b&gt; in grammar refers to the relationship between the subject of a sentence and the action of the verb. &lt;b&gt;Active voice&lt;/b&gt; means the subject performs the action (e.g., 'The cat chased the mouse'). &lt;b&gt;Passive voice&lt;/b&gt; means the subject receives the action (e.g., 'The mouse was chased by the cat'). Voice is a fundamental concept tested in NEB English exams through transformation exercises, where students must convert active sentences to passive or vice versa.&lt;/p&gt;</li><li>&lt;h2&gt;Structure of Passive Voice&lt;/h2&gt;</li><li>&lt;p&gt;The passive voice is formed using: &lt;b&gt;be&lt;/b&gt; (in the appropriate tense) + &lt;b&gt;past participle&lt;/b&gt; of the main verb. The object of the active sentence becomes the subject of the passive sentence. The original subject (the doer) becomes the agent, introduced by &lt;b&gt;'by'&lt;/b&gt;, and can be omitted when it is unknown, unimportant, or obvious. Example: Active — 'Rama wrote the letter.' → Passive — 'The letter was written by Rama.' Key rule: the tense of 'be' must match the tense of the active verb.&lt;/p&gt;</li><li>&lt;h2&gt;Passive Voice in Different Tenses&lt;/h2&gt;</li><li>&lt;p&gt;Present Simple: Active — 'She writes a letter.' → Passive — 'A letter is written by her.' Present Continuous: Active — 'She is writing a letter.' → Passive — 'A letter is being written by her.' Present Perfect: Active — 'She has written a letter.' → Passive — 'A letter has been written by her.' Past Simple: Active — 'She wrote a letter.' → Passive — 'A letter was written by her.' Past Continuous: Active — 'She was writing a letter.' → Passive — 'A letter was being written by her.' Past Perfect: Active — 'She had written a letter.' → Passive — 'A letter had been written by her.' Future Simple: Active — 'She will write a letter.' → Passive — 'A letter will be written by her.' Future Perfect: Active — 'She will have written a letter.' → Passive — 'A letter will have been written by her.'&lt;/p&gt;</li><li>&lt;h2&gt;Passive with Modals&lt;/h2&gt;</li><li>&lt;p&gt;Modal verbs in passive voice follow the pattern: &lt;b&gt;modal + be + past participle&lt;/b&gt;. Examples: 'You must finish the work' → 'The work must be finished (by you)'. 'She can swim' → 'Swimming can be done by her' (though this sounds awkward — passives with ability modals are often avoided). 'They should help the poor' → 'The poor should be helped (by them)'. 'He may come late' → 'Late arrival may be expected from him'. This structure is frequently tested in NEB transformation exercises.&lt;/p&gt;</li><li>&lt;h2&gt;Passive with Infinitives and Gerunds&lt;/h2&gt;</li><li>&lt;p&gt;With infinitives: Active — 'I want to see him.' → Passive — 'He is wanted to be seen by me' (rare and awkward, often rephrased). Better: Active — 'They expect him to come.' → Passive — 'He is expected to come.' With gerunds: Active — 'I suggest visiting the temple.' → Passive — 'Visiting the temple is suggested.' Active — 'He denied stealing the money.' → Passive — 'Stealing the money was denied by him.' Note: Passive with gerunds is uncommon in natural English but may appear in academic contexts.&lt;/p&gt;</li><li>&lt;h2&gt;Intransitive Verbs and Passive Voice&lt;/h2&gt;</li><li>&lt;p&gt;&lt;b&gt;Intransitive verbs&lt;/b&gt; (verbs that do not take an object) CANNOT be converted to passive voice because passive requires an object to become a subject. Examples of intransitive verbs: arrive, sleep, die, go, come, happen, occur, fall, rise, exist. 'The bird flew' cannot become '___ was flown by the bird.' However, some verbs that are usually intransitive can be used transitively in specific contexts: 'The sun rises' (intransitive) vs. 'She rises the children' (rare/archaic transitive use). Also, intransitive verbs taking a preposition can sometimes be made passive: 'They laughed at him' → 'He was laughed at by them'.&lt;/p&gt;</li><li>&lt;h2&gt;Double Object Verbs in Passive Voice&lt;/h2&gt;</li><li>&lt;p&gt;Some verbs take two objects (a direct object and an indirect object). These can be made passive in two ways: (1) Make the indirect object the subject: Active — 'She gave me a book.' → Passive — 'I was given a book (by her).' (2) Make the direct object the subject: Active — 'She gave me a book.' → Passive — 'A book was given to me (by her).' Both are correct, but the version with the person as subject is more common in everyday English. Other double-object verbs: give, show, tell, send, offer, lend, promise, teach, hand, pass.&lt;/p&gt;</li><li>&lt;h2&gt;Impersonal Passive&lt;/h2&gt;</li><li>&lt;p&gt;The &lt;b&gt;impersonal passive&lt;/b&gt; is used with reporting verbs (say, think, believe, know, consider, expect, report) in structures like: 'It is said that...' or 'He is said to...' Active reporting: 'People say that he is rich.' → Passive form 1: 'It is said that he is rich.' → Passive form 2: 'He is said to be rich.' This is a formal structure common in news reports and academic writing. Similarly: 'People believe that she won the prize' → 'It is believed that she won the prize' / 'She is believed to have won the prize.' NEB exams frequently test this transformation.&lt;/p&gt;</li><li>&lt;h2&gt;Causative Passive&lt;/h2&gt;</li><li>&lt;p&gt;The &lt;b&gt;causative passive&lt;/b&gt; uses the structure: &lt;b&gt;subject + have/get + object + past participle&lt;/b&gt;. It means someone causes something to be done, not necessarily doing it themselves. Example: 'I had my hair cut' (someone cut my hair, not I cut it). 'She got her car repaired' (a mechanic repaired it). This is different from the simple passive 'I was cut' (someone cut me). The causative passive emphasises that the subject arranged for the action to be performed by another person. Common causative verbs: have, get, make.&lt;/p&gt;</li><li>&lt;h2&gt;Passive with Phrasal Verbs&lt;/h2&gt;</li><li>&lt;p&gt;When a verb is followed by a preposition or adverb (a &lt;b&gt;phrasal verb&lt;/b&gt;), the preposition/adverb must be retained in the passive. Example: Active — 'They looked after the children.' → Passive — 'The children were looked after (by them).' Active — 'Someone broke into the house.' → Passive — 'The house was broken into (by someone).' Active — 'The teacher pointed out the mistake.' → Passive — 'The mistake was pointed out (by the teacher).' The particle/preposition cannot be dropped — 'The house was broken' changes the meaning entirely.&lt;/p&gt;</li><li>&lt;h2&gt;Verbs That Are Rarely Used in Passive&lt;/h2&gt;</li><li>&lt;p&gt;Some verbs are rarely or never used in the passive voice, even though they are transitive. These include: &lt;b&gt;have&lt;/b&gt; (possession), &lt;b&gt;fit&lt;/b&gt;, &lt;b&gt;suit&lt;/b&gt;, &lt;b&gt;resemble&lt;/b&gt;, &lt;b&gt;cost&lt;/b&gt;, &lt;b&gt;worth&lt;/b&gt;, &lt;b&gt;weigh&lt;/b&gt; (when expressing measurement), &lt;b&gt;lack&lt;/b&gt;, &lt;b&gt;own&lt;/b&gt;, &lt;b&gt;become&lt;/b&gt;. For example: 'She has a car' — we do not normally say 'A car is had by her.' 'This shirt fits me' — we do not say 'I am fit by this shirt.' Students should be aware of these exceptions when practising passive transformations.&lt;/p&gt;</li><li>&lt;h2&gt;When to Use Passive Voice&lt;/h2&gt;</li><li>&lt;p&gt;Passive voice is used when: (1) The doer is unknown — 'My bicycle was stolen.' (2) The doer is obvious or unimportant — 'The bridge was built in 1990.' (3) The action is more important than the doer — 'Rice is grown in Nepal.' (4) In formal/scientific writing — 'The experiment was conducted under controlled conditions.' (5) To be tactful or avoid blaming — 'Mistakes were made' (instead of 'You made mistakes'). While active voice is generally preferred for clarity, passive voice has legitimate and important uses in English.&lt;/p&gt;</li><li>&lt;h2&gt;When NOT to Use Passive Voice&lt;/h2&gt;</li><li>&lt;p&gt;Passive voice should be avoided when: (1) The sentence becomes awkward or unclear — 'The ball was hit by the boy' is fine, but 'A letter was being written by me while I was being interrupted by him' is clumsy. (2) The doer is important and known — use active: 'Shakespeare wrote Hamlet' (not 'Hamlet was written by Shakespeare' unless the focus is on the play). (3) The passive makes the sentence unnecessarily long and wordy. (4) In informal writing, where direct, active sentences are more natural and engaging. Active voice is almost always stronger and clearer.&lt;/p&gt;</li><li>&lt;h2&gt;Common Passive Voice Errors&lt;/h2&gt;</li><li>&lt;p&gt;Common errors include: (1) Wrong form of 'be': 'The letter was wrote' (wrong) → 'The letter was written' (right). (2) Omitting the past participle: 'The work is being do' (wrong) → 'The work is being done' (right). (3) Using intransitive verbs: 'He was died yesterday' (wrong — 'die' is intransitive). (4) Wrong tense of 'be': 'The book has been wrote' (wrong) → 'The book has been written' (right). (5) Keeping the original subject: 'By me was written a letter' (wrong word order) → 'A letter was written by me' (right). Regular practice prevents these errors.&lt;/p&gt;</li><li>&lt;h2&gt;Exclamatory and Interrogative Sentences in Passive&lt;/h2&gt;</li><li>&lt;p&gt;Exclamatory sentences can be converted to passive: Active — 'What a beautiful flower you have picked!' → Passive — 'What a beautiful flower has been picked by you!' Interrogative sentences: Active — 'Did you lock the door?' → Passive — 'Was the door locked by you?' Active — 'Who wrote this poem?' → Passive — 'By whom was this poem written?' (formal) or 'Who was this poem written by?' (informal). Note: When the active subject is 'who' (asking about the doer), the passive question asks 'by whom' (asking about the agent). This is a favourite NEB exam transformation.&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>grammar</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>grammar</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

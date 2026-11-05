@@ -1,0 +1,179 @@
+<!doctype html><html><head><meta charset="utf-8"><title>chemistry-of-metals.rail</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Chemistry  /  Chemistry Of Metals</div>
+    <h1 class="doc">chemistry-of-metals.rail</h1>
+    <div class="meta"><span>Class 11</span><span>Chemistry</span><span>Chemistry Of Metals</span></div>
+  </header>
+  <section class="field"><h2>Schema</h2><p>home-rail/v1</p></section>
+<section class="field"><h2>Draft</h2><p><code>false</code></p></section>
+<section class="field"><h2>Class SLUG</h2><p>class-11-notes</p></section>
+<section class="field"><h2>Subject SLUG</h2><p>chemistry</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>chemistry-of-metals</p></section>
+<section class="field"><h2>Unit Title</h2><p>Chemistry of Metals</p></section>
+<section class="field"><h2>Syllabus Topics</h2><ul><li>Metals and metallurgical principles: definition of metallurgy and its types (hydrometallurgy, pyrometallurgy, electrometallurgy)</li><li>Introduction of ores; gangue or matrix, flux and slag, alloy and amalgam</li><li>General principles of extraction of metals: concentration, calcination and roasting, smelting, carbon reduction, thermite and electrochemical reduction</li><li>Refining of metals (poling and electro-refinement)</li><li>Alkali metals: general characteristics of alkali metals</li><li>Sodium: extraction from Down's process, properties (action with oxygen, water, acids, nonmetals and ammonia) and uses</li><li>Sodium hydroxide: properties (precipitation reaction and action with carbon monoxide) and uses</li><li>Sodium carbonate: properties (action with CO2, SO2, water, precipitation reactions) and uses</li><li>Alkaline earth metals: general characteristics of alkaline earth metals</li><li>Molecular formula and uses of quick lime, bleaching powder, magnesia, plaster of paris and epsom salt</li><li>Solubility of hydroxides, carbonates and sulphates of alkaline earth metals (general trend with explanation)</li><li>Stability of carbonate and nitrate of alkaline earth metals (general trend with explanation)</li></ul></section>
+<section class="field"><h2>Source</h2><p>platform</p></section>
+<section class="field"><h2>Agent Notes</h2><p>Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.</p></section>
+<section class="field"><h2>Card</h2><dl class="obj"><div class="kv"><dt>Tag</dt><dd><p>Metals</p></dd></div><div class="kv"><dt>Title</dt><dd><p>Down's process — why sodium needs electricity, not carbon</p></dd></div><div class="kv"><dt>Href</dt><dd><p>/class-11-notes/chemistry</p></dd></div><div class="kv"><dt>Icon</dt><dd><p>Highlighter</p></dd></div><div class="kv"><dt>Stat Key</dt><dd><p>pyq:chemistry</p></dd></div></dl></section>
+<section class="field"><h2>Rows</h2><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Concept</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Extraction follows reactivity: carbon reduces middle ores (roasted sulphides, calcined carbonates), while Na/Al sit above carbon in the series — only electrolysis (electrometallurgy) rips them free. Down's cell electrolyses fused NaCl (with CaCl₂ to lower the melt point); cathode: Na⁺ + e⁻ → Na, anode: 2Cl⁻ → Cl₂ + 2e⁻. Refining (poling, electrorefining) then purifies; flux/slag chemistry floats gangue away.</p></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Formula</p></dd></div><div class="kv"><dt>Kind</dt><dd><p>formula</p></dd></div><div class="kv"><dt>Text</dt><dd><p>reactivity ladder decides: K Na Ca Mg Al | (C) | Zn Fe | Sn Pb | (H) | Cu Ag Au — above C: electrolysis only  ·  Down's: 2NaCl(fused) → 2Na + Cl₂ (cathode steel, anode graphite)  ·  carbon reduction: MO + C → M + CO (middle metals)  ·  thermite: Fe₂O₃ + 2Al → 2Fe + Al₂O₃</p></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Conditions</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Down's needs FUSED (molten) NaCl — aqueous solution would discharge H₂ instead (water reduces more easily than Na⁺). Carbon reduction needs the oxide below carbon's line on the Ellingham diagram at furnace T. Roasting (sulphides, in air) vs calcination (carbonates, no air) split by ore type.</p></dd></div></dl></div></div><div class="item"><span class="idx">4.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Special cases</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Aluminium ignores carbon for the same reason — Hall-Héroult electrolyses alumina in cryolite instead (NEB 2022). Sodium explodes in water (H₂ + heat), forms peroxide with excess O₂, and gives blue solutions in liquid ammonia (solvated electrons). Bleaching powder = CaOCl₂, plaster of Paris = CaSO₄·½H₂O, Epsom = MgSO₄·7H₂O.</p></dd></div></dl></div></div><div class="item"><span class="idx">5.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Solved</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Why not carbon for aluminium? Al sits above carbon in the reactivity series — carbon cannot reduce Al₂O₃ (ΔG positive); only electrolysis works: dissolve alumina in molten cryolite, electrolyse → Al at cathode, CO/CO₂ at the graphite anode (NEB 2022, 3-mark pattern, mirrored by the Down's 5-marker).</p></dd></div></dl></div></div><div class="item"><span class="idx">6.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Limitation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Reactivity-series order is for standard aqueous conditions — high-T Ellingham crossings (e.g. Mg reducing others) break the ladder. Electrolysis is energy-hungry (aluminium's cost is electricity). Bauxite impurities demand Bayer refining before Hall-Héroult even starts.</p></dd></div></dl></div></div><div class="item"><span class="idx">7.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Derivation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Down's cell logic: melt NaCl → mobile Na⁺/Cl⁻; apply potential above decomposition voltage; cathode reduces Na⁺ (liquid Na floats, collected), anode oxidises Cl⁻ (Cl₂ piped off). CaCl₂/CaF₂ addition lowers mp from 801 °C toward ~600 °C — less heat, less Na vaporisation loss. Sodium's violent water reaction (2Na + 2H₂O → 2NaOH + H₂) proves its series position.</p></dd></div></dl></div></div><div class="item"><span class="idx">8.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Shortcut</p></dd></div><div class="kv"><dt>Text</dt><dd><p>'Explain extraction of X' → locate X vs carbon: above → electrolysis (name the cell + electrodes + reactions), middle → roast/calcine + carbon, below → heat alone. Down's 5-marker: cell + why fused + CaCl₂ role + both electrode reactions.</p></dd></div></dl></div></div><div class="item"><span class="idx">9.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Board question</p></dd></div><div class="kv"><dt>Text</dt><dd><p>NEB 2023 (5): Down's process for sodium extraction. NEB 2023 (4): Downs vs MgCl₂-electrolysis comparison. NEB 2022 (3): why carbon fails for aluminium (cryolite electrolysis instead).</p></dd></div></dl></div></div></section>
+<section class="field"><h2>Key Points</h2><ul><li>Chemistry Of Metals is a core concept in chemistry of metals.</li><li>Understanding chemistry of metals requires knowing its definition, conditions, and limitations.</li><li>Chemistry Of Metals has direct applications in problem-solving and exam questions.</li><li>Key formulas and relationships associated with chemistry of metals must be memorized precisely.</li><li>Chemistry Of Metals connects to neighbouring topics within chemistry of metals and broader chemistry.</li><li>Common exam patterns test the ability to define, illustrate, and differentiate chemistry of metals.</li><li>Practical examples solidify understanding of Chemistry Of Metals and its real-world relevance.</li><li>Misconceptions about chemistry of metals often arise from confusing it with similar concepts.</li><li>Chemistry Of Metals follows systematic rules that can be applied step-by-step.</li><li>Review of chemistry of metals should include solved problems, practice questions, and self-assessment.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Chemistry Of Metals is defined by its specific characteristics within chemistry of metals.</li><li>The conditions under which chemistry of metals applies are as important as the concept itself.</li><li>Chemistry Of Metals can be understood through both theoretical explanation and practical examples.</li><li>Examiners frequently test chemistry of metals through application-based and comparison questions.</li><li>A clear grasp of Chemistry Of Metals builds the foundation for advanced topics in chemistry of metals.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>When studying chemistry of metals, always note the exceptions alongside the general rule.</li><li>Chemistry Of Metals should be reviewed with at least one worked example per sub-point.</li><li>Link chemistry of metals back to prior knowledge in chemistry of metals for deeper retention.</li><li>Practice past NEB board questions on Chemistry Of Metals to understand expected answer format.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Basic illustration of Chemistry Of Metals: apply the standard definition to a simple case.</li><li>Intermediate example: combine chemistry of metals with a related concept from chemistry of metals.</li><li>Exam-style problem: solve a question involving Chemistry Of Metals under time pressure.</li><li>Real-world connection: show how Chemistry Of Metals appears in everyday chemistry or industry.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Define Chemistry Of Metals and state two conditions required for it to occur.</li><li>Differentiate Chemistry Of Metals from the most commonly confused concept in chemistry of metals.</li><li>Solve a numerical or structural problem involving Chemistry Of Metals.</li><li>List three applications of Chemistry Of Metals in modern chemistry.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Write a one-paragraph summary of Chemistry Of Metals without looking at notes.</li><li>Draw a labelled diagram or flowchart illustrating Chemistry Of Metals.</li><li>Create three flashcards covering definition, formula, and limitation of Chemistry Of Metals.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Chemistry Of Metals is part of the NEB Class 11 chemistry of metals syllabus.</li><li>Every concept in chemistry of metals builds upon definitions established earlier in the chapter.</li><li>Chemistry Of Metals is assessed through both short-answer and long-answer board questions.</li><li>Understanding Chemistry Of Metals improves performance across the entire chemistry of metals unit.</li><li>Revision of Chemistry Of Metals should happen at least twice before the final exam.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Students often confuse Chemistry Of Metals with closely related concepts in chemistry of metals — focus on distinguishing features.</li><li>The scope of Chemistry Of Metals is sometimes overstated; remember its precise boundaries.</li><li>Applying Chemistry Of Metals outside its stated conditions leads to incorrect results.</li><li>Mixing up terminology between Chemistry Of Metals and neighbouring topics causes avoidable exam errors.</li></ul></section>
+<section class="field"><h2>Mcs</h2><ul><li>Which of the following best defines Chemistry Of Metals? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A</li><li>Chemistry Of Metals is primarily studied under which branch of chemistry of metals? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic</li><li>A common misconception about Chemistry Of Metals is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to chemistry of metals — Answer: B</li><li>Which example correctly illustrates Chemistry Of Metals? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A</li><li>Chemistry Of Metals differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><ul><li>3D rotation model showing the spatial arrangement relevant to Chemistry Of Metals.</li><li>Step-by-step animated derivation of the key relationship in Chemistry Of Metals.</li><li>Interactive toggle between correct and incorrect representations of Chemistry Of Metals.</li></ul></section>
+<section class="field"><h2>Motion Graphics</h2><ul><li>Animated flowchart showing decision process for identifying Chemistry Of Metals.</li><li>Side-by-side comparison animation of Chemistry Of Metals vs commonly confused concept.</li><li>Timelapse build-up of Chemistry Of Metals from prerequisite knowledge in chemistry of metals.</li></ul></section>
+<section class="field"><h2>Visual Type</h2><ul><li>Labelled structural diagram for Chemistry Of Metals</li><li>Comparison table: Chemistry Of Metals vs related concepts in chemistry of metals</li><li>Step-by-step worked example layout for Chemistry Of Metals</li></ul></section>
+<section class="field"><h2>Summary</h2><ul><li>Chemistry Of Metals is a fundamental concept in chemistry of metals that describes specific chemical behaviour under defined conditions.</li><li>Mastering Chemistry Of Metals involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.</li><li>This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.</li><li>Consistent revision of Chemistry Of Metals alongside related concepts in chemistry of metals ensures strong conceptual clarity and exam readiness.</li></ul></section>
+  <nav class="pager"><a href="chemistry-of-metals--12-stability-of-carbonate-and-nitrate-of-al-gxbasf.rail.html" title="chemistry-of-metals--12-stability-of-carbonate-and-nitrate-of-al-gxbasf.rail">‹ chemistry-of-metals--12-stability-of-carbonat…</a><a class="mid" href="../../../../../_subjects/class-11-chemistry.html">Chemistry</a><span></span></nav>
+</div></body></html>

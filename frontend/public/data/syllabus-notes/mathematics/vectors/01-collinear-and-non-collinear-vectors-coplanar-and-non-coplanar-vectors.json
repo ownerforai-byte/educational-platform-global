@@ -1,0 +1,83 @@
+{
+  "title": "Collinear and non-collinear vectors, coplanar and non-cop…",
+  "unitSlug": "vectors",
+  "topicSlug": "collinear-and-non-collinear-vectors-coplanar-and-non-coplanar-vectors",
+  "topicTitle": "Collinear and non-collinear vectors, coplanar and non-coplanar vectors",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Fact.** Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).",
+    "**Fact.** Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).",
+    "**Fact.** Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative).",
+    "# Collinear and non-collinear vectors, coplanar and non-coplanar vectors\n\n## 1. Introduction and motivation\nWhat the tool **Collinear and non-collinear vectors** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Vectors fill pass.\n\n## 2. Definitions and theorems\n### Collinear and non-collinear vectors\n### coplanar and non-coplanar vectors\n\nEach result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).",
+    "## 3. Formula sheet\n**Table 1 — Formula sheet**\n\n| Formula | Symbols | Validity condition | Where used |\n| --- | --- | --- | --- |\n\nComplete for the topic; every row carries its validity condition (§3.1).",
+    "## 4. Methods and standard forms\n**Table 2 — Theorem and method sheet**\n\n| Result or method | Hypotheses | Worked example | If the condition is dropped |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |",
+    "## 5. Figures and graphs\n- **F1** — Collinear and non-collinear vectors — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)\n- **F2** — Collinear and non-collinear vectors — second figure: construction, region or comparison (authored SVG — English labels)\n- **F3** — Collinear and non-collinear vectors — curated reference figure where it beats SVG (curated external — license recorded at fill)\n\nAuthored figures first (§3.3): every graph plotted from the same equation the text uses.",
+    "## 6. Worked examples\n≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.\n\n## 7. Traps and common mistakes\nThe classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).",
+    "## 8. Exam Zone, practice and textbook exercises\nNEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).\n\nTextbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces."
+  ],
+  "confusion": [
+    "❌ answer with no steps → ✅ show each step and box the result.",
+    "❌ skip the key fact → ✅ vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).."
+  ],
+  "bounds": [
+    "Limit to remember: vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²)."
+  ],
+  "practice": [
+    "one worked example for \"Collinear and non-collinear vectors, coplanar and non-cop…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).",
+    "Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).",
+    "Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative)."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Collinear and non-collinear vectors, coplanar and non-cop…\" with one example.",
+    "compare \"Collinear\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Collinear and non-collinear vectors, coplanar and non-cop…\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "a·b = a₁b₁+a₂b₂+a₃b₃",
+    "|a×b| = |a||b|sinθ",
+    "|a| = √(a²+b²+c²)"
+  ],
+  "numericals": [
+    "Use  a·b = a₁b₁+a₂b₂+a₃b₃  — pick reasonable values, solve, and check the units.",
+    "Use  |a×b| = |a||b|sinθ  — pick reasonable values, solve, and check the units.",
+    "Use  |a| = √(a²+b²+c²)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Collinear",
+    "• Non-collinear vectors",
+    "• Coplanar",
+    "• Non-coplanar vectors"
+  ],
+  "summary": "Collinear and non-collinear vectors, coplanar and non-cop… (Vectors, Mathematics, class-11-notes) covers Collinear, non-collinear vectors, coplanar. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Collinear and non-collinear vectors, coplanar and non-cop…\"?",
+      "options": [
+        "Collinear",
+        "Non-collinear vectors",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Collinear",
+      "explanation": "Collinear is listed among the official sub-ideas of Collinear and non-collinear vectors, coplanar and non-cop…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Collinear and non-collinear vectors, coplanar and non-cop…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ]
+}

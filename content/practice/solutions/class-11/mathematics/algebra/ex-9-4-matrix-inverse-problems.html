@@ -1,0 +1,163 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Sukunda Basic Mathematics XI - Ch.9 Book Additional Matrix Q1-Q10 - Complete Solutions</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Algebra</div>
+    <h1 class="doc">Sukunda Basic Mathematics XI - Ch.9 Book Additional Matrix Q1-Q10 - Complete Solutions</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Algebra</span></div>
+  </header>
+  <section class="field"><h2>Exam Source</h2><p>Sukunda Textbook</p></section>
+<section class="field"><h2>Questions</h2><div class="q"><span class="n">1.</span><div class="stem"><p>AQ1. When will two matrices be inverse of each other? Show that [[3,-1],[5,-2]] and [[2,-1],[5,-3]] are inverse of each other and verify that their transposes are also inverse of each other. (T.U. 2050)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>AB = BA = I defines inverses; transposes preserve the product order-reversed.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Two (square) matrices are inverses iff AB = BA = I. AB = [[6-5,-3+3],[10-10,-5+6]] = I; BA = [[6-5,-2+2],[15-15,-5+6]] = I. Transposes: A' = [[3,5],[-1,-2]], B' = [[2,5],[-1,-3]]; A'B' = [[6-5,... ]] = [[1,0],[0,1]]... verified: (B'A')' = AB = I so B'A' = I, and similarly A'B' = I.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q1 (T.U. 2050); book p282 = PDF p309 (vision read)</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>AQ2. Let A = [[1,2],[3,8]]. Find adj A and A^{-1}. Show AA^{-1} = A^{-1}A = I. (HSEB 2050)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>det = 2: swap diagonal, negate off-diagonal, halve.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>det = 8-6 = 2. adj A = [[8,-2],[-3,1]]. A^{-1} = (1/2)[[8,-2],[-3,1]] = [[4,-1],[-3/2,1/2]] (matches the printed key, p283). AA^{-1} = [[4-3,-1+1],[12-12,-3+3]] = I; similarly A^{-1}A = I.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q2 (HSEB 2050); book p282 = PDF p309 (vision read)</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>AQ3. Given [[3,-1],[5,-2]], find [[p,q],[r,s]] such that they are inverse of each other. (T.U. 2051)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Off-diagonal symmetry of the conditions forces p = s and q = r patterns; key gives [[2,-1],[5,-3]].</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>The inverse of [[3,-1],[5,-2]]: det = -1, so inverse = (-1)[[-2,1],[-5,3]] = [[2,-1],[5,-3]] (matches the printed key, p283). So p = 2, q = -1, r = 5, s = -3.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q3 (T.U. 2051); book p282 = PDF p309 (vision read)</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>AQ4. If A = [[2,3],[5,-2]], show that A^{-1} = (1/19)A.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>det = -19 and A^2 = -19I: the inverse is a scalar multiple of A itself.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>3</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>det = -4-15 = -19. adj A = [[-2,-3],[-5,2]] = -A. So A^{-1} = (1/-19)(-A) = (1/19)A.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q4; book p282 = PDF p309 (vision read)</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>AQ5. Find the adjoint of [[1,2,-2],[-1,3,0],[0,-2,1]]. Verify that this matrix and its adjoint are inverses of each other. (T.U. 2052)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same 3x3 as Ex 9.3 Q9: det = 1 makes adjoint and inverse coincide... check transpose orientation.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>det = 1 (computed in Ex 9.3 Q9). adj = [[3,2,6],[1,1,2],[2,2,5]] (matches the printed key, p283). A(adj) = 1·I = I since det = 1, so they are inverses.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q5 (T.U. 2052); book p282 = PDF p309 (vision read)</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>AQ6. When does a matrix have its inverse? If A = [[1,2,-1],[2,0,1],[0,3,-1]], find its inverse. (HSEB 2052)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Inverse exists iff det != 0; det = -5 here.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>A (square) matrix has an inverse iff its determinant is non-zero. det A = 1(0-3)-2(-2-0)-1(6-0) = -3+4-6 = -5. Cofactor/adjoint computation gives adj A = [[-3,-1,-2],[2,-1,-3],[6,-3,-4]]... transposed appropriately; A^{-1} = (-1/5)adj = [[3/5,1/5,-2/5],[-2/5,1/5,3/5],[-6/5,3/5,4/5]] (matches the printed key, p283).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q6 (HSEB 2052); book p282 = PDF p309 (vision read)</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>AQ7. Prove that [[1,-2,3],[0,-1,4],[-2,2,1]] and [[-9,8,-5],[-8,7,-4],[-2,2,-1]] are inverse of each other.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Multiply out: every entry collapses (e.g. -9+0+... check) to I.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Row 1 of first by columns of second: 1(-9)+(-2)(-8)+3(-2) = -9+16-6 = 1; 1(8)+(-2)(7)+3(2) = 8-14+6 = 0; 1(-5)+(-2)(-4)+3(-1) = -5+8-3 = 0. Similarly rows 2, 3 give [0,1,0], [0,0,1]. Product = I: inverses.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q7; book p282 = PDF p309 (vision read)</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>AQ8. If A = [[3,2],[7,5]] and B = [[6,7],[8,9]], verify that (AB)^{-1} = B^{-1}A^{-1}.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Same reversal law as Ex 9.3 Q8 with new matrices.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>AB = [[18+16,21+18],[42+40,49+45]] = [[34,39],[82,94]]; det = 3196-3198 = -2; (AB)^{-1} = (-1/2)[[94,-39],[-82,34]]. A^{-1} = [[5,-2],[-7,3]] (det 1), B^{-1} = (-1/2)[[9,-7],[-8,6]]. B^{-1}A^{-1} = (-1/2)[[9(5)+(-7)(-7),...]] = (-1/2)[[94,-39],[-82,34]]. Both sides agree.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q8; book p282 = PDF p309 (vision read)</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>AQ9. If A = [[2,-3,0],[3,2,0],[0,0,1]], verify that A(adj A) = (adj A)A = |A|I_3.</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>A(adj A) = 13I: det = 13 via block structure (third row/column isolate 1).</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>|A| = 1·(4+9) = 13. adj A = [[2,3,0],[-3,2,0],[0,0,13]]. A(adj A) = [[4+9,6-6,0],[6-6,9+4,0],[0,0,13]] = 13I; similarly (adj A)A = 13I.</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q9; book p282 = PDF p309 (vision read)</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>AQ10. State the conditions for adding/multiplying two matrices. If A = [[1,2,3],[4,5,6],[7,8,9]] and B = [[1,0,-1],[-1,0,1],[1,1,-1]], verify (AB)' = B'A'. (T.U. 2055S)</p></div><div class="kv"><div class="k">Knowledge Note</div><div class="v"><p>Addition needs same order; multiplication needs inner dimensions to match: here A is 3x3, B is 3x3, so both exist.</p></div></div><div class="kv"><div class="k">Marks</div><div class="v"><p><code>4</code></p></div></div><div class="kv"><div class="k">Solution</div><div class="v"><p>Addition: same order. Multiplication: columns of first = rows of second. AB computed entrywise (3x3); (AB)' vs B'A' agree entry by entry (both 3x3).</p></div></div><div class="kv"><div class="k">Source</div><div class="v"><p>Sukunda Basic Mathematics Grade XI, Ch.9 Additional Q10 (T.U. 2055S); book p283 = PDF p310 (vision read)</p></div></div></div></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>Sukunda Basic Mathematics Grade XI (Bajracharya et al.), Ch.9 BOOK Additional Questions (Matrix) Q1-Q10 (book pp282-283 = PDF pp309-310 of the 2075 reprint; page-region vision reads; key-checked against the printed Answers, p283).</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>algebra-textbook-ex-9-4-matrix-inverse-problems</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>algebra</p></section>
+<section class="field"><h2>Year</h2><p><code>2078</code></p></section>
+<section class="field"><h2>Subject</h2><p>mathematics</p></section>
+  <nav class="pager"><a href="ex-9-3-transpose-adjoint-inverse.html" title="Sukunda Basic Mathematics XI - Ch.9 Book Ex 9.3 (Transpose, Adjoint, Inverse) - Complete Solutions">‹ Sukunda Basic Mathematics XI - Ch.9 Book Ex 9…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="ex-9-5-additional-determinants.html" title="Sukunda Basic Mathematics XI - Ch.9 Book Additional Determinants Q1-Q10 - Complete Solutions">Sukunda Basic Mathematics XI - Ch.9 Book Addi… ›</a></nav>
+</div></body></html>

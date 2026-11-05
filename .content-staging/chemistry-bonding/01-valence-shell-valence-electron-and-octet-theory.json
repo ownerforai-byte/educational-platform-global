@@ -1,0 +1,251 @@
+{
+  "title": "Valence Shell, Valence Electron and Octet Theory",
+  "unitSlug": "chemical-bonding-and-shapes-of-molecules",
+  "topicSlug": "valence-shell-valence-electron-and-octet-theory",
+  "topicTitle": "Valence shell, valence electron and octet theory",
+  "relevance": 100,
+  "notes": [
+    "## 1. Why atoms bond at all\nTwo isolated atoms attract each other weakly (van der Waals) and strongly repel once their electron clouds overlap. Between those limits there is a distance at which the total energy is a minimum — the **bond length** — and the depth of that minimum is the **bond energy**. A bond forms because the combined system is lower in energy than the separated atoms, and it is strongest when the balance of attraction and repulsion is best.\n\n**The hook.** Every material decision in daily life is a bonding decision. Cement sets because calcium silicates hydrate and lock together; steel is strong because iron atoms share delocalised electrons; graphite writes because its layers are held by weak forces while the layers themselves are covalent sheets. Knowing *which* of the three bond types is present tells you hardness, melting point and conductivity before you measure anything.",
+    "## 2. Valence shell, valence electrons and core electrons\n| Term | Definition | Example (Cl, Z = 17) |\n| --- | --- | --- |\n| Shell | a principal energy level, labelled by *n* | n = 1, 2, 3 |\n| Valence shell | the outermost occupied shell | n = 3 |\n| Valence electrons | electrons in the valence shell | 7 (3s²3p⁵) |\n| Core electrons | all the rest | 10 (1s²2s²2p⁶) |\n\n**Counting rule for main-group elements.** The number of valence electrons equals the group number for groups 1–2, and group number − 10 for groups 13–18.\n\n| Element | Z | Configuration | Valence electrons |\n| --- | --- | --- | --- |\n| Na | 11 | [Ne]3s¹ | 1 |\n| Mg | 12 | [Ne]3s² | 2 |\n| Al | 13 | [Ne]3s²3p¹ | 3 |\n| C | 6 | [He]2s²2p² | 4 |\n| N | 7 | [He]2s²2p³ | 5 |\n| O | 8 | [He]2s²2p⁴ | 6 |\n| Cl | 17 | [Ne]3s²3p⁵ | 7 |\n| Ar | 18 | [Ne]3s²3p⁶ | 8 |\n\n**Why only the valence electrons matter.** Core electrons are held too tightly to be shared or transferred in ordinary chemistry — the ionisation energy of a 1s electron is orders of magnitude larger than that of a valence electron. The valence count therefore predicts valency directly: Na 1, Mg 2, Al 3, C 4, N 3 (in NH₃), O 2, Cl 1.",
+    "## 3. Lewis symbols and the statement of the octet rule\nA **Lewis symbol** writes the element's symbol with its valence electrons as dots around it, arranged on the four sides (one per side before pairing). Na•, •Mg•, ••O••, •Cl••• (seven dots).\n\n**Octet rule.** *Atoms tend to gain, lose or share electrons so that each atom ends up with eight electrons in its valence shell, the same configuration as the nearest noble gas.* Hydrogen and helium are satisfied by two, not eight.\n\n**Why eight and not eighteen.** For the elements in the first three periods the valence shell has one s and three p orbitals, holding 2 + 6 = 8 electrons, and the next available subshell (3d, 4s) is much higher in energy. Eight is therefore the largest closed-shell arrangement these atoms can reach without promotion — the rule is a consequence of orbital capacity, not an independent law.",
+    "```svg\n<svg viewBox=\"0 0 900 640\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Sodium and chlorine shells, with the valence electrons highlighted\">\n  <rect width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n  <text x=\"450\" y=\"34\" font-family=\"Georgia,serif\" font-size=\"23\" text-anchor=\"middle\" fill=\"#111\">The valence shell decides everything that follows</text>\n  <text x=\"450\" y=\"58\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#555\">Na gives one electron away; Cl needs one. Both end with eight electrons outside.</text>\n\n  <!-- sodium -->\n  <circle cx=\"220\" cy=\"240\" r=\"30\" fill=\"#ef4444\"/>\n  <text x=\"220\" y=\"246\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#fff\">+11</text>\n  <circle cx=\"220\" cy=\"240\" r=\"58\" fill=\"none\" stroke=\"#9ca3af\" stroke-width=\"1.6\"/>\n  <circle cx=\"220\" cy=\"240\" r=\"92\" fill=\"none\" stroke=\"#9ca3af\" stroke-width=\"1.6\"/>\n  <circle cx=\"220\" cy=\"240\" r=\"126\" fill=\"none\" stroke=\"#1d4ed8\" stroke-width=\"2.4\"/>\n  <circle cx=\"346\" cy=\"240\" r=\"7\" fill=\"#1d4ed8\"/>\n  <text x=\"220\" y=\"120\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">2, 8, 1</text>\n  <text x=\"220\" y=\"392\" font-family=\"Georgia,serif\" font-size=\"15\" text-anchor=\"middle\" fill=\"#111\">Sodium</text>\n  <text x=\"220\" y=\"414\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#1d4ed8\">valence electron = 1</text>\n\n  <!-- chlorine -->\n  <circle cx=\"680\" cy=\"240\" r=\"30\" fill=\"#ef4444\"/>\n  <text x=\"680\" y=\"246\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#fff\">+17</text>\n  <circle cx=\"680\" cy=\"240\" r=\"58\" fill=\"none\" stroke=\"#9ca3af\" stroke-width=\"1.6\"/>\n  <circle cx=\"680\" cy=\"240\" r=\"92\" fill=\"none\" stroke=\"#9ca3af\" stroke-width=\"1.6\"/>\n  <circle cx=\"680\" cy=\"240\" r=\"126\" fill=\"none\" stroke=\"#1d4ed8\" stroke-width=\"2.4\"/>\n  <g fill=\"#1d4ed8\">\n    <circle cx=\"806\" cy=\"240\" r=\"7\"/><circle cx=\"789\" cy=\"204\" r=\"7\"/><circle cx=\"741\" cy=\"181\" r=\"7\"/>\n    <circle cx=\"707\" cy=\"199\" r=\"7\"/><circle cx=\"654\" cy=\"140\" r=\"7\"/><circle cx=\"581\" cy=\"163\" r=\"7\"/>\n    <circle cx=\"554\" cy=\"228\" r=\"7\"/>\n  </g>\n  <text x=\"680\" y=\"120\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#374151\">2, 8, 7</text>\n  <text x=\"680\" y=\"392\" font-family=\"Georgia,serif\" font-size=\"15\" text-anchor=\"middle\" fill=\"#111\">Chlorine</text>\n  <text x=\"680\" y=\"414\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#1d4ed8\">valence electrons = 7</text>\n\n  <!-- transfer arrow -->\n  <g stroke=\"#15803d\" stroke-width=\"2.4\" fill=\"none\" marker-end=\"url(#b1)\">\n    <defs><marker id=\"b1\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"5\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#15803d\"/></marker></defs>\n    <path d=\"M352 240 Q 450 180 548 228\"/>\n  </g>\n  <text x=\"450\" y=\"168\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#15803d\">one electron transferred</text>\n\n  <!-- results -->\n  <g font-family=\"Georgia,serif\" font-size=\"15\" fill=\"#111\">\n    <text x=\"220\" y=\"474\" text-anchor=\"middle\">Na⁺  (2, 8)</text>\n    <text x=\"680\" y=\"474\" text-anchor=\"middle\">Cl⁻  (2, 8, 8)</text>\n  </g>\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" fill=\"#6b7280\">\n    <text x=\"220\" y=\"498\" text-anchor=\"middle\">lost the valence electron</text>\n    <text x=\"680\" y=\"498\" text-anchor=\"middle\">gained one, now a full shell</text>\n  </g>\n  <text x=\"450\" y=\"556\" font-family=\"Georgia,serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#374151\">The octet rule is not a law of nature — it is a summary of the fact that eight electrons</text>\n  <text x=\"450\" y=\"580\" font-family=\"Georgia,serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#374151\">fill the s and p orbitals of a shell, which is the most stable arrangement available to these atoms.</text>\n</svg>\n```\n**Figure 1 — one transfer, two full shells.** Sodium's single 3s electron is in the valence shell; chlorine is one short of filling 3p. The transfer gives both atoms a noble-gas configuration, and the resulting ions attract each other — the subject of the next topic.",
+    "![Electron shell diagram of sodium showing 2, 8, 1 electrons](https://upload.wikimedia.org/wikipedia/commons/7/76/Electron_shell_011_Sodium.svg)\n\n**Figure 3 — sodium's shell diagram.** One electron outside a filled 2, 8 core: this single valence electron is what sodium's chemistry is about. *Source: Wikimedia Commons, [Electron shell 011 Sodium.svg](https://commons.wikimedia.org/wiki/File:Electron_shell_011_Sodium.svg), author Pumbaa80 (original by Greg Robson), CC BY-SA 2.0 UK — attribution and share-alike required.*",
+    "![Electron shell diagram of chlorine showing 2, 8, 7 electrons](https://upload.wikimedia.org/wikipedia/commons/9/96/Electron_shell_017_Chlorine.svg)\n\n**Figure 4 — chlorine's shell diagram.** Seven electrons in the valence shell: one short of the octet, which is why chlorine gains an electron rather than losing seven. *Source: Wikimedia Commons, [Electron shell 017 Chlorine.svg](https://commons.wikimedia.org/wiki/File:Electron_shell_017_Chlorine.svg), author Pumbaa80 (original by Greg Robson), CC BY-SA 2.0 UK — attribution and share-alike required.*",
+    "## 4. Octet completion in ionic compounds\nAn ionic compound forms when the transfer of electrons gives both partners a closed shell: the metal loses its valence electrons and the non-metal gains them.\n\n| Compound | Metal change | Non-metal change | Resulting configurations |\n| --- | --- | --- | --- |\n| NaCl | Na → Na⁺ + e⁻ | Cl + e⁻ → Cl⁻ | [Ne] and [Ar] |\n| MgO | Mg → Mg²⁺ + 2e⁻ | O + 2e⁻ → O²⁻ | [Ne] and [Ne] |\n| CaO | Ca → Ca²⁺ + 2e⁻ | O + 2e⁻ → O²⁻ | [Ar] and [Ne] |\n| Al₂O₃ | 2Al → 2Al³⁺ + 6e⁻ | 3O + 6e⁻ → 3O²⁻ | [Ne] for all five ions |\n\n**The bookkeeping examiners want.** The electrons lost must equal the electrons gained: 2 Al lose 6, so 3 O gain 6; the formula Al₂O₃ follows from that balance, not from memorisation.\n\n**The energy catch.** Sodium's ionisation energy (496 kJ mol⁻¹) is *larger* than the energy released when chlorine accepts an electron (349 kJ mol⁻¹), so forming the isolated ions costs energy. Ionic compounds exist because the lattice energy (about −787 kJ mol⁻¹ for NaCl) more than pays for it — the full accounting is the Born–Haber cycle in the next topic.",
+    "## 5. From valence electrons to a chemical formula\nValence electrons give the **valency** directly, and valency gives the formula by the criss-cross rule: write the two valencies as superscripts, swap them, and simplify.\n\n| Element | Valence e⁻ | Valency | Compound with oxygen | Reasoning |\n| --- | --- | --- | --- | --- |\n| Na | 1 | 1 | Na₂O | 1 and 2 cross: Na₂O₁ → Na₂O |\n| Mg | 2 | 2 | MgO | 2 and 2 cross and simplify |\n| Al | 3 | 3 | Al₂O₃ | 3 and 2 cross unchanged |\n| C | 4 | 4 | CO₂ | 4 and 2 simplify to 2 and 1 |\n| N | 5 | 3 (8 − 5) | N₂O₃ | nitrogen takes the electrons it needs |\n| Cl | 7 | 1 (8 − 7) | Cl₂O | one electron short, valency 1 |\n\n**Two rules that keep you out of trouble.** (i) For non-metals in groups 15–17 the valency towards metals and hydrogen is 8 − (valence electrons); towards oxygen the *group* valency (5, 6, 7) is also used, which is why both N₂O₃ and N₂O₅ exist. (ii) Transition metals have no single valency — iron gives FeCl₂ and FeCl₃ — because 3d and 4s electrons are close in energy.\n\n**Worked criss-cross.** Aluminium (valency 3) with sulphate (valency 2): Al³⁺ and SO₄²⁻ cross to Al₂(SO₄)₃, and the bracket is required because the sulphate ion is polyatomic. Forgetting the bracket is the most common lost mark in this section.",
+    "## 6. Octet completion in covalent compounds\nWhen neither atom can afford to lose electrons, both share. Each shared pair counts towards the octet of *both* atoms.\n\n| Molecule | Total valence e⁻ | Shared pairs | Lone pairs | Octet satisfied by |\n| --- | --- | --- | --- | --- |\n| H₂ | 2 | 1 | 0 | 2 electrons each (not 8) |\n| Cl₂ | 14 | 1 | 6 | 8 each |\n| H₂O | 8 | 2 | 2 | O has 8, each H has 2 |\n| NH₃ | 8 | 3 | 1 | N has 8, each H has 2 |\n| CH₄ | 8 | 4 | 0 | C has 8, each H has 2 |\n| CO₂ | 16 | 4 (two double bonds) | 4 | C has 8, each O has 8 |\n\n**The counting procedure, in three steps.** (1) Total valence electrons = sum over all atoms. (2) Join the atoms with single bonds. (3) Add the remaining electrons as lone pairs, starting on the most electronegative atoms, then convert lone pairs into shared pairs if any atom is still short of eight.\n\n**Why CO₂ needs double bonds.** Sixteen valence electrons cannot give carbon an octet with single bonds only (each C–O single bond contributes two to carbon, so carbon would have four). Sharing four electrons with each oxygen is the minimum that satisfies all three atoms.",
+    "```svg\n<svg viewBox=\"0 0 900 640\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-label=\"Lewis dot structures of five simple molecules\">\n  <rect width=\"900\" height=\"640\" fill=\"#ffffff\"/>\n  <text x=\"450\" y=\"34\" font-family=\"Georgia,serif\" font-size=\"23\" text-anchor=\"middle\" fill=\"#111\">Lewis structures: count shared pairs until each atom has eight</text>\n  <text x=\"450\" y=\"58\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"13\" text-anchor=\"middle\" fill=\"#555\">dots = lone pairs, dashes = shared pairs; H is satisfied by two</text>\n\n  <g font-family=\"Helvetica,Arial,sans-serif\" font-size=\"15\" fill=\"#111\" text-anchor=\"middle\">\n    <text x=\"150\" y=\"140\">H</text>\n    <line x1=\"172\" y1=\"135\" x2=\"212\" y2=\"135\" stroke=\"#111\" stroke-width=\"2.4\"/>\n    <text x=\"234\" y=\"140\">H</text>\n    <text x=\"192\" y=\"176\" font-size=\"12\" fill=\"#6b7280\">H₂ · 2 shared electrons</text>\n\n    <text x=\"150\" y=\"250\">Cl</text>\n    <line x1=\"178\" y1=\"245\" x2=\"218\" y2=\"245\" stroke=\"#111\" stroke-width=\"2.4\"/>\n    <text x=\"240\" y=\"250\">Cl</text>\n    <text x=\"130\" y=\"270\" font-size=\"13\" fill=\"#444\">:</text><text x=\"262\" y=\"270\" font-size=\"13\" fill=\"#444\">:</text>\n    <text x=\"192\" y=\"292\" font-size=\"12\" fill=\"#6b7280\">Cl₂ · 6 lone pairs total</text>\n\n    <text x=\"560\" y=\"140\">O</text>\n    <text x=\"512\" y=\"140\">H</text><text x=\"608\" y=\"140\">H</text>\n    <line x1=\"536\" y1=\"135\" x2=\"548\" y2=\"135\" stroke=\"#111\" stroke-width=\"2.4\"/>\n    <line x1=\"584\" y1=\"135\" x2=\"572\" y2=\"135\" stroke=\"#111\" stroke-width=\"2.4\"/>\n    <text x=\"560\" y=\"122\" font-size=\"13\" fill=\"#444\">:</text><text x=\"560\" y=\"160\" font-size=\"13\" fill=\"#444\">:</text>\n    <text x=\"560\" y=\"188\" font-size=\"12\" fill=\"#6b7280\">H₂O · 2 lone pairs on O</text>\n\n    <text x=\"150\" y=\"400\">N</text>\n    <text x=\"106\" y=\"400\">H</text><text x=\"150\" y=\"356\">H</text><text x=\"194\" y=\"400\">H</text>\n    <line x1=\"130\" y1=\"395\" x2=\"142\" y2=\"395\" stroke=\"#111\" stroke-width=\"2.4\"/>\n    <line x1=\"154\" y1=\"378\" x2=\"154\" y2=\"368\" stroke=\"#111\" stroke-width=\"2.4\"/>\n    <line x1=\"170\" y1=\"395\" x2=\"158\" y2=\"395\" stroke=\"#111\" stroke-width=\"2.4\"/>\n    <text x=\"176\" y=\"422\" font-size=\"13\" fill=\"#444\">:</text>\n    <text x=\"150\" y=\"448\" font-size=\"12\" fill=\"#6b7280\">NH₃ · 1 lone pair</text>\n\n    <text x=\"560\" y=\"400\">C</text>\n    <text x=\"516\" y=\"400\">H</text><text x=\"560\" y=\"356\">H</text><text x=\"604\" y=\"400\">H</text><text x=\"560\" y=\"440\">H</text>\n    <line x1=\"536\" y1=\"395\" x2=\"548\" y2=\"395\" stroke=\"#111\" stroke-width=\"2.4\"/>\n    <line x1=\"564\" y1=\"378\" x2=\"564\" y2=\"368\" stroke=\"#111\" stroke-width=\"2.4\"/>\n    <line x1=\"584\" y1=\"395\" x2=\"572\" y2=\"395\" stroke=\"#111\" stroke-width=\"2.4\"/>\n    <line x1=\"564\" y1=\"422\" x2=\"564\" y2=\"432\" stroke=\"#111\" stroke-width=\"2.4\"/>\n    <text x=\"560\" y=\"472\" font-size=\"12\" fill=\"#6b7280\">CH₄ · 4 shared pairs, no lone pair</text>\n  </g>\n\n  <text x=\"450\" y=\"536\" font-family=\"Georgia,serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#374151\">Rule of thumb: total valence electrons = sum over atoms; place pairs on the least electronegative atom,</text>\n  <text x=\"450\" y=\"560\" font-family=\"Georgia,serif\" font-size=\"14\" text-anchor=\"middle\" fill=\"#374151\">then share until every atom (except H) has eight. The next topic draws these for real molecules.</text>\n  <text x=\"450\" y=\"596\" font-family=\"Helvetica,Arial,sans-serif\" font-size=\"12\" text-anchor=\"middle\" fill=\"#6b7280\">Lone pairs are drawn enlarged for print legibility.</text>\n</svg>\n```\n**Figure 2 — the octet rule in action.** Every structure above is built by one procedure: count the valence electrons, pair them up, then share until each atom reaches eight (two for hydrogen). The lone pairs shown here are the ones that decide molecular shape in the VSEPR topic.",
+    "## 7. Where the octet rule fails\nThe rule is a useful summary, not an invariable law. Four groups of exceptions are examinable.\n\n| Type | Example | Electrons around the central atom | Why the rule fails |\n| --- | --- | --- | --- |\n| Incomplete octet | BeCl₂ | 4 | beryllium has only 2s available; it uses both |\n| Incomplete octet | BF₃ | 6 | boron has only three valence electrons; it accepts an electron pair later (Lewis acid) |\n| Odd-electron species | NO | 7 (on N) | total valence electrons are odd, so pairing cannot complete every octet |\n| Odd-electron species | NO₂ | 7 (on N) | same reason; the unpaired electron makes it coloured and paramagnetic |\n| Expanded octet | PCl₅ | 10 | phosphorus uses 3d orbitals to hold more than four pairs |\n| Expanded octet | SF₆ | 12 | sulfur uses 3d orbitals; six pairs |\n| Hydrogen | HCl, H₂O | 2 on H | hydrogen has only the 1s orbital |\n\n**The two sentences that earn the marks.** \"The octet rule applies to the second-period elements, which have only 2s and 2p available; from the third period onward, low-lying d orbitals allow more than eight electrons.\" And: \"Odd-electron molecules cannot satisfy the octet for every atom because the total electron count is odd.\"\n\n**A common misconception.** An expanded octet does not mean \"more than eight electrons are tightly held\" — the extra pairs are in larger, more diffuse orbitals and are held less strongly, which is why PCl₅ is more reactive than PCl₃.",
+    "## 8. Summary map and self-check\n**The topic on one card.**\n\n| Question | Answer |\n| --- | --- |\n| Valence shell? | outermost occupied shell |\n| Valence electrons? | electrons in that shell; group number (1–2) or group − 10 (13–18) |\n| Octet rule? | atoms tend towards eight valence electrons (two for H, He) |\n| Why eight? | ns²np⁶ is the largest closed shell reachable in periods 1–3 |\n| Ionic route? | transfer electrons until both ions are isoelectronic with a noble gas |\n| Covalent route? | share pairs until each atom counts eight (two for H) |\n| Exceptions? | BeCl₂, BF₃ (incomplete); NO, NO₂ (odd); PCl₅, SF₆ (expanded); H (two) |\n| Why the rule fails? | orbital availability, odd electron count, and d-orbital participation |\n\n**Self-check.**\n1. Give the valence electron count and Lewis symbol for Mg, C, S and Ar.\n2. Show, with electron bookkeeping, why the formula of aluminium oxide is Al₂O₃.\n3. Draw Lewis structures for H₂S, NH₃ and CO₂, and state the number of lone pairs on the central atom.\n4. Name one incomplete-octet, one odd-electron and one expanded-octet species, and say in each case *why* the rule fails.\n5. Explain why the octet rule works for period 2 but not for phosphorus."
+  ],
+  "confusion": [
+    "❌ The octet rule holds for every element. ✅ It fails for Be/B (incomplete), NO/NO₂ (odd), P/S (expanded) and for hydrogen.",
+    "❌ Sodium and chlorine both gain electrons to reach an octet. ✅ Sodium loses its one valence electron; chlorine gains one.",
+    "❌ An expanded octet means the atom is more stable than an octet. ✅ The extra pairs occupy larger orbitals and are held less strongly, so such compounds are often more reactive."
+  ],
+  "practice": [
+    "Draw Lewis structures for H₂S, NH₃, CO₂ and CH₄ and count lone pairs on the central atom.",
+    "Explain, with electron bookkeeping, why magnesium oxide is MgO and aluminium oxide is Al₂O₃.",
+    "State three classes of octet-rule exception with one example and one reason each."
+  ],
+  "universalFacts": [
+    "Universal scientific fact for 01 valence shell valence electron and octet theory."
+  ],
+  "animation3D": "chemistry",
+  "motionGraphics": "chemistry",
+  "examples": [
+    "H₂O: sp³, 2BP+2LP → bent",
+    "CO₂: sp, 2BP+0LP → linear"
+  ],
+  "practiceQuestions": [
+    "Practice identifying organelles and their functions in electron micrographs.",
+    "Practice distinguishing prokaryotic from eukaryotic cells.",
+    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
+    "Practice explaining the steps of mitosis with diagrams.",
+    "Practice explaining the stages of meiosis and comparing with mitosis.",
+    "Practice calculating chromosome numbers at different stages of cell division.",
+    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
+    "Practice explaining the central dogma: DNA → RNA → protein.",
+    "Practice writing complementary DNA and RNA strands.",
+    "Practice explaining the steps of transcription and translation.",
+    "Practice drawing food chains and food webs for different ecosystems.",
+    "Practice constructing ecological pyramids (energy, biomass, numbers).",
+    "Practice tracing carbon and nitrogen cycles with all major steps.",
+    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
+    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
+    "Practice classifying organisms into five kingdoms with diagnostic features.",
+    "Practice writing binomial names for common organisms.",
+    "Practice creating dichotomous keys for plant and animal identification.",
+    "Practice distinguishing homologous from analogous structures with examples.",
+    "Practice drawing and labeling the evolutionary tree of humans.",
+    "Practice identifying plant groups from specimen descriptions.",
+    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
+    "Practice explaining double fertilization with diagrams.",
+    "Practice identifying animal phyla from morphological features.",
+    "Practice describing the external and internal anatomy of earthworm and frog.",
+    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
+    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
+    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
+    "Practice listing sources and effects of air, water, and soil pollution.",
+    "Practice describing control measures for different types of pollution.",
+    "Practice mapping Nepal's national parks and protected areas.",
+    "Practice listing IUCN categories with examples of endangered species in Nepal.",
+    "Practice comparing in-situ and ex-situ conservation strategies.",
+    "Practice identifying vegetation zones in Nepal by altitude."
+  ],
+  "formulas": [
+    "valence electrons = group number, or group number − 10 for groups 13–18",
+    "electrons needed for octet = 8 − valence electrons"
+  ],
+  "keyPoints": [
+    "Valence shell = outermost occupied shell; valence electrons decide valency.",
+    "Valence electrons = group number (1–2) or group − 10 (13–18).",
+    "Octet rule: eight valence electrons (two for H and He).",
+    "Why eight: ns²np⁶ is the largest closed shell available in periods 1–3.",
+    "Ionic completion: metals lose, non-metals gain; electrons lost = electrons gained.",
+    "Covalent completion: shared pairs count for both atoms; CO₂ needs two double bonds.",
+    "Exceptions: BeCl₂/BF₃ (incomplete), NO/NO₂ (odd), PCl₅/SF₆ (expanded), H (two)."
+  ],
+  "summary": "Bonding is driven by the valence shell. Valence electrons are those in the outermost occupied shell, counted as the group number for groups 1–2 and group − 10 for groups 13–18. The octet rule states that atoms tend towards eight valence electrons (two for H and He), a target that exists because ns²np⁶ is the largest closed shell reachable in periods 1–3. Metals reach it by losing electrons (Na → Na⁺, Mg → Mg²⁺, Al → Al³⁺) and non-metals by gaining them (Cl → Cl⁻, O → O²⁻), with the electron bookkeeping fixing formulas such as Al₂O₃. Non-metals that cannot afford to lose electrons share pairs instead, as in H₂, H₂O, NH₃, CH₄ and CO₂. The rule fails for incomplete octets (BeCl₂, BF₃), odd-electron species (NO, NO₂), expanded octets (PCl₅, SF₆) and hydrogen, and each failure is explained by orbital availability or by an odd electron count.",
+  "specialNotes": [
+    "Specialized insight for 01 valence shell valence electron and octet theory."
+  ],
+  "importantStatements": [
+    "Key statement for 01 valence shell valence electron and octet theory."
+  ],
+  "importantNotes": [
+    "Important note regarding 01 valence shell valence electron and octet theory."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Valence Shell, Valence Electron and Octet Theory."
+  ],
+  "examNotes": [],
+  "mcs": [
+    {
+      "question": "The valence shell of an atom is:",
+      "options": [
+        "the first shell",
+        "the outermost occupied shell",
+        "the shell with the most electrons",
+        "always the n = 3 shell"
+      ],
+      "answer": "B",
+      "explanation": "Valence electrons are those in the outermost occupied shell; for chlorine that is n = 3."
+    },
+    {
+      "question": "The number of valence electrons in a group 16 element is:",
+      "options": [
+        "2",
+        "4",
+        "6",
+        "16"
+      ],
+      "answer": "C",
+      "explanation": "For groups 13–18, valence electrons = group number − 10, so 16 − 10 = 6."
+    },
+    {
+      "question": "The octet rule states that atoms tend to:",
+      "options": [
+        "have eight protons",
+        "have eight electrons in the valence shell",
+        "form eight bonds",
+        "have eight neutrons"
+      ],
+      "answer": "B",
+      "explanation": "The target is eight valence electrons (two for hydrogen and helium), the ns²np⁶ closed shell."
+    },
+    {
+      "question": "Which molecule obeys the octet rule with hydrogen satisfied by two electrons?",
+      "options": [
+        "CH₄",
+        "BF₃",
+        "NO",
+        "PCl₅"
+      ],
+      "answer": "A",
+      "explanation": "In CH₄ carbon has eight electrons and each hydrogen two; BF₃ has six around boron, NO has an odd count, PCl₅ has ten."
+    },
+    {
+      "question": "BF₃ does not obey the octet rule because:",
+      "options": [
+        "boron has only three valence electrons",
+        "fluorine is too electronegative",
+        "boron has d orbitals",
+        "it is ionic"
+      ],
+      "answer": "A",
+      "explanation": "Boron has three valence electrons and forms three bonds, leaving six around it — an incomplete octet, which is why BF₃ acts as a Lewis acid."
+    },
+    {
+      "question": "PCl₅ can have ten electrons around phosphorus because:",
+      "options": [
+        "phosphorus is a metal",
+        "phosphorus can use 3d orbitals",
+        "chlorine donates lone pairs",
+        "it is ionic"
+      ],
+      "answer": "B",
+      "explanation": "From period 3 onward, low-lying d orbitals allow an expanded octet; nitrogen in period 2 cannot do this."
+    },
+    {
+      "question": "In the formation of MgO, the magnesium atom:",
+      "options": [
+        "gains two electrons",
+        "loses two electrons",
+        "shares two electrons",
+        "loses one electron"
+      ],
+      "answer": "B",
+      "explanation": "Mg ([Ne]3s²) loses both valence electrons to give Mg²⁺, isoelectronic with Ne; oxygen gains them."
+    },
+    {
+      "question": "Which species is an odd-electron molecule?",
+      "options": [
+        "NO₂",
+        "CO₂",
+        "H₂O",
+        "NH₃"
+      ],
+      "answer": "A",
+      "explanation": "NO₂ has 17 valence electrons, an odd total, so one electron remains unpaired and the octet cannot be completed everywhere."
+    },
+    {
+      "question": "The total number of valence electrons in a CO₂ molecule is:",
+      "options": [
+        "8",
+        "12",
+        "16",
+        "22"
+      ],
+      "answer": "C",
+      "explanation": "4 (carbon) + 2 × 6 (oxygen) = 16, which is why CO₂ has two double bonds."
+    },
+    {
+      "question": "An ion isoelectronic with argon is:",
+      "options": [
+        "Na⁺",
+        "Cl⁻",
+        "Mg²⁺",
+        "Al³⁺"
+      ],
+      "answer": "B",
+      "explanation": "Cl⁻ has 18 electrons, like Ar; Na⁺, Mg²⁺ and Al³⁺ are isoelectronic with Ne (10 electrons)."
+    }
+  ],
+  "importantConcepts": [
+    "Key concept 1 for 01 valence shell valence electron and octet theory."
+  ],
+  "importantTasks": [
+    "Task for studying 01 valence shell valence electron and octet theory."
+  ],
+  "duplicateType": 2,
+  "tabGroup": "01-valence-shell-valence-electron-and-octet-theory",
+  "mcqs": [
+    {
+      "question": "Question about 01 valence shell valence electron and octet theory?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answer": "A"
+    }
+  ],
+  "exercises": [],
+  "visualization": {
+    "type": "3d-model",
+    "component": "VSEPRModeler",
+    "desc": "3D molecular geometry predictor"
+  },
+  "visualType": "vsepr-theory",
+  "source": "authored-v2",
+  "numericals": [
+    "**N1 — Valence electron counts from position.**\n*Given.* Na (group 1), Al (group 13), S (group 16), Ar (group 18).\n*Formula.* valence electrons = group number (groups 1–2) or group number − 10 (groups 13–18).\n*Substitution.* Na: 1; Al: 13 − 10 = 3; S: 16 − 10 = 6; Ar: 18 − 10 = 8.\n*Answer.* **1, 3, 6 and 8** valence electrons; check against configurations [Ne]3s¹, [Ne]3s²3p¹, [Ne]3s²3p⁴, [Ne]3s²3p⁶.",
+    "**N2 — Electrons needed to complete an octet.**\n*Given.* Cl (7 valence electrons), O (6), N (5).\n*Formula.* electrons needed = 8 − valence electrons.\n*Substitution.* Cl: 8 − 7 = 1; O: 8 − 6 = 2; N: 8 − 5 = 3.\n*Answer.* **1, 2 and 3** — which is exactly why the formulas are HCl, H₂O and NH₃.",
+    "**N3 — Total valence electrons in a molecule.**\n*Given.* CH₄ (C 4, H 1), H₂O (O 6, H 1), CO₂ (C 4, O 6).\n*Formula.* total = Σ (valence electrons of each atom).\n*Substitution.* CH₄: 4 + 4(1) = 8; H₂O: 6 + 2(1) = 8; CO₂: 4 + 2(6) = 16.\n*Answer.* **8, 8 and 16**; CO₂'s 16 electrons force two double bonds, since single bonds would use only 8.",
+    "**N4 — Electron count in the ions formed.**\n*Given.* Na⁺ (Z = 11), Cl⁻ (Z = 17), Mg²⁺ (Z = 12).\n*Formula.* electrons in ion = Z − charge (for cations), Z + |charge| (for anions).\n*Substitution.* Na⁺: 11 − 1 = 10; Cl⁻: 17 + 1 = 18; Mg²⁺: 12 − 2 = 10.\n*Answer.* **10, 18 and 10** electrons — Na⁺ and Mg²⁺ are isoelectronic with Ne, Cl⁻ with Ar.",
+    "**N5 — The expanded octet of PCl₅.**\n*Given.* PCl₅: phosphorus shares five pairs, one with each chlorine.\n*Formula.* electrons around P = 2 × (number of bonds) + lone pairs on P.\n*Substitution.* 2 × 5 + 0 = 10.\n*Answer.* **10 electrons**, two more than an octet — possible because phosphorus can use 3d orbitals, which period-2 nitrogen cannot.",
+    "**N6 — Electrons transferred when Al₂O₃ forms.**\n*Given.* Al loses 3 electrons to become Al³⁺; O gains 2 to become O²⁻.\n*Formula.* balance: 3 × (electrons lost per Al) = 2 × (electrons gained per O) → Al₂O₃.\n*Substitution.* 2 Al × 3 = 6; 3 O × 2 = 6.\n*Answer.* **6 electrons transferred per formula unit**, giving two Al³⁺ and three O²⁻ ions, all isoelectronic with neon."
+  ]
+}

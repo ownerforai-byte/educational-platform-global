@@ -1,0 +1,165 @@
+<!doctype html><html><head><meta charset="utf-8"><title>कविता परिचय (Introduction to Poetry)</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Nepali  /  Sahitya Adhyayan</div>
+    <h1 class="doc">कविता परिचय (Introduction to Poetry)</h1>
+    <div class="meta"><span>Class 11</span><span>Nepali</span><span>Sahitya Adhyayan</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>sahitya-adhyayan</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>introduction</p></section>
+<section class="field"><h2>Relevance</h2><p><code>45</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;p&gt;&lt;strong&gt;कविता के हो? (What is Poetry?):&lt;/strong&gt; कविता साहित्यको तात्विक विधा हो जसमा भावना, अनुभव र कल्पनालाई लय, ताल, प्रतीक र अलङ्कारको माध्यमबाट कलात्मक रूपमा प्रस्तुत गरिन्छ। कविता भनेको शब्दहरूबाट बनेको चित्र हो जसले पाठकको मनमा भावना जागाउँछ। नेपाली कवितामा प्रकृति, देशभक्ति, प्रेम, सामाजिकवाद, र दार्शनिक विचारहरूको प्रवाह देखिन्छ।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;कवितिका तत्त्वहरू (Elements of Poetry):&lt;/strong&gt; कवितामा पञ्चतत्त्वहरू छन्: (१) &lt;b&gt;भावना (Emotion)&lt;/b&gt; — कवितार कर्ण भावना नै हो — प्रेम, वेदना, देशभक्ति, प्रकृतिको प्रति आकर्षण आदि। (२) &lt;b&gt;कल्पना (Imagination)&lt;/b&gt; — कविले कल्पनाको सहारा लिएर वास्तविक वस्तु र घटनालाई नयाँ रूपमा प्रस्तुत गर्छ। (३) &lt;b&gt;लय (Rhythm)&lt;/b&gt; — शब्दहरूको आवृत्तिले सिर्जना गर्ने संगीतात्मक प्रवाह। (४) &lt;b&gt;प्रतीक (Symbol)&lt;/b&gt; — वस्तु वा घटनाले अर्को गहिरो अर्थलाई संकेत गर्छ। (५) &lt;b&gt;अलङ्कार (Figure of speech)&lt;/b&gt; — उपमा, रूपक, उत्प्रेक्षा आदिको प्रयोगले कवितालाई सुन्दर बनाउँछ।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;कवितिका प्रकारहरू (Types of Poetry):&lt;/strong&gt; कविता मुख्यतया दुई प्रकारकी हुन्छिन्: &lt;b&gt;गद्य कविता (Free verse)&lt;/b&gt; जसमा नियमित लय वा तुक हुँदैन, र &lt;b&gt;छन्दोबद्ध कविता (Metrical poetry)&lt;/b&gt; जसमा निश्चित छन्द, गति र तुक हुन्छ। विषयवस्तुक आधारमा कवितालाई प्रकृति कविता, देशभक्ति कविता, प्रेम कविता, आधुनिक कविता, योद्धा कविता, सामाजिक कविता आदिमा वर्गीकरण गर्न सकिन्छ।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;कवितिका भागीहरू (Parts of a Poem):&lt;/strong&gt; कवितामा निमन् भागीहरू छन्: (१) &lt;b&gt;मुख्य भाग&lt;/b&gt; — जसमा कविका मुख्य विचारहरू प्रस्तुत हुन्छन्, (२) &lt;b&gt;अन्तरा&lt;/b&gt; — जसमा भावनालाई फेरि फेरि दोहोर्याइन्छ, (३) &lt;b&gt;चरण&lt;/b&gt; — प्रत्येक पङ्क्तिलाई चरण भनिन्छ, (४) &lt;b&gt;तुक&lt;/b&gt; — अन्तिम शब्दहरूको ध्वनि मिलाप, (५) &lt;b&gt;छन्द&lt;/b&gt; — लयबद्धताको नियम। कवितामा पङ्क्ति, चरण, अन्तरा, मुखडा, र सन्धि भएको देखिन्छ।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;कवितिका अलङ्कारहरू (Figures of Speech in Poetry):&lt;/strong&gt; कवितामा प्रयोग हुने मुख्य अलङ्कारहरू: (१) &lt;b&gt;उपमा&lt;/b&gt; — दुई वस्तुको तुलना गर्न, जस्तै: 'उनको अनुहार चन्द्रमाजस्तो छ।' (२) &lt;b&gt;रूपक&lt;/b&gt; — उपमाको 'जस्तो' हटाएर सिधै तुलना गर्न, जस्तै: 'चन्द्रमा अनुहार हो।' (३) &lt;b&gt;उत्प्रेक्षा&lt;/b&gt; — एक वस्तुलाई अर्को वस्तु मान्न, जस्तै: 'म पनि हाँसेँ तर आँखा रा आयो।' (४) &lt;b&gt;अतिशयोक्ति&lt;/b&gt; — वस्तुको गुणलाई अतिक्रान्त गरन। (५) &lt;b&gt;प्रतीप&lt;/b&gt; — विपरित अर्थमा बोलन।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;कवितामा भाषाको भूमिका (Role of Language in Poetry):&lt;/strong&gt; कवितामा भाषाको भूमिका अत्यन्त महत्त्वपूर्ण हुन्छ। कविले सामान्य भाषा प्रयोग गरेर पनि गहिरो भाव व्यक्त गर्न सक्छन्। कवितामा प्रयोग हुने भाषा सरल, स्पष्ट, र प्रभावकारी हुनुपर्छ। भाषामा छन्द, लय, र तुकको सहारे कवितालाई सुन्दर बनाउन सकिन्छ। नेपाली कवितामा 'सरल भाषा' र 'गम्भीर भाव' को संयोग देखिन्छ।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;कवितिका रूपहरू (Forms of Poetry):&lt;/strong&gt; नेपाली कवितामा प्रयोग हुने प्रमुख रूपहरू: (१) &lt;b&gt;पङ्क्ति&lt;/b&gt; — कवितार एक वाक्य वा भाग, (२) &lt;b&gt;चरण&lt;/b&gt; — धेरै पङ्क्तिाका समूह, (३) &lt;b&gt;अन्तरा&lt;/b&gt; — कवितार दोहोरिने भाग, (४) &lt;b&gt;मुखडा&lt;/b&gt; — कवितार पहिलो चरण, (५) &lt;b&gt;तुकबन्दी&lt;/b&gt; — अन्तिम शब्दहरूको ध्वनि मिलाप, (६) &lt;b&gt;छन्द&lt;/b&gt; — लयबद्धताको नियम।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;कवितामा रस (Rasa in Poetry):&lt;/strong&gt; कवितामा रसको महत्वपर्नु हुन्छ। रस भनेको भावनाको स्वाद हो। नेपाली कवितामा मुख्यतया नौ रसहरू प्रयोग हुन्छन्: शृङ्गार, करुण, रौद्र, वीर, हस्य, भयानक, वीभत्स, अद्भुत, शान्त। प्रत्येक रसको आफ्नै विशेषता र प्रभाव हुन्छ। रस भनेको भावनाको पूर्ण र परिपक्व रूप हो जसले पाठकलाई आनन्द दिन्छ।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;छन्दको परिचय (Introduction to Chhanda):&lt;/strong&gt; छन्द भनेको कवितामा प्रयोग हुने लयबद्धताको नियम हो। छन्दले कवितालाई संगीतात्मक रूप दिन्छ। नेपाली कवितामा प्रयोग हुने प्रमुख छन्दहरू: अलङ्कार, भुजङ्ग, मनकृान्त, सरित, शारदा, आर्या, इत्यादि। छन्द भनेको कवितार लय, ताल, र गतिका नियम हो।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;कवितामा मुद्रा (Mode/Mudra in Poetry):&lt;/strong&gt; मुद्रा भनेको कवितामा प्रयोग हुने भावनात्मक र शैलीगत विशेषता हो। कविको मुद्राले कवितालाई एउटा अलग पहिचान दिन्छ। कविको जीवन अनुभव, दार्शनिक दृष्टिकोण, र भाषा प्रयोगले कविको मुद्रा निर्माण गर्छ। नेपाली कवितामा बरसड्डड्डी कविहरूको आफ्नै मुद्रा छ: बंसীधर जोशीको मार्मिकता, लक्ष्मीप्रसाद देवकोटाको गम्भीरता, प्रेम थपाको प्रकृतिप्रति आकर्षण।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;नेपाली कविको ऐतिहासिक विकास (Historical Development of Nepali Poetry):&lt;/strong&gt; नेपाली कविताको विकास तीन चरणमा बाँडिएको छ: (१) &lt;b&gt;आधुनिकता पूर्वकाल (Pre-modern)&lt;/b&gt; — २००० साल prior, जसमा भक्ति, रसिक, र छन्दोबद्ध कविता प्रमुख थियो। (२) &lt;b&gt;आधुनिक काल (Modern)&lt;/b&gt; — २००० देखि २०४६ साल सम्म, जसमा मुक्तक, गद्य कविता, र समकालीन विचारहरूले जन्म लिए। (३) &lt;b&gt;समकालीन काल (Contemporary)&lt;/b&gt; — २०४६ साल पछि, जसमा सामाजिक, राजनीतिक, र दार्शनिक कविताहरू प्रमुख छन्।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;प्रमुख नेपाली कविहरू (Prominent Nepali Poets):&lt;/strong&gt; नेपाली कवितार प्रमुख कविहरू: (१) &lt;b&gt;लक्ष्मीप्रसाद देवकोटा&lt;/b&gt; — 'महाकाव्य शिशिरको कुहिं', 'मुक्ति', 'भाइबहाइन'। (२) &lt;b&gt;बंसोधर जोशी&lt;/b&gt; — 'सुनको फूल', 'माया', 'आँखाको आँसु'। (३) &lt;b&gt;प्रेम थपा&lt;/b&gt; — 'प्रकृति कवि', 'सृष्टिको सपना'। (४) &lt;b&gt;मोतस तुम्बाहाङ्फे&lt;/b&gt; — 'मिचेको माटी', 'सृजना'। (५) &lt;b&gt;बालकृष्ण सम&lt;/b&gt; — 'शून्य', 'कविता सङ्ग्रह'। (६) &lt;b&gt;भोला नेम्वाङ&lt;/b&gt; — 'नेपाली कविताका जनक'।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;NEB पाठ्यक्रममा कविता (Poetry in NEB Curriculum):&lt;/strong&gt; NEB (राष्ट्रिय परीक्षा बोर्ड) को नेपाली पाठ्यक्रममा कविता अध्ययनको उद्देश्य विद्यार्थीहरूमा भावनात्मक संवेदना, भाषिक सौन्दर्यबोध र आलोचनात्मक चेतना विकास गर्न हो। कविता पढ्दा भाव, भाषा, शिल्प र सन्देश — यी चार पक्षमा ध्यान दिनुपर्छ। NEB परीक्षामा कवितार अर्थ, अलङ्कार पहिचान, रस पहिचान, र विश्लेषण सम्बन्धी प्रश्नहरू आउँछन्।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;कवितामा शब्दार्थ र व्याख्या (Word Meaning and Explanation in Poetry):&lt;/strong&gt; कवितामा प्रयोग भएका शब्दहरूको अर्थ थाहा हुनु महत्त्वपूर्ण छ। कविहरूले प्रायः पुराना वा कठिन शब्दहरू प्रयोग गर्छन् जसको अर्थ थाहा हुनुपर्छ। शब्दार्थ थाहा हुँदा कवितार भाव बुझ्न सजिलो हुन्छ। NEB परीक्षामा शब्दार्थ लेख्न के प्रश्न प्रायः आउँछ।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;कवितामा प्रतीकात्मकता (Symbolism in Poetry):&lt;/strong&gt; कवितामा प्रतीकात्मकताले गहिरो अर्थ दिन्छ। एउटा वस्तु वा घटनाले अर्को गहिरो अर्थलाई संकेत गर्छ। उदाहरणका लागि: 'रातो खसरी'ले स्वतन्त्रताको प्रतीक हो, 'नीरव पहड'ले स्थिरताको प्रतीक हो, 'नदी'ले जीवन प्रवाहको प्रतीक हो। प्रतीक भनेको वस्तु वा घटना हो जसले गहिरो अर्थलाई जनाउँछ।&lt;/p&gt;</li><li>&lt;p&gt;&lt;strong&gt;कविता विश्लेषणका पाँच पक्ष (Five Aspects of Poetry Analysis):&lt;/strong&gt; कवितार विश्लेषण गर्दा निमन् पाँच पक्षहरू हेरिन्छन्: (१) &lt;b&gt;भाव (Theme)&lt;/b&gt; — कवितार मुख्य विषय र भावना। (२) &lt;b&gt;भाषा (Language)&lt;/b&gt; — प्रयोग भएका शब्दहरूको सरलता र प्रभावकारिता। (३) &lt;b&gt;शिल्प (Technique)&lt;/b&gt; — छन्द, तुक, अलङ्कार, प्रतीक आदिको प्रयोग। (४) &lt;b&gt;सन्देश (Message)&lt;/b&gt; — कवितारबाट पाठकले पाउन सक्ने सन्देश। (५) &lt;b&gt;रस (Rasa)&lt;/b&gt; — कवितारमा प्रमुख रूपमा छाएको रस।&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>कवितामा छन्द हुनैपर्छ — गलत। गद्य कवितामा छन्द वा तुक हुँदैन, त्यसैले कविता छन्दोबद्ध हुनुपर्छ भन्ने आवश्यक छैन।</li><li>उपमा र रूपक एउटै हुन् — गलत। उपमामा 'जस्तो' जस्ता शब्द प्रयोग हुन्छन् तर रूपकमा 'हो' जस्ता शब्द प्रयोग हुन्छन्।</li><li>कवितामा तुक हुनैपर्छ — गलत। आधुनिक कवितामा तुक हुँदैन, अनियमित लयमा कविता लेखिन्छ।</li><li>रस र भाव एउटै हुन् — गलत। भाव सामान्य भावना हो भने रस भावनाको परिपक्व रूप हो जसले पाठकलाई आनन्द दिन्छ।</li><li>कवितामा कवि र नायक एउटै हुन् — गलत। कविले कवितामा नायक वा नायिकाको रूपमा भाव व्यक्त गर्छन्, कवि र नायक फरक हुन्छन्।</li><li>अलङ्कार र रस एउटै हुन् — गलत। अलङ्कार भनेको शब्द वा वाक्यको सौन्दर्य बढाउन सधन हो भने रस भनेको भावनाको स्वाद हो।</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>तलका कथनहरू सत्य वा असत्य पत्ता लगाउन होस: (क) कवितामा छन्द हुनैपर्छ। (ख) उपमामा 'जस्तो' प्रयोग हुन्छ। (ग) रूपकमा 'जस्तो' प्रयोग हुँदैन। (घ) गद्य कवितामा तुक हुँदैन। (ङ) कवितामा भावना मुख्य अंग हो। (च) रूपकमा 'हो' प्रयोग हुन्छ। (छ) रस र भाव एउटै हुन्।</li><li>उपमा र रूपकमा फरक पाठाउँदै प्रत्येकको दुईवटा उदाहरणहरू लेख्न होस।</li><li>तलका शब्दहरूको अर्थ लेख्न होस: छन्द, अलङ्कार, रस, मुद्रा, प्रतीक, तुक, लय, शिल्प, भाव, सन्देश।</li><li>नेपाली कवितामा प्रयोग हुने नौ रसहरूको नाम लेख्न होस र प्रत्येकको एउटा उदाहरण दिन होस।</li><li>एउटा कवितामा भाव, भाषा, शिल्प र सन्देश — यी चार पक्षमध्ये कुन कुन पक्ष हेर्नुपर्छ? व्याख्या गर्नुहोस।</li><li>नेपाली कवितार तीन प्रमुख कालखण्डहरूको नाम लेख्न होस र प्रत्येकका दुई-दुई कविहरूको नाम लेख्न होस।</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>कविता साहित्यको मुख्य विधा हो जसमा भावना, कल्पना र अलङ्कारको प्रयोग हुन्छ।</li><li>नेपाली कवितामा छन्दोबद्ध र गद्य दुवै प्रकारका कविताहरू प्रचलित छन्।</li><li>कवितामा प्रयोग हुने अलङ्कारहरूमध्ये उपमा र रूपक सबैभनै बढी प्रयोग हुन्छन्।</li><li>कवितामा भाव, भाषा, शिल्प र सन्देश — यी चार पक्षहरूलाई ध्यान दिएर कवितार आलोचना गर्नुपर्छ।</li><li>नेपाली कवितामा प्रकृति, देशभक्ति, प्रेम, र सामाजिक विषयहरू बढी प्रचलित छन्।</li><li>लक्ष्मीप्रसाद देवकोटालाई 'महाकवि' को उपाधि दिइएको छ र उनलाई नेपाली कवितार सबैभनै महान कविमध्ये एक मानिन्छ।</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>sahitya-adhyayan</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>sahitya-adhyayan</p></section>
+<section class="field"><h2>Resources</h2><dl class="obj"><div class="kv"><dt>Pdf notes</dt><dd><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Nepali Sahitya Notes PDF</p></dd></div><div class="kv"><dt>URL</dt><dd><p>/materials/nepali/sahitya-adhyayan-notes.pdf</p></dd></div><div class="kv"><dt>Kind</dt><dd><p>pdf</p></dd></div></dl></dd></div></dl></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../_subjects/class-11-nepali.html">Nepali</a><span></span></nav>
+</div></body></html>

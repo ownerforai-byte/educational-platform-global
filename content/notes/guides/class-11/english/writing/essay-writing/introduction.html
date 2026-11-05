@@ -1,0 +1,161 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Essay Writing</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  English  /  Essay Writing</div>
+    <h1 class="doc">Essay Writing</h1>
+    <div class="meta"><span>Class 11</span><span>English</span><span>Essay Writing</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>writing</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>essay-writing</p></section>
+<section class="field"><h2>Relevance</h2><p><code>95</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>&lt;h2&gt;What Is an Essay?&lt;/h2&gt;</li><li>&lt;p&gt;An &lt;b&gt;essay&lt;/b&gt; is a structured piece of writing that presents the author's argument, analysis, or description on a particular topic. In the NEB Class 11 English examination, essay writing is one of the most important components, typically carrying 10-15 marks. A well-written essay has a clear &lt;b&gt;introduction&lt;/b&gt; (opening paragraph that introduces the topic), a well-organised &lt;b&gt;body&lt;/b&gt; (multiple paragraphs developing the main points), and a concise &lt;b&gt;conclusion&lt;/b&gt; (closing paragraph that summarises the main ideas and leaves a final impression).&lt;/p&gt;</li><li>&lt;h2&gt;Types of Essays&lt;/h2&gt;</li><li>&lt;p&gt;Essays are classified into four main types: &lt;b&gt;Narrative essay&lt;/b&gt; — tells a story or recounts an event (e.g., 'My most memorable experience'). &lt;b&gt;Descriptive essay&lt;/b&gt; — paints a picture with words, describing a person, place, or thing (e.g., 'My favourite season', 'A rainy day in Kathmandu'). &lt;b&gt;Expository essay&lt;/b&gt; — explains or informs about a topic using facts and examples (e.g., 'The importance of education', 'How to prevent pollution'). &lt;b&gt;Argumentative/Persuasive essay&lt;/b&gt; — presents a viewpoint and supports it with reasoning and evidence (e.g., 'Should mobile phones be banned in schools?'). NEB exams typically require expository or argumentative essays.&lt;/p&gt;</li><li>&lt;h2&gt;Structure of a Good Essay&lt;/h2&gt;</li><li>&lt;p&gt;A good essay follows a three-part structure: (1) &lt;b&gt;Introduction&lt;/b&gt; — begin with a hook (interesting opening sentence), provide background context, and state the &lt;b&gt;thesis statement&lt;/b&gt; (main argument or purpose). The introduction should be 10-15% of the total length. (2) &lt;b&gt;Body paragraphs&lt;/b&gt; — each paragraph should focus on one main idea, supported by examples, explanations, or evidence. Use topic sentences to introduce each paragraph's main point. Aim for 3-5 body paragraphs. (3) &lt;b&gt;Conclusion&lt;/b&gt; — restate the thesis in different words, summarise the main points, and end with a final thought, recommendation, or call to action. The conclusion should be 10% of the total length.&lt;/p&gt;</li><li>&lt;h2&gt;Planning and Outlining&lt;/h2&gt;</li><li>&lt;p&gt;Before writing, spend 3-5 minutes &lt;b&gt;planning&lt;/b&gt; your essay. Jot down the main points you want to make, arrange them in logical order, and decide on a thesis statement. A simple outline helps prevent rambling and ensures coherence. For argumentative essays, consider both sides of the issue before presenting your position. For expository essays, list the key points you will explain. Good planning saves time during the actual writing and produces a more organised, coherent essay.&lt;/p&gt;</li><li>&lt;h2&gt;Writing a Strong Introduction&lt;/h2&gt;</li><li>&lt;p&gt;The introduction is the first impression your essay makes. A strong introduction: (1) &lt;b&gt;Grabs attention&lt;/b&gt; — start with a question, statistic, quote, or vivid statement. 'Did you know that over 80% of Nepali students use smartphones daily?' (2) &lt;b&gt;Provides context&lt;/b&gt; — give brief background information about the topic. (3) &lt;b&gt;States the thesis&lt;/b&gt; — clearly express your main argument or purpose. Avoid starting with dictionary definitions ('According to the dictionary, pollution is...') — this is weak and clichéd. Your introduction should be 3-5 sentences for a standard essay.&lt;/p&gt;</li><li>&lt;h2&gt;Writing Effective Body Paragraphs&lt;/h2&gt;</li><li>&lt;p&gt;Each body paragraph should follow the &lt;b&gt;PEEL&lt;/b&gt; structure: &lt;b&gt;P&lt;/b&gt;oint (topic sentence stating the main idea), &lt;b&gt;E&lt;/b&gt;vidence (examples, facts, or data supporting the point), &lt;b&gt;E&lt;/b&gt;xplanation (explain how the evidence supports your point), &lt;b&gt;L&lt;/b&gt;ink (connect back to the thesis or to the next paragraph). Transitions between paragraphs are essential for coherence: 'Furthermore', 'In addition', 'On the other hand', 'However', 'Consequently', 'For example'. Each body paragraph should be 80-120 words for a standard essay. Avoid including too many ideas in one paragraph — one main idea per paragraph is the golden rule.&lt;/p&gt;</li><li>&lt;h2&gt;Writing a Powerful Conclusion&lt;/h2&gt;</li><li>&lt;p&gt;The conclusion should not simply repeat the introduction — it should synthesise the essay's arguments and leave the reader with a lasting impression. A good conclusion: (1) &lt;b&gt;Restates the thesis&lt;/b&gt; in new words (not copied from the introduction). (2) &lt;b&gt;Summarises the main points&lt;/b&gt; briefly (one sentence per point). (3) &lt;b&gt;Provides a final thought&lt;/b&gt; — a recommendation, prediction, call to action, or broader implication. Avoid introducing new information in the conclusion. For argumentative essays, end with a strong statement reinforcing your position. Keep the conclusion to 3-5 sentences.&lt;/p&gt;</li><li>&lt;h2&gt;Common Essay Topics in NEB Exams&lt;/h2&gt;</li><li>&lt;p&gt;Frequently assigned essay topics in NEB Class 11 include: 'The importance of English language learning', 'Advantages and disadvantages of mobile phones', 'Environmental pollution and its effects', 'The role of youth in nation-building', 'Benefits and drawbacks of tourism in Nepal', 'Should examinations be abolished?', 'The importance of reading newspapers', 'My favourite season', 'A memorable day in my life', 'The impact of social media on young people', 'Problems and solutions of traffic congestion in Kathmandu'. Preparing outlines for these common topics is an effective revision strategy.&lt;/p&gt;</li><li>&lt;h2&gt;Essay Writing: Style and Tone&lt;/h2&gt;</li><li>&lt;p&gt;Essay writing requires a &lt;b&gt;formal tone&lt;/b&gt; — avoid contractions ('don't' → 'do not'), slang ('gonna' → 'going to'), and overly casual language. Use the &lt;b&gt;third person&lt;/b&gt; ('one', 'people', 'students') rather than the first person ('I', 'me') in formal essays, though first person is acceptable in narrative and descriptive essays. Use &lt;b&gt;transition words&lt;/b&gt; to connect ideas: 'however', 'therefore', 'moreover', 'consequently', 'nevertheless', 'in contrast', 'for instance'. Varied sentence structures (simple, compound, complex) make the essay more engaging. Avoid repetition of the same words — use synonyms and paraphrasing.&lt;/p&gt;</li><li>&lt;h2&gt;Common Mistakes in Essay Writing&lt;/h2&gt;</li><li>&lt;p&gt;Avoid these common errors: (1) &lt;b&gt;No clear thesis&lt;/b&gt; — the essay drifts without a central argument. (2) &lt;b&gt;Informal language&lt;/b&gt; — using slang, contractions, or conversational tone. (3) &lt;b&gt;Irrelevant content&lt;/b&gt; — going off-topic or including information that does not support the thesis. (4) &lt;b&gt;Poor organisation&lt;/b&gt; — paragraphs without clear topics or logical flow. (5) &lt;b&gt;Repetition&lt;/b&gt; — restating the same idea in different words without adding new information. (6) &lt;b&gt;No conclusion&lt;/b&gt; — ending abruptly without summarising. (7) &lt;b&gt;Spelling and grammar errors&lt;/b&gt; — these reduce marks significantly. (8) &lt;b&gt;Too short or too long&lt;/b&gt; — follow the word limit (usually 250-350 words for NEB essays).&lt;/p&gt;</li></ul></section>
+<section class="field"><h2>Animation3 D</h2><p>writing</p></section>
+<section class="field"><h2>Motion Graphics</h2><p>writing</p></section>
+  <nav class="pager"><span></span><a class="mid" href="../../../../../../_subjects/class-11-english.html">English</a><span></span></nav>
+</div></body></html>

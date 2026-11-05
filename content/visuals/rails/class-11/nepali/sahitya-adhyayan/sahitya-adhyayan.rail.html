@@ -1,0 +1,166 @@
+<!doctype html><html><head><meta charset="utf-8"><title>sahitya-adhyayan.rail</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Nepali  /  Sahitya Adhyayan</div>
+    <h1 class="doc">sahitya-adhyayan.rail</h1>
+    <div class="meta"><span>Class 11</span><span>Nepali</span><span>Sahitya Adhyayan</span></div>
+  </header>
+  <section class="field"><h2>Schema</h2><p>home-rail/v1</p></section>
+<section class="field"><h2>Draft</h2><p><code>false</code></p></section>
+<section class="field"><h2>Class SLUG</h2><p>class-11-notes</p></section>
+<section class="field"><h2>Subject SLUG</h2><p>nepali</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>sahitya-adhyayan</p></section>
+<section class="field"><h2>Unit Title</h2><p>साहित्य अध्ययन (१२ पाठ)</p></section>
+<section class="field"><h2>Syllabus Topics</h2><ul><li>पाठ १ — वीर पुर्खा (कविता)</li><li>पाठ २ — गाउँको माया (सामाजिक कथा)</li><li>पाठ ३ — संस्कृतिको नयाँ यात्रा (आत्मपरक निबन्ध)</li><li>पाठ ४ — योगमाया (राष्ट्रिय जीवनी)</li><li>पाठ ५ — साथीलाई चिठी (चिठी)</li><li>पाठ ६ — त्यो फेरि फर्कला? (मनोवैज्ञानिक कथा)</li><li>पाठ ७ — पर्यापर्यटनका सम्भावना र आयाम (वस्तुपरक निबन्ध)</li><li>पाठ ८ — लौ आयो ताजा खबर (लघु नाटक)</li><li>पाठ ९ — सफलताको कथा (रिपोर्ताजमूलक रचना)</li><li>पाठ १० — कृषिशालामा एक दिन (संवाद)</li><li>पाठ ११ — रारा भ्रमण (दैनिकी)</li><li>पाठ १२ — जलस्रोत र ऊर्जा (वक्तृता)</li></ul></section>
+<section class="field"><h2>Source</h2><p>platform</p></section>
+<section class="field"><h2>Agent Notes</h2><p>Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json in this unit.</p></section>
+<section class="field"><h2>Card</h2><dl class="obj"><div class="kv"><dt>Tag</dt><dd><p>साहित्य अध्ययन</p></dd></div><div class="kv"><dt>Title</dt><dd><p>पाठ विश्लेषण — केन्द्रीय भावना निकाल्ने विधि</p></dd></div><div class="kv"><dt>Href</dt><dd><p>/class-11-notes/nepali</p></dd></div><div class="kv"><dt>Icon</dt><dd><p>BookOpen</p></dd></div><div class="kv"><dt>Stat Key</dt><dd><p>pyq:nepali</p></dd></div></dl></section>
+<section class="field"><h2>Rows</h2><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Concept</p></dd></div><div class="kv"><dt>Text</dt><dd><p>बाह्रै पाठ एउटै साँचोले खुल्छन्: विधा चिन (कविता/कथा/निबन्ध/जीवनी/चिठी/नाटक/संवाद/दैनिकी/वक्तृता) → विषयवस्तु टिप → केन्द्रीय भावना एक वाक्यमा → विशेषता (भाषा, शिल्प, पात्र) → सन्देश। 'वीर पुर्खा' मा वीरता र बलिदान, 'योगमाया' मा सामाजिक सुधारको आहुति, 'लौ आयो ताजा खबर' मा सञ्चार-व्यंग्य — विधा फरक, विधि एउटै।</p></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Formula</p></dd></div><div class="kv"><dt>Kind</dt><dd><p>formula</p></dd></div><div class="kv"><dt>Text</dt><dd><p>उत्तर-साँचा: परिचय (कृति + स्रष्टा + विधा) → विषयवस्तु (२–३ वाक्य) → केन्द्रीय भावना (१ वाक्य) → विशेषता (भाषाशैली + शिल्प + पात्र/तर्क) → सन्देश/महत्त्व  ·  कविता: भाव + छन्द + अलङ्कार · कथा: कथानक + पात्र + परिवेश · निबन्ध: विचार + तर्क + भाषा</p></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Conditions</p></dd></div><div class="kv"><dt>Text</dt><dd><p>केन्द्रीय भावना पाठभित्रकै प्रमाणबाट आउनुपर्छ — बाहिरी ज्ञानले अङ्क दिँदैन। विधागत विशेषता विधाअनुसार मात्र (कवितामा छन्द खोज्ने, वक्तृतामा तर्क)। जीवनी/रिपोर्ताजमा तथ्य र सन्देश छुट्याउने; चिठी/दैनिकीमा आत्मपरक स्वर चिन्ने।</p></dd></div></dl></div></div><div class="item"><span class="idx">4.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Special cases</p></dd></div><div class="kv"><dt>Text</dt><dd><p>'जलस्रोत र ऊर्जा' वक्तृताको केन्द्रीय भावना: जलस्रोतको सदुपयोगबाट समृद्धि (NEB 2023)। 'त्यो फेरि फर्कला?' मनोवैज्ञानिक कथामा बाह्य घटना होइन पात्रको मानसिक द्वन्द्व नै कथानक हो। 'रारा भ्रमण' दैनिकीमा मिति-क्रम र आत्मानुभूति दुवै चाहिन्छ।</p></dd></div></dl></div></div><div class="item"><span class="idx">5.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Solved</p></dd></div><div class="kv"><dt>Text</dt><dd><p>'जल विद्युत्' विषयक कृति को? केन्द्रीय भावना के? — उत्तर: यो 'जलस्रोत र ऊर्जा' (वक्तृता) पाठसँग सम्बन्धित विषय हो; केन्द्रीय भावना: नेपालको जलस्रोत राष्ट्रिय समृद्धिको आधार हो, त्यसैले यसको संरक्षण र सदुपयोग अपरिहार्य छ — कृति + एक-वाक्य भावना + एक विशेषता, पूरा अङ्क (NEB 2023, ३ अङ्कको ढाँचा)।</p></dd></div></dl></div></div><div class="item"><span class="idx">6.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Limitation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>एउटै साँचोले सबै पाठ उत्तिकै गहिरो गरी खोल्दैन — व्यंग्यमा हास्यको निशाना, जीवनीमा ऐतिहासिक सन्दर्भ छुट्टै पढ्नुपर्छ। केन्द्रीय भावना एकभन्दा बढी वैध हुन सक्छन्; प्रमाणबिना कुनै पनि टिक्दैन। पाठ-सारांश लेख्नु विश्लेषण होइन।</p></dd></div></dl></div></div><div class="item"><span class="idx">7.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Derivation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>पाठबाट उत्तरसम्म चार पाइला: (१) पहिलो पठनमा विधा र विषय ठहराऊ; (२) दोस्रो पठनमा मुख्य घटना/विचार रेखाङ्कन गर; (३) तिनलाई एउटै वाक्यमा गाँस — त्यही केन्द्रीय भावना; (४) भाषाशैलीका दुई प्रमाण (उद्धरण/अलङ्कार/संवाद) थप। जुनसुकै पाठमा यही क्रम दोहोर्‍याऊ।</p></dd></div></dl></div></div><div class="item"><span class="idx">8.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Shortcut</p></dd></div><div class="kv"><dt>Text</dt><dd><p>पाठको नामै विधा भन्छ (कविता/कथा/निबन्ध/नाटक/संवाद/दैनिकी/वक्तृता) — नामबाट साँचा उठाऊ। केन्द्रीय भावना सधैँ एक वाक्य, सधैँ प्रमाणसहित। जीवनीमा वर्ष/योगदान, वक्तृतामा तर्क/आह्वान, नाटकमा संवाद/व्यंग्य — विधाका चिनारी शब्द उत्तरमा अनिवार्य।</p></dd></div></dl></div></div><div class="item"><span class="idx">9.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Board question</p></dd></div><div class="kv"><dt>Text</dt><dd><p>NEB 2023 (३): 'जल विद्युत्' विषयक कृति + केन्द्रीय भावना। कुनै पाठको विधागत विशेषता + सन्देश, जीवनीका तथ्य + योगदान, वक्तृताको तर्क-शृङ्खला — बाह्रै पाठ यही साँचामा सोधिन्छन्।</p></dd></div></dl></div></div></section>
+  <nav class="pager"><a href="sahitya-adhyayan--05-निबन्ध-र-लेखन-कौशल.rail.html" title="sahitya-adhyayan--05-निबन्ध-र-लेखन-कौशल.rail">‹ sahitya-adhyayan--05-निबन्ध-र-लेखन-कौशल.rail</a><a class="mid" href="../../../../../_subjects/class-11-nepali.html">Nepali</a><span></span></nav>
+</div></body></html>

@@ -1,0 +1,177 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Biodiversity Loss</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 12  /  Biology  /  Biodiversity Conservation 12</div>
+    <h1 class="doc">Biodiversity Loss</h1>
+    <div class="meta"><span>Class 12</span><span>Biology</span><span>Biodiversity Conservation 12</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>biodiversity-conservation-12</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>biodiversity-loss</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Notes</h2><ul><li>Biodiversity loss is the decline of alleles, species or ecosystems. The largest single cause worldwide is destruction and fragmentation of habitat: forest cut for farms and roads, wetlands drained, rivers dammed.</li><li>Fragmentation leaves habitat in islands. Populations become small, inbreeding rises, and the edge of each patch is hotter, windier and easier for predators and people to reach. Wide-ranging animals are hit first.</li><li>Overexploitation removes individuals faster than they reproduce. Poaching of rhinoceros, tiger and musk deer, and unsustainable fishing or timber cutting, are the usual forms.</li><li>Invasive alien species outcompete, prey on or infect native species. They spread fastest where habitat is already disturbed. Pollution and climate change add pressure: pesticides and industrial waste, and shifts in temperature and rainfall that move the climate a species needs upslope or away.</li><li>A common teaching order of causes is habitat loss, then overexploitation, then invasive species, then pollution and climate change. The letters are a memory aid. The ranking can differ for one particular species.</li><li>In Nepal the same causes appear as deforestation and encroachment, infrastructure through parks, poaching, and upstream dams or pollution that damage river life. Loss of local crop landraces is genetic loss even when the species itself still exists.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Extinction of a species is only the last step. Losing populations and alleles is already biodiversity loss.</li><li>Climate change is a real cause. It is not the largest cause in most textbook rankings. Habitat destruction is.</li><li>An invasive species is not any wild animal. It is a species introduced outside its range that spreads and harms native biodiversity or people.</li><li>Fragmentation is not the same as a smaller but still connected forest. The breaks between patches are the extra harm.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Habitat loss and fragmentation are the leading causes.</li><li>Overexploitation includes poaching and unsustainable harvest.</li><li>Invasive species, pollution and climate change are further causes.</li><li>Fragmentation adds inbreeding and edge effects.</li><li>Genetic loss of landraces counts, even if the species survives.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>The evil quartet of habitat loss, overexploitation, introduced species and secondary extinction, with pollution and climate change added in modern lists, frames the causes.</li><li>Small isolated populations lose genetic diversity and are more likely to die out from a chance event.</li><li>Stopping loss means removing the cause, not only counting the species that remain.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>A highway through a forest blocks animal movement and is fragmentation even if trees remain on both sides.</li><li>Poaching for horn is overexploitation of rhinoceros.</li><li>Water hyacinth covering a lake is an invasive plant that shades out native aquatic plants.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Habitat destruction is treated as the single largest driver of biodiversity loss worldwide.</li><li>Edge effects make the inner, safer area of a fragment much smaller than the fragment's map area.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Cause order often taught: habitat loss &gt; overexploitation &gt; invasive species &gt; pollution &gt; climate change.</li><li>Fragment harm = smaller populations + inbreeding + larger edge relative to area.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Rank the main causes and give one Nepal example of the top cause.</li><li>Explain an edge effect in one sentence.</li><li>Say how loss of rice landraces is biodiversity loss without a species extinction.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Why are large mammals especially vulnerable in fragmented parks?</li><li>How does an invasive plant reduce native diversity in a wetland?</li><li>Distinguish overexploitation from habitat loss using one example of each.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>List causes in a ranked order and attach one example to each of the first three.</li><li>Mention fragmentation separately from simple area loss.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Habitat first. Then hunting and harvest. Then invaders. Then dirt and a changing climate.</li><li>Fragment = island. Island = inbreeding and edge.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Secondary extinction means a species dies out because the species it depended on has already gone.</li><li>Do not blame a single cause when the question asks for causes. Give the set, with habitat loss first.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Use Nepal cases: poaching, forest conversion, invasive water plants, roads through habitat.</li><li>Include genetic erosion of crops if the question says biodiversity, not only wild animals.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The largest cause of biodiversity loss is usually</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Climate change alone</li><li>Habitat destruction and fragmentation</li><li>A single volcanic eruption</li><li>Lack of zoos</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Fragmentation harms populations because it</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Always increases the food supply</li><li>Isolates small groups and increases the edge</li><li>Removes the need for corridors</li><li>Raises evenness automatically</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Poaching of rhinoceros is an example of</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>In-situ conservation</li><li>Overexploitation</li><li>A hotspot criterion</li><li>Evenness</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>An invasive species is one that</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Is rare inside its original range</li><li>Is introduced, spreads, and harms native life or people</li><li>Lives only in a national park</li><li>Is listed as Least Concern</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Habitat loss</li><li>Fragmentation and edge effects</li><li>Overexploitation</li><li>Invasive alien species</li><li>Genetic erosion</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Rank five causes and attach one example to each of the first three.</li><li>Explain inbreeding risk in a fragmented population in three steps.</li></ul></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A continuous forest of 100 km² is cut into four blocks of 25 km² separated by fields. The total forest area is unchanged. Why can species still be lost?</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Total area is the same, so simple area loss is not the new harm.</li><li>The blocks are separated, so animals that will not cross fields are split into smaller populations.</li><li>Smaller populations inbreed more easily and are more likely to die out from a chance fire, flood or disease.</li><li>Each block has more edge per unit area, so the cool, sheltered interior shrinks.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>Species are lost to fragmentation: isolation, smaller populations, inbreeding and a higher proportion of edge, even though the mapped forest area is unchanged.</p></div></div></div></section>
+<section class="field"><h2>Summary</h2><p>Biodiversity is lost mainly when habitat is destroyed or broken into fragments. Overexploitation, invasive species, pollution and climate change add to that loss. The damage hits alleles and ecosystems as well as whole species, and in Nepal it shows up as deforestation, poaching, roads and invasive wetland plants.</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The largest cause of biodiversity loss is usually</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Climate change alone</li><li>Habitat destruction and fragmentation</li><li>A single volcanic eruption</li><li>Lack of zoos</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Fragmentation harms populations because it</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Always increases the food supply</li><li>Isolates small groups and increases the edge</li><li>Removes the need for corridors</li><li>Raises evenness automatically</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Poaching of rhinoceros is an example of</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>In-situ conservation</li><li>Overexploitation</li><li>A hotspot criterion</li><li>Evenness</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>An invasive species is one that</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Is rare inside its original range</li><li>Is introduced, spreads, and harms native life or people</li><li>Lives only in a national park</li><li>Is listed as Least Concern</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+  <nav class="pager"><a href="01-biodiversity-levels.html" title="Levels of Biodiversity">‹ Levels of Biodiversity</a><a class="mid" href="../../../../../_subjects/class-12-biology.html">Biology</a><a href="03-conservation-strategies-12.html" title="Conservation Strategies">Conservation Strategies ›</a></nav>
+</div></body></html>

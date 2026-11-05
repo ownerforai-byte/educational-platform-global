@@ -1,0 +1,206 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Concept of ecosystem, structural and functional aspects o…</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Biology  /  Ecology</div>
+    <h1 class="doc">Concept of ecosystem, structural and functional aspects o…</h1>
+    <div class="meta"><span>Class 11</span><span>Biology</span><span>Ecology</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>ecology</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>generated</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
+<section class="field"><h2>Visual Type</h2><p>food-chain-energy</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Visualization</dt><dd><dl class="obj"><div class="kv"><dt>Type</dt><dd><p>static</p></dd></div><div class="kv"><dt>Component</dt><dd><p>DerivationVisual</p></dd></div><div class="kv"><dt>Desc</dt><dd><p>Energy pyramid for a pond or a forest: producers at the base, about 10 percent passed up each level, the rest lost as heat.</p></dd></div></dl></dd></div><div class="kv"><dt>Notes</dt><dd><ul><li>An ecosystem is a community of organisms and the abiotic setting they live in, working as one unit. The word was used in this sense by A. G. Tansley. Structure is what is there. Function is what happens: production, decomposition, energy flow and nutrient cycling.</li><li>A pond's abiotic part is the water itself, the light that reaches each depth, temperature, dissolved oxygen and dissolved minerals. Producers are phytoplankton plus floating and submerged plants. Consumers are zooplankton, aquatic insects, fish and birds. Decomposers are bacteria and fungi, especially on the mud where dead matter settles.</li><li>A pond is also layered in space. The littoral zone is the shallow edge with rooted plants. The limnetic zone is the open water where phytoplankton live in the light. The profundal zone is the deep water with too little light for photosynthesis, so it depends on food falling from above. Those zones are structure. The feeding links among them are function.</li><li>A forest is layered in height. The canopy takes most of the light. Under it are smaller trees, then shrubs, herbs, and the litter of the forest floor. Producers are the woody plants and the ground herbs. Consumers are insects, birds, deer and the predators that eat them. Fungi and bacteria in the litter are the decomposers. In Nepal a Terai sal forest and a mid-hill oak-rhododendron forest are two such structures with different species and the same four jobs.</li><li>Function is shared by pond and forest even when the species lists differ. Producers fix light into chemical energy. Each consumer level receives only about a tenth of the energy of the level below, Lindeman's ten percent law, and the rest leaves as heat. Energy therefore moves one way and must be replaced by sunlight. Nutrients, unlike energy, cycle: decomposers return carbon, nitrogen and minerals to a form producers can use again.</li><li>Productivity is the rate of that production. Gross primary productivity is the total energy fixed. Net primary productivity is what remains after the producers have respired. A pond's net production is often limited by how far light and nutrients reach. A forest locks a great deal of its production into wood, so its standing biomass is large even when the yearly growth of new leaves is modest. Both are complete ecosystems if producers, consumers, decomposers and the abiotic medium are all present.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Notes</h2><ul><li>An ecosystem is a community of organisms and the abiotic setting they live in, working as one unit. The word was used in this sense by A. G. Tansley. Structure is what is there. Function is what happens: production, decomposition, energy flow and nutrient cycling.</li><li>A pond's abiotic part is the water itself, the light that reaches each depth, temperature, dissolved oxygen and dissolved minerals. Producers are phytoplankton plus floating and submerged plants. Consumers are zooplankton, aquatic insects, fish and birds. Decomposers are bacteria and fungi, especially on the mud where dead matter settles.</li><li>A pond is also layered in space. The littoral zone is the shallow edge with rooted plants. The limnetic zone is the open water where phytoplankton live in the light. The profundal zone is the deep water with too little light for photosynthesis, so it depends on food falling from above. Those zones are structure. The feeding links among them are function.</li><li>A forest is layered in height. The canopy takes most of the light. Under it are smaller trees, then shrubs, herbs, and the litter of the forest floor. Producers are the woody plants and the ground herbs. Consumers are insects, birds, deer and the predators that eat them. Fungi and bacteria in the litter are the decomposers. In Nepal a Terai sal forest and a mid-hill oak-rhododendron forest are two such structures with different species and the same four jobs.</li><li>Function is shared by pond and forest even when the species lists differ. Producers fix light into chemical energy. Each consumer level receives only about a tenth of the energy of the level below, Lindeman's ten percent law, and the rest leaves as heat. Energy therefore moves one way and must be replaced by sunlight. Nutrients, unlike energy, cycle: decomposers return carbon, nitrogen and minerals to a form producers can use again.</li><li>Productivity is the rate of that production. Gross primary productivity is the total energy fixed. Net primary productivity is what remains after the producers have respired. A pond's net production is often limited by how far light and nutrients reach. A forest locks a great deal of its production into wood, so its standing biomass is large even when the yearly growth of new leaves is modest. Both are complete ecosystems if producers, consumers, decomposers and the abiotic medium are all present.</li><li><h2>Concept of ecosystem, structural and functional aspects of pond and forest ecosystem</h2>
+<h3>1. Introduction</h3>
+<p>Opening frame for <strong>Concept of ecosystem</strong> — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Ecology fill pass.</p>
+<h3>2. Hierarchy body — every syllabus sub-point</h3>
+<h4>Concept of ecosystem</h4>
+<h4>structural and functional aspects of pond and forest ecosystem</h4>
+<p>Fill order per concept: definition → structure → process → significance (§3.2). Step-by-step numbered points, Pioneer style.</li><li><h3>3. Classified tables</h3>
+<p><strong>Table 1 — Characteristics</strong></p>
+<table><thead><tr><th>Part</th><th>Structure</th><th>Function</th><th>Exam note</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 2 — Key ideas and worked angles</strong></p>
+<table><thead><tr><th>Idea</th><th>Statement</th><th>Where used</th><th>Worked example</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 3 — Summary and marks map</strong></p>
+<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB marks trend</th></tr></thead><tbody></tbody></table>
+<p>Tables carry examples in every classification and characteristics row, ≤ 12 rows, and each is referenced from the body text (§3.3).</li><li><h3>4. Diagrams and figures</h3>
+<ul>
+<li><strong>D1</strong> — Food chain/web and trophic-pyramid diagrams (authored SVG — English labels, viewBox 900×640)</li>
+<li><strong>D2</strong> — Concept of ecosystem — process or life-cycle flow (authored SVG — English labels)</li>
+<li><strong>D3</strong> — Concept of ecosystem — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
+<li><strong>D4</strong> — Concept of ecosystem — comparison or application figure (curated external — license recorded at fill)</li>
+</ul>
+<p>Figure slots are declared up front (§3.4): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y), every external figure license-recorded at fill.</li><li><h3>5. Worked examples and applications</h3>
+<p>≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass.</p>
+<h3>6. Key terms and statements</h3>
+<p>Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).</li><li><h3>7. Exam Zone</h3>
+<p>NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</li><li><h3>8. Summary and self-check</h3>
+<p>5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Structure is not function. A list of fish is structure. The path of energy through those fish is function.</li><li>Energy is not recycled the way nitrogen is. Energy arrives from the sun and leaves as heat.</li><li>The profundal zone is not full of photosynthetic producers. Light is too weak there.</li><li>Net primary productivity is not gross. Respiration has already been subtracted.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Ecosystem = community + abiotic environment, as one unit.</li><li>Four functions: productivity, decomposition, energy flow, nutrient cycling.</li><li>Pond zones: littoral, limnetic, profundal.</li><li>Forest strata: canopy, understorey, shrub, herb, litter.</li><li>About 10 percent of energy passes to the next trophic level.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Pond and forest differ in species and in layering, and they share the same four functions.</li><li>Decomposers are required in both, or nutrients stay locked in dead bodies.</li><li>A standing crop of wood is biomass. Productivity is a rate.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Phytoplankton in the limnetic zone are the main producers of an open pond.</li><li>Leaf litter on a forest floor is the decomposers' workplace.</li><li>If producers capture 10,000 kJ, about 10 kJ remains at the tertiary-consumer level under the ten percent law.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Lindeman's ten percent law: roughly a tenth of the energy at one trophic level is available to the next. Real efficiencies fall between about 5 and 20 percent.</li><li>Nutrient cycles are closed enough to reuse atoms. Energy flow is not closed.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>E(n+1) ≈ 0.1 × E(n)</li><li>Net primary productivity = gross primary productivity − respiration of the producers.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Sketch a pond in three zones and name one organism-type in each.</li><li>List the four functions and mark which of them also describes a forest.</li><li>Carry 10,000 kJ from producers to the tertiary consumer in three multiplications.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Why can a deep pond zone not support submerged plants?</li><li>How is a forest floor like the mud of a pond?</li><li>Why does a food chain in either ecosystem stay short?</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>A 'describe pond and forest' answer needs both structure and function. Species lists alone miss half the question.</li><li>Show the ten percent calculation in separate steps when a number is given.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Energy one way. Nutrients cycle.</li><li>NPP = GPP − R. Do not report GPP as the energy left for herbivores.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>Name a Nepali forest type if you can, then still give the universal strata. The strata are what the mark scheme wants.</li><li>Trophic level and zone are different. Limnetic is a place. Producer is a feeding role.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Tansley is the name to attach to the ecosystem as a unit.</li><li>Standing biomass can be high in a forest while energy flow through the canopy is still only the yearly production.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The profundal zone of a pond is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>The sunlit open water full of phytoplankton</li><li>Deep water with too little light for photosynthesis</li><li>The canopy</li><li>The litter layer of a forest</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Under the ten percent law, 10,000 kJ in producers leaves about how much at the tertiary consumer?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>10,000 kJ</li><li>1,000 kJ</li><li>100 kJ</li><li>10 kJ</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>D</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Net primary productivity equals</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Gross primary productivity plus respiration</li><li>Gross primary productivity minus producer respiration</li><li>Only the energy in decomposers</li><li>The biomass of wood</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Energy flow differs from nutrient cycling because energy</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Returns to producers in a closed loop</li><li>Moves one way and is lost as heat</li><li>Is never used in respiration</li><li>Is an abiotic zone</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Structure versus function</li><li>Pond zones</li><li>Forest stratification</li><li>Ten percent law</li><li>Gross and net productivity</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Compare pond and forest in two columns: producers, consumers, decomposers, main abiotic medium.</li><li>Calculate the energy at each trophic level from a given producer input.</li></ul></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Producers in a forest capture 10,000 kJ. Using the ten percent law, how much energy reaches the tertiary consumers?</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>Primary consumers receive about 0.1 × 10,000 = 1,000 kJ.</li><li>Secondary consumers receive about 0.1 × 1,000 = 100 kJ.</li><li>Tertiary consumers receive about 0.1 × 100 = 10 kJ.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>About 10 kJ.</p></div></div></div></section>
+<section class="field"><h2>Summary</h2><p>A pond and a forest are ecosystems: a community plus its abiotic setting. The pond is zoned into littoral, limnetic and profundal water. The forest is stacked from canopy to litter. Both produce, decompose, pass about a tenth of their energy upward, and recycle nutrients. Energy must keep arriving as light. Atoms of carbon and nitrogen can be used again.</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The profundal zone of a pond is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>The sunlit open water full of phytoplankton</li><li>Deep water with too little light for photosynthesis</li><li>The canopy</li><li>The litter layer of a forest</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Under the ten percent law, 10,000 kJ in producers leaves about how much at the tertiary consumer?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>10,000 kJ</li><li>1,000 kJ</li><li>100 kJ</li><li>10 kJ</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>D</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Net primary productivity equals</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Gross primary productivity plus respiration</li><li>Gross primary productivity minus producer respiration</li><li>Only the energy in decomposers</li><li>The biomass of wood</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Energy flow differs from nutrient cycling because energy</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Returns to producers in a closed loop</li><li>Moves one way and is lost as heat</li><li>Is never used in respiration</li><li>Is an abiotic zone</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+  <nav class="pager"><a href="01-ecosystem-ecology.html" title="Ecosystem Ecology">‹ Ecosystem Ecology</a><a class="mid" href="../../../../../_subjects/class-11-biology.html">Biology</a><a href="02-food-chain-food-web-trophic-level-ecological-pyramids-productivity.html" title="Food Chain, Food Web and Ecological Pyramids">Food Chain, Food Web and Ecological Pyramids ›</a></nav>
+</div></body></html>

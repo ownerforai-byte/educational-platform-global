@@ -1,0 +1,206 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Coulomb's law: force between two point charges</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Physics  /  Electric Charges</div>
+    <h1 class="doc">Coulomb's law: force between two point charges</h1>
+    <div class="meta"><span>Class 11</span><span>Physics</span><span>Electric Charges</span></div>
+  </header>
+  <section class="field"><h2>Unit SLUG</h2><p>electric-charges</p></section>
+<section class="field"><h2>Topic SLUG</h2><p>coulomb-s-law-force-between-two-point-charges</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>generated</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>Coulomb's law.</strong> The force between two point charges is directly proportional to the product of the charges and inversely proportional to the square of the distance: F = (1/4πε₀)q₁q₂/r².</li><li><strong>Direction.</strong> The force acts along the line joining the charges — repulsive for like charges, attractive for unlike charges — and obeys Newton's third law.</li><li><strong>Permittivity.</strong> In a medium of dielectric constant K the force falls to F = q₁q₂/4πε₀Kr²; for vacuum K = 1 and ε₀ = 8.85 × 10⁻¹² C² N⁻¹ m⁻².</li><li><strong>Vector form.</strong> F₁₂ = (q₁q₂/4πε₀) × (r₂ − r₁)/|r₂ − r₁|³ gives both magnitude and direction automatically, with the sign of the charges deciding attraction or repulsion.</li><li><strong>Limitations.</strong> The law holds for point charges at rest and for spherically symmetric charge distributions; it is an inverse-square law like gravitation but far stronger.</li><li>Coulomb's law is an inverse-square law for point charges at rest. The force is unchanged if the two charges are swapped, and a medium of dielectric constant K divides the vacuum force by K.</li><li><h2>Coulomb's law: force between two point charges</h2>
+<h3>1. Introduction</h3>
+<p>Physical picture of <strong>Coulomb's law</strong> — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Electric Charges fill pass.</p>
+<h3>2. Concepts and laws</h3>
+<h4>Coulomb's law: force between two point charges</h4>
+<p>Each law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).</li><li><h3>3. Derivation block</h3>
+<p>Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs &quot;derive / establish / show that&quot; are answered here, not elsewhere.</p>
+<p><strong>Table 1 — Law and result sheet</strong></p>
+<table><thead><tr><th>Law or result</th><th>Statement (words)</th><th>Equation + symbols</th><th>SI units</th><th>When it holds</th></tr></thead><tbody></tbody></table></li><li><h3>4. Formula and units table</h3>
+<p><strong>Table 2 — Cases and comparisons</strong></p>
+<table><thead><tr><th>Case</th><th>Condition</th><th>Governing equation</th><th>Worked angle</th></tr></thead><tbody></tbody></table>
+<p><strong>Table 3 — Summary and marks map</strong></p>
+<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table>
+<p>Every formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).</li><li><h3>5. Diagrams and figures</h3>
+<ul>
+<li><strong>D1</strong> — Coulomb's law — free-body and field picture (authored SVG — English labels, viewBox 900×640)</li>
+<li><strong>D2</strong> — Coulomb's law — graph or second construction (authored SVG — axes, units and labels)</li>
+<li><strong>D3</strong> — Coulomb's law — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
+<li><strong>D4</strong> — Coulomb's law — apparatus or application figure (curated external — license recorded at fill)</li>
+</ul>
+<p>Slots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.</li><li><h3>6. Worked numericals</h3>
+<p>≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.</p>
+<h3>7. Key terms, signs and traps</h3>
+<p>Sign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).</li><li><h3>8. Exam Zone and self-check</h3>
+<p>NEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</p>
+<p>Key-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ state the rule without its limit → ✅ note when it applies / stops applying.</li><li>❌ no diagram → ✅ add one labelled figure / structured list.</li><li>❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition..</li><li>A symbol is not a number until the unit is named.</li><li>A proportional relation is not an equality until the constant is included.</li><li>A vector answer needs a direction as well as a magnitude.</li><li>A special case, such as a right angle or a steady temperature, has to be stated before it is used.</li></ul></section>
+<section class="field"><h2>Bounds</h2><ul><li>Covers only: coulomb's law: force between two point charges (within Electric Charges).</li><li>Out of scope here: topics of neighbouring units in Physics — don't mix them.</li><li>State the limit / condition where a formula or rule stops being valid before applying it.</li><li>Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Write F = k |q1 q2| / r^2 and say what each symbol means.</li><li>Mark the known values, then substitute one step at a time.</li><li>Finish with the number, the unit, and the direction when the quantity has one.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.</li><li>Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.</li><li>Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>Coulomb's law is an inverse-square law for point charges at rest. The force is unchanged if the two charges are swapped, and a medium of dielectric constant K divides the vacuum force by K.</li><li>The working relations are F = k |q1 q2| / r^2 and k = 9.0 × 10^9. Name each symbol, convert the data into SI units, and only then substitute.</li><li>Charges of 2.0 μC and 4.0 μC are 0.20 m apart in air. Find the force. Use k = 9.0 × 10^9.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>Write F = k |q1 q2| / r^2 and name the symbols.</li><li>What does k = 9.0 × 10^9 tell you?</li><li>Which unit must be converted before the substitution?</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>F = k q₁q₂/r²</li><li>E = F/q</li><li>∮E·dA = Q/ε₀</li><li>V = kq/r</li></ul></section>
+<section class="field"><h2>Numericals</h2><ul><li>Charges of 2.0 μC and 4.0 μC are 0.20 m apart in air. Find the force. Use k = 9.0 × 10^9.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>• Coulomb's law: force between two point charges</li><li>F = k |q1 q2| / r^2</li><li>k = 9.0 × 10^9</li><li>Convert units before substituting.</li><li>Quote the unit with the result.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Two point charges repel or attract with k |q1 q2| / r^2. These 2.0 μC and 4.0 μC charges, 0.20 m apart, repel with 1.8 N, and each feels that same magnitude.</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Doubling r multiplies F by</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>2</li><li>1/4</li><li>4</li><li>1/2</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Like charges</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Repel</li><li>Attract</li><li>Feel unequal forces</li><li>Have F proportional to r</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>A dielectric K</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Multiplies the force by K</li><li>Divides the force by K</li><li>Removes r</li><li>Sets F to k</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>The forces on the two charges are</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Equal and opposite</li><li>Larger on the larger charge</li><li>Zero</li><li>Perpendicular</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div></section>
+<section class="field"><h2>Important Statements</h2><ul><li>Coulomb's law is an inverse-square law for point charges at rest. The force is unchanged if the two charges are swapped, and a medium of dielectric constant K divides the vacuum force by K.</li><li>The working relations are F = k |q1 q2| / r^2 and k = 9.0 × 10^9. Name each symbol, convert the data into SI units, and only then substitute.</li><li>Charges of 2.0 μC and 4.0 μC are 0.20 m apart in air. Find the force. Use k = 9.0 × 10^9. q1 q2 = 8.0 × 10^−12. r^2 = 0.040.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Definition, then formula, then substitution.</li><li>A vector answer is incomplete without its direction.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>SI units first, then the formula.</li><li>The last line is the number, the unit, and the direction if there is one.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>A sketched sign convention is part of the data.</li><li>A dimensionless ratio still needs the two quantities named.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Do not skip the unit conversion.</li><li>Match the formula to the situation drawn, not to a neighbouring topic.</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Definition</li><li>Formula</li><li>Unit</li><li>Worked case</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Copy the worked example and hide the result until the last step.</li><li>Name the unit of every term in the formula.</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Doubling r multiplies F by</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>2</li><li>1/4</li><li>4</li><li>1/2</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>Like charges</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Repel</li><li>Attract</li><li>Feel unequal forces</li><li>Have F proportional to r</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>A dielectric K</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Multiplies the force by K</li><li>Divides the force by K</li><li>Removes r</li><li>Sets F to k</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>The forces on the two charges are</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Equal and opposite</li><li>Larger on the larger charge</li><li>Zero</li><li>Perpendicular</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div></section>
+<section class="field"><h2>Exercises</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Charges of 2.0 μC and 4.0 μC are 0.20 m apart in air. Find the force. Use k = 9.0 × 10^9.</p></div><div class="kv"><div class="k">Steps</div><div class="v"><ul><li>q1 q2 = 8.0 × 10^−12.</li><li>r^2 = 0.040.</li><li>F = 9.0 × 10^9 × 8.0 × 10^−12 / 0.040.</li><li>9e9 × 8e−12 = 0.072, and 0.072/0.040 = 1.8 N.</li><li>The charges repel.</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>1.8 N, repulsive.</p></div></div></div></section>
+  <nav class="pager"><a href="02-coulomb-s-law-and-force-between-multiple-charges.html" title="Coulomb's Law and Force Between Multiple Charges">‹ Coulomb's Law and Force Between Multiple Char…</a><a class="mid" href="../../../../../_subjects/class-11-physics.html">Physics</a><a href="04-force-between-multiple-electric-charges.html" title="Force between multiple electric charges">Force between multiple electric charges ›</a></nav>
+</div></body></html>

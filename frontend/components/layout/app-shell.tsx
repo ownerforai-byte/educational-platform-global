@@ -9,7 +9,7 @@ import { hasLevel } from "@/lib/access-level";
 import { sectionById } from "@/lib/sections";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
-import { MobileQuickNav } from "./mobile-quick-nav";
+import { BottomTabBar } from "./bottom-tab-bar";
 import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
 import { R1Shortcut } from "./r1-shortcut";
@@ -20,6 +20,7 @@ import { UserNav } from "./user-nav";
 import { Footer } from "./footer";
 import { PlatformGuideWidget } from "@/components/home/platform-guide-widget";
 import { AIWidget } from "./ai-widget";
+import { useMediaQuery } from "@/lib/use-media-query";
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -30,15 +31,18 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   const pathname = usePathname();
   const isChatRoom = pathname === "/chat" || pathname.startsWith("/chat/");
   const { user } = useSession();
-  // PUBLIC CHROME (owner request 2026-10-23): for public/visitor pages the
-  // shell is header + body + footer ONLY — the search bar and the quick-links
-  // strip (Class 11 / Labs / Quiz …) start at the Member rung.
-  const memberUp = hasLevel(user, "member");
   // THE PLAN (plan.md §3 row "Search"): the global search input opens at the
   // Search section's rung — the same tier the public /plans matrix shows.
   const searchUnlocked = hasLevel(user, sectionById("search")?.minTier ?? "member");
   const [preferencesLoaded, setPreferencesLoaded] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  // Three shells, one component: phone (bottom tabs + drawer), tablet
+  // (the sidebar collapsed to an icon rail) and desktop (full sidebar). The
+  // rail is the same navigation, so a tablet keeps every destination instead
+  // of falling back to a phone-width page.
+  const isDesktop = useMediaQuery("(min-width: 1024px)", true);
+  const railOnly = !isDesktop;
+  const navCollapsed = railOnly || sidebarCollapsed;
 
   useEffect(() => {
     try {
@@ -78,10 +82,10 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-background pb-tabbar md:pb-0">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-background focus:px-4 focus:py-3 focus:text-primary focus:shadow-lg">Skip to content</a>
       <header
-        className="pt-safe-top sticky top-0 z-40 border-b border-border/40 bg-background translate-y-0"
+        className="pt-safe-top sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70 translate-y-0"
       >
         <div className="grid min-h-12 md:min-h-14 grid-cols-[auto_minmax(0,1fr)] md:grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-2 gap-y-2 px-4 md:px-6 py-1.5">
           <div className="flex items-center gap-2 min-w-0">
@@ -151,27 +155,32 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Suspense>
           </div>
         </div>
-        {memberUp && <MobileQuickNav />}
       </header>
 
       {/* ── Body: sidebar + main ───────────────────────────────────── */}
       <div className="flex flex-1 relative">
-        {/* Desktop navigation */}
+        {/* Persistent navigation: full sidebar on desktop, icon rail on tablet.
+            One instance, one nav landmark — the compact rail is the same
+            SidebarNavigation, so both widths show every destination. */}
         <aside
           className={`
-            hidden lg:block
-            lg:sticky lg:top-16
-            lg:h-[calc(100vh-4rem)]
-            flex-shrink-0
+            hidden md:block
+            md:sticky md:top-14 lg:top-16
+            md:h-[calc(100dvh-3.5rem)] lg:h-[calc(100vh-4rem)]
+            flex-shrink-0 overflow-hidden
             border-r border-border/40 bg-background
-            transition-all duration-200 ease-in-out
-            ${sidebarCollapsed ? "w-16" : "w-64"}
+            transition-[width] duration-200 ease-in-out
+            ${navCollapsed ? "w-16" : "w-64"}
           `}
         >
-          <SidebarNavigation collapsed={sidebarCollapsed} />
+          <SidebarNavigation collapsed={navCollapsed} />
         </aside>
 
-        <main id="main-content" tabIndex={-1} className="flex-1 min-w-0 px-4 py-5 sm:py-6 md:px-6 lg:px-8 focus:outline-none">
+        <main
+          id="main-content"
+          tabIndex={-1}
+          className="flex-1 min-w-0 px-4 py-5 pb-tabbar sm:py-6 sm:pb-tabbar md:px-6 md:pb-8 lg:px-8 focus:outline-none"
+        >
           {breadcrumbs && breadcrumbs.length > 0 && (
             <nav aria-label="Breadcrumbs" className="mb-4 flex flex-wrap text-sm text-muted-foreground">
               {breadcrumbs.map((crumb, i) => (
@@ -205,6 +214,9 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
 
       {/* Site footer (tier-aware directory) */}
       <Footer user={user} />
+
+      {/* Phone app frame: thumb tabs, replaced by the rail/sidebar from md up. */}
+      <BottomTabBar />
 
       {/* Back navigation */}
       <BackButton />

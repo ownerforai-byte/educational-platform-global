@@ -1,0 +1,156 @@
+<!doctype html><html><head><meta charset="utf-8"><title>{</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Vectors</div>
+    <h1 class="doc">{</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Vectors</span></div>
+  </header>
+  <p>  &quot;title&quot;: &quot;Applications of Vectors — Work, Torque, Angular Momentum&quot;,   &quot;unitSlug&quot;: &quot;vectors&quot;,   &quot;topicSlug&quot;: &quot;applications-of-vectors-work-torque-angular-momentum&quot;,   &quot;topicTitle&quot;: &quot;Applications of Vectors — Work, Torque, Angular Momentum&quot;,   &quot;relevance&quot;: 88,   &quot;notes&quot;: [     &quot;&lt;h2&gt;1. Work Done by a Force&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;When a constant force &lt;b&gt;F&lt;/b&gt; acts on an object and displaces it by &lt;b&gt;d&lt;/b&gt;, the work done is:&lt;/p&gt;&quot;,     &quot;&lt;p&gt;W = &lt;b&gt;F&lt;/b&gt; &amp;middot; &lt;b&gt;d&lt;/b&gt; = |&lt;b&gt;F&lt;/b&gt;| |&lt;b&gt;d&lt;/b&gt;| cos θ&lt;/p&gt;&quot;,     &quot;&lt;p&gt;where θ is the angle between the force and displacement vectors.&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Key insight:&lt;/b&gt; Only the component of force in the direction of displacement does work. If force is perpendicular to displacement (θ = 90°), no work is done.&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Examples:&lt;/b&gt;&lt;/p&gt;&quot;,     &quot;&lt;p&gt;(a) Lifting a box vertically: W = |&lt;b&gt;F&lt;/b&gt;| |&lt;b&gt;d&lt;/b&gt;| (θ = 0°, cos 0° = 1)&lt;/p&gt;&quot;,     &quot;&lt;p&gt;(b) Carrying a box horizontally: W = 0 (θ = 90°, the force is vertical but displacement is horizontal)&lt;/p&gt;&quot;,     &quot;&lt;p&gt;(c) Pulling a sled at an angle: W = |&lt;b&gt;F&lt;/b&gt;| |&lt;b&gt;d&lt;/b&gt;| cos θ, where θ is the angle of the pull above horizontal&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;2. Torque (Moment of Force)&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;Torque measures the turning effect of a force about a point or axis:&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;&amp;tau;&lt;/b&gt; = &lt;b&gt;r&lt;/b&gt; &amp;times; &lt;b&gt;F&lt;/b&gt;&lt;/p&gt;&quot;,     &quot;&lt;p&gt;where &lt;b&gt;r&lt;/b&gt; is the position vector from the pivot point to the point of force application, and &lt;b&gt;F&lt;/b&gt; is the force vector.&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Magnitude:&lt;/b&gt; |&lt;b&gt;&amp;tau;&lt;/b&gt;| = |&lt;b&gt;r&lt;/b&gt;| |&lt;b&gt;F&lt;/b&gt;| sin θ = |&lt;b&gt;F&lt;/b&gt;| × (perpendicular distance from pivot)&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Direction:&lt;/b&gt; Perpendicular to the plane of &lt;b&gt;r&lt;/b&gt; and &lt;b&gt;F&lt;/b&gt; (right-hand rule). The direction indicates the axis of rotation.&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Key insight:&lt;/b&gt; Maximum torque occurs when the force is applied perpendicular to the lever arm (θ = 90°). Pushing directly toward or away from the pivot gives zero torque.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;3. Angular Momentum&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;Angular momentum of a particle about a point is defined as:&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;L&lt;/b&gt; = &lt;b&gt;r&lt;/b&gt; &amp;times; &lt;b&gt;p&lt;/b&gt; = &lt;b&gt;r&lt;/b&gt; &amp;times; (m&lt;b&gt;v&lt;/b&gt;)&lt;/p&gt;&quot;,     &quot;&lt;p&gt;where &lt;b&gt;r&lt;/b&gt; is the position vector from the origin to the particle, and &lt;b&gt;p&lt;/b&gt; = m&lt;b&gt;v&lt;/b&gt; is the linear momentum.&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Magnitude:&lt;/b&gt; |&lt;b&gt;L&lt;/b&gt;| = m|&lt;b&gt;r&lt;/b&gt;| |&lt;b&gt;v&lt;/b&gt;| sin θ = mvd, where d is the perpendicular distance from the origin to the line of motion.&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Conservation:&lt;/b&gt; If the net torque on a system is zero, angular momentum is conserved: &lt;b&gt;L&lt;/b&gt; = constant.&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Example:&lt;/b&gt; A planet orbiting the sun has constant angular momentum because the gravitational force is central (always directed toward the sun).&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;4. Applications Summary&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Dot product applications:&lt;/b&gt; Work (W = &lt;b&gt;F&lt;/b&gt; &amp;middot; &lt;b&gt;d&lt;/b&gt;), power (P = &lt;b&gt;F&lt;/b&gt; &amp;middot; &lt;b&gt;v&lt;/b&gt;), component of a vector.&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Cross product applications:&lt;/b&gt; Torque (&lt;b&gt;&amp;tau;&lt;/b&gt; = &lt;b&gt;r&lt;/b&gt; &amp;times; &lt;b&gt;F&lt;/b&gt;), angular momentum (&lt;b&gt;L&lt;/b&gt; = &lt;b&gt;r&lt;/b&gt; &amp;times; &lt;b&gt;p&lt;/b&gt;), magnetic force (&lt;b&gt;F&lt;/b&gt; = q&lt;b&gt;v&lt;/b&gt; &amp;times; &lt;b&gt;B&lt;/b&gt;).&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Scalar triple product applications:&lt;/b&gt; Volume of parallelepiped, coplanarity check, volume of tetrahedron.&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;5. Right-Hand Rule in Physics&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;The right-hand rule is essential for determining the direction of cross product results:&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Torque:&lt;/b&gt; Point fingers along &lt;b&gt;r&lt;/b&gt;, curl toward &lt;b&gt;F&lt;/b&gt;; thumb gives direction of &lt;b&gt;&amp;tau;&lt;/b&gt;.&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Angular momentum:&lt;/b&gt; Point fingers along &lt;b&gt;r&lt;/b&gt;, curl toward &lt;b&gt;v&lt;/b&gt;; thumb gives direction of &lt;b&gt;L&lt;/b&gt;.&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Magnetic force:&lt;/b&gt; Point fingers along &lt;b&gt;v&lt;/b&gt;, curl toward &lt;b&gt;B&lt;/b&gt;; thumb gives direction of &lt;b&gt;F&lt;/b&gt; (for positive charge).&lt;/p&gt;&quot;,     &quot;&lt;h2&gt;6. Equilibrium Conditions&lt;/h2&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Translational equilibrium:&lt;/b&gt; The net force is zero: Σ&lt;b&gt;F&lt;/b&gt; = &lt;b&gt;0&lt;/b&gt;.&lt;/p&gt;&quot;,     &quot;&lt;p&gt;&lt;b&gt;Rotational equilibrium:&lt;/b&gt; The net torque about any point is zero: Σ&lt;b&gt;&amp;tau;&lt;/b&gt; = &lt;b&gt;0&lt;/b&gt;.&lt;/p&gt;&quot;,     &quot;&lt;p&gt;Both conditions must be satisfied for a rigid body to be in complete static equilibrium.&lt;/p&gt;&quot;   ],   &quot;confusion&quot;: [     &quot;Work is a scalar (dot product), while torque is a vector (cross product). Do not confuse W = &lt;b&gt;F&lt;/b&gt; &amp;middot; &lt;b&gt;d&lt;/b&gt; with &lt;b&gt;&amp;tau;&lt;/b&gt; = &lt;b&gt;r&lt;/b&gt; &amp;times; &lt;b&gt;F&lt;/b&gt;.&quot;,     &quot;In torque &lt;b&gt;&amp;tau;&lt;/b&gt; = &lt;b&gt;r&lt;/b&gt; &amp;times; &lt;b&gt;F&lt;/b&gt;, the vector &lt;b&gt;r&lt;/b&gt; must start from the pivot point. Using the wrong point gives wrong torque.&quot;,     &quot;Angular momentum &lt;b&gt;L&lt;/b&gt; = &lt;b&gt;r&lt;/b&gt; &amp;times; &lt;b&gt;p&lt;/b&gt; depends on the choice of origin. Different origins give different angular momenta, but the change is meaningful in physics.&quot;,     &quot;If a force passes through the pivot point (collinear with &lt;b&gt;r&lt;/b&gt;), the torque is zero — the force produces no rotation. This is because sin 0° = 0.&quot;,     &quot;Power = &lt;b&gt;F&lt;/b&gt; &amp;middot; &lt;b&gt;v&lt;/b&gt; (dot product) gives the rate of doing work. It is NOT &lt;b&gt;F&lt;/b&gt; &amp;times; &lt;b&gt;v&lt;/b&gt; (cross product), which would give a vector with no physical meaning in this context.&quot;   ],   &quot;practice&quot;: [     &quot;A force &lt;b&gt;F&lt;/b&gt; = 3&lt;b&gt;i&lt;/b&gt; + 4&lt;b&gt;j&lt;/b&gt; N acts on an object that moves from (1, 2) to (5, 8) m. Find the work done.&quot;,     &quot;A force &lt;b&gt;F&lt;/b&gt; = 2&lt;b&gt;i&lt;/b&gt; − &lt;b&gt;j&lt;/b&gt; + 3&lt;b&gt;k&lt;/b&gt; N is applied at point P(1, 2, 3) m. Find the torque about the origin.&quot;,     &quot;A particle of mass 2 kg moves with velocity &lt;b&gt;v&lt;/b&gt; = 3&lt;b&gt;i&lt;/b&gt; + 4&lt;b&gt;j&lt;/b&gt; m/s at position &lt;b&gt;r&lt;/b&gt; = 2&lt;b&gt;i&lt;/b&gt; − &lt;b&gt;j&lt;/b&gt; + &lt;b&gt;k&lt;/b&gt; m. Find its angular momentum about the origin.&quot;,     &quot;A wrench of length 0.3 m is used to tighten a bolt. If a force of 50 N is applied perpendicular to the wrench, find the torque.&quot;,     &quot;A 5 N force is applied at a 30° angle to a displacement of 4 m. Find the work done.&quot;   ],   &quot;universalFacts&quot;: [     &quot;Work is measured in Joules (J) = Newton-meter (N⋅m). While torque also has units of N⋅m, work is scalar while torque is vector.&quot;,     &quot;Angular momentum is conserved in any system with no external torque. This explains why ice skaters spin faster when they pull in their arms.&quot;,     &quot;The dot product &lt;b&gt;F&lt;/b&gt; &amp;middot; &lt;b&gt;d&lt;/b&gt; extracts the component of force along the displacement. The cross product &lt;b&gt;r&lt;/b&gt; &amp;times; &lt;b&gt;F&lt;/b&gt; extracts the perpendicular component that causes rotation.&quot;,     &quot;In all three applications (work, torque, angular momentum), the vector operation (dot or cross) is chosen based on what physical quantity is being measured — scalar vs. vector.&quot;   ],   &quot;animation3D&quot;: &quot;vectors&quot;,   &quot;motionGraphics&quot;: &quot;vectors&quot; }</p>
+  <nav class="pager"><a href="04-scalar-and-vector-triple-products.html" title="Scalar and Vector Triple Products">‹ Scalar and Vector Triple Products</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="05-applications-work-torque-angular-momentum.html" title="Applications of Vectors â€” Work, Torque and Angular Momentum">Applications of Vectors â€” Work, Torque and … ›</a></nav>
+</div></body></html>
