@@ -6,6 +6,8 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from "vites
 const mocks = vi.hoisted(() => ({
   chat: vi.fn(),
   stream: vi.fn(),
+  searchEnabled: false,
+  searchResults: [] as Array<{ title: string; link: string; snippet: string; displayLink: string }>,
   rows: [] as Array<{ user_id: string; session: string; role: string; content: string; created_at?: string }>,
 }));
 
@@ -24,7 +26,17 @@ vi.mock("../../src/db/supabase", () => ({
     },
   },
 }));
-vi.mock("../../src/ai/search-engine", () => ({ getSearchService: () => ({ isEnabled: () => false }) }));
+vi.mock("../../src/ai/search-engine", () => ({
+  formatSearchContext: (results: Array<{ title: string; link: string }>) =>
+    results.length
+      ? `[REAL-TIME INTERNET SEARCH RESULTS]\n${results.map((result) => `${result.title}\nSource: ${result.link}`).join("\n")}`
+      : "",
+  getSearchService: () => ({
+    isEnabled: () => mocks.searchEnabled,
+    search: async () => mocks.searchResults,
+    searchAsContext: async () => mocks.searchEnabled ? "[REAL-TIME INTERNET SEARCH RESULTS]" : "",
+  }),
+}));
 vi.mock("../../src/ai/diagram-search", () => ({ DIAGRAM_TIMEOUT_MS: 10, fetchDiagramContext: async () => "" }));
 vi.mock("../../src/ai/curriculum-retrieval", async (original) => {
   const actual = await original<typeof import("../../src/ai/curriculum-retrieval")>();
@@ -54,7 +66,12 @@ vi.mock("../../src/middleware/aiSparkGate", () => ({
 import chatRoutes from "../../src/api/ai";
 import mathRoutes from "../../src/api/ai-math";
 import deepRoutes from "../../src/api/ai-deep-dive";
-import { deepConceptResearch, relatedHistory, shouldUpgradeAcademic } from "../../src/ai/complete-answer";
+import {
+  deepConceptResearch,
+  formatResearchPaperReferences,
+  relatedHistory,
+  shouldUpgradeAcademic,
+} from "../../src/ai/complete-answer";
 
 const app = express();
 app.use(express.json());
@@ -72,6 +89,8 @@ beforeAll(async () => {
 afterAll(async () => { await new Promise<void>((resolve) => server.close(() => resolve())); });
 beforeEach(() => {
   mocks.rows.length = 0;
+  mocks.searchEnabled = false;
+  mocks.searchResults.length = 0;
   mocks.chat.mockReset().mockResolvedValueOnce("Raw draft.").mockResolvedValue("Upgraded answer.");
   mocks.stream.mockReset().mockImplementation(async function* () { yield "Upgraded answer."; });
 });
@@ -89,6 +108,32 @@ describe("deep concept upgrade", () => {
   });
   it("returns an honest absence of sources when research is unavailable", async () => {
     expect(await deepConceptResearch("unknown concept")).toContain("No past-paper search results were available");
+  });
+  it("formats only real HTTPS research-paper search results as reader links", () => {
+    const references = formatResearchPaperReferences([
+      {
+        title: "Capacitor dielectric research paper",
+        link: "https://doi.org/10.1000/capacitor",
+        snippet: "Journal article.",
+        displayLink: "doi.org",
+      },
+      {
+        title: "Unrelated blog",
+        link: "https://example.com/blog",
+        snippet: "General information.",
+        displayLink: "example.com",
+      },
+      {
+        title: "Fake insecure paper",
+        link: "http://doi.org/10.1000/insecure",
+        snippet: "Journal article.",
+        displayLink: "doi.org",
+      },
+    ]);
+
+    expect(references).toContain("[Capacitor dielectric research paper](<https://doi.org/10.1000/capacitor>)");
+    expect(references).not.toContain("example.com");
+    expect(references).not.toContain("insecure");
   });
   it("links only matching questions belonging to the authenticated user", async () => {
     mocks.rows.push(
@@ -114,6 +159,39 @@ describe("deep concept upgrade", () => {
     expect(mocks.chat).toHaveBeenCalledTimes(1);
     expect(mocks.stream.mock.calls[0][1][0].content).toContain("DEEP-CONCEPT ANSWER UPGRADE");
     expect(mocks.stream.mock.calls[0][1][1].content).toContain("Raw draft.");
+  });
+  it("appends real web paper references after related-history links in Veer chat", async () => {
+    mocks.searchEnabled = true;
+    mocks.rows.push({ user_id: "alice", session: "prior", role: "user", content: "capacitor" });
+    mocks.searchResults.push(
+      {
+        title: "Capacitor dielectric research paper",
+        link: "https://doi.org/10.1000/capacitor",
+        snippet: "Journal article on capacitor dielectrics.",
+        displayLink: "doi.org",
+      },
+      {
+        title: "Unrelated blog",
+        link: "https://example.com/blog",
+        snippet: "General information.",
+        displayLink: "example.com",
+      },
+    );
+
+    const res = await post("/chat", {
+      stream: true,
+      session: "current",
+      messages: [{ role: "user", content: "Explain capacitor" }],
+    });
+    const body = await res.text();
+
+    expect(body).toContain("### Research papers & references");
+    expect(body).toContain("https://doi.org/10.1000/capacitor");
+    expect(body).not.toContain("https://example.com/blog");
+    expect(body).toContain("/chat?session=prior");
+    expect(body.indexOf("### Research papers & references")).toBeGreaterThan(
+      body.indexOf("/chat?session=prior"),
+    );
   });
   it("rebuilds non-streaming academic answers without exposing the draft", async () => {
     const res = await post("/chat", { messages: [{ role: "user", content: "Explain capacitor" }] });

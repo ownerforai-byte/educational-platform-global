@@ -15,7 +15,14 @@ import {
 // route is closed and answers 403, so only approved members can chat.)
 import { logServerError, newErrorId } from "../middleware/errors";
 import { appendConsoleRules, buildProfessorContext, withProfessorContext } from "../ai/prompts";
-import { completeAnswer, deepConceptResearch, relatedHistory, shouldUpgradeAcademic, upgradeMessages } from "../ai/complete-answer";
+import {
+  completeAnswer,
+  deepConceptResearchWithSources,
+  formatResearchPaperReferences,
+  relatedHistory,
+  shouldUpgradeAcademic,
+  upgradeMessages,
+} from "../ai/complete-answer";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
 import { withFigureToolInstruction, resolveFiguresInText } from "../ai/image-gen";
 import { detectRoughInput, ROUGH_REDFLAG_REPLY } from "../ai/profanity-guard";
@@ -193,17 +200,17 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
 
     // Academic answers are rebuilt in a second pass; only that pass is visible.
     const upgrade = shouldUpgradeAcademic(lastUser, conversationTail);
-    let historyLinks = "";
+    let answerSuffix = "";
     if (upgrade) {
       channel?.send({ phase: "drafting", label: "Preparing a first draft…" });
       const [draft, research, related] = await Promise.all([
         aiService.chat(provider, messages),
-        deepConceptResearch(lastUser),
+        deepConceptResearchWithSources(lastUser),
         relatedHistory(user.id, lastUser, typeof body?.session === "string" ? body.session : ""),
       ]);
-      historyLinks = related;
+      answerSuffix = `${related}${formatResearchPaperReferences(research.papers)}`;
       const language = consoleId === "nepali" ? "Write the whole answer in Nepali, preserving the original question verbatim." : "";
-      messages = upgradeMessages(lastUser, draft, research, language, conversationTail, images);
+      messages = upgradeMessages(lastUser, draft, research.context, language, conversationTail, images);
     }
 
     // Live streaming: the connection is already open (above); the pipeline —
@@ -218,7 +225,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
         logLabel: "[AI stream]",
         doneExtras: { credits: creditsLeft ?? undefined },
         state: streamState,
-        suffix: historyLinks,
+        suffix: answerSuffix,
       });
       channel.end();
       return;
@@ -240,7 +247,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       console.info(`[AI] reply repair: ${completed.notes.join("; ")}`);
     }
     // Figure fences -> drawn pictures (or an honest inline note on failure).
-    const { text: response, figures } = await resolveFiguresInText(completed.text + historyLinks);
+    const { text: response, figures } = await resolveFiguresInText(completed.text + answerSuffix);
     res.json({
       response,
       generatedFigures: figures.map((f) => ({ prompt: f.prompt, url: f.url, reason: f.reason })),
