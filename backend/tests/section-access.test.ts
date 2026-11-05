@@ -10,15 +10,18 @@ describe("canUnlockModule (spark unlock tier check)", () => {
     expect(await canUnlockModule(member, false, "route:/mock-exams", none)).toBe(false);
   });
 
-  test("plus opens /srs but not /downloads", async () => {
+  test("plus opens /srs but not /mock-exams", async () => {
     const plus = { role: "member", plan: "plus" };
     expect(await canUnlockModule(plus, false, "route:/srs", none)).toBe(true);
-    expect(await canUnlockModule(plus, false, "route:/downloads", none)).toBe(false);
+    expect(await canUnlockModule(plus, false, "route:/mock-exams", none)).toBe(false);
   });
 
   test("pro and owner open everything", async () => {
     expect(await canUnlockModule({ plan: "pro" }, false, "route:/mock-exams", none)).toBe(true);
-    expect(await canUnlockModule({ premiumStatus: true }, false, "route:/downloads", none)).toBe(true);
+    // /downloads is now owner-only; it is NOT in SPARK_GATED_SECTIONS so
+    // canUnlockModule returns true for all tiers (section gate enforces the tier,
+    // not the spark gate).
+    expect(await canUnlockModule({ plan: "plus" }, false, "route:/downloads", none)).toBe(true);
     expect(await canUnlockModule({}, true, "route:/mock-exams", none)).toBe(true);
   });
 

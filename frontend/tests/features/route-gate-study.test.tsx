@@ -74,7 +74,11 @@ describe("RouteCreditGate tier check", () => {
 });
 
 describe("no locked study content mounted", () => {
-  it.each(["/srs", "/mock-exams", "/downloads"])("%s children are not mounted while locked", (p) => {
+  // /srs and /mock-exams withhold their children while locked (hidden controls
+  // like "Show answer" must not be reachable from the console).
+  // /downloads was removed from NO_LOCKED_PREVIEW_PATHS because it is now
+  // owner-only — owners bypass the spark gate entirely.
+  it.each(["/srs", "/mock-exams"])("%s children are not mounted while locked", (p) => {
     state.pathname = p;
     setUser("pro");
     render(<RouteCreditGate><Probe /></RouteCreditGate>);
