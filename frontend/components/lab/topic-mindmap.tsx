@@ -41,16 +41,51 @@ import { applyFallbackDepth } from "@/lib/mindmap-depth";
 // side-effect import: registers every authored depth pack
 import "@/lib/mindmap-depth-index";
 
-// Motion styles (scoped `mm-` prefix; injected once). Pure CSS — no dependency.
+// Motion + glow styles (scoped `mm-` prefix; injected once). Pure CSS — no dependency.
 const MM_CSS = `
-@media(prefers-reduced-motion:reduce){.mm-pop,.mm-conn,.mm-tip{animation:none!important;stroke-dashoffset:0!important}}
-@keyframes mm-pop{0%{opacity:0;transform:translate(-50%,-50%) scale(.5)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@media(prefers-reduced-motion:reduce){.mm-pop,.mm-conn,.mm-tip,.mm-glow-pulse{animation:none!important;stroke-dashoffset:0!important}}
+
+/* Node pop-in */
+@keyframes mm-pop{
+  0%  {opacity:0;transform:translate(-50%,-50%) scale(.45)}
+  65% {opacity:1;transform:translate(-50%,-50%) scale(1.06)}
+  100%{opacity:1;transform:translate(-50%,-50%) scale(1)}
+}
+
+/* Connector draw-in */
 @keyframes mm-draw{to{stroke-dashoffset:0}}
-@keyframes mm-fade{from{opacity:0}to{opacity:1}}
-.mm-pop{animation:mm-pop .35s cubic-bezier(.2,.9,.3,1.25) backwards}
-.mm-conn{stroke-dasharray:var(--len,700);stroke-dashoffset:var(--len,700);animation:mm-draw .8s cubic-bezier(.4,0,.2,1) forwards}
-.mm-tip{animation:mm-fade .15s ease}
+
+/* Floating tooltip fade */
+@keyframes mm-fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+
+/* Center node breathing ring */
+@keyframes mm-ring-pulse{
+  0%,100%{r:54;opacity:.18}
+  50%     {r:62;opacity:.08}
+}
+
+/* Branch head capsule glow pulse */
+@keyframes mm-capsule-glow{
+  0%,100%{box-shadow:var(--cap-glow-base)}
+  50%    {box-shadow:var(--cap-glow-peak)}
+}
+
+/* High-yield node shimmer */
+@keyframes mm-shimmer{
+  0%  {background-position:200% center}
+  100%{background-position:-200% center}
+}
+
+.mm-pop   { animation:mm-pop   .4s cubic-bezier(.18,.89,.32,1.28) backwards }
+.mm-conn  { stroke-dasharray:var(--len,700);stroke-dashoffset:var(--len,700);animation:mm-draw .9s cubic-bezier(.4,0,.2,1) forwards }
+.mm-tip   { animation:mm-fade  .18s ease }
+.mm-shimmer {
+  background:linear-gradient(90deg,transparent 20%,rgba(255,255,255,.07) 50%,transparent 80%);
+  background-size:200% 100%;
+  animation:mm-shimmer 2.4s linear infinite;
+}
 `;
+
 
 interface HoverTip {
   title: string;
@@ -117,6 +152,8 @@ interface TopicMindMapProps {
    */
   concepts?: ConceptNoteLike[];
   className?: string;
+  /** Subject accent color — drives glow, active states, and the center ring. */
+  accentColor?: string;
 }
 
 type ClassFilterType = "All" | "Class 11" | "Class 12" | "CEE/IOE";
@@ -130,6 +167,7 @@ export function TopicMindMap({
   classSlug,
   concepts,
   className = "",
+  accentColor = "#3b82f6",
 }: TopicMindMapProps) {
   const [activeBranchId, setActiveBranchId] = useState<string | null>(null);
   const [activeNodeId, setActiveNodeId] = useState<string | null>(null);
@@ -2289,225 +2327,194 @@ export function TopicMindMap({
   }
 
   return (
-    <div ref={mindmapRootRef} className={`rounded-3xl border border-border/80 bg-[#090d16] text-slate-100 shadow-2xl overflow-hidden ${className}`}>
+    <div
+      ref={mindmapRootRef}
+      className={`rounded-3xl border bg-[#080c18] text-slate-100 shadow-2xl overflow-hidden ${className}`}
+      style={{ borderColor: `${accentColor}30` }}
+    >
       <style>{MM_CSS}</style>
-      {/* ── Top Header Toolbar ── */}
-      <div className="px-5 py-3.5 border-b border-slate-800 bg-[#0d1322] flex flex-wrap items-center justify-between gap-3">
+
+      {/* ── Header toolbar ──────────────────────────────────────────────── */}
+      <div
+        className="px-5 py-3.5 border-b border-slate-800/80 flex flex-wrap items-center justify-between gap-3"
+        style={{ background: `linear-gradient(135deg, #0d1322 0%, #090d1a 100%)` }}
+      >
         <div className="flex items-center gap-3">
-          {/* Toggle Left Sidebar Button */}
+          {/* Sidebar toggle */}
           <button
             onClick={() => setIsLeftPanelOpen((prev) => !prev)}
-            className={`p-2 rounded-xl border transition-all flex items-center gap-1.5 text-xs font-bold ${
-              isLeftPanelOpen
-                ? "bg-indigo-600/20 border-indigo-500/40 text-indigo-300"
-                : "bg-slate-800 border-slate-700 text-slate-400 hover:text-white"
-            }`}
-            title={isLeftPanelOpen ? "Collapse Tree & Filter Panel" : "Expand Tree & Filter Panel"}
+            className="flex items-center gap-1.5 rounded-xl border px-2.5 py-1.5 text-xs font-bold transition-all"
+            style={isLeftPanelOpen
+              ? { backgroundColor: `${accentColor}18`, borderColor: `${accentColor}40`, color: accentColor }
+              : { backgroundColor: "rgba(30,41,59,0.7)", borderColor: "#334155", color: "#94a3b8" }
+            }
+            title={isLeftPanelOpen ? "Hide explorer" : "Show explorer"}
           >
-            {isLeftPanelOpen ? (
-              <>
-                <PanelLeftClose className="h-4 w-4" />
-                <span className="hidden sm:inline">Hide Explorer</span>
-              </>
-            ) : (
-              <>
-                <PanelLeftOpen className="h-4 w-4" />
-                <span className="hidden sm:inline">Show Explorer</span>
-              </>
-            )}
+            {isLeftPanelOpen ? <PanelLeftClose className="h-4 w-4" /> : <PanelLeftOpen className="h-4 w-4" />}
+            <span className="hidden sm:inline">{isLeftPanelOpen ? "Hide" : "Explore"}</span>
           </button>
 
-          <div className="h-8 w-8 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shadow-sm">
-            <Workflow className="h-4 w-4" />
+          {/* Icon + title */}
+          <div
+            className="flex h-8 w-8 items-center justify-center rounded-xl"
+            style={{ backgroundColor: `${accentColor}18`, border: `1px solid ${accentColor}35` }}
+          >
+            <Workflow className="h-4 w-4" style={{ color: accentColor }} />
           </div>
-
           <div>
-            <div className="flex items-center gap-2">
-              <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-                KaTeX Science Blueprint
+            <div className="flex items-center gap-2 flex-wrap">
+              <span
+                className="text-[10px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded-full border"
+                style={{ backgroundColor: `${accentColor}15`, borderColor: `${accentColor}40`, color: accentColor }}
+              >
+                Blueprint
               </span>
-              <h3 className="text-sm font-bold text-white tracking-tight">
-                {topicTitle}
-              </h3>
+              <h3 className="text-sm font-bold text-white tracking-tight">{topicTitle}</h3>
             </div>
-            <p className="text-[11px] text-slate-400">
-              Branch &bull; Sub-Branch &bull; Leaf Node Hierarchy with step-by-step LaTeX derivations
-            </p>
+            <p className="text-[10px] text-slate-500">Branch · Sub-Branch · Leaf · KaTeX derivations</p>
           </div>
         </div>
 
-        {/* Toolbar Zoom & Reset Controls */}
+        {/* Zoom / expand toolbar */}
         <div className="flex items-center gap-1.5 text-xs">
           <button
             onClick={() => setAllBranchesHeld(true)}
-            className={`rounded-lg border px-2 py-1.5 font-bold transition-colors ${
-              heldCount === filteredTreeBranches.length && heldCount > 0
-                ? "border-slate-700 bg-slate-800/50 text-slate-500"
-                : "border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20"
-            }`}
-            title="Fan out every branch's full hierarchy at once"
+            disabled={heldCount === filteredTreeBranches.length && heldCount > 0}
+            className="rounded-lg border px-2.5 py-1.5 font-bold transition-colors disabled:opacity-40"
+            style={{ borderColor: "#22d3ee40", backgroundColor: "#164e6320", color: "#67e8f9" }}
+            title="Expand all branches"
           >
             <span className="hidden sm:inline">Expand all</span>
             <span className="sm:hidden">+</span>
           </button>
           <button
             onClick={() => setAllBranchesHeld(false)}
-            className={`rounded-lg border px-2 py-1.5 font-bold transition-colors ${
-              heldCount === 0
-                ? "border-slate-700 bg-slate-800/50 text-slate-500"
-                : "border-amber-500/40 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20"
-            }`}
-            title="Fold all branches back to their trunks"
+            disabled={heldCount === 0}
+            className="rounded-lg border px-2.5 py-1.5 font-bold transition-colors disabled:opacity-40"
+            style={{ borderColor: "#f59e0b40", backgroundColor: "#78350f20", color: "#fbbf24" }}
+            title="Collapse all branches"
           >
-            <span className="hidden sm:inline">Collapse all</span>
+            <span className="hidden sm:inline">Collapse</span>
             <span className="sm:hidden">−</span>
           </button>
-          <button
-            onClick={() => setZoomLevel((z) => Math.min(2.6, z + 0.1))}
-            className="p-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition-colors"
-            title="Zoom In"
-          >
-            <ZoomIn className="h-4 w-4" />
-          </button>
-          <button
-            onClick={() => setZoomLevel((z) => Math.max(0.35, z - 0.1))}
-            className="p-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition-colors"
-            title="Zoom Out"
-          >
-            <ZoomOut className="h-4 w-4" />
-          </button>
-          <button
-            onClick={() => {
-              setZoomLevel(1);
-              setPan({ x: 0, y: 0 });
-              setActiveBranchId(null);
-              setActiveNodeId(null);
-            }}
-            className="p-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition-colors"
-            title="Reset Canvas View"
-          >
-            <RotateCcw className="h-4 w-4" />
-          </button>
-          <button
-            onClick={() => {
+          {[
+            { icon: ZoomIn,   action: () => setZoomLevel((z) => Math.min(2.6, z + 0.15)), title: "Zoom in"  },
+            { icon: ZoomOut,  action: () => setZoomLevel((z) => Math.max(0.35, z - 0.15)), title: "Zoom out" },
+            { icon: RotateCcw,action: () => { setZoomLevel(1); setPan({ x: 0, y: 0 }); setActiveBranchId(null); setActiveNodeId(null); }, title: "Reset view" },
+            { icon: isMindmapFullscreen ? Minimize2 : Maximize2, action: () => {
               if (document.fullscreenElement) void document.exitFullscreen();
               else void mindmapRootRef.current?.requestFullscreen?.();
-            }}
-            className="p-1.5 rounded-lg border border-slate-700 bg-slate-800/80 hover:bg-slate-700 text-slate-300 transition-colors"
-            title={isMindmapFullscreen ? "Exit Fullscreen" : "Fullscreen"}
-          >
-            {isMindmapFullscreen ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
-          </button>
+            }, title: isMindmapFullscreen ? "Exit fullscreen" : "Fullscreen" },
+          ].map(({ icon: Icon, action, title }) => (
+            <button
+              key={title}
+              onClick={action}
+              title={title}
+              className="rounded-lg border border-slate-700 bg-slate-800/60 p-1.5 text-slate-300 transition-colors hover:bg-slate-700 hover:text-white"
+            >
+              <Icon className="h-4 w-4" />
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* ── Main Workspace: Collapsible Left Panel + Interactive SVG Canvas ── */}
+      {/* ── Main Workspace ────────────────────────────────────────────── */}
       <div className="flex flex-col lg:flex-row min-h-[580px]">
-        {/* ── Left Panel: Class Filter, Order Sorting, Tree Navigator with KaTeX ── */}
+
+        {/* ── Left Explorer Panel ─────────────────────────────────────── */}
         {isLeftPanelOpen && (
-          <aside className="w-full lg:w-84 xl:w-96 shrink-0 border-b lg:border-b-0 lg:border-r border-slate-800 bg-[#0a0f1d] flex flex-col p-4 max-h-[640px] overflow-y-auto">
-            {/* Panel Top Title */}
-            <div className="flex items-center justify-between pb-3 border-b border-slate-800/80">
+          <aside className="w-full lg:w-80 xl:w-96 shrink-0 border-b lg:border-b-0 lg:border-r border-slate-800/60 bg-[#08091a] flex flex-col p-4 max-h-[640px] overflow-y-auto overscroll-contain">
+
+            {/* Panel header */}
+            <div className="flex items-center justify-between pb-3 border-b border-slate-800/70">
               <div className="flex items-center gap-2">
-                <Layers className="h-4 w-4 text-indigo-400" />
-                <span className="text-xs font-bold text-white uppercase tracking-wider">
-                  Mindmap Explorer
-                </span>
+                <Layers className="h-4 w-4" style={{ color: accentColor }} />
+                <span className="text-xs font-extrabold uppercase tracking-wider text-white">Explorer</span>
               </div>
-              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400">
-                {filteredTreeBranches.reduce((acc, b) => acc + b.totalNodesCount, 0)} Concepts
+              <span className="rounded-lg border border-slate-700/70 bg-slate-800/60 px-2 py-0.5 font-mono text-[10px] text-slate-400">
+                {filteredTreeBranches.reduce((a, b) => a + b.totalNodesCount, 0)} nodes
               </span>
             </div>
 
-            {/* Live Search Input */}
-            <div className="mt-3 relative">
-              <Search className="h-3.5 w-3.5 text-slate-400 absolute left-2.5 top-2.5" />
+            {/* Search */}
+            <div className="relative mt-3">
+              <Search className="absolute left-2.5 top-2.5 h-3.5 w-3.5 text-slate-500" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search formulas, laws, or topics..."
-                className="w-full rounded-xl bg-slate-900 border border-slate-700/80 pl-8 pr-3 py-1.5 text-xs text-slate-200 placeholder:text-slate-500 focus:outline-none focus:border-indigo-500"
+                placeholder="Search formulas, laws, traps…"
+                className="w-full rounded-xl border border-slate-700/80 bg-slate-900 pl-8 pr-3 py-1.5 text-xs text-slate-200 placeholder:text-slate-600 focus:outline-none focus:border-slate-500"
               />
               {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery("")}
-                  className="absolute right-2.5 top-2 text-[10px] text-slate-400 hover:text-white"
-                >
-                  ✕
-                </button>
+                <button onClick={() => setSearchQuery("")} className="absolute right-2.5 top-2 text-[10px] text-slate-500 hover:text-white">✕</button>
               )}
             </div>
 
-            {/* Class Level Selector */}
-            <div className="mt-3 space-y-1">
-              <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
-                <GraduationCap className="h-3 w-3 text-cyan-400" />
-                Class / Curriculum
-              </label>
+            {/* Class filter */}
+            <div className="mt-3">
+              <p className="mb-1.5 flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                <GraduationCap className="h-3 w-3" style={{ color: accentColor }} /> Curriculum
+              </p>
               <div className="grid grid-cols-4 gap-1">
-                {(["All", "Class 11", "Class 12", "CEE/IOE"] as ClassFilterType[]).map((cf) => {
-                  const isActive = classFilter === cf;
-                  return (
-                    <button
-                      key={cf}
-                      onClick={() => setClassFilter(cf)}
-                      className={`px-1.5 py-1 rounded-lg text-[10px] font-bold transition-all text-center truncate ${
-                        isActive
-                          ? "bg-indigo-600 text-white shadow-sm"
-                          : "bg-slate-900 border border-slate-800 text-slate-400 hover:text-slate-200 hover:bg-slate-800"
-                      }`}
-                    >
-                      {cf}
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Order & Sorting Controls */}
-            <div className="mt-3 space-y-1">
-              <label className="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
-                <ArrowUpDown className="h-3 w-3 text-amber-400" />
-                Hierarchy &amp; Order
-              </label>
-              <div className="grid grid-cols-2 gap-1.5">
-                {[
-                  { id: "syllabus", label: "Syllabus Order" },
-                  { id: "highyield", label: "High-Yield First" },
-                  { id: "hierarchy", label: "Branch Depth" },
-                  { id: "alphabetical", label: "Alphabetical" },
-                ].map((opt) => (
+                {(["All", "Class 11", "Class 12", "CEE/IOE"] as ClassFilterType[]).map((cf) => (
                   <button
-                    key={opt.id}
-                    onClick={() => setOrderSort(opt.id as OrderSortType)}
-                    className={`px-2 py-1 rounded-lg text-[10px] font-semibold transition-all text-left truncate ${
-                      orderSort === opt.id
-                        ? "bg-slate-800 border border-indigo-500/50 text-indigo-300 font-bold"
-                        : "bg-slate-900/60 border border-slate-800/80 text-slate-400 hover:text-slate-200"
-                    }`}
+                    key={cf}
+                    onClick={() => setClassFilter(cf)}
+                    className="rounded-lg py-1 text-center text-[10px] font-bold transition-all truncate"
+                    style={classFilter === cf
+                      ? { backgroundColor: `${accentColor}22`, border: `1px solid ${accentColor}50`, color: accentColor }
+                      : { backgroundColor: "#0f172a", border: "1px solid #1e293b", color: "#64748b" }
+                    }
                   >
-                    &bull; {opt.label}
+                    {cf}
                   </button>
                 ))}
               </div>
             </div>
 
-            {/* Tree Navigator: Branch -> Sub-Branch -> Leaf Nodes with KaTeX Preview */}
-            <div className="mt-4 pt-3 border-t border-slate-800/80 space-y-3 flex-1 overflow-y-auto">
-              <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                Tree Structure (Branch &rarr; Sub-Branch)
+            {/* Sort */}
+            <div className="mt-3">
+              <p className="mb-1.5 flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                <ArrowUpDown className="h-3 w-3 text-amber-400" /> Sort
+              </p>
+              <div className="grid grid-cols-2 gap-1.5">
+                {[
+                  { id: "syllabus", label: "Syllabus" },
+                  { id: "highyield", label: "High-yield" },
+                  { id: "hierarchy", label: "Depth" },
+                  { id: "alphabetical", label: "A–Z" },
+                ].map((opt) => (
+                  <button
+                    key={opt.id}
+                    onClick={() => setOrderSort(opt.id as OrderSortType)}
+                    className="rounded-lg py-1 text-[10px] font-semibold text-left pl-2 transition-all"
+                    style={orderSort === opt.id
+                      ? { backgroundColor: "#1e293b", border: `1px solid ${accentColor}40`, color: "#e2e8f0" }
+                      : { backgroundColor: "#0a0f1d", border: "1px solid #1e293b", color: "#475569" }
+                    }
+                  >
+                    {opt.label}
+                  </button>
+                ))}
               </div>
+            </div>
+
+            {/* Tree list */}
+            <div className="mt-4 flex-1 space-y-2.5 overflow-y-auto overscroll-contain border-t border-slate-800/60 pt-3">
+              <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500">
+                Branches → sub-branches
+              </p>
 
               {filteredTreeBranches.map((b) => {
                 const isBranchActive = activeBranchId === b.id;
-
                 return (
                   <div
-                    key={`tree-branch-${b.id}`}
-                    className="rounded-xl border border-slate-800 bg-slate-900/50 overflow-hidden"
+                    key={`tree-${b.id}`}
+                    className="overflow-hidden rounded-xl border border-slate-800/80 bg-slate-900/40"
+                    style={isBranchActive ? { borderColor: `${b.color}40`, boxShadow: `0 0 10px ${b.color}18` } : undefined}
                   >
-                    {/* Branch Title Bar */}
+                    {/* Branch row */}
                     <div
                       onPointerDown={() => {
                         holdTimerRef.current = window.setTimeout(() => {
@@ -2516,100 +2523,70 @@ export function TopicMindMap({
                         }, HOLD_MS);
                       }}
                       onPointerUp={() => {
-                        if (holdTimerRef.current !== null) {
-                          window.clearTimeout(holdTimerRef.current);
-                          holdTimerRef.current = null;
-                        }
-                        if (holdFiredRef.current) {
-                          holdFiredRef.current = false;
-                          setBranchExpanded(b.id, false);
-                        } else {
-                          setActiveBranchId(isBranchActive ? null : b.id);
-                          setActiveNodeId(null);
-                          toggleBranchExpanded(b.id);
-                        }
+                        if (holdTimerRef.current !== null) { window.clearTimeout(holdTimerRef.current); holdTimerRef.current = null; }
+                        if (holdFiredRef.current) { holdFiredRef.current = false; setBranchExpanded(b.id, false); }
+                        else { setActiveBranchId(isBranchActive ? null : b.id); setActiveNodeId(null); toggleBranchExpanded(b.id); }
                       }}
-                      onPointerLeave={() => {
-                        if (holdTimerRef.current !== null) {
-                          window.clearTimeout(holdTimerRef.current);
-                          holdTimerRef.current = null;
-                        }
-                      }}
-                      className="p-2.5 flex items-center justify-between cursor-pointer hover:bg-slate-800/60 transition-colors select-none touch-none"
+                      onPointerLeave={() => { if (holdTimerRef.current !== null) { window.clearTimeout(holdTimerRef.current); holdTimerRef.current = null; } }}
+                      className="flex cursor-pointer select-none items-center justify-between p-2.5 transition-colors hover:bg-slate-800/40 touch-none"
                       style={{ borderLeft: `3px solid ${b.color}` }}
                     >
-                      <div className="flex items-center gap-2 min-w-0">
-                        <span className="h-2 w-2 rounded-full shrink-0" style={{ backgroundColor: b.color }} />
-                        <span className="text-xs font-bold text-white truncate">{b.category}</span>
+                      <div className="flex min-w-0 items-center gap-2">
+                        <span className="h-2 w-2 shrink-0 rounded-full" style={{ backgroundColor: b.color }} />
+                        <span className="truncate text-xs font-bold text-white">{b.category}</span>
                       </div>
                       <span
-                        className="text-[9px] font-bold px-1.5 py-0.5 rounded shrink-0"
-                        style={{ backgroundColor: `${b.color}20`, color: b.color }}
+                        className="shrink-0 rounded px-1.5 py-0.5 text-[9px] font-extrabold"
+                        style={{ backgroundColor: `${b.color}18`, color: b.color }}
                       >
-                        {b.totalNodesCount} nodes
+                        {b.totalNodesCount}
                       </span>
                     </div>
 
-                    {/* Sub-Branches List */}
-                    <div className="px-2 pb-2 space-y-2">
+                    {/* Sub-branches */}
+                    <div className="space-y-1.5 px-2 pb-2">
                       {b.subBranches.map((sub) => {
                         const isCollapsed = collapsedSubBranches[sub.id];
-
                         return (
-                          <div
-                            key={`tree-sub-${sub.id}`}
-                            className="rounded-lg bg-slate-950/80 border border-slate-800/60 p-2"
-                          >
+                          <div key={`sub-${sub.id}`} className="rounded-lg border border-slate-800/60 bg-slate-950/70 p-2">
                             <div
                               onClick={() => toggleSubBranchCollapse(sub.id)}
-                              className="flex items-center justify-between cursor-pointer text-slate-300 hover:text-white"
+                              className="flex cursor-pointer items-center justify-between text-slate-300 hover:text-white"
                             >
                               <div className="flex items-center gap-1.5 text-[11px] font-bold">
-                                {isCollapsed ? (
-                                  <ChevronRight className="h-3 w-3 text-slate-400 shrink-0" />
-                                ) : (
-                                  <ChevronDown className="h-3 w-3 text-slate-400 shrink-0" />
-                                )}
+                                {isCollapsed
+                                  ? <ChevronRight className="h-3 w-3 shrink-0 text-slate-500" />
+                                  : <ChevronDown className="h-3 w-3 shrink-0 text-slate-500" />
+                                }
                                 <span className="truncate">{sub.title}</span>
                               </div>
-                              <span className="text-[9px] text-slate-500 font-mono">
-                                {sub.nodes.length}
-                              </span>
+                              <span className="font-mono text-[9px] text-slate-600">{sub.nodes.length}</span>
                             </div>
 
-                            {/* Leaf Nodes under Sub-Branch */}
                             {!isCollapsed && (
-                              <div className="mt-1.5 pl-4 border-l border-slate-800 space-y-1">
+                              <div className="mt-1.5 space-y-1 border-l border-slate-800 pl-4">
                                 {sub.nodes.map((node) => {
                                   const isNodeActive = activeNodeId === node.id;
-
                                   return (
                                     <div
-                                      key={`tree-node-${node.id}`}
-                                      onClick={() => {
-                                        setActiveBranchId(b.id);
-                                        setActiveNodeId(node.id);
-                                      }}
-                                      className={`p-1.5 rounded-md cursor-pointer transition-all ${
-                                        isNodeActive
-                                          ? "bg-indigo-600/30 border border-indigo-500/60 shadow-sm"
-                                          : "hover:bg-slate-800/60 border border-transparent"
-                                      }`}
+                                      key={`node-${node.id}`}
+                                      onClick={() => { setActiveBranchId(b.id); setActiveNodeId(node.id); }}
+                                      className="cursor-pointer rounded-md p-1.5 transition-all"
+                                      style={isNodeActive
+                                        ? { backgroundColor: `${b.color}20`, border: `1px solid ${b.color}50` }
+                                        : { border: "1px solid transparent" }
+                                      }
                                     >
                                       <div className="flex items-center justify-between gap-1">
-                                        <span className="text-[11px] font-medium text-slate-200 truncate">
-                                          {node.title}
-                                        </span>
+                                        <span className="truncate text-[11px] font-medium text-slate-200">{node.title}</span>
                                         {node.highYield && (
-                                          <span className="text-[8px] uppercase font-extrabold px-1 rounded bg-amber-500/20 text-amber-300 shrink-0">
-                                            CEE Trap
+                                          <span className="shrink-0 rounded bg-amber-500/20 px-1 text-[8px] font-extrabold uppercase text-amber-300">
+                                            HY
                                           </span>
                                         )}
                                       </div>
-
-                                      {/* KaTeX formula snippet in tree */}
                                       {node.formulaLatex && (
-                                        <div className="mt-0.5 text-[10px] text-cyan-300 font-mono overflow-hidden">
+                                        <div className="mt-0.5 overflow-hidden text-[10px] text-cyan-300">
                                           <MathMarkdown content={node.formulaLatex} className="text-[10px] py-0 leading-tight" />
                                         </div>
                                       )}
@@ -2627,9 +2604,9 @@ export function TopicMindMap({
               })}
 
               {filteredTreeBranches.length === 0 && (
-                <div className="p-4 text-center text-xs text-slate-500">
-                  No concepts match the selected filters or search query.
-                </div>
+                <p className="py-6 text-center text-xs italic text-slate-600">
+                  No nodes match the filters.
+                </p>
               )}
             </div>
           </aside>
@@ -2664,11 +2641,13 @@ export function TopicMindMap({
             />
           )}
 
-          {/* Category Legend Pill Bar */}
-          <div className="px-4 py-2 border-b border-slate-800/80 bg-[#090e1a] flex items-center gap-2 overflow-x-auto text-xs">
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mr-1 flex items-center gap-1 shrink-0">
-              <Filter className="h-3 w-3" />
-              Branches:
+          {/* Branch legend strip */}
+          <div
+            className="flex items-center gap-2 overflow-x-auto border-b border-slate-800/80 px-4 py-2 text-xs"
+            style={{ backgroundColor: "#090e1a" }}
+          >
+            <span className="flex shrink-0 items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-slate-500">
+              <Filter className="h-3 w-3" /> Branches
             </span>
             {branches.map((b) => {
               const isSelected = activeBranchId === b.id;
@@ -2679,15 +2658,13 @@ export function TopicMindMap({
                     setActiveBranchId(isSelected ? null : b.id);
                     setActiveNodeId(null);
                   }}
-                  className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold border transition-all flex items-center gap-1.5 shrink-0 ${
-                    isSelected
-                      ? "shadow-md scale-105"
-                      : "opacity-80 hover:opacity-100 hover:scale-102"
-                  }`}
+                  className="flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-[11px] font-semibold transition-all"
                   style={{
-                    backgroundColor: isSelected ? b.bgColor : "rgba(15, 23, 42, 0.6)",
+                    backgroundColor: isSelected ? b.bgColor : "rgba(15,23,42,0.6)",
                     borderColor: b.color,
                     color: b.color,
+                    boxShadow: isSelected ? `0 0 8px ${b.color}30` : undefined,
+                    transform: isSelected ? "scale(1.05)" : undefined,
                   }}
                 >
                   <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: b.color }} />
@@ -2697,26 +2674,31 @@ export function TopicMindMap({
             })}
           </div>
 
-          {/* Subtle Engineering Blueprint Background Grid */}
+          {/* Subtle blueprint background grid */}
           <div
-            className="absolute inset-0 pointer-events-none opacity-25"
+            className="pointer-events-none absolute inset-0 opacity-15"
             style={{
-              backgroundImage: `radial-gradient(rgba(148, 163, 184, 0.2) 1px, transparent 1px)`,
-              backgroundSize: "24px 24px",
+              backgroundImage: `radial-gradient(${accentColor}20 1px, transparent 1px)`,
+              backgroundSize: "28px 28px",
             }}
           />
 
-          {/* SVG Canvas Container — pan (translate) + zoom (scale) */}
+          {/* SVG Canvas — pan (translate) + zoom (scale) */}
           <div
-            className="w-full aspect-[16/10] min-h-[460px] max-h-[640px] transition-transform duration-150 ease-out"
+            className="aspect-[16/10] min-h-[460px] max-h-[640px] w-full transition-transform duration-150 ease-out"
             style={{ transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoomLevel})` }}
           >
-            <svg viewBox="0 0 1000 600" className="w-full h-full" style={{ overflow: "visible" }}>
+            <svg viewBox="0 0 1000 600" className="h-full w-full" style={{ overflow: "visible" }}>
               <defs>
-                <filter id="branch-glow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feGaussianBlur stdDeviation="4" result="blur" />
+                <filter id="branch-glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="6" result="blur" />
                   <feComposite in="SourceGraphic" in2="blur" operator="over" />
                 </filter>
+                <radialGradient id="center-grad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stopColor={accentColor} stopOpacity="0.3" />
+                  <stop offset="60%" stopColor={accentColor} stopOpacity="0.05" />
+                  <stop offset="100%" stopColor={accentColor} stopOpacity="0" />
+                </radialGradient>
               </defs>
 
               {/* 1. Branch Curved Connectors from Central Core to Branch Centers */}
@@ -2861,7 +2843,7 @@ export function TopicMindMap({
                 );
               })}
 
-              {/* 2. Central Root Node */}
+              {/* 2. Center root node — breathing pulse ring + glow */}
               <g
                 transform={`translate(${centerX}, ${centerY})`}
                 className="cursor-pointer"
@@ -2872,13 +2854,32 @@ export function TopicMindMap({
                   setActiveNodeId(null);
                 }}
               >
-                <circle r="52" fill="#3b82f6" fillOpacity="0.1" stroke="#3b82f6" strokeWidth="1.5" strokeDasharray="6 3" />
-                <circle r="44" fill="#0f172a" stroke="#3b82f6" strokeWidth="3" />
-                <text textAnchor="middle" y="-6" fill="#60a5fa" fontSize="11" fontWeight="bold">
-                  ROOT CONCEPT
+                {/* outer radial glow */}
+                <circle r="90" fill="url(#center-grad)" />
+                {/* breathing pulse ring */}
+                {!mmReduceMotion && (
+                  <circle
+                    r="54"
+                    fill="none"
+                    stroke={accentColor}
+                    strokeWidth="1"
+                    strokeOpacity="0.3"
+                    style={{ animation: "mm-ring-pulse 3s ease-in-out infinite" }}
+                  />
+                )}
+                {/* dashed orbit ring */}
+                <circle r="52" fill="none" stroke={accentColor} strokeWidth="1.5" strokeDasharray="6 3" opacity="0.4" />
+                {/* core */}
+                <circle r="44" fill="#0f172a" stroke={accentColor} strokeWidth="3" />
+                <circle r="44" fill={accentColor} fillOpacity="0.08" />
+                <text textAnchor="middle" y="-8" fill={accentColor} fontSize="9" fontWeight="bold" letterSpacing="1.5">
+                  UNIT
                 </text>
-                <text textAnchor="middle" y="14" fill="#ffffff" fontSize="12" fontWeight="extrabold">
-                  {topicTitle.length > 18 ? topicTitle.slice(0, 16) + "..." : topicTitle}
+                <text textAnchor="middle" y="8" fill="#ffffff" fontSize="11" fontWeight="extrabold">
+                  {topicTitle.length > 20 ? topicTitle.slice(0, 18) + "…" : topicTitle}
+                </text>
+                <text textAnchor="middle" y="22" fill="#64748b" fontSize="7" fontWeight="500">
+                  tap to reset
                 </text>
               </g>
             </svg>
@@ -2936,24 +2937,25 @@ export function TopicMindMap({
                     )}
                     onMouseMove={moveTip}
                     className={`absolute z-20 cursor-pointer rounded-2xl border-2 px-3 py-1.5 backdrop-blur-md transition-all duration-200 select-none touch-none ${
-                      isBranchActive ? "opacity-100 scale-105" : "opacity-30 scale-95"
-                    } bg-[#0c1220]/95 hover:scale-110 ${mmReduceMotion ? "" : "mm-pop"}`}
+                      isBranchActive ? "opacity-100 scale-105" : "opacity-25 scale-95"
+                    } bg-[#0a0f1e]/95 hover:scale-110 ${mmReduceMotion ? "" : "mm-pop"}`}
                     style={{
                       left: `${(bx / 1000) * 100}%`,
                       top: `${(by / 600) * 100}%`,
                       transform: "translate(-50%, -50%)",
                       borderColor: b.color,
-                      boxShadow: activeBranchId === b.id ? `0 0 25px ${b.color}50` : "none",
+                      ["--cap-glow-base" as string]: `0 0 12px ${b.color}25`,
+                      ["--cap-glow-peak" as string]: `0 0 28px ${b.color}45`,
+                      boxShadow: activeBranchId === b.id
+                        ? `0 0 28px ${b.color}50, inset 0 0 8px ${b.color}10`
+                        : `0 0 12px ${b.color}15`,
                       animationDelay: `${bIdx * 90 + 150}ms`,
                     }}
                   >
                     <div className="flex items-center gap-1.5">
-                      <span className="h-2 w-2 rounded-full" style={{ backgroundColor: b.color }} />
-                      <span className="text-xs font-bold text-white whitespace-nowrap">{b.category}</span>
-                      <span
-                        className="text-[9px] font-bold ml-0.5"
-                        style={{ color: b.color }}
-                      >
+                      <span className="h-2 w-2 rounded-full shrink-0" style={{ backgroundColor: b.color, boxShadow: `0 0 4px ${b.color}` }} />
+                      <span className="whitespace-nowrap text-xs font-bold text-white">{b.category}</span>
+                      <span className="ml-0.5 text-[9px] font-bold" style={{ color: b.color }}>
                         {isHeld ? "−" : "+"}
                       </span>
                     </div>
@@ -3008,6 +3010,8 @@ export function TopicMindMap({
                             transform: "translate(-50%, -50%)",
                             borderColor: isNodeSelected ? b.color : "rgba(148, 163, 184, 0.2)",
                             animationDelay: `${bIdx * 60 + leafIdx * 45 + 200}ms`,
+                            ["--cap-glow-base" as string]: `0 0 6px ${b.color}15`,
+                            ["--cap-glow-peak" as string]: `0 0 16px ${b.color}35`,
                           }}
                           onPointerEnter={() => previewNode(b.id, node.id)}
                           onPointerLeave={schedulePreviewClear}
@@ -3022,13 +3026,13 @@ export function TopicMindMap({
                           )}
                           onMouseMove={moveTip}
                           onMouseLeave={hideTip}
-                          className={`absolute z-30 cursor-pointer rounded-lg border p-1.5 max-w-[150px] backdrop-blur-md transition-all duration-200 ${mmReduceMotion ? "animate-fade-in" : "mm-pop"} ${
+                          className={`absolute z-30 cursor-pointer max-w-[150px] rounded-lg border p-1.5 backdrop-blur-md transition-all duration-200 ${mmReduceMotion ? "animate-fade-in" : "mm-pop"} ${
                             isNodeSelected
-                              ? "bg-slate-900 border-2 ring-2 scale-105 shadow-xl"
+                              ? "bg-slate-900 shadow-xl"
                               : "bg-slate-950/90 hover:border-slate-500"
                           }`}
                         >
-                          <h4 className="text-[10px] font-bold text-white leading-tight truncate">{node.title}</h4>
+                          <h4 className="truncate text-[10px] font-bold leading-tight text-white">{node.title}</h4>
                         </div>
                       );
                     })}
@@ -3051,6 +3055,8 @@ export function TopicMindMap({
                             transform: "translate(-50%, -50%)",
                             borderColor: isNodeSelected ? b.color : "rgba(148, 163, 184, 0.2)",
                             animationDelay: `${bIdx * 90 + nodeIdx * 70 + 260}ms`,
+                            ["--cap-glow-base" as string]: `0 0 8px ${b.color}15`,
+                            ["--cap-glow-peak" as string]: `0 0 20px ${b.color}30`,
                           }}
                           onPointerEnter={() => previewNode(b.id, node.id)}
                           onPointerLeave={schedulePreviewClear}
@@ -3065,13 +3071,13 @@ export function TopicMindMap({
                           )}
                           onMouseMove={moveTip}
                           onMouseLeave={hideTip}
-                          className={`absolute z-30 cursor-pointer rounded-xl border p-2 max-w-[170px] backdrop-blur-md transition-all duration-200 ${mmReduceMotion ? "" : "mm-pop"} ${
+                          className={`absolute z-30 cursor-pointer max-w-[170px] rounded-xl border p-2 backdrop-blur-md transition-all duration-200 ${mmReduceMotion ? "" : "mm-pop"} ${
                             isNodeSelected
-                              ? "bg-slate-900 border-2 ring-2 scale-105 shadow-xl"
-                              : "bg-slate-950/90 hover:border-slate-500 hover:scale-102"
+                              ? "bg-slate-900 shadow-xl"
+                              : "bg-slate-950/90 hover:border-slate-500"
                           }`}
                         >
-                          <h4 className="text-[11px] font-bold text-white leading-tight truncate">
+                          <h4 className="truncate text-[11px] font-bold leading-tight text-white">
                             {node.title}
                           </h4>
                           {node.formula && (
