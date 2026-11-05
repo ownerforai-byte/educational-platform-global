@@ -14,7 +14,8 @@ import { readSectionMinTiers } from "./sectionTiers";
 export const SPARK_GATED_SECTIONS: ReadonlyArray<{ id: string; href: string; minTier: Tier }> = [
   { id: "srs", href: "/srs", minTier: "plus" },
   { id: "mock-exams", href: "/mock-exams", minTier: "pro" },
-  { id: "downloads", href: "/downloads", minTier: "pro" },
+  // /downloads is now owner-only — owners bypass the spark gate entirely, so it
+  // no longer needs a spark-gated section entry here.
 ];
 
 export type Tier = "visitor" | "member" | "plus" | "pro" | "owner";

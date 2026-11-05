@@ -141,7 +141,7 @@ const primaryItems: NavItem[] = [
   { href: "/community",     label: "Community",          icon: Users,         minLevel: "plus"    },
   { href: "/ask",           label: "Ask Veer",           icon: HelpCircle,    minLevel: "member"  },
   { href: "/my-notes",      label: "My Notes",           icon: NotebookPen,   minLevel: "member"  },
-  { href: "/downloads",     label: "Downloads",          icon: Download,      minLevel: "pro"     },
+  { href: "/downloads",     label: "Offline Study",      icon: Download,      minLevel: "owner"   },
   { href: "/billing",       label: "Billing",            icon: Receipt,       minLevel: "member"  },
   { href: "/referrals",     label: "Referrals",          icon: Gift,          minLevel: "plus"    },
   { href: "/site-index",    label: "Everything Index",   icon: ListTree,      minLevel: "pro"     },

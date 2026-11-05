@@ -1,12 +1,17 @@
 {
+  "id": "/",
   "name": "Ravikisan's Platform",
-  "short_name": "Ravikisan's Platform",
-  "description": "NEB +2 learning platform: notes, interactive 3D labs, PYQ practice, and AI study assistant.",
-  "start_url": "/",
+  "short_name": "Ravikisan",
+  "description": "NEB Class 11 & 12 study platform — notes, 3D labs, PYQ practice, and AI tutor Veer.",
+  "start_url": "/home",
   "display": "standalone",
   "background_color": "#0f172a",
   "theme_color": "#3b82f6",
   "orientation": "portrait-primary",
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "categories": ["education", "utilities"],
   "icons": [
     {
       "src": "/icon-192.png",
@@ -27,17 +32,41 @@
       "purpose": "maskable"
     }
   ],
-  "categories": ["education", "utilities"],
-  "lang": "en",
-  "dir": "ltr",
-  "scope": "/",
-  "prefer_related_applications": true,
+  "shortcuts": [
+    {
+      "name": "Continue studying",
+      "short_name": "Study",
+      "description": "Jump back to your Class 11/12 notes",
+      "url": "/class-11-notes",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Practice Quiz",
+      "short_name": "Quiz",
+      "description": "Practice with past year questions",
+      "url": "/quiz",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Ask Veer",
+      "short_name": "Ask",
+      "description": "Open the Veer AI study assistant",
+      "url": "/chat",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Offline Study",
+      "short_name": "Offline",
+      "description": "Access your saved offline units",
+      "url": "/downloads",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "prefer_related_applications": false,
   "related_applications": [
     {
       "platform": "play",
       "id": "com.ravikisan.platform"
     }
-  ],
-  "android_arguments": "credit",
-  "bluish_manifest_url": "https://ravikisan.vercel.app/manifest.json"
+  ]
 }

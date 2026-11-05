@@ -100,12 +100,13 @@ export const PUBLIC_PATHS = [
   "/notifications",
   "/plans",
   // Study desk pages are tools, not notes: never coin-gated.
-  // Hardening pass R1: /srs, /mock-exams and /downloads are NOT listed. Their
-  // readers (lib/srs.ts cards, lib/mock-exam.ts papers, lib/offline-pack.ts
-  // packs) are all derived from lib/pyq-bank (theory notes, PYQs, drills) and
-  // lib/formula-sheet, i.e. the actual note/PYQ content that costs 1 spark. They
-  // fall through categoryForPath to "theory" ("reference" is not matched), so the
-  // spark layer covers their content export.
+  // Hardening pass R1: /srs and /mock-exams are NOT listed. Their
+  // readers (lib/srs.ts cards, lib/mock-exam.ts papers) are all derived
+  // from lib/pyq-bank (theory notes, PYQs, drills) and lib/formula-sheet,
+  // i.e. the actual note/PYQ content that costs 1 spark. They fall through
+  // categoryForPath to "theory", so the spark layer covers their content export.
+  // /downloads is now owner-only (minTier: "owner") — owners bypass the spark
+  // gate entirely, so it does not need special no-preview treatment.
   // Kept public, by data source: /onboarding /settings /dashboard /planner
   // /streaks /report-card /analytics read only the student's own device state
   // (goals, streak, quiz history, progress) and export no note or PYQ;
@@ -150,7 +151,7 @@ const REFERENCE_ROUTES = /^\/(pyqs|quiz|resources|ai-quiz|exam-countdown|progres
  * (e.g. "Show answer") would stay reachable from the console. Other gated
  * routes keep the blurred preview.
  */
-export const NO_LOCKED_PREVIEW_PATHS = ["/srs", "/mock-exams", "/downloads"] as const;
+export const NO_LOCKED_PREVIEW_PATHS = ["/srs", "/mock-exams"] as const;
 
 export function withholdsLockedContent(pathname: string): boolean {
   const path = pathname.split("?")[0].replace(/\/+$/, "") || "/";

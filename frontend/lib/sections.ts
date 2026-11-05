@@ -412,9 +412,9 @@ export const SECTIONS: PlatformSection[] = [
   },
   {
     id: "downloads",
-    title: "Downloads",
-    description: "Offline unit packs of notes, past questions, drills and formulas. Opens at Pro.",
-    minTier: "pro",
+    title: "Offline Study",
+    description: "Save units offline inside the app — notes, past questions, drills and formulas stored on your device. Owner only.",
+    minTier: "owner",
     icon: Download,
     href: "/downloads",
   },

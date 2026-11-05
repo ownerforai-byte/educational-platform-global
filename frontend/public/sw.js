@@ -13,8 +13,8 @@
 // Tutor's own dedicated page. Old v4 caches still hold the AI Studio render
 // under /chat (stale-while-revalidate would flash it once per visit), so
 // bump the cache name to force a clean precache of the new surface.
-const CACHE_NAME = "neb-vault-v6";
-const DATA_CACHE = "neb-data-v6";
+const CACHE_NAME = "neb-vault-v7";
+const DATA_CACHE = "neb-data-v7";
 
 /** Pages to pre-cache on install (core app shell). */
 const SW_ROUTES = [
@@ -34,6 +34,7 @@ const SW_ROUTES = [
   "/chat",
   "/ai",
   "/offline",
+  "/downloads",   // Offline Study page — owner access; must work with no signal
 ];
 
 /**
