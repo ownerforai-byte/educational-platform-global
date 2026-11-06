@@ -80,7 +80,9 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
                 content: userText,
               },
             ],
-            max_tokens: 90,
+            // 50-word ceiling (PLATFORM_GUIDE_MAX_WORDS) needs headroom so the
+            // model is never cut mid-word before the clamp can add its "…".
+            max_tokens: 120,
             temperature: 0.35,
           }),
           signal: AbortSignal.timeout(timeoutMs),

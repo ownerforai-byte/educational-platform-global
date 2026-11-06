@@ -57,7 +57,13 @@ import { MAX_OUTPUT_TOKENS } from "../src/ai/service";
  *      complete topic (1600/2048 tokens is what forced shallow summaries).
  */
 
-const CORPUS_TIMEOUT = 30_000;
+/**
+ * A cold corpus read is synchronous filesystem I/O over thousands of files and
+ * it grows with the corpus; 30s was tight enough to time the hook out on
+ * Windows while a sibling suite held the disk. The assertions themselves are
+ * unchanged — this only stops the fixture load from being the failure.
+ */
+const CORPUS_TIMEOUT = 120_000;
 
 beforeAll(() => {
   resetCorpusCache();

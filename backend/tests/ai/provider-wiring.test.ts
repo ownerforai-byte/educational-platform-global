@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { AIService } from "../../src/ai/service.js";
+import { FREE_LLM_NAMES } from "../../src/ai/free-llm-providers.js";
 
 describe("AIService provider registration & chain wiring", () => {
   const SAVE = {
@@ -51,10 +52,25 @@ describe("AIService provider registration & chain wiring", () => {
     const svc = new AIService() as any;
     const chain = svc.chainProviders();
     const names = chain.map((p: any) => p.name);
-    // The keyless free-tier links (LLM7.io, OVHcloud) are appended before the
-    // internal keyword engine: free fallbacks never jump an explicitly ordered
-    // link, and internal stays the last resort.
-    expect(names).toEqual(["groq", "gemini", "cerebras", "llm7", "ovh", "internal"]);
+    // The free-tier links are appended before the internal keyword engine:
+    // free fallbacks never jump an explicitly ordered link, and internal stays
+    // the last resort. WHICH free links register depends on the keys present in
+    // the environment (LLM7.io and OVHcloud are keyless and always live), so
+    // the invariant is asserted structurally instead of pinning today's list.
+    expect(names.slice(0, 3)).toEqual(["groq", "gemini", "cerebras"]);
+    expect(names[names.length - 1]).toBe("internal");
+
+    const freeLinks = names.slice(3, -1);
+    expect(freeLinks.length).toBeGreaterThan(0);
+    for (const name of freeLinks) {
+      expect(FREE_LLM_NAMES).toContain(name);
+    }
+    // Registry order is preserved, so a free link's position is deterministic.
+    const indices = freeLinks.map((name) => FREE_LLM_NAMES.indexOf(name as never));
+    expect(indices).toEqual([...indices].sort((a, b) => a - b));
+    // The two keyless free tiers are always usable, so they are always present.
+    expect(freeLinks).toContain("llm7");
+    expect(freeLinks).toContain("ovh");
     restore();
   });
 

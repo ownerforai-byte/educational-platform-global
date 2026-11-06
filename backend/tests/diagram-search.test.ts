@@ -20,7 +20,9 @@ import {
  * read inside the assertion is what made it time out once the owner's books
  * were ingested (~1.7k records / 7 MB). Same rule as curriculum-retrieval.
  */
-const CORPUS_TIMEOUT = 30_000;
+// See deep-source-depth.test.ts: a cold corpus read needs more than 30s on a
+// loaded Windows disk, and the timeout is not what these tests check.
+const CORPUS_TIMEOUT = 120_000;
 
 beforeAll(() => {
   resetCorpusCache();
