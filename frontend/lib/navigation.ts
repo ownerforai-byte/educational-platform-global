@@ -239,7 +239,7 @@ const toolsItems: NavItem[] = [
   { href: "/chat/grammar", label: "Grammar Console",         icon: BookOpen,   minLevel: "member" },
 
   // Available to Plus and above (full AI studio)
-  { href: "/ai",           label: "AI Console",              icon: Bot,        minLevel: "plus"  },
+  { href: "/ai",           label: "AI Tools",                icon: Bot,        minLevel: "member" },
   { href: "/ai/math",      label: "Veer Math Solver",        icon: Sigma,      minLevel: "plus"  },
   { href: "/ai/deep-dive", label: "Deep Concept Studio",     icon: Lightbulb,  minLevel: "plus"  },
   { href: "/ai/diagrams",  label: "Diagram Hub",             icon: Shapes,     minLevel: "plus"  },
@@ -415,7 +415,7 @@ export const QUICK_LINKS = [
 export const APP_TABS = [
   { href: "/home",     label: "Home",     short: "Home",     icon: Home },
   { href: "/subjects", label: "Learn",    short: "Learn",    icon: BookOpen },
-  { href: "/chat",     label: "Ask Veer", short: "Ask",      icon: Sparkles },
+  { href: "/ai",      label: "AI Tools",  short: "AI Tools", icon: Bot     },
   { href: "/quiz",     label: "Practice", short: "Practice", icon: Target },
   { href: "/profile",  label: "You",      short: "You",      icon: User },
 ] as const;

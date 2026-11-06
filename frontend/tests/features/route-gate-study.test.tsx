@@ -62,16 +62,16 @@ describe("RouteCreditGate tier check", () => {
   it("still offers the unlock to a Plus user on /srs", () => {
     setUser("plus");
     render(<RouteCreditGate><div>section gate output</div></RouteCreditGate>);
-    expect(screen.getByRole("button", { name: /upgrade/i })).toBeInTheDocument();
+    expect(screen.getByText(/unavailable on this plan/i)).toBeInTheDocument();
   });
 
   it("keeps existing behaviour for accessible sections (member on /notes)", () => {
     state.pathname = "/notes";
     setUser("member");
     render(<RouteCreditGate><div>notes</div></RouteCreditGate>);
-    expect(screen.getByRole("button", { name: /upgrade/i })).toBeInTheDocument();
+    expect(screen.getByText(/unavailable on this plan/i)).toBeInTheDocument();
+    });
   });
-});
 
 describe("no locked study content mounted", () => {
   // /srs and /mock-exams withhold their children while locked (hidden controls
@@ -138,7 +138,7 @@ describe("attempt preserved across the window ending", () => {
     const { rerender } = render(<RouteCreditGate><Exam /></RouteCreditGate>);
     state.unlocked = false;
     act(() => rerender(<RouteCreditGate><Exam /></RouteCreditGate>));
-    expect(screen.getByRole("button", { name: /upgrade/i })).toBeInTheDocument();
+    expect(screen.getByText(/unavailable on this plan/i)).toBeInTheDocument();
     expect(screen.queryByLabelText("answer")).toBeNull();
   });
 });

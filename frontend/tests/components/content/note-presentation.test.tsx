@@ -46,7 +46,7 @@ describe("note presentation classification", () => {
   });
 
   it("opens with the canonical note and keeps each learning activity in its own tab", () => {
-    const tabs = buildCompanionTabs();
+    const tabs = buildCompanionTabs("default");
     const ids = tabs.map((tab) => tab.id);
 
     expect(ids).toEqual([
@@ -69,6 +69,19 @@ describe("note presentation classification", () => {
       "numericals",
       "entrance",
       "self-check",
+    ]);
+  });
+
+  it("limits Nepali syllabus pro topics to language companion tabs only", () => {
+    const tabs = buildCompanionTabs("nepali-syllabus-pro");
+    expect(tabs.map((tab) => tab.id)).toEqual([
+      "notes",
+      "self-check",
+      "related",
+      "bounds",
+      "exam-tips",
+      "journal",
+      "resources",
     ]);
   });
 

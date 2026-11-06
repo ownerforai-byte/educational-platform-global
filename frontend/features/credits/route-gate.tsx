@@ -24,13 +24,11 @@
 
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
-import { Loader2, Timer, ArrowRight, Sparkles } from "lucide-react";
+import { Timer } from "lucide-react";
 import {
   TOKEN_MATRIX,
   categoryForPath,
   creditModuleKey,
-  withholdsLockedContent,
-  type ContentCategory,
 } from "./constants";
 import { AttemptHoldContext } from "./attempt-hold";
 import { useCredit } from "./credit-provider";
@@ -43,22 +41,15 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const {
     user,
-    isAuthenticated,
     isUnlocked,
     remainingClock,
-    openModule,
-    requestAccess,
-    noticeTitle,
-    error,
   } = useCredit();
   // Live owner gate: OFF → the WHOLE coin-gated library is free for owner
   // emails (the toggle no longer stops at AI chat).
   const coinGateEnabled = useCoinGateEnabled();
 
-  const [working, setWorking] = useState(false);
-  const overrides = useSectionTierOverrides();
-  // An in-progress attempt (mock paper) keeps the view mounted past expiry.
   const [held, setHeld] = useState(false);
+  const overrides = useSectionTierOverrides();
   const setHold = useCallback((next: boolean) => setHeld(next), []);
   const windowOpen = isUnlocked(creditModuleKey(pathname ?? "/"));
   const holdValue = useMemo(() => ({ windowOpen, setHold }), [windowOpen, setHold]);
@@ -111,77 +102,29 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
     );
   }
 
-  const onUnlock = async () => {
-    if (working) return;
-    setWorking(true);
-    try {
-      // Unauthenticated → notice modal (interceptor path).
-      if (!isAuthenticated) {
-        requestAccess();
-        return;
-      }
-      await openModule(moduleKey, category as ContentCategory);
-    } finally {
-      setWorking(false);
-    }
-  };
-
   return (
-    <div className="relative min-h-[60vh]">
-      {/* Blurred, inert content layer */}
+    <div className="mx-auto max-w-2xl px-4 py-14">
       <div
-        aria-hidden="true"
-        className="pointer-events-none select-none blur-[6px] opacity-30"
+        className="cursor-not-allowed rounded-2xl border border-border/60 bg-muted/40 p-8 text-center opacity-60 grayscale"
+        aria-disabled="true"
       >
-        {withholdsLockedContent(pathname ?? "/") ? null : children}
-      </div>
-
-      {/* Upgrade prompt — replaces the old "Spark library / Unlock — N sparks"
-          overlay. The unlock API call still fires silently in the background
-          (onUnlock is called on button click); the user only sees the plan
-          upgrade message, never the spark mechanics. */}
-      <div className="absolute inset-0 z-30 bg-background/70 backdrop-blur-[3px]">
-        <div className="sticky top-20 flex justify-center px-4 py-8">
-          <div className="flex w-full max-w-sm flex-col items-center gap-5 rounded-3xl border border-border/70 bg-card p-6 text-center shadow-2xl">
-
-            {/* Icon */}
-            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-              <Sparkles className="h-7 w-7" />
-            </div>
-
-            {/* Heading + description */}
-            <div className="space-y-1.5">
-              <p className="text-lg font-extrabold tracking-tight text-foreground">
-                Upgrade to access this content
-              </p>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                This content is available on a higher plan.
-                Upgrade to access notes, PYQs, formula sheets and more.
-              </p>
-            </div>
-
-            {/* Primary CTA — triggers the silent unlock in the background */}
-            <button
-              type="button"
-              onClick={onUnlock}
-              disabled={working}
-              className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-2xl bg-primary px-6 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-card"
-            >
-              {working ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
-              ) : (
-                <ArrowRight className="h-4 w-4" />
-              )}
-              {working ? "Opening…" : "Upgrade your plan"}
-            </button>
-
-
-            {error && (
-              <p className="max-w-sm rounded-xl border border-destructive/30 bg-destructive/10 px-3 py-1.5 text-xs font-semibold text-destructive">
-                {error}
-              </p>
-            )}
-          </div>
+        <h1 className="text-2xl font-extrabold tracking-tight text-muted-foreground">
+          Unavailable on this plan
+        </h1>
+        <p className="mt-2 text-xs font-semibold uppercase tracking-wide text-muted-foreground/60">
+          This section requires a higher plan
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+          Notes, PYQs, formula sheets and labs open on the Plus plan and above.
+        </p>
+        {/* Plans live in the footer only — no plans link here. */}
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="/home"
+            className="inline-flex items-center rounded-2xl border border-border/70 px-6 py-3 text-sm font-semibold text-muted-foreground transition hover:border-muted-foreground"
+          >
+            Go to my home
+          </a>
         </div>
       </div>
     </div>

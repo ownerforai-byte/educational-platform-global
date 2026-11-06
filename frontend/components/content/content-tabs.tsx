@@ -56,12 +56,16 @@ import {
 } from "@/features/r1/hooks";
 import type { R1JournalEntry } from "@/lib/api/r1";
 
+export type CompanionTabProfile = "default" | "nepali-syllabus-pro";
+
 type ContentTabsProps = {
   classSlug: string;
   subjectSlug: string;
   unitId: string;
   topicSlug: string;
   unit?: SyllabusUnit;
+  /** Nepali syllabus topics use the language pro tab set (no MCQ / numerical / entrance rails). */
+  tabProfile?: CompanionTabProfile;
 };
 
 type ResourceSpec = {
@@ -253,19 +257,36 @@ type ContentTab = {
   description: string;
 };
 
-export function buildCompanionTabs(): ContentTab[] {
-  return [
-    { id: "notes", label: "Notes", icon: BookOpen, minTier: "member", kind: "learning", learningSection: "notes", description: "Understand the canonical notes through a guided four-pass learning path." },
-    { id: "mcq", label: "MCQs", icon: ListChecks, minTier: "member", kind: "learning", learningSection: "mcq", description: "Answer topic MCQs vertically with immediate feedback." },
-    { id: "numericals", label: "Step-by-step Numericals", icon: Calculator, minTier: "member", kind: "learning", learningSection: "numericals", description: "Follow worked problems, then try the related practice." },
-    { id: "entrance", label: "Entrance Question Bank", icon: Target, minTier: "member", kind: "learning", learningSection: "entrance", description: "Practise the full entrance bank in Learn or Test mode." },
-    { id: "self-check", label: "Quick 3 Self-check", icon: Brain, minTier: "member", kind: "learning", learningSection: "self-check", description: "Recall three key ideas without reopening the notes." },
-    { id: "related", label: "Related Topics", icon: Link2, minTier: "member", kind: "field", field: "related", description: "Topics that connect to this one." },
-    { id: "bounds", label: "Bounds & Limits", icon: Target, minTier: "member", kind: "field", field: "bounds", description: "Where each formula stops being valid." },
-    { id: "exam-tips", label: "Exam Tips", icon: BookMarked, minTier: "plus", kind: "field", field: "examNotes", description: "How the exam asks — and how to answer." },
-    { id: "journal", label: "Journal", icon: NotebookPen, minTier: "plus", kind: "journal", description: "Your private study journal for this topic." },
-    { id: "resources", label: "Resources & Docs", icon: FileText, minTier: "member", kind: "resources", description: "All documents, added PDFs and unit resources." },
-  ];
+/** Nepali syllabus pro topics — language study surface (no STEM practice rails). */
+export const NEPALI_SYLLABUS_PRO_TAB_IDS = [
+  "notes",
+  "self-check",
+  "related",
+  "bounds",
+  "exam-tips",
+  "journal",
+  "resources",
+] as const;
+
+const ALL_COMPANION_TABS: ContentTab[] = [
+  { id: "notes", label: "Notes", icon: BookOpen, minTier: "member", kind: "learning", learningSection: "notes", description: "Understand the canonical notes through a guided four-pass learning path." },
+  { id: "mcq", label: "MCQs", icon: ListChecks, minTier: "member", kind: "learning", learningSection: "mcq", description: "Answer topic MCQs vertically with immediate feedback." },
+  { id: "numericals", label: "Step-by-step Numericals", icon: Calculator, minTier: "member", kind: "learning", learningSection: "numericals", description: "Follow worked problems, then try the related practice." },
+  { id: "entrance", label: "Entrance Question Bank", icon: Target, minTier: "member", kind: "learning", learningSection: "entrance", description: "Practise the full entrance bank in Learn or Test mode." },
+  { id: "self-check", label: "Quick 3 Self-check", icon: Brain, minTier: "member", kind: "learning", learningSection: "self-check", description: "Recall three key ideas without reopening the notes." },
+  { id: "related", label: "Related Topics", icon: Link2, minTier: "member", kind: "field", field: "related", description: "Topics that connect to this one." },
+  { id: "bounds", label: "Bounds & Limits", icon: Target, minTier: "member", kind: "field", field: "bounds", description: "Where each formula stops being valid." },
+  { id: "exam-tips", label: "Exam Tips", icon: BookMarked, minTier: "plus", kind: "field", field: "examNotes", description: "How the exam asks — and how to answer." },
+  { id: "journal", label: "Journal", icon: NotebookPen, minTier: "plus", kind: "journal", description: "Your private study journal for this topic." },
+  { id: "resources", label: "Resources & Docs", icon: FileText, minTier: "member", kind: "resources", description: "All documents, added PDFs and unit resources." },
+];
+
+export function buildCompanionTabs(profile: CompanionTabProfile = "default"): ContentTab[] {
+  if (profile === "nepali-syllabus-pro") {
+    const allowed = new Set<string>(NEPALI_SYLLABUS_PRO_TAB_IDS);
+    return ALL_COMPANION_TABS.filter((tab) => allowed.has(tab.id));
+  }
+  return ALL_COMPANION_TABS;
 }
 
 /** Restricted tabs stay visible in a muted, non-interactive state. */
@@ -556,6 +577,7 @@ export function ContentTabs({
   unitId,
   topicSlug,
   unit,
+  tabProfile,
 }: ContentTabsProps) {
   const { user } = useSession();
 
@@ -565,7 +587,10 @@ export function ContentTabs({
 
   const topicPath = getTopicPath(classSlug, subjectSlug, unitId, topicSlug);
 
-  const tabs = useMemo(() => buildCompanionTabs(), []);
+  const resolvedProfile: CompanionTabProfile =
+    tabProfile ?? (subjectSlug === "nepali" ? "nepali-syllabus-pro" : "default");
+
+  const tabs = useMemo(() => buildCompanionTabs(resolvedProfile), [resolvedProfile]);
 
   const [activeTab, setActiveTab] = useState<string>("notes");
   const active = tabs.find((t) => t.id === activeTab) ?? tabs[0];

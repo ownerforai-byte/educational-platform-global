@@ -112,7 +112,21 @@ export async function TopicDetailView({
         unitId={unitId}
         topicSlug={topic.slug}
         unit={unit}
+        tabProfile={subjectSlug === "nepali" ? "nepali-syllabus-pro" : "default"}
       />
+
+      {subjectSlug === "nepali" && (
+        <p className="text-sm text-muted-foreground">
+          <Link
+            href={`${basePath}/chapters/${unit.id}/topics/${topic.slug}/pro`}
+            className="font-semibold text-primary hover:underline"
+          >
+            Open pro study view
+          </Link>
+          {" — "}
+          notes, self-check, related topics, bounds, exam tips, journal and resources only.
+        </p>
+      )}
 
       {/* Topic Mindmap Block */}
       <section aria-labelledby="topic-mindmap-heading" className="rounded-2xl border border-border/70 bg-card p-4 shadow-sm space-y-4 sm:rounded-3xl sm:p-6">

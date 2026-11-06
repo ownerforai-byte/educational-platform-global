@@ -102,8 +102,9 @@ export function OfficialSyllabusPanel({
                 <ol className="ml-5 list-decimal space-y-1 text-sm text-muted-foreground">
                   {(unit.topicEntries ?? []).map((topic) => {
                     const highlighted = highlightTopicSlug === topic.slug && isHighlightedUnit;
+                    const nepaliPro = basePath?.endsWith("/nepali");
                     const topicHref = basePath
-                      ? `${basePath}/chapters/${unit.id}/topics/${topic.slug}`
+                      ? `${basePath}/chapters/${unit.id}/topics/${topic.slug}${nepaliPro ? "/pro" : ""}`
                       : undefined;
                     return (
                       <li

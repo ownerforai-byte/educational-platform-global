@@ -74,7 +74,11 @@ export function ChapterDetailView({
             {unit.topicEntries.map((topic, idx) => (
               <Link
                 key={topic.slug}
-                href={`${basePath}/chapters/${unit.id}/topics/${topic.slug}`}
+                href={
+                  subjectSlug === "nepali"
+                    ? `${basePath}/chapters/${unit.id}/topics/${topic.slug}/pro`
+                    : `${basePath}/chapters/${unit.id}/topics/${topic.slug}`
+                }
                 className="group flex flex-col justify-between rounded-2xl border border-border/70 bg-card p-5 shadow-sm transition-all hover:border-primary/50 hover:shadow-md hover:-translate-y-0.5"
               >
                 <div>
