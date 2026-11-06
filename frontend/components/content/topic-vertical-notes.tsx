@@ -43,6 +43,8 @@ import {
   ensureHighYieldForSubject,
   getLoadedHighYieldTopicData,
 } from "@/lib/high-yield-topic-facts-lazy";
+import { resolveLabVisualEntry } from "@/lib/lab-visual-index";
+import { getLabVisualNode } from "@/lib/lab-visual-loaders";
 
 const SchematicDiagramLazy = dynamic(
   () => import("@/components/lab/schematic-diagram").then((m) => m.SchematicDiagram),
@@ -174,19 +176,12 @@ function VisualWorkspace({
   const [isVisualRefreshing, setIsVisualRefreshing] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [fullscreenError, setFullscreenError] = useState<string | null>(null);
-  const [TopicVisual3D, setTopicVisual3D] = useState<React.ComponentType | null>(null);
   const visualPanelRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    let cancelled = false;
-    setTopicVisual3D(null);
-    import("@/lib/topic-3d-map").then((m) => {
-      if (!cancelled) setTopicVisual3D(() => m.get3DComponentForTopic(topicSlug));
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [topicSlug]);
+  // O(1) synchronous lookup: whether this topic has a 3D visual (drives tab
+  // visibility). This pulls in NO three.js and NO topic-visual chunk — the
+  // visuals only load when the 3D branch below actually mounts.
+  const labVisualEntry = useMemo(() => resolveLabVisualEntry(topicSlug), [topicSlug]);
 
   useEffect(() => {
     const sync = () => setIsFullscreen(document.fullscreenElement === visualPanelRef.current);
@@ -195,8 +190,8 @@ function VisualWorkspace({
   }, []);
 
   const visualTabs = useMemo<Array<"schematic" | "3d">>(
-    () => (TopicVisual3D ? ["schematic", "3d"] : ["schematic"]),
-    [TopicVisual3D],
+    () => (labVisualEntry ? ["schematic", "3d"] : ["schematic"]),
+    [labVisualEntry],
   );
 
   const onVisualTabKeyDown = (event: React.KeyboardEvent) => {
@@ -274,7 +269,7 @@ function VisualWorkspace({
             >
               Schematic
             </button>
-            {TopicVisual3D && (
+            {labVisualEntry && (
               <button
                 type="button"
                 role="tab"
@@ -304,9 +299,9 @@ function VisualWorkspace({
             classSlug={classSlug}
             concepts={concepts}
           />
-        ) : TopicVisual3D ? (
+        ) : labVisualEntry ? (
           <div key={`3d-${visualKey}`} className="flex min-h-[380px] items-center justify-center overflow-hidden rounded-2xl border border-border/60">
-            <TopicVisual3D />
+            {getLabVisualNode(labVisualEntry)}
           </div>
         ) : null}
         <p className="rounded-xl border border-border/60 bg-background/70 px-3 py-2 text-[11px] text-muted-foreground">
