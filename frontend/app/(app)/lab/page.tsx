@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect, Suspense } from "react";
+import React, { useState, useMemo, Suspense } from "react";
 import dynamic from "next/dynamic";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Loader2, AlertCircle, BookOpen, Atom, Calculator, ChevronRight, ChevronDown, FlaskConical, Dna, Microscope, Activity, TestTube, Atom as AtomIcon, Brain, Eye, Zap, Thermometer, Scale, Timer, TrendingUp, Star, Globe, Search, Cuboid, Infinity as InfinityIcon, Columns3, Move3d, Target, Crosshair, Binary, Sparkles, Bolt, Grid3x3, Sigma, BarChart3, FunctionSquare, Triangle, Hexagon, Radio, TreeDeciduous, Heart as HeartIcon, Users as UsersIcon, Leaf as LeafIcon, Box, Flame, Wind as WindIcon, CircuitBoard } from "lucide-react";
 import { LabSectionCard } from "@/components/lab/lab-section-card";
 import { getSubjectSyllabus } from "@/lib/syllabus";
+import { resolveLabVisualEntry } from "@/lib/lab-visual-index";
 import { useSearchParams } from "next/navigation";
 
 // PHASE 3 (2026-10-27): every 3D rig below loads only when its card is
@@ -358,20 +359,15 @@ function LabDashboard({
 }) {
   const [activeLab, setActiveLab] = useState<string | null>(initialLabId ?? null);
   const [typeFilter, setTypeFilter] = useState<"3d" | "theory" | "calculator">("3d");
-  // Resolved lazily — importing topic-3d-map eagerly bundles every topic
-  // visual component into the hub shell.
-  const [topic3DKey, setTopic3DKey] = useState<string | null | undefined>(undefined);
-
-  useEffect(() => {
-    if (!topicSlug) return;
-    let cancelled = false;
-    import("@/lib/topic-3d-map").then((m) => {
-      if (!cancelled) setTopic3DKey(m.resolveTopic3DKey(topicSlug));
-    });
-    return () => {
-      cancelled = true;
-    };
-  }, [topicSlug]);
+  // Existence check only. The generated visual index is data-only, so the hub
+  // shell still downloads no visual chunk and no Three.js. It replaces the
+  // hand-maintained `topic-3d-map` (Phase 2): the index resolves exact syllabus
+  // slugs plus declared aliases, while that map also matched on prefixes — the
+  // fuzzy resolution the manifest rule forbids.
+  const hasTopicVisual = useMemo(
+    () => (topicSlug ? resolveLabVisualEntry(topicSlug) !== null : false),
+    [topicSlug],
+  );
 
   // Get labs for the selected subject only
   const subjectLabs = useMemo(() => {
@@ -384,16 +380,17 @@ function LabDashboard({
     return LABS_BY_SUBJECT[categoryMap[subjectSlug] ?? "physics"] ?? [];
   }, [subjectSlug]);
 
-  // Inject a synthetic chapter lab for any topic that has a 3D animation entry
-  // in TOPIC_3D_MAP but no matching card in LABS_BY_SUBJECT. This guarantees every
-  // chapter / topic across Physics, Chemistry, Biology, Mathematics has a 3D lab.
+  // Inject a synthetic chapter lab for any topic that has a visual in the
+  // generated index but no matching card in LABS_BY_SUBJECT. This keeps every
+  // chapter / topic across Physics, Chemistry, Biology, Mathematics reachable
+  // from the hub.
   const allLabs = useMemo<LabItem[]>(() => {
     if (!topicSlug || !topicTitle) return subjectLabs;
     const alreadyPresent = subjectLabs.some((l) =>
       l.id.includes(topicSlug) || topicSlug.includes(l.id),
     );
     if (alreadyPresent) return subjectLabs;
-    if (!topic3DKey) return subjectLabs;
+    if (!hasTopicVisual) return subjectLabs;
     const fallbackLab: LabItem = {
       id: `chapter-${topicSlug}`,
       title: topicTitle,
@@ -406,7 +403,7 @@ function LabDashboard({
       ),
     };
     return [...subjectLabs, fallbackLab];
-  }, [subjectLabs, topicSlug, topicTitle, subjectSlug, topic3DKey]);
+  }, [subjectLabs, topicSlug, topicTitle, subjectSlug, hasTopicVisual]);
 
   const filteredLabs = useMemo(() => {
     return allLabs.filter((lab) => {

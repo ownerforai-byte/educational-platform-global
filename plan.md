@@ -588,7 +588,7 @@ raw full suites green, `npm run check:all` green.
 - [ ] P0  Move KB + OCR corpus out of the public repo (private repo, git submodule, or Supabase Storage loaded at deploy)
 - [x] P0  Delete backend/kb/books/_ingest-report.json local paths (leaks C:\Users\ASUS\Downloads\...)
 - [x] P0  Split licenses: MIT for code, separate CONTENT_LICENSE.md for notes/diagrams (+ attribution page in app)
-- [ ] P1  Takedown/contact page + process so a rights-holder can reach you
+- [x] P1  Takedown/contact page + process so a rights-holder can reach you (2026-11-07: /legal/takedown + /legal/attribution, real process in SECURITY.md, SOURCES.md no longer circular)
 - [ ] P0  Revoke the leftover Puter token (README: still in history, expires 2026-12-04) or rewrite history
 
 ### Phase 2 — Repo Organization
@@ -787,8 +787,8 @@ Replaces the estimates above with reproducible numbers from
 
 #### Phase 2 — Create the Single Activity Manifest
 
-**Started 2026-11-06** — schema, pilots and gates are in place; population and the
-parity migration are not.
+**Completed 2026-11-06** — schema, population, parity and both duplicate-metadata
+decisions are in place and enforced by the `labManifest` gate.
 
 - [x] Define the typed activity schema (`frontend/lib/lab-manifest.ts`): id, title,
   `kind`, `subject` (incl. Mathematics), class/unit placement, explicit
@@ -814,11 +814,26 @@ parity migration are not.
 - [x] A visual reused across classes/units yields one activity per placement
   (e.g. the capacitor visual serves Class 11 and Class 12 separately) rather than
   one activity with a contradictory class/unit.
-- [ ] Fail `--check` when a *new* orphan visual appears (today it reports the
-  exemption list; only manifest violations fail).
-- [ ] Retire the duplicate hand-maintained metadata in `lab-metadata.ts` /
-  `topic-3d-map.tsx` once each activity's parity is reviewed; both remain the
-  load-bearing sources for now.
+- [x] `--check` fails on a *new* orphan visual: an unreferenced visual missing
+  from `lab-manifest-orphans.json` raises `orphan-visual-new`, and an exemption
+  that stops being an orphan raises `orphan-visual-stale` (both exit 1).
+  Reachability is defined as “wired into `lab-visual-loaders.tsx`”, the only
+  module that can actually mount a topic visual.
+- [x] Duplicate hand-maintained metadata resolved (2026-11-06), in two different
+  ways because the two cases are not alike:
+  - **`lib/topic-3d-map.tsx` retired.** All 411 of its keys already resolved from
+    the generated index (0 missing), and its only live consumer —
+    `app/(app)/lab/page.tsx` — used it purely as “does this topic have a
+    visual?”, now answered by `resolveLabVisualEntry`. Retiring it also removes
+    its prefix/reverse-prefix matching, the fuzzy resolution the manifest rule
+    forbids. The hub keeps no eager visual imports.
+  - **`lib/lab-metadata.ts` kept, as a guarded mirror.** It is *not* derivable:
+    the authoritative `lib/lab-registry.tsx` is a component module that the
+    data-only consumers (search, site index, manifest) must never import, and it
+    cannot even load in Node (it reaches a content pipeline). Rather than leave
+    an unchecked copy, the gate now fails on `registry-metadata-orphan` (an entry
+    absent from the registry) or `registry-metadata-drift` (a title that no
+    longer matches), so the mirror cannot silently rot.
 
 #### Phase 3 — One Hub and Backwards-Compatible URLs
 
@@ -830,8 +845,26 @@ parity migration are not.
 - [x] Legacy deep links keep working: `LEGACY_ALIASES` redirects, `/lab/3d` is the
   fallback for unknown ids, and `/lab/theory`, `/lab/3d/topic|chapter/[id]` remain
   live views.
-- [ ] Convert those legacy views into filtered hub views (they are kept working
-  rather than removed, per the no-breakage rule).
+- [x] Legacy views are filtered hub views now (2026-11-06), not separate
+  implementations — the URLs are unchanged, so no deep link broke:
+  - `/lab/theory` lists exactly the manifest's `kind: "theory"` activities (40
+    across four subjects) and every card links to its canonical `/lab/<slug>`.
+    It no longer enumerates `LAB_REGISTRY` itself.
+  - `/lab/3d/topic/<slug>` and `/lab/3d/chapter/<unit>` render
+    `ManifestHubSection` scoped to that exact topic slug or `curriculum.unitId`,
+    with an explicit empty state when nothing is placed there. The generic scene
+    they used to mount for *any* slug is gone, so no view invents content for a
+    slug the curriculum does not define.
+  - The hub's own “3D Gallery” was a fourth hand-maintained catalog, and five of
+    its eight ids (`thermodynamics`, `chemical-bonding`, `cell-biology`,
+    `laws-of-motion`, `organic-chemistry`) are not syllabus keys at all. It is
+    now derived from the manifest: only units that host an activity appear,
+    titled from `LAB_UNIT_ORDER` and linked to the unit-scoped view.
+  - `components/lab/topics/[topicId]/topics-3d.tsx` and
+    `components/lab/chapters/[chapterId]/chapters-3d.tsx` lost their only
+    consumer in this conversion. They are deliberately left in place — a file is
+    not retired on a references check alone — and are recorded as dead-code
+    candidates for the next cleanup pass.
 - [x] Breadcrumb/labels reuse `lab-unit-order.ts` + `lib/syllabus.ts`; no second
   curriculum ordering source was added.
 
@@ -881,6 +914,21 @@ parity migration are not.
   exist in `LAB_VISUAL_INDEX`).
 - `tests/lib/lab-manifest.test.ts` (12) and `tests/components/lab/activity-stage.test.tsx`
   (1) pass; `tsc --noEmit` is clean.
+- **Phase 2 retirement verified (2026-11-06):** `topic-3d-map.tsx` deleted and its
+  consumer repointed; gate still PASS with 527 activities, 543 resolvable slugs,
+  342/453 + 112/116 + 69/69 parity, and `orphan topic visuals: 1 (0 unreviewed)`
+  — deleting the map produced no new orphans, which is the evidence that the
+  loader set is a complete replacement for the map's import list. 116 registry
+  metadata entries verified against `lab-registry.tsx` with 0 title mismatches;
+  `tsc --noEmit` 0 and 17 tests across `lab-manifest` + `topic-learning-sections`
+  pass. The drift branch of the new mirror guard was not exercised (it passes
+  today); only its positive path is observed.
+- **Phase 3 conversion verified (2026-11-06):** `tsc --noEmit` 0 and
+  `npm run check:all` **EXIT 0** after `/lab/theory`, both gallery routes and the
+  hub gallery were rewritten. Scope matching is exact-key only, so an unknown
+  slug now yields the empty state instead of a generic scene. A signed-in render
+  of the four routes was **not** performed (the `(app)` approval wall), so the
+  conversion is verified by typecheck, tests and the manifest gate, not visually.
 - **Dev server unblocked:** the community routes used two dynamic slug names at
   the same path level (`community/[id]` and `community/[subjectId]/[threadId]`),
   which Next rejects. The thread route moved to `community/[id]/[threadId]`, so both

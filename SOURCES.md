@@ -3,7 +3,8 @@
 > Every external source ingested into this platform is listed here.
 > Maintainers: update this file whenever a new external source is added.
 > If you are a rights holder and believe your content is included without
-> permission, please contact us via the process in SECURITY.md.
+> permission, use the public request page at `/legal/takedown`. The operative
+> review process is in SECURITY.md; this file is the source ledger.
 
 ## Status key
 

@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/footer";
 export const platformLinks = [
   ["About", "/about"], ["Blog", "/blog"], ["NEB Updates", "/neb-updates"],
   ["How It Works", "/how-it-works"], ["Contact", "/contact"], ["Help", "/help"],
+  ["Parents", "/parents"], ["Site Map", "/sitemap-page"],
 ] as const;
 
 export function Action({ href, children, secondary = false }: {

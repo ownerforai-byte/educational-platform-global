@@ -1,47 +1,44 @@
 "use client";
 
 /**
- * Lab Theory — THE single hub routing every lab's theory content.
+ * Lab Theory — the theory filter of the single hub (Phase 3).
  *
- * Routes every `type: "theory"` entry in LAB_REGISTRY (30 topics across
- * Physics, Chemistry, Biology, Mathematics) in subject groups, with search.
- * Empty subjects are simply not shown as tabs; the grid shows an explicit
- * empty state when a filter/search matches nothing.
+ * This used to be a second catalog: it enumerated `LAB_REGISTRY` itself. It now
+ * lists exactly the activities the manifest offers with `kind: "theory"`, so a
+ * theory entry appears here only if the manifest places it, and every card links
+ * to its canonical `/lab/<slug>`.
  */
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Search, BookOpen, Cuboid, ChevronRight } from "lucide-react";
-import { LAB_REGISTRY, getLabsByCategory } from "@/lib/lab-registry";
+import { activityHref, listOfferedActivities, type LabActivity } from "@/lib/lab-manifest";
 import { LAB_SUBJECTS } from "@/lib/lab-unit-order";
-import type { LabMeta } from "@/lib/types/lab";
 
 export default function LabTheoryPage() {
-  const subjects = useMemo(
-    () => LAB_SUBJECTS.filter((s) => getLabsByCategory(s.key).some((l) => l.type === "theory")),
+  const theory = useMemo(
+    () => listOfferedActivities().filter((activity) => activity.kind === "theory"),
     []
   );
+
+  const subjects = useMemo(
+    () => LAB_SUBJECTS.filter((s) => theory.some((a) => a.curriculum.subject === s.key)),
+    [theory]
+  );
+
   const [activeSubject, setActiveSubject] = useState<string>(subjects[0]?.key ?? "physics");
   const [query, setQuery] = useState("");
 
-  const subjectLabs = useMemo(
-    () => getLabsByCategory(activeSubject).filter((l) => l.type === "theory"),
-    [activeSubject]
-  );
-
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return subjectLabs;
-    // Search spans ALL subjects by title/description; empty results get an
-    // explicit empty state rather than falling back to unrelated topics.
-    return LAB_REGISTRY.filter(
-      (l) =>
-        l.type === "theory" &&
-        (l.title.toLowerCase().includes(q) || l.description.toLowerCase().includes(q))
-    );
-  }, [query, subjectLabs]);
+    // Search spans every subject by title; an empty result shows an explicit
+    // empty state rather than falling back to unrelated topics.
+    if (q) return theory.filter((a) => a.title.toLowerCase().includes(q));
+    return theory.filter((a) => a.curriculum.subject === activeSubject);
+  }, [query, theory, activeSubject]);
 
-  const totalTheory = LAB_REGISTRY.filter((l) => l.type === "theory").length;
+  const countFor = (key: string) =>
+    theory.filter((a) => a.curriculum.subject === key).length;
 
   return (
     <div className="mx-auto max-w-6xl space-y-6 py-8 md:py-14 px-4">
@@ -51,14 +48,13 @@ export default function LabTheoryPage() {
           Lab Theory
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Every lab&apos;s theory in one place — {totalTheory} structured topics across Physics,
+          Every lab&apos;s theory in one place — {theory.length} topics across Physics,
           Chemistry, Biology and Mathematics, each with Look / Principle / Why explanations.
         </p>
       </div>
 
       <div className="flex gap-2 flex-wrap">
         {subjects.map((s) => {
-          const count = getLabsByCategory(s.key).filter((l) => l.type === "theory").length;
           const isActive = activeSubject === s.key;
           return (
             <button
@@ -81,7 +77,7 @@ export default function LabTheoryPage() {
                   isActive ? "bg-white/20" : "bg-muted-foreground/20"
                 }`}
               >
-                {count}
+                {countFor(s.key)}
               </span>
             </button>
           );
@@ -100,8 +96,8 @@ export default function LabTheoryPage() {
       </div>
 
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {filtered.map((lab) => (
-          <LabCard key={lab.id} lab={lab} />
+        {filtered.map((activity) => (
+          <TheoryCard key={activity.id} activity={activity} />
         ))}
         {filtered.length === 0 && (
           <div className="col-span-full py-16 text-center text-muted-foreground">
@@ -117,13 +113,13 @@ export default function LabTheoryPage() {
       <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-border/60">
         <span className="stat-pill">
           <span className="text-muted-foreground">Total theory topics:</span>
-          <span className="stat-pill-value">{totalTheory}</span>
+          <span className="stat-pill-value">{theory.length}</span>
         </span>
         {subjects.map((s) => (
           <span key={s.key} className="stat-pill">
             <span className="text-muted-foreground">{s.label}:</span>
             <span className="stat-pill-value" style={{ color: s.color }}>
-              {getLabsByCategory(s.key).filter((l) => l.type === "theory").length}
+              {countFor(s.key)}
             </span>
           </span>
         ))}
@@ -140,60 +136,41 @@ export default function LabTheoryPage() {
   );
 }
 
-function LabCard({ lab }: { lab: LabMeta }) {
-  const statusColor =
-    lab.status === "new"
-      ? "text-blue-600 dark:text-blue-400"
-      : lab.status === "premium"
-      ? "text-amber-600 dark:text-amber-400"
-      : lab.status === "development"
-      ? "text-purple-600 dark:text-purple-400"
-      : "text-emerald-600 dark:text-emerald-400";
-  const statusBg =
-    lab.status === "new"
-      ? "bg-blue-500/10"
-      : lab.status === "premium"
-      ? "bg-amber-500/10"
-      : lab.status === "development"
-      ? "bg-purple-500/10"
-      : "bg-emerald-500/10";
+function TheoryCard({ activity }: { activity: LabActivity }) {
+  const subject = LAB_SUBJECTS.find((s) => s.key === activity.curriculum.subject);
 
   return (
-    <Link href={`/lab/${lab.id}`} className="block group">
+    <Link href={activityHref(activity.id)} className="block group">
       <div className="elev-2 rounded-2xl border border-border overflow-hidden bg-card hover:border-primary/50 transition-all duration-[200ms] hover:elev-2 h-full flex flex-col">
         <div className="p-4 flex items-start gap-3">
           <div
             className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-            style={{ backgroundColor: `${lab.color}18`, color: lab.color }}
+            style={{ backgroundColor: `${subject?.color ?? "#64748b"}18`, color: subject?.color ?? "#64748b" }}
           >
             <BookOpen className="h-5 w-5" />
           </div>
           <div className="min-w-0 flex-1">
             <h3 className="font-semibold text-sm truncate group-hover:text-primary transition-colors">
-              {lab.title}
+              {activity.title}
             </h3>
-            <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">{lab.description}</p>
+            <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">
+              Look / Principle / Why explanations.
+            </p>
           </div>
         </div>
         <div className="px-4 py-2.5 border-t border-border/50 flex items-center justify-between">
           <span
             className="text-[10px] font-medium px-2 py-0.5 rounded-full"
             style={{
-              color: lab.color,
-              borderColor: `${lab.color}40`,
-              backgroundColor: `${lab.color}10`,
+              color: subject?.color ?? "#64748b",
+              borderColor: `${subject?.color ?? "#64748b"}40`,
+              backgroundColor: `${subject?.color ?? "#64748b"}10`,
             }}
           >
-            {lab.unit || lab.category}
+            {subject?.label ?? activity.curriculum.subject}
           </span>
-          <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${statusBg} ${statusColor}`}>
-            {lab.status === "new"
-              ? "New"
-              : lab.status === "premium"
-              ? "Premium"
-              : lab.status === "development"
-              ? "Dev"
-              : "Active"}
+          <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+            {activity.lifecycle === "pilot" ? "Pilot" : "Live"}
           </span>
         </div>
       </div>

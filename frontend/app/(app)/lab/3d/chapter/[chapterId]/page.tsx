@@ -1,11 +1,17 @@
 "use client";
 
+/**
+ * Legacy chapter gallery → filtered hub view (Phase 3).
+ *
+ * `/lab/3d/chapter/<id>` used to mount a generic 3D scene for any slug. It is now
+ * a view of the single hub scoped to that syllabus unit (`curriculum.unitId`),
+ * matching exactly and keeping the deep link alive.
+ */
+
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { ArrowLeft, Cuboid, Tags } from "lucide-react";
-import Chapter3DScene from "@/components/lab/chapters/[chapterId]/chapters-3d";
-import { getTopicVisualKeyword, TOPIC_VISUALS } from "@/components/lab/topic-visual-mapping";
-import { getVisualSchema } from "@/components/lab/visual-schema";
+import { ArrowLeft, Cuboid } from "lucide-react";
+import { ManifestHubSection } from "@/components/lab/manifest-hub-section";
 
 function titleFromSlug(slug: string): string {
   return slug
@@ -15,20 +21,9 @@ function titleFromSlug(slug: string): string {
     .join(" ");
 }
 
-function matchSubject(slug: string, title: string): { subject: string; keyword: string } | null {
-  for (const subject of Object.keys(TOPIC_VISUALS)) {
-    const keyword = getTopicVisualKeyword(slug, title, subject);
-    if (keyword) return { subject, keyword };
-  }
-  return null;
-}
-
-export default function Chapter3DGalleryPage() {
+export default function Chapter3DHubPage() {
   const params = useParams();
   const chapterId = String(params?.chapterId ?? "");
-  const title = titleFromSlug(chapterId);
-  const schema = getVisualSchema(chapterId, title);
-  const match = matchSubject(chapterId, title);
 
   return (
     <div className="mx-auto max-w-6xl space-y-6 px-4 py-8 md:py-12">
@@ -38,11 +33,11 @@ export default function Chapter3DGalleryPage() {
             <span className="inline-flex h-10 w-10 rounded-2xl bg-orange-500/10 items-center justify-center">
               <Cuboid className="h-5 w-5 text-orange-500" />
             </span>
-            {title} — Chapter Gallery
+            {titleFromSlug(chapterId)}
           </h1>
           <p className="mt-1.5 text-sm text-muted-foreground max-w-2xl">
-            An interactive 3D gallery scene for this chapter — drag with the mouse to rotate the
-            camera, scroll to zoom.
+            Every lab the manifest places in this unit. Open one to run it, then take the
+            journey into practice, notes or Veer.
           </p>
         </div>
         <Link
@@ -54,34 +49,7 @@ export default function Chapter3DGalleryPage() {
         </Link>
       </div>
 
-      <Chapter3DScene />
-
-      <section className="elev-2 rounded-2xl border border-border bg-card p-5">
-        <h2 className="flex items-center gap-2 text-lg font-semibold">
-          <Tags className="h-4 w-4 text-primary" />
-          Visual mapping
-        </h2>
-        {schema ? (
-          <div className="mt-3 space-y-2">
-            <p className="text-sm font-medium">{schema.title}</p>
-            <p className="text-sm text-muted-foreground">{schema.subtitle}</p>
-            <div className="flex flex-wrap gap-2 pt-1">
-              <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
-                {schema.diagramType}
-              </span>
-              {match && (
-                <span className="rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-xs font-medium text-emerald-600 dark:text-emerald-400">
-                  {match.subject} · {match.keyword}
-                </span>
-              )}
-            </div>
-          </div>
-        ) : (
-          <p className="mt-3 text-sm text-muted-foreground">
-            No schematic mapping for this slug yet — the gallery scene still renders above.
-          </p>
-        )}
-      </section>
+      <ManifestHubSection unitId={chapterId} limit={0} />
     </div>
   );
 }

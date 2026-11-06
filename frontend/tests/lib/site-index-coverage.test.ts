@@ -21,6 +21,17 @@ import { collectRoutes, isResolvable } from "../helpers/route-tree";
  * account page, and the owner-only control surfaces.
  */
 
+const LEGAL_HREFS = [
+  "/legal/privacy",
+  "/legal/terms",
+  "/legal/cookies",
+  "/legal/purchases",
+  "/legal/data-safety",
+  "/legal/content-rating",
+  "/legal/attribution",
+  "/legal/takedown",
+];
+
 const NOT_INDEXED = [
   // The index itself and the signed-in account page.
   "/site-index",
@@ -61,6 +72,11 @@ describe("Everything Index coverage", () => {
     const ids = groups.map((g) => g.id);
     expect(ids.length).toBeGreaterThan(5);
     expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  it("indexes the footer's legal pages", () => {
+    const missing = LEGAL_HREFS.filter((href) => !indexedHrefs.has(href));
+    expect(missing, `legal pages missing from /site-index: ${missing.join(", ")}`).toEqual([]);
   });
 
   it("lists every navigation destination", () => {

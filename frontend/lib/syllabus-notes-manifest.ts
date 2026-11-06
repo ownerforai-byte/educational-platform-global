@@ -57,7 +57,7 @@ export function resolveUnitSlug(slug: string | undefined | null): string {
 }
 
 export interface SyllabusNoteEntry {
-  /** Syllabus unit slug (matches topic-3d-map.ts) */
+  /** Syllabus unit slug (as used by the generated `lib/lab-visual-index.ts`) */
   unitSlug: string;
   /** Syllabus topic slug (matches syllabus.ts) */
   topicSlug: string;

@@ -26,7 +26,6 @@ vi.mock("@/components/content/entrance-quiz", () => ({
     <div data-testid="entrance-quiz">{questions.length} entrance questions</div>
   ),
 }));
-vi.mock("@/lib/topic-3d-map", () => ({ get3DComponentForTopic: () => null }));
 vi.mock("@/components/lab/schematic-diagram", () => ({
   SchematicDiagram: () => <div data-testid="topic-schematic" />,
 }));

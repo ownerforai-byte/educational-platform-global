@@ -105,8 +105,8 @@ const runners = {
         return a.status ?? 1;
       }
       const v = run(
-        "npx",
-        ["vitest", "run", "tests/lib/content-coverage.test.ts", "tests/lib/content/pipeline.test.ts", "tests/lib/note-routes.test.ts"],
+        "npm",
+        ["run", "test:run", "--", "--pool=threads", "tests/lib/content-coverage.test.ts", "tests/lib/content/pipeline.test.ts", "tests/lib/note-routes.test.ts"],
         { cwd: "frontend", stdio: "inherit" },
       );
       return v.status ?? 1;
@@ -123,7 +123,7 @@ const runners = {
         });
         return a.status ?? 1;
       }
-      const v = run("npm", ["run", "test:run"], { cwd: "backend", stdio: "inherit" });
+      const v = run("npm", ["run", "test:run", "--", "--pool=threads"], { cwd: "backend", stdio: "inherit" });
       return v.status ?? 1;
     },
   },

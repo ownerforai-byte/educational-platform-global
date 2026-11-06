@@ -45,8 +45,24 @@ function ActivityCard({ activity }: { activity: LabActivity }) {
   );
 }
 
-export function ManifestHubSection({ subject }: { subject?: string }) {
-  const [kind, setKind] = useState<ActivityKind | "all">("all");
+export function ManifestHubSection({
+  subject,
+  initialKind = "all",
+  topicSlug,
+  unitId,
+  limit = 9,
+}: {
+  subject?: string;
+  /** Kind the view opens on — the legacy theory hub opens on `theory`. */
+  initialKind?: ActivityKind | "all";
+  /** Exact syllabus topic slug. Scopes the section to activities placed on it. */
+  topicSlug?: string;
+  /** Exact syllabus unit id. Scopes the section to activities placed in it. */
+  unitId?: string;
+  /** Card cap; `0` renders every match (the scoped legacy views). */
+  limit?: number;
+}) {
+  const [kind, setKind] = useState<ActivityKind | "all">(initialKind);
   const [hasPractice, setHasPractice] = useState(false);
   const [recent, setRecent] = useState<LabVisit[]>([]);
 
@@ -62,11 +78,15 @@ export function ManifestHubSection({ subject }: { subject?: string }) {
       : undefined;
 
     return listOfferedActivities(manifestSubject).filter((activity) => {
+      // Scoping is exact only: a topic or unit either places the activity or it
+      // does not. No prefix or fuzzy matching, per the manifest rule.
+      if (topicSlug && !activity.topicSlugs.includes(topicSlug)) return false;
+      if (unitId && activity.curriculum.unitId !== unitId) return false;
       if (kind !== "all" && activity.kind !== kind) return false;
       if (hasPractice && !activity.practiceHref) return false;
       return true;
     });
-  }, [subject, kind, hasPractice]);
+  }, [subject, kind, hasPractice, topicSlug, unitId]);
 
   return (
     <section id="manifest" className="space-y-3">
@@ -120,19 +140,27 @@ export function ManifestHubSection({ subject }: { subject?: string }) {
           Has practice
         </button>
         <span className="text-xs text-muted-foreground">{activities.length} activities</span>
-        <Link href="/lab/theory" className="ml-auto inline-flex items-center gap-1 text-xs font-bold text-primary">
-          Theory hub <ArrowRight className="h-3 w-3" />
-        </Link>
+        {initialKind !== "theory" && (
+          <Link href="/lab/theory" className="ml-auto inline-flex items-center gap-1 text-xs font-bold text-primary">
+            Theory hub <ArrowRight className="h-3 w-3" />
+          </Link>
+        )}
       </div>
 
       <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-        {activities.slice(0, 9).map((activity) => (
+        {(limit > 0 ? activities.slice(0, limit) : activities).map((activity) => (
           <ActivityCard key={activity.id} activity={activity} />
         ))}
       </div>
-      {activities.length > 9 && (
+      {limit > 0 && activities.length > limit && (
         <p className="text-xs text-muted-foreground">
-          Showing 9 of {activities.length}. Use the filters to narrow the manifest.
+          Showing {limit} of {activities.length}. Use the filters to narrow the manifest.
+        </p>
+      )}
+      {activities.length === 0 && (
+        <p className="rounded-xl border border-border/60 bg-muted/10 px-3 py-6 text-center text-xs text-muted-foreground">
+          No activity is placed on this {topicSlug ? "topic" : unitId ? "unit" : "filter"} yet.
+          The notes page and the full hub still list everything that does exist.
         </p>
       )}
     </section>

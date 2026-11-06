@@ -200,7 +200,7 @@ export const PILOT_ACTIVITIES: LabActivity[] = [
     topicSlugs: [
       "covalent-bond-and-coordinate-covalent-bond-properties-of-covalent-compounds",
     ],
-    // `topic-3d-map.tsx` keys the bonding visual by the UNIT slug, not a topic
+    // The generated index keys the bonding visual by the UNIT slug, not a topic
     // slug; the alias keeps that association explicit instead of prefix-matched.
     aliases: ["chemical-bonding-and-shapes-of-molecules"],
     deviceTier: "mid",

@@ -261,13 +261,13 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       },
       {
         name: "Community",
-        opening: "A study space for every subject with links to its notes and the Ask board. Peer discussion threads are coming soon.",
+        opening: "A study space for every subject with links to its notes and the Ask board.",
         href: "/community",
         meta: "Social",
       },
       {
         name: "Ask",
-        opening: "Type a study question and get an answer from the Veer tutor. Peer answers are coming soon.",
+        opening: "Type a study question and get an answer from the Veer tutor.",
         href: "/ask",
         meta: "Q&A",
       },
@@ -285,13 +285,13 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       },
       {
         name: "Billing",
-        opening: "Check your spark balance and spark transaction history. Online payments are coming soon.",
+        opening: "Check your spark balance and spark transaction history.",
         href: "/billing",
         meta: "Account",
       },
       {
         name: "Referrals",
-        opening: "Referral and reward tracking is coming soon; nothing is recorded yet.",
+        opening: "Your referral and reward overview, with the current tracking status shown on the page.",
         href: "/referrals",
         meta: "Rewards",
       },
@@ -776,7 +776,7 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       },
       {
         name: "For Parents",
-        opening: "What a guardian can see about progress, plans and exam readiness.",
+        opening: "A plain guide to what students can use today and what a guardian can check with them.",
         href: "/parents",
         meta: "Public",
       },
@@ -806,9 +806,67 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       },
       {
         name: "Site Map",
-        opening: "The plain tree of every public page, for crawlers and for people.",
+        opening: "A grouped directory of every indexed page, with a link to the searchable Everything Index.",
         href: "/sitemap-page",
         meta: "Public",
+      },
+    ],
+  });
+
+  /* 10b. Legal & data policies — footer destinations now covered by the canonical index. */
+  groups.push({
+    id: "legal",
+    name: "Legal & data policies",
+    opening:
+      "The policies behind privacy, terms, cookies, purchases, data safety, content rating, attribution and rights requests.",
+    entries: [
+      {
+        name: "Privacy Policy",
+        opening: "How account and study data are handled.",
+        href: "/legal/privacy",
+        meta: "Legal",
+      },
+      {
+        name: "Terms of Service",
+        opening: "The rules for using the platform and its study material.",
+        href: "/legal/terms",
+        meta: "Legal",
+      },
+      {
+        name: "Cookie Policy",
+        opening: "What the site stores in the browser and why.",
+        href: "/legal/cookies",
+        meta: "Legal",
+      },
+      {
+        name: "Purchases & Refunds",
+        opening: "Plan purchases, billing records and refund boundaries.",
+        href: "/legal/purchases",
+        meta: "Legal",
+      },
+      {
+        name: "Data Safety",
+        opening: "How study records and account data are protected.",
+        href: "/legal/data-safety",
+        meta: "Legal",
+      },
+      {
+        name: "Content Rating",
+        opening: "Who the material is written for and how to report a concern.",
+        href: "/legal/content-rating",
+        meta: "Legal",
+      },
+      {
+        name: "Attribution & Licences",
+        opening: "Which licence covers the code, which covers the notes, and how to credit the platform.",
+        href: "/legal/attribution",
+        meta: "Legal",
+      },
+      {
+        name: "Takedown Requests",
+        opening: "How a rights holder asks for material to be reviewed or removed.",
+        href: "/legal/takedown",
+        meta: "Legal",
       },
     ],
   });
@@ -846,7 +904,7 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       },
       {
         name: "Exam Hub",
-        opening: "Board and entrance tracks, each with its own syllabus scope and papers.",
+        opening: "Board and entrance tracks with preparation maps and links to live study tools.",
         href: "/exams",
         meta: "Tracks",
         links: [
@@ -897,7 +955,7 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       },
       {
         name: "Platform Status",
-        opening: "Which parts of the platform are up, degraded or under maintenance.",
+        opening: "Service information, quick checks and support paths; live telemetry is not claimed.",
         href: "/status",
         meta: "Status",
       },

@@ -55,6 +55,7 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/lib/syllabus.ts` | **Curriculum Single Source of Truth**. Contains official class, subject, unit, and topic hierarchies and slugs. |
 | `frontend/app/(app)/layout.tsx` | Main App layout shell, wraps pages in header, sidebar, navigation, auth, and credit gates. |
 | `frontend/components/layout/app-shell.tsx` | Main UI layout container and responsive navigation shell. |
+| `frontend/app/(app)/not-found.tsx` | In-app 404 boundary: compact `ErrorPage` for non-lab routes; lab routes keep the prior full-screen fallback. |
 | `frontend/lib/note-routes.ts` | Canonical note routing and `duplicateType` source selection. |
 | `frontend/components/content/topic-vertical-notes.tsx` | Single theory presentation surface for every canonical topic note. |
 | `frontend/components/content/content-tabs.tsx` | Companion-only topic tabs; no repeated theory, formulas, summaries, or practice. |
@@ -122,7 +123,8 @@ Whenever you need to know how the platform works and where things route, refer O
 ### E. Specialized Section Registries (Feature Routing)
 | File | Role |
 |---|---|
-| `frontend/lib/lab-registry.tsx` | Registry of all 2D/3D interactive labs, simulations, and calculators. |
+| `frontend/lib/lab-registry.tsx` | Registry of all 2D/3D interactive labs, simulations, and calculators. The authoritative list; it is a component module and cannot be imported by data-only consumers. |
+| `frontend/lib/lab-metadata.ts` | Data-only mirror of the registry (id/title/category/type/status/color/unit) for search, site index and the manifest, which must stay free of Three.js. Not trusted: the `labManifest` gate fails on a missing id (`registry-metadata-orphan`) or a drifted title (`registry-metadata-drift`). |
 | `frontend/lib/lab-manifest.ts` | **3D activity manifest** (`plan.md` Phase 2): the typed source of truth for activity metadata — subject (incl. Mathematics), class/unit placement, explicit `topicSlugs` (no fuzzy resolution), kind, lifecycle, device tier, fallback and `replaces` lineage. Data-only: never imports a Three.js visual. Canonical deep link is `activityHref(id)` → `/lab/<id>`. |
 | `frontend/lib/lab-activity-loaders.ts` | Exhaustive renderer resolver: manifest `renderer` (`module` / `visual` / `registry` / `catalog`) → lazy `import()`, so adding an activity without wiring its chunk is a type error. |
 | `frontend/lib/syllabus-neighbors.ts` | Curriculum neighbours for the journey (`nextTopic`, `previousTopic`, `topicHref`) — order comes only from `syllabus.ts`. |

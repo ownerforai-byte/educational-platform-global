@@ -199,6 +199,9 @@ playwright-report/
 *.swp
 .sass-cache/
 
+# generated repository dump (can exceed GitHub's 100 MB per-file limit)
+repomix-output.xml
+
 # extra env variants (never commit real secrets)
 .env.*.local
 !.env.example
@@ -222,6 +225,7 @@ tokenkit-out/
 .backend/
 .cloud-attachments/
 .tmp/
+.workbuddy-ai/
 
 # ── Large generated data files — generate in CI / attach to Releases ──────
 # Do NOT commit these to the repo. They balloon the clone size and can be

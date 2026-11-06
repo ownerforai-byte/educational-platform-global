@@ -198,6 +198,8 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
               ["Purchases",      "/legal/purchases"     ],
               ["Data safety",    "/legal/data-safety"   ],
               ["Content rating", "/legal/content-rating"],
+              ["Attribution",    "/legal/attribution"   ],
+              ["Takedown",       "/legal/takedown"      ],
             ] as [string, string][]).map(([label, href]) => (
               <Link
                 key={href}

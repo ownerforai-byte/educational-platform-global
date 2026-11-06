@@ -30,8 +30,9 @@ import { SYLLABUS, slugifySyllabusTopic } from "@/lib/syllabus";
 
 const FRONTEND = path.resolve(__dirname, "..");
 const REPO = path.resolve(FRONTEND, "..");
-const TOPIC_MAP_FILE = path.join(FRONTEND, "lib", "topic-3d-map.tsx");
 const LOADERS_FILE = path.join(FRONTEND, "lib", "lab-activity-loaders.ts");
+const VISUAL_LOADERS_FILE = path.join(FRONTEND, "lib", "lab-visual-loaders.tsx");
+const REGISTRY_FILE = path.join(FRONTEND, "lib", "lab-registry.tsx");
 const REPORT_FILE = path.join(REPO, "reports", "lab-manifest-coverage.json");
 
 type Violation = { rule: string; detail: string };
@@ -63,19 +64,15 @@ for (const cls of SYLLABUS) {
 
 /* ── live-source inventory ──────────────────────────────────────────────── */
 
-const topicMapSource = fs.readFileSync(TOPIC_MAP_FILE, "utf8");
-const topicMapKeys = new Set<string>();
-for (const match of topicMapSource.matchAll(/^\s*"([a-z0-9-]+)":\s*(?:make|makeTopic)\(/gm)) {
-  topicMapKeys.add(match[1]);
-}
-const placedKeys = [...topicMapKeys].filter((key) => topics.has(key));
-const unitLevelKeys = [...topicMapKeys].filter((key) => !topics.has(key) && unitIds.has(key));
-const unmatchedKeys = [...topicMapKeys].filter(
-  (key) => !topics.has(key) && !unitIds.has(key),
-);
+/** Every slug the generated index resolves: canonical topic slugs plus aliases. */
+const indexSlugSet = new Set(LAB_VISUAL_INDEX.flatMap((entry) => entry.slugs));
 
+// Reachability for the orphan rule is "wired into the lazy loader", not "named in
+// some map": `lab-visual-loaders.tsx` is the only module that can mount a topic
+// visual, so a component it never imports can never reach a learner.
+const visualLoadersSource = fs.readFileSync(VISUAL_LOADERS_FILE, "utf8");
 const visualImportPaths = new Set(
-  [...topicMapSource.matchAll(/from\s+"(@\/components\/lab\/[^"]+)"/g)].map((match) =>
+  [...visualLoadersSource.matchAll(/import\("(@\/components\/lab\/[^"]+)"\)/g)].map((match) =>
     match[1].replace(/^@\//, ""),
   ),
 );
@@ -96,6 +93,32 @@ const orphanVisuals = visualFiles.filter((file) => {
   const spec = file.replace(/^frontend\//, "").replace(/\.tsx?$/, "");
   return !visualImportPaths.has(spec);
 });
+
+/* ── registry metadata mirror (guarded, not derivable) ──────────────────── */
+// `lab-metadata.ts` is a data-only mirror of `lab-registry.tsx`. Search, the
+// site index and this manifest all read it precisely so they never import the
+// component module — that module cannot even load in Node (it reaches a content
+// pipeline). The mirror therefore cannot be derived, so it is guarded instead:
+// an entry that disappears from the registry, or a title that drifts, fails the
+// gate rather than silently serving stale metadata.
+const registrySource = fs.readFileSync(REGISTRY_FILE, "utf8");
+const registryTitleById = new Map(
+  [...registrySource.matchAll(/id:\s*"([^"]+)",\s*\n\s*title:\s*"([^"]+)"/g)].map((match) => [
+    match[1],
+    match[2],
+  ]),
+);
+for (const lab of LAB_METADATA_LIST) {
+  const registryTitle = registryTitleById.get(lab.id);
+  if (!registryTitle) {
+    fail("registry-metadata-orphan", `lab-metadata entry "${lab.id}" is not in lab-registry.tsx`);
+  } else if (registryTitle !== lab.title) {
+    fail(
+      "registry-metadata-drift",
+      `lab-metadata title "${lab.title}" differs from registry title "${registryTitle}" (${lab.id})`,
+    );
+  }
+}
 
 /* ── reviewed orphan exemptions (strict rule) ───────────────────────────── */
 
@@ -201,7 +224,7 @@ for (const activity of ACTIVITY_MANIFEST) {
   }
 
   for (const alias of activity.aliases ?? []) {
-    if (!topicMapKeys.has(alias) && !unitIds.has(alias) && !topics.has(alias)) {
+    if (!indexSlugSet.has(alias) && !unitIds.has(alias) && !topics.has(alias)) {
       fail("alias-unknown", `${activity.id} alias "${alias}" is not a real key or unit id`);
     }
   }
@@ -256,18 +279,6 @@ if (staleExemptions.length) {
   );
 }
 
-// Proof that the hand-maintained topic map is a derived view in practice: every
-// key it declares already exists in the generated visual index, so the map adds
-// no key the index cannot produce.
-const indexSlugSet = new Set(LAB_VISUAL_INDEX.flatMap((entry) => entry.slugs));
-const topicMapKeysMissingFromIndex = [...topicMapKeys].filter((key) => !indexSlugSet.has(key));
-if (topicMapKeysMissingFromIndex.length) {
-  fail(
-    "topic-map-not-derived",
-    `${topicMapKeysMissingFromIndex.length} topic-map key(s) are absent from LAB_VISUAL_INDEX: ${topicMapKeysMissingFromIndex.slice(0, 5).join(", ")}`,
-  );
-}
-
 /* ── coverage matrix ────────────────────────────────────────────────────── */
 
 const coveredTopics = new Set<string>();
@@ -307,10 +318,8 @@ const report = {
     visualIndexEntries: LAB_VISUAL_INDEX.length,
     labRegistryMetadataIds: LAB_METADATA_LIST.length,
     labCatalogEntries: Object.keys(LABS).length,
-    topicMapKeys: topicMapKeys.size,
-    topicMapKeysMatchingTopicSlug: placedKeys.length,
-    topicMapKeysMatchingUnitId: unitLevelKeys.length,
-    topicMapKeysUnmatched: unmatchedKeys.length,
+    resolvableSlugs: indexSlugSet.size,
+    registryMetadataVerified: LAB_METADATA_LIST.length,
   },
   parity: {
     visualRepresented: representedVisualEntries.size,
@@ -323,11 +332,8 @@ const report = {
   exempt: {
     orphanVisualsApproved: orphanExemptions.approved.map((entry) => entry.path),
     orphanVisualsUnexpected: unexpectedOrphans,
-    topicMapKeysMissingFromIndex,
     visualIndexWithoutSyllabusTopic: visualExempt,
     registryWithoutManifestEntry: registryExempt,
-    topicMapUnitLevelKeys: unitLevelKeys,
-    topicMapUnmatchedKeys: unmatchedKeys,
     orphanTopicVisuals: orphanVisuals,
   },
   violations,
@@ -344,9 +350,8 @@ console.log(
     `visual index parity : ${report.parity.visualRepresented} represented / ${report.parity.visualExempt} exempt of ${LAB_VISUAL_INDEX.length}`,
     `registry parity     : ${report.parity.registryRepresented} represented / ${report.parity.registryExempt} exempt of ${LAB_METADATA_LIST.length}`,
     `catalog parity      : ${report.parity.catalogRepresented} represented, ${report.parity.catalogMissing} missing`,
-    `topic-3d-map keys   : ${topicMapKeys.size} (topic ${placedKeys.length}, unit ${unitLevelKeys.length}, unmatched ${unmatchedKeys.length})`,
+    `resolvable slugs    : ${indexSlugSet.size} (topic + alias keys in the generated index)`,
     `orphan topic visuals: ${orphanVisuals.length} (${unexpectedOrphans.length} unreviewed)`,
-    `topic-map derivable : ${topicMapKeysMissingFromIndex.length === 0 ? "yes" : `${topicMapKeysMissingFromIndex.length} keys missing`}`,
     `report              : ${path.relative(REPO, REPORT_FILE)}`,
   ].join("\n"),
 );

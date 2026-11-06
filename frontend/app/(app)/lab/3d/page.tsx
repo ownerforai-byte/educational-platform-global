@@ -14,7 +14,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { Search, Cuboid, BookOpen, BookMarked, Layers } from "lucide-react";
+import { Search, Cuboid, BookOpen, BookMarked } from "lucide-react";
 import { LAB_REGISTRY, getLabsByCategory } from "@/lib/lab-registry";
 import { LAB_UNIT_ORDER, LAB_SUBJECTS } from "@/lib/lab-unit-order";
 import { getSubjectSyllabus } from "@/lib/syllabus";
@@ -22,26 +22,43 @@ import type { LabMeta } from "@/lib/types/lab";
 import { Analytics } from "@/components/lab/Analytics";
 import { LabSectionCard } from "@/components/lab/lab-section-card";
 import { ManifestHubSection } from "@/components/lab/manifest-hub-section";
+import { listOfferedActivities } from "@/lib/lab-manifest";
 
 const CLASS_OPTIONS = ["class-11-notes", "class-12-notes"] as const;
 type ClassSlug = (typeof CLASS_OPTIONS)[number];
 
 type LabCardData = LabMeta & { href: string };
 
-/** 3D gallery entries rendered by components/lab/topics + components/lab/chapters. */
-const GALLERY_TOPICS = [
-  { topicId: "kinematics", title: "Kinematics", subject: "Physics" },
-  { topicId: "thermodynamics", title: "Thermodynamics", subject: "Physics" },
-  { topicId: "chemical-bonding", title: "Chemical Bonding", subject: "Chemistry" },
-  { topicId: "cell-biology", title: "Cell Biology", subject: "Biology" },
-];
+/**
+ * Unit gallery, derived from the manifest (Phase 3). The previous list was a
+ * fourth hand-maintained catalog, and five of its eight ids were not syllabus
+ * keys at all — they led to a generic scene for a slug the curriculum never
+ * mentions. Only units that actually host an activity are listed now, titled
+ * from `LAB_UNIT_ORDER` and linked to the unit-scoped hub view.
+ */
+const GALLERY_UNITS = (() => {
+  const rows = new Map<
+    string,
+    { unitId: string; subject: string; title: string; count: number }
+  >();
 
-const GALLERY_CHAPTERS = [
-  { chapterId: "laws-of-motion", title: "Laws of Motion", subject: "Physics" },
-  { chapterId: "electrostatics", title: "Electrostatics", subject: "Physics" },
-  { chapterId: "organic-chemistry", title: "Organic Chemistry", subject: "Chemistry" },
-  { chapterId: "calculus", title: "Calculus", subject: "Mathematics" },
-];
+  for (const activity of listOfferedActivities()) {
+    const { unitId, subject } = activity.curriculum;
+    if (!unitId) continue;
+    const row = rows.get(unitId) ?? {
+      unitId,
+      subject,
+      title:
+        LAB_UNIT_ORDER[subject]?.[unitId] ??
+        unitId.replace(/-/g, " ").replace(/\b\w/g, (char) => char.toUpperCase()),
+      count: 0,
+    };
+    row.count += 1;
+    rows.set(unitId, row);
+  }
+
+  return [...rows.values()].sort((a, b) => b.count - a.count).slice(0, 8);
+})();
 
 /** Syllabus unit ids that belong to Class 11 vs Class 12, for filtering. */
 function classOfUnit(subject: string, unitId: string): ClassSlug | "both" {
@@ -212,51 +229,38 @@ export default function Lab3DPage() {
       {/* Manifest activities (all subjects) + continue-where-you-left-off */}
       <ManifestHubSection subject={subject} />
 
-      {/* 3D gallery — topic + chapter scenes */}
-      <section id="gallery">
-        <div className="flex items-baseline gap-3 mb-3">
-          <h2 className="text-lg font-semibold">3D Gallery</h2>
-          <span className="text-xs text-muted-foreground">
-            Standalone topic and chapter scenes
-          </span>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {GALLERY_TOPICS.map((entry) => (
-            <Link
-              key={entry.topicId}
-              href={`/lab/3d/topic/${entry.topicId}`}
-              className="elev-2 rounded-2xl border border-border bg-card p-4 hover:border-blue-500/50 transition-all duration-200"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0">
-                  <Layers className="h-4.5 w-4.5" />
+      {/* Unit gallery — derived from the manifest, never a separate catalog */}
+      {GALLERY_UNITS.length > 0 && (
+        <section id="gallery">
+          <div className="flex items-baseline gap-3 mb-3">
+            <h2 className="text-lg font-semibold">By syllabus unit</h2>
+            <span className="text-xs text-muted-foreground">
+              Every activity the manifest places in that unit
+            </span>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {GALLERY_UNITS.map((entry) => (
+              <Link
+                key={entry.unitId}
+                href={`/lab/3d/chapter/${entry.unitId}`}
+                className="elev-2 rounded-2xl border border-border bg-card p-4 hover:border-orange-500/50 transition-all duration-200"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center shrink-0">
+                    <BookMarked className="h-4.5 w-4.5" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-sm truncate">{entry.title}</h3>
+                    <p className="text-xs text-muted-foreground">
+                      {entry.subject} · {entry.count} {entry.count === 1 ? "lab" : "labs"}
+                    </p>
+                  </div>
                 </div>
-                <div className="min-w-0">
-                  <h3 className="font-semibold text-sm truncate">{entry.title}</h3>
-                  <p className="text-xs text-muted-foreground">{entry.subject} · Topic</p>
-                </div>
-              </div>
-            </Link>
-          ))}
-          {GALLERY_CHAPTERS.map((entry) => (
-            <Link
-              key={entry.chapterId}
-              href={`/lab/3d/chapter/${entry.chapterId}`}
-              className="elev-2 rounded-2xl border border-border bg-card p-4 hover:border-orange-500/50 transition-all duration-200"
-            >
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center shrink-0">
-                  <BookMarked className="h-4.5 w-4.5" />
-                </div>
-                <div className="min-w-0">
-                  <h3 className="font-semibold text-sm truncate">{entry.title}</h3>
-                  <p className="text-xs text-muted-foreground">{entry.subject} · Chapter</p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Ordered sections */}
       {visibleSections.length === 0 && grouped.general.length === 0 ? (

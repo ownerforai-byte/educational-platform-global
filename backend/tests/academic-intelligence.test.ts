@@ -35,7 +35,7 @@ import { SOURCE_REGISTRY_RULES } from "../src/ai/source-registry";
  * call, so it is genuinely I/O-bound rather than a pure string join. Give it
  * room instead of letting a cold read look like a broken contract.
  */
-const CONTEXT_TIMEOUT = 30_000;
+const CONTEXT_TIMEOUT = 120_000;
 
 /**
  * Warm the corpus ONCE, before any assertion. With the owner's books ingested

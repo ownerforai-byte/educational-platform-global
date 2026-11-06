@@ -4,7 +4,8 @@
  * A curated, keyword-matched bank of what actually gets asked in NEB, IoE,
  * CMAT, NUAA, KU and Pulchowk entrance papers: exam weightage, must-know
  * formulas, conceptual points, the traps candidates fall into, and a typical
- * question pattern. Injected under every topic lab via lib/topic-3d-map.tsx.
+ * question pattern. Injected under every topic lab via the generated
+ * `lib/lab-visual-index.ts` + `lib/lab-visual-loaders.tsx`.
  *
  * Matching is first-hit-wins, so entries are ordered SPECIFIC → GENERAL to
  * avoid cross-subject false positives (e.g. "circular motion" before the broad

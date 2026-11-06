@@ -4,7 +4,7 @@ import "./legal.css";
 
 export const metadata: Metadata = {
   title: "Legal — Ravikisan's Platform",
-  description: "Privacy Policy, Terms of Service, Cookie Policy, and Purchase & Refund Policy for Ravikisan's Platform.",
+  description: "Privacy, terms, content attribution and takedown requests for Ravikisan's Platform.",
 };
 
 const NAV = [
@@ -14,6 +14,8 @@ const NAV = [
   { label: "Purchases & Refunds", href: "/legal/purchases" },
   { label: "Data Safety", href: "/legal/data-safety" },
   { label: "Content Rating", href: "/legal/content-rating" },
+  { label: "Attribution", href: "/legal/attribution" },
+  { label: "Takedown Requests", href: "/legal/takedown" },
 ];
 
 export default function LegalLayout({ children }: { children: React.ReactNode }) {

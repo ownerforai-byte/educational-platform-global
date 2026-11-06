@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
+import { NAV_HREFS } from "@/lib/navigation";
 import { collectRoutes, isResolvable } from "../helpers/route-tree";
 
 /**
@@ -64,10 +65,31 @@ function scanLinks(): { file: string; line: number; href: string }[] {
 const links = scanLinks();
 const routes = collectRoutes();
 
+const FOOTER_LEGAL_HREFS = [
+  "/legal/privacy",
+  "/legal/terms",
+  "/legal/cookies",
+  "/legal/purchases",
+  "/legal/data-safety",
+  "/legal/content-rating",
+  "/legal/attribution",
+  "/legal/takedown",
+];
+
 describe("internal links", () => {
   it("scans a meaningful number of links (the scanner must not match nothing)", () => {
     expect(links.length).toBeGreaterThan(50);
     expect(routes.length).toBeGreaterThan(50);
+  });
+
+  it("every navigation registry destination resolves to a real page", () => {
+    const broken = NAV_HREFS.filter((href) => !isResolvable(href, routes));
+    expect(broken, `nav destinations without routes:\n${broken.join("\n")}`).toEqual([]);
+  });
+
+  it("every footer legal link resolves to a real page", () => {
+    const broken = FOOTER_LEGAL_HREFS.filter((href) => !isResolvable(href, routes));
+    expect(broken, `legal links without routes:\n${broken.join("\n")}`).toEqual([]);
   });
 
   it("every hardcoded internal link resolves to a real page", () => {
