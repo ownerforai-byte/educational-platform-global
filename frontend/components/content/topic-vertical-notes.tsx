@@ -45,6 +45,8 @@ import {
 } from "@/lib/high-yield-topic-facts-lazy";
 import { resolveLabVisualEntry } from "@/lib/lab-visual-index";
 import { getLabVisualNode } from "@/lib/lab-visual-loaders";
+import { getActivityForTopic } from "@/lib/lab-manifest";
+import { ActivityJourney } from "@/components/lab/activity-journey";
 
 const SchematicDiagramLazy = dynamic(
   () => import("@/components/lab/schematic-diagram").then((m) => m.SchematicDiagram),
@@ -182,6 +184,9 @@ function VisualWorkspace({
   // visibility). This pulls in NO three.js and NO topic-visual chunk — the
   // visuals only load when the 3D branch below actually mounts.
   const labVisualEntry = useMemo(() => resolveLabVisualEntry(topicSlug), [topicSlug]);
+  // Manifest association (explicit topic slug or declared alias only). When it
+  // exists the learner gets the five journey actions beside the inline scene.
+  const manifestActivity = useMemo(() => getActivityForTopic(topicSlug), [topicSlug]);
 
   useEffect(() => {
     const sync = () => setIsFullscreen(document.fullscreenElement === visualPanelRef.current);
@@ -300,9 +305,16 @@ function VisualWorkspace({
             concepts={concepts}
           />
         ) : labVisualEntry ? (
-          <div key={`3d-${visualKey}`} className="flex min-h-[380px] items-center justify-center overflow-hidden rounded-2xl border border-border/60">
-            {getLabVisualNode(labVisualEntry)}
-          </div>
+          <>
+            <div key={`3d-${visualKey}`} className="flex min-h-[380px] items-center justify-center overflow-hidden rounded-2xl border border-border/60">
+              {getLabVisualNode(labVisualEntry)}
+            </div>
+            {manifestActivity && (
+              <div className="rounded-2xl border border-border/60 bg-muted/10 p-3">
+                <ActivityJourney activity={manifestActivity} />
+              </div>
+            )}
+          </>
         ) : null}
         <p className="rounded-xl border border-border/60 bg-background/70 px-3 py-2 text-[11px] text-muted-foreground">
           {visualTab === "3d" ? "Drag to rotate · Scroll to zoom · Pinch on touch" : "Hover or tap a labelled hotspot, then walk through the guided tour."}

@@ -28,6 +28,9 @@ import { LAB_ANNOTATIONS } from "@/lib/lab-annotations";
 import { getLabStudio } from "@/lib/lab-studios";
 import { LabToolsPanel } from "@/components/lab/lab-tools-panel";
 import { Skeleton } from "@/components/ui/skeleton";
+import { ActivityStage } from "@/components/lab/activity-stage";
+import { ActivityJourney } from "@/components/lab/activity-journey";
+import { activityHref, getActivity, type LabActivity } from "@/lib/lab-manifest";
 
 /** Loaded on mount — the registry eagerly bundles every 3D suite. */
 type LabRegistryModule = typeof import("@/lib/lab-registry");
@@ -96,6 +99,7 @@ export default function LabPage() {
   const labId = params?.labId as string;
   const [lab, setLab] = useState<LabMeta | null>(null);
   const [registryList, setRegistryList] = useState<LabMeta[]>([]);
+  const [manifestActivity, setManifestActivity] = useState<LabActivity | null>(null);
   const [missing, setMissing] = useState(false);
 
   useEffect(() => {
@@ -103,6 +107,14 @@ export default function LabPage() {
     const alias = LEGACY_ALIASES[labId];
     if (alias) {
       router.replace(`/lab/${alias}`);
+      return;
+    }
+    // Canonical manifest ids (`/lab/<slug>`) resolve before the legacy registry:
+    // one activity manifest decides what a canonical URL means, and the
+    // registry remains the source of pre-manifest ids.
+    const fromManifest = getActivity(labId);
+    if (fromManifest) {
+      setManifestActivity(fromManifest);
       return;
     }
     import("@/lib/lab-registry").then(({ getLabById, LAB_REGISTRY }: LabRegistryModule) => {
@@ -134,6 +146,52 @@ export default function LabPage() {
   }, [lab]);
 
   const studio = useMemo(() => getLabStudio(lab?.id), [lab?.id]);
+
+  if (manifestActivity) {
+    return (
+      <div className="py-4 md:py-6">
+        <div className="sticky top-12 md:top-14 z-30 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3 min-w-0">
+              <Link
+                href="/lab/3d"
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                <span className="hidden sm:inline">All 3D Labs</span>
+              </Link>
+              <div className="h-5 w-px bg-border" />
+              <div className="flex items-center gap-2 min-w-0">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-sky-500/10">
+                  <Cuboid className="h-4 w-4 text-sky-500" />
+                </div>
+                <div className="min-w-0">
+                  <h1 className="text-sm font-semibold leading-none truncate">
+                    {manifestActivity.title}
+                  </h1>
+                  <p className="text-[10px] text-muted-foreground mt-0.5">
+                    {manifestActivity.curriculum.classSlug.replace("-notes", "").replace("class-", "Class ")} ·{" "}
+                    {manifestActivity.curriculum.subject} · {manifestActivity.kind}
+                    {manifestActivity.lifecycle === "pilot" ? " · pilot" : ""}
+                  </p>
+                </div>
+              </div>
+            </div>
+            <span data-testid="canonical-activity-url" className="hidden sm:block text-[10px] text-muted-foreground">
+              {activityHref(manifestActivity.id)}
+            </span>
+          </div>
+        </div>
+
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-5 space-y-4">
+          <div className="rounded-2xl border border-border bg-card p-5">
+            <ActivityStage activity={manifestActivity} />
+          </div>
+          <ActivityJourney activity={manifestActivity} variant="full" />
+        </div>
+      </div>
+    );
+  }
 
   if (!lab) {
     return (

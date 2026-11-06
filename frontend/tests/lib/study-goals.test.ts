@@ -61,7 +61,9 @@ describe("study desk registry rows", () => {
     for (const [href, tier] of expected) expect(sectionForPath(href)?.minTier).toBe(tier);
   });
 
-  it("links each page in navigation.ts and site-index.ts", () => {
+  // buildSiteIndex() is a full registry sweep (~2s standalone, longer when the
+  // suite runs in parallel); a 5s default made this assertion flaky, not wrong.
+  it("links each page in navigation.ts and site-index.ts", { timeout: 20_000 }, () => {
     const indexed = new Set(buildSiteIndex().flatMap((g) => g.entries.map((e) => e.href)));
     for (const [href] of expected) {
       expect(NAV_HREFS).toContain(href);

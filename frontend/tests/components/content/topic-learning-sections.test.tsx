@@ -105,12 +105,30 @@ describe("topic learning sections", () => {
     mocks.getEntranceQuestions.mockReturnValue([{ q: "Entrance question" }]);
     mocks.loadData.mockImplementation(async (path: string) => {
       if (path.endsWith("_manifest.json")) return manifest;
-      if (path.endsWith("motion-2.json")) {
-        return { notes: ["Secondary duplicate must not render."], mcs: [{ question: "Duplicate question", options: ["Wrong"], answer: "Wrong" }] };
-      }
-      if (path.endsWith("motion.json")) return canonical;
       throw new Error(`Unexpected path ${path}`);
     });
+
+    // Note bodies come from the gated /api/content/reveal endpoint, not from
+    // loadData: mock that contract so the canonical-source selection is what the
+    // assertions actually exercise.
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (_url: string, init?: { body?: string }) => {
+        const payload = JSON.parse(init?.body ?? "{}") as { filename?: string };
+        const bodies: Record<string, unknown> = {
+          "motion.json": canonical,
+          "motion-2.json": {
+            notes: ["Secondary duplicate must not render."],
+            mcs: [{ question: "Duplicate question", options: ["Wrong"], answer: "Wrong" }],
+          },
+        };
+        const body = bodies[payload.filename ?? ""];
+        if (!body) {
+          return { ok: false, status: 404, json: async () => ({ error: "not found" }) };
+        }
+        return { ok: true, status: 200, json: async () => body };
+      }),
+    );
   });
 
   it("loads only the canonical note into the comprehension path", async () => {

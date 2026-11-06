@@ -123,6 +123,14 @@ Whenever you need to know how the platform works and where things route, refer O
 | File | Role |
 |---|---|
 | `frontend/lib/lab-registry.tsx` | Registry of all 2D/3D interactive labs, simulations, and calculators. |
+| `frontend/lib/lab-manifest.ts` | **3D activity manifest** (`plan.md` Phase 2): the typed source of truth for activity metadata — subject (incl. Mathematics), class/unit placement, explicit `topicSlugs` (no fuzzy resolution), kind, lifecycle, device tier, fallback and `replaces` lineage. Data-only: never imports a Three.js visual. Canonical deep link is `activityHref(id)` → `/lab/<id>`. |
+| `frontend/lib/lab-activity-loaders.ts` | Exhaustive renderer resolver: manifest `renderer` (`module` / `visual` / `registry` / `catalog`) → lazy `import()`, so adding an activity without wiring its chunk is a type error. |
+| `frontend/lib/syllabus-neighbors.ts` | Curriculum neighbours for the journey (`nextTopic`, `previousTopic`, `topicHref`) — order comes only from `syllabus.ts`. |
+| `frontend/lib/lab-progress.ts` | Device-local “continue where you left off” store for opened activities (no server write, storage failures swallowed). |
+| `frontend/components/lab/activity-stage.tsx` | The one 3D render surface: request-to-load, `use-scene-tier`, single canvas, declared fallback, loading/error/reset, reduced-motion opt-in. |
+| `frontend/components/lab/activity-journey.tsx` | The five journey actions (Open full lab · Check understanding · Ask Veer · Notes · Next topic) for a manifest activity. |
+| `frontend/components/lab/manifest-hub-section.tsx` | Manifest half of `/lab/3d`: subject/kind/“has practice” filters plus the recent-activity strip. |
+| `frontend/scripts/lab-manifest-coverage.ts` | Phase 0 inventory + Phase 2 gate (`npm run audit:lab-manifest -- --check`): topic coverage matrix, 3D source inventory, orphan/exemption list, writes `reports/lab-manifest-coverage.json`. Runs in `npm run check` / `check:all`. |
 | `frontend/lib/graphs.ts` | Registry for all science graphs and visual data banks. |
 | `frontend/lib/pyq-bank.ts` | Registry for past year question banks and solved papers. |
 | `frontend/lib/formula-sheet.ts` | Formula vault data and derivation link associations. |

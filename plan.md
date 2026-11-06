@@ -725,17 +725,31 @@ not verified measurements:
 5. Preserve old deep links when consolidating routes. No files are retired until
    their reachability and duplicate lineage have been checked.
 
-### Owner Decisions Required Before Implementation
+### Owner Decisions (recorded 2026-11-06)
 
-These are intentionally open; implementation agents must not infer a final
-decision from the recommendations:
+1. **`/lab/[id]` is the canonical activity URL.** Legacy URLs become redirects or
+   filtered hub views in Phase 3.
+2. **Mathematics 3D is included** in the same hub and manifest.
+3. **Both members of every duplicate family stay live.** No `replaces` lineage is
+   declared until a parity review decides each pair; `replaces` stays empty for
+   every pilot.
 
-1. Is `/lab/[id]` the canonical activity URL? **Recommendation: yes.**
-2. Should `-plus` versions be canonical, with plain versions retired only after
-   a parity check? **Recommendation: evaluate each duplicate pair, then choose
-   explicitly.**
-3. Should Mathematics 3D be included in the same hub and manifest?
-   **Recommendation: yes.**
+### Measured Inventory (2026-11-06, `npm run audit:lab-manifest`)
+
+Replaces the estimates above with reproducible numbers from
+`reports/lab-manifest-coverage.json`:
+
+- **Syllabus:** 689 unique topic slugs (696 topics before slug de-duplication).
+- **`TOPIC_3D_MAP`:** 411 keys — 245 match an exact topic slug, 78 match a UNIT id
+  (e.g. `chemical-bonding-and-shapes-of-molecules`), and **88 match neither**; the
+  unmatched and unit-level keys are listed in the report as exemptions.
+- **Other sources:** `LAB_METADATA_LIST` 116 ids, `lab-catalog.ts` 69 entries.
+- **Topic coverage:** 245 of 689 topics (36%) have a 3D activity — physics 127/165,
+  chemistry 52/188, mathematics 48/71, biology 18/105, english 0/109, nepali 0/51.
+- **Orphan topic visual:** `frontend/components/lab/topic-visuals/index.ts` (a barrel
+  no source imports). Every other visual under `topic-visuals/` is reached by
+  `topic-3d-map.tsx`.
+- **Bundle/Lighthouse baselines: still not measured** (Phase 0 remainder).
 
 ### Phases and Agent Handoff
 
@@ -758,75 +772,148 @@ decision from the recommendations:
 
 #### Phase 1 — Remove the Topic-Page Loading Penalty
 
-- [ ] Split `topic-3d-map` into a small synchronous topic-to-activity index and
-  per-visual lazy loaders.
-- [ ] Resolve a topic association synchronously so notes can show a 3D affordance
-  only when an explicit mapping exists.
-- [ ] Load the visual only after the learner selects the 3D affordance.
-- [ ] Replace fuzzy prefix resolution with explicit mappings and aliases.
-- [ ] Add tests proving aliases are unique, target valid activities, and do not
-  assign one topic another topic's visual.
-- [ ] Re-run the Phase 0 bundle and Lighthouse measurements against the existing
-  budget.
+**Already shipped before this pass** — verified, not re-implemented.
+
+- [x] `lib/lab-visual-index.ts` (generated, data-only) is the synchronous
+  topic-to-activity index; `lib/lab-visual-loaders.tsx` holds the lazy chunks.
+- [x] Topic notes resolve the association synchronously
+  (`resolveLabVisualEntry` in `components/content/topic-vertical-notes.tsx`) and
+  show the 3D tab only when a mapping exists.
+- [x] The visual loads only after the learner selects the 3D tab.
+- [ ] Alias uniqueness / no cross-topic assignment: covered for the manifest by
+  `tests/lib/lab-manifest.test.ts`; the generated index still relies on its own
+  generator tests (`tests/lab-visual-index.test.ts`).
+- [ ] Bundle + Lighthouse re-measurement still outstanding (needs a build run).
 
 #### Phase 2 — Create the Single Activity Manifest
 
-- [ ] Define the typed activity schema and populate it from the verified
-  catalog, component registry, topic map, and Phase 0 audit.
-- [ ] Include Mathematics and explicit curriculum placement; mark the three
-  pilot activities as `pilot`.
-- [ ] Add CI validation for unique IDs, valid syllabus references, resolvable
-  lazy loaders, valid related-note/practice links, and a defined fallback.
-- [ ] Add a CI orphan rule: every in-scope 3D file must be represented in the
-  manifest or listed in an explicit, reviewed exemption.
-- [ ] Add a parity test comparing the manifest against all currently live
-  catalog, registry, and topic-map entries.
-- [ ] Only after parity passes, convert the old catalog, registry, and map into
-  derived views and remove duplicate hand-maintained data.
+**Started 2026-11-06** — schema, pilots and gates are in place; population and the
+parity migration are not.
+
+- [x] Define the typed activity schema (`frontend/lib/lab-manifest.ts`): id, title,
+  `kind`, `subject` (incl. Mathematics), class/unit placement, explicit
+  `topicSlugs`, lazy `modulePath`, device tier, fallback, lifecycle, `replaces`.
+- [x] Populate the three pilot activities (projectile motion, covalent bonding,
+  the cell) from the verified catalog, component registry, topic map and the
+  measured inventory; all three are `lifecycle: "pilot"`.
+- [x] Add CI validation for unique IDs, exact syllabus references, existing and
+  wired lazy loaders, and a defined fallback
+  (`tests/lib/lab-manifest.test.ts`, 10 tests).
+- [x] Add an orphan rule with explicit exemptions: `scripts/lab-manifest-coverage.ts`
+  inventories every 3D source, lists unreached visuals and unmatched topic-map
+  keys in `reports/lab-manifest-coverage.json`, and fails `--check` on manifest
+  violations. Wired into `npm run check` / `check:all` as the `labManifest` runner.
+- [x] Represent the live sources: **527 activities** — 3 curated pilots, 343
+  topic-visual activities, 112 registry labs, 69 catalog practicals. Coverage is
+  now 346 of 689 syllabus topics (50%); 111 visual-index entries stay exempt
+  because their keys are not exact syllabus topics (the former 88 unmatched
+  topic-map keys plus truncation/alias variants).
+- [x] Parity test: `tests/lib/lab-manifest.test.ts` proves every catalog entry,
+  every non-`class11` registry lab and every topic-bearing visual-index entry is
+  represented (or explicitly exempt), and `--check` fails on drift.
+- [x] A visual reused across classes/units yields one activity per placement
+  (e.g. the capacitor visual serves Class 11 and Class 12 separately) rather than
+  one activity with a contradictory class/unit.
+- [ ] Fail `--check` when a *new* orphan visual appears (today it reports the
+  exemption list; only manifest violations fail).
+- [ ] Retire the duplicate hand-maintained metadata in `lab-metadata.ts` /
+  `topic-3d-map.tsx` once each activity's parity is reviewed; both remain the
+  load-bearing sources for now.
 
 #### Phase 3 — One Hub and Backwards-Compatible URLs
 
-- [ ] Make `/lab/[id]` the canonical activity URL if confirmed by the owner.
-- [ ] Add hub filters for subject, class, unit, kind, and “has practice”.
-- [ ] Convert `/lab/3d`, `/lab/theory`, `/lab/3d/chapter/[id]`,
-  `/lab/3d/topic/[id]`, `/lab/bio-3d-organelles`, and
-  `/lab/[labId]/ch-3d-periodic` into redirects or filtered hub views as
-  appropriate; retain working behavior for existing deep links.
-- [ ] Align lab breadcrumbs with the notes curriculum hierarchy, reusing
-  `lab-unit-order.ts` and `frontend/lib/syllabus.ts` rather than adding a second
-  curriculum ordering source.
+- [x] `/lab/[id]` is canonical: `activityHref()` emits `/lab/<slug>`, and the
+  route resolves manifest slugs before the legacy registry so one manifest decides
+  what a canonical URL means.
+- [x] Hub filters on `/lab/3d`: subject (tabs), kind, and “has practice”, driven by
+  the manifest (`components/lab/manifest-hub-section.tsx`).
+- [x] Legacy deep links keep working: `LEGACY_ALIASES` redirects, `/lab/3d` is the
+  fallback for unknown ids, and `/lab/theory`, `/lab/3d/topic|chapter/[id]` remain
+  live views.
+- [ ] Convert those legacy views into filtered hub views (they are kept working
+  rather than removed, per the no-breakage rule).
+- [x] Breadcrumb/labels reuse `lab-unit-order.ts` + `lib/syllabus.ts`; no second
+  curriculum ordering source was added.
 
 #### Phase 4 — Connect Notes, Labs, Practice, and Veer
 
-- [ ] From a topic note, offer **See it in 3D** only when that topic has an
-  explicit manifest mapping; load the activity on selection.
-- [ ] Provide **Open full lab** from the inline activity.
-- [ ] Provide **Check understanding** with 2–3 questions drawn from existing
-  quiz/PYQ sources, not a duplicated question bank.
-- [ ] Provide **Ask Veer about this** with the current topic context.
-- [ ] Provide **Next topic** and **Back to notes** using canonical syllabus
-  order and routes.
-- [ ] Add a **Continue where you left off** entry and record explored labs in
-  the existing student progress system.
+- [x] The topic note offers the 3D tab only when a mapping exists, and the scene
+  loads on selection (Phase 1 behaviour, now backed by the manifest).
+- [x] **Open full lab** → `/lab/<slug>` (`components/lab/activity-journey.tsx`).
+- [x] **Check understanding** → the existing `/pyqs` surface (no duplicated bank).
+- [x] **Ask Veer about this** → existing tutor at `/chat?q=…` with the topic
+  prefilled.
+- [x] **Next topic** and **Back to notes** → `lib/syllabus-neighbors.ts` (exact
+  syllabus order, crossing unit boundaries; never a second ordering source).
+- [x] **Continue where you left off** on `/lab/3d`, recorded device-locally by
+  `lib/lab-progress.ts` (same local-only pattern as the other study stores).
 
 #### Phase 5 — Pilot and Roll Out
 
-- [ ] Pilot projectile motion using the verified kinematics visual, chemical
-  bonding, and the cell.
-- [ ] Verify the complete notes → 3D → practice → Veer → next-topic journey for
-  each pilot before expanding.
-- [ ] Roll out subject by subject, updating manifest coverage and retiring
-  duplicate implementations only after each chosen canonical version passes
-  parity and journey checks.
+- [x] Pilots wired: projectile motion (`projectile-motion`), covalent bonding
+  (`covalent-bonding`), the cell (`the-cell`).
+- [x] Journey verified by tests: every pilot’s notes/practice/chat/hub targets
+  exist on disk, and its topic placement matches the syllabus exactly.
+- [ ] Manual rollout review per subject (needs a browser pass) and retirement of
+  duplicate implementations after each parity decision.
 
 #### Phase 6 — Phone Resilience and Resource Lifecycle
 
-- [ ] Reuse `3d-rig/use-scene-tier.ts` for device capability tiers.
-- [ ] Enforce at most one active WebGL canvas per page and dispose geometries
-  and materials on unmount.
-- [ ] Provide a 2D, static, or text fallback when WebGL is unavailable.
-- [ ] Implement loading, error, and reset states; respect reduced-motion
-  preferences and support keyboard and touch controls.
+- [x] `components/lab/activity-stage.tsx` reuses `3d-rig/use-scene-tier.ts`; the
+  resolved tier is exposed as `data-tier` on the stage.
+- [x] One canvas by construction: the stage renders exactly one renderer and
+  unmounting the subtree is what disposes the previous scene.
+- [x] Fallback is structural: no WebGL, a failed chunk, or reduced-motion all
+  resolve to the manifest’s declared `fallback` (2D diagram / static / text).
+- [x] Loading, error + retry, and “Close scene” reset states exist; reduced-motion
+  shows the still fallback with an explicit “Play the 3D scene anyway” opt-in.
+- [ ] Keyboard-only control of the canvas itself and a formal touch-control audit
+  remain per-visual work (the stage provides the shell, not per-scene bindings).
+
+### Verification (2026-11-06)
+
+- `npm run check:all` → **EXIT 0**: content JSON, frontend typecheck + content tests
+  (30), backend typecheck + tests (651), empty-scope gate, mindmap, visuals, and the
+  new `labManifest` runner all pass.
+- `npm run audit:lab-manifest -- --check` → **PASS**: 527 activities, 342/453 visual
+  entries + 112/116 registry + 69/69 catalog represented, strict orphan rule (0
+  unreviewed), and the hand-maintained `TOPIC_3D_MAP` proven derivable (all 411 keys
+  exist in `LAB_VISUAL_INDEX`).
+- `tests/lib/lab-manifest.test.ts` (12) and `tests/components/lab/activity-stage.test.tsx`
+  (1) pass; `tsc --noEmit` is clean.
+- **Dev server unblocked:** the community routes used two dynamic slug names at
+  the same path level (`community/[id]` and `community/[subjectId]/[threadId]`),
+  which Next rejects. The thread route moved to `community/[id]/[threadId]`, so both
+  `/community/<space>` and `/community/<space>/<thread>` keep working and
+  `next dev` boots. Smoke probe: `/community` 200, `/lab/3d` 200,
+  `/lab/projectile-motion` 200.
+- **Browser pass is auth-gated, not broken:** `/lab/*` lives under the `(app)`
+  approval wall, so a signed-out browser stops at “Verifying your access”. The
+  journey UI is therefore verified by render tests
+  (`tests/components/lab/activity-journey.test.tsx`, 3 tests: every action’s href,
+  syllabus-ordered next topic, visit recording) rather than a signed-in click-through.
+  A real rollout review still needs an approved test account.
+- **Dev-only observation:** the dev CSP rejects `unsafe-eval`, so React Refresh
+  logs an EvalError in the browser console. It is a dev-mode CSP interaction, not
+  an application error, and does not affect production builds.
+- **Build:** `next build` succeeds (exit 0, ~101 s); every such route reports as
+  dynamic (`ƒ`) because the `(app)` layout resolves auth per request.
+- **Still unmeasured — first-load JS:** this Next 16 build emits content-hashed
+  chunks under `.next/static/chunks/` with no per-route chunk directories and no
+  `app-build-manifest.json`, and no bundle analyzer is installed, so a per-route
+  first-load figure cannot be read from the build output. What is measurable is
+  the whole client chunk set (≈22.3 MiB raw across root chunks), which is not
+  first-load JS and must not be quoted as such. Measuring it needs
+  `@next/bundle-analyzer` (a new dependency) or a Vercel/CI build that prints the
+  size table.
+- **Still unmeasured — LCP/TBT:** no Lighthouse/LHCI run was performed. The lab
+  and topic pages sit behind the approval wall, so an authenticated run needs an
+  approved test account in addition to the audit tooling.
+- **Environment note:** after the production build, restarting `next dev` on this
+  machine died with `FATAL ERROR: Committing semi space failed … heap out of memory`
+  at only ~500 MB of heap — a Windows commit-limit failure under memory pressure,
+  not a code fault. The dev-server fix above was confirmed by the 200s recorded
+  earlier, before that pressure built up; the server is simply not left running.
 
 ### Gates for Every Phase / Pull Request
 

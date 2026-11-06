@@ -21,6 +21,7 @@ import { getSubjectSyllabus } from "@/lib/syllabus";
 import type { LabMeta } from "@/lib/types/lab";
 import { Analytics } from "@/components/lab/Analytics";
 import { LabSectionCard } from "@/components/lab/lab-section-card";
+import { ManifestHubSection } from "@/components/lab/manifest-hub-section";
 
 const CLASS_OPTIONS = ["class-11-notes", "class-12-notes"] as const;
 type ClassSlug = (typeof CLASS_OPTIONS)[number];
@@ -207,6 +208,9 @@ export default function Lab3DPage() {
         </div>
         <span className="text-xs text-muted-foreground">{totalCount} labs</span>
       </div>
+
+      {/* Manifest activities (all subjects) + continue-where-you-left-off */}
+      <ManifestHubSection subject={subject} />
 
       {/* 3D gallery — topic + chapter scenes */}
       <section id="gallery">

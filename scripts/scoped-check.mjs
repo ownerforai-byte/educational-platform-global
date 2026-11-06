@@ -53,7 +53,7 @@ function changedFiles() {
 
 function areasFor(files) {
   if (files === null)
-    return ["content", "frontend", "backend", "contentScopes", "mindmap", "visuals"];
+    return ["content", "frontend", "backend", "contentScopes", "mindmap", "visuals", "labManifest"];
   const a = new Set();
   for (const f of files) {
     if (f.startsWith("content/")) a.add("content");
@@ -65,6 +65,7 @@ function areasFor(files) {
   if (a.has("content") || a.has("frontend")) {
     a.add("mindmap");
     a.add("visuals");
+    a.add("labManifest");
   }
   return [...a];
 }
@@ -165,6 +166,23 @@ const runners = {
         cwd: "frontend",
         stdio: "inherit",
       });
+      return v.status ?? 1;
+    },
+  },
+  // 3D activity manifest: every activity must sit on an exact syllabus topic and
+  // point at a renderer that exists and is wired into the lazy loader. This is
+  // the Phase 2 orphan/parity gate from plan.md ("One 3D System for All
+  // Subjects"), so a hand-added visual cannot drift off-curriculum silently.
+  labManifest: {
+    label: "3D activity manifest (syllabus placement + renderer wiring)",
+    run() {
+      const tsx = ["..", "node_modules", "tsx", "dist", "cli.mjs"].join("/");
+      // spawnSync directly (no shell) — see the mindmap runner note.
+      const v = spawnSync(
+        process.execPath,
+        [tsx, "scripts/lab-manifest-coverage.ts", "--check"],
+        { cwd: "frontend", stdio: "inherit" },
+      );
       return v.status ?? 1;
     },
   },
