@@ -36,6 +36,10 @@ const NOT_INDEXED = [
   "/owner",
   "/owner/users",
   "/controller",
+  "/mind-studio",
+  // Search is a front door, not an index target — site-index.ts documents
+  // why the Ctrl-K bar, not a card, is where the library is searched.
+  "/search",
   // Alias: the root redirects to /home, which the index lists as "Home".
   "/",
 ];

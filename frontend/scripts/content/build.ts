@@ -312,7 +312,10 @@ function diffTree(): { problems: string[]; extras: string[] } {
       continue;
     }
     actual.delete(rel);
-    const onDisk = fs.readFileSync(path.join(DEST, rel), "utf8");
+    // Git stores LF; a Windows checkout (core.autocrlf=true) writes CRLF, which
+    // is not content drift. Compare line-ending-normalised text so the parity
+    // gate is meaningful on every platform.
+    const onDisk = fs.readFileSync(path.join(DEST, rel), "utf8").replaceAll("\r\n", "\n");
     if (onDisk !== body) problems.push(`drift: ${rel}`);
   }
   return { problems, extras: [...actual].sort() };

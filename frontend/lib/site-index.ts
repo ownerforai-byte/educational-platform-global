@@ -548,6 +548,24 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         ],
       },
       {
+        name: "AI Workspace",
+        opening: "One desk for the Veer tools: keep a thread, a draft and a diagram side by side.",
+        href: "/ai/workspace",
+        meta: "Workspace",
+      },
+      {
+        name: "Subject Classrooms",
+        opening: "Veer tutored subject by subject, in the official unit order of each class.",
+        href: "/ai/subjects",
+        meta: "Classrooms",
+      },
+      {
+        name: "AI History",
+        opening: "Every Veer conversation you have started, newest first, ready to reopen.",
+        href: "/ai/history",
+        meta: "History",
+      },
+      {
         name: "Veer Tutor Console",
         opening:
           "Long-form tutor with saved conversations, a New conversation button and a prompt enhancer.",
@@ -559,6 +577,7 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         opening: "Generated practice sets with difficulty bands, scoring and worked feedback.",
         href: "/ai-quiz",
         meta: "Practice",
+        links: [{ label: "Quiz History", href: "/ai-quiz/history" }],
       },
       {
         name: "Veer Curriculum Search",
@@ -653,17 +672,25 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "Charts",
       },
       {
+        name: "Graph Bank (Legacy)",
+        opening: "The older graph bank, kept reachable for its per-subject listings.",
+        href: "/science-graph-bank",
+        meta: "Legacy",
+      },
+      {
         name: "Knowledge Hub",
         opening: "Numericals, diagrams, grammar, writing and Nepali byakaran — with their pro pages.",
         href: "/knowledge",
         meta: "Concepts",
         links: [
+          { label: "Pro Knowledge Hub", href: "/knowledge/pro" },
           { label: "Numerical Physics", href: "/knowledge/numerical-physics" },
           { label: "Numerical Chemistry", href: "/knowledge/numerical-chemistry" },
           { label: "Biology Diagrams", href: "/knowledge/biology-diagrams" },
           { label: "English Grammar", href: "/knowledge/grammar" },
           { label: "English Writing", href: "/knowledge/writing" },
           { label: "नेपाली व्याकरण", href: "/knowledge/byakaran" },
+          { label: "Analytical Geometry", href: "/knowledge/analytical-geometry" },
         ],
       },
       {
@@ -700,6 +727,197 @@ export function buildSiteIndex(): SiteIndexGroup[] {
           { label: "Current Affairs", href: "/world-knowledge/current-affairs" },
           { label: "Global Topics", href: "/world-knowledge/global-topics" },
         ],
+      },
+    ],
+  });
+
+  /* 10. About, help & plans — the public pages the footer and sidebar link to. */
+  groups.push({
+    id: "about-info",
+    name: "About, help & plans",
+    opening:
+      "The public pages: what the platform does, who it is for, how it works, and what each plan costs.",
+    entries: [
+      {
+        name: "About",
+        opening: "What this platform is, who builds it and the NEB curriculum it follows.",
+        href: "/about",
+        meta: "Public",
+      },
+      {
+        name: "Features",
+        opening: "Every capability in one list: notes, labs, graphs, Veer tools and planning.",
+        href: "/features",
+        meta: "Public",
+      },
+      {
+        name: "How It Works",
+        opening: "The study loop the platform is built around, from goals to revision.",
+        href: "/how-it-works",
+        meta: "Public",
+      },
+      {
+        name: "Plans & Pricing",
+        opening: "What Visitor, Member, Plus, Pro and Owner each unlock, and what they cost.",
+        href: "/plans",
+        meta: "Pricing",
+      },
+      {
+        name: "For Schools",
+        opening: "Running a class or a school on the platform: shared tracks and reporting.",
+        href: "/school",
+        meta: "Public",
+      },
+      {
+        name: "For Teachers",
+        opening: "Teaching from the same syllabus the notes and papers are built on.",
+        href: "/teachers",
+        meta: "Public",
+      },
+      {
+        name: "For Parents",
+        opening: "What a guardian can see about progress, plans and exam readiness.",
+        href: "/parents",
+        meta: "Public",
+      },
+      {
+        name: "Blog",
+        opening: "Notes on the curriculum, exam changes and how students actually study.",
+        href: "/blog",
+        meta: "Writing",
+      },
+      {
+        name: "NEB Updates",
+        opening: "Board announcements that change what you have to prepare.",
+        href: "/neb-updates",
+        meta: "Updates",
+      },
+      {
+        name: "Help Center",
+        opening: "Answers to the everyday questions: access tiers, downloads and accounts.",
+        href: "/help",
+        meta: "Support",
+      },
+      {
+        name: "Contact Us",
+        opening: "Reach the team about a bug, a content error or a school enquiry.",
+        href: "/contact",
+        meta: "Support",
+      },
+      {
+        name: "Site Map",
+        opening: "The plain tree of every public page, for crawlers and for people.",
+        href: "/sitemap-page",
+        meta: "Public",
+      },
+    ],
+  });
+
+  /* 11. Planning, practice & recognition — the pages that keep the study loop closed. */
+  groups.push({
+    id: "study-loop",
+    name: "Planning, practice & recognition",
+    opening:
+      "The pages that keep the loop closed: goals, schedule, revision, practice, the leaderboard and what you earn.",
+    entries: [
+      {
+        name: "Study Goals",
+        opening: "The targets you set at onboarding, and how far through them you are.",
+        href: "/goals",
+        meta: "Planning",
+      },
+      {
+        name: "Study Schedule",
+        opening: "Your week laid out against the units you have not finished yet.",
+        href: "/schedule",
+        meta: "Planning",
+      },
+      {
+        name: "Quick Revision",
+        opening: "Short recall passes over the units closest to your exam date.",
+        href: "/revision",
+        meta: "Revision",
+      },
+      {
+        name: "Practice Hub",
+        opening: "Every practice surface in one place: quiz bank, PYQs, drills and mock papers.",
+        href: "/practice",
+        meta: "Practice",
+      },
+      {
+        name: "Exam Hub",
+        opening: "Board and entrance tracks, each with its own syllabus scope and papers.",
+        href: "/exams",
+        meta: "Tracks",
+        links: [
+          { label: "NEB Board Exam", href: "/exams/neb" },
+          { label: "CEE Medical Entrance", href: "/exams/cee" },
+          { label: "IOE Engineering Entrance", href: "/exams/ioe" },
+        ],
+      },
+      {
+        name: "Leaderboard",
+        opening: "Where your study streak and quiz accuracy rank against everyone else.",
+        href: "/leaderboard",
+        meta: "Ranking",
+      },
+      {
+        name: "Certificates",
+        opening: "The certificates you have earned for finishing a unit or a track.",
+        href: "/certificates",
+        meta: "Awards",
+      },
+      {
+        name: "Study Journal",
+        opening: "A dated log of what you studied, what went wrong and what to revisit.",
+        href: "/journal",
+        meta: "Journal",
+      },
+    ],
+  });
+
+  /* 12. Platform notices — announcements, changelog, status, feedback, inbox. */
+  groups.push({
+    id: "platform",
+    name: "Platform notices & feedback",
+    opening:
+      "What changed, what is running, and how to tell us when something is wrong.",
+    entries: [
+      {
+        name: "Announcements",
+        opening: "Platform news and syllabus changes, newest first.",
+        href: "/announcements",
+        meta: "Notices",
+      },
+      {
+        name: "What's New",
+        opening: "The changelog: every shipped change, in release order.",
+        href: "/changelog",
+        meta: "Changelog",
+      },
+      {
+        name: "Platform Status",
+        opening: "Which parts of the platform are up, degraded or under maintenance.",
+        href: "/status",
+        meta: "Status",
+      },
+      {
+        name: "Send Feedback",
+        opening: "Report a bug, a broken link or a content error straight to the team.",
+        href: "/feedback",
+        meta: "Feedback",
+      },
+      {
+        name: "Notice Board",
+        opening: "The notices pinned to your account, grouped by what they affect.",
+        href: "/notice",
+        meta: "Inbox",
+      },
+      {
+        name: "Notifications",
+        opening: "Your notification feed: reminders, replies and study nudges.",
+        href: "/notifications",
+        meta: "Inbox",
       },
     ],
   });

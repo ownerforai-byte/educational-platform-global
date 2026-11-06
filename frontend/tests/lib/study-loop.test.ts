@@ -241,9 +241,9 @@ describe("offline pack", () => {
 });
 
 describe("my-notes and downloads", () => {
-  it("gates /my-notes (member) and /downloads (pro) and links them everywhere", () => {
+  it("gates /my-notes (member) and /downloads (owner) and links them everywhere", () => {
     expect(sectionForPath("/my-notes")?.minTier).toBe("member");
-    expect(sectionForPath("/downloads")?.minTier).toBe("pro");
+    expect(sectionForPath("/downloads")?.minTier).toBe("owner");
     expect(NAV_HREFS).toEqual(expect.arrayContaining(["/my-notes", "/downloads"]));
     const flat = JSON.stringify(buildSiteIndex());
     expect(flat).toContain('"/my-notes"');
