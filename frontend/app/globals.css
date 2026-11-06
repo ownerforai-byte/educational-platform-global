@@ -1892,17 +1892,3 @@ body {
   .verify-ring,
   .verify-dots span { animation: none; }
 }
-
-.sequential-block-reveal {
-  opacity: 0;
-  animation: sequential-block-reveal 480ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes sequential-block-reveal {
-  from { opacity: 0; transform: translateY(18px) scale(0.98); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .sequential-block-reveal { animation: none; opacity: 1; }
-}

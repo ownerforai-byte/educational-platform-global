@@ -1,6 +1,6 @@
 ﻿"use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { Construction, Search } from "lucide-react";
 import { SYLLABUS } from "@/lib/syllabus";
@@ -100,6 +100,25 @@ function StubCard({ name, classLabel, color }: { name: string; classLabel: strin
   );
 }
 
+function SubjectCardSkeleton({ index, classLabel }: { index: number; classLabel: string }) {
+  return (
+    <div
+      aria-hidden="true"
+      className="flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card"
+    >
+      <div className="flex items-center justify-center bg-muted/50 py-6">
+        <div className="h-[52px] w-[52px] animate-pulse rounded-full bg-muted" />
+      </div>
+      <div className="flex flex-col gap-2 p-3.5">
+        <div className="h-4 w-3/4 animate-pulse rounded bg-muted" />
+        <div className="h-4 w-16 animate-pulse rounded-full bg-muted" />
+        <div className="mt-1 h-3 w-full animate-pulse rounded bg-muted" />
+        <div className="h-1 w-full animate-pulse rounded bg-muted" />
+      </div>
+    </div>
+  );
+}
+
 // ─── Class 8/9/10 stub subjects ────────────────────────────────────────────
 const STUB_SUBJECTS: Record<"8" | "9" | "10", Array<{ name: string; color: string }>> = {
   "8": [
@@ -134,6 +153,7 @@ const CLASS_FILTERS: ClassFilter[] = ["Class 8", "Class 9", "Class 10", "Class 1
 
 export default function SubjectsPage() {
   const [classFilter, setClassFilter] = useState<ClassFilter>("Class 11");
+  const [loadProgress, setLoadProgress] = useState({ classFilter: "Class 11" as ClassFilter, count: 0 });
 
   const isLive = classFilter === "Class 11" || classFilter === "Class 12";
   const notesSlug = classFilter === "Class 11" ? "class-11-notes" : "class-12-notes";
@@ -145,6 +165,17 @@ export default function SubjectsPage() {
   const stubSubjects = STUB_SUBJECTS[stubClass] ?? [];
 
   const subjectCount = isLive ? liveSubjects.length : stubSubjects.length;
+  const loadedCount = loadProgress.classFilter === classFilter ? loadProgress.count : 0;
+
+  useEffect(() => {
+    const timers = Array.from({ length: subjectCount }, (_, index) =>
+      window.setTimeout(
+        () => setLoadProgress({ classFilter, count: index + 1 }),
+        (index + 1) * 400,
+      ),
+    );
+    return () => timers.forEach(window.clearTimeout);
+  }, [classFilter, subjectCount]);
 
   return (
     <div className="mx-auto max-w-2xl space-y-5 px-4 py-6">
@@ -165,22 +196,26 @@ export default function SubjectsPage() {
       <div className="flex items-center gap-3 rounded-2xl border border-border/60 bg-card p-3.5">
         <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-500 dark:bg-red-900/30">🎯</div>
         <div className="flex-1 min-w-0">
-          <p className="text-xs font-semibold text-foreground">0 of {subjectCount} subjects mastered</p>
+          <p className="text-xs font-semibold text-foreground">{loadedCount} of {subjectCount} subjects loaded</p>
           <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-muted/60">
-            <div className="h-1.5 w-0 rounded-full bg-red-400" />
+            <div
+              className="h-1.5 rounded-full bg-red-400 transition-[width] duration-300"
+              style={{ width: `${subjectCount ? (loadedCount / subjectCount) * 100 : 100}%` }}
+            />
           </div>
         </div>
-        <span className="text-xs font-bold text-red-500">0% overall</span>
+        <span className="text-xs font-bold text-red-500">
+          {subjectCount ? Math.round((loadedCount / subjectCount) * 100) : 100}%
+        </span>
       </div>
 
       {/* Class filter pills */}
       <div className="flex gap-2 overflow-x-auto border-b border-border/60 pb-3">
-        {CLASS_FILTERS.map((c, index) => (
+        {CLASS_FILTERS.map((c) => (
           <button key={c} type="button" onClick={() => setClassFilter(c)}
-            className={`sequential-block-reveal shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${
+            className={`shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${
               classFilter === c ? "bg-primary text-primary-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
-            }`}
-            style={{ animationDelay: `${index * 90}ms` }}>
+            }`}>
             {c}
           </button>
         ))}
@@ -198,18 +233,14 @@ export default function SubjectsPage() {
 
       {/* Cards */}
       <div key={classFilter} className="grid grid-cols-2 gap-3">
-        {isLive
-          ? liveSubjects.map((s, index) => (
-              <div key={s.slug} className="sequential-block-reveal" style={{ animationDelay: `${(CLASS_FILTERS.length + index) * 90}ms` }}>
-                <SubjectCard subject={s as any} classLabel={classFilter} notesSlug={notesSlug} />
-              </div>
-            ))
-          : stubSubjects.map((s, index) => (
-              <div key={s.name} className="sequential-block-reveal" style={{ animationDelay: `${(CLASS_FILTERS.length + index) * 90}ms` }}>
-                <StubCard name={s.name} classLabel={classFilter} color={s.color} />
-              </div>
-            ))
-        }
+        {Array.from({ length: subjectCount }, (_, index) => {
+          if (index >= loadedCount) {
+            return <SubjectCardSkeleton key={`loading-${classFilter}-${index}`} index={index} classLabel={classFilter} />;
+          }
+          return isLive
+            ? <SubjectCard key={liveSubjects[index].slug} subject={liveSubjects[index] as any} classLabel={classFilter} notesSlug={notesSlug} />
+            : <StubCard key={stubSubjects[index].name} name={stubSubjects[index].name} classLabel={classFilter} color={stubSubjects[index].color} />;
+        })}
       </div>
 
     </div>
