@@ -1892,3 +1892,16 @@ body {
   .verify-ring,
   .verify-dots span { animation: none; }
 }
+
+.subject-card-enter {
+  animation: subject-card-enter 260ms ease-out both;
+}
+
+@keyframes subject-card-enter {
+  from { opacity: 0.75; transform: translateY(4px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .subject-card-enter { animation: none; }
+}

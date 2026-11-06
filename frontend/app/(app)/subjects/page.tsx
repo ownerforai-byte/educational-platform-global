@@ -171,7 +171,7 @@ export default function SubjectsPage() {
     const timers = Array.from({ length: subjectCount }, (_, index) =>
       window.setTimeout(
         () => setLoadProgress({ classFilter, count: index + 1 }),
-        (index + 1) * 400,
+        (index + 1) * 120,
       ),
     );
     return () => timers.forEach(window.clearTimeout);
@@ -238,8 +238,16 @@ export default function SubjectsPage() {
             return <SubjectCardSkeleton key={`loading-${classFilter}-${index}`} index={index} classLabel={classFilter} />;
           }
           return isLive
-            ? <SubjectCard key={liveSubjects[index].slug} subject={liveSubjects[index] as any} classLabel={classFilter} notesSlug={notesSlug} />
-            : <StubCard key={stubSubjects[index].name} name={stubSubjects[index].name} classLabel={classFilter} color={stubSubjects[index].color} />;
+            ? (
+                <div key={liveSubjects[index].slug} className="subject-card-enter">
+                  <SubjectCard subject={liveSubjects[index] as any} classLabel={classFilter} notesSlug={notesSlug} />
+                </div>
+              )
+            : (
+                <div key={stubSubjects[index].name} className="subject-card-enter">
+                  <StubCard name={stubSubjects[index].name} classLabel={classFilter} color={stubSubjects[index].color} />
+                </div>
+              );
         })}
       </div>
 
