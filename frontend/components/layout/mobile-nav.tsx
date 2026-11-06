@@ -10,7 +10,7 @@ import { useSession } from "@/features/auth/hooks/use-session";
 import { isNavItemActive } from "@/lib/nav-active";
 import { isOwnerUser } from "@/lib/owner";
 import { useR1Access } from "@/features/r1/hooks";
-import { NAV_SECTIONS, navMinLevel } from "@/lib/navigation";
+import { isSidebarNavItem, NAV_SECTIONS, navMinLevel } from "@/lib/navigation";
 import { hasLevel } from "@/lib/access-level";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 
@@ -110,6 +110,7 @@ export function MobileNav() {
     .map((sec) => ({
       ...sec,
       items: sec.items.filter((item) =>
+        isSidebarNavItem(item) &&
         // Owner-only entries (AI chat) never reach non-owners, even by search.
         (item.ownerOnly ? isOwnerUser(user) : true) &&
         (item.r1Only ? hasR1 : true) &&

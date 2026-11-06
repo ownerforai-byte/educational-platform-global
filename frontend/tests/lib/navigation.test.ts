@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import {
   APP_TABS,
+  isSidebarNavItem,
   NAV_HREFS,
   NAV_SECTIONS,
   QUICK_LINKS,
@@ -87,6 +88,27 @@ describe("navigation menu", () => {
     );
   });
 
+  it("keeps footer destinations and subject pages out of the sidebar and drawer", () => {
+    const sidebarHrefs = entries
+      .filter(({ item }) => isSidebarNavItem(item))
+      .map(({ item }) => item.href);
+    const footerHrefs = [
+      "/class-11-notes", "/class-12-notes", "/syllabus", "/pyqs", "/exams",
+      "/chat", "/ai", "/ai-quiz", "/quiz", "/practice",
+      "/lab", "/formulas", "/mindmap", "/periodic-table",
+      "/about", "/blog", "/neb-updates", "/how-it-works", "/contact", "/help", "/plans",
+      "/profile", "/credits", "/billing", "/settings", "/notice",
+    ];
+
+    for (const href of footerHrefs) {
+      expect(sidebarHrefs, `${href} is already in the footer`).not.toContain(href);
+    }
+    expect(sidebarHrefs).not.toContain("/subjects");
+    expect(sidebarHrefs.some((href) =>
+      /^\/class-(11|12)-notes\/(physics|chemistry|biology|mathematics|english|nepali)(\/theory)?$/.test(href),
+    )).toBe(false);
+  });
+
   it("is consumed by BOTH menu surfaces instead of being copied", () => {
     const read = (p: string) => readFileSync(path.resolve(p), "utf8");
     const sidebar = read("components/layout/sidebar-navigation.tsx");
@@ -94,6 +116,8 @@ describe("navigation menu", () => {
 
     expect(sidebar).toContain('from "@/lib/navigation"');
     expect(drawer).toContain('from "@/lib/navigation"');
+    expect(sidebar).toContain("isSidebarNavItem");
+    expect(drawer).toContain("isSidebarNavItem");
 
     // A fork would be a hardcoded menu array inside a component again.
     expect(sidebar).not.toMatch(/const\s+\w*[Ii]tems\s*:\s*NavItem\[\]\s*=/);

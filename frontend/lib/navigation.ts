@@ -1,5 +1,5 @@
 /**
- * navigation.ts — THE single list of every page the sidebar and footer link to.
+ * navigation.ts — THE shared registry for sidebar and footer destinations.
  *
  * BEGINNER GUIDE: How this file works
  * ─────────────────────────────────────
@@ -13,6 +13,8 @@
  *      "pro"     = Pro plan and above
  *      "owner"   = owner email only
  * 4. The `icon` is just a visual; it does not affect access.
+ * 5. `hideFromSidebar` keeps footer/home/learn destinations out of the long
+ *    sidebar and drawer list without removing them from the shared registry.
  *
  * HOW TO ADD A NEW PAGE
  * ─────────────────────
@@ -96,6 +98,8 @@ export type NavItem = {
    * If missing, the section's default is used, then "member".
    */
   minLevel?: AccessLevel;
+  /** Keep this destination in the registry/footer, but omit it from the sidebar and drawer. */
+  hideFromSidebar?: boolean;
 };
 
 /** A collapsible group of navigation links (one section in the sidebar). */
@@ -121,6 +125,10 @@ export function navMinLevel(
   return item.minLevel ?? section?.minLevel ?? "member";
 }
 
+export function isSidebarNavItem(item: NavItem): boolean {
+  return !item.hideFromSidebar;
+}
+
 // ─── Link groups ─────────────────────────────────────────────────────────────
 // Each array below is ONE section of the navigation.
 // Add new pages to the most appropriate array.
@@ -142,12 +150,12 @@ const primaryItems: NavItem[] = [
   { href: "/ask",           label: "Ask Veer",           icon: HelpCircle,    minLevel: "member"  },
   { href: "/my-notes",      label: "My Notes",           icon: NotebookPen,   minLevel: "member"  },
   { href: "/downloads",     label: "Offline Study",      icon: Download,      minLevel: "owner"   },
-  { href: "/billing",       label: "Billing",            icon: Receipt,       minLevel: "member"  },
+  { href: "/billing",       label: "Billing",            icon: Receipt,       minLevel: "member", hideFromSidebar: true },
   { href: "/referrals",     label: "Referrals",          icon: Gift,          minLevel: "plus"    },
   { href: "/site-index",    label: "Everything Index",   icon: ListTree,      minLevel: "pro"     },
   { href: "/levels",        label: "Curriculum Levels",  icon: Compass,       minLevel: "pro"     },
-  { href: "/practice",      label: "Practice Hub",       icon: Target,        minLevel: "plus"    },
-  { href: "/exams",         label: "Exam Hub",           icon: GraduationCap, minLevel: "plus"    },
+  { href: "/practice",      label: "Practice Hub",       icon: Target,        minLevel: "plus", hideFromSidebar: true },
+  { href: "/exams",         label: "Exam Hub",           icon: GraduationCap, minLevel: "plus", hideFromSidebar: true },
   { href: "/revision",      label: "Quick Revision",     icon: Repeat,        minLevel: "plus"    },
   { href: "/leaderboard",   label: "Leaderboard",        icon: Award,         minLevel: "plus"    },
   { href: "/goals",         label: "Study Goals",        icon: Target,        minLevel: "member"  },
@@ -165,11 +173,11 @@ const primaryItems: NavItem[] = [
  */
 const curriculumItems: NavItem[] = [
   // Top-level hubs
-  { href: "/class-11-notes",  label: "Class 11 Hub",    icon: BookOpen,    minLevel: "plus" },
-  { href: "/class-12-notes",  label: "Class 12 Hub",    icon: BookOpen,    minLevel: "plus" },
-  { href: "/subjects",        label: "Subjects",        icon: Layers,      minLevel: "plus" },
-  { href: "/pyqs",            label: "Past Year Questions", icon: History,  minLevel: "plus" },
-  { href: "/syllabus",        label: "Official Syllabus",  icon: GraduationCap, minLevel: "plus" },
+  { href: "/class-11-notes",  label: "Class 11 Hub",    icon: BookOpen,    minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-12-notes",  label: "Class 12 Hub",    icon: BookOpen,    minLevel: "plus", hideFromSidebar: true },
+  { href: "/subjects",        label: "Subjects",        icon: Layers,      minLevel: "plus", hideFromSidebar: true },
+  { href: "/pyqs",            label: "Past Year Questions", icon: History,  minLevel: "plus", hideFromSidebar: true },
+  { href: "/syllabus",        label: "Official Syllabus",  icon: GraduationCap, minLevel: "plus", hideFromSidebar: true },
   { href: "/syllabus/additions", label: "Syllabus by Year", icon: Calendar, minLevel: "plus" },
   { href: "/practical",       label: "Practical Manuals",  icon: FlaskConical, minLevel: "plus" },
   { href: "/legend",          label: "Concept Legends",    icon: Lightbulb, minLevel: "plus" },
@@ -178,32 +186,32 @@ const curriculumItems: NavItem[] = [
   { href: "/search",          label: "Search",             icon: Search,    minLevel: "plus" },
 
   // Class 11 subjects — each has its own hub page and a theory sub-page
-  { href: "/class-11-notes/physics",           label: "Physics (Class 11)",          icon: Atom,        minLevel: "plus" },
-  { href: "/class-11-notes/physics/theory",    label: "Physics Theory (11)",         icon: Atom,        minLevel: "plus" },
-  { href: "/class-11-notes/chemistry",         label: "Chemistry (Class 11)",        icon: FlaskConical, minLevel: "plus" },
-  { href: "/class-11-notes/chemistry/theory",  label: "Chemistry Theory (11)",       icon: FlaskConical, minLevel: "plus" },
-  { href: "/class-11-notes/biology",           label: "Biology (Class 11)",          icon: BookOpen,    minLevel: "plus" },
-  { href: "/class-11-notes/biology/theory",    label: "Biology Theory (11)",         icon: BookOpen,    minLevel: "plus" },
-  { href: "/class-11-notes/mathematics",       label: "Mathematics (Class 11)",      icon: Sigma,       minLevel: "plus" },
-  { href: "/class-11-notes/mathematics/theory", label: "Mathematics Theory (11)",    icon: Sigma,       minLevel: "plus" },
-  { href: "/class-11-notes/english",           label: "English (Class 11)",          icon: Languages,   minLevel: "plus" },
-  { href: "/class-11-notes/english/theory",    label: "English Theory (11)",         icon: Languages,   minLevel: "plus" },
-  { href: "/class-11-notes/nepali",            label: "Nepali (Class 11)",           icon: Languages,   minLevel: "plus" },
-  { href: "/class-11-notes/nepali/theory",     label: "Nepali Theory (11)",          icon: Languages,   minLevel: "plus" },
+  { href: "/class-11-notes/physics",           label: "Physics (Class 11)",          icon: Atom,        minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-11-notes/physics/theory",    label: "Physics Theory (11)",         icon: Atom,        minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-11-notes/chemistry",         label: "Chemistry (Class 11)",        icon: FlaskConical, minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-11-notes/chemistry/theory",  label: "Chemistry Theory (11)",       icon: FlaskConical, minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-11-notes/biology",           label: "Biology (Class 11)",          icon: BookOpen,    minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-11-notes/biology/theory",    label: "Biology Theory (11)",         icon: BookOpen,    minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-11-notes/mathematics",       label: "Mathematics (Class 11)",      icon: Sigma,       minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-11-notes/mathematics/theory", label: "Mathematics Theory (11)",    icon: Sigma,       minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-11-notes/english",           label: "English (Class 11)",          icon: Languages,   minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-11-notes/english/theory",    label: "English Theory (11)",         icon: Languages,   minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-11-notes/nepali",            label: "Nepali (Class 11)",           icon: Languages,   minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-11-notes/nepali/theory",     label: "Nepali Theory (11)",          icon: Languages,   minLevel: "plus", hideFromSidebar: true },
 
   // Class 12 subjects — same pattern as Class 11
-  { href: "/class-12-notes/physics",           label: "Physics (Class 12)",          icon: Atom,        minLevel: "plus" },
-  { href: "/class-12-notes/physics/theory",    label: "Physics Theory (12)",         icon: Atom,        minLevel: "plus" },
-  { href: "/class-12-notes/chemistry",         label: "Chemistry (Class 12)",        icon: FlaskConical, minLevel: "plus" },
-  { href: "/class-12-notes/chemistry/theory",  label: "Chemistry Theory (12)",       icon: FlaskConical, minLevel: "plus" },
-  { href: "/class-12-notes/biology",           label: "Biology (Class 12)",          icon: BookOpen,    minLevel: "plus" },
-  { href: "/class-12-notes/biology/theory",    label: "Biology Theory (12)",         icon: BookOpen,    minLevel: "plus" },
-  { href: "/class-12-notes/mathematics",       label: "Mathematics (Class 12)",      icon: Sigma,       minLevel: "plus" },
-  { href: "/class-12-notes/mathematics/theory", label: "Mathematics Theory (12)",    icon: Sigma,       minLevel: "plus" },
-  { href: "/class-12-notes/english",           label: "English (Class 12)",          icon: Languages,   minLevel: "plus" },
-  { href: "/class-12-notes/english/theory",    label: "English Theory (12)",         icon: Languages,   minLevel: "plus" },
-  { href: "/class-12-notes/nepali",            label: "Nepali (Class 12)",           icon: Languages,   minLevel: "plus" },
-  { href: "/class-12-notes/nepali/theory",     label: "Nepali Theory (12)",          icon: Languages,   minLevel: "plus" },
+  { href: "/class-12-notes/physics",           label: "Physics (Class 12)",          icon: Atom,        minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-12-notes/physics/theory",    label: "Physics Theory (12)",         icon: Atom,        minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-12-notes/chemistry",         label: "Chemistry (Class 12)",        icon: FlaskConical, minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-12-notes/chemistry/theory",  label: "Chemistry Theory (12)",       icon: FlaskConical, minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-12-notes/biology",           label: "Biology (Class 12)",          icon: BookOpen,    minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-12-notes/biology/theory",    label: "Biology Theory (12)",         icon: BookOpen,    minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-12-notes/mathematics",       label: "Mathematics (Class 12)",      icon: Sigma,       minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-12-notes/mathematics/theory", label: "Mathematics Theory (12)",    icon: Sigma,       minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-12-notes/english",           label: "English (Class 12)",          icon: Languages,   minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-12-notes/english/theory",    label: "English Theory (12)",        icon: Languages,   minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-12-notes/nepali",            label: "Nepali (Class 12)",           icon: Languages,   minLevel: "plus", hideFromSidebar: true },
+  { href: "/class-12-notes/nepali/theory",     label: "Nepali Theory (12)",          icon: Languages,   minLevel: "plus", hideFromSidebar: true },
 ];
 
 /**
@@ -211,17 +219,17 @@ const curriculumItems: NavItem[] = [
  * Most open at Plus; advanced indexes open at Pro.
  */
 const stemAndRigorItems: NavItem[] = [
-  { href: "/lab",                  label: "Virtual 3D Labs",      icon: FlaskConical, minLevel: "plus"  },
+  { href: "/lab",                  label: "Virtual 3D Labs",      icon: FlaskConical, minLevel: "plus", hideFromSidebar: true },
   { href: "/lab/3d",               label: "3D Simulations Hub",   icon: Box,          minLevel: "plus"  },
   { href: "/lab/bio-3d-organelles", label: "Cell Organelles 3D",  icon: Sparkles,     minLevel: "plus"  },
   { href: "/lab/theory",           label: "Lab Theory Hub",       icon: BookOpen,     minLevel: "plus"  },
   { href: "/ad-p-table",           label: "Ad P Table",           icon: Atom,         minLevel: "plus"  },
-  { href: "/periodic-table",       label: "Periodic Table & CEE", icon: Atom,         minLevel: "pro"   },
-  { href: "/formulas",             label: "Formula Sheets",       icon: Sigma,        minLevel: "plus"  },
+  { href: "/periodic-table",       label: "Periodic Table & CEE", icon: Atom,         minLevel: "pro", hideFromSidebar: true },
+  { href: "/formulas",             label: "Formula Sheets",       icon: Sigma,        minLevel: "plus", hideFromSidebar: true },
   { href: "/theorems",             label: "Theorems & Proofs",    icon: Binary,       minLevel: "pro"   },
   { href: "/derivations",          label: "Formula Derivations",  icon: Layers,       minLevel: "pro"   },
   { href: "/graphs",               label: "Science Graph Bank",   icon: LineChart,    minLevel: "pro"   },
-  { href: "/mindmap",              label: "Visual Mindmaps",      icon: Workflow,     minLevel: "plus"  },
+  { href: "/mindmap",              label: "Visual Mindmaps",      icon: Workflow,     minLevel: "plus", hideFromSidebar: true },
   { href: "/mind-studio",          label: "Diagram Studio",       icon: Shapes,       minLevel: "owner" },
   { href: "/science-graph-bank",   label: "Graph Bank (Legacy)",  icon: LineChart,    minLevel: "pro"   },
   { href: "/resources/physics-xi", label: "Physics XI Academic",  icon: BookOpen,     minLevel: "pro"   },
@@ -234,12 +242,12 @@ const stemAndRigorItems: NavItem[] = [
  */
 const toolsItems: NavItem[] = [
   // Available to Members (15 AI sparks/day)
-  { href: "/chat",         label: "Veer Study Assistant",    icon: Sparkles,   minLevel: "member" },
+  { href: "/chat",         label: "Veer Study Assistant",    icon: Sparkles,   minLevel: "member", hideFromSidebar: true },
   { href: "/chat/nepali",  label: "Nepali Assistant",        icon: Languages,  minLevel: "member" },
   { href: "/chat/grammar", label: "Grammar Console",         icon: BookOpen,   minLevel: "member" },
 
   // Available to Plus and above (full AI studio)
-  { href: "/ai",           label: "AI Tools",                icon: Bot,        minLevel: "member" },
+  { href: "/ai",           label: "AI Tools",                icon: Bot,        minLevel: "member", hideFromSidebar: true },
   { href: "/ai/math",      label: "Veer Math Solver",        icon: Sigma,      minLevel: "plus"  },
   { href: "/ai/deep-dive", label: "Deep Concept Studio",     icon: Lightbulb,  minLevel: "plus"  },
   { href: "/ai/diagrams",  label: "Diagram Hub",             icon: Shapes,     minLevel: "plus"  },
@@ -248,9 +256,9 @@ const toolsItems: NavItem[] = [
   { href: "/ai/workspace", label: "AI Workspace",            icon: Bot,        minLevel: "plus"  },
   { href: "/ai/subjects",  label: "Subject Classrooms",      icon: BookOpen,   minLevel: "plus"  },
   { href: "/ai/history",   label: "AI History",              icon: History,    minLevel: "plus"  },
-  { href: "/ai-quiz",      label: "Adaptive Veer Quiz",      icon: HelpCircle, minLevel: "plus"  },
+  { href: "/ai-quiz",      label: "Adaptive Veer Quiz",      icon: HelpCircle, minLevel: "plus", hideFromSidebar: true },
   { href: "/ai-quiz/history", label: "Quiz History",         icon: History,    minLevel: "plus"  },
-  { href: "/quiz",         label: "Practice Quiz Bank",      icon: Target,     minLevel: "plus"  },
+  { href: "/quiz",         label: "Practice Quiz Bank",      icon: Target,     minLevel: "plus", hideFromSidebar: true },
   { href: "/exam-countdown", label: "Exam Countdown",        icon: Target,     minLevel: "pro"   },
 
   // Exam tracks (Plus and above)
@@ -291,14 +299,14 @@ const extendedItems: NavItem[] = [
  * Only shown when the user is signed in.
  */
 const accountItems: NavItem[] = [
-  { href: "/profile",       label: "My Profile",       icon: User,        minLevel: "member" },
+  { href: "/profile",       label: "My Profile",       icon: User,        minLevel: "member", hideFromSidebar: true },
   { href: "/progress",      label: "My Progress",      icon: UserCheck,   minLevel: "member" },
   { href: "/bookmarks",     label: "Saved Bookmarks",  icon: Bookmark,    minLevel: "member" },
   { href: "/report-card",   label: "Report Card",      icon: FileText,    minLevel: "plus"   },
-  { href: "/settings",      label: "Settings",         icon: Settings,    minLevel: "member" },
-  { href: "/credits",       label: "Credits & Plan",   icon: Coins,       minLevel: "member" },
+  { href: "/settings",      label: "Settings",         icon: Settings,    minLevel: "member", hideFromSidebar: true },
+  { href: "/credits",       label: "Credits & Plan",   icon: Coins,       minLevel: "member", hideFromSidebar: true },
   { href: "/notifications", label: "Notifications",    icon: Bell,        minLevel: "member" },
-  { href: "/notice",        label: "Notice Board",     icon: FileText,    minLevel: "member" },
+  { href: "/notice",        label: "Notice Board",     icon: FileText,    minLevel: "member", hideFromSidebar: true },
 ];
 
 /**
@@ -306,18 +314,18 @@ const accountItems: NavItem[] = [
  * These also appear in the footer.
  */
 const publicItems: NavItem[] = [
-  { href: "/about",        label: "About",          icon: HelpCircle,  minLevel: "visitor" },
+  { href: "/about",        label: "About",          icon: HelpCircle,  minLevel: "visitor", hideFromSidebar: true },
   { href: "/features",     label: "Features",       icon: Sparkles,    minLevel: "visitor" },
-  { href: "/how-it-works", label: "How It Works",   icon: Compass,     minLevel: "visitor" },
-  { href: "/blog",         label: "Blog",           icon: FileText,    minLevel: "visitor" },
-  { href: "/neb-updates",  label: "NEB Updates",    icon: Bell,        minLevel: "visitor" },
-  { href: "/contact",      label: "Contact Us",     icon: MessageSquare, minLevel: "visitor" },
-  { href: "/help",         label: "Help Center",    icon: HelpCircle,  minLevel: "visitor" },
+  { href: "/how-it-works", label: "How It Works",   icon: Compass,     minLevel: "visitor", hideFromSidebar: true },
+  { href: "/blog",         label: "Blog",           icon: FileText,    minLevel: "visitor", hideFromSidebar: true },
+  { href: "/neb-updates",  label: "NEB Updates",    icon: Bell,        minLevel: "visitor", hideFromSidebar: true },
+  { href: "/contact",      label: "Contact Us",     icon: MessageSquare, minLevel: "visitor", hideFromSidebar: true },
+  { href: "/help",         label: "Help Center",    icon: HelpCircle,  minLevel: "visitor", hideFromSidebar: true },
   { href: "/sitemap-page", label: "Site Map",       icon: ListTree,    minLevel: "visitor" },
   { href: "/school",       label: "For Schools",    icon: GraduationCap, minLevel: "visitor" },
   { href: "/teachers",     label: "For Teachers",   icon: Users,       minLevel: "visitor" },
   { href: "/parents",      label: "For Parents",    icon: Users,       minLevel: "visitor" },
-  { href: "/plans",        label: "Plans & Pricing", icon: Coins,      minLevel: "visitor" },
+  { href: "/plans",        label: "Plans & Pricing", icon: Coins,      minLevel: "visitor", hideFromSidebar: true },
 ];
 
 /**

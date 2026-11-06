@@ -10,7 +10,7 @@ import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
 import { useR1Access } from "@/features/r1/hooks";
 import { isNavItemActive } from "@/lib/nav-active";
-import { NAV_SECTIONS, navMinLevel, type NavItem } from "@/lib/navigation";
+import { isSidebarNavItem, NAV_SECTIONS, navMinLevel, type NavItem } from "@/lib/navigation";
 import { hasLevel } from "@/lib/access-level";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 
@@ -191,6 +191,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
   const visibleItems = (section: (typeof NAV_SECTIONS)[number]) =>
     section.items.filter(
       (item) =>
+        isSidebarNavItem(item) &&
         (item.ownerOnly ? isOwnerUser(user) : true) &&
         (item.r1Only ? hasR1 : true) &&
         hasLevel(viewer, navMinLevel(item, section))
@@ -232,7 +233,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
       <div className="flex-1 overflow-y-auto overscroll-contain px-2 py-3 space-y-1">
         {/* Primary destinations */}
         <div className="mb-2 space-y-0.5">
-          {primaryItems.filter((item) => hasLevel(viewer, navMinLevel(item))).map((item) => {
+          {primaryItems.filter((item) => isSidebarNavItem(item) && hasLevel(viewer, navMinLevel(item))).map((item) => {
             const ItemIcon = item.icon;
             const isActive = isNavItemActive(pathname, item.href);
             return (
@@ -347,4 +348,3 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
     </nav>
   );
 }
-

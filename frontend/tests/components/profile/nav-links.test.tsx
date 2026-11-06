@@ -74,12 +74,11 @@ beforeEach(() => {
 // ─── Sidebar ────────────────────────────────────────────────────────────────
 
 describe("SidebarNavigation", () => {
-  it("links My Profile to /profile for signed-in users", () => {
+  it("keeps footer-only My Profile out of the sidebar while preserving progress", () => {
     sessionState.user = studentUser;
     render(<SidebarNavigation />);
 
-    const profileLink = screen.getByRole("link", { name: /my profile/i });
-    expect(profileLink).toHaveAttribute("href", "/profile");
+    expect(screen.queryByRole("link", { name: /my profile/i })).toBeNull();
     // Progress stays a separate entry.
     expect(
       screen.getByRole("link", { name: /my progress/i })
@@ -125,22 +124,14 @@ describe("SidebarNavigation", () => {
 // ─── Mobile nav ─────────────────────────────────────────────────────────────
 
 describe("MobileNav", () => {
-  it("every My Profile entry (section + footer) opens /profile", async () => {
+  it("keeps My Profile in the drawer footer without duplicating it in the nav list", () => {
     render(<MobileNav />);
 
     // Slide-in panel is closed initially — open it.
     fireEvent.click(screen.getByRole("button", { name: /open navigation/i }));
 
-    // The drawer renders through a portal and its session-driven entries settle
-    // asynchronously — wait for BOTH profile links so this is deterministic
-    // (it flaked under parallel jsdom load). The >= 2 assertion is unchanged.
-    await waitFor(() => {
-      expect(
-        screen.getAllByRole("link", { name: /my profile/i }).length,
-      ).toBeGreaterThanOrEqual(2); // section + footer
-    });
     const profileLinks = screen.getAllByRole("link", { name: /my profile/i });
-    expect(profileLinks.length).toBeGreaterThanOrEqual(2); // section + footer
+    expect(profileLinks).toHaveLength(1);
     for (const link of profileLinks) {
       expect(link).toHaveAttribute("href", "/profile");
     }
