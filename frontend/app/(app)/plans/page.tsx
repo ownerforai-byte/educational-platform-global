@@ -1,4 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import { PlansGuidance } from "@/components/platform/plans-guidance";
+
+export const metadata: Metadata = {
+  title: "Plans & Access | Ravikisan's Platform",
+  description: "Compare platform access levels, section availability, and how to request an owner-granted plan.",
+};
 import {
   Crown,
   Eye,
@@ -203,6 +210,8 @@ export default function PlansPage() {
         </div>
         <SectionMatrix />
       </div>
+
+      <PlansGuidance />
 
       {/* ── Footer note ── */}
       <div className="rounded-2xl border border-border/70 bg-muted/20 p-5 text-center">

@@ -1,18 +1,20 @@
 import type { Metadata } from "next";
-import { UnderDevelopment } from "@/components/ui/under-development";
-
-export const metadata: Metadata = {
-  title: "About NEB Study Vault",
-  description: "Our mission: smarter students, free Nepal. Learn about the platform, the team and our story.",
-};
-
+import { PublicPage, Panel, Action } from "@/components/platform/public-page";
+export const metadata: Metadata = { title: "About | Ravikisan's Platform", description: "Syllabus-first learning for Nepal's NEB Class 11 and 12 students: our purpose, resources, and responsible approach to AI." };
 export default function AboutPage() {
-  return (
-    <UnderDevelopment
-      title="About NEB Study Vault"
-      description="Our mission, story and the team behind Nepal's most organized study platform."
-      backHref="/"
-      backLabel="Back to Home"
-    />
-  );
+  return <PublicPage current="/about" eyebrow="Purpose over noise" title="A clearer path from understanding to exam practice." intro="Ravikisan's Platform brings NEB Class 11 and 12 study resources into one syllabus-first learning environment, so students can spend less time searching and more time making sense of the subject.">
+    <div className="grid gap-6 md:grid-cols-2">
+      <Panel title="Why this platform exists" eyebrow="Our purpose"><p>Studying can become fragmented: notes in one place, past questions in another, and explanations that do not match the chapter you are learning. This platform is organised around the curriculum to make those connections easier to follow.</p><p>The aim is practical: help you identify what to study, understand the reasoning, practise it independently, and revisit the parts that still need attention.</p></Panel>
+      <Panel title="Built by Ravikisan" eyebrow="The person behind it"><p>This is Ravikisan&apos;s learning platform, created for easier access to study material and guided exploration. The owner manages account approval, plan grants, and content corrections.</p><p>There are no invented team profiles or success statistics here. Questions, corrections, and access requests can be directed to the owner through the contact route.</p><Action href="/contact" secondary>Get in touch</Action></Panel>
+    </div>
+    <Panel title="What you can learn with"><div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{[
+      ["Chapter-led notes", "Class 11 and 12 resources organised by subject and topic, with the syllabus as a starting point."],
+      ["Practice that reveals gaps", "Past questions and practice tools to help you test methods instead of just recognising answers."],
+      ["Visual understanding", "Mindmaps, formulas, diagrams, and interactive labs to connect abstract ideas with concrete examples."],
+      ["Veer learning assistance", "Ask focused questions and explore explanations while checking the reasoning against trusted material."],
+      ["A structured study workflow", "Move from a concept to an attempt, then record what needs another review."],
+      ["Clear access boundaries", "Approved accounts and plan-specific sections; feature availability and balances remain visible in the app."],
+    ].map(([title, text]) => <div key={title}><h3 className="font-semibold text-foreground">{title}</h3><p className="mt-2">{text}</p></div>)}</div></Panel>
+    <div className="grid gap-6 md:grid-cols-2"><Panel title="What we stand for"><ul className="list-disc space-y-2 pl-5"><li>Understand the method, not only the final answer.</li><li>Connect learning resources to the relevant curriculum.</li><li>Report errors and improve the material at its source.</li><li>Use AI as support, not as a substitute for independent thinking.</li></ul></Panel><Panel title="Important boundaries"><p>The platform is a study resource, not an official NEB or CDC notice service. Your school and the relevant examination authority remain the source for examination instructions.</p><p>AI output and educational content can contain mistakes. No page here promises a grade, admission result, or guaranteed examination outcome.</p><Action href="/how-it-works" secondary>See the learning workflow</Action></Panel></div>
+  </PublicPage>;
 }

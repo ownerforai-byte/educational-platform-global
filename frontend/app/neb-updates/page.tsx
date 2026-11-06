@@ -1,18 +1,11 @@
 import type { Metadata } from "next";
-import { UnderDevelopment } from "@/components/ui/under-development";
-
-export const metadata: Metadata = {
-  title: "NEB & CDC Updates",
-  description: "Official NEB exam date announcements, syllabus changes and CDC notices.",
-};
-
+import { PublicPage, Panel, Action } from "@/components/platform/public-page";
+export const metadata: Metadata = { title: "NEB & CDC Updates | Ravikisan's Platform", description: "How to verify NEB exam notices, CDC syllabus changes, deadlines, and corrections before acting." };
 export default function NebUpdatesPage() {
-  return (
-    <UnderDevelopment
-      title="NEB & CDC Updates"
-      description="Official exam dates, syllabus additions, CDC notices and NEB announcements — curated in one place."
-      backHref="/"
-      backLabel="Back to Home"
-    />
-  );
+  return <PublicPage current="/neb-updates" eyebrow="Verify before you act" title="Exam information deserves a clear source." intro="A practical guide to checking NEB examination notices and CDC curriculum changes. This page is not a live feed and does not claim to publish official announcements.">
+    <div role="note" className="rounded-2xl border border-primary/30 bg-primary/5 p-6"><h2 className="text-lg font-bold">No verified live notices are connected here</h2><p className="mt-3 text-sm leading-7 text-muted-foreground">No exam dates, result dates, application deadlines, or syllabus changes have been invented for this page. This does not mean that no official notices exist. Check the original issuing authority and your school before making a decision.</p></div>
+    <div className="grid gap-6 md:grid-cols-2"><Panel title="Examination notices" eyebrow="NEB"><p>For schedules, registration instructions, results-related notices, and examination corrections, locate the original notice from the National Examinations Board or obtain the official copy through your school.</p><ul className="list-disc space-y-2 pl-5"><li>Match the class, subject, and examination type.</li><li>Check the academic year and publication date.</li><li>Look for a later amendment or corrected schedule.</li><li>Confirm the date calendar and time zone rather than guessing a conversion.</li></ul></Panel><Panel title="Curriculum and syllabus" eyebrow="CDC"><p>For subject coverage, learning outcomes, teaching hours, and curriculum documents, use the relevant Curriculum Development Centre publication and your school&apos;s guidance.</p><ul className="list-disc space-y-2 pl-5"><li>Match the subject, class, and document edition.</li><li>Check whether a change applies to your cohort.</li><li>Separate a sample question from a binding instruction.</li><li>Ask your subject teacher about conflicting copies.</li></ul></Panel></div>
+    <Panel title="A five-point notice check"><ol className="list-decimal space-y-3 pl-5"><li><strong className="text-foreground">Source:</strong> Can you identify the issuing authority and the original document?</li><li><strong className="text-foreground">Scope:</strong> Does it apply to your class, year, school, and exam category?</li><li><strong className="text-foreground">Date:</strong> Is it current, and has a correction superseded it?</li><li><strong className="text-foreground">Action:</strong> What must you submit, where, and by which stated deadline?</li><li><strong className="text-foreground">Confirmation:</strong> Has your school confirmed any local process you must follow?</li></ol></Panel>
+    <Panel title="Found a notice that students should know about?"><p>Send the original document link or official copy, the issuing authority, publication date, and affected class to the owner. A cropped screenshot or forwarded message without its source should not be presented as a verified update.</p><Action href="/contact" secondary>Share a source for review</Action></Panel>
+  </PublicPage>;
 }
