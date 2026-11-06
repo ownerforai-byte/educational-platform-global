@@ -1,18 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 /**
- * WHOLE-LIBRARY COIN GATE + THE WINDY DOT
- * (owner request 2026-10-04: "coin gate for owner … make it applicable for
- * whole coin gate library and keep only a small windy dot to show on off and
- * remove long message which shows this").
- *
- *   · RouteCreditGate: owner emails pass every paid route when the global
- *     `coin_gate_enabled` setting is OFF (the toggle no longer stops at AI
- *     chat); students and guests still unlock for coins either way, and an
- *     owner with the toggle ON is billed like a student.
- *   · CoinGateDot: the ONLY visible ON/OFF announcement left — a small windy
- *     dot whose words live in title/aria-label, nothing else.
+ * RouteCreditGate is a transparent passthrough: it always renders its
+ * children and never shows coin-lock UI. CoinGateDot remains the small ON/OFF
+ * indicator whose words live in title/aria-label, nothing else.
  */
 
 const state = vi.hoisted(() => ({
@@ -52,8 +44,8 @@ const STUDENT_USER = {
   credits: 4,
 };
 
-/** /notes is not public, not exempt and matches no special route → theory. */
-const LOCK_COPY = /upgrade to access this content/i;
+/** Lock-copy text is used to verify that no coin-gate lock UI is rendered. */
+const LOCK_COPY = /unavailable on this plan/i;
 
 function setSession(user: Record<string, unknown> | null): void {
   state.credit = {
@@ -83,57 +75,47 @@ beforeEach(() => {
   setSession(null);
 });
 
-describe("RouteCreditGate — whole-library coin gate", () => {
-  it("owner + gate OFF → passes with no lock and no countdown badge", async () => {
+describe("RouteCreditGate — transparent passthrough", () => {
+  it("owner + gate OFF → passes with no lock and no countdown badge", () => {
     state.coinGateEnabled = false;
     setSession(OWNER_USER);
 
     renderGate();
 
-    // Wait for the config-resolved state (the first paint still shows the
-    // lock while coinGateEnabled is null) — then assert the pass-through.
-    await waitFor(() => {
-      expect(screen.queryByText(LOCK_COPY)).toBeNull();
-    });
+    expect(screen.queryByText(LOCK_COPY)).toBeNull();
     expect(screen.getByText("Library content")).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /unlock/i })).toBeNull();
     expect(screen.queryByText(/until re-lock/i)).toBeNull();
   });
 
-  it("student + gate OFF → still locks (the toggle never frees students)", async () => {
+  it("student + gate OFF → renders children without lock UI", () => {
     state.coinGateEnabled = false;
     setSession(STUDENT_USER);
 
     renderGate();
 
-    expect(await screen.findByText(LOCK_COPY)).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: /upgrade your plan/i }),
-    ).toBeInTheDocument();
+    expect(screen.getByText("Library content")).toBeInTheDocument();
+    expect(screen.queryByText(LOCK_COPY)).toBeNull();
   });
 
-  it("owner + gate ON → billed like a student (bill-everyone)", async () => {
+  it("owner + gate ON → renders children without lock UI", () => {
     state.coinGateEnabled = true;
     setSession(OWNER_USER);
 
     renderGate();
 
-    expect(await screen.findByText(LOCK_COPY)).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: /upgrade your plan/i }),
-    ).toBeInTheDocument();
+    expect(screen.getByText("Library content")).toBeInTheDocument();
+    expect(screen.queryByText(LOCK_COPY)).toBeNull();
   });
 
-  it("guest + gate OFF → the lock stays (gate OFF only frees owner emails)", async () => {
+  it("guest + gate OFF → renders children without lock UI", () => {
     state.coinGateEnabled = false;
     setSession(null);
 
     renderGate();
 
-    expect(await screen.findByText(LOCK_COPY)).toBeInTheDocument();
-    expect(
-      screen.getByRole("button", { name: /upgrade your plan/i }),
-    ).toBeInTheDocument();
+    expect(screen.getByText("Library content")).toBeInTheDocument();
+    expect(screen.queryByText(LOCK_COPY)).toBeNull();
   });
 });
 
