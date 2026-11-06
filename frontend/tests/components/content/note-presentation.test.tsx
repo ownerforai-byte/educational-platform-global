@@ -72,9 +72,8 @@ describe("note presentation classification", () => {
     ]);
   });
 
-  it("limits Nepali syllabus pro topics to language companion tabs only", () => {
-    const tabs = buildCompanionTabs("nepali-syllabus-pro");
-    expect(tabs.map((tab) => tab.id)).toEqual([
+  it("limits Nepali and English syllabus pro topics to language companion tabs only", () => {
+    const languageTabs = [
       "notes",
       "self-check",
       "related",
@@ -82,7 +81,10 @@ describe("note presentation classification", () => {
       "exam-tips",
       "journal",
       "resources",
-    ]);
+    ];
+    expect(buildCompanionTabs("language-syllabus-pro").map((tab) => tab.id)).toEqual(languageTabs);
+    // The legacy Nepali id resolves to the same language set.
+    expect(buildCompanionTabs("nepali-syllabus-pro").map((tab) => tab.id)).toEqual(languageTabs);
   });
 
   it("opens only the canonical source from resources without repeating note content", async () => {

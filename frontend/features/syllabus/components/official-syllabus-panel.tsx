@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { FlaskConical } from "lucide-react";
 import type { UnitVM } from "../types";
+import { hasLanguageProTrack } from "../language-pro";
 
 type OfficialSyllabusPanelProps = {
   heading?: string;
@@ -102,9 +103,9 @@ export function OfficialSyllabusPanel({
                 <ol className="ml-5 list-decimal space-y-1 text-sm text-muted-foreground">
                   {(unit.topicEntries ?? []).map((topic) => {
                     const highlighted = highlightTopicSlug === topic.slug && isHighlightedUnit;
-                    const nepaliPro = basePath?.endsWith("/nepali");
+                    const languagePro = hasLanguageProTrack(basePath?.split("/").pop() ?? "");
                     const topicHref = basePath
-                      ? `${basePath}/chapters/${unit.id}/topics/${topic.slug}${nepaliPro ? "/pro" : ""}`
+                      ? `${basePath}/chapters/${unit.id}/topics/${topic.slug}${languagePro ? "/pro" : ""}`
                       : undefined;
                     return (
                       <li

@@ -41,6 +41,7 @@ import { TrigonometryResources } from "./trigonometry-resources";
 import { VectorsResources } from "./vectors-resources";
 import { StatisticsProbabilityResources } from "./statistics-probability-resources";
 import { getTopicPath } from "@/features/syllabus/content-router";
+import { hasLanguageProTrack } from "@/features/syllabus/language-pro";
 import { getTopicEntryBySlug } from "@/lib/syllabus";
 import type { SyllabusUnit } from "@/lib/syllabus";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -56,7 +57,11 @@ import {
 } from "@/features/r1/hooks";
 import type { R1JournalEntry } from "@/lib/api/r1";
 
-export type CompanionTabProfile = "default" | "nepali-syllabus-pro";
+export type CompanionTabProfile =
+  | "default"
+  | "language-syllabus-pro"
+  /** Legacy id kept so existing call sites keep resolving to the language set. */
+  | "nepali-syllabus-pro";
 
 type ContentTabsProps = {
   classSlug: string;
@@ -257,8 +262,11 @@ type ContentTab = {
   description: string;
 };
 
-/** Nepali syllabus pro topics — language study surface (no STEM practice rails). */
-export const NEPALI_SYLLABUS_PRO_TAB_IDS = [
+/**
+ * Language syllabus pro topics (Nepali and English) — the language study
+ * surface: companion tabs only, no STEM practice rails.
+ */
+export const LANGUAGE_SYLLABUS_PRO_TAB_IDS = [
   "notes",
   "self-check",
   "related",
@@ -282,8 +290,8 @@ const ALL_COMPANION_TABS: ContentTab[] = [
 ];
 
 export function buildCompanionTabs(profile: CompanionTabProfile = "default"): ContentTab[] {
-  if (profile === "nepali-syllabus-pro") {
-    const allowed = new Set<string>(NEPALI_SYLLABUS_PRO_TAB_IDS);
+  if (profile !== "default") {
+    const allowed = new Set<string>(LANGUAGE_SYLLABUS_PRO_TAB_IDS);
     return ALL_COMPANION_TABS.filter((tab) => allowed.has(tab.id));
   }
   return ALL_COMPANION_TABS;
@@ -588,7 +596,7 @@ export function ContentTabs({
   const topicPath = getTopicPath(classSlug, subjectSlug, unitId, topicSlug);
 
   const resolvedProfile: CompanionTabProfile =
-    tabProfile ?? (subjectSlug === "nepali" ? "nepali-syllabus-pro" : "default");
+    tabProfile ?? (hasLanguageProTrack(subjectSlug) ? "language-syllabus-pro" : "default");
 
   const tabs = useMemo(() => buildCompanionTabs(resolvedProfile), [resolvedProfile]);
 

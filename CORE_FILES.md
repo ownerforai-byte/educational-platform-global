@@ -58,6 +58,8 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/lib/note-routes.ts` | Canonical note routing and `duplicateType` source selection. |
 | `frontend/components/content/topic-vertical-notes.tsx` | Single theory presentation surface for every canonical topic note. |
 | `frontend/components/content/content-tabs.tsx` | Companion-only topic tabs; no repeated theory, formulas, summaries, or practice. |
+| `frontend/features/syllabus/language-pro.ts` | Language pro registry (`LANGUAGE_PRO_SUBJECTS`) — the one list that decides which subjects get companion-only topic pages; read by the `/pro` routes, the tab profile resolver and the topic links. |
+| `frontend/features/syllabus/components/language-pro-topic-view.tsx` | The language topic surface (Nepali and English) rendered by `/chapters/[unit]/topics/[topicSlug]/pro` — seven companion tabs only. |
 | `frontend/components/content/ravikishan-topic-resources.tsx` | Resources-panel shortcut to the canonical topic notes; never a second note renderer. |
 | `frontend/lib/access-level.ts` | **Access ladder** (`visitor → member → plus → pro → owner`): rung resolution, rank comparisons, and the hardcoded `TIER_HOME_PATHS` map (`tierHomePathFor`) that every login flow uses to land the viewer on their own tier interface. |
 | `frontend/components/home/tier-home-router.tsx` | **Instant tier router** (root `/`): resolves the session's rung on first paint and replaces the view with the viewer's exact tier page — visitors, and only visitors, see `HomePublic`. |

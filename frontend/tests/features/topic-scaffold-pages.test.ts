@@ -7,6 +7,9 @@ import {
   getExerciseType,
   getExerciseTypes,
 } from "@/features/syllabus/exercise-types";
+import { LANGUAGE_PRO_SUBJECTS, hasLanguageProTrack } from "@/features/syllabus/language-pro";
+import { generateStaticParams as class11ProParams } from "@/app/(app)/class-11-notes/[subject]/chapters/[unit]/topics/[topicSlug]/pro/page";
+import { generateStaticParams as class12ProParams } from "@/app/(app)/class-12-notes/[subject]/chapters/[unit]/topics/[topicSlug]/pro/page";
 
 /**
  * The Nepali tree and the per-topic "Concepts, Legends & Facts" pages are
@@ -56,6 +59,45 @@ describe("topic scaffold pages (Nepali + Concepts/Legends & Facts)", () => {
       }
     }
     expect(checked).toBeGreaterThan(0);
+  });
+
+  it("every Nepali and English topic has a companion pro page route", () => {
+    expect([...LANGUAGE_PRO_SUBJECTS]).toEqual(["nepali", "english"]);
+    expect(hasLanguageProTrack("physics")).toBe(false);
+
+    let checked = 0;
+    for (const cls of SYLLABUS) {
+      for (const subjectSlug of LANGUAGE_PRO_SUBJECTS) {
+        const subject = cls.subjects.find((s) => s.slug === subjectSlug);
+        expect(subject, `${cls.slug} is missing the ${subjectSlug} syllabus`).toBeTruthy();
+        for (const unit of subject!.units) {
+          for (const entry of getUnitTopicEntries(unit)) {
+            expect(
+              routeExists(
+                `/${cls.slug}/${subjectSlug}/chapters/${unit.id}/topics/${entry.slug}/pro`,
+                routes,
+              ),
+              `${cls.slug}/${subjectSlug}/${unit.id}/${entry.slug}/pro route missing`,
+            ).toBe(true);
+            checked += 1;
+          }
+        }
+      }
+    }
+    // Nepali (51 topics) + English (116 topics) across the two class tracks.
+    expect(checked).toBe(167);
+  });
+
+  it("the pro pages prerender every Nepali and English topic, and nothing else", () => {
+    const params = [...class11ProParams(), ...class12ProParams()];
+    expect(params).toHaveLength(167);
+
+    const bySubject = params.reduce<Record<string, number>>((acc, p) => {
+      acc[p.subject] = (acc[p.subject] ?? 0) + 1;
+      return acc;
+    }, {});
+    expect(bySubject).toEqual({ nepali: 51, english: 116 });
+    expect(new Set(params.map((p) => p.subject))).toEqual(new Set(LANGUAGE_PRO_SUBJECTS));
   });
 
   it("every Nepali topic has an exercise page for every exercise type", () => {

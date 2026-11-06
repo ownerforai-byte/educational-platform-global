@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { EmptyState } from "@/components/content/empty-state";
 import { getUnit } from "../queries";
+import { hasLanguageProTrack } from "../language-pro";
 import { OfficialSyllabusPanel } from "./official-syllabus-panel";
 import { SubjectSectionNav } from "./subject-section-nav";
 import {
@@ -75,7 +76,7 @@ export function ChapterDetailView({
               <Link
                 key={topic.slug}
                 href={
-                  subjectSlug === "nepali"
+                  hasLanguageProTrack(subjectSlug)
                     ? `${basePath}/chapters/${unit.id}/topics/${topic.slug}/pro`
                     : `${basePath}/chapters/${unit.id}/topics/${topic.slug}`
                 }

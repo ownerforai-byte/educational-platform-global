@@ -9,6 +9,7 @@ import { SubjectSectionNav } from "./subject-section-nav";
 import { getUnitTopic } from "../queries";
 import { ContentTabs } from "@/components/content/content-tabs";
 import { TopicProgressControls } from "@/components/progress/topic-progress-controls";
+import { hasLanguageProTrack } from "../language-pro";
 import { ChevronRight, ArrowLeft, Lightbulb, NotebookPen } from "lucide-react";
 
 export async function TopicDetailView({
@@ -112,16 +113,16 @@ export async function TopicDetailView({
         unitId={unitId}
         topicSlug={topic.slug}
         unit={unit}
-        tabProfile={subjectSlug === "nepali" ? "nepali-syllabus-pro" : "default"}
+        tabProfile={hasLanguageProTrack(subjectSlug) ? "language-syllabus-pro" : "default"}
       />
 
-      {subjectSlug === "nepali" && (
+      {hasLanguageProTrack(subjectSlug) && (
         <p className="text-sm text-muted-foreground">
           <Link
             href={`${basePath}/chapters/${unit.id}/topics/${topic.slug}/pro`}
             className="font-semibold text-primary hover:underline"
           >
-            Open pro study view
+            Open the companion study view
           </Link>
           {" — "}
           notes, self-check, related topics, bounds, exam tips, journal and resources only.
