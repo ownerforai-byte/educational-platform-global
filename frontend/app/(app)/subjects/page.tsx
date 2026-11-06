@@ -55,7 +55,7 @@ function SubjectCard({ subject, classLabel, notesSlug }: {
   const grad = getGradient(subject.slug);
   return (
     <Link href={`/${notesSlug}/${subject.slug}`}
-      className="flex flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
+      className="flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
       <div className="relative flex items-center justify-center py-6"
         style={{ background: `linear-gradient(135deg, ${grad.from}, ${grad.to})` }}>
         <div className="absolute right-2.5 top-2.5"><StatusBadge status="New" /></div>
@@ -80,7 +80,7 @@ function SubjectCard({ subject, classLabel, notesSlug }: {
 // ─── Coming-soon stub card ─────────────────────────────────────────────────
 function StubCard({ name, classLabel, color }: { name: string; classLabel: string; color: string }) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-3xl border border-dashed border-border/50 bg-muted/20 opacity-70">
+    <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-dashed border-border/50 bg-muted/20 opacity-70">
       <div className="relative flex items-center justify-center py-6"
         style={{ background: `linear-gradient(135deg, ${color}60, ${color}30)` }}>
         <div className="absolute right-2.5 top-2.5">
@@ -130,6 +130,7 @@ const STUB_SUBJECTS: Record<"8" | "9" | "10", Array<{ name: string; color: strin
 
 // ─── Page ──────────────────────────────────────────────────────────────────
 type ClassFilter = "Class 8" | "Class 9" | "Class 10" | "Class 11" | "Class 12";
+const CLASS_FILTERS: ClassFilter[] = ["Class 8", "Class 9", "Class 10", "Class 11", "Class 12"];
 
 export default function SubjectsPage() {
   const [classFilter, setClassFilter] = useState<ClassFilter>("Class 11");
@@ -174,11 +175,12 @@ export default function SubjectsPage() {
 
       {/* Class filter pills */}
       <div className="flex gap-2 overflow-x-auto border-b border-border/60 pb-3">
-        {(["Class 8", "Class 9", "Class 10", "Class 11", "Class 12"] as ClassFilter[]).map((c) => (
+        {CLASS_FILTERS.map((c, index) => (
           <button key={c} type="button" onClick={() => setClassFilter(c)}
-            className={`shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${
+            className={`sequential-block-reveal shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${
               classFilter === c ? "bg-primary text-primary-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
-            }`}>
+            }`}
+            style={{ animationDelay: `${index * 90}ms` }}>
             {c}
           </button>
         ))}
@@ -195,13 +197,17 @@ export default function SubjectsPage() {
       )}
 
       {/* Cards */}
-      <div className="grid grid-cols-2 gap-3">
+      <div key={classFilter} className="grid grid-cols-2 gap-3">
         {isLive
-          ? liveSubjects.map((s) => (
-              <SubjectCard key={s.slug} subject={s as any} classLabel={classFilter} notesSlug={notesSlug} />
+          ? liveSubjects.map((s, index) => (
+              <div key={s.slug} className="sequential-block-reveal" style={{ animationDelay: `${(CLASS_FILTERS.length + index) * 90}ms` }}>
+                <SubjectCard subject={s as any} classLabel={classFilter} notesSlug={notesSlug} />
+              </div>
             ))
-          : stubSubjects.map((s) => (
-              <StubCard key={s.name} name={s.name} classLabel={classFilter} color={s.color} />
+          : stubSubjects.map((s, index) => (
+              <div key={s.name} className="sequential-block-reveal" style={{ animationDelay: `${(CLASS_FILTERS.length + index) * 90}ms` }}>
+                <StubCard name={s.name} classLabel={classFilter} color={s.color} />
+              </div>
             ))
         }
       </div>
