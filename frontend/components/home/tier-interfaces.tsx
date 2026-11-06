@@ -32,7 +32,7 @@ import {
   quickLinkUnlocked,
 } from "@/lib/navigation";
 import { HomeSubjectRails } from "@/components/home/home-subject-rails";
-import { HomeFeaturesSparkGate } from "@/components/home/home-features-spark-gate";
+import { SparkGate } from "@/features/credits/spark-gate";
 
 /**
  * THE TIER INTERFACES — hardcoded (owner direction 2026-10-23:
@@ -249,9 +249,13 @@ function TierPage({
       <TierHero tier={tier} headline={headline} blurb={blurb} />
       <QuickLinksRail tier={tier} />
       <SpotlightRow items={spotlights} />
-      <HomeFeaturesSparkGate>
+      <SparkGate
+        minLevel="pro"
+        title="Home features"
+        description="Subject rails, study tools and the full home dashboard open on the Pro plan."
+      >
         <HomeSubjectRails />
-      </HomeFeaturesSparkGate>
+      </SparkGate>
       <OpenSectionsRail tier={tier} />
       <NextRungTeaser tier={tier} />
     </div>

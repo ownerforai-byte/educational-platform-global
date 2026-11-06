@@ -54,7 +54,6 @@ import {
 } from "@/lib/ai/guest-quota";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { CoinGateDot } from "@/features/credits/coin-gate-dot";
 import { isOwnerEmail } from "@/lib/owner";
 import { AiSparkBadge, recordAiSparkUse, refreshAiSparkMeters } from "@/components/ai/ai-spark-badge";
 import { FloatingIdeaChips } from "@/components/ai/floating-idea-chips";
@@ -1072,10 +1071,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           </div>
           <div className="p-3 border-t border-border/50">
             <div className="flex items-center gap-2 text-[10px] text-muted-foreground">
-              {isLoggedIn && isOwner ? (
-                // Owner + gate OFF → only the small windy dot shows the state.
-                <CoinGateDot />
-              ) : isLoggedIn ? (
+              {isLoggedIn ? (
                 <>
                   <Sparkles className="h-3.5 w-3.5 text-primary" />
                   <span className="font-semibold">Free chat · unlimited</span>
@@ -1136,9 +1132,6 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   ? `${MAX_GUEST_MESSAGES - guestCount} free ${MAX_GUEST_MESSAGES - guestCount === 1 ? "message" : "messages"} today`
                   : "Daily free pool used"}
               </span>
-            )}
-            {isLoggedIn && isOwner && (
-              <CoinGateDot className="hidden sm:inline-flex" />
             )}
             {isLoggedIn && <AiSparkBadge className="hidden sm:inline-flex" />}
             {/* New chat — opens a fresh conversation (same as the sidebar button) */}

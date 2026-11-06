@@ -1,12 +1,13 @@
 import { Router, Request, Response } from "express";
-import { AI_MESSAGE_COST, DAILY_CREDIT_POOL, isCoinGateEnabled } from "../utils/credits";
+import { AI_MESSAGE_COST, DAILY_CREDIT_POOL } from "../utils/credits";
 import { readSectionMinTiers } from "../utils/sectionTiers";
 
 /**
  * Public runtime config — the platform flags the UI must mirror, with no auth.
  *
- * Publishes the owner content-spark toggle (`settings.coin_gate_enabled`) plus
- * pool constants. AI chat is metered by AI sparks separately (see aiSpark.ts).
+ * Publishes the pool constants plus owner-set section minimums. AI chat is
+ * metered by AI sparks separately (see aiSpark.ts). The owner coin-gate flag is
+ * gone: content access is decided by the tier section registry and SparkGate.
  *
  * Exposes nothing user-specific and nothing the billing behaviour does not
  * already reveal.
@@ -17,7 +18,6 @@ router.get("/", async (_req: Request, res: Response) => {
   try {
     res.setHeader("Cache-Control", "no-store");
     res.json({
-      coinGateEnabled: await isCoinGateEnabled(),
       dailyCreditPool: DAILY_CREDIT_POOL,
       aiMessageCost: AI_MESSAGE_COST,
       // Owner-set section minimums (sectionId → rung) — empty when the code

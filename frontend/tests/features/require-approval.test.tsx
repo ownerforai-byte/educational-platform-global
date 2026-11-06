@@ -122,19 +122,19 @@ describe("RequireApproval — login + owner-approval wall", () => {
 describe("auth wall wiring", () => {
   const read = (p: string) => readFileSync(path.resolve(p), "utf8");
 
-  it("is mounted in the (app) layout, in front of the coin gate", () => {
+  it("is mounted in the (app) layout, in front of the spark gate", () => {
     const layout = read("app/(app)/layout.tsx");
     expect(layout).toContain(
       'import { RequireApproval } from "@/features/auth/components/require-approval"',
     );
     expect(layout).toContain("<RequireApproval>");
 
-    // The auth wall wraps (sits outside) RouteCreditGate, so a signed-out
-    // visitor meets the approval lock first — never a coin ask.
+    // The auth wall wraps (sits outside) SparkGate, so a signed-out visitor
+    // meets the approval lock first — never a tier card.
     const authWall = layout.indexOf("<RequireApproval>");
-    const coinGate = layout.indexOf("<RouteCreditGate>");
+    const sparkGate = layout.indexOf("<SparkGate>");
     expect(authWall).toBeGreaterThan(-1);
-    expect(coinGate).toBeGreaterThan(authWall);
+    expect(sparkGate).toBeGreaterThan(authWall);
   });
 
   it("keeps the guest home and the plans page public, and the notice board member-only", () => {

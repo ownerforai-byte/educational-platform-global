@@ -3,7 +3,7 @@
  *
  * Public surface:
  *   - <CreditProvider>  → mount once in the root layout
- *   - <CreditGate>      → blur/overlay any coin-gated block
+ *   - <SparkGate>       → THE gate: route sections and inline blocks
  *   - <DirectoryCard>   → the single gated opening for the academic directory
  *   - useCredit()       → session, coins, unlock windows, notice control
  *   - useSessionTimer() → frame-by-frame unlock countdown
@@ -11,9 +11,8 @@
 
 export { CreditProvider, useCredit } from "./credit-provider";
 export type { CreditContextValue } from "./credit-provider";
-export { CreditGate } from "./credit-gate";
-export { CoinGateDot } from "./coin-gate-dot";
-export type { CreditGateProps } from "./credit-gate";
+export { SparkGate } from "./spark-gate";
+export type { SparkGateProps } from "./spark-gate";
 export { DirectoryCard } from "./directory-card";
 export { AdminApprovalModal } from "./admin-approval-modal";
 export type { AdminApprovalModalProps } from "./admin-approval-modal";

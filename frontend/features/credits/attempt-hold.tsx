@@ -4,11 +4,11 @@
  * Attempt hold: lets a view with an in-progress, state-only attempt (a timed
  * mock paper) survive the 20-minute spark window ending.
  *
- * RouteCreditGate provides the context. While a view holds, the gate keeps
- * the SAME element tree mounted after the window closes (no remount, so
- * paper/answers/marks/timer survive) and reports `windowOpen: false` so the
- * view can refuse to START a new attempt without a fresh unlock. Outside a
- * gate the default context is "open, no-op", so views stay testable alone.
+ * The route gates that used to provide the context are gone (the coin gate
+ * was removed 2026-11-06), so every view now runs on the default context:
+ * "open, no-op". The hook stays because the timed-attempt views still call it,
+ * and because a future timed gate can supply a real window without touching
+ * the views.
  */
 
 import { createContext, useContext, useEffect } from "react";

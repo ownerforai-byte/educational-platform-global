@@ -8,7 +8,8 @@ import path from "node:path";
  *
  * The 118-element table itself stays open to members. Filters, block
  * characteristics, and every CEE surface open at Plus — not by spending
- * content sparks.
+ * content sparks. Since 2026-11-06 all of them use the one SparkGate, so there
+ * is no CEE-specific gate component left to drift from it.
  *
  * The gate is client-side (the session resolves in the browser), so — same
  * style as tests/features/home-subject-rails-owner-gate.test.ts — we pin the
@@ -25,19 +26,22 @@ const between = (src: string, from: string, to: string) => {
   return src.slice(start, end);
 };
 
+/** The inline gate that opens a CEE surface (multi-line or compact). */
+const INLINE_GATE = /<SparkGate\s[^>]*minLevel="plus"/;
+
 describe("Periodic table CEE Spark gate", () => {
   it("gates the CEE dossier tab (default tab — past MCQs, traps, speed formulas)", () => {
     const view = read("components/periodic-table/periodic-table-view.tsx");
     expect(view).toContain(
-      'import { CeeSparkGate } from "@/components/periodic-table/cee-spark-gate"',
+      'import { SparkGate } from "@/features/credits/spark-gate"',
     );
     const pyqsTab = between(
       view,
       '{activeDossierTab === "pyqs" && (',
       "{/* ── TAB 2: HALLMARK CHEMICAL REACTIONS",
     );
-    expect(pyqsTab).toContain("<CeeSparkGate>");
-    expect(pyqsTab).toContain("</CeeSparkGate>");
+    expect(pyqsTab).toMatch(INLINE_GATE);
+    expect(pyqsTab).toContain("</SparkGate>");
   });
 
   it("gates the CEE high-yield summary inside the ores/facts tab", () => {
@@ -47,8 +51,8 @@ describe("Periodic table CEE Spark gate", () => {
       "{/* CEE High-Yield Summary",
       "{/* Key Ores & Minerals */}",
     );
-    expect(highYield).toContain("<CeeSparkGate compact>");
-    expect(highYield).toContain("</CeeSparkGate>");
+    expect(highYield).toContain('<SparkGate minLevel="plus" compact>');
+    expect(highYield).toContain("</SparkGate>");
   });
 
   it("gates both CEE high-frequency fact panels (hover + block dossier)", () => {
@@ -60,10 +64,10 @@ describe("Periodic table CEE Spark gate", () => {
       "grid gap-2 sm:grid-cols-2 pt-1.5 border-t border-border/40",
       "{/* ── 3. LIVE ELEMENT INSPECTION DECK",
     );
-    const hoverGate = hover.indexOf("<CeeSparkGate compact>");
+    const hoverGate = hover.indexOf('<SparkGate minLevel="plus" compact>');
     expect(hoverGate).toBeGreaterThan(-1);
     expect(hoverGate).toBeLessThan(hover.indexOf("CEE high-frequency facts"));
-    expect(hover.match(/<\/CeeSparkGate>/g) ?? []).toHaveLength(1);
+    expect(hover.match(/<\/SparkGate>/g) ?? []).toHaveLength(1);
 
     // Block dossier: the gate wraps the CEE facts card next to trend facts.
     const block = between(
@@ -71,17 +75,17 @@ describe("Periodic table CEE Spark gate", () => {
       "{/* Trend facts + CEE facts */}",
       "{/* Modal Footer */}",
     );
-    const blockGate = block.indexOf("<CeeSparkGate compact>");
+    const blockGate = block.indexOf('<SparkGate minLevel="plus" compact>');
     expect(blockGate).toBeGreaterThan(-1);
     expect(blockGate).toBeLessThan(block.indexOf("CEE High-Frequency Facts"));
-    expect(block.match(/<\/CeeSparkGate>/g) ?? []).toHaveLength(1);
+    expect(block.match(/<\/SparkGate>/g) ?? []).toHaveLength(1);
   });
 
   it("keeps the base table, reactions, ores and constants tabs free", () => {
     // Exactly four gated surfaces — the CEE ones — and nothing else.
     const view = read("components/periodic-table/periodic-table-view.tsx");
-    const opens = view.match(/<CeeSparkGate( compact)?>/g) ?? [];
-    const closes = view.match(/<\/CeeSparkGate>/g) ?? [];
+    const opens = view.match(/<SparkGate\s[^>]*minLevel="plus"/g) ?? [];
+    const closes = view.match(/<\/SparkGate>/g) ?? [];
     expect(opens).toHaveLength(4);
     expect(closes).toHaveLength(4);
 
@@ -90,7 +94,7 @@ describe("Periodic table CEE Spark gate", () => {
       '{activeDossierTab === "reactions" && (',
       "{/* ── TAB 3: ORES, MINERALS & FACTS",
     );
-    expect(reactions).not.toContain("CeeSparkGate");
+    expect(reactions).not.toContain("SparkGate");
   });
 
   it("route policy still leaves /periodic-table itself free", () => {
@@ -102,15 +106,22 @@ describe("Periodic table CEE Spark gate", () => {
   });
 });
 
-describe("CeeSparkGate component", () => {
-  const gate = read("components/periodic-table/cee-spark-gate.tsx");
+describe("SparkGate — the only gate component", () => {
+  const gate = read("features/credits/spark-gate.tsx");
 
-  it("opens at Plus — members see the table, not a coin unlock", () => {
+  it("opens inline surfaces at an explicit rung", () => {
     expect(gate).toContain('"use client"');
-    expect(gate).toContain('hasLevel(user, "plus")');
+    expect(gate).toContain('minLevel?: AccessLevel');
+    expect(gate).toContain("hasLevel(user, minLevel)");
     expect(gate).toContain("if (isLoading) return null;");
-    expect(gate).not.toContain("CreditGate");
     expect(gate).not.toContain("@gmail.com");
+  });
+
+  it("replaces the retired per-page gates completely", () => {
+    // No coin gate, credit gate or CEE/home one-off survives next to it.
+    expect(read("features/credits/index.ts")).not.toContain("CreditGate");
+    expect(read("features/credits/index.ts")).not.toContain("CoinGate");
+    expect(read("app/(app)/layout.tsx")).not.toContain("SectionTierGate");
   });
 });
 

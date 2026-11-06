@@ -6,9 +6,9 @@ import { supabaseAdmin } from "../db/supabase";
  *  - Spent ONLY on actual note/content unlocks (api/user.ts POST /credits/unlock).
  *  - Veer chat and AI Studio tools use AI sparks instead (utils/aiSpark.ts).
  *  - Every signed-in user gets DAILY_CREDIT_POOL content sparks at UTC midnight.
- *  - Owner-allowlist emails follow coin_gate_enabled:
- *      gate ON  → owners spend content sparks on unlocks like students;
- *      gate OFF → owners unlock notes without spending content sparks.
+ *  - Everyone with a pool — owners included — spends content sparks on
+ *    unlocks. There is no owner on/off switch: the coin gate was removed
+ *    2026-11-06 and content access is the SparkGate's business.
  *  - PRO (premium_status) has unlimited content sparks for unlocks.
  *  - Refunds on failed unlocks are handled at the unlock route.
  *  - HARDENED 2026-09-27: no mid-day refill except owner grants / midnight cron.
@@ -34,67 +34,6 @@ export const DAILY_CREDIT_POOL = 4;
 
 /** @deprecated AI chat uses AI sparks — kept at 0 for legacy /api/config clients. */
 export const AI_MESSAGE_COST = 0;
-
-// ── Coin gate (owner toggle 2026-10-02, content sparks 2026-10-26) ──────────
-// The profile button controls OWNER-allowlist emails ONLY for CONTENT unlocks:
-//   gate ON  → owners spend content sparks on note unlocks;
-//   gate OFF → owners unlock notes without spending content sparks.
-// Students/customers always spend content sparks on unlocks (PRO unlimited).
-//
-// The flag is GLOBAL: one row controls ALL owner-allowlist emails at once.
-// Profile toggle ON  → coin billing enabled for every owner gmail.
-// Profile toggle OFF → no owner gmail is asked for coins (free mode for owners).
-let coinGateCache: { enabled: boolean; at: number } | null = null;
-const COIN_GATE_TTL_MS = 15_000;
-
-/**
- * Normalise any stored encoding of the flag to "is the gate OFF?".
- *
- * The settings.value column is untyped (boolean, number, or string depending
- * on who wrote it), so a strict `=== false` check keeps the gate stuck ON
- * when the row holds "false" / 0 / "0" / "off". Every falsy encoding counts
- * as OFF; anything else (including missing) counts as ON (fail closed).
- */
-export function isCoinGateOffValue(value: unknown): boolean {
-  if (value === false) return true;
-  if (value === 0) return true;
-  if (typeof value === "string") {
-    const v = value.trim().toLowerCase();
-    return v === "false" || v === "0" || v === "off" || v === "no" || v === "disabled";
-  }
-  if (value !== null && typeof value === "object") {
-    const rec = value as Record<string, unknown>;
-    if ("enabled" in rec) return isCoinGateOffValue(rec.enabled);
-    if ("value" in rec) return isCoinGateOffValue(rec.value);
-  }
-  return false;
-}
-
-/** Drop the cached flag so a profile toggle takes effect immediately. */
-export function invalidateCoinGateCache(): void {
-  coinGateCache = null;
-}
-
-/** True when owner emails spend content sparks on note unlocks (the default). */
-export async function isCoinGateEnabled(): Promise<boolean> {
-  const now = Date.now();
-  if (coinGateCache && now - coinGateCache.at < COIN_GATE_TTL_MS) {
-    return coinGateCache.enabled;
-  }
-  let enabled = true; // default ON: bill unless the owner explicitly turns it off
-  try {
-    const { data } = await supabaseAdmin
-      .from("settings")
-      .select("value")
-      .eq("key", "coin_gate_enabled")
-      .maybeSingle();
-    if (data && isCoinGateOffValue((data as { value?: unknown }).value)) enabled = false;
-  } catch {
-    // Fail closed to billing — the safer default on a settings read error.
-  }
-  coinGateCache = { enabled, at: now };
-  return enabled;
-}
 
 /** How often a CAS write re-reads and retries before giving up. */
 const CAS_ATTEMPTS = 4;

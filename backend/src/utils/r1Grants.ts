@@ -4,8 +4,8 @@ import { supabaseAdmin } from "../db/supabase";
  * R1 grant registry lookups (migration 009).
  *
  * Grants are stored per EMAIL so an owner can grant before the person signs
- * up. The active-grant set is cached for 60 s (same spirit as
- * `isCoinGateEnabled`) so every R1 request does not page the table.
+ * up. The active-grant set is cached for 60 s (same spirit as the section
+ * minimum registry) so every R1 request does not page the table.
  *
  * Failure mode: fail CLOSED — if the table cannot be read, nobody outside the
  * owner allowlist gets R1.

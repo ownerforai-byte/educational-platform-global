@@ -21,11 +21,11 @@ describe("Home subject rails owner gate", () => {
     expect(home).toContain("TierHomeRouter");
     const tierShell = read("components/home/tier-interfaces.tsx");
     expect(tierShell).toContain(
-      'import { HomeFeaturesSparkGate } from "@/components/home/home-features-spark-gate"',
+      'import { SparkGate } from "@/features/credits/spark-gate"',
     );
     const gate =
-      tierShell.match(/<HomeFeaturesSparkGate>[\s\S]*?<\/HomeFeaturesSparkGate>/)?.[0] ??
-      "";
+      tierShell.match(/<SparkGate[\s\S]*?<\/SparkGate>/)?.[0] ?? "";
+    expect(gate).toContain('minLevel="pro"');
     expect(gate).toContain("<HomeSubjectRails />");
     // The rails are a SERVER component (node:fs data modules), rendered by the
     // protected route directly; client session switching belongs to its layout.

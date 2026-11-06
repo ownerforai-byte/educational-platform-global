@@ -3,12 +3,12 @@ import { apiFetch } from "../api-client";
 /**
  * Public runtime flags from GET /api/config (no auth, no user data).
  *
- * coin_gate_enabled: owner emails spend content sparks on note unlocks when ON.
- * AI chat is metered separately via AI sparks (not this flag).
+ * The owner ON/OFF coin gate is gone (removed 2026-11-06): access is decided by
+ * the tier section registry and SparkGate, so this payload only carries the pool
+ * constants and the owner-set section minimums. AI chat is metered separately
+ * via AI sparks, not here.
  */
 export interface PublicConfig {
-  /** True when owner emails spend content sparks on unlocks (default). */
-  coinGateEnabled: boolean;
   /** Daily content spark pool for signed-in users. */
   dailyCreditPool: number;
   /** Legacy — always 0; AI uses AI sparks. */
@@ -20,9 +20,8 @@ export interface PublicConfig {
   sectionMinTiers: Record<string, string>;
 }
 
-/** Server default when the config read fails: the gate stays ON (billing). */
+/** Server default when the config read fails. */
 export const DEFAULT_PUBLIC_CONFIG: PublicConfig = {
-  coinGateEnabled: true,
   dailyCreditPool: 4,
   aiMessageCost: 0,
   sectionMinTiers: {},
@@ -30,13 +29,12 @@ export const DEFAULT_PUBLIC_CONFIG: PublicConfig = {
 
 /**
  * Read the public runtime config. Never throws: a failed read falls back to the
- * platform default (gate ON), so a config hiccup cannot silently unlock billing.
+ * platform defaults, so a config hiccup cannot blank the section minimums.
  */
 export async function getPublicConfig(): Promise<PublicConfig> {
   try {
     const cfg = await apiFetch<Partial<PublicConfig>>("/api/config");
     return {
-      coinGateEnabled: cfg?.coinGateEnabled !== false,
       dailyCreditPool:
         typeof cfg?.dailyCreditPool === "number"
           ? cfg.dailyCreditPool

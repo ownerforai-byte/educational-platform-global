@@ -75,7 +75,7 @@ const CASES: Case[] = [
   { name: "community-space", View: () => <CommunitySpaceView space={space} />, section: "community", minTier: "plus", path: "/community/x", sparkGated: false, comingSoon: true },
   { name: "community", View: CommunityView, section: "community", minTier: "plus", path: "/community", sparkGated: false, comingSoon: false },
   { name: "dashboard", View: DashboardView, section: "dashboard", minTier: "member", path: "/dashboard", sparkGated: false, comingSoon: true },
-  { name: "downloads", View: DownloadsView, section: "downloads", minTier: "pro", path: "/downloads", sparkGated: true, comingSoon: false },
+  { name: "downloads", View: DownloadsView, section: "downloads", minTier: "owner", path: "/downloads", sparkGated: true, comingSoon: false },
   { name: "mock-exams", View: MockExamsView, section: "mock-exams", minTier: "pro", path: "/mock-exams", sparkGated: true, comingSoon: false },
   { name: "my-notes", View: MyNotesView, section: "my-notes", minTier: "member", path: "/my-notes", sparkGated: false, comingSoon: false },
   { name: "onboarding", View: OnboardingView, section: "onboarding", minTier: "visitor", path: "/onboarding", sparkGated: false, comingSoon: false },

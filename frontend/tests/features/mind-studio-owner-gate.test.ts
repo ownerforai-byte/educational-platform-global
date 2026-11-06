@@ -84,9 +84,10 @@ describe("Diagram Hub route layout — gate now owns the lock", () => {
     // The rails stay behind the Spark gate (owner + Pro see them, others get
     // the lock) — inside the hardcoded tier shell that /home feeds now.
     const tierShell = read("components/home/tier-interfaces.tsx");
-    const gates =
-      tierShell.match(/<HomeFeaturesSparkGate>[\s\S]*?<\/HomeFeaturesSparkGate>/g) ?? [];
-    expect(gates.some((g) => g.includes("<HomeSubjectRails />"))).toBe(true);
+    const gates = tierShell.match(/<SparkGate[\s\S]*?<\/SparkGate>/g) ?? [];
+    expect(
+      gates.some((g) => g.includes('minLevel="pro"') && g.includes("<HomeSubjectRails />")),
+    ).toBe(true);
   });
 });
 

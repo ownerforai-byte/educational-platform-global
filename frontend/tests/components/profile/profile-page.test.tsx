@@ -122,12 +122,8 @@ beforeEach(() => {
   sessionState.isLoading = false;
   getProgress.mockResolvedValue(progressEntries);
   updateProgress.mockResolvedValue({});
-  getOwnerSettings.mockResolvedValue({
-    settings: [{ key: "coin_gate_enabled", value: true }],
-  });
-  updateOwnerSettings.mockResolvedValue({
-    settings: [{ key: "coin_gate_enabled", value: false }],
-  });
+  getOwnerSettings.mockResolvedValue({ settings: [] });
+  updateOwnerSettings.mockResolvedValue({ settings: [] });
   getAiSparkUsage.mockResolvedValue({
     tier: "owner",
     limit: null,
@@ -239,31 +235,27 @@ describe("ProfilePage", () => {
     expect(screen.getByRole("button", { name: /class 12 science/i })).toBeInTheDocument();
   });
 
-  it("renders Spark Gate on/off switch and button for owner user and allows toggling", async () => {
+  it("has no owner billing switch — access runs through SparkGate", () => {
     sessionState.user = ownerUser;
     render(<ProfilePage />);
 
-    // Owner sees Spark Gate Control ("spark" is the only currency word —
-    // owner decision 2026-10-12)
-    expect(await screen.findByText("Owner Spark Gate Control")).toBeInTheDocument();
-    expect(screen.getByLabelText("Toggle Spark Gate")).toBeInTheDocument();
-    const toggleBtn = screen.getByRole("button", { name: /turn gate off/i });
-    expect(toggleBtn).toBeInTheDocument();
-
-    // Click toggle button to turn OFF
-    fireEvent.click(toggleBtn);
-    await waitFor(() => {
-      expect(updateOwnerSettings).toHaveBeenCalledWith([
-        { key: "coin_gate_enabled", value: false },
-      ]);
-    });
+    // The owner ON/OFF coin gate was removed 2026-11-06: no switch, no dot,
+    // and nothing writes the retired settings key from this page.
+    expect(screen.queryByText("Owner Spark Gate Control")).not.toBeInTheDocument();
+    expect(screen.queryByLabelText("Toggle Spark Gate")).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /turn gate/i })).not.toBeInTheDocument();
+    expect(updateOwnerSettings).not.toHaveBeenCalled();
+    // The owner console shortcut is still there — only the switch is gone.
+    expect(screen.getByRole("link", { name: /owner console/i })).toHaveAttribute(
+      "href",
+      "/owner",
+    );
   });
 
-  it("does not render Spark Gate controller for non-owner student", async () => {
+  it("renders the same wallet for a non-owner student", async () => {
     sessionState.user = studentUser;
     render(<ProfilePage />);
 
-    // Student should not see owner-exclusive spark gate
     expect(screen.queryByText("Owner Spark Gate Control")).not.toBeInTheDocument();
     expect(screen.queryByLabelText("Toggle Spark Gate")).not.toBeInTheDocument();
     // But student DOES see level details

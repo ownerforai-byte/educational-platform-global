@@ -8,7 +8,6 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getOwnerSettings, updateOwnerSettings } from "@/lib/api/owner";
 import type { OwnerSetting } from "@/lib/api/owner";
-import { CoinGateDot } from "@/features/credits/coin-gate-dot";
 
 export default function OwnerSettingsPage() {
   const [settings, setSettings] = useState<OwnerSetting[]>([]);
@@ -19,7 +18,6 @@ export default function OwnerSettingsPage() {
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [savedMsg, setSavedMsg] = useState<string | null>(null);
-  const [coinGate, setCoinGate] = useState<boolean | null>(null);
 
   const load = useCallback(async () => {
     try {
@@ -27,8 +25,6 @@ export default function OwnerSettingsPage() {
       setIsLoading(true);
       const res = await getOwnerSettings();
       setSettings(res.settings ?? []);
-      const gate = (res.settings ?? []).find((s) => s.key === "coin_gate_enabled");
-      setCoinGate(!gate || gate.value !== false);
       const initial: Record<string, string> = {};
       for (const s of res.settings ?? []) {
         initial[s.key] =
@@ -122,24 +118,6 @@ export default function OwnerSettingsPage() {
     }
   };
 
-  const toggleCoinGate = async () => {
-    if (coinGate === null) return;
-    const next = !coinGate;
-    setIsSaving(true);
-    setError(null);
-    setSavedMsg(null);
-    try {
-      await updateOwnerSettings([{ key: "coin_gate_enabled", value: next }]);
-      setCoinGate(next);
-      await load();
-      setSavedMsg("Coin gate saved.");
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Toggle failed");
-    } finally {
-      setIsSaving(false);
-    }
-  };
-
   const dirtyCount = settings.filter(
     (s) => drafts[s.key] !== undefined && drafts[s.key] !== originalString(s)
   ).length;
@@ -181,22 +159,13 @@ export default function OwnerSettingsPage() {
 
       <Card className="border-primary/40">
         <CardHeader className="pb-2">
-          <CardTitle className="text-sm font-medium flex items-center gap-2">
-            Coin gate (whole library + AI chat)
-            {/* The only ON/OFF indicator — everything else is gone
-                (owner request 2026-10-04). */}
-            <CoinGateDot />
-          </CardTitle>
+          <CardTitle className="text-sm font-medium">Spark gate</CardTitle>
         </CardHeader>
-        <CardContent className="flex items-center justify-end">
-          <Button
-            variant={coinGate ? "default" : "outline"}
-            onClick={toggleCoinGate}
-            disabled={isSaving || coinGate === null}
-            className="shrink-0"
-          >
-            {isSaving ? "Saving…" : coinGate === null ? "…" : coinGate ? "Turn gate OFF" : "Turn gate ON"}
-          </Button>
+        <CardContent className="text-sm text-muted-foreground">
+          Access runs through SparkGate and the tier section registry, so there is no
+          owner ON/OFF billing switch to set. Section minimums are edited as
+          <code className="mx-1 rounded bg-muted px-1">section_min_tier.&lt;id&gt;</code>
+          rows below.
         </CardContent>
       </Card>
 

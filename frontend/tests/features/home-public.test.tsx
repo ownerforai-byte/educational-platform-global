@@ -20,8 +20,8 @@ vi.mock("next/navigation", async () => {
   };
 });
 
-vi.mock("@/components/home/home-features-spark-gate", () => ({
-  HomeFeaturesSparkGate: ({ children }: { children: ReactNode }) => <>{children}</>,
+vi.mock("@/features/credits/spark-gate", () => ({
+  SparkGate: ({ children }: { children: ReactNode }) => <>{children}</>,
 }));
 
 vi.mock("@/components/home/home-introduction", () => ({

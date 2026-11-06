@@ -49,7 +49,7 @@ const STALE_60S = 1000 * 60;
 
 // ── Access ──────────────────────────────────────────────────────────────────
 
-// Provider-free cached fetch (pattern: features/credits/use-coin-gate.ts): the
+// Provider-free cached fetch (pattern: lib/hooks/use-section-tiers.ts): the
 // nav surfaces render outside any QueryClientProvider in tests and in the
 // bare-shell paths, so this hook must never depend on React Query.
 const ACCESS_TTL_MS = 60_000;

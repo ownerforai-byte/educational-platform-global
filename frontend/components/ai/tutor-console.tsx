@@ -82,8 +82,6 @@ import {
 } from "@/lib/ai/guest-quota";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { useCoinGateEnabled } from "@/features/credits/use-coin-gate";
-import { CoinGateDot } from "@/features/credits/coin-gate-dot";
 import { AiSparkBadge, recordAiSparkUse, refreshAiSparkMeters } from "@/components/ai/ai-spark-badge";
 import { isOwnerEmail } from "@/lib/owner";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
@@ -542,10 +540,6 @@ export function TutorConsole({
   const router = useRouter();
   const isLoggedIn = !!user;
   const isProUser = !isLoading && !!user && ((user as { plan?: string }).plan === "plus" || (user as { plan?: string }).plan === "pro" || isOwnerEmail(user.email));
-  // Owner coin gate: content-spark unlocks only (not AI sparks).
-  const coinGateEnabled = useCoinGateEnabled();
-  const freeMode = coinGateEnabled === false;
-
   const [messages, setMessages] = useState<AIChatMessage[]>([]);
   const [input, setInput] = useState(initialQuestion ?? "");
   const [sending, setSending] = useState(false);
@@ -609,8 +603,7 @@ export function TutorConsole({
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
   // AI sparks meter chat (server); content sparks never apply here. Guests hit the guest quota.
   const isOwner = isOwnerEmail(user?.email);
-  const privilegedUser =
-    !!user?.premiumStatus || (isOwner && freeMode);
+  const privilegedUser = !!user?.premiumStatus || isOwner;
   const composerLocked = isGuestLimited;
 
   // Rotate the thinking words while a reply is generating.
@@ -1201,11 +1194,6 @@ export function TutorConsole({
                   ? `${guestCredits} AI spark${guestCredits === 1 ? "" : "s"} today`
                   : "Daily AI sparks used"}
               </span>
-            )}
-            {isLoggedIn && isOwner && (
-              // Owner + gate OFF → only the small windy dot shows the state
-              // (long gate messages removed — owner request 2026-10-04).
-              <CoinGateDot className="hidden sm:inline-flex" />
             )}
             {hasConversation && (
               <button

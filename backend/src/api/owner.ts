@@ -2,7 +2,6 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
-import { invalidateCoinGateCache } from "../utils/credits";
 import { invalidateSectionTierCache } from "../utils/sectionTiers";
 import { authEmailsById, invalidateAuthEmailsCache } from "../utils/authEmails";
 import { isProtectedOwnerTarget } from "../utils/ownerGuard";
@@ -1005,16 +1004,10 @@ router.patch("/settings", requireAuth, async (req: Request, res: Response) => {
       return;
     }
 
-    // The coin gate is global for ALL owner gmails: bust the server cache so
-    // button OFF → free mode (and ON → billing) applies on the next message.
     // Section minimums are published on /api/config with a short cache — drop
-    // it so a save takes effect on the next read (mirrors the coin gate).
+    // it so a save takes effect on the next read.
     if (rows.some((r) => r.key.startsWith("section_min_tier."))) {
       invalidateSectionTierCache();
-    }
-
-    if (rows.some((r) => r.key === "coin_gate_enabled")) {
-      invalidateCoinGateCache();
     }
 
     res.json({ settings: data ?? [] });

@@ -20,7 +20,6 @@ import {
   Layers,
   LogOut,
   Mail,
-  Power,
   RefreshCw,
   ShieldCheck,
   Sparkles,
@@ -34,14 +33,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Switch } from "@/components/ui/switch";
 import { Progress } from "@/components/ui/progress";
 import { ProgressPanel } from "@/components/progress/progress-panel";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
-import { getOwnerSettings, updateOwnerSettings } from "@/lib/api/owner";
-import { broadcastCoinGate, parseCoinGateEnabled } from "@/lib/coin-gate";
-import { CoinGateDot } from "@/features/credits/coin-gate-dot";
 import { getAiSparkUsage, type AiSparkUsage } from "@/lib/api/ai";
 import {
   AI_SPARK_LIMITS,
@@ -185,13 +180,6 @@ export default function ProfilePage() {
   // Progress entries loaded via ProgressPanel
   const [progressEntries, setProgressEntries] = useState<ProgressEntry[]>([]);
 
-  // Owner Coin Gate state (for all owner emails)
-  const [coinGate, setCoinGate] = useState<boolean | null>(null);
-  const [isLoadingGate, setIsLoadingGate] = useState(false);
-  const [isSavingGate, setIsSavingGate] = useState(false);
-  const [gateMsg, setGateMsg] = useState<string | null>(null);
-  const [gateErr, setGateErr] = useState<string | null>(null);
-
   // Preferred grade level focus (saved in localStorage)
   const [targetGrade, setTargetGrade] = useState<string>("Class 11 Science");
 
@@ -222,49 +210,6 @@ export default function ProfilePage() {
   }, [isLoading, user, router]);
 
   const owner = isOwnerUser(user);
-
-  // Load coin gate setting for owner accounts (GLOBAL for all owner emails)
-  const loadCoinGate = useCallback(async () => {
-    if (!owner) return;
-    setIsLoadingGate(true);
-    setGateErr(null);
-    try {
-      const res = await getOwnerSettings();
-      setCoinGate(parseCoinGateEnabled(res.settings));
-    } catch (err) {
-      // Default to true (safe billing fallback)
-      setCoinGate((prev) => (prev !== null ? prev : true));
-    } finally {
-      setIsLoadingGate(false);
-    }
-  }, [owner]);
-
-  useEffect(() => {
-    if (owner) {
-      loadCoinGate();
-    }
-  }, [owner, loadCoinGate]);
-
-  const toggleCoinGate = async () => {
-    if (coinGate === null || isSavingGate) return;
-    const next = !coinGate;
-    setIsSavingGate(true);
-    setGateErr(null);
-    setGateMsg(null);
-    try {
-      await updateOwnerSettings([{ key: "coin_gate_enabled", value: next }]);
-      setCoinGate(next);
-      // Global switch: tell every chat surface immediately (all owner gmails).
-      broadcastCoinGate(next);
-      // The long ON/OFF announcements are gone (owner request 2026-10-04):
-      // the windy dot in the card carries the state now.
-      setGateMsg("Spark gate saved.");
-    } catch (err) {
-      setGateErr(err instanceof Error ? err.message : "Failed to toggle spark gate");
-    } finally {
-      setIsSavingGate(false);
-    }
-  };
 
   // ── AI-spark usage for the Plan card (server is the source of truth) ──
   const [sparkUsage, setSparkUsage] = useState<AiSparkUsage | null>(null);
@@ -403,15 +348,11 @@ export default function ProfilePage() {
                   {email}
                 </p>
                 <div className="mt-1.5 flex items-center gap-3 text-xs text-muted-foreground flex-wrap">
-                  {owner && coinGate === false && !user.premiumStatus ? (
-                    <CoinGateDot />
-                  ) : (
-                    <span className="inline-flex items-center gap-1">
-                      <Coins className="h-3.5 w-3.5 text-amber-500" />
-                      <span className="font-semibold text-foreground">{user.credits ?? 0}</span>
-                      {user.creditsLimit !== undefined && ` / ${user.creditsLimit}`} credits
-                    </span>
-                  )}
+                  <span className="inline-flex items-center gap-1">
+                    <Coins className="h-3.5 w-3.5 text-amber-500" />
+                    <span className="font-semibold text-foreground">{user.credits ?? 0}</span>
+                    {user.creditsLimit !== undefined && ` / ${user.creditsLimit}`} credits
+                  </span>
                   <span className="text-muted-foreground/40">•</span>
                   <span className="inline-flex items-center gap-1">
                     <Sparkles className="h-3.5 w-3.5 text-indigo-400" />
@@ -553,74 +494,6 @@ export default function ProfilePage() {
           </CardContent>
         </Card>
       </div>
-
-      {/* ── OWNER EXCLUSIVE: Coin Gate Controller (for all owner emails) ── */}
-      {owner && (
-        <Card className="border-amber-500/40 bg-gradient-to-r from-amber-500/5 via-background to-amber-500/10 shadow-sm">
-          <CardHeader className="pb-2">
-            <div className="flex items-center justify-between gap-3 flex-wrap">
-              <div className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded-lg bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-500">
-                  <Crown className="h-4 w-4" />
-                </div>
-                <div>
-                  <CardTitle className="text-sm font-semibold flex items-center gap-2">
-                    Owner Spark Gate Control
-                    {/* The only place the ON/OFF state shows now — a small
-                        windy dot (owner request 2026-10-04). */}
-                    <CoinGateDot />
-                  </CardTitle>
-                  <CardDescription className="text-xs">
-                    Owner-only switch — the whole spark library (note/content unlocks).
-                  </CardDescription>
-                </div>
-              </div>
-
-              {/* Instant On/Off Toggle Button */}
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-2 bg-background/80 px-3 py-1.5 rounded-xl border">
-                  <span className="text-xs font-medium text-muted-foreground">
-                    {coinGate ? "Enabled" : "Disabled"}
-                  </span>
-                  <Switch
-                    id="coin-gate-toggle"
-                    aria-label="Toggle Spark Gate"
-                    checked={!!coinGate}
-                    disabled={isSavingGate || coinGate === null}
-                    onCheckedChange={toggleCoinGate}
-                  />
-                </div>
-                <Button
-                  size="sm"
-                  variant={coinGate ? "default" : "outline"}
-                  onClick={toggleCoinGate}
-                  disabled={isSavingGate || coinGate === null}
-                  className="rounded-xl shrink-0"
-                >
-                  <Power className={`h-3.5 w-3.5 mr-1.5 ${isSavingGate ? "animate-spin" : ""}`} />
-                  {isSavingGate
-                    ? "Updating…"
-                    : coinGate
-                    ? "Turn Gate OFF (Free)"
-                    : "Turn Gate ON (Require Sparks)"}
-                </Button>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent className="pt-1 text-xs space-y-2">
-            {gateMsg && (
-              <div className="rounded-md border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 text-xs text-emerald-600 font-medium">
-                {gateMsg}
-              </div>
-            )}
-            {gateErr && (
-              <div className="rounded-md border border-destructive/40 bg-destructive/10 px-3 py-1.5 text-xs text-destructive">
-                {gateErr}
-              </div>
-            )}
-          </CardContent>
-        </Card>
-      )}
 
       {/* ── Profile tabs — Progress opens first ─────────────────────────── */}
       <Tabs defaultValue="progress">
@@ -935,14 +808,10 @@ export default function ProfilePage() {
               </div>
               <div className="flex items-center justify-between gap-4 py-1.5 border-b">
                 <span className="text-muted-foreground">Daily Credits</span>
-                {owner && coinGate === false && !user.premiumStatus ? (
-                  <span className="font-medium text-emerald-500">Free — gate OFF for owners</span>
-                ) : (
-                  <span className="font-medium">
-                    {user.credits ?? 0}
-                    {user.creditsLimit !== undefined && ` / ${user.creditsLimit}`}
-                  </span>
-                )}
+                <span className="font-medium">
+                  {user.credits ?? 0}
+                  {user.creditsLimit !== undefined && ` / ${user.creditsLimit}`}
+                </span>
               </div>
               <div className="flex items-center justify-between gap-4 py-1.5 border-b">
                 <span className="text-muted-foreground">Plan</span>
@@ -972,23 +841,10 @@ export default function ProfilePage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
-                <div className="flex items-center justify-between gap-3 p-3 rounded-lg border bg-muted/20">
-                  <div>
-                    <p className="text-xs font-semibold flex items-center gap-1.5">
-                      Spark Gate — owner emails only
-                      <CoinGateDot />
-                    </p>
-                  </div>
-                  <Button
-                    size="sm"
-                    variant={coinGate ? "default" : "outline"}
-                    onClick={toggleCoinGate}
-                    disabled={isSavingGate || coinGate === null}
-                    className="rounded-xl text-xs shrink-0"
-                  >
-                    {isSavingGate ? "Saving…" : coinGate ? "Disable Gate" : "Enable Gate"}
-                  </Button>
-                </div>
+                <p className="text-xs text-muted-foreground">
+                  Access is decided by SparkGate and the tier section registry — there is no
+                  owner ON/OFF billing switch any more.
+                </p>
                 <div className="flex gap-2">
                   <Button asChild size="sm" variant="outline" className="rounded-xl text-xs">
                     <Link href="/owner/settings">

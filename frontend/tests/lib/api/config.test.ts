@@ -14,15 +14,13 @@ beforeEach(() => {
 });
 
 describe("getPublicConfig", () => {
-  it("reads free mode when the owner's coin gate is OFF", async () => {
+  it("reads the pool constants", async () => {
     mockedFetch.mockResolvedValueOnce({
-      coinGateEnabled: false,
       dailyCreditPool: 4,
       aiMessageCost: 0,
     });
 
     await expect(getPublicConfig()).resolves.toEqual({
-      coinGateEnabled: false,
       dailyCreditPool: 4,
       aiMessageCost: 0,
       sectionMinTiers: {},
@@ -30,7 +28,7 @@ describe("getPublicConfig", () => {
     expect(mockedFetch).toHaveBeenCalledWith("/api/config");
   });
 
-  it("keeps the gate ON when the flag is missing or mistyped", async () => {
+  it("falls back to the defaults when the payload is empty or mistyped", async () => {
     mockedFetch.mockResolvedValueOnce({});
 
     await expect(getPublicConfig()).resolves.toEqual(DEFAULT_PUBLIC_CONFIG);
@@ -38,14 +36,12 @@ describe("getPublicConfig", () => {
 
   it("passes owner-set section minimums through", async () => {
     mockedFetch.mockResolvedValueOnce({
-      coinGateEnabled: true,
       dailyCreditPool: 4,
       aiMessageCost: 0,
       sectionMinTiers: { pdfs: "owner" },
     });
 
     await expect(getPublicConfig()).resolves.toEqual({
-      coinGateEnabled: true,
       dailyCreditPool: 4,
       aiMessageCost: 0,
       sectionMinTiers: { pdfs: "owner" },

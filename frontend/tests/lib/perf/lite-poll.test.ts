@@ -9,7 +9,7 @@ import {
 /**
  * LOW DATA (lite mode) background polls.
  *
- * Every recurring background request (coin-gate config 15s, credit balance
+ * Every recurring background request (public config 15s, credit balance
  * 30s, AI spark usage 30s) runs through setLitePoll: the cadence stretches
  * LITE_POLL_SLOWDOWN× while <html data-lite="true"> and the next tick
  * re-reads the flag, so toggling low data mid-session takes effect without a

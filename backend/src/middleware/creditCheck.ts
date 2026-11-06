@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { supabaseAdmin } from "../db/supabase";
-import { extractToken, hasFullAccess, isOwnerEmail, type AuthedRequest } from "./auth";
-import { ensureDailyCredits, spendCredits, refundCredits, isCoinGateEnabled } from "../utils/credits";
+import { extractToken, hasFullAccess, type AuthedRequest } from "./auth";
+import { ensureDailyCredits, spendCredits, refundCredits } from "../utils/credits";
 
 // ── Feature cost table (CONTENT sparks only) ────────────────────────────────
 // Veer / AI Studio routes meter AI sparks separately (middleware/aiSparkGate.ts
@@ -84,14 +84,10 @@ export function requireCredit(
 
       const { userId, email, role, premiumStatus } = resolved;
 
-      // BILL-EVERYONE (corrected 2026-10-04): PRO is unlimited; owners are
-      // free only while their toggle is OFF; students/customers always pay.
+      // BILL-EVERYONE: PRO is unlimited and free; everyone else — owners
+      // included — pays from the same daily spark pool. The owner ON/OFF
+      // coin switch was removed 2026-11-06.
       if (premiumStatus === true) {
-        next();
-        return;
-      }
-      const gateOn = await isCoinGateEnabled();
-      if (isOwnerEmail(email) && !gateOn) {
         next();
         return;
       }

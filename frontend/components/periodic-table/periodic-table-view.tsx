@@ -15,7 +15,7 @@ import { hasLevel, ACCESS_LABELS } from "@/lib/access-level";
 import { apiFetch } from "@/lib/api-client";
 import { reportClientError } from "@/lib/errors/app-error";
 import { BlockExplorer } from "@/components/periodic-table/block-explorer";
-import { CeeSparkGate } from "@/components/periodic-table/cee-spark-gate";
+import { SparkGate } from "@/features/credits/spark-gate";
 import {
   Atom,
   Search,
@@ -679,7 +679,7 @@ export function PeriodicTableView() {
                     ))}
                   </ul>
                 </div>
-                <CeeSparkGate compact>
+                <SparkGate minLevel="plus" compact>
                 <div className="space-y-1">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
                     <GraduationCap className="h-3.5 w-3.5" />
@@ -694,7 +694,7 @@ export function PeriodicTableView() {
                     ))}
                   </ul>
                 </div>
-                </CeeSparkGate>
+                </SparkGate>
               </div>
             )}
 
@@ -1248,7 +1248,11 @@ export function PeriodicTableView() {
             <div className="p-6 overflow-y-auto space-y-5 flex-1">
               {/* ── TAB 1: CEE PAST MCQS & TRAPS ───────────────────────────── */}
               {activeDossierTab === "pyqs" && (
-                <CeeSparkGate>
+                <SparkGate
+                  minLevel="plus"
+                  title="CEE questions & study layers"
+                  description="The CEE bank and every study layer open on the Plus plan."
+                >
                 <div className="space-y-4">
                   {/* CEE Trap Alert */}
                   {selectedElement.ceeTrapAlert && (
@@ -1347,7 +1351,7 @@ export function PeriodicTableView() {
                     </div>
                   )}
                 </div>
-                </CeeSparkGate>
+                </SparkGate>
               )}
 
               {/* ── TAB 2: HALLMARK CHEMICAL REACTIONS ─────────────────────── */}
@@ -1403,7 +1407,7 @@ export function PeriodicTableView() {
 
                   {/* CEE High-Yield Summary — CEE bank, under the CEE Spark gate */}
                   {selectedElement.ceeHighYieldNotes && (
-                    <CeeSparkGate compact>
+                    <SparkGate minLevel="plus" compact>
                     <div className="rounded-2xl border border-sky-500/30 bg-sky-500/5 p-4 text-xs space-y-1.5">
                       <span className="font-bold uppercase tracking-wider text-sky-500 flex items-center gap-1.5">
                         <GraduationCap className="h-3.5 w-3.5" />
@@ -1413,7 +1417,7 @@ export function PeriodicTableView() {
                         {selectedElement.ceeHighYieldNotes}
                       </p>
                     </div>
-                    </CeeSparkGate>
+                    </SparkGate>
                   )}
 
                   {/* Key Ores & Minerals */}
@@ -1632,7 +1636,7 @@ export function PeriodicTableView() {
                           </li>
                         ))}
                       </ul>
-                    </div>                    <CeeSparkGate compact>
+                    </div>                    <SparkGate minLevel="plus" compact>
                     <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-4 space-y-2.5">
                       <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
                         <GraduationCap className="h-3.5 w-3.5" />
@@ -1647,7 +1651,7 @@ export function PeriodicTableView() {
                         ))}
                       </ul>
                     </div>
-                    </CeeSparkGate>
+                    </SparkGate>
                   </div>
                 </div>
               )}

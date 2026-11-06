@@ -4,7 +4,7 @@ import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/aut
 import { normalizeRole } from "../auth/types";
 import { supabaseAdmin } from "../db/supabase";
 import { canUnlockModule } from "../utils/sectionAccess";
-import { ensureDailyCredits, isCoinGateEnabled, spendCredits } from "../utils/credits";
+import { ensureDailyCredits, spendCredits } from "../utils/credits";
 
 /**
  * Persist the spark-unlock window for `moduleKey` into `profiles.credits_unlock`
@@ -285,14 +285,10 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
       return;
     }
 
-    // PRO is unlimited and free. Owners are free only while their toggle is
-    // OFF — students/customers always pay from the pool.
+    // PRO is unlimited and free. Everyone else — owners included — pays from
+    // the same daily pool (the owner ON/OFF coin switch was removed
+    // 2026-11-06).
     if (premiumStatus) {
-      void persistUnlockWindow(user.id, moduleKey, expiresAt);
-      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
-      return;
-    }
-    if (owner && !(await isCoinGateEnabled())) {
       void persistUnlockWindow(user.id, moduleKey, expiresAt);
       res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
       return;

@@ -7,7 +7,7 @@
  *
  * The stylesheet already strips animations, blurs and background art; this
  * module covers the other half of what low data must save — BACKGROUND NETWORK
- * CHATTER. Every recurring poll (coin-gate config, spark balance, AI spark
+ * CHATTER. Every recurring poll (section tiers, spark balance, AI spark
  * usage) routes through `setLitePoll`, which re-reads the flag each time it
  * schedules, so toggling low data mid-session changes the following delays
  * without a reload (a delay already in flight completes at its old cadence).

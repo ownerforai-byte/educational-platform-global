@@ -6,11 +6,10 @@ import { useSession } from "@/features/auth/hooks/use-session";
 /**
  * Diagram Hub route guard.
  *
- * Owner request 2026-10-06: the hub sits under the coin gate priced at 5
- * coins, opens free for owner emails, and is reserved to owner emails —
- * non-owners are refused the unlock itself (credit provider + the server
- * unlock route), so this layout no longer bounces signed-in non-owners.
- * They reach the route and the RouteCreditGate renders its unavailable state.
+ * Owner request 2026-10-06: the hub is reserved to owner emails. The coin gate
+ * that used to price it is gone (removed 2026-11-06), so the access decision
+ * lives in the section registry — SparkGate renders the unavailable state for
+ * a signed-in non-owner, and this layout only handles the signed-out bounce.
  *
  * Signed-out visitors still go to login and come back here.
  */

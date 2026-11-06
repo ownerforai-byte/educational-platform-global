@@ -3,31 +3,23 @@ import { afterAll, beforeAll, describe, expect, test, vi } from "vitest";
 import type { Server } from "node:http";
 
 /**
- * GET /api/config — the public runtime flags the chat UI mirrors.
+ * GET /api/config — the public runtime flags the UI mirrors.
  *
- * Regression guard for the owner report 2026-10-03 ("coin gate on/off not
- * working"): the server honored the gate, but the client had no way to read
- * it, so students at 0 credits stayed locked even with the gate OFF. The
- * endpoint must always answer with the live flag, never be cached, and never
- * pretend the platform is free when the settings read fails.
+ * The owner ON/OFF coin gate was removed 2026-11-06: access is decided by the
+ * tier section registry (and SparkGate), never by a billing switch, so the
+ * endpoint no longer publishes `coinGateEnabled`. These tests pin the remaining
+ * contract: the live billing constants, the owner-set section minimums, no
+ * caching, and a hard failure instead of silently pretending everything is free.
  */
 
-const gate = { enabled: true, fail: false };
 const minTiers: Record<string, string> = {};
-
-vi.mock("../src/utils/credits", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("../src/utils/credits")>();
-  return {
-    ...actual,
-    isCoinGateEnabled: vi.fn(async () => {
-      if (gate.fail) throw new Error("settings unavailable");
-      return gate.enabled;
-    }),
-  };
-});
+const state = { fail: false };
 
 vi.mock("../src/utils/sectionTiers", () => ({
-  readSectionMinTiers: vi.fn(async () => ({ ...minTiers })),
+  readSectionMinTiers: vi.fn(async () => {
+    if (state.fail) throw new Error("settings unavailable");
+    return { ...minTiers };
+  }),
 }));
 
 import configRoutes from "../src/api/config";
@@ -52,14 +44,10 @@ afterAll(async () => {
 });
 
 describe("GET /api/config", () => {
-  test("reports the gate ON with the live billing constants", async () => {
-    gate.enabled = true;
-    gate.fail = false;
-
+  test("publishes the live billing constants and no gate switch", async () => {
     const res = await fetch(`${baseUrl}/api/config`);
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual({
-      coinGateEnabled: true,
       dailyCreditPool: 4,
       aiMessageCost: 0,
       sectionMinTiers: {},
@@ -76,25 +64,16 @@ describe("GET /api/config", () => {
     delete minTiers.pdfs;
   });
 
-  test("reports free mode once the owner turns the gate OFF", async () => {
-    gate.enabled = false;
-
-    const res = await fetch(`${baseUrl}/api/config`);
-    const body = (await res.json()) as { coinGateEnabled: boolean };
-    expect(res.status).toBe(200);
-    expect(body.coinGateEnabled).toBe(false);
-  });
-
-  test("never caches the flag (a toggle must be visible immediately)", async () => {
+  test("never caches the config (an owner save must be visible immediately)", async () => {
     const res = await fetch(`${baseUrl}/api/config`);
     expect(res.headers.get("cache-control")).toBe("no-store");
   });
 
   test("surfaces a settings failure instead of silently freeing the platform", async () => {
-    gate.fail = true;
+    state.fail = true;
 
     const res = await fetch(`${baseUrl}/api/config`);
     expect(res.status).toBe(500);
-    gate.fail = false;
+    state.fail = false;
   });
 });
