@@ -643,7 +643,7 @@ raw full suites green, `npm run check:all` green.
 
 ### Phase 7 — AI Tutor (Veer) Quality & Safety
 
-- [x] P0  Add a fallback provider + health-based failover � 10 free-tier providers added (LLM7 keyless, OVHcloud keyless + 8 keyed)
+- [x] P0  Add a fallback provider + health-based failover — 10 free-tier providers added (LLM7 keyless, OVHcloud keyless + 8 keyed)
 - [ ] P0  Build a regression set from your own PYQs/solved questions (~100-200 Q&A) and score answers on every prompt/model change
 - [ ] P1  Hard per-user daily ceiling even for signed-in users, on top of credits
 - [ ] P1  Embed the tutor inside lessons and quizzes ("Explain", "Hint", "Why was I wrong?")
@@ -657,3 +657,204 @@ raw full suites green, `npm run check:all` green.
 - [ ] P2  Local payments for premium (eSewa / Khalti / Fonepay); today premium is request + manual approval
 - [ ] P2  SEO for public pages (sitemap, structured data), shareable result/streak cards
 - [ ] P2  Teacher/class tools (assign, class progress) if you want school adoption
+
+---
+
+## One 3D System for All Subjects — One Manifest, One Hub, One Journey
+
+> **Status:** Proposed; Phase 0 measurement and the owner decisions below are
+> pending. This roadmap consolidates the existing Physics, Chemistry, Biology,
+> and Mathematics 3D experiences. It must not introduce a fourth parallel
+> catalog, registry, or topic map.
+
+### Goal
+
+Give every 3D activity one discoverable home and a continuous student journey:
+
+**Notes → 3D activity → practice → ask Veer → next topic**
+
+Physics, Chemistry, Biology, and Mathematics activities must share one
+curriculum-aware manifest and hub. Existing indexes and routes should become
+derived views or backwards-compatible redirects, not competing sources of
+truth.
+
+### Current Findings to Verify
+
+The following are static-analysis estimates from the initial repository audit,
+not verified measurements:
+
+- About 258 files use Three.js: approximately 140 topic visuals, 84 root-level
+  labs, 21 Class 11 labs, 7 3D-rig files, and 5 motion-graphics files.
+- Three indexes overlap: `frontend/lib/lab-catalog.ts` (69 entries),
+  `LAB_REGISTRY` in `frontend/lib/lab-registry.tsx` (58 static component
+  imports), and `TOPIC_3D_MAP` in `frontend/lib/topic-3d-map.tsx` (411 topic
+  slugs and 144 static visual imports). The catalog currently lacks Mathematics,
+  class, and topic metadata.
+- Student entry points include `/lab`, `/lab/3d`, `/lab/theory`,
+  `/lab/[labId]`, `/lab/3d/chapter/[id]`, `/lab/3d/topic/[id]`,
+  `/lab/bio-3d-organelles`, `/lab/[labId]/ch-3d-periodic`, topic pages, and
+  `/knowledge/analytical-geometry`.
+- The initial audit found 30 potentially unreachable 3D files: 18 in
+  `components/lab/class11`, 5 in `motion-graphics`, 6 root lab components, and
+  `animated-arrow-helper.ts`. This includes plain/`-plus` duplicates and both
+  standard and enhanced kinematics/laws-of-motion candidates. Confirm reachability
+  and lineage before adopting or retiring anything; zero editor references alone
+  are not grounds for deletion.
+- `frontend/components/content/topic-vertical-notes.tsx` appears to load
+  `@/lib/topic-3d-map` from an effect on every topic page. Measure the actual
+  bundle and runtime cost before attributing Lighthouse regressions to it.
+- The reported topic-page baseline is LCP 10.7s versus an 8.5s budget and TBT
+  4.1s. Capture reproducible measurements and the current JavaScript bundle
+  sizes in Phase 0; do not treat these reported values as newly verified results.
+
+### Non-Negotiable Architecture
+
+1. Establish **one typed manifest** as the source of truth for all activities.
+   The existing catalog, component registry, and topic map become generated or
+   derived views after parity is demonstrated.
+2. The manifest entry for each activity must include:
+   `id`, `title`, `subject` (including Mathematics), `class`, `unit`, explicit
+   `topicSlug` associations, `kind` (`3d-sim`, `animation`, `theory`, or
+   `practical`), a lazy loader where applicable, device tier, a 2D/static/text
+   fallback, related notes and practice links, lifecycle status (`live`, `pilot`,
+   or `retired`), and duplicate lineage via `replaces`.
+3. Use explicit topic associations and aliases. Do not resolve a topic to a
+   visual using fuzzy prefix matching.
+4. Do not eagerly import Three.js visuals on topic pages that have no matching
+   3D activity. Load an activity only after the learner requests it.
+5. Preserve old deep links when consolidating routes. No files are retired until
+   their reachability and duplicate lineage have been checked.
+
+### Owner Decisions Required Before Implementation
+
+These are intentionally open; implementation agents must not infer a final
+decision from the recommendations:
+
+1. Is `/lab/[id]` the canonical activity URL? **Recommendation: yes.**
+2. Should `-plus` versions be canonical, with plain versions retired only after
+   a parity check? **Recommendation: evaluate each duplicate pair, then choose
+   explicitly.**
+3. Should Mathematics 3D be included in the same hub and manifest?
+   **Recommendation: yes.**
+
+### Phases and Agent Handoff
+
+#### Phase 0 — Measure and Inventory
+
+- [ ] Extend `scripts/audit-visuals.ts` to emit a coverage matrix for all 696
+  syllabus topics: whether each has a 3D activity and, if so, its explicit lab
+  association.
+- [ ] Emit an inventory of every 3D-related file, recording whether it is
+  present in the catalog, component registry, topic map, and route tree.
+- [ ] Run a bundle analyzer and record first-load JavaScript size for a
+  representative topic page and lab page.
+- [ ] Record repeatable Lighthouse LCP/TBT results and compare them with the
+  existing budgets.
+- [ ] Trace the 30 suspected orphans and duplicate families. Recommend whether
+  each should be adopted, merged into a chosen canonical implementation, or
+  retired; do not delete any during inventory.
+- [ ] Save audit output and explain the commands, environment, and measurement
+  method so subsequent phases can compare like with like.
+
+#### Phase 1 — Remove the Topic-Page Loading Penalty
+
+- [ ] Split `topic-3d-map` into a small synchronous topic-to-activity index and
+  per-visual lazy loaders.
+- [ ] Resolve a topic association synchronously so notes can show a 3D affordance
+  only when an explicit mapping exists.
+- [ ] Load the visual only after the learner selects the 3D affordance.
+- [ ] Replace fuzzy prefix resolution with explicit mappings and aliases.
+- [ ] Add tests proving aliases are unique, target valid activities, and do not
+  assign one topic another topic's visual.
+- [ ] Re-run the Phase 0 bundle and Lighthouse measurements against the existing
+  budget.
+
+#### Phase 2 — Create the Single Activity Manifest
+
+- [ ] Define the typed activity schema and populate it from the verified
+  catalog, component registry, topic map, and Phase 0 audit.
+- [ ] Include Mathematics and explicit curriculum placement; mark the three
+  pilot activities as `pilot`.
+- [ ] Add CI validation for unique IDs, valid syllabus references, resolvable
+  lazy loaders, valid related-note/practice links, and a defined fallback.
+- [ ] Add a CI orphan rule: every in-scope 3D file must be represented in the
+  manifest or listed in an explicit, reviewed exemption.
+- [ ] Add a parity test comparing the manifest against all currently live
+  catalog, registry, and topic-map entries.
+- [ ] Only after parity passes, convert the old catalog, registry, and map into
+  derived views and remove duplicate hand-maintained data.
+
+#### Phase 3 — One Hub and Backwards-Compatible URLs
+
+- [ ] Make `/lab/[id]` the canonical activity URL if confirmed by the owner.
+- [ ] Add hub filters for subject, class, unit, kind, and “has practice”.
+- [ ] Convert `/lab/3d`, `/lab/theory`, `/lab/3d/chapter/[id]`,
+  `/lab/3d/topic/[id]`, `/lab/bio-3d-organelles`, and
+  `/lab/[labId]/ch-3d-periodic` into redirects or filtered hub views as
+  appropriate; retain working behavior for existing deep links.
+- [ ] Align lab breadcrumbs with the notes curriculum hierarchy, reusing
+  `lab-unit-order.ts` and `frontend/lib/syllabus.ts` rather than adding a second
+  curriculum ordering source.
+
+#### Phase 4 — Connect Notes, Labs, Practice, and Veer
+
+- [ ] From a topic note, offer **See it in 3D** only when that topic has an
+  explicit manifest mapping; load the activity on selection.
+- [ ] Provide **Open full lab** from the inline activity.
+- [ ] Provide **Check understanding** with 2–3 questions drawn from existing
+  quiz/PYQ sources, not a duplicated question bank.
+- [ ] Provide **Ask Veer about this** with the current topic context.
+- [ ] Provide **Next topic** and **Back to notes** using canonical syllabus
+  order and routes.
+- [ ] Add a **Continue where you left off** entry and record explored labs in
+  the existing student progress system.
+
+#### Phase 5 — Pilot and Roll Out
+
+- [ ] Pilot projectile motion using the verified kinematics visual, chemical
+  bonding, and the cell.
+- [ ] Verify the complete notes → 3D → practice → Veer → next-topic journey for
+  each pilot before expanding.
+- [ ] Roll out subject by subject, updating manifest coverage and retiring
+  duplicate implementations only after each chosen canonical version passes
+  parity and journey checks.
+
+#### Phase 6 — Phone Resilience and Resource Lifecycle
+
+- [ ] Reuse `3d-rig/use-scene-tier.ts` for device capability tiers.
+- [ ] Enforce at most one active WebGL canvas per page and dispose geometries
+  and materials on unmount.
+- [ ] Provide a 2D, static, or text fallback when WebGL is unavailable.
+- [ ] Implement loading, error, and reset states; respect reduced-motion
+  preferences and support keyboard and touch controls.
+
+### Gates for Every Phase / Pull Request
+
+- Preserve the existing Lighthouse budgets for a topic page and a lab page;
+  include measured LCP/TBT and bundle-size comparisons in review evidence.
+- Keep the manifest orphan check in CI after the migration.
+- Add an end-to-end notes → 3D → practice journey test. This test is blocked
+  until `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
+  `NEXT_PUBLIC_API_URL`, and `NEXT_PUBLIC_SITE_URL` are configured as CI
+  secrets and a dedicated test account can pass the approval wall. Do not put
+  secret values in this plan or repository.
+- Do not delete files solely because an editor reports zero references.
+- Keep changes phase-scoped; run the narrowest relevant tests first, then the
+  repository check required for the destination branch. Commit coherent,
+  validated changes with conventional messages. Push only when explicitly
+  authorized.
+
+### Acceptance Criteria
+
+- Every live or pilot 3D activity is represented by the manifest with a valid
+  lazy loader, curriculum placement, and fallback.
+- Every topic with an activity exposes the correct visual from its notes page;
+  no topic receives a visual through fuzzy or colliding resolution.
+- Pages without a 3D activity do not eagerly load Three.js visuals.
+- The lab hub and canonical URL scheme are consistent, and legacy deep links
+  remain functional.
+- The learner can complete the notes → 3D → practice journey, with the
+  additional Veer and next-topic actions available.
+- Topic-page Lighthouse results meet the existing budgets.
+- The catalog, component registry, and topic map no longer contain independent
+  hand-maintained indexes after parity is proven.
