@@ -35,12 +35,17 @@ const SETTINGS_CACHE_TTL_MS = 60_000;
 const SETTINGS_TIMEOUT_MS = 4_000;
 
 /**
- * Advisory check of the public Auth settings. Supabase is the authority on
- * whether a provider works; this only turns an EXPLICITLY disabled provider
- * into a friendly in-app message. It must never block a working provider:
+ * Advisory check of the public Auth settings for GOOGLE. Supabase is the
+ * authority on whether a provider works; this only turns an explicitly
+ * disabled Google provider into a friendly in-app message. It must never
+ * block a working one:
  *   · GoTrue versions differ — some omit a provider key entirely. Treating a
  *     missing key as "disabled" blocked Google even with `google: true` live.
  *   · A slow/CSP-blocked settings request must not stall the click.
+ *
+ * Facebook is deliberately NOT touched: it is intentionally disabled in this
+ * app (SHOW_FACEBOOK = false, Meta code-exchange credentials are broken), and
+ * its strict `=== true` check is preserved so nothing here can re-enable it.
  * Cached for 60 seconds, fail-open on any error or timeout.
  */
 export async function isOAuthProviderEnabled(provider: OAuthProvider): Promise<boolean> {
@@ -63,10 +68,11 @@ export async function isOAuthProviderEnabled(provider: OAuthProvider): Promise<b
       external?: Record<string, boolean | undefined>;
     };
     const external = settings.external ?? {};
-    // Only an explicit `false` is a real disable. Missing/undefined fields
-    // across GoTrue versions must not stop a healthy OAuth provider.
+    // Only an explicit `false` disables Google; a missing key across GoTrue
+    // versions must not stop a healthy provider. Facebook keeps its original
+    // strict check — it is intentionally left disabled, do not "fix" it.
     cachedProviders = {
-      facebook: external.facebook !== false,
+      facebook: external.facebook === true,
       google: external.google !== false,
     };
     lastSettingsFetch = now;

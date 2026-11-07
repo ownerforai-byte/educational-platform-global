@@ -7,12 +7,19 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
  * though Supabase had Google enabled. Only an explicit `false` may block.
  */
 
+// The live project URL is public (it is already the CSP fallback in proxy.ts),
+// but the anon key is deliberately a stub: `fetch` is mocked below, so this
+// unit test never talks to Supabase and no credential belongs in the repo.
+// Live verification of https://lqzjcwbkpeiqslqhxxmu.supabase.co is done out of
+// band with the real published anon key.
+const PROJECT_URL = "https://lqzjcwbkpeiqslqhxxmu.supabase.co";
+
 beforeEach(() => {
   vi.resetModules();
   vi.unstubAllEnvs();
   vi.unstubAllGlobals();
-  vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://testproj.supabase.co");
-  vi.stubEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY", "test-anon-key");
+  vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", PROJECT_URL);
+  vi.stubEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY", "test-anon-key-stub");
 });
 
 async function loadBrowser() {
@@ -51,6 +58,14 @@ describe("isOAuthProviderEnabled", () => {
     expect(await isOAuthProviderEnabled("google")).toBe(false);
   });
 
+  it("leaves Facebook deliberately disabled (not re-enabled by this fix)", async () => {
+    // Facebook's Meta code exchange is broken and SHOW_FACEBOOK is false.
+    // A partial settings payload must NOT make it look available.
+    stubSettings({ external: {} });
+    const { isOAuthProviderEnabled } = await loadBrowser();
+    expect(await isOAuthProviderEnabled("facebook")).toBe(false);
+  });
+
   it("fails open when the settings request fails", async () => {
     stubSettings({}, false);
     const { isOAuthProviderEnabled } = await loadBrowser();
@@ -72,9 +87,9 @@ describe("isOAuthProviderEnabled", () => {
     const { isOAuthProviderEnabled } = await loadBrowser();
     await isOAuthProviderEnabled("google");
     expect(fetchMock).toHaveBeenCalledWith(
-      "https://testproj.supabase.co/auth/v1/settings",
+      `${PROJECT_URL}/auth/v1/settings`,
       expect.objectContaining({
-        headers: { apikey: "test-anon-key" },
+        headers: { apikey: "test-anon-key-stub" },
         signal: expect.any(AbortSignal),
       }),
     );
