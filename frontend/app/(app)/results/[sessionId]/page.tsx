@@ -19,30 +19,35 @@ import {
 export default function ResultsPage() {
   const params = useParams<{ sessionId: string }>();
   const sessionId = params?.sessionId ?? "";
-  const [quiz, setQuiz] = useState<QuizHistoryQuiz | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [failed, setFailed] = useState(false);
+  // One state object keyed by session id: loading is derived from whether the
+  // result matches the current route, so the effect never has to set state
+  // synchronously (React Compiler `set-state-in-effect`).
+  const [result, setResult] = useState<{
+    sessionId: string;
+    quiz: QuizHistoryQuiz | null;
+    failed: boolean;
+  } | null>(null);
 
   useEffect(() => {
     if (!sessionId) return;
     let active = true;
-    setLoading(true);
-    getQuizHistoryQuiz(sessionId)
-      .then((data) => {
-        if (!active) return;
-        setQuiz(data);
-        setFailed(false);
-      })
-      .catch(() => {
-        if (active) setFailed(true);
-      })
-      .finally(() => {
-        if (active) setLoading(false);
-      });
+    getQuizHistoryQuiz(sessionId).then(
+      (data) => {
+        if (active) setResult({ sessionId, quiz: data, failed: false });
+      },
+      () => {
+        if (active) setResult({ sessionId, quiz: null, failed: true });
+      },
+    );
     return () => {
       active = false;
     };
   }, [sessionId]);
+
+  const current = result?.sessionId === sessionId ? result : null;
+  const loading = current === null;
+  const quiz = current?.quiz ?? null;
+  const failed = current?.failed ?? false;
 
   const answered = quiz?.answered ?? 0;
   const correct = quiz?.correct ?? 0;

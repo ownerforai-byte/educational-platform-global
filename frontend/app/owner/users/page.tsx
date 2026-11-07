@@ -114,6 +114,12 @@ export default function OwnerUsersPage() {
   // Two separate systems, recreated cleanly: Review (pending decisions)
   // and Approved (decided accounts). No overlap — an account is in one.
   const [system, setSystem] = useState<OwnerSystem>("review");
+  // Declared before the callbacks that use them: React Compiler rejects a
+  // setter that is referenced above its declaration (immutability rule).
+  const [busyId, setBusyId] = useState<string | null>(null);
+  const [selected, setSelected] = useState<Set<string>>(new Set());
+  const [bulkBusy, setBulkBusy] = useState(false);
+  const [bulkTier, setBulkTier] = useState<Exclude<UserRole, "owner">>("plus");
   // Access is owned by the partition, not the filter dropdown: Review =
   // PENDING, Approved = ACTIVE/REJECTED. Filters stay at "all" for access
   // so neither system can hide the other's rows.
@@ -129,10 +135,6 @@ export default function OwnerUsersPage() {
   // Plain owner roster: from the full load, never filtered into Review.
   const ownerRoster = useMemo(() => partitionOwnerSystems(users).owners, [users]);
 
-  const [busyId, setBusyId] = useState<string | null>(null);
-  const [selected, setSelected] = useState<Set<string>>(new Set());
-  const [bulkBusy, setBulkBusy] = useState(false);
-  const [bulkTier, setBulkTier] = useState<Exclude<UserRole, "owner">>("plus");
   const selectedSystemIds = useMemo(
     () => systemUsers.filter((user) => selected.has(user.id)).map((user) => user.id),
     [systemUsers, selected],

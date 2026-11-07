@@ -8,9 +8,13 @@
  * from the real quiz-history and progress endpoints; when the student has not
  * done anything yet, the derived values are genuinely zero and the UI shows
  * an honest empty state rather than invented numbers.
+ *
+ * Implemented as a module-level external store (like `lib/notifications.ts`)
+ * rather than a `useEffect` + `setState` pair: `useSyncExternalStore` keeps
+ * every consumer in sync without a synchronous state update inside an effect.
  */
 
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useMemo, useSyncExternalStore } from "react";
 import { getQuizHistory, type QuizHistoryRow } from "@/lib/api/ai-quiz-history";
 import { getProgress } from "@/lib/api/progress";
 import {
@@ -40,7 +44,67 @@ interface RawStats {
   progressEntries: ProgressEntry[];
 }
 
-const EMPTY_RAW: RawStats = { loading: true, quizRows: [], progressEntries: [] };
+/** Stable SSR / first-hydration snapshot — nothing invented. */
+const SERVER_SNAPSHOT: RawStats = {
+  loading: true,
+  quizRows: [],
+  progressEntries: [],
+};
+
+let snapshot: RawStats = SERVER_SNAPSHOT;
+const listeners = new Set<() => void>();
+let started = false;
+let inFlight: Promise<void> | null = null;
+
+function emit(): void {
+  for (const listener of [...listeners]) listener();
+}
+
+async function refresh(): Promise<void> {
+  // A signed-out visitor has no history: either call may reject. That is a
+  // real, empty result — never a reason to fall back to sample data.
+  const [quiz, progress] = await Promise.allSettled([
+    getQuizHistory(100),
+    getProgress(),
+  ]);
+  snapshot = {
+    loading: false,
+    quizRows: quiz.status === "fulfilled" ? (quiz.value?.rows ?? []) : [],
+    progressEntries: progress.status === "fulfilled" ? (progress.value ?? []) : [],
+  };
+  emit();
+}
+
+function refreshOnce(): void {
+  if (inFlight) return;
+  inFlight = refresh().finally(() => {
+    inFlight = null;
+  });
+}
+
+function ensureStarted(): void {
+  if (started || typeof window === "undefined") return;
+  started = true;
+  void refreshOnce();
+  window.addEventListener("focus", () => void refreshOnce());
+  window.addEventListener(LIVE_STATS_EVENT, () => void refreshOnce());
+}
+
+export function subscribeLiveStats(listener: () => void): () => void {
+  ensureStarted();
+  listeners.add(listener);
+  return () => {
+    listeners.delete(listener);
+  };
+}
+
+export function getLiveStatsSnapshot(): RawStats {
+  return snapshot;
+}
+
+export function getServerLiveStatsSnapshot(): RawStats {
+  return SERVER_SNAPSHOT;
+}
 
 export interface SubjectProgress {
   completedUnits: number;
@@ -65,32 +129,11 @@ export interface LiveStats extends RawStats {
 }
 
 export function useLiveStats(): LiveStats {
-  const [raw, setRaw] = useState<RawStats>(EMPTY_RAW);
-
-  const load = useCallback(async () => {
-    // A signed-out visitor has no history: both calls may reject. That is a
-    // real, empty result — never a reason to fall back to sample data.
-    const [quiz, progress] = await Promise.allSettled([
-      getQuizHistory(100),
-      getProgress(),
-    ]);
-    setRaw({
-      loading: false,
-      quizRows: quiz.status === "fulfilled" ? (quiz.value?.rows ?? []) : [],
-      progressEntries: progress.status === "fulfilled" ? (progress.value ?? []) : [],
-    });
-  }, []);
-
-  useEffect(() => {
-    void load();
-    const refresh = () => void load();
-    window.addEventListener("focus", refresh);
-    window.addEventListener(LIVE_STATS_EVENT, refresh);
-    return () => {
-      window.removeEventListener("focus", refresh);
-      window.removeEventListener(LIVE_STATS_EVENT, refresh);
-    };
-  }, [load]);
+  const raw = useSyncExternalStore(
+    subscribeLiveStats,
+    getLiveStatsSnapshot,
+    getServerLiveStatsSnapshot,
+  );
 
   return useMemo(() => {
     const { quizRows, progressEntries } = raw;
