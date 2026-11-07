@@ -143,6 +143,22 @@ export function setOwnerUserAccessStatus(
   });
 }
 
+export function bulkUpdateOwnerUserRole(
+  userIds: string[],
+  role: Exclude<UserRole, "owner">,
+): Promise<{
+  success: true;
+  role: string;
+  applied: string[];
+  skipped: Array<{ userId: string; reason: string }>;
+  requested: number;
+}> {
+  return apiFetch("/api/owner/users/bulk-tier", {
+    method: "POST",
+    body: JSON.stringify({ userIds, role }),
+  });
+}
+
 export function bulkOwnerUserAccessStatus(
   userIds: string[],
   status: "ACTIVE" | "REJECTED",

@@ -486,7 +486,7 @@ export default function ProfilePage() {
 
       {/* ── Profile tabs — Progress opens first ─────────────────────────── */}
       <Tabs defaultValue="progress">
-        <TabsList className="grid grid-cols-4 max-w-2xl">
+        <TabsList className="grid grid-cols-5 max-w-3xl">
           <TabsTrigger value="progress" className="gap-1.5">
             <UserCheck className="h-4 w-4" />
             Progress
@@ -495,13 +495,17 @@ export default function ProfilePage() {
             <Sparkles className="h-4 w-4" />
             Level Details
           </TabsTrigger>
-          <TabsTrigger value="activity" className="gap-1.5">
-            <History className="h-4 w-4" />
-            Activity
+          <TabsTrigger value="curriculum" className="gap-1.5">
+            <Layers className="h-4 w-4" />
+            Curriculum
           </TabsTrigger>
           <TabsTrigger value="account" className="gap-1.5">
             <User className="h-4 w-4" />
             Account
+          </TabsTrigger>
+          <TabsTrigger value="activity" className="gap-1.5">
+            <History className="h-4 w-4" />
+            Activity
           </TabsTrigger>
         </TabsList>
 
@@ -609,7 +613,7 @@ export default function ProfilePage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="p-3 rounded-xl border bg-muted/30 space-y-1">
                   <p className="text-xs text-muted-foreground">Current Level</p>
                   <p className="text-xl font-bold flex items-center gap-1.5">
@@ -625,14 +629,6 @@ export default function ProfilePage() {
                     {completedCount}
                   </p>
                   <p className="text-xs text-muted-foreground">100 XP per completed topic</p>
-                </div>
-                <div className="p-3 rounded-xl border bg-muted/30 space-y-1">
-                  <p className="text-xs text-muted-foreground">Target Board</p>
-                  <p className="text-xl font-bold flex items-center gap-1.5">
-                    <GraduationCap className="h-5 w-5 text-indigo-500" />
-                    NEB +2
-                  </p>
-                  <p className="text-xs text-muted-foreground">CDC Nepal Curriculum</p>
                 </div>
               </div>
 
@@ -696,6 +692,10 @@ export default function ProfilePage() {
             </CardContent>
           </Card>
 
+        </TabsContent>
+
+        {/* ── Tab 3: Curriculum & Grade Focus ───────────────────────────── */}
+        <TabsContent value="curriculum" className="space-y-4 pt-2">
           {/* Academic Grade Focus & Curriculum Details */}
           <Card>
             <CardHeader className="pb-3">
@@ -708,6 +708,16 @@ export default function ProfilePage() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
+              <div className="flex items-center justify-between gap-3 rounded-xl border bg-muted/30 p-3">
+                <div>
+                  <p className="text-xs text-muted-foreground">Target Board</p>
+                  <p className="text-sm font-semibold flex items-center gap-1.5">
+                    <GraduationCap className="h-4 w-4 text-indigo-500" />
+                    NEB +2
+                  </p>
+                </div>
+                <p className="text-xs text-muted-foreground">CDC Nepal Curriculum</p>
+              </div>
               <div className="space-y-2">
                 <label className="text-xs font-semibold text-muted-foreground">Select Current Grade Focus</label>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
@@ -755,7 +765,7 @@ export default function ProfilePage() {
           </Card>
         </TabsContent>
 
-        {/* ── Tab 3: Account & Settings ───────────────────────────────────── */}
+        {/* ── Tab 4: Account & Settings ───────────────────────────────────── */}
         <TabsContent value="account" className="space-y-4 pt-2">
           {/* Identity & Account Details */}
           <Card>
@@ -869,7 +879,7 @@ export default function ProfilePage() {
           </div>
         </TabsContent>
 
-        {/* ── Tab 3: Activity (profile feature 2026-10-13) ────────────────── */}
+        {/* ── Tab 5: Activity (profile feature 2026-10-13) ────────────────── */}
         <TabsContent value="activity" className="space-y-4 pt-2">
           <Card className="border-border/60">
             <CardHeader className="pb-2">

@@ -67,6 +67,15 @@ const bulkAccessStatusSchema = z.object({
   status: z.enum(["ACTIVE", "REJECTED"]),
 });
 
+const bulkTierUpdateSchema = z.object({
+  userIds: z
+    .array(z.string().uuid())
+    .min(1)
+    .max(100)
+    .refine((ids) => new Set(ids).size === ids.length, "User IDs must be unique"),
+  role: z.enum(["member", "plus", "pro"]),
+});
+
 const bulkCreditsSchema = z.object({
   grants: z
     .array(
@@ -323,6 +332,64 @@ router.post("/users/bulk-status", requireAuth, async (req: Request, res: Respons
     });
   } catch (err: any) {
     console.error("[owner] bulk access error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/**
+ * POST /api/owner/users/bulk-tier
+ * Apply one non-owner access tier to up to 100 accounts. Owner targets are
+ * verified individually and skipped, even if the caller submits their IDs.
+ */
+router.post("/users/bulk-tier", requireAuth, async (req: Request, res: Response) => {
+  const owner = ownerGate(req, res);
+  if (!owner) return;
+
+  const parsed = bulkTierUpdateSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid payload", details: parsed.error.flatten() });
+    return;
+  }
+
+  const { userIds, role } = parsed.data;
+  const grant = TIER_GRANT[role];
+  const approvedAt = grant.premium_status ? new Date().toISOString() : null;
+  const applied: string[] = [];
+  const skipped: Array<{ userId: string; reason: string }> = [];
+
+  try {
+    for (const userId of userIds) {
+      const guard = await isProtectedOwnerTarget(userId);
+      if (guard.protectedTarget) {
+        skipped.push({ userId, reason: guard.reason ?? "Protected account" });
+        continue;
+      }
+
+      const { data, error } = await supabaseAdmin
+        .from("profiles")
+        .update({
+          ...grant,
+          premium_approved_at: approvedAt,
+        })
+        .eq("id", userId)
+        .select("id")
+        .maybeSingle();
+
+      if (error) {
+        skipped.push({ userId, reason: "Update failed" });
+        continue;
+      }
+      if (!data) {
+        skipped.push({ userId, reason: "User not found" });
+        continue;
+      }
+
+      applied.push(userId);
+    }
+
+    res.json({ success: true, role, applied, skipped, requested: userIds.length });
+  } catch (err: any) {
+    console.error("[owner] bulk tier update error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });
   }
 });

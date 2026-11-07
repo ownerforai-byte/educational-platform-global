@@ -12,6 +12,7 @@ const h = vi.hoisted(() => {
   const queues: Record<string, QueueResult[]> = {};
   const calls: Array<{ table: string; method: string; args: any[] }> = [];
   const getUser = vi.fn();
+  const getUserById = vi.fn();
   const listUsers = vi.fn();
 
   function enqueue(table: string, result: QueueResult) {
@@ -75,7 +76,10 @@ const h = vi.hoisted(() => {
   const supabaseAdmin: any = {
     auth: {
       getUser: (...args: any[]) => getUser(...args),
-      admin: { listUsers: (...args: any[]) => listUsers(...args) },
+      admin: {
+        getUserById: (...args: any[]) => getUserById(...args),
+        listUsers: (...args: any[]) => listUsers(...args),
+      },
     },
     from: (table: string) => makeBuilder(table),
   };
@@ -84,6 +88,7 @@ const h = vi.hoisted(() => {
     for (const k of Object.keys(queues)) delete queues[k];
     calls.length = 0;
     getUser.mockReset();
+    getUserById.mockReset();
     listUsers.mockReset();
   }
 
@@ -91,7 +96,7 @@ const h = vi.hoisted(() => {
     getUser.mockResolvedValue({ data: { user: { id: userId, email } }, error: null });
   }
 
-  return { supabaseAdmin, enqueue, opsFor, reset, mockUser, calls, listUsers };
+  return { supabaseAdmin, enqueue, opsFor, reset, mockUser, calls, getUserById, listUsers };
 });
 
 vi.mock("../src/db/supabase", () => ({
@@ -324,6 +329,75 @@ describe("R1 per-user scoping (no IDOR)", () => {
 // ───────────────────────────────────────────────────────────────────────────
 // Owner grants API
 // ───────────────────────────────────────────────────────────────────────────
+describe("owner user tier management", () => {
+  it("updates selected non-owner tiers and skips protected owner accounts", async () => {
+    const { request } = await mount([["/api/owner", ownerRouter]]);
+    h.mockUser("owner-1", OWNER_EMAIL);
+    h.getUserById.mockImplementation(async (id: string) => ({
+      data: {
+        user: {
+          id,
+          email: id === "00000000-0000-4000-8000-000000000002" ? OWNER_EMAIL : GRANTED_EMAIL,
+        },
+      },
+      error: null,
+    }));
+    // requireAuth reads role, name and plan before the route handler.
+    h.enqueue("profiles", { data: [], error: null });
+    h.enqueue("profiles", { data: [], error: null });
+    h.enqueue("profiles", { data: [], error: null });
+    // Owner-target guard, then successful tier update.
+    h.enqueue("profiles", { data: [{ role: "member" }], error: null });
+    h.enqueue("profiles", { data: [{ id: "00000000-0000-4000-8000-000000000001" }], error: null });
+
+    const res = await request("POST", "/api/owner/users/bulk-tier", {
+      userIds: [
+        "00000000-0000-4000-8000-000000000001",
+        "00000000-0000-4000-8000-000000000002",
+      ],
+      role: "pro",
+    });
+
+    expect(res.status).toBe(200);
+    expect(res.body).toMatchObject({
+      role: "pro",
+      applied: ["00000000-0000-4000-8000-000000000001"],
+      requested: 2,
+    });
+    expect(res.body.skipped).toHaveLength(1);
+    expect(res.body.skipped[0].userId).toBe("00000000-0000-4000-8000-000000000002");
+    const update = h.opsFor("profiles").find((call) => call.method === "update");
+    expect(update?.args[0]).toMatchObject({
+      role: "pro",
+      plan: "pro",
+      premium_status: true,
+      premium_approved_at: expect.any(String),
+    });
+    expect(h.opsFor("profiles").filter((call) => call.method === "update")).toHaveLength(1);
+  });
+
+  it("rejects owner tier grants and duplicate IDs before changing profiles", async () => {
+    const { request } = await mount([["/api/owner", ownerRouter]]);
+    h.mockUser("owner-1", OWNER_EMAIL);
+
+    const ownerTier = await request("POST", "/api/owner/users/bulk-tier", {
+      userIds: ["00000000-0000-4000-8000-000000000001"],
+      role: "owner",
+    });
+    const duplicateIds = await request("POST", "/api/owner/users/bulk-tier", {
+      userIds: [
+        "00000000-0000-4000-8000-000000000001",
+        "00000000-0000-4000-8000-000000000001",
+      ],
+      role: "plus",
+    });
+
+    expect(ownerTier.status).toBe(400);
+    expect(duplicateIds.status).toBe(400);
+    expect(h.opsFor("profiles").filter((call) => call.method === "update")).toHaveLength(0);
+  });
+});
+
 describe("owner R1 grant management", () => {
   it("only owner emails may manage grants", async () => {
     const { request } = await mount([["/api/owner", ownerRouter]]);

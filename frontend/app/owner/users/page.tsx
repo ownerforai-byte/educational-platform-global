@@ -32,6 +32,7 @@ import {
   getOwnerUserDetail,
   adjustOwnerUserCredits,
   updateOwnerUserRole,
+  bulkUpdateOwnerUserRole,
   deleteOwnerUser,
   setOwnerUserAccessStatus,
   bulkOwnerUserAccessStatus,
@@ -117,6 +118,7 @@ export default function OwnerUsersPage() {
   // PENDING, Approved = ACTIVE/REJECTED. Filters stay at "all" for access
   // so neither system can hide the other's rows.
   const switchSystem = useCallback((next: OwnerSystem) => {
+    setSelected(new Set());
     setSystem(next);
   }, []);
 
@@ -130,6 +132,15 @@ export default function OwnerUsersPage() {
   const [busyId, setBusyId] = useState<string | null>(null);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [bulkBusy, setBulkBusy] = useState(false);
+  const [bulkTier, setBulkTier] = useState<Exclude<UserRole, "owner">>("plus");
+  const selectedSystemIds = useMemo(
+    () => systemUsers.filter((user) => selected.has(user.id)).map((user) => user.id),
+    [systemUsers, selected],
+  );
+  const updateFilters = useCallback((patch: Parameters<typeof patchFilters>[0]) => {
+    setSelected(new Set());
+    patchFilters(patch);
+  }, [patchFilters]);
 
   const [adjustUser, setAdjustUser] = useState<OwnerUser | null>(null);
   const [adjustAmount, setAdjustAmount] = useState(0);
@@ -232,7 +243,7 @@ export default function OwnerUsersPage() {
   };
 
   const selectAllVisible = () => {
-    if (selected.size === systemUsers.length) {
+    if (selectedSystemIds.length === systemUsers.length) {
       setSelected(new Set());
     } else {
       setSelected(new Set(systemUsers.map((u) => u.id)));
@@ -240,7 +251,7 @@ export default function OwnerUsersPage() {
   };
 
   const bulkAccess = async (status: "ACTIVE" | "REJECTED") => {
-    const ids = Array.from(selected);
+    const ids = selectedSystemIds;
     if (ids.length === 0) return;
     const verb = status === "ACTIVE" ? "approve" : "revoke access for";
     if (!window.confirm(`${verb} ${ids.length} selected account(s)?`)) return;
@@ -255,6 +266,30 @@ export default function OwnerUsersPage() {
       reload();
     } catch (err) {
       const msg = err instanceof Error ? err.message : "Bulk update failed";
+      setError(msg);
+      toast.error(msg);
+    } finally {
+      setBulkBusy(false);
+    }
+  };
+
+  const bulkSetTier = async () => {
+    const ids = selectedSystemIds;
+    if (ids.length === 0 || system !== "approved") return;
+    const tierLabel = ACCESS_LABELS[bulkTier];
+    if (!window.confirm(`Set ${ids.length} selected account(s) to ${tierLabel}?`)) return;
+
+    setBulkBusy(true);
+    try {
+      const res = await bulkUpdateOwnerUserRole(ids, bulkTier);
+      toast.success(`Updated ${res.applied.length} of ${res.requested} account tiers`);
+      if (res.skipped.length > 0) {
+        toast.message(`${res.skipped.length} skipped (protected or missing)`);
+      }
+      setSelected(new Set());
+      reload();
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : "Bulk tier update failed";
       setError(msg);
       toast.error(msg);
     } finally {
@@ -351,7 +386,7 @@ export default function OwnerUsersPage() {
           value={stats.byTier.plus ?? 0}
           accent="text-blue-600"
           active={filters.tier === "plus"}
-          onClick={() => patchFilters({ tier: filters.tier === "plus" ? "all" : "plus" })}
+          onClick={() => updateFilters({ tier: filters.tier === "plus" ? "all" : "plus" })}
         />
         <StatChip label="Pro+" value={(stats.byTier.pro ?? 0) + (stats.byTier.owner ?? 0)} />
         <StatChip label="Showing" value={systemUsers.length} />
@@ -391,14 +426,14 @@ export default function OwnerUsersPage() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               value={filters.query}
-              onChange={(e) => patchFilters({ query: e.target.value })}
+              onChange={(e) => updateFilters({ query: e.target.value })}
               placeholder="Filter by email, name, or user id…"
               className="pl-9"
             />
           </div>
           <select
             value={filters.tier}
-            onChange={(e) => patchFilters({ tier: e.target.value as UserTierFilter })}
+            onChange={(e) => updateFilters({ tier: e.target.value as UserTierFilter })}
             className="text-sm border rounded-md px-3 py-2 bg-background min-w-[120px]"
             aria-label="Filter by tier"
           >
@@ -413,7 +448,7 @@ export default function OwnerUsersPage() {
               so Review and Approved can never overlap. */}
           <select
             value={filters.sort}
-            onChange={(e) => patchFilters({ sort: e.target.value as UserSortKey })}
+            onChange={(e) => updateFilters({ sort: e.target.value as UserSortKey })}
             className="text-sm border rounded-md px-3 py-2 bg-background min-w-[140px]"
             aria-label="Sort users"
           >
@@ -433,9 +468,27 @@ export default function OwnerUsersPage() {
               Approve all pending ({visiblePendingIds.length})
             </Button>
           )}
-          {selected.size > 0 && (
+          {selectedSystemIds.length > 0 && (
             <>
-              <span className="text-xs text-muted-foreground">{selected.size} selected</span>
+              <span className="text-xs text-muted-foreground">{selectedSystemIds.length} selected</span>
+              {system === "approved" && (
+                <>
+                  <select
+                    value={bulkTier}
+                    onChange={(e) => setBulkTier(e.target.value as Exclude<UserRole, "owner">)}
+                    disabled={bulkBusy}
+                    className="text-sm border rounded-md px-2 py-1.5 bg-background"
+                    aria-label="Set selected accounts tier"
+                  >
+                    {USER_ROLES.filter((role) => role !== "owner").map((role) => (
+                      <option key={role} value={role}>{ACCESS_LABELS[role]}</option>
+                    ))}
+                  </select>
+                  <Button size="sm" variant="outline" disabled={bulkBusy} onClick={bulkSetTier}>
+                    Set tier
+                  </Button>
+                </>
+              )}
               <Button size="sm" disabled={bulkBusy} onClick={() => bulkAccess("ACTIVE")}>
                 Bulk approve
               </Button>
@@ -445,7 +498,7 @@ export default function OwnerUsersPage() {
             </>
           )}
           <Button variant="ghost" size="sm" onClick={selectAllVisible} className="ml-auto">
-            {selected.size === systemUsers.length && systemUsers.length > 0 ? (
+            {selectedSystemIds.length === systemUsers.length && systemUsers.length > 0 ? (
               <>
                 <CheckSquare className="h-3.5 w-3.5 mr-1" />
                 Clear selection

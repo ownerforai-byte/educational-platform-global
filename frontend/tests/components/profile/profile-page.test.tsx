@@ -157,8 +157,7 @@ describe("ProfilePage", () => {
     expect(screen.getByText("Harindra Sah")).toBeInTheDocument();
     expect(screen.getByText("harindarsah98172@gmail.com")).toBeInTheDocument();
     expect(screen.getByText("HS")).toBeInTheDocument(); // initials
-    expect(screen.getByText("Owner")).toBeInTheDocument(); // role badge
-    expect(screen.getByText("PRO")).toBeInTheDocument();
+    expect(screen.getByText(/^Owner$/)).toBeInTheDocument(); // allowlisted owner tier
     // Balance shows in the wallet card (and wherever else it appears) —
     // profile features 2026-10-13 added the Content Spark Wallet card.
     expect(screen.getAllByText(/42/).length).toBeGreaterThanOrEqual(1);
@@ -180,8 +179,8 @@ describe("ProfilePage", () => {
     fireEvent.click(screen.getByRole("tab", { name: /account/i }));
 
     expect(screen.getByText("Full name")).toBeInTheDocument();
-    // "PRO" appears in the header badge AND the account row — both present.
-    expect(screen.getAllByText(/^PRO/).length).toBeGreaterThanOrEqual(2);
+    // The allowlisted owner tier appears in both the header and account row.
+    expect(screen.getAllByText(/^Owner$/).length).toBeGreaterThanOrEqual(2);
     expect(
       screen.getByRole("link", { name: /full progress page/i })
     ).toHaveAttribute("href", "/progress");
@@ -219,20 +218,30 @@ describe("ProfilePage", () => {
     expect(screen.getByText(/Level 1 · Novice Scholar/i)).toBeInTheDocument();
   });
 
-  it("switches to Level Details tab to see academic level & NEB curriculum", async () => {
+  it("switches to Level Details tab to see scholar progression", async () => {
     render(<ProfilePage />);
 
     const levelTab = screen.getByRole("tab", { name: /level details/i });
     expect(levelTab).toBeInTheDocument();
     fireEvent.click(levelTab);
 
-    // Shows NEB +2 academic level details
     expect(screen.getByText("Scholar Level & Academic Hierarchy")).toBeInTheDocument();
+    expect(screen.getByText("Scholar Progression Roadmap")).toBeInTheDocument();
+  });
+
+  it("switches to Curriculum tab for grade focus and subjects", () => {
+    render(<ProfilePage />);
+
+    fireEvent.click(screen.getByRole("tab", { name: /curriculum/i }));
+
     expect(screen.getByText("Academic Grade & Curriculum Settings")).toBeInTheDocument();
-    expect(screen.getByText("NEB +2")).toBeInTheDocument();
     expect(screen.getByText("CDC Nepal Curriculum")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /class 11 science/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /class 12 science/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /physics/i })).toHaveAttribute(
+      "href",
+      "/class-11-notes/physics",
+    );
   });
 
   it("has no owner billing switch — access runs through SparkGate", () => {
