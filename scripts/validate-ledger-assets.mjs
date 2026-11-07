@@ -12,10 +12,12 @@
  *
  * Exits 0 on a clean ledger, 1 with a per-problem report otherwise.
  *
- * Declared payload files that are absent are WARNINGS, not failures:
- * `content/_index.json` and `content/manifest.json` are produced by
- * `npm run content:build` at release time and are intentionally untracked.
- * The warning keeps that fact visible in the Actions log rather than hiding it.
+ * Declared payload files that are absent are WARNINGS, not failures. The
+ * public `content/_index.json` was retired by 7bb51358 (paid bodies moved off
+ * the public CDN) and is no longer a ledger source; the remaining generated
+ * assets are tracked again after f6419cf broke `ledger:check` by untracking
+ * them. A warning keeps any future disappearance visible in the Actions log
+ * instead of silently weakening the gate.
  */
 import fs from "node:fs";
 import path from "node:path";

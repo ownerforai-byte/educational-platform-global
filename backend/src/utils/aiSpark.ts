@@ -10,7 +10,7 @@ import { isOwnerEmail } from "../middleware/auth";
  * after activation. The tier table:
  *
  *   guest (public, signed out) → no Veer access
- *   member                     → 3 messages / UTC day (the three chat consoles only)
+ *   member                     → 15 messages / UTC day (the three chat consoles only)
  *   plus                       → 25 messages / UTC day
  *   plus_20 ($30 / 20 days)    → 25 messages / UTC day, expires after 20 days
  *   pro                        → 50 messages / UTC day

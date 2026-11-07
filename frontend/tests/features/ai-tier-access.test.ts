@@ -11,13 +11,15 @@ const read = (p: string) => readFileSync(path.resolve(p), "utf8");
 const readRoot = (p: string) => readFileSync(path.resolve("..", p), "utf8");
 
 describe("AI spark tier table", () => {
-  it("allowances: guest 0 · member 3 · plus 25 · pro 50 · owner unlimited", () => {
+  it("allowances: guest 0 · member 15 · plus 25 · pro 50 · owner unlimited", () => {
+    // Member allowance was raised from 3 to 15 in both tier tables. Keep this
+    // test in sync with the product decision rather than pinning the old quota.
     expect(AI_SPARK_LIMITS.guest).toBe(0);
-    expect(AI_SPARK_LIMITS.member).toBe(3);
+    expect(AI_SPARK_LIMITS.member).toBe(15);
     expect(AI_SPARK_LIMITS.plus).toBe(25);
     expect(AI_SPARK_LIMITS.pro).toBe(50);
     expect(Number.isFinite(AI_SPARK_LIMITS.owner)).toBe(false);
-    expect(aiSparkLimitLabel("member")).toBe("3");
+    expect(aiSparkLimitLabel("member")).toBe("15");
     expect(aiSparkLimitLabel("owner")).toBe("Unlimited");
   });
 
@@ -25,7 +27,7 @@ describe("AI spark tier table", () => {
     const backend = readRoot("backend/src/utils/aiSpark.ts");
     for (const [tier, limit] of Object.entries({
       guest: 0,
-      member: 3,
+      member: 15,
       plus: 25,
       pro: 50,
     })) {
@@ -138,7 +140,9 @@ describe("Veer chat: routes stay metered, professor workspace is Plus-gated", ()
     // mobile strip AND the tier home pages' quick-links rail.
     const quickLinks = read("lib/navigation.ts");
     expect(quickLinks).not.toContain('{ href: "/search", label: "Search" }');
-    expect(quickLinks).toContain('{ href: "/chat", label: "AI" }');
+    // QUICK_LINKS is column-aligned, so match the entry rather than an exact
+    // whitespace-sensitive string literal.
+    expect(quickLinks).toMatch(/href:\s*"\/chat"\s*,\s*label:\s*"AI"/);
   });
 
   it("keeps Curriculum Search out of the footer Study links", () => {
