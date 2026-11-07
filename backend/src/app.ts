@@ -21,6 +21,7 @@ import aiPlatformGuideRoutes from "./api/ai-platform-guide";
 import periodicUnlockRoutes from "./api/periodic-unlock";
 import aiHistoryRoutes from "./api/ai-history";
 import aiQuizHistoryRoutes from "./api/ai-quiz-history";
+import leaderboardRoutes from "./api/leaderboard";
 import practiceHistoryRoutes from "./api/practice-history";
 import chatHistoryRoutes from "./api/chat-history";
 import bookmarksRoutes from "./api/bookmarks";
@@ -163,6 +164,9 @@ export function createApp(): express.Express {
   app.use("/api/periodic-table/unlock", periodicUnlockRoutes);
   app.use("/api/ai", aiRoutes);
   app.use("/api/ai-quiz-history", aiQuizHistoryRoutes);
+  // XP leaderboard — ranking derived from scored sets on every read (no stored
+  // XP column, so the rule can be corrected without a backfill).
+  app.use("/api/leaderboard", leaderboardRoutes);
   // Per-question practice attempt log for the textbook solution corpus
   // (content/practice/solutions/**) — complements /api/progress at the
   // question grain. Registered before /api/ai so the specific path wins.

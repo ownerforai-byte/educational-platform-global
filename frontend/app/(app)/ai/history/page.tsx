@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { History, Search, NotebookPen } from "lucide-react";
 import { HistoryConsole } from "@/components/ai/history-console";
-import { AiSurfaceHeader } from "@/components/ai/ai-surface-header";
+import { AiToolShell } from "@/components/ai/ai-tool-shell";
+import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 
 export const metadata: Metadata = {
   title: "Veer History Console — Search Your Saved Conversations",
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * /ai/history — the history console (owner request 2026-09-30).
+ * /ai/history — the history console.
  *
  * A separate interface from the tutor console on purpose: /ai/tutor ANSWERS
  * questions, this one SEARCHES the student's own saved conversations and
@@ -41,19 +42,16 @@ const FEATURES = [
 
 export default function AIHistoryPage() {
   return (
-    <div className="mx-auto w-full max-w-5xl px-2 py-4 sm:px-4 sm:py-6">
-      {/* Shared AI surface header (plan.md §13) */}
-      <AiSurfaceHeader
-        icon={History}
-        title="Veer History Console"
-        subtitle="Search your saved conversations and have them presented as asked — signed in, and free."
-        accent="border-fuchsia-500/25 bg-fuchsia-500/10 text-fuchsia-500"
-        gradientFrom="from-fuchsia-500/[0.07]"
-        crumb="History Console"
-        features={FEATURES.map((f) => ({ icon: f.icon, title: f.title, text: f.text }))}
-      />
-
+    <AiToolShell
+      icon={History}
+      title="Veer History Console"
+      description="Search your saved conversations and have them presented as asked — signed in, and free."
+      accent="border-fuchsia-500/25 bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-400"
+      current="/ai/history"
+      meter={<AiPlanStrip />}
+      features={FEATURES}
+    >
       <HistoryConsole />
-    </div>
+    </AiToolShell>
   );
 }

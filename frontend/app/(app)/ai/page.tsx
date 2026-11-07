@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, LayoutGrid } from "lucide-react";
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 import { AiToolsDirectory } from "@/components/ai/ai-tools-directory";
 import { SUBJECT_CLASSROOMS } from "@/lib/ai/subject-classrooms";
@@ -26,6 +28,22 @@ export default function AIStudioPage() {
         <p className="text-sm text-muted-foreground">
           Choose an assistant or classroom for the way you want to study.
         </p>
+        <div className="flex flex-wrap gap-2 pt-2">
+          <Link
+            href="/ai/workspace"
+            className="inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-xs font-bold text-primary-foreground transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          >
+            <LayoutGrid className="h-3.5 w-3.5" aria-hidden="true" />
+            Open the workspace
+            <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+          </Link>
+          <Link
+            href="/ai/subjects"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-border px-4 py-2 text-xs font-bold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            Subject classrooms
+          </Link>
+        </div>
       </header>
 
       <AiPlanStrip />
