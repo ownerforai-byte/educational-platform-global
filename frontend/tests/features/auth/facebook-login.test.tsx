@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
 
 const mocks = vi.hoisted(() => {
   const refresh = vi.fn();
@@ -153,9 +154,14 @@ describe("Social login", () => {
   it("exchanges the callback code and always shows the resolved tier welcome before home", async () => {
     const state = "f".repeat(64);
     sessionStorage.setItem("neb_oauth_csrf", state);
-    vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", "https://testproj.supabase.co");
-    localStorage.setItem("sb-testproj-auth-token", "{}");
-    localStorage.setItem("sb-testproj-auth-token-code-verifier", "{}");
+    // public-config.ts resolves the URL once at module load, so a runtime
+    // vi.stubEnv cannot redirect the storage-key prefix. Derive the keys from
+    // the same shared constant the callback uses (as supabase-browser.test.ts
+    // does) so the sweep assertion still exercises the real prefix.
+    const projectRef = new URL(PUBLIC_SUPABASE_URL).hostname.split(".")[0];
+    const authTokenKey = `sb-${projectRef}-auth-token`;
+    localStorage.setItem(authTokenKey, "{}");
+    localStorage.setItem(`${authTokenKey}-code-verifier`, "{}");
     localStorage.setItem("unrelated-key", "keep");
     // The callback ignores the legacy next path and chooses by the returned user tier.
     mocks.apiFetch.mockResolvedValueOnce({ user: { id: "user-1", email: "student@example.com" }, accessToken: "app-access" });
@@ -173,8 +179,8 @@ describe("Social login", () => {
     // /auth/v1/logout and GoTrue deletes the server session the backend just
     // minted (see auth/callback/page.tsx clearSupabaseLocalSession).
     expect(mocks.signOut).not.toHaveBeenCalled();
-    expect(localStorage.getItem("sb-testproj-auth-token")).toBeNull();
-    expect(localStorage.getItem("sb-testproj-auth-token-code-verifier")).toBeNull();
+    expect(localStorage.getItem(authTokenKey)).toBeNull();
+    expect(localStorage.getItem(`${authTokenKey}-code-verifier`)).toBeNull();
     expect(localStorage.getItem("unrelated-key")).toBe("keep");
     expect(mocks.setStoredToken).toHaveBeenCalledWith("app-access");
     expect(mocks.writeCachedSession).toHaveBeenCalledWith(
