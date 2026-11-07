@@ -8,6 +8,7 @@
         "http://localhost:3000/pyqs"
       ],
       "numberOfRuns": 3,
+      "failurePassThreshold": 0.667,
       "settings": {
         "formFactor": "mobile",
         "screenEmulation": {
