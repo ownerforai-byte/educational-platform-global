@@ -4,6 +4,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { getSupabaseBrowserClient } from "@/lib/supabase/browser";
+import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
 import { apiFetch, setStoredToken } from "@/lib/api-client";
 import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
@@ -19,9 +20,7 @@ import type { OAuthSessionResponse } from "@/types/api";
  */
 function clearSupabaseLocalSession(): void {
   try {
-    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    if (!url) return;
-    const projectRef = new URL(url).hostname.split(".")[0];
+    const projectRef = new URL(PUBLIC_SUPABASE_URL).hostname.split(".")[0];
     // supabase-js keeps the session under `sb-<ref>-auth-token` and PKCE
     // verifiers under per-flow variants of that key — sweep the whole prefix.
     const prefix = `sb-${projectRef}-auth-token`;

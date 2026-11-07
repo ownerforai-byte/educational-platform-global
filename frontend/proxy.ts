@@ -1,15 +1,16 @@
 import { randomBytes } from "node:crypto";
 import { type NextRequest, NextResponse } from "next/server";
+import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
 
 /**
  * Supabase project the frontend talks to. Driven by NEXT_PUBLIC_SUPABASE_URL so
  * a project migration can never strand the CSP allowlist again — the 2026-10
  * project switch left the old host hardcoded here, which made the OAuth
  * settings pre-check fail with a CSP violation ("Failed to fetch" on login).
+ * Uses the same shared public config as the browser client, so the CSP and the
+ * OAuth host can never drift apart.
  */
-export const SUPABASE_ORIGIN =
-  process.env.NEXT_PUBLIC_SUPABASE_URL?.trim().replace(/\/+$/, "") ||
-  "https://lqzjcwbkpeiqslqhxxmu.supabase.co";
+export const SUPABASE_ORIGIN = PUBLIC_SUPABASE_URL;
 
 const RATE_LIMIT_WINDOW = 60_000;
 const RATE_LIMIT_MAX = 120;

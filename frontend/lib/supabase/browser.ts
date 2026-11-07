@@ -1,16 +1,20 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import {
+  PUBLIC_SUPABASE_ANON_KEY,
+  PUBLIC_SUPABASE_URL,
+} from "@/lib/supabase/public-config";
 
 export type OAuthProvider = "facebook" | "google";
 
 let browserClient: SupabaseClient | null = null;
 
 function getPublicConfig() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL?.trim();
-  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim();
-  if (!url || !anonKey) {
+  // Falls back to the project's public URL/anon key when env vars are absent,
+  // so a preview or local build never loses "Continue with Google".
+  if (!PUBLIC_SUPABASE_URL || !PUBLIC_SUPABASE_ANON_KEY) {
     throw new Error("Social sign-in is not configured for this app.");
   }
-  return { url: url.replace(/\/+$/, ""), anonKey };
+  return { url: PUBLIC_SUPABASE_URL, anonKey: PUBLIC_SUPABASE_ANON_KEY };
 }
 
 export function getSupabaseBrowserClient(): SupabaseClient {

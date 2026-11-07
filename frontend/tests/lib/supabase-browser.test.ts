@@ -1,24 +1,25 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
+import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
 
 /**
  * Regression: the OAuth provider pre-check used `settings.external?.google ===
  * true`, so ANY payload that omitted the key (different GoTrue versions,
  * partial settings) reported Google as disabled and blocked the redirect even
  * though Supabase had Google enabled. Only an explicit `false` may block.
+ *
+ * The URL is intentionally NOT stubbed: this test exercises the public-config
+ * fallback in public-config.ts, which resolves to the real CSP project when the
+ * env var is absent (the same value already inlined in the production bundle —
+ * an anon key, not a secret). `fetch` is mocked below, so no network call is
+ * ever made. Only the anon key is stubbed so the request-headers assertion
+ * stays deterministic.
  */
-
-// The live project URL is public (it is already the CSP fallback in proxy.ts),
-// but the anon key is deliberately a stub: `fetch` is mocked below, so this
-// unit test never talks to Supabase and no credential belongs in the repo.
-// Live verification of https://lqzjcwbkpeiqslqhxxmu.supabase.co is done out of
-// band with the real published anon key.
-const PROJECT_URL = "https://lqzjcwbkpeiqslqhxxmu.supabase.co";
 
 beforeEach(() => {
   vi.resetModules();
   vi.unstubAllEnvs();
   vi.unstubAllGlobals();
-  vi.stubEnv("NEXT_PUBLIC_SUPABASE_URL", PROJECT_URL);
+  // URL falls back to PUBLIC_SUPABASE_URL; only the anon key is pinned.
   vi.stubEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY", "test-anon-key-stub");
 });
 
@@ -87,7 +88,7 @@ describe("isOAuthProviderEnabled", () => {
     const { isOAuthProviderEnabled } = await loadBrowser();
     await isOAuthProviderEnabled("google");
     expect(fetchMock).toHaveBeenCalledWith(
-      `${PROJECT_URL}/auth/v1/settings`,
+      `${PUBLIC_SUPABASE_URL}/auth/v1/settings`,
       expect.objectContaining({
         headers: { apikey: "test-anon-key-stub" },
         signal: expect.any(AbortSignal),
