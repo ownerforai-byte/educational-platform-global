@@ -118,14 +118,27 @@ export interface HomeRailEntry {
   reasons: string[];
 }
 
-/** Walk up until the classified corpus (`content/notes`) is found (dev cwd is `frontend/`). */
+/**
+ * Repo root holding the classified corpus (`content/notes`).
+ *
+ * Static rule, same as theorems.ts/derivations.ts: the Next app root is
+ * `frontend/`, so the corpus root is its parent; run from the repo root
+ * itself and it is the cwd. No directory walk and no dynamic
+ * `fs.existsSync` probe — Turbopack's file tracer flags a walk-up loop
+ * as "dynamic filesystem access causes tracing of the whole project"
+ * and bundles the entire tree. The corpus itself is already traced
+ * explicitly via the content glob in next.config.mjs.
+ */
 export function findCorpusRoot(start = process.cwd()): string {
-  let dir = path.resolve(start);
-  for (let i = 0; i < 5 && dir !== path.parse(dir).root; i++) {
-    if (fs.existsSync(path.join(dir, "content", "notes"))) return dir;
-    dir = path.dirname(dir);
+  const cwd = path.resolve(start);
+  if (
+    cwd.endsWith("frontend") ||
+    cwd.endsWith(`${path.sep}frontend`) ||
+    cwd.endsWith("/frontend")
+  ) {
+    return path.resolve(cwd, "..");
   }
-  return path.resolve(start);
+  return cwd;
 }
 
 /** Subjects of one rail class in rail order, straight from the syllabus. */
