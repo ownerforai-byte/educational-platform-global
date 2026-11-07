@@ -130,7 +130,7 @@ export interface HomeRailEntry {
  * explicitly via the content glob in next.config.mjs.
  */
 export function findCorpusRoot(start = process.cwd()): string {
-  const cwd = path.resolve(start);
+  const cwd = path.resolve(/*turbopackIgnore: true*/ start);
   if (
     cwd.endsWith("frontend") ||
     cwd.endsWith(`${path.sep}frontend`) ||

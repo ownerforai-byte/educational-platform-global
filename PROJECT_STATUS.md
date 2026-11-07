@@ -261,11 +261,17 @@ Full details: `MIGRATION_COMPLETE.md`. Summary:
   `backend/src/api/resources.ts` PATCH (line 268) calls `requireContentEditor`
   + `canManageResource` ownership check; DELETE (line 330) enforces
   `isPrivileged || isOwner`; PATCH sanitizes via `buildResourcePatch(body, isAdmin)`
-  rejecting unknown fields. Remaining open: controller settings PATCH lost,
-  storage upload not ported, search officialLink dropped, bookmarks shape drift,
-  progress validation dropped, controller payload drift, missing local
-  `backend/.env`, undecided deploy target + stale CI, root `app/` kept until
-  cutover.
+  rejecting unknown fields. Remaining open (reviewed 2026-11-07):
+  controller settings PATCH — **RESOLVED**: `backend/src/api/controller.ts:134`
+  has a full PATCH handler with key/value validation, length limits, and admin
+  guard. Storage upload — **RESOLVED**: `backend/src/api/storage.ts:88` has
+  POST `/upload` with base64 payload, path traversal protection, MIME whitelist.
+  Search officialLink — **RESOLVED**: `backend/src/api/search.ts:178` reads and
+  returns officialLink in search results. Bookmarks — **RESOLVED**:
+  `backend/src/api/bookmarks.ts` has GET (user-scoped, folder filter) + upsert.
+  Still genuinely open: missing local `backend/.env`, undecided deploy target,
+  root `app/` kept until cutover, 47 graphify-generated files unstaged in working
+  tree (tier-system regeneration — not committed).
 - Old root `app/` implementation retained intentionally until cutover; duplication mapped
   in `frontend/MIGRATION_FILE_MAP.md`.
 
