@@ -213,11 +213,13 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
       }
     } catch (e: any) {
       if (controller.signal.aborted) {
-        // Stop pressed: keep the partial answer, drop an empty bubble.
+        // Stop pressed: keep the partial answer, drop an empty bubble, and put
+        // the unanswered prompt back in the composer (sendMessage cleared it).
         setMessages((prev) => {
           const last = prev[prev.length - 1];
           return last?.role === "assistant" && !last.content.trim() ? prev.slice(0, -2) : prev;
         });
+        setInput(text);
         return;
       }
       const errText =

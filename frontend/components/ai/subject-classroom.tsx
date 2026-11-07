@@ -260,6 +260,25 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
     const controller = new AbortController();
     abortRef.current = controller;
 
+    // Hoisted above the try so the Stop branch in `catch` can settle the turn.
+    let liveAcc = "";
+    let sawToken = false;
+    let liveRemaining: number | null = null;
+    let lastPaint = 0;
+    const paintLive = (force: boolean) => {
+      const now = Date.now();
+      if (!force && now - lastPaint < 40) return;
+      lastPaint = now;
+      setMessages((prev) => {
+        const next = [...prev];
+        const last = next[next.length - 1];
+        if (last?.role === "assistant") {
+          next[next.length - 1] = { role: "assistant", content: liveAcc };
+        }
+        return next;
+      });
+    };
+
     try {
       const payload: AIChatMessage[] = [
         {
@@ -268,24 +287,6 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
         },
         ...outbound,
       ];
-
-      let liveAcc = "";
-      let sawToken = false;
-      let liveRemaining: number | null = null;
-      let lastPaint = 0;
-      const paintLive = (force: boolean) => {
-        const now = Date.now();
-        if (!force && now - lastPaint < 40) return;
-        lastPaint = now;
-        setMessages((prev) => {
-          const next = [...prev];
-          const last = next[next.length - 1];
-          if (last?.role === "assistant") {
-            next[next.length - 1] = { role: "assistant", content: liveAcc };
-          }
-          return next;
-        });
-      };
 
       for await (const chunk of streamChat(payload, undefined, {
         session: targetSession,
@@ -340,7 +341,18 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
       recordAiSparkUse();
     } catch (err: unknown) {
       // Stop pressed: the partial answer stays on screen, no error banner.
-      if (controller.signal.aborted) return;
+      if (controller.signal.aborted) {
+        // CodeRabbit: settle the turn. With no token at all the unanswered
+        // question must go back into the composer instead of polluting the
+        // next request's context; with tokens, force the final throttled paint.
+        if (sawToken) {
+          paintLive(true);
+        } else {
+          setMessages((prev) => (prev[prev.length - 1]?.role === "user" ? prev.slice(0, -1) : prev));
+          setInput(content);
+        }
+        return;
+      }
       const msg =
         err instanceof Error && err.message
           ? err.message

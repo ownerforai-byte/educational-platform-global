@@ -168,6 +168,15 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
    */
   const wantListeningRef = useRef(false);
   const transcriptRef = useRef("");
+  /**
+   * Hands-free auto-send keeps its OWN copy of the final results. The composer
+   * calls `clear()` every time it folds a final phrase into the textarea, which
+   * empties `transcriptRef`; the 3.5 s silence timer would then see nothing
+   * and never fire `onComplete`, leaving the spoken question stuck in the
+   * draft. This accumulator survives `clear()` and is reset only when the
+   * question is handed over or a new listening pass starts.
+   */
+  const autoSendTranscriptRef = useRef("");
   const restartingRef = useRef(false);
   const silenceRef = useRef<ReturnType<typeof createSilenceTrigger> | null>(null);
   /** Callbacks live in refs so a new options object never re-arms the mic. */
@@ -203,6 +212,7 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
   const stop = useCallback(() => {
     wantListeningRef.current = false;
     silenceRef.current?.cancel();
+    autoSendTranscriptRef.current = "";
     setListening(false);
     setInterim("");
     const rec = recognitionRef.current;
@@ -238,10 +248,11 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
 
     // Auto-send: silence after the last speech hands the finished question over.
     const silence = createSilenceTrigger(autoSendRef.current ?? 0, () => {
-      const spoken = `${transcriptRef.current} ${interimRef.current}`.trim();
+      const spoken = `${autoSendTranscriptRef.current} ${interimRef.current}`.trim();
       if (!spoken || !wantListeningRef.current || !completeRef.current) return;
       wantListeningRef.current = false;
       setListening(false);
+      autoSendTranscriptRef.current = "";
       transcriptRef.current = "";
       interimRef.current = "";
       setTranscript("");
@@ -263,6 +274,7 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
         if (!text) continue;
         if (result.isFinal) {
           transcriptRef.current = `${transcriptRef.current} ${text}`.trim();
+          autoSendTranscriptRef.current = `${autoSendTranscriptRef.current} ${text}`.trim();
         } else {
           partial += text;
         }
@@ -270,7 +282,11 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
       setTranscript(transcriptRef.current);
       interimRef.current = partial.trim();
       setInterim(partial.trim());
-      if (autoSendRef.current && completeRef.current && (transcriptRef.current || partial.trim())) {
+      if (
+        autoSendRef.current &&
+        completeRef.current &&
+        (autoSendTranscriptRef.current || partial.trim())
+      ) {
         silenceRef.current?.poke();
       }
     };
@@ -305,6 +321,7 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
         setListening(false);
         const handover = spoken;
         transcriptRef.current = "";
+        autoSendTranscriptRef.current = "";
         setTranscript("");
         completeRef.current(handover);
         return;
@@ -335,6 +352,7 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
       silenceRef.current = null;
       wantListeningRef.current = false;
       restartingRef.current = false;
+      autoSendTranscriptRef.current = "";
       teardown();
     };
     // The recognition instance is bound to one language: switching the
@@ -346,6 +364,9 @@ export function useVoiceInput(options: UseVoiceInputOptions = {}): VoiceInput {
     const rec = recognitionRef.current;
     if (!rec) return;
     wantListeningRef.current = true;
+    autoSendTranscriptRef.current = "";
+    transcriptRef.current = "";
+    setTranscript("");
     try {
       rec.lang = lang;
       rec.start();

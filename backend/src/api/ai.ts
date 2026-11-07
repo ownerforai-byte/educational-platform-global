@@ -154,10 +154,20 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       // The student was never answered → give the spark back (best-effort).
       // A streamed request only "delivered" if any character actually
       // reached the browser; a plain request delivered on a <400 status.
-      res.on("finish", () => {
-        const delivered = stream ? streamState.streamedAny : res.statusCode < 400;
+      // CodeRabbit: `finish` never fires when the client aborts the fetch
+      // (Stop button), which used to burn a spark with no answer at all.
+      // `close` covers that path; the guard settles the refund exactly once.
+      let sparkSettled = false;
+      const settleSpark = () => {
+        if (sparkSettled) return;
+        sparkSettled = true;
+        const delivered = stream
+          ? streamState.streamedAny
+          : res.writableEnded && res.statusCode < 400;
         if (!delivered) rollbackUserSlot(user.id).catch(() => {});
-      });
+      };
+      res.on("finish", settleSpark);
+      res.on("close", settleSpark);
     }
     // `credits` stays undefined so older clients keep parsing; the AI spark
     // travels as `aiSpark` instead. Content sparks are spent exclusively on
@@ -273,8 +283,8 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     });
   } catch (err: any) {
     console.error("AI chat error:", err);
-    // The AI-spark refund lives in the response `finish` hook above — a
-    // failed attempt never keeps the spark it drew.
+    // The AI-spark refund lives in the `finish`/`close` hooks above — a
+    // failed or disconnected attempt never keeps the spark it drew.
     // The SSE channel opens before the research step, so the response may
     // already be mid-stream: send an error frame (a JSON status would throw
     // ERR_HTTP_HEADERS_SENT) and close, or the student waits on a silent
