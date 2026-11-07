@@ -38,13 +38,13 @@ export default function GoalsPage() {
     const updated: StudyGoals = {
       ...goals,
       subjects: Array.from(next),
-    };
+    } as StudyGoals;
     setGoals(updated);
     writeGoals(updated);
   }
 
   function update<K extends keyof StudyGoals>(key: K, value: StudyGoals[K]) {
-    const updated = { ...goals, [key]: value } as StudyGoals;
+    const updated: StudyGoals = { ...goals, [key]: value } as StudyGoals;
     setGoals(updated);
     writeGoals(updated);
   }

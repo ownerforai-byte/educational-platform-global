@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Check, Minus } from "lucide-react";
 import { SECTIONS } from "@/lib/sections";
-import type { AccessLevel } from "@/lib/access-level";
+import {
+  ACCESS_LEVELS,
+  ACCESS_LABELS,
+  ACCESS_RANK,
+  type AccessLevel,
+} from "@/lib/access-level";
 
 export const metadata: Metadata = {
   title: "Features",
@@ -10,28 +15,13 @@ export const metadata: Metadata = {
     "Everything the platform offers — tier by tier. See what Member, Plus, Pro and Owner unlock.",
 };
 
-const TIER_ORDER: AccessLevel[] = ["guest", "member", "plus", "pro", "owner"];
-
-const TIER_LABELS: Record<AccessLevel, string> = {
-  guest: "Guest",
-  member: "Member",
-  plus: "Plus",
-  pro: "Pro",
-  owner: "Owner",
-};
-
-function tierIndex(t: AccessLevel): number {
-  return TIER_ORDER.indexOf(t);
-}
-
-/** A feature is available at tier T and above. */
+/** A feature is available at tier T and above (rank 0 = lowest). */
 function isAvailable(sectionTier: AccessLevel, checkTier: AccessLevel): boolean {
-  return tierIndex(sectionTier) <= tierIndex(checkTier);
+  return ACCESS_RANK[sectionTier] <= ACCESS_RANK[checkTier];
 }
 
 export default function FeaturesPage() {
-  // Group sections by tier for the grid
-  const tiers: AccessLevel[] = ["guest", "member", "plus", "pro", "owner"];
+  const tiers = ACCESS_LEVELS as readonly AccessLevel[];
 
   return (
     <div className="mx-auto max-w-5xl space-y-8 py-10 px-4">
@@ -56,7 +46,7 @@ export default function FeaturesPage() {
                   key={t}
                   className="px-4 py-3 text-center font-semibold text-foreground"
                 >
-                  {TIER_LABELS[t]}
+                  {ACCESS_LABELS[t]}
                 </th>
               ))}
             </tr>
