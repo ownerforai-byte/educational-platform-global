@@ -22,6 +22,12 @@ const MAX_REQUESTS = positiveNumber(process.env.RATE_LIMIT_MAX_REQUESTS, 60);
 // Lowered 10 → 5 (2026-09-25 security pass): the pre-deploy checklist asks for
 // at most 5 login attempts per minute per IP.
 const AUTH_MAX_REQUESTS = positiveNumber(process.env.AUTH_RATE_LIMIT_MAX_REQUESTS, 5);
+// OAuth needs its own bucket. One Google sign-in costs a CSRF POST + a session
+// POST (and a retry on a cold backend), so sharing the 5/min password bucket
+// rate-limited legitimate social logins after two or three attempts. These
+// endpoints are not password brute-force vectors: the session exchange is
+// validated against a Supabase access token.
+const OAUTH_MAX_REQUESTS = positiveNumber(process.env.OAUTH_RATE_LIMIT_MAX_REQUESTS, 20);
 // Password reset gets its own, much longer window: the checklist asks for 3
 // attempts per hour per IP (email-bombing + reset-token guessing).
 const PASSWORD_RESET_MAX_REQUESTS = positiveNumber(
@@ -51,11 +57,19 @@ function pruneExpiredHits(now: number): void {
   }
 }
 
-type Tier = "auth" | "password-reset" | "guest-ai" | "ai-image" | "default" | "default-unlimited";
+type Tier = "auth" | "oauth" | "password-reset" | "guest-ai" | "ai-image" | "default" | "default-unlimited";
 
 /** Which tier does this request fall into? */
 function tierFor(originalUrl: string | undefined): Tier {
   const url = originalUrl ?? "";
+  // Social sign-in handshake: its own bucket, checked BEFORE the credential
+  // tier so a CSRF/session call never burns a password-attempt slot.
+  if (
+    url.startsWith("/api/auth/oauth/csrf") ||
+    url.startsWith("/api/auth/oauth/session")
+  ) {
+    return "oauth";
+  }
   // Password reset first: its own long window (3/hour).
   if (url.startsWith("/api/auth/reset-password") || url.startsWith("/api/auth/forgot-password")) {
     return "password-reset";
@@ -66,9 +80,7 @@ function tierFor(originalUrl: string | undefined): Tier {
   if (
     url.startsWith("/api/auth/login") ||
     url.startsWith("/api/auth/refresh") ||
-    url.startsWith("/api/auth/signup") ||
-    url.startsWith("/api/auth/oauth/csrf") ||
-    url.startsWith("/api/auth/oauth/session")
+    url.startsWith("/api/auth/signup")
   ) {
     return "auth";
   }
@@ -100,6 +112,7 @@ interface TierLimit {
 
 const TIERS: Record<Tier, TierLimit> = {
   auth: { max: AUTH_MAX_REQUESTS, windowMs: WINDOW_MS },
+  oauth: { max: OAUTH_MAX_REQUESTS, windowMs: WINDOW_MS },
   "password-reset": { max: PASSWORD_RESET_MAX_REQUESTS, windowMs: PASSWORD_RESET_WINDOW_MS },
   "guest-ai": { max: MAX_REQUESTS, windowMs: WINDOW_MS },
   "ai-image": { max: AI_IMAGE_MAX_REQUESTS, windowMs: WINDOW_MS },

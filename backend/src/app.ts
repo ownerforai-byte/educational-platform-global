@@ -77,7 +77,10 @@ export function createApp(): express.Express {
         return cb(null, false);
       },
       credentials: true,
-      allowedHeaders: ["Content-Type", "Authorization"],
+      // The OAuth callback POSTs X-CSRF-Token. When a deployment calls the
+      // backend directly (instead of the same-origin Next.js proxy), the CORS
+      // preflight must allow that header or the exchange is blocked.
+      allowedHeaders: ["Content-Type", "Authorization", "X-CSRF-Token"],
     }),
   );
   app.use(morgan("combined"));
