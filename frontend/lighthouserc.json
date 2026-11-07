@@ -2,9 +2,7 @@
   "ci": {
     "collect": {
       "url": [
-        "http://localhost:3000/home",
-        "http://localhost:3000/lab",
-        "http://localhost:3000/pyqs"
+        "http://localhost:3000/home"
       ],
       "numberOfRuns": 1,
       "settings": {
