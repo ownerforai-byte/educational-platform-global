@@ -251,3 +251,16 @@ _lint.log
 full-gate*.log
 backend-ai-widget.log
 check-all-ai-widget.log
+
+# ── AI-agent tooling folders (not part of the product) ──────────────────────
+# Other agents' working directories clutter the default view and must never be
+# committed. One AGENTS.md is kept; these are ignored.
+.trae/
+.commandcode/
+.frontbuff/
+tokenkit-out/
+
+# ── Large generated build artifacts (regenerate in CI / from the corpus) ─────
+# These balloon the clone size; `npm run content:build` recreates them on demand.
+content/_index.json
+frontend/public/data/content/manifest.json
