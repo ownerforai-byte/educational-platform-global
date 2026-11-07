@@ -157,8 +157,10 @@ describe("ProfilePage", () => {
     expect(screen.getByText("Harindra Sah")).toBeInTheDocument();
     expect(screen.getByText("harindarsah98172@gmail.com")).toBeInTheDocument();
     expect(screen.getByText("HS")).toBeInTheDocument(); // initials
-    expect(screen.getByText("Owner")).toBeInTheDocument(); // role badge
-    expect(screen.getByText("PRO")).toBeInTheDocument();
+    expect(screen.getByText("Owner")).toBeInTheDocument(); // canonical access-tier badge
+    // 82557f76 unified the role + plan badges into one ACCESS_LABELS[tier]
+    // label; the separate "PRO" plan badge no longer exists.
+    expect(screen.getByText(/Owner plan/)).toBeInTheDocument();
     // Balance shows in the wallet card (and wherever else it appears) —
     // profile features 2026-10-13 added the Content Spark Wallet card.
     expect(screen.getAllByText(/42/).length).toBeGreaterThanOrEqual(1);
@@ -180,8 +182,10 @@ describe("ProfilePage", () => {
     fireEvent.click(screen.getByRole("tab", { name: /account/i }));
 
     expect(screen.getByText("Full name")).toBeInTheDocument();
-    // "PRO" appears in the header badge AND the account row — both present.
-    expect(screen.getAllByText(/^PRO/).length).toBeGreaterThanOrEqual(2);
+    // The Account tab now shows the unified access-tier row (header badge +
+    // "Access tier" row), not the retired duplicated "PRO" plan text.
+    expect(screen.getByText("Access tier")).toBeInTheDocument();
+    expect(screen.getByText(/Unlimited Veer sparks/)).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /full progress page/i })
     ).toHaveAttribute("href", "/progress");
