@@ -40,14 +40,14 @@ interface TierCard {
 
 const TIER_CARDS: TierCard[] = [
   {
-    id: "visitor",
+    id: "guest",
     name: "Guest",
     icon: Eye,
     accent: "border-slate-500/30 bg-gradient-to-br from-slate-500/10 via-card to-card",
     chip: "bg-slate-500/15 text-slate-500",
-    who: "Signed-out visitors",
+    who: "Signed-out guests",
     features: [
-      "Only the chat widget on the visitor home — a text box and a send button",
+      "Only the chat widget on the guest home — a text box and a send button",
       "It explains the platform. It does not teach the syllabus",
       "No notes, labs, simulations, or Veer",
     ],
@@ -61,8 +61,8 @@ const TIER_CARDS: TierCard[] = [
     chip: "bg-emerald-500/15 text-emerald-500",
     who: "Approved accounts",
     features: [
-      "The visitor home chat widget",
-      "3 Veer sparks per day — Study, Nepali, and Grammar chats only",
+      "The guest home chat widget",
+      "13 Veer sparks per day — Study, Nepali, and Grammar chats only",
     ],
     cta: { label: "Request an account", href: "/signup" },
   },
@@ -164,7 +164,7 @@ export default function PlansPage() {
                     <CardTitle className="text-lg">{tier.name}</CardTitle>
                   </div>
                   <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${tier.chip}`}>
-                    {tier.id === "visitor" ? "Free" : tier.id === "owner" ? "Operator" : "Plan"}
+                    {tier.id === "guest" ? "Free" : tier.id === "owner" ? "Operator" : "Plan"}
                   </span>
                 </div>
                 <CardDescription className="text-xs">

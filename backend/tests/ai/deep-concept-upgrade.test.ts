@@ -164,7 +164,9 @@ describe("deep concept upgrade", () => {
     expect(mocks.chat).toHaveBeenCalledTimes(1);
     expect(mocks.stream.mock.calls[0][1][0].content).toContain("DEEP-CONCEPT ANSWER UPGRADE");
     expect(mocks.stream.mock.calls[0][1][1].content).toContain("Raw draft.");
-  });
+    // Two AI passes + citation retrieval; the default 5s budget is tight on
+    // Windows under full-suite load (same 20s budget as other corpus tests).
+  }, 20_000);
   it("appends real web paper references after related-history links in Veer chat", async () => {
     mocks.searchEnabled = true;
     mocks.rows.push({ user_id: "alice", session: "prior", role: "user", content: "capacitor" });

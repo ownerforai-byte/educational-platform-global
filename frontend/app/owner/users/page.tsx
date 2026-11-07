@@ -1,10 +1,9 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   Coins,
-  Crown,
   Search,
   Trash2,
   RefreshCw,
@@ -33,7 +32,6 @@ import {
   getOwnerUserDetail,
   adjustOwnerUserCredits,
   updateOwnerUserRole,
-  setOwnerUserPremium,
   deleteOwnerUser,
   setOwnerUserAccessStatus,
   bulkOwnerUserAccessStatus,
@@ -42,21 +40,25 @@ import type { OwnerUser, OwnerUserDetail } from "@/lib/api/owner";
 import { useOwnerUserDirectory } from "@/lib/hooks/use-owner-user-directory";
 import {
   downloadTextFile,
+  isOwnerUser,
   ownerUsersToCsv,
-  type UserAccessFilter,
-  type UserRoleFilter,
+  partitionOwnerSystems,
+  type OwnerSystem,
+  type UserTierFilter,
   type UserSortKey,
 } from "@/lib/owner/user-directory";
 import { cn } from "@/lib/utils";
+import { USER_ROLES, type UserRole } from "@/lib/auth/roles";
+import { ACCESS_LABELS, TIER_SPARKS, type AccessLevel } from "@/lib/access-level";
 
-const ROLES = ["member", "plus", "pro", "owner"] as const;
 const CREDIT_PRESETS = [50, 100, 250, 500] as const;
 
-const roleBadge: Record<string, string> = {
-  owner: "bg-amber-500/15 text-amber-600",
-  pro: "bg-rose-500/15 text-rose-600",
+const tierBadge: Record<AccessLevel, string> = {
+  guest: "bg-slate-500/15 text-slate-500",
+  member: "bg-emerald-500/15 text-emerald-600",
   plus: "bg-blue-500/15 text-blue-600",
-  member: "bg-muted text-muted-foreground",
+  pro: "bg-rose-500/15 text-rose-600",
+  owner: "bg-amber-500/15 text-amber-600",
 };
 
 const accessBadge: Record<string, { label: string; className: string }> = {
@@ -97,6 +99,7 @@ function StatChip({
 
 export default function OwnerUsersPage() {
   const {
+    users,
     visibleUsers,
     stats,
     filters,
@@ -106,6 +109,23 @@ export default function OwnerUsersPage() {
     setError,
     reload,
   } = useOwnerUserDirectory();
+
+  // Two separate systems, recreated cleanly: Review (pending decisions)
+  // and Approved (decided accounts). No overlap — an account is in one.
+  const [system, setSystem] = useState<OwnerSystem>("review");
+  // Access is owned by the partition, not the filter dropdown: Review =
+  // PENDING, Approved = ACTIVE/REJECTED. Filters stay at "all" for access
+  // so neither system can hide the other's rows.
+  const switchSystem = useCallback((next: OwnerSystem) => {
+    setSystem(next);
+  }, []);
+
+  // Partition the *visible* (searched/tier/sorted) rows so search works
+  // inside whichever system is open; owners are pulled out entirely.
+  const partitioned = useMemo(() => partitionOwnerSystems(visibleUsers), [visibleUsers]);
+  const systemUsers = system === "review" ? partitioned.review : partitioned.approved;
+  // Plain owner roster: from the full load, never filtered into Review.
+  const ownerRoster = useMemo(() => partitionOwnerSystems(users).owners, [users]);
 
   const [busyId, setBusyId] = useState<string | null>(null);
   const [selected, setSelected] = useState<Set<string>>(new Set());
@@ -152,16 +172,9 @@ export default function OwnerUsersPage() {
     }
   };
 
-  const handleRole = async (u: OwnerUser, role: string) => {
+  const handleTier = async (u: OwnerUser, tier: string) => {
     setBusyId(u.id);
-    const ok = await runAction(() => updateOwnerUserRole(u.id, role as (typeof ROLES)[number]), "Role updated");
-    setBusyId(null);
-    if (ok) reload();
-  };
-
-  const handlePremium = async (u: OwnerUser, premiumStatus: boolean) => {
-    setBusyId(u.id);
-    const ok = await runAction(() => setOwnerUserPremium(u.id, premiumStatus), "Premium updated");
+    const ok = await runAction(() => updateOwnerUserRole(u.id, tier as UserRole), "Tier updated");
     setBusyId(null);
     if (ok) reload();
   };
@@ -219,10 +232,10 @@ export default function OwnerUsersPage() {
   };
 
   const selectAllVisible = () => {
-    if (selected.size === visibleUsers.length) {
+    if (selected.size === systemUsers.length) {
       setSelected(new Set());
     } else {
-      setSelected(new Set(visibleUsers.map((u) => u.id)));
+      setSelected(new Set(systemUsers.map((u) => u.id)));
     }
   };
 
@@ -249,9 +262,7 @@ export default function OwnerUsersPage() {
     }
   };
 
-  const visiblePendingIds = visibleUsers
-    .filter((u) => (u.access_status ?? "ACTIVE") === "PENDING")
-    .map((u) => u.id);
+  const visiblePendingIds = partitioned.review.map((u) => u.id);
 
   const approveAllPending = async () => {
     if (visiblePendingIds.length === 0) {
@@ -283,8 +294,8 @@ export default function OwnerUsersPage() {
 
   const exportCsv = () => {
     const stamp = new Date().toISOString().slice(0, 10);
-    downloadTextFile(`platform-users-${stamp}.csv`, ownerUsersToCsv(visibleUsers));
-    toast.success(`Exported ${visibleUsers.length} rows`);
+    downloadTextFile(`platform-users-${system}-${stamp}.csv`, ownerUsersToCsv(systemUsers));
+    toast.success(`Exported ${systemUsers.length} rows (${system})`);
   };
 
   return (
@@ -296,11 +307,12 @@ export default function OwnerUsersPage() {
             User Management
           </h1>
           <p className="text-sm text-muted-foreground">
-            Approvals, tier grants, credits, premium, bulk actions, and exports.
+            Two separate systems — Review decides pending accounts, Approved manages decided ones.
+            Owner emails are a plain roster in Approved: visible, no buttons, never in Review.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <Button variant="outline" size="sm" onClick={exportCsv} disabled={isLoading || visibleUsers.length === 0}>
+          <Button variant="outline" size="sm" onClick={exportCsv} disabled={isLoading || systemUsers.length === 0}>
             <Download className="h-4 w-4 mr-1" />
             Export CSV
           </Button>
@@ -321,30 +333,55 @@ export default function OwnerUsersPage() {
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
         <StatChip label="Total" value={stats.total} />
         <StatChip
-          label="Pending"
+          label="Review"
           value={stats.pending}
           accent="text-amber-600"
-          active={filters.access === "PENDING"}
-          onClick={() => patchFilters({ access: filters.access === "PENDING" ? "all" : "PENDING" })}
+          active={system === "review"}
+          onClick={() => switchSystem("review")}
         />
         <StatChip
-          label="Active"
-          value={stats.active}
+          label="Approved"
+          value={stats.active + stats.rejected}
           accent="text-emerald-600"
-          active={filters.access === "ACTIVE"}
-          onClick={() => patchFilters({ access: filters.access === "ACTIVE" ? "all" : "ACTIVE" })}
+          active={system === "approved"}
+          onClick={() => switchSystem("approved")}
         />
         <StatChip
-          label="Premium"
-          value={stats.premium}
-          accent="text-violet-600"
-          active={filters.premium === "premium"}
-          onClick={() =>
-            patchFilters({ premium: filters.premium === "premium" ? "all" : "premium" })
-          }
+          label="Plus"
+          value={stats.byTier.plus ?? 0}
+          accent="text-blue-600"
+          active={filters.tier === "plus"}
+          onClick={() => patchFilters({ tier: filters.tier === "plus" ? "all" : "plus" })}
         />
-        <StatChip label="Pro+" value={(stats.byRole.pro ?? 0) + (stats.byRole.owner ?? 0)} />
-        <StatChip label="Showing" value={visibleUsers.length} />
+        <StatChip label="Pro+" value={(stats.byTier.pro ?? 0) + (stats.byTier.owner ?? 0)} />
+        <StatChip label="Showing" value={systemUsers.length} />
+      </div>
+
+      {/* Two systems — Review vs Approved, no overlap */}
+      <div className="flex gap-2" role="tablist" aria-label="User systems">
+        <Button
+          role="tab"
+          aria-selected={system === "review"}
+          variant={system === "review" ? "default" : "outline"}
+          size="sm"
+          onClick={() => switchSystem("review")}
+        >
+          <Clock className="h-4 w-4 mr-1" />
+          Review ({stats.pending})
+        </Button>
+        <Button
+          role="tab"
+          aria-selected={system === "approved"}
+          variant={system === "approved" ? "default" : "outline"}
+          size="sm"
+          onClick={() => switchSystem("approved")}
+        >
+          <Users className="h-4 w-4 mr-1" />
+          Approved ({stats.active + stats.rejected})
+        </Button>
+        <span className="ml-auto self-center text-xs text-muted-foreground">
+          Owners: {ownerRoster.length} plain (Approved only)
+        </span>
       </div>
 
       {/* Toolbar */}
@@ -360,29 +397,20 @@ export default function OwnerUsersPage() {
             />
           </div>
           <select
-            value={filters.role}
-            onChange={(e) => patchFilters({ role: e.target.value as UserRoleFilter })}
+            value={filters.tier}
+            onChange={(e) => patchFilters({ tier: e.target.value as UserTierFilter })}
             className="text-sm border rounded-md px-3 py-2 bg-background min-w-[120px]"
-            aria-label="Filter by role"
+            aria-label="Filter by tier"
           >
-            <option value="all">All roles</option>
-            {ROLES.map((r) => (
+            <option value="all">All tiers</option>
+            {USER_ROLES.map((r) => (
               <option key={r} value={r}>
-                {r}
+                {ACCESS_LABELS[r]}
               </option>
             ))}
           </select>
-          <select
-            value={filters.access}
-            onChange={(e) => patchFilters({ access: e.target.value as UserAccessFilter })}
-            className="text-sm border rounded-md px-3 py-2 bg-background min-w-[140px]"
-            aria-label="Filter by access"
-          >
-            <option value="all">All access</option>
-            <option value="PENDING">Pending</option>
-            <option value="ACTIVE">Active</option>
-            <option value="REJECTED">Revoked</option>
-          </select>
+          {/* Access is the system tab above — no separate access filter,
+              so Review and Approved can never overlap. */}
           <select
             value={filters.sort}
             onChange={(e) => patchFilters({ sort: e.target.value as UserSortKey })}
@@ -399,7 +427,7 @@ export default function OwnerUsersPage() {
 
         <div className="flex flex-wrap items-center gap-2">
           <Filter className="h-4 w-4 text-muted-foreground shrink-0" />
-          {visiblePendingIds.length > 0 && (
+          {system === "review" && visiblePendingIds.length > 0 && (
             <Button size="sm" variant="outline" disabled={bulkBusy} onClick={approveAllPending}>
               <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
               Approve all pending ({visiblePendingIds.length})
@@ -417,7 +445,7 @@ export default function OwnerUsersPage() {
             </>
           )}
           <Button variant="ghost" size="sm" onClick={selectAllVisible} className="ml-auto">
-            {selected.size === visibleUsers.length && visibleUsers.length > 0 ? (
+            {selected.size === systemUsers.length && systemUsers.length > 0 ? (
               <>
                 <CheckSquare className="h-3.5 w-3.5 mr-1" />
                 Clear selection
@@ -432,36 +460,69 @@ export default function OwnerUsersPage() {
         </div>
       </div>
 
-      {stats.pending > 0 && filters.access !== "PENDING" && (
+      {stats.pending > 0 && system === "approved" && (
         <div className="rounded-md border border-amber-500/40 bg-amber-500/10 px-4 py-2.5 text-sm text-amber-700 dark:text-amber-400 flex items-center gap-2">
           <Clock className="h-4 w-4 shrink-0" />
           <span>
-            <strong>{stats.pending}</strong> account(s) awaiting approval — use the Pending filter or bulk
-            approve.
+            <strong>{stats.pending}</strong> account(s) awaiting approval — decide them in Review.
           </span>
+          <Button size="sm" variant="outline" className="ml-auto" onClick={() => switchSystem("review")}>
+            Open Review
+          </Button>
         </div>
+      )}
+
+      {/* Owner roster — Approved only, plain emails, no buttons/links/actions */}
+      {system === "approved" && ownerRoster.length > 0 && (
+        <Card>
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-medium flex items-center gap-2">
+              <ShieldCheck className="h-4 w-4" />
+              Owner emails — plain roster (no actions, never in Review)
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-1.5">
+              {ownerRoster.map((o) => (
+                <li key={o.id} className="flex flex-wrap items-center gap-2 text-sm">
+                  <span className="font-medium">{o.full_name || o.email}</span>
+                  <span className="text-muted-foreground">{o.email}</span>
+                  <span
+                    className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${tierBadge.owner}`}
+                  >
+                    OWNER
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+        </Card>
       )}
 
       <Card>
         <CardHeader className="pb-2 flex flex-row items-center justify-between">
           <CardTitle className="text-sm font-medium flex items-center gap-2">
             <Users className="h-4 w-4" />
-            Directory
+            {system === "review" ? "Review — pending decisions" : "Approved — decided accounts"}
           </CardTitle>
           <span className="text-xs text-muted-foreground">Instant client-side filters · one API load</span>
         </CardHeader>
         <CardContent>
-          {isLoading && visibleUsers.length === 0 ? (
+          {isLoading && systemUsers.length === 0 ? (
             <div className="space-y-3">
               {[1, 2, 3, 4, 5].map((i) => (
                 <Skeleton key={i} className="h-16" />
               ))}
             </div>
-          ) : visibleUsers.length === 0 ? (
-            <p className="text-sm text-muted-foreground text-center py-10">No users match these filters.</p>
+          ) : systemUsers.length === 0 ? (
+            <p className="text-sm text-muted-foreground text-center py-10">
+              {system === "review"
+                ? "No pending accounts to review. Owners never appear here."
+                : "No approved accounts match these filters."}
+            </p>
           ) : (
             <div className="space-y-2">
-              {visibleUsers.map((u) => (
+              {systemUsers.map((u) => (
                 <div key={u.id} className="rounded-lg border overflow-hidden">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 p-4">
                     <div className="flex items-center gap-3 min-w-0">
@@ -490,9 +551,8 @@ export default function OwnerUsersPage() {
                         )}
                       </button>
                       <div className="min-w-0">
-                        <p className="font-medium truncate flex items-center gap-2">
+                        <p className="font-medium truncate">
                           {u.full_name || u.email}
-                          {u.premium_status && <Crown className="h-3.5 w-3.5 text-purple-500 shrink-0" />}
                         </p>
                         <p className="text-xs text-muted-foreground truncate">
                           {u.email}
@@ -504,9 +564,9 @@ export default function OwnerUsersPage() {
                         </p>
                         <div className="flex items-center gap-2 mt-1 flex-wrap">
                           <span
-                            className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${roleBadge[u.role ?? "member"] ?? roleBadge.member}`}
+                            className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${tierBadge[u.effectiveTier ?? "member"]}`}
                           >
-                            {u.role ?? "—"}
+                            {ACCESS_LABELS[u.effectiveTier ?? "member"]}
                           </span>
                           <span
                             className={`inline-flex items-center gap-1 text-[10px] font-bold px-1.5 py-0.5 rounded border ${
@@ -528,22 +588,37 @@ export default function OwnerUsersPage() {
                     </div>
 
                     <div className="flex items-center gap-2 shrink-0 flex-wrap">
-                      <Button variant="outline" size="sm" asChild>
-                        <Link href={`/owner/tracking?user=${encodeURIComponent(u.id)}`}>
-                          <MessageSquareText className="h-3.5 w-3.5 mr-1" />
-                          Chats
-                        </Link>
-                      </Button>
-                      {u.access_status === "PENDING" ? (
-                        <Button
-                          size="sm"
-                          disabled={busyId === u.id}
-                          onClick={() => handleAccess(u, "ACTIVE")}
-                          className="bg-emerald-600 hover:bg-emerald-700 text-white"
-                        >
-                          <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
-                          Approve
+                      {/* Approved-only tools — Review decides access, nothing else */}
+                      {system === "approved" && !isOwnerUser(u) && (
+                        <Button variant="outline" size="sm" asChild>
+                          <Link href={`/owner/tracking?user=${encodeURIComponent(u.id)}`}>
+                            <MessageSquareText className="h-3.5 w-3.5 mr-1" />
+                            Chats
+                          </Link>
                         </Button>
+                      )}
+                      {u.access_status === "PENDING" ? (
+                        <>
+                          <Button
+                            size="sm"
+                            disabled={busyId === u.id}
+                            onClick={() => handleAccess(u, "ACTIVE")}
+                            className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                          >
+                            <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
+                            Approve
+                          </Button>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            disabled={busyId === u.id}
+                            onClick={() => handleAccess(u, "REJECTED")}
+                            className="text-red-600 hover:text-red-700 hover:bg-red-500/10 border-red-500/30"
+                          >
+                            <XCircle className="h-3.5 w-3.5 mr-1" />
+                            Reject
+                          </Button>
+                        </>
                       ) : u.access_status === "REJECTED" ? (
                         <Button size="sm" disabled={busyId === u.id} onClick={() => handleAccess(u, "ACTIVE")}>
                           <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
@@ -561,50 +636,50 @@ export default function OwnerUsersPage() {
                           Revoke
                         </Button>
                       )}
-                      <select
-                        value={u.role ?? "member"}
-                        onChange={(e) => handleRole(u, e.target.value)}
-                        disabled={busyId === u.id}
-                        className="text-xs border rounded-md px-2 py-1.5 bg-background"
-                        aria-label={`Role for ${u.email}`}
-                      >
-                        {ROLES.map((r) => (
-                          <option key={r} value={r}>
-                            {r}
-                          </option>
-                        ))}
-                      </select>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        disabled={busyId === u.id}
-                        onClick={() => handlePremium(u, !u.premium_status)}
-                      >
-                        <Crown className="h-3.5 w-3.5 mr-1" />
-                        {u.premium_status ? "Revoke" : "Grant"}
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        disabled={busyId === u.id}
-                        onClick={() => {
-                          setAdjustUser(u);
-                          setAdjustAmount(0);
-                          setAdjustReason("");
-                        }}
-                      >
-                        <Coins className="h-3.5 w-3.5 mr-1" />
-                        Credits
-                      </Button>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        disabled={busyId === u.id}
-                        onClick={() => handleDelete(u)}
-                        className="text-red-600 hover:text-red-700 hover:bg-red-500/10"
-                      >
-                        <Trash2 className="h-3.5 w-3.5" />
-                      </Button>
+                      {system === "approved" && !isOwnerUser(u) && (
+                        <>
+                          <div className="flex flex-col gap-0.5">
+                            <select
+                              value={u.effectiveTier ?? "member"}
+                              onChange={(e) => handleTier(u, e.target.value)}
+                              disabled={busyId === u.id || u.effectiveTier === "owner"}
+                              className="text-xs border rounded-md px-2 py-1.5 bg-background disabled:opacity-50"
+                              aria-label={`Tier for ${u.email}`}
+                            >
+                              {USER_ROLES.map((r) => (
+                                <option key={r} value={r}>
+                                  {ACCESS_LABELS[r]}
+                                </option>
+                              ))}
+                            </select>
+                            <span className="text-[10px] text-muted-foreground text-center">
+                              Veer sparks: {TIER_SPARKS[u.effectiveTier ?? "member"]}
+                            </span>
+                          </div>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            disabled={busyId === u.id}
+                            onClick={() => {
+                              setAdjustUser(u);
+                              setAdjustAmount(0);
+                              setAdjustReason("");
+                            }}
+                          >
+                            <Coins className="h-3.5 w-3.5 mr-1" />
+                            Credits
+                          </Button>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            disabled={busyId === u.id}
+                            onClick={() => handleDelete(u)}
+                            className="text-red-600 hover:text-red-700 hover:bg-red-500/10"
+                          >
+                            <Trash2 className="h-3.5 w-3.5" />
+                          </Button>
+                        </>
+                      )}
                     </div>
                   </div>
 
@@ -620,7 +695,7 @@ export default function OwnerUsersPage() {
                               <p className="font-mono mt-0.5 break-all">{u.id}</p>
                             </div>
                             <div>
-                              <p className="text-muted-foreground">Premium since</p>
+                              <p className="text-muted-foreground">Pro since</p>
                               <p className="mt-0.5">
                                 {detail.profile.premium_approved_at
                                   ? new Date(detail.profile.premium_approved_at).toLocaleDateString()

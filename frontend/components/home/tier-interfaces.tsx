@@ -47,7 +47,7 @@ import { SparkGate } from "@/features/credits/spark-gate";
 // ── Shared shell ────────────────────────────────────────────────────────────
 
 const TIER_ACCENT: Record<AccessLevel, string> = {
-  visitor: "from-slate-500/10",
+  guest: "from-slate-500/10",
   member: "from-emerald-500/10",
   plus: "from-sky-500/10",
   pro: "from-violet-500/10",
@@ -55,7 +55,7 @@ const TIER_ACCENT: Record<AccessLevel, string> = {
 };
 
 const TIER_ICON: Record<AccessLevel, LucideIcon> = {
-  visitor: User,
+  guest: User,
   member: GraduationCap,
   plus: Sparkles,
   pro: Rocket,
@@ -63,7 +63,7 @@ const TIER_ICON: Record<AccessLevel, LucideIcon> = {
 };
 
 const NEXT_RUNG: Partial<Record<AccessLevel, AccessLevel>> = {
-  visitor: "member",
+  guest: "member",
   member: "plus",
   plus: "pro",
   pro: "owner",

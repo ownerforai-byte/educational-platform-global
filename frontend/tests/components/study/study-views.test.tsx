@@ -78,7 +78,7 @@ const CASES: Case[] = [
   { name: "downloads", View: DownloadsView, section: "downloads", minTier: "owner", path: "/downloads", sparkGated: true, comingSoon: false },
   { name: "mock-exams", View: MockExamsView, section: "mock-exams", minTier: "pro", path: "/mock-exams", sparkGated: true, comingSoon: false },
   { name: "my-notes", View: MyNotesView, section: "my-notes", minTier: "member", path: "/my-notes", sparkGated: false, comingSoon: false },
-  { name: "onboarding", View: OnboardingView, section: "onboarding", minTier: "visitor", path: "/onboarding", sparkGated: false, comingSoon: false },
+  { name: "onboarding", View: OnboardingView, section: "onboarding", minTier: "guest", path: "/onboarding", sparkGated: false, comingSoon: false },
   { name: "planner", View: PlannerView, section: "planner", minTier: "plus", path: "/planner", sparkGated: false, comingSoon: false },
   { name: "referrals", View: ReferralsView, section: "referrals", minTier: "plus", path: "/referrals", sparkGated: false, comingSoon: true },
   { name: "report-card", View: ReportCardView, section: "report-card", minTier: "plus", path: "/report-card", sparkGated: false, comingSoon: true },

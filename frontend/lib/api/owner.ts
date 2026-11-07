@@ -1,4 +1,6 @@
 import { apiFetch } from "../api-client";
+import type { UserRole } from "@/lib/auth/roles";
+import type { AccessLevel } from "@/lib/access-level";
 
 /**
  * Owner console API — every call hits /api/owner/*, which the backend gates
@@ -32,6 +34,10 @@ export interface OwnerUser {
   full_name: string | null;
   email: string;
   role: "member" | "plus" | "pro" | "owner" | null;
+  /** profiles.plan — legacy rows (member, plus_20) read at their mapped rung. */
+  plan?: string | null;
+  /** The rung the user actually experiences (role/plan/premium folded by the backend resolver). */
+  effectiveTier?: AccessLevel;
   credits: number;
   credits_limit?: number | null;
   premium_status: boolean;
@@ -111,23 +117,14 @@ export function adjustOwnerUserCredits(
   });
 }
 
+/** Grant an access tier — the backend writes role + plan + premium together. */
 export function updateOwnerUserRole(
   userId: string,
-  role: "member" | "plus" | "pro" | "owner"
-): Promise<{ success: true; newRole: string }> {
+  role: UserRole
+): Promise<{ success: true; newRole: string; effectiveTier: AccessLevel }> {
   return apiFetch(`/api/owner/users/${userId}/role`, {
     method: "PATCH",
     body: JSON.stringify({ role }),
-  });
-}
-
-export function setOwnerUserPremium(
-  userId: string,
-  premiumStatus: boolean
-): Promise<{ success: true; premiumStatus: boolean }> {
-  return apiFetch(`/api/owner/users/${userId}/premium`, {
-    method: "PATCH",
-    body: JSON.stringify({ premiumStatus }),
   });
 }
 

@@ -194,19 +194,17 @@ export default function SubjectsPage() {
 
       {/* Overall progress */}
       <div className="flex items-center gap-3 rounded-2xl border border-border/60 bg-card p-3.5">
-        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-500 dark:bg-red-900/30">🎯</div>
+        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-500 dark:bg-amber-900/30">🎯</div>
         <div className="flex-1 min-w-0">
-          <p className="text-xs font-semibold text-foreground">{loadedCount} of {subjectCount} subjects loaded</p>
+          <p className="text-xs font-semibold text-foreground">0 of {subjectCount} completed</p>
           <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-muted/60">
             <div
-              className="h-1.5 rounded-full bg-red-400 transition-[width] duration-300"
-              style={{ width: `${subjectCount ? (loadedCount / subjectCount) * 100 : 100}%` }}
+              className="h-1.5 rounded-full bg-amber-400 transition-[width] duration-300"
+              style={{ width: "0%" }}
             />
           </div>
         </div>
-        <span className="text-xs font-bold text-red-500">
-          {subjectCount ? Math.round((loadedCount / subjectCount) * 100) : 100}%
-        </span>
+        <span className="text-xs font-bold text-amber-500">0%</span>
       </div>
 
       {/* Class filter pills */}

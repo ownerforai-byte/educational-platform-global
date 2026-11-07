@@ -38,22 +38,17 @@ import { ProgressPanel } from "@/components/progress/progress-panel";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
 import { getAiSparkUsage, type AiSparkUsage } from "@/lib/api/ai";
-import {
-  AI_SPARK_LIMITS,
-  AI_SPARK_TIER_LABELS,
-  aiSparkTierFor,
-} from "@/lib/ai/ai-spark-tiers";
+import { AI_SPARK_LIMITS } from "@/lib/ai/ai-spark-tiers";
+import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/access-level";
 import { topicHref } from "@/lib/progress/catalog";
 import type { ProgressEntry } from "@/types/api";
 
-const roleBadgeConfig: Record<
-  string,
-  { label: string; className: string; icon: typeof Crown }
-> = {
-  owner: { label: "Owner", className: "bg-amber-500/15 border-amber-500/30 text-amber-500", icon: Crown },
-  pro: { label: "Pro", className: "bg-rose-500/15 border-rose-500/30 text-rose-500", icon: ShieldCheck },
-  plus: { label: "Plus", className: "bg-blue-500/15 border-blue-500/30 text-blue-500", icon: GraduationCap },
-  member: { label: "Member", className: "bg-emerald-500/15 border-emerald-500/30 text-emerald-500", icon: User },
+const tierBadgeConfig: Record<AccessLevel, { className: string; icon: typeof Crown }> = {
+  guest: { className: "bg-slate-500/15 border-slate-500/30 text-slate-500", icon: User },
+  member: { className: "bg-emerald-500/15 border-emerald-500/30 text-emerald-500", icon: User },
+  plus: { className: "bg-blue-500/15 border-blue-500/30 text-blue-500", icon: GraduationCap },
+  pro: { className: "bg-rose-500/15 border-rose-500/30 text-rose-500", icon: ShieldCheck },
+  owner: { className: "bg-amber-500/15 border-amber-500/30 text-amber-500", icon: Crown },
 };
 
 // ── Profile features (owner request 2026-10-13: "add more features in
@@ -248,8 +243,9 @@ export default function ProfilePage() {
     [completedCount, user?.credits]
   );
 
-  // ── AI-spark tier + study stats (profile features 2026-10-13) ──
-  const tier = aiSparkTierFor(user);
+  // ── Canonical access tier + study stats (profile features 2026-10-13) ──
+  // One rung drives the badge, the plan row and the AI-spark meter alike.
+  const tier = accessLevelFor(user);
   const tierLimit = AI_SPARK_LIMITS[tier];
   const tierMetered = Number.isFinite(tierLimit);
   const sparkUsed = sparkUsage?.used ?? 0;
@@ -295,8 +291,7 @@ export default function ProfilePage() {
     .slice(0, 2)
     .toUpperCase();
 
-  const role = (user.role || "member").toLowerCase();
-  const badge = roleBadgeConfig[role] || roleBadgeConfig.member;
+  const badge = tierBadgeConfig[tier];
   const RoleIcon = badge.icon;
 
   const handleLogout = async () => {
@@ -330,14 +325,8 @@ export default function ProfilePage() {
                     className={`inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-md border ${badge.className}`}
                   >
                     <RoleIcon className="h-3 w-3" />
-                    {badge.label}
+                    {ACCESS_LABELS[tier]}
                   </span>
-                  {user.premiumStatus && (
-                    <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-md border bg-violet-500/15 border-violet-500/30 text-violet-500">
-                      <Crown className="h-3 w-3" />
-                      PRO
-                    </span>
-                  )}
                   <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-md border bg-primary/10 border-primary/20 text-primary">
                     <Award className="h-3 w-3 text-amber-500" />
                     Level {scholarLevel.level} · {scholarLevel.title}
@@ -412,7 +401,7 @@ export default function ProfilePage() {
             <div className="flex items-center justify-between gap-2">
               <span className="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-600 dark:text-violet-400">
                 <Crown className="h-3.5 w-3.5" />
-                {AI_SPARK_TIER_LABELS[tier]} plan
+                {ACCESS_LABELS[tier]} plan
               </span>
               <span className="text-xs text-muted-foreground">
                 <span className="font-bold text-foreground">
@@ -467,7 +456,7 @@ export default function ProfilePage() {
               </div>
               <div className="text-right">
                 <p className="text-xs font-semibold text-foreground">
-                  {user.premiumStatus ? "Unlimited (PRO)" : "Daily pool active"}
+                  {tier === "pro" || tier === "owner" ? "Unlimited" : "Daily pool active"}
                 </p>
                 <p className="text-[11px] text-muted-foreground">
                   refills in {resetCountdown}
@@ -794,10 +783,15 @@ export default function ProfilePage() {
                 </span>
               </div>
               <div className="flex items-center justify-between gap-4 py-1.5 border-b">
-                <span className="text-muted-foreground">Role</span>
-                <span className={`inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded ${badge.className}`}>
-                  <RoleIcon className="h-3 w-3" />
-                  {badge.label}
+                <span className="text-muted-foreground">Access tier</span>
+                <span className="flex items-center gap-2">
+                  <span className={`inline-flex items-center gap-1 text-xs font-semibold px-2 py-0.5 rounded ${badge.className}`}>
+                    <RoleIcon className="h-3 w-3" />
+                    {ACCESS_LABELS[tier]}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {tierMetered ? `${tierLimit} Veer sparks/day` : "Unlimited Veer sparks"}
+                  </span>
                 </span>
               </div>
               <div className="flex items-center justify-between gap-4 py-1.5 border-b">
@@ -811,12 +805,6 @@ export default function ProfilePage() {
                 <span className="font-medium">
                   {user.credits ?? 0}
                   {user.creditsLimit !== undefined && ` / ${user.creditsLimit}`}
-                </span>
-              </div>
-              <div className="flex items-center justify-between gap-4 py-1.5 border-b">
-                <span className="text-muted-foreground">Plan</span>
-                <span className={`font-semibold ${user.premiumStatus ? "text-violet-500" : "text-muted-foreground"}`}>
-                  {user.premiumStatus ? "PRO — Active" : "Free tier"}
                 </span>
               </div>
               <div className="flex items-center justify-between gap-4 py-1.5">

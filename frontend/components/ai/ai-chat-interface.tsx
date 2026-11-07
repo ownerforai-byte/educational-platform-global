@@ -147,8 +147,8 @@ function poolGroups(): { category: string; questions: string[] }[] {
   return [...byCategory.entries()].map(([category, questions]) => ({ category, questions }));
 }
 
-// Public visitors receive three AI sparks per UTC day (guest pool). Signed-in
-// users draw from the member AI spark pool — never from content sparks.
+// Guests use the free home guide widget (no AI sparks). Signed-in users draw
+// from their tier's daily AI spark pool — never from content sparks.
 const ACTIVE_SESSION_KEY = "neb_ai_active_session";
 
 // Rotating "work in progress" lines while the professor composes a reply —

@@ -1,8 +1,7 @@
 import type { OwnerUser } from "@/lib/api/owner";
 
 export type UserAccessFilter = "all" | "PENDING" | "ACTIVE" | "REJECTED";
-export type UserRoleFilter = "all" | "member" | "plus" | "pro" | "owner";
-export type UserPremiumFilter = "all" | "premium" | "standard";
+export type UserTierFilter = "all" | "member" | "plus" | "pro" | "owner";
 export type UserSortKey = "newest" | "oldest" | "credits_desc" | "credits_asc" | "name";
 
 export interface UserDirectoryStats {
@@ -10,41 +9,85 @@ export interface UserDirectoryStats {
   pending: number;
   active: number;
   rejected: number;
-  premium: number;
-  byRole: Record<string, number>;
+  owners: number;
+  byTier: Record<string, number>;
 }
 
 export interface UserDirectoryFilters {
   query: string;
   access: UserAccessFilter;
-  role: UserRoleFilter;
-  premium: UserPremiumFilter;
+  tier: UserTierFilter;
   sort: UserSortKey;
 }
 
 export const DEFAULT_USER_DIRECTORY_FILTERS: UserDirectoryFilters = {
   query: "",
   access: "all",
-  role: "all",
-  premium: "all",
+  tier: "all",
   sort: "newest",
 };
 
+/** The rung a directory row resolves to — backend-authoritative, Member fallback. */
+function tierOf(u: OwnerUser): string {
+  return u.effectiveTier ?? "member";
+}
+
+/**
+ * Owner account: effective tier or stored role is owner. Owners live in
+ * their own plain roster — never in Review, never actionable from the
+ * directory (no overlap with the two user systems below).
+ */
+export function isOwnerUser(u: OwnerUser): boolean {
+  return tierOf(u) === "owner" || u.role === "owner";
+}
+
+export type OwnerSystem = "review" | "approved";
+
+/**
+ * The two owner-console systems, partitioned with no overlap:
+ * - review:   PENDING non-owners awaiting a decision
+ * - approved: ACTIVE/REJECTED non-owners already decided
+ * Owners are in neither — see `owners` (plain roster only).
+ */
+export function partitionOwnerSystems(users: OwnerUser[]): {
+  review: OwnerUser[];
+  approved: OwnerUser[];
+  owners: OwnerUser[];
+} {
+  const review: OwnerUser[] = [];
+  const approved: OwnerUser[] = [];
+  const owners: OwnerUser[] = [];
+  for (const u of users) {
+    if (isOwnerUser(u)) {
+      owners.push(u);
+    } else if ((u.access_status ?? "ACTIVE") === "PENDING") {
+      review.push(u);
+    } else {
+      approved.push(u);
+    }
+  }
+  return { review, approved, owners };
+}
+
 export function computeUserDirectoryStats(users: OwnerUser[]): UserDirectoryStats {
-  const byRole: Record<string, number> = { member: 0, plus: 0, pro: 0, owner: 0 };
+  const byTier: Record<string, number> = { member: 0, plus: 0, pro: 0, owner: 0 };
   let pending = 0;
   let active = 0;
   let rejected = 0;
-  let premium = 0;
 
+  let owners = 0;
   for (const u of users) {
-    const role = u.role ?? "member";
-    byRole[role] = (byRole[role] ?? 0) + 1;
+    const tier = tierOf(u);
+    byTier[tier] = (byTier[tier] ?? 0) + 1;
+    // Owners are counted separately and never inflate Review/Approved.
+    if (isOwnerUser(u)) {
+      owners++;
+      continue;
+    }
     const access = u.access_status ?? "ACTIVE";
     if (access === "PENDING") pending++;
     else if (access === "REJECTED") rejected++;
     else active++;
-    if (u.premium_status) premium++;
   }
 
   return {
@@ -52,8 +95,8 @@ export function computeUserDirectoryStats(users: OwnerUser[]): UserDirectoryStat
     pending,
     active,
     rejected,
-    premium,
-    byRole,
+    owners,
+    byTier,
   };
 }
 
@@ -77,14 +120,8 @@ export function filterAndSortOwnerUsers(
     rows = rows.filter((u) => (u.access_status ?? "ACTIVE") === filters.access);
   }
 
-  if (filters.role !== "all") {
-    rows = rows.filter((u) => (u.role ?? "member") === filters.role);
-  }
-
-  if (filters.premium === "premium") {
-    rows = rows.filter((u) => u.premium_status);
-  } else if (filters.premium === "standard") {
-    rows = rows.filter((u) => !u.premium_status);
+  if (filters.tier !== "all") {
+    rows = rows.filter((u) => tierOf(u) === filters.tier);
   }
 
   const sorted = [...rows];
@@ -132,9 +169,8 @@ export function ownerUsersToCsv(users: OwnerUser[]): string {
     "id",
     "email",
     "full_name",
-    "role",
+    "tier",
     "access_status",
-    "premium_status",
     "credits",
     "created_at",
   ].join(",");
@@ -144,9 +180,8 @@ export function ownerUsersToCsv(users: OwnerUser[]): string {
       csvCell(u.id),
       csvCell(u.email),
       csvCell(u.full_name),
-      csvCell(u.role ?? "member"),
+      csvCell(tierOf(u)),
       csvCell(u.access_status ?? "ACTIVE"),
-      csvCell(u.premium_status),
       csvCell(u.credits),
       csvCell(u.created_at ?? ""),
     ].join(","),

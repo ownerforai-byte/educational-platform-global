@@ -95,7 +95,7 @@ router.get("/me", requireAuth, async (req: Request, res: Response) => {
       email: user.email,
       fullName: profile?.full_name ?? null,
       role: normalizeRole(profile?.role) ?? user.role,
-      // Membership tier for the AI-spark allowance (member 7 / plus 25 /
+      // Membership tier for the AI-spark allowance (member 13 / plus 25 /
       // pro 50 per day, owner unlimited) — see utils/aiSpark.ts. The session
       // already carries the tolerant plan read (migration 008); the legacy
       // premium_status flag maps to "pro".

@@ -91,7 +91,7 @@ export function AIAssistantWorkspace() {
 
       {!user && (
         <p className="mt-4 text-center text-xs text-muted-foreground">
-          Veer chat is for approved members — they get 3 Veer chats a day.{" "}
+          Veer chat is for approved members — they get 13 Veer chats a day.{" "}
           <Link href="/login" className="font-semibold text-primary hover:underline">
             Sign in
           </Link>{" "}

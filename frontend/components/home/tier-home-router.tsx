@@ -53,7 +53,7 @@ export function TierHomeRouter({
   const tier = accessLevelFor(user);
 
   useEffect(() => {
-    if (isLoading || tier === "visitor") return;
+    if (isLoading || tier === "guest") return;
     router.replace(
       landOn === "welcome" ? TIER_WELCOME_PATHS[tier] : TIER_HOME_PATHS[tier],
     );
@@ -62,6 +62,6 @@ export function TierHomeRouter({
   // Signed-out visitors: the universal welcome at the entry, the guest home
   // on /home (both public routes). Signed-in: the splash while their own page
   // is being opened.
-  if (isLoading || tier !== "visitor") return <TierSplash />;
+  if (isLoading || tier !== "guest") return <TierSplash />;
   return landOn === "welcome" ? <UniversalWelcome /> : <HomePublic />;
 }

@@ -61,11 +61,11 @@ export function requireAiSpark(): (
   };
 }
 
-const STUDIO_TIERS = new Set<AiSparkTier>(["plus", "plus_20", "pro", "owner"]);
+const STUDIO_TIERS = new Set<AiSparkTier>(["plus", "pro", "owner"]);
 
 /**
  * Math, diagrams, deep-dive, search, and quiz are Plus and above.
- * Members keep the three chat consoles only (3 messages / day).
+ * Members keep the three chat consoles only (13 messages / day).
  */
 export function requirePlusAiStudio(): (
   req: Request,
@@ -78,7 +78,7 @@ export function requirePlusAiStudio(): (
       res.status(403).json({
         error: "Veer studio opens at Plus",
         message:
-          "Members get 15 Veer chats per day. Math, diagrams, deep-dive, and quiz open on the Plus plan.",
+          "Members get 13 Veer chats per day. Math, diagrams, deep-dive, and quiz open on the Plus plan.",
       });
       return;
     }

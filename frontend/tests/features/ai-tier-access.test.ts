@@ -11,15 +11,13 @@ const read = (p: string) => readFileSync(path.resolve(p), "utf8");
 const readRoot = (p: string) => readFileSync(path.resolve("..", p), "utf8");
 
 describe("AI spark tier table", () => {
-  it("allowances: guest 0 · member 15 · plus 25 · pro 50 · owner unlimited", () => {
-    // Member allowance was raised from 3 to 15 in both tier tables. Keep this
-    // test in sync with the product decision rather than pinning the old quota.
+  it("allowances: guest 0 · member 13 · plus 25 · pro 50 · owner unlimited", () => {
     expect(AI_SPARK_LIMITS.guest).toBe(0);
-    expect(AI_SPARK_LIMITS.member).toBe(15);
+    expect(AI_SPARK_LIMITS.member).toBe(13);
     expect(AI_SPARK_LIMITS.plus).toBe(25);
     expect(AI_SPARK_LIMITS.pro).toBe(50);
     expect(Number.isFinite(AI_SPARK_LIMITS.owner)).toBe(false);
-    expect(aiSparkLimitLabel("member")).toBe("15");
+    expect(aiSparkLimitLabel("member")).toBe("13");
     expect(aiSparkLimitLabel("owner")).toBe("Unlimited");
   });
 
@@ -27,7 +25,7 @@ describe("AI spark tier table", () => {
     const backend = readRoot("backend/src/utils/aiSpark.ts");
     for (const [tier, limit] of Object.entries({
       guest: 0,
-      member: 15,
+      member: 13,
       plus: 25,
       pro: 50,
     })) {
@@ -139,10 +137,9 @@ describe("Veer chat: routes stay metered, professor workspace is Plus-gated", ()
     // QUICK_LINKS is the shared registry (lib/navigation.ts) consumed by the
     // mobile strip AND the tier home pages' quick-links rail.
     const quickLinks = read("lib/navigation.ts");
-    expect(quickLinks).not.toContain('{ href: "/search", label: "Search" }');
-    // QUICK_LINKS is column-aligned, so match the entry rather than an exact
-    // whitespace-sensitive string literal.
-    expect(quickLinks).toMatch(/href:\s*"\/chat"\s*,\s*label:\s*"AI"/);
+    // Tolerate the registry's column alignment — assert the entries, not spacing.
+    expect(quickLinks).not.toMatch(/\{\s*href:\s*"\/search",\s*label:\s*"Search"\s*\}/);
+    expect(quickLinks).toMatch(/\{\s*href:\s*"\/chat",\s*label:\s*"AI"\s*\}/);
   });
 
   it("keeps Curriculum Search out of the footer Study links", () => {

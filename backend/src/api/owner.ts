@@ -6,6 +6,7 @@ import { invalidateSectionTierCache } from "../utils/sectionTiers";
 import { authEmailsById, invalidateAuthEmailsCache } from "../utils/authEmails";
 import { isProtectedOwnerTarget } from "../utils/ownerGuard";
 import { invalidateR1GrantCache } from "../utils/r1Grants";
+import { aiSparkTierFor } from "../utils/aiSpark";
 import { sendApprovalEmail } from "../utils/mailer";
 
 /**
@@ -41,9 +42,21 @@ const roleUpdateSchema = z.object({
   role: z.enum(["member", "plus", "pro", "owner"]),
 });
 
-const premiumUpdateSchema = z.object({
-  premiumStatus: z.boolean(),
-});
+type GrantTier = z.infer<typeof roleUpdateSchema>["role"];
+
+/**
+ * One authoritative tier grant. The role IS the access rung, so granting it
+ * writes role + plan + premium_status together — the three inputs the spark
+ * resolver folds into one effective tier can never diverge again. plan is
+ * written too because the resolver reads it before the Member base: a leftover
+ * plus_20/pro plan row would silently override a Member/Plus grant.
+ */
+const TIER_GRANT: Record<GrantTier, { role: GrantTier; plan: string; premium_status: boolean }> = {
+  member: { role: "member", plan: "member", premium_status: false },
+  plus: { role: "plus", plan: "plus", premium_status: false },
+  pro: { role: "pro", plan: "pro", premium_status: true },
+  owner: { role: "owner", plan: "pro", premium_status: true },
+};
 
 const accessStatusUpdateSchema = z.object({
   status: z.enum(["PENDING", "ACTIVE", "REJECTED"]),
@@ -193,7 +206,7 @@ router.get("/users", requireAuth, async (req: Request, res: Response) => {
     const { data, error } = await supabaseAdmin
       .from("profiles")
       .select(
-        "id, full_name, role, credits, credits_limit, premium_status, premium_approved_at, access_status, created_at",
+        "id, full_name, role, plan, credits, credits_limit, premium_status, premium_approved_at, access_status, created_at",
       )
       .order("created_at", { ascending: false })
       .limit(500);
@@ -205,10 +218,21 @@ router.get("/users", requireAuth, async (req: Request, res: Response) => {
     }
 
     const emails = await authEmailsById();
-    let rows = (data ?? []).map((p: Record<string, unknown>) => ({
-      ...p,
-      email: emails.get(String(p.id)) ?? "",
-    }));
+    let rows = (data ?? []).map((p: Record<string, unknown>) => {
+      const email = emails.get(String(p.id)) ?? "";
+      return {
+        ...p,
+        email,
+        // The rung the user actually experiences — role/plan/premium folded by
+        // the same resolver the spark allowance and section gates use.
+        effectiveTier: aiSparkTierFor({
+          email,
+          role: p.role as string | null,
+          plan: p.plan as string | null,
+          premiumStatus: p.premium_status as boolean | null,
+        }),
+      };
+    });
 
     if (q) {
       const needle = q.toLowerCase();
@@ -343,7 +367,16 @@ router.get("/users/:id", requireAuth, async (req: Request, res: Response) => {
     ]);
 
     res.json({
-      profile: { ...profile, email },
+      profile: {
+        ...profile,
+        email,
+        effectiveTier: aiSparkTierFor({
+          email,
+          role: profile.role,
+          plan: profile.plan,
+          premiumStatus: profile.premium_status,
+        }),
+      },
       creditHistory: txRes.data ?? [],
       premiumRequests: reqRes.data ?? [],
     });
@@ -496,7 +529,7 @@ router.patch("/users/:id/status", requireAuth, async (req: Request, res: Respons
   }
 });
 
-/** PATCH /api/owner/users/:id/role — set platform role. */
+/** PATCH /api/owner/users/:id/role — grant an access tier (role + plan + premium together). */
 router.patch("/users/:id/role", requireAuth, async (req: Request, res: Response) => {
   const owner = ownerGate(req, res);
   if (!owner) return;
@@ -516,53 +549,24 @@ router.patch("/users/:id/role", requireAuth, async (req: Request, res: Response)
   }
 
   try {
-    const { error } = await supabaseAdmin
-      .from("profiles")
-      .update({ role: parsed.data.role })
-      .eq("id", req.params.id);
-
-    if (error) {
-      console.error("[owner] role update failed:", error.message);
-      res.status(500).json({ error: "Failed to update role" });
-      return;
-    }
-
-    res.json({ success: true, userId: req.params.id, newRole: parsed.data.role });
-  } catch (err: any) {
-    console.error("[owner] role error:", err?.message ?? err);
-    res.status(500).json({ error: "Internal server error" });
-  }
-});
-
-/** PATCH /api/owner/users/:id/premium — grant or revoke premium directly. */
-router.patch("/users/:id/premium", requireAuth, async (req: Request, res: Response) => {
-  const owner = ownerGate(req, res);
-  if (!owner) return;
-
-  const parsed = premiumUpdateSchema.safeParse(req.body);
-  if (!parsed.success) {
-    res.status(400).json({ error: "Invalid payload" });
-    return;
-  }
-
-  try {
+    const grant = TIER_GRANT[parsed.data.role];
     const { error } = await supabaseAdmin
       .from("profiles")
       .update({
-        premium_status: parsed.data.premiumStatus,
-        premium_approved_at: parsed.data.premiumStatus ? new Date().toISOString() : null,
+        ...grant,
+        premium_approved_at: grant.premium_status ? new Date().toISOString() : null,
       })
       .eq("id", req.params.id);
 
     if (error) {
-      console.error("[owner] premium update failed:", error.message);
-      res.status(500).json({ error: "Failed to update premium status" });
+      console.error("[owner] tier grant failed:", error.message);
+      res.status(500).json({ error: "Failed to update tier" });
       return;
     }
 
-    res.json({ success: true, userId: req.params.id, premiumStatus: parsed.data.premiumStatus });
+    res.json({ success: true, userId: req.params.id, newRole: grant.role, effectiveTier: grant.role });
   } catch (err: any) {
-    console.error("[owner] premium error:", err?.message ?? err);
+    console.error("[owner] tier grant error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });
   }
 });
@@ -896,9 +900,16 @@ router.post("/premium-requests/:id/approve", requireAuth, async (req: Request, r
 
     const newCredits = (profile?.credits ?? 0) + CREDIT_BONUS;
 
+    // Approval is a Pro grant: write role + plan + premium together so the
+    // directory's effective tier matches. Never reposition a protected owner
+    // (owner independence) — for them only the bonus credits + flag apply.
+    const guard = await isProtectedOwnerTarget(requestData.user_id);
+    const tierFields = guard.protectedTarget ? {} : { role: "pro", plan: "pro" };
+
     await supabaseAdmin
       .from("profiles")
       .update({
+        ...tierFields,
         premium_status: true,
         premium_approved_at: new Date().toISOString(),
         credits: newCredits,

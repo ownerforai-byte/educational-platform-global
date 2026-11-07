@@ -1,7 +1,7 @@
 "use client";
 
 import { Check } from "lucide-react";
-import { type AccessLevel } from "@/lib/access-level";
+import { ACCESS_LABELS, ACCESS_LEVELS, type AccessLevel } from "@/lib/access-level";
 import { applySectionOverrides } from "@/lib/sections";
 import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
 
@@ -12,14 +12,7 @@ import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
  * actually enforce ("plans-table parity").
  */
 
-const RUNG_ORDER: AccessLevel[] = ["visitor", "member", "plus", "pro", "owner"];
-const RUNG_LABEL: Record<AccessLevel, string> = {
-  visitor: "Guest",
-  member: "Member",
-  plus: "Plus",
-  pro: "Pro",
-  owner: "Owner",
-};
+const RUNG_ORDER: readonly AccessLevel[] = ACCESS_LEVELS;
 
 function reaches(min: AccessLevel, rung: AccessLevel): boolean {
   return RUNG_ORDER.indexOf(rung) >= RUNG_ORDER.indexOf(min);
@@ -40,7 +33,7 @@ export function SectionMatrix() {
             <th className="px-4 py-2.5 font-semibold">Section</th>
             {RUNG_ORDER.map((rung) => (
               <th key={rung} className="px-3 py-2.5 text-center font-semibold">
-                {RUNG_LABEL[rung]}
+                {ACCESS_LABELS[rung]}
               </th>
             ))}
           </tr>

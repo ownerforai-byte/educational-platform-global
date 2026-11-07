@@ -1,4 +1,5 @@
 import { readSectionMinTiers } from "./sectionTiers";
+import { aiSparkTierFor } from "./aiSpark";
 
 /**
  * SECTION TIER CHECK FOR SPARK UNLOCKS.
@@ -18,8 +19,9 @@ export const SPARK_GATED_SECTIONS: ReadonlyArray<{ id: string; href: string; min
   // no longer needs a spark-gated section entry here.
 ];
 
-export type Tier = "visitor" | "member" | "plus" | "pro" | "owner";
-const RANK: Record<Tier, number> = { visitor: 0, member: 1, plus: 2, pro: 3, owner: 4 };
+export type Tier = "guest" | "member" | "plus" | "pro" | "owner";
+/** The one numeric ladder — exported so no consumer keeps a private copy. */
+export const TIER_RANK: Record<Tier, number> = { guest: 0, member: 1, plus: 2, pro: 3, owner: 4 };
 
 export interface TierUser {
   email?: string | null;
@@ -28,12 +30,13 @@ export interface TierUser {
   premiumStatus?: boolean | null;
 }
 
+/**
+ * The viewer's rung — the SAME resolver the spark allowance uses, so a tier
+ * grant never disagrees with the quota. The caller's owner check wins first.
+ */
 export function tierForUser(user: TierUser, isOwner: boolean): Tier {
-  if (isOwner || user.role === "owner") return "owner";
-  const plan = (user.plan ?? "").toLowerCase();
-  if (plan === "pro" || user.premiumStatus === true || user.role === "pro") return "pro";
-  if (plan === "plus" || user.role === "plus") return "plus";
-  return "member";
+  if (isOwner) return "owner";
+  return aiSparkTierFor(user);
 }
 
 /** The path inside a client unlock key (`route:/srs` → `/srs`), else null. */
@@ -59,6 +62,6 @@ export async function canUnlockModule(
   if (!section) return true;
   const overrides = await readOverrides();
   const override = overrides[section.id] as Tier | undefined;
-  const min: Tier = override && override in RANK ? override : section.minTier;
-  return RANK[tierForUser(user, isOwner)] >= RANK[min];
+  const min: Tier = override && override in TIER_RANK ? override : section.minTier;
+  return TIER_RANK[tierForUser(user, isOwner)] >= TIER_RANK[min];
 }

@@ -99,7 +99,7 @@ export async function loadProfilePlan(
       return { plan: premium ? "pro" : null, premiumStatus: premium };
     }
     const raw = typeof profile?.plan === "string" ? profile.plan.toLowerCase() : "";
-    const plan = raw === "plus" || raw === "pro" ? (raw as "plus" | "pro") : "member";
+    const plan = raw === "pro" ? "pro" : raw === "plus" || raw === "plus_20" ? "plus" : "member";
     return { plan, premiumStatus: profile?.premium_status === true };
   } catch {
     return { plan: null, premiumStatus: null };
@@ -136,7 +136,20 @@ export function buildSessionUser(
   plan: "member" | "plus" | "pro" | null = null,
   premiumStatus: boolean | null = null,
 ): SessionUser {
-  const effectiveRole: UserRole | null = isOwnerEmail(email) ? "owner" : normalizeRole(role);
+  // ONE effective rung: the owner allowlist wins, otherwise the higher of the
+  // stored role and the plan/premium flag. Folding plan into role here means
+  // an owner-console role grant and the AI-spark quota always agree — there is
+  // no second tier vocabulary downstream.
+  let effectiveRole: UserRole;
+  if (isOwnerEmail(email)) {
+    effectiveRole = "owner";
+  } else {
+    const roleTier = normalizeRole(role) ?? "member";
+    const planTier: UserRole =
+      plan === "pro" || premiumStatus === true ? "pro" : plan === "plus" ? "plus" : "member";
+    effectiveRole =
+      USER_ROLES[Math.max(USER_ROLES.indexOf(roleTier), USER_ROLES.indexOf(planTier))];
+  }
   return { id, email, fullName, role: effectiveRole, plan, premiumStatus };
 }
 
@@ -230,10 +243,8 @@ export function requireRole(...roles: UserRole[]) {
  *
  *   router.get("/x", requireAuth, requireTier("plus"), handler)
  */
-const TIER_ORDER: UserRole[] = ["member", "plus", "pro", "owner"];
-
 export function requireTier(minTier: UserRole) {
-  return requireRole(...TIER_ORDER.slice(TIER_ORDER.indexOf(minTier)));
+  return requireRole(...USER_ROLES.slice(USER_ROLES.indexOf(minTier)));
 }
 
 /** Convenience: require pro or owner (used by admin endpoints). */

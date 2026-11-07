@@ -1,48 +1,40 @@
 import { isOwnerEmail } from "../middleware/auth";
 
 /**
- * AI SPARK — the daily Veer (AI chat) message allowance per membership tier.
+ * AI SPARK — the daily Veer (AI chat) message allowance per access rung.
  *
- * Owner policy 2026-10-13: "restrict the ai spark to 1 for public, 7 for
- * member and unlimited for owner" plus "create for plus and pro member also
- * like 25 and 50". Plus a 2026-10-18 add: "make the plan 30$ for 20 days" —
- * a temporary pass with the same daily spark as plus, auto-expiring 20 days
- * after activation. The tier table:
+ * Owner request 2026-11-07: one clean ladder, one number per rung. The
+ * retired visitor name is guest and the phantom plus_20 pass is gone (legacy
+ * plus_20 rows resolve to Plus). Member's allowance was previously
+ * inconsistent across surfaces (3 in copy, 15 in tables); it is 13 everywhere
+ * now. The tier table:
  *
- *   guest (public, signed out) → no Veer access
- *   member                     → 15 messages / UTC day (the three chat consoles only)
- *   plus                       → 25 messages / UTC day
- *   plus_20 ($30 / 20 days)    → 25 messages / UTC day, expires after 20 days
- *   pro                        → 50 messages / UTC day
- *   owner (allowlist emails)   → unlimited (never counted, never blocked)
+ *   guest  (signed out)        → no Veer access (home guide widget only)
+ *   member (signed-in base)    → 13 messages / UTC day
+ *   plus   (granted plan/role) → 25 messages / UTC day
+ *   pro    (granted plan/role) → 50 messages / UTC day
+ *   owner  (allowlist/role)    → unlimited (never counted, never blocked)
  *
  * The counter is the SAME day-keyed CAS machinery as the guest pool
  * (guest_chat_usage — see guestQuota.ts `consumeUserSlot`), so refreshes,
  * reloads, restarts or deploys can never refill a pool: only UTC midnight
- * does. This supersedes the earlier "AI chat is free and uncounted" note in
- * api/ai.ts — chat is still free of CONTENT sparks, but it is now metered by
- * AI sparks per this table.
+ * does. Chat is free of CONTENT sparks but metered by AI sparks per this
+ * table.
  *
  * The frontend mirrors these numbers for the badge/profile meter
  * (frontend/lib/ai/ai-spark-tiers.ts) — keep both tables equal.
  */
 
-export type AiSparkTier = "guest" | "member" | "plus" | "plus_20" | "pro" | "owner";
+export type AiSparkTier = "guest" | "member" | "plus" | "pro" | "owner";
 
 /** Daily Veer message allowance per tier (owner = unlimited). */
 export const AI_SPARK_LIMITS: Record<AiSparkTier, number> = {
   guest: 0,
-  member: 15,
+  member: 13,
   plus: 25,
-  plus_20: 25,
   pro: 50,
   owner: Number.POSITIVE_INFINITY,
 };
-
-/** USD price of the temporary pass — owner 2026-10-18 "the plan 30$ for 20 days". */
-export const PLUS_20_PRICE_USD = 30;
-/** Lifetime of the temporary pass in days (also enforced at the profile row). */
-export const PLUS_20_DURATION_DAYS = 20;
 
 /** What the API reports to clients: `limit: null` means unlimited. */
 export function aiSparkLimitFor(tier: AiSparkTier): number | null {
@@ -53,42 +45,29 @@ export function aiSparkLimitFor(tier: AiSparkTier): number | null {
 export interface AiSparkUser {
   email?: string | null;
   role?: string | null;
-  /** profiles.plan — "member" | "plus" | "pro" (migration 008). */
+  /** profiles.plan — legacy values (member, plus_20) read at their mapped rung. */
   plan?: string | null;
-  /** Legacy PRO flag; treated as the pro tier when plan is absent. */
+  /** Legacy PRO flag; treated as the pro tier. */
   premiumStatus?: boolean | null;
 }
 
 /**
- * Resolve the tier for one request.
- *
- * Order matters: the hardcoded owner allowlist always wins (an owner is
- * unlimited whatever plan row they carry), then the plan tier, then plain
- * membership. A signed-out caller is a guest.
+ * Resolve the tier for one request — the ONE resolver the spark allowance
+ * and the section gates share. Order matters: the owner allowlist and owner
+ * role always win (an owner is unlimited whatever plan row they carry), then
+ * pro (role, plan, or the legacy premium flag), then plus, then the signed-in
+ * Member base. A signed-out caller is a guest.
  */
 export function aiSparkTierFor(
-  user:
-    | (AiSparkUser & { planExpiresAt?: string | Date | null })
-    | null
-    | undefined = null,
+  user: AiSparkUser | null | undefined = null,
 ): AiSparkTier {
   if (!user) return "guest";
   if (isOwnerEmail(user.email)) return "owner";
+  const role = (user.role ?? "").toLowerCase();
+  if (role === "owner") return "owner";
   const plan = (user.plan ?? "").toLowerCase();
-
-  // plus_20 is a temporary pass: when the expiry timestamp is in the past,
-  // it falls back to plain member. The 20-day lifetime is enforced here
-  // and again at activation time in api/owner.ts (see AI_SPARK_PLUS_20).
-  if (plan === "plus_20") {
-    const expires = user.planExpiresAt
-      ? new Date(user.planExpiresAt).getTime()
-      : 0;
-    if (Number.isFinite(expires) && expires > Date.now()) return "plus_20";
-    return "member";
-  }
-
-  if (plan === "pro" || user.premiumStatus === true) return "pro";
-  if (plan === "plus") return "plus";
+  if (role === "pro" || plan === "pro" || user.premiumStatus === true) return "pro";
+  if (role === "plus" || plan === "plus" || plan === "plus_20") return "plus";
   return "member";
 }
 

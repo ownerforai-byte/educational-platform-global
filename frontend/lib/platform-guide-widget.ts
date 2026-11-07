@@ -25,5 +25,5 @@ export function shouldShowPlatformGuideWidget(
   const level: AccessLevel = accessLevelFor(user);
 
   // Visitors (signed-out) do not get the personal AI
-  return level !== "visitor";
+  return level !== "guest";
 }
