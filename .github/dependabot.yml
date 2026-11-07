@@ -15,6 +15,15 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "react-dom"
         update-types: ["version-update:semver-major"]
+      # Toolchain majors must be upgraded by hand: vitest 5, TypeScript 7 and
+      # @types/node 26 all break `tsc --noEmit` / `next build` on Node 22 and
+      # produced failing Vercel preview deployments for the bot branches.
+      - dependency-name: "vitest"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
 
   # Frontend (Next.js)
   - package-ecosystem: "npm"
@@ -32,6 +41,12 @@ updates:
         update-types: ["version-update:semver-major"]
       - dependency-name: "@types/react"
         update-types: ["version-update:semver-major"]
+      - dependency-name: "vitest"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
 
   # Backend (Express + TypeScript)
   - package-ecosystem: "npm"
@@ -40,6 +55,13 @@ updates:
       interval: "weekly"
     open-pull-requests-limit: 5
     labels: ["dependencies", "backend", "automated"]
+    ignore:
+      - dependency-name: "vitest"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
 
   # GitHub Actions
   - package-ecosystem: "github-actions"
