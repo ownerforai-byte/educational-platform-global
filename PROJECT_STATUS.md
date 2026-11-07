@@ -210,20 +210,21 @@ agent file edits) to honor the multi-agent coordination rule.
   (`NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`).
 
 ## SECURITY ADVISORY (open, reported)
-- Next.js 14.2.15 affected by CVE-2025-55184 (DoS, High) in App Router.
-  CVE-2025-55183 (source-code exposure) does NOT affect the 14.x line.
-- Compatible fix: upgrade to 14.2.35 (same minor, no breaking/architecture change).
-- NOT upgraded silently per user instruction; awaiting explicit approval.
+- **STALE — resolved by the Next 16 upgrade.** This advisory was written when the
+  frontend was on Next.js 14.2.15 (CVE-2025-55184, DoS, High). The frontend
+  `package.json` now pins `next@^16.4.3`, so the 14.2.x line no longer applies.
+  The prior `next@15.5.2` pin (CVE-2025-66478) is also gone.
+- Action: run a fresh `npm audit` (frontend) to confirm the 16.x line is clean
+  before relying on this; do NOT silently downgrade. The original 14.2.35 note is
+  retained above only for history.
 
 ## RISKS / OPEN QUESTIONS
-- Next.js security upgrade to 14.2.35 pending user approval.
+- Next.js: the 14.2.15 → 14.2.35 security advisory is **STALE** — the frontend is
+  now on `next@^16.4.3` (see SECURITY ADVISORY). Confirm 16.x with `npm audit`.
 - `.env.local` holds placeholder values only; `.env.example` has no real secrets.
   No longer a load blocker: since 0.16.0 the site renders and AI recommends from
   internal syllabus content without env vars — only Supabase-backed features need
   the real values.
-- Working copy pins `next@15.5.2` (uncommitted downgrade from `^15.5.23`).
-  `next@15.5.2` has advisory CVE-2025-66478 (patched in later 15.5.x) — pinned
-  for next-on-pages compatibility; keep in mind for future upgrades.
 - `@cloudflare/next-on-pages` is deprecated/archived upstream (Cloudflare now
   recommends the OpenNext adapter) — current fix keeps next-on-pages; migration
   is a future decision.
@@ -250,12 +251,21 @@ Full details: `MIGRATION_COMPLETE.md`. Summary:
   frontend proxies to `/api/ai`; keys belong in `backend/.env` only.
 - **Deployment**: UNDECIDED — frontend still produces a Next.js server build, so the old
   Cloudflare Pages static strategy does not apply as-is. Nothing deployed.
-- **Open items** (11 listed in `MIGRATION_COMPLETE.md`): browser session transport gap
-  (protected endpoints 401 for logged-in browser users), resources PATCH unsanitized +
-  DELETE without ownership check, controller settings PATCH lost, storage upload not
-  ported, search now authed with officialLink dropped, bookmarks shape drift, progress
-  validation dropped, controller payload drift, missing local `backend/.env`, undecided
-  deploy target + stale CI, root `app/` kept until cutover.
+- **Open items** (reviewed 2026-11-07 — auth/ownership already fixed in code):
+  browser session transport — **RESOLVED**: `frontend/lib/api-client.ts` sends
+  `credentials: "include"` + Bearer token; Next.js `rewrites()` proxies
+  `/api/*` to the backend forwarding headers+cookies; `backend/src/middleware/auth.ts`
+  `extractToken()` accepts Bearer header OR `sb-access-token` cookie;
+  `backend/src/api/auth.ts:51` sets `res.cookie(SESSION_COOKIE, …)` on
+  login/signup/refresh. Resources PATCH/DELETE — **RESOLVED**:
+  `backend/src/api/resources.ts` PATCH (line 268) calls `requireContentEditor`
+  + `canManageResource` ownership check; DELETE (line 330) enforces
+  `isPrivileged || isOwner`; PATCH sanitizes via `buildResourcePatch(body, isAdmin)`
+  rejecting unknown fields. Remaining open: controller settings PATCH lost,
+  storage upload not ported, search officialLink dropped, bookmarks shape drift,
+  progress validation dropped, controller payload drift, missing local
+  `backend/.env`, undecided deploy target + stale CI, root `app/` kept until
+  cutover.
 - Old root `app/` implementation retained intentionally until cutover; duplication mapped
   in `frontend/MIGRATION_FILE_MAP.md`.
 

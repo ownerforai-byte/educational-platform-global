@@ -1887,3 +1887,21 @@ export function getUnitSyllabus(subject: SubjectSyllabus, unitId: string): Sylla
 export function getSubjectTopics(subject: SubjectSyllabus): string[] {
   return subject.units.flatMap((unit) => unit.topics);
 }
+
+/**
+ * Find a subject across ALL classes by slug. Returns the first match plus its
+ * class slug, or `undefined` when the slug does not match any subject.
+ *
+ * Used by subject-level routes that receive only a `subject` param (e.g.
+ * `/quiz/physics`, `/progress/chemistry`) and need to resolve it to a
+ * {@link SubjectSyllabus} without a class segment.
+ */
+export function findSubjectBySlug(
+  subjectSlug: string,
+): { classSlug: string; subject: SubjectSyllabus } | undefined {
+  for (const cls of SYLLABUS) {
+    const subject = cls.subjects.find((s) => s.slug === subjectSlug);
+    if (subject) return { classSlug: cls.slug, subject };
+  }
+  return undefined;
+}
