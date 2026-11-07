@@ -14,7 +14,7 @@ import { tierWelcomePathFor } from "@/lib/access-level";
 
 export function LoginForm() {
   const router = useRouter();
-  const { user, isLoading, refresh } = useAuth();
+  const { user, refresh } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -49,13 +49,14 @@ export function LoginForm() {
     }
   };
 
-  if (isLoading || user) {
-    return (
-      <VerifyingStatus
-        compact
-        label={user ? "Opening your plan welcome" : "Checking your session"}
-      />
-    );
+  // A slow or hanging /api/auth/me (Render cold start, offline, proxy timeout)
+  // used to hide this ENTIRE form behind "Checking your session" — which also
+  // hid "Continue with Google", making OAuth look blocked even though Supabase
+  // was healthy. Render the form immediately; only a KNOWN signed-in session
+  // shows the redirect placeholder. LoggedInRedirect still bounces that user
+  // once the session resolves.
+  if (user) {
+    return <VerifyingStatus compact label="Opening your plan welcome" />;
   }
 
   return (

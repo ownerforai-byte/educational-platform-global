@@ -17,7 +17,7 @@ const PERKS = ["Save progress across subjects", "Bookmark notes & labs", "Veer q
 export function SignupForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { user, isLoading, refresh } = useAuth();
+  const { user, refresh } = useAuth();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -65,13 +65,10 @@ export function SignupForm() {
     }
   };
 
-  if (isLoading || user) {
-    return (
-      <VerifyingStatus
-        compact
-        label={user ? "Opening your plan welcome" : "Checking your session"}
-      />
-    );
+  // Same rule as LoginForm: never let a slow session probe hide the signup
+  // form (and its Google button). Only a KNOWN signed-in viewer is bounced.
+  if (user) {
+    return <VerifyingStatus compact label="Opening your plan welcome" />;
   }
 
   return (

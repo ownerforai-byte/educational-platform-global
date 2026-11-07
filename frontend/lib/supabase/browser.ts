@@ -32,10 +32,16 @@ let cachedProviders: Record<string, boolean> | null = null;
 let lastSettingsFetch = 0;
 const SETTINGS_CACHE_TTL_MS = 60_000;
 
+const SETTINGS_TIMEOUT_MS = 4_000;
+
 /**
- * Check the public Auth settings before redirecting, so a disabled social
- * provider becomes a useful in-app error instead of Supabase's raw 400 page.
- * Cached for 60 seconds with graceful fail-open on network hiccups.
+ * Advisory check of the public Auth settings. Supabase is the authority on
+ * whether a provider works; this only turns an EXPLICITLY disabled provider
+ * into a friendly in-app message. It must never block a working provider:
+ *   · GoTrue versions differ — some omit a provider key entirely. Treating a
+ *     missing key as "disabled" blocked Google even with `google: true` live.
+ *   · A slow/CSP-blocked settings request must not stall the click.
+ * Cached for 60 seconds, fail-open on any error or timeout.
  */
 export async function isOAuthProviderEnabled(provider: OAuthProvider): Promise<boolean> {
   const now = Date.now();
@@ -43,28 +49,31 @@ export async function isOAuthProviderEnabled(provider: OAuthProvider): Promise<b
     return cachedProviders[provider] === true;
   }
 
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), SETTINGS_TIMEOUT_MS);
   try {
     const { url, anonKey } = getPublicConfig();
     const response = await fetch(`${url}/auth/v1/settings`, {
       headers: { apikey: anonKey },
       cache: "no-store",
+      signal: controller.signal,
     });
-    if (!response.ok) {
-      // If the settings probe fails due to a network or rate limit hiccup,
-      // fail open (true) so the user's action still attempts OAuth.
-      return true;
-    }
+    if (!response.ok) return true;
     const settings = (await response.json()) as {
       external?: Record<string, boolean | undefined>;
     };
+    const external = settings.external ?? {};
+    // Only an explicit `false` is a real disable. Missing/undefined fields
+    // across GoTrue versions must not stop a healthy OAuth provider.
     cachedProviders = {
-      facebook: settings.external?.facebook === true,
-      google: settings.external?.google === true,
+      facebook: external.facebook !== false,
+      google: external.google !== false,
     };
     lastSettingsFetch = now;
     return cachedProviders[provider] === true;
   } catch {
-    // If the check network times out or fails, fail open
     return true;
+  } finally {
+    clearTimeout(timer);
   }
 }

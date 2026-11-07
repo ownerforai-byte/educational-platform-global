@@ -1,19 +1,23 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 
-const mocks = vi.hoisted(() => ({
-  push: vi.fn(),
-  replace: vi.fn(),
-  refresh: vi.fn(),
-  signInWithOAuth: vi.fn(),
-  exchangeCodeForSession: vi.fn(),
-  signOut: vi.fn(),
-  setStoredToken: vi.fn(),
-  writeCachedSession: vi.fn(),
-  apiFetch: vi.fn(),
-  isOAuthProviderEnabled: vi.fn(),
-  loginAction: vi.fn(),
-}));
+const mocks = vi.hoisted(() => {
+  const refresh = vi.fn();
+  return {
+    push: vi.fn(),
+    replace: vi.fn(),
+    refresh,
+    signInWithOAuth: vi.fn(),
+    exchangeCodeForSession: vi.fn(),
+    signOut: vi.fn(),
+    setStoredToken: vi.fn(),
+    writeCachedSession: vi.fn(),
+    apiFetch: vi.fn(),
+    isOAuthProviderEnabled: vi.fn(),
+    loginAction: vi.fn(),
+    authState: { user: null as unknown, isLoading: false, refresh },
+  };
+});
 
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: mocks.push, replace: mocks.replace }),
@@ -23,7 +27,7 @@ vi.mock("next/link", () => ({
   default: ({ href, children, ...rest }: { href: string; children: React.ReactNode }) =>
     <a href={href} {...rest}>{children}</a>,
 }));
-vi.mock("@/providers/auth-provider", () => ({ useAuth: () => ({ refresh: mocks.refresh }) }));
+vi.mock("@/providers/auth-provider", () => ({ useAuth: () => mocks.authState }));
 vi.mock("@/features/auth/actions", () => ({ loginAction: mocks.loginAction }));
 vi.mock("@/lib/api-client", () => ({ apiFetch: mocks.apiFetch, setStoredToken: mocks.setStoredToken }));
 vi.mock("@/lib/auth/session-store", () => ({ writeCachedSession: mocks.writeCachedSession }));
@@ -41,6 +45,8 @@ import AuthCallbackPage from "@/app/auth/callback/page";
 
 beforeEach(() => {
   vi.clearAllMocks();
+  mocks.authState.user = null;
+  mocks.authState.isLoading = false;
   vi.unstubAllEnvs();
   sessionStorage.clear();
   localStorage.clear();
@@ -83,6 +89,17 @@ describe("Social login", () => {
     expect(screen.getByLabelText("Email")).toBeInTheDocument();
   });
 
+  it("keeps Google sign-in available while the session probe is still loading", () => {
+    // Regression: LoginForm used to render only "Checking your session" while
+    // isLoading was true. A cold /api/auth/me hid "Continue with Google"
+    // indefinitely even though Supabase OAuth was healthy.
+    mocks.authState.isLoading = true;
+    render(<LoginForm />);
+    expect(screen.getByRole("button", { name: /continue with google/i })).toBeInTheDocument();
+    expect(screen.getByLabelText("Email")).toBeInTheDocument();
+    expect(screen.queryByText(/Checking your session/i)).not.toBeInTheDocument();
+  });
+
   it("shows a useful message when the provider is disabled", async () => {
     // Same handler branch the Facebook button used: while Facebook is hidden
     // (SHOW_FACEBOOK=false) the disabled-provider message is exercised through
@@ -101,7 +118,10 @@ describe("Social login", () => {
     fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
 
     await waitFor(() => expect(mocks.signInWithOAuth).toHaveBeenCalledOnce());
-    expect(mocks.apiFetch).toHaveBeenCalledWith("/api/auth/oauth/csrf", { method: "POST" });
+    expect(mocks.apiFetch).toHaveBeenCalledWith(
+      "/api/auth/oauth/csrf",
+      expect.objectContaining({ method: "POST" }),
+    );
     expect(mocks.signInWithOAuth).toHaveBeenCalledWith({
       provider: "google",
       options: {
@@ -118,7 +138,10 @@ describe("Social login", () => {
     fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
 
     await waitFor(() => expect(mocks.signInWithOAuth).toHaveBeenCalledOnce());
-    expect(mocks.apiFetch).toHaveBeenCalledWith("/api/auth/oauth/csrf", { method: "POST" });
+    expect(mocks.apiFetch).toHaveBeenCalledWith(
+      "/api/auth/oauth/csrf",
+      expect.objectContaining({ method: "POST" }),
+    );
     expect(mocks.signInWithOAuth).toHaveBeenCalledWith({
       provider: "google",
       options: {
