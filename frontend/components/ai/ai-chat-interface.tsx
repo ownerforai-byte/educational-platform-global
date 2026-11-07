@@ -679,7 +679,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         setStreamingText(null);
         setStreamPhase(null);
         setMessages((prev) => (prev[prev.length - 1]?.role === "user" ? prev.slice(0, -1) : prev));
-        setInput(textToSend);
+        // CodeRabbit: sendWith cleared both the draft and the attachment tray.
+        // Restoring only the text forced the student to re-pick every photo.
+        setInput(textToSend === PHOTO_ONLY_PROMPT && images.length ? "" : textToSend);
+        setPendingImages(images);
         return;
       }
       for (const f of figs.values()) {
@@ -788,12 +791,17 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     void sendWith(messages, customText ?? input, pendingImages);
   };
   voiceSendRef.current = (spoken: string) => {
+    // CodeRabbit: final speech is folded into the draft by the voice effect
+    // above, so appending `spoken` here used to send the question twice. Now
+    // that the hook keeps its own auto-send transcript, onComplete actually
+    // fires after the silence window — send the draft the student can see.
     if (sending || composerLocked) {
-      // A reply is still running: keep the words in the draft instead of losing them.
-      setInput((prev) => (prev.trim() ? `${prev.trim()} ${spoken}` : spoken));
+      // Still answering: the words are already in the draft; leave them there
+      // for the student to send when the reply finishes.
+      if (!input.trim() && spoken) setInput(spoken);
       return;
     }
-    void sendWith(messages, [input.trim(), spoken].filter(Boolean).join(" "), pendingImages);
+    void sendWith(messages, input.trim() || spoken, pendingImages);
   };
 
   /** Drop the stale answer and ask the previous question again. */

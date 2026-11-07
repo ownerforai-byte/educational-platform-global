@@ -157,7 +157,9 @@ describe("ProfilePage", () => {
     expect(screen.getByText("Harindra Sah")).toBeInTheDocument();
     expect(screen.getByText("harindarsah98172@gmail.com")).toBeInTheDocument();
     expect(screen.getByText("HS")).toBeInTheDocument(); // initials
-    expect(screen.getByText(/^Owner$/)).toBeInTheDocument(); // allowlisted owner tier
+    expect(screen.getByText("Owner")).toBeInTheDocument(); // canonical access-tier badge
+    // The unified access-tier card replaces the separate plan badge.
+    expect(screen.getByText(/Owner plan/)).toBeInTheDocument();
     // Balance shows in the wallet card (and wherever else it appears) —
     // profile features 2026-10-13 added the Content Spark Wallet card.
     expect(screen.getAllByText(/42/).length).toBeGreaterThanOrEqual(1);
@@ -179,8 +181,9 @@ describe("ProfilePage", () => {
     fireEvent.click(screen.getByRole("tab", { name: /account/i }));
 
     expect(screen.getByText("Full name")).toBeInTheDocument();
-    // The allowlisted owner tier appears in both the header and account row.
-    expect(screen.getAllByText(/^Owner$/).length).toBeGreaterThanOrEqual(2);
+    // The Account tab shows the unified access-tier row, not duplicated plan text.
+    expect(screen.getByText("Access tier")).toBeInTheDocument();
+    expect(screen.getByText(/Unlimited Veer sparks/)).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /full progress page/i })
     ).toHaveAttribute("href", "/progress");

@@ -14,6 +14,10 @@ jobs:
         working-directory: frontend
     steps:
       - uses: actions/checkout@v4
+        with:
+          # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
+          # code. Never leave a write-capable token in .git/config.
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -43,6 +47,10 @@ jobs:
         working-directory: frontend
     steps:
       - uses: actions/checkout@v4
+        with:
+          # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
+          # code. Never leave a write-capable token in .git/config.
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -62,6 +70,10 @@ jobs:
         working-directory: frontend
     steps:
       - uses: actions/checkout@v4
+        with:
+          # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
+          # code. Never leave a write-capable token in .git/config.
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -88,6 +100,10 @@ jobs:
         working-directory: frontend
     steps:
       - uses: actions/checkout@v4
+        with:
+          # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
+          # code. Never leave a write-capable token in .git/config.
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -111,6 +127,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
+          # code. Never leave a write-capable token in .git/config.
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
@@ -152,6 +172,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
+          # code. Never leave a write-capable token in .git/config.
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'

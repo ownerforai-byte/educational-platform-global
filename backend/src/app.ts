@@ -115,13 +115,17 @@ export function createApp(): express.Express {
     });
   });
 
-  // Lightweight AI availability probe for the chat status dot: a boolean only,
-  // no key material. Registered before /api/ai so it stays public. A keyless
-  // free-tier link (LLM7.io / OVHcloud) counts as online too — the status dot
-  // must not claim the tutor is down while a free link can still answer.
+  // Lightweight AI *configuration* probe for the chat status dot: a boolean
+  // only, no key material. Registered before /api/ai so it stays public. A
+  // keyless free-tier link (LLM7.io / OVHcloud) counts as configured too.
+  // CodeRabbit: this only proves a key/provider is wired up — it does NOT
+  // prove the provider is reachable right now. `configured` is the honest
+  // name; `online` is kept so older clients keep rendering instead of going
+  // dark. The dot's label says "configured", not "online".
   app.get("/api/ai/status", (_req, res) => {
     res.setHeader("Cache-Control", "no-store");
-    res.json({ online: hasAnyLlmKey() || describeFreeLlmPresence().live.length > 0 });
+    const configured = hasAnyLlmKey() || describeFreeLlmPresence().live.length > 0;
+    res.json({ configured, online: configured });
   });
 
   // Route-table dump: opt-in only (ROUTE_DEBUG=true) and never in production.
