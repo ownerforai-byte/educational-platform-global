@@ -83,7 +83,7 @@ export function ServiceWorkerRegistrar() {
     <div
       role="status"
       aria-live="polite"
-      className="fixed bottom-4 left-1/2 z-50 flex max-w-[calc(100vw-2rem)] -translate-x-1/2 items-center gap-3 rounded-xl border border-border bg-background px-4 py-3 text-sm shadow-lg"
+      className="fixed bottom-safe left-1/2 z-50 flex max-w-[calc(100vw-2rem)] -translate-x-1/2 items-center gap-3 rounded-xl border border-border bg-background px-4 py-3 text-sm shadow-lg"
     >
       <span>A new version is ready.</span>
       <button
