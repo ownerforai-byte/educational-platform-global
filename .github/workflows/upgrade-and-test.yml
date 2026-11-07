@@ -1,0 +1,177 @@
+name: Upgrade and Test
+
+# Gate for every dependency PR opened by .github/dependabot.yml and every
+# direct push to main. The repository's primary ecosystem is npm / Node.js +
+# TypeScript (Next.js frontend, Express backend workspace).
+#
+# Every shell step installs an ERR/EXIT trap: on failure it reports the exact
+# step, line and exit code, prints runtime diagnostics, and (for the smoke
+# step) dumps the production server log before terminating the process.
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: upgrade-and-test-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate-and-test:
+    name: Validate and test
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+    env:
+      CI: "true"
+      NEXT_TELEMETRY_DISABLED: "1"
+      SMOKE_PORT: "3100"
+    steps:
+      # Step 1 — safe source checkout (no credentials persisted on disk).
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      # Step 2 — runtime + dependency cache.
+      - name: Set up Node.js 22 with npm cache
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      # Next's incremental compiler cache survives across runs; the primary key
+      # includes the commit so a successful build refreshes the cache, while
+      # restore-keys lets every later run reuse the last good one.
+      - name: Restore Next.js build cache
+        uses: actions/cache@v4
+        with:
+          path: frontend/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('frontend/package-lock.json') }}-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('frontend/package-lock.json') }}-
+
+      # Step 3 — clean, lockfile-pinned install. Do NOT add --ignore-scripts:
+      # the postinstall hook patches rehype-katex's bare import, which the
+      # production build depends on.
+      - name: Clean dependency install
+        working-directory: frontend
+        run: |
+          set -Eeuo pipefail
+          trap 'rc=$?; echo "::error::clean dependency install failed (line $LINENO, exit $rc)"; echo "::group::diagnostics"; node --version; npm --version; npm config get registry; echo "::endgroup::"; exit "$rc"' ERR
+          echo "== npm ci (lockfile-pinned, scripts enabled) =="
+          env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm ci
+          test -f node_modules/next/package.json
+          echo "== advisory production audit =="
+          npm audit --omit=dev --audit-level=high \
+            || echo "::warning::npm audit reported high-severity advisories — Dependabot will open a security PR"
+
+      # Step 4 — asset schema verification against the content ledger assets.
+      #   a. every content/*.json must parse (4,487 files)
+      #   b. strict ConceptNoteSchema + manifest gate
+      #   c. content-ledger.json shape, sha256 digests and recomputed totals
+      - name: Verify content assets and ledger schema
+        run: |
+          set -Eeuo pipefail
+          trap 'rc=$?; echo "::error::content/ledger validation failed (line $LINENO, exit $rc)"; echo "::group::diagnostics"; node --version || true; git status --short | head -30 || true; echo "::endgroup::"; exit "$rc"' ERR
+          echo "== parse every content/*.json =="
+          node scripts/validate-content.mjs
+          echo "== strict content schema gate =="
+          npx --yes tsx@4.23.15 frontend/scripts/content/validate.ts --strict
+          echo "== content ledger asset schema =="
+          node scripts/validate-ledger-assets.mjs
+
+      # Step 5 — production build plus an integrated service viability check:
+      # boot the freshly built Next server and probe it over HTTP until it
+      # serves a real response. The EXIT trap always kills the server and dumps
+      # its log when anything above went wrong.
+      - name: Production build and service viability smoke test
+        working-directory: frontend
+        run: |
+          set -Eeuo pipefail
+          SERVER_PID=""
+          trap 'rc=$?; if [ -n "$SERVER_PID" ]; then kill "$SERVER_PID" 2>/dev/null || true; fi; if [ "$rc" -ne 0 ]; then echo "::error::production build / smoke failed (line $LINENO, exit $rc)"; echo "::group::next start log"; cat "$RUNNER_TEMP/next-start.log" 2>/dev/null || true; echo "::endgroup::"; fi; exit "$rc"' EXIT
+          trap 'rc=$?; echo "::group::diagnostics"; node --version || true; npm --version || true; echo "cwd=$PWD"; test -f .next/BUILD_ID && echo "BUILD_ID=$(cat .next/BUILD_ID)" || true; echo "::endgroup::"; exit "$rc"' ERR
+
+          echo "== production build (exact Vercel command) =="
+          env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm run build
+          if [ ! -s .next/BUILD_ID ]; then
+            echo "::error::build produced no .next/BUILD_ID"
+            exit 1
+          fi
+          echo "build OK: BUILD_ID=$(cat .next/BUILD_ID)"
+
+          echo "== boot production server on port $SMOKE_PORT =="
+          npx next start -p "$SMOKE_PORT" > "$RUNNER_TEMP/next-start.log" 2>&1 &
+          SERVER_PID=$!
+
+          code=""
+          for attempt in $(seq 1 45); do
+            code=$(curl -sS -o /dev/null -w '%{http_code}' --max-time 3 \
+              "http://127.0.0.1:${SMOKE_PORT}/" || true)
+            case "$code" in 200|301|302|304|307|308) break ;; esac
+            if ! kill -0 "$SERVER_PID" 2>/dev/null; then
+              echo "::error::production server exited before becoming healthy"
+              break
+            fi
+            sleep 2
+          done
+          echo "smoke probe: GET / -> HTTP ${code:-no-response}"
+          case "$code" in
+            200|301|302|304|307|308)
+              echo "service viability: PASS (attempt-ready production server)"
+              ;;
+            *)
+              echo "::error::service did not become healthy (last status ${code:-none})"
+              exit 1
+              ;;
+          esac
+
+      - name: Report diagnostics on failure
+        if: failure()
+        run: |
+          set -Eeuo pipefail
+          echo "::group::failure diagnostics"
+          echo "event=${{ github.event_name }} ref=${{ github.ref }} sha=${{ github.sha }}"
+          node --version
+          npm --version
+          git status --short | head -40 || true
+          echo "::endgroup::"
+
+  # Structured live smoke testing — only for commits that actually landed on
+  # main, and only after the build gate is green. It polls the deployed Render
+  # backend until the pushed revision is live. This is non-blocking because the
+  # external deploy is asynchronous; the annotation still surfaces regressions.
+  live-smoke:
+    name: Live smoke (deployed backend)
+    needs: validate-and-test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    continue-on-error: true
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Verify deployed backend revision and health
+        working-directory: backend
+        env:
+          SMOKE_BASE_URL: https://rn01.onrender.com
+          SMOKE_EXPECTED_COMMIT: ${{ github.sha }}
+          SMOKE_OWNER_EMAIL: ${{ secrets.SMOKE_OWNER_EMAIL }}
+          SMOKE_OWNER_PASSWORD: ${{ secrets.SMOKE_OWNER_PASSWORD }}
+          CI: "true"
+        run: |
+          set -Eeuo pipefail
+          trap 'rc=$?; echo "::error::live smoke failed (line $LINENO, exit $rc) — confirm Render has deployed ${GITHUB_SHA}"; exit "$rc"' ERR
+          node scripts/smoke-live.mjs

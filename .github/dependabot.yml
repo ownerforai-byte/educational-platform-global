@@ -1,12 +1,32 @@
+# Automated dependency tracking & security upgrades.
+#
+# Primary ecosystem: npm / Node.js + TypeScript (package-lock.json plus the
+# /frontend lockfile; /backend is an npm workspace of the root). Python is only
+# used by the offline visual-generation tooling (requirements.txt), so it is
+# deliberately not tracked here.
+#
+# Policy:
+#   * weekly version updates for every npm manifest;
+#   * at most 5 open PRs per ecosystem (open-pull-requests-limit: 5);
+#   * minor/patch updates are grouped into one reviewable PR per directory,
+#     while SECURITY updates stay individual and bypass the open-PR limit so a
+#     critical advisory is never queued behind routine bumps;
+#   * framework/toolchain majors are upgraded by hand (see ignore rules) —
+#     they need a coordinated Node/Next/TypeScript migration.
 version: 2
 updates:
-  # Root workspace (shared scripts, content-tools)
+  # Root workspace (shared scripts, content-tools, backend workspace)
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
     labels: ["dependencies", "automated"]
+    groups:
+      npm-minor-patch:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
     ignore:
       # Pin major versions of core framework deps — upgrade manually
       - dependency-name: "next"
@@ -32,6 +52,11 @@ updates:
       interval: "weekly"
     open-pull-requests-limit: 5
     labels: ["dependencies", "frontend", "automated"]
+    groups:
+      npm-minor-patch:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
     ignore:
       - dependency-name: "next"
         update-types: ["version-update:semver-major"]
@@ -55,6 +80,11 @@ updates:
       interval: "weekly"
     open-pull-requests-limit: 5
     labels: ["dependencies", "backend", "automated"]
+    groups:
+      npm-minor-patch:
+        applies-to: version-updates
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
     ignore:
       - dependency-name: "vitest"
         update-types: ["version-update:semver-major"]
@@ -67,6 +97,6 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "monthly"
-    open-pull-requests-limit: 3
+      interval: "weekly"
+    open-pull-requests-limit: 5
     labels: ["dependencies", "ci", "automated"]
