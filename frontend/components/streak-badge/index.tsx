@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getStreak, markCheckIn, streakLabel } from "@/lib/streaks";
+import { pushNotification } from "@/lib/notifications";
 import { Flame } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -9,8 +10,21 @@ export function StreakBadge({ compact = false }: { compact?: boolean }) {
   const [state, setState] = useState(getStreak());
 
   useEffect(() => {
+    const before = getStreak();
     const fresh = markCheckIn();
     setState(fresh);
+    // One real alert per day at most: the id is the check-in date, so a
+    // remount (or another StreakBadge instance) updates instead of piling on.
+    if (fresh.count > before.count && fresh.lastCheckIn) {
+      pushNotification({
+        id: `streak-${fresh.lastCheckIn}`,
+        category: "account",
+        title: `${fresh.count}-day study streak`,
+        body: `Your daily check-in is recorded. Keep the streak alive by studying again tomorrow.`,
+        href: "/streaks",
+        actionLabel: "View streak",
+      });
+    }
   }, []);
 
   if (compact) {
