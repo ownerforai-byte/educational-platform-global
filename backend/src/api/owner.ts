@@ -58,14 +58,46 @@ const TIER_GRANT: Record<GrantTier, { role: GrantTier; plan: string; premium_sta
   owner: { role: "owner", plan: "pro", premium_status: true },
 };
 
+/** A tier an approval may grant in the same call (owner is /role-only). */
+const approvableRoleSchema = z.enum(["member", "plus", "pro"]);
+
 const accessStatusUpdateSchema = z.object({
   status: z.enum(["PENDING", "ACTIVE", "REJECTED"]),
+  /** Granted AT THE SAME TIME as access — never a second pass (owner 2026-11-07). */
+  role: approvableRoleSchema.optional(),
 });
 
 const bulkAccessStatusSchema = z.object({
   userIds: z.array(z.string().uuid()).min(1).max(100),
   status: z.enum(["ACTIVE", "REJECTED"]),
+  /** Granted to every approved account in the same call. */
+  role: approvableRoleSchema.optional(),
 });
+
+type ApprovableTier = z.infer<typeof approvableRoleSchema>;
+
+/**
+ * ONE write per access decision. Approving used to write access_status alone,
+ * leaving the account on the Member base until a reviewer found it again in
+ * the Approved list and set the tier — two passes over the same person, and
+ * the usual way an account ended up on the wrong rung. The tier now lands in
+ * the same update, using the identical role + plan + premium grant, so status
+ * and tier can never disagree.
+ */
+function accessDecisionPayload(
+  status: "PENDING" | "ACTIVE" | "REJECTED",
+  role?: ApprovableTier,
+): Record<string, unknown> {
+  if (status !== "ACTIVE" || !role) return { access_status: status };
+  const grant = TIER_GRANT[role];
+  return {
+    access_status: status,
+    role: grant.role,
+    plan: grant.plan,
+    premium_status: grant.premium_status,
+    premium_approved_at: grant.premium_status ? new Date().toISOString() : null,
+  };
+}
 
 const bulkTierUpdateSchema = z.object({
   userIds: z
@@ -273,7 +305,8 @@ router.post("/users/bulk-status", requireAuth, async (req: Request, res: Respons
     return;
   }
 
-  const { userIds, status } = parsed.data;
+  const { userIds, status, role } = parsed.data;
+  const decision = accessDecisionPayload(status, role);
   const applied: string[] = [];
   const skipped: Array<{ userId: string; reason: string }> = [];
 
@@ -298,7 +331,7 @@ router.post("/users/bulk-status", requireAuth, async (req: Request, res: Respons
 
       const { error } = await supabaseAdmin
         .from("profiles")
-        .update({ access_status: status })
+        .update(decision)
         .eq("id", userId);
 
       if (error) {
@@ -326,6 +359,7 @@ router.post("/users/bulk-status", requireAuth, async (req: Request, res: Respons
     res.json({
       success: true,
       status,
+      role: status === "ACTIVE" ? (role ?? null) : null,
       applied,
       skipped,
       requested: userIds.length,
@@ -529,6 +563,8 @@ router.patch("/users/:id/status", requireAuth, async (req: Request, res: Respons
     return;
   }
 
+  const { status, role } = parsed.data;
+
   try {
     const { data: target } = await supabaseAdmin
       .from("profiles")
@@ -541,9 +577,10 @@ router.patch("/users/:id/status", requireAuth, async (req: Request, res: Respons
       return;
     }
 
+    // Approval + tier in one write (see accessDecisionPayload).
     const { error } = await supabaseAdmin
       .from("profiles")
-      .update({ access_status: parsed.data.status })
+      .update(accessDecisionPayload(status, role))
       .eq("id", req.params.id);
 
     if (error) {
@@ -553,13 +590,15 @@ router.patch("/users/:id/status", requireAuth, async (req: Request, res: Respons
     }
 
     console.info(
-      `[owner] access ${target.access_status ?? "?"} -> ${parsed.data.status} for ${req.params.id} by ${owner.user.email}`,
+      `[owner] access ${target.access_status ?? "?"} -> ${status}${
+        status === "ACTIVE" && role ? ` at ${role}` : ""
+      } for ${req.params.id} by ${owner.user.email}`,
     );
 
     // Auto-approval email (owner policy 2026-09-28): the moment an account
     // becomes ACTIVE the user is told they can sign in. Fire-and-forget —
     // email must never slow down or fail the approval itself.
-    if (parsed.data.status === "ACTIVE" && target.access_status !== "ACTIVE") {
+    if (status === "ACTIVE" && target.access_status !== "ACTIVE") {
       void (async () => {
         try {
           const { data: authUser } = await supabaseAdmin.auth.admin.getUserById(
@@ -589,7 +628,12 @@ router.patch("/users/:id/status", requireAuth, async (req: Request, res: Respons
       })();
     }
 
-    res.json({ success: true, userId: req.params.id, status: parsed.data.status });
+    res.json({
+      success: true,
+      userId: req.params.id,
+      status,
+      effectiveTier: status === "ACTIVE" && role ? role : undefined,
+    });
   } catch (err: any) {
     console.error("[owner] access status error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });

@@ -14,6 +14,15 @@ export const SUPABASE_ORIGIN = PUBLIC_SUPABASE_URL;
 
 const RATE_LIMIT_WINDOW = 60_000;
 const RATE_LIMIT_MAX = 120;
+// Only HTML documents are counted against that cap. One page load also pulls
+// the app shell (theme bootstrap, manifest, /sw-precache.json), the service
+// worker's ~17 precache routes and a handful of API calls; charging all of
+// them to the same bucket spent the whole minute of budget on a single visit
+// and then answered real navigations with plain-text "Too many requests" (the
+// 2026-11 E2E smoke failures: no login form, no error-page markup). Assets,
+// JSON and /api/* have their own layers (CDN caching, the backend's
+// express-rate-limit), so the page cap keeps guarding the expensive render
+// path without starving it.
 // Next prefetches every in-viewport <Link> as a speculative RSC payload — one
 // pass over the notes index fired 70+ of them on the production build (dev
 // never does, which is why this only ever showed up in CI). Those requests are
@@ -142,6 +151,11 @@ function setSecurityHeaders(response: NextResponse, contentSecurityPolicy: strin
   response.headers.set("content-security-policy", contentSecurityPolicy);
 }
 
+/** A top-level HTML navigation — the request this limiter exists to bound. */
+function isDocumentRequest(request: NextRequest) {
+  return (request.headers.get("accept") ?? "").includes("text/html");
+}
+
 function isSpeculativeRequest(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
   // Next strips its own `RSC` / `Next-Router-Prefetch` request headers before
@@ -174,10 +188,16 @@ export function proxy(request: NextRequest) {
     return response;
   }
 
-  const prefetch = isSpeculativeRequest(request);
-  const key = `${getClientKey(request)}|${prefetch ? "prefetch" : "visit"}`;
+  const key = getClientKey(request);
 
-  if (isRateLimited(key, prefetch ? RATE_LIMIT_MAX_PREFETCH : RATE_LIMIT_MAX)) {
+  if (isSpeculativeRequest(request)) {
+    if (isRateLimited(`${key}|prefetch`, RATE_LIMIT_MAX_PREFETCH)) {
+      return new NextResponse("Too many requests", { status: 429 });
+    }
+    return response;
+  }
+
+  if (isDocumentRequest(request) && isRateLimited(`${key}|visit`, RATE_LIMIT_MAX)) {
     return new NextResponse("Too many requests", { status: 429 });
   }
 

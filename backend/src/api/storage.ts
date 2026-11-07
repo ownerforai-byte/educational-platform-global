@@ -3,6 +3,7 @@ import { z } from "zod";
 import { normalizeRole } from "../auth/types";
 import { supabaseAdmin } from "../db/supabase";
 import {
+  hasR2PublicBase,
   isR2StorageActive,
   r2Upload,
   looksLikeSupabaseStorageLimit,
@@ -61,7 +62,14 @@ router.get("/health", async (req: Request, res: Response) => {
   const supabase = await supabaseStorageHealth();
   res.json({
     primary: { provider: "supabase", ...supabase },
-    overflow: { provider: "r2", configured: isR2StorageActive() },
+    overflow: {
+      provider: "r2",
+      configured: isR2StorageActive(),
+      // Without a public base, overflow files are only reachable through a
+      // 7-day signed URL. Surfaced here so the dashboard can show that an
+      // overflowed link will expire instead of assuming it is permanent.
+      permanentUrls: hasR2PublicBase(),
+    },
   });
 });
 
@@ -130,6 +138,22 @@ router.post("/upload", async (req: Request, res: Response) => {
   }
   if (buffer.length > MAX_BYTES) {
     res.status(413).json({ error: "File exceeds the 10MB limit" });
+    return;
+  }
+
+  // The bucket is chosen per request, so verify it before uploading. A missing
+  // bucket used to surface as an opaque 500, and a PRIVATE bucket returned a
+  // "publicUrl" that could never load (getPublicUrl does not check visibility)
+  // — a dead link discovered only after the upload had succeeded.
+  const { data: bucketInfo, error: bucketError } = await supabaseAdmin.storage.getBucket(bucket);
+  if (bucketError || !bucketInfo) {
+    res.status(400).json({ error: `Storage bucket "${bucket}" does not exist` });
+    return;
+  }
+  if (bucketInfo.public !== true) {
+    res.status(400).json({
+      error: `Storage bucket "${bucket}" is private and cannot return a public URL`,
+    });
     return;
   }
 

@@ -398,6 +398,79 @@ describe("owner user tier management", () => {
   });
 });
 
+describe("owner approval decides access and tier together", () => {
+  const STUDENT_ID = "00000000-0000-4000-8000-000000000003";
+
+  function queueAuthAndTarget() {
+    // requireAuth: role, full name, plan — then the guard's role read and the
+    // handler's access row.
+    h.enqueue("profiles", { data: [], error: null });
+    h.enqueue("profiles", { data: [], error: null });
+    h.enqueue("profiles", { data: [], error: null });
+    h.enqueue("profiles", { data: [{ role: "member" }], error: null });
+    h.enqueue("profiles", {
+      data: [{ id: STUDENT_ID, access_status: "PENDING" }],
+      error: null,
+    });
+  }
+
+  it("grants the chosen tier in the same write that activates the account", async () => {
+    const { request } = await mount([["/api/owner", ownerRouter]]);
+    h.mockUser("owner-1", OWNER_EMAIL);
+    h.getUserById.mockResolvedValue({
+      data: { user: { id: STUDENT_ID, email: GRANTED_EMAIL } },
+      error: null,
+    });
+    queueAuthAndTarget();
+
+    const res = await request("PATCH", `/api/owner/users/${STUDENT_ID}/status`, {
+      status: "ACTIVE",
+      role: "plus",
+    });
+
+    expect(res.status).toBe(200);
+    expect(res.body).toMatchObject({
+      success: true,
+      status: "ACTIVE",
+      effectiveTier: "plus",
+    });
+
+    // One update, carrying approval and the tier together — never a second pass.
+    const updates = h.opsFor("profiles").filter((call) => call.method === "update");
+    expect(updates).toHaveLength(1);
+    expect(updates[0].args[0]).toMatchObject({
+      access_status: "ACTIVE",
+      role: "plus",
+      plan: "plus",
+      premium_status: false,
+    });
+  });
+
+  it("rejects an owner tier and a bare re-grant never rewrites the tier", async () => {
+    const { request } = await mount([["/api/owner", ownerRouter]]);
+    h.mockUser("owner-1", OWNER_EMAIL);
+    h.getUserById.mockResolvedValue({
+      data: { user: { id: STUDENT_ID, email: GRANTED_EMAIL } },
+      error: null,
+    });
+
+    const ownerTier = await request("PATCH", `/api/owner/users/${STUDENT_ID}/status`, {
+      status: "ACTIVE",
+      role: "owner",
+    });
+    expect(ownerTier.status).toBe(400);
+    expect(h.opsFor("profiles").filter((call) => call.method === "update")).toHaveLength(0);
+
+    queueAuthAndTarget();
+    const bare = await request("PATCH", `/api/owner/users/${STUDENT_ID}/status`, {
+      status: "ACTIVE",
+    });
+    expect(bare.status).toBe(200);
+    const update = h.opsFor("profiles").find((call) => call.method === "update");
+    expect(update?.args[0]).toEqual({ access_status: "ACTIVE" });
+  });
+});
+
 describe("owner R1 grant management", () => {
   it("only owner emails may manage grants", async () => {
     const { request } = await mount([["/api/owner", ownerRouter]]);

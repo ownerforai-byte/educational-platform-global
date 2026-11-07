@@ -132,14 +132,19 @@ export function deleteOwnerUser(userId: string): Promise<{ success: true }> {
   return apiFetch(`/api/owner/users/${userId}`, { method: "DELETE" });
 }
 
-/** Grant or revoke platform access (owner approval of a new signup). */
+/**
+ * Grant or revoke platform access (owner approval of a new signup).
+ * `role` is granted in the SAME call — an approval is one decision, not an
+ * approval followed by a separate tier pass.
+ */
 export function setOwnerUserAccessStatus(
   userId: string,
-  accessStatus: "ACTIVE" | "REJECTED" | "PENDING"
-): Promise<{ success: true; accessStatus: string }> {
+  accessStatus: "ACTIVE" | "REJECTED" | "PENDING",
+  role?: Exclude<UserRole, "owner">,
+): Promise<{ success: true; userId: string; status: string; effectiveTier?: AccessLevel }> {
   return apiFetch(`/api/owner/users/${userId}/status`, {
     method: "PATCH",
-    body: JSON.stringify({ status: accessStatus }),
+    body: JSON.stringify(role ? { status: accessStatus, role } : { status: accessStatus }),
   });
 }
 
@@ -162,16 +167,18 @@ export function bulkUpdateOwnerUserRole(
 export function bulkOwnerUserAccessStatus(
   userIds: string[],
   status: "ACTIVE" | "REJECTED",
+  role?: Exclude<UserRole, "owner">,
 ): Promise<{
   success: true;
   status: string;
+  role: string | null;
   applied: string[];
   skipped: Array<{ userId: string; reason: string }>;
   requested: number;
 }> {
   return apiFetch("/api/owner/users/bulk-status", {
     method: "POST",
-    body: JSON.stringify({ userIds, status }),
+    body: JSON.stringify(role ? { userIds, status, role } : { userIds, status }),
   });
 }
 

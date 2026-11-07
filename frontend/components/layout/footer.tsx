@@ -13,14 +13,17 @@
  *   - The footer can never show a link that the sidebar doesn't know about.
  *
  * Each link is tier-aware: if the viewer's plan doesn't reach a link,
- * it shows as muted/disabled text instead of a clickable link.
+ * it shows as muted/disabled text instead of a clickable link. The Account
+ * column's Dashboard is the one exception: it is a live link for every
+ * viewer (owner request 2026-11-07), and the route's own approval gate still
+ * decides what a signed-out guest sees after the click.
  * Plans are shown only in the footer (not scattered around the app).
  */
 
 import Link from "next/link";
 import { DEPLOY_VERSION } from "@/lib/deploy-version";
 import { hasLevel, ACCESS_LABELS, type AccessLevel } from "@/lib/access-level";
-import { NAV_SECTIONS } from "@/lib/navigation";
+import { NAV_SECTIONS, type NavItem, type NavSection } from "@/lib/navigation";
 import type { AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
 import { FooterQuote } from "@/components/layout/footer-quote";
 
@@ -40,9 +43,13 @@ const FOOTER_SECTIONS: Array<{
   heading: string;
   /**
    * Optional: limit to these hrefs only. If empty/undefined, all items in
-   * the section are shown (respecting tier filtering).
+   * the section are shown (respecting tier filtering). Hrefs are resolved
+   * across the whole registry, so a column may include a destination that a
+   * different section owns.
    */
   onlyHrefs?: string[];
+  /** Hrefs that stay live links for every viewer, below their rung included. */
+  alwaysUnlockedHrefs?: string[];
 }> = [
   // Study — the core curriculum pages
   {
@@ -102,14 +109,42 @@ const FOOTER_SECTIONS: Array<{
     sectionId: "account",
     heading: "Account",
     onlyHrefs: [
+      "/dashboard", // owned by Quick Access — the footer's way into it
       "/profile",
       "/credits",
       "/billing",
       "/settings",
       "/notice",
     ],
+    // Owner request 2026-11-07: the dashboard link is available for all.
+    alwaysUnlockedHrefs: ["/dashboard"],
   },
 ];
+
+/**
+ * Resolve a footer column's links from the WHOLE registry. The Account column
+ * carries Dashboard even though Quick Access owns that entry; each row keeps
+ * the section that owns it, so its rung is read from the same place the
+ * sidebar reads it.
+ */
+function footerItems(
+  section: NavSection,
+  onlyHrefs?: string[],
+): Array<{ item: NavItem; owner: NavSection }> {
+  if (!onlyHrefs) return section.items.map((item) => ({ item, owner: section }));
+
+  const resolved: Array<{ item: NavItem; owner: NavSection }> = [];
+  for (const href of onlyHrefs) {
+    for (const candidate of NAV_SECTIONS) {
+      const item = candidate.items.find((entry) => entry.href === href);
+      if (item) {
+        resolved.push({ item, owner: candidate });
+        break;
+      }
+    }
+  }
+  return resolved;
+}
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
@@ -131,27 +166,25 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
 
         {/* All five groups share ONE row, on phones too — no stacked directory. */}
         <div className="mt-5 grid grid-cols-5 gap-x-2 sm:gap-x-4">
-          {FOOTER_SECTIONS.map(({ sectionId, heading, onlyHrefs }) => {
-            // Look up the full item list from NAV_SECTIONS
+          {FOOTER_SECTIONS.map(({ sectionId, heading, onlyHrefs, alwaysUnlockedHrefs }) => {
+            // Look up the column's own section from NAV_SECTIONS
             const section = NAV_SECTIONS.find((s) => s.id === sectionId);
             if (!section) return null;
 
-            // Filter to only the hrefs we want in the footer (if specified)
-            const items = onlyHrefs
-              ? section.items.filter((item) => onlyHrefs.includes(item.href))
-              // Keep the original order from onlyHrefs so the footer order is predictable
-              .sort((a, b) => onlyHrefs.indexOf(a.href) - onlyHrefs.indexOf(b.href))
-              : section.items;
+            // onlyHrefs order wins, so the footer order is predictable.
+            const items = footerItems(section, onlyHrefs);
+            const alwaysUnlocked = alwaysUnlockedHrefs ?? [];
 
             return (
               <nav key={sectionId} aria-label={`Footer ${heading}`} className="min-w-0">
                 <h2 className="text-[11px] font-semibold leading-tight sm:text-sm">{heading}</h2>
                 <ul className="mt-2 space-y-0.5 sm:mt-3">
-                  {items.map((item) => {
+                  {items.map(({ item, owner }) => {
                     // Determine the minimum tier needed for this link
-                    const minTier: AccessLevel = item.minLevel ?? section.minLevel ?? "member";
+                    const minTier: AccessLevel = item.minLevel ?? owner.minLevel ?? "member";
                     // Check if the current viewer can reach it
-                    const unlocked = hasLevel(user, minTier);
+                    const unlocked =
+                      alwaysUnlocked.includes(item.href) || hasLevel(user, minTier);
 
                     if (!unlocked) {
                       // Locked: show as muted disabled text (no button, no lock icon)

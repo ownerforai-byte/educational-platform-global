@@ -120,6 +120,9 @@ export default function OwnerUsersPage() {
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [bulkBusy, setBulkBusy] = useState(false);
   const [bulkTier, setBulkTier] = useState<Exclude<UserRole, "owner">>("plus");
+  // The tier granted by every approval in Review — single and bulk alike.
+  // Approval and tier are ONE decision (never approve now, set tier later).
+  const [approvalTier, setApprovalTier] = useState<Exclude<UserRole, "owner">>("member");
   // Access is owned by the partition, not the filter dropdown: Review =
   // PENDING, Approved = ACTIVE/REJECTED. Filters stay at "all" for access
   // so neither system can hide the other's rows.
@@ -142,7 +145,7 @@ export default function OwnerUsersPage() {
   const updateFilters = useCallback((patch: Parameters<typeof patchFilters>[0]) => {
     setSelected(new Set());
     patchFilters(patch);
-  }, [patchFilters]);
+  }, [patchFilters, setSelected]);
 
   const [adjustUser, setAdjustUser] = useState<OwnerUser | null>(null);
   const [adjustAmount, setAdjustAmount] = useState(0);
@@ -193,10 +196,18 @@ export default function OwnerUsersPage() {
   };
 
   const handleAccess = async (u: OwnerUser, status: "ACTIVE" | "REJECTED") => {
+    // Approving a PENDING account grants the chosen tier in the same call.
+    // Re-granting a REJECTED account only restores access — its tier stays.
+    const approving = status === "ACTIVE" && (u.access_status ?? "ACTIVE") === "PENDING";
     setBusyId(u.id);
     const ok = await runAction(
-      () => setOwnerUserAccessStatus(u.id, status),
-      status === "ACTIVE" ? "Access granted" : "Access revoked",
+      () =>
+        setOwnerUserAccessStatus(u.id, status, approving ? approvalTier : undefined),
+      status === "REJECTED"
+        ? "Access revoked"
+        : approving
+          ? `Access granted at ${ACCESS_LABELS[approvalTier]}`
+          : "Access granted",
     );
     setBusyId(null);
     if (ok) reload();
@@ -255,11 +266,23 @@ export default function OwnerUsersPage() {
   const bulkAccess = async (status: "ACTIVE" | "REJECTED") => {
     const ids = selectedSystemIds;
     if (ids.length === 0) return;
-    const verb = status === "ACTIVE" ? "approve" : "revoke access for";
-    if (!window.confirm(`${verb} ${ids.length} selected account(s)?`)) return;
+    // The approval tier applies only while working Review. The same buttons
+    // exist in Approved, where they must never rewrite an existing tier.
+    const approves = status === "ACTIVE" && system === "review";
+    const confirmText =
+      status === "ACTIVE"
+        ? approves
+          ? `Approve ${ids.length} selected account(s) at ${ACCESS_LABELS[approvalTier]}?`
+          : `Grant access to ${ids.length} selected account(s)?`
+        : `Revoke access for ${ids.length} selected account(s)?`;
+    if (!window.confirm(confirmText)) return;
     setBulkBusy(true);
     try {
-      const res = await bulkOwnerUserAccessStatus(ids, status);
+      const res = await bulkOwnerUserAccessStatus(
+        ids,
+        status,
+        approves ? approvalTier : undefined,
+      );
       toast.success(`Updated ${res.applied.length} of ${res.requested} accounts`);
       if (res.skipped.length > 0) {
         toast.message(`${res.skipped.length} skipped (protected or missing)`);
@@ -312,15 +335,17 @@ export default function OwnerUsersPage() {
     }
     if (
       !window.confirm(
-        `Approve all ${visiblePendingIds.length} pending accounts in the current view?`,
+        `Approve all ${visiblePendingIds.length} pending accounts at ${ACCESS_LABELS[approvalTier]}?`,
       )
     ) {
       return;
     }
     setBulkBusy(true);
     try {
-      const res = await bulkOwnerUserAccessStatus(visiblePendingIds, "ACTIVE");
-      toast.success(`Approved ${res.applied.length} pending account(s)`);
+      const res = await bulkOwnerUserAccessStatus(visiblePendingIds, "ACTIVE", approvalTier);
+      toast.success(
+        `Approved ${res.applied.length} pending account(s) at ${ACCESS_LABELS[approvalTier]}`,
+      );
       reload();
     } catch (err) {
       toast.error(err instanceof Error ? err.message : "Bulk approve failed");
@@ -345,7 +370,8 @@ export default function OwnerUsersPage() {
           </h1>
           <p className="text-sm text-muted-foreground">
             Two separate systems — Review decides pending accounts, Approved manages decided ones.
-            Owner emails are a plain roster in Approved: visible, no buttons, never in Review.
+            Approval grants the tier chosen below in the same action. Owner emails are a plain
+            roster in Approved: visible, no buttons, never in Review.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -464,6 +490,27 @@ export default function OwnerUsersPage() {
 
         <div className="flex flex-wrap items-center gap-2">
           <Filter className="h-4 w-4 text-muted-foreground shrink-0" />
+          {/* Approval tier — the rung granted by every approve action below. */}
+          {system === "review" && (
+            <label className="flex items-center gap-1.5 text-xs text-muted-foreground">
+              <span className="whitespace-nowrap font-medium">Approval tier</span>
+              <select
+                value={approvalTier}
+                onChange={(e) =>
+                  setApprovalTier(e.target.value as Exclude<UserRole, "owner">)
+                }
+                disabled={bulkBusy}
+                className="text-xs border rounded-md px-2 py-1.5 bg-background"
+                aria-label="Tier granted when approving"
+              >
+                {USER_ROLES.filter((role) => role !== "owner").map((role) => (
+                  <option key={role} value={role}>
+                    {ACCESS_LABELS[role]} · {TIER_SPARKS[role]} Veer sparks
+                  </option>
+                ))}
+              </select>
+            </label>
+          )}
           {system === "review" && visiblePendingIds.length > 0 && (
             <Button size="sm" variant="outline" disabled={bulkBusy} onClick={approveAllPending}>
               <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
@@ -570,11 +617,29 @@ export default function OwnerUsersPage() {
               ))}
             </div>
           ) : systemUsers.length === 0 ? (
-            <p className="text-sm text-muted-foreground text-center py-10">
-              {system === "review"
-                ? "No pending accounts to review. Owners never appear here."
-                : "No approved accounts match these filters."}
-            </p>
+            <div className="py-10 text-center space-y-2">
+              {/* A filtered-out queue must say so — an empty Review that hides
+                  pending accounts reads as "nothing to approve". */}
+              <p className="text-sm text-muted-foreground">
+                {system === "review"
+                  ? stats.pending > 0
+                    ? `${stats.pending} account(s) are awaiting approval but hidden by the current filters.`
+                    : "No pending accounts to review. Owners never appear here."
+                  : stats.active + stats.rejected > 0
+                    ? "No decided accounts match these filters."
+                    : "No approved accounts yet."}
+              </p>
+              {((system === "review" && stats.pending > 0) ||
+                (system === "approved" && stats.active + stats.rejected > 0)) && (
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => updateFilters({ query: "", tier: "all" })}
+                >
+                  Clear filters
+                </Button>
+              )}
+            </div>
           ) : (
             <div className="space-y-2">
               {systemUsers.map((u) => (
@@ -659,9 +724,10 @@ export default function OwnerUsersPage() {
                             disabled={busyId === u.id}
                             onClick={() => handleAccess(u, "ACTIVE")}
                             className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                            title={`Approve and grant ${ACCESS_LABELS[approvalTier]} access`}
                           >
                             <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
-                            Approve
+                            Approve · {ACCESS_LABELS[approvalTier]}
                           </Button>
                           <Button
                             variant="outline"

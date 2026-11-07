@@ -42,6 +42,11 @@ vi.mock("../src/db/supabase", () => {
             publicUrl: `https://sb.example/storage/v1/object/public/resources/${p}`,
           },
         }),
+        list: async () => ({ data: [], error: null }),
+      }),
+      getBucket: async () => ({
+        data: { id: "resources", public: true },
+        error: null,
       }),
     },
   };
