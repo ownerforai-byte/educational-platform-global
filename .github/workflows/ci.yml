@@ -21,6 +21,20 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
       - run: npm ci
       - run: npm run lint
+      # The 7 React Compiler rules are warnings (legacy backlog), so `npm run
+      # lint` alone cannot stop new ones. The ratchet fails on any increase
+      # over scripts/lint-ratchet-baseline.json; fixing findings lowers the
+      # ceiling permanently. See scripts/lint-ratchet.mjs.
+      - name: Enforce the React Compiler lint ratchet
+        run: node ../scripts/lint-ratchet.mjs
+      # The offline app shell must follow the App Router tree, not a stale
+      # hand-written list that misses newly added pages.
+      - name: Check service worker precache drift
+        run: npm run sw:precache:check
+      # No NEW 🚧 placeholder page may ship. The 26 existing ones are
+      # baselined in scripts/dead-end-baseline.json and can only go down.
+      - name: Enforce the dead-end route ratchet
+        run: node ../scripts/dead-end-ratchet.mjs
 
   frontend-typecheck:
     runs-on: ubuntu-latest
@@ -121,6 +135,9 @@ jobs:
       # Mobile rules from MOBILE_RESPONSIVE_CHECKLIST.md that can be enforced
       # mechanically: invalid variants, safe-area chrome, wide minimums, tables.
       - run: npm run mobile:check
+      # Veer's golden regression set must stay in sync with the PYQ corpus it
+      # was sampled from. Offline gate: no keys, no network, no AI credits.
+      - run: npm run ai:regression
 
   # Android Deep Link gate: the Digital Asset Links file must be JSON,
   # match the Play-registered package, and declare at least one SHA-256

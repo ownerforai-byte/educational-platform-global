@@ -32,6 +32,22 @@ jobs:
       # "E2E smoke (Playwright)": NEXT_PUBLIC_SUPABASE_URL,
       # NEXT_PUBLIC_SUPABASE_ANON_KEY, NEXT_PUBLIC_API_URL,
       # NEXT_PUBLIC_SITE_URL, plus the SMOKE_* credentials.
+      # Name the missing secrets before the build. Without this, an empty
+      # NEXT_PUBLIC_* surfaces much later as a mysterious Playwright sign-in
+      # failure. Public env is mandatory; missing SMOKE_* credentials only
+      # skip their tests, so they are warnings here.
+      - name: Preflight smoke environment
+        run: node ../scripts/check-smoke-env.mjs
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          SMOKE_OWNER_EMAIL: ${{ secrets.SMOKE_OWNER_EMAIL }}
+          SMOKE_OWNER_PASSWORD: ${{ secrets.SMOKE_OWNER_PASSWORD }}
+          SMOKE_MEMBER_EMAIL: ${{ secrets.SMOKE_MEMBER_EMAIL }}
+          SMOKE_MEMBER_PASSWORD: ${{ secrets.SMOKE_MEMBER_PASSWORD }}
+
       - name: Build the production server
         run: npm run build
         env:

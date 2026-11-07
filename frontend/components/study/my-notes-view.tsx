@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { NotebookPen, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -23,6 +23,8 @@ import {
   type PersonalNote,
 } from "@/lib/personal-notes";
 import { listGoalSubjects } from "@/lib/study-goals";
+import { pushNotes } from "@/lib/user-state";
+import { NotesSync } from "./notes-sync";
 
 const SELECT = "h-9 rounded-md border bg-background px-2 text-sm";
 
@@ -37,11 +39,11 @@ export function MyNotesView() {
   const [filter, setFilter] = useState("");
   // Scope the notes were loaded under. A save is only valid in that scope.
   const loadedScope = useRef<string | null>(null);
-  const load = () => {
+  const load = useCallback(() => {
     loadedScope.current = notesScope();
     setNotes(readNotes());
-  };
-  useEffect(load, []);
+  }, []);
+  useEffect(load, [load]);
 
   /** Returns false (and reloads) when the account changed since load. */
   const commit = (next: PersonalNote[]): boolean => {
@@ -53,6 +55,9 @@ export function MyNotesView() {
       return false;
     }
     setNotes(next);
+    // Best-effort account-backed write; failures leave the local copy intact
+    // and queue the change for the next reconnect.
+    void pushNotes();
     return true;
   };
 
@@ -81,8 +86,9 @@ export function MyNotesView() {
           <NotebookPen className="h-6 w-6" /> My notes
         </h1>
         <p className="text-sm text-muted-foreground">
-          Your own notes and annotations, separate from the curriculum notes. They stay on this device.
+          Your own notes and annotations, separate from the curriculum notes. Saved on this device and synced to your account when you&apos;re online.
         </p>
+        <NotesSync onSynced={load} />
       </div>
 
       <Card>

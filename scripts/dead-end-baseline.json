@@ -1,0 +1,32 @@
+{
+  "note": "Routes rendering the UnderDevelopment shell. Fix one, then --write-baseline to lower the ceiling.",
+  "generatedAt": "2026-11-07",
+  "routes": [
+    "/announcements",
+    "/certificates",
+    "/changelog",
+    "/class-11-notes/[subject]/pyqs",
+    "/class-12-notes/[subject]/pyqs",
+    "/community/[id]/[threadId]",
+    "/exams/neb/[subject]/model-questions",
+    "/features",
+    "/feedback",
+    "/goals",
+    "/help/[articleSlug]",
+    "/lab/bio-3d-organelles",
+    "/leaderboard",
+    "/practice/[subject]",
+    "/progress/[subject]",
+    "/progress/[subject]/[unit]",
+    "/quiz/[subject]",
+    "/quiz/[subject]/[unit]",
+    "/results/[sessionId]",
+    "/revision",
+    "/schedule",
+    "/school",
+    "/school/[code]",
+    "/tags/[tag]",
+    "/teachers",
+    "/topics/[topicSlug]"
+  ]
+}

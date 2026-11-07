@@ -34,9 +34,12 @@ function loadEnv() {
 }
 
 const env = loadEnv();
-const SUPABASE_URL = env.SUPABASE_URL || process.env.SUPABASE_URL;
+// An explicitly supplied process-env value wins over the local .env file.
+// Short-lived Management API tokens can then be used for a single run WITHOUT
+// ever persisting them to disk (and without overwriting a stale .env token).
+const SUPABASE_URL = process.env.SUPABASE_URL || env.SUPABASE_URL;
 const TOKEN =
-  env.SUPABASE_MANAGEMENT_TOKEN || process.env.SUPABASE_MANAGEMENT_TOKEN;
+  process.env.SUPABASE_MANAGEMENT_TOKEN || env.SUPABASE_MANAGEMENT_TOKEN;
 
 if (!SUPABASE_URL || !TOKEN) {
   console.error(

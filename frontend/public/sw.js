@@ -13,8 +13,8 @@
 // Tutor's own dedicated page. Old v4 caches still hold the AI Studio render
 // under /chat (stale-while-revalidate would flash it once per visit), so
 // bump the cache name to force a clean precache of the new surface.
-const CACHE_NAME = "neb-vault-v7";
-const DATA_CACHE = "neb-data-v7";
+const CACHE_NAME = "neb-vault-v8";
+const DATA_CACHE = "neb-data-v8";
 
 /** Pages to pre-cache on install (core app shell). */
 const SW_ROUTES = [
@@ -59,22 +59,44 @@ function networkIsConstrained() {
   }
 }
 
+/**
+ * Prefer the build-generated route list (scripts/generate-sw-precache.mjs),
+ * which is derived from the App Router tree and stays current as pages are
+ * added. SW_ROUTES is the built-in fallback for a dev server or a deploy that
+ * shipped without public/sw-precache.json.
+ */
+async function precacheRoutes() {
+  let routes = SW_ROUTES;
+  try {
+    const response = await fetch("/sw-precache.json", { cache: "no-store" });
+    if (response.ok) {
+      const data = await response.json();
+      if (Array.isArray(data.routes) && data.routes.length) routes = data.routes;
+    }
+  } catch {
+    /* no generated list: use the built-in shell routes */
+  }
+  const cache = await caches.open(CACHE_NAME);
+  // Cache each route independently — a single 404/redirect must not abort the
+  // whole install and leave the app shell uncached.
+  await Promise.allSettled(routes.map((route) => cache.add(route)));
+}
+
 /** Install: precache the app shell (skipped entirely under low data). */
 self.addEventListener("install", (event) => {
   if (networkIsConstrained()) {
-    // Low data: fetching 16 HTML shells up front is exactly the spend the
+    // Low data: fetching every HTML shell up front is exactly the spend the
     // user asked to avoid. Routes fill the cache as they are visited.
     self.skipWaiting();
     return;
   }
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) =>
-      // Cache each route independently — a single 404/redirect must not
-      // abort the whole install and leave the app shell uncached.
-      Promise.allSettled(SW_ROUTES.map((route) => cache.add(route)))
-    )
-  );
+  event.waitUntil(precacheRoutes());
   self.skipWaiting();
+});
+
+/** The "new version available" toast sends SKIP_WAITING, then reloads. */
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") self.skipWaiting();
 });
 
 /** Activate: clean old caches. */

@@ -48,6 +48,7 @@ import storageRoutes from "./api/storage";
 import adminRoutes from "./api/admin";
 import ownerRoutes from "./api/owner";
 import userRoutes from "./api/user";
+import userStateRoutes from "./api/user-state";
 import biologyRoutes from "./api/biology";
 import periodicTableRoutes from "./api/periodic-table";
 import lessonsRoutes from "./api/lessons";
@@ -188,6 +189,9 @@ export function createApp(): express.Express {
   app.use("/api/admin", adminRoutes);
   app.use("/api/owner", ownerRoutes);
   app.use("/api/user", userRoutes);
+  // Account-backed personal state (notes, SRS, goals …). Registered before
+  // any /api/user catch-all so /api/user-state/<namespace> always wins.
+  app.use("/api/user-state", userStateRoutes);
   app.use("/api/biology", biologyRoutes);
   app.use("/api/periodic-table", periodicTableRoutes);
   app.use("/api/lessons", lessonsRoutes);

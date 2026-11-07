@@ -77,6 +77,11 @@ repository.
 - Agents must test their changes before marking work complete.
 - Reuse existing abstractions whenever possible.
 - Preserve backward compatibility whenever practical.
+- `npm run lint:ratchet` (CI step) fails on any **new** React Compiler lint finding. The legacy backlog is baselined in `scripts/lint-ratchet-baseline.json` and may only go down; after fixing findings, re-baseline with `npm run lint:ratchet:baseline` and record the new count.
+- `npm run ai:regression` (CI step) validates the 120-question Veer golden set against the PYQ corpus, offline. If a sampled question/solution changes, rebuild with `npm run ai:regression:build`. Live scoring (`npm run ai:regression:live`) spends AI credits and needs `AI_REGRESSION_TOKEN` in the environment — never commit that token.
+- New personal stores must go through `frontend/lib/user-state.ts`, not a new `localStorage` key. Namespaces are lowercase `[a-z0-9_-]{1,64}`, payloads are JSON objects/arrays ≤ 256 KB, and every PUT must send the `baseVersion` it last read. Never send a `user_id` from the client — `/api/user-state` derives identity from the session. Migration `013_user_state.sql` was applied on 2026-11-07 (RLS + 4 policies verified) — the endpoint is live. For future migrations, `backend/scripts/run-sql.mjs` prefers a token in `process.env.SUPABASE_MANAGEMENT_TOKEN` over `backend/.env`, so a short-lived token can be used once without persisting it; never commit or log a token.
+- After adding a static App Router page, run `npm run sw:precache` in `frontend` and commit `public/sw-precache.json`; CI (`sw:precache:check`) fails on drift. Never add a new route that renders `UnderDevelopment` — `npm run dead-ends` fails on any placeholder not in `scripts/dead-end-baseline.json`. Removing one and re-running `npm run dead-ends:baseline` lowers the ceiling.
+- `npm run smoke:env` (E2E Smoke CI step) prints exactly which `NEXT_PUBLIC_*` / `SMOKE_*` repo secrets are missing; values are never printed. Missing public env fails the job before the build; missing credentials only warn because those tests skip themselves.
 
 ## Security
 - Agents must avoid paid services.

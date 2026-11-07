@@ -87,6 +87,11 @@ Whenever you need to know how the platform works and where things route, refer O
 | `SYSTEM_WORK_TRACKER.md` | Audit of all 31 platform work types and systems. |
 | `BRANCHES.md` | Git branch assignment (48 area branches) and scoped test rules. |
 | `frontend/lib/content/paths.ts` | The ONE place that knows the classified `content/` tree: section map, class/unit normalization, path parsing. If the tree moves again, it moves here first. |
+| `backend/src/db/migrations/013_user_state.sql` | Account-backed user state schema + RLS (one row per user/namespace, versioned JSONB). Must be applied before `/api/user-state` works. |
+| `backend/src/api/user-state.ts` | Authenticated GET/PUT/DELETE for personal stores; session-derived identity, optimistic concurrency (409 on stale `baseVersion`). Mounted in `backend/src/app.ts`. |
+| `frontend/lib/user-state.ts` | Sync adapter: pull/push, offline queue + flush, `syncNotes()` merge and `pushNotes()` best-effort write. localStorage stays the render source. |
+| `frontend/lib/user-state-core.ts` | Pure conflict policy: `mergeById` (newest edit wins), bounded single-change-per-namespace queue, payload equality. |
+| `frontend/components/study/notes-sync.tsx` | Invisible sync driver for `/my-notes` (mount, reconnect, tab visibility). |
 
 ### C. Backend API & Middlewares (Server Core)
 | File | Role |

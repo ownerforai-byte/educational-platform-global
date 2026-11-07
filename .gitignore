@@ -235,6 +235,10 @@ tokenkit-out/
 # play-store/*.aab                             # binary release artifact
 play-store/*.aab
 play-store/*.apk
+# Live AI regression results are generated locally and spend credits; only the
+# deterministic golden set in reports/ is committed.
+reports/ai-regression-results.json
+
 # Root-level diagnostics and log dumps
 eigent-diagnostics*.zip
 *.log

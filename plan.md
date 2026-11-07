@@ -620,8 +620,9 @@ raw full suites green, `npm run check:all` green.
 - [x] P0  Manifest: add id, shortcuts (Continue studying, Quiz, Ask Veer, PYQs), screenshots, real maskable icon, short_name <= 12 chars, remove junk fields, review prefer_related_applications
 - [x] P0  Custom "Install app" prompt (beforeinstallprompt) + iOS "Add to Home Screen" hint
 - [ ] P1  Web Push (VAPID): streak-about-to-break, exam countdown, daily plan reminders, new notes; user-controlled times
+- [x] P1  Account-backed user state (2026-11-07): `013_user_state.sql` + `/api/user-state` + client sync layer; `/my-notes` is the first migrated store. Migration APPLIED and verified live (RLS + 4 policies, idempotent, FK-valid smoke test) — see `PROJECT_STATUS.md`.
 - [ ] P1  Offline: let students download a chapter/subject for offline; queue progress + quiz results and sync when online
-- [ ] P1  Generate the SW precache list from the build instead of a hand-written 16-route list; add an in-app "update available" toast
+- [x] P1  Generate the SW precache list from the App Router tree instead of a hand-written list (2026-11-07: `frontend/scripts/generate-sw-precache.mjs` → `public/sw-precache.json`, 40 prioritised student routes, CI drift gate; `sw.js` falls back to its built-in list) and add an in-app "update available" toast (`service-worker-registrar.tsx` + SKIP_WAITING)
 - [ ] P2  Badging API (streak/unread), share target, periodic content refresh
 
 ### Phase 5 — Reliability & Brand
@@ -636,6 +637,9 @@ raw full suites green, `npm run check:all` green.
 ### Phase 6 — Quality Gates
 
 - [x] P0  Dependabot + secret scanning + CodeQL config files
+- [x] P1  Lint ratchet (2026-11-07): `scripts/lint-ratchet.mjs` + baseline + CI step fail on any new React Compiler finding while the 205-item backlog (measured on this tree, up from the older 187 count) burns down; fixes lower the ceiling
+- [x] P1  Dead-end route ratchet (2026-11-07): `scripts/dead-end-ratchet.mjs` baselines the 26 known 🚧 routes in `scripts/dead-end-baseline.json`, publishes `reports/dead-end-routes.json` and fails CI on any NEW placeholder page. Fixing a page lowers the ceiling.
+- [x] P1  E2E env preflight (2026-11-07): `scripts/check-smoke-env.mjs` names the exact missing repo secrets before the Playwright build instead of failing later as a mysterious owner sign-in error
 - [ ] P1  Automated accessibility checks (axe) on key pages in CI
 - [ ] P1  Coverage reporting with a threshold on core logic (auth, credits, progress, streaks)
 - [ ] P1  Grow Playwright e2e beyond one smoke spec: login -> lesson -> quiz -> Veer -> bookmark -> offline
@@ -644,8 +648,10 @@ raw full suites green, `npm run check:all` green.
 ### Phase 7 — AI Tutor (Veer) Quality & Safety
 
 - [x] P0  Add a fallback provider + health-based failover — 10 free-tier providers added (LLM7 keyless, OVHcloud keyless + 8 keyed)
-- [ ] P0  Build a regression set from your own PYQs/solved questions (~100-200 Q&A) and score answers on every prompt/model change
-- [ ] P1  Hard per-user daily ceiling even for signed-in users, on top of credits
+- [x] P0  Build a regression set from your own PYQs/solved questions (2026-11-07: `scripts/ai-regression.mjs` + 120-item golden set in `reports/`, offline CI gate with drift detection, opt-in live scoring against `/api/ai`; scorer is a keyword-coverage grounding proxy, not a correctness judge)
+- [ ] P1  Schedule the live regression run on prompt/model changes (needs an owner test account + `AI_REGRESSION_TOKEN`; never put the token in the repo)
+- [x] P1  Hard per-user daily ceiling even for signed-in users, on top of credits — verified already implemented (2026-11-07 audit): `backend/src/api/ai.ts` + `middleware/aiSparkGate.ts` use the UTC-day, per-user CAS counter `consumeUserSlot(user.id, limit)` in `utils/guestQuota.ts`; owner tier is unlimited by explicit policy. No duplicate gate added.
+- [ ] P2  Citations back to the exact note/PYQ used in the answer — still open: the deep-concept path currently cites web research papers via `formatResearchPaperReferences`, not curriculum notes/PYQs. Needs retrieval-provenance plumbing through `curriculum-retrieval.ts` and a UI surface.
 - [ ] P1  Embed the tutor inside lessons and quizzes ("Explain", "Hint", "Why was I wrong?")
 - [ ] P1  Answer modes (step-by-step, exam-answer 8-mark format, quick revision) + thumbs up/down feedback
 - [ ] P2  Citations back to the exact note/PYQ used in the answer

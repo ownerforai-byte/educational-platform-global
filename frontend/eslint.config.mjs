@@ -44,6 +44,8 @@ const eslintConfig = [
       // failing on real rule violations, instead of blocking every push on a
       // backlog that was never assessed. Burn these down, then flip the
       // severities back to "error". Counts live in SYSTEM_WORK_TRACKER.md.
+      // scripts/lint-ratchet.mjs is the interim gate: it fails CI on any NEW
+      // finding from these seven rules while the backlog is burned down.
       "react-hooks/set-state-in-effect": "warn",
       "react-hooks/refs": "warn",
       "react-hooks/immutability": "warn",

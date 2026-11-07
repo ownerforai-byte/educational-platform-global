@@ -439,3 +439,78 @@ admin O(N) fixed) · Track 4 tests ✅ (frontend + backend suites in CI) · Trac
   gate remains unchanged: visitors get the sign-in wall and approved sessions get the
   archive.
 
+---
+
+## ARCHITECTURE CHANGE — ACCOUNT-BACKED USER STATE (2026-11-07)
+
+**Approval:** owner replied "Finish everything remaining" to the explicit
+architecture-approval question, covering the P1 `user_state` sync layer.
+Recorded here and in `CORE_FILES.md` per `AGENT_RULES.md` ("No agent may
+silently change the architecture").
+
+- **Why.** Until now personal stores (`personal-notes`, `srs`, `study-goals`,
+  `streaks`, `lab-progress`, chat/guest state) were `localStorage` only. A
+  reinstall, cleared browser data, or switching between web and the Android
+  TWA lost the student's work; nothing synced across devices.
+- **New schema:** `backend/src/db/migrations/013_user_state.sql` — one row per
+  `(user_id, namespace)`, opaque JSONB payload (256 KB cap), `version` for
+  optimistic concurrency, RLS policies for own-row select/insert/update/delete.
+- **New API:** `backend/src/api/user-state.ts`, mounted at `/api/user-state`.
+  GET / PUT / DELETE, all `requireAuth`, identity always session-derived (the
+  service role bypasses RLS, so no client `user_id` is ever accepted). PUT with
+  a stale `baseVersion` → 409.
+- **New client layer:** `frontend/lib/user-state-core.ts` (pure merge/queue
+  helpers), `frontend/lib/user-state.ts` (pull/push/queue/flush + `syncNotes`),
+  `frontend/components/study/notes-sync.tsx` (mount / online / visibility
+  driver). `/my-notes` is the first migrated store: localStorage stays the
+  render source and offline cache; the server row is the durable copy. Guest
+  sessions are never queued, so a signed-out visitor's notes cannot later land
+  under another person's account.
+- **LIVE (2026-11-07).** The owner supplied a short-lived Supabase Management
+  API token and `013_user_state.sql` was applied through
+  `node scripts/run-sql.mjs src/db/migrations/013_user_state.sql` (201 OK).
+  Verified on the live database: RLS enabled, exactly 4 own-row policies,
+  `version` column present, migration re-runnable (idempotent), and a
+  FK-valid insert/read/delete smoke test against a real `auth.users` id.
+  The token was passed transiently via `process.env`, never written to
+  `backend/.env`, any tracked file, or Git; `run-sql.mjs` was adjusted so an
+  explicit process-env token overrides the stale `.env` value. `/api/user-state`
+  and the `/my-notes` sync are therefore live for signed-in accounts.
+- **Validation:** backend `user-state-route.test.ts` 7/7, frontend
+  `user-state-core.test.ts` 7/7, frontend + backend `tsc --noEmit` PASS, ESLint
+  on the new frontend files PASS (one pre-existing `set-state-in-effect` warning
+  in `my-notes-view.tsx`, already baselined by the lint ratchet).
+
+### Live database audit performed with the same token (2026-11-07)
+
+Audited every migration-created object. Three others were missing and were
+applied (all additive + idempotent, each returned 201 OK):
+
+| Migration | What was missing | Why it mattered |
+|---|---|---|
+| `002_profiles_trigger.sql` | `on_auth_user_created` trigger on `auth.users` | New signups got no `profiles` row → null roles/credits/approval status |
+| `008_ai_spark_plan.sql` | `profiles.plan`, `plan_expires_at`, `plan_activated_at` | AI-spark tier resolution fell back to the legacy `premium_status` flag |
+| `011_quiz_history.sql` | `quiz_history` table + 3 RLS policies | `/ai-quiz` history had nowhere to persist |
+
+Verified after applying: all 13 migration tables present, `user_state` RLS +
+4 policies, `quiz_history` RLS + 3 policies, all six `profiles` columns,
+`handle_new_user()` function, the auth trigger, and both check constraints.
+`013_user_state.sql` was re-run once to confirm idempotency.
+
+**Open data decision (NOT executed): 8 `auth.users` rows have no `profiles`
+row.** Migration 002 contains a commented-out backfill for exactly this case.
+It was deliberately not run: `profiles.access_status` now defaults to
+`PENDING` (owner-approval flow), so a naive backfill would silently lock those
+8 existing accounts out. The owner must decide whether they are live accounts.
+Safe backfill that preserves existing access, if approved:
+
+```sql
+insert into public.profiles (id, full_name, access_status)
+  select u.id, u.raw_user_meta_data->>'full_name', 'ACTIVE'
+  from auth.users u
+  where not exists (select 1 from public.profiles p where p.id = u.id)
+  on conflict (id) do nothing;
+```
+
+Until that runs, those accounts authenticate but resolve a null profile role.
+
