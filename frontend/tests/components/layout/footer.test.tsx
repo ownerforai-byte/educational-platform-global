@@ -30,4 +30,25 @@ describe("Footer account column", () => {
     expect(within(account).queryByRole("link", { name: "My Profile" })).toBeNull();
     expect(within(account).getByText("My Profile").getAttribute("aria-disabled")).toBe("true");
   });
+
+  it("keeps Credits and Billing together in one Billing column, in that order", () => {
+    render(<Footer user={null} />);
+    const billing = screen.getByRole("navigation", { name: "Footer Billing" });
+
+    // Owner request 2026-11-07: Credits is the first entry, the existing
+    // Billing destination is the second. Guests see them as locked text, so
+    // read the list items rather than querying for links.
+    const labels = Array.from(billing.querySelectorAll("li")).map((li) => li.textContent?.trim());
+    expect(labels).toEqual(["Credits", "Billing"]);
+
+    const account = screen.getByRole("navigation", { name: "Footer Account" });
+    expect(within(account).queryByText("Credits")).toBeNull();
+    expect(within(account).queryByText("Billing")).toBeNull();
+  });
+
+  it("no longer lists Plans & Pricing in the Platform column", () => {
+    render(<Footer user={null} />);
+    const platform = screen.getByRole("navigation", { name: "Footer Platform" });
+    expect(within(platform).queryByText(/Plans & Pricing/i)).toBeNull();
+  });
 });

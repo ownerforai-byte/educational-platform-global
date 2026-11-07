@@ -100,7 +100,19 @@ const FOOTER_SECTIONS: Array<{
       "/how-it-works",
       "/contact",
       "/help",
-      "/plans",   // Plans is ONLY in the footer (owner rule 2026-10-25)
+    ],
+  },
+
+  // Billing — credits/plan and billing live together in one group.
+  // Owner request 2026-11-07: "Plans & Pricing" is gone from the footer, and
+  // the two account billing destinations are merged under one Billing heading.
+  // `onlyHrefs` order is the displayed order: Credits first, Billing second.
+  {
+    sectionId: "account",
+    heading: "Billing",
+    onlyHrefs: [
+      "/credits",
+      "/billing",
     ],
   },
 
@@ -111,8 +123,6 @@ const FOOTER_SECTIONS: Array<{
     onlyHrefs: [
       "/dashboard", // owned by Quick Access — the footer's way into it
       "/profile",
-      "/credits",
-      "/billing",
       "/settings",
       "/notice",
     ],
@@ -153,7 +163,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
     <footer className="mt-auto border-t border-border bg-background">
       <div className="mx-auto max-w-7xl px-3 py-6 sm:px-4 md:px-6">
 
-        {/* Brand line — full width so the five nav columns below get the whole row */}
+        {/* Brand line — full width so the nav columns below get the whole row */}
         <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
           <Link href="/home" className="shrink-0 text-sm font-semibold hover:text-primary">
             Ravikisan&apos;s Platform
@@ -164,8 +174,8 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
           </p>
         </div>
 
-        {/* All five groups share ONE row, on phones too — no stacked directory. */}
-        <div className="mt-5 grid grid-cols-5 gap-x-2 sm:gap-x-4">
+        {/* Six groups: two tidy rows on phones, one row from sm upwards. */}
+        <div className="mt-5 grid grid-cols-3 gap-x-2 sm:grid-cols-6 sm:gap-x-4">
           {FOOTER_SECTIONS.map(({ sectionId, heading, onlyHrefs, alwaysUnlockedHrefs }) => {
             // Look up the column's own section from NAV_SECTIONS
             const section = NAV_SECTIONS.find((s) => s.id === sectionId);
@@ -176,7 +186,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
             const alwaysUnlocked = alwaysUnlockedHrefs ?? [];
 
             return (
-              <nav key={sectionId} aria-label={`Footer ${heading}`} className="min-w-0">
+              <nav key={heading} aria-label={`Footer ${heading}`} className="min-w-0">
                 <h2 className="text-[11px] font-semibold leading-tight sm:text-sm">{heading}</h2>
                 <ul className="mt-2 space-y-0.5 sm:mt-3">
                   {items.map(({ item, owner }) => {
