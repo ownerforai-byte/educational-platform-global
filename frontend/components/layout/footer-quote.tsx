@@ -42,18 +42,18 @@ export function FooterQuote() {
   useEffect(() => {
     const timer = window.setInterval(() => {
       setQuoteIndex((index) => (index + 1) % QUOTES.length);
-    }, 7000);
+    }, 4000);
 
     return () => window.clearInterval(timer);
   }, []);
 
   return (
     <section
-      aria-label="A little inspiration"
+      aria-label="Some words"
       className="footer-quote-glow relative my-6 overflow-hidden rounded-2xl border border-primary/20 bg-gradient-to-r from-primary/5 via-background to-cyan-500/5 px-4 py-5 text-center sm:px-8 sm:py-6"
     >
       <h2 className="mb-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary/80">
-        A little inspiration
+        Some words
       </h2>
       <blockquote
         key={quote.text}
