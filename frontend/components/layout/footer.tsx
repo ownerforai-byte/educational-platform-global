@@ -22,6 +22,7 @@ import { DEPLOY_VERSION } from "@/lib/deploy-version";
 import { hasLevel, ACCESS_LABELS, type AccessLevel } from "@/lib/access-level";
 import { NAV_SECTIONS } from "@/lib/navigation";
 import type { AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
+import { FooterQuote } from "@/components/layout/footer-quote";
 
 // ─── Which nav sections appear in the footer, and what heading to use ────────
 //
@@ -184,6 +185,8 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
             );
           })}
         </div>
+
+        <FooterQuote />
 
         {/* Bottom bar: copyright, legal links, version */}
         <div className="mt-5 flex flex-col gap-3 border-t border-border pt-4 text-xs text-muted-foreground lg:flex-row lg:items-center lg:justify-between">
