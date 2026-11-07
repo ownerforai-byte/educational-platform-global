@@ -25,6 +25,7 @@ jobs:
           #   backend/scripts/smoke-live.mjs (SMOKE_BASE_URL default)
           #   .github/**                  (workflow targets)
           #   *.md, docs                  (documentation)
+          #   frontend/app/legal/attribution/page.tsx (example attribution notice — documentation-style content, not a runtime code path)
           VIOLATIONS=$(git grep -n -E \
             '(https://[a-z0-9-]+\.vercel\.app|https://[a-z0-9-]+\.onrender\.com)' \
             -- \
@@ -39,6 +40,7 @@ jobs:
             ':(exclude)frontend/app/api/**' \
             ':(exclude)frontend/scripts/**' \
             ':(exclude)frontend/public/**' \
+            ':(exclude)frontend/app/legal/attribution/page.tsx' \
             ':(exclude)*.md' \
             ':(exclude)*.test.*' \
             ':(exclude)*.spec.*' || true)
