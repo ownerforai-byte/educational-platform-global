@@ -26,6 +26,7 @@ import {
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
 import { withFigureToolInstruction, resolveFiguresInText } from "../ai/image-gen";
 import { detectRoughInput, ROUGH_REDFLAG_REPLY } from "../ai/profanity-guard";
+import { buildCitations, formatCitations, type AnswerCitation } from "../ai/citations";
 import { openSseChannel, streamAnswerToStudent, type SseChannel, type StreamState } from "./ai-stream";
 
 const router = Router();
@@ -201,6 +202,11 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // Academic answers are rebuilt in a second pass; only that pass is visible.
     const upgrade = shouldUpgradeAcademic(lastUser, conversationTail);
     let answerSuffix = "";
+    // Grounding citations: name the exact note / PYQ the answer was retrieved
+    // from. Computed only for academic answers (the retrieval is local + cheap,
+    // and buildCitations returns [] on any corpus problem, so a missing record
+    // never breaks an answer). Casual chat gets no citations.
+    let citations: AnswerCitation[] = [];
     if (upgrade) {
       channel?.send({ phase: "drafting", label: "Preparing a first draft…" });
       const [draft, research, related] = await Promise.all([
@@ -208,7 +214,9 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
         deepConceptResearchWithSources(lastUser),
         relatedHistory(user.id, lastUser, typeof body?.session === "string" ? body.session : ""),
       ]);
-      answerSuffix = `${related}${formatResearchPaperReferences(research.papers)}`;
+      citations = buildCitations(lastUser);
+      const citationBlock = formatCitations(citations);
+      answerSuffix = `${related}${formatResearchPaperReferences(research.papers)}${citationBlock}`;
       const language = consoleId === "nepali" ? "Write the whole answer in Nepali, preserving the original question verbatim." : "";
       messages = upgradeMessages(lastUser, draft, research.context, language, conversationTail, images);
     }
@@ -251,6 +259,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     res.json({
       response,
       generatedFigures: figures.map((f) => ({ prompt: f.prompt, url: f.url, reason: f.reason })),
+      citations,
       credits: creditsLeft ?? undefined,
       aiSpark: { tier, limit: aiSparkLimitFor(tier), remaining: sparkRemaining },
       replyFloor: {

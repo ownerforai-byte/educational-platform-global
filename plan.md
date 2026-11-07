@@ -651,10 +651,9 @@ raw full suites green, `npm run check:all` green.
 - [x] P0  Build a regression set from your own PYQs/solved questions (2026-11-07: `scripts/ai-regression.mjs` + 120-item golden set in `reports/`, offline CI gate with drift detection, opt-in live scoring against `/api/ai`; scorer is a keyword-coverage grounding proxy, not a correctness judge)
 - [ ] P1  Schedule the live regression run on prompt/model changes (needs an owner test account + `AI_REGRESSION_TOKEN`; never put the token in the repo)
 - [x] P1  Hard per-user daily ceiling even for signed-in users, on top of credits — verified already implemented (2026-11-07 audit): `backend/src/api/ai.ts` + `middleware/aiSparkGate.ts` use the UTC-day, per-user CAS counter `consumeUserSlot(user.id, limit)` in `utils/guestQuota.ts`; owner tier is unlimited by explicit policy. No duplicate gate added.
-- [ ] P2  Citations back to the exact note/PYQ used in the answer — still open: the deep-concept path currently cites web research papers via `formatResearchPaperReferences`, not curriculum notes/PYQs. Needs retrieval-provenance plumbing through `curriculum-retrieval.ts` and a UI surface.
+- [x] P2  Citations back to the exact note/PYQ used in the answer (2026-11-07): `backend/src/ai/citations.ts` turns the ranked `curriculum-retrieval` hits into structured `AnswerCitation[]` + a "From your notes" markdown block appended to academic answers (visible in both streaming and non-streaming `/api/ai`); a structured `citations` field is also returned in the JSON response. `buildCitations` only runs for academic (upgrade) answers and returns `[]` on any corpus problem, so a missing record never breaks an answer. 11 unit tests in `backend/tests/citations.test.ts`; `deep-concept-upgrade.test.ts` updated for the new contract.
 - [ ] P1  Embed the tutor inside lessons and quizzes ("Explain", "Hint", "Why was I wrong?")
 - [ ] P1  Answer modes (step-by-step, exam-answer 8-mark format, quick revision) + thumbs up/down feedback
-- [ ] P2  Citations back to the exact note/PYQ used in the answer
 
 ### Phase 8 — Growth, Money, Reach
 

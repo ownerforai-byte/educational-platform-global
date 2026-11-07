@@ -72,6 +72,7 @@ import {
   relatedHistory,
   shouldUpgradeAcademic,
 } from "../../src/ai/complete-answer";
+import { getCorpus } from "../../src/ai/curriculum-corpus";
 
 const app = express();
 app.use(express.json());
@@ -85,6 +86,10 @@ beforeAll(async () => {
   const address = server.address();
   if (!address || typeof address === "string") throw new Error("no test port");
   base = `http://127.0.0.1:${address.port}`;
+  // Warm the curriculum corpus here (120s hook budget) so the first /chat
+  // route test — which now retrieves grounding citations — does not pay the
+  // Windows cold-read cost inside the 5s test timeout.
+  await getCorpus();
 });
 afterAll(async () => { await new Promise<void>((resolve) => server.close(() => resolve())); });
 beforeEach(() => {
@@ -195,9 +200,14 @@ describe("deep concept upgrade", () => {
   });
   it("rebuilds non-streaming academic answers without exposing the draft", async () => {
     const res = await post("/chat", { messages: [{ role: "user", content: "Explain capacitor" }] });
-    const json = await res.json() as { response: string };
+    const json = await res.json() as { response: string; citations: unknown };
     expect(res.status).toBe(200);
-    expect(json.response).toBe("Upgraded answer.");
+    // The final answer is the upgraded text — the DRAFT pass must not leak.
+    expect(json.response).toContain("Upgraded answer.");
+    expect(json.response).not.toContain("Raw draft.");
+    // Citations are now surfaced (grounding the answer in a real note/PYQ).
+    expect(json.response).toContain("From your notes");
+    expect(Array.isArray(json.citations)).toBe(true);
     expect(mocks.chat).toHaveBeenCalledTimes(2);
     expect(mocks.chat.mock.calls[1][1][0].content).toContain("DEEP-CONCEPT ANSWER UPGRADE");
   });

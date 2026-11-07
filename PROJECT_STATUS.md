@@ -481,6 +481,32 @@ silently change the architecture").
   on the new frontend files PASS (one pre-existing `set-state-in-effect` warning
   in `my-notes-view.tsx`, already baselined by the lint ratchet).
 
+## AI ANSWER CITATIONS (2026-11-07)
+
+**Why.** Until now a Veer answer could cite web research papers
+(`formatResearchPaperReferences`) but never named the platform's own note / PYQ
+it was grounded in. The deep-concept path now also surfaces the exact curriculum
+record used, so a student can open the source.
+
+- **New module:** `backend/src/ai/citations.ts` — `toCitation` (maps a
+  `CurriculumHit` to an `AnswerCitation`, classifying note vs PYQ from the source
+  path), `buildCitations` (ranked, de-duplicated, limit-bounded; injectable
+  retriever + never throws — a corpus problem degrades to `[]`), and
+  `formatCitations` (the visible "From your notes" markdown block with source
+  paths and a link to `/notes`). Deliberately NO generated deep links: corpus
+  records include drop-in KB and legacy paths that do not always map to a
+  routable topic page, so each citation carries its repo-relative source path.
+- **Wiring:** `backend/src/api/ai.ts` computes `citations` for academic (upgrade)
+  answers only, appends `formatCitations(...)` to `answerSuffix` (so it is
+  visible in both the SSE stream and the non-streaming JSON), and returns a
+  structured `citations` array in the JSON response. Casual chat is not
+  retrieved, so it gets no citations.
+- **Validation:** `backend/tests/citations.test.ts` 11/11 (kind detection,
+  dedupe, limit, empty/throw guards, block formatting); `deep-concept-upgrade`
+  route test updated for the new contract and warmed its corpus in `beforeAll`
+  so the first `/chat` route test stays inside the 5s CI timeout; backend
+  `tsc --noEmit` PASS; `ai-owner-gate.test.ts` 5/5 PASS.
+
 ### Live database audit performed with the same token (2026-11-07)
 
 Audited every migration-created object. Three others were missing and were
