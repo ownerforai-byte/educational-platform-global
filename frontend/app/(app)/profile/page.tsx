@@ -41,6 +41,7 @@ import { getAiSparkUsage, type AiSparkUsage } from "@/lib/api/ai";
 import { AI_SPARK_LIMITS } from "@/lib/ai/ai-spark-tiers";
 import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/access-level";
 import { topicHref } from "@/lib/progress/catalog";
+import { SYLLABUS } from "@/lib/syllabus";
 import type { ProgressEntry } from "@/types/api";
 
 const tierBadgeConfig: Record<AccessLevel, { className: string; icon: typeof Crown }> = {
@@ -150,13 +151,20 @@ export function calculateScholarLevel(completedTopics: number, credits: number =
   };
 }
 
+// Unit counts come from the shipped syllabus, never a literal string.
+const unitCountFor = (slug: string): string =>
+  `${SYLLABUS.reduce(
+    (sum, cls) => sum + (cls.subjects.find((s) => s.slug === slug)?.units.length ?? 0),
+    0,
+  )} Units`;
+
 const subjectsOverview = [
-  { name: "Physics", href: "/class-11-notes/physics", code: "Phy.11/12", topicsCount: "12 Units", color: "from-blue-500/20 to-cyan-500/10 border-blue-500/30" },
-  { name: "Chemistry", href: "/class-11-notes/chemistry", code: "Chem.11/12", topicsCount: "14 Units", color: "from-emerald-500/20 to-teal-500/10 border-emerald-500/30" },
-  { name: "Biology", href: "/class-11-notes/biology", code: "Bio.11/12", topicsCount: "16 Units", color: "from-green-500/20 to-emerald-500/10 border-green-500/30" },
-  { name: "Mathematics", href: "/class-11-notes/mathematics", code: "Math.11/12", topicsCount: "11 Units", color: "from-amber-500/20 to-yellow-500/10 border-amber-500/30" },
-  { name: "English", href: "/class-11-notes/english", code: "Eng.11/12", topicsCount: "Language & Lit", color: "from-indigo-500/20 to-purple-500/10 border-indigo-500/30" },
-  { name: "Nepali", href: "/class-11-notes/nepali", code: "Nep.11/12", topicsCount: "Language & Byakaran", color: "from-rose-500/20 to-pink-500/10 border-rose-500/30" },
+  { name: "Physics", href: "/class-11-notes/physics", code: "Phy.11/12", topicsCount: unitCountFor("physics"), color: "from-blue-500/20 to-cyan-500/10 border-blue-500/30" },
+  { name: "Chemistry", href: "/class-11-notes/chemistry", code: "Chem.11/12", topicsCount: unitCountFor("chemistry"), color: "from-emerald-500/20 to-teal-500/10 border-emerald-500/30" },
+  { name: "Biology", href: "/class-11-notes/biology", code: "Bio.11/12", topicsCount: unitCountFor("biology"), color: "from-green-500/20 to-emerald-500/10 border-green-500/30" },
+  { name: "Mathematics", href: "/class-11-notes/mathematics", code: "Math.11/12", topicsCount: unitCountFor("mathematics"), color: "from-amber-500/20 to-yellow-500/10 border-amber-500/30" },
+  { name: "English", href: "/class-11-notes/english", code: "Eng.11/12", topicsCount: unitCountFor("english"), color: "from-indigo-500/20 to-purple-500/10 border-indigo-500/30" },
+  { name: "Nepali", href: "/class-11-notes/nepali", code: "Nep.11/12", topicsCount: unitCountFor("nepali"), color: "from-rose-500/20 to-pink-500/10 border-rose-500/30" },
 ];
 
 /**

@@ -3,6 +3,8 @@ import Link from "next/link";
 import { getEducationLevels } from "@/lib/curriculum";
 import { getLevels } from "@/lib/api";
 import { SYLLABUS } from "@/lib/syllabus";
+import { LAB_VISUAL_INDEX } from "@/lib/lab-visual-index";
+import { DERIVATIONS_AND_THEOREMS } from "@/lib/derivations-data";
 import {
   Compass,
   GraduationCap,
@@ -58,6 +60,17 @@ export default async function LevelsPage() {
     0
   );
 
+  // Every headline figure below is derived from the real shipped datasets,
+  // not a hardcoded marketing number.
+  const courseCount = SYLLABUS.reduce((sum, c) => sum + c.subjects.length, 0);
+  const labCount = LAB_VISUAL_INDEX.length;
+  const grade11Proofs = DERIVATIONS_AND_THEOREMS.filter(
+    (d) => d.gradeTrack === "grade-11"
+  ).length;
+  const grade12Proofs = DERIVATIONS_AND_THEOREMS.filter(
+    (d) => d.gradeTrack === "extra-grade-12"
+  ).length;
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:py-12 space-y-12">
       {/* Hero Banner */}
@@ -86,7 +99,7 @@ export default async function LevelsPage() {
                 <span>NEB Grades</span>
               </div>
               <p className="text-2xl font-black text-foreground mt-1">XI &amp; XII</p>
-              <p className="text-[10px] text-muted-foreground">12 Science Courses</p>
+              <p className="text-[10px] text-muted-foreground">{courseCount} Science Courses</p>
             </div>
             <div className="rounded-2xl border border-border/70 bg-background/80 backdrop-blur-md p-3.5 min-w-[120px]">
               <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -101,7 +114,7 @@ export default async function LevelsPage() {
                 <Atom className="h-3.5 w-3.5 text-emerald-500" />
                 <span>Interactive Labs</span>
               </div>
-              <p className="text-2xl font-black text-foreground mt-1">48+</p>
+              <p className="text-2xl font-black text-foreground mt-1">{labCount}</p>
               <p className="text-[10px] text-muted-foreground">3D WebGL Engines</p>
             </div>
             <div className="rounded-2xl border border-border/70 bg-background/80 backdrop-blur-md p-3.5 min-w-[120px]">
@@ -299,7 +312,7 @@ export default async function LevelsPage() {
               <div className="mt-4 flex items-center gap-4 text-xs font-semibold text-muted-foreground">
                 <span className="flex items-center gap-1">
                   <Atom className="h-3.5 w-3.5 text-emerald-500" />
-                  48+ Engines
+                  {labCount} Engines
                 </span>
                 <span className="flex items-center gap-1">
                   <Sparkles className="h-3.5 w-3.5 text-emerald-500" />
@@ -522,7 +535,7 @@ export default async function LevelsPage() {
                 <td className="py-3.5 px-4 font-mono text-muted-foreground">Grade XI</td>
                 <td className="py-3.5 px-4">NEB 2076 / CDC</td>
                 <td className="py-3.5 px-4 text-emerald-600 dark:text-emerald-400 font-semibold">✓ 3D Cell &amp; Mechanics</td>
-                <td className="py-3.5 px-4 text-violet-600 dark:text-violet-400 font-semibold">✓ 40+ Stepwise</td>
+                <td className="py-3.5 px-4 text-violet-600 dark:text-violet-400 font-semibold">✓ {grade11Proofs} Stepwise</td>
                 <td className="py-3.5 px-4 text-right">
                   <Link href="/class-11-notes" className="font-semibold text-sky-500 hover:underline">
                     Open Hub →
@@ -537,7 +550,7 @@ export default async function LevelsPage() {
                 <td className="py-3.5 px-4 font-mono text-muted-foreground">Grade XII</td>
                 <td className="py-3.5 px-4">NEB 2078 / CDC</td>
                 <td className="py-3.5 px-4 text-emerald-600 dark:text-emerald-400 font-semibold">✓ Wave Optics &amp; Physiology</td>
-                <td className="py-3.5 px-4 text-violet-600 dark:text-violet-400 font-semibold">✓ 50+ Stepwise</td>
+                <td className="py-3.5 px-4 text-violet-600 dark:text-violet-400 font-semibold">✓ {grade12Proofs} Stepwise</td>
                 <td className="py-3.5 px-4 text-right">
                   <Link href="/class-12-notes" className="font-semibold text-violet-500 hover:underline">
                     Open Hub →
@@ -551,7 +564,7 @@ export default async function LevelsPage() {
                 </td>
                 <td className="py-3.5 px-4 font-mono text-muted-foreground">STEM-3D</td>
                 <td className="py-3.5 px-4">Experimental Science</td>
-                <td className="py-3.5 px-4 text-emerald-600 dark:text-emerald-400 font-semibold">✓ 48+ Simulations</td>
+                <td className="py-3.5 px-4 text-emerald-600 dark:text-emerald-400 font-semibold">✓ {labCount} Simulations</td>
                 <td className="py-3.5 px-4 text-muted-foreground">—</td>
                 <td className="py-3.5 px-4 text-right">
                   <Link href="/lab" className="font-semibold text-emerald-500 hover:underline">
