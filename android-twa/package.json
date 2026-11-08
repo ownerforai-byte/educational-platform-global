@@ -13,5 +13,11 @@
   },
   "devDependencies": {
     "@bubblewrap/cli": "^1.27.0"
+  },
+  "overrides": {
+    "follow-redirects": "1.16.2",
+    "node-forge": "1.4.3",
+    "qs": "6.17.1",
+    "uuid": "11.1.1"
   }
 }
