@@ -51,4 +51,11 @@ describe("Footer account column", () => {
     const platform = screen.getByRole("navigation", { name: "Footer Platform" });
     expect(within(platform).queryByText(/Plans & Pricing/i)).toBeNull();
   });
+
+  it("adds 'What it has' under Platform as a live guest link (owner 2026-11-08)", () => {
+    render(<Footer user={null} />);
+    const platform = screen.getByRole("navigation", { name: "Footer Platform" });
+    const link = within(platform).getByRole("link", { name: "What it has" });
+    expect(link.getAttribute("href")).toBe("/what-it-has");
+  });
 });

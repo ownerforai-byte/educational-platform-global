@@ -11,6 +11,7 @@ import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/access-level";
+import { rememberPendingSignup } from "../pending-signup-identity";
 
 export function LoginForm() {
   const router = useRouter();
@@ -38,11 +39,8 @@ export function LoginForm() {
     } else if (result.code === "PENDING_APPROVAL" && result.statusToken) {
       // Waiting for approval → MUST land on the pending-status screen, not
       // stranded on this form with an error the student cannot act on.
-      try {
-        localStorage.setItem("neb_signup_status_token", result.statusToken);
-      } catch {
-        /* storage blocked — /welcome falls back to its missing-token state */
-      }
+      // Persist the hardcoded identity so the status screen survives refresh.
+      rememberPendingSignup(result.statusToken);
       router.push("/welcome");
     } else {
       setError(result.error);

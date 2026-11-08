@@ -18,6 +18,7 @@ import {
 import { apiFetch } from "@/lib/api-client";
 import { VisitorExitNote } from "@/components/layout/visitor-exit-note";
 import { VerifyingStatus } from "./verifying-status";
+import { readStatusToken, rememberPendingSignup } from "../pending-signup-identity";
 
 /**
  * Post-signup status screen (owner-approval flow, 2026-09-26).
@@ -27,7 +28,7 @@ import { VerifyingStatus } from "./verifying-status";
  *
  *   PENDING  → "account created, awaiting approval" + live stepper (polls)
  *   ACTIVE   → access granted → sign in
- *   REJECTED → not approved → contact the owner
+ *   REJECTED → not approved → leave a message to this email; ravikisan1814@gmail.com
  *
  * The screen polls the server every few seconds, so the moment the owner
  * approves in the control panel, this page flips to "Access granted" on its
@@ -36,7 +37,6 @@ import { VerifyingStatus } from "./verifying-status";
  * exclusive states.
  */
 
-const TOKEN_KEY = "neb_signup_status_token";
 const POLL_MS = 6000;
 
 type StatusState =
@@ -79,11 +79,8 @@ function useUrlStatusToken() {
     const url = new URL(window.location.href);
     const fromUrl = url.searchParams.get("status_token");
     if (!fromUrl) return;
-    try {
-      localStorage.setItem(TOKEN_KEY, fromUrl);
-    } catch {
-      /* storage blocked — the poll still works for this visit */
-    }
+    // Persist to all three hardcoded mirrors before dropping the query string.
+    rememberPendingSignup(fromUrl);
     // Drop the query string so a manual refresh doesn't reseed an old token.
     window.history.replaceState(null, "", window.location.pathname);
   }, []);
@@ -97,12 +94,9 @@ export function WelcomeStatus() {
   const timerRef = useRef<number | null>(null);
 
   const check = useCallback(async () => {
-    let token: string | null = null;
-    try {
-      token = localStorage.getItem(TOKEN_KEY);
-    } catch {
-      token = null;
-    }
+    // Recover from localStorage / sessionStorage / the hardcoded cookie, so a
+    // refresh or a cleared store cannot lose the "account created" identity.
+    const token = readStatusToken();
     if (!token) {
       setState("missing");
       return;
@@ -139,10 +133,16 @@ export function WelcomeStatus() {
   const firstName = fullName?.trim().split(/\s+/)[0];
   const step = STEP_INDEX[state];
   const failed = state === "REJECTED";
+  // Only a server-confirmed account may be described as "created". A visitor
+  // with no account is routed to /welcome/no-account by the page gate, but the
+  // banner must also stay hidden while the poll has not confirmed anything.
+  const accountConfirmed =
+    state === "PENDING" || state === "ACTIVE" || state === "REJECTED";
 
   return (
     <div className="space-y-6" data-testid="account-status">
-      {/* ── Success headline: the account EXISTS — always shown first ── */}
+      {/* ── Success headline: shown ONLY when an account really exists ── */}
+      {accountConfirmed && (
       <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-center">
         <p className="flex items-center justify-center gap-2 text-sm font-bold text-emerald-600 dark:text-emerald-400">
           <Sparkles className="h-4 w-4" />
@@ -155,6 +155,7 @@ export function WelcomeStatus() {
           </p>
         ) : null}
       </div>
+      )}
 
       {/* ── Approval pipeline stepper ──────────────────────────────── */}
       <ol className="grid grid-cols-3 gap-2" aria-label="Approval progress">
@@ -312,7 +313,7 @@ export function WelcomeStatus() {
           icon={<ShieldAlert className="h-5 w-5 text-destructive" />}
           title="Account not approved"
           badge={<StatusPill status="REJECTED" />}
-          body="This account wasn't approved for access. If you believe this is a mistake, contact the platform owner."
+          body="This account wasn't approved for access. If you believe this is a mistake, leave a message to this email; ravikisan1814@gmail.com."
           actions={<AuthButton href="/" label="Back to home" />}
         />
       )}

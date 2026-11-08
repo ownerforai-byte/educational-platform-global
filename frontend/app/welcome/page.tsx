@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { AuthShell } from "@/features/auth/components/auth-shell";
 import { WelcomeStatus } from "@/features/auth/components/welcome-status";
-import { LoggedInRedirect } from "@/app/login/logged-in-redirect";
+import { WelcomeApprovalScreen } from "@/features/auth/components/account-screen-gate";
 
 export const metadata: Metadata = {
   title: "Account Status — Ravikisan's Platform",
@@ -12,19 +11,17 @@ export const metadata: Metadata = {
 /**
  * Post-signup status screen (owner-approval flow).
  *
+ * Owner request 2026-11-08: "your account is on its way ... this page is only
+ * for them who has created account and waiting for approval". The screen is
+ * therefore gated by the hardcoded pending-signup identity: a browser with no
+ * account record is sent to /welcome/no-account instead, which says
+ * "There is no record of your active account -- so create one to get access".
+ *
  * Exactly one auth-related interface is visible at a time:
- *   - not logged in  → /login or /signup forms
- *   - just signed up → THIS status screen (no session yet)
- *   - logged in      → the app's profile interface (this page bounces away)
+ *   - no account record → /welcome/no-account
+ *   - just signed up    → THIS waiting screen (no session yet)
+ *   - logged in         → the app's profile interface (LoggedInRedirect)
  */
 export default function WelcomePage() {
-  return (
-    <AuthShell
-      title="Your account is on its way"
-      subtitle="Account created — track your access status here. You'll be able to sign in after administrative and system approval."
-    >
-      <LoggedInRedirect />
-      <WelcomeStatus />
-    </AuthShell>
-  );
+  return <WelcomeApprovalScreen waiting={<WelcomeStatus />} />;
 }

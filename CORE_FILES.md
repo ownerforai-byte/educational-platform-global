@@ -152,6 +152,18 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/components/content/direct-stream-pdf-blocks.tsx` | **[IMPORTANT CORE FILE]** Doc-count-driven renderer: one framed block per stream, no download control, `scope` badge distinguishes "This chapter" from "Subject reference". |
 | `frontend/tests/lib/chapter-resources.test.ts` | Regression gate asserting all three sources stay live, the badge stays hidden, and EVERY chapter of class 11 AND class 12 returns at least one working Direct Stream PDF. |
 | `frontend/tests/components/content/note-presentation.test.tsx` | Regression gate for one archive, companion-only tabs, and canonical-source resource links without duplicate note bodies. |
+| `frontend/features/auth/pending-signup-identity.ts` | **[IMPORTANT CORE FILE]** Hardcoded pending-signup identification (owner 2026-11-08): a fixed marker + signed status token mirrored in localStorage, sessionStorage and a 7-day cookie, so a refresh/cleared store cannot lose "this browser created an account". Owns the two approval-status routes and `approvalStatusHref()`. Must be used by every place that creates/detects a PENDING account (signup form, login form, OAuth callback, welcome status). |
+| `frontend/features/auth/use-pending-signup.ts` | **[IMPORTANT CORE FILE]** Hydration-safe `useSyncExternalStore` hook over the hardcoded identity (`null` while hydrating, then boolean). Chosen over an effect + setState so the React Compiler lint ratchet gains no new finding. |
+| `frontend/features/auth/components/account-screen-gate.tsx` | **[IMPORTANT CORE FILE]** The two approval-status screen gates: `/welcome` serves ONLY pending signups ("Your account is on its way"); `/welcome/no-account` serves visitors with no account. Both read the same hardcoded identity and correct a direct URL visit. |
+| `frontend/features/auth/components/no-account-card.tsx` | **[IMPORTANT CORE FILE]** Second status screen copy: "There is no record of your active account -- so create one to get access" + Create account / Sign in actions. |
+| `frontend/tests/features/auth/account-screens.test.tsx` | Regression gate for the two-screen split, the hardcoded identity routing and the exact no-account message. |
+| `frontend/tests/features/auth/pending-signup-identity.test.ts` | Regression gate for three-store persistence, cookie-only recovery and foreign-cookie rejection. |
+| `frontend/public/sw.js` | **[IMPORTANT CORE FILE]** Service worker. Owner 2026-11-08: `install` only calls `skipWaiting()`; `activate` deletes EVERY cache from every previous deploy (no allowlist) before rebuilding the current-only shell. Prevents any previous version being served after an update. |
+| `frontend/components/pwa/service-worker-registrar.tsx` | **[IMPORTANT CORE FILE]** Registers the SW and auto-applies new versions (SKIP_WAITING + one `controllerchange` reload + `update()` on visibility/load). No manual update toast — a ready version is never left showing the old one. |
+| `frontend/tests/lib/version-purge.test.ts` | Runs the real `sw.js` in a VM to assert activation deletes all caches, plus source guards on the auto-update registrar. |
+| `frontend/tests/components/pwa/service-worker-registrar.test.tsx` | Rendered test for automatic SKIP_WAITING and the removed update prompt. |
+
+> Auth surfaces (`/login`, `/signup`, `/welcome`, `/welcome/no-account`, `/auth/callback`) are deliberately **not** listed in `navigation.ts` / `site-index.ts` — they are reached from the access screen, not from the public menu. `route-links.test.ts` still verifies every hardcoded href resolves.
 
 ---
 

@@ -1,98 +1,91 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 /**
- * Registers the service worker and surfaces an "update available" toast.
+ * Registers the service worker and applies every new version AUTOMATICALLY.
  *
- * A new deploy used to sit in the `waiting` worker indefinitely: students kept
- * using the previous cached shell until they force-closed the app. When a new
- * worker has installed, we offer a one-tap reload that sends SKIP_WAITING and
- * reloads once the new controller takes over.
+ * Owner request 2026-11-08: "if a new version is ready then autodeletes all
+ * old version -- simply never show previous versions".
  *
- * All state updates happen in callbacks (never synchronously in the effect
- * body), so this component stays compatible with the React Compiler rules.
+ * The old manual update toast and its reload button are gone. As soon as a
+ * new worker has installed we send SKIP_WAITING; public/sw.js then deletes
+ * EVERY cache from every previous deploy in its `activate` handler and
+ * rebuilds a current-only shell; a single `controllerchange` reload puts the
+ * student straight on the new build. No previous version is ever shown and no
+ * update is left waiting for a tap.
+ *
+ * All work happens in event callbacks (never synchronously in the effect
+ * body), so the React Compiler lint ratchet stays clean.
  */
 export function ServiceWorkerRegistrar() {
-  const [updateReady, setUpdateReady] = useState(false);
-
   useEffect(() => {
     if (!("serviceWorker" in navigator)) return;
 
+    const sw = navigator.serviceWorker;
+    // Only reload when this page was already controlled. On a FIRST install,
+    // clients.claim() also fires `controllerchange`; reloading there would
+    // bounce the student once for no reason.
+    const hadController = Boolean(sw.controller);
     let cancelled = false;
+    let reloaded = false;
     let registration: ServiceWorkerRegistration | null = null;
+
+    const applyUpdate = (reg: ServiceWorkerRegistration | null) => {
+      if (cancelled || !reg?.waiting || !sw.controller) return;
+      reg.waiting.postMessage({ type: "SKIP_WAITING" });
+    };
+
+    const onControllerChange = () => {
+      if (cancelled || reloaded || !hadController) return;
+      reloaded = true;
+      window.location.reload();
+    };
 
     const onUpdateFound = () => {
       const installing = registration?.installing;
       if (!installing) return;
       installing.addEventListener("statechange", () => {
-        if (
-          !cancelled &&
-          installing.state === "installed" &&
-          navigator.serviceWorker.controller
-        ) {
-          setUpdateReady(true);
-        }
+        if (cancelled || installing.state !== "installed" || !sw.controller) return;
+        applyUpdate(registration);
       });
     };
 
+    const onVisibilityChange = () => {
+      // A PWA left open for days never navigates, so ask for an update when
+      // the student comes back to the tab.
+      if (document.visibilityState === "visible" && registration) {
+        void registration.update().catch(() => {});
+      }
+    };
+
     const start = () => {
-      navigator.serviceWorker
-        .register("/sw.js")
+      sw.register("/sw.js")
         .then((reg) => {
           if (cancelled) return;
           registration = reg;
-          if (reg.waiting && navigator.serviceWorker.controller) setUpdateReady(true);
+          applyUpdate(reg); // a worker left waiting by an earlier visit
           reg.addEventListener("updatefound", onUpdateFound);
+          void reg.update().catch(() => {});
         })
         .catch(() => {
           // Registration is an enhancement: the app still works online.
         });
     };
 
+    sw.addEventListener("controllerchange", onControllerChange);
+    document.addEventListener("visibilitychange", onVisibilityChange);
     if (document.readyState === "complete") start();
     else window.addEventListener("load", start, { once: true });
 
     return () => {
       cancelled = true;
       window.removeEventListener("load", start);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+      sw.removeEventListener("controllerchange", onControllerChange);
       registration?.removeEventListener("updatefound", onUpdateFound);
     };
   }, []);
 
-  const reload = () => {
-    if (!("serviceWorker" in navigator)) return;
-    navigator.serviceWorker.getRegistration().then((reg) => {
-      if (!reg?.waiting) {
-        window.location.reload();
-        return;
-      }
-      let reloaded = false;
-      navigator.serviceWorker.addEventListener("controllerchange", () => {
-        if (reloaded) return;
-        reloaded = true;
-        window.location.reload();
-      });
-      reg.waiting.postMessage({ type: "SKIP_WAITING" });
-    });
-  };
-
-  if (!updateReady) return null;
-
-  return (
-    <div
-      role="status"
-      aria-live="polite"
-      className="fixed bottom-safe left-1/2 z-50 flex max-w-[calc(100vw-2rem)] -translate-x-1/2 items-center gap-3 rounded-xl border border-border bg-background px-4 py-3 text-sm shadow-lg"
-    >
-      <span>A new version is ready.</span>
-      <button
-        type="button"
-        onClick={reload}
-        className="rounded-md bg-primary px-3 py-1.5 text-xs font-medium text-primary-foreground hover:opacity-90"
-      >
-        Reload
-      </button>
-    </div>
-  );
+  return null;
 }

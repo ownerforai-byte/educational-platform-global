@@ -95,6 +95,8 @@ const FOOTER_SECTIONS: Array<{
     heading: "Platform",
     onlyHrefs: [
       "/about",
+      // Owner request 2026-11-08: a plain "what the platform has" page.
+      "/what-it-has",
       "/blog",
       "/neb-updates",
       "/how-it-works",

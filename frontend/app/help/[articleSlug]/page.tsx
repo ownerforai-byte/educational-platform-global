@@ -24,7 +24,7 @@ const HELP_ARTICLES: Record<string, { title: string; sections: { heading: string
       },
       {
         heading: "Checking your status",
-        body: "If your account is pending, you will see a status screen when you open the app. If it was rejected, the status screen explains why. You can contact the owner to appeal or ask for an update.",
+        body: "If your account is pending, you will see a status screen when you open the app. If it was rejected, the status screen explains why. You can leave a message to this email; ravikisan1814@gmail.com to appeal or ask for an update.",
       },
       {
         heading: "What to do while you wait",
@@ -71,7 +71,7 @@ const HELP_ARTICLES: Record<string, { title: string; sections: { heading: string
       },
       {
         heading: "401 Unauthorized",
-        body: "If you see 'Unauthorized' on a page you should have access to, your session may have expired. Sign out and sign back in. If the problem persists, contact the owner.",
+        body: "If you see 'Unauthorized' on a page you should have access to, your session may have expired. Sign out and sign back in. If the problem persists, leave a message to this email; ravikisan1814@gmail.com.",
       },
       {
         heading: "Content looks wrong",
@@ -134,7 +134,7 @@ export default async function HelpArticlePage({
             >
               <Mail className="h-5 w-5 text-primary" />
               <div>
-                <p className="font-medium text-foreground">Contact the owner</p>
+                <p className="font-medium text-foreground">Leave a message to this email; ravikisan1814@gmail.com</p>
                 <p className="text-sm text-muted-foreground">Get a direct answer</p>
               </div>
             </Link>

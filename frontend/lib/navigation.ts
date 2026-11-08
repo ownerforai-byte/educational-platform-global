@@ -315,6 +315,7 @@ const accountItems: NavItem[] = [
  */
 const publicItems: NavItem[] = [
   { href: "/about",        label: "About",          icon: HelpCircle,  minLevel: "guest", hideFromSidebar: true },
+  { href: "/what-it-has",  label: "What it has",    icon: Shapes,      minLevel: "guest", hideFromSidebar: true },
   { href: "/features",     label: "Features",       icon: Sparkles,    minLevel: "guest" },
   { href: "/how-it-works", label: "How It Works",   icon: Compass,     minLevel: "guest", hideFromSidebar: true },
   { href: "/blog",         label: "Blog",           icon: FileText,    minLevel: "guest", hideFromSidebar: true },

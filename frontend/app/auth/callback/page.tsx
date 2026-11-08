@@ -9,6 +9,7 @@ import { apiFetch, setStoredToken } from "@/lib/api-client";
 import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
 import { tierWelcomePathFor } from "@/lib/access-level";
+import { rememberPendingSignup } from "@/features/auth/pending-signup-identity";
 import type { OAuthSessionResponse } from "@/types/api";
 
 /**
@@ -94,7 +95,8 @@ function AuthCallbackContent() {
       } catch (callbackError) {
         const authError = callbackError as Error & { code?: string; statusToken?: string };
         if (authError.code === "PENDING_APPROVAL" && authError.statusToken) {
-          localStorage.setItem("neb_signup_status_token", authError.statusToken);
+          // Hardcoded pending-signup identity survives refresh (owner 2026-11-08).
+          rememberPendingSignup(authError.statusToken);
           router.replace("/welcome");
           return;
         }

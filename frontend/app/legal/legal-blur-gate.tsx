@@ -50,7 +50,7 @@ export function LegalBlurGate({
             className="inline-flex items-center gap-1 text-[11px] font-semibold text-primary hover:underline"
           >
             <MessageSquare className="h-3 w-3" />
-            Contact the owner
+            Leave a message to this email; ravikisan1814@gmail.com
           </Link>
         </div>
       </div>

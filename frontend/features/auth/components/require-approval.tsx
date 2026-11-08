@@ -40,6 +40,11 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
+import {
+  NO_ACCOUNT_ROUTE,
+  WAITING_APPROVAL_ROUTE,
+} from "@/features/auth/pending-signup-identity";
+import { usePendingSignup } from "@/features/auth/use-pending-signup";
 import { NOTICE_COPY } from "@/features/credits/constants";
 import { ACCESS_NOTICE } from "./access-notice";
 import { VerifyingStatus } from "./verifying-status";
@@ -94,6 +99,15 @@ function ApprovalPending() {
 
 /** The muted access screen shown to visitors without an approved account. */
 function ApprovalLock() {
+  // Owner request 2026-11-08: the "check your approval status" link must open
+  // TWO different pages. The hardcoded pending-signup identity decides:
+  //   created + waiting → /welcome ("Your account is on its way")
+  //   no account        → /welcome/no-account ("There is no record ...")
+  // useSyncExternalStore keeps server/hydration and client renders consistent
+  // without a setState-in-effect.
+  const hasAccount = usePendingSignup();
+  const statusHref = hasAccount ? WAITING_APPROVAL_ROUTE : NO_ACCOUNT_ROUTE;
+
   return (
     <div
       data-testid="approval-lock"
@@ -146,7 +160,8 @@ function ApprovalLock() {
       </div>
 
       <Link
-        href="/welcome"
+        href={statusHref}
+        data-testid="approval-status-link"
         className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
       >
         <Clock3 className="h-3.5 w-3.5" />
