@@ -144,14 +144,37 @@ export function ChapterDetailView({
         </section>
       )}
 
-      {/* 4. DIRECT STREAM — two large live PDF blocks, every chapter of all
-             six subjects. Built once in direct-stream-pdf-blocks.tsx and fed
-             by the chapter-scoped registry in lib/chapter-resources.ts. */}
-      <section className="space-y-4 pt-2">
-        <DirectStreamPdfBlocks
-          pdfs={getChapterStreamPdfs(classSlug, subjectSlug, unitId)}
-          unitTitle={unit.title}
-        />
+      {/* 4. RESOURCES — every chapter of all six subjects in both class tracks
+             gets this tab, holding the same two large live PDF blocks. Built
+             once in direct-stream-pdf-blocks.tsx, fed by lib/chapter-resources.ts. */}
+      <section id="resources" className="space-y-4 pt-2" aria-label="Chapter resources">
+        <div className="flex flex-wrap items-end justify-between gap-2 border-b border-border/60 pb-2">
+          <div className="flex items-center gap-1" role="tablist" aria-label="Chapter sections">
+            <span
+              id="chapter-resources-tab"
+              role="tab"
+              aria-selected="true"
+              aria-controls="chapter-resources-panel"
+              className="inline-flex items-center gap-1.5 border-b-2 border-primary px-3 py-2 text-sm font-semibold text-primary"
+            >
+              <FileText className="h-4 w-4" />
+              Resources
+            </span>
+          </div>
+          <span className="text-xs font-medium text-muted-foreground">
+            Direct stream · 2 live PDFs · read in place
+          </span>
+        </div>
+        <div
+          id="chapter-resources-panel"
+          role="tabpanel"
+          aria-labelledby="chapter-resources-tab"
+        >
+          <DirectStreamPdfBlocks
+            pdfs={getChapterStreamPdfs(classSlug, subjectSlug, unitId)}
+            unitTitle={unit.title}
+          />
+        </div>
       </section>
 
       {/* Navigation Footer */}

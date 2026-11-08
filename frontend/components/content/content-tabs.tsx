@@ -568,6 +568,9 @@ function TabPanel({
     const streamPdfs = getChapterStreamPdfs(classSlug, subjectSlug, unitId);
     return (
       <div className="space-y-4">
+        {/* The two large live PDF blocks lead the Resources tab on EVERY chapter
+            of all six subjects in both class tracks. */}
+        <DirectStreamPdfBlocks pdfs={streamPdfs} />
         <RavikishanTopicResources
           classSlug={classSlug}
           subjectSlug={subjectSlug}
@@ -575,7 +578,6 @@ function TabPanel({
           topicSlug={topicSlug}
           onOpenNotes={onOpenNotes}
         />
-        <DirectStreamPdfBlocks pdfs={streamPdfs} />
         <DocumentsAndPdfs classSlug={classSlug} subjectSlug={subjectSlug} unitId={unitId} />
         {renderResources(unitId, subjectSlug, topicSlug, topicTitle)}
       </div>
