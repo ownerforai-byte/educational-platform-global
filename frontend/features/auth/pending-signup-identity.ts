@@ -51,7 +51,8 @@ function readCookie(): string | null {
   if (!isBrowser()) return null;
   try {
     const raw = document.cookie
-      .split("; ")
+      .split(";")
+      .map((part) => part.trim())
       .find((part) => part.startsWith(`${PENDING_SIGNUP_COOKIE}=`));
     if (!raw) return null;
     const value = decodeURIComponent(raw.slice(PENDING_SIGNUP_COOKIE.length + 1));

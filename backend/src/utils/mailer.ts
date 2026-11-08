@@ -43,9 +43,19 @@ function frontendUrl(path: string): string {
   const base = (
     process.env.FRONTEND_URL ||
     process.env.NEXT_PUBLIC_SITE_URL ||
-    "http://localhost:3110"
+    "http://localhost:5173"
   ).replace(/\/+$/, "");
   return `${base}${path}`;
+}
+
+/** Escape user-controlled text before interpolating into email HTML. */
+function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 async function postJson(
@@ -127,7 +137,7 @@ export async function sendMail(payload: MailPayload): Promise<SendResult> {
 
 function approvalHtml(displayName: string | null): string {
   const firstName = displayName?.trim().split(/\s+/)[0] || null;
-  const hello = firstName ? `Hi ${firstName},` : "Hello,";
+  const hello = firstName ? `Hi ${escapeHtml(firstName)},` : "Hello,";
   const loginUrl = frontendUrl("/login");
   return `<!doctype html>
 <html>

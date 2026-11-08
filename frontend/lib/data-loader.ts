@@ -30,7 +30,7 @@ export function loadData<T>(relPath: string): Promise<T> {
 
   const load = (async () => {
     const safe = relPath.replace(/\\/g, "/").replace(/^\/+/, "");
-    if (safe.startsWith("..")) {
+    if (safe.split("/").includes("..")) {
       throw new Error(`loadData: invalid path "${relPath}"`);
     }
 
@@ -82,6 +82,11 @@ export function loadData<T>(relPath: string): Promise<T> {
   })();
 
   cache.set(relPath, load);
+  // A rejected promise must not poison the cache: evict it so the next
+  // request retries instead of replaying the same failure forever.
+  load.catch(() => {
+    if (cache.get(relPath) === load) cache.delete(relPath);
+  });
   return load as Promise<T>;
 }
 
