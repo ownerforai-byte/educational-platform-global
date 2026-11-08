@@ -46,7 +46,8 @@ import { getTopicEntryBySlug } from "@/lib/syllabus";
 import type { SyllabusUnit } from "@/lib/syllabus";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { DOCS, type Doc } from "@/lib/docs-catalog";
+import { DirectStreamPdfBlocks } from "./direct-stream-pdf-blocks";
+import { getChapterDocs, getChapterStreamPdfs, type ChapterDoc } from "@/lib/chapter-resources";
 import { pdfViewerHref, downloadDoc, downloadFileName } from "@/lib/pdf-src";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/access-level";
@@ -456,26 +457,33 @@ function TopicJournalPanel({
 }
 
 /**
- * The Resources tab's document shelf — ALL documents and added PDFs from the
- * shared catalog (lib/docs-catalog.ts), this subject first.
+ * The Resources tab's document shelf — ONLY documents filed under this exact
+ * chapter in lib/chapter-resources.ts. General references and documents that
+ * belong to another unit are deliberately excluded; they stay in the global
+ * PDF Library and Resource Vault instead of leaking into every chapter.
  */
-function DocumentsAndPdfs({ subjectSlug }: { subjectSlug: string }) {
-  const subjectName = subjectSlug.charAt(0).toUpperCase() + subjectSlug.slice(1);
-  const sorted = useMemo(() => {
-    const own: Doc[] = [];
-    const rest: Doc[] = [];
-    for (const doc of DOCS) (doc.subject === subjectName ? own : rest).push(doc);
-    return [...own, ...rest];
-  }, [subjectName]);
+function DocumentsAndPdfs({
+  classSlug,
+  subjectSlug,
+  unitId,
+}: {
+  classSlug: string;
+  subjectSlug: string;
+  unitId: string;
+}) {
+  const docs: ChapterDoc[] = useMemo(
+    () => getChapterDocs(classSlug, subjectSlug, unitId),
+    [classSlug, subjectSlug, unitId],
+  );
 
   return (
     <Card className="border-primary/20">
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between gap-2">
           <div>
-            <CardTitle className="text-lg">All Documents &amp; Added PDFs</CardTitle>
+            <CardTitle className="text-lg">Chapter Documents &amp; Added PDFs</CardTitle>
             <p className="mt-0.5 text-sm text-muted-foreground">
-              Every document the platform ships — open or download any of them here.
+              Only the documents filed under this chapter. The full catalog lives in the PDF Library.
             </p>
           </div>
           <Button asChild size="sm" variant="outline" className="shrink-0">
@@ -486,42 +494,48 @@ function DocumentsAndPdfs({ subjectSlug }: { subjectSlug: string }) {
         </div>
       </CardHeader>
       <CardContent>
-        <ul className="grid gap-2 sm:grid-cols-2">
-          {sorted.map((doc) => (
-            <li
-              key={doc.key}
-              className="flex items-start gap-2.5 rounded-lg border border-border/60 bg-muted/20 p-2.5"
-            >
-              <FileText className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-              <div className="min-w-0 flex-1">
-                <p className="text-xs font-semibold leading-tight">{doc.title}</p>
-                <p className="mt-0.5 text-[11px] text-muted-foreground">
-                  {doc.subject} · {doc.topic} · {doc.kind.toUpperCase()}
-                </p>
-                <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground/80">
-                  {doc.description}
-                </p>
-                <div className="mt-1.5 flex gap-3">
-                  <a
-                    href={doc.kind === "docx" ? doc.href : pdfViewerHref(doc.href, doc.title)}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="inline-flex items-center gap-1 text-[11px] font-semibold text-primary hover:underline"
-                  >
-                    Open <ExternalLink className="h-3 w-3" />
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => downloadDoc(doc.href, downloadFileName(doc.href, doc.title))}
-                    className="inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground hover:text-foreground"
-                  >
-                    <Download className="h-3 w-3" /> Download
-                  </button>
+        {docs.length === 0 ? (
+          <p className="rounded-lg border border-dashed border-border/60 p-4 text-xs text-muted-foreground">
+            No chapter-specific documents yet. General and full-syllabus references are in the PDF Library.
+          </p>
+        ) : (
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {docs.map((doc) => (
+              <li
+                key={doc.id}
+                className="flex items-start gap-2.5 rounded-lg border border-border/60 bg-muted/20 p-2.5"
+              >
+                <FileText className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs font-semibold leading-tight">{doc.title}</p>
+                  <p className="mt-0.5 text-[11px] text-muted-foreground">
+                    {doc.subject} · {doc.topic} · {doc.kind.toUpperCase()}
+                  </p>
+                  <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground/80">
+                    {doc.description}
+                  </p>
+                  <div className="mt-1.5 flex gap-3">
+                    <a
+                      href={doc.kind === "docx" ? doc.href : pdfViewerHref(doc.href, doc.title)}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="inline-flex items-center gap-1 text-[11px] font-semibold text-primary hover:underline"
+                    >
+                      Open <ExternalLink className="h-3 w-3" />
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => downloadDoc(doc.href, downloadFileName(doc.href, doc.title))}
+                      className="inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground hover:text-foreground"
+                    >
+                      <Download className="h-3 w-3" /> Download
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+        )}
       </CardContent>
     </Card>
   );
@@ -551,6 +565,7 @@ function TabPanel({
   }
 
   if (tab.kind === "resources") {
+    const streamPdfs = getChapterStreamPdfs(classSlug, subjectSlug, unitId);
     return (
       <div className="space-y-4">
         <RavikishanTopicResources
@@ -560,7 +575,8 @@ function TabPanel({
           topicSlug={topicSlug}
           onOpenNotes={onOpenNotes}
         />
-        <DocumentsAndPdfs subjectSlug={subjectSlug} />
+        <DirectStreamPdfBlocks pdfs={streamPdfs} />
+        <DocumentsAndPdfs classSlug={classSlug} subjectSlug={subjectSlug} unitId={unitId} />
         {renderResources(unitId, subjectSlug, topicSlug, topicTitle)}
       </div>
     );

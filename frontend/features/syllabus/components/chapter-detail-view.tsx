@@ -14,6 +14,8 @@ import {
   FileText,
 } from "lucide-react";
 import { PhysicsUnitResourceDoc } from "@/components/content/physics-unit-resource-doc";
+import { DirectStreamPdfBlocks } from "@/components/content/direct-stream-pdf-blocks";
+import { getChapterStreamPdfs } from "@/lib/chapter-resources";
 
 export function ChapterDetailView({
   classSlug,
@@ -141,6 +143,16 @@ export function ChapterDetailView({
           <PhysicsUnitResourceDoc unitId={unitId} />
         </section>
       )}
+
+      {/* 4. DIRECT STREAM — two large live PDF blocks, every chapter of all
+             six subjects. Built once in direct-stream-pdf-blocks.tsx and fed
+             by the chapter-scoped registry in lib/chapter-resources.ts. */}
+      <section className="space-y-4 pt-2">
+        <DirectStreamPdfBlocks
+          pdfs={getChapterStreamPdfs(classSlug, subjectSlug, unitId)}
+          unitTitle={unit.title}
+        />
+      </section>
 
       {/* Navigation Footer */}
       <div className="pt-4 border-t border-border/60 flex items-center justify-between text-xs">
