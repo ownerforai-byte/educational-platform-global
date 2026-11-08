@@ -83,8 +83,11 @@ test.describe("E2E smoke", () => {
     // exists. Target the Professor surface explicitly and assert its real aria
     // label, then close it so the mobile topic tabs below are not overlaid.
     await page.getByRole("button", { name: "Open Veer Professor", exact: true }).click();
-    await expect(page.getByLabel("Veer Professor workspace")).toBeVisible();
-    await page.getByRole("button", { name: "Close Veer Professor", exact: true }).click();
+    const workspace = page.getByLabel("Veer Professor workspace");
+    await expect(workspace).toBeVisible();
+    // Two "Close Veer Professor" buttons exist (the launcher toggles its label
+    // too), so scope the click to the workspace itself.
+    await workspace.getByRole("button", { name: "Close Veer Professor", exact: true }).click();
 
     // The same approved session now checks the mobile topic learning flow.
     await page.setViewportSize({ width: 390, height: 844 });
