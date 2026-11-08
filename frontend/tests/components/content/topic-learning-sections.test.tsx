@@ -173,3 +173,86 @@ describe("topic learning sections", () => {
     expect(mocks.getEntranceQuestions).toHaveBeenCalledWith("physics", "kinematics");
   });
 });
+
+describe("class-correct note resolution", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    mocks.ensureHighYieldForSubject.mockResolvedValue(undefined);
+    mocks.getLoadedHighYieldTopicData.mockReturnValue(factBank);
+    mocks.getEntranceQuestions.mockReturnValue([]);
+  });
+
+  it("names the class-12 file from the supplementary path, not the class-11 manifest", async () => {
+    // The shipped subject manifest is class-11-only; its filename must never be
+    // requested for a class-12 page (it does not exist under concepts/class-12).
+    mocks.loadData.mockImplementation(async (path: string) => {
+      if (path === "syllabus-notes/biology/_manifest.json") {
+        return [
+          {
+            unitSlug: "heredity-and-evolution",
+            topicSlug: "incomplete-dominance-and-codominance",
+            title: "Class 11 copy",
+            noteCount: 30,
+            source: "ravikishan",
+            duplicateType: 1,
+            filename: "04-incomplete-dominance-and-codominance.json",
+          },
+        ];
+      }
+      if (path === "content/manifest.json") {
+        return [
+          {
+            path: "notes/concepts/class-12/biology/heredity-and-evolution/02-incomplete-dominance-and-codominance.json",
+            data: { topicSlug: "incomplete-dominance-and-codominance", notes: ["Stub body."] },
+          },
+        ];
+      }
+      throw new Error(`Unexpected path ${path}`);
+    });
+
+    let sentBody: Record<string, unknown> = {};
+    const fetchMock = vi.fn(async (_url: string, init?: { body?: string }) => {
+      sentBody = JSON.parse(init?.body ?? "{}") as Record<string, unknown>;
+      return {
+        ok: true,
+        status: 200,
+        json: async () => ({ notes: ["Class 12 canonical body."] }),
+      };
+    });
+    vi.stubGlobal("fetch", fetchMock);
+
+    render(
+      <TopicVerticalNotes
+        classSlug="class-12-notes"
+        subjectSlug="biology"
+        unitId="heredity-and-evolution"
+        topicSlug="incomplete-dominance-and-codominance"
+        topicTitle="Incomplete dominance and codominance"
+      />,
+    );
+
+    expect(await screen.findByText("Class 12 canonical body.")).toBeInTheDocument();
+    expect(screen.queryByText("Stub body.")).toBeNull();
+
+    expect(sentBody.filename).toBe("02-incomplete-dominance-and-codominance.json");
+    expect(sentBody.classSlug).toBe("class-12-notes");
+  });
+
+  it("falls back to the shipped payload when the gated reveal call fails", async () => {
+    mocks.loadData.mockImplementation(async (path: string) => {
+      if (path.endsWith("_manifest.json")) return manifest;
+      if (path === "syllabus-notes/physics/kinematics/motion.json") return canonical;
+      throw new Error(`Unexpected path ${path}`);
+    });
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => ({ ok: false, status: 500, json: async () => ({ error: "Failed to read content" }) })),
+    );
+
+    renderSection("notes");
+
+    expect(await screen.findByText("Canonical explanation of displacement and distance.")).toBeInTheDocument();
+    expect(screen.queryByText(/could not be loaded/)).toBeNull();
+  });
+});

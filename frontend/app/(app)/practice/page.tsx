@@ -4,6 +4,7 @@ import {
   ArrowRight,
   BookOpenCheck,
   CheckCircle2,
+  FileText,
   Layers,
   ListChecks,
   PenLine,
@@ -14,7 +15,11 @@ import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { MCQ_BANK } from "@/lib/practice/mcq-bank";
 import { WRITING_BANK } from "@/lib/practice/writing-bank";
 import { CONTRASTS } from "@/lib/practice/contrasts";
+import { getPastPaperCounts } from "@/lib/practice/past-papers";
 import { PracticeStats } from "@/components/practice/practice-stats";
+
+/** The solved NEB year files exist for Class 11 only. */
+const PAST_PAPER_CLASS = "class-11-notes";
 
 export const metadata: Metadata = {
   title: "Practice — MCQs and Writing, both explained",
@@ -60,7 +65,16 @@ const TYPES = [
   },
 ];
 
-export default function PracticePage() {
+export default async function PracticePage() {
+  const papers = await getPastPaperCounts(
+    PAST_PAPER_CLASS,
+    SUBJECTS.map((subject) => subject.slug),
+  );
+  const solvedPastQuestions = Object.values(papers).reduce(
+    (sum, entry) => sum + entry.questions,
+    0,
+  );
+
   return (
     <div className="mx-auto w-full max-w-5xl space-y-7 px-3 py-6 sm:px-4 sm:py-8">
       <header className="space-y-2">
@@ -71,7 +85,8 @@ export default function PracticePage() {
         <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
           No True/False guessing and no flip cards. Every MCQ has exactly four options and an
           explanation for each one, and every writing answer comes back with a model answer plus
-          the contrast pairs that decide the marks.
+          the contrast pairs that decide the marks. Each subject also carries its real NEB past
+          papers with every question already solved.
         </p>
       </header>
 
@@ -107,7 +122,8 @@ export default function PracticePage() {
               Choose a subject
             </h2>
             <p className="text-xs text-muted-foreground">
-              {MCQ_BANK.length} MCQs and {WRITING_BANK.length} writing questions, hand-checked.
+              {MCQ_BANK.length} MCQs, {WRITING_BANK.length} writing questions and{" "}
+              {solvedPastQuestions} solved past questions, hand-checked.
             </p>
           </div>
           <p className="hidden text-[11px] text-muted-foreground sm:block">
@@ -120,7 +136,8 @@ export default function PracticePage() {
             const visual = getSubjectVisual(subject.slug);
             const mcqs = MCQ_BANK.filter((q) => q.subject === subject.slug).length;
             const writings = WRITING_BANK.filter((q) => q.subject === subject.slug).length;
-            const available = mcqs + writings > 0;
+            const paperCount = papers[subject.slug] ?? { years: 0, questions: 0 };
+            const available = mcqs + writings + paperCount.questions > 0;
             return (
               <li key={subject.slug}>
                 {available ? (
@@ -142,6 +159,12 @@ export default function PracticePage() {
                           <PenLine className="h-3 w-3" aria-hidden="true" />
                           {writings} writing
                         </span>
+                        {paperCount.questions > 0 ? (
+                          <span className="inline-flex items-center gap-1 rounded bg-emerald-500/10 px-1.5 py-0.5 font-semibold text-emerald-600 dark:text-emerald-400">
+                            <FileText className="h-3 w-3" aria-hidden="true" />
+                            {paperCount.questions} solved
+                          </span>
+                        ) : null}
                         <span>{subject.topics} topics</span>
                       </span>
                     </span>
@@ -160,7 +183,7 @@ export default function PracticePage() {
                         {subject.name}
                       </span>
                       <span className="text-[11px] text-muted-foreground">
-                        MCQ sets for this subject are being written
+                        Questions for this subject are being written
                       </span>
                     </span>
                   </div>

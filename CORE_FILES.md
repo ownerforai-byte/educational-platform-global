@@ -59,6 +59,8 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/lib/note-routes.ts` | Canonical note routing and `duplicateType` source selection. |
 | `frontend/components/content/topic-vertical-notes.tsx` | Single theory presentation surface for every canonical topic note. |
 | `frontend/components/content/content-tabs.tsx` | Companion-only topic tabs; no repeated theory, formulas, summaries, or practice. |
+| `frontend/lib/content/topic-supplemental.ts` | Classified supplemental content selector: maps the manifest's guides / formula sheets / practice sets / worked examples / PYQs / graphs to their exact syllabus topic, or to the unit page when the file names no topic. |
+| `frontend/components/content/topic-supplemental-materials.tsx` | Renders those selected entries on the topic and unit pages through `MathMarkdown` (never as raw JSON). |
 | `frontend/features/syllabus/language-pro.ts` | Language pro registry (`LANGUAGE_PRO_SUBJECTS`) — the one list that decides which subjects get companion-only topic pages; read by the `/pro` routes, the tab profile resolver and the topic links. |
 | `frontend/features/syllabus/components/language-pro-topic-view.tsx` | The language topic surface (Nepali and English) rendered by `/chapters/[unit]/topics/[topicSlug]/pro` — seven companion tabs only. |
 | `frontend/components/content/ravikishan-topic-resources.tsx` | Resources-panel shortcut to the canonical topic notes; never a second note renderer. |
@@ -140,6 +142,7 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/scripts/lab-manifest-coverage.ts` | Phase 0 inventory + Phase 2 gate (`npm run audit:lab-manifest -- --check`): topic coverage matrix, 3D source inventory, orphan/exemption list, writes `reports/lab-manifest-coverage.json`. Runs in `npm run check` / `check:all`. |
 | `frontend/lib/graphs.ts` | Registry for all science graphs and visual data banks. |
 | `frontend/lib/pyq-bank.ts` | Registry for past year question banks and solved papers. |
+| `frontend/lib/practice/past-papers.ts` | Server-side reader for the authored `content/practice/questions/<class>/<subject>/neb-YYYY.json` files; feeds the solved-paper section of `/practice` and `/practice/[subject]` (the published manifest carries no question bodies). |
 | `frontend/lib/formula-sheet.ts` | Formula vault data and derivation link associations. |
 | `frontend/lib/physics-xi-academic.ts` | Physics XI Academic Companion registry — typed accessors over the 26-unit brief dataset (`frontend/public/data/physics-xi-academic/units.json`) plus the canonical brief/document URL helpers used by the `/resources/physics-xi` routes. The dataset is content; this file is the contract for it. |
 | `frontend/lib/chapter-resources.ts` | **[IMPORTANT CORE FILE]** Direct Stream chapter registry — the single pool for all three PDF sources (platform / WebNotee / NepalEnotes) across BOTH class tracks, plus `getChapterDocs()` / `getChapterStreamPdfs()` used by every chapter page and Resources tab. Classification tables (`DOC_LOCATIONS`, `WEBNOTEE_LOCATIONS`) plus the NepalEnotes `unitId` fields must resolve to real `syllabus.ts` units. No fixed block cap; a chapter with no document borrows from its own class+subject. |

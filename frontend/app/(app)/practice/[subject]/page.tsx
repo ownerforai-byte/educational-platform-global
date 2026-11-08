@@ -5,6 +5,7 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowLeftRight,
+  FileText,
   ListChecks,
   PenLine,
   Sparkles,
@@ -14,6 +15,11 @@ import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { mcqQuestionsForSubject } from "@/lib/practice/mcq-bank";
 import { writingQuestionsForSubject } from "@/lib/practice/writing-bank";
 import { resolveContrasts, contrastIdsForSubject } from "@/lib/practice/contrasts";
+import { getSubjectPastPapers } from "@/lib/practice/past-papers";
+import { PyqYearCard } from "@/components/content/pyq-card";
+
+/** The solved NEB year files exist for Class 11 only. */
+const PAST_PAPER_CLASS = "class-11-notes";
 
 export async function generateMetadata({
   params,
@@ -44,6 +50,8 @@ export default async function SubjectPracticePage({
   const writings = writingQuestionsForSubject(found.subject.slug);
   const pairs = resolveContrasts(contrastIdsForSubject(found.subject.slug));
   const topics = [...new Set([...mcqs, ...writings].map((q) => q.topic))];
+  const papers = await getSubjectPastPapers(PAST_PAPER_CLASS, found.subject.slug);
+  const paperQuestions = papers.reduce((sum, paper) => sum + paper.questions.length, 0);
 
   const modes = [
     {
@@ -92,6 +100,7 @@ export default async function SubjectPracticePage({
           <p className="mt-1 text-sm text-muted-foreground">
             {mcqs.length} MCQs · {writings.length} writing questions ·{" "}
             {pairs.length} confusion pairs covered
+            {paperQuestions > 0 ? ` · ${paperQuestions} solved past questions` : null}
           </p>
         </div>
       </header>
@@ -138,6 +147,27 @@ export default async function SubjectPracticePage({
           })}
         </div>
       </section>
+
+      {papers.length > 0 && (
+        <section aria-labelledby="papers-heading" className="space-y-3">
+          <div className="flex items-center gap-2">
+            <FileText className="h-4 w-4 text-primary" aria-hidden="true" />
+            <h2 id="papers-heading" className="text-sm font-bold">
+              Past papers — every question solved
+            </h2>
+          </div>
+          <p className="text-xs leading-relaxed text-muted-foreground">
+            {paperQuestions} real NEB questions from {papers.length} exam
+            {papers.length === 1 ? " year" : " years"}. Open a year, attempt a question on
+            paper, then reveal its worked solution and check your reasoning against it.
+          </p>
+          <div className="space-y-2">
+            {papers.map((paper) => (
+              <PyqYearCard key={paper.year} year={paper.year} pyq={paper} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {pairs.length > 0 && (
         <section aria-labelledby="confusions-heading" className="space-y-3">
