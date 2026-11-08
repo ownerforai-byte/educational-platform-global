@@ -39,7 +39,7 @@ async function requireContentEditor(req: Request, res: Response) {
     .from("profiles")
     .select("role")
     .eq("id", user.id)
-    .single();
+    .maybeSingle();
 
   if (!profile || !["plus", "pro", "owner"].includes(normalizeRole(profile.role) ?? "")) {
     res.status(403).json({ error: "Forbidden" });

@@ -31,6 +31,7 @@ vi.mock("../src/db/supabase", () => {
       select: () => ({
         eq: () => ({
           single: async () => ({ data: { role: m.role.value }, error: null }),
+          maybeSingle: async () => ({ data: { role: m.role.value }, error: null }),
         }),
       }),
     }),

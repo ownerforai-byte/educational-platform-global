@@ -41,6 +41,12 @@ function validPayload(value: unknown): boolean {
   }
 }
 
+/** Postgres unique-violation (23505) — how a lost insert race surfaces. */
+function isUniqueViolation(err: unknown): boolean {
+  const e = err as { code?: string; message?: string } | null;
+  return e?.code === "23505" || /duplicate key value/i.test(e?.message ?? "");
+}
+
 async function readRow(userId: string, namespace: string): Promise<StateRow | null> {
   const { data, error } = await supabaseAdmin
     .from(TABLE)
@@ -94,22 +100,67 @@ router.put("/:namespace", requireAuth, async (req: Request, res: Response) => {
     }
 
     const user = (req as AuthedRequest).user;
-    const current = await readRow(user.id, namespace);
-    const currentVersion = current?.version ?? 0;
-    if (baseVersion !== undefined && baseVersion !== currentVersion) {
+    const updatedAt = new Date().toISOString();
+
+    if (baseVersion !== undefined) {
+      // Atomic optimistic concurrency: the write only lands if the stored
+      // version is STILL baseVersion. A check-then-upsert here would be a
+      // TOCTOU race — two devices sending the same baseVersion would both
+      // pass the read, both upsert, and the second would silently clobber
+      // the first. The conditional update makes them mutually exclusive:
+      // exactly one matches a row; the loser sees zero rows and gets 409.
+      const version = baseVersion + 1;
+      const { data: updated, error } = await supabaseAdmin
+        .from(TABLE)
+        .update({ payload: body.payload, version, updated_at: updatedAt })
+        .eq("user_id", user.id)
+        .eq("namespace", namespace)
+        .eq("version", baseVersion)
+        .select("version, updated_at");
+      if (error) throw error;
+      if (updated && updated.length > 0) {
+        res.json({ ok: true, namespace, version, updatedAt });
+        return;
+      }
+
+      // No row matched: either this is the first write (version 0 = absent)
+      // or the row moved on. First writes race on the (user_id, namespace)
+      // primary key — the losing insert fails with 23505 and is reported
+      // as the same 409 conflict instead of a 500.
+      let current = await readRow(user.id, namespace);
+      if (!current && baseVersion === 0) {
+        const { error: insertError } = await supabaseAdmin.from(TABLE).insert({
+          user_id: user.id,
+          namespace,
+          payload: body.payload,
+          version,
+          updated_at: updatedAt,
+        });
+        if (!insertError) {
+          res.json({ ok: true, namespace, version, updatedAt });
+          return;
+        }
+        if (!isUniqueViolation(insertError)) throw insertError;
+        // A concurrent first write won between our read and our insert —
+        // re-read so the 409 reports the row that actually exists now,
+        // not the absence we saw before.
+        current = await readRow(user.id, namespace);
+      }
+
       res.status(409).json({
         error: "version_conflict",
         current: {
           payload: current?.payload ?? null,
-          version: currentVersion,
+          version: current?.version ?? 0,
           updatedAt: current?.updated_at ?? null,
         },
       });
       return;
     }
 
-    const version = currentVersion + 1;
-    const updatedAt = new Date().toISOString();
+    // No baseVersion: explicit last-write-wins overwrite.
+    const current = await readRow(user.id, namespace);
+    const version = (current?.version ?? 0) + 1;
     // No client-supplied id, user_id, version or timestamps reach the upsert.
     const { error } = await supabaseAdmin.from(TABLE).upsert(
       {
