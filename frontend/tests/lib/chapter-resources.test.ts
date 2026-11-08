@@ -1,13 +1,22 @@
 import { describe, expect, it } from "vitest";
 import { SYLLABUS } from "@/lib/syllabus";
-import { isViewableSrc } from "@/lib/pdf-src";
+import { DOCS } from "@/lib/docs-catalog";
+import { WEBNOTEE_DOCS } from "@/lib/webnotee-catalog";
+import {
+  DIRECT_STREAM_ENABLED,
+  STREAM_SOURCES,
+  STREAM_SOURCE_IDS,
+} from "@/lib/stream-sources";
+import { NEPALENOTES_CHAPTERS } from "@/lib/nepalenotes-streams";
 import {
   CLASS_11,
+  STREAM_BLOCK_LIMIT,
   classifiedUnitIds,
   getChapterDocs,
   getChapterStreamPdfs,
+  nepalenotesPreviewUrlsFor,
+  nepalenotesRecordsFor,
   syllabusUnitIds,
-  STREAM_BLOCKS_PER_CHAPTER,
 } from "@/lib/chapter-resources";
 
 describe("chapter resource classification", () => {
@@ -17,76 +26,70 @@ describe("chapter resource classification", () => {
     expect(unknown).toEqual([]);
   });
 
-  it("shows only this chapter's documents — no other unit's docs leak in", () => {
-    const algebra = getChapterDocs(CLASS_11, "mathematics", "algebra");
-    expect(algebra.length).toBeGreaterThan(0);
-    expect(algebra.every((doc) => doc.subject === "Mathematics")).toBe(true);
-    // The trigonometry master guide belongs to a different chapter.
-    expect(algebra.map((doc) => doc.id)).not.toContain("math-unit-02-trigonometry");
-    expect(getChapterDocs(CLASS_11, "mathematics", "trigonometry").map((d) => d.id)).toContain(
-      "math-unit-02-trigonometry",
-    );
-
-    // Cross-subject / full-syllabus references never appear inside a chapter.
-    const allChapterIds = new Set(
-      SYLLABUS.flatMap((track) =>
-        track.subjects.flatMap((subject) =>
-          subject.units.flatMap((unit) =>
-            getChapterDocs(track.slug, subject.slug, unit.id).map((doc) => doc.id),
-          ),
-        ),
-      ),
-    );
-    expect(allChapterIds.has("study-hub")).toBe(false);
-    expect(allChapterIds.has("pioneer-grade11-biology-examcram")).toBe(false);
+  /**
+   * IMPORTANT GUARD — owner request 2026-11-08: all three sources are only
+   * DISABLED, not removed. If an agent "cleans up dead code" and deletes a
+   * registry, this test must fail loudly.
+   */
+  it("keeps all three intentionally-disabled source registries intact", () => {
+    expect(STREAM_SOURCE_IDS).toEqual(["webnotee", "platform", "nepalenotes"]);
+    expect(DIRECT_STREAM_ENABLED).toBe(false);
+    for (const id of STREAM_SOURCE_IDS) {
+      expect(STREAM_SOURCES[id].enabled, `${id} must stay disabled for now`).toBe(false);
+      expect(STREAM_SOURCES[id].registry).toBeTruthy();
+      expect(STREAM_SOURCES[id].note).toBeTruthy();
+    }
+    expect(DOCS.length).toBeGreaterThan(0);
+    expect(WEBNOTEE_DOCS.length).toBeGreaterThan(0);
+    expect(NEPALENOTES_CHAPTERS.length).toBeGreaterThan(0);
+    expect(STREAM_SOURCES.nepalenotes.registry).toContain("nepalenotes-streams");
   });
 
-  it("returns exactly two large direct-stream blocks for EVERY chapter of all six subjects", () => {
+  it("retains the NepalEnotes crawl across all six subjects of both classes", () => {
     for (const track of SYLLABUS) {
       expect(track.subjects).toHaveLength(6);
       for (const subject of track.subjects) {
+        expect(
+          nepalenotesRecordsFor(track.slug, subject.slug).length,
+          `${track.slug}/${subject.slug}`,
+        ).toBeGreaterThan(0);
+      }
+    }
+    expect(NEPALENOTES_CHAPTERS.filter((r) => r.driveIds.length > 0).length).toBeGreaterThan(0);
+    expect(nepalenotesPreviewUrlsFor(CLASS_11, "biology")[0]).toMatch(
+      /^https:\/\/drive\.google\.com\/file\/d\/[A-Za-z0-9_-]+\/preview$/,
+    );
+  });
+
+  it("hides every stream and chapter doc while all sources are disabled", () => {
+    for (const track of SYLLABUS) {
+      for (const subject of track.subjects) {
         for (const unit of subject.units) {
-          const pdfs = getChapterStreamPdfs(track.slug, subject.slug, unit.id);
-          expect(
-            pdfs,
-            `${track.slug}/${subject.slug}/${unit.id}`,
-          ).toHaveLength(STREAM_BLOCKS_PER_CHAPTER);
-          expect(new Set(pdfs.map((p) => p.id)).size).toBe(STREAM_BLOCKS_PER_CHAPTER);
-          for (const pdf of pdfs) {
-            expect(isViewableSrc(pdf.src), `${pdf.id} src ${pdf.src}`).toBe(true);
-            expect(pdf.title).toBeTruthy();
-          }
+          expect(getChapterStreamPdfs(track.slug, subject.slug, unit.id)).toEqual([]);
+          expect(getChapterDocs(track.slug, subject.slug, unit.id)).toEqual([]);
         }
       }
     }
   });
 
-  it("covers exactly six subjects in EACH class track (11 and 12), two blocks per chapter", () => {
+  it("covers exactly six subjects in EACH class track (11 and 12)", () => {
     const sixSubjects = ["biology", "chemistry", "english", "mathematics", "nepali", "physics"];
     expect(SYLLABUS.map((track) => track.slug).sort()).toEqual(
       [CLASS_11, "class-12-notes"].sort(),
     );
-
     for (const track of SYLLABUS) {
       expect(track.subjects.map((subject) => subject.slug).sort()).toEqual(sixSubjects);
-      for (const subject of track.subjects) {
-        for (const unit of subject.units) {
-          expect(
-            getChapterStreamPdfs(track.slug, subject.slug, unit.id),
-            `${track.slug}/${subject.slug}/${unit.id}`,
-          ).toHaveLength(STREAM_BLOCKS_PER_CHAPTER);
-        }
-      }
     }
   });
 
-  it("prefers chapter-own streams and badges the rest as subject references", () => {
-    const own = getChapterStreamPdfs(CLASS_11, "mathematics", "calculus");
-    expect(own.length).toBe(2);
-    expect(own.every((p) => p.scope === "chapter")).toBe(true);
+  it("has NO fixed two-block cap — block count follows the chapter's doc count", () => {
+    expect(STREAM_BLOCK_LIMIT).toBeNull();
+  });
 
-    const fallback = getChapterStreamPdfs("class-12-notes", "mathematics", "integration");
-    expect(fallback.length).toBe(2);
-    expect(fallback.every((p) => p.scope === "subject")).toBe(true);
+  it("keeps the WebNotee and platform classification tables even while hidden", () => {
+    expect(DOCS.find((doc) => doc.key === "math-unit-02-trigonometry")).toBeDefined();
+    expect(WEBNOTEE_DOCS.find((doc) => doc.id === "webnotee-math-ex1.1")).toBeDefined();
+    expect(classifiedUnitIds()).toContain("trigonometry");
+    expect(classifiedUnitIds()).toContain("algebra");
   });
 });

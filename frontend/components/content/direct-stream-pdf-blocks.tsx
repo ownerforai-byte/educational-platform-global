@@ -1,14 +1,25 @@
 /**
- * The chapter's two LARGE live PDF blocks. Built once, rendered from every
- * chapter page and every topic Resources tab (all six subjects, both classes).
+ * ═══════════════════════════════════════════════════════════════════════════
+ * ⚠️ IMPORTANT — RETAINED CODE, NOT DEAD CODE ⚠️  See lib/stream-sources.ts.
+ * ═══════════════════════════════════════════════════════════════════════════
+ * All three PDF sources (webnotee, platform, nepalenotes) are temporarily
+ * DISABLED by owner request 2026-11-08, so `pdfs` is empty and this renderer
+ * currently returns null. DO NOT delete this component, its call sites, or the
+ * disabled branches — it will be switched back on in a later pass.
+ *
+ * DOC-COUNT-DRIVEN: renders ONE large rectangular block per entry in `pdfs`.
+ * There is deliberately NO fixed two-block limit built in here; the caller
+ * passes the chapter's real document count. Built once, rendered from every
+ * chapter page and every topic Resources tab (six subjects, both classes).
  *
  * "Direct stream" means the document is framed live from where it lives — a
  * Google Drive /preview URL, a WebNotee article, or a platform PDF — and is
  * read in place. There is deliberately NO download control here.
+ * ═══════════════════════════════════════════════════════════════════════════
  */
 
 import { FileText, Radio } from "lucide-react";
-import { STREAM_BLOCKS_PER_CHAPTER, type ChapterStreamPdf } from "@/lib/chapter-resources";
+import { type ChapterStreamPdf } from "@/lib/chapter-resources";
 
 export function DirectStreamPdfBlocks({
   pdfs,
@@ -17,6 +28,9 @@ export function DirectStreamPdfBlocks({
   pdfs: ChapterStreamPdf[];
   unitTitle?: string;
 }) {
+  // Sources are intentionally disabled for now (lib/stream-sources.ts), so
+  // getChapterStreamPdfs() hands us [] and nothing renders. Gating lives in the
+  // data layer on purpose — this component stays a pure, testable N-block view.
   if (pdfs.length === 0) return null;
 
   return (
@@ -28,7 +42,7 @@ export function DirectStreamPdfBlocks({
           {unitTitle ? <span className="font-normal text-muted-foreground">· {unitTitle}</span> : null}
         </h3>
         <span className="text-[11px] font-medium text-muted-foreground">
-          Live read · no download · {pdfs.length}/{STREAM_BLOCKS_PER_CHAPTER}
+          Live read · no download · {pdfs.length} {pdfs.length === 1 ? "stream" : "streams"}
         </span>
       </div>
 

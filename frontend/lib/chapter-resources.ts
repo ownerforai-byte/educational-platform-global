@@ -1,4 +1,12 @@
 /**
+ * ═══════════════════════════════════════════════════════════════════════════
+ * ⚠️ IMPORTANT — RETAINED CODE, NOT DEAD CODE ⚠️  See lib/stream-sources.ts.
+ * ═══════════════════════════════════════════════════════════════════════════
+ * All three stream sources (webnotee, platform, nepalenotes) are currently
+ * DISABLED by owner request 2026-11-08. This registry, the classification
+ * tables below, the renderer and both call sites are deliberately kept intact
+ * and will be switched back on later. DO NOT delete or "clean up" any of it.
+ *
  * CHAPTER-SCOPED RESOURCE REGISTRY — build once, render everywhere.
  *
  * `lib/syllabus.ts` is the single source of truth for curriculum order. Every
@@ -7,24 +15,36 @@
  * documents; general / full-syllabus references have no chapter and stay in
  * the global PDF Library and Resource Vault instead of leaking into chapters.
  *
- * The same registry feeds the two large "Direct Stream" blocks: one reusable
- * component renders them on every chapter page and every topic Resources tab
- * for all six subjects in both class tracks.
+ * Owner request 2026-11-08: the number of Direct Stream blocks is driven by the
+ * actual document/PDF count for that chapter — there is NO fixed two-block cap
+ * and no subject-reference padding. A chapter with 5 docs renders 5 blocks;
+ * a chapter with 0 renders none.
  *
- * To add a PDF later, add one line to DOC_LOCATIONS or WEBNOTEE_LOCATIONS —
- * no page or tab needs to change.
+ * To add a PDF later, add one line to DOC_LOCATIONS, WEBNOTEE_LOCATIONS or the
+ * NepalEnotes registry — no page or tab needs to change. Then flip the source
+ * flag in lib/stream-sources.ts.
+ * ═══════════════════════════════════════════════════════════════════════════
  */
 
 import { SYLLABUS } from "@/lib/syllabus";
 import { DOCS, type Kind, type Subject } from "@/lib/docs-catalog";
 import { WEBNOTEE_DOCS } from "@/lib/webnotee-catalog";
 import { frameSrcFor } from "@/lib/pdf-src";
+import {
+  DIRECT_STREAM_ENABLED,
+  isStreamSourceEnabled,
+  type StreamSourceId,
+} from "@/lib/stream-sources";
+import { NEPALENOTES_CHAPTERS, nepalenotesPreviewUrl } from "@/lib/nepalenotes-streams";
 
 export const CLASS_11 = "class-11-notes";
 export const CLASS_12 = "class-12-notes";
 
-/** Number of live-stream blocks every chapter renders. */
-export const STREAM_BLOCKS_PER_CHAPTER = 2;
+/**
+ * Direct Stream block count is NOT capped. Kept as a named constant only so
+ * callers/tests can state the rule explicitly; it must stay `null` (unlimited).
+ */
+export const STREAM_BLOCK_LIMIT: number | null = null;
 
 /**
  * Platform documents (lib/docs-catalog.ts) → the class-11 unit they belong to.
@@ -166,42 +186,64 @@ export type ChapterStreamPdf = {
   src: string;
   sourceLabel: string;
   scope: "chapter" | "subject";
+  /** Which of the three (currently disabled) catalogs this stream came from. */
+  source: StreamSourceId;
 };
 
 function subjectMatches(subject: Subject, subjectSlug: string): boolean {
   return subject.toLowerCase() === subjectSlug.toLowerCase();
 }
 
-/** Every document filed under exactly one chapter, in catalog order. */
-function streamPool(): (ChapterStreamPdf & { subject: Subject; unitId: string | null })[] {
-  const platform = DOCS.filter(
-    (doc) => doc.kind === "pdf" || doc.kind === "html",
-  ).map((doc) => ({
-    id: doc.key,
-    title: doc.title,
-    src: frameSrcFor(doc.href),
-    sourceLabel: "Platform document",
-    scope: "chapter" as const,
-    subject: doc.subject,
-    unitId: DOC_LOCATIONS[doc.key]?.[0] ?? null,
-  }));
+type PoolEntry = ChapterStreamPdf & { subject: Subject; unitId: string | null };
 
-  const external = WEBNOTEE_DOCS.map((doc) => ({
-    id: doc.id,
-    title: doc.title,
-    src: frameSrcFor(doc.driveUrl),
-    sourceLabel: doc.kind === "html" ? "WebNotee · live article" : "WebNotee · Google Drive",
-    scope: "chapter" as const,
-    subject: doc.subject,
-    unitId: WEBNOTEE_LOCATIONS[doc.id] ?? null,
-  }));
+/**
+ * ⚠️ IMPORTANT — all three sources are currently DISABLED (lib/stream-sources.ts).
+ * When a source is re-enabled its documents flow through here again. The
+ * NepalEnotes registry is intentionally NOT wired into the pool yet: mapping
+ * its 298 chapter slugs to syllabus unit ids is the "later pass" the owner
+ * asked for. Its data is preserved and exposed via nepalenotesRecordsFor().
+ */
+function streamPool(): PoolEntry[] {
+  const entries: PoolEntry[] = [];
 
-  return [...platform, ...external];
+  if (isStreamSourceEnabled("platform")) {
+    for (const doc of DOCS) {
+      if (doc.kind !== "pdf" && doc.kind !== "html") continue;
+      entries.push({
+        id: doc.key,
+        title: doc.title,
+        src: frameSrcFor(doc.href),
+        sourceLabel: "Platform document",
+        scope: "chapter",
+        source: "platform",
+        subject: doc.subject,
+        unitId: DOC_LOCATIONS[doc.key]?.[0] ?? null,
+      });
+    }
+  }
+
+  if (isStreamSourceEnabled("webnotee")) {
+    for (const doc of WEBNOTEE_DOCS) {
+      entries.push({
+        id: doc.id,
+        title: doc.title,
+        src: frameSrcFor(doc.driveUrl),
+        sourceLabel: doc.kind === "html" ? "WebNotee · live article" : "WebNotee · Google Drive",
+        scope: "chapter",
+        source: "webnotee",
+        subject: doc.subject,
+        unitId: WEBNOTEE_LOCATIONS[doc.id] ?? null,
+      });
+    }
+  }
+
+  return entries;
 }
 
 /**
  * Documents that belong to THIS chapter only. General references and docs
- * filed under a different unit never appear here.
+ * filed under a different unit never appear here. Each catalog is gated by its
+ * (currently disabled) source flag so the data is retained but not shown.
  */
 export function getChapterDocs(
   classSlug: string,
@@ -210,89 +252,96 @@ export function getChapterDocs(
 ): ChapterDoc[] {
   if (classSlug !== CLASS_11) return [];
 
-  const platform: ChapterDoc[] = DOCS.filter(
-    (doc) =>
-      subjectMatches(doc.subject, subjectSlug) &&
-      (DOC_LOCATIONS[doc.key] ?? []).includes(unitId),
-  ).map((doc) => ({
-    id: doc.key,
-    title: doc.title,
-    subject: doc.subject,
-    topic: doc.topic,
-    description: doc.description,
-    href: doc.href,
-    kind: doc.kind,
-    origin: "platform" as const,
-  }));
+  const platform: ChapterDoc[] = isStreamSourceEnabled("platform")
+    ? DOCS.filter(
+        (doc) =>
+          subjectMatches(doc.subject, subjectSlug) &&
+          (DOC_LOCATIONS[doc.key] ?? []).includes(unitId),
+      ).map((doc) => ({
+        id: doc.key,
+        title: doc.title,
+        subject: doc.subject,
+        topic: doc.topic,
+        description: doc.description,
+        href: doc.href,
+        kind: doc.kind,
+        origin: "platform" as const,
+      }))
+    : [];
 
-  const external: ChapterDoc[] = WEBNOTEE_DOCS.filter(
-    (doc) =>
-      subjectMatches(doc.subject, subjectSlug) &&
-      WEBNOTEE_LOCATIONS[doc.id] === unitId,
-  ).map((doc) => ({
-    id: doc.id,
-    title: doc.title,
-    subject: doc.subject,
-    topic: doc.unit + (doc.exercise ? ` · ${doc.exercise}` : ""),
-    description: doc.description,
-    href: doc.driveUrl,
-    kind: doc.kind ?? ("pdf" as Kind),
-    origin: "webnotee" as const,
-  }));
+  const external: ChapterDoc[] = isStreamSourceEnabled("webnotee")
+    ? WEBNOTEE_DOCS.filter(
+        (doc) =>
+          subjectMatches(doc.subject, subjectSlug) &&
+          WEBNOTEE_LOCATIONS[doc.id] === unitId,
+      ).map((doc) => ({
+        id: doc.id,
+        title: doc.title,
+        subject: doc.subject,
+        topic: doc.unit + (doc.exercise ? ` · ${doc.exercise}` : ""),
+        description: doc.description,
+        href: doc.driveUrl,
+        kind: doc.kind ?? ("pdf" as Kind),
+        origin: "webnotee" as const,
+      }))
+    : [];
 
   return [...platform, ...external];
 }
 
 /**
- * Exactly TWO live direct-stream blocks for any chapter of any of the six
- * subjects. Chapter-own streams come first; general subject references fill
- * the remaining slots and are badged as such in the UI.
+ * DOC-COUNT-DRIVEN: one Direct Stream block per document filed under this
+ * chapter, with NO fixed two-block cap and NO subject-reference padding.
+ * A chapter with 5 PDFs renders 5 blocks; a chapter with 0 renders none.
+ *
+ * While all three sources are disabled this returns [] everywhere, which is
+ * the owner's requested "not showing" state — the renderer and both call
+ * sites stay in place for the later re-enable pass.
  */
 export function getChapterStreamPdfs(
   classSlug: string,
   subjectSlug: string,
   unitId: string,
 ): ChapterStreamPdf[] {
-  const pool = streamPool().filter((entry) =>
-    subjectMatches(entry.subject, subjectSlug),
+  if (!DIRECT_STREAM_ENABLED) return [];
+
+  const own = streamPool().filter(
+    (entry) =>
+      subjectMatches(entry.subject, subjectSlug) &&
+      classSlug === CLASS_11 &&
+      entry.unitId === unitId,
   );
-  if (pool.length === 0) return [];
 
-  const own = pool.filter(
-    (entry) => classSlug === CLASS_11 && entry.unitId === unitId,
+  const picked = own.map(({ id, title, src, sourceLabel, source }) => ({
+    id,
+    title,
+    src,
+    sourceLabel,
+    source,
+    scope: "chapter" as const,
+  }));
+
+  return STREAM_BLOCK_LIMIT === null ? picked : picked.slice(0, STREAM_BLOCK_LIMIT);
+}
+
+/**
+ * ⚠️ IMPORTANT — retained NepalEnotes crawl data for the later re-enable pass.
+ * Returns every scraped chapter page for one class + subject. Entries with an
+ * empty driveIds array still need their PDF collected; do not prune them.
+ */
+export function nepalenotesRecordsFor(classSlug: string, subjectSlug: string) {
+  const year = classSlug === CLASS_11 ? "11" : classSlug === CLASS_12 ? "12" : null;
+  if (!year) return [];
+  return NEPALENOTES_CHAPTERS.filter(
+    (record) => record.classYear === year && record.subjectSlug === subjectSlug,
   );
-  const picked: ChapterStreamPdf[] = own
-    .slice(0, STREAM_BLOCKS_PER_CHAPTER)
-    .map(({ id, title, src, sourceLabel }) => ({
-      id,
-      title,
-      src,
-      sourceLabel,
-      scope: "chapter",
-    }));
+}
 
-  if (picked.length < STREAM_BLOCKS_PER_CHAPTER) {
-    const used = new Set(picked.map((entry) => entry.id));
-    // General references first, then other units of the same subject.
-    const references = [
-      ...pool.filter((entry) => entry.unitId === null),
-      ...pool.filter((entry) => entry.unitId !== null && entry.unitId !== unitId),
-    ];
-    for (const entry of references) {
-      if (picked.length >= STREAM_BLOCKS_PER_CHAPTER) break;
-      if (used.has(entry.id)) continue;
-      used.add(entry.id);
-      picked.push({
-        id: entry.id,
-        title: entry.title,
-        src: entry.src,
-        sourceLabel: entry.sourceLabel,
-        scope: "subject",
-      });
-    }
-  }
-
-  return picked;
+/** Convenience for the later pass: the already-verified /preview URLs. */
+export function nepalenotesPreviewUrlsFor(classSlug: string, subjectSlug: string): string[] {
+  return nepalenotesRecordsFor(classSlug, subjectSlug).flatMap((record) =>
+    record.driveIds.map(nepalenotesPreviewUrl),
+  );
 }
 
 /** All unit ids used by the classification, for validation in tests. */

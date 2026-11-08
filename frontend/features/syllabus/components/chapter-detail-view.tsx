@@ -144,9 +144,13 @@ export function ChapterDetailView({
         </section>
       )}
 
-      {/* 4. RESOURCES — every chapter of all six subjects in both class tracks
-             gets this tab, holding the same two large live PDF blocks. Built
-             once in direct-stream-pdf-blocks.tsx, fed by lib/chapter-resources.ts. */}
+      {/* 4. RESOURCES — ⚠️ IMPORTANT: RETAINED CODE, NOT DEAD CODE.
+             All three PDF sources are temporarily DISABLED by owner request
+             2026-11-08 (see lib/stream-sources.ts). This tab, the anchor, and
+             the DirectStreamPdfBlocks call must stay: every chapter of all six
+             subjects in both class tracks uses them, and the renderer is
+             doc-count driven with no fixed two-block limit. Re-enable by
+             flipping the source flags — do not delete anything here. */}
       <section id="resources" className="space-y-4 pt-2" aria-label="Chapter resources">
         <div className="flex flex-wrap items-end justify-between gap-2 border-b border-border/60 pb-2">
           <div className="flex items-center gap-1" role="tablist" aria-label="Chapter sections">
