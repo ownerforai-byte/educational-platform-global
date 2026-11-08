@@ -1,0 +1,11 @@
+{
+  "name": "file-type-cjs",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CommonJS bridge to the patched, ESM-only file-type release that @jimp/core still requires() synchronously at module scope.",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "file-type-next": "npm:file-type@^21.3.1"
+  }
+}
