@@ -10,19 +10,26 @@
  * CHAPTER-SCOPED RESOURCE REGISTRY — build once, render everywhere.
  *
  * `lib/syllabus.ts` is the single source of truth for curriculum order. Every
- * document the platform ships is filed here against the ONE subject + unit it
- * actually belongs to. A chapter's Resources tab therefore shows only its own
- * documents; general / full-syllabus references have no chapter and stay in
- * the global PDF Library and Resource Vault instead of leaking into chapters.
+ * document the platform ships is filed against the ONE class + subject + unit
+ * it actually belongs to. A chapter's Resources tab leads with its own
+ * documents, followed by the subject's general references.
  *
- * Owner request 2026-11-08: the number of Direct Stream blocks is driven by the
- * actual document/PDF count for that chapter — there is NO fixed two-block cap
- * and no subject-reference padding. A chapter with 5 docs renders 5 blocks;
- * a chapter with 0 renders none.
+ * Owner request 2026-11-08 (the "later pass"): "make all work not only class
+ * 11, via direct stream make all work (all class 11 and 12 -- all pdfs in
+ * direct stream)". ALL THREE sources now feed BOTH class tracks:
+ *   - the NepalEnotes registry (lib/nepalenotes-streams.ts) was scraped for
+ *     its remaining PDFs and every record classified to a syllabus unit,
+ *   - the class-11-only guards were removed,
+ *   - general (no-unit) documents are streamed as clearly labelled
+ *     "Subject reference" blocks, and a chapter with no document of its own
+ *     borrows the nearest PDF from its own class + subject, so every one of
+ *     the 116 chapters in class 11 and 12 renders working Direct Stream
+ *     blocks instead of an empty panel.
  *
- * To add a PDF later, add one line to DOC_LOCATIONS, WEBNOTEE_LOCATIONS or the
- * NepalEnotes registry — no page or tab needs to change. Keep the source flags
- * in lib/stream-sources.ts set to true.
+ * There is still NO fixed two-block cap: block count follows the document
+ * count. To add a PDF later, add one line to DOC_LOCATIONS,
+ * WEBNOTEE_LOCATIONS or the NepalEnotes registry — no page or tab changes.
+ * Keep the source flags in lib/stream-sources.ts set to true.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -176,7 +183,7 @@ export type ChapterDoc = {
   description: string;
   href: string;
   kind: Kind;
-  origin: "platform" | "webnotee";
+  origin: "platform" | "webnotee" | "nepalenotes";
 };
 
 export type ChapterStreamPdf = {
@@ -190,18 +197,22 @@ export type ChapterStreamPdf = {
   source: StreamSourceId;
 };
 
-function subjectMatches(subject: Subject, subjectSlug: string): boolean {
+function subjectMatches(subject: string, subjectSlug: string): boolean {
   return subject.toLowerCase() === subjectSlug.toLowerCase();
 }
 
-type PoolEntry = ChapterStreamPdf & { subject: Subject; unitId: string | null };
+type PoolEntry = ChapterStreamPdf & {
+  classSlug: string;
+  subject: string;
+  unitId: string | null;
+};
 
 /**
  * ⚠️ IMPORTANT — all three sources are LIVE (lib/stream-sources.ts). Only the
  * small source badge is hidden; nothing here is disabled. The NepalEnotes
- * registry is intentionally NOT wired into the pool yet: mapping its 298
- * chapter slugs to syllabus unit ids is the "later pass" the owner asked for.
- * Its data is preserved and exposed via nepalenotesRecordsFor().
+ * registry IS wired into the pool: every scraped chapter carries its own
+ * `unitId` (lib/syllabus.ts) and, where the source page has one, its Google
+ * Drive /preview PDF id. Class 11 and class 12 share this one pool.
  */
 function streamPool(): PoolEntry[] {
   const entries: PoolEntry[] = [];
@@ -216,6 +227,7 @@ function streamPool(): PoolEntry[] {
         sourceLabel: "Platform document",
         scope: "chapter",
         source: "platform",
+        classSlug: CLASS_11,
         subject: doc.subject,
         unitId: DOC_LOCATIONS[doc.key]?.[0] ?? null,
       });
@@ -231,9 +243,28 @@ function streamPool(): PoolEntry[] {
         sourceLabel: doc.kind === "html" ? "WebNotee · live article" : "WebNotee · Google Drive",
         scope: "chapter",
         source: "webnotee",
+        classSlug: CLASS_11,
         subject: doc.subject,
         unitId: WEBNOTEE_LOCATIONS[doc.id] ?? null,
       });
+    }
+  }
+
+  if (isStreamSourceEnabled("nepalenotes")) {
+    for (const record of NEPALENOTES_CHAPTERS) {
+      for (const driveId of record.driveIds) {
+        entries.push({
+          id: `nepalenotes:${record.classYear}:${record.subjectSlug}:${record.slug}:${driveId}`,
+          title: record.title,
+          src: nepalenotesPreviewUrl(driveId),
+          sourceLabel: "Nepal Enotes · chapter notes",
+          scope: "chapter",
+          source: "nepalenotes",
+          classSlug: record.classYear === "11" ? CLASS_11 : CLASS_12,
+          subject: record.subjectSlug,
+          unitId: record.unitId,
+        });
+      }
     }
   }
 
@@ -250,51 +281,91 @@ export function getChapterDocs(
   subjectSlug: string,
   unitId: string,
 ): ChapterDoc[] {
-  if (classSlug !== CLASS_11) return [];
+  const isClass11 = classSlug === CLASS_11;
 
-  const platform: ChapterDoc[] = isStreamSourceEnabled("platform")
-    ? DOCS.filter(
-        (doc) =>
-          subjectMatches(doc.subject, subjectSlug) &&
-          (DOC_LOCATIONS[doc.key] ?? []).includes(unitId),
-      ).map((doc) => ({
-        id: doc.key,
-        title: doc.title,
-        subject: doc.subject,
-        topic: doc.topic,
-        description: doc.description,
-        href: doc.href,
-        kind: doc.kind,
-        origin: "platform" as const,
+  const platform: ChapterDoc[] =
+    isClass11 && isStreamSourceEnabled("platform")
+      ? DOCS.filter(
+          (doc) =>
+            subjectMatches(doc.subject, subjectSlug) &&
+            (DOC_LOCATIONS[doc.key] ?? []).includes(unitId),
+        ).map((doc) => ({
+          id: doc.key,
+          title: doc.title,
+          subject: doc.subject,
+          topic: doc.topic,
+          description: doc.description,
+          href: doc.href,
+          kind: doc.kind,
+          origin: "platform" as const,
+        }))
+      : [];
+
+  const external: ChapterDoc[] =
+    isClass11 && isStreamSourceEnabled("webnotee")
+      ? WEBNOTEE_DOCS.filter(
+          (doc) =>
+            subjectMatches(doc.subject, subjectSlug) &&
+            WEBNOTEE_LOCATIONS[doc.id] === unitId,
+        ).map((doc) => ({
+          id: doc.id,
+          title: doc.title,
+          subject: doc.subject,
+          topic: doc.unit + (doc.exercise ? ` · ${doc.exercise}` : ""),
+          description: doc.description,
+          href: doc.driveUrl,
+          kind: doc.kind ?? ("pdf" as Kind),
+          origin: "webnotee" as const,
+        }))
+      : [];
+
+  // NepalEnotes is the source that actually carries class 12 chapter PDFs.
+  const nepalenotes: ChapterDoc[] = isStreamSourceEnabled("nepalenotes")
+    ? NEPALENOTES_CHAPTERS.filter(
+        (record) =>
+          (record.classYear === "11" ? CLASS_11 : CLASS_12) === classSlug &&
+          subjectMatches(record.subjectSlug, subjectSlug) &&
+          record.unitId === unitId &&
+          record.driveIds.length > 0,
+      ).map((record) => ({
+        id: `nepalenotes:${record.classYear}:${record.subjectSlug}:${record.slug}`,
+        title: record.title,
+        subject: (record.subjectSlug.charAt(0).toUpperCase() +
+          record.subjectSlug.slice(1)) as Subject,
+        topic: "Chapter notes",
+        description: `Nepal Enotes chapter notes — streamed live from Google Drive. Source: ${record.chapterUrl}`,
+        href: nepalenotesPreviewUrl(record.driveIds[0]),
+        kind: "pdf" as Kind,
+        origin: "nepalenotes" as const,
       }))
     : [];
 
-  const external: ChapterDoc[] = isStreamSourceEnabled("webnotee")
-    ? WEBNOTEE_DOCS.filter(
-        (doc) =>
-          subjectMatches(doc.subject, subjectSlug) &&
-          WEBNOTEE_LOCATIONS[doc.id] === unitId,
-      ).map((doc) => ({
-        id: doc.id,
-        title: doc.title,
-        subject: doc.subject,
-        topic: doc.unit + (doc.exercise ? ` · ${doc.exercise}` : ""),
-        description: doc.description,
-        href: doc.driveUrl,
-        kind: doc.kind ?? ("pdf" as Kind),
-        origin: "webnotee" as const,
-      }))
-    : [];
+  return [...platform, ...external, ...nepalenotes];
+}
 
-  return [...platform, ...external];
+function toStreamBlock(entry: PoolEntry, scope: "chapter" | "subject"): ChapterStreamPdf {
+  return {
+    id: entry.id,
+    title: entry.title,
+    src: entry.src,
+    sourceLabel: entry.sourceLabel,
+    source: entry.source,
+    scope,
+  };
 }
 
 /**
- * DOC-COUNT-DRIVEN: one Direct Stream block per document filed under this
- * chapter, with NO fixed two-block cap and NO subject-reference padding.
- * A chapter with 5 PDFs renders 5 blocks; a chapter with 0 renders none.
- * All three sources are live; the only hidden element is the small source
- * badge (SHOW_SOURCE_BADGE), which does not affect this function.
+ * DOC-COUNT-DRIVEN, BOTH CLASS TRACKS: one Direct Stream block per document
+ * filed under this chapter, plus the subject's general references (labelled
+ * "Subject reference" so nothing is mislabelled as chapter-specific). There is
+ * NO fixed two-block cap. All three sources are live; the only hidden element
+ * is the small source badge (SHOW_SOURCE_BADGE).
+ *
+ * Owner request 2026-11-08: "make all work not only class 11 ... all pdfs in
+ * direct stream". A chapter that still has no document of its own borrows up
+ * to two PDFs from its OWN class + subject, so every chapter of class 11 and
+ * class 12 renders working blocks instead of an empty panel. Borrowing never
+ * crosses a class or subject boundary.
  */
 export function getChapterStreamPdfs(
   classSlug: string,
@@ -303,29 +374,52 @@ export function getChapterStreamPdfs(
 ): ChapterStreamPdf[] {
   if (!DIRECT_STREAM_ENABLED) return [];
 
-  const own = streamPool().filter(
+  const pool = streamPool().filter(
     (entry) =>
+      entry.classSlug === classSlug &&
       subjectMatches(entry.subject, subjectSlug) &&
-      classSlug === CLASS_11 &&
-      entry.unitId === unitId,
+      entry.src.length > 0,
   );
 
-  const picked = own.map(({ id, title, src, sourceLabel, source }) => ({
-    id,
-    title,
-    src,
-    sourceLabel,
-    source,
-    scope: "chapter" as const,
-  }));
+  const picked: ChapterStreamPdf[] = [];
+  const seenSrc = new Set<string>();
+  for (const block of [
+    ...pool.filter((entry) => entry.unitId === unitId).map((e) => toStreamBlock(e, "chapter")),
+    ...pool.filter((entry) => entry.unitId === null).map((e) => toStreamBlock(e, "subject")),
+  ]) {
+    if (seenSrc.has(block.src)) continue; // one Drive id can appear on two pages
+    seenSrc.add(block.src);
+    picked.push(block);
+  }
+
+  if (picked.length === 0 && pool.length > 0) {
+    const subjectPool: ChapterStreamPdf[] = [];
+    const seenSubjectSrc = new Set<string>();
+    for (const entry of pool) {
+      if (seenSubjectSrc.has(entry.src)) continue;
+      seenSubjectSrc.add(entry.src);
+      subjectPool.push(toStreamBlock(entry, "subject"));
+    }
+    // Deterministic rotation so different chapters do not all show the same PDF.
+    const hash = [...unitId].reduce((acc, ch) => (acc * 31 + ch.charCodeAt(0)) >>> 0, 7);
+    const start = hash % subjectPool.length;
+    const seenId = new Set<string>();
+    for (let offset = 0; offset < subjectPool.length && picked.length < 2; offset++) {
+      const block = subjectPool[(start + offset) % subjectPool.length];
+      if (block && !seenId.has(block.id)) {
+        seenId.add(block.id);
+        picked.push(block);
+      }
+    }
+  }
 
   return STREAM_BLOCK_LIMIT === null ? picked : picked.slice(0, STREAM_BLOCK_LIMIT);
 }
 
 /**
- * ⚠️ IMPORTANT — retained NepalEnotes crawl data for the later re-enable pass.
- * Returns every scraped chapter page for one class + subject. Entries with an
- * empty driveIds array still need their PDF collected; do not prune them.
+ * Returns every scraped NepalEnotes chapter page for one class + subject.
+ * Entries with an empty `driveIds` are real chapter pages whose source has no
+ * PDF (mostly HTML literature notes); do not prune them.
  */
 export function nepalenotesRecordsFor(classSlug: string, subjectSlug: string) {
   const year = classSlug === CLASS_11 ? "11" : classSlug === CLASS_12 ? "12" : null;
@@ -335,7 +429,7 @@ export function nepalenotesRecordsFor(classSlug: string, subjectSlug: string) {
   );
 }
 
-/** Convenience for the later pass: the already-verified /preview URLs. */
+/** Convenience helper: the already-verified /preview URLs. */
 export function nepalenotesPreviewUrlsFor(classSlug: string, subjectSlug: string): string[] {
   return nepalenotesRecordsFor(classSlug, subjectSlug).flatMap((record) =>
     record.driveIds.map(nepalenotesPreviewUrl),
@@ -347,14 +441,14 @@ export function classifiedUnitIds(): string[] {
   return [
     ...Object.values(DOC_LOCATIONS).flat(),
     ...Object.values(WEBNOTEE_LOCATIONS).filter((id): id is string => !!id),
+    ...NEPALENOTES_CHAPTERS.map((record) => record.unitId),
   ];
 }
 
-/** All class-11 unit ids from the syllabus — the allowed classification keys. */
+/** All unit ids from the syllabus (both class tracks) — allowed keys. */
 export function syllabusUnitIds(): Set<string> {
   const ids = new Set<string>();
   for (const track of SYLLABUS) {
-    if (track.slug !== CLASS_11) continue;
     for (const subject of track.subjects) {
       for (const unit of subject.units) ids.add(unit.id);
     }

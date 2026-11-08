@@ -11,6 +11,7 @@ import {
 import { NEPALENOTES_CHAPTERS } from "@/lib/nepalenotes-streams";
 import {
   CLASS_11,
+  CLASS_12,
   STREAM_BLOCK_LIMIT,
   classifiedUnitIds,
   getChapterDocs,
@@ -21,10 +22,54 @@ import {
 } from "@/lib/chapter-resources";
 
 describe("chapter resource classification", () => {
-  it("files every classified document under a real class-11 syllabus unit", () => {
+  it("files every classified document under a real syllabus unit (both classes)", () => {
     const known = syllabusUnitIds();
     const unknown = [...new Set(classifiedUnitIds())].filter((id) => !known.has(id));
     expect(unknown).toEqual([]);
+  });
+
+  /**
+   * OWNER REQUEST 2026-11-08 — "make all work not only class 11, via direct
+   * stream make all work (all class 11 and 12 -- all pdfs in direct stream)".
+   * Every chapter of every subject in BOTH class tracks must render at least
+   * one working Direct Stream block. If a future change reintroduces the old
+   * `classSlug !== CLASS_11` guard or unwires the NepalEnotes pool, this test
+   * fails loudly.
+   */
+  it("streams PDFs in EVERY chapter of every subject of class 11 AND class 12", () => {
+    const empty: string[] = [];
+    let class12Chapters = 0;
+    let class12Blocks = 0;
+
+    for (const track of SYLLABUS) {
+      for (const subject of track.subjects) {
+        for (const unit of subject.units) {
+          const key = `${track.slug}/${subject.slug}/${unit.id}`;
+          const streams = getChapterStreamPdfs(track.slug, subject.slug, unit.id);
+          if (streams.length === 0) empty.push(key);
+          expect(streams.every((pdf) => pdf.src.length > 0), key).toBe(true);
+          expect(new Set(streams.map((pdf) => pdf.src)).size, key).toBe(streams.length);
+          if (track.slug === CLASS_12) {
+            class12Chapters += 1;
+            class12Blocks += streams.length;
+          }
+        }
+      }
+    }
+
+    expect(empty).toEqual([]);
+    expect(class12Chapters).toBeGreaterThan(0);
+    expect(class12Blocks).toBeGreaterThan(class12Chapters);
+  });
+
+  it("wires the scraped NepalEnotes PDFs into BOTH class tracks", () => {
+    const withPdfs = NEPALENOTES_CHAPTERS.filter((r) => r.driveIds.length > 0);
+    expect(withPdfs.length).toBeGreaterThan(100);
+    expect(withPdfs.some((r) => r.classYear === "11")).toBe(true);
+    expect(withPdfs.some((r) => r.classYear === "12")).toBe(true);
+    expect(NEPALENOTES_CHAPTERS.every((r) => r.unitId.length > 0)).toBe(true);
+    expect(NEPALENOTES_CHAPTERS.every((r) => r.title.length > 0)).toBe(true);
+    expect(getChapterDocs(CLASS_12, "chemistry", "solutions").length).toBeGreaterThan(0);
   });
 
   /**

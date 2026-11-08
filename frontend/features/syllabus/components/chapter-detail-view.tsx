@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 import { PhysicsUnitResourceDoc } from "@/components/content/physics-unit-resource-doc";
 import { DirectStreamPdfBlocks } from "@/components/content/direct-stream-pdf-blocks";
-import { getChapterStreamPdfs } from "@/lib/chapter-resources";
+import { CLASS_12, getChapterStreamPdfs } from "@/lib/chapter-resources";
 
 export function ChapterDetailView({
   classSlug,
@@ -29,6 +29,8 @@ export function ChapterDetailView({
   basePath: string;
 }) {
   const unit = getUnit(classSlug, subjectSlug, unitId);
+  const streamPdfs = getChapterStreamPdfs(classSlug, subjectSlug, unitId);
+  const classLabel = classSlug === CLASS_12 ? "Class 12" : "Class 11";
 
   if (!unit) {
     return (
@@ -137,7 +139,7 @@ export function ChapterDetailView({
               <span>Unit Resources &amp; Document Preview</span>
             </h2>
             <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary">
-              NEB Class 11 Physics
+              NEB {classLabel} Physics
             </span>
           </div>
           <PhysicsUnitResourceDoc unitId={unitId} />
@@ -165,7 +167,7 @@ export function ChapterDetailView({
             </span>
           </div>
           <span className="text-xs font-medium text-muted-foreground">
-            Direct stream · 2 live PDFs · read in place
+            Direct stream · {streamPdfs.length} live {streamPdfs.length === 1 ? "PDF" : "PDFs"} · read in place
           </span>
         </div>
         <div
@@ -174,7 +176,7 @@ export function ChapterDetailView({
           aria-labelledby="chapter-resources-tab"
         >
           <DirectStreamPdfBlocks
-            pdfs={getChapterStreamPdfs(classSlug, subjectSlug, unitId)}
+            pdfs={streamPdfs}
             unitTitle={unit.title}
           />
         </div>
