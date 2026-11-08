@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
 
 // ─── Mocks ──────────────────────────────────────────────────────────────────
 
@@ -273,5 +273,36 @@ describe("ProfilePage", () => {
     // But student DOES see level details
     expect(screen.getByText("Scholar Rank")).toBeInTheDocument();
     expect(screen.getByText("Total Scholar XP")).toBeInTheDocument();
+  });
+
+  it("filters the activity feed with search, status chips and clear", async () => {
+    render(<ProfilePage />);
+
+    fireEvent.click(screen.getByRole("tab", { name: /activity/i }));
+    const panel = screen.getByRole("tabpanel", { name: /activity/i });
+
+    // Both recorded sessions are listed in the feed.
+    await within(panel).findByText("Cell Structure");
+    expect(within(panel).getByText("Laws of Motion")).toBeInTheDocument();
+
+    // Search narrows the feed.
+    fireEvent.change(within(panel).getByRole("textbox", { name: /search activity/i }), {
+      target: { value: "motion" },
+    });
+    expect(within(panel).getByText("Laws of Motion")).toBeInTheDocument();
+    expect(within(panel).queryByText("Cell Structure")).not.toBeInTheDocument();
+
+    // Clearing the query restores the feed.
+    fireEvent.click(within(panel).getByRole("button", { name: /clear search/i }));
+    expect(await within(panel).findByText("Cell Structure")).toBeInTheDocument();
+
+    // The Completed status chip keeps only finished sessions.
+    fireEvent.click(within(panel).getByRole("button", { name: "Completed" }));
+    expect(within(panel).getByText("Cell Structure")).toBeInTheDocument();
+    expect(within(panel).queryByText("Laws of Motion")).not.toBeInTheDocument();
+
+    // "Clear filters" resets everything.
+    fireEvent.click(within(panel).getByRole("button", { name: /clear filters/i }));
+    expect(await within(panel).findByText("Laws of Motion")).toBeInTheDocument();
   });
 });

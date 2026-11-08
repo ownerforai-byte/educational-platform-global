@@ -4,7 +4,6 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
-  ArrowUpRight,
   Award,
   BookOpen,
   Bookmark,
@@ -14,23 +13,26 @@ import {
   Coins,
   Compass,
   Crown,
+  Filter,
   Flame,
   GraduationCap,
   History,
   Layers,
   LogOut,
   Mail,
-  RefreshCw,
+  Search,
   ShieldCheck,
   Sparkles,
   Target,
   Trophy,
   User,
   UserCheck,
+  X,
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
@@ -40,7 +42,7 @@ import { isOwnerUser } from "@/lib/owner";
 import { getAiSparkUsage, type AiSparkUsage } from "@/lib/api/ai";
 import { AI_SPARK_LIMITS } from "@/lib/ai/ai-spark-tiers";
 import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/access-level";
-import { topicHref } from "@/lib/progress/catalog";
+import { entryStatus, topicHref } from "@/lib/progress/catalog";
 import { SYLLABUS } from "@/lib/syllabus";
 import type { ProgressEntry } from "@/types/api";
 
@@ -167,6 +169,58 @@ const subjectsOverview = [
   { name: "Nepali", href: "/class-11-notes/nepali", code: "Nep.11/12", topicsCount: unitCountFor("nepali"), color: "from-rose-500/20 to-pink-500/10 border-rose-500/30" },
 ];
 
+// ── Activity-feed filters (pro profile pass) ────────────────────────────────
+
+type ActivityStatus = "all" | "completed" | "in_progress";
+type ActivityRange = "all" | "7" | "30";
+
+const ACTIVITY_STATUS_FILTERS: Array<{ value: ActivityStatus; label: string }> = [
+  { value: "all", label: "All activity" },
+  { value: "completed", label: "Completed" },
+  { value: "in_progress", label: "In progress" },
+];
+
+const ACTIVITY_RANGE_FILTERS: Array<{ value: ActivityRange; label: string }> = [
+  { value: "all", label: "Any time" },
+  { value: "7", label: "Last 7 days" },
+  { value: "30", label: "Last 30 days" },
+];
+
+/** "3h ago" / "5d ago" / a date — for the activity feed's right column. */
+function relativeTime(iso: string): string {
+  const t = new Date(iso).getTime();
+  if (Number.isNaN(t)) return "";
+  const diff = Date.now() - t;
+  const minutes = Math.floor(diff / 60_000);
+  if (minutes < 1) return "just now";
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  if (days < 7) return `${days}d ago`;
+  return new Date(t).toLocaleDateString();
+}
+
+/** The moment a topic was last touched — the sort/filter key for the feed. */
+function activityStamp(entry: ProgressEntry): string | null {
+  return entry.lastViewedAt ?? entry.updatedAt ?? entry.completedAt ?? entry.startedAt ?? null;
+}
+
+/**
+ * Epoch-ms cut-off for a time-range filter, computed at click time (event
+ * handlers may read the clock; render may not).
+ */
+function rangeCutoffMs(value: ActivityRange): number {
+  return value === "all" ? 0 : Date.now() - Number(value) * 86_400_000;
+}
+
+const filterChipClass = (active: boolean) =>
+  `rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+    active
+      ? "border-primary bg-primary text-primary-foreground"
+      : "border-border bg-card text-foreground hover:border-primary/50"
+  }`;
+
 /**
  * /profile — the account and learning home.
  *
@@ -185,6 +239,19 @@ export default function ProfilePage() {
 
   // Preferred grade level focus (saved in localStorage)
   const [targetGrade, setTargetGrade] = useState<string>("Class 11 Science");
+
+  // ── Activity-feed filters ──
+  const [activityQuery, setActivityQuery] = useState("");
+  const [activityStatus, setActivityStatus] = useState<ActivityStatus>("all");
+  const [activitySubject, setActivitySubject] = useState("all");
+  const [activityRange, setActivityRange] = useState<ActivityRange>("all");
+  // Cut-off computed once at click time (event handler) so render stays pure.
+  const [activityCutoffMs, setActivityCutoffMs] = useState(0);
+
+  const handleRangeFilter = (value: ActivityRange) => {
+    setActivityRange(value);
+    setActivityCutoffMs(rangeCutoffMs(value));
+  };
 
   // Load target grade preference from localStorage
   useEffect(() => {
@@ -266,24 +333,80 @@ export default function ProfilePage() {
     () => computeStudyStreak(progressEntries),
     [progressEntries]
   );
-  const recentActivity = useMemo(
+
+  // ── Activity feed + its filters (pro profile pass) ──
+  const activityRows = useMemo(
     () =>
-      [...progressEntries]
-        .sort((a, b) =>
-          (b.lastViewedAt ?? b.updatedAt ?? "").localeCompare(
-            a.lastViewedAt ?? a.updatedAt ?? "",
-          ),
-        )
-        .slice(0, 8),
-    [progressEntries]
+      progressEntries
+        .map((entry) => ({ entry, at: activityStamp(entry) }))
+        .filter((row): row is { entry: ProgressEntry; at: string } => Boolean(row.at))
+        .sort((a, b) => b.at.localeCompare(a.at)),
+    [progressEntries],
   );
+
+  const activitySubjects = useMemo(() => {
+    const seen = new Map<string, string>();
+    for (const { entry } of activityRows) {
+      const slug = entry.subjectSlug ?? "general";
+      if (!seen.has(slug)) {
+        seen.set(
+          slug,
+          entry.topic?.chapter?.subject?.name ??
+            slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+        );
+      }
+    }
+    return [...seen.entries()].sort((a, b) => a[1].localeCompare(b[1]));
+  }, [activityRows]);
+
+  const filteredActivity = useMemo(() => {
+    const query = activityQuery.trim().toLowerCase();
+    return activityRows.filter(({ entry, at }) => {
+      const status: ActivityStatus =
+        entryStatus(entry) === "completed" ? "completed" : "in_progress";
+      if (activityStatus !== "all" && status !== activityStatus) return false;
+      if (activitySubject !== "all" && (entry.subjectSlug ?? "general") !== activitySubject) {
+        return false;
+      }
+      if (activityCutoffMs && new Date(at).getTime() < activityCutoffMs) return false;
+      if (query) {
+        const haystack = [
+          entry.topic?.title,
+          entry.topicSlug,
+          entry.topic?.chapter?.title,
+          entry.topic?.chapter?.subject?.name,
+          entry.subjectSlug,
+          entry.unitSlug,
+        ]
+          .filter(Boolean)
+          .join(" ")
+          .toLowerCase();
+        if (!haystack.includes(query)) return false;
+      }
+      return true;
+    });
+  }, [activityRows, activityQuery, activityStatus, activitySubject, activityCutoffMs]);
+
+  const activityFiltersActive =
+    activityQuery.trim() !== "" ||
+    activityStatus !== "all" ||
+    activitySubject !== "all" ||
+    activityRange !== "all";
+
+  const clearActivityFilters = () => {
+    setActivityQuery("");
+    setActivityStatus("all");
+    setActivitySubject("all");
+    setActivityRange("all");
+    setActivityCutoffMs(0);
+  };
 
   const LevelIcon = scholarLevel.icon;
 
   if (isLoading || !user) {
     return (
-      <div className="container max-w-4xl py-8 space-y-6">
-        <Skeleton className="h-36 w-full" />
+      <div className="container max-w-5xl py-8 space-y-6">
+        <Skeleton className="h-44 w-full" />
         <Skeleton className="h-10 w-64" />
         <Skeleton className="h-64 w-full" />
       </div>
@@ -308,27 +431,37 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="container max-w-4xl py-8 space-y-6">
-      {/* ── Identity header ─────────────────────────────────────────────── */}
-      <Card className="overflow-hidden border-primary/20 bg-gradient-to-br from-card via-card to-primary/5 shadow-sm">
-        <CardContent className="pt-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-4 min-w-0">
-              <div className="relative">
-                <div className="h-16 w-16 shrink-0 rounded-2xl bg-gradient-to-tr from-primary/20 via-primary/10 to-primary/30 border border-primary/30 flex items-center justify-center text-xl font-extrabold text-primary shadow-inner">
+    <div className="container max-w-5xl py-8 space-y-6">
+      {/* ── Identity hero — cover banner, avatar, badges, quick actions ─── */}
+      <Card className="overflow-hidden border-primary/20 shadow-sm">
+        {/* Cover banner */}
+        <div className="relative h-32 sm:h-40 overflow-hidden bg-gradient-to-r from-primary via-primary/80 to-violet-600">
+          <div className="absolute -top-10 -right-10 h-44 w-44 rounded-full bg-white/10" />
+          <div className="absolute top-6 right-24 h-24 w-24 rounded-full bg-white/10" />
+          <div className="absolute -bottom-12 -left-8 h-40 w-40 rounded-full bg-black/10" />
+          <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-card/90 to-transparent" />
+        </div>
+
+        <CardContent className="pt-0 pb-6">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div className="flex flex-col sm:flex-row sm:items-end gap-4 min-w-0">
+              {/* Avatar with level chip */}
+              <div className="relative -mt-12 sm:-mt-14 shrink-0 self-start">
+                <div className="h-24 w-24 rounded-2xl border-4 border-background bg-gradient-to-tr from-primary/30 via-primary/15 to-violet-500/30 shadow-xl flex items-center justify-center text-2xl font-extrabold text-primary">
                   {initials}
                 </div>
                 <div
-                  className="absolute -bottom-1 -right-1 h-6 w-6 rounded-full bg-background border-2 border-background flex items-center justify-center text-[10px] font-black text-amber-500 shadow"
+                  className="absolute -bottom-2 -right-2 h-8 w-8 rounded-full bg-amber-500 border-2 border-background flex items-center justify-center text-xs font-black text-black shadow"
                   title={scholarLevel.badgeName}
                 >
                   {scholarLevel.level}
                 </div>
               </div>
 
-              <div className="min-w-0">
+              {/* Name + badges + meta */}
+              <div className="min-w-0 sm:pb-1">
                 <div className="flex items-center gap-2 flex-wrap">
-                  <h1 className="text-xl font-bold tracking-tight truncate">{displayName}</h1>
+                  <h1 className="text-2xl font-extrabold tracking-tight truncate">{displayName}</h1>
                   <span
                     className={`inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-md border ${badge.className}`}
                   >
@@ -340,11 +473,16 @@ export default function ProfilePage() {
                     Level {scholarLevel.level} · {scholarLevel.title}
                   </span>
                 </div>
-                <p className="text-sm text-muted-foreground truncate flex items-center gap-1.5 mt-0.5">
+                <p className="text-sm text-muted-foreground truncate flex items-center gap-1.5 mt-1">
                   <Mail className="h-3.5 w-3.5 shrink-0" />
                   {email}
                 </p>
-                <div className="mt-1.5 flex items-center gap-3 text-xs text-muted-foreground flex-wrap">
+                <div className="mt-2 flex items-center gap-3 text-xs text-muted-foreground flex-wrap">
+                  <span className="inline-flex items-center gap-1">
+                    <Flame className="h-3.5 w-3.5 text-orange-500" />
+                    <span className="font-semibold text-foreground">{streakDays}-day</span> streak
+                  </span>
+                  <span className="text-muted-foreground/40">•</span>
                   <span className="inline-flex items-center gap-1">
                     <Coins className="h-3.5 w-3.5 text-amber-500" />
                     <span className="font-semibold text-foreground">{user.credits ?? 0}</span>
@@ -887,7 +1025,7 @@ export default function ProfilePage() {
           </div>
         </TabsContent>
 
-        {/* ── Tab 5: Activity (profile feature 2026-10-13) ────────────────── */}
+        {/* ── Tab 5: Activity — searchable, filterable feed (pro pass) ───── */}
         <TabsContent value="activity" className="space-y-4 pt-2">
           <Card className="border-border/60">
             <CardHeader className="pb-2">
@@ -899,24 +1037,141 @@ export default function ProfilePage() {
                 Your latest topic sessions — pick up where you left off.
               </CardDescription>
             </CardHeader>
-            <CardContent>
-              {recentActivity.length === 0 ? (
-                <p className="text-xs text-muted-foreground">
-                  No activity yet — open any topic and it will show up here.
-                </p>
+            <CardContent className="space-y-3">
+              {/* Filter bar — search + status + subject + time range */}
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  value={activityQuery}
+                  onChange={(e) => setActivityQuery(e.target.value)}
+                  placeholder="Search activity — topic, subject, or unit…"
+                  aria-label="Search activity"
+                  className="h-9 rounded-full pl-9 pr-8"
+                />
+                {activityQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setActivityQuery("")}
+                    aria-label="Clear search"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded-full p-0.5 text-muted-foreground hover:text-foreground"
+                  >
+                    <X className="h-3.5 w-3.5" />
+                  </button>
+                )}
+              </div>
+
+              <div className="flex flex-wrap items-center gap-1.5">
+                <Filter className="h-3.5 w-3.5 text-muted-foreground mr-0.5" />
+                {ACTIVITY_STATUS_FILTERS.map((filter) => (
+                  <button
+                    key={filter.value}
+                    type="button"
+                    onClick={() => setActivityStatus(filter.value)}
+                    aria-pressed={activityStatus === filter.value}
+                    className={filterChipClass(activityStatus === filter.value)}
+                  >
+                    {filter.label}
+                  </button>
+                ))}
+                <span className="text-muted-foreground/40 mx-1">•</span>
+                {ACTIVITY_RANGE_FILTERS.map((filter) => (
+                  <button
+                    key={filter.value}
+                    type="button"
+                    onClick={() => handleRangeFilter(filter.value)}
+                    aria-pressed={activityRange === filter.value}
+                    className={filterChipClass(activityRange === filter.value)}
+                  >
+                    {filter.label}
+                  </button>
+                ))}
+              </div>
+
+              {activitySubjects.length > 1 && (
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => setActivitySubject("all")}
+                    aria-pressed={activitySubject === "all"}
+                    className={filterChipClass(activitySubject === "all")}
+                  >
+                    All subjects
+                  </button>
+                  {activitySubjects.map(([slug, name]) => (
+                    <button
+                      key={slug}
+                      type="button"
+                      onClick={() => setActivitySubject(activitySubject === slug ? "all" : slug)}
+                      aria-pressed={activitySubject === slug}
+                      className={filterChipClass(activitySubject === slug)}
+                    >
+                      {name}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {/* Result count + clear */}
+              <div className="flex items-center justify-between gap-2 text-[11px] text-muted-foreground">
+                <span>
+                  {filteredActivity.length} of {activityRows.length} sessions
+                  {activityFiltersActive && " match your filters"}
+                </span>
+                {activityFiltersActive && (
+                  <button
+                    type="button"
+                    onClick={clearActivityFilters}
+                    className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
+                  >
+                    <X className="h-3 w-3" />
+                    Clear filters
+                  </button>
+                )}
+              </div>
+
+              {/* Feed */}
+              {filteredActivity.length === 0 ? (
+                <div className="flex flex-col items-center justify-center rounded-xl border border-dashed py-10 text-center">
+                  <History className="h-10 w-10 text-muted-foreground/50 mb-3" />
+                  {activityFiltersActive ? (
+                    <>
+                      <p className="text-sm font-semibold">No sessions match these filters</p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        Try a different search or clear the filters.
+                      </p>
+                      <Button
+                        type="button"
+                        size="sm"
+                        variant="outline"
+                        className="mt-3 rounded-xl text-xs"
+                        onClick={clearActivityFilters}
+                      >
+                        Clear filters
+                      </Button>
+                    </>
+                  ) : (
+                    <>
+                      <p className="text-sm font-semibold">No activity yet</p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        Open any topic and it will show up here.
+                      </p>
+                    </>
+                  )}
+                </div>
               ) : (
                 <ul className="space-y-1.5">
-                  {recentActivity.map((entry) => {
+                  {filteredActivity.slice(0, 20).map(({ entry, at }) => {
                     const href = topicHref(entry);
                     const title = entry.topic?.title || entry.topicSlug || "Topic";
+                    const done = entryStatus(entry) === "completed";
                     return (
                       <li key={entry.id}>
                         <Link
                           href={href}
-                          className="flex items-center justify-between gap-3 rounded-xl border border-border/50 px-3 py-2 hover:bg-muted/50 transition-colors"
+                          className="flex items-center justify-between gap-3 rounded-xl border border-border/50 px-3 py-2 hover:bg-muted/50 hover:border-primary/30 transition-colors"
                         >
                           <span className="flex items-center gap-2.5 min-w-0">
-                            {entry.completed ? (
+                            {done ? (
                               <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />
                             ) : (
                               <BookOpen className="h-4 w-4 shrink-0 text-sky-500" />
@@ -926,17 +1181,27 @@ export default function ProfilePage() {
                                 {title}
                               </span>
                               <span className="block truncate text-[11px] text-muted-foreground capitalize">
-                                {entry.subjectSlug?.replace(/-/g, " ")} ·{" "}
-                                {entry.completed ? "completed" : "in progress"}
+                                {[entry.topic?.chapter?.subject?.name ?? entry.subjectSlug?.replace(/-/g, " "), entry.unitSlug?.replace(/-/g, " ")]
+                                  .filter(Boolean)
+                                  .join(" · ")}{" "}
+                                · {done ? "completed" : "in progress"}
                               </span>
                             </span>
                           </span>
-                          <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                          <span className="flex shrink-0 items-center gap-2 text-[11px] text-muted-foreground">
+                            {relativeTime(at)}
+                            <ChevronRight className="h-4 w-4" />
+                          </span>
                         </Link>
                       </li>
                     );
                   })}
                 </ul>
+              )}
+              {filteredActivity.length > 20 && (
+                <p className="px-1 text-xs text-muted-foreground">
+                  +{filteredActivity.length - 20} more sessions — narrow the filters to see them.
+                </p>
               )}
             </CardContent>
           </Card>
