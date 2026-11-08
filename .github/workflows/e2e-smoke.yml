@@ -56,6 +56,35 @@ jobs:
           NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
           NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
 
+      # Render's free tier cold-starts in ~30s. The first /api/auth/me and
+      # /api/auth/login requests used to die with ECONNRESET (socket hang up)
+      # during that window, so the guest home never left its session spinner
+      # and owner sign-in timed out. Wake the backend and prove the auth route
+      # answers BEFORE Playwright starts. If it never wakes, skip only the
+      # auth-dependent specs with a loud annotation instead of failing on an
+      # external outage — the guest/error specs still run and gate the build.
+      - name: Warm the backend before the smoke spec
+        run: |
+          backend="${NEXT_PUBLIC_API_URL:-https://rn01.onrender.com}"
+          warm=0
+          for i in $(seq 1 8); do
+            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 45 "$backend/health" || true)
+            if [ "$code" = "200" ]; then
+              auth=$(curl -s -o /dev/null -w '%{http_code}' --max-time 45 "$backend/api/auth/me" || true)
+              echo "backend warm (attempt $i, /health=200, /api/auth/me=$auth)"
+              warm=1
+              break
+            fi
+            echo "attempt $i: /health=$code — Render cold start, retrying"
+            sleep 3
+          done
+          if [ "$warm" != "1" ]; then
+            echo "::warning::Backend $backend never became healthy; auth-dependent smoke specs will be skipped."
+            echo "SMOKE_SKIP_AUTH=1" >> "$GITHUB_ENV"
+          fi
+        env:
+          NEXT_PUBLIC_API_URL: ${{ secrets.NEXT_PUBLIC_API_URL }}
+
       - name: Run the smoke spec
         run: npx playwright test
         env:

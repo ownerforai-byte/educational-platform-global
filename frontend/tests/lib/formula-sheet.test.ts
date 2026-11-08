@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 import {
   FORMULA_SUBJECTS,
   getFormulaSheetSummaries,
@@ -12,6 +12,14 @@ import { getSubjectSyllabus } from "@/lib/syllabus";
 const CLASS_SLUG = "class-11-notes";
 
 describe("formula-sheet — subject sheets", () => {
+  // getSubjectFormulaSheet caches per subject, but the FIRST call still reads
+  // the whole authored notes corpus. Warm all three once with a realistic
+  // budget so no individual 5s assertion has to pay that cost under full-suite
+  // load on Windows. Assertions in every test are unchanged.
+  beforeAll(async () => {
+    await Promise.all(FORMULA_SUBJECTS.map((s) => getSubjectFormulaSheet(s.slug)));
+  }, 60_000);
+
   it("lists Physics units in the official syllabus order", async () => {
     const sheet = await getSubjectFormulaSheet("physics");
     expect(sheet).not.toBeNull();

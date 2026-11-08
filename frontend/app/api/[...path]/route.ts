@@ -22,6 +22,27 @@ const STRIPPED_RESPONSE_HEADERS = new Set([
   "set-cookie",
 ]);
 
+/**
+ * Render's free tier cold-starts in ~30s and resets the TCP connection on the
+ * first request (`ECONNRESET` / "socket hang up"). The browser used to get a
+ * 503 for /api/auth/me and /api/auth/login, which left the guest home on its
+ * session spinner and made owner sign-in time out. A single bounded retry
+ * after 400ms rides out that first reset; a hard timeout stops a hung cold
+ * start from holding the request open indefinitely.
+ */
+async function fetchBackend(targetUrl: string, init: RequestInit): Promise<Response> {
+  let lastError: unknown;
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    try {
+      return await fetch(targetUrl, { ...init, signal: AbortSignal.timeout(20_000) });
+    } catch (error) {
+      lastError = error;
+      if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 400));
+    }
+  }
+  throw lastError;
+}
+
 async function proxyRequest(request: NextRequest, { params }: { params: Promise<{ path: string[] }> }) {
   const resolvedParams = await params;
   const subPath = resolvedParams.path?.join("/") ?? "";
@@ -42,7 +63,7 @@ async function proxyRequest(request: NextRequest, { params }: { params: Promise<
       : undefined;
 
   try {
-    const res = await fetch(targetUrl, {
+    const res = await fetchBackend(targetUrl, {
       method: request.method,
       headers,
       body,
