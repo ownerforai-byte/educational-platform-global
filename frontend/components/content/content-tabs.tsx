@@ -496,7 +496,7 @@ function DocumentsAndPdfs({
       <CardContent>
         {docs.length === 0 ? (
           <p className="rounded-lg border border-dashed border-border/60 p-4 text-xs text-muted-foreground">
-            Chapter PDF sources are paused for now (WebNotee, platform, Nepal Enotes). The full catalog is still in the PDF Library.
+            No chapter-specific documents yet. General and full-syllabus references are in the PDF Library.
           </p>
         ) : (
           <ul className="grid gap-2 sm:grid-cols-2">
@@ -569,10 +569,10 @@ function TabPanel({
     return (
       <div className="space-y-4">
         {/* ⚠️ IMPORTANT — RETAINED CODE, NOT DEAD CODE (lib/stream-sources.ts).
-            All three sources (webnotee, platform, nepalenotes) are temporarily
-            DISABLED by owner request 2026-11-08, so `streamPdfs` is [] and
-            nothing renders. DO NOT remove this call or its imports — the
-            renderer is doc-count driven and will be switched back on later. */}
+            All three sources (webnotee, platform, nepalenotes) are LIVE and
+            streaming. Owner request 2026-11-08 hides ONLY the small source
+            badge. DO NOT remove this call or its imports — the renderer is
+            doc-count driven with no fixed two-block cap. */}
         <DirectStreamPdfBlocks pdfs={streamPdfs} />
         <RavikishanTopicResources
           classSlug={classSlug}

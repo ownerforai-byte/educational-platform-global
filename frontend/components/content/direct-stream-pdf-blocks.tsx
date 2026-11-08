@@ -2,10 +2,10 @@
  * ═══════════════════════════════════════════════════════════════════════════
  * ⚠️ IMPORTANT — RETAINED CODE, NOT DEAD CODE ⚠️  See lib/stream-sources.ts.
  * ═══════════════════════════════════════════════════════════════════════════
- * All three PDF sources (webnotee, platform, nepalenotes) are temporarily
- * DISABLED by owner request 2026-11-08, so `pdfs` is empty and this renderer
- * currently returns null. DO NOT delete this component, its call sites, or the
- * disabled branches — it will be switched back on in a later pass.
+ * All three PDF sources (webnotee, platform, nepalenotes) are LIVE. Owner
+ * request 2026-11-08 hides ONLY the small badge that says which source a note
+ * came from — see SHOW_SOURCE_BADGE. Streams and every source PDF keep working.
+ * DO NOT delete this component, its call sites, or the hidden badge branch.
  *
  * DOC-COUNT-DRIVEN: renders ONE large rectangular block per entry in `pdfs`.
  * There is deliberately NO fixed two-block limit built in here; the caller
@@ -20,6 +20,7 @@
 
 import { FileText, Radio } from "lucide-react";
 import { type ChapterStreamPdf } from "@/lib/chapter-resources";
+import { SHOW_SOURCE_BADGE } from "@/lib/stream-sources";
 
 export function DirectStreamPdfBlocks({
   pdfs,
@@ -28,9 +29,8 @@ export function DirectStreamPdfBlocks({
   pdfs: ChapterStreamPdf[];
   unitTitle?: string;
 }) {
-  // Sources are intentionally disabled for now (lib/stream-sources.ts), so
-  // getChapterStreamPdfs() hands us [] and nothing renders. Gating lives in the
-  // data layer on purpose — this component stays a pure, testable N-block view.
+  // All sources are live. This view is pure and doc-count driven: no streams
+  // for a chapter simply means that chapter has no documents filed to it.
   if (pdfs.length === 0) return null;
 
   return (
@@ -77,7 +77,9 @@ export function DirectStreamPdfBlocks({
             />
 
             <div className="flex flex-wrap items-center justify-between gap-2 border-t border-border/60 px-4 py-2 text-[11px] text-muted-foreground">
-              <span>{pdf.sourceLabel}</span>
+              {/* ⚠️ Only this source label is hidden for now (owner 2026-11-08).
+                  Retained markup — flip SHOW_SOURCE_BADGE to show it again. */}
+              {SHOW_SOURCE_BADGE ? <span>{pdf.sourceLabel}</span> : <span />}
               <span>Direct stream · read in place</span>
             </div>
           </div>

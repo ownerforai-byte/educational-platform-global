@@ -18,9 +18,9 @@ const makePdfs = (count: number): ChapterStreamPdf[] =>
 describe("DirectStreamPdfBlocks", () => {
   /**
    * IMPORTANT — owner request 2026-11-08: block count follows the real doc/PDF
-   * count for the chapter. There is deliberately NO fixed two-block cap.
-   * Sources are disabled right now, so this test feeds synthetic entries to
-   * prove the retained renderer still scales when they are switched back on.
+   * count for the chapter. There is deliberately NO fixed two-block cap. All
+   * three sources stay live; only the small source badge is hidden. Synthetic
+   * entries prove the renderer scales with the document count.
    */
   it.each([1, 2, 3, 5, 8])("renders one large stream block per document (%i docs)", (count) => {
     render(<DirectStreamPdfBlocks pdfs={makePdfs(count)} unitTitle="Kinematics" />);
@@ -38,6 +38,8 @@ describe("DirectStreamPdfBlocks", () => {
     expect(screen.getByText("Direct stream")).toBeInTheDocument();
     expect(screen.getByText(/no download/i)).toBeInTheDocument();
     expect(screen.getByText(new RegExp(`${count} streams?`))).toBeInTheDocument();
+    // Only the small source badge is hidden (SHOW_SOURCE_BADGE = false).
+    expect(screen.queryByText("Platform document")).toBeNull();
     expect(screen.queryByRole("button", { name: /download/i })).toBeNull();
     expect(screen.queryByRole("link", { name: /download/i })).toBeNull();
   });

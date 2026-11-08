@@ -33,6 +33,7 @@ import {
   downloadFileName,
   frameSrcFor,
 } from "@/lib/pdf-src";
+import { SHOW_SOURCE_BADGE } from "@/lib/stream-sources";
 
 export type ResourceItem = {
   id: string;
@@ -386,20 +387,28 @@ export default function ResourcesPage() {
                                 {/* Top badges: clean, non-redundant pro presentation */}
                                 <div className="flex items-center justify-between gap-2">
                                   <div className="min-w-0 flex-1 flex items-center gap-1.5 overflow-hidden">
-                                    <span
-                                      className={`inline-flex items-center gap-1.5 shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide uppercase ${
-                                        item.sourceType === "webnotee"
-                                          ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/25"
-                                          : "bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/25"
-                                      }`}
-                                    >
+                                    {/* ⚠️ IMPORTANT — ONLY this small source badge is
+                                        hidden for now (owner request 2026-11-08).
+                                        The markup is retained, the stream/iframe
+                                        below and every source PDF stay live.
+                                        Flip SHOW_SOURCE_BADGE in
+                                        lib/stream-sources.ts to bring it back. */}
+                                    {SHOW_SOURCE_BADGE && (
                                       <span
-                                        className={`h-1.5 w-1.5 rounded-full ${
-                                          item.sourceType === "webnotee" ? "bg-amber-500" : "bg-sky-500"
+                                        className={`inline-flex items-center gap-1.5 shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide uppercase ${
+                                          item.sourceType === "webnotee"
+                                            ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/25"
+                                            : "bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/25"
                                         }`}
-                                      />
-                                      {item.sourceType === "webnotee" ? "WebNotee" : "Platform"}
-                                    </span>
+                                      >
+                                        <span
+                                          className={`h-1.5 w-1.5 rounded-full ${
+                                            item.sourceType === "webnotee" ? "bg-amber-500" : "bg-sky-500"
+                                          }`}
+                                        />
+                                        {item.sourceType === "webnotee" ? "WebNotee" : "Platform"}
+                                      </span>
+                                    )}
                                     {item.exercise && (
                                       <span className="shrink-0 rounded-full bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/20 px-2 py-0.5 text-[10px] font-bold">
                                         {item.exercise}

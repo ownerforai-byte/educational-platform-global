@@ -2,15 +2,17 @@
  * ⚠️ IMPORTANT — RETAINED DATA, NOT DEAD CODE ⚠️
  *
  * Nepal Enotes (https://nepalenotes.com) chapter registry, scraped 2026-11-08.
- * Owner instruction: "keep both, dont remove webenotes ... disable those three
- * (webnotee, platform, nepalenote) for now ... later it will be added ... mark it
- * as important so an agent dont take it as dead".
+ * Owner instruction: "keep both, dont remove webenotes ... mark it as important
+ * so an agent dont take it as dead". Clarified 2026-11-08: ONLY the small source
+ * badge is hidden; all three sources (webnotee, platform, nepalenotes) stay
+ * LIVE and all PDFs keep streaming. See lib/stream-sources.ts.
  *
  * These 298 chapter records are REAL chapter pages under
  * nepalenotes -> science -> class 11 / 12 -> the six platform subjects.
  * `driveIds` holds confirmed Google Drive /preview PDF IDs; an empty array means
  * the PDF still has to be collected in the later pass. DO NOT DELETE this file
- * or prune "unused" entries: it is intentionally inactive, pending re-enable.
+ * or prune "unused" entries: the remaining PDFs and the chapter->unit mapping
+ * are the next pass, not dead data.
  */
 
 export type NepalEnotesChapter = {

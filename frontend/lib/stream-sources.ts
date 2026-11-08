@@ -1,61 +1,60 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * ⚠️ IMPORTANT — INTENTIONALLY DISABLED, NOT DEAD CODE ⚠️
+ * ⚠️ IMPORTANT — RETAINED DATA, NOT DEAD CODE ⚠️
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Owner instruction, 2026-11-08:
- *   "keep both, dont remove webenotes ... disable those three (webnotee,
- *    platform, nepalenote) for now ... later it will be added and mark it as
- *    important so a agent dont take it as dead."
+ * Owner instruction, 2026-11-08 (clarified):
+ *   "i didnt mean to disable them but just that small box which shows this
+ *    notes belongs to which (like platform, webnotee, nepalenotes) ... so just
+ *    that small box which shows the source is to be disabled for now nothing
+ *    more - keep rest all (stream, all source pdf working)".
  *
- * All three direct-stream PDF sources are OFF. This is a TEMPORARY pause, not
- * a removal. The data, the chapter classification, the renderer and both call
- * sites are all live code that will be switched back on in a later pass.
+ * ALL THREE PDF SOURCES ARE LIVE. Only the small source-labelling badge is
+ * hidden (SHOW_SOURCE_BADGE = false). Streams, all source PDFs, the chapter
+ * classification and the doc-count-driven renderer all keep working.
  *
  * DO NOT:
- *   - delete lib/docs-catalog.ts (platform) or lib/webnotee-catalog.ts,
- *   - delete lib/nepalenotes-streams.ts (298 scraped chapter records),
+ *   - disable or delete any of the three sources below,
+ *   - delete lib/docs-catalog.ts, lib/webnotee-catalog.ts or
+ *     lib/nepalenotes-streams.ts (298 scraped chapter records),
  *   - delete lib/chapter-resources.ts or direct-stream-pdf-blocks.tsx,
- *   - "clean up" the disabled branches, the flag checks or the guard tests,
- *   - prune entries whose driveIds are still empty (PDFs are pending).
+ *   - "clean up" the badge branches that are currently hidden,
+ *   - prune nepalenotes entries whose driveIds are still empty (PDFs pending).
  *
- * TO RE-ENABLE: flip `enabled` to true on the source(s) below. Nothing else
- * needs to change — getChapterStreamPdfs() and the renderer are already
- * doc-count driven, with no fixed two-block cap.
- *
- * Every agent MUST obey this rule. No exceptions.
+ * The badge is only HIDDEN, not removed — flip SHOW_SOURCE_BADGE to true to
+ * bring it back. Every agent MUST obey this rule. No exceptions.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 export type StreamSourceId = "webnotee" | "platform" | "nepalenotes";
 
 export type StreamSourceFlag = {
-  /** false = source is hidden everywhere but its data is retained. */
+  /** true = this source's PDFs stream normally. Must stay true. */
   enabled: boolean;
   label: string;
-  /** Where the data lives, for the agent doing the later re-enable pass. */
+  /** Where the data lives, for the agent doing the later NepalEnotes pass. */
   registry: string;
   note: string;
 };
 
 export const STREAM_SOURCES: Readonly<Record<StreamSourceId, StreamSourceFlag>> = {
   webnotee: {
-    enabled: false,
+    enabled: true,
     label: "WebNotee / Google Drive",
     registry: "lib/webnotee-catalog.ts",
     note: "64 Drive /preview exercise PDFs + 5 HTML articles, classified to chapters in lib/chapter-resources.ts.",
   },
   platform: {
-    enabled: false,
+    enabled: true,
     label: "Platform documents",
     registry: "lib/docs-catalog.ts",
     note: "Local /pdfs and /materials PDFs and HTML hubs, classified to chapters in lib/chapter-resources.ts.",
   },
   nepalenotes: {
-    enabled: false,
+    enabled: true,
     label: "Nepal Enotes chapter PDFs",
     registry: "lib/nepalenotes-streams.ts",
-    note: "298 scraped nepalenotes.com chapter pages (science -> class 11/12 -> 6 subjects); 37 confirmed Drive PDF IDs so far. Remaining IDs are pending collection. Verified frameable: Drive /preview returns 200 with no X-Frame-Options and the live CSP already allows drive.google.com.",
+    note: "298 scraped nepalenotes.com chapter pages (science -> class 11/12 -> 6 subjects); 37 confirmed Drive PDF IDs so far. Remaining IDs and the chapter->unit mapping are pending the later pass. Verified frameable: Drive /preview returns 200 with no X-Frame-Options and the live CSP already allows drive.google.com.",
   },
 };
 
@@ -65,5 +64,13 @@ export function isStreamSourceEnabled(source: StreamSourceId): boolean {
   return STREAM_SOURCES[source].enabled;
 }
 
-/** True once ANY source is switched back on. */
+/** True while any source is live. All three are live. */
 export const DIRECT_STREAM_ENABLED = STREAM_SOURCE_IDS.some(isStreamSourceEnabled);
+
+/**
+ * ⚠️ THE ONLY THING THAT IS "DISABLED": the small badge telling the reader
+ * which source a note came from (Platform / WebNotee / NepalEnotes). Hidden
+ * for now by owner request — the badge markup is retained, just not rendered.
+ * Nothing else is disabled. Flip to true to show it again.
+ */
+export const SHOW_SOURCE_BADGE = false;

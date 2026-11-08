@@ -2,10 +2,10 @@
  * ═══════════════════════════════════════════════════════════════════════════
  * ⚠️ IMPORTANT — RETAINED CODE, NOT DEAD CODE ⚠️  See lib/stream-sources.ts.
  * ═══════════════════════════════════════════════════════════════════════════
- * All three stream sources (webnotee, platform, nepalenotes) are currently
- * DISABLED by owner request 2026-11-08. This registry, the classification
- * tables below, the renderer and both call sites are deliberately kept intact
- * and will be switched back on later. DO NOT delete or "clean up" any of it.
+ * All three stream sources (webnotee, platform, nepalenotes) are LIVE. Owner
+ * request 2026-11-08 hides ONLY the small source-identification badge; every
+ * stream and every source PDF keeps working. This registry, the classification
+ * tables, the renderer and both call sites must NOT be deleted or "cleaned up".
  *
  * CHAPTER-SCOPED RESOURCE REGISTRY — build once, render everywhere.
  *
@@ -21,8 +21,8 @@
  * a chapter with 0 renders none.
  *
  * To add a PDF later, add one line to DOC_LOCATIONS, WEBNOTEE_LOCATIONS or the
- * NepalEnotes registry — no page or tab needs to change. Then flip the source
- * flag in lib/stream-sources.ts.
+ * NepalEnotes registry — no page or tab needs to change. Keep the source flags
+ * in lib/stream-sources.ts set to true.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -197,11 +197,11 @@ function subjectMatches(subject: Subject, subjectSlug: string): boolean {
 type PoolEntry = ChapterStreamPdf & { subject: Subject; unitId: string | null };
 
 /**
- * ⚠️ IMPORTANT — all three sources are currently DISABLED (lib/stream-sources.ts).
- * When a source is re-enabled its documents flow through here again. The
- * NepalEnotes registry is intentionally NOT wired into the pool yet: mapping
- * its 298 chapter slugs to syllabus unit ids is the "later pass" the owner
- * asked for. Its data is preserved and exposed via nepalenotesRecordsFor().
+ * ⚠️ IMPORTANT — all three sources are LIVE (lib/stream-sources.ts). Only the
+ * small source badge is hidden; nothing here is disabled. The NepalEnotes
+ * registry is intentionally NOT wired into the pool yet: mapping its 298
+ * chapter slugs to syllabus unit ids is the "later pass" the owner asked for.
+ * Its data is preserved and exposed via nepalenotesRecordsFor().
  */
 function streamPool(): PoolEntry[] {
   const entries: PoolEntry[] = [];
@@ -243,7 +243,7 @@ function streamPool(): PoolEntry[] {
 /**
  * Documents that belong to THIS chapter only. General references and docs
  * filed under a different unit never appear here. Each catalog is gated by its
- * (currently disabled) source flag so the data is retained but not shown.
+ * source flag (all currently live) so a source can be paused without deletion.
  */
 export function getChapterDocs(
   classSlug: string,
@@ -293,10 +293,8 @@ export function getChapterDocs(
  * DOC-COUNT-DRIVEN: one Direct Stream block per document filed under this
  * chapter, with NO fixed two-block cap and NO subject-reference padding.
  * A chapter with 5 PDFs renders 5 blocks; a chapter with 0 renders none.
- *
- * While all three sources are disabled this returns [] everywhere, which is
- * the owner's requested "not showing" state — the renderer and both call
- * sites stay in place for the later re-enable pass.
+ * All three sources are live; the only hidden element is the small source
+ * badge (SHOW_SOURCE_BADGE), which does not affect this function.
  */
 export function getChapterStreamPdfs(
   classSlug: string,
