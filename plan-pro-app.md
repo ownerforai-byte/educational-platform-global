@@ -192,9 +192,15 @@ re-verdict → earn placement back.
 
 ## Part E — Verdict table (filled by Phase P0)
 
-| Surface | Verdict | Decision | Evidence |
-|---|---|---|---|
-| (to be filled by P0) | | | |
+Render-audit queue (top 25 by navigation prominence, `scripts/pro-surface-audit.mjs --top 25`).
+Auth note: only `/home`, `/plans`, `/onboarding` are public inside the shell; gated
+surfaces are audited by render tests with a mocked approved session (repeatable in CI).
+
+| # | Surface | Verdict | Decision | Evidence |
+|---|---|---|---|---|
+| 1 | `/ai` (AI Studio) | **acceptable** | polish | Measured 2026-11-09: 53-line page + 376-line directory, a11y-correct filter tabs (`aria-pressed`, labelled group), proper locked-card state (grayscale + `aria-disabled` + tier label), focus rings present, 3 render tests. **Must-fix honesty violation:** fabricated `users: "580"`-style counts displayed on tool cards — no analytics source exists (plan Phase 8 pending); social proof invented. Also: ad-hoc icon palettes (`bg-orange-100…`) instead of the canonical `lib/ui/subject-visuals.ts` identity. Decision: remove fabricated counts (or wire real data), align icon colors with the token system, then re-verdict. |
+| 2 | `/home` (tier feed + guest home) | **acceptable** | keep | Measured 2026-11-09: 18-line page delegating to `TierHomeRouter` — first-paint tier resolution with documented cold-start fix (guest renders instantly, signed-in splash), semantic sections (`aria-labelledby`), min-h-11 touch targets, focus rings, honest access notice, visitor chat. 5 tier-surface render tests + rail tests. Polish candidate (non-blocking): brand the hydration splash instead of a bare spinner. |
+| 3 | `/lab` vs `/lab/3d` (two lab hubs) | **redundancy found** | merge-spec in W6 | Measured 2026-11-09: `/lab` = 694-line legacy hub, 30+ lazy rig imports, hand-maintained section cards (87 title strings); `/lab/3d` = 387-line manifest-derived hub (Phase 3 of the 3D plan), syllabus-ordered units, no fake slugs. Same job, two implementations — the exact pattern the 3D-system plan exists to remove. `/lab` also hosts the calculator dashboard `/lab/3d` deliberately excludes. Decision: W6 workstream writes the consolidation spec (canonical `/lab/3d` + `/lab` as calculators/practicals dashboard or a redirect); until then both stay live, no deep link breaks. |
 
 ---
 

@@ -1,0 +1,3875 @@
+{
+  "note": "Phase P0 machine pass (plan-pro-app.md). Signals only — human verdicts land in plan-pro-app.md Part E.",
+  "generatedAt": "2026-11-09T14:01:47.673Z",
+  "summary": {
+    "total": 275,
+    "byDomain": {
+      "home": 6,
+      "system": 10,
+      "public": 11,
+      "progress": 17,
+      "platform": 47,
+      "ai": 19,
+      "practice": 21,
+      "community": 7,
+      "learning-core": 128,
+      "lab-3d": 9
+    },
+    "byVerdict": {
+      "review": 266,
+      "redirect": 9
+    }
+  },
+  "routes": [
+    {
+      "route": "/",
+      "domain": "home",
+      "file": "frontend/app/page.tsx",
+      "signals": {
+        "lines": 18,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/400",
+      "domain": "system",
+      "file": "frontend/app/(errors)/400/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/401",
+      "domain": "system",
+      "file": "frontend/app/(errors)/401/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/403",
+      "domain": "system",
+      "file": "frontend/app/(errors)/403/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/404",
+      "domain": "system",
+      "file": "frontend/app/(errors)/404/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/408",
+      "domain": "system",
+      "file": "frontend/app/(errors)/408/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/429",
+      "domain": "system",
+      "file": "frontend/app/(errors)/429/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/500",
+      "domain": "system",
+      "file": "frontend/app/(errors)/500/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/502",
+      "domain": "system",
+      "file": "frontend/app/(errors)/502/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/503",
+      "domain": "system",
+      "file": "frontend/app/(errors)/503/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/504",
+      "domain": "system",
+      "file": "frontend/app/(errors)/504/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/about",
+      "domain": "public",
+      "file": "frontend/app/about/page.tsx",
+      "signals": {
+        "lines": 21,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/achievements",
+      "domain": "progress",
+      "file": "frontend/app/(app)/achievements/page.tsx",
+      "signals": {
+        "lines": 302,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/ad-p-table",
+      "domain": "public",
+      "file": "frontend/app/(app)/ad-p-table/page.tsx",
+      "signals": {
+        "lines": 16,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/admin",
+      "domain": "platform",
+      "file": "frontend/app/admin/page.tsx",
+      "signals": {
+        "lines": 10,
+        "stub": false,
+        "redirect": true,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "redirect"
+    },
+    {
+      "route": "/ai",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai/page.tsx",
+      "signals": {
+        "lines": 54,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/ai-quiz",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai-quiz/page.tsx",
+      "signals": {
+        "lines": 45,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/ai-quiz/history",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai-quiz/history/page.tsx",
+      "signals": {
+        "lines": 454,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/ai/chat",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai/chat/page.tsx",
+      "signals": {
+        "lines": 11,
+        "stub": false,
+        "redirect": true,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "redirect"
+    },
+    {
+      "route": "/ai/deep-dive",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai/deep-dive/page.tsx",
+      "signals": {
+        "lines": 412,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/ai/diagrams",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai/diagrams/page.tsx",
+      "signals": {
+        "lines": 13,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/ai/history",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai/history/page.tsx",
+      "signals": {
+        "lines": 58,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/ai/math",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai/math/page.tsx",
+      "signals": {
+        "lines": 377,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/ai/quiz",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai/quiz/page.tsx",
+      "signals": {
+        "lines": 12,
+        "stub": false,
+        "redirect": true,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "redirect"
+    },
+    {
+      "route": "/ai/search",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai/search/page.tsx",
+      "signals": {
+        "lines": 25,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/ai/subjects",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai/subjects/page.tsx",
+      "signals": {
+        "lines": 71,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/ai/subjects/[subject]",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai/subjects/[subject]/page.tsx",
+      "signals": {
+        "lines": 45,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/ai/tutor",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai/tutor/page.tsx",
+      "signals": {
+        "lines": 77,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/ai/workspace",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ai/workspace/page.tsx",
+      "signals": {
+        "lines": 13,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/analytics",
+      "domain": "practice",
+      "file": "frontend/app/(app)/analytics/page.tsx",
+      "signals": {
+        "lines": 13,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/announcements",
+      "domain": "community",
+      "file": "frontend/app/(app)/announcements/page.tsx",
+      "signals": {
+        "lines": 85,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/ask",
+      "domain": "ai",
+      "file": "frontend/app/(app)/ask/page.tsx",
+      "signals": {
+        "lines": 17,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/auth/callback",
+      "domain": "platform",
+      "file": "frontend/app/auth/callback/page.tsx",
+      "signals": {
+        "lines": 180,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/billing",
+      "domain": "platform",
+      "file": "frontend/app/(app)/billing/page.tsx",
+      "signals": {
+        "lines": 12,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/blog",
+      "domain": "public",
+      "file": "frontend/app/blog/page.tsx",
+      "signals": {
+        "lines": 12,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/blog/[slug]",
+      "domain": "public",
+      "file": "frontend/app/blog/[slug]/page.tsx",
+      "signals": {
+        "lines": 24,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/bookmarks",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/bookmarks/page.tsx",
+      "signals": {
+        "lines": 146,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/certificates",
+      "domain": "progress",
+      "file": "frontend/app/(app)/certificates/page.tsx",
+      "signals": {
+        "lines": 37,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/changelog",
+      "domain": "platform",
+      "file": "frontend/app/(app)/changelog/page.tsx",
+      "signals": {
+        "lines": 124,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/chat",
+      "domain": "ai",
+      "file": "frontend/app/(app)/chat/page.tsx",
+      "signals": {
+        "lines": 41,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/chat/grammar",
+      "domain": "ai",
+      "file": "frontend/app/(app)/chat/grammar/page.tsx",
+      "signals": {
+        "lines": 22,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/chat/nepali",
+      "domain": "ai",
+      "file": "frontend/app/(app)/chat/nepali/page.tsx",
+      "signals": {
+        "lines": 22,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11/page.tsx",
+      "signals": {
+        "lines": 297,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/[subject]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/[subject]/page.tsx",
+      "signals": {
+        "lines": 25,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/[subject]/[unit]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/[subject]/[unit]/page.tsx",
+      "signals": {
+        "lines": 23,
+        "stub": false,
+        "redirect": true,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "redirect"
+    },
+    {
+      "route": "/class-11-notes/[subject]/chapters",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/[subject]/chapters/page.tsx",
+      "signals": {
+        "lines": 38,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/[subject]/chapters/[unit]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/[subject]/chapters/[unit]/page.tsx",
+      "signals": {
+        "lines": 42,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/[subject]/chapters/[unit]/topics/[topicSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/[subject]/chapters/[unit]/topics/[topicSlug]/page.tsx",
+      "signals": {
+        "lines": 42,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/[subject]/chapters/[unit]/topics/[topicSlug]/exercises",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/[subject]/chapters/[unit]/topics/[topicSlug]/exercises/page.tsx",
+      "signals": {
+        "lines": 37,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/[subject]/chapters/[unit]/topics/[topicSlug]/exercises/[exerciseType]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/[subject]/chapters/[unit]/topics/[topicSlug]/exercises/[exerciseType]/page.tsx",
+      "signals": {
+        "lines": 46,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/[subject]/chapters/[unit]/topics/[topicSlug]/pro",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/[subject]/chapters/[unit]/topics/[topicSlug]/pro/page.tsx",
+      "signals": {
+        "lines": 35,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/[subject]/formulas",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/[subject]/formulas/page.tsx",
+      "signals": {
+        "lines": 11,
+        "stub": false,
+        "redirect": true,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "redirect"
+    },
+    {
+      "route": "/class-11-notes/[subject]/mindmap",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/[subject]/mindmap/page.tsx",
+      "signals": {
+        "lines": 58,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/[subject]/pyqs",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/[subject]/pyqs/page.tsx",
+      "signals": {
+        "lines": 102,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/[subject]/syllabus",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/[subject]/syllabus/page.tsx",
+      "signals": {
+        "lines": 41,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/[subject]/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/[subject]/theory/page.tsx",
+      "signals": {
+        "lines": 23,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/biology",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/biology/page.tsx",
+      "signals": {
+        "lines": 11,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/biology/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/biology/theory/page.tsx",
+      "signals": {
+        "lines": 6,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/chemistry",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/chemistry/page.tsx",
+      "signals": {
+        "lines": 11,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/chemistry/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/chemistry/theory/page.tsx",
+      "signals": {
+        "lines": 6,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/english",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/english/page.tsx",
+      "signals": {
+        "lines": 11,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/english/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/english/theory/page.tsx",
+      "signals": {
+        "lines": 6,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/mathematics",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/mathematics/page.tsx",
+      "signals": {
+        "lines": 11,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/mathematics/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/mathematics/theory/page.tsx",
+      "signals": {
+        "lines": 21,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/nepali",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/nepali/page.tsx",
+      "signals": {
+        "lines": 11,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/nepali/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/nepali/theory/page.tsx",
+      "signals": {
+        "lines": 6,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/physics",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/physics/page.tsx",
+      "signals": {
+        "lines": 11,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-11-notes/physics/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-11-notes/physics/theory/page.tsx",
+      "signals": {
+        "lines": 6,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12/page.tsx",
+      "signals": {
+        "lines": 297,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/[subject]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/[subject]/page.tsx",
+      "signals": {
+        "lines": 25,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/[subject]/[unit]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/[subject]/[unit]/page.tsx",
+      "signals": {
+        "lines": 18,
+        "stub": false,
+        "redirect": true,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "redirect"
+    },
+    {
+      "route": "/class-12-notes/[subject]/chapters",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/[subject]/chapters/page.tsx",
+      "signals": {
+        "lines": 38,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/[subject]/chapters/[unit]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/[subject]/chapters/[unit]/page.tsx",
+      "signals": {
+        "lines": 42,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/[subject]/chapters/[unit]/topics/[topicSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/[subject]/chapters/[unit]/topics/[topicSlug]/page.tsx",
+      "signals": {
+        "lines": 42,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/[subject]/chapters/[unit]/topics/[topicSlug]/exercises",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/[subject]/chapters/[unit]/topics/[topicSlug]/exercises/page.tsx",
+      "signals": {
+        "lines": 37,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/[subject]/chapters/[unit]/topics/[topicSlug]/exercises/[exerciseType]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/[subject]/chapters/[unit]/topics/[topicSlug]/exercises/[exerciseType]/page.tsx",
+      "signals": {
+        "lines": 46,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/[subject]/chapters/[unit]/topics/[topicSlug]/pro",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/[subject]/chapters/[unit]/topics/[topicSlug]/pro/page.tsx",
+      "signals": {
+        "lines": 35,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/[subject]/formulas",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/[subject]/formulas/page.tsx",
+      "signals": {
+        "lines": 11,
+        "stub": false,
+        "redirect": true,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "redirect"
+    },
+    {
+      "route": "/class-12-notes/[subject]/mindmap",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/[subject]/mindmap/page.tsx",
+      "signals": {
+        "lines": 58,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/[subject]/pyqs",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/[subject]/pyqs/page.tsx",
+      "signals": {
+        "lines": 102,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/[subject]/syllabus",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/[subject]/syllabus/page.tsx",
+      "signals": {
+        "lines": 41,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/[subject]/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/[subject]/theory/page.tsx",
+      "signals": {
+        "lines": 23,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/biology",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/biology/page.tsx",
+      "signals": {
+        "lines": 10,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/biology/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/biology/theory/page.tsx",
+      "signals": {
+        "lines": 7,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/chemistry",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/chemistry/page.tsx",
+      "signals": {
+        "lines": 10,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/chemistry/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/chemistry/theory/page.tsx",
+      "signals": {
+        "lines": 7,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/english",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/english/page.tsx",
+      "signals": {
+        "lines": 10,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/english/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/english/theory/page.tsx",
+      "signals": {
+        "lines": 7,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/mathematics",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/mathematics/page.tsx",
+      "signals": {
+        "lines": 10,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/mathematics/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/mathematics/theory/page.tsx",
+      "signals": {
+        "lines": 7,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/nepali",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/nepali/page.tsx",
+      "signals": {
+        "lines": 10,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/nepali/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/nepali/theory/page.tsx",
+      "signals": {
+        "lines": 7,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/physics",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/physics/page.tsx",
+      "signals": {
+        "lines": 10,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/class-12-notes/physics/theory",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/class-12-notes/physics/theory/page.tsx",
+      "signals": {
+        "lines": 7,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/community",
+      "domain": "community",
+      "file": "frontend/app/(app)/community/page.tsx",
+      "signals": {
+        "lines": 12,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/community/[id]",
+      "domain": "community",
+      "file": "frontend/app/(app)/community/[id]/page.tsx",
+      "signals": {
+        "lines": 24,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/community/[id]/[threadId]",
+      "domain": "community",
+      "file": "frontend/app/(app)/community/[id]/[threadId]/page.tsx",
+      "signals": {
+        "lines": 53,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/contact",
+      "domain": "public",
+      "file": "frontend/app/contact/page.tsx",
+      "signals": {
+        "lines": 17,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/controller",
+      "domain": "platform",
+      "file": "frontend/app/(app)/controller/page.tsx",
+      "signals": {
+        "lines": 235,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/credits",
+      "domain": "platform",
+      "file": "frontend/app/(app)/credits/page.tsx",
+      "signals": {
+        "lines": 357,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/dashboard",
+      "domain": "progress",
+      "file": "frontend/app/(app)/dashboard/page.tsx",
+      "signals": {
+        "lines": 13,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/derivations",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/derivations/page.tsx",
+      "signals": {
+        "lines": 28,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/derivations/[classSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/derivations/[classSlug]/page.tsx",
+      "signals": {
+        "lines": 98,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/derivations/[classSlug]/[subjectSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/derivations/[classSlug]/[subjectSlug]/page.tsx",
+      "signals": {
+        "lines": 206,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/derivations/[classSlug]/[subjectSlug]/[topicSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/derivations/[classSlug]/[subjectSlug]/[topicSlug]/page.tsx",
+      "signals": {
+        "lines": 239,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/downloads",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/downloads/page.tsx",
+      "signals": {
+        "lines": 12,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/exam-countdown",
+      "domain": "practice",
+      "file": "frontend/app/(app)/exam-countdown/page.tsx",
+      "signals": {
+        "lines": 391,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/exams",
+      "domain": "practice",
+      "file": "frontend/app/(app)/exams/page.tsx",
+      "signals": {
+        "lines": 71,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/exams/cee",
+      "domain": "practice",
+      "file": "frontend/app/(app)/exams/cee/page.tsx",
+      "signals": {
+        "lines": 94,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/exams/cee/[subject]/model-questions",
+      "domain": "practice",
+      "file": "frontend/app/(app)/exams/cee/[subject]/model-questions/page.tsx",
+      "signals": {
+        "lines": 53,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/exams/ioe",
+      "domain": "practice",
+      "file": "frontend/app/(app)/exams/ioe/page.tsx",
+      "signals": {
+        "lines": 112,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/exams/ioe/[subject]/model-questions",
+      "domain": "practice",
+      "file": "frontend/app/(app)/exams/ioe/[subject]/model-questions/page.tsx",
+      "signals": {
+        "lines": 53,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/exams/neb",
+      "domain": "practice",
+      "file": "frontend/app/(app)/exams/neb/page.tsx",
+      "signals": {
+        "lines": 76,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/exams/neb/[subject]/model-questions",
+      "domain": "practice",
+      "file": "frontend/app/(app)/exams/neb/[subject]/model-questions/page.tsx",
+      "signals": {
+        "lines": 103,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/features",
+      "domain": "public",
+      "file": "frontend/app/features/page.tsx",
+      "signals": {
+        "lines": 97,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/feedback",
+      "domain": "community",
+      "file": "frontend/app/(app)/feedback/page.tsx",
+      "signals": {
+        "lines": 93,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/forgot-password",
+      "domain": "platform",
+      "file": "frontend/app/forgot-password/page.tsx",
+      "signals": {
+        "lines": 21,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/formulas",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/formulas/page.tsx",
+      "signals": {
+        "lines": 126,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/formulas/[subject]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/formulas/[subject]/page.tsx",
+      "signals": {
+        "lines": 205,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/formulas/[subject]/[unit]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/formulas/[subject]/[unit]/page.tsx",
+      "signals": {
+        "lines": 199,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/goals",
+      "domain": "progress",
+      "file": "frontend/app/(app)/goals/page.tsx",
+      "signals": {
+        "lines": 174,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/graphs",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/graphs/page.tsx",
+      "signals": {
+        "lines": 124,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/graphs/[slug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/graphs/[slug]/page.tsx",
+      "signals": {
+        "lines": 33,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/help",
+      "domain": "platform",
+      "file": "frontend/app/help/page.tsx",
+      "signals": {
+        "lines": 15,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/help/[articleSlug]",
+      "domain": "platform",
+      "file": "frontend/app/help/[articleSlug]/page.tsx",
+      "signals": {
+        "lines": 155,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/home",
+      "domain": "home",
+      "file": "frontend/app/(app)/home/page.tsx",
+      "signals": {
+        "lines": 19,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/home/member",
+      "domain": "home",
+      "file": "frontend/app/(app)/home/member/page.tsx",
+      "signals": {
+        "lines": 18,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/home/owner",
+      "domain": "home",
+      "file": "frontend/app/(app)/home/owner/page.tsx",
+      "signals": {
+        "lines": 18,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/home/plus",
+      "domain": "home",
+      "file": "frontend/app/(app)/home/plus/page.tsx",
+      "signals": {
+        "lines": 18,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/home/pro",
+      "domain": "home",
+      "file": "frontend/app/(app)/home/pro/page.tsx",
+      "signals": {
+        "lines": 18,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/how-it-works",
+      "domain": "public",
+      "file": "frontend/app/how-it-works/page.tsx",
+      "signals": {
+        "lines": 18,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/journal",
+      "domain": "progress",
+      "file": "frontend/app/(app)/journal/page.tsx",
+      "signals": {
+        "lines": 214,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/knowledge",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/knowledge/page.tsx",
+      "signals": {
+        "lines": 120,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/knowledge/analytical-geometry",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/knowledge/analytical-geometry/page.tsx",
+      "signals": {
+        "lines": 49,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/knowledge/biology-diagrams",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/knowledge/biology-diagrams/page.tsx",
+      "signals": {
+        "lines": 141,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/knowledge/byakaran",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/knowledge/byakaran/page.tsx",
+      "signals": {
+        "lines": 157,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/knowledge/grammar",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/knowledge/grammar/page.tsx",
+      "signals": {
+        "lines": 204,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/knowledge/numerical-chemistry",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/knowledge/numerical-chemistry/page.tsx",
+      "signals": {
+        "lines": 144,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/knowledge/numerical-physics",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/knowledge/numerical-physics/page.tsx",
+      "signals": {
+        "lines": 179,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/knowledge/pro",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/knowledge/pro/page.tsx",
+      "signals": {
+        "lines": 131,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/knowledge/pro/[section]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/knowledge/pro/[section]/page.tsx",
+      "signals": {
+        "lines": 24,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/knowledge/pro/[section]/[chapter]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/knowledge/pro/[section]/[chapter]/page.tsx",
+      "signals": {
+        "lines": 38,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/knowledge/pro/[section]/[chapter]/[kind]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/knowledge/pro/[section]/[chapter]/[kind]/page.tsx",
+      "signals": {
+        "lines": 42,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/knowledge/writing",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/knowledge/writing/page.tsx",
+      "signals": {
+        "lines": 262,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/lab",
+      "domain": "lab-3d",
+      "file": "frontend/app/(app)/lab/page.tsx",
+      "signals": {
+        "lines": 695,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/lab/[labId]",
+      "domain": "lab-3d",
+      "file": "frontend/app/(app)/lab/[labId]/page.tsx",
+      "signals": {
+        "lines": 327,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/lab/[labId]/ch-3d-periodic",
+      "domain": "lab-3d",
+      "file": "frontend/app/(app)/lab/[labId]/ch-3d-periodic/page.tsx",
+      "signals": {
+        "lines": 12,
+        "stub": false,
+        "redirect": true,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "redirect"
+    },
+    {
+      "route": "/lab/3d",
+      "domain": "lab-3d",
+      "file": "frontend/app/(app)/lab/3d/page.tsx",
+      "signals": {
+        "lines": 388,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/lab/3d/chapter/[chapterId]",
+      "domain": "lab-3d",
+      "file": "frontend/app/(app)/lab/3d/chapter/[chapterId]/page.tsx",
+      "signals": {
+        "lines": 56,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/lab/3d/topic/[topicId]",
+      "domain": "lab-3d",
+      "file": "frontend/app/(app)/lab/3d/topic/[topicId]/page.tsx",
+      "signals": {
+        "lines": 58,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/lab/bio-3d-organelles",
+      "domain": "lab-3d",
+      "file": "frontend/app/(app)/lab/bio-3d-organelles/page.tsx",
+      "signals": {
+        "lines": 37,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/lab/theory",
+      "domain": "lab-3d",
+      "file": "frontend/app/(app)/lab/theory/page.tsx",
+      "signals": {
+        "lines": 180,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/leaderboard",
+      "domain": "practice",
+      "file": "frontend/app/(app)/leaderboard/page.tsx",
+      "signals": {
+        "lines": 517,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/legal/attribution",
+      "domain": "platform",
+      "file": "frontend/app/legal/attribution/page.tsx",
+      "signals": {
+        "lines": 110,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/legal/content-rating",
+      "domain": "platform",
+      "file": "frontend/app/legal/content-rating/page.tsx",
+      "signals": {
+        "lines": 55,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/legal/cookies",
+      "domain": "platform",
+      "file": "frontend/app/legal/cookies/page.tsx",
+      "signals": {
+        "lines": 85,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/legal/data-safety",
+      "domain": "platform",
+      "file": "frontend/app/legal/data-safety/page.tsx",
+      "signals": {
+        "lines": 77,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/legal/privacy",
+      "domain": "platform",
+      "file": "frontend/app/legal/privacy/page.tsx",
+      "signals": {
+        "lines": 164,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/legal/purchases",
+      "domain": "platform",
+      "file": "frontend/app/legal/purchases/page.tsx",
+      "signals": {
+        "lines": 93,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/legal/takedown",
+      "domain": "platform",
+      "file": "frontend/app/legal/takedown/page.tsx",
+      "signals": {
+        "lines": 94,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/legal/terms",
+      "domain": "platform",
+      "file": "frontend/app/legal/terms/page.tsx",
+      "signals": {
+        "lines": 153,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/legend",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/legend/page.tsx",
+      "signals": {
+        "lines": 125,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/legend/[classSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/legend/[classSlug]/page.tsx",
+      "signals": {
+        "lines": 101,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/legend/[classSlug]/[subjectSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/legend/[classSlug]/[subjectSlug]/page.tsx",
+      "signals": {
+        "lines": 349,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/legend/[classSlug]/[subjectSlug]/[unitId]/[topicSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/legend/[classSlug]/[subjectSlug]/[unitId]/[topicSlug]/page.tsx",
+      "signals": {
+        "lines": 274,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/lessons",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/lessons/page.tsx",
+      "signals": {
+        "lines": 367,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/lessons/[slug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/lessons/[slug]/page.tsx",
+      "signals": {
+        "lines": 213,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/levels",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/levels/page.tsx",
+      "signals": {
+        "lines": 612,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/levels/[levelSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/levels/[levelSlug]/page.tsx",
+      "signals": {
+        "lines": 234,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/levels/[levelSlug]/classes/[classSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/levels/[levelSlug]/classes/[classSlug]/page.tsx",
+      "signals": {
+        "lines": 116,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/levels/[levelSlug]/classes/[classSlug]/subjects/[subjectSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/levels/[levelSlug]/classes/[classSlug]/subjects/[subjectSlug]/page.tsx",
+      "signals": {
+        "lines": 146,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/levels/[levelSlug]/classes/[classSlug]/subjects/[subjectSlug]/chapters/[chapterSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/levels/[levelSlug]/classes/[classSlug]/subjects/[subjectSlug]/chapters/[chapterSlug]/page.tsx",
+      "signals": {
+        "lines": 128,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/levels/[levelSlug]/classes/[classSlug]/subjects/[subjectSlug]/chapters/[chapterSlug]/topics/[topicSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/levels/[levelSlug]/classes/[classSlug]/subjects/[subjectSlug]/chapters/[chapterSlug]/topics/[topicSlug]/page.tsx",
+      "signals": {
+        "lines": 143,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/levels/[levelSlug]/classes/[classSlug]/subjects/[subjectSlug]/chapters/[chapterSlug]/topics/[topicSlug]/resources/[resourceId]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/levels/[levelSlug]/classes/[classSlug]/subjects/[subjectSlug]/chapters/[chapterSlug]/topics/[topicSlug]/resources/[resourceId]/page.tsx",
+      "signals": {
+        "lines": 109,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/login",
+      "domain": "platform",
+      "file": "frontend/app/login/page.tsx",
+      "signals": {
+        "lines": 24,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/loksewa",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/loksewa/page.tsx",
+      "signals": {
+        "lines": 61,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/loksewa/environment",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/loksewa/environment/page.tsx",
+      "signals": {
+        "lines": 12,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/loksewa/geography-of-nepal",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/loksewa/geography-of-nepal/page.tsx",
+      "signals": {
+        "lines": 16,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/loksewa/history",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/loksewa/history/page.tsx",
+      "signals": {
+        "lines": 12,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/mind-studio",
+      "domain": "ai",
+      "file": "frontend/app/(app)/mind-studio/page.tsx",
+      "signals": {
+        "lines": 30,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/mindmap",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/mindmap/page.tsx",
+      "signals": {
+        "lines": 318,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/mock-exams",
+      "domain": "practice",
+      "file": "frontend/app/(app)/mock-exams/page.tsx",
+      "signals": {
+        "lines": 13,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/my-notes",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/my-notes/page.tsx",
+      "signals": {
+        "lines": 12,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/neb-updates",
+      "domain": "public",
+      "file": "frontend/app/neb-updates/page.tsx",
+      "signals": {
+        "lines": 12,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/network",
+      "domain": "community",
+      "file": "frontend/app/(errors)/network/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/notes",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/notes/page.tsx",
+      "signals": {
+        "lines": 81,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/notes/view",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/notes/view/page.tsx",
+      "signals": {
+        "lines": 59,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/notice",
+      "domain": "platform",
+      "file": "frontend/app/(app)/notice/page.tsx",
+      "signals": {
+        "lines": 234,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/notifications",
+      "domain": "platform",
+      "file": "frontend/app/(app)/notifications/page.tsx",
+      "signals": {
+        "lines": 295,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/offline",
+      "domain": "platform",
+      "file": "frontend/app/offline/page.tsx",
+      "signals": {
+        "lines": 14,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/onboarding",
+      "domain": "platform",
+      "file": "frontend/app/(app)/onboarding/page.tsx",
+      "signals": {
+        "lines": 13,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/owner",
+      "domain": "platform",
+      "file": "frontend/app/owner/page.tsx",
+      "signals": {
+        "lines": 214,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/owner/activity",
+      "domain": "platform",
+      "file": "frontend/app/owner/activity/page.tsx",
+      "signals": {
+        "lines": 109,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/owner/content",
+      "domain": "platform",
+      "file": "frontend/app/owner/content/page.tsx",
+      "signals": {
+        "lines": 148,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/owner/credits",
+      "domain": "platform",
+      "file": "frontend/app/owner/credits/page.tsx",
+      "signals": {
+        "lines": 303,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/owner/premium",
+      "domain": "platform",
+      "file": "frontend/app/owner/premium/page.tsx",
+      "signals": {
+        "lines": 195,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/owner/r1-access",
+      "domain": "platform",
+      "file": "frontend/app/owner/r1-access/page.tsx",
+      "signals": {
+        "lines": 217,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/owner/sections",
+      "domain": "platform",
+      "file": "frontend/app/owner/sections/page.tsx",
+      "signals": {
+        "lines": 188,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/owner/settings",
+      "domain": "platform",
+      "file": "frontend/app/owner/settings/page.tsx",
+      "signals": {
+        "lines": 244,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/owner/tracking",
+      "domain": "platform",
+      "file": "frontend/app/owner/tracking/page.tsx",
+      "signals": {
+        "lines": 240,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/owner/users",
+      "domain": "platform",
+      "file": "frontend/app/owner/users/page.tsx",
+      "signals": {
+        "lines": 965,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/parents",
+      "domain": "learning-core",
+      "file": "frontend/app/parents/page.tsx",
+      "signals": {
+        "lines": 70,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/pdfs",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/pdfs/page.tsx",
+      "signals": {
+        "lines": 387,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/pdfs/read",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/pdfs/read/page.tsx",
+      "signals": {
+        "lines": 157,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/periodic-table",
+      "domain": "lab-3d",
+      "file": "frontend/app/(app)/periodic-table/page.tsx",
+      "signals": {
+        "lines": 17,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/planner",
+      "domain": "progress",
+      "file": "frontend/app/(app)/planner/page.tsx",
+      "signals": {
+        "lines": 13,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/plans",
+      "domain": "platform",
+      "file": "frontend/app/(app)/plans/page.tsx",
+      "signals": {
+        "lines": 226,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/practical",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/practical/page.tsx",
+      "signals": {
+        "lines": 374,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/practical/[subjectSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/practical/[subjectSlug]/page.tsx",
+      "signals": {
+        "lines": 306,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/practical/[subjectSlug]/[experimentSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/practical/[subjectSlug]/[experimentSlug]/page.tsx",
+      "signals": {
+        "lines": 69,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/practice",
+      "domain": "practice",
+      "file": "frontend/app/(app)/practice/page.tsx",
+      "signals": {
+        "lines": 239,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/practice/[subject]",
+      "domain": "practice",
+      "file": "frontend/app/(app)/practice/[subject]/page.tsx",
+      "signals": {
+        "lines": 217,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/practice/session",
+      "domain": "practice",
+      "file": "frontend/app/(app)/practice/session/page.tsx",
+      "signals": {
+        "lines": 29,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/profile",
+      "domain": "progress",
+      "file": "frontend/app/(app)/profile/page.tsx",
+      "signals": {
+        "lines": 1237,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/progress",
+      "domain": "progress",
+      "file": "frontend/app/(app)/progress/page.tsx",
+      "signals": {
+        "lines": 23,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/progress/[subject]",
+      "domain": "progress",
+      "file": "frontend/app/(app)/progress/[subject]/page.tsx",
+      "signals": {
+        "lines": 102,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/progress/[subject]/[unit]",
+      "domain": "progress",
+      "file": "frontend/app/(app)/progress/[subject]/[unit]/page.tsx",
+      "signals": {
+        "lines": 69,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/pyqs",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/pyqs/page.tsx",
+      "signals": {
+        "lines": 301,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/quiz",
+      "domain": "practice",
+      "file": "frontend/app/(app)/quiz/page.tsx",
+      "signals": {
+        "lines": 15,
+        "stub": false,
+        "redirect": true,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "redirect"
+    },
+    {
+      "route": "/quiz/[subject]",
+      "domain": "practice",
+      "file": "frontend/app/(app)/quiz/[subject]/page.tsx",
+      "signals": {
+        "lines": 97,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/quiz/[subject]/[unit]",
+      "domain": "practice",
+      "file": "frontend/app/(app)/quiz/[subject]/[unit]/page.tsx",
+      "signals": {
+        "lines": 120,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/r1",
+      "domain": "progress",
+      "file": "frontend/app/r1/page.tsx",
+      "signals": {
+        "lines": 95,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/r1/activities",
+      "domain": "progress",
+      "file": "frontend/app/r1/activities/page.tsx",
+      "signals": {
+        "lines": 207,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/r1/habits",
+      "domain": "progress",
+      "file": "frontend/app/r1/habits/page.tsx",
+      "signals": {
+        "lines": 173,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/r1/journal",
+      "domain": "progress",
+      "file": "frontend/app/r1/journal/page.tsx",
+      "signals": {
+        "lines": 177,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/r1/plans",
+      "domain": "progress",
+      "file": "frontend/app/r1/plans/page.tsx",
+      "signals": {
+        "lines": 215,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/referrals",
+      "domain": "community",
+      "file": "frontend/app/(app)/referrals/page.tsx",
+      "signals": {
+        "lines": 12,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/report-card",
+      "domain": "practice",
+      "file": "frontend/app/(app)/report-card/page.tsx",
+      "signals": {
+        "lines": 13,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/reset-password",
+      "domain": "platform",
+      "file": "frontend/app/reset-password/page.tsx",
+      "signals": {
+        "lines": 20,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/resources",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/resources/page.tsx",
+      "signals": {
+        "lines": 498,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/resources/[id]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/resources/[id]/page.tsx",
+      "signals": {
+        "lines": 71,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/resources/[id]/edit",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/resources/[id]/edit/page.tsx",
+      "signals": {
+        "lines": 58,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/resources/new",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/resources/new/page.tsx",
+      "signals": {
+        "lines": 18,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/resources/physics-xi",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/resources/physics-xi/page.tsx",
+      "signals": {
+        "lines": 54,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/resources/physics-xi/[unit]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/resources/physics-xi/[unit]/page.tsx",
+      "signals": {
+        "lines": 98,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/results/[sessionId]",
+      "domain": "practice",
+      "file": "frontend/app/(app)/results/[sessionId]/page.tsx",
+      "signals": {
+        "lines": 146,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/revision",
+      "domain": "practice",
+      "file": "frontend/app/(app)/revision/page.tsx",
+      "signals": {
+        "lines": 108,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/schedule",
+      "domain": "progress",
+      "file": "frontend/app/(app)/schedule/page.tsx",
+      "signals": {
+        "lines": 137,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/school",
+      "domain": "public",
+      "file": "frontend/app/school/page.tsx",
+      "signals": {
+        "lines": 98,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/school/[code]",
+      "domain": "public",
+      "file": "frontend/app/school/[code]/page.tsx",
+      "signals": {
+        "lines": 115,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/science-graph-bank",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/science-graph-bank/page.tsx",
+      "signals": {
+        "lines": 457,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/search",
+      "domain": "platform",
+      "file": "frontend/app/(app)/search/page.tsx",
+      "signals": {
+        "lines": 87,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/settings",
+      "domain": "platform",
+      "file": "frontend/app/(app)/settings/page.tsx",
+      "signals": {
+        "lines": 13,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/signup",
+      "domain": "platform",
+      "file": "frontend/app/signup/page.tsx",
+      "signals": {
+        "lines": 24,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/site-index",
+      "domain": "platform",
+      "file": "frontend/app/(app)/site-index/page.tsx",
+      "signals": {
+        "lines": 23,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/sitemap-page",
+      "domain": "platform",
+      "file": "frontend/app/sitemap-page/page.tsx",
+      "signals": {
+        "lines": 94,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/srs",
+      "domain": "practice",
+      "file": "frontend/app/(app)/srs/page.tsx",
+      "signals": {
+        "lines": 13,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/status",
+      "domain": "platform",
+      "file": "frontend/app/(app)/status/page.tsx",
+      "signals": {
+        "lines": 174,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/streaks",
+      "domain": "progress",
+      "file": "frontend/app/(app)/streaks/page.tsx",
+      "signals": {
+        "lines": 12,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/subjects",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/subjects/page.tsx",
+      "signals": {
+        "lines": 284,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/syllabus",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/syllabus/page.tsx",
+      "signals": {
+        "lines": 181,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/syllabus/[subjectSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/syllabus/[subjectSlug]/page.tsx",
+      "signals": {
+        "lines": 365,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/syllabus/[subjectSlug]/year/[year]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/syllabus/[subjectSlug]/year/[year]/page.tsx",
+      "signals": {
+        "lines": 269,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": true,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/syllabus/additions",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/syllabus/additions/page.tsx",
+      "signals": {
+        "lines": 120,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/tags/[tag]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/tags/[tag]/page.tsx",
+      "signals": {
+        "lines": 113,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/teachers",
+      "domain": "learning-core",
+      "file": "frontend/app/teachers/page.tsx",
+      "signals": {
+        "lines": 113,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/theorems",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/theorems/page.tsx",
+      "signals": {
+        "lines": 124,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/theorems/[classSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/theorems/[classSlug]/page.tsx",
+      "signals": {
+        "lines": 129,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/theorems/[classSlug]/[subjectSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/theorems/[classSlug]/[subjectSlug]/page.tsx",
+      "signals": {
+        "lines": 204,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/theorems/[classSlug]/[subjectSlug]/[topicSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/theorems/[classSlug]/[subjectSlug]/[topicSlug]/page.tsx",
+      "signals": {
+        "lines": 268,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/topics/[topicSlug]",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/topics/[topicSlug]/page.tsx",
+      "signals": {
+        "lines": 151,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": true,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/welcome",
+      "domain": "platform",
+      "file": "frontend/app/welcome/page.tsx",
+      "signals": {
+        "lines": 28,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/welcome/guest",
+      "domain": "platform",
+      "file": "frontend/app/welcome/guest/page.tsx",
+      "signals": {
+        "lines": 17,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/welcome/member",
+      "domain": "platform",
+      "file": "frontend/app/welcome/member/page.tsx",
+      "signals": {
+        "lines": 17,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/welcome/no-account",
+      "domain": "platform",
+      "file": "frontend/app/welcome/no-account/page.tsx",
+      "signals": {
+        "lines": 22,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/welcome/owner",
+      "domain": "platform",
+      "file": "frontend/app/welcome/owner/page.tsx",
+      "signals": {
+        "lines": 17,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/welcome/plus",
+      "domain": "platform",
+      "file": "frontend/app/welcome/plus/page.tsx",
+      "signals": {
+        "lines": 17,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/welcome/pro",
+      "domain": "platform",
+      "file": "frontend/app/welcome/pro/page.tsx",
+      "signals": {
+        "lines": 17,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": false
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/what-it-has",
+      "domain": "public",
+      "file": "frontend/app/what-it-has/page.tsx",
+      "signals": {
+        "lines": 101,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/world-knowledge",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/world-knowledge/page.tsx",
+      "signals": {
+        "lines": 61,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/world-knowledge/current-affairs",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/world-knowledge/current-affairs/page.tsx",
+      "signals": {
+        "lines": 16,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/world-knowledge/general-knowledge",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/world-knowledge/general-knowledge/page.tsx",
+      "signals": {
+        "lines": 16,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    },
+    {
+      "route": "/world-knowledge/global-topics",
+      "domain": "learning-core",
+      "file": "frontend/app/(app)/world-knowledge/global-topics/page.tsx",
+      "signals": {
+        "lines": 16,
+        "stub": false,
+        "redirect": false,
+        "clientComponent": false,
+        "dynamicParams": false,
+        "discoverable": true
+      },
+      "machineVerdict": "review"
+    }
+  ]
+}
