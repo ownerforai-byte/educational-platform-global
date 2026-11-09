@@ -2,6 +2,9 @@ import { existsSync } from "node:fs";
 import { readFile, access } from "node:fs/promises";
 import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { classDirOfTrack, parseContentPath } from "@/lib/content/paths";
+import { noteMatchesTopic } from "@/lib/note-topic-match";
+import { resolveUnitSlug } from "@/lib/syllabus-notes-manifest";
 
 /**
  * Server-side "does this syllabus topic have authored notes?" index.
@@ -85,34 +88,73 @@ export async function getTopicManifest(
   return parsed;
 }
 
+interface SupplementaryItem {
+  path: string;
+  data?: { topicSlug?: unknown };
+}
+
+let supplementaryCache: SupplementaryItem[] | null = null;
+
 /**
- * True when at least one authored note in the subject manifest belongs to
- * this unit/topic AND its JSON file actually exists — mirroring the client
- * workspace, which loads the manifest entry and then the file itself.
+ * The shipped classified corpus (`public/data/content/manifest.json`) — the
+ * exact payload the workspace's supplementary branch reads. Cached after the
+ * first read; the file is ~8 MB, so it is read once per process.
+ */
+async function getSupplementaryManifest(): Promise<SupplementaryItem[]> {
+  if (supplementaryCache) return supplementaryCache;
+  for (const root of DATA_ROOTS) {
+    try {
+      const raw = await readFile(join(root, "content", "manifest.json"), "utf-8");
+      const parsed: unknown = JSON.parse(raw);
+      supplementaryCache = Array.isArray(parsed) ? (parsed as SupplementaryItem[]) : [];
+      return supplementaryCache;
+    } catch {
+      // try next candidate root
+    }
+  }
+  supplementaryCache = [];
+  return supplementaryCache;
+}
+
+/**
+ * True when at least one authored note the workspace would load belongs to
+ * this unit/topic. This is the "coming soon" decider and it MUST agree with
+ * the loader in `topic-vertical-notes.tsx`, which resolves notes from two
+ * sources:
  *
- * The supplementary `content/manifest.json` is deliberately NOT counted.
- * Its class-12 entries are generated stubs ("This topic covers the fundamental
- * concepts of …", "Key definitions and theorems related to … should be
- * memorized") whose payload files are not shipped, so treating them as notes
- * hid the honest placeholder state above three filler lines.
+ *   1. the flat subject manifest (`syllabus-notes/{subject}/_manifest.json`)
+ *      — matched here with unit-alias folding, and at least one referenced
+ *      note file must actually load (same source the client uses);
+ *   2. the shipped classified corpus (`content/manifest.json` under
+ *      public/data) — class-directory-aware, exactly like the client's
+ *      supplementary branch.
+ *
+ * Counting only source 1 used to make the banner announce "under progress"
+ * on pages whose notes source 2 happily rendered (measured 2026-11-08:
+ * ~200 class-12 topics, including 17 real note sets under
+ * class-12/physics/electrostatics) — a page that looked broken while its
+ * content sat one scroll below. Whatever the loader can show, the banner
+ * reflects; only topics with neither source say "coming soon".
  */
 export async function hasTopicManifestNotes(
   subjectSlug: string,
   unitId: string,
   topicSlug: string,
+  classSlug: string,
 ): Promise<boolean> {
   const manifest = await getTopicManifest(subjectSlug);
+  const wantedUnit = resolveUnitSlug(unitId);
   const matches = manifest.filter(
     (m) =>
-      m.unitSlug === unitId &&
-      (m.topicSlug === topicSlug || m.filename.includes(topicSlug)),
+      resolveUnitSlug(m.unitSlug) === wantedUnit &&
+      noteMatchesTopic(m.topicSlug, m.filename, topicSlug),
   );
   // Verify at least one referenced note file loads (same source the client uses).
   for (const m of matches) {
     for (const root of DATA_ROOTS) {
       try {
         await access(
-          join(root, "syllabus-notes", subjectSlug, unitId, m.filename),
+          join(root, "syllabus-notes", subjectSlug, m.unitSlug, m.filename),
         );
         return true;
       } catch {
@@ -120,7 +162,20 @@ export async function hasTopicManifestNotes(
       }
     }
   }
-  return false;
+  // Classified corpus — the loader's supplementary branch (class-aware).
+  const supplementary = await getSupplementaryManifest();
+  const classDir = classDirOfTrack(classSlug);
+  return supplementary.some((item) => {
+    const parsed = parseContentPath(item.path);
+    if (!parsed || parsed.classDir !== classDir || parsed.unitSlug !== unitId) return false;
+    const filename = item.path.split(/[\\/]/).at(-1);
+    const data = item.data as { topicSlug?: unknown } | undefined;
+    return noteMatchesTopic(
+      typeof data?.topicSlug === "string" ? data.topicSlug : undefined,
+      filename,
+      topicSlug,
+    );
+  });
 }
 
 /** Sync variant backed by a pre-warmed cache (build-time / RSC prefetch). */
@@ -128,12 +183,27 @@ export function hasTopicManifestNotesCached(
   subjectSlug: string,
   unitId: string,
   topicSlug: string,
+  classSlug: string,
 ): boolean {
   const manifest = manifestCache.get(subjectSlug);
   if (!manifest) return true; // unknown → assume content, never false-alarm
-  return manifest.some(
+  const wantedUnit = resolveUnitSlug(unitId);
+  const flatHit = manifest.some(
     (m) =>
-      m.unitSlug === unitId &&
-      (m.topicSlug === topicSlug || m.filename.includes(topicSlug)),
+      resolveUnitSlug(m.unitSlug) === wantedUnit &&
+      noteMatchesTopic(m.topicSlug, m.filename, topicSlug),
   );
+  if (flatHit) return true;
+  const classDir = classDirOfTrack(classSlug);
+  return (supplementaryCache ?? []).some((item) => {
+    const parsed = parseContentPath(item.path);
+    if (!parsed || parsed.classDir !== classDir || parsed.unitSlug !== unitId) return false;
+    const filename = item.path.split(/[\\/]/).at(-1);
+    const data = item.data as { topicSlug?: unknown } | undefined;
+    return noteMatchesTopic(
+      typeof data?.topicSlug === "string" ? data.topicSlug : undefined,
+      filename,
+      topicSlug,
+    );
+  });
 }
