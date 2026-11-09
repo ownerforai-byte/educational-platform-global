@@ -21,8 +21,21 @@ interface StackLayer {
   regexp?: RegExp;
 }
 
+/**
+ * Express 4 keeps the router on the private `_router` field; Express 5 exposes
+ * it as `app.router`. Read whichever exists so the debug dump keeps working
+ * across the v4 -> v5 upgrade (see the Express 5 dependency bump review).
+ */
+function routerStack(app: Express): StackLayer[] | undefined {
+  const internal = app as unknown as {
+    router?: { stack?: StackLayer[] };
+    _router?: { stack?: StackLayer[] };
+  };
+  return internal.router?.stack ?? internal._router?.stack;
+}
+
 function dump(app: Express, label: string): void {
-  const stack = (app as unknown as { _router?: { stack?: StackLayer[] } })._router?.stack;
+  const stack = routerStack(app);
   if (!Array.isArray(stack)) return;
 
   console.log(`\n=== ${label} ===`);
