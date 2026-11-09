@@ -660,7 +660,7 @@
       "blocksPlans": [],
       "acceptanceRef": "#5-acceptance-criteria",
       "acceptanceCriteria": [
-        "find . -type d -empty returns **0** results",
+        "find topics components motion conceptual pyqs pipeline -type d -empty -print returns **0** results (library roots only; excludes Git internals such as .git/refs/tags)",
         "992 empty cycle directories removed; 6 real definitions preserved verbatim in the ledger",
         "121 done.txt + 140 topic.txt marker files retired into cycles.jsonl",
         "No ledger row claims complete without existing artifacts",

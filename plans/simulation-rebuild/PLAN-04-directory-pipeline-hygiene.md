@@ -161,7 +161,11 @@ P6.4 corrects the current text, P4.6 makes the correction permanent.
 
 ## 5. Acceptance criteria
 
-- [ ] `find . -type d -empty` returns **0** results
+- [ ] `find topics components motion conceptual pyqs pipeline -type d -empty -print`
+      returns **0** results. Scope the search to the library roots covered by P4.5 —
+      a whole-checkout `find .` also reports Git internals such as `.git/refs/tags`
+      (created by `git init` and never prunable by P4.4), so it would still fail after
+      the library cleanup is complete. Run from the library root.
 - [ ] 992 empty cycle directories removed; 6 real definitions preserved verbatim in the ledger
 - [ ] 121 `done.txt` + 140 `topic.txt` marker files retired into `cycles.jsonl`
 - [ ] No ledger row claims `complete` without existing artifacts

@@ -314,7 +314,8 @@ The program is complete only when **all** of these are measurably true:
       `curriculum-map.json` status is `not-started`, derived at run time (P5.2 / P5.8)
 - [ ] `reports/coverage-backlog-all-classes.json` covers all 239 curriculum blocks, tranched and
       ranked by exam weight, with the original 70 slots preserved as tranche 1 (P3.8)
-- [ ] `find . -type d -empty` returns **0** (P4.5)
+- [ ] `find topics components motion conceptual pyqs pipeline -type d -empty -print`
+      returns **0** — library roots only, so `.git/refs/tags` cannot fail the gate (P4.5)
 - [ ] One append-only `cycles.jsonl` ledger; no row claims `complete` without existing artifacts (P4.3)
 - [ ] All status files generated from measurement, carrying a `GENERATED — DO NOT EDIT` header (P4.6)
 - [ ] All five CI gates green: integrity, schema, coverage, substance, dir-lint
