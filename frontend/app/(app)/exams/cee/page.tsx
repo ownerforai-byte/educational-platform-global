@@ -57,6 +57,24 @@ export default function CeePage() {
           meta: "Adaptive",
         },
         {
+          label: "Model Questions — Biology",
+          description: "Entrance-style biology MCQs in syllabus order, with solving tricks.",
+          href: "/exams/cee/biology/model-questions",
+          meta: "Model questions",
+        },
+        {
+          label: "Model Questions — Chemistry",
+          description: "Entrance-style chemistry MCQs in syllabus order, with solving tricks.",
+          href: "/exams/cee/chemistry/model-questions",
+          meta: "Model questions",
+        },
+        {
+          label: "Model Questions — Physics",
+          description: "Entrance-style physics MCQs in syllabus order, with solving tricks.",
+          href: "/exams/cee/physics/model-questions",
+          meta: "Model questions",
+        },
+        {
           label: "Analytics",
           description: "See accuracy by subject and topic before choosing the next drill.",
           href: "/analytics",

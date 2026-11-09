@@ -306,6 +306,7 @@ const accountItems: NavItem[] = [
   { href: "/settings",      label: "Settings",         icon: Settings,    minLevel: "member", hideFromSidebar: true },
   { href: "/credits",       label: "Credits",          icon: Coins,       minLevel: "member", hideFromSidebar: true },
   { href: "/notifications", label: "Notifications",    icon: Bell,        minLevel: "member" },
+  { href: "/achievements", label: "Achievements",     icon: Award,       minLevel: "member" },
   { href: "/notice",        label: "Notice Board",     icon: FileText,    minLevel: "member", hideFromSidebar: true },
 ];
 

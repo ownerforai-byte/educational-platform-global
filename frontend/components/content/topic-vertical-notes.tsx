@@ -46,6 +46,8 @@ import {
 import { resolveLabVisualEntry } from "@/lib/lab-visual-index";
 import { getLabVisualNode } from "@/lib/lab-visual-loaders";
 import { getActivityForTopic } from "@/lib/lab-manifest";
+import { noteMatchesTopic } from "@/lib/note-topic-match";
+import { resolveUnitSlug } from "@/lib/syllabus-notes-manifest";
 import { ActivityJourney } from "@/components/lab/activity-journey";
 
 const SchematicDiagramLazy = dynamic(
@@ -400,17 +402,23 @@ function kindForSource(source: ManifestItem["source"]): ContentKind {
 }
 
 /**
- * The shipped subject manifest (`syllabus-notes/<subject>/_manifest.json`) is
- * built from `content/notes/concepts/class-11` only (see
- * `frontend/scripts/content/build.ts` → BUILD_CLASS_DIRS). Class-12 pages must
- * therefore NOT match it: the slugs collide across classes (11 shared units),
- * so a class-12 page would request a class-11 filename that the backend can
- * never find in `concepts/class-12/...`.
+ * Note resolution order for the workspace:
  *
- * Class-12 sources are resolved from the supplementary `content/manifest.json`
- * instead, whose paths carry the real class directory and filename.
+ *   1. The shipped subject manifest (`syllabus-notes/<subject>/_manifest.json`)
+ *      — flat and class-blind, with the payload shipped publicly under the
+ *      same path. It is matched for EVERY class page now: near-miss slugs
+ *      ("alkanes" vs "alkanes-conformations-…") and class-12-unit-keyed notes
+ *      (e.g. `heredity-and-evolution` → Mendel) live here and used to be
+ *      unreachable from the pages that needed them. The gated fetch is
+ *      attempted first; on failure the shipped copy is read from the entry's
+ *      own physical folder, so a cross-class entry can never blank the note
+ *      area just because the gated path resolves `concepts/<page-class>/…`.
+ *   2. The supplementary `content/manifest.json` — its paths carry the real
+ *      class directory and filename, so it is filtered by the page's class.
+ *
+ * Topic matching is shared across both branches and the server's
+ * "coming soon" decider: `@/lib/note-topic-match`.
  */
-const BUILT_MANIFEST_CLASS_DIR = "class-11";
 
 /** Last path segment when it is a plain `.json` filename. */
 function filenameFromContentPath(relPath: string): string | undefined {
@@ -517,7 +525,7 @@ export function TopicVerticalNotes({
       } catch {
         try {
           return await loadData<RichTopicConcept>(
-            `syllabus-notes/${subjectSlug}/${unitId}/${meta.filename}`,
+            `syllabus-notes/${subjectSlug}/${meta.unitSlug}/${meta.filename}`,
           );
         } catch {
           return null;
@@ -528,72 +536,79 @@ export function TopicVerticalNotes({
     loadData<ManifestItem[]>(`syllabus-notes/${subjectSlug}/_manifest.json`)
       .then(async (manifest) => {
         if (cancelled) return;
-        const relevant = classDir === BUILT_MANIFEST_CLASS_DIR
-          ? manifest.filter(
-              (item) => item.unitSlug === unitId && (item.topicSlug === topicSlug || item.filename.includes(topicSlug)),
-            )
-          : [];
 
-        if (relevant.length > 0) {
-          const loaded = await Promise.all(
-            relevant.map(async (meta) => {
-              const data = await loadManifestNote(meta);
-              return data ? { meta, data } : null;
-            }),
+        // 1. Class-correct source first: `content/manifest.json` embeds the
+        //    payload and its path names the real class dir + filename, so a
+        //    class-12 page reads its own file rather than a class-11 copy.
+        let supplementaryManifest: Array<{ path: string; data: RichTopicConcept }> = [];
+        try {
+          supplementaryManifest = await loadData<Array<{ path: string; data: RichTopicConcept }>>(
+            "content/manifest.json",
           );
+        } catch {
+          // Corpus unavailable — fall through to the flat manifest below.
+        }
+        if (cancelled) return;
+
+        const match = supplementaryManifest.find((item) => {
+          const parsed = parseContentPath(item.path);
+          if (!parsed || parsed.classDir !== classDir || parsed.unitSlug !== unitId) return false;
+          const filename = filenameFromContentPath(item.path);
+          return noteMatchesTopic(
+            typeof item.data?.topicSlug === "string" ? item.data.topicSlug : undefined,
+            filename,
+            topicSlug,
+          );
+        });
+
+        if (match) {
+          const parsed = parseContentPath(match.path);
+          const filename = filenameFromContentPath(match.path);
+          let body: RichTopicConcept | null = null;
+          if (filename && parsed) {
+            try {
+              body = await fetchTopicNoteBody({
+                kind: parsed.kind,
+                classSlug,
+                subjectSlug: parsed.subjectSlug ?? subjectSlug,
+                unitSlug: unitId,
+                filename,
+                moduleKey: `note:${classSlug}/${subjectSlug}/${unitId}/${filename}`,
+              });
+            } catch {
+              body = null;
+            }
+          }
           if (cancelled) return;
-          const valid = loaded.filter((item): item is { meta: ManifestItem; data: RichTopicConcept } => item !== null);
-          const canonicalMeta = selectCanonicalNoteEntry(valid.map((source) => source.meta));
-          const canonical = valid.find((source) => source.meta === canonicalMeta);
-          setSources(canonical ? [canonical] : []);
-          if (!canonical) setNoteLoadFailed(true);
+          if (body) setSupplementary(body);
+          else setSupplementary(match.data);
         } else {
-          // Class-12 (or any class the flat manifest does not carry): resolve the
-          // class-correct source path. `content/manifest.json` embeds the payload
-          // and its path names the real class dir + filename; the filename is
-          // what the gated endpoint needs to read `concepts/class-12/...`.
-          try {
-            const supplementaryManifest = await loadData<Array<{ path: string; data: RichTopicConcept }>>(
-              "content/manifest.json",
+          // 2. Fallback: the flat subject manifest — notes filed under shared
+          //    or legacy unit folders (and near-miss slugs) still surface
+          //    here; the shipped public copy is the load fallback in
+          //    `loadManifestNote`, so cross-class entries render too.
+          const wantedUnit = resolveUnitSlug(unitId);
+          const relevant = manifest.filter(
+            (item) =>
+              resolveUnitSlug(item.unitSlug) === wantedUnit &&
+              noteMatchesTopic(item.topicSlug, item.filename, topicSlug),
+          );
+          if (relevant.length > 0) {
+            const loaded = await Promise.all(
+              relevant.map(async (meta) => {
+                const data = await loadManifestNote(meta);
+                return data ? { meta, data } : null;
+              }),
             );
             if (cancelled) return;
-            const match = supplementaryManifest.find((item) => {
-              const parsed = parseContentPath(item.path);
-              if (!parsed || parsed.classDir !== classDir || parsed.unitSlug !== unitId) return false;
-              const filename = filenameFromContentPath(item.path);
-              return (
-                item.data?.topicSlug === topicSlug ||
-                filename?.includes(topicSlug) === true
-              );
-            });
-
-            if (!match) {
-              setNoteLoadFailed(true);
-            } else {
-              const parsed = parseContentPath(match.path);
-              const filename = filenameFromContentPath(match.path);
-              let body: RichTopicConcept | null = null;
-              if (filename && parsed) {
-                try {
-                  body = await fetchTopicNoteBody({
-                    kind: parsed.kind,
-                    classSlug,
-                    subjectSlug: parsed.subjectSlug ?? subjectSlug,
-                    unitSlug: unitId,
-                    filename,
-                    moduleKey: `note:${classSlug}/${subjectSlug}/${unitId}/${filename}`,
-                  });
-                } catch {
-                  body = null;
-                }
-              }
-              if (cancelled) return;
-              if (body) setSupplementary(body);
-              else setSupplementary(match.data);
-            }
-          } catch {
-            // Supplementary manifest unavailable — report rather than show a blank note area.
-            if (!cancelled) setNoteLoadFailed(true);
+            const valid = loaded.filter((item): item is { meta: ManifestItem; data: RichTopicConcept } => item !== null);
+            const canonicalMeta = selectCanonicalNoteEntry(valid.map((source) => source.meta));
+            const canonical = valid.find((source) => source.meta === canonicalMeta);
+            setSources(canonical ? [canonical] : []);
+            if (!canonical) setNoteLoadFailed(true);
+          } else {
+            // Neither source carries a note for this topic.
+            setNoteLoadFailed(true);
           }
         }
 
