@@ -37,22 +37,91 @@ export interface ReplyAnalysis {
   hasSteps: boolean;
   mentionsExam: boolean;
   isLong: boolean;
-  /** Terms the reply bolded or headed — the study-card vocabulary. */
+  /** Study vocabulary for the Key terms box — contrasting pairs first. */
   keyTerms: string[];
 }
+
+/**
+ * Structural labels the answer templates print as their own headings
+ * ("**Concept**", "**The question**", "**Solved example**", "**Features**" …).
+ * They are scaffolding, never vocabulary — owner request: the Key terms box
+ * shows RELATED CONTRASTING TERMS instead of these.
+ */
+const STRUCTURAL_LABELS = new Set([
+  "concept", "the concept", "question", "the question", "the questions", "questions",
+  "answer", "the answer", "solved example", "solved examples", "worked example", "worked examples",
+  "example", "examples", "feature", "features", "table", "diagram",
+  "keyword", "keywords", "key words", "key terms", "in short", "short",
+  "to get this concept — think", "to get this concept - think", "to get this concept — think:",
+  "pyqs & patterns", "pyq & patterns", "pyqs",
+  "given", "problem", "the problem", "solution", "the solution",
+  "step", "steps", "working", "notes", "summary", "rest all", "the rest",
+  "definition", "explanation", "introduction", "conclusion", "proof", "derivation",
+  "formula", "formulas",
+]);
+
+function isStructuralLabel(term: string): boolean {
+  const normalized = term.toLowerCase().replace(/\s+/g, " ").replace(/[:：]/g, "").trim();
+  if (STRUCTURAL_LABELS.has(normalized)) return true;
+  // "Step 1", "Part 2", "Section 3" — scaffolding carrying a number.
+  return /^(step|part|section|point)\s*\d+$/i.test(normalized);
+}
+
+/** The contrast joiner that marks a related pair: "speed vs velocity". */
+const CONTRAST_JOINER = /\s+(?:vs\.?|versus)\s+/i;
 
 /** Structural read of the reply text — drives both boxes and suggestions. */
 export function analyzeReply(reply: string): ReplyAnalysis {
   const text = reply ?? "";
   const keyTerms: string[] = [];
   const seen = new Set<string>();
-  for (const match of text.matchAll(/\*\*([^*\n]{3,40})\*\*/g)) {
-    const term = match[1].trim();
+  const push = (raw: string) => {
+    const term = raw.trim().replace(/\s+/g, " ");
+    if (term.length < 3 || isStructuralLabel(term)) return;
     const key = term.toLowerCase();
-    if (seen.has(key)) continue;
+    if (seen.has(key)) return;
     seen.add(key);
     keyTerms.push(term);
+  };
+  // Sides of a pushed pair never repeat as bare chips ("mass" after "mass vs weight").
+  const pairSides = new Set<string>();
+  const pushPair = (a: string, b: string) => {
+    pairSides.add(a.trim().toLowerCase());
+    pairSides.add(b.trim().toLowerCase());
+    push(`${a.trim()} vs ${b.trim()}`);
+  };
+
+  // 1. Related contrasting terms first — the study pairs the box exists for.
+  //    Both "**X** vs **Y**" and a single bold "**X vs Y**" count.
+  for (const match of text.matchAll(
+    /\*\*([^*\n]{2,40}?)\*\*\s*(?:vs\.?|versus)\s*\*\*([^*\n]{2,40}?)\*\*/gi,
+  )) {
+    pushPair(match[1], match[2]);
     if (keyTerms.length >= 6) break;
+  }
+  if (keyTerms.length < 6) {
+    for (const match of text.matchAll(/\*\*([^*\n]{2,40}?\s+(?:vs\.?|versus)\s+[^*\n]{2,40}?)\*\*/gi)) {
+      push(match[1]);
+      if (keyTerms.length >= 6) break;
+    }
+  }
+  // 2. Plain-text contrast pairs (unbolded) — same pairs, no markup.
+  if (keyTerms.length < 6) {
+    for (const match of text.matchAll(
+      /\b([a-z][a-z ()-]{2,28})\s+(?:vs\.?|versus)\s+([a-z][a-z ()-]{2,28})\b/gi,
+    )) {
+      pushPair(match[1], match[2]);
+      if (keyTerms.length >= 6) break;
+    }
+  }
+  // 3. Fall back to the reply's bold vocabulary — minus the structural labels
+  //    and the bare halves of a pair already listed.
+  if (keyTerms.length < 6) {
+    for (const match of text.matchAll(/\*\*([^*\n]{3,40})\*\*/g)) {
+      if (pairSides.has(match[1].trim().toLowerCase())) continue;
+      push(match[1]);
+      if (keyTerms.length >= 6) break;
+    }
   }
   return {
     hasFormulas: /\$[^$]+\$|\\frac|\\cdot|equation|formula|[a-z]\s*=\s*/i.test(text),
@@ -151,7 +220,12 @@ export function buildSelfCheck(reply: string, ctx: ReplyContext): string[] {
   const { keyTerms } = analyzeReply(reply);
   const checks: string[] = [];
   if (keyTerms[0]) {
-    checks.push(`Define ${keyTerms[0]} without looking back at the reply.`);
+    // A contrasting pair is recalled by comparison, not by definition.
+    checks.push(
+      CONTRAST_JOINER.test(keyTerms[0])
+        ? `Compare ${keyTerms[0]} in your own words — what actually separates them?`
+        : `Define ${keyTerms[0]} without looking back at the reply.`,
+    );
   }
   checks.push(
     ctx.topicTitle

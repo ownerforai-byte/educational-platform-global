@@ -31,6 +31,26 @@ describe("analyzeReply", () => {
     expect(analysis.hasSteps).toBe(false);
     expect(analysis.keyTerms).toEqual([]);
   });
+
+  it("puts related contrasting terms in the box, never the section labels", () => {
+    const analysis = analyzeReply(
+      "**Concept**\n\nThe pair **speed vs velocity** decides most traps.\n\n**Features**\n\n1. direction\n\n**Solved examples**\n\nWorked above.",
+    );
+    expect(analysis.keyTerms).toContain("speed vs velocity");
+    // Structural labels are scaffolding, not vocabulary.
+    expect(analysis.keyTerms).not.toContain("Concept");
+    expect(analysis.keyTerms).not.toContain("Features");
+    expect(analysis.keyTerms).not.toContain("Solved examples");
+    // The halves of a pair never repeat as their own chips.
+    expect(analysis.keyTerms).not.toContain("speed");
+  });
+
+  it("joins a pair written as two bold terms", () => {
+    const analysis = analyzeReply("**mass** vs **weight** is the classic trap.");
+    expect(analysis.keyTerms).toContain("mass vs weight");
+    expect(analysis.keyTerms).not.toContain("mass");
+    expect(analysis.keyTerms).not.toContain("weight");
+  });
 });
 
 describe("buildReplySuggestions", () => {
@@ -74,5 +94,10 @@ describe("buildSelfCheck", () => {
     expect(checks[0]).toMatch(/Define Newton's second law/);
     expect(checks.join(" ")).toMatch(/Laws of Motion/);
     expect(checks.length).toBeLessThanOrEqual(3);
+  });
+
+  it("asks to compare a contrasting pair instead of defining it", () => {
+    const checks = buildSelfCheck("**speed vs velocity** is the trap.", { surface: "chat" });
+    expect(checks[0]).toMatch(/Compare speed vs velocity/);
   });
 });

@@ -144,8 +144,33 @@ export function AiReplyCard({
         )}
       </header>
 
-      {/* The answer — its own island */}
-      <div className="border-b border-border/70 px-3.5 py-3 text-[13px] leading-relaxed [&_p]:my-1.5">
+      {/* The answer — its own island, laid out like a notebook page */}
+      <div
+        className={cn(
+          "border-b border-border/70 px-4 py-4 text-[13.5px] leading-7",
+          // conceptual spacing — a page to breathe on, not a wall of text
+          "[&_p]:my-2.5",
+          // section labels the template prints (Concept, Features, Solved example…)
+          "[&_h2]:mt-5 [&_h2]:mb-1.5 [&_h2]:text-sm [&_h2]:font-extrabold [&_h2]:uppercase [&_h2]:tracking-[0.14em] [&_h2]:text-primary",
+          "[&_h3]:mt-4 [&_h3]:mb-1.5 [&_h3]:text-[13px] [&_h3]:font-bold [&_h3]:text-primary",
+          "[&_h4]:mt-3 [&_h4]:mb-1 [&_h4]:text-[11px] [&_h4]:font-bold [&_h4]:uppercase [&_h4]:tracking-wider [&_h4]:text-muted-foreground",
+          // features — numbered lists that breathe
+          "[&_ol]:my-2.5 [&_ol]:list-decimal [&_ol]:space-y-1.5 [&_ol]:pl-5",
+          "[&_ol>li]:marker:font-bold [&_ol>li]:marker:text-primary",
+          "[&_ul]:my-2.5 [&_ul]:space-y-1.5 [&_ul]:pl-5 [&_ul>li]:marker:text-primary",
+          // example / callout blocks
+          "[&_blockquote]:my-3.5 [&_blockquote]:rounded-r-xl [&_blockquote]:border-l-[3px] [&_blockquote]:border-primary/50 [&_blockquote]:bg-primary/[0.05] [&_blockquote]:px-3.5 [&_blockquote]:py-2 [&_blockquote]:text-foreground/90",
+          // the contrast table
+          "[&_table]:my-3.5 [&_table]:w-full [&_table]:overflow-hidden [&_table]:rounded-xl [&_table]:border [&_table]:border-border/70 [&_table]:text-[12.5px]",
+          "[&_thead]:bg-primary/[0.07] [&_th]:px-3 [&_th]:py-2 [&_th]:text-left [&_th]:text-[11px] [&_th]:font-bold [&_th]:uppercase [&_th]:tracking-wider [&_th]:text-primary",
+          "[&_td]:border-t [&_td]:border-border/60 [&_td]:px-3 [&_td]:py-2",
+          // concept boundaries (---) — an ink rule fading out, not a flat line
+          "[&_hr]:my-5 [&_hr]:h-px [&_hr]:border-0 [&_hr]:bg-gradient-to-r [&_hr]:from-primary/40 [&_hr]:via-border [&_hr]:to-transparent",
+          // key terms read like highlighter marks in a notebook
+          "[&_strong]:rounded [&_strong]:bg-primary/[0.10] [&_strong]:px-1 [&_strong]:font-bold [&_strong]:text-foreground",
+          "[&_code]:rounded [&_code]:bg-primary/[0.08] [&_code]:px-1 [&_code]:py-0.5 [&_code]:text-[12px]",
+        )}
+      >
         {children}
       </div>
 
@@ -159,13 +184,19 @@ export function AiReplyCard({
             <BookMarked className="h-2.5 w-2.5" aria-hidden="true" />
             Key terms
           </p>
-          <div className="mt-1.5 flex flex-wrap gap-1">
-            {analysis.keyTerms.map((term) => (
+          <div className="mt-1.5 flex flex-wrap gap-1.5">
+            {analysis.keyTerms.map((term, index) => (
               <span
                 key={term}
-                className="rounded-full border border-primary/25 bg-primary/[0.06] px-2 py-0.5 text-[10px] font-semibold text-foreground"
+                className={cn(
+                  "inline-flex items-baseline gap-1 rounded-full border px-2 py-0.5 text-[10px] font-semibold text-foreground",
+                  /\b(vs\.?|versus)\b/i.test(term)
+                    ? "border-primary/45 bg-primary/[0.10]"
+                    : "border-primary/25 bg-primary/[0.06]",
+                )}
               >
-                {term}
+                <span className="text-[8px] font-bold text-primary">{index + 1}</span>
+                <span>{term}</span>
               </span>
             ))}
           </div>
