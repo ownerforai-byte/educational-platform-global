@@ -50,7 +50,7 @@ export function AiSurfaceHeader({
       <div className="mb-3 flex items-center gap-3">
         <Link
           href="/ai"
-          className="inline-flex items-center gap-1.5 text-xs text-muted-foreground transition-colors hover:text-foreground"
+          className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="h-3.5 w-3.5" />
           AI Studio
@@ -58,14 +58,14 @@ export function AiSurfaceHeader({
         {crumb && (
           <>
             <span className="text-muted-foreground/40">/</span>
-            <span className="text-xs font-semibold text-foreground">{crumb}</span>
+            <span className="text-[11px] font-semibold text-foreground">{crumb}</span>
           </>
         )}
       </div>
 
       {/* Gradient hero strip */}
       <div
-        className={`mb-4 rounded-2xl border border-border/70 bg-gradient-to-br ${gradientFrom} via-card to-card p-4 sm:p-5`}
+        className={`mb-4 rounded-2xl border-2 border-border/80 bg-gradient-to-br ${gradientFrom} via-card to-card p-4 sm:p-5`}
       >
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div className="flex items-center gap-3">
@@ -81,7 +81,7 @@ export function AiSurfaceHeader({
                 </p>
               )}
               <h1 className="text-lg font-bold tracking-tight sm:text-xl">{title}</h1>
-              <p className="text-xs text-muted-foreground">{subtitle}</p>
+              <p className="text-[11px] text-muted-foreground">{subtitle}</p>
             </div>
           </div>
           {meterNode && <div className="min-w-0 flex-1 sm:max-w-xs">{meterNode}</div>}
@@ -94,7 +94,7 @@ export function AiSurfaceHeader({
               return (
                 <li key={f.title} className="rounded-xl border border-border/60 bg-card/80 p-3">
                   <FeatureIcon className="h-3.5 w-3.5 text-primary" />
-                  <p className="mt-1.5 text-xs font-bold text-foreground">{f.title}</p>
+                  <p className="mt-1.5 text-[11px] font-bold text-foreground">{f.title}</p>
                   <p className="mt-0.5 text-[11px] leading-relaxed text-muted-foreground">
                     {f.text}
                   </p>

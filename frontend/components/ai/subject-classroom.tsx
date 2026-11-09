@@ -399,7 +399,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
               <h1 className="text-lg font-extrabold tracking-tight">
                 {classroom.title}
               </h1>
-              <p className="text-xs text-muted-foreground">{classroom.tagline}</p>
+              <p className="text-[11px] text-muted-foreground">{classroom.tagline}</p>
             </div>
           </div>
 
@@ -408,7 +408,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
               type="button"
               onClick={() => setHistoryOpen((v) => !v)}
               aria-expanded={historyOpen}
-              className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-border/70 bg-background px-3 text-xs font-semibold text-foreground transition hover:border-primary/50"
+              className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-border/70 bg-background px-3 text-[11px] font-semibold text-foreground transition hover:border-primary/50"
             >
               <History className="h-3.5 w-3.5" />
               {classroom.subject} history
@@ -416,7 +416,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
             <button
               type="button"
               onClick={startNewChat}
-              className="inline-flex min-h-10 items-center gap-1.5 rounded-xl bg-primary px-3 text-xs font-semibold text-primary-foreground transition hover:opacity-90"
+              className="inline-flex min-h-10 items-center gap-1.5 rounded-xl bg-primary px-3 text-[11px] font-semibold text-primary-foreground transition hover:opacity-90"
             >
               <Plus className="h-3.5 w-3.5" />
               New chat
@@ -433,12 +433,12 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
 
       {/* ── Private history drawer (this subject only) ─────────────────── */}
       {isLoggedIn && historyOpen && (
-        <div className="rounded-2xl border border-border/70 bg-card p-4">
-          <p className="text-xs font-semibold text-muted-foreground">
+        <div className="rounded-2xl border-2 border-border/80 bg-card p-4">
+          <p className="text-[11px] font-semibold text-muted-foreground">
             Saved {classroom.subject} conversations
           </p>
           {sessions.length === 0 ? (
-            <p className="mt-2 text-xs text-muted-foreground">
+            <p className="mt-2 text-[11px] text-muted-foreground">
               Nothing saved yet — your conversations in this classroom appear
               here automatically.
             </p>
@@ -449,7 +449,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
                   key={s.session}
                   type="button"
                   onClick={() => openSession(s.session)}
-                  className={`block w-full rounded-xl border px-3 py-2 text-left text-xs transition ${
+                  className={`block w-full rounded-xl border px-3 py-2 text-left text-[11px] transition ${
                     s.session === sessionName
                       ? "border-primary/50 bg-primary/5"
                       : "border-border/60 hover:border-primary/40"
@@ -477,7 +477,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
               type="button"
               onClick={() => handleSend(starter.text)}
               disabled={sending || (!isLoggedIn && guestCount >= GUEST_DAILY_LIMIT)}
-              className={`inline-flex min-h-10 items-center gap-1.5 rounded-2xl border ${classroom.accentBorder} ${classroom.accentBg} px-4 py-2 text-left text-xs font-semibold text-foreground transition hover:opacity-80 disabled:opacity-50`}
+              className={`inline-flex min-h-10 items-center gap-1.5 rounded-2xl border ${classroom.accentBorder} ${classroom.accentBg} px-4 py-2 text-left text-[11px] font-semibold text-foreground transition hover:opacity-80 disabled:opacity-50`}
             >
               <span className={`text-[10px] font-bold uppercase ${classroom.accent}`}>
                 {starter.label}
@@ -498,8 +498,8 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
             <div
               className={
                 message.role === "user"
-                  ? "max-w-[85%] min-w-0 rounded-2xl bg-primary px-4 py-3 text-sm text-primary-foreground [overflow-wrap:anywhere]"
-                  : "min-w-0 w-full rounded-2xl border border-border/70 bg-card px-3 py-4 shadow-sm sm:px-6 sm:py-6"
+                  ? "max-w-[85%] min-w-0 rounded-2xl bg-primary px-4 py-3 text-[13px] text-primary-foreground [overflow-wrap:anywhere]"
+                  : "min-w-0 w-full rounded-2xl border-2 border-border/80 bg-card px-3 py-4 shadow-sm sm:px-6 sm:py-6"
               }
             >
               {message.role === "assistant" ? (
@@ -537,7 +537,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
         ))}
 
         {sending && !streaming && (
-          <p className="text-xs italic text-muted-foreground">
+          <p className="text-[11px] italic text-muted-foreground">
             {classroom.subject} teacher is thinking…
           </p>
         )}
@@ -547,14 +547,14 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
       {error && (
         <p
           role="alert"
-          className="rounded-2xl border border-destructive/40 bg-destructive/10 px-4 py-2.5 text-xs font-semibold text-destructive"
+          className="rounded-2xl border border-destructive/40 bg-destructive/10 px-4 py-2.5 text-[11px] font-semibold text-destructive"
         >
           {error}
         </p>
       )}
 
       {/* ── Composer (normal chat box + enhancer) ──────────────────────── */}
-      <div className="rounded-2xl border border-border/70 bg-card p-3">
+      <div className="rounded-2xl border-2 border-border/80 bg-card p-3">
         <textarea
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -566,14 +566,14 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
           }}
           rows={2}
           placeholder={`Ask your ${classroom.subject} question…`}
-          className="w-full resize-none rounded-xl border border-border/60 bg-background px-3 py-2 text-base sm:text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
+          className="w-full resize-none rounded-xl border border-border/60 bg-background px-3 py-2 text-[13px] sm:text-[13px] text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
         />
         <div className="mt-2 flex items-center justify-between gap-2">
           <button
             type="button"
             onClick={handleEnhance}
             disabled={enhancing || !input.trim()}
-            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-border/70 px-3 text-xs font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground disabled:opacity-50"
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-border/70 px-3 text-[11px] font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground disabled:opacity-50"
           >
             <Wand2 className="h-3.5 w-3.5" />
             {enhancing ? "Enhancing…" : "Enhance"}
@@ -583,7 +583,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
               type="button"
               onClick={() => abortRef.current?.abort()}
               aria-label="Stop reply"
-              className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-destructive px-5 text-xs font-bold text-destructive-foreground transition hover:opacity-90"
+              className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-destructive px-5 text-[11px] font-bold text-destructive-foreground transition hover:opacity-90"
             >
               <Square className="h-3.5 w-3.5 fill-current" />
               Stop
@@ -593,7 +593,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
               type="button"
               onClick={() => void handleSend()}
               disabled={!input.trim()}
-              className={`inline-flex min-h-10 items-center gap-2 rounded-xl px-5 text-xs font-bold text-white transition disabled:opacity-50 ${classroom.accentBg.replace("/10", "")}`}
+              className={`inline-flex min-h-10 items-center gap-2 rounded-xl px-5 text-[11px] font-bold text-white transition disabled:opacity-50 ${classroom.accentBg.replace("/10", "")}`}
             >
               <Send className="h-3.5 w-3.5" />
               Ask

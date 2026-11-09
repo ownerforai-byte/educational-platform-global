@@ -54,7 +54,7 @@ export function AiPlanStrip() {
 
   if (isLoading) {
     return (
-      <div className="rounded-2xl border border-border/60 bg-muted/30 px-4 py-3 text-xs font-medium text-foreground" role="status">
+      <div className="rounded-2xl border-2 border-border/80 bg-muted/30 px-4 py-3 text-[11px] font-medium text-foreground" role="status">
         <span className="verify-blink">Checking your plan</span>
         <span className="verify-dots" aria-hidden="true">
           <span>.</span>
@@ -69,8 +69,8 @@ export function AiPlanStrip() {
     const used = readGuestCount();
     const left = Math.max(0, GUEST_DAILY_LIMIT - used);
     return (
-      <div className="flex flex-col gap-2 rounded-2xl border border-border/60 bg-muted/30 px-4 py-3">
-        <span className="inline-flex flex-wrap items-center gap-2 text-xs">
+      <div className="flex flex-col gap-2 rounded-2xl border-2 border-border/80 bg-muted/30 px-4 py-3">
+        <span className="inline-flex flex-wrap items-center gap-2 text-[11px]">
           <Sparkles className="h-3.5 w-3.5 text-violet-500" />
           <span className="font-semibold text-foreground">AI spark trial</span>
           <span className="text-muted-foreground">
@@ -82,7 +82,7 @@ export function AiPlanStrip() {
         <p className="text-[11px] text-muted-foreground leading-relaxed">{DUAL_SPARK_SUMMARY}</p>
         <Link
           href="/login"
-          className="inline-flex w-fit items-center gap-1.5 rounded-xl bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
+          className="inline-flex w-fit items-center gap-1.5 rounded-xl bg-primary px-3 py-1.5 text-[11px] font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
         >
           <UserRound className="h-3.5 w-3.5" />
           Sign in to keep chatting
@@ -99,9 +99,9 @@ export function AiPlanStrip() {
   const contentSparks = user.credits ?? 0;
 
   return (
-    <div className="flex flex-col gap-2 rounded-2xl border border-border/60 bg-muted/30 px-4 py-3">
+    <div className="flex flex-col gap-2 rounded-2xl border-2 border-border/80 bg-muted/30 px-4 py-3">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <span className="inline-flex flex-wrap items-center gap-2 text-xs">
+        <span className="inline-flex flex-wrap items-center gap-2 text-[11px]">
           <Sparkles className="h-3.5 w-3.5 text-violet-500" />
           <span className="font-semibold text-foreground">
             AI spark ({AI_SPARK_TIER_LABELS[tier]})
@@ -114,7 +114,7 @@ export function AiPlanStrip() {
         </span>
         <Link
           href="/profile"
-          className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card px-3 py-1.5 text-xs font-semibold text-foreground hover:border-primary/40 hover:text-primary transition-colors"
+          className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card px-3 py-1.5 text-[11px] font-semibold text-foreground hover:border-primary/40 hover:text-primary transition-colors"
         >
           <Coins className="h-3.5 w-3.5 text-amber-500" />
           {contentSparks} content sparks

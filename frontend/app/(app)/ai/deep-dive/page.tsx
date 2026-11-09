@@ -149,7 +149,7 @@ export default function DeepDiveStudioPage() {
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link
           href="/ai"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground hover:text-foreground transition-colors"
+          className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-muted-foreground hover:text-foreground transition-colors"
         >
           <ArrowLeft className="h-4 w-4" /> Back to AI Studio Hub
         </Link>
@@ -159,7 +159,7 @@ export default function DeepDiveStudioPage() {
       </div>
 
       {/* ── Hero Banner ─────────────────────────────────────────────────── */}
-      <div className="relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br from-sky-500/[0.08] via-card to-card p-6 sm:p-8 shadow-sm">
+      <div className="relative overflow-hidden rounded-3xl border-2 border-border/80 bg-gradient-to-br from-sky-500/[0.08] via-card to-card p-6 sm:p-8 shadow-sm">
         <div className="absolute -top-12 -right-8 h-48 w-48 rounded-full bg-sky-500/10 blur-3xl pointer-events-none" />
         <div className="relative z-10 space-y-3">
           <div className="flex items-center gap-3">
@@ -170,7 +170,7 @@ export default function DeepDiveStudioPage() {
               <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
                 Veer Deep Concept & Syllabus Studio
               </h1>
-              <p className="text-xs sm:text-sm text-muted-foreground">
+              <p className="text-[11px] sm:text-[13px] text-muted-foreground">
                 Exhaustive first-principles breakdown, intuitive analogies, multimodal diagram parsing, and board exam trap alerts.
               </p>
             </div>
@@ -181,17 +181,17 @@ export default function DeepDiveStudioPage() {
       <AiPlanStrip />
 
       {/* ── Input Box & Controls ────────────────────────────────────────── */}
-      <div className="rounded-3xl border border-border/70 bg-card p-5 sm:p-6 shadow-sm space-y-4">
+      <div className="rounded-3xl border-2 border-border/80 bg-card p-5 sm:p-6 shadow-sm space-y-4">
         {/* Subject & Class Selectors */}
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-semibold text-muted-foreground">Subject:</span>
+            <span className="text-[11px] font-semibold text-muted-foreground">Subject:</span>
             {["physics", "chemistry", "biology", "mathematics", "computer"].map((s) => (
               <button
                 key={s}
                 type="button"
                 onClick={() => setSubject(s)}
-                className={`rounded-full min-h-11 px-3 py-1 text-xs font-medium capitalize transition-all ${
+                className={`rounded-full min-h-11 px-3 py-1 text-[11px] font-medium capitalize transition-all ${
                   subject === s
                     ? "bg-sky-600 text-white shadow-sm"
                     : "border border-border/70 bg-muted/40 text-muted-foreground hover:bg-muted"
@@ -203,13 +203,13 @@ export default function DeepDiveStudioPage() {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-xs font-semibold text-muted-foreground">Class:</span>
+            <span className="text-[11px] font-semibold text-muted-foreground">Class:</span>
             {["11", "12"].map((c) => (
               <button
                 key={c}
                 type="button"
                 onClick={() => setClassLevel(c)}
-                className={`rounded-full min-h-11 px-2.5 py-1 text-xs font-medium transition-all ${
+                className={`rounded-full min-h-11 px-2.5 py-1 text-[11px] font-medium transition-all ${
                   classLevel === c
                     ? "bg-primary text-primary-foreground shadow-sm"
                     : "border border-border/70 bg-muted/40 text-muted-foreground hover:bg-muted"
@@ -223,7 +223,7 @@ export default function DeepDiveStudioPage() {
 
         {/* Depth Level Selector */}
         <div className="flex flex-wrap items-center gap-2 border-t border-border/40 pt-3">
-          <span className="text-xs font-semibold text-muted-foreground">Target Depth:</span>
+          <span className="text-[11px] font-semibold text-muted-foreground">Target Depth:</span>
           {(
             [
               { key: "intuitive", label: "Intuition & Analogies", icon: Lightbulb },
@@ -237,7 +237,7 @@ export default function DeepDiveStudioPage() {
                 key={d.key}
                 type="button"
                 onClick={() => setDepth(d.key)}
-                className={`inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium transition-all ${
+                className={`inline-flex min-h-11 items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-medium transition-all ${
                   depth === d.key
                     ? "bg-indigo-600 text-white shadow-sm"
                     : "border border-border/70 bg-muted/30 text-muted-foreground hover:bg-muted"
@@ -266,7 +266,7 @@ export default function DeepDiveStudioPage() {
                   setSubject(p.subject);
                   setClassLevel(p.classLevel);
                 }}
-                className="min-h-11 rounded-xl border border-border/60 bg-muted/30 px-2.5 py-1 text-xs font-medium text-foreground hover:border-sky-500/50 hover:bg-sky-500/5 transition-all"
+                className="min-h-11 rounded-xl border border-border/60 bg-muted/30 px-2.5 py-1 text-[11px] font-medium text-foreground hover:border-sky-500/50 hover:bg-sky-500/5 transition-all"
               >
                 {p.label}
               </button>
@@ -287,13 +287,13 @@ export default function DeepDiveStudioPage() {
             }}
             placeholder="Type any difficult concept, reaction mechanism, theoretical law, or attach a textbook diagram photo to unpack... (e.g. Why is entropy always increasing in spontaneous processes?)"
             rows={4}
-            className="w-full resize-none rounded-2xl border border-border/70 bg-background p-4 text-base sm:text-sm text-foreground placeholder:text-muted-foreground/60 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+            className="w-full resize-none rounded-2xl border-2 border-border/80 bg-background p-4 text-[13px] sm:text-[13px] text-foreground placeholder:text-muted-foreground/60 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
           />
         </div>
 
         {/* Optional Diagram / Image Attachment Preview */}
         {imagePreview && (
-          <div className="relative inline-block max-w-full rounded-2xl border border-border/70 bg-muted/30 p-2">
+          <div className="relative inline-block max-w-full rounded-2xl border-2 border-border/80 bg-muted/30 p-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={imagePreview}
@@ -324,7 +324,7 @@ export default function DeepDiveStudioPage() {
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/70 bg-background px-3 py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-all"
+              className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/70 bg-background px-3 py-1.5 text-[11px] font-medium text-foreground hover:bg-muted transition-all"
             >
               <ImageIcon className="h-3.5 w-3.5 text-sky-500" />
               {imagePreview ? "Change Diagram" : "Attach Diagram / Photo"}
@@ -343,7 +343,7 @@ export default function DeepDiveStudioPage() {
                   removeImage();
                   setResponse(null);
                 }}
-                className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/70 px-3 py-2 text-xs font-medium text-muted-foreground hover:bg-muted transition-all"
+                className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/70 px-3 py-2 text-[11px] font-medium text-muted-foreground hover:bg-muted transition-all"
               >
                 <RotateCcw className="h-3.5 w-3.5" /> Clear
               </button>
@@ -352,7 +352,7 @@ export default function DeepDiveStudioPage() {
               type="button"
               onClick={handleDeepDive}
               disabled={loading || !topic.trim()}
-              className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 px-5 py-2 text-xs font-bold text-white shadow-md shadow-sky-500/20 hover:from-sky-500 hover:to-indigo-500 disabled:opacity-50 transition-all"
+              className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 px-5 py-2 text-[11px] font-bold text-white shadow-md shadow-sky-500/20 hover:from-sky-500 hover:to-indigo-500 disabled:opacity-50 transition-all"
             >
               {loading ? (
                 <>
@@ -377,7 +377,7 @@ export default function DeepDiveStudioPage() {
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-sky-500/10 text-sky-500">
                 <BookOpen className="h-4 w-4" />
               </span>
-              <h2 className="text-base font-bold text-foreground">Comprehensive Academic Synthesis</h2>
+              <h2 className="text-[13px] font-bold text-foreground">Comprehensive Academic Synthesis</h2>
               <span className="rounded-full bg-muted px-2.5 py-0.5 text-[10px] font-semibold uppercase text-muted-foreground">
                 Provider: {response.provider}
               </span>
@@ -386,7 +386,7 @@ export default function DeepDiveStudioPage() {
             <button
               type="button"
               onClick={handleCopy}
-              className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/70 bg-background px-3 py-1.5 text-xs font-medium text-foreground hover:bg-muted transition-all"
+              className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/70 bg-background px-3 py-1.5 text-[11px] font-medium text-foreground hover:bg-muted transition-all"
             >
               {copied ? (
                 <>

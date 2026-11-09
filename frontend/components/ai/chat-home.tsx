@@ -187,7 +187,7 @@ export function ChatHome({
   return (
     <div className="space-y-6">
       {/* Greeting card */}
-      <section className="flex items-start gap-4 rounded-3xl border border-border/60 bg-gradient-to-br from-primary/[0.07] via-card to-card p-5 sm:p-6">
+      <section className="flex items-start gap-4 rounded-3xl border-2 border-border/80 bg-gradient-to-br from-primary/[0.07] via-card to-card p-5 sm:p-6">
         <span
           aria-hidden="true"
           className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-violet-500 text-white shadow-md shadow-primary/20"
@@ -196,7 +196,7 @@ export function ChatHome({
         </span>
         <div className="min-w-0">
           <h3 className="text-lg font-extrabold tracking-tight text-foreground">{title}</h3>
-          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{blurb}</p>
+          <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">{blurb}</p>
         </div>
       </section>
 
@@ -204,13 +204,13 @@ export function ChatHome({
       {recents.length > 0 && (
         <section className="space-y-2.5">
           <div className="flex items-center justify-between gap-3">
-            <h4 className="flex items-center gap-2 text-sm font-bold text-foreground">
+            <h4 className="flex items-center gap-2 text-[13px] font-bold text-foreground">
               <History className="h-4 w-4 text-primary" aria-hidden="true" />
               Recent Chats
             </h4>
             <Link
               href={seeAllHref}
-              className="text-xs font-semibold text-primary hover:underline"
+              className="text-[11px] font-semibold text-primary hover:underline"
             >
               See all ›
             </Link>
@@ -221,7 +221,7 @@ export function ChatHome({
                 <button
                   type="button"
                   onClick={() => onOpenRecent(s.session)}
-                  className="flex w-full items-center gap-3 rounded-2xl border border-border/60 bg-card px-4 py-3 text-left transition-colors hover:border-primary/40 hover:bg-muted/30"
+                  className="flex w-full items-center gap-3 rounded-2xl border-2 border-border/80 bg-card px-4 py-3 text-left transition-colors hover:border-primary/40 hover:bg-muted/30"
                 >
                   <span
                     aria-hidden="true"
@@ -230,10 +230,10 @@ export function ChatHome({
                     <CaptainAvatar className="h-4 w-4" />
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate text-sm font-semibold text-foreground">
+                    <span className="block truncate text-[13px] font-semibold text-foreground">
                       {s.preview || "Conversation"}
                     </span>
-                    <span className="block text-xs text-muted-foreground">
+                    <span className="block text-[11px] text-muted-foreground">
                       {s.messages} message{s.messages === 1 ? "" : "s"} · {relativeTime(s.lastMessageAt)}
                     </span>
                   </span>
@@ -263,7 +263,7 @@ export function ChatHome({
                   aria-selected={isActive}
                   onClick={() => setActive(g.category)}
                   className={cn(
-                    "inline-flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-xs font-semibold transition-colors",
+                    "inline-flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-[11px] font-semibold transition-colors",
                     isActive
                       ? "border-primary/50 bg-primary/10 text-primary"
                       : "border-border/70 bg-card text-muted-foreground hover:border-primary/30 hover:text-foreground",
@@ -285,12 +285,12 @@ export function ChatHome({
                   <button
                     type="button"
                     onClick={() => onSend(q.text)}
-                    className="flex w-full items-center gap-3 rounded-2xl border border-border/60 bg-card px-4 py-3 text-left transition-colors hover:border-primary/40 hover:bg-muted/30"
+                    className="flex w-full items-center gap-3 rounded-2xl border-2 border-border/80 bg-card px-4 py-3 text-left transition-colors hover:border-primary/40 hover:bg-muted/30"
                   >
                     {Icon ? (
                       <Icon className="h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
                     ) : null}
-                    <span className="min-w-0 flex-1 text-sm font-medium text-foreground">
+                    <span className="min-w-0 flex-1 text-[13px] font-medium text-foreground">
                       {q.text}
                     </span>
                     <ChevronRight

@@ -49,7 +49,7 @@ export function SmartSearchPanel() {
     <div className="mx-auto max-w-2xl space-y-5 py-6">
       <div className="text-center space-y-1.5">
         <h2 className="text-lg font-bold">Smart Search</h2>
-        <p className="text-xs text-muted-foreground">
+        <p className="text-[11px] text-muted-foreground">
           Veer-powered curriculum search — finds notes, labs, and past questions across the platform.
         </p>
       </div>
@@ -63,12 +63,12 @@ export function SmartSearchPanel() {
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && runSearch()}
           placeholder="Search the curriculum, e.g. “numericals on Carnot engine”…"
-          className="w-full rounded-2xl border border-border/70 bg-card py-3.5 pl-11 pr-24 text-sm shadow-md focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+          className="w-full rounded-2xl border-2 border-border/80 bg-card py-3.5 pl-11 pr-24 text-[13px] shadow-md focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
         />
         <button
           onClick={() => runSearch()}
           disabled={!query.trim() || loading}
-          className="absolute right-2 rounded-xl bg-primary px-4 py-2 text-xs font-bold text-primary-foreground hover:opacity-90 disabled:opacity-40"
+          className="absolute right-2 rounded-xl bg-primary px-4 py-2 text-[11px] font-bold text-primary-foreground hover:opacity-90 disabled:opacity-40"
         >
           {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Search"}
         </button>
@@ -81,7 +81,7 @@ export function SmartSearchPanel() {
             <button
               key={q}
               onClick={() => runSearch(q)}
-              className="rounded-full border border-border/70 bg-muted/30 px-3 py-1.5 text-xs text-muted-foreground hover:border-primary/50 hover:text-primary transition-colors"
+              className="rounded-full border border-border/70 bg-muted/30 px-3 py-1.5 text-[11px] text-muted-foreground hover:border-primary/50 hover:text-primary transition-colors"
             >
               {q}
             </button>
@@ -90,7 +90,7 @@ export function SmartSearchPanel() {
       )}
 
       {error && (
-        <div className="rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
+        <div className="rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-[13px] text-destructive">
           {error}
         </div>
       )}
@@ -99,13 +99,13 @@ export function SmartSearchPanel() {
       {result && (
         <div className="space-y-4">
           {result.fallbackMessage && (
-            <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-700 dark:text-amber-400">
+            <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-[13px] text-amber-700 dark:text-amber-400">
               {result.fallbackMessage}
             </div>
           )}
 
           {result.results.length === 0 && !result.fallbackMessage ? (
-            <div className="rounded-xl border border-border/70 bg-muted/20 px-4 py-8 text-center text-sm text-muted-foreground">
+            <div className="rounded-xl border border-border/70 bg-muted/20 px-4 py-8 text-center text-[13px] text-muted-foreground">
               No direct matches. Try different keywords or ask the Tutor tab instead.
             </div>
           ) : (
@@ -121,11 +121,11 @@ export function SmartSearchPanel() {
                       <span className="rounded-md bg-primary/10 px-1.5 py-0.5 text-[10px] font-bold text-primary">
                         {r.type}
                       </span>
-                      <span className="text-xs text-muted-foreground truncate">
+                      <span className="text-[11px] text-muted-foreground truncate">
                         {r.class} · {r.subject} · {r.chapter}
                       </span>
                     </div>
-                    <p className="mt-1 text-sm font-semibold group-hover:text-primary transition-colors">
+                    <p className="mt-1 text-[13px] font-semibold group-hover:text-primary transition-colors">
                       {r.title}
                     </p>
                   </div>
@@ -138,12 +138,12 @@ export function SmartSearchPanel() {
           {/* Syllabus hints */}
           {result.syllabusHints && result.syllabusHints.length > 0 && (
             <div className="rounded-xl border border-border/70 bg-muted/20 p-4 space-y-2">
-              <p className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide text-muted-foreground">
+              <p className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wide text-muted-foreground">
                 <BookOpen className="h-3.5 w-3.5" />
                 Syllabus pointers
               </p>
               {result.syllabusHints.map((h, i) => (
-                <div key={i} className="text-xs">
+                <div key={i} className="text-[11px]">
                   <span className="font-semibold text-foreground">{h.subject} — {h.unit}:</span>{" "}
                   <span className="text-muted-foreground">{h.topics.join(", ")}</span>
                 </div>
@@ -157,7 +157,7 @@ export function SmartSearchPanel() {
               href={result.officialLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-xl border border-border/70 bg-card px-4 py-3 text-xs font-semibold text-primary hover:bg-primary/5 transition-colors"
+              className="flex items-center gap-2 rounded-xl border border-border/70 bg-card px-4 py-3 text-[11px] font-semibold text-primary hover:bg-primary/5 transition-colors"
             >
               <ExternalLink className="h-3.5 w-3.5" />
               Official syllabus (NEB/CDC)
@@ -171,7 +171,7 @@ export function SmartSearchPanel() {
                 setResult(null);
                 setQuery("");
               }}
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
+              className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-primary hover:underline"
             >
               <Sparkles className="h-3.5 w-3.5" />
               New search

@@ -207,7 +207,7 @@ function ConfigScreen({
       {/* Class selector */}
       <Card>
         <CardHeader className="pb-3">
-          <CardTitle className="text-sm uppercase tracking-wide text-muted-foreground">
+          <CardTitle className="text-[13px] uppercase tracking-wide text-muted-foreground">
             Step 1 — Select class &amp; subject
           </CardTitle>
         </CardHeader>
@@ -235,7 +235,7 @@ function ConfigScreen({
                 key={subj.slug}
                 variant={subjectSlug === subj.slug ? "default" : "outline"}
                 onClick={() => setSubjectSlug(subj.slug)}
-                className="rounded-xl h-11 text-sm"
+                className="rounded-xl h-11 text-[13px]"
               >
                 {subj.name}
               </Button>
@@ -248,7 +248,7 @@ function ConfigScreen({
       {subjectSlug && (
         <Card>
           <CardHeader className="pb-3">
-            <CardTitle className="text-sm uppercase tracking-wide text-muted-foreground">
+            <CardTitle className="text-[13px] uppercase tracking-wide text-muted-foreground">
               Step 2 — Configure quiz
             </CardTitle>
             <CardDescription>
@@ -263,14 +263,14 @@ function ConfigScreen({
           <CardContent className="space-y-5">
             {/* Topic selector */}
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-muted-foreground">
+              <label className="text-[11px] font-medium text-muted-foreground">
                 Topic (optional — leave blank for full subject)
               </label>
               <select
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
                 disabled={customTopic.trim().length > 0}
-                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-primary/40"
+                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-[13px] disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-primary/40"
               >
                 <option value="">All topics in {subjectData?.name ?? ""}</option>
                 {allTopics.map((t) => (
@@ -283,7 +283,7 @@ function ConfigScreen({
 
             {/* Free-text topic — ANY topic on the platform, not just the list */}
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-muted-foreground">
+              <label className="text-[11px] font-medium text-muted-foreground">
                 …or type any topic from the platform
               </label>
               <input
@@ -291,7 +291,7 @@ function ConfigScreen({
                 value={customTopic}
                 onChange={(e) => setCustomTopic(e.target.value)}
                 placeholder="e.g. Newton's second law, Photosynthesis, Organic nomenclature…"
-                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-[13px] focus:outline-none focus:ring-2 focus:ring-primary/40"
               />
               {customTopic.trim() && (
                 <p className="text-[11px] font-semibold text-primary">
@@ -302,7 +302,7 @@ function ConfigScreen({
 
             {/* Quiz format — the engine diversities (plan.md §11.1) */}
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-muted-foreground">
+              <label className="text-[11px] font-medium text-muted-foreground">
                 Quiz format
               </label>
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
@@ -320,7 +320,7 @@ function ConfigScreen({
                           : "border-border bg-background text-muted-foreground hover:border-muted-foreground/40"
                       }`}
                     >
-                      <span className="flex items-center gap-1.5 text-sm font-semibold">
+                      <span className="flex items-center gap-1.5 text-[13px] font-semibold">
                         {f.icon}
                         {f.label}
                       </span>
@@ -335,7 +335,7 @@ function ConfigScreen({
 
             {/* Difficulty */}
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-muted-foreground">
+              <label className="text-[11px] font-medium text-muted-foreground">
                 Difficulty
               </label>
               <div className="flex gap-2">
@@ -347,7 +347,7 @@ function ConfigScreen({
                       key={d}
                       type="button"
                       onClick={() => setDifficulty(d)}
-                      className={`flex-1 rounded-xl border px-3 py-2.5 text-left text-sm font-medium transition-all ${
+                      className={`flex-1 rounded-xl border px-3 py-2.5 text-left text-[13px] font-medium transition-all ${
                         selected
                           ? `${meta.bg} ${meta.border} ${meta.color} ring-2 ring-primary/30`
                           : "border-border bg-background text-muted-foreground hover:border-muted-foreground/40"
@@ -365,7 +365,7 @@ function ConfigScreen({
 
             {/* Question count */}
             <div className="space-y-1.5">
-              <label className="text-xs font-medium text-muted-foreground">
+              <label className="text-[11px] font-medium text-muted-foreground">
                 Number of questions
               </label>
               <div className="flex gap-2">
@@ -395,7 +395,7 @@ function ConfigScreen({
                 })
               }
               disabled={!canGenerate || generating}
-              className="w-full rounded-xl py-6 text-base font-semibold"
+              className="w-full rounded-xl py-6 text-[13px] font-semibold"
             >
               {generating ? (
                 <>
@@ -594,7 +594,7 @@ function QuizScreen({
 
       {/* Progress */}
       <div className="space-y-1.5">
-        <div className="flex items-center justify-between text-xs text-muted-foreground">
+        <div className="flex items-center justify-between text-[11px] text-muted-foreground">
           <span>
             Question {currentIndex + 1} of {total}
           </span>
@@ -612,10 +612,10 @@ function QuizScreen({
           <div className="flex items-start gap-2">
             <BookOpen className="h-5 w-5 text-primary mt-0.5 shrink-0" />
             <div>
-              <div className="text-base font-semibold leading-relaxed tracking-tight">
-                <MathMarkdown content={q.prompt} className="[&_p]:my-0 [&_p]:text-base [&_p]:font-semibold" />
+              <div className="text-[13px] font-semibold leading-relaxed tracking-tight">
+                <MathMarkdown content={q.prompt} className="[&_p]:my-0 [&_p]:text-[13px] [&_p]:font-semibold" />
               </div>
-              <CardDescription className="mt-1 text-xs">
+              <CardDescription className="mt-1 text-[11px]">
                 Topic: {q.topic}
               </CardDescription>
             </div>
@@ -627,7 +627,7 @@ function QuizScreen({
             <div className="space-y-2">
               <label
                 htmlFor="quiz-writing-answer"
-                className="text-xs font-medium text-muted-foreground"
+                className="text-[11px] font-medium text-muted-foreground"
               >
                 Your answer
               </label>
@@ -644,7 +644,7 @@ function QuizScreen({
                     ? "Write 2–6 sentences…"
                     : "Write your full answer — show the working for numericals…"
                 }
-                className="w-full rounded-xl border border-input bg-background px-3.5 py-3 text-sm leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary/40 disabled:opacity-70"
+                className="w-full rounded-xl border border-input bg-background px-3.5 py-3 text-[13px] leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary/40 disabled:opacity-70"
               />
               <div className="flex items-center justify-between text-[11px] text-muted-foreground">
                 <span>
@@ -685,13 +685,13 @@ function QuizScreen({
                 key={optIdx}
                 onClick={() => selectAnswer(currentIndex, optIdx)}
                 disabled={showResults}
-                className={`w-full text-left rounded-xl border-2 px-4 py-3 text-sm transition-all hover:bg-accent disabled:cursor-default ${
+                className={`w-full text-left rounded-xl border-2 px-4 py-3 text-[13px] transition-all hover:bg-accent disabled:cursor-default ${
                   showFeedback ? className : "border-border bg-background"
                 } ${isSelected && !showFeedback ? "border-primary bg-primary/5" : ""}`}
               >
                 <div className="flex items-center gap-3">
                   <span
-                    className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+                    className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-bold ${
                       showFeedback && isCorrect
                         ? "bg-emerald-500 text-white"
                         : showFeedback && isSelected && !isCorrect
@@ -717,9 +717,9 @@ function QuizScreen({
             (isChoice
               ? selectedIndices[currentIndex] !== undefined
               : (textAnswers[currentIndex] ?? "").trim().length > 0)) && (
-            <div className="mt-3 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-xs text-muted-foreground">
+            <div className="mt-3 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-[11px] text-muted-foreground">
               <span className="font-semibold text-primary">Explanation: </span>
-              <MathMarkdown content={q.explanation} className="[&_p]:my-1 [&_p]:text-xs [&_p]:text-muted-foreground" />
+              <MathMarkdown content={q.explanation} className="[&_p]:my-1 [&_p]:text-[11px] [&_p]:text-muted-foreground" />
             </div>
           )}
 
@@ -728,7 +728,7 @@ function QuizScreen({
             (isChoice ? selectedIndices[currentIndex] !== undefined : false)) &&
             q.optionAnalysis && (
             <div className="mt-4 grid gap-2 rounded-xl border border-amber-200 dark:border-amber-800 bg-amber-50/50 dark:bg-amber-950/10 px-4 py-3">
-              <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-400">
+              <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-amber-700 dark:text-amber-400">
                 <Lightbulb className="h-3.5 w-3.5 shrink-0" />
                 Each option analysed — why it is right or wrong
               </div>
@@ -740,7 +740,7 @@ function QuizScreen({
 
                   const isCorrect = optIdx === q.correctIndex;
                   return (
-                    <div key={optIdx} className="flex items-start gap-2 rounded-lg bg-background/60 px-3 py-2 text-xs">
+                    <div key={optIdx} className="flex items-start gap-2 rounded-lg bg-background/60 px-3 py-2 text-[11px]">
                       <span
                         className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-bold ${
                           isCorrect
@@ -754,7 +754,7 @@ function QuizScreen({
                         <span className="font-medium text-muted-foreground">{opt}</span>
                         <MathMarkdown
                           content={`${isCorrect ? "✓ Right — " : "✗ Wrong — "}${analysis}`}
-                          className="leading-snug [&_p]:my-0 [&_p]:text-xs [&_p]:text-muted-foreground"
+                          className="leading-snug [&_p]:my-0 [&_p]:text-[11px] [&_p]:text-muted-foreground"
                         />
                       </div>
                     </div>
@@ -860,7 +860,7 @@ function QuizScreen({
                 </div>
               </div>
               <p className="text-lg font-bold">AI Submission Report</p>
-              <p className="mx-auto max-w-lg text-sm text-muted-foreground">
+              <p className="mx-auto max-w-lg text-[13px] text-muted-foreground">
                 {evaluation.summary}
               </p>
             </div>
@@ -868,12 +868,12 @@ function QuizScreen({
             {evaluation.results.map((result, i) => (
               <div
                 key={i}
-                className="rounded-xl border border-border bg-muted/30 p-4 space-y-2"
+                className="rounded-xl border-2 border-border/80 bg-muted/30 p-4 space-y-2"
               >
                 <div className="flex items-start justify-between gap-2">
                   <MathMarkdown
                     content={`**Q${i + 1}.** ${questions[i]?.prompt ?? ""}`}
-                    className="min-w-0 flex-1 text-sm font-semibold leading-snug [&_p]:my-0 [&_p]:text-sm [&_p]:font-semibold"
+                    className="min-w-0 flex-1 text-[13px] font-semibold leading-snug [&_p]:my-0 [&_p]:text-[13px] [&_p]:font-semibold"
                   />
                   <span
                     className={`shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold ${
@@ -887,13 +887,13 @@ function QuizScreen({
                     {result.score}/100 · {result.verdict}
                   </span>
                 </div>
-                <p className="text-xs text-muted-foreground">
+                <p className="text-[11px] text-muted-foreground">
                   <span className="font-semibold text-foreground">Your answer: </span>
                   {textAnswers[i]?.trim() || "(left blank)"}
                 </p>
                 <MathMarkdown
                   content={`**Feedback:** ${result.feedback}`}
-                  className="[&_p]:my-0 [&_p]:text-xs [&_p]:text-muted-foreground"
+                  className="[&_p]:my-0 [&_p]:text-[11px] [&_p]:text-muted-foreground"
                 />
                 {result.modelAnswer && (
                   <div className="rounded-lg border border-emerald-200 dark:border-emerald-800 bg-emerald-50/50 dark:bg-emerald-950/10 px-3 py-2">
@@ -902,7 +902,7 @@ function QuizScreen({
                     </p>
                     <MathMarkdown
                       content={result.modelAnswer}
-                      className="mt-1 [&_p]:my-1 [&_p]:text-xs [&_p]:leading-relaxed [&_p]:text-muted-foreground"
+                      className="mt-1 [&_p]:my-1 [&_p]:text-[11px] [&_p]:leading-relaxed [&_p]:text-muted-foreground"
                     />
                   </div>
                 )}
@@ -911,10 +911,10 @@ function QuizScreen({
                     {result.improvements.map((imp, j) => (
                       <li
                         key={j}
-                        className="flex items-start gap-1.5 text-xs text-muted-foreground"
+                        className="flex items-start gap-1.5 text-[11px] text-muted-foreground"
                       >
                         <Lightbulb className="mt-0.5 h-3 w-3 shrink-0 text-amber-500" />
-                        <MathMarkdown content={imp} className="[&_p]:my-0 [&_p]:text-xs [&_p]:text-muted-foreground" />
+                        <MathMarkdown content={imp} className="[&_p]:my-0 [&_p]:text-[11px] [&_p]:text-muted-foreground" />
                       </li>
                     ))}
                   </ul>
@@ -961,7 +961,7 @@ function QuizScreen({
               <p className="text-2xl font-bold">
                 {score} / {total} correct
               </p>
-              <p className="mt-1 text-sm text-muted-foreground">
+              <p className="mt-1 text-[13px] text-muted-foreground">
                 {pct >= 80
                   ? "Excellent! You have this subject down."
                   : pct >= 50
@@ -1113,7 +1113,7 @@ export function QuizStudio() {
     <>
       {error && (
         <div className="mx-auto max-w-2xl">
-          <div className="rounded-xl border border-rose-200 bg-rose-50 dark:bg-rose-950/20 px-4 py-3 text-sm text-rose-700 dark:text-rose-400">
+          <div className="rounded-xl border border-rose-200 bg-rose-50 dark:bg-rose-950/20 px-4 py-3 text-[13px] text-rose-700 dark:text-rose-400">
             <strong>Error:</strong> {error}
           </div>
         </div>

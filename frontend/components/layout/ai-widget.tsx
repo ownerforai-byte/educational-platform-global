@@ -165,7 +165,7 @@ function SolveStudio({ classLevel, subject }: { classLevel: string; subject: str
             onChange={(event) => setProblem(event.target.value)}
             rows={5}
             placeholder="Example: A projectile is launched at 20 m/s at 30°. Derive its range and verify the result."
-            className="w-full resize-y rounded-2xl border border-border bg-background px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10"
+            className="w-full resize-y rounded-2xl border-2 border-border/80 bg-background px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10"
           />
           <div className="flex flex-wrap items-center justify-between gap-3">
             <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -255,7 +255,7 @@ function DeepDiveStudio({ classLevel, subject }: { classLevel: string; subject: 
               onChange={(event) => setTopic(event.target.value)}
               rows={3}
               placeholder="Example: Lenz's law as a consequence of conservation of energy"
-              className="w-full resize-y rounded-2xl border border-border bg-background px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-sky-500/50 focus:ring-4 focus:ring-sky-500/10"
+              className="w-full resize-y rounded-2xl border-2 border-border/80 bg-background px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-sky-500/50 focus:ring-4 focus:ring-sky-500/10"
             />
           </div>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-3" role="group" aria-label="Synthesis depth">
@@ -402,7 +402,7 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
             </p>
           </div>
           {questions.length > 0 && (
-            <button type="button" onClick={resetPractice} className="inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-2 text-xs font-bold hover:border-violet-500/40">
+            <button type="button" onClick={resetPractice} className="inline-flex shrink-0 items-center gap-1.5 rounded-xl border-2 border-border/80 bg-background px-3 py-2 text-xs font-bold hover:border-violet-500/40">
               <RotateCcw className="h-3.5 w-3.5" /> New set
             </button>
           )}
@@ -416,13 +416,13 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
                 value={topic}
                 onChange={(event) => setTopic(event.target.value)}
                 placeholder="Leave blank for the whole subject"
-                className="min-h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none focus:border-violet-500/50 focus:ring-4 focus:ring-violet-500/10"
+                className="min-h-11 w-full rounded-xl border-2 border-border/80 bg-background px-3 text-sm outline-none focus:border-violet-500/50 focus:ring-4 focus:ring-violet-500/10"
               />
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <span className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">Difficulty</span>
-                <div className="flex rounded-xl border border-border bg-background p-1">
+                <div className="flex rounded-xl border-2 border-border/80 bg-background p-1">
                   {(["easy", "intermediate", "hard"] as const).map((level) => (
                     <button key={level} type="button" onClick={() => setDifficulty(level)} aria-pressed={difficulty === level} className={`flex-1 rounded-lg px-2 py-2 text-xs font-bold capitalize transition ${difficulty === level ? "bg-violet-500 text-white" : "text-muted-foreground hover:text-foreground"}`}>{level}</button>
                   ))}
@@ -430,7 +430,7 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
               </div>
               <div className="space-y-2">
                 <span className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">Questions</span>
-                <div className="flex rounded-xl border border-border bg-background p-1">
+                <div className="flex rounded-xl border-2 border-border/80 bg-background p-1">
                   {[3, 5, 10].map((value) => (
                     <button key={value} type="button" onClick={() => setCount(value)} aria-pressed={count === value} className={`flex-1 rounded-lg px-2 py-2 text-xs font-bold transition ${count === value ? "bg-violet-500 text-white" : "text-muted-foreground hover:text-foreground"}`}>{value}</button>
                   ))}
@@ -455,7 +455,7 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
       {error && <p role="alert" className="rounded-2xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">{error}</p>}
       {questions.length > 0 && (
         <>
-          <div className="flex items-center justify-between rounded-2xl border border-border bg-card px-4 py-3 text-xs font-semibold">
+          <div className="flex items-center justify-between rounded-2xl border-2 border-border/80 bg-card px-4 py-3 text-xs font-semibold">
             <span className="capitalize text-muted-foreground">{difficulty} · {FORMATS.find((item) => item.id === format)?.label}</span>
             <span>{answered}/{questions.length} answered</span>
           </div>
@@ -464,7 +464,7 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
             const selected = Number(answers[index]);
             const isCorrect = selected === question.correctIndex;
             return (
-              <article key={`${question.prompt}-${index}`} className="rounded-3xl border border-border bg-card p-4 shadow-sm sm:p-5">
+              <article key={`${question.prompt}-${index}`} className="rounded-3xl border-2 border-border/80 bg-card p-4 shadow-sm sm:p-5">
                 <div className="mb-4 flex items-start gap-3">
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-violet-500/10 text-xs font-black text-violet-600 dark:text-violet-400">{index + 1}</span>
                   <MathMarkdown content={question.prompt} className="min-w-0 flex-1 font-semibold leading-relaxed [&_p]:my-0" />
@@ -498,7 +498,7 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
                     rows={format === "long-answer" ? 7 : 3}
                     aria-label={`Answer to question ${index + 1}`}
                     placeholder={format === "fill-blank" ? "Type the missing term…" : "Write your answer with reasoning…"}
-                    className="w-full resize-y rounded-2xl border border-border bg-background px-4 py-3 text-sm leading-relaxed outline-none focus:border-violet-500/50 focus:ring-4 focus:ring-violet-500/10 disabled:opacity-70"
+                    className="w-full resize-y rounded-2xl border-2 border-border/80 bg-background px-4 py-3 text-sm leading-relaxed outline-none focus:border-violet-500/50 focus:ring-4 focus:ring-violet-500/10 disabled:opacity-70"
                   />
                 )}
                 {revealed && choiceFormat && (
@@ -812,11 +812,11 @@ export function AIWidget() {
             <div className="flex min-w-0 flex-1 items-center gap-2">
               <BookOpen className="hidden h-4 w-4 shrink-0 text-muted-foreground sm:block" />
               <label className="sr-only" htmlFor="professor-class">Class</label>
-              <select id="professor-class" value={classSlug} onChange={(event) => setClassSlug(event.target.value)} className="min-h-9 max-w-28 rounded-xl border border-border bg-background px-2 text-xs font-semibold outline-none focus:ring-2 focus:ring-primary/30 sm:max-w-none sm:px-3">
+              <select id="professor-class" value={classSlug} onChange={(event) => setClassSlug(event.target.value)} className="min-h-9 max-w-28 rounded-xl border-2 border-border/80 bg-background px-2 text-xs font-semibold outline-none focus:ring-2 focus:ring-primary/30 sm:max-w-none sm:px-3">
                 {SYLLABUS.map((item) => <option key={item.slug} value={item.slug}>{item.name}</option>)}
               </select>
               <label className="sr-only" htmlFor="professor-subject">Subject</label>
-              <select id="professor-subject" value={subjectSlug} onChange={(event) => setSubjectSlug(event.target.value)} className="min-h-9 min-w-0 flex-1 rounded-xl border border-border bg-background px-2 text-xs font-semibold outline-none focus:ring-2 focus:ring-primary/30 sm:flex-none sm:px-3">
+              <select id="professor-subject" value={subjectSlug} onChange={(event) => setSubjectSlug(event.target.value)} className="min-h-9 min-w-0 flex-1 rounded-xl border-2 border-border/80 bg-background px-2 text-xs font-semibold outline-none focus:ring-2 focus:ring-primary/30 sm:flex-none sm:px-3">
                 {subjects.map((subject) => <option key={subject.slug} value={subject.slug}>{subject.name}</option>)}
               </select>
             </div>
@@ -852,17 +852,17 @@ export function AIWidget() {
                     )}
                     <div className="grid gap-2 sm:grid-cols-2">
                       {LESSON_STARTERS.map((starter) => (
-                        <button key={starter} type="button" onClick={() => void send(starter)} disabled={sending} className="rounded-2xl border border-border bg-card p-4 text-left text-sm font-medium leading-relaxed transition hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-md disabled:opacity-50">{starter}</button>
+                        <button key={starter} type="button" onClick={() => void send(starter)} disabled={sending} className="rounded-2xl border-2 border-border/80 bg-card p-4 text-left text-sm font-medium leading-relaxed transition hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-md disabled:opacity-50">{starter}</button>
                       ))}
                     </div>
-                    <div className="rounded-3xl border border-border bg-card p-4 sm:p-5">
+                    <div className="rounded-3xl border-2 border-border/80 bg-card p-4 sm:p-5">
                       <div className="mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-[0.15em] text-muted-foreground"><History className="h-4 w-4" /> Saved lessons</div>
                       {sessions.length === 0 ? (
                         <p className="text-sm text-muted-foreground">Your professor lessons will appear here after your first conversation.</p>
                       ) : (
                         <div className="grid gap-2 sm:grid-cols-2">
                           {sessions.slice(0, 6).map((item) => (
-                            <button key={item.session} type="button" onClick={() => void openConversation(item.session)} className="min-w-0 rounded-2xl border border-border bg-background px-4 py-3 text-left transition hover:border-primary/35">
+                            <button key={item.session} type="button" onClick={() => void openConversation(item.session)} className="min-w-0 rounded-2xl border-2 border-border/80 bg-background px-4 py-3 text-left transition hover:border-primary/35">
                               <span className="block truncate text-sm font-semibold">{item.preview || "Professor lesson"}</span>
                               <span className="mt-1 block text-[11px] text-muted-foreground">{item.messages} messages</span>
                             </button>
@@ -895,7 +895,7 @@ export function AIWidget() {
                           <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-950 text-white"><CaptainAvatar className="h-4 w-4" /></span>
                           <span className="text-[10px] font-black uppercase tracking-[0.14em]">Veer Professor</span>
                         </div>
-                        <div className="rounded-3xl border border-border bg-card px-4 py-4 shadow-sm sm:px-5 sm:py-5">
+                        <div className="rounded-3xl border-2 border-border/80 bg-card px-4 py-4 shadow-sm sm:px-5 sm:py-5">
                           <InteractiveMarkdown content={line.content} className="chat-reading" />
                         </div>
                       </article>
@@ -915,7 +915,7 @@ export function AIWidget() {
                   void send();
                 }}
               >
-                <div className="mx-auto flex max-w-4xl items-end gap-2 rounded-2xl border border-border bg-background p-2 shadow-sm focus-within:border-primary/40 focus-within:ring-4 focus-within:ring-primary/5">
+                <div className="mx-auto flex max-w-4xl items-end gap-2 rounded-2xl border-2 border-border/80 bg-background p-2 shadow-sm focus-within:border-primary/40 focus-within:ring-4 focus-within:ring-primary/5">
                   <label className="sr-only" htmlFor="veer-widget-message">Ask Veer Professor</label>
                   <textarea
                     id="veer-widget-message"

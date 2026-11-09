@@ -137,7 +137,7 @@ export default function QuizHistoryPage() {
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-lg font-semibold">Saved quizzes</h1>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-[13px] text-muted-foreground">
               Quizzes you completed on /ai-quiz. Open one to review each option.
             </p>
           </div>
@@ -154,7 +154,7 @@ export default function QuizHistoryPage() {
         </div>
 
         {!list.migrated && (
-          <div className="rounded-xl border border-amber-200 bg-amber-50 dark:bg-amber-950/20 px-4 py-3 text-sm text-amber-700 dark:text-amber-400">
+          <div className="rounded-xl border border-amber-200 bg-amber-50 dark:bg-amber-950/20 px-4 py-3 text-[13px] text-amber-700 dark:text-amber-400">
             Quiz history is not stored yet in this deployment, so there is
             nothing to show here. Completed quizzes are saved automatically when
             storage is enabled.
@@ -171,7 +171,7 @@ export default function QuizHistoryPage() {
 
         {!list.loading && list.rows.length === 0 && (
           <Card>
-            <CardContent className="py-10 text-center text-sm text-muted-foreground">
+            <CardContent className="py-10 text-center text-[13px] text-muted-foreground">
               <GraduationCap className="mx-auto h-8 w-8 text-muted-foreground/50 mb-3" />
               No saved quizzes yet. Generate one on the{" "}
               <a
@@ -204,7 +204,7 @@ export default function QuizHistoryPage() {
                 <button
                   key={row.id}
                   onClick={() => openQuiz(row.id)}
-                  className="w-full text-left rounded-xl border border-border bg-background px-4 py-3 text-sm transition-all hover:bg-accent"
+                  className="w-full text-left rounded-xl border-2 border-border/80 bg-background px-4 py-3 text-[13px] transition-all hover:bg-accent"
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0">
@@ -219,7 +219,7 @@ export default function QuizHistoryPage() {
                           </Badge>
                         )}
                       </div>
-                      <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground">
+                      <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-muted-foreground">
                         {row.subjectSlug && (
                           <span>Subject: {row.subjectSlug}</span>
                         )}
@@ -240,7 +240,7 @@ export default function QuizHistoryPage() {
                       </div>
                     </div>
                     <div className="flex items-center gap-2 shrink-0">
-                      <span className="text-xs text-muted-foreground">
+                      <span className="text-[11px] text-muted-foreground">
                         {fmtDate(row.createdat)}
                       </span>
                       <ChevronRight className="h-4 w-4 text-muted-foreground/50" />
@@ -309,8 +309,8 @@ export default function QuizHistoryPage() {
         <CardHeader className="pb-3">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <CardTitle className="text-base">{quiz.title}</CardTitle>
-              <CardDescription className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs">
+              <CardTitle className="text-[13px]">{quiz.title}</CardTitle>
+              <CardDescription className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-[11px]">
                 {quiz.subjectSlug && <span>Subject: {quiz.subjectSlug}</span>}
                 {quiz.topic && <span>Topic: {quiz.topic}</span>}
                 {quiz.difficulty && (
@@ -337,7 +337,7 @@ export default function QuizHistoryPage() {
                   )}
               </CardDescription>
             </div>
-            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+            <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
               <Clock className="h-3.5 w-3.5" />
               {fmtDate(quiz.createdat)}
             </div>
@@ -395,10 +395,10 @@ function QuestionCard({
         <div className="flex items-start gap-2">
           <BookOpen className="h-5 w-5 text-primary mt-0.5 shrink-0" />
           <div className="min-w-0">
-            <CardTitle className="text-base leading-relaxed">
+            <CardTitle className="text-[13px] leading-relaxed">
               {question.prompt}
             </CardTitle>
-            <CardDescription className="mt-1 text-xs">
+            <CardDescription className="mt-1 text-[11px]">
               Q{qIdx + 1}
               {question.topic ? ` · ${question.topic}` : ""}
             </CardDescription>
@@ -414,10 +414,10 @@ function QuestionCard({
           return (
             <div
               key={optIdx}
-              className="flex items-start gap-3 rounded-lg border border-border bg-background px-4 py-3 text-sm"
+              className="flex items-start gap-3 rounded-lg border border-border bg-background px-4 py-3 text-[13px]"
             >
               <span
-                className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+                className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-[11px] font-bold ${
                   isCorrect
                     ? "bg-emerald-500 text-white"
                     : "bg-muted text-muted-foreground"
@@ -428,7 +428,7 @@ function QuestionCard({
               <div className="min-w-0 flex flex-col gap-1">
                 <span className="font-medium">{opt}</span>
                 {analysis && (
-                  <div className="flex items-start gap-1.5 leading-relaxed text-xs text-muted-foreground">
+                  <div className="flex items-start gap-1.5 leading-relaxed text-[11px] text-muted-foreground">
                     <Lightbulb className="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-500" />
                     <span>
                       {isCorrect ? "Right — " : "Wrong — "}
@@ -442,7 +442,7 @@ function QuestionCard({
         })}
 
         {question.explanation && (
-          <div className="mt-2 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-xs text-muted-foreground">
+          <div className="mt-2 rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 text-[11px] text-muted-foreground">
             <span className="font-semibold text-primary">Explanation: </span>
             {question.explanation}
           </div>

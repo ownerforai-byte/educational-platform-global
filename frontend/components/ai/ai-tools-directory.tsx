@@ -342,7 +342,7 @@ export function AiToolsDirectory({ subjects }: { subjects: SubjectClassroom[] })
             type="button"
             aria-pressed={active === tab}
             onClick={() => setActive(tab)}
-            className={`shrink-0 rounded-full border px-4 py-1.5 text-xs font-semibold transition-all ${
+            className={`shrink-0 rounded-full border px-4 py-1.5 text-[11px] font-semibold transition-all ${
               active === tab
                 ? "border-primary bg-primary text-primary-foreground shadow-sm"
                 : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"
