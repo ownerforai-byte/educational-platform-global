@@ -88,6 +88,7 @@ import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { IDENTITY_REPLY } from "@/components/ai/ai-chat-interface";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { AiReplyCard } from "@/components/ai/ai-reply-card";
+import { CuratedNotesBlock } from "@/components/ai/curated-notes-block";
 import { StepCards } from "@/components/chat/step-cards";
 import { splitStepBlocks } from "@/lib/content/steps-blocks";
 import { FloatingIdeaChips } from "@/components/ai/floating-idea-chips";
@@ -1301,6 +1302,9 @@ export function TutorConsole({
                 past NEB questions — broken down step by step.
               </p>
             </div>
+
+            {/* Curated notes — the one-tap block (owner 2026-11-09), on every home */}
+            <CuratedNotesBlock onCurate={(prompt) => handleSend(prompt)} />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
               {starters.map((prompt) => {
