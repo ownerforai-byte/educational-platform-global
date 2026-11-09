@@ -201,6 +201,22 @@ surfaces are audited by render tests with a mocked approved session (repeatable 
 | 1 | `/ai` (AI Studio) | **acceptable** | polish | Measured 2026-11-09: 53-line page + 376-line directory, a11y-correct filter tabs (`aria-pressed`, labelled group), proper locked-card state (grayscale + `aria-disabled` + tier label), focus rings present, 3 render tests. **Must-fix honesty violation:** fabricated `users: "580"`-style counts displayed on tool cards — no analytics source exists (plan Phase 8 pending); social proof invented. Also: ad-hoc icon palettes (`bg-orange-100…`) instead of the canonical `lib/ui/subject-visuals.ts` identity. Decision: remove fabricated counts (or wire real data), align icon colors with the token system, then re-verdict. |
 | 2 | `/home` (tier feed + guest home) | **acceptable** | keep | Measured 2026-11-09: 18-line page delegating to `TierHomeRouter` — first-paint tier resolution with documented cold-start fix (guest renders instantly, signed-in splash), semantic sections (`aria-labelledby`), min-h-11 touch targets, focus rings, honest access notice, visitor chat. 5 tier-surface render tests + rail tests. Polish candidate (non-blocking): brand the hydration splash instead of a bare spinner. |
 | 3 | `/lab` vs `/lab/3d` (two lab hubs) | **redundancy found** | merge-spec in W6 | Measured 2026-11-09: `/lab` = 694-line legacy hub, 30+ lazy rig imports, hand-maintained section cards (87 title strings); `/lab/3d` = 387-line manifest-derived hub (Phase 3 of the 3D plan), syllabus-ordered units, no fake slugs. Same job, two implementations — the exact pattern the 3D-system plan exists to remove. `/lab` also hosts the calculator dashboard `/lab/3d` deliberately excludes. Decision: W6 workstream writes the consolidation spec (canonical `/lab/3d` + `/lab` as calculators/practicals dashboard or a redirect); until then both stay live, no deep link breaks. |
+| 4 | `/subjects` | **poor** | rebuild (W5 discovery) | Measured 2026-11-09: (a) FAKE staged loading — `setTimeout` reveals cards one-by-one at 120 ms (`loadProgress` counters), delaying real content up to ~720 ms per visit as performance theater; (b) hand-maintained `STUB_SUBJECTS` for Classes 8–10 duplicating the 239-block curriculum registry; (c) hardcoded hex gradients (`#3b82f6`…) violating the token system; (d) hardcoded `"New"` badge on every live card — meaningless decoration. Real progress ring + `useLiveStats` are the good bones. Decision: rebuild — kill the fake stagger, derive stubs from the curriculum registry, tokens for identity, honest badges. |
+| 5 | `/class-11-notes` + `/class-12-notes` (subject grid) | **acceptable** | polish | Measured 2026-11-09: 13-line ISR page + 375-line `ClassSubjectsGrid` — syllabus-driven (unit counts, teaching hours), cross-links dock (Notes/Derivations/Proofs/Practicals/Labs), searchable unit directory. Issues: hand-maintained `SUBJECT_CONFIG` is a THIRD copy of subject identity (CC-1 below); search input lacks a programmatic label; zero render tests; whole grid is a client component so the page's ISR shell buys little. Decision: polish in P1 — consume `subject-visuals.ts`, label the search, add tests, evaluate server-rendering the static parts. |
+
+### Cross-cutting findings (P0 by-products, each becomes P1/P3 work)
+
+- **CC-1 — Subject identity is hand-defined N times.** `lib/ui/subject-visuals.ts`
+  is the canonical per-subject visual identity, but at least three surfaces
+  re-invent it: `/subjects` (raw hex gradients), `ClassSubjectsGrid`
+  (`SUBJECT_CONFIG`), `/ai` tool cards (ad-hoc icon palettes). P1 fix: one
+  `subjectVisual(slug)` consumed everywhere; a test forbids new copies.
+- **CC-2 — Fabricated metrics displayed as fact.** `/ai` tool cards show
+  invented `users:` counts. No analytics pipeline exists. P1 rule: a number
+  shown to a student must come from a real source or not be shown.
+- **CC-3 — Performance theater.** `/subjects` fakes progressive loading with
+  timers. Pro apps show real content as fast as possible; skeletons only while
+  genuinely awaiting data.
 
 ---
 
