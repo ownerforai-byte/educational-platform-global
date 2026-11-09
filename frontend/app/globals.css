@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind v4 uses a single CSS import instead of the three @tailwind directives.
+   The v3 JS theme config is kept via @config so all custom colors, shadows,
+   keyframes and @apply usages below keep resolving after the major bump. */
+@import "tailwindcss";
+@config "../tailwind.config.ts";
 
 /* ─── MODULAR TYPE SCALE (Major Third, 1.25 ratio) ──────────────────────── */
 :root {
