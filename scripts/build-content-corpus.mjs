@@ -20,11 +20,16 @@
  *     repo-relative to `content/`);
  *   • `notes/concepts` entries whose files are GONE are pruned (stale
  *     copies cannot resurrect renamed/removed content);
+ *   • a refresh that would DROP an authored teaching line the manifest already
+ *     ships is refused. See `lostTeachingLines` below — the source tree must
+ *     stay the complete copy of the knowledge, not a smaller one;
  *   • every other section of the manifest (other content families, index
  *     files) is left exactly as it is.
  *
- * Usage:  node scripts/build-content-corpus.mjs [--check]
- *   --check  report drift and exit 1 instead of writing (CI guard).
+ * Usage:  node scripts/build-content-corpus.mjs [--check] [--allow-note-loss]
+ *   --check            report drift and exit 1 instead of writing (CI guard).
+ *   --allow-note-loss  explicitly accept a deliberate deletion of authored
+ *                      lines; the paths and lines removed are printed.
  */
 
 import fs from "node:fs";
@@ -35,6 +40,48 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = path.join(ROOT, "content");
 const MANIFEST = path.join(ROOT, "frontend", "public", "data", "content", "manifest.json");
 const CHECK_ONLY = process.argv.includes("--check");
+const ALLOW_NOTE_LOSS = process.argv.includes("--allow-note-loss");
+
+/**
+ * Fields that carry authored teaching lines. Identity keys (title, slugs,
+ * visualType, …) are deliberately absent: they describe the note, they do not
+ * teach it, and they legitimately change when a topic is renamed.
+ *
+ * The 2026-11-08 refresh replaced each manifest `data` wholesale from disk and
+ * silently dropped 5 authored `notes` lines from
+ * `class-11/mathematics/analytic-geometry/02-angle-bisector-worked-example.json`
+ * (10 -> 5). Those lines existed only in the shipped manifest — the source tree
+ * kept them in a sibling `--2` file — so the topic page lost a worked example
+ * and the content ledger saw the entry regress from `authored` to `template`.
+ * Losing knowledge during a "sync" is a regression, not a refresh: fail loudly
+ * and make the author restore the lines AT SOURCE instead.
+ */
+const TEACHING_FIELDS = [
+  "notes",
+  "keyPoints",
+  "importantNotes",
+  "importantStatements",
+  "examShortTricks",
+  "importantConcepts",
+  "universalFacts",
+  "blocks",
+];
+
+const lineKey = (line) => (typeof line === "string" ? line : JSON.stringify(line));
+
+/** Teaching lines the manifest ships that the source file no longer contains. */
+function lostTeachingLines(existingData, sourceData) {
+  const lost = [];
+  for (const field of TEACHING_FIELDS) {
+    const before = Array.isArray(existingData?.[field]) ? existingData[field] : [];
+    const after = Array.isArray(sourceData?.[field]) ? sourceData[field] : [];
+    const present = new Set(after.map(lineKey));
+    for (const line of before) {
+      if (!present.has(lineKey(line))) lost.push({ field, line });
+    }
+  }
+  return lost;
+}
 
 /** Every source note file under content/notes/concepts, as corpus paths. */
 function collectSourceFiles() {
@@ -72,6 +119,7 @@ function main() {
   const kept = new Set();
   let unchanged = 0;
   let refreshed = 0;
+  const contentLosses = [];
 
   // 1. Retain existing entries in their current order; refresh the
   //    notes/concepts ones from disk, prune the ones whose file is gone.
@@ -93,6 +141,8 @@ function main() {
     } else {
       refreshed += 1;
     }
+    const lost = lostTeachingLines(item.data, data);
+    if (lost.length) contentLosses.push({ path: item.path, lost });
     next.push({ ...item, data });
     kept.add(item.path);
   }
@@ -104,6 +154,33 @@ function main() {
     added.push({ path: rel, data: JSON.parse(fs.readFileSync(abs, "utf-8")) });
   }
   next.push(...added);
+
+  if (contentLosses.length && !ALLOW_NOTE_LOSS) {
+    console.error(
+      `content corpus: REFUSING to sync — ${contentLosses.length} shipped note(s) would lose authored teaching lines.`,
+    );
+    for (const { path: p, lost } of contentLosses.slice(0, 20)) {
+      console.error(`  × ${p}`);
+      for (const { field, line } of lost.slice(0, 6)) {
+        console.error(`      ${field}: ${String(line).slice(0, 110)}`);
+      }
+      if (lost.length > 6) console.error(`      …and ${lost.length - 6} more line(s)`);
+    }
+    if (contentLosses.length > 20) {
+      console.error(`  …and ${contentLosses.length - 20} more note(s)`);
+    }
+    console.error(
+      "Restore the lines in content/notes/concepts/** (the source tree is the authority), " +
+        "or pass --allow-note-loss to record a deliberate deletion.",
+    );
+    process.exit(1);
+  }
+  if (contentLosses.length && ALLOW_NOTE_LOSS) {
+    const lines = contentLosses.reduce((n, c) => n + c.lost.length, 0);
+    console.warn(
+      `content corpus: --allow-note-loss accepted ${lines} removed teaching line(s) across ${contentLosses.length} note(s).`,
+    );
+  }
 
   console.log(
     `content corpus: ${sourceFiles.size} source files · ${added.length} added · ${refreshed} refreshed · ${unchanged} unchanged · ${pruned} stale pruned · ${next.length} entries total`,
