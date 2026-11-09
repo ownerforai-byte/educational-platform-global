@@ -26,6 +26,10 @@ jobs:
           #   .github/**                  (workflow targets)
           #   *.md, docs                  (documentation)
           #   frontend/app/legal/attribution/page.tsx (example attribution notice — documentation-style content, not a runtime code path)
+          #   frontend/lib/supabase/oauth-config.ts (canonical OAuth origin config — deliberately
+          #     baked in so a missing env var cannot disable Google sign-in; see the
+          #     Google "access blocked" fix. It is a config module, not an AI prompt.)
+          #   *.env.example (documentation of an example value, not a runtime path)
           VIOLATIONS=$(git grep -n -E \
             '(https://[a-z0-9-]+\.vercel\.app|https://[a-z0-9-]+\.onrender\.com)' \
             -- \
@@ -41,6 +45,8 @@ jobs:
             ':(exclude)frontend/scripts/**' \
             ':(exclude)frontend/public/**' \
             ':(exclude)frontend/app/legal/attribution/page.tsx' \
+            ':(exclude)frontend/lib/supabase/oauth-config.ts' \
+            ':(exclude)*.env.example' \
             ':(exclude)*.md' \
             ':(exclude)*.test.*' \
             ':(exclude)*.spec.*' || true)
