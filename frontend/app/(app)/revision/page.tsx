@@ -10,9 +10,13 @@ import { SYLLABUS } from "@/lib/syllabus";
 export default function RevisionPage() {
   const [goals, setGoals] = useState<StudyGoals | null>(null);
 
+  // Client-only localStorage read after mount (no window during SSR); see the
+  // same documented exception in goals/page.tsx.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     setGoals(readGoals());
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   const selectedSubjects = goals
     ? listGoalSubjects().filter((s) => goals.subjects.includes(s.key))

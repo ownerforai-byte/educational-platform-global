@@ -1,14 +1,12 @@
-import { AIAssistantWorkspace } from "@/components/home/ai-assistant-workspace";
+import type { Metadata } from "next";
+import { AiWorkspaceDeck } from "@/components/ai/ai-workspace-deck";
 
-export const metadata = {
-  title: "Veer Workspace",
-  description: "Every Veer tool in one workspace — tutor chat, quiz studio and curriculum search.",
+export const metadata: Metadata = {
+  title: "Veer Workspace — every AI tool, grouped by intent",
+  description:
+    "Ten Veer tools in one workspace, grouped by what you are trying to do: study, solve, create and review.",
 };
 
 export default function AiWorkspacePage() {
-  return (
-    <div className="min-h-screen bg-background text-foreground">
-      <AIAssistantWorkspace />
-    </div>
-  );
+  return <AiWorkspaceDeck />;
 }

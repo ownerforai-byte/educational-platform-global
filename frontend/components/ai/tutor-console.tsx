@@ -926,7 +926,10 @@ export function TutorConsole({
         }
         if (controller.signal.aborted && !liveAcc.trim()) {
           setMessages((prev) => (prev[prev.length - 1]?.role === "user" ? prev.slice(0, -1) : prev));
-          setInput(content);
+          // CodeRabbit: sendWith cleared the attachment tray as well as the
+          // draft; restore both so an early Stop is a true no-op.
+          setInput(content === PHOTO_ONLY_PROMPT && images.length ? "" : content);
+          setPendingImages(images);
           return;
         }
         // Agent picks the engine: anything the server could not draw gets a

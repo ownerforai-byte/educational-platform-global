@@ -114,17 +114,20 @@ describe("rate limit tiers", () => {
     expect((await fetch(`${baseUrl}/api/levels`)).status).toBe(200);
   });
 
-  test("Facebook OAuth endpoints share the strict authentication rate limit", async () => {
+  test("OAuth endpoints have their own bucket, not the 5/min password tier", async () => {
     const { baseUrl } = await mountApp(credentialRoutes);
     const endpoints = ["/api/auth/oauth/csrf", "/api/auth/oauth/session"];
     for (const endpoint of endpoints) {
       const statuses: number[] = [];
-      for (let i = 0; i < 6; i += 1) {
+      // A single Google sign-in costs a CSRF POST + a session POST (plus a
+      // retry on a cold backend), so 5/min throttled legitimate social logins.
+      for (let i = 0; i < 21; i += 1) {
         const response = await fetch(`${baseUrl}${endpoint}`, { method: "POST" });
         statuses.push(response.status);
       }
-      expect(statuses.slice(0, 5)).toEqual([200, 200, 200, 200, 200]);
-      expect(statuses[5]).toBe(429);
+      expect(statuses.slice(0, 6)).toEqual([200, 200, 200, 200, 200, 200]);
+      expect(statuses.slice(0, 20).every((s) => s === 200)).toBe(true);
+      expect(statuses[20]).toBe(429);
       resetRateLimits();
     }
   });

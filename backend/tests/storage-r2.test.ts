@@ -31,6 +31,7 @@ vi.mock("../src/db/supabase", () => {
       select: () => ({
         eq: () => ({
           single: async () => ({ data: { role: m.role.value }, error: null }),
+          maybeSingle: async () => ({ data: { role: m.role.value }, error: null }),
         }),
       }),
     }),
@@ -42,6 +43,11 @@ vi.mock("../src/db/supabase", () => {
             publicUrl: `https://sb.example/storage/v1/object/public/resources/${p}`,
           },
         }),
+        list: async () => ({ data: [], error: null }),
+      }),
+      getBucket: async () => ({
+        data: { id: "resources", public: true },
+        error: null,
       }),
     },
   };

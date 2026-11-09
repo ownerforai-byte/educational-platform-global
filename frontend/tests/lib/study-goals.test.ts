@@ -53,7 +53,7 @@ describe("study desk registry rows", () => {
   const expected = [
     ["/dashboard", "member"],
     ["/settings", "member"],
-    ["/onboarding", "visitor"],
+    ["/onboarding", "guest"],
     ["/report-card", "plus"],
   ] as const;
 

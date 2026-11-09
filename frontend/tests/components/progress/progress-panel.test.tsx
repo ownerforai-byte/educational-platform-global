@@ -159,6 +159,28 @@ describe("ProgressPanel", () => {
     expect(screen.getByRole("button", { name: /Clear subject/ })).toBeInTheDocument();
   });
 
+  it("narrows the topic list with the global search filter", async () => {
+    render(<ProgressPanel />);
+    await screen.findByText("Equations of Motion");
+
+    fireEvent.change(screen.getByRole("textbox", { name: /search topics/i }), {
+      target: { value: "newton" },
+    });
+
+    expect(await screen.findByText("Newton's Laws of Motion")).toBeInTheDocument();
+    expect(screen.queryByText("Equations of Motion")).not.toBeInTheDocument();
+
+    // Clearing the query restores the filtered list.
+    fireEvent.click(screen.getByRole("button", { name: /clear search/i }));
+    expect(await screen.findByText("Equations of Motion")).toBeInTheDocument();
+
+    // A query matching nothing lands on the empty state.
+    fireEvent.change(screen.getByRole("textbox", { name: /search topics/i }), {
+      target: { value: "zzz-no-such-topic" },
+    });
+    expect(await screen.findByText("No topics match this filter.")).toBeInTheDocument();
+  });
+
   it("shows a sign-in prompt instead of an error for guests", async () => {
     getProgress.mockRejectedValue(
       Object.assign(new Error("Unauthorized"), { status: 401 })

@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { BarChart3 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ComingSoon } from "@/components/content/coming-soon";
 import { getQuizHistory, type QuizHistoryRow } from "@/lib/api/ai-quiz-history";
 import {
   accuracyBySubject,
@@ -13,6 +12,7 @@ import {
   weeklyTrend,
 } from "@/lib/analytics";
 import { useJourney } from "./use-journey";
+import { CohortComparison } from "./cohort-comparison";
 
 function Bar({ value }: { value: number }) {
   return (
@@ -146,13 +146,7 @@ export function AnalyticsView() {
         </CardContent>
       </Card>
 
-      <ComingSoon
-        title="Cohort comparison"
-        kind="Notes"
-        message="Comparing your trend with other students needs an anonymised cohort aggregate, which the platform does not record yet."
-        backHref="/progress"
-        backLabel="My progress"
-      />
+      <CohortComparison />
     </div>
   );
 }

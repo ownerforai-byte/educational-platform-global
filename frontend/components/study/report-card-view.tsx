@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { Printer } from "lucide-react";
-import { ComingSoon } from "@/components/content/coming-soon";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { groupJourney } from "@/lib/progress/catalog";
@@ -10,6 +9,7 @@ import { getStreak } from "@/lib/streaks";
 import { daysUntilExam, listGoalSubjects } from "@/lib/study-goals";
 import { useStudyGoals } from "./use-study-goals";
 import { useJourney } from "./use-journey";
+import { WeakTopics } from "./weak-topics";
 
 /** /report-card: printable progress snapshot built from the goals, streak and journey readers. */
 export function ReportCardView() {
@@ -74,13 +74,8 @@ export function ReportCardView() {
         </CardContent>
       </Card>
 
-      <div className="print:hidden">
-        <ComingSoon
-          title="Weak-topic call-out"
-          kind="Notes"
-          message="Under progress. The report card does not highlight weak topics yet. Accuracy by topic is already on the Analytics page."
-        />
-      </div>
+      {/* Weak topics print with the report so the call-out reaches paper. */}
+      <WeakTopics variant="report" />
     </div>
   );
 }

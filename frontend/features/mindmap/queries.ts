@@ -1,4 +1,6 @@
 import { loadData } from "@/lib/data-loader";
+import { normalizeClassDir, parseContentPath } from "@/lib/content/paths";
+import { resolveUnitSlug } from "@/lib/syllabus-notes-manifest";
 /**
  * Mind-map system: every syllabus unit/topic resolves a map via getUnitMindmap /
  * getTopicMindmap. Priority: imported content → auto-generated from syllabus.
@@ -162,9 +164,17 @@ function mapRavUnitToSyllabus(subject: string, unit: string): string | undefined
   return map[key];
 }
 
+function resolveMindmapUnit(subject: string, unitPath: string): string {
+  const canonical = resolveUnitSlug(unitPath);
+  return canonical !== unitPath
+    ? canonical
+    : mapRavUnitToSyllabus(subject, unitPath) ?? canonical;
+}
+
 type ImportedMindmap = {
   path: string;
   title: string;
+  classDir?: string;
   subject: string;
   unitId?: string;
   topicSlug?: string;
@@ -187,8 +197,13 @@ function buildImportedMindmaps(): Promise<ImportedMindmap[]> {
       // kept them in a per-unit `mindmap/` folder.
       if (!path.includes("visuals/mindmaps/") && !path.toLowerCase().includes("/mindmap/")) continue;
       const parts = path.split("/");
-      const subject = parts[1] ?? "unknown";
-      const unitPath = parts[2];
+      const parsed = parseContentPath(path);
+      const legacyMindmap = !parsed && path.toLowerCase().includes("/mindmap/");
+      if (!parsed && !legacyMindmap) continue;
+
+      const subject = parsed?.subjectSlug ?? (legacyMindmap ? parts[1] : undefined) ?? "unknown";
+      const unitPath = parsed?.unitSlug ?? (legacyMindmap ? parts[2] : undefined);
+      const classDir = parsed?.classDir;
       const title = item.data?.title ?? parts[parts.length - 1]?.replace(/\.json$/, "") ?? path;
       const notes = Array.isArray(item.data?.notes)
         ? item.data.notes
@@ -199,8 +214,9 @@ function buildImportedMindmaps(): Promise<ImportedMindmap[]> {
       out.push({
         path,
         title,
+        classDir,
         subject,
-        unitId: unitPath ? mapRavUnitToSyllabus(subject, unitPath) : undefined,
+        unitId: unitPath ? resolveMindmapUnit(subject, unitPath) : undefined,
         root: isValidMindmapRoot(item.data?.root)
           ? (item.data!.root as MindmapNode)
           : buildTreeFromOutlineNotes(title, notes),
@@ -220,29 +236,44 @@ function getImportedMindmaps(): Promise<ImportedMindmap[]> {
 }
 
 async function findImportedForUnit(
+  classSlug: string,
   subjectSlug: string,
   unitId: string,
 ): Promise<ImportedMindmap | undefined> {
   const maps = await getImportedMindmaps();
+  const classDir = normalizeClassDir(classSlug.replace(/-notes$/, ""));
   return maps.find(
-    (m) => m.subject === subjectSlug && m.unitId === unitId,
+    (m) =>
+      m.subject === subjectSlug &&
+      m.unitId === unitId &&
+      (!m.classDir || m.classDir === classDir),
   );
 }
 
 async function findImportedForTopic(
+  classSlug: string,
   subjectSlug: string,
   unitId: string,
   topicTitle: string,
   topicSlug?: string,
 ): Promise<ImportedMindmap | undefined> {
   const maps = await getImportedMindmaps();
+  const classDir = normalizeClassDir(classSlug.replace(/-notes$/, ""));
+  const matchesPlace = (map: ImportedMindmap) =>
+    map.subject === subjectSlug &&
+    map.unitId === unitId &&
+    (!map.classDir || map.classDir === classDir);
+
+  if (topicSlug) {
+    const bySlug = maps.find((map) => matchesPlace(map) && map.topicSlug === topicSlug);
+    if (bySlug) return bySlug;
+  }
+
   const norm = topicTitle.toLowerCase();
-  if (topicSlug) { const bySlug = maps.find((m) => m.subject === subjectSlug && m.topicSlug === topicSlug); if (bySlug) return bySlug; }
-  return maps.find((m) => {
-    if (m.subject !== subjectSlug) return false;
-    if (m.unitId && m.unitId !== unitId) return false;
-    const t = m.title.toLowerCase();
-    return norm.includes(t.slice(0, 18)) || t.includes(norm.slice(0, 18));
+  return maps.find((map) => {
+    if (!matchesPlace(map) || !map.topicSlug) return false;
+    const title = map.title.toLowerCase();
+    return norm.includes(title.slice(0, 18)) || title.includes(norm.slice(0, 18));
   });
 }
 
@@ -254,6 +285,7 @@ export async function getTopicMindmap(args: {
   topicTitle: string;
 }): Promise<MindmapDocument> {
   const imported = await findImportedForTopic(
+    args.classSlug,
     args.subjectSlug,
     args.unitId,
     args.topicTitle,
@@ -283,7 +315,7 @@ export async function getUnitMindmap(args: {
   subjectSlug: string;
   unit: SyllabusUnit;
 }): Promise<MindmapDocument> {
-  const imported = await findImportedForUnit(args.subjectSlug, args.unit.id);
+  const imported = await findImportedForUnit(args.classSlug, args.subjectSlug, args.unit.id);
   const source: MindmapSource = imported ? "imported" : "syllabus";
   const root = imported ? imported.root : buildSyllabusUnitMindmap(args.unit);
 

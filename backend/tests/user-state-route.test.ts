@@ -22,20 +22,38 @@ const rowKey = (userId: unknown, namespace: unknown) => `${String(userId)}|${Str
 
 class Query {
   private filters: Record<string, unknown> = {};
-  private mode: "select" | "delete" = "select";
+  private mode: "select" | "delete" | "update" | "insert" = "select";
+  private changes: Partial<Row> = {};
 
   select() {
-    this.mode = "select";
+    // A no-op on mode: after .update()/.insert() supabase-js keeps that mode
+    // and .select() only asks for returned rows.
     return this;
   }
   delete() {
     this.mode = "delete";
     return this;
   }
+  update(values: Partial<Row>) {
+    this.mode = "update";
+    this.changes = values;
+    return this;
+  }
+  insert(values: Row) {
+    this.mode = "insert";
+    this.changes = values;
+    return this;
+  }
+  upsert(values: Row) {
+    // Last-write-wins path: no version guard, the row is set or replaced.
+    rows.set(rowKey(values.user_id, values.namespace), values);
+    return Promise.resolve({ data: values, error: null });
+  }
   eq(field: string, value: unknown) {
     this.filters[field] = value;
     return this;
   }
+  /** Reads return a single row; conditional-update reads return an array. */
   async maybeSingle() {
     const row = rows.get(rowKey(this.filters.user_id, this.filters.namespace));
     return {
@@ -43,15 +61,47 @@ class Query {
       error: null,
     };
   }
-  upsert(row: Row) {
-    rows.set(rowKey(row.user_id, row.namespace), row);
-    return Promise.resolve({ data: row, error: null });
+  async then(resolve: (value: unknown) => void, reject: (reason: unknown) => void) {
+    const result = await this.run();
+    return Promise.resolve(result).then(resolve, reject);
   }
-  then(resolve: (value: unknown) => void, reject: (reason: unknown) => void) {
+  private async run(): Promise<unknown> {
+    // Insert chains carry no .eq() filters — the target key is the row itself.
+    const target = this.mode === "insert" ? this.changes : this.filters;
+    const key = rowKey(target.user_id, target.namespace);
     if (this.mode === "delete") {
-      rows.delete(rowKey(this.filters.user_id, this.filters.namespace));
+      rows.delete(key);
+      return { data: null, error: null };
     }
-    return Promise.resolve({ data: null, error: null }).then(resolve, reject);
+    if (this.mode === "insert") {
+      // Model the (user_id, namespace) primary key: a concurrent first write
+      // loses with the same 23505 Postgres reports in production.
+      if (rows.has(key)) {
+        return {
+          data: null,
+          error: { code: "23505", message: "duplicate key value violates unique constraint" },
+        };
+      }
+      rows.set(key, this.changes as Row);
+      return { data: this.changes, error: null };
+    }
+    if (this.mode === "update") {
+      // Every .eq filter must match, including the version guard.
+      const row = rows.get(key);
+      const matches =
+        row !== undefined &&
+        Object.entries(this.filters).every(
+          ([field, value]) => (row as unknown as Record<string, unknown>)[field] === value,
+        );
+      if (!matches) return { data: [], error: null };
+      rows.set(key, { ...row, ...this.changes } as Row);
+      const updated = rows.get(key)!;
+      return {
+        data: [{ version: updated.version, updated_at: updated.updated_at }],
+        error: null,
+      };
+    }
+    return this.maybeSingle();
   }
 }
 
@@ -148,6 +198,39 @@ describe("/api/user-state", () => {
     expect(stale.status).toBe(409);
     expect(stale.json.error).toBe("version_conflict");
     expect((await call("GET", "personal-notes")).json.payload).toEqual({ v: 1 });
+  });
+
+  test("two concurrent PUTs with the same baseVersion: one wins, the other gets 409", async () => {
+    rows.clear();
+    // Both fire before either completes — the old check-then-upsert let both
+    // pass the version check and the second silently clobbered the first.
+    const [a, b] = await Promise.all([
+      call("PUT", "personal-notes", { payload: { writer: "a" }, baseVersion: 0 }),
+      call("PUT", "personal-notes", { payload: { writer: "b" }, baseVersion: 0 }),
+    ]);
+    const statuses = [a.status, b.status].sort();
+    expect(statuses).toEqual([200, 409]);
+    // The loser's 409 reports the row the winner actually wrote — not the
+    // pre-race absence.
+    const loser = a.status === 409 ? a : b;
+    expect(loser.json.current.version).toBe(1);
+    expect(loser.json.current.payload).toEqual({ writer: loser === a ? "b" : "a" });
+    const final = await call("GET", "personal-notes");
+    // The stored payload is whichever write won, whole — never a mix.
+    expect(["a", "b"]).toContain(final.json.payload.writer);
+    expect(final.json.version).toBe(1);
+  });
+
+  test("two concurrent PUTs on an existing row: exactly one advances the version", async () => {
+    rows.clear();
+    await call("PUT", "personal-notes", { payload: { v: 1 }, baseVersion: 0 });
+    const [a, b] = await Promise.all([
+      call("PUT", "personal-notes", { payload: { writer: "a" }, baseVersion: 1 }),
+      call("PUT", "personal-notes", { payload: { writer: "b" }, baseVersion: 1 }),
+    ]);
+    const statuses = [a.status, b.status].sort();
+    expect(statuses).toEqual([200, 409]);
+    expect((await call("GET", "personal-notes")).json.version).toBe(2);
   });
 
   test("rejects bad namespaces, primitive payloads and oversized documents", async () => {

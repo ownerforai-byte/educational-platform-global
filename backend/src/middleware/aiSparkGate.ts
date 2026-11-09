@@ -51,21 +51,29 @@ export function requireAiSpark(): (
       return;
     }
 
-    res.on("finish", () => {
-      if (res.statusCode >= 400) {
+    // `finish` never fires when the client aborts (Stop button / disconnect),
+    // which used to burn a spark with no answer. `close` covers that path;
+    // the guard settles the refund exactly once.
+    let sparkSettled = false;
+    const settleSpark = () => {
+      if (sparkSettled) return;
+      sparkSettled = true;
+      if (res.statusCode >= 400 || !res.writableEnded) {
         rollbackUserSlot(user.id).catch(() => {});
       }
-    });
+    };
+    res.on("finish", settleSpark);
+    res.on("close", settleSpark);
 
     next();
   };
 }
 
-const STUDIO_TIERS = new Set<AiSparkTier>(["plus", "plus_20", "pro", "owner"]);
+const STUDIO_TIERS = new Set<AiSparkTier>(["plus", "pro", "owner"]);
 
 /**
  * Math, diagrams, deep-dive, search, and quiz are Plus and above.
- * Members keep the three chat consoles only (3 messages / day).
+ * Members keep the three chat consoles only (13 messages / day).
  */
 export function requirePlusAiStudio(): (
   req: Request,
@@ -78,7 +86,7 @@ export function requirePlusAiStudio(): (
       res.status(403).json({
         error: "Veer studio opens at Plus",
         message:
-          "Members get 15 Veer chats per day. Math, diagrams, deep-dive, and quiz open on the Plus plan.",
+          "Members get 13 Veer chats per day. Math, diagrams, deep-dive, and quiz open on the Plus plan.",
       });
       return;
     }

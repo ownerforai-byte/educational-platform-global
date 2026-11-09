@@ -74,9 +74,10 @@ describe("status dot", () => {
     expect(resolveAiStatus({ browserOnline: false, serverOnline: true })).toBe("offline");
   });
 
-  test("labels explain why it is off", () => {
+  test("labels describe configuration, not proven availability", () => {
     expect(aiStatusLabel("offline", false)).toMatch(/offline/i);
-    expect(aiStatusLabel("offline", true)).toMatch(/unavailable/i);
-    expect(aiStatusLabel("online", true)).toMatch(/online/i);
+    expect(aiStatusLabel("offline", true)).toMatch(/not configured/i);
+    expect(aiStatusLabel("online", true)).toMatch(/configured/i);
+    expect(aiStatusLabel("online", true)).not.toMatch(/online/i);
   });
 });

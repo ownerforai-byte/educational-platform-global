@@ -81,27 +81,29 @@ export function DiagramStudio() {
     const controller = new AbortController();
     abortRef.current = controller;
 
+    // Hoisted above the try so the Stop branch in `catch` can settle the turn.
+    let liveAcc = "";
+    let sawToken = false;
+    let lastPaint = 0;
+    const paintLive = (force: boolean) => {
+      const now = Date.now();
+      if (!force && now - lastPaint < 40) return;
+      lastPaint = now;
+      setMessages((prev) => {
+        const next = [...prev];
+        const last = next[next.length - 1];
+        if (last?.role === "assistant") {
+          next[next.length - 1] = { role: "assistant", content: liveAcc };
+        }
+        return next;
+      });
+    };
+
     try {
       const payload: AIChatMessage[] = [
         { role: "system", content: DIAGRAM_SYSTEM },
         ...outbound,
       ];
-      let liveAcc = "";
-      let sawToken = false;
-      let lastPaint = 0;
-      const paintLive = (force: boolean) => {
-        const now = Date.now();
-        if (!force && now - lastPaint < 40) return;
-        lastPaint = now;
-        setMessages((prev) => {
-          const next = [...prev];
-          const last = next[next.length - 1];
-          if (last?.role === "assistant") {
-            next[next.length - 1] = { role: "assistant", content: liveAcc };
-          }
-          return next;
-        });
-      };
 
       for await (const chunk of streamChat(payload, undefined, {
         isGuest: false,
@@ -132,7 +134,17 @@ export function DiagramStudio() {
       }
       recordAiSparkUse();
     } catch (err: unknown) {
-      if (controller.signal.aborted) return;
+      if (controller.signal.aborted) {
+        // CodeRabbit: an early Stop used to leave the unanswered brief in the
+        // thread and to discard the last throttled paint. Settle the turn.
+        if (sawToken) {
+          paintLive(true);
+        } else {
+          setMessages((prev) => (prev[prev.length - 1]?.role === "user" ? prev.slice(0, -1) : prev));
+          setTopic(brief);
+        }
+        return;
+      }
       const msg =
         err instanceof Error && err.message
           ? err.message

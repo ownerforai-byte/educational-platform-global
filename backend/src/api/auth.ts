@@ -588,7 +588,7 @@ router.post("/forgot-password", async (req: Request, res: Response) => {
   const base = (
     process.env.FRONTEND_URL ||
     process.env.NEXT_PUBLIC_SITE_URL ||
-    "http://localhost:3110"
+    "http://localhost:5173"
   ).replace(/\/+$/, "");
   const redirectTo = `${base}/reset-password`;
 

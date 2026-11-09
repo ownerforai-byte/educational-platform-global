@@ -4,7 +4,7 @@ import path from "path";
 import fs from "fs";
 import { z } from "zod";
 import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/auth";
-import { tierForUser, type Tier, type TierUser } from "../utils/sectionAccess";
+import { tierForUser, TIER_RANK, type Tier, type TierUser } from "../utils/sectionAccess";
 import { supabaseAdmin } from "../db/supabase";
 
 const router = Router();
@@ -95,14 +95,6 @@ const revealBodySchema = z.object({
 type RevealBody = z.infer<typeof revealBodySchema>;
 
 // ── tier ladder ────────────────────────────────────────────────────────────
-
-const RANK: Record<Tier, number> = {
-  visitor: 0,
-  member: 1,
-  plus: 2,
-  pro: 3,
-  owner: 4,
-};
 
 /**
  * Minimum tier to access paid note / PYQ / formula bodies.
@@ -202,7 +194,7 @@ router.post("/reveal", requireAuth, async (req: Request, res: Response) => {
   };
   const userTier = tierForUser(tierUser, isOwner);
 
-  if (RANK[userTier] < RANK[CONTENT_MIN_TIER]) {
+  if (TIER_RANK[userTier] < TIER_RANK[CONTENT_MIN_TIER]) {
     res.status(403).json({
       error: "This content requires a Plus or higher membership.",
       tier: userTier,

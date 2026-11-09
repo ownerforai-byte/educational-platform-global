@@ -164,7 +164,9 @@ describe("deep concept upgrade", () => {
     expect(mocks.chat).toHaveBeenCalledTimes(1);
     expect(mocks.stream.mock.calls[0][1][0].content).toContain("DEEP-CONCEPT ANSWER UPGRADE");
     expect(mocks.stream.mock.calls[0][1][1].content).toContain("Raw draft.");
-  });
+    // Two AI passes + citation retrieval; the default 5s budget is tight on
+    // Windows under full-suite load (same 20s budget as other corpus tests).
+  }, 20_000);
   it("appends real web paper references after related-history links in Veer chat", async () => {
     mocks.searchEnabled = true;
     mocks.rows.push({ user_id: "alice", session: "prior", role: "user", content: "capacitor" });
@@ -197,6 +199,14 @@ describe("deep concept upgrade", () => {
     expect(body.indexOf("### Research papers & references")).toBeGreaterThan(
       body.indexOf("/chat?session=prior"),
     );
+    // Owner 2026-11-08: the verified paper is also the closing single link,
+    // with a short meaningful name, and it comes AFTER the references section.
+    expect(body).toContain(
+      "**Original research paper:** [Capacitor dielectric research paper](<https://doi.org/10.1000/capacitor>)",
+    );
+    expect(body.lastIndexOf("**Original research paper:**")).toBeGreaterThan(
+      body.indexOf("### Research papers & references"),
+    );
   });
   it("rebuilds non-streaming academic answers without exposing the draft", async () => {
     const res = await post("/chat", { messages: [{ role: "user", content: "Explain capacitor" }] });
@@ -217,10 +227,32 @@ describe("deep concept upgrade", () => {
     expect(res.status).toBeGreaterThanOrEqual(500);
     expect(await res.text()).not.toContain("Raw draft.");
   });
-  it("does not upgrade a casual message", async () => {
+  it("does not upgrade a casual message but still closes with a research-paper link", async () => {
     const res = await post("/chat", { messages: [{ role: "user", content: "hello" }] });
-    expect((await res.json() as { response: string }).response).toBe("Raw draft.");
+    const response = (await res.json() as { response: string }).response;
+    // Owner 2026-11-08: "simply for any question add link of research paper at
+    // last" — casual turns are no longer a bare reply.
+    expect(response).toContain("Raw draft.");
+    expect(response).toContain("**Original research paper:**");
+    expect(response).toContain("semanticscholar.org/search?q=");
+    expect(response.indexOf("**Original research paper:**")).toBeGreaterThan(
+      response.indexOf("Raw draft."),
+    );
     expect(mocks.chat).toHaveBeenCalledTimes(1);
+  });
+  it("ends a streamed academic answer with the paper link when search is unavailable", async () => {
+    const res = await post("/chat", {
+      stream: true,
+      session: "current",
+      messages: [{ role: "user", content: "Explain capacitor" }],
+    });
+    const body = await res.text();
+    expect(body).toContain("Upgraded answer.");
+    expect(body).toContain("**Original research paper:**");
+    expect(body).toContain("semanticscholar.org/search?q=");
+    expect(body.lastIndexOf("**Original research paper:**")).toBeGreaterThan(
+      body.indexOf("Upgraded answer."),
+    );
   });
   it.each([
     ["/math", { problem: "Solve x + 1 = 2" }, "solution"],

@@ -241,6 +241,11 @@ describe("Concept drills — every subject has misconception-busting Q&A", () =>
 });
 
 describe("PYQ bank — authored banks are registered", () => {
+  // Full-corpus filesystem walk over ~9k content files. The old loop called
+  // existsSync/statSync per entry (three syscalls per file) and blew past the
+  // 5s default on Windows; readdirSync(withFileTypes) removes those extra
+  // stats, and the explicit budget covers a cold/loaded disk. Assertions are
+  // unchanged — this is a real gate, not a skipped check.
   it("every unit/year bank on disk has an index entry with questions", () => {
     const fs = require("node:fs") as typeof import("node:fs");
     const classSlugs = ["class-11", "class-12"] as const;
@@ -270,32 +275,46 @@ describe("PYQ bank — authored banks are registered", () => {
         missing.push(key);
       }
     };
+    const entriesIn = (p: string): import("node:fs").Dirent[] => {
+      try {
+        return fs.readdirSync(p, { withFileTypes: true }) as import("node:fs").Dirent[];
+      } catch {
+        return []; // family/dir not shipped
+      }
+    };
     for (const classSlug of classSlugs) {
       for (const family of families) {
-      const contentRoot = join(process.cwd(), "..", "content", family.dir, classSlug);
-      if (!fs.existsSync(contentRoot)) continue;
-      for (const subject of SUBJECTS) {
-        const subjectDir = join(contentRoot, subject);
-        if (!fs.existsSync(subjectDir)) continue;
-        // Subject-level files (practicals: one file per subject).
-        for (const f of fs.readdirSync(subjectDir)) {
-          const full = join(subjectDir, f);
-          if (fs.statSync(full).isDirectory()) continue;
-          checkFile(f, full, `${family.prefix}/${classSlug}/${subject}/${f}`);
-        }
-        for (const unit of fs.readdirSync(subjectDir)) {
-          const pyqDir = join(subjectDir, unit);
-          if (!fs.existsSync(pyqDir) || !fs.statSync(pyqDir).isDirectory()) continue;
-          for (const f of fs.readdirSync(pyqDir)) {
-            checkFile(f, join(pyqDir, f), `${family.prefix}/${classSlug}/${subject}/${unit}/${f}`);
+        const contentRoot = join(process.cwd(), "..", "content", family.dir, classSlug);
+        for (const subjectEntry of entriesIn(contentRoot)) {
+          if (!subjectEntry.isDirectory() || !SUBJECTS.includes(subjectEntry.name as (typeof SUBJECTS)[number])) continue;
+          const subject = subjectEntry.name;
+          const subjectDir = join(contentRoot, subject);
+          const units = entriesIn(subjectDir);
+          // Subject-level files (practicals: one file per subject) and then
+          // every unit sub-directory — one directory listing instead of the
+          // old existsSync + statSync + readdirSync per candidate.
+          for (const unitEntry of units) {
+            const unitPath = join(subjectDir, unitEntry.name);
+            if (unitEntry.isFile()) {
+              checkFile(unitEntry.name, unitPath, `${family.prefix}/${classSlug}/${subject}/${unitEntry.name}`);
+              continue;
+            }
+            if (!unitEntry.isDirectory()) continue;
+            for (const fileEntry of entriesIn(unitPath)) {
+              if (!fileEntry.isFile()) continue;
+              checkFile(
+                fileEntry.name,
+                join(unitPath, fileEntry.name),
+                `${family.prefix}/${classSlug}/${subject}/${unitEntry.name}/${fileEntry.name}`,
+              );
+            }
           }
-        }
         }
       }
     }
     expect(banks).toBeGreaterThan(0);
     expect(missing, `unregistered exam banks: ${missing.slice(0, 5).join(", ")}`).toEqual([]);
-  });
+  }, 20_000);
 });
 
 describe("Practicals — every syllabus unit has a mind-opening question", () => {

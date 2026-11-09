@@ -33,7 +33,7 @@ export function NotificationBell() {
           data-testid="notification-bell-badge"
           className="absolute -top-1.5 -right-1.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-primary px-1 text-[9px] font-extrabold text-primary-foreground ring-2 ring-background"
         >
-          {unreadCount > 9 ? "9+" : unreadCount}
+          {unreadCount}
         </span>
       )}
     </Link>

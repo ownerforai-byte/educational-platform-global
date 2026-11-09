@@ -1,6 +1,8 @@
 import { Brain, ListChecks, Sparkles, Target } from "lucide-react";
 import { QuizStudio } from "@/components/ai/quiz-studio";
-import { AiSurfaceHeader } from "@/components/ai/ai-surface-header";
+import { AiToolShell } from "@/components/ai/ai-tool-shell";
+import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
+
 export const metadata = {
   title: "Veer Quiz Generator — NEB Practice",
   description:
@@ -27,19 +29,16 @@ const FEATURES = [
 
 export default function AiQuizPage() {
   return (
-    <div className="mx-auto w-full max-w-5xl px-2 sm:px-4 py-4 sm:py-6">
-      {/* Shared AI surface header (plan.md §13) */}
-      <AiSurfaceHeader
-        icon={Brain}
-        title="Veer Quiz Generator"
-        subtitle="Generate a practice set in any format, answer it, and get it graded with worked feedback."
-        accent="border-blue-500/25 bg-blue-500/10 text-blue-500"
-        gradientFrom="from-blue-500/[0.07]"
-        crumb="Quiz Generator"
-        features={FEATURES}
-        showPlanStrip
-      />
+    <AiToolShell
+      icon={Brain}
+      title="Veer Quiz Generator"
+      description="Generate a practice set in any format, answer it, and get it graded with worked feedback."
+      accent="border-blue-500/25 bg-blue-500/10 text-blue-600 dark:text-blue-400"
+      current="/ai-quiz"
+      meter={<AiPlanStrip />}
+      features={FEATURES}
+    >
       <QuizStudio />
-    </div>
+    </AiToolShell>
   );
 }

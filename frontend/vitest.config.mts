@@ -18,7 +18,11 @@ export default defineConfig({
     include: ["tests/**/*.{test,spec}.{ts,tsx}"],
     // Playwright owns tests/e2e — vitest must not load those specs
     // (test.describe from @playwright/test crashes the vitest runner).
-    exclude: ["tests/e2e/**", "node_modules/**"],
+    // platform-pages.spec.ts is also a Playwright spec (it imports
+    // "@playwright/test") that sits at the tests/ root; Playwright's own
+    // testDir is ./tests/e2e, so leaving it in vitest's include made the unit
+    // suite abort with "Playwright Test did not expect test() to be called".
+    exclude: ["tests/e2e/**", "tests/**/*.spec.ts", "tests/**/*.spec.tsx", "node_modules/**"],
     // The forks pool times out waiting for workers on this machine;
     // threads + single-file execution is the stable configuration.
     pool: "threads",

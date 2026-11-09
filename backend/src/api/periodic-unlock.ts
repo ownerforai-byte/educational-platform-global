@@ -22,7 +22,7 @@ router.post("/", requireAuth, (req: Request, res: Response) => {
 
   const user = (req as AuthedRequest).user;
   const tier = aiSparkTierFor(user);
-  if (tier !== "plus" && tier !== "plus_20") {
+  if (tier !== "plus") {
     res.status(403).json({
       error: "Plus only",
       message: "This password is for Plus accounts. Pro already includes the table.",

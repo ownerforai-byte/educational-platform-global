@@ -78,9 +78,10 @@ export const LOGIN_PATH = "/login";
  * Routes that stay fully public: home baseline, the credits wallet itself,
  * the quiz (free guest pool), and the profile/progress account surfaces.
  * 2026-09-27: /ai-quiz joins the public list. 2026-10-13: /ai and /chat
- * rejoin it — Veer chat is open to every tier, metered by its own AI sparks
- * (guest 1 / member 7 / plus 25 / pro 50 / owner unlimited per UTC day),
- * never by content sparks, so the coin gate passes them untouched.
+ * rejoin it — Veer chat is metered by its own AI sparks
+ * (member 13 / plus 25 / pro 50 / owner unlimited per UTC day; guests get
+ * the home guide only), never by content sparks, so the coin gate passes
+ * them untouched.
  */
 export const PUBLIC_PATHS = [
   "/",

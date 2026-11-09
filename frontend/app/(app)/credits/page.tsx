@@ -219,7 +219,7 @@ export default function CreditsPage() {
           My Sparks
         </h1>
         <p className="text-sm text-muted-foreground">
-          Content sparks unlock notes and PYQs for 20 minutes. Members get 3 Veer sparks a day. Labs, simulations, and visuals open at Plus.
+          Content sparks unlock notes and PYQs for 20 minutes. Members get 13 Veer sparks a day. Labs, simulations, and visuals open at Plus.
         </p>
       </div>
 
@@ -252,7 +252,7 @@ export default function CreditsPage() {
               <p className="text-sm text-muted-foreground">Sparks Limit</p>
               <p className="text-3xl font-bold">{isPremium ? "Unlimited" : credits.creditsLimit}</p>
               {isPremium && (
-                <p className="text-[11px] font-semibold text-violet-500">PRO — no daily cap</p>
+                <p className="text-[11px] font-semibold text-violet-500">No daily cap</p>
               )}
             </div>
           </CardContent>
@@ -296,7 +296,7 @@ export default function CreditsPage() {
               <div>
                 <p className="font-medium">Want Premium Access?</p>
                 <p className="text-sm text-muted-foreground">
-                  Contact the owner to get premium status and full access.
+                  Leave a message to this email; ravikisan1814@gmail.com for premium status and full access.
                 </p>
               </div>
             </div>

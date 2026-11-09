@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-const paths = ["/about", "/blog", "/neb-updates", "/how-it-works", "/contact", "/help"];
+const paths = ["/about", "/what-it-has", "/blog", "/neb-updates", "/how-it-works", "/contact", "/help"];
 for (const path of paths) {
   test(`${path} is a complete public page`, async ({ page }) => {
     await page.goto(path);

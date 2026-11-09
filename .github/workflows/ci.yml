@@ -13,8 +13,12 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+        with:
+          # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
+          # code. Never leave a write-capable token in .git/config.
+          persist-credentials: false
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: 'npm'
@@ -42,8 +46,12 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+        with:
+          # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
+          # code. Never leave a write-capable token in .git/config.
+          persist-credentials: false
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: 'npm'
@@ -51,27 +59,9 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
 
-  # Vercel runs `npm run build` (see frontend/vercel.json). A plain
-  # `tsc --noEmit` cannot see the route/types Next generates during a build,
-  # and it never exercises prerendering or module resolution — which is how
-  # build failures kept reaching production as "Command ... npm run build
-  # exited with 1". Run the exact Vercel command here so breakage is caught
-  # with a full log in CI before a deployment is even attempted.
-  frontend-build:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: frontend
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'npm'
-          cache-dependency-path: frontend/package-lock.json
-      - run: npm ci
-      - name: Build with the exact Vercel command
-        run: env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm run build
+  # The exact Vercel production build (and its HTTP viability smoke test) is
+  # gated once in .github/workflows/upgrade-and-test.yml. Keeping a second
+  # copy here only doubled CI minutes, so this job was folded into that one.
 
   frontend-test:
     runs-on: ubuntu-latest
@@ -79,8 +69,12 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+        with:
+          # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
+          # code. Never leave a write-capable token in .git/config.
+          persist-credentials: false
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: 'npm'
@@ -105,8 +99,12 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+        with:
+          # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
+          # code. Never leave a write-capable token in .git/config.
+          persist-credentials: false
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: 'npm'
@@ -128,8 +126,12 @@ jobs:
   content-schema:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+        with:
+          # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
+          # code. Never leave a write-capable token in .git/config.
+          persist-credentials: false
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: 'npm'
@@ -169,8 +171,12 @@ jobs:
   assetlinks:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+        with:
+          # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
+          # code. Never leave a write-capable token in .git/config.
+          persist-credentials: false
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: 'npm'
@@ -250,8 +256,11 @@ jobs:
           const manifestText = await fs.readFile(manifestPath, 'utf8');
           const manifest = JSON.parse(manifestText);
 
+          // The PWA intentionally starts on the tier home (/home), not the
+          // site root. Accept both so a deliberate start_url change does not
+          // fail the source-level assetlinks gate.
           if (
-            manifest?.start_url !== '/' ||
+            !['/', '/home'].includes(manifest?.start_url) ||
             manifest?.display !== 'standalone' ||
             manifest?.orientation !== 'portrait-primary'
           ) {
@@ -267,8 +276,15 @@ jobs:
             );
           }
 
-          const aabStat = await fs.stat(aabPath);
-          console.log(`Release AAB present: ${aabPath} (${(aabStat.size / 1024).toFixed(1)} KB)`);
+          // Release binaries are produced by release tooling and are no longer
+          // tracked in git (f6419cf). Their absence must not fail a source-level
+          // gate; the fingerprint + manifest assertions above still apply.
+          try {
+            const aabStat = await fs.stat(aabPath);
+            console.log(`Release AAB present: ${aabPath} (${(aabStat.size / 1024).toFixed(1)} KB)`);
+          } catch {
+            console.log(`::warning::Release AAB not checked in (${aabPath}); fingerprint/manifest gates still enforced.`);
+          }
 
           console.log('assetlinks OK');
           EOF

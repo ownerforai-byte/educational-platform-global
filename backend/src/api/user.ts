@@ -4,7 +4,7 @@ import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/aut
 import { normalizeRole } from "../auth/types";
 import { supabaseAdmin } from "../db/supabase";
 import { canUnlockModule } from "../utils/sectionAccess";
-import { ensureDailyCredits, spendCredits } from "../utils/credits";
+import { ensureDailyCredits, spendCredits, DAILY_CREDIT_POOL } from "../utils/credits";
 
 /**
  * Persist the spark-unlock window for `moduleKey` into `profiles.credits_unlock`
@@ -71,7 +71,7 @@ router.get("/me", requireAuth, async (req: Request, res: Response) => {
       .from("profiles")
       .select("id, full_name, role, credits, credits_limit, premium_status, premium_approved_at")
       .eq("id", user.id)
-      .single();
+      .maybeSingle();
 
     if (error) {
       console.error("Failed to fetch profile:", error.message);
@@ -95,13 +95,13 @@ router.get("/me", requireAuth, async (req: Request, res: Response) => {
       email: user.email,
       fullName: profile?.full_name ?? null,
       role: normalizeRole(profile?.role) ?? user.role,
-      // Membership tier for the AI-spark allowance (member 7 / plus 25 /
+      // Membership tier for the AI-spark allowance (member 13 / plus 25 /
       // pro 50 per day, owner unlimited) — see utils/aiSpark.ts. The session
       // already carries the tolerant plan read (migration 008); the legacy
       // premium_status flag maps to "pro".
       plan: user.plan ?? (profile?.premium_status === true ? "pro" : "member"),
       credits: ensured.unlimited ? profile?.credits ?? 0 : (profile?.credits ?? ensured.credits),
-      dailyPool: ensured.unlimited ? null : 8,
+      dailyPool: ensured.unlimited ? null : DAILY_CREDIT_POOL,
       creditsLimit: profile?.credits_limit ?? 100,
       premiumStatus: profile?.premium_status ?? false,
       premiumApprovedAt: profile?.premium_approved_at ?? null,
@@ -133,7 +133,7 @@ router.post("/credits/request", requireAuth, async (req: Request, res: Response)
       .select("id")
       .eq("user_id", user.id)
       .eq("status", "PENDING")
-      .single();
+      .maybeSingle();
 
     if (existing) {
       res.status(400).json({ error: "You already have a pending premium request" });
@@ -145,7 +145,7 @@ router.post("/credits/request", requireAuth, async (req: Request, res: Response)
       .from("profiles")
       .select("premium_status")
       .eq("id", user.id)
-      .single();
+      .maybeSingle();
 
     if (profile?.premium_status) {
       res.status(400).json({ error: "You are already a premium member" });

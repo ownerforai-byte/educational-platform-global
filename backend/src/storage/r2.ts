@@ -31,6 +31,7 @@ import {
   GetObjectCommand,
 } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
+import { supabaseAdmin } from "../db/supabase";
 
 const ACCOUNT_ID = process.env.R2_ACCOUNT_ID?.trim() ?? "";
 const BUCKET_NAME = process.env.R2_BUCKET?.trim() ?? "";
@@ -115,33 +116,112 @@ export async function r2Upload(
   return { url: signed };
 }
 
-/**
- * Best-effort check of whether Supabase still has room. Supabase exposes a
- * per-project storage size endpoint (used by its own dashboard). Returns
- * null when the check cannot be made (endpoint down, auth shape change) —
- * the overflow path in the route is the real trigger; this is observability.
- */
-export async function supabaseStorageHealth(): Promise<{
+/** True when overflow URLs are permanent (a public R2 base is configured). */
+export function hasR2PublicBase(): boolean {
+  return PUBLIC_BASE.length > 0;
+}
+
+/** Buckets the storage health report walks. */
+const USAGE_BUCKETS = ["resources", "educational-materials"] as const;
+
+/** Bounds so a huge bucket can never turn a health check into a long crawl. */
+const USAGE_PAGE_SIZE = 100;
+const USAGE_MAX_PAGES_PER_FOLDER = 20;
+const USAGE_MAX_DEPTH = 6;
+
+export interface BucketUsage {
+  id: string;
+  /** True when the bucket could be listed at all. */
+  available: boolean;
+  objects: number;
+  bytes: number;
+  /** True when a bound was hit, so the totals are a floor, not the exact size. */
+  partial: boolean;
+  error?: string;
+}
+
+export interface StorageUsage {
+  available: boolean;
   size: number;
-  quota: number;
-  percentUsed: number;
-} | null> {
+  objects: number;
+  buckets: BucketUsage[];
+}
+
+/**
+ * Measure one bucket by walking its folders through Storage's own list API.
+ *
+ * This replaces a call to `/storage/v1/size`, an endpoint that does not exist
+ * (verified 404 on the live project), so the old probe returned null forever:
+ * the "about to run out of storage" warning could never fire and the first
+ * sign of trouble was a failed upload. Supabase documents no per-project
+ * usage endpoint for a service-role key, so reading the objects is the honest
+ * way to report what is stored.
+ */
+async function measureBucket(id: string): Promise<BucketUsage> {
+  let objects = 0;
+  let bytes = 0;
+  let partial = false;
+
+  const walk = async (prefix: string, depth: number): Promise<void> => {
+    if (depth > USAGE_MAX_DEPTH) {
+      partial = true;
+      return;
+    }
+    for (let page = 0; page < USAGE_MAX_PAGES_PER_FOLDER; page += 1) {
+      const { data, error } = await supabaseAdmin.storage.from(id).list(prefix, {
+        limit: USAGE_PAGE_SIZE,
+        offset: page * USAGE_PAGE_SIZE,
+      });
+      if (error) throw new Error(error.message);
+      if (!data || data.length === 0) return;
+
+      for (const entry of data) {
+        // Supabase marks a folder with a null id — recurse into it instead of
+        // counting it as a file (a folder carries no byte size of its own).
+        if (entry.id === null) {
+          if (entry.name === ".emptyFolderPlaceholder") continue;
+          await walk(prefix ? `${prefix}/${entry.name}` : entry.name, depth + 1);
+          continue;
+        }
+        objects += 1;
+        const size = Number((entry.metadata as { size?: number | string } | null)?.size ?? 0);
+        if (Number.isFinite(size) && size > 0) bytes += size;
+      }
+
+      if (data.length < USAGE_PAGE_SIZE) return;
+    }
+    partial = true;
+  };
+
   try {
-    const url = process.env.SUPABASE_URL?.trim();
-    const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
-    if (!url || !key) return null;
-    const res = await fetch(`${url.replace(/\/+$/, "")}/storage/v1/size`, {
-      headers: { Authorization: `Bearer ${key}` },
-      signal: AbortSignal.timeout(5000),
-    });
-    if (!res.ok) return null;
-    const data = (await res.json()) as { size?: number; quota?: number };
-    if (typeof data.size !== "number" || typeof data.quota !== "number") return null;
-    const percentUsed = data.quota > 0 ? Math.min(100, (data.size / data.quota) * 100) : 0;
-    return { size: data.size, quota: data.quota, percentUsed };
-  } catch {
-    return null;
+    await walk("", 0);
+    return { id, available: true, objects, bytes, partial };
+  } catch (err) {
+    return {
+      id,
+      available: false,
+      objects: 0,
+      bytes: 0,
+      partial: false,
+      error: err instanceof Error ? err.message : String(err),
+    };
   }
+}
+
+/**
+ * Real storage usage for the owner storage report (per-bucket + totals).
+ * Never throws: an unreadable bucket is reported as unavailable so the report
+ * stays honest instead of claiming zero usage.
+ */
+export async function supabaseStorageHealth(): Promise<StorageUsage> {
+  const buckets = await Promise.all(USAGE_BUCKETS.map((id) => measureBucket(id)));
+  const readable = buckets.filter((bucket) => bucket.available);
+  return {
+    available: readable.length > 0,
+    size: readable.reduce((sum, bucket) => sum + bucket.bytes, 0),
+    objects: readable.reduce((sum, bucket) => sum + bucket.objects, 0),
+    buckets,
+  };
 }
 
 /** True when a Supabase upload error looks like a storage quota/limit. */

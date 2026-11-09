@@ -27,6 +27,28 @@ function daysBetween(a: string, b: string): number {
   return Math.round(Math.abs(new Date(b).getTime() - new Date(a).getTime()) / msPerDay);
 }
 
+function safeGet(keyName: string): string | null {
+  try {
+    return localStorage.getItem(keyName);
+  } catch {
+    return null;
+  }
+}
+
+function safeSet(keyName: string, value: string): void {
+  try {
+    localStorage.setItem(keyName, value);
+  } catch {
+    /* storage blocked (private mode) — streak stays in-memory for this session */
+  }
+}
+
+/** Parse a stored count, healing corruption (NaN / negative) back to 0. */
+function parseCount(raw: string | null): number {
+  const parsed = raw ? parseInt(raw, 10) : 0;
+  return Number.isNaN(parsed) || parsed < 0 ? 0 : parsed;
+}
+
 export interface StreakState {
   count: number;
   lastCheckIn: string | null;
@@ -40,9 +62,9 @@ export function getStreak(): StreakState {
   if (typeof window === "undefined") {
     return { count: 0, lastCheckIn: null, isStreakActive: false };
   }
-  const last = localStorage.getItem(key(LAST_CHECK_IN_KEY));
-  const raw = localStorage.getItem(key(COUNT_KEY));
-  const count = raw ? parseInt(raw, 10) : 0;
+  const last = safeGet(key(LAST_CHECK_IN_KEY));
+  const raw = safeGet(key(COUNT_KEY));
+  const count = parseCount(raw);
   const today = getToday();
 
   // If last check-in was yesterday, streak is still active (just need today's check-in)
@@ -60,22 +82,22 @@ export function getStreak(): StreakState {
 export function markCheckIn(): StreakState {
   if (typeof window === "undefined") return getStreak();
   const today = getToday();
-  const prev = localStorage.getItem(key(LAST_CHECK_IN_KEY));
+  const prev = safeGet(key(LAST_CHECK_IN_KEY));
   let newCount = 1;
 
   if (prev === today) {
     // Already checked in today — no change
-    newCount = parseInt(localStorage.getItem(key(COUNT_KEY)) ?? "0", 10);
+    newCount = parseCount(safeGet(key(COUNT_KEY)));
   } else if (prev !== null && daysBetween(prev, today) === 1) {
     // Consecutive day — increment
-    newCount = (parseInt(localStorage.getItem(key(COUNT_KEY)) ?? "0", 10) + 1);
+    newCount = parseCount(safeGet(key(COUNT_KEY))) + 1;
   } else {
     // Streak broken or first visit — reset to 1
     newCount = 1;
   }
 
-  localStorage.setItem(key(LAST_CHECK_IN_KEY), today);
-  localStorage.setItem(key(COUNT_KEY), String(newCount));
+  safeSet(key(LAST_CHECK_IN_KEY), today);
+  safeSet(key(COUNT_KEY), String(newCount));
   return getStreak();
 }
 
@@ -86,6 +108,6 @@ export function streakLabel(count: number): string {
   if (count === 0) return "Start your streak!";
   if (count === 1) return "🔥 Day 1";
   if (count < 7) return `🔥 ${count} days`;
-  if (count < 30) return `🔥 ${count} days`;
+  if (count < 30) return `🔥 ${count} days — a whole week!`;
   return `🔥 ${count} days — Amazing!`;
 }

@@ -7525,923 +7525,109 @@
     "source": "frontend/public/data/syllabus-notes",
     "note": "note files no _manifest.json claims — shipped bytes no page loads",
     "totals": {
-      "entries": 125,
-      "authored": 125,
+      "entries": 13,
+      "authored": 13,
       "template": 0,
-      "bytes": 1381118
+      "bytes": 166075
     },
     "subjects": {
-      "biology": {
-        "totals": {
-          "entries": 25,
-          "authored": 25,
-          "template": 0,
-          "bytes": 229793
-        },
-        "entries": [
-          {
-            "topicSlug": "patterns-of-biodiversity-global-and-nepal",
-            "filename": "biodiversity-and-conservation/02-patterns-of-biodiversity-global-and-nepal.json",
-            "bytes": 9039,
-            "sha256": "85486054871b15dce363db19fe5e790f9943320345b5846f7515d75f5b82c6b1",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "conservation-strategies-in-situ-and-ex-situ",
-            "filename": "biodiversity-and-conservation/04-conservation-strategies-in-situ-and-ex-situ.json",
-            "bytes": 9204,
-            "sha256": "b7b67fb0caff11882aeefe02c729e761eef3a4a380ee7046f25cd6df2f09224f",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "red-data-book-and-iucn-categories",
-            "filename": "biodiversity-and-conservation/05-red-data-book-and-iucn-categories.json",
-            "bytes": 8242,
-            "sha256": "aa42e91a73005d83863d0e32c61798e3ac02ca69d74fa775b399852f9383c623",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "biodiversity-levels",
-            "filename": "biodiversity-conservation-12/01-biodiversity-levels.json",
-            "bytes": 8633,
-            "sha256": "8b07d84a039aea977a9be3343fba5b77df9be08d7e944acb3fb0ab5cf30f10ed",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "biodiversity-loss",
-            "filename": "biodiversity-conservation-12/02-biodiversity-loss.json",
-            "bytes": 8672,
-            "sha256": "1acdefa167315f54c3188b26282b1ce0f884b6c4187c96c2e4acad44f0609e34",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "conservation-strategies-12",
-            "filename": "biodiversity-conservation-12/03-conservation-strategies-12.json",
-            "bytes": 8908,
-            "sha256": "b8f45cb7da905380c28b01cca0e8ab7b445704ad692522e932f604c6fb7567cd",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "biotech-agriculture",
-            "filename": "biotech-applications/01-biotech-agriculture.json",
-            "bytes": 8694,
-            "sha256": "6bb829f3c9b8fb7d03e9d5b704fea4f4d1e70f8bc85edb4116592ac1b2ed7f68",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "biotech-medicine",
-            "filename": "biotech-applications/02-biotech-medicine.json",
-            "bytes": 9035,
-            "sha256": "0fde3e8fb10b0718cd2df2927168906b22043042bf9007c6d8fe3adeba0ac719",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "transgenic-animals",
-            "filename": "biotech-applications/03-transgenic-animals.json",
-            "bytes": 8808,
-            "sha256": "7dae75c1e08b86ce2e277f86e56373a46fa8495ac037f2de1a0dfca1d07e1bf2",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "recombinant-dna",
-            "filename": "biotech-principles/01-recombinant-dna.json",
-            "bytes": 8475,
-            "sha256": "8620576953a84b53f4fdd5c5eddfea38166157edba9d35d032024d58d7076de3",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "biotech-processes",
-            "filename": "biotech-principles/03-biotech-processes.json",
-            "bytes": 7897,
-            "sha256": "42caf219197908fa36ebf26de0458e76c081bb5d1438d8bc7e74ca696408eea9",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "biotechnological-applications-in-agriculture-bt-cotton-nematode-resistant-tobacco",
-            "filename": "biotechnology-applications/01-biotechnological-applications-in-agriculture-bt-cotton-nematode-resistant-tobacco.json",
-            "bytes": 8814,
-            "sha256": "81a197da369379183334bbdb8e26ef88bcd9f66e5478c4a18c15b59ab4de9847",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "transgenic-animals",
-            "filename": "biotechnology-applications/03-transgenic-animals.json",
-            "bytes": 8403,
-            "sha256": "7d935dd01045b4b6043e3f007d0f3fbc1ef2f61e314a1ddff408e4d62e4fae86",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "biopiracy-and-patent-issues",
-            "filename": "biotechnology-applications/04-biopiracy-and-patent-issues.json",
-            "bytes": 9197,
-            "sha256": "589a221518108d3da3682529c182c4d92b3a764efd58d3bde7c9c7d5fd18bd36",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "principles-of-biotechnology-recombinant-dna-technology",
-            "filename": "biotechnology-principles/01-principles-of-biotechnology-recombinant-dna-technology.json",
-            "bytes": 9225,
-            "sha256": "5a7450edc1b1a08617363b3873556806ee9197e6376cda9aa321cdb9591a0100",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "applications-of-recombinant-dna-technology",
-            "filename": "biotechnology-principles/04-applications-of-recombinant-dna-technology.json",
-            "bytes": 8615,
-            "sha256": "103bce370f98589eba2c2f732ac0bb8c13e08eb1620ead3b13c774601d4b0c1f",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "air-water-pollution-12",
-            "filename": "environmental-issues-12/01-air-water-pollution-12.json",
-            "bytes": 9673,
-            "sha256": "2dd1680e97fa8f8aa4c1d9b725edb00579a13f59bccab9001efdc001f949d87c",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "solid-waste",
-            "filename": "environmental-issues-12/02-solid-waste.json",
-            "bytes": 9443,
-            "sha256": "4de71b17f06754f4126418f94836c7fda753a0631a5018213f63615dc1d831e1",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "climate-change-12",
-            "filename": "environmental-issues-12/03-climate-change-12.json",
-            "bytes": 9282,
-            "sha256": "9d80b8adaa1fe1a64a7f63109ef0b2750193f2f2b1f687534807441455f137c9",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "solid-waste-management",
-            "filename": "environmental-issues/03-solid-waste-management.json",
-            "bytes": 8680,
-            "sha256": "bca073aa4e3ea2c5ef3f5a561ae4dcfc7bdd1e4caadac69c0ccf09d63599d6fc",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "ozone-layer-depletion",
-            "filename": "environmental-issues/06-ozone-layer-depletion.json",
-            "bytes": 8910,
-            "sha256": "95f0c980fe087b576cb86e5de393a1c878ba2eca220ac2cca8fbb264a2566823",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "rainwater-harvesting-and-wasteland-development",
-            "filename": "environmental-issues/07-rainwater-harvesting-and-wasteland-development.json",
-            "bytes": 8947,
-            "sha256": "e9ea3fd7dd3e1a92e56d0502fef0c0b84229aefa20281cc70c9bc5821a4fa3c5",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "plant-breeding",
-            "filename": "food-production/01-plant-breeding.json",
-            "bytes": 11721,
-            "sha256": "fba5617dcb1a6981e717753a1b7e2d449303281f21a68a5b41768786320c8970",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "single-cell-protein",
-            "filename": "food-production/02-single-cell-protein.json",
-            "bytes": 10860,
-            "sha256": "42a8a35b8c9c1d0e9d39aea4cabfb5a6d54ede5057bd9bc357810caa891c83ce",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "animal-husbandry",
-            "filename": "food-production/03-animal-husbandry.json",
-            "bytes": 12416,
-            "sha256": "3b0602ed90095fc28cf373b15957db99778c5ec5f9206d08685a207d63a36650",
-            "status": "authored"
-          }
-        ]
-      },
       "chemistry": {
         "totals": {
-          "entries": 6,
-          "authored": 6,
+          "entries": 13,
+          "authored": 13,
           "template": 0,
-          "bytes": 82064
+          "bytes": 166075
         },
         "entries": [
           {
-            "topicSlug": "organic-chemistry-intro",
-            "filename": "basic-concept-organic/01-organic-chemistry-intro.json",
-            "bytes": 13667,
-            "sha256": "88f70be6f1099deb2c8ea7f2c2af60af8d96ec756b7925649cb8e57d05b08b3c",
+            "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
+            "filename": "atomic-structure/02-bohr-postulates-2.json",
+            "bytes": 23673,
+            "sha256": "de30b8be01ecce806dd8b430eda2e78ada027c206e8bee96a7ff51432f3c673f",
             "status": "authored"
           },
           {
-            "topicSlug": "classification-organic",
-            "filename": "basic-concept-organic/02-classification-organic.json",
-            "bytes": 13658,
-            "sha256": "49bd6bf73c63da833f17df4d3af3161cfdf9904231cf301f7aa9e7e06bf8da77",
+            "topicSlug": "spectrum-of-hydrogen-atom",
+            "filename": "atomic-structure/03-hydrogen-spectrum-2.json",
+            "bytes": 14052,
+            "sha256": "4ca82c703bca6e7ab76cc01dd6309b8f49f43d209dd75c0c1cbd05d0d232448c",
             "status": "authored"
           },
           {
-            "topicSlug": "ionic-covalent-bond",
-            "filename": "chemical-bonding/01-ionic-covalent-bond.json",
-            "bytes": 13455,
-            "sha256": "6ba65eccbe3c9248acb5b0811cedc202dffc454c99fd744055a9381d2ec7ec1f",
+            "topicSlug": "defects-of-bohr-s-theory",
+            "filename": "atomic-structure/04-bohr-defects-2.json",
+            "bytes": 19979,
+            "sha256": "7c2f9d70a9fb3291fc15a6677b59df456926dc2f3d729d644d1644d7d1462721",
             "status": "authored"
           },
           {
-            "topicSlug": "02-vsepr-theory",
-            "filename": "chemical-bonding/02-vsepr-theory.json",
-            "bytes": 13895,
-            "sha256": "5f221e11e02d2a738c78a07f89f491db5a0bc768d92942f741b1b3e2dc75322a",
+            "topicSlug": "elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation",
+            "filename": "atomic-structure/05-de-broglie-waves-2.json",
+            "bytes": 15046,
+            "sha256": "be4d4d9c49d90749e536aa530e24575ca29f53aa4665ee8e2c397d607cb3f351",
             "status": "authored"
           },
           {
-            "topicSlug": "03-hybridization",
-            "filename": "chemical-bonding/03-hybridization.json",
-            "bytes": 13912,
-            "sha256": "b8368500b4188b03a9a17e6f580d312bb1664c9cf64b0e7e86dff608e114c0a5",
+            "topicSlug": "heisenberg-s-uncertainty-principle-and-concept-of-probability",
+            "filename": "atomic-structure/06-heisenberg-uncertainty-2.json",
+            "bytes": 12452,
+            "sha256": "bc358ff12ac6ee87be56ad4627952f2f6493df67e61c8b4c9e0c4553092ec880",
             "status": "authored"
           },
           {
-            "topicSlug": "molecular-orbital-theory",
-            "filename": "chemical-bonding/04-molecular-orbital-theory.json",
-            "bytes": 13477,
-            "sha256": "9af953f2c0cb782a52dad8e5361bd85984210e96f4cd39189464d58182066c94",
+            "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
+            "filename": "atomic-structure/08-orbitals-shapes-2.json",
+            "bytes": 13847,
+            "sha256": "43395ce92cabb9f1877190d52eb4d09a6216150be353a0c70a2744b8071dd9be",
             "status": "authored"
-          }
-        ]
-      },
-      "nepali": {
-        "totals": {
-          "entries": 6,
-          "authored": 6,
-          "template": 0,
-          "bytes": 14615
-        },
-        "entries": [
-          {
-            "topicSlug": "शब्द-र-उसको-विभाग",
-            "filename": "bhasha-tatha-vyakaran/01-शब्द-र-उसको-विभाग.json",
-            "bytes": 2336,
-            "sha256": "a9aec290e094e7af9a92f720cf2ac70d8d73487e14191324541803b0ab2fb03c",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "पद-विभक्त-र-तत्पुरुष-समास",
-            "filename": "bhasha-tatha-vyakaran/02-पद-विभक्त-र-तत्पुरुष-समास.json",
-            "bytes": 2354,
-            "sha256": "2109f9b580efd6915390d93d4af68ae95844ea7afba3066baad2091e169870b6",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "बहुव्रीहि-कर्मधारय-द्वन्द्व-समास",
-            "filename": "bhasha-tatha-vyakaran/03-बहुव्रीहि-कर्मधारय-द्वन्द्व-समास.json",
-            "bytes": 3223,
-            "sha256": "0d9cb18cdaa6e76378a55a893e0e0857a756ff6d6bc36de001e42f1db3dc518c",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "क्रिया-र-तत्सम्बन्धी-विषय",
-            "filename": "bhasha-tatha-vyakaran/04-क्रिया-र-तत्सम्बन्धी-विषय.json",
-            "bytes": 2378,
-            "sha256": "b8900f81802163644134e6e619b1d03c95d1e38bdb9e0f38482bae8b1334c51c",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "वाक्य-र-उसको-विध",
-            "filename": "bhasha-tatha-vyakaran/05-वाक्य-र-उसको-विध.json",
-            "bytes": 2054,
-            "sha256": "6a842ac92794bfeb23313b12d55237f54c670b441a18bd0197463aef2d0308b6",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "मुहावा-र-वाङ्मय-प्रयोग",
-            "filename": "bhasha-tatha-vyakaran/06-मुहावा-र-वाङ्मय-प्रयोग.json",
-            "bytes": 2270,
-            "sha256": "2b70db00e5a91f4db9ab351bdb877a6058d4235094ed135db01b8e437f4bda1f",
-            "status": "authored"
-          }
-        ]
-      },
-      "physics": {
-        "totals": {
-          "entries": 88,
-          "authored": 88,
-          "template": 0,
-          "bytes": 1054646
-        },
-        "entries": [
-          {
-            "topicSlug": "ac-voltage-applied-to-resistor-inductor-and-capacitor",
-            "filename": "alternating-current/01-ac-voltage-applied-to-resistor-inductor-and-capacitor.json",
-            "bytes": 8110,
-            "sha256": "5cbce279e684853c032f8ba9f34ab19a995b9a8aac0b5fdf950a2a17ec5183e1",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "ac-voltage-resistor-inductor-capacitor",
-            "filename": "alternating-current/01-ac-voltage-resistor-inductor-capacitor.json",
-            "bytes": 9568,
-            "sha256": "d5dbdf6a9d48552c7686a2a8a261f1d396cc9f4eaa56d8731e9e864f7b5d55a5",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "lc-oscillations",
-            "filename": "alternating-current/02-lc-oscillations.json",
-            "bytes": 10604,
-            "sha256": "1236ee90d7635ba09ffaf94a97054877aa5e9094d47f1fd2732947cc222d8fa4",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "lcr-circuit",
-            "filename": "alternating-current/03-lcr-circuit.json",
-            "bytes": 8768,
-            "sha256": "cd41b837e0882b6dd8e87d24de12d43624197ee8f26839fc5622de21ed55e724",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "lcr-series-circuit-and-power-factor",
-            "filename": "alternating-current/03-lcr-series-circuit-and-power-factor.json",
-            "bytes": 7425,
-            "sha256": "597f1bf14c8c79f6c37b17c16847d5c6ff7c1831cabe7f61ac2ebee323c4178e",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "transformer-principle-types-and-losses",
-            "filename": "alternating-current/04-transformer-principle-types-and-losses.json",
-            "bytes": 8362,
-            "sha256": "abe4cacd033f00fb2bd63e738136b6eab11f374bf4d9c02b730c70b5f3710827",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "transformer",
-            "filename": "alternating-current/04-transformer.json",
-            "bytes": 10737,
-            "sha256": "ede9b32a8f34419597ae24f30281c42e7a688b733a7352a3a4e925b78169a301",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "combination-of-capacitors",
-            "filename": "capacitor/02-combination-capacitors.json",
-            "bytes": 10612,
-            "sha256": "df5d14b2915863e85027d6ab5585119131ac2083aa5f44936138e6119b56ec79",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "effect-of-a-dielectric-polarization-and-displacement",
-            "filename": "capacitor/04-dielectric-effect.json",
-            "bytes": 10390,
-            "sha256": "1d474e4e37a8252f52578ff01057ad7e793956f4d11c69186734bebd94fd7921",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "communication-elements",
-            "filename": "communication-systems/01-communication-elements.json",
-            "bytes": 9576,
-            "sha256": "daa1cc42cf580708bbf1db2d63d1c6c4d148cc38fa5a44493cc9e2ed74ed2af8",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "elements-of-a-communication-system",
-            "filename": "communication-systems/01-elements-of-a-communication-system.json",
-            "bytes": 8285,
-            "sha256": "e1734ebb6cd26e325642c5455545ff09745dae2f7291a8baca83368662aa7bd3",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "modulation",
-            "filename": "communication-systems/02-modulation.json",
-            "bytes": 9959,
-            "sha256": "9367dad254ed4cf0cf774d36d7b31c10d0d484b36d2a1f59e69d36060b290773",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "bandwidth-and-propagation-of-electromagnetic-waves",
-            "filename": "communication-systems/03-bandwidth-and-propagation-of-electromagnetic-waves.json",
-            "bytes": 8503,
-            "sha256": "723fcbf5593df9ec7ccbaa12361e0b1023d2f0e0427c4692223bedf21272fe32",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "electric-current-drift",
-            "filename": "current-electricity/01-electric-current-drift.json",
-            "bytes": 11604,
-            "sha256": "63d77ed7b18543b74df9b6e15f3a0453c5f3b0b47ada8c1c7121bccaf3d11ee4",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "ohm-s-law-and-its-limitations",
-            "filename": "current-electricity/02-ohm-s-law-and-its-limitations.json",
-            "bytes": 8087,
-            "sha256": "fcff7a4fa3f4e8bc5aac65fcad5ec5540272278f5856ddc07477dbe95d2efc08",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "ohms-law",
-            "filename": "current-electricity/02-ohms-law.json",
-            "bytes": 8759,
-            "sha256": "ea2b9752881b197151267c72fc29269cfc667fbbb90fa82f3a7cb9f2a8bbe5c6",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "resistance-and-resistivity-temperature-dependence",
-            "filename": "current-electricity/03-resistance-and-resistivity-temperature-dependence.json",
-            "bytes": 7884,
-            "sha256": "b348c939122dfd1b021cccc1feff4fb6c420234b326502271e96225d44509128",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "resistors-combination",
-            "filename": "current-electricity/03-resistors-combination.json",
-            "bytes": 9692,
-            "sha256": "a4f81ec4dbde1b0fcb0ecde10317a0daeb41046614c5c3cce0977409f6b3458a",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "kirchhoffs-laws",
-            "filename": "current-electricity/04-kirchhoffs-laws.json",
-            "bytes": 9368,
-            "sha256": "908a8dbb13a77ab73dd2a3eb3f93df9ae052006dbbd4397406c92ef5d5077b15",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "series-and-parallel-combination-of-resistors",
-            "filename": "current-electricity/04-series-and-parallel-combination-of-resistors.json",
-            "bytes": 8185,
-            "sha256": "1d53c65c6be2a94ea0b31cb0235094e4641c8d854f94c5d2ac8cd4240d3ef091",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "kirchhoff-s-laws-and-their-applications",
-            "filename": "current-electricity/05-kirchhoff-s-laws-and-their-applications.json",
-            "bytes": 8511,
-            "sha256": "7e70700e206b96cf4495d3c1d4abfe8c369b59c95cc0be8a01ffa6924a82ad84",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "wheatstone-meter-bridge",
-            "filename": "current-electricity/05-wheatstone-meter-bridge.json",
-            "bytes": 10076,
-            "sha256": "e11efb2c0fa12d5f39a95174c22b1d1dd1b74f137b04ed7946a79ecc4cf93242",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "electromotive-force-emf-internal-resistance-and-cells-in-combination",
-            "filename": "current-electricity/06-electromotive-force-emf-internal-resistance-and-cells-in-combination.json",
-            "bytes": 7945,
-            "sha256": "f3e1aab2aed6d7024636298c1da41ce876f12f78582caea150de4a13647036d8",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "potentiometer",
-            "filename": "current-electricity/06-potentiometer.json",
-            "bytes": 9085,
-            "sha256": "0f008bcad30394b39311cb4f585b17502c3dbf98f8cee260debdcb7ae57bc46b",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "wheatstone-bridge-and-meter-bridge",
-            "filename": "current-electricity/07-wheatstone-bridge-and-meter-bridge.json",
-            "bytes": 7713,
-            "sha256": "b9f420eef4f9a15c3cee7a8cecc5a09bf9a71102b026d4225d1b5a3f5b245de2",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "potentiometer-and-its-applications",
-            "filename": "current-electricity/08-potentiometer-and-its-applications.json",
-            "bytes": 8082,
-            "sha256": "81f992d3a8da881ed172d0cd3e6dfbdc51a0968cae821d7a5bbe3d9188f8ddaf",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "linear-momentum-impulse",
-            "filename": "dynamics/01-linear-momentum-and-impulse.json",
-            "bytes": 44195,
-            "sha256": "13294db005ff53c9b611268aa0c5c63a2e0b54dc4608a3280ee112820a3a77c6",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "conservation-of-linear-momentum",
-            "filename": "dynamics/02-conservation-of-linear-momentum.json",
-            "bytes": 38100,
-            "sha256": "bed17b212e497a9b71cf6a020373578212d49c8a08cc12cee0e07d67a04e0a6a",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "faraday-s-laws-of-electromagnetic-induction",
-            "filename": "electromagnetic-induction/01-faraday-s-laws-of-electromagnetic-induction.json",
-            "bytes": 7660,
-            "sha256": "02a7781258e8af9a71b1c13878cdca984cc94c621c80c1742a9d2db28011776c",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "lenz-s-law-and-conservation-of-energy",
-            "filename": "electromagnetic-induction/02-lenz-s-law-and-conservation-of-energy.json",
-            "bytes": 8125,
-            "sha256": "1a65e9bb9ce1b7cdb84dd0a024f441ea439b8290f1f0ce671651e0f748958d8a",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "self-induction-and-self-inductance",
-            "filename": "electromagnetic-induction/03-self-induction-and-self-inductance.json",
-            "bytes": 7497,
-            "sha256": "3a80d1e72b143e0e86c21fd8e321a281399ebd15d7824bc28a5253f4f8825e97",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "mutual-induction-and-mutual-inductance",
-            "filename": "electromagnetic-induction/04-mutual-induction-and-mutual-inductance.json",
-            "bytes": 7401,
-            "sha256": "979e355b9090bc114ade530b6ff59476024ca981640085bb6ade13fdb83eac2a",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "growing-and-decaying-current-in-lr-circuits",
-            "filename": "electromagnetic-induction/05-growing-and-decaying-current-in-lr-circuits.json",
-            "bytes": 7562,
-            "sha256": "59f03d1c2eaa46deba416aea8c96a24be0a77583d7f021206ee6e29f1a85c540",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "coulomb-s-law-and-its-applications",
-            "filename": "electrostatics/01-coulomb-s-law-and-its-applications.json",
-            "bytes": 7926,
-            "sha256": "57b6e459b0a1d4b83f19baa595d6065140ffbe0b066c2923a887296c71679164",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "coulombs-law",
-            "filename": "electrostatics/01-coulombs-law.json",
-            "bytes": 8854,
-            "sha256": "337eb4afe1fd6d60133a4bed16814aef550823de695deb4c02a7fff83ef706fd",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "electric-field-and-electric-field-intensity-due-to-point-charges-line-charges-and-charged-sheets",
-            "filename": "electrostatics/02-electric-field-and-electric-field-intensity-due-to-point-charges-line-charges-and-charged-sheets.json",
-            "bytes": 8481,
-            "sha256": "c0b0f1cdc415452c49964fd941648c523950ee7ea1d12f59f690786dc7126759",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "electric-field-intensity",
-            "filename": "electrostatics/02-electric-field-intensity.json",
-            "bytes": 9391,
-            "sha256": "a82521e981fde0c00f798d3701220be193776d277d03c1bfe83f68701c752e02",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "electric-potential",
-            "filename": "electrostatics/03-electric-potential.json",
-            "bytes": 10302,
-            "sha256": "7dc4f31816dd9ae8bf18094806014b17784c078b7367aa5b6466d5b1db13bcc2",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "capacitance",
-            "filename": "electrostatics/04-capacitance.json",
-            "bytes": 9982,
-            "sha256": "166365df780d54f83e7e03c5ebd6d52e3d86f1273ef07b502e0cb959bc6d7190",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "dielectric-and-dielectric-constant",
-            "filename": "electrostatics/05-dielectric-and-dielectric-constant.json",
-            "bytes": 8033,
-            "sha256": "267719d136778ffb264b1be8c95596651564ec4c0f411d6d60cd53f3a8325d47",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "dielectrics",
-            "filename": "electrostatics/05-dielectrics.json",
-            "bytes": 8995,
-            "sha256": "1ff83db20c3b8cb09ef873ea92b58fb680b047c68d527328ac734e612077d67b",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "energy-stored-in-a-capacitor",
-            "filename": "electrostatics/06-energy-stored-in-a-capacitor.json",
-            "bytes": 7779,
-            "sha256": "775bb09be7749b698dbbd675aaf1985faffa4adbb1831e4e4aa74576591a6c57",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "faradays-laws",
-            "filename": "emi/01-faradays-laws.json",
-            "bytes": 8864,
-            "sha256": "6005a6e7f17ba9d0ef19e0fcb02fe30deeacd144d330e2d52da01fbc02e65abc",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "lenzs-law",
-            "filename": "emi/02-lenzs-law.json",
-            "bytes": 8878,
-            "sha256": "4148e9f970ddf2fd83283c2568de9b2e95b819f9a79982a5a63f60a9b74b12a5",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "self-mutual-induction",
-            "filename": "emi/03-self-mutual-induction.json",
-            "bytes": 9587,
-            "sha256": "a9b424288bd244366242e71621704560fed4a43b5291e36d5eaf82fcc649521d",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "lr-circuits",
-            "filename": "emi/04-lr-circuits.json",
-            "bytes": 8790,
-            "sha256": "177dfd78bcbe5ccf95cc290aabeaff0aef109e02e34cc4d8067f86982ddc29bb",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "geostationary-satellite",
-            "filename": "gravitation/08-geostationary-satellite.json",
-            "bytes": 31633,
-            "sha256": "c115a4c61eb51e91dec93775249ba7fea3944f71a9ac3d4b9b0141cf3678393d",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "gps",
-            "filename": "gravitation/09-gps.json",
-            "bytes": 31947,
-            "sha256": "5b717c7245166af5c234a55114559620d658e13bee65e8b9f8f5f987858b5c24",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "thermal-equilibrium-zeroth-law",
-            "filename": "heat-and-temperature/02-thermal-equilibrium-zeroth-law.json",
-            "bytes": 9551,
-            "sha256": "30db2d1122784dc06874c4bb7e74e6e721b139959146dbb29cb9a1229af5d981",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "heat-and-temperature",
-            "filename": "heat-and-temperature/heat-and-temperature.json",
-            "bytes": 36988,
-            "sha256": "eb4f60ef8b16ad813c586686e407b1f831f036511d3edd58322753eb7fb8740d",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "magnetic-field-and-magnetic-force-on-moving-charges",
-            "filename": "magnetism-and-magnetic-effect/01-magnetic-field-and-magnetic-force-on-moving-charges.json",
-            "bytes": 7836,
-            "sha256": "7dfedd1e7b90999e9f2d784c42bf34489c04ea6263994b1b10951fc352187e4f",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "lorentz-force-and-motion-of-charged-particles-in-magnetic-fields",
-            "filename": "magnetism-and-magnetic-effect/02-lorentz-force-and-motion-of-charged-particles-in-magnetic-fields.json",
-            "bytes": 7998,
-            "sha256": "f624c7586651d7f9cfb6dcc6c8bc933017bf2832d2235d689f15b906d6d541fc",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "biot-savart-law-and-its-applications-straight-wire-circular-loop-solenoid",
-            "filename": "magnetism-and-magnetic-effect/03-biot-savart-law-and-its-applications-straight-wire-circular-loop-solenoid.json",
-            "bytes": 7965,
-            "sha256": "1abe6a9674baf4de9ed6ece645ec5d954b7b433ca04e42faac0d6de44cb2106a",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "ampere-s-circuital-law-and-its-applications",
-            "filename": "magnetism-and-magnetic-effect/04-ampere-s-circuital-law-and-its-applications.json",
-            "bytes": 8112,
-            "sha256": "1ccee067046454bc34e0673d6c7325006b343f2b541d9b4cfaae925d461f6148",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "force-between-two-parallel-current-carrying-conductors",
-            "filename": "magnetism-and-magnetic-effect/05-force-between-two-parallel-current-carrying-conductors.json",
-            "bytes": 8218,
-            "sha256": "aac80ce78746751edf2a78ce98ffb641066660f88e0736f8f53855a368e2993f",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "moving-coil-galvanometer-ammeter-and-voltmeter",
-            "filename": "magnetism-and-magnetic-effect/06-moving-coil-galvanometer-ammeter-and-voltmeter.json",
-            "bytes": 7954,
-            "sha256": "8eea3809d0e1eceb95399d23dc270a9c43dd3ac5253b0a1b276bb8eafed9ce8e",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "magnetic-force-charges",
-            "filename": "magnetism/01-magnetic-force-charges.json",
-            "bytes": 9870,
-            "sha256": "c9a06e57af8b94c33b68b2e48ac187ee979a245f4db1b3ef6f444bf25792effa",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "biot-savart-law",
-            "filename": "magnetism/02-biot-savart-law.json",
-            "bytes": 8871,
-            "sha256": "d958402842e013a60cb68a7a4ac87d961231af78b00935b0cafee8c0e53fd29c",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "ampere-circuital-law",
-            "filename": "magnetism/03-ampere-circuital-law.json",
-            "bytes": 9516,
-            "sha256": "a58913ac45eee1cf562debf3c928274e47b92429810430bbadd46275cad8b5c9",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "moving-coil-galvanometer",
-            "filename": "magnetism/04-moving-coil-galvanometer.json",
-            "bytes": 9712,
-            "sha256": "56d058fc91ac940f52e94df639d07bfb5f3a531820554d02193c574757d7beab",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "photoelectric-effect",
-            "filename": "modern-physics-12/01-photoelectric-effect.json",
-            "bytes": 10780,
-            "sha256": "490078440cf975ebdb63b310199bdee95ea08044828f3837bb47f2cfad6b2914",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "de-broglie-waves-12",
-            "filename": "modern-physics-12/02-de-broglie-waves-12.json",
-            "bytes": 9349,
-            "sha256": "08924cf7b9ccaf443703ebf73164fb8e7218793ea225282a5c9a2834445a7778",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "bohr-atom",
-            "filename": "modern-physics-12/03-bohr-atom.json",
-            "bytes": 8333,
-            "sha256": "68b2bd2a06db5480fa49f78ea16c075fa21f48d605f13e0e1865805bc0e85158",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "nucleus-binding-energy-12",
-            "filename": "modern-physics-12/04-nucleus-binding-energy-12.json",
-            "bytes": 9633,
-            "sha256": "8357dc2e31ea674d1c1b158236b6674f801b4bd6026b7bb50fc9e4a183cffa22",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "semiconductors-devices",
-            "filename": "modern-physics-12/05-semiconductors-devices.json",
-            "bytes": 10051,
-            "sha256": "346e59e046de5d5120e86550145223520ae27bf5ff24a364cda0cc2ce2bc9070",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "logic-gates",
-            "filename": "modern-physics-12/06-logic-gates.json",
-            "bytes": 9652,
-            "sha256": "2261ea9b11ba902be1ac3bbc7586ca692f6f4b9e948b6bc7d0819b1d2bff196f",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "semiconductors-intrinsic-and-extrinsic-p-n-junction-diode-transistor",
-            "filename": "modern-physics/05-semiconductors-intrinsic-and-extrinsic-p-n-junction-diode-transistor.json",
-            "bytes": 7678,
-            "sha256": "de2fee33ed63b53494d9e8c09b802078234f3b6054988b0da7d16bd5f3630704",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "measurement-of-specific-heat-capacity-of-solids-and-liquids",
-            "filename": "quantity-of-heat/11-unknown-specific-heat-via-cooling-rates.json",
-            "bytes": 29072,
-            "sha256": "582484cbb4e039b062b5cf80b11d996d6a05bd2762a27424c9a266a1f26afc73",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "mirrors-lenses",
-            "filename": "ray-optics-12/01-mirrors-lenses.json",
-            "bytes": 9507,
-            "sha256": "dd7a5fde170842fe564804381d2ae441fd5f7d0464c301fe81ee59363a074fa1",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "optical-instruments",
-            "filename": "ray-optics-12/02-optical-instruments.json",
-            "bytes": 9261,
-            "sha256": "1285be744913c2218682cfbaa764fa1e0bc11370eb7faadeaaa09644ea92adfa",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "reflection-at-plane-and-curved-surfaces-mirrors",
-            "filename": "ray-optics/01-reflection-at-plane-and-curved-surfaces-mirrors.json",
-            "bytes": 8374,
-            "sha256": "968b77eb7bf9985f9dd27df774ebaa300df099dda10e60a7df0775018a30b55e",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "refraction-at-plane-surfaces-total-internal-reflection",
-            "filename": "ray-optics/02-refraction-at-plane-surfaces-total-internal-reflection.json",
-            "bytes": 8382,
-            "sha256": "22dace785cb083a6566564f183c8a287b4d46aea92e4a9ae27c5f098a80293cf",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "refraction-through-prisms-angle-of-deviation-and-minimum-deviation",
-            "filename": "ray-optics/03-refraction-through-prisms-angle-of-deviation-and-minimum-deviation.json",
-            "bytes": 8009,
-            "sha256": "0de3080acedc0b63c788049f3f6e638f8c123eab1fe71276ef60a6879912f0c1",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "thin-lenses-lens-maker-s-formula-and-power-of-lens",
-            "filename": "ray-optics/04-thin-lenses-lens-maker-s-formula-and-power-of-lens.json",
-            "bytes": 7998,
-            "sha256": "90ad310a765bfc5e5a695a6fe3ce1ecd03cdc3961db616cc69a6de1d41b79f93",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "combination-of-lenses-and-mirrors",
-            "filename": "ray-optics/05-combination-of-lenses-and-mirrors.json",
-            "bytes": 8361,
-            "sha256": "18055faade795719052210603544bd27e6424eba86d8911586e39d0d8164f72f",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "optical-instruments-microscope-and-telescope",
-            "filename": "ray-optics/06-optical-instruments-microscope-and-telescope.json",
-            "bytes": 8150,
-            "sha256": "a168418e668b8dcdb54e2e04a7dc6a3a17ea0b75e7ae11d9720f8ee6528c525d",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "huygens-principle",
-            "filename": "wave-optics-12/01-huygens-principle.json",
-            "bytes": 9276,
-            "sha256": "58c416263b3d1da022dcf19c62a5c79ede742eab248327a438a6f8b4946cea2d",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "young-double-slit",
-            "filename": "wave-optics-12/02-young-double-slit.json",
-            "bytes": 9032,
-            "sha256": "a9f20ad56bd9589f97b8613249e7edec4386641fc071b47b058b2e63f4b25873",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "diffraction-polarization",
-            "filename": "wave-optics-12/03-diffraction-polarization.json",
-            "bytes": 9720,
-            "sha256": "94adedbb951e1e545340a382189118cca01e1a37c498207223aa630f8b059362",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "wavefront-and-huygens-principle",
-            "filename": "wave-optics/01-wavefront-and-huygens-principle.json",
-            "bytes": 8435,
-            "sha256": "def00726986a9219b4aac80b52ef86a83999fc17e16682a04b670483350df5e3",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "interference-of-light-young-s-double-slit-experiment",
-            "filename": "wave-optics/02-interference-of-light-young-s-double-slit-experiment.json",
-            "bytes": 7904,
-            "sha256": "acdf8fdc257236e4e93a346d11f0c570a77325457ab50c55037641b64d49d369",
-            "status": "authored"
           },
           {
-            "topicSlug": "diffraction-of-light-single-slit-diffraction",
-            "filename": "wave-optics/03-diffraction-of-light-single-slit-diffraction.json",
-            "bytes": 7881,
-            "sha256": "05bc7e9be91a383cc85f62352a3aebe2214037d6b7ad2386db84f6befc7344d4",
+            "topicSlug": "aufbau-principle-pauli-s-exclusion-principle-hund-s-rule-and-electronic-configurations-of-atoms-",
+            "filename": "atomic-structure/09-aufbau-pauli-hund-2.json",
+            "bytes": 7997,
+            "sha256": "0da920bfa81d1de6605951934ddaa025d3d6f63acac55688bd768601c5ae2cd9",
             "status": "authored"
           },
           {
-            "topicSlug": "polarization-brewster-s-law-and-polaroids",
-            "filename": "wave-optics/04-polarization-brewster-s-law-and-polaroids.json",
-            "bytes": 7768,
-            "sha256": "bd1e3ccb8cc7f3e0e940030ae1c208a225596078df9995802c247fda68d641da",
+            "topicSlug": "dalton-s-atomic-theory-and-its-postulates",
+            "filename": "stoichiometry/01-dalton-atomic-theory-2.json",
+            "bytes": 8604,
+            "sha256": "31be0f551974a30533b4d4c2317dfb2bd24e68134ca071348e7566f0ee7c6f87",
             "status": "authored"
           },
           {
-            "topicSlug": "work-constant-variable-force",
-            "filename": "work-energy-power/01-work-constant-variable-force.json",
-            "bytes": 36329,
-            "sha256": "778a5b7492f45823ca166443da26ed1a4870b7c3dea0df1da19f21809b89988c",
+            "topicSlug": "avogadro-s-law-and-some-deductions-molecular-mass-and-vapour-density-molecular-mass-and-volume-o",
+            "filename": "stoichiometry/03-avogadro-law-2.json",
+            "bytes": 10382,
+            "sha256": "6e6d2234c927e9cabd6bc4b5be01b2c7940cd6ce4a4b5e9562c457d638bc42e5",
             "status": "authored"
           },
           {
-            "topicSlug": "power",
-            "filename": "work-energy-power/02-power.json",
-            "bytes": 12842,
-            "sha256": "04fc37feaf64f813feed7c6fcaa0c005de4f37e8935b139600b2aea8fef6ae31",
+            "topicSlug": "mole-and-its-relation-with-mass-volume-and-number-of-particles",
+            "filename": "stoichiometry/04-mole-concept-2.json",
+            "bytes": 9654,
+            "sha256": "dfa9b21e44b493b455467fb2260646b8d0eae2390a2fd0676aac697b42724d6c",
             "status": "authored"
           },
           {
-            "topicSlug": "work-energy-theorem",
-            "filename": "work-energy-power/03-work-energy-theorem-2.json",
-            "bytes": 41720,
-            "sha256": "418cbfd28cfa4747919bb99312a6c8fd6a1b130529180b206949f6cae5e51ad5",
+            "topicSlug": "limiting-reactant-and-excess-reactant",
+            "filename": "stoichiometry/05-limiting-reactant-2.json",
+            "bytes": 9226,
+            "sha256": "0687f4b83ca45dc503d7c98198b43fb4452f4b718370150dbdc105c6bff1def3",
             "status": "authored"
           },
           {
-            "topicSlug": "conservation-energy",
-            "filename": "work-energy-power/04-conservation-energy.json",
-            "bytes": 36344,
-            "sha256": "f23698e7b6e09adeaa50b6d59d58f1ebee2d99c08c9697d88dde8408d860826e",
+            "topicSlug": "theoretical-yield-experimental-yield-and-yield",
+            "filename": "stoichiometry/06-yield-calculations-2.json",
+            "bytes": 9670,
+            "sha256": "806491d1b539c2fd6a251316f591f8138c1a0f06ac80bb68b79c44c85bf2e59c",
             "status": "authored"
           },
           {
-            "topicSlug": "collisions",
-            "filename": "work-energy-power/05-collisions-2.json",
-            "bytes": 36342,
-            "sha256": "0149ab8d4f58fee0f033e9dd7124cbc5cf60fbdf60b7e4d685d988ca68ec406f",
+            "topicSlug": "calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-proble",
+            "filename": "stoichiometry/07-empirical-molecular-formula-2.json",
+            "bytes": 11493,
+            "sha256": "170ea5d1494bd9d107c3b49d7b8bc4c8d56240b6990af3507deb41010a662d2b",
             "status": "authored"
           }
         ]
@@ -17097,15 +16283,6 @@
     }
   },
   "sources": [
-    {
-      "path": "frontend/public/data/content/_index.json",
-      "kind": "map",
-      "bytes": 7022677,
-      "sha256": "88b0ec79bb010b803127966ef2cfd0eab20a1e48978c18db5509b76b015c9b1d",
-      "claims": 1106,
-      "authored": 1105,
-      "template": 1
-    },
     {
       "path": "frontend/public/data/r-export/manifest.json",
       "kind": "array",

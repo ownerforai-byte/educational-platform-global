@@ -1,73 +1,64 @@
 import { isOwnerEmail } from "@/lib/owner";
 
 /**
- * AI SPARK tiers — the daily Veer (AI chat) message allowance per membership
- * tier. MIRROR of backend/src/utils/aiSpark.ts (keep both tables equal — the
+ * AI SPARK tiers — the daily Veer (AI chat) message allowance per access rung.
+ * MIRROR of backend/src/utils/aiSpark.ts (keep both tables equal — the
  * backend enforces, this copy drives the badge and profile meter).
  *
- * Owner policy 2026-10-13: "restrict the ai spark to 1 for public, 7 for
- * member and unlimited for owner" plus "create for plus and pro member also
- * like 25 and 50":
+ * Owner request 2026-11-07: one clean ladder, one number per rung. This union
+ * IS the platform access ladder (lib/access-level.ts aliases it):
  *
- *   guest (public, signed out) → no Veer access
- *   member                     → 15 messages / UTC day (the three chat consoles only)
- *   plus                       → 25 messages / UTC day
- *   pro                        → 50 messages / UTC day
- *   owner (allowlist emails)   → unlimited
+ *   guest  (signed out)        → no Veer access (home guide widget only)
+ *   member (signed-in base)    → 13 messages / UTC day
+ *   plus   (granted plan/role) → 25 messages / UTC day
+ *   pro    (granted plan/role) → 50 messages / UTC day
+ *   owner  (allowlist/role)    → unlimited (never counted, never blocked)
+ *
+ * The retired visitor name is now guest, and the phantom plus_20 pass is
+ * gone — legacy plus_20 plan rows resolve to Plus. Member's allowance was
+ * previously inconsistent (3 in copy, 15 in tables); it is 13 everywhere now.
  *
  * Pools are day-keyed server-side and refill only at UTC midnight — a
  * refresh or reload never refills them.
  */
 
-export type AiSparkTier = "guest" | "member" | "plus" | "plus_20" | "pro" | "owner";
+export type AiSparkTier = "guest" | "member" | "plus" | "pro" | "owner";
 
 /** Daily Veer message allowance per tier (owner = unlimited). */
 export const AI_SPARK_LIMITS: Record<AiSparkTier, number> = {
   guest: 0,
-  member: 15,
+  member: 13,
   plus: 25,
-  plus_20: 25,
   pro: 50,
   owner: Number.POSITIVE_INFINITY,
 };
-
-/** USD price of the temporary pass — owner 2026-10-18 "the plan 30$ for 20 days". */
-export const PLUS_20_PRICE_USD = 30;
-/** Lifetime of the temporary pass in days. */
-export const PLUS_20_DURATION_DAYS = 20;
 
 /** Minimal user shape needed to resolve a tier. */
 export interface AiSparkUserLike {
   email?: string | null;
   role?: string | null;
-  /** Membership plan (profiles.plan — migration 008). */
-  plan?: "member" | "plus" | "plus_20" | "pro" | string | null;
-  /** Legacy PRO flag; maps to the pro tier when plan is absent. */
+  /** Membership plan (profiles.plan). Legacy plus_20 rows read as Plus. */
+  plan?: string | null;
+  /** Legacy PRO flag; maps to the pro tier. */
   premiumStatus?: boolean | null;
-  /** When the temporary plus_20 pass expires (migration 008). */
-  planExpiresAt?: string | Date | null;
 }
 
 /**
- * Resolve the tier for a session user. Order matters: the hardcoded owner
- * allowlist always wins, then the plan tier, then plain membership. A
- * signed-out visitor is a guest.
+ * Resolve the tier for a session user — the ONE resolver both the access
+ * ladder and the spark allowance use. Order matters: the owner allowlist and
+ * owner role always win, then pro (role, plan, or the legacy premium flag),
+ * then plus, then the signed-in Member base. A signed-out viewer is a guest.
  */
 export function aiSparkTierFor(
   user: AiSparkUserLike | null | undefined,
 ): AiSparkTier {
   if (!user) return "guest";
   if (isOwnerEmail(user.email)) return "owner";
+  const role = (user.role ?? "").toLowerCase();
+  if (role === "owner") return "owner";
   const plan = (user.plan ?? "").toLowerCase();
-  if (plan === "plus_20") {
-    const expires = user.planExpiresAt
-      ? new Date(user.planExpiresAt).getTime()
-      : 0;
-    if (Number.isFinite(expires) && expires > Date.now()) return "plus_20";
-    return "member";
-  }
-  if (plan === "pro" || user.premiumStatus === true) return "pro";
-  if (plan === "plus") return "plus";
+  if (role === "pro" || plan === "pro" || user.premiumStatus === true) return "pro";
+  if (role === "plus" || plan === "plus" || plan === "plus_20") return "plus";
   return "member";
 }
 
@@ -79,14 +70,9 @@ export function aiSparkLimitLabel(tier: AiSparkTier): string {
 
 /** Human tier name for badges and the profile card. */
 export const AI_SPARK_TIER_LABELS: Record<AiSparkTier, string> = {
-  guest: "Public",
+  guest: "Guest",
   member: "Member",
   plus: "Plus",
-  plus_20: "Plus 20d",
   pro: "Pro",
   owner: "Owner",
 };
-
-/** What the activation UI shows for the temporary pass. */
-export const PLUS_20_PITCH =
-  `${PLUS_20_PRICE_USD}$ for ${PLUS_20_DURATION_DAYS} days — same daily spark as Plus, auto-expires`;

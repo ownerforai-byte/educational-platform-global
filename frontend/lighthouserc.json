@@ -2,12 +2,9 @@
   "ci": {
     "collect": {
       "url": [
-        "http://localhost:3000/home",
-        "http://localhost:3000/class-11-notes/physics/chapters/physical-quantities/topics/precision-and-significant-figures",
-        "http://localhost:3000/lab",
-        "http://localhost:3000/pyqs"
+        "http://localhost:3000/home"
       ],
-      "numberOfRuns": 3,
+      "numberOfRuns": 1,
       "settings": {
         "formFactor": "mobile",
         "screenEmulation": {

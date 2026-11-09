@@ -32,6 +32,8 @@ import { generateQuestions, evaluateAnswers } from "@/lib/api/ai";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { saveQuizHistory } from "@/lib/api/ai-quiz-history";
+import { pushNotification } from "@/lib/notifications";
+import { notifyLiveStatsChanged } from "@/lib/hooks/use-live-stats";
 import {
   GUEST_DAILY_LIMIT,
   writeGuestCount,
@@ -1092,6 +1094,19 @@ export function QuizStudio() {
         },
       );
     }
+    // Real event → real alert. The score is the one the student just earned,
+    // never a placeholder, and it feeds the notification badges live.
+    const accuracy = scorePct ?? (answered > 0 ? Math.round((correct / answered) * 100) : 0);
+    pushNotification({
+      id: `quiz-${Date.now()}`,
+      category: "curriculum",
+      title: `${subjectName} quiz — ${accuracy}%`,
+      body: `You answered ${correct} of ${answered} questions correctly. Open your history to review each answer and explanation.`,
+      href: "/ai-quiz/history",
+      actionLabel: "Review answers",
+    });
+    // Every live score/overall view refreshes from the new real result.
+    notifyLiveStatsChanged();
   };
 
   return (

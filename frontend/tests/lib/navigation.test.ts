@@ -65,10 +65,10 @@ describe("navigation menu", () => {
     for (const ownerHref of ["/owner", "/owner/users", "/controller"]) {
       expect(publicHrefs).not.toContain(ownerHref);
     }
-    // Veer chat entries are OPEN to every tier (owner policy 2026-10-13,
-    // superseding the 2026-10-05 owner-only gate): chat is metered by AI
-    // sparks — guest 1 / member 7 / plus 25 / pro 50 / owner unlimited per
-    // UTC day — not hidden behind an allowlist.
+    // Veer chat entries are OPEN to every signed-in tier (owner policy
+    // 2026-10-13, superseding the 2026-10-05 owner-only gate): chat is metered
+    // by AI sparks — member 13 / plus 25 / pro 50 / owner unlimited per UTC
+    // day — not hidden behind an allowlist.
     for (const aiHref of ["/ai", "/chat", "/chat/nepali", "/chat/grammar", "/ai/tutor", "/ai/search"]) {
       expect(publicHrefs).toContain(aiHref);
     }

@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/access-level";
 import {
   User,
   Crown,
@@ -65,36 +66,17 @@ export function UserNav() {
     .slice(0, 2)
     .toUpperCase();
 
-  const role = (user.role || "member").toLowerCase();
+  const tier = accessLevelFor(user);
 
-  const roleBadgeConfig: Record<string, { label: string; bg: string; text: string; icon: typeof Crown }> = {
-    owner: {
-      label: "Owner",
-      bg: "bg-amber-500/15 border-amber-500/30",
-      text: "text-amber-500",
-      icon: Crown,
-    },
-    pro: {
-      label: "Pro",
-      bg: "bg-rose-500/15 border-rose-500/30",
-      text: "text-rose-500",
-      icon: ShieldCheck,
-    },
-    plus: {
-      label: "Plus",
-      bg: "bg-blue-500/15 border-blue-500/30",
-      text: "text-blue-500",
-      icon: GraduationCap,
-    },
-    member: {
-      label: "Member",
-      bg: "bg-emerald-500/15 border-emerald-500/30",
-      text: "text-emerald-500",
-      icon: BookOpen,
-    },
+  const tierBadgeConfig: Record<AccessLevel, { bg: string; text: string; icon: typeof Crown }> = {
+    guest: { bg: "bg-slate-500/15 border-slate-500/30", text: "text-slate-500", icon: User },
+    member: { bg: "bg-emerald-500/15 border-emerald-500/30", text: "text-emerald-500", icon: BookOpen },
+    plus: { bg: "bg-blue-500/15 border-blue-500/30", text: "text-blue-500", icon: GraduationCap },
+    pro: { bg: "bg-rose-500/15 border-rose-500/30", text: "text-rose-500", icon: ShieldCheck },
+    owner: { bg: "bg-amber-500/15 border-amber-500/30", text: "text-amber-500", icon: Crown },
   };
 
-  const badge = roleBadgeConfig[role] || roleBadgeConfig.member;
+  const badge = tierBadgeConfig[tier];
   const RoleIcon = badge.icon;
 
   return (
@@ -116,7 +98,7 @@ export function UserNav() {
           className={`hidden sm:inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.2 rounded-md border ${badge.bg} ${badge.text}`}
         >
           <RoleIcon className="h-2.5 w-2.5" />
-          <span>{badge.label}</span>
+          <span>{ACCESS_LABELS[tier]}</span>
         </span>
 
         <ChevronDown className="h-3 w-3 text-muted-foreground group-hover:text-foreground transition-transform" />
@@ -131,7 +113,7 @@ export function UserNav() {
             <div className="mt-1.5 flex items-center justify-between">
               <span className={`inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.5 rounded border ${badge.bg} ${badge.text}`}>
                 <RoleIcon className="h-2.5 w-2.5" />
-                <span>{badge.label} Tier</span>
+                <span>{ACCESS_LABELS[tier]} Tier</span>
               </span>
               {user.credits !== undefined && (
                 <span className="text-[10px] font-mono text-muted-foreground flex items-center gap-1" title="Content sparks — spent only on actual note/content unlocks">

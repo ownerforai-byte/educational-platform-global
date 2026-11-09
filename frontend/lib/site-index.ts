@@ -745,6 +745,12 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "Public",
       },
       {
+        name: "What it has",
+        opening: "Not everything, but: educational contents, journal, quick access, world knowledge, daily-life activities in progress and the curious features still to come.",
+        href: "/what-it-has",
+        meta: "Public",
+      },
+      {
         name: "Features",
         opening: "Every capability in one list: notes, labs, graphs, Veer tools and planning.",
         href: "/features",

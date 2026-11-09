@@ -48,9 +48,9 @@ beforeEach(() => {
 });
 
 describe("TierWelcomeGate — one welcome page per viewer", () => {
-  it("renders only the header, welcome body and footer for a signed-out visitor", () => {
+  it("renders only the header, welcome body and footer for a signed-out guest", () => {
     render(
-      <TierWelcomeGate tier="visitor">
+      <TierWelcomeGate tier="guest">
         <UniversalWelcome />
       </TierWelcomeGate>,
     );
@@ -71,7 +71,7 @@ describe("TierWelcomeGate — one welcome page per viewer", () => {
   it("never shows the universal welcome to an accessed user", () => {
     session.user = { email: "student@example.com" }; // no plan → member
     render(
-      <TierWelcomeGate tier="visitor">
+      <TierWelcomeGate tier="guest">
         <UniversalWelcome />
       </TierWelcomeGate>,
     );
@@ -81,7 +81,7 @@ describe("TierWelcomeGate — one welcome page per viewer", () => {
     expect(replace).toHaveBeenCalledWith("/welcome/member");
   });
 
-  it("moves a visitor off a member welcome to the guest welcome", () => {
+  it("moves a guest off a member welcome to the guest welcome", () => {
     render(
       <TierWelcomeGate tier="member">
         <MemberWelcome />
@@ -122,7 +122,7 @@ describe("TierWelcomeGate — one welcome page per viewer", () => {
 });
 
 describe("Go button → the tier home, then all study materials", () => {
-  it("each welcome Go opens only its own tier home; visitor Go opens the guest home", () => {
+  it("each welcome Go opens only its own tier home; guest Go opens the guest home", () => {
     session.user = { email: "student@example.com" };
     const { unmount: u1 } = render(<MemberWelcome />);
     expect(screen.getByRole("link", { name: /go to my study desk/i })).toHaveAttribute(
@@ -149,8 +149,8 @@ describe("Go button → the tier home, then all study materials", () => {
 });
 
 describe("the entry feed — access first, then the matching welcome", () => {
-  it("sends visitors to the universal welcome and users to their tier welcome", () => {
-    // Visitor at the root: the universal welcome is rendered directly.
+  it("sends guests to the universal welcome and users to their tier welcome", () => {
+    // Guest at the root: the universal welcome is rendered directly.
     const { unmount } = render(<TierHomeRouter landOn="welcome" />);
     expect(
       screen.getByRole("heading", { name: /welcome to ravikisan/i }),
@@ -174,7 +174,7 @@ describe("welcome pages and post-auth landings are wired", () => {
 
   it("all five tier welcome routes exist, each gated at its own rung", () => {
     for (const [tier, route] of [
-      ["visitor", "guest"],
+      ["guest", "guest"],
       ["member", "member"],
       ["plus", "plus"],
       ["pro", "pro"],
@@ -185,7 +185,7 @@ describe("welcome pages and post-auth landings are wired", () => {
         `<TierWelcomeGate tier="${tier}">`,
       );
     }
-    // The visitor route carries the universal welcome (Go → the guest home).
+    // The guest route carries the universal welcome (Go → the guest home).
     expect(read("app/welcome/guest/page.tsx")).toContain("UniversalWelcome");
   });
 

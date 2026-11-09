@@ -84,7 +84,10 @@ describe("concept corpus vs strict schema", () => {
       invalid,
       `new schema violations beyond the ${baselined.size}-file baseline:\n${invalid.slice(0, 10).join("\n")}`,
     ).toEqual([]);
-  }, 20_000);
+    // Reading + Zod-parsing ~3.1k concept notes takes ~5s idle and >20s when
+    // the full suite runs on Windows under disk/GC contention. The gate is
+    // unchanged: every note outside the baseline must still parse clean.
+  }, 60_000);
 });
 
 describe("built manifests vs ManifestEntrySchema", () => {

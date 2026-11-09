@@ -32,5 +32,16 @@ export const STATIC_PUBLIC_DIRS: string[] = [
   path.join(process.cwd(), "..", "public"),
 ];
 
-/** Trust the first proxy hop (Render / nginx) so `req.ip` and secure cookies work. */
-export const TRUST_PROXY_HOPS = 1;
+/**
+ * Proxy chain in production: browser -> Vercel /api proxy -> Render LB -> app.
+ * That is TWO trusted hops. With 1, Express resolved `req.ip` to the Vercel
+ * edge IP for EVERY visitor, so all users shared one rate-limit bucket and the
+ * strict auth cap (5/min) throttled OAuth CSRF/session handshakes collectively
+ * — Google sign-in looked "blocked" for unrelated users. Override with
+ * TRUST_PROXY_HOPS when deploying behind a different chain.
+ */
+const configuredHops = Number(process.env.TRUST_PROXY_HOPS);
+export const TRUST_PROXY_HOPS =
+  Number.isInteger(configuredHops) && configuredHops >= 1 && configuredHops <= 10
+    ? configuredHops
+    : 2;
