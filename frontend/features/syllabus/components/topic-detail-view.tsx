@@ -50,7 +50,7 @@ export async function TopicDetailView({
     topics: unit.topicEntries.map((entry) => ({ slug: entry.slug, title: entry.title })),
   });
 
-  const hasNotes = await hasTopicManifestNotes(subjectSlug, unitId, topic.slug);
+  const hasNotes = await hasTopicManifestNotes(subjectSlug, unitId, topic.slug, classSlug);
   let mindmap: Awaited<ReturnType<typeof getTopicMindmap>> | undefined;
   try {
     mindmap = await getTopicMindmap({

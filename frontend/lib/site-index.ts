@@ -926,6 +926,12 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "Ranking",
       },
       {
+        name: "Achievements",
+        opening: "Scholar level, streak, certificates and leaderboard rank — every award in one place.",
+        href: "/achievements",
+        meta: "Awards",
+      },
+      {
         name: "Certificates",
         opening: "The certificates you have earned for finishing a unit or a track.",
         href: "/certificates",

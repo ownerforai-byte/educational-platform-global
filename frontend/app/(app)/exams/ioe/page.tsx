@@ -80,6 +80,30 @@ export default function IoePage() {
           href: "/analytics",
           meta: "Review",
         },
+        {
+          label: "Model Questions — Physics",
+          description: "Entrance-style physics MCQs in syllabus order, with solving tricks.",
+          href: "/exams/ioe/physics/model-questions",
+          meta: "Model questions",
+        },
+        {
+          label: "Model Questions — Chemistry",
+          description: "Entrance-style chemistry MCQs in syllabus order, with solving tricks.",
+          href: "/exams/ioe/chemistry/model-questions",
+          meta: "Model questions",
+        },
+        {
+          label: "Model Questions — Mathematics",
+          description: "Entrance-style mathematics MCQs in syllabus order, with solving tricks.",
+          href: "/exams/ioe/mathematics/model-questions",
+          meta: "Model questions",
+        },
+        {
+          label: "Model Questions — English",
+          description: "Entrance-style English MCQs in syllabus order, with solving tricks.",
+          href: "/exams/ioe/english/model-questions",
+          meta: "Model questions",
+        },
       ]}
       note="Official IOE syllabus, dates and admission instructions must be checked with the examination authority; this platform links study material and practice tools only."
     />

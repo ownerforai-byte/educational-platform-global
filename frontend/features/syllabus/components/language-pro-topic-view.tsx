@@ -38,7 +38,7 @@ export async function LanguageProTopicView({
   }
 
   const { unit, topic } = data;
-  const hasNotes = await hasTopicManifestNotes(subjectSlug, unitId, topic.slug);
+  const hasNotes = await hasTopicManifestNotes(subjectSlug, unitId, topic.slug, classSlug);
   const topicPath = `${basePath}/chapters/${unit.id}/topics/${topic.slug}`;
 
   return (
