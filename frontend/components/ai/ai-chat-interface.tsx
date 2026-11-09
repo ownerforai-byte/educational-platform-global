@@ -58,6 +58,7 @@ import { isOwnerEmail } from "@/lib/owner";
 import { AiSparkBadge, recordAiSparkUse, refreshAiSparkMeters } from "@/components/ai/ai-spark-badge";
 import { FloatingIdeaChips } from "@/components/ai/floating-idea-chips";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
+import { AiReplyCard } from "@/components/ai/ai-reply-card";
 import { buildChatHomeGroups, ChatHome, type ChatHomeGroup } from "@/components/ai/chat-home";
 import { useVoiceInput } from "@/lib/hooks/use-voice-input";
 import { VoiceMicButton } from "@/components/ai/voice-mic-button";
@@ -975,10 +976,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       <div className="flex h-full w-full flex-col items-center justify-center bg-card p-6 text-center">
         <AlertCircle className="mb-3 h-10 w-10 text-amber-500" />
         <h3 className="mb-1 text-lg font-bold">Pro &amp; Plus only</h3>
-        <p className="mb-4 text-sm text-muted-foreground max-w-xs mx-auto">
+        <p className="mb-4 text-[13px] text-muted-foreground max-w-xs mx-auto">
           The AI chat widget is a Pro/Plus feature. Upgrade your plan to keep using Veer.
         </p>
-        <Link href="/login" className="inline-flex items-center gap-1.5 rounded-lg border border-primary bg-primary text-primary-foreground px-4 py-2 text-sm font-semibold hover:bg-primary/90 transition-colors">
+        <Link href="/login" className="inline-flex items-center gap-1.5 rounded-lg border border-primary bg-primary text-primary-foreground px-4 py-2 text-[13px] font-semibold hover:bg-primary/90 transition-colors">
           Upgrade plan <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
@@ -990,7 +991,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       className={
         embedded
           ? "relative flex h-full w-full overflow-hidden bg-card"
-          : "relative flex h-[min(850px,calc(100dvh-8rem))] min-h-[24rem] w-full rounded-3xl border border-border/80 bg-card shadow-lg overflow-hidden"
+          : "relative flex h-[min(850px,calc(100dvh-8rem))] min-h-[24rem] w-full rounded-3xl border-2 border-border/80 bg-card shadow-lg overflow-hidden"
       }
     >
       {/* ── Conversations sidebar (individual chat histories) ─────── */}
@@ -1020,14 +1021,14 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             <button
               type="button"
               onClick={() => setSidebarOpen(false)}
-              className="mb-2 inline-flex min-h-11 items-center rounded-xl px-3 text-xs font-semibold text-muted-foreground hover:bg-muted sm:hidden"
+              className="mb-2 inline-flex min-h-11 items-center rounded-xl px-3 text-[11px] font-semibold text-muted-foreground hover:bg-muted sm:hidden"
               aria-label="Close conversations sidebar"
             >
               Close
             </button>
             <button
               onClick={startNewChat}
-              className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-primary text-primary-foreground text-xs font-semibold py-2.5 hover:opacity-90 transition-opacity"
+              className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-primary text-primary-foreground text-[11px] font-semibold py-2.5 hover:opacity-90 transition-opacity"
             >
               <Plus className="h-3.5 w-3.5" />
               New conversation
@@ -1056,7 +1057,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                 >
                   <MessageSquare className="h-3.5 w-3.5 mt-0.5 shrink-0 text-muted-foreground" />
                   <span className="min-w-0 flex-1">
-                    <span className="block text-xs font-medium truncate">
+                    <span className="block text-[11px] font-medium truncate">
                       {s.preview || "Conversation"}
                     </span>
                     <span className="block text-[10px] text-muted-foreground">
@@ -1120,7 +1121,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <h2 className="text-sm font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
+                <h2 className="text-[13px] font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
                   Veer
                 </h2>
                 {/* live dot: reflects real AI availability */}
@@ -1165,11 +1166,11 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         </div>
 
         {/* Message stream */}
-        <div ref={streamRef} onScroll={handleStreamScroll} className="min-h-0 min-w-0 flex-1 overflow-y-auto px-3 sm:px-5 py-3 space-y-4">
+        <div ref={streamRef} onScroll={handleStreamScroll} className="mx-auto min-h-0 w-full max-w-3xl flex-1 overflow-y-auto px-3 sm:px-4 py-4 space-y-4">
           {historyState === "loading" ? (
             <div className="h-full flex flex-col items-center justify-center gap-3 text-muted-foreground">
               <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-              <p className="text-xs">Loading conversation…</p>
+              <p className="text-[11px]">Loading conversation…</p>
             </div>
           ) : displayMessages.length === 0 ? (
             /* Chat home — greeting card, recent chats, chip-filtered starters */
@@ -1190,12 +1191,12 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               if (isUser) {
                 return (
                   <div key={index} className="flex justify-end animate-pop-in">
-                    <div className="flex items-end gap-2.5 max-w-[85%]">
-                      <div className="rounded-2xl rounded-br-md bg-gradient-to-br from-primary to-violet-500 text-primary-foreground px-4 py-2.5 shadow-sm">
-                        <p className="text-sm leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere] font-medium">{msg.content}</p>
+                    <div className="flex items-end gap-2 max-w-[85%]">
+                      <div className="rounded-2xl rounded-br-md bg-primary text-primary-foreground px-3.5 py-2 shadow-sm">
+                        <p className="text-[13px] leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere]">{msg.content}</p>
                       </div>
-                      <div className="h-7 w-7 rounded-lg bg-muted border border-border flex items-center justify-center shrink-0 text-muted-foreground">
-                        <User className="h-3.5 w-3.5" />
+                      <div className="h-6 w-6 rounded-lg bg-muted border border-border flex items-center justify-center shrink-0 text-muted-foreground">
+                        <User className="h-3 w-3" />
                       </div>
                     </div>
                   </div>
@@ -1206,8 +1207,40 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
                     <CaptainAvatar className="h-3.5 w-3.5" />
                   </div>
-                  <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/70 bg-card px-3 py-3 shadow-sm sm:px-5 sm:py-4">
-                    <div>
+                  {isIdentityAnswer(msg.content) ? (
+                    <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/70 bg-card px-3 py-3 shadow-sm sm:px-5 sm:py-4">
+                      <div>
+                        {(displaySegments[index] ?? []).map((segment, segIndex) =>
+                          segment.kind === "steps" ? (
+                            <StepCards key={segIndex} steps={segment.steps} />
+                          ) : (
+                            <InteractiveMarkdown
+                              key={segIndex}
+                              content={segment.text}
+                              className="chat-reading"
+                            />
+                          ),
+                        )}
+                      </div>
+                    </div>
+                  ) : (
+                    <AiReplyCard
+                      title="Veer"
+                      reply={msg.content}
+                      context={{ surface: "chat" }}
+                      actions={
+                        <ChatMessageActions
+                          copied={copiedIndex === index}
+                          onCopy={() => handleCopy(msg.content, index)}
+                          isLatest={index === lastAssistantIndex}
+                          disabled={sending}
+                          onRegenerate={regenerate}
+                          onDeeper={() => followUp(GO_DEEPER_INSTRUCTION)}
+                          onShorter={() => followUp(KEEP_IT_SHORT_INSTRUCTION)}
+                          onPractice={startPracticeQuiz}
+                        />
+                      }
+                    >
                       {(displaySegments[index] ?? []).map((segment, segIndex) =>
                         segment.kind === "steps" ? (
                           <StepCards key={segIndex} steps={segment.steps} />
@@ -1222,21 +1255,8 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                       {isStreaming && index === lastAssistantIndex && (
                         <span className="ml-0.5 inline-block h-3 w-1.5 animate-pulse rounded-sm bg-primary align-text-bottom" aria-hidden />
                       )}
-                    </div>
-                    {/* Same per-answer actions as the tutor console, same position */}
-                    {isIdentityAnswer(msg.content) ? null : (
-                      <ChatMessageActions
-                        copied={copiedIndex === index}
-                        onCopy={() => handleCopy(msg.content, index)}
-                        isLatest={index === lastAssistantIndex}
-                        disabled={sending}
-                        onRegenerate={regenerate}
-                        onDeeper={() => followUp(GO_DEEPER_INSTRUCTION)}
-                        onShorter={() => followUp(KEEP_IT_SHORT_INSTRUCTION)}
-                        onPractice={startPracticeQuiz}
-                      />
-                    )}
-                  </div>
+                    </AiReplyCard>
+                  )}
                 </div>
               );
             })
@@ -1250,7 +1270,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
                 <CaptainAvatar className="h-3.5 w-3.5" />
               </div>
-              <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3 flex items-center gap-2.5 text-xs text-muted-foreground">
+              <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3 flex items-center gap-2.5 text-[11px] text-muted-foreground">
                 <span className="flex gap-1">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce [animation-delay:0ms]" />
                   <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-bounce [animation-delay:150ms]" />
@@ -1264,7 +1284,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           )}
 
           {error && (
-            <div className="p-3.5 rounded-2xl bg-destructive/10 border border-destructive/30 text-destructive text-xs flex items-center gap-2">
+            <div className="p-3.5 rounded-2xl bg-destructive/10 border border-destructive/30 text-destructive text-[11px] flex items-center gap-2">
               <AlertCircle className="h-4 w-4 shrink-0" />
               <div className="flex-1">
                 <span>{error}</span>
@@ -1294,7 +1314,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   setHasNewBelow(false);
                   chatBottomRef.current?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-card/95 px-3.5 py-1.5 text-xs font-semibold text-primary shadow-lg shadow-primary/10 backdrop-blur transition-colors hover:bg-primary/10"
+                className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-card/95 px-3.5 py-1.5 text-[11px] font-semibold text-primary shadow-lg shadow-primary/10 backdrop-blur transition-colors hover:bg-primary/10"
               >
                 <ArrowDown className="h-3.5 w-3.5" />
                 Jump to latest
@@ -1308,7 +1328,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           <ChatAttachPreview
             images={pendingImages}
             onRemove={(i) => setPendingImages((prev) => prev.filter((_, idx) => idx !== i))}
-            className="max-w-4xl mx-auto mb-2"
+            className="max-w-3xl mx-auto mb-2"
           />
           {/* FLOATING IDEA CHIPS (owner 2026-10-12): float in the moment typing
               starts, fade out the moment the draft empties. Picking one extends
@@ -1318,9 +1338,9 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             onPick={(idea) =>
               setInput((prev) => (prev.trim() ? `${prev.trim()} — ${idea}` : idea))
             }
-            className="max-w-4xl mx-auto"
+            className="max-w-3xl mx-auto"
           />
-          <div className="relative flex items-end gap-2 max-w-4xl mx-auto">
+          <div className="relative flex items-end gap-1.5 max-w-3xl mx-auto rounded-2xl border-2 border-border/80 bg-card px-2 py-1.5 shadow-sm">
             <ChatAttachButton
               onPick={(dataUrl) => setPendingImages((prev) => [...prev, dataUrl].slice(0, MAX_ATTACHMENTS))}
               onPickDocument={(name, text) =>
@@ -1342,7 +1362,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   ? "Guest limit reached — please log in to ask more questions."
                   : "Ask me anything… ⚡ Enter to send · Shift+Enter for a new line"
               }
-              className="min-w-0 flex-1 max-h-32 min-h-[40px] py-2 px-3 rounded-xl border border-border/80 bg-card text-base sm:text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
+              className="min-w-0 flex-1 max-h-32 min-h-[36px] py-1.5 px-2 rounded-xl border border-transparent bg-transparent text-[13px] leading-relaxed text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
             />
 
             <VoiceMicButton
@@ -1356,7 +1376,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             <button
               onClick={handleEnhance}
               disabled={!input.trim() || sending || enhancing || composerLocked}
-              className="h-10 w-10 rounded-xl border border-violet-500/40 bg-violet-500/10 text-violet-600 font-semibold flex items-center justify-center hover:bg-violet-500/20 hover:scale-105 active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
+              className="h-9 w-9 rounded-xl border border-violet-500/40 bg-violet-500/10 text-violet-600 font-semibold flex items-center justify-center hover:bg-violet-500/20 hover:scale-105 active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
               title="Enhance my prompt — rewrite it into a sharper study question"
               aria-label="Enhance prompt"
             >
@@ -1366,7 +1386,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               <button
                 type="button"
                 onClick={handleStop}
-                className="h-10 w-10 rounded-full bg-destructive text-destructive-foreground flex items-center justify-center shadow-md hover:opacity-90 active:scale-95 transition-all shrink-0"
+                className="h-9 w-9 rounded-full bg-destructive text-destructive-foreground flex items-center justify-center shadow-md hover:opacity-90 active:scale-95 transition-all shrink-0"
                 aria-label="Stop reply"
                 title="Stop the reply"
               >
@@ -1376,7 +1396,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               <button
                 onClick={() => handleSend()}
                 disabled={(!input.trim() && pendingImages.length === 0) || composerLocked}
-                className="h-10 w-10 rounded-full bg-gradient-to-r from-primary to-violet-500 text-primary-foreground flex items-center justify-center shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:scale-[1.03] active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
+                className="h-9 w-9 rounded-full bg-gradient-to-r from-primary to-violet-500 text-primary-foreground flex items-center justify-center shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:scale-[1.03] active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
                 aria-label="Send message"
               >
                 <ArrowUp className="h-4 w-4" />

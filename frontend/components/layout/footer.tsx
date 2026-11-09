@@ -162,11 +162,12 @@ function footerItems(
 
 export function Footer({ user }: { user?: AiSparkUserLike | null }) {
   return (
-    <footer className="mt-auto border-t border-border bg-background">
+    <footer className="mt-auto border-t-2 border-border/80 bg-background">
       <div className="mx-auto max-w-7xl px-3 py-6 sm:px-4 md:px-6">
 
-        {/* Brand line — full width so the nav columns below get the whole row */}
-        <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
+        {/* Brand line — a bounded strip so the nav columns below read as the
+            second zone of the footer, not one continuous wall. */}
+        <div className="flex flex-col gap-1 rounded-2xl border-2 border-border/80 bg-card px-4 py-3 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6">
           <Link href="/home" className="shrink-0 text-sm font-semibold hover:text-primary">
             Ravikisan&apos;s Platform
           </Link>
@@ -176,8 +177,9 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
           </p>
         </div>
 
-        {/* Six groups: two tidy rows on phones, one row from sm upwards. */}
-        <div className="mt-5 grid grid-cols-3 gap-x-2 sm:grid-cols-6 sm:gap-x-4">
+        {/* Six groups: two tidy rows on phones, one row from sm upwards.
+            Each column is its own bounded card — the footer's link zone. */}
+        <div className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-6 sm:gap-3">
           {FOOTER_SECTIONS.map(({ sectionId, heading, onlyHrefs, alwaysUnlockedHrefs }) => {
             // Look up the column's own section from NAV_SECTIONS
             const section = NAV_SECTIONS.find((s) => s.id === sectionId);
@@ -188,7 +190,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
             const alwaysUnlocked = alwaysUnlockedHrefs ?? [];
 
             return (
-              <nav key={heading} aria-label={`Footer ${heading}`} className="min-w-0">
+              <nav key={heading} aria-label={`Footer ${heading}`} className="min-w-0 rounded-2xl border-2 border-border/70 bg-card/60 px-3 py-3">
                 <h2 className="text-[11px] font-semibold leading-tight sm:text-sm">{heading}</h2>
                 <ul className="mt-2 space-y-0.5 sm:mt-3">
                   {items.map(({ item, owner }) => {
@@ -233,8 +235,8 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
 
         <FooterQuote />
 
-        {/* Bottom bar: copyright, legal links, version */}
-        <div className="mt-5 flex flex-col gap-3 border-t border-border pt-4 text-xs text-muted-foreground lg:flex-row lg:items-center lg:justify-between">
+        {/* Bottom bar: copyright, legal links, version — its own bounded strip */}
+        <div className="mt-4 flex flex-col gap-3 rounded-2xl border-2 border-border/80 bg-card px-4 py-3 text-xs text-muted-foreground lg:flex-row lg:items-center lg:justify-between">
           <p>&copy; {new Date().getFullYear()} Ravikisan&apos;s Platform.</p>
 
           {/* Legal pages — always visible to everyone */}

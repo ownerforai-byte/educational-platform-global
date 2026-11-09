@@ -4,6 +4,11 @@ import { z } from "zod";
 import { isProductionEnv } from "../config/env";
 import { createAuthClient, supabaseAdmin } from "../db/supabase";
 import { ensureDailyCredits } from "../utils/credits";
+import {
+  DEVICE_SIGNUP_LIMIT_MESSAGE,
+  bindDeviceToAccount,
+  checkDeviceSignupLimit,
+} from "../utils/deviceSignup";
 import { isR1GrantedEmail } from "../utils/r1Grants";
 import { createStatusToken, verifyStatusToken } from "../utils/statusToken";
 import {
@@ -257,6 +262,17 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
     if (accessStatus !== "ACTIVE") {
       res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
       const pending = accessStatus === "PENDING";
+      // A pending OAuth account is also the device's one account: refuse a
+      // DIFFERENT unapproved account on this device, otherwise bind this one
+      // (the same account re-signing in must not block itself).
+      if (pending) {
+        const device = await checkDeviceSignupLimit(req, res, data.user.id);
+        if (device.limited) {
+          res.status(403).json({ error: DEVICE_SIGNUP_LIMIT_MESSAGE, code: "DEVICE_SIGNUP_LIMIT" });
+          return;
+        }
+        await bindDeviceToAccount(device.deviceId, data.user.id);
+      }
       const statusToken = pending ? createStatusToken(data.user.id) : undefined;
       res.status(403).json({
         error: pending ? "Account pending approval" : "Account not approved",
@@ -332,12 +348,32 @@ router.post("/signup", async (req: Request, res: Response) => {
     return;
   }
 
+  // One account per device without approval (owner 2026-11-09). An R1-granted
+  // email was pre-approved by an owner, so it skips the device gate entirely.
+  const r1PreApproved = await isR1GrantedEmail(parsed.data.email);
+  let deviceId: string | null = null;
+  if (!r1PreApproved) {
+    const device = await checkDeviceSignupLimit(req, res);
+    if (device.limited) {
+      res.status(403).json({ error: DEVICE_SIGNUP_LIMIT_MESSAGE, code: "DEVICE_SIGNUP_LIMIT" });
+      return;
+    }
+    deviceId = device.deviceId;
+  }
+
   try {
     const result = await signUp(parsed.data);
 
     if (result.error) {
       res.status(400).json({ error: "Something went wrong. Please try again." });
       return;
+    }
+
+    // Bind the new account to this device before any early return, so a
+    // pending or email-confirmation signup still counts as the device's one
+    // account. Best-effort — never fails the signup response.
+    if (result.user && deviceId) {
+      await bindDeviceToAccount(deviceId, result.user.id);
     }
 
     if (result.needsEmailConfirmation || !result.user || !result.session) {
@@ -353,7 +389,7 @@ router.post("/signup", async (req: Request, res: Response) => {
     // ── R1 grant fast-pass (migration 009): an owner-granted email was
     // pre-approved by an owner, so it skips the PENDING queue entirely.
     try {
-      if (await isR1GrantedEmail(result.user.email ?? parsed.data.email)) {
+      if (r1PreApproved) {
         await supabaseAdmin
           .from("profiles")
           .update({ access_status: "ACTIVE" })

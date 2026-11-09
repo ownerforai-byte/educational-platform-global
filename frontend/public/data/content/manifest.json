@@ -96208,7 +96208,12 @@
         "**Equal distance property.** Any point on a bisector is equidistant from the two lines, using the perpendicular distance |ax + by + c|/√(a² + b²).",
         "**Acute vs obtuse.** The two bisectors are perpendicular; when a₁a₂ + b₁b₂ < 0 the '+' combination bisects the acute angle, and when a₁a₂ + b₁b₂ > 0 it bisects the obtuse angle.",
         "**Worked steps.** Write both equations in general form, divide each by the square root of the sum of its squared coefficients, combine with ±, and simplify each result.",
-        "**Use of the result.** The bisector equations locate the in-centre of a triangle (intersection of internal bisectors) and solve locus problems requiring equal distance from two lines."
+        "**Use of the result.** The bisector equations locate the in-centre of a triangle (intersection of internal bisectors) and solve locus problems requiring equal distance from two lines.",
+        "**Coefficients:** a₁ = −1, b₁ = −2, a₂ = 4, b₂ = 2 (constant terms already made positive)",
+        "**Step:** a₁a₂ + b₁b₂ = (−1)(4) + (−2)(2) = −4 − 4 = **−8**",
+        "Since the result is negative, the (+) sign bisector is acute and the (−) sign bisector is obtuse",
+        "**Acute Bisector (+ sign):** 6x + 6y − 1 = 0",
+        "**Obtuse Bisector (− sign):** 2x − 2y + 19 = 0"
       ]
     }
   },

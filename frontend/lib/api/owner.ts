@@ -4,7 +4,8 @@ import type { AccessLevel } from "@/lib/access-level";
 
 /**
  * Owner console API — every call hits /api/owner/*, which the backend gates
- * to allowlisted owner emails only. A 403 here simply means "not an owner".
+ * to owner accounts (allowlisted owner email or the owner rung). A 403 here
+ * simply means "not an owner account".
  */
 
 export interface OwnerStats {
@@ -117,10 +118,10 @@ export function adjustOwnerUserCredits(
   });
 }
 
-/** Grant an access tier — the backend writes role + plan + premium together. */
+/** Grant an access tier — the backend writes role + plan + premium together. Owner is never assignable. */
 export function updateOwnerUserRole(
   userId: string,
-  role: UserRole
+  role: Exclude<UserRole, "owner">
 ): Promise<{ success: true; newRole: string; effectiveTier: AccessLevel }> {
   return apiFetch(`/api/owner/users/${userId}/role`, {
     method: "PATCH",

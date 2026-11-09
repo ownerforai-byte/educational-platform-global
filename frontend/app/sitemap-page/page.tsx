@@ -42,7 +42,7 @@ export default function SitemapPage() {
         {groups.map((group, index) => (
           <div
             key={group.id}
-            className="sequential-block-reveal"
+            className="sequential-block-reveal min-w-0"
             style={{ animationDelay: `${Math.min(index, 6) * 80}ms` }}
           >
             <section className="flex h-full flex-col rounded-2xl border border-border bg-card p-6">

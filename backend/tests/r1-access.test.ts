@@ -471,6 +471,113 @@ describe("owner approval decides access and tier together", () => {
   });
 });
 
+describe("owner accounts may decide non-owner accounts", () => {
+  const STUDENT_ID = "00000000-0000-4000-8000-000000000004";
+  const ROLE_OWNER_EMAIL = "operator@example.com";
+
+  // requireAuth: role, full name, plan — the actor is on the OWNER RUNG but is
+  // NOT on the email allowlist.
+  function queueRoleOwnerActor() {
+    h.enqueue("profiles", { data: [{ role: "owner" }], error: null });
+    h.enqueue("profiles", { data: [], error: null });
+    h.enqueue("profiles", { data: [], error: null });
+  }
+
+  function mockMemberTarget() {
+    h.getUserById.mockResolvedValue({
+      data: { user: { id: STUDENT_ID, email: GRANTED_EMAIL } },
+      error: null,
+    });
+    h.enqueue("profiles", { data: [{ role: "member" }], error: null });
+    h.enqueue("profiles", {
+      data: [{ id: STUDENT_ID, access_status: "PENDING" }],
+      error: null,
+    });
+  }
+
+  it("lets an owner-rung account (not allowlisted) approve a member", async () => {
+    const { request } = await mount([["/api/owner", ownerRouter]]);
+    h.mockUser("owner-2", ROLE_OWNER_EMAIL);
+    queueRoleOwnerActor();
+    mockMemberTarget();
+
+    const res = await request("PATCH", `/api/owner/users/${STUDENT_ID}/status`, {
+      status: "ACTIVE",
+      role: "member",
+    });
+
+    expect(res.status).toBe(200);
+    expect(res.body).toMatchObject({
+      success: true,
+      status: "ACTIVE",
+      effectiveTier: "member",
+    });
+    const update = h.opsFor("profiles").find((c) => c.method === "update");
+    expect(update?.args[0]).toMatchObject({ access_status: "ACTIVE", role: "member" });
+  });
+
+  it("lets an owner-rung account reject a member", async () => {
+    const { request } = await mount([["/api/owner", ownerRouter]]);
+    h.mockUser("owner-2", ROLE_OWNER_EMAIL);
+    queueRoleOwnerActor();
+    mockMemberTarget();
+
+    const res = await request("PATCH", `/api/owner/users/${STUDENT_ID}/status`, {
+      status: "REJECTED",
+    });
+
+    expect(res.status).toBe(200);
+    const update = h.opsFor("profiles").find((c) => c.method === "update");
+    expect(update?.args[0]).toEqual({ access_status: "REJECTED" });
+  });
+
+  it("still refuses any owner from touching another owner", async () => {
+    const { request } = await mount([["/api/owner", ownerRouter]]);
+    h.mockUser("owner-2", ROLE_OWNER_EMAIL);
+    h.getUserById.mockResolvedValue({
+      data: { user: { id: "owner-3", email: "peer@example.com" } },
+      error: null,
+    });
+    queueRoleOwnerActor();
+    h.enqueue("profiles", { data: [{ role: "owner" }], error: null });
+
+    const res = await request("PATCH", "/api/owner/users/owner-3/status", {
+      status: "REJECTED",
+    });
+
+    expect(res.status).toBe(403);
+    expect(h.opsFor("profiles").filter((c) => c.method === "update")).toHaveLength(0);
+  });
+
+  it("refuses to mint a new owner from the tier control", async () => {
+    const { request } = await mount([["/api/owner", ownerRouter]]);
+    h.mockUser("owner-2", ROLE_OWNER_EMAIL);
+    queueRoleOwnerActor();
+
+    const res = await request("PATCH", `/api/owner/users/${STUDENT_ID}/role`, {
+      role: "owner",
+    });
+
+    expect(res.status).toBe(400);
+    expect(h.opsFor("profiles").filter((c) => c.method === "update")).toHaveLength(0);
+  });
+
+  it("still refuses non-owner accounts on the owner routes", async () => {
+    const { request } = await mount([["/api/owner", ownerRouter]]);
+    h.mockUser("user-3", STRANGER_EMAIL);
+    h.enqueue("profiles", { data: [{ role: "member" }], error: null });
+    h.enqueue("profiles", { data: [], error: null });
+    h.enqueue("profiles", { data: [], error: null });
+
+    const res = await request("PATCH", `/api/owner/users/${STUDENT_ID}/status`, {
+      status: "ACTIVE",
+    });
+
+    expect(res.status).toBe(403);
+    expect(h.opsFor("profiles").filter((c) => c.method === "update")).toHaveLength(0);
+  });
+});
+
 describe("owner R1 grant management", () => {
   it("only owner emails may manage grants", async () => {
     const { request } = await mount([["/api/owner", ownerRouter]]);

@@ -64,6 +64,22 @@ describe("reply craft — the ChatGPT/Claude-grade layer", () => {
     expect(REPLY_CRAFT_RULES).toContain("never an amputation");
   });
 
+  test("carries the silent question set and the in-place contrast law (owner 2026-11-09)", () => {
+    // Every academic answer must silently cover what a curious student would
+    // ask — what it is, how it occurs, where it is located, how it is done —
+    // weighted by the question actually asked, never printed as headings.
+    expect(PROFESSOR_STYLE_RULES).toContain("THE SILENT QUESTION SET");
+    expect(PROFESSOR_STYLE_RULES).toContain("HOW DOES IT OCCUR");
+    expect(PROFESSOR_STYLE_RULES).toContain("WHERE IS IT LOCATED");
+    expect(PROFESSOR_STYLE_RULES).toContain("HOW IS IT DONE");
+    expect(PROFESSOR_STYLE_RULES).toContain("Weight follows the ask");
+    expect(PROFESSOR_STYLE_RULES).toContain("never label a paragraph");
+    // Related terms are contrasted the moment they appear, not deferred.
+    expect(PROFESSOR_STYLE_RULES).toContain("CONTRAST RELATED TERMS DIRECTLY, IN PLACE");
+    expect(PROFESSOR_STYLE_RULES).toContain("the difference that matters is C");
+    expect(PROFESSOR_STYLE_RULES).toContain("never save the contrast for a later reply");
+  });
+
   test("carries no template artefacts and keeps the master prompt a sane size", () => {
     expect(REPLY_CRAFT_RULES).not.toContain("${");
     expect(REPLY_CRAFT_RULES).not.toContain("`");
@@ -71,6 +87,8 @@ describe("reply craft — the ChatGPT/Claude-grade layer", () => {
     // academic / advisory) + no-repeat law added ~1k chars — guard bloat, not a
     // hard quota.
     // 2026-11: COMPLETE_REVEAL_RULES added ~1.4k chars; cap raised 65k -> 67k.
-    expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(67_000);
+    // 2026-11-09: silent question set + in-place contrast rules added ~2.2k;
+    // cap raised 67k -> 70k.
+    expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(70_000);
   });
 });

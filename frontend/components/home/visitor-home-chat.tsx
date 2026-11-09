@@ -41,7 +41,7 @@ export function VisitorHomeChat() {
   return (
     <section
       aria-label="Chat with AI"
-      className="mx-auto w-full max-w-xl rounded-2xl border border-border bg-card text-left shadow-sm"
+      className="mx-auto w-full max-w-xl rounded-2xl border-2 border-border/80 bg-card text-left shadow-sm"
     >
       <div className="border-b border-border px-4 py-3">
         <h2 className="text-sm font-semibold text-foreground">Chat with AI</h2>

@@ -176,7 +176,7 @@ export function HomePortals() {
           return (
             <div
               key={portal.href}
-              className={`group relative flex flex-col justify-between rounded-3xl border border-border/70 bg-gradient-to-b ${portal.gradientClass} p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${portal.chipClass}`}
+              className={`group relative flex flex-col justify-between rounded-3xl border-2 border-border/80 bg-gradient-to-b ${portal.gradientClass} p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 ${portal.chipClass}`}
             >
               {/* Stretched link: whole card is clickable, chips row sits above it */}
               <div>
@@ -207,7 +207,7 @@ export function HomePortals() {
                 </Link>
               </div>
 
-              <div className="relative z-10 mt-5 flex flex-wrap gap-1.5 border-t border-border/50 pt-3">
+              <div className="relative z-10 mt-5 flex flex-wrap gap-1.5 border-t border-border/80 pt-3">
                 {portal.links.map((link) => (
                   <Link
                     key={link.href}

@@ -31,9 +31,9 @@ export function AssessmentExamHub() {
   const [selectedCount, setSelectedCount] = useState(10);
 
   return (
-    <section id="section-assessment" className="mx-auto max-w-7xl px-4 py-12 scroll-mt-16 border-t border-border/60">
+    <section id="section-assessment" className="mx-auto max-w-7xl px-4 py-12 scroll-mt-16 border-t border-border/80">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-border/60">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-border/80">
         <div>
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-rose-500">
             <Target className="h-4 w-4" />
@@ -57,7 +57,7 @@ export function AssessmentExamHub() {
           </Link>
           <Link
             href="/exam-countdown"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-border/70 bg-card hover:bg-muted text-xs font-semibold text-foreground transition-colors"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border-2 border-border/80 bg-card hover:bg-muted text-xs font-semibold text-foreground transition-colors"
           >
             <Calendar className="h-3.5 w-3.5 text-primary" />
             <span>Countdown</span>
@@ -67,7 +67,7 @@ export function AssessmentExamHub() {
 
       <div className="mt-8 grid gap-6 lg:grid-cols-12">
         {/* Left Column: AI Quiz Generator Launchpad (7 cols) */}
-        <div className="lg:col-span-7 flex flex-col justify-between rounded-3xl border border-border/70 bg-gradient-to-br from-violet-500/10 via-card to-card p-6 shadow-sm">
+        <div className="lg:col-span-7 flex flex-col justify-between rounded-3xl border-2 border-border/80 bg-gradient-to-br from-violet-500/10 via-card to-card p-6 shadow-sm">
           <div>
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
@@ -160,7 +160,7 @@ export function AssessmentExamHub() {
           </div>
 
           {/* Launch AI Quiz button */}
-          <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-between">
+          <div className="mt-6 pt-4 border-t border-border/80 flex items-center justify-between">
             <div className="text-xs text-muted-foreground">
               Instant grading with model step-by-step solutions
             </div>
@@ -177,7 +177,7 @@ export function AssessmentExamHub() {
         {/* Right Column: PYQ Bank + Exam Countdown (5 cols) */}
         <div className="lg:col-span-5 flex flex-col gap-4">
           {/* PYQ Card */}
-          <div className="rounded-3xl border border-border/70 bg-card p-5 shadow-sm hover:border-sky-500/40 transition-all">
+          <div className="rounded-3xl border-2 border-border/80 bg-card p-5 shadow-sm hover:border-sky-500/40 transition-all">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2.5">
                 <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-sky-500/10 text-sky-500">
@@ -201,7 +201,7 @@ export function AssessmentExamHub() {
           </div>
 
           {/* Board Exam Countdown Tracker */}
-          <div className="flex-1 rounded-3xl border border-border/70 bg-card p-5 shadow-sm">
+          <div className="flex-1 rounded-3xl border-2 border-border/80 bg-card p-5 shadow-sm">
             <div className="flex items-center justify-between mb-3">
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4 text-rose-500" />
@@ -235,7 +235,7 @@ export function AssessmentExamHub() {
             </div>
 
             {/* Progress Hub Link */}
-            <div className="mt-4 pt-3 border-t border-border/50 flex items-center justify-between">
+            <div className="mt-4 pt-3 border-t border-border/80 flex items-center justify-between">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
                 <TrendingUp className="h-3.5 w-3.5 text-emerald-500" />
                 <span>Track your topic completion</span>

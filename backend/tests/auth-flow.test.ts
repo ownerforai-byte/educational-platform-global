@@ -65,7 +65,7 @@ const VALID_TOKEN = "valid-access-token";
 
 function makeQueryChain(result: { data: unknown; error: unknown }) {
   const chain: Record<string, unknown> = {};
-  for (const method of ["select", "eq", "order", "single", "maybeSingle", "limit", "upsert", "update", "insert", "delete"]) {
+  for (const method of ["select", "eq", "neq", "in", "like", "order", "single", "maybeSingle", "limit", "upsert", "update", "insert", "delete"]) {
     chain[method] = () => chain;
   }
   chain.then = (
@@ -788,7 +788,7 @@ describe("auth flow", () => {
     mocked.from.mockImplementation((table: string) => {
       if (table === "lab_progress") {
         const chain: Record<string, unknown> = {};
-        for (const method of ["select", "eq", "order", "single", "maybeSingle", "limit", "upsert", "update", "insert", "delete"]) {
+        for (const method of ["select", "eq", "neq", "in", "like", "order", "single", "maybeSingle", "limit", "upsert", "update", "insert", "delete"]) {
           chain[method] = (...args: unknown[]) => {
             if (method === "insert") insertedPayload = args[0];
             return chain;

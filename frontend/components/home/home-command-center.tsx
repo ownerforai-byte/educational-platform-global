@@ -27,7 +27,7 @@ export function HomeCommandCenter({
   const [activeTab, setActiveTab] = useState<"all" | "class11" | "class12" | "entrance" | "stem">("all");
 
   return (
-    <div className="relative border-b border-border/60 bg-gradient-to-b from-background via-muted/20 to-background pt-12 pb-12 overflow-hidden">
+    <div className="relative border-b border-border/80 bg-gradient-to-b from-background via-muted/20 to-background pt-12 pb-12 overflow-hidden">
       {/* Multi-layer Glow Effects */}
       <div className="absolute top-0 left-1/4 h-80 w-80 rounded-full bg-primary/10 blur-[120px] pointer-events-none" />
       <div className="absolute top-12 right-1/4 h-80 w-80 rounded-full bg-violet-500/10 blur-[120px] pointer-events-none" />
@@ -243,7 +243,7 @@ export function HomeCommandCenter({
         </div>
 
         {/* Compact Live Stats Strip */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-2xl border border-border/60 bg-card/60 px-6 py-4 shadow-sm backdrop-blur-md">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-2xl border-2 border-border/80 bg-card/60 px-6 py-4 shadow-sm backdrop-blur-md">
           {[
             { label: "3D Labs", count: "50+" },
             { label: "Theorem Proofs", count: `${totalTheorems}+` },

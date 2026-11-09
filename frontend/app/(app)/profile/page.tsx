@@ -38,7 +38,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import { ProgressPanel } from "@/components/progress/progress-panel";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { isOwnerUser } from "@/lib/owner";
+import { isOwnerAccount } from "@/lib/owner";
 import { getAiSparkUsage, type AiSparkUsage } from "@/lib/api/ai";
 import { AI_SPARK_LIMITS } from "@/lib/ai/ai-spark-tiers";
 import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/access-level";
@@ -279,7 +279,7 @@ export default function ProfilePage() {
     }
   }, [isLoading, user, router]);
 
-  const owner = isOwnerUser(user);
+  const owner = isOwnerAccount(user);
 
   // ── AI-spark usage for the Plan card (server is the source of truth) ──
   const [sparkUsage, setSparkUsage] = useState<AiSparkUsage | null>(null);

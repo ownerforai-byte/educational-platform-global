@@ -62,7 +62,7 @@ function TierWelcome({ tier }: { tier: UserTier }) {
     <div className="flex min-h-[80vh] items-center justify-center px-4 py-10">
       <div className="w-full max-w-2xl space-y-6">
         {/* Hero */}
-        <div className="rounded-3xl border border-border/70 bg-card p-6 sm:p-8 shadow-sm">
+        <div className="rounded-3xl border-2 border-border/80 bg-card p-6 sm:p-8 shadow-sm">
           <p className="text-[11px] font-bold uppercase tracking-widest text-primary">
             Welcome · {ACCESS_LABELS[tier]} plan
           </p>
@@ -79,7 +79,7 @@ function TierWelcome({ tier }: { tier: UserTier }) {
         </div>
 
         {/* What this plan opens */}
-        <div className="rounded-2xl border border-border/60 bg-muted/20 p-4">
+        <div className="rounded-2xl border-2 border-border/80 bg-muted/20 p-4">
           <p className="text-xs font-semibold text-muted-foreground">
             What&apos;s open at your rung
           </p>
@@ -166,7 +166,7 @@ export function UniversalWelcome() {
             </Link>
             <Link
               href="/signup"
-              className="inline-flex items-center rounded-2xl border border-border/70 px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary hover:text-primary"
+              className="inline-flex items-center rounded-2xl border-2 border-border/80 px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary hover:text-primary"
             >
               Create an account
             </Link>

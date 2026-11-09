@@ -30,6 +30,8 @@ import {
 } from "@/components/ai/ai-spark-badge";
 import { VoiceMicButton } from "@/components/ai/voice-mic-button";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
+import { AiReplyCard } from "@/components/ai/ai-reply-card";
+import { CuratedNotesBlock } from "@/components/ai/curated-notes-block";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { hasLevel } from "@/lib/access-level";
@@ -138,7 +140,7 @@ function SolveStudio({ classLevel, subject }: { classLevel: string; subject: str
 
   return (
     <div className="mx-auto w-full max-w-4xl space-y-5 p-4 sm:p-6">
-      <div className="overflow-hidden rounded-3xl border border-indigo-500/20 bg-gradient-to-br from-indigo-500/10 via-card to-card">
+      <div className="overflow-hidden rounded-2xl border-2 border-indigo-500/25 bg-gradient-to-br from-indigo-500/10 via-card to-card">
         <div className="border-b border-indigo-500/10 px-5 py-5 sm:px-6">
           <span className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-indigo-500 text-white shadow-lg shadow-indigo-500/20">
             <Sigma className="h-5 w-5" />
@@ -164,7 +166,7 @@ function SolveStudio({ classLevel, subject }: { classLevel: string; subject: str
             onChange={(event) => setProblem(event.target.value)}
             rows={5}
             placeholder="Example: A projectile is launched at 20 m/s at 30°. Derive its range and verify the result."
-            className="w-full resize-y rounded-2xl border border-border bg-background px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10"
+            className="w-full resize-y rounded-2xl border-2 border-border/80 bg-background px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-indigo-500/50 focus:ring-4 focus:ring-indigo-500/10"
           />
           <div className="flex flex-wrap items-center justify-between gap-3">
             <span className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
@@ -184,12 +186,14 @@ function SolveStudio({ classLevel, subject }: { classLevel: string; subject: str
       </div>
       {error && <p role="alert" className="rounded-2xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">{error}</p>}
       {result && (
-        <article className="rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-6">
-          <div className="mb-4 flex items-center gap-2 border-b border-border pb-3 text-xs font-bold uppercase tracking-[0.16em] text-indigo-500">
-            <CheckCircle2 className="h-4 w-4" /> Verified professor solution
-          </div>
+        <AiReplyCard
+          compact
+          title="Verified professor solution"
+          reply={result.solution}
+          context={{ surface: "widget", subjectName: subject }}
+        >
           <InteractiveMarkdown content={result.solution} className="chat-reading" />
-        </article>
+        </AiReplyCard>
       )}
     </div>
   );
@@ -225,7 +229,7 @@ function DeepDiveStudio({ classLevel, subject }: { classLevel: string; subject: 
 
   return (
     <div className="mx-auto w-full max-w-4xl space-y-5 p-4 sm:p-6">
-      <div className="overflow-hidden rounded-3xl border border-sky-500/20 bg-gradient-to-br from-sky-500/10 via-card to-card">
+      <div className="overflow-hidden rounded-2xl border-2 border-sky-500/25 bg-gradient-to-br from-sky-500/10 via-card to-card">
         <div className="border-b border-sky-500/10 px-5 py-5 sm:px-6">
           <span className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-500 text-white shadow-lg shadow-sky-500/20">
             <Brain className="h-5 w-5" />
@@ -252,7 +256,7 @@ function DeepDiveStudio({ classLevel, subject }: { classLevel: string; subject: 
               onChange={(event) => setTopic(event.target.value)}
               rows={3}
               placeholder="Example: Lenz's law as a consequence of conservation of energy"
-              className="w-full resize-y rounded-2xl border border-border bg-background px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-sky-500/50 focus:ring-4 focus:ring-sky-500/10"
+              className="w-full resize-y rounded-2xl border-2 border-border/80 bg-background px-4 py-3 text-sm leading-relaxed outline-none transition focus:border-sky-500/50 focus:ring-4 focus:ring-sky-500/10"
             />
           </div>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-3" role="group" aria-label="Synthesis depth">
@@ -285,12 +289,14 @@ function DeepDiveStudio({ classLevel, subject }: { classLevel: string; subject: 
       </div>
       {error && <p role="alert" className="rounded-2xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">{error}</p>}
       {result && (
-        <article className="rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-6">
-          <div className="mb-4 flex items-center gap-2 border-b border-border pb-3 text-xs font-bold uppercase tracking-[0.16em] text-sky-500">
-            <Brain className="h-4 w-4" /> {result.depth.replace("-", " ")} synthesis
-          </div>
+        <AiReplyCard
+          compact
+          title={`${result.depth.replace("-", " ")} synthesis`}
+          reply={result.explanation}
+          context={{ surface: "widget", subjectName: subject }}
+        >
           <InteractiveMarkdown content={result.explanation} className="chat-reading" />
-        </article>
+        </AiReplyCard>
       )}
     </div>
   );
@@ -385,7 +391,7 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
 
   return (
     <div className="mx-auto w-full max-w-4xl space-y-5 p-4 sm:p-6">
-      <div className="rounded-3xl border border-violet-500/20 bg-gradient-to-br from-violet-500/10 via-card to-card p-5 sm:p-6">
+      <div className="rounded-2xl border-2 border-violet-500/25 bg-gradient-to-br from-violet-500/10 via-card to-card p-5 sm:p-6">
         <div className="flex items-start justify-between gap-3">
           <div>
             <span className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-violet-500 text-white shadow-lg shadow-violet-500/20">
@@ -397,7 +403,7 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
             </p>
           </div>
           {questions.length > 0 && (
-            <button type="button" onClick={resetPractice} className="inline-flex shrink-0 items-center gap-1.5 rounded-xl border border-border bg-background px-3 py-2 text-xs font-bold hover:border-violet-500/40">
+            <button type="button" onClick={resetPractice} className="inline-flex shrink-0 items-center gap-1.5 rounded-xl border-2 border-border/80 bg-background px-3 py-2 text-xs font-bold hover:border-violet-500/40">
               <RotateCcw className="h-3.5 w-3.5" /> New set
             </button>
           )}
@@ -411,13 +417,13 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
                 value={topic}
                 onChange={(event) => setTopic(event.target.value)}
                 placeholder="Leave blank for the whole subject"
-                className="min-h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none focus:border-violet-500/50 focus:ring-4 focus:ring-violet-500/10"
+                className="min-h-11 w-full rounded-xl border-2 border-border/80 bg-background px-3 text-sm outline-none focus:border-violet-500/50 focus:ring-4 focus:ring-violet-500/10"
               />
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="space-y-2">
                 <span className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">Difficulty</span>
-                <div className="flex rounded-xl border border-border bg-background p-1">
+                <div className="flex rounded-xl border-2 border-border/80 bg-background p-1">
                   {(["easy", "intermediate", "hard"] as const).map((level) => (
                     <button key={level} type="button" onClick={() => setDifficulty(level)} aria-pressed={difficulty === level} className={`flex-1 rounded-lg px-2 py-2 text-xs font-bold capitalize transition ${difficulty === level ? "bg-violet-500 text-white" : "text-muted-foreground hover:text-foreground"}`}>{level}</button>
                   ))}
@@ -425,7 +431,7 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
               </div>
               <div className="space-y-2">
                 <span className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">Questions</span>
-                <div className="flex rounded-xl border border-border bg-background p-1">
+                <div className="flex rounded-xl border-2 border-border/80 bg-background p-1">
                   {[3, 5, 10].map((value) => (
                     <button key={value} type="button" onClick={() => setCount(value)} aria-pressed={count === value} className={`flex-1 rounded-lg px-2 py-2 text-xs font-bold transition ${count === value ? "bg-violet-500 text-white" : "text-muted-foreground hover:text-foreground"}`}>{value}</button>
                   ))}
@@ -450,7 +456,7 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
       {error && <p role="alert" className="rounded-2xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">{error}</p>}
       {questions.length > 0 && (
         <>
-          <div className="flex items-center justify-between rounded-2xl border border-border bg-card px-4 py-3 text-xs font-semibold">
+          <div className="flex items-center justify-between rounded-2xl border-2 border-border/80 bg-card px-4 py-3 text-xs font-semibold">
             <span className="capitalize text-muted-foreground">{difficulty} · {FORMATS.find((item) => item.id === format)?.label}</span>
             <span>{answered}/{questions.length} answered</span>
           </div>
@@ -459,7 +465,7 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
             const selected = Number(answers[index]);
             const isCorrect = selected === question.correctIndex;
             return (
-              <article key={`${question.prompt}-${index}`} className="rounded-3xl border border-border bg-card p-4 shadow-sm sm:p-5">
+              <article key={`${question.prompt}-${index}`} className="rounded-3xl border-2 border-border/80 bg-card p-4 shadow-sm sm:p-5">
                 <div className="mb-4 flex items-start gap-3">
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-violet-500/10 text-xs font-black text-violet-600 dark:text-violet-400">{index + 1}</span>
                   <MathMarkdown content={question.prompt} className="min-w-0 flex-1 font-semibold leading-relaxed [&_p]:my-0" />
@@ -493,7 +499,7 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
                     rows={format === "long-answer" ? 7 : 3}
                     aria-label={`Answer to question ${index + 1}`}
                     placeholder={format === "fill-blank" ? "Type the missing term…" : "Write your answer with reasoning…"}
-                    className="w-full resize-y rounded-2xl border border-border bg-background px-4 py-3 text-sm leading-relaxed outline-none focus:border-violet-500/50 focus:ring-4 focus:ring-violet-500/10 disabled:opacity-70"
+                    className="w-full resize-y rounded-2xl border-2 border-border/80 bg-background px-4 py-3 text-sm leading-relaxed outline-none focus:border-violet-500/50 focus:ring-4 focus:ring-violet-500/10 disabled:opacity-70"
                   />
                 )}
                 {revealed && choiceFormat && (
@@ -754,7 +760,7 @@ export function AIWidget() {
   return (
     <div className="fixed bottom-safe left-4 z-50 flex flex-col items-start gap-2">
       {open && (
-        <section aria-label="Veer Professor workspace" className="flex h-[min(calc(100dvh-6.5rem),56rem)] w-[min(calc(100vw-2rem),72rem)] flex-col overflow-hidden rounded-3xl border border-slate-700/60 bg-card shadow-2xl shadow-slate-950/25">
+        <section aria-label="Veer Professor workspace" className="flex h-[min(calc(100dvh-6.5rem),56rem)] w-[min(calc(100vw-2rem),72rem)] flex-col overflow-hidden rounded-2xl border-2 border-slate-700/60 bg-card shadow-2xl shadow-slate-950/25">
           <header className="relative overflow-hidden bg-slate-950 px-4 py-3 text-white sm:px-5">
             <div className="pointer-events-none absolute -right-10 -top-20 h-48 w-48 rounded-full bg-violet-500/20 blur-3xl" />
             <div className="relative flex items-center justify-between gap-3">
@@ -807,11 +813,11 @@ export function AIWidget() {
             <div className="flex min-w-0 flex-1 items-center gap-2">
               <BookOpen className="hidden h-4 w-4 shrink-0 text-muted-foreground sm:block" />
               <label className="sr-only" htmlFor="professor-class">Class</label>
-              <select id="professor-class" value={classSlug} onChange={(event) => setClassSlug(event.target.value)} className="min-h-9 max-w-28 rounded-xl border border-border bg-background px-2 text-xs font-semibold outline-none focus:ring-2 focus:ring-primary/30 sm:max-w-none sm:px-3">
+              <select id="professor-class" value={classSlug} onChange={(event) => setClassSlug(event.target.value)} className="min-h-9 max-w-28 rounded-xl border-2 border-border/80 bg-background px-2 text-xs font-semibold outline-none focus:ring-2 focus:ring-primary/30 sm:max-w-none sm:px-3">
                 {SYLLABUS.map((item) => <option key={item.slug} value={item.slug}>{item.name}</option>)}
               </select>
               <label className="sr-only" htmlFor="professor-subject">Subject</label>
-              <select id="professor-subject" value={subjectSlug} onChange={(event) => setSubjectSlug(event.target.value)} className="min-h-9 min-w-0 flex-1 rounded-xl border border-border bg-background px-2 text-xs font-semibold outline-none focus:ring-2 focus:ring-primary/30 sm:flex-none sm:px-3">
+              <select id="professor-subject" value={subjectSlug} onChange={(event) => setSubjectSlug(event.target.value)} className="min-h-9 min-w-0 flex-1 rounded-xl border-2 border-border/80 bg-background px-2 text-xs font-semibold outline-none focus:ring-2 focus:ring-primary/30 sm:flex-none sm:px-3">
                 {subjects.map((subject) => <option key={subject.slug} value={subject.slug}>{subject.name}</option>)}
               </select>
             </div>
@@ -840,6 +846,7 @@ export function AIWidget() {
                         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">Ask for a full lesson, a difficult derivation, a comparison, or a follow-up. Veer keeps the thread and teaches at your selected class level.</p>
                       </div>
                     </div>
+                    <CuratedNotesBlock variant="compact" onCurate={(prompt) => void send(prompt)} />
                     {lines.length > 0 && (
                       <button type="button" onClick={() => setView("thread")} className="flex w-full items-center justify-between rounded-2xl border border-primary/25 bg-primary/5 px-4 py-3 text-left text-sm font-bold text-primary transition hover:bg-primary/10">
                         Resume current lesson <span aria-hidden="true">→</span>
@@ -847,17 +854,17 @@ export function AIWidget() {
                     )}
                     <div className="grid gap-2 sm:grid-cols-2">
                       {LESSON_STARTERS.map((starter) => (
-                        <button key={starter} type="button" onClick={() => void send(starter)} disabled={sending} className="rounded-2xl border border-border bg-card p-4 text-left text-sm font-medium leading-relaxed transition hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-md disabled:opacity-50">{starter}</button>
+                        <button key={starter} type="button" onClick={() => void send(starter)} disabled={sending} className="rounded-2xl border-2 border-border/80 bg-card p-4 text-left text-sm font-medium leading-relaxed transition hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-md disabled:opacity-50">{starter}</button>
                       ))}
                     </div>
-                    <div className="rounded-3xl border border-border bg-card p-4 sm:p-5">
+                    <div className="rounded-3xl border-2 border-border/80 bg-card p-4 sm:p-5">
                       <div className="mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-[0.15em] text-muted-foreground"><History className="h-4 w-4" /> Saved lessons</div>
                       {sessions.length === 0 ? (
                         <p className="text-sm text-muted-foreground">Your professor lessons will appear here after your first conversation.</p>
                       ) : (
                         <div className="grid gap-2 sm:grid-cols-2">
                           {sessions.slice(0, 6).map((item) => (
-                            <button key={item.session} type="button" onClick={() => void openConversation(item.session)} className="min-w-0 rounded-2xl border border-border bg-background px-4 py-3 text-left transition hover:border-primary/35">
+                            <button key={item.session} type="button" onClick={() => void openConversation(item.session)} className="min-w-0 rounded-2xl border-2 border-border/80 bg-background px-4 py-3 text-left transition hover:border-primary/35">
                               <span className="block truncate text-sm font-semibold">{item.preview || "Professor lesson"}</span>
                               <span className="mt-1 block text-[11px] text-muted-foreground">{item.messages} messages</span>
                             </button>
@@ -890,7 +897,7 @@ export function AIWidget() {
                           <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-950 text-white"><CaptainAvatar className="h-4 w-4" /></span>
                           <span className="text-[10px] font-black uppercase tracking-[0.14em]">Veer Professor</span>
                         </div>
-                        <div className="rounded-3xl border border-border bg-card px-4 py-4 shadow-sm sm:px-5 sm:py-5">
+                        <div className="rounded-3xl border-2 border-border/80 bg-card px-4 py-4 shadow-sm sm:px-5 sm:py-5">
                           <InteractiveMarkdown content={line.content} className="chat-reading" />
                         </div>
                       </article>
@@ -910,7 +917,7 @@ export function AIWidget() {
                   void send();
                 }}
               >
-                <div className="mx-auto flex max-w-4xl items-end gap-2 rounded-2xl border border-border bg-background p-2 shadow-sm focus-within:border-primary/40 focus-within:ring-4 focus-within:ring-primary/5">
+                <div className="mx-auto flex max-w-4xl items-end gap-2 rounded-2xl border-2 border-border/80 bg-background p-2 shadow-sm focus-within:border-primary/40 focus-within:ring-4 focus-within:ring-primary/5">
                   <label className="sr-only" htmlFor="veer-widget-message">Ask Veer Professor</label>
                   <textarea
                     id="veer-widget-message"

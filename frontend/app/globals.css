@@ -1938,3 +1938,34 @@ body {
   .footer-quote-glow,
   .footer-quote-enter { animation: none; }
 }
+
+/* ── Fit-to-screen containment (owner 2026-11-09: "make the site map and all
+   like that fit under screen not exceed the screen — apply it globally").
+   Nothing may push the page wider than the viewport: grid and flex items can
+   shrink below their content so truncate/wrap actually engage, long words and
+   URLs wrap instead of stretching a track, media and tables stay inside their
+   boxes, and overflow-x is clipped as the last-resort guard. ── */
+html,
+body {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+body {
+  overflow-wrap: break-word;
+}
+.grid > *,
+.flex > * {
+  min-width: 0;
+}
+img,
+svg,
+video,
+iframe,
+canvas,
+table {
+  max-width: 100%;
+}
+pre {
+  max-width: 100%;
+  overflow-x: auto;
+}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ProHome } from "@/components/home/tier-interfaces";
+import { HomeSubjectRails } from "@/components/home/home-subject-rails";
 import { TierHomeGate } from "@/components/home/tier-home-gate";
 
 export const metadata: Metadata = {
@@ -10,7 +11,7 @@ export const metadata: Metadata = {
 export default function ProHomePage() {
   return (
     <TierHomeGate tier="pro">
-      <ProHome />
+      <ProHome rails={<HomeSubjectRails />} />
     </TierHomeGate>
   );
 }

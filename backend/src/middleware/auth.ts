@@ -128,6 +128,21 @@ export function isOwnerEmail(email?: string | null): boolean {
   return OWNER_EMAILS.has(email.trim().toLowerCase());
 }
 
+/**
+ * An owner ACCOUNT: an allowlisted owner email OR the owner rung (explicit
+ * owner grant; legacy operator rows normalize to owner).
+ *
+ * Approve/reject is restricted to owner accounts, but every owner account may
+ * decide a NON-owner account. Owner-to-owner changes stay blocked separately
+ * by isProtectedOwnerTarget().
+ */
+export function isOwnerAccount(
+  user?: { email?: string | null; role?: UserRole | string | null } | null,
+): boolean {
+  if (!user) return false;
+  return isOwnerEmail(user.email) || normalizeRole(user.role) === "owner";
+}
+
 export function buildSessionUser(
   id: string,
   email: string,

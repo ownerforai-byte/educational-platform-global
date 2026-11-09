@@ -46,7 +46,7 @@ describe("DiagramStudio", () => {
       expect(screen.getByRole("button", { name: subject })).toBeInTheDocument();
     }
     expect(screen.getByRole("button", { name: /draw diagram/i })).toBeDisabled();
-    expect(screen.getByPlaceholderText(/name the diagram/i)).toHaveClass("text-base", "sm:text-sm");
+    expect(screen.getByPlaceholderText(/name the diagram/i)).toHaveClass("text-[13px]", "sm:text-[13px]");
     expect(screen.getByRole("button", { name: "Biology" })).toHaveClass("min-h-11");
   });
 

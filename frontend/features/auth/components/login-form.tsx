@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Mail, Eye, EyeOff, ArrowRight, GraduationCap } from "lucide-react";
+import { Mail, Eye, EyeOff, ArrowRight, GraduationCap, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { loginAction } from "../actions";
@@ -12,6 +12,7 @@ import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/access-level";
 import { rememberPendingSignup } from "../pending-signup-identity";
+import { DEVICE_SIGNUP_NOTICE } from "./access-notice";
 
 export function LoginForm() {
   const router = useRouter();
@@ -59,6 +60,13 @@ export function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      <p
+        data-testid="device-signup-notice"
+        className="flex items-start gap-2 rounded-xl border border-amber-500/30 bg-amber-500/[0.07] px-3.5 py-2.5 text-xs font-semibold leading-relaxed text-amber-600 dark:text-amber-400"
+      >
+        <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+        {DEVICE_SIGNUP_NOTICE}
+      </p>
       <div className="space-y-2">
         <label className="text-sm font-medium" htmlFor="email">Email</label>
         <div className="relative">

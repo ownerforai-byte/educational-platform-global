@@ -45,8 +45,6 @@ type Tool = {
   /** Tailwind bg+text for the icon square */
   iconBg: string;
   badge?: "Popular" | "New";
-  /** Simulated user count for social proof */
-  users?: string;
 };
 
 type SubjectClassroom = { slug: string; title: string; description: string };
@@ -71,7 +69,6 @@ const CORE_TOOLS: Tool[] = [
     icon: MessageCircle,
     iconBg: "bg-violet-100 text-violet-600 dark:bg-violet-900/30 dark:text-violet-400",
     badge: "Popular",
-    users: "2.1k",
   },
   {
     href: "/ask",
@@ -82,7 +79,6 @@ const CORE_TOOLS: Tool[] = [
     icon: Sparkles,
     iconBg: "bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400",
     badge: "Popular",
-    users: "1.8k",
   },
   {
     href: "/ai/math",
@@ -93,7 +89,6 @@ const CORE_TOOLS: Tool[] = [
     icon: Calculator,
     iconBg: "bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-400",
     badge: "Popular",
-    users: "1.5k",
   },
   {
     href: "/ai-quiz",
@@ -104,7 +99,6 @@ const CORE_TOOLS: Tool[] = [
     icon: Brain,
     iconBg: "bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400",
     badge: "Popular",
-    users: "1.3k",
   },
   {
     href: "/chat/nepali",
@@ -115,7 +109,6 @@ const CORE_TOOLS: Tool[] = [
     icon: Languages,
     iconBg: "bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400",
     badge: "Popular",
-    users: "980",
   },
   {
     href: "/chat/grammar",
@@ -125,7 +118,6 @@ const CORE_TOOLS: Tool[] = [
     minLevel: "member",
     icon: BookOpen,
     iconBg: "bg-indigo-100 text-indigo-600 dark:bg-indigo-900/30 dark:text-indigo-400",
-    users: "847",
   },
   {
     href: "/ai/deep-dive",
@@ -135,7 +127,6 @@ const CORE_TOOLS: Tool[] = [
     minLevel: "plus",
     icon: Lightbulb,
     iconBg: "bg-yellow-100 text-yellow-600 dark:bg-yellow-900/30 dark:text-yellow-400",
-    users: "760",
   },
   {
     href: "/ai/tutor",
@@ -145,7 +136,6 @@ const CORE_TOOLS: Tool[] = [
     minLevel: "plus",
     icon: Sparkles,
     iconBg: "bg-fuchsia-100 text-fuchsia-600 dark:bg-fuchsia-900/30 dark:text-fuchsia-400",
-    users: "720",
   },
   {
     href: "/ai/diagrams",
@@ -155,7 +145,6 @@ const CORE_TOOLS: Tool[] = [
     minLevel: "plus",
     icon: Shapes,
     iconBg: "bg-rose-100 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400",
-    users: "640",
   },
   {
     href: "/ai/subjects",
@@ -166,7 +155,6 @@ const CORE_TOOLS: Tool[] = [
     icon: Users,
     iconBg: "bg-orange-100 text-orange-600 dark:bg-orange-900/30 dark:text-orange-400",
     badge: "New",
-    users: "580",
   },
   {
     href: "/search",
@@ -176,7 +164,6 @@ const CORE_TOOLS: Tool[] = [
     minLevel: "plus",
     icon: Search,
     iconBg: "bg-teal-100 text-teal-600 dark:bg-teal-900/30 dark:text-teal-400",
-    users: "520",
   },
   {
     href: "/ai/workspace",
@@ -186,7 +173,6 @@ const CORE_TOOLS: Tool[] = [
     minLevel: "plus",
     icon: Target,
     iconBg: "bg-sky-100 text-sky-600 dark:bg-sky-900/30 dark:text-sky-400",
-    users: "490",
   },
   {
     href: "/ai/history",
@@ -196,7 +182,6 @@ const CORE_TOOLS: Tool[] = [
     minLevel: "plus",
     icon: History,
     iconBg: "bg-slate-100 text-slate-600 dark:bg-slate-800/50 dark:text-slate-300",
-    users: "410",
   },
   {
     href: "/ai-quiz/history",
@@ -206,7 +191,6 @@ const CORE_TOOLS: Tool[] = [
     minLevel: "plus",
     icon: History,
     iconBg: "bg-cyan-100 text-cyan-600 dark:bg-cyan-900/30 dark:text-cyan-400",
-    users: "380",
   },
   {
     href: "/mind-studio",
@@ -216,7 +200,6 @@ const CORE_TOOLS: Tool[] = [
     minLevel: "owner",
     icon: Shapes,
     iconBg: "bg-pink-100 text-pink-600 dark:bg-pink-900/30 dark:text-pink-400",
-    users: "120",
   },
 ];
 
@@ -280,16 +263,8 @@ function ToolCard({ tool, available }: { tool: Tool; available: boolean }) {
         {tool.description}
       </p>
 
-      {/* Footer: user count + arrow */}
+      {/* Footer: access gate + arrow */}
       <div className="mt-auto flex items-center justify-between pt-2.5">
-        {tool.users ? (
-          <span className="flex items-center gap-1 text-[10px] text-muted-foreground/70">
-            <Users className="h-3 w-3" aria-hidden="true" />
-            {tool.users} users
-          </span>
-        ) : (
-          <span />
-        )}
         {available ? (
           <ChevronRight className="h-4 w-4 text-primary" aria-hidden="true" />
         ) : (
@@ -342,7 +317,7 @@ export function AiToolsDirectory({ subjects }: { subjects: SubjectClassroom[] })
             type="button"
             aria-pressed={active === tab}
             onClick={() => setActive(tab)}
-            className={`shrink-0 rounded-full border px-4 py-1.5 text-xs font-semibold transition-all ${
+            className={`shrink-0 rounded-full border px-4 py-1.5 text-[11px] font-semibold transition-all ${
               active === tab
                 ? "border-primary bg-primary text-primary-foreground shadow-sm"
                 : "border-border bg-card text-muted-foreground hover:border-primary/40 hover:text-foreground"

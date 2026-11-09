@@ -26,12 +26,14 @@ describe("Home subject rails owner gate", () => {
     const gate =
       tierShell.match(/<SparkGate[\s\S]*?<\/SparkGate>/)?.[0] ?? "";
     expect(gate).toContain('minLevel="pro"');
-    expect(gate).toContain("<HomeSubjectRails />");
+    expect(gate).toContain("{rails}");
     // The rails are a SERVER component (node:fs data modules), rendered by the
     // protected route directly; client session switching belongs to its layout.
     expect(home).not.toContain("HomeAudience");
     expect(read("app/(app)/layout.tsx")).toContain("<RequireApproval>");
-    expect(tierShell).toContain("<HomeSubjectRails />");
+    // The tier shell is a client module, so the server page renders the rails.
+    expect(tierShell).not.toContain("home-subject-rails");
+    expect(read("app/(app)/home/member/page.tsx")).toContain("<HomeSubjectRails />");
   });
 
   it("hides the section instead of redirecting anyone", () => {

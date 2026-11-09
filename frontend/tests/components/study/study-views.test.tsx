@@ -34,6 +34,14 @@ vi.mock("@/lib/api/credits", () => ({
   getUserTransactions: vi.fn().mockResolvedValue([]),
 }));
 vi.mock("@/lib/api/ai-quiz-history", () => ({ getQuizHistory: vi.fn().mockResolvedValue({ rows: [] }) }));
+vi.mock("@/features/auth/hooks/use-session", () => ({
+  useSession: () => ({
+    user: { id: "u1", email: "a@example.com", fullName: null, role: "member", credits: 0 },
+    isLoading: false,
+    logoutUser: vi.fn(),
+    refresh: vi.fn(),
+  }),
+}));
 vi.mock("@/lib/api/ai", () => ({ chat: vi.fn().mockResolvedValue({ reply: "" }) }));
 vi.mock("@/lib/api/leaderboard", () => ({
   getLeaderboard: vi.fn().mockResolvedValue({

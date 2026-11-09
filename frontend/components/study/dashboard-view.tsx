@@ -1,12 +1,18 @@
 "use client";
 
 import Link from "next/link";
-import { Flame, Target, ListChecks, PlayCircle, Compass } from "lucide-react";
+import { Flame, Target, ListChecks, PlayCircle, Compass, GraduationCap } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { entryStatus, topicHref } from "@/lib/progress/catalog";
 import { getStreak, streakLabel } from "@/lib/streaks";
 import { daysUntilExam, seedDailyPlan } from "@/lib/study-goals";
-import { QUICK_LINKS } from "@/lib/navigation";
+import { ACCESS_LABELS, accessLevelFor } from "@/lib/access-level";
+import {
+  QUICK_LINKS,
+  quickLinkMinTier,
+  quickLinkUnlocked,
+} from "@/lib/navigation";
+import { useSession } from "@/features/auth/hooks/use-session";
 import { useStudyGoals } from "./use-study-goals";
 import { useJourney } from "./use-journey";
 import { WeakTopics } from "./weak-topics";
@@ -14,6 +20,7 @@ import { useEffect, useState } from "react";
 
 /** /dashboard: today hub, a presentation of the goals, streak and progress readers. */
 export function DashboardView() {
+  const { user } = useSession();
   const { goals, ready } = useStudyGoals();
   const { entries, summary, loading } = useJourney();
   const [streak, setStreak] = useState(0);
@@ -26,9 +33,17 @@ export function DashboardView() {
 
   return (
     <div className="container max-w-4xl py-8 space-y-6">
-      <div className="space-y-1">
-        <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
-        <p className="text-sm text-muted-foreground">Your study day in one place.</p>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <div className="space-y-1">
+          <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
+          <p className="text-sm text-muted-foreground">Your study day in one place.</p>
+        </div>
+        {/* The dashboard speaks the viewer's rung: the data is the same for
+            everyone, the quick links below open at or below it. */}
+        <span className="inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-primary">
+          <GraduationCap className="h-3.5 w-3.5" aria-hidden="true" />
+          {ACCESS_LABELS[accessLevelFor(user)]} dashboard
+        </span>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-3">
@@ -116,15 +131,30 @@ export function DashboardView() {
           <Compass className="h-4 w-4" /> Quick start
         </h2>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {QUICK_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="rounded-lg border p-3 text-center text-sm font-medium hover:bg-muted"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {QUICK_LINKS.map((link) => {
+            const tier = accessLevelFor(user);
+            if (!quickLinkUnlocked(tier, link.href)) {
+              return (
+                <span
+                  key={link.href}
+                  aria-disabled="true"
+                  title={`${link.label} opens at ${ACCESS_LABELS[quickLinkMinTier(link.href)]}`}
+                  className="cursor-not-allowed rounded-lg border border-border/60 bg-muted/40 p-3 text-center text-sm font-medium text-muted-foreground/50 opacity-60 grayscale"
+                >
+                  {link.label}
+                </span>
+              );
+            }
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="rounded-lg border p-3 text-center text-sm font-medium hover:bg-muted"
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

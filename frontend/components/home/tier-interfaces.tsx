@@ -1,15 +1,21 @@
+"use client";
+
+import type { ReactNode } from "react";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
   BookOpen,
   Calculator,
+  CalendarCheck,
   Check,
   Crown,
   FileQuestion,
+  Flame,
   FlaskConical,
   GraduationCap,
   MessageCircle,
   NotebookPen,
+  PlayCircle,
   Rocket,
   Search,
   Settings,
@@ -17,6 +23,7 @@ import {
   Sparkles,
   Target,
   TrendingUp,
+  Trophy,
   User,
 } from "lucide-react";
 import {
@@ -31,8 +38,14 @@ import {
   quickLinkMinTier,
   quickLinkUnlocked,
 } from "@/lib/navigation";
-import { HomeSubjectRails } from "@/components/home/home-subject-rails";
 import { SparkGate } from "@/features/credits/spark-gate";
+import { useSession } from "@/features/auth/hooks/use-session";
+import { useJourney } from "@/components/study/use-journey";
+import { useStudyGoals } from "@/components/study/use-study-goals";
+import { entryStatus, topicHref } from "@/lib/progress/catalog";
+import { daysUntilExam } from "@/lib/study-goals";
+import { useClientClock } from "@/lib/hooks/use-client-clock";
+import { useStreakCount } from "@/lib/hooks/use-streak";
 
 /**
  * THE TIER INTERFACES — hardcoded (owner direction 2026-10-23:
@@ -42,6 +55,11 @@ import { SparkGate } from "@/features/credits/spark-gate";
  * One interface per rung, in this file, mapped deterministically in
  * TIER_INTERFACE. No config, no drift: the viewer's rung picks the component.
  * Sections inside each interface are the registry rows at or below the rung.
+ *
+ * 2026-11-09 desk redesign: each rung is now a personal desk, not a static
+ * landing — the hero greets the student by name and the pulse row under it is
+ * their own streak, journey and exam countdown. The hardcoded tier split is
+ * untouched: same hero copy, spotlights and gating per rung.
  */
 
 // ── Shared shell ────────────────────────────────────────────────────────────
@@ -76,11 +94,43 @@ interface Spotlight {
   icon: LucideIcon;
 }
 
-function TierHero({ tier, headline, blurb }: { tier: AccessLevel; headline: string; blurb: string }) {
+/** "Good evening" — the desk knows what time the student sits down. */
+function greetingFor(date: Date): string {
+  const hour = date.getHours();
+  if (hour < 5) return "Burning the midnight oil";
+  if (hour < 12) return "Good morning";
+  if (hour < 17) return "Good afternoon";
+  return "Good evening";
+}
+
+function TierHero({
+  tier,
+  headline,
+  blurb,
+}: {
+  tier: AccessLevel;
+  headline: string;
+  blurb: string;
+}) {
   const Icon = TIER_ICON[tier];
+  const { user } = useSession();
+  const now = useClientClock();
+  const streak = useStreakCount();
+
+  const name = user?.fullName || user?.email?.split("@")[0] || "there";
+  const dateLabel = now
+    ? now.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" })
+    : "";
+
   return (
-    <section className={`rounded-3xl border border-border/70 bg-gradient-to-br ${TIER_ACCENT[tier]} via-card to-card p-6 sm:p-8`}>
-      <div className="flex flex-wrap items-start justify-between gap-4">
+    <section
+      className={`relative overflow-hidden rounded-3xl border-2 border-border/80 bg-gradient-to-br ${TIER_ACCENT[tier]} via-card to-card p-6 sm:p-8`}
+    >
+      {/* Cover accents — the desk gets the same depth as the profile hero. */}
+      <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/5" />
+      <div className="pointer-events-none absolute -bottom-14 right-24 h-36 w-36 rounded-full bg-primary/5" />
+
+      <div className="relative flex flex-wrap items-start justify-between gap-4">
         <div className="max-w-2xl space-y-2">
           <div className="flex items-center gap-2">
             <div className="rounded-2xl bg-primary/10 p-2">
@@ -89,12 +139,26 @@ function TierHero({ tier, headline, blurb }: { tier: AccessLevel; headline: stri
             <span className="rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-primary">
               {ACCESS_LABELS[tier]} interface
             </span>
+            {streak > 0 && (
+              <span className="inline-flex items-center gap-1 rounded-full border border-orange-500/30 bg-orange-500/10 px-2.5 py-1 text-[10px] font-bold text-orange-600 dark:text-orange-400">
+                <Flame className="h-3 w-3" aria-hidden="true" />
+                {streak}-day streak
+              </span>
+            )}
           </div>
-          <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl">{headline}</h1>
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            {now ? dateLabel : "\u00A0"}
+          </p>
+          <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl">
+            {now ? `${greetingFor(now)}, ${name}.` : headline}
+          </h1>
+          <p className="text-sm font-semibold text-foreground">{headline}</p>
           <p className="text-sm leading-relaxed text-muted-foreground">{blurb}</p>
         </div>
-        <div className="rounded-2xl border border-border/60 bg-background/70 px-4 py-3 text-center">
-          <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">Veer sparks</p>
+        <div className="rounded-2xl border-2 border-border/80 bg-background/70 px-4 py-3 text-center">
+          <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+            Veer sparks
+          </p>
           <p className="mt-1 text-lg font-extrabold text-primary">{TIER_SPARKS[tier]}</p>
           <p className="mt-0.5 text-[10px] text-muted-foreground">
             notes 1 spark · labs {ACCESS_LABELS[quickLinkMinTier("/lab")]}
@@ -105,16 +169,101 @@ function TierHero({ tier, headline, blurb }: { tier: AccessLevel; headline: stri
   );
 }
 
+/**
+ * The desk pulse — the viewer's own four numbers, each one a door back into
+ * the work. Derived from the same stores as /dashboard and /progress, so the
+ * desk can never disagree with them; degrades to honest empty states.
+ */
+function DeskPulse() {
+  const { entries, summary, loading } = useJourney();
+  const { goals, ready } = useStudyGoals();
+  const streak = useStreakCount();
+
+  const days = ready ? daysUntilExam(goals) : null;
+  const next = entries.find((e) => entryStatus(e) === "in_progress");
+
+  const tiles: Array<{
+    icon: LucideIcon;
+    label: string;
+    value: string;
+    hint: string;
+    href: string;
+    tone: string;
+  }> = [
+    {
+      icon: PlayCircle,
+      label: "Continue",
+      value: next ? next.topic?.title || next.topicSlug || "Your last topic" : "Pick a topic",
+      hint: next ? "where you left off" : "open any chapter to begin",
+      href: next ? topicHref(next) : "/class-11-notes",
+      tone: "text-sky-500",
+    },
+    {
+      icon: Flame,
+      label: "Study streak",
+      value: streak > 0 ? `${streak} day${streak === 1 ? "" : "s"}` : "Start today",
+      hint: streak > 0 ? "keep it alive" : "one topic starts it",
+      href: "/streaks",
+      tone: "text-orange-500",
+    },
+    {
+      icon: Trophy,
+      label: "Topics done",
+      value: loading || !summary ? "…" : `${summary.completed} / ${summary.total}`,
+      hint: summary ? `${summary.percent}% of the syllabus` : "from your journey",
+      href: "/progress",
+      tone: "text-emerald-500",
+    },
+    {
+      icon: CalendarCheck,
+      label: days !== null && days >= 0 ? "Exam countdown" : "Study target",
+      value: days !== null && days >= 0 ? `${days} days` : "Set a goal",
+      hint: days !== null && days >= 0 ? "to your exam date" : "plan your weeks",
+      href: "/goals",
+      tone: "text-violet-500",
+    },
+  ];
+
+  return (
+    <section aria-labelledby="desk-pulse-heading">
+      <h2 id="desk-pulse-heading" className="sr-only">
+        Your desk at a glance
+      </h2>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {tiles.map((tile) => {
+          const Icon = tile.icon;
+          return (
+            <Link
+              key={tile.label}
+              href={tile.href}
+              className="group rounded-2xl border-2 border-border/80 bg-card p-4 transition hover:border-primary/50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <div className="flex items-center gap-2">
+                <Icon className={`h-4 w-4 ${tile.tone}`} aria-hidden="true" />
+                <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                  {tile.label}
+                </p>
+              </div>
+              <p className="mt-1.5 truncate text-sm font-extrabold text-foreground">{tile.value}</p>
+              <p className="mt-0.5 truncate text-[10px] text-muted-foreground">{tile.hint}</p>
+            </Link>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 function SpotlightRow({ items }: { items: Spotlight[] }) {
   return (
-    <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+    <div data-testid="spotlights" className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
       {items.map((s) => {
         const Icon = s.icon;
         return (
           <Link
             key={s.href}
             href={s.href}
-            className="group flex min-h-[88px] flex-col rounded-2xl border border-border/70 bg-card p-4 transition hover:border-primary/50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="group flex min-h-[88px] flex-col rounded-2xl border-2 border-border/80 bg-card p-4 transition hover:border-primary/50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <div className="flex items-center gap-2.5">
               <div className="rounded-xl bg-primary/10 p-2">
@@ -201,7 +350,7 @@ function OpenSectionsRail({ tier }: { tier: AccessLevel }) {
             <Link
               key={s.id}
               href={s.href}
-              className="flex w-[190px] shrink-0 flex-col rounded-2xl border border-border/70 bg-card p-3.5 transition hover:border-primary/50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="flex w-[190px] shrink-0 flex-col rounded-2xl border-2 border-border/80 bg-card p-3.5 transition hover:border-primary/50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <div className="flex items-center justify-between">
                 <div className="rounded-xl bg-primary/10 p-1.5">
@@ -238,15 +387,18 @@ function TierPage({
   headline,
   blurb,
   spotlights,
+  rails,
 }: {
   tier: AccessLevel;
   headline: string;
   blurb: string;
   spotlights: Spotlight[];
+  rails: ReactNode;
 }) {
   return (
     <div className="mx-auto w-full max-w-7xl space-y-8 px-4 py-8">
       <TierHero tier={tier} headline={headline} blurb={blurb} />
+      <DeskPulse />
       <QuickLinksRail tier={tier} />
       <SpotlightRow items={spotlights} />
       <SparkGate
@@ -254,7 +406,7 @@ function TierPage({
         title="Home features"
         description="Subject rails, study tools and the full home dashboard open on the Pro plan."
       >
-        <HomeSubjectRails />
+        {rails}
       </SparkGate>
       <OpenSectionsRail tier={tier} />
       <NextRungTeaser tier={tier} />
@@ -264,9 +416,10 @@ function TierPage({
 
 // ── The four hardcoded interfaces ───────────────────────────────────────────
 
-export function MemberHome() {
+export function MemberHome({ rails }: { rails: ReactNode }) {
   return (
     <TierPage
+      rails={rails}
       tier="member"
       headline="Your study desk is open."
       blurb="Search the whole library, keep your Class 11 notes and formula sheets close, and track your progress — everything a Member needs, in one place."
@@ -280,9 +433,10 @@ export function MemberHome() {
   );
 }
 
-export function PlusHome() {
+export function PlusHome({ rails }: { rails: ReactNode }) {
   return (
     <TierPage
+      rails={rails}
       tier="plus"
       headline="Exam-ready — Class 11 + Class 12."
       blurb="Everything a Member has, plus Class 12, past papers, labs, and Veer studio."
@@ -296,9 +450,10 @@ export function PlusHome() {
   );
 }
 
-export function ProHome() {
+export function ProHome({ rails }: { rails: ReactNode }) {
   return (
     <TierPage
+      rails={rails}
       tier="pro"
       headline="Everything, no caps."
       blurb="Journal, worked numericals, the CEE track and the board exam suite, plus every index: derivations, the PDF library, graph banks and the knowledge hubs."
@@ -312,9 +467,10 @@ export function ProHome() {
   );
 }
 
-export function OwnerHome() {
+export function OwnerHome({ rails }: { rails: ReactNode }) {
   return (
     <TierPage
+      rails={rails}
       tier="owner"
       headline="Operator console — everything, plus the controls."
       blurb="Every section is open and every spark is unlimited. The console runs the platform: users and tier grants, section access rules, content control and the R1 layer."

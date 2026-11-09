@@ -169,14 +169,14 @@ export function DiagramStudio() {
 
   return (
     <div className="mx-auto w-full max-w-4xl space-y-5 px-3 py-4 sm:px-4 sm:py-8">
-      <div className="rounded-3xl border border-border/70 bg-card p-5 sm:p-6">
+      <div className="rounded-3xl border-2 border-border/80 bg-card p-5 sm:p-6">
         <div className="flex items-center gap-3">
           <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10">
             <Shapes className="h-5 w-5 text-primary" aria-hidden="true" />
           </span>
           <div>
             <h1 className="text-lg font-extrabold tracking-tight">Diagram Hub</h1>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-[11px] text-muted-foreground">
               Detailed, labelled diagrams — drawn as sharp vector figures,
               researched from real references, always in English.
             </p>
@@ -189,7 +189,7 @@ export function DiagramStudio() {
               key={s}
               type="button"
               onClick={() => setSubject(s)}
-              className={`rounded-full min-h-11 px-3 py-1 text-xs font-semibold transition ${
+              className={`rounded-full min-h-11 px-3 py-1 text-[11px] font-semibold transition ${
                 subject === s
                   ? "bg-primary text-primary-foreground"
                   : "border border-border/70 text-muted-foreground hover:border-primary/50"
@@ -211,14 +211,14 @@ export function DiagramStudio() {
           }}
           rows={2}
           placeholder="Name the diagram — e.g. 'labelled human heart with chambers and vessels' or 'ray diagram for a concave mirror'"
-          className="mt-3 w-full resize-none rounded-2xl border border-border/70 bg-background px-4 py-3 text-base sm:text-sm placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
+          className="mt-3 w-full resize-none rounded-2xl border-2 border-border/80 bg-background px-4 py-3 text-[13px] sm:text-[13px] placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
         />
         <div className="mt-2 flex items-center justify-between gap-2">
           <button
             type="button"
             onClick={handleEnhance}
             disabled={enhancing || !topic.trim()}
-            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-border/70 px-3 text-xs font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground disabled:opacity-50"
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border-2 border-border/80 px-3 text-[11px] font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground disabled:opacity-50"
           >
             <Wand2 className="h-3.5 w-3.5" />
             {enhancing ? "Enhancing…" : "Enhance brief"}
@@ -228,7 +228,7 @@ export function DiagramStudio() {
               type="button"
               onClick={() => abortRef.current?.abort()}
               aria-label="Stop reply"
-              className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-destructive px-5 text-xs font-bold text-destructive-foreground transition hover:opacity-90"
+              className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-destructive px-5 text-[11px] font-bold text-destructive-foreground transition hover:opacity-90"
             >
               <Square className="h-3.5 w-3.5 fill-current" />
               Stop
@@ -238,7 +238,7 @@ export function DiagramStudio() {
               type="button"
               onClick={() => void handleDraw()}
               disabled={!topic.trim()}
-              className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-primary px-5 text-xs font-bold text-primary-foreground transition hover:opacity-90 disabled:opacity-50"
+              className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-primary px-5 text-[11px] font-bold text-primary-foreground transition hover:opacity-90 disabled:opacity-50"
             >
               <Send className="h-3.5 w-3.5" />
               Draw diagram
@@ -250,7 +250,7 @@ export function DiagramStudio() {
       {error && (
         <p
           role="alert"
-          className="rounded-2xl border border-destructive/40 bg-destructive/10 px-4 py-2.5 text-xs font-semibold text-destructive"
+          className="rounded-2xl border border-destructive/40 bg-destructive/10 px-4 py-2.5 text-[11px] font-semibold text-destructive"
         >
           {error}
         </p>
@@ -265,8 +265,8 @@ export function DiagramStudio() {
             <div
               className={
                 message.role === "user"
-                  ? "max-w-[85%] min-w-0 rounded-2xl bg-primary px-4 py-3 text-sm text-primary-foreground [overflow-wrap:anywhere]"
-                  : "min-w-0 w-full rounded-2xl border border-border/70 bg-card px-3 py-4 shadow-sm sm:px-6 sm:py-6"
+                  ? "max-w-[85%] min-w-0 rounded-2xl bg-primary px-4 py-3 text-[13px] text-primary-foreground [overflow-wrap:anywhere]"
+                  : "min-w-0 w-full rounded-2xl border-2 border-border/80 bg-card px-3 py-4 shadow-sm sm:px-6 sm:py-6"
               }
             >
               {message.role === "assistant" ? (
@@ -298,7 +298,7 @@ export function DiagramStudio() {
         ))}
 
         {sending && (
-          <p className="flex items-center gap-1.5 text-xs italic text-muted-foreground">
+          <p className="flex items-center gap-1.5 text-[11px] italic text-muted-foreground">
             <Sparkles className="h-3 w-3 text-primary" aria-hidden="true" />
             Researching the real diagram, then drawing it…
           </p>

@@ -158,9 +158,9 @@ export function SiteIndexView({ groups }: { groups: SiteIndexGroup[] }) {
                 {group.href && (
                   <Link
                     href={group.href}
-                    className="inline-flex items-center gap-1 font-mono text-[11px] text-primary hover:underline"
+                    className="inline-flex max-w-full items-center gap-1 break-all font-mono text-[11px] text-primary hover:underline"
                   >
-                    <Link2 className="h-3 w-3" />
+                    <Link2 className="h-3 w-3 shrink-0" />
                     {group.href}
                   </Link>
                 )}

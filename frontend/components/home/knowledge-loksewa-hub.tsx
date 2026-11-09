@@ -13,9 +13,9 @@ import {
 
 export function KnowledgeLoksewaHub() {
   return (
-    <section id="section-knowledge" className="mx-auto max-w-7xl px-4 py-12 scroll-mt-16 border-t border-border/60">
+    <section id="section-knowledge" className="mx-auto max-w-7xl px-4 py-12 scroll-mt-16 border-t border-border/80">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-border/60">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-border/80">
         <div>
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald-500">
             <BookOpen className="h-4 w-4" />
@@ -31,7 +31,7 @@ export function KnowledgeLoksewaHub() {
 
         <Link
           href="/knowledge"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-border/70 bg-card hover:bg-muted text-xs font-semibold text-foreground transition-colors self-start md:self-auto"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border-2 border-border/80 bg-card hover:bg-muted text-xs font-semibold text-foreground transition-colors self-start md:self-auto"
         >
           <span>All Knowledge Modules</span>
           <ArrowRight className="h-3.5 w-3.5 text-primary" />
@@ -96,7 +96,7 @@ export function KnowledgeLoksewaHub() {
               <Link
                 key={card.href}
                 href={card.href}
-                className="group flex flex-col justify-between rounded-2xl border border-border/70 bg-card p-4 shadow-sm hover:border-primary/40 hover:shadow-md transition-all"
+                className="group flex flex-col justify-between rounded-2xl border-2 border-border/80 bg-card p-4 shadow-sm hover:border-primary/40 hover:shadow-md transition-all"
               >
                 <div>
                   <div className="flex items-center gap-2.5">

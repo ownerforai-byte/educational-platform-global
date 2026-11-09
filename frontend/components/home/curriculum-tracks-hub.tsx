@@ -40,7 +40,7 @@ export function CurriculumTracksHub({ class11, class12 }: CurriculumTracksHubPro
   return (
     <section id="section-curriculum" className="mx-auto max-w-7xl px-4 py-12 scroll-mt-16">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-border/60">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-border/80">
         <div>
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary">
             <GraduationCap className="h-4 w-4" />
@@ -55,7 +55,7 @@ export function CurriculumTracksHub({ class11, class12 }: CurriculumTracksHubPro
         </div>
 
         {/* Class Switcher Pills */}
-        <div className="flex items-center p-1 rounded-2xl border border-border/70 bg-card shadow-sm self-start md:self-auto">
+        <div className="flex items-center p-1 rounded-2xl border-2 border-border/80 bg-card shadow-sm self-start md:self-auto">
           <button
             onClick={() => setActiveClass("class-11")}
             className={`flex items-center gap-2 px-5 py-2 rounded-xl text-xs font-bold transition-all ${
@@ -98,7 +98,7 @@ export function CurriculumTracksHub({ class11, class12 }: CurriculumTracksHubPro
           return (
             <div
               key={subject.slug}
-              className={`group flex flex-col justify-between rounded-3xl border border-border/70 bg-gradient-to-br ${theme.bg} bg-card p-6 shadow-sm transition-all duration-200 ${theme.border} hover:shadow-lg`}
+              className={`group flex flex-col justify-between rounded-3xl border-2 border-border/80 bg-gradient-to-br ${theme.bg} bg-card p-6 shadow-sm transition-all duration-200 ${theme.border} hover:shadow-lg`}
             >
               <div>
                 {/* Header row */}
@@ -127,7 +127,7 @@ export function CurriculumTracksHub({ class11, class12 }: CurriculumTracksHubPro
                 </p>
 
                 {/* Sample units preview */}
-                <div className="mt-4 pt-3 border-t border-border/50">
+                <div className="mt-4 pt-3 border-t border-border/80">
                   <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground block mb-2">
                     Key Syllabus Units:
                   </span>
@@ -150,7 +150,7 @@ export function CurriculumTracksHub({ class11, class12 }: CurriculumTracksHubPro
               </div>
 
               {/* Action Buttons Hub */}
-              <div className="mt-6 pt-4 border-t border-border/60 grid grid-cols-2 gap-2">
+              <div className="mt-6 pt-4 border-t border-border/80 grid grid-cols-2 gap-2">
                 <Link
                   href={`/${notesClassSlug}/${subject.slug}`}
                   className="flex items-center justify-center gap-1.5 rounded-xl bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary py-2 px-3 text-xs font-semibold transition-all shadow-sm"
@@ -199,10 +199,10 @@ export function CurriculumTracksHub({ class11, class12 }: CurriculumTracksHubPro
       </div>
 
       {/* Curriculum Secondary Portals Banner */}
-      <div className="mt-8 rounded-3xl border border-border/70 bg-gradient-to-r from-card via-muted/30 to-card p-5 grid grid-cols-2 sm:grid-cols-5 gap-3">
+      <div className="mt-8 rounded-3xl border-2 border-border/80 bg-gradient-to-r from-card via-muted/30 to-card p-5 grid grid-cols-2 sm:grid-cols-5 gap-3">
         <Link
           href="/levels"
-          className="group flex flex-col p-3.5 rounded-2xl border border-border/50 bg-card hover:border-primary/40 hover:shadow-sm transition-all"
+          className="group flex flex-col p-3.5 rounded-2xl border-2 border-border/80 bg-card hover:border-primary/40 hover:shadow-sm transition-all"
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-foreground group-hover:text-primary">
             <Compass className="h-4 w-4 text-primary" />
@@ -213,7 +213,7 @@ export function CurriculumTracksHub({ class11, class12 }: CurriculumTracksHubPro
 
         <Link
           href="/notes"
-          className="group flex flex-col p-3.5 rounded-2xl border border-border/50 bg-card hover:border-primary/40 hover:shadow-sm transition-all"
+          className="group flex flex-col p-3.5 rounded-2xl border-2 border-border/80 bg-card hover:border-primary/40 hover:shadow-sm transition-all"
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-foreground group-hover:text-primary">
             <BookOpen className="h-4 w-4 text-emerald-400" />
@@ -235,7 +235,7 @@ export function CurriculumTracksHub({ class11, class12 }: CurriculumTracksHubPro
 
         <Link
           href="/legend"
-          className="group flex flex-col p-3.5 rounded-2xl border border-border/50 bg-card hover:border-primary/40 hover:shadow-sm transition-all"
+          className="group flex flex-col p-3.5 rounded-2xl border-2 border-border/80 bg-card hover:border-primary/40 hover:shadow-sm transition-all"
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-foreground group-hover:text-primary">
             <Layers className="h-4 w-4 text-amber-400" />
@@ -246,7 +246,7 @@ export function CurriculumTracksHub({ class11, class12 }: CurriculumTracksHubPro
 
         <Link
           href="/syllabus"
-          className="group flex flex-col p-3.5 rounded-2xl border border-border/50 bg-card hover:border-primary/40 hover:shadow-sm transition-all col-span-2 sm:col-span-1"
+          className="group flex flex-col p-3.5 rounded-2xl border-2 border-border/80 bg-card hover:border-primary/40 hover:shadow-sm transition-all col-span-2 sm:col-span-1"
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-foreground group-hover:text-primary">
             <FileText className="h-4 w-4 text-sky-400" />
