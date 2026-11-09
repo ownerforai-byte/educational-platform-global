@@ -26,7 +26,8 @@ import { useSession } from "@/features/auth/hooks/use-session";
 import { getProgress } from "@/lib/api/progress";
 import { getLeaderboard } from "@/lib/api/leaderboard";
 import { entryStatus, groupJourney, summarizeJourney } from "@/lib/progress/catalog";
-import { getStreak, streakLabel } from "@/lib/streaks";
+import { streakLabel } from "@/lib/streaks";
+import { useStreakCount } from "@/lib/hooks/use-streak";
 import { calculateScholarLevel } from "@/app/(app)/profile/page";
 import type { ProgressEntry } from "@/types/api";
 
@@ -54,9 +55,7 @@ export default function AchievementsPage() {
   const { user, isLoading } = useSession();
   const [entries, setEntries] = useState<ProgressEntry[] | null>(null);
   const [rank, setRank] = useState<{ rank: number; students: number } | null>(null);
-  const [streak, setStreak] = useState(0);
-
-  useEffect(() => setStreak(getStreak().count), []);
+  const streak = useStreakCount();
 
   useEffect(() => {
     let cancelled = false;

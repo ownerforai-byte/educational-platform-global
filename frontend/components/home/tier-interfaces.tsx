@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -43,8 +43,9 @@ import { useSession } from "@/features/auth/hooks/use-session";
 import { useJourney } from "@/components/study/use-journey";
 import { useStudyGoals } from "@/components/study/use-study-goals";
 import { entryStatus, topicHref } from "@/lib/progress/catalog";
-import { getStreak } from "@/lib/streaks";
 import { daysUntilExam } from "@/lib/study-goals";
+import { useClientClock } from "@/lib/hooks/use-client-clock";
+import { useStreakCount } from "@/lib/hooks/use-streak";
 
 /**
  * THE TIER INTERFACES — hardcoded (owner direction 2026-10-23:
@@ -113,12 +114,8 @@ function TierHero({
 }) {
   const Icon = TIER_ICON[tier];
   const { user } = useSession();
-  const [now, setNow] = useState<Date | null>(null);
-  const [streak, setStreak] = useState(0);
-  useEffect(() => {
-    setNow(new Date());
-    setStreak(getStreak().count);
-  }, []);
+  const now = useClientClock();
+  const streak = useStreakCount();
 
   const name = user?.fullName || user?.email?.split("@")[0] || "there";
   const dateLabel = now
@@ -180,8 +177,7 @@ function TierHero({
 function DeskPulse() {
   const { entries, summary, loading } = useJourney();
   const { goals, ready } = useStudyGoals();
-  const [streak, setStreak] = useState(0);
-  useEffect(() => setStreak(getStreak().count), []);
+  const streak = useStreakCount();
 
   const days = ready ? daysUntilExam(goals) : null;
   const next = entries.find((e) => entryStatus(e) === "in_progress");
