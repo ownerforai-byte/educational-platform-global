@@ -19,10 +19,12 @@ import {
   completeAnswer,
   deepConceptResearchWithSources,
   formatResearchPaperReferences,
+  originalResearchPaperLink,
   relatedHistory,
   shouldUpgradeAcademic,
   upgradeMessages,
 } from "../ai/complete-answer";
+import type { WebSearchResult } from "../ai/search-engine";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
 import { withFigureToolInstruction, resolveFiguresInText } from "../ai/image-gen";
 import { detectRoughInput, ROUGH_REDFLAG_REPLY } from "../ai/profanity-guard";
@@ -217,6 +219,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // and buildCitations returns [] on any corpus problem, so a missing record
     // never breaks an answer). Casual chat gets no citations.
     let citations: AnswerCitation[] = [];
+    let verifiedPapers: WebSearchResult[] = [];
     if (upgrade) {
       channel?.send({ phase: "drafting", label: "Preparing a first draft…" });
       const [draft, research, related] = await Promise.all([
@@ -224,12 +227,20 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
         deepConceptResearchWithSources(lastUser),
         relatedHistory(user.id, lastUser, typeof body?.session === "string" ? body.session : ""),
       ]);
+      verifiedPapers = research.papers;
       citations = buildCitations(lastUser);
       const citationBlock = formatCitations(citations);
       answerSuffix = `${related}${formatResearchPaperReferences(research.papers)}${citationBlock}`;
       const language = consoleId === "nepali" ? "Write the whole answer in Nepali, preserving the original question verbatim." : "";
       messages = upgradeMessages(lastUser, draft, research.context, language, conversationTail, images);
     }
+
+    // Owner request 2026-11-08: EVERY Veer chat question ends with ONE short,
+    // meaningful original-research-paper link. This is deliberately OUTSIDE the
+    // `upgrade` gate — casual turns and answers with no web search available get
+    // it too. It is appended last, after related history, verified paper
+    // references and grounding citations.
+    answerSuffix += originalResearchPaperLink(lastUser, verifiedPapers);
 
     // Live streaming: the connection is already open (above); the pipeline —
     // token-level fence filtering, streamed truncation repair, figure drawing —

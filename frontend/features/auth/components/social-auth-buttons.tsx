@@ -9,6 +9,11 @@ import {
   type OAuthProvider,
 } from "@/lib/supabase/browser";
 import { apiFetch } from "@/lib/api-client";
+import {
+  isOAuthAccessBlocked,
+  oauthAccessBlockedMessage,
+  oauthCallbackUrl,
+} from "@/lib/supabase/oauth-config";
 
 export function GoogleIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -118,22 +123,23 @@ export function SocialAuthButtons({
       const csrfToken = await requestOAuthCsrf();
       sessionStorage.setItem("neb_oauth_csrf", csrfToken);
 
-      // OAuth should obey the same staged flow as password sign-in: the
-      // callback resolves the account's tier and lands on its welcome page.
-      const callbackUrl = new URL("/auth/callback", window.location.origin);
-
+      // ONE canonical callback for every deployed host (owner 2026-11-08).
+      // Building it from window.location.origin produced a different redirect
+      // URI on preview/www/custom hosts — Google rejects every unregistered
+      // one with "Access blocked". See lib/supabase/oauth-config.ts.
       const { error: oauthError } = await getSupabaseBrowserClient().auth.signInWithOAuth({
         provider,
-        options: { redirectTo: callbackUrl.toString() },
+        options: { redirectTo: oauthCallbackUrl() },
       });
       if (oauthError) throw oauthError;
       redirected = true;
     } catch (oauthError) {
       sessionStorage.removeItem("neb_oauth_csrf");
-      const authError = oauthError as Error & { code?: string };
+      // A blocked/mismatched OAuth client is a CONFIG problem, not a transient
+      // one — name the exact URLs to register instead of a vague "unavailable".
       onError?.(
-        authError.code === "validation_failed"
-          ? `${label} sign-in is temporarily unavailable. Please use email or try again later.`
+        isOAuthAccessBlocked(oauthError)
+          ? oauthAccessBlockedMessage(label)
           : oauthError instanceof Error
             ? oauthError.message
             : `${label} sign-in could not be started.`,

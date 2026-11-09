@@ -10,6 +10,10 @@ import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
 import { tierWelcomePathFor } from "@/lib/access-level";
 import { rememberPendingSignup } from "@/features/auth/pending-signup-identity";
+import {
+  isOAuthAccessBlocked,
+  oauthAccessBlockedMessage,
+} from "@/lib/supabase/oauth-config";
 import type { OAuthSessionResponse } from "@/types/api";
 
 /**
@@ -50,6 +54,12 @@ function AuthCallbackContent() {
         const errorCode = searchParams.get("error");
         const errorDesc = searchParams.get("error_description");
         if (errorCode || errorDesc) {
+          const combined = `${errorCode ?? ""} ${errorDesc ?? ""}`;
+          // A blocked OAuth client often arrives as `access_denied` too — do
+          // NOT mislabel that as "you cancelled", name the URLs to register.
+          if (isOAuthAccessBlocked({ message: combined })) {
+            throw new Error(oauthAccessBlockedMessage());
+          }
           if (errorCode === "access_denied" || errorDesc?.toLowerCase().includes("denied")) {
             throw new Error("Sign-in was cancelled. You can sign in with email and password or try again.");
           }
