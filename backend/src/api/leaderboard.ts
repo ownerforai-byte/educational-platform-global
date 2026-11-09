@@ -45,6 +45,61 @@ interface Aggregate {
 
 const MODE = "history" as const;
 
+// ── Ranking window ("filters" upgrade) ─────────────────────────────────────
+// The board can be read over a rolling window instead of all history. The
+// window is a plain `created_at >=` cut on the same aggregation — the XP rule
+// itself never changes with the window.
+
+export type LeaderboardRange = "week" | "month" | "all";
+
+/** Query value → known range; anything else means all-time. */
+export function parseRange(value: unknown): LeaderboardRange {
+  return value === "week" || value === "month" ? value : "all";
+}
+
+/** ISO start of the rolling window, or null for all-time. */
+export function rangeCutoff(range: LeaderboardRange, now: Date = new Date()): string | null {
+  if (range === "all") return null;
+  const days = range === "week" ? 7 : 30;
+  return new Date(now.getTime() - days * 86_400_000).toISOString();
+}
+
+// ── Anonymised cohort summary (the Analytics "cohort comparison") ───────────
+// Derived on read from the same aggregation the ranking uses. Percentiles and
+// medians only — never another student's number, name or id.
+
+export interface CohortSummary {
+  students: number;
+  medianXp: number;
+  medianAccuracy: number;
+  /** Share of the cohort (0–100) you outscore on XP; null when unranked. */
+  yourXpPercentile: number | null;
+}
+
+function median(values: number[]): number {
+  if (values.length === 0) return 0;
+  const sorted = [...values].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 0
+    ? Math.round((sorted[mid - 1] + sorted[mid]) / 2)
+    : sorted[mid];
+}
+
+export function cohortSummary<
+  T extends { userId: string; xp: number; accuracy: number },
+>(ranked: T[], userId: string): CohortSummary {
+  const mine = ranked.find((r) => r.userId === userId) ?? null;
+  return {
+    students: ranked.length,
+    medianXp: median(ranked.map((r) => r.xp)),
+    medianAccuracy: median(ranked.map((r) => r.accuracy)),
+    yourXpPercentile:
+      mine && ranked.length > 1
+        ? Math.round((ranked.filter((r) => r.xp < mine.xp).length / ranked.length) * 100)
+        : null,
+  };
+}
+
 function isMissingTable(error: { message?: string } | null): boolean {
   const msg = (error?.message ?? "").toLowerCase();
   return (
@@ -122,6 +177,8 @@ router.get(
   requireAuth,
   asyncHandler(async (req: Request, res: Response) => {
     const user = (req as Request & { user: { id: string } }).user;
+    const range = parseRange(req.query.range);
+    const cutoff = rangeCutoff(range);
 
     // Preferred select: counts + the set format pulled out of the question
     // payload by JSON path, aliased to `format`.
@@ -129,10 +186,11 @@ router.get(
     let migrated = true;
     let formatKnown = true;
 
-    const primary = await supabaseAdmin
+    const primaryQuery = supabaseAdmin
       .from("quiz_history")
       .select("user_id, answered, correct, score_pct, format:questions->0->>format")
       .limit(MAX_SETS);
+    const primary = await (cutoff ? primaryQuery.gte("created_at", cutoff) : primaryQuery);
 
     if (primary.error) {
       if (isMissingTable(primary.error)) {
@@ -140,10 +198,11 @@ router.get(
       } else {
         // JSON-path select unsupported / rejected — retry with plain columns.
         formatKnown = false;
-        const fallback = await supabaseAdmin
+        const fallbackQuery = supabaseAdmin
           .from("quiz_history")
           .select("user_id, answered, correct, score_pct")
           .limit(MAX_SETS);
+        const fallback = await (cutoff ? fallbackQuery.gte("created_at", cutoff) : fallbackQuery);
         if (fallback.error) {
           if (isMissingTable(fallback.error)) {
             migrated = false;
@@ -168,6 +227,8 @@ router.get(
         totals: { students: 0, sets: 0 },
         rule: XP_RULE,
         mode: MODE,
+        range,
+        cohort: { students: 0, medianXp: 0, medianAccuracy: 0, yourXpPercentile: null },
         migrated: false,
         formatKnown,
       });
@@ -237,6 +298,8 @@ router.get(
       },
       rule: XP_RULE,
       mode: MODE,
+      range,
+      cohort: cohortSummary(ranked, user.id),
       migrated: true,
       formatKnown,
     });

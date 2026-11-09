@@ -3,6 +3,7 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  CalendarDays,
   Crown,
   Info,
   Medal,
@@ -12,8 +13,13 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-import { refreshLeaderboard, useLeaderboard } from "@/lib/hooks/use-leaderboard";
-import type { LeaderboardEntry, LeaderboardResponse } from "@/lib/api/leaderboard";
+import {
+  refreshLeaderboard,
+  setLeaderboardRange,
+  useLeaderboard,
+  useLeaderboardRange,
+} from "@/lib/hooks/use-leaderboard";
+import type { LeaderboardEntry, LeaderboardRange, LeaderboardResponse } from "@/lib/api/leaderboard";
 import { xpLevel } from "@/lib/practice/xp";
 
 const PODIUM_STYLE = [
@@ -41,6 +47,39 @@ function accuracyTone(pct: number): string {
   if (pct >= 80) return "text-emerald-600 dark:text-emerald-400";
   if (pct >= 60) return "text-amber-600 dark:text-amber-400";
   return "text-muted-foreground";
+}
+
+const RANGE_OPTIONS: Array<{ value: LeaderboardRange; label: string }> = [
+  { value: "week", label: "Last 7 days" },
+  { value: "month", label: "Last 30 days" },
+  { value: "all", label: "All time" },
+];
+
+/** Ranking-window filter — rolling cuts on the same XP rule. */
+function RangeFilter({ active }: { active: LeaderboardRange }) {
+  return (
+    <div role="group" aria-label="Ranking window" className="flex flex-wrap items-center gap-1.5">
+      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground">
+        <CalendarDays className="h-3.5 w-3.5" aria-hidden="true" />
+        Ranking window
+      </span>
+      {RANGE_OPTIONS.map((option) => (
+        <button
+          key={option.value}
+          type="button"
+          onClick={() => setLeaderboardRange(option.value)}
+          aria-pressed={active === option.value}
+          className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+            active === option.value
+              ? "border-primary bg-primary text-primary-foreground"
+              : "border-border bg-card text-foreground hover:border-primary/50"
+          }`}
+        >
+          {option.label}
+        </button>
+      ))}
+    </div>
+  );
 }
 
 function Skeleton() {
@@ -273,6 +312,7 @@ function RuleCard({ rule }: { rule: LeaderboardResponse["rule"] }) {
 
 export default function LeaderboardPage() {
   const state = useLeaderboard();
+  const range = useLeaderboardRange();
 
   return (
     <div className="mx-auto w-full max-w-5xl space-y-6 px-3 py-6 sm:px-4 sm:py-8">
@@ -293,9 +333,12 @@ export default function LeaderboardPage() {
           <p className="inline-flex items-center gap-1.5 rounded-xl border border-border bg-card px-3 py-1.5 text-[11px] font-semibold text-muted-foreground">
             <Users className="h-3.5 w-3.5" aria-hidden="true" />
             {state.data.totals.students} students · {state.data.totals.sets} scored sets
+            {range !== "all" && " in this window"}
           </p>
         )}
       </header>
+
+      {state.status !== "unauthorized" && <RangeFilter active={range} />}
 
       {state.status === "loading" && <Skeleton />}
 
@@ -346,10 +389,13 @@ export default function LeaderboardPage() {
           {state.data.entries.length === 0 ? (
             <section className="rounded-2xl border border-border bg-card p-8 text-center">
               <TrendingUp className="mx-auto h-8 w-8 text-muted-foreground" aria-hidden="true" />
-              <h2 className="mt-3 text-base font-bold text-foreground">No scored sets yet</h2>
+              <h2 className="mt-3 text-base font-bold text-foreground">
+                {range === "all" ? "No scored sets yet" : "No scored sets in this window"}
+              </h2>
               <p className="mx-auto mt-1 max-w-sm text-sm text-muted-foreground">
-                The board fills up as soon as students finish practice sets. Yours would be the
-                first.
+                {range === "all"
+                  ? "The board fills up as soon as students finish practice sets. Yours would be the first."
+                  : "Nothing scored in this window yet — switch to All time for the full board, or start practising."}
               </p>
               <Link
                 href="/practice"

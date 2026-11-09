@@ -9,6 +9,9 @@ import { apiFetch } from "@/lib/api-client";
  * card prints the server's numbers, not a copy of them.
  */
 
+/** The ranking window — a rolling cut on `quiz_history.created_at`. */
+export type LeaderboardRange = "week" | "month" | "all";
+
 export interface LeaderboardEntry {
   rank: number;
   /** Already masked server-side ("Aarav S.") — there is no raw name here. */
@@ -42,18 +45,31 @@ export interface LeaderboardRule {
   bonus: { at80: number; at60: number; at40: number };
 }
 
+/** Anonymised cohort aggregates — medians and your percentile only. */
+export interface CohortSummary {
+  students: number;
+  medianXp: number;
+  medianAccuracy: number;
+  /** Share of the cohort (0–100) you outscore on XP; null when unranked. */
+  yourXpPercentile: number | null;
+}
+
 export interface LeaderboardResponse {
   entries: LeaderboardEntry[];
   you: LeaderboardYou | null;
   totals: { students: number; sets: number };
   rule: LeaderboardRule;
   mode: string;
+  /** The window this payload was aggregated over. */
+  range: LeaderboardRange;
+  /** Anonymised comparison against everyone with scored sets. */
+  cohort: CohortSummary;
   /** false → the quiz-history table has not been migrated yet. */
   migrated: boolean;
   /** false → the server could not read the set format; every set is scored as choice. */
   formatKnown: boolean;
 }
 
-export async function getLeaderboard(): Promise<LeaderboardResponse> {
-  return apiFetch<LeaderboardResponse>("/api/leaderboard");
+export async function getLeaderboard(range: LeaderboardRange = "all"): Promise<LeaderboardResponse> {
+  return apiFetch<LeaderboardResponse>(`/api/leaderboard?range=${range}`);
 }

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { XP_RULE, setAccuracy, xpForSet, xpForSets } from "../src/utils/xp";
-import { maskName, rankEntries } from "../src/api/leaderboard";
+import { cohortSummary, maskName, parseRange, rangeCutoff, rankEntries } from "../src/api/leaderboard";
 
 /**
  * The leaderboard's two kinds of correctness:
@@ -46,6 +46,47 @@ describe("xpForSet — pinned to the practice UI", () => {
     expect(XP_RULE.wrongChoice).toBe(2);
     expect(XP_RULE.writingPerQuestion).toBe(40);
     expect(XP_RULE.bonus).toEqual({ at80: 25, at60: 15, at40: 5 });
+  });
+});
+
+describe("leaderboard range windows", () => {
+  it("maps query values to known ranges; anything else is all-time", () => {
+    expect(parseRange("week")).toBe("week");
+    expect(parseRange("month")).toBe("month");
+    expect(parseRange("all")).toBe("all");
+    expect(parseRange("year")).toBe("all");
+    expect(parseRange(undefined)).toBe("all");
+  });
+
+  it("cuts the rolling window at 7 and 30 days", () => {
+    const now = new Date("2026-11-08T12:00:00.000Z");
+    expect(rangeCutoff("week", now)).toBe("2026-11-01T12:00:00.000Z");
+    expect(rangeCutoff("month", now)).toBe("2026-10-09T12:00:00.000Z");
+    expect(rangeCutoff("all", now)).toBeNull();
+  });
+});
+
+describe("cohortSummary — anonymised cohort comparison", () => {
+  const ranked = [
+    { userId: "a", xp: 300, accuracy: 90 },
+    { userId: "b", xp: 200, accuracy: 70 },
+    { userId: "c", xp: 100, accuracy: 50 },
+    { userId: "d", xp: 100, accuracy: 40 },
+  ];
+
+  it("reports medians and the reader's XP percentile, never other data", () => {
+    const cohort = cohortSummary(ranked, "b");
+    expect(cohort.students).toBe(4);
+    expect(cohort.medianXp).toBe(150); // (100 + 200) / 2
+    expect(cohort.medianAccuracy).toBe(60); // (50 + 70) / 2
+    // "b" outscored two of the four students.
+    expect(cohort.yourXpPercentile).toBe(50);
+  });
+
+  it("returns no percentile for an unranked reader or a solo board", () => {
+    expect(cohortSummary(ranked, "nobody").yourXpPercentile).toBeNull();
+    expect(cohortSummary([{ userId: "a", xp: 10, accuracy: 10 }], "a").yourXpPercentile).toBeNull();
+    expect(cohortSummary([], "a").students).toBe(0);
   });
 });
 
