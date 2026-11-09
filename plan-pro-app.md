@@ -154,15 +154,72 @@ No surface was rated pro without evidence; no finding was invented.
 
 #### Ranked proposals (P0 → execution order)
 
-1. **Remove fabricated user counts** on `/ai` tool cards (CC-2) — S, honesty,
-   ships alone.
-2. **Rebuild `/subjects`** (CC-3 + registry stubs + tokens) — M, top-traffic.
-3. **Rebuild `/exam-countdown` date layer** (BS conversion + config dates +
-   tokens) — M, correctness bug users can observe.
-4. **Unify subject identity** (CC-1) — M, unblocks consistent presentation.
-5. **Migrate `/knowledge/*` embedded content** (CC-4) — L, architecture.
-6. **Journal dedupe** — S.
-7. **Lab-hub consolidation spec** (W6) — M.
+1. ~~**Remove fabricated user counts** on `/ai` tool cards (CC-2)~~ — **SHIPPED
+   `87ed2e65`** (2026-11-09): all 15 invented counts removed; footer shows the
+   access gate only; 3/3 directory tests pass.
+2. ~~**Rebuild `/subjects`**~~ — **SHIPPED `63417635`** (2026-11-09): fake
+   120 ms stagger deleted, canonical tokens, fabricated Class 8–10 stub
+   registry replaced by honest filters (11/12 only) + EmptyState, fake "New"
+   badges gone, search button now links to `/search`; 4 new render tests.
+3. ~~**Rebuild `/exam-countdown` date layer**~~ — **SHIPPED `fe57f73d`**
+   (2026-11-09): AD dates as source of truth (BS label display-only), honest
+   stale-calendar notice instead of an eternal "0 days left", coverage now
+   reads the real journey API — the old page read the orphaned
+   `neb-progress` localStorage key that NOTHING wrote, so coverage was
+   permanently 0% for every student; subject tokens; no fake 999-day plan
+   horizon; `/quiz` quick-link fixed to `/practice`; 4 new render tests.
+4. ~~**Unify subject identity** (CC-1)~~ — **SHIPPED `d76327b1`** (2026-11-09):
+   `ClassSubjectsGrid` color fields and the `/graphs` accent map now consume
+   `subject-visuals.ts`; dead `glowColor`/`accentColor` fields removed;
+   per-subject tagline/lab-link data retained. Remaining ad-hoc palettes:
+   none for subject identity (the `/ai` chip palette is per tool-category,
+   not per subject — legitimate).
+5. **Migrate `/knowledge/*` embedded content** (CC-4) — OPEN, large: moves
+   hand-authored Q&A from 4 page files into `content/` records rendered by
+   the pipeline. Needs the content schema/doctor touched deliberately in its
+   own session with `content:build:check` gates; not rushed alongside other
+   work. Until migrated those pages stay demotion candidates.
+6. **Journal dedupe** — OPEN, blocked on an owner parity decision: `/journal`
+   (tier-gated, documented policy) vs `/r1/journal` (moods, R1 suite) are two
+   UIs over the same `useR1Journal` API. Which is canonical?
+7. **Lab-hub consolidation spec** (W6) — drafted below.
+
+### W6 consolidation spec — lab hub (draft v1, 2026-11-09)
+
+**Problem.** Two hubs serve one job. `/lab` (694 lines) hand-maintains its
+sections — 87 title strings, 30+ lazy rig imports, calculators — while
+`/lab/3d` (387 lines) derives everything from the lab manifest in syllabus
+order. New labs must be registered twice or they appear in only one hub.
+
+**Canonical surface.** `/lab/3d` — manifest-derived, already syllabus-ordered,
+already the target of the home portal's "All 3D Labs" link.
+
+**What `/lab` has that `/lab/3d` lacks** (must move before the redirect):
+1. Calculators (Punnett square, population, photosynthesis, …) — lazy-loaded
+   from `components/lab/biology-3d` and siblings. → New "Calculators & Tools"
+   section on `/lab/3d`, driven by a small registry (slug, title, loader),
+   NOT hand-written cards.
+2. Practicals/theory links (`/lab/theory`) → keep as a section link on the
+   consolidated hub.
+3. Hand-curated groupings worth keeping → expressed as manifest metadata
+   (`collection`/`tags` fields), never literal lists in the page.
+
+**Rollout (each step its own commit, each green):**
+1. Add the calculators/tools registry + section to `/lab/3d` (behind the same
+   `minLevel: "plus"` gate both hubs share today).
+2. Add manifest collection fields for any curated grouping that survives.
+3. Turn `/lab/page.tsx` into a `redirect("/lab/3d")` — activity deep links
+   (`/lab/[labId]/*`) are untouched; only the hub page moves.
+4. Navigation: one entry ("3D Labs" → `/lab/3d`); remove the `/lab` entry from
+   `lib/navigation.ts` + `site-index.ts`; dead-end ratchet covers the redirect.
+5. Render tests: hub sections derive from the manifest (no hand-maintained
+   title strings); calculators reachable from the canonical hub.
+
+**Acceptance.** One lab hub in the nav; `/lab` forwards; calculators live on
+the canonical hub; zero hand-maintained lab title strings in any hub page.
+
+**Non-goals.** Activity pages, lab content, and the 3D rigs themselves are
+untouched — this is hub-surface consolidation only.
 
 ### Phase P1 — One design system, everywhere
 - [ ] Audit tokens: one spacing/type/color scale in `styles/tokens.css` (or
