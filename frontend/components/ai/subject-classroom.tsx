@@ -408,7 +408,7 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
               type="button"
               onClick={() => setHistoryOpen((v) => !v)}
               aria-expanded={historyOpen}
-              className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-border/70 bg-background px-3 text-[11px] font-semibold text-foreground transition hover:border-primary/50"
+              className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border-2 border-border/80 bg-background px-3 text-[11px] font-semibold text-foreground transition hover:border-primary/50"
             >
               <History className="h-3.5 w-3.5" />
               {classroom.subject} history
@@ -566,14 +566,14 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
           }}
           rows={2}
           placeholder={`Ask your ${classroom.subject} question…`}
-          className="w-full resize-none rounded-xl border border-border/60 bg-background px-3 py-2 text-[13px] sm:text-[13px] text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
+          className="w-full resize-none rounded-xl border-2 border-border/80 bg-background px-3 py-2 text-[13px] sm:text-[13px] text-foreground placeholder:text-muted-foreground/60 focus:border-primary focus:outline-none"
         />
         <div className="mt-2 flex items-center justify-between gap-2">
           <button
             type="button"
             onClick={handleEnhance}
             disabled={enhancing || !input.trim()}
-            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-border/70 px-3 text-[11px] font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground disabled:opacity-50"
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border-2 border-border/80 px-3 text-[11px] font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground disabled:opacity-50"
           >
             <Wand2 className="h-3.5 w-3.5" />
             {enhancing ? "Enhancing…" : "Enhance"}

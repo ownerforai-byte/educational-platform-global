@@ -102,7 +102,7 @@ export function AiSparkBadge({ className = "" }: { className?: string }) {
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 px-2.5 py-1 text-xs font-bold text-violet-600 dark:text-violet-400 ${className}`}
+      className={`inline-flex items-center gap-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 px-2.5 py-1 text-[11px] font-bold text-violet-600 dark:text-violet-400 ${className}`}
       title={`AI Spark (${AI_SPARK_TIER_LABELS[tier]}) — ${used}${
         metered ? `/${limit}` : ""
       } Veer message${used === 1 ? "" : "s"} today. ${

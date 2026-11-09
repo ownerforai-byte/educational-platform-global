@@ -241,7 +241,7 @@ export default function MathStudioPage() {
                   setSubject(p.subject);
                   setClassLevel(p.classLevel as any);
                 }}
-                className="min-h-11 rounded-xl border border-border/60 bg-muted/30 px-2.5 py-1 text-[11px] font-medium text-foreground hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all"
+                className="min-h-11 rounded-xl border-2 border-border/80 bg-muted/30 px-2.5 py-1 text-[11px] font-medium text-foreground hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all"
               >
                 {p.label}
               </button>
@@ -294,7 +294,7 @@ export default function MathStudioPage() {
                   setProblem("");
                   setResponse(null);
                 }}
-                className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/70 px-3 py-2 text-[11px] font-medium text-muted-foreground hover:bg-muted transition-all"
+                className="inline-flex min-h-11 items-center gap-1.5 rounded-xl border-2 border-border/80 px-3 py-2 text-[11px] font-medium text-muted-foreground hover:bg-muted transition-all"
               >
                 <RotateCcw className="h-3.5 w-3.5" /> Clear
               </button>
@@ -337,7 +337,7 @@ export default function MathStudioPage() {
             <button
               type="button"
               onClick={handleCopy}
-              className="inline-flex items-center gap-1.5 rounded-xl border border-border/70 bg-background px-3 py-1.5 text-[11px] font-medium text-foreground hover:bg-muted transition-all"
+              className="inline-flex items-center gap-1.5 rounded-xl border-2 border-border/80 bg-background px-3 py-1.5 text-[11px] font-medium text-foreground hover:bg-muted transition-all"
             >
               {copied ? (
                 <>

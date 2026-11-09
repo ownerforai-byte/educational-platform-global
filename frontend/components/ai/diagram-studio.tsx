@@ -218,7 +218,7 @@ export function DiagramStudio() {
             type="button"
             onClick={handleEnhance}
             disabled={enhancing || !topic.trim()}
-            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border border-border/70 px-3 text-[11px] font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground disabled:opacity-50"
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border-2 border-border/80 px-3 text-[11px] font-semibold text-muted-foreground transition hover:border-primary/50 hover:text-foreground disabled:opacity-50"
           >
             <Wand2 className="h-3.5 w-3.5" />
             {enhancing ? "Enhancing…" : "Enhance brief"}

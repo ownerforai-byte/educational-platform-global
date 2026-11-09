@@ -114,7 +114,7 @@ export function AiToolShell({
                     <Link
                       href={tool.href}
                       aria-current={active ? "page" : undefined}
-                      className={`group flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-xs transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                      className={`group flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-[11px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
                         active
                           ? "bg-primary/10 font-bold text-primary"
                           : "font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -142,7 +142,7 @@ export function AiToolShell({
 
           {features && features.length > 0 && (
             <details className="group mt-4 rounded-2xl border-2 border-border/80 bg-card">
-              <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-xs font-bold text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+              <summary className="flex cursor-pointer list-none items-center gap-2 px-4 py-3 text-[11px] font-bold text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                 <Info className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
                 What this tool does
                 <ChevronRight
@@ -157,7 +157,7 @@ export function AiToolShell({
                       <feature.icon className="h-3 w-3" aria-hidden="true" />
                       {feature.title}
                     </p>
-                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
+                    <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
                       {feature.text}
                     </p>
                   </li>

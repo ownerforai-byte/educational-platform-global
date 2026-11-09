@@ -976,10 +976,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       <div className="flex h-full w-full flex-col items-center justify-center bg-card p-6 text-center">
         <AlertCircle className="mb-3 h-10 w-10 text-amber-500" />
         <h3 className="mb-1 text-lg font-bold">Pro &amp; Plus only</h3>
-        <p className="mb-4 text-sm text-muted-foreground max-w-xs mx-auto">
+        <p className="mb-4 text-[13px] text-muted-foreground max-w-xs mx-auto">
           The AI chat widget is a Pro/Plus feature. Upgrade your plan to keep using Veer.
         </p>
-        <Link href="/login" className="inline-flex items-center gap-1.5 rounded-lg border border-primary bg-primary text-primary-foreground px-4 py-2 text-sm font-semibold hover:bg-primary/90 transition-colors">
+        <Link href="/login" className="inline-flex items-center gap-1.5 rounded-lg border border-primary bg-primary text-primary-foreground px-4 py-2 text-[13px] font-semibold hover:bg-primary/90 transition-colors">
           Upgrade plan <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
@@ -991,7 +991,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       className={
         embedded
           ? "relative flex h-full w-full overflow-hidden bg-card"
-          : "relative flex h-[min(850px,calc(100dvh-8rem))] min-h-[24rem] w-full rounded-3xl border border-border/80 bg-card shadow-lg overflow-hidden"
+          : "relative flex h-[min(850px,calc(100dvh-8rem))] min-h-[24rem] w-full rounded-3xl border-2 border-border/80 bg-card shadow-lg overflow-hidden"
       }
     >
       {/* ── Conversations sidebar (individual chat histories) ─────── */}
@@ -1021,14 +1021,14 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             <button
               type="button"
               onClick={() => setSidebarOpen(false)}
-              className="mb-2 inline-flex min-h-11 items-center rounded-xl px-3 text-xs font-semibold text-muted-foreground hover:bg-muted sm:hidden"
+              className="mb-2 inline-flex min-h-11 items-center rounded-xl px-3 text-[11px] font-semibold text-muted-foreground hover:bg-muted sm:hidden"
               aria-label="Close conversations sidebar"
             >
               Close
             </button>
             <button
               onClick={startNewChat}
-              className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-primary text-primary-foreground text-xs font-semibold py-2.5 hover:opacity-90 transition-opacity"
+              className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-primary text-primary-foreground text-[11px] font-semibold py-2.5 hover:opacity-90 transition-opacity"
             >
               <Plus className="h-3.5 w-3.5" />
               New conversation
@@ -1057,7 +1057,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                 >
                   <MessageSquare className="h-3.5 w-3.5 mt-0.5 shrink-0 text-muted-foreground" />
                   <span className="min-w-0 flex-1">
-                    <span className="block text-xs font-medium truncate">
+                    <span className="block text-[11px] font-medium truncate">
                       {s.preview || "Conversation"}
                     </span>
                     <span className="block text-[10px] text-muted-foreground">
@@ -1121,7 +1121,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <h2 className="text-sm font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
+                <h2 className="text-[13px] font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
                   Veer
                 </h2>
                 {/* live dot: reflects real AI availability */}
@@ -1170,7 +1170,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           {historyState === "loading" ? (
             <div className="h-full flex flex-col items-center justify-center gap-3 text-muted-foreground">
               <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-              <p className="text-xs">Loading conversation…</p>
+              <p className="text-[11px]">Loading conversation…</p>
             </div>
           ) : displayMessages.length === 0 ? (
             /* Chat home — greeting card, recent chats, chip-filtered starters */
@@ -1270,7 +1270,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
                 <CaptainAvatar className="h-3.5 w-3.5" />
               </div>
-              <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3 flex items-center gap-2.5 text-xs text-muted-foreground">
+              <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3 flex items-center gap-2.5 text-[11px] text-muted-foreground">
                 <span className="flex gap-1">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce [animation-delay:0ms]" />
                   <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-bounce [animation-delay:150ms]" />
@@ -1284,7 +1284,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           )}
 
           {error && (
-            <div className="p-3.5 rounded-2xl bg-destructive/10 border border-destructive/30 text-destructive text-xs flex items-center gap-2">
+            <div className="p-3.5 rounded-2xl bg-destructive/10 border border-destructive/30 text-destructive text-[11px] flex items-center gap-2">
               <AlertCircle className="h-4 w-4 shrink-0" />
               <div className="flex-1">
                 <span>{error}</span>
@@ -1314,7 +1314,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   setHasNewBelow(false);
                   chatBottomRef.current?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-card/95 px-3.5 py-1.5 text-xs font-semibold text-primary shadow-lg shadow-primary/10 backdrop-blur transition-colors hover:bg-primary/10"
+                className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-card/95 px-3.5 py-1.5 text-[11px] font-semibold text-primary shadow-lg shadow-primary/10 backdrop-blur transition-colors hover:bg-primary/10"
               >
                 <ArrowDown className="h-3.5 w-3.5" />
                 Jump to latest

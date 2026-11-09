@@ -1122,10 +1122,10 @@ export function TutorConsole({
       <div className="flex h-full w-full flex-col items-center justify-center bg-card p-6 text-center">
         <AlertCircle className="mb-3 h-10 w-10 text-amber-500" />
         <h3 className="mb-1 text-lg font-bold">Pro &amp; Plus only</h3>
-        <p className="mb-4 text-sm text-muted-foreground max-w-xs mx-auto">
+        <p className="mb-4 text-[13px] text-muted-foreground max-w-xs mx-auto">
           The AI chat widget is a Pro/Plus feature. Upgrade your plan to keep using Veer.
         </p>
-        <Link href="/login" className="inline-flex items-center gap-1.5 rounded-lg border border-primary bg-primary text-primary-foreground px-4 py-2 text-sm font-semibold hover:bg-primary/90 transition-colors">
+        <Link href="/login" className="inline-flex items-center gap-1.5 rounded-lg border border-primary bg-primary text-primary-foreground px-4 py-2 text-[13px] font-semibold hover:bg-primary/90 transition-colors">
           Upgrade plan <ArrowRight className="h-3.5 w-3.5" />
         </Link>
       </div>
@@ -1148,7 +1148,7 @@ export function TutorConsole({
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <h2 className="text-sm font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
+                <h2 className="text-[13px] font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
                   Veer
                 </h2>
                 {/* live dot: reflects real AI availability (shared component) */}
@@ -1238,7 +1238,7 @@ export function TutorConsole({
                 >
                   <MessageSquare className="h-3.5 w-3.5 mt-0.5 shrink-0 text-muted-foreground" />
                   <span className="min-w-0 flex-1">
-                    <span className="block text-xs font-medium truncate">
+                    <span className="block text-[11px] font-medium truncate">
                       {s.preview || "Conversation"}
                     </span>
                     <span className="block text-[10px] text-muted-foreground">
@@ -1262,7 +1262,7 @@ export function TutorConsole({
                 onClick={() => chooseMode(m.id)}
                 aria-pressed={active}
                 className={cn(
-                  "flex min-h-11 items-center gap-1.5 whitespace-nowrap rounded-full border px-3 py-1.5 text-xs font-bold transition-all",
+                  "flex min-h-11 items-center gap-1.5 whitespace-nowrap rounded-full border px-3 py-1.5 text-[11px] font-bold transition-all",
                   active
                     ? "border-emerald-500/40 bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 shadow-sm shadow-emerald-500/10"
                     : "border-border/70 bg-background text-muted-foreground hover:text-foreground hover:border-muted-foreground/40",
@@ -1278,7 +1278,7 @@ export function TutorConsole({
 
       {/* ── Error banner ─────────────────────────────────────────────── */}
       {error && (
-        <div className="mx-5 sm:mx-8 mt-3 flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/10 px-3 py-2 text-xs text-destructive shrink-0">
+        <div className="mx-5 sm:mx-8 mt-3 flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/10 px-3 py-2 text-[11px] text-destructive shrink-0">
           <AlertCircle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
           <span>{error}</span>
         </div>
@@ -1297,7 +1297,7 @@ export function TutorConsole({
                   ? "What are we learning today?"
                   : `${mode} mode — pick a starter or ask anything`}
               </h3>
-              <p className="text-sm text-muted-foreground max-w-lg mx-auto leading-relaxed">
+              <p className="text-[13px] text-muted-foreground max-w-lg mx-auto leading-relaxed">
                 Derivations, mechanisms, wild &quot;why&quot; questions, misconceptions,
                 past NEB questions — broken down step by step.
               </p>
@@ -1321,7 +1321,7 @@ export function TutorConsole({
                       <Icon className="h-2.5 w-2.5" />
                       <span>{prompt.category}</span>
                     </span>
-                    <p className="text-xs text-foreground/90 font-medium group-hover:text-emerald-600 transition-colors leading-snug">
+                    <p className="text-[11px] text-foreground/90 font-medium group-hover:text-emerald-600 transition-colors leading-snug">
                       {prompt.text}
                     </p>
                   </button>
@@ -1438,7 +1438,7 @@ export function TutorConsole({
                   <span className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce [animation-delay:-0.2s]" />
                   <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-bounce [animation-delay:-0.1s]" />
                   <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce" />
-                  <span className="text-xs text-muted-foreground ml-1">
+                  <span className="text-[11px] text-muted-foreground ml-1">
                     {streamPhase ?? THINKING_LINES[thinkIdx]}
                   </span>
                 </div>
@@ -1459,7 +1459,7 @@ export function TutorConsole({
                   behavior: "smooth",
                 });
               }}
-              className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-card/95 px-3.5 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/10 backdrop-blur transition-colors hover:bg-emerald-500/10"
+              className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-card/95 px-3.5 py-1.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/10 backdrop-blur transition-colors hover:bg-emerald-500/10"
             >
               <ArrowDown className="h-3.5 w-3.5" />
               Jump to latest

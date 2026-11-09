@@ -198,7 +198,7 @@ export function ChatAttachButton({
             >
               <Icon className="h-4 w-4 shrink-0 text-primary" />
               <span className="min-w-0">
-                <span className="block text-xs font-semibold">{label}</span>
+                <span className="block text-[11px] font-semibold">{label}</span>
                 <span className="block text-[10px] text-muted-foreground">{hint}</span>
               </span>
             </button>

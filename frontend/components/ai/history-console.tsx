@@ -119,7 +119,7 @@ export function HistoryConsole() {
           </Link>
           <Link
             href="/chat"
-            className="inline-flex h-10 items-center gap-2 rounded-2xl border border-border/80 bg-card px-5 text-[13px] font-bold text-foreground transition-colors hover:bg-muted/40"
+            className="inline-flex h-10 items-center gap-2 rounded-2xl border-2 border-border/80 bg-card px-5 text-[13px] font-bold text-foreground transition-colors hover:bg-muted/40"
           >
             Use Veer as a guest
           </Link>
@@ -152,7 +152,7 @@ export function HistoryConsole() {
             }}
             placeholder="What did we discuss about…"
             aria-label="Search your saved conversations"
-            className="h-11 flex-1 rounded-2xl border border-border/80 bg-background px-4 text-[13px] text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+            className="h-11 flex-1 rounded-2xl border-2 border-border/80 bg-background px-4 text-[13px] text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
           />
           <button
             type="button"
