@@ -139,7 +139,7 @@ function SolveStudio({ classLevel, subject }: { classLevel: string; subject: str
 
   return (
     <div className="mx-auto w-full max-w-4xl space-y-5 p-4 sm:p-6">
-      <div className="overflow-hidden rounded-3xl border border-indigo-500/20 bg-gradient-to-br from-indigo-500/10 via-card to-card">
+      <div className="overflow-hidden rounded-2xl border-2 border-indigo-500/25 bg-gradient-to-br from-indigo-500/10 via-card to-card">
         <div className="border-b border-indigo-500/10 px-5 py-5 sm:px-6">
           <span className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-indigo-500 text-white shadow-lg shadow-indigo-500/20">
             <Sigma className="h-5 w-5" />
@@ -228,7 +228,7 @@ function DeepDiveStudio({ classLevel, subject }: { classLevel: string; subject: 
 
   return (
     <div className="mx-auto w-full max-w-4xl space-y-5 p-4 sm:p-6">
-      <div className="overflow-hidden rounded-3xl border border-sky-500/20 bg-gradient-to-br from-sky-500/10 via-card to-card">
+      <div className="overflow-hidden rounded-2xl border-2 border-sky-500/25 bg-gradient-to-br from-sky-500/10 via-card to-card">
         <div className="border-b border-sky-500/10 px-5 py-5 sm:px-6">
           <span className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-sky-500 text-white shadow-lg shadow-sky-500/20">
             <Brain className="h-5 w-5" />
@@ -390,7 +390,7 @@ function PracticeStudio({ classSlug, subjectSlug }: { classSlug: string; subject
 
   return (
     <div className="mx-auto w-full max-w-4xl space-y-5 p-4 sm:p-6">
-      <div className="rounded-3xl border border-violet-500/20 bg-gradient-to-br from-violet-500/10 via-card to-card p-5 sm:p-6">
+      <div className="rounded-2xl border-2 border-violet-500/25 bg-gradient-to-br from-violet-500/10 via-card to-card p-5 sm:p-6">
         <div className="flex items-start justify-between gap-3">
           <div>
             <span className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-violet-500 text-white shadow-lg shadow-violet-500/20">
@@ -759,7 +759,7 @@ export function AIWidget() {
   return (
     <div className="fixed bottom-safe left-4 z-50 flex flex-col items-start gap-2">
       {open && (
-        <section aria-label="Veer Professor workspace" className="flex h-[min(calc(100dvh-6.5rem),56rem)] w-[min(calc(100vw-2rem),72rem)] flex-col overflow-hidden rounded-3xl border border-slate-700/60 bg-card shadow-2xl shadow-slate-950/25">
+        <section aria-label="Veer Professor workspace" className="flex h-[min(calc(100dvh-6.5rem),56rem)] w-[min(calc(100vw-2rem),72rem)] flex-col overflow-hidden rounded-2xl border-2 border-slate-700/60 bg-card shadow-2xl shadow-slate-950/25">
           <header className="relative overflow-hidden bg-slate-950 px-4 py-3 text-white sm:px-5">
             <div className="pointer-events-none absolute -right-10 -top-20 h-48 w-48 rounded-full bg-violet-500/20 blur-3xl" />
             <div className="relative flex items-center justify-between gap-3">

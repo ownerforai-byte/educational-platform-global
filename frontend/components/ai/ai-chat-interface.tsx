@@ -1166,7 +1166,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         </div>
 
         {/* Message stream */}
-        <div ref={streamRef} onScroll={handleStreamScroll} className="min-h-0 min-w-0 flex-1 overflow-y-auto px-3 sm:px-5 py-3 space-y-4">
+        <div ref={streamRef} onScroll={handleStreamScroll} className="mx-auto min-h-0 w-full max-w-3xl flex-1 overflow-y-auto px-3 sm:px-4 py-4 space-y-4">
           {historyState === "loading" ? (
             <div className="h-full flex flex-col items-center justify-center gap-3 text-muted-foreground">
               <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
@@ -1191,12 +1191,12 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               if (isUser) {
                 return (
                   <div key={index} className="flex justify-end animate-pop-in">
-                    <div className="flex items-end gap-2.5 max-w-[85%]">
-                      <div className="rounded-2xl rounded-br-md bg-gradient-to-br from-primary to-violet-500 text-primary-foreground px-4 py-2.5 shadow-sm">
-                        <p className="text-sm leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere] font-medium">{msg.content}</p>
+                    <div className="flex items-end gap-2 max-w-[85%]">
+                      <div className="rounded-2xl rounded-br-md bg-primary text-primary-foreground px-3.5 py-2 shadow-sm">
+                        <p className="text-[13px] leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere]">{msg.content}</p>
                       </div>
-                      <div className="h-7 w-7 rounded-lg bg-muted border border-border flex items-center justify-center shrink-0 text-muted-foreground">
-                        <User className="h-3.5 w-3.5" />
+                      <div className="h-6 w-6 rounded-lg bg-muted border border-border flex items-center justify-center shrink-0 text-muted-foreground">
+                        <User className="h-3 w-3" />
                       </div>
                     </div>
                   </div>
@@ -1328,7 +1328,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           <ChatAttachPreview
             images={pendingImages}
             onRemove={(i) => setPendingImages((prev) => prev.filter((_, idx) => idx !== i))}
-            className="max-w-4xl mx-auto mb-2"
+            className="max-w-3xl mx-auto mb-2"
           />
           {/* FLOATING IDEA CHIPS (owner 2026-10-12): float in the moment typing
               starts, fade out the moment the draft empties. Picking one extends
@@ -1338,9 +1338,9 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             onPick={(idea) =>
               setInput((prev) => (prev.trim() ? `${prev.trim()} — ${idea}` : idea))
             }
-            className="max-w-4xl mx-auto"
+            className="max-w-3xl mx-auto"
           />
-          <div className="relative flex items-end gap-2 max-w-4xl mx-auto">
+          <div className="relative flex items-end gap-1.5 max-w-3xl mx-auto rounded-2xl border-2 border-border/80 bg-card px-2 py-1.5 shadow-sm">
             <ChatAttachButton
               onPick={(dataUrl) => setPendingImages((prev) => [...prev, dataUrl].slice(0, MAX_ATTACHMENTS))}
               onPickDocument={(name, text) =>
@@ -1362,7 +1362,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   ? "Guest limit reached — please log in to ask more questions."
                   : "Ask me anything… ⚡ Enter to send · Shift+Enter for a new line"
               }
-              className="min-w-0 flex-1 max-h-32 min-h-[40px] py-2 px-3 rounded-xl border border-border/80 bg-card text-base sm:text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
+              className="min-w-0 flex-1 max-h-32 min-h-[36px] py-1.5 px-2 rounded-xl border border-transparent bg-transparent text-[13px] leading-relaxed text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-primary/30 resize-none"
             />
 
             <VoiceMicButton
@@ -1376,7 +1376,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             <button
               onClick={handleEnhance}
               disabled={!input.trim() || sending || enhancing || composerLocked}
-              className="h-10 w-10 rounded-xl border border-violet-500/40 bg-violet-500/10 text-violet-600 font-semibold flex items-center justify-center hover:bg-violet-500/20 hover:scale-105 active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
+              className="h-9 w-9 rounded-xl border border-violet-500/40 bg-violet-500/10 text-violet-600 font-semibold flex items-center justify-center hover:bg-violet-500/20 hover:scale-105 active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
               title="Enhance my prompt — rewrite it into a sharper study question"
               aria-label="Enhance prompt"
             >
@@ -1386,7 +1386,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               <button
                 type="button"
                 onClick={handleStop}
-                className="h-10 w-10 rounded-full bg-destructive text-destructive-foreground flex items-center justify-center shadow-md hover:opacity-90 active:scale-95 transition-all shrink-0"
+                className="h-9 w-9 rounded-full bg-destructive text-destructive-foreground flex items-center justify-center shadow-md hover:opacity-90 active:scale-95 transition-all shrink-0"
                 aria-label="Stop reply"
                 title="Stop the reply"
               >
@@ -1396,7 +1396,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               <button
                 onClick={() => handleSend()}
                 disabled={(!input.trim() && pendingImages.length === 0) || composerLocked}
-                className="h-10 w-10 rounded-full bg-gradient-to-r from-primary to-violet-500 text-primary-foreground flex items-center justify-center shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:scale-[1.03] active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
+                className="h-9 w-9 rounded-full bg-gradient-to-r from-primary to-violet-500 text-primary-foreground flex items-center justify-center shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:scale-[1.03] active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
                 aria-label="Send message"
               >
                 <ArrowUp className="h-4 w-4" />

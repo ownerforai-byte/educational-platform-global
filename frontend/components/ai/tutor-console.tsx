@@ -1284,7 +1284,7 @@ export function TutorConsole({
       )}
 
       {/* ── Stream ───────────────────────────────────────────────────── */}
-      <div ref={streamRef} onScroll={handleStreamScroll} className="min-h-0 min-w-0 flex-1 overflow-y-auto px-3 sm:px-8 py-4 sm:py-6 space-y-6">
+      <div ref={streamRef} onScroll={handleStreamScroll} className="mx-auto min-h-0 w-full max-w-3xl flex-1 overflow-y-auto px-3 sm:px-4 py-4 space-y-5">
         {!hasConversation && !sending ? (
           <div className="min-h-full flex flex-col justify-center max-w-3xl mx-auto space-y-7 py-8">
             <div className="text-center space-y-2">
@@ -1341,14 +1341,14 @@ export function TutorConsole({
               if (isUser) {
                 return (
                   <div key={index} className="flex justify-end animate-pop-in">
-                    <div className="flex items-end gap-2.5 max-w-[85%]">
-                      <div className="rounded-2xl rounded-br-md bg-gradient-to-br from-primary to-violet-500 text-primary-foreground px-4 py-2.5 shadow-sm">
-                        <p className="text-sm leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere] font-medium">
+                    <div className="flex items-end gap-2 max-w-[85%]">
+                      <div className="rounded-2xl rounded-br-md bg-primary text-primary-foreground px-3.5 py-2 shadow-sm">
+                        <p className="text-[13px] leading-relaxed whitespace-pre-wrap break-words [overflow-wrap:anywhere]">
                           {msg.content}
                         </p>
                       </div>
-                      <div className="h-7 w-7 rounded-lg bg-muted border border-border flex items-center justify-center shrink-0 text-muted-foreground">
-                        <User className="h-3.5 w-3.5" />
+                      <div className="h-6 w-6 rounded-lg bg-muted border border-border flex items-center justify-center shrink-0 text-muted-foreground">
+                        <User className="h-3 w-3" />
                       </div>
                     </div>
                   </div>
@@ -1506,7 +1506,7 @@ export function TutorConsole({
             setInput((prev) => (prev.trim() ? `${prev.trim()} — ${idea}` : idea))
           }
         />
-        <div className="flex items-end gap-2">
+        <div className="flex items-end gap-1.5 rounded-2xl border-2 border-border/80 bg-card px-2 py-1.5 shadow-sm">
           <ChatAttachButton
             onPick={(dataUrl) => setPendingImages((prev) => [...prev, dataUrl].slice(0, MAX_ATTACHMENTS))}
             onPickDocument={(name, text) =>
@@ -1533,14 +1533,14 @@ export function TutorConsole({
                     : `Ask a ${mode} question… (Enter to send)`
             }
             disabled={composerLocked || sending}
-            className="min-w-0 flex-1 resize-none rounded-2xl border border-input bg-background px-3 py-2 text-base sm:text-sm leading-relaxed placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 disabled:opacity-60"
+            className="min-w-0 flex-1 resize-none rounded-xl border border-transparent bg-transparent px-2 py-1.5 text-[13px] leading-relaxed placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 disabled:opacity-60"
           />
           <button
             onClick={handleEnhance}
             disabled={!input.trim() || sending || enhancing}
             title="Rewrite into a sharper study question"
             aria-label="Enhance question"
-            className="h-11 w-11 shrink-0 rounded-xl border border-border/70 bg-background text-muted-foreground hover:text-emerald-500 hover:border-emerald-500/40 transition-colors flex items-center justify-center disabled:opacity-40"
+            className="h-9 w-9 shrink-0 rounded-xl border border-border/70 bg-background text-muted-foreground hover:text-emerald-500 hover:border-emerald-500/40 transition-colors flex items-center justify-center disabled:opacity-40"
           >
             {enhancing ? (
               <span className="h-4 w-4 animate-spin rounded-full border-2 border-emerald-500 border-t-transparent" />
