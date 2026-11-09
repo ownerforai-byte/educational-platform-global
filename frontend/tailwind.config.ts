@@ -31,7 +31,8 @@ const subjectColorFromVar = (name: string) => ({
 const elevShadow = (step: string) => `var(--elev-${step})`;
 
 const config: Config = {
-  darkMode: ["class"],
+  // Tailwind v4's DarkModeStrategy accepts "class", not the v3 ["class"] tuple.
+  darkMode: "class",
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./features/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}"],
   theme: {
     container: {
