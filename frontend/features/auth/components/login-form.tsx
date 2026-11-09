@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Mail, Eye, EyeOff, ArrowRight, GraduationCap, Info } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { AuthField } from "./auth-field";
 import { loginAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
@@ -59,7 +59,7 @@ export function LoginForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <p
         data-testid="device-signup-notice"
         className="flex items-start gap-2 rounded-xl border border-amber-500/30 bg-amber-500/[0.07] px-3.5 py-2.5 text-xs font-semibold leading-relaxed text-amber-600 dark:text-amber-400"
@@ -67,53 +67,50 @@ export function LoginForm() {
         <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" />
         {DEVICE_SIGNUP_NOTICE}
       </p>
-      <div className="space-y-2">
-        <label className="text-sm font-medium" htmlFor="email">Email</label>
-        <div className="relative">
-          <Mail className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-          <Input
-            id="email"
-            type="email"
-            placeholder="you@example.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="h-11 rounded-xl pl-10"
-            autoComplete="email"
-            required
-          />
-        </div>
-      </div>
 
-      <div className="space-y-2">
-        <div className="flex items-center justify-between">
-          <label className="text-sm font-medium" htmlFor="password">Password</label>
-          <Link
-            href="/forgot-password"
-            className="text-xs font-medium text-primary hover:underline"
-          >
-            Forgot password?
-          </Link>
-        </div>
-        <div className="relative">
-          <Input
-            id="password"
-            type={showPassword ? "text" : "password"}
-            placeholder="Your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="h-11 rounded-xl pl-3.5 pr-10"
-            autoComplete="current-password"
-            required
-          />
+      <AuthField
+        id="email"
+        label="Email Address"
+        placeholder="Email Address"
+        activePlaceholder="Enter Email Address"
+        type="email"
+        value={email}
+        onChange={setEmail}
+        icon={<Mail className="h-5 w-5" />}
+        autoComplete="email"
+        required
+      />
+
+      <AuthField
+        id="password"
+        label="Password"
+        placeholder="Password"
+        activePlaceholder="Enter Password"
+        type={showPassword ? "text" : "password"}
+        value={password}
+        onChange={setPassword}
+        icon={<Lock className="h-5 w-5" />}
+        trailing={
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3.5 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-foreground"
+            className="shrink-0 text-muted-foreground transition-colors hover:text-foreground"
             aria-label={showPassword ? "Hide password" : "Show password"}
           >
-            {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+            {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
           </button>
-        </div>
+        }
+        autoComplete="current-password"
+        required
+      />
+
+      <div className="flex justify-end">
+        <Link
+          href="/forgot-password"
+          className="text-sm font-bold text-[#D2223D] transition-colors hover:underline"
+        >
+          Forgot Password?
+        </Link>
       </div>
 
       {error && (
@@ -124,38 +121,29 @@ export function LoginForm() {
 
       <Button
         type="submit"
-        className="h-11 w-full rounded-xl text-sm font-bold shadow-md shadow-primary/20"
+        className="h-[52px] w-full rounded-full bg-[#D2223D] text-[15px] font-bold text-white shadow-lg shadow-[#D2223D]/20 hover:bg-[#B81C33]"
         disabled={loading}
       >
         {loading ? "Signing in…" : "Sign In"}
-        {!loading && <ArrowRight className="h-4 w-4" />}
       </Button>
 
-      <div className="flex items-center gap-3 py-1">
+      <div className="flex items-center gap-3 pt-1">
         <div className="h-px flex-1 bg-border/80" />
-        <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-          or continue with
-        </span>
+        <span className="text-xs font-medium text-muted-foreground">Or continue with</span>
         <div className="h-px flex-1 bg-border/80" />
       </div>
 
       <SocialAuthButtons mode="login" disabled={loading} onError={setError} />
 
-      <div className="flex items-center gap-3 pt-2">
-        <div className="h-px flex-1 bg-border/80" />
-        <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-          New here?
-        </span>
-        <div className="h-px flex-1 bg-border/80" />
-      </div>
-
-      <Link
-        href="/signup"
-        className="flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-border/70 bg-card text-sm font-semibold text-foreground transition-colors hover:border-primary/40 hover:bg-primary/5 hover:text-primary"
-      >
-        <GraduationCap className="h-4 w-4 text-primary" />
-        Create a free account
-      </Link>
+      <p className="pt-4 text-center text-sm text-muted-foreground">
+        Don&apos;t have an account?{" "}
+        <Link
+          href="/signup"
+          className="font-bold text-[#D2223D] transition-colors hover:underline"
+        >
+          Sign Up
+        </Link>
+      </p>
     </form>
   );
 }

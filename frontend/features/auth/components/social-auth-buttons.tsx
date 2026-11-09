@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import {
   getSupabaseBrowserClient,
   isOAuthProviderEnabled,
@@ -152,41 +151,37 @@ export function SocialAuthButtons({
   const actionText = mode === "signup" ? "Sign up" : "Continue";
 
   return (
-    <div className="space-y-2.5">
-      <Button
+    <div className="flex items-center justify-center gap-4">
+      <button
         type="button"
-        variant="outline"
-        className="h-11 w-full rounded-xl text-sm font-semibold transition-all hover:bg-muted/70 active:scale-[0.99]"
+        aria-label={`${actionText} with Google`}
+        title={`${actionText} with Google`}
+        className="flex h-14 w-14 items-center justify-center rounded-full border border-border bg-background shadow-sm transition-all hover:bg-muted/60 active:scale-95 disabled:opacity-60"
         onClick={() => handleSocialSignIn("google")}
         disabled={disabled || socialLoading !== null}
       >
         {socialLoading === "google" ? (
-          <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
+          <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
         ) : (
-          <GoogleIcon className="h-4 w-4" />
+          <GoogleIcon className="h-6 w-6" />
         )}
-        <span>
-          {socialLoading === "google" ? "Connecting to Google…" : `${actionText} with Google`}
-        </span>
-      </Button>
+      </button>
 
       {SHOW_FACEBOOK && (
-        <Button
+        <button
           type="button"
-          variant="outline"
-          className="h-11 w-full rounded-xl text-sm font-semibold transition-all hover:bg-muted/70 active:scale-[0.99]"
+          aria-label={`${actionText} with Facebook`}
+          title={`${actionText} with Facebook`}
+          className="flex h-14 w-14 items-center justify-center rounded-full border border-border bg-background shadow-sm transition-all hover:bg-muted/60 active:scale-95 disabled:opacity-60"
           onClick={() => handleSocialSignIn("facebook")}
           disabled={disabled || socialLoading !== null}
         >
           {socialLoading === "facebook" ? (
-            <Loader2 className="h-4 w-4 animate-spin text-[#1877F2]" />
+            <Loader2 className="h-5 w-5 animate-spin text-[#1877F2]" />
           ) : (
-            <FacebookIcon className="h-4 w-4" />
+            <FacebookIcon className="h-6 w-6" />
           )}
-          <span>
-            {socialLoading === "facebook" ? "Connecting to Facebook…" : `${actionText} with Facebook`}
-          </span>
-        </Button>
+        </button>
       )}
     </div>
   );

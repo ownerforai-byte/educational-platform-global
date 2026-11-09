@@ -68,7 +68,7 @@ describe("Social login", () => {
       user: { id: "user-1", email: "student@example.com" },
     });
     render(<LoginForm />);
-    fireEvent.change(screen.getByLabelText("Email"), {
+    fireEvent.change(screen.getByLabelText("Email Address"), {
       target: { value: "student@example.com" },
     });
     fireEvent.change(screen.getByLabelText("Password"), {
@@ -87,7 +87,7 @@ describe("Social login", () => {
     // the button must stay absent rather than render broken.
     expect(screen.queryByRole("button", { name: /continue with facebook/i })).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /continue with google/i })).toBeInTheDocument();
-    expect(screen.getByLabelText("Email")).toBeInTheDocument();
+    expect(screen.getByLabelText("Email Address")).toBeInTheDocument();
   });
 
   it("keeps Google sign-in available while the session probe is still loading", () => {
@@ -97,7 +97,7 @@ describe("Social login", () => {
     mocks.authState.isLoading = true;
     render(<LoginForm />);
     expect(screen.getByRole("button", { name: /continue with google/i })).toBeInTheDocument();
-    expect(screen.getByLabelText("Email")).toBeInTheDocument();
+    expect(screen.getByLabelText("Email Address")).toBeInTheDocument();
     expect(screen.queryByText(/Checking your session/i)).not.toBeInTheDocument();
   });
 

@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { Mail, Eye, EyeOff, User, ArrowRight, Check, Info } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, User, Check, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { AuthField } from "./auth-field";
 import { signupAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
@@ -80,63 +80,53 @@ export function SignupForm() {
         <Info className="mt-0.5 h-3.5 w-3.5 shrink-0" />
         {DEVICE_SIGNUP_NOTICE}
       </p>
-      <div className="space-y-2">
-        <label className="text-sm font-medium" htmlFor="fullName">Full name</label>
-        <div className="relative">
-          <User className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-          <Input
-            id="fullName"
-            type="text"
-            placeholder="Ravikishan"
-            value={fullName}
-            onChange={(e) => setFullName(e.target.value)}
-            className="h-11 rounded-xl pl-10"
-            autoComplete="name"
-          />
-        </div>
-      </div>
+      <AuthField
+        id="fullName"
+        label="Full name"
+        placeholder="Full Name"
+        activePlaceholder="Enter Full Name"
+        value={fullName}
+        onChange={setFullName}
+        icon={<User className="h-5 w-5" />}
+        autoComplete="name"
+      />
 
-      <div className="space-y-2">
-        <label className="text-sm font-medium" htmlFor="email">Email</label>
-        <div className="relative">
-          <Mail className="absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-          <Input
-            id="email"
-            type="email"
-            placeholder="you@example.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="h-11 rounded-xl pl-10"
-            autoComplete="email"
-            required
-          />
-        </div>
-      </div>
+      <AuthField
+        id="email"
+        label="Email Address"
+        placeholder="Email Address"
+        activePlaceholder="Enter Email Address"
+        type="email"
+        value={email}
+        onChange={setEmail}
+        icon={<Mail className="h-5 w-5" />}
+        autoComplete="email"
+        required
+      />
 
-      <div className="space-y-2">
-        <label className="text-sm font-medium" htmlFor="password">Password</label>
-        <div className="relative">
-          <Input
-            id="password"
-            type={showPassword ? "text" : "password"}
-            placeholder="At least 8 characters"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="h-11 rounded-xl pl-3.5 pr-10"
-            autoComplete="new-password"
-            minLength={8}
-            required
-          />
+      <AuthField
+        id="password"
+        label="Password"
+        placeholder="Password"
+        activePlaceholder="Enter Password"
+        type={showPassword ? "text" : "password"}
+        value={password}
+        onChange={setPassword}
+        icon={<Lock className="h-5 w-5" />}
+        trailing={
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-3.5 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors hover:text-foreground"
+            className="shrink-0 text-muted-foreground transition-colors hover:text-foreground"
             aria-label={showPassword ? "Hide password" : "Show password"}
           >
-            {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+            {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
           </button>
-        </div>
-      </div>
+        }
+        autoComplete="new-password"
+        minLength={8}
+        required
+      />
 
       <ul className="flex flex-wrap gap-x-4 gap-y-1 pt-0.5">
         {PERKS.map((perk) => (
@@ -158,25 +148,26 @@ export function SignupForm() {
         </p>
       )}
 
-      <Button type="submit" className="h-11 w-full rounded-xl text-sm font-bold shadow-md shadow-primary/20" disabled={loading}>
+      <Button
+        type="submit"
+        className="h-[52px] w-full rounded-full bg-[#D2223D] text-[15px] font-bold text-white shadow-lg shadow-[#D2223D]/20 hover:bg-[#B81C33]"
+        disabled={loading}
+      >
         {loading ? "Creating account…" : "Create Account"}
-        {!loading && <ArrowRight className="h-4 w-4" />}
       </Button>
 
       <div className="flex items-center gap-3 py-1">
         <div className="h-px flex-1 bg-border/80" />
-        <span className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
-          or sign up with
-        </span>
+        <span className="text-xs font-medium text-muted-foreground">Or sign up with</span>
         <div className="h-px flex-1 bg-border/80" />
       </div>
 
       <SocialAuthButtons mode="signup" disabled={loading} onError={setError} />
 
-      <p className="pt-2 text-center text-sm text-muted-foreground">
+      <p className="pt-4 text-center text-sm text-muted-foreground">
         Already have an account?{" "}
-        <Link href="/login" className="font-semibold text-primary hover:underline">
-          Sign in
+        <Link href="/login" className="font-bold text-[#D2223D] transition-colors hover:underline">
+          Sign In
         </Link>
       </p>
     </form>
