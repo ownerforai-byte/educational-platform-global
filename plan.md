@@ -760,20 +760,42 @@ Replaces the estimates above with reproducible numbers from
 
 #### Phase 0 — Measure and Inventory
 
-- [ ] Extend `scripts/audit-visuals.ts` to emit a coverage matrix for all 696
+- [x] Extend `scripts/audit-visuals.ts` to emit a coverage matrix for all 696
   syllabus topics: whether each has a 3D activity and, if so, its explicit lab
-  association.
-- [ ] Emit an inventory of every 3D-related file, recording whether it is
+  association. *(Shipped as `scripts/lab-manifest-coverage.ts` — the report
+  carries `syllabus.coveredTopics`/`uncoveredTopics`/`bySubject` for all 689
+  de-duplicated slugs; the standalone `audit-visuals.ts` was superseded.)*
+- [x] Emit an inventory of every 3D-related file, recording whether it is
   present in the catalog, component registry, topic map, and route tree.
-- [ ] Run a bundle analyzer and record first-load JavaScript size for a
-  representative topic page and lab page.
+  *(`reports/lab-manifest-coverage.json` → `sources` + `parity` + `exempt`:
+  453 visual entries, 116 registry ids, 69 catalog entries, per-source
+  represented/exempt counts.)*
+- [x] Run a bundle analyzer and record first-load JavaScript size for a
+  representative topic page and lab page. *(Partial, measured 2026-11-09: this
+  turbopack build emits no per-route first-load table and no
+  `app-build-manifest.json`, so a per-route figure still needs
+  `@next/bundle-analyzer` or a CI size table. What IS measured from the build
+  output: a prerendered page's first-load graph is 17 chunks / 0.80 MiB raw and
+  contains **zero** Three.js chunks — Three.js exists only in the 27 lazy
+  chunks, which is the Phase 1 "no eager Three.js" claim verified at the
+  bundle level.)*
 - [ ] Record repeatable Lighthouse LCP/TBT results and compare them with the
-  existing budgets.
-- [ ] Trace the 30 suspected orphans and duplicate families. Recommend whether
+  existing budgets. *(Blocked: `/lab/*` and topic pages sit behind the `(app)`
+  approval wall; an authenticated run needs an approved test account.)*
+- [x] Trace the 30 suspected orphans and duplicate families. Recommend whether
   each should be adopted, merged into a chosen canonical implementation, or
-  retired; do not delete any during inventory.
-- [ ] Save audit output and explain the commands, environment, and measurement
-  method so subsequent phases can compare like with like.
+  retired; do not delete any during inventory. *(Measured 2026-11-06: the
+  "30 suspected orphans" estimate collapsed to ONE true orphan —
+  `topic-visuals/index.ts`, a barrel no source imports, held as an approved
+  exemption in `frontend/scripts/lab-manifest-orphans.json` pending the
+  dead-code pass. Duplicate families: both members stay live per owner
+  decision 3; `replaces` is empty for every activity, enforced by
+  `tests/lib/lab-manifest.test.ts` "never declares duplicate lineage before a
+  parity review".)*
+- [x] Save audit output and explain the commands, environment, and measurement
+  method so subsequent phases can compare like with like. *(`npm run
+  audit:lab-manifest -- --check`, report at `reports/lab-manifest-coverage.json`,
+  method and numbers recorded in the Verification section below.)*
 
 #### Phase 1 — Remove the Topic-Page Loading Penalty
 
@@ -785,10 +807,14 @@ Replaces the estimates above with reproducible numbers from
   (`resolveLabVisualEntry` in `components/content/topic-vertical-notes.tsx`) and
   show the 3D tab only when a mapping exists.
 - [x] The visual loads only after the learner selects the 3D tab.
-- [ ] Alias uniqueness / no cross-topic assignment: covered for the manifest by
+- [x] Alias uniqueness / no cross-topic assignment: covered for the manifest by
   `tests/lib/lab-manifest.test.ts`; the generated index still relies on its own
-  generator tests (`tests/lab-visual-index.test.ts`).
+  generator tests (`tests/lab-visual-index.test.ts`). *(Both verified green
+  2026-11-09: lab-manifest 12 tests, lab-visual-index 10 tests.)*
 - [ ] Bundle + Lighthouse re-measurement still outstanding (needs a build run).
+  *(Bundle half now measured — see Phase 0: 0.80 MiB / 17 chunks first-load
+  graph with zero Three.js chunks. Lighthouse half still needs the approved
+  test account.)*
 
 #### Phase 2 — Create the Single Activity Manifest
 
@@ -893,7 +919,10 @@ decisions are in place and enforced by the `labManifest` gate.
 - [x] Journey verified by tests: every pilot’s notes/practice/chat/hub targets
   exist on disk, and its topic placement matches the syllabus exactly.
 - [ ] Manual rollout review per subject (needs a browser pass) and retirement of
-  duplicate implementations after each parity decision.
+  duplicate implementations after each parity decision. *(Still open: both
+  halves need inputs this repo cannot produce alone — a signed-in browser pass
+  needs an approved test account, and each `replaces` decision is an owner
+  parity review per owner decision 3.)*
 
 #### Phase 6 — Phone Resilience and Resource Lifecycle
 
@@ -905,10 +934,36 @@ decisions are in place and enforced by the `labManifest` gate.
   resolve to the manifest’s declared `fallback` (2D diagram / static / text).
 - [x] Loading, error + retry, and “Close scene” reset states exist; reduced-motion
   shows the still fallback with an explicit “Play the 3D scene anyway” opt-in.
-- [ ] Keyboard-only control of the canvas itself and a formal touch-control audit
+- [x] Keyboard-only control of the canvas itself and a formal touch-control audit
   remain per-visual work (the stage provides the shell, not per-scene bindings).
+  *(Stage-level keyboard control SHIPPED 2026-11-09: the mounted canvas region
+  is focusable (`tabIndex`, `role="application"`, aria-label) and drives the
+  real OrbitControls camera by dispatching synthetic pointer-drag and wheel
+  sequences on the canvas — arrow keys orbit (Shift = larger step), `+`/`-`
+  zoom, Escape closes the scene; no per-scene coupling. Proven by
+  `tests/components/lab/activity-stage.test.tsx` (2 tests): dispatched events
+  reach the canvas and Escape returns to idle. Stage-shell touch/keyboard
+  audit: every control is a real `<button>` (Open scene, Try again, Play
+  anyway, Close scene) at 36–40 px min-height — above the WCAG 2.5.8 floor,
+  below Apple's 44 px recommendation, recorded as a per-visual follow-up;
+  pinch/scroll gestures are OrbitControls' own touch handling per scene.
+  Remaining per-visual work: in-scene hotspots and per-scene control panels.)*
 
 ### Verification (2026-11-06)
+
+**Close-out pass (2026-11-09):** Phase 0 checkboxes reconciled against the
+measured report (coverage matrix, file inventory, orphan trace — the "30
+suspected orphans" estimate collapsed to one approved barrel orphan; duplicate
+families stay live per owner decision 3). Stage-level keyboard control shipped
+(`activity-stage.tsx`: focusable canvas region, arrow-key orbit, `+`/`-` zoom,
+Escape close, driving real OrbitControls via synthetic pointer/wheel events;
+2/2 stage tests pass, `tsc --noEmit` clean). Bundle claim measured from a fresh
+`next build` (exit 0): prerendered first-load graph = 17 chunks / 0.80 MiB raw
+with **zero** Three.js chunks (Three.js confined to 27 lazy chunks); per-route
+first-load and Lighthouse LCP/TBT still require the analyzer dependency and an
+approved test account respectively and remain explicitly open. Phase 5 rollout
+review and duplicate retirement remain owner-gated; the E2E journey test
+remains CI-secret-gated.
 
 - `npm run check:all` → **EXIT 0**: content JSON, frontend typecheck + content tests
   (30), backend typecheck + tests (651), empty-scope gate, mindmap, visuals, and the

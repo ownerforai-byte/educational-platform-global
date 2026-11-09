@@ -16,7 +16,7 @@
  *    private capability check.
  */
 
-import { createElement, useCallback, useEffect, useState } from "react";
+import { createElement, useCallback, useEffect, useRef, useState } from "react";
 import { AlertTriangle, Loader2, Play, RotateCcw } from "lucide-react";
 
 import { useSceneTier } from "@/components/lab/3d-rig/use-scene-tier";
@@ -54,6 +54,59 @@ function Fallback({ activity, reason }: { activity: LabActivity; reason: string 
   );
 }
 
+/**
+ * Keyboard control of the mounted canvas (Phase 6 close-out).
+ *
+ * The scenes all steer through drei's `<OrbitControls>`, which listens for
+ * pointer and wheel events on the canvas element itself. Dispatching synthetic
+ * PointerEvent/WheelEvent sequences on that element therefore drives the REAL
+ * camera — no per-scene coupling, no second control path to keep in sync.
+ *  - Arrow keys orbit (Shift = larger step)
+ *  - `+` / `-` zoom via the wheel channel OrbitControls already handles
+ *  - Escape closes the scene, matching the visible "Close scene" button
+ */
+function orbitCanvas(canvas: HTMLCanvasElement, dx: number, dy: number): void {
+  if (typeof PointerEvent === "undefined") return; // non-browser test env
+  const rect = canvas.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  const at = (x: number, y: number, buttons: number) =>
+    new PointerEvent(buttons ? "pointermove" : "pointerup", {
+      pointerId: 1,
+      isPrimary: true,
+      pointerType: "mouse",
+      button: 0,
+      buttons,
+      clientX: x,
+      clientY: y,
+      bubbles: true,
+    });
+  canvas.dispatchEvent(
+    new PointerEvent("pointerdown", {
+      pointerId: 1,
+      isPrimary: true,
+      pointerType: "mouse",
+      button: 0,
+      buttons: 1,
+      clientX: cx,
+      clientY: cy,
+      bubbles: true,
+    }),
+  );
+  const steps = 4;
+  for (let i = 1; i <= steps; i += 1) {
+    canvas.dispatchEvent(at(cx + (dx * i) / steps, cy + (dy * i) / steps, 1));
+  }
+  canvas.dispatchEvent(at(cx + dx, cy + dy, 0));
+}
+
+function zoomCanvas(canvas: HTMLCanvasElement, deltaY: number): void {
+  if (typeof WheelEvent === "undefined") return; // non-browser test env
+  canvas.dispatchEvent(
+    new WheelEvent("wheel", { deltaY, bubbles: true, cancelable: true }),
+  );
+}
+
 export function ActivityStage({ activity }: { activity: LabActivity }) {
   const { tier, reducedMotion } = useSceneTier(activity.curriculum.subject);
 
@@ -64,6 +117,7 @@ export function ActivityStage({ activity }: { activity: LabActivity }) {
   const [Renderer, setRenderer] = useState<ActivityRenderer | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [allowMotion, setAllowMotion] = useState(false);
+  const sceneRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setWebgl(detectWebgl());
@@ -87,6 +141,43 @@ export function ActivityStage({ activity }: { activity: LabActivity }) {
     setStatus("idle");
     setError(null);
   }, []);
+
+  const onKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLDivElement>) => {
+      const canvas = sceneRef.current?.querySelector("canvas");
+      if (!canvas) return;
+      const step = event.shiftKey ? 60 : 24;
+      switch (event.key) {
+        case "ArrowLeft":
+          orbitCanvas(canvas, -step, 0);
+          break;
+        case "ArrowRight":
+          orbitCanvas(canvas, step, 0);
+          break;
+        case "ArrowUp":
+          orbitCanvas(canvas, 0, -step);
+          break;
+        case "ArrowDown":
+          orbitCanvas(canvas, 0, step);
+          break;
+        case "+":
+        case "=":
+          zoomCanvas(canvas, -120);
+          break;
+        case "-":
+        case "_":
+          zoomCanvas(canvas, 120);
+          break;
+        case "Escape":
+          reset();
+          break;
+        default:
+          return;
+      }
+      event.preventDefault();
+    },
+    [reset],
+  );
 
   if (webgl === false) {
     return <Fallback activity={activity} reason="This device has no WebGL support." />;
@@ -162,8 +253,13 @@ export function ActivityStage({ activity }: { activity: LabActivity }) {
     <div className="space-y-2">
       <div
         key={activity.slug}
+        ref={sceneRef}
         data-testid="activity-stage"
         data-tier={tier}
+        tabIndex={0}
+        role="application"
+        aria-label={`${activity.title} 3D scene. Arrow keys orbit, plus and minus zoom, Escape closes.`}
+        onKeyDown={onKeyDown}
         className="relative min-h-[320px] overflow-hidden rounded-2xl border border-border/60"
       >
         {/* Exactly one canvas: swapping activities unmounts this subtree, which
@@ -172,7 +268,8 @@ export function ActivityStage({ activity }: { activity: LabActivity }) {
       </div>
       <div className="flex items-center justify-between gap-2">
         <p className="text-[11px] text-muted-foreground">
-          Drag to rotate · Scroll to zoom · Pinch on touch
+          Drag to rotate · Scroll to zoom · Pinch on touch · Keyboard: arrow keys orbit,
+          +/− zoom, Esc closes
         </p>
         <button
           type="button"
