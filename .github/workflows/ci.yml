@@ -18,7 +18,7 @@ jobs:
           # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
           # code. Never leave a write-capable token in .git/config.
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: 'npm'
@@ -51,7 +51,7 @@ jobs:
           # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
           # code. Never leave a write-capable token in .git/config.
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: 'npm'
@@ -74,7 +74,7 @@ jobs:
           # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
           # code. Never leave a write-capable token in .git/config.
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: 'npm'
@@ -104,7 +104,7 @@ jobs:
           # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
           # code. Never leave a write-capable token in .git/config.
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: 'npm'
@@ -131,7 +131,7 @@ jobs:
           # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
           # code. Never leave a write-capable token in .git/config.
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: 'npm'
@@ -176,7 +176,7 @@ jobs:
           # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
           # code. Never leave a write-capable token in .git/config.
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: 'npm'

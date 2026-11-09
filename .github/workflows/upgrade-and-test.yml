@@ -42,7 +42,7 @@ jobs:
 
       # Step 2 — runtime + dependency cache.
       - name: Set up Node.js 22 with npm cache
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: "22"
           cache: "npm"
