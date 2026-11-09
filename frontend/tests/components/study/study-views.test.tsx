@@ -4,9 +4,12 @@ import type { ComponentType } from "react";
 
 /**
  * Smoke tests for the 16 components/study/*-view.tsx. Every data source is
- * mocked EMPTY, so each view must render, and the views that depend on a
- * source that does not exist yet must show the shared ComingSoon component
- * ("Under Progress"). Tier gating lives in lib/sections.ts (route tier) and
+ * mocked EMPTY, so each view must render, and the views that still depend on
+ * a source that does not exist yet must show the shared ComingSoon component
+ * ("Under Progress"). The weak-topic, cohort-comparison and community-board
+ * stubs were built (2026-11-08) against quiz history, the leaderboard cohort
+ * and the community tables, so those views now show honest empty states.
+ * Tier gating lives in lib/sections.ts (route tier) and
  * features/credits/constants.ts (spark layer), so those are pinned per view.
  */
 
@@ -32,6 +35,26 @@ vi.mock("@/lib/api/credits", () => ({
 }));
 vi.mock("@/lib/api/ai-quiz-history", () => ({ getQuizHistory: vi.fn().mockResolvedValue({ rows: [] }) }));
 vi.mock("@/lib/api/ai", () => ({ chat: vi.fn().mockResolvedValue({ reply: "" }) }));
+vi.mock("@/lib/api/leaderboard", () => ({
+  getLeaderboard: vi.fn().mockResolvedValue({
+    entries: [],
+    you: null,
+    totals: { students: 0, sets: 0 },
+    rule: {},
+    mode: "history",
+    range: "all",
+    cohort: { students: 0, medianXp: 0, medianAccuracy: 0, yourXpPercentile: null },
+    migrated: false,
+    formatKnown: true,
+  }),
+}));
+vi.mock("@/lib/api/community", () => ({
+  listThreads: vi.fn().mockResolvedValue({ threads: [], migrated: true }),
+  createThread: vi.fn().mockResolvedValue({ thread: null, migrated: false }),
+  getThread: vi.fn().mockResolvedValue({ thread: null, replies: [], migrated: true }),
+  createReply: vi.fn().mockResolvedValue({ reply: null, migrated: false }),
+  toggleUpvote: vi.fn().mockResolvedValue({ upvotes: 0, upvotedByYou: false, migrated: true }),
+}));
 vi.mock("@/lib/pyq-bank", () => ({ getSubjectPyqBank: vi.fn().mockRejectedValue(new Error("empty")) }));
 
 import { categoryForPath } from "@/features/credits/constants";
@@ -69,19 +92,19 @@ interface Case {
 }
 
 const CASES: Case[] = [
-  { name: "analytics", View: AnalyticsView, section: "analytics", minTier: "pro", path: "/analytics", sparkGated: false, comingSoon: true },
-  { name: "ask", View: AskView, section: "ask", minTier: "member", path: "/ask", sparkGated: false, comingSoon: true },
+  { name: "analytics", View: AnalyticsView, section: "analytics", minTier: "pro", path: "/analytics", sparkGated: false, comingSoon: false },
+  { name: "ask", View: AskView, section: "ask", minTier: "member", path: "/ask", sparkGated: false, comingSoon: false },
   { name: "billing", View: BillingView, section: "billing", minTier: "member", path: "/billing", sparkGated: false, comingSoon: true },
-  { name: "community-space", View: () => <CommunitySpaceView space={space} />, section: "community", minTier: "plus", path: "/community/x", sparkGated: false, comingSoon: true },
+  { name: "community-space", View: () => <CommunitySpaceView space={space} />, section: "community", minTier: "plus", path: "/community/x", sparkGated: false, comingSoon: false },
   { name: "community", View: CommunityView, section: "community", minTier: "plus", path: "/community", sparkGated: false, comingSoon: false },
-  { name: "dashboard", View: DashboardView, section: "dashboard", minTier: "member", path: "/dashboard", sparkGated: false, comingSoon: true },
+  { name: "dashboard", View: DashboardView, section: "dashboard", minTier: "member", path: "/dashboard", sparkGated: false, comingSoon: false },
   { name: "downloads", View: DownloadsView, section: "downloads", minTier: "owner", path: "/downloads", sparkGated: true, comingSoon: false },
   { name: "mock-exams", View: MockExamsView, section: "mock-exams", minTier: "pro", path: "/mock-exams", sparkGated: true, comingSoon: false },
   { name: "my-notes", View: MyNotesView, section: "my-notes", minTier: "member", path: "/my-notes", sparkGated: false, comingSoon: false },
   { name: "onboarding", View: OnboardingView, section: "onboarding", minTier: "guest", path: "/onboarding", sparkGated: false, comingSoon: false },
   { name: "planner", View: PlannerView, section: "planner", minTier: "plus", path: "/planner", sparkGated: false, comingSoon: false },
   { name: "referrals", View: ReferralsView, section: "referrals", minTier: "plus", path: "/referrals", sparkGated: false, comingSoon: true },
-  { name: "report-card", View: ReportCardView, section: "report-card", minTier: "plus", path: "/report-card", sparkGated: false, comingSoon: true },
+  { name: "report-card", View: ReportCardView, section: "report-card", minTier: "plus", path: "/report-card", sparkGated: false, comingSoon: false },
   { name: "settings", View: SettingsView, section: "settings", minTier: "member", path: "/settings", sparkGated: false, comingSoon: false },
   { name: "srs", View: SrsView, section: "srs", minTier: "plus", path: "/srs", sparkGated: true, comingSoon: false },
   { name: "streaks", View: StreaksView, section: "streaks", minTier: "member", path: "/streaks", sparkGated: false, comingSoon: false },

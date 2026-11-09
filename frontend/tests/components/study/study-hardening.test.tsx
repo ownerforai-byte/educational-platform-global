@@ -7,6 +7,7 @@ vi.mock("next/navigation", () => ({
   usePathname: () => "/",
 }));
 vi.mock("@/lib/api/progress", () => ({ getProgress: vi.fn().mockResolvedValue([]) }));
+vi.mock("@/lib/api/ai-quiz-history", () => ({ getQuizHistory: vi.fn().mockResolvedValue({ rows: [] }) }));
 
 import { ReportCardView } from "@/components/study/report-card-view";
 import { MyNotesView } from "@/components/study/my-notes-view";
@@ -24,12 +25,15 @@ function signIn(id: string | null) {
 beforeEach(() => window.localStorage.clear());
 
 describe("report card", () => {
-  it("hides the weak-topic panel when printing and does not claim history is unrecorded", () => {
+  it("prints the built weak-topic call-out and no longer claims it is under progress", () => {
     render(<ReportCardView />);
+    // The call-out is real content derived from quiz history — it prints
+    // with the report instead of hiding behind a print:hidden stub.
+    expect(screen.getByText(/weak-topic call-out/i)).toBeInTheDocument();
     const panel = screen.getByText(/weak-topic call-out/i).closest(".print\\:hidden");
-    expect(panel).not.toBeNull();
+    expect(panel).toBeNull();
+    expect(screen.queryByText(/does not highlight weak topics yet/i)).toBeNull();
     expect(screen.queryByText(/does not record/i)).toBeNull();
-    expect(screen.getByText(/does not highlight weak topics yet/i)).toBeInTheDocument();
   });
 });
 

@@ -22,6 +22,7 @@ import periodicUnlockRoutes from "./api/periodic-unlock";
 import aiHistoryRoutes from "./api/ai-history";
 import aiQuizHistoryRoutes from "./api/ai-quiz-history";
 import leaderboardRoutes from "./api/leaderboard";
+import communityRoutes from "./api/community";
 import practiceHistoryRoutes from "./api/practice-history";
 import chatHistoryRoutes from "./api/chat-history";
 import bookmarksRoutes from "./api/bookmarks";
@@ -167,6 +168,10 @@ export function createApp(): express.Express {
   // XP leaderboard — ranking derived from scored sets on every read (no stored
   // XP column, so the rule can be corrected without a backfill).
   app.use("/api/leaderboard", leaderboardRoutes);
+  // Peer discussions per study space (threads, replies, upvotes) — authors
+  // masked server-side like the leaderboard; degrades to migrated:false
+  // until 014_community_threads.sql is applied.
+  app.use("/api/community", communityRoutes);
   // Per-question practice attempt log for the textbook solution corpus
   // (content/practice/solutions/**) — complements /api/progress at the
   // question grain. Registered before /api/ai so the specific path wins.
