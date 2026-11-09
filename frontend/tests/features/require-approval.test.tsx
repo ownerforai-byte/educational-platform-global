@@ -39,6 +39,10 @@ vi.mock("next/navigation", async () => {
 });
 
 import { RequireApproval } from "@/features/auth/components/require-approval";
+import {
+  clearPendingSignup,
+  rememberPendingSignup,
+} from "@/features/auth/pending-signup-identity";
 
 const CONTENT = <div data-testid="route-content">the library</div>;
 
@@ -46,6 +50,7 @@ beforeEach(() => {
   session.user = null;
   session.isLoading = false;
   pathname.value = "/class-11-notes";
+  clearPendingSignup();
 });
 
 describe("RequireApproval — login + owner-approval wall", () => {
@@ -79,7 +84,17 @@ describe("RequireApproval — login + owner-approval wall", () => {
     const hrefs = screen.getAllByRole("link").map((a) => a.getAttribute("href"));
     expect(hrefs).toContain("/login");
     expect(hrefs).toContain("/signup");
-    expect(hrefs).toContain("/welcome");
+    // No account record → the link opens the NEW "no active account" page.
+    expect(hrefs).toContain("/welcome/no-account");
+    expect(screen.getByTestId("approval-status-link").getAttribute("href")).toBe(
+      "/welcome/no-account",
+    );
+  });
+
+  it("sends a created-and-waiting account to the waiting approval page", () => {
+    rememberPendingSignup("signed-status-token");
+    render(<RequireApproval>{CONTENT}</RequireApproval>);
+    expect(screen.getByTestId("approval-status-link").getAttribute("href")).toBe("/welcome");
   });
 
   it("opens the route for an approved, signed-in account", () => {
@@ -135,6 +150,12 @@ describe("auth wall wiring", () => {
     const sparkGate = layout.indexOf("<SparkGate>");
     expect(authWall).toBeGreaterThan(-1);
     expect(sparkGate).toBeGreaterThan(authWall);
+  });
+
+  it("decides the approval-status link from the hardcoded signup identity", () => {
+    const gate = read("features/auth/components/require-approval.tsx");
+    expect(gate).toContain("usePendingSignup()");
+    expect(gate).toContain('data-testid="approval-status-link"');
   });
 
   it("keeps the guest home and the plans page public, and the notice board member-only", () => {

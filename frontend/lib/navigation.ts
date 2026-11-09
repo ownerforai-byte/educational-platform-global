@@ -7,7 +7,7 @@
  * 2. The sidebar, mobile drawer, and footer all read FROM THIS FILE.
  *    That means you only need to add/remove/rename a link in one place.
  * 3. Each link has a `minLevel` — the lowest plan tier that can open it:
- *      "visitor" = everyone (even signed-out guests)
+ *      "guest" = everyone (even signed-out guests)
  *      "member"  = any signed-in account
  *      "plus"    = Plus plan and above
  *      "pro"     = Pro plan and above
@@ -140,7 +140,7 @@ export function isSidebarNavItem(item: NavItem): boolean {
 const primaryItems: NavItem[] = [
   { href: "/home",          label: "Home",               icon: Home,          minLevel: "member"  },
   { href: "/dashboard",     label: "Dashboard",          icon: LayoutDashboard, minLevel: "member" },
-  { href: "/onboarding",    label: "Set Study Goals",    icon: Rocket,        minLevel: "visitor" },
+  { href: "/onboarding",    label: "Set Study Goals",    icon: Rocket,        minLevel: "guest" },
   { href: "/planner",       label: "Weekly Planner",     icon: Calendar,      minLevel: "plus"    },
   { href: "/srs",           label: "Spaced Repetition",  icon: Layers,        minLevel: "plus"    },
   { href: "/mock-exams",    label: "Mock Exams",         icon: Timer,         minLevel: "pro"     },
@@ -237,11 +237,11 @@ const stemAndRigorItems: NavItem[] = [
 
 /**
  * AI & Practice — Veer AI chat, quiz tools, exam prep.
- * Members get 15 Veer chats/day on the three chat consoles.
+ * Members get 13 Veer chats/day on the three chat consoles.
  * Plus and above unlock the full AI studio (math, diagrams, deep-dive, etc.).
  */
 const toolsItems: NavItem[] = [
-  // Available to Members (15 AI sparks/day)
+  // Available to Members (13 AI sparks/day)
   { href: "/chat",         label: "Veer Study Assistant",    icon: Sparkles,   minLevel: "member", hideFromSidebar: true },
   { href: "/chat/nepali",  label: "Nepali Assistant",        icon: Languages,  minLevel: "member" },
   { href: "/chat/grammar", label: "Grammar Console",         icon: BookOpen,   minLevel: "member" },
@@ -304,7 +304,7 @@ const accountItems: NavItem[] = [
   { href: "/bookmarks",     label: "Saved Bookmarks",  icon: Bookmark,    minLevel: "member" },
   { href: "/report-card",   label: "Report Card",      icon: FileText,    minLevel: "plus"   },
   { href: "/settings",      label: "Settings",         icon: Settings,    minLevel: "member", hideFromSidebar: true },
-  { href: "/credits",       label: "Credits & Plan",   icon: Coins,       minLevel: "member", hideFromSidebar: true },
+  { href: "/credits",       label: "Credits",          icon: Coins,       minLevel: "member", hideFromSidebar: true },
   { href: "/notifications", label: "Notifications",    icon: Bell,        minLevel: "member" },
   { href: "/notice",        label: "Notice Board",     icon: FileText,    minLevel: "member", hideFromSidebar: true },
 ];
@@ -314,26 +314,27 @@ const accountItems: NavItem[] = [
  * These also appear in the footer.
  */
 const publicItems: NavItem[] = [
-  { href: "/about",        label: "About",          icon: HelpCircle,  minLevel: "visitor", hideFromSidebar: true },
-  { href: "/features",     label: "Features",       icon: Sparkles,    minLevel: "visitor" },
-  { href: "/how-it-works", label: "How It Works",   icon: Compass,     minLevel: "visitor", hideFromSidebar: true },
-  { href: "/blog",         label: "Blog",           icon: FileText,    minLevel: "visitor", hideFromSidebar: true },
-  { href: "/neb-updates",  label: "NEB Updates",    icon: Bell,        minLevel: "visitor", hideFromSidebar: true },
-  { href: "/contact",      label: "Contact Us",     icon: MessageSquare, minLevel: "visitor", hideFromSidebar: true },
-  { href: "/help",         label: "Help Center",    icon: HelpCircle,  minLevel: "visitor", hideFromSidebar: true },
-  { href: "/sitemap-page", label: "Site Map",       icon: ListTree,    minLevel: "visitor" },
-  { href: "/legal/privacy", label: "Privacy Policy", icon: ShieldCheck, minLevel: "visitor", hideFromSidebar: true },
-  { href: "/legal/terms", label: "Terms of Service", icon: FileText, minLevel: "visitor", hideFromSidebar: true },
-  { href: "/legal/cookies", label: "Cookie Policy", icon: Globe, minLevel: "visitor", hideFromSidebar: true },
-  { href: "/legal/purchases", label: "Purchases & Refunds", icon: Receipt, minLevel: "visitor", hideFromSidebar: true },
-  { href: "/legal/data-safety", label: "Data Safety", icon: ShieldCheck, minLevel: "visitor", hideFromSidebar: true },
-  { href: "/legal/content-rating", label: "Content Rating", icon: HelpCircle, minLevel: "visitor", hideFromSidebar: true },
-  { href: "/legal/attribution", label: "Attribution", icon: FileText, minLevel: "visitor", hideFromSidebar: true },
-  { href: "/legal/takedown", label: "Takedown Requests", icon: ShieldCheck, minLevel: "visitor", hideFromSidebar: true },
-  { href: "/school",       label: "For Schools",    icon: GraduationCap, minLevel: "visitor" },
-  { href: "/teachers",     label: "For Teachers",   icon: Users,       minLevel: "visitor" },
-  { href: "/parents",      label: "For Parents",    icon: Users,       minLevel: "visitor" },
-  { href: "/plans",        label: "Plans & Pricing", icon: Coins,      minLevel: "visitor", hideFromSidebar: true },
+  { href: "/about",        label: "About",          icon: HelpCircle,  minLevel: "guest", hideFromSidebar: true },
+  { href: "/what-it-has",  label: "What it has",    icon: Shapes,      minLevel: "guest", hideFromSidebar: true },
+  { href: "/features",     label: "Features",       icon: Sparkles,    minLevel: "guest" },
+  { href: "/how-it-works", label: "How It Works",   icon: Compass,     minLevel: "guest", hideFromSidebar: true },
+  { href: "/blog",         label: "Blog",           icon: FileText,    minLevel: "guest", hideFromSidebar: true },
+  { href: "/neb-updates",  label: "NEB Updates",    icon: Bell,        minLevel: "guest", hideFromSidebar: true },
+  { href: "/contact",      label: "Contact Us",     icon: MessageSquare, minLevel: "guest", hideFromSidebar: true },
+  { href: "/help",         label: "Help Center",    icon: HelpCircle,  minLevel: "guest", hideFromSidebar: true },
+  { href: "/sitemap-page", label: "Site Map",       icon: ListTree,    minLevel: "guest" },
+  { href: "/legal/privacy", label: "Privacy Policy", icon: ShieldCheck, minLevel: "guest", hideFromSidebar: true },
+  { href: "/legal/terms", label: "Terms of Service", icon: FileText, minLevel: "guest", hideFromSidebar: true },
+  { href: "/legal/cookies", label: "Cookie Policy", icon: Globe, minLevel: "guest", hideFromSidebar: true },
+  { href: "/legal/purchases", label: "Purchases & Refunds", icon: Receipt, minLevel: "guest", hideFromSidebar: true },
+  { href: "/legal/data-safety", label: "Data Safety", icon: ShieldCheck, minLevel: "guest", hideFromSidebar: true },
+  { href: "/legal/content-rating", label: "Content Rating", icon: HelpCircle, minLevel: "guest", hideFromSidebar: true },
+  { href: "/legal/attribution", label: "Attribution", icon: FileText, minLevel: "guest", hideFromSidebar: true },
+  { href: "/legal/takedown", label: "Takedown Requests", icon: ShieldCheck, minLevel: "guest", hideFromSidebar: true },
+  { href: "/school",       label: "For Schools",    icon: GraduationCap, minLevel: "guest" },
+  { href: "/teachers",     label: "For Teachers",   icon: Users,       minLevel: "guest" },
+  { href: "/parents",      label: "For Parents",    icon: Users,       minLevel: "guest" },
+  { href: "/plans",        label: "Plans & Pricing", icon: Coins,      minLevel: "guest", hideFromSidebar: true },
 ];
 
 /**
@@ -370,7 +371,7 @@ const r1Items: NavItem[] = [
  */
 export const NAV_SECTIONS: NavSection[] = [
   // id "public" — About & Info pages (always visible, no login needed)
-  { id: "public",     label: "About & Info",       icon: Globe,      minLevel: "visitor", items: publicItems     },
+  { id: "public",     label: "About & Info",       icon: Globe,      minLevel: "guest", items: publicItems     },
 
   // id "primary" — Quick Access (shown as a flat list at the top of the sidebar)
   { id: "primary",    label: "Quick Access",        icon: Compass,    minLevel: "member",  items: primaryItems    },
@@ -379,10 +380,10 @@ export const NAV_SECTIONS: NavSection[] = [
   { id: "curriculum", label: "Curriculum & Notes",  icon: BookOpen,   minLevel: "member",  items: curriculumItems },
 
   // id "stem" — Labs, formulas, theorems, graphs
-  { id: "stem",       label: "Labs & Reference",    icon: FlaskConical, minLevel: "visitor", items: stemAndRigorItems },
+  { id: "stem",       label: "Labs & Reference",    icon: FlaskConical, minLevel: "guest", items: stemAndRigorItems },
 
   // id "tools" — AI chat, quizzes, exam prep
-  { id: "tools",      label: "AI & Practice",       icon: Sparkles,   minLevel: "visitor", items: toolsItems      },
+  { id: "tools",      label: "AI & Practice",       icon: Sparkles,   minLevel: "guest", items: toolsItems      },
 
   // id "extended" — Knowledge hubs, Loksewa, world knowledge
   { id: "extended",   label: "More Resources",      icon: Globe,      minLevel: "member",  items: extendedItems   },

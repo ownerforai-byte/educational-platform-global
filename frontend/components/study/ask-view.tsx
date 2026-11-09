@@ -1,16 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { Loader2, Send } from "lucide-react";
+import { Loader2, MessageCircle, Send } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
-import { ComingSoon } from "@/components/content/coming-soon";
 import { chat } from "@/lib/api/ai";
+import { createThread } from "@/lib/api/community";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { buildAskPrompt, getCommunitySpace, listCommunitySpaces, MAX_QUESTION_LENGTH, validateQuestion } from "@/lib/community";
 
-/** /ask: question box answered by the Veer tutor (existing /api/ai chat); peer answers await a backend. */
+/** /ask: question box answered by the Veer tutor, with a live "ask the community" panel. */
 export function AskView() {
   const spaces = listCommunitySpaces();
   const initial = getCommunitySpace(useSearchParams().get("space") ?? "")?.id ?? "";
@@ -19,6 +20,9 @@ export function AskView() {
   const [answer, setAnswer] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  const [postedThread, setPostedThread] = useState<{ id: string } | null>(null);
+  const [posting, setPosting] = useState(false);
+  const [postError, setPostError] = useState<string | null>(null);
 
   async function submit() {
     const invalid = validateQuestion(question);
@@ -36,6 +40,28 @@ export function AskView() {
       setError("The Veer tutor could not answer right now. Try again in a moment.");
     } finally {
       setBusy(false);
+    }
+  }
+
+  async function postToCommunity() {
+    const invalid = validateQuestion(question);
+    if (invalid) return setPostError(invalid);
+    const space = getCommunitySpace(spaceId);
+    if (!space) return setPostError("Pick a subject so the right community sees it.");
+    setPostError(null);
+    setPosting(true);
+    try {
+      const title = question.trim().slice(0, 120);
+      const res = await createThread(space.id, title, question.trim());
+      if (res.migrated && res.thread) {
+        setPostedThread({ id: res.thread.id });
+      } else {
+        setPostError("Discussions are not set up on this deployment yet.");
+      }
+    } catch (err) {
+      setPostError(err instanceof Error ? err.message : "Could not post to the community.");
+    } finally {
+      setPosting(false);
     }
   }
 
@@ -96,13 +122,58 @@ export function AskView() {
           </CardContent>
         </Card>
       )}
-      <ComingSoon
-        title="Peer answers"
-        kind="Notes"
-        message="Answers from other students need a community backend, which is not built yet. Tutor answers above work today."
-        backHref="/community"
-        backLabel="Community"
-      />
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-base">
+            <MessageCircle className="h-4 w-4" /> Ask the community
+          </CardTitle>
+          <CardDescription>
+            Post the same question to the{" "}
+            {getCommunitySpace(spaceId)?.subjectName ?? "subject"} community — classmates answer
+            as replies.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-2">
+          {postedThread ? (
+            <p className="text-sm">
+              Posted to the community.{" "}
+              <Link
+                href={`/community/${spaceId}/${postedThread.id}`}
+                className="font-semibold text-primary hover:underline"
+              >
+                Open the discussion →
+              </Link>
+            </p>
+          ) : (
+            <>
+              {postError && <p className="text-xs text-destructive">{postError}</p>}
+              <button
+                type="button"
+                onClick={postToCommunity}
+                disabled={posting || !spaceId}
+                className="inline-flex items-center gap-2 rounded-xl border border-border px-4 py-2 text-sm font-semibold hover:bg-muted disabled:opacity-50"
+              >
+                {posting ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <MessageCircle className="h-4 w-4" />
+                )}
+                Post this question to the community
+              </button>
+              {!spaceId && (
+                <p className="text-xs text-muted-foreground">Pick a subject above first.</p>
+              )}
+            </>
+          )}
+          <p className="text-xs text-muted-foreground">
+            Or browse{" "}
+            <Link href="/community" className="font-semibold text-primary hover:underline">
+              all community spaces
+            </Link>
+            .
+          </p>
+        </CardContent>
+      </Card>
     </div>
   );
 }

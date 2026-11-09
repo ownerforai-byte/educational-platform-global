@@ -53,15 +53,19 @@ export function TierHomeRouter({
   const tier = accessLevelFor(user);
 
   useEffect(() => {
-    if (isLoading || tier === "visitor") return;
+    if (isLoading || tier === "guest") return;
     router.replace(
       landOn === "welcome" ? TIER_WELCOME_PATHS[tier] : TIER_HOME_PATHS[tier],
     );
   }, [isLoading, router, tier, landOn]);
 
-  // Signed-out visitors: the universal welcome at the entry, the guest home
-  // on /home (both public routes). Signed-in: the splash while their own page
-  // is being opened.
-  if (isLoading || tier !== "visitor") return <TierSplash />;
+  // A visitor with no cached session is a guest with certainty — render the
+  // public view on the FIRST paint. `isLoading` stays true for up to
+  // SESSION_PROBE_MAX_MS (6s) while /api/auth/me runs; a cold Render backend
+  // therefore blanked /home behind a spinner for every new visitor and broke
+  // the guest smoke spec's 5s visibility assertion. If the probe does find a
+  // session, `user` changes and the effect above redirects to that tier's
+  // page. Signed-in viewers still get the splash while their page opens.
+  if (tier !== "guest") return <TierSplash />;
   return landOn === "welcome" ? <UniversalWelcome /> : <HomePublic />;
 }

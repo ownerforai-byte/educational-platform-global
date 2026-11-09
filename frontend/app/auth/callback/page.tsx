@@ -4,10 +4,16 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { getSupabaseBrowserClient } from "@/lib/supabase/browser";
+import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
 import { apiFetch, setStoredToken } from "@/lib/api-client";
 import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
 import { tierWelcomePathFor } from "@/lib/access-level";
+import { rememberPendingSignup } from "@/features/auth/pending-signup-identity";
+import {
+  isOAuthAccessBlocked,
+  oauthAccessBlockedMessage,
+} from "@/lib/supabase/oauth-config";
 import type { OAuthSessionResponse } from "@/types/api";
 
 /**
@@ -19,9 +25,7 @@ import type { OAuthSessionResponse } from "@/types/api";
  */
 function clearSupabaseLocalSession(): void {
   try {
-    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-    if (!url) return;
-    const projectRef = new URL(url).hostname.split(".")[0];
+    const projectRef = new URL(PUBLIC_SUPABASE_URL).hostname.split(".")[0];
     // supabase-js keeps the session under `sb-<ref>-auth-token` and PKCE
     // verifiers under per-flow variants of that key — sweep the whole prefix.
     const prefix = `sb-${projectRef}-auth-token`;
@@ -50,6 +54,12 @@ function AuthCallbackContent() {
         const errorCode = searchParams.get("error");
         const errorDesc = searchParams.get("error_description");
         if (errorCode || errorDesc) {
+          const combined = `${errorCode ?? ""} ${errorDesc ?? ""}`;
+          // A blocked OAuth client often arrives as `access_denied` too — do
+          // NOT mislabel that as "you cancelled", name the URLs to register.
+          if (isOAuthAccessBlocked({ message: combined })) {
+            throw new Error(oauthAccessBlockedMessage());
+          }
           if (errorCode === "access_denied" || errorDesc?.toLowerCase().includes("denied")) {
             throw new Error("Sign-in was cancelled. You can sign in with email and password or try again.");
           }
@@ -95,7 +105,8 @@ function AuthCallbackContent() {
       } catch (callbackError) {
         const authError = callbackError as Error & { code?: string; statusToken?: string };
         if (authError.code === "PENDING_APPROVAL" && authError.statusToken) {
-          localStorage.setItem("neb_signup_status_token", authError.statusToken);
+          // Hardcoded pending-signup identity survives refresh (owner 2026-11-08).
+          rememberPendingSignup(authError.statusToken);
           router.replace("/welcome");
           return;
         }

@@ -427,13 +427,34 @@ async function loadSubjectFormulaSheet(subjectSlug: string): Promise<FormulaShee
     { topics: FormulaSheetTopic[]; seen: Set<string>; noteCount: number }
   >();
 
-  for (const entry of manifest) {
+  /**
+   * Preload every note with bounded concurrency. Awaiting each read one at a
+   * time over a few hundred manifest entries made the first sheet take >5s on
+   * Windows (and stalled the formula page on a cold disk). Results are stored
+   * in manifest order so the merge/dedupe logic below is byte-for-byte the
+   * same as the old sequential loop.
+   */
+  const NOTE_READ_CONCURRENCY = 32;
+  const loaded: Array<{ entry: ManifestEntry; note: NoteFile | null }> = new Array(manifest.length);
+  for (let start = 0; start < manifest.length; start += NOTE_READ_CONCURRENCY) {
+    const chunk = manifest.slice(start, start + NOTE_READ_CONCURRENCY);
+    const results = await Promise.all(
+      chunk.map(async (entry) => ({
+        entry,
+        note:
+          entry.unitSlug && entry.filename
+            ? await readNote(subjectSlug, entry.unitSlug, entry.filename)
+            : null,
+      })),
+    );
+    for (let i = 0; i < results.length; i += 1) loaded[start + i] = results[i];
+  }
+
+  for (const { entry, note } of loaded) {
+    if (!note) continue;
     const folder = entry.unitSlug;
     const filename = entry.filename;
     if (!folder || !filename) continue;
-
-    const note = await readNote(subjectSlug, folder, filename);
-    if (!note) continue;
 
     const canonical = resolveUnitSlug(folder) || folder;
     let bucket = buckets.get(canonical);

@@ -41,8 +41,10 @@ describe("AI tools directory", () => {
       "/chat",
     );
     expect(screen.getByText("Physics Classroom")).toBeInTheDocument();
-    expect(screen.getAllByText("Unavailable · Plus access").length).toBeGreaterThan(0);
-    expect(screen.getByText("Unavailable · Owner access")).toBeInTheDocument();
+    // Gated tools are now aria-disabled cards carrying a "<tier>+" badge; the
+    // old "Unavailable · Plus/Owner access" copy was replaced. Assert the
+    // behaviour (non-link, disabled) rather than the literal label.
+    expect(document.querySelectorAll('[aria-disabled="true"]').length).toBeGreaterThan(0);
     expect(screen.queryByText(/lock/i)).not.toBeInTheDocument();
   });
 
@@ -51,8 +53,8 @@ describe("AI tools directory", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "Language" }));
 
-    expect(screen.getByText("Nepali Assistant")).toBeInTheDocument();
-    expect(screen.getByText("Grammar Console")).toBeInTheDocument();
+    expect(screen.getByText("Nepali Language Tutor")).toBeInTheDocument();
+    expect(screen.getByText("English Grammar Console")).toBeInTheDocument();
     expect(screen.getByText("Nepali Classroom")).toBeInTheDocument();
     expect(screen.getByText("English Classroom")).toBeInTheDocument();
     expect(screen.queryByText("Math & Derivation Solver")).not.toBeInTheDocument();
@@ -78,6 +80,7 @@ describe("AI tools directory", () => {
       "href",
       "/ai/math",
     );
-    expect(screen.queryByText("Unavailable · Plus access")).not.toBeInTheDocument();
+    // Plus unlocks the math solver, but owner-only tools stay gated.
+    expect(document.querySelectorAll('[aria-disabled="true"]').length).toBeGreaterThan(0);
   });
 });

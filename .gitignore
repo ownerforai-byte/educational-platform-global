@@ -260,7 +260,13 @@ check-all-ai-widget.log
 .frontbuff/
 tokenkit-out/
 
-# ── Large generated build artifacts (regenerate in CI / from the corpus) ─────
-# These balloon the clone size; `npm run content:build` recreates them on demand.
-content/_index.json
-frontend/public/data/content/manifest.json
+# ── Content indexes are RUNTIME ASSETS, not optional build artifacts ─────────
+# `content/_index.json` is read by frontend/lib/pyq-bank.ts and by the quiz
+# engine; `frontend/public/data/content/manifest.json` is served directly from
+# public/ and hashed by the content ledger. They were untracked by f6419cf on
+# the assumption that `npm run content:build` regenerates them — it does not
+# (build.ts only emits syllabus-notes). Removing them caused ENOENT test
+# failures, a broken `ledger:check` and 404s on the deployed site, so they are
+# tracked again. The separate `content/_index.json` under public/ stays retired:
+# 7bb51358 deliberately moved paid bodies off the public CDN.
+

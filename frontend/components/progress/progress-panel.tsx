@@ -2,8 +2,9 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { BookOpen, CheckCircle, Circle, Clock, LogIn } from "lucide-react";
+import { BookOpen, CheckCircle, Circle, Clock, LogIn, Search, X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getProgress, updateProgress } from "@/lib/api/progress";
 import {
@@ -48,7 +49,8 @@ const STATUS_BADGE: Record<ProgressStatus, { label: string; className: string }>
 function matchesFilters(
   entry: ProgressEntry,
   statusFilter: StatusFilter,
-  subjectKey: string
+  subjectKey: string,
+  query: string
 ): boolean {
   const status = entryStatus(entry);
   const byStatus =
@@ -56,8 +58,23 @@ function matchesFilters(
     (statusFilter === "started" && status !== "not_started") ||
     statusFilter === status;
   if (!byStatus) return false;
-  if (subjectKey === "all") return true;
-  return `${entry.classSlug ?? "syllabus"}/${entry.subjectSlug ?? "general"}` === subjectKey;
+  if (subjectKey !== "all" && `${entry.classSlug ?? "syllabus"}/${entry.subjectSlug ?? "general"}` !== subjectKey) {
+    return false;
+  }
+  const q = query.trim().toLowerCase();
+  if (!q) return true;
+  return [
+    entry.topic?.title,
+    entry.topicSlug,
+    entry.topic?.chapter?.title,
+    entry.topic?.chapter?.subject?.name,
+    entry.subjectSlug,
+    entry.unitSlug,
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase()
+    .includes(q);
 }
 
 function formatDate(value: string | null | undefined): string | null {
@@ -84,6 +101,7 @@ export function ProgressPanel({ onProgressLoaded, onProgressChange }: ProgressPa
   const [needsSignIn, setNeedsSignIn] = useState(false);
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("started");
   const [subjectFilter, setSubjectFilter] = useState<string>("all");
+  const [query, setQuery] = useState("");
 
   // Parent callbacks live in a ref: an inline arrow from the parent must not
   // re-trigger the load (that is what used to leave this panel stuck spinning).
@@ -150,14 +168,14 @@ export function ProgressPanel({ onProgressLoaded, onProgressChange }: ProgressPa
   const subjectGroups = useMemo(() => groupJourney(progress), [progress]);
   const visibleGroups = useMemo(() => {
     const filtered = progress.filter((entry) =>
-      matchesFilters(entry, statusFilter, subjectFilter)
+      matchesFilters(entry, statusFilter, subjectFilter, query)
     );
     return groupJourney(filtered).map((group) => ({
       ...group,
       shown: group.entries.slice(0, ROWS_PER_GROUP),
       hidden: Math.max(0, group.entries.length - ROWS_PER_GROUP),
     }));
-  }, [progress, statusFilter, subjectFilter]);
+  }, [progress, statusFilter, subjectFilter, query]);
 
   const visibleCount = visibleGroups.reduce((n, g) => n + g.entries.length, 0);
 
@@ -284,8 +302,28 @@ export function ProgressPanel({ onProgressLoaded, onProgressChange }: ProgressPa
         </div>
       )}
 
-      {/* Status + subject filters */}
+      {/* Search + status + subject filters */}
       <div className="flex flex-wrap items-center gap-2">
+        <div className="relative min-w-[220px] flex-1">
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <Input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search topics, subjects, chapters…"
+            aria-label="Search topics"
+            className="h-9 rounded-full pl-9 pr-8"
+          />
+          {query && (
+            <button
+              type="button"
+              onClick={() => setQuery("")}
+              aria-label="Clear search"
+              className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded-full p-0.5 text-muted-foreground hover:text-foreground"
+            >
+              <X className="h-3.5 w-3.5" />
+            </button>
+          )}
+        </div>
         {STATUS_FILTERS.map((filter) => (
           <button
             key={filter.value}
@@ -335,6 +373,7 @@ export function ProgressPanel({ onProgressLoaded, onProgressChange }: ProgressPa
               onClick={() => {
                 setStatusFilter("all");
                 setSubjectFilter("all");
+                setQuery("");
               }}
               className="mt-4 rounded-md border border-border px-3 py-1.5 text-sm font-medium hover:border-primary/50"
             >

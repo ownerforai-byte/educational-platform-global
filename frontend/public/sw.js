@@ -9,12 +9,14 @@
  * Add route patterns to SW_ROUTES to cache additional pages.
  */
 
-// v5 (2026-09-26): /chat stopped redirecting to /ai and is now the AI
-// Tutor's own dedicated page. Old v4 caches still hold the AI Studio render
-// under /chat (stale-while-revalidate would flash it once per visit), so
-// bump the cache name to force a clean precache of the new surface.
-const CACHE_NAME = "neb-vault-v8";
-const DATA_CACHE = "neb-data-v8";
+// v9 (2026-11-08) — owner request: "if a new version is ready then
+// autodeletes all old version -- simply never show previous versions".
+// A fixed cache name is exactly why old deploys survived: the next build
+// reused `neb-vault-v8` and `activate()` kept it, so stale HTML/JS stayed
+// addressable. The names are bumped AND every cache (including these two) is
+// deleted on activation before a fresh current-only shell is built.
+const CACHE_NAME = "neb-vault-v9";
+const DATA_CACHE = "neb-data-v9";
 
 /** Pages to pre-cache on install (core app shell). */
 const SW_ROUTES = [
@@ -82,16 +84,16 @@ async function precacheRoutes() {
   await Promise.allSettled(routes.map((route) => cache.add(route)));
 }
 
-/** Install: precache the app shell (skipped entirely under low data). */
+/**
+ * Install: take over immediately — do NOT cache anything here.
+ *
+ * Any shell cached now would belong to the previous deploy by the time
+ * activate() runs, and activate() deletes every cache anyway. skipWaiting
+ * means a ready new version never sits behind an old controller waiting for
+ * a tap on a toast.
+ */
 self.addEventListener("install", (event) => {
-  if (networkIsConstrained()) {
-    // Low data: fetching every HTML shell up front is exactly the spend the
-    // user asked to avoid. Routes fill the cache as they are visited.
-    self.skipWaiting();
-    return;
-  }
-  event.waitUntil(precacheRoutes());
-  self.skipWaiting();
+  event.waitUntil(self.skipWaiting());
 });
 
 /** The "new version available" toast sends SKIP_WAITING, then reloads. */
@@ -99,18 +101,26 @@ self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") self.skipWaiting();
 });
 
-/** Activate: clean old caches. */
+/**
+ * Activate: DELETE EVERY previous version, then rebuild only the current one.
+ *
+ * Previous code kept `CACHE_NAME` / `DATA_CACHE`, so a redeploy that reused
+ * those names kept every stale page and asset from the old build. Here all
+ * keys are removed unconditionally (no allowlist), a fresh shell is precached
+ * from the current deploy, and clients.claim() puts open tabs on the new
+ * worker. Nothing from a previous version can be served afterwards.
+ */
 self.addEventListener("activate", (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(
-        keys
-          .filter((k) => k !== CACHE_NAME && k !== DATA_CACHE)
-          .map((k) => caches.delete(k))
-      )
-    )
+    (async () => {
+      const keys = await caches.keys();
+      await Promise.all(keys.map((key) => caches.delete(key)));
+      // Low-data devices fill the cache lazily as pages are visited instead
+      // of paying for an up-front precache — unchanged from the old policy.
+      if (!networkIsConstrained()) await precacheRoutes();
+      await self.clients.claim();
+    })()
   );
-  self.clients.claim();
 });
 
 /** Fetch: strategy per resource type. */

@@ -51,8 +51,12 @@ function readHtmlLite(): boolean {
 
 function readPref(): LitePreference {
   if (typeof localStorage === "undefined") return "auto";
-  const raw = localStorage.getItem(STORAGE_KEY);
-  if (raw === "on" || raw === "off") return raw;
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw === "on" || raw === "off") return raw;
+  } catch {
+    /* storage blocked (private mode) — fall back to auto */
+  }
   return "auto";
 }
 
@@ -114,8 +118,12 @@ export function useLowData(): LowData {
 
   const setPreference = useCallback((next: LitePreference) => {
     if (typeof localStorage !== "undefined") {
-      if (next === "auto") localStorage.removeItem(STORAGE_KEY);
-      else localStorage.setItem(STORAGE_KEY, next);
+      try {
+        if (next === "auto") localStorage.removeItem(STORAGE_KEY);
+        else localStorage.setItem(STORAGE_KEY, next);
+      } catch {
+        /* storage blocked — preference still applies for this session */
+      }
     }
     setPrefState(next);
   }, []);

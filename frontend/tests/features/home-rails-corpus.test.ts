@@ -98,9 +98,11 @@ describe("home rail corpus", () => {
       expect(e.file).toMatch(/\.rail\.json$/);
       expect(Array.isArray(e.reasons)).toBe(true);
     }
-    // Full-corpus fs read: under parallel-suite load on Windows this pushes
-    // past the 5 s default (same explicit budget as schema-corpus.test.ts).
-  }, 20_000);
+    // Full-corpus fs read (~1.1k rail files). Measured ~0.9s idle but it
+    // exceeds 20s when the full 134-file suite runs on Windows under disk/
+    // GC contention, so the gate gets a realistic budget. Assertions are
+    // unchanged — every rails file is still read and validated.
+  }, 60_000);
 
   it("bounds home-page corpus reads per class, subject, and unit", () => {
     const entries = loadHomeRailCorpus(
@@ -192,7 +194,7 @@ describe("home rail corpus", () => {
         `${e.file}: icon "${slide.iconName}" not in HOME_RAIL_ICONS`,
       ).toBe(true);
     }
-  }, 20_000); // full-corpus fs read + slide mapping; explicit budget like schema-corpus.test.ts
+  }, 60_000); // full-corpus fs read + slide mapping; same budget as the corpus load above
 
   it("keeps the icon allowlist covering all six rail subjects", () => {
     for (const name of ["Atom", "FlaskConical", "Dna", "Sigma", "BookOpen", "Languages"]) {

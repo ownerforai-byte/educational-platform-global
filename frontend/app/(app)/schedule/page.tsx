@@ -13,12 +13,16 @@ export default function SchedulePage() {
   const [goals, setGoals] = useState<StudyGoals | null>(null);
   const [mounted, setMounted] = useState(false);
 
+  // Client-only localStorage read after mount (no window during SSR); see the
+  // same documented exception in goals/page.tsx.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const g = readGoals();
     setGoals(g);
     setPlan(seedDailyPlan(g));
     setMounted(true);
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   if (!mounted) {
     return (

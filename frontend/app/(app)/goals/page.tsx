@@ -15,10 +15,15 @@ export default function GoalsPage() {
   const [goals, setGoals] = useState<StudyGoals | null>(null);
   const [mounted, setMounted] = useState(false);
 
+  // localStorage is unavailable during SSR. Reading it after mount keeps the
+  // server and the client's first paint on the same "Loading…" shell, so there
+  // is no hydration mismatch. The post-mount setState is therefore deliberate.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     setGoals(readGoals());
     setMounted(true);
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   if (!mounted || !goals) {
     return (

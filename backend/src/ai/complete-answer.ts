@@ -99,6 +99,89 @@ function isResearchPaperResult(result: WebSearchResult): boolean {
   }
 }
 
+/**
+ * Owner request 2026-11-08: "make the veer chat also add the original research
+ * paper link at last for any academic question, simply for any question add
+ * link of research paper at last with its short meaningful name".
+ *
+ * ONE link, ALWAYS, at the very end of EVERY Veer chat reply — including
+ * casual turns and answers produced while the web search service is down.
+ * The link is either a VERIFIED HTTPS paper URL from the dedicated paper
+ * search, or a real Semantic Scholar query for the question's topic. A paper
+ * search link is honest; a made-up DOI or paper title would not be, and the
+ * system prompt explicitly forbids inventing paper URLs.
+ */
+const PAPER_NAME_STOP_WORDS = new Set([
+  "a", "an", "the", "what", "why", "how", "who", "when", "where", "which",
+  "is", "are", "was", "were", "do", "does", "did", "can", "could", "would",
+  "should", "please", "explain", "define", "describe", "derive", "calculate",
+  "solve", "compare", "give", "tell", "me", "about", "in", "on", "of", "for",
+  "to", "and", "or", "with", "class", "notes", "note", "question", "questions",
+  "answer", "write", "shortly", "briefly", "brief", "meaning", "means",
+  "concept", "example", "examples", "grade", "neb", "help", "show", "find",
+  "list", "state", "discuss", "i", "you", "it", "this", "that", "11", "12",
+]);
+const MAX_PAPER_NAME_WORDS = 6;
+const MAX_PAPER_NAME_CHARS = 48;
+
+/** Short, readable name for the closing link — never a whole question. */
+export function shortResearchPaperName(text: string): string {
+  const clean = (text ?? "")
+    .replace(/[\r\n\[\]<>`*_()]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const words = clean
+    .split(" ")
+    .map((word) => word.replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N}]+$/gu, ""))
+    .filter(Boolean);
+  const meaningful = words.filter(
+    (word) => !PAPER_NAME_STOP_WORDS.has(word.toLowerCase()),
+  );
+  const chosen = (meaningful.length ? meaningful : words).slice(0, MAX_PAPER_NAME_WORDS).join(" ");
+  const trimmed =
+    chosen.length > MAX_PAPER_NAME_CHARS
+      ? `${chosen.slice(0, MAX_PAPER_NAME_CHARS - 1).trimEnd()}…`
+      : chosen;
+  return trimmed || "Research papers";
+}
+
+/**
+ * Stricter than isResearchPaperResult: the closing link must point at an
+ * actual paper host. The older filter also accepts a keyword match in the
+ * snippet ("journal article"), which lets an unrelated blog through.
+ */
+function isVerifiedPaperHost(result: WebSearchResult): boolean {
+  if (!result.title.trim()) return false;
+  try {
+    const url = new URL(result.link);
+    if (url.protocol !== "https:" || url.pathname === "/") return false;
+    const host = url.hostname.toLowerCase();
+    return PAPER_HOSTS.some((domain) => host === domain || host.endsWith(`.${domain}`));
+  } catch {
+    return false;
+  }
+}
+
+/** The closing line. Never throws and never returns an empty string. */
+export function originalResearchPaperLink(
+  question: string,
+  papers: WebSearchResult[] = [],
+): string {
+  const verified = papers.find(isVerifiedPaperHost);
+  if (verified) {
+    const url = new URL(verified.link).href.replace(/[()]/g, (char) =>
+      char === "(" ? "%28" : "%29",
+    );
+    return `\n\n**Original research paper:** [${shortResearchPaperName(verified.title)}](<${url}>)`;
+  }
+
+  // No verified paper (search disabled / timed out / returned nothing):
+  // link to a real academic paper search for the topic instead of fabricating.
+  const topic = shortResearchPaperName(question);
+  const url = `https://www.semanticscholar.org/search?q=${encodeURIComponent(topic)}`;
+  return `\n\n**Original research paper:** [${topic} research papers](<${url}>)`;
+}
+
 /** Format only actual HTTPS URLs returned by the dedicated paper search. */
 export function formatResearchPaperReferences(results: WebSearchResult[]): string {
   const seen = new Set<string>();

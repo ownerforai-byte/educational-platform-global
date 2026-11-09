@@ -7,9 +7,9 @@ import { describe, expect, test } from "vitest";
  *
  * Owner policy 2026-10-13 supersedes the 2026-10-05 owner-only gate on
  * POST /api/ai: chat is open to every signed-in tier and metered by AI sparks
- * (guest 3 / member 7 / plus 25 / pro 50 per UTC day, owner unlimited).
- * remaining chat routes keep the owner-email allowlist, and the quiz
- * generator stays open (students keep /ai-quiz via /api/ai/generate-questions).
+ * (member 13 / plus 25 / pro 50 per UTC day, owner unlimited; guests get the
+ * home guide only). Remaining chat routes keep the owner-email allowlist, and
+ * the quiz generator stays open (students keep /ai-quiz via /api/ai/generate-questions).
  */
 const read = (p: string) => readFileSync(path.resolve(__dirname, p), "utf8");
 

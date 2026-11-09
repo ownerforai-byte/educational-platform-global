@@ -17,7 +17,10 @@ import { supabaseAdmin } from "../db/supabase";
 const PREFIX = "section_min_tier.";
 const CACHE_TTL_MS = 15_000;
 
-const TIERS = new Set(["visitor", "member", "plus", "pro", "owner"]);
+const TIERS = new Set(["guest", "member", "plus", "pro", "owner"]);
+
+/** Retired rung names still present in old settings rows map to the new ladder. */
+const LEGACY_TIER: Record<string, string> = { visitor: "guest" };
 
 let cache: { value: Record<string, string>; at: number } | null = null;
 
@@ -39,7 +42,8 @@ export async function readSectionMinTiers(): Promise<Record<string, string>> {
 
     for (const row of (data ?? []) as Array<{ key: string; value: unknown }>) {
       const sectionId = row.key.slice(PREFIX.length);
-      const rung = typeof row.value === "string" ? row.value.trim().toLowerCase() : "";
+      const raw = typeof row.value === "string" ? row.value.trim().toLowerCase() : "";
+      const rung = LEGACY_TIER[raw] ?? raw;
       // Only known ladder rungs count — anything else falls back to the code
       // default for that section.
       if (sectionId && TIERS.has(rung)) value[sectionId] = rung;

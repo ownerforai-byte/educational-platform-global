@@ -119,3 +119,24 @@ open the TWA and it loads this site.
   reachable at `/sw.js`; it is (served from `frontend/public`).
 - **Build fails: no Android SDK** → install Android Studio / set
   `ANDROID_HOME` and configure JDK 17 before generating a release build.
+
+## Dependency overrides (security)
+
+Bubblewrap pulls in two dependencies with unpatched advisories, so
+`package.json` overrides both with small drop-in replacements under
+`vendor/`:
+
+| Override | Why |
+|---|---|
+| `extract-zip` → `vendor/secure-extract-zip` | Published `extract-zip` releases have no fixed version (GHSA-jmr9-qjv8-65gv, GHSA-7pqw-9j4j-h8q3) and the upstream fix is unmerged. The replacement keeps the callback API Bubblewrap promisifies, refuses entries that resolve outside the destination, and skips symlink entries instead of following them. |
+| `file-type` → `vendor/file-type-cjs` | `@jimp/core` (icon generation) does `require("file-type")`, but the only fixed release (>= 21.3.1) is ESM-only. The bridge keeps the CommonJS `fromBuffer()` shape and lazily `import()`s the real package, installed under the `file-type-next` alias to avoid an override loop. |
+
+npm resolves `file:` override paths relative to the *dependent* package, hence
+the `file:../../../vendor/...` spelling. Verify after changing dependencies:
+
+```bash
+npm ci && npm audit && npm run test:vendor
+```
+
+`npm audit` must report 0 vulnerabilities and the vendor self-test (extraction,
+zip-slip rejection, absolute-path rejection, symlink skipping) must pass.

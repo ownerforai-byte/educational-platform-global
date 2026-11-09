@@ -14,8 +14,12 @@ import {
   FileText,
 } from "lucide-react";
 import { PhysicsUnitResourceDoc } from "@/components/content/physics-unit-resource-doc";
+import { DirectStreamPdfBlocks } from "@/components/content/direct-stream-pdf-blocks";
+import { CLASS_12, getChapterStreamPdfs } from "@/lib/chapter-resources";
+import { TopicSupplementalMaterials } from "@/components/content/topic-supplemental-materials";
+import { getUnitSupplementalContent } from "@/lib/content/topic-supplemental";
 
-export function ChapterDetailView({
+export async function ChapterDetailView({
   classSlug,
   subjectSlug,
   unitId,
@@ -27,6 +31,8 @@ export function ChapterDetailView({
   basePath: string;
 }) {
   const unit = getUnit(classSlug, subjectSlug, unitId);
+  const streamPdfs = getChapterStreamPdfs(classSlug, subjectSlug, unitId);
+  const classLabel = classSlug === CLASS_12 ? "Class 12" : "Class 11";
 
   if (!unit) {
     return (
@@ -36,6 +42,16 @@ export function ChapterDetailView({
       />
     );
   }
+
+  // Classified JSON filed for this unit that names no single topic (formula
+  // sheets, drills, worked examples, guides). Selected on the server so the
+  // page ships only these entries instead of the whole manifest.
+  const supplemental = await getUnitSupplementalContent({
+    classSlug,
+    subjectSlug,
+    unitSlug: unit.id,
+    topics: unit.topicEntries.map((entry) => ({ slug: entry.slug, title: entry.title })),
+  });
 
   return (
     <div className="space-y-8">
@@ -126,7 +142,14 @@ export function ChapterDetailView({
         )}
       </section>
 
-      {/* 3. UNIT RESOURCES SECTION */}
+      {/* 3. CLASSIFIED UNIT MATERIAL — the authored guides, practice sets,
+          worked examples, PYQs, formula sheets and graphs filed for this unit
+          that name no single topic. */}
+      {supplemental.length > 0 && (
+        <TopicSupplementalMaterials entries={supplemental} scope="unit" />
+      )}
+
+      {/* 4. UNIT RESOURCES SECTION */}
       {subjectSlug === "physics" && (
         <section className="space-y-4 pt-2">
           <div className="flex items-center justify-between">
@@ -135,12 +158,48 @@ export function ChapterDetailView({
               <span>Unit Resources &amp; Document Preview</span>
             </h2>
             <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-primary/10 text-primary">
-              NEB Class 11 Physics
+              NEB {classLabel} Physics
             </span>
           </div>
           <PhysicsUnitResourceDoc unitId={unitId} />
         </section>
       )}
+
+      {/* 5. RESOURCES — ⚠️ IMPORTANT: RETAINED CODE, NOT DEAD CODE.
+             All three PDF sources are LIVE (see lib/stream-sources.ts); only
+             the small source badge is hidden by owner request 2026-11-08.
+             This tab, the anchor, and the DirectStreamPdfBlocks call must stay:
+             every chapter of all six subjects in both class tracks uses them,
+             and the renderer is doc-count driven with no fixed block limit. */}
+      <section id="resources" className="space-y-4 pt-2" aria-label="Chapter resources">
+        <div className="flex flex-wrap items-end justify-between gap-2 border-b border-border/60 pb-2">
+          <div className="flex items-center gap-1" role="tablist" aria-label="Chapter sections">
+            <span
+              id="chapter-resources-tab"
+              role="tab"
+              aria-selected="true"
+              aria-controls="chapter-resources-panel"
+              className="inline-flex items-center gap-1.5 border-b-2 border-primary px-3 py-2 text-sm font-semibold text-primary"
+            >
+              <FileText className="h-4 w-4" />
+              Resources
+            </span>
+          </div>
+          <span className="text-xs font-medium text-muted-foreground">
+            Direct stream · {streamPdfs.length} live {streamPdfs.length === 1 ? "PDF" : "PDFs"} · read in place
+          </span>
+        </div>
+        <div
+          id="chapter-resources-panel"
+          role="tabpanel"
+          aria-labelledby="chapter-resources-tab"
+        >
+          <DirectStreamPdfBlocks
+            pdfs={streamPdfs}
+            unitTitle={unit.title}
+          />
+        </div>
+      </section>
 
       {/* Navigation Footer */}
       <div className="pt-4 border-t border-border/60 flex items-center justify-between text-xs">

@@ -17,6 +17,13 @@ const OWNER_EMAIL = process.env.SMOKE_OWNER_EMAIL ?? "";
 const OWNER_PASSWORD = process.env.SMOKE_OWNER_PASSWORD ?? "";
 const MEMBER_EMAIL = process.env.SMOKE_MEMBER_EMAIL ?? "";
 const MEMBER_PASSWORD = process.env.SMOKE_MEMBER_PASSWORD ?? "";
+/**
+ * Set by the e2e-smoke workflow's backend warm-up step only when the external
+ * Render backend never answers /health. Auth-dependent specs cannot sign in
+ * without it, so they skip with a visible reason; the guest and error specs
+ * still run. A warm backend leaves this unset and every spec runs.
+ */
+const BACKEND_UNAVAILABLE = process.env.SMOKE_SKIP_AUTH === "1";
 
 /** Sign in through /login and wait for the post-login destination. */
 async function signIn(page: Page, email: string, password: string) {
@@ -25,10 +32,22 @@ async function signIn(page: Page, email: string, password: string) {
   await page.fill("#password", password);
   await page.getByRole("button", { name: /sign in|log in/i }).first().click();
   // The auth flow lands on the tier welcome or the study home; either way the
-  // session cookie exists once the URL leaves /login.
-  await page.waitForURL((url) => !url.pathname.startsWith("/login"), {
-    timeout: 30_000,
-  });
+  // session cookie exists once the URL leaves /login. If it does not, surface
+  // the login form's own error instead of a bare 30s timeout (a cold backend
+  // used to look identical to bad credentials).
+  try {
+    await page.waitForURL((url) => !url.pathname.startsWith("/login"), {
+      timeout: 30_000,
+    });
+  } catch (error) {
+    const visible = await page
+      .locator('[role="alert"], .text-destructive')
+      .allTextContents()
+      .catch(() => [] as string[]);
+    throw new Error(
+      `Sign-in never left /login. Visible errors: ${visible.map((v) => v.trim()).filter(Boolean).join(" | ") || "none"}. ${String(error)}`,
+    );
+  }
 }
 
 test.describe("E2E smoke", () => {
@@ -44,6 +63,7 @@ test.describe("E2E smoke", () => {
     // WHOLE file skipped (guest test included) whenever the env vars are
     // absent, which broke the documented bare-local-run behaviour.
     test.setTimeout(150_000);
+    test.skip(BACKEND_UNAVAILABLE, "backend warm-up failed — see E2E Smoke workflow annotations");
     test.skip(!OWNER_EMAIL || !OWNER_PASSWORD, "SMOKE_OWNER_EMAIL/PASSWORD not set");
     await signIn(page, OWNER_EMAIL, OWNER_PASSWORD);
 
@@ -57,10 +77,17 @@ test.describe("E2E smoke", () => {
     await page.goto("/pyqs");
     await expect(page).toHaveURL(/\/pyqs/);
 
-    // The left-side Veer panel is the approved-account quick chat.
-    await page.getByRole("button", { name: "Open Veer" }).click();
-    await expect(page.getByLabel("Veer chat")).toBeVisible();
-    await expect(page.getByText(/quick answers here/i)).toBeVisible();
+    // The shell now ships TWO distinct Veer surfaces: the floating "AI personal
+    // guide" and the "Veer Professor" workspace. The old /^Open Veer$/ substring
+    // matched both (strict-mode violation) and its "Veer chat" panel no longer
+    // exists. Target the Professor surface explicitly and assert its real aria
+    // label, then close it so the mobile topic tabs below are not overlaid.
+    await page.getByRole("button", { name: "Open Veer Professor", exact: true }).click();
+    const workspace = page.getByLabel("Veer Professor workspace");
+    await expect(workspace).toBeVisible();
+    // Two "Close Veer Professor" buttons exist (the launcher toggles its label
+    // too), so scope the click to the workspace itself.
+    await workspace.getByRole("button", { name: "Close Veer Professor", exact: true }).click();
 
     // The same approved session now checks the mobile topic learning flow.
     await page.setViewportSize({ width: 390, height: 844 });
@@ -85,6 +112,7 @@ test.describe("E2E smoke", () => {
   });
 
   test("member: Plus-gated surface is visibly locked and /plans works", async ({ page }) => {
+    test.skip(BACKEND_UNAVAILABLE, "backend warm-up failed — see E2E Smoke workflow annotations");
     test.skip(!MEMBER_EMAIL || !MEMBER_PASSWORD, "SMOKE_MEMBER_EMAIL/PASSWORD not set");
     await signIn(page, MEMBER_EMAIL, MEMBER_PASSWORD);
 

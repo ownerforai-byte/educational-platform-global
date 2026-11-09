@@ -23,7 +23,7 @@ import {
 const HOME_TARGETS: Record<AccessLevel, string> = {
   // The visitor's own home is the guest home (2026-10-25 flow: "welcome →
   // guest home → login page → study home"), never a tier interface.
-  visitor: "/home",
+  guest: "/home",
   ...TIER_HOME_PATHS,
 };
 
@@ -63,7 +63,7 @@ export function TierHomeGate({
   tier,
   children,
 }: {
-  tier: Exclude<AccessLevel, "visitor">;
+  tier: Exclude<AccessLevel, "guest">;
   children: ReactNode;
 }) {
   return (

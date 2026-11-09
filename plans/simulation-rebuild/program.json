@@ -1,0 +1,1633 @@
+{
+  "schema": "rebuild-program/v1",
+  "program": {
+    "name": "Simulation Library Rebuild",
+    "measuredOn": "2026-11-08",
+    "planVersion": "1.1.0",
+    "targetRepository": "C:/Users/ASUS/simulation",
+    "referenceFile": "C:/Users/ASUS/old-lab-page-reference.tsx",
+    "schemaSketch": "C:/Users/ASUS/topic format.txt",
+    "totals": {
+      "plans": 6,
+      "workPackages": 44,
+      "effortDays": 92.5,
+      "acceptanceCriteria": 69,
+      "risks": 31,
+      "artifacts": 68,
+      "serialCriticalChainDays": 20.5,
+      "waves": 12,
+      "calendarWeeks": 11,
+      "start": "2026-11-09",
+      "end": "2027-01-22"
+    },
+    "baseline": {
+      "measuredOn": "2026-11-08",
+      "scope": "whole tree, after the all-class curriculum scaffold",
+      "files": 872,
+      "filesByExtension": {
+        ".txt": 354,
+        ".tsx": 35,
+        ".md": 242,
+        ".json": 240,
+        ".mjs": 1
+      },
+      "scaffoldFiles": 481,
+      "legacyFiles": 391,
+      "directories": 1741,
+      "emptyDirectories": 1054,
+      "maxDirectoryDepth": 10,
+      "directoriesDeeperThan6": 4,
+      "pillarSlots": 165,
+      "pillarSlotsEmpty": 70,
+      "organelleGaps": 41,
+      "tsxComponents": 35,
+      "tsxStubs": 35,
+      "textFiles": 356,
+      "textFilesUnder40Words": 339,
+      "substantiveFiles": 3,
+      "utf16Files": 129,
+      "jsonFiles": 240,
+      "jsonFilesAllScaffold": true,
+      "cssFiles": 0,
+      "packageJson": false,
+      "legendOccurrencesInLegacyLibrary": 0,
+      "legendStringHitsWholeTree": 240,
+      "legendHitsNote": "All whole-tree hits are _subject.json pillar-slot declarations plus curriculum-map.json. Zero real legends exist.",
+      "pipelineTopicDirs": 1259,
+      "pipelineTopicDirsEmpty": 992,
+      "pipelineTopicDirsMarkerOnly": 261,
+      "pipelineTopicDirsWithDefinition": 6,
+      "curriculumBlocks": 239,
+      "curriculumNotesZeroBytes": 239
+    },
+    "criticalPath": [
+      "P6.2",
+      "P2.1",
+      "P2.2",
+      "P2.3",
+      "P2.5",
+      "P2.9",
+      "P4.4",
+      "P4.5",
+      "P4.6"
+    ],
+    "preconditions": [
+      {
+        "id": "PRE-1",
+        "severity": "blocker",
+        "status": "cleared",
+        "title": "No usable git recovery path in target repository",
+        "measured": {
+          "gitRoot": "C:/Users/ASUS/simulation",
+          "commits": 1,
+          "trackedFilesInSimulation": 391
+        },
+        "detail": "Git root is the entire user home directory, has zero commits, and simulation/ is untracked. A stash at that root would sweep .ssh, .aws, AppData, NTUSER.DAT and miniconda3. With no HEAD there is no revert path, and git gives zero protection for the 1253 directories Plan 04 deletes or the ~356 files Plan 06 rewrites.",
+        "requiredAction": "Owner-approved: cd C:/Users/ASUS/simulation && git init && git add -A && git commit -m \"baseline: 391-file pre-rebuild state, measured 2026-11-08\". Never run git stash from C:/Users/ASUS.",
+        "gates": [
+          "P6.1",
+          "P6.2",
+          "P4.2",
+          "P4.3",
+          "P4.4",
+          "P4.5"
+        ],
+        "autonomousFixAllowed": false,
+        "interimMitigation": "P4.1 tree snapshot and P6.2 _encoding_backup/ are the only recovery mechanisms; verify both complete and byte-verified before any destructive step.",
+        "clearedOn": "2026-11-08",
+        "resolution": {
+          "action": "git init scoped to C:/Users/ASUS/simulation, then staged all 12 top-level entries explicitly and committed the full baseline",
+          "commit": "92f0635",
+          "commitMessage": "baseline: 391-file pre-rebuild state, measured 2026-11-08",
+          "gitRoot": "C:/Users/ASUS/simulation",
+          "commits": 1,
+          "trackedFiles": 391,
+          "workingTree": "clean",
+          "authorizedBy": "user (explicit go-ahead)",
+          "preCommitScan": {
+            "files": 391,
+            "extensions": {
+              ".txt": 354,
+              ".tsx": 35,
+              ".md": 2
+            },
+            "hiddenOrSensitive": 0,
+            "filesOver1MB": 0
+          },
+          "recoveryVerification": {
+            "method": "git show HEAD:<path> compared byte-for-byte against working tree",
+            "samples": [
+              "biology/03-cell-biology/mitochondria/structure.txt",
+              "pipeline/final-state.txt",
+              "components/biology/03-cell-biology/mitochondria/mitochondria-3d.tsx",
+              "pyqs/physics/02-waves/pyqs.txt"
+            ],
+            "result": "4/4 byte-identical, including UTF-16LE files"
+          }
+        }
+      },
+      {
+        "id": "PRE-2",
+        "severity": "blocker",
+        "status": "open",
+        "title": "NEB past-paper source unconfirmed",
+        "detail": "P5.3 requires real NEB Class 11 past questions spanning >=5 distinct years with mark-allocated solutions. No archive exists in the target repository and access is unconfirmed.",
+        "requiredAction": "Confirm sourcing before wave 6. If unavailable mark affected files sourced-pending and escalate. Fabricating a question attributed to a real exam year is forbidden.",
+        "gates": [
+          "P5.3"
+        ],
+        "owner": "P3.1 confirms in week 1; P5.3 inherits the verdict",
+        "autonomousFixAllowed": false
+      }
+    ],
+    "environment": {
+      "node": "v24.19.0",
+      "npm": "10.8.2",
+      "targetExists": true,
+      "baselineReverified": "unchanged — 391 files, 1054 empty dirs, 35/35 stubs, 356/339 hollow, 0 legend, 0 json, no package.json",
+      "git": {
+        "root": "C:/Users/ASUS/simulation",
+        "head": "92f0635",
+        "commits": 1,
+        "tracked": 391,
+        "workingTree": "clean",
+        "recoveryVerified": true
+      }
+    },
+    "readyToExecute": true,
+    "baselineAtPlanAuthoring": {
+      "files": 391,
+      "emptyDirectories": 1054,
+      "pillarSlots": 165,
+      "pillarSlotsEmpty": 70,
+      "organelleGaps": 41,
+      "tsxComponents": 35,
+      "tsxStubs": 35,
+      "textFiles": 356,
+      "textFilesUnder40Words": 339,
+      "substantiveFiles": 3,
+      "jsonFiles": 0,
+      "cssFiles": 0,
+      "packageJson": false,
+      "legendOccurrences": 0,
+      "cycleDirs": 1259,
+      "cycleDirsWithProduct": 6
+    },
+    "curriculumExpansion": {
+      "requestedOn": "2026-11-08",
+      "requestedBy": "program owner",
+      "request": "Add all left blocks for all classes (e.g. Account in Grade 8, Social Studies in Grade 11, Management and every other stream, mathematics at each level) with empty notes for now.",
+      "status": "built-and-measured",
+      "registry": "C:/Users/ASUS/simulation/curriculum/curriculum-map.json",
+      "registrySchema": "curriculum-map/v1",
+      "readme": "C:/Users/ASUS/simulation/curriculum/README.md",
+      "generator": "C:/Users/ASUS/simulation/tools/scaffold-curriculum.mjs",
+      "regenerateCommand": "cd C:/Users/ASUS/simulation && node tools/scaffold-curriculum.mjs",
+      "idempotent": true,
+      "overwriteExisting": false,
+      "country": "Nepal",
+      "board": "CDC (Basic/Secondary) · NEB (Higher Secondary)",
+      "totals": {
+        "blocks": 239,
+        "grades": 12,
+        "notStarted": 235,
+        "existingHollow": 4,
+        "byLevel": {
+          "basic": 81,
+          "secondary": 40,
+          "higher-secondary": 118
+        },
+        "byGrade": {
+          "grade-01": 9,
+          "grade-02": 9,
+          "grade-03": 9,
+          "grade-04": 10,
+          "grade-05": 10,
+          "grade-06": 11,
+          "grade-07": 11,
+          "grade-08": 12,
+          "grade-09": 20,
+          "grade-10": 20,
+          "grade-11": 59,
+          "grade-12": 59
+        },
+        "byStream": {
+          "no-stream": 121,
+          "common": 6,
+          "science": 10,
+          "management": 24,
+          "humanities": 40,
+          "education": 20,
+          "law": 18
+        }
+      },
+      "levels": {
+        "basic": {
+          "grades": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "board": "CDC",
+          "exam": null
+        },
+        "secondary": {
+          "grades": [
+            9,
+            10
+          ],
+          "board": "CDC",
+          "exam": "SEE"
+        },
+        "higher-secondary": {
+          "grades": [
+            11,
+            12
+          ],
+          "board": "NEB",
+          "exam": "NEB +2",
+          "streams": [
+            "science",
+            "management",
+            "humanities",
+            "education",
+            "law"
+          ],
+          "series": {
+            "11": "007",
+            "12": "008"
+          }
+        }
+      },
+      "perBlockFiles": [
+        "_subject.json",
+        "notes.md"
+      ],
+      "filesCreated": 480,
+      "verification": {
+        "blockDirectoriesPresent": 239,
+        "notesFilesZeroBytes": 239,
+        "notesFilesMissing": 0,
+        "notesFilesNonEmpty": 0,
+        "pillarSlotsDeclared": 1434,
+        "pillarSlotsFilled": 0,
+        "blocksClaimingCompletion": 0,
+        "verifiedSyllabusCodes": [
+          "curriculum/higher-secondary/grade-11/science/mathematics -> Mat. 007"
+        ],
+        "unverifiedSyllabusCodes": 238
+      },
+      "requestedAdditionsConfirmed": [
+        "curriculum/basic/grade-08/account",
+        "curriculum/higher-secondary/grade-11/common/social-studies",
+        "curriculum/higher-secondary/grade-12/common/social-studies",
+        "curriculum/higher-secondary/grade-11/management (12 subjects)",
+        "curriculum/higher-secondary/grade-12/management (12 subjects)",
+        "mathematics at grades 01-10, science/mathematics at 11-12 (Mat. 007), management/business-mathematics at 11-12"
+      ],
+      "notesPolicy": "All notes.md files are intentionally 0 bytes. No content is claimed. status=not-started means exactly that.",
+      "honestyRules": [
+        "No block claims complete/done/solved. status=not-started means exactly that.",
+        "Only Mat. 007 is a verified syllabus code; every other syllabusCode is null and must not be guessed.",
+        "notes:null and notesBytes:0 are measurements, never hand-edited to look like progress.",
+        "A not-started block that gains non-empty notes loses its Plan 05 exemption immediately."
+      ],
+      "sourceDocUnderCoverage": {
+        "physics": {
+          "inRepo": 8,
+          "inSourceDocs": 26,
+          "source": "C:/Users/ASUS/Physics_XI_Unit_Docs_NP/MANIFEST.csv"
+        },
+        "chemistry": {
+          "inRepo": 8,
+          "inSourceDocs": 17,
+          "source": "C:/Users/ASUS/Chemistry_XI_Unit_Docs_NP/MANIFEST.csv"
+        },
+        "mathematics": {
+          "inRepo": 3,
+          "inSourceDocs": 7,
+          "source": "C:/Users/ASUS/Math_XI_Unit_Docs_NP/MANIFEST.csv"
+        },
+        "disposition": "Added to tranche 1 by P3.8 — these gaps sit inside the original 33-unit scope."
+      },
+      "planInteractions": [
+        {
+          "plan": "plan-03",
+          "workPackage": "P3.8",
+          "interaction": "Reads the registry, ranks all 239 blocks by exam weight, emits reports/coverage-backlog-all-classes.json. Original 70 slots stay tranche 1. Does not gate P3.2-P3.7."
+        },
+        {
+          "plan": "plan-05",
+          "workPackage": "P5.2",
+          "interaction": "Detector exemption derived at run time: status=not-started AND notes.md size 0. Without it the program definition of done is unreachable. See PLAN-05 §5.1."
+        },
+        {
+          "plan": "plan-04",
+          "workPackage": "P4.5",
+          "interaction": "No conflict. dir-lint scans topics/ components/ motion/ conceptual/ pyqs/ only; curriculum block dirs are non-empty at depth <= 5."
+        },
+        {
+          "plan": "plan-06",
+          "workPackage": "P6.6",
+          "interaction": "No conflict. Scaffold files are UTF-8, depth <= 5, and registry counts match a fresh filesystem walk."
+        }
+      ],
+      "git": {
+        "committed": false,
+        "status": "?? curriculum/  ?? tools/",
+        "head": "92f0635",
+        "headPredatesScaffold": true,
+        "filesUncommitted": 481,
+        "authorization": "Owner go-ahead was given for the baseline commit only. Committing this batch requires a new explicit authorization."
+      },
+      "outOfProgramScope": "Authoring content for the 235 not-started blocks beyond tranche 1 is future work scoped by P3.8, not a gate in this program."
+    }
+  },
+  "executionRules": [
+    "PRE-1 is cleared (commit 92f0635). PRE-2 remains open and gates only P5.3 in wave 6 — it does not block starting. Never execute a gated work package while its precondition is open.",
+    "Read plans/INDEX.md first, then plans/program.json, then the plan file for the work package being executed.",
+    "Never start a work package whose dependsOn entries are not all status=complete.",
+    "Execute in executionOrder, or parallelize within a single wave only — never across waves.",
+    "Plan 06 runs first and blocks all five other plans. Do not reorder it.",
+    "Plan 04 runs last. P4.2/P4.3 require P5.7 quarantine first; P4.4 requires P3.7 and P2.9. Pruning early destroys target locations.",
+    "A work package is complete only when every acceptance criterion in its plan file is verifiably true. Never self-report completion from intent.",
+    "Never fabricate content to satisfy a gate. If NEB past papers are unavailable, mark sourced-pending and escalate.",
+    "Never write a completion claim the filesystem does not support. Status files are generated from measurement.",
+    "The 239 curriculum blocks are declared gaps, not defects. A 0-byte notes.md in a status=not-started block is exempt from the hollow detector (PLAN-05 §5.1); the exemption is derived from curriculum-map.json at run time and shrinks as blocks are authored. Never fabricate notes to clear CI, and never hand-edit _subject.json status/notes/notesBytes.",
+    "The 481 scaffold files are uncommitted (HEAD 92f0635 predates them). Wave 0 does not touch curriculum/ or tools/, so it is safe to start. Before any later destructive step, commit or uniquely-tag-stash them per the git rule. Do not commit without a new explicit owner authorization.",
+    "Before any destructive step run git status from C:/Users/ASUS/simulation (now the correct scoped root, HEAD 92f0635). NEVER run git commands from C:/Users/ASUS — that home-rooted repo has zero commits and would sweep the entire user profile. Stash with a unique tag and restore with apply, never pop.",
+    "Back up bytes before transcoding or pruning; retain backups until the corresponding CI gate is green.",
+    "Update workPackages[].status in this manifest as work completes so the next agent inherits accurate state."
+  ],
+  "plans": [
+    {
+      "id": "plan-01",
+      "num": "01",
+      "code": "SCHEMA",
+      "title": "Content Schema & Missing Pillars",
+      "file": "C:/Users/ASUS/Documents/Qoder/2026-11-08/4565238d/plans/PLAN-01-content-schema.md",
+      "relativeFile": "plans/PLAN-01-content-schema.md",
+      "window": "2026-11-12 → 2026-11-20 (7 engineer-days)",
+      "owner": "Content Architect",
+      "dependsOnText": "Plan 06 / P6.2 (UTF-8 transcode), Plan 06 / P6.1 (path flattening)",
+      "blocksText": "Plan 02, Plan 03, Plan 05",
+      "effortDays": 7,
+      "workPackageCount": 7,
+      "dependsOnPlans": [
+        "plan-06"
+      ],
+      "blocksPlans": [
+        "plan-02",
+        "plan-03",
+        "plan-05"
+      ],
+      "acceptanceRef": "#5-acceptance-criteria",
+      "acceptanceCriteria": [
+        "topic.schema.json exists and validates all 15 required fields",
+        "LegendSpec is mandatory; a topic without a legend fails validation",
+        "legendId cross-reference resolution enforced",
+        "Every legend entry carries a non-color channel (pattern + symbol)",
+        "validate-topic.mjs --all --strict runs and produces reports/schema-report.json",
+        "3 exemplar topics pass with zero warnings",
+        "CI blocks merge on failure; debt allow-list cannot grow",
+        "Authoring template generates a skeleton that fails validation until filled (proves the gate works)"
+      ],
+      "risks": [
+        {
+          "risk": "Thresholds set so high that Plan 03/05 stall",
+          "likelihood": "Medium",
+          "impact": "High",
+          "mitigation": "Pilot thresholds on the 3 exemplars first; tune before rollout"
+        },
+        {
+          "risk": "Biology units legitimately have no formulas",
+          "likelihood": "High",
+          "impact": "Low",
+          "mitigation": "formulas.minItems conditional on subject"
+        },
+        {
+          "risk": "Schema churn after Plan 02 starts rendering",
+          "likelihood": "Medium",
+          "impact": "High",
+          "mitigation": "Freeze schema at P1.7; changes require a versioned migration"
+        },
+        {
+          "risk": "Legend color tokens drift per author",
+          "likelihood": "Medium",
+          "impact": "Medium",
+          "mitigation": "Registry is a closed enum in the schema, not free hex"
+        }
+      ],
+      "artifacts": [
+        "schema/topic.schema.json",
+        "schema/legend-spec.md",
+        "schema/concept-spec.md",
+        "schema/label-motion-spec.md",
+        "schema/subject-tokens.json",
+        "tools/validate-topic.mjs",
+        "tools/new-topic.mjs",
+        "templates/topic.template.json",
+        "topics/biology/03-cell-biology/mitochondria/mitochondria.topic.json",
+        "topics/biology/03-cell-biology/plant-cell/plant-cell.topic.json",
+        "reports/schema-report.json",
+        "reports/schema-debt.json",
+        ".github/workflows/schema-gate.yml"
+      ],
+      "workPackages": [
+        "P1.1",
+        "P1.2",
+        "P1.3",
+        "P1.4",
+        "P1.5",
+        "P1.6",
+        "P1.7"
+      ]
+    },
+    {
+      "id": "plan-02",
+      "num": "02",
+      "code": "SCENE",
+      "title": "3D Component Rebuild (35 Stubs → 35 Real Scenes)",
+      "file": "C:/Users/ASUS/Documents/Qoder/2026-11-08/4565238d/plans/PLAN-02-3d-component-rebuild.md",
+      "relativeFile": "plans/PLAN-02-3d-component-rebuild.md",
+      "window": "2026-11-23 → 2027-01-15 (32 engineer-days)",
+      "owner": "Technical Artist / Creative Developer",
+      "dependsOnText": "Plan 01 / P1.2 (LegendSpec), P1.4 (Label3DSpec, MotionSpec), Plan 06 / P6.5",
+      "blocksText": "Plan 04 / P4.4 (component dirs cannot be pruned until filled)",
+      "effortDays": 32,
+      "workPackageCount": 9,
+      "dependsOnPlans": [
+        "plan-01",
+        "plan-06"
+      ],
+      "blocksPlans": [
+        "plan-04"
+      ],
+      "acceptanceRef": "#6-acceptance-criteria",
+      "acceptanceCriteria": [
+        "npm run dev boots; app entry exists; 0 console errors on load",
+        "35 / 35 components render real geometry (no <div>-only returns remain)",
+        "Every scene: drag orbits with damping, wheel zooms, view follows pointer smoothly",
+        "Frame rate does **not** drop and effects do **not** disable during drag",
+        "dpr capped at 2; geometry/material registry reused; no per-frame shadow recompute",
+        "Every scene exposes ≥7 live controls in a permanently visible region",
+        "Every scene renders a legend whose entries resolve to real 3D label anchors",
+        "Every legend entry distinguishable without color (pattern + symbol + label)",
+        "Every scene renders its ConceptSpec panel",
+        "Reset / Randomize / Export all functional; export reflects current state",
+        "Resize 390→1920 verified; no clipping, overlap, unreachable controls",
+        "20 mount/unmount cycles: no duplicated rAF loops, no leaked listeners, no WebGL context growth",
+        "Pause / replay / scrub verified on every scene that has a MotionSpec",
+        "All scrollbars custom-styled from palette"
+      ],
+      "risks": [
+        {
+          "risk": "35 scenes at full quality overruns budget",
+          "likelihood": "High",
+          "impact": "High",
+          "mitigation": "P2.3 slice gates the rest; shell absorbs 80% of shared work"
+        },
+        {
+          "risk": "Mobile WebGL context loss",
+          "likelihood": "Medium",
+          "impact": "High",
+          "mitigation": "Cap instances on mobile; graceful 2D SVG fallback per scene, still labelled"
+        },
+        {
+          "risk": "Biology organelle geometry is hard to make readable",
+          "likelihood": "Medium",
+          "impact": "Medium",
+          "mitigation": "Cutaway/x-ray display mode is a shell-level control, available everywhere"
+        },
+        {
+          "risk": "Schema changes mid-build",
+          "likelihood": "Medium",
+          "impact": "High",
+          "mitigation": "Plan 01 freezes at v1.0.0 before P2.2 starts"
+        },
+        {
+          "risk": "Autoring 35 scenes serially stalls",
+          "likelihood": "Medium",
+          "impact": "Medium",
+          "mitigation": "P2.4–P2.8 are independent after P2.3; parallelize across owners"
+        }
+      ],
+      "artifacts": [
+        "package.json, vite.config.ts, tsconfig.json, index.html",
+        "src/main.tsx, src/App.tsx",
+        "src/lab/LabScene.tsx",
+        "src/lab/ControlRegion.tsx",
+        "src/lab/LegendOverlay.tsx",
+        "src/lab/LabelAnchors.tsx",
+        "src/lab/ConceptDrawer.tsx",
+        "src/lab/registry.ts            (shared geometry + material cache)",
+        "src/lab/perf.ts                (dpr cap, fps harness, disposal assertions)",
+        "src/lab/scrollbars.css",
+        "src/scenes/biology/*.tsx       (19)",
+        "src/scenes/chemistry/*.tsx     (5)",
+        "src/scenes/physics/*.tsx       (8)",
+        "src/scenes/mathematics/*.tsx   (3)",
+        "reports/scene-runtime-qa.json",
+        "reports/scene-perf.json"
+      ],
+      "workPackages": [
+        "P2.1",
+        "P2.2",
+        "P2.3",
+        "P2.4",
+        "P2.5",
+        "P2.6",
+        "P2.7",
+        "P2.8",
+        "P2.9"
+      ]
+    },
+    {
+      "id": "plan-03",
+      "num": "03",
+      "code": "COVER",
+      "title": "Coverage Gap Closure (70 Empty Pillar Slots)",
+      "file": "C:/Users/ASUS/Documents/Qoder/2026-11-08/4565238d/plans/PLAN-03-coverage-gap-closure.md",
+      "relativeFile": "plans/PLAN-03-coverage-gap-closure.md",
+      "window": "2026-11-18 → 2026-12-18 (23.5 engineer-days, 4 parallel tracks)",
+      "owner": "Subject Leads (Bio / Chem / Phys / Math)",
+      "dependsOnText": "Plan 01 / P1.1, P1.5, P1.6 (schema + validator + exemplars), Plan 06 / P6.2 (readable UTF-8 at correct paths)",
+      "blocksText": "Plan 04 / P4.4",
+      "effortDays": 23.5,
+      "workPackageCount": 8,
+      "dependsOnPlans": [
+        "plan-01",
+        "plan-06"
+      ],
+      "blocksPlans": [
+        "plan-04"
+      ],
+      "acceptanceRef": "#6-acceptance-criteria",
+      "acceptanceCriteria": [
+        "All 70 unit-level slots contain a schema-valid file",
+        "All 41 organelle-level gaps closed; 10/10 organelles have notes + legend + labels + motion + Q+A + PYQ",
+        "bio 09 animal-diversity complete across all five pillars",
+        "33 / 33 units complete across all five pillars",
+        "Every new topic passes validate-topic.mjs --strict",
+        "Every physics/math ConceptSpec.derivation non-null",
+        "Every new topic has a LegendSpec with ≥3 entries, each with a non-color channel",
+        "reports/coverage-matrix.json generated from filesystem, not hand-maintained",
+        "CI fails on coverage regression",
+        "Status text files generated from the report, not asserted by hand",
+        "reports/coverage-backlog-all-classes.json covers all 239 curriculum blocks, tranched, ranked by exam weight",
+        "Physics/Chemistry/Mathematics under-coverage vs. source .docx (8/26, 8/17, 3/7) added to tranche 1",
+        "Plan 05 exemption for not-started blocks derived from curriculum-map.json, shrinking as blocks are written"
+      ],
+      "risks": [
+        {
+          "risk": "PYQ sourcing — real past papers not in repo",
+          "likelihood": "High",
+          "impact": "High",
+          "mitigation": "Confirm NEB archive access in week 1; if unavailable, flag PYQ slots as sourced-pending rather than fabricating questions"
+        },
+        {
+          "risk": "4 parallel subject tracks drift in quality",
+          "likelihood": "Medium",
+          "impact": "High",
+          "mitigation": "P1.6 exemplars + --strict gate are the shared bar; weekly cross-review"
+        },
+        {
+          "risk": "Biology descriptive units strain formula thresholds",
+          "likelihood": "Medium",
+          "impact": "Low",
+          "mitigation": "Schema already conditional on subject (P1.1)"
+        },
+        {
+          "risk": "Organelle sub-hole underestimated at 41 gaps",
+          "likelihood": "Medium",
+          "impact": "Medium",
+          "mitigation": "P3.1 recounts from filesystem before effort is committed"
+        },
+        {
+          "risk": "Authors write hollow content to hit slot counts",
+          "likelihood": "High",
+          "impact": "High",
+          "mitigation": "Plan 05 detector runs in the same CI job; a filled-but-hollow slot fails"
+        }
+      ],
+      "artifacts": [
+        "reports/coverage-backlog.json",
+        "reports/coverage-backlog-all-classes.json",
+        "reports/coverage-matrix.json",
+        "reports/coverage-matrix.md",
+        "tools/coverage-report.mjs",
+        "topics/biology/**/*.topic.json      (11 units + 10 organelles)",
+        "topics/chemistry/**/*.topic.json    (7 units)",
+        "topics/physics/**/*.topic.json      (5 units)",
+        "topics/mathematics/**/*.topic.json  (2 units)",
+        ".github/workflows/coverage-gate.yml"
+      ],
+      "workPackages": [
+        "P3.1",
+        "P3.2",
+        "P3.3",
+        "P3.4",
+        "P3.5",
+        "P3.6",
+        "P3.7",
+        "P3.8"
+      ]
+    },
+    {
+      "id": "plan-04",
+      "num": "04",
+      "code": "HYGIENE",
+      "title": "Directory & Pipeline Hygiene (1,054 Empty Directories)",
+      "file": "C:/Users/ASUS/Documents/Qoder/2026-11-08/4565238d/plans/PLAN-04-directory-pipeline-hygiene.md",
+      "relativeFile": "plans/PLAN-04-directory-pipeline-hygiene.md",
+      "window": "2027-01-11 → 2027-01-22 (6 engineer-days)",
+      "owner": "Build / Release Engineer",
+      "dependsOnText": "Plan 03 / P3.7 (coverage report), Plan 02 / P2.9 (scene QA), Plan 05 / P5.7 (quarantine hand-off), Plan 06 / P6.4 (status correction)",
+      "blocksText": "nothing — terminal cleanup",
+      "effortDays": 6,
+      "workPackageCount": 6,
+      "dependsOnPlans": [
+        "plan-02",
+        "plan-03",
+        "plan-05",
+        "plan-06"
+      ],
+      "blocksPlans": [],
+      "acceptanceRef": "#5-acceptance-criteria",
+      "acceptanceCriteria": [
+        "find topics components motion conceptual pyqs pipeline -type d -empty -print returns **0** results (library roots only; excludes Git internals such as .git/refs/tags)",
+        "992 empty cycle directories removed; 6 real definitions preserved verbatim in the ledger",
+        "121 done.txt + 140 topic.txt marker files retired into cycles.jsonl",
+        "No ledger row claims complete without existing artifacts",
+        "All 62 content dirs either filled (verified against coverage report) or pruned with a logged reason",
+        "reports/prune-log.jsonl records every removal with path, reason, report version, timestamp",
+        "Zero .gitkeep files in the library",
+        "dir-lint green in CI; fails on a deliberately introduced empty dir (gate proven)",
+        "All status files carry the GENERATED header and match measured state",
+        "No content authored by Plan 03 or Plan 02 was destroyed by pruning"
+      ],
+      "risks": [
+        {
+          "risk": "Pruning destroys in-progress work",
+          "likelihood": "Medium",
+          "impact": "**Critical**",
+          "mitigation": "P4.1 takes a full tree snapshot first; P4.4 only acts on coverage-report verdicts; prune log enables exact reversal"
+        },
+        {
+          "risk": "Runs before Plan 03 finishes and removes target dirs",
+          "likelihood": "Medium",
+          "impact": "High",
+          "mitigation": "Hard dependency on P3.7; plan is terminal in the sequence"
+        },
+        {
+          "risk": "Cycle history has sentimental/audit value",
+          "likelihood": "Low",
+          "impact": "Low",
+          "mitigation": "Ledger preserves every cycle number and status, including never-started ranges"
+        },
+        {
+          "risk": "Uncommitted work in the tree at prune time",
+          "likelihood": "Medium",
+          "impact": "Critical",
+          "mitigation": "git status checked before any removal; anything uncommitted is stashed with a unique tag and restored by apply, never pop"
+        },
+        {
+          "risk": ".gitkeep ban breaks a legitimate future need",
+          "likelihood": "Low",
+          "impact": "Low",
+          "mitigation": "Policy is explicit and lint-enforced; exceptions require a recorded descope row"
+        }
+      ],
+      "artifacts": [
+        "pipeline/cycles.jsonl",
+        "tools/ledger-lint.mjs",
+        "tools/dir-lint.mjs",
+        "tools/regenerate-status.mjs",
+        "reports/tree-snapshot-pre-hygiene.json",
+        "reports/prune-log.jsonl",
+        "reports/dir-lint-report.json",
+        ".github/workflows/dir-lint.yml"
+      ],
+      "workPackages": [
+        "P4.1",
+        "P4.2",
+        "P4.3",
+        "P4.4",
+        "P4.5",
+        "P4.6"
+      ]
+    },
+    {
+      "id": "plan-05",
+      "num": "05",
+      "code": "SUBSTANCE",
+      "title": "Placeholder Content Eradication (339 Hollow Files)",
+      "file": "C:/Users/ASUS/Documents/Qoder/2026-11-08/4565238d/plans/PLAN-05-placeholder-eradication.md",
+      "relativeFile": "plans/PLAN-05-placeholder-eradication.md",
+      "window": "2026-11-18 → 2026-12-18 (19 engineer-days, parallel with Plan 03)",
+      "owner": "Subject Leads + QA",
+      "dependsOnText": "Plan 01 / P1.1, P1.5, Plan 06 / P6.2",
+      "blocksText": "Plan 04 / P4.4",
+      "effortDays": 19,
+      "workPackageCount": 8,
+      "dependsOnPlans": [
+        "plan-01",
+        "plan-06"
+      ],
+      "blocksPlans": [
+        "plan-04"
+      ],
+      "acceptanceRef": "#6-acceptance-criteria",
+      "acceptanceCriteria": [
+        "hollow-detector.mjs --all --strict exits 0",
+        "Zero non-exempt files under their pillar threshold",
+        "Exemption derived at run time from curriculum-map.json, applied only to 0-byte files in not-started blocks; never to existing-hollow",
+        "Report emits exemptNotStarted separately from failed; a not-started block with non-empty sub-threshold notes fails the gate",
+        "Zero files matching a completion claim without the matching structure",
+        "All 12 PYQ files carry ≥5 distinct years with real question text and mark-allocated solutions",
+        "No PYQ entry attributes an invented question to a real year (sourced-pending used instead where archive access failed)",
+        "All 12 conceptual files carry 5 questions with answers ≥150 chars containing worked steps",
+        "All 30 motion specs carry ≥6 timed events with valid target/property/easing",
+        "All 33 notes files meet 600 words **and** the structural requirements",
+        "261 pipeline placeholders quarantined with paths preserved, handed to Plan 04",
+        "Detector proven to fail on the original PYQ solved. specimen (regression fixture kept)",
+        "CI runs the detector in the same job as the schema validator"
+      ],
+      "risks": [
+        {
+          "risk": "NEB past-paper archive inaccessible",
+          "likelihood": "**High**",
+          "impact": "**Critical**",
+          "mitigation": "Confirm in week 1; use sourced-pending status; never fabricate; escalate to program owner for a sourcing decision"
+        },
+        {
+          "risk": "Authors pad word count to pass the gate",
+          "likelihood": "High",
+          "impact": "High",
+          "mitigation": "Structural checks are independent of length; claim-regex catches padded assertions"
+        },
+        {
+          "risk": "33 notes rewrites at 600 words each is underestimated",
+          "likelihood": "Medium",
+          "impact": "Medium",
+          "mitigation": "Calibrate effort on 3 exemplars in P5.1 before committing the track"
+        },
+        {
+          "risk": "Motion specs written without a renderer to test against",
+          "likelihood": "Medium",
+          "impact": "Medium",
+          "mitigation": "Sequence P5.6 ahead of the matching P2 scene; validate against MotionSpec schema, then against the real scene in P2.9"
+        },
+        {
+          "risk": "Quarantine move breaks a path something references",
+          "likelihood": "Low",
+          "impact": "Medium",
+          "mitigation": "refs cross-check in the validator runs after the move"
+        },
+        {
+          "risk": "Detector false-positives on legitimate prose using \"complete\"",
+          "likelihood": "Medium",
+          "impact": "Low",
+          "mitigation": "Claim regex only fires when the structural requirement is *also* unmet"
+        }
+      ],
+      "artifacts": [
+        "schema/substance-thresholds.json",
+        "tools/hollow-detector.mjs",
+        "tools/fixtures/hollow-pyq.txt          (regression specimen: \"PYQ solved.\")",
+        "reports/hollow-report.json",
+        "reports/hollow-report.md",
+        "pyqs/**/*.topic.json                   (12 rewritten)",
+        "conceptual/**/*.topic.json             (12 rewritten)",
+        "motion/**/*.motion.json                (30 rewritten)",
+        "topics/**/notes                        (33 rewritten)",
+        "pipeline/_quarantine/**                (261 preserved)",
+        ".github/workflows/substance-gate.yml"
+      ],
+      "workPackages": [
+        "P5.1",
+        "P5.2",
+        "P5.3",
+        "P5.4",
+        "P5.5",
+        "P5.6",
+        "P5.7",
+        "P5.8"
+      ]
+    },
+    {
+      "id": "plan-06",
+      "num": "06",
+      "code": "FOUNDATION",
+      "title": "Structural & Encoding Repair",
+      "file": "C:/Users/ASUS/Documents/Qoder/2026-11-08/4565238d/plans/PLAN-06-structural-encoding-repair.md",
+      "relativeFile": "plans/PLAN-06-structural-encoding-repair.md",
+      "window": "2026-11-09 → 2026-11-13 (5 engineer-days)",
+      "owner": "Build Engineer",
+      "dependsOnText": "nothing",
+      "blocksText": "Plan 01, Plan 02, Plan 03, Plan 04, Plan 05 (all of them)",
+      "effortDays": 5,
+      "workPackageCount": 6,
+      "dependsOnPlans": [],
+      "blocksPlans": [
+        "plan-01",
+        "plan-02",
+        "plan-03",
+        "plan-04",
+        "plan-05"
+      ],
+      "acceptanceRef": "#5-acceptance-criteria",
+      "acceptanceCriteria": [
+        "conceptual/physics-chem-math/physics-01…08 are eight siblings at depth 1, matching pyqs/",
+        "Zero files with a UTF-16 BOM; all text readable as UTF-8 by standard tools",
+        "Transcode verified lossless per file; reports/transcode-report.json complete",
+        "_encoding_backup/ retained until P6.6 passes, then removed by a logged step",
+        "cat and ripgrep both work on the previously-binary files",
+        "All 13 mojibake classes in old-lab-page-reference.tsx recovered; rₙ = r₀n², θ, λ, ω, ε, ν, CO₂, ✓ render correctly",
+        "Unrecoverable characters reported, not guessed",
+        "All five false status claims replaced with measured, dated values",
+        "npm install && npm run dev boots and renders the unit index",
+        "npm run build succeeds",
+        "integrity-check.mjs green; proven to fail on a deliberately re-introduced UTF-16 file"
+      ],
+      "risks": [
+        {
+          "risk": "Transcode loses data on a mixed-encoding file",
+          "likelihood": "Low",
+          "impact": "**Critical**",
+          "mitigation": "Byte-level backup before every write; per-file round-trip assertion; backup retained until CI green"
+        },
+        {
+          "risk": "Mojibake reversal is ambiguous for some characters",
+          "likelihood": "Medium",
+          "impact": "Medium",
+          "mitigation": "Report unrecoverable chars for human decision; never guess a Greek letter or subscript"
+        },
+        {
+          "risk": "Path move breaks an undiscovered reference",
+          "likelihood": "Low",
+          "impact": "Medium",
+          "mitigation": "All 8 dirs are empty; grep for the old path string before moving (post-transcode, so grep works)"
+        },
+        {
+          "risk": "Bootstrap dependency choices conflict with Plan 02",
+          "likelihood": "Medium",
+          "impact": "High",
+          "mitigation": "P6.5 and P2.1 coordinate the dependency set once; P6.5 creates the minimum, P2.1 extends"
+        },
+        {
+          "risk": "Correcting status files is mistaken for regressing progress",
+          "likelihood": "Low",
+          "impact": "Low",
+          "mitigation": "Annotate every corrected number with measurement date + source; the counts were always this low"
+        },
+        {
+          "risk": "Working tree has uncommitted work at transcode time",
+          "likelihood": "Medium",
+          "impact": "High",
+          "mitigation": "git status before any write; stash with a unique tag and restore via apply, never pop"
+        }
+      ],
+      "artifacts": [
+        "tools/transcode-utf8.mjs",
+        "tools/fix-mojibake.mjs",
+        "tools/integrity-check.mjs",
+        "reports/transcode-report.json",
+        "reports/mojibake-report.json",
+        "reports/integrity-report.json",
+        "_encoding_backup/**                  (temporary, removed after P6.6)",
+        "package.json, vite.config.ts, tsconfig.json, index.html",
+        "src/main.tsx, src/App.tsx, src/styles/tokens.css",
+        ".github/workflows/integrity-gate.yml"
+      ],
+      "workPackages": [
+        "P6.1",
+        "P6.2",
+        "P6.3",
+        "P6.4",
+        "P6.5",
+        "P6.6"
+      ]
+    }
+  ],
+  "workPackages": [
+    {
+      "id": "P1.1",
+      "planId": "plan-01",
+      "title": "Author topic.schema.json (JSON Schema draft-07)",
+      "effortDays": 1,
+      "priority": "critical",
+      "dependsOn": [
+        "P6.2"
+      ],
+      "status": "complete",
+      "completedAt": "2026-11-08T16:50:51.561Z",
+      "evidence": "schema/topic.schema.json v1.0.0 (draft-07): 15 required fields, all $defs (WorkedExample, Formula, DiagramRef, LegendSpec, ConceptSpec, Label3DSpec, MotionSpec); conditional formulas rule verified with ajv (biology 0 allowed, physics/chem/math minItems 1); swatch is a closed enum from the P1.2 registry; unit pattern enforced. ajv added as devDependency."
+    },
+    {
+      "id": "P1.2",
+      "planId": "plan-01",
+      "title": "Define LegendSpec contract + color-token registry",
+      "effortDays": 1,
+      "priority": "critical",
+      "dependsOn": [
+        "P1.1"
+      ],
+      "status": "complete",
+      "completedAt": "2026-11-08T16:53:11.640Z",
+      "evidence": "schema/legend-spec.md contract + schema/subject-tokens.json registry (8 tokens); swatch enum in topic.schema.json verified identical to registry; registry hex verified present in src/styles/tokens.css"
+    },
+    {
+      "id": "P1.3",
+      "planId": "plan-01",
+      "title": "Define ConceptSpec contract",
+      "effortDays": 0.5,
+      "priority": "high",
+      "dependsOn": [
+        "P1.1"
+      ],
+      "status": "complete",
+      "completedAt": "2026-11-08T16:53:11.641Z",
+      "evidence": "schema/concept-spec.md: ConceptSpec field rules (definition >=80, intuition >=200, derivation required for physics/math, misconceptions minItems 2, realWorldAnchor >=120, prerequisites unit-id pattern, examWeight enum)"
+    },
+    {
+      "id": "P1.4",
+      "planId": "plan-01",
+      "title": "Define Label3DSpec and MotionSpec contracts",
+      "effortDays": 1,
+      "priority": "high",
+      "dependsOn": [
+        "P1.1"
+      ],
+      "status": "complete",
+      "completedAt": "2026-11-08T16:53:11.641Z",
+      "evidence": "schema/label-motion-spec.md: Label3DSpec (legendId resolution = the principal cross-field check, 3-number anchor, occlusion, zoom window) + MotionSpec (ms timeline, speedRange [0.1,4] matching shell slider, pausePoints, narration)"
+    },
+    {
+      "id": "P1.5",
+      "planId": "plan-01",
+      "title": "Build validate-topic.mjs CLI + authoring template",
+      "effortDays": 1.5,
+      "priority": "critical",
+      "dependsOn": [
+        "P1.1",
+        "P1.2",
+        "P1.3",
+        "P1.4"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": "P1.6",
+      "planId": "plan-01",
+      "title": "Migrate 3 substantive files to schema as exemplars",
+      "effortDays": 1,
+      "priority": "high",
+      "dependsOn": [
+        "P1.5"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": "P1.7",
+      "planId": "plan-01",
+      "title": "Wire CI gate: block merge on schema failure",
+      "effortDays": 1,
+      "priority": "critical",
+      "dependsOn": [
+        "P1.5"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": "P2.1",
+      "planId": "plan-02",
+      "title": "Bootstrap runnable app (Vite/React/R3F) + perf harness",
+      "effortDays": 3,
+      "priority": "critical",
+      "dependsOn": [
+        "P6.2"
+      ],
+      "status": "complete",
+      "completedAt": "2026-11-08T16:52:39.770Z",
+      "evidence": "App foundation from P6.5 extended with src/perf/PerfHarness.tsx (#perf route): 20 remount cycles per scene sampling WebGL context count (patched canvas.getContext), listener additions, and frame intervals; on-screen verdict JSON (context growth / leaked listeners / duplicate rAF detection) for P2.9 runtime QA. npm run build green (PerfHarness chunk 9.4 kB); harness module verified served by dev server (then stopped). LIMITATION: fps numbers require a real browser — measurement itself is P2.9 runtime QA; harness is the instrument."
+    },
+    {
+      "id": "P2.2",
+      "planId": "plan-02",
+      "title": "Shared <LabScene> shell: control region, legend, labels, concept drawer",
+      "effortDays": 4,
+      "priority": "critical",
+      "dependsOn": [
+        "P1.2",
+        "P1.4",
+        "P2.1"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": "P2.3",
+      "planId": "plan-02",
+      "title": "Vertical slice: Mitochondria (full quality, proves the shell)",
+      "effortDays": 2.5,
+      "priority": "critical",
+      "dependsOn": [
+        "P2.2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P2.4",
+      "planId": "plan-02",
+      "title": "Biology wave 1 — remaining 9 organelles",
+      "effortDays": 5,
+      "priority": "high",
+      "dependsOn": [
+        "P2.3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P2.5",
+      "planId": "plan-02",
+      "title": "Biology wave 2 — 9 systems/diversity scenes",
+      "effortDays": 6,
+      "priority": "high",
+      "dependsOn": [
+        "P2.3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P2.6",
+      "planId": "plan-02",
+      "title": "Chemistry — 5 scenes",
+      "effortDays": 3.5,
+      "priority": "high",
+      "dependsOn": [
+        "P2.3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P2.7",
+      "planId": "plan-02",
+      "title": "Physics — 8 scenes",
+      "effortDays": 5,
+      "priority": "critical",
+      "dependsOn": [
+        "P2.3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P2.8",
+      "planId": "plan-02",
+      "title": "Mathematics — 3 scenes",
+      "effortDays": 2,
+      "priority": "medium",
+      "dependsOn": [
+        "P2.3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P2.9",
+      "planId": "plan-02",
+      "title": "Runtime QA: resize, replay, remount, orbit fluidity, console clean",
+      "effortDays": 1,
+      "priority": "critical",
+      "dependsOn": [
+        "P2.4",
+        "P2.5",
+        "P2.6",
+        "P2.7",
+        "P2.8"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P3.1",
+      "planId": "plan-03",
+      "title": "Rank all 111 gaps; publish coverage-backlog.json",
+      "effortDays": 1,
+      "priority": "critical",
+      "dependsOn": [
+        "P1.1"
+      ],
+      "status": "complete",
+      "completedAt": "2026-11-08T16:59:06.631Z",
+      "evidence": "reports/coverage-backlog.json via tools/build-coverage-backlog.mjs: filesystem recount of 165+50 slots; presence-only complete units match plan exactly; planDeltas recorded (71 unit no-file gaps vs 70; 3D claim false for 9 units; organelle sub-hole 48 not 41); 208 ranked gaps, 43 PYQ sourced-pending"
+    },
+    {
+      "id": "P3.2",
+      "planId": "plan-03",
+      "title": "Biology unit gaps — 22 slots across 11 units",
+      "effortDays": 6,
+      "priority": "critical",
+      "dependsOn": [
+        "P3.1",
+        "P1.6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P3.3",
+      "planId": "plan-03",
+      "title": "Bio 03 organelle sub-hole — 41 gaps, 10 organelles",
+      "effortDays": 5,
+      "priority": "critical",
+      "dependsOn": [
+        "P3.1",
+        "P1.6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P3.4",
+      "planId": "plan-03",
+      "title": "Chemistry unit gaps — 17 slots across 7 units",
+      "effortDays": 4,
+      "priority": "high",
+      "dependsOn": [
+        "P3.1",
+        "P1.6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P3.5",
+      "planId": "plan-03",
+      "title": "Physics unit gaps — 14 slots across 5 units",
+      "effortDays": 4,
+      "priority": "critical",
+      "dependsOn": [
+        "P3.1",
+        "P1.6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P3.6",
+      "planId": "plan-03",
+      "title": "Mathematics unit gaps — 4 slots across 2 units",
+      "effortDays": 1,
+      "priority": "medium",
+      "dependsOn": [
+        "P3.1",
+        "P1.6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P3.7",
+      "planId": "plan-03",
+      "title": "Filesystem-derived coverage report + CI regression gate",
+      "effortDays": 1,
+      "priority": "critical",
+      "dependsOn": [
+        "P3.2",
+        "P3.3",
+        "P3.4",
+        "P3.5",
+        "P3.6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P3.8",
+      "planId": "plan-03",
+      "title": "Re-scope backlog for the 239-block all-class curriculum",
+      "effortDays": 1.5,
+      "priority": "high",
+      "dependsOn": [
+        "P3.1"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": "P4.1",
+      "planId": "plan-04",
+      "title": "Ratify fill-or-prune policy; snapshot current tree",
+      "effortDays": 0.5,
+      "priority": "high",
+      "dependsOn": [],
+      "status": "complete",
+      "completedAt": "2026-11-08T16:42:30.442Z",
+      "evidence": "reports/tree-snapshot-pre-hygiene.json (872 files, 1054 empty dirs, matches INDEX §8) + FILL-OR-PRUNE-POLICY.md ratified"
+    },
+    {
+      "id": "P4.2",
+      "planId": "plan-04",
+      "title": "Collapse 992 empty cycle dirs into cycles.jsonl ledger",
+      "effortDays": 1.5,
+      "priority": "critical",
+      "dependsOn": [
+        "P4.1",
+        "P5.7"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P4.3",
+      "planId": "plan-04",
+      "title": "Retire 261 Active/Created marker files into the ledger",
+      "effortDays": 1,
+      "priority": "critical",
+      "dependsOn": [
+        "P4.2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P4.4",
+      "planId": "plan-04",
+      "title": "Fill-or-prune the 62 real content dirs",
+      "effortDays": 1.5,
+      "priority": "high",
+      "dependsOn": [
+        "P3.7",
+        "P2.9"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P4.5",
+      "planId": "plan-04",
+      "title": "dir-lint CI gate + .gitkeep policy",
+      "effortDays": 1,
+      "priority": "critical",
+      "dependsOn": [
+        "P4.2",
+        "P4.3",
+        "P4.4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P4.6",
+      "planId": "plan-04",
+      "title": "Regenerate all status files from measured state",
+      "effortDays": 0.5,
+      "priority": "high",
+      "dependsOn": [
+        "P4.5",
+        "P6.4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P5.1",
+      "planId": "plan-05",
+      "title": "Ratify substance thresholds; calibrate on 3 exemplars",
+      "effortDays": 1,
+      "priority": "critical",
+      "dependsOn": [
+        "P1.6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P5.2",
+      "planId": "plan-05",
+      "title": "Build hollow-detector.mjs (length + structure + claim regex)",
+      "effortDays": 2,
+      "priority": "critical",
+      "dependsOn": [
+        "P5.1",
+        "P1.5"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P5.3",
+      "planId": "plan-05",
+      "title": "Rewrite 12 PYQ files — real questions, solutions, marking scheme",
+      "effortDays": 4,
+      "priority": "critical",
+      "dependsOn": [
+        "P5.1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P5.4",
+      "planId": "plan-05",
+      "title": "Rewrite 12 conceptual Q+A files — 5 worked answers each",
+      "effortDays": 3.5,
+      "priority": "critical",
+      "dependsOn": [
+        "P5.1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P5.5",
+      "planId": "plan-05",
+      "title": "Rewrite 33 unit notes files to threshold",
+      "effortDays": 5,
+      "priority": "high",
+      "dependsOn": [
+        "P5.1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P5.6",
+      "planId": "plan-05",
+      "title": "Rewrite 30 motion specs with real timelines",
+      "effortDays": 2,
+      "priority": "high",
+      "dependsOn": [
+        "P1.4",
+        "P5.1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P5.7",
+      "planId": "plan-05",
+      "title": "Quarantine 261 pipeline placeholders; hand off to Plan 04",
+      "effortDays": 0.5,
+      "priority": "medium",
+      "dependsOn": [
+        "P5.2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P5.8",
+      "planId": "plan-05",
+      "title": "Re-audit + CI gate; reconcile status claims with measurement",
+      "effortDays": 1,
+      "priority": "critical",
+      "dependsOn": [
+        "P5.3",
+        "P5.4",
+        "P5.5",
+        "P5.6",
+        "P5.7"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "P6.1",
+      "planId": "plan-06",
+      "title": "Flatten the malformed physics-01…08 nested path",
+      "effortDays": 0.5,
+      "priority": "critical",
+      "dependsOn": [],
+      "status": "complete",
+      "completedAt": "2026-11-08T16:43:01.928Z",
+      "evidence": "conceptual/physics-chem-math/physics-01..08 now eight siblings matching pyqs/physics-chem-math/; chain was 8 empty levels (0 files); whole-tree depth>6 scan returns 0; only reference to the old path is the historical P4.1 snapshot"
+    },
+    {
+      "id": "P6.2",
+      "planId": "plan-06",
+      "title": "Transcode all UTF-16LE files to UTF-8, verify losslessly",
+      "effortDays": 1,
+      "priority": "critical",
+      "dependsOn": [],
+      "status": "complete",
+      "completedAt": "2026-11-08T16:42:30.442Z",
+      "evidence": "reports/transcode-report.json: 389 files (129 utf16le + 260 utf8-bom) transcoded, round-trip verified 389/389, 0 failures; 0 UTF-16 BOMs remain; cat+rg verified on mitochondria/structure.txt; bytes backed up in _encoding_backup/"
+    },
+    {
+      "id": "P6.3",
+      "planId": "plan-06",
+      "title": "Reverse mojibake in old-lab-page-reference.tsx",
+      "effortDays": 0.5,
+      "priority": "high",
+      "dependsOn": [
+        "P6.2"
+      ],
+      "status": "complete",
+      "completedAt": "2026-11-08T16:45:29.275Z",
+      "evidence": "reports/mojibake-report.json: 34 clean CP437 round-trips, 0 literal fallbacks, 0 unrecovered, 0 corrupted forms remaining, simulation-tree scan clean. VARIANCE: Bohr radius recovered as rₙ = r₁n² (bytes E2 82 81 = U+2081), not the §2.3-predicted ₀ — the source genuinely used r₁ (first-orbit form); overwriting would violate the no-guessing rule. Backup at old-lab-page-reference.tsx.bak for human diff review."
+    },
+    {
+      "id": "P6.4",
+      "planId": "plan-06",
+      "title": "Correct false status claims to measured values",
+      "effortDays": 0.5,
+      "priority": "critical",
+      "dependsOn": [
+        "P6.2"
+      ],
+      "status": "complete",
+      "completedAt": "2026-11-08T16:43:37.904Z",
+      "evidence": "All five false claims replaced with the measured 2026-11-08 values, each annotated with date+source; grep for the old claim strings returns nothing; P4.6 will convert these to generated artifacts"
+    },
+    {
+      "id": "P6.5",
+      "planId": "plan-06",
+      "title": "Bootstrap runnable app entry + dev server",
+      "effortDays": 1.5,
+      "priority": "critical",
+      "dependsOn": [
+        "P6.2"
+      ],
+      "status": "complete",
+      "completedAt": "2026-11-08T16:48:17.699Z",
+      "evidence": "package.json (Vite+React18+TS+three+R3F+drei), vite.config.ts, tsconfig.json, index.html, src/main.tsx, src/App.tsx (unit index, 35 scenes lazy-loaded via import.meta.glob), src/styles/tokens.css (P1.2 subject registry). npm install OK; npm run build succeeds (35 chunks + 150kB index); npm run dev boots and serves the index (verified over HTTP, then stopped)."
+    },
+    {
+      "id": "P6.6",
+      "planId": "plan-06",
+      "title": "Integrity CI: encoding, path depth, status reconciliation",
+      "effortDays": 1,
+      "priority": "critical",
+      "dependsOn": [
+        "P6.1",
+        "P6.2",
+        "P6.3",
+        "P6.4",
+        "P6.5"
+      ],
+      "status": "complete",
+      "completedAt": "2026-11-08T16:57:02.375Z",
+      "evidence": "tools/integrity-check.mjs (4 invariants + reconciliation), .github/workflows/integrity-gate.yml, npm run integrity; failure path proven (UTF-16 probe exit 1 -> removed exit 0); rules.txt reconciled to measured 1061 empty dirs / 16-356 substantive; fix-mojibake.mjs source ASCII-escaped"
+    }
+  ],
+  "executionOrder": [
+    "P6.2",
+    "P1.1",
+    "P1.2",
+    "P1.3",
+    "P1.4",
+    "P1.5",
+    "P1.6",
+    "P1.7",
+    "P2.1",
+    "P2.2",
+    "P2.3",
+    "P2.4",
+    "P2.5",
+    "P2.6",
+    "P2.7",
+    "P2.8",
+    "P2.9",
+    "P3.1",
+    "P3.8",
+    "P3.2",
+    "P3.3",
+    "P3.4",
+    "P3.5",
+    "P3.6",
+    "P3.7",
+    "P4.1",
+    "P5.1",
+    "P5.2",
+    "P5.7",
+    "P4.2",
+    "P4.3",
+    "P4.4",
+    "P4.5",
+    "P6.4",
+    "P4.6",
+    "P5.3",
+    "P5.4",
+    "P5.5",
+    "P5.6",
+    "P5.8",
+    "P6.1",
+    "P6.3",
+    "P6.5",
+    "P6.6"
+  ],
+  "waves": [
+    {
+      "wave": 0,
+      "workPackages": [
+        "P4.1",
+        "P6.1",
+        "P6.2"
+      ],
+      "count": 3,
+      "effortDays": 2
+    },
+    {
+      "wave": 1,
+      "workPackages": [
+        "P1.1",
+        "P2.1",
+        "P6.3",
+        "P6.4",
+        "P6.5"
+      ],
+      "count": 5,
+      "effortDays": 6.5
+    },
+    {
+      "wave": 2,
+      "workPackages": [
+        "P1.2",
+        "P1.3",
+        "P1.4",
+        "P3.1",
+        "P6.6"
+      ],
+      "count": 5,
+      "effortDays": 4.5
+    },
+    {
+      "wave": 3,
+      "workPackages": [
+        "P1.5",
+        "P2.2",
+        "P3.8"
+      ],
+      "count": 3,
+      "effortDays": 7
+    },
+    {
+      "wave": 4,
+      "workPackages": [
+        "P1.6",
+        "P1.7",
+        "P2.3"
+      ],
+      "count": 3,
+      "effortDays": 4.5
+    },
+    {
+      "wave": 5,
+      "workPackages": [
+        "P2.4",
+        "P2.5",
+        "P2.6",
+        "P2.7",
+        "P2.8",
+        "P3.2",
+        "P3.3",
+        "P3.4",
+        "P3.5",
+        "P3.6",
+        "P5.1"
+      ],
+      "count": 11,
+      "effortDays": 42.5
+    },
+    {
+      "wave": 6,
+      "workPackages": [
+        "P2.9",
+        "P3.7",
+        "P5.2",
+        "P5.3",
+        "P5.4",
+        "P5.5",
+        "P5.6"
+      ],
+      "count": 7,
+      "effortDays": 18.5
+    },
+    {
+      "wave": 7,
+      "workPackages": [
+        "P4.4",
+        "P5.7"
+      ],
+      "count": 2,
+      "effortDays": 2
+    },
+    {
+      "wave": 8,
+      "workPackages": [
+        "P4.2",
+        "P5.8"
+      ],
+      "count": 2,
+      "effortDays": 2.5
+    },
+    {
+      "wave": 9,
+      "workPackages": [
+        "P4.3"
+      ],
+      "count": 1,
+      "effortDays": 1
+    },
+    {
+      "wave": 10,
+      "workPackages": [
+        "P4.5"
+      ],
+      "count": 1,
+      "effortDays": 1
+    },
+    {
+      "wave": 11,
+      "workPackages": [
+        "P4.6"
+      ],
+      "count": 1,
+      "effortDays": 0.5
+    }
+  ]
+}

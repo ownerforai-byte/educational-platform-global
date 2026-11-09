@@ -10,6 +10,9 @@ function statusFor(path: string, headers: Record<string, string>) {
   return proxy(new NextRequest(`https://ravikisan.vercel.app${path}`, { headers })).status;
 }
 
+/** A browser's top-level navigation: what the page budget is meant to bound. */
+const DOCUMENT = { accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" };
+
 function requestStatuses(count: number, path: string, headers: Record<string, string>) {
   return Array.from({ length: count }, () => statusFor(path, headers));
 }
@@ -57,10 +60,30 @@ describe("proxy security headers", () => {
 
 describe("proxy per-IP request budget", () => {
   it("caps ordinary page requests", () => {
-    const codes = requestStatuses(121, "/home", { "x-real-ip": "203.0.113.11" });
+    const codes = requestStatuses(121, "/home", {
+      ...DOCUMENT,
+      "x-real-ip": "203.0.113.11",
+    });
 
     expect(codes.slice(0, 120).every((s) => s === 200)).toBe(true);
     expect(codes[120]).toBe(429);
+  });
+
+  it("does not spend the page budget on assets, JSON or API calls", () => {
+    // A single visit also pulls the app shell (theme bootstrap, manifest,
+    // sw-precache.json), the service worker's precache routes and a few API
+    // calls. Charging all of those to the document budget answered real
+    // navigations with plain-text "Too many requests" (2026-11 E2E smoke:
+    // no login form, no error-page markup).
+    const ip = { "x-real-ip": "203.0.113.15" };
+
+    expect(requestStatuses(200, "/api/auth/me", ip).every((s) => s === 200)).toBe(true);
+    expect(requestStatuses(200, "/sw-precache.json", ip).every((s) => s === 200)).toBe(true);
+    expect(requestStatuses(200, "/theme-bootstrap.js", ip).every((s) => s === 200)).toBe(true);
+
+    // The document budget is still intact after that traffic.
+    const pages = requestStatuses(120, "/home", { ...DOCUMENT, ...ip });
+    expect(pages.every((s) => s === 200)).toBe(true);
   });
 
   it("does not spend the page budget on Next link prefetches", () => {
@@ -74,7 +97,10 @@ describe("proxy per-IP request budget", () => {
       "/notes?_rsc=oTrcTB0iWaQCUmcy",
       { "x-real-ip": "203.0.113.12" },
     );
-    const visits = requestStatuses(120, "/notes", { "x-real-ip": "203.0.113.12" });
+    const visits = requestStatuses(120, "/notes", {
+      ...DOCUMENT,
+      "x-real-ip": "203.0.113.12",
+    });
 
     expect(prefetches.every((s) => s === 200)).toBe(true);
     expect(visits.every((s) => s === 200)).toBe(true);

@@ -14,8 +14,13 @@ export function resolveAiStatus({ browserOnline, serverOnline }: AiStatusInput):
   return serverOnline ? "online" : "offline";
 }
 
+/**
+ * The backend probe reports *configuration* (a wired-up provider), not live
+ * provider health. Label it that way so a stale/invalid key never tells a
+ * student that Veer is confirmed reachable (CodeRabbit, PR #6).
+ */
 export function aiStatusLabel(status: AiStatus, browserOnline: boolean): string {
-  if (status === "online") return "Veer is online";
-  if (status === "checking") return "Checking Veer…";
-  return browserOnline ? "Veer is unavailable right now" : "You're offline";
+  if (status === "online") return "AI is configured";
+  if (status === "checking") return "Checking AI setup…";
+  return browserOnline ? "AI is not configured" : "You're offline";
 }

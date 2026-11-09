@@ -11,10 +11,11 @@ import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/access-level";
+import { rememberPendingSignup } from "../pending-signup-identity";
 
 export function LoginForm() {
   const router = useRouter();
-  const { user, isLoading, refresh } = useAuth();
+  const { user, refresh } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -38,24 +39,22 @@ export function LoginForm() {
     } else if (result.code === "PENDING_APPROVAL" && result.statusToken) {
       // Waiting for approval → MUST land on the pending-status screen, not
       // stranded on this form with an error the student cannot act on.
-      try {
-        localStorage.setItem("neb_signup_status_token", result.statusToken);
-      } catch {
-        /* storage blocked — /welcome falls back to its missing-token state */
-      }
+      // Persist the hardcoded identity so the status screen survives refresh.
+      rememberPendingSignup(result.statusToken);
       router.push("/welcome");
     } else {
       setError(result.error);
     }
   };
 
-  if (isLoading || user) {
-    return (
-      <VerifyingStatus
-        compact
-        label={user ? "Opening your plan welcome" : "Checking your session"}
-      />
-    );
+  // A slow or hanging /api/auth/me (Render cold start, offline, proxy timeout)
+  // used to hide this ENTIRE form behind "Checking your session" — which also
+  // hid "Continue with Google", making OAuth look blocked even though Supabase
+  // was healthy. Render the form immediately; only a KNOWN signed-in session
+  // shows the redirect placeholder. LoggedInRedirect still bounces that user
+  // once the session resolves.
+  if (user) {
+    return <VerifyingStatus compact label="Opening your plan welcome" />;
   }
 
   return (

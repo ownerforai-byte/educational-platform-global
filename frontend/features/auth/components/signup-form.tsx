@@ -11,13 +11,14 @@ import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/access-level";
+import { rememberPendingSignup } from "../pending-signup-identity";
 
 const PERKS = ["Save progress across subjects", "Bookmark notes & labs", "Veer quiz credits"];
 
 export function SignupForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { user, isLoading, refresh } = useAuth();
+  const { user, refresh } = useAuth();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -47,11 +48,9 @@ export function SignupForm() {
       // Owner-approval flow: account created but NOT logged in — hand the
       // signed status token to the /welcome screen, which shows the
       // "created successfully / awaiting approval" state and polls it.
-      try {
-        localStorage.setItem("neb_signup_status_token", result.statusToken);
-      } catch {
-        /* storage blocked — welcome page falls back to a re-signin hint */
-      }
+      // The hardcoded pending-signup identity is persisted in three stores so
+      // a refresh cannot drop the "account created" state (owner 2026-11-08).
+      rememberPendingSignup(result.statusToken);
       router.push("/welcome");
     } else if (result.ok && result.message) {
       setMessage(result.message);
@@ -65,13 +64,10 @@ export function SignupForm() {
     }
   };
 
-  if (isLoading || user) {
-    return (
-      <VerifyingStatus
-        compact
-        label={user ? "Opening your plan welcome" : "Checking your session"}
-      />
-    );
+  // Same rule as LoginForm: never let a slow session probe hide the signup
+  // form (and its Google button). Only a KNOWN signed-in viewer is bounced.
+  if (user) {
+    return <VerifyingStatus compact label="Opening your plan welcome" />;
   }
 
   return (

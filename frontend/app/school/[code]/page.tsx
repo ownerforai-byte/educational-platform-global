@@ -68,7 +68,7 @@ export default async function SchoolDashboardPage({
           This is a preview of the school dashboard. Full analytics (student
           lists, per-student progress, quiz scores, and content assignment
           management) are activated once the school&apos;s institutional plan is
-          confirmed. Contact the owner to finalize enrollment.
+          confirmed. Leave a message to this email; ravikisan1814@gmail.com to finalize enrollment.
         </p>
         <Link
           href="/contact"

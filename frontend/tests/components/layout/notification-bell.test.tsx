@@ -2,31 +2,64 @@ import { beforeEach, describe, expect, it } from "vitest";
 import { act, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { NotificationBell } from "@/components/layout/notification-bell";
 import {
-  INITIAL_NOTIFICATIONS,
+  NOTIFICATIONS_FEED_KEY,
   NOTIFICATIONS_STORAGE_KEY,
   markAllNotificationsRead,
   markNotificationRead,
+  pushNotification,
   refreshNotificationsFromStorage,
 } from "@/lib/notifications";
 import NotificationsPage from "@/app/(app)/notifications/page";
 
 /**
- * QA fix (plan.md §14 5.1 + 5.2): the notification badge must derive from the
- * shared read-id store and RESET TO ZERO once everything is marked read —
- * both on the notifications page and on the header bell, which used to show a
- * static pulsing dot regardless of real state.
+ * The badge must derive from the LIVE inbox (real events only) and RESET TO
+ * ZERO once everything is marked read — on the notifications page, on the
+ * header bell, and across tabs. A fresh device has no seeded alerts at all.
  */
+
+function seedLive(count: number): void {
+  for (let i = 0; i < count; i += 1) {
+    act(() => {
+      pushNotification({
+        id: `live-quiz-${i}`,
+        category: "curriculum",
+        title: `Quiz ${i} scored`,
+        body: `You answered ${i + 1} questions correctly.`,
+        href: "/ai-quiz/history",
+        actionLabel: "Review answers",
+      });
+    });
+  }
+}
 
 beforeEach(() => {
   localStorage.removeItem(NOTIFICATIONS_STORAGE_KEY);
+  localStorage.removeItem(NOTIFICATIONS_FEED_KEY);
   // The module store survives between tests — re-read the cleared storage.
   refreshNotificationsFromStorage();
 });
 
-describe("notification badges reset after mark all read", () => {
-  it("zeroes the bell badge when the store is fully read", async () => {
+describe("live notification badges", () => {
+  it("starts at zero on a fresh device — no seeded/coded alerts", async () => {
     render(<NotificationBell />);
-    // Badge appears once the client store hydrates.
+    await waitFor(() => expect(screen.getByLabelText("Notifications")).toBeInTheDocument());
+    expect(screen.queryByTestId("notification-bell-badge")).toBeNull();
+  });
+
+  it("shows the exact live count when a real event arrives", async () => {
+    render(<NotificationBell />);
+    await waitFor(() => expect(screen.queryByTestId("notification-bell-badge")).toBeNull());
+
+    seedLive(3);
+
+    await waitFor(() =>
+      expect(screen.getByTestId("notification-bell-badge")).toHaveTextContent("3"),
+    );
+  });
+
+  it("zeroes the bell badge when everything is marked read", async () => {
+    seedLive(3);
+    render(<NotificationBell />);
     await waitFor(() =>
       expect(screen.getByTestId("notification-bell-badge")).toBeInTheDocument(),
     );
@@ -40,18 +73,16 @@ describe("notification badges reset after mark all read", () => {
     );
   });
 
-  it("hides the bell badge when the store starts fully read", async () => {
-    localStorage.setItem(
-      NOTIFICATIONS_STORAGE_KEY,
-      JSON.stringify(INITIAL_NOTIFICATIONS.map((n) => n.id)),
-    );
-    refreshNotificationsFromStorage();
+  it("hides the bell badge when the live store is already fully read", async () => {
+    seedLive(2);
+    act(() => markAllNotificationsRead());
     render(<NotificationBell />);
     await waitFor(() => expect(screen.getByLabelText("Notifications")).toBeInTheDocument());
     expect(screen.queryByTestId("notification-bell-badge")).toBeNull();
   });
 
-  it("mark all read on the page clears the page badge and the bell together", async () => {
+  it("keeps 'All Alerts' in sync with the live unread count, reaching 0", async () => {
+    seedLive(2);
     render(
       <>
         <NotificationBell />
@@ -59,23 +90,24 @@ describe("notification badges reset after mark all read", () => {
       </>,
     );
 
-    // Both surfaces show the pending count first.
     await waitFor(() =>
-      expect(screen.getByTestId("notification-bell-badge")).toBeInTheDocument(),
+      expect(screen.getByTestId("notification-bell-badge")).toHaveTextContent("2"),
     );
-    expect(screen.getByText(`${INITIAL_NOTIFICATIONS.length} New`)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /All Alerts \(2\)/ })).toBeInTheDocument();
+    expect(screen.getByText("2 New")).toBeInTheDocument();
 
     fireEvent.click(screen.getByRole("button", { name: /mark all read/i }));
 
-    // 5.1 acceptance: every badge is zero after mark all read.
     await waitFor(() =>
       expect(screen.queryByTestId("notification-bell-badge")).toBeNull(),
     );
+    expect(screen.getByRole("button", { name: /All Alerts \(0\)/ })).toBeInTheDocument();
     expect(screen.queryByText(/New$/)).toBeNull();
     expect(screen.getByText(/all caught up/i)).toBeInTheDocument();
   });
 
-  it("approving one card keeps the remaining count on both badges", async () => {
+  it("approving one card decrements both badges by exactly one", async () => {
+    seedLive(3);
     render(
       <>
         <NotificationBell />
@@ -84,22 +116,20 @@ describe("notification badges reset after mark all read", () => {
     );
 
     await waitFor(() =>
-      expect(screen.getByTestId("notification-bell-badge")).toHaveTextContent(
-        String(INITIAL_NOTIFICATIONS.length),
-      ),
+      expect(screen.getByTestId("notification-bell-badge")).toHaveTextContent("3"),
     );
 
     const markButtons = screen.getAllByTitle("Mark as read");
     fireEvent.click(markButtons[0]);
 
     await waitFor(() =>
-      expect(screen.getByTestId("notification-bell-badge")).toHaveTextContent(
-        String(INITIAL_NOTIFICATIONS.length - 1),
-      ),
+      expect(screen.getByTestId("notification-bell-badge")).toHaveTextContent("2"),
     );
+    expect(screen.getByRole("button", { name: /All Alerts \(2\)/ })).toBeInTheDocument();
   });
 
-  it("cross-tab storage events re-sync the bell (5.2)", async () => {
+  it("cross-tab storage events re-sync the bell", async () => {
+    seedLive(2);
     render(<NotificationBell />);
     await waitFor(() =>
       expect(screen.getByTestId("notification-bell-badge")).toBeInTheDocument(),
@@ -107,10 +137,7 @@ describe("notification badges reset after mark all read", () => {
 
     // Another tab approves everything and broadcasts it.
     act(() => {
-      localStorage.setItem(
-        NOTIFICATIONS_STORAGE_KEY,
-        JSON.stringify(INITIAL_NOTIFICATIONS.map((n) => n.id)),
-      );
+      markAllNotificationsRead();
       window.dispatchEvent(new Event("storage"));
     });
 
@@ -119,13 +146,15 @@ describe("notification badges reset after mark all read", () => {
     );
   });
 
-  it("the read store survives a remount (approved = removed stays approved)", () => {
+  it("the read store survives a remount (approved stays approved)", () => {
+    seedLive(2);
     const first = render(<NotificationsPage />);
     fireEvent.click(screen.getByRole("button", { name: /mark all read/i }));
     first.unmount();
 
     render(<NotificationsPage />);
     expect(screen.getByText(/all caught up/i)).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /All Alerts \(0\)/ })).toBeInTheDocument();
     void markNotificationRead; // store API stays importable for cards
   });
 });

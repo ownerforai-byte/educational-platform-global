@@ -36,13 +36,13 @@ jobs:
     steps:
       # Step 1 — safe source checkout (no credentials persisted on disk).
       - name: Checkout source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
 
       # Step 2 — runtime + dependency cache.
       - name: Set up Node.js 22 with npm cache
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: "22"
           cache: "npm"
@@ -52,7 +52,7 @@ jobs:
       # includes the commit so a successful build refreshes the cache, while
       # restore-keys lets every later run reuse the last good one.
       - name: Restore Next.js build cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: frontend/.next/cache
           key: ${{ runner.os }}-nextjs-${{ hashFiles('frontend/package-lock.json') }}-${{ github.sha }}
@@ -159,7 +159,7 @@ jobs:
     continue-on-error: true
     steps:
       - name: Checkout source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
 

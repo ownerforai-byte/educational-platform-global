@@ -12,7 +12,9 @@ describe("platform guide widget visibility", () => {
     const member = { email: "a@test.com", role: "member" as const };
     expect(shouldShowPlatformGuideWidget("/home/member", member)).toBe(true);
     expect(shouldShowPlatformGuideWidget("/home/pro", { ...member, plan: "pro" })).toBe(true);
-    expect(shouldShowPlatformGuideWidget("/home", member)).toBe(false);
+    // The widget is now shown for every signed-in user on any app page except
+    // the full-screen chat/AI surfaces; /home is no longer excluded.
+    expect(shouldShowPlatformGuideWidget("/home", member)).toBe(true);
   });
 
   it("hides on chat and ai studio routes", () => {

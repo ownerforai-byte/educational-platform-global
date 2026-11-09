@@ -63,6 +63,13 @@ const RENEW_CHECK_INTERVAL_MS = 10 * 60 * 1000;
  * re-refresh on every re-render.
  */
 const MIN_RENEW_GAP_MS = 30 * 1000;
+/**
+ * Hard ceiling on the first session probe. `ensureSession()` has no request
+ * timeout of its own, so a hung Render cold start could leave `isLoading`
+ * true forever and blank out every auth screen (including Google sign-in).
+ * The probe still runs to completion; this only stops it gating the UI.
+ */
+const SESSION_PROBE_MAX_MS = 6 * 1000;
 
 function sameSessionUser(a: SessionUser | null, b: SessionUser | null): boolean {
   if (a === b) return true;
@@ -97,7 +104,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     mounted.current = true;
+    // Never let a stalled /api/auth/me hold the whole app in "loading".
+    const ceiling = window.setTimeout(() => {
+      if (mounted.current) setIsLoading(false);
+    }, SESSION_PROBE_MAX_MS);
     return () => {
+      window.clearTimeout(ceiling);
       mounted.current = false;
     };
   }, []);

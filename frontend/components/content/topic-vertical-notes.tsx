@@ -27,7 +27,7 @@ import {
   XCircle,
 } from "lucide-react";
 import { loadData } from "@/lib/data-loader";
-import type { ContentKind } from "@/lib/content/paths";
+import { classDirOfTrack, parseContentPath, type ContentKind } from "@/lib/content/paths";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { NoteBlocks } from "@/components/content/rich-note";
 import { selectCanonicalNoteEntry } from "@/lib/note-routes";
@@ -400,6 +400,25 @@ function kindForSource(source: ManifestItem["source"]): ContentKind {
 }
 
 /**
+ * The shipped subject manifest (`syllabus-notes/<subject>/_manifest.json`) is
+ * built from `content/notes/concepts/class-11` only (see
+ * `frontend/scripts/content/build.ts` → BUILD_CLASS_DIRS). Class-12 pages must
+ * therefore NOT match it: the slugs collide across classes (11 shared units),
+ * so a class-12 page would request a class-11 filename that the backend can
+ * never find in `concepts/class-12/...`.
+ *
+ * Class-12 sources are resolved from the supplementary `content/manifest.json`
+ * instead, whose paths carry the real class directory and filename.
+ */
+const BUILT_MANIFEST_CLASS_DIR = "class-11";
+
+/** Last path segment when it is a plain `.json` filename. */
+function filenameFromContentPath(relPath: string): string | undefined {
+  const filename = relPath.split(/[\\/]/).at(-1);
+  return filename && /\.json$/i.test(filename) ? filename : undefined;
+}
+
+/**
  * Fetch one paid note body from the spark-gated server endpoint.
  * The `moduleKey` passed here is the same key the credits/unlock endpoint
  * wrote to `profiles.credits_unlock` — the backend verifies the window.
@@ -412,18 +431,31 @@ async function fetchTopicNoteBody(params: {
   filename: string;
   moduleKey?: string;
 }): Promise<RichTopicConcept> {
-  const res = await fetch("/api/content/reveal", {
-    method: "POST",
-    credentials: "include",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(params),
-  });
+  // The proxy has no timeout and the backend can stall on its auth lookups; an
+  // unbounded await left the topic workspace on the loading spinner forever.
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), NOTE_REVEAL_TIMEOUT_MS);
+  let res: Response;
+  try {
+    res = await fetch("/api/content/reveal", {
+      method: "POST",
+      credentials: "include",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(params),
+      signal: controller.signal,
+    });
+  } finally {
+    clearTimeout(timer);
+  }
   if (!res.ok) {
     const err = (await res.json().catch(() => ({}))) as { error?: string };
     throw new Error(err.error ?? `content/reveal returned ${res.status}`);
   }
   return res.json() as Promise<RichTopicConcept>;
 }
+
+/** Upper bound for one gated note body; past this the caller uses its fallback. */
+const NOTE_REVEAL_TIMEOUT_MS = 9000;
 
 export function TopicVerticalNotes({
   classSlug,
@@ -436,6 +468,7 @@ export function TopicVerticalNotes({
   const [sources, setSources] = useState<Array<{ meta: ManifestItem; data: RichTopicConcept }>>([]);
   const [supplementary, setSupplementary] = useState<RichTopicConcept | null>(null);
   const [loading, setLoading] = useState(true);
+  const [noteLoadFailed, setNoteLoadFailed] = useState(false);
   const [bankVersion, setBankVersion] = useState(0);
   const [mcqAnswers, setMcqAnswers] = useState<Record<number, number>>({});
   const [selfCheckAnswers, setSelfCheckAnswers] = useState<Record<number, number>>({});
@@ -455,61 +488,122 @@ export function TopicVerticalNotes({
     setLoading(true);
     setSources([]);
     setSupplementary(null);
+    setNoteLoadFailed(false);
     setMcqAnswers({});
     setSelfCheckAnswers({});
+
+    const classDir = classDirOfTrack(classSlug);
+
+    /**
+     * One built manifest entry → its note body.
+     *
+     * The gated endpoint is authoritative for members, but the same payload is
+     * already shipped publicly under `public/data/syllabus-notes` (byte-checked
+     * by `content:build --check`). When the endpoint is unavailable the shipped
+     * copy is used so the page renders instead of going blank.
+     */
+    const loadManifestNote = async (meta: ManifestItem): Promise<RichTopicConcept | null> => {
+      try {
+        return await fetchTopicNoteBody({
+          kind: kindForSource(meta.source),
+          classSlug,
+          subjectSlug,
+          unitSlug: unitId,
+          filename: meta.filename,
+          // moduleKey matches the key stored in credits_unlock by
+          // the /api/user/credits/unlock endpoint.
+          moduleKey: `note:${classSlug}/${subjectSlug}/${unitId}/${meta.filename}`,
+        });
+      } catch {
+        try {
+          return await loadData<RichTopicConcept>(
+            `syllabus-notes/${subjectSlug}/${unitId}/${meta.filename}`,
+          );
+        } catch {
+          return null;
+        }
+      }
+    };
 
     loadData<ManifestItem[]>(`syllabus-notes/${subjectSlug}/_manifest.json`)
       .then(async (manifest) => {
         if (cancelled) return;
-        const relevant = manifest.filter(
-          (item) => item.unitSlug === unitId && (item.topicSlug === topicSlug || item.filename.includes(topicSlug)),
-        );
+        const relevant = classDir === BUILT_MANIFEST_CLASS_DIR
+          ? manifest.filter(
+              (item) => item.unitSlug === unitId && (item.topicSlug === topicSlug || item.filename.includes(topicSlug)),
+            )
+          : [];
 
         if (relevant.length > 0) {
           const loaded = await Promise.all(
             relevant.map(async (meta) => {
-              try {
-                const data = await fetchTopicNoteBody({
-                  kind: kindForSource(meta.source),
-                  classSlug,
-                  subjectSlug,
-                  unitSlug: unitId,
-                  filename: meta.filename,
-                  // moduleKey matches the key stored in credits_unlock by
-                  // the /api/user/credits/unlock endpoint.
-                  moduleKey: `note:${classSlug}/${subjectSlug}/${unitId}/${meta.filename}`,
-                });
-                return { meta, data };
-              } catch {
-                return null;
-              }
+              const data = await loadManifestNote(meta);
+              return data ? { meta, data } : null;
             }),
           );
-          if (!cancelled) {
-            const valid = loaded.filter((item): item is { meta: ManifestItem; data: RichTopicConcept } => item !== null);
-            const canonicalMeta = selectCanonicalNoteEntry(valid.map((source) => source.meta));
-            const canonical = valid.find((source) => source.meta === canonicalMeta);
-            setSources(canonical ? [canonical] : []);
-          }
+          if (cancelled) return;
+          const valid = loaded.filter((item): item is { meta: ManifestItem; data: RichTopicConcept } => item !== null);
+          const canonicalMeta = selectCanonicalNoteEntry(valid.map((source) => source.meta));
+          const canonical = valid.find((source) => source.meta === canonicalMeta);
+          setSources(canonical ? [canonical] : []);
+          if (!canonical) setNoteLoadFailed(true);
         } else {
+          // Class-12 (or any class the flat manifest does not carry): resolve the
+          // class-correct source path. `content/manifest.json` embeds the payload
+          // and its path names the real class dir + filename; the filename is
+          // what the gated endpoint needs to read `concepts/class-12/...`.
           try {
-            const manifest = await loadData<Array<{ path: string; data: RichTopicConcept }>>("content/manifest.json");
-            if (!cancelled) {
-              const match = manifest.find((item) => {
-                const parts = item.path.split("/");
-                return parts.includes(unitId) && (item.data?.topicSlug === topicSlug || parts.at(-1)?.includes(topicSlug));
-              });
-              if (match) setSupplementary(match.data);
+            const supplementaryManifest = await loadData<Array<{ path: string; data: RichTopicConcept }>>(
+              "content/manifest.json",
+            );
+            if (cancelled) return;
+            const match = supplementaryManifest.find((item) => {
+              const parsed = parseContentPath(item.path);
+              if (!parsed || parsed.classDir !== classDir || parsed.unitSlug !== unitId) return false;
+              const filename = filenameFromContentPath(item.path);
+              return (
+                item.data?.topicSlug === topicSlug ||
+                filename?.includes(topicSlug) === true
+              );
+            });
+
+            if (!match) {
+              setNoteLoadFailed(true);
+            } else {
+              const parsed = parseContentPath(match.path);
+              const filename = filenameFromContentPath(match.path);
+              let body: RichTopicConcept | null = null;
+              if (filename && parsed) {
+                try {
+                  body = await fetchTopicNoteBody({
+                    kind: parsed.kind,
+                    classSlug,
+                    subjectSlug: parsed.subjectSlug ?? subjectSlug,
+                    unitSlug: unitId,
+                    filename,
+                    moduleKey: `note:${classSlug}/${subjectSlug}/${unitId}/${filename}`,
+                  });
+                } catch {
+                  body = null;
+                }
+              }
+              if (cancelled) return;
+              if (body) setSupplementary(body);
+              else setSupplementary(match.data);
             }
           } catch {
-            // The primary manifest remains the canonical source when available.
+            // Supplementary manifest unavailable — report rather than show a blank note area.
+            if (!cancelled) setNoteLoadFailed(true);
           }
         }
 
         if (!cancelled) setLoading(false);
       })
       .catch(() => {
-        if (!cancelled) setLoading(false);
+        if (!cancelled) {
+          setNoteLoadFailed(true);
+          setLoading(false);
+        }
       });
 
     return () => {
@@ -757,6 +851,12 @@ export function TopicVerticalNotes({
           <div className="flex items-center gap-3"><Atom className="h-8 w-8 shrink-0 text-teal-600" /><div><h3 className="text-sm font-bold">Interactive periodic table and CEE questions</h3><p className="mt-1 text-xs text-muted-foreground">Explore configurations, properties and entrance MCQs.</p></div></div>
           <Link href="/periodic-table" className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-teal-600 px-4 text-xs font-bold text-white">Open periodic table<ExternalLink className="h-3.5 w-3.5" /></Link>
         </div>
+      )}
+
+      {noteLoadFailed && !activeData && (
+        <p role="status" className="rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm leading-relaxed text-foreground">
+          This topic&apos;s note body could not be loaded. Refresh the page to retry; the mind map and quick checks below still work.
+        </p>
       )}
 
       <nav aria-label="Note learning path" className="rounded-3xl border border-primary/20 bg-primary/5 p-4 sm:p-5">

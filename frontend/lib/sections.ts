@@ -65,11 +65,11 @@ export interface PlatformSection {
 export const SECTIONS: PlatformSection[] = [
   // ── Guest rung ──
   {
-    id: "visitor-home-chat",
+    id: "guest-home-chat",
     title: "Chat with AI",
     description:
-      "Free on the visitor home: a text box and a send button. It explains the platform and does not teach the syllabus.",
-    minTier: "visitor",
+      "Free on the guest home: a text box and a send button. It explains the platform and does not teach the syllabus.",
+    minTier: "guest",
     icon: MessageCircle,
     href: "/",
   },
@@ -116,7 +116,7 @@ export const SECTIONS: PlatformSection[] = [
   {
     id: "veer-chat",
     title: "Veer AI Chat",
-    description: "The three chat consoles. Members get 3 messages per day.",
+    description: "The three chat consoles. Members get 13 messages per day.",
     minTier: "member",
     icon: MessageCircle,
     href: "/chat",
@@ -317,7 +317,7 @@ export const SECTIONS: PlatformSection[] = [
     id: "onboarding",
     title: "Set Your Study Goals",
     description: "Pick subjects, exam date, target and daily study time. Open to everyone.",
-    minTier: "visitor",
+    minTier: "guest",
     icon: Target,
     href: "/onboarding",
   },

@@ -15,6 +15,19 @@ describe("AiStatusDot", () => {
     expect(dot.className).toContain("shadow-[");
   });
 
+  test("reads the honest `configured` field and bounds every probe", async () => {
+    const fetchMock = vi.fn(async (_url: string, _init?: RequestInit) => ({
+      ok: true,
+      json: async () => ({ configured: true }),
+    }));
+    vi.stubGlobal("fetch", fetchMock);
+    render(<AiStatusDot />);
+    await waitFor(() => expect(screen.getByRole("status").getAttribute("data-status")).toBe("online"));
+    // CodeRabbit: a stalled probe must be abortable so polling cannot pile up.
+    expect(fetchMock.mock.calls[0]?.[1]).toMatchObject({ cache: "no-store" });
+    expect((fetchMock.mock.calls[0]?.[1] as RequestInit).signal).toBeInstanceOf(AbortSignal);
+  });
+
   test("turns grey when the probe fails", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => { throw new Error("down"); }));
     render(<AiStatusDot />);

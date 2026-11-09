@@ -75,7 +75,11 @@ const ROOT = path.join(DATA, "syllabus-notes");
 const LEDGER = path.join(DATA, "content-ledger.json");
 const SUPPLEMENTARY = path.join(DATA, "content", "manifest.json");
 const SOURCES = [
-  path.join(DATA, "content", "_index.json"),
+  // `content/_index.json` was deliberately retired from public/ by 7bb51358
+  // ("remove now-unused paid static bodies from public/data"): those payloads
+  // are served through the spark-gated /api/content/reveal path instead.
+  // It is no longer a shipped data source, so the ledger must not claim it —
+  // otherwise `ledger:check` and the live scanner demand a 404 forever.
   path.join(DATA, "r-export", "manifest.json"),
 ];
 

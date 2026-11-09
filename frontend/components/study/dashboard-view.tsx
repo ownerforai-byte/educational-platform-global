@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { Flame, Target, ListChecks, PlayCircle, Compass } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ComingSoon } from "@/components/content/coming-soon";
 import { entryStatus, topicHref } from "@/lib/progress/catalog";
 import { getStreak, streakLabel } from "@/lib/streaks";
 import { daysUntilExam, seedDailyPlan } from "@/lib/study-goals";
 import { QUICK_LINKS } from "@/lib/navigation";
 import { useStudyGoals } from "./use-study-goals";
 import { useJourney } from "./use-journey";
+import { WeakTopics } from "./weak-topics";
 import { useEffect, useState } from "react";
 
 /** /dashboard: today hub, a presentation of the goals, streak and progress readers. */
@@ -109,11 +109,7 @@ export function DashboardView() {
         </CardContent>
       </Card>
 
-      <ComingSoon
-        title="Weak-topic call-out"
-        kind="Notes"
-        message="Under progress. It awaits per-topic quiz attempt history (the quiz results store), which does not exist yet."
-      />
+      <WeakTopics />
 
       <div>
         <h2 className="mb-2 flex items-center gap-2 text-base font-semibold">

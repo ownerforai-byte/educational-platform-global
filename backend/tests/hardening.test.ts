@@ -15,6 +15,10 @@ const h = vi.hoisted(() => {
   const storageFrom = vi.fn();
   const storageUpload = vi.fn();
   const storageGetPublicUrl = vi.fn();
+  /** Bucket metadata the upload route validates before writing. */
+  const bucketInfo: { value: { id: string; public: boolean } | null } = {
+    value: { id: "resources", public: true },
+  };
 
   function enqueue(table: string, result: QueueResult) {
     (queues[table] ??= []).push(result);
@@ -82,14 +86,20 @@ const h = vi.hoisted(() => {
         return {
           upload: (...args: any[]) => storageUpload(...args),
           getPublicUrl: (...args: any[]) => storageGetPublicUrl(...args),
+          list: async () => ({ data: [], error: null }),
         };
       },
+      getBucket: async () =>
+        bucketInfo.value
+          ? { data: bucketInfo.value, error: null }
+          : { data: null, error: { message: "Bucket not found" } },
     },
   };
 
   function reset() {
     for (const k of Object.keys(queues)) delete queues[k];
     calls.length = 0;
+    bucketInfo.value = { id: "resources", public: true };
     getUser.mockReset();
     storageFrom.mockReset();
     storageUpload.mockReset();
@@ -117,6 +127,7 @@ const h = vi.hoisted(() => {
     storageFrom,
     storageUpload,
     storageGetPublicUrl,
+    bucketInfo,
   };
 });
 
@@ -889,6 +900,38 @@ describe("POST /api/storage/upload", () => {
       expect.any(Buffer),
       { contentType: "image/png", upsert: false }
     );
+  });
+
+  it("400s a bucket that does not exist instead of a 500 after a failed upload", async () => {
+    const { request } = await mountedStorage();
+    h.bucketInfo.value = null;
+
+    const res = await request("POST", "/api/storage/upload", {
+      bucket: "missing-bucket",
+      path: "img.png",
+      contentType: "image/png",
+      dataBase64: VALID_PNG_B64,
+    });
+
+    expect(res.status).toBe(400);
+    expect(res.body.error).toContain("does not exist");
+    expect(h.storageUpload).not.toHaveBeenCalled();
+  });
+
+  it("refuses a private bucket rather than returning a public URL that cannot load", async () => {
+    const { request } = await mountedStorage();
+    h.bucketInfo.value = { id: "educational-materials", public: false };
+
+    const res = await request("POST", "/api/storage/upload", {
+      bucket: "educational-materials",
+      path: "img.png",
+      contentType: "image/png",
+      dataBase64: VALID_PNG_B64,
+    });
+
+    expect(res.status).toBe(400);
+    expect(res.body.error).toContain("private");
+    expect(h.storageUpload).not.toHaveBeenCalled();
   });
 
   it("requires TEACHER/ADMIN/OWNER role", async () => {

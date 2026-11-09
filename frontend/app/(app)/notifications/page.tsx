@@ -20,16 +20,12 @@ import {
   ArrowLeft
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  INITIAL_NOTIFICATIONS,
-  markAllNotificationsRead,
-  markNotificationRead,
-  type NotificationItem,
-} from "@/lib/notifications";
+import { markAllNotificationsRead, markNotificationRead } from "@/lib/notifications";
 import { useNotificationState } from "@/lib/hooks/use-notifications";
 
-// The notification queue + read store live in `lib/notifications.ts` (shared
-// with the header bell so "mark all read" zeroes every badge — plan.md §14).
+// The LIVE inbox + read store live in `lib/notifications.ts` (shared with the
+// header bell so "mark all read" zeroes every badge). Nothing here is seeded:
+// items are created only by real platform events.
 
 const CATEGORY_CONFIG = {
   curriculum: {
@@ -62,7 +58,7 @@ export default function NotificationsPage() {
   // State comes from the SHARED store (plan.md §14 5.1) — the header bell
   // derives its badge from the same snapshot, so "mark all read" here zeroes
   // every badge instantly, in this tab and in all open tabs.
-  const { hydrated, readIds, unreadCount } = useNotificationState();
+  const { hydrated, items, unreadCount } = useNotificationState();
   const [activeCategory, setActiveCategory] = useState<string>("all");
 
   /** Approve (read) one notification — it is removed from the list. */
@@ -74,18 +70,20 @@ export default function NotificationsPage() {
     markAllNotificationsRead();
   };
 
-  const filteredNotifications = useMemo(() => {
-    return INITIAL_NOTIFICATIONS.filter((n) => {
-      // Approved (read) notifications are gone — the list is the pending queue.
-      if (readIds.has(n.id)) {
-        return false;
-      }
-      if (activeCategory !== "all" && n.category !== activeCategory) {
-        return false;
-      }
-      return true;
-    });
-  }, [activeCategory, readIds]);
+  // `items` is already the LIVE pending queue (read items were filtered out by
+  // the store), so both the list and every badge derive from the same state.
+  const filteredNotifications = useMemo(
+    () =>
+      items.filter(
+        (n) => activeCategory === "all" || n.category === activeCategory,
+      ),
+    [activeCategory, items],
+  );
+
+  const countFor = (category: string) =>
+    category === "all"
+      ? unreadCount
+      : items.filter((n) => n.category === category).length;
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-6 sm:py-8 space-y-6">
@@ -183,7 +181,7 @@ export default function NotificationsPage() {
                 : "bg-muted/40 text-muted-foreground hover:text-foreground hover:bg-muted/70"
             }`}
           >
-            All Alerts ({INITIAL_NOTIFICATIONS.length})
+            All Alerts ({hydrated ? unreadCount : 0})
           </button>
           {Object.entries(CATEGORY_CONFIG).map(([catKey, config]) => (
             <button
@@ -196,7 +194,7 @@ export default function NotificationsPage() {
                   : "bg-muted/40 text-muted-foreground hover:text-foreground hover:bg-muted/70"
               }`}
             >
-              {config.label}
+              {config.label} ({hydrated ? countFor(catKey) : 0})
             </button>
           ))}
         </div>
@@ -213,7 +211,7 @@ export default function NotificationsPage() {
             <div>
               <p className="text-base font-bold text-foreground">You are all caught up!</p>
               <p className="text-xs text-muted-foreground mt-1">
-                No notifications here right now. Check back later for new curriculum alerts.
+                No live alerts right now — you have {hydrated ? unreadCount : 0} unread. New quiz results and study milestones appear here automatically.
               </p>
             </div>
           </div>
@@ -289,7 +287,7 @@ export default function NotificationsPage() {
       </div>
 
       <footer className="pt-4 border-t border-border/60 text-center text-xs text-muted-foreground">
-        Notifications are refreshed automatically as curriculum modules and spark pools update.
+        Alerts are generated from your real quiz results and study activity — nothing here is pre-seeded.
       </footer>
     </div>
   );

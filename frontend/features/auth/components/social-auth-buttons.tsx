@@ -9,6 +9,11 @@ import {
   type OAuthProvider,
 } from "@/lib/supabase/browser";
 import { apiFetch } from "@/lib/api-client";
+import {
+  isOAuthAccessBlocked,
+  oauthAccessBlockedMessage,
+  oauthCallbackUrl,
+} from "@/lib/supabase/oauth-config";
 
 export function GoogleIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -47,6 +52,43 @@ interface SocialAuthButtonsProps {
   onError?: (error: string) => void;
 }
 
+const CSRF_TIMEOUT_MS = 10_000;
+const COLD_START_MESSAGE =
+  "Sign-in is taking too long to start (the server may be warming up). Please try again in a moment.";
+
+/**
+ * The CSRF handshake talks to the Render backend, which can be cold. A bare
+ * fetch with no timeout left the Google button spinning forever with no
+ * feedback, which reads as "OAuth is blocked". Bound each attempt and retry
+ * once so a cold start recovers on its own.
+ */
+async function requestOAuthCsrf(): Promise<string> {
+  let lastError: unknown;
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), CSRF_TIMEOUT_MS);
+    try {
+      const csrf = await apiFetch<{ csrfToken: string }>("/api/auth/oauth/csrf", {
+        method: "POST",
+        signal: controller.signal,
+      });
+      if (!/^[a-f0-9]{64}$/.test(csrf?.csrfToken ?? "")) {
+        throw new Error("Invalid sign-in verification token.");
+      }
+      return csrf.csrfToken;
+    } catch (err) {
+      lastError = err;
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+  const message = lastError instanceof Error ? lastError.message : "";
+  if (/abort|aborted|timeout/i.test(message) || !message) {
+    throw new Error(COLD_START_MESSAGE);
+  }
+  throw lastError instanceof Error ? lastError : new Error(COLD_START_MESSAGE);
+}
+
 /**
  * Facebook sign-in is temporarily HIDDEN from the login/signup pages because
  * the Supabase ⇄ Meta "exchange external code" step was failing (client
@@ -78,27 +120,26 @@ export function SocialAuthButtons({
         return;
       }
 
-      const csrf = await apiFetch<{ csrfToken: string }>("/api/auth/oauth/csrf", {
-        method: "POST",
-      });
-      sessionStorage.setItem("neb_oauth_csrf", csrf.csrfToken);
+      const csrfToken = await requestOAuthCsrf();
+      sessionStorage.setItem("neb_oauth_csrf", csrfToken);
 
-      // OAuth should obey the same staged flow as password sign-in: the
-      // callback resolves the account's tier and lands on its welcome page.
-      const callbackUrl = new URL("/auth/callback", window.location.origin);
-
+      // ONE canonical callback for every deployed host (owner 2026-11-08).
+      // Building it from window.location.origin produced a different redirect
+      // URI on preview/www/custom hosts — Google rejects every unregistered
+      // one with "Access blocked". See lib/supabase/oauth-config.ts.
       const { error: oauthError } = await getSupabaseBrowserClient().auth.signInWithOAuth({
         provider,
-        options: { redirectTo: callbackUrl.toString() },
+        options: { redirectTo: oauthCallbackUrl() },
       });
       if (oauthError) throw oauthError;
       redirected = true;
     } catch (oauthError) {
       sessionStorage.removeItem("neb_oauth_csrf");
-      const authError = oauthError as Error & { code?: string };
+      // A blocked/mismatched OAuth client is a CONFIG problem, not a transient
+      // one — name the exact URLs to register instead of a vague "unavailable".
       onError?.(
-        authError.code === "validation_failed"
-          ? `${label} sign-in is temporarily unavailable. Please use email or try again later.`
+        isOAuthAccessBlocked(oauthError)
+          ? oauthAccessBlockedMessage(label)
           : oauthError instanceof Error
             ? oauthError.message
             : `${label} sign-in could not be started.`,

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
 
 // ─── Mocks ──────────────────────────────────────────────────────────────────
 
@@ -157,8 +157,9 @@ describe("ProfilePage", () => {
     expect(screen.getByText("Harindra Sah")).toBeInTheDocument();
     expect(screen.getByText("harindarsah98172@gmail.com")).toBeInTheDocument();
     expect(screen.getByText("HS")).toBeInTheDocument(); // initials
-    expect(screen.getByText("Owner")).toBeInTheDocument(); // role badge
-    expect(screen.getByText("PRO")).toBeInTheDocument();
+    expect(screen.getByText("Owner")).toBeInTheDocument(); // canonical access-tier badge
+    // The unified access-tier card replaces the separate plan badge.
+    expect(screen.getByText(/Owner plan/)).toBeInTheDocument();
     // Balance shows in the wallet card (and wherever else it appears) —
     // profile features 2026-10-13 added the Content Spark Wallet card.
     expect(screen.getAllByText(/42/).length).toBeGreaterThanOrEqual(1);
@@ -180,8 +181,9 @@ describe("ProfilePage", () => {
     fireEvent.click(screen.getByRole("tab", { name: /account/i }));
 
     expect(screen.getByText("Full name")).toBeInTheDocument();
-    // "PRO" appears in the header badge AND the account row — both present.
-    expect(screen.getAllByText(/^PRO/).length).toBeGreaterThanOrEqual(2);
+    // The Account tab shows the unified access-tier row, not duplicated plan text.
+    expect(screen.getByText("Access tier")).toBeInTheDocument();
+    expect(screen.getByText(/Unlimited Veer sparks/)).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /full progress page/i })
     ).toHaveAttribute("href", "/progress");
@@ -219,20 +221,30 @@ describe("ProfilePage", () => {
     expect(screen.getByText(/Level 1 · Novice Scholar/i)).toBeInTheDocument();
   });
 
-  it("switches to Level Details tab to see academic level & NEB curriculum", async () => {
+  it("switches to Level Details tab to see scholar progression", async () => {
     render(<ProfilePage />);
 
     const levelTab = screen.getByRole("tab", { name: /level details/i });
     expect(levelTab).toBeInTheDocument();
     fireEvent.click(levelTab);
 
-    // Shows NEB +2 academic level details
     expect(screen.getByText("Scholar Level & Academic Hierarchy")).toBeInTheDocument();
+    expect(screen.getByText("Scholar Progression Roadmap")).toBeInTheDocument();
+  });
+
+  it("switches to Curriculum tab for grade focus and subjects", () => {
+    render(<ProfilePage />);
+
+    fireEvent.click(screen.getByRole("tab", { name: /curriculum/i }));
+
     expect(screen.getByText("Academic Grade & Curriculum Settings")).toBeInTheDocument();
-    expect(screen.getByText("NEB +2")).toBeInTheDocument();
     expect(screen.getByText("CDC Nepal Curriculum")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /class 11 science/i })).toBeInTheDocument();
     expect(screen.getByRole("button", { name: /class 12 science/i })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /physics/i })).toHaveAttribute(
+      "href",
+      "/class-11-notes/physics",
+    );
   });
 
   it("has no owner billing switch — access runs through SparkGate", () => {
@@ -261,5 +273,36 @@ describe("ProfilePage", () => {
     // But student DOES see level details
     expect(screen.getByText("Scholar Rank")).toBeInTheDocument();
     expect(screen.getByText("Total Scholar XP")).toBeInTheDocument();
+  });
+
+  it("filters the activity feed with search, status chips and clear", async () => {
+    render(<ProfilePage />);
+
+    fireEvent.click(screen.getByRole("tab", { name: /activity/i }));
+    const panel = screen.getByRole("tabpanel", { name: /activity/i });
+
+    // Both recorded sessions are listed in the feed.
+    await within(panel).findByText("Cell Structure");
+    expect(within(panel).getByText("Laws of Motion")).toBeInTheDocument();
+
+    // Search narrows the feed.
+    fireEvent.change(within(panel).getByRole("textbox", { name: /search activity/i }), {
+      target: { value: "motion" },
+    });
+    expect(within(panel).getByText("Laws of Motion")).toBeInTheDocument();
+    expect(within(panel).queryByText("Cell Structure")).not.toBeInTheDocument();
+
+    // Clearing the query restores the feed.
+    fireEvent.click(within(panel).getByRole("button", { name: /clear search/i }));
+    expect(await within(panel).findByText("Cell Structure")).toBeInTheDocument();
+
+    // The Completed status chip keeps only finished sessions.
+    fireEvent.click(within(panel).getByRole("button", { name: "Completed" }));
+    expect(within(panel).getByText("Cell Structure")).toBeInTheDocument();
+    expect(within(panel).queryByText("Laws of Motion")).not.toBeInTheDocument();
+
+    // "Clear filters" resets everything.
+    fireEvent.click(within(panel).getByRole("button", { name: /clear filters/i }));
+    expect(await within(panel).findByText("Laws of Motion")).toBeInTheDocument();
   });
 });

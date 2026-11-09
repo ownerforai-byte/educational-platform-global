@@ -10,6 +10,8 @@ import { getUnitTopic } from "../queries";
 import { ContentTabs } from "@/components/content/content-tabs";
 import { TopicProgressControls } from "@/components/progress/topic-progress-controls";
 import { hasLanguageProTrack } from "../language-pro";
+import { TopicSupplementalMaterials } from "@/components/content/topic-supplemental-materials";
+import { getTopicSupplementalContent } from "@/lib/content/topic-supplemental";
 import { ChevronRight, ArrowLeft, Lightbulb, NotebookPen } from "lucide-react";
 
 export async function TopicDetailView({
@@ -36,6 +38,18 @@ export async function TopicDetailView({
   }
 
   const { unit, topic } = data;
+
+  // Classified JSON filed under this exact topic (guides, worked examples,
+  // practice sets, PYQs, formula sheets, graphs). Selected here rather than in
+  // the browser: the manifest is ~8 MB and a page needs a handful of entries.
+  const supplemental = await getTopicSupplementalContent({
+    classSlug,
+    subjectSlug,
+    unitSlug: unit.id,
+    topicSlug: topic.slug,
+    topics: unit.topicEntries.map((entry) => ({ slug: entry.slug, title: entry.title })),
+  });
+
   const hasNotes = await hasTopicManifestNotes(subjectSlug, unitId, topic.slug);
   let mindmap: Awaited<ReturnType<typeof getTopicMindmap>> | undefined;
   try {
@@ -115,6 +129,10 @@ export async function TopicDetailView({
         unit={unit}
         tabProfile={hasLanguageProTrack(subjectSlug) ? "language-syllabus-pro" : "default"}
       />
+
+      {supplemental.length > 0 && (
+        <TopicSupplementalMaterials entries={supplemental} scope="topic" />
+      )}
 
       {hasLanguageProTrack(subjectSlug) && (
         <p className="text-sm text-muted-foreground">

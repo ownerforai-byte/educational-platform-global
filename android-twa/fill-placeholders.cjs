@@ -23,7 +23,6 @@ const replacements = [
   ['[YOUR_NAME_OR_ENTITY]', 'Ravikisan'],
   ['[YOUR_PHYSICAL_ADDRESS, NEPAL]', 'Kalaiya-25, Bara, Madhesh Province, Nepal'],
   ['[7]', '7'],
-  ['ownerforai@gmail.com', 'ravikisan1814@gmail.com'],
 ];
 
 for (const file of files) {

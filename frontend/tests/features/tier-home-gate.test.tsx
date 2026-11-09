@@ -11,10 +11,10 @@ import path from "node:path";
  *
  * The gate renders the hardcoded interface ONLY at the viewer's own rung and
  * replaces everyone else onto their own home ("/home" — the guest home — for
- * visitors, per the 2026-10-25 flow "welcome → guest home → login → study
- * home"); /home feeds the same rung→page router; a plus_20 pass resolves to
- * the Plus rung; and the login/signup pages bounce signed-in sessions away
- * ("no login page again").
+ * guests, per the 2026-10-25 flow "welcome → guest home → login → study
+ * home"); /home feeds the same rung→page router; a legacy plus_20 plan row
+ * resolves to the Plus rung; and the login/signup pages bounce signed-in
+ * sessions away ("no login page again").
  */
 
 const session = vi.hoisted(() => ({ user: null as unknown, isLoading: false }));
@@ -58,17 +58,16 @@ describe("TierHomeGate — one tier page per viewer", () => {
     expect(replace).toHaveBeenCalledWith("/home/member");
   });
 
-  it("sends signed-out visitors to the guest home", () => {
+  it("sends signed-out guests to the guest home", () => {
     render(<TierHomeGate tier="member">{HOME}</TierHomeGate>);
     expect(screen.queryByTestId("tier-home")).toBeNull();
     expect(replace).toHaveBeenCalledWith("/home");
   });
 
-  it("treats the temporary plus_20 pass as the Plus rung", () => {
+  it("treats a legacy plus_20 plan row as the Plus rung", () => {
     session.user = {
       email: "student@example.com",
       plan: "plus_20",
-      planExpiresAt: new Date(Date.now() + 86_400_000).toISOString(),
     };
     render(<TierHomeGate tier="plus">{HOME}</TierHomeGate>);
     expect(screen.getByTestId("tier-home")).toBeInTheDocument();

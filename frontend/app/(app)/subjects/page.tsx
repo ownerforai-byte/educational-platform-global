@@ -4,6 +4,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { Construction, Search } from "lucide-react";
 import { SYLLABUS } from "@/lib/syllabus";
+import { useLiveStats } from "@/lib/hooks/use-live-stats";
 
 // ─── Per-subject gradients ─────────────────────────────────────────────────
 const SUBJECT_GRADIENTS: Record<string, { from: string; to: string }> = {
@@ -47,10 +48,13 @@ function StatusBadge({ status }: { status: CardStatus }) {
 }
 
 // ─── Live subject card ─────────────────────────────────────────────────────
-function SubjectCard({ subject, classLabel, notesSlug }: {
+function SubjectCard({ subject, classLabel, notesSlug, percent, completedChapters }: {
   subject: { slug: string; name: string; units: { id: string }[] };
   classLabel: string;
   notesSlug: string;
+  /** Real completion from the student's progress journey. */
+  percent: number;
+  completedChapters: number;
 }) {
   const grad = getGradient(subject.slug);
   return (
@@ -59,18 +63,18 @@ function SubjectCard({ subject, classLabel, notesSlug }: {
       <div className="relative flex items-center justify-center py-6"
         style={{ background: `linear-gradient(135deg, ${grad.from}, ${grad.to})` }}>
         <div className="absolute right-2.5 top-2.5"><StatusBadge status="New" /></div>
-        <ProgressRing percent={0} />
+        <ProgressRing percent={percent} />
       </div>
       <div className="flex flex-col gap-1.5 p-3.5">
         <h3 className="text-sm font-extrabold leading-tight text-foreground">{subject.name}</h3>
         <span className="inline-flex w-fit items-center rounded-full px-2 py-0.5 text-[10px] font-semibold text-white"
           style={{ backgroundColor: grad.from }}>{classLabel}</span>
         <div className="mt-1 flex items-center justify-between text-[11px] text-muted-foreground">
-          <span>0/{subject.units.length} ch</span>
-          <span className="font-semibold">0%</span>
+          <span>{completedChapters}/{subject.units.length} ch</span>
+          <span className="font-semibold">{percent}%</span>
         </div>
         <div className="h-1 w-full overflow-hidden rounded-full bg-muted/60">
-          <div className="h-1 rounded-full" style={{ width: "0%", backgroundColor: grad.from }} />
+          <div className="h-1 rounded-full" style={{ width: `${percent}%`, backgroundColor: grad.from }} />
         </div>
       </div>
     </Link>
@@ -164,6 +168,25 @@ export default function SubjectsPage() {
   const stubClass = classFilter.replace("Class ", "") as "8" | "9" | "10";
   const stubSubjects = STUB_SUBJECTS[stubClass] ?? [];
 
+  // Live completion from the real progress journey — no literal zeros.
+  const { subjectProgress } = useLiveStats();
+  const progressFor = (slug: string) =>
+    subjectProgress[`${notesSlug}/${slug}`] ?? {
+      completedUnits: 0,
+      totalUnits: 0,
+      percent: 0,
+    };
+  const completedSubjects = isLive
+    ? liveSubjects.filter((s) => progressFor(s.slug).percent >= 100).length
+    : 0;
+  const overallPercent =
+    isLive && liveSubjects.length > 0
+      ? Math.round(
+          liveSubjects.reduce((sum, s) => sum + progressFor(s.slug).percent, 0) /
+            liveSubjects.length,
+        )
+      : 0;
+
   const subjectCount = isLive ? liveSubjects.length : stubSubjects.length;
   const loadedCount = loadProgress.classFilter === classFilter ? loadProgress.count : 0;
 
@@ -194,19 +217,17 @@ export default function SubjectsPage() {
 
       {/* Overall progress */}
       <div className="flex items-center gap-3 rounded-2xl border border-border/60 bg-card p-3.5">
-        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-red-100 text-red-500 dark:bg-red-900/30">🎯</div>
+        <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-500 dark:bg-amber-900/30">🎯</div>
         <div className="flex-1 min-w-0">
-          <p className="text-xs font-semibold text-foreground">{loadedCount} of {subjectCount} subjects loaded</p>
+          <p className="text-xs font-semibold text-foreground">{completedSubjects} of {subjectCount} completed</p>
           <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-muted/60">
             <div
-              className="h-1.5 rounded-full bg-red-400 transition-[width] duration-300"
-              style={{ width: `${subjectCount ? (loadedCount / subjectCount) * 100 : 100}%` }}
+              className="h-1.5 rounded-full bg-amber-400 transition-[width] duration-300"
+              style={{ width: `${overallPercent}%` }}
             />
           </div>
         </div>
-        <span className="text-xs font-bold text-red-500">
-          {subjectCount ? Math.round((loadedCount / subjectCount) * 100) : 100}%
-        </span>
+        <span className="text-xs font-bold text-amber-500">{overallPercent}%</span>
       </div>
 
       {/* Class filter pills */}
@@ -240,7 +261,13 @@ export default function SubjectsPage() {
           return isLive
             ? (
                 <div key={liveSubjects[index].slug} className="subject-card-enter">
-                  <SubjectCard subject={liveSubjects[index] as any} classLabel={classFilter} notesSlug={notesSlug} />
+                  <SubjectCard
+                    subject={liveSubjects[index] as any}
+                    classLabel={classFilter}
+                    notesSlug={notesSlug}
+                    percent={progressFor(liveSubjects[index].slug).percent}
+                    completedChapters={progressFor(liveSubjects[index].slug).completedUnits}
+                  />
                 </div>
               )
             : (

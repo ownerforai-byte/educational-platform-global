@@ -4,12 +4,12 @@ import { TierWelcomeGate } from "@/components/home/tier-home-gate";
 
 export const metadata: Metadata = {
   title: "Welcome | Ravikisan's Platform",
-  description: "The universal visitor welcome — browse freely, then Go to sign in.",
+  description: "The universal guest welcome — browse freely, then Go to sign in.",
 };
 
 export default function GuestWelcomePage() {
   return (
-    <TierWelcomeGate tier="visitor">
+    <TierWelcomeGate tier="guest">
       <UniversalWelcome />
     </TierWelcomeGate>
   );

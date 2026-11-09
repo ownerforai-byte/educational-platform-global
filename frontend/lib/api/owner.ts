@@ -1,4 +1,6 @@
 import { apiFetch } from "../api-client";
+import type { UserRole } from "@/lib/auth/roles";
+import type { AccessLevel } from "@/lib/access-level";
 
 /**
  * Owner console API — every call hits /api/owner/*, which the backend gates
@@ -32,6 +34,10 @@ export interface OwnerUser {
   full_name: string | null;
   email: string;
   role: "member" | "plus" | "pro" | "owner" | null;
+  /** profiles.plan — legacy rows (member, plus_20) read at their mapped rung. */
+  plan?: string | null;
+  /** The rung the user actually experiences (role/plan/premium folded by the backend resolver). */
+  effectiveTier?: AccessLevel;
   credits: number;
   credits_limit?: number | null;
   premium_status: boolean;
@@ -111,23 +117,14 @@ export function adjustOwnerUserCredits(
   });
 }
 
+/** Grant an access tier — the backend writes role + plan + premium together. */
 export function updateOwnerUserRole(
   userId: string,
-  role: "member" | "plus" | "pro" | "owner"
-): Promise<{ success: true; newRole: string }> {
+  role: UserRole
+): Promise<{ success: true; newRole: string; effectiveTier: AccessLevel }> {
   return apiFetch(`/api/owner/users/${userId}/role`, {
     method: "PATCH",
     body: JSON.stringify({ role }),
-  });
-}
-
-export function setOwnerUserPremium(
-  userId: string,
-  premiumStatus: boolean
-): Promise<{ success: true; premiumStatus: boolean }> {
-  return apiFetch(`/api/owner/users/${userId}/premium`, {
-    method: "PATCH",
-    body: JSON.stringify({ premiumStatus }),
   });
 }
 
@@ -135,30 +132,53 @@ export function deleteOwnerUser(userId: string): Promise<{ success: true }> {
   return apiFetch(`/api/owner/users/${userId}`, { method: "DELETE" });
 }
 
-/** Grant or revoke platform access (owner approval of a new signup). */
+/**
+ * Grant or revoke platform access (owner approval of a new signup).
+ * `role` is granted in the SAME call — an approval is one decision, not an
+ * approval followed by a separate tier pass.
+ */
 export function setOwnerUserAccessStatus(
   userId: string,
-  accessStatus: "ACTIVE" | "REJECTED" | "PENDING"
-): Promise<{ success: true; accessStatus: string }> {
+  accessStatus: "ACTIVE" | "REJECTED" | "PENDING",
+  role?: Exclude<UserRole, "owner">,
+): Promise<{ success: true; userId: string; status: string; effectiveTier?: AccessLevel }> {
   return apiFetch(`/api/owner/users/${userId}/status`, {
     method: "PATCH",
-    body: JSON.stringify({ status: accessStatus }),
+    body: JSON.stringify(role ? { status: accessStatus, role } : { status: accessStatus }),
+  });
+}
+
+export function bulkUpdateOwnerUserRole(
+  userIds: string[],
+  role: Exclude<UserRole, "owner">,
+): Promise<{
+  success: true;
+  role: string;
+  applied: string[];
+  skipped: Array<{ userId: string; reason: string }>;
+  requested: number;
+}> {
+  return apiFetch("/api/owner/users/bulk-tier", {
+    method: "POST",
+    body: JSON.stringify({ userIds, role }),
   });
 }
 
 export function bulkOwnerUserAccessStatus(
   userIds: string[],
   status: "ACTIVE" | "REJECTED",
+  role?: Exclude<UserRole, "owner">,
 ): Promise<{
   success: true;
   status: string;
+  role: string | null;
   applied: string[];
   skipped: Array<{ userId: string; reason: string }>;
   requested: number;
 }> {
   return apiFetch("/api/owner/users/bulk-status", {
     method: "POST",
-    body: JSON.stringify({ userIds, status }),
+    body: JSON.stringify(role ? { userIds, status, role } : { userIds, status }),
   });
 }
 

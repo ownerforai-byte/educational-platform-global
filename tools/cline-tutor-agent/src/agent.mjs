@@ -1,4 +1,5 @@
-import { Agent, createTool } from "@cline/sdk";
+import { Agent } from "@cline/agents";
+import { createTool } from "@cline/shared";
 import { createCurriculumCatalog } from "./curriculum.mjs";
 
 const SYSTEM_PROMPT = `You are Veer, a patient, encouraging study coach for Nepal's NEB Class 11 and 12 students.

@@ -26,7 +26,7 @@ import { updateOwnerSettings } from "@/lib/api/owner";
  */
 
 const TIER_CHIP: Record<AccessLevel, string> = {
-  visitor: "bg-slate-500/15 text-slate-500",
+  guest: "bg-slate-500/15 text-slate-500",
   member: "bg-emerald-500/15 text-emerald-500",
   plus: "bg-sky-500/15 text-sky-500",
   pro: "bg-violet-500/15 text-violet-500",

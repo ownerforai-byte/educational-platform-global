@@ -7,14 +7,14 @@ import {
 } from "../../src/utils/aiSpark";
 
 /**
- * AI spark tier enforcement (owner policy 2026-10-13: "restrict the ai spark
- * to 1 for public, 7 for member and unlimited for owner" + "create for plus
- * and pro member also like 25 and 50").
+ * AI spark tier enforcement (owner request 2026-11-07: one clean ladder —
+ * guest 0, member 13, plus 25, pro 50, owner unlimited). Mirrors the frontend
+ * table in frontend/lib/ai/ai-spark-tiers.ts.
  */
 describe("AI spark tier table", () => {
-  it("daily allowances: guest 0 · member 15 · plus 25 · pro 50 · owner unlimited", () => {
+  it("daily allowances: guest 0 · member 13 · plus 25 · pro 50 · owner unlimited", () => {
     expect(AI_SPARK_LIMITS.guest).toBe(0);
-    expect(AI_SPARK_LIMITS.member).toBe(15);
+    expect(AI_SPARK_LIMITS.member).toBe(13);
     expect(AI_SPARK_LIMITS.plus).toBe(25);
     expect(AI_SPARK_LIMITS.pro).toBe(50);
     expect(AI_SPARK_LIMITS.owner).toBe(Number.POSITIVE_INFINITY);

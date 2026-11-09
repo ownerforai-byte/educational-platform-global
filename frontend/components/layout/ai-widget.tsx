@@ -775,6 +775,14 @@ export function AIWidget() {
               </div>
               <div className="flex shrink-0 items-center gap-2">
                 <AiSparkBadge className="hidden lg:inline-flex" />
+                {/* CodeRabbit: the Stop control used to live only inside the
+                    Teach composer, so switching tabs mid-reply unmounted it and
+                    left a running stream with no way to cancel. */}
+                {sending && (
+                  <button type="button" onClick={() => abortRef.current?.abort()} aria-label="Stop reply" title="Stop the reply" className="inline-flex h-9 items-center gap-1.5 rounded-xl bg-destructive px-2.5 text-xs font-bold text-destructive-foreground shadow-md transition hover:opacity-90">
+                    <Square className="h-3 w-3 fill-current" /> Stop
+                  </button>
+                )}
                 <button type="button" onClick={() => setOpen(false)} className="rounded-xl p-2 text-slate-300 transition hover:bg-white/10 hover:text-white" aria-label="Close Veer Professor">
                   <X className="h-4 w-4" />
                 </button>
