@@ -2,9 +2,24 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import { Canvas, useFrame, type ThreeEvent } from "@react-three/fiber";
-import { ARButton, XR, useXR } from "@react-three/xr";
+import { createXRStore, XR, useXR } from "@react-three/xr";
 import * as THREE from "three";
 import { ViewportRelativeArrow } from "./viewport-relative-arrow";
+
+/**
+ * @react-three/xr v6 replaced the implicit XR context with an explicit store:
+ * - `XR` now requires `store` (TS2741).
+ * - `ARButton` is deprecated/retyped; entering a session is `store.enterAR()`.
+ * - `isPresenting` was removed from the state; an active session is `session != null`.
+ * `offerSession: false` keeps the explicit "Start AR Experience" button rather
+ * than letting v6 auto-request an immersive session on load.
+ */
+const xrStore = createXRStore({
+  offerSession: false,
+  customSessionInit: {
+    optionalFeatures: ["local-floor", "bounded-floor", "hand-tracking", "hit-test"],
+  },
+});
 
 export type ARShape = "cube" | "sphere" | "cone" | "torus" | "icosahedron";
 
@@ -35,7 +50,7 @@ function ARScene({
   onObjectAdded?: (obj: ARObject) => void;
 }) {
   const [selectedObject, setSelectedObject] = useState<string | null>(null);
-  const isPresenting = useXR((s) => s.isPresenting);
+  const isPresenting = useXR((s) => s.session != null);
 
   useFrame((state) => {
     if (selectedObject) {
@@ -132,7 +147,7 @@ function ARScene({
 }
 
 function SessionTracker({ onActiveChange }: { onActiveChange: (active: boolean) => void }) {
-  const isPresenting = useXR((s) => s.isPresenting);
+  const isPresenting = useXR((s) => s.session != null);
   useEffect(() => {
     onActiveChange(isPresenting);
   }, [isPresenting, onActiveChange]);
@@ -180,7 +195,7 @@ export function ARViewer({ enabled = false, onClose }: ARViewerProps) {
         camera={{ position: [0, 0, 0], fov: 75 }}
         gl={{ antialias: true }}
       >
-        <XR>
+        <XR store={xrStore}>
           <SessionTracker onActiveChange={setIsARActive} />
           <ARScene
             objects={objects}
@@ -193,10 +208,9 @@ export function ARViewer({ enabled = false, onClose }: ARViewerProps) {
 
       {arSupported && !isARActive && (
         <div className="absolute bottom-[100px] left-1/2 z-10 -translate-x-1/2">
-          <ARButton
-            sessionInit={{
-              optionalFeatures: ["local-floor", "bounded-floor", "hand-tracking", "hit-test"],
-            }}
+          <button
+            type="button"
+            onClick={() => void xrStore.enterAR()}
             style={{
               padding: "16px 32px",
               borderRadius: "12px",
@@ -210,7 +224,7 @@ export function ARViewer({ enabled = false, onClose }: ARViewerProps) {
             }}
           >
             Start AR Experience
-          </ARButton>
+          </button>
         </div>
       )}
 
