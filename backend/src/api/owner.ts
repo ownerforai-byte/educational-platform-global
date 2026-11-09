@@ -43,9 +43,10 @@ const creditAdjustSchema = z.object({
 });
 
 const roleUpdateSchema = z.object({
-  // Owner standing is never grantable from the console: no owner may add
-  // another owner. Owners come from the allowlist or an existing owner rung.
-  role: z.enum(["member", "plus", "pro"]),
+  // Owner is grantable to a NON-owner account (approve/promote someone as
+  // owner). An EXISTING owner can never be re-tiered — isProtectedOwnerTarget
+  // blocks that on every route below, so no owner can replace another owner.
+  role: z.enum(["member", "plus", "pro", "owner"]),
 });
 
 type GrantTier = z.infer<typeof roleUpdateSchema>["role"];
@@ -61,10 +62,11 @@ const TIER_GRANT: Record<GrantTier, { role: GrantTier; plan: string; premium_sta
   member: { role: "member", plan: "member", premium_status: false },
   plus: { role: "plus", plan: "plus", premium_status: false },
   pro: { role: "pro", plan: "pro", premium_status: true },
+  owner: { role: "owner", plan: "pro", premium_status: true },
 };
 
-/** A tier an approval may grant in the same call (owner is never assignable). */
-const approvableRoleSchema = z.enum(["member", "plus", "pro"]);
+/** A tier an approval may grant in the same call (owner included — approve as owner). */
+const approvableRoleSchema = z.enum(["member", "plus", "pro", "owner"]);
 
 const accessStatusUpdateSchema = z.object({
   status: z.enum(["PENDING", "ACTIVE", "REJECTED"]),
@@ -110,7 +112,7 @@ const bulkTierUpdateSchema = z.object({
     .min(1)
     .max(100)
     .refine((ids) => new Set(ids).size === ids.length, "User IDs must be unique"),
-  role: z.enum(["member", "plus", "pro"]),
+  role: z.enum(["member", "plus", "pro", "owner"]),
 });
 
 const bulkCreditsSchema = z.object({

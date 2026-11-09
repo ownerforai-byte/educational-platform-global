@@ -15,8 +15,9 @@ const creditAdjustSchema = z.object({
 });
 
 const updateUserRoleSchema = z.object({
-  // Owner standing is never grantable: no owner may add another owner.
-  role: z.enum(["member", "plus", "pro"]),
+  // Owner is grantable to a non-owner; isProtectedOwnerTarget below blocks
+  // re-tiering an EXISTING owner, so no owner can replace another owner.
+  role: z.enum(["member", "plus", "pro", "owner"]),
 });
 
 /**

@@ -376,14 +376,10 @@ describe("owner user tier management", () => {
     expect(h.opsFor("profiles").filter((call) => call.method === "update")).toHaveLength(1);
   });
 
-  it("rejects owner tier grants and duplicate IDs before changing profiles", async () => {
+  it("rejects duplicate IDs before changing profiles", async () => {
     const { request } = await mount([["/api/owner", ownerRouter]]);
     h.mockUser("owner-1", OWNER_EMAIL);
 
-    const ownerTier = await request("POST", "/api/owner/users/bulk-tier", {
-      userIds: ["00000000-0000-4000-8000-000000000001"],
-      role: "owner",
-    });
     const duplicateIds = await request("POST", "/api/owner/users/bulk-tier", {
       userIds: [
         "00000000-0000-4000-8000-000000000001",
@@ -392,7 +388,6 @@ describe("owner user tier management", () => {
       role: "plus",
     });
 
-    expect(ownerTier.status).toBe(400);
     expect(duplicateIds.status).toBe(400);
     expect(h.opsFor("profiles").filter((call) => call.method === "update")).toHaveLength(0);
   });
@@ -446,22 +441,42 @@ describe("owner approval decides access and tier together", () => {
     });
   });
 
-  it("rejects an owner tier and a bare re-grant never rewrites the tier", async () => {
+  it("approves a pending account AS owner in the same write", async () => {
     const { request } = await mount([["/api/owner", ownerRouter]]);
     h.mockUser("owner-1", OWNER_EMAIL);
     h.getUserById.mockResolvedValue({
       data: { user: { id: STUDENT_ID, email: GRANTED_EMAIL } },
       error: null,
     });
+    queueAuthAndTarget();
 
-    const ownerTier = await request("PATCH", `/api/owner/users/${STUDENT_ID}/status`, {
+    const res = await request("PATCH", `/api/owner/users/${STUDENT_ID}/status`, {
       status: "ACTIVE",
       role: "owner",
     });
-    expect(ownerTier.status).toBe(400);
-    expect(h.opsFor("profiles").filter((call) => call.method === "update")).toHaveLength(0);
 
+    expect(res.status).toBe(200);
+    expect(res.body).toMatchObject({ success: true, status: "ACTIVE", effectiveTier: "owner" });
+    const updates = h.opsFor("profiles").filter((call) => call.method === "update");
+    expect(updates).toHaveLength(1);
+    expect(updates[0].args[0]).toMatchObject({
+      access_status: "ACTIVE",
+      role: "owner",
+      plan: "pro",
+      premium_status: true,
+      premium_approved_at: expect.any(String),
+    });
+  });
+
+  it("a bare re-grant never rewrites the tier", async () => {
+    const { request } = await mount([["/api/owner", ownerRouter]]);
+    h.mockUser("owner-1", OWNER_EMAIL);
+    h.getUserById.mockResolvedValue({
+      data: { user: { id: STUDENT_ID, email: GRANTED_EMAIL } },
+      error: null,
+    });
     queueAuthAndTarget();
+
     const bare = await request("PATCH", `/api/owner/users/${STUDENT_ID}/status`, {
       status: "ACTIVE",
     });
@@ -549,17 +564,25 @@ describe("owner accounts may decide non-owner accounts", () => {
     expect(h.opsFor("profiles").filter((c) => c.method === "update")).toHaveLength(0);
   });
 
-  it("refuses to mint a new owner from the tier control", async () => {
+  it("promotes a non-owner account to owner from the tier control", async () => {
     const { request } = await mount([["/api/owner", ownerRouter]]);
     h.mockUser("owner-2", ROLE_OWNER_EMAIL);
+    h.getUserById.mockResolvedValue({
+      data: { user: { id: STUDENT_ID, email: GRANTED_EMAIL } },
+      error: null,
+    });
     queueRoleOwnerActor();
+    // Guard reads the target's role: a member is not a protected owner.
+    h.enqueue("profiles", { data: [{ role: "member" }], error: null });
 
     const res = await request("PATCH", `/api/owner/users/${STUDENT_ID}/role`, {
       role: "owner",
     });
 
-    expect(res.status).toBe(400);
-    expect(h.opsFor("profiles").filter((c) => c.method === "update")).toHaveLength(0);
+    expect(res.status).toBe(200);
+    expect(res.body).toMatchObject({ success: true, newRole: "owner", effectiveTier: "owner" });
+    const update = h.opsFor("profiles").find((c) => c.method === "update");
+    expect(update?.args[0]).toMatchObject({ role: "owner", plan: "pro", premium_status: true });
   });
 
   it("still refuses non-owner accounts on the owner routes", async () => {

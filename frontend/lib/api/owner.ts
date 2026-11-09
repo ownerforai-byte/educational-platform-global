@@ -118,10 +118,10 @@ export function adjustOwnerUserCredits(
   });
 }
 
-/** Grant an access tier — the backend writes role + plan + premium together. Owner is never assignable. */
+/** Grant an access tier — the backend writes role + plan + premium together. Owner is grantable to a non-owner; existing owners are protected server-side. */
 export function updateOwnerUserRole(
   userId: string,
-  role: Exclude<UserRole, "owner">
+  role: UserRole
 ): Promise<{ success: true; newRole: string; effectiveTier: AccessLevel }> {
   return apiFetch(`/api/owner/users/${userId}/role`, {
     method: "PATCH",
@@ -141,7 +141,7 @@ export function deleteOwnerUser(userId: string): Promise<{ success: true }> {
 export function setOwnerUserAccessStatus(
   userId: string,
   accessStatus: "ACTIVE" | "REJECTED" | "PENDING",
-  role?: Exclude<UserRole, "owner">,
+  role?: UserRole,
 ): Promise<{ success: true; userId: string; status: string; effectiveTier?: AccessLevel }> {
   return apiFetch(`/api/owner/users/${userId}/status`, {
     method: "PATCH",
@@ -151,7 +151,7 @@ export function setOwnerUserAccessStatus(
 
 export function bulkUpdateOwnerUserRole(
   userIds: string[],
-  role: Exclude<UserRole, "owner">,
+  role: UserRole,
 ): Promise<{
   success: true;
   role: string;
@@ -168,7 +168,7 @@ export function bulkUpdateOwnerUserRole(
 export function bulkOwnerUserAccessStatus(
   userIds: string[],
   status: "ACTIVE" | "REJECTED",
-  role?: Exclude<UserRole, "owner">,
+  role?: UserRole,
 ): Promise<{
   success: true;
   status: string;

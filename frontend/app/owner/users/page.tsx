@@ -119,10 +119,10 @@ export default function OwnerUsersPage() {
   const [busyId, setBusyId] = useState<string | null>(null);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [bulkBusy, setBulkBusy] = useState(false);
-  const [bulkTier, setBulkTier] = useState<Exclude<UserRole, "owner">>("plus");
+  const [bulkTier, setBulkTier] = useState<UserRole>("plus");
   // The tier granted by every approval in Review — single and bulk alike.
   // Approval and tier are ONE decision (never approve now, set tier later).
-  const [approvalTier, setApprovalTier] = useState<Exclude<UserRole, "owner">>("member");
+  const [approvalTier, setApprovalTier] = useState<UserRole>("member");
   // Access is owned by the partition, not the filter dropdown: Review =
   // PENDING, Approved = ACTIVE/REJECTED. Filters stay at "all" for access
   // so neither system can hide the other's rows.
@@ -188,7 +188,7 @@ export default function OwnerUsersPage() {
     }
   };
 
-  const handleTier = async (u: OwnerUser, tier: Exclude<UserRole, "owner">) => {
+  const handleTier = async (u: OwnerUser, tier: UserRole) => {
     setBusyId(u.id);
     const ok = await runAction(() => updateOwnerUserRole(u.id, tier), "Tier updated");
     setBusyId(null);
@@ -497,13 +497,13 @@ export default function OwnerUsersPage() {
               <select
                 value={approvalTier}
                 onChange={(e) =>
-                  setApprovalTier(e.target.value as Exclude<UserRole, "owner">)
+                  setApprovalTier(e.target.value as UserRole)
                 }
                 disabled={bulkBusy}
                 className="text-xs border rounded-md px-2 py-1.5 bg-background"
                 aria-label="Tier granted when approving"
               >
-                {USER_ROLES.filter((role) => role !== "owner").map((role) => (
+                {USER_ROLES.map((role) => (
                   <option key={role} value={role}>
                     {ACCESS_LABELS[role]} · {TIER_SPARKS[role]} Veer sparks
                   </option>
@@ -524,12 +524,12 @@ export default function OwnerUsersPage() {
                 <>
                   <select
                     value={bulkTier}
-                    onChange={(e) => setBulkTier(e.target.value as Exclude<UserRole, "owner">)}
+                    onChange={(e) => setBulkTier(e.target.value as UserRole)}
                     disabled={bulkBusy}
                     className="text-sm border rounded-md px-2 py-1.5 bg-background"
                     aria-label="Set selected accounts tier"
                   >
-                    {USER_ROLES.filter((role) => role !== "owner").map((role) => (
+                    {USER_ROLES.map((role) => (
                       <option key={role} value={role}>{ACCESS_LABELS[role]}</option>
                     ))}
                   </select>
@@ -763,13 +763,13 @@ export default function OwnerUsersPage() {
                             <select
                               value={u.effectiveTier ?? "member"}
                               onChange={(e) =>
-                                handleTier(u, e.target.value as Exclude<UserRole, "owner">)
+                                handleTier(u, e.target.value as UserRole)
                               }
                               disabled={busyId === u.id || u.effectiveTier === "owner"}
                               className="text-xs border rounded-md px-2 py-1.5 bg-background disabled:opacity-50"
                               aria-label={`Tier for ${u.email}`}
                             >
-                              {USER_ROLES.filter((r) => r !== "owner").map((r) => (
+                              {USER_ROLES.map((r) => (
                                 <option key={r} value={r}>
                                   {ACCESS_LABELS[r]}
                                 </option>
