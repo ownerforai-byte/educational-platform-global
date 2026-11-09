@@ -86,7 +86,7 @@ describe("Diagram Hub route layout — gate now owns the lock", () => {
     const tierShell = read("components/home/tier-interfaces.tsx");
     const gates = tierShell.match(/<SparkGate[\s\S]*?<\/SparkGate>/g) ?? [];
     expect(
-      gates.some((g) => g.includes('minLevel="pro"') && g.includes("<HomeSubjectRails />")),
+      gates.some((g) => g.includes('minLevel="pro"') && g.includes("{rails}")),
     ).toBe(true);
   });
 });

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -38,7 +38,6 @@ import {
   quickLinkMinTier,
   quickLinkUnlocked,
 } from "@/lib/navigation";
-import { HomeSubjectRails } from "@/components/home/home-subject-rails";
 import { SparkGate } from "@/features/credits/spark-gate";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { useJourney } from "@/components/study/use-journey";
@@ -392,11 +391,13 @@ function TierPage({
   headline,
   blurb,
   spotlights,
+  rails,
 }: {
   tier: AccessLevel;
   headline: string;
   blurb: string;
   spotlights: Spotlight[];
+  rails: ReactNode;
 }) {
   return (
     <div className="mx-auto w-full max-w-7xl space-y-8 px-4 py-8">
@@ -409,7 +410,7 @@ function TierPage({
         title="Home features"
         description="Subject rails, study tools and the full home dashboard open on the Pro plan."
       >
-        <HomeSubjectRails />
+        {rails}
       </SparkGate>
       <OpenSectionsRail tier={tier} />
       <NextRungTeaser tier={tier} />
@@ -419,9 +420,10 @@ function TierPage({
 
 // ── The four hardcoded interfaces ───────────────────────────────────────────
 
-export function MemberHome() {
+export function MemberHome({ rails }: { rails: ReactNode }) {
   return (
     <TierPage
+      rails={rails}
       tier="member"
       headline="Your study desk is open."
       blurb="Search the whole library, keep your Class 11 notes and formula sheets close, and track your progress — everything a Member needs, in one place."
@@ -435,9 +437,10 @@ export function MemberHome() {
   );
 }
 
-export function PlusHome() {
+export function PlusHome({ rails }: { rails: ReactNode }) {
   return (
     <TierPage
+      rails={rails}
       tier="plus"
       headline="Exam-ready — Class 11 + Class 12."
       blurb="Everything a Member has, plus Class 12, past papers, labs, and Veer studio."
@@ -451,9 +454,10 @@ export function PlusHome() {
   );
 }
 
-export function ProHome() {
+export function ProHome({ rails }: { rails: ReactNode }) {
   return (
     <TierPage
+      rails={rails}
       tier="pro"
       headline="Everything, no caps."
       blurb="Journal, worked numericals, the CEE track and the board exam suite, plus every index: derivations, the PDF library, graph banks and the knowledge hubs."
@@ -467,9 +471,10 @@ export function ProHome() {
   );
 }
 
-export function OwnerHome() {
+export function OwnerHome({ rails }: { rails: ReactNode }) {
   return (
     <TierPage
+      rails={rails}
       tier="owner"
       headline="Operator console — everything, plus the controls."
       blurb="Every section is open and every spark is unlimited. The console runs the platform: users and tier grants, section access rules, content control and the R1 layer."

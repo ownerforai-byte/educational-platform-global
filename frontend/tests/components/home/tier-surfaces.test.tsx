@@ -93,7 +93,7 @@ beforeEach(() => {
 
 describe("tier desk", () => {
   it("greets the student personally and shows their own numbers", () => {
-    render(<MemberHome />);
+    render(<MemberHome rails={<div data-testid="subject-rails" />} />);
 
     // Personalised hero: greeting + name + date line, tier badge, streak chip.
     expect(screen.getByText(/Aayush Sharma\./)).toBeInTheDocument();
@@ -106,7 +106,7 @@ describe("tier desk", () => {
   });
 
   it("keeps the hardcoded tier split — member shows the member spotlights", () => {
-    render(<MemberHome />);
+    render(<MemberHome rails={<div data-testid="subject-rails" />} />);
 
     expect(screen.getByText("Your study desk is open.")).toBeInTheDocument();
     expect(within(screen.getByTestId("spotlights")).getByText("Class 11 Notes")).toBeInTheDocument();
@@ -115,21 +115,21 @@ describe("tier desk", () => {
   });
 
   it("feeds each rung its own interface", () => {
-    const { unmount: un1 } = render(<PlusHome />);
+    const { unmount: un1 } = render(<PlusHome rails={<div data-testid="subject-rails" />} />);
     expect(screen.getByText("Plus interface")).toBeInTheDocument();
     expect(
       within(screen.getByTestId("spotlights")).getByText("Advanced theory notes and board-exam depth."),
     ).toBeInTheDocument();
     un1();
 
-    const { unmount: un2 } = render(<ProHome />);
+    const { unmount: un2 } = render(<ProHome rails={<div data-testid="subject-rails" />} />);
     expect(screen.getByText("Pro interface")).toBeInTheDocument();
     expect(
       within(screen.getByTestId("spotlights")).getByText("Your private study journal — one entry per day."),
     ).toBeInTheDocument();
     un2();
 
-    render(<OwnerHome />);
+    render(<OwnerHome rails={<div data-testid="subject-rails" />} />);
     expect(screen.getByText("Owner interface")).toBeInTheDocument();
     expect(
       within(screen.getByTestId("spotlights")).getByText("The full control surface."),
