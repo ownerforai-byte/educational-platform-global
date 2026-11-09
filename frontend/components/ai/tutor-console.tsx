@@ -87,6 +87,7 @@ import { isOwnerEmail } from "@/lib/owner";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { IDENTITY_REPLY } from "@/components/ai/ai-chat-interface";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
+import { AiReplyCard } from "@/components/ai/ai-reply-card";
 import { StepCards } from "@/components/chat/step-cards";
 import { splitStepBlocks } from "@/lib/content/steps-blocks";
 import { FloatingIdeaChips } from "@/components/ai/floating-idea-chips";
@@ -1367,32 +1368,51 @@ export function TutorConsole({
                   </div>
 
                   <div className="min-w-0 w-full">
-                    <div className="min-w-0 rounded-2xl rounded-tl-sm border border-border/70 bg-card px-3 py-4 shadow-sm sm:px-7 sm:py-6">
-                      {(assistantSegments[index] ?? []).map((segment, segIndex) =>
-                        segment.kind === "steps" ? (
-                          <StepCards key={segIndex} steps={segment.steps} />
-                        ) : (
-                          <InteractiveMarkdown
-                            key={segIndex}
-                            content={segment.text}
-                            className="chat-reading"
+                    {isIdentityAnswer(msg.content) ? (
+                      <div className="min-w-0 rounded-2xl rounded-tl-sm border border-border/70 bg-card px-3 py-4 shadow-sm sm:px-7 sm:py-6">
+                        {(assistantSegments[index] ?? []).map((segment, segIndex) =>
+                          segment.kind === "steps" ? (
+                            <StepCards key={segIndex} steps={segment.steps} />
+                          ) : (
+                            <InteractiveMarkdown
+                              key={segIndex}
+                              content={segment.text}
+                              className="chat-reading"
+                            />
+                          ),
+                        )}
+                      </div>
+                    ) : (
+                      <AiReplyCard
+                        title="Veer tutor"
+                        meta="AI Tutor"
+                        reply={msg.content}
+                        context={{ surface: "tutor" }}
+                        actions={
+                          <ChatMessageActions
+                            copied={copiedIndex === index}
+                            onCopy={() => handleCopy(msg.content, index)}
+                            isLatest={isLastAssistant}
+                            disabled={sending}
+                            onRegenerate={regenerate}
+                            onDeeper={() => followUp(GO_DEEPER_INSTRUCTION)}
+                            onShorter={() => followUp(KEEP_IT_SHORT_INSTRUCTION)}
+                            onPractice={startPracticeQuiz}
                           />
-                        ),
-                      )}
-                    </div>
-
-                    {/* Shared per-answer actions — identical to the widget's */}
-                    {isIdentityAnswer(msg.content) ? null : (
-                      <ChatMessageActions
-                        copied={copiedIndex === index}
-                        onCopy={() => handleCopy(msg.content, index)}
-                        isLatest={isLastAssistant}
-                        disabled={sending}
-                        onRegenerate={regenerate}
-                        onDeeper={() => followUp(GO_DEEPER_INSTRUCTION)}
-                        onShorter={() => followUp(KEEP_IT_SHORT_INSTRUCTION)}
-                        onPractice={startPracticeQuiz}
-                      />
+                        }
+                      >
+                        {(assistantSegments[index] ?? []).map((segment, segIndex) =>
+                          segment.kind === "steps" ? (
+                            <StepCards key={segIndex} steps={segment.steps} />
+                          ) : (
+                            <InteractiveMarkdown
+                              key={segIndex}
+                              content={segment.text}
+                              className="chat-reading"
+                            />
+                          ),
+                        )}
+                      </AiReplyCard>
                     )}
                   </div>
                 </div>

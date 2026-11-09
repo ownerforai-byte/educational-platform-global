@@ -58,6 +58,7 @@ import { isOwnerEmail } from "@/lib/owner";
 import { AiSparkBadge, recordAiSparkUse, refreshAiSparkMeters } from "@/components/ai/ai-spark-badge";
 import { FloatingIdeaChips } from "@/components/ai/floating-idea-chips";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
+import { AiReplyCard } from "@/components/ai/ai-reply-card";
 import { buildChatHomeGroups, ChatHome, type ChatHomeGroup } from "@/components/ai/chat-home";
 import { useVoiceInput } from "@/lib/hooks/use-voice-input";
 import { VoiceMicButton } from "@/components/ai/voice-mic-button";
@@ -1206,8 +1207,40 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
                     <CaptainAvatar className="h-3.5 w-3.5" />
                   </div>
-                  <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/70 bg-card px-3 py-3 shadow-sm sm:px-5 sm:py-4">
-                    <div>
+                  {isIdentityAnswer(msg.content) ? (
+                    <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/70 bg-card px-3 py-3 shadow-sm sm:px-5 sm:py-4">
+                      <div>
+                        {(displaySegments[index] ?? []).map((segment, segIndex) =>
+                          segment.kind === "steps" ? (
+                            <StepCards key={segIndex} steps={segment.steps} />
+                          ) : (
+                            <InteractiveMarkdown
+                              key={segIndex}
+                              content={segment.text}
+                              className="chat-reading"
+                            />
+                          ),
+                        )}
+                      </div>
+                    </div>
+                  ) : (
+                    <AiReplyCard
+                      title="Veer"
+                      reply={msg.content}
+                      context={{ surface: "chat" }}
+                      actions={
+                        <ChatMessageActions
+                          copied={copiedIndex === index}
+                          onCopy={() => handleCopy(msg.content, index)}
+                          isLatest={index === lastAssistantIndex}
+                          disabled={sending}
+                          onRegenerate={regenerate}
+                          onDeeper={() => followUp(GO_DEEPER_INSTRUCTION)}
+                          onShorter={() => followUp(KEEP_IT_SHORT_INSTRUCTION)}
+                          onPractice={startPracticeQuiz}
+                        />
+                      }
+                    >
                       {(displaySegments[index] ?? []).map((segment, segIndex) =>
                         segment.kind === "steps" ? (
                           <StepCards key={segIndex} steps={segment.steps} />
@@ -1222,21 +1255,8 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                       {isStreaming && index === lastAssistantIndex && (
                         <span className="ml-0.5 inline-block h-3 w-1.5 animate-pulse rounded-sm bg-primary align-text-bottom" aria-hidden />
                       )}
-                    </div>
-                    {/* Same per-answer actions as the tutor console, same position */}
-                    {isIdentityAnswer(msg.content) ? null : (
-                      <ChatMessageActions
-                        copied={copiedIndex === index}
-                        onCopy={() => handleCopy(msg.content, index)}
-                        isLatest={index === lastAssistantIndex}
-                        disabled={sending}
-                        onRegenerate={regenerate}
-                        onDeeper={() => followUp(GO_DEEPER_INSTRUCTION)}
-                        onShorter={() => followUp(KEEP_IT_SHORT_INSTRUCTION)}
-                        onPractice={startPracticeQuiz}
-                      />
-                    )}
-                  </div>
+                    </AiReplyCard>
+                  )}
                 </div>
               );
             })

@@ -8,6 +8,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Label } from "@/components/ui/label";
 import { chat } from "@/lib/api/ai";
 import { createThread } from "@/lib/api/community";
+import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
+import { AiReplyCard } from "@/components/ai/ai-reply-card";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { buildAskPrompt, getCommunitySpace, listCommunitySpaces, MAX_QUESTION_LENGTH, validateQuestion } from "@/lib/community";
 
@@ -113,14 +115,17 @@ export function AskView() {
         </CardContent>
       </Card>
       {answer && (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">Veer tutor</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="whitespace-pre-wrap text-sm leading-relaxed">{answer}</p>
-          </CardContent>
-        </Card>
+        <AiReplyCard
+          title="Veer tutor"
+          reply={answer}
+          context={{
+            surface: "ask",
+            subjectName: getCommunitySpace(spaceId)?.subjectName,
+            subjectSlug: getCommunitySpace(spaceId)?.subjectSlug,
+          }}
+        >
+          <InteractiveMarkdown content={answer} className="chat-reading" />
+        </AiReplyCard>
       )}
       <Card>
         <CardHeader>

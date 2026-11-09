@@ -30,6 +30,7 @@ import {
 } from "@/components/ai/ai-spark-badge";
 import { VoiceMicButton } from "@/components/ai/voice-mic-button";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
+import { AiReplyCard } from "@/components/ai/ai-reply-card";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { hasLevel } from "@/lib/access-level";
@@ -184,12 +185,14 @@ function SolveStudio({ classLevel, subject }: { classLevel: string; subject: str
       </div>
       {error && <p role="alert" className="rounded-2xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">{error}</p>}
       {result && (
-        <article className="rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-6">
-          <div className="mb-4 flex items-center gap-2 border-b border-border pb-3 text-xs font-bold uppercase tracking-[0.16em] text-indigo-500">
-            <CheckCircle2 className="h-4 w-4" /> Verified professor solution
-          </div>
+        <AiReplyCard
+          compact
+          title="Verified professor solution"
+          reply={result.solution}
+          context={{ surface: "widget", subjectName: subject }}
+        >
           <InteractiveMarkdown content={result.solution} className="chat-reading" />
-        </article>
+        </AiReplyCard>
       )}
     </div>
   );
@@ -285,12 +288,14 @@ function DeepDiveStudio({ classLevel, subject }: { classLevel: string; subject: 
       </div>
       {error && <p role="alert" className="rounded-2xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">{error}</p>}
       {result && (
-        <article className="rounded-3xl border border-border bg-card p-5 shadow-sm sm:p-6">
-          <div className="mb-4 flex items-center gap-2 border-b border-border pb-3 text-xs font-bold uppercase tracking-[0.16em] text-sky-500">
-            <Brain className="h-4 w-4" /> {result.depth.replace("-", " ")} synthesis
-          </div>
+        <AiReplyCard
+          compact
+          title={`${result.depth.replace("-", " ")} synthesis`}
+          reply={result.explanation}
+          context={{ surface: "widget", subjectName: subject }}
+        >
           <InteractiveMarkdown content={result.explanation} className="chat-reading" />
-        </article>
+        </AiReplyCard>
       )}
     </div>
   );
