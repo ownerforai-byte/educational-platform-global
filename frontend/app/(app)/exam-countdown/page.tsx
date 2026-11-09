@@ -1,89 +1,139 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
-import { Calendar, Clock, BookOpen, Target, CheckCircle2, Circle, TrendingUp, FileText, FlaskConical } from "lucide-react";
+/**
+ * /exam-countdown — NEB exam countdown + revision plans.
+ *
+ * Rebuilt 2026-11-09 per plan-pro-app.md verdict #10 (poor → rebuild):
+ * - Dates are stored as AD ISO dates directly. The old page converted
+ *   Bikram Sambat with a `year − 57` approximation, which drifts because BS
+ *   month lengths vary; the BS label is kept for display only.
+ * - The exam calendar lives in ONE config with a dated owner reminder —
+ *   when every date has passed the page says so honestly instead of
+ *   showing "0 days left" forever.
+ * - Progress comes from the real journey API (`getProgress()`), not the
+ *   orphaned `neb-progress` localStorage key that nothing in the codebase
+ *   wrote — the old page's coverage was permanently 0% for every student.
+ * - Subject identity comes from `lib/ui/subject-visuals.ts` tokens; no
+ *   ad-hoc hex color maps (finding CC-1).
+ * - Study plans no longer assume a fake 999-day horizon when no exam date
+ *   exists; they say so and pace over four weeks.
+ */
+
+import React, { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import {
+  Clock,
+  BookOpen,
+  Target,
+  CheckCircle2,
+  Circle,
+  TrendingUp,
+  FileText,
+  FlaskConical,
+} from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { SYLLABUS, type ClassSyllabus, type SubjectSyllabus, type SyllabusUnit } from "@/lib/syllabus";
-import Link from "next/link";
+import { SYLLABUS, slugifySyllabusTopic, type SubjectSyllabus } from "@/lib/syllabus";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
+import { getProgress } from "@/lib/api/progress";
+import type { ProgressEntry } from "@/types/api";
 
-// ── NEB exam dates (academic year 2081/82 — update each year) ──────────────
-const EXAM_DATE: Record<string, string> = {
-  physics: "2082-05-01",
-  chemistry: "2082-05-03",
-  mathematics: "2082-05-05",
-  biology: "2082-05-07",
-  english: "2082-04-28",
-  nepali: "2082-04-30",
+// ── Exam calendar (owner-maintained) ───────────────────────────────────────
+// AD date is the countdown source of truth; `bs` is the Nepali label shown to
+// students. OWNER: update both each year when NEB publishes the new calendar
+// (last updated 2026-11-09; the AD values below are the equivalents the old
+// BS conversion produced — replace with the officially published dates).
+const EXAM_CALENDAR: Record<string, { ad: string; bs: string }> = {
+  physics:     { ad: "2025-05-01", bs: "2082-05-01" },
+  chemistry:   { ad: "2025-05-03", bs: "2082-05-03" },
+  mathematics: { ad: "2025-05-05", bs: "2082-05-05" },
+  biology:     { ad: "2025-05-07", bs: "2082-05-07" },
+  english:     { ad: "2025-04-28", bs: "2082-04-28" },
+  nepali:      { ad: "2025-04-30", bs: "2082-04-30" },
 };
 
-const SUBJECT_COLOR: Record<string, string> = {
-  physics: "#3b82f6",
-  chemistry: "#10b981",
-  mathematics: "#8b5cf6",
-  biology: "#22c55e",
-  english: "#f59e0b",
-  nepali: "#ef4444",
-};
-
-// ── Helpers ─────────────────────────────────────────────────────────────────
-
-/** Convert BS (Bikram Sambat) date string to JS Date approximation. */
-function parseBsDate(bsStr: string): Date {
-  // BS is ~57 years ahead of AD. For countdown display we treat BS dates as-is.
-  // The numerical difference between BS and AD years is ~56-57.
-  const [y, m, d] = bsStr.split("-").map(Number);
-  // Approximate: BS year - 57 = AD year
-  const adYear = y - 57;
-  return new Date(adYear, m - 1, d);
-}
-
-function daysUntil(dateStr: string): number {
-  const target = parseBsDate(dateStr);
+function daysUntil(adIso: string): number {
+  const target = new Date(`${adIso}T00:00:00`);
   const today = new Date();
-  const diff = Math.ceil((target.getTime() - today.getTime()) / 86_400_000);
-  return diff;
+  today.setHours(0, 0, 0, 0);
+  return Math.ceil((target.getTime() - today.getTime()) / 86_400_000);
 }
 
-function getProgressFromLocalStorage(): Record<string, boolean> {
-  if (typeof window === "undefined") return {};
-  try {
-    const raw = localStorage.getItem("neb-progress");
-    return raw ? JSON.parse(raw) : {};
-  } catch {
-    return {};
+function formatDate(adIso: string): string {
+  return new Date(`${adIso}T00:00:00`).toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+}
+
+/** True when every configured exam date is already in the past. */
+function calendarStale(subjects: SubjectSyllabus[]): boolean {
+  const dates = subjects
+    .map((s) => EXAM_CALENDAR[s.slug]?.ad)
+    .filter((d): d is string => Boolean(d));
+  return dates.length > 0 && dates.every((d) => daysUntil(d) < 0);
+}
+
+// ── Countdown chip ─────────────────────────────────────────────────────────
+function CountdownChip({ subjectSlug }: { subjectSlug: string }) {
+  const entry = EXAM_CALENDAR[subjectSlug];
+  if (!entry) {
+    return (
+      <div className="flex flex-col items-end rounded-xl px-3 py-1.5 bg-muted/40">
+        <span className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+          date to be announced
+        </span>
+      </div>
+    );
   }
+  const days = daysUntil(entry.ad);
+  return (
+    <div className="flex flex-col items-end rounded-xl px-3 py-1.5 bg-primary/10">
+      {days > 0 ? (
+        <>
+          <span className="text-xl font-bold tabular-nums text-primary">{days}</span>
+          <span className="text-[10px] text-muted-foreground uppercase tracking-wide">days left</span>
+        </>
+      ) : days === 0 ? (
+        <span className="text-sm font-bold text-primary">Today!</span>
+      ) : (
+        <span className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+          {formatDate(entry.ad)} — passed
+        </span>
+      )}
+    </div>
+  );
 }
 
-// ── Sub-components ──────────────────────────────────────────────────────────
-
+// ── Subject countdown card ─────────────────────────────────────────────────
 function CountdownCard({
   subject,
   classSlug,
-  progress,
+  completedTopics,
 }: {
   subject: SubjectSyllabus;
   classSlug: string;
-  progress: Record<string, boolean>;
+  /** Slugs of topics the student has completed, from the real journey. */
+  completedTopics: Set<string>;
 }) {
-  const dateStr = EXAM_DATE[subject.slug];
-  const days = dateStr ? daysUntil(dateStr) : null;
-  const totalTopics = subject.units.reduce((sum, u) => sum + u.topics.length, 0);
-  const completedTopics = subject.units.reduce(
-    (sum, unit) =>
-      sum + unit.topics.filter((t) => progress[`${subject.slug}-${t}`]).length,
-    0
-  );
-  const pct = totalTopics > 0 ? Math.round((completedTopics / totalTopics) * 100) : 0;
-  const color = SUBJECT_COLOR[subject.slug] ?? "#64748b";
+  const entry = EXAM_CALENDAR[subject.slug];
   const visual = getSubjectVisual(subject.slug);
+  const totalTopics = subject.units.reduce((sum, u) => sum + u.topics.length, 0);
+  const completedCount = subject.units.reduce(
+    (sum, unit) =>
+      sum +
+      unit.topics.filter((t) =>
+        completedTopics.has(`${classSlug}/${subject.slug}/${unit.id}/${slugifySyllabusTopic(t)}`),
+      ).length,
+    0,
+  );
+  const pct = totalTopics > 0 ? Math.round((completedCount / totalTopics) * 100) : 0;
 
   return (
     <Card className="relative overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-1" style={{ backgroundColor: color }} />
+      <div className={`absolute inset-x-0 top-0 h-1 ${visual.text.replace("text-", "bg-")}`} />
       <CardHeader className="pb-3">
         <div className="flex items-start justify-between">
           <div className="flex items-center gap-2">
@@ -91,23 +141,11 @@ function CountdownCard({
             <div>
               <CardTitle className="text-base font-semibold">{subject.name}</CardTitle>
               <CardDescription className="text-xs">
-                {subject.units.length} units · {totalTopics} topics
+                {entry ? `Exam ${formatDate(entry.ad)} (${entry.bs} BS)` : "Exam date to be announced"}
               </CardDescription>
             </div>
           </div>
-          {days !== null && (
-            <div
-              className="flex flex-col items-end rounded-xl px-3 py-1.5"
-              style={{ backgroundColor: `${color}15` }}
-            >
-              <span className="text-xl font-bold tabular-nums" style={{ color }}>
-                {days > 0 ? days : 0}
-              </span>
-              <span className="text-[10px] text-muted-foreground uppercase tracking-wide">
-                {days > 0 ? "days left" : days === 0 ? "today!" : "passed"}
-              </span>
-            </div>
-          )}
+          <CountdownChip subjectSlug={subject.slug} />
         </div>
       </CardHeader>
       <CardContent className="space-y-3">
@@ -116,18 +154,19 @@ function CountdownCard({
           <div className="flex items-center justify-between text-xs text-muted-foreground mb-1.5">
             <span>Syllabus coverage</span>
             <span className="font-semibold text-foreground">
-              {completedTopics}/{totalTopics} ({pct}%)
+              {completedCount}/{totalTopics} ({pct}%)
             </span>
           </div>
-          <Progress value={pct} className="h-2" />
+          <Progress value={pct} className="h-2" aria-label={`${subject.name} coverage ${pct}%`} />
         </div>
 
         {/* Unit breakdown */}
         <div className="space-y-1.5">
           {subject.units.map((unit) => {
-            const unitTotal = unit.topics.length;
-            const unitDone = unit.topics.filter((t) => progress[`${subject.slug}-${t}`]).length;
-            const unitPct = unitTotal > 0 ? Math.round((unitDone / unitTotal) * 100) : 0;
+            const unitDone = unit.topics.filter((t) =>
+              completedTopics.has(`${classSlug}/${subject.slug}/${unit.id}/${slugifySyllabusTopic(t)}`),
+            ).length;
+            const unitPct = unit.topics.length > 0 ? Math.round((unitDone / unit.topics.length) * 100) : 0;
             return (
               <div key={unit.id} className="flex items-center gap-2 text-xs">
                 <div className="flex-1 min-w-0">
@@ -135,7 +174,7 @@ function CountdownCard({
                     <span className="text-muted-foreground truncate">{unit.title}</span>
                     <span className="text-muted-foreground tabular-nums ml-1">{unitPct}%</span>
                   </div>
-                  <Progress value={unitPct} className="h-1.5" />
+                  <Progress value={unitPct} className="h-1.5" aria-label={`${unit.title} ${unitPct}%`} />
                 </div>
               </div>
             );
@@ -146,21 +185,26 @@ function CountdownCard({
   );
 }
 
+// ── Study plan card ────────────────────────────────────────────────────────
 function StudyPlanCard({
-  classSlug,
   subject,
+  classSlug,
   daysLeft,
-  progress,
+  hasExamDate,
+  completedTopics,
 }: {
-  classSlug: string;
   subject: SubjectSyllabus;
+  classSlug: string;
   daysLeft: number;
-  progress: Record<string, boolean>;
+  hasExamDate: boolean;
+  completedTopics: Set<string>;
 }) {
   const remainingTopics = subject.units.flatMap((unit) =>
-    unit.topics.filter((t) => !progress[`${subject.slug}-${t}`])
+    unit.topics.filter(
+      (t) => !completedTopics.has(`${classSlug}/${subject.slug}/${unit.id}/${slugifySyllabusTopic(t)}`),
+    ),
   );
-  const topicsPerDay = daysLeft > 0 ? Math.ceil(remainingTopics.length / daysLeft) : remainingTopics.length;
+  const topicsPerDay = Math.ceil(remainingTopics.length / daysLeft);
 
   if (remainingTopics.length === 0) {
     return (
@@ -176,17 +220,13 @@ function StudyPlanCard({
     );
   }
 
-  const weekGroups: Array<{ label: string; topics: string[] }> = [];
   const weekCount = Math.max(1, Math.ceil(remainingTopics.length / (topicsPerDay * 7)));
+  const weekGroups: Array<{ label: string; topics: string[] }> = [];
   for (let w = 0; w < weekCount; w++) {
     const start = w * topicsPerDay * 7;
-    const end = start + topicsPerDay * 7;
-    const weekTopics = remainingTopics.slice(start, end);
+    const weekTopics = remainingTopics.slice(start, start + topicsPerDay * 7);
     if (weekTopics.length > 0) {
-      weekGroups.push({
-        label: `Week ${w + 1}`,
-        topics: weekTopics,
-      });
+      weekGroups.push({ label: `Week ${w + 1}`, topics: weekTopics });
     }
   }
 
@@ -198,7 +238,9 @@ function StudyPlanCard({
           Study Plan — {subject.name}
         </CardTitle>
         <CardDescription>
-          {remainingTopics.length} topics remaining · ~{topicsPerDay} topics/day over {weekCount} week{weekCount > 1 ? "s" : ""}
+          {remainingTopics.length} topics remaining · ~{topicsPerDay} topics/day over{" "}
+          {weekCount} week{weekCount > 1 ? "s" : ""}
+          {!hasExamDate && " (no exam date published — paced over four weeks)"}
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-3">
@@ -227,40 +269,70 @@ function StudyPlanCard({
   );
 }
 
-// ── Main Page ───────────────────────────────────────────────────────────────
+// ── Main page ──────────────────────────────────────────────────────────────
+const CLASS_FILTERS = ["class-11-notes", "class-12-notes"] as const;
 
 export default function ExamCountdownPage() {
-  const [classSlug, setClassSlug] = useState("class-11-notes");
-  const [progress, setProgress] = useState<Record<string, boolean>>({});
-  const [mounted, setMounted] = useState(false);
+  const [classSlug, setClassSlug] = useState<(typeof CLASS_FILTERS)[number]>("class-11-notes");
+  const [entries, setEntries] = useState<ProgressEntry[] | null>(null);
+  const [loadFailed, setLoadFailed] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-    setProgress(getProgressFromLocalStorage());
+    let alive = true;
+    getProgress()
+      .then((rows) => {
+        if (alive) setEntries(rows);
+      })
+      .catch(() => {
+        if (alive) setLoadFailed(true);
+      });
+    return () => {
+      alive = false;
+    };
   }, []);
 
   const classData = useMemo(
     () => SYLLABUS.find((c) => c.slug === classSlug),
-    [classSlug]
+    [classSlug],
   );
 
-  // Compute global minimum days across all subjects that have exam dates
+  // Completed topic ids from the real journey — the single progress source.
+  const completedTopics = useMemo(() => {
+    const set = new Set<string>();
+    for (const e of entries ?? []) {
+      if (e.completed) set.add(e.topicId);
+    }
+    return set;
+  }, [entries]);
+
+  // Global minimum days across subjects that have upcoming exam dates; null
+  // when the calendar is missing or entirely in the past (shown honestly).
   const globalDays = useMemo(() => {
     if (!classData) return null;
     const days = classData.subjects
-      .map((s) => EXAM_DATE[s.slug])
-      .filter(Boolean)
-      .map(daysUntil);
+      .map((s) => EXAM_CALENDAR[s.slug]?.ad)
+      .filter((d): d is string => Boolean(d))
+      .map(daysUntil)
+      .filter((d) => d >= 0);
     return days.length > 0 ? Math.min(...days) : null;
   }, [classData]);
 
-  if (!mounted || !classData) {
-    return (
-      <div className="flex items-center justify-center py-20">
-        <div className="text-muted-foreground">Loading…</div>
-      </div>
-    );
-  }
+  const overallPercent = useMemo(() => {
+    if (!classData || !entries) return 0;
+    let total = 0;
+    let done = 0;
+    for (const s of classData.subjects) {
+      for (const u of s.units) {
+        total += u.topics.length;
+        done += u.topics.filter((t) =>
+          completedTopics.has(`${classSlug}/${s.slug}/${u.id}/${slugifySyllabusTopic(t)}`),
+        ).length;
+      }
+    }
+    return total > 0 ? Math.round((done / total) * 100) : 0;
+  }, [classData, classSlug, completedTopics, entries]);
+
+  if (!classData) return null;
 
   return (
     <div className="mx-auto max-w-5xl space-y-8 py-8">
@@ -272,7 +344,15 @@ export default function ExamCountdownPage() {
         </p>
       </div>
 
-      {/* Global summary */}
+      {/* Honest calendar notice when every date has passed */}
+      {calendarStale(classData.subjects) && (
+        <div className="rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-700 dark:text-amber-400">
+          The published exam dates for this cycle have passed. The new NEB calendar has not been
+          added yet — countdowns will resume once it is published. Revision plans below still work.
+        </div>
+      )}
+
+      {/* Global summary — only when a real upcoming exam exists */}
       {globalDays !== null && (
         <Card className="overflow-hidden">
           <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500" />
@@ -283,7 +363,7 @@ export default function ExamCountdownPage() {
                 <div>
                   <p className="text-sm text-muted-foreground">Next exam in</p>
                   <p className="text-4xl font-bold tabular-nums text-primary">
-                    {globalDays > 0 ? globalDays : 0} <span className="text-lg text-muted-foreground font-normal">days</span>
+                    {globalDays} <span className="text-lg text-muted-foreground font-normal">days</span>
                   </p>
                 </div>
               </div>
@@ -301,16 +381,7 @@ export default function ExamCountdownPage() {
                 <div>
                   <p className="text-sm text-muted-foreground">Overall progress</p>
                   <p className="text-2xl font-bold tabular-nums text-emerald-600 dark:text-emerald-400">
-                    {Math.round(
-                      classData.subjects.reduce((sum, s) => {
-                        const total = s.units.reduce((a, u) => a + u.topics.length, 0);
-                        const done = s.units.reduce(
-                          (a, u) => a + u.topics.filter((t) => progress[`${s.slug}-${t}`]).length,
-                          0
-                        );
-                        return sum + (total > 0 ? done / total : 0);
-                      }, 0) / classData.subjects.length
-                    ) * 100}%
+                    {overallPercent}%
                   </p>
                 </div>
               </div>
@@ -320,12 +391,13 @@ export default function ExamCountdownPage() {
       )}
 
       {/* Class selector */}
-      <div className="flex gap-2">
-        {(["class-11-notes", "class-12-notes"] as const).map((slug) => (
+      <div className="flex gap-2" role="group" aria-label="Choose class">
+        {CLASS_FILTERS.map((slug) => (
           <Button
             key={slug}
             variant={classSlug === slug ? "default" : "outline"}
             onClick={() => setClassSlug(slug)}
+            aria-pressed={classSlug === slug}
             className="rounded-xl"
           >
             {slug === "class-11-notes" ? "Class 11" : "Class 12"}
@@ -333,43 +405,61 @@ export default function ExamCountdownPage() {
         ))}
       </div>
 
+      {/* Progress loading / failure states */}
+      {entries === null && !loadFailed && (
+        <p className="text-sm text-muted-foreground" role="status">
+          Loading your progress…
+        </p>
+      )}
+      {loadFailed && (
+        <p className="text-sm text-muted-foreground" role="alert">
+          Could not load your progress right now — coverage and plans will fill in once it loads.
+        </p>
+      )}
+
       {/* Subject cards */}
-      <div className="grid gap-4 md:grid-cols-2">
-        {classData.subjects.map((subject) => (
-          <CountdownCard
-            key={subject.slug}
-            subject={subject}
-            classSlug={classSlug}
-            progress={progress}
-          />
-        ))}
-      </div>
+      {entries !== null && (
+        <div className="grid gap-4 md:grid-cols-2">
+          {classData.subjects.map((subject) => (
+            <CountdownCard
+              key={subject.slug}
+              subject={subject}
+              classSlug={classSlug}
+              completedTopics={completedTopics}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Study plans */}
-      <div className="space-y-4">
-        <h2 className="text-xl font-semibold flex items-center gap-2">
-          <Target className="h-5 w-5 text-primary" />
-          Revision Plan
-        </h2>
-        <div className="grid gap-4 md:grid-cols-2">
-          {classData.subjects.map((subject) => {
-            const days = EXAM_DATE[subject.slug] ? daysUntil(EXAM_DATE[subject.slug]) : 999;
-            return (
-              <StudyPlanCard
-                key={subject.slug}
-                classSlug={classSlug}
-                subject={subject}
-                daysLeft={Math.max(days, 1)}
-                progress={progress}
-              />
-            );
-          })}
+      {entries !== null && (
+        <div className="space-y-4">
+          <h2 className="text-xl font-semibold flex items-center gap-2">
+            <Target className="h-5 w-5 text-primary" />
+            Revision Plan
+          </h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {classData.subjects.map((subject) => {
+              const ad = EXAM_CALENDAR[subject.slug]?.ad;
+              const days = ad ? daysUntil(ad) : null;
+              return (
+                <StudyPlanCard
+                  key={subject.slug}
+                  classSlug={classSlug}
+                  subject={subject}
+                  hasExamDate={days !== null && days > 0}
+                  daysLeft={days !== null && days > 0 ? days : 28}
+                  completedTopics={completedTopics}
+                />
+              );
+            })}
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Quick links */}
       <div className="flex flex-wrap gap-2 pt-4">
-        <Link href="/quiz">
+        <Link href="/practice">
           <Button variant="outline" className="rounded-xl">
             <FileText className="h-4 w-4 mr-2" aria-hidden="true" /> Practice PYQs
           </Button>
