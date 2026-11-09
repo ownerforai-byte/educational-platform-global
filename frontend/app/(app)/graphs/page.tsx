@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ALL_GRAPHS, GRAPH_SUBJECTS, graphsByCategory } from "@/lib/graphs";
 import { GraphSketch } from "@/components/graphs/graph-sketch";
+import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { LineChart } from "lucide-react";
 
 export const metadata = {
@@ -10,13 +11,6 @@ export const metadata = {
 };
 
 export const dynamic = "force-dynamic";
-
-const SUBJECT_ACCENT: Record<string, string> = {
-  physics: "text-sky-600 dark:text-sky-400",
-  chemistry: "text-amber-600 dark:text-amber-400",
-  biology: "text-emerald-600 dark:text-emerald-400",
-  mathematics: "text-violet-600 dark:text-violet-400",
-};
 
 export default function GraphsPage() {
   return (
@@ -56,7 +50,7 @@ export default function GraphsPage() {
       {/* Subject sections */}
       {GRAPH_SUBJECTS.map((s) => {
         const cats = graphsByCategory(s.slug);
-        const accent = SUBJECT_ACCENT[s.slug] ?? "text-primary";
+        const accent = getSubjectVisual(s.slug).text;
         return (
           <section key={s.slug} id={s.slug} className="space-y-5 scroll-mt-20">
             <div className="flex items-center gap-3">

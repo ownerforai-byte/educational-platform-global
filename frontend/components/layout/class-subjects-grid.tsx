@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { SYLLABUS } from "@/lib/syllabus";
+import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import Link from "next/link";
 import {
   Zap,
@@ -20,15 +21,10 @@ import {
   Atom,
 } from "lucide-react";
 
-const SUBJECT_CONFIG: Record<
+const SUBJECT_META: Record<
   string,
   {
     icon: React.ComponentType<{ className?: string }>;
-    accentColor: string;
-    badgeBg: string;
-    gradientBg: string;
-    borderColor: string;
-    glowColor: string;
     tagline: string;
     hasLabs?: boolean;
     labHref?: string;
@@ -37,11 +33,6 @@ const SUBJECT_CONFIG: Record<
 > = {
   Physics: {
     icon: Zap,
-    accentColor: "text-amber-500 dark:text-amber-400",
-    badgeBg: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20",
-    gradientBg: "from-amber-500/10 via-card to-card",
-    borderColor: "hover:border-amber-500/50 hover:shadow-amber-500/10",
-    glowColor: "bg-amber-500/10",
     tagline: "Mechanics, Heat, Waves, Electromagnetism & Modern Physics",
     hasLabs: true,
     labHref: "/lab/ph-3d-mechanics-i",
@@ -49,11 +40,6 @@ const SUBJECT_CONFIG: Record<
   },
   Chemistry: {
     icon: FlaskConical,
-    accentColor: "text-cyan-500 dark:text-cyan-400",
-    badgeBg: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20",
-    gradientBg: "from-cyan-500/10 via-card to-card",
-    borderColor: "hover:border-cyan-500/50 hover:shadow-cyan-500/10",
-    glowColor: "bg-cyan-500/10",
     tagline: "Physical, Inorganic, Organic Chemistry & 118 Elements",
     hasLabs: true,
     labHref: "/periodic-table",
@@ -61,11 +47,6 @@ const SUBJECT_CONFIG: Record<
   },
   Biology: {
     icon: Dna,
-    accentColor: "text-emerald-500 dark:text-emerald-400",
-    badgeBg: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20",
-    gradientBg: "from-emerald-500/10 via-card to-card",
-    borderColor: "hover:border-emerald-500/50 hover:shadow-emerald-500/10",
-    glowColor: "bg-emerald-500/10",
     tagline: "Botany, Zoology, Cell Biology, Genetics & Human Physiology",
     hasLabs: true,
     labHref: "/lab/bio-3d-organelles",
@@ -73,11 +54,6 @@ const SUBJECT_CONFIG: Record<
   },
   Mathematics: {
     icon: Sigma,
-    accentColor: "text-violet-500 dark:text-violet-400",
-    badgeBg: "bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20",
-    gradientBg: "from-violet-500/10 via-card to-card",
-    borderColor: "hover:border-violet-500/50 hover:shadow-violet-500/10",
-    glowColor: "bg-violet-500/10",
     tagline: "Algebra, Trigonometry, Calculus, Vectors & Coordinate Geometry",
     hasLabs: true,
     labHref: "/graphs",
@@ -85,21 +61,11 @@ const SUBJECT_CONFIG: Record<
   },
   English: {
     icon: BookOpen,
-    accentColor: "text-blue-500 dark:text-blue-400",
-    badgeBg: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20",
-    gradientBg: "from-blue-500/10 via-card to-card",
-    borderColor: "hover:border-blue-500/50 hover:shadow-blue-500/10",
-    glowColor: "bg-blue-500/10",
     tagline: "Literary Texts, Critical Writing, Grammar & Rhetoric",
     hasLabs: false,
   },
   Nepali: {
     icon: Sparkles,
-    accentColor: "text-orange-500 dark:text-orange-400",
-    badgeBg: "bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20",
-    gradientBg: "from-orange-500/10 via-card to-card",
-    borderColor: "hover:border-orange-500/50 hover:shadow-orange-500/10",
-    glowColor: "bg-orange-500/10",
     tagline: "अनिवार्य नेपाली — व्याकरण, साहित्य, बोध र अभिव्यक्ति",
     hasLabs: false,
   },
@@ -171,29 +137,24 @@ export function ClassSubjectsGrid({ classSlug, className }: ClassSubjectsGridPro
       {/* Main Subjects Grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {cls.subjects.map((subject) => {
-          const conf = SUBJECT_CONFIG[subject.name] ?? {
-            icon: BookOpen,
-            accentColor: "text-primary",
-            badgeBg: "bg-primary/10 text-primary border-primary/20",
-            gradientBg: "from-primary/10 via-card to-card",
-            borderColor: "hover:border-primary/50 hover:shadow-primary/10",
-            glowColor: "bg-primary/10",
+          const conf = SUBJECT_META[subject.name] ?? {
             tagline: subject.description,
             hasLabs: false,
           };
+          const visual = getSubjectVisual(subject.slug);
           const Icon = conf.icon;
           const subjectHours = subject.units.reduce((acc, u) => acc + (u.hours ?? 0), 0);
 
           return (
             <div
               key={subject.slug}
-              className={`group relative flex flex-col justify-between rounded-3xl border border-border/70 bg-gradient-to-b ${conf.gradientBg} p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${conf.borderColor}`}
+              className={`group relative flex flex-col justify-between rounded-3xl border border-border/70 bg-gradient-to-b ${visual.bg} p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${visual.border}`}
             >
               <div>
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-3">
                     <div
-                      className={`flex h-11 w-11 items-center justify-center rounded-2xl border ${conf.badgeBg} shadow-sm`}
+                      className={`flex h-11 w-11 items-center justify-center rounded-2xl border ${visual.badge} shadow-sm`}
                     >
                       <Icon className="h-5 w-5" />
                     </div>
@@ -299,15 +260,10 @@ export function ClassSubjectsGrid({ classSlug, className }: ClassSubjectsGridPro
 
         <div className="space-y-4">
           {cls.subjects.map((subject) => {
-            const conf = SUBJECT_CONFIG[subject.name] ?? {
-              icon: BookOpen,
-              accentColor: "text-primary",
-              badgeBg: "bg-primary/10 text-primary border-primary/20",
-              gradientBg: "",
-              borderColor: "",
-              glowColor: "",
+            const conf = SUBJECT_META[subject.name] ?? {
               tagline: "",
             };
+            const visual = getSubjectVisual(subject.slug);
             const Icon = conf.icon;
 
             const filteredUnits = filterQuery.trim()
@@ -327,7 +283,7 @@ export function ClassSubjectsGrid({ classSlug, className }: ClassSubjectsGridPro
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
-                    <div className={`p-1.5 rounded-lg border ${conf.badgeBg}`}>
+                    <div className={`p-1.5 rounded-lg border ${visual.badge}`}>
                       <Icon className="h-4 w-4" />
                     </div>
                     <h3 className="font-bold text-sm text-foreground">{subject.name}</h3>
