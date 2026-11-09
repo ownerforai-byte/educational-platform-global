@@ -13,7 +13,7 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
           # code. Never leave a write-capable token in .git/config.
@@ -46,7 +46,7 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
           # code. Never leave a write-capable token in .git/config.
@@ -69,7 +69,7 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
           # code. Never leave a write-capable token in .git/config.
@@ -99,7 +99,7 @@ jobs:
       run:
         working-directory: frontend
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
           # code. Never leave a write-capable token in .git/config.
@@ -126,7 +126,7 @@ jobs:
   content-schema:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
           # code. Never leave a write-capable token in .git/config.
@@ -171,7 +171,7 @@ jobs:
   assetlinks:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
           # code. Never leave a write-capable token in .git/config.
