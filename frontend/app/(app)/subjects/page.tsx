@@ -1,49 +1,44 @@
-﻿"use client";
+"use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+/**
+ * /subjects — the student's subject picker.
+ *
+ * Rebuilt 2026-11-09 per plan-pro-app.md verdict #4 (poor → rebuild):
+ * - No fake staged loading: cards render immediately (the old page delayed
+ *   real content behind 120 ms-per-card timers as performance theater).
+ * - Subject identity comes from the canonical `lib/ui/subject-visuals.ts`
+ *   tokens — no ad-hoc hex gradients (finding CC-1).
+ * - No fabricated "New" badges on every card, and no hand-maintained
+ *   Class 8–10 stub registry: grades without syllabus content render the
+ *   platform's honest EmptyState instead of invented "coming soon" cards
+ *   (finding CC-2 — a number/badge must come from a real source or not show).
+ * - Progress is real: `useLiveStats` derives completion from the student's
+ *   actual journey; zero means zero.
+ */
+
+import React, { useMemo, useState } from "react";
 import Link from "next/link";
-import { Construction, Search } from "lucide-react";
+import { Compass, Search } from "lucide-react";
 import { SYLLABUS } from "@/lib/syllabus";
 import { useLiveStats } from "@/lib/hooks/use-live-stats";
-
-// ─── Per-subject gradients ─────────────────────────────────────────────────
-const SUBJECT_GRADIENTS: Record<string, { from: string; to: string }> = {
-  physics:     { from: "#3b82f6", to: "#6366f1" },
-  chemistry:   { from: "#10b981", to: "#059669" },
-  biology:     { from: "#8b5cf6", to: "#a855f7" },
-  mathematics: { from: "#f59e0b", to: "#ef4444" },
-  english:     { from: "#06b6d4", to: "#0ea5e9" },
-  nepali:      { from: "#ec4899", to: "#f43f5e" },
-};
-function getGradient(slug: string) {
-  return SUBJECT_GRADIENTS[slug] ?? { from: "#6366f1", to: "#8b5cf6" };
-}
+import { getSubjectVisual } from "@/lib/ui/subject-visuals";
+import { EmptyState } from "@/components/content/empty-state";
 
 // ─── Progress ring ─────────────────────────────────────────────────────────
-function ProgressRing({ percent, size = 52 }: { percent: number; size?: number }) {
+function ProgressRing({ percent, textClass }: { percent: number; textClass: string }) {
+  const size = 52;
   const r = (size - 8) / 2;
   const circ = 2 * Math.PI * r;
   const dash = circ * (percent / 100);
   return (
-    <div className="relative flex items-center justify-center" style={{ width: size, height: size }}>
+    <div className={`relative flex items-center justify-center ${textClass}`}>
       <svg width={size} height={size} className="-rotate-90" aria-hidden="true">
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="5" />
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="white" strokeWidth="5"
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="currentColor" strokeWidth="5" className="opacity-20" />
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="currentColor" strokeWidth="5"
           strokeDasharray={`${dash} ${circ}`} strokeLinecap="round" />
       </svg>
-      <span className="absolute text-[11px] font-black text-white">{percent}%</span>
+      <span className="absolute text-[11px] font-black text-foreground">{percent}%</span>
     </div>
-  );
-}
-
-// ─── Badge ────────────────────────────────────────────────────────────────
-type CardStatus = "New" | "Soon" | null;
-function StatusBadge({ status }: { status: CardStatus }) {
-  if (!status) return null;
-  return (
-    <span className={`rounded-full px-2.5 py-0.5 text-[10px] font-bold ${status === "Soon" ? "bg-amber-400 text-white" : "bg-white/20 text-white"}`}>
-      {status === "Soon" ? "🚀 Soon" : "New"}
-    </span>
   );
 }
 
@@ -56,117 +51,51 @@ function SubjectCard({ subject, classLabel, notesSlug, percent, completedChapter
   percent: number;
   completedChapters: number;
 }) {
-  const grad = getGradient(subject.slug);
+  const visual = getSubjectVisual(subject.slug);
   return (
     <Link href={`/${notesSlug}/${subject.slug}`}
-      className="flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5">
-      <div className="relative flex items-center justify-center py-6"
-        style={{ background: `linear-gradient(135deg, ${grad.from}, ${grad.to})` }}>
-        <div className="absolute right-2.5 top-2.5"><StatusBadge status="New" /></div>
-        <ProgressRing percent={percent} />
+      className={`flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5 ${visual.border}`}>
+      <div className={`relative flex items-center justify-center bg-gradient-to-br py-6 ${visual.bg}`}>
+        <ProgressRing percent={percent} textClass={visual.text} />
       </div>
       <div className="flex flex-col gap-1.5 p-3.5">
-        <h3 className="text-sm font-extrabold leading-tight text-foreground">{subject.name}</h3>
-        <span className="inline-flex w-fit items-center rounded-full px-2 py-0.5 text-[10px] font-semibold text-white"
-          style={{ backgroundColor: grad.from }}>{classLabel}</span>
+        <h3 className="text-sm font-extrabold leading-tight text-foreground">
+          <span className="mr-1" aria-hidden="true">{visual.glyph}</span>
+          {subject.name}
+        </h3>
+        <span className={`inline-flex w-fit items-center rounded-full px-2 py-0.5 text-[10px] font-semibold ${visual.badge}`}>
+          {classLabel}
+        </span>
         <div className="mt-1 flex items-center justify-between text-[11px] text-muted-foreground">
           <span>{completedChapters}/{subject.units.length} ch</span>
           <span className="font-semibold">{percent}%</span>
         </div>
         <div className="h-1 w-full overflow-hidden rounded-full bg-muted/60">
-          <div className="h-1 rounded-full" style={{ width: `${percent}%`, backgroundColor: grad.from }} />
+          <div className={`h-1 rounded-full ${visual.text.replace("text-", "bg-")}`} style={{ width: `${percent}%` }} />
         </div>
       </div>
     </Link>
   );
 }
 
-// ─── Coming-soon stub card ─────────────────────────────────────────────────
-function StubCard({ name, classLabel, color }: { name: string; classLabel: string; color: string }) {
-  return (
-    <div className="flex h-full flex-col overflow-hidden rounded-3xl border border-dashed border-border/50 bg-muted/20 opacity-70">
-      <div className="relative flex items-center justify-center py-6"
-        style={{ background: `linear-gradient(135deg, ${color}60, ${color}30)` }}>
-        <div className="absolute right-2.5 top-2.5">
-          <span className="rounded-full bg-amber-400 px-2.5 py-0.5 text-[10px] font-bold text-white">🚀 Soon</span>
-        </div>
-        <div className="flex h-13 w-13 items-center justify-center rounded-full bg-white/20">
-          <Construction className="h-5 w-5 text-white" />
-        </div>
-      </div>
-      <div className="flex flex-col gap-1.5 p-3.5">
-        <h3 className="text-sm font-extrabold leading-tight text-foreground">{name}</h3>
-        <span className="inline-flex w-fit items-center rounded-full px-2 py-0.5 text-[10px] font-semibold text-white"
-          style={{ backgroundColor: color }}>{classLabel}</span>
-        <p className="mt-1 text-[10px] text-muted-foreground">Coming soon</p>
-      </div>
-    </div>
-  );
-}
-
-function SubjectCardSkeleton({ index, classLabel }: { index: number; classLabel: string }) {
-  return (
-    <div
-      aria-hidden="true"
-      className="flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card"
-    >
-      <div className="flex items-center justify-center bg-muted/50 py-6">
-        <div className="h-[52px] w-[52px] animate-pulse rounded-full bg-muted" />
-      </div>
-      <div className="flex flex-col gap-2 p-3.5">
-        <div className="h-4 w-3/4 animate-pulse rounded bg-muted" />
-        <div className="h-4 w-16 animate-pulse rounded-full bg-muted" />
-        <div className="mt-1 h-3 w-full animate-pulse rounded bg-muted" />
-        <div className="h-1 w-full animate-pulse rounded bg-muted" />
-      </div>
-    </div>
-  );
-}
-
-// ─── Class 8/9/10 stub subjects ────────────────────────────────────────────
-const STUB_SUBJECTS: Record<"8" | "9" | "10", Array<{ name: string; color: string }>> = {
-  "8": [
-    { name: "Science",      color: "#06b6d4" },
-    { name: "Mathematics",  color: "#f59e0b" },
-    { name: "English",      color: "#8b5cf6" },
-    { name: "Nepali",       color: "#ec4899" },
-    { name: "Social Studies",color: "#10b981" },
-    { name: "Health",       color: "#ef4444" },
-  ],
-  "9": [
-    { name: "Science",      color: "#06b6d4" },
-    { name: "Mathematics",  color: "#f59e0b" },
-    { name: "English",      color: "#8b5cf6" },
-    { name: "Nepali",       color: "#ec4899" },
-    { name: "Social Studies",color: "#10b981" },
-    { name: "Health & PE",  color: "#ef4444" },
-  ],
-  "10": [
-    { name: "Science",      color: "#06b6d4" },
-    { name: "Mathematics",  color: "#f59e0b" },
-    { name: "English",      color: "#8b5cf6" },
-    { name: "Nepali",       color: "#ec4899" },
-    { name: "Social Studies",color: "#10b981" },
-    { name: "Optional Maths",color: "#ef4444" },
-  ],
-};
-
 // ─── Page ──────────────────────────────────────────────────────────────────
-type ClassFilter = "Class 8" | "Class 9" | "Class 10" | "Class 11" | "Class 12";
-const CLASS_FILTERS: ClassFilter[] = ["Class 8", "Class 9", "Class 10", "Class 11", "Class 12"];
+const CLASS_FILTERS = ["Class 11", "Class 12"] as const;
+type ClassFilter = (typeof CLASS_FILTERS)[number];
+
+const NOTES_SLUG: Record<ClassFilter, string> = {
+  "Class 11": "class-11-notes",
+  "Class 12": "class-12-notes",
+};
 
 export default function SubjectsPage() {
   const [classFilter, setClassFilter] = useState<ClassFilter>("Class 11");
-  const [loadProgress, setLoadProgress] = useState({ classFilter: "Class 11" as ClassFilter, count: 0 });
+  const notesSlug = NOTES_SLUG[classFilter];
 
-  const isLive = classFilter === "Class 11" || classFilter === "Class 12";
-  const notesSlug = classFilter === "Class 11" ? "class-11-notes" : "class-12-notes";
-  const classSyllabus = useMemo(() =>
-    isLive ? SYLLABUS.find((c) => c.slug === notesSlug) : null,
-    [isLive, notesSlug]);
+  const classSyllabus = useMemo(
+    () => SYLLABUS.find((c) => c.slug === notesSlug),
+    [notesSlug],
+  );
   const liveSubjects = classSyllabus?.subjects ?? [];
-  const stubClass = classFilter.replace("Class ", "") as "8" | "9" | "10";
-  const stubSubjects = STUB_SUBJECTS[stubClass] ?? [];
 
   // Live completion from the real progress journey — no literal zeros.
   const { subjectProgress } = useLiveStats();
@@ -176,29 +105,16 @@ export default function SubjectsPage() {
       totalUnits: 0,
       percent: 0,
     };
-  const completedSubjects = isLive
-    ? liveSubjects.filter((s) => progressFor(s.slug).percent >= 100).length
-    : 0;
+  const completedSubjects = liveSubjects.filter(
+    (s) => progressFor(s.slug).percent >= 100,
+  ).length;
   const overallPercent =
-    isLive && liveSubjects.length > 0
+    liveSubjects.length > 0
       ? Math.round(
           liveSubjects.reduce((sum, s) => sum + progressFor(s.slug).percent, 0) /
             liveSubjects.length,
         )
       : 0;
-
-  const subjectCount = isLive ? liveSubjects.length : stubSubjects.length;
-  const loadedCount = loadProgress.classFilter === classFilter ? loadProgress.count : 0;
-
-  useEffect(() => {
-    const timers = Array.from({ length: subjectCount }, (_, index) =>
-      window.setTimeout(
-        () => setLoadProgress({ classFilter, count: index + 1 }),
-        (index + 1) * 120,
-      ),
-    );
-    return () => timers.forEach(window.clearTimeout);
-  }, [classFilter, subjectCount]);
 
   return (
     <div className="mx-auto max-w-2xl space-y-5 px-4 py-6">
@@ -209,17 +125,17 @@ export default function SubjectsPage() {
           <h1 className="text-xl font-extrabold tracking-tight text-foreground">My Subjects</h1>
           <p className="text-xs text-muted-foreground">{classFilter} · Pick a subject to study</p>
         </div>
-        <button type="button" aria-label="Search subjects"
+        <Link href="/search" aria-label="Search subjects"
           className="flex h-9 w-9 items-center justify-center rounded-full border border-border/60 bg-card text-muted-foreground hover:text-foreground transition-colors">
           <Search className="h-4 w-4" />
-        </button>
+        </Link>
       </div>
 
       {/* Overall progress */}
       <div className="flex items-center gap-3 rounded-2xl border border-border/60 bg-card p-3.5">
         <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-100 text-amber-500 dark:bg-amber-900/30">🎯</div>
         <div className="flex-1 min-w-0">
-          <p className="text-xs font-semibold text-foreground">{completedSubjects} of {subjectCount} completed</p>
+          <p className="text-xs font-semibold text-foreground">{completedSubjects} of {liveSubjects.length} completed</p>
           <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-muted/60">
             <div
               className="h-1.5 rounded-full bg-amber-400 transition-[width] duration-300"
@@ -230,10 +146,10 @@ export default function SubjectsPage() {
         <span className="text-xs font-bold text-amber-500">{overallPercent}%</span>
       </div>
 
-      {/* Class filter pills */}
-      <div className="flex gap-2 overflow-x-auto border-b border-border/60 pb-3">
+      {/* Class filter pills — only grades with real syllabus content */}
+      <div className="flex gap-2 overflow-x-auto border-b border-border/60 pb-3" role="group" aria-label="Filter subjects by class">
         {CLASS_FILTERS.map((c) => (
-          <button key={c} type="button" onClick={() => setClassFilter(c)}
+          <button key={c} type="button" onClick={() => setClassFilter(c)} aria-pressed={classFilter === c}
             className={`shrink-0 rounded-full px-4 py-1.5 text-xs font-semibold transition-all ${
               classFilter === c ? "bg-primary text-primary-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
             }`}>
@@ -243,40 +159,29 @@ export default function SubjectsPage() {
       </div>
 
       {/* Subject count */}
-      <p className="text-xs font-semibold text-muted-foreground">{subjectCount} subjects</p>
+      <p className="text-xs font-semibold text-muted-foreground">{liveSubjects.length} subjects</p>
 
-      {/* Coming-soon notice for Class 8/9/10 */}
-      {!isLive && (
-        <div className="rounded-2xl border border-amber-500/30 bg-amber-500/8 px-4 py-3 text-xs font-semibold text-amber-700 dark:text-amber-400">
-          🚀 {classFilter} content is coming soon — notes, formula sheets and labs are being added.
-        </div>
-      )}
-
-      {/* Cards */}
-      <div key={classFilter} className="grid grid-cols-2 gap-3">
-        {Array.from({ length: subjectCount }, (_, index) => {
-          if (index >= loadedCount) {
-            return <SubjectCardSkeleton key={`loading-${classFilter}-${index}`} index={index} classLabel={classFilter} />;
-          }
-          return isLive
-            ? (
-                <div key={liveSubjects[index].slug} className="subject-card-enter">
-                  <SubjectCard
-                    subject={liveSubjects[index] as any}
-                    classLabel={classFilter}
-                    notesSlug={notesSlug}
-                    percent={progressFor(liveSubjects[index].slug).percent}
-                    completedChapters={progressFor(liveSubjects[index].slug).completedUnits}
-                  />
-                </div>
-              )
-            : (
-                <div key={stubSubjects[index].name} className="subject-card-enter">
-                  <StubCard name={stubSubjects[index].name} classLabel={classFilter} color={stubSubjects[index].color} />
-                </div>
-              );
-        })}
+      {/* Cards — rendered immediately, no staged timers */}
+      <div className="grid grid-cols-2 gap-3">
+        {liveSubjects.map((subject) => (
+          <SubjectCard
+            key={subject.slug}
+            subject={subject as { slug: string; name: string; units: { id: string }[] }}
+            classLabel={classFilter}
+            notesSlug={notesSlug}
+            percent={progressFor(subject.slug).percent}
+            completedChapters={progressFor(subject.slug).completedUnits}
+          />
+        ))}
       </div>
+
+      {liveSubjects.length === 0 && (
+        <EmptyState
+          icon={<Compass className="h-6 w-6" />}
+          title={`No syllabus published for ${classFilter} yet`}
+          description="When the curriculum for this grade is added, its subjects will appear here. Class 11 and 12 are live today."
+        />
+      )}
 
     </div>
   );
