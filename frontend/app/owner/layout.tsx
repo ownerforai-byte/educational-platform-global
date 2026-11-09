@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { Crown, Users, Crown as CrownIcon, Database, Settings, Activity, Home, Stethoscope, Coins, MessageSquareText, Timer, Sparkles } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { VerifyingStatus } from "@/features/auth/components/verifying-status";
-import { isOwnerUser } from "@/lib/owner";
+import { isOwnerAccount } from "@/lib/owner";
 import { cn } from "@/lib/utils";
 
 const navItems = [
@@ -29,7 +29,7 @@ export default function OwnerLayout({ children }: { children: React.ReactNode })
   const { user, isLoading } = useSession();
   const pathname = usePathname();
 
-  const isOwner = isOwnerUser(user);
+  const isOwner = isOwnerAccount(user);
 
   // Signed-in non-owners get bounced home; signed-out users go to login.
   useEffect(() => {
@@ -56,7 +56,7 @@ export default function OwnerLayout({ children }: { children: React.ReactNode })
           <Crown className="h-10 w-10 mx-auto text-amber-500" />
           <h1 className="text-xl font-bold tracking-tight">Owner Access Only</h1>
           <p className="text-sm text-muted-foreground">
-            This console is restricted to the platform owner emails. Redirecting…
+            This console is restricted to owner accounts. Redirecting…
           </p>
         </div>
       </div>

@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import { LogIn, LogOut, ChevronsUp, Palette } from "lucide-react";
 
 import { useSession } from "@/features/auth/hooks/use-session";
-import { isOwnerUser } from "@/lib/owner";
+import { isOwnerAccount, isOwnerUser } from "@/lib/owner";
 import { useR1Access } from "@/features/r1/hooks";
 import { isNavItemActive } from "@/lib/nav-active";
 import { isSidebarNavItem, NAV_SECTIONS, navMinLevel, type NavItem } from "@/lib/navigation";
@@ -192,15 +192,15 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
     section.items.filter(
       (item) =>
         isSidebarNavItem(item) &&
-        (item.ownerOnly ? isOwnerUser(user) : true) &&
+        (item.ownerOnly ? isOwnerAccount(user) : true) &&
         (item.r1Only ? hasR1 : true) &&
         hasLevel(viewer, navMinLevel(item, section))
     );
 
-  /** account → signed-in only; ownerOnly → owner emails; r1Only → owner + R1 grants. */
+  /** account → signed-in only; ownerOnly → owner accounts; r1Only → owner + R1 grants. */
   const canSee = (section: (typeof NAV_SECTIONS)[number]) => {
     if (section.id === "account") return isLoggedIn;
-    if (section.ownerOnly) return isOwnerUser(user);
+    if (section.ownerOnly) return isOwnerAccount(user);
     if (section.r1Only) return hasR1;
     // Content sections appear only when at least one index is unlocked.
     return visibleItems(section).length > 0;

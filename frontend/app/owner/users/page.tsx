@@ -188,9 +188,9 @@ export default function OwnerUsersPage() {
     }
   };
 
-  const handleTier = async (u: OwnerUser, tier: string) => {
+  const handleTier = async (u: OwnerUser, tier: Exclude<UserRole, "owner">) => {
     setBusyId(u.id);
-    const ok = await runAction(() => updateOwnerUserRole(u.id, tier as UserRole), "Tier updated");
+    const ok = await runAction(() => updateOwnerUserRole(u.id, tier), "Tier updated");
     setBusyId(null);
     if (ok) reload();
   };
@@ -370,7 +370,7 @@ export default function OwnerUsersPage() {
           </h1>
           <p className="text-sm text-muted-foreground">
             Two separate systems — Review decides pending accounts, Approved manages decided ones.
-            Approval grants the tier chosen below in the same action. Owner emails are a plain
+            Approval grants the tier chosen below in the same action. Owner accounts are a plain
             roster in Approved: visible, no buttons, never in Review.
           </p>
         </div>
@@ -762,12 +762,14 @@ export default function OwnerUsersPage() {
                           <div className="flex flex-col gap-0.5">
                             <select
                               value={u.effectiveTier ?? "member"}
-                              onChange={(e) => handleTier(u, e.target.value)}
+                              onChange={(e) =>
+                                handleTier(u, e.target.value as Exclude<UserRole, "owner">)
+                              }
                               disabled={busyId === u.id || u.effectiveTier === "owner"}
                               className="text-xs border rounded-md px-2 py-1.5 bg-background disabled:opacity-50"
                               aria-label={`Tier for ${u.email}`}
                             >
-                              {USER_ROLES.map((r) => (
+                              {USER_ROLES.filter((r) => r !== "owner").map((r) => (
                                 <option key={r} value={r}>
                                   {ACCESS_LABELS[r]}
                                 </option>

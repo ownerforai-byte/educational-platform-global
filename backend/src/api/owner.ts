@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { z } from "zod";
-import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/auth";
+import { requireAuth, isOwnerAccount, type AuthedRequest } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
 import { invalidateSectionTierCache } from "../utils/sectionTiers";
 import { authEmailsById, invalidateAuthEmailsCache } from "../utils/authEmails";
@@ -14,9 +14,13 @@ import { sendApprovalEmail } from "../utils/mailer";
  *
  * Every route requires BOTH:
  *   1. A valid authenticated session (requireAuth).
- *   2. The session email to be on the backend OWNER_EMAILS allowlist.
- * Role alone is NOT enough: a profile with role "owner" whose email is not
- * allowlisted is rejected here. This is the strictest gate in the platform.
+ *   2. The caller to be an owner ACCOUNT: an email on the OWNER_EMAILS
+ *      allowlist OR the owner rung (owner grant / normalized legacy operator).
+ *
+ * Approve/reject is restricted to owner accounts, and ANY owner account may
+ * decide a non-owner account. That is the only cross-account restriction:
+ * no owner may remove, demote or suspend another owner — see
+ * isProtectedOwnerTarget(), which guards owner targets on every route below.
  */
 const router = Router();
 
@@ -24,8 +28,8 @@ const router = Router();
 
 function ownerGate(req: Request, res: Response): AuthedRequest | null {
   const user = (req as AuthedRequest).user;
-  if (!user || !isOwnerEmail(user.email)) {
-    res.status(403).json({ error: "Forbidden — owner emails only" });
+  if (!isOwnerAccount(user)) {
+    res.status(403).json({ error: "Forbidden — owner accounts only" });
     return null;
   }
   return req as AuthedRequest;
@@ -39,7 +43,9 @@ const creditAdjustSchema = z.object({
 });
 
 const roleUpdateSchema = z.object({
-  role: z.enum(["member", "plus", "pro", "owner"]),
+  // Owner standing is never grantable from the console: no owner may add
+  // another owner. Owners come from the allowlist or an existing owner rung.
+  role: z.enum(["member", "plus", "pro"]),
 });
 
 type GrantTier = z.infer<typeof roleUpdateSchema>["role"];
@@ -55,10 +61,9 @@ const TIER_GRANT: Record<GrantTier, { role: GrantTier; plan: string; premium_sta
   member: { role: "member", plan: "member", premium_status: false },
   plus: { role: "plus", plan: "plus", premium_status: false },
   pro: { role: "pro", plan: "pro", premium_status: true },
-  owner: { role: "owner", plan: "pro", premium_status: true },
 };
 
-/** A tier an approval may grant in the same call (owner is /role-only). */
+/** A tier an approval may grant in the same call (owner is never assignable). */
 const approvableRoleSchema = z.enum(["member", "plus", "pro"]);
 
 const accessStatusUpdateSchema = z.object({

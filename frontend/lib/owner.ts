@@ -26,8 +26,23 @@ export function isOwnerEmail(email?: string | null): boolean {
 }
 
 /**
- * Whether this session may open the owner console. Only true for allowlisted
- * owner emails — the owner rung alone is NOT enough for /owner.
+ * Whether this session may open the owner console and its management
+ * surfaces. An owner ACCOUNT is either an allowlisted owner email or an
+ * account on the owner rung (owner grant / normalized legacy operator).
+ * Approve/reject is restricted to owner accounts; owner-to-owner changes are
+ * blocked server-side separately.
+ */
+export function isOwnerAccount(
+  user: { email?: string | null; role?: string | null } | null | undefined
+): boolean {
+  if (!user) return false;
+  return isOwnerEmail(user.email) || user.role === "owner";
+}
+
+/**
+ * Email-allowlist gate for owner-exclusive CONTENT (R1, Diagram Hub, owner
+ * design surfaces). Those backend routes still authorize by allowlisted email,
+ * so this stays narrower than `isOwnerAccount`.
  */
 export function isOwnerUser(
   user: { email?: string | null; role?: string | null } | null | undefined

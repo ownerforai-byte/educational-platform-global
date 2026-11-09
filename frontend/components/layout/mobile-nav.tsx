@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isNavItemActive } from "@/lib/nav-active";
-import { isOwnerUser } from "@/lib/owner";
+import { isOwnerAccount, isOwnerUser } from "@/lib/owner";
 import { useR1Access } from "@/features/r1/hooks";
 import { isSidebarNavItem, NAV_SECTIONS, navMinLevel } from "@/lib/navigation";
 import { hasLevel } from "@/lib/access-level";
@@ -104,7 +104,7 @@ export function MobileNav() {
   const filteredSections = NAV_SECTIONS.filter(
     (sec) =>
       (sec.id !== 'account' || !!user) &&
-      (!sec.ownerOnly || isOwnerUser(user)) &&
+      (!sec.ownerOnly || isOwnerAccount(user)) &&
       (!sec.r1Only || hasR1),
   )
     .map((sec) => ({
@@ -112,7 +112,7 @@ export function MobileNav() {
       items: sec.items.filter((item) =>
         isSidebarNavItem(item) &&
         // Owner-only entries (AI chat) never reach non-owners, even by search.
-        (item.ownerOnly ? isOwnerUser(user) : true) &&
+        (item.ownerOnly ? isOwnerAccount(user) : true) &&
         (item.r1Only ? hasR1 : true) &&
         // Access ladder: each index unlocks at its rung (member → Student Desk;
         // search now lives on the front quick-access bar, not the index).

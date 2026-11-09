@@ -7,16 +7,18 @@ import { normalizeRole } from "../auth/types";
  * independent (means no one email can remove other email or change their
  * position ----hardcode it)").
  *
- * Every owner-allowlisted account is untouchable by EVERY caller — including
- * another owner. The protection is HARDCODED against the OWNER_EMAILS
- * allowlist in middleware/auth.ts (mirrored on the frontend in lib/owner.ts):
- * no request body, role grant or settings toggle can route around it.
+ * Every owner ACCOUNT is untouchable by EVERY caller — including another
+ * owner. An owner account is an allowlisted owner email or an account on the
+ * owner rung (incl. legacy operator rows normalized to owner). This is the
+ * ONLY cross-account restriction: any owner account may still approve or
+ * reject a NON-owner account.
  *
  * Two independent signals make a target protected:
  *   1. its auth email is on the hardcoded allowlist, or
- *   2. its profile role resolves to "owner" (legacy rows included — all
- *      pre-ladder accounts are operator-tier) (so an owner demoted in the DB before this
- *      guard existed still cannot be finished off by a second owner).
+ *   2. its profile role resolves to "owner" (legacy operator rows included —
+ *      all pre-ladder accounts are operator-tier) (so an owner demoted in the
+ *      DB before this guard existed still cannot be finished off by a second
+ *      owner).
  *
  * Guarded operations: DELETE (remove), role change (reposition), access
  * status change (suspend/reject = removal of access). Credit grants and
