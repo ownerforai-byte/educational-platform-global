@@ -30,6 +30,28 @@ const nextConfig = {
     const NON_CORPUS = "/((?!class-11-notes|class-12-notes).*)";
     return [
       {
+        // Security headers (vibe-code security pass 2026-11-08): the backend
+        // ships helmet, the Vercel-served frontend had HSTS only. These close
+        // the remaining C-M1/C-M2 gaps WITHOUT touching script-src — the
+        // three CSP directives below have no script fallback, so Next's
+        // inline/runtime scripts keep working. A full nonce-based CSP is the
+        // follow-up once middleware nonces are rolled out.
+        source: "/:path*",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Permissions-Policy", value: "geolocation=(), payment=()" },
+          {
+            key: "Content-Security-Policy",
+            value: "object-src 'none'; base-uri 'self'; frame-ancestors 'self'",
+          },
+        ],
+      },
+      {
         // HSTS on the Vercel-served origin (security pass 2026-10-27): the
         // backend sets the same policy for the Render API; the frontend had
         // none. Sent on every response; browsers ignore it over local http://,
