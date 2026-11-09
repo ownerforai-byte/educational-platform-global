@@ -29,7 +29,7 @@ export function HomeSections() {
   const entries = sectionsFor(user, overrides);
 
   return (
-    <section className="border-b border-border/60 py-10" aria-labelledby="sections-heading">
+    <section className="border-b border-border/80 py-10" aria-labelledby="sections-heading">
       <div className="mx-auto w-full max-w-7xl px-4">
         <div className="flex flex-wrap items-end justify-between gap-2">
           <div>
@@ -50,7 +50,7 @@ export function HomeSections() {
             const Icon = section.icon;
             const card = (
               <div
-                className={`flex h-full w-[210px] shrink-0 flex-col justify-between rounded-2xl border border-border/70 bg-card p-4 transition ${
+                className={`flex h-full w-[210px] shrink-0 flex-col justify-between rounded-2xl border-2 border-border/80 bg-card p-4 transition ${
                   unlocked
                     ? "hover:border-primary/50 hover:shadow-sm"
                     : "cursor-not-allowed opacity-50 grayscale"

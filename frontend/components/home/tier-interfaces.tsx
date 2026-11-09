@@ -127,7 +127,7 @@ function TierHero({
 
   return (
     <section
-      className={`relative overflow-hidden rounded-3xl border border-border/70 bg-gradient-to-br ${TIER_ACCENT[tier]} via-card to-card p-6 sm:p-8`}
+      className={`relative overflow-hidden rounded-3xl border-2 border-border/80 bg-gradient-to-br ${TIER_ACCENT[tier]} via-card to-card p-6 sm:p-8`}
     >
       {/* Cover accents — the desk gets the same depth as the profile hero. */}
       <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/5" />
@@ -158,7 +158,7 @@ function TierHero({
           <p className="text-sm font-semibold text-foreground">{headline}</p>
           <p className="text-sm leading-relaxed text-muted-foreground">{blurb}</p>
         </div>
-        <div className="rounded-2xl border border-border/60 bg-background/70 px-4 py-3 text-center">
+        <div className="rounded-2xl border-2 border-border/80 bg-background/70 px-4 py-3 text-center">
           <p className="text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
             Veer sparks
           </p>
@@ -240,7 +240,7 @@ function DeskPulse() {
             <Link
               key={tile.label}
               href={tile.href}
-              className="group rounded-2xl border border-border/70 bg-card p-4 transition hover:border-primary/50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="group rounded-2xl border-2 border-border/80 bg-card p-4 transition hover:border-primary/50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <div className="flex items-center gap-2">
                 <Icon className={`h-4 w-4 ${tile.tone}`} aria-hidden="true" />
@@ -267,7 +267,7 @@ function SpotlightRow({ items }: { items: Spotlight[] }) {
           <Link
             key={s.href}
             href={s.href}
-            className="group flex min-h-[88px] flex-col rounded-2xl border border-border/70 bg-card p-4 transition hover:border-primary/50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            className="group flex min-h-[88px] flex-col rounded-2xl border-2 border-border/80 bg-card p-4 transition hover:border-primary/50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <div className="flex items-center gap-2.5">
               <div className="rounded-xl bg-primary/10 p-2">
@@ -354,7 +354,7 @@ function OpenSectionsRail({ tier }: { tier: AccessLevel }) {
             <Link
               key={s.id}
               href={s.href}
-              className="flex w-[190px] shrink-0 flex-col rounded-2xl border border-border/70 bg-card p-3.5 transition hover:border-primary/50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="flex w-[190px] shrink-0 flex-col rounded-2xl border-2 border-border/80 bg-card p-3.5 transition hover:border-primary/50 hover:shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
               <div className="flex items-center justify-between">
                 <div className="rounded-xl bg-primary/10 p-1.5">

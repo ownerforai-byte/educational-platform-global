@@ -87,7 +87,7 @@ export async function HomeSubjectRails() {
   const rails = mergeCorpusRails();
 
   return (
-    <section className="relative border-b border-border/60 py-14 sm:py-16">
+    <section className="relative border-b border-border/80 py-14 sm:py-16">
       <div className="absolute top-4 left-1/4 h-64 w-64 rounded-full bg-violet-500/5 blur-[110px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-6xl px-4">

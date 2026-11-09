@@ -40,7 +40,7 @@ export function HomeIntroduction() {
         <h2 id="class-heading" className="text-xl font-semibold tracking-tight">Choose your class</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           {classes.map((item) => (
-            <Link key={item.href} href={item.href} className={`group rounded-xl border border-border bg-card p-6 transition-colors hover:border-primary/50 ${linkFocus}`}>
+            <Link key={item.href} href={item.href} className={`group rounded-xl border-2 border-border/80 bg-card p-6 transition-colors hover:border-primary/50 ${linkFocus}`}>
               <GraduationCap className="h-6 w-6 text-primary" aria-hidden="true" />
               <h3 className="mt-4 text-lg font-semibold">{item.label}</h3>
               <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">{item.description}</p>
@@ -54,7 +54,7 @@ export function HomeIntroduction() {
         <h2 id="tools-heading" className="text-xl font-semibold tracking-tight">Study tools</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {tools.map(({ title, href, icon: Icon, description }) => (
-            <Link key={href} href={href} className={`rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/50 ${linkFocus}`}>
+            <Link key={href} href={href} className={`rounded-xl border-2 border-border/80 bg-card p-5 transition-colors hover:border-primary/50 ${linkFocus}`}>
               <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
               <h3 className="mt-4 text-sm font-semibold">{title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
@@ -63,7 +63,7 @@ export function HomeIntroduction() {
         </div>
       </section>
 
-      <section aria-label="More resources" className="flex flex-col gap-4 rounded-xl border border-border bg-muted/20 p-5 sm:flex-row sm:items-center sm:justify-between">
+      <section aria-label="More resources" className="flex flex-col gap-4 rounded-xl border-2 border-border/80 bg-muted/20 p-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h2 className="text-sm font-semibold">Looking for another resource?</h2>
           <p className="mt-1 text-sm text-muted-foreground">Browse the full directory for proofs, mindmaps, reference materials and more.</p>

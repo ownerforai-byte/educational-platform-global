@@ -141,7 +141,7 @@ export function PlatformGuideWidget() {
           aria-label="Veer personal AI"
         >
           {/* Header */}
-          <header className="flex items-center justify-between gap-2 border-b border-border/60 bg-gradient-to-r from-primary/10 via-card to-card px-3 py-2.5">
+          <header className="flex items-center justify-between gap-2 border-b border-border/80 bg-gradient-to-r from-primary/10 via-card to-card px-3 py-2.5">
             <div className="flex items-center gap-2 min-w-0">
               <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
                 <Bot className="h-4 w-4" />
@@ -186,7 +186,7 @@ export function PlatformGuideWidget() {
 
           {/* Input */}
           <form
-            className="flex gap-1.5 border-t border-border/60 p-2"
+            className="flex gap-1.5 border-t border-border/80 p-2"
             onSubmit={(e) => {
               e.preventDefault();
               void send();

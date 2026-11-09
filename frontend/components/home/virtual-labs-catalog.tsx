@@ -348,9 +348,9 @@ export function VirtualLabsCatalog() {
   const domainMeta = DOMAIN_INFO[activeDomain];
 
   return (
-    <section id="section-labs" className="mx-auto max-w-7xl px-4 py-12 scroll-mt-16 border-t border-border/60">
+    <section id="section-labs" className="mx-auto max-w-7xl px-4 py-12 scroll-mt-16 border-t border-border/80">
       {/* Section Title */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-border/60">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-6 border-b border-border/80">
         <div>
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-sky-400">
             <FlaskConical className="h-4 w-4" />
@@ -405,7 +405,7 @@ export function VirtualLabsCatalog() {
         {currentLabs.map((lab) => (
           <div
             key={lab.href + lab.title}
-            className="group relative flex flex-col justify-between rounded-3xl border border-border/70 bg-card p-5 shadow-sm transition-all duration-200 hover:border-primary/40 hover:shadow-lg hover:-translate-y-0.5"
+            className="group relative flex flex-col justify-between rounded-3xl border-2 border-border/80 bg-card p-5 shadow-sm transition-all duration-200 hover:border-primary/40 hover:shadow-lg hover:-translate-y-0.5"
           >
             <div>
               {/* Badge & Title */}
@@ -427,7 +427,7 @@ export function VirtualLabsCatalog() {
             </div>
 
             {/* Launch Action */}
-            <div className="mt-5 pt-3 border-t border-border/50 flex items-center justify-between">
+            <div className="mt-5 pt-3 border-t border-border/80 flex items-center justify-between">
               <span className="text-[11px] font-medium text-muted-foreground">Interactive Module</span>
               <Link
                 href={lab.href}
@@ -441,7 +441,7 @@ export function VirtualLabsCatalog() {
       </div>
 
       {/* Lab Footer Banner */}
-      <div className="mt-8 rounded-3xl border border-border/70 bg-muted/20 p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="mt-8 rounded-3xl border-2 border-border/80 bg-muted/20 p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10 text-primary">
             <Sparkles className="h-5 w-5" />

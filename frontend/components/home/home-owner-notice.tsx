@@ -38,7 +38,7 @@ export function HomeOwnerNotice() {
 
       <div className="mt-6 grid gap-5 lg:grid-cols-[1.4fr_1fr]">
         {/* Owner's notice — verbatim */}
-        <figure className="relative rounded-3xl border border-border/70 bg-gradient-to-b from-primary/[0.06] via-card to-card p-6 shadow-sm sm:p-7">
+        <figure className="relative rounded-3xl border-2 border-border/80 bg-gradient-to-b from-primary/[0.06] via-card to-card p-6 shadow-sm sm:p-7">
           <blockquote className="text-sm leading-relaxed text-foreground sm:text-[15px]">
             {OWNER_NOTICE}
           </blockquote>
@@ -50,7 +50,7 @@ export function HomeOwnerNotice() {
             — Ravikisan
           </figcaption>
 
-          <div className="mt-5 flex flex-wrap items-center gap-3 border-t border-border/50 pt-4">
+          <div className="mt-5 flex flex-wrap items-center gap-3 border-t border-border/80 pt-4">
             <Link
               href="/login"
               className="inline-flex h-10 items-center gap-2 rounded-2xl bg-primary px-5 text-sm font-bold text-primary-foreground shadow-md shadow-primary/20 transition-all hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-card"
@@ -66,7 +66,7 @@ export function HomeOwnerNotice() {
         </figure>
 
         {/* Short owner intro */}
-        <div className="rounded-3xl border border-border/70 bg-card p-6 shadow-sm sm:p-7">
+        <div className="rounded-3xl border-2 border-border/80 bg-card p-6 shadow-sm sm:p-7">
           <div className="flex items-center gap-3">
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-primary/30 bg-primary/10 text-base font-extrabold text-primary">
               R

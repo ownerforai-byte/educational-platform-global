@@ -68,7 +68,7 @@ export function HomePublic() {
           </div>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {resources.map(({ title, description, icon: Icon }) => (
-              <article key={title} className="rounded-xl border border-border bg-card p-5 sm:p-6">
+              <article key={title} className="rounded-xl border-2 border-border/80 bg-card p-5 sm:p-6">
                 <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
                 <h3 className="mt-4 text-base font-semibold">{title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
@@ -77,7 +77,7 @@ export function HomePublic() {
           </div>
         </section>
 
-        <section aria-labelledby="access-title" className="rounded-xl border border-border bg-muted/20 p-5 sm:p-6">
+        <section aria-labelledby="access-title" className="rounded-xl border-2 border-border/80 bg-muted/20 p-5 sm:p-6">
           <h2 id="access-title" className="flex items-center gap-2 text-base font-semibold">
             <ShieldCheck className="h-5 w-5 text-primary" aria-hidden="true" />
             Account access
