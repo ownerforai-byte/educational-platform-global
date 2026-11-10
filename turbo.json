@@ -1,0 +1,11 @@
+{
+  "$schema": "https://turbo.com/schema.json",
+  "tasks": {
+    "lint": {
+      "tags": ["ci"]
+    },
+    "test:run": {
+      "tags": ["ci"]
+    }
+  }
+}
