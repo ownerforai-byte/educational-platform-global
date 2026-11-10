@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Atom, BookOpen, Dna, FlaskConical, Languages, Sigma } from "lucide-react";
 import { SUBJECT_CLASSROOMS, type SubjectIconName } from "@/lib/ai/subject-classrooms";
+import { AiToolShell } from "@/components/ai/ai-tool-shell";
 
 /**
  * /ai/subjects — the six dedicated subject classrooms in one place (owner
@@ -25,20 +26,14 @@ export const metadata = {
 
 export default function SubjectClassroomsPage() {
   return (
-    <div className="mx-auto w-full max-w-5xl px-4 py-10">
-      <p className="text-[11px] font-bold uppercase tracking-widest text-primary">
-        AI teaching interfaces
-      </p>
-      <h1 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">
-        One classroom per subject — histories never mix
-      </h1>
-      <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-        Each subject gets its own dedicated teaching interface with its own
-        private conversation history. What you discuss in Physics stays in the
-        Physics classroom — and the main Veer chat keeps its own history too.
-      </p>
-
-      <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <AiToolShell
+      icon={BookOpen}
+      title="Subject classrooms"
+      description="Six dedicated AI teaching classrooms — Physics, Chemistry, Biology, Mathematics, Nepali and English — each with its own private chat history."
+      accent="border-emerald-500/25 bg-emerald-500/10 text-emerald-500"
+      current="/ai/subjects"
+    >
+      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {SUBJECT_CLASSROOMS.map((classroom) => {
           const Icon = SUBJECT_ICONS[classroom.icon];
           return (
@@ -58,13 +53,15 @@ export default function SubjectClassroomsPage() {
               <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
                 {classroom.tagline}
               </p>
-              <p className={`mt-4 text-xs font-semibold ${classroom.accent}`}>
-                Open classroom →
-              </p>
             </Link>
           );
         })}
       </div>
-    </div>
+
+      <p className="mt-4 rounded-2xl border border-border/60 bg-muted/20 px-4 py-3 text-xs leading-relaxed text-muted-foreground">
+        What you discuss in Physics stays in the Physics classroom — and the main Veer
+        chat keeps its own history too.
+      </p>
+    </AiToolShell>
   );
 }

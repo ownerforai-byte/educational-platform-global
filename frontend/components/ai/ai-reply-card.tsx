@@ -14,13 +14,10 @@
  * (`lib/ai/reply-suggestions`), and the ad box always closes the card.
  */
 
-import { useState } from "react";
 import Link from "next/link";
 import {
   BookMarked,
   CheckSquare,
-  Copy,
-  GraduationCap,
   Lightbulb,
   Sparkles,
 } from "lucide-react";
@@ -43,16 +40,11 @@ function SuggestionBox({
   index: number;
   onPick?: (suggestion: ReplySuggestion) => void;
 }) {
-  const [copied, setCopied] = useState(false);
-
-  // Small key-terms-style chips (owner 2026-11-09: "optimize the suggestions
-  // in small boxes like those key terms") — number + label, hint on hover.
+  // Small key-terms-style chips — number + label, hint on hover.
   const inner = (
     <>
       <span className="text-[8px] font-bold text-primary">{index + 1}</span>
-      <span className="truncate text-[10px] font-semibold text-foreground">
-        {copied ? "Prompt copied — paste it below" : suggestion.label}
-      </span>
+      <span className="truncate text-[10px] font-semibold text-foreground">{suggestion.label}</span>
     </>
   );
 
@@ -72,18 +64,7 @@ function SuggestionBox({
       type="button"
       title={suggestion.hint}
       className={boxClass}
-      onClick={() => {
-        if (onPick) {
-          onPick(suggestion);
-          return;
-        }
-        if (suggestion.prompt && navigator.clipboard?.writeText) {
-          void navigator.clipboard.writeText(suggestion.prompt).then(() => {
-            setCopied(true);
-            setTimeout(() => setCopied(false), 1600);
-          });
-        }
-      }}
+      onClick={() => onPick?.(suggestion)}
     >
       {inner}
     </button>
@@ -98,6 +79,8 @@ export function AiReplyCard({
   children,
   actions,
   compact = false,
+  isVerifiedOwner = false,
+  onFollowUp,
   className,
 }: {
   /** Header label — surfaces name their own voice ("Veer tutor", "Verified professor solution"). */
@@ -114,10 +97,23 @@ export function AiReplyCard({
   actions?: React.ReactNode;
   /** Widget variant: body + suggestions + ad only. */
   compact?: boolean;
+  /** Derived only from the authenticated session; never from answer text. */
+  isVerifiedOwner?: boolean;
+  /** Immediately sends a clicked follow-up as the next user message. */
+  onFollowUp?: (prompt: string) => void;
   className?: string;
 }) {
   const analysis = analyzeReply(reply);
-  const suggestions = buildReplySuggestions(reply, context);
+  const suggestions = buildReplySuggestions(reply, context).map((suggestion) =>
+    suggestion.kind === "prompt"
+      ? suggestion
+      : {
+          ...suggestion,
+          kind: "prompt" as const,
+          href: undefined,
+          prompt: `Help me ${suggestion.label.toLowerCase()} for ${suggestion.hint}, and connect it to the answer above.`,
+        },
+  );
   const selfCheck = buildSelfCheck(reply, context);
 
   return (
@@ -173,8 +169,8 @@ export function AiReplyCard({
         {children}
       </div>
 
-      {/* Key terms — the reply's own vocabulary, boxed */}
-      {!compact && analysis.keyTerms.length > 0 && (
+      {/* Owner-only key-term panel — related terms and explicit contrasts. */}
+      {!compact && isVerifiedOwner && (analysis.relatedTerms.length > 0 || analysis.contrasts.length > 0) && (
         <section
           aria-label="Key terms"
           className="border-b border-border/70 bg-muted/20 px-3.5 py-2"
@@ -183,27 +179,49 @@ export function AiReplyCard({
             <BookMarked className="h-2.5 w-2.5" aria-hidden="true" />
             Key terms
           </p>
-          <div className="mt-1.5 flex flex-wrap gap-1.5">
-            {analysis.keyTerms.map((term, index) => (
-              <span
-                key={term}
-                className={cn(
-                  "inline-flex items-baseline gap-1 rounded-full border px-2 py-0.5 text-[10px] font-semibold text-foreground",
-                  /\b(vs\.?|versus)\b/i.test(term)
-                    ? "border-primary/45 bg-primary/[0.10]"
-                    : "border-primary/25 bg-primary/[0.06]",
-                )}
-              >
-                <span className="text-[8px] font-bold text-primary">{index + 1}</span>
-                <span>{term}</span>
-              </span>
-            ))}
-          </div>
+          {analysis.relatedTerms.length > 0 && (
+            <div className="mt-1.5">
+              <p className="text-[9px] font-semibold text-muted-foreground">Related —</p>
+              <div className="mt-1 flex flex-wrap gap-1.5">
+                {analysis.relatedTerms.map((term, index) => (
+                  <button
+                    key={term}
+                    type="button"
+                    title={`Ask Veer about ${term}`}
+                    className="inline-flex items-baseline gap-1 rounded-full border border-primary/25 bg-primary/[0.06] px-2 py-0.5 text-[10px] font-semibold text-foreground transition-colors hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    onClick={() => onFollowUp?.(`Explain ${term} from the answer above in a concise way, including its meaning and how it connects to this topic.`)}
+                  >
+                    <span className="text-[8px] font-bold text-primary">{index + 1}</span>
+                    <span>{term}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+          {analysis.contrasts.length > 0 && (
+            <div className="mt-2">
+              <p className="text-[9px] font-semibold text-muted-foreground">Contrasts —</p>
+              <div className="mt-1 flex flex-wrap gap-1.5">
+                {analysis.contrasts.map((term, index) => (
+                  <button
+                    key={term}
+                    type="button"
+                    title={`Compare ${term}`}
+                    className="inline-flex items-baseline gap-1 rounded-full border border-amber-500/35 bg-amber-500/[0.07] px-2 py-0.5 text-[10px] font-semibold text-foreground transition-colors hover:bg-amber-500/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    onClick={() => onFollowUp?.(`Clearly contrast ${term} from the answer above: state the exact difference and give one short NEB-relevant example.`)}
+                  >
+                    <span className="text-[8px] font-bold text-amber-600">{index + 1}</span>
+                    <span>{term}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </section>
       )}
 
       {/* Check yourself — small, local, educational */}
-      {!compact && (
+      {!compact && isVerifiedOwner && (
         <section
           aria-label="Check yourself"
           className="border-b border-border/70 px-3.5 py-2"
@@ -214,11 +232,14 @@ export function AiReplyCard({
           </p>
           <ul className="mt-1.5 grid gap-1 sm:grid-cols-3">
             {selfCheck.map((check) => (
-              <li
-                key={check}
-                className="rounded-lg border border-border/60 bg-background/60 px-2 py-1 text-[10px] leading-snug text-muted-foreground"
-              >
-                {check}
+              <li key={check}>
+                <button
+                  type="button"
+                  className="w-full rounded-lg border border-border/60 bg-background/60 px-2 py-1 text-left text-[10px] leading-snug text-muted-foreground transition-colors hover:border-primary/35 hover:bg-primary/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  onClick={() => onFollowUp?.(`Ask me this self-check question and wait for my answer before explaining: ${check}`)}
+                >
+                  {check}
+                </button>
               </li>
             ))}
           </ul>
@@ -226,7 +247,7 @@ export function AiReplyCard({
       )}
 
       {/* Suggestions — small key-terms-style chips, derived per reply and place */}
-      {suggestions.length > 0 && (
+      {!compact && isVerifiedOwner && onFollowUp && suggestions.length > 0 && (
         <section
           aria-label="Suggestions"
           className="border-b border-border/70 bg-muted/20 px-3.5 py-2"
@@ -237,7 +258,15 @@ export function AiReplyCard({
           </p>
           <div className="mt-1.5 flex flex-wrap gap-1">
             {suggestions.map((suggestion, index) => (
-              <SuggestionBox key={suggestion.label} index={index} suggestion={suggestion} />
+              <SuggestionBox
+                key={suggestion.label}
+                index={index}
+                suggestion={suggestion}
+                onPick={(picked) => {
+                  const prompt = picked.prompt ?? `Help me ${picked.label.toLowerCase()} for ${picked.hint}, using the answer above as context.`;
+                  onFollowUp?.(prompt);
+                }}
+              />
             ))}
           </div>
         </section>

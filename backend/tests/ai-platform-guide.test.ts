@@ -7,7 +7,7 @@ process.env.AGNES_API_KEY = "test-key";
 process.env.AGNES_PLATFORM_GUIDE_RETRY_DELAY_MS = "1";
 
 const guideRouter = (await import("../src/api/ai-platform-guide")).default;
-const { PLATFORM_GUIDE_IDENTITY_REPLY, PLATFORM_GUIDE_SCOPE_REPLY, PLATFORM_GUIDE_SYSTEM_PROMPT } =
+const { PLATFORM_GUIDE_CREATOR_REPLY, PLATFORM_GUIDE_EMPTY_REPLY, PLATFORM_GUIDE_SYSTEM_PROMPT } =
   await import("../src/ai/platform-guide-prompt");
 const { resetRateLimits } = await import("../src/middleware/rateLimit");
 const httpFetch = globalThis.fetch;
@@ -56,7 +56,7 @@ describe("public platform guide", () => {
     const url = await mountGuide();
     expect(await send(url, message)).toEqual({
       status: 200,
-      body: { reply: PLATFORM_GUIDE_IDENTITY_REPLY },
+      body: { reply: PLATFORM_GUIDE_CREATOR_REPLY },
     });
     expect(fetch).not.toHaveBeenCalled();
   });
@@ -68,18 +68,18 @@ describe("public platform guide", () => {
     const url = await mountGuide();
     expect(await send(url)).toEqual({
       status: 200,
-      body: { reply: PLATFORM_GUIDE_IDENTITY_REPLY },
+      body: { reply: PLATFORM_GUIDE_CREATOR_REPLY },
     });
   });
 
   it("sends platform-only instructions for unrelated questions", async () => {
     const upstream = vi.mocked(fetch).mockResolvedValue(Response.json({
-      choices: [{ message: { content: PLATFORM_GUIDE_SCOPE_REPLY } }],
+      choices: [{ message: { content: PLATFORM_GUIDE_EMPTY_REPLY } }],
     }));
     const url = await mountGuide();
     const question = "Explain Newton's second law";
     const result = await send(url, question);
-    expect(result.body).toEqual({ reply: PLATFORM_GUIDE_SCOPE_REPLY });
+    expect(result.body).toEqual({ reply: PLATFORM_GUIDE_EMPTY_REPLY });
     const body = JSON.parse(upstream.mock.calls[0][1]!.body as string);
     expect(body.messages).toEqual([
       { role: "system", content: PLATFORM_GUIDE_SYSTEM_PROMPT },
@@ -105,7 +105,7 @@ describe("public platform guide", () => {
   it("uses a platform-only fallback for an empty completion", async () => {
     vi.mocked(fetch).mockResolvedValue(Response.json({ choices: [] }));
     const url = await mountGuide();
-    expect((await send(url, "Solve this unrelated question")).body).toEqual({ reply: PLATFORM_GUIDE_SCOPE_REPLY });
+    expect((await send(url, "Solve this unrelated question")).body).toEqual({ reply: PLATFORM_GUIDE_EMPTY_REPLY });
   });
 
   it.each(["", " ", "x".repeat(501)])("rejects an invalid message before calling the model", async (message) => {

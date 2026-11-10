@@ -3,6 +3,8 @@ import { serverError } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { getWorkLaneProvider } from "../ai/config";
 import { ANSWER_GUIDE_RULES } from "../ai/answer-guide";
+import { aiSparkTierFor } from "../utils/aiSpark";
+import { answerTierRules } from "./prompts";
 import { supabaseAdmin } from "../db/supabase";
 import { rateLimit } from "../middleware/rateLimit";
 import { getUserFromRequest, type AuthedRequest } from "../middleware/auth";
@@ -515,7 +517,9 @@ RULES:
 
       // Owner 2026-10-27: every AI surface — including question generation —
       // follows the ANSWER GUIDE (valid by a human, natural, full of idea).
-      const systemPrompt = `${systemPromptBody}\n\n${ANSWER_GUIDE_RULES}`;
+      const user = getUserFromRequest(req);
+  const tier = aiSparkTierFor(user);
+  const systemPrompt = `${systemPromptBody}\n\n${ANSWER_GUIDE_RULES}\n\n${answerTierRules(tier)}`;
 
       const userPrompt =
         format === "mcq"

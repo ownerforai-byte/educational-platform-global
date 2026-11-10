@@ -2,10 +2,10 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { getAgnesKey } from "../ai/config";
 import {
-  PLATFORM_GUIDE_IDENTITY_REPLY,
+  PLATFORM_GUIDE_CREATOR_REPLY,
   PLATFORM_GUIDE_SYSTEM_PROMPT,
   buildPersonalContext,
-  isPlatformGuideIdentityQuestion,
+  isPlatformGuideCreatorQuestion,
   platformGuideReply,
 } from "../ai/platform-guide-prompt";
 import { rateLimit } from "../middleware/rateLimit";
@@ -45,8 +45,8 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
   }
 
   const userText = parsed.data.message;
-  if (isPlatformGuideIdentityQuestion(userText)) {
-    res.json({ reply: PLATFORM_GUIDE_IDENTITY_REPLY });
+  if (isPlatformGuideCreatorQuestion(userText)) {
+    res.json({ reply: PLATFORM_GUIDE_CREATOR_REPLY });
     return;
   }
 

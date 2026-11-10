@@ -24,6 +24,7 @@ import { apiFetch } from "@/lib/api-client";
 import { reportClientError } from "@/lib/errors/app-error";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
+import { AiToolShell } from "@/components/ai/ai-tool-shell";
 import { GUEST_DAILY_LIMIT, writeGuestCount } from "@/lib/ai/guest-quota";
 
 interface MathSolveResponse {
@@ -147,41 +148,15 @@ export default function MathStudioPage() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-5xl space-y-6 px-3 sm:px-4 py-6 sm:py-10">
-      {/* ── Breadcrumb & Navigation ────────────────────────────────────── */}
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <Link
-          href="/ai"
-          className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <ArrowLeft className="h-4 w-4" /> Back to AI Studio Hub
-        </Link>
-        <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
-          <Zap className="h-3.5 w-3.5" /> Cerebras 2000+ tok/s
-        </span>
-      </div>
-
-      {/* ── Hero Banner ─────────────────────────────────────────────────── */}
-      <div className="relative overflow-hidden rounded-3xl border-2 border-border/80 bg-gradient-to-br from-emerald-500/[0.08] via-card to-card p-6 sm:p-8 shadow-sm">
-        <div className="absolute -top-12 -right-8 h-48 w-48 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none" />
-        <div className="relative z-10 space-y-3">
-          <div className="flex items-center gap-3">
-            <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-500/20">
-              <Calculator className="h-6 w-6" />
-            </span>
-            <div>
-              <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-foreground">
-                Veer AI Math & Derivation Studio
-              </h1>
-              <p className="text-[11px] sm:text-[13px] text-muted-foreground">
-                Rigorous step-by-step calculus, trigonometry, mechanics & algebraic derivations with verified proofs.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <AiPlanStrip />
+    <AiToolShell
+      icon={Calculator}
+      title="Math & derivation studio"
+      description="Rigorous step-by-step calculus, trigonometry, mechanics & algebraic derivations with verified proofs."
+      accent="border-emerald-500/25 bg-emerald-500/10 text-emerald-500"
+      current="/ai/math"
+    >
+      <div className="space-y-6">
+        <AiPlanStrip />
 
       {/* ── Input Box & Controls ────────────────────────────────────────── */}
       <div className="rounded-3xl border-2 border-border/80 bg-card p-5 sm:p-6 shadow-sm space-y-4">
@@ -194,7 +169,7 @@ export default function MathStudioPage() {
                 key={s}
                 type="button"
                 onClick={() => setSubject(s)}
-                className={`rounded-full min-h-11 px-3 py-1 text-[11px] font-medium capitalize transition-all ${
+                className={`rounded-lg min-h-11 px-3 py-1 text-[11px] font-medium capitalize transition-all ${
                   subject === s
                     ? "bg-emerald-600 text-white shadow-sm"
                     : "border border-border/70 bg-muted/40 text-muted-foreground hover:bg-muted"
@@ -213,7 +188,7 @@ export default function MathStudioPage() {
                 key={c}
                 type="button"
                 onClick={() => setClassLevel(c)}
-                className={`rounded-full min-h-11 px-2.5 py-1 text-[11px] font-medium transition-all ${
+                className={`rounded-lg min-h-11 px-2.5 py-1 text-[11px] font-medium transition-all ${
                   classLevel === c
                     ? "bg-primary text-primary-foreground shadow-sm"
                     : "border border-border/70 bg-muted/40 text-muted-foreground hover:bg-muted"
@@ -370,7 +345,8 @@ export default function MathStudioPage() {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </AiToolShell>
   );
 }
 

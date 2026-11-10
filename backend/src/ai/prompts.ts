@@ -15,6 +15,7 @@ import {
   depthDirectiveForMode,
   DEPTH_REGULATION_RULES,
 } from "./depth-regulation";
+import type { AiSparkTier } from "../utils/aiSpark";
 
 /**
  * PROFESSOR_STYLE_RULES — enforced server-side on every chat reply (auth + guest).
@@ -129,6 +130,28 @@ export const MASTER_ACADEMIC_PROMPT = [
 ].join("\n\n");
 
 /**
+ * Tier-specific answer bounds. The API chooses this from its verified session,
+ * never from a client-supplied role/tier. Keep owner-only answer add-ons behind
+ * the highest rung while other tiers remain clear and useful without padding.
+ */
+export function answerTierRules(tier: AiSparkTier): string {
+  const boundary = `[VERIFIED ANSWER DEPTH — ${tier.toUpperCase()} TIER]\nThis server-verified account tier controls answer depth and add-on sections. These rules override any broader depth, completeness, checklist, key-term or follow-up instructions above.`;
+  if (tier === "owner") {
+    return `${boundary}\nOWNER: use the full, unabridged teaching depth in the main prompt when the question warrants it. For academic answers only, include all directly relevant related terms and meaningful contrasts in two clearly labelled lists: **Related —** term, term, term. **Contrasts —** A vs B (state the exact difference), C vs D (state the exact difference). Include all genuinely related terms and meaningful contrasts for the asked surface, not unrelated syllabus vocabulary; never add filler. The answer card's **Key terms**, **Check yourself**, and **Take it further** sections are owner-only. Make every chip a concise follow-up question/instruction that the student can click to send as their next message. Do not force these sections on identity, casual, emotional or non-academic replies.`;
+  }
+  if (tier === "guest") {
+    return `${boundary}\nPUBLIC: give a direct, approachable explanation with a little useful depth—usually the core idea, one short reason, and one simple example. Avoid exhaustive coverage and unnecessary lists. The standalone **Key terms/Key words**, **Check yourself**, and **Take it further** answer-card sections, plus **Related —** and **Contrasts —** lists, are reserved for the verified Owner tier. Do not output those sections or lists for public answers; include only a comparison essential to understanding directly in the prose. The three add-on sections and lists must not appear for any non-owner tier.`;
+  }
+  const depth = {
+    guest: "PUBLIC: give a direct, approachable explanation with a little useful depth—usually the core idea and one short reason or example. Avoid exhaustive coverage and unnecessary lists.",
+    member: "MEMBER: give a clear, modestly detailed explanation—core idea, essential reasoning, and one relevant example or exam note when useful. Do not expand into a full chapter or exhaustive related-topic list.",
+    plus: "PLUS: add a little more than Member—explain the key mechanism or steps and include a short example and one useful exam point when relevant. Keep the answer focused; do not give Owner-level exhaustive treatment.",
+    pro: "PRO: provide a focused, more developed explanation than Plus—cover the main mechanism, essential formula/steps, a worked example or exam trap when relevant. Stay limited to the asked topic; never apply Owner's exhaustive answer depth or owner-only add-on sections.",
+  }[tier];
+  return `${boundary}\n${depth}\nThe standalone **Key terms/Key words**, **Check yourself**, and **Take it further** answer-card sections, plus **Related —** and **Contrasts —** lists, are reserved for the verified Owner tier. Do not output those sections or lists for any other tier, even if another prompt asks for them. The three add-on sections and lists must not appear for any non-owner tier. For non-owners, answer naturally and include only a comparison essential to understanding directly in the prose. Keep any optional practice to one short item at most, only when requested.`;
+}
+
+/**
  * Build the server-side context block appended to the system prompt for every
  * chat request: professor + master academic rules + the platform's own
  * curriculum material + the scope directive + live web results (with real
@@ -144,6 +167,7 @@ export const MASTER_ACADEMIC_PROMPT = [
 export async function buildProfessorContext(
   lastUserMessage: string,
   conversationTail = "",
+  tier: AiSparkTier = "member",
 ): Promise<string> {
   const parts: string[] = [MASTER_ACADEMIC_PROMPT, DEPTH_REGULATION_RULES];
   const question = lastUserMessage.trim();
@@ -278,6 +302,9 @@ export async function buildProfessorContext(
     // Search is best-effort: never block the chat on it.
   }
 
+  // Keep this as the final directive so curriculum/source blocks or console
+  // rules cannot silently broaden a non-owner's answer depth.
+  parts.push(answerTierRules(tier));
   return parts.join("\n\n");
 }
 

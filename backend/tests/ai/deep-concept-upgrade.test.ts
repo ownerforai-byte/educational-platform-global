@@ -43,6 +43,7 @@ vi.mock("../../src/ai/curriculum-retrieval", async (original) => {
   return { ...actual, buildCurriculumContext: () => "" };
 });
 vi.mock("../../src/ai/prompts", () => ({
+  answerTierRules: () => "verified tier rules",
   buildProfessorContext: async () => "teacher context",
   appendConsoleRules: (context: string) => context,
   withProfessorContext: (messages: unknown[]) => messages,

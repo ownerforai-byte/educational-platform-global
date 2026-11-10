@@ -51,6 +51,17 @@ describe("analyzeReply", () => {
     expect(analysis.keyTerms).not.toContain("mass");
     expect(analysis.keyTerms).not.toContain("weight");
   });
+
+  it("extracts explicitly labelled Related and Contrasts lists", () => {
+    const analysis = analyzeReply(
+      "**Related —** displacement, velocity, acceleration, trajectory\n**Contrasts —** distance vs displacement (scalar vs vector), speed vs velocity (magnitude vs direction)",
+    );
+    expect(analysis.relatedTerms).toEqual(["displacement", "velocity", "acceleration", "trajectory"]);
+    expect(analysis.contrasts).toEqual([
+      "distance vs displacement (scalar vs vector)",
+      "speed vs velocity (magnitude vs direction)",
+    ]);
+  });
 });
 
 describe("buildReplySuggestions", () => {

@@ -149,7 +149,7 @@ RULES:
 - For fill-blank items, accept any string in "acceptedAnswers" as correct (case-insensitive, ignore punctuation and extra spaces).
 - "summary" comments on the submission as a whole — strengths plus the top thing to fix next.
 
-${ANSWER_GUIDE_RULES}`;
+${ANSWER_GUIDE_RULES}\n\n${answerTierRules(aiSparkTierFor((req as Partial<AuthedRequest>).user))}`;
 
       const payload = cleanItems.map((it, i) => ({
         index: i + 1,

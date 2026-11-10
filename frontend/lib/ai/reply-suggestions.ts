@@ -37,8 +37,10 @@ export interface ReplyAnalysis {
   hasSteps: boolean;
   mentionsExam: boolean;
   isLong: boolean;
-  /** Study vocabulary for the Key terms box — contrasting pairs first. */
+  /** Study vocabulary for owner-only related/contrast chips. */
   keyTerms: string[];
+  relatedTerms: string[];
+  contrasts: string[];
 }
 
 /**
@@ -123,12 +125,42 @@ export function analyzeReply(reply: string): ReplyAnalysis {
       if (keyTerms.length >= 6) break;
     }
   }
+  const extractList = (label: "related" | "contrasts") => {
+    const match = text.match(new RegExp(`(?:^|\\n)\\s*\\*{0,2}${label}\\s*[—–:-]\\*{0,2}\\s*([^\\n]+)`, "i"));
+    if (!match) return [];
+    const items: string[] = [];
+    let start = 0;
+    let depth = 0;
+    for (let index = 0; index < match[1].length; index += 1) {
+      const char = match[1][index];
+      if (char === "(") depth += 1;
+      else if (char === ")") depth = Math.max(0, depth - 1);
+      else if (depth === 0 && (char === ";" || char === ",")) {
+        items.push(match[1].slice(start, index));
+        start = index + 1;
+      }
+    }
+    items.push(match[1].slice(start));
+    return items
+      .map((item) => item.replace(/^[-*\s]+|\*+$/g, "").trim())
+      .filter((item) => item.length >= 3);
+  };
+  const explicitRelated = extractList("related");
+  const explicitContrasts = extractList("contrasts");
+  const relatedTerms = explicitRelated.length
+    ? explicitRelated
+    : keyTerms.filter((term) => !CONTRAST_JOINER.test(term));
+  const contrasts = explicitContrasts.length
+    ? explicitContrasts
+    : keyTerms.filter((term) => CONTRAST_JOINER.test(term));
   return {
     hasFormulas: /\$[^$]+\$|\\frac|\\cdot|equation|formula|[a-z]\s*=\s*/i.test(text),
     hasSteps: /(^|\n)\s*(step\s*\d|first|then|next|finally)[\s:.,-]/i.test(text) || /\n\s*\d+[.)]\s/.test(text),
     mentionsExam: /\bexam\b|NEB|board exam|entrance|marks?\b/i.test(text),
     isLong: text.length > 1200,
     keyTerms,
+    relatedTerms: [...new Set(relatedTerms)],
+    contrasts: [...new Set(contrasts)],
   };
 }
 

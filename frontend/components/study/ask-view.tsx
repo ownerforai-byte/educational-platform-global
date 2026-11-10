@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useSession } from "@/features/auth/hooks/use-session";
+import { isOwnerAccount } from "@/lib/owner";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Loader2, MessageCircle, Send } from "lucide-react";
@@ -15,6 +17,8 @@ import { buildAskPrompt, getCommunitySpace, listCommunitySpaces, MAX_QUESTION_LE
 
 /** /ask: question box answered by the Veer tutor, with a live "ask the community" panel. */
 export function AskView() {
+  const { user } = useSession();
+  const isVerifiedOwner = isOwnerAccount(user);
   const spaces = listCommunitySpaces();
   const initial = getCommunitySpace(useSearchParams().get("space") ?? "")?.id ?? "";
   const [spaceId, setSpaceId] = useState(initial);
@@ -26,16 +30,28 @@ export function AskView() {
   const [posting, setPosting] = useState(false);
   const [postError, setPostError] = useState<string | null>(null);
 
-  async function submit() {
-    const invalid = validateQuestion(question);
+  async function submit(followUp?: string) {
+    if (busy) return;
+    const nextQuestion = (followUp ?? question).trim();
+    const invalid = validateQuestion(nextQuestion);
     if (invalid) return setError(invalid);
+    if (followUp) setQuestion(nextQuestion);
     setError(null);
     setAnswer(null);
     setBusy(true);
     try {
+      const system = { role: "system" as const, content: PLATFORM_SYSTEM_PROMPT };
+      const previousSubject = getCommunitySpace(spaceId)?.subjectName;
+      const priorAnswerContext = followUp && answer
+        ? [
+            { role: "user" as const, content: buildAskPrompt(question, previousSubject) },
+            { role: "assistant" as const, content: answer },
+          ]
+        : [];
       const res = await chat([
-        { role: "system", content: PLATFORM_SYSTEM_PROMPT },
-        { role: "user", content: buildAskPrompt(question, getCommunitySpace(spaceId)?.subjectName) },
+        system,
+        ...priorAnswerContext,
+        { role: "user", content: buildAskPrompt(nextQuestion, previousSubject) },
       ]);
       setAnswer(res.response);
     } catch {
@@ -106,7 +122,7 @@ export function AskView() {
           {error && <p role="alert" className="text-[13px] text-destructive">{error}</p>}
           <button
             type="button"
-            onClick={submit}
+            onClick={() => void submit()}
             disabled={busy}
             className="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-[13px] font-semibold text-primary-foreground disabled:opacity-50"
           >
@@ -123,6 +139,8 @@ export function AskView() {
             subjectName: getCommunitySpace(spaceId)?.subjectName,
             subjectSlug: getCommunitySpace(spaceId)?.subjectSlug,
           }}
+          isVerifiedOwner={isVerifiedOwner}
+          onFollowUp={(prompt) => void submit(prompt)}
         >
           <InteractiveMarkdown content={answer} className="chat-reading" />
         </AiReplyCard>

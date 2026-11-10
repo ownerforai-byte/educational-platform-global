@@ -9,6 +9,7 @@ import {
 import {
   MASTER_ACADEMIC_PROMPT,
   PROFESSOR_STYLE_RULES,
+  answerTierRules,
   buildProfessorContext,
   withProfessorContext,
 } from "../src/ai/prompts";
@@ -235,6 +236,26 @@ describe("master academic prompt composition", () => {
     expect(prepended[0]).toEqual({ role: "system", content: "CONTEXT" });
     expect(prepended).toHaveLength(2);
   });
+});
+
+describe("verified tier answer boundaries", () => {
+  test("only owner gets exhaustive lists and owner-only answer sections", () => {
+    const owner = answerTierRules("owner");
+    expect(owner).toContain("**Related —**");
+    expect(owner).toContain("**Contrasts —**");
+    expect(owner).toContain("Take it further");
+    for (const tier of ["guest", "member", "plus", "pro"] as const) {
+      const rules = answerTierRules(tier);
+      expect(rules).toContain("reserved for the verified Owner tier");
+      expect(rules).toContain("must not appear for any non-owner tier");
+      expect(rules).not.toContain("OWNER: use the full");
+    }
+  });
+
+  test("verified owner tier is the final server-context directive", async () => {
+    const context = await buildProfessorContext("define a capacitor", "", "owner");
+    expect(context.trimEnd().endsWith(answerTierRules("owner"))).toBe(true);
+  }, CONTEXT_TIMEOUT);
 });
 
 describe("academic specialist contract coverage", () => {

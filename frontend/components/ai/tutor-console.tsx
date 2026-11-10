@@ -84,7 +84,7 @@ import {
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { AiSparkBadge, recordAiSparkUse, refreshAiSparkMeters } from "@/components/ai/ai-spark-badge";
-import { isOwnerEmail } from "@/lib/owner";
+import { isOwnerAccount, isOwnerEmail } from "@/lib/owner";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { IDENTITY_REPLY } from "@/components/ai/ai-chat-interface";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
@@ -1458,6 +1458,8 @@ export function TutorConsole({
                         meta="AI Tutor"
                         reply={msg.content}
                         context={{ surface: "tutor" }}
+                        isVerifiedOwner={isOwnerAccount(user)}
+                        onFollowUp={followUp}
                         actions={
                           <ChatMessageActions
                             copied={copiedIndex === index}

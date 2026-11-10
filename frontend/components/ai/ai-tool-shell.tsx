@@ -1,6 +1,13 @@
 import Link from "next/link";
-import { ArrowLeft, ChevronRight, Info, type LucideIcon } from "lucide-react";
-import { AI_TOOLS } from "./ai-tools-registry";
+import {
+  ArrowLeft,
+  ChevronDown,
+  ChevronRight,
+  Info,
+  LayoutGrid,
+  type LucideIcon,
+} from "lucide-react";
+import { AI_TOOLS, AI_TOOL_GROUPS } from "./ai-tools-registry";
 
 /**
  * The console frame every Veer tool shares.
@@ -79,60 +86,97 @@ export function AiToolShell({
 
       <div className="mt-4 grid gap-4 lg:grid-cols-[232px_minmax(0,1fr)]">
         {/* Mobile: a scrollable chip rail. Desktop: the sticky console rail. */}
-        <nav aria-label="Veer tools" className="-mx-1 lg:mx-0">
-          <ul className="flex gap-1.5 overflow-x-auto px-1 pb-1 lg:hidden">
-            {AI_TOOLS.map((tool) => {
-              const active = tool.href === current;
-              return (
-                <li key={tool.href} className="shrink-0">
-                  <Link
-                    href={tool.href}
-                    aria-current={active ? "page" : undefined}
-                    className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-[11px] font-semibold transition-colors ${
-                      active
-                        ? "border-primary bg-primary/10 text-primary"
-                        : "border-border bg-card text-muted-foreground hover:text-foreground"
-                    }`}
-                  >
-                    <tool.icon className="h-3.5 w-3.5" aria-hidden="true" />
-                    {tool.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+        <nav aria-label="Veer tools" className="lg:sticky lg:top-20">
+          {/* Mobile: an accessible collapsible menu of ALL tools — grouped
+              rows with icon chips (no horizontal scrolling). */}
+          <details className="group rounded-2xl border border-border/70 bg-card lg:hidden">
+            <summary className="flex cursor-pointer list-none items-center gap-2.5 px-3 py-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+              <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border ${accent}`}>
+                <Icon className="h-4 w-4" aria-hidden="true" />
+              </span>
+              <span className="min-w-0 flex-1 truncate text-[12px] font-bold text-foreground">{title}</span>
+              <span className="text-[10px] font-semibold text-muted-foreground">All tools</span>
+              <ChevronDown
+                className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180"
+                aria-hidden="true"
+              />
+            </summary>
+            <div className="space-y-3 border-t border-border/70 px-3 py-3">
+              {AI_TOOL_GROUPS.map((group) => (
+                <section key={group}>
+                  <p className="mb-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                    {group}
+                  </p>
+                  <ul className="space-y-0.5">
+                    {AI_TOOLS.filter((tool) => tool.group === group).map((tool) => {
+                      const active = tool.href === current;
+                      const ToolIcon = tool.icon;
+                      return (
+                        <li key={tool.href}>
+                          <Link
+                            href={tool.href}
+                            aria-current={active ? "page" : undefined}
+                            className={`flex items-center gap-2.5 rounded-xl px-2 py-2 text-[12px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                              active
+                                ? "bg-primary/10 font-bold text-primary"
+                                : "font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+                            }`}
+                          >
+                            <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border ${tool.accent}`}>
+                              <ToolIcon className="h-4 w-4" aria-hidden="true" />
+                            </span>
+                            <span className="min-w-0 flex-1 truncate">{tool.label}</span>
+                            <ChevronRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground/60" aria-hidden="true" />
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          </details>
 
+          {/* Desktop: the same grouped rows in the sticky side rail. */}
           <div className="sticky top-20 hidden lg:block">
-            <p className="mb-2 px-2 text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
-              Veer tools
-            </p>
-            <ul className="space-y-0.5">
-              {AI_TOOLS.map((tool) => {
-                const active = tool.href === current;
-                return (
-                  <li key={tool.href}>
-                    <Link
-                      href={tool.href}
-                      aria-current={active ? "page" : undefined}
-                      className={`group flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-[11px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-                        active
-                          ? "bg-primary/10 font-bold text-primary"
-                          : "font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
-                      }`}
-                    >
-                      <tool.icon className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-                      <span className="min-w-0 flex-1 truncate">{tool.label}</span>
-                      {active && <ChevronRight className="h-3 w-3 shrink-0" aria-hidden="true" />}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+            {AI_TOOL_GROUPS.map((group) => (
+              <section key={group} className="mb-3">
+                <p className="mb-1 px-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                  {group}
+                </p>
+                <ul className="space-y-0.5">
+                  {AI_TOOLS.filter((tool) => tool.group === group).map((tool) => {
+                    const active = tool.href === current;
+                    const ToolIcon = tool.icon;
+                    return (
+                      <li key={tool.href}>
+                        <Link
+                          href={tool.href}
+                          aria-current={active ? "page" : undefined}
+                          className={`flex items-center gap-2.5 rounded-xl px-2 py-1.5 text-[11px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
+                            active
+                              ? "bg-primary/10 font-bold text-primary"
+                              : "font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+                          }`}
+                        >
+                          <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border ${tool.accent}`}>
+                            <ToolIcon className="h-4 w-4" aria-hidden="true" />
+                          </span>
+                          <span className="min-w-0 flex-1 truncate">{tool.label}</span>
+                          {active && <ChevronRight className="h-3 w-3 shrink-0" aria-hidden="true" />}
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </section>
+            ))}
             <Link
               href="/ai"
-              className="mt-2 flex items-center gap-2 rounded-lg border border-dashed border-border px-2 py-1.5 text-[11px] font-semibold text-muted-foreground transition-colors hover:text-foreground"
+              className="mt-1 flex items-center gap-2 rounded-xl border border-dashed border-border px-2.5 py-2 text-[11px] font-semibold text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              All tools & classrooms
+              <LayoutGrid className="h-3.5 w-3.5" aria-hidden="true" />
+              All tools &amp; classrooms
             </Link>
           </div>
         </nav>

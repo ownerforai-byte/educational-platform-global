@@ -54,7 +54,7 @@ import {
 } from "@/lib/ai/guest-quota";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { isOwnerEmail } from "@/lib/owner";
+import { isOwnerAccount, isOwnerEmail } from "@/lib/owner";
 import { AiSparkBadge, recordAiSparkUse, refreshAiSparkMeters } from "@/components/ai/ai-spark-badge";
 import { FloatingIdeaChips } from "@/components/ai/floating-idea-chips";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
@@ -1228,6 +1228,8 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                       title="Veer"
                       reply={msg.content}
                       context={{ surface: "chat" }}
+                      isVerifiedOwner={isOwnerAccount(user)}
+                      onFollowUp={followUp}
                       actions={
                         <ChatMessageActions
                           copied={copiedIndex === index}

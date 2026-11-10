@@ -106,6 +106,12 @@ Enforced in `depth-regulation.ts`.
 
 Introductions are one pass only: what it is, origin, core meaning, one example, one line of significance. Then stop.
 
+### 4.2 Verified tier answer boundaries
+
+`answerTierRules()` in `backend/src/ai/prompts.ts` is appended server-side from the verified session tier; request-body tier values are never trusted. Owner receives the fullest depth when warranted and, for academic answers, a relevant **Related —** list and clearly explained **Contrasts —** list. The answer-card **Key terms**, **Check yourself**, and **Take it further** panels render only for verified Owner accounts. Their chips send a contextual follow-up directly as the next user message.
+
+Member, Plus, and Pro receive focused, progressively more developed answers, but never Owner-level exhaustive depth or those three panels/lists. Public guidance stays short and approachable. Non-owners may still see a necessary in-line comparison in the answer; it is not presented as the owner-only contrast list.
+
 ### 4.1 Combined routing
 
 | Mode | Zone | Result |

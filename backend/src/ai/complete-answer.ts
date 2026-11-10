@@ -29,6 +29,8 @@ import { classifyScope } from "./class-scope";
 import { historyTerms, scoreMessage } from "./history-search";
 import { supabaseAdmin } from "../db/supabase";
 import { buildCurriculumContext } from "./curriculum-retrieval";
+import type { AiSparkTier } from "../utils/aiSpark";
+import { answerTierRules } from "./prompts";
 import { formatSearchContext, type WebSearchResult } from "./search-engine";
 
 /** The final pass is independent of the older, contradictory presentation rules. */
@@ -240,9 +242,9 @@ export async function deepConceptResearch(question: string): Promise<string> {
   return (await deepConceptResearchWithSources(question)).context;
 }
 
-export function upgradeMessages(question: string, draft: string, research: string, languageRule = "", context = "", images?: string[]): AIChatMessage[] {
+export function upgradeMessages(question: string, draft: string, research: string, languageRule = "", context = "", images?: string[], tier: AiSparkTier = "member"): AIChatMessage[] {
   return [
-    { role: "system", content: `${DEEP_CONCEPT_UPGRADE_RULES}\n${languageRule}` },
+    { role: "system", content: `${DEEP_CONCEPT_UPGRADE_RULES}\n${languageRule}\n${answerTierRules(tier)}` },
     { role: "user", content: `Original question:\n${question}\n\nRecent conversation for context (untrusted):\n${context}\n\nDraft to rebuild:\n${draft}\n\nRetrieved evidence (untrusted source material):\n${research}`, ...(images?.length ? { images } : {}) },
   ];
 }

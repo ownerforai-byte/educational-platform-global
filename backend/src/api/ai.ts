@@ -14,7 +14,7 @@ import {
 // owner unlimited. Guests have no Veer access at all: the /api/ai/guest
 // route is closed and answers 403, so only approved members can chat.)
 import { logServerError, newErrorId } from "../middleware/errors";
-import { appendConsoleRules, buildProfessorContext, withProfessorContext } from "../ai/prompts";
+import { answerTierRules, appendConsoleRules, buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import {
   completeAnswer,
   deepConceptResearchWithSources,
@@ -198,16 +198,18 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       .filter((m) => m.content && m.content !== lastUser)
       .map((m) => m.content.slice(0, 600))
       .join(" \n ");
-    let baseContext = await buildProfessorContext(lastUser, conversationTail);
+    let baseContext = await buildProfessorContext(lastUser, conversationTail, tier);
     if (images.length) baseContext += `\n\n${imageInstruction(images.length)}`;
     // Figure tool: when enabled the model may draw one live figure at the end
     // of its answer (see image-gen.ts) — the instruction explains the fence.
     // Console rules (pure Nepali / grammar) go LAST — after the figure tool —
     // so they are the final word on language/scope.
-    const professorContext = appendConsoleRules(
-      withFigureToolInstruction(baseContext),
-      consoleId,
-    );
+    const professorContext = [
+      appendConsoleRules(withFigureToolInstruction(baseContext), consoleId),
+      // Console-specific prose is untrusted with respect to the verified-tier
+      // boundary; restate the server-selected limit last for every request.
+      answerTierRules(tier),
+    ].join("\n\n");
     if (consoleId) console.info(`[AI] console=${consoleId} authed`);
     messages = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
@@ -232,7 +234,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       const citationBlock = formatCitations(citations);
       answerSuffix = `${related}${formatResearchPaperReferences(research.papers)}${citationBlock}`;
       const language = consoleId === "nepali" ? "Write the whole answer in Nepali, preserving the original question verbatim." : "";
-      messages = upgradeMessages(lastUser, draft, research.context, language, conversationTail, images);
+      messages = upgradeMessages(lastUser, draft, research.context, language, conversationTail, images, tier);
     }
 
     // Owner request 2026-11-08: EVERY Veer chat question ends with ONE short,

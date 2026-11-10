@@ -16,6 +16,7 @@ import {
   rollbackGuestSlot,
 } from "../utils/guestQuota";
 import { signInForMoreAiSparkMessage } from "../utils/aiSparkCopy";
+import { aiSparkTierFor } from "../utils/aiSpark";
 import { getClientIp } from "../utils/clientIp";
 
 const router = Router();
@@ -150,12 +151,13 @@ Format with clean KaTeX LaTeX syntax for all equations and expressions.`;
       // with automatic fallback to Groq -> Gemini -> Agnes in the configured chain.
       // The math solver owns the Cerebras lane (owner 2026-10-25).
       const user = (req as Partial<AuthedRequest>).user;
+      const tier = aiSparkTierFor(user);
       const [draft, research, links] = await Promise.all([
         aiService.chat(getWorkLaneProvider("math"), messages),
         deepConceptResearch(`${cleanProblem} ${subject} class ${classLevel}`),
         user ? relatedHistory(user.id, cleanProblem) : "",
       ]);
-      const solution = await aiService.chat(getWorkLaneProvider("math"), upgradeMessages(cleanProblem, draft, research, "", `Subject: ${subject}; class: ${classLevel}; step-by-step: ${stepByStep}; verification: ${verification}.`)) + links;
+      const solution = await aiService.chat(getWorkLaneProvider("math"), upgradeMessages(cleanProblem, draft, research, "", `Subject: ${subject}; class: ${classLevel}; step-by-step: ${stepByStep}; verification: ${verification}.`, undefined, tier)) + links;
       if (user) await saveStudioAnswer(user.id, `studio:math:${randomUUID()}`, cleanProblem, solution);
 
       const guestSlot = (req as GuestGateRequest).guestSlot;
