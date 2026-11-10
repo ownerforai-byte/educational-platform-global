@@ -263,7 +263,7 @@ export function ChatHome({
                   aria-selected={isActive}
                   onClick={() => setActive(g.category)}
                   className={cn(
-                    "inline-flex items-center gap-1.5 rounded-full border px-3.5 py-2 text-[11px] font-semibold transition-colors",
+                    "inline-flex items-center gap-1.5 rounded-lg border px-3.5 py-2 text-[11px] font-semibold transition-colors",
                     isActive
                       ? "border-primary/50 bg-primary/10 text-primary"
                       : "border-border/70 bg-card text-muted-foreground hover:border-primary/30 hover:text-foreground",

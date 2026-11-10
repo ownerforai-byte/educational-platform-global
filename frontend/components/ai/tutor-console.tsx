@@ -1261,7 +1261,7 @@ export function TutorConsole({
                 onClick={() => chooseMode(m.id)}
                 aria-pressed={active}
                 className={cn(
-                  "flex min-h-11 items-center gap-1.5 whitespace-nowrap rounded-full border px-3 py-1.5 text-[11px] font-bold transition-all",
+                  "flex min-h-11 items-center gap-1.5 whitespace-nowrap rounded-lg border px-3.5 py-1.5 text-[11px] font-bold transition-all",
                   active
                     ? "border-emerald-500/40 bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 shadow-sm shadow-emerald-500/10"
                     : "border-border/70 bg-background text-muted-foreground hover:text-foreground hover:border-muted-foreground/40",
