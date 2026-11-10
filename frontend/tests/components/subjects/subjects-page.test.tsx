@@ -4,7 +4,7 @@ import { fireEvent, render, screen, within } from "@testing-library/react";
 /**
  * /subjects render tests — guards the 2026-11-09 rebuild (plan-pro-app.md
  * verdict #4): no fake staged loading, canonical subject visuals, honest
- * filters (only grades with real syllabus content), real progress numbers.
+ * filters (every grade the platform serves), real progress numbers.
  */
 
 let mockProgress: Record<string, { completedUnits: number; totalUnits: number; percent: number }> = {};
@@ -55,11 +55,15 @@ describe("/subjects (rebuilt)", () => {
     expect(screen.queryByText(/Soon/)).not.toBeInTheDocument();
   });
 
-  it("offers only grades with real syllabus content and labels the filter group", () => {
+  it("lists every grade the platform serves and labels the filter group", () => {
     render(<SubjectsPage />);
     const group = screen.getByRole("group", { name: /filter subjects by class/i });
     const buttons = within(group).getAllByRole("button");
-    expect(buttons.map((b) => b.textContent)).toEqual(["Class 11", "Class 12"]);
+    // Owner 2026-11-09: "add class 8,9,10 with their all respective subject" —
+    // the picker now carries the lower grades alongside 11 and 12.
+    expect(buttons.map((b) => b.textContent)).toEqual([
+      "Class 8", "Class 9", "Class 10", "Class 11", "Class 12",
+    ]);
     expect(screen.getByRole("link", { name: /search subjects/i })).toHaveAttribute("href", "/search");
   });
 });

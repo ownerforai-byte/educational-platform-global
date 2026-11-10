@@ -125,6 +125,43 @@ const VISUALS: Record<string, SubjectVisual> = {
     badge: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400",
     text: "text-emerald-500",
   },
+  // Grade 8–10 subjects (owner 2026-11-09: "class 8,9,10 with their all
+  // respective subject like class 11") — same canonical token discipline.
+  science: {
+    glyph: "🔬",
+    border: "border-cyan-500/30 hover:border-cyan-500",
+    bg: "from-cyan-500/10 via-card to-card",
+    badge: "bg-cyan-500/15 text-cyan-600 dark:text-cyan-400",
+    text: "text-cyan-500",
+  },
+  "social studies": {
+    glyph: "🌍",
+    border: "border-emerald-500/30 hover:border-emerald-500",
+    bg: "from-emerald-500/10 via-card to-card",
+    badge: "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400",
+    text: "text-emerald-500",
+  },
+  health: {
+    glyph: "🍎",
+    border: "border-rose-500/30 hover:border-rose-500",
+    bg: "from-rose-500/10 via-card to-card",
+    badge: "bg-rose-500/15 text-rose-600 dark:text-rose-400",
+    text: "text-rose-500",
+  },
+  "health & pe": {
+    glyph: "🏃",
+    border: "border-orange-500/30 hover:border-orange-500",
+    bg: "from-orange-500/10 via-card to-card",
+    badge: "bg-orange-500/15 text-orange-600 dark:text-orange-400",
+    text: "text-orange-500",
+  },
+  "optional maths": {
+    glyph: "📐",
+    border: "border-indigo-500/30 hover:border-indigo-500",
+    bg: "from-indigo-500/10 via-card to-card",
+    badge: "bg-indigo-500/15 text-indigo-600 dark:text-indigo-400",
+    text: "text-indigo-500",
+  },
 };
 
 /**

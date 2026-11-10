@@ -230,9 +230,10 @@ const TABS: ToolCategory[] = [
 ];
 
 // ─── Single tool card ──────────────────────────────────────────────────────
-function ToolCard({ tool, available }: { tool: Tool; available: boolean }) {
+function ToolCard({ tool, available, index }: { tool: Tool; available: boolean; index: number }) {
   const Icon = tool.icon;
   const chipClass = CHIP[tool.category];
+  const delay = { animationDelay: `${Math.min(index, 12) * 60}ms` };
 
   const inner = (
     <>
@@ -281,14 +282,16 @@ function ToolCard({ tool, available }: { tool: Tool; available: boolean }) {
   return available ? (
     <Link
       href={tool.href}
-      className={`${base} border-border/60 bg-card hover:border-primary/40 hover:shadow-sm`}
+      style={delay}
+      className={`card-rise-in ${base} border-border/60 bg-card hover:border-primary/40 hover:shadow-sm`}
     >
       {inner}
     </Link>
   ) : (
     <div
       aria-disabled="true"
-      className={`${base} cursor-not-allowed border-border/30 bg-muted/25 opacity-55 grayscale`}
+      style={delay}
+      className={`card-rise-in ${base} cursor-not-allowed border-border/30 bg-muted/25 opacity-55 grayscale`}
     >
       {inner}
     </div>
@@ -336,11 +339,13 @@ export function AiToolsDirectory({ subjects }: { subjects: SubjectClassroom[] })
         </span>
       </h2>
 
-      {/* 2-column grid */}
-      <div className="grid grid-cols-2 gap-3 sm:gap-4">
-        {visible.map((tool) => (
+      {/* 2-column grid — cards load one by one (owner 2026-11-09); the key
+          replays the entrance whenever the category filter changes. */}
+      <div key={active} className="grid grid-cols-2 gap-3 sm:gap-4">
+        {visible.map((tool, index) => (
           <ToolCard
             key={tool.href}
+            index={index}
             tool={tool}
             available={!isLoading && hasLevel(user, tool.minLevel)}
           />

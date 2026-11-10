@@ -120,9 +120,24 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Link>
           </div>
 
-          {searchUnlocked && (
-            <div className="col-span-2 row-start-2 flex min-w-0 justify-center px-1 md:col-span-1 md:col-start-2 md:row-start-1 md:px-4">
-              <GlobalSearch />
+          {/* Center group — search + the CEE square, centered in the header
+              (owner 2026-11-09: "make the position of square of cee in center
+              in header"). */}
+          {(searchUnlocked || user) && (
+            <div className="col-span-2 row-start-2 flex min-w-0 items-center justify-center gap-2 px-1 md:col-span-1 md:col-start-2 md:row-start-1 md:px-4">
+              {searchUnlocked && <GlobalSearch />}
+              {user && (
+                <Link
+                  href="/periodic-table"
+                  className="inline-flex shrink-0 items-center gap-1.5 px-2.5 min-h-10 md:min-h-8 rounded-xl border border-teal-500/30 bg-teal-500/10 text-xs font-semibold text-teal-600 dark:text-teal-400 hover:bg-teal-500/20 transition-all shadow-sm whitespace-nowrap"
+                  title="118-Element CEE Periodic Table & Chemistry Question Bank"
+                  aria-label="Periodic table and CEE chemistry question bank"
+                >
+                  <Atom className="h-3.5 w-3.5 text-teal-500" />
+                  <span className="hidden sm:inline">Periodic Table</span>
+                  <span className="inline-flex items-center justify-center rounded-md px-1.5 py-1 text-[9px] font-extrabold uppercase leading-none bg-teal-500/20 text-teal-700 dark:text-teal-300">CEE</span>
+                </Link>
+              )}
             </div>
           )}
 
@@ -133,19 +148,6 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             {/* State-driven badge (plan.md §14 5.2) — hides at zero, syncs
                 across tabs; the old static pulsing dot ignored real state. */}
             <NotificationBell />
-
-            {user && (
-              <Link
-                href="/periodic-table"
-                className="inline-flex items-center gap-1.5 px-2.5 min-h-10 md:min-h-8 rounded-xl border border-teal-500/30 bg-teal-500/10 text-xs font-semibold text-teal-600 dark:text-teal-400 hover:bg-teal-500/20 transition-all shadow-sm whitespace-nowrap"
-                title="118-Element CEE Periodic Table & Chemistry Question Bank"
-                aria-label="Periodic table and CEE chemistry question bank"
-              >
-                <Atom className="h-3.5 w-3.5 text-teal-500" />
-                <span className="hidden sm:inline">Periodic Table</span>
-                <span className="text-[9px] font-extrabold uppercase px-1 py-0.5 rounded bg-teal-500/20 text-teal-700 dark:text-teal-300">CEE</span>
-              </Link>
-            )}
 
             <CreditBadge className="hidden sm:flex" />
 
