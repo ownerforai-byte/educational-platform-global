@@ -246,7 +246,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
 
         {/* Six groups: two tidy rows on phones, one row from sm upwards.
             Each column is its own bounded card — the footer's link zone. */}
-        <div className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-6 sm:gap-3">
+        <div className="mt-4 grid grid-cols-3 gap-2 sm:grid-cols-6 sm:gap-3 lazy-render">
           {FOOTER_SECTIONS.map(({ sectionId, heading, onlyHrefs, alwaysUnlockedHrefs }) => {
             // Look up the column's own section from NAV_SECTIONS
             const section = NAV_SECTIONS.find((s) => s.id === sectionId);

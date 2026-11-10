@@ -46,6 +46,7 @@ import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/access-le
 import { entryStatus, topicHref } from "@/lib/progress/catalog";
 import { SYLLABUS } from "@/lib/syllabus";
 import type { ProgressEntry } from "@/types/api";
+import { Footer } from "@/components/layout/footer";
 
 const tierBadgeConfig: Record<AccessLevel, { className: string; icon: typeof Crown }> = {
   guest: { className: "bg-slate-500/15 border-slate-500/30 text-slate-500", icon: User },
@@ -433,7 +434,7 @@ function ProfileDetails({ onBack }: { onBack?: () => void }) {
           className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to You
+          Back to Info
         </button>
       ) : null}
 
@@ -1241,14 +1242,13 @@ function ProfileDetails({ onBack }: { onBack?: () => void }) {
 }
 
 /**
- * THE YOU HUB (owner 2026-11-09: "make all current in you opens via a button
- * 'My Profile' and add more things there in current you like all footer
- * things in there in mobile view … rest all footers add here").
+ * THE INFO PAGE — the You tab converted (owner 2026-11-09: "convert the you
+ * to info and add all footer there … keep the footer to limited place also,
+ * not at all place, like all footer to 'info' page").
  *
- * The You tab opens as a hub: one "My Profile" button opens everything the
- * profile used to show directly, and the footer's mobile-view items (Check
- * for Updates, Rate this App, Help & FAQs, the legal links, the plan note and
- * the version) live here too.
+ * The tab opens as Info: one compact identity block whose "My Profile" button
+ * opens the whole profile experience, and ALL of the site footer content
+ * (directory, legal, plan note, version) lives here — and only here.
  */
 function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
   const { user, isLoading } = useSession();
@@ -1275,12 +1275,12 @@ function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
     .toUpperCase();
 
   return (
-    <div className="container max-w-2xl py-8">
-      {/* Identity + the My Profile button — ONE compact block (owner
-          2026-11-09: "remove the footer from 'you' and optmize the block …
-          keep only one version overall" — the footer lives only in the site
-          footer, nothing duplicated here). */}
-      <Card className="overflow-hidden border-primary/20 shadow-sm">
+    <div>
+      <div className="container max-w-2xl py-8">
+        {/* Identity + the My Profile button — ONE compact block (owner
+            2026-11-09: "optmize the block"). */}
+        <h1 className="mb-4 text-xl font-extrabold tracking-tight">Info</h1>
+        <Card className="overflow-hidden border-primary/20 shadow-sm">
         <div className="relative h-20 overflow-hidden bg-gradient-to-r from-primary via-primary/80 to-violet-600">
           <div className="absolute -top-10 -right-10 h-36 w-36 rounded-full bg-white/10" />
           <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-card/90 to-transparent" />
@@ -1306,7 +1306,13 @@ function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
           </Button>
         </CardContent>
       </Card>
+      </div>
 
+      {/* ALL the footer content lives here and only here (owner 2026-11-09:
+          "all footer to 'info' page", "keep the footer to limited place"). */}
+      <div className="lazy-render">
+        <Footer user={user} />
+      </div>
     </div>
   );
 }

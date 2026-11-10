@@ -17,7 +17,6 @@ import { GlobalSearch } from "./global-search";
 import { CreditBadge } from "./credit-badge";
 import { NotificationBell } from "./notification-bell";
 import { UserNav } from "./user-nav";
-import { Footer } from "./footer";
 import { PlatformGuideWidget } from "@/components/home/platform-guide-widget";
 import { AIWidget } from "./ai-widget";
 import { useMediaQuery } from "@/lib/use-media-query";
@@ -214,8 +213,9 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
         </main>
       </div>
 
-      {/* Site footer (tier-aware directory) */}
-      <Footer user={user} />
+      {/* Site footer (tier-aware directory) — lives ONLY on the Info page
+          now (owner 2026-11-09: "keep the footer to limited place … not at all
+          place, like all footer to 'info' page"). */}
 
       {/* Phone app frame: thumb tabs, replaced by the rail/sidebar from md up. */}
       <BottomTabBar />

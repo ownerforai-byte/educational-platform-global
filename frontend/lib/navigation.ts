@@ -36,6 +36,7 @@ import {
   Layers,
   GraduationCap,
   User,
+  Info,
   UserCheck,
   Bookmark,
   Users,
@@ -435,7 +436,7 @@ export const APP_TABS = [
   { href: "/subjects", label: "Learn",    short: "Learn",    icon: BookOpen },
   { href: "/ai",      label: "AI Tools",  short: "AI Tools", icon: Bot     },
   { href: "/quiz",     label: "Practice", short: "Practice", icon: Target },
-  { href: "/profile",  label: "You",      short: "You",      icon: User },
+  { href: "/profile",  label: "Info",       short: "Info",       icon: Info   },
 ] as const;
 
 /**
