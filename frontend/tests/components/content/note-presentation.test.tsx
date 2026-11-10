@@ -55,6 +55,7 @@ describe("note presentation classification", () => {
       "numericals",
       "entrance",
       "self-check",
+      "curated-notes",
       "related",
       "bounds",
       "exam-tips",
@@ -76,6 +77,7 @@ describe("note presentation classification", () => {
     const languageTabs = [
       "notes",
       "self-check",
+      "curated-notes",
       "related",
       "bounds",
       "exam-tips",

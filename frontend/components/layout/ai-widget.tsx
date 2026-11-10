@@ -31,7 +31,6 @@ import {
 import { VoiceMicButton } from "@/components/ai/voice-mic-button";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { AiReplyCard } from "@/components/ai/ai-reply-card";
-import { CuratedNotesBlock } from "@/components/ai/curated-notes-block";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { hasLevel } from "@/lib/access-level";
@@ -846,7 +845,6 @@ export function AIWidget() {
                         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">Ask for a full lesson, a difficult derivation, a comparison, or a follow-up. Veer keeps the thread and teaches at your selected class level.</p>
                       </div>
                     </div>
-                    <CuratedNotesBlock variant="compact" onCurate={(prompt) => void send(prompt)} />
                     {lines.length > 0 && (
                       <button type="button" onClick={() => setView("thread")} className="flex w-full items-center justify-between rounded-2xl border border-primary/25 bg-primary/5 px-4 py-3 text-left text-sm font-bold text-primary transition hover:bg-primary/10">
                         Resume current lesson <span aria-hidden="true">→</span>

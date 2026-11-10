@@ -17,11 +17,13 @@ import {
   Loader2,
   NotebookPen,
   Plus,
+  Sparkles,
   Target,
   Trash2,
 } from "lucide-react";
 import { ConceptFieldPanel, type RavikishanConceptField } from "./ravikishan-concept-panels";
 import { RavikishanTopicResources } from "./ravikishan-topic-resources";
+import { CuratedNotesTab } from "./curated-notes-tab";
 import { TopicVerticalNotes, type TopicLearningSection } from "./topic-vertical-notes";
 import { EmptyState } from "./empty-state";
 import { AnalyticalGeometryResources } from "./analytical-geometry-resources";
@@ -250,7 +252,7 @@ function renderUnitResources(
   );
 }
 
-type TabKind = "learning" | "field" | "journal" | "resources";
+type TabKind = "learning" | "field" | "journal" | "resources" | "curated";
 
 type ContentTab = {
   id: string;
@@ -270,6 +272,7 @@ type ContentTab = {
 export const LANGUAGE_SYLLABUS_PRO_TAB_IDS = [
   "notes",
   "self-check",
+  "curated-notes",
   "related",
   "bounds",
   "exam-tips",
@@ -283,6 +286,7 @@ const ALL_COMPANION_TABS: ContentTab[] = [
   { id: "numericals", label: "Step-by-step Numericals", icon: Calculator, minTier: "member", kind: "learning", learningSection: "numericals", description: "Follow worked problems, then try the related practice." },
   { id: "entrance", label: "Entrance Question Bank", icon: Target, minTier: "member", kind: "learning", learningSection: "entrance", description: "Practise the full entrance bank in Learn or Test mode." },
   { id: "self-check", label: "Quick 3 Self-check", icon: Brain, minTier: "member", kind: "learning", learningSection: "self-check", description: "Recall three key ideas without reopening the notes." },
+  { id: "curated-notes", label: "Curated Notes", icon: Sparkles, minTier: "member", kind: "curated", description: "One tap — Veer writes compact revision notes from your progress and quiz history." },
   { id: "related", label: "Related Topics", icon: Link2, minTier: "member", kind: "field", field: "related", description: "Topics that connect to this one." },
   { id: "bounds", label: "Bounds & Limits", icon: Target, minTier: "member", kind: "field", field: "bounds", description: "Where each formula stops being valid." },
   { id: "exam-tips", label: "Exam Tips", icon: BookMarked, minTier: "plus", kind: "field", field: "examNotes", description: "How the exam asks — and how to answer." },
@@ -585,6 +589,10 @@ function TabPanel({
         {renderResources(unitId, subjectSlug, topicSlug, topicTitle)}
       </div>
     );
+  }
+
+  if (tab.kind === "curated") {
+    return <CuratedNotesTab subjectSlug={subjectSlug} />;
   }
 
   if (!tab.field) return null;

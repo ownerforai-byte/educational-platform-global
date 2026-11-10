@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 
-import { CuratedNotesBlock, curateNotesPrompt } from "@/components/ai/curated-notes-block";
+import { CuratedNotesBlock, curateNotesPrompt } from "@/components/content/curated-notes-block";
 
 /**
  * The one-tap notes curation block (owner 2026-11-09: "a large block everywhere

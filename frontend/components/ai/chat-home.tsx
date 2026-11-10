@@ -28,7 +28,6 @@ import {
   Telescope,
 } from "lucide-react";
 import { CaptainAvatar } from "@/components/ai/captain-logo";
-import { CuratedNotesBlock } from "@/components/ai/curated-notes-block";
 import type { ChatSession } from "@/lib/api/ai";
 import { cn } from "@/lib/utils";
 
@@ -200,9 +199,6 @@ export function ChatHome({
           <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">{blurb}</p>
         </div>
       </section>
-
-      {/* Curated notes — the one-tap block (owner 2026-11-09), on every home */}
-      <CuratedNotesBlock onCurate={onSend} />
 
       {/* Recent chats */}
       {recents.length > 0 && (
