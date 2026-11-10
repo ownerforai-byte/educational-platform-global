@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { NextRequest } from "next/server";
-import { proxy, SUPABASE_ORIGIN } from "@/proxy";
+import { config, proxy, SUPABASE_ORIGIN } from "@/proxy";
+import robots from "@/app/robots";
 
 function headersFor(path: string) {
   return proxy(new NextRequest(`https://ravikisan.vercel.app${path}`)).headers;
@@ -58,7 +59,73 @@ describe("proxy security headers", () => {
   });
 });
 
+describe("automated client access", () => {
+  it.each([
+    "OpenCode/1.0",
+    "codex-cli/1.0",
+    "OpenAI/1.0",
+    "Mozilla/5.0 (compatible; GPTBot/1.2)",
+    "ChatGPT-User/1.0",
+    "OAI-SearchBot/1.0",
+    "ClaudeBot/1.0",
+    "claude-code/2.0",
+    "ClaudeCode/2.0",
+    "Claude-User/1.0",
+    "Claude-SearchBot/1.0",
+    "anthropic-ai/1.0",
+  ])("rejects %s on pages, APIs, speculative requests and assets", async (userAgent) => {
+    for (const path of [
+      "/home", "/api/ai", "/api/auth/me", "/notes?_rsc=abc",
+      "/_next/static/chunk.js", "/_next/image?url=x", "/data/private.json",
+      "/favicon.ico", "/icon-192.png", "/sw.js", "/all_elements.json",
+    ]) {
+      const response = proxy(new NextRequest(`https://ravikisan.vercel.app${path}`, {
+        headers: { "user-agent": userAgent, authorization: "Bearer valid-session" },
+      }));
+      expect(response.status).toBe(403);
+      expect(response.headers.get("cache-control")).toContain("no-store");
+      expect(response.headers.get("x-middleware-next")).toBeNull();
+      expect(await response.json()).toEqual({ error: "Automated client access denied" });
+    }
+  });
+
+  it.each([
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36",
+    "node", "undici", "Googlebot/2.1", "NotClaude/1.0",
+  ])("preserves normal browsing and OAuth for %s", (userAgent) => {
+    for (const path of ["/login", "/auth/callback?code=example", "/_next/static/chunk.js", "/data/example.json"]) {
+      expect(statusFor(path, { "user-agent": userAgent })).toBe(200);
+    }
+  });
+
+  it("rejects named clients regardless of HTTP method", () => {
+    for (const method of ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]) {
+      expect(proxy(new NextRequest("https://ravikisan.vercel.app/api/ai", {
+        method, headers: { "user-agent": "cOdEx/1.0" },
+      })).status).toBe(403);
+    }
+  });
+
+  it("covers public assets in the matcher and publishes AI crawler disallows", () => {
+    expect(config.matcher).toBe("/:path*");
+    const rules = robots().rules;
+    expect(Array.isArray(rules) && rules[0]).toMatchObject({
+      userAgent: expect.arrayContaining(["OpenCode", "Codex", "ClaudeBot", "GPTBot"]),
+      disallow: "/",
+    });
+  });
+});
+
 describe("proxy per-IP request budget", () => {
+  it.each([undefined, "*/*", "application/json"])("caps page requests even with Accept %s", (accept) => {
+    const ip = accept === undefined ? "203.0.113.21" : accept === "*/*" ? "203.0.113.22" : "203.0.113.23";
+    const headers: Record<string, string> = { "x-real-ip": ip };
+    if (accept) headers.accept = accept;
+    const codes = requestStatuses(121, "/home", headers);
+    expect(codes.slice(0, 120).every((s) => s === 200)).toBe(true);
+    expect(codes[120]).toBe(429);
+  });
+
   it("caps ordinary page requests", () => {
     const codes = requestStatuses(121, "/home", {
       ...DOCUMENT,

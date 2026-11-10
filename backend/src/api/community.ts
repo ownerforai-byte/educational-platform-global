@@ -231,8 +231,8 @@ router.post(
 router.post(
   "/threads/:threadId/upvote",
   requireAuth,
-  asyncHandler(async (req: Request, res: Response) => {
-    const user = (req as Request & { user: { id: string } }).user;
+  asyncHandler(async (req: Request<{ threadId: string }>, res: Response) => {
+    const user = (req as typeof req & { user: { id: string } }).user;
     const { threadId } = req.params;
 
     // Toggle: if the row is there the student un-votes, otherwise they vote.

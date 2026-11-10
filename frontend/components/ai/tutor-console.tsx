@@ -45,6 +45,7 @@ import {
   BookOpen,
   ArrowDown,
   ArrowRight,
+  ChevronDown,
 } from "lucide-react";
 import {
   streamChat,
@@ -127,6 +128,17 @@ const MODES: ModeDef[] = [
 /** Server console id for a mode (undefined = no console block). */
 function consoleForMode(mode: TutorMode): string | undefined {
   return MODES.find((m) => m.id === mode)?.console;
+}
+
+/** The middle-header switcher (owner 2026-11-09: "in middle some switching
+ *  like knowledge, ideas, derivations") — buckets the home starters. */
+const HOME_TABS = ["Knowledge", "Ideas", "Derivations"] as const;
+type HomeTab = (typeof HOME_TABS)[number];
+
+function tabForStarter(text: string): HomeTab {
+  if (/(deri|prove|obtain|formula|law of|relationship between)/i.test(text)) return "Derivations";
+  if (/(^|\s)(why|what if|imagine|how come)\b/i.test(text)) return "Ideas";
+  return "Knowledge";
 }
 
 const MODE_STORAGE_KEY = "neb_tutor_mode";
@@ -564,6 +576,9 @@ export function TutorConsole({
   const [guestHydrated, setGuestHydrated] = useState(false);
   // SSR renders "General"; the persisted mode lands in an effect.
   const [mode, setMode] = useState<TutorMode>("General");
+  // Middle-header switcher + the folded "More" menu.
+  const [homeTab, setHomeTab] = useState<HomeTab>("Knowledge");
+  const [moreOpen, setMoreOpen] = useState(false);
   // Rotating starters — deterministic first paint, shuffled in an effect.
   const [starters, setStarters] = useState<Starter[]>(() =>
     GENERAL_STARTERS.slice(0, 6),
@@ -1135,25 +1150,26 @@ export function TutorConsole({
     <div className="flex h-full min-h-0 flex-col overflow-hidden bg-card">
       {/* ── Header: identity + the green light (kept exactly) + actions ── */}
       <div className="shrink-0 border-b border-border/60 bg-gradient-to-r from-emerald-500/5 via-transparent to-primary/5">
-        <div className="flex items-center justify-between gap-3 px-4 sm:px-6 pt-2.5 pb-2">
-          <div className="flex items-center gap-2.5 min-w-0">
+        <div className="flex items-center justify-between gap-2 px-3 pt-2.5 pb-2 sm:px-6">
+          {/* Left front — back + the logo (owner 2026-11-09: "logo in left front") */}
+          <div className="flex min-w-0 shrink-0 items-center gap-2">
             {/* Back — this room is the one app route that skips the shell (and
                 so the shell's floating back button), leaving it a dead end.
                 Inline variant = sits in the header instead of over the
                 composer. Owner request 2026-10-11. */}
             <BackButton variant="inline" label="" className="shrink-0 px-2 py-1.5" />
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-violet-500 flex items-center justify-center text-white shadow-md shadow-primary/30 shrink-0">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-violet-500 text-white shadow-md shadow-primary/30">
               <CaptainAvatar className="h-5 w-5" />
             </div>
-            <div className="min-w-0">
+            <div className="hidden min-w-0 sm:block">
               <div className="flex items-center gap-2">
-                <h2 className="text-[13px] font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
+                <h2 className="truncate bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-[13px] font-extrabold text-transparent animate-gradient-text">
                   Veer
                 </h2>
                 {/* live dot: reflects real AI availability (shared component) */}
                 <AiStatusDot />
               </div>
-              <p className="text-[11px] text-muted-foreground truncate">
+              <p className="truncate text-[11px] text-muted-foreground">
                 {mode === "General"
                   ? "Grounded in the NEB Class 11 & 12 syllabus · ask me anything"
                   : `${mode} mode · syllabus-grounded answers, one concept at a time`}
@@ -1161,54 +1177,90 @@ export function TutorConsole({
             </div>
           </div>
 
-          <div className="flex items-center gap-2 shrink-0">
-            {/* New chat — always available, opens a fresh conversation */}
+          {/* Middle — Knowledge / Ideas / Derivations switching (owner 2026-11-09:
+              "in middle some switching like knowledge, ideas, derivations") */}
+          <div className="flex min-w-0 flex-1 items-center justify-center gap-1">
+            {HOME_TABS.map((tab, index) => {
+              const active = homeTab === tab;
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setHomeTab(tab)}
+                  aria-pressed={active}
+                  className={cn(
+                    "inline-flex items-baseline gap-1 rounded-full border px-2 py-0.5 text-[10px] font-semibold text-foreground transition-colors",
+                    active
+                      ? "border-primary/45 bg-primary/[0.10]"
+                      : "border-primary/25 bg-primary/[0.06] hover:border-primary/45",
+                  )}
+                >
+                  <span className="text-[8px] font-bold text-primary">{index + 1}</span>
+                  <span>{tab}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Right — everything else folded into "More" (owner 2026-11-09:
+              "and more in right") */}
+          <div className="relative shrink-0">
             <button
-              onClick={startNewChat}
-              disabled={sending}
-              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-lg border border-border/70 bg-background px-2 py-1.5 text-[11px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors disabled:opacity-50"
-              title="New chat — start a fresh conversation"
-              aria-label="New chat"
+              onClick={() => setMoreOpen((v) => !v)}
+              aria-expanded={moreOpen}
+              aria-label="More"
+              className="inline-flex min-h-10 items-center gap-1 rounded-lg border border-border/70 bg-background px-2.5 py-1.5 text-[11px] font-semibold text-muted-foreground transition-colors hover:text-foreground"
             >
-              <Plus className="h-3.5 w-3.5" />
-              <span className="hidden sm:inline">New chat</span>
+              More
+              <ChevronDown className={cn("h-3 w-3 transition-transform", moreOpen && "rotate-180")} />
             </button>
-            {/* Chat history — every saved conversation, one click away */}
-            {isLoggedIn && (
-              <button
-                onClick={() => setHistoryOpen((v) => !v)}
-                aria-expanded={historyOpen}
-                className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-lg border border-border/70 bg-background px-2 py-1.5 text-[11px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors"
-                title="Your chat histories"
-                aria-label="Chat history"
-              >
-                <History className="h-3.5 w-3.5" />
-                <span className="hidden sm:inline">{sessions.length}</span>
-              </button>
-            )}
-            {/* AI spark badge — daily Veer allowance (separate from content sparks). */}
-            <AiSparkBadge className="hidden sm:inline-flex" />
-            {!isLoggedIn && (
-              <span
-                className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-600 font-semibold"
-                title={`${MAX_GUEST_MESSAGES} AI sparks per day · sign in for a higher allowance`}
-              >
-                <Coins className="h-3 w-3" />
-                {guestCredits > 0
-                  ? `${guestCredits} AI spark${guestCredits === 1 ? "" : "s"} today`
-                  : "Daily AI sparks used"}
-              </span>
-            )}
-            {hasConversation && (
-              <button
-                onClick={clearChat}
-                disabled={sending}
-                className="flex h-11 w-11 items-center justify-center rounded-lg text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors disabled:opacity-50"
-                title="Clear this conversation"
-                aria-label="Clear chat"
-              >
-                <Trash2 className="h-4 w-4" />
-              </button>
+            {moreOpen && (
+              <div className="absolute right-0 top-full z-30 mt-1.5 w-64 space-y-1 rounded-2xl border border-border/70 bg-background p-2 shadow-xl">
+                <button
+                  onClick={() => {
+                    setMoreOpen(false);
+                    startNewChat();
+                  }}
+                  disabled={sending}
+                  className="flex w-full items-center gap-2 rounded-xl px-2.5 py-2 text-[11px] font-semibold text-muted-foreground transition-colors hover:bg-muted/50 hover:text-foreground disabled:opacity-50"
+                >
+                  <Plus className="h-3.5 w-3.5" /> New chat
+                </button>
+                {isLoggedIn && (
+                  <button
+                    onClick={() => setHistoryOpen((v) => !v)}
+                    aria-expanded={historyOpen}
+                    className="flex w-full items-center gap-2 rounded-xl px-2.5 py-2 text-[11px] font-semibold text-muted-foreground transition-colors hover:bg-muted/50 hover:text-foreground"
+                  >
+                    <History className="h-3.5 w-3.5" /> Chat history ({sessions.length})
+                  </button>
+                )}
+                <div className="px-2.5 py-1.5">
+                  <AiSparkBadge />
+                </div>
+                {!isLoggedIn && (
+                  <p
+                    className="flex items-center gap-1.5 px-2.5 py-1.5 text-[11px] font-semibold text-amber-600"
+                    title={`${MAX_GUEST_MESSAGES} AI sparks per day · sign in for a higher allowance`}
+                  >
+                    <Coins className="h-3 w-3" />
+                    {guestCredits > 0
+                      ? `${guestCredits} AI spark${guestCredits === 1 ? "" : "s"} today`
+                      : "Daily AI sparks used"}
+                  </p>
+                )}
+                {hasConversation && (
+                  <button
+                    onClick={() => {
+                      setMoreOpen(false);
+                      clearChat();
+                    }}
+                    disabled={sending}
+                    className="flex w-full items-center gap-2 rounded-xl px-2.5 py-2 text-[11px] font-semibold text-destructive transition-colors hover:bg-destructive/10 disabled:opacity-50"
+                  >
+                    <Trash2 className="h-3.5 w-3.5" /> Clear this conversation
+                  </button>
+                )}
+              </div>
             )}
           </div>
         </div>
@@ -1250,39 +1302,6 @@ export function TutorConsole({
           </div>
         )}
 
-        {/* Subject-mode picker — the reply card's Key terms chips with the
-            words replaced by the subjects (owner 2026-11-09: "make the
-            rectangular boxes (of veer chat) like key terms of veer chat and
-            under them write all; general, physics, chemistry, biology, all
-            subjects in small block — put same key terms there just replace the
-            words") — same box, same tiny label, same numbered chips. */}
-        <div className="mx-5 mb-3 rounded-2xl border border-border/70 bg-muted/20 px-3.5 py-2.5 sm:mx-8">
-          <p className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-muted-foreground">
-            <BookOpen className="h-2.5 w-2.5" aria-hidden="true" />
-            Subjects
-          </p>
-          <div className="mt-1.5 flex flex-wrap gap-1">
-            {MODES.map((m, index) => {
-              const active = mode === m.id;
-              return (
-                <button
-                  key={m.id}
-                  onClick={() => chooseMode(m.id)}
-                  aria-pressed={active}
-                  className={cn(
-                    "inline-flex items-baseline gap-1 rounded-full border px-2 py-0.5 text-[10px] font-semibold text-foreground transition-colors",
-                    active
-                      ? "border-primary/45 bg-primary/[0.10]"
-                      : "border-primary/25 bg-primary/[0.06] hover:border-primary/45",
-                  )}
-                >
-                  <span className="text-[8px] font-bold text-primary">{index + 1}</span>
-                  <span>{m.id}</span>
-                </button>
-              );
-            })}
-          </div>
-        </div>
       </div>
 
       {/* ── Error banner ─────────────────────────────────────────────── */}
@@ -1294,7 +1313,7 @@ export function TutorConsole({
       )}
 
       {/* ── Stream ───────────────────────────────────────────────────── */}
-      <div ref={streamRef} onScroll={handleStreamScroll} className="mx-auto min-h-0 w-full max-w-3xl flex-1 overflow-y-auto px-3 sm:px-4 py-4 space-y-5">
+      <div ref={streamRef} onScroll={handleStreamScroll} className="mx-auto min-h-0 w-full max-w-3xl flex-1 overflow-y-auto overscroll-contain scroll-smooth px-3 sm:px-4 py-4 space-y-5">
         {!hasConversation && !sending ? (
           <div className="min-h-full flex flex-col justify-center max-w-3xl mx-auto space-y-7 py-8">
             <div className="text-center space-y-2">
@@ -1312,8 +1331,44 @@ export function TutorConsole({
               </p>
             </div>
 
+            {/* Subject-mode picker — the reply card's Key terms chips with the
+                words replaced by the subjects (owner 2026-11-09: "make the
+                rectangular boxes (of veer chat) like key terms of veer chat and
+                under them write all; general, physics, chemistry, biology, all
+                subjects in small block — put same key terms there just replace the
+                words") — same box, same tiny label, same numbered chips. */}
+            <div className="mx-5 mb-3 rounded-2xl border border-border/70 bg-muted/20 px-3.5 py-2.5 sm:mx-8">
+              <p className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-muted-foreground">
+                <BookOpen className="h-2.5 w-2.5" aria-hidden="true" />
+                Subjects
+              </p>
+              <div className="mt-1.5 flex flex-wrap gap-1">
+                {MODES.map((m, index) => {
+                  const active = mode === m.id;
+                  return (
+                    <button
+                      key={m.id}
+                      onClick={() => chooseMode(m.id)}
+                      aria-pressed={active}
+                      className={cn(
+                        "inline-flex items-baseline gap-1 rounded-full border px-2 py-0.5 text-[10px] font-semibold text-foreground transition-colors",
+                        active
+                          ? "border-primary/45 bg-primary/[0.10]"
+                          : "border-primary/25 bg-primary/[0.06] hover:border-primary/45",
+                      )}
+                    >
+                      <span className="text-[8px] font-bold text-primary">{index + 1}</span>
+                      <span>{m.id}</span>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
-              {starters.map((prompt) => {
+              {starters
+                .filter((prompt) => tabForStarter(prompt.text) === homeTab)
+                .map((prompt) => {
                 const Icon = prompt.icon;
                 return (
                   <button
@@ -1334,6 +1389,11 @@ export function TutorConsole({
                 );
               })}
             </div>
+            {starters.filter((prompt) => tabForStarter(prompt.text) === homeTab).length === 0 && (
+              <p className="rounded-2xl border border-border/60 bg-muted/20 px-4 py-5 text-center text-xs text-muted-foreground">
+                No {homeTab.toLowerCase()} prompts in this mode yet — type your question below.
+              </p>
+            )}
           </div>
         ) : (
           <>

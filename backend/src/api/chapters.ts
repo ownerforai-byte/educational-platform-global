@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { serverError } from "../middleware/errors";
 import { supabaseAdmin } from "../db/supabase";
+import { getUserFromRequest } from "../middleware/auth";
 
 const router = Router();
 
@@ -35,10 +36,8 @@ router.get("/:slug", async (req, res) => {
     try {
       const authHeader = req.headers.authorization;
       if (authHeader?.startsWith("Bearer ")) {
-        const token = authHeader.slice(7);
-        const {
-          data: { user },
-        } = await supabaseAdmin.auth.getUser(token);
+        res.set("Cache-Control", "private, no-store");
+        const user = await getUserFromRequest(req);
         if (user && topicIds.length > 0) {
           const { count } = await supabaseAdmin
             .from("user_progress")

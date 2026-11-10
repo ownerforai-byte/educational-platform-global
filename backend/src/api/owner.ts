@@ -552,7 +552,7 @@ router.patch("/users/:id/credits", requireAuth, async (req: Request, res: Respon
  * PENDING → created but not yet approved (login blocked)
  * REJECTED→ explicitly refused (login blocked, status screen reports it)
  */
-router.patch("/users/:id/status", requireAuth, async (req: Request, res: Response) => {
+router.patch("/users/:id/status", requireAuth, async (req: Request<{ id: string }>, res: Response) => {
   const owner = ownerGate(req, res);
   if (!owner) return;
 
@@ -648,7 +648,7 @@ router.patch("/users/:id/status", requireAuth, async (req: Request, res: Respons
 });
 
 /** PATCH /api/owner/users/:id/role — grant an access tier (role + plan + premium together). */
-router.patch("/users/:id/role", requireAuth, async (req: Request, res: Response) => {
+router.patch("/users/:id/role", requireAuth, async (req: Request<{ id: string }>, res: Response) => {
   const owner = ownerGate(req, res);
   if (!owner) return;
 
@@ -882,7 +882,7 @@ router.get("/users/:id/chats", requireAuth, async (req: Request, res: Response) 
  * Permanently remove a user from Supabase Auth and delete their profile row.
  * Owners cannot delete themselves.
  */
-router.delete("/users/:id", requireAuth, async (req: Request, res: Response) => {
+router.delete("/users/:id", requireAuth, async (req: Request<{ id: string }>, res: Response) => {
   const owner = ownerGate(req, res);
   if (!owner) return;
 

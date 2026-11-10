@@ -33,7 +33,7 @@ export default async function ChatPage({
     typeof params.q === "string" && params.q.trim() ? params.q.trim().slice(0, 2000) : undefined;
 
   return (
-    <div className="h-full w-full">
+    <div className="h-full min-h-0 w-full">
       <TutorConsole initialQuestion={initialQuestion} />
     </div>
   );

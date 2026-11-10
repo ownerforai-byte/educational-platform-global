@@ -74,7 +74,7 @@ router.get("/elements", (req: Request, res: Response) => {
  * GET /api/periodic-table/filters/:filterId
  * Returns detailed characteristics and matching elements for a specific filter
  */
-router.get("/filters/:filterId", (req: Request, res: Response) => {
+router.get("/filters/:filterId", (req: Request<{ filterId: string }>, res: Response) => {
   try {
     const { filterId } = req.params;
     const filter = getFilterById(filterId);

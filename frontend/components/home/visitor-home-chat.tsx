@@ -7,12 +7,8 @@ import { postPlatformGuideMessage } from "@/lib/api/platform-guide";
 type ChatLine = { role: "user" | "assistant"; content: string };
 
 const OPENING =
-  "Hi — I'm Veer AI. Ask me anything: I give the short, general answer here, and full step-by-step study help opens after you sign in.";
+  "Hi — I'm Veer AI, your guide to this platform. Ravikisan is its founder and owner. Ask me about the platform's features, plans, sign-in or study tools.";
 
-/**
- * The free visitor chat: a text box and a send button. It does not spend
- * Veer sparks. Shown on the universal welcome and the guest home.
- */
 export function VisitorHomeChat() {
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
@@ -45,7 +41,7 @@ export function VisitorHomeChat() {
     >
       <div className="border-b border-border px-4 py-3">
         <h2 className="text-sm font-semibold text-foreground">Chat with AI</h2>
-        <p className="text-xs text-muted-foreground">Free on this page · text only</p>
+        <p className="text-xs text-muted-foreground">Platform questions only · free · text only</p>
       </div>
       <div className="max-h-80 space-y-3 overflow-y-auto bg-muted/20 px-4 py-3 text-sm leading-relaxed">
         {lines.map((line, i) => {
@@ -109,7 +105,7 @@ export function VisitorHomeChat() {
           id="visitor-home-chat"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Type a message"
+          placeholder="Ask about this platform"
           maxLength={500}
           disabled={sending}
           className="min-h-11 flex-1 rounded-lg border border-border bg-background px-3 text-sm text-foreground outline-none focus-visible:ring-2 focus-visible:ring-ring"

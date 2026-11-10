@@ -1,11 +1,16 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import type { ReactNode } from "react";
 
 import { HomePublic } from "@/components/home/home-public";
 
 const session = vi.hoisted(() => ({ user: null as unknown, isLoading: false }));
 const replace = vi.hoisted(() => vi.fn());
+const postGuide = vi.hoisted(() => vi.fn());
+
+vi.mock("@/lib/api/platform-guide", () => ({
+  postPlatformGuideMessage: postGuide,
+}));
 
 vi.mock("@/features/auth/hooks/use-session", () => ({
   useSession: () => session,
@@ -77,6 +82,57 @@ describe("guest home — sign in is the only action", () => {
     expect(hrefs).not.toContain("/class-11-notes");
     expect(hrefs).not.toContain("/lab");
     expect(hrefs).not.toContain("/chat");
+  });
+});
+
+describe("visitor platform chat", () => {
+  beforeEach(() => {
+    postGuide.mockReset();
+  });
+
+  it("credits Ravikisan and advertises platform questions only", () => {
+    render(<HomePublic />);
+    const chat = within(screen.getByRole("region", { name: "Chat with AI" }));
+    expect(chat.getByText(/Ravikisan is its founder and owner/)).toBeInTheDocument();
+    expect(chat.getByText(/Platform questions only/)).toBeInTheDocument();
+    expect(chat.getByPlaceholderText("Ask about this platform")).toHaveAttribute("maxLength", "500");
+    expect(chat.queryByText(/Ask me anything/)).toBeNull();
+    expect(chat.getByRole("button", { name: "Send" })).toBeDisabled();
+  });
+
+  it("submits a platform question and shows its reply", async () => {
+    postGuide.mockResolvedValue({ reply: "Ravikisan is the founder and owner of this platform." });
+    render(<HomePublic />);
+    const chat = within(screen.getByRole("region", { name: "Chat with AI" }));
+    fireEvent.change(chat.getByRole("textbox"), { target: { value: "Who owns this platform?" } });
+    fireEvent.click(chat.getByRole("button", { name: "Send" }));
+    expect(postGuide).toHaveBeenCalledWith("Who owns this platform?");
+    expect(await chat.findByText("Ravikisan is the founder and owner of this platform.")).toBeInTheDocument();
+  });
+
+  it("shows the platform-only redirection for an unrelated question", async () => {
+    const reply = "I can help only with Ravikisan's platform. Sign in and use Veer for academic questions.";
+    postGuide.mockResolvedValue({ reply });
+    render(<HomePublic />);
+    const chat = within(screen.getByRole("region", { name: "Chat with AI" }));
+    fireEvent.change(chat.getByRole("textbox"), { target: { value: "Explain gravity" } });
+    fireEvent.click(chat.getByRole("button", { name: "Send" }));
+    expect(await chat.findByText(reply)).toBeInTheDocument();
+  });
+
+  it("allows another attempt after a request fails", async () => {
+    postGuide.mockRejectedValueOnce(new Error("Guide unavailable"));
+    render(<HomePublic />);
+    const chat = within(screen.getByRole("region", { name: "Chat with AI" }));
+    fireEvent.change(chat.getByRole("textbox"), { target: { value: "Where are the notes?" } });
+    fireEvent.click(chat.getByRole("button", { name: "Send" }));
+    expect(await chat.findByText("Guide unavailable")).toBeInTheDocument();
+    await waitFor(() => expect(chat.getByRole("textbox")).not.toBeDisabled());
+    postGuide.mockResolvedValueOnce({ reply: "Use the platform's notes section." });
+    fireEvent.change(chat.getByRole("textbox"), { target: { value: "Where are the notes?" } });
+    fireEvent.click(chat.getByRole("button", { name: "Send" }));
+    expect(await chat.findByText("Use the platform's notes section.")).toBeInTheDocument();
+    expect(chat.queryByText("Guide unavailable")).toBeNull();
   });
 });
 

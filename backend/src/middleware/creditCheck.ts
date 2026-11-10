@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { supabaseAdmin } from "../db/supabase";
-import { extractToken, hasFullAccess, type AuthedRequest } from "./auth";
+import { extractToken, hasFullAccess, isApprovedAccount, type AuthedRequest } from "./auth";
 import { ensureDailyCredits, spendCredits, refundCredits } from "../utils/credits";
 
 // ── Feature cost table (CONTENT sparks only) ────────────────────────────────
@@ -49,9 +49,13 @@ async function resolveCreditUser(req: Request): Promise<ResolvedCreditUser | nul
   const userId = authData.user.id;
   const { data: profile } = await supabaseAdmin
     .from("profiles")
-    .select("role, premium_status")
+    .select("role, premium_status, access_status")
     .eq("id", userId)
     .maybeSingle();
+
+  if (!isApprovedAccount({ email: authData.user.email, role: profile?.role }, profile?.access_status)) {
+    return null;
+  }
 
   return {
     userId,

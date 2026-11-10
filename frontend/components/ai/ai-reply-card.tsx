@@ -36,34 +36,32 @@ import {
 
 function SuggestionBox({
   suggestion,
+  index,
   onPick,
 }: {
   suggestion: ReplySuggestion;
+  index: number;
   onPick?: (suggestion: ReplySuggestion) => void;
 }) {
   const [copied, setCopied] = useState(false);
-  const Icon = suggestion.kind === "link" ? GraduationCap : Lightbulb;
 
+  // Small key-terms-style chips (owner 2026-11-09: "optimize the suggestions
+  // in small boxes like those key terms") — number + label, hint on hover.
   const inner = (
     <>
-      <span className="flex items-center gap-1.5">
-        <Icon className="h-3 w-3 shrink-0 text-primary" aria-hidden="true" />
-        <span className="truncate text-[11px] font-bold text-foreground">
-          {copied ? "Prompt copied — paste it below" : suggestion.label}
-        </span>
-      </span>
-      <span className="mt-0.5 block truncate text-[10px] text-muted-foreground">
-        {suggestion.hint}
+      <span className="text-[8px] font-bold text-primary">{index + 1}</span>
+      <span className="truncate text-[10px] font-semibold text-foreground">
+        {copied ? "Prompt copied — paste it below" : suggestion.label}
       </span>
     </>
   );
 
   const boxClass =
-    "block w-full rounded-lg border border-border/70 bg-background/70 px-2.5 py-1.5 text-left transition hover:border-primary/50 hover:bg-primary/[0.04] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+    "inline-flex max-w-full items-baseline gap-1 rounded-full border border-primary/25 bg-primary/[0.06] px-2 py-0.5 text-[10px] font-semibold text-foreground transition-colors hover:border-primary/45 hover:bg-primary/[0.10] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
   if (suggestion.kind === "link" && suggestion.href) {
     return (
-      <Link href={suggestion.href} className={boxClass}>
+      <Link href={suggestion.href} title={suggestion.hint} className={boxClass}>
         {inner}
       </Link>
     );
@@ -72,6 +70,7 @@ function SuggestionBox({
   return (
     <button
       type="button"
+      title={suggestion.hint}
       className={boxClass}
       onClick={() => {
         if (onPick) {
@@ -226,7 +225,7 @@ export function AiReplyCard({
         </section>
       )}
 
-      {/* Suggestions — boxed next moves, derived per reply and per place */}
+      {/* Suggestions — small key-terms-style chips, derived per reply and place */}
       {suggestions.length > 0 && (
         <section
           aria-label="Suggestions"
@@ -236,9 +235,9 @@ export function AiReplyCard({
             <Lightbulb className="h-2.5 w-2.5" aria-hidden="true" />
             Take it further
           </p>
-          <div className="mt-1.5 grid gap-1.5 sm:grid-cols-2">
-            {suggestions.map((suggestion) => (
-              <SuggestionBox key={suggestion.label} suggestion={suggestion} />
+          <div className="mt-1.5 flex flex-wrap gap-1">
+            {suggestions.map((suggestion, index) => (
+              <SuggestionBox key={suggestion.label} index={index} suggestion={suggestion} />
             ))}
           </div>
         </section>

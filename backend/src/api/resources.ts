@@ -1,11 +1,13 @@
 import { Router, Request, Response } from "express";
 import { serverError } from "../middleware/errors";
 import { normalizeRole } from "../auth/types";
+import { isApprovedAccount } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
 
 const router = Router();
 
 async function requireUser(req: Request, res: Response) {
+  res.set("Cache-Control", "private, no-store");
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     res.status(401).json({ error: "Unauthorized" });
@@ -32,9 +34,14 @@ async function requireContentEditor(req: Request, res: Response) {
 
   const { data: profile } = await supabaseAdmin
     .from("profiles")
-    .select("role")
+    .select("role, access_status")
     .eq("id", user.id)
     .single();
+
+  if (!isApprovedAccount({ email: user.email, role: profile?.role }, profile?.access_status)) {
+    res.status(401).json({ error: "Unauthorized" });
+    return null;
+  }
 
   const role = normalizeRole(profile?.role);
   if (!profile || !role || !["plus", "pro", "owner"].includes(role)) {

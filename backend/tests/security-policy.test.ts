@@ -52,6 +52,74 @@ afterAll(async () => {
   );
 });
 
+describe("automated client access", () => {
+  test.each([
+    "OpenCode/1.0",
+    "codex-cli/1.0",
+    "OpenAI/1.0",
+    "Mozilla/5.0 (compatible; GPTBot/1.2)",
+    "ChatGPT-User/1.0",
+    "OAI-SearchBot/1.0",
+    "ClaudeBot/1.0",
+    "claude-code/2.0",
+    "ClaudeCode/2.0",
+    "Claude-User/1.0",
+    "Claude-SearchBot/1.0",
+    "anthropic-ai/1.0",
+  ])("rejects %s before serving data", async (userAgent) => {
+    const served = vi.fn();
+    const { json } = await mountApp((app) => {
+      app.use(securityHeaders);
+      app.use((_req, res) => {
+        served();
+        res.json({ confidential: "not-for-bots" });
+      });
+    });
+
+    for (const path of ["/api/admin/users", "/api/ai", "/data/private.json", "/index.html"]) {
+      const response = await json(path, { headers: { "User-Agent": userAgent } });
+      expect(response.status).toBe(403);
+      expect(response.body).toEqual({ error: "Automated client access denied" });
+      expect(response.headers.get("cache-control")).toContain("no-store");
+      expect(response.headers.get("x-content-type-options")).toBe("nosniff");
+    }
+    expect(served).not.toHaveBeenCalled();
+  });
+
+  test("rejects named clients regardless of HTTP method or credentials", async () => {
+    const served = vi.fn();
+    const { json } = await mountApp((app) => {
+      app.use(securityHeaders);
+      app.use((_req, res) => { served(); res.json({ ok: true }); });
+    });
+    for (const method of ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]) {
+      const response = await json("/api/ai", {
+        method, headers: { "User-Agent": "cOdEx/1.0", Authorization: "Bearer valid-session" },
+      });
+      expect(response.status).toBe(403);
+    }
+    expect(served).not.toHaveBeenCalled();
+  });
+
+  test.each([
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36",
+    "node",
+    "undici",
+    "curl/8.0",
+    "Googlebot/2.1",
+    "NotClaude/1.0",
+  ])("preserves browser, internal and health traffic for %s", async (userAgent) => {
+    const { json } = await mountApp((app) => {
+      app.use(securityHeaders);
+      app.get("/health", (_req, res) => res.json({ ok: true }));
+      app.get("/api/auth/me", (_req, res) => res.json({ ok: true }));
+    });
+    for (const path of ["/health", "/api/auth/me"]) {
+      expect((await json(path, { headers: { "User-Agent": userAgent } })).status).toBe(200);
+    }
+  });
+});
+
 describe("CORS policy", () => {
   test("isProductionEnv detects Render runtime env", () => {
     vi.stubEnv("RENDER", "true");
