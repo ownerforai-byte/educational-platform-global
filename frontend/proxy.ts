@@ -1,6 +1,7 @@
 import { randomBytes } from "node:crypto";
 import { type NextRequest, NextResponse } from "next/server";
 import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
+import { isBlockedAutomatedClient } from "../backend/src/utils/botPolicy";
 
 /**
  * Supabase project the frontend talks to. Driven by NEXT_PUBLIC_SUPABASE_URL so
@@ -14,7 +15,7 @@ export const SUPABASE_ORIGIN = PUBLIC_SUPABASE_URL;
 
 const RATE_LIMIT_WINDOW = 60_000;
 const RATE_LIMIT_MAX = 120;
-// Only HTML documents are counted against that cap. One page load also pulls
+// Only page routes are counted against that cap. One page load also pulls
 // the app shell (theme bootstrap, manifest, /sw-precache.json), the service
 // worker's ~17 precache routes and a handful of API calls; charging all of
 // them to the same bucket spent the whole minute of budget on a single visit
@@ -151,9 +152,13 @@ function setSecurityHeaders(response: NextResponse, contentSecurityPolicy: strin
   response.headers.set("content-security-policy", contentSecurityPolicy);
 }
 
-/** A top-level HTML navigation — the request this limiter exists to bound. */
 function isDocumentRequest(request: NextRequest) {
-  return (request.headers.get("accept") ?? "").includes("text/html");
+  const { pathname } = request.nextUrl;
+  return (
+    (request.method === "GET" || request.method === "HEAD") &&
+    !pathname.startsWith("/api/") &&
+    !/\.[^/]+$/.test(pathname)
+  );
 }
 
 function isSpeculativeRequest(request: NextRequest) {
@@ -171,6 +176,30 @@ function isSpeculativeRequest(request: NextRequest) {
 }
 
 export function proxy(request: NextRequest) {
+  if (isBlockedAutomatedClient(request.headers.get("user-agent"))) {
+    const denied = NextResponse.json(
+      { error: "Automated client access denied" },
+      { status: 403 },
+    );
+    denied.headers.set("cache-control", "private, no-store");
+    denied.headers.set("x-robots-tag", "noindex, nofollow, noarchive");
+    setSecurityHeaders(denied, "default-src 'none'; frame-ancestors 'none';");
+    return denied;
+  }
+
+  const { pathname } = request.nextUrl;
+  if (
+    pathname.startsWith("/_next/static/") ||
+    pathname === "/_next/image" ||
+    pathname.startsWith("/data/") ||
+    pathname === "/favicon.ico" ||
+    pathname.startsWith("/icon-") ||
+    pathname === "/sw.js" ||
+    pathname === "/all_elements.json"
+  ) {
+    return NextResponse.next();
+  }
+
   const nonce = PRERENDERED_ERROR_PATHS.has(request.nextUrl.pathname)
     ? null
     : randomBytes(16).toString("base64");
@@ -205,10 +234,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    /*
-     * Match all request paths except for static files:
-     */
-    "/((?!_next/static|_next/image|favicon.ico|icon-.*|data/|sw.js|all_elements.json).*)",
-  ],
+  matcher: "/:path*",
 };

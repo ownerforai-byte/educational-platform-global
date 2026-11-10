@@ -18,7 +18,7 @@ export function postPlatformGuideMessage(
   message: string,
   userContext?: PlatformGuideUserContext,
 ): Promise<{ reply: string }> {
-  return apiFetch<{ reply: string; provider?: string }>("/api/ai/platform-guide", {
+  return apiFetch<{ reply: string }>("/api/ai/platform-guide", {
     method: "POST",
     body: JSON.stringify({ message, userContext }),
   });

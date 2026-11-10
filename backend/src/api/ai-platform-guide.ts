@@ -2,10 +2,11 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { getAgnesKey } from "../ai/config";
 import {
+  PLATFORM_GUIDE_IDENTITY_REPLY,
   PLATFORM_GUIDE_SYSTEM_PROMPT,
   buildPersonalContext,
-  clampReplyWords,
-  quoteQuestion,
+  isPlatformGuideIdentityQuestion,
+  platformGuideReply,
 } from "../ai/platform-guide-prompt";
 import { rateLimit } from "../middleware/rateLimit";
 
@@ -43,6 +44,12 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     return;
   }
 
+  const userText = parsed.data.message;
+  if (isPlatformGuideIdentityQuestion(userText)) {
+    res.json({ reply: PLATFORM_GUIDE_IDENTITY_REPLY });
+    return;
+  }
+
   const apiKey = getAgnesKey();
   if (!apiKey) {
     res.status(503).json({
@@ -52,11 +59,10 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     return;
   }
 
-  const userText = parsed.data.message;
   const userContext = parsed.data.userContext;
-  const systemPrompt = userContext
-    ? `${PLATFORM_GUIDE_SYSTEM_PROMPT}\n\n${buildPersonalContext(userContext)}`
-    : PLATFORM_GUIDE_SYSTEM_PROMPT;
+  const message = userContext
+    ? `${buildPersonalContext(userContext)}\n\nQUESTION:\n${userText}`
+    : userText;
   const timeoutMs = Number(process.env.AGNES_PLATFORM_GUIDE_TIMEOUT_MS || 25_000);
   const retryDelayMs = Number(process.env.AGNES_PLATFORM_GUIDE_RETRY_DELAY_MS || 1_200);
 
@@ -74,10 +80,10 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
           body: JSON.stringify({
             model: AGNES_MODEL,
             messages: [
-              { role: "system", content: systemPrompt },
+              { role: "system", content: PLATFORM_GUIDE_SYSTEM_PROMPT },
               {
                 role: "user",
-                content: userText,
+                content: message,
               },
             ],
             // 50-word ceiling (PLATFORM_GUIDE_MAX_WORDS) needs headroom so the
@@ -122,15 +128,7 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
       choices?: Array<{ message?: { content?: string } }>;
     };
     const raw = data?.choices?.[0]?.message?.content?.trim() ?? "";
-    // An empty completion still answers the question that was asked — the
-    // fixed "ask about plans or sign-in" line ignored whatever the visitor
-    // typed and read like a dodge.
-    const reply =
-      raw.length > 0
-        ? clampReplyWords(raw)
-        : `That is a fair question about ${quoteQuestion(userText)} — full step-by-step help with it lives inside Veer on a signed-in plan.`;
-
-    res.json({ reply, provider: "agnes" });
+    res.json({ reply: platformGuideReply(raw) });
   } catch (err) {
     console.error("[platform-guide] failed:", err instanceof Error ? err.message : err);
     res.status(503).json({

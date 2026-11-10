@@ -22,8 +22,10 @@ import {
   extractToken,
   getUserFromRequest,
   loadProfileRole,
+  loadProfileAccess,
   buildSessionUser,
   isOwnerEmail,
+  isApprovedAccount,
 } from "../middleware/auth";
 import { isOriginAllowed } from "../middleware/cors";
 import { normalizeRole, type SessionUser } from "../auth/types";
@@ -99,19 +101,10 @@ const oauthSessionSchema = z.object({
 
 type AccessStatus = "PENDING" | "ACTIVE" | "REJECTED";
 
-/**
- * Owner-approval gate (owner policy 2026-09-26): a profile's access_status
- * decides whether it may hold a session. Missing/unknown → ACTIVE so no
- * existing user is ever locked out by an absent row or an old test double.
- */
-async function readAccessStatus(userId: string): Promise<AccessStatus> {
-  const { data } = await supabaseAdmin
-    .from("profiles")
-    .select("access_status")
-    .eq("id", userId)
-    .maybeSingle();
-  const raw = (data?.access_status as string | undefined) ?? "ACTIVE";
-  return raw === "PENDING" || raw === "REJECTED" ? raw : "ACTIVE";
+async function readAccessStatus(userId: string, email?: string): Promise<AccessStatus> {
+  const { role, accessStatus } = await loadProfileAccess(userId);
+  if (isApprovedAccount({ email, role }, accessStatus)) return "ACTIVE";
+  return accessStatus === "REJECTED" ? "REJECTED" : "PENDING";
 }
 
 /**
@@ -184,6 +177,11 @@ async function buildExtendedUser(
 // ── Routes ─────────────────────────────────────────────────────────────────
 
 const router = Router();
+
+router.use((_req, res, next) => {
+  res.set("Cache-Control", "private, no-store");
+  next();
+});
 
 /**
  * POST /api/auth/login
@@ -258,7 +256,7 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
       return;
     }
 
-    const accessStatus = await readAccessStatus(data.user.id);
+    const accessStatus = await readAccessStatus(data.user.id, data.user.email);
     if (accessStatus !== "ACTIVE") {
       res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
       const pending = accessStatus === "PENDING";
@@ -319,7 +317,7 @@ router.post("/login", async (req: Request, res: Response) => {
 
   // Credentials are valid, but access may not be: PENDING/REJECTED accounts
   // never receive a session (no cookies are set on this path).
-  const accessStatus = await readAccessStatus(data.user.id);
+  const accessStatus = await readAccessStatus(data.user.id, data.user.email);
   if (accessStatus !== "ACTIVE") {
     accessDenied(res, accessStatus, data.user.id);
     return;
@@ -403,7 +401,7 @@ router.post("/signup", async (req: Request, res: Response) => {
     // ── Owner-approval flow: new accounts start PENDING ──
     // NO session cookies are issued; the client gets a signed status token
     // and is sent to the status screen instead of being logged in.
-    const accessStatus = await readAccessStatus(result.user.id);
+    const accessStatus = await readAccessStatus(result.user.id, result.user.email);
     if (accessStatus !== "ACTIVE") {
       if (accessStatus === "REJECTED") {
         accessDenied(res, accessStatus, result.user.id);
@@ -476,10 +474,10 @@ router.post("/refresh", async (req: Request, res: Response) => {
     if (!error && session?.access_token) {
       const user = await getUserFromRequest({
         headers: { authorization: `Bearer ${session.access_token}` },
-      } as unknown as Request);
+      } as unknown as Request, { allowUnapproved: true });
       if (user) {
         // A revoked (PENDING/REJECTED) account must not renew its session.
-        const accessStatus = await readAccessStatus(user.id);
+        const accessStatus = await readAccessStatus(user.id, user.email);
         if (accessStatus !== "ACTIVE") {
           clearSessionCookie(res);
           accessDenied(res, accessStatus, user.id);
@@ -506,14 +504,14 @@ router.post("/refresh", async (req: Request, res: Response) => {
     return;
   }
 
-  const user = await getUserFromRequest(req);
+  const user = await getUserFromRequest(req, { allowUnapproved: true });
   if (!user) {
     res.status(401).json({ error: "Invalid or expired session" });
     return;
   }
 
   // Legacy branch: same approval gate as the refresh-token path.
-  const legacyAccess = await readAccessStatus(user.id);
+  const legacyAccess = await readAccessStatus(user.id, user.email);
   if (legacyAccess !== "ACTIVE") {
     clearSessionCookie(res);
     accessDenied(res, legacyAccess, user.id);
@@ -583,7 +581,7 @@ router.get("/account-status", async (req: Request, res: Response) => {
  * 401 → no valid session
  */
 router.get("/me", async (req: Request, res: Response) => {
-  const user = await getUserFromRequest(req);
+  const user = await getUserFromRequest(req, { allowUnapproved: true });
 
   if (!user) {
     res.status(401).json({ error: "Unauthorized" });
@@ -592,7 +590,7 @@ router.get("/me", async (req: Request, res: Response) => {
 
   // Live approval gate: an account revoked mid-session loses its profile
   // immediately (the client clears state on this 403).
-  const accessStatus = await readAccessStatus(user.id);
+  const accessStatus = await readAccessStatus(user.id, user.email);
   if (accessStatus !== "ACTIVE") {
     clearSessionCookie(res);
     accessDenied(res, accessStatus, user.id);

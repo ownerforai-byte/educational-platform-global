@@ -18,7 +18,7 @@ import { accessLevelFor, ACCESS_LABELS } from "@/lib/access-level";
 type ChatLine = { role: "user" | "assistant"; content: string };
 
 function buildOpening(planLabel: string): string {
-  return `Hi — I'm Veer AI, your personal study guide. You're on the ${planLabel} plan. Ask me about your progress, what to study next, or anything academic.`;
+  return `Hi — I'm Veer AI, your guide to Ravikisan's platform. You're on the ${planLabel} plan. Ask me about the platform's features, your progress or how to use its study tools.`;
 }
 
 /** Collect all available user context from localStorage. */

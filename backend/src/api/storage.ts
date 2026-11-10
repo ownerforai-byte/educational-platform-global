@@ -1,6 +1,7 @@
 import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { normalizeRole } from "../auth/types";
+import { isApprovedAccount, loadProfileAccess } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
 import {
   hasR2PublicBase,
@@ -13,6 +14,7 @@ import {
 const router = Router();
 
 async function requireUser(req: Request, res: Response) {
+  res.set("Cache-Control", "private, no-store");
   const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
     res.status(401).json({ error: "Unauthorized" });
@@ -37,9 +39,14 @@ async function requireContentEditor(req: Request, res: Response) {
 
   const { data: profile } = await supabaseAdmin
     .from("profiles")
-    .select("role")
+    .select("role, access_status")
     .eq("id", user.id)
     .maybeSingle();
+
+  if (!isApprovedAccount({ email: user.email, role: profile?.role }, profile?.access_status)) {
+    res.status(401).json({ error: "Unauthorized" });
+    return null;
+  }
 
   if (!profile || !["plus", "pro", "owner"].includes(normalizeRole(profile.role) ?? "")) {
     res.status(403).json({ error: "Forbidden" });
@@ -58,6 +65,12 @@ async function requireContentEditor(req: Request, res: Response) {
 router.get("/health", async (req: Request, res: Response) => {
   const auth = await requireUser(req, res);
   if (!auth) return;
+
+  const profileAccess = await loadProfileAccess(auth.id);
+  if (!isApprovedAccount({ email: auth.email, role: profileAccess.role }, profileAccess.accessStatus)) {
+    res.status(401).json({ error: "Unauthorized" });
+    return;
+  }
 
   const supabase = await supabaseStorageHealth();
   res.json({

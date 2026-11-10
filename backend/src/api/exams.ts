@@ -51,7 +51,7 @@ router.get("/", async (_req: Request, res: Response) => {
   }
 });
 
-router.get("/:slug", async (req: Request, res: Response) => {
+router.get("/:slug", async (req: Request<{ slug: string }>, res: Response) => {
   try {
     const { slug } = req.params;
     if (!SAFE_SLUG.test(slug)) {

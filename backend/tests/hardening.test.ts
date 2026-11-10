@@ -111,10 +111,17 @@ const h = vi.hoisted(() => {
     });
   }
 
-  // Convenience: authenticate as a user with the given profile role.
-  function mockRole(role: string | null, userId = "user-1") {
+  // Direct editor guards consume one profile read; omitted status stays absent.
+  function mockRole(role: string | null, accessStatus?: string, userId = "user-1") {
     getUser.mockResolvedValue({ data: { user: { id: userId } }, error: null });
-    enqueue("profiles", { data: [{ role }], error: null });
+    enqueue("profiles", { data: [{ role, access_status: accessStatus }], error: null });
+  }
+
+  function mockApprovedUser(role: string) {
+    // requireAuth consumes role/status, display name, then plan in FIFO order.
+    mockRole(role, "ACTIVE");
+    enqueue("profiles", { data: { full_name: null }, error: null });
+    enqueue("profiles", { data: { plan: "member", premium_status: false }, error: null });
   }
 
   return {
@@ -123,6 +130,7 @@ const h = vi.hoisted(() => {
     opsFor,
     reset,
     mockRole,
+    mockApprovedUser,
     calls,
     storageFrom,
     storageUpload,
@@ -144,7 +152,7 @@ const bookmarksRouter = (await import("../src/api/bookmarks")).default;
 const controllerRouter = (await import("../src/api/controller")).default;
 const { storageRoutes } = await import("../src/api/storage");
 
-type TestRes = { status: number; body: any };
+type TestRes = { status: number; body: any; cacheControl: string | null };
 
 function makeRequest(base: string) {
   return async (
@@ -167,7 +175,7 @@ function makeRequest(base: string) {
     } catch {
       parsed = null;
     }
-    return { status: res.status, body: parsed };
+    return { status: res.status, body: parsed, cacheControl: res.headers.get("cache-control") };
   };
 }
 
@@ -197,6 +205,50 @@ beforeEach(() => {
   h.reset();
 });
 
+describe("direct editor approval gates", () => {
+  const cases = ["PENDING", "REJECTED"].flatMap((accessStatus) => [
+    {
+      accessStatus, role: "plus", router: resourcesRouter, mountPath: "/api/resources",
+      method: "PATCH", path: "/api/resources/r1", body: { title: "Renamed" },
+    },
+    {
+      accessStatus, role: "pro", router: controllerRouter, mountPath: "/api/controller",
+      method: "PATCH", path: "/api/controller/settings", body: { key: "site_name", value: "X" },
+    },
+    {
+      accessStatus, role: "plus", router: storageRoutes, mountPath: "/api/storage",
+      method: "POST", path: "/api/storage/upload",
+      body: { path: "img.png", contentType: "image/png", dataBase64: "iVBORw==" },
+    },
+  ]);
+
+  it.each(cases)("$accessStatus $role cannot edit $path", async ({
+    accessStatus, role, router, mountPath, method, path, body,
+  }) => {
+    const { request } = await mount(router, mountPath);
+    h.mockRole(role, accessStatus);
+
+    const res = await request(method, path, body);
+
+    expect(res.status).toBe(401);
+    expect(res.body).toEqual({ error: "Unauthorized" });
+    expect(res.cacheControl).toBe("private, no-store");
+    // A single role/status read remains enough; no handler data or writes.
+    expect(h.calls.every((call) => call.table === "profiles")).toBe(true);
+    expect(h.opsFor("profiles").filter((call) => call.method === "select").map((call) => call.args))
+      .toEqual([["role, access_status"]]);
+    expect(h.opsFor("profiles").filter((call) => call.method === "eq").map((call) => call.args))
+      .toEqual([["id", "user-1"]]);
+    expect(h.opsFor("profiles").filter((call) => ["single", "maybeSingle"].includes(call.method)))
+      .toHaveLength(1);
+    expect(h.calls.filter((call) => ["insert", "update", "upsert", "delete"].includes(call.method)))
+      .toHaveLength(0);
+    expect(h.storageFrom).not.toHaveBeenCalled();
+    expect(h.storageUpload).not.toHaveBeenCalled();
+    expect(h.storageGetPublicUrl).not.toHaveBeenCalled();
+  });
+});
+
 // ───────────────────────────────────────────────────────────────────────────
 // resources.ts
 // ───────────────────────────────────────────────────────────────────────────
@@ -208,7 +260,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
 
   it("rejects mass-assignment fields (created_by, role, id) with 400", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
-    h.mockRole("plus");
+    h.mockRole("plus", "ACTIVE");
     h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
 
     const res = await request("PATCH", "/api/resources/r1", {
@@ -228,7 +280,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
 
   it("rejects is_published from TEACHER but accepts it from ADMIN", async () => {
     const teacher = await mount(resourcesRouter, "/api/resources");
-    h.mockRole("plus");
+    h.mockRole("plus", "ACTIVE");
     h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
     const rejected = await teacher.request("PATCH", "/api/resources/r1", {
       is_published: true,
@@ -236,7 +288,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
     expect(rejected.status).toBe(400);
 
     const admin = await mount(resourcesRouter, "/api/resources");
-    h.mockRole("pro");
+    h.mockRole("pro", "ACTIVE");
     h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
     h.enqueue("resources", { data: [{ id: "r1", is_published: true }], error: null });
     const accepted = await admin.request("PATCH", "/api/resources/r1", {
@@ -250,7 +302,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
 
   it("accepts a clean title update and forwards only that field", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
-    h.mockRole("plus");
+    h.mockRole("plus", "ACTIVE");
     h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
     h.enqueue("resources", { data: [{ id: "r1", title: "Renamed" }], error: null });
 
@@ -268,7 +320,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
 
   it("accepts a content object update from TEACHER and forwards it", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
-    h.mockRole("plus");
+    h.mockRole("plus", "ACTIVE");
     h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
 
     const content = { text: "Updated body", sections: ["a", "b"] };
@@ -282,7 +334,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
 
   it("accepts legacy plain-string content", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
-    h.mockRole("plus");
+    h.mockRole("plus", "ACTIVE");
     h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
 
     const res = await request("PATCH", "/api/resources/r1", {
@@ -296,11 +348,11 @@ describe("PATCH /api/resources/:id allowlist", () => {
 
   it("rejects array and primitive content shapes with 400 and no update", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
-    h.mockRole("plus");
+    h.mockRole("plus", "ACTIVE");
 
     for (const bad of [[1, 2, 3], 42, true]) {
       h.reset();
-      h.mockRole("plus");
+      h.mockRole("plus", "ACTIVE");
       h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
       const res = await request("PATCH", "/api/resources/r1", { content: bad });
       expect(res.status).toBe(400);
@@ -311,7 +363,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
 
   it("403 when a TEACHER patches a resource they did not create", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
-    h.mockRole("plus");
+    h.mockRole("plus", "ACTIVE");
     h.enqueue("resources", {
       data: [{ id: "r1", created_by: "another-teacher" }],
       error: null,
@@ -325,7 +377,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
 
   it("404 when the resource does not exist on PATCH", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
-    h.mockRole("plus");
+    h.mockRole("plus", "ACTIVE");
 
     const res = await request("PATCH", "/api/resources/missing", { title: "x" });
 
@@ -336,7 +388,7 @@ describe("PATCH /api/resources/:id allowlist", () => {
 describe("DELETE /api/resources/:id ownership", () => {
   it("403 when a TEACHER deletes a resource they did not create", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
-    h.mockRole("plus");
+    h.mockRole("plus", "ACTIVE");
     h.enqueue("resources", {
       data: [{ id: "r1", created_by: "someone-else" }],
       error: null,
@@ -350,7 +402,7 @@ describe("DELETE /api/resources/:id ownership", () => {
 
   it("proceeds when an ADMIN deletes another user's resource", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
-    h.mockRole("pro");
+    h.mockRole("pro", "ACTIVE");
     h.enqueue("resources", {
       data: [{ id: "r1", created_by: "someone-else" }],
       error: null,
@@ -368,7 +420,7 @@ describe("DELETE /api/resources/:id ownership", () => {
 
   it("404 when the resource does not exist", async () => {
     const { request } = await mount(resourcesRouter, "/api/resources");
-    h.mockRole("plus");
+    h.mockRole("plus", "ACTIVE");
     h.enqueue("resources", { data: [null], error: null });
 
     const res = await request("DELETE", "/api/resources/missing");
@@ -382,7 +434,7 @@ describe("DELETE /api/resources/:id ownership", () => {
 describe("POST /api/progress validation", () => {
   it("400 Invalid payload on a non-uuid topicId", async () => {
     const { request } = await mount(progressRouter, "/api/progress");
-    h.mockRole("member");
+    h.mockApprovedUser("member");
 
     const res = await request("POST", "/api/progress", {
       topicId: "not-a-uuid",
@@ -396,11 +448,12 @@ describe("POST /api/progress validation", () => {
 
   it("400 when completed is not boolean or topic is missing", async () => {
     const { request } = await mount(progressRouter, "/api/progress");
-    h.mockRole("member");
+    h.mockApprovedUser("member");
 
     expect(
       (await request("POST", "/api/progress", { topicId: crypto.randomUUID() })).status
     ).toBe(400);
+    h.mockApprovedUser("member");
     expect(
       (
         await request("POST", "/api/progress", {
@@ -413,7 +466,7 @@ describe("POST /api/progress validation", () => {
 
   it("normalizes topic_id alias into the upsert payload", async () => {
     const { request } = await mount(progressRouter, "/api/progress");
-    h.mockRole("member");
+    h.mockApprovedUser("member");
     const topicId = crypto.randomUUID();
     h.enqueue("user_progress", {
       data: [{ id: "p1", topic_id: topicId, completed: true }],
@@ -442,7 +495,7 @@ describe("POST /api/progress validation", () => {
 describe("GET /api/progress journey", () => {
   it("returns the session user's rows only, mapped camelCase", async () => {
     const { request } = await mount(progressRouter, "/api/progress");
-    h.mockRole("member");
+    h.mockApprovedUser("member");
     h.enqueue("user_journey", {
       data: [
         {
@@ -504,7 +557,7 @@ describe("POST /api/progress journey", () => {
 
   it("starts the journey: first touch inserts a started row", async () => {
     const { request } = await mount(progressRouter, "/api/progress");
-    h.mockRole("member");
+    h.mockApprovedUser("member");
     // 1st read: no existing row. 2nd (single): the inserted row.
     h.enqueue("user_journey", { data: null, error: null });
     h.enqueue("user_journey", {
@@ -544,7 +597,7 @@ describe("POST /api/progress journey", () => {
 
   it("marks a topic completed on the first call", async () => {
     const { request } = await mount(progressRouter, "/api/progress");
-    h.mockRole("member");
+    h.mockApprovedUser("member");
     h.enqueue("user_journey", { data: null, error: null });
     h.enqueue("user_journey", {
       data: [
@@ -574,7 +627,7 @@ describe("POST /api/progress journey", () => {
 
   it("never downgrades a completed topic back to started", async () => {
     const { request } = await mount(progressRouter, "/api/progress");
-    h.mockRole("member");
+    h.mockApprovedUser("member");
     // Existing row: already completed.
     h.enqueue("user_journey", {
       data: [{ id: "j3", status: "completed", completed_at: "2026-10-01T00:00:00Z", view_count: 7 }],
@@ -614,7 +667,7 @@ describe("POST /api/progress journey", () => {
 
   it("an explicit un-complete DOES clear the completion", async () => {
     const { request } = await mount(progressRouter, "/api/progress");
-    h.mockRole("member");
+    h.mockApprovedUser("member");
     h.enqueue("user_journey", {
       data: [{ id: "j4", status: "completed", completed_at: "2026-10-01T00:00:00Z", view_count: 2 }],
       error: null,
@@ -650,13 +703,16 @@ describe("POST /api/progress journey", () => {
 
   it("400s on an empty slug, an unknown status, or a partial payload", async () => {
     const { request } = await mount(progressRouter, "/api/progress");
-    h.mockRole("member");
+    h.mockApprovedUser("member");
 
     expect((await request("POST", "/api/progress", { ...topic, classSlug: "" })).status).toBe(400);
+    h.mockApprovedUser("member");
     expect((await request("POST", "/api/progress", { ...topic, status: "done" })).status).toBe(400);
+    h.mockApprovedUser("member");
     expect(
       (await request("POST", "/api/progress", { classSlug: "class-11-notes" })).status
     ).toBe(400);
+    h.mockApprovedUser("member");
     expect((await request("POST", "/api/progress", { ...topic, role: "owner" })).status).toBe(400);
 
     // Nothing reached the table on any rejected payload.
@@ -670,7 +726,7 @@ describe("POST /api/progress journey", () => {
 describe("POST /api/bookmarks idempotency", () => {
   it("returns 200 {ok:true} on duplicate instead of overwriting", async () => {
     const { request } = await mount(bookmarksRouter, "/api/bookmarks");
-    h.mockRole("member");
+    h.mockApprovedUser("member");
     // ignoreDuplicates upsert that hit an existing row returns no rows.
     h.enqueue("bookmarks", { data: [], error: null });
 
@@ -692,7 +748,7 @@ describe("POST /api/bookmarks idempotency", () => {
 
   it("creates a bookmark with only allowlisted fields (201)", async () => {
     const { request } = await mount(bookmarksRouter, "/api/bookmarks");
-    h.mockRole("member");
+    h.mockApprovedUser("member");
     h.enqueue("bookmarks", {
       data: [{ id: "b1", resource_id: "res-1", folder: null, notes: null }],
       error: null,
@@ -716,7 +772,7 @@ describe("POST /api/bookmarks idempotency", () => {
 
   it("DELETE stays scoped to the owning user", async () => {
     const { request } = await mount(bookmarksRouter, "/api/bookmarks");
-    h.mockRole("member");
+    h.mockApprovedUser("member");
 
     await request("DELETE", "/api/bookmarks/b1");
 
@@ -732,7 +788,7 @@ describe("POST /api/bookmarks idempotency", () => {
 describe("settings endpoints", () => {
   it("PATCH requires ADMIN/OWNER (student gets 403)", async () => {
     const { request } = await mount(controllerRouter, "/api/controller");
-    h.mockRole("member");
+    h.mockRole("member", "ACTIVE");
 
     const res = await request("PATCH", "/api/controller/settings", {
       key: "site_name",
@@ -745,7 +801,7 @@ describe("settings endpoints", () => {
 
   it("PATCH upserts with updated_by and returns updated entries", async () => {
     const { request } = await mount(controllerRouter, "/api/controller");
-    h.mockRole("pro");
+    h.mockRole("pro", "ACTIVE");
     h.enqueue("settings", {
       data: [{ key: "site_name", value: "New Name" }],
       error: null,
@@ -796,7 +852,7 @@ describe("settings endpoints", () => {
 
     for (const body of [longKey, longValue]) {
       h.reset();
-      h.mockRole("pro");
+      h.mockRole("pro", "ACTIVE");
       const res = await request("PATCH", "/api/controller/settings", body);
       expect(res.status).toBe(400);
     }
@@ -804,7 +860,7 @@ describe("settings endpoints", () => {
 
   it("GET returns original envelope {settings:[{key,value,description}]} plus flat map", async () => {
     const { request } = await mount(controllerRouter, "/api/controller");
-    h.mockRole("pro");
+    h.mockRole("pro", "ACTIVE");
     h.enqueue("settings", {
       data: [{ key: "theme", value: "dark", description: "UI theme" }],
       error: null,
@@ -828,7 +884,7 @@ describe("POST /api/storage/upload", () => {
 
   async function mountedStorage() {
     const m = await mount(storageRoutes as unknown as express.Router, "/api/storage");
-    h.mockRole("plus");
+    h.mockRole("plus", "ACTIVE");
     return m;
   }
 
@@ -936,7 +992,7 @@ describe("POST /api/storage/upload", () => {
 
   it("requires TEACHER/ADMIN/OWNER role", async () => {
     const { request } = await mount(storageRoutes as unknown as express.Router, "/api/storage");
-    h.mockRole("member");
+    h.mockRole("member", "ACTIVE");
 
     const res = await request("POST", "/api/storage/upload", {
       path: "img.png",

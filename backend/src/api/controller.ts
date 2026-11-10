@@ -1,13 +1,14 @@
 import { Router, Request, Response } from "express";
 import { serverError } from "../middleware/errors";
 import { supabaseAdmin } from "../db/supabase";
-import { extractToken } from "../middleware/auth";
+import { extractToken, isApprovedAccount } from "../middleware/auth";
 import { normalizeRole } from "../auth/types";
 import { asyncHandler } from "../middleware/asyncHandler";
 
 const router = Router();
 
 async function requireAdmin(req: Request, res: Response) {
+  res.set("Cache-Control", "private, no-store");
   // Accept bearer header or sb-access-token cookie (the controller page uses
   // raw fetch with credentials, so the cookie is the usual path).
   const token = extractToken(req);
@@ -25,9 +26,14 @@ async function requireAdmin(req: Request, res: Response) {
 
   const { data: profile } = await supabaseAdmin
     .from("profiles")
-    .select("role")
+    .select("role, access_status")
     .eq("id", data.user.id)
     .single();
+
+  if (!isApprovedAccount({ email: data.user.email, role: profile?.role }, profile?.access_status)) {
+    res.status(401).json({ error: "Unauthorized" });
+    return null;
+  }
 
   if (!profile || !["pro", "owner"].includes(normalizeRole(profile.role) ?? "")) {
     res.status(403).json({ error: "Forbidden" });

@@ -8,6 +8,11 @@ import { isProtectedOwnerTarget } from "../utils/ownerGuard";
 
 const router = Router();
 
+router.use((_req, res, next) => {
+  res.set("Cache-Control", "private, no-store");
+  next();
+});
+
 // Validation schemas
 const creditAdjustSchema = z.object({
   amount: z.number().int().min(-9999).max(9999),
@@ -23,13 +28,13 @@ const updateUserRoleSchema = z.object({
 /**
  * GET /api/admin/users
  * List all users with their credits, rungs, and premium status.
- * Pro/owner rungs only.
+ * Owner rung only.
  */
 router.get("/users", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
   const role = normalizeRole(user.role);
 
-  if (role !== "pro" && role !== "owner") {
+  if (role !== "owner") {
     res.status(403).json({ error: "Forbidden" });
     return;
   }
@@ -100,7 +105,7 @@ router.get("/users/:id", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
   const role = normalizeRole(user.role);
 
-  if (role !== "pro" && role !== "owner") {
+  if (role !== "owner") {
     res.status(403).json({ error: "Forbidden" });
     return;
   }
@@ -149,13 +154,13 @@ router.get("/users/:id", requireAuth, async (req: Request, res: Response) => {
 
 /**
  * PATCH /api/admin/users/:id/credits
- * Adjust user credits (grant/spend). Pro/owner rungs only.
+ * Adjust user credits (grant/spend). Owner rung only.
  */
 router.patch("/users/:id/credits", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
   const role = normalizeRole(user.role);
 
-  if (role !== "pro" && role !== "owner") {
+  if (role !== "owner") {
     res.status(403).json({ error: "Forbidden" });
     return;
   }
@@ -228,8 +233,8 @@ router.patch("/users/:id/credits", requireAuth, async (req: Request, res: Respon
  * PATCH /api/admin/users/:id/role
  * Update user tier (the grant/adjust control on the owner console). Owner rung only.
  */
-router.patch("/users/:id/role", requireAuth, async (req: Request, res: Response) => {
-  const user = (req as AuthedRequest).user;
+router.patch("/users/:id/role", requireAuth, async (req: Request<{ id: string }>, res: Response) => {
+  const user = (req as typeof req & Pick<AuthedRequest, "user">).user;
   const role = normalizeRole(user.role);
 
   if (role !== "owner") {
@@ -280,7 +285,7 @@ router.get("/premium-requests", requireAuth, async (req: Request, res: Response)
   const user = (req as AuthedRequest).user;
   const role = normalizeRole(user.role);
 
-  if (role !== "pro" && role !== "owner") {
+  if (role !== "owner") {
     res.status(403).json({ error: "Forbidden" });
     return;
   }
@@ -463,7 +468,7 @@ router.get("/stats", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
   const role = normalizeRole(user.role);
 
-  if (role !== "pro" && role !== "owner") {
+  if (role !== "owner") {
     res.status(403).json({ error: "Forbidden" });
     return;
   }

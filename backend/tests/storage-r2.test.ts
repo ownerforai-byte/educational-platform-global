@@ -16,10 +16,11 @@ import { afterAll, beforeEach, describe, expect, it, vi } from "vitest";
 const m = vi.hoisted(() => {
   const getUser = vi.fn();
   const role = { value: "owner" as string | null };
+  const accessStatus = { value: undefined as string | undefined };
   const storageUpload = vi.fn();
   const r2Upload = vi.fn();
   const r2Active = { value: true };
-  return { getUser, role, storageUpload, r2Upload, r2Active };
+  return { getUser, role, accessStatus, storageUpload, r2Upload, r2Active };
 });
 
 vi.mock("../src/db/supabase", () => {
@@ -30,8 +31,8 @@ vi.mock("../src/db/supabase", () => {
     from: () => ({
       select: () => ({
         eq: () => ({
-          single: async () => ({ data: { role: m.role.value }, error: null }),
-          maybeSingle: async () => ({ data: { role: m.role.value }, error: null }),
+          single: async () => ({ data: { role: m.role.value, access_status: m.accessStatus.value }, error: null }),
+          maybeSingle: async () => ({ data: { role: m.role.value, access_status: m.accessStatus.value }, error: null }),
         }),
       }),
     }),
@@ -117,6 +118,7 @@ beforeEach(() => {
   m.storageUpload.mockReset();
   m.r2Upload.mockReset();
   m.role.value = "owner";
+  m.accessStatus.value = undefined;
   m.r2Active.value = true;
   m.getUser.mockResolvedValue({ data: { user: { id: "user-1" } }, error: null });
   m.storageUpload.mockResolvedValue({
@@ -142,6 +144,7 @@ describe("POST /api/storage/upload — Supabase primary, R2 overflow", () => {
   it("403s a non-teacher role", async () => {
     const request = await mount();
     m.role.value = "member";
+    m.accessStatus.value = "ACTIVE";
     const res = await request("POST", "/api/storage/upload", UPLOAD_BODY);
     expect(res.status).toBe(403);
   });

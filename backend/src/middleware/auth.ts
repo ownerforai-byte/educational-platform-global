@@ -32,26 +32,32 @@ export function extractToken(req: Request): string | undefined {
   return req.cookies?.[SESSION_COOKIE] as string | undefined;
 }
 
-/**
- * Load the persisted role for a user from the `profiles` table.
- * Returns null (not throws) when the profile is missing or the role is unknown.
- */
-export async function loadProfileRole(userId: string): Promise<UserRole | null> {
+export async function loadProfileAccess(userId: string): Promise<{
+  role: UserRole | null;
+  accessStatus: string | null;
+}> {
   try {
     const { data: profile, error } = await supabaseAdmin
       .from("profiles")
-      .select("role")
+      .select("role, access_status")
       .eq("id", userId)
       .maybeSingle();
 
     if (error) {
       console.warn(`[Auth] Unable to load profile for user ${userId}:`, error.message);
-      return null;
+      return { role: null, accessStatus: null };
     }
-    return normalizeRole(profile?.role);
+    return {
+      role: normalizeRole(profile?.role),
+      accessStatus: typeof profile?.access_status === "string" ? profile.access_status : null,
+    };
   } catch {
-    return null;
+    return { role: null, accessStatus: null };
   }
+}
+
+export async function loadProfileRole(userId: string): Promise<UserRole | null> {
+  return (await loadProfileAccess(userId)).role;
 }
 
 /**
@@ -143,6 +149,13 @@ export function isOwnerAccount(
   return isOwnerEmail(user.email) || normalizeRole(user.role) === "owner";
 }
 
+export function isApprovedAccount(
+  user: { email?: string | null; role?: string | null },
+  accessStatus: unknown,
+): boolean {
+  return isOwnerAccount(user) || accessStatus === "ACTIVE";
+}
+
 export function buildSessionUser(
   id: string,
   email: string,
@@ -169,11 +182,13 @@ export function buildSessionUser(
 }
 
 /**
- * Validate the request token and resolve the full session user (with role).
- * Returns null when there is no token, the token is invalid, or Supabase
- * rejects it — callers treat null as "unauthenticated".
+ * Validate the request token and resolve an approved session user (with role).
+ * Returns null for invalid sessions or unapproved non-owner accounts.
  */
-export async function getUserFromRequest(req: Request): Promise<SessionUser | null> {
+export async function getUserFromRequest(
+  req: Request,
+  { allowUnapproved = false }: { allowUnapproved?: boolean } = {},
+): Promise<SessionUser | null> {
   const token = extractToken(req);
   if (!token) return null;
 
@@ -183,15 +198,21 @@ export async function getUserFromRequest(req: Request): Promise<SessionUser | nu
       if (error) console.warn("[Auth] Token validation failed:", error.message);
       return null;
     }
-    const [role, profileName, planInfo] = await Promise.all([
-      loadProfileRole(data.user.id),
+    const [profileAccess, profileName, planInfo] = await Promise.all([
+      loadProfileAccess(data.user.id),
       loadProfileFullName(data.user.id),
       loadProfilePlan(data.user.id),
     ]);
+    if (
+      !allowUnapproved &&
+      !isApprovedAccount({ email: data.user.email, role: profileAccess.role }, profileAccess.accessStatus)
+    ) {
+      return null;
+    }
     return buildSessionUser(
       data.user.id,
       data.user.email ?? "",
-      role,
+      profileAccess.role,
       profileName ?? (data.user.user_metadata?.full_name as string) ?? null,
       planInfo.plan,
       planInfo.premiumStatus,
@@ -211,6 +232,7 @@ export async function requireAuth(
   res: Response,
   next: NextFunction,
 ): Promise<void> {
+  res.set("Cache-Control", "private, no-store");
   try {
     const user = await getUserFromRequest(req);
     if (!user) {

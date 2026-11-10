@@ -15,9 +15,9 @@ import type { NextFunction, Request, RequestHandler, Response } from "express";
  * A handler that already try/catches its own errors is safe to wrap too — the
  * wrapper only acts on a rejection that escapes the handler.
  */
-export function asyncHandler(
-  fn: (req: Request, res: Response, next: NextFunction) => Promise<unknown>,
-): RequestHandler {
+export function asyncHandler<P = Request["params"]>(
+  fn: (req: Request<P>, res: Response, next: NextFunction) => Promise<unknown>,
+): RequestHandler<P> {
   return (req, res, next) => {
     Promise.resolve(fn(req, res, next)).catch(next);
   };

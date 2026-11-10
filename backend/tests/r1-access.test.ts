@@ -116,6 +116,13 @@ const OWNER_EMAIL = "harindarsah98172@gmail.com";
 const GRANTED_EMAIL = "granted@example.com";
 const STRANGER_EMAIL = "stranger@example.com";
 
+function queueApprovedMember() {
+  // requireAuth: role/status, display name, then plan — before endpoint rows.
+  h.enqueue("profiles", { data: { role: "member", access_status: "ACTIVE" }, error: null });
+  h.enqueue("profiles", { data: { full_name: null }, error: null });
+  h.enqueue("profiles", { data: { plan: "member", premium_status: false }, error: null });
+}
+
 type TestRes = { status: number; body: any };
 
 function makeRequest(base: string) {
@@ -183,10 +190,12 @@ describe("R1 access gate", () => {
   it("a granted email holds R1; an ungranted email does not", async () => {
     const { request } = await mount([["/api/r1", r1Router]]);
     h.mockUser("user-a", GRANTED_EMAIL);
+    queueApprovedMember();
     h.enqueue("r1_grants", { data: [{ email: GRANTED_EMAIL }], error: null });
     expect((await request("GET", "/api/r1/access")).body).toEqual({ r1: true });
 
     h.mockUser("user-b", STRANGER_EMAIL);
+    queueApprovedMember();
     h.enqueue("r1_grants", { data: [{ email: GRANTED_EMAIL }], error: null });
     expect((await request("GET", "/api/r1/access")).body).toEqual({ r1: false });
   });
@@ -198,6 +207,7 @@ describe("R1 access gate", () => {
     expect(anon.status).toBe(401);
 
     h.mockUser("user-b", STRANGER_EMAIL);
+    queueApprovedMember();
     h.enqueue("r1_grants", { data: [], error: null });
     const denied = await request("POST", "/api/r1/activities", {
       activityDate: "2026-10-13",
@@ -211,6 +221,7 @@ describe("R1 access gate", () => {
   it("granted members can create activities", async () => {
     const { request } = await mount([["/api/r1/activities", r1ActivitiesRouter]]);
     h.mockUser("user-a", GRANTED_EMAIL);
+    queueApprovedMember();
     h.enqueue("r1_grants", { data: [{ email: GRANTED_EMAIL }], error: null });
     h.enqueue("r1_activities", {
       data: [{ id: "act-1", activity_date: "2026-10-13", title: "Study", category: "study" }],
@@ -234,6 +245,7 @@ describe("R1 per-user scoping (no IDOR)", () => {
   it("every activity read is scoped to the caller's user id", async () => {
     const { request } = await mount([["/api/r1/activities", r1ActivitiesRouter]]);
     h.mockUser("user-a", GRANTED_EMAIL);
+    queueApprovedMember();
     h.enqueue("r1_grants", { data: [{ email: GRANTED_EMAIL }], error: null });
     h.enqueue("r1_activities", { data: [], error: null });
 
@@ -251,6 +263,7 @@ describe("R1 per-user scoping (no IDOR)", () => {
       ["/api/r1/plans", r1PlansRouter],
     ]);
     h.mockUser("user-a", GRANTED_EMAIL);
+    queueApprovedMember();
     h.enqueue("r1_grants", { data: [{ email: GRANTED_EMAIL }], error: null });
 
     // The scoped .eq("id", …).eq("user_id", …) lookup finds no row → 404.
@@ -258,6 +271,7 @@ describe("R1 per-user scoping (no IDOR)", () => {
     const patch = await request("PATCH", "/api/r1/activities/act-owned-by-b", { title: "hijack" });
     expect(patch.status).toBe(404);
 
+    queueApprovedMember();
     h.enqueue("r1_grants", { data: [{ email: GRANTED_EMAIL }], error: null });
     h.enqueue("r1_plans", { data: [], error: null });
     const del = await request("DELETE", "/api/r1/plans/plan-owned-by-b");
@@ -276,6 +290,7 @@ describe("R1 per-user scoping (no IDOR)", () => {
       ["/api/r1/habits", r1HabitsRouter],
     ]);
     h.mockUser("user-a", GRANTED_EMAIL);
+    queueApprovedMember();
     h.enqueue("r1_grants", { data: [{ email: GRANTED_EMAIL }], error: null });
     // The lock handler does an existing-row lookup first; for a brand-new entry
     // the lookup is empty and the upsert response carries the new row.
@@ -295,6 +310,7 @@ describe("R1 per-user scoping (no IDOR)", () => {
     expect(upsertCall?.args[0][0].user_id).toBe("user-a");
 
     // Habit check-in on a foreign habit must 404 before any check-in write.
+    queueApprovedMember();
     h.enqueue("r1_grants", { data: [{ email: GRANTED_EMAIL }], error: null });
     h.enqueue("r1_habits", { data: [], error: null });
     const checkin = await request("POST", "/api/r1/habits/habit-of-b/checkins", {
@@ -308,6 +324,7 @@ describe("R1 per-user scoping (no IDOR)", () => {
   it("rejects invalid payloads before touching the database", async () => {
     const { request } = await mount([["/api/r1/activities", r1ActivitiesRouter]]);
     h.mockUser("user-a", GRANTED_EMAIL);
+    queueApprovedMember();
     h.enqueue("r1_grants", { data: [{ email: GRANTED_EMAIL }], error: null });
 
     const badDate = await request("POST", "/api/r1/activities", {
@@ -316,6 +333,7 @@ describe("R1 per-user scoping (no IDOR)", () => {
     });
     expect(badDate.status).toBe(400);
 
+    queueApprovedMember();
     const smuggled = await request("POST", "/api/r1/activities", {
       activityDate: "2026-10-13",
       title: "x",
@@ -588,9 +606,7 @@ describe("owner accounts may decide non-owner accounts", () => {
   it("still refuses non-owner accounts on the owner routes", async () => {
     const { request } = await mount([["/api/owner", ownerRouter]]);
     h.mockUser("user-3", STRANGER_EMAIL);
-    h.enqueue("profiles", { data: [{ role: "member" }], error: null });
-    h.enqueue("profiles", { data: [], error: null });
-    h.enqueue("profiles", { data: [], error: null });
+    queueApprovedMember();
 
     const res = await request("PATCH", `/api/owner/users/${STUDENT_ID}/status`, {
       status: "ACTIVE",
@@ -605,7 +621,9 @@ describe("owner R1 grant management", () => {
   it("only owner emails may manage grants", async () => {
     const { request } = await mount([["/api/owner", ownerRouter]]);
     h.mockUser("user-9", STRANGER_EMAIL);
+    queueApprovedMember();
     expect((await request("GET", "/api/owner/r1-grants")).status).toBe(403);
+    queueApprovedMember();
     expect(
       (await request("POST", "/api/owner/r1-grants", { email: GRANTED_EMAIL })).status
     ).toBe(403);

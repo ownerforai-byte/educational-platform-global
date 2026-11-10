@@ -1,14 +1,14 @@
 import type { MetadataRoute } from "next";
+import { BLOCKED_AI_AGENTS } from "../../backend/src/utils/botPolicy";
 
-/**
- * robots.txt (C-L1 of the pre-deploy security pass). Every page is public to
- * crawlers; the account surfaces are already gated at the API, and robots.txt
- * is politeness, not a security control — do not rely on the disallows below
- * to hide anything.
- */
+// Crawl directives are advisory; request rejection is enforced separately.
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
+      {
+        userAgent: [...BLOCKED_AI_AGENTS],
+        disallow: "/",
+      },
       {
         userAgent: "*",
         allow: "/",

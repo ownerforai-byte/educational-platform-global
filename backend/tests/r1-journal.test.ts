@@ -108,6 +108,10 @@ beforeEach(() => {
     data: { user: { id: USER_ID, email: GRANTED_EMAIL } },
     error: null,
   });
+  // requireAuth consumes its three profile reads before the R1 gate/handler.
+  h.enqueue("profiles", { data: { role: "member", access_status: "ACTIVE" }, error: null });
+  h.enqueue("profiles", { data: { full_name: null }, error: null });
+  h.enqueue("profiles", { data: { plan: "member", premium_status: false }, error: null });
   // requireR1Access reads the r1_grants allowlist; without a queued row the
   // middleware short-circuits to 403 before the handler runs.
   h.enqueue("r1_grants", { data: [{ email: GRANTED_EMAIL }], error: null });

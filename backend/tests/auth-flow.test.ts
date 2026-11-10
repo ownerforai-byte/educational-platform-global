@@ -11,7 +11,7 @@ vi.mock("../src/db/supabase", () => {
       signOut: vi.fn(),
       refreshSession: vi.fn(),
       resetPasswordForEmail: vi.fn(),
-      admin: { updateUserById: vi.fn() },
+      admin: { updateUserById: vi.fn(), getUserById: vi.fn(), listUsers: vi.fn() },
     },
     from: vi.fn(),
   };
@@ -46,6 +46,7 @@ import { createApp } from "../src/app";
 import { supabaseAdmin } from "../src/db/supabase";
 import { resetRateLimits } from "../src/middleware/rateLimit";
 import { requireAuth, requireRole, requireAdmin } from "../src/middleware/auth";
+import { requireCredit, requirePremium } from "../src/middleware/creditCheck";
 import { verifyStatusToken } from "../src/utils/statusToken";
 
 const mocked = supabaseAdmin as unknown as {
@@ -56,7 +57,7 @@ const mocked = supabaseAdmin as unknown as {
     signOut: Mock;
     refreshSession: Mock;
     resetPasswordForEmail: Mock;
-    admin: { updateUserById: Mock };
+    admin: { updateUserById: Mock; getUserById: Mock; listUsers: Mock };
   };
   from: Mock;
 };
@@ -66,7 +67,7 @@ const VALID_TOKEN = "valid-access-token";
 function makeQueryChain(result: { data: unknown; error: unknown }) {
   const chain: Record<string, unknown> = {};
   for (const method of ["select", "eq", "neq", "in", "like", "order", "single", "maybeSingle", "limit", "upsert", "update", "insert", "delete"]) {
-    chain[method] = () => chain;
+    chain[method] = vi.fn(() => chain);
   }
   chain.then = (
     onFulfilled?: (value: { data: unknown; error: unknown }) => unknown,
@@ -81,6 +82,33 @@ function mockProfiles(profileData: unknown, profileError: unknown = null) {
       return makeQueryChain({ data: profileData, error: profileError });
     }
     return makeQueryChain({ data: [], error: null });
+  });
+}
+
+function mockResolverReads(
+  profileData: unknown,
+  profileError: unknown = null,
+  planData: unknown = { plan: "member", premium_status: false },
+) {
+  const chains = [
+    makeQueryChain({ data: profileData, error: profileError }),
+    makeQueryChain({ data: { full_name: null }, error: null }),
+    makeQueryChain({ data: planData, error: null }),
+  ];
+  mocked.from.mockImplementation(() => makeQueryChain({ data: [], error: null }));
+  for (const chain of chains) mocked.from.mockImplementationOnce(() => chain);
+  return chains;
+}
+
+function expectOnlyResolverReads(chains: ReturnType<typeof makeQueryChain>[], userId: string) {
+  expect(mocked.from.mock.calls).toEqual([["profiles"], ["profiles"], ["profiles"]]);
+  const columns = ["role, access_status", "full_name", "plan, premium_status"];
+  chains.forEach((chain, index) => {
+    expect(chain.select).toHaveBeenCalledExactlyOnceWith(columns[index]);
+    expect(chain.eq).toHaveBeenCalledExactlyOnceWith("id", userId);
+    for (const method of ["insert", "update", "upsert", "delete"]) {
+      expect(chain[method]).not.toHaveBeenCalled();
+    }
   });
 }
 
@@ -117,6 +145,13 @@ async function startServers() {
   probeApp.get("/api/guard-owner", requireAuth, requireRole("owner"), (_req, res) => {
     res.status(200).json({ ok: "owner" });
   });
+  // Standalone credit gates exercise their fallback profile read, not req.user.
+  probeApp.get("/api/guard-premium", requirePremium, (_req, res) => {
+    res.status(200).json({ ok: true });
+  });
+  probeApp.get("/api/guard-credit", requireCredit("progress"), (_req, res) => {
+    res.status(200).json({ ok: true });
+  });
 
   // Real routers (not stubs): verify the security hardening end to end.
   probeApp.use("/api/ai/generate-questions", aiGenerateRoutes);
@@ -130,6 +165,9 @@ async function startServers() {
 
 beforeEach(() => {
   vi.clearAllMocks();
+  // Discard any unused FIFO implementations before the next auth fixture.
+  mocked.from.mockReset();
+  mocked.from.mockImplementation(() => makeQueryChain({ data: [], error: null }));
   mocked.auth.signOut.mockResolvedValue({ data: {}, error: null });
   mocked.auth.getUser.mockResolvedValue({
     data: { user: { id: "oauth-user", email: "facebook@example.com", user_metadata: { full_name: "Facebook Student" } } },
@@ -371,7 +409,7 @@ describe("auth flow", () => {
       },
       error: null,
     });
-    mockProfiles({ role: "member" });
+    mockProfiles({ role: "member", access_status: "ACTIVE" });
 
     const res = await fetch(`${baseUrl}/api/auth/login`, {
       method: "POST",
@@ -394,6 +432,66 @@ describe("auth flow", () => {
       email: "student@example.com",
       password: "password123",
     });
+  });
+
+  test.each([
+    { name: "pending", profile: { role: "member", access_status: "PENDING" }, error: null },
+    { name: "rejected", profile: { role: "member", access_status: "REJECTED" }, error: null },
+    { name: "unknown status", profile: { role: "member", access_status: "APPROVED" }, error: null },
+    { name: "missing status", profile: { role: "member" }, error: null },
+    { name: "missing profile", profile: null, error: null },
+    { name: "profile lookup failure", profile: null, error: { message: "Unavailable" } },
+  ])("login never issues a session for a non-owner with $name", async ({ profile, error }) => {
+    const userId = "11111111-1111-4111-8111-111111111111";
+    mocked.auth.signInWithPassword.mockResolvedValue({
+      data: {
+        user: { id: userId, email: "student@example.com" },
+        session: { access_token: VALID_TOKEN, refresh_token: "refresh-token", expires_in: 3600 },
+      },
+      error: null,
+    });
+    mockProfiles(profile, error);
+    vi.stubEnv("SUPABASE_SERVICE_ROLE_KEY", "test-status-signing-key");
+    try {
+      const res = await fetch(`${baseUrl}/api/auth/login`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: "student@example.com", password: "password123" }),
+      });
+      expect(res.status).toBe(403);
+      expect(res.headers.get("cache-control")).toBe("private, no-store");
+      const body = await res.json();
+      expect(verifyStatusToken(body.statusToken)).toBe(userId);
+      expect(body).not.toHaveProperty("accessToken");
+      expect(body).not.toHaveProperty("user");
+      expect(setCookiesOf(res)).toEqual([]);
+      expect(mocked.from.mock.calls).toEqual([["profiles"]]);
+    } finally {
+      vi.unstubAllEnvs();
+    }
+  });
+
+  test.each([
+    { email: "harindarsah98172@gmail.com", profile: null },
+    { email: "operator@example.com", profile: { role: "owner", access_status: "REJECTED" } },
+  ])("existing owner $email can still sign in independently", async ({ email, profile }) => {
+    mocked.auth.signInWithPassword.mockResolvedValue({
+      data: {
+        user: { id: "owner-1", email },
+        session: { access_token: VALID_TOKEN, expires_in: 3600 },
+      },
+      error: null,
+    });
+    mockProfiles(profile);
+    const res = await fetch(`${baseUrl}/api/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password: "password123" }),
+    });
+    expect(res.status).toBe(200);
+    expect((await res.json()).user.role).toBe("owner");
+    expect(res.headers.get("cache-control")).toBe("private, no-store");
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith(`sb-access-token=${VALID_TOKEN}`))).toBe(true);
   });
 
   test("login with invalid payload returns 400", async () => {
@@ -420,7 +518,7 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "student@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "plus" });
+    mockProfiles({ role: "plus", access_status: "ACTIVE" });
 
     const res = await fetch(`${baseUrl}/api/auth/me`, {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
@@ -448,6 +546,7 @@ describe("auth flow", () => {
     });
     mockProfiles({
       role: "member",
+      access_status: "ACTIVE",
       credits: 1,
       credits_reset_date: today,
       premium_status: false,
@@ -477,7 +576,7 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "student@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "member" });
+    mockProfiles({ role: "member", access_status: "ACTIVE" });
 
     const res = await fetch(`${probeUrl}/api/progress`, {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
@@ -486,9 +585,106 @@ describe("auth flow", () => {
     expect(res.status).not.toBe(401);
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual([]);
+    expect(res.headers.get("cache-control")).toBe("private, no-store");
 
     const denied = await fetch(`${probeUrl}/api/progress`);
     expect(denied.status).toBe(401);
+    expect(denied.headers.get("cache-control")).toBe("private, no-store");
+  });
+
+  test.each([
+    { name: "PENDING", profile: { role: "member", access_status: "PENDING" }, error: null },
+    { name: "REJECTED", profile: { role: "member", access_status: "REJECTED" }, error: null },
+    { name: "unknown status", profile: { role: "member", access_status: "APPROVED" }, error: null },
+    { name: "missing status", profile: { role: "member" }, error: null },
+    { name: "missing profile", profile: null, error: null },
+    { name: "profile read error", profile: null, error: { message: "Profile unavailable" } },
+  ])("valid JWT with $name cannot read private /api/progress", async ({ profile, error }) => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "user-1", email: "student@example.com" } },
+      error: null,
+    });
+    const chains = mockResolverReads(profile, error);
+
+    const res = await fetch(`${probeUrl}/api/progress`, {
+      headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
+    });
+
+    expect(res.status).toBe(401);
+    expect(await res.json()).toEqual({ error: "Unauthorized" });
+    expect(res.headers.get("cache-control")).toBe("private, no-store");
+    expect(mocked.auth.getUser).toHaveBeenCalledExactlyOnceWith(VALID_TOKEN);
+    expectOnlyResolverReads(chains, "user-1");
+  });
+
+  test("a rejected Pro cannot read /api/progress even with a Pro plan and premium flag", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "user-1", email: "pro@example.com" } },
+      error: null,
+    });
+    const chains = mockResolverReads(
+      { role: "pro", access_status: "REJECTED" },
+      null,
+      { plan: "pro", premium_status: true },
+    );
+
+    const res = await fetch(`${probeUrl}/api/progress`, {
+      headers: { Authorization: `Bearer ${VALID_TOKEN}` },
+    });
+
+    expect(res.status).toBe(401);
+    expect(await res.json()).toEqual({ error: "Unauthorized" });
+    expect(res.headers.get("cache-control")).toBe("private, no-store");
+    expectOnlyResolverReads(chains, "user-1");
+  });
+
+  test.each(["guard-premium", "guard-credit"])(
+    "%s fallback rejects a rejected Pro before its premium/free-feature bypass",
+    async (guard) => {
+      mocked.auth.getUser.mockResolvedValue({
+        data: { user: { id: "user-1", email: "pro@example.com" } },
+        error: null,
+      });
+      const chain = makeQueryChain({
+        data: { role: "pro", access_status: "REJECTED", premium_status: true },
+        error: null,
+      });
+      mocked.from.mockReturnValue(chain);
+
+      const res = await fetch(`${probeUrl}/api/${guard}`, {
+        headers: { Authorization: `Bearer ${VALID_TOKEN}` },
+      });
+
+      expect(res.status).toBe(401);
+      expect(await res.json()).toEqual({ error: "Unauthorized" });
+      expect(mocked.from.mock.calls).toEqual([["profiles"]]);
+      expect(chain.select).toHaveBeenCalledExactlyOnceWith("role, premium_status, access_status");
+      expect(chain.eq).toHaveBeenCalledExactlyOnceWith("id", "user-1");
+      for (const method of ["insert", "update", "upsert", "delete"]) {
+        expect(chain[method]).not.toHaveBeenCalled();
+      }
+    },
+  );
+
+  test.each([
+    { name: "allowlisted owner with unavailable profile", email: "harindarsah98172@gmail.com", profile: null, error: { message: "Profile unavailable" } },
+    { name: "persisted owner with REJECTED status", email: "operator@example.com", profile: { role: "owner", access_status: "REJECTED" }, error: null },
+    { name: "normalized legacy owner with PENDING status", email: "operator@example.com", profile: { role: " ADMIN ", access_status: "PENDING" }, error: null },
+  ])("$name retains independent authenticated owner access", async ({ email, profile, error }) => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "owner-1", email } },
+      error: null,
+    });
+    const chains = mockResolverReads(profile, error);
+
+    const res = await fetch(`${probeUrl}/api/guard-owner`, {
+      headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
+    });
+
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual({ ok: "owner" });
+    expect(res.headers.get("cache-control")).toBe("private, no-store");
+    expectOnlyResolverReads(chains, "owner-1");
   });
 
   test("logout clears sb-access-token cookie and responds ok", async () => {
@@ -496,7 +692,7 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "student@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "member" });
+    mockProfiles({ role: "member", access_status: "ACTIVE" });
 
     const res = await fetch(`${baseUrl}/api/auth/logout`, {
       method: "POST",
@@ -547,7 +743,7 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "student@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "member", credits: 40, credits_limit: 100, premium_status: false });
+    mockProfiles({ role: "member", access_status: "ACTIVE", credits: 40, credits_limit: 100, premium_status: false });
 
     const res = await fetch(`${baseUrl}/api/auth/refresh`, {
       method: "POST",
@@ -599,7 +795,7 @@ describe("auth flow", () => {
       },
       error: null,
     });
-    mockProfiles({ role: "member", credits: 0, credits_limit: 100, premium_status: false });
+    mockProfiles({ role: "member", access_status: "ACTIVE", credits: 0, credits_limit: 100, premium_status: false });
 
     const res = await fetch(`${baseUrl}/api/auth/signup`, {
       method: "POST",
@@ -653,13 +849,13 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "s@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "member" });
+    mockProfiles({ role: "member", access_status: "ACTIVE" });
     const denied = await fetch(`${probeUrl}/api/guard-admin`, {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
     });
     expect(denied.status).toBe(403);
 
-    mockProfiles({ role: "pro" });
+    mockProfiles({ role: "pro", access_status: "ACTIVE" });
     const ok = await fetch(`${probeUrl}/api/guard-admin`, {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
     });
@@ -678,7 +874,7 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "a@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "pro" });
+    mockProfiles({ role: "pro", access_status: "ACTIVE" });
     const denied = await fetch(`${probeUrl}/api/guard-owner`, {
       headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
     });
@@ -690,6 +886,57 @@ describe("auth flow", () => {
     });
     expect(ok.status).toBe(200);
     expect(await ok.json()).toEqual({ ok: "owner" });
+  });
+
+  test.each([
+    { method: "GET", path: "/api/admin/users", body: undefined },
+    { method: "GET", path: "/api/admin/users/target-user", body: undefined },
+    { method: "PATCH", path: "/api/admin/users/target-user/credits", body: { amount: 25, reason: "Grant" } },
+    { method: "GET", path: "/api/admin/premium-requests", body: undefined },
+    { method: "GET", path: "/api/admin/stats", body: undefined },
+  ])("ACTIVE Pro is forbidden on real $method $path before downstream data/write", async ({ method, path, body }) => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "pro-user", email: "pro@example.com" } },
+      error: null,
+    });
+    const chains = mockResolverReads(
+      { role: "pro", access_status: "ACTIVE" },
+      null,
+      { plan: "pro", premium_status: true },
+    );
+
+    const res = await fetch(`${baseUrl}${path}`, {
+      method,
+      headers: { Authorization: `Bearer ${VALID_TOKEN}`, "Content-Type": "application/json" },
+      body: body === undefined ? undefined : JSON.stringify(body),
+    });
+
+    expect(res.status).toBe(403);
+    expect(await res.json()).toEqual({ error: "Forbidden" });
+    expect(res.headers.get("cache-control")).toBe("private, no-store");
+    expectOnlyResolverReads(chains, "pro-user");
+    expect(mocked.auth.admin.listUsers).not.toHaveBeenCalled();
+    expect(mocked.auth.admin.getUserById).not.toHaveBeenCalled();
+    expect(mocked.auth.admin.updateUserById).not.toHaveBeenCalled();
+  });
+
+  test("the real admin premium list remains available to a persisted owner without ACTIVE status", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "owner-1", email: "operator@example.com" } },
+      error: null,
+    });
+    mockResolverReads({ role: "owner", access_status: "REJECTED" });
+
+    const res = await fetch(`${baseUrl}/api/admin/premium-requests`, {
+      headers: { Authorization: `Bearer ${VALID_TOKEN}` },
+    });
+
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual([]);
+    expect(res.headers.get("cache-control")).toBe("private, no-store");
+    expect(mocked.from.mock.calls).toEqual([
+      ["profiles"], ["profiles"], ["profiles"], ["premium_requests"],
+    ]);
   });
 
   test("role guard: unauthenticated requests to guarded routes return 401", async () => {
@@ -706,7 +953,7 @@ describe("auth flow", () => {
       data: { user: { id: "user-1", email: "student@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "member", credits: 5, credits_limit: 100, premium_status: false });
+    mockProfiles({ role: "member", access_status: "ACTIVE", credits: 5, credits_limit: 100, premium_status: false });
 
     const res = await fetch(`${baseUrl}/api/auth/refresh`, {
       method: "POST",
@@ -724,6 +971,47 @@ describe("auth flow", () => {
     const cookies = setCookiesOf(res);
     expect(cookies.some((c) => c.startsWith("sb-access-token=new-access"))).toBe(true);
     expect(cookies.some((c) => c.startsWith("sb-refresh-token=new-refresh"))).toBe(true);
+  });
+
+  test.each(["PENDING", "REJECTED"].flatMap((accessStatus) => [
+    { accessStatus, method: "GET", path: "/api/auth/me", cookie: `sb-access-token=${VALID_TOKEN}` },
+    { accessStatus, method: "POST", path: "/api/auth/refresh", cookie: `sb-access-token=${VALID_TOKEN}` },
+    { accessStatus, method: "POST", path: "/api/auth/refresh", cookie: "sb-refresh-token=old-refresh" },
+  ]))("$accessStatus $method $path ($cookie) keeps the signed-statusToken 403 path", async ({
+    accessStatus, method, path, cookie,
+  }) => {
+    const userId = "11111111-1111-4111-8111-111111111111";
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: userId, email: "student@example.com" } },
+      error: null,
+    });
+    mocked.auth.refreshSession.mockResolvedValue({
+      data: { session: { access_token: "new-access", refresh_token: "new-refresh", expires_in: 3600 } },
+      error: null,
+    });
+    mockProfiles({ role: "member", access_status: accessStatus });
+    const originalKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    process.env.SUPABASE_SERVICE_ROLE_KEY = "test-status-signing-key";
+    try {
+      const res = await fetch(`${baseUrl}${path}`, {
+        method,
+        headers: { Cookie: cookie, "Content-Type": "application/json" },
+      });
+
+      expect(res.status).toBe(403);
+      const payload = await res.json();
+      expect(payload.code).toBe(accessStatus === "PENDING" ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED");
+      expect(verifyStatusToken(payload.statusToken)).toBe(userId);
+      expect(payload).not.toHaveProperty("accessToken");
+      expect(payload).not.toHaveProperty("user");
+      const cleared = setCookiesOf(res).find((value) => value.startsWith("sb-access-token="));
+      expect(cleared).toMatch(/expires=thu, 01 jan 1970/i);
+      expect(setCookiesOf(res).some((value) => value.startsWith("sb-refresh-token=new-refresh"))).toBe(false);
+      expect(mocked.from.mock.calls).toEqual([["profiles"], ["profiles"], ["profiles"], ["profiles"]]);
+    } finally {
+      if (originalKey === undefined) delete process.env.SUPABASE_SERVICE_ROLE_KEY;
+      else process.env.SUPABASE_SERVICE_ROLE_KEY = originalKey;
+    }
   });
 
   test("POST /refresh with an invalid refresh token returns 401", async () => {
@@ -781,7 +1069,7 @@ describe("auth flow", () => {
       data: { user: { id: "session-user", email: "s@example.com" } },
       error: null,
     });
-    mockProfiles({ role: "member" });
+    mockProfiles({ role: "member", access_status: "ACTIVE" });
 
     let insertedPayload: unknown = null;
     const profilesImpl = mocked.from.getMockImplementation();
