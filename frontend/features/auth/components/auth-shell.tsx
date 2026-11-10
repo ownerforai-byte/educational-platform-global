@@ -5,7 +5,7 @@ import { ChevronLeft } from "lucide-react";
 /**
  * AuthShell — the reference auth screen (owner 2026-11-09): one centered
  * column like the mobile mock — circular back chip, the brand wordmark
- * ("Rainer", deliberately NO ".com"), the screen title and subtitle, then the
+ * ("Verner", deliberately NO ".com"), the screen title and subtitle, then the
  * form. The brand mark keeps the crimson identity of the reference screens.
  */
 export function AuthShell({
@@ -29,13 +29,13 @@ export function AuthShell({
           <ChevronLeft className="h-5 w-5" />
         </Link>
 
-        {/* Brand — "Rainer", never "Rainer.com" */}
+        {/* Brand — "Verner", never "Verner.com" */}
         <Link href="/" className="mt-7 flex items-center justify-center gap-2.5">
           <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#D2223D] text-lg font-extrabold text-white shadow-md shadow-[#D2223D]/25">
-            R
+            V
           </span>
           <span className="text-[26px] font-extrabold tracking-tight text-[#D2223D]">
-            Rainer
+            Verner
           </span>
         </Link>
 
