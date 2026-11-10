@@ -7525,114 +7525,12 @@
     "source": "frontend/public/data/syllabus-notes",
     "note": "note files no _manifest.json claims — shipped bytes no page loads",
     "totals": {
-      "entries": 13,
-      "authored": 13,
+      "entries": 0,
+      "authored": 0,
       "template": 0,
-      "bytes": 166075
+      "bytes": 0
     },
-    "subjects": {
-      "chemistry": {
-        "totals": {
-          "entries": 13,
-          "authored": 13,
-          "template": 0,
-          "bytes": 166075
-        },
-        "entries": [
-          {
-            "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
-            "filename": "atomic-structure/02-bohr-postulates-2.json",
-            "bytes": 23673,
-            "sha256": "de30b8be01ecce806dd8b430eda2e78ada027c206e8bee96a7ff51432f3c673f",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "spectrum-of-hydrogen-atom",
-            "filename": "atomic-structure/03-hydrogen-spectrum-2.json",
-            "bytes": 14052,
-            "sha256": "4ca82c703bca6e7ab76cc01dd6309b8f49f43d209dd75c0c1cbd05d0d232448c",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "defects-of-bohr-s-theory",
-            "filename": "atomic-structure/04-bohr-defects-2.json",
-            "bytes": 19979,
-            "sha256": "7c2f9d70a9fb3291fc15a6677b59df456926dc2f3d729d644d1644d7d1462721",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation",
-            "filename": "atomic-structure/05-de-broglie-waves-2.json",
-            "bytes": 15046,
-            "sha256": "be4d4d9c49d90749e536aa530e24575ca29f53aa4665ee8e2c397d607cb3f351",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "heisenberg-s-uncertainty-principle-and-concept-of-probability",
-            "filename": "atomic-structure/06-heisenberg-uncertainty-2.json",
-            "bytes": 12452,
-            "sha256": "bc358ff12ac6ee87be56ad4627952f2f6493df67e61c8b4c9e0c4553092ec880",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
-            "filename": "atomic-structure/08-orbitals-shapes-2.json",
-            "bytes": 13847,
-            "sha256": "43395ce92cabb9f1877190d52eb4d09a6216150be353a0c70a2744b8071dd9be",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "aufbau-principle-pauli-s-exclusion-principle-hund-s-rule-and-electronic-configurations-of-atoms-",
-            "filename": "atomic-structure/09-aufbau-pauli-hund-2.json",
-            "bytes": 7997,
-            "sha256": "0da920bfa81d1de6605951934ddaa025d3d6f63acac55688bd768601c5ae2cd9",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "dalton-s-atomic-theory-and-its-postulates",
-            "filename": "stoichiometry/01-dalton-atomic-theory-2.json",
-            "bytes": 8604,
-            "sha256": "31be0f551974a30533b4d4c2317dfb2bd24e68134ca071348e7566f0ee7c6f87",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "avogadro-s-law-and-some-deductions-molecular-mass-and-vapour-density-molecular-mass-and-volume-o",
-            "filename": "stoichiometry/03-avogadro-law-2.json",
-            "bytes": 10382,
-            "sha256": "6e6d2234c927e9cabd6bc4b5be01b2c7940cd6ce4a4b5e9562c457d638bc42e5",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "mole-and-its-relation-with-mass-volume-and-number-of-particles",
-            "filename": "stoichiometry/04-mole-concept-2.json",
-            "bytes": 9654,
-            "sha256": "dfa9b21e44b493b455467fb2260646b8d0eae2390a2fd0676aac697b42724d6c",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "limiting-reactant-and-excess-reactant",
-            "filename": "stoichiometry/05-limiting-reactant-2.json",
-            "bytes": 9226,
-            "sha256": "0687f4b83ca45dc503d7c98198b43fb4452f4b718370150dbdc105c6bff1def3",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "theoretical-yield-experimental-yield-and-yield",
-            "filename": "stoichiometry/06-yield-calculations-2.json",
-            "bytes": 9670,
-            "sha256": "806491d1b539c2fd6a251316f591f8138c1a0f06ac80bb68b79c44c85bf2e59c",
-            "status": "authored"
-          },
-          {
-            "topicSlug": "calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-proble",
-            "filename": "stoichiometry/07-empirical-molecular-formula-2.json",
-            "bytes": 11493,
-            "sha256": "170ea5d1494bd9d107c3b49d7b8bc4c8d56240b6990af3507deb41010a662d2b",
-            "status": "authored"
-          }
-        ]
-      }
-    }
+    "subjects": {}
   },
   "supplementary": {
     "source": "frontend/public/data/content/manifest.json",
