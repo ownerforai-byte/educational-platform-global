@@ -21,6 +21,7 @@
  */
 
 import Link from "next/link";
+import { CloudDownload, Star } from "lucide-react";
 import { DEPLOY_VERSION } from "@/lib/deploy-version";
 import { hasLevel, ACCESS_LABELS, type AccessLevel } from "@/lib/access-level";
 import { NAV_SECTIONS, type NavItem, type NavSection } from "@/lib/navigation";
@@ -160,10 +161,76 @@ function footerItems(
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
+/** Legal pages — always visible to everyone, in both footer views. */
+const LEGAL_LINKS: [string, string][] = [
+  ["Privacy",        "/legal/privacy"       ],
+  ["Terms",          "/legal/terms"         ],
+  ["Cookies",        "/legal/cookies"       ],
+  ["Purchases",      "/legal/purchases"     ],
+  ["Data safety",    "/legal/data-safety"   ],
+  ["Content rating", "/legal/content-rating"],
+  ["Attribution",    "/legal/attribution"   ],
+  ["Takedown",       "/legal/takedown"      ],
+];
+
+/** The platform's Play Store listing (TWA package id in android-twa/twa-manifest.json). */
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.ravikisan.platform";
+
 export function Footer({ user }: { user?: AiSparkUserLike | null }) {
   return (
     <footer className="mt-auto border-t-2 border-border/80 bg-background">
-      <div className="mx-auto max-w-7xl px-3 py-6 sm:px-4 md:px-6">
+      {/* ── Mobile view (owner 2026-11-09: "resolve the footer like this …") ──
+          the reference footer: a grey band, then the app rows (Check for
+          Updates / Rate this App) and a compact essentials strip. The website
+          view below stays exactly as it is. */}
+      <div className="md:hidden">
+        <div className="h-2.5 w-full bg-muted/50" aria-hidden="true" />
+        <ul className="divide-y divide-border/60">
+          <li className="flex items-center gap-3 px-4 py-3.5">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
+              <CloudDownload className="h-[18px] w-[18px]" />
+            </span>
+            <div className="min-w-0">
+              <p className="text-sm font-bold text-foreground">Check for Updates</p>
+              <p className="text-xs text-muted-foreground">Current version {DEPLOY_VERSION}</p>
+            </div>
+          </li>
+          <li>
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-muted/30"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
+                <Star className="h-[18px] w-[18px]" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-sm font-bold text-foreground">Rate this App</p>
+                <p className="text-xs text-muted-foreground">Share your feedback on Google Play</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <div className="space-y-3 px-4 pb-6 pt-3 text-[11px] leading-relaxed text-muted-foreground">
+          <p>An approved account is required for the study library; access depends on your plan.</p>
+          <nav aria-label="Legal" className="flex flex-wrap gap-x-4 gap-y-2">
+            {LEGAL_LINKS.map(([label, href]) => (
+              <Link
+                key={href}
+                href={href}
+                className="inline-flex min-h-8 items-center hover:text-primary"
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
+          <p>&copy; {new Date().getFullYear()} Ravikisan&apos;s Platform · v{DEPLOY_VERSION}</p>
+        </div>
+      </div>
+
+      {/* ── Website view — unchanged ── */}
+      <div className="mx-auto hidden max-w-7xl px-3 py-6 sm:px-4 md:block md:px-6">
 
         {/* Brand line — a bounded strip so the nav columns below read as the
             second zone of the footer, not one continuous wall. */}
@@ -241,16 +308,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
 
           {/* Legal pages — always visible to everyone */}
           <nav aria-label="Legal" className="flex flex-wrap gap-x-4 gap-y-3">
-            {([
-              ["Privacy",        "/legal/privacy"       ],
-              ["Terms",          "/legal/terms"         ],
-              ["Cookies",        "/legal/cookies"       ],
-              ["Purchases",      "/legal/purchases"     ],
-              ["Data safety",    "/legal/data-safety"   ],
-              ["Content rating", "/legal/content-rating"],
-              ["Attribution",    "/legal/attribution"   ],
-              ["Takedown",       "/legal/takedown"      ],
-            ] as [string, string][]).map(([label, href]) => (
+            {LEGAL_LINKS.map(([label, href]) => (
               <Link
                 key={href}
                 href={href}
