@@ -253,6 +253,9 @@ describe("deep-answer contract + source hierarchy reach every chat request", () 
     expect(DEEP_ANSWER_RULES).toContain("AT THE END, NOT UNDER EACH IDEA");
     expect(DEEP_ANSWER_RULES).toContain("OUTPUT THE LEARNER SEES, NOT RAW CODE");
     expect(DEEP_ANSWER_RULES).toContain("EASY GRAMMAR FIRST");
+    expect(MASTER_ACADEMIC_PROMPT).toContain("NEB PYQs + LIKELY PRACTICE");
+    expect(MASTER_ACADEMIC_PROMPT).toContain("practice possibilities, not predictions");
+    expect(MASTER_ACADEMIC_PROMPT).toContain("a few scannable bullets");
   });
 
   test("the source registry is ordered by trust and names a drop-in path", () => {

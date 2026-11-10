@@ -249,6 +249,8 @@ export function containsToken(haystack: string, token: string): boolean {
 
 export interface RetrievalResult {
   hits: CurriculumHit[];
+  /** Relevant verified past-paper questions, ranked separately from teaching notes. */
+  relatedPyqs: CurriculumHit[];
   coverage: CoverageGrade;
   /** Content-bearing terms of the question (what the platform had to match). */
   contentTerms: string[];
@@ -258,6 +260,16 @@ export interface RetrievalResult {
 
 /** How many RECORDS a reply may be grounded in (env-overridable). */
 export const DEFAULT_RECORD_LIMIT = Number(process.env.AI_CURRICULUM_RECORDS) || 6;
+const MAX_RELATED_PYQS = 6;
+
+/** Number of searched content terms present in the actual past-paper question. */
+function pyqQuestionOverlap(entry: CorpusEntry, terms: string[]): number {
+  const question = entry.sections.find((section) => section.label.toLowerCase() === "question")
+    ?.lines.join(" ");
+  if (!question) return 0;
+  const questionTerms = new Set(tokenize(question).map(stem));
+  return terms.filter((term) => !/^20\d{2}$/.test(term) && questionTerms.has(term)).length;
+}
 
 /**
  * Score every validated record against the question's tokens. Pure ranking — no
@@ -548,7 +560,7 @@ export function retrieve(question: string, limit = DEFAULT_RECORD_LIMIT, convers
   const matchedTerms = new Set<string>();
 
   if (q.length < 3 || !tokens.length) {
-    return { hits: [], coverage: "none", contentTerms, matchedTerms: [] };
+    return { hits: [], relatedPyqs: [], coverage: "none", contentTerms, matchedTerms: [] };
   }
 
   const { entries } = getCorpus();
@@ -612,7 +624,33 @@ export function retrieve(question: string, limit = DEFAULT_RECORD_LIMIT, convers
     0,
     Math.max(1, limit),
   );
-  return { hits, coverage, contentTerms: target, matchedTerms: Array.from(matchedTerms) };
+  // A PYQ may rank below several long teaching notes, so keep a separate small
+  // set for the answer's exam link. Require the topic to appear in the question
+  // itself (not merely in a solution or filename) to avoid attaching tangential
+  // papers that happened to reuse a keyword.
+  const anchor = strong.find((hit) => !hit.entry.source.toLowerCase().includes("/pyqs/"));
+  const semanticTerms = target.filter((term) => !/^20\d{2}$/.test(term));
+  const minOverlap = Math.min(2, Math.max(1, Math.ceil(semanticTerms.length / 3)));
+  const asksForDatedPyq = /\b(?:neb|past[- ]year|previous[- ]year|pyq)\b|\b20\d{2}\b/i.test(q);
+  const relatedPyqs = deduped
+    .filter((hit) => hit.entry.source.toLowerCase().includes("/pyqs/"))
+    .map((hit) => ({
+      hit,
+      overlap: pyqQuestionOverlap(hit.entry, target),
+    }))
+    .filter(({ hit, overlap }) => {
+      if (overlap < minOverlap) return false;
+      const sameSubject = anchor && hit.entry.subject === anchor.entry.subject;
+      // A specific two-term match in the same subject covers adjacent syllabus
+      // labels too (e.g. kinematics notes and a mechanics PYQ on projectiles).
+      // Without a strong concept anchor, only an explicit dated/PYQ request may
+      // use question-text overlap, avoiding unrelated body-word mentions.
+      return Boolean(sameSubject && overlap >= minOverlap) || (asksForDatedPyq && overlap >= minOverlap);
+    })
+    .sort((a, b) => b.overlap - a.overlap || b.hit.score - a.hit.score)
+    .slice(0, MAX_RELATED_PYQS)
+    .map(({ hit }) => hit);
+  return { hits, relatedPyqs, coverage, contentTerms: target, matchedTerms: Array.from(matchedTerms) };
 }
 
 /**
@@ -630,6 +668,31 @@ export function retrieveCurriculum(question: string, limit = 3): CurriculumHit[]
  *  blow the prompt). Records are never silently trimmed — the LAST whole
  *  record is dropped instead, so a reader only ever sees complete records. */
 const MAX_CONTEXT_CHARS = Number(process.env.AI_CURRICULUM_MAX_CHARS) || 48_000;
+
+/**
+ * A short exam-grounding block. It carries every directly related question
+ * found in the bounded set, but never dumps solutions or a full paper into the
+ * tutor prompt. Exact exam years come only from the indexed source path.
+ */
+export function formatRelatedPyqs(hits: CurriculumHit[]): string {
+  if (!hits.length) return "";
+  const lines = hits.map(({ entry }) => {
+    const question = entry.sections.find((section) => section.label.toLowerCase() === "question")
+      ?.lines.join(" ")
+      .replace(/\s+/g, " ")
+      .trim();
+    if (!question) return "";
+    const year = entry.source.match(/\b(20\d{2})\b/)?.[1];
+    const excerpt = question.length > 220 ? `${question.slice(0, 217).trimEnd()}… (excerpt)` : question;
+    return `- ${year ? `NEB ${year}` : "NEB past paper (year not indexed)"}: ${excerpt}`;
+  }).filter(Boolean);
+  if (!lines.length) return "";
+  return [
+    `[VERIFIED NEB PAST QUESTIONS — question text only; no solutions]`,
+    `Use these as compact exam grounding: cover every distinct tested form, group repeats, and do not copy long question stems into the reply. From the syllabus and these patterns, add one or two useful likely practice questions only when justified; label them as possibilities, never predictions. Do not claim these are all PYQs or that a question will appear. Keep the PYQ and practice section to a few concise bullets.`,
+    ...lines,
+  ].join("\n");
+}
 
 /** Format one record as a complete, untruncated knowledge block. */
 export function formatRecord(entry: CorpusEntry): string {
@@ -701,8 +764,11 @@ export function buildCurriculumContext(
   conversation = "",
 ): string {
   try {
-    const { hits, coverage } = retrieve(question, limit, conversation);
-    if (!hits.length) return "";
+    const { hits, relatedPyqs, coverage } = retrieve(question, limit, conversation);
+    if (!hits.length && !relatedPyqs.length) return "";
+    // The concept records teach; PYQs get a separate compact block below so
+    // full paper solutions do not make routine chat replies feel like a dump.
+    const teachingHits = hits.filter((hit) => !hit.entry.source.toLowerCase().includes("/pyqs/"));
 
     const { stats } = getCorpus();
     const statsLine =
@@ -716,7 +782,7 @@ export function buildCurriculumContext(
 
     const blocks: string[] = [];
     let used = 0;
-    for (const hit of hits) {
+    for (const hit of teachingHits) {
       const block = formatRecord(hit.entry);
       if (used + block.length > MAX_CONTEXT_CHARS && blocks.length) break; // keep records whole
       blocks.push(block);
@@ -728,10 +794,13 @@ export function buildCurriculumContext(
       `Coverage for this question: ${coverage.toUpperCase()}.`,
       // Always true, whatever the grade: the records themselves are whole. What
       // the grade changes is how much they may be relied on.
-      `Every attached record was retrieved verbatim and in full — nothing was summarised or cut.`,
-      ...directiveFor(coverage, blocks.length),
+      ...(blocks.length
+        ? [`Every attached teaching record was retrieved verbatim and in full — nothing was summarised or cut.`]
+        : [`No matching teaching record was selected; answer from established knowledge and use the indexed past questions only as exam examples.`]),
+      ...(blocks.length ? directiveFor(coverage, blocks.length) : []),
       ``,
       ...blocks,
+      ...(relatedPyqs.length ? [formatRelatedPyqs(relatedPyqs)] : []),
     ].join("\n");
   } catch {
     // Grounding is best-effort: never block a chat on it.

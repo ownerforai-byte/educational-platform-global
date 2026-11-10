@@ -5,7 +5,7 @@ import {
   resetCorpusCache,
   type CorpusEntry,
 } from "../src/ai/curriculum-corpus";
-import { retrieveCurriculum } from "../src/ai/curriculum-retrieval";
+import { buildCurriculumContext, retrieve, retrieveCurriculum } from "../src/ai/curriculum-retrieval";
 
 /**
  * PYQ-bank grounding contract (`content/pyqs/` — one folder per subject).
@@ -148,4 +148,24 @@ describe("pyq bank — retrieval reaches the bank", () => {
     const hits = retrieveCurriculum("NEB 2023 projectile range question", 6);
     expect(hits.some((h) => h.entry.source.startsWith("content/pyqs/"))).toBe(true);
   });
+
+  test("chat gets concise, verified related PYQs alongside the concept notes", () => {
+    const question = "projectile motion time of flight horizontal range";
+    const result = retrieve(question, 6);
+    expect(result.relatedPyqs.map((hit) => hit.entry.source)).toContain(
+      "content/pyqs/class-12/physics/mechanics/02-neb-2023.json",
+    );
+
+    const context = buildCurriculumContext(question, 6);
+    expect(context).toContain("[VERIFIED NEB PAST QUESTIONS");
+    expect(context).toContain("NEB 2023:");
+    expect(context).toContain("Derive expressions");
+    // The exam block supplies question stems only, not entire worked solutions.
+    expect(context).not.toContain("vertical displacement returns to zero");
+  }, 15_000);
+
+  test("past question retrieval rejects tangential keyword mentions", () => {
+    const result = retrieve("photosynthesis light reaction chlorophyll", 6);
+    expect(result.relatedPyqs).toEqual([]);
+  }, 15_000);
 });
