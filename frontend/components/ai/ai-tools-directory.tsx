@@ -277,7 +277,7 @@ function ToolCard({ tool, available, index }: { tool: Tool; available: boolean; 
     </>
   );
 
-  const base = "flex min-h-[176px] flex-col rounded-3xl border p-3.5 transition-all";
+  const base = "lazy-render flex min-h-[176px] flex-col rounded-3xl border p-3.5 transition-all";
 
   return available ? (
     <Link

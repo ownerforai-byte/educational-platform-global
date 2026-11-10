@@ -225,7 +225,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
               </Link>
             ))}
           </nav>
-          <p>&copy; {new Date().getFullYear()} Ravikisan&apos;s Platform · v{DEPLOY_VERSION}</p>
+          <p>&copy; {new Date().getFullYear()} Ravikisan&apos;s Platform</p>
         </div>
       </div>
 

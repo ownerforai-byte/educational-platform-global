@@ -1978,3 +1978,13 @@ pre {
     animation: none;
   }
 }
+
+/* ── On-demand rendering for card grids (owner 2026-11-09) ────────────────
+   The browser skips layout/paint for offscreen cards until they approach the
+   viewport, so the full class-subject and AI-tool grids are never all
+   rendered up front — navigation stays fast on phones. Pairs with the
+   card-rise-in stagger (sequential entrance, per-card animation-delay). */
+.lazy-render {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 300px;
+}

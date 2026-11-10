@@ -59,7 +59,7 @@ function SubjectCard({ subject, classLabel, notesSlug, percent, completedChapter
   return (
     <Link href={`/${notesSlug}/${subject.slug}`}
       style={{ animationDelay: `${Math.min(index, 10) * 70}ms` }}
-      className={`card-rise-in flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5 ${visual.border}`}>
+      className={`card-rise-in lazy-render flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5 ${visual.border}`}>
       <div className={`relative flex items-center justify-center bg-gradient-to-br py-6 ${visual.bg}`}>
         <ProgressRing percent={percent} textClass={visual.text} />
       </div>
@@ -98,7 +98,7 @@ function LowerGradeSubjectCard({ name, classLabel, index }: {
   return (
     <article
       style={{ animationDelay: `${Math.min(index, 10) * 70}ms` }}
-      className={`card-rise-in flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm ${visual.border}`}
+      className={`card-rise-in lazy-render flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm ${visual.border}`}
     >
       <div className={`relative flex items-center justify-center bg-gradient-to-br py-6 ${visual.bg}`}>
         <span className="flex h-[52px] w-[52px] items-center justify-center rounded-full bg-background/40 text-2xl" aria-hidden="true">

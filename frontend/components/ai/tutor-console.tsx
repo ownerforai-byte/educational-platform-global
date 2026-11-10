@@ -1250,28 +1250,38 @@ export function TutorConsole({
           </div>
         )}
 
-        {/* Subject-mode picker — this console's own feature */}
-        <div className="flex gap-1.5 overflow-x-auto px-5 sm:px-8 pb-3">
-          {MODES.map((m) => {
-            const Icon = m.icon;
-            const active = mode === m.id;
-            return (
-              <button
-                key={m.id}
-                onClick={() => chooseMode(m.id)}
-                aria-pressed={active}
-                className={cn(
-                  "flex min-h-11 items-center gap-1.5 whitespace-nowrap rounded-lg border px-3.5 py-1.5 text-[11px] font-bold transition-all",
-                  active
-                    ? "border-emerald-500/40 bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 shadow-sm shadow-emerald-500/10"
-                    : "border-border/70 bg-background text-muted-foreground hover:text-foreground hover:border-muted-foreground/40",
-                )}
-              >
-                <Icon className="h-3.5 w-3.5" />
-                {m.id}
-              </button>
-            );
-          })}
+        {/* Subject-mode picker — the reply card's Key terms chips with the
+            words replaced by the subjects (owner 2026-11-09: "make the
+            rectangular boxes (of veer chat) like key terms of veer chat and
+            under them write all; general, physics, chemistry, biology, all
+            subjects in small block — put same key terms there just replace the
+            words") — same box, same tiny label, same numbered chips. */}
+        <div className="mx-5 mb-3 rounded-2xl border border-border/70 bg-muted/20 px-3.5 py-2.5 sm:mx-8">
+          <p className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-muted-foreground">
+            <BookOpen className="h-2.5 w-2.5" aria-hidden="true" />
+            Subjects
+          </p>
+          <div className="mt-1.5 flex flex-wrap gap-1">
+            {MODES.map((m, index) => {
+              const active = mode === m.id;
+              return (
+                <button
+                  key={m.id}
+                  onClick={() => chooseMode(m.id)}
+                  aria-pressed={active}
+                  className={cn(
+                    "inline-flex items-baseline gap-1 rounded-full border px-2 py-0.5 text-[10px] font-semibold text-foreground transition-colors",
+                    active
+                      ? "border-primary/45 bg-primary/[0.10]"
+                      : "border-primary/25 bg-primary/[0.06] hover:border-primary/45",
+                  )}
+                >
+                  <span className="text-[8px] font-bold text-primary">{index + 1}</span>
+                  <span>{m.id}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 

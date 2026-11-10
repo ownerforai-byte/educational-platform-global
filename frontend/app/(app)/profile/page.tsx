@@ -5,9 +5,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   ArrowLeft,
-  CloudDownload,
-  HelpCircle,
-  Star,
   Award,
   BookOpen,
   Bookmark,
@@ -49,8 +46,6 @@ import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/access-le
 import { entryStatus, topicHref } from "@/lib/progress/catalog";
 import { SYLLABUS } from "@/lib/syllabus";
 import type { ProgressEntry } from "@/types/api";
-import { DEPLOY_VERSION } from "@/lib/deploy-version";
-import { LEGAL_LINKS, PLAY_STORE_URL } from "@/components/layout/footer";
 
 const tierBadgeConfig: Record<AccessLevel, { className: string; icon: typeof Crown }> = {
   guest: { className: "bg-slate-500/15 border-slate-500/30 text-slate-500", icon: User },
@@ -1280,20 +1275,23 @@ function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
     .toUpperCase();
 
   return (
-    <div className="container max-w-2xl space-y-5 py-8">
-      {/* Identity + the My Profile button */}
+    <div className="container max-w-2xl py-8">
+      {/* Identity + the My Profile button — ONE compact block (owner
+          2026-11-09: "remove the footer from 'you' and optmize the block …
+          keep only one version overall" — the footer lives only in the site
+          footer, nothing duplicated here). */}
       <Card className="overflow-hidden border-primary/20 shadow-sm">
-        <div className="relative h-24 overflow-hidden bg-gradient-to-r from-primary via-primary/80 to-violet-600">
-          <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-white/10" />
-          <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-card/90 to-transparent" />
+        <div className="relative h-20 overflow-hidden bg-gradient-to-r from-primary via-primary/80 to-violet-600">
+          <div className="absolute -top-10 -right-10 h-36 w-36 rounded-full bg-white/10" />
+          <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-card/90 to-transparent" />
         </div>
         <CardContent className="pb-5 pt-0">
           <div className="flex items-center gap-4">
-            <div className="-mt-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border-4 border-background bg-gradient-to-tr from-primary/30 via-primary/15 to-violet-500/30 text-xl font-extrabold text-primary shadow-xl">
+            <div className="-mt-9 flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-2xl border-4 border-background bg-gradient-to-tr from-primary/30 via-primary/15 to-violet-500/30 text-lg font-extrabold text-primary shadow-xl">
               {initials}
             </div>
             <div className="min-w-0">
-              <h1 className="truncate text-xl font-extrabold tracking-tight">{displayName}</h1>
+              <h1 className="truncate text-lg font-extrabold tracking-tight">{displayName}</h1>
               <span className="mt-1 inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary">
                 {ACCESS_LABELS[tier]}
               </span>
@@ -1309,77 +1307,6 @@ function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
         </CardContent>
       </Card>
 
-      {/* App rows — the footer's mobile-view items, here (owner 2026-11-09) */}
-      <section className="overflow-hidden rounded-3xl border border-border/60 bg-card">
-        <div className="h-2 w-full bg-muted/50" aria-hidden="true" />
-        <ul className="divide-y divide-border/60">
-          <li className="flex items-center gap-3 px-4 py-3.5">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
-              <CloudDownload className="h-[18px] w-[18px]" />
-            </span>
-            <div className="min-w-0">
-              <p className="text-sm font-bold text-foreground">Check for Updates</p>
-              <p className="text-xs text-muted-foreground">Current version {DEPLOY_VERSION}</p>
-            </div>
-          </li>
-          <li>
-            <a
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-muted/30"
-            >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
-                <Star className="h-[18px] w-[18px]" />
-              </span>
-              <div className="min-w-0">
-                <p className="text-sm font-bold text-foreground">Rate this App</p>
-                <p className="text-xs text-muted-foreground">Share your feedback on Google Play</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <Link
-              href="/help"
-              className="flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-muted/30"
-            >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
-                <HelpCircle className="h-[18px] w-[18px]" />
-              </span>
-              <div className="min-w-0">
-                <p className="text-sm font-bold text-foreground">Help &amp; FAQs</p>
-                <p className="text-xs text-muted-foreground">Find instant answers to your questions</p>
-              </div>
-            </Link>
-          </li>
-        </ul>
-      </section>
-
-      {/* Legal — the rest of the footer links */}
-      <section className="rounded-3xl border border-border/60 bg-card p-4">
-        <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          Legal
-        </h2>
-        <div className="mt-2 grid grid-cols-2 gap-1.5">
-          {LEGAL_LINKS.map(([label, href]) => (
-            <Link
-              key={href}
-              href={href}
-              className="inline-flex min-h-9 items-center rounded-xl px-2.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-primary/5 hover:text-primary"
-            >
-              {label}
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Plan note + version — the footer essentials */}
-      <div className="space-y-1.5 px-1 pb-2 text-[11px] leading-relaxed text-muted-foreground">
-        <p>An approved account is required for the study library; access depends on your plan.</p>
-        <p>
-          &copy; {new Date().getFullYear()} Ravikisan&apos;s Platform · v{DEPLOY_VERSION}
-        </p>
-      </div>
     </div>
   );
 }
