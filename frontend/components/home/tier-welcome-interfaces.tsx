@@ -1,5 +1,13 @@
 import Link from "next/link";
-import { VisitorHomeChat } from "@/components/home/visitor-home-chat";
+import {
+  ArrowRight,
+  BookOpen,
+  CheckCircle2,
+  FlaskConical,
+  GraduationCap,
+  Sparkles,
+  Trophy,
+} from "lucide-react";
 import {
   ACCESS_LABELS,
   ACCESS_RANK,
@@ -22,6 +30,11 @@ import { SECTIONS } from "@/lib/sections";
  * The post-auth flow lands here first: greet the viewer with the plan they
  * were granted, show what it opens, and hand them the Go button to their own
  * tier home. Nothing here is configurable — the copy is the plan.
+ *
+ * Owner 2026-11-09: "remove ai widget from welcome and make the welcome
+ * attractive" — the visitor welcome no longer carries the ask-anything box
+ * (VisitorHomeChat stays on the guest HOME at /home), and both welcomes are
+ * presented like an entrance: soft light blooms, a gradient hero and cards.
  */
 
 type UserTier = Exclude<AccessLevel, "guest">;
@@ -59,10 +72,14 @@ function homeHrefFor(tier: AccessLevel): string {
 function TierWelcome({ tier }: { tier: UserTier }) {
   const open = SECTIONS.filter((s) => ACCESS_RANK[s.minTier] <= ACCESS_RANK[tier]);
   return (
-    <div className="flex min-h-[80vh] items-center justify-center px-4 py-10">
-      <div className="w-full max-w-2xl space-y-6">
+    <div className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-4 py-10">
+      {/* Soft light blooms — a welcome should feel like an entrance */}
+      <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-[32rem] -translate-x-1/2 rounded-full bg-primary/15 blur-[110px]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 rounded-full bg-violet-500/15 blur-[100px]" />
+
+      <div className="relative w-full max-w-2xl space-y-6">
         {/* Hero */}
-        <div className="rounded-3xl border-2 border-border/80 bg-card p-6 sm:p-8 shadow-sm">
+        <div className="rounded-3xl border-2 border-border/80 bg-gradient-to-br from-primary/[0.08] via-card to-card p-6 shadow-lg shadow-primary/5 sm:p-8">
           <p className="text-[11px] font-bold uppercase tracking-widest text-primary">
             Welcome · {ACCESS_LABELS[tier]} plan
           </p>
@@ -87,8 +104,9 @@ function TierWelcome({ tier }: { tier: UserTier }) {
             {open.slice(0, 10).map((s) => (
               <span
                 key={s.id}
-                className="rounded-full border border-border/60 bg-background px-2.5 py-1 text-[11px] font-medium text-foreground"
+                className="inline-flex items-center gap-1 rounded-full border border-border/60 bg-background px-2.5 py-1 text-[11px] font-medium text-foreground"
               >
+                <CheckCircle2 className="h-3 w-3 text-primary" aria-hidden="true" />
                 {s.title}
               </span>
             ))}
@@ -105,9 +123,10 @@ function TierWelcome({ tier }: { tier: UserTier }) {
         <div className="flex flex-wrap items-center gap-3">
           <Link
             href={homeHrefFor(tier)}
-            className="inline-flex items-center gap-2 rounded-2xl bg-primary px-6 py-3 text-sm font-bold text-primary-foreground shadow-sm transition hover:opacity-90"
+            className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition hover:opacity-90"
           >
-            {TIER_CTA[tier]} →
+            {TIER_CTA[tier]}
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
           </Link>
         </div>
       </div>
@@ -125,55 +144,112 @@ function TierWelcome({ tier }: { tier: UserTier }) {
  * carries the sign-in button).
  *
  * One page for every visitor regardless of anything else: the welcome hero
- * with the Go option (→ the guest home at /home), the account-creation path,
- * and the public overview as its body. Signed-in viewers never see this page —
- * the run gate replaces them onto their own tier welcome.
+ * with the Go option (→ the guest home at /home) and the account-creation
+ * path, then a light overview of what lives inside. Signed-in viewers never
+ * see this page — the run gate replaces them onto their own tier welcome.
+ * Owner 2026-11-09: the ask-anything AI box was removed from this screen.
  */
 export function UniversalWelcome() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <header className="border-b border-border">
-        <div className="mx-auto flex min-h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-          <Link href="/" aria-label="Ravikisan's Platform home" className="flex items-center gap-2.5 text-sm font-semibold tracking-tight">
-            <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">R</span>
-            <span>Ravikisan&apos;s Platform</span>
+    <div className="relative min-h-screen overflow-hidden bg-background text-foreground">
+      {/* Soft light blooms — the entrance, not a flat white page */}
+      <div className="pointer-events-none absolute -top-28 left-1/2 h-80 w-[36rem] -translate-x-1/2 rounded-full bg-primary/15 blur-[110px]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-violet-500/15 blur-[110px]" />
+
+      <header className="relative border-b border-border/60 bg-background/70 backdrop-blur">
+        <div className="mx-auto flex min-h-20 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+          <Link href="/" aria-label="Ravikisan's Platform home" className="flex items-center gap-3">
+            <span aria-hidden="true" className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-lg font-extrabold text-primary-foreground shadow-md shadow-primary/20">R</span>
+            <span className="text-lg font-bold tracking-tight">Ravikisan&apos;s Platform</span>
           </Link>
           {/* Plans live in the footer only (owner 2026-10-25) — the universal
               welcome carries zero plans traces. */}
         </div>
       </header>
-      <main className="flex min-h-[calc(100vh-9rem)] items-center justify-center px-4 py-12">
-        <div className="w-full max-w-2xl space-y-6 text-center">
-          <p className="text-[11px] font-bold uppercase tracking-widest text-primary">
-            Welcome
-          </p>
-          <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Welcome to Ravikisan&apos;s Platform
-          </h1>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            Ask anything in one box: you get the short, general answer here.
-            Full step-by-step help, notes, and labs open after you sign in, on
-            the plan that includes them.
-          </p>
-          <VisitorHomeChat />
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <Link
-              href="/home"
-              aria-label="Go — continue to the guest home"
-              className="inline-flex items-center gap-2 rounded-2xl bg-primary px-8 py-3 text-sm font-bold text-primary-foreground shadow-sm transition hover:opacity-90"
-            >
-              Go
-            </Link>
-            <Link
-              href="/signup"
-              className="inline-flex items-center rounded-2xl border-2 border-border/80 px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary hover:text-primary"
-            >
-              Create an account
-            </Link>
-          </div>
+
+      <main className="relative mx-auto flex max-w-6xl flex-col items-center px-4 py-14 sm:px-6">
+        {/* ── Hero ─────────────────────────────────────────────────────── */}
+        <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+          <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+          Welcome
+        </span>
+
+        <h1 className="mt-6 text-center text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl">
+          Welcome to{" "}
+          <span className="bg-gradient-to-r from-primary via-violet-500 to-emerald-400 bg-clip-text text-transparent">
+            Ravikisan&apos;s Platform
+          </span>
+        </h1>
+
+        <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-muted-foreground">
+          NEB Class 11 &amp; 12, taught like a beautiful notebook — complete
+          notes, 3D labs, rigorous proofs, past papers and Veer, your tutor.
+          Browse freely now; sign in whenever you want to keep your progress.
+        </p>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <Link
+            href="/home"
+            aria-label="Go — continue to the guest home"
+            className="group inline-flex h-12 items-center gap-2 rounded-full bg-primary px-8 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition hover:opacity-90"
+          >
+            Go
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+          </Link>
+          <Link
+            href="/signup"
+            className="inline-flex h-12 items-center rounded-full border-2 border-border/80 px-8 text-sm font-semibold text-foreground transition hover:border-primary hover:text-primary"
+          >
+            Create an account
+          </Link>
+        </div>
+
+        {/* ── What lives inside — display-only cards (no server-only imports) ── */}
+        <div className="mt-14 grid w-full max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              icon: BookOpen,
+              tint: "bg-sky-500/10 text-sky-500",
+              title: "Complete NEB notes",
+              desc: "Class 11 & 12 in official syllabus order.",
+            },
+            {
+              icon: FlaskConical,
+              tint: "bg-violet-500/10 text-violet-500",
+              title: "96+ 3D virtual labs",
+              desc: "Physics, chemistry & biology simulations.",
+            },
+            {
+              icon: Trophy,
+              tint: "bg-emerald-500/10 text-emerald-500",
+              title: "Theorems & PYQs",
+              desc: "Rigorous proofs and real board questions.",
+            },
+            {
+              icon: GraduationCap,
+              tint: "bg-amber-500/10 text-amber-500",
+              title: "Veer, your tutor",
+              desc: "Syllabus-grounded answers, step by step.",
+            },
+          ].map((card) => {
+            const Icon = card.icon;
+            return (
+              <article
+                key={card.title}
+                className="rounded-2xl border border-border/60 bg-card/70 p-5 text-left shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5 hover:shadow-md"
+              >
+                <span className={`flex h-10 w-10 items-center justify-center rounded-xl ${card.tint}`}>
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <h2 className="mt-3 text-sm font-bold">{card.title}</h2>
+                <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{card.desc}</p>
+              </article>
+            );
+          })}
         </div>
       </main>
-      <footer className="border-t border-border">
+
+      <footer className="relative border-t border-border/60 bg-background/70 backdrop-blur">
         {/* No plans link here (owner 2026-11-03): the welcome screens carry the
             brand line only, so the first thing a visitor reads is the welcome
             itself, not a price ladder. */}
