@@ -3,25 +3,116 @@
   "unitSlug": "algebra",
   "topicSlug": "minors-cofactors-determinants",
   "topicTitle": "Matrix 5.2 - Theory: Minors, Cofactors, Determinants",
-  "relevance": 55,
-  "notes": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
+  "relevance": 100,
   "animation3D": "algebra",
   "motionGraphics": "algebra",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Matrix 5.2 - Theory: Minors, Cofactors, Determinants covers essential principles and applications.",
-  "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
-  "mcs": [],
-  "importantConcepts": [],
-  "importantTasks": [],
+  "notes": [
+    "**Minor.** For a square matrix A, the minor M_ij is the determinant of the submatrix obtained by deleting row i and column j. For a 3 × 3 matrix each minor is a 2 × 2 determinant.",
+    "**Cofactor.** C_ij = (−1)^(i+j) M_ij; the sign alternates like a chessboard starting with + at (1,1): + − + / − + − / + − +.",
+    "**Determinant by expansion.** det A = Σ_j a_ij C_ij along any row i, or Σ_i a_ij C_ij along any column j. Choose the row or column with the most zeros to cut the work.",
+    "**Worked example.** For A = [[1, 2, 3], [0, 4, 5], [1, 0, 6]], expanding along row 2 gives det A = −0·C_21 + 4·C_22 − 5·C_23 where C_22 = 1·6 − 3·1 = 3 and C_23 = −(1·0 − 2·1) = 2, so det A = 4·3 − 5·2 = 2.",
+    "**2 × 2 base case.** det [[a, b], [c, d]] = ad − bc; every larger determinant reduces to repeated applications of this rule.",
+    "**Alien cofactors.** Σ_j a_kj C_ij = 0 when k ≠ i: expanding a row using another row's cofactors always gives zero. This identity is the reason A·adj A = (det A) I.",
+    "**Adjoint.** adj A is the transpose of the cofactor matrix, (adj A)_ij = C_ji. Students most often lose marks by forgetting this transposition.",
+    "**Inverse.** A⁻¹ = adj A / det A, which exists exactly when det A ≠ 0; a singular matrix (det A = 0) has no inverse.",
+    "**Cramer's rule.** For AX = B with det A ≠ 0, x_i = det(A_i)/det A, where A_i is A with column i replaced by B; it solves small systems quickly but is inefficient for large ones.",
+    "**Row operations.** Swapping two rows flips the sign of det A; multiplying a row by k multiplies det A by k; adding a multiple of one row to another leaves det A unchanged.",
+    "**Triangular shortcut.** If A is upper or lower triangular, det A is simply the product of its diagonal entries, because every other term in the expansion contains a zero factor.",
+    "**Consistency test.** For a system of linear equations, det A ≠ 0 gives a unique solution; det A = 0 means either no solution or infinitely many, decided by comparing ranks."
+  ],
+  "keyPoints": [
+    "Minor and cofactor",
+    "Laplace expansion",
+    "Adjoint and inverse",
+    "Cramer's rule"
+  ],
+  "summary": "The minor M_ij is the determinant left after deleting row i and column j; the cofactor is C_ij = (−1)^(i+j) M_ij. Expanding along any row or column with these cofactors gives the determinant, and the same cofactor matrix (transposed) builds the inverse and Cramer's rule.",
+  "importantStatements": [
+    "A square matrix is invertible if and only if its determinant is non-zero.",
+    "A · adj(A) = adj(A) · A = det(A) I for every square matrix A.",
+    "Expanding one row with the cofactors of a different row gives zero."
+  ],
+  "importantNotes": [
+    "The cofactor carries the sign (−1)^(i+j); the minor does not.",
+    "adj A is the TRANSPOSE of the cofactor matrix, not the cofactor matrix itself.",
+    "det(AB) = det A · det B, but det(A + B) is not generally det A + det B."
+  ],
+  "examShortTricks": [
+    "Always expand along the row or column containing the most zeros.",
+    "Create zeros first with row-addition operations, which leave the determinant unchanged.",
+    "For a 3 × 3 determinant, Sarrus' rule (sum of three diagonals minus three anti-diagonals) is a fast cross-check but does not extend to 4 × 4."
+  ],
+  "importantConcepts": [
+    "Minor",
+    "Cofactor",
+    "Determinant",
+    "Adjoint",
+    "Singular matrix"
+  ],
+  "formulas": [
+    "M_ij = det(A with row i and column j removed)",
+    "C_ij = (−1)^(i+j) M_ij",
+    "det A = Σ_j a_ij C_ij = Σ_i a_ij C_ij",
+    "A⁻¹ = adj(A)/det(A),  det A ≠ 0",
+    "x_i = det(A_i)/det(A)   (Cramer's rule)"
+  ],
+  "examples": [
+    "Find the cofactor C_12 of A = [[1, 2, 3], [4, 5, 6], [7, 8, 10]]. Delete row 1 and column 2: M_12 = det[[4, 6], [7, 10]] = 40 − 42 = −2, so C_12 = (−1)³(−2) = 2.",
+    "Compute det[[2, 0, 0], [1, 3, 0], [4, 5, 6]]. The matrix is lower triangular, so det = 2 · 3 · 6 = 36 directly."
+  ],
+  "practiceQuestions": [
+    "Find all cofactors of the third row of A = [[1, 0, 2], [3, 1, 1], [0, 2, 4]] and hence det A.",
+    "Use Cramer's rule to solve 2x + y = 5, x − 3y = −1.",
+    "If det A = 5, find det(adj A) for a 3 × 3 matrix A."
+  ],
+  "confusion": [
+    "Forgetting that adj A is the transpose of the cofactor matrix; using the cofactor matrix directly gives the wrong inverse.",
+    "Believing a row swap leaves the determinant unchanged; it actually reverses the sign."
+  ],
+  "practice": [
+    "Evaluate one 3 × 3 determinant by expanding along two different rows and confirm the answers agree.",
+    "Verify A · adj A = det(A) I numerically for a 2 × 2 matrix of your choice."
+  ],
+  "universalFacts": [
+    "A square matrix with two equal rows has determinant zero.",
+    "det(kA) = kⁿ det A for an n × n matrix A."
+  ],
+  "specialNotes": [
+    "Cramer's rule needs det A ≠ 0; when det A = 0 switch to rank comparison instead.",
+    "For a 2 × 2 matrix [[a, b], [c, d]], adj A = [[d, −b], [−c, a]] — swap the diagonal and negate the off-diagonal."
+  ],
+  "examNotes": [
+    "Show the sign of each cofactor explicitly; examiners award method marks for the (−1)^(i+j) step.",
+    "State the condition det A ≠ 0 before writing A⁻¹."
+  ],
+  "importantTasks": [
+    "Build a cofactor matrix for a 3 × 3 case",
+    "Solve a 3-variable system by Cramer's rule"
+  ],
+  "mcs": [
+    {
+      "question": "For a 3 × 3 matrix, the cofactor C_23 equals",
+      "options": [
+        "M_23",
+        "−M_23",
+        "M_32",
+        "−M_32"
+      ],
+      "answer": "B",
+      "explanation": "(−1)^(2+3) = −1, and a cofactor uses the same indices' minor, not the transposed one."
+    },
+    {
+      "question": "If det A = 0 for a square matrix A, then",
+      "options": [
+        "A has an inverse",
+        "A is singular",
+        "adj A is zero",
+        "A is the identity"
+      ],
+      "answer": "B",
+      "explanation": "A zero determinant means A is singular and no inverse exists."
+    }
+  ],
+  "visualType": "determinant-expansion",
   "duplicateType": 1
 }

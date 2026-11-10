@@ -8,9 +8,9 @@
   },
   "totals": {
     "entries": 941,
-    "authored": 935,
-    "template": 6,
-    "bytes": 12192016
+    "authored": 941,
+    "template": 0,
+    "bytes": 12228063
   },
   "subjects": {
     "biology": {
@@ -3752,17 +3752,17 @@
     "mathematics": {
       "totals": {
         "entries": 101,
-        "authored": 95,
-        "template": 6,
-        "bytes": 636784
+        "authored": 101,
+        "template": 0,
+        "bytes": 672831
       },
       "units": {
         "algebra": {
           "totals": {
             "entries": 14,
-            "authored": 12,
-            "template": 2,
-            "bytes": 81807
+            "authored": 14,
+            "template": 0,
+            "bytes": 94045
           },
           "entries": [
             {
@@ -3803,9 +3803,9 @@
             {
               "topicSlug": "function-domain-range",
               "filename": "03-function-domain-range.json",
-              "bytes": 685,
-              "sha256": "6a0fadb4dc2a2fc0d2db9b10944e7f70dca38e4c0534c0fb635977a670682a3b",
-              "status": "template"
+              "bytes": 7248,
+              "sha256": "687baf4180d806b0c329481c97b9689a5b049b7b64fb4a2bb0eb07bee3678ffc",
+              "status": "authored"
             },
             {
               "topicSlug": "matrices-and-determinants-transpose-properties-inverse",
@@ -3859,9 +3859,9 @@
             {
               "topicSlug": "minors-cofactors-determinants",
               "filename": "minors-cofactors-determinants.json",
-              "bytes": 770,
-              "sha256": "2c5d418bc26ec06c2fdb87a6389cf11d207d60d41966982bd989542e26a7f868",
-              "status": "template"
+              "bytes": 6445,
+              "sha256": "de0f00e5e937a5c492d6387c8c76b11ea848f55a6fa51d15b99b2f5fd92eb2f7",
+              "status": "authored"
             }
           ]
         },
@@ -4460,9 +4460,9 @@
         "vectors": {
           "totals": {
             "entries": 11,
-            "authored": 7,
-            "template": 4,
-            "bytes": 22046
+            "authored": 11,
+            "template": 0,
+            "bytes": 45855
           },
           "entries": [
             {
@@ -4475,16 +4475,16 @@
             {
               "topicSlug": "collinear-non-collinear-vectors",
               "filename": "01-collinear-non-collinear-vectors.json",
-              "bytes": 722,
-              "sha256": "66b5bf76ac8e9d21a7a7c692af65844885ae03f96c431681cf85f6bd1f212746",
-              "status": "template"
+              "bytes": 6548,
+              "sha256": "9292f8ea5f5fc739c52217b4ef0839cbe0bc7703e5ad53456bdc572e0600036f",
+              "status": "authored"
             },
             {
               "topicSlug": "vector-algebra",
               "filename": "01-vector-algebra-types-addition-and-scalar-multiplication.json",
-              "bytes": 826,
-              "sha256": "051dd48ca72f777e3029405796eec25a3d462b4ee2550cdf0ac403037d4cf567",
-              "status": "template"
+              "bytes": 6724,
+              "sha256": "20e9a15a01f14eff7a3f4f528a9809a7abaa12fc7c221607bdc49783c9ca3707",
+              "status": "authored"
             },
             {
               "topicSlug": "dot-product-and-its-applications",
@@ -4510,16 +4510,16 @@
             {
               "topicSlug": "linear-combination-vectors",
               "filename": "02-linear-combination-vectors.json",
-              "bytes": 699,
-              "sha256": "1eedff4706b0bd3fec7cf9925605f90b4c0350e736f8a5a47231bbbdc4d6c754",
-              "status": "template"
+              "bytes": 6760,
+              "sha256": "021fdce81c3f674f4583c64a17fa765dd9ad42937c41186c0b382c2c204d9ebd",
+              "status": "authored"
             },
             {
               "topicSlug": "cross-product-and-its-applications",
               "filename": "03-cross-product-and-its-applications.json",
-              "bytes": 739,
-              "sha256": "6107ce012619eb5f99d73ee7d10a10e1aef801a3289906bcb77c5b361d83dc16",
-              "status": "template"
+              "bytes": 6763,
+              "sha256": "40f1fb6776f4fa693888b38c2d9a03f446a5b67cb976fee08e0b6edffe7a5a6c",
+              "status": "authored"
             },
             {
               "topicSlug": "cross-product-of-two-vectors",
@@ -7535,12 +7535,12 @@
   "supplementary": {
     "source": "frontend/public/data/content/manifest.json",
     "note": "second content family; entries carry their payload inline (readers use data, not the path)",
-    "bytes": 19197410,
-    "sha256": "1071a1bb0e9b3f1640d3a439ef1a2c12838ee4f912a821f68c44fcffe7642879",
+    "bytes": 19228962,
+    "sha256": "ce8c023b92a2980036cacb794c54b95ba08b7ab3b56da1007804101f6436b463",
     "totals": {
       "claims": 2532,
-      "authored": 2341,
-      "template": 191
+      "authored": 2347,
+      "template": 185
     },
     "groups": {
       "_index.json": {
@@ -7608,8 +7608,8 @@
       "notes/concepts": {
         "totals": {
           "claims": 1384,
-          "authored": 1348,
-          "template": 36
+          "authored": 1354,
+          "template": 30
         },
         "entries": [
           {
@@ -9506,7 +9506,7 @@
           },
           {
             "path": "notes/concepts/class-11/mathematics/algebra/03-function-domain-range.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/algebra/03-matrices-and-determinants-transpose-properties-inverse.json",
@@ -9538,7 +9538,7 @@
           },
           {
             "path": "notes/concepts/class-11/mathematics/algebra/minors-cofactors-determinants.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/analytic-geometry/01-angle-bisector-a1a2-plus-b1b2-rule.json",
@@ -9850,11 +9850,11 @@
           },
           {
             "path": "notes/concepts/class-11/mathematics/vectors/01-collinear-non-collinear-vectors.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/vectors/01-vector-algebra-types-addition-and-scalar-multiplication.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/vectors/02-dot-product-and-its-applications.json",
@@ -9870,11 +9870,11 @@
           },
           {
             "path": "notes/concepts/class-11/mathematics/vectors/02-linear-combination-vectors.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/vectors/03-cross-product-and-its-applications.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/vectors/03-cross-product-of-two-vectors.json",

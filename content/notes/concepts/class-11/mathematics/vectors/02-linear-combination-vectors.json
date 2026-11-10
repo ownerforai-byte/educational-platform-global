@@ -4,44 +4,116 @@
   "topicSlug": "linear-combination-vectors",
   "topicTitle": "Linear Combination of Vectors",
   "relevance": 100,
-  "notes": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
   "animation3D": "vectors",
   "motionGraphics": "vectors",
-  "examples": [
-    "Application of Linear Combination of Vectors"
+  "notes": [
+    "**Definition.** Given vectors v₁, …, vₙ and scalars x₁, …, xₙ, the vector r = x₁v₁ + … + xₙvₙ is a linear combination of them.",
+    "**Span.** The set of all linear combinations of v₁, …, vₙ is their span. In ℝ² two non-collinear vectors span the whole plane; in ℝ³ three non-coplanar vectors span all of space.",
+    "**Worked example.** Write (7, 1) as a combination of a = (1, 1) and b = (2, −1): x + 2y = 7 and x − y = 1 give y = 2, x = 3, so (7, 1) = 3a + 2b.",
+    "**Coefficient system.** Equating components turns r = x₁v₁ + … + xₙvₙ into a system of linear equations; solve by elimination, substitution, or Cramer's rule.",
+    "**Existence.** A solution exists iff r lies in the span. Geometrically, if a and b span a plane and r has a component out of that plane, no coefficients exist.",
+    "**Uniqueness.** Coefficients are unique exactly when the vectors are linearly independent; with dependent vectors, infinitely many coefficient sets produce the same r.",
+    "**Linear independence.** v₁, …, vₙ are independent when x₁v₁ + … + xₙvₙ = 0 forces every xᵢ = 0; otherwise one vector is a combination of the others.",
+    "**Basis.** An independent set that spans the space is a basis. In ℝ³ the standard basis is i, j, k, and (x, y, z) = xi + yj + zk with unique coefficients.",
+    "**Determinant test.** For three vectors in ℝ³, independence is equivalent to the determinant of the matrix with those vectors as rows (or columns) being non-zero; zero determinant means coplanar and dependent.",
+    "**Affine combinations.** When the coefficients sum to 1, the combination stays in the plane (or line) through the points; p = (1 − t)a + t b traces the segment AB as t runs from 0 to 1.",
+    "**Vector equation of a line.** r = a + t d is an affine combination of a point and a direction; the plane through a with directions d₁, d₂ is r = a + s d₁ + t d₂.",
+    "**Exam caution.** Do not assume a basis: check independence first. Three vectors with scalar triple product zero are coplanar, so they cannot represent every vector of ℝ³."
   ],
-  "practiceQuestions": [
-    "Q1. Define Linear Combination of Vectors.",
-    "Q3. Problem on Linear Combination of Vectors."
-  ],
-  "formulas": [],
   "keyPoints": [
-    "Application of Linear Combination of Vectors",
-    "Connection of Linear Combination of Vectors to other topics"
+    "Linear combination",
+    "Span",
+    "Linear independence",
+    "Basis",
+    "Affine combination"
   ],
-  "summary": "Linear Combination of Vectors covers essential principles and applications.",
-  "specialNotes": [],
+  "summary": "A linear combination of vectors v₁, …, vₙ is any sum x₁v₁ + … + xₙvₙ with real coefficients. Two non-collinear vectors span a plane, three non-coplanar vectors span space; solving for the coefficients is solving a linear system, and uniqueness is exactly linear independence.",
   "importantStatements": [
-    "Statement 1: Definition of Linear Combination of Vectors",
-    "Statement 2: Theorem related to Linear Combination of Vectors",
-    "Statement 3: Condition for Linear Combination of Vectors to be valid",
-    "Statement 4: Principle governing Linear Combination of Vectors",
-    "Statement 5: Corollary or consequence of Linear Combination of Vectors"
+    "A vector lies in the span of v₁, …, vₙ exactly when the coefficient system is consistent.",
+    "Coefficients in a basis are unique.",
+    "Three vectors in ℝ³ are independent iff their scalar triple product is non-zero."
   ],
   "importantNotes": [
-    "Linear Combination of Vectors is based on fundamental principles."
+    "Independence controls uniqueness, not existence; a spanning set controls existence.",
+    "A set containing the zero vector is automatically dependent.",
+    "In ℝⁿ no more than n vectors can be linearly independent."
   ],
   "examShortTricks": [
-    "Recall the formula for Linear Combination of Vectors."
+    "Put the vectors as COLUMNS of a matrix and row-reduce the augmented system [v₁ … vₙ | r].",
+    "For two 2-D vectors, a non-zero determinant x₁y₂ − x₂y₁ immediately proves they span the plane.",
+    "If coefficients must sum to 1, add that equation to the system before solving."
   ],
-  "examNotes": [],
-  "mcs": [],
   "importantConcepts": [
-    "Definition and significance of Linear Combination of Vectors."
+    "Linear combination",
+    "Span",
+    "Linear dependence",
+    "Basis",
+    "Affine combination"
   ],
-  "importantTasks": [],
+  "formulas": [
+    "r = x₁v₁ + x₂v₂ + … + xₙvₙ",
+    "span{v₁, …, vₙ} = { Σ xᵢvᵢ : xᵢ ∈ ℝ }",
+    "independence ⇔ Σ xᵢvᵢ = 0 ⇒ xᵢ = 0 for all i",
+    "det[v₁ v₂ v₃] ≠ 0 ⇔ {v₁, v₂, v₃} is a basis of ℝ³",
+    "p = (1 − t)a + t b,  0 ≤ t ≤ 1  (segment AB)"
+  ],
+  "examples": [
+    "Express (4, 5, 6) as a combination of i, j, k: (4, 5, 6) = 4i + 5j + 6k, with coefficients unique because the standard basis is independent.",
+    "Check whether (1, 0, 0), (0, 1, 0) and (1, 1, 0) are independent. The determinant of [[1,0,0],[0,1,0],[1,1,0]] is 0, so they are coplanar and dependent: the third equals the sum of the first two."
+  ],
+  "practiceQuestions": [
+    "Write (5, 3) as a linear combination of (1, 1) and (3, 1).",
+    "Determine whether (1, 2, 3), (0, 1, 2) and (0, 0, 1) form a basis of ℝ³.",
+    "Find t so that the point (1 − t)(2, 1) + t(6, 5) is the midpoint of the segment."
+  ],
+  "confusion": [
+    "Thinking any two vectors span ℝ²; parallel vectors span only a line.",
+    "Assuming a representation is unique without first proving the vectors are independent."
+  ],
+  "practice": [
+    "Solve three coefficient systems by row reduction and check each answer by re-substitution.",
+    "Find two different coefficient sets for the same vector using a dependent set."
+  ],
+  "universalFacts": [
+    "Every vector space has a basis, and all bases of a given space have the same number of elements.",
+    "The dimension of ℝ³ is 3, so four vectors in ℝ³ are always dependent."
+  ],
+  "specialNotes": [
+    "The section formula is an affine combination: coefficients n/(m+n) and m/(m+n) sum to 1.",
+    "Centroids use equal weights: the centroid of a triangle with vertices a, b, c is (a + b + c)/3."
+  ],
+  "examNotes": [
+    "Write the coefficient equations explicitly before solving; method marks attach to that step.",
+    "State whether the representation is unique, and justify it with independence."
+  ],
+  "importantTasks": [
+    "Solve four combination problems",
+    "Test three sets for independence"
+  ],
+  "mcs": [
+    {
+      "question": "The vectors (1, 2) and (2, 4) span",
+      "options": [
+        "all of ℝ²",
+        "a line through the origin",
+        "a plane in ℝ³",
+        "only the zero vector"
+      ],
+      "answer": "B",
+      "explanation": "The second is twice the first, so they are dependent and span only one direction."
+    },
+    {
+      "question": "Coefficients in the representation r = x₁v₁ + … + xₙvₙ are unique when",
+      "options": [
+        "the vectors span",
+        "the vectors are independent",
+        "r is the zero vector",
+        "n > 3"
+      ],
+      "answer": "B",
+      "explanation": "Independence makes the only representation of zero trivial, which forces uniqueness for every r in the span."
+    }
+  ],
+  "visualType": "linear-combination",
   "duplicateType": 1
 }

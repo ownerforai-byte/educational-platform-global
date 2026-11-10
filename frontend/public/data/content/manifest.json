@@ -93827,45 +93827,114 @@
       "topicSlug": "function-domain-range",
       "topicTitle": "Function: Domain and Range",
       "relevance": 100,
-      "notes": [],
-      "confusion": [],
-      "practice": [],
-      "universalFacts": [],
       "animation3D": "algebra",
       "motionGraphics": "algebra",
-      "examples": [
-        "Application of Function: Domain and Range"
+      "notes": [
+        "**Definition.** For f: A → B, the domain is A (every admissible input) and the range is { f(x) : x ∈ A }, always a subset of the codomain B. A rule without its domain does not yet define a function.",
+        "**Polynomials.** Every polynomial is defined for all real x, so f(x) = x² − 3x + 2 has domain ℝ. Completing the square gives f(x) = (x − 3/2)² − 1/4, so its least value is −1/4 and the range is [−1/4, ∞).",
+        "**Rational functions.** f(x) = (x + 1)/(x − 2) is undefined at x = 2, so Dom f = ℝ ∖ {2}. Solving y = (x + 1)/(x − 2) for x gives x = (2y + 1)/(y − 1), which needs y ≠ 1, hence Range f = ℝ ∖ {1}.",
+        "**Even roots.** √(g(x)) requires g(x) ≥ 0. For f(x) = √(9 − x²) the condition 9 − x² ≥ 0 gives −3 ≤ x ≤ 3, and the square root then runs from 0 at x = ±3 up to 3 at x = 0, so Range f = [0, 3].",
+        "**Root in a denominator.** 1/√(x² − 4) needs x² − 4 > 0, not ≥ 0, because a zero denominator is also forbidden; the domain is (−∞, −2) ∪ (2, ∞). This is the single most common domain error in exams.",
+        "**Logarithms.** ln(g(x)) requires g(x) > 0 with base positive and different from 1. So f(x) = ln(x − 1) has domain (1, ∞); since ln maps (0, ∞) onto ℝ, its range is all of ℝ.",
+        "**Composites.** For (f ∘ g)(x) = f(g(x)), x must lie in Dom g AND g(x) must lie in Dom f. With f(x) = √x and g(x) = x − 4, the composite needs x − 4 ≥ 0, giving domain [4, ∞).",
+        "**Range by inversion.** Write y = f(x), solve for x in terms of y, then keep only those y for which the solution is real and lies in the domain. Horizontal asymptotes usually appear as the excluded y value.",
+        "**Range on a closed interval.** A continuous function on [a, b] attains its extremes; evaluate f at both endpoints and at every stationary point where f′(x) = 0, then take the smallest and largest results.",
+        "**Codomain is not the range.** f: ℝ → ℝ with f(x) = x² has codomain ℝ but range [0, ∞), so it is not onto. Shrinking the codomain to [0, ∞) makes the same rule surjective.",
+        "**One-to-one check.** f(x) = x² is not injective on ℝ because f(2) = f(−2) = 4, but on [0, ∞) it is injective and therefore invertible with inverse √x.",
+        "**Exam method.** List exclusions first (zero denominator, negative even root, non-positive log argument), intersect the resulting sets, and only then attempt the range; sketching the curve is a reliable cross-check."
       ],
-      "practiceQuestions": [
-        "Q1. Define Function: Domain and Range.",
-        "Q3. Problem on Function: Domain and Range."
-      ],
-      "formulas": [],
       "keyPoints": [
-        "Application of Function: Domain and Range",
-        "Connection of Function: Domain and Range to other topics"
+        "Domain exclusions",
+        "Range by inversion",
+        "Composite domains",
+        "Codomain versus range"
       ],
-      "summary": "Function: Domain and Range covers essential principles and applications.",
-      "specialNotes": [],
+      "summary": "The domain is the set of inputs for which a real-valued formula is defined; the range is the set of values the function actually produces. Finding a domain means excluding zero denominators, negative even roots and non-positive logarithm arguments; finding a range means solving y = f(x) back for x or bounding the expression.",
       "importantStatements": [
-        "Statement 1: Definition of Function: Domain and Range",
-        "Statement 2: Theorem related to Function: Domain and Range",
-        "Statement 3: Condition for Function: Domain and Range to be valid",
-        "Statement 4: Principle governing Function: Domain and Range",
-        "Statement 5: Corollary or consequence of Function: Domain and Range"
+        "A real-valued formula defines a function only after its domain is stated.",
+        "If f is continuous on a closed interval, its range on that interval is a closed interval.",
+        "For an invertible f, the range of f equals the domain of f⁻¹."
       ],
       "importantNotes": [
-        "Function: Domain and Range is based on fundamental principles."
+        "A denominator that contains an even root imposes a strict inequality, not a non-strict one.",
+        "The range is a subset of the codomain; equality is exactly the surjectivity condition.",
+        "Two functions with the same formula but different domains are different functions."
       ],
       "examShortTricks": [
-        "Recall the formula for Function: Domain and Range."
+        "For (ax + b)/(cx + d), the range excludes a/c, the ratio of leading coefficients, and the domain excludes −d/c.",
+        "For √(quadratic), solve the quadratic inequality first; the range then follows from the vertex value.",
+        "To test injectivity quickly, sketch a horizontal line: more than one intersection means not one-to-one."
       ],
-      "examNotes": [],
-      "mcs": [],
       "importantConcepts": [
-        "Definition and significance of Function: Domain and Range."
+        "Domain",
+        "Range",
+        "Codomain",
+        "Injective and surjective maps"
       ],
-      "importantTasks": [],
+      "formulas": [
+        "f: A → B;  Dom f = A;  Range f = { f(x) : x ∈ A } ⊆ B",
+        "f(x) = (ax + b)/(cx + d):  Dom f = ℝ ∖ {−d/c},  Range f = ℝ ∖ {a/c}",
+        "√(g(x)) requires g(x) ≥ 0;  1/√(g(x)) requires g(x) > 0",
+        "ln(g(x)) requires g(x) > 0"
+      ],
+      "examples": [
+        "Find the domain and range of f(x) = √(4 − x). Condition: 4 − x ≥ 0 ⇒ x ≤ 4, so Dom f = (−∞, 4]. Since √ returns non-negative values and grows without bound as x → −∞, Range f = [0, ∞).",
+        "Find the range of f(x) = 2x/(x − 3). Put y = 2x/(x − 3) ⇒ y(x − 3) = 2x ⇒ x(y − 2) = 3y ⇒ x = 3y/(y − 2), which exists only for y ≠ 2. Range f = ℝ ∖ {2}."
+      ],
+      "practiceQuestions": [
+        "State the domain and range of f(x) = 1/(x² − 9).",
+        "Find the range of f(x) = √(x² + 1) and justify why it has no upper bound.",
+        "For f(x) = ln(2 − x) and g(x) = √x, determine the domain of g ∘ f."
+      ],
+      "confusion": [
+        "Confusing codomain with range: f: ℝ → ℝ, f(x) = |x| has codomain ℝ but range [0, ∞).",
+        "Writing x² − 4 ≥ 0 for 1/√(x² − 4); equality must be excluded because the denominator would be zero."
+      ],
+      "practice": [
+        "Sketch y = |x − 2| and read off its domain and range from the graph.",
+        "Build one function whose domain is ℝ ∖ {1, 2} and verify each exclusion."
+      ],
+      "universalFacts": [
+        "Every polynomial of odd degree with real coefficients has range ℝ.",
+        "The image of an interval under a continuous real function is again an interval."
+      ],
+      "specialNotes": [
+        "When a question says 'the function f is defined on ℝ', the domain has already been fixed for you; do not re-derive it.",
+        "Restricting the domain can make a non-injective function invertible, which is how sin x acquires arcsin x on [−π/2, π/2]."
+      ],
+      "examNotes": [
+        "NEB questions usually award one mark for the domain condition and one for solving the resulting inequality; show both steps.",
+        "Always state the range as a set or interval, not as an inequality alone."
+      ],
+      "importantTasks": [
+        "Tabulate domain and range for six standard functions",
+        "Solve three range-by-inversion problems"
+      ],
+      "mcs": [
+        {
+          "question": "The domain of f(x) = 1/√(x² − 4) is",
+          "options": [
+            "[−2, 2]",
+            "ℝ ∖ {−2, 2}",
+            "(−∞, −2) ∪ (2, ∞)",
+            "[−2, 2] ∖ {0}"
+          ],
+          "answer": "C",
+          "explanation": "The root requires x² − 4 ≥ 0, and the denominator excludes equality, so |x| > 2."
+        },
+        {
+          "question": "For f: ℝ → ℝ with f(x) = x², the range is",
+          "options": [
+            "ℝ",
+            "[0, ∞)",
+            "(0, ∞)",
+            "[−1, ∞)"
+          ],
+          "answer": "B",
+          "explanation": "Squares of real numbers are never negative and every non-negative number is attained."
+        }
+      ],
+      "visualType": "function-domain-range",
       "duplicateType": 1
     }
   },
@@ -94444,46 +94513,117 @@
       "unitSlug": "algebra",
       "topicSlug": "minors-cofactors-determinants",
       "topicTitle": "Matrix 5.2 - Theory: Minors, Cofactors, Determinants",
-      "relevance": 55,
-      "notes": [],
-      "confusion": [],
-      "practice": [],
-      "universalFacts": [],
+      "relevance": 100,
       "animation3D": "algebra",
       "motionGraphics": "algebra",
-      "examples": [
-        "Application of Matrix 5.2 - Theory: Minors, Cofactors, Determinants"
+      "notes": [
+        "**Minor.** For a square matrix A, the minor M_ij is the determinant of the submatrix obtained by deleting row i and column j. For a 3 × 3 matrix each minor is a 2 × 2 determinant.",
+        "**Cofactor.** C_ij = (−1)^(i+j) M_ij; the sign alternates like a chessboard starting with + at (1,1): + − + / − + − / + − +.",
+        "**Determinant by expansion.** det A = Σ_j a_ij C_ij along any row i, or Σ_i a_ij C_ij along any column j. Choose the row or column with the most zeros to cut the work.",
+        "**Worked example.** For A = [[1, 2, 3], [0, 4, 5], [1, 0, 6]], expanding along row 2 gives det A = −0·C_21 + 4·C_22 − 5·C_23 where C_22 = 1·6 − 3·1 = 3 and C_23 = −(1·0 − 2·1) = 2, so det A = 4·3 − 5·2 = 2.",
+        "**2 × 2 base case.** det [[a, b], [c, d]] = ad − bc; every larger determinant reduces to repeated applications of this rule.",
+        "**Alien cofactors.** Σ_j a_kj C_ij = 0 when k ≠ i: expanding a row using another row's cofactors always gives zero. This identity is the reason A·adj A = (det A) I.",
+        "**Adjoint.** adj A is the transpose of the cofactor matrix, (adj A)_ij = C_ji. Students most often lose marks by forgetting this transposition.",
+        "**Inverse.** A⁻¹ = adj A / det A, which exists exactly when det A ≠ 0; a singular matrix (det A = 0) has no inverse.",
+        "**Cramer's rule.** For AX = B with det A ≠ 0, x_i = det(A_i)/det A, where A_i is A with column i replaced by B; it solves small systems quickly but is inefficient for large ones.",
+        "**Row operations.** Swapping two rows flips the sign of det A; multiplying a row by k multiplies det A by k; adding a multiple of one row to another leaves det A unchanged.",
+        "**Triangular shortcut.** If A is upper or lower triangular, det A is simply the product of its diagonal entries, because every other term in the expansion contains a zero factor.",
+        "**Consistency test.** For a system of linear equations, det A ≠ 0 gives a unique solution; det A = 0 means either no solution or infinitely many, decided by comparing ranks."
       ],
-      "practiceQuestions": [
-        "Q1. Define Matrix 5.2 - Theory: Minors, Cofactors, Determinants.",
-        "Q3. Problem on Matrix 5.2 - Theory: Minors, Cofactors, Determinants."
-      ],
-      "formulas": [],
       "keyPoints": [
-        "Application of Matrix 5.2 - Theory: Minors, Cofactors, Determinants",
-        "Connection of Matrix 5.2 - Theory: Minors, Cofactors, Determinants to other topics"
+        "Minor and cofactor",
+        "Laplace expansion",
+        "Adjoint and inverse",
+        "Cramer's rule"
       ],
-      "summary": "Matrix 5.2 - Theory: Minors, Cofactors, Determinants covers essential principles and applications.",
-      "specialNotes": [],
+      "summary": "The minor M_ij is the determinant left after deleting row i and column j; the cofactor is C_ij = (−1)^(i+j) M_ij. Expanding along any row or column with these cofactors gives the determinant, and the same cofactor matrix (transposed) builds the inverse and Cramer's rule.",
       "importantStatements": [
-        "Statement 1: Definition of Matrix 5.2 - Theory: Minors, Cofactors, Determinants",
-        "Statement 2: Theorem related to Matrix 5.2 - Theory: Minors, Cofactors, Determinants",
-        "Statement 3: Condition for Matrix 5.2 - Theory: Minors, Cofactors, Determinants to be valid",
-        "Statement 4: Principle governing Matrix 5.2 - Theory: Minors, Cofactors, Determinants",
-        "Statement 5: Corollary or consequence of Matrix 5.2 - Theory: Minors, Cofactors, Determinants"
+        "A square matrix is invertible if and only if its determinant is non-zero.",
+        "A · adj(A) = adj(A) · A = det(A) I for every square matrix A.",
+        "Expanding one row with the cofactors of a different row gives zero."
       ],
       "importantNotes": [
-        "Matrix 5.2 - Theory: Minors, Cofactors, Determinants is based on fundamental principles."
+        "The cofactor carries the sign (−1)^(i+j); the minor does not.",
+        "adj A is the TRANSPOSE of the cofactor matrix, not the cofactor matrix itself.",
+        "det(AB) = det A · det B, but det(A + B) is not generally det A + det B."
       ],
       "examShortTricks": [
-        "Recall the formula for Matrix 5.2 - Theory: Minors, Cofactors, Determinants."
+        "Always expand along the row or column containing the most zeros.",
+        "Create zeros first with row-addition operations, which leave the determinant unchanged.",
+        "For a 3 × 3 determinant, Sarrus' rule (sum of three diagonals minus three anti-diagonals) is a fast cross-check but does not extend to 4 × 4."
       ],
-      "examNotes": [],
-      "mcs": [],
       "importantConcepts": [
-        "Definition and significance of Matrix 5.2 - Theory: Minors, Cofactors, Determinants."
+        "Minor",
+        "Cofactor",
+        "Determinant",
+        "Adjoint",
+        "Singular matrix"
       ],
-      "importantTasks": [],
+      "formulas": [
+        "M_ij = det(A with row i and column j removed)",
+        "C_ij = (−1)^(i+j) M_ij",
+        "det A = Σ_j a_ij C_ij = Σ_i a_ij C_ij",
+        "A⁻¹ = adj(A)/det(A),  det A ≠ 0",
+        "x_i = det(A_i)/det(A)   (Cramer's rule)"
+      ],
+      "examples": [
+        "Find the cofactor C_12 of A = [[1, 2, 3], [4, 5, 6], [7, 8, 10]]. Delete row 1 and column 2: M_12 = det[[4, 6], [7, 10]] = 40 − 42 = −2, so C_12 = (−1)³(−2) = 2.",
+        "Compute det[[2, 0, 0], [1, 3, 0], [4, 5, 6]]. The matrix is lower triangular, so det = 2 · 3 · 6 = 36 directly."
+      ],
+      "practiceQuestions": [
+        "Find all cofactors of the third row of A = [[1, 0, 2], [3, 1, 1], [0, 2, 4]] and hence det A.",
+        "Use Cramer's rule to solve 2x + y = 5, x − 3y = −1.",
+        "If det A = 5, find det(adj A) for a 3 × 3 matrix A."
+      ],
+      "confusion": [
+        "Forgetting that adj A is the transpose of the cofactor matrix; using the cofactor matrix directly gives the wrong inverse.",
+        "Believing a row swap leaves the determinant unchanged; it actually reverses the sign."
+      ],
+      "practice": [
+        "Evaluate one 3 × 3 determinant by expanding along two different rows and confirm the answers agree.",
+        "Verify A · adj A = det(A) I numerically for a 2 × 2 matrix of your choice."
+      ],
+      "universalFacts": [
+        "A square matrix with two equal rows has determinant zero.",
+        "det(kA) = kⁿ det A for an n × n matrix A."
+      ],
+      "specialNotes": [
+        "Cramer's rule needs det A ≠ 0; when det A = 0 switch to rank comparison instead.",
+        "For a 2 × 2 matrix [[a, b], [c, d]], adj A = [[d, −b], [−c, a]] — swap the diagonal and negate the off-diagonal."
+      ],
+      "examNotes": [
+        "Show the sign of each cofactor explicitly; examiners award method marks for the (−1)^(i+j) step.",
+        "State the condition det A ≠ 0 before writing A⁻¹."
+      ],
+      "importantTasks": [
+        "Build a cofactor matrix for a 3 × 3 case",
+        "Solve a 3-variable system by Cramer's rule"
+      ],
+      "mcs": [
+        {
+          "question": "For a 3 × 3 matrix, the cofactor C_23 equals",
+          "options": [
+            "M_23",
+            "−M_23",
+            "M_32",
+            "−M_32"
+          ],
+          "answer": "B",
+          "explanation": "(−1)^(2+3) = −1, and a cofactor uses the same indices' minor, not the transposed one."
+        },
+        {
+          "question": "If det A = 0 for a square matrix A, then",
+          "options": [
+            "A has an inverse",
+            "A is singular",
+            "adj A is zero",
+            "A is the identity"
+          ],
+          "answer": "B",
+          "explanation": "A zero determinant means A is singular and no inverse exists."
+        }
+      ],
+      "visualType": "determinant-expansion",
       "duplicateType": 1
     }
   },
@@ -103739,45 +103879,115 @@
       "topicSlug": "collinear-non-collinear-vectors",
       "topicTitle": "Collinear and Non-collinear Vectors",
       "relevance": 100,
-      "notes": [],
-      "confusion": [],
-      "practice": [],
-      "universalFacts": [],
       "animation3D": "vectors",
       "motionGraphics": "vectors",
-      "examples": [
-        "Application of Collinear and Non-collinear Vectors"
+      "notes": [
+        "**Collinearity.** Non-zero vectors a and b are collinear iff b = λa for some real scalar λ; λ > 0 means the same direction, λ < 0 the opposite direction.",
+        "**Component test.** For a = (a₁, a₂, a₃) and b = (b₁, b₂, b₃), collinearity means a₁/b₁ = a₂/b₂ = a₃/b₃ wherever the denominators are non-zero; handle zero components by cross multiplication instead of division.",
+        "**Cross-product test.** a and b are parallel exactly when a × b = 0. This works in both two and three dimensions (embed a 2-D vector as (x, y, 0)).",
+        "**Worked example.** a = (2, −3, 1) and b = (−6, 9, −3) give ratios −6/2 = 9/(−3) = −3/1 = −3, so b = −3a and the vectors are anti-parallel.",
+        "**Non-collinear.** If no single scalar λ satisfies b = λa, the vectors are non-collinear; in a plane two non-collinear vectors are linearly independent.",
+        "**Linear independence.** αa + βb = 0 forces α = β = 0 when a and b are non-collinear; for collinear vectors non-trivial choices exist, e.g. α = λ, β = −1.",
+        "**Basis of a plane.** Any vector r in the plane of two non-collinear vectors a, b can be written uniquely as r = xa + yb; the coefficients (x, y) are the coordinates in that basis.",
+        "**Section formula.** If point P divides AB in the ratio m : n, then p = (n·a + m·b)/(m + n); the midpoint case m = n gives p = (a + b)/2.",
+        "**Collinear points.** Three points A, B, C are collinear iff AB and AC are parallel, i.e. AB × AC = 0, or equivalently the area of triangle ABC is zero.",
+        "**Zero vector caveat.** The zero vector has no direction; by convention it is parallel to every vector, so state 'non-zero vectors' before applying the scalar-multiple test.",
+        "**Coplanar extension.** Three vectors are coplanar iff their scalar triple product [a b c] = a · (b × c) = 0; this generalises the two-vector parallel test.",
+        "**Exam caution.** Equal magnitudes do not imply collinearity: |i| = |j| = 1, yet i and j are perpendicular. Likewise a · b = 0 signals perpendicularity, not parallelism."
       ],
-      "practiceQuestions": [
-        "Q1. Define Collinear and Non-collinear Vectors.",
-        "Q3. Problem on Collinear and Non-collinear Vectors."
-      ],
-      "formulas": [],
       "keyPoints": [
-        "Application of Collinear and Non-collinear Vectors",
-        "Connection of Collinear and Non-collinear Vectors to other topics"
+        "Scalar-multiple test",
+        "Cross-product test",
+        "Linear independence",
+        "Section formula"
       ],
-      "summary": "Collinear and Non-collinear Vectors covers essential principles and applications.",
-      "specialNotes": [],
+      "summary": "Two non-zero vectors are collinear (parallel) when one is a scalar multiple of the other, so their cross product is zero and their component ratios are equal. Non-collinear vectors are linearly independent in a plane and can serve as a basis for every vector in that plane.",
       "importantStatements": [
-        "Statement 1: Definition of Collinear and Non-collinear Vectors",
-        "Statement 2: Theorem related to Collinear and Non-collinear Vectors",
-        "Statement 3: Condition for Collinear and Non-collinear Vectors to be valid",
-        "Statement 4: Principle governing Collinear and Non-collinear Vectors",
-        "Statement 5: Corollary or consequence of Collinear and Non-collinear Vectors"
+        "Two non-zero vectors are collinear if and only if their cross product vanishes.",
+        "Two non-collinear vectors in a plane form a basis for that plane.",
+        "Three points are collinear exactly when the triangle they form has zero area."
       ],
       "importantNotes": [
-        "Collinear and Non-collinear Vectors is based on fundamental principles."
+        "The zero vector is parallel to every vector by convention, so exclude it from direction arguments.",
+        "A negative scalar multiple reverses direction but preserves the line of action.",
+        "Collinearity of points is tested with displacement vectors, not position vectors."
       ],
       "examShortTricks": [
-        "Recall the formula for Collinear and Non-collinear Vectors."
+        "Cross-multiply component pairs instead of dividing, so zero components never break the test.",
+        "For 2-D vectors (x₁, y₁) and (x₂, y₂), check x₁y₂ − x₂y₁ = 0 as a one-line parallel test.",
+        "To prove three points collinear, show AB = λ AC rather than comparing all three position vectors."
       ],
-      "examNotes": [],
-      "mcs": [],
       "importantConcepts": [
-        "Definition and significance of Collinear and Non-collinear Vectors."
+        "Parallel vectors",
+        "Scalar multiple",
+        "Linear independence",
+        "Coplanarity"
       ],
-      "importantTasks": [],
+      "formulas": [
+        "b = λa  (λ ∈ ℝ)  ⇔  a ∥ b",
+        "a × b = 0  ⇔  a ∥ b (for non-zero a, b)",
+        "(x₁, y₁) ∥ (x₂, y₂)  ⇔  x₁y₂ − x₂y₁ = 0",
+        "p = (n·a + m·b)/(m + n)  for AP : PB = m : n",
+        "[a b c] = a · (b × c) = 0  ⇔  a, b, c coplanar"
+      ],
+      "examples": [
+        "Are (1, 2, 3) and (2, 4, 6) collinear? Ratios 2/1 = 4/2 = 6/3 = 2, so the second is 2× the first; yes, same direction.",
+        "Find k such that a = (k, 3) and b = (4, 6) are parallel. k·6 − 4·3 = 0 ⇒ 6k = 12 ⇒ k = 2."
+      ],
+      "practiceQuestions": [
+        "Determine whether (2, −1, 4) and (−4, 2, −8) are parallel, and state the scalar.",
+        "Find k if points (1, 2), (3, k) and (5, 8) are collinear.",
+        "Express (7, 1) as a linear combination of (1, 1) and (2, −1)."
+      ],
+      "confusion": [
+        "Assuming equal lengths imply parallel vectors; direction, not magnitude, decides collinearity.",
+        "Dividing by a zero component when comparing ratios; use cross multiplication instead."
+      ],
+      "practice": [
+        "Plot three pairs of 2-D vectors and classify each as parallel, opposite, or non-collinear.",
+        "Verify that (1, 1) and (2, −1) span every vector in the plane by solving for general (p, q)."
+      ],
+      "universalFacts": [
+        "Any set containing the zero vector is linearly dependent.",
+        "In three dimensions three non-coplanar vectors form a basis of ℝ³."
+      ],
+      "specialNotes": [
+        "A line through point a with direction d has vector equation r = a + td; collinearity is the statement that two points share such a direction d.",
+        "Unit vectors give direction only: â = a/|a|; collinear vectors have either equal or opposite unit vectors."
+      ],
+      "examNotes": [
+        "State the non-zero condition before using a × b = 0.",
+        "For collinear points, always work with AB and AC, then conclude about A, B, C."
+      ],
+      "importantTasks": [
+        "Classify six vector pairs",
+        "Solve three section-formula problems"
+      ],
+      "mcs": [
+        {
+          "question": "Vectors (2, −3) and (−4, 6) are",
+          "options": [
+            "perpendicular",
+            "parallel and opposite",
+            "parallel and same direction",
+            "non-collinear"
+          ],
+          "answer": "B",
+          "explanation": "(−4, 6) = −2(2, −3); the negative scalar reverses the direction."
+        },
+        {
+          "question": "Three points A, B, C are collinear when",
+          "options": [
+            "AB · AC = 0",
+            "AB × AC = 0",
+            "|AB| = |AC|",
+            "AB + AC = 0"
+          ],
+          "answer": "B",
+          "explanation": "A zero cross product means the two displacement vectors are parallel, so the triangle has zero area."
+        }
+      ],
+      "visualType": "collinear-vectors",
       "duplicateType": 1
     }
   },
@@ -103789,45 +103999,118 @@
       "topicSlug": "vector-algebra",
       "topicTitle": "Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors",
       "relevance": 100,
-      "notes": [],
-      "confusion": [],
-      "practice": [],
-      "universalFacts": [],
       "animation3D": "vectors",
       "motionGraphics": "vectors",
-      "examples": [
-        "Application of Vector Algebra — Types, Addition and Scalar Multiplication"
+      "notes": [
+        "**Scalars and vectors.** A scalar has magnitude only (mass, temperature, time); a vector has magnitude and direction (displacement, velocity, force). Speed is scalar, velocity is vector.",
+        "**Representation.** A vector from A to B is AB = b − a with Cartesian form (x₂ − x₁, y₂ − y₁, z₂ − z₁); its magnitude is |a| = √(x² + y² + z²).",
+        "**Equal vectors.** Two vectors are equal when they have the same magnitude AND the same direction; their initial points may differ, so position does not matter.",
+        "**Unit vector.** â = a/|a| gives a vector of length 1 along a. The standard basis is i = (1,0,0), j = (0,1,0), k = (0,0,1), and a = xi + yj + zk.",
+        "**Zero and negative.** The zero vector 0 has zero magnitude and no definite direction; −a has the same length as a and the opposite direction, with a + (−a) = 0.",
+        "**Triangle law.** If a and b are placed head-to-tail, their sum a + b runs from the start of a to the end of b; in components (a₁+b₁, a₂+b₂, a₃+b₃).",
+        "**Parallelogram law.** With a and b drawn from a common origin, a + b is the diagonal of the parallelogram they span; this is the same sum as the triangle law.",
+        "**Laws of addition.** a + b = b + a (commutative), (a + b) + c = a + (b + c) (associative), a + 0 = a, and a + (−a) = 0.",
+        "**Scalar multiplication.** k a has magnitude |k|·|a|; it points along a for k > 0, opposite for k < 0, and is the zero vector for k = 0.",
+        "**Distributive laws.** k(a + b) = ka + kb and (k + m)a = ka + ma; these make vectors a real vector space, so ordinary algebra applies with care about direction.",
+        "**Triangle inequality.** |a + b| ≤ |a| + |b|, with equality only when a and b point the same way; |a − b| ≥ ||a| − |b|| gives the reverse form.",
+        "**Worked example.** a = (3, −1, 2), b = (−2, 4, 1): a + b = (1, 3, 3), 2a − 3b = (6, −2, 4) − (−6, 12, 3) = (12, −14, 1), and |a| = √(9+1+4) = √14.",
+        "**Direction ratios and cosines.** For a = (x, y, z), the direction cosines are l = x/|a|, m = y/|a|, n = z/|a|, satisfying l² + m² + n² = 1.",
+        "**Exam caution.** Vectors cannot be added to scalars, and |a + b| is not |a| + |b| in general; compute the sum first, then its magnitude."
       ],
-      "practiceQuestions": [
-        "Q1. Define Vector Algebra — Types, Addition and Scalar Multiplication.",
-        "Q3. Problem on Vector Algebra — Types, Addition and Scalar Multiplication."
-      ],
-      "formulas": [],
       "keyPoints": [
-        "Application of Vector Algebra — Types, Addition and Scalar Multiplication",
-        "Connection of Vector Algebra — Types, Addition and Scalar Multiplication to other topics"
+        "Vector types",
+        "Triangle and parallelogram laws",
+        "Scalar multiplication",
+        "Direction cosines"
       ],
-      "summary": "Vector Algebra — Types, Addition and Scalar Multiplication covers essential principles and applications.",
-      "specialNotes": [],
+      "summary": "A vector carries magnitude and direction; equal vectors share both, unit vectors have magnitude one, and the zero vector has none. Vectors add by the triangle or parallelogram law (component-wise), and multiplying by a scalar rescales magnitude, reversing direction when the scalar is negative.",
       "importantStatements": [
-        "Statement 1: Definition of Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors",
-        "Statement 2: Theorem related to Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors",
-        "Statement 3: Condition for Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors to be valid",
-        "Statement 4: Principle governing Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors",
-        "Statement 5: Corollary or consequence of Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors"
+        "Vector addition is commutative and associative.",
+        "For any vector a and scalar k, |k a| = |k| |a|.",
+        "The direction cosines of any non-zero vector satisfy l² + m² + n² = 1."
       ],
       "importantNotes": [
-        "Vector Algebra — Types, Addition and Scalar Multiplication is based on fundamental principles."
+        "Equal vectors need equal magnitude and direction, not the same starting point.",
+        "The zero vector has no direction, so never quote an angle for it.",
+        "Unit vectors i, j, k are mutually perpendicular and each has length one."
       ],
       "examShortTricks": [
-        "Recall the formula for Vector Algebra — Types, Addition and Scalar Multiplication."
+        "Add or subtract vectors component-wise first; draw the triangle only as a visual check.",
+        "To get a unit vector quickly, divide each component by the magnitude in one step.",
+        "For a point dividing a segment, use the section formula instead of solving simultaneous equations."
       ],
-      "examNotes": [],
-      "mcs": [],
       "importantConcepts": [
-        "Definition and significance of Vector Algebra — Types, Addition and Scalar Multiplication."
+        "Scalar",
+        "Vector",
+        "Unit vector",
+        "Zero vector",
+        "Direction cosines"
       ],
-      "importantTasks": [],
+      "formulas": [
+        "|a| = √(x² + y² + z²)",
+        "a + b = (a₁+b₁, a₂+b₂, a₃+b₃)",
+        "k a = (k a₁, k a₂, k a₃);  |k a| = |k| |a|",
+        "â = a/|a|;  l² + m² + n² = 1",
+        "|a + b| ≤ |a| + |b|"
+      ],
+      "examples": [
+        "Given a = (1, 2, −1) and b = (3, 0, 2), find 2a − b and its magnitude. 2a = (2, 4, −2); 2a − b = (−1, 4, −4); magnitude = √(1 + 16 + 16) = √33.",
+        "Find the unit vector along a = (2, −2, 1). |a| = √(4+4+1) = 3, so â = (2/3, −2/3, 1/3) and its direction cosines are exactly those three numbers."
+      ],
+      "practiceQuestions": [
+        "If a = (1, −2, 3) and b = (4, 0, −1), compute a + b, 3a − 2b and |a − b|.",
+        "Find the direction cosines of the vector joining (1, 2, 3) to (4, 6, 3).",
+        "Determine k so that (k, 2, 1) is a unit vector."
+      ],
+      "confusion": [
+        "Writing |a + b| = |a| + |b|; this holds only when a and b are parallel and point the same way.",
+        "Treating a zero component as an undefined direction ratio; it simply means the direction cosine in that axis is zero."
+      ],
+      "practice": [
+        "Draw the parallelogram for two chosen vectors and verify the diagonal equals their component-wise sum.",
+        "Verify the distributive law k(a + b) = ka + kb numerically for k = −2."
+      ],
+      "universalFacts": [
+        "The set of all 3-D real vectors with these two operations is a vector space over ℝ.",
+        "Any vector can be written uniquely as a linear combination of i, j and k."
+      ],
+      "specialNotes": [
+        "Position vectors are measured from the origin; displacement vectors are differences of position vectors.",
+        "A negative scalar multiple reverses direction, which is why braking is a negative acceleration vector."
+      ],
+      "examNotes": [
+        "Give both magnitude and direction when a question asks for a vector quantity.",
+        "Show component-wise working; examiners award marks for each correct component."
+      ],
+      "importantTasks": [
+        "Compute five vector sums and scalar products",
+        "Find unit vectors for three given vectors"
+      ],
+      "mcs": [
+        {
+          "question": "If a = (1, 2, −2), then |a| is",
+          "options": [
+            "5",
+            "3",
+            "√5",
+            "9"
+          ],
+          "answer": "B",
+          "explanation": "√(1 + 4 + 4) = √9 = 3."
+        },
+        {
+          "question": "For any vectors a and b, |a + b| is always",
+          "options": [
+            "equal to |a| + |b|",
+            "less than or equal to |a| + |b|",
+            "greater than |a| + |b|",
+            "equal to |a| − |b|"
+          ],
+          "answer": "B",
+          "explanation": "This is the triangle inequality; equality holds only for parallel vectors in the same direction."
+        }
+      ],
+      "visualType": "vector-addition",
       "duplicateType": 1
     }
   },
@@ -104038,45 +104321,117 @@
       "topicSlug": "linear-combination-vectors",
       "topicTitle": "Linear Combination of Vectors",
       "relevance": 100,
-      "notes": [],
-      "confusion": [],
-      "practice": [],
-      "universalFacts": [],
       "animation3D": "vectors",
       "motionGraphics": "vectors",
-      "examples": [
-        "Application of Linear Combination of Vectors"
+      "notes": [
+        "**Definition.** Given vectors v₁, …, vₙ and scalars x₁, …, xₙ, the vector r = x₁v₁ + … + xₙvₙ is a linear combination of them.",
+        "**Span.** The set of all linear combinations of v₁, …, vₙ is their span. In ℝ² two non-collinear vectors span the whole plane; in ℝ³ three non-coplanar vectors span all of space.",
+        "**Worked example.** Write (7, 1) as a combination of a = (1, 1) and b = (2, −1): x + 2y = 7 and x − y = 1 give y = 2, x = 3, so (7, 1) = 3a + 2b.",
+        "**Coefficient system.** Equating components turns r = x₁v₁ + … + xₙvₙ into a system of linear equations; solve by elimination, substitution, or Cramer's rule.",
+        "**Existence.** A solution exists iff r lies in the span. Geometrically, if a and b span a plane and r has a component out of that plane, no coefficients exist.",
+        "**Uniqueness.** Coefficients are unique exactly when the vectors are linearly independent; with dependent vectors, infinitely many coefficient sets produce the same r.",
+        "**Linear independence.** v₁, …, vₙ are independent when x₁v₁ + … + xₙvₙ = 0 forces every xᵢ = 0; otherwise one vector is a combination of the others.",
+        "**Basis.** An independent set that spans the space is a basis. In ℝ³ the standard basis is i, j, k, and (x, y, z) = xi + yj + zk with unique coefficients.",
+        "**Determinant test.** For three vectors in ℝ³, independence is equivalent to the determinant of the matrix with those vectors as rows (or columns) being non-zero; zero determinant means coplanar and dependent.",
+        "**Affine combinations.** When the coefficients sum to 1, the combination stays in the plane (or line) through the points; p = (1 − t)a + t b traces the segment AB as t runs from 0 to 1.",
+        "**Vector equation of a line.** r = a + t d is an affine combination of a point and a direction; the plane through a with directions d₁, d₂ is r = a + s d₁ + t d₂.",
+        "**Exam caution.** Do not assume a basis: check independence first. Three vectors with scalar triple product zero are coplanar, so they cannot represent every vector of ℝ³."
       ],
-      "practiceQuestions": [
-        "Q1. Define Linear Combination of Vectors.",
-        "Q3. Problem on Linear Combination of Vectors."
-      ],
-      "formulas": [],
       "keyPoints": [
-        "Application of Linear Combination of Vectors",
-        "Connection of Linear Combination of Vectors to other topics"
+        "Linear combination",
+        "Span",
+        "Linear independence",
+        "Basis",
+        "Affine combination"
       ],
-      "summary": "Linear Combination of Vectors covers essential principles and applications.",
-      "specialNotes": [],
+      "summary": "A linear combination of vectors v₁, …, vₙ is any sum x₁v₁ + … + xₙvₙ with real coefficients. Two non-collinear vectors span a plane, three non-coplanar vectors span space; solving for the coefficients is solving a linear system, and uniqueness is exactly linear independence.",
       "importantStatements": [
-        "Statement 1: Definition of Linear Combination of Vectors",
-        "Statement 2: Theorem related to Linear Combination of Vectors",
-        "Statement 3: Condition for Linear Combination of Vectors to be valid",
-        "Statement 4: Principle governing Linear Combination of Vectors",
-        "Statement 5: Corollary or consequence of Linear Combination of Vectors"
+        "A vector lies in the span of v₁, …, vₙ exactly when the coefficient system is consistent.",
+        "Coefficients in a basis are unique.",
+        "Three vectors in ℝ³ are independent iff their scalar triple product is non-zero."
       ],
       "importantNotes": [
-        "Linear Combination of Vectors is based on fundamental principles."
+        "Independence controls uniqueness, not existence; a spanning set controls existence.",
+        "A set containing the zero vector is automatically dependent.",
+        "In ℝⁿ no more than n vectors can be linearly independent."
       ],
       "examShortTricks": [
-        "Recall the formula for Linear Combination of Vectors."
+        "Put the vectors as COLUMNS of a matrix and row-reduce the augmented system [v₁ … vₙ | r].",
+        "For two 2-D vectors, a non-zero determinant x₁y₂ − x₂y₁ immediately proves they span the plane.",
+        "If coefficients must sum to 1, add that equation to the system before solving."
       ],
-      "examNotes": [],
-      "mcs": [],
       "importantConcepts": [
-        "Definition and significance of Linear Combination of Vectors."
+        "Linear combination",
+        "Span",
+        "Linear dependence",
+        "Basis",
+        "Affine combination"
       ],
-      "importantTasks": [],
+      "formulas": [
+        "r = x₁v₁ + x₂v₂ + … + xₙvₙ",
+        "span{v₁, …, vₙ} = { Σ xᵢvᵢ : xᵢ ∈ ℝ }",
+        "independence ⇔ Σ xᵢvᵢ = 0 ⇒ xᵢ = 0 for all i",
+        "det[v₁ v₂ v₃] ≠ 0 ⇔ {v₁, v₂, v₃} is a basis of ℝ³",
+        "p = (1 − t)a + t b,  0 ≤ t ≤ 1  (segment AB)"
+      ],
+      "examples": [
+        "Express (4, 5, 6) as a combination of i, j, k: (4, 5, 6) = 4i + 5j + 6k, with coefficients unique because the standard basis is independent.",
+        "Check whether (1, 0, 0), (0, 1, 0) and (1, 1, 0) are independent. The determinant of [[1,0,0],[0,1,0],[1,1,0]] is 0, so they are coplanar and dependent: the third equals the sum of the first two."
+      ],
+      "practiceQuestions": [
+        "Write (5, 3) as a linear combination of (1, 1) and (3, 1).",
+        "Determine whether (1, 2, 3), (0, 1, 2) and (0, 0, 1) form a basis of ℝ³.",
+        "Find t so that the point (1 − t)(2, 1) + t(6, 5) is the midpoint of the segment."
+      ],
+      "confusion": [
+        "Thinking any two vectors span ℝ²; parallel vectors span only a line.",
+        "Assuming a representation is unique without first proving the vectors are independent."
+      ],
+      "practice": [
+        "Solve three coefficient systems by row reduction and check each answer by re-substitution.",
+        "Find two different coefficient sets for the same vector using a dependent set."
+      ],
+      "universalFacts": [
+        "Every vector space has a basis, and all bases of a given space have the same number of elements.",
+        "The dimension of ℝ³ is 3, so four vectors in ℝ³ are always dependent."
+      ],
+      "specialNotes": [
+        "The section formula is an affine combination: coefficients n/(m+n) and m/(m+n) sum to 1.",
+        "Centroids use equal weights: the centroid of a triangle with vertices a, b, c is (a + b + c)/3."
+      ],
+      "examNotes": [
+        "Write the coefficient equations explicitly before solving; method marks attach to that step.",
+        "State whether the representation is unique, and justify it with independence."
+      ],
+      "importantTasks": [
+        "Solve four combination problems",
+        "Test three sets for independence"
+      ],
+      "mcs": [
+        {
+          "question": "The vectors (1, 2) and (2, 4) span",
+          "options": [
+            "all of ℝ²",
+            "a line through the origin",
+            "a plane in ℝ³",
+            "only the zero vector"
+          ],
+          "answer": "B",
+          "explanation": "The second is twice the first, so they are dependent and span only one direction."
+        },
+        {
+          "question": "Coefficients in the representation r = x₁v₁ + … + xₙvₙ are unique when",
+          "options": [
+            "the vectors span",
+            "the vectors are independent",
+            "r is the zero vector",
+            "n > 3"
+          ],
+          "answer": "B",
+          "explanation": "Independence makes the only representation of zero trivial, which forces uniqueness for every r in the span."
+        }
+      ],
+      "visualType": "linear-combination",
       "duplicateType": 1
     }
   },
@@ -104088,45 +104443,117 @@
       "topicSlug": "cross-product-and-its-applications",
       "topicTitle": "Cross product (vector product) and its applications",
       "relevance": 100,
-      "notes": [],
-      "confusion": [],
-      "practice": [],
-      "universalFacts": [],
       "animation3D": "vectors",
       "motionGraphics": "vectors",
-      "examples": [
-        "Application of Cross Product and Its Applications"
+      "notes": [
+        "**Definition.** a × b = |a||b| sin θ n̂, where θ is the angle from a to b (0 ≤ θ ≤ π) and n̂ is the unit vector given by the right-hand rule, perpendicular to the plane of a and b.",
+        "**Determinant form.** a × b = (a₂b₃ − a₃b₂) i − (a₁b₃ − a₃b₁) j + (a₁b₂ − a₂b₁) k, equivalently the formal determinant with rows i, j, k; a; b.",
+        "**Anti-commutative.** b × a = −(a × b). Swapping the order reverses the direction while preserving magnitude, so the order must always be stated.",
+        "**Worked example.** a = (1, 2, 3), b = (4, 5, 6): a × b = (2·6 − 3·5, 3·4 − 1·6, 1·5 − 2·4) = (−3, 6, −3), and dotting with a gives −3 + 12 − 9 = 0, confirming perpendicularity.",
+        "**Parallel and perpendicular.** a × b = 0 iff a and b are parallel (or one is zero); for perpendicular unit vectors |a × b| = 1, while i × j = k, j × k = i, k × i = j.",
+        "**Area.** The area of the parallelogram with adjacent sides a, b is |a × b|; the area of triangle ABC is ½ |AB × AC|, which is zero exactly when A, B, C are collinear.",
+        "**Scalar triple product.** [a b c] = a · (b × c) is the (signed) volume of the parallelepiped on a, b, c; the tetrahedron's volume is one sixth of it.",
+        "**Coplanarity.** Three vectors are coplanar iff [a b c] = 0. This also gives the condition for four points A, B, C, D to be coplanar via AB, AC, AD.",
+        "**Moment of a force.** The moment (torque) of force F about a point O is M = r × F, where r runs from O to the point of application; |M| = |r||F| sin θ is the turning effect.",
+        "**Unit normal.** n̂ = (a × b)/|a × b| gives a unit normal to the plane containing a and b, used to write the plane's equation in vector form r · n̂ = d.",
+        "**Distributivity.** a × (b + c) = a × b + a × c and (k a) × b = k(a × b); the cross product is NOT associative, so a × (b × c) ≠ (a × b) × c in general.",
+        "**Vector triple product.** a × (b × c) = (a · c) b − (a · b) c, the 'BAC − CAB' identity; it is a vector lying in the plane of b and c.",
+        "**Exam caution.** a × b is a VECTOR, while a · b is a scalar; a mixed expression such as (a × b) · c is valid but a × (b · c) is not defined."
       ],
-      "practiceQuestions": [
-        "Q1. Define Cross Product and Its Applications.",
-        "Q3. Problem on Cross Product and Its Applications."
-      ],
-      "formulas": [],
       "keyPoints": [
-        "Application of Cross Product and Its Applications",
-        "Connection of Cross Product and Its Applications to other topics"
+        "Right-hand rule",
+        "Determinant form",
+        "Area and volume",
+        "Moment of a force"
       ],
-      "summary": "Cross Product and Its Applications covers essential principles and applications.",
-      "specialNotes": [],
+      "summary": "The cross product a × b is a vector perpendicular to both a and b with magnitude |a||b| sin θ, equal to the area of the parallelogram they span. Its determinant form drives area, volume, moment and collinearity calculations throughout Class 11 vector algebra.",
       "importantStatements": [
-        "Statement 1: Definition of Cross product (vector product) and its applications",
-        "Statement 2: Theorem related to Cross product (vector product) and its applications",
-        "Statement 3: Condition for Cross product (vector product) and its applications to be valid",
-        "Statement 4: Principle governing Cross product (vector product) and its applications",
-        "Statement 5: Corollary or consequence of Cross product (vector product) and its applications"
+        "a × b is perpendicular to both a and b.",
+        "|a × b| equals the area of the parallelogram with adjacent sides a and b.",
+        "The scalar triple product vanishes if and only if the three vectors are coplanar."
       ],
       "importantNotes": [
-        "Cross Product and Its Applications is based on fundamental principles."
+        "The cross product is anti-commutative: b × a = −(a × b).",
+        "A zero cross product signals parallel vectors, not necessarily a zero vector.",
+        "Lagrange's identity: |a × b|² + (a · b)² = |a|²|b|²."
       ],
       "examShortTricks": [
-        "Recall the formula for Cross Product and Its Applications."
+        "Compute a × b with the 3 × 3 determinant, then dot it with a and with b as a one-line accuracy check.",
+        "For triangle area use ½|AB × AC|; if the result is zero the three points are collinear.",
+        "Use |a × b| = |a||b| when the vectors are given perpendicular, avoiding component arithmetic."
       ],
-      "examNotes": [],
-      "mcs": [],
       "importantConcepts": [
-        "Definition and significance of Cross Product and Its Applications."
+        "Cross product",
+        "Right-hand rule",
+        "Scalar triple product",
+        "Torque",
+        "Unit normal"
       ],
-      "importantTasks": [],
+      "formulas": [
+        "a × b = |a||b| sin θ n̂",
+        "a × b = (a₂b₃ − a₃b₂, a₃b₁ − a₁b₃, a₁b₂ − a₂b₁)",
+        "Area of parallelogram = |a × b|;  Area of triangle = ½|a × b|",
+        "[a b c] = a · (b × c);  Volume of parallelepiped = |[a b c]|",
+        "M = r × F;  a × (b × c) = (a·c)b − (a·b)c"
+      ],
+      "examples": [
+        "Find the area of the triangle with vertices A(1, 0, 0), B(0, 1, 0), C(0, 0, 1). AB = (−1, 1, 0), AC = (−1, 0, 1); AB × AC = (1, 1, 1), so area = ½√3.",
+        "Find a unit vector perpendicular to both a = (1, 1, 0) and b = (0, 1, 1). a × b = (1, −1, 1), |a × b| = √3, so n̂ = (1, −1, 1)/√3."
+      ],
+      "practiceQuestions": [
+        "Compute a × b for a = (2, −1, 3), b = (1, 4, −2) and verify it is perpendicular to both.",
+        "Find the area of the parallelogram with diagonals (3, 1, −1) and (1, −2, 1).",
+        "Show that (1, 2, 3), (2, 3, 4) and (3, 4, 5) are coplanar."
+      ],
+      "confusion": [
+        "Treating the cross product as commutative; reversing the order negates the result.",
+        "Confusing |a × b| with a · b: the former uses sin θ and is an area, the latter uses cos θ and is a scalar projection."
+      ],
+      "practice": [
+        "Compute three cross products and verify each with a dot-product check.",
+        "Derive the area of a triangle from a cross product for two different vertex orderings."
+      ],
+      "universalFacts": [
+        "The cross product is defined for 3-D vectors (and as a scalar curl in 2-D).",
+        "|a × b|² + (a · b)² = |a|² |b|² holds for all vectors a, b."
+      ],
+      "specialNotes": [
+        "The direction of a × b follows the right-hand rule: curl the fingers from a to b, the thumb gives n̂.",
+        "A plane through a point p with direction vectors u and v has normal u × v and equation (r − p) · (u × v) = 0."
+      ],
+      "examNotes": [
+        "Write the determinant expansion explicitly; sign errors on the j component are the most common loss of marks.",
+        "Include units for area and moment in applied problems."
+      ],
+      "importantTasks": [
+        "Solve four area problems by cross product",
+        "Compute two scalar triple products"
+      ],
+      "mcs": [
+        {
+          "question": "If a and b are parallel non-zero vectors, then a × b equals",
+          "options": [
+            "|a||b|",
+            "the zero vector",
+            "a unit normal",
+            "a · b"
+          ],
+          "answer": "B",
+          "explanation": "sin 0° = 0, so the magnitude is zero; the result is the zero vector, not the scalar 0."
+        },
+        {
+          "question": "For a = (1, 0, 0) and b = (0, 1, 0), a × b is",
+          "options": [
+            "(0, 0, −1)",
+            "(0, 0, 1)",
+            "(1, 0, 0)",
+            "(0, 1, 0)"
+          ],
+          "answer": "B",
+          "explanation": "i × j = k, i.e. (0, 0, 1), consistent with the right-hand rule."
+        }
+      ],
+      "visualType": "cross-product",
       "duplicateType": 1
     }
   },
