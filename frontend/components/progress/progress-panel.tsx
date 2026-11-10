@@ -302,9 +302,10 @@ export function ProgressPanel({ onProgressLoaded, onProgressChange }: ProgressPa
         </div>
       )}
 
-      {/* Search + status + subject filters */}
-      <div className="flex flex-wrap items-center gap-2">
-        <div className="relative min-w-[220px] flex-1">
+      {/* Search + status + subject filters — two rows: search box on top,
+          the status chips beneath (owner 2026-11-09: "make it in two row") */}
+      <div className="space-y-2.5">
+        <div className="relative">
           <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             value={query}
@@ -324,30 +325,32 @@ export function ProgressPanel({ onProgressLoaded, onProgressChange }: ProgressPa
             </button>
           )}
         </div>
-        {STATUS_FILTERS.map((filter) => (
-          <button
-            key={filter.value}
-            type="button"
-            onClick={() => setStatusFilter(filter.value)}
-            aria-pressed={statusFilter === filter.value}
-            className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
-              statusFilter === filter.value
-                ? "border-primary bg-primary text-primary-foreground"
-                : "border-border bg-card text-foreground hover:border-primary/50"
-            }`}
-          >
-            {filter.label}
-          </button>
-        ))}
-        {subjectFilter !== "all" && (
-          <button
-            type="button"
-            onClick={() => setSubjectFilter("all")}
-            className="rounded-full border border-border bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground"
-          >
-            Clear subject ✕
-          </button>
-        )}
+        <div className="flex flex-wrap items-center gap-2">
+          {STATUS_FILTERS.map((filter) => (
+            <button
+              key={filter.value}
+              type="button"
+              onClick={() => setStatusFilter(filter.value)}
+              aria-pressed={statusFilter === filter.value}
+              className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+                statusFilter === filter.value
+                  ? "border-primary bg-primary text-primary-foreground"
+                  : "border-border bg-card text-foreground hover:border-primary/50"
+              }`}
+            >
+              {filter.label}
+            </button>
+          ))}
+          {subjectFilter !== "all" && (
+            <button
+              type="button"
+              onClick={() => setSubjectFilter("all")}
+              className="rounded-full border border-border bg-muted px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground"
+            >
+              Clear subject ✕
+            </button>
+          )}
+        </div>
       </div>
 
       {progress.length === 0 ? (
