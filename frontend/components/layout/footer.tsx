@@ -162,7 +162,7 @@ function footerItems(
 // ─── Component ────────────────────────────────────────────────────────────────
 
 /** Legal pages — always visible to everyone, in both footer views. */
-const LEGAL_LINKS: [string, string][] = [
+export const LEGAL_LINKS: [string, string][] = [
   ["Privacy",        "/legal/privacy"       ],
   ["Terms",          "/legal/terms"         ],
   ["Cookies",        "/legal/cookies"       ],
@@ -174,7 +174,7 @@ const LEGAL_LINKS: [string, string][] = [
 ];
 
 /** The platform's Play Store listing (TWA package id in android-twa/twa-manifest.json). */
-const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.ravikisan.platform";
+export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.ravikisan.platform";
 
 export function Footer({ user }: { user?: AiSparkUserLike | null }) {
   return (

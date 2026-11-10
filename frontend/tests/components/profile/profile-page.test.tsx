@@ -137,6 +137,7 @@ beforeEach(() => {
 describe("ProfilePage", () => {
   it("opens directly on the Progress tab (profile → progress)", async () => {
     render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
 
     // Default tab heading is the progress view.
     expect(screen.getByText("My Progress")).toBeInTheDocument();
@@ -153,6 +154,7 @@ describe("ProfilePage", () => {
 
   it("renders the identity header from the session user", () => {
     render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
 
     expect(screen.getByText("Harindra Sah")).toBeInTheDocument();
     expect(screen.getByText("harindarsah98172@gmail.com")).toBeInTheDocument();
@@ -177,6 +179,7 @@ describe("ProfilePage", () => {
 
   it("switches to the Account tab with account details", async () => {
     render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
 
     fireEvent.click(screen.getByRole("tab", { name: /account/i }));
 
@@ -197,6 +200,7 @@ describe("ProfilePage", () => {
     sessionState.isLoading = false;
 
     render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
     expect(replace).toHaveBeenCalledWith("/login?next=/profile");
   });
 
@@ -211,6 +215,7 @@ describe("ProfilePage", () => {
 
   it("displays scholar level details and XP for logged-in user", async () => {
     render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
 
     // Shows Scholar Rank and XP
     expect(screen.getByText("Scholar Rank")).toBeInTheDocument();
@@ -223,6 +228,7 @@ describe("ProfilePage", () => {
 
   it("switches to Level Details tab to see scholar progression", async () => {
     render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
 
     const levelTab = screen.getByRole("tab", { name: /level details/i });
     expect(levelTab).toBeInTheDocument();
@@ -234,6 +240,7 @@ describe("ProfilePage", () => {
 
   it("switches to Curriculum tab for grade focus and subjects", () => {
     render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
 
     fireEvent.click(screen.getByRole("tab", { name: /curriculum/i }));
 
@@ -250,6 +257,7 @@ describe("ProfilePage", () => {
   it("has no owner billing switch — access runs through SparkGate", () => {
     sessionState.user = ownerUser;
     render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
 
     // The owner ON/OFF coin gate was removed 2026-11-06: no switch, no dot,
     // and nothing writes the retired settings key from this page.
@@ -267,6 +275,7 @@ describe("ProfilePage", () => {
   it("renders the same wallet for a non-owner student", async () => {
     sessionState.user = studentUser;
     render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
 
     expect(screen.queryByText("Owner Spark Gate Control")).not.toBeInTheDocument();
     expect(screen.queryByLabelText("Toggle Spark Gate")).not.toBeInTheDocument();
@@ -277,6 +286,7 @@ describe("ProfilePage", () => {
 
   it("filters the activity feed with search, status chips and clear", async () => {
     render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
 
     fireEvent.click(screen.getByRole("tab", { name: /activity/i }));
     const panel = screen.getByRole("tabpanel", { name: /activity/i });

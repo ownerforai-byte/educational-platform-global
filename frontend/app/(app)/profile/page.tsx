@@ -4,6 +4,10 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
+  ArrowLeft,
+  CloudDownload,
+  HelpCircle,
+  Star,
   Award,
   BookOpen,
   Bookmark,
@@ -45,6 +49,8 @@ import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/access-le
 import { entryStatus, topicHref } from "@/lib/progress/catalog";
 import { SYLLABUS } from "@/lib/syllabus";
 import type { ProgressEntry } from "@/types/api";
+import { DEPLOY_VERSION } from "@/lib/deploy-version";
+import { LEGAL_LINKS, PLAY_STORE_URL } from "@/components/layout/footer";
 
 const tierBadgeConfig: Record<AccessLevel, { className: string; icon: typeof Crown }> = {
   guest: { className: "bg-slate-500/15 border-slate-500/30 text-slate-500", icon: User },
@@ -230,7 +236,7 @@ const filterChipClass = (active: boolean) =>
  * Gate toggle: ON → owners pay coins like students; OFF → owners free.
  * Students/customers ALWAYS pay regardless of the toggle.
  */
-export default function ProfilePage() {
+function ProfileDetails({ onBack }: { onBack?: () => void }) {
   const router = useRouter();
   const { user, isLoading, logoutUser } = useSession();
 
@@ -271,13 +277,6 @@ export default function ProfilePage() {
       // Ignore storage errors
     }
   };
-
-  // Guests: send to login and return here afterwards
-  useEffect(() => {
-    if (!isLoading && !user) {
-      router.replace("/login?next=/profile");
-    }
-  }, [isLoading, user, router]);
 
   const owner = isOwnerAccount(user);
 
@@ -432,6 +431,17 @@ export default function ProfilePage() {
 
   return (
     <div className="container max-w-5xl py-8 space-y-6">
+      {onBack ? (
+        <button
+          type="button"
+          onClick={onBack}
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          Back to You
+        </button>
+      ) : null}
+
       {/* ── Identity hero — cover banner, avatar, badges, quick actions ─── */}
       <Card className="overflow-hidden border-primary/20 shadow-sm">
         {/* Cover banner */}
@@ -1233,4 +1243,165 @@ export default function ProfilePage() {
       </Tabs>
     </div>
   );
+}
+
+/**
+ * THE YOU HUB (owner 2026-11-09: "make all current in you opens via a button
+ * 'My Profile' and add more things there in current you like all footer
+ * things in there in mobile view … rest all footers add here").
+ *
+ * The You tab opens as a hub: one "My Profile" button opens everything the
+ * profile used to show directly, and the footer's mobile-view items (Check
+ * for Updates, Rate this App, Help & FAQs, the legal links, the plan note and
+ * the version) live here too.
+ */
+function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
+  const { user, isLoading } = useSession();
+
+  // Session still resolving — same skeleton language as the profile view.
+  if (isLoading) {
+    return (
+      <div className="container max-w-2xl space-y-4 py-8">
+        <div className="h-40 animate-pulse rounded-3xl bg-muted/40" />
+        <div className="h-28 animate-pulse rounded-3xl bg-muted/40" />
+        <div className="h-40 animate-pulse rounded-3xl bg-muted/40" />
+      </div>
+    );
+  }
+
+  const tier = accessLevelFor(user);
+  const displayName =
+    user?.fullName || (user?.email ? user.email.split("@")[0] : "Student");
+  const initials = displayName
+    .split(" ")
+    .map((word) => word[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+
+  return (
+    <div className="container max-w-2xl space-y-5 py-8">
+      {/* Identity + the My Profile button */}
+      <Card className="overflow-hidden border-primary/20 shadow-sm">
+        <div className="relative h-24 overflow-hidden bg-gradient-to-r from-primary via-primary/80 to-violet-600">
+          <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-white/10" />
+          <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-card/90 to-transparent" />
+        </div>
+        <CardContent className="pb-5 pt-0">
+          <div className="flex items-center gap-4">
+            <div className="-mt-10 flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border-4 border-background bg-gradient-to-tr from-primary/30 via-primary/15 to-violet-500/30 text-xl font-extrabold text-primary shadow-xl">
+              {initials}
+            </div>
+            <div className="min-w-0">
+              <h1 className="truncate text-xl font-extrabold tracking-tight">{displayName}</h1>
+              <span className="mt-1 inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary">
+                {ACCESS_LABELS[tier]}
+              </span>
+            </div>
+          </div>
+          <Button
+            onClick={onOpenProfile}
+            className="mt-4 h-12 w-full rounded-full bg-primary text-sm font-bold text-primary-foreground shadow-lg shadow-primary/20 hover:opacity-90"
+          >
+            My Profile
+            <ChevronRight className="h-4 w-4" aria-hidden="true" />
+          </Button>
+        </CardContent>
+      </Card>
+
+      {/* App rows — the footer's mobile-view items, here (owner 2026-11-09) */}
+      <section className="overflow-hidden rounded-3xl border border-border/60 bg-card">
+        <div className="h-2 w-full bg-muted/50" aria-hidden="true" />
+        <ul className="divide-y divide-border/60">
+          <li className="flex items-center gap-3 px-4 py-3.5">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
+              <CloudDownload className="h-[18px] w-[18px]" />
+            </span>
+            <div className="min-w-0">
+              <p className="text-sm font-bold text-foreground">Check for Updates</p>
+              <p className="text-xs text-muted-foreground">Current version {DEPLOY_VERSION}</p>
+            </div>
+          </li>
+          <li>
+            <a
+              href={PLAY_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-muted/30"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
+                <Star className="h-[18px] w-[18px]" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-sm font-bold text-foreground">Rate this App</p>
+                <p className="text-xs text-muted-foreground">Share your feedback on Google Play</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <Link
+              href="/help"
+              className="flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-muted/30"
+            >
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
+                <HelpCircle className="h-[18px] w-[18px]" />
+              </span>
+              <div className="min-w-0">
+                <p className="text-sm font-bold text-foreground">Help &amp; FAQs</p>
+                <p className="text-xs text-muted-foreground">Find instant answers to your questions</p>
+              </div>
+            </Link>
+          </li>
+        </ul>
+      </section>
+
+      {/* Legal — the rest of the footer links */}
+      <section className="rounded-3xl border border-border/60 bg-card p-4">
+        <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          Legal
+        </h2>
+        <div className="mt-2 grid grid-cols-2 gap-1.5">
+          {LEGAL_LINKS.map(([label, href]) => (
+            <Link
+              key={href}
+              href={href}
+              className="inline-flex min-h-9 items-center rounded-xl px-2.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-primary/5 hover:text-primary"
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Plan note + version — the footer essentials */}
+      <div className="space-y-1.5 px-1 pb-2 text-[11px] leading-relaxed text-muted-foreground">
+        <p>An approved account is required for the study library; access depends on your plan.</p>
+        <p>
+          &copy; {new Date().getFullYear()} Ravikisan&apos;s Platform · v{DEPLOY_VERSION}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * /profile — the You tab. Opens as the hub; the whole profile experience is
+ * behind the "My Profile" button (owner 2026-11-09).
+ */
+export default function ProfilePage() {
+  const router = useRouter();
+  const { user, isLoading } = useSession();
+  const [view, setView] = useState<"you" | "profile">("you");
+
+  // Guests: send to login and return here afterwards
+  useEffect(() => {
+    if (!isLoading && !user) {
+      router.replace("/login?next=/profile");
+    }
+  }, [isLoading, user, router]);
+
+  if (view === "profile") {
+    return <ProfileDetails onBack={() => setView("you")} />;
+  }
+  return <YouHub onOpenProfile={() => setView("profile")} />;
 }
