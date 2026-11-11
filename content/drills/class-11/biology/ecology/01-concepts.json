@@ -39,6 +39,42 @@
       "concept": "Niche vs habitat",
       "question": "Two bird species live in the same forest (same habitat) yet coexist for years. Doesn't 'same address' mean competition to extinction? Distinguish habitat from niche.",
       "solution": "Habitat is the ADDRESS (the forest); niche is the PROFESSION — what it eats, when it feeds, where it nests, its temperature range. Coexistence means niches differ: one warbler gleans insects from outer twigs, another from inner bark (MacArthur's classic warbler study); one hunts by day, another by night. Competitive exclusion only removes species whose niches fully OVERLAP. Same address is fine — five restaurants share one street because menus differ. Habitat answers 'where'; niche answers 'how it makes a living'."
+    },
+    {
+      "id": "drill-eco-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why energy enters only through producers",
+      "question": "Consumers at every level respire and release heat, yet no heat is converted back into food. Why must an ecosystem be open to energy?",
+      "solution": "Photosynthesis is the only route by which energy in the environment is captured into chemical bonds, and only producers possess it. Heat released by respiration is degraded and cannot be reconcentrated — the second law forbids spontaneous reversal. So ecosystems cannot be energetically self-contained; they must import sunlight continuously. Closed matter, open energy."
+    },
+    {
+      "id": "drill-eco-6",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why decomposers are indispensable",
+      "question": "Decomposers are invisible and often ignored, but removing them would collapse every ecosystem. Explain their two functions.",
+      "solution": "(1) They mineralise organic matter back into inorganic nutrients (CO₂, nitrates, phosphates) so producers can reuse them — without this the nutrient cycle halts and soil becomes depleted. (2) They prevent dead organic matter from accumulating and locking away elements. Decomposers close the matter loop that energy flow cannot, which is why their absence is far more destructive than their obscurity suggests."
+    },
+    {
+      "id": "drill-eco-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the pyramid of numbers can invert",
+      "question": "One oak tree supports thousands of insects, so the pyramid of numbers is inverted. Why doesn't this break the energy pyramid?",
+      "solution": "Numbers count individuals, not energy: one large producer can hold much more energy and biomass than the many tiny consumers above it. The energy pyramid stays upright because the 10% transfer law applies to energy, which is always smaller at higher levels. Only the numbers pyramid may invert — the others record different quantities, so different shapes are possible."
+    },
+    {
+      "id": "drill-eco-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why carnivorous plants exist in bogs",
+      "question": "Carnivorous plants photosynthesise perfectly well, yet trap and digest insects. Why bother?",
+      "solution": "Photosynthesis supplies carbon, but bogs are waterlogged and acidic, so nitrogen and phosphorus are locked up and unavailable to roots. Catching insects provides those limiting nutrients in organic form. Carnivory is a nutrient-acquisition strategy, not an energy one — the plants still make their own food. An adaptation exists because one essential resource, not all of them, is scarce."
     }
   ]
 }

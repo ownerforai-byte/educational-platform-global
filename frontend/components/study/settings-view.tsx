@@ -29,6 +29,8 @@ import { useStudyGoals } from "./use-study-goals";
 import { GuestGoalsPrompt } from "./guest-goals-prompt";
 import { toast } from "sonner";
 import { DEPLOY_VERSION } from "@/lib/deploy-version";
+import { useSession } from "@/features/auth/hooks/use-session";
+import { Footer } from "@/components/layout/footer";
 
 /**
  * /settings — grouped like the reference Settings list: each group is a card
@@ -125,6 +127,7 @@ const SELECT = "h-9 rounded-lg border border-border/80 bg-background px-2 text-x
 /** /settings: language, theme, study goals, notifications, accessibility. */
 export function SettingsView() {
   const { goals, save, guest, adoptGuest, dropGuest, dismissGuest } = useStudyGoals();
+  const { user } = useSession();
   const prefs = goals.preferences;
   const setPrefs = (patch: Partial<StudyPreferences>) =>
     save({ ...goals, preferences: { ...prefs, ...patch } });
@@ -235,6 +238,8 @@ export function SettingsView() {
           </Row>
         </GroupCard>
       </div>
+
+      <Footer user={user} />
     </div>
   );
 }

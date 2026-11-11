@@ -48,6 +48,33 @@
       "concept": "Microbes as decomposers",
       "question": "Why would a world without microbes be buried in organic matter within years?",
       "solution": "Microbes (bacteria, fungi) are the biosphere's recyclers: they secrete enzymes that break cellulose, lignin and proteins into CO₂, water and minerals, returning them to soil and air. Plants could not access nutrients locked in dead matter; carbon and nitrogen cycles would halt. Decomposition is an ecosystem service only microbes perform at scale."
+    },
+    {
+      "id": "drill-mic11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why bacteria are grown in colonies",
+      "question": "Microbiologists streak plates to obtain isolated colonies rather than growing a single lawn. Why does an isolated colony matter?",
+      "solution": "A colony arising from one cell is a genetically uniform population — a clone — so its properties can be attributed to a single genotype and pure culture can be maintained. A lawn is a mixture, so any result is uninterpretable. Isolation is what makes a microbiological result reproducible."
+    },
+    {
+      "id": "drill-mic11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why viruses need a host",
+      "question": "Viruses contain genetic material like cells but cannot reproduce alone. Why is a host strictly required?",
+      "solution": "A virus carries no ribosomes, no ATP-generating machinery and no metabolic enzymes — it has the instructions but none of the factory. It must enter a host cell and hijack that cell's replication and translation apparatus to make more virions. Absolute intracellular dependence is what separates viruses from organisms; they are obligate parasites at the machinery level."
+    },
+    {
+      "id": "drill-mic11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why antibiotics fail against viruses",
+      "question": "Penicillin kills bacteria but does nothing against flu. Why is antibacterial therapy inert against viruses?",
+      "solution": "Penicillin targets peptidoglycan cell-wall synthesis and other antibiotics hit bacterial ribosomes — structures viruses do not possess. Since viruses use host ribosomes and have no walls or bacterial metabolism, there is no target to hit. Selective toxicity requires a target the pathogen has and the patient lacks; viruses offer almost none, which is why antivirals are rarer and harder."
     }
   ]
 }

@@ -48,6 +48,33 @@
       "concept": "Why energy pyramids never invert",
       "question": "Why can a pyramid of energy never be inverted, while a pyramid of numbers sometimes can?",
       "solution": "Energy shrinks ~90% at each transfer (heat loss, respiration) — a top predator's energy can never exceed its prey's total, so the energy pyramid is always upright. Numbers can invert: one tree supports thousands of insects (one producer, many consumers). Energy is one-way and dissipative; count is not."
+    },
+    {
+      "id": "drill-bte11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the abiotic environment sets the limits",
+      "question": "Why do temperature and rainfall predict biome boundaries better than the animals present?",
+      "solution": "Temperature and moisture determine which plants can survive, and plants set the food and cover for everything else — so they constrain the entire community from the bottom. Abiotic factors are also independent of the biota, whereas animals follow their habitat. The physical template sets the possible community; the biota fills it."
+    },
+    {
+      "id": "drill-bte11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why energy flows but matter cycles",
+      "question": "Ecosystems lose energy at every transfer yet their nutrients are reused indefinitely. Why the difference?",
+      "solution": "Energy is degraded to heat in every transformation (second law), so it cannot be recycled — it must be continuously resupplied by the sun. Matter, by contrast, is conserved: atoms are passed through producers, consumers and decomposers unchanged. Energy flow is one-way; matter cycles. The same ecosystem is an energy conduit and a matter loop."
+    },
+    {
+      "id": "drill-bte11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the 10% rule limits food chains",
+      "question": "Only about 10% of energy passes to the next trophic level. Why does that cap the length of a food chain?",
+      "solution": "Each transfer loses ~90% of energy to respiration and heat, so available energy shrinks geometrically: 1000 → 100 → 10 → 1 units. Beyond four or five levels too little remains to support a viable population. Chain length is set by the arithmetic of diminishing energy, not by an arbitrary biological limit."
     }
   ]
 }

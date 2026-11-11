@@ -48,6 +48,33 @@
       "concept": "Protein's four levels",
       "question": "Name the four levels of protein structure and the bond/interaction responsible for each.",
       "solution": "Primary: amino-acid sequence (peptide bonds). Secondary: α-helix/β-sheet (H-bonds in the backbone). Tertiary: overall 3D fold (hydrophobic clustering, disulphide bridges, ionic and H-bonds between side chains). Quaternary: multiple subunits assembled (same non-covalent forces between chains, e.g. haemoglobin's four)."
+    },
+    {
+      "id": "drill-bio11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why cells stay small",
+      "question": "Why do cells not grow indefinitely large, even when nutrients are plentiful?",
+      "solution": "Volume grows as the cube of linear dimension while surface area grows only as the square, so the surface-to-volume ratio falls as a cell enlarges. Exchange of gases, nutrients and wastes across the membrane then cannot keep pace with the volume's demand. Small size preserves a workable surface-to-volume ratio — geometry, not materials, sets the ceiling."
+    },
+    {
+      "id": "drill-bio11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why active transport needs ATP",
+      "question": "Diffusion moves substances down a gradient for free — why must active transport be paid for?",
+      "solution": "Moving a solute against its concentration gradient decreases entropy locally, which cannot happen spontaneously; the cell must spend free energy to drive it. ATP hydrolysis couples to pump proteins, changing their conformation so the solute is forced uphill. Diffusion is downhill and free; active transport is uphill and must be bought with ATP."
+    },
+    {
+      "id": "drill-bio11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why enzymes are not consumed",
+      "question": "An enzyme catalyses thousands of reactions yet is recovered unchanged. What does that imply about how it works?",
+      "solution": "The enzyme only lowers the activation energy by providing a favourable transition-state environment; it is not a reactant, so it emerges as it entered. That is exactly why a tiny amount suffices and why catalysts are called reusable. Enzymes change the PATH, not the participants."
     }
   ]
 }

@@ -48,6 +48,33 @@
       "concept": "Biology's relevance to daily problems",
       "question": "Give two concrete examples where biological knowledge directly solves a human problem.",
       "solution": "(1) Medicine: understanding microbes and immunity produced vaccines and antibiotics — smallpox eliminated by biological knowledge. (2) Agriculture: understanding genetics and plant physiology produced high-yield, disease-resistant crops (Green Revolution, Bt cotton). Biology's applications run from health to food security to environment."
+    },
+    {
+      "id": "drill-int11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why biology is a science of comparisons",
+      "question": "Why does a single observation rarely establish a biological claim, while repeated controlled comparison does?",
+      "solution": "Living systems vary: individuals differ genetically and environmentally, so a single case cannot separate the factor of interest from natural variation. Controlled comparison with replication and a control group isolates the variable by averaging out the noise. Biology's subject matter is variable by nature, so inference must be statistical."
+    },
+    {
+      "id": "drill-int11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why a hypothesis must be falsifiable",
+      "question": "A claim that 'all organisms have an invisible life force' cannot be tested. Why is unfalsifiability a defect in a scientific hypothesis?",
+      "solution": "If no conceivable observation could contradict a claim, then no evidence can support it either — it makes no prediction to check. Science advances by eliminating wrong hypotheses, which requires them to be refutable. Falsifiability is what makes a claim empirical rather than merely stated."
+    },
+    {
+      "id": "drill-int11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why taxonomy reflects relationship not convenience",
+      "question": "Modern classification groups crocodiles with birds rather than with lizards. Why does classification follow ancestry rather than appearance?",
+      "solution": "Appearance converges: similar environments produce similar forms (analogy) without shared ancestry. Classification aims to represent evolutionary relationship (homology), so groups must be monophyletic — sharing an exclusive common ancestor. Crocodiles and birds share a more recent ancestor than crocodiles and lizards. Classification is a genealogy, not a catalogue of looks."
     }
   ]
 }

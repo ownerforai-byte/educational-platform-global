@@ -48,6 +48,33 @@
       "concept": "Alternation of generations",
       "question": "In plants, why does a haploid gametophyte alternate with a diploid sporophyte — what does each generation contribute?",
       "solution": "The gametophyte (n) produces gametes by MITOSIS; fusion restores 2n; the sporophyte (2n) produces spores by MEIOSIS, restarting the cycle. The alternation lets the life cycle both reshuffle genes (meiosis) and multiply without fertilisation (spores) — genetic mixing and dispersal in one lifecycle."
+    },
+    {
+      "id": "drill-flo11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why flowers attract specific visitors",
+      "question": "Red tubular flowers attract birds while pale night-opening flowers attract moths. Why is the flower's form matched to its pollinator?",
+      "solution": "Pollination succeeds only if a visitor reliably reaches the pollen, so floral traits are shaped toward that specific visitor's sensory and physical capabilities: colour visible to the visitor's eyes, corolla depth matching its tongue, timing matching its activity. Mismatched form means pollen is not delivered. Floral form is an adaptation to the pollinator's biology, which is why flower shape predicts pollinator type."
+    },
+    {
+      "id": "drill-flo11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why double fertilisation is unique to angiosperms",
+      "question": "Angiosperms use two sperm per pollen tube: one fertilises the egg, the other fuses with the polar nuclei. Why is this second fusion useful rather than wasteful?",
+      "solution": "The second fusion creates triploid endosperm, the nutritive tissue that feeds the developing embryo. Producing a dedicated food store only when fertilisation actually occurs prevents wasteful provisioning of unfertilised ovules. Double fertilisation couples successful syngamy to endosperm formation — it is an efficiency mechanism, not a redundancy."
+    },
+    {
+      "id": "drill-flo11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why self-pollination is selected against",
+      "question": "Self-pollination is easier than cross-pollination, yet many plants evolved mechanisms to prevent it. Why?",
+      "solution": "Selfing reduces genetic variation in offspring, so deleterious recessive alleles become homozygous and the population's ability to adapt and resist disease declines. Mechanisms that prevent selfing — self-incompatibility, dichogamy, dioecy — preserve heterozygosity and vigour. Convenience is outweighed by the cost of inbreeding depression."
     }
   ]
 }

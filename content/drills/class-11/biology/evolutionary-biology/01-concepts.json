@@ -48,6 +48,33 @@
       "concept": "Speciation needs isolation",
       "question": "Why does geographic isolation usually precede the formation of new species?",
       "solution": "Separated populations stop exchanging genes; different mutations, drift and selection accumulate independently. Over time, even if they meet again, they may not interbreed successfully — reproductive isolation, the criterion of species. Gene flow homogenises; isolation lets divergence happen."
+    },
+    {
+      "id": "drill-evo11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why individuals do not evolve",
+      "question": "An individual organism can grow stronger or faster, but populations evolve. Why must evolution be defined at population level?",
+      "solution": "Evolution is a change in ALLELE FREQUENCIES across generations. An individual's lifetime change is not inherited and does not alter the gene pool, so it cannot be evolution. Only populations have a gene pool whose frequencies can shift. Evolution happens to the population, not to the body."
+    },
+    {
+      "id": "drill-evo11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why mutation alone is weak",
+      "question": "Mutations supply all new variation, yet mutation alone is considered a weak force in evolution. Why?",
+      "solution": "Mutation rates per gene are low, and most mutations are neutral or deleterious, so mutation slowly dribbles in variation with negligible directional effect on frequencies. Selection, drift and gene flow change frequencies much faster. Mutation is the ultimate SOURCE of variation but not the mechanism of change — it stocks the shelf, others decide what sells."
+    },
+    {
+      "id": "drill-evo11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why natural selection needs heritability",
+      "question": "Selection favours taller individuals, but if height is purely environmental the population will not change. Why is heritability the crucial condition?",
+      "solution": "Selection acts on phenotypes; evolution requires that the phenotype difference be passed on. If height variation is due to nutrition only, the tall individuals' offspring are not taller than average, so no frequency shift occurs. Response to selection = heritability × selection differential. Selection needs a heritable component, or it changes nothing in the next generation."
     }
   ]
 }

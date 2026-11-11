@@ -52,7 +52,6 @@ import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/access-le
 import { entryStatus, topicHref } from "@/lib/progress/catalog";
 import { SYLLABUS } from "@/lib/syllabus";
 import type { ProgressEntry } from "@/types/api";
-import { Footer } from "@/components/layout/footer";
 
 const tierBadgeConfig: Record<AccessLevel, { className: string; icon: typeof Crown }> = {
   guest: { className: "bg-slate-500/15 border-slate-500/30 text-slate-500", icon: User },
@@ -440,7 +439,7 @@ function ProfileDetails({ onBack }: { onBack?: () => void }) {
           className="inline-flex items-center gap-1.5 text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Info
+          Back to You
         </button>
       ) : null}
 
@@ -1248,11 +1247,11 @@ function ProfileDetails({ onBack }: { onBack?: () => void }) {
 }
 
 /**
- * THE INFO PAGE — the You tab converted (owner 2026-11-09: "convert the you
+ * THE YOU PAGE — the You tab converted (owner 2026-11-09: "convert the you
  * to info and add all footer there … keep the footer to limited place also,
  * not at all place, like all footer to 'info' page").
  *
- * The tab opens as Info: one compact identity block whose "My Profile" button
+ * The tab opens as You: one compact identity block whose "My Profile" button
  * opens the whole profile experience, and ALL of the site footer content
  * (directory, legal, plan note, version) lives here — and only here.
  */
@@ -1363,11 +1362,6 @@ function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
         </div>
       </div>
 
-      {/* ALL the footer content lives here and only here (owner 2026-11-09:
-          "all footer to 'info' page", "keep the footer to limited place"). */}
-      <div className="lazy-render">
-        <Footer user={user} />
-      </div>
     </div>
   );
 }
