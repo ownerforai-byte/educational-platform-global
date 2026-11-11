@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Trigonometry (Class 11 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "trigonometry",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-trig11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Radian measure",
+      "question": "Why do mathematicians prefer radians over degrees, and what does 1 radian mean geometrically?",
+      "solution": "1 radian = the angle subtending an arc equal to the radius — a natural, dimensionless unit (arc/radius). Calculus formulas become clean: d/dx(sin x) = cos x only in radians; in degrees an ugly π/180 factor appears. Radians make angle a pure ratio, tying trigonometry to arc length directly."
+    },
+    {
+      "id": "drill-trig11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Periodicity from the unit circle",
+      "question": "Why does sin(θ + 360°) = sinθ? Explain with the unit circle.",
+      "solution": "θ and θ + 360° end at the SAME point on the unit circle — same coordinates (cosθ, sinθ). Trig functions are the coordinates of a point rotating on a circle, so they repeat every full turn: period 360° (2π). All 'periodic' properties of trig functions come from circular motion."
+    },
+    {
+      "id": "drill-trig11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "sin(A±B) — why not distributive",
+      "question": "Why is sin(A+B) ≠ sinA + sinB? Give a counterexample and state the correct expansion.",
+      "solution": "Counterexample: A = B = 30°. sin60° = √3/2 ≈ 0.866, but sin30° + sin30° = 1 — not equal. Sine is a function of the ANGLE, not linear in it; the correct expansion sin(A+B) = sinA cosB + cosA sinB comes from rotating a point on the unit circle by B then A. Functions of angles don't distribute."
+    },
+    {
+      "id": "drill-trig11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Compound angle from geometry",
+      "question": "Why is cos(90° − θ) = sinθ? Give the unit-circle reasoning.",
+      "solution": "The point at angle θ is (cosθ, sinθ); the point at 90° − θ is its REFLECTION in the line y = x — coordinates swapped: (sinθ, cosθ). Since the x-coordinate is cos of the angle: cos(90°−θ) = sinθ. Complementary angles swap the roles of x and y on the circle."
+    },
+    {
+      "id": "drill-trig11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Solving trig equations — infinite solutions",
+      "question": "Why does sinθ = ½ have infinitely many solutions while a linear equation has one?",
+      "solution": "The line y = ½ crosses the sine wave TWICE per period, and the wave repeats forever — so solutions come in infinite periodic families: θ = 30° + 360°n or 150° + 360°n. Trig equations must be answered with the general solution (adding the period), not a single value."
+    }
+  ]
+}

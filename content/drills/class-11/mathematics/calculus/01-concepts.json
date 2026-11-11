@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Calculus (Class 11 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "calculus",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-calc11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Derivative as instantaneous rate",
+      "question": "A speedometer shows 60 km/h at one instant. How does that number relate to an average speed over a journey?",
+      "solution": "Average speed = total distance/total time (a secant slope). The speedometer is the LIMIT of average speeds as the interval shrinks to zero — the tangent slope, f′(t). The derivative is defined as lim(h→0)[f(t+h) − f(t)]/h: an average rate taken to its limit."
+    },
+    {
+      "id": "drill-calc11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Differentiation rules mirror each other",
+      "question": "Why does d/dx(x²) = 2x, and what does the power rule do for x^(1/2)?",
+      "solution": "From first principles: (x+h)² − x² = 2xh + h²; dividing by h gives 2x + h → 2x as h→0. The power rule generalises: d/dx(xⁿ) = nxⁿ⁻¹ — so x^(1/2) differentiates to ½x^(−1/2), the slope of the square-root curve. One rule covers all powers, fractional or negative."
+    },
+    {
+      "id": "drill-calc11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Chain rule as rate multiplication",
+      "question": "If y = (3x + 1)², why must the chain rule be used and what does it give?",
+      "solution": "y is a composite: outer function u², inner u = 3x+1. Rates multiply: dy/dx = dy/du · du/dx = 2u · 3 = 6(3x+1). Forgetting the inner derivative (3) is the classic error — the chain rule accounts for the fact that u itself changes as x changes."
+    },
+    {
+      "id": "drill-calc11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Increasing/decreasing from sign of f′",
+      "question": "How does the sign of f′(x) tell you whether a function rises or falls, and what does f′ = 0 mark?",
+      "solution": "f′ is the slope: positive — the curve climbs; negative — it falls. f′ = 0 marks a STATIONARY point (horizontal tangent) — a candidate for maximum, minimum or inflection (which one needs further testing). Reading the derivative's sign turns a formula into a picture of the graph."
+    },
+    {
+      "id": "drill-calc11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Integration as antiderivative",
+      "question": "Why does every indefinite integral carry '+C', and why does a definite integral not need it?",
+      "solution": "Differentiation erases constants, so reversing it recovers a whole FAMILY of functions differing by a constant — +C stands for that family. In a definite integral the constant cancels: [F(b)+C] − [F(a)+C] = F(b) − F(a). The +C is the price of information lost by differentiation."
+    }
+  ]
+}

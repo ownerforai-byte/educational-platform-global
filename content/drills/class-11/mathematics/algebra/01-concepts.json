@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Algebra (Class 11 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "algebra",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-alg11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Logarithm as inverse of exponent",
+      "question": "Why does log₂8 = 3, and what single question does every logarithm ask?",
+      "solution": "Because 2³ = 8. Every logarithm asks: 'to what POWER must the base be raised to give this number?' The log is the exponent — log_b(x) = y ⇔ b^y = x. Keeping that equivalence in mind converts log problems into exponent problems."
+    },
+    {
+      "id": "drill-alg11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Log laws come from exponent laws",
+      "question": "Derive log(mn) = log m + log n from the definition of logarithm.",
+      "solution": "Let m = b^x, n = b^y. Then mn = b^x·b^y = b^(x+y) — exponent laws turn MULTIPLICATION into ADDITION of exponents. Reading the last equation as a logarithm: log(mn) = x + y = log m + log n. Every log rule is an exponent rule in disguise."
+    },
+    {
+      "id": "drill-alg11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Quadratic — nature of roots via discriminant",
+      "question": "For ax² + bx + c = 0, explain what the discriminant b² − 4ac tells you, and why the square root of a negative discriminant signals no real root.",
+      "solution": "The quadratic formula x = (−b ± √(b²−4ac))/2a — the discriminant sits under the square root. D > 0: two distinct real roots; D = 0: one repeated root; D < 0: √ of a negative number — no real value, so no real roots (two complex ones). The discriminant measures how far the parabola's vertex sits from the x-axis."
+    },
+    {
+      "id": "drill-alg11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Sum and product of roots",
+      "question": "Why does a quadratic with roots α, β equal x² − (α+β)x + αβ? Use factorisation.",
+      "solution": "If α and β are roots, the polynomial factors as (x−α)(x−β) = x² − (α+β)x + αβ. Matching with ax² + bx + c: sum = −b/a, product = c/a. Constructing a quadratic from its roots (or reading the roots from coefficients) is direct coefficient matching."
+    },
+    {
+      "id": "drill-alg11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Sequence vs series",
+      "question": "Distinguish a sequence from a series, and state what Σ notation adds.",
+      "solution": "A sequence is an ordered LIST of terms (a₁, a₂, a₃, …); a series is the SUM of those terms. Σ compresses 'add these terms following this rule' — e.g. Σn² from 1 to 5 = 1+4+9+16+25. The distinction matters because sequences have patterns of TERMS while series ask about SUMS (which may converge)."
+    }
+  ]
+}

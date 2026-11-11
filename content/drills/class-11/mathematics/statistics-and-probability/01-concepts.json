@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Statistics & Probability (Class 11 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "statistics-and-probability",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-sp11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Mean is sensitive to outliers",
+      "question": "Salaries: 20, 22, 24, 26, 200 (thousand). Which average — mean or median — better represents the 'typical' salary, and why?",
+      "solution": "Median = 24 (middle value); mean = 58.4, dragged up by the single 200 outlier. The mean uses every value's magnitude, so extreme values pull it; the median uses only POSITION, ignoring how extreme. For skewed data (incomes, house prices), the median describes the typical case."
+    },
+    {
+      "id": "drill-sp11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Standard deviation meaning",
+      "question": "Two classes both average 60 in a test, but one has SD 5 and the other SD 20. What does that tell you about the classes?",
+      "solution": "SD measures the SPREAD around the mean: SD 5 — most students scored near 60 (consistent class); SD 20 — scores scattered from ~40 to ~80 (mixed abilities). Same average, very different distributions. Central tendency and dispersion are independent descriptions; both are needed."
+    },
+    {
+      "id": "drill-sp11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Theoretical vs experimental probability",
+      "question": "A coin shows 7 heads in 10 tosses. Does this disprove the theoretical probability of ½? Explain the law of large numbers.",
+      "solution": "No — probability is a LONG-RUN proportion, not a guarantee per 10 tosses. Short-run deviation is normal (7/10 is within ordinary fluctuation). The law of large numbers says the relative frequency CONVERGES to the theoretical value as trials grow: at 10,000 tosses the proportion would sit very near 0.5. Small samples mislead; big samples converge."
+    },
+    {
+      "id": "drill-sp11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Addition rule with overlap",
+      "question": "In a class, 20 play football, 15 play cricket, 5 play both. Why is P(F or C) = 20 + 15 − 5 = 30, not 35?",
+      "solution": "The 5 who play both were counted TWICE — once in football, once in cricket. Subtracting the intersection removes the double count: n(A∪B) = n(A) + n(B) − n(A∩B). The addition rule's subtraction term exists precisely to fix double counting."
+    },
+    {
+      "id": "drill-sp11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Mutually exclusive vs independent",
+      "question": "Can two events be both mutually exclusive and independent? Justify.",
+      "solution": "No (unless one has probability 0). If A and B are exclusive, A happening means B did NOT — knowing A occurred changes P(B) to 0, which is dependence. Independence requires P(A∩B) = P(A)P(B) > 0, contradicting P(A∩B) = 0. The two concepts are easily confused but logically opposed."
+    }
+  ]
+}

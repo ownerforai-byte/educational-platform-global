@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Vectors (Class 11 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "vectors",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-vecm11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Vector = magnitude + direction",
+      "question": "Why can't a vector be fully described by a single number?",
+      "solution": "A vector carries TWO pieces of information: magnitude (how much) and direction (which way). A single number discards the direction — and direction changes the outcome of every vector operation (adding, projecting, rotating). Vectors exist precisely because some quantities need both."
+    },
+    {
+      "id": "drill-vecm11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Scalar multiplication scales, never rotates",
+      "question": "What does multiplying a vector by −2 do, and why does the result stay parallel to the original?",
+      "solution": "−2 doubles the magnitude and REVERSES the direction (opposite way along the same line). Scaling never changes the LINE the vector lies on — only length and sense. Two vectors are parallel exactly when one is a scalar multiple of the other."
+    },
+    {
+      "id": "drill-vecm11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Dot product as projection",
+      "question": "A force of 10 N acts at 60° to the direction of motion over 5 m. Use the dot product to find the work done and interpret the cosθ factor.",
+      "solution": "W = F·d = |F||d|cosθ = 10 × 5 × cos60° = 25 J. cos60° = ½ is the fraction of the force that acts ALONG the motion — only the projected component does work. The perpendicular half contributes nothing. The dot product is the projection machine."
+    },
+    {
+      "id": "drill-vecm11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Direction cosines",
+      "question": "What are the direction cosines of a vector, and why do their squares sum to 1?",
+      "solution": "They are the cosines of the angles the vector makes with the x, y, z axes — equivalently the components of the unit vector along it. Unit-vector components satisfy l² + m² + n² = 1 by Pythagoras in 3D. Direction cosines are a vector's direction written as three numbers."
+    },
+    {
+      "id": "drill-vecm11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Position vectors and midpoints",
+      "question": "Why does the midpoint of AB have position vector (a + b)/2?",
+      "solution": "The midpoint divides AB in ratio 1:1, and the section formula gives r = (1·a + 1·b)/(1+1) = (a+b)/2 — the average of the endpoint vectors. Geometrically: from the origin, the midpoint sits halfway along the vector sum. Averages of position vectors are the vector way to do coordinate geometry."
+    }
+  ]
+}

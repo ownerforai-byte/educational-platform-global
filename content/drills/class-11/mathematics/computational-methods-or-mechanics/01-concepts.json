@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Computational Methods or Mechanics (Class 11 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "computational-methods-or-mechanics",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-cmm11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Iterative methods — why iterate",
+      "question": "Why do numerical methods (like Newton–Raphson) solve equations by REPEATED approximation instead of exact formulae?",
+      "solution": "Most equations (x = cos x, high-degree polynomials) have no closed-form solution — no formula exists. Iteration replaces the impossible exact answer with a REFINABLE estimate: each step reduces the error, and stopping after enough steps gives any desired accuracy. Approximation with control beats an unattainable exact form."
+    },
+    {
+      "id": "drill-cmm11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Newton–Raphson's tangent idea",
+      "question": "Explain the geometric idea behind the Newton–Raphson iteration x_{n+1} = x_n − f(x_n)/f′(x_n).",
+      "solution": "At the current guess x_n, draw the TANGENT to the curve; where the tangent crosses the x-axis is the next guess — usually closer to the root. The formula is just the tangent's x-intercept. Each iteration follows the tangent downhill toward the root; near a simple root it converges quadratically (digits double each step)."
+    },
+    {
+      "id": "drill-cmm11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Statics — equilibrium of forces",
+      "question": "A picture hangs from two wires at angles. What conditions must the two tensions satisfy for equilibrium?",
+      "solution": "Two conditions: the horizontal components of the tensions cancel (ΣFx = 0) and their vertical components together equal the weight (ΣFy = 0). Two equations, two unknowns — solvable. Equilibrium means the vector sum of ALL forces is zero: no net push in any direction."
+    },
+    {
+      "id": "drill-cmm11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Moment of a force",
+      "question": "Why is it easier to open a heavy door by pushing at the handle far from the hinges than near them?",
+      "solution": "The turning effect (moment) = force × PERPENDICULAR distance from the pivot. The handle maximises that distance, so the same force produces a much larger moment. Near the hinges the distance is small — most of your force is wasted. Distance from the pivot multiplies the force's effect."
+    },
+    {
+      "id": "drill-cmm11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Projectile motion as two independent problems",
+      "question": "Why can a projectile's horizontal and vertical motions be solved separately?",
+      "solution": "Gravity acts only vertically, and the horizontal velocity has no vertical component — the two axes don't interact. Horizontal: constant velocity (no horizontal force). Vertical: constant acceleration g. Solving each axis with its own simple equation, then recombining, gives the full trajectory — independence of perpendicular components is the principle."
+    }
+  ]
+}
