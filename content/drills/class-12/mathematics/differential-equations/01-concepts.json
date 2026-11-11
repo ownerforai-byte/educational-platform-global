@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Differential Equations (Class 12 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "differential-equations",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-de12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Order vs degree",
+      "question": "State the order and degree of (d²y/dx²)³ + (dy/dx)⁴ + y = 0, and explain why degree is defined only after the equation is polynomial in derivatives.",
+      "solution": "Order = 2 (highest derivative); degree = 3 (power of that highest derivative). Degree requires the equation to be a POLYNOMIAL in the derivatives — an equation like sin(d²y/dx²) = x has order 2 but no defined degree, since 'power' of a transcendental derivative is meaningless. Order first, then degree of that derivative."
+    },
+    {
+      "id": "drill-de12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "General vs particular solution",
+      "question": "y = C·eˣ solves dy/dx = y for any C. What distinguishes the general from a particular solution, and how many constants does a first-order general solution carry?",
+      "solution": "The general solution is the whole FAMILY (one arbitrary constant per order); a particular solution fixes the constant(s) using initial conditions — e.g. y(0) = 5 picks C = 5. A first-order equation's general solution carries exactly ONE arbitrary constant; the number of constants equals the order."
+    },
+    {
+      "id": "drill-de12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Variable separable — the method's logic",
+      "question": "Solve dy/dx = xy conceptually by separation, and state the condition that makes separation possible.",
+      "solution": "Move all y-terms to the left and x-terms to the right: dy/y = x dx → ln|y| = x²/2 + C → y = A·e^(x²/2). Separation requires the right side to FACTOR as f(x)·g(y) — each variable isolated with its own differential. If the equation is not factorable (e.g. dy/dx = x + y), separation fails and other methods are needed."
+    },
+    {
+      "id": "drill-de12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Homogeneous equations — the y = vx substitution",
+      "question": "Why does substituting y = vx always reduce a homogeneous first-order equation to a separable one?",
+      "solution": "Homogeneous means dy/dx = F(y/x) — a function of the RATIO only. Setting y = vx (so dy/dx = v + x·dv/dx) turns the ratio into the single variable v: v + x·dv/dx = F(v) → x·dv/dx = F(v) − v, separable in v and x. The ratio-dependence is what the substitution exploits."
+    },
+    {
+      "id": "drill-de12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Linear first-order — the integrating factor",
+      "question": "For dy/dx + P(x)y = Q(x), why does multiplying by e^∫P dx make the left side an exact derivative?",
+      "solution": "With μ = e^∫P dx, the left side becomes μ·dy/dx + μPy = d/dx(μy) — because μ′ = μP by construction (product rule). Integrating: μy = ∫μQ dx + C. The integrating factor is engineered precisely to make the left side a single derivative; verifying μ′ = μP is the check the examiner looks for."
+    },
+    {
+      "id": "drill-de12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Growth and decay — the model's assumptions",
+      "question": "Radioactive decay obeys dN/dt = −λN. What assumption makes the rate PROPORTIONAL to the amount, and why is the solution exponential rather than linear?",
+      "solution": "Each nucleus decays independently with a fixed probability per unit time, so the total decay RATE scales with how many nuclei remain — proportionality. Solving gives N = N₀e^(−λt): a constant FRACTION lost per unit time means equal ratios in equal times, which is exactly exponential behaviour (a linear model would imply a constant AMOUNT lost)."
+    },
+    {
+      "id": "drill-de12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Verifying a solution",
+      "question": "Show that y = A·cos x + B·sin x satisfies d²y/dx² + y = 0 for ANY A and B, and explain what that means structurally.",
+      "solution": "y″ = −A cos x − B sin x = −y, so y″ + y = 0 identically. The equation is second-order and LINEAR, so its general solution is a combination of TWO independent solutions (cos x, sin x) with two arbitrary constants — the solution space is a 2-dimensional vector space. Linearity is what makes superposition work."
+    },
+    {
+      "id": "drill-de12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Initial conditions pin down the curve",
+      "question": "Why does the same differential equation describe many different physical situations, and what information selects the right one?",
+      "solution": "The equation encodes the LAW (e.g. the rate structure), not the specific situation; its general solution is a family of curves. Initial/boundary conditions (starting amount, initial velocity, boundary temperature) select the member of the family matching the actual scenario. Law + conditions = prediction; neither alone suffices."
+    }
+  ]
+}

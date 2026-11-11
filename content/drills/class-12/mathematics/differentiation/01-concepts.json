@@ -1,44 +1,80 @@
 {
-  "title": "Concept Drills — Differentiation (Class 12 Mathematics)",
+  "title": "Concept Drills — Differentiation & Applications (Class 12 Mathematics)",
   "subject": "mathematics",
   "unitSlug": "differentiation",
   "examSource": "Concept drills",
   "questions": [
     {
-      "id": "drill-dif-1",
-      "type": "concept",
-      "marks": 2,
-      "difficulty": "medium",
-      "concept": "Derivative as rate, not just slope",
-      "question": "A student can differentiate any polynomial but says 'dy/dx is just the slope of the tangent.' What important MEANING of the derivative is missing, and when does it matter?",
-      "solution": "The missing meaning is INSTANTANEOUS RATE OF CHANGE. Slope answers 'how steep is the graph here?'; rate answers 'how fast is the quantity changing per unit x?' — velocity from displacement, marginal cost from total cost, current from charge. It matters the moment x is not position: $dV/dt$ of a draining tank is litres per second, not a geometric slope. The tangent-slope picture is one special case (y vs x on paper); the rate picture is the one physics, chemistry and economics actually use."
-    },
-    {
-      "id": "drill-dif-2",
-      "type": "concept",
-      "marks": 2,
-      "difficulty": "medium",
-      "concept": "Chain rule intuition",
-      "question": "For $y = \\sin(x^2)$, a student writes $dy/dx = \\cos(x^2)$ — differentiating 'the outside' and stopping. Explain the missing factor using a rate-of-rates story.",
-      "solution": "y depends on x THROUGH an intermediate $u = x^2$: x drives u, u drives y. The chain rule multiplies the two rates: $dy/dx = (dy/du)(du/dx) = \\cos(u)\\cdot 2x = 2x\\cos(x^2)$. Story: if u runs twice as fast when x ticks (du/dx = 2x) and y responds to u at rate cos(u), then y responds to x at the PRODUCT. The student computed only how y responds to u and forgot how fast u itself is moving. Rule of thumb: count the layers — every 'inside' you peel off contributes one factor."
-    },
-    {
-      "id": "drill-dif-3",
+      "id": "drill-diff12-1",
       "type": "concept",
       "marks": 2,
       "difficulty": "easy",
-      "concept": "Stationary ≠ always max/min",
-      "question": "$f'(0) = 0$ for $f(x) = x^3$. A student marks $(0,0)$ as a minimum. What is it really, and what test exposes the error?",
-      "solution": "It is a stationary point of INFLECTION (a saddle): the curve flattens at the origin but keeps rising on both sides. The second-derivative test gives $f''(0) = 0$ — inconclusive — which is precisely the warning to look closer. The first-derivative test settles it: $f' = 3x^2 \\geq 0$ on BOTH sides, so the function never decreases through $x = 0$; no max, no min. Lesson: $f' = 0$ is a candidate list, not a verdict — always test the sign change."
+      "concept": "Derivative as an instantaneous rate",
+      "question": "A car's speedometer shows 60 km/h at one instant. How does this instant rate relate to the average rate over a journey, and what is the mathematical link?",
+      "solution": "Average rate = total distance/total time (a secant slope). The speedometer shows the limit of average rates as the time interval shrinks to zero — the TANGENT slope, f′(t). The derivative is defined as lim(h→0)[f(t+h) − f(t)]/h: the average rate's limit, not a different quantity."
     },
     {
-      "id": "drill-dif-4",
+      "id": "drill-diff12-2",
       "type": "concept",
       "marks": 2,
-      "difficulty": "hard",
-      "concept": "Differentiability vs continuity",
-      "question": "$f(x) = |x|$ is continuous at $x = 0$ but not differentiable there. Explain geometrically AND analytically why continuity does not guarantee differentiability.",
-      "solution": "Geometrically, the graph has a sharp CORNER at the origin: the left tangent has slope $-1$, the right has slope $+1$ — no single tangent line exists, so no derivative. Analytically, the difference quotient gives $\\frac{|h|}{h}$, which is $-1$ from the left and $+1$ from the right: the two-sided limit fails. Continuity only demands the graph be unbroken (limits agree); differentiability demands it be SMOOTH (one-sided slopes agree). Differentiable implies continuous, but never the reverse — the corner is the standard counterexample."
+      "difficulty": "medium",
+      "concept": "Chain rule — rate multiplication",
+      "question": "If y depends on u and u depends on x, why does dy/dx = dy/du · du/dx? Frame it as a rate question.",
+      "solution": "Rates MULTIPLY along a chain: if y changes 3 units per unit of u, and u changes 2 units per unit of x, then y changes 3×2 = 6 per unit of x. The Leibniz notation makes the cancellation visually suggestive (du appears in both fractions) — the rigorous content is that the composed difference quotient factors. This is why substitution works and related-rates problems multiply rates."
+    },
+    {
+      "id": "drill-diff12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "First derivative test vs second derivative test",
+      "question": "f′(c) = 0 tells you c is critical. What does f″ tell you, and when does the second derivative test FAIL?",
+      "solution": "f″(c) > 0 → local minimum (concave up); f″(c) < 0 → local maximum (concave down). If f″(c) = 0 the test is INCONCLUSIVE — e.g. x³ has f′(0) = f″(0) = 0 but no extremum (an inflection point), while x⁴ has a minimum. Then fall back to the first-derivative sign change across c. Knowing when the shortcut breaks is the tested understanding."
+    },
+    {
+      "id": "drill-diff12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Increasing/decreasing from the sign of f′",
+      "question": "Why does f′(x) > 0 on an interval guarantee f is increasing there, geometrically?",
+      "solution": "f′ is the tangent slope; if every tangent on the interval points upward, the function cannot fall between any two points (by the Mean Value Theorem, f(b) − f(a) = f′(c)(b−a) > 0). The MVT converts a local statement (positive slopes) into a global one (monotone increase) — that bridge is the reason the sign test is valid."
+    },
+    {
+      "id": "drill-diff12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Maxima in word problems — the constraint",
+      "question": "A farmer fences a rectangular field with 100 m of wire against a river (no fence needed on the river side). Why is the maximum-area rectangle NOT a square here?",
+      "solution": "Constraint: 2x + y = 100 → y = 100 − 2x. Area A = x(100−2x) = 100x − 2x², maximised at x = 25, y = 50 — the field is 1:2, not 1:1. The river side removes one fence, changing the constraint; the unconstrained-perimeter optimum (square) no longer applies. ALWAYS write the constraint first — the constraint determines the shape of the optimum."
+    },
+    {
+      "id": "drill-diff12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Related rates — differentiating the relation, not the numbers",
+      "question": "A spherical balloon inflates at 10 cm³/s. Why must you differentiate V = (4/3)πr³ with respect to TIME, not just differentiate and plug in?",
+      "solution": "dV/dt = 4πr²·dr/dt — both V and r are functions of time, so the chain rule produces the r²·dr/dt factor. Substituting the INSTANT value of r gives the instant dr/dt. The error to avoid: differentiating as if r were constant. Every related-rates problem is a chain-rule problem in disguise."
+    },
+    {
+      "id": "drill-diff12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Tangent and normal — the two lines",
+      "question": "At a point on y = x², the tangent has slope 4. What is the slope of the normal there, and why is the product of the two slopes −1?",
+      "solution": "Normal slope = −1/4. Two lines are perpendicular iff m₁·m₂ = −1 (the rotation by 90° inverts and negates the slope). Tangent slope comes from the derivative; the normal is its negative reciprocal — both are needed for distance-from-curve problems."
+    },
+    {
+      "id": "drill-diff12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Approximation via differentials",
+      "question": "Use differentials to estimate √25.3 without a calculator, and state why the estimate is slightly off in a predictable direction.",
+      "solution": "f(x) = √x, f′ = 1/(2√x). At a = 25: f(25.3) ≈ 5 + 0.3·(1/10) = 5.03. The linear (tangent) approximation OVERESTIMATES here because √x is concave — the tangent lies above the curve. Concavity determines the error's sign; the differential is the first-order term of the Taylor expansion."
     }
   ]
 }

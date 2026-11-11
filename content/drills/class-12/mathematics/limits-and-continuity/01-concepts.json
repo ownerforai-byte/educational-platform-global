@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Limits & Continuity (Class 12 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "limits-and-continuity",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-lc12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Limit vs value",
+      "question": "For f(x) = (x²−1)/(x−1), the function is undefined at x = 1 yet the limit exists. Explain what a limit measures that a value does not.",
+      "solution": "The limit describes the behaviour of f as x APPROACHES 1 from both sides — f(x) → 2 — regardless of what happens AT x = 1. A value needs the point to be defined; a limit only needs the neighbourhood to settle. Removing the hole (defining f(1) = 2) makes the function continuous, but the limit existed even without it."
+    },
+    {
+      "id": "drill-lc12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why 0/0 is indeterminate",
+      "question": "Why can't you 'simplify' 0/0 to 1 (since x/x = 1)? What does the symbol 0/0 actually signal?",
+      "solution": "0/0 is not a number — it is a WARNING that both numerator and denominator vanish simultaneously, and the LIMIT depends on HOW fast each approaches zero. In (x²−1)/(x−1) the numerator vanishes faster, giving limit 2; in sin x / x it gives 1. Factor or transform to expose the real ratio — never treat 0/0 as arithmetic."
+    },
+    {
+      "id": "drill-lc12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "L'Hôpital's rule — conditions",
+      "question": "A student applies L'Hôpital to lim(x→1) (x²−1)/(x−1) and gets 2. State the conditions that must hold before the rule may be used, and give a case where applying it blindly loops forever.",
+      "solution": "Conditions: the limit must be of the form 0/0 or ∞/∞, and the DERIVATIVE quotient's limit must exist. Blindly applying it to lim(x→∞) (x + sin x)/x differentiates forever (the oscillation never resolves) — the limit does not exist, so the rule never applies. Check the form first, then the existence of the resulting limit."
+    },
+    {
+      "id": "drill-lc12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "One-sided limits and continuity",
+      "question": "f(x) = |x|/x. Find both one-sided limits at 0 and state whether f is continuous there.",
+      "solution": "x → 0⁺: |x|/x = x/x = 1. x → 0⁻: |x|/x = −x/x = −1. One-sided limits differ, so the two-sided limit does not exist and f is discontinuous at 0 (a jump discontinuity). Continuity requires the two sides to agree — the absolute-value trick is the standard test case."
+    },
+    {
+      "id": "drill-lc12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "The squeeze theorem",
+      "question": "Evaluate lim(x→0) x²·sin(1/x) and explain why the squeeze theorem is needed rather than the product rule for limits.",
+      "solution": "−1 ≤ sin(1/x) ≤ 1, so −x² ≤ x²·sin(1/x) ≤ x²; both bounds → 0, so the limit is 0. The product rule needs BOTH factors to have limits, but sin(1/x) has none (it oscillates). Squeezing between two functions with the same limit handles oscillation that no other tool reaches."
+    },
+    {
+      "id": "drill-lc12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Continuity on an interval",
+      "question": "State the three conditions for f to be continuous at a point a, and use them to check f(x) = (x+2)/(x−2) at x = 2.",
+      "solution": "(1) f(a) is defined; (2) lim(x→a) f(x) exists; (3) the limit equals f(a). At x = 2: f(2) is undefined (denominator zero) — condition 1 fails, so f is discontinuous at 2 (an infinite/essential discontinuity, since the function blows up). Naming WHICH condition fails is what earns the mark."
+    },
+    {
+      "id": "drill-lc12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Limits at infinity — degree comparison",
+      "question": "Evaluate lim(x→∞) (3x² + x)/(5x² − 7) and state the general rule for rational functions at infinity.",
+      "solution": "Divide by x²: (3 + 1/x)/(5 − 7/x²) → 3/5. Rule: compare degrees — equal degrees give the ratio of leading coefficients; numerator degree higher → ±∞; denominator higher → 0. The dominant term is all that survives at infinity."
+    },
+    {
+      "id": "drill-lc12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Continuity vs differentiability",
+      "question": "Is every continuous function differentiable? Is every differentiable function continuous? Give the counterexample for the false one.",
+      "solution": "Differentiable ⇒ continuous (a derivative existing forces the function to be locally smooth). Continuous ⇏ differentiable: |x| is continuous everywhere but has no derivative at 0 — the left slope is −1, the right slope +1, so the difference quotient has no limit. Corner points are the standard counterexample."
+    }
+  ]
+}

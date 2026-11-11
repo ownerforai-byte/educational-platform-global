@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Vector Algebra (Class 12 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "vector-algebra",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-va12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Vector vs scalar — what the arrow adds",
+      "question": "Speed is 60 km/h but velocity is 60 km/h north. Why can two objects with equal speed end up in very different places?",
+      "solution": "Velocity carries DIRECTION; adding displacements requires adding directions, not just magnitudes. Two cars each driving 60 km — one north, one east — end up √(60²+60²) ≈ 85 km apart. A vector's magnitude and direction are both load-bearing; a scalar discards half the information."
+    },
+    {
+      "id": "drill-va12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Dot product — what it measures",
+      "question": "Given a·b = |a||b|cosθ, why does a·b = 0 certify perpendicularity, and why does the dot product never detect parallel vectors uniquely?",
+      "solution": "cos 90° = 0, so ANY perpendicular pair gives zero regardless of magnitudes — the dot product is a projection: it measures how much of a lies along b. For parallel vectors cosθ = ±1 and a·b is maximal — but a nonzero value is consistent with any non-perpendicular angle, so only the zero test is conclusive. Projection is the physical meaning."
+    },
+    {
+      "id": "drill-va12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Cross product — direction and area",
+      "question": "Explain the two pieces of information |a×b| and its direction give, and why the cross product is not commutative.",
+      "solution": "|a×b| = |a||b|sinθ is the AREA of the parallelogram the two vectors span. Its direction is perpendicular to both (right-hand rule) — the normal of that plane. a×b = −(b×a): flipping the operand order flips the normal's direction, so the product is ANTICOMMUTATIVE. Magnitude = area, direction = orientation of that area."
+    },
+    {
+      "id": "drill-va12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Unit vector — direction stripped of size",
+      "question": "Why divide a vector by its own magnitude to get a unit vector, and what does a·â (dot with a unit vector) give you?",
+      "solution": "â = a/|a| preserves direction but sets the length to 1 — a pure direction indicator. a·â = |a|cosθ is the SCALAR PROJECTION of a onto â's direction: how much of a points that way. Unit vectors turn direction questions into simple dot products."
+    },
+    {
+      "id": "drill-va12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Position vector and section formula",
+      "question": "Why does the midpoint of AB have position vector (a+b)/2, and how does the general section formula generalise it?",
+      "solution": "The midpoint divides AB in ratio 1:1, so r = (1·a + 1·b)/(1+1) = (a+b)/2 — a weighted average of the endpoints. The general internal-division formula r = (mb + na)/(m+n) weights the FAR endpoint more when the division point is closer to it. Averages of position vectors are the vector way to do geometry."
+    },
+    {
+      "id": "drill-va12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Coplanarity via scalar triple product",
+      "question": "Why does [a b c] = 0 certify that three vectors are coplanar?",
+      "solution": "[a b c] = a·(b×c) is the SIGNED VOLUME of the parallelepiped the three vectors span. Coplanar vectors span a flat figure with zero volume, so the triple product vanishes. Volume zero ⇔ flat ⇔ linearly dependent — the geometric meaning of the determinant test."
+    },
+    {
+      "id": "drill-va12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Work as a dot product",
+      "question": "Why is the work done by a force F over displacement d given by F·d, and when is it zero despite a large force?",
+      "solution": "Work counts only the force component ALONG the displacement: W = |F||d|cosθ = F·d. If θ = 90° (carrying a bag horizontally, normal force on a level floor), cosθ = 0 and no work is done by that force despite its magnitude. Perpendicular forces do no work — the dot product encodes it automatically."
+    },
+    {
+      "id": "drill-va12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Torque as a cross product",
+      "question": "Why does a wrench work best when the force is perpendicular to the handle, and why does pushing along the handle do nothing? Use τ = r × F.",
+      "solution": "τ = r × F has magnitude |r||F|sinθ — maximal at θ = 90°, zero at θ = 0 (pushing along the handle through the pivot). Only the PERPENDICULAR component of F creates rotation; the direction of τ (along the bolt axis) gives the rotation sense by the right-hand rule. Both magnitude and axis come from the cross product."
+    }
+  ]
+}

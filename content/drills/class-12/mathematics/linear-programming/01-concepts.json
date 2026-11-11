@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Linear Programming (Class 12 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "linear-programming",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-lp12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why the optimum sits at a vertex",
+      "question": "Why does a linear objective function always attain its maximum over a feasible region at a VERTEX, not in the interior?",
+      "solution": "The objective z = ax + by is constant along parallel lines ax + by = z. Sliding that line across the feasible region, the last contact before leaving is at a boundary — and on a boundary made of line segments, the extreme contact point is a CORNER (vertex) where two constraints bind simultaneously. Interior points can always be improved by moving along the gradient until a wall stops you."
+    },
+    {
+      "id": "drill-lp12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Feasible region — reading the inequalities",
+      "question": "For x + y ≤ 4, x ≥ 0, y ≥ 0, why does the feasible region lie BELOW the line x + y = 4, and how do you test which side?",
+      "solution": "The line divides the plane into two half-planes; the inequality picks one. Test with the ORIGIN (0,0): 0 + 0 = 0 ≤ 4 is true, so the origin's side is feasible. The axes' inequalities confine it to the first quadrant. Substituting a test point is the general method — never guess the side from the sign alone."
+    },
+    {
+      "id": "drill-lp12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Multiple optima — when a whole edge wins",
+      "question": "If the objective line is PARALLEL to a boundary edge of the feasible region, what happens to the maximum? Give the practical consequence.",
+      "solution": "Every point on that edge gives the SAME optimal value — infinitely many optimal solutions along the segment. Practical consequence: the producer can choose any mix on that edge (e.g. any combination of two products) without losing profit — flexibility, not ambiguity. Parallel objective and constraint is the signature to recognise."
+    },
+    {
+      "id": "drill-lp12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Constraints define the answer",
+      "question": "A diet problem minimises cost subject to protein and vitamin minimums. Why can the cheapest diet ignore a nutrient that is already oversatisfied?",
+      "solution": "Constraints are ≥-type: only the SHORTFALL binds. A food already supplying excess vitamin costs money for no constraint benefit, so the optimum drops it and buys only what the binding constraints demand. In LP the optimal solution satisfies each constraint with equality or slack — the slack nutrients are effectively free surplus."
+    },
+    {
+      "id": "drill-lp12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Corner point method vs iso-profit line",
+      "question": "Compare the corner-point method with the iso-profit (objective line) method for solving an LPP. Which generalises better?",
+      "solution": "Corner-point: list all vertices of the feasible region, evaluate z at each, pick the best — reliable for small problems. Iso-profit: slide the line ax + by = z across the region and read the last contact point — geometric and faster for two variables, and it extends naturally to sensitivity questions (how the optimum shifts as z's coefficients change). Both rest on the same theorem: the optimum is at a vertex."
+    },
+    {
+      "id": "drill-lp12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Unbounded region, bounded answer",
+      "question": "The feasible region is unbounded (extends to infinity). Can a maximum still exist? Give the condition.",
+      "solution": "Yes — if the objective line, slid outward, leaves the region entirely (the direction of increase has no feasible ray), a finite maximum exists at a vertex. But if some feasible direction increases z forever (e.g. maximise x over x ≥ 0, y ≥ 0), the maximum is UNBOUNDED — no finite optimum. Unbounded region ≠ unbounded objective; the direction of the objective decides."
+    },
+    {
+      "id": "drill-lp12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Formulating the LPP — the decision variables",
+      "question": "In a factory making two products with machine-hour and labour limits, what exactly are the decision variables, and why must they be non-negative?",
+      "solution": "Decision variables x, y are the QUANTITIES PRODUCED of each product — the things you can control. Non-negativity is physical: you cannot make −3 chairs. The objective (profit) and constraints (machine hours, labour) are then linear expressions in x and y; misdefining the variables (e.g. using revenue instead of quantity) makes every subsequent constraint wrong."
+    },
+    {
+      "id": "drill-lp12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Infeasibility vs unboundedness",
+      "question": "Distinguish an infeasible LPP from an unbounded one, with a one-line example of each.",
+      "solution": "Infeasible: the constraints contradict — no point satisfies them all (x ≥ 5 and x ≤ 2), so the feasible region is EMPTY and there is no solution at all. Unbounded: the region is non-empty but the objective can grow without limit along a feasible direction (maximise x subject only to x ≥ 0). Empty region vs infinite value — different failures needing different fixes (relax constraints vs cap the objective)."
+    }
+  ]
+}

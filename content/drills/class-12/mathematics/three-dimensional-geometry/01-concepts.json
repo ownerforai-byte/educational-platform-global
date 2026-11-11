@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Three-Dimensional Geometry (Class 12 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "three-dimensional-geometry",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-3d12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Direction cosines and their identity",
+      "question": "Why must l² + m² + n² = 1 for any line's direction cosines?",
+      "solution": "l, m, n are the cosines of the angles the line makes with the x, y, z axes; they are the components of the unit vector along the line. A unit vector's component squares sum to 1 (Pythagoras in 3D), so l² + m² + n² = 1. Direction cosines are just a unit vector's components — the identity is automatic."
+    },
+    {
+      "id": "drill-3d12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Line in vector and Cartesian form",
+      "question": "Convert r = a + λb to Cartesian form and explain what each piece of the equation represents.",
+      "solution": "If a = (x₁,y₁,z₁) and b = (l,m,n): (x−x₁)/l = (y−y₁)/m = (z−z₁)/n = λ. The point a fixes WHERE the line sits; the direction b fixes its ORIENTATION; λ is the parameter that slides you along it. Every point on the line is a + λb — the equation is a parametric description, and the Cartesian form just eliminates λ."
+    },
+    {
+      "id": "drill-3d12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Plane equation — the normal does the work",
+      "question": "Explain why r·n̂ = d describes a plane, and what changing d (with the same n̂) does versus changing n̂.",
+      "solution": "A plane is the set of points whose projection onto a fixed direction is constant: r·n̂ = d says 'walk far enough along n̂ and you reach exactly distance d'. Same n̂, different d: PARALLEL planes (same tilt, different height). Same d, different n̂: planes through different orientations. The normal vector is the plane's identity; d is its offset."
+    },
+    {
+      "id": "drill-3d12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Angle between two planes",
+      "question": "Why is the angle between two planes equal to the angle between their normals (or its supplement)?",
+      "solution": "Rotating both planes by the same rotation preserves their mutual angle; the rotation that makes both normals vertical reduces the problem to two intersecting lines in a plane — whose angle is the normals' angle. Hence cos θ = |n₁·n₂|/(|n₁||n₂|), taking the acute value. The normal carries all the tilt information of its plane."
+    },
+    {
+      "id": "drill-3d12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Shortest distance from a point to a plane",
+      "question": "Why is the perpendicular distance from P to the plane r·n̂ = d given by |a·n̂ − d| where a is P's position vector?",
+      "solution": "The plane is the level set r·n̂ = d; a·n̂ is P's projection onto n̂. The difference a·n̂ − d is how far along n̂ the point sits from the plane — measured along the normal, which is by definition the shortest (perpendicular) route. Absolute value because distance is unsigned."
+    },
+    {
+      "id": "drill-3d12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Skew lines — the 3D surprise",
+      "question": "Two lines in a plane either meet or are parallel. What third possibility exists in 3D, and how does the shortest-distance formula handle it?",
+      "solution": "SKEW lines: not parallel, yet never meeting — they run in different directions on different planes. The shortest distance is measured along the common perpendicular, with direction n = b₁×b₂: d = |(a₂−a₁)·(b₁×b₂)|/|b₁×b₂|. The cross product supplies the unique direction perpendicular to both lines; the numerator projects the gap onto it."
+    },
+    {
+      "id": "drill-3d12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Line-plane intersection",
+      "question": "How do you find where the line r = a + λb meets the plane r·n̂ = d, and what does it mean if b·n̂ = 0?",
+      "solution": "Substitute: (a + λb)·n̂ = d → λ = (d − a·n̂)/(b·n̂), then back-substitute for the point. If b·n̂ = 0 the line is PARALLEL to the plane (its direction has no component along the normal): either it lies entirely in the plane (a·n̂ = d — infinitely many intersections) or never meets it (a·n̂ ≠ d). The denominator's zero is the geometric signal."
+    },
+    {
+      "id": "drill-3d12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Image of a point in a plane",
+      "question": "To find the image of P in a plane, why do you first find the foot of the perpendicular, and what does the foot represent?",
+      "solution": "The image P′ lies on the line through P perpendicular to the plane, with the foot F (where that line meets the plane) as the MIDPOINT of PP′. F is the reflection point — equal distances PF = FP′ on opposite sides. The foot is the pivot of the reflection; finding it reduces the image problem to a midpoint computation."
+    }
+  ]
+}

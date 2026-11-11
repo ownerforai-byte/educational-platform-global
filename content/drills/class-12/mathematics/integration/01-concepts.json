@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Integration (Class 12 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "integration",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-int12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "The +C is not decoration",
+      "question": "Why does an indefinite integral always carry +C, and why does a DEFINITE integral not need it?",
+      "solution": "Differentiation destroys constants, so an antiderivative is only determined up to an arbitrary constant — the family of curves y = F(x) + C. In a definite integral the constant cancels: [F(b)+C] − [F(a)+C] = F(b) − F(a). Omitting +C in indefinite work is an error; carrying it into definite work is just noise."
+    },
+    {
+      "id": "drill-int12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Definite integral as signed area",
+      "question": "Compute ∫₀³ |x − 1| dx conceptually — why does a single antiderivative evaluation fail here?",
+      "solution": "The integrand changes form at x = 1 (where x−1 = 0), so it must be SPLIT: ∫₀¹ (1−x) dx + ∫₁³ (x−1) dx = ½ + 2 = 2.5. A single antiderivative of |x−1| is not differentiable at 1; the fundamental theorem needs a smooth integrand on the whole interval. Signed area means the negative lobe counts as negative — splitting is the standard technique."
+    },
+    {
+      "id": "drill-int12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Integration by parts — choosing u and dv",
+      "question": "For ∫ x·eˣ dx, why choose u = x and dv = eˣ dx rather than the reverse? State the selection heuristic.",
+      "solution": "By parts: ∫u dv = uv − ∫v du. The goal is that ∫v du is EASIER than the original. With u = x, du = dx and ∫eˣ dx is trivial — the polynomial power drops. Reversed, u = eˣ gives ∫x·eˣ dx again — no progress. Heuristic (ILATE): pick u as Inverse, Log, Algebraic, Trig, Exponential in that priority order."
+    },
+    {
+      "id": "drill-int12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Substitution — undoing the chain rule",
+      "question": "Why does ∫2x·cos(x²) dx become simply sin(x²) + C? Identify the 'inside function' the substitution targets.",
+      "solution": "The integrand contains a function and its derivative as a factor: d/dx(x²) = 2x. Substituting u = x², du = 2x dx reduces it to ∫cos u du = sin u + C. Substitution reverses the CHAIN rule — spot the composite (x²) and its derivative multiplier, and the integral collapses."
+    },
+    {
+      "id": "drill-int12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Even/odd symmetry shortcuts",
+      "question": "Evaluate ∫₋₂² x³ dx without any antiderivative, and state the general property used.",
+      "solution": "x³ is ODD: f(−x) = −f(x), so the negative-area lobe exactly cancels the positive one over a symmetric interval — the integral is 0. Property: ∫₋ₐₐ f = 0 for odd f, and = 2∫₀ₐ f for even f. Recognising parity saves the whole computation; checking parity FIRST is the examinable habit."
+    },
+    {
+      "id": "drill-int12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Partial fractions — when they apply",
+      "question": "Why can ∫dx/(x²−1) be split into two simple logs, while ∫dx/(x²+1) cannot?",
+      "solution": "x²−1 factors over the reals into (x−1)(x+1), so 1/(x²−1) = ½[1/(x−1) − 1/(x+1)] → ½ln|(x−1)/(x+1)| + C. x²+1 has no real linear factors — it is irreducible over ℝ, giving arctan x + C instead. Partial fractions need REAL LINEAR factors; irreducible quadratics go to arctan."
+    },
+    {
+      "id": "drill-int12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Definite integral properties — swapping limits",
+      "question": "Explain why ∫ₐᵇ f = −∫ᵦₐ f, and use the property to evaluate ∫₃¹ (2x) dx given ∫₁³ (2x) dx = 8.",
+      "solution": "Swapping the limits reverses the direction of accumulation: each infinitesimal strip dxF is now subtracted instead of added, negating the total. So ∫₃¹ (2x) dx = −8. The property is the algebraic backbone of interval-splitting: ∫ₐᶜ = ∫ₐᵇ + ∫ᵦ꜀ requires consistent direction."
+    },
+    {
+      "id": "drill-int12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Area between curves — subtract in the right order",
+      "question": "Find the area between y = x and y = x² from x = 0 to 1, and explain why naive subtraction of antiderivatives can give a negative area.",
+      "solution": "On (0,1), x ≥ x², so A = ∫₀¹ (x − x²) dx = ½ − ⅓ = 1/6. If you subtract in the wrong order (x² − x) the integral is −1/6: the SIGN records which curve was on top. Take |top − bottom| per interval — identify the upper curve first, then integrate the difference."
+    }
+  ]
+}

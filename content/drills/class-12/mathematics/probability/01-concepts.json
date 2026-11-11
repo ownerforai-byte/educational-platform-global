@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Probability (Class 12 Mathematics)",
+  "subject": "mathematics",
+  "unitSlug": "probability",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-prob12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Independent ≠ mutually exclusive",
+      "question": "Students often swap 'independent' and 'mutually exclusive'. Give one example of each and state the formula test that separates them.",
+      "solution": "Mutually exclusive: cannot co-occur — P(A∩B) = 0 (head and tail on one coin). Independent: one's occurrence doesn't change the other's probability — P(A∩B) = P(A)P(B) (two different coins). The tests differ: exclusive events with positive probabilities are NEVER independent (if A happened, B certainly didn't — dependence). Zero intersection vs product of probabilities is the discriminator."
+    },
+    {
+      "id": "drill-prob12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Conditional probability — shrinking the universe",
+      "question": "Why does P(A|B) use B as the new sample space, and why is P(A|B) ≠ P(B|A) in general?",
+      "solution": "Conditioning on B means 'given that B happened', so all probabilities are computed within B — P(A|B) = P(A∩B)/P(B), a re-weighting of the part of A inside B. P(A|B) ≠ P(B|A) because the denominators differ (P(B) vs P(A)): knowing a card is a king (P(heart|king) = ¼) differs from knowing it's a heart (P(king|heart) = 1/13)."
+    },
+    {
+      "id": "drill-prob12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Bayes' theorem — reversing the condition",
+      "question": "A test is 99% accurate for a disease affecting 1 in 1000. Why is a positive result NOT 99% likely to mean disease? Set up the Bayes computation.",
+      "solution": "P(D|+) = P(+|D)P(D) / [P(+|D)P(D) + P(+|¬D)P(¬D)] = (0.99×0.001)/(0.99×0.001 + 0.01×0.999) ≈ 0.09 — about 9%. The false positives from the huge healthy population (999×0.01 ≈ 10) swamp the true positives (1×0.99 ≈ 1). Base rate dominates: rare disease + imperfect test = mostly false alarms. This is the classic base-rate fallacy."
+    },
+    {
+      "id": "drill-prob12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Binomial distribution — the four conditions",
+      "question": "State the four conditions for a binomial distribution B(n, p), and explain why 'number of heads in 10 flips' qualifies but 'number of sixes until the first head' does not.",
+      "solution": "Conditions: fixed number n of trials; each trial has two outcomes (success/failure); constant probability p per trial; trials independent. Heads in 10 flips satisfies all four. 'Sixes until first head' has an UNFIXED number of trials (a random stopping time) — it is a geometric-type situation, not binomial. Fixed n is the condition that fails."
+    },
+    {
+      "id": "drill-prob12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Mean and variance of B(n,p)",
+      "question": "For B(n, p), show why mean = np is intuitive, and explain why the variance np(1−p) is largest at p = ½.",
+      "solution": "Each trial contributes p to the expected count (linearity of expectation over n identical trials) — mean np. Variance per trial is p(1−p): zero at p = 0 or 1 (outcome is certain, no spread) and maximal at p = ½ (maximum uncertainty). Uncertainty peaks where both outcomes are equally likely — the bell curve is widest there."
+    },
+    {
+      "id": "drill-prob12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "At least one — the complement trick",
+      "question": "Why is 'P(at least one success in n trials)' computed as 1 − (1−p)ⁿ rather than by adding n probabilities?",
+      "solution": "'At least one' is the complement of 'none': P(≥1) = 1 − P(0) = 1 − (1−p)ⁿ. Adding the n separate 'exactly k' terms would work but is far longer. The complement collapses a union of many events into a single term — the standard trick whenever an event is described by 'at least'."
+    },
+    {
+      "id": "drill-prob12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Random variable — the expectation as a weighted mean",
+      "question": "Why is E(X) = Σxᵢpᵢ called a weighted mean, and why can E(X) be a value X never takes (e.g. 3.5 for a die)?",
+      "solution": "E(X) weights each outcome by its probability — the centre of mass of the distribution. It need not be an ATTAINABLE value: a fair die's expectation is (1+2+…+6)/6 = 3.5, the balance point, though no single roll gives 3.5. Expectation describes the long-run average over many trials, not a single observation."
+    },
+    {
+      "id": "drill-prob12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Without replacement — why not binomial",
+      "question": "Drawing 3 cards from a deck without replacement, why does the probability of 'exactly 2 aces' NOT follow the binomial formula?",
+      "solution": "Without replacement the trials are DEPENDENT: after an ace is drawn, p for the next trial changes (4/52 → 3/51). The binomial requires CONSTANT p and independence — both violated. Use the hypergeometric-style counting instead: C(4,2)·C(48,1)/C(52,3). Sampling without replacement is the standard binomial-breaker."
+    }
+  ]
+}
