@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Critical Thinking (Class 11 English)",
+  "subject": "english",
+  "unitSlug": "critical-thinking",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ct11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Fact vs opinion",
+      "question": "Classify: 'Kathmandu's air quality exceeds WHO limits' and 'Kathmandu is the most beautiful city in the world'.",
+      "solution": "First: FACT — measurable, verifiable against data. Second: OPINION — a value judgement ('most beautiful') that cannot be verified. The test: can it be checked against evidence independently of who says it? Mixing the two is how persuasion disguises itself as information."
+    },
+    {
+      "id": "drill-ct11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "The hasty generalisation",
+      "question": "'My neighbour's dog bit me; all dogs are dangerous.' What is the fallacy and why does it fail?",
+      "solution": "Hasty generalisation — drawing a universal conclusion from one (or too few) instances. One dog cannot represent all dogs; the sample is far too small and possibly biased (that particular dog's history). Valid generalisation needs a large, representative sample."
+    },
+    {
+      "id": "drill-ct11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Cause vs correlation",
+      "question": "Ice-cream sales and drowning deaths rise together every summer. Does ice-cream cause drowning? Explain the correct reasoning.",
+      "solution": "No — both rise because of a THIRD factor: hot weather sends more people swimming AND raises ice-cream sales. Correlation (moving together) does not establish cause; a confounding variable may drive both. Establishing cause requires a mechanism and controlled comparison, not just coincidence in the data."
+    },
+    {
+      "id": "drill-ct11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Ad hominem",
+      "question": "'You can't trust his argument on climate — he drives a big car.' Name the fallacy and explain why the argument's merit is untouched.",
+      "solution": "Ad hominem — attacking the PERSON instead of the argument. An argument stands or falls on its EVIDENCE and logic, not on the speaker's lifestyle; hypocrisy may be relevant to character but does not refute a claim. The correct response is to examine the evidence, not the messenger."
+    },
+    {
+      "id": "drill-ct11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Evaluating evidence quality",
+      "question": "Two articles claim a herb cures colds: one cites a controlled trial of 500 patients; the other cites 'thousands of satisfied users'. Which is stronger evidence and why?",
+      "solution": "The controlled trial — it isolates the herb's effect from placebo and natural recovery, uses a defined sample and reports methods others can check. 'Satisfied users' is anecdote: no control group, self-selected, unverifiable. Strength of evidence = design quality (control, sample, transparency), not volume of testimony."
+    }
+  ]
+}
