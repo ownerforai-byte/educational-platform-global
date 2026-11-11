@@ -13,7 +13,6 @@ import { isOwnerAccount, isOwnerUser } from "@/lib/owner";
 import { useR1Access } from "@/features/r1/hooks";
 import { isSidebarNavItem, NAV_SECTIONS, NAV_SECTION_FEATURES, navAccent, navMinLevel } from "@/lib/navigation";
 import { ACCESS_LABELS, hasLevel } from "@/lib/access-level";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 /**
  * Section + item data lives in lib/navigation.ts — one shared list, also used
@@ -225,11 +224,6 @@ export function MobileNav() {
             </div>
 
             <nav aria-label="Mobile navigation" className="flex-1 touch-pan-y overflow-y-auto overscroll-contain pr-1 space-y-4">
-              {/* In-drawer theme customization block */}
-              <div className="px-1">
-                <ThemeToggle variant="inline" />
-              </div>
-
               {/* Empty SEARCH results only. With no active filter this is just
                   the signed-out/limited view (a visitor reaches none of the
                   content indexes by design — see lib/navigation.ts), not a

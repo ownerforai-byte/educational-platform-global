@@ -19,7 +19,6 @@ import {
   type NavItem,
 } from "@/lib/navigation";
 import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/access-level";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 /**
  * The menu DATA lives in lib/navigation.ts — one list shared with the mobile
@@ -408,36 +407,6 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
             railCollapsed={collapsed}
           />
         ))}
-
-        {collapsed ? (
-          <div className="mb-2 flex items-center justify-center py-2">
-            <ThemeToggle compact />
-          </div>
-        ) : (
-          <section className="mb-2 overflow-hidden rounded-2xl border border-border/60 bg-card/60">
-            <button
-              type="button"
-              onClick={() => toggleSection("theme")}
-              aria-expanded={!collapsedSections.theme}
-              aria-label={`${collapsedSections.theme ? "Expand" : "Collapse"} Theme`}
-              className="flex w-full items-center gap-2.5 px-2.5 py-2 text-left transition-colors hover:bg-muted/40"
-            >
-              <span className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-lg", navAccent(0))}>
-                <Palette className="h-4 w-4" />
-              </span>
-              <span className="min-w-0 flex-1">
-                <span className="block truncate text-[12px] font-bold leading-tight text-foreground">Theme</span>
-                <span className="block truncate text-[10px] leading-tight text-muted-foreground">Choose Theme Palette</span>
-              </span>
-              <ChevronsUp className={cn("h-3.5 w-3.5 shrink-0 text-muted-foreground/60 transition-transform", collapsedSections.theme && "rotate-180")} />
-            </button>
-            {!collapsedSections.theme && (
-              <div className="px-2 pb-2">
-                <ThemeToggle ariaLabel="Choose Theme Palette" />
-              </div>
-            )}
-          </section>
-        )}
       </div>
 
       {/* Bottom action */}

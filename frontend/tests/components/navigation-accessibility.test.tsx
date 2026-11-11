@@ -5,8 +5,12 @@ import { MobileNav } from '@/components/layout/mobile-nav';
 import { SidebarNavigation } from '@/components/layout/sidebar-navigation';
 vi.mock('next/navigation', () => ({ usePathname: () => '/home' }));
 vi.mock('next/link', () => ({ default: ({ children, href, ...rest }: React.AnchorHTMLAttributes<HTMLAnchorElement>) => <a href={href} {...rest}>{children}</a> }));
-vi.mock('@/features/auth/hooks/use-session', () => ({ useSession: () => ({ user: null, logoutUser: vi.fn(), refresh: vi.fn() }) }));
-afterEach(cleanup);
+const sessionState: { user: unknown } = { user: null };
+vi.mock('@/features/auth/hooks/use-session', () => ({ useSession: () => ({ user: sessionState.user, logoutUser: vi.fn(), refresh: vi.fn() }) }));
+afterEach(() => {
+  sessionState.user = null;
+  cleanup();
+});
 
 describe('mobile navigation', () => {
   it('traps focus, closes with Escape, and restores focus/body scrolling', () => {
@@ -45,6 +49,9 @@ describe('mobile navigation', () => {
 
 describe('sidebar navigation', () => {
   it('keeps a section label available after collapsing it', () => {
+    // Sign in so a content section (Curriculum & Notes) is present and
+    // collapsible — guests only see the Quick Access card (no collapsible).
+    sessionState.user = { id: 'u1', email: 't@e.com', fullName: 'Test User', role: 'member' };
     render(<SidebarNavigation />);
     const toggle = screen.getAllByRole('button', { name: /^Collapse / })[0];
     const name = toggle.getAttribute('aria-label')!.replace('Collapse ', '');

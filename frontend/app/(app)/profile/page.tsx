@@ -34,6 +34,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SupportRequest } from "@/components/support/support-request";
+import { NavDirectory } from "@/components/layout/nav-directory";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -1317,6 +1318,12 @@ function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
           </Button>
         </CardContent>
       </Card>
+      </div>
+
+      {/* Curriculum & Notes surfaced on Info too (owner: "add curriculum and
+          notes from side bar to info"). */}
+      <div className="container max-w-2xl pb-2">
+        <NavDirectory only={["curriculum"]} title="Curriculum & Notes" />
       </div>
 
       {/* Report AI content — kept here as a plain Info row (owner: "keep the
