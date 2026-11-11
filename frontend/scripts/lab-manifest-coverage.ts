@@ -17,6 +17,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 import { LABS } from "@/lib/lab-catalog";
 import { LAB_METADATA_LIST } from "@/lib/lab-metadata";
@@ -28,7 +29,10 @@ import {
 import { LAB_VISUAL_INDEX } from "@/lib/lab-visual-index";
 import { SYLLABUS, slugifySyllabusTopic } from "@/lib/syllabus";
 
-const FRONTEND = path.resolve(__dirname, "..");
+// `frontend/package.json` declares `"type": "module"`, so this script runs as
+// ESM and `__dirname` does not exist. Derive it from import.meta.url instead.
+const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
+const FRONTEND = path.resolve(SCRIPT_DIR, "..");
 const REPO = path.resolve(FRONTEND, "..");
 const LOADERS_FILE = path.join(FRONTEND, "lib", "lab-activity-loaders.ts");
 const VISUAL_LOADERS_FILE = path.join(FRONTEND, "lib", "lab-visual-loaders.tsx");

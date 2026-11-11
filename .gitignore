@@ -270,3 +270,6 @@ tokenkit-out/
 # tracked again. The separate `content/_index.json` under public/ stays retired:
 # 7bb51358 deliberately moved paid bodies off the public CDN.
 
+
+# One-off lab-block generation helpers (tmp-*) — never commit these.
+frontend/scripts/tmp-*

@@ -266,6 +266,8 @@ export const ACTIVITY_SUBJECTS: ActivitySubject[] = [
   "chemistry",
   "biology",
   "mathematics",
+  "english",
+  "nepali",
 ];
 
 /* ── derived activities ─────────────────────────────────────────────────── */
@@ -467,15 +469,34 @@ for (const activity of ACTIVITY_MANIFEST) {
   }
 }
 
-/** Canonical deep link for an activity (`/lab/[id]` is canonical). */
+/**
+ * Canonical deep link for an activity (`/lab/[id]` is canonical).
+ *
+ * The slug is percent-encoded because Nepali topics carry Devanagari slugs
+ * (the syllabus emits them — see `slugifySyllabusTopic`), and an unencoded
+ * Devanagari path segment is not a valid URL. `getActivity` decodes its input,
+ * so the round-trip works either way.
+ */
 export function activityHref(activityOrId: string): string {
   const activity = BY_ID.get(activityOrId) ?? BY_SLUG.get(activityOrId);
-  return `/lab/${activity?.slug ?? activityOrId}`;
+  const slug = activity?.slug ?? activityOrId;
+  return `/lab/${encodeURIComponent(slug)}`;
 }
 
 /** Look up an activity by manifest id or canonical/legacy slug. */
 export function getActivity(id: string): LabActivity | undefined {
-  return BY_ID.get(id) ?? BY_SLUG.get(id);
+  const direct = BY_ID.get(id) ?? BY_SLUG.get(id);
+  if (direct) return direct;
+  // A route param arrives percent-encoded for non-ASCII (Nepali) slugs.
+  if (id.includes("%")) {
+    try {
+      const decoded = decodeURIComponent(id);
+      if (decoded !== id) return BY_ID.get(decoded) ?? BY_SLUG.get(decoded);
+    } catch {
+      // Malformed escape — treat the input as already decoded.
+    }
+  }
+  return undefined;
 }
 
 /**

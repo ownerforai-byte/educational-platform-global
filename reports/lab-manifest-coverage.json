@@ -1,30 +1,32 @@
 {
-  "generatedAt": "2026-11-11T01:53:07.525Z",
+  "generatedAt": "2026-11-11T02:16:40.251Z",
   "manifest": {
-    "activities": 710,
+    "activities": 870,
     "pilots": 3,
     "byLifecycle": {
       "pilot": 3,
-      "live": 706,
+      "live": 866,
       "retired": 1
     },
     "byRenderer": {
       "module": 3,
-      "visual": 526,
+      "visual": 686,
       "registry": 112,
       "catalog": 69
     },
     "subjects": [
       "biology",
       "chemistry",
+      "english",
       "mathematics",
+      "nepali",
       "physics"
     ]
   },
   "syllabus": {
     "topicSlugs": 689,
-    "coveredTopics": 529,
-    "uncoveredTopics": 160,
+    "coveredTopics": 689,
+    "uncoveredTopics": 0,
     "bySubject": {
       "biology": {
         "topics": 105,
@@ -36,7 +38,7 @@
       },
       "english": {
         "topics": 109,
-        "covered": 0
+        "covered": 109
       },
       "mathematics": {
         "topics": 71,
@@ -44,7 +46,7 @@
       },
       "nepali": {
         "topics": 51,
-        "covered": 0
+        "covered": 51
       },
       "physics": {
         "topics": 165,
@@ -53,14 +55,14 @@
     }
   },
   "sources": {
-    "visualIndexEntries": 636,
+    "visualIndexEntries": 796,
     "labRegistryMetadataIds": 116,
     "labCatalogEntries": 69,
-    "resolvableSlugs": 726,
+    "resolvableSlugs": 886,
     "registryMetadataVerified": 116
   },
   "parity": {
-    "visualRepresented": 525,
+    "visualRepresented": 685,
     "visualExempt": 111,
     "registryRepresented": 112,
     "registryExempt": 4,
@@ -195,6 +197,211 @@
       "frontend/components/lab/topic-visuals/index.ts"
     ]
   },
-  "violations": [],
-  "ok": true
+  "violations": [
+    {
+      "rule": "slug-format",
+      "detail": "topic/पदप्रकरण-लिङ्ग-पुरुष-वचन-कारक-र-विभक्ति slug \"पदप्रकरण-लिङ्ग-पुरुष-वचन-कारक-र-विभक्ति\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/क्रियाप्रकरण-धातु-काल-वाच्य-र-सार्वनामिक-क्रिया slug \"क्रियाप्रकरण-धातु-काल-वाच्य-र-सार्वनामिक-क्रिया\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/समास-तत्पुरुष-कर्मधारय-द्वन्द्व-र-बहुव्रीहि slug \"समास-तत्पुरुष-कर्मधारय-द्वन्द्व-र-बहुव्रीहि\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/शब्द-परिवर्तन-शब्द-रूपान्तर-समानार्थक-र-विपरीतार्थक-शब्द slug \"शब्द-परिवर्तन-शब्द-रूपान्तर-समानार्थक-र-विपरीतार्थक-शब्द\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/राष्ट्रभाषा-नेपाली-ऐतिहासिक-विकास-र-भाषा-नीति slug \"राष्ट्रभाषा-नेपाली-ऐतिहासिक-विकास-र-भाषा-नीति\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-१-वीर-पुर्खा-कविता slug \"पाठ-१-वीर-पुर्खा-कविता\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-२-गाउँको-माया-सामाजिक-कथा slug \"पाठ-२-गाउँको-माया-सामाजिक-कथा\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-३-संस्कृतिको-नयाँ-यात्रा-आत्मपरक-निबन्ध slug \"पाठ-३-संस्कृतिको-नयाँ-यात्रा-आत्मपरक-निबन्ध\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-४-योगमाया-राष्ट्रिय-जीवनी slug \"पाठ-४-योगमाया-राष्ट्रिय-जीवनी\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-५-साथीलाई-चिठी-चिठी slug \"पाठ-५-साथीलाई-चिठी-चिठी\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-६-त्यो-फेरि-फर्कला-मनोवैज्ञानिक-कथा slug \"पाठ-६-त्यो-फेरि-फर्कला-मनोवैज्ञानिक-कथा\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-७-पर्यापर्यटनका-सम्भावना-र-आयाम-वस्तुपरक-निबन्ध slug \"पाठ-७-पर्यापर्यटनका-सम्भावना-र-आयाम-वस्तुपरक-निबन्ध\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-८-लौ-आयो-ताजा-खबर-लघु-नाटक slug \"पाठ-८-लौ-आयो-ताजा-खबर-लघु-नाटक\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-९-सफलताको-कथा-रिपोर्ताजमूलक-रचना slug \"पाठ-९-सफलताको-कथा-रिपोर्ताजमूलक-रचना\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-१०-कृषिशालामा-एक-दिन-संवाद slug \"पाठ-१०-कृषिशालामा-एक-दिन-संवाद\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-११-रारा-भ्रमण-दैनिकी slug \"पाठ-११-रारा-भ्रमण-दैनिकी\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-१२-जलस्रोत-र-ऊर्जा-वक्तृता slug \"पाठ-१२-जलस्रोत-र-ऊर्जा-वक्तृता\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/निबन्ध-लेखन-आत्मपरक-र-वस्तुपरक slug \"निबन्ध-लेखन-आत्मपरक-र-वस्तुपरक\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/चिठी-लेखन-औपचारिक-र-अनौपचारिक slug \"चिठी-लेखन-औपचारिक-र-अनौपचारिक\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/संवाद-लेखन slug \"संवाद-लेखन\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/दैनिकी-लेखन slug \"दैनिकी-लेखन\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/वक्तृता-र-रिपोर्ताजमूलक-रचना slug \"वक्तृता-र-रिपोर्ताजमूलक-रचना\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/कथा-कविता-र-नाटकका-विधागत-विशेषता slug \"कथा-कविता-र-नाटकका-विधागत-विशेषता\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/व्यंग्य-र-हास्यव्यंग्य slug \"व्यंग्य-र-हास्यव्यंग्य\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/नेपाली-सांस्कृतिक-विविधता-चाडपर्व-र-परम्परा slug \"नेपाली-सांस्कृतिक-विविधता-चाडपर्व-र-परम्परा\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/भाषा-साहित्यमा-योगदान-पुर्-याउने-साहित्यकार slug \"भाषा-साहित्यमा-योगदान-पुर्-याउने-साहित्यकार\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/शब्द-वर्ग-पद-वर्ग-र-पदबन्ध slug \"शब्द-वर्ग-पद-वर्ग-र-पदबन्ध\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/कारक-विभक्ति-र-समास-तत्पुरुष-कर्मधारय-द्वन्द्व-बहुव्रीहि slug \"कारक-विभक्ति-र-समास-तत्पुरुष-कर्मधारय-द्वन्द्व-बहुव्रीहि\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/क्रिया-काल-वाच्य-र-पदबन्ध slug \"क्रिया-काल-वाच्य-र-पदबन्ध\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/वाक्य-रचना-सरल-मिश्रित-र-संयुक्त-वाक्य-शुद्ध-अशुद्ध-वाक्य slug \"वाक्य-रचना-सरल-मिश्रित-र-संयुक्त-वाक्य-शुद्ध-अशुद्ध-वाक्य\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/मुहावरा-लोकोक्ति-र-शब्द-सम्पदा slug \"मुहावरा-लोकोक्ति-र-शब्द-सम्पदा\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-१-आमाको-सपना-कविता-गोपालप्रसाद-रिमाल slug \"पाठ-१-आमाको-सपना-कविता-गोपालप्रसाद-रिमाल\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-२-विरहिणी-दमयन्ती-कथा-मदनमणि-दीक्षित slug \"पाठ-२-विरहिणी-दमयन्ती-कथा-मदनमणि-दीक्षित\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-३-घनघस्याको-उकालो-काट्दा-निबन्ध slug \"पाठ-३-घनघस्याको-उकालो-काट्दा-निबन्ध\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-४-व्यावसायिक-पत्र-पत्र-लेखन slug \"पाठ-४-व्यावसायिक-पत्र-पत्र-लेखन\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-५-एक-चिहान-उपन्यास-पारिजात slug \"पाठ-५-एक-चिहान-उपन्यास-पारिजात\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-६-स्टिफन-विलियम-हकिङ-जीवनी slug \"पाठ-६-स्टिफन-विलियम-हकिङ-जीवनी\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-७-हामीलाई-बोलाउँछन्-हिमचुली-कविता-भूपी-शेरचन slug \"पाठ-७-हामीलाई-बोलाउँछन्-हिमचुली-कविता-भूपी-शेरचन\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-८-मातृत्व-निबन्ध slug \"पाठ-८-मातृत्व-निबन्ध\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-९-गोर्खे-कथा slug \"पाठ-९-गोर्खे-कथा\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-१०-नेपाली-पहिचान-निबन्ध slug \"पाठ-१०-नेपाली-पहिचान-निबन्ध\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-११-सहकारी-कथा slug \"पाठ-११-सहकारी-कथा\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पाठ-१२-जीवन-मार्ग-कविता slug \"पाठ-१२-जीवन-मार्ग-कविता\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/आवधिक-निबन्ध-लेखन slug \"आवधिक-निबन्ध-लेखन\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/पत्र-लेखन-आधिकारिक-र-अनौपचारिक-व्यावसायिक-पत्र-सहित slug \"पत्र-लेखन-आधिकारिक-र-अनौपचारिक-व्यावसायिक-पत्र-सहित\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/प्रतिवेदन-र-सम्पादन-लेखन slug \"प्रतिवेदन-र-सम्पादन-लेखन\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/समीक्षा-र-सारांश-लेखन slug \"समीक्षा-र-सारांश-लेखन\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/सृजनात्मक-लेखन-कथा-कविता-संवाद slug \"सृजनात्मक-लेखन-कथा-कविता-संवाद\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/नेपाली-संस्कृति-रीतिरिवाज-र-सामाजिक-संरचना slug \"नेपाली-संस्कृति-रीतिरिवाज-र-सामाजिक-संरचना\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/साहित्यमा-सामाजिक-वास्तविकताको-प्रतिनिधित्व slug \"साहित्यमा-सामाजिक-वास्तविकताको-प्रतिनिधित्व\" is not a URL-safe slug"
+    },
+    {
+      "rule": "slug-format",
+      "detail": "topic/भाषा-र-पहिचान-नेपाली-पहिचानका-पाठहरूसँग-सम्बन्ध slug \"भाषा-र-पहिचान-नेपाली-पहिचानका-पाठहरूसँग-सम्बन्ध\" is not a URL-safe slug"
+    }
+  ],
+  "ok": false
 }
