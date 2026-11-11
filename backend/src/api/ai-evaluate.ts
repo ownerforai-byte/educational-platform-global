@@ -4,6 +4,9 @@ import { rateLimit } from "../middleware/rateLimit";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { getWorkLaneProvider } from "../ai/config";
 import { ANSWER_GUIDE_RULES } from "../ai/answer-guide";
+import { answerTierRules } from "../ai/prompts";
+import { aiSparkTierFor } from "../utils/aiSpark";
+import type { AuthedRequest } from "../middleware/auth";
 import {
   authOrGuestQuota,
   extractJsonObject,

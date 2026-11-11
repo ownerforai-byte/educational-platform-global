@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import supportRequests from "./support-requests";
 import { z } from "zod";
 import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/auth";
 import { normalizeRole } from "../auth/types";
@@ -51,6 +52,7 @@ async function persistUnlockWindow(
 }
 
 const router = Router();
+router.use("/support-requests", supportRequests);
 
 const premiumRequestSchema = z.object({
   message: z.string().max(500).optional(),
