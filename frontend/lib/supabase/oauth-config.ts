@@ -29,7 +29,20 @@ import { PUBLIC_SUPABASE_URL } from "./public-config";
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-/** Only a real HTTPS deployment URL may override the canonical origin. */
+/** The one stable production alias. */
+const PRODUCTION_ALIAS = "ravikisan.vercel.app";
+
+/**
+ * Only a real HTTPS deployment URL may override the canonical origin.
+ *
+ * 2026-11-11: a Vercel PREVIEW deployment URL was set as
+ * `NEXT_PUBLIC_SITE_URL`, so it was inlined into the production bundle and
+ * became the Google OAuth `redirectTo`. That preview was later pruned by
+ * `scripts/prune-vercel-deployments.mjs`, so every Google sign-in landed on
+ * Vercel's `DEPLOYMENT_NOT_FOUND` page ("page is removed or not exists").
+ * Preview and branch `*.vercel.app` hosts are ephemeral by definition, so they
+ * can never be an OAuth target: only the stable alias or a custom domain can.
+ */
 function configuredCanonicalOrigin(): string | null {
   const raw = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "");
   if (!raw) return null;
@@ -37,7 +50,11 @@ function configuredCanonicalOrigin(): string | null {
     const url = new URL(raw);
     // .env.example uses http://localhost:5173 for local dev — that must never
     // become the production OAuth target. Local is handled by window.origin.
-    return url.protocol === "https:" ? url.origin : null;
+    if (url.protocol !== "https:") return null;
+    if (url.hostname.endsWith(".vercel.app") && url.hostname !== PRODUCTION_ALIAS) {
+      return null;
+    }
+    return url.origin;
   } catch {
     return null;
   }
@@ -45,7 +62,7 @@ function configuredCanonicalOrigin(): string | null {
 
 /** One production origin. Override with an HTTPS NEXT_PUBLIC_SITE_URL. */
 export const CANONICAL_SITE_URL =
-  configuredCanonicalOrigin() ?? "https://ravikisan.vercel.app";
+  configuredCanonicalOrigin() ?? `https://${PRODUCTION_ALIAS}`;
 
 /** Register THIS exact URL in Google Cloud Console → Authorized redirect URIs. */
 export const SUPABASE_AUTH_CALLBACK_URL = `${PUBLIC_SUPABASE_URL}/auth/v1/callback`;

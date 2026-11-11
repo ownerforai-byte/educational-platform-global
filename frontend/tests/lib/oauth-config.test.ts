@@ -53,6 +53,31 @@ describe("OAuth callback wiring", () => {
     vi.unstubAllEnvs();
     vi.resetModules();
   });
+
+  // 2026-11-11 regression: a pruned Vercel preview URL was baked into the
+  // production bundle and every Google login hit DEPLOYMENT_NOT_FOUND.
+  it.each([
+    "https://ravikisan-84i5u61il-ownerforai-byte.vercel.app/",
+    "https://ravikisan-git-main-ownerforai-byte.vercel.app",
+    "https://some-other-project.vercel.app",
+  ])("rejects ephemeral Vercel preview host %s", async (siteUrl) => {
+    vi.resetModules();
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", siteUrl);
+    const fresh = await import("@/lib/supabase/oauth-config");
+    expect(fresh.CANONICAL_SITE_URL).toBe("https://ravikisan.vercel.app");
+    expect(fresh.APP_OAUTH_CALLBACK_URL).toBe("https://ravikisan.vercel.app/auth/callback");
+    vi.unstubAllEnvs();
+    vi.resetModules();
+  });
+
+  it("still allows a custom production domain", async () => {
+    vi.resetModules();
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://study.ravikisan.edu.np/");
+    const fresh = await import("@/lib/supabase/oauth-config");
+    expect(fresh.CANONICAL_SITE_URL).toBe("https://study.ravikisan.edu.np");
+    vi.unstubAllEnvs();
+    vi.resetModules();
+  });
 });
 
 describe("Google 'Access blocked' diagnosis", () => {
