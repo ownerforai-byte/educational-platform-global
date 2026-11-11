@@ -48,6 +48,33 @@
       "concept": "Evaluating evidence quality",
       "question": "Two articles claim a herb cures colds: one cites a controlled trial of 500 patients; the other cites 'thousands of satisfied users'. Which is stronger evidence and why?",
       "solution": "The controlled trial — it isolates the herb's effect from placebo and natural recovery, uses a defined sample and reports methods others can check. 'Satisfied users' is anecdote: no control group, self-selected, unverifiable. Strength of evidence = design quality (control, sample, transparency), not volume of testimony."
+    },
+    {
+      "id": "drill-eng11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why correlation is not cause",
+      "question": "Ice-cream sales and drowning deaths rise together. Why is concluding 'ice cream causes drowning' an error of reasoning?",
+      "solution": "Both are driven by a shared third factor — hot weather brings more swimming and more ice-cream buying. A correlation establishes co-variation, not a mechanism; a confounder can produce it with no causal link. Causal claims need either controlled comparison or a plausible mechanism excluding confounders. Two things moving together says nothing about which moves which."
+    },
+    {
+      "id": "drill-eng11-6",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why anecdote cannot outweigh data",
+      "question": "Why does one vivid personal story so often feel more persuasive than a large statistical study, even though the study is stronger evidence?",
+      "solution": "Anecdotes are concrete, emotionally available and easy to recall, so they trigger the availability heuristic and feel representative; statistics are abstract and require interpretation. But a single case cannot establish a rate or exclude chance, while aggregated data can. The feeling of persuasiveness is a property of the presentation, not of the evidence's strength — this is exactly the bias critical thinking must correct for."
+    },
+    {
+      "id": "drill-eng11-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a straw man is a fallacy",
+      "question": "Why does refuting a distorted version of an opponent's argument fail to refute the argument itself?",
+      "solution": "A refutation is only valid against the claim it actually addresses. Weakening or exaggerating the opponent's position produces a claim they never made, so defeating it leaves the real argument untouched while creating the impression of victory. The error is one of relevance: the conclusion does not follow from the premise because the premise targets a different claim."
     }
   ]
 }

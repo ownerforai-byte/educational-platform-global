@@ -39,6 +39,42 @@
       "concept": "Dangling modifiers",
       "question": "'Walking to school, the rain soaked me.' What is logically wrong, and what are the two standard repairs?",
       "solution": "The opening participle must describe the SUBJECT — but the subject is 'the rain', which was not walking. That absurd picture (walking rain) is the dangling modifier. Repairs: (1) change the subject to the walker — 'Walking to school, I was soaked by the rain'; (2) expand the phrase into a clause with its own subject — 'While I was walking to school, the rain soaked me.' Test every sentence-opener: 'who is doing this action?' If the answer is not the grammatical subject, rewrite."
+    },
+    {
+      "id": "drill-eng11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the passive exists",
+      "question": "If the active voice is clearer, why do scientific and news writing use the passive so often?",
+      "solution": "The passive foregrounds the RECEIVER of the action and often omits the agent — useful when the agent is unknown, obvious, or less important than the result ('the sample was heated to 80 °C'). It also manages responsibility ('mistakes were made'). The passive is not inferior; it changes what the sentence is about. Choose the voice that puts the important participant first."
+    },
+    {
+      "id": "drill-eng11-6",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why tense consistency matters",
+      "question": "Why does shifting from past to present tense mid-narrative confuse a reader more than an outright grammar error?",
+      "solution": "Tense is the reader's map of WHEN events happen. An unmotivated shift forces the reader to re-anchor the timeline, so comprehension breaks even though each sentence is grammatical. Deliberate shifts (past narrative, present for general truths) are signposted; accidental ones are not. Consistency is a semantic requirement, not a stylistic preference."
+    },
+    {
+      "id": "drill-eng11-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why modals change certainty",
+      "question": "Why is 'It may rain' different from 'It will rain' even though both are predictions?",
+      "solution": "Modals encode the speaker's confidence: will = high certainty, may = possibility, might = lower, must = strong inference. The proposition is the same; the modal states the speaker's epistemic stance toward it, which is part of the meaning. Removing the modal removes information about how sure the speaker is — that is not decoration."
+    },
+    {
+      "id": "drill-eng11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why articles are not optional",
+      "question": "Why do English sentences need articles, when languages like Nepali manage without them?",
+      "solution": "English articles carry definiteness: a noun phrase with 'the' refers to something the listener can already identify; 'a/an' introduces something new among a class; no article (plural or mass) signals generic reference. Removing the article removes the information about whether the referent is identifiable, so the listener cannot tell known from new. Nepali does the same job with word order, demonstratives or postpositions instead. Optional in form, not in function."
     }
   ]
 }

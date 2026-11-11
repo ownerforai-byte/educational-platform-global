@@ -39,6 +39,42 @@
       "concept": "Selection acts on phenotypes",
       "question": "A harmful recessive allele (e.g. cystic fibrosis) persists for generations despite killing homozygotes young. Why can't selection eliminate it, and what hides it?",
       "solution": "Selection sees PHENOTYPES, not genotypes — and the allele hides in healthy heterozygote carriers (Aa), who survive and reproduce normally. Only the rare aa homozygotes ($q^2$ of the population) are removed each generation, while the vast reservoir $2pq$ of carrier copies passes on untouched. The rarer the allele, the larger the hidden fraction: at $q = 0.02$, carriers outnumber sufferers ~100 to 1. Recessive lethals are nearly invisible to selection — that is why they linger. (Heterozygote advantage, as in sickle-cell vs malaria, can actively preserve them.)"
+    },
+    {
+      "id": "drill-her-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why test cross identifies genotype",
+      "question": "A tall pea plant could be TT or Tt. Why does crossing it with a dwarf plant reveal which?",
+      "solution": "The dwarf parent contributes only t, so the offspring's phenotypes expose the unknown parent's gametes: TT gives all tall (Tt), Tt gives tall and dwarf in 1:1. The recessive tester reveals what the dominant-looking parent carries. This is why a test cross is diagnostic while a self-cross is only suggestive."
+    },
+    {
+      "id": "drill-her-6",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why linked genes break Mendel's ratio",
+      "question": "Two genes on the same chromosome give far fewer recombinants than the 9:3:3:1 ratio predicts. Why?",
+      "solution": "Mendel's law of independent assortment assumes genes on DIFFERENT chromosomes assort independently. Genes physically close on the same chromosome tend to travel together, so parental combinations over-represent and recombinants appear only through crossing over between them. The further apart they are, the more crossing over can separate them — recombination frequency is a map of distance, and linkage is the exception that measures it."
+    },
+    {
+      "id": "drill-her-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why sex-linked traits differ between sexes",
+      "question": "Colour blindness appears far more often in men than women. Why does one X chromosome make the difference?",
+      "solution": "The gene is on the X chromosome, and males have only one X, so a single recessive allele is expressed — they are hemizygous. Females need two copies, so the recessive phenotype requires both parents to contribute it. The asymmetry is chromosomal, not hormonal: with one X there is no second allele to mask the recessive."
+    },
+    {
+      "id": "drill-her-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why Hardy-Weinberg is a null model",
+      "question": "A population in Hardy-Weinberg equilibrium is not evolving. Why is that useful rather than a limitation?",
+      "solution": "Hardy-Weinberg specifies the allele and genotype frequencies expected when NO evolutionary force acts — no selection, drift, mutation, migration or non-random mating. Deviations from those expectations are therefore evidence that a force IS acting, and measuring the deviation indicates which. A baseline of no change is what makes change detectable; the null model is the instrument."
     }
   ]
 }

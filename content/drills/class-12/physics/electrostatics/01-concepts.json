@@ -39,6 +39,42 @@
       "concept": "Dielectric and energy",
       "question": "An isolated charged capacitor's energy DROPS when a dielectric is inserted ($U = Q^2/2C$, $C$ rises). Where does the lost energy go? Doesn't this violate conservation?",
       "solution": "No violation — the field does positive work pulling the dielectric slab in (polarised molecules are attracted into the stronger-field region). That work comes from the stored electrostatic energy, so $U$ falls. If you hold the slab and insert it slowly, the work goes into your muscles (or the restraint); if released, it becomes kinetic energy of the slab. Energy bookkeeping: $U_{lost} = W_{field\\ on\\ slab}$. Contrast with a battery-connected capacitor (V fixed): inserting the dielectric INCREASES stored energy ($U = \\tfrac{1}{2}CV^2$) because the battery supplies extra charge — different constraint, opposite result."
+    },
+    {
+      "id": "drill-elec-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why Gauss's law is easier than direct integration",
+      "question": "For a uniformly charged sphere, why does Gauss's law give the field in one line while integrating over the charge takes pages?",
+      "solution": "Symmetry turns the surface integral into a product: the field is radial and constant in magnitude over a concentric sphere, so ∮E·dA becomes E·4πr², and the answer falls out algebraically. Direct integration must sum vector contributions over every element. Gauss's law is not different physics — it exploits symmetry to make the same statement trivially evaluable. Without symmetry it is useless."
+    },
+    {
+      "id": "drill-elec-6",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why the field inside a charged conductor is zero",
+      "question": "A charged hollow conductor has field on the outside but zero inside the cavity wall. Explain why the interior field must vanish.",
+      "solution": "In electrostatic equilibrium the free electrons have stopped moving, which requires no tangential force anywhere in the conductor, so the field inside must be zero; otherwise charges would keep shifting. Gauss's law over a surface inside the material then demands zero net enclosed charge, forcing all excess to the outer surface. Zero internal field is the definition of electrostatic equilibrium, not an accident."
+    },
+    {
+      "id": "drill-elec-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why pointed conductors discharge",
+      "question": "Why do lightning rods have sharp points rather than rounded tops?",
+      "solution": "Surface charge density is highest where curvature is greatest, since charge accumulates at sharp features. Field just outside a conductor is E = σ/ε₀, so the sharpest point has the strongest field, ionising the surrounding air and providing a safe conductive path for charge to leak away or take the strike. Sharpness concentrates the field — that is the point."
+    },
+    {
+      "id": "drill-elec-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a capacitor stores energy rather than charge",
+      "question": "A charged capacitor holds equal positive and negative plates, so its NET charge is zero. What is actually stored?",
+      "solution": "The net charge is zero, but the SEPARATION of charge is not — energy is stored in the electric field between the plates, built up by the work done separating the charges. That is why the energy is U = ½CV² and lives in the field, and why discharging releases it. Capacitors store field energy, not net charge."
     }
   ]
 }

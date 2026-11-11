@@ -39,6 +39,42 @@
       "concept": "Reported speech shifts",
       "question": "Direct: 'I will help you tomorrow,' she said. A student reports: 'She said she will help me tomorrow.' Name every shift the student missed and give the correct version.",
       "solution": "Three missed shifts: (1) will → would (modal steps back in reported past frames); (2) you → me (pronoun re-anchors to the reporter); (3) tomorrow → the next day (time deictic moves with the reporting moment). Correct: 'She said (that) she would help me the next day.' Principle: reported speech re-centres EVERYTHING — tense, person, place and time — on the reporter, not the original speaker. One unchanged word ('tomorrow') can cost the whole mark because it claims the report was filed the same day."
+    },
+    {
+      "id": "drill-eng12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why conditionals split into three types",
+      "question": "Why do grammar books distinguish first, second and third conditionals rather than one 'if' rule?",
+      "solution": "Each type encodes a different relationship between condition and result: first = real and possible in the future; second = hypothetical or contrary to present fact; third = impossible because the past is fixed. The verb forms exist to mark that distinction, so 'If I were rich' and 'If I had been rich' say different things about reality. The forms are the meaning — choosing the wrong one misrepresents the possibility."
+    },
+    {
+      "id": "drill-eng12-6",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why reported speech shifts tense",
+      "question": "In reported speech, 'I am tired' becomes 'He said he was tired'. Why does the tense shift?",
+      "solution": "Reporting moves the utterance into the past, so the original present — true at the time of speaking — is now a present-in-the-past, expressed as past tense. The shift preserves the TIME relationship between the report and the original statement. If the statement remains currently true ('Water boils at 100 °C'), no shift is needed, because the fact is timeless rather than anchored to the past moment."
+    },
+    {
+      "id": "drill-eng12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why participle clauses need matching subjects",
+      "question": "Why is 'Walking down the road, the tree fell on me' a dangling participle error?",
+      "solution": "A participle clause takes its implied subject from the MAIN clause, so as written the tree appears to be doing the walking. The sentence is ungrammatical in meaning because the participial action and the main verb have different subjects. Fix by naming the real walker: 'Walking down the road, I was hit by a falling tree.' Participle clauses are only valid when the subject is shared."
+    },
+    {
+      "id": "drill-eng12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why squinting modifiers confuse",
+      "question": "Why does 'Students who study regularly pass exams' read clearly while 'Students who study regularly are rewarded' is ambiguous if 'regularly' could attach to either verb?",
+      "solution": "The adverb must attach to exactly one verb, but placement near the boundary of two clauses leaves two possible scopes — does the studying happen regularly, or the rewarding? A modifier whose attachment is ambiguous is a squinting modifier, and it creates two readings from one sentence. The cure is positioning: put the adverb beside the verb it modifies, so scope is fixed by adjacency."
     }
   ]
 }
