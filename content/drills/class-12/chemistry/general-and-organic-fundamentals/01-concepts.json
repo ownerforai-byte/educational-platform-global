@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — General & Organic Fundamentals (Class 12 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "general-and-organic-fundamentals",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-org12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Electronegativity beats size for nucleophile strength",
+      "question": "Across a row of the periodic table, nucleophilicity follows basicity (C > N > O > F), but down a group it REVERSES (I⁻ > Br⁻ > Cl⁻ > F⁻ in protic solvents). Explain both orders.",
+      "solution": "Across a row, atoms are similar in size, so the more electronegative atom holds its electrons tighter and donates them less readily — nucleophilicity tracks basicity. Down a group, size dominates: bigger ions are more polarisable and, crucially, less strongly SOLVATED in protic solvents (the solvent shell blocks small F⁻ most), so I⁻ attacks fastest. Solvation is the extra factor the reversal exposes."
+    },
+    {
+      "id": "drill-org12-2",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Resonance vs inductive effect",
+      "question": "Distinguish the inductive and resonance effects, and explain why p-nitrophenol is far more acidic than m-nitrophenol.",
+      "solution": "Inductive effect: electron pull/push transmitted through σ bonds, dying off within 2–3 bonds. Resonance: delocalisation through π systems, felt wherever the orbitals connect. Both nitro positions withdraw inductively, but only the PARA nitro can accept the phenoxide's negative charge by resonance (−M), stabilising the conjugate base directly. Meta lacks that conjugative path — hence weaker acid. Position matters because resonance needs alignment."
+    },
+    {
+      "id": "drill-org12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Hyperconjugation — the 'no-bond' resonance",
+      "question": "Why is the propyl carbocation more stable than the ethyl, even though neither has a neighbouring π system?",
+      "solution": "Stability comes from HYPERCONJUGATION: σ(C–H) bonds on adjacent alkyl groups overlap with the empty p orbital, delocalising the positive charge. More adjacent C–H bonds → more hyperconjugative structures. Isopropyl/tert-butyl have more such bonds than ethyl, hence the order 3° > 2° > 1°. It is σ–p delocalisation, not π resonance."
+    },
+    {
+      "id": "drill-org12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Electrophile vs nucleophile — by electron flow",
+      "question": "Classify H⁺, OH⁻, BF₃, CN⁻, AlCl₃ as nucleophile or electrophile, and state the single criterion you used.",
+      "solution": "Nucleophiles (electron-pair donors): OH⁻, CN⁻. Electrophiles (electron-pair acceptors): H⁺, BF₃, AlCl₃ (empty orbital / incomplete octet on B and Al). Criterion: does the species SEEK an electron pair (electrophile) or OFFER one (nucleophile)? Charge alone misleads — neutral BF₃ is a strong electrophile."
+    },
+    {
+      "id": "drill-org12-5",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Homolytic vs heterolytic — which conditions favour which",
+      "question": "Why does chloromethane form by homolysis in sunlight but by heterolysis in a polar solvent with a Lewis acid?",
+      "solution": "Homolysis (each fragment takes one electron → radicals) needs energy input like UV light and non-polar conditions — the radical path of photochemical chlorination. Heterolysis (both electrons to one fragment → ions) is stabilised by polar solvents (solvating the ions) and Lewis acids (polarising the C–X bond). The BOND BREAKING MODE follows the conditions, and the conditions select the mechanism."
+    },
+    {
+      "id": "drill-org12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Reaction intermediates — lifetime and detection",
+      "question": "Carbocations, carbanions and free radicals are all intermediates. Which is most likely to rearrange, and why does that matter for predicting products?",
+      "solution": "Carbocations — electron-deficient and relatively long-lived (microseconds), they can undergo 1,2-hydride/methyl shifts to reach a more stable (3°) cation before the nucleophile attacks, changing the carbon skeleton of the product. Radicals and carbanions are shorter-lived or less prone to shifts. Predicting an SN1/E1 product without checking for rearrangement is the classic error."
+    },
+    {
+      "id": "drill-org12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Steric effect on SN2",
+      "question": "Why does methyl bromide react fastest and tert-butyl bromide essentially not at all in an SN2 substitution?",
+      "solution": "SN2 requires the nucleophile to attack the carbon from the side OPPOSITE the leaving group — a backside approach through a crowded umbrella of substituents. Methyl has three small H atoms (open); tert-butyl has three methyl groups blocking the path entirely. Steric hindrance, not electronics, sets the SN2 rate order: methyl > 1° > 2° ≫ 3°."
+    },
+    {
+      "id": "drill-org12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Electron-displacement effects in one molecule",
+      "question": "In chlorobenzene, the Cl is deactivating yet ortho/para-directing. How can one substituent do both?",
+      "solution": "Two effects act in opposite channels: Cl withdraws inductively (−I, deactivating the ring overall — slows every substitution), but its lone pairs donate by resonance (+M) into the ortho/para positions, placing negative charge there and stabilising the σ-complex for attack at those positions. Rate is set by −I; REGIOCHEMISTRY is set by +M. Separating the two questions is the whole answer."
+    }
+  ]
+}

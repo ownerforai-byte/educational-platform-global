@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — d- and f-Block / Coordination Chemistry (Class 12 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "chemistry-of-element",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-el12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Variable oxidation states — why d-block differs",
+      "question": "Why do transition metals show several oxidation states (Mn: +2 to +7) while Ca is stuck at +2?",
+      "solution": "Transition metals have (n−1)d and ns electrons of similar energy, so varying numbers of BOTH can participate in bonding — each successive ionisation removes a d electron at modest extra cost, giving a ladder of stable states. Ca has only ns² valence electrons; removing the third (from a core shell) costs far too much energy. The near-degeneracy of (n−1)d and ns is the root cause."
+    },
+    {
+      "id": "drill-el12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Colour from d–d transitions",
+      "question": "Why are [Cu(H₂O)₆]²⁺ blue but [Zn(H₂O)₆]²⁺ colourless, even though both are aqua complexes?",
+      "solution": "Cu²⁺ is d⁹ — a partially filled d set lets an electron absorb visible light and jump between split d orbitals (d–d transition); the complement colour is seen. Zn²⁺ is d¹⁰ — the d set is full, so no d–d transition is possible and all visible light passes through. A partially filled d subshell is the colour requirement."
+    },
+    {
+      "id": "drill-el12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Lanthanoid contraction — cause and consequences",
+      "question": "Define lanthanoid contraction, state its cause, and give two consequences (one in the lanthanoids, one in the following elements).",
+      "solution": "The steady decrease in atomic/ionic radii across the lanthanoid series (Ce → Lu). Cause: the added electrons fill the poorly-shielding 4f subshell, so each proton added pulls the shell in without f-electrons screening effectively. Consequences: (1) lanthanoids become so similar in size that their separation is difficult; (2) the 5d transition metals after them (Zr/Hf) have nearly identical radii — hence near-identical chemistry and hard separation."
+    },
+    {
+      "id": "drill-el12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Catalytic activity of transition metals",
+      "question": "Why do transition metals and their compounds make good catalysts (Fe in Haber, V₂O₅ in contact process)? Give the two properties involved.",
+      "solution": "(1) Variable oxidation states let them form transient intermediate compounds, lowering activation energy by providing an alternative path. (2) Large surface area with vacant d orbitals lets them ADSORB reactant molecules onto the surface, orienting and weakening their bonds. Both properties come from the incompletely filled d subshell."
+    },
+    {
+      "id": "drill-el12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Interstititial alloys and hardness",
+      "question": "Why are transition metals hard and high-melting, and why does adding a small amount of carbon to iron transform its properties?",
+      "solution": "Many valence electrons in metallic bonding plus small atoms occupying INTERSTITIAL sites between the large metal atoms give strong, non-directional multi-centre bonding — hence hardness and high melting points. Carbon in iron's interstices (steel) pins dislocations and distorts the lattice, so the metal resists deformation — a few percent C changes mechanical behaviour dramatically."
+    },
+    {
+      "id": "drill-el12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Werner's theory — primary and secondary valence",
+      "question": "In [Co(NH₃)₆]Cl₃, which ligands satisfy primary valence and which secondary? State what each corresponds to in modern terms.",
+      "solution": "Primary valence = ionisable: the 3 Cl⁻, satisfied by the Co³⁺ charge — they precipitate with AgNO₃ and correspond to OXIDATION STATE. Secondary valence = coordination: the 6 NH₃, non-ionisable, fixed in number and geometry — corresponds to COORDINATION NUMBER (6, octahedral). The two valences are independent, which is why [Co(NH₃)₅Cl]Cl₂ and [Co(NH₃)₄Cl₂]Cl both exist."
+    },
+    {
+      "id": "drill-el12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Chelate effect",
+      "question": "Why is [Ni(en)₃]²⁺ far more stable than [Ni(NH₃)₆]²⁺, though both bind nitrogen donors?",
+      "solution": "en (ethylenediamine) is BIDENTATE: each molecule attaches at two points, forming five-membered chelate rings. Replacing one chelated ligand requires breaking TWO coordinate bonds simultaneously and the ring geometry resists it — statistically and energetically disfavoured. More chelate rings → greater stability (the chelate effect); entropy also favours it since particles increase on dissociation."
+    },
+    {
+      "id": "drill-el12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Ligand strength in the spectrochemical series",
+      "question": "Why is [CoF₆]³⁻ paramagnetic with a different colour from [Co(CN)₆]³⁻, which is diamagnetic?",
+      "solution": "F⁻ is a WEAK-field ligand: small Δ₀ means pairing costs more than promoting an electron, so electrons stay unpaired (high-spin, paramagnetic). CN⁻ is STRONG-field: large Δ₀ forces pairing (low-spin, diamagnetic). The ligand's position in the spectrochemical series sets Δ₀, which sets the spin state — and the colour, since Δ₀ is the absorbed photon energy."
+    }
+  ]
+}

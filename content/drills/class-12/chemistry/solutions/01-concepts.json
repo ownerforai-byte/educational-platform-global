@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Solutions (Class 12 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "solutions",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-sol12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Colligative means 'how many'",
+      "question": "Why do 1 molal glucose and 1 molal urea solutions show nearly the same boiling-point elevation, while 1 molal NaCl shows nearly double?",
+      "solution": "Colligative properties count PARTICLES, not identities. Glucose and urea are non-electrolytes: 1 mol gives 1 mol of particles. NaCl dissociates into Na⁺ + Cl⁻, so i ≈ 2 — twice the particles, twice the ΔTb. The van't Hoff factor i is the multiplier; dissociation, not the solute's identity, drives the difference."
+    },
+    {
+      "id": "drill-sol12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Molality over molarity",
+      "question": "Why do the colligative-property formulas use molality instead of molarity?",
+      "solution": "Molality = mol solute per kg SOLVENT — both masses are temperature-independent. Molarity divides by solution VOLUME, which expands on heating, so a molarity-based ΔTb would itself drift with temperature and make the 'constant' Kb ill-defined. Temperature-independent ratios are the requirement."
+    },
+    {
+      "id": "drill-sol12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Raoult's law and ideality",
+      "question": "A solution of A and B shows a vapour pressure LOWER than Raoult's law predicts. What interaction does this signal, and what happens to the mixing enthalpy and volume?",
+      "solution": "Negative deviation: A–B attractions are STRONGER than the average of A–A and B–B, so molecules escape less easily — P < P_Raoult. Stronger attraction means mixing releases energy (ΔH_mix < 0) and the molecules pull together (ΔV_mix < 0). Chloroform + acetone is the standard example (hydrogen bonding). Positive deviation is the mirror image."
+    },
+    {
+      "id": "drill-sol12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Osmosis vs diffusion",
+      "question": "Why does a raisin swell in fresh water but a raisin in saturated sugar solution shrinks? Name the driving quantity.",
+      "solution": "Water moves through the semipermeable membrane from LOWER to HIGHER solute concentration (lower to higher osmotic pressure region). Fresh water outside: water flows in — swelling. Saturated sugar outside: water flows out — shrinking. The driving quantity is the osmotic-pressure DIFFERENCE (π = iCRT) across the membrane."
+    },
+    {
+      "id": "drill-sol12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Henry's law and soda",
+      "question": "A soda bottle fizzes violently when opened but only slowly when left uncapped. Explain with Henry's law, including the temperature factor.",
+      "solution": "Henry's law: p = K_H·x — gas solubility is proportional to its partial pressure above the liquid. Bottled: high CO₂ pressure keeps large x. Opened: p drops to 0.0004 atm, solubility collapses, CO₂ escapes. Warming the drink raises K_H (solubility falls), so warm soda goes flat faster — the K_H temperature trend is the extra mark."
+    },
+    {
+      "id": "drill-sol12-6",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Azeotropes break distillation",
+      "question": "Why can fractional distillation never purify 95% ethanol beyond its azeotrope, no matter how many plates?",
+      "solution": "An azeotrope is a composition where the liquid and vapour have the SAME composition — the mixture boils and condenses as one substance. At that point relative volatility is exactly 1: each vaporisation-condensation cycle changes nothing, so more plates cannot shift the composition. Breaking it needs a third component (entrainer) or a different separation principle."
+    },
+    {
+      "id": "drill-sol12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Depression of freezing point — the mechanism",
+      "question": "Explain why adding salt to ice lowers the freezing point, in terms of vapour pressure — not just 'salt melts ice'.",
+      "solution": "At 0 °C ice and pure water have equal vapour pressure (equilibrium). Dissolved salt lowers the LIQUID's vapour pressure (Raoult), so ice now has the higher vapour pressure and melts to restore equilibrium — melting absorbs heat and the mixture cools. The equilibrium-shift framing, not 'salt is warm', is the correct mechanism."
+    },
+    {
+      "id": "drill-sol12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Abnormal molar mass — association",
+      "question": "Benzoic acid in benzene shows a molar mass nearly DOUBLE its formula mass. What is happening, and how does the van't Hoff factor capture it?",
+      "solution": "Benzoic acid dimerises in benzene via hydrogen bonding: 2 molecules act as one particle, so the particle count halves and the measured (colligative) molar mass doubles. i = actual particles/formula units = 0.5 here. Association (i < 1) raises apparent molar mass; dissociation (i > 1) lowers it — the two cases the examiner pairs."
+    }
+  ]
+}

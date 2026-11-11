@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Amines (Class 12 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "amines",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-am12-1",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Basicity in gas vs aqueous phase",
+      "question": "In the gas phase basicity follows 3° > 2° > 1° > NH₃, but in water it is 2° > 1° > 3° > NH₃. Explain what aqueous order adds.",
+      "solution": "Gas phase: only electron donation matters — more alkyl groups (+I) push more electron density onto N, so 3° is the strongest base. In water the formed ammonium ion must be SOLVATED to stabilise it; each alkyl group blocks water's approach (steric) and hydrophobic alkyl groups reduce H-bonding solvation. 2° wins the balance (enough +I, still solvatable); 3° loses too much solvation. Inductive push vs solvation of the cation is the trade-off."
+    },
+    {
+      "id": "drill-am12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Aniline vs cyclohexylamine",
+      "question": "Aniline is ~10⁶ times weaker a base than cyclohexylamine, though both have an NH₂ on a six-membered ring. Why?",
+      "solution": "In aniline the N lone pair delocalises into the benzene ring (resonance), so it is less available to bind H⁺ — and the resulting anilinium ion loses that resonance on protonation. Cyclohexylamine's lone pair is localised sp³ and fully available. Resonance withdrawal from N is the whole difference; the ring's sp² carbon also pulls inductively."
+    },
+    {
+      "id": "drill-am12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Hofmann bromamide — one carbon shorter",
+      "question": "The Hofmann bromamide degradation of propanamide gives ethylamine, not propylamine. What happens to the carbon chain, and what reagent set is used?",
+      "solution": "R–CONH₂ + Br₂ + 4NaOH → R–NH₂ + Na₂CO₃ + 2NaBr + 2H₂O. The CARBONYL carbon leaves as carbonate, so the amine has one carbon fewer than the amide — propanamide (C3) → ethylamine (C2). It is the standard route to a primary amine with a shortened chain; losing the carbonyl carbon is the conceptual point."
+    },
+    {
+      "id": "drill-am12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Hinsberg test separates the three classes",
+      "question": "How does the benzenesulphonyl chloride (Hinsberg) test distinguish primary, secondary and tertiary amines?",
+      "solution": "1° amine: sulphonamide product still has an N–H, so it dissolves in alkali (soluble salt). 2° amine: sulphonamide has NO N–H — insoluble in alkali but formed. 3° amine: no N–H at all, does not react — stays insoluble and dissolves on acidification. The presence/absence of the remaining N–H in the product is the discriminator."
+    },
+    {
+      "id": "drill-am12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Diazonium salts — stable only cold and aromatic",
+      "question": "Why can aromatic diazonium salts be isolated at 0–5 °C while aliphatic ones decompose immediately?",
+      "solution": "In ArN₂⁺ the diazonium group is stabilised by resonance with the aromatic ring (positive charge delocalised over the ring), so the salt survives cold aqueous solution. Aliphatic R–N₂⁺ has no such stabilisation — it loses N₂ instantly, forming a carbocation. Low temperature further suppresses the phenol-forming side reaction; 'cold + aromatic' are the two conditions."
+    },
+    {
+      "id": "drill-am12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Sandmeyer vs Gattermann",
+      "question": "Both replace ArN₂⁺ with Cl/Br/CN. What is the practical difference, and why can't diazonium be replaced by F or I the same way?",
+      "solution": "Sandmeyer uses Cu₂Cl₂/Cu₂Br₂/CuCN (a copper(I) catalysed radical pathway — higher yields); Gattermann uses Cu powder + HX (less efficient). F needs the Balz–Schiemann route (ArN₂⁺BF₄⁻ heated — the BF₄⁻ anion supplies F); I needs only KI because iodide is itself nucleophilic enough to displace N₂. Different halogens need different routes because the copper salts don't work for F."
+    },
+    {
+      "id": "drill-am12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Coupling reaction — the azo dye",
+      "question": "Why must azo coupling with phenol be done in mild alkali, and with aniline in mild acid?",
+      "solution": "The electrophile is the diazonium ion, which must stay intact (needs mild acidity). The ring partner must be ACTIVATED: phenol is most activating as phenoxide (mild alkali), aniline as the free base (too much acid protonates it to the deactivating anilinium). So pH is a compromise: enough acid to keep N₂⁺, enough base to keep the ring activated — each partner has its own optimum."
+    },
+    {
+      "id": "drill-am12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Carbylamine test — primary only",
+      "question": "The carbylamine reaction (CHCl₃ + KOH + amine → foul isocyanide) works only for primary amines. What structural feature does it require?",
+      "solution": "The mechanism needs the amine to form a dichlorocarbene adduct and then eliminate TWO H atoms sequentially — only a primary amine (R–NH₂) has the two N–H bonds required to reach R–N≡C. Secondary and tertiary amines lack the second N–H and stop. Hence the test is a clean 'primary only' detector, and the vile smell is why it is done in a fume hood."
+    }
+  ]
+}

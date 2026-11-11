@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Biomolecules (Class 12 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "biomolecules",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-bio12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Reducing vs non-reducing sugars",
+      "question": "Glucose reduces Tollens' reagent but sucrose does not, even though both are 'sugars'. What structural feature is being tested?",
+      "solution": "A free (or potentially free) aldehyde or α-hydroxyketone group. Glucose has a hemiacetal that opens to a free aldehyde in solution — reducing. Sucrose's anomeric carbons are BOTH locked in the glycosidic acetal bond, so neither ring can open — non-reducing. The test detects the free carbonyl, not 'sweetness'."
+    },
+    {
+      "id": "drill-bio12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "D/L is not d/l",
+      "question": "A student writes 'D-glucose rotates light to the right'. Correct the confusion between the two notations.",
+      "solution": "D/L is CONFIGURATION — a relative assignment comparing the chiral centre farthest from the carbonyl with glyceraldehyde (OH on the right = D). (+)/(−) or d/l is the observed ROTATION direction, an independent optical property. D-glucose happens to be (+), but D-fructose is (−) — the two systems are unrelated in general."
+    },
+    {
+      "id": "drill-bio12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Protein structure levels",
+      "question": "Name the four levels of protein structure and the interaction responsible for each.",
+      "solution": "Primary: the amino-acid SEQUENCE (covalent peptide bonds). Secondary: local folding into α-helix/β-sheet by hydrogen bonds between backbone C=O and N–H groups. Tertiary: the whole-chain 3D fold — hydrophobic clustering, disulphide bridges, H-bonds, ionic pairs between side chains. Quaternary: assembly of multiple polypeptide subunits (e.g. haemoglobin's four chains) held by the same non-covalent forces between chains."
+    },
+    {
+      "id": "drill-bio12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Denaturation — primary survives",
+      "question": "A boiled egg's protein is permanently changed, yet its amino-acid sequence is untouched. What has been lost, and why is it irreversible?",
+      "solution": "Denaturation destroys secondary/tertiary structure — the H-bonds, hydrophobic contacts and disulphide pairings unravel — while the primary sequence (peptide bonds) remains. It is usually irreversible because the unfolded chains expose hydrophobic cores that aggregate with each other rather than refold correctly. Loss of the 3D fold = loss of biological function."
+    },
+    {
+      "id": "drill-bio12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Enzyme specificity and lock-and-key",
+      "question": "Why does an enzyme catalyse one reaction but not a closely related one, and what does the 'active site' contribute?",
+      "solution": "The active site's shape and chemical groups complement ONE substrate (lock-and-key / induced fit): binding positions the substrate's bonds next to catalytic groups and stabilises the transition state, slashing Ea. A substrate that does not fit is neither positioned nor activated — hence specificity. The enzyme lowers Ea; it never changes ΔG or the equilibrium."
+    },
+    {
+      "id": "drill-bio12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Vitamins: why 'needed in traces'",
+      "question": "Why are vitamins required only in milligram amounts while carbohydrates are needed in hundreds of grams, and how are vitamins classified?",
+      "solution": "Vitamins are not fuel or building material — they are coenzymes/coenzyme precursors: small catalytic partners reused thousands of times, so tiny amounts suffice. Classification by solubility: fat-soluble (A, D, E, K — stored, excess can be toxic) vs water-soluble (B-complex, C — not stored, excreted, needed regularly)."
+    },
+    {
+      "id": "drill-bio12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Nucleic acid — the backbone and the base pair rule",
+      "question": "State what holds a DNA double helix together, and why A pairs only with T (and G with C).",
+      "solution": "The two strands are held by hydrogen bonds between bases (A=T: 2 H-bonds; G≡C: 3 H-bonds) while the sugar–phosphate backbone runs antiparallel. A–T pairing is exact because their hydrogen-bond donor/acceptor pattern and geometry match — G would neither bond correctly nor fit the helix width. Complementarity of H-bonding PATTERN is the selectivity principle."
+    },
+    {
+      "id": "drill-bio12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Glucose — open vs cyclic",
+      "question": "Glucose shows mutarotation in water but reacts with NaHSO₃ only slowly. Reconcile the two observations.",
+      "solution": "In water glucose exists mostly as CYCLIC hemiacetals (α and β pyranose) with only ~0.02% open-chain aldehyde at equilibrium. Mutarotation is the slow interconversion α ⇌ β via the trace open form. Reactions requiring the free aldehyde (like NaHSO₃ addition) are limited by that tiny equilibrium concentration — hence slow, even though the aldehyde itself is reactive."
+    }
+  ]
+}

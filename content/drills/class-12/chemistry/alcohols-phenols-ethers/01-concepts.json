@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Alcohols, Phenols & Ethers (Class 12 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "alcohols-phenols-ethers",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ape12-1",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Acidity order: phenol > water > alcohol",
+      "question": "Rank phenol, ethanol and water by acidity and justify with TWO stabilising factors for phenol.",
+      "solution": "Phenol > water > ethanol. Phenol's conjugate base (phenoxide) is stabilised by (1) RESONANCE — the negative charge delocalises into the ring's ortho/para positions, and (2) the sp² carbon's inductive pull (the O–C bond to an sp² carbon is more polar, dispersing charge). Alkoxide's +I ethyl group instead INTENSIFIES the charge, making ethanol less acidic than water. Delocalisation vs charge-intensification is the contrast."
+    },
+    {
+      "id": "drill-ape12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Nitro groups boost phenol acidity",
+      "question": "Why is p-nitrophenol about 1000× more acidic than phenol, while p-cresol is weaker?",
+      "solution": "NO₂ withdraws (−I, −M) and delocalises the phenoxide's negative charge further, stabilising the conjugate base — acidity rises. CH₃ donates (+I, hyperconjugation), intensifying the negative charge on oxygen — acidity falls. Electron withdrawal → stronger acid; donation → weaker. The substituent acts through the conjugate base's stability."
+    },
+    {
+      "id": "drill-ape12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Lucas test logic",
+      "question": "The Lucas test (anhydrous ZnCl₂ + conc. HCl) gives turbidity instantly for a tertiary alcohol, in 5 minutes for secondary, and only on heating for primary. Explain the rate order.",
+      "solution": "The test measures SN1 substitution rate: turbidity = insoluble alkyl chloride forming. Tertiary alcohols form the most stable carbocation — fastest. Primary carbocations are too unstable, so the reaction needs heat (SN2 path). Carbocation stability (3° > 2° > 1°) is what the turbidity timing reads."
+    },
+    {
+      "id": "drill-ape12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Dehydration follows Saytzeff",
+      "question": "Dehydrating 2-methylbutan-2-ol with conc. H₂SO₄ gives the more substituted alkene as the major product. Why does the more substituted alkene dominate?",
+      "solution": "The E1 path goes through a carbocation, and the β-hydrogen loss that produces the MORE substituted (more hyperconjugatively and inductively stabilised) alkene has the lower-energy transition state — Saytzeff's rule. Alkene stability (degree of substitution) controls the product ratio; the 2-methylbut-2-ene major product follows."
+    },
+    {
+      "id": "drill-ape12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "OH is a poor leaving group — activate it",
+      "question": "Why do alcohols react with HBr but resist substitution by Br⁻ alone?",
+      "solution": "OH⁻ is a strong base and therefore a very poor leaving group — direct displacement is unfavourable. HBr PROTONATES the OH, converting it into H₂O, an excellent neutral leaving group; then Br⁻ attacks (SN2 for 1°, SN1 for 3°). Acid activation of the leaving group is the general principle behind all alcohol substitutions."
+    },
+    {
+      "id": "drill-ape12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Williamson synthesis — choose the right partner",
+      "question": "To make tert-butyl methyl ether, why must you use tert-butoxide + methyl bromide, NOT tert-butyl bromide + methoxide?",
+      "solution": "Williamson is SN2: the halide partner must be UNHINDERED. Tert-butyl bromide cannot undergo backside attack — with methoxide it eliminates (E2) to isobutene instead. tert-Butoxide (a bulky but viable nucleophile) attacking methyl bromide works cleanly. Rule: pick the alkyl halide as the LESS substituted partner."
+    },
+    {
+      "id": "drill-ape12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Ether cleavage — HI selectivity",
+      "question": "When anisole (Ph–O–CH₃) reacts with HI, the products are phenol and CH₃I — never iodobenzene. Why is the methyl side always the one cleaved?",
+      "solution": "Protonation of the ether gives two possible leaving paths. The phenyl–O bond has partial DOUBLE-BOND character (oxygen lone pairs delocalise into the ring), making Ph⁺ or SN2 at sp² carbon impossible. The methyl–O bond is a normal σ bond: I⁻ attacks the unhindered CH₃ by SN2, releasing phenol. The sp²-carbon barrier directs the cleavage to the alkyl side — that selectivity is the mark point.avage."
+    },
+    {
+      "id": "drill-ape12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Kolbe and Reimer–Tiemann — phenol's activated ring",
+      "question": "Phenol carboxylates with CO₂/NaOH (Kolbe) and formylates with CHCl₃/NaOH (Reimer–Tiemann) — both at ortho/para. What does phenoxide's ring do to enable these reactions?",
+      "solution": "The phenoxide ion (O⁻) donates strongly by resonance, greatly ENRICHING the ortho/para positions in electron density — enough to attack even weak electrophiles like CO₂ and :CCl₂ (dichlorocarbene). Both reactions are electrophilic substitutions made possible by the activated phenoxide ring; the o/p preference follows the resonance charge distribution."
+    }
+  ]
+}

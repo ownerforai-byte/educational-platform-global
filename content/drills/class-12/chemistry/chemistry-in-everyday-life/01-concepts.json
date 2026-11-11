@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Chemistry in Everyday Life (Class 12 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "chemistry-in-everyday-life",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-cel12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Drugs are classified by action, not source",
+      "question": "Why do chemists classify drugs by pharmacological effect (analgesic, antacid, antibiotic) rather than by chemical structure?",
+      "solution": "Because different structures can produce the same therapeutic EFFECT (e.g. several unrelated molecules relieve pain), while the same structure can act differently at different targets. Classification by action maps directly onto what the doctor needs and which receptor is targeted; structure-based classes don't predict use. Target/effect is the organising principle of medicinal chemistry."
+    },
+    {
+      "id": "drill-cel12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Antacids vs histamine antagonists",
+      "question": "Traditional antacids (Mg(OH)₂, Al(OH)₃) neutralise acid chemically; ranitidine/cimetidine work differently. Explain the mechanistic difference and its advantage.",
+      "solution": "Antacids neutralise HCl AFTER secretion — treating the symptom, over and over, and can cause rebound acid. Ranitidine/cimetidine are H₂-RECEPTOR ANTAGONISTS: they block the signal that makes parietal cells secrete acid in the first place, cutting production at the source. Receptor-level control treats the cause rather than the symptom."
+    },
+    {
+      "id": "drill-cel12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Antibiotics: bactericidal vs bacteriostatic",
+      "question": "Penicillin kills bacteria; chloramphenicol only stops their growth. Explain both mechanisms and why 'static' drugs still cure with a working immune system.",
+      "solution": "Penicillin inhibits cell-wall (peptidoglycan) cross-linking — the bacterium bursts from internal pressure: bactericidal. Chloramphenicol blocks protein synthesis on the 70S ribosome: growth stops (bacteriostatic) but the cells survive until the immune system clears them. Both need the host's immunity for the final cleanup in the static case."
+    },
+    {
+      "id": "drill-cel12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Narrow-spectrum vs broad-spectrum",
+      "question": "Why would a doctor prefer a NARROW-spectrum antibiotic when the pathogen is identified?",
+      "solution": "A narrow-spectrum drug kills only the target species, sparing the body's beneficial microbiota — less disruption of digestion and less selection pressure for resistant strains. Broad-spectrum drugs wipe out many species indiscriminately, which both causes side effects and accelerates resistance. Targeted therapy is the safer default once the pathogen is known."
+    },
+    {
+      "id": "drill-cel12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Soap vs detergent in hard water",
+      "question": "Soap forms scum in hard water but synthetic detergents do not. Explain at the molecular level.",
+      "solution": "Soap's carboxylate head (RCOO⁻) reacts with Ca²⁺/Mg²⁺ to form insoluble calcium/magnesium stearate — the scum, which wastes the surfactant. Synthetic detergents use sulphonate (RSO₃⁻) or sulphate heads whose Ca/Mg salts stay SOLUBLE, so they keep working in hard water. The head-group chemistry, not the tail, is the difference."
+    },
+    {
+      "id": "drill-cel12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Sweeteners vs sucrose — why not replace sugar entirely",
+      "question": "Aspartame is ~200× sweeter than sucrose, so why do diet drinks still need other ingredients, and why is aspartame unsuitable for cooking?",
+      "solution": "Sweetness is not the only job of sugar — it also gives bulk, texture, browning and preservation, which a tiny amount of high-intensity sweetener cannot supply. Aspartame is also unstable to heat (decomposes on cooking, losing sweetness) and is unsafe for phenylketonurics (it hydrolyses to phenylalanine). Sweetness per gram and functionality are separate requirements."
+    },
+    {
+      "id": "drill-cel12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Antiseptics vs disinfectants",
+      "question": "Both kill microbes. What distinguishes an antiseptic from a disinfectant, using phenol's concentration behaviour as the example?",
+      "solution": "Antiseptics are safe on LIVING tissue (skin, wounds); disinfectants are for inanimate surfaces (floors, instruments). Phenol illustrates the dose split: ~0.2% solution is antiseptic, ~1% is disinfectant — the same molecule, different concentrations for different applications. Safety on living tissue is the dividing line."
+    },
+    {
+      "id": "drill-cel12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Artificial sweetener safety — the receptor view",
+      "question": "Saccharin, aspartame and sucralose all 'taste sweet' without being metabolised like sugar. What does this tell you about how taste works chemically?",
+      "solution": "Sweetness is detected by RECEPTORS on the tongue that respond to molecular SHAPE and charge pattern, not to the molecule's nutritional content or metabolism. Diverse structures bind the same receptor and trigger the same signal. That is why a non-metabolised molecule (sucralose passes through the body) can still taste sweet — taste is molecular recognition, not chemistry of nutrition."
+    }
+  ]
+}

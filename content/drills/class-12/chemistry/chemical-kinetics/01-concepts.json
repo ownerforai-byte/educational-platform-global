@@ -5,40 +5,76 @@
   "examSource": "Concept drills",
   "questions": [
     {
-      "id": "drill-kin-1",
-      "type": "concept",
-      "marks": 2,
-      "difficulty": "medium",
-      "concept": "Order vs molecularity",
-      "question": "For $\\mathrm{H_2 + I_2 \\rightarrow 2HI}$ the experimental rate is $k[\\mathrm{H_2}][\\mathrm{I_2}]$. A student writes 'order = 2, molecularity = 2, so they are the same thing.' What is wrong here?",
-      "solution": "The numbers coinciding does not make them the same concept. Order is EXPERIMENTAL — the exponents in the measured rate law (can be fractional, zero, even negative). Molecularity is MECHANISTIC — the number of reactant species colliding in one proposed elementary step (always a whole number 1–3). For complex reactions they differ: $\\mathrm{CH_3COOC_2H_5 + H_2O \\xrightarrow{H^+}}$ products is experimentally first order (water in huge excess) but bimolecular mechanistically (pseudo-first-order). Order describes what you measure; molecularity describes the story you propose."
-    },
-    {
-      "id": "drill-kin-2",
-      "type": "concept",
-      "marks": 2,
-      "difficulty": "medium",
-      "concept": "Temperature and rate",
-      "question": "Why does a $10^\\circ\\mathrm{C}$ rise roughly double most reaction rates, while raising reactant concentration 10% barely matters? Explain with the Maxwell–Boltzmann curve.",
-      "solution": "Rate depends on the FRACTION of molecules above $E_a$, not the average energy. On the Maxwell–Boltzmann curve, $E_a$ sits far in the right tail; warming shifts the whole curve only slightly right, but the tail area past fixed $E_a$ grows exponentially ($e^{-E_a/RT}$) — roughly doubling per 10 K. A 10% concentration rise adds only 10% more collisions with the same tiny success fraction. Temperature attacks the exponential; concentration only the pre-factor. That is why heating dominates and why the rule of thumb (≈2× per 10°) holds across reactions."
-    },
-    {
-      "id": "drill-kin-3",
+      "id": "drill-ck12-1",
       "type": "concept",
       "marks": 2,
       "difficulty": "easy",
-      "concept": "Catalyst and equilibrium",
-      "question": "A catalyst speeds up the forward reaction. A student concludes the equilibrium shifts toward products. Refute this with an energy-profile argument.",
-      "solution": "A catalyst lowers the barrier for the forward AND the reverse path by the identical amount — it provides one new transition state both directions must cross. Both rate constants grow by the same factor, so their ratio $K = k_f/k_b$ is unchanged, and $\\Delta G^\\circ$ (set by reactant/product energies, which the catalyst never touches) is unchanged. The system reaches the SAME equilibrium composition, just faster. Catalysts change kinetics, never thermodynamics."
+      "concept": "Rate vs rate constant",
+      "question": "A student says 'doubling the concentration doubles the rate constant'. Untangle the error: what does each quantity depend on?",
+      "solution": "Rate depends on concentration (rate = k[A]^x) and temperature; the rate CONSTANT k depends only on temperature (and catalyst) — it is the rate at unit concentration. Doubling [A] changes the rate, not k. Confusing the two is the most common kinetics error in exams."
     },
     {
-      "id": "drill-kin-4",
+      "id": "drill-ck12-2",
       "type": "concept",
       "marks": 2,
+      "difficulty": "medium",
+      "concept": "Order must be found, not read",
+      "question": "For the reaction 2NO + O₂ → 2NO₂, why can you NOT write rate = k[NO]²[O₂] just from the stoichiometry?",
+      "solution": "Stoichiometry gives MOLECULARITY only for an elementary step. Order is an experimental quantity — the exponents that fit the observed rate law. (For this reaction the observed law is rate = k[NO]²[O₂], but that must be MEASURED, e.g. by initial-rates, not assumed.) Molecularity is a mechanism concept; order is a kinetics fact."
+    },
+    {
+      "id": "drill-ck12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "First-order half-life is concentration-free",
+      "question": "Why does a first-order reaction's half-life stay constant while a zero-order reaction's halves as it proceeds? Use both half-life expressions.",
+      "solution": "First order: t½ = 0.693/k — no concentration term, so every successive half-life is identical (a defining signature used to identify first order). Zero order: t½ = [A]₀/2k — proportional to the remaining concentration, so each half-life is half the previous. The concentration-dependence of t½ distinguishes the orders."
+    },
+    {
+      "id": "drill-ck12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Arrhenius — the exponential factor",
+      "question": "Why does a 10 K temperature rise roughly double many reaction rates, when average molecular energy changes only slightly?",
+      "solution": "k = A·e^(−Ea/RT): the fraction of molecules with energy ≥ Ea is an EXPONENTIAL function of temperature. Even a small rise in T sharply multiplies the fraction clearing the activation barrier — the tail of the Maxwell–Boltzmann distribution grows much faster than the average. The exponential sensitivity, not the mean energy, is the mechanism."
+    },
+    {
+      "id": "drill-ck12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Catalyst lowers Ea, not ΔG",
+      "question": "A catalyst speeds a reaction a million-fold. What does it change, what does it NOT change, and why can it not make a non-spontaneous reaction go?",
+      "solution": "A catalyst provides an alternative path with lower activation energy (for both forward and reverse directions equally). It does NOT change ΔG, E°cell, K, or the final equilibrium composition — only how FAST equilibrium is reached. Since spontaneity depends on ΔG, a catalyst cannot start a thermodynamically uphill reaction."
+    },
+    {
+      "id": "drill-ck12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Graphs identify order",
+      "question": "State which straight-line plot identifies each of zero, first and second order, and what the slope gives.",
+      "solution": "Zero: [A] vs t linear, slope = −k. First: ln[A] vs t linear, slope = −k. Second: 1/[A] vs t linear, slope = +k. The test is plotting the same data all three ways and seeing which is straight — a common practical-exam and theory question."
+    },
+    {
+      "id": "drill-ck12-7",
+      "type": "concept",
+      "marks": 3,
       "difficulty": "hard",
-      "concept": "Zero order",
-      "question": "How can a reaction rate be INDEPENDENT of reactant concentration (zero order)? Isn't more reactant always faster? Give a physical picture.",
-      "solution": "Zero order happens when something OTHER than bulk concentration limits the rate — typically a saturated surface. Picture ammonia decomposing on a hot platinum wire: every active site is already occupied, so adding more $\\mathrm{NH_3}$ gas cannot speed anything up; the rate equals the (constant) turnover of full sites. Rate $= k[\\mathrm{NH_3}]^0 = k$, and the concentration–time plot is a straight line. More reactant only helps when reactant supply is the bottleneck — here the bottleneck is the fixed number of parking spots."
+      "concept": "Pseudo-first order",
+      "question": "Hydrolysis of ethyl acetate by water is bimolecular, yet follows first-order kinetics. Explain the 'pseudo' label.",
+      "solution": "Rate = k[ester][H₂O], but water is the SOLVENT — its concentration (~55.5 M) is so vast that it barely changes during the reaction. [H₂O] is effectively constant and folds into k: rate = k′[ester], first-order behaviour from a bimolecular mechanism. Excess of one reagent makes its concentration part of the constant — that is the pseudo-first-order condition."
+    },
+    {
+      "id": "drill-ck12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Collision theory — the steric factor",
+      "question": "Why do many gas reactions occur far less often than the collision frequency predicts, even when the molecules collide with E ≥ Ea?",
+      "solution": "Collision theory adds an ORIENTATION (steric) factor P: molecules must collide with the reactive ends aligned for bond reorganisation. Randomly oriented high-energy collisions bounce off unreacted. Rate = P·Z·e^(−Ea/RT) — the fraction meeting BOTH the energy and orientation conditions is far smaller than the energy condition alone."
     }
   ]
 }

@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Hydrocarbons (Class 12 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "hydrocarbons",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-hc12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Markovnikov's rule — why it works",
+      "question": "HBr adds to propene to give 2-bromopropane, not 1-bromopropane. State the rule and justify it through the intermediate.",
+      "solution": "Markovnikov: H adds to the carbon already bearing MORE hydrogens, so X goes to the carbon with fewer. Reason: the protonation step forms the more stable carbocation — H⁺ on the middle carbon of propene would give a 1° cation; H⁺ on the end carbon gives a 2° cation (more hyperconjugation). The regioselectivity is carbocation-stability selection, not a memorised arrow."
+    },
+    {
+      "id": "drill-hc12-2",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Peroxide effect — anti-Markovnikov",
+      "question": "HBr adds to propene ANTI-Markovnikov in presence of peroxides, but HCl and HI do not show this effect. Why HBr only?",
+      "solution": "The peroxide (free-radical) chain needs a favourable energetics loop: Br• adding to the alkene forms the more stable radical, and the chain-propagating step Br• + R–H must be exothermic. With HCl, the H–Cl bond is too strong for Cl• to abstract H efficiently (endothermic step breaks the chain); with HI, I• is too unreactive to add to the alkene. Only HBr balances both steps — hence the peroxide effect is unique to HBr."
+    },
+    {
+      "id": "drill-hc12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Ozonolysis as structure detective",
+      "question": "Ozonolysis of an alkene gives ethanal and propanone. Reconstruct the alkene and explain the logic.",
+      "solution": "Ozonolysis cleaves the C=C and converts each alkene carbon into a carbonyl. Reassemble by joining the two carbonyl carbons: CH₃CHO (ethanal) contributes CH₃–CH=, (CH₃)₂CO (propanone) contributes =(CH₃)₂C — giving CH₃–CH=C(CH₃)₂ (2-methylbut-2-ene). The rule: each fragment's carbonyl carbon WAS a double-bond carbon."
+    },
+    {
+      "id": "drill-hc12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Acidity of terminal alkynes",
+      "question": "Ethyne reacts with NaNH₂ and with Tollens' reagent, but ethene reacts with neither. What property is exposed, and why?",
+      "solution": "Terminal alkyne hydrogens are acidic (pKa ≈ 25 vs ethene ≈ 44) because the conjugate base's lone pair sits in an sp orbital — 50% s-character holds the charge closer to the nucleus, stabilising it. Strong bases (NaNH₂) form acetylides; Ag⁺/Cu⁺ (Tollens/ammoniacal) precipitate metal acetylides. sp-hybridised C–H acidity is the property both tests detect."
+    },
+    {
+      "id": "drill-hc12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Benzene's unusual stability",
+      "question": "Benzene's measured hydrogenation heat is ~150 kJ/mol less exothermic than cyclohexatriene theory predicts. What does this gap mean, and how does it show in benzene's reactions?",
+      "solution": "The gap is the RESONANCE (delocalisation) energy: the π electrons are delocalised over all six carbons, lowering the real molecule far below the hypothetical localised triene. Consequence: benzene resists ADDITION (which would destroy delocalisation) and prefers SUBSTITUTION, which keeps the aromatic π system intact. The stability gap is the reason for the reactivity pattern."
+    },
+    {
+      "id": "drill-hc12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "EAS — the mechanism's two steps",
+      "question": "In electrophilic aromatic substitution, why is the FIRST step slow and the second fast, even though the first step 'breaks aromaticity'?",
+      "solution": "Step 1: the electrophile adds, forming the arenium (Wheland) ion — aromaticity is lost, so this endothermic step has the high activation energy and sets the rate (rate-determining). Step 2: loss of H⁺ RESTORES aromaticity — strongly exothermic and fast. The temporary loss and full restoration of aromaticity is the energetic story of EAS."
+    },
+    {
+      "id": "drill-hc12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Directive effects — CH₃ vs NO₂",
+      "question": "Toluene nitrates mainly ortho/para and faster than benzene; nitrobenzene nitrates mainly meta and slower. Explain both observations with one framework.",
+      "solution": "Framework: the substituent's effect on the arenium ion's stability. CH₃ donates (+I/hyperconjugation), stabilising the σ-complex especially for ortho/para attack — activated, o/p-directing. NO₂ withdraws (−I, −M) and destabilises the σ-complex most when attack is o/p (positive charge lands next to NO₂), so meta attack is the least-bad route — deactivated, m-directing. Rate and direction both read off σ-complex stability."
+    },
+    {
+      "id": "drill-hc12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Cancer/carcinogen note — polynuclear aromatics",
+      "question": "Why are fused polynuclear aromatic hydrocarbons (like benzo[a]pyrene) carcinogenic, in one sentence tying structure to biology?",
+      "solution": "Their flat, extended π systems let them intercalate between DNA base pairs; metabolic oxidation produces reactive epoxides that bind covalently to DNA, causing mutations. Planarity (intercalation) plus metabolic activation is the structure–hazard link the syllabus expects."
+    }
+  ]
+}

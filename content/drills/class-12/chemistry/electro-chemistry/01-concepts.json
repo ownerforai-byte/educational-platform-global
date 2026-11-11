@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Electrochemistry (Class 12 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "electro-chemistry",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ec12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Anode/cathode by process, not sign",
+      "question": "In a galvanic cell the anode is negative; in an electrolytic cell it is positive. What single definition keeps 'anode' consistent in both?",
+      "solution": "Anode = electrode where OXIDATION happens; cathode = reduction. In a galvanic cell the metal that dissolves (oxidises) pushes electrons out, so it is the negative terminal. In electrolysis the external supply forces electrons onto one electrode, making reduction (cathode) negative and oxidation (anode) positive. Process, not polarity, defines the terms."
+    },
+    {
+      "id": "drill-ec12-2",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Salt bridge — two jobs",
+      "question": "What two problems appear in a galvanic cell without a salt bridge, and how does the bridge solve both?",
+      "solution": "(1) Charge build-up: oxidation piles up positive ions at the anode half-cell, reduction drains them at the cathode — charges accumulate and the reaction stops within moments. (2) The circuit is incomplete. The salt bridge supplies ions to both half-cells, keeping each electrically neutral and completing the internal circuit while preventing bulk mixing of the two electrolytes."
+    },
+    {
+      "id": "drill-ec12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "E° predicts feasibility, not speed",
+      "question": "A reaction has a large positive E°cell. Does that guarantee it happens quickly? What does E°cell actually determine?",
+      "solution": "No — E°cell is a THERMODYNAMIC quantity: it fixes ΔG = −nFE°cell, i.e. the driving force and equilibrium position (K = e^(nFE°/RT)). Rate is kinetic, set by activation energy and mechanism. A huge E°cell with a sluggish mechanism is common; the examiner wants the thermodynamics-vs-kinetics separation stated."
+    },
+    {
+      "id": "drill-ec12-4",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Concentration dependence of E",
+      "question": "Why does the Daniell cell's voltage fall as the cell runs, even though both electrode materials are unchanged? Use the Nernst equation.",
+      "solution": "E = E° − (0.0592/2)·log([Zn²⁺]/[Cu²⁺]). As the cell runs, [Zn²⁺] rises and [Cu²⁺] falls, so the log term grows and E drops. The electrodes are unchanged; the SOLUTION composition is what the Nernst equation senses. At equilibrium the log term equals E°/0.0296 and E = 0 — the battery is 'dead'."
+    },
+    {
+      "id": "drill-ec12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Conductivity falls on dilution, molar rises",
+      "question": "On dilution, conductivity (κ) of a KCl solution decreases but molar conductivity (Λm) increases. Resolve the apparent contradiction.",
+      "solution": "κ counts ions per unit VOLUME — dilution lowers the number per cm³, so κ falls. Λm = κ·1000/C normalises by concentration: it measures conducting power per mole, which rises on dilution because ions are farther apart (less interionic drag) and, for weak electrolytes, because dissociation increases. Same measurement, two different normalisations."
+    },
+    {
+      "id": "drill-ec12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Kohlrausch's law and weak electrolytes",
+      "question": "Why can Λ°m of a weak electrolyte like acetic acid NOT be measured by extrapolation, and how does Kohlrausch's law supply it?",
+      "solution": "Λ°m (infinite-dilution value) is obtained by extrapolating Λm vs √C to C = 0 — valid only for STRONG electrolytes, which are fully dissociated and follow the linear plot. Acetic acid is barely dissociated at measurable concentrations, so the curve plunges and extrapolation is meaningless. Kohlrausch: Λ°(CH₃COOH) = Λ°(CH₃COONa) + Λ°(HCl) − Λ°(NaCl) — strong-electrolyte values combine to give the weak one."
+    },
+    {
+      "id": "drill-ec12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Faraday's laws — the mole of electrons",
+      "question": "Why does depositing 1 mole of Ag need 1 faraday but 1 mole of Cu needs 2, even though both are 'one mole of metal'?",
+      "solution": "Faraday's first law deposits an amount proportional to charge; the ratio is fixed by the ion's charge: Ag⁺ + e⁻ → Ag (1 e⁻ per atom → 1 F per mole), Cu²⁺ + 2e⁻ → Cu (2 F per mole). The electrode reaction's stoichiometry, not the metal's identity, sets the electron cost. Write the half-equation first; the faradays follow."
+    },
+    {
+      "id": "drill-ec12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Corrosion as electrochemistry",
+      "question": "Explain rusting as a galvanic process — identify the anode, cathode and electrolyte — and say why salt spray accelerates it.",
+      "solution": "Anode: Fe → Fe²⁺ + 2e⁻ (oxidation). Cathode: O₂ + 2H₂O + 4e⁻ → 4OH⁻ (reduction) on adjacent surface. Electrolyte: the moisture film connecting both regions; electrons travel through the metal. Salt spray raises the electrolyte's conductivity, so the micro-galvanic currents — and the corrosion rate — increase."
+    }
+  ]
+}

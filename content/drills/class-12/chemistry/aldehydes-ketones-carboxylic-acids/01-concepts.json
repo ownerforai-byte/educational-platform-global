@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Aldehydes, Ketones & Carboxylic Acids (Class 12 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "aldehydes-ketones-carboxylic-acids",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-akc12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Aldehydes more reactive than ketones",
+      "question": "Aldehydes undergo nucleophilic addition faster than ketones. Give the two factors that account for this, in the right order of importance.",
+      "solution": "(1) STERIC: the carbonyl carbon of a ketone carries two alkyl groups that block the nucleophile's approach; an aldehyde has only one small H. (2) ELECTRONIC: two alkyl groups donate (+I) more electron density to the C=O carbon, reducing its positive character; one alkyl donates less. Both factors make ketones less electrophilic — sterics usually dominates."
+    },
+    {
+      "id": "drill-akc12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Tollens vs Fehling discrimination",
+      "question": "Both Tollens' and Fehling's test aldehydes, but one is stricter than the other. State what each detects and the visible sign.",
+      "solution": "Tollens' (ammoniacal AgNO₃): oxidises ALL aldehydes (aliphatic AND aromatic) — silver mirror. Fehling's (Cu²⁺ tartrate complex): oxidises only ALIPHATIC aldehydes — red Cu₂O precipitate; aromatic aldehydes (benzaldehyde) give a negative result because the Cu²⁺ complex is a weaker oxidant than Ag⁺. Choosing the right reagent discriminates aromatic from aliphatic aldehydes."
+    },
+    {
+      "id": "drill-akc12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Cannizzaro vs aldol — the alpha-H fork",
+      "question": "Two aldehydes treated with concentrated base: one gives an aldol, the other undergoes Cannizzaro. What structural feature decides, and what does Cannizzaro's product pair look like?",
+      "solution": "Presence of at least one α-hydrogen: with it, base forms an enolate that attacks another carbonyl — ALDOL (β-hydroxy aldehyde/ketone). Without any α-H (formaldehyde, benzaldehyde), no enolate can form, so hydroxide instead attacks the carbonyl and a HYDRIDE transfers: one molecule oxidises to acid salt, the other reduces to alcohol — Cannizzaro (disproportionation). The α-H fork is the single decision point."
+    },
+    {
+      "id": "drill-akc12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Clemmensen vs Wolff–Kishner",
+      "question": "Both reduce a C=O to CH₂. When must you choose Wolff–Kishner over Clemmensen, and why?",
+      "solution": "Clemmensen uses Zn–Hg/HCl (strong ACID); Wolff–Kishner uses N₂H₄/KOH (strong BASE). If the molecule carries an acid-sensitive group (acetal, some protecting groups) Clemmensen destroys it; if it carries a base-sensitive group (ester, some halides), Wolff–Kishner does. Choose by the REST of the molecule's acid/base tolerance — the carbonyl doesn't care, the neighbours do."
+    },
+    {
+      "id": "drill-akc12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Carboxylic acid vs alcohol/phenol acidity",
+      "question": "Rank ethanol, phenol and acetic acid by acidity, and name the structural reason carboxylic acids top the list.",
+      "solution": "Acetic acid (pKa 4.8) > phenol (10) > ethanol (16). The carboxylate conjugate base delocalises the negative charge EQUALLY over TWO oxygens (equivalent resonance structures), which phenoxide cannot (charge lands on carbon too, less stable) and ethoxide cannot at all. Two-oxygen delocalisation is the decisive stabilisation."
+    },
+    {
+      "id": "drill-akc12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Electron effects on acid strength",
+      "question": "Explain why ClCH₂COOH > CH₃COOH in acidity, and why the effect fades with distance (ClCH₂COOH ≫ ClCH₂CH₂COOH).",
+      "solution": "Cl withdraws inductively (−I), pulling electron density away from the carboxylate and spreading/stabilising its negative charge — stronger acid. The inductive effect decays through σ bonds (roughly by a factor per bond), so a Cl two carbons away barely reaches the COO⁻ — hence the sharp drop from α to β substitution. Distance-dependence of −I is the concept."
+    },
+    {
+      "id": "drill-akc12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "HVZ reaction — alpha bromination only",
+      "question": "The Hell–Volhard–Zelinsky reaction brominates a carboxylic acid specifically at the α-position. Why only α, and what intermediate is the key?",
+      "solution": "HVZ proceeds via the ACYL HALIDE (RCOX, from Br₂/PBr₃): the acyl bromide's α-hydrogens are far more acidic (enolisation is easy), so enol–Br₂ reaction happens exclusively at α. Hydrolysis then regenerates the acid with the α-Br installed. The acyl halide's enhanced α-acidity is the selectivity mechanism; the acid itself would not enolise efficiently."
+    },
+    {
+      "id": "drill-akc12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Esterification — removing water shifts it",
+      "question": "In Fischer esterification, why does using excess alcohol OR removing water both increase the ester yield?",
+      "solution": "CH₃COOH + C₂H₅OH ⇌ ester + H₂O is an equilibrium (Le Chatelier). Excess alcohol pushes the forward rate by mass action; removing water (Dean–Stark, dry HCl) pulls the equilibrium forward by depleting a product. Both tactics raise conversion without touching K — the reaction never goes to completion on its own, which is why the acid catalyst is also needed for a reasonable rate."
+    }
+  ]
+}
