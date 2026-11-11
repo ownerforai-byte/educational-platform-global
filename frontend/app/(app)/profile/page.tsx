@@ -6,21 +6,26 @@ import { useRouter } from "next/navigation";
 import {
   ArrowLeft,
   Award,
+  BarChart3,
   BookOpen,
   Bookmark,
   CheckCircle2,
   ChevronRight,
+  Calendar,
   Clock,
   Coins,
   Compass,
   Crown,
+  Download,
   Filter,
   Flame,
+  Gift,
   GraduationCap,
   History,
   Layers,
   LogOut,
   Mail,
+  NotebookPen,
   Search,
   Settings,
   ShieldCheck,
@@ -33,8 +38,6 @@ import {
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { SupportRequest } from "@/components/support/support-request";
-import { NavDirectory } from "@/components/layout/nav-directory";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -1253,6 +1256,17 @@ function ProfileDetails({ onBack }: { onBack?: () => void }) {
  * opens the whole profile experience, and ALL of the site footer content
  * (directory, legal, plan note, version) lives here — and only here.
  */
+const YOU_MENU: Array<{ icon: typeof BookOpen; label: string; href: string; tint: string; subtitle?: string }> = [
+  { icon: BookOpen, label: "Curriculum & Notes", href: "/subjects", tint: "bg-violet-500/10 text-violet-600 dark:text-violet-400", subtitle: "All subjects, notes and syllabus" },
+  { icon: BarChart3, label: "Analytics", href: "/analytics", tint: "bg-sky-500/10 text-sky-600 dark:text-sky-400" },
+  { icon: Award, label: "Streaks and Badges", href: "/streaks", tint: "bg-amber-500/10 text-amber-600 dark:text-amber-400" },
+  { icon: NotebookPen, label: "My Notes", href: "/my-notes", tint: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" },
+  { icon: Download, label: "Offline Study", href: "/downloads", tint: "bg-teal-500/10 text-teal-600 dark:text-teal-400" },
+  { icon: Gift, label: "Referrals", href: "/referrals", tint: "bg-rose-500/10 text-rose-600 dark:text-rose-400", subtitle: "Copy your app link & earn" },
+  { icon: Calendar, label: "Study Schedules", href: "/schedule", tint: "bg-blue-500/10 text-blue-600 dark:text-blue-400" },
+  { icon: Settings, label: "App Settings", href: "/settings", tint: "bg-violet-500/10 text-violet-600 dark:text-violet-400", subtitle: "Version, rate this app & more" },
+];
+
 function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
   const { user, isLoading } = useSession();
 
@@ -1283,7 +1297,7 @@ function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
         {/* Identity + the My Profile button — ONE compact block (owner
             2026-11-09: "optmize the block"). */}
         <div className="mb-4 flex items-center justify-between">
-          <h1 className="text-xl font-extrabold tracking-tight">Info</h1>
+          <h1 className="text-xl font-extrabold tracking-tight">You</h1>
           <Link
             href="/settings"
             aria-label="Settings"
@@ -1320,17 +1334,33 @@ function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
       </Card>
       </div>
 
-      {/* Curriculum & Notes surfaced on Info too (owner: "add curriculum and
-          notes from side bar to info"). */}
+      {/* The "You" menu — every personal / feature destination as a working
+          row (owner: "place them here as said and remove them from their
+          place"). */}
       <div className="container max-w-2xl pb-2">
-        <NavDirectory only={["curriculum"]} title="Curriculum & Notes" />
-      </div>
-
-      {/* Report AI content — kept here as a plain Info row (owner: "keep the
-          report ai content in info as a row not highlighted at all place"),
-          not as a floating widget shown on every page. */}
-      <div className="container max-w-2xl pb-2">
-        <SupportRequest kind="ai_report" />
+        <div className="overflow-hidden rounded-2xl border border-border/60 bg-card/60">
+          {YOU_MENU.map((entry) => {
+            const Icon = entry.icon;
+            return (
+              <Link
+                key={entry.href}
+                href={entry.href}
+                className="flex items-center gap-3 border-b border-border/40 px-3 py-3 transition-colors last:border-0 hover:bg-muted/50"
+              >
+                <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${entry.tint}`}>
+                  <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p className="truncate text-[13px] font-semibold text-foreground">{entry.label}</p>
+                  {entry.subtitle && (
+                    <p className="truncate text-[11px] text-muted-foreground">{entry.subtitle}</p>
+                  )}
+                </div>
+                <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground/50" aria-hidden="true" />
+              </Link>
+            );
+          })}
+        </div>
       </div>
 
       {/* ALL the footer content lives here and only here (owner 2026-11-09:

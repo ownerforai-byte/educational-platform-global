@@ -8,9 +8,12 @@ import {
   Calendar,
   ChevronRight,
   Clock,
+  Info,
   Languages,
   Palette,
   School,
+  Smartphone,
+  Star,
   Sun,
   Target,
   Trash2,
@@ -24,6 +27,8 @@ import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { DAILY_MINUTES_OPTIONS, type StudyPreferences } from "@/lib/study-goals";
 import { useStudyGoals } from "./use-study-goals";
 import { GuestGoalsPrompt } from "./guest-goals-prompt";
+import { toast } from "sonner";
+import { DEPLOY_VERSION } from "@/lib/deploy-version";
 
 /**
  * /settings — grouped like the reference Settings list: each group is a card
@@ -216,6 +221,17 @@ export function SettingsView() {
           </Row>
           <Row icon={Users} tint="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" label="For Teachers" subtitle="Enterprise · Email: ravikisan1814@gmail.com">
             <span className="rounded-md bg-muted px-1.5 py-0.5 text-[8.5px] font-bold text-muted-foreground">Confidential</span>
+          </Row>
+        </GroupCard>
+
+        <GroupCard icon={Smartphone} tint="bg-violet-500/10 text-violet-600 dark:text-violet-400" label="App">
+          <Row icon={Info} tint="bg-sky-500/10 text-sky-600 dark:text-sky-400" label="App version" subtitle="Current build">
+            <span className="rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-semibold text-muted-foreground">v{DEPLOY_VERSION}</span>
+          </Row>
+          <Row icon={Star} tint="bg-amber-500/10 text-amber-600 dark:text-amber-400" label="Rate this app" subtitle="Enjoying it? Leave a rating">
+            <button type="button" onClick={() => toast.success("Thanks for rating Ravikisan's Platform!")} className="rounded-md bg-primary px-2.5 py-1 text-[10px] font-semibold text-primary-foreground transition hover:opacity-90">
+              Rate
+            </button>
           </Row>
         </GroupCard>
       </div>

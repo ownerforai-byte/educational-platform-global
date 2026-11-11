@@ -105,7 +105,7 @@ export function MobileNav() {
 
   const filteredSections = NAV_SECTIONS.filter(
     (sec) =>
-      ["primary", "curriculum", "stem"].includes(sec.id) &&
+      ["primary", "stem"].includes(sec.id) &&
       (sec.id !== 'account' || !!user) &&
       (!sec.ownerOnly || isOwnerAccount(user)) &&
       (!sec.r1Only || hasR1),
