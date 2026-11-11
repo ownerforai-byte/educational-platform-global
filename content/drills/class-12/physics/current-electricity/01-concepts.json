@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Current Electricity (Class 12 Physics)",
+  "subject": "physics",
+  "unitSlug": "current-electricity",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-cur12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Drift speed vs signal speed",
+      "question": "Electrons drift at fractions of a millimetre per second, yet a bulb lights the instant the switch closes. Explain the apparent contradiction.",
+      "solution": "The electric FIELD propagates through the circuit at nearly light speed, setting every free electron in the wire drifting almost simultaneously. The bulb responds to the current (charge per second) already flowing everywhere, not to an electron travelling from the switch to the bulb. Drift speed is slow; the signal is fast."
+    },
+    {
+      "id": "drill-cur12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why resistance rises with temperature",
+      "question": "A filament's resistance cold is far lower than when glowing hot. Explain using the microscopic picture of resistance.",
+      "solution": "Resistance arises from lattice vibrations (phonons) scattering electrons. Heating increases vibration amplitude, so collisions become more frequent and the drift velocity for a given field falls — R rises. (In semiconductors the opposite happens because more carriers are released; that contrast is the examiner's favourite follow-up.)"
+    },
+    {
+      "id": "drill-cur12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "EMF vs terminal voltage",
+      "question": "A battery of emf 12 V drives a current; a voltmeter across it reads less than 12 V. Where did the 'missing' volts go, and when would the reading exceed 12 V?",
+      "solution": "The difference is the internal drop I·r across the battery's own resistance: V = ε − Ir while discharging. If the battery is being CHARGED, current is pushed in reverse and V = ε + Ir — the terminal voltage exceeds the emf. State both cases; the charging case is the mark-separator."
+    },
+    {
+      "id": "drill-cur12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Series vs parallel dominance",
+      "question": "Why do we wire domestic appliances in parallel, not series? Give two reasons tied to circuit quantities.",
+      "solution": "(1) In parallel each appliance gets the full supply voltage and draws its designed current independently; in series the voltage divides and everything dims when one more lamp joins. (2) In series, one break (a blown bulb) kills the whole circuit; parallel branches fail independently."
+    },
+    {
+      "id": "drill-cur12-5",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Kirchhoff's rules — sign discipline",
+      "question": "A student applies Kirchhoff's loop rule and gets a negative current, then declares the answer wrong. What does the sign actually mean, and how do you finish the problem correctly?",
+      "solution": "A negative result means the true current flows opposite to the direction you assumed — the physics is still consistent. Reinterpret: the magnitude is right, reverse the arrow, and carry the corrected sign into any dependent equations. Declaring it 'wrong' and flipping equations midway is what loses the marks."
+    },
+    {
+      "id": "drill-cur12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Wheatstone balance condition",
+      "question": "In a balanced Wheatstone bridge, why does removing the galvanometer (or the cell) change nothing in the other branches?",
+      "solution": "Balance means the two mid-point potentials are equal, so the galvanometer carries no current — it is effectively a dead branch. Removing a branch that carries zero current cannot redistribute anything: P/Q = R/S still holds and each pair of arms behaves as a simple series chain across the cell."
+    },
+    {
+      "id": "drill-cur12-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Potentiometer vs voltmeter",
+      "question": "Why does a potentiometer measure emf more accurately than a voltmeter, in one principle?",
+      "solution": "A potentiometer balances the unknown against a known potential gradient with ZERO current drawn at balance — no internal drop Ir, so it reads the true emf. A voltmeter always draws some current, reading V = ε − Ir. The null (no-deflection) method is the principle the examiner wants named."
+    },
+    {
+      "id": "drill-cur12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Power dissipation — which bulb glows brighter",
+      "question": "A 60 W and a 100 W bulb (both rated for the same voltage) are connected in SERIES. Which glows brighter, and why does the rating order reverse?",
+      "solution": "Rating assumes full voltage: P = V²/R, so the 60 W bulb has HIGHER resistance. In series the same current flows through both, and P = I²R — the higher-resistance (60 W) bulb dissipates more and glows brighter. Series reverses the brightness order; parallel preserves it."
+    }
+  ]
+}

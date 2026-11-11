@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Wave Optics (Class 12 Physics)",
+  "subject": "physics",
+  "unitSlug": "wave-optics",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-wav12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Coherence — the non-negotiable",
+      "question": "Two torches shining on the same spot produce no interference fringes. Why not, and what property must the two sources share?",
+      "solution": "Interference needs a CONSTANT phase difference, i.e. coherence. Two independent sources emit wave trains with random, rapidly fluctuating phases — the pattern would average out in far less time than the eye integrates. That is why Young used ONE source split into two (slits), guaranteeing coherence. 'Same frequency + stable phase relation' is the requirement."
+    },
+    {
+      "id": "drill-wav12-2",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Fringe width depends on what",
+      "question": "In Young's double-slit experiment, state how fringe width β changes if you (a) double the slit separation, (b) immerse the apparatus in water, (c) move the screen closer — with reasons.",
+      "solution": "β = λD/d. (a) Doubling d halves β. (b) In water λ → λ/n, so β shrinks by factor n. (c) Halving D halves β. All three follow from one formula — the examiner wants the formula quoted and each substitution traced, not memorised outcomes."
+    },
+    {
+      "id": "drill-wav12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Central fringe with a glass sheet",
+      "question": "A thin glass sheet covers ONE slit of a double-slit setup. What happens to the fringe pattern and why does the CENTRAL fringe shift?",
+      "solution": "The sheet adds an extra optical path (n−1)t to that slit's arm, so the whole pattern shifts TOWARD the covered slit — the fringe that was central now needs extra geometric path to compensate. Fringe width is unchanged (λ, D, d untouched); only the order of fringes relocates. Shift = (n−1)tD/d."
+    },
+    {
+      "id": "drill-wav12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Diffraction — why sound bends around doors but light doesn't",
+      "question": "You hear someone through an open door but cannot see them. Explain with the size-comparison rule of diffraction.",
+      "solution": "Diffraction is significant when the wavelength is comparable to the obstacle/opening. Sound: λ ≈ 0.3–3 m, comparable to a doorway — strong bending. Light: λ ≈ 5×10⁻⁷ m, thousands of times smaller — negligible bending at door scale. Same physics, different wavelength-to-aperture ratio."
+    },
+    {
+      "id": "drill-wav12-5",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Single slit — the dark centre surprise",
+      "question": "For a single slit, why is the CENTRE bright but the first minimum dark, when both directions receive light from the whole slit width?",
+      "solution": "At the centre, contributions from all parts of the slit arrive in phase (same path length) — constructive, maximum intensity. At the first minimum (a sinθ = λ), pairing points across the slit gives path difference λ/2 between each pair — complete destructive cancellation. Direction matters through the PATH DIFFERENCE it creates, not through 'how much light' arrives."
+    },
+    {
+      "id": "drill-wav12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Width of the central maximum",
+      "question": "How does the width of the central diffraction maximum change when the slit narrows? Why is that counter-intuitive?",
+      "solution": "Narrower slit a → wider central maximum (width ∝ λ/a): the first minimum moves OUT. Counter-intuitive because 'smaller hole' suggests a smaller spot; in wave optics, restricting the wave more makes it spread more. Ray optics is the a ≫ λ limit where spreading vanishes."
+    },
+    {
+      "id": "drill-wav12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Polarisation proves transverse",
+      "question": "Interference and diffraction show light is a wave. What does polarisation alone prove, and why can sound never be polarised?",
+      "solution": "Polarisation proves the wave is TRANSVERSE — only transverse waves have a vibration direction that can be filtered by orientation (Malus's law, I = I₀cos²θ). Sound is longitudinal: its compressions always align with propagation, so rotating an 'analyser' changes nothing. Polarisation is the discriminator between transverse and longitudinal."
+    },
+    {
+      "id": "drill-wav12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Brewster's angle",
+      "question": "Light reflected from a water surface at one particular angle is completely plane-polarised. State the condition and the geometry of the reflected and refracted rays.",
+      "solution": "Brewster's law: tan θp = n (refractive index of the reflecting medium). At θp the REFLECTED ray is fully polarised (electric field perpendicular to the plane of incidence) and the reflected and refracted rays are PERPENDICULAR to each other (r = 90° − θp). Both the tangent law and the perpendicular geometry are the two mark points."
+    }
+  ]
+}

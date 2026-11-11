@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Magnetism & Magnetic Effect of Current (Class 12 Physics)",
+  "subject": "physics",
+  "unitSlug": "magnetism-and-magnetic-effect",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-mag12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Lorentz force does no work",
+      "question": "A charged particle moves in a circle in a uniform magnetic field, yet the field does no work on it. How can a force keep changing the motion without doing work?",
+      "solution": "The magnetic force F = qv×B is always perpendicular to the velocity, so it changes the DIRECTION of motion but never the speed or kinetic energy (W = F·v = 0). It acts as a centripetal force: r = mv/qB. Any answer that has the field speeding the particle up is wrong by definition."
+    },
+    {
+      "id": "drill-mag12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Right-hand rules — choosing the right one",
+      "question": "For a straight wire, a loop and a solenoid, which rule gives the field direction in each case, and what does the thumb/fingers represent in each?",
+      "solution": "Straight wire: right-hand grip rule — thumb along current, fingers curl the field direction. Circular loop: curl fingers along the current, thumb gives the axial field. Solenoid: grip along the winding, thumb points to the North face. Mixing up which digit carries the current is the classic error — state the convention explicitly."
+    },
+    {
+      "id": "drill-mag12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Ampere's circuital law — when it's useful",
+      "question": "A student tries to find B at an arbitrary point near a short wire using Ampère's law and fails. Why does the law not help there, and where does it work beautifully?",
+      "solution": "Ampère's law is always true but only USEFUL when symmetry makes B constant along a chosen Amperian loop — an infinitely long straight wire (circular loop), a solenoid's interior, a toroid. Near a finite wire the field varies along any loop, so B cannot be pulled out of the integral. Name the symmetry condition; that is the concept mark."
+    },
+    {
+      "id": "drill-mag12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Force between parallel currents",
+      "question": "Two parallel wires carry currents in the same direction and attract. A student expects repulsion 'because like currents are alike'. Resolve the error with the two-step rule.",
+      "solution": "Step 1: wire 1's field at wire 2 is given by the grip rule (one side of the wire). Step 2: F = IL×B on wire 2 with that field gives attraction for parallel currents, repulsion for antiparallel. 'Like charges repel' intuition does not transfer to currents — the cross product decides."
+    },
+    {
+      "id": "drill-mag12-5",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Moving-coil galvanometer — the radial field",
+      "question": "Why does a moving-coil galvanometer need a RADIAL magnetic field, and what role does the spring play?",
+      "solution": "With a radial field (concave pole pieces + soft-iron core) the plane of the coil stays parallel to B at every deflection, so torque τ = NIAB is proportional to current alone — giving a uniform (linear) scale. The spring provides the restoring torque NIAB = kθ, so deflection θ ∝ I. Without radial field, cosθ would distort the scale."
+    },
+    {
+      "id": "drill-mag12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Converting galvanometer to ammeter/voltmeter",
+      "question": "To convert a galvanometer into an ammeter you add a shunt; into a voltmeter a series resistance. Why opposite connections?",
+      "solution": "An ammeter must carry the FULL circuit current, so a low-resistance shunt bypasses most of it around the coil (and keeps the ammeter's own resistance near zero — ammeters connect in series). A voltmeter samples voltage without disturbing the circuit, so a high series resistance limits its current (voltmeters connect in parallel, high R)."
+    },
+    {
+      "id": "drill-mag12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Cyclotron frequency is mass-dependent only",
+      "question": "In a cyclotron, why doesn't the particle's increasing speed require a changing AC frequency?",
+      "solution": "The cyclotron frequency f = qB/2πm contains no velocity term: a faster particle travels a proportionally larger circle (r = mv/qB), so its orbital PERIOD stays constant. The alternating voltage can therefore stay at one frequency — until relativistic mass increase breaks the synchronism, which is the cyclotron's real speed limit."
+    },
+    {
+      "id": "drill-mag12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Magnetic field inside a solenoid",
+      "question": "Why is the field inside a long solenoid nearly uniform and axial, while outside it is nearly zero?",
+      "solution": "Each turn's field adds along the axis inside; for an ideal infinite solenoid the transverse components cancel by symmetry, giving B = μ₀nI uniform. Outside, fields from adjacent turns (opposite circulation on the outside of the loop) cancel — the field lines close up inside and return far away. 'Uniform inside, nearly zero outside' is the examinable contrast."
+    }
+  ]
+}

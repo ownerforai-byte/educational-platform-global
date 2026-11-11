@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Alternating Current (Class 12 Physics)",
+  "subject": "physics",
+  "unitSlug": "alternating-current",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ac12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why rms, not average",
+      "question": "The average of a full sine cycle of AC is zero, yet an AC ammeter reads 3 A. What does '3 A' mean, and why is rms the meaningful average?",
+      "solution": "The reading is the rms value: I_rms = I₀/√2, the DC equivalent that delivers the same heating power (P = I_rms²R). A plain average over a cycle is zero because the negative half cancels the positive — heat goes as I², which never cancels, so the root-mean-square is the physically meaningful measure."
+    },
+    {
+      "id": "drill-ac12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Phase relations in L, C, R",
+      "question": "State how current leads or lags voltage in a pure resistor, inductor and capacitor — and give the physical reason for the inductor's lag.",
+      "solution": "R: in phase. L: current lags voltage by 90° — the back-emf L·dI/dt means voltage must lead to drive a changing current. C: current leads voltage by 90° — charge (and so V) builds only after current has flowed. The mnemonic 'CIVIL' (in C, I before V; in L, V before I) is acceptable if the reason is stated."
+    },
+    {
+      "id": "drill-ac12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Reactance vs resistance",
+      "question": "Why does a capacitor 'block DC but pass AC', and why does an inductor do roughly the opposite at high frequency? Use X_C and X_L in the answer.",
+      "solution": "X_C = 1/ωC: as ω→0 (DC), X_C→∞ — the capacitor is an open circuit; at high ω it approaches zero and passes AC easily. X_L = ωL: grows with frequency, so an inductor chokes high-frequency AC while passing DC freely (X_L→0). Frequency-dependent reactance, not resistance, is the distinction."
+    },
+    {
+      "id": "drill-ac12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Series resonance condition",
+      "question": "In a series LCR circuit, what is the impedance at resonance and why does the current peak there even though both L and C are present?",
+      "solution": "At ω₀ = 1/√(LC), X_L = X_C — they cancel exactly, leaving Z = R (minimum). With Z minimum, I = V/R peaks. The two reactances are equal and opposite in phase (180° apart), so the pair contributes nothing at ω₀. Resonance is cancellation, not absence."
+    },
+    {
+      "id": "drill-ac12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Sharpness of resonance and Q",
+      "question": "Two LCR circuits resonate at the same frequency but one has a much sharper resonance curve. What property differs, and what does sharpness buy you?",
+      "solution": "Sharpness is set by the quality factor Q = ω₀L/R (equivalently the bandwidth Δω = ω₀/Q). Lower R gives higher Q, a narrower, taller peak. Sharpness buys SELECTIVITY — the circuit responds strongly to one frequency and rejects neighbours, which is exactly what a radio tuning stage needs."
+    },
+    {
+      "id": "drill-ac12-6",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Power factor — what it costs",
+      "question": "An LCR circuit draws current but delivers less than VI of average power. Where does the rest go, and why is the loss zero at resonance?",
+      "solution": "Average power = V_rms·I_rms·cosφ; only the component of current in phase with V does net work. The out-of-phase part shuttles energy into and out of the L/C fields each cycle — it is stored and returned, not dissipated, but it still flows through the wires (I²R line loss). At resonance φ = 0, cosφ = 1: the entire current is productive."
+    },
+    {
+      "id": "drill-ac12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Choke coil vs resistor",
+      "question": "To limit AC current, why prefer a choke coil to a plain resistor?",
+      "solution": "A resistor dissipates real power (I²R) as heat. An ideal choke (pure L) has X_L = ωL limiting the current while cosφ → 0, so it consumes essentially NO average power — the energy it takes each quarter-cycle it returns the next. Regulation without heating is the engineering point."
+    },
+    {
+      "id": "drill-ac12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Transformer and rms ratings",
+      "question": "A transformer is labelled '220 V → 12 V'. Are those peak or rms values, and what sets the turns ratio?",
+      "solution": "Mains and transformer ratings are rms values (220 V rms ↔ 311 V peak). The ratio V₂/V₁ = N₂/N₁ follows from Faraday's law with the same flux linking both coils: ε ∝ turns. Step-up or step-down is purely a turns choice; the frequency is unchanged because both coils share the same changing flux."
+    }
+  ]
+}

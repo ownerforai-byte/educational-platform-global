@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Communication Systems (Class 12 Physics)",
+  "subject": "physics",
+  "unitSlug": "communication-systems",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-com12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why modulate at all",
+      "question": "Why must an audio signal (a few kHz) be modulated onto a carrier (MHz) before transmission? Give two independent reasons.",
+      "solution": "(1) Antenna size: an efficient antenna needs dimensions comparable to λ; for 3 kHz, λ = 100 km — impractical, while 100 MHz gives λ = 3 m. (2) Multiplexing: without carriers every station would broadcast over the same band and mix; assigning each signal a different carrier frequency lets receivers tune. Power radiated also rises sharply with frequency for a given antenna size."
+    },
+    {
+      "id": "drill-com12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "AM vs FM bandwidth",
+      "question": "Why does AM need only ~10 kHz per station while FM needs ~200 kHz? Base the answer on what each scheme varies.",
+      "solution": "AM varies the carrier AMPLITUDE; the sidebands sit at f_c ± f_m, so the total bandwidth is just 2× the highest audio frequency (~10 kHz). FM varies the FREQUENCY by the deviation ±δf around f_c, occupying 2(f_m + δf) — much wider. AM trades bandwidth for noise immunity: amplitude noise (static) corrupts AM directly, while FM receivers ignore amplitude changes."
+    },
+    {
+      "id": "drill-com12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Ground, sky and space waves",
+      "question": "Why does AM broadcast travel far at night via sky wave, while FM TV signals are strictly line-of-sight? Tie each mode to a frequency range.",
+      "solution": "Sky wave: ionospheric reflection works up to ~30 MHz; at night the ionosphere's lower layer vanishes, reducing absorption, so medium-frequency AM reflects farther. FM and TV (≥ ~30–80 MHz) PENETRATE the ionosphere instead of reflecting — only the direct (line-of-sight) and ground-reflected waves reach the receiver, limited by the radio horizon."
+    },
+    {
+      "id": "drill-com12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Range of a transmitting antenna",
+      "question": "Doubling the height of a TV transmitting antenna more than doubles its coverage area. Derive the range formula dependence that explains this.",
+      "solution": "Range d = √(2Rh), where R is Earth's radius: d ∝ √h. Coverage area ∝ d² ∝ h — so doubling the height doubles the range but QUADRUPLES the area. The derivation is the geometry of the tangent line to the curved Earth."
+    },
+    {
+      "id": "drill-com12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Need for demodulation",
+      "question": "The signal picked up by a receiving antenna is the modulated carrier, not the audio. Why can't the speaker be connected directly, and what block fixes it?",
+      "solution": "The speaker must be driven by the original low-frequency audio; the carrier only carried it. Connected directly, the speaker cannot respond to MHz oscillations (it reproduces nothing audible) and the audio information stays encoded. The DEMODULATOR (detector, e.g. an envelope/rectifier stage) extracts the audio envelope from the carrier."
+    },
+    {
+      "id": "drill-com12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Elements of a communication system",
+      "question": "Name the three essential blocks of every communication system and state what each contributes.",
+      "solution": "Transmitter (transducer + modulator: converts the message to an electrical signal and impresses it on a carrier), Channel (the physical path — wire, fibre or free space, where noise and attenuation enter), Receiver (amplifier + demodulator: recovers the original message). Noise enters at the channel — that is why receivers amplify before detecting."
+    },
+    {
+      "id": "drill-com12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why optical fibres beat copper",
+      "question": "Give two reasons optical-fibre links outperform copper cables for long-distance communication.",
+      "solution": "(1) Bandwidth: optical carriers (~10¹⁴ Hz) allow enormously higher modulation rates than RF carriers on copper. (2) Loss and interference: light stays guided by total internal reflection with very low attenuation, and being dielectric, fibres are immune to electromagnetic interference and crosstalk. (Security — no radiated signal to tap — is a valid third.)"
+    },
+    {
+      "id": "drill-com12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Line-of-sight and satellites",
+      "question": "Why does satellite communication escape the radio-horizon limit that constrains ground-based TV transmission?",
+      "solution": "Ground transmission is bounded by d = √(2Rh) — the straight line to the Earth's curvature. A geostationary satellite (36,000 km, period = Earth's rotation) sits high enough to SEE nearly a hemisphere; it relays the uplink back down as a downlink, replacing the curved-Earth limit with its footprint. Height buys line-of-sight beyond the horizon."
+    }
+  ]
+}

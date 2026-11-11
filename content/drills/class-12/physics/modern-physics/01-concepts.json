@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Modern Physics (Class 12 Physics)",
+  "subject": "physics",
+  "unitSlug": "modern-physics",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-mod12-1",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Photoelectric — the three failures of wave theory",
+      "question": "List three experimental facts of the photoelectric effect that classical wave theory cannot explain, and give the photon explanation for each.",
+      "solution": "(1) No emission below a threshold frequency, however intense — each photon must carry at least the work function (E = hν); intensity is photon COUNT, not energy per photon. (2) Emission is instantaneous — one photon, one electron, no energy-accumulation delay. (3) Max KE depends on frequency, not intensity — KE_max = hν − φ; intensity only sets how many electrons. All three follow from quantised energy exchange."
+    },
+    {
+      "id": "drill-mod12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Stopping potential vs saturation current",
+      "question": "In a photoelectric experiment, doubling the light intensity changes one measured quantity but not the other. Which, and why?",
+      "solution": "Intensity doubles the photon flux → more electrons per second → the SATURATION CURRENT doubles. Stopping potential (eV₀ = hν − φ) depends only on frequency and the emitter's work function, so it is unchanged. Intensity → number; frequency → energy. Keeping the two channels separate is the whole question."
+    },
+    {
+      "id": "drill-mod12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "de Broglie — why we don't notice matter waves",
+      "question": "A cricket ball has a de Broglie wavelength around 10⁻³⁴ m. Why does this make diffraction of the ball unobservable, while electrons show it readily?",
+      "solution": "Diffraction needs a wavelength comparable to an available aperture or lattice spacing (≈10⁻¹⁰ m). The ball's λ is 24 orders of magnitude smaller — no slit that narrow exists, and the pattern is unresolvable. Electrons accelerated to ~100 V have λ ≈ 0.1 nm, matching crystal spacings — hence the Davisson–Germer electron diffraction."
+    },
+    {
+      "id": "drill-mod12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Bohr — why orbits are special",
+      "question": "Why does Bohr's model restrict electrons to certain orbits? State the quantisation condition in words.",
+      "solution": "Only orbits whose angular momentum is an integer multiple of ħ (mvr = nh/2π) are allowed — equivalently, the orbit's circumference must fit a whole number of standing electron waves (2πr = nλ). Any other orbit would radiate energy continuously (classically) and the electron would spiral in. Stationary states are the non-radiating standing-wave configurations."
+    },
+    {
+      "id": "drill-mod12-5",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Hydrogen spectral series",
+      "question": "Explain, in terms of energy-level jumps, why the Balmer series is visible while the Lyman series is ultraviolet and Paschen is infrared.",
+      "solution": "Photon energy = the level GAP. Lyman: jumps ENDING on n = 1 — the largest gaps (ground state is deepest), so the highest energies/frequencies: UV. Balmer: jumps ending on n = 2 — moderate gaps, visible photons. Paschen: ending on n = 3 — small gaps, low energy: IR. The 'landing level' sets the series; the gap size sets the colour."
+    },
+    {
+      "id": "drill-mod12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Ionisation vs excitation energy",
+      "question": "The energy to excite hydrogen from n = 1 to n = 2 is 10.2 eV, but only 13.6 eV removes the electron entirely. Why is ionisation not simply the sum of two excitations?",
+      "solution": "Ionisation (n = 1 → ∞) needs 13.6 eV because the energy levels converge as n grows (E_n = −13.6/n² eV): the n = 2 level already sits at −3.4 eV, so climbing to infinity from there costs only 3.4 eV. The level SPACING shrinks with n — the ladder gets crowded near the top, so sums of early jumps overshoot the total."
+    },
+    {
+      "id": "drill-mod12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Mass defect and binding energy",
+      "question": "A nucleus weighs LESS than the sum of its free nucleons. Where did the mass go, and why is the answer the same for fusion and fission releases?",
+      "solution": "The missing mass became BINDING ENERGY: Δm·c² is the energy released when nucleons bind (or equivalently the energy needed to pull them apart). Any process moving nuclei toward the PEAK of the binding-energy-per-nucleon curve (iron) releases energy — light nuclei fusing upward and heavy nuclei splitting downward both climb toward that peak. Same curve, two directions."
+    },
+    {
+      "id": "drill-mod12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Half-life is a statistical law",
+      "question": "A source has a half-life of 5 days. Why can you not say WHICH atom decays on day 5, and why does a tiny sample seem to 'violate' the half-life?",
+      "solution": "Decay is probabilistic: each nucleus has a fixed decay probability per unit time (λ), and the half-life describes the EXPECTED behaviour of a large population. With few atoms, random fluctuations dominate — 2 of 3 atoms may survive past two half-lives. The exponential law N = N₀e^(−λt) is a statistical statement that sharpens only for large N."
+    }
+  ]
+}

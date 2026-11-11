@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Ray Optics (Class 12 Physics)",
+  "subject": "physics",
+  "unitSlug": "ray-optics",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ray12-1",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Sign convention discipline",
+      "question": "An object is placed 30 cm from a concave mirror of focal length 20 cm. Write the mirror formula substitution with correct signs, and say what a negative image distance means.",
+      "solution": "New Cartesian convention: distances measured from the pole, along incident light positive. u = −30 cm (object in front), f = −20 cm (concave mirror focus is on the same side as the object). 1/v + 1/u = 1/f → 1/v = 1/f − 1/u = −1/20 + 1/30 = −1/60 → v = −60 cm. Negative v: the image is on the same side as the object — real, inverted, magnified m = −v/u = −2."
+    },
+    {
+      "id": "drill-ray12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why the mirror flips at f",
+      "question": "Move an object from just beyond a concave mirror's focus toward the mirror: describe the image's journey and identify the critical position.",
+      "solution": "Beyond C: real, inverted, diminished. At C: real, inverted, same size. Between C and F: real, inverted, magnified. AT F: image at infinity (reflected rays parallel). Inside F: virtual, erect, magnified (the shaving-mirror case). The focal point is the critical position where the image jumps from infinity (real side) to near infinity (virtual side)."
+    },
+    {
+      "id": "drill-ray12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Total internal reflection — the two conditions",
+      "question": "State the two conditions for total internal reflection, and explain why optical fibres need a dense core with a less dense cladding rather than bare glass in air.",
+      "solution": "Conditions: (1) light travels from the denser to the rarer medium; (2) angle of incidence exceeds the critical angle θc = sin⁻¹(n₂/n₁). A fibre needs the cladding so total internal reflection happens at the CORE–CLADDING boundary with a well-defined critical angle; bare glass in air lets light leak at surface imperfections and contacts, and the cladding also protects the guiding surface."
+    },
+    {
+      "id": "drill-ray12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Refraction — why the bend",
+      "question": "Light bends toward the normal entering glass. Explain the bending in terms of speed, and state what stays constant across the boundary.",
+      "solution": "Light slows in the denser medium (v = c/n); the wavefront pivots like a marching column stepping onto slower ground, bending toward the normal. Frequency stays constant (set by the source); wavelength shrinks to λ/n. Speed changes, frequency does not — the pair of answers the examiner checks."
+    },
+    {
+      "id": "drill-ray12-5",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Lens maker's formula terms",
+      "question": "Using the lens maker's formula, explain why an air bubble in water behaves as a diverging lens even though glass lenses in air converge.",
+      "solution": "1/f = (n₂/n₁ − 1)(1/R₁ − 1/R₂). Convergence depends on the RELATIVE refractive index n₂/n₁. Glass in air: ratio > 1 → converging (for convex). An air bubble in water: n₂/n₁ = 1.0/1.33 < 1, so the bracket flips sign — the same geometry now diverges. Convergence is a property of the pair of media, not the shape alone."
+    },
+    {
+      "id": "drill-ray12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Power of a lens combination",
+      "question": "Two thin lenses of powers +4 D and −2 D touch. Find the combined power and focal length, and state when the simple addition rule fails.",
+      "solution": "P = P₁ + P₂ = +2 D → f = 1/P = +0.5 m. The addition holds for thin lenses in CONTACT (or separated by much less than f). With a real separation d the equivalent power is P = P₁ + P₂ − d·P₁P₂ — the separation term is what the simple rule ignores."
+    },
+    {
+      "id": "drill-ray12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Prism — minimum deviation geometry",
+      "question": "At minimum deviation through a prism, what is special about the ray's path inside, and why does the i–δ curve flatten there?",
+      "solution": "At minimum deviation the ray inside the prism is PARALLEL to the base — refraction at the two faces is symmetric (i = e, r₁ = r₂ = A/2). The deviation curve has zero slope there because δ decreases then increases; measuring the flat region gives the most accurate n via n = sin((A+δm)/2)/sin(A/2). Reading δ at a steep part of the curve amplifies error — that is why the minimum matters."
+    },
+    {
+      "id": "drill-ray12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Simple microscope — magnifying power",
+      "question": "Why does a simple microscope give the largest angular magnification when the final image is at the near point, yet the 'relaxed' setting is often preferred?",
+      "solution": "Image at the near point (D = 25 cm): M = 1 + D/f — largest because the angular size is maximal. Relaxed (image at infinity): M = D/f, slightly smaller but zero eye strain for prolonged use. The trade-off between maximum magnification and comfort is the expected discussion; both formulas must appear."
+    }
+  ]
+}

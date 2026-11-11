@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Electromagnetic Induction (Class 12 Physics)",
+  "subject": "physics",
+  "unitSlug": "electromagnetic-induction",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-emi12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Flux change is the trigger",
+      "question": "A coil sits in a strong, steady magnetic field. Why is there no induced emf, and what three changes would create one?",
+      "solution": "Induction needs a CHANGING flux (ε = −dΦ/dt), not a large flux. Any of: change B (move the magnet or vary its strength), change A (stretch/deform the coil), or change θ (rotate the coil in the field) — the three factors inside Φ = BA·cosθ. Steady field, steady flux, zero emf."
+    },
+    {
+      "id": "drill-emi12-2",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Lenz's law as energy conservation",
+      "question": "State Lenz's law and explain why the induced current must OPPOSE the change — what goes wrong physically if it aided it instead?",
+      "solution": "Lenz: the induced current flows so that its own effect opposes the change causing it. If it aided the change, a tiny push would grow the flux, which would grow the current, which would push more — free energy from nothing, violating conservation. The opposition is exactly the work you must do against magnetic drag, and that work becomes the electrical energy."
+    },
+    {
+      "id": "drill-emi12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Falling magnet through a coil",
+      "question": "A bar magnet falls through a horizontal coil. Describe its speed compared with free fall as it approaches, passes and leaves — and why the pattern is symmetric.",
+      "solution": "Approaching: induced current repels the magnet (like pole facing), so it decelerates below free fall. Leaving: the flux now decreases, the induced current attracts it back — again decelerating. The two oppositions mirror each other, so the retardation is symmetric about the centre. Inside a LONG solenoid with steady flux, it falls freely."
+    },
+    {
+      "id": "drill-emi12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Self-inductance — the electrical inertia",
+      "question": "Why is self-inductance called the 'electrical inertia' of a circuit, and why does breaking an inductive circuit produce a spark?",
+      "solution": "Inductance opposes any CHANGE of current (back-emf L·dI/dt), just as mass opposes change of velocity — hence inertia. When the circuit breaks, dI/dt is enormous, so the back-emf L·dI/dt can far exceed the supply voltage, driving a spark across the gap. The energy stored (½LI²) has to go somewhere."
+    },
+    {
+      "id": "drill-emi12-5",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Mutual inductance is reciprocal",
+      "question": "Coil A has 500 turns, coil B has 50. Show that M₁₂ = M₂₁ regardless of which coil is the 'driver', and say what M physically measures.",
+      "solution": "M measures the flux linkage in one coil per ampere in the other (M = NΦ/I). By reciprocity (the same flux geometry links both), M₁₂ = M₂₁ = M for a fixed arrangement — the turns ratio changes each coil's own flux linkage but the coupling coefficient k and geometry set M equally both ways. It depends only on geometry, orientation, turns product and the medium's permeability."
+    },
+    {
+      "id": "drill-emi12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Eddy currents — use and cost",
+      "question": "Why are transformer cores laminated, yet the same eddy-current effect is used in induction cooktops and magnetic braking?",
+      "solution": "In a core, eddy currents are pure loss: I²R heating from the changing flux. Laminations break the conducting loops into thin insulated sheets, raising resistance and shrinking the loops — loss falls roughly with thickness². In braking/cooking the heating or drag is the PURPOSE, so a solid conducting plate is exactly what you want. Same physics, opposite engineering goal."
+    },
+    {
+      "id": "drill-emi12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "AC generator — the cosine law",
+      "question": "In an AC generator, at which coil position is the emf maximum, and why is it zero when the coil is perpendicular to the field?",
+      "solution": "Flux Φ = BA·cosθ; emf ε = −dΦ/dt = BAω·sinθ. Maximum emf occurs when the coil plane is PARALLEL to B (θ = 0 or π: flux is maximum but changing fastest). When the coil plane is perpendicular to B (θ = π/2), flux is momentarily at its extreme (maximum magnitude) with zero rate of change — hence zero emf. Maximum flux ≠ maximum emf; that inversion is the tested point."
+    },
+    {
+      "id": "drill-emi12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Transformer — DC never works",
+      "question": "Why does a transformer work for AC but not for a steady DC supply, even at the same voltage?",
+      "solution": "The secondary emf is proportional to dΦ/dt. AC constantly changes the flux (ε₂ ∝ frequency), so power transfers. Steady DC gives constant flux — dΦ/dt = 0, no secondary emf. Worse, DC sees only the tiny primary resistance, so the primary draws a destructive current. 'Transformer = flux-changer' is the one-line principle."
+    }
+  ]
+}
