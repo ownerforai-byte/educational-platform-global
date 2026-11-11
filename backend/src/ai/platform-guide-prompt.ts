@@ -24,10 +24,23 @@ export function isPlatformGuideCreatorQuestion(message: string): boolean {
     /^(?:(?:who is|who's|tell me about|describe) (?:the )?)?(?:creator|creater|inventor|founder)[?.!]*$/i.test(text);
 }
 
+/**
+ * The 2026-11-03 owner change lets the public guide answer ANY question, so
+ * the old "rewrite every off-scope answer into the creator line" behaviour is
+ * gone. A provider can still emit a self-attribution ("I was created by
+ * OpenAI", "Powered by Claude", "The founder is …"), and the marketing widget
+ * must never publish that. Strip PROVENANCE claims about the assistant or this
+ * platform only — a factual answer that merely mentions a company stays.
+ */
+const EXTERNAL_CREDIT_CLAIM =
+  /\b(?:i am|i'm|i was)\b[^.!?]{0,80}\b(?:created|made|built|developed|trained|powered)\b\s+by\b|\b(?:i am|i'm)\s+(?:agnes|chatgpt|claude|gpt[\w.-]*|an?\s+(?:ai|language model|assistant created))\b|\bpowered by\b[^.!?]{0,60}\b(?:anthropic|openai|claude|gpt|agnes|gemini)\b|\b(?:this|the)\s+(?:platform|website|site|app)\b[^.!?]{0,80}\b(?:developed|created|built|made|founded)\b\s+by\b|\b(?:the\s+)?founder\s+is\b|\bowner\s+of\s+(?:this|the)\s+platform\b/i;
+
 export function platformGuideReply(raw: string): string {
   const text = raw.normalize("NFKC").trim()
     .split(/(?<=[.!?])\s+/)
-    .filter((sentence) => !/\bravi(?:kisan|kishan)\b/i.test(sentence))
+    .filter((sentence) =>
+      !/\bravi(?:kisan|kishan)\b/i.test(sentence) &&
+      !EXTERNAL_CREDIT_CLAIM.test(sentence))
     .join(" ");
   return text ? clampReplyWords(text) : PLATFORM_GUIDE_EMPTY_REPLY;
 }
