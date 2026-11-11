@@ -31,19 +31,30 @@ for quality or launch · **P2** = polish, later.
 - Remaining: none for the repo. If the token value is live, rotation is still an owner action.
 - Level: **Done**. Concerned file: `.gitignore:150` (ignores `cloudflare-token.txt`).
 
-### 0.3 Owner sign-in E2E is red in CI
-- Source: `SYSTEM_WORK_TRACKER.md` (CI gate repair, 2026-11-03) and `plan-hardening-pass.md` ("known-red").
-- Cause: repo has no `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` for the test run.
+### 0.3 Owner sign-in E2E — RESOLVED (verified 2026-11-11); member sign-in still skipped
+- Supersedes the old "owner sign-in E2E is red in CI" claim from
+  `SYSTEM_WORK_TRACKER.md` / `plan-hardening-pass.md`. That claim is stale.
+- Verified against the E2E Smoke run for `c3e4dd11`: preflight reports
+  `SMOKE_OWNER_EMAIL`, `SMOKE_OWNER_PASSWORD`, `NEXT_PUBLIC_SUPABASE_URL` and
+  `NEXT_PUBLIC_SUPABASE_ANON_KEY` all present; the owner sign-in test runs and
+  the suite reports `4 passed, 1 skipped`. Live Smoke reports every auth probe
+  PASS (login 200 + cookies, refresh rotation 200, `/me` 200, logout 200,
+  anonymous writes 401/403). All 17 check-runs green.
+- Remaining gap: `SMOKE_MEMBER_EMAIL` and `SMOKE_MEMBER_PASSWORD` are NOT set,
+  so the member / Plus-gated sign-in test is the one that skips. The workflow
+  already emits an explicit warning for both missing secrets.
 - Plan:
-  - [ ] Add the two public Supabase values as CI secrets/variables (public values only, never the service key).
-  - [ ] Re-run Live Smoke; confirm the owner sign-in test passes.
-  - [ ] Confirm `SMOKE_OWNER_EMAIL` / `SMOKE_OWNER_PASSWORD` secrets exist (see `PROJECT_STATUS.md` Verification state).
-- Level: **CI config + owner secrets**. Code is ready; the failure is missing secrets.
+  - [x] Add the two public Supabase values as CI secrets (present).
+  - [x] Confirm `SMOKE_OWNER_EMAIL` / `SMOKE_OWNER_PASSWORD` (present).
+  - [x] Confirm owner sign-in E2E and Live Smoke auth probes pass.
+  - [ ] Owner: add `SMOKE_MEMBER_EMAIL` / `SMOKE_MEMBER_PASSWORD` so the
+        member Plus-gated sign-in spec stops skipping. No code change needed.
+- Level: **owner secrets only**; auth code is healthy.
 - Concerned files:
-  - `.github/workflows/live-smoke.yml` lines 19–23 — reads `SMOKE_OWNER_EMAIL` / `SMOKE_OWNER_PASSWORD` secrets; targets `https://rn01.onrender.com`.
-  - `.github/workflows/e2e-smoke.yml` lines 42–43, 81–82, 120–121 — reads `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` secrets.
+  - `.github/workflows/live-smoke.yml` lines 19–23 — reads `SMOKE_OWNER_EMAIL` / `SMOKE_OWNER_PASSWORD`; targets `https://rn01.onrender.com`.
+  - `.github/workflows/e2e-smoke.yml` — reads the two public Supabase values and all four `SMOKE_*` credentials.
   - `.github/workflows/lighthouse.yml` lines 34–35 — same two public values.
-  - `frontend/tests/e2e/smoke.spec.ts` lines 12–16, 67 — owner sign-in test; skips when `SMOKE_OWNER_*` is unset.
+  - `frontend/tests/e2e/smoke.spec.ts` lines 61–67 (owner) and 114–116 (member) — in-body skips.
   - `AGENT_RULES.md` lines 149–153 — documents the required secret names.
 
 ### 0.4 Eight accounts without a `profiles` row (owner decision pending)
