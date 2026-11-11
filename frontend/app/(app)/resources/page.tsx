@@ -34,6 +34,7 @@ import {
   frameSrcFor,
 } from "@/lib/pdf-src";
 import { SHOW_SOURCE_BADGE } from "@/lib/stream-sources";
+import { publicOrigin } from "@/lib/site-url";
 
 export type ResourceItem = {
   id: string;
@@ -128,9 +129,10 @@ function docIframeSrc(item: ResourceItem): string {
   if (item.kind === "docx") {
     // Local docx files need an absolute URL for Google Docs Viewer
     if (item.src.startsWith("/")) {
-      const origin =
-        (typeof window !== "undefined" && window.location.origin) ||
-        process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "");
+      // Absolute URL on the canonical origin (the tab's own origin on localhost),
+      // so the Google Docs Viewer does not break when the page is opened on a
+      // preview host that later gets pruned.
+      const origin = publicOrigin();
       // Google Docs Viewer needs an absolute URL. Without a known origin (server
       // render with no NEXT_PUBLIC_SITE_URL) load the file directly rather than
       // guessing a deployment host.

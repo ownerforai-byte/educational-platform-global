@@ -21,7 +21,11 @@ vi.mock("@/components/theme/theme-provider", () => ({
   useTheme: () => ({ theme: "nebula", setTheme: vi.fn(), resolvedTheme: "dark" }),
 }));
 vi.mock("@/features/auth/hooks/use-session", () => ({
-  useSession: () => ({ user: null, refresh: vi.fn() }),
+  // A member session so the gated directory cards actually render.
+  useSession: () => ({
+    user: { id: "u1", email: "member@example.com", fullName: "Member", role: "member" },
+    refresh: vi.fn(),
+  }),
 }));
 vi.mock("@/features/auth/actions", () => ({ logoutAction: vi.fn() }));
 vi.mock("@/features/r1/hooks", () => ({ useR1Access: () => ({ data: false }) }));
@@ -35,14 +39,28 @@ afterEach(() => {
 });
 
 describe("sidebar theme section", () => {
-  it("keeps the theme selector in an expandable section, not the header", async () => {
+  // 2026-11-11: appearance moved OUT of the sidebar (owner: "appearance out of
+  // sidebar") into Settings, and the flat scroll strip became grouped,
+  // collapsible directory cards. The old "Collapse Theme" button therefore no
+  // longer exists; these assertions track the directory behaviour that does.
+  it("links the destinations as collapsible directory sections, not a scroll strip", () => {
     render(<SidebarNavigation />);
-    expect(screen.getByRole("button", { name: "Collapse Theme" })).toHaveAttribute("aria-expanded", "true");
-    await waitFor(() => expect(screen.getByRole("button", { name: "Choose Theme Palette" })).toBeInTheDocument());
 
-    fireEvent.click(screen.getByRole("button", { name: "Collapse Theme" }));
-    expect(screen.getByRole("button", { name: "Expand Theme" })).toHaveAttribute("aria-expanded", "false");
-    await waitFor(() => expect(screen.queryByRole("button", { name: "Choose Theme Palette" })).not.toBeInTheDocument());
+    // Curriculum lives on the Info page now; the sidebar keeps the Labs &
+    // Reference directory card, which still expands/collapses in place.
+    const labs = screen.getByRole("button", { name: "Collapse Labs & Reference" });
+    expect(labs).toHaveAttribute("aria-expanded", "true");
+
+    fireEvent.click(labs);
+    expect(screen.getByRole("button", { name: "Expand Labs & Reference" })).toHaveAttribute(
+      "aria-expanded",
+      "false",
+    );
+  });
+
+  it("keeps the theme palette out of the sidebar header", () => {
+    render(<SidebarNavigation />);
+    expect(screen.queryByRole("button", { name: "Choose Theme Palette" })).not.toBeInTheDocument();
   });
 });
 

@@ -7,6 +7,7 @@ import gsap from "gsap";
 import * as THREE from "three";
 import { MathDisplay, MathInline } from "@/components/content/MathRenderer";
 import { ViewportRelativeArrow } from "./viewport-relative-arrow";
+import { publicOrigin } from "@/lib/site-url";
 
 export interface QuizQuestion {
   question: string;
@@ -678,7 +679,7 @@ export function AnnotatedModelViewer({
       annotations: annotations.map((a) => ({ id: a.id, label: a.label, position: a.position })),
       explodedView,
     };
-    const url = `${window.location.origin}${window.location.pathname}?data=${btoa(JSON.stringify(shareData))}`;
+    const url = `${publicOrigin()}${window.location.pathname}?data=${btoa(JSON.stringify(shareData))}`;
     const safeCopy = async (text: string) => {
       try {
         await navigator.clipboard.writeText(text);

@@ -1,6 +1,7 @@
 // ADDITIVE (perf pass, 2026-09-27): shared error funnel used by the prefetch
 // helpers appended below. Import only — nothing below changes.
 import { reportClientError } from "./errors/app-error";
+import { CANONICAL_SITE_URL } from "@/lib/site-url";
 
 
 const cache = new Map<string, Promise<unknown>>();
@@ -16,6 +17,7 @@ function dataUrl(safe: string): string {
   if (typeof window !== "undefined") return relPath;
   const base =
     process.env.NEXT_PUBLIC_SITE_URL ||
+    CANONICAL_SITE_URL ||
     `http://127.0.0.1:${process.env.PORT || 3000}`;
   return new URL(relPath, base).toString();
 }

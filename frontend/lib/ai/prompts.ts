@@ -1,5 +1,11 @@
-export const PLATFORM_SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:5173";
+import { CANONICAL_SITE_URL } from "@/lib/site-url";
+
+/**
+ * The host the tutor names in prompts and the sitemap advertises. Reads the
+ * canonical origin instead of a raw env var, so a missing env var or a scraped
+ * preview URL cannot make the advertised host change under us.
+ */
+export const PLATFORM_SITE_URL = CANONICAL_SITE_URL;
 /**
  * ACADEMIC_LAYER — the compact academic contract of the tutor (the field card).
  *
