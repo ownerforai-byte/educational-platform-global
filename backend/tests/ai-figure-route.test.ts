@@ -38,6 +38,7 @@ vi.mock("../src/middleware/auth", async (importOriginal) => {
 });
 
 import aiFigureRoutes from "../src/api/ai-figure";
+import { readApiSource } from "./read-api-source.js";
 import { drawAcademicFigure } from "../src/ai/figure-draw";
 
 const mockedDraw = vi.mocked(drawAcademicFigure);
@@ -78,7 +79,7 @@ beforeEach(() => {
 
 describe("POST /api/ai/figure", () => {
   test("is guarded by requireAuth AND the owner gate (source pin)", () => {
-    const src = readFileSync(path.resolve(__dirname, "../src/api/ai-figure.ts"), "utf8");
+    const src = readApiSource("ai-figure.ts");
     expect(src).toContain("requireAuth");
     // Owner emails only (owner request 2026-10-05) — the gate must be wired.
     expect(src).toContain("requireOwnerEmail");

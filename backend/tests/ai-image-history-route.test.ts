@@ -1,8 +1,8 @@
 import express from "express";
 import cookieParser from "cookie-parser";
-import { readFileSync } from "node:fs";
 import path from "node:path";
 import { afterAll, beforeAll, describe, expect, test, vi } from "vitest";
+import { readApiSource } from "./read-api-source.js";
 import type { Request, Response } from "express";
 import type { Server } from "node:http";
 
@@ -99,10 +99,7 @@ const FIGURE = {
 
 describe("/api/ai/image-history", () => {
   test("is guarded by requireAuth AND the owner gate on every route (source pin)", () => {
-    const src = readFileSync(
-      path.resolve(__dirname, "../src/api/ai-image-history.ts"),
-      "utf8",
-    );
+    const src = readApiSource("ai-image-history.ts");
     const routes = src.match(/router\.(get|post|delete)\(/g) ?? [];
     const guarded = src.match(/router\.(get|post|delete)\("[^"]*", requireAuth, requireOwnerEmail/g) ?? [];
     expect(routes).toHaveLength(3);

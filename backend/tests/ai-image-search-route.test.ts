@@ -1,7 +1,7 @@
 import express from "express";
-import { readFileSync } from "node:fs";
 import path from "node:path";
 import { afterAll, afterEach, beforeAll, describe, expect, test, vi } from "vitest";
+import { readApiSource } from "./read-api-source.js";
 import type { Request, Response } from "express";
 import type { Server } from "node:http";
 
@@ -119,10 +119,7 @@ const CSE_ITEM = {
 
 describe("/api/ai/image-search", () => {
   test("is guarded by requireAuth AND the owner gate (source pin)", () => {
-    const src = readFileSync(
-      path.resolve(__dirname, "../src/api/ai-image-search.ts"),
-      "utf8",
-    );
+    const src = readApiSource("ai-image-search.ts");
     expect(src).toMatch(/router\.get\("[^"]*", requireAuth, requireOwnerEmail/);
   });
 

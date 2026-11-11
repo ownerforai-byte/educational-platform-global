@@ -18,7 +18,7 @@ import {
  * legacy plus_20 plan rows resolve to Plus, with no expiry.
  */
 describe("aiSpark — owner is never asked for spark", () => {
-  const ownerEmail = "ravikisan1814@gmail.com";
+  const ownerEmail = "sahrocky81@gmail.com";
 
   it("always resolves to the owner tier, regardless of plan row", () => {
     const cases: AiSparkUser[] = [

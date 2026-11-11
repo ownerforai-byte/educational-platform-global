@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import { readBackendApiSource } from "../read-backend-api-source.js";
 import {
   EXEMPT_PATHS,
   PUBLIC_PATHS,
@@ -45,7 +46,7 @@ describe("Diagram Hub coin position — spark-priced tier, owner-only unlock", (
   });
 
   it("the server unlock route treats imagehub as owner-only and owner-free", () => {
-    const src = read("../backend/src/api/user.ts");
+    const src = readBackendApiSource("user.ts");
     expect(src).toContain("imagehub: 0");
     expect(src).toMatch(/z\.enum\(\[[^\]]*"imagehub"[^\]]*\]\)/);
     expect(src).toContain('category === "imagehub"');

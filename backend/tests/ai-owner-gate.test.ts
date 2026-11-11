@@ -1,6 +1,5 @@
-import { readFileSync } from "node:fs";
-import path from "node:path";
 import { describe, expect, test } from "vitest";
+import { readApiSource } from "./read-api-source.js";
 
 /**
  * AI route gates (source-level pins).
@@ -11,7 +10,7 @@ import { describe, expect, test } from "vitest";
  * home guide only). Remaining chat routes keep the owner-email allowlist, and
  * the quiz generator stays open (students keep /ai-quiz via /api/ai/generate-questions).
  */
-const read = (p: string) => readFileSync(path.resolve(__dirname, p), "utf8");
+const read = (p: string) => readApiSource(p.replace(/^(\.\.\/)+src\/api\//, ""));
 
 describe("AI owner gate (source pins)", () => {
   test("POST /api/ai is session-gated and AI-spark metered (open to every tier)", () => {
@@ -41,10 +40,7 @@ describe("AI owner gate (source pins)", () => {
   });
 
   test("POST /api/ai/generate-questions stays open for the student quiz", () => {
-    const src = readFileSync(
-      path.resolve(__dirname, "../src/api/ai-generate.ts"),
-      "utf8",
-    );
+    const src = readApiSource("ai-generate.ts");
     expect(src).not.toContain("requireOwnerEmail");
   });
 });

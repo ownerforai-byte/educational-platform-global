@@ -112,7 +112,7 @@ const r1HabitsRouter = (await import("../src/api/r1-habits")).default;
 const ownerRouter = (await import("../src/api/owner")).default;
 const { invalidateR1GrantCache } = await import("../src/utils/r1Grants");
 
-const OWNER_EMAIL = "harindarsah98172@gmail.com";
+const OWNER_EMAIL = "sahrocky81@gmail.com";
 const GRANTED_EMAIL = "granted@example.com";
 const STRANGER_EMAIL = "stranger@example.com";
 

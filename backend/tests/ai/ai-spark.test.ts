@@ -43,16 +43,13 @@ describe("AI spark tier table", () => {
     // …and the hardcoded owner allowlist beats any plan row.
     expect(
       aiSparkTierFor({
-        email: "harindarsah98172@gmail.com",
+        email: "sahrocky81@gmail.com",
         plan: "member",
       }),
     ).toBe("owner");
-    expect(
-      aiSparkTierFor({
-        email: "yashsah231@gmail.com",
-        premiumStatus: true,
-      }),
-    ).toBe("owner");
+    expect(aiSparkTierFor({ email: "student@example.com", role: "owner" })).toBe(
+      "owner",
+    );
   });
 
   it("only owners are unmetered", () => {

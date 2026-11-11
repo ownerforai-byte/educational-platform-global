@@ -1,0 +1,14 @@
+export * from "./subjects.controller.js";
+export * from "./chapters.controller.js";
+export * from "./topics.controller.js";
+export * from "./lessons.controller.js";
+export * from "./resources.controller.js";
+export * from "./ravikishan-notes.controller.js";
+export * from "./r-notes.controller.js";
+export * from "./reveal.controller.js";
+export * from "./classes.controller.js";
+export * from "./biology.controller.js";
+export * from "./periodic-table.controller.js";
+export * from "./periodic-unlock.controller.js";
+export * from "./content.routes.js";
+export { default } from "./content.routes.js";

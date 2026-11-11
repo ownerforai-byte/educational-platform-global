@@ -14,7 +14,7 @@ export default defineConfig({
   test: {
     environment: "jsdom",
     globals: true,
-    setupFiles: ["./tests/setup.ts"],
+    setupFiles: ["./tests/zlib-polyfill.ts", "./tests/setup.ts"],
     include: ["tests/**/*.{test,spec}.{ts,tsx}"],
     // Playwright owns tests/e2e — vitest must not load those specs
     // (test.describe from @playwright/test crashes the vitest runner).

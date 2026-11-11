@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, test } from "vitest";
+import { readApiSource } from "./read-api-source.js";
 
 /**
  * AI evaluation route gates (source-level pins, plan.md §11.2).
@@ -10,7 +11,7 @@ import { describe, expect, test } from "vitest";
  * `authOrGuestQuota` (signed-in credit pool / guest metered pool),
  * `aiSparkGateIfAuthed` — with NO new gate and NO owner allowlist.
  */
-const read = (p: string) => readFileSync(path.resolve(__dirname, p), "utf8");
+const read = (p: string) => readApiSource(p.replace(/^(\.\.\/)+src\/api\//, ""));
 
 describe("AI evaluate-answers route (source pins)", () => {
   test("is gated exactly like generate-questions — no new gate, no owner lock", () => {
@@ -18,7 +19,7 @@ describe("AI evaluate-answers route (source pins)", () => {
     expect(src).toMatch(/router\.post\(\s*"\/",\s*rateLimit,\s*requirePlusAiStudio\(\),\s*authOrGuestQuota,\s*aiSparkGateIfAuthed/);
     expect(src).not.toContain("requireOwnerEmail");
     // Reuses the generator's gates rather than re-implementing them.
-    expect(src).toContain('from "./ai-generate"');
+    expect(src).toContain('from "./generate.controller"');
   });
 
   test("returns per-item score/verdict/feedback/modelAnswer/improvements + summary", () => {
@@ -44,7 +45,7 @@ describe("AI evaluate-answers route (source pins)", () => {
   });
 
   test("evaluate-answers is registered before the /api/ai catch-all", () => {
-    const src = read("../src/app.ts");
+    const src = readFileSync(path.resolve(__dirname, "../src/app.ts"), "utf8");
     expect(src).toContain('app.use("/api/ai/evaluate-answers", aiEvaluateRoutes)');
     const evaluateIdx = src.indexOf("/api/ai/evaluate-answers");
     const catchAllIdx = src.indexOf('app.use("/api/ai", aiRoutes)');

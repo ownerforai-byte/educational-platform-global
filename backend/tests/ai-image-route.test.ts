@@ -1,8 +1,8 @@
 import express from "express";
 import cookieParser from "cookie-parser";
-import { readFileSync } from "node:fs";
 import path from "node:path";
 import { afterAll, beforeAll, beforeEach, describe, expect, test, vi } from "vitest";
+import { readApiSource } from "./read-api-source.js";
 import type { Request, Response } from "express";
 import type { Server } from "node:http";
 
@@ -84,10 +84,7 @@ beforeEach(() => {
 
 describe("POST /api/ai/image", () => {
   test("is guarded by requireAuth AND the owner gate (source pin)", () => {
-    const src = readFileSync(
-      path.resolve(__dirname, "../src/api/ai-image.ts"),
-      "utf8",
-    );
+    const src = readApiSource("ai-image.ts");
     expect(src).toContain("requireAuth");
     // Owner emails only (owner request 2026-10-05) — the gate must be wired.
     expect(src).toContain("requireOwnerEmail");

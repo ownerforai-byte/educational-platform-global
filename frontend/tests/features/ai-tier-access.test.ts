@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import { readBackendApiSource } from "../read-backend-api-source.js";
 import {
   AI_SPARK_LIMITS,
   aiSparkLimitLabel,
@@ -52,7 +53,7 @@ describe("AI spark tier table", () => {
     // …and the hardcoded owner allowlist beats any plan row.
     expect(
       aiSparkTierFor({
-        email: "harindarsah98172@gmail.com",
+        email: "sahrocky81@gmail.com",
         plan: "member",
       }),
     ).toBe("owner");
@@ -109,7 +110,7 @@ describe("Veer chat: routes stay metered, professor workspace is Plus-gated", ()
   });
 
   it("the chat API meters AI sparks and is not owner-gated", () => {
-    const route = readRoot("backend/src/api/ai.ts");
+    const route = readBackendApiSource("ai.ts");
     expect(route).not.toContain("requireOwnerEmail");
     expect(route).toContain('router.post("/", requireAuth, async');
     expect(route).toContain("consumeUserSlot");
@@ -119,8 +120,8 @@ describe("Veer chat: routes stay metered, professor workspace is Plus-gated", ()
   });
 
   it("AI Studio routes meter AI sparks, not content sparks", () => {
-    for (const file of ["backend/src/api/ai-math.ts", "backend/src/api/ai-deep-dive.ts", "backend/src/api/ai-generate.ts"]) {
-      const src = readRoot(file);
+    for (const file of ["ai-math.ts", "ai-deep-dive.ts", "ai-generate.ts"]) {
+      const src = readBackendApiSource(file);
       expect(src).toContain("aiSparkGateIfAuthed");
       expect(src).not.toContain('requireCredit("aiChat")');
     }

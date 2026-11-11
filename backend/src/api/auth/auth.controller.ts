@@ -1,0 +1,720 @@
+import { Request, Response, Router } from "express";
+import { randomBytes, timingSafeEqual } from "node:crypto";
+import { z } from "zod";
+import { isProductionEnv } from "../../config/env";
+import { createAuthClient, supabaseAdmin } from "../../db/supabase";
+import { ensureDailyCredits } from "../../utils/credits";
+import {
+  DEVICE_SIGNUP_LIMIT_MESSAGE,
+  bindDeviceToAccount,
+  checkDeviceSignupLimit,
+} from "../../utils/deviceSignup";
+import { isR1GrantedEmail } from "../../utils/r1Grants";
+import { createStatusToken, verifyStatusToken } from "../../utils/statusToken";
+import {
+  signInWithPassword,
+  signUp,
+  signOut,
+  AuthProviderError,
+} from "../../auth/supabase";
+import {
+  SESSION_COOKIE,
+  extractToken,
+  getUserFromRequest,
+  loadProfileRole,
+  loadProfileAccess,
+  buildSessionUser,
+  isOwnerEmail,
+  isApprovedAccount,
+} from "../../middleware/auth";
+import { isOriginAllowed } from "../../middleware/cors";
+import { normalizeRole, type SessionUser } from "../../auth/types";
+import type {
+  LoginResponse,
+  SignupResponse,
+  LogoutResponse,
+  MeResponse,
+  RefreshResponse,
+  ExtendedSessionUser,
+} from "../../auth/types";
+
+// ── Cookie helpers ─────────────────────────────────────────────────────────
+
+// Secure flag evaluated per-call (isProductionEnv, not raw NODE_ENV): Render's
+// runtime may not set NODE_ENV, and cross-site OAuth redirects require the
+// Secure flag in production.
+const cookieOptions = () => ({
+  httpOnly: true,
+  sameSite: "lax" as const,
+  secure: isProductionEnv(),
+  path: "/",
+});
+
+function setSessionCookie(res: Response, token: string, expiresInSec?: number): void {
+  const maxAge =
+    typeof expiresInSec === "number" && Number.isFinite(expiresInSec) && expiresInSec > 0
+      ? expiresInSec
+      : 3600;
+  res.cookie(SESSION_COOKIE, token, { ...cookieOptions(), maxAge: maxAge * 1000 });
+}
+
+/** The refresh token lives 30 days so users stay signed in past the 1h access token. */
+const REFRESH_COOKIE = "sb-refresh-token";
+const REFRESH_COOKIE_MAX_AGE_SEC = 60 * 60 * 24 * 30;
+const OAUTH_CSRF_COOKIE = "oauth-csrf-token";
+
+/** Social providers the app accepts for OAuth sessions — mirrors the login-form buttons. */
+const ALLOWED_OAUTH_PROVIDERS = new Set(["facebook", "google"]);
+
+function setRefreshCookie(res: Response, token: string): void {
+  res.cookie(REFRESH_COOKIE, token, {
+    ...cookieOptions(),
+    maxAge: REFRESH_COOKIE_MAX_AGE_SEC * 1000,
+  });
+}
+
+function clearSessionCookie(res: Response): void {
+  res.clearCookie(SESSION_COOKIE, cookieOptions());
+  res.clearCookie(REFRESH_COOKIE, cookieOptions());
+}
+
+// ── Validation schemas ─────────────────────────────────────────────────────
+
+const loginSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(1),
+});
+
+const signupSchema = z.object({
+  fullName: z.string().trim().min(2).max(80).optional(),
+  email: z.string().email(),
+  password: z.string().min(8).max(72),
+});
+
+const oauthSessionSchema = z.object({
+  accessToken: z.string().min(1).max(8192),
+  refreshToken: z.string().min(1).max(8192),
+  state: z.string().regex(/^[a-f0-9]{64}$/),
+});
+
+// ── Helpers ─────────────────────────────────────────────────────────────────
+
+type AccessStatus = "PENDING" | "ACTIVE" | "REJECTED";
+
+async function readAccessStatus(userId: string, email?: string): Promise<AccessStatus> {
+  const { role, accessStatus } = await loadProfileAccess(userId);
+  if (isApprovedAccount({ email, role }, accessStatus)) return "ACTIVE";
+  return accessStatus === "REJECTED" ? "REJECTED" : "PENDING";
+}
+
+/**
+ * 403 for a non-ACTIVE account — never issues or renews cookies.
+ * Carries a signed `statusToken` so the client can bounce the user straight
+ * to the /welcome status screen (pending page) instead of stranding them on
+ * the login form with an error they cannot act on.
+ */
+function accessDenied(res: Response, status: AccessStatus, userId?: string): void {
+  const pending = status === "PENDING";
+  res.status(403).json({
+    error: pending ? "Account pending approval" : "Account not approved",
+    code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
+    message: pending
+      ? "Your account was created and is awaiting approval. You can sign in after administrative and system approval."
+      : "This account was not approved. Please contact the platform owner.",
+    statusToken: userId ? createStatusToken(userId) : undefined,
+  });
+}
+
+async function resolveSessionUser(userId: string, email: string): Promise<SessionUser> {
+  const role = await loadProfileRole(userId);
+  return buildSessionUser(userId, email, role);
+}
+
+async function buildExtendedUser(
+  userId: string,
+  email: string,
+  role: string | null,
+  fullName?: string | null,
+): Promise<ExtendedSessionUser> {
+  const isOwner = isOwnerEmail(email) || normalizeRole(role) === "owner";
+
+  // Persist the display name on signup/first login (the profiles trigger only
+  // copies it from raw_user_meta_data; refresh flows may not have it).
+  if (typeof fullName === "string" && fullName.trim().length > 0) {
+    await supabaseAdmin
+      .from("profiles")
+      .update({ full_name: fullName.trim() })
+      .eq("id", userId);
+  }
+
+  // Lazy midnight reset (owner policy): a session fetched after 12:00 AM
+  // reports today's daily pool, not yesterday's spent balance.
+  await ensureDailyCredits(userId, email, role);
+
+  const profile = await supabaseAdmin
+    .from("profiles")
+    .select("full_name, credits, credits_limit, premium_status, premium_approved_at")
+    .eq("id", userId)
+    .maybeSingle();
+
+  const persistedName =
+    typeof profile?.data?.full_name === "string" && profile.data.full_name.trim()
+      ? profile.data.full_name.trim()
+      : null;
+
+  return {
+    id: userId,
+    email,
+    fullName: fullName ?? persistedName,
+    role: isOwner ? "owner" : normalizeRole(role),
+    credits: isOwner ? 999999 : (profile?.data?.credits ?? 0),
+    creditsLimit: isOwner ? 999999 : (profile?.data?.credits_limit ?? 100),
+    premiumStatus: isOwner ? true : (profile?.data?.premium_status ?? false),
+    premiumApprovedAt: isOwner ? (profile?.data?.premium_approved_at ?? new Date().toISOString()) : (profile?.data?.premium_approved_at ?? null),
+  };
+}
+
+// ── Routes ─────────────────────────────────────────────────────────────────
+
+const router = Router();
+
+router.use((_req, res, next) => {
+  res.set("Cache-Control", "private, no-store");
+  next();
+});
+
+/**
+ * POST /api/auth/login
+ * Body: { email, password }
+ * 200 → { user: ExtendedSessionUser, accessToken }
+ * 400 → invalid payload
+ * 401 → bad credentials
+ */
+router.post("/oauth/csrf", (req: Request, res: Response) => {
+  const origin = req.get("origin");
+  if (!origin || !isOriginAllowed(origin)) {
+    res.setHeader("Cache-Control", "no-store");
+    res.status(403).json({ error: "OAuth sign-in is not allowed from this origin" });
+    return;
+  }
+
+  const csrfToken = randomBytes(32).toString("hex");
+  res.cookie(OAUTH_CSRF_COOKIE, csrfToken, {
+    ...cookieOptions(),
+    maxAge: 10 * 60 * 1000,
+  });
+  res.setHeader("Cache-Control", "no-store");
+  res.setHeader("Vary", "Origin");
+  res.json({ csrfToken });
+});
+
+router.post("/oauth/session", async (req: Request, res: Response) => {
+  const parsed = oauthSessionSchema.safeParse(req.body);
+  res.setHeader("Cache-Control", "no-store");
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid OAuth session" });
+    return;
+  }
+  const origin = req.get("origin");
+  if (!origin || !isOriginAllowed(origin)) {
+    res.status(403).json({ error: "OAuth session exchange is not allowed from this origin" });
+    return;
+  }
+  const csrfToken = req.get("x-csrf-token");
+  const cookieToken = req.cookies?.[OAUTH_CSRF_COOKIE] as string | undefined;
+  const csrfMatches =
+    csrfToken &&
+    cookieToken &&
+    /^[a-f0-9]{64}$/.test(csrfToken) &&
+    /^[a-f0-9]{64}$/.test(cookieToken) &&
+    timingSafeEqual(Buffer.from(csrfToken, "hex"), Buffer.from(cookieToken, "hex"));
+  if (!csrfMatches || parsed.data.state !== csrfToken) {
+    res.status(403).json({ error: "OAuth session exchange could not be verified" });
+    return;
+  }
+  try {
+    const { data, error } = await supabaseAdmin.auth.getUser(parsed.data.accessToken);
+    if (error || !data.user || !data.user.email) {
+      res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
+      res.status(401).json({ error: "OAuth authentication could not be verified" });
+      return;
+    }
+    // A Google/Facebook sign-in that links to an existing email/password
+    // account keeps "email" as the primary provider, so the allowlist must
+    // also accept any linked identity (identities never includes the primary
+    // provider itself, hence the two-part check).
+    const provider = data.user.app_metadata?.provider as string | undefined;
+    const linkedProviders = (data.user.identities ?? [])
+      .map((identity) => identity?.provider)
+      .filter((p): p is string => typeof p === "string");
+    const hasAllowedProvider =
+      (provider !== undefined && ALLOWED_OAUTH_PROVIDERS.has(provider)) ||
+      linkedProviders.some((p) => ALLOWED_OAUTH_PROVIDERS.has(p));
+    if (parsed.data.state !== csrfToken || !hasAllowedProvider) {
+      res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
+      res.status(401).json({ error: "OAuth authentication could not be verified" });
+      return;
+    }
+
+    const accessStatus = await readAccessStatus(data.user.id, data.user.email);
+    if (accessStatus !== "ACTIVE") {
+      res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
+      const pending = accessStatus === "PENDING";
+      // A pending OAuth account is also the device's one account: refuse a
+      // DIFFERENT unapproved account on this device, otherwise bind this one
+      // (the same account re-signing in must not block itself).
+      if (pending) {
+        const device = await checkDeviceSignupLimit(req, res, data.user.id);
+        if (device.limited) {
+          res.status(403).json({ error: DEVICE_SIGNUP_LIMIT_MESSAGE, code: "DEVICE_SIGNUP_LIMIT" });
+          return;
+        }
+        await bindDeviceToAccount(device.deviceId, data.user.id);
+      }
+      const statusToken = pending ? createStatusToken(data.user.id) : undefined;
+      res.status(403).json({
+        error: pending ? "Account pending approval" : "Account not approved",
+        code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
+        message: pending
+          ? "Your account was created and is awaiting approval."
+          : "This account was not approved. Please contact the platform owner.",
+        ...(statusToken ? { statusToken } : {}),
+        ...(pending ? { user: null, accessToken: null } : {}),
+      });
+      return;
+    }
+
+    const role = await loadProfileRole(data.user.id);
+    const user = await buildExtendedUser(
+      data.user.id,
+      data.user.email,
+      role,
+      (data.user.user_metadata?.full_name as string | undefined) ?? null,
+    );
+    setSessionCookie(res, parsed.data.accessToken);
+    setRefreshCookie(res, parsed.data.refreshToken);
+    res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
+    res.json({ user, accessToken: parsed.data.accessToken });
+  } catch (err) {
+    console.error("[auth] OAuth session validation failed:", err);
+    res.status(500).json({ error: "Could not complete sign-in" });
+  }
+});
+
+router.post("/login", async (req: Request, res: Response) => {
+  const parsed = loginSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid email or password format" });
+    return;
+  }
+
+  const { data, error } = await signInWithPassword(parsed.data.email, parsed.data.password);
+
+  if (error || !data.user || !data.session) {
+    res.status(401).json({ error: "Invalid email or password" });
+    return;
+  }
+
+  // Credentials are valid, but access may not be: PENDING/REJECTED accounts
+  // never receive a session (no cookies are set on this path).
+  const accessStatus = await readAccessStatus(data.user.id, data.user.email);
+  if (accessStatus !== "ACTIVE") {
+    accessDenied(res, accessStatus, data.user.id);
+    return;
+  }
+
+  const user = await resolveSessionUser(data.user.id, data.user.email ?? parsed.data.email);
+  const extended = await buildExtendedUser(user.id, user.email, user.role);
+
+  setSessionCookie(res, data.session.access_token, data.session.expires_in);
+  if (data.session.refresh_token) setRefreshCookie(res, data.session.refresh_token);
+
+  const body: LoginResponse = { user: extended, accessToken: data.session.access_token };
+  res.json(body);
+});
+
+/**
+ * POST /api/auth/signup
+ * Body: { email, password, fullName? }
+ * 200 → { user, accessToken, message? }
+ * 202 → user created but needs email confirmation
+ */
+router.post("/signup", async (req: Request, res: Response) => {
+  const parsed = signupSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid signup details" });
+    return;
+  }
+
+  // One account per device without approval (owner 2026-11-09). An R1-granted
+  // email was pre-approved by an owner, so it skips the device gate entirely.
+  const r1PreApproved = await isR1GrantedEmail(parsed.data.email);
+  let deviceId: string | null = null;
+  if (!r1PreApproved) {
+    const device = await checkDeviceSignupLimit(req, res);
+    if (device.limited) {
+      res.status(403).json({ error: DEVICE_SIGNUP_LIMIT_MESSAGE, code: "DEVICE_SIGNUP_LIMIT" });
+      return;
+    }
+    deviceId = device.deviceId;
+  }
+
+  try {
+    const result = await signUp(parsed.data);
+
+    if (result.error) {
+      res.status(400).json({ error: "Something went wrong. Please try again." });
+      return;
+    }
+
+    // Bind the new account to this device before any early return, so a
+    // pending or email-confirmation signup still counts as the device's one
+    // account. Best-effort — never fails the signup response.
+    if (result.user && deviceId) {
+      await bindDeviceToAccount(deviceId, result.user.id);
+    }
+
+    if (result.needsEmailConfirmation || !result.user || !result.session) {
+      const body: SignupResponse = {
+        user: null,
+        accessToken: null,
+        message: "Check your email to confirm your account before logging in.",
+      };
+      res.status(202).json(body);
+      return;
+    }
+
+    // ── R1 grant fast-pass (migration 009): an owner-granted email was
+    // pre-approved by an owner, so it skips the PENDING queue entirely.
+    try {
+      if (r1PreApproved) {
+        await supabaseAdmin
+          .from("profiles")
+          .update({ access_status: "ACTIVE" })
+          .eq("id", result.user.id)
+          .neq("access_status", "ACTIVE");
+      }
+    } catch (grantErr) {
+      console.error("[auth] r1 grant fast-pass failed:", grantErr);
+    }
+
+    // ── Owner-approval flow: new accounts start PENDING ──
+    // NO session cookies are issued; the client gets a signed status token
+    // and is sent to the status screen instead of being logged in.
+    const accessStatus = await readAccessStatus(result.user.id, result.user.email);
+    if (accessStatus !== "ACTIVE") {
+      if (accessStatus === "REJECTED") {
+        accessDenied(res, accessStatus, result.user.id);
+        return;
+      }
+      const body: SignupResponse = {
+        user: null,
+        accessToken: null,
+        message:
+          "Your account was created and is awaiting approval. You can sign in after administrative and system approval.",
+        statusToken: createStatusToken(result.user.id),
+        accessStatus: "PENDING",
+      };
+      res.json(body);
+      return;
+    }
+
+    const user = await resolveSessionUser(result.user.id, result.user.email);
+    const extended = await buildExtendedUser(
+      user.id,
+      user.email,
+      user.role,
+      parsed.data.fullName ?? null,
+    );
+
+    setSessionCookie(res, result.session.access_token, result.session.expires_in);
+    if (result.session.refresh_token) setRefreshCookie(res, result.session.refresh_token);
+
+    const body: SignupResponse = { user: extended, accessToken: result.session.access_token };
+    res.json(body);
+  } catch (err) {
+    if (err instanceof AuthProviderError) {
+      const tooMany = err.code === "over_email_send_rate_limit" || err.status === 429;
+      res.status(err.status === 429 ? 429 : err.status || 400).json({
+        error: tooMany
+          ? "Too many signup attempts right now — please wait a minute and try again."
+          : err.message,
+        code: err.code ?? undefined,
+      });
+      return;
+    }
+    throw err;
+  }
+});
+
+/**
+ * POST /api/auth/refresh
+ * Preferred path: rotate the session using the long-lived `sb-refresh-token`
+ * cookie (set at login/signup). Supabase returns a fresh access token, so
+ * users stay signed in past the 1-hour access-token expiry instead of being
+ * hard-logged-out (the 2026-09-25 "still auth failing" report).
+ *
+ * Legacy fallback: no refresh cookie → re-validate the still-valid access
+ * token and re-set it (keeps older clients working).
+ *
+ * 200 → { user, accessToken }
+ * 401 → no valid session to refresh
+ */
+router.post("/refresh", async (req: Request, res: Response) => {
+  const refreshToken =
+    (req.cookies?.[REFRESH_COOKIE] as string | undefined) || undefined;
+
+  if (refreshToken) {
+    // Throwaway client: refreshSession stores the new user session on the
+    // client, which would downgrade the shared supabaseAdmin client's later
+    // data writes to the user's RLS rights (silent 0-row updates).
+    const { data, error } = await createAuthClient().auth.refreshSession({ refresh_token: refreshToken });
+    const session = data?.session;
+
+    if (!error && session?.access_token) {
+      const user = await getUserFromRequest({
+        headers: { authorization: `Bearer ${session.access_token}` },
+      } as unknown as Request, { allowUnapproved: true });
+      if (user) {
+        // A revoked (PENDING/REJECTED) account must not renew its session.
+        const accessStatus = await readAccessStatus(user.id, user.email);
+        if (accessStatus !== "ACTIVE") {
+          clearSessionCookie(res);
+          accessDenied(res, accessStatus, user.id);
+          return;
+        }
+        const extended = await buildExtendedUser(user.id, user.email, user.role);
+        setSessionCookie(res, session.access_token, session.expires_in);
+        // Supabase rotates refresh tokens on use — persist the new one.
+        if (session.refresh_token) setRefreshCookie(res, session.refresh_token);
+
+        const body: RefreshResponse = { user: extended, accessToken: session.access_token };
+        res.json(body);
+        return;
+      }
+    }
+    res.status(401).json({ error: "Invalid or expired session" });
+    return;
+  }
+
+  // ── Legacy fallback: access token still valid → re-set it ──
+  const token = extractToken(req);
+  if (!token) {
+    res.status(401).json({ error: "No session to refresh" });
+    return;
+  }
+
+  const user = await getUserFromRequest(req, { allowUnapproved: true });
+  if (!user) {
+    res.status(401).json({ error: "Invalid or expired session" });
+    return;
+  }
+
+  // Legacy branch: same approval gate as the refresh-token path.
+  const legacyAccess = await readAccessStatus(user.id, user.email);
+  if (legacyAccess !== "ACTIVE") {
+    clearSessionCookie(res);
+    accessDenied(res, legacyAccess, user.id);
+    return;
+  }
+
+  const extended = await buildExtendedUser(user.id, user.email, user.role);
+  setSessionCookie(res, token);
+
+  const body: RefreshResponse = { user: extended, accessToken: token };
+  res.json(body);
+});
+
+/**
+ * POST /api/auth/logout
+ * Clears the session cookie and best-effort invalidates the token.
+ * 200 → { ok: true }
+ */
+router.post("/logout", async (req: Request, res: Response) => {
+  const token = extractToken(req);
+  if (token) {
+    await signOut(token);
+  }
+  clearSessionCookie(res);
+  const body: LogoutResponse = { ok: true };
+  res.json(body);
+});
+
+/**
+ * GET /api/auth/account-status?token=<statusToken>
+ * Poll endpoint for the post-signup status screen — works WITHOUT a session
+ * (the signup response carries the signed token) and cannot be used to probe
+ * whether an arbitrary email is registered (a valid token is required).
+ * 200 → { accessStatus, fullName }
+ * 401 → invalid/expired token
+ * 404 → token valid but account row missing
+ */
+router.get("/account-status", async (req: Request, res: Response) => {
+  const token = typeof req.query.token === "string" ? req.query.token : null;
+  const userId = verifyStatusToken(token);
+  if (!userId) {
+    res.status(401).json({ error: "Invalid or expired status token" });
+    return;
+  }
+
+  const { data: profile } = await supabaseAdmin
+    .from("profiles")
+    .select("access_status, full_name")
+    .eq("id", userId)
+    .maybeSingle();
+
+  if (!profile) {
+    res.status(404).json({ error: "Account not found" });
+    return;
+  }
+
+  const raw = (profile.access_status as string | undefined) ?? "PENDING";
+  res.json({
+    accessStatus: raw === "ACTIVE" || raw === "REJECTED" ? raw : "PENDING",
+    fullName: (profile.full_name as string | null) ?? null,
+  });
+});
+
+/**
+ * GET /api/auth/me
+ * 200 → { user: ExtendedSessionUser | null }
+ * 401 → no valid session
+ */
+router.get("/me", async (req: Request, res: Response) => {
+  const user = await getUserFromRequest(req, { allowUnapproved: true });
+
+  if (!user) {
+    res.status(401).json({ error: "Unauthorized" });
+    return;
+  }
+
+  // Live approval gate: an account revoked mid-session loses its profile
+  // immediately (the client clears state on this 403).
+  const accessStatus = await readAccessStatus(user.id, user.email);
+  if (accessStatus !== "ACTIVE") {
+    clearSessionCookie(res);
+    accessDenied(res, accessStatus, user.id);
+    return;
+  }
+
+  const extended = await buildExtendedUser(user.id, user.email, user.role);
+  const body: MeResponse = { user: extended };
+  res.json(body);
+});
+
+// ── Password recovery (owner feature 2026-09-28) ─────────────────────────────
+
+const forgotPasswordSchema = z.object({ email: z.string().trim().email() });
+
+/**
+ * POST /api/auth/forgot-password — { email }
+ * 200 always (anti-enumeration): Supabase emails the recovery link when the
+ * account exists; the response is identical when it does not. Rate-limited
+ * by middleware (password-reset tier, 3/hour).
+ */
+router.post("/forgot-password", async (req: Request, res: Response) => {
+  const parsed = forgotPasswordSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Enter a valid email address" });
+    return;
+  }
+
+  const base = (
+    process.env.FRONTEND_URL ||
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    "http://localhost:5173"
+  ).replace(/\/+$/, "");
+  const redirectTo = `${base}/reset-password`;
+
+  try {
+    const { error } = await supabaseAdmin.auth.resetPasswordForEmail(parsed.data.email, {
+      redirectTo,
+    });
+    if (error) {
+      // Never leak whether the address exists; log for ops instead.
+      console.warn("[auth] resetPasswordForEmail failed:", error.message);
+    }
+  } catch (err: any) {
+    console.warn("[auth] resetPasswordForEmail error:", err?.message ?? err);
+  }
+
+  res.json({ sent: true });
+});
+
+/**
+ * POST /api/auth/reset-password — { password, code?, token? }
+ * The recovery email lands on /reset-password, which forwards either the
+ * PKCE `code` (query) or the implicit `access_token` (hash) here. The user
+ * id behind that proof is resolved server-side and the password is set
+ * through the Supabase admin API — no session is issued on this path.
+ */
+router.post("/reset-password", async (req: Request, res: Response) => {
+  const body = req.body as { password?: unknown; code?: unknown; token?: unknown };
+  const password = typeof body.password === "string" ? body.password : "";
+  const code = typeof body.code === "string" && body.code ? body.code : null;
+  const token = typeof body.token === "string" && body.token ? body.token : null;
+
+  if (password.length < 8 || password.length > 72) {
+    res.status(400).json({ error: "Password must be between 8 and 72 characters" });
+    return;
+  }
+  if (!code && !token) {
+    res
+      .status(400)
+      .json({ error: "This reset link is missing or malformed. Please request a new one." });
+    return;
+  }
+
+  try {
+    let userId: string | null = null;
+
+    if (code) {
+      const { data, error } = await supabaseAdmin.auth.exchangeCodeForSession(code);
+      if (error || !data?.user) {
+        console.warn("[auth] exchangeCodeForSession failed:", error?.message ?? "no user");
+        res
+          .status(400)
+          .json({ error: "This reset link is invalid or has expired. Please request a new one." });
+        return;
+      }
+      userId = data.user.id;
+    } else if (token) {
+      const { data, error } = await supabaseAdmin.auth.getUser(token);
+      if (error || !data?.user) {
+        console.warn("[auth] recovery token rejected:", error?.message ?? "no user");
+        res
+          .status(400)
+          .json({ error: "This reset link is invalid or has expired. Please request a new one." });
+        return;
+      }
+      userId = data.user.id;
+    }
+
+    if (!userId) {
+      res
+        .status(400)
+        .json({ error: "This reset link is invalid or has expired. Please request a new one." });
+      return;
+    }
+
+    const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(userId, {
+      password,
+    });
+    if (updateError) {
+      console.error("[auth] password reset failed:", updateError.message);
+      res.status(400).json({
+        error:
+          "Could not update the password. The link may have expired — please request a new one.",
+      });
+      return;
+    }
+
+    console.info(`[auth] password reset completed for user ${userId}`);
+    res.json({ success: true });
+  } catch (err: any) {
+    console.error("[auth] reset-password error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+export default router;

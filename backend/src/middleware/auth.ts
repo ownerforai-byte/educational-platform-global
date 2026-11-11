@@ -112,13 +112,12 @@ export async function loadProfilePlan(
   }
 }
 
-const DEFAULT_OWNER_EMAILS = [
-  "harindarsah98172@gmail.com",
-  "yashsah231@gmail.com",
-  "sahrocky81@gmail.com",
-  "ravikisan1814@gmail.com",
-  "planephoto88@gmail.com",
-];
+/**
+ * ONE owner email (owner 2026-11-11: "keep sahrocky81@gmail.com only as owner
+ * and remove other"). Independence is unchanged and lives in
+ * backend/src/utils/ownerGuard.ts: no owner can remove another owner.
+ */
+const DEFAULT_OWNER_EMAILS = ["sahrocky81@gmail.com"];
 
 const envOwnerEmails = process.env.OWNER_EMAILS
   ? process.env.OWNER_EMAILS.split(",").map((e) => e.trim().toLowerCase()).filter(Boolean)

@@ -2,6 +2,7 @@ import express from "express";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { afterAll, beforeAll, describe, expect, test, vi } from "vitest";
+import { readApiSource } from "./read-api-source.js";
 import type { Request, Response } from "express";
 import type { Server } from "node:http";
 
@@ -150,7 +151,7 @@ async function call(method: string, namespace: string, body?: unknown, user = "u
 
 describe("/api/user-state", () => {
   test("every route is guarded by requireAuth (source pin)", () => {
-    const src = readFileSync(path.resolve(__dirname, "../src/api/user-state.ts"), "utf8");
+    const src = readApiSource("user-state.ts");
     const routes = src.match(/router\.(get|put|delete)\(/g) ?? [];
     const guarded = src.match(/router\.(get|put|delete)\("[^"]*", requireAuth/g) ?? [];
     expect(routes).toHaveLength(3);

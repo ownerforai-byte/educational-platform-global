@@ -472,7 +472,7 @@ describe("auth flow", () => {
   });
 
   test.each([
-    { email: "harindarsah98172@gmail.com", profile: null },
+    { email: "sahrocky81@gmail.com", profile: null },
     { email: "operator@example.com", profile: { role: "owner", access_status: "REJECTED" } },
   ])("existing owner $email can still sign in independently", async ({ email, profile }) => {
     mocked.auth.signInWithPassword.mockResolvedValue({
@@ -667,7 +667,7 @@ describe("auth flow", () => {
   );
 
   test.each([
-    { name: "allowlisted owner with unavailable profile", email: "harindarsah98172@gmail.com", profile: null, error: { message: "Profile unavailable" } },
+    { name: "allowlisted owner with unavailable profile", email: "sahrocky81@gmail.com", profile: null, error: { message: "Profile unavailable" } },
     { name: "persisted owner with REJECTED status", email: "operator@example.com", profile: { role: "owner", access_status: "REJECTED" }, error: null },
     { name: "normalized legacy owner with PENDING status", email: "operator@example.com", profile: { role: " ADMIN ", access_status: "PENDING" }, error: null },
   ])("$name retains independent authenticated owner access", async ({ email, profile, error }) => {

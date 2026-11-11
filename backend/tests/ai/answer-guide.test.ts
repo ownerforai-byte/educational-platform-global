@@ -1,7 +1,7 @@
 import { describe, expect, test } from "vitest";
-import { readFileSync } from "node:fs";
 import { ANSWER_GUIDE_RULES } from "../../src/ai/answer-guide";
 import { MASTER_ACADEMIC_PROMPT } from "../../src/ai/prompts";
+import { readApiSource } from "../read-api-source.js";
 
 /**
  * ANSWER GUIDE contract (owner law 2026-10-27: "make all ai follow answers
@@ -16,8 +16,7 @@ import { MASTER_ACADEMIC_PROMPT } from "../../src/ai/prompts";
  * ai-evaluate.test.ts).
  */
 
-const read = (p: string) =>
-  readFileSync(new URL(`../../src/api/${p}`, import.meta.url), "utf8");
+const read = (p: string) => readApiSource(p);
 
 describe("ANSWER_GUIDE_RULES", () => {
   test("states the three laws", () => {

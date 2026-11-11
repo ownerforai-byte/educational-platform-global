@@ -1,0 +1,369 @@
+import { Router, Request, Response } from "express";
+import supportRequests from "../platform/support.controller";
+import { z } from "zod";
+import { requireAuth, isOwnerEmail, type AuthedRequest } from "../../middleware/auth";
+import { normalizeRole } from "../../auth/types";
+import { supabaseAdmin } from "../../db/supabase";
+import { canUnlockModule } from "../../utils/sectionAccess";
+import { ensureDailyCredits, spendCredits, DAILY_CREDIT_POOL } from "../../utils/credits";
+
+/**
+ * Persist the spark-unlock window for `moduleKey` into `profiles.credits_unlock`
+ * (a JSONB column: `{ [moduleKey]: expiresAtEpoch }`).
+ *
+ * Called after every successful unlock — both free (cost=0) and paid paths —
+ * so `POST /api/content/reveal` can verify the window without trusting any
+ * client-side value. Best-effort: a write failure is logged but never surfaced
+ * to the student (the unlock itself already succeeded).
+ *
+ * We use a Postgres `jsonb_set` merge via the RPC so concurrent writers on
+ * different module keys don't clobber each other. If the RPC is unavailable we
+ * fall back to a simple column update.
+ */
+async function persistUnlockWindow(
+  userId: string,
+  moduleKey: string | undefined,
+  expiresAt: number,
+): Promise<void> {
+  if (!moduleKey) return;
+  try {
+    // Merge the new key into the existing JSONB object atomically.
+    // The cast to `unknown` is intentional: PostgREST JSONB merge via .update
+    // accepts any JS object in the value position.
+    const { data: current } = await supabaseAdmin
+      .from("profiles")
+      .select("credits_unlock")
+      .eq("id", userId)
+      .maybeSingle();
+
+    const existing =
+      current?.credits_unlock && typeof current.credits_unlock === "object"
+        ? (current.credits_unlock as Record<string, unknown>)
+        : {};
+
+    await supabaseAdmin
+      .from("profiles")
+      .update({ credits_unlock: { ...existing, [moduleKey]: expiresAt } })
+      .eq("id", userId);
+  } catch (err: unknown) {
+    const e = err as Error;
+    console.warn("[unlock] failed to persist spark window for", userId, e?.message ?? e);
+  }
+}
+
+const router = Router();
+router.use("/support-requests", supportRequests);
+
+const premiumRequestSchema = z.object({
+  message: z.string().max(500).optional(),
+});
+
+/**
+ * GET /api/user/me
+ * Get current user's profile including credits and premium status.
+ */
+router.get("/me", requireAuth, async (req: Request, res: Response) => {
+  const user = (req as AuthedRequest).user;
+
+  try {
+    // Lazy midnight reset: a fetch after 12:00 AM surfaces today's pool.
+    const ensured = await ensureDailyCredits(user.id, user.email, user.role);
+
+    const { data: profile, error } = await supabaseAdmin
+      .from("profiles")
+      .select("id, full_name, role, credits, credits_limit, premium_status, premium_approved_at")
+      .eq("id", user.id)
+      .maybeSingle();
+
+    if (error) {
+      console.error("Failed to fetch profile:", error.message);
+      res.status(500).json({ error: "Failed to fetch profile" });
+      return;
+    }
+
+    const { data: pendingRequests, error: pendingError } = await supabaseAdmin
+      .from("premium_requests")
+      .select("id, status, created_at")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false })
+      .limit(5);
+
+    if (pendingError) {
+      console.error("Failed to fetch pending requests:", pendingError.message);
+    }
+
+    res.json({
+      id: user.id,
+      email: user.email,
+      fullName: profile?.full_name ?? null,
+      role: normalizeRole(profile?.role) ?? user.role,
+      // Membership tier for the AI-spark allowance (member 13 / plus 25 /
+      // pro 50 per day, owner unlimited) — see utils/aiSpark.ts. The session
+      // already carries the tolerant plan read (migration 008); the legacy
+      // premium_status flag maps to "pro".
+      plan: user.plan ?? (profile?.premium_status === true ? "pro" : "member"),
+      credits: ensured.unlimited ? profile?.credits ?? 0 : (profile?.credits ?? ensured.credits),
+      dailyPool: ensured.unlimited ? null : DAILY_CREDIT_POOL,
+      creditsLimit: profile?.credits_limit ?? 100,
+      premiumStatus: profile?.premium_status ?? false,
+      premiumApprovedAt: profile?.premium_approved_at ?? null,
+      pendingRequests: pendingRequests ?? [],
+    });
+  } catch (err: any) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/**
+ * POST /api/user/credits/request
+ * Submit a premium request.
+ */
+router.post("/credits/request", requireAuth, async (req: Request, res: Response) => {
+  const user = (req as AuthedRequest).user;
+  const parsed = premiumRequestSchema.safeParse(req.body);
+
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid payload" });
+    return;
+  }
+
+  try {
+    // Check if user already has a pending request
+    const { data: existing } = await supabaseAdmin
+      .from("premium_requests")
+      .select("id")
+      .eq("user_id", user.id)
+      .eq("status", "PENDING")
+      .maybeSingle();
+
+    if (existing) {
+      res.status(400).json({ error: "You already have a pending premium request" });
+      return;
+    }
+
+    // Check if user is already premium
+    const { data: profile } = await supabaseAdmin
+      .from("profiles")
+      .select("premium_status")
+      .eq("id", user.id)
+      .maybeSingle();
+
+    if (profile?.premium_status) {
+      res.status(400).json({ error: "You are already a premium member" });
+      return;
+    }
+
+    const { data, error } = await supabaseAdmin
+      .from("premium_requests")
+      .insert({
+        user_id: user.id,
+        message: parsed.data.message ?? null,
+        status: "PENDING",
+      })
+      .select("id, status")
+      .single();
+
+    if (error) {
+      console.error("Failed to create premium request:", error.message);
+      res.status(500).json({ error: "Failed to submit premium request" });
+      return;
+    }
+
+    res.status(201).json(data);
+  } catch (err: any) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// ── Spark value allocation matrix (authoritative — mirrors the client) ──────
+// Spark billing (owner decision 2026-10-12: "charge for actual note or content
+// -- remove for others"): ONLY actual note/content unlocks (theory + reference
+// study material) cost content sparks. Labs, visuals and the Diagram Hub are
+// free — no charge, ever. Veer chat uses AI sparks only (see utils/aiSpark.ts).
+const UNLOCK_COSTS: Record<"lab3d" | "visuals" | "theory" | "reference" | "imagehub", number> = {
+  lab3d: 0,
+  visuals: 0,
+  theory: 1,
+  reference: 1,
+  imagehub: 0,
+};
+
+const UNLOCK_WINDOW_SECONDS = 1200; // 20 minutes
+
+const unlockSchema = z.object({
+  category: z.enum(["lab3d", "visuals", "theory", "reference", "imagehub"]),
+  moduleKey: z.string().min(1).max(200).optional(),
+});
+
+/**
+ * POST /api/user/credits/unlock
+ * Deduct the category's CONTENT-SPARK cost and return the 20-minute window
+ * expiration. Only actual note/content categories (theory, reference) carry a
+ * spark cost; every other category costs 0 and must never touch the balance.
+ *
+ * PRO (premium_status) is unlimited and free. Owner-allowlist emails are free
+ * only while their profile toggle is OFF; when the gate is ON they pay like
+ * students. Students/customers ALWAYS pay (must purchase sparks).
+ *
+ * 401 — unauthenticated
+ * 402 — insufficient sparks (pool exhausted)
+ * 400 — unknown category
+ * 200 — { credits, expiresAt, cost }
+ */
+router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) => {
+  const user = (req as AuthedRequest).user;
+  const parsed = unlockSchema.safeParse(req.body);
+
+  if (!parsed.success) {
+    res.status(400).json({ error: "Unknown content category" });
+    return;
+  }
+
+  const { category, moduleKey } = parsed.data;
+  const cost = UNLOCK_COSTS[category] ?? 0;
+
+  // SECTION TIER: refuse before any balance read/write when the viewer's rung
+  // does not open the section behind this key (e.g. a Member unlocking /srs).
+  if (!(await canUnlockModule(user, isOwnerEmail(user.email), moduleKey))) {
+    res.status(403).json({ error: "This section is not available on your plan." });
+    return;
+  }
+
+  const expiresAt = Math.floor(Date.now() / 1000) + UNLOCK_WINDOW_SECONDS;
+
+  // FREE categories (labs, visuals, Diagram Hub): open the window and return —
+  // the balance is never read, never written, never logged.
+  if (cost === 0) {
+    const { data: freeProfile } = await supabaseAdmin
+      .from("profiles")
+      .select("role, credits, premium_status")
+      .eq("id", user.id)
+      .maybeSingle();
+    if (category === "imagehub" && !isOwnerEmail(user.email)) {
+      res.status(403).json({
+        error: "The Diagram Hub is reserved for owner accounts.",
+      });
+      return;
+    }
+    // Persist the window so POST /api/content/reveal can verify it server-side.
+    void persistUnlockWindow(user.id, moduleKey, expiresAt);
+    res.json({ credits: freeProfile?.credits ?? 0, expiresAt, cost: 0 });
+    return;
+  }
+
+  try {
+    const { data: profile, error: profileError } = await supabaseAdmin
+      .from("profiles")
+      .select("role, credits, premium_status")
+      .eq("id", user.id)
+      .maybeSingle();
+
+    if (profileError) {
+      console.error("Unlock: profile lookup failed:", profileError.message);
+      res.status(500).json({ error: "Failed to load profile" });
+      return;
+    }
+
+    const role = normalizeRole(profile?.role);
+    const premiumStatus = profile?.premium_status ?? false;
+    const owner = isOwnerEmail(user.email);
+
+    // DIAGRAM HUB (owner request 2026-10-06: "available for owner emails only …
+    // under coin gate of 5 coin but free for owner and only for owner"): the
+    // section is priced at 5 coins, but only owner emails may open it at all —
+    // a non-owner unlock attempt is refused here, never charged. Owners always
+    // pass free, independent of the bill-everyone toggle.
+    if (category === "imagehub") {
+      if (!owner) {
+        res.status(403).json({
+          error: "The Diagram Hub is reserved for owner accounts.",
+        });
+        return;
+      }
+      void persistUnlockWindow(user.id, moduleKey, expiresAt);
+      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
+      return;
+    }
+
+    // PRO is unlimited and free. Everyone else — owners included — pays from
+    // the same daily pool (the owner ON/OFF coin switch was removed
+    // 2026-11-06).
+    if (premiumStatus) {
+      void persistUnlockWindow(user.id, moduleKey, expiresAt);
+      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
+      return;
+    }
+
+    // Fresh daily pool first (same pool every other consumer draws from),
+    // then an ATOMIC compare-and-swap spend — the old read-then-write
+    // deduction lost concurrent updates and treated a zero-row UPDATE as
+    // success, silently issuing unlocks (or charging inconsistently).
+    const ensured = await ensureDailyCredits(user.id, user.email, role, premiumStatus);
+
+    // OWNER/PRO skip all checks — window still applies for UI consistency.
+    if (ensured.unlimited) {
+      void persistUnlockWindow(user.id, moduleKey, expiresAt);
+      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
+      return;
+    }
+
+    if (ensured.credits < cost) {
+      res.status(402).json({
+        error: "Insufficient credits",
+        required: cost,
+        current: ensured.credits,
+        message: "You need more content sparks to unlock this note.",
+      });
+      return;
+    }
+
+    const reason = `Content spark: unlocked ${category}${moduleKey ? ` (${moduleKey})` : ""} for 20-min window`;
+    const remaining = await spendCredits(user.id, cost, reason);
+
+    if (remaining === null) {
+      // Balance read said there was enough, yet the CAS never landed —
+      // concurrent spend or a storage problem. Fail closed, loudly.
+      console.error("Unlock: atomic credit spend failed for", user.id);
+      res.status(500).json({ error: "Failed to deduct credits" });
+      return;
+    }
+
+    void persistUnlockWindow(user.id, moduleKey, expiresAt);
+    res.json({ credits: remaining, expiresAt, cost });
+  } catch (err: any) {
+    console.error("Unlock error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/**
+ * GET /api/user/credits/transactions
+ * Get current user's credit transaction history.
+ */
+router.get("/credits/transactions", requireAuth, async (req: Request, res: Response) => {
+  const user = (req as AuthedRequest).user;
+
+  try {
+    const { data, error } = await supabaseAdmin
+      .from("credit_transactions")
+      .select("*")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false })
+      .limit(50);
+
+    if (error) {
+      console.error("Failed to fetch transactions:", error.message);
+      res.status(500).json({ error: "Failed to fetch transactions" });
+      return;
+    }
+
+    res.json(data ?? []);
+  } catch (err: any) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+export default router;

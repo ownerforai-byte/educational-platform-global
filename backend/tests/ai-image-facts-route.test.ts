@@ -1,7 +1,7 @@
 import express from "express";
-import { readFileSync } from "node:fs";
 import path from "node:path";
 import { afterAll, beforeAll, describe, expect, test, vi } from "vitest";
+import { readApiSource } from "./read-api-source.js";
 import type { Request, Response } from "express";
 import type { Server } from "node:http";
 
@@ -114,10 +114,7 @@ describe("parseFactLines — model noise → clean card", () => {
 
 describe("/api/ai/image-facts", () => {
   test("is guarded by requireAuth (source pin)", () => {
-    const src = readFileSync(
-      path.resolve(__dirname, "../src/api/ai-image-facts.ts"),
-      "utf8",
-    );
+    const src = readApiSource("ai-image-facts.ts");
     expect(src).toMatch(/router\.post\("[^"]*", requireAuth/);
   });
 

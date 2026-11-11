@@ -10,6 +10,7 @@ import type { NextFunction, Request, Response } from "express";
  */
 
 import { requireRole, requireTier } from "../src/middleware/auth";
+import { readApiSource } from "./read-api-source.js";
 
 function run(
   middleware: (req: Request, res: Response, next: NextFunction) => void,
@@ -64,12 +65,7 @@ describe("requireTier — the ladder as an API guard", () => {
 
 describe("section-backed route scope", () => {
   it("the Past Papers bank route is wired requireAuth + requireTier('plus')", async () => {
-    const fs = await import("node:fs");
-    const path = await import("node:path");
-    const src = fs.readFileSync(
-      path.resolve("src/api/pyqs.ts"),
-      "utf8",
-    );
+    const src = readApiSource("pyqs.ts");
     expect(src).toContain('requireTier("plus")');
     expect(src).toContain("requireAuth");
   });

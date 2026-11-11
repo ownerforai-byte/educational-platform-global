@@ -57,7 +57,8 @@ import lessonsRoutes from "./api/lessons";
 import { rateLimit } from "./middleware/rateLimit";
 import { isOriginAllowed } from "./middleware/cors";
 import { securityHeaders, LEGACY_STATIC_PAGE_CSP } from "./middleware/securityHeaders";
-import { errorHandler, notFoundHandler } from "./middleware/errors";
+import { errorHandler, notFoundHandler } from "./middleware/error-handler";
+import { requestLogger } from "./middleware/request-logger";
 import { logRegisteredRoutes } from "./utils/routeDebug";
 import { hasAnyLlmKey } from "./ai/config";
 import { describeFreeLlmPresence } from "./ai/free-llm-providers";
@@ -86,6 +87,7 @@ export function createApp(): express.Express {
     }),
   );
   app.use(morgan("combined"));
+  app.use(requestLogger);
   // gzip/deflate JSON responses (perf pass 2026-10-27): the curriculum
   // endpoints return large JSON bodies; compression shrinks them several-fold
   // on the wire for students on slow Nepali mobile networks. The middleware

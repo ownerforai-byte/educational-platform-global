@@ -1,0 +1,465 @@
+import { Router, Request, Response } from "express";
+import { serverError } from "../../middleware/errors";
+import { normalizeRole } from "../../auth/types";
+import { isApprovedAccount } from "../../middleware/auth";
+import { supabaseAdmin } from "../../db/supabase";
+
+const router = Router();
+
+async function requireUser(req: Request, res: Response) {
+  res.set("Cache-Control", "private, no-store");
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    res.status(401).json({ error: "Unauthorized" });
+    return null;
+  }
+
+  const token = authHeader.slice(7);
+  const { data, error } = await supabaseAdmin.auth.getUser(token);
+
+  if (error || !data.user) {
+    res.status(401).json({ error: "Unauthorized" });
+    return null;
+  }
+
+  return data.user;
+}
+
+// Content-editing gate: the plus rung and up. Legacy role values normalize
+// through the single legacy map (auth/types.ts) before the rung check, so an
+// unmigrated row is graded on its normalized rung, never rejected outright.
+async function requireContentEditor(req: Request, res: Response) {
+  const user = await requireUser(req, res);
+  if (!user) return null;
+
+  const { data: profile } = await supabaseAdmin
+    .from("profiles")
+    .select("role, access_status")
+    .eq("id", user.id)
+    .single();
+
+  if (!isApprovedAccount({ email: user.email, role: profile?.role }, profile?.access_status)) {
+    res.status(401).json({ error: "Unauthorized" });
+    return null;
+  }
+
+  const role = normalizeRole(profile?.role);
+  if (!profile || !role || !["plus", "pro", "owner"].includes(role)) {
+    res.status(403).json({ error: "Forbidden" });
+    return null;
+  }
+
+  return { user, profile };
+}
+
+// Ownership guard: with the service-role key RLS is inert, so the routes that
+// return or modify rows must enforce ownership explicitly. Privileged rungs
+// (pro/owner) manage everything; a plus editor may only manage resources they
+// created. Prevents one editor from reading or overwriting another editor's
+// unpublished drafts via the /edit and PATCH endpoints.
+function canManageResource(
+  user: { id: string },
+  profile: { role?: string | null },
+  row: { created_by: string | null }
+): boolean {
+  const role = normalizeRole(profile?.role);
+  if (role === "pro" || role === "owner") return true;
+  return row.created_by != null && row.created_by === user.id;
+}
+
+router.get("/", async (_req: Request, res: Response) => {
+  try {
+    const topicId = typeof _req.query.topic_id === "string" ? _req.query.topic_id : undefined;
+
+    let query = supabaseAdmin
+      .from("resources")
+      .select("*")
+      .eq("is_published", true)
+      .order("type", { ascending: true });
+
+    if (topicId) {
+      query = query.eq("topic_id", topicId);
+    } else {
+      query = query.limit(50);
+    }
+
+    const { data, error } = await query;
+
+    if (error) {
+      serverError(res, error);
+      return;
+    }
+
+    res.json(data ?? []);
+  } catch (err: any) {
+    console.error("resources GET failed:", err);
+    serverError(res, err);
+  }
+});
+
+router.post("/", async (req: Request, res: Response) => {
+  const auth = await requireContentEditor(req, res);
+  if (!auth) return;
+
+  const { topic_id, type, title, content, media_url, metadata } = req.body;
+
+  if (!topic_id || !type || !title) {
+    res.status(400).json({ error: "Missing required fields" });
+    return;
+  }
+
+  const { data, error } = await supabaseAdmin
+    .from("resources")
+    .insert({
+      topic_id,
+      type,
+      title,
+      content: content ?? {},
+      media_url: media_url ?? null,
+      metadata: metadata ?? {},
+      created_by: auth.user.id,
+      is_published: false,
+    })
+    .select("*")
+    .single();
+
+  if (error) {
+    serverError(res, error);
+    return;
+  }
+
+  res.status(201).json(data);
+});
+
+router.get("/:id", async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  const { data, error } = await supabaseAdmin
+    .from("resources")
+    .select("*")
+    .eq("id", id)
+    .eq("is_published", true)
+    .single();
+
+  if (error || !data) {
+    res.status(404).json({ error: "Not found" });
+    return;
+  }
+
+  res.json(data);
+});
+
+router.get("/:id/edit", async (req: Request, res: Response) => {
+  const auth = await requireContentEditor(req, res);
+  if (!auth) return;
+
+  const { id } = req.params;
+
+  const { data, error } = await supabaseAdmin
+    .from("resources")
+    .select("*")
+    .eq("id", id)
+    .single();
+
+  if (error || !data) {
+    res.status(404).json({ error: "Not found" });
+    return;
+  }
+
+  if (!canManageResource(auth.user, auth.profile, data)) {
+    res.status(403).json({ error: "Forbidden" });
+    return;
+  }
+
+  res.json(data);
+});
+
+router.get("/:id/linked", async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+
+    const { data, error } = await supabaseAdmin
+      .from("resource_references")
+      .select("id, reference_type, attribution, referenced:referenced_id(*)")
+      .eq("resource_id", id);
+
+    if (error) {
+      console.error("linked resources lookup failed:", error.message);
+      serverError(res, error);
+      return;
+    }
+
+    res.json(data ?? []);
+  } catch (err: any) {
+    console.error("linked resources lookup failed:", err);
+    serverError(res, err);
+  }
+});
+
+// Strict field allowlist for PATCH. Service-role key makes RLS inert, so this
+// route-level check is the only guard against mass-assignment
+// (created_by / role / id must never be client-settable).
+const BASE_PATCH_FIELDS = [
+  "title",
+  "description",
+  "url",
+  "type",
+  "content",
+  "media_url",
+  "topic_id",
+  "metadata",
+] as const;
+const PRIVILEGED_PATCH_FIELDS = ["is_published"] as const;
+const FORBIDDEN_PATCH_FIELDS = [
+  "id",
+  "created_by",
+  "owner",
+  "user_id",
+  "role",
+] as const;
+
+function isValidJsonMetadata(value: unknown): boolean {
+  return (
+    value === null ||
+    (typeof value === "object" && !Array.isArray(value) && !Buffer.isBuffer(value))
+  );
+}
+
+// `content` is stored as jsonb and is the payload of structured resources
+// (NOTES, QUIZ, MINDMAP, ...). Accept the shapes the rest of the app already
+// understands: JSON objects, and plain strings (legacy free-form content that
+// the edit page normalizes to { text }). Arrays and primitives have no
+// consumer, so they are rejected to keep rows in a known shape.
+function isValidResourceContent(value: unknown): boolean {
+  return (
+    value === null ||
+    typeof value === "string" ||
+    (typeof value === "object" && !Array.isArray(value) && !Buffer.isBuffer(value))
+  );
+}
+
+function buildResourcePatch(
+  body: Record<string, unknown>,
+  isAdmin: boolean
+): { updates: Record<string, unknown>; rejected: string[] } {
+  const allowed = new Set<string>(BASE_PATCH_FIELDS);
+  if (isAdmin) {
+    for (const f of PRIVILEGED_PATCH_FIELDS) allowed.add(f);
+  }
+
+  const rejected: string[] = [];
+  for (const key of Object.keys(body)) {
+    if (FORBIDDEN_PATCH_FIELDS.includes(key as never) || !allowed.has(key)) {
+      rejected.push(key);
+      continue;
+    }
+    if (key === "metadata" && !isValidJsonMetadata(body[key])) {
+      rejected.push(key);
+      continue;
+    }
+    if (key === "content" && !isValidResourceContent(body[key])) {
+      rejected.push(key);
+    }
+  }
+  if (rejected.length > 0) {
+    return { updates: {}, rejected };
+  }
+
+  const updates: Record<string, unknown> = {};
+  for (const key of allowed) {
+    if (key in body) updates[key] = body[key];
+  }
+  return { updates, rejected };
+}
+
+router.patch("/:id", async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  const auth = await requireContentEditor(req, res);
+  if (!auth) return;
+
+  // Ownership check: only the creator (or a pro/owner rung) may patch this
+  // resource. Mirrors the DELETE guard; stops cross-editor overwrites of
+  // other editors' drafts.
+  const { data: existing } = await supabaseAdmin
+    .from("resources")
+    .select("id, created_by")
+    .eq("id", id)
+    .maybeSingle();
+
+  if (!existing) {
+    res.status(404).json({ error: "Not found" });
+    return;
+  }
+  if (!canManageResource(auth.user, auth.profile, existing)) {
+    res.status(403).json({ error: "Forbidden" });
+    return;
+  }
+
+  const body =
+    req.body && typeof req.body === "object" && !Array.isArray(req.body)
+      ? (req.body as Record<string, unknown>)
+      : {};
+
+  const role = normalizeRole(auth.profile.role);
+  const isAdmin = role === "pro" || role === "owner";
+
+  const { updates, rejected } = buildResourcePatch(body, isAdmin);
+  if (rejected.length > 0) {
+    res.status(400).json({
+      error: `Unknown or forbidden fields: ${rejected.join(", ")}`,
+      fields: rejected,
+    });
+    return;
+  }
+
+  if (Object.keys(updates).length === 0) {
+    res.status(400).json({ error: "No valid fields to update" });
+    return;
+  }
+
+  const { data, error } = await supabaseAdmin
+    .from("resources")
+    .update(updates)
+    .eq("id", id)
+    .select("*")
+    .single();
+
+  if (error) {
+    console.error("resources PATCH failed:", error.message);
+    res.status(500).json({ error: "Update failed" });
+    return;
+  }
+
+  res.json(data);
+});
+
+router.delete("/:id", async (req: Request, res: Response) => {
+  const { id } = req.params;
+
+  const auth = await requireContentEditor(req, res);
+  if (!auth) return;
+
+  // Fetch row first: with the service-role key RLS is inert, so ownership
+  // must be enforced here explicitly.
+  const { data: row } = await supabaseAdmin
+    .from("resources")
+    .select("id, created_by")
+    .eq("id", id)
+    .maybeSingle();
+
+  if (!row) {
+    res.status(404).json({ error: "Not found" });
+    return;
+  }
+
+  const role = normalizeRole(auth.profile.role);
+  const isPrivileged = role === "pro" || role === "owner";
+  const isOwner = row.created_by === auth.user.id;
+
+  if (!isPrivileged && !isOwner) {
+    res.status(403).json({ error: "Forbidden" });
+    return;
+  }
+
+  const { error: refsByResourceError } = await supabaseAdmin
+    .from("resource_references")
+    .delete()
+    .eq("resource_id", id);
+
+  if (refsByResourceError) {
+    console.error("resource_references cleanup (resource_id) failed:", refsByResourceError.message);
+    res.status(500).json({ error: "Delete failed" });
+    return;
+  }
+
+  const { error: refsByReferencedError } = await supabaseAdmin
+    .from("resource_references")
+    .delete()
+    .eq("referenced_id", id);
+
+  if (refsByReferencedError) {
+    console.error("resource_references cleanup (referenced_id) failed:", refsByReferencedError.message);
+    res.status(500).json({ error: "Delete failed" });
+    return;
+  }
+
+  const { error } = await supabaseAdmin
+    .from("resources")
+    .delete()
+    .eq("id", id);
+
+  if (error) {
+    console.error("resources DELETE failed:", error.message);
+    res.status(500).json({ error: "Delete failed" });
+    return;
+  }
+
+  res.json({ success: true });
+});
+
+router.post("/:id/link", async (req: Request, res: Response) => {
+  const auth = await requireContentEditor(req, res);
+  if (!auth) return;
+
+  const { id } = req.params;
+  const body =
+    req.body && typeof req.body === "object" && !Array.isArray(req.body)
+      ? (req.body as Record<string, unknown>)
+      : {};
+  const resource_id = body.resource_id;
+  const referenced_id = body.referenced_id;
+  const reference_type = body.reference_type;
+  const attribution = body.attribution;
+
+  if (resource_id !== undefined && resource_id !== id) {
+    res.status(400).json({ error: "resource_id must match the URL id" });
+    return;
+  }
+
+  if (!referenced_id || !reference_type) {
+    res.status(400).json({ error: "Missing required fields" });
+    return;
+  }
+
+  const { data: resourceRow, error: resourceLookupError } = await supabaseAdmin
+    .from("resources")
+    .select("id, created_by")
+    .eq("id", id)
+    .maybeSingle();
+
+  if (resourceLookupError) {
+    serverError(res, resourceLookupError);
+    return;
+  }
+
+  if (!resourceRow) {
+    res.status(404).json({ error: "Not found" });
+    return;
+  }
+
+  if (!canManageResource(auth.user, auth.profile, resourceRow)) {
+    res.status(403).json({ error: "Forbidden" });
+    return;
+  }
+
+  const { data, error } = await supabaseAdmin
+    .from("resource_references")
+    .insert({
+      resource_id: id,
+      referenced_id,
+      reference_type,
+      attribution: attribution ?? null,
+    })
+    .select("*")
+    .single();
+
+  if (error) {
+    serverError(res, error);
+    return;
+  }
+
+  res.status(201).json(data);
+});
+
+export default router;

@@ -1,4 +1,4 @@
-﻿# â”€â”€ dependencies â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# â”€â”€ dependencies â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 /node_modules
 frontend/node_modules/
 backend/node_modules/
@@ -273,3 +273,9 @@ tokenkit-out/
 
 # One-off lab-block generation helpers (tmp-*) — never commit these.
 frontend/scripts/tmp-*
+
+# Architecture cleanup directories
+.logs/
+.secrets/
+frontend/.logs/
+
