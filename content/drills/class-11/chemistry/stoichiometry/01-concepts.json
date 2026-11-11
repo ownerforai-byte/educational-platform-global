@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Stoichiometry (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "stoichiometry",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-sto11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Equations count moles, not grams",
+      "question": "In 2H₂ + O₂ → 2H₂O, why can't you say '2 g of hydrogen reacts with 1 g of oxygen'?",
+      "solution": "Coefficients count PARTICLES (molecules/moles), not masses: 2 mol H₂ (4 g) react with 1 mol O₂ (32 g). Mass ratios follow from molar masses, not from the coefficients directly. Convert mass → moles first, apply the mole ratio, then convert back."
+    },
+    {
+      "id": "drill-sto11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Avogadro's law and gas volumes",
+      "question": "Why do equal volumes of H₂ and O₂ at the same T and P contain equal numbers of molecules even though their masses differ hugely?",
+      "solution": "Equal volumes at the same T and P contain equal numbers of MOLECULES (Avogadro's law) because gas volume depends on the number of particles, not their mass — the space between molecules dwarfs molecular size. 1 L of H₂ and 1 L of O₂ each hold ~2.7×10²² molecules, but the O₂ sample weighs 16× more (heavier molecules)."
+    },
+    {
+      "id": "drill-sto11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Percentage yield",
+      "question": "Theoretical yield of a reaction is 25.0 g but 21.0 g is obtained. Calculate the percentage yield and give two realistic reasons for the shortfall.",
+      "solution": "% yield = (21.0/25.0) × 100 = 84%. Reasons: (1) side reactions consuming reactants to form by-products; (2) mechanical losses during transfer, filtration or purification (product left on filter paper, in solution); (3) equilibrium not fully shifted to products. Real chemistry never hits 100% — the yield measures how close the process got."
+    },
+    {
+      "id": "drill-sto11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Concentration units",
+      "question": "Why is molarity temperature-dependent while molality is not, and when does the difference matter?",
+      "solution": "Molarity = mol/Litre of SOLUTION — the volume expands on heating, so molarity drifts. Molality = mol/kg of SOLVENT — masses don't change with temperature. The difference matters in colligative-property calculations and any precision work across a temperature range; chemists use molality there."
+    },
+    {
+      "id": "drill-sto11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Limiting reagent identification",
+      "question": "N₂ + 3H₂ → 2NH₃: 2 mol N₂ with 3 mol H₂. Which is limiting and why is it NOT the smaller quantity?",
+      "solution": "3 mol H₂ needs 1 mol N₂ (ratio 3:1); 2 mol N₂ would need 6 mol H₂. H₂ runs out first — H₂ is limiting despite being the LARGER amount in moles. The limiting reagent is decided by the stoichiometric RATIO, never by which number is smaller."
+    }
+  ]
+}

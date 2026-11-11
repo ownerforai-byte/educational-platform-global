@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Oxidation & Reduction (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "oxidation-and-reduction",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-rx11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "One process, two partners",
+      "question": "Why can oxidation never occur alone? State the modern definitions.",
+      "solution": "Oxidation = loss of electrons; reduction = gain. Electrons lost must go somewhere — another species must accept them. So every redox reaction pairs an electron donor (reducing agent, itself oxidised) with an acceptor (oxidising agent, itself reduced). Electron transfer is the single underlying event."
+    },
+    {
+      "id": "drill-rx11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Oxidation number as bookkeeping",
+      "question": "In MnO₄⁻ → Mn²⁺, what happens to manganese's oxidation number and what does that tell you about the half-reaction?",
+      "solution": "Mn goes from +7 to +2 — a gain of 5 electrons: REDUCTION. Each MnO₄⁻ therefore consumes 5 electrons, which sets the stoichiometry when balancing half-equations (5 Fe²⁺ per MnO₄⁻ in acidic solution). Oxidation-number change counts the electrons transferred."
+    },
+    {
+      "id": "drill-rx11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Balancing by ion-electron method",
+      "question": "Balance MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ in acid. Show why the medium (acid vs base) changes the method.",
+      "solution": "Half-reactions: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O; Fe²⁺ → Fe³⁺ + e⁻. Multiply the iron equation by 5 and add: MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O. In ACID you add H⁺/H₂O to balance O and H; in BASE you balance as if acidic, then neutralise H⁺ with OH⁻ on both sides. The medium supplies the balancing atoms."
+    },
+    {
+      "id": "drill-rx11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Disproportionation",
+      "question": "Cl₂ + 2OH⁻ → Cl⁻ + ClO⁻ is called disproportionation. What single feature of chlorine's oxidation numbers makes it so?",
+      "solution": "The SAME element (Cl at 0) is simultaneously oxidised (to +1 in ClO⁻) and reduced (to −1 in Cl⁻). Disproportionation requires an intermediate oxidation state that can go both up and down — chlorine at 0 sits between −1 and +1. One species, two fates."
+    },
+    {
+      "id": "drill-rx11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Oxidising vs reducing agent strength",
+      "question": "Why is a strong oxidising agent itself easily reduced, and how does the activity series of metals encode this?",
+      "solution": "An oxidising agent accepts electrons readily — i.e. it is easily reduced; its strength is its electron affinity. The activity series ranks metals by ease of OXIDATION: K at top (most easily oxidised, strongest reducing agent), Au at bottom. A metal displaces any metal below it from solution — the electron-transfer hierarchy in action."
+    }
+  ]
+}

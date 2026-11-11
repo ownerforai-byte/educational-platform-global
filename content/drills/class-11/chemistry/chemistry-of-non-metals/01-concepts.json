@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Chemistry of Non-Metals (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "chemistry-of-non-metals",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-cnm11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why non-metals are oxidising",
+      "question": "Why do non-metals tend to act as oxidising agents while metals act as reducing agents?",
+      "solution": "Non-metals have high electron affinity and nearly full valence shells — they GAIN electrons (oxidising others, reducing themselves). Metals have low ionisation energies — they LOSE electrons easily (reducing others). Position on the periodic table sets the electron-transfer direction."
+    },
+    {
+      "id": "drill-cnm11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Allotropy",
+      "question": "Diamond and graphite are both pure carbon yet behave oppositely (hard insulator vs soft conductor). Explain with structure.",
+      "solution": "Diamond: each C bonds to 4 others in a 3D tetrahedral network (sp³) — rigid, no free electrons, hardest natural solid. Graphite: each C bonds to 3 in flat hexagonal layers (sp²) with delocalised electrons — layers slide (lubricant) and the π electrons conduct. Same element, different bonding geometry, opposite properties."
+    },
+    {
+      "id": "drill-cnm11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Oxides across a period",
+      "question": "How does the acid–base character of oxides change across period 3 (Na₂O → MgO → Al₂O₃ → SiO₂ → P₄O₁₀ → SO₃ → Cl₂O₇)? Explain the trend.",
+      "solution": "Strongly basic (Na₂O) → weakly basic (MgO) → amphoteric (Al₂O₃) → weakly acidic (SiO₂) → strongly acidic (P₄O₁₀, SO₃, Cl₂O₇). Cause: across the period the element's electronegativity rises, so the E–O bond becomes more COVALENT and the oxide more acidic; down a group, oxides become more basic (more ionic). Metallic → non-metallic character is mirrored in oxide behaviour."
+    },
+    {
+      "id": "drill-cnm11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Halogens' reactivity order",
+      "question": "Why does fluorine displace chlorine, bromine and iodine from their salts, but not the reverse?",
+      "solution": "Reactivity follows oxidising power: F₂ > Cl₂ > Br₂ > I₂ (smallest atom, highest electron affinity/electronegativity). A stronger oxidant displaces a weaker one from its halide — F₂ takes electrons from Cl⁻, but Cl₂ cannot oxidise F⁻. The displacement series is the oxidising-power ranking in action."
+    },
+    {
+      "id": "drill-cnm11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Inert pair effect",
+      "question": "Why does lead(II) compounds form more readily than lead(IV), unlike carbon which is tetravalent?",
+      "solution": "Down group 14, the ns² pair becomes increasingly reluctant to participate in bonding (poor shielding by d and f electrons, relativistic stabilisation) — the INERT PAIR effect. So the +2 state (using only p electrons) grows more stable down the group; carbon's 2s² is NOT inert, giving C its +4 chemistry."
+    }
+  ]
+}

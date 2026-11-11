@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — States of Matter (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "states-of-matter",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-sm11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Three states, one difference",
+      "question": "What single microscopic feature distinguishes solid, liquid and gas?",
+      "solution": "The balance between intermolecular ATTRACTION and molecular KE: solid — attraction dominates, particles vibrate in fixed positions; liquid — comparable, particles slide past each other but stay close; gas — KE dominates, particles fly independently. Heating tips the balance toward freedom; cooling toward order."
+    },
+    {
+      "id": "drill-sm11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Boyle's law microscopically",
+      "question": "At constant temperature, why does compressing a gas raise its pressure?",
+      "solution": "Constant T means constant molecular speed, so each collision delivers the same impulse. Compression packs the molecules closer — more collisions per second on each wall — raising pressure. P ∝ collision frequency ∝ number density at fixed speed."
+    },
+    {
+      "id": "drill-sm11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Deviation from ideal behaviour",
+      "question": "Under what conditions do real gases deviate most from ideal behaviour, and which assumption fails in each case?",
+      "solution": "High pressure: molecules occupy a significant fraction of the container — 'negligible molecular volume' fails, so the available volume is less than V (compressibility worse than ideal). Low temperature: molecular speeds drop, so intermolecular ATTRACTIONS have time to act — 'no forces' fails, pulling molecules together (compressibility better than ideal). Each condition breaks a different assumption."
+    },
+    {
+      "id": "drill-sm11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Critical temperature",
+      "question": "Why can a gas be liquefied by pressure alone below its critical temperature but not above it?",
+      "solution": "Liquefaction needs intermolecular attractions to overcome KE. Below Tc, the molecules' KE is low enough that pressure can push them into the liquid's attraction-dominated state. Above Tc, KE is too high — no pressure can hold molecules together as a liquid; the gas and liquid become indistinguishable (supercritical fluid)."
+    },
+    {
+      "id": "drill-sm11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Liquid's vapour pressure",
+      "question": "Why does a liquid in a closed container develop a fixed vapour pressure at a given temperature, and what does 'volatile' mean?",
+      "solution": "Evaporation and condensation run simultaneously; equilibrium is reached when rates equalise — the pressure of vapour at that balance is the vapour pressure, fixed by T (molecular energies) alone. A volatile liquid has weak intermolecular forces, so many molecules escape easily — high vapour pressure at low temperature."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Classification of Elements & Periodic Table (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "classification-of-elements-and-periodic-table",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-per11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Atomic radius trend and its cause",
+      "question": "Why does atomic radius DECREASE across a period but INCREASE down a group?",
+      "solution": "Across a period, protons are added to the same shell — nuclear charge rises while shielding barely changes, pulling electrons in (radius shrinks). Down a group, a new shell is added each period — the outer electrons sit farther out and are shielded by inner shells (radius grows). Effective nuclear charge vs shell number is the tug-of-war."
+    },
+    {
+      "id": "drill-per11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Ionisation energy anomalies",
+      "question": "Why is boron's first ionisation energy LOWER than beryllium's, breaking the across-period trend?",
+      "solution": "Be: 2s² — a paired, penetrating s electron. B: 2s²2p¹ — the new electron sits in a 2p orbital, which is higher in energy and less penetrating than 2s, so it is easier to remove. Subshell energy (2p above 2s) overrides the general nuclear-charge trend. Similar dips occur at O (paired p electron repulsion) vs N."
+    },
+    {
+      "id": "drill-per11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Electron affinity vs electronegativity",
+      "question": "Distinguish electron affinity from electronegativity, and explain why both peak near fluorine.",
+      "solution": "Electron affinity: the energy change when an ISOLATED gaseous atom gains an electron (a measurable process). Electronegativity: the TENDENCY of a BONDED atom to attract shared electrons (a derived, relative number). Both peak near F because a small atom with high nuclear charge and nearly full shell holds added/shared electrons most strongly — small size + high effective charge."
+    },
+    {
+      "id": "drill-per11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Metallic character trend",
+      "question": "Why is metallic character highest at the bottom-left of the periodic table and lowest at the top-right?",
+      "solution": "Metallic character = ease of LOSING electrons. Bottom-left: large atoms, low ionisation energy, outer electrons loosely held — easily lost. Top-right: small atoms, high ionisation energy plus high electron affinity — electrons gained, not lost. The diagonal from Cs/Fr to F marks the metal-to-nonmetal gradient."
+    },
+    {
+      "id": "drill-per11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Diagonal relationship",
+      "question": "Why do lithium resemble magnesium and beryllium resemble aluminium in chemistry?",
+      "solution": "Diagonal neighbours have similar charge/size ratios: Li⁺ and Mg²⁺ are similar in size and polarising power, as are Be²⁺ and Al³⁺. Similar polarising power → similar covalent character of compounds and similar solubility/thermal behaviour. The diagonal pairs' properties converge because size decrease and charge increase across the period offset each other."
+    }
+  ]
+}

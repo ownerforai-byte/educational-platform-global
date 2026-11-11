@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Hydrocarbons (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "hydrocarbons",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-hc11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Alkanes are saturated — why unreactive",
+      "question": "Why do alkanes resist most reagents while alkenes react readily?",
+      "solution": "Alkanes hold only strong, non-polar σ bonds with no electron-rich region to attack — no 'handle' for electrophiles or nucleophiles. Alkenes expose a π bond: electron-dense and loosely held, it attracts electrophiles and can open without breaking the σ framework. Reactivity follows available electron density."
+    },
+    {
+      "id": "drill-hc11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Markovnikov's rule via carbocation",
+      "question": "HBr adds to propene giving 2-bromopropane. Justify the regiochemistry through the intermediate.",
+      "solution": "Protonation can give a 1° or a 2° carbocation; the 2° (more hyperconjugation, more +I stabilisation) forms preferentially, and Br⁻ then attacks it — placing Br on the middle carbon. Markovnikov's rule is a CONSEQUENCE of carbocation stability, not an arbitrary rule."
+    },
+    {
+      "id": "drill-hc11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Baeyer's test for unsaturation",
+      "question": "Why does bromine water lose its colour with an alkene but not with an alkane? What does the observation certify?",
+      "solution": "The alkene's π bond attacks Br₂, adding across the double bond (forming a dibromide) and consuming the bromine — the red-brown colour disappears instantly. An alkane has no π bond; substitution under these conditions is negligible, so colour persists. Rapid decolourisation of Br₂ water is the standard unsaturation test."
+    },
+    {
+      "id": "drill-hc11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Benzene — substitution over addition",
+      "question": "Why does benzene resist addition reactions that alkenes undergo readily?",
+      "solution": "Addition would destroy the delocalised π system (aromaticity) — benzene's resonance stabilisation (~150 kJ/mol) would be lost. Substitution keeps the aromatic ring intact: one group replaces another and the stabilised system survives. Benzene pays the activation cost to AVOID losing aromaticity."
+    },
+    {
+      "id": "drill-hc11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Carcinogenicity of polynuclear aromatics",
+      "question": "Why are fused-ring aromatics like benzo[a]pyrene carcinogenic?",
+      "solution": "Their flat, extended π systems intercalate between DNA base pairs; metabolic oxidation converts them to reactive epoxides that bind covalently to DNA, causing mutations. Planarity (intercalation) plus metabolic activation is the structure–hazard link."
+    }
+  ]
+}

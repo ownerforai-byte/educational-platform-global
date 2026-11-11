@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Bio-inorganic Chemistry (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "bio-inorganic-chemistry",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-bio11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Essential elements — what they do",
+      "question": "Why does the body need elements like Na, K, Ca, Fe even in tiny amounts?",
+      "solution": "Each plays a specific functional role: Na⁺/K⁺ maintain nerve impulses and osmotic balance; Ca²⁺ builds bone and triggers muscle contraction; Fe is the oxygen-binding centre of haemoglobin; Mg sits at the heart of chlorophyll. Amount needed is small because the roles are catalytic/structural, not bulk-building."
+    },
+    {
+      "id": "drill-bio11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Haemoglobin's iron",
+      "question": "Why is iron — not copper or magnesium — the right metal for carrying oxygen in blood?",
+      "solution": "Fe²⁺ binds O₂ reversibly with just the right strength: strong enough to load in the lungs, weak enough to release in tissues. Its coordination chemistry (porphyrin ring + histidine) tunes the binding. Too weak (Mg) wouldn't hold O₂; too strong (some Cu complexes) wouldn't release it. Reversible binding at physiological conditions is the requirement."
+    },
+    {
+      "id": "drill-bio11-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Sodium–potassium balance",
+      "question": "Why does the cell maintain high K⁺ inside and high Na⁺ outside, and what costs the body to keep it?",
+      "solution": "The Na⁺/K⁺ gradient powers nerve impulses, nutrient uptake and osmotic balance — the cell's electrical battery. The Na⁺/K⁺ ATPase pump actively exports 3 Na⁺ and imports 2 K⁺ per ATP, consuming ~20–40% of resting energy. The gradient is maintained, not free — it is bought with ATP."
+    },
+    {
+      "id": "drill-bio11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Toxic heavy metals",
+      "question": "Why are Pb²⁺, Hg²⁺ and Cd²⁺ toxic even in small amounts, chemically speaking?",
+      "solution": "They mimic essential metal ions (Pb²⁺ mimics Ca²⁺) and bind strongly to –SH groups in enzymes, displacing the correct metal or blocking the active site irreversibly. Enzymes lose function — the nervous system and kidneys suffer first. Toxicity = strong, wrong binding to life's catalysts."
+    },
+    {
+      "id": "drill-bio11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Chelation therapy",
+      "question": "How does EDTA treat lead poisoning, and why is the chelate effect central to it?",
+      "solution": "EDTA is a hexadentate ligand that wraps the Pb²⁺ in claw-like bonds, forming an extremely stable, water-soluble chelate that the kidneys excrete. The chelate effect (multiple bonds, entropic favourability) makes EDTA pull lead off the body's proteins — selective removal of the toxic ion without dismantling essential chemistry."
+    }
+  ]
+}

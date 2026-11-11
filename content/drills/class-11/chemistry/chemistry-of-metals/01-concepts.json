@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Chemistry of Metals (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "chemistry-of-metals",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-cm11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Metallurgy's core question",
+      "question": "Why does extracting a metal from its ore always require energy, and what decides WHICH reduction method is used?",
+      "solution": "Ores are the metal in OXIDISED form; reduction must reverse that, requiring electron supply — energy in some form. The method depends on the metal's position in the activity series: very reactive (Na, Al) need electrolysis; moderately reactive (Zn, Fe) need carbon reduction; least reactive (Ag, Au) need mere heating. Ease of reduction tracks reactivity."
+    },
+    {
+      "id": "drill-cm11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Thermite reaction",
+      "question": "Why does aluminium reduce iron oxide (thermite) even though carbon is the usual reductant, and why is the reaction so vigorous?",
+      "solution": "Aluminium is MORE reactive than iron, so it displaces iron from its oxide: 2Al + Fe₂O₃ → Al₂O₃ + 2Fe. The reaction is violent because Al₂O₃ formation is hugely exothermic (Al's oxide bond is very strong) — the heat melts the iron produced. Reactivity difference + strong Al–O bond = self-sustaining high-temperature reduction."
+    },
+    {
+      "id": "drill-cm11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Electrolytic reduction of aluminium",
+      "question": "Why can't aluminium be extracted by carbon reduction, and why is cryolite added in the Hall–Héroult process?",
+      "solution": "Aluminium is too reactive: Al₂O₃ is so stable that carbon cannot reduce it economically (Al would reduce CO instead). Electrolysis of molten Al₂O₃ is required — but pure alumina melts at 2050 °C, impractically high. Cryolite (Na₃AlF₆) dissolves Al₂O₃ and lowers the operating temperature to ~950 °C, cutting energy cost drastically. Reactivity → electrolysis; cryolite → feasibility."
+    },
+    {
+      "id": "drill-cm11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Corrosion as reverse metallurgy",
+      "question": "Why is rusting called 'reverse metallurgy', and why does painting prevent it?",
+      "solution": "Metallurgy reduces the ore to metal (energy in); corrosion re-oxidises the metal back toward its ore state (energy out) — the cycle reverses. Rusting needs BOTH oxygen and moisture (an electrolyte for the micro-galvanic cells). Painting excludes both, breaking the electrochemical circuit at the surface."
+    },
+    {
+      "id": "drill-cm11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Alloys — why mix metals",
+      "question": "Why is an alloy like bronze harder than either of its pure components?",
+      "solution": "Different-sized atoms of the alloying metal disturb the host lattice's regular packing, making layers harder to SLIDE over each other — the slip that makes pure metals soft is blocked. Hardness rises because deformation is obstructed, not because bonds are stronger. Alloying is lattice-level sabotage of slip."
+    }
+  ]
+}

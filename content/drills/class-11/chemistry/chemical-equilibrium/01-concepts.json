@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Chemical Equilibrium (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "chemical-equilibrium",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ceq11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Equilibrium is dynamic",
+      "question": "At equilibrium the concentrations stop changing. Does the reaction stop? Explain with rates.",
+      "solution": "No — forward and reverse reactions continue at EQUAL rates: every product formed is consumed at the same rate, so concentrations are constant, not zero-change. Equilibrium is dynamic balance, not standstill. Isotopic labelling experiments prove the exchange continues."
+    },
+    {
+      "id": "drill-ceq11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "K depends only on temperature",
+      "question": "Why do changes in concentration, pressure or catalyst fail to change the equilibrium constant K?",
+      "solution": "K = ratio of rate constants (k_f/k_r), and rate constants depend only on TEMPERATURE (and catalyst equally on both sides, cancelling). Concentration/pressure changes shift the POSITION (amounts at equilibrium) but not the ratio that defines K. Only temperature alters the rate constants themselves."
+    },
+    {
+      "id": "drill-ceq11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Le Chatelier applied to Haber process",
+      "question": "N₂ + 3H₂ ⇌ 2NH₃, ΔH = −92 kJ. Predict the effect of (a) raising pressure, (b) raising temperature, (c) removing NH₃ — with reasons.",
+      "solution": "(a) Higher pressure shifts toward fewer gas moles (4 → 2): more NH₃. (b) Exothermic forward reaction — higher T shifts BACKWARD (toward endothermic direction), lowering yield; that is why Haber runs at moderate ~450 °C with a catalyst for speed. (c) Removing NH₃ makes Q < K, so the system replaces it — forward shift, higher conversion. Each prediction is the system opposing the imposed change."
+    },
+    {
+      "id": "drill-ceq11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Q vs K",
+      "question": "What does it mean when the reaction quotient Q is less than, equal to, or greater than K?",
+      "solution": "Q < K: too few products — the reaction proceeds FORWARD until Q = K. Q = K: at equilibrium, no net change. Q > K: too many products — the reaction runs BACKWARD. Q is the same expression as K but evaluated at the CURRENT composition; comparing them predicts the direction at any instant."
+    },
+    {
+      "id": "drill-ceq11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Catalyst and equilibrium",
+      "question": "Why does adding a catalyst speed up a reaction but leave the equilibrium composition unchanged?",
+      "solution": "A catalyst lowers the activation energy of BOTH forward and reverse reactions equally — k_f and k_r multiply by the same factor, so their ratio K is unchanged. Equilibrium is reached FASTER, but the position is thermodynamics, not kinetics. The catalyst changes the road, not the destination."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Modern Chemical Manufactures (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "modern-chemical-manufactures",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-mcm11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Contact process conditions",
+      "question": "2SO₂ + O₂ ⇌ 2SO₃ (exothermic): why does the Contact process use ~450 °C, 1–2 atm, V₂O₅ catalyst rather than the thermodynamic optimum?",
+      "solution": "Low temperature favours SO₃ yield (exothermic) but is too slow; high pressure favours yield but gives little extra (moles barely change) and costs money. The compromise — moderate T with a catalyst for speed, low pressure — maximises ECONOMIC yield per cost. Industrial conditions balance thermodynamics against kinetics and cost."
+    },
+    {
+      "id": "drill-mcm11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Haber process pressure choice",
+      "question": "N₂ + 3H₂ ⇌ 2NH₃: four moles become two, so high pressure favours ammonia. Why doesn't industry use even higher pressures?",
+      "solution": "It does use high pressure (~200 atm) — but beyond that, compressor and vessel costs grow faster than the yield gain. Each extra atmosphere of pressure costs steel, pumping energy and safety margin. The chosen 200 atm is the economic knee of the curve, not the chemical maximum."
+    },
+    {
+      "id": "drill-mcm11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Le Chatelier in industry",
+      "question": "In the Haber process, why is the product ammonia removed continuously, and why is unreacted N₂/H₂ recycled?",
+      "solution": "Removing NH₃ keeps its concentration low, so Q < K and the equilibrium keeps shifting forward — continuous removal beats waiting for a single equilibrium. Unreacted gases are recycled because per-pass conversion is only ~15% at the chosen conditions; recycling turns low single-pass yield into high overall yield. Both tricks squeeze yield from an unfavourable equilibrium."
+    },
+    {
+      "id": "drill-mcm11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Catalyst poisoning",
+      "question": "Why must the reactant gases in the Haber process be rigorously purified before entering the catalyst bed?",
+      "solution": "Impurities like sulfur compounds bind irreversibly to the iron catalyst's active sites, blocking them — the catalyst loses activity (poisoning). Since the catalyst's surface must adsorb N₂ and H₂ to work, any site occupied by poison is lost permanently. Purification protects the catalyst's lifetime, which is an economic necessity."
+    },
+    {
+      "id": "drill-mcm11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Green chemistry in manufacture",
+      "question": "Give two ways modern chemical plants reduce environmental impact compared with older processes.",
+      "solution": "(1) Atom economy: designing routes that incorporate more of the reactant atoms into product, less into waste (e.g. catalytic vs stoichiometric reagents). (2) Recycling and closed loops: recovering unreacted material, solvent and heat instead of venting them. Catalysis replaces stoichiometric reagents, cutting by-product mass at the source."
+    }
+  ]
+}

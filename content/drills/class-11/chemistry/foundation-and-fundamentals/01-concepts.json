@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Foundation & Fundamentals (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "foundation-and-fundamentals",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ff11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why atoms bond at all",
+      "question": "Why do atoms form bonds rather than remaining isolated? Frame the answer in energy terms.",
+      "solution": "Bonding LOWERS the total energy: shared or transferred electrons let both atoms reach a more stable arrangement (filled valence shell, lower PE), and the released energy appears as bond formation enthalpy. Isolated atoms are not at minimum energy; bonds are the path downhill. Stability = lower energy, not 'satisfaction of rules' alone."
+    },
+    {
+      "id": "drill-ff11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Mole as a counting bridge",
+      "question": "Why is the mole called chemistry's 'counting bridge' between the invisible and the weighable?",
+      "solution": "Atoms are too small to count individually; the mole (6.022×10²³ particles) converts a COUNT of particles into a MASS you can weigh on a balance — 1 mol of C-12 weighs exactly 12 g. Every stoichiometric calculation crosses this bridge: mass → moles → particles (or reacting moles) → mass."
+    },
+    {
+      "id": "drill-ff11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Empirical vs molecular formula",
+      "question": "A compound is 40% C, 6.7% H, 53.3% O with molar mass 180. Find both formulas and explain the role of the molar mass.",
+      "solution": "Moles: C 40/12 = 3.33, H 6.7/1 = 6.7, O 53.3/16 = 3.33 → ratio 1 : 2 : 1 → empirical CH₂O (mass 30). Molecular formula = (molar mass/empirical mass) × empirical = (180/30) × CH₂O = C₆H₁₂O₆ (glucose). The molar mass tells HOW MANY empirical units sit in one molecule — without it the answer is a family (CH₂O, C₂H₄O₂, …)."
+    },
+    {
+      "id": "drill-ff11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Limiting reagent",
+      "question": "3 mol H₂ react with 3 mol O₂ (2H₂ + O₂ → 2H₂O). Which is limiting and how much water forms? Explain the logic, not just the arithmetic.",
+      "solution": "The reaction consumes H₂ : O₂ in ratio 2 : 1; 3 mol H₂ needs only 1.5 mol O₂, so H₂ runs out first — H₂ is limiting. Water formed = 3 mol (all the H₂ is used). The limiting reagent is whichever runs out FIRST per the stoichiometric ratio; the excess reagent's leftover (1.5 mol O₂) is irrelevant to yield."
+    },
+    {
+      "id": "drill-ff11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Oxidation number rules",
+      "question": "Find the oxidation number of S in H₂SO₄ and of Cr in Cr₂O₇²⁻, and state the rule being applied.",
+      "solution": "H₂SO₄: 2(+1) + S + 4(−2) = 0 → S = +6. Cr₂O₇²⁻: 2Cr + 7(−2) = −2 → Cr = +6. Rule: the sum of oxidation numbers equals the species' charge (0 for neutral). Oxygen is −2 (except peroxides), hydrogen +1 (except hydrides) — the fixed anchors make the unknown solvable."
+    }
+  ]
+}

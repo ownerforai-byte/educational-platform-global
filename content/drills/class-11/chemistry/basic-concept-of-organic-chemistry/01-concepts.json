@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Basic Concept of Organic Chemistry (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "basic-concept-of-organic-chemistry",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-bco11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why carbon is organic chemistry's backbone",
+      "question": "What three properties of carbon make it uniquely suited to build millions of compounds?",
+      "solution": "(1) TETRAVALENCY — four bonds, allowing branched and cyclic frameworks. (2) CATENATION — strong C–C bonds let chains and rings grow long. (3) MULTIPLE BONDING — stable single, double and triple bonds, plus bonding to H, O, N, S, halogens. No other element combines all three."
+    },
+    {
+      "id": "drill-bco11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Homologous series",
+      "question": "Why does adding one CH₂ to a homologous series change physical properties steadily but chemical properties barely at all?",
+      "solution": "Each CH₂ adds mass and surface (van der Waals forces rise → boiling point climbs steadily) but the FUNCTIONAL GROUP — the reactive site — is unchanged. Chemistry lives in the functional group; physics lives in the whole molecule. That is why a series shares reactions but not boiling points."
+    },
+    {
+      "id": "drill-bco11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "IUPAC naming logic",
+      "question": "Name CH₃–CH(CH₃)–CH₂–CH₃ by IUPAC rules and state the three decisions the name encodes.",
+      "solution": "Longest chain = 4 carbons → butane. Numbering from the end nearer the branch gives the methyl the lowest locant: 2-methylbutane (not 3-methylbutane). The name encodes: (1) chain length (parent), (2) substituent identity and position (locant), (3) the numbering rule — lowest set of locants wins. Systematic naming is a compressed structural description."
+    },
+    {
+      "id": "drill-bco11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Isomerism — same formula, different compound",
+      "question": "C₄H₁₀ has two isomers. What makes them different compounds, and why do their boiling points differ?",
+      "solution": "Same molecular formula but different ATOM CONNECTIVITY: n-butane (straight chain) vs isobutane (branched). The branched isomer is more compact — less surface contact, weaker van der Waals forces — so it boils ~11 °C lower. Connectivity changes shape; shape changes intermolecular forces."
+    },
+    {
+      "id": "drill-bco11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Fission of bonds — homolytic vs heterolytic",
+      "question": "A C–X bond can break two ways. Name both, the species each produces, and which solvents favour which.",
+      "solution": "Homolytic fission: each fragment takes one electron → free radicals (favoured by non-polar solvents, UV light, high temperature). Heterolytic fission: one fragment takes both → cation + anion (favoured by polar solvents that stabilise ions). The breaking mode determines whether the reaction follows a radical or ionic mechanism."
+    }
+  ]
+}

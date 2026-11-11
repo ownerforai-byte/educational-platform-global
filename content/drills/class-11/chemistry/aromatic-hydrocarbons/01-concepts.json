@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Aromatic Hydrocarbons (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "aromatic-hydrocarbons",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ah11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Hückel's rule",
+      "question": "State Hückel's rule and use it to classify benzene (6 π electrons) and cyclooctatetraene (8 π electrons).",
+      "solution": "A planar, cyclic, fully conjugated system with (4n + 2) π electrons is aromatic. Benzene: 6 = 4(1)+2 → aromatic. Cyclooctatetraene: 8 = 4(2), which fits 4n, not 4n+2 — it is NOT aromatic; it avoids the instability by puckering out of planarity. All four conditions (planar, cyclic, conjugated, 4n+2) must hold."
+    },
+    {
+      "id": "drill-ah11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why Friedel–Crafts needs AlCl₃",
+      "question": "In Friedel–Crafts alkylation, why is the alkyl halide alone not enough — what does AlCl₃ do?",
+      "solution": "AlCl₃ is a Lewis acid: it coordinates the halide, polarising R–X to generate the electrophile R⁺ (or a strongly polarised complex) that the benzene ring can attack. Without the catalyst there is no sufficiently strong electrophile — benzene's stable π system ignores weak ones. The catalyst manufactures the attacking species."
+    },
+    {
+      "id": "drill-ah11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "o/p vs m direction",
+      "question": "Why does –CH₃ direct incoming electrophiles to ortho/para while –NO₂ directs to meta?",
+      "solution": "Both effects act through the stability of the arenium (σ-complex) intermediate. –CH₃ donates (+I/hyperconjugation), stabilising the σ-complex most when attack is o/p (positive charge can sit next to the methyl). –NO₂ withdraws (−I, −M), destabilising the σ-complex most at o/p — meta attack avoids placing positive charge beside the NO₂, so it is the least-bad route. Rate: CH₃ activates, NO₂ deactivates."
+    },
+    {
+      "id": "drill-ah11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Toluene nitrates faster than benzene",
+      "question": "Why is toluene more reactive than benzene toward nitration?",
+      "solution": "The methyl group donates electron density into the ring (+I, hyperconjugation), raising the ring's π electron density — the electrophile NO₂⁺ finds an easier target, and the σ-complex is stabilised. Activating substituents lower the rate-determining step's barrier. Electron-rich rings react faster with electrophiles."
+    },
+    {
+      "id": "drill-ah11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Side-chain oxidation",
+      "question": "Why does hot KMnO₄ oxidise toluene all the way to benzoic acid regardless of the side-chain length?",
+      "solution": "The benzylic C–H bonds (on the carbon attached to the ring) are unusually weak — the resulting benzylic radical/cation is resonance-stabilised by the ring. KMnO₄ abstracts these hydrogens and oxidises the side chain stepwise until only the ring-attached carboxyl remains. Whatever the chain length, oxidation stops at the ring: –COOH."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Atomic Structure (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "atomic-structure",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-as11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why Bohr's model had to be replaced",
+      "question": "Bohr's model predicts hydrogen's spectrum perfectly but fails for helium. What assumption breaks down?",
+      "solution": "Bohr treats electrons as particles in fixed circular orbits and ignores their WAVE nature and electron–electron interactions. With two electrons, mutual repulsion and wave behaviour (orbital shapes, not circular tracks) dominate — the orbit picture collapses. Schrödinger's wave model replaces orbits with probability orbitals."
+    },
+    {
+      "id": "drill-as11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Orbit vs orbital",
+      "question": "Distinguish an orbit from an orbital in one sentence each, and say which is a quantum-mechanical concept.",
+      "solution": "Orbit: a definite circular PATH (Bohr) — the electron is supposed to be there. Orbital: a 3D PROBABILITY region (quantum mechanics) — the shape where the electron is most likely to be found. Only the orbital is a real quantum concept; the orbit violates the uncertainty principle by specifying both position and momentum."
+    },
+    {
+      "id": "drill-as11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "The four quantum numbers",
+      "question": "State what each of the four quantum numbers specifies, and show that n = 2 can hold 8 electrons.",
+      "solution": "n (1,2,3…) = shell/energy level; l (0…n−1) = subshell shape (s, p, d, f); m_l (−l…+l) = orbital orientation; m_s (±½) = spin. For n = 2: l = 0 (one s orbital, 2 electrons) + l = 1 (three p orbitals × 2 = 6 electrons) → 2 + 6 = 8. Each orbital holds exactly 2 electrons of opposite spin (Pauli)."
+    },
+    {
+      "id": "drill-as11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Hund's rule — why electrons spread out",
+      "question": "Why does nitrogen's configuration write 2p³ as ↑ ↑ ↑ (three separate orbitals) rather than pairing two electrons in one p orbital?",
+      "solution": "Hund's rule: electrons enter degenerate (equal-energy) orbitals singly with parallel spins first. Reason: pairing costs energy (electrostatic repulsion), and parallel spins in separate orbitals also gain exchange energy. Spreading out is lower energy — pairing happens only after every orbital in the subshell has one electron."
+    },
+    {
+      "id": "drill-as11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Exceptional configurations — Cr and Cu",
+      "question": "Why is chromium [Ar]3d⁵4s¹ instead of the expected [Ar]3d⁴4s²?",
+      "solution": "Half-filled (d⁵) and fully-filled (d¹⁰) subshells have extra stability: symmetric electron distribution and maximum exchange energy. Moving one 4s electron into 3d achieves a half-filled d⁵ — the exchange-energy gain outweighs the cost of the promotion. Cr and Cu are the standard exceptions the rule predicts."
+    }
+  ]
+}

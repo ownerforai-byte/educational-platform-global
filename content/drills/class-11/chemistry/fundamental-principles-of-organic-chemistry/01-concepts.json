@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Fundamental Principles of Organic Chemistry (Class 11 Chemistry)",
+  "subject": "chemistry",
+  "unitSlug": "fundamental-principles-of-organic-chemistry",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-fpo11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Inductive effect",
+      "question": "Why does chloroacetic acid (ClCH₂COOH) stronger than acetic acid? Name the effect.",
+      "solution": "The −I effect: Cl withdraws electron density through σ bonds, pulling electron density away from the carboxylate anion and dispersing its negative charge — the conjugate base is stabilised, so the acid is stronger. Inductive effects are transmitted through σ bonds and fade with distance."
+    },
+    {
+      "id": "drill-fpo11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Resonance — delocalisation, not oscillation",
+      "question": "Is the carbonate ion 'switching' between three structures? What does resonance actually mean?",
+      "solution": "No — the real ion is a single structure that is a HYBRID of the resonance forms: the two negative charges are spread equally over three oxygens (each bond 1⅓ order). Resonance forms are bookkeeping, not flickering states. Evidence: all three C–O bonds are identical in length — between single and double."
+    },
+    {
+      "id": "drill-fpo11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Carbocation stability order",
+      "question": "Explain the stability order 3° > 2° > 1° > CH₃⁺ for carbocations using two effects.",
+      "solution": "(1) HYPERCONJUGATION: adjacent C–H σ bonds overlap with the empty p orbital, delocalising the charge — more alkyl groups give more hyperconjugative structures. (2) INDUCTIVE: alkyl groups donate (+I), dispersing the positive charge. Both effects grow with alkyl substitution, so tertiary cations are most stabilised — hence SN1 rates follow the same order."
+    },
+    {
+      "id": "drill-fpo11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Electromeric effect — temporary",
+      "question": "How does the electromeric effect differ from resonance, and why does it matter in addition reactions?",
+      "solution": "Electromeric effect is a COMPLETE, TEMPORARY shift of a π electron pair to one atom under the attack of a reagent (E effect) — it exists only while the attacking species is present. Resonance is a permanent delocalisation. In C=C addition, the reagent's approach polarises the π bond (electromeric), generating the carbocation that the second part of the reagent then attacks."
+    },
+    {
+      "id": "drill-fpo11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Why organic reactions are slow",
+      "question": "Why do organic reactions generally proceed more slowly than ionic ones like AgNO₃ + NaCl?",
+      "solution": "Ionic reactions are instant — oppositely charged ions just meet. Organic reactions require breaking COVALENT bonds, which means climbing an activation-energy barrier: bonds must stretch, reorganise, sometimes pass through high-energy intermediates (carbocations, radicals). Covalent reorganisation costs energy; ionic combination does not."
+    }
+  ]
+}
