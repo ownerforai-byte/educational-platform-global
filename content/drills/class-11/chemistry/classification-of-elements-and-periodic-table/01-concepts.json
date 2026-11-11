@@ -48,6 +48,33 @@
       "concept": "Diagonal relationship",
       "question": "Why do lithium resemble magnesium and beryllium resemble aluminium in chemistry?",
       "solution": "Diagonal neighbours have similar charge/size ratios: Li⁺ and Mg²⁺ are similar in size and polarising power, as are Be²⁺ and Al³⁺. Similar polarising power → similar covalent character of compounds and similar solubility/thermal behaviour. The diagonal pairs' properties converge because size decrease and charge increase across the period offset each other."
+    },
+    {
+      "id": "drill-cp11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why atomic radius shrinks across a period",
+      "question": "Radius decreases left to right across a period but jumps up at the start of the next period. Explain both directions.",
+      "solution": "Across a period the nuclear charge rises while electrons enter the SAME shell, so effective nuclear charge pulls the shell in — radius shrinks. Starting a new period adds a new shell at larger principal quantum number, so radius jumps up before contracting again. Shell number sets the scale; effective nuclear charge fine-tunes within it."
+    },
+    {
+      "id": "drill-cp11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why ionisation energy drops after a noble gas",
+      "question": "Ionisation energy generally rises across a period, but it plummets when you reach the next alkali metal. Why?",
+      "solution": "The alkali metal's outer electron is in a new shell, farther from the nucleus and shielded by all inner shells. Shielding plus distance makes that electron easy to remove, so IE drops sharply. Within a period, the same shell means rising effective charge and rising IE. Distance and shielding beat charge."
+    },
+    {
+      "id": "drill-cp11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why noble gases are unreactive",
+      "question": "Noble gases have very high ionisation energies and near-zero electron affinity. Why does that make them inert?",
+      "solution": "Their shell is complete, so gaining an electron would force it into a higher, poorly shielded shell (very unfavourable), and losing one would break the stable closed shell (very costly). There is no low-energy route to bonding, so they are inert without noble gases being 'special' — they simply lack accessible chemistry."
     }
   ]
 }

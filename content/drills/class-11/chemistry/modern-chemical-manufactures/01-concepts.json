@@ -48,6 +48,33 @@
       "concept": "Green chemistry in manufacture",
       "question": "Give two ways modern chemical plants reduce environmental impact compared with older processes.",
       "solution": "(1) Atom economy: designing routes that incorporate more of the reactant atoms into product, less into waste (e.g. catalytic vs stoichiometric reagents). (2) Recycling and closed loops: recovering unreacted material, solvent and heat instead of venting them. Catalysis replaces stoichiometric reagents, cutting by-product mass at the source."
+    },
+    {
+      "id": "drill-mcm11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the Haber process needs compromise conditions",
+      "question": "Ammonia synthesis is exothermic and gives fewer moles of gas, so high pressure and low temperature favour it — yet industry runs at ~450 °C. Why not lower?",
+      "solution": "Low temperature gives a better equilibrium yield but makes the reaction impossibly slow, since rate rises with temperature. 450 °C plus an iron catalyst is the compromise that delivers acceptable yield at a workable rate. Industrial conditions optimise the PRODUCT of equilibrium and kinetics, not either alone — economics of time matters as much as thermodynamics."
+    },
+    {
+      "id": "drill-mcm11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why the contact process uses several stages",
+      "question": "In the contact process, SO₂ is oxidised to SO₃ in a separate catalysed stage rather than in one combined step. Why split the process?",
+      "solution": "SO₃ is formed by a reversible, exothermic reaction whose equilibrium yield depends strongly on conditions, so it needs its own V₂O₅-catalysed stage with controlled temperature (~450 °C, not too high) and pressure. Absorption into concentrated H₂SO₄ is then staged separately to avoid forming acid mist. Splitting keeps each step at the conditions its equilibrium demands, and the stages exist because their requirements differ."
+    },
+    {
+      "id": "drill-mcm11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why cement setting is chemical not physical",
+      "question": "Why does wet cement harden irreversibly rather than drying like clay?",
+      "solution": "Setting is hydration chemistry, not evaporation: water reacts with calcium silicates and aluminates to form interlocking hydrated phases (C-S-H gel) that permanently bind the mass. Because the water is chemically consumed, adding water later cannot undo the hardening. Drying is reversible; hydration is not — which is why cement is a chemical product, not a dried powder."
     }
   ]
 }

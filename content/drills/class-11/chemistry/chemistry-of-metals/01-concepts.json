@@ -48,6 +48,33 @@
       "concept": "Alloys — why mix metals",
       "question": "Why is an alloy like bronze harder than either of its pure components?",
       "solution": "Different-sized atoms of the alloying metal disturb the host lattice's regular packing, making layers harder to SLIDE over each other — the slip that makes pure metals soft is blocked. Hardness rises because deformation is obstructed, not because bonds are stronger. Alloying is lattice-level sabotage of slip."
+    },
+    {
+      "id": "drill-cm11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why metals are malleable but salts are brittle",
+      "question": "A metal can be hammered into sheet while an ionic crystal shatters. Explain with the bonding and the effect of a dislocation.",
+      "solution": "Metals have delocalised electrons that maintain the bond even when planes of ions slide — so deformation is easy and reversible. In an ionic crystal, sliding one plane by one ion brings like charges face to face, producing a huge electrostatic repulsion that cracks the crystal. Sliding is harmless in metal, fatal in salt."
+    },
+    {
+      "id": "drill-cm11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why metals conduct heat and electricity",
+      "question": "Why can the same tiny group of electrons explain both electrical and thermal conduction in metals?",
+      "solution": "The delocalised 'sea' of free electrons carries charge under a potential difference (electrical conduction) and carries kinetic energy down a temperature gradient (thermal conduction). In both cases the same mobile carriers transport a quantity, so both conductivities rise together. One mechanism, two transported quantities — which is why good electrical conductors are usually good thermal conductors."
+    },
+    {
+      "id": "drill-cm11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why sodium is stored in kerosene",
+      "question": "Sodium metal is kept under kerosene, not water. Give the two distinct chemical dangers of water storage.",
+      "solution": "(1) Sodium reacts violently with water, giving hydrogen gas plus intense heat: 2Na + 2H₂O → 2NaOH + H₂; the heat ignites the hydrogen, so it can explode. (2) Sodium oxidises rapidly in moist air, tarnishing and eventually catching fire. Kerosene excludes both water and air. The choice of storage medium is dictated by reactivity, not convenience."
     }
   ]
 }

@@ -48,6 +48,33 @@
       "concept": "Carcinogenicity of polynuclear aromatics",
       "question": "Why are fused-ring aromatics like benzo[a]pyrene carcinogenic?",
       "solution": "Their flat, extended π systems intercalate between DNA base pairs; metabolic oxidation converts them to reactive epoxides that bind covalently to DNA, causing mutations. Planarity (intercalation) plus metabolic activation is the structure–hazard link."
+    },
+    {
+      "id": "drill-hc11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why alkenes are more reactive than alkanes",
+      "question": "Ethene decolourises bromine water within seconds while ethane does not react at all. Why is the C=C bond so much more reactive than C–C?",
+      "solution": "The pi bond is weaker than the sigma bond and its electron cloud is exposed above and below the molecular plane, so it can act as a nucleophile and attack electrophiles. Alkanes have only strong, unexposed sigma bonds and need radical conditions. Alkene reactivity comes from pi-electron availability."
+    },
+    {
+      "id": "drill-hc11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why Markovnikov, not anti-Markovnikov",
+      "question": "HBr adds to propene giving mainly 2-bromopropane. Why does the halogen prefer the carbon with FEWER hydrogens?",
+      "solution": "Addition proceeds via the more STABLE carbocation intermediate. Protonation at the terminal carbon gives a secondary carbocation; the alternative gives a primary one that is higher in energy. The halide then attacks wherever the positive charge sits. Product ratios follow intermediate stability, not a preference for carbon type — the rule is a consequence of carbocation energetics."
+    },
+    {
+      "id": "drill-hc11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why alkanes prefer substitution not addition",
+      "question": "Alkenes undergo addition but alkanes only substitution. What structural difference forces this?",
+      "solution": "Alkane carbons are saturated: there is no pi bond to open, so adding atoms would require breaking sigma bonds and exceeding the valence limit. The only route is replacing a hydrogen. In alkenes the pi bond can break to accept two new atoms without violating valence. Saturation determines mechanism: no unsaturation, no addition."
     }
   ]
 }

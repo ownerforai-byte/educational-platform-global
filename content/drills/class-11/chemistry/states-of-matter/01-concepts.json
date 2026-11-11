@@ -48,6 +48,33 @@
       "concept": "Liquid's vapour pressure",
       "question": "Why does a liquid in a closed container develop a fixed vapour pressure at a given temperature, and what does 'volatile' mean?",
       "solution": "Evaporation and condensation run simultaneously; equilibrium is reached when rates equalise — the pressure of vapour at that balance is the vapour pressure, fixed by T (molecular energies) alone. A volatile liquid has weak intermolecular forces, so many molecules escape easily — high vapour pressure at low temperature."
+    },
+    {
+      "id": "drill-sm11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why gas pressure comes from collisions",
+      "question": "Why does gas pressure rise when you compress a gas at constant temperature?",
+      "solution": "Pressure is the rate of momentum transfer from molecular collisions with the walls. Compressing reduces the volume, so molecules hit unit area more often — more collisions per second, higher pressure. Temperature unchanged means each collision still carries the same average momentum. Pressure is collision statistics per unit area."
+    },
+    {
+      "id": "drill-sm11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Why diffusion is slow despite fast molecules",
+      "question": "Gas molecules travel at hundreds of metres per second, yet a smell takes seconds to cross a room. Why the discrepancy?",
+      "solution": "Molecules do NOT travel in straight lines: mean free path is ~10⁻⁷ m, so they collide billions of times per second and follow a random walk. Net displacement grows only as √t, so the effective spreading speed is far slower than the molecular speed. Fast particles, slow diffusion — the random walk is the reason."
+    },
+    {
+      "id": "drill-sm11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why critical temperature ends liquefaction",
+      "question": "A gas above its critical temperature cannot be liquefied by pressure alone. Why not?",
+      "solution": "Above Tc the molecules' kinetic energy exceeds the intermolecular attraction strength, so no amount of compression can hold them in the liquid state — compressing just packs them into a supercritical fluid. Liquefaction requires first cooling below Tc, then pressurising. Pressure can crowd molecules but cannot create attractions that thermal energy overcomes."
     }
   ]
 }

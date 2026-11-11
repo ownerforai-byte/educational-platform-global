@@ -48,6 +48,33 @@
       "concept": "Inert pair effect",
       "question": "Why does lead(II) compounds form more readily than lead(IV), unlike carbon which is tetravalent?",
       "solution": "Down group 14, the ns² pair becomes increasingly reluctant to participate in bonding (poor shielding by d and f electrons, relativistic stabilisation) — the INERT PAIR effect. So the +2 state (using only p electrons) grows more stable down the group; carbon's 2s² is NOT inert, giving C its +4 chemistry."
+    },
+    {
+      "id": "drill-cnm11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why nitrogen is unreactive despite abundance",
+      "question": "Air is 78% N₂ yet nitrogen is chemically sluggish. What structural feature causes this?",
+      "solution": "The N≡N triple bond (bond energy ~941 kJ/mol) plus the absence of a low-energy dipole or lone-pair reactivity makes the molecule very hard to break. All nitrogen chemistry in industry must first defeat that triple bond — which is why ammonia synthesis needs high pressure, temperature and a catalyst. Abundance of an element says nothing about the reactivity of its common form."
+    },
+    {
+      "id": "drill-cnm11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why allotropes differ so much",
+      "question": "Graphite conducts and diamond does not, though both are pure carbon. Why?",
+      "solution": "Allotropes differ in the arrangement of atoms. Diamond has a rigid tetrahedral sp³ network with all four valence electrons locked in sigma bonds — no mobile carriers. Graphite is layered sp² with one delocalised p-electron per carbon, forming a conducting sheet. Same element, different bonding topology, radically different properties. Structure, not composition, sets behaviour."
+    },
+    {
+      "id": "drill-cnm11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why acid rain forms",
+      "question": "Why do SO₂ and NOₓ from combustion end up as acid rain, while CO₂ (also non-metal oxide) mainly does not?",
+      "solution": "SO₂ and NOₓ oxidise in the atmosphere with water and oxygen to H₂SO₄ and HNO₃ — strong acids that fully dissociate and lower the rain's pH substantially. CO₂ forms carbonic acid, a weak acid that only partly dissociates, so it acidifies only mildly. The difference is the acid STRENGTH of the resulting oxyacid, not the fact of being a non-metal oxide."
     }
   ]
 }

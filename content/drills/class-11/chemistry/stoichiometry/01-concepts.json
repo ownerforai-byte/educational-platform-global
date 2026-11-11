@@ -48,6 +48,33 @@
       "concept": "Limiting reagent identification",
       "question": "N₂ + 3H₂ → 2NH₃: 2 mol N₂ with 3 mol H₂. Which is limiting and why is it NOT the smaller quantity?",
       "solution": "3 mol H₂ needs 1 mol N₂ (ratio 3:1); 2 mol N₂ would need 6 mol H₂. H₂ runs out first — H₂ is limiting despite being the LARGER amount in moles. The limiting reagent is decided by the stoichiometric RATIO, never by which number is smaller."
+    },
+    {
+      "id": "drill-sto11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why we balance equations at all",
+      "question": "Why is a skeletal equation useless for calculation until it is balanced?",
+      "solution": "Atoms are conserved, so any valid equation must have equal atom counts on both sides. Only a balanced equation states the true MOLE RATIO in which reactants combine and products form; an unbalanced one gives the wrong ratio and hence wrong masses. Balancing is not cosmetic — it is the statement of conservation of mass in mole terms."
+    },
+    {
+      "id": "drill-sto11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why percentage yield is never exactly 100",
+      "question": "A carefully run reaction still gives 87% yield. Give at least three independent chemical and physical reasons why 100% is unattainable in practice.",
+      "solution": "(1) Reversible side reactions consume some reactant. (2) Product is lost in filtration, washing, crystallisation or evaporation. (3) Impurities, incomplete reaction at equilibrium, and handling losses in transfers. Percentage yield compares actual moles to the stoichiometric prediction and is a statement about process efficiency, not about the chemistry being wrong."
+    },
+    {
+      "id": "drill-sto11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why gas volumes follow the mole ratio",
+      "question": "At the same temperature and pressure, 1 litre of N₂ reacts with 3 litres of H₂ to give 2 litres of NH₃. Why do the volume ratios equal the mole ratios?",
+      "solution": "Avogadro's law: equal volumes of gases at the same T and p contain equal numbers of molecules. So volume is a direct proxy for moles, and the stoichiometric coefficients are simultaneously volume ratios. This is Gay-Lussac's law of combining volumes — a convenient shortcut valid only for gases under identical conditions."
     }
   ]
 }

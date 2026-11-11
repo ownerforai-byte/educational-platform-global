@@ -48,6 +48,33 @@
       "concept": "Why organic reactions are slow",
       "question": "Why do organic reactions generally proceed more slowly than ionic ones like AgNO₃ + NaCl?",
       "solution": "Ionic reactions are instant — oppositely charged ions just meet. Organic reactions require breaking COVALENT bonds, which means climbing an activation-energy barrier: bonds must stretch, reorganise, sometimes pass through high-energy intermediates (carbocations, radicals). Covalent reorganisation costs energy; ionic combination does not."
+    },
+    {
+      "id": "drill-fpo11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why sp³ carbon is tetrahedral",
+      "question": "Why do four identical bonds around a carbon arrange tetrahedrally (109.5°) rather than in a square plane (90°)?",
+      "solution": "Electron pairs repel, and four electron domains minimise their mutual repulsion by spreading as far apart as possible in three dimensions — the tetrahedral angle 109.5°. A square-planar arrangement at 90° would put them closer together and cost energy. Geometry follows from minimising repulsion, not from any preset shape."
+    },
+    {
+      "id": "drill-fpo11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Why inductive effect falls off fast",
+      "question": "The electron-withdrawing effect of a substituent weakens sharply after two or three bonds. Why?",
+      "solution": "Induction acts through sigma-bond polarisation, transmitted by successive shifts in electron density. Each bond absorbs part of the shift, so the perturbation decays roughly geometrically with distance. Consequently two substituents far apart barely interact electronically, while geminal ones do. Distance-damping is why only nearby groups matter for acidity and reactivity."
+    },
+    {
+      "id": "drill-fpo11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why resonance beats a single structure",
+      "question": "Benzene's bonds are all equal length and its stability exceeds any single Kekulé structure. Why is a hybrid more stable than any contributing structure?",
+      "solution": "Resonance delocalises electrons over several positions, lowering the energy below that of any one fixed arrangement — the difference is the resonance energy. Delocalised electrons have more space and less confinement, so the system relaxes. Real molecules are hybrids; the dots-and-lines structures are approximations, and the true state is a superposition of them."
     }
   ]
 }

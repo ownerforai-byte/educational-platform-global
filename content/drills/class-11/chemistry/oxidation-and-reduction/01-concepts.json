@@ -48,6 +48,33 @@
       "concept": "Oxidising vs reducing agent strength",
       "question": "Why is a strong oxidising agent itself easily reduced, and how does the activity series of metals encode this?",
       "solution": "An oxidising agent accepts electrons readily — i.e. it is easily reduced; its strength is its electron affinity. The activity series ranks metals by ease of OXIDATION: K at top (most easily oxidised, strongest reducing agent), Au at bottom. A metal displaces any metal below it from solution — the electron-transfer hierarchy in action."
+    },
+    {
+      "id": "drill-or11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why oxidation numbers are bookkeeping",
+      "question": "In H₂O₂ oxygen has oxidation number −1 rather than its usual −2. Does that mean the oxygen atoms are partially charged −1?",
+      "solution": "Oxidation number is a formal device: electrons in each bond are assigned entirely to the more electronegative atom, regardless of the actual sharing. In the O–O bond the electrons are split equally, so each O 'keeps' one, giving −1 by the bookkeeping rule. It is an accounting convention for tracking electron transfer, not a measured charge."
+    },
+    {
+      "id": "drill-or11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why a disproportionation is both",
+      "question": "In 2H₂O₂ → 2H₂O + O₂ the same element both oxidises and reduces. How can one species do both at once?",
+      "solution": "The starting oxygen has oxidation number −1, sitting between 0 (O₂) and −2 (H₂O). Molecules in an intermediate oxidation state have two directions to move: some atoms go down to −2 (reduction) and some up to 0 (oxidation). One molecule therefore acts as both oxidising and reducing agent — disproportionation. Intermediate oxidation states are inherently unstable to this splitting."
+    },
+    {
+      "id": "drill-or11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why balancing redox needs half-reactions",
+      "question": "Why is balancing a redox equation by inspection often impossible, and how do half-reactions solve it?",
+      "solution": "Redox equations must conserve atoms AND charge, with electron transfer hidden across many species. Splitting into oxidation and reduction half-reactions isolates the electron count in each; balancing atoms then electrons, then equalising electrons transferred by scaling, and recombining gives a guaranteed-consistent equation. Half-reactions make the invisible electron bookkeeping explicit."
     }
   ]
 }

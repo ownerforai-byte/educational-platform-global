@@ -48,6 +48,33 @@
       "concept": "Soap's dual nature",
       "question": "How does one soap molecule clean both grease and water? Describe the two ends and the micelle.",
       "solution": "Soap = R–COO⁻Na⁺: a hydrocarbon tail (dissolves in grease, non-polar) and a carboxylate head (dissolves in water, polar). Molecules surround grease droplets tails-in, heads-out — a MICELLE — so the whole droplet becomes water-dispersible and rinses away. Amphiphilic structure is the cleaning mechanism."
+    },
+    {
+      "id": "drill-fac11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why fertilisers are needed at all",
+      "question": "Crops remove N, P and K from the soil each harvest. Why must these be replaced artificially in modern farming?",
+      "solution": "Harvesting exports nutrients in the grain; without replacement the soil's available pools deplete and yields fall. Natural recycling (fallowing, manure) cannot keep pace with intensive cropping. Fertilisers restore the limiting nutrient in plant-available form — the element that is scarcest limits growth (Liebig's law), so replenishing N, P, K targets exactly what harvest removes."
+    },
+    {
+      "id": "drill-fac11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why excess fertiliser harms water bodies",
+      "question": "Applying more urea than the crop needs lowers yield and damages rivers. Explain the chain from field to algal bloom.",
+      "solution": "Nitrogen beyond crop uptake is not stored in soil — nitrate is soluble and leaches into groundwater and runs off into rivers. There it is the limiting nutrient for algae, so eutrophication follows: algal blooms, then decomposition consuming dissolved oxygen, then fish kills. Over-application is economically wasteful and environmentally destructive for the same reason: the excess isn't used."
+    },
+    {
+      "id": "drill-fac11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why soap fails in hard water",
+      "question": "Soap lathers poorly in hard water while detergent works fine. What is the chemical difference?",
+      "solution": "Soap is a sodium salt of a long-chain fatty acid; its anion precipitates with Ca²⁺ and Mg²⁺ as an insoluble scum, consuming the soap uselessly. Detergents use sulphonate headgroups whose calcium and magnesium salts remain soluble, so they keep working. Hard water attacks the soap's carboxylate head, and detergents avoid that vulnerability."
     }
   ]
 }

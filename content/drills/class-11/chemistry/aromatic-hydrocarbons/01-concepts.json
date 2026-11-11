@@ -48,6 +48,33 @@
       "concept": "Side-chain oxidation",
       "question": "Why does hot KMnO₄ oxidise toluene all the way to benzoic acid regardless of the side-chain length?",
       "solution": "The benzylic C–H bonds (on the carbon attached to the ring) are unusually weak — the resulting benzylic radical/cation is resonance-stabilised by the ring. KMnO₄ abstracts these hydrogens and oxidises the side chain stepwise until only the ring-attached carboxyl remains. Whatever the chain length, oxidation stops at the ring: –COOH."
+    },
+    {
+      "id": "drill-arh11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why benzene resists addition",
+      "question": "Benzene has three formal double bonds but does not decolourise bromine water. Why not?",
+      "solution": "Benzene's six pi electrons are delocalised over the ring, not confined to three isolated double bonds. Breaking that aromatic system would cost the large resonance stabilisation energy, so addition is energetically unfavourable. Electrophilic SUBSTITUTION preserves aromaticity by replacing a hydrogen instead. Aromatic stability, not lack of unsaturation, blocks addition."
+    },
+    {
+      "id": "drill-arh11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Why benzene has exactly six pi electrons",
+      "question": "Cyclooctatetraene has alternating double bonds too, yet is non-aromatic. Give the criteria that benzene meets and this compound fails.",
+      "solution": "Hückel's rule requires a planar, cyclic, fully conjugated system with 4n+2 pi electrons. Benzene: planar, cyclic, conjugated, 6 electrons (n = 1) → aromatic. Cyclooctatetraene has 8 pi electrons (4n, not 4n+2) and puckers out of planarity to escape antiaromaticity → non-aromatic. Aromaticity is a numeric and geometric condition, not simply the presence of alternating bonds."
+    },
+    {
+      "id": "drill-arh11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why substitution needs a catalyst",
+      "question": "Benzene reacts with bromine only in the presence of FeBr₃, yet bromine is already electrophilic. Why is a catalyst necessary?",
+      "solution": "Molecular Br₂ is not electrophilic enough to attack the stable aromatic ring. FeBr₃ polarises Br–Br to create a much stronger electrophile (Br⁺-like, complexed), enough to break aromaticity in the intermediate. The catalyst activates the reagent, not the substrate, and is regenerated at the end."
     }
   ]
 }

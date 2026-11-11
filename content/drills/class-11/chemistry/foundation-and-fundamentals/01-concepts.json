@@ -48,6 +48,33 @@
       "concept": "Oxidation number rules",
       "question": "Find the oxidation number of S in H₂SO₄ and of Cr in Cr₂O₇²⁻, and state the rule being applied.",
       "solution": "H₂SO₄: 2(+1) + S + 4(−2) = 0 → S = +6. Cr₂O₇²⁻: 2Cr + 7(−2) = −2 → Cr = +6. Rule: the sum of oxidation numbers equals the species' charge (0 for neutral). Oxygen is −2 (except peroxides), hydrogen +1 (except hydrides) — the fixed anchors make the unknown solvable."
+    },
+    {
+      "id": "drill-ff11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the mole counts particles, not mass",
+      "question": "One mole of H₂O and one mole of H₂SO₄ have wildly different masses yet the same number of formula units. Why is the mole defined on count?",
+      "solution": "Chemical reactions happen particle-to-particle, in fixed ratios, so the useful bookkeeping unit must be a COUNT. The mole is just Avogadro's number of particles, with molar mass as the conversion to grams: n = m/M. Reactions balance in moles, not grams — that is why stoichiometry is done in moles."
+    },
+    {
+      "id": "drill-ff11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why the limiting reagent controls the yield",
+      "question": "In a reaction you have excess of one reactant and a shortfall of the other. Why is the shortfall reactant the one that controls the product amount?",
+      "solution": "Product forms only where BOTH reactants are available in the stoichiometric ratio; once the scarce reagent is exhausted, pairing stops no matter how much of the other remains. So the product amount is set by moles of the limiting reagent, divided by its coefficient. The excess reagent is left over, not 'unused capacity' — its presence changes nothing. Identify the limiting reagent first, always."
+    },
+    {
+      "id": "drill-ff11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why significant figures matter in analysis",
+      "question": "Why does reporting an atomic mass as 12.0110 g/mol from a balance reading 12.01 g misrepresent the measurement?",
+      "solution": "The reported precision cannot exceed the measurement's precision. A reading of 12.01 g supports four significant figures, so extra trailing digits are fabricated certainty. Significant figures encode the reliability of the instrument, so carrying them beyond it misleads the reader about error. Report to the weakest measured precision."
     }
   ]
 }

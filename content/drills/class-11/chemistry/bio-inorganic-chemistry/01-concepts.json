@@ -48,6 +48,33 @@
       "concept": "Chelation therapy",
       "question": "How does EDTA treat lead poisoning, and why is the chelate effect central to it?",
       "solution": "EDTA is a hexadentate ligand that wraps the Pb²⁺ in claw-like bonds, forming an extremely stable, water-soluble chelate that the kidneys excrete. The chelate effect (multiple bonds, entropic favourability) makes EDTA pull lead off the body's proteins — selective removal of the toxic ion without dismantling essential chemistry."
+    },
+    {
+      "id": "drill-bic11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why haemoglobin needs iron",
+      "question": "Haemoglobin carries O₂ using Fe(II) at its centre, and its absence causes anaemia. Why does iron chemistry make reversible binding possible?",
+      "solution": "Fe(II) in the porphyrin ring can bind O₂ reversibly — the iron's d-electrons allow a weak coordination bond that releases oxygen where it is needed. Stronger binders would release nothing; weaker ones would bind nothing. Reversible binding is a fine balance of coordination strength, and iron sits in that window."
+    },
+    {
+      "id": "drill-bic11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why biological systems need trace metals",
+      "question": "Plants and humans need only micrograms of Zn, Cu or Mn yet cannot survive without them. Why does quantity not reflect importance?",
+      "solution": "These metals are catalysts and structural cofactors: a single Zn²⁺ ion in carbonic anhydrase performs reactions at a rate no organic residue can match, and the enzyme cannot fold or function without it. Catalysts are not consumed, so tiny amounts suffice; but their specific electronic and coordination chemistry cannot be achieved by organic groups alone. Trace = essential, because the chemistry is catalytic rather than structural bulk."
+    },
+    {
+      "id": "drill-bic11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why metal excess is toxic",
+      "question": "Too much copper or iron is harmful though both are essential. Why is the dose-response two-sided?",
+      "solution": "Excess free metal ions catalyse undesirable redox chemistry — Fenton chemistry generating hydroxyl radicals, displacement of correct metals from enzyme sites, and precipitation of insoluble salts. Because metals work as specific catalysts, an excess disrupts the same specificity elsewhere. Essentiality and toxicity are the same property separated by concentration."
     }
   ]
 }

@@ -39,6 +39,42 @@
       "concept": "Hybridisation is a model",
       "question": "Does carbon 'actually' promote a 2s electron and hybridise before bonding in methane? What is hybridisation, really?",
       "solution": "Promotion-plus-hybridisation is a MODEL, not a filmed event — no one observes carbon preparing orbitals before bonding. What is real: methane has four EQUIVALENT tetrahedral bonds (109.5°), which pure s + p orbitals cannot produce (p orbitals are 90° apart). Hybridisation (mixing one s + three p into four sp³ functions) is the mathematical construction that reproduces the observed shape and energies. It is justified backward from experiment: the geometry demands it. Treat sp³/sp²/sp as labels for observed geometry (4/3/2 electron domains), not as a physical warm-up routine carbon performs."
+    },
+    {
+      "id": "drill-bond-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why ionic bonds form between specific pairs",
+      "question": "NaCl forms readily but NaCl₂ does not. Why does sodium stop at one electron transfer?",
+      "solution": "After losing one electron sodium reaches the stable neon configuration; removing a second would break into a much lower, tightly held shell, costing far more energy than any lattice energy could repay. Bonding proceeds only as far as the stable-configuration boundary. Valence shell completion, not simple charge balance, limits how many electrons transfer."
+    },
+    {
+      "id": "drill-bond-6",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why diamond and graphite are both covalent networks",
+      "question": "Both diamond and graphite are covalent carbon solids, yet one is the hardest known material and the other a soft lubricant. Explain using bond dimensionality.",
+      "solution": "Diamond bonds in three dimensions: every carbon is tetrahedrally linked to four others, so the whole crystal is one rigid network — hardness follows. Graphite bonds strongly in two dimensions but its layers are held only by weak van der Waals forces, so the planes slide easily — softness follows. Both have strong covalent bonds; only diamond's network is 3-D and load-bearing in every direction. Hardness depends on bond topology, not bond strength alone."
+    },
+    {
+      "id": "drill-bond-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why H₂O bends but CO₂ does not",
+      "question": "Both have two bonds to the central atom, yet water is bent (104.5°) and carbon dioxide is linear (180°). Give the structural reason.",
+      "solution": "VSEPR counts ELECTRON DOMAINS, not just bonds. Oxygen in H₂O has two bonding pairs plus two lone pairs — four domains arranged tetrahedrally, with lone-pair repulsion squeezing the H–O–H angle to 104.5°. Carbon in CO₂ has two bonding domains only (double bonds count as one each), so it is linear. Lone pairs, not bond count, bend the geometry."
+    },
+    {
+      "id": "drill-bond-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why metals conduct but ionic solids do not",
+      "question": "Both a metal and an ionic crystal contain charged particles. Why does only the metal conduct in the solid state?",
+      "solution": "Metal ions sit in a sea of DELOCALISED electrons that are free to move through the lattice — mobile charge. In an ionic solid the ions themselves are the charge carriers and are locked in fixed lattice sites, so nothing moves until the crystal melts or dissolves. Mobile charge carriers, not the presence of charge, is what defines conduction."
     }
   ]
 }

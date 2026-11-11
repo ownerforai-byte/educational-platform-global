@@ -48,6 +48,33 @@
       "concept": "Catalyst and equilibrium",
       "question": "Why does adding a catalyst speed up a reaction but leave the equilibrium composition unchanged?",
       "solution": "A catalyst lowers the activation energy of BOTH forward and reverse reactions equally — k_f and k_r multiply by the same factor, so their ratio K is unchanged. Equilibrium is reached FASTER, but the position is thermodynamics, not kinetics. The catalyst changes the road, not the destination."
+    },
+    {
+      "id": "drill-ce11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a catalyst shifts nothing",
+      "question": "A catalyst speeds up both the forward and reverse reactions. Why does it leave the equilibrium position unchanged?",
+      "solution": "A catalyst lowers the activation energy of BOTH directions by the same amount, so both rates increase by the same factor. The point where the two rates become equal — equilibrium — therefore stays at the same composition. Catalysts change how fast equilibrium arrives, never where it sits."
+    },
+    {
+      "id": "drill-ce11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Why K changes only with temperature",
+      "question": "Changing pressure or concentration shifts an equilibrium, yet K stays constant. Why is temperature the only variable that changes K?",
+      "solution": "K is defined from the standard free-energy change, and ΔG° depends only on temperature: ln K = −ΔG°/RT. Pressure and concentration changes just move the system along the same equilibrium surface (Q ≠ K temporarily, then Q → K again). Temperature alters ΔG° itself, so it resets K. Pressure changes position; temperature changes the destination."
+    },
+    {
+      "id": "drill-ce11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why Le Chatelier's principle is a consequence",
+      "question": "Why does a system at equilibrium respond to an added reactant by making more product?",
+      "solution": "Adding reactant makes the reaction quotient Q fall below K. The system is no longer at equilibrium, and the only way to restore Q = K is to consume some of the added reactant — i.e. the forward reaction runs faster until Q returns to K. Le Chatelier's principle is a shorthand for this Q-versus-K restoration, not an independent law."
     }
   ]
 }

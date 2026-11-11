@@ -48,6 +48,33 @@
       "concept": "Exceptional configurations — Cr and Cu",
       "question": "Why is chromium [Ar]3d⁵4s¹ instead of the expected [Ar]3d⁴4s²?",
       "solution": "Half-filled (d⁵) and fully-filled (d¹⁰) subshells have extra stability: symmetric electron distribution and maximum exchange energy. Moving one 4s electron into 3d achieves a half-filled d⁵ — the exchange-energy gain outweighs the cost of the promotion. Cr and Cu are the standard exceptions the rule predicts."
+    },
+    {
+      "id": "drill-as11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why spectra are lines, not bands",
+      "question": "An excited hydrogen atom emits a few sharp lines rather than a continuous band. What does that prove about atomic energy?",
+      "solution": "Energy levels are QUANTISED, so transitions occur only between fixed levels. Each allowed jump corresponds to one photon energy hν = ΔE and hence one wavelength — a line. A continuum would imply any energy is allowed. Sharp lines are direct evidence for discrete atomic states."
+    },
+    {
+      "id": "drill-as11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why Bohr's model had to be replaced",
+      "question": "Bohr's model predicts the hydrogen spectrum brilliantly, yet it is now abandoned. Give two failures and the deeper reason.",
+      "solution": "(1) It cannot explain multi-electron atoms or the fine structure/Zeeman splitting. (2) It assumes electrons orbit in defined paths with known momentum and position, violating the uncertainty principle. Deeper reason: it is a semi-classical hybrid — quantised rules bolted onto classical orbits — with no justification for the quantisation condition itself. Quantum mechanics replaces orbits with probability distributions."
+    },
+    {
+      "id": "drill-as11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why an orbital is not an orbit",
+      "question": "An electron in a 1s orbital has a spherically symmetric probability distribution with maximum at the nucleus. Where is the electron 'moving' then?",
+      "solution": "An orbital is a probability amplitude map, not a path. The electron has no defined trajectory, only a distribution of possible positions; the 1s density peaks at the nucleus because that is where the electron is most likely to be FOUND. Orbital ≠ orbit: the first describes likelihood in space, the second an assumed track."
     }
   ]
 }
