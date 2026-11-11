@@ -5,44 +5,31 @@
   "topicTitle": "Right Hand Limit",
   "relevance": 100,
   "simulation": "limits-and-continuity-rhl",
-  "notes": [],
+  "notes": [
+    "**Definition.** lim(x→a⁺) f(x) = L means f(x) → L as x approaches a from the right, i.e. through values x > a; it is also written f(a + 0) or RHL.",
+    "**Substitution trick.** Put x = a + h with h > 0 and h → 0; then lim(x→a⁺) f(x) becomes lim(h→0⁺) f(a + h), which is usually easier to simplify.",
+    "**Worked example.** lim(x→0⁺) |x|/x = lim(x→0⁺) x/x = 1, because |x| = x for every positive x.",
+    "**Sign functions.** For f(x) = [x] (greatest integer), lim(x→2⁺) [x] = 2 while lim(x→2⁻) [x] = 1, so the two-sided limit at 2 does not exist.",
+    "**Vertical asymptotes.** lim(x→0⁺) 1/x = +∞; an infinite one-sided limit is still a valid description of behaviour but is not a finite limit.",
+    "**Exam caution.** Keep the strict inequality x > a throughout; including x = a or using negative h silently converts the RHL into a different question."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
   "animation3D": "limits-and-continuity-rhl",
   "motionGraphics": "limits-and-continuity-rhl",
-  "examples": [
-    "Application of Right Hand Limit"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Right Hand Limit.",
-    "Q3. Problem on Right Hand Limit."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [],
-  "keyPoints": [
-    "Application of Right Hand Limit",
-    "Connection of Right Hand Limit to other topics"
-  ],
-  "summary": "Right Hand Limit covers essential principles and applications.",
+  "keyPoints": [],
+  "summary": "The right-hand limit approaches a through values greater than a; substituting x = a + h with h → 0⁺ turns it into a one-variable limit.",
   "specialNotes": [],
-  "importantStatements": [
-    "Statement 1: Definition of Right Hand Limit",
-    "Statement 2: Theorem related to Right Hand Limit",
-    "Statement 3: Condition for Right Hand Limit to be valid",
-    "Statement 4: Principle governing Right Hand Limit",
-    "Statement 5: Corollary or consequence of Right Hand Limit"
-  ],
-  "importantNotes": [
-    "Right Hand Limit is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Right Hand Limit."
-  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
   "examNotes": [],
   "mcs": [],
-  "importantConcepts": [
-    "Definition and significance of Right Hand Limit."
-  ],
+  "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1
 }

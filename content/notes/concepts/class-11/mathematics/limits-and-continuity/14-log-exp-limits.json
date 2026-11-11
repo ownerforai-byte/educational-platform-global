@@ -5,44 +5,31 @@
   "topicTitle": "Limits of Logarithmic and Exponential Functions",
   "relevance": 100,
   "simulation": "limits-and-continuity-logexp",
-  "notes": [],
+  "notes": [
+    "**Exponential base limit.** lim(x→0) (eˣ − 1)/x = 1 and, more generally, lim(x→0) (aˣ − 1)/x = ln a for a > 0.",
+    "**Logarithmic limit.** lim(x→0) ln(1 + x)/x = 1, which is the same statement inverted since ln and exp are inverse functions.",
+    "**Worked example.** lim(x→0) (e^(3x) − 1)/x = 3·lim(u→0)(eᵘ − 1)/u = 3, using u = 3x.",
+    "**Standard form.** lim(x→0) (1 + x)^(1/x) = e and lim(n→∞) (1 + 1/n)ⁿ = e define the natural base through a limit.",
+    "**Log of a limit.** For a positive continuous f with lim f = L > 0, lim ln f(x) = ln L; exponentiate the result to recover the original limit.",
+    "**Exam caution.** Keep the argument of ln positive throughout; ln(1 + x) requires x > −1, so only the right-hand limit exists at x = −1."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
   "animation3D": "limits-and-continuity-logexp",
   "motionGraphics": "limits-and-continuity-logexp",
-  "examples": [
-    "Application of Limits of Logarithmic and Exponential Functions"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Limits of Logarithmic and Exponential Functions.",
-    "Q3. Problem on Limits of Logarithmic and Exponential Functions."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [],
-  "keyPoints": [
-    "Application of Limits of Logarithmic and Exponential Functions",
-    "Connection of Limits of Logarithmic and Exponential Functions to other topics"
-  ],
-  "summary": "Limits of Logarithmic and Exponential Functions covers essential principles and applications.",
+  "keyPoints": [],
+  "summary": "Exponential and logarithmic limits follow from lim(x→0) (eˣ − 1)/x = 1 and lim(x→0) ln(1 + x)/x = 1.",
   "specialNotes": [],
-  "importantStatements": [
-    "Statement 1: Definition of Limits of Logarithmic and Exponential Functions",
-    "Statement 2: Theorem related to Limits of Logarithmic and Exponential Functions",
-    "Statement 3: Condition for Limits of Logarithmic and Exponential Functions to be valid",
-    "Statement 4: Principle governing Limits of Logarithmic and Exponential Functions",
-    "Statement 5: Corollary or consequence of Limits of Logarithmic and Exponential Functions"
-  ],
-  "importantNotes": [
-    "Limits of Logarithmic and Exponential Functions is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Limits of Logarithmic and Exponential Functions."
-  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
   "examNotes": [],
   "mcs": [],
-  "importantConcepts": [
-    "Definition and significance of Limits of Logarithmic and Exponential Functions."
-  ],
+  "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1
 }

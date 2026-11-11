@@ -5,44 +5,31 @@
   "topicTitle": "Jump Discontinuity",
   "relevance": 100,
   "simulation": "limits-and-continuity-jump",
-  "notes": [],
+  "notes": [
+    "**Definition.** f has a jump discontinuity at a when LHL and RHL both exist as finite numbers but LHL ≠ RHL; the two-sided limit therefore does not exist.",
+    "**Worked example.** For f(x) = |x|/x at 0, LHL = −1 and RHL = 1, so the graph has a step of height 2 at the origin.",
+    "**Step functions.** The greatest-integer function [x] jumps by 1 at every integer n, since lim(x→n⁻) [x] = n − 1 and lim(x→n⁺) [x] = n.",
+    "**Piecewise rules.** A jump usually appears at the boundary between two branches; evaluate each branch at a and compare the two results.",
+    "**Not removable.** Because the mismatch comes from the behaviour on both sides of a, changing only f(a) cannot make the function continuous.",
+    "**Exam caution.** Report both one-sided limits with their values; saying only 'limit does not exist' loses the marks for identifying the jump size."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
   "animation3D": "limits-and-continuity-jump",
   "motionGraphics": "limits-and-continuity-jump",
-  "examples": [
-    "Application of Types of Discontinuity: Jump"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Types of Discontinuity: Jump.",
-    "Q3. Problem on Types of Discontinuity: Jump."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [],
-  "keyPoints": [
-    "Application of Types of Discontinuity: Jump",
-    "Connection of Types of Discontinuity: Jump to other topics"
-  ],
-  "summary": "Types of Discontinuity: Jump covers essential principles and applications.",
+  "keyPoints": [],
+  "summary": "A jump occurs when both one-sided limits exist and are finite but unequal; no redefinition of the single value f(a) can remove it.",
   "specialNotes": [],
-  "importantStatements": [
-    "Statement 1: Definition of Jump Discontinuity",
-    "Statement 2: Theorem related to Jump Discontinuity",
-    "Statement 3: Condition for Jump Discontinuity to be valid",
-    "Statement 4: Principle governing Jump Discontinuity",
-    "Statement 5: Corollary or consequence of Jump Discontinuity"
-  ],
-  "importantNotes": [
-    "Types of Discontinuity: Jump is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Types of Discontinuity: Jump."
-  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
   "examNotes": [],
   "mcs": [],
-  "importantConcepts": [
-    "Definition and significance of Types of Discontinuity: Jump."
-  ],
+  "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1
 }

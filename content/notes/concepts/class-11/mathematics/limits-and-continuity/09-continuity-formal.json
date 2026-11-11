@@ -5,44 +5,31 @@
   "topicTitle": "Continuity at a Point",
   "relevance": 100,
   "simulation": "limits-and-continuity-formal",
-  "notes": [],
+  "notes": [
+    "**Formal statement.** f is continuous at x = a when lim(x→a) f(x) = f(a), which unpacks to LHL = RHL = f(a) with all three values finite.",
+    "**Epsilon form.** Equivalently, for every ε > 0 there exists δ > 0 such that |x − a| < δ implies |f(x) − f(a)| < ε; this is the definition used in proofs.",
+    "**Worked example.** For f(x) = kx + 1 when x ≤ 2 and f(x) = 3x − 1 when x > 2, set 2k + 1 = 5 to get k = 2 for continuity at 2.",
+    "**Checking boundaries.** Evaluate f(a) from the branch whose inequality includes equality, then compute the LHL and RHL from their respective branches.",
+    "**Consequences.** Continuity on a closed interval guarantees the function attains a maximum and a minimum (extreme value theorem) and takes every intermediate value.",
+    "**Exam caution.** A function can have a limit at a and still be discontinuous there; the missing condition is the equality lim = f(a)."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
   "animation3D": "limits-and-continuity-formal",
   "motionGraphics": "limits-and-continuity-formal",
-  "examples": [
-    "Application of Continuity at a Point (Formal Definition)"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Continuity at a Point (Formal Definition).",
-    "Q3. Problem on Continuity at a Point (Formal Definition)."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [],
-  "keyPoints": [
-    "Application of Continuity at a Point (Formal Definition)",
-    "Connection of Continuity at a Point (Formal Definition) to other topics"
-  ],
-  "summary": "Continuity at a Point (Formal Definition) covers essential principles and applications.",
+  "keyPoints": [],
+  "summary": "Formal continuity at a requires lim(x→a⁻) f = lim(x→a⁺) f = f(a); for piecewise rules this becomes an equation for the unknown parameter.",
   "specialNotes": [],
-  "importantStatements": [
-    "Statement 1: Definition of Continuity at a Point",
-    "Statement 2: Theorem related to Continuity at a Point",
-    "Statement 3: Condition for Continuity at a Point to be valid",
-    "Statement 4: Principle governing Continuity at a Point",
-    "Statement 5: Corollary or consequence of Continuity at a Point"
-  ],
-  "importantNotes": [
-    "Continuity at a Point (Formal Definition) is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Continuity at a Point (Formal Definition)."
-  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
   "examNotes": [],
   "mcs": [],
-  "importantConcepts": [
-    "Definition and significance of Continuity at a Point (Formal Definition)."
-  ],
+  "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1
 }

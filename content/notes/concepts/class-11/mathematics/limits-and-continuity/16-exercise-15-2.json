@@ -5,43 +5,30 @@
   "topicTitle": "Limits of Trigonometric Functions",
   "relevance": 100,
   "simulation": "limits-and-continuity-trig-ex",
-  "notes": [],
+  "notes": [
+    "**Core tool.** Rewrite every sine or tangent term so its argument tends to zero, then apply lim(u→0) sin u/u = 1 and lim(u→0) tan u/u = 1.",
+    "**Worked example.** lim(x→0) sin 4x / x = 4·lim(u→0) sin u/u = 4 with u = 4x.",
+    "**Cosine form.** Use 1 − cos x = 2 sin²(x/2) to get lim(x→0) (1 − cos x)/x² = 1/2.",
+    "**Identities first.** Convert tan x to sin x/cos x, 1 − cos²x to sin²x, and sin 2x to 2 sin x cos x before applying the standard limits.",
+    "**Non-zero target.** For lim(x→a) sin(x − a)/(x − a) with a ≠ 0, substitute u = x − a; the limit is still 1.",
+    "**Exam caution.** Angles must be in radians, and a factor such as sin 3x contributes 3, not 1, when divided by x."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
   "animation3D": "limits-and-continuity-trig-ex",
   "motionGraphics": "limits-and-continuity-trig-ex",
-  "examples": [
-    "Application of Exercise 15.2: Limits of Trigonometric Functions"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Exercise 15.2: Limits of Trigonometric Functions.",
-    "Q3. Problem on Exercise 15.2: Limits of Trigonometric Functions."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [],
-  "keyPoints": [
-    "Application of Exercise 15.2: Limits of Trigonometric Functions",
-    "Connection of Exercise 15.2: Limits of Trigonometric Functions to other topics"
-  ],
-  "summary": "Exercise 15.2: Limits of Trigonometric Functions covers essential principles and applications.",
+  "keyPoints": [],
+  "summary": "Exercise 15.2 applies sin x/x, (1 − cos x)/x² and trigonometric identities to indeterminate trigonometric limits.",
   "specialNotes": [],
-  "importantStatements": [
-    "Statement 1: Definition of Limits of Trigonometric Functions",
-    "Statement 2: Theorem related to Limits of Trigonometric Functions",
-    "Statement 3: Condition for Limits of Trigonometric Functions to be valid",
-    "Statement 4: Principle governing Limits of Trigonometric Functions",
-    "Statement 5: Corollary or consequence of Limits of Trigonometric Functions"
-  ],
-  "importantNotes": [
-    "Exercise 15.2: Limits of Trigonometric Functions is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Exercise 15.2: Limits of Trigonometric Functions."
-  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
   "examNotes": [],
   "mcs": [],
-  "importantConcepts": [
-    "Definition and significance of Exercise 15.2: Limits of Trigonometric Functions."
-  ],
+  "importantConcepts": [],
   "importantTasks": []
 }

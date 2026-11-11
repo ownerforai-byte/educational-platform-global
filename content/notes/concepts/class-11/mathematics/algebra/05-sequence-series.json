@@ -4,47 +4,31 @@
   "topicSlug": "sequence-series",
   "topicTitle": "Sequence and Series",
   "relevance": 100,
-  "notes": [],
+  "notes": [
+    "**Sequence and series.** A sequence is an ordered list a₁, a₂, a₃, … whose nth term aₙ is a function of the positive integer n; the series is the sum a₁ + a₂ + … + aₙ, written Σaₙ.",
+    "**Arithmetic progression.** Consecutive terms differ by a constant d, so aₙ = a + (n − 1)d and Sₙ = n/2[2a + (n − 1)d] = n/2(a + l), where l is the last term.",
+    "**Geometric progression.** Consecutive terms have a constant ratio r, so aₙ = arⁿ⁻¹ and Sₙ = a(1 − rⁿ)/(1 − r) for r ≠ 1; the infinite sum S∞ = a/(1 − r) exists only when |r| < 1.",
+    "**Worked example.** In 3, 7, 11, … the common difference is 4, hence a₂₀ = 3 + 19·4 = 79 and S₂₀ = 20/2(3 + 79) = 820.",
+    "**Means.** For positive a and b the arithmetic mean is (a + b)/2 and the geometric mean is √(ab); AM ≥ GM always, with equality only when a = b.",
+    "**Exam caution.** Count the number of terms from the first and last indices before applying Sₙ, and check r = 1 separately because the GP sum formula divides by 1 − r."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
   "animation3D": "algebra",
   "motionGraphics": "algebra",
-  "examples": [
-    "Application of Sequence and Series"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Sequence and Series.",
-    "Q3. Problem on Sequence and Series."
-  ],
-  "formulas": [
-    "AP: $t_n = a + (n-1)d$ and $S_n = \\frac{n}{2}\\left[2a + (n-1)d\\right] = \\frac{n}{2}(a + l)$.",
-    "GP: $t_n = ar^{n-1}$, $S_n = \\frac{a(r^n - 1)}{r - 1}$ for $r \\neq 1$, and $S_\\infty = \\frac{a}{1-r}$ for $|r| < 1$.",
-    "For positive numbers $AM \\geq GM \\geq HM$, with equality only when the numbers are equal."
-  ],
-  "keyPoints": [
-    "Check the common difference/ratio first: a 'series' question is an AP or a GP question in disguise, and the two have different sum formulas."
-  ],
-  "summary": "Sequence and Series covers essential principles and applications.",
+  "examples": [],
+  "practiceQuestions": [],
+  "formulas": [],
+  "keyPoints": [],
+  "summary": "A sequence is an ordered list governed by a rule for its nth term; a series is the sum of those terms. Arithmetic, geometric and special sums each have their own closed form.",
   "specialNotes": [],
-  "importantStatements": [
-    "Statement 1: Definition of Sequence and Series",
-    "Statement 2: Theorem related to Sequence and Series",
-    "Statement 3: Condition for Sequence and Series to be valid",
-    "Statement 4: Principle governing Sequence and Series",
-    "Statement 5: Corollary or consequence of Sequence and Series"
-  ],
-  "importantNotes": [
-    "Sequence and Series is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Sequence and Series."
-  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
   "examNotes": [],
   "mcs": [],
-  "importantConcepts": [
-    "Definition and significance of Sequence and Series."
-  ],
+  "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1
 }

@@ -4,7 +4,14 @@
   "topicSlug": "dot-product-of-two-vectors",
   "topicTitle": "Dot Product of Two Vectors",
   "relevance": 95,
-  "notes": [],
+  "notes": [
+    "**Component form.** For a = (a₁, a₂, a₃) and b = (b₁, b₂, b₃), a · b = a₁b₁ + a₂b₂ + a₃b₃; multiply matching components and add.",
+    "**Geometric form.** a · b = |a||b| cos θ links the algebraic result to the angle, so comparing the two forms is a reliable way to find θ.",
+    "**Algebraic laws.** a · b = b · a, a · (b + c) = a · b + a · c, and (k a) · b = k(a · b); the dot product is NOT associative because a · b is a scalar.",
+    "**Self product.** a · a = |a|², which is why |a| = √(a · a) and why |a + b|² = |a|² + 2a·b + |b|².",
+    "**Worked example.** a = (2, −1, 3), b = (1, 4, −2): a·b = 2 − 4 − 6 = −8, |a| = √14, |b| = √21, so cos θ = −8/√294.",
+    "**Exam caution.** The dot product of three vectors such as (a · b) · c is meaningless; use parentheses only where the scalar is multiplied by a vector."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
@@ -12,14 +19,9 @@
   "motionGraphics": "vectors",
   "examples": [],
   "practiceQuestions": [],
-  "formulas": [
-    "$\\vec{a}\\cdot\\vec{b} = ab\\cos\\theta = a_1b_1 + a_2b_2 + a_3b_3$.",
-    "Angle between vectors: $\\cos\\theta = \\frac{\\vec{a}\\cdot\\vec{b}}{ab}$, and $\\vec{a}\\cdot\\vec{b} = 0 \\iff \\vec{a} \\perp \\vec{b}$."
-  ],
-  "keyPoints": [
-    "In component form the dot product is just the sum of products — the angle only appears if the question gives magnitudes."
-  ],
-  "summary": "Dot Product of Two Vectors covers essential principles and applications.",
+  "formulas": [],
+  "keyPoints": [],
+  "summary": "In components a·b = Σaᵢbᵢ; the product is commutative, distributes over addition, and a·a = |a|².",
   "specialNotes": [],
   "importantStatements": [],
   "importantNotes": [],

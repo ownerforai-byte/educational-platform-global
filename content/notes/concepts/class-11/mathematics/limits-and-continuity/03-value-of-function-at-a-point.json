@@ -5,44 +5,31 @@
   "topicTitle": "Value of the Function",
   "relevance": 100,
   "simulation": "limits-and-continuity-value",
-  "notes": [],
+  "notes": [
+    "**Direct substitution.** When a lies in the domain and the formula is continuous there, f(a) is found by replacing x with a; for f(x) = x² + 3x, f(2) = 4 + 6 = 10.",
+    "**Limit versus value.** lim(x→a) f(x) uses values NEAR a, while f(a) uses only the value AT a; the two may differ or the latter may not exist at all.",
+    "**Removable hole.** For f(x) = (x² − 4)/(x − 2), f(2) is undefined but lim(x→2) f(x) = 4, because the expression equals x + 2 for every x ≠ 2.",
+    "**Redefinition.** Defining f(2) = 4 fills the hole and makes f continuous at 2; defining f(2) = 7 keeps the same limit but leaves a removable discontinuity.",
+    "**Piecewise boundaries.** At a point where the rule changes, f(a) belongs to exactly one branch (usually the one with ≤ or ≥); read the inequality before substituting.",
+    "**Exam caution.** Substituting first into a 0/0 form gives no information; always simplify the expression before evaluating at the point."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
   "animation3D": "limits-and-continuity-value",
   "motionGraphics": "limits-and-continuity-value",
-  "examples": [
-    "Application of Value of a Function at a Point"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Value of a Function at a Point.",
-    "Q3. Problem on Value of a Function at a Point."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [],
-  "keyPoints": [
-    "Application of Value of a Function at a Point",
-    "Connection of Value of a Function at a Point to other topics"
-  ],
-  "summary": "Value of a Function at a Point covers essential principles and applications.",
+  "keyPoints": [],
+  "summary": "f(a) is obtained by direct substitution; the limit as x approaches a is independent of f(a) and can exist even when f(a) is undefined.",
   "specialNotes": [],
-  "importantStatements": [
-    "Statement 1: Definition of Value of the Function",
-    "Statement 2: Theorem related to Value of the Function",
-    "Statement 3: Condition for Value of the Function to be valid",
-    "Statement 4: Principle governing Value of the Function",
-    "Statement 5: Corollary or consequence of Value of the Function"
-  ],
-  "importantNotes": [
-    "Value of a Function at a Point is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Value of a Function at a Point."
-  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
   "examNotes": [],
   "mcs": [],
-  "importantConcepts": [
-    "Definition and significance of Value of a Function at a Point."
-  ],
+  "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1
 }

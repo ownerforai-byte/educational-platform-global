@@ -4,44 +4,31 @@
   "topicSlug": "dot-product-and-its-applications",
   "topicTitle": "Dot product (scalar product) and its applications",
   "relevance": 100,
-  "notes": [],
+  "notes": [
+    "**Definition.** a · b = |a||b| cos θ = a₁b₁ + a₂b₂ + a₃b₃, where θ is the angle between the vectors; the result is a scalar, not a vector.",
+    "**Angle between vectors.** cos θ = (a · b)/(|a||b|), so two non-zero vectors are perpendicular exactly when a · b = 0 and parallel when |a · b| = |a||b|.",
+    "**Projection.** The scalar projection of a on b is (a · b)/|b| and the vector projection is [(a · b)/|b|²] b.",
+    "**Work done.** A constant force F moving a body through displacement d does work W = F · d; only the component of force along the motion contributes.",
+    "**Worked example.** For a = (1, 2, 3) and b = (4, −2, 0), a·b = 4 − 4 + 0 = 0, so the vectors are orthogonal.",
+    "**Exam caution.** a · b = 0 does not imply one vector is zero; state the non-zero condition before concluding perpendicularity."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
   "animation3D": "vectors",
   "motionGraphics": "vectors",
-  "examples": [
-    "Application of Dot Product and Its Applications"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Dot Product and Its Applications.",
-    "Q3. Problem on Dot Product and Its Applications."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [],
-  "keyPoints": [
-    "Application of Dot Product and Its Applications",
-    "Connection of Dot Product and Its Applications to other topics"
-  ],
-  "summary": "Dot Product and Its Applications covers essential principles and applications.",
+  "keyPoints": [],
+  "summary": "The dot product a·b = |a||b| cos θ is a scalar that measures alignment; it gives angles, projections, work and an orthogonality test.",
   "specialNotes": [],
-  "importantStatements": [
-    "Statement 1: Definition of Dot product (scalar product) and its applications",
-    "Statement 2: Theorem related to Dot product (scalar product) and its applications",
-    "Statement 3: Condition for Dot product (scalar product) and its applications to be valid",
-    "Statement 4: Principle governing Dot product (scalar product) and its applications",
-    "Statement 5: Corollary or consequence of Dot product (scalar product) and its applications"
-  ],
-  "importantNotes": [
-    "Dot Product and Its Applications is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Dot Product and Its Applications."
-  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
   "examNotes": [],
   "mcs": [],
-  "importantConcepts": [
-    "Definition and significance of Dot Product and Its Applications."
-  ],
+  "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1,
   "visualType": "dot-product-vectors"

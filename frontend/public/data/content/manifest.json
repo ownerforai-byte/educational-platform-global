@@ -94148,47 +94148,31 @@
       "topicSlug": "sequence-series",
       "topicTitle": "Sequence and Series",
       "relevance": 100,
-      "notes": [],
+      "notes": [
+        "**Sequence and series.** A sequence is an ordered list a₁, a₂, a₃, … whose nth term aₙ is a function of the positive integer n; the series is the sum a₁ + a₂ + … + aₙ, written Σaₙ.",
+        "**Arithmetic progression.** Consecutive terms differ by a constant d, so aₙ = a + (n − 1)d and Sₙ = n/2[2a + (n − 1)d] = n/2(a + l), where l is the last term.",
+        "**Geometric progression.** Consecutive terms have a constant ratio r, so aₙ = arⁿ⁻¹ and Sₙ = a(1 − rⁿ)/(1 − r) for r ≠ 1; the infinite sum S∞ = a/(1 − r) exists only when |r| < 1.",
+        "**Worked example.** In 3, 7, 11, … the common difference is 4, hence a₂₀ = 3 + 19·4 = 79 and S₂₀ = 20/2(3 + 79) = 820.",
+        "**Means.** For positive a and b the arithmetic mean is (a + b)/2 and the geometric mean is √(ab); AM ≥ GM always, with equality only when a = b.",
+        "**Exam caution.** Count the number of terms from the first and last indices before applying Sₙ, and check r = 1 separately because the GP sum formula divides by 1 − r."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "algebra",
       "motionGraphics": "algebra",
-      "examples": [
-        "Application of Sequence and Series"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Sequence and Series.",
-        "Q3. Problem on Sequence and Series."
-      ],
-      "formulas": [
-        "AP: $t_n = a + (n-1)d$ and $S_n = \\frac{n}{2}\\left[2a + (n-1)d\\right] = \\frac{n}{2}(a + l)$.",
-        "GP: $t_n = ar^{n-1}$, $S_n = \\frac{a(r^n - 1)}{r - 1}$ for $r \\neq 1$, and $S_\\infty = \\frac{a}{1-r}$ for $|r| < 1$.",
-        "For positive numbers $AM \\geq GM \\geq HM$, with equality only when the numbers are equal."
-      ],
-      "keyPoints": [
-        "Check the common difference/ratio first: a 'series' question is an AP or a GP question in disguise, and the two have different sum formulas."
-      ],
-      "summary": "Sequence and Series covers essential principles and applications.",
+      "examples": [],
+      "practiceQuestions": [],
+      "formulas": [],
+      "keyPoints": [],
+      "summary": "A sequence is an ordered list governed by a rule for its nth term; a series is the sum of those terms. Arithmetic, geometric and special sums each have their own closed form.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Sequence and Series",
-        "Statement 2: Theorem related to Sequence and Series",
-        "Statement 3: Condition for Sequence and Series to be valid",
-        "Statement 4: Principle governing Sequence and Series",
-        "Statement 5: Corollary or consequence of Sequence and Series"
-      ],
-      "importantNotes": [
-        "Sequence and Series is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Sequence and Series."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Sequence and Series."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -96606,7 +96590,48 @@
       "topicSlug": "geometry-9-1",
       "topicTitle": "Geometry 9-1",
       "relevance": 30,
-      "notes": [],
+      "notes": [
+        "<h2>Question 5 (a)</h2>",
+        "<p><b>Problem:</b> Find the equations of the bisectors of the angles between the lines containing the origin in each of the following cases:<br>i) $4x - 3y + 1 = 0$ and $12x - 5y + 7 = 0$<br>ii) $7x - y + 11 = 0$ and $x + y - 15 = 0$<br>Prove that the bisectors of the angles are at right angles to each other.</p>",
+        "<p><b>Formula:</b> The equations of the bisectors of the angles between two lines $a_1x+b_1y+c_1=0$ and $a_2x+b_2y+c_2=0$ are given by:</p>",
+        "$$\\frac{a_1x+b_1y+c_1}{\\sqrt{a_1^2+b_1^2}} = \\pm \\frac{a_2x+b_2y+c_2}{\\sqrt{a_2^2+b_2^2}}$$",
+        "<p>To find the bisector containing the origin, first make the constant terms $c_1$ and $c_2$ positive. The bisector containing the origin takes the positive (+) sign.</p>",
+        "<h3>Solution for i):</h3>",
+        "<p>Both constant terms ($+1$ and $+7$) are already positive.</p>",
+        "$$\\frac{4x-3y+1}{\\sqrt{4^2+(-3)^2}} = \\pm \\frac{12x-5y+7}{\\sqrt{12^2+(-5)^2}}$$",
+        "$$\\frac{4x-3y+1}{5} = \\pm \\frac{12x-5y+7}{13}$$",
+        "$$13(4x-3y+1) = \\pm 5(12x-5y+7)$$",
+        "<p>Taking the positive sign (bisector containing the origin):</p>",
+        "$$13(4x-3y+1) = 5(12x-5y+7)$$",
+        "$$52x-39y+13 = 60x-25y+35$$",
+        "$$8x + 14y + 22 = 0 \\implies 4x + 7y + 11 = 0$$",
+        "<p>The other bisector (not containing the origin) uses the negative sign:</p>",
+        "$$13(4x-3y+1) = -5(12x-5y+7)$$",
+        "$$52x-39y+13 = -60x+25y-35$$",
+        "$$112x - 64y + 48 = 0 \\implies 7x - 4y + 3 = 0$$",
+        "<p><b>Perpendicularity Proof:</b></p>",
+        "<p>Slope of first bisector $(m_1) = -\\frac{4}{7}$</p>",
+        "<p>Slope of second bisector $(m_2) = -\\frac{7}{-4} = \\frac{7}{4}$</p>",
+        "$$m_1 \\times m_2 = \\left(-\\frac{4}{7}\\right) \\times \\left(\\frac{7}{4}\\right) = -1 \\text{ (Hence, they are at right angles).}$$",
+        "<h3>Solution for ii):</h3>",
+        "<p>First, rewrite the second equation to make the constant positive: $-x - y + 15 = 0$.</p>",
+        "$$\\frac{7x-y+11}{\\sqrt{7^2+(-1)^2}} = \\frac{-x-y+15}{\\sqrt{(-1)^2+(-1)^2}}$$",
+        "$$\\frac{7x-y+11}{\\sqrt{50}} = \\frac{-x-y+15}{\\sqrt{2}}$$",
+        "<p>Since $\\sqrt{50}=5\\sqrt{2}$:</p>",
+        "$$\\frac{7x-y+11}{5\\sqrt{2}} = \\frac{-x-y+15}{\\sqrt{2}}$$",
+        "$$7x-y+11 = 5(-x-y+15)$$",
+        "$$7x-y+11 = -5x-5y+75$$",
+        "$$12x + 4y - 64 = 0 \\implies 3x + y - 16 = 0$$",
+        "<p>The other bisector (using the negative sign):</p>",
+        "$$7x-y+11 = -5(-x-y+15) \\implies 7x-y+11 = 5x+5y-75$$",
+        "$$2x - 6y + 86 = 0 \\implies x - 3y + 43 = 0$$",
+        "<p><b>Perpendicularity Proof:</b> Slope of $3x+y-16=0$ is $-3$. Slope of $x-3y+43=0$ is $\\frac{1}{3}$.</p>",
+        "$$(-3) \\times \\frac{1}{3} = -1 \\text{ (Hence, they are at right angles).}$$",
+        "<h2>Question 5 (b)</h2>",
+        "<p><b>Problem:</b> Find the equations of the bisectors of the acute angle between each of the following pairs of lines:<br>i) $y = x$ and $y = 7x + 4$<br>ii) $x + 2y - 5 = 0$ and $4x + 2y + 9 = 0$</p>",
+        "<h3>Solution for i):</h3>",
+        "<p>Rearrange equations to $x - y = 0$ and $7x - y + 4 = 0$. Make constants positive (already positive or zero).</p>"
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
@@ -102144,44 +102169,31 @@
       "topicTitle": "Introduction",
       "relevance": 100,
       "simulation": "limits-and-continuity-introduction",
-      "notes": [],
+      "notes": [
+        "**Meaning of a limit.** lim(x→a) f(x) = L means f(x) can be made arbitrarily close to L by taking x sufficiently close to a, from either side, without ever requiring x = a.",
+        "**Approach, not substitution.** The limit depends on values of f near a, so f(a) may be undefined or different from L; a hole in the graph does not by itself remove the limit.",
+        "**One-sided limits.** x → a⁻ approaches a from below and x → a⁺ from above; these are the left-hand and right-hand limits, written LHL and RHL.",
+        "**Existence.** A two-sided limit exists exactly when LHL = RHL = L with L finite; if the two disagree the function has a jump at a and no limit there.",
+        "**Continuity link.** f is continuous at a when the limit exists and equals f(a); limits are therefore the language used to define continuity, derivatives and integrals.",
+        "**Exam caution.** Never write x = a inside a 0/0 expression; simplify, factor or rationalize first and only then take the limit."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-introduction",
       "motionGraphics": "limits-and-continuity-introduction",
-      "examples": [
-        "Application of Introduction to Limits and Continuity"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Introduction to Limits and Continuity.",
-        "Q3. Problem on Introduction to Limits and Continuity."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Introduction to Limits and Continuity",
-        "Connection of Introduction to Limits and Continuity to other topics"
-      ],
-      "summary": "Introduction to Limits and Continuity covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "A limit describes the value f(x) approaches as x approaches a, whether or not f is defined at a; continuity requires the limit to equal f(a).",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Introduction",
-        "Statement 2: Theorem related to Introduction",
-        "Statement 3: Condition for Introduction to be valid",
-        "Statement 4: Principle governing Introduction",
-        "Statement 5: Corollary or consequence of Introduction"
-      ],
-      "importantNotes": [
-        "Introduction to Limits and Continuity is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Introduction to Limits and Continuity."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Introduction to Limits and Continuity."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102195,44 +102207,31 @@
       "topicTitle": "Function",
       "relevance": 100,
       "simulation": "limits-and-continuity-function",
-      "notes": [],
+      "notes": [
+        "**Definition.** A function f: A → B assigns to every x ∈ A exactly one value f(x) ∈ B; A is the domain and the set of attained values is the range, a subset of B.",
+        "**Notation.** f(x) is the output at input x, not a product; f(a) means substitute a for x wherever the rule is valid at a.",
+        "**Domain restrictions.** Exclude zero denominators, negative even roots and non-positive logarithm arguments; the domain fixes which limits and one-sided approaches are meaningful.",
+        "**Piecewise rules.** When different formulas apply on different intervals, evaluate each branch separately and pay special attention to the boundary point where the rule changes.",
+        "**Worked example.** For f(x) = (x² − 1)/(x − 1), f(1) is undefined but the rule simplifies to x + 1 for x ≠ 1, so the graph is a line with a single hole at (1, 2).",
+        "**Exam caution.** A function is not fully specified until its domain is stated; f(x) = x² on ℝ and on [0, ∞) are different functions with different inverses."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-function",
       "motionGraphics": "limits-and-continuity-function",
-      "examples": [
-        "Application of Function Definition and Notation"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Function Definition and Notation.",
-        "Q3. Problem on Function Definition and Notation."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Function Definition and Notation",
-        "Connection of Function Definition and Notation to other topics"
-      ],
-      "summary": "Function Definition and Notation covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "A function assigns exactly one output to each input in its domain; f(x) notation, domain, range and piecewise rules fix what a limit question is asking.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Function",
-        "Statement 2: Theorem related to Function",
-        "Statement 3: Condition for Function to be valid",
-        "Statement 4: Principle governing Function",
-        "Statement 5: Corollary or consequence of Function"
-      ],
-      "importantNotes": [
-        "Function Definition and Notation is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Function Definition and Notation."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Function Definition and Notation."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102246,44 +102245,31 @@
       "topicTitle": "Value of the Function",
       "relevance": 100,
       "simulation": "limits-and-continuity-value",
-      "notes": [],
+      "notes": [
+        "**Direct substitution.** When a lies in the domain and the formula is continuous there, f(a) is found by replacing x with a; for f(x) = x² + 3x, f(2) = 4 + 6 = 10.",
+        "**Limit versus value.** lim(x→a) f(x) uses values NEAR a, while f(a) uses only the value AT a; the two may differ or the latter may not exist at all.",
+        "**Removable hole.** For f(x) = (x² − 4)/(x − 2), f(2) is undefined but lim(x→2) f(x) = 4, because the expression equals x + 2 for every x ≠ 2.",
+        "**Redefinition.** Defining f(2) = 4 fills the hole and makes f continuous at 2; defining f(2) = 7 keeps the same limit but leaves a removable discontinuity.",
+        "**Piecewise boundaries.** At a point where the rule changes, f(a) belongs to exactly one branch (usually the one with ≤ or ≥); read the inequality before substituting.",
+        "**Exam caution.** Substituting first into a 0/0 form gives no information; always simplify the expression before evaluating at the point."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-value",
       "motionGraphics": "limits-and-continuity-value",
-      "examples": [
-        "Application of Value of a Function at a Point"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Value of a Function at a Point.",
-        "Q3. Problem on Value of a Function at a Point."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Value of a Function at a Point",
-        "Connection of Value of a Function at a Point to other topics"
-      ],
-      "summary": "Value of a Function at a Point covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "f(a) is obtained by direct substitution; the limit as x approaches a is independent of f(a) and can exist even when f(a) is undefined.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Value of the Function",
-        "Statement 2: Theorem related to Value of the Function",
-        "Statement 3: Condition for Value of the Function to be valid",
-        "Statement 4: Principle governing Value of the Function",
-        "Statement 5: Corollary or consequence of Value of the Function"
-      ],
-      "importantNotes": [
-        "Value of a Function at a Point is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Value of a Function at a Point."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Value of a Function at a Point."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102297,44 +102283,31 @@
       "topicTitle": "Right Hand Limit",
       "relevance": 100,
       "simulation": "limits-and-continuity-rhl",
-      "notes": [],
+      "notes": [
+        "**Definition.** lim(x→a⁺) f(x) = L means f(x) → L as x approaches a from the right, i.e. through values x > a; it is also written f(a + 0) or RHL.",
+        "**Substitution trick.** Put x = a + h with h > 0 and h → 0; then lim(x→a⁺) f(x) becomes lim(h→0⁺) f(a + h), which is usually easier to simplify.",
+        "**Worked example.** lim(x→0⁺) |x|/x = lim(x→0⁺) x/x = 1, because |x| = x for every positive x.",
+        "**Sign functions.** For f(x) = [x] (greatest integer), lim(x→2⁺) [x] = 2 while lim(x→2⁻) [x] = 1, so the two-sided limit at 2 does not exist.",
+        "**Vertical asymptotes.** lim(x→0⁺) 1/x = +∞; an infinite one-sided limit is still a valid description of behaviour but is not a finite limit.",
+        "**Exam caution.** Keep the strict inequality x > a throughout; including x = a or using negative h silently converts the RHL into a different question."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-rhl",
       "motionGraphics": "limits-and-continuity-rhl",
-      "examples": [
-        "Application of Right Hand Limit"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Right Hand Limit.",
-        "Q3. Problem on Right Hand Limit."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Right Hand Limit",
-        "Connection of Right Hand Limit to other topics"
-      ],
-      "summary": "Right Hand Limit covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "The right-hand limit approaches a through values greater than a; substituting x = a + h with h → 0⁺ turns it into a one-variable limit.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Right Hand Limit",
-        "Statement 2: Theorem related to Right Hand Limit",
-        "Statement 3: Condition for Right Hand Limit to be valid",
-        "Statement 4: Principle governing Right Hand Limit",
-        "Statement 5: Corollary or consequence of Right Hand Limit"
-      ],
-      "importantNotes": [
-        "Right Hand Limit is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Right Hand Limit."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Right Hand Limit."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102348,44 +102321,31 @@
       "topicTitle": "Left Hand Limit",
       "relevance": 100,
       "simulation": "limits-and-continuity-lhl",
-      "notes": [],
+      "notes": [
+        "**Definition.** lim(x→a⁻) f(x) = L means f(x) → L as x approaches a from the left through values x < a; it is written LHL or f(a − 0).",
+        "**Substitution trick.** Put x = a − h with h > 0 and h → 0, so lim(x→a⁻) f(x) = lim(h→0⁺) f(a − h).",
+        "**Worked example.** lim(x→0⁻) |x|/x = lim(x→0⁻) (−x)/x = −1, because |x| = −x for negative x; combined with RHL = 1 this proves lim(x→0) |x|/x does not exist.",
+        "**Piecewise functions.** For a rule that changes at a, use the branch valid for x < a when computing the LHL, and the other branch for the RHL.",
+        "**Radicals and logs.** lim(x→0⁺) √x = 0 has a right-hand limit but no left-hand limit, because √x and ln x are undefined for x < 0 in the reals.",
+        "**Exam caution.** A two-sided limit cannot be inferred from the LHL alone; always compute both one-sided limits before concluding existence."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-lhl",
       "motionGraphics": "limits-and-continuity-lhl",
-      "examples": [
-        "Application of Left Hand Limit"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Left Hand Limit.",
-        "Q3. Problem on Left Hand Limit."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Left Hand Limit",
-        "Connection of Left Hand Limit to other topics"
-      ],
-      "summary": "Left Hand Limit covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "The left-hand limit approaches a through values smaller than a; x = a − h with h → 0⁺ is the standard evaluation method.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Left Hand Limit",
-        "Statement 2: Theorem related to Left Hand Limit",
-        "Statement 3: Condition for Left Hand Limit to be valid",
-        "Statement 4: Principle governing Left Hand Limit",
-        "Statement 5: Corollary or consequence of Left Hand Limit"
-      ],
-      "importantNotes": [
-        "Left Hand Limit is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Left Hand Limit."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Left Hand Limit."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102399,44 +102359,31 @@
       "topicTitle": "Existence of Limit",
       "relevance": 100,
       "simulation": "limits-and-continuity-existence",
-      "notes": [],
+      "notes": [
+        "**Criterion.** lim(x→a) f(x) = L if and only if LHL = RHL = L with L a finite real number; equality of the two one-sided limits is both necessary and sufficient.",
+        "**Worked example — jump.** For f(x) = |x|/x at 0, LHL = −1 and RHL = 1, so lim(x→0) f(x) does not exist even though both one-sided limits do.",
+        "**Worked example — hole.** For f(x) = (x² − 9)/(x − 3), both one-sided limits equal 6, so the limit exists at 3 although f(3) is undefined.",
+        "**Unbounded behaviour.** If either one-sided limit is ±∞, no finite limit exists; describe the behaviour as an infinite limit instead of a number.",
+        "**Piecewise parameters.** To make a piecewise function continuous at a boundary, equate the LHL and RHL expressions and solve for the unknown constant.",
+        "**Exam caution.** Oscillating functions such as sin(1/x) near 0 have neither one-sided limit, so no amount of algebraic simplification produces a value."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-existence",
       "motionGraphics": "limits-and-continuity-existence",
-      "examples": [
-        "Application of Existence of Limit (LHL = RHL)"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Existence of Limit (LHL = RHL).",
-        "Q3. Problem on Existence of Limit (LHL = RHL)."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Existence of Limit (LHL = RHL)",
-        "Connection of Existence of Limit (LHL = RHL) to other topics"
-      ],
-      "summary": "Existence of Limit (LHL = RHL) covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "A two-sided limit exists precisely when the left- and right-hand limits are equal and finite; this criterion is the main test for jumps and piecewise boundaries.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Existence of Limit",
-        "Statement 2: Theorem related to Existence of Limit",
-        "Statement 3: Condition for Existence of Limit to be valid",
-        "Statement 4: Principle governing Existence of Limit",
-        "Statement 5: Corollary or consequence of Existence of Limit"
-      ],
-      "importantNotes": [
-        "Existence of Limit (LHL = RHL) is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Existence of Limit (LHL = RHL)."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Existence of Limit (LHL = RHL)."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102450,46 +102397,31 @@
       "topicTitle": "Standard Limits",
       "relevance": 100,
       "simulation": "limits-and-continuity-standard",
-      "notes": [],
+      "notes": [
+        "**Limit laws.** If lim f = L and lim g = M, then lim(f ± g) = L ± M, lim(fg) = LM and lim(f/g) = L/M provided M ≠ 0; these justify term-by-term evaluation.",
+        "**Power formula.** lim(x→a) (xⁿ − aⁿ)/(x − a) = n aⁿ⁻¹ for positive integer n; it follows by factoring xⁿ − aⁿ = (x − a)(xⁿ⁻¹ + a xⁿ⁻² + … + aⁿ⁻¹).",
+        "**Worked example.** lim(x→2) (x³ − 8)/(x − 2) = 3·2² = 12, since x³ − 8 = (x − 2)(x² + 2x + 4) and the quotient tends to 4 + 4 + 4 = 12.",
+        "**Rationalization.** For lim(x→0) (√(1 + x) − 1)/x, multiply by the conjugate to get 1/(√(1 + x) + 1) → 1/2.",
+        "**Polynomials and rationals.** Polynomials are continuous everywhere, so their limits come from substitution; a rational function is continuous wherever its denominator is non-zero.",
+        "**Exam caution.** Apply limit laws only after confirming each individual limit exists and is finite; splitting an indeterminate ∞ − ∞ into two limits is invalid."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-standard",
       "motionGraphics": "limits-and-continuity-standard",
-      "examples": [
-        "Application of Standard Limits"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Standard Limits.",
-        "Q3. Problem on Standard Limits."
-      ],
-      "formulas": [
-        "$\\lim_{x\\to 0}\\frac{\\sin x}{x} = 1$ and $\\lim_{x\\to 0}\\frac{\\tan x}{x} = 1$ (x in radians).",
-        "$\\lim_{x\\to 0}(1 + x)^{1/x} = e$ and $\\lim_{x\\to 0}\\frac{a^x - 1}{x} = \\ln a$."
-      ],
-      "keyPoints": [
-        "Radians are not optional in the trig limits — in degrees the same limit is π/180, which is why every board question states the unit."
-      ],
-      "summary": "Standard Limits covers essential principles and applications.",
+      "examples": [],
+      "practiceQuestions": [],
+      "formulas": [],
+      "keyPoints": [],
+      "summary": "Standard algebraic limits and the factor theorem let 0/0 forms be reduced to direct substitution without a full epsilon argument.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Standard Limits",
-        "Statement 2: Theorem related to Standard Limits",
-        "Statement 3: Condition for Standard Limits to be valid",
-        "Statement 4: Principle governing Standard Limits",
-        "Statement 5: Corollary or consequence of Standard Limits"
-      ],
-      "importantNotes": [
-        "Standard Limits is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Standard Limits."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Standard Limits."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102503,44 +102435,31 @@
       "topicTitle": "Continuity of a Function (Intuitive)",
       "relevance": 100,
       "simulation": "limits-and-continuity-continuity",
-      "notes": [],
+      "notes": [
+        "**Graphical idea.** A continuous graph has no break at the point: a tiny change in x produces only a tiny change in f(x), with no sudden leap or gap.",
+        "**Three conditions.** f is continuous at a exactly when (i) f(a) is defined, (ii) lim(x→a) f(x) exists, and (iii) the limit equals f(a); all three must hold.",
+        "**Common breaks.** A hole is removable, a step is a jump, and 1/(x − a) produces an infinite discontinuity at a; each violates a different one of the three conditions.",
+        "**Continuity on an interval.** f is continuous on [p, q] when it is continuous at every interior point, right-continuous at p and left-continuous at q.",
+        "**Worked example.** f(x) = x² is continuous at every real a because lim(x→a) x² = a² = f(a); polynomials are continuous on all of ℝ.",
+        "**Exam caution.** Drawing a smooth-looking curve is not a proof; state all three conditions explicitly when asked to justify continuity."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-continuity",
       "motionGraphics": "limits-and-continuity-continuity",
-      "examples": [
-        "Application of Continuity of a Function (Intuitive Definition)"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Continuity of a Function (Intuitive Definition).",
-        "Q3. Problem on Continuity of a Function (Intuitive Definition)."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Continuity of a Function (Intuitive Definition)",
-        "Connection of Continuity of a Function (Intuitive Definition) to other topics"
-      ],
-      "summary": "Continuity of a Function (Intuitive Definition) covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "Intuitively a function is continuous when its graph can be drawn without lifting the pen; formally that means no hole, jump or vertical asymptote at the point.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Continuity of a Function (Intuitive)",
-        "Statement 2: Theorem related to Continuity of a Function (Intuitive)",
-        "Statement 3: Condition for Continuity of a Function (Intuitive) to be valid",
-        "Statement 4: Principle governing Continuity of a Function (Intuitive)",
-        "Statement 5: Corollary or consequence of Continuity of a Function (Intuitive)"
-      ],
-      "importantNotes": [
-        "Continuity of a Function (Intuitive Definition) is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Continuity of a Function (Intuitive Definition)."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Continuity of a Function (Intuitive Definition)."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102554,44 +102473,31 @@
       "topicTitle": "Continuity at a Point",
       "relevance": 100,
       "simulation": "limits-and-continuity-formal",
-      "notes": [],
+      "notes": [
+        "**Formal statement.** f is continuous at x = a when lim(x→a) f(x) = f(a), which unpacks to LHL = RHL = f(a) with all three values finite.",
+        "**Epsilon form.** Equivalently, for every ε > 0 there exists δ > 0 such that |x − a| < δ implies |f(x) − f(a)| < ε; this is the definition used in proofs.",
+        "**Worked example.** For f(x) = kx + 1 when x ≤ 2 and f(x) = 3x − 1 when x > 2, set 2k + 1 = 5 to get k = 2 for continuity at 2.",
+        "**Checking boundaries.** Evaluate f(a) from the branch whose inequality includes equality, then compute the LHL and RHL from their respective branches.",
+        "**Consequences.** Continuity on a closed interval guarantees the function attains a maximum and a minimum (extreme value theorem) and takes every intermediate value.",
+        "**Exam caution.** A function can have a limit at a and still be discontinuous there; the missing condition is the equality lim = f(a)."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-formal",
       "motionGraphics": "limits-and-continuity-formal",
-      "examples": [
-        "Application of Continuity at a Point (Formal Definition)"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Continuity at a Point (Formal Definition).",
-        "Q3. Problem on Continuity at a Point (Formal Definition)."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Continuity at a Point (Formal Definition)",
-        "Connection of Continuity at a Point (Formal Definition) to other topics"
-      ],
-      "summary": "Continuity at a Point (Formal Definition) covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "Formal continuity at a requires lim(x→a⁻) f = lim(x→a⁺) f = f(a); for piecewise rules this becomes an equation for the unknown parameter.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Continuity at a Point",
-        "Statement 2: Theorem related to Continuity at a Point",
-        "Statement 3: Condition for Continuity at a Point to be valid",
-        "Statement 4: Principle governing Continuity at a Point",
-        "Statement 5: Corollary or consequence of Continuity at a Point"
-      ],
-      "importantNotes": [
-        "Continuity at a Point (Formal Definition) is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Continuity at a Point (Formal Definition)."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Continuity at a Point (Formal Definition)."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102605,44 +102511,31 @@
       "topicTitle": "Removable Discontinuity",
       "relevance": 100,
       "simulation": "limits-and-continuity-removable",
-      "notes": [],
+      "notes": [
+        "**Definition.** f has a removable discontinuity at a when lim(x→a) f(x) = L exists and is finite, but f(a) ≠ L (including the case where f(a) is undefined).",
+        "**Worked example.** f(x) = (x² − 1)/(x − 1) equals x + 1 for x ≠ 1, so the limit at 1 is 2 while f(1) is undefined; defining f(1) = 2 removes the hole.",
+        "**Why removable.** Only one point of the graph is wrong or missing; changing that single value makes the function continuous without altering any other value.",
+        "**Contrast with a jump.** If LHL ≠ RHL, no choice of f(a) can make the function continuous, so that discontinuity is not removable.",
+        "**Common source.** Cancelling a common factor such as (x − a) from a numerator and denominator is exactly the algebraic signal of a removable hole.",
+        "**Exam caution.** After cancelling, state the restriction x ≠ a; the simplified expression describes the limit, not the original function at a."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-removable",
       "motionGraphics": "limits-and-continuity-removable",
-      "examples": [
-        "Application of Types of Discontinuity: Removable"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Types of Discontinuity: Removable.",
-        "Q3. Problem on Types of Discontinuity: Removable."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Types of Discontinuity: Removable",
-        "Connection of Types of Discontinuity: Removable to other topics"
-      ],
-      "summary": "Types of Discontinuity: Removable covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "A removable discontinuity is a hole: the two-sided limit exists but f(a) is undefined or has a different value; redefining f(a) repairs it.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Removable Discontinuity",
-        "Statement 2: Theorem related to Removable Discontinuity",
-        "Statement 3: Condition for Removable Discontinuity to be valid",
-        "Statement 4: Principle governing Removable Discontinuity",
-        "Statement 5: Corollary or consequence of Removable Discontinuity"
-      ],
-      "importantNotes": [
-        "Types of Discontinuity: Removable is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Types of Discontinuity: Removable."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Types of Discontinuity: Removable."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102656,44 +102549,31 @@
       "topicTitle": "Jump Discontinuity",
       "relevance": 100,
       "simulation": "limits-and-continuity-jump",
-      "notes": [],
+      "notes": [
+        "**Definition.** f has a jump discontinuity at a when LHL and RHL both exist as finite numbers but LHL ≠ RHL; the two-sided limit therefore does not exist.",
+        "**Worked example.** For f(x) = |x|/x at 0, LHL = −1 and RHL = 1, so the graph has a step of height 2 at the origin.",
+        "**Step functions.** The greatest-integer function [x] jumps by 1 at every integer n, since lim(x→n⁻) [x] = n − 1 and lim(x→n⁺) [x] = n.",
+        "**Piecewise rules.** A jump usually appears at the boundary between two branches; evaluate each branch at a and compare the two results.",
+        "**Not removable.** Because the mismatch comes from the behaviour on both sides of a, changing only f(a) cannot make the function continuous.",
+        "**Exam caution.** Report both one-sided limits with their values; saying only 'limit does not exist' loses the marks for identifying the jump size."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-jump",
       "motionGraphics": "limits-and-continuity-jump",
-      "examples": [
-        "Application of Types of Discontinuity: Jump"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Types of Discontinuity: Jump.",
-        "Q3. Problem on Types of Discontinuity: Jump."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Types of Discontinuity: Jump",
-        "Connection of Types of Discontinuity: Jump to other topics"
-      ],
-      "summary": "Types of Discontinuity: Jump covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "A jump occurs when both one-sided limits exist and are finite but unequal; no redefinition of the single value f(a) can remove it.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Jump Discontinuity",
-        "Statement 2: Theorem related to Jump Discontinuity",
-        "Statement 3: Condition for Jump Discontinuity to be valid",
-        "Statement 4: Principle governing Jump Discontinuity",
-        "Statement 5: Corollary or consequence of Jump Discontinuity"
-      ],
-      "importantNotes": [
-        "Types of Discontinuity: Jump is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Types of Discontinuity: Jump."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Types of Discontinuity: Jump."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102707,44 +102587,31 @@
       "topicTitle": "Infinite Discontinuity",
       "relevance": 100,
       "simulation": "limits-and-continuity-infinite",
-      "notes": [],
+      "notes": [
+        "**Definition.** f has an infinite discontinuity at a when f(x) grows without bound as x → a from at least one side, so the graph has a vertical asymptote x = a.",
+        "**Worked example.** For f(x) = 1/(x − 2), lim(x→2⁻) = −∞ and lim(x→2⁺) = +∞; the two sides disagree in sign and neither is finite.",
+        "**Finding asymptotes.** In a rational function, cancel common factors first; the remaining zeros of the denominator give the vertical asymptotes, while cancelled zeros give holes.",
+        "**One-sided signs.** Determine the sign of the unbounded limit by testing a nearby value on each side rather than by assuming symmetry.",
+        "**Contrast.** A removable hole has a finite two-sided limit; an infinite discontinuity has no finite limit, so it cannot be repaired by redefining f(a).",
+        "**Exam caution.** Writing lim = ∞ is a description of unbounded growth, not a real number; a question asking whether the limit exists expects 'no finite limit'."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-infinite",
       "motionGraphics": "limits-and-continuity-infinite",
-      "examples": [
-        "Application of Types of Discontinuity: Infinite"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Types of Discontinuity: Infinite.",
-        "Q3. Problem on Types of Discontinuity: Infinite."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Types of Discontinuity: Infinite",
-        "Connection of Types of Discontinuity: Infinite to other topics"
-      ],
-      "summary": "Types of Discontinuity: Infinite covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "An infinite discontinuity occurs at a vertical asymptote where at least one one-sided limit is unbounded; no finite limit exists at that point.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Infinite Discontinuity",
-        "Statement 2: Theorem related to Infinite Discontinuity",
-        "Statement 3: Condition for Infinite Discontinuity to be valid",
-        "Statement 4: Principle governing Infinite Discontinuity",
-        "Statement 5: Corollary or consequence of Infinite Discontinuity"
-      ],
-      "importantNotes": [
-        "Types of Discontinuity: Infinite is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Types of Discontinuity: Infinite."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Types of Discontinuity: Infinite."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102758,44 +102625,31 @@
       "topicTitle": "Limits of Trigonometric Functions",
       "relevance": 100,
       "simulation": "limits-and-continuity-trig",
-      "notes": [],
+      "notes": [
+        "**Fundamental limit.** lim(x→0) sin x/x = 1 and lim(x→0) tan x/x = 1; these follow from the squeeze theorem applied to the unit-circle sector areas.",
+        "**Cosine form.** lim(x→0) (1 − cos x)/x² = 1/2, obtained by writing 1 − cos x = 2 sin²(x/2) and applying the sine limit twice.",
+        "**Worked example.** lim(x→0) sin 5x / sin 3x = (5/3) · [lim sin 5x/(5x)] / [lim sin 3x/(3x)] = 5/3.",
+        "**Radian requirement.** These limits hold only when x is in radians; using degrees introduces a factor of π/180 and changes every result.",
+        "**General angles.** For lim(x→a) sin(x − a)/(x − a), substitute u = x − a so the limit reduces to lim(u→0) sin u/u = 1.",
+        "**Exam caution.** Convert expressions like 1 − cos²x to sin²x before taking the limit, and check that the argument of every sine tends to zero."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-trig",
       "motionGraphics": "limits-and-continuity-trig",
-      "examples": [
-        "Application of Limits of Trigonometric Functions"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Limits of Trigonometric Functions.",
-        "Q3. Problem on Limits of Trigonometric Functions."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Limits of Trigonometric Functions",
-        "Connection of Limits of Trigonometric Functions to other topics"
-      ],
-      "summary": "Limits of Trigonometric Functions covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "Trigonometric limits rest on lim(x→0) sin x/x = 1 and lim(x→0) (1 − cos x)/x² = 1/2, with angles always measured in radians.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Limits of Trigonometric Functions",
-        "Statement 2: Theorem related to Limits of Trigonometric Functions",
-        "Statement 3: Condition for Limits of Trigonometric Functions to be valid",
-        "Statement 4: Principle governing Limits of Trigonometric Functions",
-        "Statement 5: Corollary or consequence of Limits of Trigonometric Functions"
-      ],
-      "importantNotes": [
-        "Limits of Trigonometric Functions is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Limits of Trigonometric Functions."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Limits of Trigonometric Functions."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102809,44 +102663,31 @@
       "topicTitle": "Limits of Logarithmic and Exponential Functions",
       "relevance": 100,
       "simulation": "limits-and-continuity-logexp",
-      "notes": [],
+      "notes": [
+        "**Exponential base limit.** lim(x→0) (eˣ − 1)/x = 1 and, more generally, lim(x→0) (aˣ − 1)/x = ln a for a > 0.",
+        "**Logarithmic limit.** lim(x→0) ln(1 + x)/x = 1, which is the same statement inverted since ln and exp are inverse functions.",
+        "**Worked example.** lim(x→0) (e^(3x) − 1)/x = 3·lim(u→0)(eᵘ − 1)/u = 3, using u = 3x.",
+        "**Standard form.** lim(x→0) (1 + x)^(1/x) = e and lim(n→∞) (1 + 1/n)ⁿ = e define the natural base through a limit.",
+        "**Log of a limit.** For a positive continuous f with lim f = L > 0, lim ln f(x) = ln L; exponentiate the result to recover the original limit.",
+        "**Exam caution.** Keep the argument of ln positive throughout; ln(1 + x) requires x > −1, so only the right-hand limit exists at x = −1."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-logexp",
       "motionGraphics": "limits-and-continuity-logexp",
-      "examples": [
-        "Application of Limits of Logarithmic and Exponential Functions"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Limits of Logarithmic and Exponential Functions.",
-        "Q3. Problem on Limits of Logarithmic and Exponential Functions."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Limits of Logarithmic and Exponential Functions",
-        "Connection of Limits of Logarithmic and Exponential Functions to other topics"
-      ],
-      "summary": "Limits of Logarithmic and Exponential Functions covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "Exponential and logarithmic limits follow from lim(x→0) (eˣ − 1)/x = 1 and lim(x→0) ln(1 + x)/x = 1.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Limits of Logarithmic and Exponential Functions",
-        "Statement 2: Theorem related to Limits of Logarithmic and Exponential Functions",
-        "Statement 3: Condition for Limits of Logarithmic and Exponential Functions to be valid",
-        "Statement 4: Principle governing Limits of Logarithmic and Exponential Functions",
-        "Statement 5: Corollary or consequence of Limits of Logarithmic and Exponential Functions"
-      ],
-      "importantNotes": [
-        "Limits of Logarithmic and Exponential Functions is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Limits of Logarithmic and Exponential Functions."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Limits of Logarithmic and Exponential Functions."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102860,44 +102701,31 @@
       "topicTitle": "Limits of Normal (Algebraic) Functions",
       "relevance": 100,
       "simulation": "limits-and-continuity-algebraic",
-      "notes": [],
+      "notes": [
+        "**Method.** A 0/0 algebraic limit is resolved by cancelling the factor (x − a) that causes the indeterminacy, then substituting x = a into the simplified expression.",
+        "**Worked example.** lim(x→3) (x² − 5x + 6)/(x − 3) = lim(x→3) (x − 2)(x − 3)/(x − 3) = lim(x→3) (x − 2) = 1.",
+        "**Rationalization.** For radicals, multiply numerator and denominator by the conjugate: lim(x→0) (√(1 + x) − 1)/x = lim 1/(√(1 + x) + 1) = 1/2.",
+        "**Difference of powers.** lim(x→a) (xⁿ − aⁿ)/(x − a) = n aⁿ⁻¹ saves a long factorization when the exponent is large.",
+        "**Infinity at a polynomial ratio.** Divide every term by the highest power of x; the limit is then decided by the leading coefficients.",
+        "**Exam caution.** Check for a 0/0 form first; if the denominator limit is non-zero, direct substitution is already valid and cancelling is unnecessary."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-algebraic",
       "motionGraphics": "limits-and-continuity-algebraic",
-      "examples": [
-        "Application of Exercise 15.1: Limits of Algebraic Functions"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Exercise 15.1: Limits of Algebraic Functions.",
-        "Q3. Problem on Exercise 15.1: Limits of Algebraic Functions."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Exercise 15.1: Limits of Algebraic Functions",
-        "Connection of Exercise 15.1: Limits of Algebraic Functions to other topics"
-      ],
-      "summary": "Exercise 15.1: Limits of Algebraic Functions covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "Exercise 15.1 drills algebraic limits: factorize, rationalize or apply (xⁿ − aⁿ)/(x − a) before substituting.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Limits of Normal (Algebraic) Functions",
-        "Statement 2: Theorem related to Limits of Normal (Algebraic) Functions",
-        "Statement 3: Condition for Limits of Normal (Algebraic) Functions to be valid",
-        "Statement 4: Principle governing Limits of Normal (Algebraic) Functions",
-        "Statement 5: Corollary or consequence of Limits of Normal (Algebraic) Functions"
-      ],
-      "importantNotes": [
-        "Exercise 15.1: Limits of Algebraic Functions is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Exercise 15.1: Limits of Algebraic Functions."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Exercise 15.1: Limits of Algebraic Functions."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -102911,44 +102739,31 @@
       "topicTitle": "Limits of Trigonometric Functions",
       "relevance": 100,
       "simulation": "limits-and-continuity-trig-ex",
-      "notes": [],
+      "notes": [
+        "**Core tool.** Rewrite every sine or tangent term so its argument tends to zero, then apply lim(u→0) sin u/u = 1 and lim(u→0) tan u/u = 1.",
+        "**Worked example.** lim(x→0) sin 4x / x = 4·lim(u→0) sin u/u = 4 with u = 4x.",
+        "**Cosine form.** Use 1 − cos x = 2 sin²(x/2) to get lim(x→0) (1 − cos x)/x² = 1/2.",
+        "**Identities first.** Convert tan x to sin x/cos x, 1 − cos²x to sin²x, and sin 2x to 2 sin x cos x before applying the standard limits.",
+        "**Non-zero target.** For lim(x→a) sin(x − a)/(x − a) with a ≠ 0, substitute u = x − a; the limit is still 1.",
+        "**Exam caution.** Angles must be in radians, and a factor such as sin 3x contributes 3, not 1, when divided by x."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-trig-ex",
       "motionGraphics": "limits-and-continuity-trig-ex",
-      "examples": [
-        "Application of Exercise 15.2: Limits of Trigonometric Functions"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Exercise 15.2: Limits of Trigonometric Functions.",
-        "Q3. Problem on Exercise 15.2: Limits of Trigonometric Functions."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Exercise 15.2: Limits of Trigonometric Functions",
-        "Connection of Exercise 15.2: Limits of Trigonometric Functions to other topics"
-      ],
-      "summary": "Exercise 15.2: Limits of Trigonometric Functions covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "Exercise 15.2 applies sin x/x, (1 − cos x)/x² and trigonometric identities to indeterminate trigonometric limits.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Limits of Trigonometric Functions",
-        "Statement 2: Theorem related to Limits of Trigonometric Functions",
-        "Statement 3: Condition for Limits of Trigonometric Functions to be valid",
-        "Statement 4: Principle governing Limits of Trigonometric Functions",
-        "Statement 5: Corollary or consequence of Limits of Trigonometric Functions"
-      ],
-      "importantNotes": [
-        "Exercise 15.2: Limits of Trigonometric Functions is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Exercise 15.2: Limits of Trigonometric Functions."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Exercise 15.2: Limits of Trigonometric Functions."
-      ],
+      "importantConcepts": [],
       "importantTasks": []
     }
   },
@@ -102961,44 +102776,31 @@
       "topicTitle": "Continuity of Functions",
       "relevance": 100,
       "simulation": "limits-and-continuity-continuity-ex",
-      "notes": [],
+      "notes": [
+        "**Checklist.** At x = a verify that f(a) is defined, that lim(x→a) f(x) exists, and that the limit equals f(a); one failed condition identifies the discontinuity type.",
+        "**Finding a parameter.** Equate LHL and RHL at the boundary: if f(x) = kx + 1 for x ≤ 2 and 3x − 1 for x > 2, then 2k + 1 = 5 gives k = 2.",
+        "**Classifying breaks.** Equal finite one-sided limits with f(a) wrong or missing is removable; unequal finite limits is a jump; an unbounded one-sided limit is infinite.",
+        "**Worked example.** f(x) = (x² − 4)/(x − 2) has a removable discontinuity at 2 because both one-sided limits equal 4 while f(2) is undefined.",
+        "**Domain endpoints.** At the left endpoint use only the right-hand limit, and at the right endpoint only the left-hand limit, when asserting continuity on a closed interval.",
+        "**Exam caution.** State which condition fails; 'discontinuous' alone does not distinguish a hole from a jump and loses method marks."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "limits-and-continuity-continuity-ex",
       "motionGraphics": "limits-and-continuity-continuity-ex",
-      "examples": [
-        "Application of Exercise 15.3: Continuity and Discontinuity"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Exercise 15.3: Continuity and Discontinuity.",
-        "Q3. Problem on Exercise 15.3: Continuity and Discontinuity."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Exercise 15.3: Continuity and Discontinuity",
-        "Connection of Exercise 15.3: Continuity and Discontinuity to other topics"
-      ],
-      "summary": "Exercise 15.3: Continuity and Discontinuity covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "Exercise 15.3 tests continuity and discontinuity: verify all three conditions, classify the break, and solve for parameters at piecewise boundaries.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Continuity of Functions",
-        "Statement 2: Theorem related to Continuity of Functions",
-        "Statement 3: Condition for Continuity of Functions to be valid",
-        "Statement 4: Principle governing Continuity of Functions",
-        "Statement 5: Corollary or consequence of Continuity of Functions"
-      ],
-      "importantNotes": [
-        "Exercise 15.3: Continuity and Discontinuity is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Exercise 15.3: Continuity and Discontinuity."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Exercise 15.3: Continuity and Discontinuity."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -104122,44 +103924,31 @@
       "topicSlug": "dot-product-and-its-applications",
       "topicTitle": "Dot product (scalar product) and its applications",
       "relevance": 100,
-      "notes": [],
+      "notes": [
+        "**Definition.** a · b = |a||b| cos θ = a₁b₁ + a₂b₂ + a₃b₃, where θ is the angle between the vectors; the result is a scalar, not a vector.",
+        "**Angle between vectors.** cos θ = (a · b)/(|a||b|), so two non-zero vectors are perpendicular exactly when a · b = 0 and parallel when |a · b| = |a||b|.",
+        "**Projection.** The scalar projection of a on b is (a · b)/|b| and the vector projection is [(a · b)/|b|²] b.",
+        "**Work done.** A constant force F moving a body through displacement d does work W = F · d; only the component of force along the motion contributes.",
+        "**Worked example.** For a = (1, 2, 3) and b = (4, −2, 0), a·b = 4 − 4 + 0 = 0, so the vectors are orthogonal.",
+        "**Exam caution.** a · b = 0 does not imply one vector is zero; state the non-zero condition before concluding perpendicularity."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "vectors",
       "motionGraphics": "vectors",
-      "examples": [
-        "Application of Dot Product and Its Applications"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Dot Product and Its Applications.",
-        "Q3. Problem on Dot Product and Its Applications."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of Dot Product and Its Applications",
-        "Connection of Dot Product and Its Applications to other topics"
-      ],
-      "summary": "Dot Product and Its Applications covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "The dot product a·b = |a||b| cos θ is a scalar that measures alignment; it gives angles, projections, work and an orthogonality test.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Dot product (scalar product) and its applications",
-        "Statement 2: Theorem related to Dot product (scalar product) and its applications",
-        "Statement 3: Condition for Dot product (scalar product) and its applications to be valid",
-        "Statement 4: Principle governing Dot product (scalar product) and its applications",
-        "Statement 5: Corollary or consequence of Dot product (scalar product) and its applications"
-      ],
-      "importantNotes": [
-        "Dot Product and Its Applications is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Dot Product and Its Applications."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Dot Product and Its Applications."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1,
       "visualType": "dot-product-vectors"
@@ -104173,46 +103962,31 @@
       "topicSlug": "dot-product-of-two-vectors",
       "topicTitle": "Dot Product of Two Vectors",
       "relevance": 95,
-      "notes": [],
+      "notes": [
+        "**Component form.** For a = (a₁, a₂, a₃) and b = (b₁, b₂, b₃), a · b = a₁b₁ + a₂b₂ + a₃b₃; multiply matching components and add.",
+        "**Geometric form.** a · b = |a||b| cos θ links the algebraic result to the angle, so comparing the two forms is a reliable way to find θ.",
+        "**Algebraic laws.** a · b = b · a, a · (b + c) = a · b + a · c, and (k a) · b = k(a · b); the dot product is NOT associative because a · b is a scalar.",
+        "**Self product.** a · a = |a|², which is why |a| = √(a · a) and why |a + b|² = |a|² + 2a·b + |b|².",
+        "**Worked example.** a = (2, −1, 3), b = (1, 4, −2): a·b = 2 − 4 − 6 = −8, |a| = √14, |b| = √21, so cos θ = −8/√294.",
+        "**Exam caution.** The dot product of three vectors such as (a · b) · c is meaningless; use parentheses only where the scalar is multiplied by a vector."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "vectors",
       "motionGraphics": "vectors",
-      "examples": [
-        "Application of Dot Product of Two Vectors"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Dot Product of Two Vectors.",
-        "Q3. Problem on Dot Product of Two Vectors."
-      ],
-      "formulas": [
-        "$\\vec{a}\\cdot\\vec{b} = ab\\cos\\theta = a_1b_1 + a_2b_2 + a_3b_3$.",
-        "Angle between vectors: $\\cos\\theta = \\frac{\\vec{a}\\cdot\\vec{b}}{ab}$, and $\\vec{a}\\cdot\\vec{b} = 0 \\iff \\vec{a} \\perp \\vec{b}$."
-      ],
-      "keyPoints": [
-        "In component form the dot product is just the sum of products — the angle only appears if the question gives magnitudes."
-      ],
-      "summary": "Dot Product of Two Vectors covers essential principles and applications.",
+      "examples": [],
+      "practiceQuestions": [],
+      "formulas": [],
+      "keyPoints": [],
+      "summary": "In components a·b = Σaᵢbᵢ; the product is commutative, distributes over addition, and a·a = |a|².",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Dot Product of Two Vectors",
-        "Statement 2: Theorem related to Dot Product of Two Vectors",
-        "Statement 3: Condition for Dot Product of Two Vectors to be valid",
-        "Statement 4: Principle governing Dot Product of Two Vectors",
-        "Statement 5: Corollary or consequence of Dot Product of Two Vectors"
-      ],
-      "importantNotes": [
-        "Dot Product of Two Vectors is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Dot Product of Two Vectors."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Dot Product of Two Vectors."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1,
       "visualType": "dot-product-vectors"
@@ -104565,46 +104339,31 @@
       "topicSlug": "cross-product-of-two-vectors",
       "topicTitle": "Cross Product of Two Vectors",
       "relevance": 95,
-      "notes": [],
+      "notes": [
+        "**Definition.** a × b = |a||b| sin θ n̂, with n̂ given by the right-hand rule; in components a × b = (a₂b₃ − a₃b₂, a₃b₁ − a₁b₃, a₁b₂ − a₂b₁).",
+        "**Determinant form.** Expand the formal 3 × 3 determinant whose first row is i, j, k; the middle component carries a minus sign.",
+        "**Anti-commutative.** b × a = −(a × b), and a × a = 0; parallel non-zero vectors have a zero cross product.",
+        "**Area.** |a × b| is the area of the parallelogram with adjacent sides a and b, so the area of triangle ABC is ½|AB × AC|.",
+        "**Worked example.** a = (1, 2, 3), b = (4, 5, 6): a × b = (12 − 15, 12 − 6, 5 − 8) = (−3, 6, −3), and dotting with a gives −3 + 12 − 9 = 0.",
+        "**Exam caution.** Dot the result with both a and b as a one-line check; a sign error in the j component is the most common mistake."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "vectors",
       "motionGraphics": "vectors",
-      "examples": [
-        "Application of Cross Product of Two Vectors"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Cross Product of Two Vectors.",
-        "Q3. Problem on Cross Product of Two Vectors."
-      ],
-      "formulas": [
-        "$|\\vec{a}\\times\\vec{b}| = ab\\sin\\theta$, directed by the right-hand rule; it is the area of the parallelogram on $\\vec{a}$ and $\\vec{b}$.",
-        "$\\vec{a}\\times\\vec{b} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\end{vmatrix}$, and $\\vec{a}\\times\\vec{b} = \\vec{0} \\iff$ they are parallel."
-      ],
-      "keyPoints": [
-        "Area of a triangle on two vectors is ½|a×b| — the parallelogram area with the half that students forget."
-      ],
-      "summary": "Cross Product of Two Vectors covers essential principles and applications.",
+      "examples": [],
+      "practiceQuestions": [],
+      "formulas": [],
+      "keyPoints": [],
+      "summary": "The cross product a×b is a vector perpendicular to both a and b with magnitude |a||b| sin θ, equal to the area of the parallelogram they span.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Cross Product of Two Vectors",
-        "Statement 2: Theorem related to Cross Product of Two Vectors",
-        "Statement 3: Condition for Cross Product of Two Vectors to be valid",
-        "Statement 4: Principle governing Cross Product of Two Vectors",
-        "Statement 5: Corollary or consequence of Cross Product of Two Vectors"
-      ],
-      "importantNotes": [
-        "Cross Product of Two Vectors is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Cross Product of Two Vectors."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Cross Product of Two Vectors."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -104617,46 +104376,31 @@
       "topicSlug": "scalar-and-vector-triple-products",
       "topicTitle": "Scalar and Vector Triple Products",
       "relevance": 92,
-      "notes": [],
+      "notes": [
+        "**Scalar triple product.** [a b c] = a · (b × c) is the signed volume of the parallelepiped on a, b, c; its absolute value is the volume, and one sixth of it is the tetrahedron volume.",
+        "**Coplanarity.** [a b c] = 0 exactly when the three vectors are coplanar; this is also the test for four points A, B, C, D being coplanar via AB, AC, AD.",
+        "**Determinant.** [a b c] equals the determinant of the 3 × 3 matrix with rows (or columns) a, b, c; swapping two rows changes the sign.",
+        "**Cyclic symmetry.** [a b c] = [b c a] = [c a b] and [a c b] = −[a b c]; the scalar triple product is unchanged by a cyclic permutation.",
+        "**Vector triple product.** a × (b × c) = (a·c)b − (a·b)c, the BAC − CAB identity; the result lies in the plane of b and c and is NOT associative.",
+        "**Exam caution.** a × (b × c) ≠ (a × b) × c in general; keep the parentheses and apply the identity to whichever pair is grouped."
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "vectors",
       "motionGraphics": "vectors",
-      "examples": [
-        "Application of Scalar and Vector Triple Products"
-      ],
-      "practiceQuestions": [
-        "Q1. Define Scalar and Vector Triple Products.",
-        "Q3. Problem on Scalar and Vector Triple Products."
-      ],
-      "formulas": [
-        "Scalar triple product $[\\vec{a}\\ \\vec{b}\\ \\vec{c}] = \\vec{a}\\cdot(\\vec{b}\\times\\vec{c})$ is the volume of the parallelepiped; it is zero for coplanar vectors.",
-        "Vector triple product: $\\vec{a}\\times(\\vec{b}\\times\\vec{c}) = (\\vec{a}\\cdot\\vec{c})\\vec{b} - (\\vec{a}\\cdot\\vec{b})\\vec{c}$."
-      ],
-      "keyPoints": [
-        "Coplanarity test in one line: the volume [a b c] is 0 — use it instead of solving three planes for a common point."
-      ],
-      "summary": "Scalar and Vector Triple Products covers essential principles and applications.",
+      "examples": [],
+      "practiceQuestions": [],
+      "formulas": [],
+      "keyPoints": [],
+      "summary": "The scalar triple product a·(b×c) gives signed volume and tests coplanarity; the vector triple product expands as (a·c)b − (a·b)c.",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of Scalar and Vector Triple Products",
-        "Statement 2: Theorem related to Scalar and Vector Triple Products",
-        "Statement 3: Condition for Scalar and Vector Triple Products to be valid",
-        "Statement 4: Principle governing Scalar and Vector Triple Products",
-        "Statement 5: Corollary or consequence of Scalar and Vector Triple Products"
-      ],
-      "importantNotes": [
-        "Scalar and Vector Triple Products is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for Scalar and Vector Triple Products."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of Scalar and Vector Triple Products."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -104941,39 +104685,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** व्याकरण र शब्द जगत — भाषा र व्याकरण, Nepali (class-11-notes).",
-        "**Tested.** define it · list: व्याकरण र शब्द जगत · one worked example · one misconception each."
+        "**व्याकरणको अर्थ।** व्याकरण भाषालाई शुद्ध, व्यवस्थित र अर्थपूर्ण बनाउने नियमहरूको समूह हो। यसले वर्ण, शब्द, पद र वाक्यको संरचना निर्धारण गर्छ।",
+        "**शब्दजगत।** कुनै भाषामा प्रचलित सम्पूर्ण शब्दहरूको समूहलाई शब्दजगत वा शब्दभण्डार भनिन्छ। समयसँगै नयाँ शब्द थपिँदै पुराना शब्द कम प्रयोग हुँदै जान्छन्।",
+        "**शब्दका स्रोत।** नेपाली शब्दभण्डारमा तत्सम, तद्भव, आगन्तुक र देशज शब्द मिसिएका छन्। स्रोत चिन्नुले हिज्जे र अर्थ दुवै मिलाउन सहयोग गर्छ।",
+        "**अध्ययनका अङ्ग।** वर्णविन्यास, शब्दविचार, पदविचार, वाक्यविचार र अर्थविचार व्याकरणका मुख्य अङ्ग हुन्। परीक्षामा प्रायः एउटा अङ्गमा आधारित प्रश्न सोधिन्छ।",
+        "**परीक्षामा ध्यान।** परिभाषा मात्र नलेखी कम्तीमा एउटा उदाहरण दिनुहोस्। उदाहरणले नियम बुझेको प्रमाण दिन्छ र अंक बढाउँछ।"
       ],
-      "confusion": [
-        "❌ treat \"व्याकरण र शब्द जगत\" as one blob → ✅ split into: व्याकरण र शब्द जगत.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: व्याकरण र शब्द जगत (within भाषा र व्याकरण).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: व्याकरण र शब्द जगत.",
-        "one worked example for \"व्याकरण र शब्द जगत\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"व्याकरण र शब्द जगत\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"व्याकरण र शब्द जगत\" with one example.",
-        "compare \"व्याकरण र शब्द जगत\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"व्याकरण र शब्द जगत\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• व्याकरण र शब्द जगत"
-      ],
-      "summary": "व्याकरण र शब्द जगत (भाषा र व्याकरण, Nepali, class-11-notes) covers व्याकरण र शब्द जगत. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "व्याकरणले भाषाका नियम बताउँछ र शब्दजगतले शब्दको उत्पत्ति, रूप र प्रयोगको अध्ययन गर्छ।",
       "mcqs": [
         {
           "question": "A common examiner point on \"व्याकरण र शब्द जगत\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -104984,7 +104713,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -104998,39 +104736,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** लेखन कौशल — भाषा र व्याकरण, Nepali (class-11-notes).",
-        "**Tested.** define it · list: लेखन कौशल · one worked example · one misconception each."
+        "**लेखनका चरण।** उद्देश्य निर्धारण, विचार सङ्कलन, रूपरेखा, मस्यौदा, सम्पादन र अन्तिम प्रतिलिपि गरी लेखन धेरै चरणमा पूरा हुन्छ।",
+        "**रूपरेखाको महत्त्व।** भूमिका, मुख्य भाग र निष्कर्षको क्रम पहिल्यै तय गर्दा विचार नदोहोरिने र तर्कको शृङ्खला नटुट्ने हुन्छ।",
+        "**भाषा शैली।** औपचारिक लेखनमा सरकारी/मानक शब्द, अनौपचारिक लेखनमा बोलिचालीको नजिकको भाषा उपयुक्त हुन्छ। पाठक अनुसार शैली बदलिन्छ।",
+        "**सम्पादन।** हिज्जे, विराम चिह्न, वाक्य लम्बाइ, दोहोरोपन र तथ्य जाँच सम्पादनका मुख्य बुँदा हुन्।",
+        "**परीक्षामा ध्यान।** समय सीमामा तीन भागे संरचना (भूमिका–विस्तार–निष्कर्ष) कायम राख्नु सबैभन्दा सुरक्षित उपाय हो।"
       ],
-      "confusion": [
-        "❌ treat \"लेखन कौशल\" as one blob → ✅ split into: लेखन कौशल.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: लेखन कौशल (within भाषा र व्याकरण).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: लेखन कौशल.",
-        "one worked example for \"लेखन कौशल\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"लेखन कौशल\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"लेखन कौशल\" with one example.",
-        "compare \"लेखन कौशल\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"लेखन कौशल\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• लेखन कौशल"
-      ],
-      "summary": "लेखन कौशल (भाषा र व्याकरण, Nepali, class-11-notes) covers लेखन कौशल. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "लेखन कौशल भनेको विचारलाई स्पष्ट, क्रमबद्ध र पाठकअनुसारको भाषामा लिखित रूप दिने क्षमता हो।",
       "mcqs": [
         {
           "question": "A common examiner point on \"लेखन कौशल\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -105041,7 +104764,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -105052,44 +104784,30 @@
       "topicSlug": "aagantuk-shabda",
       "topicTitle": "आगन्तुक शब्द (Loanwords)",
       "relevance": 30,
-      "notes": [],
+      "notes": [
+        "**परिभाषा।** विदेशी भाषाबाट आएर नेपाली शब्दभण्डारमा समाहित भएको शब्दलाई आगन्तुक भनिन्छ, जस्तै अङ्ग्रेजी, फारसी, अरबी वा पोर्तुगाली मूलका शब्द।",
+        "**उदाहरण।** 'टेबुल, स्कुल, डाक्टर, किताब, रुमाल, आलु, अनानास' जस्ता शब्द दैनिक प्रयोगमा आगन्तुकका रूपमा चल्छन्।",
+        "**रूपान्तरण।** आगन्तुक शब्द नेपाली उच्चारण र वर्णविन्यास अनुसार लेखिन्छ; मूल भाषाको हिज्जे जस्ताको त्यस्तै राख्नु हुँदैन।",
+        "**तुलना।** तत्सम संस्कृतको नजिक, तद्भव संस्कृतबाट परिवर्तित, देशज स्थानीय मूलको र आगन्तुक बाहिरी भाषाको हुन्छ।",
+        "**परीक्षामा ध्यान।** स्रोत भाषा अनुमान गर्दा शब्दको बनावट हेर्नुहोस्, तर अनिश्चित हुँदा 'विदेशी मूल' लेख्नु नै सुरक्षित हुन्छ।"
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "bhasha-ra-vyakarana",
       "motionGraphics": "bhasha-ra-vyakarana",
-      "examples": [
-        "Application of आगन्तुक शब्द (Loanwords)"
-      ],
-      "practiceQuestions": [
-        "Q1. Define आगन्तुक शब्द (Loanwords).",
-        "Q3. Problem on आगन्तुक शब्द (Loanwords)."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of आगन्तुक शब्द (Loanwords)",
-        "Connection of आगन्तुक शब्द (Loanwords) to other topics"
-      ],
-      "summary": "आगन्तुक शब्द (Loanwords) covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "आगन्तुक शब्द अन्य भाषाबाट नेपालीमा आई प्रचलित भएका शब्द हुन्; तिनको हिज्जे र उच्चारण नेपाली अनुसार ढल्छ।",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of आगन्तुक शब्द (Loanwords)",
-        "Statement 2: Theorem related to आगन्तुक शब्द (Loanwords)",
-        "Statement 3: Condition for आगन्तुक शब्द (Loanwords) to be valid",
-        "Statement 4: Principle governing आगन्तुक शब्द (Loanwords)",
-        "Statement 5: Corollary or consequence of आगन्तुक शब्द (Loanwords)"
-      ],
-      "importantNotes": [
-        "आगन्तुक शब्द (Loanwords) is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for आगन्तुक शब्द (Loanwords)."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of आगन्तुक शब्द (Loanwords)."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -105159,44 +104877,30 @@
       "topicSlug": "swar-varna",
       "topicTitle": "स्वर वर्ण (Vowel Letters)",
       "relevance": 30,
-      "notes": [],
+      "notes": [
+        "**परिभाषा।** मुखभित्र कतै अवरोध नभई स्वतन्त्र रूपमा उच्चारण हुने ध्वनिलाई स्वर भनिन्छ। यसलाई वर्णमा लेख्दा स्वर वर्ण हुन्छ।",
+        "**नेपाली स्वर।** अ, आ, इ, ई, उ, ऊ, ऋ, ए, ऐ, ओ, औ मुख्य स्वर वर्ण मानिन्छन्; अं र अः लाई अनुस्वार र विसर्ग भनिन्छ।",
+        "**मात्रा।** स्वर वर्ण स्वयं पूर्ण अक्षर हुन्छ; व्यञ्जनसँग जोडिँदा यसको छोटो रूपलाई मात्रा (कार, कि, कि, कु, कू, के, कै, को, कौ) भनिन्छ।",
+        "**ह्रस्व र दीर्घ।** अ, इ, उ ह्रस्व र आ, ई, ऊ दीर्घ हुन्; उच्चारणको लम्बाइले कहिलेकाहीँ अर्थ नै बदल्छ, त्यसैले हिज्जेमा ध्यान दिनुपर्छ।",
+        "**परीक्षामा ध्यान।** स्वर र मात्रा छुट्ट्याउन सक्नुहोस्; 'क + आ = का' मा 'आ' स्वर हो तर 'ा' मात्रा हो।"
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "bhasha-ra-vyakarana",
       "motionGraphics": "bhasha-ra-vyakarana",
-      "examples": [
-        "Application of स्वर वर्ण (Vowel Letters)"
-      ],
-      "practiceQuestions": [
-        "Q1. Define स्वर वर्ण (Vowel Letters).",
-        "Q3. Problem on स्वर वर्ण (Vowel Letters)."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of स्वर वर्ण (Vowel Letters)",
-        "Connection of स्वर वर्ण (Vowel Letters) to other topics"
-      ],
-      "summary": "स्वर वर्ण (Vowel Letters) covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "स्वर वर्ण बिना कुनै अवरोध, आफैँ उच्चारण हुने वर्ण हो; यसले मात्रा र उच्चारणको आधार बनाउँछ।",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of स्वर वर्ण (Vowel Letters)",
-        "Statement 2: Theorem related to स्वर वर्ण (Vowel Letters)",
-        "Statement 3: Condition for स्वर वर्ण (Vowel Letters) to be valid",
-        "Statement 4: Principle governing स्वर वर्ण (Vowel Letters)",
-        "Statement 5: Corollary or consequence of स्वर वर्ण (Vowel Letters)"
-      ],
-      "importantNotes": [
-        "स्वर वर्ण (Vowel Letters) is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for स्वर वर्ण (Vowel Letters)."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of स्वर वर्ण (Vowel Letters)."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -105209,44 +104913,30 @@
       "topicSlug": "tadbhav-shabda",
       "topicTitle": "तद्भव शब्द (Tadbhava Words)",
       "relevance": 30,
-      "notes": [],
+      "notes": [
+        "**परिभाषा।** संस्कृत शब्दबाटै जन्मिएर पनि रूप बदलिएको शब्दलाई तद्भव भनिन्छ, जस्तै संस्कृत 'कर्म' बाट नेपाली 'काम'।",
+        "**तत्समसँग भिन्नता।** तत्सम संस्कृत रूप जस्तै लेखिन्छ ('कर्म, धर्म, विद्या'), तद्भव त्यसैको परिवर्तित रूप हुन्छ ('काम, धरम, बिद्या')।",
+        "**परिवर्तनका कारण।** द्रुत उच्चारण, स्थानीय उच्चारण शैली र लामो प्रयोगले स्वर तथा व्यञ्जनमा परिवर्तन ल्याउँछ।",
+        "**उदाहरण।** 'अग्नि → आगो', 'हस्त → हात', 'दुग्ध → दूध', 'सप्त → सात' तद्भव परिवर्तनका सामान्य उदाहरण हुन्।",
+        "**परीक्षामा ध्यान।** दिइएको शब्द तत्सम हो कि तद्भव भनेर छुट्याउँदा मूल संस्कृत रूपसँग तुलना गर्नुहोस्।"
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "bhasha-ra-vyakarana",
       "motionGraphics": "bhasha-ra-vyakarana",
-      "examples": [
-        "Application of तद्भव शब्द (Tadbhava Words)"
-      ],
-      "practiceQuestions": [
-        "Q1. Define तद्भव शब्द (Tadbhava Words).",
-        "Q3. Problem on तद्भव शब्द (Tadbhava Words)."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of तद्भव शब्द (Tadbhava Words)",
-        "Connection of तद्भव शब्द (Tadbhava Words) to other topics"
-      ],
-      "summary": "तद्भव शब्द (Tadbhava Words) covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "तद्भव शब्द संस्कृत मूलबाट आई समयक्रममा उच्चारण परिवर्तन भई नेपालीमा चलेको शब्द हो।",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of तद्भव शब्द (Tadbhava Words)",
-        "Statement 2: Theorem related to तद्भव शब्द (Tadbhava Words)",
-        "Statement 3: Condition for तद्भव शब्द (Tadbhava Words) to be valid",
-        "Statement 4: Principle governing तद्भव शब्द (Tadbhava Words)",
-        "Statement 5: Corollary or consequence of तद्भव शब्द (Tadbhava Words)"
-      ],
-      "importantNotes": [
-        "तद्भव शब्द (Tadbhava Words) is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for तद्भव शब्द (Tadbhava Words)."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of तद्भव शब्द (Tadbhava Words)."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -105259,44 +104949,30 @@
       "topicSlug": "vyanjan-vargikaran",
       "topicTitle": "व्यञ्जन वर्गीकरण (Consonant Classification)",
       "relevance": 30,
-      "notes": [],
+      "notes": [
+        "**वर्गीकरणको आधार।** जिब्रो, ओठ, तालु, दाँत र कण्ठमध्ये कुन ठाउँमा ध्वनि बन्छ भन्ने उच्चारण स्थानले व्यञ्जनका वर्ग निर्धारण गर्छ।",
+        "**पाँच वर्ग।** क–ख–ग–घ–ङ कण्ठ्य, च–छ–ज–झ–ञ तालव्य, ट–ठ–ड–ढ–ण मूर्धन्य, त–थ–द–ध–न दन्त्य र प–फ–ब–भ–म ओष्ठ्य हुन्।",
+        "**अवर्गीकृत।** य, र, ल, व, श, ष, स, ह अन्तस्थ तथा ऊष्म वर्ण हुन् र ती माथिका पाँच वर्गमा पर्दैनन्।",
+        "**प्राणता।** प्रत्येक वर्गको पहिलो र तेस्रो वर्ण अल्पप्राण, दोस्रो र चौथो महाप्राण, पाँचौँ अनुनासिक हुन्छ; यसले 'क–ख', 'ग–घ' को भेद बताउँछ।",
+        "**परीक्षामा ध्यान।** वर्गको नाम र त्यसभित्रका पाँच वर्ण क्रमसहित लेख्न सक्नुहोस्; क्रम बिग्रिँदा अंक कट्छ।"
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "bhasha-ra-vyakarana",
       "motionGraphics": "bhasha-ra-vyakarana",
-      "examples": [
-        "Application of व्यञ्जन वर्गीकरण (Consonant Classification)"
-      ],
-      "practiceQuestions": [
-        "Q1. Define व्यञ्जन वर्गीकरण (Consonant Classification).",
-        "Q3. Problem on व्यञ्जन वर्गीकरण (Consonant Classification)."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of व्यञ्जन वर्गीकरण (Consonant Classification)",
-        "Connection of व्यञ्जन वर्गीकरण (Consonant Classification) to other topics"
-      ],
-      "summary": "व्यञ्जन वर्गीकरण (Consonant Classification) covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "व्यञ्जन वर्णलाई उच्चारण स्थान, प्रयत्न र प्राणताका आधारमा वर्गीकरण गरिन्छ।",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of व्यञ्जन वर्गीकरण (Consonant Classification)",
-        "Statement 2: Theorem related to व्यञ्जन वर्गीकरण (Consonant Classification)",
-        "Statement 3: Condition for व्यञ्जन वर्गीकरण (Consonant Classification) to be valid",
-        "Statement 4: Principle governing व्यञ्जन वर्गीकरण (Consonant Classification)",
-        "Statement 5: Corollary or consequence of व्यञ्जन वर्गीकरण (Consonant Classification)"
-      ],
-      "importantNotes": [
-        "व्यञ्जन वर्गीकरण (Consonant Classification) is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for व्यञ्जन वर्गीकरण (Consonant Classification)."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of व्यञ्जन वर्गीकरण (Consonant Classification)."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -105309,44 +104985,30 @@
       "topicSlug": "vyanjan-varna",
       "topicTitle": "व्यञ्जन वर्ण (Consonant Letters)",
       "relevance": 30,
-      "notes": [],
+      "notes": [
+        "**परिभाषा।** उच्चारण गर्दा मुखभित्र कुनै न कुनै ठाउँमा अवरोध पर्ने ध्वनि व्यञ्जन हो। यसलाई 'क्' जस्तै हलन्त रूपमा मात्र उच्चारण गरिन्छ, बोल्दा स्वर जोडिन्छ।",
+        "**वर्णमाला क्रम।** क ख ग घ ङ, च छ ज झ ञ, ट ठ ड ढ ण, त थ द ध न, प फ ब भ म, य र ल व श ष स ह — यही परम्परागत क्रम हो।",
+        "**स्वरसँग सम्बन्ध।** व्यञ्जनमा स्वर जोडिएपछि मात्र अक्षर बन्छ ('क् + अ = क'); त्यसैले मात्रा चिह्नको प्रयोग व्यञ्जनसँगै हुन्छ।",
+        "**संयुक्ताक्षर।** दुई वा बढी व्यञ्जन मिल्दा संयुक्ताक्षर बन्छ, जस्तै 'क् + ष = क्ष', 'ज् + ञ = ज्ञ', 'त् + र = त्र'।",
+        "**परीक्षामा ध्यान।** स्वर र व्यञ्जन छुट्ट्याउँदा उच्चारणमा अवरोध पर्छ कि पर्दैन भन्ने जाँच्नुहोस्, हिज्जेले मात्र नठान्नुहोस्।"
+      ],
       "confusion": [],
       "practice": [],
       "universalFacts": [],
       "animation3D": "bhasha-ra-vyakarana",
       "motionGraphics": "bhasha-ra-vyakarana",
-      "examples": [
-        "Application of व्यञ्जन वर्ण (Consonant Letters)"
-      ],
-      "practiceQuestions": [
-        "Q1. Define व्यञ्जन वर्ण (Consonant Letters).",
-        "Q3. Problem on व्यञ्जन वर्ण (Consonant Letters)."
-      ],
+      "examples": [],
+      "practiceQuestions": [],
       "formulas": [],
-      "keyPoints": [
-        "Application of व्यञ्जन वर्ण (Consonant Letters)",
-        "Connection of व्यञ्जन वर्ण (Consonant Letters) to other topics"
-      ],
-      "summary": "व्यञ्जन वर्ण (Consonant Letters) covers essential principles and applications.",
+      "keyPoints": [],
+      "summary": "व्यञ्जन वर्ण स्वरको सहायताले मात्र पूर्ण उच्चारण हुने वर्ण हो; नेपाली वर्णमालामा यसको निश्चित क्रम छ।",
       "specialNotes": [],
-      "importantStatements": [
-        "Statement 1: Definition of व्यञ्जन वर्ण (Consonant Letters)",
-        "Statement 2: Theorem related to व्यञ्जन वर्ण (Consonant Letters)",
-        "Statement 3: Condition for व्यञ्जन वर्ण (Consonant Letters) to be valid",
-        "Statement 4: Principle governing व्यञ्जन वर्ण (Consonant Letters)",
-        "Statement 5: Corollary or consequence of व्यञ्जन वर्ण (Consonant Letters)"
-      ],
-      "importantNotes": [
-        "व्यञ्जन वर्ण (Consonant Letters) is based on fundamental principles."
-      ],
-      "examShortTricks": [
-        "Recall the formula for व्यञ्जन वर्ण (Consonant Letters)."
-      ],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
       "examNotes": [],
       "mcs": [],
-      "importantConcepts": [
-        "Definition and significance of व्यञ्जन वर्ण (Consonant Letters)."
-      ],
+      "importantConcepts": [],
       "importantTasks": [],
       "duplicateType": 1
     }
@@ -105454,39 +105116,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** कथासाहित्य — कथा, नाटक र संस्कृति, Nepali (class-11-notes).",
-        "**Tested.** define it · list: कथासाहित्य · one worked example · one misconception each."
+        "**कथासाहित्यको अर्थ।** काल्पनिक वा यथार्थ घटनालाई पात्र, परिवेश र संवादमार्फत प्रस्तुत गर्ने गद्य विधा नै कथासाहित्य हो।",
+        "**मुख्य तत्त्व।** कथावस्तु, पात्र, परिवेश, दृष्टिकोण, संवाद र भाषा कथाका आधारभूत तत्त्व हुन्; यिनको सन्तुलनले कथा प्रभावकारी हुन्छ।",
+        "**कथा र उपन्यास।** कथा छोटो, एउटै घटना वा प्रभावमा केन्द्रित हुन्छ; उपन्यास लामो, धेरै घटना र पात्रको विकाससमेत समेट्छ।",
+        "**अध्ययन विधि।** पढ्दा घटनाक्रम, पात्रको प्रेरणा, लेखकको दृष्टिकोण र अन्त्यमा मूल सन्देश छुट्ट्याएर टिपोट गर्नुहोस्।",
+        "**परीक्षामा ध्यान।** 'के भयो' मात्र नलेखी 'किन भयो' र 'यसले के सङ्केत गर्छ' भन्ने विश्लेषण थप्नुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"कथासाहित्य\" as one blob → ✅ split into: कथासाहित्य.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: कथासाहित्य (within कथा, नाटक र संस्कृति).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: कथासाहित्य.",
-        "one worked example for \"कथासाहित्य\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"कथासाहित्य\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"कथासाहित्य\" with one example.",
-        "compare \"कथासाहित्य\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"कथासाहित्य\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• कथासाहित्य"
-      ],
-      "summary": "कथासाहित्य (कथा, नाटक र संस्कृति, Nepali, class-11-notes) covers कथासाहित्य. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "कथासाहित्यले घटना, पात्र र सन्दर्भमार्फत जीवनका अनुभवलाई कलात्मक रूप दिन्छ।",
       "mcqs": [
         {
           "question": "A common examiner point on \"कथासाहित्य\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -105497,7 +105144,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -105511,39 +105167,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** नाटक र व्यंग्य — कथा, नाटक र संस्कृति, Nepali (class-11-notes).",
-        "**Tested.** define it · list: नाटक र व्यंग्य · one worked example · one misconception each."
+        "**नाटक।** मञ्चमा अभिनय गर्न मिल्ने गरी संवाद, दृश्य, पात्र र निर्देशनसहित लेखिने साहित्यिक विधा नाटक हो।",
+        "**नाटकका तत्त्व।** अङ्क/दृश्य, संवाद, पात्र, सूत्रधार, रङ्गनिर्देशन र द्वन्द्व मिलेर नाटकको संरचना बन्छ।",
+        "**व्यंग्य।** वक्रोक्ति, अतिशयोक्ति वा विडम्बनामार्फत व्यक्ति, संस्था वा प्रवृत्तिको कमजोरी उजागर गर्ने लेखन व्यंग्य हो।",
+        "**उद्देश्य।** व्यंग्यको लक्ष्य मनोरञ्जन मात्र होइन, सामाजिक चेतना जगाउनु पनि हो; त्यसैले यसमा तीखोपन र सन्तुलन दुवै चाहिन्छ।",
+        "**परीक्षामा ध्यान।** नाटक र व्यंग्यको विश्लेषण गर्दा दृश्य/संदर्भ उल्लेख गरी प्रभाव लेख्नुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"नाटक र व्यंग्य\" as one blob → ✅ split into: नाटक र व्यंग्य.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: नाटक र व्यंग्य (within कथा, नाटक र संस्कृति).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: नाटक र व्यंग्य.",
-        "one worked example for \"नाटक र व्यंग्य\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"नाटक र व्यंग्य\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"नाटक र व्यंग्य\" with one example.",
-        "compare \"नाटक र व्यंग्य\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"नाटक र व्यंग्य\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• नाटक र व्यंग्य"
-      ],
-      "summary": "नाटक र व्यंग्य (कथा, नाटक र संस्कृति, Nepali, class-11-notes) covers नाटक र व्यंग्य. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "नाटक संवाद र अभिनयका लागि लेखिने विधा हो भने व्यंग्यले हाँसोमार्फत सामाजिक कमजोरी औँल्याउँछ।",
       "mcqs": [
         {
           "question": "A common examiner point on \"नाटक र व्यंग्य\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -105554,7 +105195,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -105568,39 +105218,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** सांस्कृतिक परिप्रेक्ष्य — कथा, नाटक र संस्कृति, Nepali (class-11-notes).",
-        "**Tested.** define it · list: सांस्कृतिक परिप्रेक्ष्य · one worked example · one misconception each."
+        "**अर्थ।** कुनै रचनाको पाठ मात्र नपढी त्यसको समय, भूगोल, जाति, भाषा, चाडपर्व र सामाजिक मान्यतासँग जोडेर हेर्नु सांस्कृतिक परिप्रेक्ष्य हो।",
+        "**आवश्यकता।** पात्रको निर्णय, संवादको शैली र विवादको कारण प्रायः त्यस समाजका नियमले निर्धारण गर्छ; सन्दर्भ बिना अर्थ अपूरो हुन्छ।",
+        "**हेर्ने बुँदा।** परिवार व्यवस्था, वर्ग/लिङ्ग सम्बन्ध, धार्मिक विश्वास, आर्थिक अवस्था र ऐतिहासिक घटनालाई पाठसँग जोड्नुहोस्।",
+        "**सावधानी।** आफ्नो समयको मूल्यलाई मात्र आधार मानेर अघिल्लो समयको रचनाको न्याय गर्नु हुँदैन; तुलना गर्दा समय स्पष्ट गर्नुहोस्।",
+        "**परीक्षामा ध्यान।** उत्तरमा पाठबाट एउटा ठोस उदाहरण र त्यससँग जोडिएको सांस्कृतिक तथ्य दुवै राख्नुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"सांस्कृतिक परिप्रेक्ष्य\" as one blob → ✅ split into: सांस्कृतिक परिप्रेक्ष्य.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: सांस्कृतिक परिप्रेक्ष्य (within कथा, नाटक र संस्कृति).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: सांस्कृतिक परिप्रेक्ष्य.",
-        "one worked example for \"सांस्कृतिक परिप्रेक्ष्य\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"सांस्कृतिक परिप्रेक्ष्य\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"सांस्कृतिक परिप्रेक्ष्य\" with one example.",
-        "compare \"सांस्कृतिक परिप्रेक्ष्य\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"सांस्कृतिक परिप्रेक्ष्य\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• सांस्कृतिक परिप्रेक्ष्य"
-      ],
-      "summary": "सांस्कृतिक परिप्रेक्ष्य (कथा, नाटक र संस्कृति, Nepali, class-11-notes) covers सांस्कृतिक परिप्रेक्ष्य. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "साहित्यलाई त्यसले जन्म लिएको समाज, समय, परम्परा र मूल्यका सन्दर्भमा राखेर बुझ्नु सांस्कृतिक परिप्रेक्ष्य हो।",
       "mcqs": [
         {
           "question": "A common examiner point on \"सांस्कृतिक परिप्रेक्ष्य\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -105611,7 +105246,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -105754,39 +105398,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** निबन्ध लेखन — लेखन र रचना, Nepali (class-11-notes).",
-        "**Tested.** define it · list: निबन्ध लेखन · one worked example · one misconception each."
+        "**स्वरूप।** निबन्धमा तथ्यसँगै लेखकको दृष्टिकोण रहन्छ; त्यसैले यो केवल सूचना होइन, विचारप्रधान रचना हो।",
+        "**तीन भाग।** भूमिकाले विषय खोल्छ, मध्य भागले बुँदा, उदाहरण र तर्क विस्तार गर्छ, निष्कर्षले सार र धारणा दिन्छ।",
+        "**अनुच्छेद।** हरेक अनुच्छेदमा एउटा केन्द्रीय वाक्य र त्यसलाई पुष्टि गर्ने उदाहरण राख्दा पढ्न सजिलो हुन्छ।",
+        "**शैली।** विषय अनुसार वर्णनात्मक, विवेचनात्मक, कथात्मक वा विचारात्मक शैली छान्न सकिन्छ; एउटै निबन्धमा शैली बारम्बार नबदल्नुहोस्।",
+        "**परीक्षामा ध्यान।** शीर्षकसँग विषय मेल खान्छ कि खाँदैन, र निष्कर्षले भूमिकामा उठाएको प्रश्नको जवाफ दिन्छ कि दिँदैन, अन्त्यमा जाँच्नुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"निबन्ध लेखन\" as one blob → ✅ split into: निबन्ध लेखन.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: निबन्ध लेखन (within लेखन र रचना).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: निबन्ध लेखन.",
-        "one worked example for \"निबन्ध लेखन\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"निबन्ध लेखन\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"निबन्ध लेखन\" with one example.",
-        "compare \"निबन्ध लेखन\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"निबन्ध लेखन\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• निबन्ध लेखन"
-      ],
-      "summary": "निबन्ध लेखन (लेखन र रचना, Nepali, class-11-notes) covers निबन्ध लेखन. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "निबन्ध कुनै विषयमा लेखकको विचार, अनुभव र विश्लेषण संयोजित गरी लेखिने गद्य रचना हो।",
       "mcqs": [
         {
           "question": "A common examiner point on \"निबन्ध लेखन\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -105797,7 +105426,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -105811,39 +105449,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** कविता र गीति — लेखन र रचना, Nepali (class-11-notes).",
-        "**Tested.** define it · list: कविता र गीति · one worked example · one misconception each."
+        "**कविता।** कम शब्दमा गहिरो अर्थ दिने, बिम्ब, अलङ्कार, प्रतीक र लयमा आधारित साहित्यिक विधा कविता हो।",
+        "**गीत/गीति।** गाउन मिल्ने गरी लय, तुक, ध्रुवपद वा दोहोरिने पंक्ति राखेर लेखिने रचना गीति कहलाउँछ।",
+        "**भेद।** कविता पठनप्रधान हुन्छ, गीत श्रवणप्रधान; त्यसैले गीतमा पंक्ति छोटो र दोहोरिने हुन्छ।",
+        "**अध्ययन विधि।** शीर्षक, केन्द्रीय भाव, बिम्ब/प्रतीक, लय वा छन्द र अन्तिम पंक्तिको प्रभाव क्रमैसँग टिपोट गर्नुहोस्।",
+        "**परीक्षामा ध्यान।** भाव लेख्दा पंक्तिबाटै एउटा ठोस उद्धरण जोड्नुहोस्; उद्धरण बिनाको व्याख्या कमजोर हुन्छ।"
       ],
-      "confusion": [
-        "❌ treat \"कविता र गीति\" as one blob → ✅ split into: कविता र गीति.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: कविता र गीति (within लेखन र रचना).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: कविता र गीति.",
-        "one worked example for \"कविता र गीति\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"कविता र गीति\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"कविता र गीति\" with one example.",
-        "compare \"कविता र गीति\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"कविता र गीति\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• कविता र गीति"
-      ],
-      "summary": "कविता र गीति (लेखन र रचना, Nepali, class-11-notes) covers कविता र गीति. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "कविता संवेदना र विचारलाई सङ्केत, बिम्ब र लयमा प्रस्तुत गर्छ भने गीति रचना गेयता र दोहोरोपनमा टिक्छ।",
       "mcqs": [
         {
           "question": "A common examiner point on \"कविता र गीति\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -105854,7 +105477,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -149639,13 +149271,31 @@
     "data": {
       "title": "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
       "notes": [
-        "For two lines written with their constant term made positive, the bisector equations are found by equating normalized distances. Which of the two resulting bisectors is the *acute* one and which is the *obtuse* one depends on the sign of a₁a₂ + b₁b₂",
-        "**If a₁a₂ + b₁b₂ < 0:** the (+) sign in the bisector formula gives the **acute** bisector, and the (−) sign gives the **obtuse** bisector",
-        "**If a₁a₂ + b₁b₂ > 0:** the (+) sign gives the **obtuse** bisector, and the (−) sign gives the **acute** bisector"
+        "**Normalized distance.** Dividing aᵢx + bᵢy + cᵢ by √(aᵢ² + bᵢ²) turns its absolute value into the perpendicular distance from (x, y) to that line; equating the two distances gives the bisector locus.",
+        "**Sign convention.** First rewrite both equations so c₁ and c₂ are positive. The bisector containing the origin then takes the (+) sign in (a₁x + b₁y + c₁)/√(a₁² + b₁²) = ± (a₂x + b₂y + c₂)/√(a₂² + b₂²).",
+        "**Acute vs obtuse.** If a₁a₂ + b₁b₂ < 0 the (+) bisector is acute; if a₁a₂ + b₁b₂ > 0 the (+) bisector is obtuse. When the product is zero the lines are perpendicular and both bisectors are equally inclined.",
+        "**Perpendicularity check.** The two bisectors are always at right angles, so their slopes satisfy m₁m₂ = −1; use this to verify the simplified equations.",
+        "**Worked step.** Expand each normalized equation with the chosen sign, collect x and y terms, and simplify — the constant ratio, not the raw coefficients, decides which bisector is acute."
       ],
       "unitSlug": "analytic-geometry",
       "topicSlug": "01-angle-bisector-a1a2-plus-b1b2-rule",
-      "topicTitle": "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule"
+      "topicTitle": "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
+      "summary": "The acute/obtuse bisector of two lines is selected by the sign of a₁a₂ + b₁b₂ once the constant terms are made positive.",
+      "confusion": [],
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "formulas": [],
+      "keyPoints": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -246875,39 +246525,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** शब्द र उसको विभाग — भाषा र व्यायरन, Nepali (class-12-notes).",
-        "**Tested.** define it · list: शब्द र उसको विभाग · one worked example · one misconception each."
+        "**शब्दको परिभाषा।** अर्थ बोकेको, वाक्यमा स्वतन्त्र रूपमा प्रयोग गर्न सकिने न्यूनतम भाषिक एकाइलाई शब्द भनिन्छ। वर्ण आफैँमा अर्थवान् हुँदैन, शब्द हुन्छ।",
+        "**उत्पत्तिका आधारमा।** तत्सम (संस्कृतबाट जस्तै), तद्भव (संस्कृतबाट परिवर्तित), आगन्तुक (विदेशी भाषाबाट आएको) र देशज (स्थानीय) गरी चार विभाग मानिन्छ।",
+        "**रचनाका आधारमा।** मौलिक शब्दलाई रूढ भनिन्छ; उपसर्ग, प्रत्यय वा समासबाट बनेको शब्दलाई यौगिक भनिन्छ।",
+        "**अर्थका आधारमा।** एउटै अर्थ दिने शब्द पर्यायवाची, उल्टो अर्थ दिने शब्द विपरीतार्थी र धेरै अर्थ दिने शब्द अनेकार्थी कहलाउँछ।",
+        "**परीक्षामा ध्यान।** विभाजनको आधार स्पष्ट लेख्नुहोस्; एउटै शब्द उत्पत्ति र रचना दुवै आधारमा फरक समूहमा पर्न सक्छ।"
       ],
-      "confusion": [
-        "❌ treat \"शब्द र उसको विभाग\" as one blob → ✅ split into: शब्द र उसको विभाग.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: शब्द र उसको विभाग (within भाषा र व्यायरन).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: शब्द र उसको विभाग.",
-        "one worked example for \"शब्द र उसको विभाग\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"शब्द र उसको विभाग\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"शब्द र उसको विभाग\" with one example.",
-        "compare \"शब्द र उसको विभाग\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"शब्द र उसको विभाग\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• शब्द र उसको विभाग"
-      ],
-      "summary": "शब्द र उसको विभाग (भाषा र व्यायरन, Nepali, class-12-notes) covers शब्द र उसको विभाग. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "शब्द अर्थ भएको स्वतन्त्र भाषिक एकाइ हो; यसलाई उत्पत्ति, रूप, अर्थ र प्रयोगका आधारमा विभाजन गरिन्छ।",
       "mcqs": [
         {
           "question": "A common examiner point on \"शब्द र उसको विभाग\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -246925,7 +246560,16 @@
           "url": "/materials/nepali/bhasha-tatha-vyakaran-01-शब्द-र-उसको-विभाग.pdf",
           "kind": "pdf"
         }
-      }
+      },
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -247016,39 +246660,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** पद विभक्त र तत्पुरुष समास — भाषा र व्यायरन, Nepali (class-12-notes).",
-        "**Tested.** define it · list: पद विभक्त र तत्पुरुष समास · one worked example · one misconception each."
+        "**पद र विभक्ति।** वाक्यमा प्रयोग हुँदा शब्दले विभक्ति लिन्छ र पद बन्छ। कर्तामा 'ले', कर्ममा 'लाई', करणमा 'ले/द्वारा', सम्प्रदानमा 'लाई' र अपादानमा 'बाट' लाग्छ।",
+        "**विभक्तिको काम।** विभक्तिले शब्दको अर्थ नबदली वाक्यभित्रको सम्बन्ध मात्र देखाउँछ। एउटै शब्द विभक्ति अनुसार कर्ता, कर्म वा अधिकरण हुन सक्छ।",
+        "**तत्पुरुष समास।** पहिलो पद गौण र दोस्रो पद प्रधान हुने समास तत्पुरुष हो, जस्तै 'राजाको छोरो' बाट 'राजपुत्र'। विग्रहमा विभक्ति देखिन्छ।",
+        "**विग्रह।** समस्त पदलाई त्यसका मूल पदहरूमा फर्काउने काम विग्रह हो। सही विग्रह लेख्न सक्नु नै समास चिनेको प्रमाण हो।",
+        "**परीक्षामा ध्यान।** समासको नाम मात्र लेखेर नरोकिइ विग्रह र प्रधान पद पनि देखाउनुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"पद विभक्त र तत्पुरुष समास\" as one blob → ✅ split into: पद विभक्त र तत्पुरुष समास.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: पद विभक्त र तत्पुरुष समास (within भाषा र व्यायरन).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: पद विभक्त र तत्पुरुष समास.",
-        "one worked example for \"पद विभक्त र तत्पुरुष समास\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"पद विभक्त र तत्पुरुष समास\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"पद विभक्त र तत्पुरुष समास\" with one example.",
-        "compare \"पद विभक्त र तत्पुरुष समास\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"पद विभक्त र तत्पुरुष समास\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• पद विभक्त र तत्पुरुष समास"
-      ],
-      "summary": "पद विभक्त र तत्पुरुष समास (भाषा र व्यायरन, Nepali, class-12-notes) covers पद विभक्त र तत्पुरुष समास. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "पद विभक्तिले वाक्यमा शब्दको काम बताउँछ भने तत्पुरुष समासले दुई पद मिलेर बनेको समस्त पद बनाउँछ।",
       "mcqs": [
         {
           "question": "A common examiner point on \"पद विभक्त र तत्पुरुष समास\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -247059,7 +246688,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -247073,43 +246711,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** बहुव्रीहि, कर्मधारय, द्वन्द्व समास — भाषा र व्यायरन, Nepali (class-12-notes).",
-        "**Tested.** define it · list: बहुव्रीहि, कर्मधारय, द्वन्द्व समास · one worked example · one misconception each.",
-        "**कर्मधारय.** one-line definition + one-line exam use.",
-        "**द्वन्द्व समास.** one-line definition + one-line exam use."
+        "**बहुव्रीहि।** दुवै पद गौण भई तेस्रो अर्थ बाहिर निस्कन्छ, जस्तै 'लामो कान भएको' बाट 'लमकन्ने'। यो विशेषणका रूपमा प्रयोग हुन्छ।",
+        "**कर्मधारय।** पहिलो पद विशेषण र दोस्रो पद विशेष्य हुन्छ, दुवैको सम्बन्ध विशेषण–विशेष्यको हुन्छ, जस्तै 'नीलो कमल' बाट 'नीलकमल'।",
+        "**द्वन्द्व।** दुवै पद समान रूपमा प्रधान हुन्छन् र 'र/वा' ले जोड्न सकिन्छ, जस्तै 'आमा र बुबा' बाट 'आमाबुबा'।",
+        "**पहिचानको उपाय।** विग्रह गरेर हेर्नुहोस्: बाहिरको अर्थ निस्के बहुव्रीहि, विशेषण–विशेष्य देखिए कर्मधारय, 'र' लगाउन मिले द्वन्द्व।",
+        "**परीक्षामा ध्यान।** समस्त पद, विग्रह र नाम तीनै लेख्नुहोस्; नाम मात्र सही भए पनि पूरा अंक पाइँदैन।"
       ],
-      "confusion": [
-        "❌ treat \"बहुव्रीहि\" as one blob → ✅ split into: बहुव्रीहि, कर्मधारय, द्वन्द्व समास.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: बहुव्रीहि, कर्मधारय, द्वन्द्व समास (within भाषा र व्यायरन).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: बहुव्रीहि, कर्मधारय, द्वन्द्व समास.",
-        "one worked example for \"बहुव्रीहि, कर्मधारय, द्वन्द्व समास\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"बहुव्रीहि, कर्मधारय, द्वन्द्व समास\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"बहुव्रीहि, कर्मधारय, द्वन्द्व समास\" with one example.",
-        "compare \"बहुव्रीहि\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"बहुव्रीहि, कर्मधारय, द्वन्द्व समास\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• बहुव्रीहि",
-        "• कर्मधारय",
-        "• द्वन्द्व समास"
-      ],
-      "summary": "बहुव्रीहि, कर्मधारय, द्वन्द्व समास (भाषा र व्यायरन, Nepali, class-12-notes) covers बहुव्रीहि, कर्मधारय, द्वन्द्व समास. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "बहुव्रीहि, कर्मधारय र द्वन्द्व तीन फरक समास हुन्; पहिचान कुन पद प्रधान छ र पदहरूबीचको सम्बन्धमा भर पर्छ।",
       "mcqs": [
         {
           "question": "Which of the following is a distinct sub-topic under \"बहुव्रीहि, कर्मधारय, द्वन्द्व समास\"?",
@@ -247131,7 +246750,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -247222,39 +246850,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** क्रिया र तत्सम्बन्धी विषय — भाषा र व्यायरन, Nepali (class-12-notes).",
-        "**Tested.** define it · list: क्रिया र तत्सम्बन्धी विषय · one worked example · one misconception each."
+        "**क्रियाको परिभाषा।** वाक्यमा काम वा अवस्था बुझाउने पदलाई क्रिया भनिन्छ। क्रिया बिना पूर्ण वाक्य बन्दैन, जस्तै 'उसले पुस्तक पढ्यो' मा 'पढ्यो'।",
+        "**सकर्मक र अकर्मक।** जसलाई कर्म चाहिन्छ त्यो सकर्मक ('पढ्नु'), जसलाई कर्म चाहिँदैन त्यो अकर्मक ('हाँस्नु')। कर्म खोज्दा वाक्यमा 'के/कसलाई' सोध्नुहोस्।",
+        "**काल।** वर्तमान, भूत र भविष्यत् गरी तीन मुख्य काल हुन्छन्; क्रियाको रूपले कामको समय बताउँछ।",
+        "**वाच्य।** कर्ता प्रधान भए कर्तृवाच्य, कर्म प्रधान भए कर्मवाच्य र क्रिया/भाव प्रधान भए भाववाच्य भनिन्छ।",
+        "**परीक्षामा ध्यान।** क्रिया पहिचान गर्दा कर्तासँग पुरुष, वचन र लिङ्ग मिले/नमिलेको पनि जाँच्नुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"क्रिया र तत्सम्बन्धी विषय\" as one blob → ✅ split into: क्रिया र तत्सम्बन्धी विषय.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: क्रिया र तत्सम्बन्धी विषय (within भाषा र व्यायरन).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: क्रिया र तत्सम्बन्धी विषय.",
-        "one worked example for \"क्रिया र तत्सम्बन्धी विषय\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"क्रिया र तत्सम्बन्धी विषय\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"क्रिया र तत्सम्बन्धी विषय\" with one example.",
-        "compare \"क्रिया र तत्सम्बन्धी विषय\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"क्रिया र तत्सम्बन्धी विषय\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• क्रिया र तत्सम्बन्धी विषय"
-      ],
-      "summary": "क्रिया र तत्सम्बन्धी विषय (भाषा र व्यायरन, Nepali, class-12-notes) covers क्रिया र तत्सम्बन्धी विषय. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "क्रियाले काम, अवस्था वा घटनालाई जनाउँछ; काल, पक्ष, भाव, वाच्य र पुरुष यसैसँग जोडिएका विषय हुन्।",
       "mcqs": [
         {
           "question": "A common examiner point on \"क्रिया र तत्सम्बन्धी विषय\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -247265,7 +246878,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -247433,39 +247055,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** वाक्य र उसको विध — भाषा र व्यायरन, Nepali (class-12-notes).",
-        "**Tested.** define it · list: वाक्य र उसको विध · one worked example · one misconception each."
+        "**वाक्यको परिभाषा।** सम्बद्ध पदहरू मिलेर पूर्ण अर्थ दिने भाषिक एकाइलाई वाक्य भनिन्छ। यसमा कम्तीमा एउटा क्रिया वा क्रियाको भाव हुन्छ।",
+        "**संरचनाका आधारमा।** एउटै क्रिया भएको सरल वाक्य, दुई वा बढी स्वतन्त्र उपवाक्य भएको संयुक्त वाक्य, र मुख्य उपवाक्यमा आश्रित उपवाक्य जोडिएको मिश्र वाक्य हुन्छ।",
+        "**अर्थका आधारमा।** कथन, प्रश्न, आदेश/अनुरोध, विस्मय, इच्छा र निषेध वाक्य फरक–फरक प्रयोजनमा प्रयोग हुन्छन्।",
+        "**विराम चिह्न।** पूर्ण विराम (।), प्रश्नवाचक (?), विस्मयवाचक (!), अल्पविराम (,) र उद्धरण चिह्नले अर्थ स्पष्ट पार्छन्।",
+        "**परीक्षामा ध्यान।** वाक्य परिवर्तन गर्दा अर्थ नबदल्नुहोस्; केवल संरचना वा वाच्य मात्र बदल्नुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"वाक्य र उसको विध\" as one blob → ✅ split into: वाक्य र उसको विध.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: वाक्य र उसको विध (within भाषा र व्यायरन).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: वाक्य र उसको विध.",
-        "one worked example for \"वाक्य र उसको विध\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"वाक्य र उसको विध\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"वाक्य र उसको विध\" with one example.",
-        "compare \"वाक्य र उसको विध\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"वाक्य र उसको विध\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• वाक्य र उसको विध"
-      ],
-      "summary": "वाक्य र उसको विध (भाषा र व्यायरन, Nepali, class-12-notes) covers वाक्य र उसको विध. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "वाक्य पूर्ण अर्थ दिने पदसमूह हो; अर्थ, संरचना र प्रयोजनका आधारमा यसका धेरै विधा छन्।",
       "mcqs": [
         {
           "question": "A common examiner point on \"वाक्य र उसको विध\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -247476,7 +247083,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -247490,39 +247106,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** मुहावा र वाङ्मय प्रयोग — भाषा र व्यायरन, Nepali (class-12-notes).",
-        "**Tested.** define it · list: मुहावा र वाङ्मय प्रयोग · one worked example · one misconception each."
+        "**मुहावा।** दुई वा बढी शब्द मिली विशेष लाक्षणिक अर्थ दिने स्थिर पदावलीलाई मुहावा भनिन्छ, जस्तै 'आँखा चिम्लनु' भनेको वास्ता नगर्नु हो।",
+        "**उखान/टुक्का।** अनुभवमा आधारित छोटो, सारगर्भित भनाइ उखान हो; यसले नैतिक वा व्यावहारिक सन्देश दिन्छ।",
+        "**शाब्दिक बनाम लाक्षणिक।** मुहावाको अर्थ शब्दशः निकाल्दा गलत हुन्छ; वाक्यको सन्दर्भ हेरेर मात्र सही अर्थ लगाउन सकिन्छ।",
+        "**प्रयोग।** निबन्ध, कथा र सम्वादमा मुहावाले भाषालाई स्वाभाविक र जीवन्त बनाउँछ, तर औपचारिक दस्तावेजमा यसको प्रयोग सीमित राख्नुपर्छ।",
+        "**परीक्षामा ध्यान।** मुहावाको अर्थ लेख्दा त्यसलाई वाक्यमा प्रयोग गरेर देखाउनुहोस्; पर्याय मात्र लेख्दा अपूरो हुन्छ।"
       ],
-      "confusion": [
-        "❌ treat \"मुहावा र वाङ्मय प्रयोग\" as one blob → ✅ split into: मुहावा र वाङ्मय प्रयोग.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: मुहावा र वाङ्मय प्रयोग (within भाषा र व्यायरन).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: मुहावा र वाङ्मय प्रयोग.",
-        "one worked example for \"मुहावा र वाङ्मय प्रयोग\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"मुहावा र वाङ्मय प्रयोग\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"मुहावा र वाङ्मय प्रयोग\" with one example.",
-        "compare \"मुहावा र वाङ्मय प्रयोग\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"मुहावा र वाङ्मय प्रयोग\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• मुहावा र वाङ्मय प्रयोग"
-      ],
-      "summary": "मुहावा र वाङ्मय प्रयोग (भाषा र व्यायरन, Nepali, class-12-notes) covers मुहावा र वाङ्मय प्रयोग. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "मुहावा र उखानले भाषालाई प्रभावकारी बनाउँछन्; तिनको अर्थ शाब्दिक होइन, लाक्षणिक हुन्छ।",
       "mcqs": [
         {
           "question": "A common examiner point on \"मुहावा र वाङ्मय प्रयोग\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -247533,7 +247134,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -248929,39 +248539,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** आवधिक निबन्ध लेखन — लेखन कौशल, Nepali (class-12-notes).",
-        "**Tested.** define it · list: आवधिक निबन्ध लेखन · one worked example · one misconception each."
+        "**स्वरूप।** आवधिक निबन्धमा विषयको गम्भीर विश्लेषण हुन्छ, भाषा औपचारिक हुन्छ र विचार तार्किक क्रममा प्रस्तुत हुन्छ।",
+        "**संरचना।** भूमिकामा विषय परिचय, मुख्य भागमा बुँदागत विस्तार र उदाहरण, निष्कर्षमा सार र सुझाव राखिन्छ।",
+        "**तयारी।** लेख्नुअघि विषय, उद्देश्य, पाठक र सम्भावित बुँदाहरूको छोटो रूपरेखा बनाउनुहोस्; यसले दोहोरोपन रोक्छ।",
+        "**भाषा।** अनावश्यक लामो वाक्य, दोहोरो शब्द र व्यक्तिगत आवेगबाट बच्नुहोस्; अनुच्छेदमा एउटा मात्र केन्द्रीय विचार राख्नुहोस्।",
+        "**परीक्षामा ध्यान।** शीर्षक, भूमिका, क्रमबद्ध बुँदा र निष्कर्ष नछुटाउनुहोस्; शब्द सीमा दिइएको छ भने त्यसको पालना गर्नुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"आवधिक निबन्ध लेखन\" as one blob → ✅ split into: आवधिक निबन्ध लेखन.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: आवधिक निबन्ध लेखन (within लेखन कौशल).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: आवधिक निबन्ध लेखन.",
-        "one worked example for \"आवधिक निबन्ध लेखन\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"आवधिक निबन्ध लेखन\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"आवधिक निबन्ध लेखन\" with one example.",
-        "compare \"आवधिक निबन्ध लेखन\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"आवधिक निबन्ध लेखन\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• आवधिक निबन्ध लेखन"
-      ],
-      "summary": "आवधिक निबन्ध लेखन (लेखन कौशल, Nepali, class-12-notes) covers आवधिक निबन्ध लेखन. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "आवधिक निबन्ध कुनै निश्चित विषयमा तर्क, उदाहरण र निष्कर्षसहित लेखिने औपचारिक गद्य रचना हो।",
       "mcqs": [
         {
           "question": "A common examiner point on \"आवधिक निबन्ध लेखन\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -248972,7 +248567,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -248986,41 +248590,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** पत्र लेखन (आधिकारिक र अनौपचारिक) — लेखन कौशल, Nepali (class-12-notes).",
-        "**Tested.** define it · list: पत्र लेखन, आधिकारिक र अनौपचारिक · one worked example · one misconception each.",
-        "**आधिकारिक र अनौपचारिक.** one-line definition + one-line exam use."
+        "**औपचारिक पत्र।** कार्यालय, विद्यालय वा संस्थालाई लेखिने पत्रमा पठाउनेको ठेगाना, मिति, प्रापक, विषय, सम्बोधन, मूल कुरा र हस्ताक्षर क्रमबद्ध हुनुपर्छ।",
+        "**अनौपचारिक पत्र।** आफन्त वा मित्रलाई लेखिने पत्रमा मिति/स्थान, प्रिय सम्बोधन, कुशलक्षेम, मुख्य कुरा र अन्त्यमा नाम मात्र पर्याप्त हुन्छ।",
+        "**भाषा भेद।** औपचारिकमा 'महोदय', 'निवेदन गर्दछु', 'धन्यवाद' जस्ता मानक पदावली; अनौपचारिकमा बोलिचालीको नजिकको भाषा उपयुक्त हुन्छ।",
+        "**विषय पंक्ति।** औपचारिक पत्रको विषयले पत्रको उद्देश्य एकै हरफमा बताउँछ; अस्पष्ट विषयले पत्र प्रशोधनमा ढिलाइ गराउँछ।",
+        "**परीक्षामा ध्यान।** ढाँचाका अङ्गहरू क्रममै राख्नुहोस् र पत्रको उद्देश्य पहिलो अनुच्छेदमै स्पष्ट पार्नुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"पत्र लेखन\" as one blob → ✅ split into: पत्र लेखन, आधिकारिक र अनौपचारिक.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: पत्र लेखन, आधिकारिक र अनौपचारिक (within लेखन कौशल).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: पत्र लेखन, आधिकारिक र अनौपचारिक.",
-        "one worked example for \"पत्र लेखन (आधिकारिक र अनौपचारिक)\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"पत्र लेखन (आधिकारिक र अनौपचारिक)\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"पत्र लेखन (आधिकारिक र अनौपचारिक)\" with one example.",
-        "compare \"पत्र लेखन\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"पत्र लेखन (आधिकारिक र अनौपचारिक)\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• पत्र लेखन",
-        "• आधिकारिक र अनौपचारिक"
-      ],
-      "summary": "पत्र लेखन (आधिकारिक र अनौपचारिक) (लेखन कौशल, Nepali, class-12-notes) covers पत्र लेखन, आधिकारिक र अनौपचारिक. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "औपचारिक पत्र कामकाजका लागि र अनौपचारिक पत्र व्यक्तिगत सम्बन्धका लागि लेखिन्छ; दुवैको ढाँचा र भाषा फरक हुन्छ।",
       "mcqs": [
         {
           "question": "A common examiner point on \"पत्र लेखन (आधिकारिक र अनौपचारिक)\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -249031,7 +248618,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -249045,39 +248641,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** प्रेषणात्मक लेखन — लेखन कौशल, Nepali (class-12-notes).",
-        "**Tested.** define it · list: प्रेषणात्मक लेखन · one worked example · one misconception each."
+        "**उद्देश्य।** सूचना दिनु, तर्क प्रस्तुत गर्नु र निष्कर्षतर्फ डोर्‍याउनु प्रेषणात्मक लेखनका तीन मुख्य काम हुन्।",
+        "**संरचना।** समस्या वा आवश्यकता, प्रमाण/उदाहरण, विरोधी दृष्टिकोणको खण्डन र स्पष्ट आग्रह गरी लेखन अघि बढ्छ।",
+        "**प्रमाण।** तथ्य, तथ्याङ्क, उदाहरण र विश्वसनीय स्रोतले दाबीलाई बल दिन्छ; आधार बिनाको दाबी केवल राय हुन्छ।",
+        "**पाठक केन्द्रितता।** पाठकलाई के थाहा छ, के चाहिन्छ र कुन आपत्ति हुन सक्छ भन्ने सोचेर शब्द छान्नुहोस्।",
+        "**परीक्षामा ध्यान।** अन्त्यमा एउटा ठोस निष्कर्ष वा कार्य आह्वान राख्नुहोस्; भावना मात्र भएको अन्त्य अपूरो मानिन्छ।"
       ],
-      "confusion": [
-        "❌ treat \"प्रेषणात्मक लेखन\" as one blob → ✅ split into: प्रेषणात्मक लेखन.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: प्रेषणात्मक लेखन (within लेखन कौशल).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: प्रेषणात्मक लेखन.",
-        "one worked example for \"प्रेषणात्मक लेखन\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"प्रेषणात्मक लेखन\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"प्रेषणात्मक लेखन\" with one example.",
-        "compare \"प्रेषणात्मक लेखन\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"प्रेषणात्मक लेखन\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• प्रेषणात्मक लेखन"
-      ],
-      "summary": "प्रेषणात्मक लेखन (लेखन कौशल, Nepali, class-12-notes) covers प्रेषणात्मक लेखन. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "प्रेषणात्मक लेखनले पाठकलाई कुनै कुरा बुझाउन, विश्वास दिलाउन वा कदम चाल्न प्रेरित गर्छ।",
       "mcqs": [
         {
           "question": "A common examiner point on \"प्रेषणात्मक लेखन\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -249088,7 +248669,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -249102,39 +248692,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** समावेशक लेखन — लेखन कौशल, Nepali (class-12-notes).",
-        "**Tested.** define it · list: समावेशक लेखन · one worked example · one misconception each."
+        "**अर्थ।** लिङ्ग, जाति, भाषा, क्षेत्र, उमेर, अपाङ्गता वा आर्थिक अवस्थाका आधारमा कसैलाई बाहिर नराख्ने लेखन समावेशक हो।",
+        "**भाषा।** अनावश्यक रूपमा लिङ्ग निर्दिष्ट गर्ने, अपमानजनक वा सामान्यीकृत शब्दको सट्टा तटस्थ र सम्मानजनक शब्द प्रयोग गर्नुहोस्।",
+        "**उदाहरण।** उदाहरण दिँदा एउटै समूहलाई मात्र पात्र नबनाई फरक–फरक पृष्ठभूमिका पात्र र सन्दर्भ समेट्नुहोस्।",
+        "**पहुँच।** सरल वाक्य, स्पष्ट शीर्षक र आवश्यक परे वर्णन/वैकल्पिक पाठले धेरै पाठकसम्म सन्देश पुग्छ।",
+        "**परीक्षामा ध्यान।** समावेशकता केवल शब्दमा होइन, कसको दृष्टिकोण समेटियो भन्नेमा पनि जाँचिन्छ; दुवै पक्ष उल्लेख गर्नुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"समावेशक लेखन\" as one blob → ✅ split into: समावेशक लेखन.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: समावेशक लेखन (within लेखन कौशल).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: समावेशक लेखन.",
-        "one worked example for \"समावेशक लेखन\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"समावेशक लेखन\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"समावेशक लेखन\" with one example.",
-        "compare \"समावेशक लेखन\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"समावेशक लेखन\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• समावेशक लेखन"
-      ],
-      "summary": "समावेशक लेखन (लेखन कौशल, Nepali, class-12-notes) covers समावेशक लेखन. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "समावेशक लेखनले सबै समूहको प्रतिनिधित्व र सम्मान हुने गरी भाषा, उदाहरण र दृष्टिकोण छान्छ।",
       "mcqs": [
         {
           "question": "A common examiner point on \"समावेशक लेखन\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -249145,7 +248720,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -250158,43 +249742,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** कविता र गीत: रस, अलङ्कार, छन्द — साहित्य अध्‍ययन, Nepali (class-12-notes).",
-        "**Tested.** define it · list: कविता र गीत: रस, अलङ्कार, छन्द · one worked example · one misconception each.",
-        "**अलङ्कार.** one-line definition + one-line exam use.",
-        "**छन्द.** one-line definition + one-line exam use."
+        "**रस।** काव्य पढ्दा पाठकमा उत्पन्न हुने स्थायी अनुभूतिलाई रस भनिन्छ; शृङ्गार, वीर, करुण, शान्त आदि यसका प्रकार हुन्।",
+        "**अलङ्कार।** भावलाई प्रभावकारी बनाउने अभिव्यक्ति अलङ्कार हो; उपमा, रूपक, अनुप्रास, यमक, अतिशयोक्ति सामान्य उदाहरण हुन्।",
+        "**छन्द/लय।** पंक्तिमा अक्षर वा मात्राको नियमित विन्यास छन्द हो; गीतमा यसले गेयता र स्मरणयोग्यता दिन्छ।",
+        "**विश्लेषण क्रम।** पहिले केन्द्रीय भाव, त्यसपछि प्रयोग भएका बिम्ब/अलङ्कार, अन्त्यमा लयले भावलाई कसरी बल दियो भनेर लेख्नुहोस्।",
+        "**परीक्षामा ध्यान।** अलङ्कारको नाम मात्र नलेखी पंक्तिबाट उदाहरण झिकेर पहिचान प्रमाणित गर्नुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"कविता र गीत: रस\" as one blob → ✅ split into: कविता र गीत: रस, अलङ्कार, छन्द.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: कविता र गीत: रस, अलङ्कार, छन्द (within साहित्य अध्‍ययन).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: कविता र गीत: रस, अलङ्कार, छन्द.",
-        "one worked example for \"कविता र गीत: रस, अलङ्कार, छन्द\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"कविता र गीत: रस, अलङ्कार, छन्द\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"कविता र गीत: रस, अलङ्कार, छन्द\" with one example.",
-        "compare \"कविता र गीत: रस\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"कविता र गीत: रस, अलङ्कार, छन्द\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• कविता र गीत: रस",
-        "• अलङ्कार",
-        "• छन्द"
-      ],
-      "summary": "कविता र गीत: रस, अलङ्कार, छन्द (साहित्य अध्‍ययन, Nepali, class-12-notes) covers कविता र गीत: रस, अलङ्कार, छन्द. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "रसले अनुभूति, अलङ्कारले अलंकृति र छन्दले लय दिन्छ; तीनै मिलेर कविता/गीतको अध्ययन पूरा हुन्छ।",
       "mcqs": [
         {
           "question": "Which of the following is a distinct sub-topic under \"कविता र गीत: रस, अलङ्कार, छन्द\"?",
@@ -250216,7 +249781,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -250307,43 +249881,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** निर्धारित पाठ: कथा, उपन्यास, नाटक — साहित्य अध्‍ययन, Nepali (class-12-notes).",
-        "**Tested.** define it · list: निर्धारित पाठ: कथा, उपन्यास, नाटक · one worked example · one misconception each.",
-        "**उपन्यास.** one-line definition + one-line exam use.",
-        "**नाटक.** one-line definition + one-line exam use."
+        "**विधा पहिचान।** कथा एक घटनामा केन्द्रित, उपन्यास पात्र विकास र बहुघटनामा विस्तृत, नाटक संवाद र दृश्यमा आधारित हुन्छ।",
+        "**पाठ विश्लेषण।** कथावस्तु, पात्र, परिवेश, दृष्टिकोण, भाषा र मूल सन्देश छुट्ट्याएर पढ्दा उत्तर संगठित हुन्छ।",
+        "**पात्र अध्ययन।** पात्रको निर्णय, त्यसको कारण र परिणाम जोडेर लेख्नुहोस्; केवल गुण सूचीकरण अपूरो हुन्छ।",
+        "**सन्दर्भ।** रचनाको समय र सामाजिक परिवेशले पात्रको व्यवहार बुझाउँछ, त्यसैले पाठ र परिप्रेक्ष्य सँगै राख्नुहोस्।",
+        "**परीक्षामा ध्यान।** प्रश्नले विधा, पात्र वा सन्देशमध्ये के मागेको हो पहिले छुट्याउनुहोस्, अनि सोही अनुसार उत्तर संरचना गर्नुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"निर्धारित पाठ: कथा\" as one blob → ✅ split into: निर्धारित पाठ: कथा, उपन्यास, नाटक.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: निर्धारित पाठ: कथा, उपन्यास, नाटक (within साहित्य अध्‍ययन).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: निर्धारित पाठ: कथा, उपन्यास, नाटक.",
-        "one worked example for \"निर्धारित पाठ: कथा, उपन्यास, नाटक\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"निर्धारित पाठ: कथा, उपन्यास, नाटक\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"निर्धारित पाठ: कथा, उपन्यास, नाटक\" with one example.",
-        "compare \"निर्धारित पाठ: कथा\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"निर्धारित पाठ: कथा, उपन्यास, नाटक\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• निर्धारित पाठ: कथा",
-        "• उपन्यास",
-        "• नाटक"
-      ],
-      "summary": "निर्धारित पाठ: कथा, उपन्यास, नाटक (साहित्य अध्‍ययन, Nepali, class-12-notes) covers निर्धारित पाठ: कथा, उपन्यास, नाटक. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "निर्धारित पाठको अध्ययनमा कथा, उपन्यास र नाटकको विधागत विशेषतासँगै पाठको सन्देश केलाइन्छ।",
       "mcqs": [
         {
           "question": "Which of the following is a distinct sub-topic under \"निर्धारित पाठ: कथा, उपन्यास, नाटक\"?",
@@ -250365,7 +249920,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -252834,39 +252398,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** नेपाली संस्कृति र परम्परा — संस्कृति र सामाज, Nepali (class-12-notes).",
-        "**Tested.** define it · list: नेपाली संस्कृति र परम्परा · one worked example · one misconception each."
+        "**संस्कृतिको अर्थ।** कुनै समाजले सिर्जना गरेका भाषा, खानपान, पोसाक, चाडपर्व, कला, विश्वास र सामाजिक नियमको समग्र रूप संस्कृति हो।",
+        "**विविधता।** भूगोल, जाति, भाषा र धर्मको भिन्नताले नेपालमा फरक–फरक स्थानीय परम्परा जन्मिएका छन्; ती एकअर्काका पूरक हुन्।",
+        "**परम्परा।** पुस्तौँदेखि चलिआएको चलन, संस्कार र उत्सवले सामुदायिक पहिचान र एकता कायम राख्छ।",
+        "**परिवर्तन।** शिक्षा, प्रविधि, बसाइँसराइ र आर्थिक परिवर्तनसँगै परम्पराका केही रूप बदलिन्छन्; यसलाई सांस्कृतिक परिवर्तन भनिन्छ।",
+        "**परीक्षामा ध्यान।** सामान्यीकरणबाट बचेर क्षेत्र/समुदाय तोकी एउटा ठोस उदाहरण दिनुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"नेपाली संस्कृति र परम्परा\" as one blob → ✅ split into: नेपाली संस्कृति र परम्परा.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: नेपाली संस्कृति र परम्परा (within संस्कृति र सामाज).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: नेपाली संस्कृति र परम्परा.",
-        "one worked example for \"नेपाली संस्कृति र परम्परा\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"नेपाली संस्कृति र परम्परा\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"नेपाली संस्कृति र परम्परा\" with one example.",
-        "compare \"नेपाली संस्कृति र परम्परा\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"नेपाली संस्कृति र परम्परा\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• नेपाली संस्कृति र परम्परा"
-      ],
-      "summary": "नेपाली संस्कृति र परम्परा (संस्कृति र सामाज, Nepali, class-12-notes) covers नेपाली संस्कृति र परम्परा. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "नेपाली संस्कृति बहुभाषिक, बहुधार्मिक र बहुजातीय जीवनशैलीको साझा सम्पत्ति हो; परम्पराले यसलाई पुस्तान्तरण गर्छ।",
       "mcqs": [
         {
           "question": "A common examiner point on \"नेपाली संस्कृति र परम्परा\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -252877,7 +252426,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -252891,39 +252449,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** भारतीय सांस्कृतिक प्रभाव — संस्कृति र सामाज, Nepali (class-12-notes).",
-        "**Tested.** define it · list: भारतीय सांस्कृतिक प्रभाव · one worked example · one misconception each."
+        "**प्रभावका मार्ग।** व्यापार, तीर्थयात्रा, विवाह सम्बन्ध, शिक्षा र धार्मिक ग्रन्थको अध्ययनमार्फत विचार तथा चलन आदानप्रदान भए।",
+        "**भाषा र साहित्य।** संस्कृत शब्दभण्डार, छन्द, रस–अलङ्कार परम्परा र धार्मिक आख्यानले नेपाली लेखनलाई प्रभावित गरे।",
+        "**चाडपर्व र संस्कार।** दसैँ, तिहार, विवाह संस्कारजस्ता अभ्यासमा दक्षिण एसियाली साझा तत्त्व देखिन्छन्, तर स्थानीय विधि फरक हुन्छ।",
+        "**सन्तुलन।** प्रभावलाई 'नक्कल' मान्नु गलत; नेपाली समाजले आयातित तत्त्वलाई आफ्नै भूगोल र सामाजिक संरचनामा ढालेको छ।",
+        "**परीक्षामा ध्यान।** प्रभाव र मौलिकता दुवै पक्ष लेख्नुहोस्; केवल प्रभाव सूचीकरण गर्दा उत्तर एकपक्षीय हुन्छ।"
       ],
-      "confusion": [
-        "❌ treat \"भारतीय सांस्कृतिक प्रभाव\" as one blob → ✅ split into: भारतीय सांस्कृतिक प्रभाव.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: भारतीय सांस्कृतिक प्रभाव (within संस्कृति र सामाज).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: भारतीय सांस्कृतिक प्रभाव.",
-        "one worked example for \"भारतीय सांस्कृतिक प्रभाव\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"भारतीय सांस्कृतिक प्रभाव\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"भारतीय सांस्कृतिक प्रभाव\" with one example.",
-        "compare \"भारतीय सांस्कृतिक प्रभाव\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"भारतीय सांस्कृतिक प्रभाव\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• भारतीय सांस्कृतिक प्रभाव"
-      ],
-      "summary": "भारतीय सांस्कृतिक प्रभाव (संस्कृति र सामाज, Nepali, class-12-notes) covers भारतीय सांस्कृतिक प्रभाव. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "खुला सिमाना, धर्म, भाषा र साहित्यिक आदानप्रदानले नेपाली संस्कृतिमा भारतीय प्रभाव परेको छ, तर नेपालीपन आफ्नै रूपमा विकसित भयो।",
       "mcqs": [
         {
           "question": "A common examiner point on \"भारतीय सांस्कृतिक प्रभाव\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -252934,7 +252477,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {
@@ -252948,39 +252500,24 @@
       "source": "generated",
       "generatedAt": "2026-09-10T13:48:26.104Z",
       "notes": [
-        "**Scope.** सामाजिक परिवर्तन र नेपाली साहित्य — संस्कृति र सामाज, Nepali (class-12-notes).",
-        "**Tested.** define it · list: सामाजिक परिवर्तन र नेपाली साहित्य · one worked example · one misconception each."
+        "**सम्बन्ध।** साहित्य समाजको ऐना मात्र होइन, त्यसमाथि प्रश्न उठाउने माध्यम पनि हो; त्यसैले सामाजिक परिवर्तनसँगै विषयवस्तु बदलिन्छ।",
+        "**परिवर्तनका कारक।** शिक्षाको विस्तार, सहरीकरण, प्रविधि, राजनीतिक चेतना, बसाइँसराइ र आर्थिक अवसरले जीवनशैली बदल्छन्।",
+        "**साहित्यमा प्रतिबिम्ब।** नयाँ पात्र (विद्यार्थी, कामदार, प्रवासी), नयाँ द्वन्द्व र बोलिचालीको नजिकको भाषा लेखनमा देखिन थाल्छ।",
+        "**अध्ययन विधि।** रचनाको समय, त्यसबेलाको सामाजिक मुद्दा र लेखकले लिएको अडान छुट्ट्याएर तुलना गर्नुहोस्।",
+        "**परीक्षामा ध्यान।** 'समाज बदलियो' भन्ने सामान्य कथनको सट्टा पाठबाट एउटा पात्र वा घटना उद्धृत गरी परिवर्तन देखाउनुहोस्।"
       ],
-      "confusion": [
-        "❌ treat \"सामाजिक परिवर्तन र नेपाली साहित्य\" as one blob → ✅ split into: सामाजिक परिवर्तन र नेपाली साहित्य.",
-        "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-        "❌ no diagram → ✅ add one labelled figure / structured list."
-      ],
+      "confusion": [],
       "bounds": [
         "Covers only: सामाजिक परिवर्तन र नेपाली साहित्य (within संस्कृति र सामाज).",
         "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
         "State the limit / condition where a formula or rule stops being valid before applying it."
       ],
-      "practice": [
-        "define + example each sub-idea: सामाजिक परिवर्तन र नेपाली साहित्य.",
-        "one worked example for \"सामाजिक परिवर्तन र नेपाली साहित्य\" — check units / edge cases.",
-        "recall card: definition → formula → limit → one error to avoid."
-      ],
-      "universalFacts": [
-        "answer pattern for \"सामाजिक परिवर्तन र नेपाली साहित्य\": define → method → result. Structure earns the marks on 6–10 mark questions."
-      ],
-      "examples": [
-        "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-      ],
-      "practiceQuestions": [
-        "state + explain the main idea of \"सामाजिक परिवर्तन र नेपाली साहित्य\" with one example.",
-        "compare \"सामाजिक परिवर्तन र नेपाली साहित्य\" with the related idea from a neighbouring unit.",
-        "solve / apply for \"सामाजिक परिवर्तन र नेपाली साहित्य\" and verify the answer is plausible."
-      ],
-      "keyPoints": [
-        "• सामाजिक परिवर्तन र नेपाली साहित्य"
-      ],
-      "summary": "सामाजिक परिवर्तन र नेपाली साहित्य (संस्कृति र सामाज, Nepali, class-12-notes) covers सामाजिक परिवर्तन र नेपाली साहित्य. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "practice": [],
+      "universalFacts": [],
+      "examples": [],
+      "practiceQuestions": [],
+      "keyPoints": [],
+      "summary": "समाजमा आएको परिवर्तनले साहित्यको विषय, पात्र र भाषा बदल्छ; साहित्यले समाजलाई प्रश्न पनि गर्छ।",
       "mcqs": [
         {
           "question": "A common examiner point on \"सामाजिक परिवर्तन र नेपाली साहित्य\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -252991,7 +252528,16 @@
           "answer": "True",
           "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
         }
-      ]
+      ],
+      "formulas": [],
+      "specialNotes": [],
+      "importantStatements": [],
+      "importantNotes": [],
+      "examShortTricks": [],
+      "examNotes": [],
+      "importantConcepts": [],
+      "importantTasks": [],
+      "mcs": []
     }
   },
   {

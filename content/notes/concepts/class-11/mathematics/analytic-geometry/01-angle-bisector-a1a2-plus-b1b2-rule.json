@@ -1,11 +1,29 @@
 {
   "title": "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
   "notes": [
-    "For two lines written with their constant term made positive, the bisector equations are found by equating normalized distances. Which of the two resulting bisectors is the *acute* one and which is the *obtuse* one depends on the sign of a₁a₂ + b₁b₂",
-    "**If a₁a₂ + b₁b₂ < 0:** the (+) sign in the bisector formula gives the **acute** bisector, and the (−) sign gives the **obtuse** bisector",
-    "**If a₁a₂ + b₁b₂ > 0:** the (+) sign gives the **obtuse** bisector, and the (−) sign gives the **acute** bisector"
+    "**Normalized distance.** Dividing aᵢx + bᵢy + cᵢ by √(aᵢ² + bᵢ²) turns its absolute value into the perpendicular distance from (x, y) to that line; equating the two distances gives the bisector locus.",
+    "**Sign convention.** First rewrite both equations so c₁ and c₂ are positive. The bisector containing the origin then takes the (+) sign in (a₁x + b₁y + c₁)/√(a₁² + b₁²) = ± (a₂x + b₂y + c₂)/√(a₂² + b₂²).",
+    "**Acute vs obtuse.** If a₁a₂ + b₁b₂ < 0 the (+) bisector is acute; if a₁a₂ + b₁b₂ > 0 the (+) bisector is obtuse. When the product is zero the lines are perpendicular and both bisectors are equally inclined.",
+    "**Perpendicularity check.** The two bisectors are always at right angles, so their slopes satisfy m₁m₂ = −1; use this to verify the simplified equations.",
+    "**Worked step.** Expand each normalized equation with the chosen sign, collect x and y terms, and simplify — the constant ratio, not the raw coefficients, decides which bisector is acute."
   ],
   "unitSlug": "analytic-geometry",
   "topicSlug": "01-angle-bisector-a1a2-plus-b1b2-rule",
-  "topicTitle": "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule"
+  "topicTitle": "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
+  "summary": "The acute/obtuse bisector of two lines is selected by the sign of a₁a₂ + b₁b₂ once the constant terms are made positive.",
+  "confusion": [],
+  "practice": [],
+  "universalFacts": [],
+  "examples": [],
+  "practiceQuestions": [],
+  "formulas": [],
+  "keyPoints": [],
+  "specialNotes": [],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
+  "examNotes": [],
+  "importantConcepts": [],
+  "importantTasks": [],
+  "mcs": []
 }

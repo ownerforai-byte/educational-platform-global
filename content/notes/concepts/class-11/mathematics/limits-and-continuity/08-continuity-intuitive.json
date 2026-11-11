@@ -5,44 +5,31 @@
   "topicTitle": "Continuity of a Function (Intuitive)",
   "relevance": 100,
   "simulation": "limits-and-continuity-continuity",
-  "notes": [],
+  "notes": [
+    "**Graphical idea.** A continuous graph has no break at the point: a tiny change in x produces only a tiny change in f(x), with no sudden leap or gap.",
+    "**Three conditions.** f is continuous at a exactly when (i) f(a) is defined, (ii) lim(x→a) f(x) exists, and (iii) the limit equals f(a); all three must hold.",
+    "**Common breaks.** A hole is removable, a step is a jump, and 1/(x − a) produces an infinite discontinuity at a; each violates a different one of the three conditions.",
+    "**Continuity on an interval.** f is continuous on [p, q] when it is continuous at every interior point, right-continuous at p and left-continuous at q.",
+    "**Worked example.** f(x) = x² is continuous at every real a because lim(x→a) x² = a² = f(a); polynomials are continuous on all of ℝ.",
+    "**Exam caution.** Drawing a smooth-looking curve is not a proof; state all three conditions explicitly when asked to justify continuity."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
   "animation3D": "limits-and-continuity-continuity",
   "motionGraphics": "limits-and-continuity-continuity",
-  "examples": [
-    "Application of Continuity of a Function (Intuitive Definition)"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Continuity of a Function (Intuitive Definition).",
-    "Q3. Problem on Continuity of a Function (Intuitive Definition)."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [],
-  "keyPoints": [
-    "Application of Continuity of a Function (Intuitive Definition)",
-    "Connection of Continuity of a Function (Intuitive Definition) to other topics"
-  ],
-  "summary": "Continuity of a Function (Intuitive Definition) covers essential principles and applications.",
+  "keyPoints": [],
+  "summary": "Intuitively a function is continuous when its graph can be drawn without lifting the pen; formally that means no hole, jump or vertical asymptote at the point.",
   "specialNotes": [],
-  "importantStatements": [
-    "Statement 1: Definition of Continuity of a Function (Intuitive)",
-    "Statement 2: Theorem related to Continuity of a Function (Intuitive)",
-    "Statement 3: Condition for Continuity of a Function (Intuitive) to be valid",
-    "Statement 4: Principle governing Continuity of a Function (Intuitive)",
-    "Statement 5: Corollary or consequence of Continuity of a Function (Intuitive)"
-  ],
-  "importantNotes": [
-    "Continuity of a Function (Intuitive Definition) is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Continuity of a Function (Intuitive Definition)."
-  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
   "examNotes": [],
   "mcs": [],
-  "importantConcepts": [
-    "Definition and significance of Continuity of a Function (Intuitive Definition)."
-  ],
+  "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1
 }

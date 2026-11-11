@@ -7,39 +7,24 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** वाक्य र उसको विध — भाषा र व्यायरन, Nepali (class-12-notes).",
-    "**Tested.** define it · list: वाक्य र उसको विध · one worked example · one misconception each."
+    "**वाक्यको परिभाषा।** सम्बद्ध पदहरू मिलेर पूर्ण अर्थ दिने भाषिक एकाइलाई वाक्य भनिन्छ। यसमा कम्तीमा एउटा क्रिया वा क्रियाको भाव हुन्छ।",
+    "**संरचनाका आधारमा।** एउटै क्रिया भएको सरल वाक्य, दुई वा बढी स्वतन्त्र उपवाक्य भएको संयुक्त वाक्य, र मुख्य उपवाक्यमा आश्रित उपवाक्य जोडिएको मिश्र वाक्य हुन्छ।",
+    "**अर्थका आधारमा।** कथन, प्रश्न, आदेश/अनुरोध, विस्मय, इच्छा र निषेध वाक्य फरक–फरक प्रयोजनमा प्रयोग हुन्छन्।",
+    "**विराम चिह्न।** पूर्ण विराम (।), प्रश्नवाचक (?), विस्मयवाचक (!), अल्पविराम (,) र उद्धरण चिह्नले अर्थ स्पष्ट पार्छन्।",
+    "**परीक्षामा ध्यान।** वाक्य परिवर्तन गर्दा अर्थ नबदल्नुहोस्; केवल संरचना वा वाच्य मात्र बदल्नुहोस्।"
   ],
-  "confusion": [
-    "❌ treat \"वाक्य र उसको विध\" as one blob → ✅ split into: वाक्य र उसको विध.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list."
-  ],
+  "confusion": [],
   "bounds": [
     "Covers only: वाक्य र उसको विध (within भाषा र व्यायरन).",
     "Out of scope here: topics of neighbouring units in Nepali — don't mix them.",
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
-  "practice": [
-    "define + example each sub-idea: वाक्य र उसको विध.",
-    "one worked example for \"वाक्य र उसको विध\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
-  ],
-  "universalFacts": [
-    "answer pattern for \"वाक्य र उसको विध\": define → method → result. Structure earns the marks on 6–10 mark questions."
-  ],
-  "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-  ],
-  "practiceQuestions": [
-    "state + explain the main idea of \"वाक्य र उसको विध\" with one example.",
-    "compare \"वाक्य र उसको विध\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"वाक्य र उसको विध\" and verify the answer is plausible."
-  ],
-  "keyPoints": [
-    "• वाक्य र उसको विध"
-  ],
-  "summary": "वाक्य र उसको विध (भाषा र व्यायरन, Nepali, class-12-notes) covers वाक्य र उसको विध. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "practice": [],
+  "universalFacts": [],
+  "examples": [],
+  "practiceQuestions": [],
+  "keyPoints": [],
+  "summary": "वाक्य पूर्ण अर्थ दिने पदसमूह हो; अर्थ, संरचना र प्रयोजनका आधारमा यसका धेरै विधा छन्।",
   "mcqs": [
     {
       "question": "A common examiner point on \"वाक्य र उसको विध\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -50,5 +35,14 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
-  ]
+  ],
+  "formulas": [],
+  "specialNotes": [],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
+  "examNotes": [],
+  "importantConcepts": [],
+  "importantTasks": [],
+  "mcs": []
 }

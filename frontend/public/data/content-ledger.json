@@ -10,7 +10,7 @@
     "entries": 941,
     "authored": 941,
     "template": 0,
-    "bytes": 12228063
+    "bytes": 12278155
   },
   "subjects": {
     "biology": {
@@ -3754,7 +3754,7 @@
         "entries": 101,
         "authored": 101,
         "template": 0,
-        "bytes": 672831
+        "bytes": 696548
       },
       "units": {
         "algebra": {
@@ -3762,7 +3762,7 @@
             "entries": 14,
             "authored": 14,
             "template": 0,
-            "bytes": 94045
+            "bytes": 94736
           },
           "entries": [
             {
@@ -3831,8 +3831,8 @@
             {
               "topicSlug": "sequence-series",
               "filename": "05-sequence-series.json",
-              "bytes": 1141,
-              "sha256": "9b0306c125d3eb3bf52d197618c3ea857e735002e0c111bcac0f72cc799e13b8",
+              "bytes": 1832,
+              "sha256": "19aa8e6ceab1157e5e0792dc286e01d27593e86da46cab5ef382def53ebee81b",
               "status": "authored"
             },
             {
@@ -3870,14 +3870,14 @@
             "entries": 9,
             "authored": 9,
             "template": 0,
-            "bytes": 28395
+            "bytes": 32495
           },
           "entries": [
             {
               "topicSlug": "01-angle-bisector-a1a2-plus-b1b2-rule",
               "filename": "01-angle-bisector-a1a2-plus-b1b2-rule.json",
-              "bytes": 826,
-              "sha256": "3a82bf3cbec975106ee813e3d7b255b8d978342b152d9dfd43512abd92622538",
+              "bytes": 1807,
+              "sha256": "1649d242277719e3199e0aec44e69c875b11b77af6b8ed464f03b9427077c476",
               "status": "authored"
             },
             {
@@ -3932,8 +3932,8 @@
             {
               "topicSlug": "geometry-9-1",
               "filename": "geometry-9-1.json",
-              "bytes": 695,
-              "sha256": "e8609ce2dc5d7087e8f85a007e010ea07e32d1d0467333562bcc21898025973a",
+              "bytes": 3814,
+              "sha256": "7db60c99bd2cee3943805994f267afaebdb6d289881e6aef71073746359525d1",
               "status": "authored"
             }
           ]
@@ -4278,126 +4278,126 @@
             "entries": 17,
             "authored": 17,
             "template": 0,
-            "bytes": 13995
+            "bytes": 30401
           },
           "entries": [
             {
               "topicSlug": "introduction-to-limits-and-continuity",
               "filename": "01-introduction-to-limits-and-continuity.json",
-              "bytes": 831,
-              "sha256": "93bafd0b2477da4c8d15f3e8ac3735cdc161035bd318e1b003eeba338e732547",
+              "bytes": 1885,
+              "sha256": "74535ff6478ba811ebc62814b06569e1123d7a543b34f22db57bf327d7490238",
               "status": "authored"
             },
             {
               "topicSlug": "function-definition-and-notation",
               "filename": "02-function-definition-and-notation.json",
-              "bytes": 800,
-              "sha256": "e1fe5f68f3ad462448a3d4ef43413dc4d760b4e6c94a4dcdaa4177297a240fe7",
+              "bytes": 1904,
+              "sha256": "0145e42a82e5e08ef7f0964d0f152e0d7ff9bdb056d3e023d7bf7aa2b42f1d1c",
               "status": "authored"
             },
             {
               "topicSlug": "value-of-function-at-a-point",
               "filename": "03-value-of-function-at-a-point.json",
-              "bytes": 796,
-              "sha256": "1512483aa725ef71d3aa2794a92c2dec63bb2c3aad5f02542e6a6ca2c4418a3e",
+              "bytes": 1834,
+              "sha256": "4514554b2eb9dc2a4c59ead9f11216c14cc6fff52b446478f9cde64a0cd3d480",
               "status": "authored"
             },
             {
               "topicSlug": "right-hand-limit",
               "filename": "04-right-hand-limit.json",
-              "bytes": 745,
-              "sha256": "6b305801a426ac4e9851bfa3ec34ae66e8000aab1224a1d1b541a7c240c11ff9",
+              "bytes": 1727,
+              "sha256": "3d76fbb6d59e2b1af39b7b3c20b222b0b0682e22b61a01a971713ad71726c898",
               "status": "authored"
             },
             {
               "topicSlug": "left-hand-limit",
               "filename": "05-left-hand-limit.json",
-              "bytes": 741,
-              "sha256": "8fca7fa630fe71bc34c22215e0dff620549825626ace3d5daf04b995cf5ed122",
+              "bytes": 1720,
+              "sha256": "c47e8078e2cc493be3a96dfe21eeaefd8f92c0002ea887ec2db90f7cacd07c5d",
               "status": "authored"
             },
             {
               "topicSlug": "existence-of-limit",
               "filename": "06-existence-of-limit.json",
-              "bytes": 795,
-              "sha256": "4dcfa2758912a7a9d0a495704943c0f4f92af094ee596049c9d731e551fc1f05",
+              "bytes": 1838,
+              "sha256": "45a0f03a5898615ff5d8491bcf2994787aacea404853a9d6d24d6d9f90118690",
               "status": "authored"
             },
             {
               "topicSlug": "standard-limits",
               "filename": "07-standard-limits.json",
-              "bytes": 1102,
-              "sha256": "42e41b4fd89900f262dbf93e48ef1c7021002ce2cc0cf03a83f9bbcc52a51bc4",
+              "bytes": 1837,
+              "sha256": "6ce713a4fe6f2e5e9d7406606a6132a1895c609252fc0034070e292c5ab1e526",
               "status": "authored"
             },
             {
               "topicSlug": "continuity-intuitive",
               "filename": "08-continuity-intuitive.json",
-              "bytes": 852,
-              "sha256": "1c710cf3b820c19394d3bccd13f9dd74273645314fa40c33220403806f737d25",
+              "bytes": 1871,
+              "sha256": "d80aacddb321cf6bb4a5753ca386d8af7190662a8e2427611088ac4a9b8965d1",
               "status": "authored"
             },
             {
               "topicSlug": "continuity-formal",
               "filename": "09-continuity-formal.json",
-              "bytes": 810,
-              "sha256": "4183d4e788c3d55c89bcf54a198f87bceb3cbfe10f1ca65372912e2be9d7dca6",
+              "bytes": 1800,
+              "sha256": "8d9e506f216ff92b1d5650bc28b75356339922c26fbe7c6a6f6a85550c5be1de",
               "status": "authored"
             },
             {
               "topicSlug": "removable-discontinuity",
               "filename": "10-removable-discontinuity.json",
-              "bytes": 811,
-              "sha256": "3f0319b8ccb52c7f62a74d323a8ce91cab7afa2ee0a94eebd81a11e6f22216fd",
+              "bytes": 1824,
+              "sha256": "05928d97b5145a60ba6372e00901d9827bb6da20bf49d47a8f9574069045b2a4",
               "status": "authored"
             },
             {
               "topicSlug": "jump-discontinuity",
               "filename": "11-jump-discontinuity.json",
-              "bytes": 776,
-              "sha256": "bd6817ee7619c9891f9295a89e025d48d7fd82b2bfc3e503d69be25323c44af3",
+              "bytes": 1723,
+              "sha256": "29a906a13574a5e6f09eefcbd24e9ef1e78df7be24898dc7156837eb2f5e738b",
               "status": "authored"
             },
             {
               "topicSlug": "infinite-discontinuity",
               "filename": "12-infinite-discontinuity.json",
-              "bytes": 804,
-              "sha256": "1e198e4ad51d543e86eb2ed02186bc4612fef8e272180e58554026eaa2b4aa83",
+              "bytes": 1855,
+              "sha256": "f959500183db93ed0fd383826424bf1c4c172154e097c75806cfb8ff768ac39f",
               "status": "authored"
             },
             {
               "topicSlug": "trigonometric-limits",
               "filename": "13-trigonometric-limits.json",
-              "bytes": 803,
-              "sha256": "a64beb85d1562657167a9c326d259c0d1168ed4aba269ab8ba205d946acba668",
+              "bytes": 1707,
+              "sha256": "0129279170589df91303480dc106eb257bb7a76403b33493c055a34dc90a5f7c",
               "status": "authored"
             },
             {
               "topicSlug": "log-exp-limits",
               "filename": "14-log-exp-limits.json",
-              "bytes": 845,
-              "sha256": "dd109fe41cd900e65d70a4c6b4f5f6d418ed5cb209188b79387b7c9473acb16b",
+              "bytes": 1656,
+              "sha256": "fe9a7a7f4559e3dbee155b66af0b0baa84d29c3af09c01b6af4e76578da78069",
               "status": "authored"
             },
             {
               "topicSlug": "exercise-15-1",
               "filename": "15-exercise-15-1.json",
-              "bytes": 838,
-              "sha256": "8f87aa3cbc3902737a2b2434b90fc2fc112b41516205985f63a920bcd1dac42a",
+              "bytes": 1777,
+              "sha256": "d8cc6479a23a65a3590ec6f38cb10a574b82bd783557228d7f1c0ca1934d973d",
               "status": "authored"
             },
             {
               "topicSlug": "exercise-15-2",
               "filename": "16-exercise-15-2.json",
-              "bytes": 813,
-              "sha256": "c1b3879249b3d5ef27906a2e969d6eb805bc2453bd0efb9b216e6f3e4a766459",
+              "bytes": 1570,
+              "sha256": "e90c8c59f5d3a936e0c755e20679957ef8848e8574600495d9437adfabba9862",
               "status": "authored"
             },
             {
               "topicSlug": "exercise-15-3",
               "filename": "17-exercise-15-3.json",
-              "bytes": 833,
-              "sha256": "9e013c5468ea4c4971fbd85f4283a002317167b28508924f071d8f1143bfacdc",
+              "bytes": 1873,
+              "sha256": "03973954196f991f19e4e4f35889b308f001cd566ebc9931fe09a3025cd5e9e7",
               "status": "authored"
             }
           ]
@@ -4462,7 +4462,7 @@
             "entries": 11,
             "authored": 11,
             "template": 0,
-            "bytes": 45855
+            "bytes": 48375
           },
           "entries": [
             {
@@ -4489,15 +4489,15 @@
             {
               "topicSlug": "dot-product-and-its-applications",
               "filename": "02-dot-product-and-its-applications.json",
-              "bytes": 770,
-              "sha256": "4e68005ec6aeccc42356921d1854568f1b1c1aea8c45f49191dcb7701c532abb",
+              "bytes": 1691,
+              "sha256": "7bba53732890a08c9fd8358d96de7ba3c6e3007257aee7aae4a82b10caeed340",
               "status": "authored"
             },
             {
               "topicSlug": "dot-product-of-two-vectors",
               "filename": "02-dot-product-of-two-vectors.json",
-              "bytes": 1087,
-              "sha256": "61a171c5ab99e0e954fd9469b867158ff9ba74ee67b47654d1a67289eafc4da1",
+              "bytes": 1658,
+              "sha256": "4f5e7e29d64d08dd26b02af512e6bf75cb10a7cdf4177a9064e67eb11a9005c7",
               "status": "authored"
             },
             {
@@ -4524,15 +4524,15 @@
             {
               "topicSlug": "cross-product-of-two-vectors",
               "filename": "03-cross-product-of-two-vectors.json",
-              "bytes": 1176,
-              "sha256": "1f63d70c56439093319b7b5e83e82f86229a9a483573f399e53e224c443756de",
+              "bytes": 1644,
+              "sha256": "3446c8250d5c275d8e60851656a97575762befb151bb3ca9001daa573eeceb5c",
               "status": "authored"
             },
             {
               "topicSlug": "scalar-and-vector-triple-products",
               "filename": "04-scalar-and-vector-triple-products.json",
-              "bytes": 1165,
-              "sha256": "b3936542f8c499f73f0edd14edb836d264fb7ce6802d98d585073efda29bf40d",
+              "bytes": 1725,
+              "sha256": "61ae27af99f9442b7c7c3487c7aae5b5ab8eae5ec2cd2c1cf1162cb41fd21f50",
               "status": "authored"
             },
             {
@@ -4551,7 +4551,7 @@
         "entries": 85,
         "authored": 85,
         "template": 0,
-        "bytes": 641783
+        "bytes": 668158
       },
       "units": {
         "bhasha-ra-vyakarana": {
@@ -4559,7 +4559,7 @@
             "entries": 24,
             "authored": 24,
             "template": 0,
-            "bytes": 165534
+            "bytes": 181065
           },
           "entries": [
             {
@@ -4572,15 +4572,15 @@
             {
               "topicSlug": "व्याकरण-र-शब्द-जगत",
               "filename": "01-व्याकरण-र-शब्द-जगत.json",
-              "bytes": 2124,
-              "sha256": "f3ff2abf94bc128a2ecae378e82085dbe85311cf47836f17ea5970fc4c5b1e76",
+              "bytes": 3294,
+              "sha256": "2f29538343ec9de35578e392e74af66d66d05b43b7e1e155ddf286828d998b17",
               "status": "authored"
             },
             {
               "topicSlug": "शब्द-र-उसको-विभाग",
               "filename": "01-शब्द-र-उसको-विभाग.json",
-              "bytes": 2336,
-              "sha256": "a9aec290e094e7af9a92f720cf2ac70d8d73487e14191324541803b0ab2fb03c",
+              "bytes": 3360,
+              "sha256": "426e0e2b4d210f77b50ad3d8c446ac01ef08ca43cb6df75f89c3aed93847f84f",
               "status": "authored"
             },
             {
@@ -4593,22 +4593,22 @@
             {
               "topicSlug": "पद-विभक्त-र-तत्पुरुष-समास",
               "filename": "02-पद-विभक्त-र-तत्पुरुष-समास.json",
-              "bytes": 2354,
-              "sha256": "2109f9b580efd6915390d93d4af68ae95844ea7afba3066baad2091e169870b6",
+              "bytes": 3174,
+              "sha256": "82d88901298be986aebe06b9acaf1e98ae26d8509de56398dc78e1a0a6aa7b90",
               "status": "authored"
             },
             {
               "topicSlug": "लेखन-कौशल",
               "filename": "02-लेखन-कौशल.json",
-              "bytes": 1848,
-              "sha256": "bc472d55925c655d611134ea160eaa9b7914426b89938b9ddd147cf19663a133",
+              "bytes": 2889,
+              "sha256": "414e7cd7c9b396a8c117a9c713ceb28bfa1ab840ee3114b83056c06b1076484e",
               "status": "authored"
             },
             {
               "topicSlug": "बहुव्रीहि-कर्मधारय-द्वन्द्व-समास",
               "filename": "03-बहुव्रीहि-कर्मधारय-द्वन्द्व-समास.json",
-              "bytes": 3223,
-              "sha256": "0d9cb18cdaa6e76378a55a893e0e0857a756ff6d6bc36de001e42f1db3dc518c",
+              "bytes": 3773,
+              "sha256": "fc23891649105d54a8995961b31c1d2eab037f048abef1bcec19f4a9cc2a8b0f",
               "status": "authored"
             },
             {
@@ -4621,8 +4621,8 @@
             {
               "topicSlug": "क्रिया-र-तत्सम्बन्धी-विषय",
               "filename": "04-क्रिया-र-तत्सम्बन्धी-विषय.json",
-              "bytes": 2378,
-              "sha256": "b8900f81802163644134e6e619b1d03c95d1e38bdb9e0f38482bae8b1334c51c",
+              "bytes": 3048,
+              "sha256": "12db7f01be4846f025bfbefb7a4674c222fff498d0a1bdea3b2ac38f491c7470",
               "status": "authored"
             },
             {
@@ -4642,15 +4642,15 @@
             {
               "topicSlug": "वाक्य-र-उसको-विध",
               "filename": "05-वाक्य-र-उसको-विध.json",
-              "bytes": 2054,
-              "sha256": "6a842ac92794bfeb23313b12d55237f54c670b441a18bd0197463aef2d0308b6",
+              "bytes": 2984,
+              "sha256": "bd770e07fcaaa82e2bb18d1e3f4c542ae51e50741168d466039361e6d4d4df62",
               "status": "authored"
             },
             {
               "topicSlug": "मुहावा-र-वाङ्मय-प्रयोग",
               "filename": "06-मुहावा-र-वाङ्मय-प्रयोग.json",
-              "bytes": 2270,
-              "sha256": "2b70db00e5a91f4db9ab351bdb877a6058d4235094ed135db01b8e437f4bda1f",
+              "bytes": 3053,
+              "sha256": "34619ded99813ff9c1172490dfabdc4ea6e040b465fa75169d17600f5c7acb08",
               "status": "authored"
             },
             {
@@ -4691,8 +4691,8 @@
             {
               "topicSlug": "aagantuk-shabda",
               "filename": "aagantuk-shabda.json",
-              "bytes": 774,
-              "sha256": "3d7af4faf2ebabddbc8c5fbf1cccfb79be15f8f760ea262966a12f0c729b96c9",
+              "bytes": 2602,
+              "sha256": "94734b9d86d2063ea337035a6b0463b7456cb0457feb480c44e8da97cd4c5ea1",
               "status": "authored"
             },
             {
@@ -4705,29 +4705,29 @@
             {
               "topicSlug": "swar-varna",
               "filename": "swar-varna.json",
-              "bytes": 754,
-              "sha256": "70c1c88e13944ddaf8c1705f77a4cc525b6450551886fd2850b72b81c75102b0",
+              "bytes": 2444,
+              "sha256": "00212e2d0cf3fd586afb5871e3b98728aa13bca8e45a4f449fe0f1ed622ffecd",
               "status": "authored"
             },
             {
               "topicSlug": "tadbhav-shabda",
               "filename": "tadbhav-shabda.json",
-              "bytes": 770,
-              "sha256": "c4854c754e4a544577676fd612dfee99d858d14742bbc088ca52b54d930d249e",
+              "bytes": 2381,
+              "sha256": "872afaa5a0135378526465fa44a588e38546c1e41d053f7cb51bbe461a90140d",
               "status": "authored"
             },
             {
               "topicSlug": "vyanjan-vargikaran",
               "filename": "vyanjan-vargikaran.json",
-              "bytes": 858,
-              "sha256": "a322e8ea8aa9a6a60669ce4e6a9b08b377c3e6ef77f25af2b7e6e500737c2c90",
+              "bytes": 2483,
+              "sha256": "7209eec9c34a03b4b9e1889de98548b7bceb92a011547fe04915d3f4f8431750",
               "status": "authored"
             },
             {
               "topicSlug": "vyanjan-varna",
               "filename": "vyanjan-varna.json",
-              "bytes": 796,
-              "sha256": "dcfa02d99f4d4daa7f30f349d218f2b4f3a81c2046a7e6f63949e461829104c6",
+              "bytes": 2585,
+              "sha256": "8de217f490aaa9e9932e63bc5c10c25436485ca1ab8a069f9849bf0dabc38a45",
               "status": "authored"
             }
           ]
@@ -4737,7 +4737,7 @@
             "entries": 11,
             "authored": 11,
             "template": 0,
-            "bytes": 88101
+            "bytes": 90711
           },
           "entries": [
             {
@@ -4750,15 +4750,15 @@
             {
               "topicSlug": "कथासाहित्य",
               "filename": "01-कथासाहित्य.json",
-              "bytes": 1927,
-              "sha256": "83fe046127394789b4b2334ee3a80112095a40a22214d8060781090e5d2df86f",
+              "bytes": 2871,
+              "sha256": "72946c13fe8c3b638728e35f7984976321e9c58c099788f7d0a5fbfa74daf43a",
               "status": "authored"
             },
             {
               "topicSlug": "नाटक-र-व्यंग्य",
               "filename": "02-नाटक-र-व्यंग्य.json",
-              "bytes": 2023,
-              "sha256": "86b4374bb81106a4dd6b654c1a4e81453a5b7da794dad2b059a9bd2e90f27310",
+              "bytes": 2857,
+              "sha256": "d3d9691f9f41fa8b40822c203fc32a34351d5a81bdb636d23c28deada2359dee",
               "status": "authored"
             },
             {
@@ -4778,8 +4778,8 @@
             {
               "topicSlug": "सांस्कृतिक-परिप्रेक्ष्य",
               "filename": "03-सांस्कृतिक-परिप्रेक्ष्य.json",
-              "bytes": 2371,
-              "sha256": "c20b93651e356db617fb71e96fa929044f4623608e74f6d42fba1c415ff49dbc",
+              "bytes": 3203,
+              "sha256": "71a595bfd3cccb956e9842358a569184ecc49b5d6c3981423b55b3dfa958277f",
               "status": "authored"
             },
             {
@@ -4824,35 +4824,35 @@
             "entries": 4,
             "authored": 4,
             "template": 0,
-            "bytes": 8599
+            "bytes": 11941
           },
           "entries": [
             {
               "topicSlug": "आवधिक-निबन्ध-लेखन",
               "filename": "01-आवधिक-निबन्ध-लेखन.json",
-              "bytes": 2094,
-              "sha256": "44973e7eb4131ec5804a200d9846465ba0c0053b59588100df5a158ba6be0e1a",
+              "bytes": 2941,
+              "sha256": "abc373caa3880f0843d178353b97e73bff94fdd81242537f83a9971a4e539a4f",
               "status": "authored"
             },
             {
               "topicSlug": "पत्र-लेखन-आधिकारिक-र-अनौपचारिक",
               "filename": "02-पत्र-लेखन-आधिकारिक-र-अनौपचारिक.json",
-              "bytes": 2485,
-              "sha256": "f75eab8113bdebf7e2e0a0ec5a4e4ecc3787506380210e27752db4b24e5ccdd9",
+              "bytes": 3309,
+              "sha256": "7893cc303f815223caa71b69159818188da282059338f706937bc07c0fa87c49",
               "status": "authored"
             },
             {
               "topicSlug": "प्रेषणात्मक-लेखन",
               "filename": "03-प्रेषणात्मक-लेखन.json",
-              "bytes": 2082,
-              "sha256": "30245b3ee69a98913135c637209dd36815da7b010de0426ac79773a443332523",
+              "bytes": 2827,
+              "sha256": "3a2ec745cd969f53290838101e2ae53d8b1d5cc27e3ce42483fdaedf697d5d3a",
               "status": "authored"
             },
             {
               "topicSlug": "समावेशक-लेखन",
               "filename": "04-समावेशक-लेखन.json",
-              "bytes": 1938,
-              "sha256": "73defcaa71be2a6389b2143dde5d9fa657e256ae91fc009f8b11d2ef94048caa",
+              "bytes": 2864,
+              "sha256": "9c5364fb3680b198d50bc2320f5fe9aba2df0bedbb392778fb70288210d4252f",
               "status": "authored"
             }
           ]
@@ -4862,7 +4862,7 @@
             "entries": 12,
             "authored": 12,
             "template": 0,
-            "bytes": 94354
+            "bytes": 96136
           },
           "entries": [
             {
@@ -4875,15 +4875,15 @@
             {
               "topicSlug": "निबन्ध-लेखन",
               "filename": "01-निबन्ध-लेखन.json",
-              "bytes": 1909,
-              "sha256": "33f421ffa321449e2328fa067ce2087f4582855ffd323cc05a47149a13bb8c92",
+              "bytes": 2886,
+              "sha256": "dd0552f74c5af1ef722110345ef9d3484881a1ffe4a200d7e9d90d0f66867ca6",
               "status": "authored"
             },
             {
               "topicSlug": "कविता-र-गीति",
               "filename": "02-कविता-र-गीति.json",
-              "bytes": 1921,
-              "sha256": "46185683e028b1a4f112977a67971cfaf4690ba7c34959987d7ee8636488de9a",
+              "bytes": 2726,
+              "sha256": "940c6415777d9de6fe62871c4d7ee57cdc5e2808c6abb400f7455f4a84e5fc8c",
               "status": "authored"
             },
             {
@@ -4956,14 +4956,14 @@
             "entries": 31,
             "authored": 31,
             "template": 0,
-            "bytes": 277791
+            "bytes": 278911
           },
           "entries": [
             {
               "topicSlug": "कविता-र-गीत-रस-अलङ्कार-छन्द",
               "filename": "01-कविता-र-गीत-रस-अलङ्कार-छन्द.json",
-              "bytes": 2989,
-              "sha256": "65ddcc7f1ab8f8238d73d7f6211275a34e22315354fc663080a22993dba2b725",
+              "bytes": 3581,
+              "sha256": "1cbd29002ad79a30f764d70ff28a1e07cd4153e838def777de5f27a06911597e",
               "status": "authored"
             },
             {
@@ -4983,8 +4983,8 @@
             {
               "topicSlug": "निर्धारित-पाठ-कथा-उपन्यास-नाटक",
               "filename": "02-निर्धारित-पाठ-कथा-उपन्यास-नाटक.json",
-              "bytes": 3165,
-              "sha256": "e4a57de87d6d6623418ac2ddeac7691c25e646a1d8d953ca2169c49c5f1d9ba1",
+              "bytes": 3693,
+              "sha256": "4eccec2a9bc94d53a5e10c8869dd5265e8e1ced533df1f998d95305c3beafd73",
               "status": "authored"
             },
             {
@@ -5183,28 +5183,28 @@
             "entries": 3,
             "authored": 3,
             "template": 0,
-            "bytes": 7404
+            "bytes": 9394
           },
           "entries": [
             {
               "topicSlug": "नेपाली-संस्कृति-र-परम्परा",
               "filename": "01-नेपाली-संस्कृति-र-परम्परा.json",
-              "bytes": 2384,
-              "sha256": "2bc796d95aaed1f3ed3f7a597434ec88f2ecca44c2075c598c2ce88e6435debe",
+              "bytes": 3041,
+              "sha256": "0c96854e38bb840a8fd927b9d42ccb625c6b90070b14fb8dfc9e7d1228c825d9",
               "status": "authored"
             },
             {
               "topicSlug": "भारतीय-सांस्कृतिक-प्रभाव",
               "filename": "02-भारतीय-सांस्कृतिक-प्रभाव.json",
-              "bytes": 2372,
-              "sha256": "d8fd1378005de13cbc66b4a46f1938b6a56eef423df1983f520fe15e2b819ba6",
+              "bytes": 3162,
+              "sha256": "8d360514fb1a1be6ad5a807c09590244957c6a69d34b007fd46c2c52a1dc003b",
               "status": "authored"
             },
             {
               "topicSlug": "सामाजिक-परिवर्तन-र-नेपाली-साहित्य",
               "filename": "03-सामाजिक-परिवर्तन-र-नेपाली-साहित्य.json",
-              "bytes": 2648,
-              "sha256": "d06b897a7e3c4aec6c1a655f1ebf81e5f5d0c8d53cdf65b466077818f01acbd6",
+              "bytes": 3191,
+              "sha256": "c408a488de28d69ae5a5dedb64054cd07f5245767c474f6d32ee46b67e4aed73",
               "status": "authored"
             }
           ]
@@ -7535,12 +7535,12 @@
   "supplementary": {
     "source": "frontend/public/data/content/manifest.json",
     "note": "second content family; entries carry their payload inline (readers use data, not the path)",
-    "bytes": 19228962,
-    "sha256": "ce8c023b92a2980036cacb794c54b95ba08b7ab3b56da1007804101f6436b463",
+    "bytes": 19237014,
+    "sha256": "237e86bc451c92e6d46094f6ed1cb7460eebb227ff5a98c22ad068662a6cb583",
     "totals": {
       "claims": 2532,
-      "authored": 2347,
-      "template": 185
+      "authored": 2375,
+      "template": 157
     },
     "groups": {
       "_index.json": {
@@ -7608,8 +7608,8 @@
       "notes/concepts": {
         "totals": {
           "claims": 1384,
-          "authored": 1354,
-          "template": 30
+          "authored": 1382,
+          "template": 2
         },
         "entries": [
           {
@@ -9522,7 +9522,7 @@
           },
           {
             "path": "notes/concepts/class-11/mathematics/algebra/05-sequence-series.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/algebra/06-matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint-.json",
@@ -9574,7 +9574,7 @@
           },
           {
             "path": "notes/concepts/class-11/mathematics/analytic-geometry/geometry-9-1.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/calculus/01-lhopital-rule.json",
@@ -9758,71 +9758,71 @@
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/01-introduction-to-limits-and-continuity.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/02-function-definition-and-notation.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/03-value-of-function-at-a-point.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/04-right-hand-limit.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/05-left-hand-limit.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/06-existence-of-limit.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/07-standard-limits.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/08-continuity-intuitive.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/09-continuity-formal.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/10-removable-discontinuity.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/11-jump-discontinuity.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/12-infinite-discontinuity.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/13-trigonometric-limits.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/14-log-exp-limits.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/15-exercise-15-1.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/16-exercise-15-2.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/limits-and-continuity/17-exercise-15-3.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/statistics-and-probability/01-measure-of-dispersion-standard-deviation-variance-coefficient-of-variation-skewness-karl-pearson.json",
@@ -9858,11 +9858,11 @@
           },
           {
             "path": "notes/concepts/class-11/mathematics/vectors/02-dot-product-and-its-applications.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/vectors/02-dot-product-of-two-vectors.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/vectors/02-linear-combination-of-vectors-linearly-dependent-and-independent-vectors.json",
@@ -9878,11 +9878,11 @@
           },
           {
             "path": "notes/concepts/class-11/mathematics/vectors/03-cross-product-of-two-vectors.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/vectors/04-scalar-and-vector-triple-products.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/mathematics/vectors/05-applications-work-torque-angular-momentum.json",
@@ -9962,7 +9962,7 @@
           },
           {
             "path": "notes/concepts/class-11/nepali/bhasha-ra-vyakarana/aagantuk-shabda.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/nepali/bhasha-ra-vyakarana/shabda-srot.json",
@@ -9970,19 +9970,19 @@
           },
           {
             "path": "notes/concepts/class-11/nepali/bhasha-ra-vyakarana/swar-varna.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/nepali/bhasha-ra-vyakarana/tadbhav-shabda.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/nepali/bhasha-ra-vyakarana/vyanjan-vargikaran.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/nepali/bhasha-ra-vyakarana/vyanjan-varna.json",
-            "status": "template"
+            "status": "authored"
           },
           {
             "path": "notes/concepts/class-11/nepali/katha-natak-ra-sanskriti/01-कथा-कविता-र-नाटकका-विधागत-विशेषता.json",

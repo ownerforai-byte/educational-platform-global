@@ -4,7 +4,14 @@
   "topicSlug": "cross-product-of-two-vectors",
   "topicTitle": "Cross Product of Two Vectors",
   "relevance": 95,
-  "notes": [],
+  "notes": [
+    "**Definition.** a × b = |a||b| sin θ n̂, with n̂ given by the right-hand rule; in components a × b = (a₂b₃ − a₃b₂, a₃b₁ − a₁b₃, a₁b₂ − a₂b₁).",
+    "**Determinant form.** Expand the formal 3 × 3 determinant whose first row is i, j, k; the middle component carries a minus sign.",
+    "**Anti-commutative.** b × a = −(a × b), and a × a = 0; parallel non-zero vectors have a zero cross product.",
+    "**Area.** |a × b| is the area of the parallelogram with adjacent sides a and b, so the area of triangle ABC is ½|AB × AC|.",
+    "**Worked example.** a = (1, 2, 3), b = (4, 5, 6): a × b = (12 − 15, 12 − 6, 5 − 8) = (−3, 6, −3), and dotting with a gives −3 + 12 − 9 = 0.",
+    "**Exam caution.** Dot the result with both a and b as a one-line check; a sign error in the j component is the most common mistake."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
@@ -12,14 +19,9 @@
   "motionGraphics": "vectors",
   "examples": [],
   "practiceQuestions": [],
-  "formulas": [
-    "$|\\vec{a}\\times\\vec{b}| = ab\\sin\\theta$, directed by the right-hand rule; it is the area of the parallelogram on $\\vec{a}$ and $\\vec{b}$.",
-    "$\\vec{a}\\times\\vec{b} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\end{vmatrix}$, and $\\vec{a}\\times\\vec{b} = \\vec{0} \\iff$ they are parallel."
-  ],
-  "keyPoints": [
-    "Area of a triangle on two vectors is ½|a×b| — the parallelogram area with the half that students forget."
-  ],
-  "summary": "Cross Product of Two Vectors covers essential principles and applications.",
+  "formulas": [],
+  "keyPoints": [],
+  "summary": "The cross product a×b is a vector perpendicular to both a and b with magnitude |a||b| sin θ, equal to the area of the parallelogram they span.",
   "specialNotes": [],
   "importantStatements": [],
   "importantNotes": [],

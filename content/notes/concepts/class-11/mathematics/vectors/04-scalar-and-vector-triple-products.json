@@ -4,46 +4,31 @@
   "topicSlug": "scalar-and-vector-triple-products",
   "topicTitle": "Scalar and Vector Triple Products",
   "relevance": 92,
-  "notes": [],
+  "notes": [
+    "**Scalar triple product.** [a b c] = a · (b × c) is the signed volume of the parallelepiped on a, b, c; its absolute value is the volume, and one sixth of it is the tetrahedron volume.",
+    "**Coplanarity.** [a b c] = 0 exactly when the three vectors are coplanar; this is also the test for four points A, B, C, D being coplanar via AB, AC, AD.",
+    "**Determinant.** [a b c] equals the determinant of the 3 × 3 matrix with rows (or columns) a, b, c; swapping two rows changes the sign.",
+    "**Cyclic symmetry.** [a b c] = [b c a] = [c a b] and [a c b] = −[a b c]; the scalar triple product is unchanged by a cyclic permutation.",
+    "**Vector triple product.** a × (b × c) = (a·c)b − (a·b)c, the BAC − CAB identity; the result lies in the plane of b and c and is NOT associative.",
+    "**Exam caution.** a × (b × c) ≠ (a × b) × c in general; keep the parentheses and apply the identity to whichever pair is grouped."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
   "animation3D": "vectors",
   "motionGraphics": "vectors",
-  "examples": [
-    "Application of Scalar and Vector Triple Products"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Scalar and Vector Triple Products.",
-    "Q3. Problem on Scalar and Vector Triple Products."
-  ],
-  "formulas": [
-    "Scalar triple product $[\\vec{a}\\ \\vec{b}\\ \\vec{c}] = \\vec{a}\\cdot(\\vec{b}\\times\\vec{c})$ is the volume of the parallelepiped; it is zero for coplanar vectors.",
-    "Vector triple product: $\\vec{a}\\times(\\vec{b}\\times\\vec{c}) = (\\vec{a}\\cdot\\vec{c})\\vec{b} - (\\vec{a}\\cdot\\vec{b})\\vec{c}$."
-  ],
-  "keyPoints": [
-    "Coplanarity test in one line: the volume [a b c] is 0 — use it instead of solving three planes for a common point."
-  ],
-  "summary": "Scalar and Vector Triple Products covers essential principles and applications.",
+  "examples": [],
+  "practiceQuestions": [],
+  "formulas": [],
+  "keyPoints": [],
+  "summary": "The scalar triple product a·(b×c) gives signed volume and tests coplanarity; the vector triple product expands as (a·c)b − (a·b)c.",
   "specialNotes": [],
-  "importantStatements": [
-    "Statement 1: Definition of Scalar and Vector Triple Products",
-    "Statement 2: Theorem related to Scalar and Vector Triple Products",
-    "Statement 3: Condition for Scalar and Vector Triple Products to be valid",
-    "Statement 4: Principle governing Scalar and Vector Triple Products",
-    "Statement 5: Corollary or consequence of Scalar and Vector Triple Products"
-  ],
-  "importantNotes": [
-    "Scalar and Vector Triple Products is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Scalar and Vector Triple Products."
-  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
   "examNotes": [],
   "mcs": [],
-  "importantConcepts": [
-    "Definition and significance of Scalar and Vector Triple Products."
-  ],
+  "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1
 }

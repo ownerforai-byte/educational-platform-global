@@ -5,7 +5,14 @@
   "topicTitle": "Standard Limits",
   "relevance": 100,
   "simulation": "limits-and-continuity-standard",
-  "notes": [],
+  "notes": [
+    "**Limit laws.** If lim f = L and lim g = M, then lim(f ± g) = L ± M, lim(fg) = LM and lim(f/g) = L/M provided M ≠ 0; these justify term-by-term evaluation.",
+    "**Power formula.** lim(x→a) (xⁿ − aⁿ)/(x − a) = n aⁿ⁻¹ for positive integer n; it follows by factoring xⁿ − aⁿ = (x − a)(xⁿ⁻¹ + a xⁿ⁻² + … + aⁿ⁻¹).",
+    "**Worked example.** lim(x→2) (x³ − 8)/(x − 2) = 3·2² = 12, since x³ − 8 = (x − 2)(x² + 2x + 4) and the quotient tends to 4 + 4 + 4 = 12.",
+    "**Rationalization.** For lim(x→0) (√(1 + x) − 1)/x, multiply by the conjugate to get 1/(√(1 + x) + 1) → 1/2.",
+    "**Polynomials and rationals.** Polynomials are continuous everywhere, so their limits come from substitution; a rational function is continuous wherever its denominator is non-zero.",
+    "**Exam caution.** Apply limit laws only after confirming each individual limit exists and is finite; splitting an indeterminate ∞ − ∞ into two limits is invalid."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
@@ -13,14 +20,9 @@
   "motionGraphics": "limits-and-continuity-standard",
   "examples": [],
   "practiceQuestions": [],
-  "formulas": [
-    "$\\lim_{x\\to 0}\\frac{\\sin x}{x} = 1$ and $\\lim_{x\\to 0}\\frac{\\tan x}{x} = 1$ (x in radians).",
-    "$\\lim_{x\\to 0}(1 + x)^{1/x} = e$ and $\\lim_{x\\to 0}\\frac{a^x - 1}{x} = \\ln a$."
-  ],
-  "keyPoints": [
-    "Radians are not optional in the trig limits — in degrees the same limit is π/180, which is why every board question states the unit."
-  ],
-  "summary": "Standard Limits covers essential principles and applications.",
+  "formulas": [],
+  "keyPoints": [],
+  "summary": "Standard algebraic limits and the factor theorem let 0/0 forms be reduced to direct substitution without a full epsilon argument.",
   "specialNotes": [],
   "importantStatements": [],
   "importantNotes": [],

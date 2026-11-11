@@ -5,44 +5,31 @@
   "topicTitle": "Continuity of Functions",
   "relevance": 100,
   "simulation": "limits-and-continuity-continuity-ex",
-  "notes": [],
+  "notes": [
+    "**Checklist.** At x = a verify that f(a) is defined, that lim(x→a) f(x) exists, and that the limit equals f(a); one failed condition identifies the discontinuity type.",
+    "**Finding a parameter.** Equate LHL and RHL at the boundary: if f(x) = kx + 1 for x ≤ 2 and 3x − 1 for x > 2, then 2k + 1 = 5 gives k = 2.",
+    "**Classifying breaks.** Equal finite one-sided limits with f(a) wrong or missing is removable; unequal finite limits is a jump; an unbounded one-sided limit is infinite.",
+    "**Worked example.** f(x) = (x² − 4)/(x − 2) has a removable discontinuity at 2 because both one-sided limits equal 4 while f(2) is undefined.",
+    "**Domain endpoints.** At the left endpoint use only the right-hand limit, and at the right endpoint only the left-hand limit, when asserting continuity on a closed interval.",
+    "**Exam caution.** State which condition fails; 'discontinuous' alone does not distinguish a hole from a jump and loses method marks."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
   "animation3D": "limits-and-continuity-continuity-ex",
   "motionGraphics": "limits-and-continuity-continuity-ex",
-  "examples": [
-    "Application of Exercise 15.3: Continuity and Discontinuity"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Exercise 15.3: Continuity and Discontinuity.",
-    "Q3. Problem on Exercise 15.3: Continuity and Discontinuity."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [],
-  "keyPoints": [
-    "Application of Exercise 15.3: Continuity and Discontinuity",
-    "Connection of Exercise 15.3: Continuity and Discontinuity to other topics"
-  ],
-  "summary": "Exercise 15.3: Continuity and Discontinuity covers essential principles and applications.",
+  "keyPoints": [],
+  "summary": "Exercise 15.3 tests continuity and discontinuity: verify all three conditions, classify the break, and solve for parameters at piecewise boundaries.",
   "specialNotes": [],
-  "importantStatements": [
-    "Statement 1: Definition of Continuity of Functions",
-    "Statement 2: Theorem related to Continuity of Functions",
-    "Statement 3: Condition for Continuity of Functions to be valid",
-    "Statement 4: Principle governing Continuity of Functions",
-    "Statement 5: Corollary or consequence of Continuity of Functions"
-  ],
-  "importantNotes": [
-    "Exercise 15.3: Continuity and Discontinuity is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Exercise 15.3: Continuity and Discontinuity."
-  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
   "examNotes": [],
   "mcs": [],
-  "importantConcepts": [
-    "Definition and significance of Exercise 15.3: Continuity and Discontinuity."
-  ],
+  "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1
 }

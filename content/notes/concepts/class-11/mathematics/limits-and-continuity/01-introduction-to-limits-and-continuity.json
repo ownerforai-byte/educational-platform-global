@@ -5,44 +5,31 @@
   "topicTitle": "Introduction",
   "relevance": 100,
   "simulation": "limits-and-continuity-introduction",
-  "notes": [],
+  "notes": [
+    "**Meaning of a limit.** lim(x→a) f(x) = L means f(x) can be made arbitrarily close to L by taking x sufficiently close to a, from either side, without ever requiring x = a.",
+    "**Approach, not substitution.** The limit depends on values of f near a, so f(a) may be undefined or different from L; a hole in the graph does not by itself remove the limit.",
+    "**One-sided limits.** x → a⁻ approaches a from below and x → a⁺ from above; these are the left-hand and right-hand limits, written LHL and RHL.",
+    "**Existence.** A two-sided limit exists exactly when LHL = RHL = L with L finite; if the two disagree the function has a jump at a and no limit there.",
+    "**Continuity link.** f is continuous at a when the limit exists and equals f(a); limits are therefore the language used to define continuity, derivatives and integrals.",
+    "**Exam caution.** Never write x = a inside a 0/0 expression; simplify, factor or rationalize first and only then take the limit."
+  ],
   "confusion": [],
   "practice": [],
   "universalFacts": [],
   "animation3D": "limits-and-continuity-introduction",
   "motionGraphics": "limits-and-continuity-introduction",
-  "examples": [
-    "Application of Introduction to Limits and Continuity"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Introduction to Limits and Continuity.",
-    "Q3. Problem on Introduction to Limits and Continuity."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [],
-  "keyPoints": [
-    "Application of Introduction to Limits and Continuity",
-    "Connection of Introduction to Limits and Continuity to other topics"
-  ],
-  "summary": "Introduction to Limits and Continuity covers essential principles and applications.",
+  "keyPoints": [],
+  "summary": "A limit describes the value f(x) approaches as x approaches a, whether or not f is defined at a; continuity requires the limit to equal f(a).",
   "specialNotes": [],
-  "importantStatements": [
-    "Statement 1: Definition of Introduction",
-    "Statement 2: Theorem related to Introduction",
-    "Statement 3: Condition for Introduction to be valid",
-    "Statement 4: Principle governing Introduction",
-    "Statement 5: Corollary or consequence of Introduction"
-  ],
-  "importantNotes": [
-    "Introduction to Limits and Continuity is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Introduction to Limits and Continuity."
-  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
   "examNotes": [],
   "mcs": [],
-  "importantConcepts": [
-    "Definition and significance of Introduction to Limits and Continuity."
-  ],
+  "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1
 }
