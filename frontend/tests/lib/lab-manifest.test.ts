@@ -48,20 +48,56 @@ describe("3D activity manifest", () => {
     expect(new Set(ACTIVITY_MANIFEST.map((a) => a.slug)).size).toBe(ACTIVITY_MANIFEST.length);
 
     for (const activity of ACTIVITY_MANIFEST) {
-      expect(activity.slug).toMatch(/^[a-z0-9]+(-[a-z0-9]+)*$/);
-      expect(activityHref(activity.id)).toBe(`/lab/${activity.slug}`);
+      // Devanagari (U+0900–U+097F) is allowed: the syllabus emits Devanagari
+      // topic slugs for every Nepali topic, and those become the activity
+      // slug. Same charset rule as `slugifySyllabusTopic` and the content
+      // `Slug` atom.
+      expect(activity.slug).toMatch(
+        /^[a-z0-9\u0900-\u097f]+(-[a-z0-9\u0900-\u097f]+)*$/,
+      );
+      expect(activityHref(activity.id)).toBe(
+        `/lab/${encodeURIComponent(activity.slug)}`,
+      );
       // The canonical URL must round-trip through the same manifest.
       expect(getActivity(activity.slug)?.id).toBe(activity.id);
+      // …and so must the percent-encoded form a browser sends for a
+      // Devanagari segment.
+      expect(getActivity(encodeURIComponent(activity.slug))?.id).toBe(activity.id);
     }
   });
 
-  it("covers Physics, Chemistry, Biology and Mathematics", () => {
-    expect(ACTIVITY_SUBJECTS).toEqual(["physics", "chemistry", "biology", "mathematics"]);
+  it("covers every subject in the syllabus", () => {
+    expect(ACTIVITY_SUBJECTS).toEqual([
+      "physics",
+      "chemistry",
+      "biology",
+      "mathematics",
+      "english",
+      "nepali",
+    ]);
     for (const subject of ACTIVITY_SUBJECTS) {
       expect(
         listOfferedActivities(subject).length,
         `${subject} has no activities`,
       ).toBeGreaterThan(0);
+    }
+  });
+
+  it("gives every syllabus topic exactly one activity", () => {
+    // The whole point of the 2026-11-11 coverage pass: no topic is left
+    // without a lab, and no topic is claimed twice.
+    const covered = new Set<string>();
+    for (const activity of ACTIVITY_MANIFEST) {
+      for (const slug of activity.topicSlugs) {
+        expect(covered.has(slug), `topic "${slug}" is claimed twice`).toBe(false);
+        covered.add(slug);
+      }
+    }
+    for (const [slug, placement] of placements) {
+      expect(
+        covered.has(slug),
+        `topic "${slug}" (${placement.subject}) has no activity`,
+      ).toBe(true);
     }
   });
 

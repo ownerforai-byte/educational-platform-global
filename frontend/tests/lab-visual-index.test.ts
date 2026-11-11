@@ -7,13 +7,14 @@ import {
 } from "@/lib/lab-visual-index";
 
 describe("lab-visual-index", () => {
-  it("has the generated 453 plus the manual science/math extension with the right split", () => {
-    // 453 auto-generated entries + 183 manual chapter-animation entries that
-    // close the Physics/Chemistry/Biology/Mathematics topic gap (2026-11-11).
-    expect(LAB_VISUAL_INDEX).toHaveLength(636);
+  it("has the generated 453 plus the manual coverage extension with the right split", () => {
+    // 453 auto-generated entries + 343 manual chapter-animation entries that
+    // close every remaining syllabus topic gap (2026-11-11): 183 for
+    // Physics/Chemistry/Biology/Mathematics and 160 for English/Nepali.
+    expect(LAB_VISUAL_INDEX).toHaveLength(796);
     const chapter = LAB_VISUAL_INDEX.filter((e) => e.kind === "chapter-animation");
     const direct  = LAB_VISUAL_INDEX.filter((e) => e.kind === "direct-visual");
-    expect(chapter).toHaveLength(341);
+    expect(chapter).toHaveLength(501);
     expect(direct).toHaveLength(295);
   });
 

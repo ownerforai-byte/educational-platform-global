@@ -7,6 +7,10 @@ import {
   type MouseOrbitHandle,
 } from "@/components/lab/mouse-orbit-scene";
 import { LAB_ANNOTATIONS } from "@/lib/lab-annotations";
+import {
+  LANGUAGE_SUBJECT_SLUGS,
+  pickLanguageScene,
+} from "@/components/lab/language-scenes";
 import { ArrowLabel as LeaderLabel } from "@/components/lab/annotation/arrow-label";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
 import React, { useEffect, useMemo, useRef } from "react";
@@ -699,8 +703,33 @@ const KEYWORD_ROUTES: Array<{ keys: string[]; scene: SceneRender; title: string;
   { keys: ["plant physiology", "photosynthesis", "transpiration", "plant hormones", "transport in plants"], scene: CellScene, title: "Plant Physiology", description: "Cell with chloroplasts." },
 ];
 
-function pickScene(slug: string, title: string, fallback?: SceneRender, fallbackTitle?: string) {
+/**
+ * Pick the 3D scene for a topic.
+ *
+ * SUBJECT SCOPING (2026-11-11): English and Nepali topics are routed through
+ * their OWN table (`components/lab/language-scenes.ts`) and NEVER through the
+ * science table below. The science table matches on English keywords, so
+ * "Sequences & Series" or "Organic Principles" could otherwise claim an
+ * English writing topic or a Nepali literature lesson. A language topic with
+ * no language route shows the honest "under progress" state instead of a
+ * borrowed science scene.
+ */
+function pickScene(
+  slug: string,
+  title: string,
+  subjectSlug?: string,
+  fallback?: SceneRender,
+  fallbackTitle?: string,
+) {
   const haystack = `${slug} ${title}`.toLowerCase();
+
+  if (subjectSlug && LANGUAGE_SUBJECT_SLUGS.includes(subjectSlug as never)) {
+    const language = pickLanguageScene(haystack, title);
+    if (language) return language;
+    if (fallback) return { scene: fallback, title: fallbackTitle ?? "3D Animation", description: "" };
+    return null;
+  }
+
   for (const entry of KEYWORD_ROUTES) {
     if (entry.keys.some((k) => haystack.includes(k))) {
       return { scene: entry.scene, title: entry.title, description: entry.description };
@@ -712,8 +741,14 @@ function pickScene(slug: string, title: string, fallback?: SceneRender, fallback
   return null;
 }
 
-export function resolveChapterAnimation(slug: string, title: string, fallback?: SceneRender, fallbackTitle?: string) {
-  return pickScene(slug, title, fallback, fallbackTitle);
+export function resolveChapterAnimation(
+  slug: string,
+  title: string,
+  subjectSlug?: string,
+  fallback?: SceneRender,
+  fallbackTitle?: string,
+) {
+  return pickScene(slug, title, subjectSlug, fallback, fallbackTitle);
 }
 
 export interface ChapterAnimationProps {
@@ -735,7 +770,12 @@ export function ChapterAnimation(props: ChapterAnimationProps) {
   const vizTargetRef = useRef<VizTarget>({});
 
   const resolved = useMemo(
-    () => pickScene(`${unitSlug ?? ""} ${subjectSlug ?? ""} ${topicSlug}`, topicTitle),
+    () =>
+      pickScene(
+        `${unitSlug ?? ""} ${subjectSlug ?? ""} ${topicSlug}`,
+        topicTitle,
+        subjectSlug,
+      ),
     [topicSlug, topicTitle, unitSlug, subjectSlug],
   );
 

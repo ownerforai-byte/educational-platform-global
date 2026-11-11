@@ -182,7 +182,11 @@ for (const activity of ACTIVITY_MANIFEST) {
   if (seenIds.has(activity.id)) fail("id-unique", `duplicate manifest id ${activity.id}`);
   seenIds.add(activity.id);
 
-  if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(activity.slug)) {
+  // Devanagari (U+0900–U+097F) is allowed: the syllabus emits Devanagari
+  // topic slugs for every Nepali topic, and those slugs become the activity
+  // slug. This mirrors `slugifySyllabusTopic` and the content `Slug` atom,
+  // which keep the same range on purpose.
+  if (!/^[a-z0-9\u0900-\u097f]+(-[a-z0-9\u0900-\u097f]+)*$/.test(activity.slug)) {
     fail("slug-format", `${activity.id} slug "${activity.slug}" is not a URL-safe slug`);
   }
   const slugOwner = seenSlugs.get(activity.slug);

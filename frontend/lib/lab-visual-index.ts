@@ -854,13 +854,27 @@ export const RESOLVER_CONFLICTS: readonly ResolverConflict[] = [];
 const aliasToEntry: Map<string, LabVisualIndexEntry> = (() => {
   const m = new Map<string, LabVisualIndexEntry>();
   for (const entry of LAB_VISUAL_INDEX) {
-    for (const slug of entry.slugs) m.set(slug.toLowerCase(), entry);
+    for (const slug of entry.slugs) m.set(normalizeSlug(slug), entry);
   }
   return m;
 })();
 
+/**
+ * Lowercase, url-safe comparison form of a topic slug.
+ *
+ * Devanagari (U+0900–U+097F) is preserved deliberately: `slugifySyllabusTopic`
+ * in `lib/syllabus.ts` keeps that exact range for Nepali topic titles, so
+ * every Nepali topic slug in the index carries it. Stripping it here would
+ * collapse all Nepali slugs onto the same dashes and make them unresolvable.
+ * Both the map keys and the lookups below use THIS function, so they always
+ * agree.
+ */
 function normalizeSlug(slug: string): string {
-  return slug.toLowerCase().replace(/[^a-z0-9-]/g, "-");
+  return slug
+    .toLowerCase()
+    .replace(/[^a-z0-9\u0900-\u097f-]+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 /** De-apostrophize: 'newton-s-law' → 'newtons-law' (matches legacy normalizeSlugKey). */
