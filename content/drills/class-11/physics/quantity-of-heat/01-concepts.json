@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Quantity of Heat (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "quantity-of-heat",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-qh11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Heat capacity vs specific heat",
+      "question": "A bathtub of water and a cup of water are at the same temperature. Which stores more heat energy, and which quantity describes that difference?",
+      "solution": "The bathtub — heat capacity C = mc scales with mass, and its mass is hundreds of times larger. Specific heat c is a MATERIAL property (J/kg·K); heat capacity belongs to the particular OBJECT (J/K). Same c, wildly different C."
+    },
+    {
+      "id": "drill-qh11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Principle of calorimetry",
+      "question": "Steam at 100 °C is passed into cold water. Why must you account for BOTH condensation and cooling in the heat balance?",
+      "solution": "Steam delivers heat in two stages: latent heat of condensation (2260 kJ/kg — the big term) as it becomes water at 100 °C, then sensible heat as that water cools to the final temperature. Omitting either term unbalances m₁L + m₁cΔT = m₂cΔT₂ and the calculated steam mass is wrong. Phase-change terms dominate steam problems."
+    },
+    {
+      "id": "drill-qh11-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why evaporation cools",
+      "question": "Water left in an earthen pot cools below room temperature. Explain with latent heat.",
+      "solution": "The most energetic molecules escape from the pot's pores as vapour, removing energy from the remaining liquid — the average KE (temperature) of what stays behind falls. The latent heat of vaporisation is supplied BY the water itself, cooling it below ambient. Evaporative cooling is latent heat paid from the liquid's own store."
+    },
+    {
+      "id": "drill-qh11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Heat vs internal energy",
+      "question": "Is 'a hot body contains 500 J of heat' a correct statement? Correct it.",
+      "solution": "No — heat is energy IN TRANSIT due to temperature difference; it exists only during transfer. What the body contains is internal energy (the total molecular KE + PE). Correct statement: 'transferring 500 J of heat raised the body's internal energy' (minus any work done). Heat is a process quantity, not a stored one."
+    },
+    {
+      "id": "drill-qh11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Mechanical equivalent of heat",
+      "question": "Joule's paddle-wheel experiment showed stirring water raises its temperature. What does this establish about heat and work?",
+      "solution": "That heat and mechanical work are the same physical quantity — energy — with a fixed conversion rate (4.18 J = 1 cal). Doing 4.18 J of work on water raises its temperature exactly as much as 1 calorie of heat would. Heat is not a fluid; it is energy transferred by molecular agitation."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Lenses (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "lenses",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-len11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "How a lens converges",
+      "question": "Why does a convex lens bend parallel rays to a focus? Describe the refraction at its two surfaces.",
+      "solution": "Each surface is a curved refracting boundary: at the first surface rays bend toward the normal (entering glass), at the second away from it (exiting) — and because the surfaces are curved, both bends push the ray toward the axis. The cumulative effect converges parallel rays at F. A lens is two prisms base-to-base in effect."
+    },
+    {
+      "id": "drill-len11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Lens formula signs",
+      "question": "An object is 40 cm from a convex lens of f = 15 cm. Set up 1/v − 1/u = 1/f with correct signs and interpret.",
+      "solution": "u = −40 cm (object side), f = +15 cm (convex). 1/v = 1/f + 1/u = 1/15 − 1/40 = (8−3)/120 = 5/120 → v = +24 cm. Positive v: image on the OPPOSITE side — real, inverted, magnified m = v/u = −0.6 (diminished). The lens formula's sign convention differs from the mirror's; keeping u negative and f positive for convex is the discipline."
+    },
+    {
+      "id": "drill-len11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Power of a lens and combinations",
+      "question": "Define lens power, explain why it is measured in dioptres, and find the power of two thin lenses in contact (+4 D and −2.5 D).",
+      "solution": "P = 1/f (metres) in dioptres — power adds linearly for thin lenses in contact, which is convenient for prescribing and combining. P = 4 − 2.5 = +1.5 D → f = 1/1.5 ≈ 0.67 m. The additive property is why opticians simply add prescription powers."
+    },
+    {
+      "id": "drill-len11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Magnification and image character",
+      "question": "A magnifying glass gives m = +3. What does the positive sign tell you, and why must the object be inside the focal length?",
+      "solution": "Positive m means the image is ERECT and VIRTUAL (on the same side as the object) — needed for comfortable viewing. Inside f, refracted rays diverge and only their extensions meet — a magnified virtual image. Beyond f the image becomes real and inverted, useless for reading."
+    },
+    {
+      "id": "drill-len11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Lens defects — chromatic aberration",
+      "question": "Why does a simple lens give coloured fringes at the edges of an image, and how is it corrected?",
+      "solution": "Dispersion: the lens's refractive index is higher for violet than red, so violet focuses CLOSER to the lens — different focal lengths per colour (chromatic aberration). Correction: an ACHROMATIC DOUBLE — a convex crown-glass lens cemented to a concave flint-glass lens whose opposite dispersion cancels the colour spread while keeping net convergence."
+    }
+  ]
+}

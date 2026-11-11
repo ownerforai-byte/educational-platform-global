@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Work, Energy & Power (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "work-energy-and-power",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-wep11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Zero work despite effort",
+      "question": "A person holds a heavy suitcase motionless for ten minutes and gets tired. Why is the physical work done zero?",
+      "solution": "Work = F·d·cosθ needs DISPLACEMENT along the force; d = 0 here, so W = 0 — the tiredness is internal muscle work (fibres repeatedly contracting), not work on the suitcase. Physics work is done ON an object through displacement; physiological effort is not the same quantity."
+    },
+    {
+      "id": "drill-wep11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Negative work",
+      "question": "A brakes-applied car skids to a stop. Who does negative work, and what does negative work mean physically?",
+      "solution": "Friction acts opposite to displacement (θ = 180°, cosθ = −1), so friction does negative work — it REMOVES kinetic energy, converting it to heat. Negative work = energy taken from the object. The car's KE → thermal energy of tyres and road."
+    },
+    {
+      "id": "drill-wep11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Work-energy theorem",
+      "question": "State the work-energy theorem and use it to find the stopping distance when a 1000 kg car at 20 m/s is stopped by a 5000 N braking force.",
+      "solution": "Net work = change in KE: W = ½mv² − 0. Stopping distance d: −F·d = −½mv² → d = mv²/2F = (1000 × 400)/(2 × 5000) = 40 m. The theorem converts a force problem into an energy bookkeeping problem — no kinematics needed, and it generalises to varying forces."
+    },
+    {
+      "id": "drill-wep11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Conservative vs non-conservative forces",
+      "question": "Why does gravity's work depend only on height change, while friction's work depends on the path taken?",
+      "solution": "Gravity is CONSERVATIVE: work done around any closed loop is zero, so only endpoints matter — it stores energy in a potential (mgh). Friction is non-conservative: the longer the path, the more work it dissipates as heat, and no potential can be assigned. Conservative forces ⇒ potential energy exists; that is the definition."
+    },
+    {
+      "id": "drill-wep11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Power vs energy",
+      "question": "Two cranes lift the same load to the same height; one takes 10 s, the other 40 s. Compare their work and power.",
+      "solution": "Work is identical — same force (weight) through the same displacement, W = mgh. Power = W/t differs by 4×: the fast crane delivers 4 times the power. Energy says HOW MUCH was transferred; power says HOW FAST — two independent ratings."
+    }
+  ]
+}

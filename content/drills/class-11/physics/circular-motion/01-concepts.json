@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Circular Motion (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "circular-motion",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-cm11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Uniform circular motion is accelerated",
+      "question": "A body moves in a circle at constant speed. Why is it still 'accelerated motion'?",
+      "solution": "Acceleration is the rate of change of VELOCITY, and velocity is a vector: constant speed but continuously changing direction means the velocity changes — hence acceleration. The acceleration (v²/r) points to the centre, perpendicular to velocity, changing direction but never magnitude."
+    },
+    {
+      "id": "drill-cm11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Centrifugal force is fictitious",
+      "question": "In a turning bus you feel thrown outward. Is there an outward force acting on you? Explain both frames.",
+      "solution": "In the ground frame: no outward force — your body tends to go straight (inertia) while the bus turns inward under you. In the bus's rotating frame, we INVENT a centrifugal force (mv²/r outward) to make Newton's laws work — a fictitious force from the accelerating frame. The sensation is real; the outward force is not."
+    },
+    {
+      "id": "drill-cm11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Vertical circle — tension varies",
+      "question": "A bucket of water is whirled in a vertical circle. Where is the string tension maximum and minimum, and why doesn't the water fall at the top?",
+      "solution": "Bottom: T − mg = mv²/r → T = mv²/r + mg (maximum). Top: T + mg = mv²/r → T = mv²/r − mg (minimum). At the top the water doesn't fall because gravity itself provides (part of) the centripetal force — as long as v ≥ √(gr), the required acceleration exceeds g and the water presses on the bucket bottom."
+    },
+    {
+      "id": "drill-cm11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Centripetal force is not a new force",
+      "question": "When a car turns, what physical force plays the role of the centripetal force? Why can't 'centripetal force' appear in a free-body diagram as its own arrow?",
+      "solution": "Friction between tyres and road supplies the inward force mv²/r. 'Centripetal' names a ROLE (net inward force), not a new interaction — listing it separately double-counts. A free-body diagram shows only real forces (weight, normal, friction); their resultant happens to point to the centre."
+    },
+    {
+      "id": "drill-cm11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Angle of banking and speed limit",
+      "question": "Why does the safe speed on an unbanked curve drop when the road is wet, in terms of the v²/r relation?",
+      "solution": "Required centripetal force mv²/r must be supplied by friction, whose maximum is μmg — giving v_max = √(μgr). Wet road lowers μ, so v_max falls as √μ. Doubling speed quadruples the required force (v²), which is why speeding on curves is disproportionately dangerous."
+    }
+  ]
+}

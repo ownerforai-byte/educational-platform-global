@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Potential, Potential Difference & Potential Energy (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "potential-potential-difference-and-potential-energy",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ppd11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Potential is per-unit-charge",
+      "question": "Why define electric potential (V = U/q) instead of working with potential energy directly?",
+      "solution": "Potential energy depends on BOTH the source and the test charge; dividing by q strips the test charge out and leaves a property of the SOURCE and the location alone. Potential is the energy landscape per coulomb — the same map works for any charge placed there, which is why circuits are described in volts."
+    },
+    {
+      "id": "drill-ppd11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Field points down the potential hill",
+      "question": "Why does E point from high to low potential, and what does E = −dV/dr encode?",
+      "solution": "Positive charges accelerate from high to low potential (losing PE, gaining KE), so the force — and E — points 'downhill'. E = −dV/dr says the field is the negative GRADIENT of potential: the steeper the potential change, the stronger the field; zero gradient means zero field even if V is large."
+    },
+    {
+      "id": "drill-ppd11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Equipotential surfaces",
+      "question": "Why is no work done moving a charge along an equipotential surface, and what does that imply about the field's direction there?",
+      "solution": "All points on the surface have the same V, so ΔV = 0 and W = qΔV = 0. Since W = qE·d·cosθ = 0 for nonzero displacement, E must be PERPENDICULAR to the surface — field lines cross equipotentials at right angles. The geometry of one determines the other."
+    },
+    {
+      "id": "drill-ppd11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Potential energy of a pair",
+      "question": "Why is the potential energy of two like charges positive and of unlike charges negative?",
+      "solution": "PE is the work needed to assemble the pair from infinite separation. Pushing two LIKE charges together against repulsion requires positive work — energy stored, U > 0. Unlike charges attract: they release energy as they come together, so U < 0 (energy must be ADDED to separate them). Sign records whether the pair is bound."
+    },
+    {
+      "id": "drill-ppd11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Electron volt",
+      "question": "Why do atomic physicists use the electron volt instead of the joule?",
+      "solution": "An electron crossing 1 V gains e×1 V = 1.6×10⁻¹⁹ J — an absurdly small number of joules for atomic-scale energies. The eV is a NATURAL unit for particle energies (1 eV, 13.6 eV, keV, MeV), making numbers human-sized. It is energy (charge × potential difference), not a voltage."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Refraction at Plane Surfaces (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "refraction-at-plane-surfaces",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-rps11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why light bends",
+      "question": "A stick in water looks bent at the surface. Explain with the speed change at the boundary.",
+      "solution": "Light slows in water (v = c/n); the wavefront pivots like a marching column stepping onto slower ground, bending toward the normal. Rays from the submerged part reach the eye along a straight line from an APPARENT position above the true one — hence the bend. Refraction is the wavefront's response to a speed change."
+    },
+    {
+      "id": "drill-rps11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "What stays constant across refraction",
+      "question": "When light passes from air into glass, which of speed, frequency and wavelength change and which stay fixed?",
+      "solution": "Frequency stays fixed — it is set by the SOURCE and cannot change at a boundary (wavefronts cannot pile up or vanish). Speed drops to c/n and wavelength shrinks to λ/n to keep v = fλ consistent. Frequency constant, speed and wavelength change together."
+    },
+    {
+      "id": "drill-rps11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Apparent depth",
+      "question": "A pool 2 m deep appears about 1.5 m deep. Derive the apparent-depth relation and state when it fails.",
+      "solution": "Rays from the bottom refract AWAY from the normal leaving water, appearing to come from a shallower point. For small angles: apparent depth = real depth/n (2/1.33 ≈ 1.5 m). It fails for large viewing angles — the small-angle approximation (sinθ ≈ tanθ) breaks down and the apparent position shifts with viewing angle."
+    },
+    {
+      "id": "drill-rps11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Critical angle",
+      "question": "Define critical angle and explain why it exists only when light goes from denser to rarer medium.",
+      "solution": "The critical angle is the incidence angle in the denser medium for which the refracted ray grazes along the boundary (refraction angle = 90°): sin θc = n_rare/n_denser. Going the other way (rarer → denser), light bends toward the normal and refraction is always possible — no angle produces 90°, so no critical angle exists."
+    },
+    {
+      "id": "drill-rps11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Total internal reflection conditions",
+      "question": "State the two conditions for total internal reflection and give one natural and one technological example.",
+      "solution": "Conditions: (1) light travels from denser to rarer medium; (2) angle of incidence exceeds the critical angle. Natural: mirage (light grazing hot air layers bends until it reflects). Technological: optical fibre — light stays guided by repeated total internal reflection at the core–cladding boundary, carrying data with almost no loss."
+    }
+  ]
+}

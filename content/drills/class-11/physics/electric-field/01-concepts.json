@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Electric Field (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "electric-field",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ef11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Field as a property of space",
+      "question": "Why do we say a charge creates an 'electric field' around it, rather than just saying it exerts forces on other charges?",
+      "solution": "The field concept localises the influence: the charge modifies the space around it, and any charge ENTERING that space feels a force — no action-at-a-distance delay or mystery needed. E = F/q₀ gives the force per unit test charge at each point. Fields also carry energy and momentum, which the bare 'force' picture hides."
+    },
+    {
+      "id": "drill-ef11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Field lines never cross",
+      "question": "Why can two electric field lines never intersect?",
+      "solution": "The tangent to a field line at a point gives the direction of E there. If two lines crossed, E would have two directions at one point — impossible, since the force on a test charge is unique. Crossing would mean the field is double-valued; the rule is a logical consequence of the definition."
+    },
+    {
+      "id": "drill-ef11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Dipole field falls faster",
+      "question": "Why does an electric dipole's field fall as 1/r³ while a single charge's falls as 1/r²?",
+      "solution": "A dipole is two equal and opposite charges very close together: at large distance their 1/r² fields nearly cancel, and what survives is the small DIFFERENCE between the two — a next-order term falling as 1/r³. Cancellation promotes the field to a faster decay. The same logic makes the quadrupole fall as 1/r⁴."
+    },
+    {
+      "id": "drill-ef11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Dipole in uniform field",
+      "question": "A dipole sits in a uniform electric field. What is the net force and the net torque on it?",
+      "solution": "Net force is zero: +q and −q feel equal and opposite forces in a uniform field. Net torque τ = pE sinθ is nonzero unless the dipole aligns with E — the torque rotates the dipole toward alignment, doing work stored as potential energy U = −pE cosθ. Uniform field: no translation, only rotation."
+    },
+    {
+      "id": "drill-ef11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Gauss's law and the shell",
+      "question": "Why is the electric field zero everywhere inside a charged hollow conducting sphere?",
+      "solution": "In electrostatic equilibrium the charges reside on the outer surface and redistribute until the field inside each conductor point is zero — otherwise free electrons would keep moving. Gauss's law confirms it: any Gaussian surface inside encloses zero net charge, so flux — and by symmetry, field — is zero. This shielding is why electronics are boxed in metal."
+    }
+  ]
+}

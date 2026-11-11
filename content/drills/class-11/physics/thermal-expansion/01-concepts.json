@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Thermal Expansion (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "thermal-expansion",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-te11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why expansion happens",
+      "question": "Heating a solid increases the AMPLITUDE of atomic vibration, not the atom size. Explain how that produces expansion.",
+      "solution": "Atoms vibrate about equilibrium in an asymmetric (anharmonic) potential: as amplitude grows, the average separation shifts outward because the repulsive wall steepens faster than the attractive side. Greater average spacing ⇒ the whole lattice expands. Expansion is a statistical shift of mean positions, not bigger atoms."
+    },
+    {
+      "id": "drill-te11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "α, β, γ relationship",
+      "question": "Why is the area expansion coefficient β ≈ 2α and volume coefficient γ ≈ 3α?",
+      "solution": "Each linear dimension grows by (1 + αΔT); area grows by (1 + αΔT)² ≈ 1 + 2αΔT (dropping α²ΔT², tiny), so β = 2α. Volume: (1 + αΔT)³ ≈ 1 + 3αΔT, so γ = 3α. The relations hold for isotropic solids in the small-expansion limit."
+    },
+    {
+      "id": "drill-te11-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "The hole expands too",
+      "question": "A metal plate with a circular hole is heated. Does the hole get bigger or smaller?",
+      "solution": "Bigger — every linear dimension, including the distance between any two points of the plate, scales up by the same factor. The hole behaves as if it were made of the same expanding material. (Cooling shrinks the hole — the opposite of what 'the metal contracts onto the hole' intuition says.)"
+    },
+    {
+      "id": "drill-te11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Bimetallic strip bending",
+      "question": "Why does a bimetallic strip of brass and iron bend when heated, and which way?",
+      "solution": "Brass expands more (larger α) than iron for the same temperature rise; the brass side becomes longer, so the strip curves with brass on the OUTSIDE of the curve. The differential expansion converts temperature into mechanical motion — the working principle of thermostats."
+    },
+    {
+      "id": "drill-te11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Anomalous expansion of water",
+      "question": "Why does a lake freeze from the TOP down, and why does that matter for aquatic life?",
+      "solution": "Water has maximum density at 4 °C: cooling below 4 °C makes it EXPAND and float. So 4 °C water sinks and the surface reaches 0 °C first — ice forms on top and insulates the water below, which stays at ~4 °C. Fish survive because the densest water stays liquid at the bottom."
+    }
+  ]
+}

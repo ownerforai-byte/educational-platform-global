@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Heat & Temperature (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "heat-and-temperature",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ht11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Heat vs temperature",
+      "question": "A sparkler's spark (≈2000 °C) touching skin does less damage than a cup of 90 °C tea. Resolve with the heat-temperature distinction.",
+      "solution": "Temperature measures the AVERAGE kinetic energy of particles; heat is ENERGY TRANSFERRED, which depends on mass and contact time. A spark has enormous temperature but negligible mass — tiny total energy. The tea has lower temperature but much more thermal energy to deliver. Damage tracks energy delivered, not temperature alone."
+    },
+    {
+      "id": "drill-ht11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Thermal equilibrium and the zeroth law",
+      "question": "Why does a thermometer 'measure' the temperature of your body — what principle makes that possible?",
+      "solution": "Contact lets heat flow between thermometer and body until they reach THERMAL EQUILIBRIUM (same temperature). The zeroth law says bodies in equilibrium with a third body are in equilibrium with each other — so the thermometer, calibrated, reports the body's temperature. Measurement by equilibrium is the principle."
+    },
+    {
+      "id": "drill-ht11-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Specific heat capacity",
+      "question": "Why does the same burner heat 1 kg of water much more slowly than 1 kg of iron? Quantify the idea with specific heat.",
+      "solution": "Q = mcΔT: for the same heat input, ΔT = Q/mc. Water's specific heat (4186 J/kg·K) is ~10× iron's (~450), so water's temperature rises ~10× less. Water's high c is why it is used as a coolant and why coastal climates are mild."
+    },
+    {
+      "id": "drill-ht11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Latent heat — energy without temperature change",
+      "question": "Melting ice stays at 0 °C while absorbing heat. Where does that energy go?",
+      "solution": "Into LATENT heat — breaking the intermolecular bonds of the solid structure, increasing potential energy of the molecules while their average KE (temperature) stays constant. The temperature plateau during phase change is the signature of latent heat; the energy reappears as heat when the substance freezes."
+    },
+    {
+      "id": "drill-ht11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Calorimetry principle",
+      "question": "Hot metal dropped into cold water: why is 'heat lost by metal = heat gained by water' valid, and what assumption hides inside it?",
+      "solution": "Energy conservation: in an isolated container, no heat escapes, so the transfers must balance — m₁c₁ΔT₁ = m₂c₂ΔT₂. Hidden assumption: NO heat leaks to the surroundings and none is lost to the calorimeter itself unless its heat capacity is included. Ignoring the container is the classic experimental error."
+    }
+  ]
+}

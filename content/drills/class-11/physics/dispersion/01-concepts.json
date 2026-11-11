@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Dispersion (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "dispersion",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-dis11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Dispersion's cause",
+      "question": "Why does glass refract violet light more strongly than red?",
+      "solution": "Refractive index depends on wavelength: shorter wavelengths interact more strongly with the glass's electrons, so n_violet > n_red. Since Snell's law uses n, violet bends more at every surface. Dispersion is the wavelength-dependence of refractive index — not a property of the prism's shape."
+    },
+    {
+      "id": "drill-dis11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "The rainbow's geometry",
+      "question": "Explain how a rainbow forms using dispersion plus internal reflection, and why it appears at 42°.",
+      "solution": "Sunlight enters a raindrop, disperses (violet bends more), reflects once off the back, and exits further dispersed. The geometry concentrates each colour into a cone at a specific angle from the antisolar point — red at ~42°, violet at ~40° — so each observer sees their own rainbow. Dispersion + one internal reflection + the 42° cone is the mechanism."
+    },
+    {
+      "id": "drill-dis11-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Primary vs secondary rainbow",
+      "question": "What distinguishes the secondary rainbow from the primary in formation and appearance?",
+      "solution": "Secondary: TWO internal reflections inside the drop (instead of one), so more light is lost — it is fainter; extra reflection reverses the colour order (red inside) and the exit angle is larger (~51°). Primary: one reflection, brighter, red outside. Reflection count drives both brightness and colour order."
+    },
+    {
+      "id": "drill-dis11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Angular dispersion",
+      "question": "A prism produces a spectrum 2° wide for white light. What is angular dispersion, and what would double the prism angle do to it?",
+      "solution": "Angular dispersion = δ_violet − δ_red = the angular spread between extreme colours (2° here). It grows with the prism's refracting angle A and the material's dispersive power — doubling A roughly doubles each colour's deviation and hence the spread. Dispersion is engineered via angle and material."
+    },
+    {
+      "id": "drill-dis11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Pure vs impure spectrum",
+      "question": "Why does a wide slit produce a spectrum where the colours overlap at the edges (impure spectrum), and how is a pure spectrum obtained?",
+      "solution": "Each point of a wide slit forms its own spectrum, and neighbouring points' spectra overlap — colours mix at the boundaries. A pure spectrum needs each colour's image as a separate sharp line: use a NARROW slit, so each point's spectrum is thin and the colours separate cleanly. Slit width controls spectral purity."
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Reflection at Curved Mirror (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "reflection-at-curved-mirror",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-rcm11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why 'real' image from a mirror",
+      "question": "How can a mirror — a surface — produce a REAL image that can be caught on a screen?",
+      "solution": "A concave mirror CONVERGES reflected rays: rays from a point outside the focus actually intersect after reflection, forming a real image where light physically concentrates (hot at that spot, visible on a screen). Plane and convex mirrors only diverge rays — their images are the intersections of backward EXTENSIONS, hence virtual."
+    },
+    {
+      "id": "drill-rcm11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Focal length = R/2",
+      "question": "Why is a spherical mirror's focal length half its radius of curvature? Use the geometry of a ray parallel to the axis.",
+      "solution": "A ray parallel to the axis strikes at angle θ and reflects at θ; the triangle formed with the centre of curvature C is isosceles, so the point where the reflected ray crosses the axis (F) sits midway between pole and C — f = R/2 (exact only for small apertures, where sinθ ≈ θ)."
+    },
+    {
+      "id": "drill-rcm11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Convex mirror — always virtual",
+      "question": "Why does a convex mirror give a virtual, erect, diminished image for EVERY object position, and why are they used as vehicle mirrors?",
+      "solution": "A convex mirror diverges reflected rays — they only appear to come from a point BEHIND the mirror, so the image is always virtual and erect; the divergence makes the image smaller than the object. Smallness buys FIELD OF VIEW: a wide scene compresses into the mirror, which is exactly what a driver needs — at the cost of distance misjudgement ('objects are closer than they appear')."
+    },
+    {
+      "id": "drill-rcm11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Sign convention in mirror formula",
+      "question": "An object 30 cm from a concave mirror (f = 10 cm): set up 1/v + 1/u = 1/f with signs and interpret the result.",
+      "solution": "u = −30 cm (object in front), f = −10 cm (concave). 1/v = 1/f − 1/u = −1/10 + 1/30 = −2/30 → v = −15 cm. Negative v: image on the same side as the object — real, inverted, magnified m = −v/u = −0.5 (diminished since object is beyond C). Signs carry the geometry; magnitudes alone mislead."
+    },
+    {
+      "id": "drill-rcm11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Uses of concave mirrors",
+      "question": "Why is the same concave mirror useful both as a searchlight reflector and as a dentist's mirror?",
+      "solution": "Reversibility of light: a source at the focus sends out parallel rays (searchlight) — and rays from a close object converge to a magnified virtual image when the object is inside f (dentist's mirror). One geometry, two uses depending on where the light source/object sits relative to F."
+    }
+  ]
+}

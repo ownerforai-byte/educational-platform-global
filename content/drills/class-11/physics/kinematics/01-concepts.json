@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Kinematics (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "kinematics",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-kin11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Zero velocity, nonzero acceleration",
+      "question": "A ball thrown straight up has v = 0 at the top. Does gravity stop acting there? Explain the distinction the question tests.",
+      "solution": "No — at the top the velocity is momentarily zero but the ACCELERATION is still g downward (that is exactly why the ball doesn't stay up). Velocity is the state of motion; acceleration is the rate of change of that state. Zero v with nonzero a is the classic signature of a turning point."
+    },
+    {
+      "id": "drill-kin11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Area under the graph",
+      "question": "What does the area under a velocity–time graph give, and what does its slope give? Apply both to a v–t graph that rises then flattens.",
+      "solution": "Slope = acceleration; area = displacement (v·dt accumulates distance). Rising then flat: acceleration is positive then zero — the object speeds up then moves at constant velocity, while displacement keeps growing throughout (area keeps accumulating even when v is constant)."
+    },
+    {
+      "id": "drill-kin11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Free fall — mass independence",
+      "question": "A feather and a stone dropped in vacuum land together. Why does everyday experience contradict this, and what does the contradiction expose?",
+      "solution": "In vacuum both have the same acceleration g because a = F/m = mg/m — mass cancels. In air the feather's large area-to-weight ratio makes air resistance comparable to its weight, so its net acceleration is much less. The contradiction exposes air resistance, not a flaw in free-fall theory."
+    },
+    {
+      "id": "drill-kin11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Relative velocity",
+      "question": "Two trains move at 20 m/s and 25 m/s in the same direction. With what velocity does the second approach the first? What if they move oppositely?",
+      "solution": "Same direction: relative velocity = 25 − 20 = 5 m/s (the gap closes slowly). Opposite directions: 25 + 20 = 45 m/s (rapid closing). Relative velocity is velocity measured in the other object's frame — subtract vectors, which for collinear motion means signed subtraction."
+    },
+    {
+      "id": "drill-kin11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Projectile — independence of components",
+      "question": "Why does a horizontally thrown ball and a ball simply dropped from the same height land at the same time?",
+      "solution": "Vertical and horizontal motions are independent: gravity acts only vertically, and the horizontal velocity has no vertical component to affect it. Both balls start with zero vertical velocity and fall with the same g — equal fall times, regardless of horizontal speed. Independence of perpendicular components is the heart of projectile motion."
+    }
+  ]
+}

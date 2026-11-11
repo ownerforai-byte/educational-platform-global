@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Dynamics (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "dynamics",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-dyn11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "First law needs the second",
+      "question": "A book rests on a table with two forces (weight and normal) acting. Why doesn't it move, and which law answers 'why does it need two forces'?",
+      "solution": "The two forces are equal, opposite and collinear — net force zero, so by Newton's first law the state of motion doesn't change. The first law defines INERTIA (what happens with zero net force); the second (F = ma) quantifies what a nonzero net force does. Equilibrium is a first-law statement; the sizes of the forces come from the second."
+    },
+    {
+      "id": "drill-dyn11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Action-reaction pairs don't cancel",
+      "question": "If action and reaction are always equal and opposite, why doesn't a horse pulling a cart cancel itself out?",
+      "solution": "Action and reaction act on DIFFERENT bodies: the horse pushes the ground backward, and the ground pushes the horse forward — that reaction moves the horse+cart system. The horse's push on the cart and the cart's pull on the horse are internal to the system and cancel only for the system as a whole. Never add forces acting on different objects."
+    },
+    {
+      "id": "drill-dyn11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Impulse — why airbags work",
+      "question": "A crash brings a passenger's momentum to zero. Why does a longer collision time save lives, using the impulse–momentum theorem?",
+      "solution": "Impulse FΔt = Δp: the momentum change is fixed by the crash, but the FORCE depends on the duration. Stretching Δt (airbag crumples, airbag increases contact time) divides the peak force by the same factor. Same Δp, smaller F — that is why extending stopping time is the universal safety strategy."
+    },
+    {
+      "id": "drill-dyn11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Friction is self-adjusting up to a limit",
+      "question": "A crate needs 50 N to start sliding but only 40 N to keep it sliding. Explain both numbers.",
+      "solution": "Static friction adjusts itself to match the applied force up to a maximum (limiting friction ≈ μ_sN) — 50 N is that limit. Once sliding begins, kinetic friction (μ_kN ≈ 40 N) takes over, and μ_k < μ_s because sliding surfaces interlock less. Static > kinetic is why 'breaking loose' is the hardest part."
+    },
+    {
+      "id": "drill-dyn11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Banking of roads",
+      "question": "Why are highway curves banked, and what role does friction play on a perfectly banked curve?",
+      "solution": "The horizontal component of the normal reaction (N sinθ) supplies the centripetal force needed for turning; without banking, friction alone must supply it and it fails at high speed. On a perfectly banked curve (tanθ = v²/rg) no friction is needed at all — banking makes the required centripetal force independent of tyre grip."
+    }
+  ]
+}

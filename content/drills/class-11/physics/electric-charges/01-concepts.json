@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Electric Charges (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "electric-charges",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ec11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Charging by rubbing — electron transfer",
+      "question": "Why does a glass rod rubbed with silk become positive while an ebonite rod rubbed with fur becomes negative?",
+      "solution": "Rubbing brings two surfaces into intimate contact; electrons transfer from the material that holds them loosely to the one that holds them tightly. Glass loses electrons (→ positive), silk gains; ebonite gains from fur (→ negative). Charge is never created — only transferred, conserving the total."
+    },
+    {
+      "id": "drill-ec11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Conductors vs insulators microscopically",
+      "question": "Why does a charged metal sphere lose its charge through a person's hand while a charged plastic rod does not?",
+      "solution": "In a conductor, outer electrons are free to move — charge placed anywhere redistributes and drains through any contact path (the hand, which is itself a conductor). In an insulator, electrons are bound to their atoms/molecules: charge stays where it was deposited. Mobility of charge carriers is the whole distinction."
+    },
+    {
+      "id": "drill-ec11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Charging by induction",
+      "question": "Describe how to charge a metal sphere negatively by induction using a positively charged rod, without the rod ever touching it.",
+      "solution": "Bring the positive rod NEAR the sphere: free electrons in the sphere are attracted toward the near side, leaving the far side positive. Ground the FAR side (touch with finger): electrons flow up from the earth to neutralise the far positive charge. Remove the ground first, then the rod — the sphere is left with the excess electrons (negative). The rod's charge is unchanged: induction rearranges, it does not transfer from the rod."
+    },
+    {
+      "id": "drill-ec11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Quantisation of charge",
+      "question": "Why do we say charge is 'quantised', and why did Millikan's oil-drop experiment confirm it?",
+      "solution": "Charge exists only in integer multiples of the elementary charge e = 1.6×10⁻¹⁹ C — q = ne, no fractions. Millikan balanced oil droplets in an electric field and found every droplet's charge was a whole-number multiple of the same smallest value. Quantisation follows from charge being carried by discrete particles (electrons, protons)."
+    },
+    {
+      "id": "drill-ec11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Conservation of charge",
+      "question": "An electron and a positron annihilate into two photons (neutral). Where did the charges go?",
+      "solution": "Total charge was (+e) + (−e) = 0 before and 0 after — charge is CONSERVED even when the charged particles themselves vanish. Conservation applies to the total, not to individual carriers; annihilation creates neutral photons that carry the zero net charge away."
+    }
+  ]
+}

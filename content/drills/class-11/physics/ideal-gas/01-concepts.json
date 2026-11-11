@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Ideal Gas (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "ideal-gas",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ig11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "What 'ideal' assumes",
+      "question": "What two assumptions define an ideal gas, and when does a real gas violate them?",
+      "solution": "(1) Molecules have negligible volume compared with the container; (2) no intermolecular forces except during instantaneous collisions. A real gas violates these at HIGH pressure (molecular volume matters) and LOW temperature (attractions matter) — which is why real gases liquefy and ideal ones don't. The assumptions are limits, not descriptions."
+    },
+    {
+      "id": "drill-ig11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Pressure from molecular bombardment",
+      "question": "Explain gas pressure microscopically — what exactly pushes the piston?",
+      "solution": "Countless molecules collide with the piston each second, each transferring momentum 2mv (elastic rebound); the total momentum transfer per unit area per second IS the pressure (P = F/A). Pressure is a statistical average of individual impacts — which is why it is smooth even though each collision is discrete."
+    },
+    {
+      "id": "drill-ig11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Boyle's law microscopically",
+      "question": "Why does halving the volume of a gas at constant temperature double its pressure? Give the microscopic reason, not just PV = constant.",
+      "solution": "At constant T the molecules' average speed is unchanged; halving the volume doubles the NUMBER DENSITY, so each surface is struck twice as often. Twice the collisions per second → twice the momentum transfer per second → double pressure. Constant T keeps each collision's impulse the same; only the collision RATE changes."
+    },
+    {
+      "id": "drill-ig11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Temperature IS average KE",
+      "question": "Why does heating a sealed gas raise its pressure, in terms of molecular kinetic energy?",
+      "solution": "Absolute temperature is proportional to the average translational KE (½m⟨v²⟩ = 3kT/2). Heating raises molecular speeds, so each collision delivers more impulse AND collisions come more frequently — both raise pressure in a fixed volume. Temperature is a measure of molecular motion, not a separate fluid property."
+    },
+    {
+      "id": "drill-ig11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Degrees of freedom and γ",
+      "question": "Why is γ (= Cp/Cv) larger for a monatomic gas (5/3) than a diatomic one (7/5)?",
+      "solution": "Monatomic molecules store energy in 3 translational degrees of freedom only; diatomic molecules also rotate (2 more), so added heat splits among 5 ways instead of 3. More ways to store energy means less goes into translation — temperature rises less, Cv is larger, and γ = 1 + 2/f falls. γ tracks the number of energy-sharing modes."
+    }
+  ]
+}

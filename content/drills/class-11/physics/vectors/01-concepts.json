@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Vectors (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "vectors",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-vec11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Scalars add, vectors need geometry",
+      "question": "A person walks 3 km east then 4 km north. Why is the distance 7 km but the displacement 5 km?",
+      "solution": "Distance is a scalar — magnitudes simply add. Displacement is a vector — the two legs combine by the head-to-tail rule, giving √(3²+4²) = 5 km at 53° north of east. Vectors carry direction, so they combine geometrically, not arithmetically."
+    },
+    {
+      "id": "drill-vec11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Null vector meaning",
+      "question": "Two forces of 5 N each act on a body and the body stays at rest. How can two nonzero forces 'add to nothing'?",
+      "solution": "If they act in exactly opposite directions, their vector sum is the NULL vector — zero magnitude, no defined direction. The body is in equilibrium: the forces cancel, not vanish. A null vector is a legitimate vector result, not 'no force exists'."
+    },
+    {
+      "id": "drill-vec11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Dot product detects perpendicularity",
+      "question": "A = 3î + 4ĵ and B = 8î − 6ĵ. Show they are perpendicular using the dot product, and say what the dot product physically measures.",
+      "solution": "A·B = (3)(8) + (4)(−6) = 24 − 24 = 0 → cosθ = 0 → θ = 90°. The dot product A·B = |A||B|cosθ measures the PROJECTION of one vector along the other — zero projection means perpendicularity. Magnitudes (5 and 10) are irrelevant to the direction test."
+    },
+    {
+      "id": "drill-vec11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Resolution — components are projections",
+      "question": "Why does a force F at angle θ to the horizontal contribute F cosθ to horizontal motion and F sinθ to vertical?",
+      "solution": "Resolution is projection: the component along a direction is the part of the vector that acts that way — F cosθ along the axis making angle θ with F. The two perpendicular components rebuild the full vector (Pythagoras), so nothing is lost or double-counted. Components let 2D problems become two 1D problems."
+    },
+    {
+      "id": "drill-vec11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Cross product — area and normal",
+      "question": "What does |A×B| represent geometrically, and why does swapping the order flip the result?",
+      "solution": "|A×B| = |A||B|sinθ is the area of the parallelogram spanned by A and B; its direction is perpendicular to both (right-hand rule). Swapping gives B×A = −(A×B): the magnitude is the same but the normal points the opposite way — the cross product encodes orientation, hence it is anticommutative."
+    }
+  ]
+}

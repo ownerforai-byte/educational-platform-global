@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Refraction Through Prisms (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "refraction-through-prisms",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-rtp11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why a prism bends light twice",
+      "question": "Why does a ray passing through a prism deviate by more than a single refraction would cause?",
+      "solution": "The ray refracts TWICE: bending toward the normal entering the first face and away from the normal leaving the second. Both refractions bend it in the same rotational sense (toward the base), so deviations add — total deviation δ = (i + e) − A. Two surfaces, cumulative deviation."
+    },
+    {
+      "id": "drill-rtp11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Minimum deviation condition",
+      "question": "What is special about the ray's path inside the prism at minimum deviation, and why do experimenters seek it?",
+      "solution": "At δ_min the ray inside is PARALLEL to the base: refraction at the two faces is symmetric (i = e, r₁ = r₂ = A/2). The δ–i curve is flat there, so small errors in i hardly change δ — measurements of n via n = sin((A+δm)/2)/sin(A/2) are most accurate at the minimum."
+    },
+    {
+      "id": "drill-rtp11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Dispersion — why colours separate",
+      "question": "Why does a prism split white light into a spectrum while a glass slab does not?",
+      "solution": "Refractive index depends on wavelength (n falls as λ rises), so violet bends more than red — DISPERSION. In a prism the two refracting surfaces are tilted, so the angular deviations of different colours accumulate and spread into a spectrum. In a slab the two surfaces are parallel: the second refraction undoes the first's angular spread, so colours emerge parallel and recombine — no visible separation."
+    },
+    {
+      "id": "drill-rtp11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Angular dispersion and dispersive power",
+      "question": "Distinguish angular dispersion from dispersive power.",
+      "solution": "Angular dispersion = angular separation between the extreme rays, δ_v − δ_r — how wide the spectrum is. Dispersive power ω = (δ_v − δ_r)/δ_mean — that spread normalised by the mean deviation, a property of the prism MATERIAL. Two prisms can have the same dispersion but different powers depending on their mean deviation."
+    },
+    {
+      "id": "drill-rtp11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "hard",
+      "concept": "Achromatic combination",
+      "question": "How can two prisms of different materials produce deviation WITHOUT dispersion (an achromatic combination)?",
+      "solution": "Use two prisms of different dispersive powers joined with opposite angles: the first disperses and deviates; the second is oriented to disperse oppositely (cancelling the colour spread) while its mean deviation only partially cancels — leaving net deviation with no spectrum. The condition (δ_v − δ_r)₁ = −(δ_v − δ_r)₂ uses the materials' different dispersive powers."
+    }
+  ]
+}

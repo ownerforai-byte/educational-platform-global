@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Rate of Heat Flow (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "rate-of-heat-flow",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-rhf11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Conduction needs a medium, no bulk flow",
+      "question": "How does heat travel along a metal spoon in hot tea without the metal itself moving?",
+      "solution": "By CONDUCTION: energetic particles at the hot end vibrate more violently and pass energy to neighbours through interactions — plus free electrons drift and carry energy in metals. There is no bulk transport of matter (that would be convection); the spoon's atoms stay in place while energy flows through them."
+    },
+    {
+      "id": "drill-rhf11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Thermal conductivity factors",
+      "question": "Why are cooking pots metal with wooden or plastic handles? Name the property involved and the physical reason for the difference.",
+      "solution": "Thermal conductivity k: metals have free electrons that transport energy efficiently (k ~ 100–400 W/m·K); wood/plastic lack free carriers and energy must crawl through lattice vibrations (k ~ 0.1). The pot body must conduct (spread heat), the handle must not (protect the hand) — the same property, engineered in opposite directions."
+    },
+    {
+      "id": "drill-rhf11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Conduction rate formula",
+      "question": "State the factors that determine the rate of heat conduction through a window pane, and explain why double glazing works.",
+      "solution": "dQ/dt = kA(θ₁−θ₂)/d — proportional to conductivity k and area A and temperature difference, inversely to thickness d. Double glazing traps a layer of AIR (k ≈ 0.026, ~10⁴ times worse than glass) between panes, effectively multiplying d with a poor conductor — heat flow collapses. Trapped air, not extra glass, does the insulating."
+    },
+    {
+      "id": "drill-rhf11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Convection — the moving-fluid mechanism",
+      "question": "Why does heating water from BELOW circulate it, but heating from above leaves it still?",
+      "solution": "Convection needs density differences: heated bottom water expands, becomes less dense, rises; cooler water sinks to replace it — a convection current. Heated from above, the warm (less dense) layer is already on top and no circulation can start. Gravity acting on density differences is the engine of convection."
+    },
+    {
+      "id": "drill-rhf11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Radiation needs no medium",
+      "question": "How does the Sun's heat reach Earth through empty space, and what makes a surface a good absorber of this heat?",
+      "solution": "By RADIATION — electromagnetic waves (mainly infrared) that need no medium. Absorption/emission depend on surface nature: black, rough surfaces absorb and emit best; white, polished surfaces reflect (poor absorbers AND poor emitters). That is why vacuum flasks silver their walls — cutting radiation loss."
+    }
+  ]
+}

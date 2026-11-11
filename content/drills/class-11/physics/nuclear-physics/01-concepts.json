@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Nuclear Physics (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "nuclear-physics",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-nuc11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Isotopes vs isobars vs isotones",
+      "question": "Define isotopes, isobars and isotones with one example each.",
+      "solution": "Isotopes: same Z (protons), different A — ¹H and ²H. Isobars: same A (total nucleons), different Z — ¹⁴C and ¹⁴N. Isotones: same N (neutrons), different Z and A — ³H and ⁴He (N = 2 each). The three axes of the nuclear chart: Z, A, N."
+    },
+    {
+      "id": "drill-nuc11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Mass defect",
+      "question": "A helium-4 nucleus weighs less than 2 protons + 2 neutrons. Where did the mass go, and what does the difference measure?",
+      "solution": "The missing mass became BINDING ENERGY when the nucleons fused: Δm·c² is the energy released on assembly — equivalently the energy needed to pull the nucleus apart. Helium's large binding energy per nucleon (~7 MeV) is why fusion releases energy. Mass defect = binding energy/c²."
+    },
+    {
+      "id": "drill-nuc11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Alpha vs beta vs gamma",
+      "question": "Compare α, β and γ radiation in composition, penetrating power and what each changes in the parent nucleus.",
+      "solution": "α: helium nucleus (2p+2n), stopped by paper; emission lowers Z by 2 and A by 4. β: electron (or positron) from nucleon conversion, stopped by aluminium; β⁻ raises Z by 1, A unchanged (a neutron becomes a proton). γ: high-energy photon, stopped by lead; changes nothing in Z or A — it carries off excess energy after α/β. Penetrating power rises with decreasing charge/mass."
+    },
+    {
+      "id": "drill-nuc11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Half-life and activity",
+      "question": "A sample's activity halves every 8 days. After 24 days, what fraction remains active, and why does the decay never truly reach zero?",
+      "solution": "24 days = 3 half-lives → (½)³ = 1/8 remains. Exponential decay is asymptotic: each half-life multiplies by ½, never by 0 — a nonzero population always has some decay probability per unit time. In practice 'zero' means below detection, not mathematically zero."
+    },
+    {
+      "id": "drill-nuc11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Fusion vs fission — why both release energy",
+      "question": "How can both splitting heavy nuclei and merging light nuclei release energy? Use the binding energy curve.",
+      "solution": "Both processes move nuclei TOWARD the peak of the binding-energy-per-nucleon curve (around iron). Heavy nuclei (uranium) sit left of the peak's right side — splitting into mid-mass fragments increases binding per nucleon, releasing energy. Light nuclei (hydrogen) sit below the peak — fusing them increases it. The curve, not the direction of the process, decides."
+    }
+  ]
+}

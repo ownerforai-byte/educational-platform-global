@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Elasticity (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "elasticity",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-el11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Stress vs strain",
+      "question": "Why is stress (not force) compared with strain when characterising a material?",
+      "solution": "Force depends on how THICK the sample is — a fat wire needs more force for the same stretch, so force isn't a material property. Stress (F/A) normalises by geometry; strain (ΔL/L) normalises by length. Stress–strain describes the MATERIAL itself; force–extension describes only that particular wire."
+    },
+    {
+      "id": "drill-el11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Young's modulus meaning",
+      "question": "Steel has a much larger Young's modulus than rubber, yet rubber stretches far more. Resolve the apparent paradox.",
+      "solution": "Young's modulus Y = stress/strain measures STIFFNESS — resistance to stretch. Steel's huge Y means tiny strain under big stress; rubber's small Y means large strain under small stress. Rubber stretches more because it is LESS stiff, exactly consistent with its smaller Y. 'Stretches more' and 'stiffer' are opposite directions."
+    },
+    {
+      "id": "drill-el11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Elastic limit vs yield vs breaking",
+      "question": "On a stress–strain curve, distinguish the proportional limit, elastic limit and breaking point. What happens to a wire stressed between the proportional limit and elastic limit?",
+      "solution": "Proportional limit: Hooke's law (straight line) ends. Elastic limit: the maximum stress from which the wire still returns to original length — beyond it, permanent (plastic) deformation begins even though the wire hasn't broken. Breaking point: fracture. Stressed between the two limits, the wire deforms permanently but does not snap — it comes back LONGER, not to original length."
+    },
+    {
+      "id": "drill-el11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Elastic potential energy",
+      "question": "Why is the energy stored in a stretched wire ½FΔL and not FΔL?",
+      "solution": "The force grows from 0 to F as the wire stretches — the average force during extension is F/2, so work done = ½FΔL (the area under the F–ΔL graph). FΔL would be the work of a FULL force applied throughout, which is not what happens. The triangular area is the stored elastic PE."
+    },
+    {
+      "id": "drill-el11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Poisson's ratio",
+      "question": "When a rubber band is stretched, it gets thinner. What is this behaviour called, and what does a Poisson's ratio near 0.5 imply about the material?",
+      "solution": "Lateral contraction accompanying longitudinal extension is measured by Poisson's ratio σ = −(lateral strain)/(longitudinal strain). σ ≈ 0.5 means the material's VOLUME stays nearly constant during deformation — it deforms by reshaping, not compressing (rubber behaves this way; most metals ~0.3)."
+    }
+  ]
+}

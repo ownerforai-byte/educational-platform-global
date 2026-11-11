@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Solids (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "solids",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-sol11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Crystalline vs amorphous",
+      "question": "Glass breaks with curved, shell-like fractures while salt crystals cleave into flat faces. What structural difference explains this?",
+      "solution": "Crystalline solids (salt) have a long-range ORDERED lattice — atoms repeat in a periodic pattern, and cleavage follows the planes of that lattice. Amorphous solids (glass) have only short-range order — no repeating pattern, so fractures follow no planes and are irregular. Long-range order is the discriminator."
+    },
+    {
+      "id": "drill-sol11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Four types of crystal bonding",
+      "question": "Name the four bonding types in crystalline solids with one example each, and say which tends to give the highest melting point.",
+      "solution": "Ionic (NaCl — electrostatic between ions), covalent (diamond — shared electron network), metallic (copper — electron sea around ion cores), molecular/van der Waals (dry ice — weak dipole attraction). Covalent network solids like diamond (and ionic with high charges) give the highest melting points because breaking them means breaking strong directional bonds."
+    },
+    {
+      "id": "drill-sol11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Conductors, semiconductors, insulators — band picture",
+      "question": "Using the energy-band picture, explain why metals conduct, insulators don't, and semiconductors conduct only moderately.",
+      "solution": "Metals: the valence band is partially filled (or overlaps the conduction band) — electrons find empty states just above and move freely. Insulators: a large forbidden gap (~5+ eV) separates a full valence band from an empty conduction band — thermal energy can't promote electrons. Semiconductors: a SMALL gap (~1 eV) — some electrons cross at room temperature, giving moderate conductivity that rises with temperature (more carriers)."
+    },
+    {
+      "id": "drill-sol11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why semiconductors conduct better when hot",
+      "question": "Metals conduct worse when heated, but semiconductors conduct better. Explain the opposite behaviours.",
+      "solution": "In a metal, heating increases lattice vibrations that scatter electrons — mobility falls and resistance rises (carrier count is fixed). In a semiconductor, heating promotes MORE electrons across the small gap — the carrier count grows exponentially and overwhelms the mobility loss. Carrier supply vs carrier scattering decides the sign of the temperature effect."
+    },
+    {
+      "id": "drill-sol11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Doping — a few atoms change everything",
+      "question": "Why does adding one phosphorus atom per million silicon atoms transform silicon's conductivity?",
+      "solution": "Phosphorus has 5 valence electrons vs silicon's 4: the extra electron is loosely bound and easily freed into the conduction band — each donor atom contributes one mobile carrier. A millionth of the atoms can multiply the carrier count many-fold, because pure silicon has very few intrinsic carriers. Doping attacks the carrier SUPPLY, which is the bottleneck."
+    }
+  ]
+}

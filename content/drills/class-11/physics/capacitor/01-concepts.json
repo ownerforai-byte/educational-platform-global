@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Capacitor (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "capacitor",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-cap11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "What a capacitor stores",
+      "question": "Does a capacitor store charge or energy? Be precise.",
+      "solution": "Strictly, it stores ENERGY (½CV²) in the electric field between the plates; the NET charge added is zero — the two plates hold +Q and −Q, equal and opposite. 'Storing charge' is loose language for separating charge. The field between the plates is where the energy actually sits."
+    },
+    {
+      "id": "drill-cap11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Dielectric raises capacitance",
+      "question": "Why does inserting a dielectric between the plates increase capacitance?",
+      "solution": "The dielectric's molecules polarise: their induced/surface charges create an internal field opposing the applied one, reducing the net field by factor K (dielectric constant). Lower field for the same free charge means lower potential difference — and C = Q/V rises by factor K. The dielectric weakens the field the plates' charges create."
+    },
+    {
+      "id": "drill-cap11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Series vs parallel capacitors",
+      "question": "Capacitors combine oppositely to resistors: series capacitors give LESS capacitance, parallel give MORE. Explain both with the physics.",
+      "solution": "Parallel: all plates share the same V, charges add — Q = (C₁+C₂)V, so capacitances ADD (more plate area effectively). Series: the same charge Q flows through each (induced charges), voltages add — V = Q(1/C₁ + 1/C₂), so 1/C_total = 1/C₁ + 1/C₂ and the combination is smaller than the smallest. Voltage divides in series; charge adds in parallel."
+    },
+    {
+      "id": "drill-cap11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Energy — battery vs isolated charge",
+      "question": "A capacitor charged by a battery then DISCONNECTED: what happens to its energy if you pull the plates apart? What if the battery stays connected?",
+      "solution": "Disconnected: Q is fixed; pulling apart increases V (= Q/C, C falls), so U = Q²/2C RISES — you do work against the attraction. Connected: V is fixed by the battery; C falls, Q = CV falls, and U = ½CV² FALLS — the extra energy returns to the battery. Which quantity is held fixed decides the answer."
+    },
+    {
+      "id": "drill-cap11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why capacitors block DC",
+      "question": "Why does a capacitor pass no steady current in a DC circuit but appear to 'pass' AC?",
+      "solution": "Charge can only accumulate on the plates, not cross the gap: once V_capacitor = V_source, current stops — DC is blocked after the transient. AC keeps reversing polarity, so the plates charge and discharge each half-cycle — current flows in the wires continuously even though no charge crosses the dielectric. The plates' changing charge IS the 'current through' the capacitor."
+    }
+  ]
+}

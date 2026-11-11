@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Recent Trends in Physics (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "recent-trends-in-physics",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-rt11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Photovoltaic effect",
+      "question": "How does a solar cell convert light to electricity, and why is a p–n junction essential?",
+      "solution": "Photons with energy above the gap excite electrons from valence to conduction band, creating electron–hole pairs. The p–n junction's built-in electric field sweeps electrons to the n-side and holes to the p-side, separating the pairs before they recombine — that separation drives current through the external circuit. Light creates carriers; the junction sorts them."
+    },
+    {
+      "id": "drill-rt11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Nanotechnology — why size changes properties",
+      "question": "Why do gold nanoparticles appear red or purple instead of gold, and what general principle does this illustrate?",
+      "solution": "At nanometre scale, a material's properties stop depending only on composition: quantum confinement shifts electron energy levels, and surface effects dominate (most atoms sit at the surface). Nanoparticles' plasmon resonance absorbs particular wavelengths — hence the colour shift. At small size, geometry and quantum effects join chemistry in determining behaviour."
+    },
+    {
+      "id": "drill-rt11-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Superconductivity",
+      "question": "What defines a superconductor, and why is the Meissner effect more than just 'zero resistance'?",
+      "solution": "A superconductor has exactly ZERO electrical resistance below a critical temperature. The Meissner effect goes further: it EXPELS magnetic fields from its interior — an active property, not just perfect conduction (a perfect conductor would trap existing fields). This is what enables magnetic levitation and MRI magnets."
+    },
+    {
+      "id": "drill-rt11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Semiconductor devices — the diode's one-way gate",
+      "question": "Why does a p–n junction diode conduct in one direction only?",
+      "solution": "Forward bias (p to +) shrinks the depletion region and lowers the barrier — majority carriers flood across, current flows. Reverse bias widens the depletion region and raises the barrier — only a tiny leakage flows until breakdown. The junction's asymmetric barrier is the one-way valve."
+    },
+    {
+      "id": "drill-rt11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "LED vs filament bulb efficiency",
+      "question": "Why does an LED produce far more light per watt than a filament bulb?",
+      "solution": "A filament bulb heats a metal to ~2500 °C and emits a broad thermal spectrum — most energy leaves as invisible infrared heat. An LED emits photons directly from electron–hole recombination across a chosen gap: nearly all the electrical energy goes into visible photons of a selected colour. Direct quantum emission vs thermal radiation is the efficiency gap."
+    }
+  ]
+}

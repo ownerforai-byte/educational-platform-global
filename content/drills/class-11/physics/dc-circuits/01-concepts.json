@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — DC Circuits (Class 11 Physics)",
+  "subject": "physics",
+  "unitSlug": "dc-circuits",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-dc11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Ohm's law is a material statement",
+      "question": "Why is Ohm's law V = IR not a definition of resistance but a statement about certain materials?",
+      "solution": "Ohm's law claims R stays CONSTANT as V and I vary — true only for ohmic conductors (metals at constant temperature). Diodes, lamps (heating filament) and electrolytes are non-ohmic: their V–I curve bends. Defining R = V/I is always possible; Ohm's law is the claim that this ratio doesn't change."
+    },
+    {
+      "id": "drill-dc11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Series vs parallel — the formulas",
+      "question": "Resistances combine oppositely to capacitors: series resistances ADD, parallel resistances give less than the smallest. Explain each with current/voltage logic.",
+      "solution": "Series: the same current must pass through each, voltages add — V = I(R₁+R₂), resistances add. Parallel: all branches share the same V, currents add — I = V(1/R₁ + 1/R₂), so 1/R = 1/R₁ + 1/R₂ and the total is smaller than either branch (more paths = easier flow). Fixed quantity: current in series, voltage in parallel."
+    },
+    {
+      "id": "drill-dc11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Kirchhoff's junction rule = charge conservation",
+      "question": "State Kirchhoff's two rules and identify the conservation law each expresses.",
+      "solution": "Junction rule: ΣI_in = ΣI_out at any node — charge cannot accumulate at a point, so charge conservation. Loop rule: ΣΔV = 0 around any closed loop — a charge returning to its start has zero net energy change, so energy conservation. The rules are bookkeeping for the two conserved quantities."
+    },
+    {
+      "id": "drill-dc11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Internal resistance",
+      "question": "A battery reads 12.0 V open-circuit but 11.5 V while driving a load. Explain the difference and define terminal voltage.",
+      "solution": "The 12.0 V is the emf (no current, no internal drop). Driving current I, the battery's own resistance r drops Ir internally: terminal voltage V = ε − Ir = 11.5 V. The 'missing' 0.5 V heats the battery itself. Measuring both lets you extract r = (ε − V)/I."
+    },
+    {
+      "id": "drill-dc11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Power — maximum transfer condition",
+      "question": "Why does a load extract maximum power when its resistance equals the battery's internal resistance, even though that wastes half the energy?",
+      "solution": "P_load = ε²R/(R+r)²: increasing R from 0 raises P (more voltage across the load) until R = r, beyond which the falling current dominates and P declines. At R = r, half the power heats the battery — efficiency is only 50%. Maximum POWER transfer and maximum EFFICIENCY are different goals; matching is for power, high R is for efficiency."
+    }
+  ]
+}
