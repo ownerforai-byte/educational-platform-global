@@ -90,28 +90,28 @@ describe("visitor platform chat", () => {
     postGuide.mockReset();
   });
 
-  it("credits Ravikisan and advertises platform questions only", () => {
+  it("introduces Veer AI without volunteering the creator's name", () => {
     render(<HomePublic />);
     const chat = within(screen.getByRole("region", { name: "Chat with AI" }));
-    expect(chat.getByText(/Ravikisan is its founder and owner/)).toBeInTheDocument();
-    expect(chat.getByText(/Platform questions only/)).toBeInTheDocument();
-    expect(chat.getByPlaceholderText("Ask about this platform")).toHaveAttribute("maxLength", "500");
-    expect(chat.queryByText(/Ask me anything/)).toBeNull();
+    expect(chat.queryByText(/Ravikisan/)).toBeNull();
+    expect(chat.getByText(/Quick answers/)).toBeInTheDocument();
+    expect(chat.getByPlaceholderText("Ask me anything")).toHaveAttribute("maxLength", "500");
     expect(chat.getByRole("button", { name: "Send" })).toBeDisabled();
   });
 
-  it("submits a platform question and shows its reply", async () => {
-    postGuide.mockResolvedValue({ reply: "Ravikisan is the founder and owner of this platform." });
+  it("names the creator only when the visitor asks who created the platform", async () => {
+    const reply = "Ravikisan created this platform. He built it in around three months while continuing his studies.";
+    postGuide.mockResolvedValue({ reply });
     render(<HomePublic />);
     const chat = within(screen.getByRole("region", { name: "Chat with AI" }));
-    fireEvent.change(chat.getByRole("textbox"), { target: { value: "Who owns this platform?" } });
+    fireEvent.change(chat.getByRole("textbox"), { target: { value: "Who created this platform?" } });
     fireEvent.click(chat.getByRole("button", { name: "Send" }));
-    expect(postGuide).toHaveBeenCalledWith("Who owns this platform?");
-    expect(await chat.findByText("Ravikisan is the founder and owner of this platform.")).toBeInTheDocument();
+    expect(postGuide).toHaveBeenCalledWith("Who created this platform?");
+    expect(await chat.findByText(reply)).toBeInTheDocument();
   });
 
-  it("shows the platform-only redirection for an unrelated question", async () => {
-    const reply = "I can help only with Ravikisan's platform. Sign in and use Veer for academic questions.";
+  it("answers an unrelated question briefly instead of redirecting", async () => {
+    const reply = "Gravity is the pull between masses; on Earth it accelerates falling objects at about 9.8 m/s².";
     postGuide.mockResolvedValue({ reply });
     render(<HomePublic />);
     const chat = within(screen.getByRole("region", { name: "Chat with AI" }));
