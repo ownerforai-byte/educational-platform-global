@@ -27,6 +27,8 @@ import {
 import type { WebSearchResult } from "../ai/search-engine";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
 import { withFigureToolInstruction, resolveFiguresInText } from "../ai/image-gen";
+import { isDiagramRequest } from "../ai/figure-conditions";
+import { fetchDiagramLinks, formatGraphLinksBlock, type DiagramLink } from "../ai/diagram-search";
 import { detectRoughInput, ROUGH_REDFLAG_REPLY } from "../ai/profanity-guard";
 import { buildCitations, formatCitations, type AnswerCitation } from "../ai/citations";
 import { openSseChannel, streamAnswerToStudent, type SseChannel, type StreamState } from "./ai-stream";
@@ -198,14 +200,27 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       .filter((m) => m.content && m.content !== lastUser)
       .map((m) => m.content.slice(0, 600))
       .join(" \n ");
-    let baseContext = await buildProfessorContext(lastUser, conversationTail, tier);
+    // Owner 2026-11-10: a drawing/graph request streams IMMEDIATELY — no
+    // hidden draft pass ("start writing … no thinking for long time"). The
+    // figure lane draws in the background while the prose types itself out.
+    const diagramRequest = isDiagramRequest(lastUser);
+    const upgrade = !diagramRequest && shouldUpgradeAcademic(lastUser, conversationTail);
+    // The end-of-answer graph links are the SAME real files the model draws
+    // from, fetched alongside the context so they add no extra wait.
+    const [contextBase, graphLinks] = await Promise.all([
+      buildProfessorContext(lastUser, conversationTail, tier),
+      diagramRequest || upgrade
+        ? fetchDiagramLinks(lastUser)
+        : Promise.resolve([] as DiagramLink[]),
+    ]);
+    let baseContext = contextBase;
     if (images.length) baseContext += `\n\n${imageInstruction(images.length)}`;
     // Figure tool: when enabled the model may draw one live figure at the end
     // of its answer (see image-gen.ts) — the instruction explains the fence.
     // Console rules (pure Nepali / grammar) go LAST — after the figure tool —
     // so they are the final word on language/scope.
     const professorContext = [
-      appendConsoleRules(withFigureToolInstruction(baseContext), consoleId),
+      appendConsoleRules(withFigureToolInstruction(baseContext, lastUser), consoleId),
       // Console-specific prose is untrusted with respect to the verified-tier
       // boundary; restate the server-selected limit last for every request.
       answerTierRules(tier),
@@ -214,7 +229,6 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     messages = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
     // Academic answers are rebuilt in a second pass; only that pass is visible.
-    const upgrade = shouldUpgradeAcademic(lastUser, conversationTail);
     let answerSuffix = "";
     // Grounding citations: name the exact note / PYQ the answer was retrieved
     // from. Computed only for academic answers (the retrieval is local + cheap,
@@ -222,6 +236,12 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // never breaks an answer). Casual chat gets no citations.
     let citations: AnswerCitation[] = [];
     let verifiedPapers: WebSearchResult[] = [];
+    if (diagramRequest) {
+      // Internal note links for the drawing too — the student asked for the
+      // graph links "from internal note and web … at last".
+      citations = buildCitations(lastUser);
+      answerSuffix = `${formatCitations(citations)}${formatGraphLinksBlock(graphLinks)}`;
+    }
     if (upgrade) {
       channel?.send({ phase: "drafting", label: "Preparing a first draft…" });
       const [draft, research, related] = await Promise.all([
@@ -232,7 +252,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       verifiedPapers = research.papers;
       citations = buildCitations(lastUser);
       const citationBlock = formatCitations(citations);
-      answerSuffix = `${related}${formatResearchPaperReferences(research.papers)}${citationBlock}`;
+      answerSuffix = `${related}${formatResearchPaperReferences(research.papers)}${citationBlock}${formatGraphLinksBlock(graphLinks)}`;
       const language = consoleId === "nepali" ? "Write the whole answer in Nepali, preserving the original question verbatim." : "";
       messages = upgradeMessages(lastUser, draft, research.context, language, conversationTail, images, tier);
     }

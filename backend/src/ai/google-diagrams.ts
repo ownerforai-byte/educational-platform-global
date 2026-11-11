@@ -138,7 +138,16 @@ export function parseGoogleImages(
     });
   }
 
-  return out;
+  // Owner 2026-11-10: "the most detailed image from google" — the largest
+  // canvas wins (stable: equal resolution keeps Google's own ranking).
+  return out
+    .map((image, index) => ({ image, index }))
+    .sort(
+      (a, b) =>
+        b.image.width * b.image.height - a.image.width * a.image.height ||
+        a.index - b.index,
+    )
+    .map((entry) => entry.image);
 }
 
 /**
@@ -159,6 +168,9 @@ export async function fetchGoogleDiagrams(
   const url =
     `${GOOGLE_ENDPOINT}?key=${encodeURIComponent(key)}&cx=${encodeURIComponent(cx)}` +
     `&searchType=image&safe=active&num=${Math.min(Math.max(limit * 3, 3), 10)}` +
+    // Owner 2026-11-10: the reference figure is always ENGLISH, whatever
+    // language the wider web holds — lr restricts results to English pages.
+    `&lr=lang_en&hl=en` +
     `&q=${encodeURIComponent(query)}`;
 
   const res = await fetch(url, {
@@ -185,6 +197,7 @@ export function formatGoogleDiagramBlock(google: GoogleDiagram[]): string {
     "every fact must still come from the official allowlist (CDC / NEB textbooks / dictionaries).",
     "Draw your own accurate, fully-labelled figure from what they show; never embed these URLs,",
     "never treat them as syllabus truth, and never copy a wrong or unlabelled detail.",
+    "The platform itself appends the verified reference links at the end of the answer — you never list or embed them.",
   ];
   for (const image of google) {
     const host = image.page ? hostOf(image.page) : hostOf(image.url);

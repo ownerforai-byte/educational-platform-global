@@ -108,6 +108,28 @@ describe("parseGoogleImages — only real, image-typed, relevant results", () =>
     expect(images).toHaveLength(1);
     expect(images[0].url).toBe("https://school.example/plate.png");
   });
+
+  it("ranks the most detailed (largest) image first — owner 2026-11-10", () => {
+    const small = item({ link: "https://x.test/small.png", image: { width: 400, height: 300, contextLink: "" } });
+    const large = item({ link: "https://x.test/large.png", image: { width: 2400, height: 1600, contextLink: "" } });
+    const medium = item({ link: "https://x.test/medium.png", image: { width: 1200, height: 800, contextLink: "" } });
+    const images = parseGoogleImages({ items: [small, large, medium] }, terms);
+    expect(images.map((i) => i.url)).toEqual([
+      "https://x.test/large.png",
+      "https://x.test/medium.png",
+      "https://x.test/small.png",
+    ]);
+  });
+
+  it("keeps Google's ranking for equal-resolution images (stable sort)", () => {
+    const first = item({ link: "https://x.test/a.png" });
+    const second = item({ link: "https://x.test/b.png" });
+    const images = parseGoogleImages({ items: [first, second] }, terms);
+    expect(images.map((i) => i.url)).toEqual([
+      "https://x.test/a.png",
+      "https://x.test/b.png",
+    ]);
+  });
 });
 
 describe("helpers", () => {
@@ -160,6 +182,9 @@ describe("fetchGoogleDiagrams — the request we actually send", () => {
     expect(url).toContain("safe=active");
     expect(url).toContain("key=test-key");
     expect(url).toContain("cx=test-cx");
+    // Owner 2026-11-10: the reference figure is always English.
+    expect(url).toContain("lr=lang_en");
+    expect(url).toContain("hl=en");
     expect(images).toHaveLength(1);
   });
 

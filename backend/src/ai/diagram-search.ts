@@ -30,6 +30,7 @@ import {
   fetchGoogleDiagrams,
   formatGoogleDiagramBlock,
   googleDiagramsEnabled,
+  hostOf,
   type GoogleDiagram,
 } from "./google-diagrams";
 
@@ -265,29 +266,7 @@ export function formatDiagramBlock(images: DiagramImage[]): string {
 export async function fetchDiagramContext(question: string, limit = DIAGRAM_LIMIT): Promise<string> {
   if (!diagramSearchEnabled() || !question.trim()) return "";
   try {
-    let images: DiagramImage[] = [];
-    try {
-      images = await fetchDiagrams(question, limit, { drawingOnly: true });
-      if (!images.length) images = await fetchDiagrams(question, limit);
-    } catch (err) {
-      console.warn("[DiagramSearch] Commons unavailable:", err instanceof Error ? err.message : err);
-    }
-
-    // Optional second source (owner 2026-10-02): Google Images, handed over as
-    // VISUAL REFERENCE only (key-gated; silent without credentials).
-    let google: GoogleDiagram[] = [];
-    if (googleDiagramsEnabled()) {
-      try {
-        google = await fetchGoogleDiagrams(
-          buildDiagramQuery(question),
-          questionTerms(question),
-          limit,
-        );
-      } catch (err) {
-        console.warn("[GoogleDiagrams] unavailable:", err instanceof Error ? err.message : err);
-      }
-    }
-
+    const { commons: images, google } = await fetchDiagramSources(question, limit);
     if (!images.length && !google.length) return "";
     if (images.length) {
       console.log(
@@ -300,4 +279,92 @@ export async function fetchDiagramContext(question: string, limit = DIAGRAM_LIMI
     console.warn("[DiagramSearch] unavailable:", err instanceof Error ? err.message : err);
     return "";
   }
+}
+
+/** Both sources for one question — shared by the context block and the links. */
+async function fetchDiagramSources(
+  question: string,
+  limit: number,
+): Promise<{ commons: DiagramImage[]; google: GoogleDiagram[] }> {
+  let images: DiagramImage[] = [];
+  try {
+    images = await fetchDiagrams(question, limit, { drawingOnly: true });
+    if (!images.length) images = await fetchDiagrams(question, limit);
+  } catch (err) {
+    console.warn("[DiagramSearch] Commons unavailable:", err instanceof Error ? err.message : err);
+  }
+
+  // Optional second source (owner 2026-10-02): Google Images, handed over as
+  // VISUAL REFERENCE only (key-gated; silent without credentials).
+  let google: GoogleDiagram[] = [];
+  if (googleDiagramsEnabled()) {
+    try {
+      google = await fetchGoogleDiagrams(
+        buildDiagramQuery(question),
+        questionTerms(question),
+        limit,
+      );
+    } catch (err) {
+      console.warn("[GoogleDiagrams] unavailable:", err instanceof Error ? err.message : err);
+    }
+  }
+  return { commons: images, google };
+}
+
+/** One verified graph/diagram link for the end-of-answer reference list. */
+export interface DiagramLink {
+  url: string;
+  label: string;
+  source: "commons" | "google";
+}
+
+/**
+ * Owner 2026-11-10: replies send the graph links "at last". The same real
+ * files the model drew from, as a verified list the PLATFORM appends — never
+ * model-invented URLs. Best-effort: any failure resolves to [].
+ */
+export async function fetchDiagramLinks(
+  question: string,
+  limit = DIAGRAM_LIMIT,
+): Promise<DiagramLink[]> {
+  if (!diagramSearchEnabled() || !question.trim()) return [];
+  try {
+    const { commons, google } = await fetchDiagramSources(question, limit);
+    const links: DiagramLink[] = commons.map((image) => ({
+      url: image.url,
+      label: image.file
+        .replace(/^file:/i, "")
+        .replace(/\.[a-z0-9]+$/i, "")
+        .replace(/[_-]+/g, " ")
+        .trim() || "Diagram",
+      source: "commons" as const,
+    }));
+    for (const image of google) {
+      links.push({ url: image.url, label: image.title || "Diagram", source: "google" });
+    }
+    return links;
+  } catch (err) {
+    console.warn("[DiagramSearch] links unavailable:", err instanceof Error ? err.message : err);
+    return [];
+  }
+}
+
+/**
+ * The end-of-answer graph reference block. Pure and exported — the wording is
+ * a contract. Links are the verified file URLs only, escaped for markdown.
+ */
+export function formatGraphLinksBlock(links: DiagramLink[]): string {
+  if (!links.length) return "";
+  const seen = new Set<string>();
+  const lines: string[] = [];
+  for (const link of links) {
+    if (seen.has(link.url) || lines.length >= 5) continue;
+    seen.add(link.url);
+    const label = link.label.replace(/[\r\n[\]<>`]/g, " ").replace(/\s+/g, " ").trim().slice(0, 80) || "Diagram";
+    const url = link.url.replace(/[()]/g, (char) => (char === "(" ? "%28" : "%29"));
+    const host = hostOf(link.url);
+    lines.push(`- [${label}](<${url}>)${host ? ` — via ${host}` : ""}`);
+  }
+  if (!lines.length) return "";
+  return `\n\n**Graphs & diagrams**\n${lines.join("\n")}`;
 }

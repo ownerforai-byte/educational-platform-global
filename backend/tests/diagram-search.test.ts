@@ -6,8 +6,10 @@ import {
   buildDiagramQuery,
   diagramSearchEnabled,
   fetchDiagramContext,
+  fetchDiagramLinks,
   fetchDiagrams,
   formatDiagramBlock,
+  formatGraphLinksBlock,
   parseCommonsImages,
   plainText,
   questionTerms,
@@ -293,4 +295,144 @@ describe("fetchDiagramContext — best effort, never a broken reply", () => {
     expect(context).toContain("https://upload.wikimedia.org/");
     expect(context).toContain("File:Nephron.svg");
   }, 30_000);
+});
+
+describe("fetchDiagramLinks — the verified end-of-answer reference list", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+    delete process.env.DIAGRAM_SEARCH;
+    delete process.env.GOOGLE_CSE_API_KEY;
+    delete process.env.GOOGLE_CSE_CX;
+  });
+
+  it("is silent in a test run unless asked for, and for an empty question", async () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+    expect(await fetchDiagramLinks("draw the nephron")).toEqual([]);
+    process.env.DIAGRAM_SEARCH = "on";
+    expect(await fetchDiagramLinks("   ")).toEqual([]);
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("returns the real Commons files as links with clean labels", async () => {
+    process.env.DIAGRAM_SEARCH = "on";
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () =>
+        new Response(
+          JSON.stringify(commonsPayload([page("File:Nephron_structure.svg", 1)])),
+          { status: 200 },
+        ),
+      ),
+    );
+
+    const links = await fetchDiagramLinks("draw the nephron diagram");
+
+    expect(links).toHaveLength(1);
+    expect(links[0].source).toBe("commons");
+    expect(links[0].url).toContain("https://upload.wikimedia.org/");
+    // File: prefix, extension and underscores are cleaned for the reader.
+    expect(links[0].label).toBe("Nephron structure");
+  });
+
+  it("adds the Google reference images after the Commons files", async () => {
+    process.env.DIAGRAM_SEARCH = "on";
+    process.env.GOOGLE_CSE_API_KEY = "test-key";
+    process.env.GOOGLE_CSE_CX = "test-cx";
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string) => {
+        const target = String(url);
+        if (target.includes("googleapis.com")) {
+          return new Response(
+            JSON.stringify({
+              items: [
+                {
+                  title: "Labelled nephron diagram",
+                  link: "https://example.edu/img/nephron.png",
+                  snippet: "Structure of a nephron",
+                  mime: "image/png",
+                  image: {
+                    contextLink: "https://example.edu/nephron",
+                    width: 1200,
+                    height: 800,
+                  },
+                },
+              ],
+            }),
+            { status: 200 },
+          );
+        }
+        return new Response(
+          JSON.stringify(commonsPayload([page("File:Nephron.svg", 1)])),
+          { status: 200 },
+        );
+      }),
+    );
+
+    const links = await fetchDiagramLinks("draw the nephron diagram");
+
+    expect(links.map((l) => l.source)).toEqual(["commons", "google"]);
+    expect(links[1].label).toBe("Labelled nephron diagram");
+    expect(links[1].url).toBe("https://example.edu/img/nephron.png");
+  });
+
+  it("resolves to [] — never throws — when the network is down", async () => {
+    process.env.DIAGRAM_SEARCH = "on";
+    vi.stubGlobal("fetch", vi.fn(async () => {
+      throw new Error("network down");
+    }));
+    await expect(fetchDiagramLinks("draw the nephron")).resolves.toEqual([]);
+  });
+});
+
+describe("formatGraphLinksBlock — the end-of-answer reference wording", () => {
+  const link = (over: Partial<{ url: string; label: string; source: "commons" | "google" }> = {}) => ({
+    url: "https://upload.wikimedia.org/wikipedia/commons/full/Nephron.svg",
+    label: "Nephron",
+    source: "commons" as const,
+    ...over,
+  });
+
+  it("is silent when there is nothing to reference", () => {
+    expect(formatGraphLinksBlock([])).toBe("");
+  });
+
+  it("lists verified links with credit, separated from the answer body", () => {
+    const block = formatGraphLinksBlock([link()]);
+    expect(block.startsWith("\n\n")).toBe(true);
+    expect(block).toContain("**Graphs & diagrams**");
+    expect(block).toContain(
+      "- [Nephron](<https://upload.wikimedia.org/wikipedia/commons/full/Nephron.svg>) — via upload.wikimedia.org",
+    );
+  });
+
+  it("de-duplicates by URL and never lists more than five links", () => {
+    const block = formatGraphLinksBlock([
+      link(),
+      link(),
+      link({ url: "https://example.edu/a.png", label: "A", source: "google" }),
+      link({ url: "https://example.edu/b.png", label: "B", source: "google" }),
+      link({ url: "https://example.edu/c.png", label: "C", source: "google" }),
+      link({ url: "https://example.edu/d.png", label: "D", source: "google" }),
+      link({ url: "https://example.edu/e.png", label: "E", source: "google" }),
+    ]);
+    const lines = block.split("\n").filter((line) => line.startsWith("- ["));
+    expect(lines).toHaveLength(5);
+    expect(block).toContain("[Nephron]");
+    expect(block).not.toContain("[E]");
+  });
+
+  it("escapes markdown-breaking characters in labels and URLs", () => {
+    const block = formatGraphLinksBlock([
+      link({
+        url: "https://example.edu/a(1).png",
+        label: "Ray [diagram]\nwith `code` and <tags>",
+      }),
+    ]);
+    expect(block).toContain("](<https://example.edu/a%281%29.png>)");
+    expect(block).toContain("[Ray diagram with code and tags]");
+    expect(block).not.toContain("`");
+    expect(block).not.toContain("<tags>");
+  });
 });

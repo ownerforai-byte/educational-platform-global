@@ -2,9 +2,11 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
 /**
- * DIAGRAM HUB smoke (owner 2026-10-25): the drawing room must render its
- * composer + subject chips, and a streamed reply must arrive through the
- * shared MathMarkdown pipeline — the student sees a figure, never raw code.
+ * DIAGRAM HUB smoke (owner 2026-10-25, trained 2026-11-10): the drawing room
+ * must render its composer + subject chips, and a streamed reply must arrive
+ * through the shared MathMarkdown pipeline — the figure is drawn in the
+ * BACKGROUND (imageStart/imageSuccess events) and the student sees a picture,
+ * never raw code.
  */
 
 vi.mock("next/navigation", () => ({
@@ -22,10 +24,21 @@ vi.mock("@/lib/api/ai", () => ({
   saveChatHistory: (...args: unknown[]) => saveChatHistoryMock(...args),
 }));
 
+vi.mock("@/lib/puter-image", () => ({
+  drawFigureWithPuter: vi.fn(async () => null),
+}));
+
 import { DiagramStudio } from "@/components/ai/diagram-studio";
 
+const HEART_SVG =
+  "<svg viewBox=\"0 0 100 100\"><g><title>Left atrium | Receives oxygenated blood</title><circle cx='50' cy='50' r='10'/></g></svg>";
+
+/** Prose types out first; the figure lands later as a background-draw event. */
 async function* fakeStream() {
-  yield "```svg Labelled human heart — chambers and vessels\n<svg viewBox=\"0 0 100 100\"><g><title>Left atrium | Receives oxygenated blood</title><circle cx='50' cy='50' r='10'/></g></svg>\n```";
+  yield "Labelled human heart — chambers and vessels.";
+  yield { imageStart: 1, prompt: "Labelled human heart, chambers and vessels", caption: "Human heart" };
+  yield { imageSuccess: 1, svg: HEART_SVG, caption: "Human heart" };
+  yield { done: true };
 }
 
 beforeEach(() => {
@@ -66,6 +79,9 @@ describe("DiagramStudio", () => {
     expect(payload[0].role).toBe("system");
     expect(payload[0].content).toContain("DIAGRAM HUB");
     expect(payload[0].content).toContain("TRANSLATE EVERY LABEL TO ENGLISH");
+    // Background drawing, never code on screen.
+    expect(payload[0].content).toContain("veer-image");
+    expect(payload[0].content).toContain("NEVER WRITE CODE ON SCREEN");
 
     await waitFor(() => {
       // The figure renders inline with hover labels: each part keeps its
@@ -76,6 +92,10 @@ describe("DiagramStudio", () => {
     // Never raw code: the fence compiles away — no <pre><code> block remains.
     expect(document.querySelector("figure.edu-visual pre")).toBeNull();
     await waitFor(() => expect(saveChatHistoryMock).toHaveBeenCalledTimes(1));
+    // The saved turn carries the finished figure, so history re-renders it.
+    const savedTurn = saveChatHistoryMock.mock.calls[0][1] as { role: string; content: string }[];
+    expect(savedTurn[1].content).toContain("```svg");
+    expect(savedTurn[1].content).toContain("Left atrium");
     expect(screen.queryByRole("alert")).toBeNull();
   });
 

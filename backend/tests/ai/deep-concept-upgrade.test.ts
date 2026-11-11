@@ -9,6 +9,8 @@ const mocks = vi.hoisted(() => ({
   searchEnabled: false,
   searchResults: [] as Array<{ title: string; link: string; snippet: string; displayLink: string }>,
   rows: [] as Array<{ user_id: string; session: string; role: string; content: string; created_at?: string }>,
+  diagramLinks: [] as Array<{ url: string; label: string; source: string }>,
+  contexts: [] as string[],
 }));
 
 vi.mock("../../src/db/supabase", () => ({
@@ -37,7 +39,15 @@ vi.mock("../../src/ai/search-engine", () => ({
     searchAsContext: async () => mocks.searchEnabled ? "[REAL-TIME INTERNET SEARCH RESULTS]" : "",
   }),
 }));
-vi.mock("../../src/ai/diagram-search", () => ({ DIAGRAM_TIMEOUT_MS: 10, fetchDiagramContext: async () => "" }));
+vi.mock("../../src/ai/diagram-search", () => ({
+  DIAGRAM_TIMEOUT_MS: 10,
+  fetchDiagramContext: async () => "",
+  fetchDiagramLinks: async () => mocks.diagramLinks,
+  formatGraphLinksBlock: (links: Array<{ url: string; label: string }>) =>
+    links.length
+      ? `\n\n**Graphs & diagrams**\n${links.map((link) => `- [${link.label}](<${link.url}>)`).join("\n")}`
+      : "",
+}));
 vi.mock("../../src/ai/curriculum-retrieval", async (original) => {
   const actual = await original<typeof import("../../src/ai/curriculum-retrieval")>();
   return { ...actual, buildCurriculumContext: () => "" };
@@ -45,7 +55,7 @@ vi.mock("../../src/ai/curriculum-retrieval", async (original) => {
 vi.mock("../../src/ai/prompts", () => ({
   answerTierRules: () => "verified tier rules",
   buildProfessorContext: async () => "teacher context",
-  appendConsoleRules: (context: string) => context,
+  appendConsoleRules: (context: string) => { mocks.contexts.push(context); return context; },
   withProfessorContext: (messages: unknown[]) => messages,
 }));
 vi.mock("../../src/ai/service", () => ({ createAIService: () => ({
@@ -97,6 +107,8 @@ beforeEach(() => {
   mocks.rows.length = 0;
   mocks.searchEnabled = false;
   mocks.searchResults.length = 0;
+  mocks.diagramLinks.length = 0;
+  mocks.contexts.length = 0;
   mocks.chat.mockReset().mockResolvedValueOnce("Raw draft.").mockResolvedValue("Upgraded answer.");
   mocks.stream.mockReset().mockImplementation(async function* () { yield "Upgraded answer."; });
 });
@@ -253,6 +265,68 @@ describe("deep concept upgrade", () => {
     expect(body).toContain("semanticscholar.org/search?q=");
     expect(body.lastIndexOf("**Original research paper:**")).toBeGreaterThan(
       body.indexOf("Upgraded answer."),
+    );
+  });
+  it("streams a drawing request at once — no draft pass — and closes with the graph links", async () => {
+    // Owner 2026-11-10: drawing questions start writing immediately (no hidden
+    // upgrade draft), carry the syllabus condition guide, and end with the
+    // verified graph links before the final research-paper link.
+    process.env.AGNES_API_KEY = "test-key";
+    mocks.diagramLinks.push({
+      url: "https://upload.wikimedia.org/wikipedia/commons/full/Velocity_time_graph.svg",
+      label: "Velocity time graph",
+      source: "commons",
+    });
+    try {
+      const res = await post("/chat", {
+        stream: true,
+        session: "current",
+        messages: [{ role: "user", content: "Draw the v-t graph for a body in free fall" }],
+      });
+      const body = await res.text();
+      expect(res.status).toBe(200);
+      // The stream is the FIRST and ONLY AI call — no draft pass to wait for.
+      expect(mocks.chat).not.toHaveBeenCalled();
+      expect(mocks.stream).toHaveBeenCalledTimes(1);
+      // The figure-tool instruction + matched condition guide ride in the
+      // professor context (captured via appendConsoleRules).
+      const context = mocks.contexts.at(-1) ?? "";
+      expect(context).toContain("NEVER WRITE CODE ON SCREEN");
+      expect(context).toContain("[SYLLABUS CONDITION GUIDE");
+      expect(context).toContain("free fall (v = gt");
+      expect(body).toContain("Upgraded answer.");
+      expect(body).not.toContain("Raw draft.");
+      expect(body).toContain("**Graphs & diagrams**");
+      expect(body).toContain("Velocity time graph");
+      expect(body.indexOf("**Graphs & diagrams**")).toBeGreaterThan(
+        body.indexOf("Upgraded answer."),
+      );
+      expect(body.lastIndexOf("**Original research paper:**")).toBeGreaterThan(
+        body.indexOf("**Graphs & diagrams**"),
+      );
+    } finally {
+      delete process.env.AGNES_API_KEY;
+    }
+  });
+  it("answers a non-streaming drawing request in one pass with citations and graph links", async () => {
+    mocks.chat.mockReset().mockResolvedValue("The v-t graph is a straight line through the origin.");
+    mocks.diagramLinks.push({
+      url: "https://example.edu/vt.png",
+      label: "Free fall v-t graph",
+      source: "google",
+    });
+    const res = await post("/chat", {
+      messages: [{ role: "user", content: "Draw the v-t graph for a body in free fall" }],
+    });
+    const json = await res.json() as { response: string; citations: unknown[] };
+    expect(res.status).toBe(200);
+    expect(mocks.chat).toHaveBeenCalledTimes(1);
+    expect(json.response).toContain("straight line through the origin");
+    expect(Array.isArray(json.citations)).toBe(true);
+    expect(json.response).toContain("**Graphs & diagrams**");
+    expect(json.response).toContain("[Free fall v-t graph](<https://example.edu/vt.png>)");
+    expect(json.response.lastIndexOf("**Original research paper:**")).toBeGreaterThan(
+      json.response.indexOf("**Graphs & diagrams**"),
     );
   });
   it.each([

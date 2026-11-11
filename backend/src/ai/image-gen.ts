@@ -35,6 +35,7 @@ import {
   FIGURE_ARCHETYPE_GUIDE,
   classifyFigureKind,
 } from "./academic-figures";
+import { conditionGuideFor } from "./figure-conditions";
 
 // ── config ────────────────────────────────────────────────────────────────────
 
@@ -440,16 +441,14 @@ export const FIGURE_TOOL_INSTRUCTION = [
   `MANDATORY SEARCH & INTERACTIVE LABELLING (OWNER LAW 2026-10-03):`,
   `Never produce random, artistic, or unlabelled images — random images are strictly useless for academic study.`,
   `When an academic concept needs a visual (apparatus, anatomy, ray/circuit diagram, cycle, curve, geometry):`,
-  `1. SEARCH MANDATORY FROM GOOGLE / ATTACHED DIAGRAMS: Consult Google Images and attached reference diagram files to get the exact idea, structure, orientation, and official textbook labels.`,
-  `2. DRAW THE DIAGRAM WITH COMPLETE LABELLING: Prefer drawing the diagram directly using the \`\`\`svg fence on a 900x640 canvas so lines and text are razor-sharp. Run leader lines from every part to legible text labels.`,
-  `3. INTERACTIVE LABELS: Wrap every labelled part in its own <g> tag with an informative <title>:`,
-  `   <g><title>Part Name | Mechanism & Function | Exam Significance</title>...shapes, leader line, text label...</g>`,
-  `   The platform automatically provides an interactive interface opening on hover and click for every single label!`,
-  `4. If an image generation brief is emitted, place exactly this fenced block at the VERY END of your answer (after all text):`,
+  `1. SEARCH MANDATORY FROM GOOGLE / ATTACHED DIAGRAMS: Consult Google Images and attached reference diagram files to get the exact idea, structure, orientation, and official textbook labels. Every label you draw is in ENGLISH, whatever language the sources used.`,
+  `2. DRAW IN THE BACKGROUND, NEVER WRITE CODE ON SCREEN (OWNER LAW 2026-11-10): do NOT write SVG markup or any code in your reply — the student must see a picture, never code. Emit the drawing brief below; the platform's figure lane draws the complete labelled vector figure in the background and renders it live (every part hoverable).`,
+  `3. INTERACTIVE LABELS: the figure lane wraps every labelled part in its own <g> with an informative <title>Part Name | Mechanism & Function | Exam Significance</title>, so name every part the examiner marks in your brief.`,
+  `4. Emit exactly this fenced block at the VERY END of your answer (after all text):`,
   `\`\`\`${FIGURE_FENCE}`,
   `one short English line (max 120 characters) describing a technical textbook schematic with clear labels and leader lines.`,
   `\`\`\``,
-  `Figure rules: at most ONE figure per answer; write the instruction as a plain technical drawing brief, never random art; prefer the attached real diagram files and vector SVG drawings.`,
+  `Figure rules: at most ONE figure per answer; write the instruction as a plain technical drawing brief, never random art; prefer the attached real diagram files as the structural reference. For physics/maths topics name the exact standard case(s) to draw (object position, motion type, process, sign case) — the platform attaches the syllabus condition guide for the topic.`,
 ].join("\n");
 
 /**
@@ -475,12 +474,19 @@ NEPALI — वर्णमाला charts classifying स्वर/व्यञ
 Universal drawing law for all six subjects: label every part an examiner marks; give units on every axis; point arrows only in the physically/chemically correct direction; keep notation standard (italic genus species, SI units, IUPAC); and never invent a label or detail the source does not show.`;
 
 /** Append the figure-tool instruction to the professor context when enabled. */
-export function withFigureToolInstruction(context: string): string {
+export function withFigureToolInstruction(context: string, question = ""): string {
   if (!imageGenEnabled()) return context;
   // The archetype guide is shared with the vector figure writer
   // (ai/figure-draw.ts) and the chat's svg law (ai/deep-answer.ts), so a
   // PAINTED figure and a DRAWN figure follow the same twelve shapes and the
-  // same hover contract.
-  const instruction = `${FIGURE_TOOL_INSTRUCTION}\n\n${SUBJECT_DIAGRAM_GUIDE}\n\n${FIGURE_ARCHETYPE_GUIDE}`;
+  // same hover contract. The matched syllabus conditions (owner 2026-11-10)
+  // teach the exact standard cases for physics/maths topics.
+  const conditions = conditionGuideFor(question);
+  const instruction = [
+    FIGURE_TOOL_INSTRUCTION,
+    SUBJECT_DIAGRAM_GUIDE,
+    FIGURE_ARCHETYPE_GUIDE,
+    ...(conditions ? [conditions] : []),
+  ].join("\n\n");
   return context ? `${context}\n\n${instruction}` : instruction;
 }

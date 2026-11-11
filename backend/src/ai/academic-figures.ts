@@ -209,6 +209,8 @@ UNIVERSAL LAW for all twelve: label every part an examiner can name; wrap each l
 
 // ── the vector writer's brief ─────────────────────────────────────────────────
 
+import { conditionGuideFor } from "./figure-conditions";
+
 /** Subject detected from the request, used to sharpen the brief. */
 export function subjectOfFigure(request: string): string {
   const t = (request ?? "").toLowerCase();
@@ -235,6 +237,7 @@ export function buildFigureBrief(input: {
   const subject = subjectOfFigure(request);
   const archetype = FIGURE_ARCHETYPES[kind];
   const level = input.classLevel?.trim() || "NEB Class 11/12";
+  const conditions = conditionGuideFor(request);
 
   return [
     `Draw ONE exam-grade academic figure for this ${level}${subject ? ` ${subject}` : ""} request:`,
@@ -263,6 +266,7 @@ export function buildFigureBrief(input: {
     "- life-cycle stages carry their ploidy where the syllabus marks it; process steps carry the enzyme/condition on the arrow;",
     "- standard notation only (SI units, IUPAC names, italic genus/species);",
     "- draw only what the syllabus shows — never invent a part, a value or a label that does not exist.",
+    ...(conditions ? ["", conditions] : []),
   ].join("\n");
 }
 
