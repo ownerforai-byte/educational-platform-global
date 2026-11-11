@@ -517,7 +517,7 @@ RULES:
 
       // Owner 2026-10-27: every AI surface — including question generation —
       // follows the ANSWER GUIDE (valid by a human, natural, full of idea).
-      const user = (req as Partial<AuthedRequest>).user;
+      const user = await getUserFromRequest(req);
       const tier = aiSparkTierFor(user);
       const systemPrompt = `${systemPromptBody}\n\n${ANSWER_GUIDE_RULES}\n\n${answerTierRules(tier)}`;
 

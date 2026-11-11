@@ -4,24 +4,113 @@
   "topicSlug": "function-domain-range",
   "topicTitle": "Function: Domain and Range",
   "relevance": 100,
-  "notes": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
   "animation3D": "algebra",
   "motionGraphics": "algebra",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Function: Domain and Range covers essential principles and applications.",
-  "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [],
-  "examShortTricks": [],
-  "examNotes": [],
-  "mcs": [],
-  "importantConcepts": [],
-  "importantTasks": [],
+  "notes": [
+    "**Definition.** For f: A → B, the domain is A (every admissible input) and the range is { f(x) : x ∈ A }, always a subset of the codomain B. A rule without its domain does not yet define a function.",
+    "**Polynomials.** Every polynomial is defined for all real x, so f(x) = x² − 3x + 2 has domain ℝ. Completing the square gives f(x) = (x − 3/2)² − 1/4, so its least value is −1/4 and the range is [−1/4, ∞).",
+    "**Rational functions.** f(x) = (x + 1)/(x − 2) is undefined at x = 2, so Dom f = ℝ ∖ {2}. Solving y = (x + 1)/(x − 2) for x gives x = (2y + 1)/(y − 1), which needs y ≠ 1, hence Range f = ℝ ∖ {1}.",
+    "**Even roots.** √(g(x)) requires g(x) ≥ 0. For f(x) = √(9 − x²) the condition 9 − x² ≥ 0 gives −3 ≤ x ≤ 3, and the square root then runs from 0 at x = ±3 up to 3 at x = 0, so Range f = [0, 3].",
+    "**Root in a denominator.** 1/√(x² − 4) needs x² − 4 > 0, not ≥ 0, because a zero denominator is also forbidden; the domain is (−∞, −2) ∪ (2, ∞). This is the single most common domain error in exams.",
+    "**Logarithms.** ln(g(x)) requires g(x) > 0 with base positive and different from 1. So f(x) = ln(x − 1) has domain (1, ∞); since ln maps (0, ∞) onto ℝ, its range is all of ℝ.",
+    "**Composites.** For (f ∘ g)(x) = f(g(x)), x must lie in Dom g AND g(x) must lie in Dom f. With f(x) = √x and g(x) = x − 4, the composite needs x − 4 ≥ 0, giving domain [4, ∞).",
+    "**Range by inversion.** Write y = f(x), solve for x in terms of y, then keep only those y for which the solution is real and lies in the domain. Horizontal asymptotes usually appear as the excluded y value.",
+    "**Range on a closed interval.** A continuous function on [a, b] attains its extremes; evaluate f at both endpoints and at every stationary point where f′(x) = 0, then take the smallest and largest results.",
+    "**Codomain is not the range.** f: ℝ → ℝ with f(x) = x² has codomain ℝ but range [0, ∞), so it is not onto. Shrinking the codomain to [0, ∞) makes the same rule surjective.",
+    "**One-to-one check.** f(x) = x² is not injective on ℝ because f(2) = f(−2) = 4, but on [0, ∞) it is injective and therefore invertible with inverse √x.",
+    "**Exam method.** List exclusions first (zero denominator, negative even root, non-positive log argument), intersect the resulting sets, and only then attempt the range; sketching the curve is a reliable cross-check."
+  ],
+  "keyPoints": [
+    "Domain exclusions",
+    "Range by inversion",
+    "Composite domains",
+    "Codomain versus range"
+  ],
+  "summary": "The domain is the set of inputs for which a real-valued formula is defined; the range is the set of values the function actually produces. Finding a domain means excluding zero denominators, negative even roots and non-positive logarithm arguments; finding a range means solving y = f(x) back for x or bounding the expression.",
+  "importantStatements": [
+    "A real-valued formula defines a function only after its domain is stated.",
+    "If f is continuous on a closed interval, its range on that interval is a closed interval.",
+    "For an invertible f, the range of f equals the domain of f⁻¹."
+  ],
+  "importantNotes": [
+    "A denominator that contains an even root imposes a strict inequality, not a non-strict one.",
+    "The range is a subset of the codomain; equality is exactly the surjectivity condition.",
+    "Two functions with the same formula but different domains are different functions."
+  ],
+  "examShortTricks": [
+    "For (ax + b)/(cx + d), the range excludes a/c, the ratio of leading coefficients, and the domain excludes −d/c.",
+    "For √(quadratic), solve the quadratic inequality first; the range then follows from the vertex value.",
+    "To test injectivity quickly, sketch a horizontal line: more than one intersection means not one-to-one."
+  ],
+  "importantConcepts": [
+    "Domain",
+    "Range",
+    "Codomain",
+    "Injective and surjective maps"
+  ],
+  "formulas": [
+    "f: A → B;  Dom f = A;  Range f = { f(x) : x ∈ A } ⊆ B",
+    "f(x) = (ax + b)/(cx + d):  Dom f = ℝ ∖ {−d/c},  Range f = ℝ ∖ {a/c}",
+    "√(g(x)) requires g(x) ≥ 0;  1/√(g(x)) requires g(x) > 0",
+    "ln(g(x)) requires g(x) > 0"
+  ],
+  "examples": [
+    "Find the domain and range of f(x) = √(4 − x). Condition: 4 − x ≥ 0 ⇒ x ≤ 4, so Dom f = (−∞, 4]. Since √ returns non-negative values and grows without bound as x → −∞, Range f = [0, ∞).",
+    "Find the range of f(x) = 2x/(x − 3). Put y = 2x/(x − 3) ⇒ y(x − 3) = 2x ⇒ x(y − 2) = 3y ⇒ x = 3y/(y − 2), which exists only for y ≠ 2. Range f = ℝ ∖ {2}."
+  ],
+  "practiceQuestions": [
+    "State the domain and range of f(x) = 1/(x² − 9).",
+    "Find the range of f(x) = √(x² + 1) and justify why it has no upper bound.",
+    "For f(x) = ln(2 − x) and g(x) = √x, determine the domain of g ∘ f."
+  ],
+  "confusion": [
+    "Confusing codomain with range: f: ℝ → ℝ, f(x) = |x| has codomain ℝ but range [0, ∞).",
+    "Writing x² − 4 ≥ 0 for 1/√(x² − 4); equality must be excluded because the denominator would be zero."
+  ],
+  "practice": [
+    "Sketch y = |x − 2| and read off its domain and range from the graph.",
+    "Build one function whose domain is ℝ ∖ {1, 2} and verify each exclusion."
+  ],
+  "universalFacts": [
+    "Every polynomial of odd degree with real coefficients has range ℝ.",
+    "The image of an interval under a continuous real function is again an interval."
+  ],
+  "specialNotes": [
+    "When a question says 'the function f is defined on ℝ', the domain has already been fixed for you; do not re-derive it.",
+    "Restricting the domain can make a non-injective function invertible, which is how sin x acquires arcsin x on [−π/2, π/2]."
+  ],
+  "examNotes": [
+    "NEB questions usually award one mark for the domain condition and one for solving the resulting inequality; show both steps.",
+    "Always state the range as a set or interval, not as an inequality alone."
+  ],
+  "importantTasks": [
+    "Tabulate domain and range for six standard functions",
+    "Solve three range-by-inversion problems"
+  ],
+  "mcs": [
+    {
+      "question": "The domain of f(x) = 1/√(x² − 4) is",
+      "options": [
+        "[−2, 2]",
+        "ℝ ∖ {−2, 2}",
+        "(−∞, −2) ∪ (2, ∞)",
+        "[−2, 2] ∖ {0}"
+      ],
+      "answer": "C",
+      "explanation": "The root requires x² − 4 ≥ 0, and the denominator excludes equality, so |x| > 2."
+    },
+    {
+      "question": "For f: ℝ → ℝ with f(x) = x², the range is",
+      "options": [
+        "ℝ",
+        "[0, ∞)",
+        "(0, ∞)",
+        "[−1, ∞)"
+      ],
+      "answer": "B",
+      "explanation": "Squares of real numbers are never negative and every non-negative number is attained."
+    }
+  ],
+  "visualType": "function-domain-range",
   "duplicateType": 1
 }

@@ -153,6 +153,36 @@ describe("proxy per-IP request budget", () => {
     expect(pages.every((s) => s === 200)).toBe(true);
   });
 
+  it("does not spend the page budget on service-worker precache or fetch() traffic", () => {
+    // Chromium labels cache.add()/fetch() with `sec-fetch-dest: empty` while a
+    // top-level navigation carries `document`. One SW activate() precaches
+    // ~40 dotless routes; charging those to the page budget made `/401` answer
+    // with plain-text "Too many requests" in the 2026-11 E2E smoke run.
+    const ip = { "x-real-ip": "203.0.113.16" };
+    const background = {
+      ...ip,
+      accept: "*/*",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+    };
+
+    expect(requestStatuses(40, "/home", background).every((s) => s === 200)).toBe(true);
+
+    // The student's own navigations still get the entire 120-request budget.
+    const document = { ...DOCUMENT, ...ip, "sec-fetch-dest": "document" };
+    expect(requestStatuses(120, "/home", document).every((s) => s === 200)).toBe(true);
+    expect(statusFor("/home", document)).toBe(429);
+  });
+
+  it("still caps background fetches, because their shape is client-supplied", () => {
+    const codes = requestStatuses(601, "/home", {
+      "x-real-ip": "203.0.113.17",
+      "sec-fetch-dest": "empty",
+    });
+    expect(codes.slice(0, 600).every((s) => s === 200)).toBe(true);
+    expect(codes[600]).toBe(429);
+  });
+
   it("does not spend the page budget on Next link prefetches", () => {
     // A real browser fetches every in-viewport Link as `?_rsc=<tree>` (verified
     // against a production `next start` capture). Next strips its internal

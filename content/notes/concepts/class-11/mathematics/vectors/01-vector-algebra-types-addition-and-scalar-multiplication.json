@@ -4,44 +4,117 @@
   "topicSlug": "vector-algebra",
   "topicTitle": "Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors",
   "relevance": 100,
-  "notes": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
   "animation3D": "vectors",
   "motionGraphics": "vectors",
-  "examples": [
-    "Application of Vector Algebra — Types, Addition and Scalar Multiplication"
+  "notes": [
+    "**Scalars and vectors.** A scalar has magnitude only (mass, temperature, time); a vector has magnitude and direction (displacement, velocity, force). Speed is scalar, velocity is vector.",
+    "**Representation.** A vector from A to B is AB = b − a with Cartesian form (x₂ − x₁, y₂ − y₁, z₂ − z₁); its magnitude is |a| = √(x² + y² + z²).",
+    "**Equal vectors.** Two vectors are equal when they have the same magnitude AND the same direction; their initial points may differ, so position does not matter.",
+    "**Unit vector.** â = a/|a| gives a vector of length 1 along a. The standard basis is i = (1,0,0), j = (0,1,0), k = (0,0,1), and a = xi + yj + zk.",
+    "**Zero and negative.** The zero vector 0 has zero magnitude and no definite direction; −a has the same length as a and the opposite direction, with a + (−a) = 0.",
+    "**Triangle law.** If a and b are placed head-to-tail, their sum a + b runs from the start of a to the end of b; in components (a₁+b₁, a₂+b₂, a₃+b₃).",
+    "**Parallelogram law.** With a and b drawn from a common origin, a + b is the diagonal of the parallelogram they span; this is the same sum as the triangle law.",
+    "**Laws of addition.** a + b = b + a (commutative), (a + b) + c = a + (b + c) (associative), a + 0 = a, and a + (−a) = 0.",
+    "**Scalar multiplication.** k a has magnitude |k|·|a|; it points along a for k > 0, opposite for k < 0, and is the zero vector for k = 0.",
+    "**Distributive laws.** k(a + b) = ka + kb and (k + m)a = ka + ma; these make vectors a real vector space, so ordinary algebra applies with care about direction.",
+    "**Triangle inequality.** |a + b| ≤ |a| + |b|, with equality only when a and b point the same way; |a − b| ≥ ||a| − |b|| gives the reverse form.",
+    "**Worked example.** a = (3, −1, 2), b = (−2, 4, 1): a + b = (1, 3, 3), 2a − 3b = (6, −2, 4) − (−6, 12, 3) = (12, −14, 1), and |a| = √(9+1+4) = √14.",
+    "**Direction ratios and cosines.** For a = (x, y, z), the direction cosines are l = x/|a|, m = y/|a|, n = z/|a|, satisfying l² + m² + n² = 1.",
+    "**Exam caution.** Vectors cannot be added to scalars, and |a + b| is not |a| + |b| in general; compute the sum first, then its magnitude."
   ],
-  "practiceQuestions": [
-    "Q1. Define Vector Algebra — Types, Addition and Scalar Multiplication.",
-    "Q3. Problem on Vector Algebra — Types, Addition and Scalar Multiplication."
-  ],
-  "formulas": [],
   "keyPoints": [
-    "Application of Vector Algebra — Types, Addition and Scalar Multiplication",
-    "Connection of Vector Algebra — Types, Addition and Scalar Multiplication to other topics"
+    "Vector types",
+    "Triangle and parallelogram laws",
+    "Scalar multiplication",
+    "Direction cosines"
   ],
-  "summary": "Vector Algebra — Types, Addition and Scalar Multiplication covers essential principles and applications.",
-  "specialNotes": [],
+  "summary": "A vector carries magnitude and direction; equal vectors share both, unit vectors have magnitude one, and the zero vector has none. Vectors add by the triangle or parallelogram law (component-wise), and multiplying by a scalar rescales magnitude, reversing direction when the scalar is negative.",
   "importantStatements": [
-    "Statement 1: Definition of Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors",
-    "Statement 2: Theorem related to Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors",
-    "Statement 3: Condition for Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors to be valid",
-    "Statement 4: Principle governing Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors",
-    "Statement 5: Corollary or consequence of Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors"
+    "Vector addition is commutative and associative.",
+    "For any vector a and scalar k, |k a| = |k| |a|.",
+    "The direction cosines of any non-zero vector satisfy l² + m² + n² = 1."
   ],
   "importantNotes": [
-    "Vector Algebra — Types, Addition and Scalar Multiplication is based on fundamental principles."
+    "Equal vectors need equal magnitude and direction, not the same starting point.",
+    "The zero vector has no direction, so never quote an angle for it.",
+    "Unit vectors i, j, k are mutually perpendicular and each has length one."
   ],
   "examShortTricks": [
-    "Recall the formula for Vector Algebra — Types, Addition and Scalar Multiplication."
+    "Add or subtract vectors component-wise first; draw the triangle only as a visual check.",
+    "To get a unit vector quickly, divide each component by the magnitude in one step.",
+    "For a point dividing a segment, use the section formula instead of solving simultaneous equations."
   ],
-  "examNotes": [],
-  "mcs": [],
   "importantConcepts": [
-    "Definition and significance of Vector Algebra — Types, Addition and Scalar Multiplication."
+    "Scalar",
+    "Vector",
+    "Unit vector",
+    "Zero vector",
+    "Direction cosines"
   ],
-  "importantTasks": [],
+  "formulas": [
+    "|a| = √(x² + y² + z²)",
+    "a + b = (a₁+b₁, a₂+b₂, a₃+b₃)",
+    "k a = (k a₁, k a₂, k a₃);  |k a| = |k| |a|",
+    "â = a/|a|;  l² + m² + n² = 1",
+    "|a + b| ≤ |a| + |b|"
+  ],
+  "examples": [
+    "Given a = (1, 2, −1) and b = (3, 0, 2), find 2a − b and its magnitude. 2a = (2, 4, −2); 2a − b = (−1, 4, −4); magnitude = √(1 + 16 + 16) = √33.",
+    "Find the unit vector along a = (2, −2, 1). |a| = √(4+4+1) = 3, so â = (2/3, −2/3, 1/3) and its direction cosines are exactly those three numbers."
+  ],
+  "practiceQuestions": [
+    "If a = (1, −2, 3) and b = (4, 0, −1), compute a + b, 3a − 2b and |a − b|.",
+    "Find the direction cosines of the vector joining (1, 2, 3) to (4, 6, 3).",
+    "Determine k so that (k, 2, 1) is a unit vector."
+  ],
+  "confusion": [
+    "Writing |a + b| = |a| + |b|; this holds only when a and b are parallel and point the same way.",
+    "Treating a zero component as an undefined direction ratio; it simply means the direction cosine in that axis is zero."
+  ],
+  "practice": [
+    "Draw the parallelogram for two chosen vectors and verify the diagonal equals their component-wise sum.",
+    "Verify the distributive law k(a + b) = ka + kb numerically for k = −2."
+  ],
+  "universalFacts": [
+    "The set of all 3-D real vectors with these two operations is a vector space over ℝ.",
+    "Any vector can be written uniquely as a linear combination of i, j and k."
+  ],
+  "specialNotes": [
+    "Position vectors are measured from the origin; displacement vectors are differences of position vectors.",
+    "A negative scalar multiple reverses direction, which is why braking is a negative acceleration vector."
+  ],
+  "examNotes": [
+    "Give both magnitude and direction when a question asks for a vector quantity.",
+    "Show component-wise working; examiners award marks for each correct component."
+  ],
+  "importantTasks": [
+    "Compute five vector sums and scalar products",
+    "Find unit vectors for three given vectors"
+  ],
+  "mcs": [
+    {
+      "question": "If a = (1, 2, −2), then |a| is",
+      "options": [
+        "5",
+        "3",
+        "√5",
+        "9"
+      ],
+      "answer": "B",
+      "explanation": "√(1 + 4 + 4) = √9 = 3."
+    },
+    {
+      "question": "For any vectors a and b, |a + b| is always",
+      "options": [
+        "equal to |a| + |b|",
+        "less than or equal to |a| + |b|",
+        "greater than |a| + |b|",
+        "equal to |a| − |b|"
+      ],
+      "answer": "B",
+      "explanation": "This is the triangle inequality; equality holds only for parallel vectors in the same direction."
+    }
+  ],
+  "visualType": "vector-addition",
   "duplicateType": 1
 }

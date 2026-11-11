@@ -4,44 +4,116 @@
   "topicSlug": "cross-product-and-its-applications",
   "topicTitle": "Cross product (vector product) and its applications",
   "relevance": 100,
-  "notes": [],
-  "confusion": [],
-  "practice": [],
-  "universalFacts": [],
   "animation3D": "vectors",
   "motionGraphics": "vectors",
-  "examples": [
-    "Application of Cross Product and Its Applications"
+  "notes": [
+    "**Definition.** a × b = |a||b| sin θ n̂, where θ is the angle from a to b (0 ≤ θ ≤ π) and n̂ is the unit vector given by the right-hand rule, perpendicular to the plane of a and b.",
+    "**Determinant form.** a × b = (a₂b₃ − a₃b₂) i − (a₁b₃ − a₃b₁) j + (a₁b₂ − a₂b₁) k, equivalently the formal determinant with rows i, j, k; a; b.",
+    "**Anti-commutative.** b × a = −(a × b). Swapping the order reverses the direction while preserving magnitude, so the order must always be stated.",
+    "**Worked example.** a = (1, 2, 3), b = (4, 5, 6): a × b = (2·6 − 3·5, 3·4 − 1·6, 1·5 − 2·4) = (−3, 6, −3), and dotting with a gives −3 + 12 − 9 = 0, confirming perpendicularity.",
+    "**Parallel and perpendicular.** a × b = 0 iff a and b are parallel (or one is zero); for perpendicular unit vectors |a × b| = 1, while i × j = k, j × k = i, k × i = j.",
+    "**Area.** The area of the parallelogram with adjacent sides a, b is |a × b|; the area of triangle ABC is ½ |AB × AC|, which is zero exactly when A, B, C are collinear.",
+    "**Scalar triple product.** [a b c] = a · (b × c) is the (signed) volume of the parallelepiped on a, b, c; the tetrahedron's volume is one sixth of it.",
+    "**Coplanarity.** Three vectors are coplanar iff [a b c] = 0. This also gives the condition for four points A, B, C, D to be coplanar via AB, AC, AD.",
+    "**Moment of a force.** The moment (torque) of force F about a point O is M = r × F, where r runs from O to the point of application; |M| = |r||F| sin θ is the turning effect.",
+    "**Unit normal.** n̂ = (a × b)/|a × b| gives a unit normal to the plane containing a and b, used to write the plane's equation in vector form r · n̂ = d.",
+    "**Distributivity.** a × (b + c) = a × b + a × c and (k a) × b = k(a × b); the cross product is NOT associative, so a × (b × c) ≠ (a × b) × c in general.",
+    "**Vector triple product.** a × (b × c) = (a · c) b − (a · b) c, the 'BAC − CAB' identity; it is a vector lying in the plane of b and c.",
+    "**Exam caution.** a × b is a VECTOR, while a · b is a scalar; a mixed expression such as (a × b) · c is valid but a × (b · c) is not defined."
   ],
-  "practiceQuestions": [
-    "Q1. Define Cross Product and Its Applications.",
-    "Q3. Problem on Cross Product and Its Applications."
-  ],
-  "formulas": [],
   "keyPoints": [
-    "Application of Cross Product and Its Applications",
-    "Connection of Cross Product and Its Applications to other topics"
+    "Right-hand rule",
+    "Determinant form",
+    "Area and volume",
+    "Moment of a force"
   ],
-  "summary": "Cross Product and Its Applications covers essential principles and applications.",
-  "specialNotes": [],
+  "summary": "The cross product a × b is a vector perpendicular to both a and b with magnitude |a||b| sin θ, equal to the area of the parallelogram they span. Its determinant form drives area, volume, moment and collinearity calculations throughout Class 11 vector algebra.",
   "importantStatements": [
-    "Statement 1: Definition of Cross product (vector product) and its applications",
-    "Statement 2: Theorem related to Cross product (vector product) and its applications",
-    "Statement 3: Condition for Cross product (vector product) and its applications to be valid",
-    "Statement 4: Principle governing Cross product (vector product) and its applications",
-    "Statement 5: Corollary or consequence of Cross product (vector product) and its applications"
+    "a × b is perpendicular to both a and b.",
+    "|a × b| equals the area of the parallelogram with adjacent sides a and b.",
+    "The scalar triple product vanishes if and only if the three vectors are coplanar."
   ],
   "importantNotes": [
-    "Cross Product and Its Applications is based on fundamental principles."
+    "The cross product is anti-commutative: b × a = −(a × b).",
+    "A zero cross product signals parallel vectors, not necessarily a zero vector.",
+    "Lagrange's identity: |a × b|² + (a · b)² = |a|²|b|²."
   ],
   "examShortTricks": [
-    "Recall the formula for Cross Product and Its Applications."
+    "Compute a × b with the 3 × 3 determinant, then dot it with a and with b as a one-line accuracy check.",
+    "For triangle area use ½|AB × AC|; if the result is zero the three points are collinear.",
+    "Use |a × b| = |a||b| when the vectors are given perpendicular, avoiding component arithmetic."
   ],
-  "examNotes": [],
-  "mcs": [],
   "importantConcepts": [
-    "Definition and significance of Cross Product and Its Applications."
+    "Cross product",
+    "Right-hand rule",
+    "Scalar triple product",
+    "Torque",
+    "Unit normal"
   ],
-  "importantTasks": [],
+  "formulas": [
+    "a × b = |a||b| sin θ n̂",
+    "a × b = (a₂b₃ − a₃b₂, a₃b₁ − a₁b₃, a₁b₂ − a₂b₁)",
+    "Area of parallelogram = |a × b|;  Area of triangle = ½|a × b|",
+    "[a b c] = a · (b × c);  Volume of parallelepiped = |[a b c]|",
+    "M = r × F;  a × (b × c) = (a·c)b − (a·b)c"
+  ],
+  "examples": [
+    "Find the area of the triangle with vertices A(1, 0, 0), B(0, 1, 0), C(0, 0, 1). AB = (−1, 1, 0), AC = (−1, 0, 1); AB × AC = (1, 1, 1), so area = ½√3.",
+    "Find a unit vector perpendicular to both a = (1, 1, 0) and b = (0, 1, 1). a × b = (1, −1, 1), |a × b| = √3, so n̂ = (1, −1, 1)/√3."
+  ],
+  "practiceQuestions": [
+    "Compute a × b for a = (2, −1, 3), b = (1, 4, −2) and verify it is perpendicular to both.",
+    "Find the area of the parallelogram with diagonals (3, 1, −1) and (1, −2, 1).",
+    "Show that (1, 2, 3), (2, 3, 4) and (3, 4, 5) are coplanar."
+  ],
+  "confusion": [
+    "Treating the cross product as commutative; reversing the order negates the result.",
+    "Confusing |a × b| with a · b: the former uses sin θ and is an area, the latter uses cos θ and is a scalar projection."
+  ],
+  "practice": [
+    "Compute three cross products and verify each with a dot-product check.",
+    "Derive the area of a triangle from a cross product for two different vertex orderings."
+  ],
+  "universalFacts": [
+    "The cross product is defined for 3-D vectors (and as a scalar curl in 2-D).",
+    "|a × b|² + (a · b)² = |a|² |b|² holds for all vectors a, b."
+  ],
+  "specialNotes": [
+    "The direction of a × b follows the right-hand rule: curl the fingers from a to b, the thumb gives n̂.",
+    "A plane through a point p with direction vectors u and v has normal u × v and equation (r − p) · (u × v) = 0."
+  ],
+  "examNotes": [
+    "Write the determinant expansion explicitly; sign errors on the j component are the most common loss of marks.",
+    "Include units for area and moment in applied problems."
+  ],
+  "importantTasks": [
+    "Solve four area problems by cross product",
+    "Compute two scalar triple products"
+  ],
+  "mcs": [
+    {
+      "question": "If a and b are parallel non-zero vectors, then a × b equals",
+      "options": [
+        "|a||b|",
+        "the zero vector",
+        "a unit normal",
+        "a · b"
+      ],
+      "answer": "B",
+      "explanation": "sin 0° = 0, so the magnitude is zero; the result is the zero vector, not the scalar 0."
+    },
+    {
+      "question": "For a = (1, 0, 0) and b = (0, 1, 0), a × b is",
+      "options": [
+        "(0, 0, −1)",
+        "(0, 0, 1)",
+        "(1, 0, 0)",
+        "(0, 1, 0)"
+      ],
+      "answer": "B",
+      "explanation": "i × j = k, i.e. (0, 0, 1), consistent with the right-hand rule."
+    }
+  ],
+  "visualType": "cross-product",
   "duplicateType": 1
 }

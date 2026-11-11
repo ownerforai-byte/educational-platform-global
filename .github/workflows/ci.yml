@@ -82,6 +82,23 @@ jobs:
       - run: npm ci
       - run: npm run test:run
 
+  # The backend suite used to run only locally, so stale prompt-contract tests
+  # sat red on main for days while every workflow stayed green. Gate it here
+  # with the same Node version as the frontend job.
+  backend-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - run: npm run test:run --workspace=educational-platform-backend
+
   # Sentry sourcemaps (PHASE 1.2, 2026-10-27): the actual upload happens
   # automatically inside the Vercel production build — @sentry/nextjs reads
   # SENTRY_AUTH_TOKEN/SENTRY_ORG/SENTRY_PROJECT from the Vercel env and pushes

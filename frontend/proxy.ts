@@ -32,6 +32,16 @@ const RATE_LIMIT_MAX = 120;
 // "Too many requests" for pages nobody asked for. Speculative requests are
 // capped rather than exempt because a client can forge their shape.
 const RATE_LIMIT_MAX_PREFETCH = 600;
+/**
+ * Service-worker installs and in-page fetch() calls are labelled
+ * `sec-fetch-dest: empty` by the browser, not `document`. They still get a
+ * bounded budget (their shape is client-supplied, like prefetches), but they
+ * must NOT share the page cap: one `activate()` precaches ~40 dotless routes,
+ * and counting those as student navigations spent the whole minute of budget
+ * before the error-page specs even ran (2026-11 E2E smoke: `/400` loaded,
+ * `/401` answered with plain-text "Too many requests", no error-page markup).
+ */
+const RATE_LIMIT_MAX_FETCH = 600;
 const RATE_LIMIT_MAX_KEYS = 10_000;
 const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
 
@@ -161,6 +171,18 @@ function isDocumentRequest(request: NextRequest) {
   );
 }
 
+/**
+ * Separate the two dotless-GET shapes the browser actually sends. A real
+ * navigation carries `sec-fetch-dest: document`; `cache.add()` in the service
+ * worker and ordinary `fetch()` carry `empty` (verified against Chromium). A
+ * request with NO header is treated as a document, so dropping the header
+ * cannot dodge the page cap.
+ */
+function isBackgroundFetch(request: NextRequest): boolean {
+  const dest = request.headers.get("sec-fetch-dest");
+  return dest !== null && dest !== "document";
+}
+
 function isSpeculativeRequest(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
   // Next strips its own `RSC` / `Next-Router-Prefetch` request headers before
@@ -226,8 +248,13 @@ export function proxy(request: NextRequest) {
     return response;
   }
 
-  if (isDocumentRequest(request) && isRateLimited(`${key}|visit`, RATE_LIMIT_MAX)) {
-    return new NextResponse("Too many requests", { status: 429 });
+  if (isDocumentRequest(request)) {
+    const background = isBackgroundFetch(request);
+    const bucket = background ? `${key}|fetch` : `${key}|visit`;
+    const cap = background ? RATE_LIMIT_MAX_FETCH : RATE_LIMIT_MAX;
+    if (isRateLimited(bucket, cap)) {
+      return new NextResponse("Too many requests", { status: 429 });
+    }
   }
 
   return response;
