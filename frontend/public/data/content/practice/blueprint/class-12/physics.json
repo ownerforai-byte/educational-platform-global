@@ -1,0 +1,185 @@
+{
+  "subject": "physics",
+  "classLevel": "12",
+  "source": "CDC curriculum (syllabus.ts) — specification-grid transcription pending",
+  "totalMarks": 75,
+  "units": [
+    {
+      "unit": "electrostatics",
+      "hours": 10,
+      "marksEstimate": 9,
+      "concepts": [
+        "Coulomb's law and its applications",
+        "Coulomb's law",
+        "its applications",
+        "Electric field",
+        "electric field intensity due to point charges",
+        "line charges",
+        "charged sheets",
+        "Electric potential and potential difference",
+        "Electric potential",
+        "potential difference",
+        "Capacitance",
+        "capacitors parallel plate"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "current-electricity",
+      "hours": 10,
+      "marksEstimate": 9,
+      "concepts": [
+        "Electric current",
+        "drift velocity",
+        "relaxation time",
+        "Ohm's law and its limitations",
+        "Ohm's law",
+        "its limitations",
+        "Resistance",
+        "resistivity temperature dependence",
+        "Series and parallel combination of resistors",
+        "Series",
+        "parallel combination of resistors",
+        "Kirchhoff's laws and their applications"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "magnetism-and-magnetic-effect",
+      "hours": 12,
+      "marksEstimate": 11,
+      "concepts": [
+        "Magnetic field",
+        "magnetic force on moving charges",
+        "Lorentz force",
+        "motion of charged particles in magnetic fields",
+        "Biot-Savart law and its applications",
+        "Biot-Savart law",
+        "its applications straight wire",
+        "circular loop",
+        "solenoid",
+        "Ampere's circuital law and its applications",
+        "Ampere's circuital law",
+        "its applications"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "electromagnetic-induction",
+      "hours": 8,
+      "marksEstimate": 7,
+      "concepts": [
+        "Faraday's laws of electromagnetic induction",
+        "Lenz's law and conservation of energy",
+        "Lenz's law",
+        "conservation of energy",
+        "Self-induction and self-inductance",
+        "Self-induction",
+        "self-inductance",
+        "Mutual induction and mutual inductance",
+        "Mutual induction",
+        "mutual inductance",
+        "Growing and decaying current in LR circuits",
+        "Growing"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "alternating-current",
+      "hours": 8,
+      "marksEstimate": 7,
+      "concepts": [
+        "AC voltage applied to resistor",
+        "inductor",
+        "capacitor",
+        "LC oscillations and resonance",
+        "LC oscillations",
+        "resonance",
+        "LCR series circuit and power factor",
+        "LCR series circuit",
+        "power factor",
+        "Transformer principle types and losses",
+        "Transformer principle",
+        "types"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "ray-optics",
+      "hours": 10,
+      "marksEstimate": 9,
+      "concepts": [
+        "Reflection at plane and curved surfaces mirrors",
+        "Reflection at plane",
+        "curved surfaces mirrors",
+        "Refraction through prisms angle of deviation",
+        "minimum deviation",
+        "Thin lenses lens maker's formula",
+        "power of lens",
+        "Combination of lenses and mirrors",
+        "Combination of lenses",
+        "mirrors",
+        "Optical instruments microscope and telescope",
+        "Optical instruments microscope"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "wave-optics",
+      "hours": 8,
+      "marksEstimate": 7,
+      "concepts": [
+        "Wavefront and Huygens' principle",
+        "Wavefront",
+        "Huygens' principle",
+        "Diffraction of light single slit diffraction",
+        "Polarization Brewster's law and polaroids",
+        "Polarization Brewster's law",
+        "polaroids"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "modern-physics",
+      "hours": 12,
+      "marksEstimate": 11,
+      "concepts": [
+        "Photoelectric effect",
+        "Einstein's photoelectric equation",
+        "De Broglie wavelength and matter waves",
+        "De Broglie wavelength",
+        "matter waves",
+        "Atom Bohr's model and hydrogen spectrum",
+        "Atom Bohr's model",
+        "hydrogen spectrum",
+        "Nucleus binding energy",
+        "nuclear fission",
+        "fusion",
+        "Semiconductors intrinsic"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "communication-systems",
+      "hours": 4,
+      "marksEstimate": 4,
+      "concepts": [
+        "Elements of a communication system",
+        "Modulation amplitude modulation",
+        "frequency modulation",
+        "Bandwidth",
+        "propagation of electromagnetic waves"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    }
+  ]
+}

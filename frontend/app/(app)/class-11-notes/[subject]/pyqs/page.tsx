@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, FileQuestion, ChevronRight } from "lucide-react";
 import { getSubjectSyllabus } from "@/lib/syllabus";
+import { NebGuidance } from "@/components/content/neb-guidance";
 
 export async function generateMetadata({
   params,
@@ -88,6 +89,9 @@ export default async function SubjectPyqsPage({
           ))}
         </div>
       </div>
+
+      {/* Guidance: paper links + blueprint + common mistakes */}
+      <NebGuidance classSlug="class-11-notes" subjectSlug={subject} subjectName={syllabus.name} />
 
       <Link
         href={`/class-11-notes/${subject}`}

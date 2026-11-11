@@ -1,0 +1,163 @@
+{
+  "subject": "english",
+  "classLevel": "12",
+  "examHall": [
+    "In literature answers, tie every point to a quoted phrase or specific incident — generalised praise/condemnation scores the trait but loses the support marks.",
+    "For grammar transformation items, keep the meaning identical — changing tense/meaning while fixing form loses the item.",
+    "In summary/precis writing, count: NEB expects roughly one-third the original with no new information.",
+    "Structure every essay: thesis in the introduction, one point per paragraph with a linking sentence, no new argument in the conclusion.",
+    "For oral/communication items, mark the register (formal/informal/neutral) explicitly in your answer — register is the assessed skill."
+  ],
+  "mistakes": [
+    {
+      "id": "eng12-theme-vs-topic",
+      "topic": "Literary analysis — theme",
+      "wrong": "Stating the topic ('the story is about war') and calling it the theme, or listing themes without evidence.",
+      "why": "The topic is the subject; the theme is the IDEA the text argues about it ('war degrades both victim and victor'). Theme statements need textual support — a bare topic loses the analysis marks.",
+      "fix": "Write the theme as a complete sentence about the idea, then support it with two incidents/quotations. Distinguish topic (subject) from theme (comment on the subject).",
+      "unit": "literary-analysis",
+      "marks": "3-5"
+    },
+    {
+      "id": "eng12-narrator-reliability",
+      "topic": "Point of view & narrator",
+      "wrong": "Attributing the narrator's views to the author, or ignoring first-person bias in a first-person story.",
+      "why": "A first-person narrator reports a limited, possibly biased view; the author may distance themselves from it. Conflating narrator and author loses the point-of-view analysis entirely.",
+      "fix": "Identify the narrative voice (first/third, limited/omniscient), ask what the narrator cannot or will not see, and keep 'the narrator says' separate from 'the text suggests'.",
+      "unit": "literary-analysis",
+      "marks": "2-4"
+    },
+    {
+      "id": "eng12-figurative-naming",
+      "topic": "Figures of speech",
+      "wrong": "Calling every comparison a simile, or identifying a device without explaining its effect.",
+      "why": "Simile uses 'like/as'; metaphor asserts directly; personification gives human traits to non-humans. And the mark scheme pays for the EFFECT (what it adds to meaning), not the label alone.",
+      "fix": "Name the device, quote the line, then write one sentence on its effect ('the metaphor makes the city feel…'). All three parts carry marks.",
+      "unit": "literary-analysis",
+      "marks": "2-3"
+    },
+    {
+      "id": "eng12-transformation-meaning",
+      "topic": "Grammar transformations",
+      "wrong": "Changing meaning while fixing form (e.g. 'No sooner he came than…' missing 'had', or active→passive dropping the agent where it matters).",
+      "why": "Transformation items test form AND meaning preservation; 'No sooner had he come than…' needs the inversion and the auxiliary. A form-only fix that alters meaning scores zero.",
+      "fix": "Learn each transformation's full pattern (no sooner…than, hardly…when, as soon as; active↔passive with agent retention rules), and re-read the result to check the meaning is unchanged.",
+      "unit": "grammar",
+      "marks": "1-2"
+    },
+    {
+      "id": "eng12-conditionals-mix",
+      "topic": "Conditionals",
+      "wrong": "Mixing conditional types ('If I would have known, I will come'), or using 'would' in the if-clause.",
+      "why": "Each conditional type has a fixed pattern: 1st (if + present, will), 2nd (if + past, would), 3rd (if + past perfect, would have). Mixing them changes the meaning and loses the item.",
+      "fix": "Decide the reality level (real future / imaginary present / imaginary past) before writing, then hold the type's pattern exactly; 'would' never appears in the if-clause.",
+      "unit": "grammar",
+      "marks": "1-2"
+    },
+    {
+      "id": "eng12-reported-speech",
+      "topic": "Reported speech",
+      "wrong": "Backshifting the tense but keeping pronouns/time words unchanged ('She said she is coming here tomorrow').",
+      "why": "Reported speech needs THREE simultaneous shifts: tense backshift, pronoun adjustment, and time/place words (tomorrow → the next day, here → there). Missing any one loses the item.",
+      "fix": "Run the three-shift checklist on every reported-speech item: tense, pronouns, time/place adverbials.",
+      "unit": "grammar",
+      "marks": "1-2"
+    },
+    {
+      "id": "eng12-precis-length",
+      "topic": "Summary/precis writing",
+      "wrong": "Writing a precis that is too long, adds commentary, or keeps the original's examples.",
+      "why": "A precis is one-third the length, in your own words, with only the essential points — no opinion, no new examples. Length and content rules are both marked.",
+      "fix": "Draft the original's main points as a list, cut examples and repetition, compress into connected prose at ~1/3 length, and add a title if asked.",
+      "unit": "writing-skills",
+      "marks": "3-5"
+    },
+    {
+      "id": "eng12-paragraph-unity",
+      "topic": "Paragraph & essay organisation",
+      "wrong": "Cramming several unrelated points into one paragraph, or writing a conclusion that introduces a new argument.",
+      "why": "Each paragraph develops ONE point (topic sentence → support → link); a new argument in the conclusion unbalances the essay and loses the organisation band.",
+      "fix": "One point per paragraph, opened by a topic sentence; conclude by synthesising the points already made — never adding.",
+      "unit": "writing-skills",
+      "marks": "3-5"
+    },
+    {
+      "id": "eng12-formal-register",
+      "topic": "Register & tone",
+      "wrong": "Using contractions and slang in a formal report/letter ('a lot of', 'kids', 'don't'), or stiff archaic formality in a speech to peers.",
+      "why": "Register is the assessed skill in writing tasks; mismatched register loses the tone marks even when the content is right.",
+      "fix": "Match register to audience: formal reports/letters — no contractions, full word forms, impersonal tone; speeches to peers — conversational but structured.",
+      "unit": "writing-skills",
+      "marks": "2-3"
+    },
+    {
+      "id": "eng12-oral-fluency",
+      "topic": "Oral communication",
+      "wrong": "Reading a script word-for-word in a speaking task, or answering a discussion prompt with memorised generalities.",
+      "why": "Oral tasks assess interaction: turn-taking, responding to the actual question, natural delivery. A read script shows no interaction and loses the communication marks.",
+      "fix": "Prepare bullet points, not sentences; respond to what was actually asked; use discourse markers ('That's a fair point, but…') to show turn-taking.",
+      "unit": "oral-communication",
+      "marks": "2-4"
+    },
+    {
+      "id": "eng12-one-act-play-structure",
+      "topic": "One-act plays & drama",
+      "wrong": "Analysing a play only through its plot, ignoring stage directions and dialogue as evidence.",
+      "why": "Drama communicates through dialogue, stage directions, setting and dramatic irony; a plot-only answer loses the dramatic-technique marks.",
+      "fix": "Quote stage directions and dialogue as evidence, note dramatic irony where the audience knows more than a character, and link technique to effect.",
+      "unit": "literary-analysis",
+      "marks": "3-5"
+    },
+    {
+      "id": "eng12-comparison-structure",
+      "topic": "Comparative questions",
+      "wrong": "Writing about text A fully, then text B fully, with no linking comparison.",
+      "why": "Comparison questions are marked on the LINKS (similarities/differences made point by point); two parallel summaries earn content marks but lose the comparison marks.",
+      "fix": "Organise by POINT of comparison (theme, character, technique) and treat both texts under each point — 'Both X… whereas Y…'.",
+      "unit": "literary-analysis",
+      "marks": "3-5"
+    }
+  ],
+  "questions": [
+    {
+      "question": "'The story is about migration.' Why does this not answer 'What is the theme of the story?'",
+      "solution": "That is the TOPIC (subject). The theme is the idea the text argues about it, written as a sentence: 'Migration saves the body but exile wounds the identity.' Then support it with two incidents (the protagonist's refusal to speak the home language; the letter never opened). Topic = subject; theme = comment on the subject, with evidence.",
+      "unit": "literary-analysis"
+    },
+    {
+      "question": "A first-person narrator says the protagonist is 'a coward'. Can you take that as the story's judgement?",
+      "solution": "Not directly — a first-person narrator offers a limited, possibly biased view; the author may intend irony or self-revelation (the narrator exposing their own spite). Check what the narrator cannot see and whether other scenes contradict the label. Keep 'the narrator says' separate from 'the text suggests' — conflating them loses the point-of-view marks.",
+      "unit": "literary-analysis"
+    },
+    {
+      "question": "Identify and explain: 'The wind whispered secrets through the pines.'",
+      "solution": "Personification — the wind is given the human act of whispering (and 'secrets' adds intentionality). Effect: the night feels alive, intimate and slightly ominous; nature becomes an active presence rather than a backdrop. Name the device, quote it, state the effect — all three parts carry marks; the label alone earns only one.",
+      "unit": "literary-analysis"
+    },
+    {
+      "question": "Transform: 'As soon as he saw the police, he ran.' → using 'No sooner'.",
+      "solution": "'No sooner had he seen the police than he ran.' Two required changes: inversion with 'had' (No sooner HAD he seen…) and the correlative 'than'. Writing 'No sooner he saw the police than…' loses the auxiliary and the inversion marks. Meaning must stay identical — the transformation tests form, not content.",
+      "unit": "grammar"
+    },
+    {
+      "question": "Fix the conditional: 'If I would have studied, I will pass.'",
+      "solution": "'If I had studied, I would have passed.' This is a third conditional (imaginary past): if + past perfect, would have + past participle. 'Would' never appears in the if-clause, and 'will' cannot report an unreal past. Decide the reality level first (unreal past here), then apply the type's fixed pattern.",
+      "unit": "grammar"
+    },
+    {
+      "question": "Compress a 300-word passage into a precis — state the three rules you must obey.",
+      "solution": "1) Length ≈ one-third of the original (here ~100 words). 2) Own words — no copied sentences, no added opinion or information. 3) Essential points only — examples, repetitions and illustrations are cut, but the argument's logic must survive as connected prose. Add a title if asked. Length and content rules are marked separately.",
+      "unit": "writing-skills"
+    },
+    {
+      "question": "Your report on a school event reads 'loads of kids had a great time'. What is wrong and how do you fix it?",
+      "solution": "Register mismatch: contractions-free formal wording is required in a report — 'A large number of students enjoyed the event.' Formal register rules: no contractions, no slang ('kids' → 'students'), no vague quantifiers ('loads of' → 'a large number of'), impersonal tone. Register is an assessed band; mismatched register loses it regardless of content.",
+      "unit": "writing-skills"
+    },
+    {
+      "question": "Compare how two texts present loneliness — how should the answer be organised?",
+      "solution": "By POINT of comparison, not text-by-text: (1) imagery — both use empty domestic spaces, but A's imagery is warm-nostalgic whereas B's is clinical; (2) narrative distance — A's first-person intimacy vs B's detached third person; (3) resolution. Under each point treat BOTH texts ('Both… whereas…'). Two parallel summaries earn content marks but lose the comparison marks.",
+      "unit": "literary-analysis"
+    }
+  ]
+}

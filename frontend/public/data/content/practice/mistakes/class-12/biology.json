@@ -1,0 +1,163 @@
+{
+  "subject": "biology",
+  "classLevel": "12",
+  "examHall": [
+    "For genetics problems, show the Punnett square AND the phenotypic/genotypic ratio — the ratio alone without the cross loses method marks.",
+    "Name the enzymes at every molecular-biology step (helicase, DNA polymerase, RNA polymerase, ligase, reverse transcriptase) — the marking scheme credits enzyme names.",
+    "In human-physiology diagrams, label the direction of flow (blood, filtrate, food) with arrows; unlabelled flow loses marks.",
+    "Distinguish homologous and analogous organs explicitly when asked — the definition plus one example pair each is the full answer.",
+    "For disease questions, give pathogen name + vector/portal + one control measure; two of three is a half answer."
+  ],
+  "mistakes": [
+    {
+      "id": "bio12-mendel-testcross",
+      "topic": "Mendelian genetics",
+      "wrong": "Reporting a 3:1 ratio for a dihybrid cross, or using 'test cross' and 'back cross' interchangeably.",
+      "why": "Dihybrid F₂ is 9:3:3:1; a test cross crosses F₁ with the RECESSIVE parent (1:1 or 1:1:1:1) while a back cross goes to a parent/individual genetically similar to an ancestor. Both confusions lose the ratio and the definition marks.",
+      "fix": "Compute ratios from the Punnett square every time; define test cross (F₁ × recessive) and back cross (to parental genotype) with one use-case each.",
+      "unit": "heredity-and-evolution",
+      "marks": "3-5"
+    },
+    {
+      "id": "bio12-linkage-recombination",
+      "topic": "Linkage & crossing over",
+      "wrong": "Applying independent assortment to linked genes, or quoting recombination frequency as 'percentage of offspring'.",
+      "why": "Linked genes on the same chromosome do NOT assort independently; recombination frequency = recombinant progeny / TOTAL progeny × 100, and it maps distance (1% = 1 map unit). Both misdefinitions lose the linkage analysis.",
+      "fix": "Check whether genes are linked first; for linked genes compute recombination frequency from the two rarest (recombinant) classes over total, and use it to order genes on the map.",
+      "unit": "heredity-and-evolution",
+      "marks": "3-5"
+    },
+    {
+      "id": "bio12-dna-polymerase-direction",
+      "topic": "DNA replication",
+      "wrong": "Drawing both new strands synthesised continuously, or having DNA polymerase work 3'→5'.",
+      "why": "Polymerase adds only 5'→3', so the lagging strand is made in Okazaki fragments joined by ligase; a bidirectional-continuous drawing loses the fork diagram and the enzyme-role marks.",
+      "fix": "Draw the fork with leading strand continuous (5'→3' toward the fork) and lagging strand in fragments away from it; name helicase (unwinds), polymerase (extends 5'→3'), ligase (seals nicks).",
+      "unit": "heredity-and-evolution",
+      "marks": "3-5"
+    },
+    {
+      "id": "bio12-transcription-vs-replication",
+      "topic": "Transcription & translation",
+      "wrong": "Writing thymine in mRNA, or starting translation at the first nucleotide instead of the start codon.",
+      "why": "RNA uses uracil; translation begins at AUG (start codon) and reads in triplets to a stop codon — reading frame errors change every downstream amino acid and lose the whole protein-synthesis question.",
+      "fix": "Transcribe T→U, then mark the reading frame from AUG before translating; check the triplet count divides evenly to a stop codon.",
+      "unit": "heredity-and-evolution",
+      "marks": "2-4"
+    },
+    {
+      "id": "bio12-codominance-incomplete",
+      "topic": "Beyond Mendel",
+      "wrong": "Calling the F₁ of red × white snapdragon 'red' (complete dominance habit), or mixing codominance with incomplete dominance.",
+      "why": "Incomplete dominance blends (pink F₁); codominance shows BOTH products (AB blood group has both A and B antigens). The distinction is a standard 2-mark definition pair — swapping them loses both.",
+      "fix": "Incomplete dominance = intermediate phenotype (4 o'clock flower, snapdragon); codominance = both alleles expressed distinctly (AB blood, roan cattle). Quote one example each.",
+      "unit": "heredity-and-evolution",
+      "marks": "2-3"
+    },
+    {
+      "id": "bio12-immunity-active-passive",
+      "topic": "Human health & immunity",
+      "wrong": "Calling vaccination 'passive immunity', or writing antibody and antibiotic as interchangeable.",
+      "why": "Vaccination gives ACTIVE immunity (own antibodies made, memory cells formed); passive = ready-made antibodies (antiserum, maternal IgG). Antibiotics act on bacteria, antibodies on antigens — mixing them loses the definition and the application marks.",
+      "fix": "Classify by who makes the antibody and whether memory results: active (vaccine, infection; memory yes), passive (antiserum, colostrum; memory no). Keep antibiotic = antibacterial drug.",
+      "unit": "human-health-and-diseases",
+      "marks": "2-3"
+    },
+    {
+      "id": "bio12-disease-triad",
+      "topic": "Diseases",
+      "wrong": "Naming a disease without its pathogen type, vector or portal of entry (e.g. 'malaria is caused by a virus').",
+      "why": "NEB disease questions mark pathogen, transmission and control separately; a wrong pathogen type (malaria = Plasmodium, a protozoan, via female Anopheles) loses all three bands.",
+      "fix": "For each syllabus disease memorise the triad: pathogen + type, vector/portal, one control measure — and write all three even when only one is asked.",
+      "unit": "human-health-and-diseases",
+      "marks": "2-4"
+    },
+    {
+      "id": "bio12-bt-toxin-target",
+      "topic": "Biotechnology applications",
+      "wrong": "Saying Bt toxin kills insects 'because it is a poison' without the protoxin→toxin activation, or claiming Bt cotton harms humans the same way.",
+      "why": "Bt toxin is an inactive protoxin activated by the insect gut's alkaline pH; human guts are acidic with no receptors — the specificity IS the answer. Missing the mechanism loses the explanation and the safety argument.",
+      "fix": "Write the chain: cry gene → protoxin → alkaline gut solubilises and proteases activate → binds midgut epithelium → cell lysis. Then note the human gut conditions differ.",
+      "unit": "biotechnology-applications",
+      "marks": "2-4"
+    },
+    {
+      "id": "bio12-pcr-enzyme",
+      "topic": "PCR & biotechnology principles",
+      "wrong": "Using normal DNA polymerase in PCR steps, or reversing the anneal/extend order.",
+      "why": "PCR needs thermostable Taq polymerase (denaturation at ~95 °C would denature normal polymerase); the cycle order is denature → anneal primers → extend. Both slips lose the process marks.",
+      "fix": "Name Taq polymerase and its source (Thermus aquaticus), then write the three steps with temperatures in order (≈95 °C, ≈50–60 °C, ≈72 °C).",
+      "unit": "biotechnology-principles",
+      "marks": "2-4"
+    },
+    {
+      "id": "bio12-ecosystem-services",
+      "topic": "Organisms & environment / biodiversity",
+      "wrong": "Confusing in-situ and ex-situ conservation in class-12 contexts (hotspot vs cryopreservation), or calling species richness the same as evenness.",
+      "why": "Biodiversity has two components: richness (number of species) and evenness (relative abundance); hotspots are in-situ priorities by richness + endemism. Mixing them loses the measurement and conservation-strategy marks.",
+      "fix": "Define richness and evenness separately, then file conservation measures: in-situ (biosphere reserves, sacred groves, hotspots), ex-situ (cryopreservation, seed banks, tissue culture).",
+      "unit": "biodiversity-and-conservation",
+      "marks": "2-3"
+    },
+    {
+      "id": "bio12-pollution-biomagnification",
+      "topic": "Environmental issues",
+      "wrong": "Swapping bioaccumulation (within one organism over time) and biomagnification (up the food chain).",
+      "why": "Bioaccumulation = build-up in one organism's tissues over its life; biomagnification = increasing concentration at SUCCESSIVELY higher trophic levels (DDT in birds). The distinction is the definition mark and drives the food-chain question.",
+      "fix": "Anchor each term to its scale: one organism over time vs across trophic levels; quote DDT/eutrophication as the standard example with the affected top predator.",
+      "unit": "environmental-issues",
+      "marks": "2-3"
+    },
+    {
+      "id": "bio12-microbial-antibiotic",
+      "topic": "Microbes in human welfare",
+      "wrong": "Citing antibiotics as produced by bacteria generally, or misattributing the source organism (penicillin = fungus, not bacterium).",
+      "why": "Penicillin comes from Penicillium (a fungus); many antibiotics come from Streptomyces (a bacterium). Attribution is directly marked and anchors the whole microbial-products question.",
+      "fix": "Memorise product–microbe pairs: penicillin–Penicillium notatum (fungus); streptomycin–Streptomyces griseus; citric acid–Aspergillus niger; curd–Lactobacillus.",
+      "unit": "microbes-in-human-welfare",
+      "marks": "1-3"
+    }
+  ],
+  "questions": [
+    {
+      "question": "Two genes sit 12 map units apart on the same chromosome. Why can't you use a 9:3:3:1 Punnett square, and what ratio do you expect?",
+      "solution": "9:3:3:1 assumes independent assortment — genes on DIFFERENT chromosomes. Linked genes travel together except where crossing over separates them; 12 map units means 12% recombination, so the two recombinant classes together make 12% (6% each) and the two parental classes share 88% (44% each) — roughly 7.3:7.3:1:1. Compute from recombination frequency, not independent assortment.",
+      "unit": "heredity-and-evolution"
+    },
+    {
+      "question": "At a replication fork, why is one new strand made in pieces? Name the enzymes that fix the pieces.",
+      "solution": "DNA polymerase can only extend a strand 5'→3', and the two template strands run antiparallel. The leading strand follows the fork continuously; the lagging strand runs away from it, so it must be made in short Okazaki fragments, each started by an RNA primer, then joined by DNA ligase after primers are replaced. Helicase unwinds the fork. Drawing both strands continuous loses the fork diagram and the ligase mark.",
+      "unit": "heredity-and-evolution"
+    },
+    {
+      "question": "A red-flowered snapdragon crossed with white gives pink F₁. Self the F₁ — is this Mendel's 3:1?",
+      "solution": "No — this is incomplete dominance: the heterozygote shows an intermediate phenotype. F₂ is 1 red : 2 pink : 1 white — the genotypic ratio is Mendelian 1:2:1, but the phenotypic ratio matches it because neither allele is fully dominant. Contrast with codominance (both alleles fully expressed, e.g. AB blood), where no blending occurs. Quote one example each — the pair of definitions is the mark.",
+      "unit": "heredity-and-evolution"
+    },
+    {
+      "question": "Is vaccination active or passive immunity? Justify with the memory-cell criterion.",
+      "solution": "Active: the vaccine antigen stimulates the recipient's own B-cells to make antibodies AND memory cells, giving long-lasting protection. Passive immunity (antiserum, maternal IgG across the placenta, colostrum) supplies ready-made antibodies with no memory, so protection is immediate but temporary. The examiner marks the memory-cell distinction — quote it explicitly.",
+      "unit": "human-health-and-diseases"
+    },
+    {
+      "question": "Give the full disease triad for malaria — the three bands the examiner marks.",
+      "solution": "Pathogen: Plasmodium (P. vivax / P. falciparum) — a protozoan parasite, NOT a virus. Transmission: bite of female Anopheles mosquito (vector). Control: destroy mosquito breeding sites, nets/repellents, and antimalarial treatment of patients. Write all three even when only one is asked — the triad structure is how the marking scheme splits the marks.",
+      "unit": "human-health-and-diseases"
+    },
+    {
+      "question": "Why doesn't Bt cotton's toxin harm humans? Give the mechanism, not 'it's natural'.",
+      "solution": "The cry protein from Bacillus thuringiensis is an inactive protoxin. In the ALKALINE insect midgut it dissolves and gut proteases cleave it into the active toxin, which binds midgut epithelial receptors and lyses cells. The human gut is acidic, the protoxin is not activated, and humans lack the binding receptors — specificity by chemistry, not by dose. The activation chain is the mark; 'harmless poison' is not an answer.",
+      "unit": "biotechnology-applications"
+    },
+    {
+      "question": "List the three PCR steps in order with their purpose — and name the enzyme that survives step one.",
+      "solution": "1) Denaturation (~95 °C): the template separates. 2) Primer annealing (~50–60 °C): primers bind the flanking sequences. 3) Extension (~72 °C): Taq polymerase (from Thermus aquaticus) synthesises new strands 5'→3'. Taq survives denaturation because it evolved in hot springs; ordinary polymerase would denature at step 1. Reversing anneal/extend loses the cycle logic mark.",
+      "unit": "biotechnology-principles"
+    },
+    {
+      "question": "DDT concentration rises from water → plankton → fish → bird. Which term is this, and how does it differ from build-up inside one fish?",
+      "solution": "Biomagnification: concentration increases at successively HIGHER trophic levels because the persistent pesticide is not excreted and accumulates in the food chain (top predators like birds suffer eggshell thinning). Bioaccumulation is the build-up within ONE organism's tissues over its lifetime. The scale — one organism vs across the chain — is the distinction the definition mark rides on.",
+      "unit": "environmental-issues"
+    }
+  ]
+}

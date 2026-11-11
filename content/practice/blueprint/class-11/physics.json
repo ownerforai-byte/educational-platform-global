@@ -1,0 +1,471 @@
+{
+  "subject": "physics",
+  "classLevel": "11",
+  "source": "CDC curriculum (syllabus.ts) — specification-grid transcription pending",
+  "totalMarks": 75,
+  "units": [
+    {
+      "unit": "physical-quantities",
+      "hours": 3,
+      "marksEstimate": 2,
+      "concepts": [
+        "Precision and significant figures",
+        "Precision",
+        "significant figures",
+        "Dimensions and uses of dimensional analysis",
+        "Dimensions",
+        "uses of dimensional analysis"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "vectors",
+      "hours": 4,
+      "marksEstimate": 2,
+      "concepts": [
+        "Triangle",
+        "parallelogram",
+        "polygon laws of vectors",
+        "Resolution of vectors",
+        "unit vectors",
+        "Scalar and vector products",
+        "Scalar",
+        "vector products"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "kinematics",
+      "hours": 5,
+      "marksEstimate": 3,
+      "concepts": [
+        "Instantaneous velocity and acceleration",
+        "Instantaneous velocity",
+        "acceleration",
+        "Relative velocity",
+        "Equation of motion",
+        "Motion of a freely falling body",
+        "Projectile motion and its applications",
+        "Projectile motion",
+        "its applications"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "dynamics",
+      "hours": 6,
+      "marksEstimate": 4,
+      "concepts": [
+        "Linear momentum impulse",
+        "Linear momentum",
+        "impulse",
+        "Conservation of linear momentum",
+        "Application of Newton's laws",
+        "Moment torque and equilibrium",
+        "Moment",
+        "torque",
+        "equilibrium",
+        "Solid friction",
+        "laws of solid friction",
+        "their verifications"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "work-energy-and-power",
+      "hours": 6,
+      "marksEstimate": 4,
+      "concepts": [
+        "Work done by a constant force",
+        "a variable force",
+        "Power",
+        "Work-energy theorem",
+        "kinetic",
+        "potential energy",
+        "Conservation of energy",
+        "Conservative and non-conservative forces",
+        "Conservative",
+        "non-conservative forces",
+        "Elastic and inelastic collisions",
+        "Elastic"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "circular-motion",
+      "hours": 6,
+      "marksEstimate": 4,
+      "concepts": [
+        "Angular displacement velocity and acceleration",
+        "Angular displacement",
+        "velocity",
+        "acceleration",
+        "Relation between angular",
+        "linear velocity",
+        "Centripetal acceleration and centripetal force",
+        "Centripetal acceleration",
+        "centripetal force",
+        "Conical pendulum",
+        "Motion in a vertical circle",
+        "Applications of banking"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "gravitation",
+      "hours": 10,
+      "marksEstimate": 6,
+      "concepts": [
+        "Newton's law of gravitation",
+        "Gravitational field strength",
+        "Gravitational potential",
+        "gravitational potential energy",
+        "Variation in value of 'g' due to altitude",
+        "depth",
+        "Centre of mass and centre of gravity",
+        "Centre of mass",
+        "centre of gravity",
+        "Motion of a satellite",
+        "orbital velocity",
+        "time period of the satellite"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "elasticity",
+      "hours": 5,
+      "marksEstimate": 3,
+      "concepts": [
+        "Hooke's law",
+        "force constant",
+        "Stress",
+        "strain",
+        "elasticity",
+        "plasticity",
+        "Elastic modulus",
+        "Young modulus",
+        "bulk modulus",
+        "shear modulus",
+        "Poisson's ratio",
+        "Elastic potential energy"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "heat-and-temperature",
+      "hours": 3,
+      "marksEstimate": 2,
+      "concepts": [
+        "Molecular concept of thermal energy",
+        "heat",
+        "temperature",
+        "cause",
+        "direction of heat flow",
+        "Meaning of thermal equilibrium",
+        "Zeroth law of thermodynamics"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "thermal-expansion",
+      "hours": 4,
+      "marksEstimate": 2,
+      "concepts": [
+        "Linear expansion and its measurement",
+        "Linear expansion",
+        "its measurement",
+        "Cubical expansion",
+        "superficial expansion",
+        "their relation with linear expansion",
+        "Liquid expansion",
+        "absolute",
+        "apparent",
+        "Dulong"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "quantity-of-heat",
+      "hours": 6,
+      "marksEstimate": 4,
+      "concepts": [
+        "Newton's law of cooling",
+        "Measurement of specific heat capacity of solids",
+        "liquids",
+        "Change of phases",
+        "latent heat",
+        "Specific latent heat of fusion and vaporization",
+        "Specific latent heat of fusion",
+        "vaporization",
+        "Measurement of specific latent heat of fusion",
+        "Triple point"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "rate-of-heat-flow",
+      "hours": 5,
+      "marksEstimate": 3,
+      "concepts": [
+        "Conduction",
+        "thermal conductivity",
+        "measurement",
+        "Convection",
+        "Radiation",
+        "ideal radiator",
+        "Black-body radiation",
+        "Stefan-Boltzmann law"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "ideal-gas",
+      "hours": 8,
+      "marksEstimate": 5,
+      "concepts": [
+        "Ideal gas equation",
+        "Molecular properties of matter",
+        "Kinetic-molecular model of an ideal gas",
+        "Derivation of pressure exerted by gas",
+        "Boltzmann constant root mean square speed",
+        "Boltzmann constant",
+        "root mean square speed",
+        "Heat capacities of gases and solids",
+        "Heat capacities of gases",
+        "solids"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "reflection-at-curved-mirror",
+      "hours": 2,
+      "marksEstimate": 1,
+      "concepts": [
+        "Real and virtual images",
+        "Real",
+        "virtual images",
+        "Mirror formula"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "refraction-at-plane-surfaces",
+      "hours": 4,
+      "marksEstimate": 2,
+      "concepts": [
+        "Laws of refraction",
+        "refractive index",
+        "Relation between refractive indices",
+        "Lateral shift",
+        "Total internal reflection"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "refraction-through-prisms",
+      "hours": 4,
+      "marksEstimate": 2,
+      "concepts": [
+        "Minimum deviation condition",
+        "Relation between the angle of prism",
+        "minimum deviation",
+        "refractive index",
+        "Deviation in small-angle prism"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "lenses",
+      "hours": 3,
+      "marksEstimate": 2,
+      "concepts": [
+        "Spherical lenses angular magnification",
+        "Spherical lenses",
+        "angular magnification",
+        "Lens maker's formula",
+        "Power of a lens"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "dispersion",
+      "hours": 3,
+      "marksEstimate": 2,
+      "concepts": [
+        "Pure spectrum and dispersive power",
+        "Pure spectrum",
+        "dispersive power",
+        "Chromatic and spherical aberration",
+        "Chromatic",
+        "spherical aberration",
+        "Achromatism and its applications",
+        "Achromatism",
+        "its applications"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "electric-charges",
+      "hours": 3,
+      "marksEstimate": 2,
+      "concepts": [
+        "Electric charges",
+        "Charging by induction",
+        "Coulomb's law",
+        "force between two point charges",
+        "Force between multiple electric charges"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "electric-field",
+      "hours": 3,
+      "marksEstimate": 2,
+      "concepts": [
+        "Electric field due to point charges",
+        "field lines",
+        "Gauss law",
+        "electric flux",
+        "Application of Gauss law",
+        "field of a charge sphere",
+        "line charge",
+        "charged plane conductor"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "potential-potential-difference-and-potential-energy",
+      "hours": 4,
+      "marksEstimate": 2,
+      "concepts": [
+        "Potential difference",
+        "potential due to a point charge",
+        "potential energy",
+        "electron volt",
+        "Equipotential lines and surfaces",
+        "Equipotential lines",
+        "surfaces",
+        "Potential gradient"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "capacitor",
+      "hours": 5,
+      "marksEstimate": 3,
+      "concepts": [
+        "Capacitance and capacitor",
+        "Capacitance",
+        "capacitor",
+        "Parallel plate capacitor",
+        "Combination of capacitors",
+        "Energy of charged capacitor",
+        "Effect of a dielectric",
+        "polarization",
+        "displacement"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "dc-circuits",
+      "hours": 10,
+      "marksEstimate": 6,
+      "concepts": [
+        "Electric currents",
+        "drift velocity",
+        "its relation with current",
+        "Ohm's law",
+        "electrical resistance",
+        "resistivity",
+        "conductivity",
+        "Current-voltage relations",
+        "ohmic",
+        "non-ohmic resistance",
+        "Resistances in series and parallel",
+        "Resistances in series"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "nuclear-physics",
+      "hours": 4,
+      "marksEstimate": 2,
+      "concepts": [
+        "Nucleus",
+        "discovery of nucleus",
+        "Nuclear density",
+        "mass number",
+        "atomic number",
+        "Atomic mass",
+        "isotopes",
+        "Einstein's mass-energy relation",
+        "Mass defect",
+        "packing fraction",
+        "binding energy per nucleon",
+        "Creation and annihilation"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "solids",
+      "hours": 3,
+      "marksEstimate": 2,
+      "concepts": [
+        "Energy bands in solids",
+        "Difference between metals",
+        "insulators",
+        "semiconductors using band theory",
+        "Intrinsic and extrinsic semiconductors",
+        "Intrinsic",
+        "extrinsic semiconductors"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "recent-trends-in-physics",
+      "hours": 6,
+      "marksEstimate": 4,
+      "concepts": [
+        "Particle physics",
+        "particles",
+        "antiparticles",
+        "quarks baryons",
+        "mesons",
+        "leptons",
+        "Universe",
+        "Big Bang",
+        "Hubble law expansion of the Universe",
+        "Dark matter black hole and gravitational wave",
+        "Dark matter",
+        "black hole"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    }
+  ]
+}

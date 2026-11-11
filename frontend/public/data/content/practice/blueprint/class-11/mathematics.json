@@ -1,0 +1,141 @@
+{
+  "subject": "mathematics",
+  "classLevel": "11",
+  "source": "CDC curriculum (syllabus.ts) — specification-grid transcription pending",
+  "totalMarks": 75,
+  "units": [
+    {
+      "unit": "algebra",
+      "hours": 44,
+      "marksEstimate": 21,
+      "concepts": [
+        "Logic and set",
+        "Logic",
+        "set",
+        "statements",
+        "logical connectives",
+        "truth tables",
+        "theorems based on set operations",
+        "Real numbers",
+        "geometric representation of real numbers",
+        "interval",
+        "absolute value",
+        "domain"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "trigonometry",
+      "hours": 12,
+      "marksEstimate": 6,
+      "concepts": [
+        "Inverse circular functions",
+        "Trigonometric equations and general values",
+        "Trigonometric equations",
+        "general values"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "analytic-geometry",
+      "hours": 20,
+      "marksEstimate": 9,
+      "concepts": [
+        "Straight line",
+        "Pair of straight lines",
+        "general equation of second degree in x",
+        "condition for representing a pair of lines",
+        "homogenous second-degree equation in x",
+        "angle between pair of lines",
+        "bisectors of the angles between pair of lines",
+        "Coordinates in space",
+        "points in space",
+        "distance between two points",
+        "direction cosines",
+        "ratios of a line"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "vectors",
+      "hours": 12,
+      "marksEstimate": 6,
+      "concepts": [
+        "Collinear",
+        "non-collinear vectors",
+        "coplanar",
+        "non-coplanar vectors",
+        "Linear combination of vectors",
+        "linearly dependent",
+        "independent vectors"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "statistics-and-probability",
+      "hours": 12,
+      "marksEstimate": 6,
+      "concepts": [
+        "Measure of dispersion",
+        "standard deviation",
+        "variance",
+        "coefficient of variation",
+        "skewness",
+        "Karl Pearson's coefficient of skewness",
+        "Probability",
+        "independent cases",
+        "mathematical",
+        "empirical definition of probability",
+        "two basic laws of probability"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "calculus",
+      "hours": 48,
+      "marksEstimate": 23,
+      "concepts": [
+        "Limits and continuity",
+        "Limits",
+        "continuity",
+        "limits of a function",
+        "indeterminate forms",
+        "algebraic properties of limits",
+        "basic theorems on limits of algebraic",
+        "trigonometric",
+        "exponential",
+        "logarithmic functions",
+        "Continuity of a function",
+        "types of discontinuity"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "computational-methods-or-mechanics",
+      "hours": 12,
+      "marksEstimate": 6,
+      "concepts": [
+        "Numerical computation",
+        "roots of algebraic",
+        "transcendental equations bisection",
+        "Newton-Raphson method",
+        "Numerical integration",
+        "Trapezoidal rule",
+        "Simpson's rule",
+        "Mechanics",
+        "Statics forces",
+        "resultant forces",
+        "parallelogram law of forces",
+        "composition"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    }
+  ]
+}

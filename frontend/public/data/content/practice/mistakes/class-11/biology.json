@@ -1,0 +1,163 @@
+{
+  "subject": "biology",
+  "classLevel": "11",
+  "examHall": [
+    "Answer the command word: 'define' = one precise sentence; 'describe' = what happens; 'explain' = why/mechanism. Wrong depth loses marks either way.",
+    "Every diagram needs a title and labels with leader lines — an unlabelled correct drawing earns a fraction of the marks.",
+    "Write binomial names correctly: Genus capitalised, species lowercase, underlined or italicised — taxonomy spelling is marked.",
+    "State ploidy (n, 2n, 3n) wherever a life cycle or division stage is asked; missing ploidy is a standard mark deduction.",
+    "In physiology answers, tie structure to function in one sentence each — NEB awards the linkage, not the list."
+  ],
+  "mistakes": [
+    {
+      "id": "bio11-enzyme-specificity",
+      "topic": "Enzymes",
+      "wrong": "Saying enzymes 'work better at high temperature' without the optimum concept, or confusing denaturation with inhibition.",
+      "why": "Enzyme activity rises to an optimum then falls as heat denatures the active site; competitive vs non-competitive inhibition are distinct mechanisms with distinct curves — mixing them loses the graph and explanation marks.",
+      "fix": "Quote the optimum temperature/pH, explain denaturation as tertiary-structure loss, and sketch/interpret the two inhibition curves separately (competitive: Vmax same, Km changes; non-competitive: Vmax drops).",
+      "unit": "biomolecules-and-cell-biology",
+      "marks": "2-4"
+    },
+    {
+      "id": "bio11-organelle-function",
+      "topic": "Cell organelles",
+      "wrong": "Calling ribosomes 'powerhouses' or swapping lysosome and peroxisome functions.",
+      "why": "Organelle-function matching is direct mark credit; one swapped pairing loses the item and signals rote-learning to the examiner.",
+      "fix": "Anchor each organelle to one signature function (mitochondrion — aerobic ATP; ribosome — protein synthesis; lysosome — digestion via hydrolytic enzymes; peroxisome — H₂O₂ metabolism) and attach one structural clue.",
+      "unit": "biomolecules-and-cell-biology",
+      "marks": "1-3"
+    },
+    {
+      "id": "bio11-mitosis-ploidy",
+      "topic": "Cell cycle (mitosis)",
+      "wrong": "Saying chromosome number doubles in metaphase, or confusing chromatids with chromosomes.",
+      "why": "DNA replicates in S phase but chromosomes stay 2n until anaphase splits them; a cell with 2n = 16 has 16 chromosomes and 32 chromatids at metaphase. Counting chromatids as chromosomes loses the numerical question entirely.",
+      "fix": "Define: chromosome = one centromere's worth; chromatid = one copy. Track both numbers through G1 (2n, 2c), metaphase (2n, 4c), anaphase/telophase (2n → 2×2n, 4c → 2×2c).",
+      "unit": "biomolecules-and-cell-biology",
+      "marks": "2-4"
+    },
+    {
+      "id": "bio11-transpiration-vs-guttation",
+      "topic": "Plant physiology (transport)",
+      "wrong": "Calling guttation 'transpiration through hydathodes', or writing the transpiration pull mechanism without the cohesion–tension chain.",
+      "why": "Guttation is liquid water through hydathodes under root pressure; transpiration is vapour through stomata. The mechanism answer must chain transpiration → tension → cohesion → continuous water column — a broken chain loses the explanation marks.",
+      "fix": "Contrast the two in a two-column table (structure, state of water, driving force, time), and write the cohesion–tension mechanism as an ordered chain with each link named.",
+      "unit": "ecology",
+      "marks": "2-3"
+    },
+    {
+      "id": "bio11-photosynthesis-limiting",
+      "topic": "Photosynthesis",
+      "wrong": "Saying light reaction makes glucose, or quoting C4 plants as having no photorespiration 'because they lack rubisco'.",
+      "why": "The light reaction makes ATP and NADPH; carbon fixation happens in the Calvin cycle. C4 plants DO have rubisco — they spatially separate initial CO₂ fixation (PEP carboxylase) from it. Both errors lose the mechanism marks.",
+      "fix": "Separate the two stages with their products (light: ATP, NADPH, O₂; dark/Calvin: G3P → glucose), and explain C4 as a CO₂-concentrating pump, not a rubisco-free system.",
+      "unit": "ecology",
+      "marks": "2-4"
+    },
+    {
+      "id": "bio11-respiration-atp-count",
+      "topic": "Respiration",
+      "wrong": "Quoting 38 ATP for eukaryotic aerobic respiration without the shuttle cost, or placing glycolysis in the mitochondrion.",
+      "why": "Glycolysis is cytoplasmic; the modern net yield for eukaryotes is ~30–32 ATP because NADH from glycolysis pays a shuttle cost. Quoting 38 flat loses the modern-syllabus mark.",
+      "fix": "Give the stage-by-stage accounting (glycolysis: 2 net; link + Krebs; oxidative phosphorylation) and state the eukaryotic net with the shuttle caveat.",
+      "unit": "ecology",
+      "marks": "2-3"
+    },
+    {
+      "id": "bio11-taxonomy-spelling",
+      "topic": "Taxonomy & nomenclature",
+      "wrong": "Writing binomials like Mangifera Indica (species capitalised) or not underlining/italicising, or misordering the hierarchy.",
+      "why": "Binomial nomenclature rules are themselves examinable; a capitalised species epithet or missing italics is a marked error, and a misordered hierarchy (family above order) loses the classification question.",
+      "fix": "Write Genus species — genus capitalised, species lowercase, italicised or underlined. Recite the hierarchy in order (kingdom → phylum/division → class → order → family → genus → species) and place examples in it.",
+      "unit": "faunal-diversity",
+      "marks": "1-3"
+    },
+    {
+      "id": "bio11-bryophyte-vascular",
+      "topic": "Plant diversity",
+      "wrong": "Saying bryophytes have vascular tissue or true roots, or calling the moss 'leaf' a true leaf.",
+      "why": "Bryophytes are non-vascular with rhizoids (not roots) and phyllids (not true leaves) — the 'why are they confined to moist places' question hangs exactly on these absences.",
+      "fix": "Answer with the absence: no xylem/phloem → water transport by diffusion → need moist habitat; rhizoids anchor only. Then link the dominant gametophyte generation.",
+      "unit": "floral-diversity",
+      "marks": "2-3"
+    },
+    {
+      "id": "bio11-ecosystem-energy-flow",
+      "topic": "Ecosystem & energy flow",
+      "wrong": "Drawing energy flow as a cycle, or quoting 10% transfer as a law with units confused.",
+      "why": "Energy flows one way (enters as sunlight, leaves as heat); only NUTRIENTS cycle. The 10% rule is a working guideline (Lindeman), and pyramid-of-energy questions mark the one-way direction explicitly.",
+      "fix": "State 'energy flows, nutrients cycle', justify the upright energy pyramid with the ~10% transfer and heat loss at each trophic level.",
+      "unit": "ecology",
+      "marks": "2-4"
+    },
+    {
+      "id": "bio11-virus-living",
+      "topic": "Microbiology (virus)",
+      "wrong": "Calling viruses prokaryotes, or describing viral reproduction without the lytic/lysogenic distinction.",
+      "why": "Viruses are acellular obligate parasites — outside both prokaryote/eukaryote classification; and temperate phages use lysogeny (prophage integration) which lytic-only answers miss.",
+      "fix": "Describe viruses as acellular with DNA/RNA + protein coat, reproduce only inside a host, and contrast lytic (immediate lysis) with lysogenic (integration, prophage) cycles.",
+      "unit": "introductory-microbiology",
+      "marks": "2-3"
+    },
+    {
+      "id": "bio11-define-precision",
+      "topic": "Definitions across the paper",
+      "wrong": "Writing vague definitions ('photosynthesis is how plants make food') without reactants, products, energy source or location.",
+      "why": "NEB definition marks are criterion-based: a complete definition names reactants, products, energy and site. Vague ones score zero even when the idea is right.",
+      "fix": "Learn definitions as checklists: e.g. photosynthesis = process in chloroplasts where light energy converts CO₂ + H₂O → glucose + O₂. Tick every criterion in the answer.",
+      "unit": "introduction-to-biology",
+      "marks": "1-3"
+    },
+    {
+      "id": "bio11-conservation-in-situ",
+      "topic": "Conservation biology",
+      "wrong": "Using 'conservation' and 'preservation' interchangeably, or giving national parks as ex-situ examples.",
+      "why": "Conservation = sustainable use; preservation = leave untouched. In-situ = on-site (parks, sanctuaries); ex-situ = off-site (zoos, seed banks, tissue culture). Mixing them loses both classification and example marks.",
+      "fix": "Define the pair once, then file every example under in-situ or ex-situ — national parks, wildlife reserves in-situ; zoo, botanical garden, cryopreservation ex-situ.",
+      "unit": "conservation-biology",
+      "marks": "2-3"
+    }
+  ],
+  "questions": [
+    {
+      "question": "A cell has 2n = 16. How many chromosomes and chromatids at metaphase of mitosis — and at metaphase I of meiosis?",
+      "solution": "Mitotic metaphase: DNA has replicated in S phase, so 16 chromosomes (each = 2 sister chromatids joined at one centromere) and 32 chromatids. Meiotic metaphase I: 16 chromosomes as 8 homologous PAIRS (bivalents), still 32 chromatids — but the pairing is the difference; anaphase I separates homologues, not chromatids. The examiner is testing the chromosome-vs-chromatid distinction; a centromere defines a chromosome.",
+      "unit": "biomolecules-and-cell-biology"
+    },
+    {
+      "question": "Why is the nephron called the structural and functional unit of the kidney — and why is that phrasing examinable?",
+      "solution": "Structural: each kidney is built from ~a million nephrons — nothing else makes up its parenchyma. Functional: each nephron alone performs the full job — filtration (Bowman's capsule + glomerulus), reabsorption (PCT, loop of Henle, DCT) and secretion — so the kidney's output is the summed output of its nephrons. 'Structural and functional unit' is the standard phrasing because BOTH claims must be justified; giving only one loses half the marks.",
+      "unit": "biomolecules-and-cell-biology"
+    },
+    {
+      "question": "Explain how transpiration pulls water to the top of a tall tree — name every link in the chain.",
+      "solution": "Ordered chain: (1) transpiration from mesophyll cells into substomatal air spaces; (2) water vapour diffuses out through open stomata; (3) evaporation creates tension (negative pressure) in the mesophyll cell walls; (4) tension is transmitted down the xylem column; (5) cohesion (water–water H-bonds) and adhesion (water–wall) keep the column unbroken; (6) water is drawn up from the roots. A broken chain — naming cohesion without tension, or tension without stomata — loses the linkage marks.",
+      "unit": "ecology"
+    },
+    {
+      "question": "Why do C4 plants avoid photorespiration even though they possess rubisco?",
+      "solution": "They DO have rubisco — the avoidance is spatial, not enzymatic absence. PEP carboxylase fixes CO₂ into OAA in mesophyll cells (it does not bind O₂, so no photorespiration there); the C4 acid travels to bundle-sheath cells where CO₂ is released at high concentration around rubisco, favouring carboxylation over oxygenation. The examiner wants the CO₂-concentrating pump, not 'rubisco is missing'.",
+      "unit": "ecology"
+    },
+    {
+      "question": "State the binomial for mango correctly and list the errors that cost marks in nomenclature answers.",
+      "solution": "Mangifera indica — genus capitalised, species epithet lowercase, italicised (or underlined when handwritten). Mark-losing errors: capitalising the species epithet, separating the two words' styling, writing the vernacular name as the binomial, or omitting the author abbreviation when asked. Also recite the hierarchy in order: kingdom, phylum/division, class, order, family, genus, species.",
+      "unit": "faunal-diversity"
+    },
+    {
+      "question": "Energy pyramids are always upright but pyramids of number can invert. Why?",
+      "solution": "Energy flows one way and degrades as heat at each transfer (~10% passes on), so each level holds less energy than the one below — always upright. Number pyramids can invert when one large producer (a single tree) supports many insects, because individuals are counted, not energy. The examiner marks 'energy flows, nutrients cycle' and the 10% rationale; drawing energy as a cycle is a guaranteed loss.",
+      "unit": "ecology"
+    },
+    {
+      "question": "Why are bryophytes confined to moist habitats? Answer from their anatomy.",
+      "solution": "Three anatomical absences: (1) no vascular tissue (no xylem/phloem) — water moves by diffusion, only over short distances; (2) no true roots — rhizoids anchor but absorb little; (3) flagellated sperm must swim through a water film to reach the archegonium. Add the dominant gametophyte generation, which is itself delicate. Each absence is a mark; the swimming sperm is the one students forget.",
+      "unit": "floral-diversity"
+    },
+    {
+      "question": "Distinguish lytic from lysogenic cycles in one sentence each — and place the prophage correctly.",
+      "solution": "Lytic: phage DNA immediately directs phage replication and the host cell lyses, releasing new virions. Lysogenic: phage DNA integrates into the host chromosome as a PROPHAGE and replicates passively with the host through divisions, able to excise later into the lytic cycle. The prophage is integrated host DNA, not free — placing it free in the cytoplasm loses the lysogenic mark.",
+      "unit": "introductory-microbiology"
+    }
+  ]
+}

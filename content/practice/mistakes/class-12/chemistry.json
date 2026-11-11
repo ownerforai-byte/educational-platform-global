@@ -1,0 +1,163 @@
+{
+  "subject": "chemistry",
+  "classLevel": "12",
+  "examHall": [
+    "Write the balanced equation (with state symbols) before any equilibrium, electrochemistry or kinetics calculation.",
+    "Keep units consistent in rate constants, K values and cell potentials — the unit of k reveals the order, and examiners check it.",
+    "For mechanisms, every curly arrow starts at a bond/lone pair and ends where the electrons go; reversed arrows lose the mechanism marks.",
+    "In organic conversions, name the reagent for EACH step — a one-step jump where two are needed loses the intermediate marks.",
+    "Quote colligative formulas with the correct molality (not molarity) and remember the van't Hoff factor for electrolytes."
+  ],
+  "mistakes": [
+    {
+      "id": "ch12-colligative-molarity",
+      "topic": "Solutions & colligative properties",
+      "wrong": "Using molarity instead of molality in ΔTb = Kb·m and ΔTf = Kf·m, or dropping the van't Hoff factor i for electrolytes.",
+      "why": "Colligative properties depend on molality (temperature-independent); molarity drifts with temperature and gives a wrong k. For NaCl (i = 2) the effect doubles — omitting i halves the answer.",
+      "fix": "Compute molality = mol solute/kg solvent, decide i from dissociation (NaCl 2, CaCl₂ 3, none for glucose), then substitute with units on every term.",
+      "unit": "solutions",
+      "marks": "3-5"
+    },
+    {
+      "id": "ch12-nernst-log",
+      "topic": "Electrochemistry & the Nernst equation",
+      "wrong": "Reversing the log argument (putting products over reactants), or using n = 1 where the cell reaction transfers 2 electrons.",
+      "why": "E = E° − (0.0592/n)·log([products]/[reactants]); a flipped argument changes the sign of the correction and n in the wrong denominator scales it wrongly — both flip the feasibility conclusion.",
+      "fix": "Write the balanced cell reaction first, count n from the electrons cancelled, then substitute concentrations of products OVER reactants with their stoichiometric powers.",
+      "unit": "electro-chemistry",
+      "marks": "3-5"
+    },
+    {
+      "id": "ch12-korder-units",
+      "topic": "Chemical kinetics",
+      "wrong": "Reading order from the coefficients of the balanced equation, or quoting k without its order-dependent units.",
+      "why": "Order is experimental, not stoichiometric; and k's units (s⁻¹ for first order, L·mol⁻¹·s⁻¹ for second) are a mark on their own — the examiner uses them to check you know the order.",
+      "fix": "Determine order from rate data (compare experiments), quote k with units for that order, and remember molecularity applies to elementary steps only.",
+      "unit": "chemical-kinetics",
+      "marks": "2-4"
+    },
+    {
+      "id": "ch12-half-life-linear",
+      "topic": "Kinetics & half-life",
+      "wrong": "Treating half-life as concentration-dependent for first-order reactions, or applying t½ = 0.693/k to a second-order reaction.",
+      "why": "First-order half-life is CONSTANT (0.693/k) — that independence is the signature of first order; using the second-order formula t½ = 1/(k[A]₀) for a first-order process gives a wrong k and wrong times.",
+      "fix": "Identify the order first, then pick the matching half-life expression, and show the constant-half-life argument when asked to justify first order.",
+      "unit": "chemical-kinetics",
+      "marks": "2-4"
+    },
+    {
+      "id": "ch12-buffer-choice",
+      "topic": "Ionic equilibrium & buffers",
+      "wrong": "Using pH = pKa when [salt] ≠ [acid] instead of the full Henderson–Hasselbalch equation, or picking a buffer pair whose pKa is far from the target pH.",
+      "why": "pH = pKa + log([salt]/[acid]); the ratio term is the whole point. A buffer works best within ±1 of pKa — choosing outside that range loses the design marks.",
+      "fix": "Write Henderson–Hasselbalch with the ratio, compute the ratio needed for the target pH, and choose the conjugate pair with pKa within one unit of the target.",
+      "unit": "solutions",
+      "marks": "2-4"
+    },
+    {
+      "id": "ch12-mechanism-arrow",
+      "topic": "Reaction mechanisms",
+      "wrong": "Drawing curly arrows from the electrophile to the nucleophile, or omitting the arrow that breaks a bond to a leaving group.",
+      "why": "Curly arrows show electron-pair movement FROM electron source TO sink; reversed or missing arrows make the mechanism unreadable and lose every mechanism mark even if the product is right.",
+      "fix": "Start each arrow at a lone pair or bond, end it at the atom/bond receiving electrons, and show the leaving group's bond breaking in the same step.",
+      "unit": "general-and-organic-fundamentals",
+      "marks": "3-5"
+    },
+    {
+      "id": "ch12-alcohol-oxidation-level",
+      "topic": "Alcohols, phenols & ethers",
+      "wrong": "Using the same oxidant for all alcohols (e.g. acidified K₂Cr₂O₇ stopping at aldehyde for a primary alcohol).",
+      "why": "Primary alcohols pass aldehyde → carboxylic acid under strong oxidation; stopping at the aldehyde needs distillation or a mild agent (PCC). The product is the mark — the wrong one zeroes the conversion.",
+      "fix": "Classify the alcohol (1°/2°/3°) first, then choose the oxidant: strong + reflux → acid (1°) or ketone (2°); mild/distil → aldehyde; 3° resists oxidation.",
+      "unit": "alcohols-phenols-ethers",
+      "marks": "2-4"
+    },
+    {
+      "id": "ch12-carbonyl-distinguish",
+      "topic": "Aldehydes & ketones",
+      "wrong": "Using Fehling's/Tollens' test on a ketone and expecting a positive result, or miswriting the iodoform requirement.",
+      "why": "Aldehydes reduce Tollens'/Fehling's; ketones do not (except the methyl-ketone iodoform case). The distinguishing test IS the mark — the wrong test loses the distinction and the explanation.",
+      "fix": "For aldehyde vs ketone quote Tollens'/Fehling's; for the iodoform test check the CH₃–CO– (or CH₃–CH(OH)–) group explicitly before promising a positive result.",
+      "unit": "aldehydes-ketones-carboxylic-acids",
+      "marks": "2-3"
+    },
+    {
+      "id": "ch12-amine-basicity-order",
+      "topic": "Amines & basicity",
+      "wrong": "Ranking amine basicity purely by the number of alkyl groups (3° > 2° > 1°) without the solvation/steric counter-effect.",
+      "why": "In aqueous solution the order is 2° > 1° > 3° (for methyl) because the conjugate acid of 3° amines is poorly solvated; quoting the gas-phase order loses the explanation and the comparison.",
+      "fix": "State both effects — inductive donation raises basicity, solvation of the cation and sterics lower it — then give the aqueous order the syllabus expects.",
+      "unit": "amines",
+      "marks": "2-3"
+    },
+    {
+      "id": "ch12-biomolecule-linkage",
+      "topic": "Biomolecules",
+      "wrong": "Confusing the glycosidic (carbohydrates), peptide (proteins) and phosphodiester (nucleic acids) linkages, or calling glucose a reducing sugar that isn't.",
+      "why": "Linkage identification is a standard 2-mark item; mixing them loses the structure question and the digestion/hydrolysis products that follow.",
+      "fix": "Memorise the three linkages with one example each (maltose 1,4-glycosidic; peptide CO–NH; DNA phosphodiester), and mark which sugars are reducing (all monosaccharides, maltose; NOT sucrose).",
+      "unit": "biomolecules",
+      "marks": "2-3"
+    },
+    {
+      "id": "ch12-d-block-config",
+      "topic": "d-block & coordination chemistry",
+      "wrong": "Filling 4s 'after' 3d when ionising (removing 4s electrons first is correct, but students remove 3d), or writing [Cu(NH₃)₄]²⁺ as colourless.",
+      "why": "Transition-metal ions lose 4s electrons first; and colour requires a partially filled d-subshell (Cu²⁺ 3d⁹ is coloured, Zn²⁺ 3d¹⁰ is not) — both errors lose the electronic-configuration and property marks.",
+      "fix": "Ionise 4s before 3d, and explain colour via d–d transitions possible only when the d-subshell is partially filled.",
+      "unit": "chemistry-of-element",
+      "marks": "2-4"
+    },
+    {
+      "id": "ch12-everyday-drug-class",
+      "topic": "Chemistry in everyday life",
+      "wrong": "Mixing up drug classifications (antacid vs antihistamine vs antibiotic) or claiming a narrow-spectrum antibiotic kills all bacteria.",
+      "why": "Classification questions are definition-marked; claiming broad-spectrum action for a narrow-spectrum drug is a factual error the marking scheme penalises.",
+      "fix": "Attach one example to each class (ranitidine — antacid/H₂ antagonist; diphenhydramine — antihistamine; penicillin — narrow-spectrum; chloramphenicol — broad-spectrum) and quote the example with the class.",
+      "unit": "chemistry-in-everyday-life",
+      "marks": "1-3"
+    }
+  ],
+  "questions": [
+    {
+      "question": "Why does 1 molal NaCl freeze water almost twice as much as 1 molal glucose?",
+      "solution": "Colligative properties count PARTICLES, not molecules. NaCl dissociates: NaCl → Na⁺ + Cl⁻, so i ≈ 2 and ΔTf = i·Kf·m ≈ 2·Kf·m. Glucose stays intact (i = 1). The van't Hoff factor is the multiplier students forget — quote it from the dissociation (CaCl₂ → 3 ions, i ≈ 3) and use molality (temperature-independent) throughout.",
+      "unit": "solutions"
+    },
+    {
+      "question": "In E = E° − (0.0592/n)·log Q, what goes into Q and how do you know n?",
+      "solution": "Q = [products]/[reactants], each raised to its stoichiometric coefficient (solids and water omitted). n is the number of electrons cancelled when you add the two half-reactions — write both half-equations, multiply to equalise electrons, cancel, and count. For the Daniell cell n = 2. Getting n wrong scales the whole correction term wrongly and can flip the spontaneity conclusion.",
+      "unit": "electro-chemistry"
+    },
+    {
+      "question": "The rate doubles when [A] doubles but is unchanged when [B] doubles. What is the rate law and the units of k?",
+      "solution": "Rate = k[A]¹ — first order in A, zero order in B. First-order k has units s⁻¹. The order comes from experiment, never from the balanced equation's coefficients. Quote k WITH its units: the examiner uses the units to check the order, and a unitless k loses a mark even with the right law.",
+      "unit": "chemical-kinetics"
+    },
+    {
+      "question": "Why is a primary alcohol oxidised to a carboxylic acid, not an aldehyde, with acidified K₂Cr₂O₇ under reflux?",
+      "solution": "Acidified dichromate is a strong oxidant: RCH₂OH → RCHO → RCOOH, and under reflux the aldehyde cannot escape before further oxidation. To isolate the aldehyde, distil it off as it forms or use a mild agent (PCC). Classify the alcohol first, then match the oxidant and conditions to the desired product — the product is the mark.",
+      "unit": "alcohols-phenols-ethers"
+    },
+    {
+      "question": "Draw the mechanism of SN1 hydrolysis of tert-butyl bromide — where do the two arrows go in the first step?",
+      "solution": "Step 1 (rate-determining): the C–Br bond's electron pair moves ONTO bromine (one arrow, from bond to Br), forming Br⁻ and the planar tert-butyl carbocation. Step 2: water's oxygen lone pair attacks the carbocation; step 3: deprotonation. The classic error is an arrow FROM Br TO carbon — arrows show electron movement from source to sink, never the reverse.",
+      "unit": "general-and-organic-fundamentals"
+    },
+    {
+      "question": "Which of methylamine, dimethylamine and trimethylamine is most basic in water, and why is the naive order wrong?",
+      "solution": "In water: (CH₃)₂NH > CH₃NH₂ > (CH₃)₃N (roughly). The naive gas-phase order (3° > 2° > 1° by inductive donation) ignores solvation: the conjugate acid of 3° amines has fewer N–H bonds to hydrogen-bond with water, and steric crowding shields the lone pair. State both effects — induction up, solvation/sterics down — then give the aqueous order.",
+      "unit": "amines"
+    },
+    {
+      "question": "Why is [Cu(NH₃)₄]²⁺ deep blue while [Zn(NH₃)₄]²⁺ is colourless?",
+      "solution": "Colour in complexes needs a PARTIALLY filled d-subshell: Cu²⁺ is 3d⁹, so d–d transitions absorb visible light (complementary colour seen — deep blue). Zn²⁺ is 3d¹⁰ — completely filled, no d–d transition possible, so colourless. The answer the examiner wants is 'partially filled d-orbitals permit d–d transitions'; quoting colours without the electronic reason loses the explanation mark.",
+      "unit": "chemistry-of-element"
+    },
+    {
+      "question": "How do you distinguish an aldehyde from a ketone in one test, and when does iodoform work?",
+      "solution": "Tollens' (silver mirror) or Fehling's (red precipitate): aldehydes give positive, ketones negative. Iodoform (I₂/NaOH) needs a CH₃–CO– group — so ethanal (an aldehyde) and methyl ketones give it, but most ketones do not. Check the group before promising the test result; 'ketones give iodoform' is a half-truth that loses the distinction mark.",
+      "unit": "aldehydes-ketones-carboxylic-acids"
+    }
+  ]
+}

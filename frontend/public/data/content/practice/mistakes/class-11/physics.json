@@ -1,0 +1,163 @@
+{
+  "subject": "physics",
+  "classLevel": "11",
+  "examHall": [
+    "Write the working formula BEFORE substituting numbers — method marks live in the formula line, not the arithmetic.",
+    "Carry SI units through every step; a bare number at the end of a calculation line loses the answer mark even when the value is right.",
+    "Label every diagram — force arrows, ray diagrams, circuit symbols. An unlabelled correct diagram still loses marks.",
+    "Round only at the final answer, and keep at least 3 significant figures until then; early rounding compounds into a wrong final digit.",
+    "For graphs, say what the slope and the area under the curve mean in words — NEB asks for the meaning, not just the sketch."
+  ],
+  "mistakes": [
+    {
+      "id": "phy11-units-substitute",
+      "topic": "Physical quantities & dimensions",
+      "wrong": "Substituting values straight into an equation without converting to SI first (e.g. using cm or km/h inside a formula that expects m and m/s).",
+      "why": "The numeric answer comes out orders of magnitude off, and the examiner gives zero for the result even though the method was right — the formula line can earn method marks only if the substitution is dimensionally consistent.",
+      "fix": "Convert every quantity to SI before the first substitution, then write the unit of the answer next to it. Check dimensions at the end as a habit.",
+      "unit": "physical-quantities",
+      "marks": "1-3"
+    },
+    {
+      "id": "phy11-vector-scalar",
+      "topic": "Vectors",
+      "wrong": "Adding vector magnitudes like scalars (e.g. saying two 3 N forces always give 6 N) or dropping the direction in the final answer.",
+      "why": "Vector questions are marked on magnitude AND direction; a missing direction or an ignored angle loses half the marks even when the magnitude is correct.",
+      "fix": "Resolve into components along chosen axes, add components, then recombine — and always state the direction (angle relative to a stated axis) with the magnitude.",
+      "unit": "vectors",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy11-kinematics-graph-area",
+      "topic": "Kinematics graphs",
+      "wrong": "Reading a velocity–time graph as if it were a position–time graph, or forgetting that the area under a v–t graph is displacement while the slope is acceleration.",
+      "why": "NEB frequently asks 'what does the slope/area represent' — answering with the wrong physical quantity loses the whole interpretation mark, and downstream calculations inherit the error.",
+      "fix": "Before touching a graph, write on the margin: slope of x–t = velocity, slope of v–t = acceleration, area under v–t = displacement, area under a–t = change in velocity.",
+      "unit": "kinematics",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy11-freebody-newton",
+      "topic": "Newton's laws & free-body diagrams",
+      "wrong": "Drawing the weight arrow pointing 'down the incline' or including ma as a force on the free-body diagram.",
+      "why": "Weight acts vertically downward, always; ma is the RESULT of the net force, not a separate force. Both errors wreck the equation the examiner is looking for and lose the analysis marks.",
+      "fix": "Draw only real forces (weight, normal, tension, friction) with correct directions, choose axes along the motion, then write ΣF = ma along each axis.",
+      "unit": "dynamics",
+      "marks": "3-5"
+    },
+    {
+      "id": "phy11-work-energy-sign",
+      "topic": "Work, energy & power",
+      "wrong": "Giving friction's work a positive value, or forgetting that the work–energy theorem uses NET work.",
+      "why": "Friction removes mechanical energy, so its work is negative; using the wrong sign flips the energy bookkeeping and the final speed/height comes out wrong.",
+      "fix": "Define the system first, then write W_net = ΔKE with each force's work signed by whether it helps or opposes the displacement.",
+      "unit": "work-energy-and-power",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy11-circular-centripetal",
+      "topic": "Circular motion",
+      "wrong": "Adding a 'centrifugal force' outward on a free-body diagram of a body in circular motion.",
+      "why": "In an inertial frame there is no outward force; the centripetal force is the RESULTANT of real forces. Adding a fictitious one breaks Newton's second law and the examiner marks the diagram wrong.",
+      "fix": "Identify which real force (tension, gravity, normal, friction) supplies mv²/r toward the centre, and write the radial equation ΣF_toward centre = mv²/r.",
+      "unit": "circular-motion",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy11-gravitation-g-depth",
+      "topic": "Gravitation",
+      "wrong": "Assuming g increases as you go below the Earth's surface ('more Earth pulling on you').",
+      "why": "g decreases linearly with depth (g ∝ r inside a uniform sphere) and with the inverse square of distance above the surface; using the wrong trend in a derivation loses every subsequent mark.",
+      "fix": "Memorise both trends as one picture: g(r) = GM(r)/r² with only the mass enclosed counting — g ∝ r inside, g ∝ 1/r² outside.",
+      "unit": "gravitation",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy11-optics-sign",
+      "topic": "Reflection & refraction (mirror/lens sign convention)",
+      "wrong": "Using positive focal length for a concave mirror or mixing the 'real is positive' and Cartesian conventions in one solution.",
+      "why": "NEB expects one consistent convention; a sign slip turns a real image into a virtual one, and the magnification/position answers all follow the wrong branch.",
+      "fix": "State the convention at the top of the solution, mark the pole/optical centre and direction of incident light on the diagram, then assign signs from the drawing — never from memory.",
+      "unit": "reflection-at-curved-mirror",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy11-ray-diagram-unlabelled",
+      "topic": "Ray diagrams (mirrors, lenses, prisms)",
+      "wrong": "Sketching rays without labelling the principal axis, focus, optical centre or angles — or drawing arbitrary rays that violate the laws of reflection/refraction.",
+      "why": "Ray-diagram questions carry marks for each correct, labelled ray; an unlabelled or physically wrong diagram loses marks even when the final answer is correct.",
+      "fix": "Use a ruler, draw the axis first, mark F and 2F/C, use the standard parallel/through-focus rays, and label every angle you refer to in the working.",
+      "unit": "refraction-at-plane-surfaces",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy11-electrostatic-vector",
+      "topic": "Electric charges & fields",
+      "wrong": "Treating electric field as a scalar — adding magnitudes without direction — or misassigning the direction of force on a negative charge.",
+      "why": "E and F are vectors; the force on a negative charge is opposite to E. Direction errors flip the answer and lose the vector-analysis marks even with the right magnitude.",
+      "fix": "Draw the field directions from each charge at the point, add them as vectors, and remember F = qE keeps the sign of q.",
+      "unit": "electric-field",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy11-circuit-ohm-sign",
+      "topic": "DC circuits",
+      "wrong": "Mixing series and parallel formulas, or ignoring the internal resistance of the cell when asked for terminal potential difference.",
+      "why": "Terminal p.d. = E − Ir, not EMF; ignoring internal resistance gives a systematically high answer and loses the interpretation marks in Kirchhoff/potentiometer questions.",
+      "fix": "Redraw the circuit simplified stage by stage, label every current with its direction, and apply Kirchhoff's loop rule consistently with the chosen sign convention.",
+      "unit": "dc-circuits",
+      "marks": "3-5"
+    },
+    {
+      "id": "phy11-heat-mix-mistake",
+      "topic": "Quantity of heat & calorimetry",
+      "wrong": "Forgetting the latent-heat term during a phase change, or using the same specific heat for ice, water and steam.",
+      "why": "A heating curve has plateaus where temperature does not change — dropping mL there gives a wrong total heat and loses the graph-interpretation marks too.",
+      "fix": "Sketch the heating curve first, write one Q-term per segment (mcΔT for slopes, mL for plateaus), then add them with the correct specific heat for each phase.",
+      "unit": "quantity-of-heat",
+      "marks": "2-4"
+    }
+  ],
+  "questions": [
+    {
+      "question": "Why does substituting km/h directly into v = u + at give a wrong acceleration even if the arithmetic is perfect?",
+      "solution": "The kinematic equations are dimensionally homogeneous in SI: v in m/s, a in m/s², t in s. Mixing km/h with m/s² silently multiplies the velocity term by 1000/3600, so the result is wrong by a factor the examiner will not forgive. Convert everything to SI before the first substitution, and carry units through each line so a dimensional slip becomes visible.",
+      "unit": "physical-quantities"
+    },
+    {
+      "question": "Two 3 N forces act on a body. Can the resultant be anywhere between 0 and 6 N — and what does the examiner need to see?",
+      "solution": "Yes: the resultant of two vectors of magnitudes 3 N and 3 N ranges from 0 N (opposite directions) to 6 N (same direction), taking 3√2 N at right angles. The examiner needs the vector method — resolve into components or use the parallelogram law — and the final DIRECTION stated as an angle from a named axis. Magnitude-only answers lose the direction marks.",
+      "unit": "vectors"
+    },
+    {
+      "question": "On a velocity–time graph, what do the slope, the area, and a flat segment each tell you?",
+      "solution": "Slope = acceleration (gradient of v–t), area under the graph = displacement, and a flat (horizontal) segment = constant velocity, i.e. zero acceleration. NEB asks for these meanings in words; quoting only numbers loses the interpretation marks. On a position–time graph the meanings change: slope = velocity, and a flat segment means the body is at rest.",
+      "unit": "kinematics"
+    },
+    {
+      "question": "A block rests on an inclined plane. Which forces belong on the free-body diagram, and where does ma go?",
+      "solution": "Only real forces: weight mg vertically downward (NOT along the incline), the normal reaction perpendicular to the surface, and friction along the surface opposing relative motion. ma is not a force — it is the result: resolve mg into components along and perpendicular to the incline, then write ΣF_along = ma and ΣF_perp = 0. Adding 'ma' or a 'centrifugal' arrow as a force is a guaranteed mark loss.",
+      "unit": "dynamics"
+    },
+    {
+      "question": "Why is g smaller at the bottom of a mine but also smaller on a high mountain — one rule behind both?",
+      "solution": "g = GM(r)/r², where M(r) is the mass ENCLOSED within radius r. Below the surface only the inner sphere pulls (shell theorem), M(r) ∝ r³, so g ∝ r — it falls linearly to zero at the centre. Above the surface the full mass counts, so g ∝ 1/r² — it falls with altitude. One formula, two regimes; quoting the wrong trend in a derivation loses every following mark.",
+      "unit": "gravitation"
+    },
+    {
+      "question": "In the mirror formula 1/f = 1/v + 1/u, why do students get a virtual image where a real one should be?",
+      "solution": "Because the sign convention was applied inconsistently. Pick ONE convention (NEB uses the Cartesian convention), state it at the top, mark the pole and the direction of incident light on the diagram, then assign signs from the drawing: distances measured against incident light are negative. A concave mirror has f negative in this convention; mixing that with 'real-is-positive' habits flips v's sign and the image type with it.",
+      "unit": "reflection-at-curved-mirror"
+    },
+    {
+      "question": "Why is the work done by friction negative in the work–energy theorem?",
+      "solution": "Work is W = F·s·cosθ; friction acts opposite to the displacement, so cos180° = −1 and the work is negative — friction REMOVES mechanical energy. The theorem uses NET work: W_friction + W_gravity + W_applied = ΔKE. Signing friction positive double-counts energy and gives a final speed that is too high, losing both the calculation and the energy-bookkeeping marks.",
+      "unit": "work-energy-and-power"
+    },
+    {
+      "question": "A heating curve for ice→water→steam shows flat plateaus. What happens to the heat during a plateau, and why do students get the total wrong?",
+      "solution": "During a plateau the temperature does not change: all the heat goes into the latent heat of the phase change (mL), not into mcΔT. Students who use one specific heat throughout, or drop the mL terms, get a total that is wrong by the size of the latent heats (334 kJ/kg for ice, 2260 kJ/kg for steam). Write one energy term per segment of the curve and use the phase-specific c values.",
+      "unit": "quantity-of-heat"
+    }
+  ]
+}

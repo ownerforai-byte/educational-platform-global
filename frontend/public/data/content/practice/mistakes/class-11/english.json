@@ -1,0 +1,163 @@
+{
+  "subject": "english",
+  "classLevel": "11",
+  "examHall": [
+    "Answer the question asked, not the passage's general topic — quote the exact line/phrase the question points to.",
+    "In grammar items, rewrite the WHOLE sentence; changing one word in the wrong place loses the item even when the fix is right.",
+    "For essay/letter questions, spend 2 minutes on a plan: thesis, three supporting points, conclusion — organisation is a named mark band.",
+    "Never lift a whole sentence from the passage as your 'own words' answer; paraphrase and cite briefly.",
+    "Watch tense consistency within each answer; NEB marks tense shifts in writing tasks."
+  ],
+  "mistakes": [
+    {
+      "id": "eng11-tense-consistency",
+      "topic": "Tense & sequence of tenses",
+      "wrong": "Shifting tense mid-narration ('He went to the market and buys vegetables'), or breaking the sequence of tenses after a past reporting verb ('He said that he will come').",
+      "why": "Tense consistency is a named mark band in writing tasks; a reporting verb in the past pulls the reported clause into past backshift (would come), and unplanned shifts make narration unreadable.",
+      "fix": "Choose the tense frame before writing (past narrative or present description) and hold it; after 'said/told/asked', backshift the reported clause one step.",
+      "unit": "language-development",
+      "marks": "1-3"
+    },
+    {
+      "id": "eng11-subject-verb-agreement",
+      "topic": "Subject–verb agreement",
+      "wrong": "Matching the verb to the nearest noun ('The list of items are…') or to a collective noun as plural ('The team are playing well' in a context demanding singular).",
+      "why": "The verb agrees with the grammatical SUBJECT, not the nearest noun; 'the list of items' is singular. Collective nouns take singular verbs when acting as one unit — both errors lose every agreement item.",
+      "fix": "Find the true subject by deleting the prepositional phrase, then match the verb to it; treat 'each, every, either, neither, one of + plural noun' as singular.",
+      "unit": "language-and-grammar",
+      "marks": "1-2"
+    },
+    {
+      "id": "eng11-article-usage",
+      "topic": "Articles & determiners",
+      "wrong": "Using 'the' with an uncountable/general noun ('the honesty is a virtue'), or 'a' before a vowel sound ('a university' → 'an university').",
+      "why": "Articles follow sound and specificity rules: 'an' goes before vowel SOUNDS (an hour, but a university), and general truths about uncountables take no article. Each slip loses the item.",
+      "fix": "Ask: specific (the) / first mention & countable singular (a/an) / general or uncountable (no article). Decide by sound, not spelling.",
+      "unit": "language-and-grammar",
+      "marks": "1-2"
+    },
+    {
+      "id": "eng11-inference-vs-fact",
+      "topic": "Reading comprehension",
+      "wrong": "Answering an inference question ('Why did the author…?') with a directly stated fact, or answering a fact question with an opinion.",
+      "why": "NEB separates 'state' (locate in text) from 'infer' (read beyond the text); an inference answered with a quoted line scores zero because it shows no reading beyond the surface.",
+      "fix": "Label each question type first: fact → quote the line; inference → combine two text clues and state the unstated conclusion; vocabulary → meaning IN THIS CONTEXT.",
+      "unit": "reading-and-comprehension",
+      "marks": "2-4"
+    },
+    {
+      "id": "eng11-own-words",
+      "topic": "Comprehension answer style",
+      "wrong": "Copying a full sentence from the passage as the answer to 'in your own words'.",
+      "why": "The 'own words' instruction tests paraphrase; verbatim copying loses the language marks even when the content is correct.",
+      "fix": "Change both structure and wording (synonyms, reordered clauses), then quote only the key phrase in quotation marks if needed.",
+      "unit": "reading-and-comprehension",
+      "marks": "2-3"
+    },
+    {
+      "id": "eng11-poetry-paraphrase",
+      "topic": "Poetry analysis",
+      "wrong": "Paraphrasing a poem line by line and calling it 'explanation', or ignoring the speaker/occasion.",
+      "why": "A poem answer needs literal sense PLUS devices (image, metaphor, tone) PLUS effect on the reader; a bare paraphrase earns the sense mark only, and missing the speaker misses the attitude marks.",
+      "fix": "Structure poem answers: context/speaker → literal meaning → devices with one quoted example each → overall effect. Name the device before the example.",
+      "unit": "reading-and-comprehension",
+      "marks": "3-5"
+    },
+    {
+      "id": "eng11-essay-structure",
+      "topic": "Essay writing",
+      "wrong": "Writing an essay without a stated thesis in the introduction, or ending with a new argument instead of a conclusion.",
+      "why": "NEB's essay rubric marks organisation separately: introduction with thesis, body paragraphs each with one point + support, conclusion that closes. A missing thesis makes every paragraph unfocused.",
+      "fix": "Plan 3 points before writing; open each body paragraph with the point, support it, and end with a conclusion that restates the thesis — never introduces new material.",
+      "unit": "writing-and-composition",
+      "marks": "4-6"
+    },
+    {
+      "id": "eng11-letter-format",
+      "topic": "Letter & application format",
+      "wrong": "Mixing formal and informal register ('Dear Sir, Hi there…'), or omitting the subject line / inside address in an application.",
+      "why": "Format is a separate mark band; a missing element (date, salutation, subject, complimentary close) loses format marks regardless of content quality.",
+      "fix": "Memorise the two templates: informal (address, date, salutation, body, close) and official/application (sender, date, receiver, subject line, salutation, body, close, signature). Match register to type.",
+      "unit": "writing-and-composition",
+      "marks": "2-4"
+    },
+    {
+      "id": "eng11-story-conflict",
+      "topic": "Short story elements",
+      "wrong": "Summarising a story's plot without naming the conflict or the turning point.",
+      "why": "Story questions ask for conflict (what force opposes the protagonist), climax (turning point) and resolution; a plot summary without these earns the content mark but loses the analysis marks.",
+      "fix": "Answer with the elements named explicitly: setting, conflict, climax, resolution — each tied to a specific moment in the story.",
+      "unit": "reading-and-comprehension",
+      "marks": "2-4"
+    },
+    {
+      "id": "eng11-character-evidence",
+      "topic": "Character analysis",
+      "wrong": "Describing a character with adjectives only ('he is brave, kind') without textual evidence.",
+      "why": "Character analysis is evidence-marked: every trait claim needs a quotation or specific incident that shows it. Bare adjectives score the trait but lose the support marks.",
+      "fix": "Pair every trait with one incident or quotation ('brave — when he …'), and note whether the trait changes by the story's end.",
+      "unit": "literature-essays-plays",
+      "marks": "2-4"
+    },
+    {
+      "id": "eng11-critical-claim",
+      "topic": "Critical thinking",
+      "wrong": "Accepting a claim because of who said it, or answering an argument question by restating the argument.",
+      "why": "Critical-thinking items test the CLAIM–EVIDENCE link: identify the claim, the evidence offered, and the gap between them. Restating the argument shows no evaluation and loses the analysis marks.",
+      "fix": "For every argument: state the claim, list the evidence, name the assumption or fallacy (hasty generalisation, false cause, appeal to authority), then give your reasoned position.",
+      "unit": "critical-thinking",
+      "marks": "3-5"
+    },
+    {
+      "id": "eng11-vocab-context",
+      "topic": "Vocabulary in context",
+      "wrong": "Giving a dictionary definition that does not fit the passage's context (e.g. 'run' = move fast when the text means 'manage').",
+      "why": "Contextual vocabulary is marked by the meaning IN THIS TEXT; a correct-but-irrelevant dictionary meaning scores zero.",
+      "fix": "Replace the word with your candidate meaning IN THE SENTENCE — if the sentence still makes sense, the meaning is right; quote the sentence with your substitute.",
+      "unit": "reading-and-comprehension",
+      "marks": "1-2"
+    }
+  ],
+  "questions": [
+    {
+      "question": "Rewrite correctly: 'He said that he will come tomorrow.' — what rule is being tested?",
+      "solution": "'He said that he would come the next day.' Two rules: backshift of tense after a past reporting verb (will → would) and adjustment of time reference (tomorrow → the next day) in indirect speech. The examiner marks both changes; backshifting without fixing the time word loses one of the two marks.",
+      "unit": "language-and-grammar"
+    },
+    {
+      "question": "Correct or justify: 'The quality of the mangoes were good.'",
+      "solution": "'The quality of the mangoes was good.' The subject is 'quality' (singular); 'of the mangoes' is a prepositional phrase that cannot change agreement. Test: delete the phrase — 'The quality was good' — and the agreement is obvious. Matching the verb to the nearest plural noun is the most common agreement error in NEB grammar items.",
+      "unit": "language-and-grammar"
+    },
+    {
+      "question": "The question says 'Why does the author compare the city to a graveyard?' — what kind of answer earns full marks?",
+      "solution": "An inference answer: state the comparison's implied meaning (the city is lifeless/silent/dead), support it with two text clues, and note the effect (tone of despair). Quoting a line that merely mentions the city answers a fact question, not an inference — the mark scheme separates 'locate' from 'interpret', and this question demands interpretation.",
+      "unit": "reading-and-comprehension"
+    },
+    {
+      "question": "In your own words, explain what the writer means by 'a clock with no hands'.",
+      "solution": "Paraphrase both structure and wording, e.g. 'something that exists but can no longer show or use its purpose — time passing without being marked'. Do NOT copy the phrase as the answer. Quote the original only in quotation marks for the key term, then explain with your own sentence structure — verbatim copying loses the paraphrase marks.",
+      "unit": "reading-and-comprehension"
+    },
+    {
+      "question": "How do you structure a full-marks answer to 'Describe the conflict in the story and how it is resolved'?",
+      "solution": "Name the conflict type explicitly (person vs person / society / nature / self), give the specific incident that establishes it, identify the CLIMAX (turning point) with a quoted moment, and state the resolution. A bare plot summary ('first… then… finally…') earns content marks but loses the analysis marks, because the elements are not named.",
+      "unit": "reading-and-comprehension"
+    },
+    {
+      "question": "Your essay question is 'The role of technology in education'. Show the plan that earns the organisation marks.",
+      "solution": "Introduction with thesis (e.g. 'technology helps learning most when it supports, not replaces, the teacher'); three body points each with one example (access to resources; personalised pace; risks of distraction/dependence); conclusion restating the thesis without new arguments. The rubric marks introduction/thesis, paragraph unity, cohesion and conclusion separately — the plan guarantees all four.",
+      "unit": "writing-and-composition"
+    },
+    {
+      "question": "Write the subject line and salutation of an application to your principal for three days' leave.",
+      "solution": "Subject: 'Application for three days' leave'. Salutation: 'Respected Sir/Madam,'. The subject line is a required format element in official letters — omitting it loses a format mark. Keep the register formal throughout (no 'Hi', no contractions in the body), and close with 'Yours obediently/sincerely,' plus signature.",
+      "unit": "writing-and-composition"
+    },
+    {
+      "question": "An editorial claims 'All teenagers are addicted to their phones because schools allow them.' Evaluate it.",
+      "solution": "Claim: all teenagers are phone-addicted. Evidence offered: none beyond the school-policy link. Fallacies: hasty generalisation (all teenagers) and false cause (correlation with school policy ≠ causation). A reasoned position: 'some overuse exists, but the universal claim and single-cause explanation are unsupported.' Name the fallacies explicitly — the examiner marks the fallacy identification, not just disagreement.",
+      "unit": "critical-thinking"
+    }
+  ]
+}

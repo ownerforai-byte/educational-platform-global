@@ -1,0 +1,163 @@
+{
+  "subject": "mathematics",
+  "classLevel": "11",
+  "examHall": [
+    "State the domain before solving any equation or function question — solving outside the domain is the most common lost mark.",
+    "Split every inequality into sign cases (a > 0 / a < 0, D > 0 / = 0 / < 0) and answer all of them; one case only is half an answer.",
+    "Label graph axes with variables and units, mark roots/vertex/intercepts — an unlabelled sketch loses the graph marks.",
+    "In trigonometry, check the quadrant before taking an inverse value; sin θ = ½ has two answers in [0, 2π).",
+    "Show the formula you use before substituting — method marks are awarded line by line."
+  ],
+  "mistakes": [
+    {
+      "id": "math11-quadratic-cases",
+      "topic": "Quadratic equations & inequalities",
+      "wrong": "Dividing both sides of x² > 4 by x to get x > 2, or solving a quadratic inequality without considering the sign of the leading coefficient.",
+      "why": "Dividing by x discards the x = 0 branch and flips nothing when x < 0; and for a < 0 the inequality direction reverses. Both errors lose the interval answer entirely.",
+      "fix": "Never divide by an unknown; move everything to one side, factorise, then test sign intervals with a sign chart — including the case a < 0.",
+      "unit": "algebra",
+      "marks": "3-5"
+    },
+    {
+      "id": "math11-sequence-formula-choice",
+      "topic": "Sequences & series",
+      "wrong": "Using the AP sum formula on a GP (or vice versa), or summing an infinite GP without checking |r| < 1.",
+      "why": "S∞ = a/(1−r) is valid ONLY for |r| < 1; applying it to r = 2 gives a finite sum for a divergent series — a conceptual error worth zero, and mixing AP/GP formulas loses the whole sum.",
+      "fix": "Identify the sequence type first (common difference vs common ratio), quote the matching formula, and for infinite sums state and verify |r| < 1 before using a/(1−r).",
+      "unit": "algebra",
+      "marks": "2-4"
+    },
+    {
+      "id": "math11-permutation-vs-combination",
+      "topic": "Permutations & combinations",
+      "wrong": "Using nCr where order matters (arrangements, passwords), or double-counting circular arrangements.",
+      "why": "Order distinguishes the two: nPr for arrangements, nCr for selections. A password or ranking problem answered with nCr loses the whole count, and circular arrangements need (n−1)! not n!.",
+      "fix": "Ask 'does swapping two chosen items create a different outcome?' — yes → permutation; no → combination. For circles, fix one position and arrange the rest.",
+      "unit": "algebra",
+      "marks": "2-4"
+    },
+    {
+      "id": "math11-binomial-term",
+      "topic": "Binomial expansion",
+      "wrong": "Taking the (k+1)th term as Tₖ, or dropping the binomial coefficient's sign pattern for negative x.",
+      "why": "The general term is T_{r+1} = C(n,r)·a^{n−r}·b^r — indexing off by one finds the wrong term, and a negative b makes alternating signs that must be carried into every coefficient.",
+      "fix": "Write T_{r+1} explicitly with r counted from 0, substitute the sign of b into each term, and verify with the first two terms of the expansion.",
+      "unit": "algebra",
+      "marks": "2-4"
+    },
+    {
+      "id": "math11-trig-quadrant",
+      "topic": "Trigonometry",
+      "wrong": "Giving only one solution for sin θ = ½ in [0, 2π), or applying the CAST rule with the wrong sign for the quadrant.",
+      "why": "Trigonometric equations are periodic — sin has two solutions per period; missing the second loses half the answer, and quadrant sign errors lose the value itself.",
+      "fix": "Find the reference angle, then list all quadrants where the function has the required sign within the stated interval, and check the interval's endpoints.",
+      "unit": "trigonometry",
+      "marks": "2-4"
+    },
+    {
+      "id": "math11-trig-identity-proof",
+      "topic": "Trigonometric identities",
+      "wrong": "Starting a proof from the RHS and manipulating it, or 'proving' by verifying with one numerical value of θ.",
+      "why": "An identity proof must transform ONE side into the other (or both to a common form) with valid steps; a numerical check is not a proof and scores zero for the proof marks.",
+      "fix": "Work from the more complex side, convert everything to sin/cos, and keep the target in sight — each step must be reversible algebra, not a substitution test.",
+      "unit": "trigonometry",
+      "marks": "3-5"
+    },
+    {
+      "id": "math11-coordinate-distance",
+      "topic": "Coordinate geometry (straight line)",
+      "wrong": "Using Δy/Δx upside down for a perpendicular slope, or writing the equation of a line without checking it passes through the given point.",
+      "why": "Perpendicular slopes multiply to −1 (m⊥ = −1/m); and a line equation that fails the given point fails the whole question — a 10-second substitution check catches it.",
+      "fix": "Compute m⊥ = −1/m explicitly, then build y − y₁ = m(x − x₁) and substitute the point back to verify before moving on.",
+      "unit": "analytic-geometry",
+      "marks": "2-3"
+    },
+    {
+      "id": "math11-parabola-orientation",
+      "topic": "Conic sections",
+      "wrong": "Mixing up which way a parabola y² = 4ax opens versus x² = 4ay, or quoting the focus with a wrong sign for a < 0.",
+      "why": "y² = 4ax opens along +x (focus (a,0)); x² = 4ay opens along +y (focus (0,a)). A sign/orientation slip loses the focus, directrix and latus rectum together — the whole conic identification.",
+      "fix": "Memorise the pair as 'squared variable's counterpart axis is the axis of the parabola', derive the focus from the standard form each time, and sketch to confirm the opening direction.",
+      "unit": "analytic-geometry",
+      "marks": "2-4"
+    },
+    {
+      "id": "math11-vector-dot-cross",
+      "topic": "Vectors",
+      "wrong": "Treating the dot product as a vector, or using the wrong angle in a·b = |a||b|cosθ (the angle BETWEEN them, not with an axis).",
+      "why": "a·b is a scalar; a×b is a vector. Using the angle to an axis instead of between the vectors gives a wrong projection and wrong work/angle answers.",
+      "fix": "Label the angle θ between the tails of both vectors on a sketch before substituting, and remember |a×b| = |a||b|sinθ with direction by the right-hand rule.",
+      "unit": "vectors",
+      "marks": "2-4"
+    },
+    {
+      "id": "math11-probability-sample-space",
+      "topic": "Probability",
+      "wrong": "Counting outcomes of a two-dice throw as 11 (the possible sums) instead of 36 (ordered pairs), or adding probabilities of non-mutually-exclusive events.",
+      "why": "The sample space is 36 ordered pairs; summing over non-exclusive events (P(A∪B) = P(A)+P(B)−P(A∩B)) without the intersection overcounts and loses the union question.",
+      "fix": "Define the sample space first (ordered pairs, with or without replacement), then use the addition rule with the intersection term whenever events can co-occur.",
+      "unit": "statistics-and-probability",
+      "marks": "2-4"
+    },
+    {
+      "id": "math11-limit-substitution",
+      "topic": "Limits & continuity",
+      "wrong": "Declaring a limit 'does not exist' the moment direct substitution gives 0/0, or cancelling (x−a) factors without noting x ≠ a.",
+      "why": "0/0 is indeterminate — factorise, rationalise or use standard limits; and cancelling a factor is valid only for x ≠ a, which is exactly the limit's condition. Both habits lose the evaluation marks.",
+      "fix": "On 0/0: factorise and cancel (noting x ≠ a), or multiply by the conjugate, or use lim sinθ/θ = 1. Then substitute the limit point.",
+      "unit": "calculus",
+      "marks": "2-4"
+    },
+    {
+      "id": "math11-derivative-chain",
+      "topic": "Differentiation",
+      "wrong": "Differentiating x·sin x as x'·sin x' (product rule misapplied), or forgetting the inner derivative in sin(2x) → 2cos(2x).",
+      "why": "The chain rule multiplies by the inner derivative; missing it scales every answer wrongly and loses the applied-rates questions that build on it.",
+      "fix": "For products use (uv)' = u'v + uv'; for composites differentiate outside-in and multiply by the inner derivative — write the inner function explicitly first.",
+      "unit": "calculus",
+      "marks": "2-4"
+    }
+  ],
+  "questions": [
+    {
+      "question": "Solve x² − 3x > 0 for all real x — and show why 'x(x−3) > 0 so x > 3' is incomplete.",
+      "solution": "Factorise: x(x − 3) > 0. A product is positive when both factors share a sign: x > 0 AND x > 3 → x > 3; or x < 0 AND x < 3 → x < 0. Answer: x ∈ (−∞, 0) ∪ (3, ∞). The incomplete version drops the negative branch because it treats the inequality like an equation. Draw the sign chart of both factors — the examiner marks the interval union, not a single branch.",
+      "unit": "algebra"
+    },
+    {
+      "question": "When does a/(1−r) give a valid infinite sum, and what goes wrong with r = 2?",
+      "solution": "Only when |r| < 1. The partial sum Sₙ = a(1−rⁿ)/(1−r) converges as n→∞ solely because rⁿ → 0 when |r| < 1; for r = 2, rⁿ grows without bound, so the series diverges and has NO finite sum — applying the formula gives a meaningless number. State and verify |r| < 1 in every infinite-GP answer; the verification itself carries a mark.",
+      "unit": "algebra"
+    },
+    {
+      "question": "A committee of 3 is chosen from 5 people and then seated in a row. Which counts do you use for choosing and for seating?",
+      "solution": "Choosing the committee: order irrelevant → ⁵C₃ = 10. Seating the 3 chosen people in a row: order matters → 3! = 6 arrangements. Total = 10 × 6 = 60. The test: swapping two items changes the outcome? Seating yes (permutation), choosing no (combination). Using ⁵P₃ for the choice overcounts by 3!.",
+      "unit": "algebra"
+    },
+    {
+      "question": "Find all θ in [0, 2π) with sin θ = ½ — and explain the quadrant logic.",
+      "solution": "Reference angle: sin 30° = ½. Sine is positive in quadrants I and II, so θ = π/6 and θ = 5π/6. The CAST/sign logic: only two quadrants carry the required sign, each contributing one solution per period. A single answer (π/6 only) loses half the marks; listing quadrants III/IV ignores the sign rule.",
+      "unit": "trigonometry"
+    },
+    {
+      "question": "Why is verifying an identity with θ = 30° not a proof?",
+      "solution": "An identity must hold for EVERY value in the domain; one numerical agreement is a coincidence check, not a proof. The proof must transform one side into the other by valid algebra (e.g. convert to sin/cos, use Pythagorean identities). NEB awards the step-by-step transformation; a numerical test scores zero for the proof even when it 'works'.",
+      "unit": "trigonometry"
+    },
+    {
+      "question": "For y² = −12x, where is the focus and which way does the parabola open?",
+      "solution": "Compare with y² = 4ax: 4a = −12 → a = −3. The parabola opens along the NEGATIVE x-axis (a < 0), focus at (−3, 0), directrix x = 3. The squared variable (y²) tells you the axis is horizontal; the sign of a tells you the direction. Sketch it — the sketch catches orientation errors before they cost the focus, directrix and latus-rectum marks.",
+      "unit": "analytic-geometry"
+    },
+    {
+      "question": "Evaluate lim_{x→2} (x² − 4)/(x − 2) — and say why cancelling is legitimate here.",
+      "solution": "Direct substitution gives 0/0 (indeterminate). Factorise: (x−2)(x+2)/(x−2) = x + 2 for x ≠ 2. Cancelling is legitimate because the limit never evaluates AT x = 2 — it studies the neighbourhood — so the cancelled function agrees with the original everywhere except the point itself. Then substitute: the limit is 4. Declaring 'does not exist' on seeing 0/0 loses the evaluation entirely.",
+      "unit": "calculus"
+    },
+    {
+      "question": "Differentiate sin(3x²) — where does the chain rule enter and what is the inner function?",
+      "solution": "Inner function: u = 3x², with du/dx = 6x. Outer: d(sin u)/du = cos u. Chain rule: dy/dx = cos(3x²) × 6x = 6x·cos(3x²). The classic error is writing cos(3x²) alone — the inner derivative 6x is the multiplier the chain rule demands. Name the inner function explicitly before differentiating; the examiner awards the chain-rule step separately.",
+      "unit": "calculus"
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "subject": "chemistry",
+  "classLevel": "12",
+  "source": "CDC curriculum (syllabus.ts) — specification-grid transcription pending",
+  "totalMarks": 75,
+  "units": [
+    {
+      "unit": "solutions",
+      "hours": 7,
+      "marksEstimate": 7,
+      "concepts": [
+        "Types of solutions",
+        "expression of concentration",
+        "Solubility of gases and solids in liquids",
+        "Solubility of gases",
+        "solids in liquids",
+        "Vapour pressure of solutions Raoult's law",
+        "elevation of boiling point",
+        "depression of freezing point",
+        "osmosis",
+        "osmotic pressure",
+        "Van't Hoff factor and abnormal molar masses",
+        "Van't Hoff factor"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "electro-chemistry",
+      "hours": 8,
+      "marksEstimate": 8,
+      "concepts": [
+        "Oxidation and reduction electrode reactions",
+        "Oxidation",
+        "reduction electrode reactions",
+        "Electrochemical cells galvanic cell",
+        "cell potential",
+        "standard electrode potential",
+        "Nernst equation and its applications",
+        "Nernst equation",
+        "its applications",
+        "Conductance of electrolytic solutions",
+        "Electrolysis and Faraday's laws",
+        "Electrolysis"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "chemical-kinetics",
+      "hours": 6,
+      "marksEstimate": 6,
+      "concepts": [
+        "Rate of reaction average and instantaneous rate",
+        "Rate of reaction average",
+        "instantaneous rate",
+        "Factors affecting rate of reaction",
+        "Rate law and order of reaction",
+        "Rate law",
+        "order of reaction",
+        "Integrated rate equations zero order",
+        "first order reactions",
+        "Arrhenius equation and activation energy",
+        "Arrhenius equation",
+        "activation energy"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "general-and-organic-fundamentals",
+      "hours": 8,
+      "marksEstimate": 8,
+      "concepts": [
+        "Purification",
+        "Inductive effect resonance hyperconjugation",
+        "Inductive effect",
+        "resonance",
+        "hyperconjugation",
+        "Electrophilic",
+        "nucleophilic substitution reactions",
+        "Free radical reactions",
+        "Important organic reactions",
+        "oxidation",
+        "reduction",
+        "addition"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "hydrocarbons",
+      "hours": 7,
+      "marksEstimate": 7,
+      "concepts": [
+        "Alkanes",
+        "conformations",
+        "combustion",
+        "free radical halogenation",
+        "Alkenes",
+        "preparation",
+        "geometrical isomerism",
+        "electrophilic addition Markovnikov",
+        "anti-Markovnikov",
+        "ozonolysis",
+        "polymerisation",
+        "Alkynes"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "alcohols-phenols-ethers",
+      "hours": 7,
+      "marksEstimate": 7,
+      "concepts": [
+        "Alcohols",
+        "classification",
+        "preparation",
+        "physical",
+        "chemical properties",
+        "Phenols",
+        "acidity",
+        "electrophilic substitution",
+        "Kolbe's reaction",
+        "Reimer-Tiemann reaction",
+        "Ethers",
+        "chemical reactions"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "aldehydes-ketones-carboxylic-acids",
+      "hours": 10,
+      "marksEstimate": 10,
+      "concepts": [
+        "Aldehydes and ketones",
+        "Aldehydes",
+        "ketones",
+        "preparation",
+        "physical properties",
+        "nucleophilic addition reactions",
+        "Carboxylic acids",
+        "acidic character",
+        "reactions",
+        "Name reactions",
+        "Aldol condensation",
+        "Cannizzaro reaction"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "amines",
+      "hours": 6,
+      "marksEstimate": 6,
+      "concepts": [
+        "Classification nomenclature and preparation",
+        "Classification",
+        "nomenclature",
+        "preparation",
+        "Physical and chemical properties",
+        "Physical",
+        "chemical properties",
+        "Basic character of amines",
+        "Reactions",
+        "diazotisation",
+        "coupling reactions",
+        "Hinsberg test"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "biomolecules",
+      "hours": 5,
+      "marksEstimate": 5,
+      "concepts": [
+        "Carbohydrates",
+        "monosaccharides glucose",
+        "fructose",
+        "disaccharides",
+        "polysaccharides",
+        "Proteins",
+        "amino acids",
+        "peptide bond",
+        "primary to quaternary structure",
+        "denaturation",
+        "Enzymes",
+        "definition"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "chemistry-in-everyday-life",
+      "hours": 4,
+      "marksEstimate": 4,
+      "concepts": [
+        "Medicinal chemicals analgesics",
+        "tranquilizers",
+        "antipyretics",
+        "antibiotics",
+        "antihistamines",
+        "antacids",
+        "Chemical cleansers soaps and detergents",
+        "Chemical cleansers soaps",
+        "detergents",
+        "Food additives preservatives",
+        "artificial sweetening agents"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "chemistry-of-element",
+      "hours": 8,
+      "marksEstimate": 8,
+      "concepts": [
+        "p-block elements",
+        "important compounds",
+        "trends in properties",
+        "d-block elements",
+        "general characteristics",
+        "important compounds KMnO₄",
+        "K₂Cr₂O₇",
+        "f-block elements",
+        "lanthanoids",
+        "actinoids",
+        "Coordination compounds",
+        "Werner's theory"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    }
+  ]
+}

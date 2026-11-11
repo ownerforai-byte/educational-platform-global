@@ -15,10 +15,12 @@
  * bank that is written to disk but NOT registered here is invisible: the page
  * renders a healthy empty bank, with no error and no warning.
  *
- * Two copies must agree, because they are read by different runtimes:
- *
- *   content/_index.json                      the authored corpus (source of truth)
- *   frontend/public/data/content/_index.json the asset the browser fetches
+ * Two copies USED to be required (server disk read + browser fetch), but
+ * commit 7bb51358 retired the public copy (paid question bodies now serve
+ * through the spark-gated backend endpoint instead), so the public target is
+ * OPTIONAL: when it exists on disk both are kept byte-identical; when it is
+ * absent (the current tree state) only `content/_index.json` is maintained
+ * and the script says so instead of failing.
  *
  * `loadData()` prefers a disk read on the server (trying `public/data`,
  * `frontend/public/data` and `../public/data` in turn) and `fetch` in the
@@ -60,16 +62,35 @@ const CORPUSES = [
   // the quiz loader + AI corpus. Non-canonical names (`ex-…json`) only affect
   // the legacy log line.
   { dir: path.join(CONTENT, "practice", "solutions"), prefix: "practice/solutions" },
+  // Metadata families (`metadata: true`): these carry guidance/reference data,
+  // not question banks, so the `questions`-array rule does not apply to them —
+  // they register as-is so `loadData()` finds them on both runtimes.
+  //   practice/pyq-links — the link-only paper index (NEB papers are ⚠️:
+  //     URL + provider credit only, never paper text).
+  //   practice/blueprint — CDC specification-grid metadata (structural only).
+  //   practice/mistakes  — the authored mistake guide (also carries a derived
+  //     `questions` array for the Veer corpus, but registers even where a
+  //     guide omits it).
+  { dir: path.join(CONTENT, "practice", "pyq-links"), prefix: "practice/pyq-links", metadata: true },
+  { dir: path.join(CONTENT, "practice", "blueprint"), prefix: "practice/blueprint", metadata: true },
+  { dir: path.join(CONTENT, "practice", "mistakes"), prefix: "practice/mistakes", metadata: true },
 ];
 const TARGETS = [
   path.join(CONTENT, "_index.json"),
   path.join(ROOT, "frontend", "public", "data", "content", "_index.json"),
 ];
+// Metadata families are FREE platform-authored guidance (✅ in SOURCES.md — no
+// paid bodies), so unlike the question banks they MAY ship as public static
+// assets. Each metadata file is mirrored byte-stable into
+// `frontend/public/data/content/<rel>` so `loadData()` finds it on both the
+// server (disk read) and the browser (fetch) without dragging the multi-MB
+// corpus index into the page.
+const PUBLIC_MIRROR = path.join(ROOT, "frontend", "public", "data", "content");
 
 /** Every bank under the owned families, as content-relative POSIX paths (= index keys). */
 function discoverPyqFiles() {
   const out = [];
-  for (const { dir, prefix } of CORPUSES) {
+  for (const { dir, prefix, metadata } of CORPUSES) {
     if (!fs.existsSync(dir)) continue;
     const walk = (d) => {
       for (const entry of fs.readdirSync(d, { withFileTypes: true })) {
@@ -80,7 +101,10 @@ function discoverPyqFiles() {
         }
         if (!entry.name.endsWith(".json")) continue;
         if (entry.name.startsWith("_")) continue;
-        out.push(`${prefix}/${path.relative(dir, full).replaceAll(path.sep, "/")}`);
+        out.push({
+          rel: `${prefix}/${path.relative(dir, full).replaceAll(path.sep, "/")}`,
+          metadata: Boolean(metadata),
+        });
       }
     };
     walk(dir);
@@ -94,8 +118,10 @@ function discoverPyqFiles() {
 
 function readIndex(file, label) {
   if (!fs.existsSync(file)) {
-    console.error(`pyq-register: ${label} not found at ${file}`);
-    process.exit(2);
+    // The public copy was retired by 7bb51358 — absence is expected, not an
+    // error (see the header note).
+    console.log(`pyq-register: ${label} absent (retired public copy) — skipping`);
+    return null;
   }
   try {
     return JSON.parse(fs.readFileSync(file, "utf8"));
@@ -137,14 +163,34 @@ let totalAdded = 0;
 for (const [i, target] of TARGETS.entries()) {
   const label = path.relative(ROOT, target).replaceAll(path.sep, "/");
   const index = readIndex(target, label);
+  if (!index) continue;
   const added = [];
+  const mirrored = [];
   const empty = [];
   const legacy = [];
 
-  for (const rel of files) {
+  for (const { rel, metadata } of files) {
     const body = JSON.parse(fs.readFileSync(path.join(CONTENT, rel), "utf8"));
     const questions = Array.isArray(body.questions) ? body.questions : [];
     const current = index[rel];
+
+    if (metadata) {
+      // Metadata families register as-is: their value is the whole document
+      // (links, blueprint units, mistake entries), not a questions array.
+      if (!current) {
+        index[rel] = body;
+        added.push(rel);
+      }
+      // Mirror to the public tree (free content — see PUBLIC_MIRROR note).
+      const mirror = path.join(PUBLIC_MIRROR, rel);
+      fs.mkdirSync(path.dirname(mirror), { recursive: true });
+      const rendered = `${JSON.stringify(body, null, 2).replace(/\n/g, "\r\n")}\r\n`;
+      if (!fs.existsSync(mirror) || fs.readFileSync(mirror, "utf8") !== rendered) {
+        fs.writeFileSync(mirror, rendered, "utf8");
+        mirrored.push(rel);
+      }
+      continue;
+    }
 
     if (questions.length === 0) {
       // A bank with no questions is exactly the silent failure this script is
@@ -172,6 +218,10 @@ for (const [i, target] of TARGETS.entries()) {
     console.log(
       `${label}: ${legacy.length} legacy bank(s) skipped (older schema, not registered here)`,
     );
+  }
+
+  if (mirrored.length) {
+    console.log(`${label}: ${mirrored.length} metadata file(s) mirrored to public/data`);
   }
 
   if (added.length) {

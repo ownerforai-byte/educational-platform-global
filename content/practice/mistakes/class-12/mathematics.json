@@ -1,0 +1,163 @@
+{
+  "subject": "mathematics",
+  "classLevel": "12",
+  "examHall": [
+    "Every indefinite integral ends with + C — a missing constant is an automatic deduction on each integral.",
+    "For definite integrals, change the limits when you substitute; mixing old and new limits loses the evaluation.",
+    "State the test used for continuity/differentiability (left limit = right limit = value) — naming the criterion carries marks.",
+    "In LPP, shade the feasible region, list the corner points, and evaluate the objective at EVERY corner — skipping one loses the optimum check.",
+    "For vector/3D answers, give direction cosines or a unit vector where direction is asked; magnitude alone is half an answer."
+  ],
+  "mistakes": [
+    {
+      "id": "math12-continuity-criterion",
+      "topic": "Limits & continuity",
+      "wrong": "Claiming continuity from the existence of the limit alone, or ignoring the one-sided limits at a piecewise joint.",
+      "why": "Continuity at a needs lim_{x→a⁻} f = lim_{x→a⁺} f = f(a) — three conditions. A function with an existing but unequal one-sided limit is discontinuous; missing the third condition (function value) loses the justification marks.",
+      "fix": "Write all three conditions, compute both one-sided limits at every piecewise joint, and compare with the defined value before concluding.",
+      "unit": "limits-and-continuity",
+      "marks": "3-5"
+    },
+    {
+      "id": "math12-differentiability-sharp",
+      "topic": "Differentiability",
+      "wrong": "Assuming continuous ⇒ differentiable (e.g. calling |x| differentiable at 0).",
+      "why": "Continuity is necessary but not sufficient; |x| is continuous everywhere but has unequal one-sided derivatives at 0. The converse-error loses the classic exam question outright.",
+      "fix": "Test differentiability with the left and right derivative limits; quote |x| at 0 as the standard counterexample.",
+      "unit": "differentiation",
+      "marks": "2-4"
+    },
+    {
+      "id": "math12-integral-plus-c",
+      "topic": "Integration (indefinite)",
+      "wrong": "Omitting + C, or adding it to a definite integral.",
+      "why": "An indefinite integral is a FAMILY of antiderivatives — without + C the answer is one member, not the family, and the mark scheme deducts it every time. A definite integral is a number: + C there is a conceptual error.",
+      "fix": "End every indefinite integration with + C; never on definite integrals. Verify by differentiating your answer back.",
+      "unit": "integration",
+      "marks": "1-2"
+    },
+    {
+      "id": "math12-substitution-limits",
+      "topic": "Integration by substitution",
+      "wrong": "Substituting u = g(x) but keeping the original x-limits, or leaving the answer in u without converting back.",
+      "why": "After substitution the integral lives in u — the limits must convert (x = a → u = g(a)); mixing variable domains gives a wrong number, and an answer in u for an x-integral is incomplete.",
+      "fix": "Write the limit conversion line explicitly (new limits from old), integrate in u, and either convert back or (preferred) evaluate in u with converted limits.",
+      "unit": "integration",
+      "marks": "2-4"
+    },
+    {
+      "id": "math12-by-parts-order",
+      "topic": "Integration by parts",
+      "wrong": "Choosing u = the easily-differentiated simple factor (e.g. u = x², dv = ln x dx) and creating a harder integral.",
+      "why": "The ILATE/LIATE priority (Inverse, Log, Algebraic, Trig, Exponential) picks u as the factor that SIMPLIFIES when differentiated; the wrong choice spirals into a worse integral and loses the technique marks.",
+      "fix": "Rank the two factors by ILATE, take u = the earlier one, and check after one application whether the new integral is simpler — if not, re-choose.",
+      "unit": "integration",
+      "marks": "3-5"
+    },
+    {
+      "id": "math12-de-solution-form",
+      "topic": "Differential equations",
+      "wrong": "Dropping the arbitrary constant when integrating, or calling a one-parameter family the 'general solution' of a second-order equation.",
+      "why": "The order of the equation fixes the number of independent arbitrary constants; a second-order DE needs two. One missing constant makes the solution a particular one and loses the general-solution mark.",
+      "fix": "Integrate once per order, introducing one constant per integration, then verify by substituting back into the DE.",
+      "unit": "differential-equations",
+      "marks": "3-5"
+    },
+    {
+      "id": "math12-vector-angle",
+      "topic": "Vector algebra",
+      "wrong": "Using the angle between a vector and an axis as the angle in a·b, or treating |a×b| as the parallelogram's side rather than area.",
+      "why": "a·b = |a||b|cosθ uses θ BETWEEN the vectors; |a×b| = |a||b|sinθ equals the AREA of the parallelogram they span. Both misuses lose the geometric-interpretation marks.",
+      "fix": "Sketch both vectors from a common tail, mark θ between them, and attach the geometric meaning (projection for dot, area for cross) to each product.",
+      "unit": "vector-algebra",
+      "marks": "2-4"
+    },
+    {
+      "id": "math12-3d-line-direction",
+      "topic": "Three-dimensional geometry",
+      "wrong": "Writing direction ratios where direction cosines are asked (or vice versa), or omitting the normalisation in cosines.",
+      "why": "Direction ratios (a, b, c) are any parallel triple; direction cosines are the normalised (a/√(a²+b²+c²), …) with squares summing to 1. The two are distinct mark items and the check l²+m²+n² = 1 is itself examinable.",
+      "fix": "Compute ratios first, normalise for cosines, and verify l² + m² + n² = 1 as the closing step.",
+      "unit": "three-dimensional-geometry",
+      "marks": "2-3"
+    },
+    {
+      "id": "math12-lpp-corner",
+      "topic": "Linear programming",
+      "wrong": "Reading the optimum from a vertex not actually on the feasible region, or evaluating the objective at only the 'obvious' corners.",
+      "why": "The optimum lies at a vertex OF THE FEASIBLE REGION — an intersection outside it (violating a constraint) is invalid, and the corner-point theorem requires checking ALL vertices. Both errors lose the optimisation conclusion.",
+      "fix": "Shade the region constraint by constraint, list every corner point from the actual region, evaluate Z at each, then choose the maximum/minimum as asked.",
+      "unit": "linear-programming",
+      "marks": "4-6"
+    },
+    {
+      "id": "math12-bayes-total",
+      "topic": "Probability (conditional & Bayes)",
+      "wrong": "Using P(A|B) = P(A)·P(B) unconditionally, or forgetting the denominator (total probability) in Bayes' theorem.",
+      "why": "Conditional probability divides by P(B); Bayes' denominator ΣP(Eᵢ)P(A|Eᵢ) is the normalising total probability. Omitting it gives probabilities that do not sum to 1 — an automatic deduction.",
+      "fix": "Write the partition of the sample space, compute each P(Eᵢ)P(A|Eᵢ), sum for the denominator, then apply Bayes. Verify the posterior probabilities sum to 1.",
+      "unit": "probability",
+      "marks": "3-5"
+    },
+    {
+      "id": "math12-binomial-dist-mean",
+      "topic": "Probability distributions",
+      "wrong": "Using mean = np for a distribution that is not binomial, or claiming variance > mean for a binomial.",
+      "why": "Mean np and variance npq apply to binomial trials only; for a binomial, variance npq ≤ mean np always (q ≤ 1). Applying the formulas to other distributions loses the identification and the calculation.",
+      "fix": "Verify the binomial conditions (fixed n, two outcomes, constant p, independent trials) before using np/npq, and use the variance ≤ mean check as a sanity test.",
+      "unit": "probability",
+      "marks": "2-4"
+    },
+    {
+      "id": "math12-area-integral-sign",
+      "topic": "Application of integrals (area)",
+      "wrong": "Reporting a negative area when the curve lies below the axis, or integrating across a sign change without splitting.",
+      "why": "Area is ∫|f(x)|dx — where f changes sign the integral cancels portions; the answer must be positive and computed piecewise. A single unsplit integral loses the area value and the set-up mark.",
+      "fix": "Find where the curve crosses the axis, split the interval there, integrate each piece and add absolute values.",
+      "unit": "integration",
+      "marks": "3-5"
+    }
+  ],
+  "questions": [
+    {
+      "question": "f(x) = |x| is continuous at 0. Is it differentiable there? Show the criterion.",
+      "solution": "No. Left derivative: lim_{h→0⁻} (|h| − 0)/h = −1; right derivative: +1. Differentiability needs the two one-sided derivative limits to be EQUAL; −1 ≠ +1, so f is not differentiable at 0 despite being continuous. Continuity is necessary but not sufficient — |x| at 0 is the standard counterexample to quote.",
+      "unit": "differentiation"
+    },
+    {
+      "question": "Evaluate ∫₀¹ x·e^{x²} dx — where must the limits change?",
+      "solution": "Substitute u = x², du = 2x dx. When x = 0, u = 0; when x = 1, u = 1. The integral becomes ½∫₀¹ e^u du = ½(e − 1). The limits convert WITH the substitution — keeping 0 and 1 in x while integrating in u mixes domains. Converting the limits explicitly is itself a marked step.",
+      "unit": "integration"
+    },
+    {
+      "question": "Integrate x·ln x dx — which factor becomes u under ILATE and why?",
+      "solution": "ILATE ranks Log before Algebraic, so u = ln x (differentiates to 1/x, simplifying) and dv = x dx. ∫x ln x dx = (x²/2)ln x − ∫(x²/2)(1/x) dx = (x²/2)ln x − x²/4 + C. Choosing u = x instead makes ∫v du = ∫(x²/2)(1/x)… wait — the wrong choice integrates ln x and produces a harder integral. Rank by ILATE, then verify the new integral is simpler.",
+      "unit": "integration"
+    },
+    {
+      "question": "Why does the general solution of d²y/dx² = 6x need TWO constants?",
+      "solution": "Integrating once: dy/dx = 3x² + C₁; twice: y = x³ + C₁x + C₂. The order of the DE equals the number of independent arbitrary constants in the general solution — one per integration. A single constant gives a particular family, not the general solution. Verify by differentiating twice and substituting back.",
+      "unit": "differential-equations"
+    },
+    {
+      "question": "Maximise Z = 3x + 4y over the feasible region with corners (0,0), (4,0), (4,2), (0,5) — show the full corner-point work.",
+      "solution": "Evaluate Z at EVERY corner: (0,0)→0; (4,0)→12; (4,2)→20; (0,5)→20. Both (4,2) and (0,5) give 20, so the maximum is 20 attained along the edge joining them. The corner-point theorem requires evaluating all vertices — skipping one can miss a tie or the true optimum, and reading a vertex outside the shaded region is invalid.",
+      "unit": "linear-programming"
+    },
+    {
+      "question": "A bag has 3 red and 5 blue balls. Two are drawn without replacement. P(both red) — and why not 3/8 × 3/8?",
+      "solution": "P(first red) = 3/8; after one red is removed, P(second red) = 2/7. Product: 3/8 × 2/7 = 3/28. The naive 3/8 × 3/8 treats the draws as independent (with replacement). Without replacement the second probability is conditional on the first — the sample space shrinks. Always ask: with or without replacement, before multiplying.",
+      "unit": "probability"
+    },
+    {
+      "question": "A line has direction ratios (2, −3, 6). Find its direction cosines and verify them.",
+      "solution": "Magnitude: √(4 + 9 + 36) = 7. Cosines: (2/7, −3/7, 6/7). Verify: 4/49 + 9/49 + 36/49 = 49/49 = 1 ✓. Direction ratios are any parallel triple; cosines are the normalised version with l² + m² + n² = 1 — the verification is itself a mark and catches arithmetic slips.",
+      "unit": "three-dimensional-geometry"
+    },
+    {
+      "question": "Find the area between y = x² − 4 and the x-axis from x = 0 to x = 3 — why must the integral be split?",
+      "solution": "y = 0 at x = 2. From 0 to 2 the curve is below the axis (y negative); from 2 to 3 above. Area = |∫₀² (x²−4)dx| + ∫₂³ (x²−4)dx = |−16/3| + (−9/3 + 8) = 16/3 + 5/3 = 7. Unsplit, ∫₀³ (x²−4)dx = −3 — negative and wrong: the below-axis portion cancelled part of the above-axis area. Split at every sign change and add absolute values.",
+      "unit": "integration"
+    }
+  ]
+}

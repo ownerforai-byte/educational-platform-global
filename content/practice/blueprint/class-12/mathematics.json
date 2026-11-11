@@ -1,0 +1,167 @@
+{
+  "subject": "mathematics",
+  "classLevel": "12",
+  "source": "CDC curriculum (syllabus.ts) — specification-grid transcription pending",
+  "totalMarks": 75,
+  "units": [
+    {
+      "unit": "limits-and-continuity",
+      "hours": 8,
+      "marksEstimate": 8,
+      "concepts": [
+        "Concept of limit geometric",
+        "physical interpretation",
+        "Standard limits and evaluation",
+        "Standard limits",
+        "evaluation algebraic",
+        "trigonometric",
+        "exponential",
+        "logarithmic",
+        "Indeterminate forms",
+        "0 0",
+        "Continuity of algebraic",
+        "logarithmic functions"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "differentiation",
+      "hours": 16,
+      "marksEstimate": 15,
+      "concepts": [
+        "Derivatives of algebraic",
+        "trigonometric",
+        "inverse trigonometric",
+        "exponential",
+        "logarithmic functions",
+        "Rules of differentiation",
+        "product rule",
+        "quotient rule",
+        "chain rule",
+        "Derivatives of parametric and implicit functions",
+        "Derivatives of parametric",
+        "implicit functions"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "integration",
+      "hours": 14,
+      "marksEstimate": 13,
+      "concepts": [
+        "Integration as inverse of differentiation",
+        "Standard integrals and methods",
+        "Standard integrals",
+        "methods",
+        "substitution",
+        "parts",
+        "partial fractions",
+        "Definite integrals and properties",
+        "Definite integrals",
+        "properties",
+        "Integration of trigonometric functions",
+        "Applications"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "differential-equations",
+      "hours": 8,
+      "marksEstimate": 8,
+      "concepts": [
+        "Formation of differential equations",
+        "Solving first order first degree equations",
+        "Solving first order",
+        "first degree equations",
+        "variable separable",
+        "homogeneous",
+        "linear",
+        "Applications",
+        "growth",
+        "decay",
+        "population dynamics"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "vector-algebra",
+      "hours": 8,
+      "marksEstimate": 8,
+      "concepts": [
+        "Scalar and vector quantities types of vectors",
+        "Scalar",
+        "vector quantities",
+        "types of vectors",
+        "Addition",
+        "subtraction",
+        "scalar multiplication of vectors",
+        "Dot product and its applications",
+        "Dot product",
+        "its applications",
+        "Cross product and its applications",
+        "Cross product"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "three-dimensional-geometry",
+      "hours": 8,
+      "marksEstimate": 8,
+      "concepts": [
+        "Direction cosines and direction ratios of a line",
+        "Direction cosines",
+        "direction ratios of a line",
+        "Equation of a line in space standard",
+        "general form",
+        "Equation of a plane normal form general form",
+        "Equation of a plane normal form",
+        "Angle between two lines",
+        "two planes",
+        "a line",
+        "a plane",
+        "Distance of a point from a plane and line"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "linear-programming",
+      "hours": 6,
+      "marksEstimate": 6,
+      "concepts": [
+        "Linear programming formulation of LPP",
+        "Maximization and minimization problems",
+        "Maximization",
+        "minimization problems"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    },
+    {
+      "unit": "probability",
+      "hours": 10,
+      "marksEstimate": 10,
+      "concepts": [
+        "Conditional probability",
+        "multiplication theorem",
+        "Independent events",
+        "Bayes' theorem and its applications",
+        "Bayes' theorem",
+        "its applications",
+        "Random variable and its probability distribution",
+        "Random variable",
+        "its probability distribution",
+        "Mean",
+        "variance",
+        "standard deviation of a random variable"
+      ],
+      "verified": false,
+      "provenance": "concepts and hours derived from the CDC curriculum topic list (structural metadata); marksEstimate is an hours-proportional estimate pending transcription of the official CDC specification grid"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+{
+  "subject": "chemistry",
+  "classLevel": "11",
+  "examHall": [
+    "Balance every equation before using it — an unbalanced equation invalidates every mole ratio downstream.",
+    "Show state symbols and conditions (Δ, catalyst, pressure) where the question asks for a complete equation; they carry marks.",
+    "In numericals, write the mole relation first (n = m/M, PV = nRT), then substitute; method marks live in the relation line.",
+    "Use the periodic table provided — quoting a wrong electronegativity order or atomic radius trend costs the whole comparison question.",
+    "For organic structures, draw every bond and lone pair the question asks for; skeletal shorthand loses the structure marks."
+  ],
+  "mistakes": [
+    {
+      "id": "ch11-mole-ratio",
+      "topic": "Stoichiometry & mole concept",
+      "wrong": "Using the mass ratio directly as the mole ratio (e.g. 4 g H₂ + 4 g O₂ → 'equal moles'), or ignoring the limiting reagent.",
+      "why": "Moles = mass/molar mass, so equal masses are almost never equal moles; every yield, volume and excess calculation downstream inherits the error and loses the full numerical band.",
+      "fix": "Convert every substance to moles first, divide by the equation's coefficients to find the limiting reagent, and only then compute product amounts.",
+      "unit": "stoichiometry",
+      "marks": "3-5"
+    },
+    {
+      "id": "ch11-gas-law-conditions",
+      "topic": "States of matter / gas laws",
+      "wrong": "Using °C in PV = nRT, or forgetting to convert pressure to the unit matching R.",
+      "why": "T must be in kelvin and R must match the pressure–volume units; a °C value makes V negative or absurd, and the examiner gives zero for the numeric answer regardless of method.",
+      "fix": "Convert T → K (add 273.15) and choose R to match the pressure unit (0.0821 L·atm/mol·K or 8.314 J/mol·K with Pa and m³) before substituting.",
+      "unit": "states-of-matter",
+      "marks": "2-4"
+    },
+    {
+      "id": "ch11-quantum-numbers",
+      "topic": "Atomic structure & quantum numbers",
+      "wrong": "Writing a set like n = 2, l = 2, m = 3, or filling 3d before 4p ignoring the (n+l) rule.",
+      "why": "l is bounded by n−1 and m by ±l; an impossible set is a definitional error worth zero, and a wrong filling order cascades into the electronic-configuration and magnetic-property marks.",
+      "fix": "Recite the bounds (l ≤ n−1, |m| ≤ l, s = ±½), fill by (n+l) rule with the lower-n tiebreak, then verify against the periodic table position.",
+      "unit": "atomic-structure",
+      "marks": "2-4"
+    },
+    {
+      "id": "ch11-oxidation-state",
+      "topic": "Oxidation & reduction",
+      "wrong": "Assigning oxygen −2 blindly in peroxides/O₂F₂, or balancing redox half-equations without balancing charge with electrons.",
+      "why": "Oxidation numbers drive electron counting; one wrong assignment flips which species is oxidised, and an unbalanced charge in a half-equation loses the balancing marks entirely.",
+      "fix": "Apply the rules in order (free element 0, F −1, O −2 except peroxides/superoxides, H +1 except hydrides), then balance each half-equation for atoms AND charge before combining.",
+      "unit": "oxidation-and-reduction",
+      "marks": "2-4"
+    },
+    {
+      "id": "ch11-lechatelier-direction",
+      "topic": "Chemical equilibrium",
+      "wrong": "Saying an added catalyst shifts the equilibrium, or predicting the shift direction without writing the Δn(gas) of the equation.",
+      "why": "A catalyst changes only the TIME to equilibrium, not the position; and pressure effects depend on the change in gaseous moles — both confusions lose the whole Le Chatelier analysis.",
+      "fix": "For each stress write the balanced equation, count Δn(gas), then apply: pressure ↑ favours fewer gas moles; catalyst never shifts; temperature follows the reaction's ΔH.",
+      "unit": "chemical-equilibrium",
+      "marks": "2-4"
+    },
+    {
+      "id": "ch11-vsepr-lone-pair",
+      "topic": "Bonding & shapes (VSEPR)",
+      "wrong": "Ignoring lone pairs when predicting shape (calling H₂O 'linear' from two bonds), or confusing shape with electron-pair geometry.",
+      "why": "Lone pairs repel more than bond pairs, so they bend the shape (H₂O is bent, NH₃ pyramidal); the shape name and bond angle are the marks — both are lost when lone pairs are dropped.",
+      "fix": "Count bonding + lone domains around the central atom, name the electron-pair geometry, then name the MOLECULAR shape after the lone pairs and quote the compressed angle (104.5°, 107°).",
+      "unit": "chemical-bonding-and-shapes-of-molecules",
+      "marks": "2-4"
+    },
+    {
+      "id": "ch11-iupac-numbering",
+      "topic": "Organic nomenclature (IUPAC)",
+      "wrong": "Numbering the chain from the nearer end instead of giving substituents/multiple bonds the lowest locants, or omitting the parent-chain length prefix.",
+      "why": "IUPAC naming is rule-marked; a wrong locant or wrong parent chain is a wrong name even when every other part is right, and the structure drawn from it inherits the error.",
+      "fix": "Find the longest chain containing the highest-priority functional group, number from the end giving the lowest set of locants, then assemble prefix–parent–suffix in order.",
+      "unit": "fundamental-principles-of-organic-chemistry",
+      "marks": "2-3"
+    },
+    {
+      "id": "ch11-isomer-count",
+      "topic": "Isomerism",
+      "wrong": "Counting mirror-image structures as identical, or listing the same structure twice under different drawings.",
+      "why": "Structural and stereoisomer counts are separate marks; missing the chiral centre or duplicating a structure loses the enumeration marks and the classification marks with them.",
+      "fix": "Enumerate systematically (fix the longest chain, move the substituent one carbon at a time), then check each pair for a plane of symmetry before calling them distinct.",
+      "unit": "fundamental-principles-of-organic-chemistry",
+      "marks": "2-4"
+    },
+    {
+      "id": "ch11-equation-conditions",
+      "topic": "Chemical equations & conditions",
+      "wrong": "Writing an organic equation without the catalyst/solvent/temperature the reaction requires (e.g. omitting anhyd. AlCl₃ in Friedel–Crafts).",
+      "why": "NEB marks conditions explicitly; a correct skeleton equation without its conditions loses the condition marks and can change the actual product (e.g. substitution vs addition).",
+      "fix": "For each named reaction, memorise the reagent trio (reagent, catalyst, conditions) and write them above/below the arrow as part of the equation.",
+      "unit": "hydrocarbons",
+      "marks": "1-3"
+    },
+    {
+      "id": "ch11-periodic-trend-exceptions",
+      "topic": "Periodic table & trends",
+      "wrong": "Claiming ionisation energy always increases across a period, ignoring the Be/B and N/O anomalies.",
+      "why": "The exceptions ARE the question; quoting a smooth trend where the syllabus teaches the sub-shell anomaly loses the explanation marks and the follow-up comparison.",
+      "fix": "Learn the two class-11 anomalies (Group IIA > IIIA, Group VA > VIA) with their sub-shell reasons (filled/half-filled stability), and quote them whenever a comparison crosses them.",
+      "unit": "classification-of-elements-and-periodic-table",
+      "marks": "2-3"
+    },
+    {
+      "id": "ch11-hybridisation-count",
+      "topic": "Hybridisation",
+      "wrong": "Counting only σ bonds to assign hybridisation and forgetting lone pairs count as domains (calling N in NH₃ sp²).",
+      "why": "Hybridisation counts σ bonds + lone pairs on the atom; NH₃ has four domains → sp³. A wrong hybridisation claim loses the shape, angle and geometry marks that follow.",
+      "fix": "Count σ bonds + lone pairs around the atom (π bonds never count), map the number to sp/sp²/sp³, and cross-check with the observed shape.",
+      "unit": "chemical-bonding-and-shapes-of-molecules",
+      "marks": "2-3"
+    },
+    {
+      "id": "ch11-nonmetal-reactions",
+      "topic": "Chemistry of non-metals",
+      "wrong": "Confusing the laboratory and industrial preparations (e.g. writing the contact process for lab SO₂), or mixing up the oxidising strengths of halogens.",
+      "why": "Preparation questions are marked on the exact reagents and conditions; halogen displacement order (F > Cl > Br > I) decides which displacement occurs — both errors lose the whole reaction question.",
+      "fix": "Keep two separate lists per non-metal: lab preparation (reagents, conditions, drying agent) and industrial process (catalyst, temperature, key equation). For halogens, write the displacement series once and test every question against it.",
+      "unit": "chemistry-of-non-metals",
+      "marks": "2-4"
+    }
+  ],
+  "questions": [
+    {
+      "question": "4 g of hydrogen reacts with 4 g of oxygen. Which is limiting and why does 'equal masses' mislead?",
+      "solution": "Moles: H₂ = 4/2 = 2 mol; O₂ = 4/32 = 0.125 mol. The equation 2H₂ + O₂ → 2H₂O needs 2 mol H₂ per 1 mol O₂, so 2 mol H₂ would need 1 mol O₂ — but only 0.125 mol is present. O₂ is limiting. 'Equal masses' misleads because moles = mass/molar mass; hydrogen's tiny molar mass makes 4 g a huge mole count. Convert to moles, divide by coefficients, THEN compare.",
+      "unit": "stoichiometry"
+    },
+    {
+      "question": "Why is a catalyst never the answer to 'which way does the equilibrium shift?'",
+      "solution": "A catalyst lowers the activation energy of BOTH forward and reverse reactions equally, so equilibrium is reached faster but its position is unchanged — K is untouched. Le Chatelier shifts come from changes in concentration, pressure (via Δn of gas) or temperature. Writing 'catalyst shifts the equilibrium right' is a definitional error the examiner marks zero.",
+      "unit": "chemical-equilibrium"
+    },
+    {
+      "question": "Is the set n = 2, l = 2, m = −2 possible? What bounds decide it?",
+      "solution": "Impossible. The bounds are l ≤ n−1 (so n = 2 allows l = 0, 1 only) and |m| ≤ l. Since l = 2 already violates l ≤ n−1, the set fails immediately. For n = 3, l = 2, m = −2 would be a valid 3d orbital. Quote the two bounds in the answer — the examiner awards the reasoning marks for the bounds, not just 'impossible'.",
+      "unit": "atomic-structure"
+    },
+    {
+      "question": "Why is H₂O bent while CO₂ is linear, when both have an 'AX₂' formula?",
+      "solution": "Shape depends on electron domains, not just bonded atoms. O in H₂O has 2 bond pairs + 2 lone pairs = 4 domains (sp³, tetrahedral set); the lone pairs repel more, compressing the angle to 104.5° — bent. C in CO₂ has 2 bond pairs, no lone pairs = 2 domains (sp, linear, 180°). Count σ bonds + lone pairs, name the electron-pair geometry, then the molecular shape after lone pairs.",
+      "unit": "chemical-bonding-and-shapes-of-molecules"
+    },
+    {
+      "question": "In balancing the half-equation MnO₄⁻ → Mn²⁺, where do the electrons go and why?",
+      "solution": "MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O. Balance O with H₂O, balance H with H⁺ (acidic medium), then balance CHARGE with electrons: left side carries (+8−1) = +7, right side +2, so 5 electrons enter the LEFT side. Electrons appear on the side of the higher charge for a reduction. A half-equation whose charges do not balance is marked wrong even if the atoms balance.",
+      "unit": "oxidation-and-reduction"
+    },
+    {
+      "question": "Why does ionisation energy dip from Be to B and from N to O instead of rising smoothly?",
+      "solution": "Be → B: the new electron enters the higher-energy 2p sub-shell, easier to remove than Be's filled 2s². N → O: O's fourth 2p electron is the first to pair up, and the added repulsion makes it easier to remove than N's half-filled, exchange-stabilised 2p³. The syllabus teaches these two anomalies; quoting a smooth trend across them loses the explanation marks.",
+      "unit": "classification-of-elements-and-periodic-table"
+    },
+    {
+      "question": "Name CH₃–CH(CH₃)–CH₂–CH₃ correctly — where do students go wrong?",
+      "solution": "2-methylbutane. The errors: numbering from the wrong end (giving 3-methylbutane — not the lowest locant) or choosing a shorter parent chain. The rule: longest chain first (4 carbons → butane), number from the end giving the lowest locant to the substituent (2, not 3), then assemble prefix–parent: 2-methylbutane. The examiner marks the locant and the parent chain separately.",
+      "unit": "fundamental-principles-of-organic-chemistry"
+    },
+    {
+      "question": "Why must the Friedel–Crafts equation show anhyd. AlCl₃, and what happens if the conditions are omitted?",
+      "solution": "AlCl₃ is the Lewis-acid catalyst that generates the electrophile (R⁺ or the acylium ion) from R–Cl or RCOCl; without it the aromatic ring — electron-rich but unreactive toward alkyl halides alone — does not react. NEB marks conditions explicitly: a correct skeleton equation missing 'anhyd. AlCl₃' loses the condition marks, and in related reactions missing conditions can change the product entirely.",
+      "unit": "hydrocarbons"
+    }
+  ]
+}

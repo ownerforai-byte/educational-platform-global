@@ -1,0 +1,163 @@
+{
+  "subject": "physics",
+  "classLevel": "12",
+  "examHall": [
+    "State the sign convention (optics, capacitors, induced EMF) before the first equation — the examiner checks consistency, not memorised signs.",
+    "Draw the circuit/diagram first, label currents and fields with directions, then write equations — solving from an unlabelled picture invites sign chaos.",
+    "Keep vector quantities (E, B, F, torque) as vectors until the final magnitude; report direction as well as size.",
+    "In derivations, name each physical law as you use it (Gauss's law, Faraday's law, de Broglie relation) — the marking scheme credits the named principle.",
+    "Check the final answer against limits: does it behave correctly as r→∞, θ→0, ω→0? A two-second sanity check catches sign and factor slips."
+  ],
+  "mistakes": [
+    {
+      "id": "phy12-electrostatics-sign",
+      "topic": "Electrostatics & Coulomb's law",
+      "wrong": "Dropping the sign of a charge in Coulomb's law and then reporting a negative force magnitude, or adding field magnitudes without vector directions.",
+      "why": "Force magnitude is |q₁q₂|/4πε₀r² with direction from the geometry; a mishandled sign gives a physically impossible answer (attraction where repulsion is meant) and loses the vector marks.",
+      "fix": "Compute the magnitude from absolute charges, then decide attraction/repulsion and field direction from the charge signs on a diagram before combining fields as vectors.",
+      "unit": "electrostatics",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy12-capacitor-series",
+      "topic": "Capacitors",
+      "wrong": "Adding capacitances in series like resistances in parallel (C = C₁ + C₂ for series), or forgetting that series capacitors carry the SAME charge.",
+      "why": "The series rule is 1/C = 1/C₁ + 1/C₂ and the shared charge is the key to the voltage split; using the wrong rule cascades into wrong energies and loses the whole calculation.",
+      "fix": "Write the two rules side by side on scratch (parallel: same V, C adds; series: same Q, reciprocal C), then decide which applies from the circuit before substituting.",
+      "unit": "electrostatics",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy12-kirchhoff-sign",
+      "topic": "Kirchhoff's laws & circuits",
+      "wrong": "Changing sign conventions mid-loop, or treating a junction equation as a loop equation.",
+      "why": "Kirchhoff's rules are sign-bookkeeping; one inconsistent sign makes two loop equations contradictory and the whole 4-5 mark network question collapses.",
+      "fix": "Choose directions for all currents on the diagram, write the junction rule (ΣI in = ΣI out) separately from loops, and traverse every loop in one fixed direction applying ΣV = 0 with the same sign rules.",
+      "unit": "current-electricity",
+      "marks": "4-6"
+    },
+    {
+      "id": "phy12-meter-bridge-null",
+      "topic": "Meter bridge & potentiometer",
+      "wrong": "Confusing which resistance goes in the left gap, or reading the null point without interchanging gaps to check.",
+      "why": "The balance condition S = R·l/(100−l) presumes the standard setup; the interchange check is what proves there is no end error — skipping it loses the experimental-mark band.",
+      "fix": "Redraw the bridge, name the gaps, apply the balance relation with the correct l, and mention the interchange-of-gaps check (and end error) in the error-analysis part.",
+      "unit": "current-electricity",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy12-fleming-hand",
+      "topic": "Magnetism & induced EMF",
+      "wrong": "Using the right-hand rule where the left-hand rule applies (or vice versa), or reversing the induced current direction in Lenz's law.",
+      "why": "F = BIL (force on a current) uses the LEFT hand; the dynamo rule for induced EMF uses the RIGHT hand. Swapping them reverses the direction answer — and Lenz's-law questions award the direction explicitly.",
+      "fix": "Write the mnemonic on the margin: motor = left (Force), dynamo/generator = right (EMF). For Lenz's law, ask 'which induced current opposes the change?' and verify the flux change first.",
+      "unit": "magnetism-and-magnetic-effect",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy12-faraday-flux",
+      "topic": "Faraday's law",
+      "wrong": "Using flux = BA when the field is at an angle θ to the normal without cosθ, or differentiating B instead of Φ.",
+      "why": "Φ = BA cosθ and EMF = −dΦ/dt; missing cosθ or differentiating the wrong quantity gives an EMF that is wrong by a factor or by zero (when B is constant but area changes).",
+      "fix": "Define the angle θ between B and the NORMAL to the coil, write Φ = BA cosθ explicitly, then differentiate whichever quantity (B, A or θ) actually changes.",
+      "unit": "electromagnetic-induction",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy12-ac-rms",
+      "topic": "Alternating current",
+      "wrong": "Using peak values in power formulas (P = V₀I₀ instead of V_rms I_rms), or confusing rms with average for a full sine cycle.",
+      "why": "Average power uses rms values (V₀/√2, I₀/√2); the average of a sine over a full cycle is ZERO, not its rms. Mixing them doubles the power or zeroes it — both are marked wrong.",
+      "fix": "Label every voltage/current as peak or rms on the diagram, convert once at the start (V_rms = V₀/√2), and remember ⟨sin²⟩ = ½ is why rms exists.",
+      "unit": "alternating-current",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy12-lens-sign",
+      "topic": "Ray optics (lenses & mirrors)",
+      "wrong": "Using the lens formula with the mirror sign convention, or assigning f positive for a concave (diverging) lens.",
+      "why": "The Cartesian convention makes a diverging lens f negative and a concave mirror f negative; mixing conventions produces a virtual/real flip and the magnification sign follows wrongly.",
+      "fix": "At the top of the solution write the convention, then derive signs from the ray diagram: incident light left→right, distances against light negative. Check the answer against the diagram's image position.",
+      "unit": "ray-optics",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy12-interference-path",
+      "topic": "Wave optics",
+      "wrong": "Dropping the λ/2 half-wave shift at a reflection, or using the small-angle approximation outside its valid range.",
+      "why": "Fringe positions depend on the exact path difference (nλ vs (n+½)λ); a missing phase flip swaps bright and dark fringes and loses the whole interference analysis.",
+      "fix": "Write the path difference with its phase condition (bright: nλ; dark: (n+½)λ) and note any reflection phase flip before computing fringe spacing β = λD/d.",
+      "unit": "wave-optics",
+      "marks": "3-5"
+    },
+    {
+      "id": "phy12-photoelectric-threshold",
+      "topic": "Photoelectric effect",
+      "wrong": "Assuming brighter light always ejects more energetic electrons, or using work function in J while photon energy is in eV.",
+      "why": "Intensity changes the NUMBER of photoelectrons; frequency sets their maximum KE (hν − φ). Mixing eV and joules shifts every answer by 1.6×10⁻¹⁹ — a systematic mark loss.",
+      "fix": "Separate the two knobs (frequency → energy, intensity → count), write Einstein's equation KE_max = hν − φ, and convert units once, explicitly (1 eV = 1.6×10⁻¹⁹ J).",
+      "unit": "modern-physics",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy12-bohr-radius",
+      "topic": "Bohr model & spectra",
+      "wrong": "Quoting rₙ ∝ n (instead of n²) or Eₙ ∝ 1/n (instead of 1/n²), or forgetting the Z² factor for hydrogen-like ions.",
+      "why": "The scaling laws rₙ ∝ n²/Z, Eₙ ∝ −Z²/n² are the whole derivation; a wrong power or missing Z loses the series of marks built on it, including the spectral-line calculation.",
+      "fix": "Memorise the pair as 'radius grows as n², energy climbs toward zero as 1/n², both scale with Z²', and check the sign: bound-state energies are negative.",
+      "unit": "modern-physics",
+      "marks": "2-4"
+    },
+    {
+      "id": "phy12-nuclear-decay",
+      "topic": "Nuclear physics & radioactivity",
+      "wrong": "Balancing a decay equation for mass number but not charge, or applying half-life linearly instead of exponentially.",
+      "why": "Both conservation laws must hold (A and Z); and after n half-lives the remainder is N₀/2ⁿ, not N₀(1 − n/2). The linear habit gives absurd answers (negative atoms) that examiners penalise fully.",
+      "fix": "Write the decay equation with A and Z conserved, and compute activity/remaining nuclei with N = N₀(½)^(t/T½) or N = N₀e^(−λt) — checking A and Z at the end.",
+      "unit": "modern-physics",
+      "marks": "2-4"
+    }
+  ],
+  "questions": [
+    {
+      "question": "Two capacitors in series carry different charges — true or false, and why does the answer decide the whole calculation?",
+      "solution": "False. In series the SAME charge sits on every capacitor (charge conservation on the intermediate plates); the VOLTAGES differ, V = Q/C each. That is why the series rule is 1/C = 1/C₁ + 1/C₂. In parallel the voltages are equal and the charges differ. Deciding 'same Q or same V' first is the fastest guard against using the wrong combination rule — the error cascades into every energy and voltage answer.",
+      "unit": "electrostatics"
+    },
+    {
+      "question": "Why does the induced current in a coil reverse when you reverse the direction you push a magnet in — and which hand do you use?",
+      "solution": "Lenz's law: the induced current opposes the CHANGE in flux. Pushing the magnet's north pole in creates increasing flux inward, so the coil's near face becomes north to repel it; pulling it out reverses the change, so the current reverses. For the direction of induced EMF/current use the RIGHT hand (dynamo rule); the LEFT hand is for the force on a current-carrying wire (motor rule). Swapping the hands is the classic direction error.",
+      "unit": "electromagnetic-induction"
+    },
+    {
+      "question": "A heater rated '240 V, 1000 W' runs on 240 V rms. What power does a student get who plugs in the peak voltage by mistake?",
+      "solution": "Peak = 240√2 ≈ 339 V. Using P = V²/R with the peak gives 2000 W — exactly double, because P_rms = V_rms²/R = (V₀²/2)/R. Average power always uses rms values; the rms exists precisely because ⟨sin²ωt⟩ = ½. Label every AC quantity as peak or rms before substituting, and convert once at the start.",
+      "unit": "alternating-current"
+    },
+    {
+      "question": "In Young's double-slit experiment, why do bright and dark fringes swap if one beam reflects off a denser medium on the way?",
+      "solution": "Reflection off a denser medium adds a π phase flip — an extra λ/2 path difference. The condition for brightness becomes (n+½)λ instead of nλ, so every bright fringe becomes dark and vice versa. Always write the path difference AND its phase condition before computing fringe positions; a missing half-wave shift is an invisible sign error that the diagram will not catch.",
+      "unit": "wave-optics"
+    },
+    {
+      "question": "Does a brighter torch eject faster photoelectrons than a dim ultraviolet lamp? Set the examiner straight with the two equations.",
+      "solution": "No. Frequency sets the maximum kinetic energy: KE_max = hν − φ (Einstein's photoelectric equation). Intensity sets only the NUMBER of electrons per second (photon count). A dim UV source with hν > φ ejects fewer but faster electrons than a bright red source below threshold, which ejects none. Also convert units once: work functions are quoted in eV, hν in J — 1 eV = 1.6×10⁻¹⁹ J.",
+      "unit": "modern-physics"
+    },
+    {
+      "question": "After 3 half-lives, is one-and-a-half of the original nuclei left? Show the correct bookkeeping.",
+      "solution": "No — remaining fraction = (½)³ = 1/8, not 1 − 3/2. Decay is exponential: N = N₀(½)^(t/T½) = N₀e^(−λt) with λ = ln2/T½. The linear habit gives negative atom counts for t > 2T½, which is physically absurd and loses the whole question. Also balance decay equations on BOTH mass number A and atomic number Z.",
+      "unit": "modern-physics"
+    },
+    {
+      "question": "Why do Kirchhoff loop equations sometimes come out contradictory, and how do you prevent it?",
+      "solution": "Because the sign convention changed mid-solution. Fix the current directions on the diagram first, then traverse every loop in ONE fixed direction: battery EMF positive when traversed − to +, IR negative when traversed along the current. Write the junction rule separately (ΣI in = ΣI out). If two loop equations then contradict, the diagram's current directions were wrong — flip one and re-solve rather than patching signs ad hoc.",
+      "unit": "current-electricity"
+    },
+    {
+      "question": "A convex lens question asks for the image. Why does the examiner care which convention you announce?",
+      "solution": "Because the same formula 1/f = 1/v − 1/u gives different v for different sign assignments, and only the announced convention makes the answer checkable. State the Cartesian convention (incident light left→right; distances measured against the light are negative; a diverging lens has f < 0), derive signs from the labelled ray diagram, and verify the final image position against the diagram. Consistency — not memorised signs — is what the marks reward.",
+      "unit": "ray-optics"
+    }
+  ]
+}

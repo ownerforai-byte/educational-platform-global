@@ -82,6 +82,67 @@ the repository because it contained local file paths. The pipeline itself
 
 ---
 
+## PYQ paper link index — content/practice/pyq-links/ (⚠️ link-only)
+
+- **Source**: NEB past/model question papers as hosted by public
+  educational aggregators (see the rows below)
+- **Used for**: `content/practice/pyq-links/<class>/<subject>.json` — a
+  metadata-only index (year, exam source, provider, URL, unit coverage).
+  **No paper text is reproduced**: the platform links out to the provider page
+  and authors its own solutions and guidance.
+- **Status**: ⚠️ The papers themselves are NEB publications whose reproduction
+  rights are not confirmed — so the platform stores **links and factual
+  metadata only** (`rights: "link-only"`), never paper text.
+- **Location**: `content/practice/pyq-links/`
+
+### Aggregator providers referenced by the link index
+
+| Provider | URL | Status | Use |
+|---|---|---|---|
+| NEB Education | https://www.nebeducation.com/ | ⚠️ link-only lead | Class 11/12 important + old questions, all subjects |
+| Educate Nepal | https://www.educatenepal.com/ | ⚠️ link-only lead | NEB Class 12 exam questions 2080–81 (2024), all subjects |
+| Noteswift | https://noteswift.in/ | ⚠️ link-only lead | NEB Class 12 PYQ collection, all subjects |
+| Sajha Notes | https://sajhanotes.com/ | ⚠️ link-only lead | NEB Grade 11/12 model + past papers |
+| Shiksha Sanjal | https://shikshasanjal.com/ | ⚠️ link-only lead | NEB Class 12 model questions, subject-wise |
+| Notesharu | https://notesharu.com/ | ⚠️ link-only lead | NEB notes + solved past questions, all subjects |
+| EduSanjal | https://edusanjal.com/ | ⚠️ link-only lead | Grade 12 model questions (NEB) |
+| ExamSanjal | https://www.examsanjal.com/ | ⚠️ link-only lead | NEB exam portal (forms, results, question collections) |
+| Scribd uploads | https://www.scribd.com/ | ⚠️ link-only lead | Individual uploaded model/specification documents |
+
+Aggregator items are **leads, not authority**: they are stored as links with
+provider credit, re-verified by the link-check gate
+(`node scripts/validate-neb-pyq-content.mjs --links`), and dropped when dead.
+
+---
+
+## CDC specification grids — blueprint metadata (✅ structural only)
+
+- **Source**: Curriculum Development Centre (CDC), Nepal — test specification
+  grids for Grades 11 & 12
+- **Used for**: `content/practice/blueprint/<class>/<subject>.json` — per-unit
+  teaching hours, concept lists, question-type and cognitive-level splits
+- **Status**: ✅ **structural metadata only** (unit order, hours, marks,
+  question types). Never verbatim grid text. Values not yet transcribed from
+  the official grid are flagged `"verified": false` with a `provenance`
+  note — they are curriculum-derived estimates, never presented as CDC data.
+- **Location**: `content/practice/blueprint/`
+
+---
+
+## Examiner mistake references (✅ inspiration only)
+
+- **Source**: Published examiner/teacher commentary on common science and
+  board-exam errors (e.g. India Today board-examiner round-ups, Tutopiya
+  science-mistake guides)
+- **Used for**: `content/practice/mistakes/<class>/<subject>.json` — seed
+  material only; every mistake entry is **authored original** in the
+  platform's own words for the NEB context
+- **Status**: ✅ No text is reproduced; the sources inform which error
+  patterns to cover
+- **Location**: `content/practice/mistakes/`
+
+---
+
 ## Takedown / contact process
 
 If you are a rights holder and believe your content is included without
