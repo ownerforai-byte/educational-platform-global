@@ -23,7 +23,7 @@
 | **2** | [Backend API Route Grouping](#phase-2-backend-architecture--domain-grouped-api-routes) | ✅ DONE | Phase 1 | `backend/src/api/` → 9 domain routers | `npm run test --workspace=backend` |
 | **3** | [Backend AI Engine Grouping](#phase-3-backend-architecture--ai-engine-grouping) | ✅ DONE | Phase 2 | `backend/src/ai/` → 6 concern folders | `npm run test --workspace=backend` |
 | **4** | [Backend Services & Repos](#phase-4-backend-architecture--service--repository-layers) | ✅ DONE | Phase 3 | Services, repositories, logger | `npm run test --workspace=backend` |
-| **5** | [Frontend Feature Extraction](#phase-5-frontend--feature-module-extraction-big-one) | 🔄 IN PROGRESS (7/21) | Phase 1 | 21 domains extracted from `lib/` | `npm run check` |
+| **5** | [Frontend Feature Extraction](#phase-5-frontend--feature-module-extraction-big-one) | 🔄 IN PROGRESS (9/21) | Phase 1 | 21 domains extracted from `lib/` | `npm run check` |
 | **6** | [Frontend lib/ Reorganization](#phase-6-frontend--lib-reorganization) | ⬜ NOT STARTED | Phase 5 | `lib/core/`, `lib/state/`, `lib/streams/` | `npm run check` |
 | **7** | [Frontend Types Hub](#phase-7-frontend--types-consolidation) | ⬜ NOT STARTED | Phase 6 | `frontend/types/` hub | TypeScript compile |
 | **8** | [content-tools/ Reorganization](#phase-8-content-tools-reorganization) | ⬜ NOT STARTED | Phase 0 | 5 purpose-based subdirs | Content build scripts |
