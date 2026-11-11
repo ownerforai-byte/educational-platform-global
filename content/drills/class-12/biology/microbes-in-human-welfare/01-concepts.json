@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Microbes in Human Welfare (Class 12 Biology)",
+  "subject": "biology",
+  "unitSlug": "microbes-in-human-welfare",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-mhw12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Fermentation is anaerobic energy extraction",
+      "question": "Why do yeast cells convert sugar to ethanol rather than fully oxidising it to CO₂ and water, and what does the brewer gain from this?",
+      "solution": "Yeast ferments anaerobically (or when sugar is abundant) because it regenerates NAD⁺ without oxygen — ethanol and CO₂ are the by-products of that redox balancing. The brewer harvests the ethanol as the product and the CO₂ for carbonation. Incomplete oxidation is the price of energy without oxygen, and it is exactly what industry wants."
+    },
+    {
+      "id": "drill-mhw12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Curd formation — the acid net",
+      "question": "Why does milk curdle with Lactobacillus, and why does the curd keep longer than fresh milk?",
+      "solution": "Lactobacillus converts lactose to lactic acid; the falling pH makes casein micelles coagulate into curd. The acid also inhibits spoilage and pathogenic bacteria — a natural preservative mechanism. Souring is a controlled microbial shift, which is why curd is both a food and a mild probiotic."
+    },
+    {
+      "id": "drill-mhw12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Antibiotics — selective toxicity",
+      "question": "Penicillin kills bacteria but not the patient. What structural difference does it exploit, and why is the same trick harder against fungi or viruses?",
+      "solution": "Penicillin blocks peptidoglycan cross-linking in the bacterial CELL WALL — a structure human cells lack (we have membranes, no wall). That asymmetry is selective toxicity. Fungi are eukaryotes sharing most human biochemistry (fewer unique targets); viruses use HOST machinery entirely, so inhibiting 'the virus' usually means inhibiting yourself. Unique microbial structures are the only safe drug targets."
+    },
+    {
+      "id": "drill-mhw12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Biogas — the two-stage anaerobic logic",
+      "question": "Why must a biogas plant exclude oxygen, and what does the methanogen stage contribute that the acid-forming stage does not?",
+      "solution": "The whole consortium is anaerobic: aerobic microbes would simply oxidise the organic matter to CO₂, wasting the energy. Acid-forming bacteria hydrolyse and ferment complex waste into organic acids; METHANOGENS (strict anaerobes, e.g. Methanobacterium) then convert those acids/CO₂ into CH₄ — the fuel. Two specialised stages under oxygen exclusion yield a burnable gas instead of heat."
+    },
+    {
+      "id": "drill-mhw12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Biofertilisers — bacteria vs cyanobacteria roles",
+      "question": "Rhizobium in legume nodules and Anabaena in ferns both 'fix nitrogen'. Compare the two partnerships and what each contributes to the field.",
+      "solution": "Rhizobium lives symbiotically in legume ROOT NODULES, exchanging fixed nitrogen for plant photosynthate — enriching soil when the crop residues decompose. Anabaena (with its heterocysts) associates with the water fern Azolla in PADDIES, fixing N in flooded conditions where legumes cannot grow. Two different crops, two different niches — both replace fertiliser N biologically."
+    },
+    {
+      "id": "drill-mhw12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Biocontrol agents vs pesticides",
+      "question": "Why is Baculovirus (NPV) considered a safer pest control than chemical insecticide? Focus on host range.",
+      "solution": "Baculoviruses of the genus Nucleopolyhedrovirus infect only insects — often a SINGLE species or narrow group — so they remove the pest without killing pollinators, predators or beneficial insects. Broad-spectrum chemicals kill everything, triggering pest resurgence and residue problems. Narrow host range is the safety property; integrated pest management exploits it."
+    },
+    {
+      "id": "drill-mhw12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Sewage treatment — why two stages",
+      "question": "Why does sewage treatment need BOTH primary physical settling AND secondary biological treatment? What does each remove?",
+      "solution": "Primary treatment is PHYSICAL: screens and grit/settling tanks remove floating and settleable solids — the bulk mass, but dissolved organic matter stays. Secondary treatment is BIOLOGICAL: aeration tanks let aerobic microbes (flocs) oxidise the dissolved organics into biomass (activated sludge), dropping the BOD. Physical removal cannot touch dissolved pollution; biology handles what physics leaves behind."
+    },
+    {
+      "id": "drill-mhw12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Industrial products — which microbe makes what",
+      "question": "Match four industrial microbial products to their producers: citric acid, ethanol, streptomycin, statins — and say what the microbe's role is in each.",
+      "solution": "Citric acid — Aspergillus niger (a mould); ethanol — Saccharomyces (yeast) fermenting sugars; streptomycin — Streptomyces (an actinomycete bacterium); statins — Monascus/yeast (competitive inhibitor of HMG-CoA reductase, lowering cholesterol). In each case the microbe's own metabolism is harvested: its acid, alcohol, antibiotic or secondary metabolite becomes the product."
+    }
+  ]
+}

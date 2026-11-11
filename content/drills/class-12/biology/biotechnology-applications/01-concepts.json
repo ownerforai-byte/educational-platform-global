@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Biotechnology & Its Applications (Class 12 Biology)",
+  "subject": "biology",
+  "unitSlug": "biotechnology-applications",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-bta12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "RNAi — silencing, not killing",
+      "question": "Meloidogyne incognita infection is blocked in transgenic tobacco via RNA interference. Explain how introducing a nematode gene into the plant kills the nematode without touching the plant's own genes.",
+      "solution": "The plant expresses nematode-specific dsRNA, which is processed into siRNA; when the nematode feeds, its own RNAi machinery uses the siRNA to degrade the mRNA of its essential gene — developmental arrest and death. The silencing is SEQUENCE-SPECIFIC: only mRNA matching the siRNA is destroyed, so the plant's transcripts are untouched. Specificity by base-pairing is the principle."
+    },
+    {
+      "id": "drill-bta12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Insulin — why pre-proinsulin needed engineering",
+      "question": "Early human insulin from bacteria required joining two separately produced chains. What was the problem, and how did the later method fix it?",
+      "solution": "Human insulin is made from proinsulin, whose C-peptide must be enzymatically removed — bacteria cannot perform that mammalian processing, so the A and B chains were produced separately and chemically joined. Later, the proinsulin gene was expressed and the C-peptide cleaved, or the whole processing done in the host. Post-translational processing is what made recombinant insulin non-trivial."
+    },
+    {
+      "id": "drill-bta12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Gene therapy — the vector problem",
+      "question": "ADA deficiency was the first treated by gene therapy. Outline the strategy and explain why the lymphocytes used had to be re-infused periodically.",
+      "solution": "Lymphocytes from the patient were collected, the functional ADA gene was inserted using a retroviral vector, and the cells were returned — permanently differentiated lymphocytes have a finite lifespan, so the treatment must be repeated. Bone marrow stem cells (transducing the germline of the blood system) would make it permanent but raise germline-engineering issues. Somatic vs germline targeting is the follow-up the examiner probes."
+    },
+    {
+      "id": "drill-bta12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "PCR vs cloning for diagnosis",
+      "question": "Why has PCR largely replaced bacterial culture for detecting early infection?",
+      "solution": "PCR amplifies the pathogen's DNA sequence directly from a sample — detection in hours, at very low pathogen loads, before symptoms or culture growth. Culture takes days and needs viable organisms. Early detection (e.g. HIV load, neonatal sepsis) is where PCR's sensitivity and speed change outcomes."
+    },
+    {
+      "id": "drill-bta12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Transgenic animals — why make them",
+      "question": "Give two distinct uses of transgenic animals and explain what each tells us that ordinary animals cannot.",
+      "solution": "(1) DISEASE MODELS: a human disease gene inserted in a mouse reproduces the human pathology, allowing drug testing on the actual mechanism. (2) BIOREACTORS: e.g. a human protein expressed in milk (Rosie's milk contained human α-lactalbumin) for harvestable pharmaceuticals. Normal animals lack the human gene, so neither the disease mechanism nor the human product is available."
+    },
+    {
+      "id": "drill-bta12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Molecular diagnosis — the specificity ladder",
+      "question": "Why can ELISA give a false positive early in HIV infection while PCR would not?",
+      "solution": "ELISA detects ANTIBODIES the patient has made — which take weeks to appear (the window period) and can cross-react. PCR detects the pathogen's own nucleic acid, present from the moment of infection and specific by sequence. Antibody presence ≠ pathogen presence; that timing gap is exactly the window period."
+    },
+    {
+      "id": "drill-bta12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Golden rice and gene stacking",
+      "question": "Golden rice required adding genes from other species to complete a pathway in the grain. What does this tell you about the limits of single-gene engineering?",
+      "solution": "Complex traits (like a biosynthetic pathway) need MULTIPLE enzymes — no single gene can complete it. Golden rice introduced the whole pathway's missing steps (phytoene desaturase etc.) so the grain could accumulate β-carotene. Multi-gene pathways are the frontier where single-gene transfer fails."
+    },
+    {
+      "id": "drill-bta12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Ethical use of biotechnology — the patent question",
+      "question": "Why does the Basmati rice patent controversy illustrate an ethical issue beyond pure science?",
+      "solution": "A company patented a rice variety derived from traditional Indian germplasm — claiming ownership of knowledge that indigenous farmers had developed over generations (biopiracy). The issue: who owns biological resources and traditional knowledge, and should patents extend to products of centuries of farmer selection? It is a justice question that science alone cannot settle — hence national and international access-and-benefit rules."
+    }
+  ]
+}

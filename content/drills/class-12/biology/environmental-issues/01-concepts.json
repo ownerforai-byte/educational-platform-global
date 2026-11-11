@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Environmental Issues (Class 12 Biology)",
+  "subject": "biology",
+  "unitSlug": "environmental-issues",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ei12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Biomagnification — why top predators suffer",
+      "question": "DDT was used at safe concentrations in water, yet falcon eggshells thinned. Explain the mechanism of biomagnification.",
+      "solution": "DDT is fat-soluble and not excreted, so each organism RETAINS what it absorbs; the next trophic level eats many prey, accumulating all their loads. Water at 0.003 ppb → zooplankton → fish → falcon at ~25 ppm — a 10⁴-fold concentration. Top predators integrate the pollution of the entire chain beneath them, which is why bans must target the whole food web."
+    },
+    {
+      "id": "drill-ei12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Eutrophication — the oxygen crash",
+      "question": "Fertiliser runoff enriches a lake, yet fish die of OXYGEN shortage. Trace the chain from nutrient to dead fish.",
+      "solution": "Excess N and P trigger an algal BLOOM → algae die and sink → decomposing bacteria consume oxygen while breaking them down → dissolved O₂ crashes → fish and aerobic life suffocate. The nutrients feed the algae, but the OXYGEN is consumed by the decomposers of the bloom — the crash is a decomposition event, not the bloom itself."
+    },
+    {
+      "id": "drill-ei12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Ozone depletion vs global warming — different problems",
+      "question": "Students often conflate the ozone hole with global warming. Separate the two: gas class, mechanism, and where each occurs.",
+      "solution": "Ozone depletion: CFCs release Cl radicals in the STRATOSPHERE that catalytically destroy O₃, raising UV at the surface (skin cancer, cataracts). Global warming: CO₂, CH₄, N₂O absorb outgoing IR in the TROPOSPHERE, trapping heat. Different gases, different altitudes, different mechanisms — one is a UV-screen problem, the other an energy-balance problem."
+    },
+    {
+      "id": "drill-ei12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Acid rain — the two acids and the buffer",
+      "question": "Why does acid rain kill lakes in granite basins but not in limestone basins?",
+      "solution": "Acid rain (H₂SO₄ and HNO₃ from SO₂ and NOₓ) is neutralised by carbonate rock: limestone (CaCO₃) buffers the pH, keeping the lake habitable. Granite has no buffering carbonate — the pH drops, aluminium leaches from soil and kills fish gills. Geology, not just acidity, decides the biological damage."
+    },
+    {
+      "id": "drill-ei12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Thermal stratification and DO",
+      "question": "Why do deep lakes in summer sometimes suffocate fish at the BOTTOM even though the surface is well oxygenated?",
+      "solution": "Summer heating stratifies the lake: a warm, oxygen-rich epilimnion floats over a cold, isolated hypolimnion, with the thermocline blocking mixing. The bottom layer's oxygen is consumed by decomposition and not replenished until autumn turnover. Stratification, not total oxygen, controls where life can persist."
+    },
+    {
+      "id": "drill-ei12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Deforestation — downstream costs",
+      "question": "Clearing hill forests for farmland harms people far downstream. Name three downstream effects and the physical mechanism behind each.",
+      "solution": "(1) Flooding: tree canopy and roots slow infiltration; rain now runs off fast, so flood peaks are higher and earlier. (2) Siltation: exposed soil erodes, filling reservoirs and raising riverbeds. (3) Reduced dry-season flow: groundwater recharge falls, so springs and base flow shrink. The mechanism is the shift from infiltration to runoff once cover and roots are removed."
+    },
+    {
+      "id": "drill-ei12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Solid waste — the hierarchy of responses",
+      "question": "Why is burning plastic waste worse than landfilling it, yet recycling beats both? Order the waste-management hierarchy.",
+      "solution": "Hierarchy: reduce → reuse → recycle → energy recovery → landfill. Burning plastic releases dioxins and furans (persistent toxic organics) plus CO₂ — worse than inert burial. Recycling keeps the material in use, displacing virgin production (the biggest energy saving). Reduction is best because the waste never exists."
+    },
+    {
+      "id": "drill-ei12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Climate feedback — the permafrost risk",
+      "question": "Why is warming in the Arctic potentially self-accelerating? Identify the feedback loop.",
+      "solution": "Warming thaws permafrost, releasing stored organic carbon that microbes decompose into CO₂ and CH₄ (a far stronger greenhouse gas per molecule); these warm the atmosphere further, thawing more permafrost — a positive feedback. Positive feedbacks are why climate models include tipping risks beyond linear projections."
+    }
+  ]
+}

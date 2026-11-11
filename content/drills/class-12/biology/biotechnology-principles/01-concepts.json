@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Biotechnology: Principles & Processes (Class 12 Biology)",
+  "subject": "biology",
+  "unitSlug": "biotechnology-principles",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-btp12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Sticky ends — why they matter",
+      "question": "Why do restriction enzymes make staggered cuts, and what advantage do the resulting 'sticky ends' give the genetic engineer?",
+      "solution": "Staggered cuts leave single-stranded overhangs with complementary sequences. Two fragments cut by the SAME enzyme have matching sticky ends that base-pair with each other; DNA ligase then seals the sugar–phosphate backbone. That makes assembly of vector + insert directional and efficient — blunt ends would need much less efficient ligation."
+    },
+    {
+      "id": "drill-btp12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why EcoRI's name encodes its origin",
+      "question": "Decode the name EcoRI and say what the recognition site's palindrome property means for the enzyme's action.",
+      "solution": "E = Escherichia (genus), co = coli (species), R = strain RY13, I = first enzyme isolated from that strain. EcoRI recognises GAATTC — a palindrome: the sequence reads the same on the two strands in opposite directions (complementary strand is CTTAAG, which read 5'→3' is GAATTC). Palindromic sites let the enzyme recognise the same sequence on both strands and cut both with one geometry."
+    },
+    {
+      "id": "drill-btp12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "The cloning vector's toolkit",
+      "question": "List the four features a plasmid must have to serve as a cloning vector, and explain what breaks if one is missing.",
+      "solution": "(1) Origin of replication (ori) — without it the plasmid cannot copy itself in the host. (2) Selectable marker (e.g. antibiotic resistance) — without it you cannot tell transformed from untransformed cells. (3) Cloning sites (a restriction site cluster, ideally in the marker for insertional inactivation) — without them you cannot insert DNA reproducibly. (4) Small size with the ability to accept foreign DNA — too large and transformation efficiency collapses."
+    },
+    {
+      "id": "drill-btp12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Competent cells — the barrier to DNA entry",
+      "question": "Why can't bacteria simply take up plasmids placed in their medium, and how does CaCl₂ treatment fix it?",
+      "solution": "The cell envelope is charged and impermeable to large anionic DNA; free DNA outside is not transported. CaCl₂ (plus a heat shock) neutralises membrane charges and makes the membrane transiently permeable — 'competence'. Electroporation, microinjection and gene gun are the alternatives for cells that resist chemical competence."
+    },
+    {
+      "id": "drill-btp12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "PCR — the temperature cycle",
+      "question": "In PCR, why does the reaction need THREE different temperatures, and what enzyme made high temperatures usable?",
+      "solution": "Denaturation (~95 °C) separates strands; primer annealing (~55 °C) lets primers bind; extension (~72 °C) lets polymerase copy. Taq polymerase (from Thermus aquaticus) survives the denaturation step, so the cycle can repeat without adding fresh enzyme — the heat-stable polymerase is what makes automated PCR possible."
+    },
+    {
+      "id": "drill-btp12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Bioreactor — why shake a flask scale-up",
+      "question": "A 10 ml flask works; a 10,000 litre bioreactor needs stirring, aeration, pH and temperature control. Why does scale-up demand all of this?",
+      "solution": "At volume, cells sink and deplete local O₂/nutrients while heat and acid (metabolic CO₂, lactic acid) accumulate. Stirring maintains homogeneity and O₂ transfer (with foam control); probes maintain pH and temperature at the optimum. A bioreactor is a controlled environment that keeps every cell in the flask-like conditions the lab recipe assumed."
+    },
+    {
+      "id": "drill-btp12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Downstream processing — the product is not ready",
+      "question": "After the bioreactor run, why can't the broth be sold as the product? List the kinds of steps downstream processing includes.",
+      "solution": "The broth contains cells, cell debris, medium components, and side products along with the target. Downstream processing includes separation (filtration/centrifugation), extraction/purification (chromatography, precipitation), concentration, formulation with preservatives, and quality/clinical testing where required (drugs). Purity and safety standards are what make it a product rather than a broth."
+    },
+    {
+      "id": "drill-btp12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Recombinant protein — the expression host matters",
+      "question": "Why might a human protein made in E. coli be inactive, while the same gene in yeast or mammalian cells gives an active product?",
+      "solution": "E. coli cannot perform eukaryotic post-translational modifications — glycosylation, disulphide folding, signal-peptide processing. Proteins needing those modifications come out misfolded or unglycosylated. Yeast does simple glycosylation; mammalian cells do it fully. The host's processing machinery must match the protein's needs."
+    }
+  ]
+}

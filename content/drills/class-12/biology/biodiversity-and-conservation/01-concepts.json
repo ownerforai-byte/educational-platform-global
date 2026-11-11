@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Biodiversity & Conservation (Class 12 Biology)",
+  "subject": "biology",
+  "unitSlug": "biodiversity-and-conservation",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-bdc12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Three levels of biodiversity",
+      "question": "Name the three levels at which biodiversity is measured, with one Nepali example each.",
+      "solution": "Genetic diversity — variation within a species (e.g. local rice landraces in Jumla). Species diversity — variety of species in a region (e.g. the rhododendron and orchid richness of mid-hills). Ecosystem diversity — variety of habitats/community types (Terai grassland, mid-hill forest, alpine meadow in one country). Conservation must address all three, not just species counts."
+    },
+    {
+      "id": "drill-bdc12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Species–area relationship",
+      "question": "What does the species–area curve's slope tell you about habitat loss, and why is the relationship roughly log-linear across continents and islands?",
+      "solution": "S = C·A^z (z ≈ 0.1–0.4): species number rises with area on a log-log line. The slope means losing a FRACTION of area costs a predictable fraction of species — the scientific basis for reserve sizing. The near-universal form reflects random colonisation/extinction processes independent of taxon or geography."
+    },
+    {
+      "id": "drill-bdc12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "The HIPPO of extinctions",
+      "question": "List the major causes of biodiversity loss ('the evil quartet') and say which one acts through the others.",
+      "solution": "Habitat loss and fragmentation (the biggest — agriculture, roads, settlements splitting populations into non-viable fragments); over-exploitation (overhunting, overfishing); alien species invasions (outcompeting or preying on natives); co-extinctions (a species lost takes its specialist parasites/pollinators with it). Habitat loss acts through the others: fragmentation raises edge effects and exploitation pressure, and small isolated populations are most vulnerable to invasions."
+    },
+    {
+      "id": "drill-bdc12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "In-situ vs ex-situ — when each wins",
+      "question": "Why is a national park generally better than a zoo for conserving a species, and when is a zoo or gene bank the only option?",
+      "solution": "In-situ conservation (national parks, reserves) preserves the species IN its ecosystem — with its prey, pollinators, evolutionary pressures and habitat intact, at population scale. Ex-situ (zoo, seed bank, tissue culture) preserves individuals or genetic material OUTSIDE the habitat — the only option when the habitat is gone or the wild population is below viability (e.g. cryopreservation of endangered orchid seeds). Habitat-based conservation is the default; ex-situ is the last-resort backup."
+    },
+    {
+      "id": "drill-bdc12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Hotspot criteria",
+      "question": "What two criteria must a region meet to qualify as a biodiversity hotspot, and why do hotspots concentrate conservation money?",
+      "solution": "(1) Exceptionally high ENDEMIC species richness (many species found nowhere else). (2) Severe habitat loss (typically >70% of original vegetation gone). Money concentrates there because the same rupee prevents more IRREPLACEABLE extinctions than anywhere else — high value + high threat = maximum marginal conservation return."
+    },
+    {
+      "id": "drill-bdc12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Community conservation in Nepal",
+      "question": "Nepal's community forestry and community-based anti-poaching reversed some declines. What social mechanism makes local stewardship work where policing alone failed?",
+      "solution": "Communities that gain a direct, legal share of forest/park benefits (timber, fodder, tourism revenue) have an incentive to protect the resource; outsiders have none. Local monitoring is cheaper and more effective than distant enforcement, and rules set by users are more likely to be obeyed. Benefit-sharing converts poachers' neighbours into stakeholders."
+    },
+    {
+      "id": "drill-bdc12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Edge effects and corridor design",
+      "question": "Why does a long, narrow reserve hold fewer species than a round one of the same area, and what do corridors restore?",
+      "solution": "Long/narrow reserves have a high edge-to-area ratio: edge habitat (drier, brighter, disturbed, penetrated by humans and invasives) replaces the interior conditions many forest species need. Corridors reconnect fragments, allowing gene flow and recolonisation — reducing the inbreeding and local-extinction risks of isolation. Shape and connectivity, not just total area, determine what survives."
+    },
+    {
+      "id": "drill-bdc12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Ecosystem services — pricing the invisible",
+      "question": "Give one regulating and one provisioning ecosystem service, and explain why their loss is economically invisible until it is too late.",
+      "solution": "Provisioning: food, timber, medicine (harvested and sold — visible in GDP). Regulating: pollination, water purification, climate regulation (not sold, so absent from accounts). Loss is invisible because the service is free while it exists; only its replacement (hand pollination, water treatment plants) reveals the cost — by which time the species providing it is gone."
+    }
+  ]
+}

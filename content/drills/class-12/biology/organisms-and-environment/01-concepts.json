@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Organisms & Environment (Class 12 Biology)",
+  "subject": "biology",
+  "unitSlug": "organisms-and-environment",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-oe12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Habitat vs niche",
+      "question": "Two lizard species live on the same rocky outcrop (same habitat) without excluding each other. How is that possible in terms of niche?",
+      "solution": "Habitat is the ADDRESS; niche is the PROFESSION — the full set of resources used, times of activity, temperatures tolerated, food sizes taken. Two species sharing a habitat can partition it into different micro-niches (one hunts at dawn on boulders, the other at dusk in crevices), avoiding direct competition. Resource partitioning, not exclusion, is the resolution."
+    },
+    {
+      "id": "drill-oe12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Thermal regulation strategies",
+      "question": "Why do desert lizards bask in the morning and retreat to burrows at noon, while a polar bear's problem is quite different?",
+      "solution": "The lizard is an ectotherm — it must BEHAVIOURALLY move between heat sources and sinks to keep its body temperature functional (bask to warm, burrow/shade to cool). The polar bear is an endotherm generating its own heat; its problem in the Arctic is LOSING heat, solved by insulation (fur, blubber) and small extremities. Behavioural thermoregulation vs structural insulation."
+    },
+    {
+      "id": "drill-oe12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Population growth — the exponential ceiling",
+      "question": "Why does a J-shaped growth curve eventually become impossible for any real population? Define carrying capacity and link it to the sigmoid curve.",
+      "solution": "Exponential growth dN/dt = rN assumes unlimited resources; in reality resources (food, space, mates) are finite. Carrying capacity K is the population size the environment can sustain; as N approaches K, resource limitation raises mortality/lowers births, bending the curve into a SIGMOID (logistic) form. The J is the early phase, not the destiny."
+    },
+    {
+      "id": "drill-oe12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "r- vs K-selection",
+      "question": "A dandelion produces thousands of tiny seeds; an elephant produces one calf in years. Explain the two life-history strategies this contrast represents.",
+      "solution": "r-selected: many cheap offspring, no parental care, rapid reproduction in unstable environments — winning by QUANTITY (survival is a lottery). K-selected: few, expensive, cared-for offspring in stable near-capacity environments — winning by QUALITY and competitive ability. Neither is 'better'; each fits a different regime of disturbance and crowding."
+    },
+    {
+      "id": "drill-oe12-5",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Interactions — who wins",
+      "question": "Classify these as +/−/0 interactions and give the key distinction: lichen, cuckoo-crow, cattle egret-grazing cattle, tapeworm-human, orchid on mango.",
+      "solution": "Lichen: MUTUALISM (+/+) — alga provides food, fungus provides minerals/shelter. Cuckoo-crow: BROOD PARASITISM (+/−) — cuckoo benefits, host loses. Cattle egret-grazing cattle: COMMENSALISM (+/0) — egret feeds on insects flushed by cattle, cattle unaffected. Tapeworm-human: PARASITISM (+/−) — parasite benefits, host harmed. Orchid on mango: COMMENSALISM (+/0) — orchid gets support, mango unharmed. The sign pattern is the classifier."
+    },
+    {
+      "id": "drill-oe12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Adaptations of desert plants",
+      "question": "Desert plants have thick cuticles, CAM photosynthesis and spines instead of leaves. Tie each feature to the specific problem it solves.",
+      "solution": "Thick cuticle/sunken stomata: cut water LOSS (transpiration). CAM: stomata open at NIGHT, fixing CO₂ into organic acids, so gas exchange happens when it is cool and humid — decoupling CO₂ uptake from water loss. Spines: reduce leaf surface area (less transpiration) AND deter herbivores in a food-scarce habitat. Each adaptation maps to a distinct pressure."
+    },
+    {
+      "id": "drill-oe12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Ecological succession — direction of the arrow",
+      "question": "Why does succession on bare rock move toward a more stable community, and what distinguishes the pioneer from the climax stage?",
+      "solution": "Each stage modifies the environment (lichens produce acid, weathering rock into soil; mosses deepen it; grasses, shrubs, trees follow) — the changes favour the NEXT stage more than the current one. Pioneers tolerate the harsh bare surface but build the conditions that replace them; the CLIMAX community is self-replacing and in equilibrium with the local climate. Succession is environment-building, not just species replacement."
+    },
+    {
+      "id": "drill-oe12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Energy flow vs nutrient cycling",
+      "question": "Why does energy flow one-way through an ecosystem while nutrients cycle? Give the thermodynamic reason.",
+      "solution": "Energy enters as sunlight, passes through trophic levels losing ~90% as heat at each transfer (second law), and LEAVES as unusable heat — it cannot be reused, so a constant input (the sun) is required. Nutrients are MATTER: they are conserved and recycled by decomposers back to producers. One-way flow vs closed cycling is the fundamental asymmetry of ecosystems."
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Human Health & Diseases (Class 12 Biology)",
+  "subject": "biology",
+  "unitSlug": "human-health-and-diseases",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-hhd12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Innate vs adaptive immunity",
+      "question": "A splinter causes immediate inflammation, but you only gain lifelong resistance to measles after infection or vaccination. Explain the two immune arms involved.",
+      "solution": "Innate immunity is inborn, non-specific and INSTANT: skin/mucous barriers, phagocytes, inflammation, fever — it responds to the splinter within minutes but does not 'remember'. Adaptive immunity is specific and slow to activate (days) but generates memory B/T cells, so a second measles exposure is met instantly and for life. Speed vs memory is the trade-off between the two arms."
+    },
+    {
+      "id": "drill-hhd12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Antibody structure — specificity lives in the tips",
+      "question": "Why can the same Y-shaped antibody class (say IgG) recognise millions of different antigens, and what part of the molecule varies?",
+      "solution": "The constant regions (stem and lower arms) determine the antibody's class and effector function; the VARIABLE regions at the two tips form the antigen-binding sites, whose amino-acid sequences differ between antibodies. Diversity comes from gene recombination generating millions of paratopes. Same constant scaffold, variable tips — that is how one molecule type covers endless antigens."
+    },
+    {
+      "id": "drill-hhd12-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why HIV defeats the immune system",
+      "question": "HIV does not kill directly — most deaths are from pneumonia or TB. Explain why, naming the target cells.",
+      "solution": "HIV attacks helper T (CD4) cells and macrophages — the COORDINATORS of adaptive immunity. As CD4 counts fall, both antibody responses (B cells need T-cell help) and cytotoxic responses collapse, so opportunistic infections (Pneumocystis pneumonia, TB) and cancers take over. AIDS is immunodeficiency; the secondary infections are what actually kill."
+    },
+    {
+      "id": "drill-hhd12-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Malaria — the vector and the lifecycle stage",
+      "question": "Why does malaria spread where stagnant water collects, and why does the female Anopheles matter specifically?",
+      "solution": "The Plasmodium parasite needs TWO hosts: humans and the female Anopheles mosquito. Only the female takes blood meals (she needs blood protein for egg production), so only she transmits the sporozoite stage into humans. Stagnant water is the mosquito's breeding site — controlling breeding sites breaks the vector's lifecycle, which is the core of malaria control."
+    },
+    {
+      "id": "drill-hhd12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Vaccination vs passive immunity",
+      "question": "A vaccine takes weeks to protect; an antivenom works immediately. Explain the difference in what is being delivered.",
+      "solution": "A vaccine delivers ANTIGEN (killed/weakened pathogen or its protein), so the recipient's own immune system must build a primary response and memory — slow but durable, active immunity. Antivenom delivers ready-made ANTIBODIES against the venom — instant protection but no memory, and it degrades: passive immunity. Antigen vs antibody is the whole distinction."
+    },
+    {
+      "id": "drill-hhd12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Allergy — the immune system misfiring",
+      "question": "Why does a pollen grain cause sneezing in one person and nothing in another? Name the antibody and the chemicals involved.",
+      "solution": "In allergic individuals the allergen (pollen) triggers IgE production instead of the normal IgG response; IgE coats mast cells. On re-exposure the allergen cross-links the IgE, and mast cells release histamine and other mediators — vasodilation, mucus, sneezing. The predisposition is genetic; the over-reaction to a harmless antigen is the definition of allergy. Antihistamines block the receptor, not the IgE."
+    },
+    {
+      "id": "drill-hhd12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Cancer — the loss of control points",
+      "question": "Cancer cells ignore both growth signals and 'stop' signals. Name the two gene classes whose damage produces this, and what metastasis adds.",
+      "solution": "Oncogenes (mutated/overactive proto-oncogenes) drive division even without growth signals; mutated TUMOUR SUPPRESSOR genes (like p53) fail to halt the cycle or trigger repair/apoptosis. Both classes must be damaged for full transformation. Metastasis is the additional step where cells invade surrounding tissue and travel via blood/lymph to seed new tumours — what makes cancer lethal rather than local."
+    },
+    {
+      "id": "drill-hhd12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Autoimmunity — recognition failure",
+      "question": "Rheumatoid arthritis attacks the body's own joints. Why does the immune system normally spare self-tissue, and what goes wrong in autoimmunity?",
+      "solution": "During development, T cells that bind self-antigens strongly are deleted or silenced (self-tolerance) in the thymus. In autoimmune disease this tolerance breaks down — genetically predisposed individuals produce antibodies/T cells against self-antigens, so the immune system treats its own tissue as foreign. Loss of self-tolerance, not a weak immune system, is the defect."
+    }
+  ]
+}

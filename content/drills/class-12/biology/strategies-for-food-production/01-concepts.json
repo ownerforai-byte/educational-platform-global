@@ -1,0 +1,80 @@
+{
+  "title": "Concept Drills — Strategies for Food Production (Class 12 Biology)",
+  "subject": "biology",
+  "unitSlug": "strategies-for-food-production",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-sfp12-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why the Green Revolution worked",
+      "question": "What three inputs together produced the Green Revolution's yield jump, and why is the model now under strain?",
+      "solution": "High-yielding (semi-dwarf) varieties + fertilisers + irrigation — the genetics made the plant responsive to nutrients, and water/fertiliser unlocked the potential. It is under strain because it depends on finite groundwater, fossil-fuel-derived fertiliser, and uniform monocultures vulnerable to disease; soil degradation and salinity are accumulating costs. Yield gains were bought with inputs."
+    },
+    {
+      "id": "drill-sfp12-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Hybrid vigour and why seed must be re-bought",
+      "question": "Why does F1 hybrid maize yield more than either parent, and why do farmers lose that advantage if they save F1 seed for the next season?",
+      "solution": "F1 combines dominant favourable alleles from both inbred parents — masking deleterious recessives (heterosis/hybrid vigour). Segregation in the F2 reshuffles alleles: vigour declines, plants become variable, and yield drops. The advantage exists only in the controlled first cross, which is why hybrid seed is produced fresh each season."
+    },
+    {
+      "id": "drill-sfp12-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Artificial selection vs mutation breeding",
+      "question": "Why would a breeder irradiate seeds when natural variation already exists in germplasm collections?",
+      "solution": "Natural variation may not include the desired trait, and crossing only RECOMBINES existing alleles. Radiation/chemical mutagens create NEW alleles — e.g. a disease-resistance that never existed in the gene pool. Mutagenesis is the tool when the allele you need is absent from all available germplasm."
+    },
+    {
+      "id": "drill-sfp12-4",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Bt crops — the gene and its safety logic",
+      "question": "Bt cotton expresses a bacterial toxin. Why is it toxic to caterpillars but marketed as safe for humans? Explain the activation step.",
+      "solution": "Bt (Bacillus thuringiensis) produces protoxin crystals that are INACTIVE until dissolved and proteolytically cleaved in an ALKALINE insect midgut; the activated toxin then binds specific insect gut receptors and punches pores, killing the larva. The human stomach is acidic, lacks the specific receptors and the activating proteases, so the protoxin stays inert and is digested like any protein. Host-specific activation is the safety argument."
+    },
+    {
+      "id": "drill-sfp12-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Golden rice — what it actually adds",
+      "question": "Golden rice is not more nutritious per calorie of grain — it adds one specific molecule. Which, and why was the pathway transferred from daffodil/maize?",
+      "solution": "It produces β-carotene (provitamin A) in the endosperm, giving the yellow colour. Rice normally synthesises carotenoids only in leaves; the added genes complete the pathway in the grain. The target is vitamin A deficiency (blindness, immune weakness), not general nutrition — a single-pathway supplement, not a 'better rice'."
+    },
+    {
+      "id": "drill-sfp12-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Animal breeding — out-crossing vs cross-breeding",
+      "question": "Distinguish out-crossing, out-breeding and cross-breeding in cattle improvement, and say which addresses inbreeding depression in a good herd.",
+      "solution": "Out-crossing: mating unrelated animals WITHIN the same breed — corrects inbreeding depression while keeping the breed. Out-breeding covers crossing between breeds or species. Cross-breeding: mating two different breeds so the superior male of one improves the other (e.g. Hisar × local for milk) — creates new commercial combinations. Same-breed unrelated mating is the inbreeding-depression fix."
+    },
+    {
+      "id": "drill-sfp12-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Single-cell protein — the sustainability argument",
+      "question": "Why is single-cell protein (Spirulina, yeast) promoted as a protein source of the future? Give two advantages over conventional protein.",
+      "solution": "Microbes grow astronomically fast on cheap substrates (wastewater, molasses, CO₂) — protein production in days rather than months, with a tiny land/water footprint and no need for fertile soil. They also upgrade low-value waste into food. Growth rate and resource efficiency are the two pillars; the acceptability and purity hurdles are the honest limitations."
+    },
+    {
+      "id": "drill-sfp12-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Apiculture — more than honey",
+      "question": "Beekeeping earns farmers money beyond honey. What other products and service does an apiary provide, and why is the 'service' worth more nationally?",
+      "solution": "Products: honey, beeswax, propolis, royal jelly. The service: POLLINATION — bees pollinate the crops of surrounding farms, raising fruit and seed yields far beyond the hive's own value. The pollination service is worth more to national agriculture than all hive products combined, which is why pesticide spraying during flowering is regulated."
+    }
+  ]
+}
