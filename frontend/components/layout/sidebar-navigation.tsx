@@ -4,24 +4,41 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { LogIn, LogOut, ChevronsUp, Palette } from "lucide-react";
+import { LogIn, LogOut, ChevronsUp, Palette, ChevronRight } from "lucide-react";
 
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerAccount, isOwnerUser } from "@/lib/owner";
 import { useR1Access } from "@/features/r1/hooks";
 import { isNavItemActive } from "@/lib/nav-active";
-import { isSidebarNavItem, NAV_SECTIONS, navMinLevel, type NavItem } from "@/lib/navigation";
-import { hasLevel } from "@/lib/access-level";
+import {
+  isSidebarNavItem,
+  NAV_SECTIONS,
+  NAV_SECTION_FEATURES,
+  navAccent,
+  navMinLevel,
+  type NavItem,
+} from "@/lib/navigation";
+import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/access-level";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 /**
  * The menu DATA lives in lib/navigation.ts — one list shared with the mobile
  * drawer, so both surfaces can never drift apart.
+ *
+ * Presentation follows the reference Settings / Profile lists: each section is
+ * a rounded card with a coloured icon-chip header (plus its own one-line
+ * "features" descriptor) and each destination is a row — coloured icon chip +
+ * label + chevron. Tier-locked destinations still appear (all platform
+ * features are listed) but as muted, non-interactive rows carrying a tier tag.
  */
+type NavRow = { item: NavItem; locked: boolean; tier: AccessLevel };
+
 function NavSection({
   label,
   icon: LabelIcon,
-  items,
+  feature,
+  accentIndex,
+  rows,
   pathname,
   collapsed,
   onToggle,
@@ -29,14 +46,16 @@ function NavSection({
 }: {
   label: string;
   icon: React.ComponentType<{ className?: string }>;
-  items: NavItem[];
+  feature?: string;
+  accentIndex: number;
+  rows: NavRow[];
   pathname: string;
   collapsed: boolean;
   onToggle: () => void;
   railCollapsed: boolean;
 }) {
   const Icon = LabelIcon;
-  const activeCount = items.filter((item) => isNavItemActive(pathname, item.href)).length;
+  const activeCount = rows.filter((r) => isNavItemActive(pathname, r.item.href)).length;
 
   // ── Collapsed rail: icon-only, centered, with hover tooltips ──────────────
   if (railCollapsed) {
@@ -46,9 +65,22 @@ function NavSection({
           <Icon className="h-3.5 w-3.5 text-muted-foreground/50" />
         </div>
         <div className="space-y-0.5">
-          {items.map((item) => {
+          {rows.map(({ item, locked, tier }) => {
             const ItemIcon = item.icon;
             const isActive = isNavItemActive(pathname, item.href);
+            if (locked) {
+              return (
+                <div
+                  key={item.href}
+                  title={`${item.label} · ${ACCESS_LABELS[tier]}+`}
+                  aria-label={item.label}
+                  aria-disabled="true"
+                  className="flex items-center justify-center rounded-lg p-2.5 opacity-40"
+                >
+                  <ItemIcon className="h-4 w-4" />
+                </div>
+              );
+            }
             return (
               <Link
                 key={item.href}
@@ -75,66 +107,86 @@ function NavSection({
     );
   }
 
-  // ── Expanded: full labels + per-section collapse ──────────────────────────
+  // ── Expanded: grouped card + icon-chip rows (Settings-style) ──────────────
   return (
-    <div className="mb-2">
+    <div className="mb-2 overflow-hidden rounded-2xl border border-border/60 bg-card/60">
       <button
         type="button"
         onClick={onToggle}
         aria-expanded={!collapsed}
         aria-label={`${collapsed ? 'Expand' : 'Collapse'} ${label}`}
-        className={cn(
-          "flex w-full items-center gap-2 rounded-lg px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 hover:text-foreground hover:bg-muted/50 transition-all",
-          collapsed && "justify-center"
-        )}
+        className="flex w-full items-center gap-2.5 px-2.5 py-2 text-left transition-colors hover:bg-muted/40"
       >
-        <Icon className="h-3.5 w-3.5 shrink-0" />
-        <>
-            <span className="flex-1 text-left">{label}</span>
-            {activeCount > 0 && (
-              <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-primary/15 px-1 text-[9px] font-bold text-primary">
-                {activeCount}
-              </span>
-            )}
-            <ChevronsUp className={cn("h-3 w-3 opacity-50 transition-transform", collapsed && "rotate-180")} />
-          </>
+        <span className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-lg", navAccent(accentIndex))}>
+          <Icon className="h-4 w-4" />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block truncate text-[12px] font-bold leading-tight text-foreground">{label}</span>
+          {feature && (
+            <span className="block truncate text-[10px] leading-tight text-muted-foreground">{feature}</span>
+          )}
+        </span>
+        {activeCount > 0 && (
+          <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-primary/15 px-1 text-[9px] font-bold text-primary">
+            {activeCount}
+          </span>
+        )}
+        <ChevronsUp className={cn("h-3.5 w-3.5 shrink-0 text-muted-foreground/60 transition-transform", collapsed && "rotate-180")} />
       </button>
       {!collapsed && (
-        <div className="mt-0.5 space-y-0.5 pl-1">
-          {items.map((item) => {
+        <div className="space-y-0.5 px-1.5 pb-1.5">
+          {rows.map(({ item, locked, tier }, i) => {
             const ItemIcon = item.icon;
             const isActive = isNavItemActive(pathname, item.href);
+            if (locked) {
+              return (
+                <div
+                  key={item.href}
+                  aria-disabled="true"
+                  className="flex items-center gap-2.5 rounded-xl px-2 py-2 opacity-50"
+                >
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
+                    <ItemIcon className="h-4 w-4" />
+                  </span>
+                  <span className="min-w-0 flex-1 truncate text-[11px] font-medium text-muted-foreground">{item.label}</span>
+                  <span className="shrink-0 rounded-md bg-muted px-1.5 py-0.5 text-[8.5px] font-bold text-muted-foreground">
+                    {ACCESS_LABELS[tier]}+
+                  </span>
+                </div>
+              );
+            }
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 aria-current={isActive ? 'page' : undefined}
                 className={cn(
-                  "group flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium transition-all relative overflow-hidden",
+                  "flex items-center gap-2.5 rounded-xl px-2 py-2 transition-colors",
                   isActive
-                    ? "bg-primary/10 text-primary shadow-sm font-semibold"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
                 )}
               >
-                {isActive && (
-                  <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-primary rounded-full" />
-                )}
-                <ItemIcon
+                <span
                   className={cn(
-                    "h-4 w-4 shrink-0 transition-transform group-hover:scale-110",
-                    isActive && "text-primary"
+                    "flex h-8 w-8 shrink-0 items-center justify-center rounded-lg",
+                    isActive ? "bg-primary/20 text-primary" : navAccent(i)
                   )}
-                />
-                <span className="flex-1 whitespace-nowrap">{item.label}</span>
-                {item.badge && (
+                >
+                  <ItemIcon className="h-4 w-4" />
+                </span>
+                <span className="min-w-0 flex-1 truncate text-[11px] font-medium">{item.label}</span>
+                {item.badge ? (
                   <span
                     className={cn(
-                      "shrink-0 text-[8.5px] font-extrabold px-1.5 py-0.5 rounded-md",
+                      "shrink-0 rounded-md px-1.5 py-0.5 text-[8.5px] font-extrabold",
                       item.badgeClass ?? "bg-primary/15 text-primary"
                     )}
                   >
                     {item.badge}
                   </span>
+                ) : (
+                  <ChevronRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground/50" />
                 )}
               </Link>
             );
@@ -187,23 +239,34 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
   // mounts, matching the server HTML (no hydration mismatch).
   const viewer = user ?? null;
 
-  /** Per-item gates: owner/R1 audience + the access-ladder index unlock. */
-  const visibleItems = (section: (typeof NAV_SECTIONS)[number]) =>
-    section.items.filter(
-      (item) =>
-        isSidebarNavItem(item) &&
-        (item.ownerOnly ? isOwnerAccount(user) : true) &&
-        (item.r1Only ? hasR1 : true) &&
-        hasLevel(viewer, navMinLevel(item, section))
-    );
+  /**
+   * Every sidebar destination for a section, annotated with its access tier and
+   * whether it is currently locked. Locked rows still render (all platform
+   * features stay visible) but as muted, non-interactive entries.
+   */
+  const rowsFor = (section: (typeof NAV_SECTIONS)[number]): NavRow[] =>
+    section.items
+      .filter(isSidebarNavItem)
+      .filter(
+        (item) =>
+          (item.ownerOnly ? isOwnerAccount(user) : true) &&
+          (item.r1Only ? hasR1 : true)
+      )
+      .map((item) => {
+        const tier = navMinLevel(item, section);
+        return { item, tier, locked: !hasLevel(viewer, tier) };
+      });
 
   /** account → signed-in only; ownerOnly → owner accounts; r1Only → owner + R1 grants. */
   const canSee = (section: (typeof NAV_SECTIONS)[number]) => {
     if (section.id === "account") return isLoggedIn;
     if (section.ownerOnly) return isOwnerAccount(user);
     if (section.r1Only) return hasR1;
-    // Content sections appear only when at least one index is unlocked.
-    return visibleItems(section).length > 0;
+    const rows = rowsFor(section);
+    if (rows.length === 0) return false;
+    // Signed-in viewers see every section (locked rows greyed) so all platform
+    // features are listed; guests only see sections they can actually open.
+    return isLoggedIn || rows.some((row) => !row.locked);
   };
 
   const handleLogout = async () => {
@@ -212,6 +275,13 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
     // the background — no round-trip before the UI becomes a customer again.
     await logoutUser();
   };
+
+  const primaryRows: NavRow[] = primaryItems
+    .filter((item) => isSidebarNavItem(item) && (item.ownerOnly ? isOwnerAccount(user) : true) && (item.r1Only ? hasR1 : true))
+    .map((item) => {
+      const tier = navMinLevel(item);
+      return { item, tier, locked: !hasLevel(viewer, tier) };
+    });
 
   return (
     <nav className="flex flex-col h-full">
@@ -231,58 +301,107 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
 
       {/* Nav sections */}
       <div className="flex-1 overflow-y-auto overscroll-contain px-2 py-3 space-y-1">
-        {/* Primary destinations */}
-        <div className="mb-2 space-y-0.5">
-          {primaryItems.filter((item) => isSidebarNavItem(item) && hasLevel(viewer, navMinLevel(item))).map((item) => {
-            const ItemIcon = item.icon;
-            const isActive = isNavItemActive(pathname, item.href);
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                title={item.label}
-                aria-label={item.label}
-                aria-current={isActive ? 'page' : undefined}
-                className={cn(
-                  "group flex items-center gap-3 rounded-xl px-3 py-2 text-xs font-semibold transition-all relative overflow-hidden",
-                  isActive
-                    ? "bg-primary/10 text-primary border border-primary/25 shadow-xs"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted/60",
-                  collapsed && "justify-center px-2"
-                )}
-              >
-                {isActive && (
-                  <div className="absolute left-0 top-1 bottom-1 w-1 bg-primary rounded-r-full" />
-                )}
-                <ItemIcon className={cn("h-4 w-4 shrink-0 transition-transform group-hover:scale-110", isActive && "text-primary")} />
-                {!collapsed && (
-                  <>
-                    <span className="flex-1 whitespace-nowrap">{item.label}</span>
-                    {item.badge && (
-                      <span
-                        className={cn(
-                          "shrink-0 text-[8.5px] font-extrabold px-1.5 py-0.5 rounded-md",
-                          item.badgeClass ?? "bg-primary/15 text-primary"
-                        )}
-                      >
-                        {item.badge}
-                      </span>
+        {/* Primary destinations — "Quick Access" card */}
+        <div className="mb-2 overflow-hidden rounded-2xl border border-border/60 bg-card/60">
+          {!collapsed && (
+            <div className="flex items-center gap-2.5 px-2.5 py-2">
+              <span className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-lg", navAccent(1))}>
+                <Palette className="h-4 w-4" />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block truncate text-[12px] font-bold leading-tight text-foreground">Quick Access</span>
+                <span className="block truncate text-[10px] leading-tight text-muted-foreground">
+                  {NAV_SECTION_FEATURES.primary}
+                </span>
+              </span>
+            </div>
+          )}
+          <div className={cn("space-y-0.5 px-1.5 pb-1.5", collapsed && "pt-1.5")}>
+            {primaryRows.map(({ item, locked, tier }, i) => {
+              const ItemIcon = item.icon;
+              const isActive = isNavItemActive(pathname, item.href);
+              if (locked) {
+                return (
+                  <div
+                    key={item.href}
+                    title={`${item.label} · ${ACCESS_LABELS[tier]}+`}
+                    aria-label={item.label}
+                    aria-disabled="true"
+                    className={cn(
+                      "flex items-center gap-2.5 rounded-xl px-2 py-2 opacity-50",
+                      collapsed && "justify-center px-2"
                     )}
-                  </>
-                )}
-              </Link>
-            );
-          })}
+                  >
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
+                      <ItemIcon className="h-4 w-4" />
+                    </span>
+                    {!collapsed && (
+                      <>
+                        <span className="min-w-0 flex-1 truncate text-[11px] font-medium text-muted-foreground">{item.label}</span>
+                        <span className="shrink-0 rounded-md bg-muted px-1.5 py-0.5 text-[8.5px] font-bold text-muted-foreground">
+                          {ACCESS_LABELS[tier]}+
+                        </span>
+                      </>
+                    )}
+                  </div>
+                );
+              }
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  title={collapsed ? item.label : undefined}
+                  aria-label={collapsed ? item.label : undefined}
+                  aria-current={isActive ? 'page' : undefined}
+                  className={cn(
+                    "flex items-center gap-2.5 rounded-xl px-2 py-2 transition-colors",
+                    isActive
+                      ? "bg-primary/10 text-primary"
+                      : "text-muted-foreground hover:bg-muted/50 hover:text-foreground",
+                    collapsed && "justify-center px-2"
+                  )}
+                >
+                  <span
+                    className={cn(
+                      "flex h-8 w-8 shrink-0 items-center justify-center rounded-lg",
+                      isActive ? "bg-primary/20 text-primary" : navAccent(i)
+                    )}
+                  >
+                    <ItemIcon className="h-4 w-4" />
+                  </span>
+                  {!collapsed && (
+                    <>
+                      <span className="min-w-0 flex-1 truncate text-[11px] font-medium">{item.label}</span>
+                      {item.badge ? (
+                        <span
+                          className={cn(
+                            "shrink-0 rounded-md px-1.5 py-0.5 text-[8.5px] font-extrabold",
+                            item.badgeClass ?? "bg-primary/15 text-primary"
+                          )}
+                        >
+                          {item.badge}
+                        </span>
+                      ) : (
+                        <ChevronRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground/50" />
+                      )}
+                    </>
+                  )}
+                </Link>
+              );
+            })}
+          </div>
         </div>
 
         {NAV_SECTIONS.filter(
           (section) => section.id !== "primary" && canSee(section),
-        ).map((section) => (
+        ).map((section, sectionIndex) => (
           <NavSection
             key={section.id}
             label={section.label}
             icon={section.icon}
-            items={visibleItems(section)}
+            feature={NAV_SECTION_FEATURES[section.id]}
+            accentIndex={sectionIndex + 2}
+            rows={rowsFor(section)}
             pathname={pathname}
             collapsed={collapsedSections[section.id] ?? false}
             onToggle={() => toggleSection(section.id)}
@@ -295,20 +414,25 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
             <ThemeToggle compact />
           </div>
         ) : (
-          <section className="mb-2">
+          <section className="mb-2 overflow-hidden rounded-2xl border border-border/60 bg-card/60">
             <button
               type="button"
               onClick={() => toggleSection("theme")}
               aria-expanded={!collapsedSections.theme}
               aria-label={`${collapsedSections.theme ? "Expand" : "Collapse"} Theme`}
-              className="flex w-full items-center gap-2 rounded-lg px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 transition-all hover:bg-muted/50 hover:text-foreground"
+              className="flex w-full items-center gap-2.5 px-2.5 py-2 text-left transition-colors hover:bg-muted/40"
             >
-              <Palette className="h-3.5 w-3.5 shrink-0" />
-              <span className="flex-1 text-left">Theme</span>
-              <ChevronsUp className={cn("h-3 w-3 opacity-50 transition-transform", collapsedSections.theme && "rotate-180")} />
+              <span className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-lg", navAccent(0))}>
+                <Palette className="h-4 w-4" />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block truncate text-[12px] font-bold leading-tight text-foreground">Theme</span>
+                <span className="block truncate text-[10px] leading-tight text-muted-foreground">Choose Theme Palette</span>
+              </span>
+              <ChevronsUp className={cn("h-3.5 w-3.5 shrink-0 text-muted-foreground/60 transition-transform", collapsedSections.theme && "rotate-180")} />
             </button>
             {!collapsedSections.theme && (
-              <div className="mt-1 px-1">
+              <div className="px-2 pb-2">
                 <ThemeToggle ariaLabel="Choose Theme Palette" />
               </div>
             )}

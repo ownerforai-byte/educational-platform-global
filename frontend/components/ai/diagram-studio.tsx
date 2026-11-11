@@ -7,6 +7,7 @@ import { enhancePrompt, saveChatHistory, streamChat } from "@/lib/api/ai";
 import type { AIChatMessage } from "@/types/api";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
+import { AiToolShell } from "@/components/ai/ai-tool-shell";
 
 /**
  * THE DIAGRAM HUB (owner 2026-10-25: "one diagram hub (svg+ detailed or from
@@ -168,20 +169,15 @@ export function DiagramStudio() {
   };
 
   return (
-    <div className="mx-auto w-full max-w-4xl space-y-5 px-3 py-4 sm:px-4 sm:py-8">
+    <AiToolShell
+      icon={Shapes}
+      title="Diagram hub"
+      description="Detailed, labelled diagrams — drawn as sharp vector figures, researched from real references and always in English."
+      accent="border-rose-500/25 bg-rose-500/10 text-rose-500"
+      current="/ai/diagrams"
+    >
+    <div className="space-y-5">
       <div className="rounded-3xl border-2 border-border/80 bg-card p-5 sm:p-6">
-        <div className="flex items-center gap-3">
-          <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10">
-            <Shapes className="h-5 w-5 text-primary" aria-hidden="true" />
-          </span>
-          <div>
-            <h1 className="text-lg font-extrabold tracking-tight">Diagram Hub</h1>
-            <p className="text-[11px] text-muted-foreground">
-              Detailed, labelled diagrams — drawn as sharp vector figures,
-              researched from real references, always in English.
-            </p>
-          </div>
-        </div>
 
         <div className="mt-4 flex flex-wrap gap-1.5">
           {SUBJECTS.map((s) => (
@@ -305,5 +301,6 @@ export function DiagramStudio() {
         )}
       </div>
     </div>
+    </AiToolShell>
   );
 }

@@ -43,8 +43,20 @@ export type ActivityKind = "3d-sim" | "animation" | "theory" | "practical";
 /** Lifecycle gate: only `live` and `pilot` are offered in the hub. */
 export type ActivityLifecycle = "live" | "pilot" | "retired";
 
-/** Subjects in the shared manifest. Mathematics is intentionally included. */
-export type ActivitySubject = "physics" | "chemistry" | "biology" | "mathematics";
+/**
+ * Subjects in the shared manifest. Mathematics is intentionally included, and
+ * the two language subjects (English, Nepali) joined with the 2026-11-11
+ * coverage pass: their topics are language/literature units rather than
+ * laboratory science, so their visuals resolve through the chapter-animation
+ * router (or its honest "under progress" state), never a science scene.
+ */
+export type ActivitySubject =
+  | "physics"
+  | "chemistry"
+  | "biology"
+  | "mathematics"
+  | "english"
+  | "nepali";
 
 /** Capability tier used by `3d-rig/use-scene-tier.ts` to pick a renderer. */
 export type DeviceTier = "high" | "mid" | "low";
@@ -141,6 +153,8 @@ const MANIFEST_SUBJECTS = new Set<string>([
   "chemistry",
   "biology",
   "mathematics",
+  "english",
+  "nepali",
 ]);
 
 function asActivitySubject(subject: string): ActivitySubject | null {

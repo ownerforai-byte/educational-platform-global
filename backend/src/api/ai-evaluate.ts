@@ -4,6 +4,8 @@ import { rateLimit } from "../middleware/rateLimit";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { getWorkLaneProvider } from "../ai/config";
 import { ANSWER_GUIDE_RULES } from "../ai/answer-guide";
+import { answerTierRules } from "../ai/prompts";
+import { aiSparkTierFor } from "../utils/aiSpark";
 import {
   authOrGuestQuota,
   extractJsonObject,
@@ -11,6 +13,7 @@ import {
   type QuizFormat,
 } from "./ai-generate";
 import { aiSparkGateIfAuthed, requirePlusAiStudio } from "../middleware/aiSparkGate";
+import type { AuthedRequest } from "../middleware/auth";
 
 /**
  * POST /api/ai/evaluate-answers (plan.md §11.2).

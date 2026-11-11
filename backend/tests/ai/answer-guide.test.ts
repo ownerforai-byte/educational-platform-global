@@ -48,11 +48,14 @@ describe("every AI surface carries the guide", () => {
   test("quiz generation (every format)", () => {
     const src = read("ai-generate.ts");
     expect(src).toContain("ANSWER_GUIDE_RULES");
-    expect(src).toMatch(/`\$\{systemPromptBody\}\\n\\n\$\{ANSWER_GUIDE_RULES\}`/);
+    // The guide rides on the surface; tier-specific depth rules are appended after it.
+    expect(src).toMatch(/`\$\{systemPromptBody\}\\n\\n\$\{ANSWER_GUIDE_RULES\}/);
+    expect(src).toMatch(/\$\{ANSWER_GUIDE_RULES\}\\n\\n\$\{answerTierRules\(tier\)\}`/);
   });
 
   test("quiz grading", () => {
     const src = read("ai-evaluate.ts");
-    expect(src).toMatch(/\$\{ANSWER_GUIDE_RULES\}`;/);
+    // The guide rides on the surface; tier-specific depth rules are appended after it.
+    expect(src).toMatch(/\$\{ANSWER_GUIDE_RULES\}\\n\\n\$\{answerTierRules/);
   });
 });

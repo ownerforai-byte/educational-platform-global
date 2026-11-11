@@ -310,7 +310,7 @@ export function AiToolsDirectory({ subjects }: { subjects: SubjectClassroom[] })
 
       {/* Category filter pills */}
       <div
-        className="-mx-3 flex gap-2 overflow-x-auto px-3 pb-1 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0"
+        className="flex flex-wrap gap-2"
         role="group"
         aria-label="Filter by category"
       >

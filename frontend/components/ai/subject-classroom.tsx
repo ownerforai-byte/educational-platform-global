@@ -45,6 +45,7 @@ import {
 } from "@/lib/ai/subject-classrooms";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
+import { AiToolShell } from "@/components/ai/ai-tool-shell";
 
 /**
  * THE SUBJECT CLASSROOM (owner 2026-10-25: "one interface per subject with
@@ -383,52 +384,42 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
   };
 
   return (
-    <div className="mx-auto flex min-h-0 w-full max-w-4xl flex-col gap-4 px-3 py-4 sm:px-4 sm:py-6">
-      {/* ── Subject header ─────────────────────────────────────────────── */}
+    <AiToolShell
+      icon={Icon}
+      title={classroom.title}
+      description={classroom.tagline}
+      accent={`${classroom.accentBorder} ${classroom.accentBg} ${classroom.accent}`}
+      current="/ai/subjects"
+    >
+    <div className="flex min-h-0 w-full flex-col gap-4">
+      {/* ── Action bar (title + tagline live in the shell header) ──────── */}
       <div
-        className={`rounded-3xl border ${classroom.accentBorder} ${classroom.accentBg} p-5 sm:p-6`}
+        className={`flex flex-wrap items-center justify-between gap-3 rounded-3xl border ${classroom.accentBorder} ${classroom.accentBg} p-3 sm:p-4`}
       >
-        <div className="flex flex-wrap items-start justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <span
-              className={`flex h-11 w-11 items-center justify-center rounded-2xl ${classroom.accentBg} border ${classroom.accentBorder}`}
-            >
-              <Icon className={`h-5 w-5 ${classroom.accent}`} aria-hidden="true" />
-            </span>
-            <div>
-              <h1 className="text-lg font-extrabold tracking-tight">
-                {classroom.title}
-              </h1>
-              <p className="text-[11px] text-muted-foreground">{classroom.tagline}</p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={() => setHistoryOpen((v) => !v)}
-              aria-expanded={historyOpen}
-              className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border-2 border-border/80 bg-background px-3 text-[11px] font-semibold text-foreground transition hover:border-primary/50"
-            >
-              <History className="h-3.5 w-3.5" />
-              {classroom.subject} history
-            </button>
-            <button
-              type="button"
-              onClick={startNewChat}
-              className="inline-flex min-h-10 items-center gap-1.5 rounded-xl bg-primary px-3 text-[11px] font-semibold text-primary-foreground transition hover:opacity-90"
-            >
-              <Plus className="h-3.5 w-3.5" />
-              New chat
-            </button>
-          </div>
-        </div>
-
-        <p className="mt-3 flex items-center gap-1.5 text-[11px] text-muted-foreground">
-          <Sparkles className={`h-3 w-3 ${classroom.accent}`} aria-hidden="true" />
+        <p className="flex min-w-0 items-center gap-1.5 text-[11px] text-muted-foreground">
+          <Sparkles className={`h-3 w-3 shrink-0 ${classroom.accent}`} aria-hidden="true" />
           Private {classroom.subject} history — conversations here never mix with
           other subjects or the main Veer chat.
         </p>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setHistoryOpen((v) => !v)}
+            aria-expanded={historyOpen}
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl border-2 border-border/80 bg-background px-3 text-[11px] font-semibold text-foreground transition hover:border-primary/50"
+          >
+            <History className="h-3.5 w-3.5" />
+            {classroom.subject} history
+          </button>
+          <button
+            type="button"
+            onClick={startNewChat}
+            className="inline-flex min-h-10 items-center gap-1.5 rounded-xl bg-primary px-3 text-[11px] font-semibold text-primary-foreground transition hover:opacity-90"
+          >
+            <Plus className="h-3.5 w-3.5" />
+            New chat
+          </button>
+        </div>
       </div>
 
       {/* ── Private history drawer (this subject only) ─────────────────── */}
@@ -609,5 +600,6 @@ export function SubjectClassroom({ classroom }: { classroom: SubjectClassroom })
         )}
       </div>
     </div>
+    </AiToolShell>
   );
 }

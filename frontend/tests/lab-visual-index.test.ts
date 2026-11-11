@@ -7,12 +7,31 @@ import {
 } from "@/lib/lab-visual-index";
 
 describe("lab-visual-index", () => {
-  it("has 453 entries with correct chapter/direct split", () => {
-    expect(LAB_VISUAL_INDEX).toHaveLength(453);
+  it("has the generated 453 plus the manual science/math extension with the right split", () => {
+    // 453 auto-generated entries + 183 manual chapter-animation entries that
+    // close the Physics/Chemistry/Biology/Mathematics topic gap (2026-11-11).
+    expect(LAB_VISUAL_INDEX).toHaveLength(636);
     const chapter = LAB_VISUAL_INDEX.filter((e) => e.kind === "chapter-animation");
     const direct  = LAB_VISUAL_INDEX.filter((e) => e.kind === "direct-visual");
-    expect(chapter).toHaveLength(158);
+    expect(chapter).toHaveLength(341);
     expect(direct).toHaveLength(295);
+  });
+
+  it("the manual extension block carries a real syllabus topic per entry", () => {
+    // Every manual entry must name the topic it teaches, so the manifest can
+    // derive a coverage row. Generated entries reuse one shared topicSlug, so
+    // the check is on the manual block's own shape: a non-empty slug + title.
+    const manual = LAB_VISUAL_INDEX.filter(
+      (e) => e.kind === "chapter-animation" && e.labId === "ChapterAnimation" && e.slugs.length === 1,
+    );
+    expect(manual.length).toBeGreaterThanOrEqual(183);
+    for (const entry of manual) {
+      if (entry.kind !== "chapter-animation") continue;
+      expect(entry.slugs[0].length).toBeGreaterThan(0);
+      expect(entry.chapterProps.topicSlug.length).toBeGreaterThan(0);
+      expect(entry.chapterProps.topicTitle.length).toBeGreaterThan(0);
+      expect(entry.entranceTopic.length).toBeGreaterThan(0);
+    }
   });
 
   it("has no alias collisions between different visuals", () => {

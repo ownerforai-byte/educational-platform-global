@@ -3,15 +3,16 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { LogIn, LogOut, Menu, Search, User, X } from "lucide-react";
+import { LogIn, LogOut, Menu, Search, User, X, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isNavItemActive } from "@/lib/nav-active";
 import { isOwnerAccount, isOwnerUser } from "@/lib/owner";
 import { useR1Access } from "@/features/r1/hooks";
-import { isSidebarNavItem, NAV_SECTIONS, navMinLevel } from "@/lib/navigation";
-import { hasLevel } from "@/lib/access-level";
+import { isSidebarNavItem, NAV_SECTIONS, NAV_SECTION_FEATURES, navAccent, navMinLevel } from "@/lib/navigation";
+import { ACCESS_LABELS, hasLevel } from "@/lib/access-level";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 /**
@@ -101,6 +102,8 @@ export function MobileNav() {
   const { data: r1Access } = useR1Access(!!user);
   const hasR1 = isOwnerUser(user) || r1Access === true;
 
+  const query = searchQuery.trim().toLowerCase();
+
   const filteredSections = NAV_SECTIONS.filter(
     (sec) =>
       (sec.id !== 'account' || !!user) &&
@@ -109,21 +112,26 @@ export function MobileNav() {
   )
     .map((sec) => ({
       ...sec,
-      items: sec.items.filter((item) =>
-        isSidebarNavItem(item) &&
-        // Owner-only entries (AI chat) never reach non-owners, even by search.
-        (item.ownerOnly ? isOwnerAccount(user) : true) &&
-        (item.r1Only ? hasR1 : true) &&
-        // Access ladder: each index unlocks at its rung (member → Student Desk;
-        // search now lives on the front quick-access bar, not the index).
-        hasLevel(user ?? null, navMinLevel(item, sec)) &&
-        (searchQuery.trim() === ""
-          ? true
-          : item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            sec.label.toLowerCase().includes(searchQuery.toLowerCase()))
-      ),
+      // Every sidebar destination is listed (all platform features); a
+      // tier-locked one is marked locked and rendered as a muted, inert row.
+      rows: sec.items
+        .filter((item) =>
+          isSidebarNavItem(item) &&
+          // Owner-only entries (AI chat) never reach non-owners, even by search.
+          (item.ownerOnly ? isOwnerAccount(user) : true) &&
+          (item.r1Only ? hasR1 : true) &&
+          (query === "" ||
+            item.label.toLowerCase().includes(query) ||
+            sec.label.toLowerCase().includes(query))
+        )
+        .map((item) => {
+          const tier = navMinLevel(item, sec);
+          return { item, tier, locked: !hasLevel(user ?? null, tier) };
+        }),
     }))
-    .filter((sec) => sec.items.length > 0);
+    // Guests only see sections they can actually open; signed-in viewers see
+    // every section (locked rows greyed) so all platform features are listed.
+    .filter((sec) => sec.rows.length > 0 && (!!user || sec.rows.some((row) => !row.locked)));
 
   return (
     <>
@@ -231,46 +239,85 @@ export function MobileNav() {
                   No destinations match “{searchQuery}”. Try a subject or tool name.
                 </p>
               )}
-              {filteredSections.map((sec) => (
-                <div key={sec.id} className="space-y-1">
-                  <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground/80 px-2.5 py-1">
-                    {sec.label}
-                  </p>
-                  <div className="space-y-0.5">
-                    {sec.items.map((item) => {
-                      const Icon = item.icon;
-                      const active = isNavItemActive(pathname, item.href);
-                      return (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          aria-current={active ? 'page' : undefined}
-                          onClick={() => setOpen(false)}
-                          className={`flex items-center justify-between rounded-xl px-2.5 py-2 text-xs font-medium transition-all ${
-                            active
-                              ? "bg-primary/10 text-primary font-semibold shadow-sm"
-                              : "text-muted-foreground hover:bg-muted/60 hover:text-foreground"
-                          }`}
-                        >
-                          <div className="flex items-center gap-2.5 min-w-0">
-                            <Icon className="h-4 w-4 shrink-0" />
-                            <span className="truncate">{item.label}</span>
-                          </div>
-                          {item.badge && (
-                            <span
-                              className={`shrink-0 text-[8px] font-extrabold px-1.5 py-0.5 rounded-md ${
-                                item.badgeClass ?? "bg-primary/15 text-primary"
-                              }`}
+              {filteredSections.map((sec, secIndex) => {
+                const SecIcon = sec.icon;
+                return (
+                  <div key={sec.id} className="overflow-hidden rounded-2xl border border-border/60 bg-card/60">
+                    <div className="flex items-center gap-2.5 px-2.5 py-2">
+                      <span className={cn("flex h-8 w-8 shrink-0 items-center justify-center rounded-lg", navAccent(secIndex + 2))}>
+                        <SecIcon className="h-4 w-4" />
+                      </span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-[12px] font-bold leading-tight text-foreground">{sec.label}</span>
+                        {NAV_SECTION_FEATURES[sec.id] && (
+                          <span className="block truncate text-[10px] leading-tight text-muted-foreground">
+                            {NAV_SECTION_FEATURES[sec.id]}
+                          </span>
+                        )}
+                      </span>
+                    </div>
+                    <div className="space-y-0.5 px-1.5 pb-1.5">
+                      {sec.rows.map(({ item, locked, tier }, i) => {
+                        const Icon = item.icon;
+                        const active = isNavItemActive(pathname, item.href);
+                        if (locked) {
+                          return (
+                            <div
+                              key={item.href}
+                              aria-disabled="true"
+                              className="flex items-center gap-2.5 rounded-xl px-2 py-2 opacity-50"
                             >
-                              {item.badge}
+                              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-muted text-muted-foreground">
+                                <Icon className="h-4 w-4" />
+                              </span>
+                              <span className="min-w-0 flex-1 truncate text-[11px] font-medium text-muted-foreground">{item.label}</span>
+                              <span className="shrink-0 rounded-md bg-muted px-1.5 py-0.5 text-[8.5px] font-bold text-muted-foreground">
+                                {ACCESS_LABELS[tier]}+
+                              </span>
+                            </div>
+                          );
+                        }
+                        return (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            aria-current={active ? 'page' : undefined}
+                            onClick={() => setOpen(false)}
+                            className={cn(
+                              "flex items-center gap-2.5 rounded-xl px-2 py-2 transition-colors",
+                              active
+                                ? "bg-primary/10 text-primary"
+                                : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                            )}
+                          >
+                            <span
+                              className={cn(
+                                "flex h-8 w-8 shrink-0 items-center justify-center rounded-lg",
+                                active ? "bg-primary/20 text-primary" : navAccent(i)
+                              )}
+                            >
+                              <Icon className="h-4 w-4" />
                             </span>
-                          )}
-                        </Link>
-                      );
-                    })}
+                            <span className="min-w-0 flex-1 truncate text-[11px] font-medium">{item.label}</span>
+                            {item.badge ? (
+                              <span
+                                className={cn(
+                                  "shrink-0 rounded-md px-1.5 py-0.5 text-[8.5px] font-extrabold",
+                                  item.badgeClass ?? "bg-primary/15 text-primary"
+                                )}
+                              >
+                                {item.badge}
+                              </span>
+                            ) : (
+                              <ChevronRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground/50" />
+                            )}
+                          </Link>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </nav>
 
             <div className="mt-auto pt-3 border-t border-border/40 space-y-2 shrink-0">

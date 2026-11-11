@@ -130,6 +130,41 @@ export function isSidebarNavItem(item: NavItem): boolean {
   return !item.hideFromSidebar;
 }
 
+// ─── Grouped nav visuals (Settings / Profile-style rows) ─────────────────────
+/**
+ * Pastel icon-chip accents for the grouped sidebar / drawer rows — a soft
+ * coloured chip behind each icon, like the reference Settings & Profile lists.
+ * Full literal class strings so Tailwind's scanner generates them.
+ */
+export const NAV_ACCENTS = [
+  "bg-sky-500/10 text-sky-600 dark:text-sky-400",
+  "bg-violet-500/10 text-violet-600 dark:text-violet-400",
+  "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
+  "bg-amber-500/10 text-amber-600 dark:text-amber-400",
+  "bg-rose-500/10 text-rose-600 dark:text-rose-400",
+  "bg-blue-500/10 text-blue-600 dark:text-blue-400",
+  "bg-teal-500/10 text-teal-600 dark:text-teal-400",
+  "bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-400",
+] as const;
+
+/** Deterministic accent for a row / section chip by index. */
+export function navAccent(index: number): string {
+  return NAV_ACCENTS[Math.abs(index) % NAV_ACCENTS.length];
+}
+
+/** One-line "own features" descriptor shown under each section heading. */
+export const NAV_SECTION_FEATURES: Record<string, string> = {
+  public: "About, help, legal and info",
+  primary: "Your everyday destinations",
+  curriculum: "Class notes, syllabus and past papers",
+  stem: "Labs, formulas, theorems and graphs",
+  tools: "AI chat, quizzes and exam prep",
+  extended: "Knowledge hubs, Loksewa and world knowledge",
+  account: "Profile, progress, settings and desk",
+  r1: "Habits, journal and plans",
+  owner: "Management console",
+};
+
 // ─── Link groups ─────────────────────────────────────────────────────────────
 // Each array below is ONE section of the navigation.
 // Add new pages to the most appropriate array.

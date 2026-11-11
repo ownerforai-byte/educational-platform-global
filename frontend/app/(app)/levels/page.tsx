@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import { getEducationLevels } from "@/lib/curriculum";
-import { getLevels } from "@/lib/api";
+import { apiGetSafe } from "@/lib/api-client";
+import type { EducationLevel } from "@/types/api";
 import { SYLLABUS } from "@/lib/syllabus";
 import { LAB_VISUAL_INDEX } from "@/lib/lab-visual-index";
 import { DERIVATIONS_AND_THEOREMS } from "@/lib/derivations-data";
@@ -33,10 +34,13 @@ export const metadata = {
 export default async function LevelsPage() {
   let dbLevels: Array<{ id: string; name: string; slug: string; description?: string | null }> = [];
   try {
-    const [staticLevels, apiLevels] = await Promise.all([
+    const [staticLevels, apiResult] = await Promise.all([
       getEducationLevels(),
-      getLevels().catch(() => []),
+      // Bounded read: a Render cold-start / offline backend must never be able
+      // to hang this SSG page past Next.js's 60s prerender limit (build-safe).
+      apiGetSafe<EducationLevel[]>("/api/levels", { timeoutMs: 8000, retries: 0 }),
     ]);
+    const apiLevels = apiResult.ok ? apiResult.value : [];
     const seen = new Set<string>();
     for (const level of [...staticLevels, ...apiLevels]) {
       if (!seen.has(level.slug)) {

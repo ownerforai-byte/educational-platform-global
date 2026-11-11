@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-10T08:59:31.704Z",
+  "generatedAt": "2026-11-11T01:53:07.525Z",
   "manifest": {
-    "activities": 527,
+    "activities": 710,
     "pilots": 3,
     "byLifecycle": {
       "pilot": 3,
-      "live": 523,
+      "live": 706,
       "retired": 1
     },
     "byRenderer": {
       "module": 3,
-      "visual": 343,
+      "visual": 526,
       "registry": 112,
       "catalog": 69
     },
@@ -23,16 +23,16 @@
   },
   "syllabus": {
     "topicSlugs": 689,
-    "coveredTopics": 346,
-    "uncoveredTopics": 343,
+    "coveredTopics": 529,
+    "uncoveredTopics": 160,
     "bySubject": {
       "biology": {
         "topics": 105,
-        "covered": 40
+        "covered": 105
       },
       "chemistry": {
         "topics": 188,
-        "covered": 93
+        "covered": 188
       },
       "english": {
         "topics": 109,
@@ -40,7 +40,7 @@
       },
       "mathematics": {
         "topics": 71,
-        "covered": 68
+        "covered": 71
       },
       "nepali": {
         "topics": 51,
@@ -48,19 +48,19 @@
       },
       "physics": {
         "topics": 165,
-        "covered": 145
+        "covered": 165
       }
     }
   },
   "sources": {
-    "visualIndexEntries": 453,
+    "visualIndexEntries": 636,
     "labRegistryMetadataIds": 116,
     "labCatalogEntries": 69,
-    "resolvableSlugs": 543,
+    "resolvableSlugs": 726,
     "registryMetadataVerified": 116
   },
   "parity": {
-    "visualRepresented": 342,
+    "visualRepresented": 525,
     "visualExempt": 111,
     "registryRepresented": 112,
     "registryExempt": 4,
