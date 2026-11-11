@@ -23,8 +23,38 @@
       }
     ],
     "paths": {
+      "@/components/lab": [
+        "./features/lab/components/index.ts"
+      ],
+      "@/components/lab/*": [
+        "./features/lab/components/*"
+      ],
+      "@/components/ai/*": [
+        "./features/ai/components/*"
+      ],
+      "@/components/chat/*": [
+        "./features/ai/components/chat/*"
+      ],
+      "@/components/derivations/*": [
+        "./features/derivations/components/*"
+      ],
+      "@/components/practice/*": [
+        "./features/practice/components/*"
+      ],
+      "@/components/progress/*": [
+        "./features/progress/components/*"
+      ],
+      "@/components/theorems/*": [
+        "./features/theorems/components/*"
+      ],
       "@/*": [
         "./*"
+      ],
+      "@rn/shared": [
+        "../packages/shared/src/index.ts"
+      ],
+      "@rn/shared/*": [
+        "../packages/shared/src/*"
       ]
     }
   },

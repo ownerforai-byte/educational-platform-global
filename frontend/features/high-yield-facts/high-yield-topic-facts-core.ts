@@ -8,7 +8,7 @@
  * that imports this module never pulls the eager barrel merge.
  */
 
-import type { HighYieldTopicData } from "@/lib/high-yield-topic-facts-match";
+import type { HighYieldTopicData } from "./high-yield-topic-facts-match";
 
 export const HIGH_YIELD_TOPIC_BANK: HighYieldTopicData[] = [
   // ─────────────────────────────────────────────────────────────

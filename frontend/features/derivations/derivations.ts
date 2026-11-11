@@ -15,7 +15,7 @@ import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
-const PROJECT_ROOT = resolve(dirname(__filename), "..", "..");
+const PROJECT_ROOT = resolve(dirname(__filename), "..", "..", "..");
 
 export interface DerivationEntry {
   classSlug: string;

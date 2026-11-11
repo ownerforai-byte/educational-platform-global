@@ -18,38 +18,38 @@
  * need the full merge anyway and dynamic import adds nothing there.
  */
 
-import { HIGH_YIELD_TOPIC_BANK } from "@/lib/high-yield-topic-facts-core";
+import { HIGH_YIELD_TOPIC_BANK } from "./high-yield-topic-facts-core";
 import {
   filterEntriesForUnit,
   findHighYieldTopicData,
   type HighYieldTopicData,
-} from "@/lib/high-yield-topic-facts-match";
+} from "./high-yield-topic-facts-match";
 
 type BankLoader = () => Promise<HighYieldTopicData[]>;
 
 const languagesLoader: BankLoader = async () =>
-  (await import("@/lib/high-yield-topic-facts-languages")).HIGH_YIELD_TOPIC_BANK_LANGUAGES;
+  (await import("./high-yield-topic-facts-languages")).HIGH_YIELD_TOPIC_BANK_LANGUAGES;
 
 /** Subject slug → loader for that subject's bank files. */
 const SUBJECT_BANK_LOADERS: Record<string, BankLoader> = {
   physics: async () => {
     const [a, b] = await Promise.all([
-      import("@/lib/high-yield-topic-facts-physics"),
-      import("@/lib/high-yield-topic-facts-physics-2"),
+      import("./high-yield-topic-facts-physics"),
+      import("./high-yield-topic-facts-physics-2"),
     ]);
     return [...a.HIGH_YIELD_TOPIC_BANK_PHYSICS, ...b.HIGH_YIELD_TOPIC_BANK_PHYSICS_2];
   },
   chemistry: async () => {
     const [a, b] = await Promise.all([
-      import("@/lib/high-yield-topic-facts-chemistry"),
-      import("@/lib/high-yield-topic-facts-chemistry-organic"),
+      import("./high-yield-topic-facts-chemistry"),
+      import("./high-yield-topic-facts-chemistry-organic"),
     ]);
     return [...a.HIGH_YIELD_TOPIC_BANK_CHEMISTRY, ...b.HIGH_YIELD_TOPIC_BANK_CHEMISTRY_ORGANIC];
   },
   biology: async () =>
-    (await import("@/lib/high-yield-topic-facts-biology")).HIGH_YIELD_TOPIC_BANK_BIOLOGY,
+    (await import("./high-yield-topic-facts-biology")).HIGH_YIELD_TOPIC_BANK_BIOLOGY,
   mathematics: async () =>
-    (await import("@/lib/high-yield-topic-facts-mathematics")).HIGH_YIELD_TOPIC_BANK_MATHEMATICS,
+    (await import("./high-yield-topic-facts-mathematics")).HIGH_YIELD_TOPIC_BANK_MATHEMATICS,
   nepali: languagesLoader,
   english: languagesLoader,
 };

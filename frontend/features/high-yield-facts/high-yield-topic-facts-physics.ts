@@ -1,4 +1,4 @@
-import type { HighYieldTopicData } from "@/lib/high-yield-topic-facts-match";
+import type { HighYieldTopicData } from "./high-yield-topic-facts-match";
 
 /**
  * Physics high-yield bank, part 1 — measurement and mechanics.

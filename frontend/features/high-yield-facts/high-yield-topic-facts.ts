@@ -11,14 +11,14 @@
  * file only supplies the full merged array and the public convenience API.
  */
 
-import { HIGH_YIELD_TOPIC_BANK } from "@/lib/high-yield-topic-facts-core";
-import { HIGH_YIELD_TOPIC_BANK_BIOLOGY } from "@/lib/high-yield-topic-facts-biology";
-import { HIGH_YIELD_TOPIC_BANK_CHEMISTRY } from "@/lib/high-yield-topic-facts-chemistry";
-import { HIGH_YIELD_TOPIC_BANK_CHEMISTRY_ORGANIC } from "@/lib/high-yield-topic-facts-chemistry-organic";
-import { HIGH_YIELD_TOPIC_BANK_LANGUAGES } from "@/lib/high-yield-topic-facts-languages";
-import { HIGH_YIELD_TOPIC_BANK_MATHEMATICS } from "@/lib/high-yield-topic-facts-mathematics";
-import { HIGH_YIELD_TOPIC_BANK_PHYSICS } from "@/lib/high-yield-topic-facts-physics";
-import { HIGH_YIELD_TOPIC_BANK_PHYSICS_2 } from "@/lib/high-yield-topic-facts-physics-2";
+import { HIGH_YIELD_TOPIC_BANK } from "./high-yield-topic-facts-core";
+import { HIGH_YIELD_TOPIC_BANK_BIOLOGY } from "./high-yield-topic-facts-biology";
+import { HIGH_YIELD_TOPIC_BANK_CHEMISTRY } from "./high-yield-topic-facts-chemistry";
+import { HIGH_YIELD_TOPIC_BANK_CHEMISTRY_ORGANIC } from "./high-yield-topic-facts-chemistry-organic";
+import { HIGH_YIELD_TOPIC_BANK_LANGUAGES } from "./high-yield-topic-facts-languages";
+import { HIGH_YIELD_TOPIC_BANK_MATHEMATICS } from "./high-yield-topic-facts-mathematics";
+import { HIGH_YIELD_TOPIC_BANK_PHYSICS } from "./high-yield-topic-facts-physics";
+import { HIGH_YIELD_TOPIC_BANK_PHYSICS_2 } from "./high-yield-topic-facts-physics-2";
 import {
   emptyHighYieldTopicData,
   filterEntriesForUnit,
@@ -26,8 +26,8 @@ import {
   findHighYieldTopicData,
   hasHighYieldTopicData,
   type HighYieldTopicData,
-} from "@/lib/high-yield-topic-facts-match";
-import { registerHighYieldSubjectBank } from "@/lib/high-yield-topic-facts-lazy";
+} from "./high-yield-topic-facts-match";
+import { registerHighYieldSubjectBank } from "./high-yield-topic-facts-lazy";
 
 export type { HighYieldTopicData };
 export { HIGH_YIELD_TOPIC_BANK, emptyHighYieldTopicData, hasHighYieldTopicData };

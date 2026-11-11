@@ -29,8 +29,13 @@ export default defineConfig({
     fileParallelism: false,
   },
   resolve: {
-    alias: {
-      "@": path.resolve(configDir, "."),
-    },
+    alias: [
+      // Phase 5: large trees live under features/; tsconfig paths cover Next/tsc,
+      // Vitest needs the same remapping (lib/* shims are not enough here).
+      { find: "@/components/chat", replacement: path.resolve(configDir, "features/ai/components/chat") },
+      { find: "@/components/ai", replacement: path.resolve(configDir, "features/ai/components") },
+      { find: "@/components/lab", replacement: path.resolve(configDir, "features/lab/components") },
+      { find: "@", replacement: path.resolve(configDir, ".") },
+    ],
   },
 });
