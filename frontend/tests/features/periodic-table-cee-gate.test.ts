@@ -31,7 +31,7 @@ const INLINE_GATE = /<SparkGate\s[^>]*minLevel="plus"/;
 
 describe("Periodic table CEE Spark gate", () => {
   it("gates the CEE dossier tab (default tab — past MCQs, traps, speed formulas)", () => {
-    const view = read("components/periodic-table/periodic-table-view.tsx");
+    const view = read("features/periodic-table/components/periodic-table-view.tsx");
     expect(view).toContain(
       'import { SparkGate } from "@/features/credits/spark-gate"',
     );
@@ -45,7 +45,7 @@ describe("Periodic table CEE Spark gate", () => {
   });
 
   it("gates the CEE high-yield summary inside the ores/facts tab", () => {
-    const view = read("components/periodic-table/periodic-table-view.tsx");
+    const view = read("features/periodic-table/components/periodic-table-view.tsx");
     const highYield = between(
       view,
       "{/* CEE High-Yield Summary",
@@ -56,7 +56,7 @@ describe("Periodic table CEE Spark gate", () => {
   });
 
   it("gates both CEE high-frequency fact panels (hover + block dossier)", () => {
-    const view = read("components/periodic-table/periodic-table-view.tsx");
+    const view = read("features/periodic-table/components/periodic-table-view.tsx");
 
     // Hover panel: the gate wraps the CEE column of the trends/CEE grid.
     const hover = between(
@@ -83,7 +83,7 @@ describe("Periodic table CEE Spark gate", () => {
 
   it("keeps the base table, reactions, ores and constants tabs free", () => {
     // Exactly four gated surfaces — the CEE ones — and nothing else.
-    const view = read("components/periodic-table/periodic-table-view.tsx");
+    const view = read("features/periodic-table/components/periodic-table-view.tsx");
     const opens = view.match(/<SparkGate\s[^>]*minLevel="plus"/g) ?? [];
     const closes = view.match(/<\/SparkGate>/g) ?? [];
     expect(opens).toHaveLength(4);
