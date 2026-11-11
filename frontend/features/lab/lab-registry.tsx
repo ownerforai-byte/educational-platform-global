@@ -4,7 +4,7 @@ export { LAB_METADATA_LIST, type LabMetadata } from "./lab-metadata";
  * This is the single source of truth for wiring labs between pages and components
  */
 
-import type { LabMeta } from "./types/lab";
+import type { LabMeta } from "./types-lab";
 import dynamic from "next/dynamic";
 
 // Component imports
