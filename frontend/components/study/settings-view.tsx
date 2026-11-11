@@ -1,20 +1,118 @@
 "use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
+import {
+  Award,
+  Bell,
+  Calendar,
+  ChevronRight,
+  Clock,
+  Languages,
+  Palette,
+  Sun,
+  Target,
+  Trash2,
+  Type,
+  User,
+} from "lucide-react";
 import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { DAILY_MINUTES_OPTIONS, type StudyPreferences } from "@/lib/study-goals";
 import { useStudyGoals } from "./use-study-goals";
 import { GuestGoalsPrompt } from "./guest-goals-prompt";
 
-const TOGGLES: Array<{ key: Exclude<keyof StudyPreferences, "language">; label: string }> = [
-  { key: "notifyDailyReminder", label: "Daily study reminder" },
-  { key: "notifyStreakAlerts", label: "Streak alerts" },
-  { key: "reduceMotion", label: "Reduce motion" },
-  { key: "largeText", label: "Larger text" },
-];
+/**
+ * /settings — grouped like the reference Settings list: each group is a card
+ * with a coloured icon-chip header and its options are rows (icon chip +
+ * label + subtitle + control). Everything here saves on this device only, so
+ * the owner asked for "many things inside it" without a server round-trip.
+ */
+
+type IconType = typeof Sun;
+
+function GroupCard({
+  icon: Icon,
+  tint,
+  label,
+  children,
+}: {
+  icon: IconType;
+  tint: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="overflow-hidden rounded-2xl border border-border/60 bg-card/60">
+      <div className="flex items-center gap-2.5 px-2.5 py-2">
+        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${tint}`}>
+          <Icon className="h-4 w-4" />
+        </span>
+        <span className="text-[12px] font-bold text-foreground">{label}</span>
+      </div>
+      <div className="space-y-0.5 px-1.5 pb-1.5">{children}</div>
+    </section>
+  );
+}
+
+function Row({
+  icon: Icon,
+  tint,
+  label,
+  subtitle,
+  children,
+}: {
+  icon: IconType;
+  tint: string;
+  label: string;
+  subtitle?: string;
+  children?: React.ReactNode;
+}) {
+  return (
+    <div className="flex items-center gap-2.5 rounded-xl px-2 py-2">
+      <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${tint}`}>
+        <Icon className="h-4 w-4" />
+      </span>
+      <div className="min-w-0 flex-1">
+        <p className="truncate text-[11px] font-medium text-foreground">{label}</p>
+        {subtitle && <p className="truncate text-[10px] text-muted-foreground">{subtitle}</p>}
+      </div>
+      {children && <div className="shrink-0">{children}</div>}
+    </div>
+  );
+}
+
+function RowLink({
+  icon: Icon,
+  tint,
+  label,
+  subtitle,
+  href,
+}: {
+  icon: IconType;
+  tint: string;
+  label: string;
+  subtitle?: string;
+  href: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="flex items-center gap-2.5 rounded-xl px-2 py-2 text-muted-foreground transition-colors hover:bg-muted/50 hover:text-foreground"
+    >
+      <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${tint}`}>
+        <Icon className="h-4 w-4" />
+      </span>
+      <div className="min-w-0 flex-1">
+        <p className="truncate text-[11px] font-medium">{label}</p>
+        {subtitle && <p className="truncate text-[10px] text-muted-foreground">{subtitle}</p>}
+      </div>
+      <ChevronRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground/50" />
+    </Link>
+  );
+}
+
+const SELECT = "h-9 rounded-lg border border-border/80 bg-background px-2 text-xs font-medium";
 
 /** /settings: language, theme, study goals, notifications, accessibility. */
 export function SettingsView() {
@@ -32,62 +130,54 @@ export function SettingsView() {
 
       <GuestGoalsPrompt guest={guest} onTransfer={adoptGuest} onDiscard={dropGuest} onLater={dismissGuest} />
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">Language and theme</CardTitle>
-        </CardHeader>
-        <CardContent className="flex flex-wrap items-center gap-4">
-          <div className="space-y-1">
-            <Label htmlFor="language">Language</Label>
+      <div className="space-y-3">
+        <GroupCard icon={Palette} tint="bg-violet-500/10 text-violet-600 dark:text-violet-400" label="Appearance">
+          <Row icon={Sun} tint="bg-amber-500/10 text-amber-600 dark:text-amber-400" label="Theme">
+            <ThemeToggle variant="inline" />
+          </Row>
+          <Row icon={Type} tint="bg-blue-500/10 text-blue-600 dark:text-blue-400" label="Text size" subtitle="Larger text across the app">
+            <Switch checked={prefs.largeText} onCheckedChange={(checked) => setPrefs({ largeText: checked })} />
+          </Row>
+          <Row icon={Languages} tint="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" label="Language" subtitle="UI, tutor and Ask AI answers">
             <select
-              id="language"
-              className="h-9 rounded-md border bg-background px-2 text-sm"
+              aria-label="Language"
+              className={SELECT}
               value={prefs.language}
               onChange={(e) => setPrefs({ language: e.target.value === "ne" ? "ne" : "en" })}
             >
               <option value="en">English</option>
               <option value="ne">नेपाली</option>
             </select>
-          </div>
-          <ThemeToggle variant="inline" />
-        </CardContent>
-      </Card>
+          </Row>
+        </GroupCard>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">Study goals</CardTitle>
-          <CardDescription>
-            {goals.subjects.length} subject(s) chosen. Change subjects in onboarding.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="grid gap-4 sm:grid-cols-3">
-          <div className="space-y-1">
-            <Label htmlFor="exam-date">Exam date</Label>
+        <GroupCard icon={Target} tint="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" label="Study goals">
+          <Row icon={Calendar} tint="bg-sky-500/10 text-sky-600 dark:text-sky-400" label="Exam date">
             <Input
-              id="exam-date"
+              aria-label="Exam date"
               type="date"
+              className="h-9 w-40 text-xs"
               value={goals.examDate ?? ""}
               onChange={(e) => save({ ...goals, examDate: e.target.value || null })}
             />
-          </div>
-          <div className="space-y-1">
-            <Label htmlFor="target">Target %</Label>
+          </Row>
+          <Row icon={Target} tint="bg-rose-500/10 text-rose-600 dark:text-rose-400" label="Target %">
             <Input
-              id="target"
+              aria-label="Target percent"
               type="number"
               min={0}
               max={100}
+              className="h-9 w-24 text-xs"
               value={goals.targetPercent ?? ""}
               onChange={(e) =>
                 save({ ...goals, targetPercent: e.target.value === "" ? null : Number(e.target.value) })
               }
             />
-          </div>
-          <div className="space-y-1">
-            <Label htmlFor="minutes">Daily study time</Label>
+          </Row>
+          <Row icon={Clock} tint="bg-teal-500/10 text-teal-600 dark:text-teal-400" label="Daily study time">
             <select
-              id="minutes"
-              className="h-9 w-full rounded-md border bg-background px-2 text-sm"
+              aria-label="Daily study time"
+              className={SELECT}
               value={goals.dailyMinutes}
               onChange={(e) => save({ ...goals, dailyMinutes: Number(e.target.value) })}
             >
@@ -97,27 +187,26 @@ export function SettingsView() {
                 </option>
               ))}
             </select>
-          </div>
-        </CardContent>
-      </Card>
+          </Row>
+        </GroupCard>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">Notifications and accessibility</CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          {TOGGLES.map((t) => (
-            <div key={t.key} className="flex items-center justify-between">
-              <Label htmlFor={t.key}>{t.label}</Label>
-              <Switch
-                id={t.key}
-                checked={prefs[t.key]}
-                onCheckedChange={(checked) => setPrefs({ [t.key]: checked })}
-              />
-            </div>
-          ))}
-        </CardContent>
-      </Card>
+        <GroupCard icon={User} tint="bg-sky-500/10 text-sky-600 dark:text-sky-400" label="Account">
+          <RowLink icon={User} tint="bg-violet-500/10 text-violet-600 dark:text-violet-400" label="My profile" subtitle="Identity, progress and saved work" href="/profile" />
+          <RowLink icon={Trash2} tint="bg-rose-500/10 text-rose-600 dark:text-rose-400" label="Request account deletion" subtitle="Verified by support before deletion" href="/legal/delete-account" />
+        </GroupCard>
+
+        <GroupCard icon={Bell} tint="bg-rose-500/10 text-rose-600 dark:text-rose-400" label="Notifications & accessibility">
+          <Row icon={Bell} tint="bg-amber-500/10 text-amber-600 dark:text-amber-400" label="Daily study reminder">
+            <Switch checked={prefs.notifyDailyReminder} onCheckedChange={(checked) => setPrefs({ notifyDailyReminder: checked })} />
+          </Row>
+          <Row icon={Award} tint="bg-violet-500/10 text-violet-600 dark:text-violet-400" label="Streak & achievement alerts">
+            <Switch checked={prefs.notifyStreakAlerts} onCheckedChange={(checked) => setPrefs({ notifyStreakAlerts: checked })} />
+          </Row>
+          <Row icon={Sun} tint="bg-blue-500/10 text-blue-600 dark:text-blue-400" label="Reduce motion" subtitle="Calmer transitions and animations">
+            <Switch checked={prefs.reduceMotion} onCheckedChange={(checked) => setPrefs({ reduceMotion: checked })} />
+          </Row>
+        </GroupCard>
+      </div>
     </div>
   );
 }

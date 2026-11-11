@@ -18,7 +18,6 @@ import { CreditBadge } from "./credit-badge";
 import { NotificationBell } from "./notification-bell";
 import { UserNav } from "./user-nav";
 import { PlatformGuideWidget } from "@/components/home/platform-guide-widget";
-import { SupportRequest } from "@/components/support/support-request";
 import { AIWidget } from "./ai-widget";
 import { useMediaQuery } from "@/lib/use-media-query";
 
@@ -226,9 +225,6 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
 
       <PlatformGuideWidget />
       <AIWidget />
-      {/* Floating "Report AI content" intake — kept out of the full-screen chat
-          branch above so it never covers the tutor composer. */}
-      <SupportRequest kind="ai_report" floating />
     </div>
   );
 }

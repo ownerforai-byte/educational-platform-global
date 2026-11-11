@@ -14,6 +14,7 @@ import Link from "next/link";
 import { ArrowRight, Clock, Play } from "lucide-react";
 
 import {
+  ACTIVITY_SUBJECTS,
   activityHref,
   listOfferedActivities,
   type ActivityKind,
@@ -71,9 +72,11 @@ export function ManifestHubSection({
   }, []);
 
   const activities = useMemo(() => {
-    const manifestSubject = ["physics", "chemistry", "biology", "mathematics"].includes(
-      subject ?? "",
-    )
+    // Every subject the manifest supports — including the two language
+    // subjects (English, Nepali) since the 2026-11-11 coverage pass. An
+    // unknown subject (or none) means "all subjects", never a silent filter
+    // that would hide two thirds of the corpus.
+    const manifestSubject = ACTIVITY_SUBJECTS.includes(subject as never)
       ? (subject as LabActivity["curriculum"]["subject"])
       : undefined;
 

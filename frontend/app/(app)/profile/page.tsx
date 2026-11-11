@@ -22,6 +22,7 @@ import {
   LogOut,
   Mail,
   Search,
+  Settings,
   ShieldCheck,
   Sparkles,
   Target,
@@ -32,6 +33,7 @@ import {
   Zap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SupportRequest } from "@/components/support/support-request";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -1279,7 +1281,16 @@ function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
       <div className="container max-w-2xl py-8">
         {/* Identity + the My Profile button — ONE compact block (owner
             2026-11-09: "optmize the block"). */}
-        <h1 className="mb-4 text-xl font-extrabold tracking-tight">Info</h1>
+        <div className="mb-4 flex items-center justify-between">
+          <h1 className="text-xl font-extrabold tracking-tight">Info</h1>
+          <Link
+            href="/settings"
+            aria-label="Settings"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-border/60 bg-card text-muted-foreground transition-colors hover:text-foreground"
+          >
+            <Settings className="h-4 w-4" />
+          </Link>
+        </div>
         <Card className="overflow-hidden border-primary/20 shadow-sm">
         <div className="relative h-20 overflow-hidden bg-gradient-to-r from-primary via-primary/80 to-violet-600">
           <div className="absolute -top-10 -right-10 h-36 w-36 rounded-full bg-white/10" />
@@ -1306,6 +1317,13 @@ function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
           </Button>
         </CardContent>
       </Card>
+      </div>
+
+      {/* Report AI content — kept here as a plain Info row (owner: "keep the
+          report ai content in info as a row not highlighted at all place"),
+          not as a floating widget shown on every page. */}
+      <div className="container max-w-2xl pb-2">
+        <SupportRequest kind="ai_report" />
       </div>
 
       {/* ALL the footer content lives here and only here (owner 2026-11-09:

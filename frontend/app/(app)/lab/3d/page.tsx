@@ -77,7 +77,27 @@ export default function Lab3DPage() {
   const [classFilter, setClassFilter] = useState<ClassSlug | "all">("all");
   const [query, setQuery] = useState("");
 
-  const subjects = LAB_SUBJECTS.filter((s) => getLabsByCategory(s.key).length > 0);
+  // Subject tabs. The registry holds hand-authored labs for the four science
+  // subjects; the manifest additionally places activities on the two language
+  // subjects (English, Nepali), which have NO registry entry — a
+  // registry-only tab list would hide 160 activities behind a deep link.
+  // The tab count is therefore the MANIFEST count for every subject the
+  // manifest covers (the manifest is the authoritative activity list) and the
+  // registry count for the registry-only shelves.
+  const subjects = useMemo(() => {
+    const manifestCounts = new Map<string, number>();
+    for (const activity of listOfferedActivities()) {
+      const key = activity.curriculum.subject;
+      manifestCounts.set(key, (manifestCounts.get(key) ?? 0) + 1);
+    }
+    return LAB_SUBJECTS.map((s) => ({
+      key: s.key,
+      label: s.label,
+      color: s.color,
+      emoji: s.emoji,
+      count: manifestCounts.get(s.key) ?? getLabsByCategory(s.key).length,
+    })).filter((s) => s.count > 0);
+  }, []);
 
   const grouped = useMemo(() => {
     // Strictly 3D: theory topics live in their own hub at /lab/theory,
@@ -170,7 +190,7 @@ export default function Lab3DPage() {
       <div className="flex gap-2 flex-wrap" role="tablist">
         {subjects.map((s) => {
           const active = subject === s.key;
-          const count = getLabsByCategory(s.key).length;
+          const count = s.count;
           return (
             <button
               key={s.key}

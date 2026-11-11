@@ -109,13 +109,28 @@ export const LAB_UNIT_ORDER: Record<string, Record<string, string>> = {
   },
 };
 
-/** Subject display metadata used by the hub and subject pages. */
-export const LAB_SUBJECTS = [
+/**
+ * Subject display metadata used by the hub and subject pages.
+ *
+ * The two language subjects (English, Nepali) are NOT registry categories —
+ * they carry no hand-authored lab entries — but the manifest places
+ * activities on their syllabus topics since the 2026-11-11 coverage pass, so
+ * the hub offers them too. They are listed here with their own labels and
+ * colours; the registry simply has no entries under their keys.
+ */
+export const LAB_SUBJECTS: ReadonlyArray<{
+  key: string;
+  label: string;
+  color: string;
+  emoji: string;
+}> = [
   { key: "physics", label: "Physics", color: "#3b82f6", emoji: "⚛️" },
   { key: "chemistry", label: "Chemistry", color: "#10b981", emoji: "🧪" },
   { key: "biology", label: "Biology", color: "#22c55e", emoji: "🧬" },
   { key: "mathematics", label: "Mathematics", color: "#8b5cf6", emoji: "🔢" },
+  { key: "english", label: "English", color: "#0ea5e9", emoji: "📖" },
+  { key: "nepali", label: "Nepali", color: "#e11d48", emoji: "📚" },
   { key: "class11", label: "Class 11 Plus", color: "#f43f5e", emoji: "🎒" },
-] as const;
+];
 
 export type LabSubjectKey = (typeof LAB_SUBJECTS)[number]["key"];
