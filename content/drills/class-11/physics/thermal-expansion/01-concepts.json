@@ -48,6 +48,33 @@
       "concept": "Anomalous expansion of water",
       "question": "Why does a lake freeze from the TOP down, and why does that matter for aquatic life?",
       "solution": "Water has maximum density at 4 °C: cooling below 4 °C makes it EXPAND and float. So 4 °C water sinks and the surface reaches 0 °C first — ice forms on top and insulates the water below, which stays at ~4 °C. Fish survive because the densest water stays liquid at the bottom."
+    },
+    {
+      "id": "drill-te11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Real vs apparent expansion",
+      "question": "A liquid in a metal vessel seems to expand less than its true coefficient. Explain what is happening.",
+      "solution": "The vessel expands too, enlarging the interior volume, so the measured rise is only the DIFFERENCE between real liquid expansion and vessel expansion: γ_apparent = γ_real − γ_vessel ≈ γ_real − 3α_metal. The liquid's true expansion is larger than what the stem shows. Real expansion needs the container's expansion corrected out."
+    },
+    {
+      "id": "drill-te11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why water behaves anomalously near 4 °C",
+      "question": "Above 4 °C water expands on heating as expected — but from 0 to 4 °C it CONTRACTS. Why, and why does this matter for lakes?",
+      "solution": "On melting, the hydrogen-bond network partly collapses and molecules pack closer, so heating 0–4 °C lets further structural rearrangement shrink the volume; above 4 °C thermal agitation dominates and normal expansion resumes. Consequently water at 4 °C is DENSEST and sinks, so a freezing lake keeps 4 °C water at the bottom while ice forms on the surface. Aquatic life survives because ice floats and is a poor conductor."
+    },
+    {
+      "id": "drill-te11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why bimetallic strips bend",
+      "question": "Two thin strips of different metals riveted together curl when heated. Why is the bend systematic rather than random?",
+      "solution": "Each metal has a different linear expansivity, so for the same temperature change they want different new lengths. Being bonded, they must share one length, so the higher-expansivity metal stretches less than it wants and the lower one is forced to stretch more — producing a curvature. The strip bends TOWARD the lower-expansivity metal, because the longer-wanting side forms the outer arc. The bend direction is set predictably by which α is larger."
     }
   ]
 }

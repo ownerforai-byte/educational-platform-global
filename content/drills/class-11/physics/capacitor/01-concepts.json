@@ -48,6 +48,33 @@
       "concept": "Why capacitors block DC",
       "question": "Why does a capacitor pass no steady current in a DC circuit but appear to 'pass' AC?",
       "solution": "Charge can only accumulate on the plates, not cross the gap: once V_capacitor = V_source, current stops — DC is blocked after the transient. AC keeps reversing polarity, so the plates charge and discharge each half-cycle — current flows in the wires continuously even though no charge crosses the dielectric. The plates' changing charge IS the 'current through' the capacitor."
+    },
+    {
+      "id": "drill-cap11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a dielectric raises capacitance",
+      "question": "Sliding a plastic slab between the plates of an isolated charged capacitor increases its capacitance. Where does the extra energy come from?",
+      "solution": "The dielectric polarises: its dipoles align against the field and produce a counter-field, so the voltage across the plates falls while charge Q is unchanged. Since C = Q/V, a smaller V means larger C. The stored energy ½QV actually DECREASES, and the difference is the mechanical work the slab does as it is pulled in. The dielectric is drawn into the gap by the field."
+    },
+    {
+      "id": "drill-cap11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Series and parallel the other way round",
+      "question": "Capacitors combine the OPPOSITE way to resistors: parallel adds capacitances, series gives a smaller value. Why the reversal?",
+      "solution": "Resistors in series share the same CURRENT and voltages add; capacitors in parallel share the same VOLTAGE and charges add (Q = Q₁+Q₂), giving C = C₁+C₂. In series capacitors carry the same charge and their voltages add, so 1/C = Σ1/Cᵢ yields a smaller effective C. The rules follow which quantity is common, and that is inverted between the two devices. Study the shared quantity, not the formula."
+    },
+    {
+      "id": "drill-cap11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a capacitor blocks DC but passes AC",
+      "question": "A capacitor in series with a lamp: nothing with DC, but the lamp glows with AC. Why?",
+      "solution": "DC cannot cross the insulating gap, so once charged, no steady current flows. AC keeps reversing, so the capacitor charges, discharges and recharges continuously — charge sloshes back and forth through the external circuit, which IS a current, though no charge crosses the dielectric. A capacitor passes changes, not steady flow: it is a differentiator, not a wire."
     }
   ]
 }

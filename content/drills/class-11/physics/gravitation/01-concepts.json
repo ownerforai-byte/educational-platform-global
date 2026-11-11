@@ -39,6 +39,42 @@
       "concept": "Geostationary vs polar orbits",
       "question": "Why must a geostationary satellite sit over the equator at ~36,000 km — why can't it hover over Nepal at a lower height?",
       "solution": "Two constraints. (1) Period: geostationary means period = 24 h (matching Earth's spin). From T² ∝ r³, only ONE radius gives 24 h: r ≈ 42,000 km from centre (~36,000 km altitude). Lower height = shorter period (LEO satellites lap Earth in ~90 min) — it cannot hover. (2) Plane: uniform circular motion needs the centre of the circle at Earth's centre; a circle 'over Nepal' at constant latitude is not centred on Earth, so gravity (always toward Earth's centre) cannot supply its centripetal force. Only the equatorial plane works."
+    },
+    {
+      "id": "drill-grav-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Inverse-square law means distance dominates",
+      "question": "Doubling the distance between two masses reduces the force to one quarter. Why does doubling the MASS not have a comparable effect on distance's influence?",
+      "solution": "F = Gm₁m₂/r²: mass appears to the FIRST power while distance is SQUARED. Doubling a mass doubles the force; doubling distance divides it by four. Distance is the dominant lever in gravitation — which is why orbits are so sensitive to altitude and why surface gravity changes so little across a planet's mass range."
+    },
+    {
+      "id": "drill-grav-6",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Gravity inside a uniform shell",
+      "question": "Why is the gravitational field zero everywhere inside a hollow uniform spherical shell?",
+      "solution": "For any interior point, the shell can be divided into opposite patches whose masses go as (area) ∝ r² and whose attractions go as m/d². Since the patch area grows as distance squared while the pull falls as distance squared, the two contributions cancel exactly. Every pair cancels, so the net field is zero — Newton's shell theorem."
+    },
+    {
+      "id": "drill-grav-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Orbital motion is free fall",
+      "question": "An astronaut in orbit floats. Is gravity absent there? Explain why the answer is no.",
+      "solution": "At the ISS's altitude g is still ~8.7 m/s², barely less than at the surface. The astronaut and station are BOTH in free fall around the Earth with the same centripetal acceleration, so there is no normal force between astronaut and floor — the sensation of weightlessness. Floating means falling together, not zero gravity."
+    },
+    {
+      "id": "drill-grav-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why g varies across Earth",
+      "question": "A bag of rice weighs slightly more at the poles than at the equator. Give the two independent reasons.",
+      "solution": "(1) Earth is an OBLATE spheroid: polar radius is ~21 km shorter, and g = GM/r² grows as r shrinks. (2) Earth ROTATES: at the equator some of the gravitational pull must supply centripetal acceleration (ω²r), and the effective weight g_eff = g − ω²R is reduced; at the poles there is no rotational radius, so nothing is subtracted. Shape and rotation together make equatorial g about 0.5% lower."
     }
   ]
 }

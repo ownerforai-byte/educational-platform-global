@@ -48,6 +48,33 @@
       "concept": "Fusion vs fission — why both release energy",
       "question": "How can both splitting heavy nuclei and merging light nuclei release energy? Use the binding energy curve.",
       "solution": "Both processes move nuclei TOWARD the peak of the binding-energy-per-nucleon curve (around iron). Heavy nuclei (uranium) sit left of the peak's right side — splitting into mid-mass fragments increases binding per nucleon, releasing energy. Light nuclei (hydrogen) sit below the peak — fusing them increases it. The curve, not the direction of the process, decides."
+    },
+    {
+      "id": "drill-np11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the nucleus stays together",
+      "question": "Protons in a nucleus repel each other Coulomb-wise, yet most nuclei are stable. Why does the nucleus not fly apart?",
+      "solution": "The strong nuclear force is attractive between nucleons, short-ranged (~fm) but far stronger than Coulomb repulsion at those separations. Within a nucleus each nucleon bonds to several neighbours, and the total strong attraction exceeds the total electrostatic repulsion. Stability depends on the balance — the more protons, the more neutrons are needed to add attraction without adding charge."
+    },
+    {
+      "id": "drill-np11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Why binding energy per nucleon peaks near iron",
+      "question": "Binding energy per nucleon rises to a maximum around iron-56 then falls for heavier nuclei. Why does this explain BOTH fusion and fission energy release?",
+      "solution": "Systems move toward the most tightly bound state, which is at iron. Light nuclei fuse upward toward the peak, releasing energy; very heavy nuclei split toward the peak, also releasing energy. The curve's shape is the single reason fusion powers stars and fission powers reactors, and why iron is the endpoint of stellar burning. Energy release is always motion toward higher binding energy per nucleon."
+    },
+    {
+      "id": "drill-np11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the mass defect appears",
+      "question": "A helium nucleus weighs less than two protons plus two neutrons. Where has the missing mass gone?",
+      "solution": "It was converted to binding energy, released as photons when the nucleus formed: ΔE = Δmc². The nucleus is in a lower energy state than free nucleons, and that energy difference shows up as a mass difference. Mass and energy are two accounts of the same quantity. The mass defect isn't lost — it is the nucleus's binding account."
     }
   ]
 }

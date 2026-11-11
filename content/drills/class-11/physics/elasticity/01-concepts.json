@@ -48,6 +48,33 @@
       "concept": "Poisson's ratio",
       "question": "When a rubber band is stretched, it gets thinner. What is this behaviour called, and what does a Poisson's ratio near 0.5 imply about the material?",
       "solution": "Lateral contraction accompanying longitudinal extension is measured by Poisson's ratio σ = −(lateral strain)/(longitudinal strain). σ ≈ 0.5 means the material's VOLUME stays nearly constant during deformation — it deforms by reshaping, not compressing (rubber behaves this way; most metals ~0.3)."
+    },
+    {
+      "id": "drill-el11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a longer wire stretches more",
+      "question": "Two identical-diameter wires of the same material, one twice as long, hang from the same load. Why does the longer one stretch twice as much?",
+      "solution": "ΔL = FL/(AY). The load F and area A are the same, so ΔL ∝ L — twice the length means twice the total elongation. Note this does NOT mean twice the STRAIN: strain ΔL/L is identical, because both wires carry the same stress. Extension depends on length; strain depends only on stress and material."
+    },
+    {
+      "id": "drill-el11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why thicker ropes hold more",
+      "question": "Why does doubling a rope's diameter roughly quadruple the load it can carry before breaking?",
+      "solution": "Breaking is set by breaking STRESS (force per unit area): F = σ_b · A. Area grows as the square of diameter, so doubling the diameter quadruples A and hence quadruples the load. Two ropes of the same material differ in strength purely through cross-section — that is why climbing ropes are specified by diameter and construction."
+    },
+    {
+      "id": "drill-el11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why springs and wires obey the same rule",
+      "question": "A spring and a steel wire both obey F = kx for small extensions. Why is Hooke's law the same law for both?",
+      "solution": "At small strains any material responds elastically and approximately linearly: the restoring force is proportional to displacement because the interatomic potential is nearly parabolic near its minimum (the linear term in the Taylor expansion). Spring and wire are different geometries of the same microscopic springiness. Linearity is a small-deformation approximation, not a universal truth."
     }
   ]
 }

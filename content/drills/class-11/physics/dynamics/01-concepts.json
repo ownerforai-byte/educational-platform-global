@@ -48,6 +48,33 @@
       "concept": "Banking of roads",
       "question": "Why are highway curves banked, and what role does friction play on a perfectly banked curve?",
       "solution": "The horizontal component of the normal reaction (N sinθ) supplies the centripetal force needed for turning; without banking, friction alone must supply it and it fails at high speed. On a perfectly banked curve (tanθ = v²/rg) no friction is needed at all — banking makes the required centripetal force independent of tyre grip."
+    },
+    {
+      "id": "drill-dyn11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Mass vs weight",
+      "question": "An astronaut's mass is 70 kg on Earth and still 70 kg on the Moon, but weight drops from ~700 N to ~112 N. Explain both numbers with one equation.",
+      "solution": "W = mg: mass is the quantity of matter (unchanged everywhere — it measures inertia), while weight is the gravitational FORCE on that matter, and g on the Moon is ~1.6 m/s² rather than 9.8. Same m, different g, different W. Mass is intrinsic; weight is a local force."
+    },
+    {
+      "id": "drill-dyn11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why the lift reading changes",
+      "question": "A person stands on a scale in a lift. Explain why the reading DROPS when the lift accelerates downward, even though gravity hasn't changed.",
+      "solution": "The scale reads the NORMAL force it exerts. Taking downward as positive: mg − N = ma, so N = m(g − a). When the lift accelerates down, part of gravity is spent accelerating the person, so the floor need push less — the reading falls. In free fall (a = g), N = 0: apparent weightlessness. Weight itself never changed; only the normal reaction did."
+    },
+    {
+      "id": "drill-dyn11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why rockets work in vacuum",
+      "question": "A rocket produces no visible exhaust pushing against the ground in space. How does it accelerate?",
+      "solution": "Momentum conservation: the rocket expels mass backward at high speed, so the remaining body must gain forward momentum. No external medium is needed — the rocket pushes against its own exhaust, and the reaction is internal to the rocket+fuel system. 'Pushing on air' is a misconception; thrust is momentum flux."
     }
   ]
 }

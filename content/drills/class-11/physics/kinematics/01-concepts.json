@@ -48,6 +48,33 @@
       "concept": "Projectile — independence of components",
       "question": "Why does a horizontally thrown ball and a ball simply dropped from the same height land at the same time?",
       "solution": "Vertical and horizontal motions are independent: gravity acts only vertically, and the horizontal velocity has no vertical component to affect it. Both balls start with zero vertical velocity and fall with the same g — equal fall times, regardless of horizontal speed. Independence of perpendicular components is the heart of projectile motion."
+    },
+    {
+      "id": "drill-kin11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Displacement vs distance on a round trip",
+      "question": "A runner completes one full lap of a 400 m track. Why is the displacement zero but the distance 400 m?",
+      "solution": "Distance accumulates path length regardless of direction (400 m); displacement is the STRAIGHT-LINE vector from start to finish — start and finish coincide, so its magnitude is zero. Distance is a scalar that never decreases; displacement is a vector that can be zero even after heavy travel."
+    },
+    {
+      "id": "drill-kin11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why the equations of motion need constant acceleration",
+      "question": "Why can v = u + at not be applied to every part of a journey where the acceleration changes?",
+      "solution": "Those equations were DERIVED by integrating a CONSTANT a. If acceleration varies (braking, cornering), each interval must be treated separately with its own constant a, or the calculation must integrate a(t) properly. Applying the shortcut across a changing acceleration silently produces wrong answers — it assumes something false."
+    },
+    {
+      "id": "drill-kin11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Maximum height and zero vertical velocity",
+      "question": "Why does a projectile reach maximum height exactly when its VERTICAL velocity is zero, even though its horizontal velocity is not?",
+      "solution": "Height changes only under vertical motion, and vy decreases steadily under gravity. While vy > 0 the projectile keeps rising; once vy = 0 it stops rising and begins falling. Horizontal velocity carries no height information, so it plays no part in the condition. Maxima are located by the vanishing rate, not by total speed."
     }
   ]
 }

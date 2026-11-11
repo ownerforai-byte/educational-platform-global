@@ -48,6 +48,33 @@
       "concept": "Conservation of charge",
       "question": "An electron and a positron annihilate into two photons (neutral). Where did the charges go?",
       "solution": "Total charge was (+e) + (−e) = 0 before and 0 after — charge is CONSERVED even when the charged particles themselves vanish. Conservation applies to the total, not to individual carriers; annihilation creates neutral photons that carry the zero net charge away."
+    },
+    {
+      "id": "drill-ec11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why charges inside a conductor move",
+      "question": "Why does excess charge placed on a conductor end up entirely on its outer surface?",
+      "solution": "Free electrons repel each other and move until no tangential force remains, which is exactly the condition that the field inside the conductor is zero. Gauss's law then requires zero enclosed charge in the bulk, so all net charge must sit on the surface. Electrostatic equilibrium is the reason: charges redistribute until the field inside vanishes."
+    },
+    {
+      "id": "drill-ec11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why Coulomb's law needs a medium correction",
+      "question": "Two charges exert less force in water than in air. Why, and what is the physical quantity that captures this?",
+      "solution": "Water molecules polarise and partly shield the charges, so a smaller net force is felt. This is packaged as the permittivity ε of the medium: F = q₁q₂/(4πεr²), with relative permittivity (dielectric constant) K = ε/ε₀, roughly 80 for water. Coulomb's law is correct; the medium rescales its strength by a factor 1/K."
+    },
+    {
+      "id": "drill-ec11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why charging by induction needs a ground connection",
+      "question": "To charge a sphere by induction you bring a charged rod near and momentarily earth the sphere. Why does earthing make a permanent charge possible?",
+      "solution": "The rod first redistributes the sphere's own electrons (like charges pushed away, opposite attracted). Earthing lets the repelled charge escape to ground, so the sphere is left with a net charge of the SAME sign as the rod. Remove the earth, then the rod, and the imbalance is trapped. Induction transfers charge only through the ground connection; separating the rod first would cancel everything."
     }
   ]
 }

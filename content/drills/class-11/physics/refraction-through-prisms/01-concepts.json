@@ -48,6 +48,33 @@
       "concept": "Achromatic combination",
       "question": "How can two prisms of different materials produce deviation WITHOUT dispersion (an achromatic combination)?",
       "solution": "Use two prisms of different dispersive powers joined with opposite angles: the first disperses and deviates; the second is oriented to disperse oppositely (cancelling the colour spread) while its mean deviation only partially cancels — leaving net deviation with no spectrum. The condition (δ_v − δ_r)₁ = −(δ_v − δ_r)₂ uses the materials' different dispersive powers."
+    },
+    {
+      "id": "drill-rtp11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why light bends twice in a prism",
+      "question": "A ray through a prism deviates at both faces, while through a parallel slab it emerges parallel to its entry direction. Why the difference?",
+      "solution": "In a slab the two faces are PARALLEL, so the bend toward the normal at entry is exactly undone by the bend away from the normal at exit — net deviation zero, only lateral shift. In a prism the faces are INCLINED at an angle A, so the two bends add rather than cancel, giving a net deviation. Divergence of the faces is what creates the deviation."
+    },
+    {
+      "id": "drill-rtp11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why minimum deviation is symmetric",
+      "question": "At minimum deviation the ray passes symmetrically through the prism (i₁ = i₂, r₁ = r₂). Why must symmetric passage be the configuration of least deviation?",
+      "solution": "For fixed prism angle A and index μ, deviation δ depends on i₁ and is stationary (dδ/di₁ = 0) at the symmetric point, which corresponds to a minimum. Physically the path is reversible and symmetric — reversing the ray must retrace it, so the extremum occurs where entry and exit are interchangeable. Symmetry is the fingerprint of the extremum."
+    },
+    {
+      "id": "drill-rtp11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why dispersion happens",
+      "question": "White light splits into colours through a prism. Why do different colours deviate by different amounts?",
+      "solution": "Refractive index depends on wavelength: μ is larger for shorter wavelengths (violet) than longer (red). Since δ = (μ−1)A, violet deviates more than red, so the colours fan out. Dispersion happens because the speed of light in glass is wavelength-dependent — chromatic dispersion, not a property of the prism's shape."
     }
   ]
 }

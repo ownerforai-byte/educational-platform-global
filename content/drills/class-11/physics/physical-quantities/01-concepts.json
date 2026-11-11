@@ -48,6 +48,33 @@
       "concept": "Systematic vs random error",
       "question": "A stopwatch consistently runs 0.2 s slow. Repeating the measurement 50 times — does that fix it? Distinguish the two error types.",
       "solution": "No — that is a SYSTEMATIC error: it shifts every reading the same way, and repetition cannot remove it (it needs calibration). Random errors scatter both ways, so averaging many readings reduces them. Fix systematic by calibrating; reduce random by averaging."
+    },
+    {
+      "id": "drill-pq11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why SI rebuilt its base units",
+      "question": "Why was the kilogram redefined in 2019 in terms of the Planck constant instead of a platinum cylinder in Paris?",
+      "solution": "A physical artefact can change (mass drifts by micrograms over decades, its copies diverge, and it can be damaged). Defining the kilogram from the Planck constant fixes it to a fundamental constant of nature that is identical everywhere and forever — removing both drift and access problems. Fundamental constants replace artefacts as universal references."
+    },
+    {
+      "id": "drill-pq11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Error propagation — why divide rather than add",
+      "question": "In density ρ = m/V, why is the percentage error in ρ the SUM of the percentage errors in m and V rather than the average?",
+      "solution": "For multiplication/division, fractional errors ADD: Δρ/ρ = Δm/m + ΔV/V. Reason: an overestimate in m and an overestimate in V both push ρ in the same direction, and their deviations compound — they do not average out. Wrapping it up: errors in multiplied quantities accumulate in proportion, so dividing two measured values always costs you the combined error."
+    },
+    {
+      "id": "drill-pq11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Rounding rules on measured data",
+      "question": "Why should you not round intermediate results — e.g. computing 6.4/2.0 as 3 and then multiplying by 3.5 — before the final step?",
+      "solution": "Rounding intermediates discards precision that later multiplication/division would have amplified, so the final answer can be off by a full significant figure. Keep extra digits through the calculation and round ONLY the final result to the correct number of significant figures. Round once, at the end."
     }
   ]
 }

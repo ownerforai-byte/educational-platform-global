@@ -48,6 +48,33 @@
       "concept": "Gauss's law and the shell",
       "question": "Why is the electric field zero everywhere inside a charged hollow conducting sphere?",
       "solution": "In electrostatic equilibrium the charges reside on the outer surface and redistribute until the field inside each conductor point is zero — otherwise free electrons would keep moving. Gauss's law confirms it: any Gaussian surface inside encloses zero net charge, so flux — and by symmetry, field — is zero. This shielding is why electronics are boxed in metal."
+    },
+    {
+      "id": "drill-ef11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why field lines never cross",
+      "question": "Electric field lines of two charges never intersect. What would go wrong if they did?",
+      "solution": "At a crossing point the field would have two different directions at once, but the field at any point must be a single well-defined vector. Crossing lines therefore contradict the definition of the field. Where two equal charges meet, the field magnitude is zero — a null point, not a crossing."
+    },
+    {
+      "id": "drill-ef11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why a dipole experiences torque but no net force in a uniform field",
+      "question": "An electric dipole in a UNIFORM field rotates but does not accelerate as a whole. In a NON-uniform field it also moves. Explain both.",
+      "solution": "Uniform field: the two charges feel equal and opposite forces τ = pE sinθ that form a torque (rotating it) but sum to zero net force. Non-uniform field: the two charges sit where the field differs, so the forces no longer cancel — there is a net force plus a torque. Rotation requires asymmetry of force placement; translation requires asymmetry of force magnitude."
+    },
+    {
+      "id": "drill-ef11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a solid conductor shields its interior",
+      "question": "A metal cage keeps the field outside from reaching what is inside. Why does this work physically?",
+      "solution": "Free electrons rearrange on the conductor until the internal field is exactly zero, so the cage's interior is field-free — electrostatic shielding. Any external field is cancelled by an induced surface charge distribution. The cage does not block the field; it cancels it, by BECOMING a cancellation layer. This is why a car is safer in lightning."
     }
   ]
 }

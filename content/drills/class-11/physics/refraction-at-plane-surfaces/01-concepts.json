@@ -48,6 +48,33 @@
       "concept": "Total internal reflection conditions",
       "question": "State the two conditions for total internal reflection and give one natural and one technological example.",
       "solution": "Conditions: (1) light travels from denser to rarer medium; (2) angle of incidence exceeds the critical angle. Natural: mirage (light grazing hot air layers bends until it reflects). Technological: optical fibre — light stays guided by repeated total internal reflection at the core–cladding boundary, carrying data with almost no loss."
+    },
+    {
+      "id": "drill-rps11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a pool looks shallower",
+      "question": "A swimming pool always appears shallower than it really is. Explain the path of the light that makes this happen.",
+      "solution": "Light from the pool floor travels from water (denser) to air (rarer) and bends AWAY from the normal. The eye traces the ray backward in a straight line and therefore places the image closer to the surface than the true object — apparent depth = real depth / μ. The pool is not shallow; refraction mislocates the bottom."
+    },
+    {
+      "id": "drill-rps11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Total internal reflection needs two conditions",
+      "question": "Light at 45° in glass (μ = 1.5) totally internally reflects, but 45° in water (μ = 1.33) does not. Why?",
+      "solution": "TIR needs BOTH denser-to-rarer travel AND an angle beyond the critical angle sin C = 1/μ. For glass C = 41.8°, so 45° exceeds it and TIR occurs; for water C = 48.8°, so 45° is still inside it and light refracts out. Both conditions must hold — satisfying one alone is not enough."
+    },
+    {
+      "id": "drill-rps11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a fish sees a compressed world",
+      "question": "A fish looking up sees the entire sky squeezed into a cone of about 97°. Why is there a bright circle above it?",
+      "solution": "The critical angle for water is ~48.8°, so all directions in the outside world arrive within a 48.8° half-angle cone — the whole sky compressed into it. Beyond that angle, the fish sees total internal reflection of the water's own depths instead of sky, making a darker surrounding region and a bright circular 'window' overhead."
     }
   ]
 }

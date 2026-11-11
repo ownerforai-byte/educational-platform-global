@@ -48,6 +48,33 @@
       "concept": "LED vs filament bulb efficiency",
       "question": "Why does an LED produce far more light per watt than a filament bulb?",
       "solution": "A filament bulb heats a metal to ~2500 °C and emits a broad thermal spectrum — most energy leaves as invisible infrared heat. An LED emits photons directly from electron–hole recombination across a chosen gap: nearly all the electrical energy goes into visible photons of a selected colour. Direct quantum emission vs thermal radiation is the efficiency gap."
+    },
+    {
+      "id": "drill-rtp11-9",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why nanoscience changes properties",
+      "question": "Gold nanoparticles are red, while bulk gold is yellow. Why does size alone change colour?",
+      "solution": "At nanometre scale the surface-to-volume ratio is enormous and electron motion is confined (quantum confinement), which shifts the energies at which light is absorbed — the plasmon resonance moves into the visible. Optical, melting and chemical properties become size-dependent. Nanoscience studies exactly this regime where the size of the object is a material property."
+    },
+    {
+      "id": "drill-pq11-rt-2",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why medical imaging uses many modalities",
+      "question": "Why do hospitals keep X-ray, CT, MRI, ultrasound AND PET instead of standardising on the best one?",
+      "solution": "Each modality measures a different physical quantity: X-ray absorption (density defects in bone), CT (3-D density map), MRI (proton-density/relaxation in soft tissue), ultrasound (acoustic impedance at boundaries) and PET (metabolic tracer uptake). No single contrast mechanism reveals all tissues, so their PHYSICS determines which question each can answer. Choosing an imaging method means choosing which physical interaction to map."
+    },
+    {
+      "id": "drill-pq11-rt-3",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why particle accelerators need such huge size",
+      "question": "Why must accelerators grow kilometres long to reach higher energies, instead of just using stronger fields?",
+      "solution": "Energy gain is q∫E dl — it depends on the field times the PATH LENGTH. Real accelerating fields are limited by electrical breakdown and by synchrotron radiation loss that grows rapidly with energy for a curved path. Since E cannot be raised arbitrarily, the path must be lengthened: circular machines grow in radius, linear machines in length. Energy is bought with distance."
     }
   ]
 }

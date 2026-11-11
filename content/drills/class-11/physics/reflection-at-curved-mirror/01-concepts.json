@@ -48,6 +48,33 @@
       "concept": "Uses of concave mirrors",
       "question": "Why is the same concave mirror useful both as a searchlight reflector and as a dentist's mirror?",
       "solution": "Reversibility of light: a source at the focus sends out parallel rays (searchlight) — and rays from a close object converge to a magnified virtual image when the object is inside f (dentist's mirror). One geometry, two uses depending on where the light source/object sits relative to F."
+    },
+    {
+      "id": "drill-rcm11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a convex mirror always gives a small virtual image",
+      "question": "A convex mirror can only form a diminished, virtual image whatever the object distance. Why can it never form a real image?",
+      "solution": "A convex mirror's centre of curvature and focus both lie BEHIND the mirror, so reflected rays always diverge. Because they diverge, they cannot meet on the reflecting side; they only appear to meet behind the mirror when extended backward. Real images require converging rays. Convex mirrors are therefore used as wide-angle rear-view and security mirrors."
+    },
+    {
+      "id": "drill-rcm11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why the magnification sign matters",
+      "question": "Two concave-mirror images have magnifications −2 and +2. What does each tell you about the image?",
+      "solution": "The sign encodes ORIENTATION, not size: both are twice the object's size. m negative means inverted (real image, formed by actual converging rays in front of the mirror); m positive means erect (virtual image, behind the mirror, from extended rays). Magnitude alone is incomplete information — always read the sign, using the sign convention consistently."
+    },
+    {
+      "id": "drill-rcm11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a dentist uses a concave mirror",
+      "question": "A dentist holds the mirror close to a tooth to see it magnified. Why must it be close, and why concave?",
+      "solution": "Placing the object between the pole and the focus of a concave mirror produces a virtual, erect, MAGNIFIED image. If it were farther away the image would invert and shrink (past C) or become real. Both the concave shape and the short object distance are required — the magnification comes from being inside the focal length."
     }
   ]
 }

@@ -48,6 +48,33 @@
       "concept": "Doping — a few atoms change everything",
       "question": "Why does adding one phosphorus atom per million silicon atoms transform silicon's conductivity?",
       "solution": "Phosphorus has 5 valence electrons vs silicon's 4: the extra electron is loosely bound and easily freed into the conduction band — each donor atom contributes one mobile carrier. A millionth of the atoms can multiply the carrier count many-fold, because pure silicon has very few intrinsic carriers. Doping attacks the carrier SUPPLY, which is the bottleneck."
+    },
+    {
+      "id": "drill-sol11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why solids have both elasticity and plasticity",
+      "question": "A wire returns to its original length after a small stretch but stays deformed after a large one. What changes in the material?",
+      "solution": "Small strains displace atoms within their potential wells and they spring back — elastic behaviour. Beyond the yield point, whole planes of atoms slip past one another (dislocations move), which is a permanent rearrangement. The two regimes are distinct mechanisms, not one mechanism behaving differently. Elasticity is atomic displacement; plasticity is atomic rearrangement."
+    },
+    {
+      "id": "drill-sol11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why shear and volume deformation need different moduli",
+      "question": "Solids are characterised by Young's modulus, shear modulus AND bulk modulus. Why isn't one number enough?",
+      "solution": "Each modulus answers a different question: Young's for a length change under tensile stress, shear for a shape change with constant volume, bulk for a volume change under pressure. A steel gets its resistance to bending from one combination and its resistance to squeezing from another; rubber is easy to shear but hard to compress. A material's response is anisotropic in deformation space, so three independent descriptors are required (only two are truly independent for isotropic solids)."
+    },
+    {
+      "id": "drill-sol11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a ductile wire necks before breaking",
+      "question": "In a tensile test the force rises, then falls while the specimen keeps stretching until rupture. What is happening during the fall?",
+      "solution": "After the ultimate tensile strength, local thinning (necking) begins: further extension concentrates in a small region, whose cross-section shrinks. Since breaking depends on stress over AREA, a smaller area means a smaller load is needed to continue, so the force drops even though the local true stress keeps rising. The falling branch is geometry, not a weakening material."
     }
   ]
 }

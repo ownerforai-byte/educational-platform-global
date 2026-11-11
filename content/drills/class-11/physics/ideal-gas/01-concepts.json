@@ -48,6 +48,33 @@
       "concept": "Degrees of freedom and γ",
       "question": "Why is γ (= Cp/Cv) larger for a monatomic gas (5/3) than a diatomic one (7/5)?",
       "solution": "Monatomic molecules store energy in 3 translational degrees of freedom only; diatomic molecules also rotate (2 more), so added heat splits among 5 ways instead of 3. More ways to store energy means less goes into translation — temperature rises less, Cv is larger, and γ = 1 + 2/f falls. γ tracks the number of energy-sharing modes."
+    },
+    {
+      "id": "drill-ig11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why equal volumes of gases hold equal molecules",
+      "question": "One litre of hydrogen and one litre of oxygen at the same temperature and pressure contain the same number of molecules, though O₂ is 16 times heavier. Why?",
+      "solution": "Ideal-gas pressure comes from molecular collisions, and pV = nRT says the number of moles — not the mass — sets p, V and T. Mass affects each molecule's momentum, but heavier molecules move slower at the same T, exactly cancelling. Count, not weight, is what the gas laws record: Avogadro's principle."
+    },
+    {
+      "id": "drill-ig11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "hard",
+      "concept": "Why real gases deviate at high pressure",
+      "question": "At very high pressure, a real gas occupies MORE volume than pV = nRT predicts. Explain both the volume effect and the attraction effect.",
+      "solution": "Two competing corrections: (1) molecules have finite size, so the free volume is less than V — this makes the gas occupy MORE than ideal (overwhelming at high p). (2) intermolecular attraction pulls molecules together, reducing pressure and making it occupy LESS (dominating at moderate p, low T). At very high pressure, finite molecular volume wins. Ideality assumes point molecules with no forces — both fail when molecules crowd."
+    },
+    {
+      "id": "drill-ig11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why temperature is average kinetic energy",
+      "question": "Two gas samples have the same temperature but different molecular masses. Which statement is true about their molecular speeds?",
+      "solution": "Same temperature means the same AVERAGE KINETIC ENERGY (KE = 3/2 kT) — not the same speed. The lighter gas has faster molecules and the heavier one slower, because ½mv² must match. Temperature is a statement about energy, and speed is only its consequence once mass is known."
     }
   ]
 }

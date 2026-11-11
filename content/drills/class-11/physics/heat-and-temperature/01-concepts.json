@@ -48,6 +48,33 @@
       "concept": "Calorimetry principle",
       "question": "Hot metal dropped into cold water: why is 'heat lost by metal = heat gained by water' valid, and what assumption hides inside it?",
       "solution": "Energy conservation: in an isolated container, no heat escapes, so the transfers must balance — m₁c₁ΔT₁ = m₂c₂ΔT₂. Hidden assumption: NO heat leaks to the surroundings and none is lost to the calorimeter itself unless its heat capacity is included. Ignoring the container is the classic experimental error."
+    },
+    {
+      "id": "drill-ht11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why water has a high boiling point",
+      "question": "Water (Mr 18) boils at 100 °C while methane (Mr 16) boils at −161 °C. Why is such a light molecule so hard to boil apart?",
+      "solution": "Boiling requires breaking intermolecular forces, and water's strong HYDROGEN BONDS hold its molecules together far more than the weak van der Waals forces of methane. Light but strongly associating molecules can have high boiling points; mass is only one factor. H-bond networks are the anomaly that lifts water far above its molecular-mass prediction."
+    },
+    {
+      "id": "drill-ht11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why the mixture warms then cools",
+      "question": "Mixing equal masses of 80 °C water and 20 °C water gives 50 °C. Why is the result exactly the average rather than something else?",
+      "solution": "Heat lost by the hot = heat gained by the cold: mc(80−T) = mc(T−20). With equal mass and same c, (80−T) = (T−20) → T = 50 °C exactly. The equality-of-transfers equation is the whole physics; the average falls out because both sides share mc. Different masses or capacities would shift the balance point."
+    },
+    {
+      "id": "drill-ht11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why steam burns worse than boiling water",
+      "question": "A burn from 100 °C steam is often worse than one from 100 °C water. Where does the extra energy come from?",
+      "solution": "On contact, steam first CONDENSES, releasing its latent heat (2260 kJ/kg) onto the skin — on top of the sensible heat it delivers as 100 °C water cooling. Condensation pumps far more energy in per gram than simple cooling. Same temperature, but steam carries the hidden phase-change payload."
     }
   ]
 }

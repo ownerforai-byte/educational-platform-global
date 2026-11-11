@@ -48,6 +48,33 @@
       "concept": "Power — maximum transfer condition",
       "question": "Why does a load extract maximum power when its resistance equals the battery's internal resistance, even though that wastes half the energy?",
       "solution": "P_load = ε²R/(R+r)²: increasing R from 0 raises P (more voltage across the load) until R = r, beyond which the falling current dominates and P declines. At R = r, half the power heats the battery — efficiency is only 50%. Maximum POWER transfer and maximum EFFICIENCY are different goals; matching is for power, high R is for efficiency."
+    },
+    {
+      "id": "drill-dcc11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a voltmeter must have high resistance",
+      "question": "An ideal voltmeter has almost infinite resistance and an ammeter almost zero. Why these opposite requirements?",
+      "solution": "A voltmeter is connected in PARALLEL and must not divert current — so its resistance must be very high, or it changes the very voltage it is measuring. An ammeter is in SERIES and must not add voltage drop — so its resistance must be very low. Both requirements serve the same goal: make the instrument as close to invisible in the circuit as possible."
+    },
+    {
+      "id": "drill-dcc11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why terminal voltage drops under load",
+      "question": "A 12 V battery reads 12 V on open circuit but 11.4 V when a lamp is connected. Explain.",
+      "solution": "Every real cell has internal resistance r. Under current I, some emf is spent inside: V_terminal = E − Ir. On open circuit I = 0, so the full emf appears; under load the internal drop reduces what reaches the lamp. The 'missing' 0.6 V is dissipated as heat inside the battery. This is also why headlights dim when the starter motor draws a big current."
+    },
+    {
+      "id": "drill-dcc11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why bulbs in series are dimmer than expected",
+      "question": "Two identical 60 W bulbs in series across the same supply give less light in total than one bulb alone. Why isn't it a total of 120 W?",
+      "solution": "Rated power is defined at full supply voltage. In series each bulb gets only V/2, so each dissipates P = (V/2)²/R = V²/4R — one QUARTER of its rated power — and the pair together give half of one bulb's power. The current is shared and the voltage is halved. Rated watts assume rated volts; change the volts and the rating no longer applies."
     }
   ]
 }

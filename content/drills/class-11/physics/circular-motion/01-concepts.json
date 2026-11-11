@@ -48,6 +48,33 @@
       "concept": "Angle of banking and speed limit",
       "question": "Why does the safe speed on an unbanked curve drop when the road is wet, in terms of the v²/r relation?",
       "solution": "Required centripetal force mv²/r must be supplied by friction, whose maximum is μmg — giving v_max = √(μgr). Wet road lowers μ, so v_max falls as √μ. Doubling speed quadruples the required force (v²), which is why speeding on curves is disproportionately dangerous."
+    },
+    {
+      "id": "drill-cm11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Angular velocity vs linear velocity",
+      "question": "Two riders sit on the same rotating merry-go-round, one near the centre and one at the rim. Which quantity do they share and which differs?",
+      "solution": "They share ANGULAR velocity ω (they complete a turn in the same time — both sweep 360° simultaneously). Linear speed v = ωr differs: the rim rider travels a much longer circle in the same period, so their v is larger. ω is shared by the whole rigid body; v depends on distance from the axis."
+    },
+    {
+      "id": "drill-cm11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why a car skids outward",
+      "question": "A car takes a curve too fast and skids toward the outside. Explain in the ground frame, without mentioning centrifugal force.",
+      "solution": "Turning requires an inward centripetal force mv²/r, supplied by friction. Beyond the friction limit (μmg), the tyres cannot deliver enough, so the car's inertia carries it along its instantaneous tangent — outward relative to the curve. The car is not 'pushed out'; it fails to be pulled in. Outward skidding is insufficient centripetal force, not an outward force."
+    },
+    {
+      "id": "drill-cm11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why banking removes reliance on friction",
+      "question": "On a frictionless perfectly banked curve, why does the car still turn?",
+      "solution": "The banking tilts the normal reaction inward: its horizontal component N sinθ supplies the centripetal force and its vertical component balances weight. At the design speed v = √(rg tanθ) the required inward force is met entirely by the bank, so no friction is needed. The geometry of the road substitutes for tyre grip."
     }
   ]
 }

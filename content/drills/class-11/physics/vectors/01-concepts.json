@@ -48,6 +48,33 @@
       "concept": "Cross product — area and normal",
       "question": "What does |A×B| represent geometrically, and why does swapping the order flip the result?",
       "solution": "|A×B| = |A||B|sinθ is the area of the parallelogram spanned by A and B; its direction is perpendicular to both (right-hand rule). Swapping gives B×A = −(A×B): the magnitude is the same but the normal points the opposite way — the cross product encodes orientation, hence it is anticommutative."
+    },
+    {
+      "id": "drill-vec11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Triangle vs parallelogram addition",
+      "question": "Why do the triangle and parallelogram laws give the same resultant though they look like different constructions?",
+      "solution": "Both encode head-to-tail addition. In the triangle law you place b's tail at a's head; in the parallelogram you place both tails together and take the diagonal. A parallelogram's diagonal is exactly the third side of the triangle formed by both vectors plus the closing side — the same geometric sum, viewed twice."
+    },
+    {
+      "id": "drill-vec11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why resultant lies between the vectors",
+      "question": "Can the resultant of two unequal vectors be larger than the sum of their magnitudes, or smaller than their difference?",
+      "solution": "No. |a−b| ≤ |a+b| ≤ |a|+|b|. The maximum |a|+|b| occurs when they are parallel (θ=0), the minimum |a−b| when antiparallel (θ=180°), and every other angle lies between. The resultant always sits in the angular gap between the two vectors — it can never escape that band."
+    },
+    {
+      "id": "drill-vec11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Adding a null vector changes nothing",
+      "question": "Why does adding a null vector to any vector leave both magnitude and direction unchanged?",
+      "solution": "A null vector has zero magnitude and no defined direction, so translating a vector by it moves the head not at all — the sum is the original vector. The null vector is the additive IDENTITY of vector algebra, exactly as 0 is for numbers. It is what 'no net change' looks like in vector form."
     }
   ]
 }

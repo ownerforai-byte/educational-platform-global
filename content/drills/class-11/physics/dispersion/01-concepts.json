@@ -48,6 +48,33 @@
       "concept": "Pure vs impure spectrum",
       "question": "Why does a wide slit produce a spectrum where the colours overlap at the edges (impure spectrum), and how is a pure spectrum obtained?",
       "solution": "Each point of a wide slit forms its own spectrum, and neighbouring points' spectra overlap — colours mix at the boundaries. A pure spectrum needs each colour's image as a separate sharp line: use a NARROW slit, so each point's spectrum is thin and the colours separate cleanly. Slit width controls spectral purity."
+    },
+    {
+      "id": "drill-dsp11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the sky is blue but sunsets are red",
+      "question": "The same scattering process makes the noon sky blue and a sunset red. Why the two colours?",
+      "solution": "Rayleigh scattering intensity goes as 1/λ⁴, so short wavelengths scatter far more strongly. Looking away from the sun you see scattered blue light (blue sky). Looking THROUGH a long atmospheric path at sunset, the blue has been scattered out of the beam, leaving the transmitted red/orange. One law, two viewing geometries."
+    },
+    {
+      "id": "drill-dsp11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why a rainbow is a circle of colour",
+      "question": "Rainbows form at about 42° from the antisolar point and are ordered red-outside. Why these particular numbers and that ordering?",
+      "solution": "Light entering a spherical drop refracts, reflects internally once and refracts out, with deviation depending on wavelength; the intensity piles up near the minimum-deviation angle, ~42° for red and ~40° for violet. Red deviates less, so it emerges at the larger angle — the outer edge of the arc. Colour order and angular radius both come from the drop's geometry, not from the sky's decoration."
+    },
+    {
+      "id": "drill-dsp11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why chromatic aberration happens in a lens",
+      "question": "A simple convex lens gives violet and red images at slightly different places. Why, and how does an achromatic doublet fix it?",
+      "solution": "Focal length depends on μ, and μ depends on wavelength, so each colour focuses at a different point — chromatic aberration. An achromatic doublet pairs a converging crown element with a diverging flint element whose dispersion nearly cancels the crown's, bringing two wavelengths to a common focus. You cannot remove dispersion with one glass; you cancel it with a second of different dispersion."
     }
   ]
 }

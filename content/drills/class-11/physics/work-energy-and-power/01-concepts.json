@@ -48,6 +48,33 @@
       "concept": "Power vs energy",
       "question": "Two cranes lift the same load to the same height; one takes 10 s, the other 40 s. Compare their work and power.",
       "solution": "Work is identical — same force (weight) through the same displacement, W = mgh. Power = W/t differs by 4×: the fast crane delivers 4 times the power. Energy says HOW MUCH was transferred; power says HOW FAST — two independent ratings."
+    },
+    {
+      "id": "drill-wep11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a pendulum conserves mechanical energy",
+      "question": "A swinging pendulum slows at the top and speeds at the bottom, yet total mechanical energy stays constant. Explain what is being exchanged.",
+      "solution": "Gravity is conservative, so the pendulum trades KE for PE continuously: at the extremes all energy is potential (mgh, v = 0); at the bottom all is kinetic (½mv², h minimal). The SUM stays fixed because the only force doing work (gravity) has a potential. With friction or air drag, mechanical energy would drain into heat and the sum would fall."
+    },
+    {
+      "id": "drill-wep11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why 'watt' beats 'joule' for comparing machines",
+      "question": "Two pumps move the same water to the same tank; one takes 2 minutes, the other 8. Why is power the useful comparison and not work?",
+      "solution": "Both do identical WORK (same mass lifted through the same height), so work cannot separate them. Power = W/t differs 4× — the fast pump delivers energy 4 times faster, which is what matters for the job's throughput and for sizing the motor. Work tells you the total bill; power tells you the rate you must pay it."
+    },
+    {
+      "id": "drill-wep11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Efficiency below 100%",
+      "question": "Why can no real machine convert all its input energy into useful output, and what happens to the rest?",
+      "solution": "Friction, air resistance, electrical resistance and sound all divert energy into thermal/sound forms that are not the intended output — the second law forbids fully ordered conversion. Efficiency = useful output/total input is therefore always < 1, and the 'lost' energy has not vanished: it has degraded into low-grade heat, spread into the surroundings."
     }
   ]
 }

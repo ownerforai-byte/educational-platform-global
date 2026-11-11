@@ -48,6 +48,33 @@
       "concept": "Radiation needs no medium",
       "question": "How does the Sun's heat reach Earth through empty space, and what makes a surface a good absorber of this heat?",
       "solution": "By RADIATION — electromagnetic waves (mainly infrared) that need no medium. Absorption/emission depend on surface nature: black, rough surfaces absorb and emit best; white, polished surfaces reflect (poor absorbers AND poor emitters). That is why vacuum flasks silver their walls — cutting radiation loss."
+    },
+    {
+      "id": "drill-rhf11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a metal spoon burns but a wooden one doesn't",
+      "question": "Both are at 60 °C in the same tea. Why does the metal spoon feel hot to the touch while the wooden handle does not?",
+      "solution": "Touch feels the RATE heat flows into your skin, not the object's temperature. Metals have high thermal conductivity, so they pump heat into your finger quickly; wood conducts poorly and delivers little heat per second. Same temperature, different flux. Thermal conductivity — not temperature — governs the sensation."
+    },
+    {
+      "id": "drill-rhf11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Two layers of clothing versus one thick layer",
+      "question": "Why do two thin layers of clothing insulate better than one layer of the same total thickness?",
+      "solution": "Heat conduction in series adds thermal resistance: R_total = R₁ + R₂ + contact resistance between layers. The trapped air film between layers has very low conductivity, adding resistance that a single compressed layer would not have. Insulation is about trapping still air pockets; total thickness alone is not the whole story."
+    },
+    {
+      "id": "drill-rhf11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a thermos traps heat three ways",
+      "question": "A vacuum flask slows conduction, convection and radiation simultaneously. Why is a vacuum alone not enough?",
+      "solution": "Vacuum eliminates conduction and convection through the wall (no medium), but radiation still crosses empty space — so the walls are SILVERED to reflect infrared back, cutting radiation too. The stopper blocks conduction/convection at the mouth. Each mechanism needs its own countermeasure: removing one does not stop the others."
     }
   ]
 }

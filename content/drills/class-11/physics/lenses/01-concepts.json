@@ -48,6 +48,33 @@
       "concept": "Lens defects — chromatic aberration",
       "question": "Why does a simple lens give coloured fringes at the edges of an image, and how is it corrected?",
       "solution": "Dispersion: the lens's refractive index is higher for violet than red, so violet focuses CLOSER to the lens — different focal lengths per colour (chromatic aberration). Correction: an ACHROMATIC DOUBLE — a convex crown-glass lens cemented to a concave flint-glass lens whose opposite dispersion cancels the colour spread while keeping net convergence."
+    },
+    {
+      "id": "drill-lens11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a magnifying glass must be close",
+      "question": "A convex lens held at arm's length shrinks and inverts the print, but close to the page it magnifies. Why does the SAME lens do both?",
+      "solution": "The image type depends on where the object sits relative to the focus. Beyond 2F the image is real, inverted and diminished (arms length, onto your retina as if it were a distance object); inside F the image is virtual, erect and magnified (the reading-glass case). The lens did not change — the object distance crossed the focal boundary."
+    },
+    {
+      "id": "drill-lens11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why the eye lens changes shape",
+      "question": "A camera focuses by moving its lens, but the human eye focuses without moving the lens. How, and why must it?",
+      "solution": "The eye's retina is a FIXED distance from the lens, so image distance cannot change; accommodation instead changes the lens's FOCAL LENGTH by squeezing it with ciliary muscles (thicker = shorter f for near objects, flatter for far). Cameras can translate their lens unit; the eye cannot, because the sensor is biology. Same optics equation, different free variable."
+    },
+    {
+      "id": "drill-lens11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a concave lens is used for myopia",
+      "question": "A short-sighted person's distant image forms in front of the retina. Why does a DIVERGING lens fix this?",
+      "solution": "The myopic eye converges too strongly, so parallel rays from infinity focus too soon. A concave lens first spreads the incoming parallel rays, so the eye's over-strong convergence lands them on the retina instead of in front of it. The correcting lens pushes image distance back by reducing the system's net converging power — the prescription is a minus power, in dioptres."
     }
   ]
 }

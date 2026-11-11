@@ -48,6 +48,33 @@
       "concept": "Mechanical equivalent of heat",
       "question": "Joule's paddle-wheel experiment showed stirring water raises its temperature. What does this establish about heat and work?",
       "solution": "That heat and mechanical work are the same physical quantity — energy — with a fixed conversion rate (4.18 J = 1 cal). Doing 4.18 J of work on water raises its temperature exactly as much as 1 calorie of heat would. Heat is not a fluid; it is energy transferred by molecular agitation."
+    },
+    {
+      "id": "drill-qh11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why heat capacity is not a material constant per gram",
+      "question": "Why does 1 kg of water need far more heat than 1 kg of iron for the same temperature rise?",
+      "solution": "Specific heat capacity measures how much energy each gram absorbs per kelvin, set by how many degrees of freedom the molecules can store energy in. Water's H-bonded structure and many vibrational modes absorb much more per kelvin than iron's lattice vibrations. So Q = mcΔT has a large c for water: same ΔT, much larger Q."
+    },
+    {
+      "id": "drill-qh11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Latent heat does not raise temperature",
+      "question": "While ice melts at 0 °C, a lot of heat is absorbed yet the temperature stays at 0 °C. Where does that energy go, and why is no temperature rise observed?",
+      "solution": "The energy breaks the rigid lattice bonds into a liquid — it increases the molecules' POTENTIAL energy, not their average kinetic energy. Temperature measures only mean kinetic energy, so it cannot rise while the phase change is incomplete. That is the definition of latent heat: hidden energy exchanged with no thermometer signal."
+    },
+    {
+      "id": "drill-qh11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a calorimeter must be insulated and corrected",
+      "solution": "No real vessel is perfect, so some heat leaks to the room and some is absorbed by the thermometer, stirrer and calorimeter itself. That is why a water-equivalent correction (m_w + w) is added: the vessel behaves like extra water. Insulation slows the leak to negligible over a short experiment, and the water equivalent accounts for the energy the vessel legitimately takes. Ignoring either biases the result, usually making the measured specific heat too small.",
+      "question": "In a calorimetry experiment, why do we add the calorimeter water equivalent (w) and keep the experiment quick and insulated?"
     }
   ]
 }

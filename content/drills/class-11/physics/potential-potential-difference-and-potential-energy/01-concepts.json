@@ -48,6 +48,33 @@
       "concept": "Electron volt",
       "question": "Why do atomic physicists use the electron volt instead of the joule?",
       "solution": "An electron crossing 1 V gains e×1 V = 1.6×10⁻¹⁹ J — an absurdly small number of joules for atomic-scale energies. The eV is a NATURAL unit for particle energies (1 eV, 13.6 eV, keV, MeV), making numbers human-sized. It is energy (charge × potential difference), not a voltage."
+    },
+    {
+      "id": "drill-pot11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why potential is a scalar while field is a vector",
+      "question": "Computing the field from several charges needs vector addition, but computing potential needs only simple addition of numbers. Why?",
+      "solution": "Potential is energy per unit charge — a SCALAR with a sign, so contributions add algebraically: V = Σkq/r. Field is a force per unit charge — a VECTOR, so contributions add with directions. Potential is easier to compute and to sum; the field is then recovered as E = −dV/dr. Scalars first, vectors after."
+    },
+    {
+      "id": "drill-pot11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why equipotentials are perpendicular to field lines",
+      "question": "Equipotential surfaces always cross field lines at right angles. Give the reason from the definition of work.",
+      "solution": "Moving a charge along an equipotential involves no change in potential energy, so no work is done, so the force has zero component along that path. Zero component means perpendicular: the field is normal to the surface. If field lines crossed at any other angle, work would be done along an equipotential — a contradiction."
+    },
+    {
+      "id": "drill-pot11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the path does not matter",
+      "question": "The work done in moving a charge between two points in an electrostatic field is path-independent. Why is this the source of the idea of potential?",
+      "solution": "Because the electrostatic force is CONSERVATIVE — work depends only on end points, exactly as for gravity. That allows a potential energy to be defined for each point, independent of how you got there: W = q(V_A − V_B). Path independence is what makes the concept of a scalar potential possible at all; a non-conservative field would have no potential."
     }
   ]
 }
