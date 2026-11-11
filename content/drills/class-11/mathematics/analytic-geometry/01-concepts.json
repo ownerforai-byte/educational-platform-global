@@ -39,6 +39,42 @@
       "concept": "Section formula direction",
       "question": "Points A(1,1), B(5,9). A student finds the midpoint ((3,5)) even when asked for the point dividing AB in ratio 1:3. What does the ratio actually control, and what is the correct point?",
       "solution": "The ratio controls HOW FAR along the segment you stop: 1:3 means 1 part of the way from A (¼ of the journey), not halfway. Internal division formula: ((m·x₂+n·x₁)/(m+n), …) with m:n = 1:3 → ((1·5+3·1)/4, (1·9+3·1)/4) = (8/4, 12/4) = (2,3). The midpoint formula is just the special case m = n. Mixing them up means ignoring the weights: m pulls toward B, n pulls toward A. Check by distance: AP:PB must equal 1:3 — (2,3) satisfies it, (3,5) gives 1:1."
+    },
+    {
+      "id": "drill-geo-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the circle equation is a distance statement",
+      "question": "Why does (x−h)² + (y−k)² = r² describe a circle, and what breaks if the right side is negative?",
+      "solution": "The left side is the squared distance from (x, y) to the centre (h, k). Setting it equal to r² says every point is exactly r away — the definition of a circle. If the right side were negative, no squared distance could equal it, so there would be no graph at all: an imaginary circle with a real centre."
+    },
+    {
+      "id": "drill-geo-6",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why perpendicular slopes multiply to −1",
+      "question": "Why is the product of the slopes of two perpendicular lines exactly −1, and why does a vertical/horizontal pair seem to break the rule?",
+      "solution": "Rotating a direction vector by 90° maps (1, m) to (−m, 1), whose slope is −1/m — so the product is −1. A vertical line has undefined slope, so the algebraic product cannot be formed; the rule simply does not apply to that pair, and geometrically vertical ⊥ horizontal holds. The exception is about undefined values, not a flaw in the principle."
+    },
+    {
+      "id": "drill-geo-7",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a parabola has a focus and directrix",
+      "question": "A parabola is defined as points equidistant from a point and a line. Why does this definition produce the familiar y² = 4ax form?",
+      "solution": "Set distance to focus (a, 0) equal to distance to directrix x = −a: √((x−a)² + y²) = x + a. Squaring and cancelling gives y² = 4ax. The focus–directrix definition is the geometric essence; the standard equation is what it becomes in coordinates. Every conic can be described the same way with an eccentricity, and the parabola is the case e = 1."
+    },
+    {
+      "id": "drill-geo-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the distance formula is Pythagoras",
+      "question": "Why is the distance between (x₁,y₁) and (x₂,y₂) given by √((Δx)² + (Δy)²) and not by adding the differences?",
+      "solution": "The horizontal and vertical gaps are perpendicular legs of a right triangle, and the straight-line distance is its hypotenuse; the two legs add up to the path along the grid (the taxicab distance), which is longer. Euclidean distance is Pythagoras applied to the coordinate differences. Adding differences measures walking distance, not separation."
     }
   ]
 }

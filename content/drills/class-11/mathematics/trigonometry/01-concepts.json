@@ -48,6 +48,33 @@
       "concept": "Solving trig equations — infinite solutions",
       "question": "Why does sinθ = ½ have infinitely many solutions while a linear equation has one?",
       "solution": "The line y = ½ crosses the sine wave TWICE per period, and the wave repeats forever — so solutions come in infinite periodic families: θ = 30° + 360°n or 150° + 360°n. Trig equations must be answered with the general solution (adding the period), not a single value."
+    },
+    {
+      "id": "drill-tri11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why sin²θ + cos²θ = 1 geometrically",
+      "question": "Explain the identity sin²θ + cos²θ = 1 without using any formula sheet — from first principles.",
+      "solution": "Place θ on a unit circle: the point is (cosθ, sinθ). Its distance from the origin is the radius, which is 1. Pythagoras gives cos²θ + sin²θ = 1². The identity is the equation of the unit circle, and it holds for every angle because every point on the circle is at radius 1."
+    },
+    {
+      "id": "drill-tri11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why sine is periodic",
+      "question": "Why does sin(θ + 360°) equal sinθ, and why can that be seen in the circle?",
+      "solution": "Adding 360° returns the radius to the same position, so the point (cos, sin) is identical — every coordinate repeats. Periodicity is the circle's closure: one full turn restores the state. The same reasoning gives cos and tan their periods, with tan repeating every 180° because it is a ratio whose signs change together."
+    },
+    {
+      "id": "drill-tri11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the sine rule needs a pair",
+      "question": "Why can you not use a/sinA = b/sinB with two angles and no side?",
+      "solution": "The sine rule relates a side to the SINE OF THE OPPOSITE angle, so each ratio must pair a known side with a known opposite angle. Two angles with no side gives proportions but no scale — infinitely many similar triangles fit. Scale requires at least one known length; the angles fix shape, not size."
     }
   ]
 }

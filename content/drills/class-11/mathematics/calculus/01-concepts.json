@@ -48,6 +48,33 @@
       "concept": "Integration as antiderivative",
       "question": "Why does every indefinite integral carry '+C', and why does a definite integral not need it?",
       "solution": "Differentiation erases constants, so reversing it recovers a whole FAMILY of functions differing by a constant — +C stands for that family. In a definite integral the constant cancels: [F(b)+C] − [F(a)+C] = F(b) − F(a). The +C is the price of information lost by differentiation."
+    },
+    {
+      "id": "drill-cal11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a limit can exist where the function is undefined",
+      "question": "(x² − 1)/(x − 1) is undefined at x = 1, yet its limit there is 2. How can a limit exist at a point with no value?",
+      "solution": "A limit asks what value the function APPROACHES as x gets arbitrarily close to 1, never what happens AT 1. Factorising gives (x+1) for x ≠ 1, which tends to 2. The point itself is excluded from the question, so the missing value is irrelevant — the function has a removable hole, not a jump."
+    },
+    {
+      "id": "drill-cal11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why continuity needs three conditions",
+      "question": "Continuity at a point requires the limit to exist, the function to be defined there, AND the two to be equal. Why are all three necessary?",
+      "solution": "Existence of the limit ensures the two-sided approach agrees; being defined ensures there is an actual value at the point; equality ensures no gap or jump. Drop the first and the left/right behaviour conflicts; drop the second and there is a hole; drop the third and the graph jumps away from its own limit. Continuity is the absence of all three failure modes."
+    },
+    {
+      "id": "drill-cal11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why differentiability implies continuity but not conversely",
+      "question": "Every differentiable function is continuous, but |x| is continuous and not differentiable at 0. Why only one direction?",
+      "solution": "Differentiability means the slope approaches one value from both sides — that forces the function values themselves to approach a single common value, so continuity follows. The converse fails because continuity only requires values to meet, not slopes: |x| meets at 0 but has slope −1 on the left and +1 on the right, so no derivative exists. Sharper condition, so fewer functions qualify."
     }
   ]
 }

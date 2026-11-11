@@ -48,6 +48,33 @@
       "concept": "Sequence vs series",
       "question": "Distinguish a sequence from a series, and state what Σ notation adds.",
       "solution": "A sequence is an ordered LIST of terms (a₁, a₂, a₃, …); a series is the SUM of those terms. Σ compresses 'add these terms following this rule' — e.g. Σn² from 1 to 5 = 1+4+9+16+25. The distinction matters because sequences have patterns of TERMS while series ask about SUMS (which may converge)."
+    },
+    {
+      "id": "drill-alg11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why a quadratic can have no real roots",
+      "question": "x² + 1 = 0 has no real solution, yet the quadratic formula still returns values. What is the discriminant telling you?",
+      "solution": "The discriminant b² − 4ac is negative, so the square root is not real; the parabola y = x² + 1 lies entirely above the x-axis and never crosses it. The formula still yields the correct COMPLEX roots. A negative discriminant signals 'no real intersection', not 'no answer' — the solutions exist, just outside the reals."
+    },
+    {
+      "id": "drill-alg11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why the sum of roots is −b/a",
+      "question": "For ax² + bx + c = 0 with roots α and β, why is α + β = −b/a and αβ = c/a?",
+      "solution": "Factorise identically: ax² + bx + c = a(x − α)(x − β) = a[x² − (α+β)x + αβ]. Matching coefficients gives b = −a(α+β) and c = aαβ, so α+β = −b/a and αβ = c/a. The relations come from comparing two expressions for the same polynomial — an identity, not a coincidence."
+    },
+    {
+      "id": "drill-alg11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why arithmetic and geometric means differ",
+      "question": "For any two positive numbers the geometric mean never exceeds the arithmetic mean. Why, and when are they equal?",
+      "solution": "AM − GM = (a+b)/2 − √(ab) = (√a − √b)²/2 ≥ 0. The square is never negative, and it is zero exactly when a = b. GM is the side of a square with the same area as an a × b rectangle; AM is half the perimeter. They coincide only for a square — equality is the symmetric case."
     }
   ]
 }

@@ -48,6 +48,33 @@
       "concept": "Mutually exclusive vs independent",
       "question": "Can two events be both mutually exclusive and independent? Justify.",
       "solution": "No (unless one has probability 0). If A and B are exclusive, A happening means B did NOT — knowing A occurred changes P(B) to 0, which is dependence. Independence requires P(A∩B) = P(A)P(B) > 0, contradicting P(A∩B) = 0. The two concepts are easily confused but logically opposed."
+    },
+    {
+      "id": "drill-sp11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the median resists outliers",
+      "question": "One extreme salary is added to a small dataset. The mean jumps but the median barely moves. Why?",
+      "solution": "The mean sums every value, so a single huge number shifts the total and hence the average — it is sensitive to magnitude. The median depends only on ORDER: it is the middle value, and adding an outlier at one end merely repositions the middle by one place. Robustness comes from using rank rather than value. Median for skewed data, mean for symmetric."
+    },
+    {
+      "id": "drill-sp11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why use n−1 in sample variance",
+      "question": "Sample variance divides by n−1, not n. Why does using n underestimate the true variance?",
+      "solution": "The sample mean is computed FROM the same data, so deviations are measured from the point that minimises them — always smaller than deviations about the true population mean. Dividing by n therefore biases the estimate downward. Dividing by n−1 (Bessel's correction) removes this bias, giving an unbiased estimator. The loss of one degree of freedom is the cost of estimating the mean from the data."
+    },
+    {
+      "id": "drill-sp11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why probability of a union subtracts",
+      "question": "P(A∪B) = P(A) + P(B) − P(A∩B). Why is the subtraction necessary?",
+      "solution": "Adding P(A) and P(B) counts outcomes in both events TWICE — once in each. Subtracting P(A∩B) corrects the double count. The rule is inclusion–exclusion, and it reduces to simple addition only when the events are mutually exclusive (intersection empty). Overcounting is the error; subtraction is the repair."
     }
   ]
 }

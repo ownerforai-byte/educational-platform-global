@@ -48,6 +48,33 @@
       "concept": "Projectile motion as two independent problems",
       "question": "Why can a projectile's horizontal and vertical motions be solved separately?",
       "solution": "Gravity acts only vertically, and the horizontal velocity has no vertical component — the two axes don't interact. Horizontal: constant velocity (no horizontal force). Vertical: constant acceleration g. Solving each axis with its own simple equation, then recombining, gives the full trajectory — independence of perpendicular components is the principle."
+    },
+    {
+      "id": "drill-cm11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why numerical methods approximate",
+      "question": "Why does a numerical method like Newton's iteration give an answer that is only as good as your stopping rule?",
+      "solution": "Each iteration refines an estimate using a local linear approximation, so error shrinks but is rarely exactly zero — you stop when successive changes fall below a tolerance. The accuracy you report is therefore whatever tolerance you chose. Numerical answers are approximations quantified by convergence criteria, not exact results; specifying the tolerance is part of the answer."
+    },
+    {
+      "id": "drill-cm11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why Newton's method can fail",
+      "question": "Newton's method converges beautifully for some functions and diverges wildly for others. What conditions does it require?",
+      "solution": "The iteration x − f(x)/f'(x) assumes f' is nonzero and reasonably well behaved near the root. It fails when f' vanishes near the guess (tangent nearly horizontal, huge jump), when the starting guess is far from the root, or when the function oscillates. Convergence is local, not global — it needs a good start and a well-conditioned derivative."
+    },
+    {
+      "id": "drill-cm11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the bisection method always works",
+      "question": "Bisection converges more slowly than Newton's method, yet it is preferred for reliability. Why is it guaranteed to work?",
+      "solution": "It relies only on the intermediate value theorem: if f changes sign across an interval, a root lies inside, and halving the interval keeps the sign change in at least one half. No derivative is needed and no wild jumps occur, so convergence is guaranteed (if slow). Reliability versus speed — bisection buys certainty with iterations."
     }
   ]
 }

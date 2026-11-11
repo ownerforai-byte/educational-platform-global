@@ -48,6 +48,33 @@
       "concept": "Position vectors and midpoints",
       "question": "Why does the midpoint of AB have position vector (a + b)/2?",
       "solution": "The midpoint divides AB in ratio 1:1, and the section formula gives r = (1·a + 1·b)/(1+1) = (a+b)/2 — the average of the endpoint vectors. Geometrically: from the origin, the midpoint sits halfway along the vector sum. Averages of position vectors are the vector way to do coordinate geometry."
+    },
+    {
+      "id": "drill-vecm11-6",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the dot product is a scalar",
+      "question": "a·b returns a single number while a×b returns a vector. What is each product measuring?",
+      "solution": "The dot product measures ALIGNMENT — the component of one vector along the other, a·b = |a||b|cosθ. That is a quantity with no direction, so it is a scalar. The cross product measures the AREA/rotation swept, |a||b|sinθ, which has both magnitude and an orientation (the normal), so it is a vector. One product collapses direction; the other creates it."
+    },
+    {
+      "id": "drill-vecm11-7",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Why a·b = 0 means perpendicular",
+      "question": "Why does the vanishing dot product identify perpendicularity, and why does the vanishing cross product identify parallelism?",
+      "solution": "a·b = |a||b|cosθ vanishes when cosθ = 0, i.e. θ = 90° — no component along each other. a×b = |a||b|sinθ vanishes when sinθ = 0, i.e. θ = 0° or 180° — no area swept between them. Each product vanishes for the configuration it cannot measure: the dot for perpendicular, the cross for parallel. Zero is informative."
+    },
+    {
+      "id": "drill-vecm11-8",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Why the scalar triple product gives volume",
+      "question": "Explain why |a·(b×c)| equals the volume of the parallelepiped formed by a, b and c.",
+      "solution": "b×c is a vector whose magnitude is the AREA of the base parallelogram and whose direction is normal to that base. Dotting with a projects a onto that normal, giving the height. Area × height = volume, with the absolute value removing orientation. The triple product factors volume into base area and perpendicular height."
     }
   ]
 }
