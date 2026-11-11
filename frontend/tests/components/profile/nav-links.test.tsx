@@ -74,27 +74,22 @@ beforeEach(() => {
 // ─── Sidebar ────────────────────────────────────────────────────────────────
 
 describe("SidebarNavigation", () => {
-  it("keeps footer-only My Profile out of the sidebar while preserving progress", () => {
+  it("keeps footer-only My Profile and personal desk entries out of the slimmed sidebar", () => {
     sessionState.user = studentUser;
     render(<SidebarNavigation />);
 
+    // The sidebar is slimmed to Quick Access + Curriculum & Notes + Labs &
+    // Reference, so My Profile (footer-only) and the Student Desk entries
+    // (like My Progress) both live outside it.
     expect(screen.queryByRole("link", { name: /my profile/i })).toBeNull();
-    // Progress stays a separate entry.
-    expect(
-      screen.getByRole("link", { name: /my progress/i })
-    ).toHaveAttribute("href", "/progress");
+    expect(screen.queryByRole("link", { name: /my progress/i })).toBeNull();
   });
 
-  it("owner section points at real owner console routes, not stale /admin", () => {
+  it("never links stale /admin routes in the sidebar", () => {
     render(<SidebarNavigation />);
 
-    const consoleLink = screen.getByRole("link", { name: /owner console/i });
-    expect(consoleLink).toHaveAttribute("href", "/owner");
-    expect(
-      screen.getByRole("link", { name: /user management/i })
-    ).toHaveAttribute("href", "/owner/users");
-
-    // No stale admin link anywhere in the sidebar.
+    // No stale admin link anywhere in the sidebar (the Owner console lives in
+    // the footer / profile, not the slimmed sidebar).
     const hrefs = screen
       .getAllByRole("link")
       .map((a) => a.getAttribute("href"));
@@ -135,11 +130,9 @@ describe("MobileNav", () => {
     for (const link of profileLinks) {
       expect(link).toHaveAttribute("href", "/profile");
     }
-    // Progress remains a separate entry.
-    expect(screen.getByRole("link", { name: /my progress/i })).toHaveAttribute(
-      "href",
-      "/progress"
-    );
+    // Personal desk entries (like My Progress) stay out of the slimmed drawer
+    // nav — they live in the footer / profile.
+    expect(screen.queryByRole("link", { name: /my progress/i })).toBeNull();
   });
 });
 

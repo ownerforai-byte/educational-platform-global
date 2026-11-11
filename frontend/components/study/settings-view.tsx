@@ -21,7 +21,6 @@ import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { DAILY_MINUTES_OPTIONS, type StudyPreferences } from "@/lib/study-goals";
 import { useStudyGoals } from "./use-study-goals";
 import { GuestGoalsPrompt } from "./guest-goals-prompt";
-import { NavDirectory } from "@/components/layout/nav-directory";
 
 /**
  * /settings — grouped like the reference Settings list: each group is a card
@@ -208,8 +207,6 @@ export function SettingsView() {
           </Row>
         </GroupCard>
       </div>
-
-      <NavDirectory title="Explore all features" />
     </div>
   );
 }

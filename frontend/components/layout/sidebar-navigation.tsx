@@ -393,7 +393,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
         </div>
 
         {NAV_SECTIONS.filter(
-          (section) => section.id !== "primary" && canSee(section),
+          (section) => ["curriculum", "stem"].includes(section.id) && canSee(section),
         ).map((section, sectionIndex) => (
           <NavSection
             key={section.id}
