@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Introductory Microbiology (Class 11 Biology)",
+  "subject": "biology",
+  "unitSlug": "introductory-microbiology",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-im11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why viruses sit outside the tree",
+      "question": "Why are viruses considered neither fully living nor fully non-living?",
+      "solution": "Outside a host: crystalline, inert, no metabolism — non-living chemistry. Inside a host: they hijack the host's machinery to replicate and evolve — living behaviour. Viruses have no own metabolism or ribosomes, only genetic information plus a protein coat; they are obligate intracellular parasites occupying the boundary."
+    },
+    {
+      "id": "drill-im11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Bacteria vs archaea",
+      "question": "Both bacteria and archaea are prokaryotes. What molecular features separate the two domains?",
+      "solution": "Cell wall chemistry: bacteria use peptidoglycan; archaea use pseudopeptidoglycan or protein S-layers. Membrane lipids: archaea use ETHER-linked branched chains (bacteria: ester-linked). Gene machinery: archaeal RNA polymerase and ribosomes resemble EUKARYOTES more than bacteria. Molecular biology split 'prokaryotes' into two domains."
+    },
+    {
+      "id": "drill-im11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Gram stain logic",
+      "question": "Why do Gram-positive bacteria stain purple and Gram-negative pink, and why does the difference matter clinically?",
+      "solution": "Gram-positive: thick peptidoglycan retains the crystal-violet–iodine complex even after alcohol decolourisation — purple. Gram-negative: thin peptidoglycan plus an outer membrane loses the complex and takes the pink counterstain. The wall structure also controls antibiotic entry (penicillin targets peptidoglycan synthesis) — so the stain predicts drug susceptibility."
+    },
+    {
+      "id": "drill-im11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Pasteurisation vs sterilisation",
+      "question": "Why does milk undergo pasteurisation (72 °C, 15 s) rather than full sterilisation?",
+      "solution": "Pasteurisation kills pathogens and spoilage organisms while preserving milk's flavour and nutrients — a partial heat treatment targeting the dangerous species. Full sterilisation (high pressure steam) would destroy taste and vitamins. The trade-off: safety + quality vs absolute microbial zero."
+    },
+    {
+      "id": "drill-im11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Microbes as decomposers",
+      "question": "Why would a world without microbes be buried in organic matter within years?",
+      "solution": "Microbes (bacteria, fungi) are the biosphere's recyclers: they secrete enzymes that break cellulose, lignin and proteins into CO₂, water and minerals, returning them to soil and air. Plants could not access nutrients locked in dead matter; carbon and nitrogen cycles would halt. Decomposition is an ecosystem service only microbes perform at scale."
+    }
+  ]
+}

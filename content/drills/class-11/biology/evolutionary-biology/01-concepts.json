@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Evolutionary Biology (Class 11 Biology)",
+  "subject": "biology",
+  "unitSlug": "evolutionary-biology",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-ev11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Natural selection's logic",
+      "question": "Why do Darwin's four observations (variation, overproduction, struggle, differential survival) NECESSARILY produce evolution?",
+      "solution": "More offspring are produced than survive; heritable variation exists; those whose variation fits the environment survive and reproduce more. Their variants become common in the next generation — allele frequencies change. Given those premises, evolution follows by logic: selection is the non-random survival of random variation."
+    },
+    {
+      "id": "drill-ev11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Selection acts on phenotypes, evolution on gene pools",
+      "question": "Why is it wrong to say 'giraffes stretched their necks and their offspring inherited longer necks' (Lamarck)?",
+      "solution": "Acquired traits (stretched muscles) do not change DNA in the germ line — only genetic changes in eggs/sperm are heritable. Selection cannot CREATE a longer neck by need; it can only FAVOUR individuals whose genes already gave a slightly longer neck. Mechanism of inheritance, not intent, decides what evolves."
+    },
+    {
+      "id": "drill-ev11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Evidence from homology and analogy",
+      "question": "Distinguish homologous from analogous organs and say what each type of evidence supports.",
+      "solution": "Homologous: same basic structure, different function (human arm, whale flipper, bat wing — same bones) → COMMON ANCESTRY (divergent evolution). Analogous: same function, different structure (insect wing vs bird wing) → CONVERGENT evolution, similar selection pressures on unrelated bodies. Homology traces family trees; analogy shows selection's power to shape similar solutions independently."
+    },
+    {
+      "id": "drill-ev11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Industrial melanism",
+      "question": "Why did dark (melanic) peppered moths replace light ones in industrial England, then reverse after clean-air laws?",
+      "solution": "On soot-darkened trees, light moths were eaten more by birds — dark variants survived and reproduced, so the melanic allele spread. Clean-air laws restored lichen-covered light bark; selection flipped, light moths again survived better. The allele's frequency tracks the environment — selection is directional and reversible."
+    },
+    {
+      "id": "drill-ev11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Speciation needs isolation",
+      "question": "Why does geographic isolation usually precede the formation of new species?",
+      "solution": "Separated populations stop exchanging genes; different mutations, drift and selection accumulate independently. Over time, even if they meet again, they may not interbreed successfully — reproductive isolation, the criterion of species. Gene flow homogenises; isolation lets divergence happen."
+    }
+  ]
+}

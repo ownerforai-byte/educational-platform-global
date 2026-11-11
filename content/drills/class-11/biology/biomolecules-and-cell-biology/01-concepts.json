@@ -1,0 +1,53 @@
+{
+  "title": "Concept Drills — Biomolecules & Cell Biology (Class 11 Biology)",
+  "subject": "biology",
+  "unitSlug": "biomolecules-and-cell-biology",
+  "examSource": "Concept drills",
+  "questions": [
+    {
+      "id": "drill-bcb11-1",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "easy",
+      "concept": "Why the cell membrane is a fluid mosaic",
+      "question": "Why is the membrane described as 'fluid' and 'mosaic' — what do the two words each refer to?",
+      "solution": "FLUID: phospholipids and proteins move laterally within the bilayer — the membrane is a 2D liquid, not a rigid wall (fluidity tuned by cholesterol and unsaturated tails). MOSAIC: a patchwork of proteins (integral, peripheral) embedded at different depths, each with its own job. The model replaces the old rigid 'sandwich' idea."
+    },
+    {
+      "id": "drill-bcb11-2",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Mitochondrion — the double membrane logic",
+      "question": "Why does the mitochondrion have TWO membranes with different properties, and what does the inner membrane's folding achieve?",
+      "solution": "The outer membrane is a permeable boundary; the inner membrane is the working surface — it holds the electron-transport chain and is impermeable to ions, allowing a proton gradient to build. Cristae (folds) multiply that surface area, packing more ATP-producing machinery per organelle. Compartmentalisation + surface area = efficient chemiosmosis."
+    },
+    {
+      "id": "drill-bcb11-3",
+      "type": "concept",
+      "marks": 3,
+      "difficulty": "medium",
+      "concept": "Active vs passive transport",
+      "question": "Root cells accumulate mineral ions at concentrations far higher than the soil. Which transport mechanism achieves this and what does it require?",
+      "solution": "ACTIVE transport — carrier proteins move ions AGAINST the concentration gradient, which is thermodynamically uphill and therefore requires ATP. Passive diffusion can only equalise concentrations, never exceed them. Accumulation against a gradient is the defining signature of active uptake."
+    },
+    {
+      "id": "drill-bcb11-4",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Enzyme specificity and the active site",
+      "question": "Why does an enzyme catalyse one reaction but not a closely related one?",
+      "solution": "The active site's shape and chemical groups complement ONE substrate (lock-and-key/induced fit): binding positions the substrate's bonds next to catalytic groups and stabilises the transition state, lowering Ea. A non-fitting substrate is neither positioned nor activated. Shape complementarity + transition-state stabilisation = specificity."
+    },
+    {
+      "id": "drill-bcb11-5",
+      "type": "concept",
+      "marks": 2,
+      "difficulty": "medium",
+      "concept": "Protein's four levels",
+      "question": "Name the four levels of protein structure and the bond/interaction responsible for each.",
+      "solution": "Primary: amino-acid sequence (peptide bonds). Secondary: α-helix/β-sheet (H-bonds in the backbone). Tertiary: overall 3D fold (hydrophobic clustering, disulphide bridges, ionic and H-bonds between side chains). Quaternary: multiple subunits assembled (same non-covalent forces between chains, e.g. haemoglobin's four)."
+    }
+  ]
+}
