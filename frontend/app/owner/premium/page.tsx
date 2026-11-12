@@ -15,7 +15,7 @@ import type { OwnerPremiumRequest } from "@/lib/api/owner";
 const statusConfig: Record<string, { label: string; className: string; icon: typeof Clock }> = {
   PENDING: { label: "Pending", className: "bg-amber-500/15 text-amber-600", icon: Clock },
   APPROVED: { label: "Approved", className: "bg-emerald-500/15 text-emerald-600", icon: CheckCircle2 },
-  REJECTED: { label: "Rejected", className: "bg-red-500/15 text-red-600", icon: XCircle },
+  REJECTED: { label: "Denied", className: "bg-red-500/15 text-red-600", icon: XCircle },
 };
 
 export default function OwnerPremiumPage() {
@@ -59,7 +59,7 @@ export default function OwnerPremiumPage() {
       await rejectOwnerPremiumRequest(id);
       load();
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Reject failed");
+      setError(err instanceof Error ? err.message : "Deny failed");
     } finally {
       setBusyId(null);
     }
@@ -178,7 +178,7 @@ export default function OwnerPremiumPage() {
                           className="text-red-600 hover:text-red-700"
                         >
                           <UserX className="h-4 w-4 mr-1" />
-                          Reject
+                          Deny
                         </Button>
                       </div>
                     )}

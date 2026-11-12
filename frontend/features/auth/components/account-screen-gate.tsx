@@ -16,9 +16,10 @@ import { NoAccountCard } from "./no-account-card";
 import { VerifyingStatus } from "./verifying-status";
 import {
   APPROVED_ROUTE,
+  DENIED_ROUTE,
   NORMAL_ROUTE,
-  REJECTED_ROUTE,
   WAITING_ROUTE,
+  clearPendingSignup,
 } from "../pending-signup-identity";
 import { useLiveApprovalRoute } from "../use-live-approval-route";
 
@@ -123,28 +124,28 @@ export function ApprovedScreen() {
   );
 }
 
-/** /welcome/rejected — only when live access_status is REJECTED. */
-export function RejectedScreen() {
-  const liveRoute = useLiveScreenGate(REJECTED_ROUTE);
-  if (!liveRoute || liveRoute !== REJECTED_ROUTE) return <CheckingScreen />;
+/** /welcome/denied — only when live access_status is REJECTED (denied). */
+export function DeniedScreen() {
+  const liveRoute = useLiveScreenGate(DENIED_ROUTE);
+  if (!liveRoute || liveRoute !== DENIED_ROUTE) return <CheckingScreen />;
 
   return (
     <AuthShell
-      title="Account not approved"
-      subtitle="Live status for this signup is rejected."
+      title="Access denied"
+      subtitle="Live status for this signup is denied."
     >
-      <div className="space-y-5" data-testid="rejected-account-card">
+      <div className="space-y-5" data-testid="denied-account-card">
         <div className="flex flex-col items-center gap-3 rounded-2xl border border-destructive/30 bg-destructive/[0.06] p-6 text-center">
           <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-border/60 bg-background shadow-sm">
             <ShieldAlert className="h-5 w-5 text-destructive" />
           </span>
           <h2 className="text-base font-extrabold tracking-tight text-foreground">
-            Access was not approved
+            Access was denied
           </h2>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            This account was rejected. You can keep browsing as a guest, or
-            create a new account later. Leave a message to sahrocky81@gmail.com
-            if you believe this is a mistake.
+            This account was denied. You can keep browsing as a guest, or create
+            a new account now. Leave a message to sahrocky81@gmail.com if you
+            believe this is a mistake.
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-2">
@@ -157,6 +158,7 @@ export function RejectedScreen() {
           </Link>
           <Link
             href="/signup"
+            onClick={() => clearPendingSignup()}
             className="inline-flex h-11 items-center gap-2 rounded-2xl border border-border/70 bg-card px-5 text-sm font-semibold text-foreground transition-colors hover:bg-muted/60"
           >
             <GraduationCap className="h-4 w-4" />
@@ -167,3 +169,6 @@ export function RejectedScreen() {
     </AuthShell>
   );
 }
+
+/** @deprecated Use DeniedScreen */
+export const RejectedScreen = DeniedScreen;

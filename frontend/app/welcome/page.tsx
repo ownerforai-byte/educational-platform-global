@@ -4,7 +4,7 @@ import { ApprovalDispatch } from "@/features/auth/components/approval-dispatch";
 export const metadata: Metadata = {
   title: "Account Status — Ravikisan's Platform",
   description:
-    "Opens the correct account status screen for this device — normal, pending, approved, or rejected.",
+    "Opens the correct account status screen for this device — normal, pending, approved, or denied.",
 };
 
 /**
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
  *   /welcome/no-account  (normal)
  *   /welcome/pending     (waiting)
  *   /welcome/approved
- *   /welcome/rejected
+ *   /welcome/denied
  */
 export default function WelcomeDispatchPage() {
   return <ApprovalDispatch />;

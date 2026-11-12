@@ -24,7 +24,7 @@ const HELP_ARTICLES: Record<string, { title: string; sections: { heading: string
       },
       {
         heading: "Checking your status",
-        body: "If your account is pending, you will see a status screen when you open the app. If it was rejected, the status screen explains why. You can leave a message to this email; sahrocky81@gmail.com to appeal or ask for an update.",
+        body: "If your account is pending, you will see a status screen when you open the app. If it was denied, the status screen explains why — you can create a new account afterward. You can leave a message to this email; sahrocky81@gmail.com to appeal or ask for an update.",
       },
       {
         heading: "What to do while you wait",

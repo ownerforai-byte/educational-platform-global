@@ -2,7 +2,7 @@ import { apiFetch } from "@/lib/api-client";
 import {
   APPROVED_ROUTE,
   NORMAL_ROUTE,
-  REJECTED_ROUTE,
+  DENIED_ROUTE,
   WAITING_ROUTE,
   type AccessOutcome,
   clearPendingSignup,
@@ -14,9 +14,10 @@ import {
 /**
  * Map a live access_status to one of the four welcome screens.
  * Never invents PENDING/ACTIVE/REJECTED from local cookies alone.
+ * REJECTED access_status opens the Denied screen.
  */
 export function routeForLiveAccess(status: AccessOutcome): string {
-  if (status === "REJECTED") return REJECTED_ROUTE;
+  if (status === "REJECTED") return DENIED_ROUTE;
   if (status === "ACTIVE") return APPROVED_ROUTE;
   return WAITING_ROUTE;
 }
@@ -27,7 +28,7 @@ export function routeForLiveAccess(status: AccessOutcome): string {
  *   - no status token → NORMAL (and wipe any stale outcome cookies)
  *   - live PENDING    → WAITING
  *   - live ACTIVE     → APPROVED
- *   - live REJECTED   → REJECTED
+ *   - live REJECTED   → DENIED
  *   - token dead/gone → clear local identity → NORMAL
  *
  * Throws only on transient network/server failures so callers can keep

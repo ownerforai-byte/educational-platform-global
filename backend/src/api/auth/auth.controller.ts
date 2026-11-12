@@ -115,11 +115,11 @@ async function readAccessStatus(userId: string, email?: string): Promise<AccessS
 function accessDenied(res: Response, status: AccessStatus, userId?: string): void {
   const pending = status === "PENDING";
   res.status(403).json({
-    error: pending ? "Account pending approval" : "Account not approved",
+    error: pending ? "Account pending approval" : "Account denied",
     code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
     message: pending
       ? "Your account was created and is awaiting approval. You can sign in after administrative and system approval."
-      : "This account was not approved. Please contact the platform owner.",
+      : "This account was denied. You can create a new account, or leave a message to sahrocky81@gmail.com.",
     statusToken: userId ? createStatusToken(userId) : undefined,
   });
 }
@@ -272,11 +272,11 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
       }
       const statusToken = pending ? createStatusToken(data.user.id) : undefined;
       res.status(403).json({
-        error: pending ? "Account pending approval" : "Account not approved",
+        error: pending ? "Account pending approval" : "Account denied",
         code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
         message: pending
           ? "Your account was created and is awaiting approval."
-          : "This account was not approved. Please contact the platform owner.",
+          : "This account was denied. You can create a new account, or leave a message to sahrocky81@gmail.com.",
         ...(statusToken ? { statusToken } : {}),
         ...(pending ? { user: null, accessToken: null } : {}),
       });

@@ -11,9 +11,9 @@ import { getGuestDeviceId, issueGuestDeviceCookie } from "./guestQuota";
  * read or selectively rewrite it, and it survives IP changes. The first
  * account created on a device is bound to it; while that account is still
  * PENDING, a second signup from the same device is refused with
- * DEVICE_SIGNUP_LIMIT_MESSAGE. Once the owner APPROVES (ACTIVE) or REJECTS
- * the bound account, the device returns to normal guest use and may create
- * another account — rejection must not trap the device on a status screen.
+ * DEVICE_SIGNUP_LIMIT_MESSAGE. Once the owner APPROVES (ACTIVE) or DENIES
+ * (REJECTED) the bound account, the device returns to normal guest use and may
+ * create another account — denial must not trap the device on a status screen.
  *
  * Bindings live in guest_chat_usage (migration 004) under a NON-expiring day
  * so the hourly quota cleanup (which trims day < today) never removes them —
@@ -102,8 +102,8 @@ export async function checkDeviceSignupLimit(
       console.warn("[device-signup] status read failed, allowing signup:", error.message);
       return { limited: false, deviceId };
     }
-    // Only a live PENDING bind blocks the device. REJECTED clears the trap so
-    // the device can browse as a guest and sign up again if needed.
+    // Only a live PENDING bind blocks the device. DENIED (REJECTED) clears the
+    // trap so the device can browse as a guest and create a new account.
     const limited = (data ?? []).some((row) => row.access_status === "PENDING");
     return { limited, deviceId };
   } catch (err) {

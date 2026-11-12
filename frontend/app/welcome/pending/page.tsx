@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 /**
  * HARDCODED screen 2 of 4 — WAITING (PENDING).
  * Only devices with a signup token and a non-terminal outcome land here.
- * Live poll may move the device to /welcome/approved or /welcome/rejected.
+ * Live poll may move the device to /welcome/approved or /welcome/denied.
  */
 export default function WelcomePendingPage() {
   return <WelcomeApprovalScreen waiting={<WelcomeStatus />} />;

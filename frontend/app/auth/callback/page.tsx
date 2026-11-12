@@ -10,7 +10,7 @@ import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
 import { tierWelcomePathFor } from "@/lib/access-level";
 import {
-  REJECTED_ROUTE,
+  DENIED_ROUTE,
   WAITING_ROUTE,
   clearPendingSignup,
   rememberAccessOutcome,
@@ -117,7 +117,7 @@ function AuthCallbackContent() {
         if (authError.code === "ACCOUNT_REJECTED") {
           if (authError.statusToken) rememberPendingSignup(authError.statusToken);
           rememberAccessOutcome("REJECTED");
-          router.replace(REJECTED_ROUTE);
+          router.replace(DENIED_ROUTE);
           return;
         }
         setError(callbackError instanceof Error ? callbackError.message : "Sign-in could not be completed.");

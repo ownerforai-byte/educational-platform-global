@@ -12,7 +12,7 @@ import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/access-level";
 import {
-  REJECTED_ROUTE,
+  DENIED_ROUTE,
   WAITING_ROUTE,
   clearPendingSignup,
   rememberAccessOutcome,
@@ -49,7 +49,7 @@ export function LoginForm() {
     } else if (result.code === "ACCOUNT_REJECTED") {
       if (result.statusToken) rememberPendingSignup(result.statusToken);
       rememberAccessOutcome("REJECTED");
-      router.replace(REJECTED_ROUTE);
+      router.replace(DENIED_ROUTE);
     } else {
       setError(result.error);
     }

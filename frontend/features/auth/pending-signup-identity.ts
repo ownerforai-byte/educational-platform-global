@@ -10,7 +10,7 @@
  *   NORMAL   /welcome/no-account  → no live account for this token
  *   WAITING  /welcome/pending     → live access_status PENDING
  *   APPROVED /welcome/approved    → live access_status ACTIVE
- *   REJECTED /welcome/rejected    → live access_status REJECTED
+ *   DENIED   /welcome/denied      → live access_status REJECTED (denied)
  */
 
 /** Existing key — kept so signups saved before this change still resolve. */
@@ -33,13 +33,15 @@ export const ACCESS_OUTCOME_COOKIE = "neb_signup_outcome";
  *   1. NORMAL   — no signup on this device
  *   2. WAITING  — PENDING (created, awaiting owner)
  *   3. APPROVED — ACTIVE (sign in)
- *   4. REJECTED — REJECTED (continue as guest / new signup)
+ *   4. DENIED — access denied (continue as guest / create a new account)
  * `/welcome` itself is only a dispatcher onto one of these four.
  */
 export const NORMAL_ROUTE = "/welcome/no-account";
 export const WAITING_ROUTE = "/welcome/pending";
 export const APPROVED_ROUTE = "/welcome/approved";
-export const REJECTED_ROUTE = "/welcome/rejected";
+export const DENIED_ROUTE = "/welcome/denied";
+/** @deprecated Use DENIED_ROUTE — kept for older imports/tests. */
+export const REJECTED_ROUTE = DENIED_ROUTE;
 /** Dispatcher — never a fifth content screen; always redirects. */
 export const APPROVAL_DISPATCH_ROUTE = "/welcome";
 
@@ -249,7 +251,7 @@ export function hasPendingSignup(): boolean {
 export function deviceApprovalRoute(): string {
   if (!readStatusToken()) return NORMAL_ROUTE;
   const outcome = readAccessOutcome();
-  if (outcome === "REJECTED") return REJECTED_ROUTE;
+  if (outcome === "REJECTED") return DENIED_ROUTE;
   if (outcome === "ACTIVE") return APPROVED_ROUTE;
   return WAITING_ROUTE;
 }

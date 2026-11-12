@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
   APPROVED_ROUTE,
-  REJECTED_ROUTE,
+  DENIED_ROUTE,
   WAITING_ROUTE,
 } from "../pending-signup-identity";
 import { useLiveApprovalRoute } from "../use-live-approval-route";
@@ -15,7 +15,7 @@ type Mode = "login" | "signup";
 /**
  * Created accounts never sit on login/signup while still PENDING.
  *   PENDING  → /welcome/pending
- *   REJECTED → /welcome/rejected
+ *   DENIED   → login opens denied screen; signup stays (new account after denial)
  *   ACTIVE   → login stays (sign in); signup goes to /welcome/approved
  *   none     → stay on the form
  */
@@ -35,8 +35,8 @@ export function CreatedAccountGate({
       router.replace(WAITING_ROUTE);
       return;
     }
-    if (live === REJECTED_ROUTE) {
-      router.replace(REJECTED_ROUTE);
+    if (mode === "login" && live === DENIED_ROUTE) {
+      router.replace(DENIED_ROUTE);
       return;
     }
     if (mode === "signup" && live === APPROVED_ROUTE) {
@@ -52,10 +52,18 @@ export function CreatedAccountGate({
     );
   }
 
-  if (live === WAITING_ROUTE || live === REJECTED_ROUTE) {
+  if (live === WAITING_ROUTE) {
     return (
       <div className="flex justify-center py-6">
         <VerifyingStatus compact label="Opening your account status" />
+      </div>
+    );
+  }
+
+  if (mode === "login" && live === DENIED_ROUTE) {
+    return (
+      <div className="flex justify-center py-6">
+        <VerifyingStatus compact label="Opening denied screen" />
       </div>
     );
   }

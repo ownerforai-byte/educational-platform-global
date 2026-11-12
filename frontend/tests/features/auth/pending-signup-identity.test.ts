@@ -6,6 +6,7 @@ import {
   NO_ACCOUNT_ROUTE,
   PENDING_SIGNUP_COOKIE,
   PENDING_SIGNUP_ID,
+  DENIED_ROUTE,
   REJECTED_ROUTE,
   STATUS_TOKEN_KEY,
   WAITING_APPROVAL_ROUTE,
@@ -33,7 +34,8 @@ describe("signup status-token storage + sync route hint", () => {
     expect(NORMAL_ROUTE).toBe("/welcome/no-account");
     expect(WAITING_ROUTE).toBe("/welcome/pending");
     expect(APPROVED_ROUTE).toBe("/welcome/approved");
-    expect(REJECTED_ROUTE).toBe("/welcome/rejected");
+    expect(DENIED_ROUTE).toBe("/welcome/denied");
+    expect(REJECTED_ROUTE).toBe(DENIED_ROUTE);
     expect(NO_ACCOUNT_ROUTE).toBe(NORMAL_ROUTE);
     expect(WAITING_APPROVAL_ROUTE).toBe(WAITING_ROUTE);
   });
@@ -59,10 +61,10 @@ describe("signup status-token storage + sync route hint", () => {
     expect(deviceApprovalRoute()).toBe(APPROVED_ROUTE);
   });
 
-  it("REJECTED hint — REJECTED outcome with token", () => {
-    rememberPendingSignup("rejected-token");
+  it("DENIED hint — REJECTED outcome with token opens denied route", () => {
+    rememberPendingSignup("denied-token");
     rememberAccessOutcome("REJECTED");
-    expect(deviceApprovalRoute()).toBe(REJECTED_ROUTE);
+    expect(deviceApprovalRoute()).toBe(DENIED_ROUTE);
   });
 
   it("survives cleared localStorage via cookie mirrors", () => {

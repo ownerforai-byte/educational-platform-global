@@ -69,7 +69,7 @@ const tierBadge: Record<AccessLevel, string> = {
 const accessBadge: Record<string, { label: string; className: string }> = {
   ACTIVE: { label: "ACCESS GRANTED", className: "bg-emerald-500/15 text-emerald-600 border-emerald-500/30" },
   PENDING: { label: "PENDING APPROVAL", className: "bg-amber-500/15 text-amber-600 border-amber-500/30" },
-  REJECTED: { label: "ACCESS REVOKED", className: "bg-red-500/15 text-red-600 border-red-500/30" },
+  REJECTED: { label: "DENIED", className: "bg-red-500/15 text-red-600 border-red-500/30" },
 };
 
 function StatChip({
@@ -436,7 +436,7 @@ export default function OwnerUsersPage() {
           active={system === "approved"}
           onClick={() => switchSystem("approved")}
         />
-        <StatChip label="Revoked" value={stats.rejected} accent="text-red-600" />
+        <StatChip label="Denied" value={stats.rejected} accent="text-red-600" />
         <StatChip label="Showing" value={systemUsers.length} />
       </div>
 
@@ -755,7 +755,7 @@ export default function OwnerUsersPage() {
                             className="text-red-600 hover:text-red-700 hover:bg-red-500/10 border-red-500/30"
                           >
                             <XCircle className="h-3.5 w-3.5 mr-1" />
-                            Reject
+                            Deny
                           </Button>
                         </>
                       ) : u.access_status === "REJECTED" ? (

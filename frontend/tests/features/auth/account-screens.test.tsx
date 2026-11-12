@@ -34,7 +34,7 @@ vi.mock("@/lib/api-client", () => ({
 import {
   ApprovedScreen,
   NoAccountScreen,
-  RejectedScreen,
+  DeniedScreen,
   WelcomeApprovalScreen,
 } from "@/features/auth/components/account-screen-gate";
 
@@ -85,12 +85,12 @@ describe("live approval screens", () => {
     expect(nav.replace).not.toHaveBeenCalled();
   });
 
-  it("REJECTED — live REJECTED opens the rejected screen", async () => {
+  it("DENIED — live REJECTED opens the denied screen", async () => {
     rememberPendingSignup("tok");
     apiFetch.mockResolvedValue({ accessStatus: "REJECTED" });
-    render(<RejectedScreen />);
+    render(<DeniedScreen />);
     await waitFor(() => {
-      expect(screen.getByTestId("rejected-account-card")).toBeInTheDocument();
+      expect(screen.getByTestId("denied-account-card")).toBeInTheDocument();
     });
     expect(nav.replace).not.toHaveBeenCalled();
   });
@@ -123,7 +123,8 @@ describe("account-screen wiring", () => {
     expect(read("app/welcome/no-account/page.tsx")).toContain("NoAccountScreen");
     expect(read("app/welcome/pending/page.tsx")).toContain("WelcomeApprovalScreen");
     expect(read("app/welcome/approved/page.tsx")).toContain("ApprovedScreen");
-    expect(read("app/welcome/rejected/page.tsx")).toContain("RejectedScreen");
+    expect(read("app/welcome/denied/page.tsx")).toContain("DeniedScreen");
+    expect(read("app/welcome/rejected/page.tsx")).toContain("DENIED_ROUTE");
   });
 
   it("gates and access link use live resolution", () => {

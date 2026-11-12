@@ -21,7 +21,7 @@ import { VerifyingStatus } from "./verifying-status";
 import {
   APPROVED_ROUTE,
   NORMAL_ROUTE,
-  REJECTED_ROUTE,
+  DENIED_ROUTE,
   clearPendingSignup,
   readStatusToken,
   rememberAccessOutcome,
@@ -33,7 +33,7 @@ import {
  *
  *   PENDING  → stay here (awaiting approval)
  *   ACTIVE   → remember outcome + open /welcome/approved
- *   REJECTED → remember outcome + open /welcome/rejected
+ *   REJECTED → remember outcome + open /welcome/denied
  */
 
 const POLL_MS = 6000;
@@ -148,7 +148,7 @@ export function WelcomeStatus() {
       return;
     }
     if (state === "REJECTED") {
-      window.location.replace(REJECTED_ROUTE);
+      window.location.replace(DENIED_ROUTE);
       return;
     }
     if (state === "missing" || state === "expired") {
@@ -170,7 +170,7 @@ export function WelcomeStatus() {
       state === "ACTIVE"
         ? "Opening approved screen"
         : state === "REJECTED"
-          ? "Opening rejected screen"
+          ? "Opening denied screen"
           : "Opening no-account screen";
     return (
       <div className="flex justify-center py-6" data-testid="account-status-handoff">

@@ -2,7 +2,7 @@ import { describe, it, expect, beforeEach, vi } from "vitest";
 import {
   APPROVED_ROUTE,
   NORMAL_ROUTE,
-  REJECTED_ROUTE,
+  DENIED_ROUTE,
   WAITING_ROUTE,
   clearPendingSignup,
   hasPendingSignup,
@@ -30,7 +30,7 @@ describe("resolveLiveApprovalRoute", () => {
   it("maps live statuses to the four screens", () => {
     expect(routeForLiveAccess("PENDING")).toBe(WAITING_ROUTE);
     expect(routeForLiveAccess("ACTIVE")).toBe(APPROVED_ROUTE);
-    expect(routeForLiveAccess("REJECTED")).toBe(REJECTED_ROUTE);
+    expect(routeForLiveAccess("REJECTED")).toBe(DENIED_ROUTE);
   });
 
   it("NORMAL when there is no token — clears stale outcomes", async () => {
@@ -52,10 +52,10 @@ describe("resolveLiveApprovalRoute", () => {
     await expect(resolveLiveApprovalRoute()).resolves.toBe(APPROVED_ROUTE);
   });
 
-  it("REJECTED when live status is REJECTED", async () => {
+  it("DENIED when live status is REJECTED", async () => {
     rememberPendingSignup("tok");
     apiFetch.mockResolvedValue({ accessStatus: "REJECTED" });
-    await expect(resolveLiveApprovalRoute()).resolves.toBe(REJECTED_ROUTE);
+    await expect(resolveLiveApprovalRoute()).resolves.toBe(DENIED_ROUTE);
   });
 
   it("clears identity and returns NORMAL when the account is gone", async () => {
