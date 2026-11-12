@@ -243,34 +243,6 @@ export function WelcomeStatus() {
         <VerifyingStatus compact label="Checking your account status" />
       )}
 
-      {state === "missing" && (
-        <StateCard
-          icon={<Clock3 className="h-5 w-5 text-muted-foreground" />}
-          title="No pending signup found"
-          body="This screen tracks a freshly created account. Create an account to get a status here, or sign in if you already have one."
-          actions={
-            <>
-              <AuthButton href="/signup" label="Create account" primary />
-              <AuthButton href="/login" label="Sign in" />
-            </>
-          }
-        />
-      )}
-
-      {state === "expired" && (
-        <StateCard
-          icon={<ShieldAlert className="h-5 w-5 text-amber-500" />}
-          title="This status link is no longer valid"
-          body="Status links expire after 7 days. Sign in if your account was approved, or create a fresh account."
-          actions={
-            <>
-              <AuthButton href="/login" label="Sign in" primary />
-              <AuthButton href="/signup" label="Create account" />
-            </>
-          }
-        />
-      )}
-
       {state === "error" && (
         <StateCard
           icon={<RefreshCw className="h-5 w-5 text-amber-500" />}
