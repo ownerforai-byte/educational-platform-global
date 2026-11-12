@@ -18,6 +18,19 @@
  */
 import { execSync, spawnSync } from "node:child_process";
 
+// Vitest 4.1.x on Windows keys Node's ESM registry by URL string. `cd /d c:\…`
+// (lowercase drive) loads vitest as file:///c:/… while Vite externalizes
+// file:///C:/… — two @vitest/runner singletons, so describe() crashes with
+// "Cannot read properties of undefined (reading 'config')". Uppercase the
+// drive before any vitest child runs. See vitest#10692 / vitest#10843.
+if (process.platform === "win32") {
+  const cwd = process.cwd();
+  const m = /^([a-z]):\\/.exec(cwd);
+  if (m) {
+    process.chdir(`${m[1].toUpperCase()}:${cwd.slice(2)}`);
+  }
+}
+
 const ALL = process.argv.includes("--all");
 
 function git(...args) {
