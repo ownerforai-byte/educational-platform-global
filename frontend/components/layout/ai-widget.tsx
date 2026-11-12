@@ -48,6 +48,12 @@ import {
 } from "@/lib/api/ai";
 import { useVoiceInput } from "@/lib/hooks/use-voice-input";
 import { AiStatusDot } from "@/components/ai/ai-status-dot";
+import { VeerChip, VeerSection } from "@/components/ai/veer-chip";
+import {
+  VEER_LENS_CHIPS,
+  VEER_SUGGESTION_CHIPS,
+  topicChipsForSubject,
+} from "@/features/ai/lib/veer-home";
 import { VOICE_AUTO_SEND_MS } from "@/lib/chat/silence-trigger";
 import { SYLLABUS } from "@/lib/syllabus";
 import type {
@@ -85,12 +91,14 @@ const MODES: Array<{ id: Mode; label: string; icon: LucideIcon }> = [
   { id: "practice", label: "Practice", icon: Target },
 ];
 
-const LESSON_STARTERS = [
-  "Teach me the derivation of Bernoulli's equation with the physical meaning of every term.",
-  "Explain aldol condensation as a mechanism, then give me a board-exam trap to watch for.",
-  "Build my intuition for wave-particle duality using one experiment and one numerical example.",
-  "Compare leading and lagging strand synthesis, then test my understanding with two questions.",
-];
+const LENS_PROMPTS: Record<(typeof VEER_LENS_CHIPS)[number]["id"], string> = {
+  knowledge:
+    "Teach the core knowledge for my selected class and subject in a beginner-friendly way: clear facts, key terms, and one check question.",
+  ideas:
+    "Share intuition and ideas for my selected class and subject — connections, mental models, and concrete examples a beginner can use.",
+  derivations:
+    "Walk through the most useful derivation for my selected class and subject step by step, with the meaning of every line.",
+};
 
 const FORMATS: Array<{ id: QuizFormat; label: string }> = [
   { id: "mcq", label: "Multiple choice" },
@@ -619,7 +627,7 @@ export function AIWidget() {
     setLoadingThread(true);
     setError(null);
     try {
-      const { messages } = await getChatHistory(name, 50);
+      const { messages } = await getChatHistory(name, 200);
       setLines(messages.map((message: ChatHistoryMessage) => ({ role: message.role, content: message.content })));
     } catch {
       setLines([]);
@@ -645,7 +653,7 @@ export function AIWidget() {
     const history: AIChatMessage[] = [
       {
         role: "system",
-        content: `You are teaching inside the Veer Professor workspace. The learner selected Class ${classLevel} ${subjectSlug}. Teach as a rigorous, approachable professor: build the concept, show reasoning or working, connect it to the syllabus, and finish with a useful checkpoint when appropriate. Do not redirect the learner to another interface.`,
+        content: `You are teaching inside the Veer Professor workspace with the FULL conversation history as context — do not truncate ideas or skip earlier threads. The learner selected Class ${classLevel} ${subjectSlug}. Teach as a rigorous but beginner-friendly professor: clear language, full of concrete ideas and examples, build the concept, show reasoning or working, connect it to the syllabus, and finish with a useful checkpoint when appropriate. When asked for plans, summaries, habits, weak points, or key terms, ground the answer in this chat history subject by subject. Do not redirect the learner to another interface.`,
       },
       ...lines.map((line) => ({ role: line.role, content: line.content })),
       { role: "user", content: text },
@@ -836,49 +844,85 @@ export function AIWidget() {
             <div className="flex min-h-0 flex-1 flex-col">
               <div ref={scrollerRef} className="min-h-0 flex-1 overflow-y-auto bg-muted/20">
                 {view === "home" ? (
-                  <div className="mx-auto w-full max-w-4xl space-y-5 p-4 sm:p-6">
-                    <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-to-br from-primary/10 via-card to-violet-500/5 p-5 sm:p-6">
-                      <GraduationCap className="absolute -bottom-5 -right-3 h-32 w-32 text-primary/5" />
-                      <div className="relative">
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-[10px] font-black uppercase tracking-[0.15em] text-primary"><Sparkles className="h-3 w-3" /> Your personal professor</span>
-                        <h2 className="mt-3 text-xl font-black tracking-tight sm:text-2xl">What should we master today?</h2>
-                        <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">Ask for a full lesson, a difficult derivation, a comparison, or a follow-up. Veer keeps the thread and teaches at your selected class level.</p>
-                      </div>
+                  <div className="mx-auto w-full max-w-3xl space-y-4 p-3 sm:p-4">
+                    <div className="flex items-center gap-2">
+                      <AiStatusDot className="h-2.5 w-2.5" />
+                      <h2 className="text-[13px] font-extrabold tracking-[0.08em]">VEER AI</h2>
+                      <span className="text-[10px] text-muted-foreground">Class {classLevel} · {subjectSlug}</span>
                     </div>
                     {lines.length > 0 && (
-                      <button type="button" onClick={() => setView("thread")} className="flex w-full items-center justify-between rounded-2xl border border-primary/25 bg-primary/5 px-4 py-3 text-left text-sm font-bold text-primary transition hover:bg-primary/10">
-                        Resume current lesson <span aria-hidden="true">→</span>
-                      </button>
+                      <VeerChip label="Resume current lesson" onClick={() => setView("thread")} />
                     )}
-                    <div className="grid gap-2 sm:grid-cols-2">
-                      {LESSON_STARTERS.map((starter) => (
-                        <button key={starter} type="button" onClick={() => void send(starter)} disabled={sending} className="rounded-2xl border-2 border-border/80 bg-card p-4 text-left text-sm font-medium leading-relaxed transition hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-md disabled:opacity-50">{starter}</button>
+                    <VeerSection title="Focus">
+                      {VEER_LENS_CHIPS.map((lens) => (
+                        <VeerChip
+                          key={lens.id}
+                          label={lens.label}
+                          title={lens.hint}
+                          onClick={() => void send(LENS_PROMPTS[lens.id])}
+                        />
                       ))}
-                    </div>
-                    <div className="rounded-3xl border-2 border-border/80 bg-card p-4 sm:p-5">
-                      <div className="mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-[0.15em] text-muted-foreground"><History className="h-4 w-4" /> Saved lessons</div>
+                    </VeerSection>
+                    <VeerSection title="Suggestions">
+                      {VEER_SUGGESTION_CHIPS.map((chip) => (
+                        <VeerChip
+                          key={chip.id}
+                          label={chip.label}
+                          title={chip.prompt}
+                          onClick={() => void send(chip.prompt)}
+                        />
+                      ))}
+                    </VeerSection>
+                    <VeerSection title={`${subjectSlug} topics`}>
+                      {topicChipsForSubject(subjectSlug, 10).map((chip) => (
+                        <VeerChip
+                          key={chip.id}
+                          label={chip.label}
+                          title={chip.prompt}
+                          onClick={() => void send(chip.prompt)}
+                        />
+                      ))}
+                    </VeerSection>
+                    <VeerSection title="Saved lessons">
                       {sessions.length === 0 ? (
-                        <p className="text-sm text-muted-foreground">Your professor lessons will appear here after your first conversation.</p>
+                        <span className="text-[11px] text-muted-foreground">Your professor lessons appear here after the first chat.</span>
                       ) : (
-                        <div className="grid gap-2 sm:grid-cols-2">
-                          {sessions.slice(0, 6).map((item) => (
-                            <button key={item.session} type="button" onClick={() => void openConversation(item.session)} className="min-w-0 rounded-2xl border-2 border-border/80 bg-background px-4 py-3 text-left transition hover:border-primary/35">
-                              <span className="block truncate text-sm font-semibold">{item.preview || "Professor lesson"}</span>
-                              <span className="mt-1 block text-[11px] text-muted-foreground">{item.messages} messages</span>
-                            </button>
-                          ))}
-                        </div>
+                        sessions.slice(0, 8).map((item) => (
+                          <VeerChip
+                            key={item.session}
+                            label={item.preview || "Professor lesson"}
+                            title={`${item.messages} messages`}
+                            onClick={() => void openConversation(item.session)}
+                          />
+                        ))
                       )}
-                    </div>
+                    </VeerSection>
                   </div>
                 ) : (
                   <div className="mx-auto w-full max-w-4xl space-y-5 p-4 sm:p-6">
                     {loadingThread && <p className="flex items-center gap-2 text-sm font-semibold text-muted-foreground"><Loader2 className="h-4 w-4 animate-spin" /> Loading saved lesson…</p>}
                     {!loadingThread && lines.length === 0 && (
-                      <div className="rounded-3xl border border-dashed border-primary/30 bg-primary/5 px-5 py-8 text-center">
-                        <GraduationCap className="mx-auto h-8 w-8 text-primary" />
-                        <p className="mt-3 font-bold">Your lesson desk is ready</p>
-                        <p className="mx-auto mt-1 max-w-md text-sm leading-relaxed text-muted-foreground">Ask a precise question or request a complete lesson. Follow-ups stay in this saved thread.</p>
+                      <div className="space-y-4">
+                        <VeerSection title="Suggestions">
+                          {VEER_SUGGESTION_CHIPS.map((chip) => (
+                            <VeerChip
+                              key={chip.id}
+                              label={chip.label}
+                              title={chip.prompt}
+                              onClick={() => void send(chip.prompt)}
+                            />
+                          ))}
+                        </VeerSection>
+                        <VeerSection title={`${subjectSlug} topics`}>
+                          {topicChipsForSubject(subjectSlug, 8).map((chip) => (
+                            <VeerChip
+                              key={chip.id}
+                              label={chip.label}
+                              title={chip.prompt}
+                              onClick={() => void send(chip.prompt)}
+                            />
+                          ))}
+                        </VeerSection>
                       </div>
                     )}
                     {lines.map((line, index) => line.role === "user" ? (

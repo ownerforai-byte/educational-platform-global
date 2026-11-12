@@ -229,7 +229,7 @@ export async function deepConceptResearchWithSources(question: string): Promise<
   const curriculum = buildCurriculumContext(question);
   const context = [
     curriculum,
-    "Verified platform navigation paths: [Class 11 notes](/class-11-notes), [Class 12 notes](/class-12-notes), [Subjects](/subjects), [Previous year questions](/pyqs). Link only those relevant to the question.",
+    "Verified platform navigation: prefer direct topic/chapter paths from curriculum citations (e.g. /class-11-notes/{subject}/chapters/{unit}/topics/{topicSlug}). Use subject hubs /class-11-notes/{subject} or /class-12-notes/{subject} only when no topic path is known. Also valid: [Subjects](/subjects), [Previous year questions](/pyqs). Never link only to /class-11 or /class-12 portion hubs when a deeper path exists. Link only paths relevant to the question.",
     general || "No general web sources were available for verification.",
     pyqs || "No past-paper search results were available for verification.",
     formatSearchContext(papers) || "No research-paper search results were available for verification.",

@@ -45,6 +45,8 @@ function slug(value: string | undefined): string | null {
 /**
  * Route for a citation, or undefined when nothing routable can be proven.
  *
+ * Prefer the deepest direct topic URL when unit + topicSlug are safe slugs —
+ * never stop at a class/subject "portion" hub when a topic page can be proven.
  * Drop-in `backend/kb` records are excluded: their unit is a KB folder name,
  * not a syllabus unit id, so the chapter page's `dynamicParams = false` would
  * 404. Anything else with a safe class + subject gets at least the subject hub.
@@ -53,6 +55,7 @@ function citationHref(entry: {
   classLevel?: string;
   subject?: string;
   unit?: string;
+  topicSlug?: string;
   dropIn?: boolean;
 }): string | undefined {
   if (entry.dropIn) return undefined;
@@ -66,9 +69,14 @@ function citationHref(entry: {
   const subject = slug(entry.subject);
   if (!subject) return undefined;
   const unit = slug(entry.unit);
-  return unit
-    ? `/${track}/${subject}/chapters/${unit}`
-    : `/${track}/${subject}`;
+  const topic = slug(entry.topicSlug);
+  if (unit && topic) {
+    return `/${track}/${subject}/chapters/${unit}/topics/${topic}`;
+  }
+  if (unit) {
+    return `/${track}/${subject}/chapters/${unit}`;
+  }
+  return `/${track}/${subject}`;
 }
 
 function kindOf(source: string): CitationKind {

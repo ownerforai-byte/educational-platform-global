@@ -57,30 +57,14 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
     try { localStorage.setItem("sidebar-collapsed", String(sidebarCollapsed)); } catch { /* Optional preference. */ }
   }, [sidebarCollapsed, preferencesLoaded]);
 
-  // Chat uses a full-screen layout; its own header provides the back control.
-  if (isChatRoom) {
-    return (
-      <div className="flex h-[100dvh] w-full flex-col overflow-hidden bg-background">
-        <main id="main-content" tabIndex={-1} className="flex-1 min-h-0 focus:outline-none">
-          <Suspense
-            fallback={
-              <div className="flex h-full w-full items-center justify-center">
-                <div className="flex flex-col items-center gap-2">
-                  <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-                  <span className="text-xs text-muted-foreground animate-pulse">Loading study assistant...</span>
-                </div>
-              </div>
-            }
-          >
-            <div className="h-full w-full">{children}</div>
-          </Suspense>
-        </main>
-      </div>
-    );
-  }
-
   return (
-    <div className="flex min-h-screen flex-col bg-background pb-tabbar md:pb-0">
+    <div
+      className={
+        isChatRoom
+          ? "flex h-[100dvh] max-h-[100dvh] flex-col overflow-hidden bg-background"
+          : "flex min-h-screen flex-col bg-background pb-tabbar md:pb-0"
+      }
+    >
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-background focus:px-4 focus:py-3 focus:text-primary focus:shadow-lg">Skip to content</a>
       <header
         className="pt-safe-top sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70 translate-y-0"
@@ -156,7 +140,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
       </header>
 
       {/* ── Body: sidebar + main ───────────────────────────────────── */}
-      <div className="flex flex-1 relative">
+      <div className={`relative flex flex-1 ${isChatRoom ? "min-h-0 overflow-hidden" : ""}`}>
         {/* Persistent navigation: full sidebar on desktop, icon rail on tablet.
             One instance, one nav landmark — the compact rail is the same
             SidebarNavigation, so both widths show every destination. */}
@@ -174,12 +158,17 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           <SidebarNavigation collapsed={navCollapsed} />
         </aside>
 
+        {/* Chat: tiny gap under app header, flush bottom — Veer owns scrolling */}
         <main
           id="main-content"
           tabIndex={-1}
-          className="flex-1 min-w-0 px-4 py-5 pb-tabbar sm:py-6 sm:pb-tabbar md:px-6 md:pb-8 lg:px-8 focus:outline-none"
+          className={
+            isChatRoom
+              ? "flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden px-1 pt-1 pb-0 focus:outline-none md:px-1.5"
+              : "min-w-0 flex-1 px-4 py-5 pb-tabbar focus:outline-none sm:py-6 sm:pb-tabbar md:px-6 md:pb-8 lg:px-8"
+          }
         >
-          {breadcrumbs && breadcrumbs.length > 0 && (
+          {!isChatRoom && breadcrumbs && breadcrumbs.length > 0 && (
             <nav aria-label="Breadcrumbs" className="mb-4 flex flex-wrap text-sm text-muted-foreground">
               {breadcrumbs.map((crumb, i) => (
                 <span key={crumb.href ?? `${crumb.label}-${i}`}>
@@ -205,7 +194,11 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               </div>
             }
           >
-            <div className="animate-fade-in">{children}</div>
+            {isChatRoom ? (
+              <div className="flex min-h-0 flex-1 flex-col overflow-hidden">{children}</div>
+            ) : (
+              <div className="animate-fade-in">{children}</div>
+            )}
           </Suspense>
         </main>
       </div>
@@ -214,13 +207,13 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           now (owner 2026-11-09: "keep the footer to limited place … not at all
           place, like all footer to 'info' page"). */}
 
-      {/* Phone app frame: thumb tabs, replaced by the rail/sidebar from md up. */}
-      <BottomTabBar />
+      {/* Phone app frame: hide on chat so Veer sits flush to the bottom */}
+      {!isChatRoom && <BottomTabBar />}
 
-      {/* Back navigation */}
-      <BackButton />
+      {/* Back navigation — chat has its own header controls */}
+      {!isChatRoom && <BackButton />}
 
-      <PlatformGuideWidget />
+      {!isChatRoom && <PlatformGuideWidget />}
       <AIWidget />
     </div>
   );

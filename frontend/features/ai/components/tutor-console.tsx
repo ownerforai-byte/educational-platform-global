@@ -21,7 +21,6 @@
 
 import React, { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { reportClientError } from "@/lib/errors/app-error";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   Send,
@@ -44,7 +43,6 @@ import {
   Languages,
   BookOpen,
   ArrowDown,
-  ArrowRight,
   ChevronDown,
 } from "lucide-react";
 import {
@@ -64,6 +62,12 @@ import {
   MAX_ATTACHMENTS,
 } from "@/components/ai/chat-attachments";
 import { AiStatusDot } from "@/components/ai/ai-status-dot";
+import { VeerChip, VeerSection } from "@/components/ai/veer-chip";
+import {
+  VEER_LENS_CHIPS,
+  VEER_SUGGESTION_CHIPS,
+  topicChipsForSubject,
+} from "@/features/ai/lib/veer-home";
 import { VoiceMicButton } from "@/components/ai/voice-mic-button";
 import { useVoiceInput } from "@/lib/hooks/use-voice-input";
 import { VOICE_AUTO_SEND_MS } from "@/lib/chat/silence-trigger";
@@ -85,7 +89,7 @@ import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { AiSparkBadge, recordAiSparkUse, refreshAiSparkMeters } from "@/components/ai/ai-spark-badge";
 import { isOwnerAccount, isOwnerEmail } from "@/lib/owner";
-import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
+import { CaptainAvatar } from "@/components/ai/captain-logo";
 import { IDENTITY_REPLY } from "@/components/ai/ai-chat-interface";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { AiReplyCard } from "@/components/ai/ai-reply-card";
@@ -527,7 +531,12 @@ function systemMessageFor(mode: TutorMode): AIChatMessage {
         : mode === "Grammar"
           ? "\n\nCONSOLE (GRAMMAR): this console teaches the English language itself — grammar, language development, writing skill and idea generation — origin-first and with citations from attached sources; no other subject."
           : `\n\nSUBJECT FOCUS (${mode.toUpperCase()}): frame every reply through ${mode} first — ${mode} syllabus terms, notation, classic NEB ${mode} questions and the usual exam traps in this topic. Touch other subjects only when the question truly demands it.`;
-  return { role: "system", content: `${PLATFORM_SYSTEM_PROMPT}${focus}` };
+  return {
+    role: "system",
+    content: `${PLATFORM_SYSTEM_PROMPT}${focus}
+
+STYLE: beginner-friendly, full of concrete ideas and examples, never vague. Use the FULL chat history as context — summarise, plan, habits, weak points, and key terms from what the learner already asked, subject by subject when relevant. Do not truncate useful reasoning.`,
+  };
 }
 
 // ── Console ─────────────────────────────────────────────────────────────────
@@ -552,7 +561,6 @@ export function TutorConsole({
   const { user, isLoading } = useSession();
   const router = useRouter();
   const isLoggedIn = !!user;
-  const isProUser = !isLoading && !!user && ((user as { plan?: string }).plan === "plus" || (user as { plan?: string }).plan === "pro" || isOwnerEmail(user.email));
   const [messages, setMessages] = useState<AIChatMessage[]>([]);
   const [input, setInput] = useState(initialQuestion ?? "");
   const [sending, setSending] = useState(false);
@@ -1131,78 +1139,27 @@ export function TutorConsole({
   })();
 
   if (isLoading) return null;
-  if (!isProUser) {
-    return (
-      <div className="flex h-full w-full flex-col items-center justify-center bg-card p-6 text-center">
-        <AlertCircle className="mb-3 h-10 w-10 text-amber-500" />
-        <h3 className="mb-1 text-lg font-bold">Pro &amp; Plus only</h3>
-        <p className="mb-4 text-[13px] text-muted-foreground max-w-xs mx-auto">
-          The AI chat widget is a Pro/Plus feature. Upgrade your plan to keep using Veer.
-        </p>
-        <Link href="/login" className="inline-flex items-center gap-1.5 rounded-lg border border-primary bg-primary text-primary-foreground px-4 py-2 text-[13px] font-semibold hover:bg-primary/90 transition-colors">
-          Upgrade plan <ArrowRight className="h-3.5 w-3.5" />
-        </Link>
-      </div>
-    );
-  }
+
+  const activeSubjectSlug = MODES.find((m) => m.id === mode)?.subjectSlug;
+  const topicChips = topicChipsForSubject(activeSubjectSlug);
+  const lensStarters = starters.filter((prompt) => tabForStarter(prompt.text) === homeTab);
 
   return (
-    <div className="flex h-full min-h-0 flex-col overflow-hidden bg-card">
-      {/* ── Header: identity + the green light (kept exactly) + actions ── */}
+    <div className="flex h-full min-h-0 flex-col overflow-hidden rounded-md border border-border/50 bg-card">
+      {/* ── Header: logo · glow dot · VEER AI · More ── */}
       <div className="shrink-0 border-b border-border/60 bg-gradient-to-r from-emerald-500/5 via-transparent to-primary/5">
-        <div className="flex items-center justify-between gap-2 px-3 pt-2.5 pb-2 sm:px-6">
-          {/* Left front — back + the logo (owner 2026-11-09: "logo in left front") */}
-          <div className="flex min-w-0 shrink-0 items-center gap-2">
-            {/* Back — this room is the one app route that skips the shell (and
-                so the shell's floating back button), leaving it a dead end.
-                Inline variant = sits in the header instead of over the
-                composer. Owner request 2026-10-11. */}
+        <div className="flex items-center justify-between gap-2 px-3 pt-2 pb-2 sm:px-4">
+          <div className="flex min-w-0 items-center gap-2">
             <BackButton variant="inline" label="" className="shrink-0 px-2 py-1.5" />
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-violet-500 text-white shadow-md shadow-primary/30">
-              <CaptainAvatar className="h-5 w-5" />
+            <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-emerald-500 to-primary text-white shadow-md shadow-emerald-500/25">
+              <CaptainAvatar className="h-4 w-4" />
             </div>
-            <div className="hidden min-w-0 sm:block">
-              <div className="flex items-center gap-2">
-                <h2 className="truncate bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-[13px] font-extrabold text-transparent animate-gradient-text">
-                  Veer
-                </h2>
-                {/* live dot: reflects real AI availability (shared component) */}
-                <AiStatusDot />
-              </div>
-              <p className="truncate text-[11px] text-muted-foreground">
-                {mode === "General"
-                  ? "Grounded in the NEB Class 11 & 12 syllabus · ask me anything"
-                  : `${mode} mode · syllabus-grounded answers, one concept at a time`}
-              </p>
-            </div>
+            <AiStatusDot className="h-2.5 w-2.5" />
+            <h2 className="truncate text-[13px] font-extrabold tracking-[0.08em] text-foreground">
+              VEER AI
+            </h2>
           </div>
 
-          {/* Middle — Knowledge / Ideas / Derivations switching (owner 2026-11-09:
-              "in middle some switching like knowledge, ideas, derivations") */}
-          <div className="flex min-w-0 flex-1 items-center justify-center gap-1">
-            {HOME_TABS.map((tab, index) => {
-              const active = homeTab === tab;
-              return (
-                <button
-                  key={tab}
-                  onClick={() => setHomeTab(tab)}
-                  aria-pressed={active}
-                  className={cn(
-                    "inline-flex items-baseline gap-1 rounded-full border px-2 py-0.5 text-[10px] font-semibold text-foreground transition-colors",
-                    active
-                      ? "border-primary/45 bg-primary/[0.10]"
-                      : "border-primary/25 bg-primary/[0.06] hover:border-primary/45",
-                  )}
-                >
-                  <span className="text-[8px] font-bold text-primary">{index + 1}</span>
-                  <span>{tab}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Right — everything else folded into "More" (owner 2026-11-09:
-              "and more in right") */}
           <div className="relative shrink-0">
             <button
               onClick={() => setMoreOpen((v) => !v)}
@@ -1313,87 +1270,73 @@ export function TutorConsole({
       )}
 
       {/* ── Stream ───────────────────────────────────────────────────── */}
-      <div ref={streamRef} onScroll={handleStreamScroll} className="mx-auto min-h-0 w-full max-w-3xl flex-1 overflow-y-auto overscroll-contain scroll-smooth px-3 sm:px-4 py-4 space-y-5">
+      <div ref={streamRef} onScroll={handleStreamScroll} className="mx-auto min-h-0 w-full max-w-3xl flex-1 overflow-y-auto overscroll-contain scroll-smooth px-3 sm:px-4 py-3 space-y-5">
         {!hasConversation && !sending ? (
-          <div className="min-h-full flex flex-col justify-center max-w-3xl mx-auto space-y-7 py-8">
-            <div className="text-center space-y-2">
-              <div className="relative h-14 w-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-primary shadow-lg shadow-emerald-500/25 text-white mx-auto flex items-center justify-center">
-                <CaptainMark className="h-7 w-7" />
-              </div>
-              <h3 className="text-xl font-extrabold bg-gradient-to-r from-foreground via-emerald-600 to-primary bg-clip-text text-transparent animate-gradient-text">
-                {mode === "General"
-                  ? "What are we learning today?"
-                  : `${mode} mode — pick a starter or ask anything`}
-              </h3>
-              <p className="text-[13px] text-muted-foreground max-w-lg mx-auto leading-relaxed">
-                Derivations, mechanisms, wild &quot;why&quot; questions, misconceptions,
-                past NEB questions — broken down step by step.
-              </p>
-            </div>
+          <div className="mx-auto flex w-full max-w-3xl flex-col justify-start gap-5 pb-4 pt-1">
+            {/* 1 — Subjects */}
+            <VeerSection title="Subjects">
+              {MODES.map((m) => (
+                <VeerChip
+                  key={m.id}
+                  label={m.id}
+                  active={mode === m.id}
+                  onClick={() => chooseMode(m.id)}
+                />
+              ))}
+            </VeerSection>
 
-            {/* Subject-mode picker — the reply card's Key terms chips with the
-                words replaced by the subjects (owner 2026-11-09: "make the
-                rectangular boxes (of veer chat) like key terms of veer chat and
-                under them write all; general, physics, chemistry, biology, all
-                subjects in small block — put same key terms there just replace the
-                words") — same box, same tiny label, same numbered chips. */}
-            <div className="mx-5 mb-3 rounded-2xl border border-border/70 bg-muted/20 px-3.5 py-2.5 sm:mx-8">
-              <p className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-muted-foreground">
-                <BookOpen className="h-2.5 w-2.5" aria-hidden="true" />
-                Subjects
-              </p>
-              <div className="mt-1.5 flex flex-wrap gap-1">
-                {MODES.map((m, index) => {
-                  const active = mode === m.id;
-                  return (
-                    <button
-                      key={m.id}
-                      onClick={() => chooseMode(m.id)}
-                      aria-pressed={active}
-                      className={cn(
-                        "inline-flex items-baseline gap-1 rounded-full border px-2 py-0.5 text-[10px] font-semibold text-foreground transition-colors",
-                        active
-                          ? "border-primary/45 bg-primary/[0.10]"
-                          : "border-primary/25 bg-primary/[0.06] hover:border-primary/45",
-                      )}
-                    >
-                      <span className="text-[8px] font-bold text-primary">{index + 1}</span>
-                      <span>{m.id}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
+            {/* 2 — Knowledge / Ideas / Derivations */}
+            <VeerSection title="Focus">
+              {VEER_LENS_CHIPS.map((lens) => (
+                <VeerChip
+                  key={lens.id}
+                  label={lens.label}
+                  title={lens.hint}
+                  active={homeTab.toLowerCase() === lens.id}
+                  onClick={() =>
+                    setHomeTab(
+                      lens.id === "knowledge"
+                        ? "Knowledge"
+                        : lens.id === "ideas"
+                          ? "Ideas"
+                          : "Derivations",
+                    )
+                  }
+                />
+              ))}
+            </VeerSection>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
-              {starters
-                .filter((prompt) => tabForStarter(prompt.text) === homeTab)
-                .map((prompt) => {
-                const Icon = prompt.icon;
-                return (
-                  <button
-                    key={prompt.text}
-                    onClick={() => handleSend(prompt.text)}
-                    className="p-2.5 rounded-xl border border-border/70 bg-muted/15 hover:bg-muted/40 hover:border-emerald-500/50 hover:-translate-y-0.5 hover:shadow-md hover:shadow-emerald-500/10 active:scale-[0.98] text-left transition-all duration-200 group flex flex-col justify-between space-y-1"
-                  >
-                    <span
-                      className={`text-[10px] font-bold px-2 py-0.5 rounded-md border w-fit flex items-center gap-1 ${prompt.color}`}
-                    >
-                      <Icon className="h-2.5 w-2.5" />
-                      <span>{prompt.category}</span>
-                    </span>
-                    <p className="text-[11px] text-foreground/90 font-medium group-hover:text-emerald-600 transition-colors leading-snug">
-                      {prompt.text}
-                    </p>
-                  </button>
-                );
-              })}
-            </div>
-            {starters.filter((prompt) => tabForStarter(prompt.text) === homeTab).length === 0 && (
-              <p className="rounded-2xl border border-border/60 bg-muted/20 px-4 py-5 text-center text-xs text-muted-foreground">
-                No {homeTab.toLowerCase()} prompts in this mode yet — type your question below.
-              </p>
-            )}
+            {/* 3 — Suggestion chips (history-aware prompts + lens starters) */}
+            <VeerSection title="Suggestions">
+              {VEER_SUGGESTION_CHIPS.map((chip) => (
+                <VeerChip
+                  key={chip.id}
+                  label={chip.label}
+                  title={chip.prompt}
+                  onClick={() => void handleSend(chip.prompt)}
+                />
+              ))}
+              {lensStarters.slice(0, 8).map((prompt) => (
+                <VeerChip
+                  key={prompt.text}
+                  label={prompt.category}
+                  title={prompt.text}
+                  onClick={() => void handleSend(prompt.text)}
+                />
+              ))}
+            </VeerSection>
+
+            {/* 4 — Subject-level topic quick links */}
+            <VeerSection title={mode === "General" ? "Important topics" : `${mode} topics`}>
+              {topicChips.map((chip) => (
+                <VeerChip
+                  key={chip.id}
+                  label={chip.label}
+                  title={chip.prompt}
+                  onClick={() => void handleSend(chip.prompt)}
+                />
+              ))}
+            </VeerSection>
           </div>
         ) : (
           <>

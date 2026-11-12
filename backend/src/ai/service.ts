@@ -256,14 +256,14 @@ const SEARCH_SYSTEM_PROMPT = `You are Veer — a warm, wise mentor for NEB Scien
 **WHEN ANSWERING ANY QUESTION (STUDY OR NON-STUDY), ALWAYS INCLUDE RELEVANT LINKS:**
 
 For STUDY topics (Physics, Chemistry, Biology, Math, Computer Science):
-- First link to relevant content ON the platform:
-  - NEB Class 11/12 Science notes → ${SITE}/class-11 or /class-12
+- Insert DIRECT platform links to the exact topic/chapter when known (e.g. ${SITE}/class-11-notes/physics/chapters/.../topics/...), not broad portion hubs like /class-11 or /class-12 alone.
+- Also useful when nothing deeper is known:
+  - Subject notes hubs → ${SITE}/class-11-notes/{subject} or /class-12-notes/{subject}
   - Labs (3D/theory) → ${SITE}/lab
   - Subjects overview → ${SITE}/subjects
   - Loksewa prep → ${SITE}/loksewa
   - World knowledge & current affairs → ${SITE}/world-knowledge
-  - R Notes by Ravishankit → ${SITE}/r-notes
-  - PYQs & practice → ${SITE}/subjects
+  - PYQs & practice → ${SITE}/pyqs
   - Numerical problems → ${SITE}/knowledge/numerical-physics or /knowledge/numerical-chemistry
 - Then, if relevant, add an official external link (NASA for space/physics, WHO for health/biology, government portals for policy, Khan Academy for supplementary learning, Wikipedia for general knowledge, etc.)
 
@@ -648,14 +648,11 @@ class AgnesProvider implements AIProvider {
     const systemContent = `${SEARCH_SYSTEM_PROMPT}
 
 **PLATFORM NAVIGATION:**
-- Notes: /class-11 or /class-12
-- Labs: /lab
-- Subjects: /subjects
-- Loksewa: /loksewa
-- World Knowledge: /world-knowledge
-- R Notes: /r-notes
-- PYQs: ${SITE}/subjects
-- Numericals: /knowledge/numerical-physics, /knowledge/numerical-chemistry
+- Prefer direct topic/chapter paths: /class-11-notes/{subject}/chapters/{unit}/topics/{topicSlug}
+- Subject hubs only when no topic is known: /class-11-notes/{subject}, /class-12-notes/{subject}
+- Labs: /lab · Subjects: /subjects · Loksewa: /loksewa · World Knowledge: /world-knowledge
+- PYQs: /pyqs · Numericals: /knowledge/numerical-physics, /knowledge/numerical-chemistry
+- Do not use bare /class-11 or /class-12 portion hubs when a deeper notes path exists.
 
 NEVER hallucinate features. Only reference real platform sections.`;
 

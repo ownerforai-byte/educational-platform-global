@@ -121,12 +121,12 @@ describe("formatCitations", () => {
 
   it("renders a From your notes block that LINKS each record instead of printing its path", () => {
     const out = formatCitations([
-      { kind: "note", id: "n1", title: "Newton's Laws", classLevel: "class-11", subject: "Physics", unit: "Mechanics", topicSlug: "laws", source: "content/11/physics/unit-1/laws.md", strength: "strong", href: "/class-11-notes/physics/chapters/mechanics" },
-      { kind: "pyq", id: "p1", title: "2079 Set A Q2", classLevel: "class-12", subject: "Chemistry", unit: "Acids", topicSlug: "ph", source: "content/12/chemistry/practice/questions/2079-a2.md", strength: "strong", href: "/class-12-notes/chemistry/chapters/acids" },
+      { kind: "note", id: "n1", title: "Newton's Laws", classLevel: "class-11", subject: "Physics", unit: "Mechanics", topicSlug: "laws", source: "content/11/physics/unit-1/laws.md", strength: "strong", href: "/class-11-notes/physics/chapters/mechanics/topics/laws" },
+      { kind: "pyq", id: "p1", title: "2079 Set A Q2", classLevel: "class-12", subject: "Chemistry", unit: "Acids", topicSlug: "ph", source: "content/12/chemistry/practice/questions/2079-a2.md", strength: "strong", href: "/class-12-notes/chemistry/chapters/acids/topics/ph" },
     ]);
     expect(out).toContain("From your notes");
-    expect(out).toContain("[Newton's Laws](/class-11-notes/physics/chapters/mechanics)");
-    expect(out).toContain("[2079 Set A Q2](/class-12-notes/chemistry/chapters/acids)");
+    expect(out).toContain("[Newton's Laws](/class-11-notes/physics/chapters/mechanics/topics/laws)");
+    expect(out).toContain("[2079 Set A Q2](/class-12-notes/chemistry/chapters/acids/topics/ph)");
     expect(out).toContain("Past paper");
     expect(out).toContain("[Notes archive](/notes)");
     // The long repo path is what the link replaces.
@@ -144,8 +144,13 @@ describe("formatCitations", () => {
 });
 
 describe("citation links", () => {
-  it("links a syllabus record to its chapter page", () => {
+  it("links a syllabus record to its direct topic page when topicSlug is known", () => {
     const c = toCitation(hit({ id: "n1", source: "content/a.md" }));
+    expect(c?.href).toBe("/class-11-notes/physics/chapters/mechanics/topics/motion");
+  });
+
+  it("falls back to the chapter page when topicSlug is missing", () => {
+    const c = toCitation(hit({ id: "n1b", source: "content/a.md", topicSlug: "" }));
     expect(c?.href).toBe("/class-11-notes/physics/chapters/mechanics");
   });
 
