@@ -16,6 +16,13 @@ import { IonicCovalentBonding } from "./ionic-covalent-bonding";
 import { EnergyFlowEcosystem } from "./energy-flow-ecosystem";
 import { DerivativeTangentLine } from "./derivative-tangent-line";
 import { WaveProperties } from "./wave-properties";
+import { PeriodicTrendsDiagram } from "./periodic-trends";
+import { HybridisationShapes } from "./hybridisation-shapes";
+import { GalvanicCell } from "./galvanic-cell";
+import { ThinLensRays } from "./thin-lens-rays";
+import { ConcaveMirrorRays } from "./concave-mirror-rays";
+import { ProjectileMotion } from "./projectile-motion";
+import { FaradayInduction } from "./faraday-induction";
 
 export interface TopicFigure {
   /** Rendered SVG component (theme-aware, uses currentColor). */
@@ -73,7 +80,91 @@ const REGISTRY: Record<string, TopicFiguresEntry> = {
       },
     ],
   },
+  "projectile-motion-and-its-applications": {
+    title: "Anatomy of a projectile path",
+    figures: [
+      {
+        Component: ProjectileMotion,
+        caption:
+          "Horizontal velocity stays constant while the vertical velocity falls to zero at the apex and grows again on the way down — the two independent motions add to a parabola.",
+        alt: "Parabolic projectile trajectory with launch velocity, angle, apex, horizontal and vertical velocity components and range",
+        keyword: "projectile",
+      },
+    ],
+  },
+  "mirror-formula": {
+    title: "Rays at a concave mirror",
+    figures: [
+      {
+        Component: ConcaveMirrorRays,
+        caption:
+          "Parallel rays reflect off a convex mirror and diverge; traced back they meet at the virtual focus behind the mirror. The mirror formula 1/u + 1/v = 1/f uses f < 0.",
+        alt: "Concave mirror diagram with parallel incident rays spreading out from a virtual focus behind the mirror",
+        keyword: "mirror",
+      },
+    ],
+  },
+  "spherical-lenses-angular-magnification": {
+    title: "Ray construction for a thin lens",
+    figures: [
+      {
+        Component: ThinLensRays,
+        caption:
+          "Three construction rays — parallel-to-axis, through the optical centre, and through F — meet at the image. An object between F and 2F gives a real, inverted, enlarged image beyond 2F′.",
+        alt: "Thin converging lens with three construction rays forming a real inverted image beyond the second focal point",
+        keyword: "lens",
+      },
+    ],
+  },
+  "faraday-s-laws-of-electromagnetic-induction": {
+    title: "Faraday's induction experiment",
+    figures: [
+      {
+        Component: FaradayInduction,
+        caption:
+          "Sliding a magnet in or out of a coil changes the flux linked with it, so an emf ε = −N dΦ/dt appears and the galvanometer needle deflects. No motion, no emf.",
+        alt: "Bar magnet moving through a solenoid connected to a galvanometer, with the emf formula",
+        keyword: "magnet",
+      },
+    ],
+  },
   // ── Chemistry ────────────────────────────────────────────────────────────
+  "periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-elec": {
+    title: "Periodic trends",
+    figures: [
+      {
+        Component: PeriodicTrendsDiagram,
+        caption:
+          "Across a period the added protons pull the same shell tighter, so radius falls while ionisation energy and electronegativity rise. Down a group each new shell makes the atom larger and the outer electron easier to remove.",
+        alt: "Grid of elements in periods and groups with arrows showing atomic radius falling across a period and rising down a group",
+        keyword: "atomic radius",
+      },
+    ],
+  },
+  "hybridization-involving-s-and-p-orbitals-only": {
+    title: "Hybrid orbitals and molecular shape",
+    figures: [
+      {
+        Component: HybridisationShapes,
+        caption:
+          "Hybrid orbitals arrange themselves as far apart as possible: four sp³ orbitals at 109.5°, three sp² orbitals at 120° plus a perpendicular p orbital, two sp orbitals at 180°.",
+        alt: "Comparison of sp3 tetrahedral, sp2 trigonal planar and sp linear hybrid orbital shapes with bond angles",
+        keyword: "hybrid",
+      },
+    ],
+  },
+  "electrochemical-cells-galvanic-cell-cell-potential-standard-electrode-potential": {
+    title: "A galvanic cell at work",
+    figures: [
+      {
+        Component: GalvanicCell,
+        caption:
+          "Zinc is oxidised at the anode and copper ions are reduced at the cathode; electrons travel through the wire while the salt bridge keeps charge balanced in both solutions.",
+        alt: "Galvanic cell with zinc anode, copper cathode, salt bridge, electron flow and half equations",
+        keyword: "galvanic",
+      },
+    ],
+  },
   "ionic-bond-and-its-properties": {
     title: "Ionic bond formation",
     figures: [

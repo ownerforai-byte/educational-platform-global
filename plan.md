@@ -152,6 +152,8 @@ cd frontend && npx next dev -p 5199
 | Legend SSG prerender (708 HTML files incl. Devanagari) | `dec53015` | ✅ |
 | DocView Phase 1: doc-parser + 6 SVG figures + registry (7 verified slugs) + TopicDocView wired into notes tab + 7-test suite; check + check:all PASS | `d983e777` (committed by parallel agent, mixed with its katex fix) | ✅ |
 | plan.md handoff updates + push | `499f3111` | ✅ |
+| DocView Phase 1 full handoff (§11) | `602a4d8b` | ✅ |
+| DocView Phase 2 batch 1: 7 new SVG figures (projectile, concave mirror, thin lens, Faraday induction, periodic trends, hybridisation, galvanic cell) — 13 registered topics total; tsc clean, doc-view test 7/7, `npm run check` PASS | (this commit) | ✅ |
 | Theorems verified 200/200 curated proofs, 0 broken links | verified | ✅ |
 
 **Pushed `origin/main` at time of writing:** `499f3111` (lineage: `bdd11781`
@@ -291,6 +293,27 @@ High-traffic topics first: chemistry (periodic trends, hybridization, electroche
 cells), physics (lenses/mirrors, AC circuits, EM induction), biology (cell, genetic
 crosses, nutrient cycles), math (unit circle, conics, integration areas).
 Per diagram: 1 component + 1 registry entry (exact slug) + test green.
+
+**Batch 1 DONE (7 new figures, total 13 registered topics):**
+
+| topic slug | subject | figure | anchor |
+|---|---|---|---|
+| `projectile-motion-and-its-applications` | physics 11 | parabola + velocity components | keyword "projectile" |
+| `mirror-formula` | physics 11 | concave mirror, virtual focus | keyword "mirror" |
+| `spherical-lenses-angular-magnification` | physics 11 | thin-lens 3-ray construction | keyword "lens" |
+| `faraday-s-laws-of-electromagnetic-induction` | physics 12 | magnet + solenoid + galvanometer | keyword "magnet" |
+| `periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-elec` | chemistry 11 | periodic trends grid | keyword "atomic radius" |
+| `hybridization-involving-s-and-p-orbitals-only` | chemistry 11 | sp³/sp²/sp shapes | keyword "hybrid" |
+| `electrochemical-cells-galvanic-cell-cell-potential-standard-electrode-potential` | chemistry 12 | galvanic cell | keyword "galvanic" |
+
+**Slug truncation hazard (NEW):** `slugifySyllabusTopic()` caps the slug at **100
+chars**. Long NEB titles truncate mid-word (`...-electron-affinity-elec`). NEVER
+hand-type a long slug — always copy the exact output of the §11.5 recipe; a
+typed-out "complete" title silently fails the registry test.
+
+**Batch 2 candidates (not yet done):** cell structure, genetic crosses (monohybrid/
+dihybrid), nutrient cycles (carbon/nitrogen), unit circle, conics, area-under-curve,
+AC through R/L/C, capacitor combination, Newton's laws free-body.
 
 ### §6.2 Phase 3 — auto-visuals for unregistered topics
 Generic mind-map SVG generated client-side from `keyPoints`/`importantConcepts`
