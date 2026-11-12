@@ -150,7 +150,7 @@ cd frontend && npx next dev -p 5199
 | Legend gap content: 30 dictionaries + generic runner; **0/696 gaps** | `bdd11781` | ✅ |
 | `slugifyFileName` Devanagari fix (Nepali slugs were collapsing to "01") | `bdd11781` | ✅ |
 | Legend SSG prerender (708 HTML files incl. Devanagari) | `dec53015` | ✅ |
-| DocView Phase 1: doc-parser + 6 SVG figures + registry (7 verified slugs) + TopicDocView wired into notes tab + 7-test suite; npm run check PASS | this commit | ✅ |
+| DocView Phase 1: doc-parser + 6 SVG figures + registry (7 verified slugs) + TopicDocView wired into notes tab + 7-test suite; check + check:all PASS | `d983e777` (committed by parallel agent, mixed with its katex fix) | ✅ |
 | Theorems verified 200/200 curated proofs, 0 broken links | verified | ✅ |
 | DocView foundation: `doc-parser.ts` + `figures/registry.ts` written | uncommitted | 🔨 in progress |
 
@@ -267,8 +267,10 @@ the already-computed arrays. Minimal-risk fallback: swap only the
    `tests/components/content/topic-learning-sections.test.tsx` (old four-pass
    heading assertion → new doc heading).
 5. ✅ `npm run check` PASS (24 test files green, hydration div-in-p fixed in
-   definition Segment). Remaining: `npm run check:all` → commit own files →
-   push `main`.
+   definition Segment). ✅ `npm run check:all` PASS. NOTE: the parallel agent
+   swept the staged DocView files into its commit `d983e777` (mixed with its
+   katex layout fix) — do NOT rewrite that history; DocView content is fully
+   in it. Remaining: push `main`.
 6. File classifications: plan.md + topic-vertical-notes.tsx +
    topic-learning-sections.test.tsx = [IMPORTANT CORE FILE];
    `frontend/features/docs/**` + `frontend/tests/features/topic-doc-view.test.tsx`
