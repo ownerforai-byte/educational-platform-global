@@ -14,15 +14,16 @@
  * (`lib/ai/reply-suggestions`), and the ad box always closes the card.
  */
 
-import Link from "next/link";
 import {
   BookMarked,
   CheckSquare,
-  Lightbulb,
-  Sparkles,
+  Flower2,
+  Leaf,
+  Sprout,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { AdSlot } from "@/components/ai/ad-slot";
+import { VeerChip, VeerSection } from "@/components/ai/veer-chip";
 import {
   analyzeReply,
   buildReplySuggestions,
@@ -30,46 +31,6 @@ import {
   type ReplyContext,
   type ReplySuggestion,
 } from "@/lib/ai/reply-suggestions";
-
-function SuggestionBox({
-  suggestion,
-  index,
-  onPick,
-}: {
-  suggestion: ReplySuggestion;
-  index: number;
-  onPick?: (suggestion: ReplySuggestion) => void;
-}) {
-  // Small key-terms-style chips — number + label, hint on hover.
-  const inner = (
-    <>
-      <span className="text-[8px] font-bold text-primary">{index + 1}</span>
-      <span className="truncate text-[10px] font-semibold text-foreground">{suggestion.label}</span>
-    </>
-  );
-
-  const boxClass =
-    "inline-flex max-w-full items-baseline gap-1 rounded-full border border-primary/25 bg-primary/[0.06] px-2 py-0.5 text-[10px] font-semibold text-foreground transition-colors hover:border-primary/45 hover:bg-primary/[0.10] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
-
-  if (suggestion.kind === "link" && suggestion.href) {
-    return (
-      <Link href={suggestion.href} title={suggestion.hint} className={boxClass}>
-        {inner}
-      </Link>
-    );
-  }
-
-  return (
-    <button
-      type="button"
-      title={suggestion.hint}
-      className={boxClass}
-      onClick={() => onPick?.(suggestion)}
-    >
-      {inner}
-    </button>
-  );
-}
 
 export function AiReplyCard({
   title = "Veer tutor",
@@ -120,15 +81,15 @@ export function AiReplyCard({
     <section
       aria-label={title}
       className={cn(
-        "overflow-hidden rounded-2xl border-2 border-border/80 bg-card shadow-sm",
+        "overflow-hidden rounded-2xl border border-dashed border-emerald-700/35 bg-card shadow-sm dark:border-emerald-400/30",
         className,
       )}
     >
       {/* Header strip */}
-      <header className="flex items-center justify-between gap-2 border-b border-border/70 bg-muted/30 px-3 py-1.5">
+      <header className="flex items-center justify-between gap-2 border-b border-dashed border-emerald-700/30 bg-emerald-500/[0.04] px-3 py-1.5 dark:border-emerald-400/30">
         <span className="flex min-w-0 items-center gap-1.5">
-          <Sparkles className="h-3 w-3 shrink-0 text-primary" aria-hidden="true" />
-          <span className="truncate text-[11px] font-bold uppercase tracking-wider text-muted-foreground">
+          <Leaf className="h-3 w-3 shrink-0 text-emerald-600" aria-hidden="true" />
+          <span className="truncate text-[11px] font-bold uppercase tracking-wider text-emerald-800/70 dark:text-emerald-300/70">
             {title}
           </span>
         </span>
@@ -142,7 +103,7 @@ export function AiReplyCard({
       {/* The answer — its own island, laid out like a notebook page */}
       <div
         className={cn(
-          "border-b border-border/70 px-4 py-4 text-[13.5px] leading-7",
+          "border-b border-dashed border-emerald-700/25 px-4 py-4 text-[13.5px] leading-7 dark:border-emerald-400/25",
           // conceptual spacing — a page to breathe on, not a wall of text
           "[&_p]:my-2.5",
           // section labels the template prints (Concept, Features, Solved example…)
@@ -169,112 +130,93 @@ export function AiReplyCard({
         {children}
       </div>
 
-      {/* Owner-only key-term panel — related terms and explicit contrasts. */}
+      {/* Owner-only key-term panel — natural chips with dashed section frames. */}
       {!compact && isVerifiedOwner && (analysis.relatedTerms.length > 0 || analysis.contrasts.length > 0) && (
-        <section
-          aria-label="Key terms"
-          className="border-b border-border/70 bg-muted/20 px-3.5 py-2"
-        >
-          <p className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-muted-foreground">
-            <BookMarked className="h-2.5 w-2.5" aria-hidden="true" />
-            Key terms
-          </p>
+        <div className="space-y-2 border-b border-dashed border-emerald-700/25 px-2.5 py-2 dark:border-emerald-400/25">
           {analysis.relatedTerms.length > 0 && (
-            <div className="mt-1.5">
-              <p className="text-[9px] font-semibold text-muted-foreground">Related —</p>
-              <div className="mt-1 flex flex-wrap gap-1.5">
-                {analysis.relatedTerms.map((term, index) => (
-                  <button
-                    key={term}
-                    type="button"
-                    title={`Ask Veer about ${term}`}
-                    className="inline-flex items-baseline gap-1 rounded-full border border-primary/25 bg-primary/[0.06] px-2 py-0.5 text-[10px] font-semibold text-foreground transition-colors hover:bg-primary/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                    onClick={() => onFollowUp?.(`Explain ${term} from the answer above in a concise way, including its meaning and how it connects to this topic.`)}
-                  >
-                    <span className="text-[8px] font-bold text-primary">{index + 1}</span>
-                    <span>{term}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
+            <VeerSection title="Key terms" icon={Sprout} border="dash" scroll="wrap" aria-label="Key terms">
+              {analysis.relatedTerms.map((term) => (
+                <VeerChip
+                  key={term}
+                  label={term}
+                  icon={Leaf}
+                  title={`Ask Veer about ${term}`}
+                  onClick={() =>
+                    onFollowUp?.(
+                      `Explain ${term} from the answer above in a concise way, including its meaning and how it connects to this topic.`,
+                    )
+                  }
+                />
+              ))}
+            </VeerSection>
           )}
           {analysis.contrasts.length > 0 && (
-            <div className="mt-2">
-              <p className="text-[9px] font-semibold text-muted-foreground">Contrasts —</p>
-              <div className="mt-1 flex flex-wrap gap-1.5">
-                {analysis.contrasts.map((term, index) => (
-                  <button
-                    key={term}
-                    type="button"
-                    title={`Compare ${term}`}
-                    className="inline-flex items-baseline gap-1 rounded-full border border-amber-500/35 bg-amber-500/[0.07] px-2 py-0.5 text-[10px] font-semibold text-foreground transition-colors hover:bg-amber-500/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                    onClick={() => onFollowUp?.(`Clearly contrast ${term} from the answer above: state the exact difference and give one short NEB-relevant example.`)}
-                  >
-                    <span className="text-[8px] font-bold text-amber-600">{index + 1}</span>
-                    <span>{term}</span>
-                  </button>
-                ))}
-              </div>
-            </div>
+            <VeerSection title="Contrasts" icon={Flower2} border="line" scroll="wrap">
+              {analysis.contrasts.map((term) => (
+                <VeerChip
+                  key={term}
+                  label={term}
+                  title={`Compare ${term}`}
+                  onClick={() =>
+                    onFollowUp?.(
+                      `Clearly contrast ${term} from the answer above: state the exact difference and give one short NEB-relevant example.`,
+                    )
+                  }
+                />
+              ))}
+            </VeerSection>
           )}
-        </section>
+        </div>
       )}
 
-      {/* Check yourself — small, local, educational */}
       {!compact && isVerifiedOwner && (
-        <section
-          aria-label="Check yourself"
-          className="border-b border-border/70 px-3.5 py-2"
-        >
-          <p className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-muted-foreground">
-            <CheckSquare className="h-2.5 w-2.5" aria-hidden="true" />
-            Check yourself
-          </p>
-          <ul className="mt-1.5 grid gap-1 sm:grid-cols-3">
+        <div className="border-b border-dashed border-emerald-700/25 px-2.5 py-2 dark:border-emerald-400/25">
+          <VeerSection title="Check yourself" icon={CheckSquare} border="dash" scroll="wrap" aria-label="Check yourself">
             {selfCheck.map((check) => (
-              <li key={check}>
-                <button
-                  type="button"
-                  className="w-full rounded-lg border border-border/60 bg-background/60 px-2 py-1 text-left text-[10px] leading-snug text-muted-foreground transition-colors hover:border-primary/35 hover:bg-primary/[0.05] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  onClick={() => onFollowUp?.(`Ask me this self-check question and wait for my answer before explaining: ${check}`)}
-                >
-                  {check}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {/* Suggestions — small key-terms-style chips, derived per reply and place */}
-      {!compact && isVerifiedOwner && onFollowUp && suggestions.length > 0 && (
-        <section
-          aria-label="Suggestions"
-          className="border-b border-border/70 bg-muted/20 px-3.5 py-2"
-        >
-          <p className="flex items-center gap-1 text-[9px] font-bold uppercase tracking-wider text-muted-foreground">
-            <Lightbulb className="h-2.5 w-2.5" aria-hidden="true" />
-            Take it further
-          </p>
-          <div className="mt-1.5 flex flex-wrap gap-1">
-            {suggestions.map((suggestion, index) => (
-              <SuggestionBox
-                key={suggestion.label}
-                index={index}
-                suggestion={suggestion}
-                onPick={(picked) => {
-                  const prompt = picked.prompt ?? `Help me ${picked.label.toLowerCase()} for ${picked.hint}, using the answer above as context.`;
-                  onFollowUp?.(prompt);
-                }}
+              <VeerChip
+                key={check}
+                label={check}
+                title={check}
+                onClick={() =>
+                  onFollowUp?.(
+                    `Ask me this self-check question and wait for my answer before explaining: ${check}`,
+                  )
+                }
               />
             ))}
-          </div>
-        </section>
+          </VeerSection>
+        </div>
       )}
 
-      {/* Per-answer actions (surfaces keep their own controls) */}
+      {!compact && isVerifiedOwner && onFollowUp && suggestions.length > 0 && (
+        <div className="border-b border-dashed border-emerald-700/25 px-2.5 py-2 dark:border-emerald-400/25">
+          <VeerSection title="Take it further" icon={BookMarked} border="dash" scroll="x" aria-label="Suggestions">
+            {suggestions.map((suggestion: ReplySuggestion) => (
+              <VeerChip
+                key={suggestion.label}
+                label={suggestion.label}
+                title={suggestion.hint}
+                href={suggestion.kind === "link" ? suggestion.href : undefined}
+                onClick={
+                  suggestion.kind === "link"
+                    ? undefined
+                    : () => {
+                        const prompt =
+                          suggestion.prompt ??
+                          `Help me ${suggestion.label.toLowerCase()} for ${suggestion.hint}, using the answer above as context.`;
+                        onFollowUp?.(prompt);
+                      }
+                }
+              />
+            ))}
+          </VeerSection>
+        </div>
+      )}
+
       {actions && (
-        <div className="border-b border-border/70 px-3.5 py-1.5">{actions}</div>
+        <div className="border-b border-dashed border-emerald-700/25 px-3.5 py-1.5 dark:border-emerald-400/25">
+          {actions}
+        </div>
       )}
 
       {/* The ad box always closes the reply */}

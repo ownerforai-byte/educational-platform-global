@@ -64,8 +64,10 @@ import {
 import { AiStatusDot } from "@/components/ai/ai-status-dot";
 import { VeerChip, VeerSection } from "@/components/ai/veer-chip";
 import {
+  VEER_CHAT_LENS_PROMPTS,
+  VEER_CHAT_SUGGESTIONS,
   VEER_LENS_CHIPS,
-  VEER_SUGGESTION_CHIPS,
+  VEER_NATURE_SECTION_ICONS,
   topicChipsForSubject,
 } from "@/features/ai/lib/veer-home";
 import { VoiceMicButton } from "@/components/ai/voice-mic-button";
@@ -1136,9 +1138,9 @@ export function TutorConsole({
   const lensStarters = starters.filter((prompt) => tabForStarter(prompt.text) === homeTab);
 
   return (
-    <div className="flex h-full min-h-0 flex-col overflow-hidden rounded-md border border-border/50 bg-card">
+    <div className="flex h-full min-h-0 flex-col overflow-hidden rounded-md border border-dashed border-emerald-700/35 bg-card dark:border-emerald-400/30">
       {/* ── Header: logo · glow dot · VEER AI · More ── */}
-      <div className="shrink-0 border-b border-border/60 bg-gradient-to-r from-emerald-500/5 via-transparent to-primary/5">
+      <div className="shrink-0 border-b border-dashed border-emerald-700/30 bg-gradient-to-r from-emerald-500/5 via-transparent to-primary/5 dark:border-emerald-400/30">
         <div className="flex items-center justify-between gap-2 px-3 pt-2 pb-2 sm:px-4">
           <div className="flex min-w-0 items-center gap-2">
             <BackButton variant="inline" label="" className="shrink-0 px-2 py-1.5" />
@@ -1260,76 +1262,78 @@ export function TutorConsole({
         </div>
       )}
 
-      {/* ── Stream ───────────────────────────────────────────────────── */}
-      <div ref={streamRef} onScroll={handleStreamScroll} className="mx-auto min-h-0 w-full max-w-3xl flex-1 overflow-y-auto overscroll-contain scroll-smooth px-3 sm:px-4 py-3 space-y-5">
-        {!hasConversation && !sending ? (
-          <div className="mx-auto flex w-full max-w-3xl flex-col justify-start gap-5 pb-4 pt-1">
-            {/* 1 — Subjects */}
-            <VeerSection title="Subjects">
-              {MODES.map((m) => (
-                <VeerChip
-                  key={m.id}
-                  label={m.id}
-                  active={mode === m.id}
-                  onClick={() => chooseMode(m.id)}
-                />
-              ))}
-            </VeerSection>
+      {/* ── Home (flush to composer) or message stream ── */}
+      {!hasConversation && !sending ? (
+        <div className="mx-auto flex min-h-0 w-full max-w-3xl flex-1 flex-col justify-end gap-1 overflow-hidden px-2 pt-1 pb-0 sm:px-3">
+          <VeerSection title="Subjects" icon={VEER_NATURE_SECTION_ICONS.subjects} border="dash">
+            {MODES.map((m) => (
+              <VeerChip
+                key={m.id}
+                label={m.id}
+                active={mode === m.id}
+                onClick={() => chooseMode(m.id)}
+              />
+            ))}
+          </VeerSection>
 
-            {/* 2 — Knowledge / Ideas / Derivations */}
-            <VeerSection title="Focus">
-              {VEER_LENS_CHIPS.map((lens) => (
-                <VeerChip
-                  key={lens.id}
-                  label={lens.label}
-                  title={lens.hint}
-                  active={homeTab.toLowerCase() === lens.id}
-                  onClick={() =>
-                    setHomeTab(
-                      lens.id === "knowledge"
-                        ? "Knowledge"
-                        : lens.id === "ideas"
-                          ? "Ideas"
-                          : "Derivations",
-                    )
-                  }
-                />
-              ))}
-            </VeerSection>
+          <VeerSection title="Focus" icon={VEER_NATURE_SECTION_ICONS.focus} border="line">
+            {VEER_LENS_CHIPS.map((lens) => (
+              <VeerChip
+                key={lens.id}
+                label={lens.label}
+                title={lens.hint}
+                icon={lens.icon}
+                active={homeTab.toLowerCase() === lens.id}
+                onClick={() => {
+                  setHomeTab(
+                    lens.id === "knowledge"
+                      ? "Knowledge"
+                      : lens.id === "ideas"
+                        ? "Ideas"
+                        : "Derivations",
+                  );
+                  void handleSend(VEER_CHAT_LENS_PROMPTS[lens.id]);
+                }}
+              />
+            ))}
+          </VeerSection>
 
-            {/* 3 — Suggestion chips (history-aware prompts + lens starters) */}
-            <VeerSection title="Suggestions">
-              {VEER_SUGGESTION_CHIPS.map((chip) => (
-                <VeerChip
-                  key={chip.id}
-                  label={chip.label}
-                  title={chip.prompt}
-                  onClick={() => void handleSend(chip.prompt)}
-                />
-              ))}
-              {lensStarters.slice(0, 8).map((prompt) => (
-                <VeerChip
-                  key={prompt.text}
-                  label={prompt.category}
-                  title={prompt.text}
-                  onClick={() => void handleSend(prompt.text)}
-                />
-              ))}
-            </VeerSection>
+          <VeerSection title="Suggestions" icon={VEER_NATURE_SECTION_ICONS.suggestions} border="dash">
+            {VEER_CHAT_SUGGESTIONS.map((chip) => (
+              <VeerChip
+                key={chip.id}
+                label={chip.label}
+                title={chip.prompt}
+                onClick={() => void handleSend(chip.prompt)}
+              />
+            ))}
+            {lensStarters.slice(0, 6).map((prompt) => (
+              <VeerChip
+                key={prompt.text}
+                label={prompt.category}
+                title={prompt.text}
+                onClick={() => void handleSend(prompt.text)}
+              />
+            ))}
+          </VeerSection>
 
-            {/* 4 — Subject-level topic quick links */}
-            <VeerSection title={mode === "General" ? "Important topics" : `${mode} topics`}>
-              {topicChips.map((chip) => (
-                <VeerChip
-                  key={chip.id}
-                  label={chip.label}
-                  title={chip.prompt}
-                  onClick={() => void handleSend(chip.prompt)}
-                />
-              ))}
-            </VeerSection>
-          </div>
-        ) : (
+          <VeerSection
+            title={mode === "General" ? "Important topics" : `${mode} topics`}
+            icon={VEER_NATURE_SECTION_ICONS.topics}
+            border="line"
+          >
+            {topicChips.map((chip) => (
+              <VeerChip
+                key={chip.id}
+                label={chip.label}
+                title={chip.prompt}
+                onClick={() => void handleSend(chip.prompt)}
+              />
+            ))}
+          </VeerSection>
+        </div>
+      ) : (
+      <div ref={streamRef} onScroll={handleStreamScroll} className="mx-auto min-h-0 w-full max-w-3xl flex-1 space-y-5 overflow-y-auto overscroll-contain scroll-smooth px-3 py-3 sm:px-4">
           <>
             {restoredCount !== null && restoredCount > 0 && (
               <div className="flex justify-center">
@@ -1447,7 +1451,6 @@ export function TutorConsole({
               </div>
             )}
           </>
-        )}
 
         {hasNewBelow && !followStream && (
           <div className="sticky bottom-2 z-10 flex justify-center">
@@ -1469,29 +1472,30 @@ export function TutorConsole({
           </div>
         )}
       </div>
+      )}
 
       {/* ── Thread tools ─────────────────────────────────────────────── */}
       {hasConversation && !sending && (
-        <div className="shrink-0 px-3 sm:px-8 pt-2 flex flex-wrap items-center gap-2 border-t border-border/40">
-          <button
-            onClick={() => followUp(SUMMARIZE_INSTRUCTION)}
-            className="inline-flex items-center gap-1 rounded-lg border border-border/60 bg-background px-2 py-1 text-[10px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors"
-            title="Turn this thread into revision notes"
-          >
-            <ListChecks className="h-3 w-3" /> Summarize thread
-          </button>
-          <button
-            onClick={startPracticeQuiz}
-            className="inline-flex items-center gap-1 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-colors"
-            title="Open Veer quiz seeded with this conversation"
-          >
-            <Brain className="h-3 w-3" /> Practice quiz
-          </button>
+        <div className="shrink-0 px-3 pt-2 sm:px-8">
+          <VeerSection title="Next steps" icon={VEER_NATURE_SECTION_ICONS.suggestions} border="dash" scroll="x">
+            <VeerChip
+              label="Summarize thread"
+              icon={ListChecks}
+              title="Turn this thread into revision notes"
+              onClick={() => followUp(SUMMARIZE_INSTRUCTION)}
+            />
+            <VeerChip
+              label="Practice quiz"
+              icon={Brain}
+              title="Open Veer quiz seeded with this conversation"
+              onClick={startPracticeQuiz}
+            />
+          </VeerSection>
         </div>
       )}
 
       {/* ── Composer ─────────────────────────────────────────────────── */}
-      <div className="shrink-0 border-t border-border/60 bg-muted/20 px-3 sm:px-8 pt-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:py-4">
+      <div className="shrink-0 border-t border-dashed border-emerald-700/30 bg-emerald-500/[0.03] px-3 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] dark:border-emerald-400/30 sm:px-8 sm:pt-2.5 sm:pb-3">
         {composerLocked && (
           <p className="mb-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-[11px] font-semibold text-amber-600">
             Your free messages for today are used — sign in to continue. Your

@@ -4,13 +4,12 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import {
   ArrowUp,
-  BookOpen,
   Brain,
   Check,
   CheckCircle2,
   GraduationCap,
   History,
-  Lightbulb,
+  Leaf,
   Loader2,
   Plus,
   RotateCcw,
@@ -51,7 +50,10 @@ import { AiStatusDot } from "@/components/ai/ai-status-dot";
 import { VeerChip, VeerSection } from "@/components/ai/veer-chip";
 import {
   VEER_LENS_CHIPS,
-  VEER_SUGGESTION_CHIPS,
+  VEER_NATURE_SECTION_ICONS,
+  VEER_WIDGET_LENS_PROMPTS,
+  VEER_WIDGET_ROOTS,
+  VEER_WIDGET_SUGGESTIONS,
   topicChipsForSubject,
 } from "@/features/ai/lib/veer-home";
 import { VOICE_AUTO_SEND_MS } from "@/lib/chat/silence-trigger";
@@ -90,15 +92,6 @@ const MODES: Array<{ id: Mode; label: string; icon: LucideIcon }> = [
   { id: "deep-dive", label: "Deep Dive", icon: Brain },
   { id: "practice", label: "Practice", icon: Target },
 ];
-
-const LENS_PROMPTS: Record<(typeof VEER_LENS_CHIPS)[number]["id"], string> = {
-  knowledge:
-    "Teach the core knowledge for my selected class and subject in a beginner-friendly way: clear facts, key terms, and one check question.",
-  ideas:
-    "Share intuition and ideas for my selected class and subject — connections, mental models, and concrete examples a beginner can use.",
-  derivations:
-    "Walk through the most useful derivation for my selected class and subject step by step, with the meaning of every line.",
-};
 
 const FORMATS: Array<{ id: QuizFormat; label: string }> = [
   { id: "mcq", label: "Multiple choice" },
@@ -803,68 +796,106 @@ export function AIWidget() {
             </div>
           </header>
 
-          <nav aria-label="Professor tools" className="grid grid-cols-4 border-b border-border bg-muted/30 p-1.5 sm:px-4">
-            {MODES.map((item) => {
-              const Icon = item.icon;
-              const active = mode === item.id;
-              return (
-                <button key={item.id} type="button" onClick={() => { setMode(item.id); setError(null); }} aria-pressed={active} className={`flex min-w-0 items-center justify-center gap-1.5 rounded-xl px-1.5 py-2.5 text-[11px] font-bold transition sm:gap-2 sm:px-3 sm:text-xs ${active ? "bg-card text-foreground shadow-sm ring-1 ring-border" : "text-muted-foreground hover:bg-card/60 hover:text-foreground"}`}>
-                  <Icon className={`h-4 w-4 shrink-0 ${active ? item.id === "solve" ? "text-indigo-500" : item.id === "deep-dive" ? "text-sky-500" : item.id === "practice" ? "text-violet-500" : "text-primary" : ""}`} />
-                  <span className="truncate">{item.label}</span>
-                </button>
-              );
-            })}
-          </nav>
-
-          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border bg-card px-3 py-2.5 sm:px-4">
-            <div className="flex min-w-0 flex-1 items-center gap-2">
-              <BookOpen className="hidden h-4 w-4 shrink-0 text-muted-foreground sm:block" />
-              <label className="sr-only" htmlFor="professor-class">Class</label>
-              <select id="professor-class" value={classSlug} onChange={(event) => setClassSlug(event.target.value)} className="min-h-9 max-w-28 rounded-xl border-2 border-border/80 bg-background px-2 text-xs font-semibold outline-none focus:ring-2 focus:ring-primary/30 sm:max-w-none sm:px-3">
-                {SYLLABUS.map((item) => <option key={item.slug} value={item.slug}>{item.name}</option>)}
-              </select>
-              <label className="sr-only" htmlFor="professor-subject">Subject</label>
-              <select id="professor-subject" value={subjectSlug} onChange={(event) => setSubjectSlug(event.target.value)} className="min-h-9 min-w-0 flex-1 rounded-xl border-2 border-border/80 bg-background px-2 text-xs font-semibold outline-none focus:ring-2 focus:ring-primary/30 sm:flex-none sm:px-3">
-                {subjects.map((subject) => <option key={subject.slug} value={subject.slug}>{subject.name}</option>)}
-              </select>
-            </div>
-            {mode === "teach" && (
-              <div className="flex items-center gap-1">
-                <button type="button" onClick={() => { setView("home"); setError(null); }} disabled={sending} className="inline-flex min-h-9 items-center gap-1.5 rounded-xl px-2.5 text-xs font-bold text-muted-foreground transition hover:bg-muted hover:text-foreground disabled:opacity-50" title="Saved professor lessons">
-                  <History className="h-3.5 w-3.5" /><span className="hidden sm:inline">Lessons</span>
-                </button>
-                <button type="button" onClick={startNewLesson} disabled={sending} className="inline-flex min-h-9 items-center gap-1.5 rounded-xl bg-primary/10 px-2.5 text-xs font-bold text-primary transition hover:bg-primary/15 disabled:opacity-50">
-                  <Plus className="h-3.5 w-3.5" /><span className="hidden sm:inline">New lesson</span>
-                </button>
-              </div>
-            )}
+          <div className="space-y-2 border-b border-dashed border-emerald-700/30 bg-emerald-500/[0.03] p-2 sm:px-3 dark:border-emerald-400/30">
+            <VeerSection title="Tools" icon={Leaf} border="dash" scroll="x" aria-label="Professor tools">
+              {MODES.map((item) => (
+                <VeerChip
+                  key={item.id}
+                  label={item.label}
+                  icon={item.icon}
+                  active={mode === item.id}
+                  onClick={() => {
+                    setMode(item.id);
+                    setError(null);
+                  }}
+                />
+              ))}
+            </VeerSection>
+            <VeerSection title="Garden" icon={VEER_NATURE_SECTION_ICONS.subjects} border="line" scroll="x">
+              {SYLLABUS.map((item) => (
+                <VeerChip
+                  key={item.slug}
+                  label={item.name.replace(/ Notes$/i, "")}
+                  active={classSlug === item.slug}
+                  onClick={() => setClassSlug(item.slug)}
+                />
+              ))}
+              {subjects.map((subject) => (
+                <VeerChip
+                  key={subject.slug}
+                  label={subject.name}
+                  active={subjectSlug === subject.slug}
+                  onClick={() => setSubjectSlug(subject.slug)}
+                />
+              ))}
+              {mode === "teach" && (
+                <>
+                  <VeerChip
+                    label="Lessons"
+                    icon={History}
+                    onClick={() => {
+                      setView("home");
+                      setError(null);
+                    }}
+                  />
+                  <VeerChip label="New lesson" icon={Plus} onClick={startNewLesson} />
+                </>
+              )}
+            </VeerSection>
           </div>
 
           {mode === "teach" && (
             <div className="flex min-h-0 flex-1 flex-col">
-              <div ref={scrollerRef} className="min-h-0 flex-1 overflow-y-auto bg-muted/20">
+              <div
+                ref={scrollerRef}
+                className={
+                  view === "home" && lines.length === 0
+                    ? "min-h-0 flex-1 overflow-hidden bg-muted/20"
+                    : "min-h-0 flex-1 overflow-y-auto bg-muted/20"
+                }
+              >
                 {view === "home" ? (
-                  <div className="mx-auto w-full max-w-3xl space-y-4 p-3 sm:p-4">
+                  <div className="mx-auto flex h-full min-h-0 w-full max-w-3xl flex-col justify-end gap-1 overflow-hidden p-2 pb-1.5 sm:p-3 sm:pb-1.5">
                     <div className="flex items-center gap-2">
                       <AiStatusDot className="h-2.5 w-2.5" />
+                      <Leaf className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
                       <h2 className="text-[13px] font-extrabold tracking-[0.08em]">VEER AI</h2>
                       <span className="text-[10px] text-muted-foreground">Class {classLevel} · {subjectSlug}</span>
+                      {lines.length > 0 && (
+                        <VeerChip label="Resume" onClick={() => setView("thread")} className="ml-auto" />
+                      )}
                     </div>
-                    {lines.length > 0 && (
-                      <VeerChip label="Resume current lesson" onClick={() => setView("thread")} />
-                    )}
-                    <VeerSection title="Focus">
+                    <VeerSection title="Roots" icon={VEER_NATURE_SECTION_ICONS.roots} border="dash">
+                      {VEER_WIDGET_ROOTS.map((chip) => (
+                        <VeerChip
+                          key={chip.id}
+                          label={chip.label}
+                          title={chip.prompt}
+                          onClick={() => void send(chip.prompt)}
+                        />
+                      ))}
+                      {subjects.slice(0, 6).map((subject) => (
+                        <VeerChip
+                          key={subject.slug}
+                          label={subject.name}
+                          active={subjectSlug === subject.slug}
+                          onClick={() => setSubjectSlug(subject.slug)}
+                        />
+                      ))}
+                    </VeerSection>
+                    <VeerSection title="Focus" icon={VEER_NATURE_SECTION_ICONS.focus} border="line">
                       {VEER_LENS_CHIPS.map((lens) => (
                         <VeerChip
                           key={lens.id}
                           label={lens.label}
                           title={lens.hint}
-                          onClick={() => void send(LENS_PROMPTS[lens.id])}
+                          icon={lens.icon}
+                          onClick={() => void send(VEER_WIDGET_LENS_PROMPTS[lens.id])}
                         />
                       ))}
                     </VeerSection>
-                    <VeerSection title="Suggestions">
-                      {VEER_SUGGESTION_CHIPS.map((chip) => (
+                    <VeerSection title="Suggestions" icon={VEER_NATURE_SECTION_ICONS.suggestions} border="dash">
+                      {VEER_WIDGET_SUGGESTIONS.map((chip) => (
                         <VeerChip
                           key={chip.id}
                           label={chip.label}
@@ -873,8 +904,8 @@ export function AIWidget() {
                         />
                       ))}
                     </VeerSection>
-                    <VeerSection title={`${subjectSlug} topics`}>
-                      {topicChipsForSubject(subjectSlug, 10).map((chip) => (
+                    <VeerSection title={`${subjectSlug} topics`} icon={VEER_NATURE_SECTION_ICONS.topics} border="line">
+                      {topicChipsForSubject(subjectSlug, 10, "gentle").map((chip) => (
                         <VeerChip
                           key={chip.id}
                           label={chip.label}
@@ -882,29 +913,23 @@ export function AIWidget() {
                           onClick={() => void send(chip.prompt)}
                         />
                       ))}
-                    </VeerSection>
-                    <VeerSection title="Saved lessons">
-                      {sessions.length === 0 ? (
-                        <span className="text-[11px] text-muted-foreground">Your professor lessons appear here after the first chat.</span>
-                      ) : (
-                        sessions.slice(0, 8).map((item) => (
-                          <VeerChip
-                            key={item.session}
-                            label={item.preview || "Professor lesson"}
-                            title={`${item.messages} messages`}
-                            onClick={() => void openConversation(item.session)}
-                          />
-                        ))
-                      )}
+                      {sessions.slice(0, 4).map((item) => (
+                        <VeerChip
+                          key={item.session}
+                          label={item.preview || "Saved lesson"}
+                          title={`${item.messages} messages`}
+                          onClick={() => void openConversation(item.session)}
+                        />
+                      ))}
                     </VeerSection>
                   </div>
                 ) : (
                   <div className="mx-auto w-full max-w-4xl space-y-5 p-4 sm:p-6">
                     {loadingThread && <p className="flex items-center gap-2 text-sm font-semibold text-muted-foreground"><Loader2 className="h-4 w-4 animate-spin" /> Loading saved lesson…</p>}
                     {!loadingThread && lines.length === 0 && (
-                      <div className="space-y-4">
-                        <VeerSection title="Suggestions">
-                          {VEER_SUGGESTION_CHIPS.map((chip) => (
+                      <div className="flex flex-col justify-end gap-1 overflow-hidden">
+                        <VeerSection title="Roots" icon={VEER_NATURE_SECTION_ICONS.roots} border="dash">
+                          {VEER_WIDGET_ROOTS.map((chip) => (
                             <VeerChip
                               key={chip.id}
                               label={chip.label}
@@ -913,8 +938,29 @@ export function AIWidget() {
                             />
                           ))}
                         </VeerSection>
-                        <VeerSection title={`${subjectSlug} topics`}>
-                          {topicChipsForSubject(subjectSlug, 8).map((chip) => (
+                        <VeerSection title="Focus" icon={VEER_NATURE_SECTION_ICONS.focus} border="line">
+                          {VEER_LENS_CHIPS.map((lens) => (
+                            <VeerChip
+                              key={lens.id}
+                              label={lens.label}
+                              title={lens.hint}
+                              icon={lens.icon}
+                              onClick={() => void send(VEER_WIDGET_LENS_PROMPTS[lens.id])}
+                            />
+                          ))}
+                        </VeerSection>
+                        <VeerSection title="Suggestions" icon={VEER_NATURE_SECTION_ICONS.suggestions} border="dash">
+                          {VEER_WIDGET_SUGGESTIONS.map((chip) => (
+                            <VeerChip
+                              key={chip.id}
+                              label={chip.label}
+                              title={chip.prompt}
+                              onClick={() => void send(chip.prompt)}
+                            />
+                          ))}
+                        </VeerSection>
+                        <VeerSection title={`${subjectSlug} topics`} icon={VEER_NATURE_SECTION_ICONS.topics} border="line">
+                          {topicChipsForSubject(subjectSlug, 8, "gentle").map((chip) => (
                             <VeerChip
                               key={chip.id}
                               label={chip.label}
