@@ -50,7 +50,7 @@ export const LAB_METADATA_LIST: LabMetadata[] = [
   },
   {
     "id": "ph-3d-wave",
-    "title": "Wave Simulator 3D",
+    "title": "Wave Video 3D",
     "description": "Real-time 3D wave propagation with sine, cosine, and damped modes.",
     "category": "physics",
     "type": "3d",
@@ -289,7 +289,7 @@ export const LAB_METADATA_LIST: LabMetadata[] = [
   },
   {
     "id": "advanced-circuit",
-    "title": "Advanced Circuit Simulator",
+    "title": "Advanced Circuit Video",
     "description": "Build and test complex circuits with 50+ components.",
     "category": "physics",
     "type": "calculator",
@@ -418,8 +418,8 @@ export const LAB_METADATA_LIST: LabMetadata[] = [
   },
   {
     "id": "ch-calc-titration",
-    "title": "Titration Simulator",
-    "description": "Simulate strong acid-strong base titration and track pH changes.",
+    "title": "Titration Video",
+    "description": "Run a strong acid-strong base titration and track pH changes.",
     "category": "chemistry",
     "type": "calculator",
     "status": "active",
@@ -459,7 +459,7 @@ export const LAB_METADATA_LIST: LabMetadata[] = [
   {
     "id": "molecular-builder",
     "title": "Molecular Builder 3D",
-    "description": "Build any molecule from scratch. Simulate reactions.",
+    "description": "Build any molecule from scratch and run reactions.",
     "category": "chemistry",
     "type": "3d",
     "status": "active",
@@ -676,7 +676,7 @@ export const LAB_METADATA_LIST: LabMetadata[] = [
   },
   {
     "id": "math-3d-decay",
-    "title": "Nuclear Decay Simulator",
+    "title": "Nuclear Decay Video",
     "description": "Stochastic radioactive decay visualization with half-life controls.",
     "category": "mathematics",
     "type": "3d",

@@ -72,7 +72,7 @@ const NOTICES: Notice[] = [
     icon: Coins,
     title: "The daily spark pool, and what a spark covers",
     body:
-      "Two separate meters: AI sparks for Veer chat and AI Studio (daily tier allowance); content sparks for actual note/PYQ unlocks (1 spark per 20-minute window). They never mix. Members get 13 Veer sparks a day. Labs, simulations, visuals, and the rest of Veer studio open at Plus. Content unlock windows expire after 20 minutes.",
+      "Two separate meters: AI sparks for Veer chat and AI Studio (daily tier allowance); content sparks for actual note/PYQ unlocks (1 spark per 20-minute window). They never mix. Members get 13 Veer sparks a day. Labs, videos, visuals, and the rest of Veer studio open at Plus. Content unlock windows expire after 20 minutes.",
     href: "/credits",
     linkLabel: "See your plan and top-up options",
   },
@@ -80,7 +80,7 @@ const NOTICES: Notice[] = [
     icon: Gem,
     title: "Pro raises the daily Veer allowance",
     body:
-      "Members get 13 Veer sparks a day. Plus gets 25, Pro gets 50, and only the owner plan is unlimited. Labs and simulations open at Plus.",
+      "Members get 13 Veer sparks a day. Plus gets 25, Pro gets 50, and only the owner plan is unlimited. Labs and videos open at Plus.",
     // Plans live in the footer only (owner 2026-10-25) — no plans links here.
   },
   {

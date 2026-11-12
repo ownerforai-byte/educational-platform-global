@@ -32,7 +32,7 @@ export interface CategoryRule {
 export const TOKEN_MATRIX: Record<ContentCategory, CategoryRule> = {
   lab3d: {
     cost: 0,
-    label: "Interactive Simulation Lab (3D / AR)",
+    label: "Interactive Video Lab (3D / AR)",
     emoji: "🔬",
   },
   visuals: {

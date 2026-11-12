@@ -35,7 +35,7 @@ export function PremiumPlaceholder({
                 Lab under construction
               </p>
               <p className="mt-2 max-w-md text-sm text-muted-foreground">
-                You&apos;ve unlocked this premium lab! The full interactive simulation is being
+                You&apos;ve unlocked this premium lab! The full interactive video is being
                 built and will appear here. Your credits are safely spent — nothing more is required.
               </p>
             </div>

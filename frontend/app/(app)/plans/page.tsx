@@ -49,7 +49,7 @@ const TIER_CARDS: TierCard[] = [
     features: [
       "Only the chat widget on the guest home — a text box and a send button",
       "It explains the platform. It does not teach the syllabus",
-      "No notes, labs, simulations, or Veer",
+      "No notes, labs, videos, or Veer",
     ],
     cta: { label: "Start exploring", href: "/home" },
   },
@@ -82,7 +82,7 @@ const TIER_CARDS: TierCard[] = [
       "Notice board",
       "Class 12 portal + all subject notes",
       "PYQ banks & past-paper practice",
-      "Labs, simulations, visuals, and the Diagram Hub",
+      "Labs, videos, visuals, and the Diagram Hub",
       "Ad P Table — the 118-element suite with the CEE entrance hub",
       "Veer studio (math, diagrams, deep-dive, quiz) — 25 sparks / day",
     ],

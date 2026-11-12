@@ -250,7 +250,7 @@ export const Class11KinematicsMotion: React.FC = () => {
       <CardHeader>
         <CardTitle>Class 11 Kinematics: Motion in a Straight Line</CardTitle>
         <CardDescription>
-          Interactive 3D motion graphics showing kinematic equations in action.
+          Interactive 3D video showing kinematic equations in action.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">

@@ -551,7 +551,7 @@ function NuclearDecay() {
       pNe.position.set(Math.sin(d) * Math.cos(dn) * 0.5, Math.sin(dn) * 0.5, Math.cos(d) * Math.cos(dn) * 0.5);
       ts!.group.add(pNe);
     }
-    titleText(ts, "Radioactive decay simulation", new THREE.Vector3(0, 2.6, 0));
+    titleText(ts, "Radioactive decay video", new THREE.Vector3(0, 2.6, 0));
 
     // spawn and track emitted particles
     const colors = { alpha: 0xfacc15, beta: 0x22d3ee, gamma: 0xa78bfa };

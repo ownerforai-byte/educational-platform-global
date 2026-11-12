@@ -2,10 +2,12 @@
 
 import { useMemo } from "react";
 
-type MotionGraphicProps = {
-  topic: string;
+type TopicVideoProps = {
+  topicSlug: string;
   className?: string;
 };
+
+import { VIDEO_TOPICS } from "./topic-video-slugs";
 
 const ANIMATIONS: Record<string, React.ReactNode> = {
   "capacitor": (
@@ -183,11 +185,11 @@ const ANIMATIONS: Record<string, React.ReactNode> = {
   ),
 };
 
-export function MotionGraphics({ topic, className }: MotionGraphicProps) {
+export function TopicVideo({ topicSlug, className }: TopicVideoProps) {
   const animation = useMemo(() => {
-    const key = topic.toLowerCase().replace(/[^a-z0-9-]/g, "-");
-    return ANIMATIONS[key] || null;
-  }, [topic]);
+    const key = VIDEO_TOPICS[topicSlug];
+    return key ? ANIMATIONS[key] ?? null : null;
+  }, [topicSlug]);
 
   if (!animation) return null;
 

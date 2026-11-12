@@ -76,7 +76,7 @@ export default function PracticalLandingPage() {
             </h1>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
               Master the complete practical syllabus for <strong>Physics, Chemistry, and Biology</strong>.
-              Experience high-fidelity apparatus simulations, pro-grade theoretical principles, step-by-step
+              Experience high-fidelity apparatus videos, pro-grade theoretical principles, step-by-step
               laboratory procedures, live calculation workbenches, and official examiner Viva Voce mastery.
             </p>
           </div>
@@ -104,7 +104,7 @@ export default function PracticalLandingPage() {
         <div className="flex flex-wrap items-center gap-2">
           {[
             { id: "overview", label: "Subject Practical Syllabi", icon: BookOpen },
-            { id: "simulators", label: "Virtual Apparatus Simulators", icon: Zap },
+            { id: "simulators", label: "Virtual Apparatus Videos", icon: Zap },
             { id: "viva", label: "Viva Voce Examination Prep", icon: Award },
             { id: "calculations", label: "Live Observation & Graph Tool", icon: Activity },
           ].map((tab) => {
@@ -268,10 +268,10 @@ export default function PracticalLandingPage() {
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
             <input
               type="search"
-              aria-label="Search practical simulators"
+              aria-label="Search practical videos"
               value={searchQuery}
               onChange={(event) => setSearchQuery(event.target.value)}
-              placeholder="Search practical simulators…"
+              placeholder="Search practical videos…"
               className="w-full rounded-xl border border-border bg-card py-2 pl-9 pr-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
             />
           </div>
@@ -316,7 +316,7 @@ export default function PracticalLandingPage() {
 
           {matchingSimulatorSubjects.length === 0 ? (
             <p className="rounded-2xl border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
-              No practical simulators match “{searchQuery}”.
+              No practical videos match “{searchQuery}”.
             </p>
           ) : (
             <>

@@ -205,7 +205,7 @@ function buildIndex(): SearchEntry[] {
       kind: "Lab",
       href: `/lab/${lab.id}`,
       breadcrumb: `${subj} · ${lab.type}`,
-      haystack: `${lab.title} ${lab.description ?? ""} ${subj} lab simulation 3d virtual ${lab.unit ?? ""}`.toLowerCase(),
+      haystack: `${lab.title} ${lab.description ?? ""} ${subj} lab video 3d virtual ${lab.unit ?? ""}`.toLowerCase(),
       priority: 4,
     });
   }
@@ -235,7 +235,7 @@ function buildIndex(): SearchEntry[] {
     { title: "Practice Quiz Bank", href: "/quiz", keywords: "quiz practice mcq mock test evaluation" },
     { title: "Veer Study Assistant", href: "/chat", keywords: "ai chat veer study assistant doubt solver" },
     { title: "Adaptive Veer Quiz", href: "/ai-quiz", keywords: "ai quiz adaptive difficulty practice" },
-    { title: "3D Simulations Hub", href: "/lab/3d", keywords: "3d simulation virtual webgl laboratory" },
+    { title: "3D Video Hub", href: "/lab/3d", keywords: "3d video virtual webgl laboratory" },
     { title: "Science Graph Bank", href: "/graphs", keywords: "graph science bank chart curves slopes" },
     { title: "Notes Archive", href: "/notes", keywords: "notes archive imported ravikishan curriculum" },
     { title: "Resource Vault & PDFs", href: "/resources", keywords: "resource document pdf webnotee library vault download" },

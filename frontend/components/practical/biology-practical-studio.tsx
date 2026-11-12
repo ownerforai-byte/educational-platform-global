@@ -45,7 +45,7 @@ export function BiologyPracticalStudio({
             <h3 className="text-base font-bold text-foreground flex items-center gap-2">
               Virtual Biology Apparatus Workbench
               <span className="rounded-full bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
-                Ultra-HD Optical & Physiology Simulation
+                Ultra-HD Optical & Physiology Video
               </span>
             </h3>
             <p className="text-xs text-muted-foreground">

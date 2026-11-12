@@ -298,7 +298,7 @@ function ProbabilityVisual() {
           onClick={performFlip}
           className="ml-auto px-4 py-1.5 rounded-md bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold"
         >
-          {flipped ? "Re-Simulate" : "Simulate"}
+          {flipped ? "Re-Run" : "Run"}
         </button>
       </div>
 
@@ -709,7 +709,7 @@ export function StatisticsProbabilityResources() {
             <div>
               <CardTitle className="text-lg">Interactive Visualizations</CardTitle>
               <p className="text-sm text-muted-foreground mt-0.5">
-                Explore dispersion, probability simulation, and the binomial distribution
+                Explore dispersion, probability experiments, and the binomial distribution
               </p>
             </div>
           </div>

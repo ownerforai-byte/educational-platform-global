@@ -209,7 +209,7 @@ export function UniversalWelcome() {
               icon: FlaskConical,
               tint: "bg-violet-500/10 text-violet-500",
               title: "96+ 3D virtual labs",
-              desc: "Physics, chemistry & biology simulations.",
+              desc: "Physics, chemistry & biology videos.",
             },
             {
               icon: Trophy,

@@ -25,7 +25,7 @@ interface LabCardData {
   title: string;
   description: string;
   href: string;
-  badge: "3D Suite" | "Simulator" | "Solver" | "Experiment";
+  badge: "3D Suite" | "Video" | "Solver" | "Experiment";
   badgeColor: string;
 }
 
@@ -88,17 +88,17 @@ const LABS_DATA: Record<LabDomain, LabCardData[]> = {
       badgeColor: "bg-amber-500/15 text-amber-500 border-amber-500/30",
     },
     {
-      title: "Double Pendulum Chaos Simulator",
-      description: "Simulate non-linear chaotic motion with real-time Poincaré trajectory plots.",
+      title: "Double Pendulum Chaos Video",
+      description: "Run non-linear chaotic motion with real-time Poincaré trajectory plots.",
       href: "/lab/ph-sim-double-pendulum",
-      badge: "Simulator",
+      badge: "Video",
       badgeColor: "bg-violet-500/15 text-violet-500 border-violet-500/30",
     },
     {
-      title: "Projectile & Gravity Simulator",
+      title: "Projectile & Gravity Video",
       description: "Calculate launch velocity, angle, air resistance, max height & horizontal range.",
       href: "/lab/ph-calc-projectile",
-      badge: "Simulator",
+      badge: "Video",
       badgeColor: "bg-violet-500/15 text-violet-500 border-violet-500/30",
     },
     {
@@ -110,16 +110,16 @@ const LABS_DATA: Record<LabDomain, LabCardData[]> = {
     },
     {
       title: "Pi-Collisions Elastic Solver",
-      description: "Galperin's elastic collision simulation calculating Pi through kinetic energy exchange.",
+      description: "Galperin's elastic collision video calculating Pi through kinetic energy exchange.",
       href: "/lab/ph-sim-pi-collisions",
-      badge: "Simulator",
+      badge: "Video",
       badgeColor: "bg-violet-500/15 text-violet-500 border-violet-500/30",
     },
     {
       title: "Three-Body Gravitational Orbit",
-      description: "Simulate N-body celestial gravitational interactions with customizable orbital masses.",
+      description: "Run N-body celestial gravitational interactions with customizable orbital masses.",
       href: "/lab/ph-sim-threebody",
-      badge: "Simulator",
+      badge: "Video",
       badgeColor: "bg-violet-500/15 text-violet-500 border-violet-500/30",
     },
   ],
@@ -146,17 +146,17 @@ const LABS_DATA: Record<LabDomain, LabCardData[]> = {
       badgeColor: "bg-amber-500/15 text-amber-500 border-amber-500/30",
     },
     {
-      title: "Gas Laws Computational Simulator",
+      title: "Gas Laws Computational Video",
       description: "Boyle's, Charles's, and Ideal Gas Law (PV=nRT) with interactive pressure and temp controls.",
       href: "/lab/ch-calc-gas",
-      badge: "Simulator",
+      badge: "Video",
       badgeColor: "bg-violet-500/15 text-violet-500 border-violet-500/30",
     },
     {
-      title: "Titration Curve Simulator",
-      description: "Simulate strong/weak acid-base titrations, buffer plateaus & equivalence point pH.",
+      title: "Titration Curve Video",
+      description: "Run strong/weak acid-base titrations, buffer plateaus & equivalence point pH.",
       href: "/lab/ch-calc-titration",
-      badge: "Simulator",
+      badge: "Video",
       badgeColor: "bg-violet-500/15 text-violet-500 border-violet-500/30",
     },
     {
@@ -249,14 +249,14 @@ const LABS_DATA: Record<LabDomain, LabCardData[]> = {
       title: "Photosynthesis Rate Calculator",
       description: "Model Light and Dark (Calvin Cycle) reactions with light intensity & CO2 variables.",
       href: "/lab/bio-calc-photosynthesis",
-      badge: "Simulator",
+      badge: "Video",
       badgeColor: "bg-violet-500/15 text-violet-500 border-violet-500/30",
     },
     {
       title: "Population Growth Dynamics Model",
-      description: "Simulate exponential (Malthusian) vs logistic carrying capacity models with birth/death rates.",
+      description: "Run exponential (Malthusian) vs logistic carrying capacity models with birth/death rates.",
       href: "/lab/bio-calc-population",
-      badge: "Simulator",
+      badge: "Video",
       badgeColor: "bg-violet-500/15 text-violet-500 border-violet-500/30",
     },
     {
@@ -357,10 +357,10 @@ export function VirtualLabsCatalog() {
             <span>Interactive Virtual Laboratories</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mt-1">
-            Explore 96+ 3D Simulations &amp; Computational Suites
+            Explore 96+ 3D Videos &amp; Computational Suites
           </h2>
           <p className="text-sm text-muted-foreground mt-1 max-w-2xl">
-            Each subject is powered by specialized 3D virtual environments, mathematical equation solvers, real-time physics simulators, and molecular chemistry builders.
+            Each subject is powered by specialized 3D virtual environments, mathematical equation solvers, real-time physics videos, and molecular chemistry builders.
           </p>
         </div>
 
@@ -433,7 +433,7 @@ export function VirtualLabsCatalog() {
                 href={lab.href}
                 className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline"
               >
-                Launch Simulator <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
+                Launch Video <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </div>
           </div>

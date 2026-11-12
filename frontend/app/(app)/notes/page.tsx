@@ -36,10 +36,10 @@ export default async function NotesPage() {
             <span>Hands-On Science Practicals &amp; Viva Voce</span>
           </div>
           <h2 className="text-lg sm:text-xl font-extrabold text-foreground">
-            Complete NEB Practical Lab Manuals &amp; Simulators
+            Complete NEB Practical Lab Manuals &amp; Videos
           </h2>
           <p className="text-xs text-muted-foreground max-w-2xl">
-            Looking for Physics, Chemistry, or Biology practical experiments? Access virtual apparatus simulations, observation calculation sheets, and examiner viva Q&amp;As.
+            Looking for Physics, Chemistry, or Biology practical experiments? Access virtual apparatus videos, observation calculation sheets, and examiner viva Q&amp;As.
           </p>
           <div className="flex flex-wrap gap-2 pt-2 text-xs font-semibold">
             <Link href="/practical/physics" className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-sky-500/15 text-sky-600 dark:text-sky-400 hover:bg-sky-500/25 transition-colors">

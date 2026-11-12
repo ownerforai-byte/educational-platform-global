@@ -598,7 +598,7 @@ function ProfileDetails({ onBack }: { onBack?: () => void }) {
               Content Spark Wallet
             </CardTitle>
             <CardDescription className="text-xs">
-              Spent only on note/PYQ unlocks — Veer uses AI sparks, not this wallet. Labs and simulations open at Plus.
+              Spent only on note/PYQ unlocks — Veer uses AI sparks, not this wallet. Labs and videos open at Plus.
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">

@@ -45,7 +45,7 @@ export function ChemistryPracticalStudio({
             <h3 className="text-base font-bold text-foreground flex items-center gap-2">
               Virtual Chemistry Apparatus Workbench
               <span className="rounded-full bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 text-[11px] font-semibold text-amber-600 dark:text-amber-400">
-                Interactive Reaction Simulation
+                Interactive Reaction Video
               </span>
             </h3>
             <p className="text-xs text-muted-foreground">

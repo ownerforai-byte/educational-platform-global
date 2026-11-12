@@ -407,21 +407,21 @@ export function AnalyticalGeometryResources() {
             <TabsContent value="point-line" className="space-y-4">
               <DistancePointToLineVisual />
               <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
-                <strong className="text-foreground">Simulation:</strong> Drag the sliders to adjust the line parameters (a, b, c) and point coordinates (x₀, y₀). The cyan dashed line shows the perpendicular from the point to the line.
+                <strong className="text-foreground">Video:</strong> Drag the sliders to adjust the line parameters (a, b, c) and point coordinates (x₀, y₀). The cyan dashed line shows the perpendicular from the point to the line.
               </div>
             </TabsContent>
 
             <TabsContent value="angle" className="space-y-4">
               <AngleBetweenLinesVisual />
               <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
-                <strong className="text-foreground">Simulation:</strong> Adjust slopes m₁, m₂ and y-intercepts c₁, c₂ to see how the angle between two lines changes. The intersection point is marked in yellow.
+                <strong className="text-foreground">Video:</strong> Adjust slopes m₁, m₂ and y-intercepts c₁, c₂ to see how the angle between two lines changes. The intersection point is marked in yellow.
               </div>
             </TabsContent>
 
             <TabsContent value="parallel" className="space-y-4">
               <ParallelLinesVisual />
               <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
-                <strong className="text-foreground">Simulation:</strong> Adjust A, B to change the slope, and C₁, C₂ to shift the parallel lines. The distance between them is shown as a dashed line.
+                <strong className="text-foreground">Video:</strong> Adjust A, B to change the slope, and C₁, C₂ to shift the parallel lines. The distance between them is shown as a dashed line.
               </div>
             </TabsContent>
 

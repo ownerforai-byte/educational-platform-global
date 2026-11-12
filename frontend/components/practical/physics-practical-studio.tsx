@@ -57,7 +57,7 @@ export function PhysicsPracticalStudio({
             <h3 className="text-base font-bold text-foreground flex items-center gap-2">
               Virtual Physics Apparatus Workbench
               <span className="rounded-full bg-sky-500/10 border border-sky-500/20 px-2 py-0.5 text-[11px] font-semibold text-sky-600 dark:text-sky-400">
-                Live Physical Simulation
+                Live Physical Video
               </span>
             </h3>
             <p className="text-xs text-muted-foreground">

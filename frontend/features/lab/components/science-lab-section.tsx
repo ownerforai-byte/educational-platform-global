@@ -13,7 +13,7 @@ export function ScienceLabSection() {
           {
             href: "/lab/3d",
             label: "3D Labs",
-            desc: "All simulations in syllabus order",
+            desc: "All videos in syllabus order",
             icon: Cuboid,
           },
           {

@@ -312,7 +312,7 @@ return (
       <LabCard
         title="Advanced Circuit Simulator"
         icon={<CircuitBoard className="h-5 w-5 text-amber-500" />}
-        description="Series, parallel and RC circuits — live-simulated with per-component analysis and an animated charge curve."
+        description="Series, parallel and RC circuits — live-rendered with per-component analysis and an animated charge curve."
       >
         <Tabs defaultValue="analysis" className="w-full">
           <TabsList className="flex-wrap h-auto justify-start">

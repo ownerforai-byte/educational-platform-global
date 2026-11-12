@@ -557,9 +557,9 @@ const container = mountRef.current;
                 <h4 className="font-medium text-primary mb-3">Newton's First Law (Law of Inertia):</h4>
                 <p className="text-sm">A body continues in its state of rest or of uniform motion in a straight line unless compelled by an external force to act otherwise.</p>
                 <ul className="text-sm mt-2 space-y-2">
-                  <li><strong>Inertia:</strong> Property of matter that resists change in motion. In this simulation, both blocks have inertia - they resist acceleration when forces are applied.</li>
+                  <li><strong>Inertia:</strong> Property of matter that resists change in motion. In this video, both blocks have inertia - they resist acceleration when forces are applied.</li>
                   <li><strong>Mass:</strong> Measure of inertia. Greater mass = greater inertia. Notice how heavier blocks accelerate more slowly.</li>
-                  <li><strong>Example in Simulation:</strong> When you apply a force, the blocks don't immediately reach high speed - they resist the change due to inertia.</li>
+                  <li><strong>Example in Video:</strong> When you apply a force, the blocks don't immediately reach high speed - they resist the change due to inertia.</li>
                 </ul>
               </div>
 
@@ -571,7 +571,7 @@ const container = mountRef.current;
                   <p className="text-sm text-center text-muted-foreground mt-1">Where: F = Force (N), m = Mass (kg), a = Acceleration (m/s²)</p>
                 </div>
                 <ul className="text-sm mt-3 space-y-2">
-                  <li><strong>In this Simulation:</strong> The applied force F causes acceleration a = F/m for Block 2. For Block 1, the net force (F - friction) causes acceleration a&sub1; = (F - &mu;mg)/m.</li>
+                  <li><strong>In this Video:</strong> The applied force F causes acceleration a = F/m for Block 2. For Block 1, the net force (F - friction) causes acceleration a&sub1; = (F - &mu;mg)/m.</li>
                   <li><strong>Observation:</strong> Notice how Block 2 (hanging) accelerates faster than Block 1 when mass2 &lt; mass1, because it has less mass to accelerate.</li>
                 </ul>
               </div>
@@ -582,7 +582,7 @@ const container = mountRef.current;
                 <ul className="text-sm mt-2 space-y-2">
                   <li>Action and reaction act on <strong>different bodies</strong>.</li>
                   <li>They are of <strong>same type</strong> (both contact or both field).</li>
-                  <li><strong>In this Simulation:</strong></li>
+                  <li><strong>In this Video:</strong></li>
                   <ul className="list-disc pl-5 space-y-1">
                     <li><strong>Tension in Rope:</strong> The rope pulls Block 2 upward (action) and Block 1 to the right (reaction). These are equal and opposite forces.</li>
                     <li><strong>Normal Force:</strong> The surface pushes Block 1 upward (reaction) with the same magnitude as Block 1 pushes down on the surface (action).</li>

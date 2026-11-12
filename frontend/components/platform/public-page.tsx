@@ -46,18 +46,12 @@ export function PublicPage({ current, eyebrow, title, intro, children }: {
       </nav>
     </header>
     <main id="platform-content" className="mx-auto w-full max-w-6xl flex-1 px-4 pb-16 pt-8 sm:px-6 sm:pt-12">
-      <div className="mb-10 grid overflow-hidden rounded-3xl border border-border bg-card lg:grid-cols-[1fr_16rem]">
+      <div className="mb-10 overflow-hidden rounded-3xl border border-border bg-card">
         <div className="p-6 sm:p-10">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">{eyebrow}</p>
           <h1 className="mt-4 max-w-3xl text-3xl font-extrabold leading-tight tracking-tight sm:text-5xl">{title}</h1>
           <p className="mt-5 max-w-2xl text-base leading-8 text-muted-foreground">{intro}</p>
         </div>
-        <aside aria-label="Learning approach" className="flex flex-col justify-center border-t border-border bg-primary/5 p-6 lg:border-l lg:border-t-0">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary">A clearer way to study</p>
-          <ol className="mt-5 space-y-4 text-sm font-medium">
-            {["Understand the concept", "Practise with purpose", "Review what matters"].map((step, i) => <li key={step} className="flex items-center gap-3"><span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-primary/30 text-xs text-primary">0{i + 1}</span>{step}</li>)}
-          </ol>
-        </aside>
       </div>
       <div className="space-y-8">{children}</div>
     </main>

@@ -422,8 +422,11 @@ export function MemberHome({ rails }: { rails: ReactNode }) {
       rails={rails}
       tier="member"
       headline="Your study desk is open."
-      blurb="Search the whole library, keep your Class 11 notes and formula sheets close, and track your progress — everything a Member needs, in one place."
+      blurb="Search the whole library, keep your Class 11 notes and formula sheets close, ask Veer when a concept will not click, and track your progress — everything a Member needs, in one place."
       spotlights={[
+        // Veer chat is a member feature (13 sparks/day), so it gets a door here
+        // rather than living only behind the muted quick-link chip.
+        { title: "Ask Veer", desc: "Study, Nepali or Grammar chat — 13 sparks a day.", href: "/chat", icon: Sparkles },
         { title: "Search", desc: "The whole library, one query away.", href: "/search", icon: Search },
         { title: "Class 11 Notes", desc: "Core theory notes across all six CDC subjects.", href: "/class-11-notes", icon: BookOpen },
         { title: "Formula Sheets", desc: "One-page rails per unit — revision at a glance.", href: "/legend", icon: Sigma },
@@ -443,7 +446,7 @@ export function PlusHome({ rails }: { rails: ReactNode }) {
       spotlights={[
         { title: "Class 12 Notes", desc: "Advanced theory notes and board-exam depth.", href: "/class-12-notes", icon: GraduationCap },
         { title: "Practice & PYQ", desc: "Past-year question banks — learn from the past.", href: "/pyqs", icon: FileQuestion },
-        { title: "Labs", desc: "Interactive labs and simulations.", href: "/lab", icon: FlaskConical },
+        { title: "Labs", desc: "Interactive labs and videos.", href: "/lab", icon: FlaskConical },
         { title: "Veer Studio", desc: "Math, diagrams, deep-dive, and quiz.", href: "/ai", icon: Sparkles },
       ]}
     />

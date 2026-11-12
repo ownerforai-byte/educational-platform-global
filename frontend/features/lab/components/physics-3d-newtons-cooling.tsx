@@ -315,11 +315,11 @@ const container = mountRef.current!;
           <div><Label>Initial temperature T₀ ({T0} °C)</Label><Slider min={50} max={98} step={1} value={[T0]} onValueChange={(v) => setT0(Math.max(v[0], Ts + 8))} /></div>
           <div><Label>Surroundings Ts ({Ts} °C)</Label><Slider min={5} max={40} step={1} value={[Ts]} onValueChange={(v) => setTs(Math.min(v[0], T0 - 8))} /></div>
           <div><Label>Cooling constant k ({kPerMin.toFixed(2)} min⁻¹)</Label><Slider min={0.06} max={1} step={0.02} value={[kPerMin]} onValueChange={(v) => setKPerMin(v[0])} /><p className="text-xs text-muted-foreground">set by draught, surface & emissivity</p></div>
-          <div><Label>Simulation window ({duration} min)</Label><Slider min={6} max={20} step={1} value={[duration]} onValueChange={(v) => setDuration(v[0])} /></div>
+          <div><Label>Video window ({duration} min)</Label><Slider min={6} max={20} step={1} value={[duration]} onValueChange={(v) => setDuration(v[0])} /></div>
         </div>
 
         <div className="flex gap-2 flex-wrap">
-          <Button size="sm" variant={running ? "default" : "outline"} onClick={() => setRunning(!running)}>{running ? "Pause simulation" : "Resume simulation"}</Button>
+          <Button size="sm" variant={running ? "default" : "outline"} onClick={() => setRunning(!running)}>{running ? "Pause video" : "Resume video"}</Button>
           <Button variant="outline" size="sm" onClick={() => { setLiqIdx(0); setT0(82); setTs(27); setKPerMin(0.32); setDuration(12); setRunning(true); }}>Reset to default</Button>
         </div>
 

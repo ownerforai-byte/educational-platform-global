@@ -103,7 +103,7 @@ export function ClassSubjectsGrid({ classSlug, className }: ClassSubjectsGridPro
             </h1>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Every subject structured in official board syllabus sequence. Access deep chapter notes,
-              verified step-by-step derivations, rigorous mathematical proofs, and 3D virtual simulations.
+              verified step-by-step derivations, rigorous mathematical proofs, and 3D virtual videos.
             </p>
           </div>
 

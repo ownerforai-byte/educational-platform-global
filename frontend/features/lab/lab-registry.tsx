@@ -135,7 +135,7 @@ export const LAB_REGISTRY: LabMeta[] = [
   },
   {
     id: "ph-3d-wave",
-    title: "Wave Simulator 3D",
+    title: "Wave Video 3D",
     description: "Real-time 3D wave propagation with sine, cosine, and damped modes.",
     category: "physics",
     type: "3d" as const,
@@ -399,7 +399,7 @@ export const LAB_REGISTRY: LabMeta[] = [
   },
   {
     id: "advanced-circuit",
-    title: "Advanced Circuit Simulator",
+    title: "Advanced Circuit Video",
     description: "Build and test complex circuits with 50+ components.",
     category: "physics",
     type: "calculator" as const,
@@ -543,8 +543,8 @@ export const LAB_REGISTRY: LabMeta[] = [
   },
   {
     id: "ch-calc-titration",
-    title: "Titration Simulator",
-    description: "Simulate strong acid-strong base titration and track pH changes.",
+    title: "Titration Video",
+    description: "Run a strong acid-strong base titration and track pH changes.",
     category: "chemistry",
     type: "calculator" as const,
     status: "active",
@@ -588,7 +588,7 @@ export const LAB_REGISTRY: LabMeta[] = [
   {
     id: "molecular-builder",
     title: "Molecular Builder 3D",
-    description: "Build any molecule from scratch. Simulate reactions.",
+    description: "Build any molecule from scratch and run reactions.",
     category: "chemistry",
     type: "3d" as const,
     status: "active" as const,
@@ -833,7 +833,7 @@ export const LAB_REGISTRY: LabMeta[] = [
   },
   {
     id: "math-3d-decay",
-    title: "Nuclear Decay Simulator",
+    title: "Nuclear Decay Video",
     description: "Stochastic radioactive decay visualization with half-life controls.",
     category: "mathematics",
     type: "3d" as const,
@@ -1542,7 +1542,7 @@ LAB_REGISTRY.push(
   {
     id: "py-hub",
     title: "Python Visuals — All in One",
-    description: "Every visuals-py asset (3D surfaces, physics sims, motion graphics) in one browser — Python is the source of truth for the geometry.",
+    description: "Every visuals-py asset (3D surfaces, physics sims, videos) in one browser — Python is the source of truth for the geometry.",
     category: "physics" as const,
     type: "3d" as const,
     status: "new" as const,

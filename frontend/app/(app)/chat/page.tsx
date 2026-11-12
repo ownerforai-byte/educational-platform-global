@@ -4,7 +4,7 @@ import { TutorConsole } from "@/components/ai/tutor-console";
 export const metadata: Metadata = {
   title: "Veer & Study Assistant — NEB Science",
   description:
-    "Veer — owner-only NEB Class 11 & 12 study assistant: curriculum-aligned answers with formulas, derivations and study tips.",
+    "Veer — NEB Class 11 & 12 study assistant: curriculum-aligned answers with formulas, derivations and study tips.",
 };
 
 /**
@@ -16,8 +16,8 @@ export const metadata: Metadata = {
  * summarize, and a chat → AI-quiz handoff. The green "online" ping dot in
  * the header is kept exactly as it has always been.
  *
- * Owner emails only (owner request 2026-10-05): chat/layout.tsx bounces
- * everyone else, and POST /api/ai enforces the same boundary.
+ * Open from the Member rung up, metered by AI sparks (member 13/day) — not an
+ * owner surface since 2026-10-13.
  *
  * ?q= (owner 2026-10-27): the left-side Veer panel routes DEEP questions
  * here automatically ("deep questions auto-lead to the main interface") —

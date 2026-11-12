@@ -105,7 +105,7 @@ const DIRECTORY: Portal[] = [
   {
     title: "3D Virtual Labs",
     badge: "INTERACTIVE 3D",
-    desc: "96+ interactive 3D simulations, molecular structures, and computational physics solvers.",
+    desc: "96+ interactive 3D videos, molecular structures, and computational physics solvers.",
     href: "/lab",
     icon: FlaskConical,
     iconClass: "text-violet-500 bg-violet-500/10 border-violet-500/25",

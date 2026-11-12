@@ -164,7 +164,7 @@ export default function Lab3DPage() {
             3D Labs — All in One
           </h1>
           <p className="mt-1.5 text-sm text-muted-foreground max-w-2xl">
-            Every 3D simulation and unit suite on one ordered route —
+            Every 3D video and unit suite on one ordered route —
             grouped by subject and official NEB syllabus unit, Class 11 → Class 12.
             Theory topics live in <Link href="/lab/theory" className="text-primary hover:underline">Lab Theory</Link>.
           </p>
@@ -222,7 +222,7 @@ export default function Lab3DPage() {
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <input
             type="text"
-            placeholder="Search simulations…"
+            placeholder="Search videos…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-border bg-card focus:outline-none focus:ring-2 focus:ring-primary/30"

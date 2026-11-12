@@ -170,14 +170,14 @@ function TitrationSimulator() {
             </div>
           </div>
 
-          <Button onClick={calculate} className="w-full">Simulate Titration</Button>
+          <Button onClick={calculate} className="w-full">Run Titration</Button>
         </CollapsibleControls>
 
         {result && <p className="text-sm font-medium text-green-600">{result}</p>}
 
         <div className="rounded-md border border-border bg-muted/30 p-3 text-xs text-muted-foreground">
           <p className="font-medium mb-1">Formula: M₁V₁ = M₂V₂ (at equivalence)</p>
-          <p>Simulates strong acid-strong base titration. Enter acid properties and base volume added to calculate resulting pH.</p>
+          <p>Runs a strong acid-strong base titration. Enter acid properties and base volume added to calculate resulting pH.</p>
         </div>
         <div className="rounded-md border border-primary/20 bg-primary/5 p-3">
           <p className="text-xs font-semibold uppercase tracking-wide text-primary">📘 Observation &amp; Conclusion</p>

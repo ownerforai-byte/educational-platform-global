@@ -9,6 +9,7 @@ import { SubjectSectionNav } from "./subject-section-nav";
 import { getUnitTopic } from "../queries";
 import { ContentTabs } from "@/components/content/content-tabs";
 import { TopicProgressControls } from "@/components/progress/topic-progress-controls";
+import { TopicVideo } from "@/features/lab/components/topic-video";
 import { hasLanguageProTrack } from "../language-pro";
 import { TopicSupplementalMaterials } from "@/components/content/topic-supplemental-materials";
 import { getTopicSupplementalContent } from "@/lib/content/topic-supplemental";
@@ -111,6 +112,9 @@ export async function TopicDetailView({
         unitSlug={unit.id}
         topicSlug={topic.slug}
       />
+
+      {/* Animated explainer video for topics that have one; renders nothing otherwise. */}
+      <TopicVideo topicSlug={topic.slug} />
 
       {/* Explicit Coming Soon state when no authored notes exist yet */}
       {!hasNotes && (

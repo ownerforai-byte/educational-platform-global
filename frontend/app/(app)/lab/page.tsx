@@ -235,7 +235,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "ph-3d-advanced", title: "Physics 3D Advanced", description: "Electromagnetism, wave optics, relativity, quantum orbitals, nuclear decay.", category: "physics", icon: <span className="text-blue-500">ðŸ›°ï¸</span>, status: "new", component: () => <PhysicsLabLazy /> },
     { id: "ph-heat-determinations", title: "Heat Determination Labs", description: "Lee's disc, Searle's bar, Newton's law of cooling & linear expansion in 3D.", category: "physics", icon: <span className="text-blue-500">ðŸ”¥</span>, status: "new", component: () => <PhysicsLabLazy /> },
     { id: "ph-3d-quantum", title: "Quantum 3D", description: "Quantum mechanics visualizations including orbitals, probability distributions, and spin.", category: "physics", icon: <span className="text-blue-500">â­</span>, status: "new", component: () => <PhysicsLabLazy /> },
-    { id: "ph-3d-wave", title: "Wave Simulator 3D", description: "Real-time 3D wave propagation with sine, cosine, and damped modes.", category: "physics", icon: <span className="text-blue-500">ðŸŒŠ</span>, status: "active", component: () => <PhysicsLabLazy /> },
+    { id: "ph-3d-wave", title: "Wave Video 3D", description: "Real-time 3D wave propagation with sine, cosine, and damped modes.", category: "physics", icon: <span className="text-blue-500">ðŸŒŠ</span>, status: "active", component: () => <PhysicsLabLazy /> },
     { id: "ph-3d-pendulum", title: "Pendulum 3D", description: "Pendulum with trail visualization and period calculations.", category: "physics", icon: <span className="text-blue-500">â±ï¸</span>, status: "active", component: () => <PhysicsLabLazy /> },
     { id: "ph-3d-em", title: "EM Wave 3D", description: "Electromagnetic wave propagation with E and B field visualization.", category: "physics", icon: <span className="text-blue-500">ðŸ“»</span>, status: "active", component: () => <PhysicsLabLazy /> },
     { id: "ph-3d-magnetic", title: "Magnetic Field 3D", description: "Bar magnet field lines and iron filings pattern.", category: "physics", icon: <span className="text-blue-500">ðŸ§­</span>, status: "active", component: () => <PhysicsLabLazy /> },
@@ -261,7 +261,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "ph-calc-projectile", title: "Projectile Motion", description: "Launch projectiles with adjustable velocity, angle, and gravity.", category: "physics", icon: <span className="text-blue-500">ðŸš€</span>, status: "active", component: () => <PhysicsLabLazy /> },
     // General
     { id: "ai-tutor", title: "Veer Lab Tutor", description: "Get instant help with lab concepts. Veer explains, solves, and visualizes any problem.", category: "physics", icon: <Brain className="h-4 w-4 text-amber-500" />, status: "active", component: () => <AILabTutorLazy /> },
-    { id: "advanced-circuit", title: "Advanced Circuit Simulator", description: "Build and test complex circuits with 50+ components.", category: "physics", icon: <Bolt className="h-4 w-4 text-amber-500" />, status: "active", component: () => <PremiumAdvancedCircuitSimulatorLazy /> },
+    { id: "advanced-circuit", title: "Advanced Circuit Video", description: "Build and test complex circuits with 50+ components.", category: "physics", icon: <Bolt className="h-4 w-4 text-amber-500" />, status: "active", component: () => <PremiumAdvancedCircuitSimulatorLazy /> },
   ],
 
   chemistry: [
@@ -280,12 +280,12 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "ch-th-organic", title: "Organic Chemistry Theory", description: "Hydrocarbons, functional groups, nomenclature.", category: "chemistry", icon: <Dna className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <TheoryPanelLazy subject="chemistry" topic="organic" /> },
     // Calculator Labs
     { id: "ch-calc-ph", title: "pH Calculator", description: "Calculate pH from concentration for acids and bases.", category: "chemistry", icon: <TestTube className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <ChemistryLabLazy /> },
-    { id: "ch-calc-titration", title: "Titration Simulator", description: "Simulate strong acid-strong base titration and track pH changes.", category: "chemistry", icon: <FlaskConical className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <ChemistryLabLazy /> },
+    { id: "ch-calc-titration", title: "Titration Video", description: "Run a strong acid-strong base titration and track pH changes.", category: "chemistry", icon: <FlaskConical className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <ChemistryLabLazy /> },
     { id: "ch-calc-gas", title: "Gas Laws Calculator", description: "Boyle's, Charles's, ideal gas law solver.", category: "chemistry", icon: <WindIcon className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <ChemistryLabLazy /> },
     { id: "ch-calc-molarmass", title: "Molar Mass Calculator", description: "Enter a chemical formula and get molar mass.", category: "chemistry", icon: <Microscope className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <ChemistryLabLazy /> },
     { id: "ch-calc-stoich", title: "Stoichiometry Lab", description: "Moles, percent composition, limiting reagent.", category: "chemistry", icon: <Dna className="h-4 w-4 text-emerald-500" />, status: "active", component: () => <ChemistryLabLazy /> },
     // General
-    { id: "molecular-builder", title: "Molecular Builder 3D", description: "Build any molecule from scratch. Simulate reactions.", category: "chemistry", icon: <AtomIcon className="h-4 w-4 text-amber-500" />, status: "active", component: () => <MolecularBuilder3DLazy /> },
+    { id: "molecular-builder", title: "Molecular Builder 3D", description: "Build any molecule from scratch and run reactions.", category: "chemistry", icon: <AtomIcon className="h-4 w-4 text-amber-500" />, status: "active", component: () => <MolecularBuilder3DLazy /> },
   ],
 
   biology: [
@@ -315,7 +315,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "math-3d-surfaces", title: "3D Mathematical Surfaces", description: "Explore saddle, wave, ripple, peak, plane, and cylinder surfaces.", category: "mathematics", icon: <Grid3x3 className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathModern3DLazy /> },
     { id: "math-3d-advanced", title: "Mathematics 3D Advanced", description: "Surfaces + contours, divergence/curl, Mandelbulb, parametric surfaces.", category: "mathematics", icon: <Binary className="h-4 w-4 text-violet-500" />, status: "new", component: () => <MathModern3DLazy /> },
     { id: "math-3d-fourier", title: "Fourier Series 3D", description: "Build square, sawtooth, and triangle waves from sums of sines.", category: "mathematics", icon: <Sigma className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathAdvancedMotionLabLazy /> },
-    { id: "math-3d-decay", title: "Nuclear Decay Simulator", description: "Stochastic radioactive decay visualization with half-life controls.", category: "mathematics", icon: <AtomIcon className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathAdvancedMotionLabLazy /> },
+    { id: "math-3d-decay", title: "Nuclear Decay Video", description: "Stochastic radioactive decay visualization with half-life controls.", category: "mathematics", icon: <AtomIcon className="h-4 w-4 text-violet-500" />, status: "active", component: () => <MathAdvancedMotionLabLazy /> },
     // Theory Labs
     { id: "math-th-calculus", title: "Calculus Theory", description: "Limits, derivatives, integrals, fundamental theorem.", category: "mathematics", icon: <FunctionSquare className="h-4 w-4 text-violet-500" />, status: "active", component: () => <TheoryPanelLazy subject="mathematics" topic="calculus" /> },
     { id: "math-th-trig", title: "Trigonometry Theory", description: "Identities, equations, graphs, inverse functions.", category: "mathematics", icon: <Triangle className="h-4 w-4 text-violet-500" />, status: "active", component: () => <TheoryPanelLazy subject="mathematics" topic="trigonometry" /> },
@@ -569,7 +569,7 @@ function LabContent({
       <div className="space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Interactive Labs</h1>
         <p className="text-muted-foreground">
-          Explore concepts through interactive simulations and theory content — big picture: a lab is where a formula stops being a sentence and starts being something you can turn with your hands.
+          Explore concepts through interactive videos and theory content — big picture: a lab is where a formula stops being a sentence and starts being something you can turn with your hands.
         </p>
       </div>
 

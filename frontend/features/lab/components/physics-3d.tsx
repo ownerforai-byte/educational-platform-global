@@ -490,7 +490,7 @@ function DoublePendulum3D() {
 
         <div className="flex flex-wrap gap-2">
           <Button onClick={() => setRunning(!running)} className="flex-1 sm:flex-initial">
-            {running ? "Stop Simulation" : "Start Simulation"}
+            {running ? "Stop Video" : "Start Video"}
           </Button>
           <Button
             onClick={() => {

@@ -9,7 +9,7 @@ const classes = [
 const tools = [
   { title: "Past papers", href: "/pyqs", icon: History, description: "Review previous exam questions and worked solutions." },
   { title: "Formula sheets", href: "/formulas", icon: Sigma, description: "Find key equations for physics, chemistry and mathematics." },
-  { title: "Interactive labs", href: "/lab", icon: FlaskConical, description: "Explore scientific concepts through models and simulations." },
+  { title: "Interactive labs", href: "/lab", icon: FlaskConical, description: "Explore scientific concepts through models and videos." },
   { title: "Ask Veer", href: "/chat", icon: MessageSquare, description: "Get help with a concept or work through a study question." },
 ];
 

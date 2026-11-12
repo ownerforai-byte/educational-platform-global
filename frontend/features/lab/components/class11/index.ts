@@ -8,7 +8,7 @@ export { Class11Chemistry3DPlus } from "./class11-chemistry-3d-plus";
 export { Class11Math3D } from "./class11-math-3d";
 export { Class11Math3DPlus } from "./class11-math-3d-plus";
 
-// New 11 motion graphics labs for Class 11
+// New 11 video labs for Class 11
 export { Class11KinematicsMotion } from "./class11-kinematics-motion";
 export { Class11LawsOfMotion } from "./class11-laws-motion";
 export { Class11WorkEnergy } from "./class11-work-energy";

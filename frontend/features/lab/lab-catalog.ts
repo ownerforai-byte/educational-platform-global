@@ -192,7 +192,7 @@ export const LABS: Record<string, LabEntry> = {
     tagline: "3D visualizations of natural selection and speciation.",
     purpose: "Explain the evidence and mechanisms of evolution for the NEB evolution unit.",
     concepts: ["Natural selection & adaptation", "Antibiotic resistance", "Genetic drift vs selection", "Fossils & comparative anatomy as evidence"],
-    observations: ["Simulate selection on a trait over generations", "Compare homologous structures", "Track an allele frequency changing"],
+    observations: ["Run selection on a trait over generations", "Compare homologous structures", "Track an allele frequency changing"],
     related: BIO_REL,
   },
   "conservation-3d": {

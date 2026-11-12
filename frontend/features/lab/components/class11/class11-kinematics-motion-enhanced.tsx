@@ -375,7 +375,7 @@ const container = mountRef.current;
       <CardHeader>
         <CardTitle>Class 11 Kinematics: Motion in a Straight Line (Enhanced with Labels)</CardTitle>
         <CardDescription>
-          Interactive 3D motion graphics showing kinematic equations in action with clearly labelled components.
+          Interactive 3D video showing kinematic equations in action with clearly labelled components.
         </CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">

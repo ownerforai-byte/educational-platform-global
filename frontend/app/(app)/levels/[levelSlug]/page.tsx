@@ -107,7 +107,7 @@ export default async function LevelPage({
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground mt-3 leading-relaxed">
-                  Physics, Chemistry, Mathematics, Biology, English &amp; Nepali. Complete chapter notes, practical guides, and 3D simulations.
+                  Physics, Chemistry, Mathematics, Biology, English &amp; Nepali. Complete chapter notes, practical guides, and 3D videos.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-1.5">
                   {SYLLABUS[0]?.subjects.map((s) => (

@@ -146,7 +146,7 @@ export default function Class11Page() {
             Class 11 Academic Portal
           </h1>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl leading-relaxed">
-            The unified learning dashboard for NEB Class 11 students. Master all core subjects through syllabus-aligned theory notes, interactive 3D simulations, theorem proofs, and practical lab manuals.
+            The unified learning dashboard for NEB Class 11 students. Master all core subjects through syllabus-aligned theory notes, interactive 3D videos, theorem proofs, and practical lab manuals.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
             <Link

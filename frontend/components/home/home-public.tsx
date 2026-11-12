@@ -18,7 +18,7 @@ const resources = [
   },
   {
     title: "Interactive science",
-    description: "Labs and simulations are not free. They open on the Plus plan.",
+    description: "Labs and videos are not free. They open on the Plus plan.",
     icon: FlaskConical,
   },
 ];
@@ -44,7 +44,7 @@ export function HomePublic() {
             Your NEB syllabus, organized for daily study.
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted-foreground sm:mt-5 sm:text-lg">
-            A short look at how Class 11 and 12 study is organized. Labs, simulations, and Veer open after you sign in, on the plan that includes them.
+            A short look at how Class 11 and 12 study is organized. Labs, videos, and Veer open after you sign in, on the plan that includes them.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link

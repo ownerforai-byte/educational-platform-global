@@ -433,6 +433,41 @@ describe("auth flow", () => {
     });
   });
 
+  test("login returns live plan with the granted Plus tier", async () => {
+    mocked.auth.signInWithPassword.mockResolvedValue({
+      data: {
+        user: { id: "user-plus", email: "plus@example.com" },
+        session: { access_token: VALID_TOKEN, expires_in: 3600 },
+      },
+      error: null,
+    });
+    // Owner grants write role + plan together (TIER_GRANT.plus).
+    mockProfiles({
+      role: "plus",
+      plan: "plus",
+      access_status: "ACTIVE",
+      credits: 10,
+      credits_limit: 100,
+      premium_status: false,
+    });
+
+    const res = await fetch(`${baseUrl}/api/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: "plus@example.com", password: "password123" }),
+    });
+
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.user).toMatchObject({
+      id: "user-plus",
+      email: "plus@example.com",
+      role: "plus",
+      plan: "plus",
+      premiumStatus: false,
+    });
+  });
+
   test.each([
     { name: "pending", profile: { role: "member", access_status: "PENDING" }, error: null },
     { name: "rejected", profile: { role: "member", access_status: "REJECTED" }, error: null },

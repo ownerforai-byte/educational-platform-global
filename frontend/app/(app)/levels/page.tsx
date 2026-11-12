@@ -310,7 +310,7 @@ export default async function LevelsPage() {
                 3D STEM Virtual Laboratories
               </h3>
               <p className="text-xs text-muted-foreground mt-2 leading-relaxed">
-                Hands-on WebGL 3D simulations: Cell Organelles 3D Studio, Physics Mechanics, Optics, Electromagnetism, and interactive 118 Elements Periodic Table.
+                Hands-on WebGL 3D videos: Cell Organelles 3D Studio, Physics Mechanics, Optics, Electromagnetism, and interactive 118 Elements Periodic Table.
               </p>
 
               <div className="mt-4 flex items-center gap-4 text-xs font-semibold text-muted-foreground">
@@ -568,7 +568,7 @@ export default async function LevelsPage() {
                 </td>
                 <td className="py-3.5 px-4 font-mono text-muted-foreground">STEM-3D</td>
                 <td className="py-3.5 px-4">Experimental Science</td>
-                <td className="py-3.5 px-4 text-emerald-600 dark:text-emerald-400 font-semibold">✓ {labCount} Simulations</td>
+                <td className="py-3.5 px-4 text-emerald-600 dark:text-emerald-400 font-semibold">✓ {labCount} Videos</td>
                 <td className="py-3.5 px-4 text-muted-foreground">—</td>
                 <td className="py-3.5 px-4 text-right">
                   <Link href="/lab" className="font-semibold text-emerald-500 hover:underline">

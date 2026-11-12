@@ -58,7 +58,7 @@ export default function SyllabusPage() {
             Looking for Practical Syllabi &amp; Lab Manuals?
           </h2>
           <p className="text-xs text-muted-foreground max-w-2xl">
-            Access certified NEB Class 11 &amp; 12 practical experiment records, apparatus simulators, observation calculation tools, and examiner viva voce questions.
+            Access certified NEB Class 11 &amp; 12 practical experiment records, apparatus videos, observation calculation tools, and examiner viva voce questions.
           </p>
           <div className="flex flex-wrap gap-2 pt-2 text-xs font-semibold">
             <Link href="/practical/physics" className="px-2.5 py-1 rounded-lg bg-sky-500/15 text-sky-600 dark:text-sky-400 hover:bg-sky-500/25 transition-colors">

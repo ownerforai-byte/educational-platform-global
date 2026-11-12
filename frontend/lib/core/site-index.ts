@@ -70,7 +70,7 @@ const LAB_KIND_LABEL: Record<string, string> = {
 const LAB_GROUP_META: Record<string, { id: string; name: string; opening: string; href: string }> = {
   "3d": {
     id: "labs-3d",
-    name: "3D labs & simulations",
+    name: "3D labs & videos",
     opening:
       "Every real WebGL lab — models you orbit, layered views and live process animation, one page each.",
     href: "/lab/3d",
@@ -309,7 +309,7 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       },
       {
         name: "Resource Vault",
-        opening: "The master list of materials, simulations and reference pages on the platform.",
+        opening: "The master list of materials, videos and reference pages on the platform.",
         href: "/resources",
         meta: "Vault",
       },
@@ -654,8 +654,8 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "Lab root",
       },
       {
-        name: "3D Simulations Hub",
-        opening: "All 3D simulations grouped by subject and official unit order.",
+        name: "3D Video Hub",
+        opening: "All 3D videos grouped by subject and official unit order.",
         href: "/lab/3d",
         meta: "Hub",
       },

@@ -116,7 +116,7 @@ export default async function TopicLandingPage({
             >
               <FlaskConical className="h-5 w-5 text-primary" />
               <span className="text-sm font-medium text-foreground">
-                Browse 3D labs and simulations
+                Browse 3D labs and videos
               </span>
               <ChevronRight className="ml-auto h-4 w-4 text-muted-foreground" />
             </Link>

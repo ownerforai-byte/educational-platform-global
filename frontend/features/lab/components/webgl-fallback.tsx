@@ -30,7 +30,7 @@ export function WebGLFallback({
       <div>
         <p className="text-lg font-semibold">{title ?? "WebGL Not Available"}</p>
         <p className="mt-2 text-sm text-muted-foreground">
-          {description ?? message ?? "Your browser or device does not support WebGL, which is required for this simulation."}
+          {description ?? message ?? "Your browser or device does not support WebGL, which is required for this video."}
         </p>
       </div>
     </div>

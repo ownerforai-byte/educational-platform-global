@@ -92,9 +92,12 @@ describe("navigation menu", () => {
     const sidebarHrefs = entries
       .filter(({ item }) => isSidebarNavItem(item))
       .map(({ item }) => item.href);
+    // /chat is the exception: it is the one footer destination that also
+    // belongs in the sidebar, because Veer chat is a Member feature and needs a
+    // visible door at that rung (owner 2026-11-11).
     const footerHrefs = [
       "/class-11-notes", "/class-12-notes", "/syllabus", "/pyqs", "/exams",
-      "/chat", "/ai", "/ai-quiz", "/quiz", "/practice",
+      "/ai", "/ai-quiz", "/quiz", "/practice",
       "/lab", "/formulas", "/mindmap", "/periodic-table",
       "/about", "/blog", "/neb-updates", "/how-it-works", "/contact", "/help", "/plans",
       "/profile", "/credits", "/billing", "/settings", "/notice",

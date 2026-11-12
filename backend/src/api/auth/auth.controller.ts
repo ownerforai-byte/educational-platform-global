@@ -22,6 +22,7 @@ import {
   getUserFromRequest,
   loadProfileRole,
   loadProfileAccess,
+  loadProfilePlan,
   buildSessionUser,
   isOwnerEmail,
   isApprovedAccount,
@@ -135,8 +136,6 @@ async function buildExtendedUser(
   role: string | null,
   fullName?: string | null,
 ): Promise<ExtendedSessionUser> {
-  const isOwner = isOwnerEmail(email) || normalizeRole(role) === "owner";
-
   // Persist the display name on signup/first login (the profiles trigger only
   // copies it from raw_user_meta_data; refresh flows may not have it).
   if (typeof fullName === "string" && fullName.trim().length > 0) {
@@ -146,9 +145,22 @@ async function buildExtendedUser(
       .eq("id", userId);
   }
 
+  // Live plan + role folded the same way requireAuth / spark / section gates do —
+  // otherwise /me could leave a Plus/Pro plan account stuck as Member in the UI.
+  const planInfo = await loadProfilePlan(userId);
+  const session = buildSessionUser(
+    userId,
+    email,
+    normalizeRole(role),
+    fullName ?? null,
+    planInfo.plan,
+    planInfo.premiumStatus,
+  );
+  const isOwner = session.role === "owner";
+
   // Lazy midnight reset (owner policy): a session fetched after 12:00 AM
   // reports today's daily pool, not yesterday's spent balance.
-  await ensureDailyCredits(userId, email, role);
+  await ensureDailyCredits(userId, email, session.role, session.premiumStatus === true);
 
   const profile = await supabaseAdmin
     .from("profiles")
@@ -162,14 +174,17 @@ async function buildExtendedUser(
       : null;
 
   return {
-    id: userId,
-    email,
-    fullName: fullName ?? persistedName,
-    role: isOwner ? "owner" : normalizeRole(role),
+    id: session.id,
+    email: session.email,
+    fullName: fullName ?? persistedName ?? session.fullName,
+    role: session.role,
+    plan: session.plan ?? planInfo.plan,
     credits: isOwner ? 999999 : (profile?.data?.credits ?? 0),
     creditsLimit: isOwner ? 999999 : (profile?.data?.credits_limit ?? 100),
-    premiumStatus: isOwner ? true : (profile?.data?.premium_status ?? false),
-    premiumApprovedAt: isOwner ? (profile?.data?.premium_approved_at ?? new Date().toISOString()) : (profile?.data?.premium_approved_at ?? null),
+    premiumStatus: isOwner ? true : (planInfo.premiumStatus ?? profile?.data?.premium_status ?? false),
+    premiumApprovedAt: isOwner
+      ? (profile?.data?.premium_approved_at ?? new Date().toISOString())
+      : (profile?.data?.premium_approved_at ?? null),
   };
 }
 

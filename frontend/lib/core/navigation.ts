@@ -252,7 +252,7 @@ const curriculumItems: NavItem[] = [
  */
 const stemAndRigorItems: NavItem[] = [
   { href: "/lab",                  label: "Virtual 3D Labs",      icon: FlaskConical, minLevel: "plus", hideFromSidebar: true },
-  { href: "/lab/3d",               label: "3D Simulations Hub",   icon: Box,          minLevel: "plus"  },
+  { href: "/lab/3d",               label: "3D Video Hub",   icon: Box,          minLevel: "plus"  },
   { href: "/lab/bio-3d-organelles", label: "Cell Organelles 3D",  icon: Sparkles,     minLevel: "plus"  },
   { href: "/lab/theory",           label: "Lab Theory Hub",       icon: BookOpen,     minLevel: "plus"  },
   { href: "/ad-p-table",           label: "Ad P Table",           icon: Atom,         minLevel: "plus"  },
@@ -274,7 +274,8 @@ const stemAndRigorItems: NavItem[] = [
  */
 const toolsItems: NavItem[] = [
   // Available to Members (13 AI sparks/day)
-  { href: "/chat",         label: "Veer Study Assistant",    icon: Sparkles,   minLevel: "member", hideFromSidebar: true },
+  // Reachable as soon as an account is approved (member, 13 sparks/day).
+  { href: "/chat",         label: "Veer Study Assistant",    icon: Sparkles,   minLevel: "member" },
   { href: "/chat/nepali",  label: "Nepali Assistant",        icon: Languages,  minLevel: "member" },
   { href: "/chat/grammar", label: "Grammar Console",         icon: BookOpen,   minLevel: "member" },
 

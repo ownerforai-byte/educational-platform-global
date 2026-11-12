@@ -383,7 +383,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
         </div>
 
         {NAV_SECTIONS.filter(
-          (section) => ["stem"].includes(section.id) && canSee(section),
+          (section) => ["tools", "stem"].includes(section.id) && canSee(section),
         ).map((section, sectionIndex) => (
           <NavSection
             key={section.id}
