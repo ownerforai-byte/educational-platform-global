@@ -48,6 +48,7 @@ import {
 } from "@/lib/api/ai";
 import { useVoiceInput } from "@/lib/hooks/use-voice-input";
 import { AiStatusDot } from "@/components/ai/ai-status-dot";
+import { AdSlot } from "@/components/ai/ad-slot";
 import { VeerChip, VeerSection } from "@/components/ai/veer-chip";
 import {
   VEER_LENS_CHIPS,
@@ -761,7 +762,7 @@ export function AIWidget() {
   return (
     <div className="fixed bottom-safe left-4 z-50 flex flex-col items-start gap-2">
       {open && (
-        <section aria-label="Veer Professor workspace" className="flex h-[min(calc(100dvh-6.5rem),56rem)] w-[min(calc(100vw-2rem),72rem)] flex-col overflow-hidden rounded-2xl border-2 border-slate-700/60 bg-card shadow-2xl shadow-slate-950/25">
+        <section aria-label="Veer Professor workspace" className="flex h-[min(calc(100dvh-3.5rem),72rem)] w-[min(calc(100vw-1rem),92rem)] flex-col overflow-hidden rounded-2xl border-2 border-emerald-800/40 bg-card shadow-2xl shadow-emerald-950/20">
           <header className="relative overflow-hidden bg-slate-950 px-4 py-3 text-white sm:px-5">
             <div className="pointer-events-none absolute -right-10 -top-20 h-48 w-48 rounded-full bg-violet-500/20 blur-3xl" />
             <div className="relative flex items-center justify-between gap-3">
@@ -856,8 +857,8 @@ export function AIWidget() {
                 }
               >
                 {view === "home" ? (
-                  <div className="mx-auto flex h-full min-h-0 w-full max-w-3xl flex-col justify-end gap-1 overflow-hidden p-2 pb-1.5 sm:p-3 sm:pb-1.5">
-                    <div className="flex items-center gap-2">
+                  <div className="mx-auto flex h-full min-h-0 w-full max-w-5xl flex-col gap-1 overflow-hidden p-2 pb-1.5 sm:p-3 sm:pb-1.5">
+                    <div className="flex shrink-0 items-center gap-2">
                       <AiStatusDot className="h-2.5 w-2.5" />
                       <Leaf className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
                       <h2 className="text-[13px] font-extrabold tracking-[0.08em]">VEER AI</h2>
@@ -866,36 +867,62 @@ export function AIWidget() {
                         <VeerChip label="Resume" onClick={() => setView("thread")} className="ml-auto" />
                       )}
                     </div>
-                    <VeerSection title="Roots" icon={VEER_NATURE_SECTION_ICONS.roots} border="dash">
-                      {VEER_WIDGET_ROOTS.map((chip) => (
-                        <VeerChip
-                          key={chip.id}
-                          label={chip.label}
-                          title={chip.prompt}
-                          onClick={() => void send(chip.prompt)}
-                        />
-                      ))}
-                      {subjects.slice(0, 6).map((subject) => (
-                        <VeerChip
-                          key={subject.slug}
-                          label={subject.name}
-                          active={subjectSlug === subject.slug}
-                          onClick={() => setSubjectSlug(subject.slug)}
-                        />
-                      ))}
-                    </VeerSection>
-                    <VeerSection title="Focus" icon={VEER_NATURE_SECTION_ICONS.focus} border="line">
-                      {VEER_LENS_CHIPS.map((lens) => (
-                        <VeerChip
-                          key={lens.id}
-                          label={lens.label}
-                          title={lens.hint}
-                          icon={lens.icon}
-                          onClick={() => void send(VEER_WIDGET_LENS_PROMPTS[lens.id])}
-                        />
-                      ))}
-                    </VeerSection>
-                    <VeerSection title="Suggestions" icon={VEER_NATURE_SECTION_ICONS.suggestions} border="dash">
+                    <div className="flex shrink-0 flex-col gap-1">
+                      <VeerSection title="Roots" icon={VEER_NATURE_SECTION_ICONS.roots} border="dash" scroll="x">
+                        {VEER_WIDGET_ROOTS.map((chip) => (
+                          <VeerChip
+                            key={chip.id}
+                            label={chip.label}
+                            title={chip.prompt}
+                            onClick={() => void send(chip.prompt)}
+                          />
+                        ))}
+                        {subjects.slice(0, 6).map((subject) => (
+                          <VeerChip
+                            key={subject.slug}
+                            label={subject.name}
+                            active={subjectSlug === subject.slug}
+                            onClick={() => setSubjectSlug(subject.slug)}
+                          />
+                        ))}
+                      </VeerSection>
+                      <VeerSection title="Focus" icon={VEER_NATURE_SECTION_ICONS.focus} border="line" scroll="x">
+                        {VEER_LENS_CHIPS.map((lens) => (
+                          <VeerChip
+                            key={lens.id}
+                            label={lens.label}
+                            title={lens.hint}
+                            icon={lens.icon}
+                            onClick={() => void send(VEER_WIDGET_LENS_PROMPTS[lens.id])}
+                          />
+                        ))}
+                      </VeerSection>
+                      <VeerSection title={`${subjectSlug} topics`} icon={VEER_NATURE_SECTION_ICONS.topics} border="line" scroll="x">
+                        {topicChipsForSubject(subjectSlug, 10, "gentle").map((chip) => (
+                          <VeerChip
+                            key={chip.id}
+                            label={chip.label}
+                            title={chip.prompt}
+                            onClick={() => void send(chip.prompt)}
+                          />
+                        ))}
+                        {sessions.slice(0, 4).map((item) => (
+                          <VeerChip
+                            key={item.session}
+                            label={item.preview || "Saved lesson"}
+                            title={`${item.messages} messages`}
+                            onClick={() => void openConversation(item.session)}
+                          />
+                        ))}
+                      </VeerSection>
+                    </div>
+                    <VeerSection
+                      title="Suggestions"
+                      icon={VEER_NATURE_SECTION_ICONS.suggestions}
+                      border="dash"
+                      scroll="y"
+                      className="min-h-0 flex-[1.2]"
+                    >
                       {VEER_WIDGET_SUGGESTIONS.map((chip) => (
                         <VeerChip
                           key={chip.id}
@@ -905,52 +932,53 @@ export function AIWidget() {
                         />
                       ))}
                     </VeerSection>
-                    <VeerSection title={`${subjectSlug} topics`} icon={VEER_NATURE_SECTION_ICONS.topics} border="line">
-                      {topicChipsForSubject(subjectSlug, 10, "gentle").map((chip) => (
-                        <VeerChip
-                          key={chip.id}
-                          label={chip.label}
-                          title={chip.prompt}
-                          onClick={() => void send(chip.prompt)}
-                        />
-                      ))}
-                      {sessions.slice(0, 4).map((item) => (
-                        <VeerChip
-                          key={item.session}
-                          label={item.preview || "Saved lesson"}
-                          title={`${item.messages} messages`}
-                          onClick={() => void openConversation(item.session)}
-                        />
-                      ))}
-                    </VeerSection>
+                    <AdSlot flexible className="min-h-[3.5rem]" />
                   </div>
                 ) : (
-                  <div className="mx-auto w-full max-w-4xl space-y-5 p-4 sm:p-6">
+                  <div className="mx-auto flex h-full min-h-0 w-full max-w-5xl flex-col gap-2 overflow-hidden p-3 sm:p-4">
                     {loadingThread && <p className="flex items-center gap-2 text-sm font-semibold text-muted-foreground"><Loader2 className="h-4 w-4 animate-spin" /> Loading saved lesson…</p>}
                     {!loadingThread && lines.length === 0 && (
-                      <div className="flex flex-col justify-end gap-1 overflow-hidden">
-                        <VeerSection title="Roots" icon={VEER_NATURE_SECTION_ICONS.roots} border="dash">
-                          {VEER_WIDGET_ROOTS.map((chip) => (
-                            <VeerChip
-                              key={chip.id}
-                              label={chip.label}
-                              title={chip.prompt}
-                              onClick={() => void send(chip.prompt)}
-                            />
-                          ))}
-                        </VeerSection>
-                        <VeerSection title="Focus" icon={VEER_NATURE_SECTION_ICONS.focus} border="line">
-                          {VEER_LENS_CHIPS.map((lens) => (
-                            <VeerChip
-                              key={lens.id}
-                              label={lens.label}
-                              title={lens.hint}
-                              icon={lens.icon}
-                              onClick={() => void send(VEER_WIDGET_LENS_PROMPTS[lens.id])}
-                            />
-                          ))}
-                        </VeerSection>
-                        <VeerSection title="Suggestions" icon={VEER_NATURE_SECTION_ICONS.suggestions} border="dash">
+                      <div className="flex min-h-0 flex-1 flex-col gap-1 overflow-hidden">
+                        <div className="flex shrink-0 flex-col gap-1">
+                          <VeerSection title="Roots" icon={VEER_NATURE_SECTION_ICONS.roots} border="dash" scroll="x">
+                            {VEER_WIDGET_ROOTS.map((chip) => (
+                              <VeerChip
+                                key={chip.id}
+                                label={chip.label}
+                                title={chip.prompt}
+                                onClick={() => void send(chip.prompt)}
+                              />
+                            ))}
+                          </VeerSection>
+                          <VeerSection title="Focus" icon={VEER_NATURE_SECTION_ICONS.focus} border="line" scroll="x">
+                            {VEER_LENS_CHIPS.map((lens) => (
+                              <VeerChip
+                                key={lens.id}
+                                label={lens.label}
+                                title={lens.hint}
+                                icon={lens.icon}
+                                onClick={() => void send(VEER_WIDGET_LENS_PROMPTS[lens.id])}
+                              />
+                            ))}
+                          </VeerSection>
+                          <VeerSection title={`${subjectSlug} topics`} icon={VEER_NATURE_SECTION_ICONS.topics} border="line" scroll="x">
+                            {topicChipsForSubject(subjectSlug, 8, "gentle").map((chip) => (
+                              <VeerChip
+                                key={chip.id}
+                                label={chip.label}
+                                title={chip.prompt}
+                                onClick={() => void send(chip.prompt)}
+                              />
+                            ))}
+                          </VeerSection>
+                        </div>
+                        <VeerSection
+                          title="Suggestions"
+                          icon={VEER_NATURE_SECTION_ICONS.suggestions}
+                          border="dash"
+                          scroll="y"
+                          className="min-h-0 flex-[1.2]"
+                        >
                           {VEER_WIDGET_SUGGESTIONS.map((chip) => (
                             <VeerChip
                               key={chip.id}
@@ -960,16 +988,7 @@ export function AIWidget() {
                             />
                           ))}
                         </VeerSection>
-                        <VeerSection title={`${subjectSlug} topics`} icon={VEER_NATURE_SECTION_ICONS.topics} border="line">
-                          {topicChipsForSubject(subjectSlug, 8, "gentle").map((chip) => (
-                            <VeerChip
-                              key={chip.id}
-                              label={chip.label}
-                              title={chip.prompt}
-                              onClick={() => void send(chip.prompt)}
-                            />
-                          ))}
-                        </VeerSection>
+                        <AdSlot flexible className="min-h-[3.5rem]" />
                       </div>
                     )}
                     {lines.map((line, index) => line.role === "user" ? (

@@ -83,8 +83,8 @@ export function VeerSection({
   children: ReactNode;
   className?: string;
   icon?: LucideIcon;
-  /** Horizontal chip row by default — avoids vertical home scroll. */
-  scroll?: "x" | "wrap";
+  /** x = horizontal row; y = stacked suggestions; wrap = wrapping grid. */
+  scroll?: "x" | "y" | "wrap";
   /** Section frame: dashed (default), solid line, or none. */
   border?: "dash" | "line" | "none";
   "aria-label"?: string;
@@ -93,7 +93,7 @@ export function VeerSection({
     <section
       aria-label={ariaLabel ?? title}
       className={cn(
-        "min-w-0 space-y-1 rounded px-1.5 py-1",
+        "flex min-h-0 min-w-0 flex-col space-y-1 rounded px-1.5 py-1",
         border === "dash" &&
           "border border-dashed border-emerald-700/30 bg-emerald-500/[0.03] dark:border-emerald-400/30",
         border === "line" &&
@@ -101,7 +101,7 @@ export function VeerSection({
         className,
       )}
     >
-      <h2 className="flex items-center gap-1 text-[8px] font-semibold uppercase tracking-[0.12em] text-emerald-800/70 dark:text-emerald-300/70">
+      <h2 className="flex shrink-0 items-center gap-1 text-[8px] font-semibold uppercase tracking-[0.12em] text-emerald-800/70 dark:text-emerald-300/70">
         {Icon ? (
           <Icon className="h-2.5 w-2.5 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
         ) : null}
@@ -110,9 +110,11 @@ export function VeerSection({
       <div
         className={cn(
           "flex gap-1",
-          scroll === "x"
-            ? "flex-nowrap overflow-x-auto overscroll-x-contain pb-px [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            : "flex-wrap",
+          scroll === "x" &&
+            "flex-nowrap overflow-x-auto overscroll-x-contain pb-px [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+          scroll === "y" &&
+            "min-h-0 flex-1 flex-col overflow-y-auto overscroll-y-contain [&_a]:w-full [&_button]:w-full",
+          scroll === "wrap" && "flex-wrap",
         )}
       >
         {children}

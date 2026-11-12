@@ -61,6 +61,7 @@ import {
   ChatAttachPreview,
   MAX_ATTACHMENTS,
 } from "@/components/ai/chat-attachments";
+import { AdSlot } from "@/components/ai/ad-slot";
 import { AiStatusDot } from "@/components/ai/ai-status-dot";
 import { VeerChip, VeerSection } from "@/components/ai/veer-chip";
 import {
@@ -1264,41 +1265,65 @@ export function TutorConsole({
 
       {/* ── Home (flush to composer) or message stream ── */}
       {!hasConversation && !sending ? (
-        <div className="mx-auto flex min-h-0 w-full max-w-3xl flex-1 flex-col justify-end gap-1 overflow-hidden px-2 pt-1 pb-0 sm:px-3">
-          <VeerSection title="Subjects" icon={VEER_NATURE_SECTION_ICONS.subjects} border="dash">
-            {MODES.map((m) => (
-              <VeerChip
-                key={m.id}
-                label={m.id}
-                active={mode === m.id}
-                onClick={() => chooseMode(m.id)}
-              />
-            ))}
-          </VeerSection>
+        <div className="mx-auto flex min-h-0 w-full max-w-3xl flex-1 flex-col gap-1 overflow-hidden px-2 pt-1 pb-0 sm:px-3">
+          <div className="flex shrink-0 flex-col gap-1">
+            <VeerSection title="Subjects" icon={VEER_NATURE_SECTION_ICONS.subjects} border="dash" scroll="x">
+              {MODES.map((m) => (
+                <VeerChip
+                  key={m.id}
+                  label={m.id}
+                  active={mode === m.id}
+                  onClick={() => chooseMode(m.id)}
+                />
+              ))}
+            </VeerSection>
 
-          <VeerSection title="Focus" icon={VEER_NATURE_SECTION_ICONS.focus} border="line">
-            {VEER_LENS_CHIPS.map((lens) => (
-              <VeerChip
-                key={lens.id}
-                label={lens.label}
-                title={lens.hint}
-                icon={lens.icon}
-                active={homeTab.toLowerCase() === lens.id}
-                onClick={() => {
-                  setHomeTab(
-                    lens.id === "knowledge"
-                      ? "Knowledge"
-                      : lens.id === "ideas"
-                        ? "Ideas"
-                        : "Derivations",
-                  );
-                  void handleSend(VEER_CHAT_LENS_PROMPTS[lens.id]);
-                }}
-              />
-            ))}
-          </VeerSection>
+            <VeerSection title="Focus" icon={VEER_NATURE_SECTION_ICONS.focus} border="line" scroll="x">
+              {VEER_LENS_CHIPS.map((lens) => (
+                <VeerChip
+                  key={lens.id}
+                  label={lens.label}
+                  title={lens.hint}
+                  icon={lens.icon}
+                  active={homeTab.toLowerCase() === lens.id}
+                  onClick={() => {
+                    setHomeTab(
+                      lens.id === "knowledge"
+                        ? "Knowledge"
+                        : lens.id === "ideas"
+                          ? "Ideas"
+                          : "Derivations",
+                    );
+                    void handleSend(VEER_CHAT_LENS_PROMPTS[lens.id]);
+                  }}
+                />
+              ))}
+            </VeerSection>
 
-          <VeerSection title="Suggestions" icon={VEER_NATURE_SECTION_ICONS.suggestions} border="dash">
+            <VeerSection
+              title={mode === "General" ? "Important topics" : `${mode} topics`}
+              icon={VEER_NATURE_SECTION_ICONS.topics}
+              border="line"
+              scroll="x"
+            >
+              {topicChips.map((chip) => (
+                <VeerChip
+                  key={chip.id}
+                  label={chip.label}
+                  title={chip.prompt}
+                  onClick={() => void handleSend(chip.prompt)}
+                />
+              ))}
+            </VeerSection>
+          </div>
+
+          <VeerSection
+            title="Suggestions"
+            icon={VEER_NATURE_SECTION_ICONS.suggestions}
+            border="dash"
+            scroll="y"
+            className="min-h-0 flex-[1.2]"
+          >
             {VEER_CHAT_SUGGESTIONS.map((chip) => (
               <VeerChip
                 key={chip.id}
@@ -1317,20 +1342,7 @@ export function TutorConsole({
             ))}
           </VeerSection>
 
-          <VeerSection
-            title={mode === "General" ? "Important topics" : `${mode} topics`}
-            icon={VEER_NATURE_SECTION_ICONS.topics}
-            border="line"
-          >
-            {topicChips.map((chip) => (
-              <VeerChip
-                key={chip.id}
-                label={chip.label}
-                title={chip.prompt}
-                onClick={() => void handleSend(chip.prompt)}
-              />
-            ))}
-          </VeerSection>
+          <AdSlot flexible className="min-h-[3.5rem]" />
         </div>
       ) : (
       <div ref={streamRef} onScroll={handleStreamScroll} className="mx-auto min-h-0 w-full max-w-3xl flex-1 space-y-5 overflow-y-auto overscroll-contain scroll-smooth px-3 py-3 sm:px-4">

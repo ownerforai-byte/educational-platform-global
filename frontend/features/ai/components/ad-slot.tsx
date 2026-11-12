@@ -15,16 +15,20 @@ export function AdSlot({
   className,
   label = "Sponsored",
   children,
+  flexible = false,
 }: {
   className?: string;
   label?: string;
   children?: React.ReactNode;
+  /** Fill leftover space in Veer home / widget / workspace layouts. */
+  flexible?: boolean;
 }) {
   return (
     <aside
       aria-label="Sponsored"
       className={cn(
         "rounded-xl border-2 border-dashed border-amber-500/40 bg-amber-500/[0.05] p-2.5",
+        flexible && "flex min-h-[4.5rem] flex-1 flex-col justify-center",
         className,
       )}
     >
