@@ -28,7 +28,7 @@ import { DiagramStudio } from "@/components/ai/diagram-studio";
 
 const HEART_SVG = `<svg viewBox="0 0 100 100">
   <g><title>Left atrium | Receives oxygenated blood</title><circle cx='50' cy='50' r='10'/></g>
-  <g class="edu-detail-dot"><title>DETAIL DOT | Atrial pressure | Related: Right atrium; Ventricle; Pulmonary vein | Contrasts: Atrium vs Ventricle — atria receive, ventricles pump; Systole vs Diastole — contraction vs relaxation | Detail: Low-pressure filling phase driven by the pressure gradient, no valve resistance | Exam: do not confuse atrial systole with ventricular systole</title><circle cx='80' cy='20' r='5'/></g>
+  <g class="edu-detail-dot"><title>DETAIL DOT | Atrial pressure | Related: Right atrium; Ventricle; Pulmonary vein | Relations: Pulmonary vein drives atrial pressure because inflow exceeds outflow in diastole; Atrial pressure drives mitral opening because the gradient exceeds ventricular pressure | Contrasts: Atrium vs Ventricle — atria receive, ventricles pump; Systole vs Diastole — contraction vs relaxation | Detail: Low-pressure filling phase driven by the pressure gradient, no valve resistance | Exam: do not confuse atrial systole with ventricular systole</title><circle cx='80' cy='20' r='5'/></g>
 </svg>`;
 
 /** The dedicated lane streams ONE svg fence directly — no background draw. */
@@ -90,15 +90,24 @@ describe("DiagramStudio", () => {
     expect(payload[0].content).toContain("900x640");
     expect(payload[0].content).toContain("edu-detail-dot");
     expect(payload[0].content).toContain("Related:");
+    expect(payload[0].content).toContain("Relations:");
     expect(payload[0].content).toContain("Contrasts:");
+    // The agent is trained to CREATE the dot information per question,
+    // from a freshly generated knowledge brief — not pre-coded content.
+    expect(payload[0].content).toContain("THE AGENT CREATES THE INFORMATION");
+    expect(payload[0].content).toContain("DIAGRAM KNOWLEDGE BRIEF");
+    expect(payload[0].content).toContain("SOURCE OF TRUTH");
 
     // The hub names the WORK, never a provider: the server resolves "diagram"
     // to its own dedicated free Gemini key/model.
     const options = streamChatMock.mock.calls[0][2] as {
       task?: string;
+      subject?: string;
       signal?: AbortSignal;
     };
     expect(options.task).toBe("diagram");
+    // The chosen subject scopes the per-question knowledge derivation.
+    expect(options.subject).toBe("Physics");
     expect(options.signal).toBeInstanceOf(AbortSignal);
     expect(JSON.stringify(streamChatMock.mock.calls[0])).not.toContain("diagram-hub");
 
@@ -160,11 +169,13 @@ describe("DiagramStudio", () => {
     expect(widget.textContent).toContain("Atrial pressure");
     expect(widget.textContent).toContain("Right atrium");
     expect(widget.textContent).toContain("Pulmonary vein");
+    expect(widget.textContent).toContain("Pulmonary vein drives atrial pressure");
+    expect(widget.querySelector(".edu-visual__dot-section--relations")).not.toBeNull();
     expect(widget.textContent).toContain("Atrium vs Ventricle");
     expect(widget.textContent).toContain("Systole vs Diastole");
     expect(widget.textContent).toContain("do not confuse atrial systole");
-    // Contrasts render as rows, related terms as chips.
-    expect(widget.querySelectorAll(".edu-visual__dot-row").length).toBe(2);
+    // Relations AND contrasts render as rows (full clauses), related as chips.
+    expect(widget.querySelectorAll(".edu-visual__dot-row").length).toBe(4);
     expect(widget.querySelectorAll(".edu-visual__dot-chip").length).toBe(3);
 
     // CLICK pins the widget so it can be scrolled and read in full.
@@ -177,5 +188,22 @@ describe("DiagramStudio", () => {
 
     fireEvent.click(widget.querySelector(".edu-visual__dot-close") as HTMLElement);
     expect(document.querySelector(".edu-visual__dot-popover")).toBeNull();
+  });
+
+  it("forwards the chosen subject so the agent derives knowledge for that syllabus", async () => {
+    render(<DiagramStudio />);
+    fireEvent.click(screen.getByRole("button", { name: "Chemistry" }));
+    fireEvent.change(screen.getByPlaceholderText(/name the diagram/i), {
+      target: { value: "electrochemical cell" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /draw diagram/i }));
+
+    await waitFor(() => expect(streamChatMock).toHaveBeenCalledTimes(1));
+    const options = streamChatMock.mock.calls[0][2] as { subject?: string; task?: string };
+    expect(options.task).toBe("diagram");
+    expect(options.subject).toBe("Chemistry");
+    const outbound = streamChatMock.mock.calls[0][0] as { role: string; content: string }[];
+    expect(outbound[1].content).toContain("Chemistry");
+    expect(outbound[1].content).toContain("electrochemical cell");
   });
 });

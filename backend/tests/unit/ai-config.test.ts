@@ -201,8 +201,18 @@ describe("Diagram Hub free Gemini lane", () => {
     expect(DIAGRAM_HUB_RULES).toContain("edu-detail-dot");
     expect(DIAGRAM_HUB_RULES).toContain("DETAIL DOT | <Topic>");
     expect(DIAGRAM_HUB_RULES).toContain("Related:");
+    expect(DIAGRAM_HUB_RULES).toContain("Relations:");
     expect(DIAGRAM_HUB_RULES).toContain("Contrasts:");
     expect(DIAGRAM_HUB_RULES).toContain("FIELD LAW");
+    // Owner follow-up 2026-11-12: the AGENT CREATES the information per
+    // question, on every diagram creation — not pre-coded widget content.
+    expect(DIAGRAM_HUB_RULES).toContain("DIAGRAM KNOWLEDGE BRIEF");
+    expect(DIAGRAM_HUB_RULES).toContain("GENERATED FOR THIS REQUEST");
+    expect(DIAGRAM_HUB_RULES).toContain("SOURCE OF TRUTH");
+    expect(DIAGRAM_HUB_RULES).toContain("REGENERATED ON EVERY DIAGRAM CREATION");
+    expect(DIAGRAM_HUB_RULES).toContain("CONTENT LAW");
+    expect(DIAGRAM_HUB_RULES).toContain("ANCHORED");
+    expect(DIAGRAM_HUB_RULES).toContain("FRESHNESS");
     // The knowledge stays in the drawing — never an essay beside it.
     expect(DIAGRAM_HUB_RULES).toContain("picture is the answer");
   });

@@ -79,6 +79,7 @@ export function parsePartTitle(rawText: string): ParsedPartInfo {
  * `|`, with `;`-separated items inside a field:
  *
  *   DETAIL DOT | Diffusion | Related: Osmosis; Active transport |
+ *   Relations: Gradient drives flux because J = -D dC/dx |
  *   Contrasts: Diffusion vs Osmosis — solvent only in osmosis |
  *   Detail: Particles move down a concentration gradient… | Exam: no ATP
  *
@@ -334,10 +335,12 @@ function dotSectionHtml(section: DetailDotSection): string {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
-  const isContrast = /contrast|versus|difference/i.test(section.label);
+  // Relations and contrasts are full clauses (often with formulas), so they
+  // read far better as stacked rows than as cramped chips.
+  const isRowList = /contrast|versus|difference|relation/i.test(section.label);
   const isList = section.items.length > 1;
   let body: string;
-  if (isContrast && isList) {
+  if (isRowList && isList) {
     body = `<div class="edu-visual__dot-rows">${section.items
       .map((item) => `<div class="edu-visual__dot-row">${escapeText(item)}</div>`)
       .join("")}</div>`;

@@ -5,3 +5,4 @@ export * from "./image-gen.js";
 export * from "./image-input.js";
 export * from "./diagram-search.js";
 export * from "./google-diagrams.js";
+export * from "./diagram-knowledge.js";

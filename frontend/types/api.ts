@@ -399,6 +399,8 @@ export interface AIChatRequest {
    * resolves it to its own provider/model; the client never names a provider.
    */
   task?: string;
+  /** Diagram Hub subject — scopes the per-question knowledge derivation. */
+  subject?: string;
 }
 
 export interface AIChatResponse {

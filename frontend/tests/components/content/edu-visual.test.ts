@@ -44,6 +44,7 @@ describe("parsePartTitle", () => {
 describe("parseDetailDot", () => {
   const PAYLOAD =
     "DETAIL DOT | Diffusion | Related: Osmosis; Active transport; Facilitated diffusion | " +
+    "Relations: Gradient drives flux because J = -D dC/dx; Higher temperature raises D because molecular speed increases | " +
     "Contrasts: Diffusion vs Osmosis — only water moves in osmosis; Passive vs Active — no ATP vs ATP | " +
     "Detail: Particles move down a concentration gradient until equilibrium. | " +
     "Exam: never say diffusion needs energy";
@@ -53,6 +54,7 @@ describe("parseDetailDot", () => {
     expect(dot.name).toBe("Diffusion");
     expect(dot.sections.map((s) => s.label)).toEqual([
       "Related",
+      "Relations",
       "Contrasts",
       "Detail",
       "Exam",
@@ -62,10 +64,14 @@ describe("parseDetailDot", () => {
       "Active transport",
       "Facilitated diffusion",
     ]);
+    // Relations are causal / mathematical links, parsed as their own section.
+    expect(dot.sections[1].label).toBe("Relations");
     expect(dot.sections[1].items).toHaveLength(2);
-    expect(dot.sections[1].items[0]).toContain("Diffusion vs Osmosis");
-    expect(dot.sections[2].items).toEqual([]);
-    expect(dot.sections[2].value).toContain("concentration gradient");
+    expect(dot.sections[1].items[0]).toContain("dC/dx");
+    expect(dot.sections[2].items).toHaveLength(2);
+    expect(dot.sections[2].items[0]).toContain("Diffusion vs Osmosis");
+    expect(dot.sections[3].items).toEqual([]);
+    expect(dot.sections[3].value).toContain("concentration gradient");
   });
 
   it("accepts a payload with no topic and tolerates a legacy pipe label", () => {

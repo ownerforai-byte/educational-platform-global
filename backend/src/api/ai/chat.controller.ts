@@ -36,6 +36,10 @@ import { imageInstruction, sanitizeChatImages } from "../../ai/image-input";
 import { withFigureToolInstruction, resolveFiguresInText } from "../../ai/image-gen";
 import { isDiagramRequest } from "../../ai/figure-conditions";
 import { fetchDiagramLinks, formatGraphLinksBlock, type DiagramLink } from "../../ai/diagram-search";
+import {
+  buildDiagramKnowledge,
+  formatDiagramKnowledgeBlock,
+} from "../../ai/media/diagram-knowledge";
 import { detectRoughInput, ROUGH_REDFLAG_REPLY } from "../../ai/profanity-guard";
 import { buildCitations, formatCitations, type AnswerCitation } from "../../ai/citations";
 import { openSseChannel, streamAnswerToStudent, type SseChannel, type StreamState } from "./stream.controller";
@@ -96,6 +100,10 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // server resolves it to the dedicated free Gemini lane below.
     const task: string = typeof body?.task === "string" ? body.task.trim().toLowerCase() : "";
     const isDiagram = task === "diagram";
+    // School subject picked in the Diagram Hub. It scopes the per-question
+    // knowledge derivation; every other chat surface ignores it.
+    const diagramSubject: string =
+      typeof body?.subject === "string" ? body.subject.trim().slice(0, 40) : "";
 
     if (!messages.length) {
       res.status(400).json({ error: "messages array is required" });
@@ -198,7 +206,12 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // research to finish, so the student stared at a frozen spinner and then
     // the answer appeared to land all at once.
     channel = stream ? openSseChannel(res) : null;
-    channel?.send({ phase: "searching", label: "Researching the topic…" });
+    channel?.send({
+      phase: "searching",
+      label: isDiagram
+        ? "Deriving related concepts, relations & contrasts…"
+        : "Researching the topic…",
+    });
 
     // Professor mode: enforce plain-text style + inject live web results
     // for the student's latest question (Google CSE, timeout-protected).
@@ -220,13 +233,29 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     const upgrade = !isDiagram && !diagramRequest && shouldUpgradeAcademic(lastUser, conversationTail);
     // The end-of-answer graph links are the SAME real files the model draws
     // from, fetched alongside the context so they add no extra wait.
-    const [contextBase, graphLinks] = await Promise.all([
+    const [contextBase, graphLinks, diagramKnowledge] = await Promise.all([
       buildProfessorContext(lastUser, conversationTail, tier),
       diagramRequest || upgrade
         ? fetchDiagramLinks(lastUser)
         : Promise.resolve([] as DiagramLink[]),
+      // Owner 2026-11-12: the AGENT creates the dot knowledge for THIS
+      // question on every diagram creation. It runs alongside the visual
+      // research, so the extra reasoning pass adds no wall-clock wait.
+      isDiagram
+        ? buildDiagramKnowledge(lastUser, {
+            subject: diagramSubject,
+            conversationTail,
+            priorDiagrams: messages.filter((m) => m.role === "assistant").length,
+            chat: (turns) => aiService.chat(DIAGRAM_HUB_PROVIDER, turns),
+          })
+        : Promise.resolve(null),
     ]);
     let baseContext = contextBase;
+    // The brief rides BEFORE the final output contract, so rule 0 can name it
+    // as the source of truth while the contract still has the last word.
+    if (diagramKnowledge) {
+      baseContext += `\n\n${formatDiagramKnowledgeBlock(diagramKnowledge)}`;
+    }
     if (images.length) baseContext += `\n\n${imageInstruction(images.length)}`;
     // Figure tool: when enabled the model may draw one live figure at the end
     // of its answer (see image-gen.ts) — the instruction explains the fence.

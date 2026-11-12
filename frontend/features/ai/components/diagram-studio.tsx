@@ -26,6 +26,10 @@ import { AiToolShell } from "@/components/ai/ai-tool-shell";
  * Owner 2026-11-12: extra knowledge (related concepts, contrasts, mechanisms,
  * exam traps) lives in floating DETAIL DOTS inside the SVG, not in an essay.
  * Hovering or clicking a dot opens a widget with everything that dot carries.
+ *
+ * Owner 2026-11-12 (follow-up): the AGENT CREATES that information per
+ * question. A server-side reasoning pass derives related concepts, relations
+ * and contrasts for EVERY diagram creation; nothing in the dots is pre-coded.
  */
 
 const DIAGRAM_SYSTEM = `${PLATFORM_SYSTEM_PROMPT}
@@ -35,9 +39,10 @@ CLASSROOM (DIAGRAM HUB): this interface exists to DRAW — one detailed, exam-gr
 1. SEARCH FIRST: use the attached research to copy the exact structure, orientation and standard textbook labels of the real diagram (Google / attached sources). If the source labels are in another language, TRANSLATE EVERY LABEL TO ENGLISH — the drawing is always 100% English.
 2. DRAW ONE COMPLETE \`\`\`svg figure on a 900x640 canvas — razor-sharp lines and text, leader lines from every part to its label, standard notation, units on every axis. Wrap each labelled part in its own <g><title>Part Name | Function | Exam significance</title>…</g> so every label opens on hover.
 3. Caption the fence line in English ("\`\`\`svg Labelled human heart — chambers and vessels").
-4. After the figure, add AT MOST 4 short bullets: what each main part does and the one exam trap. The extra related / contrast knowledge belongs in the dots below, NOT here.
-5. DETAIL DOTS (MANDATORY, 3-6): inside the same <svg>, add small floating dots beside the parts they explain. Each is <g class="edu-detail-dot"><title>DETAIL DOT | Topic | Related: a; b; c | Contrasts: A vs B — exact difference | Detail: deeper mechanism and conditions | Exam: the trap</title><circle cx="…" cy="…" r="7" fill="#2563eb"/><text x="…" y="…" fill="#ffffff" text-anchor="middle" font-size="10">i</text></g>. Keep each <title> on ONE line; use | only between fields and ; only between items; always include Related: and Contrasts:. Hovering or clicking a dot opens a floating widget with all of that information.
-6. No essays — the picture is the answer. Do NOT write code on screen, do NOT emit a veer-image fence, and do NOT append links, citations or key terms.`;
+4. After the figure, add AT MOST 4 short bullets: what each main part does and the one exam trap. The extra related / relation / contrast knowledge belongs in the dots below, NOT here.
+5. DETAIL DOTS (MANDATORY, 3-6): inside the same <svg>, add small floating dots beside the parts they explain. Each is <g class="edu-detail-dot"><title>DETAIL DOT | Topic | Related: a; b; c | Relations: A drives B because the formula or condition; C limits D because the units | Contrasts: A vs B — exact difference | Detail: deeper mechanism and conditions | Exam: the trap</title><circle cx="…" cy="…" r="7" fill="#2563eb"/><text x="…" y="…" fill="#ffffff" text-anchor="middle" font-size="10">i</text></g>. Keep each <title> on ONE line; use | only between fields and ; only between items; ALWAYS include Related:, Relations: and Contrasts:. Hovering or clicking a dot opens a floating widget with all of that information.
+6. THE AGENT CREATES THE INFORMATION: a [DIAGRAM KNOWLEDGE BRIEF — GENERATED FOR THIS REQUEST] block is attached when available. It was derived from THIS question in a separate reasoning pass, regenerated on EVERY diagram creation. It is the SOURCE OF TRUTH for the dots: distribute every RELATED, RELATIONS and CONTRASTS item across them, anchored to the named parts of THIS question. Relations are the causal or mathematical links between those parts, not merely related concepts. If no brief is attached, derive the same categories yourself from the question before drawing. NEVER show pre-coded, memorised or generic textbook lines, and never repeat dot text from an earlier figure in this conversation.
+7. No essays — the picture is the answer. Do NOT write code on screen, do NOT emit a veer-image fence, and do NOT append links, citations or key terms.`;
 
 const SUBJECTS = [
   "Physics",
@@ -119,6 +124,7 @@ export function DiagramStudio() {
         session: sessionRef.current,
         // Resolve server-side to the dedicated free Gemini diagram lane.
         task: "diagram",
+        subject,
         signal: controller.signal,
       })) {
         if (typeof chunk === "string") {

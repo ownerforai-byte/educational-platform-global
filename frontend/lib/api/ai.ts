@@ -114,6 +114,8 @@ export interface StreamChatOptions {
   console?: string;
   /** Server-side work lane ("diagram" = Diagram Hub's dedicated free model). */
   task?: string;
+  /** Diagram Hub subject — scopes the per-question knowledge derivation. */
+  subject?: string;
   /** Abort the in-flight reply (the Stop button). */
   signal?: AbortSignal;
 }
@@ -132,6 +134,9 @@ export async function* streamChat(
   }
   if (options?.task) {
     body.task = options.task;
+  }
+  if (options?.subject) {
+    body.subject = options.subject;
   }
   if (options?.session) body.session = options.session;
   body = withLatestImages(messages, body);
