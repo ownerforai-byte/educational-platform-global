@@ -89,11 +89,11 @@ export function WelcomeStatus() {
   useUrlStatusToken();
   const [state, setState] = useState<StatusState>("loading");
   const [fullName, setFullName] = useState<string | null>(null);
-  /** Live tally from GET /api/auth/account-status (profiles.status_check_count). */
+  /** Live tally — bumps only on "Check now" (profiles.status_check_count). */
   const [checkCount, setCheckCount] = useState(0);
   const timerRef = useRef<number | null>(null);
 
-  const check = useCallback(async () => {
+  const check = useCallback(async (opts?: { bump?: boolean }) => {
     // Recover from localStorage / sessionStorage / the hardcoded cookie, so a
     // refresh or a cleared store cannot lose the "account created" identity.
     const token = readStatusToken();
@@ -103,12 +103,16 @@ export function WelcomeStatus() {
       return;
     }
 
+    const bump = opts?.bump === true;
+    const qs = new URLSearchParams({ token });
+    if (bump) qs.set("bump", "1");
+
     try {
       const res = await apiFetch<{
         accessStatus: "PENDING" | "ACTIVE" | "REJECTED";
         fullName?: string | null;
         checkCount?: number;
-      }>(`/api/auth/account-status?token=${encodeURIComponent(token)}`);
+      }>(`/api/auth/account-status?${qs.toString()}`);
       setFullName(res.fullName ?? null);
       if (typeof res.checkCount === "number" && Number.isFinite(res.checkCount)) {
         setCheckCount(res.checkCount);
@@ -254,7 +258,7 @@ export function WelcomeStatus() {
           body="We couldn't check your status just now — this page keeps retrying automatically."
           actions={
             <button
-              onClick={() => void check()}
+              onClick={() => void check({ bump: true })}
               className="rounded-xl bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
             >
               Check now
@@ -282,7 +286,7 @@ export function WelcomeStatus() {
           actions={
             <>
               <button
-                onClick={() => void check()}
+                onClick={() => void check({ bump: true })}
                 className="rounded-xl bg-primary px-4 py-2.5 text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity inline-flex items-center gap-1.5"
               >
                 <RefreshCw className="h-3.5 w-3.5" />
