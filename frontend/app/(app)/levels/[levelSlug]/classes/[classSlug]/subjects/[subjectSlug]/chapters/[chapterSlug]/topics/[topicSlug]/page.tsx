@@ -60,13 +60,46 @@ export default async function TopicPage({
     );
   }
 
-  // Database-backed levels keep the topic title lookup and point at whatever
-  // resources exist for the chapter.
+  // Database-backed levels: resolve the topic across the subject's syllabus
+  // units by slug. A match renders the same canonical topic workspace as the
+  // syllabus route (notes, mindmap, resources) — no empty state.
+  const { getSubjectSyllabus, slugifySyllabusTopic } = await import("@/lib/syllabus");
+  const subject = getSubjectSyllabus(classSlug, subjectSlug);
+  if (subject) {
+    for (const unit of subject.units) {
+      const matched = unit.topics.find((t) => slugifySyllabusTopic(t) === topicSlug);
+      if (matched) {
+        return (
+          <div className="mx-auto max-w-5xl space-y-6 py-10">
+            <div className="flex items-center justify-between">
+              <Breadcrumbs
+                items={[
+                  { label: "Home", href: "/" },
+                  { label: "Levels", href: "/levels" },
+                  { label: classSlug, href: `/levels/${levelSlug}/classes/${classSlug}` },
+                  { label: subjectSlug, href: `/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}` },
+                  { label: unit.title, href: `/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}/chapters/${unit.id}` },
+                  { label: matched },
+                ]}
+              />
+              <BackButton />
+            </div>
+            <TopicDetailView
+              classSlug={classSlug}
+              subjectSlug={subjectSlug}
+              unitId={unit.id}
+              topicSlug={topicSlug}
+            />
+          </div>
+        );
+      }
+    }
+  }
+
+  // Genuinely non-syllabus levels: keep the honest state with a way out.
   let topicTitle = topicSlug;
 
   if (classSlug.includes("notes")) {
-    const { getSubjectSyllabus } = await import("@/lib/syllabus");
-    const subject = getSubjectSyllabus(classSlug, subjectSlug);
     if (subject) {
       const units = (subject as any).units || [];
       for (const unit of units) {

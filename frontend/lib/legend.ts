@@ -56,6 +56,14 @@ export interface LegendTopic {
   confusions: { misconception: string; clarification: string }[];
   /** Practice problems */
   practice: string[];
+  /** Exam shortcuts (examShortTricks + examNotes from the concept JSON) */
+  examShortcuts: string[];
+  /** Time-saving revision notes (keyPoints + specialNotes + importantNotes + importantConcepts) */
+  timeSavers: string[];
+  /** Practice questions with short solutions (practiceQuestions) */
+  practiceQuestions: string[];
+  /** MCQs with options and answer key (mcs) */
+  mcqs: { question: string; options: string[]; answer: string }[];
   /** The JSON file path relative to project root */
   filePath: string;
   /** 3D animation tag from JSON */
@@ -340,6 +348,22 @@ async function scanSubject(
           const universalFacts = (parsed.universalFacts as string[] | undefined) ?? [];
           const animation3D = (parsed.animation3D as string | undefined);
 
+          // Exam shortcuts, time-savers and practice/MCQ sets — authored in the
+          // concept JSONs; rendered on the legend topic page.
+          const examShortTricks = (parsed.examShortTricks as string[] | undefined) ?? [];
+          const examNotes = (parsed.examNotes as string[] | undefined) ?? [];
+          const examShortcuts = [...examShortTricks, ...examNotes];
+          const timeSavers = [
+            ...((parsed.keyPoints as string[] | undefined) ?? []),
+            ...((parsed.specialNotes as string[] | undefined) ?? []),
+            ...((parsed.importantNotes as string[] | undefined) ?? []),
+            ...((parsed.importantConcepts as string[] | undefined) ?? []),
+          ];
+          const practiceQuestions = (parsed.practiceQuestions as string[] | undefined) ?? [];
+          const mcqs = ((parsed.mcs as { question?: string; options?: string[]; answer?: string }[] | undefined) ?? [])
+            .filter((m) => m.question && Array.isArray(m.options) && m.options.length > 0)
+            .map((m) => ({ question: m.question as string, options: m.options as string[], answer: (m.answer as string) ?? "" }));
+
           // Extract facts from notes + universalFacts
           const extractedFacts = extractFacts(notes);
           const extraFacts: LegendFact[] = universalFacts.map((f) => ({ type: "fact", content: f }));
@@ -375,6 +399,10 @@ async function scanSubject(
             facts: uniqueFacts,
             confusions,
             practice,
+            examShortcuts,
+            timeSavers,
+            practiceQuestions,
+            mcqs,
             filePath,
             animation3D,
             contentCount,

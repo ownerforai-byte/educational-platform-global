@@ -12,7 +12,6 @@ export { Physics3DAdvanced } from "@/components/lab/physics-advanced-3d";
 export { ChemistryLab } from "@/components/lab/chemistry-lab";
 
 // Biology
-export { BiologyLab } from "@/components/lab/biology-lab";
 export {
   BiologyAdvanced3D,
   BiologyEvolution3D,

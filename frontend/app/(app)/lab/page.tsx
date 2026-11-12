@@ -45,8 +45,8 @@ const PhysicsLabLazy = dynamic(
   () => import("@/components/lab/physics-lab").then((m) => m.PhysicsLab),
   { ssr: false }
 );
-const BiologyLabLazy = dynamic(
-  () => import("@/components/lab/biology-lab").then((m) => m.BiologyLab),
+const Biology3DSuiteLazy = dynamic(
+  () => import("@/components/lab/biology-3d-suite").then((m) => m.Biology3DSuite),
   { ssr: false }
 );
 const MathGeometry3DLazy = dynamic(
@@ -340,7 +340,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "class11-physics", title: "Class 11 Physics 3D Plus", description: "Extended 3D physics visualizations for Class 11.", category: "class11", icon: <span className="text-blue-500">ðŸš€</span>, status: "new", component: () => <PhysicsLabLazy /> },
     { id: "class11-chemistry", title: "Class 11 Chemistry 3D Plus", description: "Extended 3D chemistry visualizations for Class 11.", category: "class11", icon: <Microscope className="h-4 w-4 text-emerald-500" />, status: "new", component: () => <ChemistryLabLazy /> },
     { id: "class11-math", title: "Class 11 Math 3D Plus", description: "Extended 3D math visualizations for Class 11.", category: "class11", icon: <Binary className="h-4 w-4 text-violet-500" />, status: "new", component: () => <Class11Math3DPlusLazy /> },
-    { id: "class11-biology", title: "Class 11 Biology 3D Plus", description: "Extended 3D biology visualizations — cells, genetics, ecology for Class 11.", category: "class11", icon: <Dna className="h-4 w-4 text-green-500" />, status: "new", component: () => <BiologyLabLazy /> },
+    { id: "class11-biology", title: "Class 11 Biology 3D Plus", description: "Real WebGL: cells, division, DNA, bacteriophage & ecosystem tabs (from Biology 3D Suite).", category: "class11", icon: <Dna className="h-4 w-4 text-green-500" />, status: "new", component: () => <Biology3DSuiteLazy /> },
   ],
 };
 

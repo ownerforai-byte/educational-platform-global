@@ -76,6 +76,10 @@ export default async function LegendTopicPage({
   const notes = entries.flatMap((t) => t.notes);
   const facts = entries.flatMap((t) => t.facts);
   const confusions = entries.flatMap((t) => t.confusions);
+  const examShortcuts = entries.flatMap((t) => t.examShortcuts);
+  const timeSavers = entries.flatMap((t) => t.timeSavers);
+  const practiceQuestions = entries.flatMap((t) => t.practiceQuestions);
+  const mcqs = entries.flatMap((t) => t.mcqs);
 
   return (
     <div className="mx-auto max-w-6xl space-y-8 py-10">
@@ -200,38 +204,102 @@ export default async function LegendTopicPage({
         )}
       </section>
 
-      {/* Exam shortcuts — content added later */}
+      {/* Exam shortcuts — authored examShortTricks/examNotes from the concept JSON */}
       <section className="rounded-2xl border border-border/70 bg-card p-6 shadow-sm space-y-4">
         <h2 className="flex items-center gap-2 text-base font-bold">
           <Scissors className="h-4 w-4 text-emerald-500" /> Exam Shortcuts
         </h2>
-        <EmptyState
-          title="Exam shortcuts will be added in a future update"
-          description="Quick, exam-focused shortcuts for this topic are being prepared and will be added here later."
-        />
+        {examShortcuts.length > 0 ? (
+          <ul className="space-y-2.5">
+            {examShortcuts.map((trick, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-2.5 rounded-xl border border-emerald-200/50 bg-emerald-50/30 p-3 text-sm dark:border-emerald-900/40 dark:bg-emerald-950/20"
+              >
+                <Scissors className="mt-0.5 h-3.5 w-3.5 shrink-0 text-emerald-500" />
+                <MathMarkdown content={trick} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <EmptyState
+            title="Exam shortcuts will be added in a future update"
+            description="Quick, exam-focused shortcuts for this topic are being prepared and will be added here later."
+          />
+        )}
       </section>
 
-      {/* Time-saving notes — content added later */}
+      {/* Time-saving notes — keyPoints/specialNotes/importantNotes/importantConcepts */}
       <section className="rounded-2xl border border-border/70 bg-card p-6 shadow-sm space-y-4">
         <h2 className="flex items-center gap-2 text-base font-bold">
           <Timer className="h-4 w-4 text-sky-500" /> Time-Saving Notes
         </h2>
-        <EmptyState
-          title="Time-saving notes will be added in a future update"
-          description="Condensed revision notes that save time in exams will be added here later."
-        />
+        {timeSavers.length > 0 ? (
+          <ul className="space-y-2.5">
+            {timeSavers.map((note, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-2.5 rounded-xl border border-sky-200/50 bg-sky-50/30 p-3 text-sm dark:border-sky-900/40 dark:bg-sky-950/20"
+              >
+                <Timer className="mt-0.5 h-3.5 w-3.5 shrink-0 text-sky-500" />
+                <MathMarkdown content={note} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <EmptyState
+            title="Time-saving notes will be added in a future update"
+            description="Condensed revision notes that save time in exams will be added here later."
+          />
+        )}
       </section>
 
-      {/* PYQs with short solutions — content added later */}
+      {/* PYQs with short solutions — practiceQuestions + MCQs from the concept JSON */}
       <section className="rounded-2xl border border-border/70 bg-card p-6 shadow-sm space-y-4">
         <h2 className="flex items-center gap-2 text-base font-bold">
           <History className="h-4 w-4 text-violet-500" /> PYQs with Short Solutions
         </h2>
-        <EmptyState
-          title="PYQ solutions will be added in a future update"
-          description="Previous-year questions with short, to-the-point solutions for this topic will be added here later."
-          action={{ label: "Browse the PYQ Bank", href: "/pyqs" }}
-        />
+        {practiceQuestions.length > 0 || mcqs.length > 0 ? (
+          <div className="space-y-3">
+            {practiceQuestions.map((q, i) => (
+              <div
+                key={`pq-${i}`}
+                className="rounded-xl border border-violet-200/50 bg-violet-50/30 p-3 text-sm dark:border-violet-900/40 dark:bg-violet-950/20"
+              >
+                <MathMarkdown content={q} />
+              </div>
+            ))}
+            {mcqs.map((m, i) => (
+              <div
+                key={`mcq-${i}`}
+                className="rounded-xl border border-border/50 bg-muted/20 p-3 text-sm"
+              >
+                <MathMarkdown content={m.question} />
+                <ul className="mt-2 grid gap-1 sm:grid-cols-2">
+                  {m.options.map((opt, j) => (
+                    <li key={j} className="flex items-start gap-1.5 text-xs text-muted-foreground">
+                      <span className="font-mono font-semibold text-foreground/70">
+                        {String.fromCharCode(65 + j)}.
+                      </span>
+                      <MathMarkdown content={opt} />
+                    </li>
+                  ))}
+                </ul>
+                {m.answer && (
+                  <p className="mt-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                    Answer: {m.answer}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <EmptyState
+            title="PYQ solutions will be added in a future update"
+            description="Previous-year questions with short, to-the-point solutions for this topic will be added here later."
+            action={{ label: "Browse the PYQ Bank", href: "/pyqs" }}
+          />
+        )}
       </section>
 
       {/* Sibling topics in the same unit */}

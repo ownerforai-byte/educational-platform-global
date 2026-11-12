@@ -132,6 +132,14 @@ export function TopicExercisesView({
           >
             Concepts, Legends &amp; Facts
           </Link>
+          <span className="text-muted-foreground/40">&bull;</span>
+          {/* Real practice content exists per unit in the PYQ bank — link there. */}
+          <Link
+            href="/pyqs"
+            className="text-xs font-semibold text-primary hover:underline"
+          >
+            Practice drills in the PYQ Bank →
+          </Link>
         </div>
       </EmptyState>
     </div>
