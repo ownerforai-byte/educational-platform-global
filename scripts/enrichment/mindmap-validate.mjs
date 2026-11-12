@@ -75,7 +75,7 @@ for (const f of files) {
 }
 
 // ── 2b. fallback leaf ids declared inline in topic-mindmap.tsx ──────────────
-const FALLBACK_SRC = path.join(LIB, "..", "components", "lab", "topic-mindmap.tsx");
+const FALLBACK_SRC = path.join(LIB, "..", "features", "lab", "components", "topic-mindmap.tsx");
 const fbSrc = fs.readFileSync(FALLBACK_SRC, "utf8");
 const fallbackIds = new Set();
 const fbRe = /id:\s*"((?:ph|ch|math|bio|ch-o)-[a-z0-9]+)",\s*\r?\n\s*title:\s*"[^"]+"/g;
