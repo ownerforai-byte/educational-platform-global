@@ -12,25 +12,19 @@ import {
 } from "@/lib/access-level";
 
 /**
- * THE TIER ROUTER (owner direction 2026-10-23: "first get access whether it is
- * a visitor, users, pro, owner then feed welcome and after clicked go then
- * feed login and if already logged (means user) then its welcome directly … no
- * universal welcome for accessed users as that is for visitors only").
+ * THE TIER ROUTER.
  *
- * The flow (owner 2026-10-25): "welcome → guest home → login page → study
- * home".
+ * Flow (owner 2026-11-12):
+ *   Owner Gmail → Sign in on welcome → owner welcome → Go → owner home
+ *   Everyone else → universal welcome → Go → signup (or pending /welcome if
+ *   this browser already created an account) → after approval + Sign in →
+ *   member welcome → Go → member home with features.
  *
- * landOn="welcome" (the root entry): visitors get the UNIVERSAL WELCOME (its
- * Go option opens the guest home); signed-in viewers are replaced onto their
- * own tier WELCOME — one hop, their rung decided before the first paint.
+ * landOn="welcome" (root `/`): guests see UniversalWelcome; signed-in viewers
+ * are replaced onto their tier welcome.
  *
- * landOn="home" (/home, the nav Home link): visitors get the GUEST HOME — the
- * minimal sign-in page the welcome's Go button opens; signed-in viewers go
- * straight to their tier home.
- *
- * The session is known synchronously (readCachedSession feeds useSession's
- * first render), so the correct page appears on the first paint — no generic
- * home, no flash of another rung's interface.
+ * landOn="home" (`/home`): guests see the public guest home; signed-in
+ * viewers go straight to their tier home.
  */
 
 function TierSplash() {

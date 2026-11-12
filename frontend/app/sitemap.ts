@@ -33,6 +33,7 @@ const HUB_ROUTES: Array<{ path: string; priority: number }> = [
   { path: "/exams/cee", priority: 0.8 },
   { path: "/exams/ioe", priority: 0.8 },
   { path: "/blog", priority: 0.6 },
+  { path: "/official-sources", priority: 0.6 },
   { path: "/help", priority: 0.5 },
   { path: "/contact", priority: 0.5 },
 ];

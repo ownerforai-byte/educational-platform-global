@@ -14,7 +14,6 @@ const h = vi.hoisted(() => {
   const store = {
     usage: new Map<string, { client_key: string; day: string; count: number }>(),
     profiles: new Map<string, { id: string; access_status: string; role: string }>(),
-    grants: [] as Array<{ email: string; revoked_at: string | null }>,
   };
 
   function likeToRegExp(pattern: string): RegExp {
@@ -70,9 +69,6 @@ const h = vi.hoisted(() => {
           if (f.method === "eq") rows = rows.filter((r) => (r as any)[f.args[0]] === f.args[1]);
         }
         return Promise.resolve({ data: single ? rows[0] ?? null : rows, error: null });
-      }
-      if (table === "r1_grants") {
-        return Promise.resolve({ data: store.grants, error: null });
       }
       return Promise.resolve({ data: single ? null : [], error: null });
     }
@@ -134,8 +130,6 @@ const authRouter = (await import("../../src/api/auth")).default;
 const { DEVICE_SIGNUP_LIMIT_MESSAGE, resetDeviceSignupMemory } = await import(
   "../../src/utils/deviceSignup"
 );
-const { invalidateR1GrantCache } = await import("../../src/utils/r1Grants");
-
 process.env.SUPABASE_SERVICE_ROLE_KEY = "test-device-signup-signing-key";
 
 const servers: Array<http.Server> = [];
@@ -176,7 +170,6 @@ afterAll(async () => {
 beforeEach(() => {
   h.reset();
   resetDeviceSignupMemory();
-  invalidateR1GrantCache();
 });
 
 describe("device signup limit (one account per device without approval)", () => {
@@ -243,14 +236,4 @@ describe("device signup limit (one account per device without approval)", () => 
     expect(second.body.code).toBe("DEVICE_SIGNUP_LIMIT");
   });
 
-  it("an R1-granted (owner pre-approved) email bypasses the device gate", async () => {
-    const { signup } = await mount();
-    const first = await signup("first@example.com");
-    h.store.grants = [{ email: "invited@example.com", revoked_at: null }];
-    invalidateR1GrantCache();
-
-    const invited = await signup("invited@example.com", first.deviceCookie);
-    expect(invited.status).toBe(200);
-    expect(h.signUp).toHaveBeenCalledTimes(2);
-  });
 });

@@ -100,6 +100,8 @@ const FOOTER_SECTIONS: Array<{
       "/what-it-has",
       "/blog",
       "/neb-updates",
+      // Play "Misleading Claims": non-affiliation + the .gov.np primary sources.
+      "/official-sources",
       "/how-it-works",
       "/contact",
       "/help",

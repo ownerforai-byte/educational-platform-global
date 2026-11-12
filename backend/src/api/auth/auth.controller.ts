@@ -9,7 +9,6 @@ import {
   bindDeviceToAccount,
   checkDeviceSignupLimit,
 } from "../../utils/deviceSignup";
-import { isR1GrantedEmail } from "../../utils/r1Grants";
 import { createStatusToken, verifyStatusToken } from "../../utils/statusToken";
 import {
   signInWithPassword,
@@ -346,11 +345,11 @@ router.post("/signup", async (req: Request, res: Response) => {
     return;
   }
 
-  // One account per device without approval (owner 2026-11-09). An R1-granted
-  // email was pre-approved by an owner, so it skips the device gate entirely.
-  const r1PreApproved = await isR1GrantedEmail(parsed.data.email);
+  // One account per device without approval (owner 2026-11-09).
+  // Owner Gmail bypasses the device gate and the pending queue — direct login.
+  const ownerSignup = isOwnerEmail(parsed.data.email);
   let deviceId: string | null = null;
-  if (!r1PreApproved) {
+  if (!ownerSignup) {
     const device = await checkDeviceSignupLimit(req, res);
     if (device.limited) {
       res.status(403).json({ error: DEVICE_SIGNUP_LIMIT_MESSAGE, code: "DEVICE_SIGNUP_LIMIT" });
@@ -374,6 +373,18 @@ router.post("/signup", async (req: Request, res: Response) => {
       await bindDeviceToAccount(deviceId, result.user.id);
     }
 
+    // Owner Gmail is always ACTIVE — force the profile so signup issues a session.
+    if (result.user && ownerSignup) {
+      try {
+        await supabaseAdmin
+          .from("profiles")
+          .update({ access_status: "ACTIVE", role: "owner" })
+          .eq("id", result.user.id);
+      } catch (ownerErr) {
+        console.error("[auth] owner signup activate failed:", ownerErr);
+      }
+    }
+
     if (result.needsEmailConfirmation || !result.user || !result.session) {
       const body: SignupResponse = {
         user: null,
@@ -382,20 +393,6 @@ router.post("/signup", async (req: Request, res: Response) => {
       };
       res.status(202).json(body);
       return;
-    }
-
-    // ── R1 grant fast-pass (migration 009): an owner-granted email was
-    // pre-approved by an owner, so it skips the PENDING queue entirely.
-    try {
-      if (r1PreApproved) {
-        await supabaseAdmin
-          .from("profiles")
-          .update({ access_status: "ACTIVE" })
-          .eq("id", result.user.id)
-          .neq("access_status", "ACTIVE");
-      }
-    } catch (grantErr) {
-      console.error("[auth] r1 grant fast-pass failed:", grantErr);
     }
 
     // ── Owner-approval flow: new accounts start PENDING ──

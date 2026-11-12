@@ -17,6 +17,7 @@ import {
   type AccessLevel,
 } from "@/lib/access-level";
 import { SECTIONS } from "@/lib/sections";
+import { WelcomeGoButton } from "@/features/auth/components/welcome-go-button";
 
 // NOTE: never import components/home/tier-interfaces here — it composes the
 // server-only node:fs rails corpus, and this module is reachable from the
@@ -137,17 +138,13 @@ function TierWelcome({ tier }: { tier: UserTier }) {
 // ── The five hardcoded welcome screens ──────────────────────────────────────
 
 /**
- * THE UNIVERSAL VISITOR WELCOME (owner 2026-10-23: "a universal welcome page
- * for visitors not users … no universal welcome for accessed users as that is
- * for visitors only"; 2026-10-25 the flow became "welcome → guest home →
- * login page → study home", so Go opens the guest home, and the guest home
- * carries the sign-in button).
+ * THE UNIVERSAL VISITOR WELCOME.
  *
- * One page for every visitor regardless of anything else: the welcome hero
- * with the Go option (→ the guest home at /home) and the account-creation
- * path, then a light overview of what lives inside. Signed-in viewers never
- * see this page — the run gate replaces them onto their own tier welcome.
- * Owner 2026-11-09: the ask-anything AI box was removed from this screen.
+ * Flow (owner 2026-11-12): guest → welcome → Go → sign-in / account creation
+ * → created-successfully / pending screen. Returning browsers that already
+ * created an account keep the same welcome; Go opens the pending page until
+ * the owner approves. Signed-in viewers never see this page — the tier router
+ * replaces them onto their own welcome.
  */
 export function UniversalWelcome() {
   return (
@@ -184,23 +181,18 @@ export function UniversalWelcome() {
         <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-muted-foreground">
           NEB Class 11 &amp; 12, taught like a beautiful notebook — complete
           notes, 3D labs, rigorous proofs, past papers and Veer, your tutor.
-          Browse freely now; sign in whenever you want to keep your progress.
+          Press Go to create an account and wait for approval. Owner Gmail
+          signs in directly — no waiting queue.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <WelcomeGoButton />
           <Link
-            href="/home"
-            aria-label="Go — continue to the guest home"
-            className="group inline-flex h-12 items-center gap-2 rounded-full bg-primary px-8 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition hover:opacity-90"
-          >
-            Go
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-          </Link>
-          <Link
-            href="/signup"
+            href="/login"
+            data-testid="welcome-owner-signin"
             className="inline-flex h-12 items-center rounded-full border-2 border-border/80 px-8 text-sm font-semibold text-foreground transition hover:border-primary hover:text-primary"
           >
-            Create an account
+            Sign in
           </Link>
         </div>
 

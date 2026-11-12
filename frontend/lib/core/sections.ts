@@ -4,7 +4,6 @@ import {
   Award,
   BookOpen,
   Calculator,
-  CalendarCheck,
   Crown,
   FileQuestion,
   FileText,
@@ -436,14 +435,6 @@ export const SECTIONS: PlatformSection[] = [
   },
 
   // ── Owner rung ──
-  {
-    id: "r1-daily-life",
-    title: "R1 Daily Life",
-    description: "Activities, plans, journal and habits — owner-granted.",
-    minTier: "owner",
-    icon: CalendarCheck,
-    href: "/r1",
-  },
   {
     id: "owner-console",
     title: "Owner Console & Control",

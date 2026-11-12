@@ -46,6 +46,7 @@ import { entryStatus, topicHref } from "@/lib/progress/catalog";
 import { daysUntilExam } from "@/lib/study-goals";
 import { useClientClock } from "@/lib/hooks/use-client-clock";
 import { useStreakCount } from "@/lib/hooks/use-streak";
+import { IndependenceDisclaimer } from "@/components/platform/independence-disclaimer";
 
 /**
  * THE TIER INTERFACES — hardcoded (owner direction 2026-10-23:
@@ -398,6 +399,8 @@ function TierPage({
   return (
     <div className="mx-auto w-full max-w-7xl space-y-8 px-4 py-8">
       <TierHero tier={tier} headline={headline} blurb={blurb} />
+      {/* Play "Misleading Claims": the non-affiliation must be above the fold. */}
+      <IndependenceDisclaimer variant="compact" />
       <DeskPulse />
       <QuickLinksRail tier={tier} />
       <SpotlightRow items={spotlights} />
@@ -473,12 +476,11 @@ export function OwnerHome({ rails }: { rails: ReactNode }) {
       rails={rails}
       tier="owner"
       headline="Operator console — everything, plus the controls."
-      blurb="Every section is open and every spark is unlimited. The console runs the platform: users and tier grants, section access rules, content control and the R1 layer."
+      blurb="Every section is open and every spark is unlimited. The console runs the platform: users and tier grants, section access rules and content control."
       spotlights={[
         { title: "Owner Console", desc: "The full control surface.", href: "/owner", icon: Crown },
         { title: "Users & Tier Grants", desc: "Grant or adjust Member / Plus / Pro rungs.", href: "/owner/users", icon: User },
         { title: "Section Access Rules", desc: "Every section and the rung that opens it.", href: "/owner/sections", icon: Settings },
-        { title: "R1 Daily Life", desc: "Activities, plans, journal and habits.", href: "/r1", icon: MessageCircle },
       ]}
     />
   );

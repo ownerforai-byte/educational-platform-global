@@ -10,8 +10,10 @@ import {
   Clock,
   Info,
   Languages,
+  Landmark,
   Palette,
   School,
+  Scale,
   Smartphone,
   Star,
   Sun,
@@ -225,6 +227,16 @@ export function SettingsView() {
           <Row icon={Users} tint="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" label="For Teachers" subtitle="Enterprise · Email: sahrocky81@gmail.com">
             <span className="rounded-md bg-muted px-1.5 py-0.5 text-[8.5px] font-bold text-muted-foreground">Confidential</span>
           </Row>
+        </GroupCard>
+
+        <GroupCard icon={Scale} tint="bg-amber-500/10 text-amber-600 dark:text-amber-400" label="Sources & disclaimers">
+          <RowLink
+            icon={Landmark}
+            tint="bg-rose-500/10 text-rose-600 dark:text-rose-400"
+            label="Official sources"
+            subtitle="NEB, CDC, MoEST · not affiliated"
+            href="/official-sources"
+          />
         </GroupCard>
 
         <GroupCard icon={Smartphone} tint="bg-violet-500/10 text-violet-600 dark:text-violet-400" label="App">

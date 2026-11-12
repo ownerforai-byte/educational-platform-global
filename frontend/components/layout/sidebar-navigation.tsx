@@ -7,8 +7,7 @@ import { cn } from "@/lib/utils";
 import { LogIn, LogOut, ChevronsUp, Palette, ChevronRight } from "lucide-react";
 
 import { useSession } from "@/features/auth/hooks/use-session";
-import { isOwnerAccount, isOwnerUser } from "@/lib/owner";
-import { useR1Access } from "@/features/r1/hooks";
+import { isOwnerAccount } from "@/lib/owner";
 import { isNavItemActive } from "@/lib/nav-active";
 import {
   isSidebarNavItem,
@@ -210,8 +209,6 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
   useEffect(() => setMounted(true), []);
   const user = mounted ? cachedUser : null;
   const isLoggedIn = !!user;
-  const { data: r1Access } = useR1Access(isLoggedIn);
-  const hasR1 = isOwnerUser(user) || r1Access === true;
 
   const [collapsedSections, setCollapsedSections] = useState<Record<string, boolean>>({
     curriculum: false,
@@ -219,7 +216,6 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
     tools: false,
     extended: false,
     account: false,
-    r1: false,
     owner: false,
     theme: false,
   });
@@ -246,21 +242,16 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
   const rowsFor = (section: (typeof NAV_SECTIONS)[number]): NavRow[] =>
     section.items
       .filter(isSidebarNavItem)
-      .filter(
-        (item) =>
-          (item.ownerOnly ? isOwnerAccount(user) : true) &&
-          (item.r1Only ? hasR1 : true)
-      )
+      .filter((item) => (item.ownerOnly ? isOwnerAccount(user) : true))
       .map((item) => {
         const tier = navMinLevel(item, section);
         return { item, tier, locked: !hasLevel(viewer, tier) };
       });
 
-  /** account → signed-in only; ownerOnly → owner accounts; r1Only → owner + R1 grants. */
+  /** account → signed-in only; ownerOnly → owner accounts. */
   const canSee = (section: (typeof NAV_SECTIONS)[number]) => {
     if (section.id === "account") return isLoggedIn;
     if (section.ownerOnly) return isOwnerAccount(user);
-    if (section.r1Only) return hasR1;
     const rows = rowsFor(section);
     if (rows.length === 0) return false;
     // Signed-in viewers see every section (locked rows greyed) so all platform
@@ -276,7 +267,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
   };
 
   const primaryRows: NavRow[] = primaryItems
-    .filter((item) => isSidebarNavItem(item) && (item.ownerOnly ? isOwnerAccount(user) : true) && (item.r1Only ? hasR1 : true))
+    .filter((item) => isSidebarNavItem(item) && (item.ownerOnly ? isOwnerAccount(user) : true))
     .map((item) => {
       const tier = navMinLevel(item);
       return { item, tier, locked: !hasLevel(viewer, tier) };

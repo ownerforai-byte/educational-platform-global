@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ChevronLeft } from "lucide-react";
+import { IndependenceDisclaimer } from "@/components/platform/independence-disclaimer";
 
 /**
  * AuthShell — the reference auth screen (owner 2026-11-09): one centered
@@ -50,6 +51,10 @@ export function AuthShell({
         </div>
 
         <div className="mt-8">{children}</div>
+
+        {/* Play "Misleading Claims": every sign-in/sign-up screen carries the
+            non-affiliation sentence and a one-tap route to the .gov.np sources. */}
+        <IndependenceDisclaimer variant="compact" className="mt-6" />
       </div>
     </div>
   );

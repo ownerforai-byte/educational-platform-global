@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/footer";
 
 export const platformLinks = [
   ["About", "/about"], ["What it has", "/what-it-has"], ["Blog", "/blog"], ["NEB Updates", "/neb-updates"],
+  ["Official sources", "/official-sources"],
   ["How It Works", "/how-it-works"], ["Contact", "/contact"], ["Help", "/help"],
   ["Parents", "/parents"], ["Site Map", "/sitemap-page"],
 ] as const;

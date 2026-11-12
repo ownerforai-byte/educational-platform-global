@@ -799,6 +799,12 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "Updates",
       },
       {
+        name: "Official Sources",
+        opening: "The government domains that publish the curriculum and exam notices — and the exact relationship.",
+        href: "/official-sources",
+        meta: "References",
+      },
+      {
         name: "Help Center",
         opening: "Answers to the everyday questions: access tiers, downloads and accounts.",
         href: "/help",

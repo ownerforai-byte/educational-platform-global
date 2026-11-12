@@ -12,7 +12,6 @@ import { MobileNav } from "./mobile-nav";
 import { BottomTabBar } from "./bottom-tab-bar";
 import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
-import { R1Shortcut } from "./r1-shortcut";
 import { GlobalSearch } from "./global-search";
 import { CreditBadge } from "./credit-badge";
 import { NotificationBell } from "./notification-bell";
@@ -141,8 +140,6 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           )}
 
           <div className="col-start-2 row-start-1 flex items-center justify-end gap-1.5 shrink-0 md:col-start-3">
-
-            <R1Shortcut />
 
             {/* State-driven badge (plan.md §14 5.2) — hides at zero, syncs
                 across tabs; the old static pulsing dot ignored real state. */}

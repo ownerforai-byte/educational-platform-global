@@ -4,14 +4,13 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 
 /**
- * THE TIER WELCOME FLOW (owner direction 2026-10-23: "dont show login page
- * directly to any tier — create one welcome pages for each tier then after
- * that home page … opening direct welcome page after getting/knowing the tier
- * access then after clicking go - home page appears then all study materials").
+ * THE TIER WELCOME FLOW (owner 2026-11-12):
+ *   Owner Gmail → Sign in (direct)
+ *   Everyone else → Go → signup (or pending /welcome) → after approval →
+ *   member welcome → Go → member home
  *
- * Every post-auth landing goes to the viewer's welcome page (never the login
- * form, never straight home); each welcome is gated to its own rung; and its
- * Go button opens that rung's tier home.
+ * Signed-in post-auth landings still go to that rung's welcome first; each
+ * signed-in welcome Go opens that rung's tier home.
  */
 
 const session = vi.hoisted(() => ({ user: null as unknown, isLoading: false }));
@@ -57,9 +56,8 @@ describe("TierWelcomeGate — one welcome page per viewer", () => {
     expect(
       screen.getByRole("heading", { name: /welcome to ravikisan/i }),
     ).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", { name: /go — continue to the guest home/i }),
-    ).toHaveAttribute("href", "/home");
+    expect(screen.getByTestId("welcome-go")).toHaveAttribute("href", "/signup");
+    expect(screen.getByTestId("welcome-owner-signin")).toHaveAttribute("href", "/login");
     expect(screen.getByRole("banner")).toBeInTheDocument();
     expect(screen.getByRole("main")).toBeInTheDocument();
     expect(screen.getByRole("contentinfo")).toBeInTheDocument();
@@ -122,7 +120,7 @@ describe("TierWelcomeGate — one welcome page per viewer", () => {
 });
 
 describe("Go button → the tier home, then all study materials", () => {
-  it("each welcome Go opens only its own tier home; guest Go opens the guest home", () => {
+  it("each signed-in welcome Go opens its tier home; guest Go opens signup", () => {
     session.user = { email: "student@example.com" };
     const { unmount: u1 } = render(<MemberWelcome />);
     expect(screen.getByRole("link", { name: /go to my study desk/i })).toHaveAttribute(
@@ -140,10 +138,8 @@ describe("Go button → the tier home, then all study materials", () => {
     u2();
 
     render(<UniversalWelcome />);
-    expect(screen.getByRole("link", { name: /go — continue to the guest home/i })).toHaveAttribute(
-      "href",
-      "/home",
-    );
+    expect(screen.getByTestId("welcome-go")).toHaveAttribute("href", "/signup");
+    expect(screen.getByTestId("welcome-owner-signin")).toHaveAttribute("href", "/login");
     expect(screen.queryByRole("link", { name: /go to my study desk/i })).toBeNull();
   });
 });
@@ -185,7 +181,7 @@ describe("welcome pages and post-auth landings are wired", () => {
         `<TierWelcomeGate tier="${tier}">`,
       );
     }
-    // The guest route carries the universal welcome (Go → the guest home).
+    // The guest route carries the universal welcome (Go → signup / pending).
     expect(read("app/welcome/guest/page.tsx")).toContain("UniversalWelcome");
   });
 

@@ -138,9 +138,6 @@ export const EXEMPT_PATHS = [
   "/owner",
   "/admin",
   "/controller",
-  // The R1 daily-life layer (owner + granted emails) carries its own access
-  // gate and is never coin-gated.
-  "/r1",
 ] as const;
 
 const REFERENCE_ROUTES = /^\/(pyqs|quiz|resources|ai-quiz|exam-countdown|progress)(\/|$)/;

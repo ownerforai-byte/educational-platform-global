@@ -28,7 +28,6 @@ vi.mock("@/features/auth/hooks/use-session", () => ({
   }),
 }));
 vi.mock("@/features/auth/actions", () => ({ logoutAction: vi.fn() }));
-vi.mock("@/features/r1/hooks", () => ({ useR1Access: () => ({ data: false }) }));
 
 import { GlobalSearch } from "@/components/layout/global-search";
 import { SidebarNavigation } from "@/components/layout/sidebar-navigation";

@@ -53,12 +53,6 @@ import { getChapterDocs, getChapterStreamPdfs, type ChapterDoc } from "@/lib/cha
 import { pdfViewerHref, downloadDoc, downloadFileName } from "@/lib/pdf-src";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/access-level";
-import {
-  useDeleteR1Journal,
-  useR1Journal,
-  useSaveR1Journal,
-} from "@/features/r1/hooks";
-import type { R1JournalEntry } from "@/lib/api/r1";
 
 export type CompanionTabProfile =
   | "default"
@@ -326,137 +320,28 @@ function LockedTabCard({ tab }: { tab: ContentTab }) {
   );
 }
 
-function todayIso(): string {
-  const d = new Date();
-  const m = String(d.getMonth() + 1).padStart(2, "0");
-  const day = String(d.getDate()).padStart(2, "0");
-  return `${d.getFullYear()}-${m}-${day}`;
-}
-
-/**
- * The Journal tab (plan.md §3, section "Journal" — Plus rung). The journal
- * store keeps ONE entry per user per day, so saving here attaches today's
- * entry to this topic with a `topic:<slug>` tag; the entries tagged with this
- * topic are listed under the composer.
- */
+/** Topic journal tab — R1-backed storage was removed; keep the Plus tab open. */
 function TopicJournalPanel({
   topicTitle,
-  topicPath,
 }: {
   topicTitle: string;
   topicPath: string;
 }) {
-  const tag = useMemo(() => `topic:${topicPath}`.slice(0, 40), [topicPath]);
-  const { data: entries, isLoading } = useR1Journal();
-  const saveEntry = useSaveR1Journal();
-  const deleteEntry = useDeleteR1Journal();
-  const [title, setTitle] = useState("");
-  const [body, setBody] = useState("");
-
-  const tagged = useMemo(
-    () => (entries ?? []).filter((e: R1JournalEntry) => (e.tags ?? []).includes(tag)),
-    [entries, tag],
-  );
-
-  const save = async () => {
-    if (!body.trim()) return;
-    await saveEntry.mutateAsync({
-      entryDate: todayIso(),
-      title: title.trim() || undefined,
-      body: body.trim(),
-      tags: [tag],
-    });
-    setTitle("");
-    setBody("");
-  };
-
   return (
-    <div className="space-y-4">
-      <Card className="border-primary/20">
-        <CardHeader className="pb-3">
-          <CardTitle className="text-sm">Journal · {topicTitle}</CardTitle>
-          <p className="mt-1 text-xs text-muted-foreground">
-            Your private reflections on this topic. The journal keeps one entry
-            per day — saving here attaches today&apos;s entry to this topic.
-          </p>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          <input
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Title (optional)"
-            maxLength={200}
-            className="h-10 w-full rounded-xl border border-border/70 bg-background px-3 text-sm outline-none focus:border-primary"
-          />
-          <textarea
-            value={body}
-            onChange={(e) => setBody(e.target.value)}
-            placeholder="What did you learn in this topic?"
-            rows={4}
-            maxLength={20000}
-            className="w-full rounded-xl border border-border/70 bg-background px-3 py-2.5 text-sm outline-none focus:border-primary"
-          />
-          <div className="flex items-center justify-between">
-            <Link href="/journal" className="text-xs font-semibold text-primary hover:underline">
-              Open the full Journal →
-            </Link>
-            <Button
-              onClick={save}
-              disabled={saveEntry.isPending || !body.trim()}
-              className="h-9 rounded-xl px-4 text-xs font-semibold"
-            >
-              {saveEntry.isPending ? (
-                <Loader2 className="h-3.5 w-3.5 animate-spin" />
-              ) : (
-                <>
-                  <Plus className="h-3.5 w-3.5" /> Save entry
-                </>
-              )}
-            </Button>
-          </div>
-        </CardContent>
-      </Card>
-
-      <div className="space-y-3">
-        <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          Entries on this topic
-        </h4>
-        {isLoading ? (
-          <div className="flex justify-center py-6">
-            <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
-          </div>
-        ) : tagged.length === 0 ? (
-          <p className="rounded-2xl border border-border/60 bg-muted/20 px-4 py-5 text-center text-xs text-muted-foreground">
-            Nothing yet — write the first entry for {topicTitle}.
-          </p>
-        ) : (
-          <div className="space-y-3">
-            {tagged.map((e) => (
-              <Card key={e.id}>
-                <CardContent className="flex items-start justify-between gap-4 px-5 py-4">
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-2">
-                      <span className="text-[11px] font-semibold text-primary">{e.entryDate}</span>
-                      {e.title && <span className="truncate text-sm font-semibold">{e.title}</span>}
-                    </div>
-                    <p className="mt-1 whitespace-pre-wrap text-xs leading-relaxed text-muted-foreground">
-                      {e.body}
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => deleteEntry.mutate(e.id)}
-                    aria-label={`Delete entry ${e.entryDate}`}
-                    className="rounded-lg p-1.5 text-muted-foreground/60 transition hover:bg-destructive/10 hover:text-destructive"
-                  >
-                    <Trash2 className="h-3.5 w-3.5" />
-                  </button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
+    <Card className="border-primary/20">
+      <CardHeader className="pb-3">
+        <CardTitle className="text-sm">Journal · {topicTitle}</CardTitle>
+        <p className="mt-1 text-xs text-muted-foreground">
+          Private topic reflections are being rebuilt. Your other companion
+          tabs stay available.
+        </p>
+      </CardHeader>
+      <CardContent>
+        <Link href="/journal" className="text-xs font-semibold text-primary hover:underline">
+          Open the study journal →
+        </Link>
+      </CardContent>
+    </Card>
   );
 }
 

@@ -56,10 +56,9 @@ import { VerifyingStatus } from "./verifying-status";
  * profile and the rest all require an approved login.
  * Owner request (2026-10-23): "/plans is visible for all users" — the tier
  * ladder joins the open list (plan.md §5: the plans page is a guest page).
- * Owner request (2026-10-25): the flow is "welcome → guest home → login page
- * → study home" — /home is the GUEST HOME and joins the open list too. The
- * tier homes under it stay safe: TierHomeGate replaces any wrong-rung viewer
- * onto their own home before any interface renders.
+ * Owner request (2026-11-12): guest → welcome → Go → signup → pending
+ * /welcome → after approval + sign-in → member. /home stays open as a light
+ * guest surface; tier homes stay behind this wall.
  */
 const PUBLIC_PATHS = ["/home", "/plans", "/onboarding"] as const;
 

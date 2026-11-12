@@ -9,8 +9,7 @@ import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isNavItemActive } from "@/lib/nav-active";
-import { isOwnerAccount, isOwnerUser } from "@/lib/owner";
-import { useR1Access } from "@/features/r1/hooks";
+import { isOwnerAccount } from "@/lib/owner";
 import { isSidebarNavItem, NAV_SECTIONS, NAV_SECTION_FEATURES, navAccent, navMinLevel } from "@/lib/navigation";
 import { ACCESS_LABELS, hasLevel } from "@/lib/access-level";
 
@@ -98,17 +97,13 @@ export function MobileNav() {
     };
   }, [open]);
 
-  const { data: r1Access } = useR1Access(!!user);
-  const hasR1 = isOwnerUser(user) || r1Access === true;
-
   const query = searchQuery.trim().toLowerCase();
 
   const filteredSections = NAV_SECTIONS.filter(
     (sec) =>
       ["primary", "stem"].includes(sec.id) &&
       (sec.id !== 'account' || !!user) &&
-      (!sec.ownerOnly || isOwnerAccount(user)) &&
-      (!sec.r1Only || hasR1),
+      (!sec.ownerOnly || isOwnerAccount(user)),
   )
     .map((sec) => ({
       ...sec,
@@ -119,7 +114,6 @@ export function MobileNav() {
           isSidebarNavItem(item) &&
           // Owner-only entries (AI chat) never reach non-owners, even by search.
           (item.ownerOnly ? isOwnerAccount(user) : true) &&
-          (item.r1Only ? hasR1 : true) &&
           (query === "" ||
             item.label.toLowerCase().includes(query) ||
             sec.label.toLowerCase().includes(query))

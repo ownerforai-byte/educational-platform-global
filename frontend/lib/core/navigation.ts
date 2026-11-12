@@ -62,7 +62,6 @@ import {
   Languages,
   History,
   Activity,
-  CalendarCheck,
   NotebookPen,
   Download,
   Gift,
@@ -76,6 +75,7 @@ import {
   Award,
   Bell,
   MessageSquare,
+  Landmark,
 } from "lucide-react";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -92,8 +92,6 @@ export type NavItem = {
   badgeClass?: string;
   /** Only show this item to owner email addresses. */
   ownerOnly?: boolean;
-  /** Only show this item to owner + R1-granted emails. */
-  r1Only?: boolean;
   /**
    * The minimum plan tier needed to reach this page.
    * If missing, the section's default is used, then "member".
@@ -109,7 +107,6 @@ export type NavSection = {
   label: string;      // Section heading shown in the sidebar
   icon: NavIcon;
   ownerOnly?: boolean;
-  r1Only?: boolean;
   minLevel?: AccessLevel;
   items: NavItem[];
 };
@@ -161,7 +158,6 @@ export const NAV_SECTION_FEATURES: Record<string, string> = {
   tools: "AI chat, quizzes and exam prep",
   extended: "Knowledge hubs, Loksewa and world knowledge",
   account: "Profile, progress, settings and desk",
-  r1: "Habits, journal and plans",
   owner: "Management console",
 };
 
@@ -357,6 +353,9 @@ const publicItems: NavItem[] = [
   { href: "/how-it-works", label: "How It Works",   icon: Compass,     minLevel: "guest", hideFromSidebar: true },
   { href: "/blog",         label: "Blog",           icon: FileText,    minLevel: "guest", hideFromSidebar: true },
   { href: "/neb-updates",  label: "NEB Updates",    icon: Bell,        minLevel: "guest", hideFromSidebar: true },
+  // Play "Misleading Claims" compliance: the non-affiliation proof lives here
+  // and is reachable from this menu, Settings, About and the footer.
+  { href: "/official-sources", label: "Official Sources", icon: Landmark,   minLevel: "guest" },
   { href: "/contact",      label: "Contact Us",     icon: MessageSquare, minLevel: "guest", hideFromSidebar: true },
   { href: "/help",         label: "Help Center",    icon: HelpCircle,  minLevel: "guest", hideFromSidebar: true },
   { href: "/sitemap-page", label: "Site Map",       icon: ListTree,    minLevel: "guest" },
@@ -382,18 +381,6 @@ const ownerItems: NavItem[] = [
   { href: "/owner",         label: "Owner Console",   icon: Crown        },
   { href: "/owner/users",   label: "User Management", icon: Users        },
   { href: "/controller",    label: "Controller",      icon: ShieldCheck  },
-];
-
-/**
- * R1 Daily Life — personal habits, journal and plans.
- * Only shown to owner emails and accounts that have been granted R1 access.
- */
-const r1Items: NavItem[] = [
-  { href: "/r1",            label: "R1 Today",        icon: Sparkles     },
-  { href: "/r1/activities", label: "Daily Activities", icon: Activity    },
-  { href: "/r1/plans",      label: "My Plans",         icon: CalendarCheck },
-  { href: "/r1/journal",    label: "Daily Journal",    icon: NotebookPen  },
-  { href: "/r1/habits",     label: "Habit Streaks",    icon: Repeat       },
 ];
 
 // ─── The master list ──────────────────────────────────────────────────────────
@@ -427,9 +414,6 @@ export const NAV_SECTIONS: NavSection[] = [
 
   // id "account" — Personal account pages (only shown when signed in)
   { id: "account",    label: "Student Desk",        icon: UserCheck,  minLevel: "member",  items: accountItems    },
-
-  // id "r1" — R1 daily life (only shown to owner + R1-granted accounts)
-  { id: "r1",         label: "R1 · Daily Life",     icon: Sparkles,   r1Only: true,        items: r1Items         },
 
   // id "owner" — Owner management console (only shown to owner emails)
   { id: "owner",      label: "Owner",               icon: Crown,      ownerOnly: true,     items: ownerItems      },
