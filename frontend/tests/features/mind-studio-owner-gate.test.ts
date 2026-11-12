@@ -127,10 +127,9 @@ describe("Diagram Hub naming", () => {
 
   it("keeps the vendor out of the copy the owner reads mid-draw and on failure", () => {
     const hub = read("features/image-hub/image-hub.tsx");
-    // The live status line and the all-engines-failed message.
+    // The live status line and the all-server-engines-failed message.
     expect(hub).toContain("Drawing with the server engine");
-    expect(hub).toContain("Server engine unavailable — drawing in your browser");
-    expect(hub).toContain("the figure writer and the server engine may be busy");
+    expect(hub).toContain("could not draw this right now");
     expect(hub).not.toMatch(VENDOR);
 
     // The route metadata the browser tab and search results show.
@@ -142,7 +141,7 @@ describe("Diagram Hub naming", () => {
   it("folds a saved row's raw model id into the hub's own badge wording", () => {
     const hub = read("features/image-hub/image-hub.tsx");
     // The ONLY thing that may map a stored engine label is pictureLabel, and it
-    // returns the neutral name for anything that is not google/puter.
+    // returns the neutral name for anything that is not a Google result.
     expect(hub).toContain("function pictureLabel(");
     expect(hub).toMatch(/function pictureLabel\([\s\S]*?return SERVER_DRAW_LABEL;/);
   });

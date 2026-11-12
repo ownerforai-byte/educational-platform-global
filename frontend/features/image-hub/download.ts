@@ -1,6 +1,6 @@
 /**
  * Cross-origin safe download: fetch → blob → click; window.open as last
- * resort (Google results and puter.js data: URLs live on foreign hosts, so
+ * resort (Google results and inline data: URLs live on foreign hosts, so
  * a plain `download` anchor is not guaranteed to work).
  *
  * Lives in its own module so both the hub gallery and the details interface

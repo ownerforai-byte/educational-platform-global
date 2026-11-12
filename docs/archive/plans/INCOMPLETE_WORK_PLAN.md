@@ -12,15 +12,15 @@ for quality or launch · **P2** = polish, later.
 
 ## P0 — do first
 
-### 0.1 Time-critical: leftover Puter token (expires 2026-12-04)
-- Source: `plan.md` line 592. Re-checked 2026-11-10: the README has **no** Puter reference, in the tree or in its history (`git log -S "puter" -- README.md` is empty). The `plan.md` claim looks stale, so the token may sit in another file.
+### 0.1 Time-critical: leftover legacy AI-runtime token (expires 2026-12-04)
+- Source: `plan.md` line 592. Re-checked 2026-11-10: the README has **no** reference to that retired provider, in the tree or in its history (`git log -S` over README.md is empty). The `plan.md` claim looks stale, so the token may sit in another file.
 - Status: **owner action** — I cannot revoke provider tokens from this workspace.
 - Level: **Owner** (revoke/rewrite); no code change in the workspace.
 - Concerned files:
   - `SECURITY.md` lines 68–71 — the token is in history at `4d73f538^`; expires 2026-12-04; can be removed with `git filter-repo`. This is the most specific record and conflicts with the README note above.
   - `plan.md` line 592 — original P0 entry.
   - `INCOMPLETE_WORK_PLAN.md` (this item) — status tracker.
-  - Workspace search for "puter" (case-insensitive) in `*.md, *.json, *.ts, *.js, *.mjs, *.yml, *.env`: no live token string found in tracked docs. Hits are only `frontend/lib/puter-*.ts` (code names) and `graphify-out/` (generated). Token value was not read.
+  - Workspace search for the retired provider's name (case-insensitive) in `*.md, *.json, *.ts, *.js, *.mjs, *.yml, *.env`: no live token string found in tracked docs. The only hits were code filenames (now removed) and `graphify-out/` (generated). Token value was not read.
 - Plan:
   - [ ] Owner: confirm where the token was, and revoke it at the provider now.
   - [ ] Owner: decide whether to rewrite history (`git filter-repo`). Do not force-push `main` without approval (`BRANCHES.md`).
@@ -285,7 +285,7 @@ Source: `plan.md` lines 579–664, every `- [ ]` box. Boxes already covered abov
 
 **Phase 1 — Content rights & privacy**
 - [ ] Move KB + OCR corpus out of the public repo (`plan.md` 588, P0) — Level: **Ops/owner** (private repo or submodule choice) plus **Code** (loader change). Concerned: `backend/kb/**` and `backend/.ocr-v2/**` (**CONTENT FILE**, audit only), `.gitignore`, `backend/src/ai/curriculum-corpus.ts`.
-- [ ] Revoke the leftover Puter token (`plan.md` 592, P0) — covered by 0.1; Level: **Owner decision** (may be stale).
+- [ ] Revoke the leftover legacy AI-runtime token (`plan.md` 592, P0) — covered by 0.1; Level: **Owner decision** (may be stale).
 
 **Phase 2 — Repo organization**
 - [ ] Move AI-agent tooling folders out of the default view or gitignore them (`plan.md` 599, P1) — Level: **Ops** (gitignore) plus **Owner decision** (what to keep tracked). Concerned: `.gitignore`, root `AGENTS.md`, `CLAUDE.md`, `graphify-out/` (gitignored already per AGENTS.md; confirm the other folders).

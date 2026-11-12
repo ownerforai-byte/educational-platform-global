@@ -151,7 +151,7 @@ Please unpack this concept thoroughly using the standard Deep Concept Studio str
         },
       ];
 
-      // Primary provider: Gemini (gemini-3.5-flash) — best-in-class deep synthesis & multimodal vision,
+      // Primary provider: Gemini (gemini-3.8-flash) — best-in-class deep synthesis & multimodal vision,
       // with automatic fallback to Groq -> Cerebras -> Agnes in the configured chain.
       // Deep Concept Studio owns the Gemini lane (owner 2026-10-25).
       const user = (req as Partial<AuthedRequest>).user;

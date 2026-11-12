@@ -24,7 +24,7 @@ import { asyncHandler } from "../../middleware/asyncHandler";
  * ai-image rate-limit tier instead. Every drawn figure is saved to the
  * owner's image history on the server (hardcoded, best-effort).
  * On failure it answers 503 with a reason, and the hub falls back to the
- * raster chain (server raster → puter.js).
+ * server raster chain. No browser AI runtime is involved.
  */
 const router = Router();
 

@@ -84,7 +84,7 @@ const PICTURE = {
   kind: "picture",
   prompt: "a snow leopard on a Himalayan cliff",
   url: "https://img.example/leopard.png",
-  engine: "puter.js (browser)",
+  engine: "Diagram",
 };
 
 const FIGURE = {

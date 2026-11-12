@@ -21,10 +21,10 @@
  * Engines (ordered, per owner choice 2026-09-30 "wire agnes 2.1 for sure"):
  *   1. Agnes `agnes-image-2.1-flash` (auto-fallback `agnes-image-2.0-flash`)
  *      — same gateway + AGNES_API_KEY as chat; verified live 2026-09-30.
- *   2. Browser-side puter.js (`frontend/lib/puter-image.ts`) — fires only
- *      when the server-side image(s) failed, so a single answer costs at most
- *      one extra engine. The student may be asked to sign into a free Puter
- *      account (User-Pays model: the app pays nothing).
+ *   2. The Gemini vector writer (figure-draw.ts) — a sharp, labelled SVG
+ *      drawn server-side. All engines live on the server: the browser never
+ *      runs an AI runtime and the platform never asks the student to sign in
+ *      to a third-party AI account.
  *
  * Kill-switch: AI_IMAGE_GEN=off disables the server engine + the prompt
  * instruction + the fence scanner (answers simply never carry fences).

@@ -60,7 +60,7 @@ cd frontend && npm run dev  # Next.js 15 App Router
 |---|---|
 | Notes & data (1,200+ JSON topics) | `content/notes/concepts/**` — Zod-validated, `npm run content:build` (gate: `content:build:check`), health: `content:doctor` |
 | Topic registry (single source of truth: topic → place → route) | `frontend/lib/topic-registry.ts`, `npm run registry:build` / `registry:check` |
-| AI pipeline (chat chain, streaming, figures) | `backend/src/ai/**` — provider chain (Agnes → OpenRouter → internal), live SSE streaming, truncation repair, figure generation (`image-gen.ts`: Agnes image models + browser-side puter.js fallback), all unit-tested in `backend/tests/` |
+| AI pipeline (chat chain, streaming, figures) | `backend/src/ai/**` — provider chain (Agnes → OpenRouter → internal), live SSE streaming, truncation repair, figure generation (`image-gen.ts`: Agnes image models, server-side only), all unit-tested in `backend/tests/` |
 | Content UI / chat surfaces | `frontend/components/**`, `frontend/app/**` |
 | Security posture | generic error bodies only (`x-error-id` + internal correlation), every route scopes data by `req.user.id` (no IDOR), production CORS allowlist, auth rate limits |
 

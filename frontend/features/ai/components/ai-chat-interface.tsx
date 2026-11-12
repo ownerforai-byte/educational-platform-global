@@ -43,7 +43,6 @@ import {
   type ChatSession,
 } from "@/lib/api/ai";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
-import { drawFigureWithPuter } from "@/lib/puter-image";
 import { stripLinksForCopy } from "@/lib/ai/clean-copy";
 import { StepCards } from "@/components/chat/step-cards";
 import { splitStepBlocks } from "@/lib/content/steps-blocks";
@@ -685,12 +684,6 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         setInput(textToSend === PHOTO_ONLY_PROMPT && images.length ? "" : textToSend);
         setPendingImages(images);
         return;
-      }
-      for (const f of figs.values()) {
-        if (f.status === "failed") {
-          const url = await drawFigureWithPuter(f.prompt);
-          if (url) { f.status = "done"; f.url = url; }
-        }
       }
       paintLive(true);
       setStreamingText(null);

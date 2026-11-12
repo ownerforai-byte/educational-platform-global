@@ -4,14 +4,14 @@
 -- "enable saving of image for every user … hardcode its history saving").
 --
 -- One row per drawing a student makes in the Image Hub:
---   kind = 'picture' → a raster image drawn by the server chain or puter.js
+--   kind = 'picture' → a server-drawn raster image or a saved Google find
 --                       (url points at the generated image)
 --   kind = 'figure'  → a vector academic figure (svg holds the whole drawing,
 --                       parts carries the hoverable legend as JSON)
 --
 -- The server draw endpoints (/api/ai/image, /api/ai/figure) insert their own
--- rows on every success; POST /api/ai/image-history adds browser-drawn
--- puter.js results. Reads/deletes are always scoped to user_id.
+-- rows on every success; POST /api/ai/image-history adds client-held results
+-- (saved Google finds). Reads/deletes are always scoped to user_id.
 --
 -- Apply through the Supabase Management API:
 --   cd backend && node scripts/run-sql.mjs src/db/migrations/007_image_history.sql

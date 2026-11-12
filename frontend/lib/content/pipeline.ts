@@ -73,8 +73,8 @@ const sanitizeSchema: Schema = {
     // KaTeX/highlight rely on classes; keep ids for deep links. Both are also
     // needed because sanitization runs before those trusted transforms.
     "*": [...(defaultSchema.attributes?.["*"] ?? []), "className", "id"],
-    // Drawn + web diagrams: a model-embedded ![…](url) or a puter.js data-URL
-    // must survive sanitization (no scripts, just an <img src>).
+    // Drawn + web diagrams: a model-embedded ![…](url) or a data: URL must
+    // survive sanitization (no scripts, just an <img src>).
     img: [
       ...(defaultSchema.attributes?.img ?? []),
       "src",
@@ -89,7 +89,7 @@ const sanitizeSchema: Schema = {
     ...SVG_SANITIZE_ATTRIBUTES,
     [ARTIFACT_ELEMENT]: ["artifactsource", "artifactcaption", "running"],
   },
-  // puter.js fallback figures are data: URLs; remote web/diagram URLs are
+  // Inline drawn figures are data: URLs; remote web/diagram URLs are
   // http(s). No other protocol may reach an <img src>.
   protocols: {
     ...defaultSchema.protocols,

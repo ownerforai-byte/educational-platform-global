@@ -33,7 +33,6 @@ import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { StepCards } from "@/components/chat/step-cards";
 import { splitStepBlocks } from "@/lib/content/steps-blocks";
-import { drawFigureWithPuter } from "@/lib/puter-image";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerEmail } from "@/lib/owner";
@@ -198,13 +197,6 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
         }
         paint();
       }
-      for (const f of figs.values()) {
-        if (f.status === "failed") {
-          const url = await drawFigureWithPuter(f.prompt);
-          if (url) { f.status = "done"; f.url = url; }
-        }
-      }
-      paint();
       if (isLoggedIn) {
         saveChatHistory(HISTORY_SESSION, [
           { role: "user", content: text },

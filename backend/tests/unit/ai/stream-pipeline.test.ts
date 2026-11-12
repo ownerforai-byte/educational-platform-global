@@ -20,6 +20,7 @@ import {
   streamAnswerToStudent,
   type StreamState,
 } from "../../../src/api/ai-stream";
+import { DIAGRAM_HUB_PROVIDER } from "../../../src/ai/config";
 
 function fakeRes() {
   const written: string[] = [];
@@ -262,5 +263,49 @@ describe("streamAnswerToStudent", () => {
     // Nothing reached the student → the route refunds the credit / guest slot.
     expect(state.streamedAny).toBe(false);
     expect(events(written).some((e) => typeof e.error === "string")).toBe(true);
+  });
+});
+
+/**
+ * DIAGRAM HUB (2026-11-12): the dedicated free Gemini lane returns ONE SVG
+ * plus at most four bullets. The academic word floor and the second server
+ * figure pass would turn that drawing back into an essay, so both are off.
+ */
+describe("Diagram Hub drawing lane", () => {
+  it("streams a short SVG without a prose floor or a second server figure", async () => {
+    const { res, written } = fakeRes();
+    const channel = openSseChannel(res);
+    const svg = "```svg Labelled human heart\n<svg viewBox='0 0 900 640'></svg>\n```";
+    const { service, calls } = fakeService([
+      {
+        deltas: [svg, "\n- Left atrium receives oxygenated blood"],
+        finishReason: "stop",
+      },
+    ]);
+
+    const outcome = await streamAnswerToStudent({
+      channel,
+      service,
+      provider: DIAGRAM_HUB_PROVIDER,
+      messages: [{ role: "user", content: "draw a labelled human heart" }],
+      logLabel: "[AI test diagram]",
+      doneExtras: {},
+      state: newState(),
+      diagram: true,
+    });
+
+    expect(outcome.status).toBe("done");
+    const sent = events(written);
+    expect(sent[0]).toEqual({ phase: "writing", label: "Drawing the diagram…" });
+    // No continuation / floor-expansion round: the picture is the answer.
+    expect(calls()).toBe(1);
+    expect(sent.some((e) => typeof e.continuing === "number")).toBe(false);
+    expect(sent.some((e) => typeof e.imageStart === "number")).toBe(false);
+    const text = sent
+      .filter((e) => typeof e.content === "string")
+      .map((e) => e.content as string)
+      .join("");
+    expect(text).toContain("<svg");
+    expect(text).toContain("Left atrium");
   });
 });

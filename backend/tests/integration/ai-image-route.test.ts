@@ -130,7 +130,7 @@ describe("POST /api/ai/image", () => {
     expect(mockedGenerate).toHaveBeenCalledWith("a snow leopard");
   });
 
-  test("answers 503 + reason when the whole Agnes chain failed (client falls back to puter.js)", async () => {
+  test("answers 503 + reason when the whole Agnes chain failed", async () => {
     mockedGenerate.mockResolvedValue({ reason: "all image models failed" });
 
     const { status, json } = await post({ prompt: "anything" });

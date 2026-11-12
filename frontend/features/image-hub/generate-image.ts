@@ -1,22 +1,19 @@
 import { apiFetch } from "@/lib/api-client";
-import { drawFigureWithPuter } from "@/lib/puter-image";
 
 /**
  * Engine order for the Diagram Hub (owner request 2026-10-02: replace the
- * mind console with an image generator). Exactly the platform's established
- * policy — SERVER first, BROWSER second:
+ * mind console with an image generator). All drawing is SERVER-SIDE — the
+ * browser fallback was removed on 2026-11-12, so the platform no longer
+ * loads any third-party AI runtime in a student's tab:
  *
- *   1. POST /api/ai/image  → the server's raster image chain, owner-gated
- *      server-side.
- *   2. puter.js txt2img    → the User-Pays browser fallback, used when the
- *      server endpoint fails for ANY reason (403, 503 engines down, network).
+ *   1. POST /api/ai/image  → the server's raster image chain.
  *
  * `requestHubFigure` prepends one more server engine for academic requests
  * (owner request 2026-10-03): POST /api/ai/figure draws a labelled VECTOR
  * figure whose parts open their details on hover, and only falls through to
  * the raster chain above when the vector pass draws nothing.
  *
- * Returns null only when BOTH engines fail — the hub shows that as an error
+ * Returns null when the server engines fail — the hub shows that as an error
  * and keeps the prompt, never losing the student's (owner's) text.
  *
  * The default engines are injected so tests can pin the order without a
@@ -32,7 +29,7 @@ export const SERVER_DRAW_LABEL = "Diagram";
 
 export type HubImageResult = {
   url: string;
-  engine: "diagram" | "puter";
+  engine: "diagram";
   /** Human label for the gallery badge, e.g. "Diagram". */
   label: string;
   /**
@@ -43,7 +40,7 @@ export type HubImageResult = {
   kind?: "picture";
 };
 
-export type HubEngineFail = "figure" | "diagram" | "puter";
+export type HubEngineFail = "figure" | "diagram";
 
 /** One hoverable part of a vector figure: the label and its one-line detail. */
 export type HubFigurePart = { name: string; detail: string };
@@ -73,7 +70,6 @@ export type HubFigureDeps = {
   } | null>;
   /** Raster chain, used when the vector pass produced nothing. */
   requestServer?: HubImageDeps["requestServer"];
-  drawWithPuter?: HubImageDeps["drawWithPuter"];
   onEngineFail?: (engine: HubEngineFail) => void;
 };
 
@@ -82,9 +78,7 @@ export type HubImageDeps = {
   requestServer?: (
     prompt: string,
   ) => Promise<{ url?: string; model?: string | null } | null>;
-  /** Browser call (default: puter.js txt2img). Resolve null on failure. */
-  drawWithPuter?: (prompt: string) => Promise<string | null>;
-  /** Progress hook: fired when an engine gives up, before the next tries. */
+  /** Progress hook: fired when an engine gives up. */
   onEngineFail?: (engine: HubEngineFail) => void;
 };
 
@@ -97,8 +91,8 @@ async function defaultRequestServer(
       { method: "POST", body: JSON.stringify({ prompt }) },
     );
   } catch {
-    // apiFetch throws on 4xx/5xx (engines down, session expired) — that is
-    // exactly when the browser fallback takes over.
+    // apiFetch throws on 4xx/5xx (engines down, session expired) — the hub
+    // reports that honestly instead of silently substituting another engine.
     return null;
   }
 }
@@ -111,8 +105,6 @@ export async function requestHubImage(
   if (!clean) return null;
 
   const server = deps.requestServer ?? defaultRequestServer;
-  const puter = deps.drawWithPuter ?? drawFigureWithPuter;
-
   const fromServer = await server(clean);
   if (fromServer?.url) {
     return {
@@ -122,12 +114,6 @@ export async function requestHubImage(
     };
   }
   deps.onEngineFail?.("diagram");
-
-  const fromPuter = await puter(clean);
-  if (fromPuter) {
-    return { url: fromPuter, engine: "puter", label: "puter.js (browser)" };
-  }
-  deps.onEngineFail?.("puter");
   return null;
 }
 
@@ -153,12 +139,10 @@ async function defaultRequestFigure(
  *
  * A raster painter cannot spell, so it can never deliver "every part named" —
  * the VECTOR writer is tried first and returns one SVG in which each labelled
- * part carries `NAME — detail` that opens on hover. The raster chain stays as
- * the fallback: if the vector pass fails, the picture engines (server raster →
- * puter.js) draw the same prompt, so the owner always gets an image.
+ * part carries `NAME — detail` that opens on hover. The server raster engine
+ * stays as the fallback when the vector pass draws nothing.
  *
- * Engine order: figure → server raster → puter.js. Returns null only when all
- * three failed.
+ * Engine order: figure → server raster. Returns null only when both failed.
  */
 export async function requestHubFigure(
   prompt: string,
@@ -184,7 +168,6 @@ export async function requestHubFigure(
 
   return requestHubImage(clean, {
     requestServer: deps.requestServer,
-    drawWithPuter: deps.drawWithPuter,
     onEngineFail: deps.onEngineFail,
   });
 }

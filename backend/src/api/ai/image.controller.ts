@@ -17,9 +17,8 @@ import { asyncHandler } from "../../middleware/asyncHandler";
  * owner emails only"): `requireAuth` + `requireOwnerEmail` — any signed-in
  * non-owner email gets a 403 and never burns the platform AGNES key. The
  * ai-image rate-limit tier stays as the second layer, and when the chain
- * fails the endpoint answers 503 + reason so the browser retries the same
- * prompt through puter.js (User-Pays — the platform pays nothing for that
- * attempt).
+ * fails the endpoint answers 503 + reason so the caller can retry or show
+ * the honest failure. No browser AI runtime is involved.
  *
  * Every successful draw is SAVED to the user's image history on the server
  * (hardcoded) — best-effort, so a history failure can never cost the owner

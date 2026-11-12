@@ -152,6 +152,36 @@ export function answerTierRules(tier: AiSparkTier): string {
 }
 
 /**
+ * DIAGRAM HUB OUTPUT CONTRACT — appended LAST to the system prompt so it
+ * overrides every professor / academic prose rule above it.
+ *
+ * The dedicated free Gemini lane draws ONE SVG itself. The free tier has no
+ * Google Search grounding, so the reference structure arrives as attached
+ * server-side research (buildProfessorContext / fetchDiagramContext). Word
+ * floors, answer-card sections, paper links and the figure-tool fence are all
+ * explicitly switched off: the picture is the whole answer.
+ *
+ * Owner request 2026-11-12: "add more details (related, contrasts) as floating
+ * widget in the diagram in dots, after hovering or clicking those dots reveals
+ * all the information from there". So the extra knowledge does NOT become an
+ * essay beside the figure — it is packed into small DETAIL DOTS embedded in the
+ * SVG. Each dot's <title> is a machine-readable payload the client expands
+ * into a floating widget on hover / click.
+ */
+export const DIAGRAM_HUB_RULES = [
+  '[DIAGRAM HUB — FINAL OUTPUT CONTRACT · OVERRIDES EVERY RULE ABOVE]',
+  'This request is a DRAWING task, not a written answer. These rules override any word-count floor, essay structure, answer-card section, related-terms list, contrast list, verified-tier depth, citation block, research-paper link or figure-tool fence described earlier in this prompt.',
+  '1. Use the attached research (Google / reference diagrams) to copy the exact structure, orientation and standard textbook labels of the real diagram. TRANSLATE EVERY LABEL TO ENGLISH — the drawing is always 100% English.',
+  '2. Output exactly ONE complete ```svg fenced block on a 900x640 canvas: razor-sharp lines and text, leader lines from every part to its label, standard notation, units on every axis. Wrap each labelled part in its own <g><title>Part Name | Function | Exam significance</title>…</g> so every label opens on hover. Draw the detail dots from rule 5 INSIDE this same <svg> before its closing tag.',
+  '3. Caption the fence line in English, e.g. ```svg Labelled human heart — chambers and vessels.',
+  '4. After the figure, write AT MOST 4 short bullets: what each main part does and the one exam trap. The extra related / contrast knowledge belongs in the dots, NOT here.',
+  '5. DETAIL DOTS — FLOATING WIDGETS (MANDATORY): add 3 to 6 small dots to the drawing, each floating beside the part or region it explains. A dot is its OWN group with class="edu-detail-dot" and a machine-readable <title> holding ALL the extra teaching detail. The student hovers or clicks a dot and the platform opens a floating widget showing everything in that <title> — so no knowledge is lost and no prose essay is needed.',
+  '   Exact shape (keep the whole <title> on ONE line): <g class="edu-detail-dot"><title>DETAIL DOT | <Topic> | Related: <a>; <b>; <c> | Contrasts: <A> vs <B> — <exact difference>; <C> vs <D> — <exact difference> | Detail: <2-3 sentences of deeper mechanism, cause, units and conditions> | Exam: <the trap or marking point></title><circle cx="…" cy="…" r="7" fill="#2563eb"/><text x="…" y="…" fill="#ffffff" text-anchor="middle" font-size="10">i</text></g>',
+  '   FIELD LAW: use | ONLY between fields, ; ONLY between items inside a field, and NEVER write | or ; inside a value. Use plain English with no < > & characters inside <title>. ALWAYS include Related: and Contrasts: fields; Detail: and Exam: are strongly recommended. Give each dot a DIFFERENT job — one core mechanism, one set of related concepts, one contrast / misconception, one exam or graph case. Never overlap a dot with a label or another dot.',
+  '6. Do NOT write a prose essay, do NOT emit a veer-image / figure-tool fence, and do NOT append links, citations, key terms, follow-up chips or any other section. The picture is the answer.',
+].join('\n');
+
+/**
  * Build the server-side context block appended to the system prompt for every
  * chat request: professor + master academic rules + the platform's own
  * curriculum material + the scope directive + live web results (with real

@@ -4,6 +4,7 @@ import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { renderNoteHtml } from "@/lib/content/pipeline";
 import { registerVeerArtifact } from "@/components/content/veer-artifact";
+import { isDetailDotElement } from "@/components/content/edu-visual";
 
 // The ```run fence renders through this element, so the renderer that emits it
 // is also the one that registers it (no-op during SSR).
@@ -135,6 +136,10 @@ export const InteractiveMarkdown = memo(function InteractiveMarkdown({
     const cleanups: Array<() => void> = [];
 
     root.querySelectorAll<SVGGElement>(".edu-visual svg g").forEach((part) => {
+      // Detail dots open their own floating widget (edu-visual.ts); attaching
+      // the plain part tooltip here would double-handle every dot and expose
+      // the raw machine-readable <title> as the student's tooltip.
+      if (isDetailDotElement(part)) return;
       const titleEl = part.querySelector(":scope > title");
       const text = (titleEl?.textContent ?? "").trim();
       if (!text) return;

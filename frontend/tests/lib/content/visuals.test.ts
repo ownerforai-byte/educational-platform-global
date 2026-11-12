@@ -119,6 +119,22 @@ describe("renderNoteHtml — a drawing reaches the page", () => {
     expect(html).toContain("viewBox");
   });
 
+  it("keeps detail-dot groups, their class and their full payload through sanitization", () => {
+    // The dot's <title> is the ONLY carrier of the extra knowledge, so the
+    // sanitizer must not strip the class or the pipe/semicolon payload.
+    const dotDrawing = `<svg viewBox="0 0 200 120">
+      <rect x="10" y="10" width="180" height="100" fill="none" stroke="#0f172a"/>
+      <g class="edu-detail-dot"><title>DETAIL DOT | Ray optics | Related: Refraction; Reflection | Contrasts: Real vs Virtual — rays actually meet vs appear to meet</title><circle cx="150" cy="30" r="7" fill="#2563eb"/><text x="150" y="33" fill="#ffffff" text-anchor="middle" font-size="10">i</text></g>
+    </svg>`;
+    const html = renderNoteHtml(fence(dotDrawing, "svg Ray diagram with detail dots"));
+    expect(html).toContain('class="edu-detail-dot"');
+    expect(html).toContain("DETAIL DOT | Ray optics");
+    expect(html).toContain("Refraction; Reflection");
+    expect(html).toContain("Real vs Virtual");
+    expect(html).toContain("<circle");
+    expect(html).toContain('class="edu-visual"');
+  });
+
   it("carries the fence caption through as a figcaption", () => {
     const html = renderNoteHtml(fence(DRAWING, "svg Principal axis"));
     expect(html).toContain("<figcaption");

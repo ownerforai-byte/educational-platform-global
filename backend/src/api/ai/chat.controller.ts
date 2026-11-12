@@ -14,7 +14,14 @@ import {
 // owner unlimited. Guests have no Veer access at all: the /api/ai/guest
 // route is closed and answers 403, so only approved members can chat.)
 import { logServerError, newErrorId } from "../../middleware/errors";
-import { answerTierRules, appendConsoleRules, buildProfessorContext, withProfessorContext } from "../../ai/prompts";
+import {
+  answerTierRules,
+  appendConsoleRules,
+  buildProfessorContext,
+  DIAGRAM_HUB_RULES,
+  withProfessorContext,
+} from "../../ai/prompts";
+import { DIAGRAM_HUB_PROVIDER } from "../../ai/config";
 import {
   completeAnswer,
   deepConceptResearchWithSources,
@@ -85,6 +92,10 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // Optional dedicated console id ("nepali" | "grammar"); unknown ids are
     // ignored by appendConsoleRules.
     const consoleId: string = typeof body?.console === "string" ? body.console : "";
+    // Diagram Hub marker: the client names the WORK, never a provider. The
+    // server resolves it to the dedicated free Gemini lane below.
+    const task: string = typeof body?.task === "string" ? body.task.trim().toLowerCase() : "";
+    const isDiagram = task === "diagram";
 
     if (!messages.length) {
       res.status(400).json({ error: "messages array is required" });
@@ -203,8 +214,10 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // Owner 2026-11-10: a drawing/graph request streams IMMEDIATELY — no
     // hidden draft pass ("start writing … no thinking for long time"). The
     // figure lane draws in the background while the prose types itself out.
-    const diagramRequest = isDiagramRequest(lastUser);
-    const upgrade = !diagramRequest && shouldUpgradeAcademic(lastUser, conversationTail);
+    const diagramRequest = !isDiagram && isDiagramRequest(lastUser);
+    // A Diagram Hub turn is drawn in ONE pass: the academic upgrade rebuilds
+    // the whole message list around a prose draft and would erase the drawing.
+    const upgrade = !isDiagram && !diagramRequest && shouldUpgradeAcademic(lastUser, conversationTail);
     // The end-of-answer graph links are the SAME real files the model draws
     // from, fetched alongside the context so they add no extra wait.
     const [contextBase, graphLinks] = await Promise.all([
@@ -219,12 +232,17 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // of its answer (see image-gen.ts) — the instruction explains the fence.
     // Console rules (pure Nepali / grammar) go LAST — after the figure tool —
     // so they are the final word on language/scope.
-    const professorContext = [
-      appendConsoleRules(withFigureToolInstruction(baseContext, lastUser), consoleId),
-      // Console-specific prose is untrusted with respect to the verified-tier
-      // boundary; restate the server-selected limit last for every request.
-      answerTierRules(tier),
-    ].join("\n\n");
+    // A drawing request keeps the SERVER-SIDE RESEARCH (the free Gemini tier
+    // has no Google Search grounding of its own) but drops every prose-shaping
+    // add-on. The diagram contract rides LAST so it wins every conflict.
+    const professorContext = isDiagram
+      ? [baseContext, DIAGRAM_HUB_RULES].join("\n\n")
+      : [
+          appendConsoleRules(withFigureToolInstruction(baseContext, lastUser), consoleId),
+          // Console-specific prose is untrusted with respect to the verified-tier
+          // boundary; restate the server-selected limit last for every request.
+          answerTierRules(tier),
+        ].join("\n\n");
     if (consoleId) console.info(`[AI] console=${consoleId} authed`);
     messages = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
@@ -262,7 +280,10 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // `upgrade` gate — casual turns and answers with no web search available get
     // it too. It is appended last, after related history, verified paper
     // references and grounding citations.
-    answerSuffix += originalResearchPaperLink(lastUser, verifiedPapers);
+    // No paper link / citation tail on a drawing — the picture is the answer.
+    if (!isDiagram) {
+      answerSuffix += originalResearchPaperLink(lastUser, verifiedPapers);
+    }
 
     // Live streaming: the connection is already open (above); the pipeline —
     // token-level fence filtering, streamed truncation repair, figure drawing —
@@ -271,14 +292,33 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       const outcome = await streamAnswerToStudent({
         channel,
         service: aiService,
-        provider,
+        // A diagram request is pinned to the dedicated free Gemini lane; the
+        // service degrades to the shared chain when that key is unset.
+        provider: isDiagram ? DIAGRAM_HUB_PROVIDER : provider,
         messages,
         logLabel: "[AI stream]",
         doneExtras: { credits: creditsLeft ?? undefined },
         state: streamState,
-        suffix: answerSuffix,
+        suffix: isDiagram ? "" : answerSuffix,
+        diagram: isDiagram,
       });
       channel.end();
+      return;
+    }
+
+    // A diagram request is a drawing, not an essay: no word floor, no
+    // continuation passes, no second server figure pass. The hub always
+    // streams; this keeps a plain POST honest too.
+    if (isDiagram) {
+      const drawn = await aiService.chat(DIAGRAM_HUB_PROVIDER, messages);
+      res.json({
+        response: drawn,
+        generatedFigures: [],
+        citations: [],
+        credits: creditsLeft ?? undefined,
+        aiSpark: { tier, limit: aiSparkLimitFor(tier), remaining: sparkRemaining },
+        images: { accepted: images.length, rejected: rejectedImages },
+      });
       return;
     }
 

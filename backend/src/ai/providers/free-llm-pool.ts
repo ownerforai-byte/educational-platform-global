@@ -116,7 +116,16 @@ export const FREE_LLM_PROVIDERS: readonly FreeLlmProviderSpec[] = [
     baseUrlEnv: "NVIDIA_API_URL",
     envVars: ["NVIDIA_API_KEY", "NIM_API_KEY"],
     modelEnv: "NVIDIA_MODEL",
-    defaultModel: "z-ai/glm-5.2",
+    // Best FREE NVIDIA endpoint, verified live 2026-11-12 with a trial key:
+    // NVIDIA's frontier 550B / 55B-active Nemotron, 1M context, GPQA 87.9,
+    // RULER-1M 94.0, reasoning + tool use, multilingual (incl. Hindi).
+    // build.nvidia.com marks "Free Endpoint: Available"; /v1/models lists it;
+    // chat/completions returns plain `content` and streams `delta.content`.
+    // Replaces z-ai/glm-5.2, which NVIDIA retired (HTTP 410, EOL 2026-08-21).
+    // Do NOT default to nemotron-3.5-*: those emit reasoning-only replies
+    // (`message.content` is null) unless thinking is disabled via extra_body,
+    // which OpenAICompatProvider does not send — the lane would read as empty.
+    defaultModel: "nvidia/nemotron-3-ultra-550b-a55b",
     timeoutEnv: "NVIDIA_TIMEOUT_MS",
     docsUrl: "https://build.nvidia.com/settings/api-keys",
   },

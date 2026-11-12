@@ -103,6 +103,8 @@ export interface StreamAnswerArgs {
   state: StreamState;
   /** Verified, user-scoped history links appended after the answer. */
   suffix?: string;
+  /** Diagram Hub: one SVG + at most four bullets, no prose floor, no server figures. */
+  diagram?: boolean;
 }
 
 /**
@@ -114,10 +116,13 @@ export interface StreamAnswerArgs {
 export async function streamAnswerToStudent(
   args: StreamAnswerArgs,
 ): Promise<StreamOutcome> {
-  const { channel, service, provider, messages, logLabel, doneExtras, state } = args;
+  const { channel, service, provider, messages, logLabel, doneExtras, state, diagram } = args;
 
   // Visible progress from the very first moment the answer work begins.
-  channel.send({ phase: "writing", label: "Writing the answer…" });
+  channel.send({
+    phase: "writing",
+    label: diagram ? "Drawing the diagram…" : "Writing the answer…",
+  });
 
   const figFilter = new FigureStreamFilter();
   const pendingFigures: Array<{
@@ -130,6 +135,8 @@ export async function streamAnswerToStudent(
   let continued = 0;
 
   const emitFigures = (specs: FigureSpec[]) => {
+    // The Diagram Hub's SVG IS the answer; never launch a second server draw.
+    if (diagram) return;
     for (const spec of specs) {
       figureSeq += 1;
       // Start the Gemini round-trip the MOMENT the fence closes, so the draw
@@ -216,7 +223,9 @@ export async function streamAnswerToStudent(
       [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
     const floor = Math.max(REPLY_FLOOR_WORDS, floorWordsForQuestion(lastUserMsg));
 
-    for (let fRound = 0; fRound < 2 && wordCount(acc) < floor; fRound++) {
+    // A diagram is one SVG + at most four bullets: the academic word floor
+    // must never expand it into an essay.
+    for (let fRound = 0; !diagram && fRound < 2 && wordCount(acc) < floor; fRound++) {
       const currentWords = wordCount(acc);
       console.info(
         `${logLabel} floor expansion pass ${fRound + 1}: ${currentWords}/${floor} words`,
@@ -264,7 +273,8 @@ Continue with the remaining required substance to reach at least ${floor} words 
     // reply diagrams "go in the responsibility of gemini no matter which type
     // is it") — the vector figure rides the event as `svg` and the client
     // renders it as an interactive ```svg block; the Agnes raster chain is the
-    // fallback, and puter.js remains the client's last resort on imageFailed.
+    // fallback. A failed draw reaches the client as imageFailed; no browser
+    // runtime is involved.
     // Each figure's draw already started when its fence closed, so the
     // Gemini round-trips overlap the answer itself; here we only collect the
     // results and emit each event the moment its figure lands. The client

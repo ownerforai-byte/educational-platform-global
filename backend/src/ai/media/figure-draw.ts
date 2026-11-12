@@ -13,8 +13,8 @@
  * the frontend already opens on hover/click.
  *
  * Contract: never throws. Every failure path resolves to `{ reason }` so the
- * Diagram Hub can fall back to the raster chain (server raster → puter.js) and the
- * student still gets a picture.
+ * Diagram Hub can fall back to the server raster chain and the student still
+ * gets a picture. No browser AI runtime is involved.
  *
  * Kill-switch: AI_FIGURE_GEN=off disables the writer entirely.
  */

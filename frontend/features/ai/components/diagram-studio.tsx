@@ -8,20 +8,24 @@ import type { AIChatMessage } from "@/types/api";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { AiToolShell } from "@/components/ai/ai-tool-shell";
-import { drawFigureWithPuter } from "@/lib/puter-image";
 
 /**
  * THE DIAGRAM HUB (owner 2026-10-25: "one diagram hub (svg+ detailed or from
  * google (most detailed in english language even if those are in other
- * language, convert them in english))"; trained 2026-11-10 for every
- * physics/maths syllabus condition).
+ * language, convert them in english))").
  *
  * One teaching surface whose whole job is diagrams: the student names a topic
- * and the hub produces a DETAILED labelled figure. The reply streams prose
- * immediately while the Gemini figure lane draws the vector figure IN THE
- * BACKGROUND (```veer-image brief → imageStart/imageSuccess events) — the
- * student sees a picture arrive, never a line of code. The platform appends
- * the internal-note and web graph links at the end of the reply.
+ * and the hub produces a DETAILED labelled figure — a dedicated free-tier
+ * Google AI Studio key draws it as a vector ```svg block (every part
+ * hoverable), grounded in the platform's SERVER-SIDE Google/Wikimedia research
+ * step (the free tier has no Google Search grounding of its own), with every
+ * label in English no matter what language the sources used. The `task` marker
+ * tells /api/ai to use that lane and skip essay floors; replies render through
+ * the shared pipeline, so the student sees a picture — never raw code.
+ *
+ * Owner 2026-11-12: extra knowledge (related concepts, contrasts, mechanisms,
+ * exam traps) lives in floating DETAIL DOTS inside the SVG, not in an essay.
+ * Hovering or clicking a dot opens a widget with everything that dot carries.
  */
 
 const DIAGRAM_SYSTEM = `${PLATFORM_SYSTEM_PROMPT}
@@ -29,13 +33,11 @@ const DIAGRAM_SYSTEM = `${PLATFORM_SYSTEM_PROMPT}
 CLASSROOM (DIAGRAM HUB): this interface exists to DRAW — one detailed, exam-grade diagram per request, nothing else.
 
 1. SEARCH FIRST: use the attached research to copy the exact structure, orientation and standard textbook labels of the real diagram (Google / attached sources). If the source labels are in another language, TRANSLATE EVERY LABEL TO ENGLISH — the drawing is always 100% English.
-2. START WRITING AT ONCE — no long thinking: open with one short sentence naming the figure, then AT MOST 4 short bullets (what each main part does + the one exam trap). No essays — the picture is the answer.
-3. DRAW IN THE BACKGROUND, NEVER WRITE CODE ON SCREEN: do not write SVG, markup or any code in your reply. End the answer with exactly one fenced drawing brief:
-   \`\`\`veer-image
-   one precise English line (max 120 characters) naming the figure, the exact standard case(s) and every part to label
-   \`\`\`
-   The platform's figure lane draws the detailed labelled vector figure from your brief (900x640 canvas, leader lines from every part, every label hoverable) and renders it live. For physics/maths name the exact condition — object position, motion type, process, sign case — or say "all standard cases" for one titled panel per case.
-4. The platform appends the internal-note and web graph links after your answer — never invent or list URLs yourself.`;
+2. DRAW ONE COMPLETE \`\`\`svg figure on a 900x640 canvas — razor-sharp lines and text, leader lines from every part to its label, standard notation, units on every axis. Wrap each labelled part in its own <g><title>Part Name | Function | Exam significance</title>…</g> so every label opens on hover.
+3. Caption the fence line in English ("\`\`\`svg Labelled human heart — chambers and vessels").
+4. After the figure, add AT MOST 4 short bullets: what each main part does and the one exam trap. The extra related / contrast knowledge belongs in the dots below, NOT here.
+5. DETAIL DOTS (MANDATORY, 3-6): inside the same <svg>, add small floating dots beside the parts they explain. Each is <g class="edu-detail-dot"><title>DETAIL DOT | Topic | Related: a; b; c | Contrasts: A vs B — exact difference | Detail: deeper mechanism and conditions | Exam: the trap</title><circle cx="…" cy="…" r="7" fill="#2563eb"/><text x="…" y="…" fill="#ffffff" text-anchor="middle" font-size="10">i</text></g>. Keep each <title> on ONE line; use | only between fields and ; only between items; always include Related: and Contrasts:. Hovering or clicking a dot opens a floating widget with all of that information.
+6. No essays — the picture is the answer. Do NOT write code on screen, do NOT emit a veer-image fence, and do NOT append links, citations or key terms.`;
 
 const SUBJECTS = [
   "Physics",
@@ -55,7 +57,6 @@ export function DiagramStudio() {
   const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
   const [enhancing, setEnhancing] = useState(false);
-  const [phaseLabel, setPhaseLabel] = useState<string | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
   const sessionRef = useRef(`diagram:${Date.now().toString(36)}`);
 
@@ -86,7 +87,6 @@ export function DiagramStudio() {
     setTopic("");
     setSending(true);
     setError(null);
-    setPhaseLabel(null);
     const controller = new AbortController();
     abortRef.current = controller;
 
@@ -94,35 +94,15 @@ export function DiagramStudio() {
     let liveAcc = "";
     let sawToken = false;
     let lastPaint = 0;
-    const figs = new Map<
-      number,
-      { prompt: string; caption?: string; status: "pending" | "done" | "failed"; url?: string; svg?: string }
-    >();
-    // The figure is drawn in the background and arrives whole (svg or raster
-    // URL); the fence is added to the bubble only once it is complete, so no
-    // partial code ever reaches the screen (owner 2026-11-10).
-    const figureBlocks = (): string =>
-      [...figs.values()]
-        .map((f) =>
-          f.status === "done" && f.svg
-            ? `\n\n\`\`\`svg ${f.caption || "Veer-drawn figure"}\n${f.svg}\n\`\`\`\n\n`
-            : f.status === "done" && f.url
-              ? `\n\n![${f.caption || "Veer-drawn figure"}](${f.url})\n\n`
-              : f.status === "pending"
-                ? "\n\n*Drawing the figure…*"
-                : "",
-        )
-        .join("");
     const paintLive = (force: boolean) => {
       const now = Date.now();
       if (!force && now - lastPaint < 40) return;
       lastPaint = now;
-      const snapshot = liveAcc + figureBlocks();
       setMessages((prev) => {
         const next = [...prev];
         const last = next[next.length - 1];
         if (last?.role === "assistant") {
-          next[next.length - 1] = { role: "assistant", content: snapshot };
+          next[next.length - 1] = { role: "assistant", content: liveAcc };
         }
         return next;
       });
@@ -137,59 +117,27 @@ export function DiagramStudio() {
       for await (const chunk of streamChat(payload, undefined, {
         isGuest: false,
         session: sessionRef.current,
+        // Resolve server-side to the dedicated free Gemini diagram lane.
+        task: "diagram",
         signal: controller.signal,
       })) {
         if (typeof chunk === "string") {
           if (!sawToken) {
             sawToken = true;
             liveAcc = chunk;
-            setPhaseLabel(null);
-            setMessages((prev) => [...prev, { role: "assistant", content: chunk + figureBlocks() }]);
+            setMessages((prev) => [...prev, { role: "assistant", content: chunk }]);
           } else {
             liveAcc += chunk;
             paintLive(false);
           }
-        } else if ("phase" in chunk) {
-          setPhaseLabel(chunk.label ?? null);
-        } else if ("continuing" in chunk) {
-          setPhaseLabel(chunk.label ?? "Continuing…");
-        } else if ("imageStart" in chunk) {
-          figs.set(chunk.imageStart, { prompt: chunk.prompt, caption: chunk.caption, status: "pending" });
-          paintLive(true);
-        } else if ("imageSuccess" in chunk) {
-          const f = figs.get(chunk.imageSuccess);
-          if (f) {
-            f.status = "done";
-            f.url = chunk.url;
-            f.svg = chunk.svg;
-            f.caption = f.caption ?? chunk.caption;
-          }
-          paintLive(true);
-        } else if ("imageFailed" in chunk) {
-          const f = figs.get(chunk.imageFailed);
-          if (f) f.status = "failed";
         }
       }
-
-      // Browser-side last resort for anything the server could not draw.
-      if (!controller.signal.aborted) {
-        for (const f of figs.values()) {
-          if (f.status === "failed") {
-            const url = await drawFigureWithPuter(f.prompt);
-            if (url) {
-              f.status = "done";
-              f.url = url;
-            }
-          }
-        }
-      }
-      const finalContent = liveAcc + figureBlocks();
+      if (!liveAcc.trim()) throw new Error("No diagram received. Please try again.");
       paintLive(true);
-      if (!finalContent.trim()) throw new Error("No diagram received. Please try again.");
       try {
         const saved = await saveChatHistory(sessionRef.current, [
           { role: "user", content: request.content },
-          { role: "assistant", content: finalContent },
+          { role: "assistant", content: liveAcc },
         ]);
         if (!saved.migrated || saved.saved !== 2) setError("Your answer could not be saved to history.");
       } catch {
@@ -198,11 +146,8 @@ export function DiagramStudio() {
       recordAiSparkUse();
     } catch (err: unknown) {
       if (controller.signal.aborted) {
-        // Settle the turn: keep what was written, drop any pending figure
-        // placeholder, and restore the brief when nothing arrived at all.
-        for (const f of figs.values()) {
-          if (f.status === "pending") f.status = "failed";
-        }
+        // CodeRabbit: an early Stop used to leave the unanswered brief in the
+        // thread and to discard the last throttled paint. Settle the turn.
         if (sawToken) {
           paintLive(true);
         } else {
@@ -219,7 +164,6 @@ export function DiagramStudio() {
     } finally {
       if (abortRef.current === controller) abortRef.current = null;
       setSending(false);
-      setPhaseLabel(null);
     }
   };
 
@@ -362,7 +306,7 @@ export function DiagramStudio() {
         {sending && (
           <p className="flex items-center gap-1.5 text-[11px] italic text-muted-foreground">
             <Sparkles className="h-3 w-3 text-primary" aria-hidden="true" />
-            {phaseLabel ?? "Researching the real diagram, then drawing it…"}
+            Researching the real diagram, then drawing it…
           </p>
         )}
       </div>

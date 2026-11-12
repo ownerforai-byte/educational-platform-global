@@ -11,8 +11,8 @@ import {
  * Diagram Hub launcher — the home entry for the drawing studio (owner request
  * 2026-10-02: the Mind Studio workspace became the hub; renamed Diagram Hub on
  * 2026-10-07, when the owner asked that no vendor name and no "AI" wording
- * appear anywhere in it). The server drawing engine runs first, puter.js in
- * the browser is the fallback; owner emails only since 2026-10-05.
+ * appear anywhere in it). All drawing runs on the platform's own server
+ * engines; owner emails only since 2026-10-05.
  *
  * The section renders inside <OwnerOnly> on the home page, so the copy speaks
  * to the owner, not to the student. The preview on the right is a static
@@ -48,13 +48,10 @@ export function HomeMindStudio() {
             </p>
 
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              When the server engine is busy, the same prompt retries{" "}
-              <span className="font-semibold text-foreground/80">
-                in your browser through puter.js
-              </span>{" "}
-              — its User-Pays model costs the platform nothing and needs no
-              key. Every drawing is saved to your account history: newest
-              first, ready to download on any device you sign in from.
+              The vector figure writer and the server drawing engine work
+              together on every prompt. Every drawing is saved to your account
+              history: newest first, ready to download on any device you sign
+              in from.
             </p>
 
             <ul className="mt-5 flex flex-wrap gap-2.5">
@@ -64,7 +61,7 @@ export function HomeMindStudio() {
               </li>
               <li className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/80 px-3 py-2 text-xs font-semibold text-foreground/80">
                 <MousePointerClick className="h-3.5 w-3.5 text-sky-500" />
-                puter.js browser fallback
+                Server-first drawing
               </li>
               <li className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/80 px-3 py-2 text-xs font-semibold text-foreground/80">
                 <Download className="h-3.5 w-3.5 text-emerald-500" />

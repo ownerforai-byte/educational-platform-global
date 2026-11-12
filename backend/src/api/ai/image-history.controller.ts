@@ -13,7 +13,7 @@ import { asyncHandler } from "../../middleware/asyncHandler";
  * Storage: the `image_history` table (migration 007_image_history.sql). Server
  * draws (/api/ai/image and /api/ai/figure) save THEMSELVES through
  * saveImageHistoryRow — saving is hardcoded on the server, no client opt-in,
- * no client trust. Browser-drawn puter.js results arrive through POST /.
+ * no client trust. Client-submitted results arrive through POST /.
  * Every read and delete is scoped to req.user.id — no user can touch another
  * account's history.
  *
@@ -135,7 +135,7 @@ router.get("/", requireAuth, requireOwnerEmail, asyncHandler(async (req: Request
   res.json({ items, migrated: true });
 }));
 
-/** POST /api/ai/image-history — save one browser-drawn (puter.js) result. */
+/** POST /api/ai/image-history — save one client-submitted image result. */
 router.post("/", requireAuth, requireOwnerEmail, asyncHandler(async (req: Request, res: Response) => {
   const parsed = imageHistorySaveSchema.safeParse(req.body);
   if (!parsed.success) {

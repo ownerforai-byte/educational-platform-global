@@ -16,6 +16,10 @@ import {
   getGeminiKey,
   getCloudflareAiKey,
   getCloudflareAccountId,
+  DEFAULT_FREE_GEMINI_MODEL,
+  DIAGRAM_HUB_PROVIDER,
+  getDiagramHubKey,
+  getDiagramHubModel,
 } from "./config";
 import {
   FREE_LLM_PROVIDERS,
@@ -1164,15 +1168,26 @@ class GeminiProvider implements AIProvider {
   private model: string;
   private apiKey: string;
   private timeoutMs: number;
+  private temperature: number;
   private lastFinishReason = "";
 
   getLastFinishReason(): string {
     return this.lastFinishReason;
   }
 
-  constructor(apiKey: string) {
+  /**
+   * `opts.name` lets the Diagram Hub own a SECOND Gemini transport with its own
+   * free key + model, so `lastAnsweredBy` stays truthful and the dedicated lane
+   * never joins the ordinary chat chain. Low temperature keeps SVG labels exact.
+   */
+  constructor(
+    apiKey: string,
+    opts: { name?: string; model?: string; temperature?: number } = {},
+  ) {
+    this.name = opts.name ?? "gemini";
     this.apiKey = apiKey;
-    this.model = process.env.GEMINI_MODEL || "gemini-3.5-flash";
+    this.model = opts.model ?? (process.env.GEMINI_MODEL || DEFAULT_FREE_GEMINI_MODEL);
+    this.temperature = opts.temperature ?? REPLY_TEMPERATURE;
     this.timeoutMs = Number(process.env.GEMINI_TIMEOUT_MS || 60000);
   }
 
@@ -1238,7 +1253,7 @@ class GeminiProvider implements AIProvider {
       contents,
       generationConfig: {
         maxOutputTokens: MAX_OUTPUT_TOKENS,
-        temperature: REPLY_TEMPERATURE,
+        temperature: this.temperature,
       },
     };
 
@@ -1433,6 +1448,22 @@ export class AIService {
     if (groqKey) this.providers.set("groq", new GroqProvider(groqKey));
     if (cerebrasKey) this.providers.set("cerebras", new CerebrasProvider(cerebrasKey));
     if (geminiKey) this.providers.set("gemini", new GeminiProvider(geminiKey));
+
+    // Diagram Hub: its OWN free Google AI Studio key + free-tier Flash model.
+    // Registered outside AI_CHAIN_ORDER, so it answers ONLY when /api/ai
+    // explicitly asks for the diagram lane — never an ordinary tutor chat.
+    const diagramKey = getDiagramHubKey();
+    if (diagramKey) {
+      this.providers.set(
+        DIAGRAM_HUB_PROVIDER,
+        new GeminiProvider(diagramKey, {
+          name: DIAGRAM_HUB_PROVIDER,
+          model: getDiagramHubModel(),
+          temperature: 0.2,
+        }),
+      );
+    }
+
     const cfKey = getCloudflareAiKey();
     if (cfKey && this.hasCfAccount())
       this.providers.set("cloudflare", new CloudflareProvider(cfKey));

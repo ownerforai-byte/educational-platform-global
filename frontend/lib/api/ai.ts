@@ -75,7 +75,7 @@ export interface StreamImageSuccess {
   caption?: string;
 }
 
-/** The server could not draw — the client falls back to puter.js for the same prompt. */
+/** The server could not draw the requested figure; the client shows an inline note. */
 export interface StreamImageFailed {
   imageFailed: number;
   reason?: string;
@@ -112,6 +112,8 @@ export interface StreamChatOptions {
   session?: string;
   /** Dedicated console id ("nepali" | "grammar") — forwarded to the server. */
   console?: string;
+  /** Server-side work lane ("diagram" = Diagram Hub's dedicated free model). */
+  task?: string;
   /** Abort the in-flight reply (the Stop button). */
   signal?: AbortSignal;
 }
@@ -127,6 +129,9 @@ export async function* streamChat(
   }
   if (options?.console) {
     body.console = options.console;
+  }
+  if (options?.task) {
+    body.task = options.task;
   }
   if (options?.session) body.session = options.session;
   body = withLatestImages(messages, body);

@@ -96,7 +96,6 @@ import { AiReplyCard } from "@/components/ai/ai-reply-card";
 import { StepCards } from "@/components/chat/step-cards";
 import { splitStepBlocks } from "@/lib/content/steps-blocks";
 import { FloatingIdeaChips } from "@/components/ai/floating-idea-chips";
-import { drawFigureWithPuter } from "@/lib/puter-image";
 import { stripLinksForCopy } from "@/lib/ai/clean-copy";
 import { cn } from "@/lib/utils";
 import { BackButton } from "@/components/navigation/back-button";
@@ -955,14 +954,6 @@ export function TutorConsole({
           setInput(content === PHOTO_ONLY_PROMPT && images.length ? "" : content);
           setPendingImages(images);
           return;
-        }
-        // Agent picks the engine: anything the server could not draw gets a
-        // browser-side puter.js attempt (User-Pays, free for the platform).
-        for (const f of figs.values()) {
-          if (f.status === "failed") {
-            const url = await drawFigureWithPuter(f.prompt);
-            if (url) { f.status = "done"; f.url = url; }
-          }
         }
         const finalContent = liveAcc + figureBlocks();
         paintLive(true);

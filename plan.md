@@ -589,7 +589,7 @@ raw full suites green, `npm run check:all` green.
 - [x] P0  Delete backend/kb/books/_ingest-report.json local paths (leaks C:\Users\ASUS\Downloads\...)
 - [x] P0  Split licenses: MIT for code, separate CONTENT_LICENSE.md for notes/diagrams (+ attribution page in app)
 - [x] P1  Takedown/contact page + process so a rights-holder can reach you (2026-11-07: /legal/takedown + /legal/attribution, real process in SECURITY.md, SOURCES.md no longer circular)
-- [ ] P0  Revoke the leftover Puter token (README: still in history, expires 2026-12-04) or rewrite history
+- [ ] P0  Revoke the leftover legacy AI-runtime token (README: still in history, expires 2026-12-04) or rewrite history
 
 ### Phase 2 — Repo Organization
 

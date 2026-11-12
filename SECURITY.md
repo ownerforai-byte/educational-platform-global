@@ -65,7 +65,8 @@ commits and have been **rotated**:
 - Vercel deploy token — rotated 2026-09
 - Supabase personal access token — rotated 2026-09
 
-One **Puter** access token from old scratch scripts sits in history at
+One legacy third-party AI-runtime access token (a provider the platform no
+longer integrates) from old scratch scripts sits in history at
 `4d73f538^`. It cannot be revoked via the API and expires 2026-12-04, or it
 can be permanently removed by rewriting history with `git filter-repo`.
 Treat it as expired/non-functional.

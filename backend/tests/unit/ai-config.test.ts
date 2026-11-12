@@ -17,7 +17,13 @@ import {
   hasAnySearchEngine,
   isGoogleCseConfigured,
   isImageGenConfigured,
+  DEFAULT_FREE_GEMINI_MODEL,
+  DIAGRAM_HUB_PROVIDER,
+  getDiagramHubKey,
+  getDiagramHubModel,
+  isDiagramHubConfigured,
 } from "../../src/ai/config";
+import { DIAGRAM_HUB_RULES } from "../../src/ai/prompts";
 
 /**
  * Central AI key resolver (plan.md §12 — M3): typed accessors over the
@@ -130,5 +136,74 @@ describe("AI work-type lanes", () => {
     const status = describeAiKeyStatus();
     expect(status.llm.gemini).toBe(true);
     expect(status.llm.cerebras).toBe(false);
+  });
+});
+
+/**
+ * Diagram Hub — dedicated free Google AI Studio lane (2026-11-12).
+ * The client sends a WORK marker ("diagram"); the server resolves it to its
+ * own key + model. A missing dedicated key degrades to the shared Gemini key
+ * so a zero-config deployment still draws.
+ */
+describe("Diagram Hub free Gemini lane", () => {
+  it("uses its own provider name and the current free-tier Flash model", () => {
+    expect(DIAGRAM_HUB_PROVIDER).toBe("diagram-hub");
+    expect(DIAGRAM_HUB_PROVIDER).not.toBe("gemini");
+    expect(DEFAULT_FREE_GEMINI_MODEL).toBe("gemini-3.8-flash");
+    // Deliberately outside the ordinary work lanes and the chat chain.
+    expect(Object.values(AI_WORK_LANES)).not.toContain(DIAGRAM_HUB_PROVIDER);
+  });
+
+  it("prefers the dedicated key and model, without leaking either into status", () => {
+    vi.stubEnv("DIAGRAM_GEMINI_API_KEY", "  diagram-secret  ");
+    vi.stubEnv("GEMINI_API_KEY", "shared-secret");
+    vi.stubEnv("DIAGRAM_GEMINI_MODEL", "gemini-3.8-flash-custom");
+    expect(getDiagramHubKey()).toBe("diagram-secret");
+    expect(getDiagramHubModel()).toBe("gemini-3.8-flash-custom");
+    expect(isDiagramHubConfigured()).toBe(true);
+    const status = describeAiKeyStatus();
+    expect(status.diagramHub).toBe(true);
+    expect(status.diagramHubModel).toBe("gemini-3.8-flash-custom");
+    // Model ids are safe to report; key material never is.
+    expect(JSON.stringify(status)).not.toContain("secret");
+  });
+
+  it("falls back to the shared Gemini key and the default free model", () => {
+    vi.stubEnv("DIAGRAM_GEMINI_API_KEY", "");
+    vi.stubEnv("DIAGRAM_GEMINI_MODEL", "");
+    vi.stubEnv("GEMINI_API_KEY", "shared-secret");
+    expect(getDiagramHubKey()).toBe("shared-secret");
+    expect(getDiagramHubModel()).toBe(DEFAULT_FREE_GEMINI_MODEL);
+    expect(isDiagramHubConfigured()).toBe(true);
+  });
+
+  it("degrades the lane flag when neither key is configured", () => {
+    vi.stubEnv("DIAGRAM_GEMINI_API_KEY", "");
+    vi.stubEnv("DIAGRAM_GEMINI_MODEL", "");
+    vi.stubEnv("GEMINI_API_KEY", "");
+    expect(getDiagramHubKey()).toBeUndefined();
+    expect(isDiagramHubConfigured()).toBe(false);
+    expect(describeAiKeyStatus().diagramHub).toBe(false);
+    expect(describeAiKeyStatus().diagramHubModel).toBe(DEFAULT_FREE_GEMINI_MODEL);
+  });
+
+  it("pins the final output contract to one SVG and no prose sections", () => {
+    expect(DIAGRAM_HUB_RULES).toContain("FINAL OUTPUT CONTRACT");
+    expect(DIAGRAM_HUB_RULES).toContain("```svg");
+    expect(DIAGRAM_HUB_RULES).toContain("900x640");
+    expect(DIAGRAM_HUB_RULES).toContain("AT MOST 4 short bullets");
+    expect(DIAGRAM_HUB_RULES).toContain("Do NOT write a prose essay");
+    expect(DIAGRAM_HUB_RULES).toContain("TRANSLATE EVERY LABEL TO ENGLISH");
+  });
+
+  it("trains extra related / contrast knowledge into floating detail dots", () => {
+    expect(DIAGRAM_HUB_RULES).toContain("DETAIL DOTS — FLOATING WIDGETS");
+    expect(DIAGRAM_HUB_RULES).toContain("edu-detail-dot");
+    expect(DIAGRAM_HUB_RULES).toContain("DETAIL DOT | <Topic>");
+    expect(DIAGRAM_HUB_RULES).toContain("Related:");
+    expect(DIAGRAM_HUB_RULES).toContain("Contrasts:");
+    expect(DIAGRAM_HUB_RULES).toContain("FIELD LAW");
+    // The knowledge stays in the drawing — never an essay beside it.
+    expect(DIAGRAM_HUB_RULES).toContain("picture is the answer");
   });
 });

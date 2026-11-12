@@ -118,16 +118,14 @@ const PRERENDERED_ERROR_PATHS = new Set([
 ]);
 
 function buildContentSecurityPolicy(nonce: string | null) {
-  // puter.js (js.puter.com) is the platform's browser-side AI fallback — image
-  // drawing since 2026-09-30 and Mind Studio diagram generation. Without these
-  // two origins the CDN script itself never loads.
-  //
   // With a nonce: inline scripts must carry it (CSP3 ignores 'unsafe-inline'
   // whenever a nonce is present). Without one (prerendered pages, see above):
   // the page's own inline bootstrap is allowed by 'unsafe-inline'.
+  // Only first-party scripts are allowed: the platform no longer loads ANY
+  // third-party browser AI runtime (removed 2026-11-12).
   const scriptSrc = nonce
-    ? `script-src 'self' 'nonce-${nonce}' https://js.puter.com`
-    : "script-src 'self' 'unsafe-inline' https://js.puter.com";
+    ? `script-src 'self' 'nonce-${nonce}'`
+    : "script-src 'self' 'unsafe-inline'";
 
   return (
     [
@@ -139,7 +137,7 @@ function buildContentSecurityPolicy(nonce: string | null) {
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: https:",
       "font-src 'self' data: https://fonts.gstatic.com",
-      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} ${SUPABASE_ORIGIN} wss: ws: https://api.puter.com https://api-v2.puter.com wss://api.puter.com`,
+      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} ${SUPABASE_ORIGIN} wss: ws:`,
       // In-app embeds: our own PDFs under /pdfs + /materials, PDF resources on
       // Supabase Storage, Google Drive previews, and the video players.
       "frame-src 'self' " + SUPABASE_ORIGIN + " https://drive.google.com https://docs.google.com https://www.youtube.com https://player.vimeo.com https://webnotee.com",

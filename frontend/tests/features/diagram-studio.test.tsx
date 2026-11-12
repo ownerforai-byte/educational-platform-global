@@ -1,12 +1,12 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
 /**
- * DIAGRAM HUB smoke (owner 2026-10-25, trained 2026-11-10): the drawing room
- * must render its composer + subject chips, and a streamed reply must arrive
- * through the shared MathMarkdown pipeline — the figure is drawn in the
- * BACKGROUND (imageStart/imageSuccess events) and the student sees a picture,
- * never raw code.
+ * DIAGRAM HUB smoke (owner 2026-10-25, trained 2026-11-10 / 2026-11-12): the
+ * drawing room renders its composer + subject chips, the dedicated free Gemini
+ * lane streams ONE ```svg fence that the shared MathMarkdown pipeline turns
+ * into a picture (never raw code), and the figure's floating DETAIL DOTS open
+ * a widget with related concepts, contrasts and deeper detail.
  */
 
 vi.mock("next/navigation", () => ({
@@ -24,20 +24,19 @@ vi.mock("@/lib/api/ai", () => ({
   saveChatHistory: (...args: unknown[]) => saveChatHistoryMock(...args),
 }));
 
-vi.mock("@/lib/puter-image", () => ({
-  drawFigureWithPuter: vi.fn(async () => null),
-}));
-
 import { DiagramStudio } from "@/components/ai/diagram-studio";
 
-const HEART_SVG =
-  "<svg viewBox=\"0 0 100 100\"><g><title>Left atrium | Receives oxygenated blood</title><circle cx='50' cy='50' r='10'/></g></svg>";
+const HEART_SVG = `<svg viewBox="0 0 100 100">
+  <g><title>Left atrium | Receives oxygenated blood</title><circle cx='50' cy='50' r='10'/></g>
+  <g class="edu-detail-dot"><title>DETAIL DOT | Atrial pressure | Related: Right atrium; Ventricle; Pulmonary vein | Contrasts: Atrium vs Ventricle — atria receive, ventricles pump; Systole vs Diastole — contraction vs relaxation | Detail: Low-pressure filling phase driven by the pressure gradient, no valve resistance | Exam: do not confuse atrial systole with ventricular systole</title><circle cx='80' cy='20' r='5'/></g>
+</svg>`;
 
-/** Prose types out first; the figure lands later as a background-draw event. */
+/** The dedicated lane streams ONE svg fence directly — no background draw. */
 async function* fakeStream() {
-  yield "Labelled human heart — chambers and vessels.";
-  yield { imageStart: 1, prompt: "Labelled human heart, chambers and vessels", caption: "Human heart" };
-  yield { imageSuccess: 1, svg: HEART_SVG, caption: "Human heart" };
+  yield "Labelled human heart — chambers and vessels.\n\n";
+  yield "```svg Labelled human heart — chambers and vessels\n";
+  yield HEART_SVG;
+  yield "\n```\n\n- Left atrium receives oxygenated blood";
   yield { done: true };
 }
 
@@ -46,6 +45,12 @@ beforeEach(() => {
   streamChatMock.mockImplementation(() => fakeStream());
   enhancePromptMock.mockResolvedValue({ prompt: "Enhanced: labelled heart" });
   saveChatHistoryMock.mockResolvedValue({ saved: 2, migrated: true });
+});
+
+afterEach(() => {
+  // The widget is portaled to document.body, outside React's cleanup root.
+  fireEvent.keyDown(window, { key: "Escape" });
+  document.querySelectorAll(".edu-visual__dot-popover").forEach((el) => el.remove());
 });
 
 describe("DiagramStudio", () => {
@@ -79,9 +84,23 @@ describe("DiagramStudio", () => {
     expect(payload[0].role).toBe("system");
     expect(payload[0].content).toContain("DIAGRAM HUB");
     expect(payload[0].content).toContain("TRANSLATE EVERY LABEL TO ENGLISH");
-    // Background drawing, never code on screen.
-    expect(payload[0].content).toContain("veer-image");
-    expect(payload[0].content).toContain("NEVER WRITE CODE ON SCREEN");
+    // ONE inline SVG, trained to carry floating detail dots with related
+    // concepts and contrasts — the picture itself, never raw code on screen.
+    expect(payload[0].content).toContain("```svg");
+    expect(payload[0].content).toContain("900x640");
+    expect(payload[0].content).toContain("edu-detail-dot");
+    expect(payload[0].content).toContain("Related:");
+    expect(payload[0].content).toContain("Contrasts:");
+
+    // The hub names the WORK, never a provider: the server resolves "diagram"
+    // to its own dedicated free Gemini key/model.
+    const options = streamChatMock.mock.calls[0][2] as {
+      task?: string;
+      signal?: AbortSignal;
+    };
+    expect(options.task).toBe("diagram");
+    expect(options.signal).toBeInstanceOf(AbortSignal);
+    expect(JSON.stringify(streamChatMock.mock.calls[0])).not.toContain("diagram-hub");
 
     await waitFor(() => {
       // The figure renders inline with hover labels: each part keeps its
@@ -112,5 +131,51 @@ describe("DiagramStudio", () => {
         "Enhanced: labelled heart",
       ),
     );
+  });
+
+  it("reveals all the related / contrast information from a floating detail dot", async () => {
+    render(<DiagramStudio />);
+    fireEvent.change(screen.getByPlaceholderText(/name the diagram/i), {
+      target: { value: "labelled human heart" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /draw diagram/i }));
+
+    const dot = await waitFor(() => {
+      const found = document.querySelector<SVGGElement>(
+        "figure.edu-visual svg g.edu-detail-dot",
+      );
+      expect(found).not.toBeNull();
+      return found as SVGGElement;
+    });
+    // Dots are keyboard-reachable and visibly interactive before any hover.
+    expect(dot.getAttribute("tabindex")).toBe("0");
+    expect(dot.getAttribute("role")).toBe("button");
+
+    // HOVER reveals the whole payload — not just a one-line tooltip.
+    fireEvent.mouseOver(dot);
+    await waitFor(() =>
+      expect(document.querySelector(".edu-visual__dot-popover")).not.toBeNull(),
+    );
+    let widget = document.querySelector(".edu-visual__dot-popover") as HTMLElement;
+    expect(widget.textContent).toContain("Atrial pressure");
+    expect(widget.textContent).toContain("Right atrium");
+    expect(widget.textContent).toContain("Pulmonary vein");
+    expect(widget.textContent).toContain("Atrium vs Ventricle");
+    expect(widget.textContent).toContain("Systole vs Diastole");
+    expect(widget.textContent).toContain("do not confuse atrial systole");
+    // Contrasts render as rows, related terms as chips.
+    expect(widget.querySelectorAll(".edu-visual__dot-row").length).toBe(2);
+    expect(widget.querySelectorAll(".edu-visual__dot-chip").length).toBe(3);
+
+    // CLICK pins the widget so it can be scrolled and read in full.
+    fireEvent.click(dot);
+    await waitFor(() =>
+      expect(document.querySelector(".edu-visual__dot-popover--pinned")).not.toBeNull(),
+    );
+    widget = document.querySelector(".edu-visual__dot-popover") as HTMLElement;
+    expect(widget.textContent).toContain("Esc or ✕ to close");
+
+    fireEvent.click(widget.querySelector(".edu-visual__dot-close") as HTMLElement);
+    expect(document.querySelector(".edu-visual__dot-popover")).toBeNull();
   });
 });

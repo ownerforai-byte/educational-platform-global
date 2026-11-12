@@ -6,8 +6,8 @@ import { apiFetch } from "@/lib/api-client";
  *
  * The server draws (/api/ai/image, /api/ai/figure) already save themselves
  * against the signed-in user; this module is the hub's window onto that
- * store — load the gallery on mount, add the one engine the server never sees
- * (puter.js draws in the browser), and clear the account when asked.
+ * store — load the gallery on mount, let the hub persist any client-held
+ * item, and clear the account when asked.
  *
  * Every call resolves instead of throwing: a signed-out tab, an unmigrated
  * table or a cold backend degrades to the session-only gallery, never to an
@@ -31,7 +31,7 @@ export type ImageHistoryRow = {
   createdAt: string;
 };
 
-/** The payload the hub sends to record a browser-drawn (puter.js) picture. */
+/** The payload the hub sends to record a client-held picture. */
 export type SaveHistoryItem = {
   kind: "figure" | "picture";
   prompt: string;
@@ -59,7 +59,7 @@ export async function loadImageHistory(limit = 60): Promise<ImageHistoryRow[]> {
   }
 }
 
-/** Save one item (used for puter.js results — server engines save themselves). */
+/** Save one client-held item (server engines save themselves). */
 export async function saveImageHistoryItem(item: SaveHistoryItem): Promise<boolean> {
   try {
     await apiFetch("/api/ai/image-history", {

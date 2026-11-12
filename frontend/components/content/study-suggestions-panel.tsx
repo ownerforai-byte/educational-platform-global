@@ -13,14 +13,13 @@ import {
   type SuggestionCategory,
 } from "@/lib/ai/study-suggestions";
 import { chat } from "@/lib/api";
-import { chatWithPuter } from "@/lib/puter-chat";
 import { getChatHistory, saveChatHistory } from "@/lib/api/chat-history";
 
 const HISTORY_SESSION = "study-suggestions";
 const DECK_SIZE = 6;
 
 type ExplainResult =
-  | { answer: string; source: "server" | "puter.js fallback" }
+  | { answer: string; source: "server" }
   | { error: string };
 
 export function StudySuggestionsPanel() {
@@ -69,28 +68,16 @@ export function StudySuggestionsPanel() {
         ],
         HISTORY_SESSION,
       ).catch(() => undefined);
-    } catch {
-      try {
-        const answer = await chatWithPuter(prompt);
-        setResults((prev) => ({
-          ...prev,
-          [text]: { answer, source: "puter.js fallback" },
-        }));
-        void saveChatHistory(
-          [
-            { role: "user", content: text },
-            { role: "assistant", content: answer },
-          ],
-          HISTORY_SESSION,
-        ).catch(() => undefined);
-      } catch (err) {
-        setResults((prev) => ({
-          ...prev,
-          [text]: {
-            error: err instanceof Error ? err.message : "Could not generate an explanation.",
-          },
-        }));
-      }
+    } catch (err) {
+      setResults((prev) => ({
+        ...prev,
+        [text]: {
+          error:
+            err instanceof Error && err.message
+              ? err.message
+              : "Could not generate an explanation. Please try again.",
+        },
+      }));
     } finally {
       setPending(null);
     }

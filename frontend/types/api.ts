@@ -394,6 +394,11 @@ export interface AIChatRequest {
    * rule block as the LAST part of the system prompt; unknown ids ignored.
    */
   console?: string;
+  /**
+   * Work marker for a dedicated AI lane ("diagram" = Diagram Hub). The server
+   * resolves it to its own provider/model; the client never names a provider.
+   */
+  task?: string;
 }
 
 export interface AIChatResponse {

@@ -9,12 +9,11 @@ import type { ImageHistoryRow } from "@/features/image-hub/history";
  * session — this render suite still pins the behaviour without a network.
  *
  * Three contracts now:
- *   · the composer modes (ACADEMIC FIGURE → POST /api/ai/figure, PICTURE →
- *     the server raster chain, puter.js as the browser fallback) exactly as
- *     before;
+ *   · the composer modes (ACADEMIC FIGURE → POST /api/ai/figure with a server
+ *     raster fallback, PICTURE → the server raster chain);
  *   · the account history: the gallery loads from GET /api/ai/image-history
- *     on mount, and a browser-drawn puter.js picture is POSTed there right
- *     after it lands (server draws save themselves);
+ *     on mount, and drawn results are saved server-side (the hub never
+ *     re-POSTs them);
  *   · clearing the gallery also clears the account history (DELETE).
  *
  * Plus the direct-Google mode (owner 2026-10-04: "direct presenting from
@@ -27,6 +26,8 @@ import type { ImageHistoryRow } from "@/features/image-hub/history";
 const historyRows: ImageHistoryRow[] = [];
 /** When set, POST /api/ai/figure resolves with this instead of throwing. */
 let figureReply: unknown;
+/** When set, POST /api/ai/image resolves with this instead of throwing. */
+let imageReply: unknown;
 /** When set, GET /api/ai/image-search resolves with this instead of throwing. */
 let searchReply: unknown;
 /** When set, POST /api/ai/image-facts resolves with this instead of throwing. */
@@ -47,28 +48,23 @@ vi.mock("@/lib/api-client", () => ({
           kind: "picture",
           prompt: String(JSON.parse(String(init?.body)).prompt),
           url: String(JSON.parse(String(init?.body)).url),
-          engine: "puter.js (browser)",
+          engine: "Diagram",
           createdAt: new Date().toISOString(),
         });
         return { saved: true };
       }
     }
     if (path === "/api/ai/figure" && figureReply !== undefined) return figureReply;
+    if (path === "/api/ai/image" && imageReply !== undefined) return imageReply;
     if (path.startsWith("/api/ai/image-search") && searchReply !== undefined)
       return searchReply;
     if (path === "/api/ai/image-facts" && factsReply !== undefined) return factsReply;
     throw new Error("503 engines down");
   }),
 }));
-vi.mock("@/lib/puter-image", () => ({
-  drawFigureWithPuter: vi.fn(async () => "data:image/png;base64,TESTPIXELS"),
-}));
-
 import { apiFetch } from "@/lib/api-client";
-import { drawFigureWithPuter } from "@/lib/puter-image";
 
 const mockedApiFetch = vi.mocked(apiFetch);
-const mockedPuter = vi.mocked(drawFigureWithPuter);
 
 const FIGURE_REPLY = {
   svg:
@@ -105,10 +101,10 @@ beforeEach(() => {
   sessionStorage.clear();
   historyRows.length = 0;
   figureReply = undefined;
+  imageReply = undefined;
   searchReply = undefined;
   factsReply = undefined;
   mockedApiFetch.mockClear();
-  mockedPuter.mockClear();
 });
 
 describe("ImageHub", () => {
@@ -192,7 +188,8 @@ describe("ImageHub", () => {
     expect(historyCalls("POST")).toBe(0);
   });
 
-  it("keeps the raster chain as the figure-mode fallback (figure → server → puter)", async () => {
+  it("falls back to the server raster engine when the figure writer draws nothing", async () => {
+    imageReply = { url: "https://img.example/raster.png", model: "server-image-v2" };
     render(<ImageHub />);
 
     fireEvent.change(promptBox(), { target: { value: "a figure the writer refuses" } });
@@ -200,21 +197,20 @@ describe("ImageHub", () => {
 
     await waitFor(
       () => {
-        expect(screen.getByText("puter.js (browser)")).not.toBeNull();
+        expect(screen.getAllByText("Diagram").length).toBeGreaterThan(0);
       },
       { timeout: 4000 },
     );
 
-    // Both server DRAW engines were attempted before the browser fallback.
+    // Both SERVER draw engines were attempted; no browser runtime is involved.
     expect(drawCalls()).toBe(2);
-    expect(mockedPuter).toHaveBeenCalledTimes(1);
-    // The puter picture exists only in the browser → the hub records it.
-    await waitFor(() => {
-      expect(historyCalls("POST")).toBe(1);
-    });
+    expect(promptBox().value).toBe("");
+    // The server persists its own result — the hub never re-POSTs it.
+    expect(historyCalls("POST")).toBe(0);
   });
 
-  it("picture mode goes straight to the raster chain", async () => {
+  it("picture mode goes straight to the server raster engine", async () => {
+    imageReply = { url: "https://img.example/nebula.png", model: "server-image-v2" };
     render(<ImageHub />);
 
     fireEvent.click(screen.getByRole("button", { name: "Picture" }));
@@ -225,19 +221,16 @@ describe("ImageHub", () => {
 
     await waitFor(
       () => {
-        expect(screen.getByText("puter.js (browser)")).not.toBeNull();
+        expect(screen.getAllByText("Diagram").length).toBeGreaterThan(0);
       },
       { timeout: 4000 },
     );
 
-    // Server draw first (mocked failure), then puter — never the figure writer.
+    // Only the raster engine — never the figure writer, never a browser runtime.
     expect(drawCalls()).toBe(1);
-    expect(mockedPuter).toHaveBeenCalledTimes(1);
     expect(screen.getByText("a nebula over Kathmandu")).not.toBeNull();
     expect(promptBox().value).toBe("");
-    await waitFor(() => {
-      expect(historyCalls("POST")).toBe(1);
-    });
+    expect(historyCalls("POST")).toBe(0);
   });
 
   it("restores a saved session and drops anything that is neither figure nor picture", async () => {
@@ -301,8 +294,7 @@ describe("ImageHub", () => {
     expect(historyCalls("DELETE")).toBe(1);
   });
 
-  it("keeps the prompt and shows an error when every engine fails", async () => {
-    mockedPuter.mockResolvedValue(null);
+  it("keeps the prompt and shows an error when every server engine fails", async () => {
     render(<ImageHub />);
 
     fireEvent.change(promptBox(), { target: { value: "never drawn" } });
@@ -310,7 +302,7 @@ describe("ImageHub", () => {
 
     await waitFor(
       () => {
-        expect(screen.getByText(/neither engine could draw this/i)).not.toBeNull();
+        expect(screen.getByText(/could not draw this right now/i)).not.toBeNull();
       },
       { timeout: 4000 },
     );
@@ -388,7 +380,6 @@ describe("ImageHub — direct Google presenting", () => {
     // The query went to the search route, encoded — never to a draw engine.
     expect(searchPath()).toContain("q=labelled%20diagram%20of%20the%20human%20heart");
     expect(drawCalls()).toBe(0);
-    expect(mockedPuter).not.toHaveBeenCalled();
 
     // Both results are presented with their titles and a source credit.
     expect(screen.getByText("Labelled human heart — anterior view")).not.toBeNull();

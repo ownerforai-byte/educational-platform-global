@@ -47,8 +47,6 @@ import {
  *
  *   · every server draw (vector figure, picture) is saved by the
  *     backend itself — hardcoded, no client opt-in;
- *   · browser-drawn puter.js pictures are saved by the hub right after they
- *     land;
  *   · the session cache below stays as the offline/unmigrated fallback.
  *
  * Two modes (owner request 2026-10-03: "train it for all kind of academic
@@ -62,8 +60,8 @@ import {
  *     Every labelled part is `<g><title>NAME — detail</title>`, so hovering or
  *     tapping a part opens its explanation, and the same legend is listed as
  *     "Parts & details" under the figure.
- *   · PICTURE — the raster chain (server image models, then puter.js in the
- *     browser) for photos, watercolours and anything pictorial.
+ *   · PICTURE — the server raster engine for photos, watercolours and
+ *     anything pictorial.
  */
 
 type Mode = "figure" | "picture" | "google";
@@ -197,7 +195,7 @@ function figureMarkdown(item: GalleryFigure): string {
  */
 function pictureLabel(raw: unknown): string {
   const value = typeof raw === "string" ? raw.trim() : "";
-  if (value.startsWith("google") || value.startsWith("puter")) return value;
+  if (value.startsWith("google")) return value;
   return SERVER_DRAW_LABEL;
 }
 
@@ -232,12 +230,7 @@ function parseStored(value: unknown): GalleryItem | null {
       prompt: item.prompt,
       at,
       url: item.url,
-      engine:
-        item.engine === "puter"
-          ? "puter"
-          : item.engine === "google"
-            ? "google"
-            : "diagram",
+      engine: item.engine === "google" ? "google" : "diagram",
       label: pictureLabel(item.label),
     };
   }
@@ -275,11 +268,9 @@ function parseHistoryRow(row: ImageHistoryRow): GalleryItem | null {
     at: Number.isFinite(at) ? at : Date.now(),
     url: row.url,
     engine:
-      row.engine === "puter"
-        ? "puter"
-        : typeof row.engine === "string" && row.engine.startsWith("google")
-          ? "google"
-          : "diagram",
+      typeof row.engine === "string" && row.engine.startsWith("google")
+        ? "google"
+        : "diagram",
     label: pictureLabel(row.engine),
   };
 }
@@ -308,7 +299,7 @@ export function ImageHub() {
   // Restore the session cache first (instant paint), then merge the account
   // history on top of it. The account list is the truth — the server saved
   // every server draw — so the session copy only survives when the server
-  // never saw the item (e.g. a puter.js save that failed).
+  // never saw the item (e.g. a save that ran while offline).
   useEffect(() => {
     let local: GalleryItem[] = [];
     try {
@@ -382,7 +373,7 @@ export function ImageHub() {
   }
 
   const failedBothEngines =
-    "Neither engine could draw this — the figure writer and the server engine may be busy, and the puter.js fallback needs its browser sign-in. Your prompt is kept below; try again.";
+    "The figure writer and the server drawing engine could not draw this right now. Your prompt is kept below; try again.";
 
   /** Save a Google result into the gallery + the account history. */
   function saveGoogleResult(result: GoogleImageResult) {
@@ -457,18 +448,7 @@ export function ImageHub() {
             : newPictureItem(p, result),
           ...items,
         ]);
-        // The vector writer and the server chain save themselves server-side;
-        // when the raster fallback drew this instead, only this browser holds
-        // the picture — so the hub is the one that records it. (A raster
-        // result from this chain never carries kind: "figure".)
-        if (result.kind !== "figure" && result.engine === "puter") {
-          void saveImageHistoryItem({
-            kind: "picture",
-            prompt: p,
-            url: result.url,
-            engine: result.label,
-          });
-        }
+        // Both engines save server-side against the signed-in account.
         setPrompt("");
         return;
       }
@@ -481,16 +461,7 @@ export function ImageHub() {
         return;
       }
       saveItems([newPictureItem(p, result), ...items]);
-      // The server chain saved itself server-side; a puter.js picture exists
-      // only in this browser, so the hub is the one that records it.
-      if (result.engine === "puter") {
-        void saveImageHistoryItem({
-          kind: "picture",
-          prompt: p,
-          url: result.url,
-          engine: result.label,
-        });
-      }
+      // The server chain saves server-side against the signed-in account.
       setPrompt("");
     } finally {
       setBusy(null);
@@ -511,9 +482,7 @@ export function ImageHub() {
           ? mode === "figure"
             ? "Figure writer unavailable — drawing with the server engine…"
             : "Drawing with the server engine…"
-          : busy === "puter"
-            ? "Server engine unavailable — drawing in your browser with puter.js…"
-            : null;
+          : null;
 
   // Gallery filtering is a long task when the hub holds hundreds of entries;
   // memoize so keystrokes in the prompt field never re-filter the whole list.
@@ -578,9 +547,9 @@ export function ImageHub() {
           </h1>
           <p className="text-sm text-muted-foreground">
             Academic figures drawn as labelled vector diagrams — every part
-            opens its detail on hover — plus server-drawn pictures with
-            puter.js as the browser fallback, and Google mode presenting real
-            web images at full size with a details &amp; facts panel. Everything
+            opens its detail on hover — plus server-drawn pictures, and Google
+            mode presenting real web images at full size with a details &amp;
+            facts panel. Everything
             you draw or save is kept in your history, on any device you sign in
             from.
           </p>
@@ -914,7 +883,7 @@ export function ImageHub() {
                 key={item.id}
                 className="group overflow-hidden rounded-2xl border border-border/60 bg-card"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element -- runtime engine output: signed https URLs AND data: URLs from puter.js, which next/image cannot optimize */}
+                {/* eslint-disable-next-line @next/next/no-img-element -- runtime engine output: signed https URLs and data: URLs, which next/image cannot optimize */}
                 <img
                   src={item.url}
                   alt={item.prompt}

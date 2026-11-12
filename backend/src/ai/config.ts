@@ -165,6 +165,42 @@ export function getWorkLaneProvider(work: AiWorkType): SupportedProviderName | "
   return getWorkLaneKey(work) ? AI_WORK_LANES[work] : "";
 }
 
+/* ── Diagram Hub — dedicated free Google AI Studio lane (2026-11-12) ────────
+ *
+ * The Diagram Hub draws through its OWN Google AI Studio API key so a burst
+ * of drawings never queues behind tutor chat (owner 2026-10-25: "one api key
+ * for one type … so no delays in work").
+ *
+ * Model choice: Gemini 3.8 Flash is the current Flash model recommended for
+ * new projects, and on the Gemini API Free Tier its input, output AND context
+ * caching are all "Free of charge" — a real API key with no paid usage.
+ * Grounding with Google Search is NOT available on that free tier, so diagram
+ * research stays SERVER-SIDE: buildProfessorContext() / fetchDiagramContext()
+ * supply real reference figures before the model ever sees the request.
+ *
+ * This provider is deliberately NOT part of AI_WORK_LANES (which still owns
+ * the image-facts "diagram" work type) and NOT part of AI_CHAIN_ORDER: it
+ * answers only when /api/ai explicitly resolves a Diagram Hub request to it.
+ */
+export const DIAGRAM_HUB_PROVIDER = "diagram-hub";
+
+/** Google's current recommended Flash model; free of charge on the free tier. */
+export const DEFAULT_FREE_GEMINI_MODEL = "gemini-3.8-flash";
+
+/** Dedicated key, falling back to the shared Gemini key for zero-config setups. */
+export function getDiagramHubKey(): string | undefined {
+  return readKey("DIAGRAM_GEMINI_API_KEY") ?? getGeminiKey();
+}
+
+/** Override when Google publishes a newer free Flash model. */
+export function getDiagramHubModel(): string {
+  return readKey("DIAGRAM_GEMINI_MODEL") ?? DEFAULT_FREE_GEMINI_MODEL;
+}
+
+export function isDiagramHubConfigured(): boolean {
+  return Boolean(getDiagramHubKey());
+}
+
 /* ── Image generation (Agnes gateway) ────────────────────────────────────── */
 
 export function isImageGenConfigured(): boolean {
@@ -225,6 +261,9 @@ export function describeAiKeyStatus(): {
     cloudflare: boolean;
   };
   imageGen: boolean;
+  diagramHub: boolean;
+  /** Model id is not secret — safe for the owner diagnostics panel. */
+  diagramHubModel: string;
   googleCse: boolean;
   searchEngines: string[];
 } {
@@ -238,6 +277,8 @@ export function describeAiKeyStatus(): {
       cloudflare: Boolean(getCloudflareAiKey()),
     },
     imageGen: isImageGenConfigured(),
+    diagramHub: isDiagramHubConfigured(),
+    diagramHubModel: getDiagramHubModel(),
     googleCse: isGoogleCseConfigured(),
     searchEngines: Object.entries(search)
       .filter(([, v]) => Boolean(v))

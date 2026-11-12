@@ -31,6 +31,7 @@ const FREE_AFFECTING_ENV = [
   "OPENROUTER_MODEL",
   "NIM_API_KEY",
   "NVIDIA_API_KEY",
+  "NVIDIA_MODEL",
   "AGNES_API_KEY",
   "GROQ_API_KEY",
   "AI_CHAIN_ORDER",
@@ -68,6 +69,13 @@ describe("free-tier provider registry", () => {
       live: ["llm7", "ovh"],
       keyless: ["llm7", "ovh"],
     });
+  });
+
+  it("defaults the NVIDIA NIM lane to the best free frontier model", () => {
+    const nvidia = FREE_LLM_PROVIDERS.find((p) => p.name === "nvidia");
+    expect(nvidia?.defaultModel).toBe("nvidia/nemotron-3-ultra-550b-a55b");
+    // The retired default returned HTTP 410 Gone; it must never come back.
+    expect(FREE_LLM_PROVIDERS.some((p) => p.defaultModel === "z-ai/glm-5.2")).toBe(false);
   });
 
   it("registers a keyed provider once its key is present (alias count too)", () => {
@@ -189,6 +197,32 @@ describe("OpenAICompatProvider transport", () => {
     expect((init.headers as Record<string, string>).Authorization).toBe("Bearer sk-or-test");
     expect(JSON.parse(String(init.body)).model).toBe("vendor/model:free");
     expect(JSON.parse(String(init.body)).max_tokens).toBe(1234);
+  });
+
+  it("wires the NVIDIA key and default model into the transport", async () => {
+    stubCleanEnv();
+    vi.stubEnv("NVIDIA_API_KEY", "nvapi-test");
+
+    const svc = new AIService() as any;
+    const provider = svc.providers.get("nvidia");
+    expect(provider).toBeTruthy();
+
+    const fetchMock = vi.fn(async () =>
+      new Response(
+        JSON.stringify({
+          choices: [{ message: { role: "assistant", content: "OK" }, finish_reason: "stop" }],
+        }),
+        { status: 200, headers: { "Content-Type": "application/json" } },
+      ),
+    );
+    vi.stubGlobal("fetch", fetchMock);
+
+    const reply = await provider.chat([{ role: "user", content: "Say OK" }]);
+    expect(reply).toBe("OK");
+    const [url, init] = fetchMock.mock.calls[0] as [string, RequestInit];
+    expect(url).toBe("https://integrate.api.nvidia.com/v1/chat/completions");
+    expect((init.headers as Record<string, string>).Authorization).toBe("Bearer nvapi-test");
+    expect(JSON.parse(String(init.body)).model).toBe("nvidia/nemotron-3-ultra-550b-a55b");
   });
 
   it("surfaces an HTTP failure with the provider label so the chain can fall through", async () => {
