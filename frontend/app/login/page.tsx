@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { LoginForm } from "@/features/auth/components/login-form";
 import { AuthShell } from "@/features/auth/components/auth-shell";
+import { CreatedAccountGate } from "@/features/auth/components/created-account-gate";
 import { LoggedInRedirect } from "@/app/login/logged-in-redirect";
 
 export const metadata: Metadata = {
@@ -14,10 +15,10 @@ export default function LoginPage() {
       title="Welcome back"
       subtitle="Sign in to track progress, save bookmarks, and manage credits."
     >
-      {/* Signed-in users belong on the profile interface, never on a
-          sign-in form — the two states can't coexist. */}
       <LoggedInRedirect />
-      <LoginForm />
+      <CreatedAccountGate mode="login">
+        <LoginForm />
+      </CreatedAccountGate>
     </AuthShell>
   );
 }

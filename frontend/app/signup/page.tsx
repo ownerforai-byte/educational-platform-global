@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SignupForm } from "@/features/auth/components/signup-form";
 import { AuthShell } from "@/features/auth/components/auth-shell";
+import { CreatedAccountGate } from "@/features/auth/components/created-account-gate";
 import { LoggedInRedirect } from "@/app/login/logged-in-redirect";
 
 export const metadata: Metadata = {
@@ -14,10 +15,10 @@ export default function SignupPage() {
       title="Create your account"
       subtitle="Join to save progress, bookmark notes, and track credits across all NEB subjects."
     >
-      {/* Signed-in users belong on the profile interface, never on a
-          signup form — the two states can't coexist. */}
       <LoggedInRedirect />
-      <SignupForm />
+      <CreatedAccountGate mode="signup">
+        <SignupForm />
+      </CreatedAccountGate>
     </AuthShell>
   );
 }

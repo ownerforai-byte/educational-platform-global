@@ -553,7 +553,9 @@ router.post("/logout", async (req: Request, res: Response) => {
  * Poll endpoint for the post-signup status screen — works WITHOUT a session
  * (the signup response carries the signed token) and cannot be used to probe
  * whether an arbitrary email is registered (a valid token is required).
- * 200 → { accessStatus, fullName }
+ * Each call bumps profiles.status_check_count so the waiting UI shows a live
+ * server tally (auto-poll and "Check now"), not a coded browser counter.
+ * 200 → { accessStatus, fullName, checkCount }
  * 401 → invalid/expired token
  * 404 → token valid but account row missing
  */
@@ -567,7 +569,7 @@ router.get("/account-status", async (req: Request, res: Response) => {
 
   const { data: profile } = await supabaseAdmin
     .from("profiles")
-    .select("access_status, full_name")
+    .select("access_status, full_name, status_check_count")
     .eq("id", userId)
     .maybeSingle();
 
@@ -576,10 +578,24 @@ router.get("/account-status", async (req: Request, res: Response) => {
     return;
   }
 
+  const prev =
+    typeof profile.status_check_count === "number" && Number.isFinite(profile.status_check_count)
+      ? profile.status_check_count
+      : 0;
+  const checkCount = prev + 1;
+  const { error: bumpErr } = await supabaseAdmin
+    .from("profiles")
+    .update({ status_check_count: checkCount })
+    .eq("id", userId);
+  if (bumpErr) {
+    console.error("[auth] status_check_count bump failed:", bumpErr.message);
+  }
+
   const raw = (profile.access_status as string | undefined) ?? "PENDING";
   res.json({
     accessStatus: raw === "ACTIVE" || raw === "REJECTED" ? raw : "PENDING",
     fullName: (profile.full_name as string | null) ?? null,
+    checkCount,
   });
 });
 

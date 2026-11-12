@@ -89,7 +89,8 @@ export function WelcomeStatus() {
   useUrlStatusToken();
   const [state, setState] = useState<StatusState>("loading");
   const [fullName, setFullName] = useState<string | null>(null);
-  const [checks, setChecks] = useState(0);
+  /** Live tally from GET /api/auth/account-status (profiles.status_check_count). */
+  const [checkCount, setCheckCount] = useState(0);
   const timerRef = useRef<number | null>(null);
 
   const check = useCallback(async () => {
@@ -106,11 +107,14 @@ export function WelcomeStatus() {
       const res = await apiFetch<{
         accessStatus: "PENDING" | "ACTIVE" | "REJECTED";
         fullName?: string | null;
+        checkCount?: number;
       }>(`/api/auth/account-status?token=${encodeURIComponent(token)}`);
       setFullName(res.fullName ?? null);
+      if (typeof res.checkCount === "number" && Number.isFinite(res.checkCount)) {
+        setCheckCount(res.checkCount);
+      }
       rememberAccessOutcome(res.accessStatus);
       setState(res.accessStatus);
-      setChecks((c) => c + 1);
     } catch (err) {
       const status = (err as { status?: number }).status;
       if (status === 401 || status === 404) {
@@ -274,10 +278,7 @@ export function WelcomeStatus() {
           }
           title="Awaiting approval"
           badge={<StatusPill status="PENDING" />}
-          body={`Your account was created and is awaiting approval. You can sign in after administrative and system approval — this page checks automatically every few seconds (last checked ${Math.max(
-            checks - 1,
-            0
-          )}×), so keep it open or come back anytime.`}
+          body={`Your account was created and is awaiting approval. You can sign in after administrative and system approval — this page checks live every few seconds (checked ${checkCount}×), so keep it open or come back anytime.`}
           actions={
             <>
               <button

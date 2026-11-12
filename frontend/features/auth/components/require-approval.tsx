@@ -132,12 +132,19 @@ function ApprovalLock() {
           here; sign-in is the single action. */}
       <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
         <Link
-          href="/login"
+          href={statusHref}
           className="inline-flex h-11 items-center gap-2 rounded-2xl bg-primary px-6 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
         >
-          <LogIn className="h-4 w-4" />
-          Sign in
+          <Clock3 className="h-4 w-4" />
+          Check approval status
           <ArrowRight className="h-4 w-4" />
+        </Link>
+        <Link
+          href="/login"
+          className="inline-flex h-11 items-center gap-2 rounded-2xl border border-border/70 bg-card px-5 text-sm font-bold text-foreground transition-all hover:bg-muted/60 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
+        >
+          <LogIn className="h-4 w-4 text-primary" />
+          Sign in (approved only)
         </Link>
         <Link
           href="/signup"
