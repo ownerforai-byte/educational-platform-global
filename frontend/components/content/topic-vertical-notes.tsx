@@ -90,6 +90,15 @@ export interface RichTopicConcept {
   motionGraphics?: string;
   formulaSpecs?: unknown[];
   blocks?: unknown[];
+  /** Authored concept map (centralConcept + branches) — optional. */
+  mindmap?: {
+    centralConcept?: string;
+    branches?: Array<{
+      topic?: string;
+      details?: unknown;
+      subtopics?: unknown;
+    }>;
+  } | null;
 }
 
 interface ManifestItem {
@@ -652,6 +661,9 @@ export function TopicVerticalNotes({
   const rawImportantTasks = activeData?.importantTasks ?? [];
   const rawPracticeQuestions = (activeData?.practiceQuestions ?? []).filter((item) => !isBoilerplate(item));
   const rawPractice = activeData?.practice ?? [];
+  // Authored concept map for this topic (only ~10 JSONs carry one today; every
+  // other topic gets a map derived in features/docs/doc-mindmap.ts).
+  const rawMindmap = activeData?.mindmap ?? null;
   const rawNumericals = activeData?.numericals ?? [];
   const rawMcqs = (activeData?.mcs ?? []).filter((item) => item.question?.trim() && item.options?.length > 0);
 
@@ -700,8 +712,9 @@ export function TopicVerticalNotes({
       importantStatements: rawImportantStatements,
       practiceQuestions: rawPracticeQuestions,
       practice: rawPractice,
+      mindmap: rawMindmap,
     }),
-    [summary, rawNotes, rawImportantConcepts, rawUniversalFacts, populatedKeyPoints, populatedFormulas, rawExamShortTricks, rawSpecialNotes, rawConfusion, rawImportantNotes, rawImportantStatements, rawPracticeQuestions, rawPractice],
+    [summary, rawNotes, rawImportantConcepts, rawUniversalFacts, populatedKeyPoints, populatedFormulas, rawExamShortTricks, rawSpecialNotes, rawConfusion, rawImportantNotes, rawImportantStatements, rawPracticeQuestions, rawPractice, rawMindmap],
   );
 
   if (loading) {

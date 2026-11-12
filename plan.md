@@ -153,7 +153,8 @@ cd frontend && npx next dev -p 5199
 | DocView Phase 1: doc-parser + 6 SVG figures + registry (7 verified slugs) + TopicDocView wired into notes tab + 7-test suite; check + check:all PASS | `d983e777` (committed by parallel agent, mixed with its katex fix) | ✅ |
 | plan.md handoff updates + push | `499f3111` | ✅ |
 | DocView Phase 1 full handoff (§11) | `602a4d8b` | ✅ |
-| DocView Phase 2 batch 1: 7 new SVG figures (projectile, concave mirror, thin lens, Faraday induction, periodic trends, hybridisation, galvanic cell) — 13 registered topics total; tsc clean, doc-view test 7/7, `npm run check` PASS | (this commit) | ✅ |
+| DocView Phase 2 batch 1: 7 new SVG figures (projectile, concave mirror, thin lens, Faraday induction, periodic trends, hybridisation, galvanic cell) — 13 registered topics total; tsc clean, doc-view test 7/7, `npm run check` PASS | `e48a6d68` | ✅ |
+| §5.6 Concept map on ALL 696 topics: `doc-mindmap.ts` (authored-or-derived tree) + `doc-mindmap-view.tsx` (SVG radial concept tree) + `#doc-map` section first in the doc; KaTeX on every text surface; 1,383 JSONs verified 0 empty/0 thin; doc-view test 12/12; `npm run check` PASS | (this commit) | ✅ |
 | Theorems verified 200/200 curated proofs, 0 broken links | verified | ✅ |
 
 **Pushed `origin/main` at time of writing:** `499f3111` (lineage: `bdd11781`
@@ -283,6 +284,49 @@ the already-computed arrays. Minimal-risk fallback: swap only the
 
 **DocView Phase 1 is COMPLETE and on `main`. Next work = §6 backlog or a
 browser spot-check (§11.9).**
+
+## §5.6 Concept map on ALL topics (owner request 2026-11-12)
+**Status: DONE.** Every topic document now opens with a drawn concept map
+(mind map / concept tree), then the full explanation, then the descriptions.
+
+```
+frontend/features/docs/doc-mindmap.ts      — buildDocConceptMap / deriveMindmap
+frontend/features/docs/doc-mindmap-view.tsx — <DocMindMap> SVG radial tree
+```
+
+**Two sources, in order:**
+1. Authored `mindmap` on the concept JSON —
+   `{ centralConcept, branches:[{ topic, details?|subtopics:[{name,points}] }] }`.
+   Only **10 JSONs** carry one today (`circular-motion/*`, etc.).
+2. Derived (`deriveMindmap`) from fields every JSON has: importantConcepts →
+   "Core ideas", keyPoints → "Key points", formulas → "Formulas",
+   examShortTricks → "Memory shortcuts", confusion/specialNotes → "Watch out",
+   practiceQuestions → "Practice focus". If <3 branches, note headings become
+   branches (`noteBranches()`); if still <2, notes split into two labelled halves.
+
+**Verified: 1,383 JSONs scanned → 0 empty maps, 0 thin maps (all ≥2 branches,
+≥3 points).** Re-run with a `.tmp-mapcheck.ts` over `content/notes/concepts`.
+
+**Doc structure now:** header (chips incl. diagram count) → mini TOC →
+**Concept map** (`#doc-map`) → 1 Big picture → 2 The explanation → 3 Key terms &
+formulas → 4 Watch out → 5 Practice.
+
+**KaTeX:** every text surface (summary, overview, segment bodies, headings,
+keyPoints, formulas, tricks, traps, practice, AND the map's expanded key) renders
+through `<MathMarkdown>`, so `$…$` / `$$…$$` / `\(…\)` / `\[…\]` / mhchem `\ce{}`
+all typeset. Live check on a real JSON: **160 KaTeX nodes, 0 `.katex-error`**.
+
+**Map rendering notes:** SVG `viewBox 0 0 820 H`, centre ellipse + 2 columns of
+branch boxes (max 6), curved connectors, per-branch Tailwind tone classes.
+Box body text is single-line-ellipsized by design — the **expanded key grid under
+the SVG** shows every point in full with KaTeX. Geometry verified with Playwright
+(`getBBox`): no text overflows its box, no clipping.
+
+**Tests:** `tests/features/topic-doc-view.test.tsx` (12 tests) covers authored-map
+preference, derived fallback, notes-only fallback, and a **real shipped JSON**
+render asserting map + KaTeX + authored figure together.
+`tests/components/content/topic-learning-sections.test.tsx` assertions changed to
+`findAllByText` because the map also echoes note text into SVG.
 
 ---
 
