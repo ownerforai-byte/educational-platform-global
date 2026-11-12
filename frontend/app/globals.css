@@ -1407,6 +1407,18 @@ code, kbd, samp, pre {
 }
 .animate-pop-in { animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
 
+/* Veer online status: slow on/off, no glow */
+@keyframes veerStatusBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.12; }
+}
+.animate-veer-status {
+  animation: veerStatusBlink 2.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-veer-status { animation: none; opacity: 1; }
+}
+
 @keyframes gradientShift {
   0%   { background-position: 0% 50%; }
   50%  { background-position: 100% 50%; }

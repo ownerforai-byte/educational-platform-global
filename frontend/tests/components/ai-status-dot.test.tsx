@@ -9,10 +9,11 @@ describe("AiStatusDot", () => {
     vi.stubGlobal("fetch", vi.fn(async () => ({ ok: true, json: async () => ({ online: true }) })));
     render(<AiStatusDot />);
     await waitFor(() => expect(screen.getByRole("status").getAttribute("data-status")).toBe("online"));
-    expect(screen.getByTestId("ai-status-glow")).toBeTruthy();
-    const dot = screen.getByRole("status").lastElementChild as HTMLElement;
-    expect(dot.className).toContain("bg-emerald-500");
-    expect(dot.className).toContain("shadow-[");
+    const blink = screen.getByTestId("ai-status-blink");
+    expect(blink.className).toContain("bg-emerald-500");
+    expect(blink.className).toContain("animate-veer-status");
+    expect(blink.className).not.toContain("shadow-[");
+    expect(blink.className).not.toContain("animate-ping");
   });
 
   test("reads the honest `configured` field and bounds every probe", async () => {
@@ -32,7 +33,7 @@ describe("AiStatusDot", () => {
     vi.stubGlobal("fetch", vi.fn(async () => { throw new Error("down"); }));
     render(<AiStatusDot />);
     await waitFor(() => expect(screen.getByRole("status").getAttribute("data-status")).toBe("offline"));
-    expect(screen.queryByTestId("ai-status-glow")).toBeNull();
+    expect(screen.queryByTestId("ai-status-blink")).toBeNull();
     expect((screen.getByRole("status").lastElementChild as HTMLElement).className).toContain("bg-zinc-400");
   });
 });
