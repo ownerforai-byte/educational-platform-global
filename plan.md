@@ -151,11 +151,14 @@ cd frontend && npx next dev -p 5199
 | `slugifyFileName` Devanagari fix (Nepali slugs were collapsing to "01") | `bdd11781` | ✅ |
 | Legend SSG prerender (708 HTML files incl. Devanagari) | `dec53015` | ✅ |
 | DocView Phase 1: doc-parser + 6 SVG figures + registry (7 verified slugs) + TopicDocView wired into notes tab + 7-test suite; check + check:all PASS | `d983e777` (committed by parallel agent, mixed with its katex fix) | ✅ |
+| plan.md handoff updates + push | `499f3111` | ✅ |
 | Theorems verified 200/200 curated proofs, 0 broken links | verified | ✅ |
-| DocView foundation: `doc-parser.ts` + `figures/registry.ts` written | uncommitted | 🔨 in progress |
 
-**Pushed `origin/main` at time of writing:** `dec53015` (parallel agent may have
-added commits after — always `git fetch` + `git log origin/main -3` first).
+**Pushed `origin/main` at time of writing:** `499f3111` (lineage: `bdd11781`
+legend gaps → `dec53015` legend SSG → `f8ac1242`/`a92537c2` parallel agent →
+`162cde68` parallel agent tables → `d983e777` DocView code + parallel agent's
+katex layout fix → `499f3111` plan handoff). Always `git fetch` +
+`git log origin/main -3` first.
 
 ---
 
@@ -267,14 +270,17 @@ the already-computed arrays. Minimal-risk fallback: swap only the
    `tests/components/content/topic-learning-sections.test.tsx` (old four-pass
    heading assertion → new doc heading).
 5. ✅ `npm run check` PASS (24 test files green, hydration div-in-p fixed in
-   definition Segment). ✅ `npm run check:all` PASS. NOTE: the parallel agent
-   swept the staged DocView files into its commit `d983e777` (mixed with its
-   katex layout fix) — do NOT rewrite that history; DocView content is fully
-   in it. Remaining: push `main`.
+   definition Segment). ✅ `npm run check:all` PASS. ✅ PUSHED: DocView code
+   landed in `d983e777` (the parallel agent swept the staged files into its
+   commit, mixed with its katex layout fix — history kept, do NOT rewrite),
+   plan handoff in `499f3111`.
 6. File classifications: plan.md + topic-vertical-notes.tsx +
    topic-learning-sections.test.tsx = [IMPORTANT CORE FILE];
    `frontend/features/docs/**` + `frontend/tests/features/topic-doc-view.test.tsx`
    = [IMPORTANT CORE FILE] (feature code, not learner payloads).
+
+**DocView Phase 1 is COMPLETE and on `main`. Next work = §6 backlog or a
+browser spot-check (§11.9).**
 
 ---
 
@@ -387,5 +393,152 @@ consistent (§8 row above) and pass `npm run check`.
 4. **Update THIS file** (`plan.md`) when state changes: move §5 items to done,
    adjust §4 ledger, add new hazards. plan.md is the single source of truth.
 
-*Written by the session that completed the legend-gap campaign and legend SSG
-(commits bdd11781, dec53015). Keep it current.*
+---
+
+## §11 FULL HANDOFF — everything a fresh session needs (written 2026-11-12)
+
+### §11.1 How the owner works (expect this)
+- Owner sends **very short messages** ("all ; ui label , anchor id , content")
+  meaning: proceed with the plan using exactly those parameters. Don't ask
+  clarifying questions when plan.md answers them — act, validate, report.
+- Owner **restarts the agent often** for efficiency. Before ending a turn:
+  finish the working, update THIS file, and say "done". Never leave a turn with
+  a plan-only ending; every claim of completion must be backed by a run check.
+- Owner wants the final report to list changes + validation + file
+  classifications ([IMPORTANT CORE FILE] / [CONTENT FILE]).
+
+### §11.2 Campaign history in one breath
+1. Dummy/filler content and dead code removed (under-development components,
+   motion-graphics folder, etc.).
+2. All 696 syllabus topics have authored examShortTricks + keyPoints +
+   practiceQuestions — 0 gaps (English via dicts a–k2, Nepali via n–n6 in
+   Devanagari, time-savers via t1–t5).
+3. All user-facing "Motion Graphics"/"Simulation" renamed to "Video" (~30
+   surfaces) + TopicVideo exact-slug registry for 14 topics.
+4. Legend pages prerendered as static HTML (708 files, Devanagari slugs work).
+5. DocView Phase 1 shipped (§5). Phase 2+ backlog in §6.
+
+### §11.3 Legend system (settled — reference only)
+- Legend topic pages: `/legend/{classSlug}/{subjectSlug}/{unitId}/{topicSlug}`;
+  Devanagari slugs are percent-encoded in URLs but raw in HTML hrefs.
+- `frontend/app/(app)/legend/.../topic/page.tsx` is `force-static` +
+  `dynamicParams = false` + `generateStaticParams` over all 696 topics; subject
+  page also `force-static`. Build emits ~708 HTML files under
+  `.next/server/app/legend/` (verify: `find .next/server/app/legend -name "*.html" | wc -l`).
+- **Tradeoff accepted with owner:** concept-JSON content edits appear on the
+  site only after the next `npm run build` (was per-request reads before).
+  Revert to dynamic only if the owner asks for instant updates.
+- `frontend/lib/legend.ts`: `getLegendIndex()` memoized per process (cache +
+  promise; `buildLegendIndex()` extracted) — the full concept-JSON scan used to
+  run per call (~700 reads × 696 pages at build time). `slugifyFileName`
+  preserves Devanagari: `.replace(/[^a-z0-9\u0900-\u097F]+/g, "-")` — NEVER
+  remove that range or every Nepali slug collapses to its number prefix.
+- Legend matcher: exact slug match first, then token-overlap ≥ 0.5; NO
+  first-topic fallback (a wrong match is worse than none).
+
+### §11.4 DocView Phase 1 — as-built details (beyond §5.3/§5.4)
+- `doc-view.tsx` renders: header (class/subject chips, read-time, figure count)
+  → mini TOC → 5 sections. `keywordAnchor()` maps each figure to the first note
+  block containing its keyword (`afterNoteIndex` wins if set; falls back to
+  block 0). `figuresAfter()` was deleted as dead code — don't re-add.
+- `Segment` renderer: definition → left-accent card with bold term;
+  displayMath → sky-tinted centered card; list → styled ul; paragraph →
+  `<MathMarkdown content className="block …">` (MathMarkdown props are just
+  `{ content, className }`).
+- Icons use `h-4 w-4` — `h-4.5` is NOT valid Tailwind here.
+- Wiring (`topic-vertical-notes.tsx`): `docData` useMemo merges
+  `summary, rawNotes, rawImportantConcepts, rawUniversalFacts,
+  populatedKeyPoints, populatedFormulas, rawExamShortTricks, rawSpecialNotes,
+  rawConfusion, rawImportantNotes, rawImportantStatements,
+  rawPracticeQuestions, rawPractice` — populated* fallbacks matter because
+  FactBank backfills missing keyPoints/formulas from the high-yield bank.
+  Placement order in the notes tab: periodic-table banner → noteLoadFailed →
+  `<TopicDocView>` → VisualWorkspace → FactBank → NoteBlocks.
+- **Hook-order rule:** `docData` useMemo must stay ABOVE every early return
+  (including `if (loading)`). Placing it after broke rendering with
+  "change in the order of Hooks".
+- Dropped from the notes tab: four-pass nav + the concept-check quiz block
+  (the quiz still lives in the self-check tab — nothing lost to the user).
+- Tests: `frontend/tests/features/topic-doc-view.test.tsx` (7 tests: registry
+  slugs ⊆ syllabus slugs; entry shape; parser definition/displayMath/minutes;
+  figure renders on match; graceful empty render).
+  `tests/components/content/topic-learning-sections.test.tsx` line ~137 asserts
+  the NEW doc heading ("Motion in a Straight Line document" article), not the
+  old four-pass heading.
+
+### §11.5 Slug-verification recipe (use before adding ANY registry entry)
+Slugs are derived from topic titles, so grep for the literal slug in
+`syllabus.ts` finds NOTHING. Instead:
+```bash
+cd frontend && cat > .tmp-slugs.ts <<'EOF'
+import { SYLLABUS, slugifySyllabusTopic } from "@/lib/core/syllabus";
+for (const c of SYLLABUS) for (const s of c.subjects) for (const u of s.units)
+  for (const t of u.topics) {
+    const title = String(t).toLowerCase();
+    if (title.includes("<keyword>")) console.log(`${c.slug}/${s.slug}/${u.id}/${slugifySyllabusTopic(t)}`);
+  }
+EOF
+npx tsx .tmp-slugs.ts && rm .tmp-slugs.ts
+```
+Lessons already paid for: "photosynthesis" is NOT a NEB topic (energy-flow
+figure was retargeted to `ecological-pyramids-and-energy-flow`); "wave motion"
+has no topic either (`wavefront-and-huygens-principle` used instead).
+
+### §11.6 Parallel agent — behavior learned
+- It works in the SAME tree and sometimes runs `git commit` on whatever is
+  staged (it swept my staged DocView files into its `d983e777`). **Therefore:
+  `git add` and `git commit` in the SAME command; never leave own files sitting
+  staged.** Never commit its files (§2.3 list). It also landed `162cde68`
+  (table scroll) and the katex CSS import inside `d983e777`.
+- Its dev server: port 5173 (`next dev --webpack`). Own servers: use 5199+.
+- If a commit of mine ends up mixed with theirs: do NOT rewrite history; note
+  it in §4 and move on.
+
+### §11.7 Windows/tooling gotchas — additions learned this session
+- **Backslashes get halved inside bash heredocs** in this harness
+  (`\\n` arrives as real newline, `\\\\` as `\\`). For any text containing
+  backslashes/regex escapes use the `edit` tool or a Python script via the
+  `edit`/`write` tools — not heredocs.
+- Backgrounded builds (`(cmd &)`) do NOT survive shell exit — run long builds
+  as ONE foreground call with a large `timeout` (check:all ≈ 10–20 min,
+  build ≈ 5 min).
+- Vitest debugging: `npx vitest run <file> 2>&1 | grep -A12 "Failed Tests"`
+  shows the diff; parse failures show as "Test Files 1 failed" with no tests.
+- `git status --porcelain --staged` is not a valid flag — use
+  `git diff --cached --name-only`.
+- graphify rebuilds in background on every commit (log:
+  `~/.cache/graphify-rebuild.log`) — ignore the hook noise.
+
+### §11.8 Content-pipeline reminders
+- Runner: `node content-tools/enhancers/enhance-legend-gaps.cjs <dict.json...>`
+  (no args = auto-glob). Reports applied/skipped/unmatched; unmatched must end
+  at 0; never overwrites a field that already has content.
+- Dict keys: `classSlug/subjectSlug/unitId/topicSlug` with the REAL subject dir
+  segment (`english/`, `nepali/`) — a 3-segment key silently matches nothing.
+- Concept JSONs live at
+  `content/notes/concepts/{class}/{subject}/{unit}/{NN-slug}.json`; the notes
+  tab loads them via `loadData` + `selectCanonicalNoteEntry` (canonical-note
+  resolution, duplicates filtered by `noteMatchesTopic`/`isBoilerplate`).
+
+### §11.9 Concrete next steps (in order)
+1. **Browser spot-check** of a registered topic's Notes tab (e.g. syllabus
+   topic `laws-of-refraction-refractive-index` on a class-11 physics page, own
+   port 5199): doc renders, Snell figure appears inline after the note
+   containing "Snell", unregistered topics show no figure and no crash.
+   (Dev-server check not yet done — tests cover render, not the live page.)
+2. **Phase 2 (§6.1):** batch 30–50 more diagrams. For each: verify slug (§11.5)
+   → one SVG component ≤ ~120 lines → one registry entry with keyword anchor →
+   tests green → `npm run check`.
+3. **Phase 3 (§6.2):** auto mind-map SVG from keyPoints for unregistered topics.
+4. If the owner reports a stale-content complaint on legend pages, remind:
+   content edits need `npm run build` (§11.3 tradeoff).
+
+### §11.10 Do-not-repeat list (mistakes already made once)
+- Don't guess slugs — always derive (§11.5). Four wrong guesses cost a rewrite.
+- Don't put a hook (useMemo) below an early return in topic-vertical-notes.tsx.
+- Don't write `<p>` containing block elements (hydration error) — use div.
+- Don't use `h-4.5`/`w-4.5` Tailwind classes.
+- Don't trust grep for derived slugs in syllabus.ts.
+- Don't leave files staged overnight — the parallel agent may commit them.
+- Don't re-add the deleted `figuresAfter()` helper.
+
