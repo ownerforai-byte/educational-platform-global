@@ -53,10 +53,8 @@ export interface AiSparkUser {
 
 /**
  * Resolve the tier for one request — the ONE resolver the spark allowance
- * and the section gates share. Order matters: the owner allowlist and owner
- * role always win (an owner is unlimited whatever plan row they carry), then
- * pro (role, plan, or the legacy premium flag), then plus, then the signed-in
- * Member base. A signed-out caller is a guest.
+ * and the section gates share. Order: root owner email or live role:"owner"
+ * grant, then pro, then plus, then Member. Signed-out is guest.
  */
 export function aiSparkTierFor(
   user: AiSparkUser | null | undefined = null,

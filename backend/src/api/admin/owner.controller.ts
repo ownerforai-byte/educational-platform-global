@@ -1,6 +1,11 @@
 import { Router, Request, Response } from "express";
 import { z } from "zod";
-import { requireAuth, isOwnerAccount, type AuthedRequest } from "../../middleware/auth";
+import {
+  requireAuth,
+  isOwnerEmail,
+  isOwnerAccount,
+  type AuthedRequest,
+} from "../../middleware/auth";
 import { supabaseAdmin } from "../../db/supabase";
 import { invalidateSectionTierCache } from "../../utils/sectionTiers";
 import { authEmailsById, invalidateAuthEmailsCache } from "../../utils/authEmails";
@@ -12,12 +17,12 @@ import { sendApprovalEmail } from "../../utils/mailer";
  *
  * Every route requires BOTH:
  *   1. A valid authenticated session (requireAuth).
- *   2. The caller to be an owner ACCOUNT: an email on the OWNER_EMAILS
- *      allowlist OR the owner rung (owner grant / normalized legacy operator).
+ *   2. An owner account: root email (sahrocky81@gmail.com) OR a live
+ *      `role: "owner"` grant assigned from the console.
  *
- * Approve/reject is restricted to owner accounts. Owners are fully equal and
- * independent of one another: with no owner-protection guard left, any owner
- * may re-tier, suspend or delete any account — including another owner.
+ * Member/Plus/Pro access is live (`access_status`). The root owner email can
+ * assign owner to another Gmail; that address then works as owner. The root
+ * email itself cannot be re-tiered, revoked, or deleted.
  */
 const router = Router();
 
@@ -32,6 +37,22 @@ function ownerGate(req: Request, res: Response): AuthedRequest | null {
   return req as AuthedRequest;
 }
 
+async function resolveTargetEmail(userId: string): Promise<string | null> {
+  const emails = await authEmailsById();
+  return emails.get(userId) ?? null;
+}
+
+/** Root owner email is fixed — assigned owners cannot replace or strip it. */
+function refuseRootOwnerEmailTarget(res: Response, email: string | null): boolean {
+  if (email && isOwnerEmail(email)) {
+    res.status(403).json({
+      error: "The root owner email cannot be re-tiered, revoked, or deleted",
+    });
+    return true;
+  }
+  return false;
+}
+
 // ── Schemas ─────────────────────────────────────────────────────────────────
 
 const creditAdjustSchema = z.object({
@@ -39,9 +60,8 @@ const creditAdjustSchema = z.object({
   reason: z.string().max(200).optional(),
 });
 
+/** Tiers the console may grant — including assigning owner to another email. */
 const roleUpdateSchema = z.object({
-  // Owner is grantable to any account, and an existing owner may be re-tiered,
-  // suspended or deleted like anyone else.
   role: z.enum(["member", "plus", "pro", "owner"]),
 });
 
@@ -61,7 +81,7 @@ const TIER_GRANT: Record<GrantTier, { role: GrantTier; plan: string; premium_sta
   owner: { role: "owner", plan: "pro", premium_status: true },
 };
 
-/** A tier an approval may grant in the same call (owner included — approve as owner). */
+/** Tier granted with an approval (owner included — assign another operator). */
 const approvableRoleSchema = z.enum(["member", "plus", "pro", "owner"]);
 
 const accessStatusUpdateSchema = z.object({
@@ -110,6 +130,15 @@ const bulkTierUpdateSchema = z.object({
     .refine((ids) => new Set(ids).size === ids.length, "User IDs must be unique"),
   role: z.enum(["member", "plus", "pro", "owner"]),
 });
+
+/** Payload when wiping live access back to “awaiting owner approval”. */
+const REVOKE_PAYLOAD = {
+  access_status: "REJECTED",
+  role: "member",
+  plan: "member",
+  premium_status: false,
+  premium_approved_at: null,
+} as const;
 
 const bulkCreditsSchema = z.object({
   grants: z
@@ -295,6 +324,91 @@ router.get("/users", requireAuth, async (req: Request, res: Response) => {
 });
 
 /**
+ * POST /api/owner/users/revoke-all
+ * Live wipe: REJECT every ACTIVE (and demote every non-owner-email) profile
+ * except sahrocky81@gmail.com. Pending signups stay pending.
+ */
+router.post("/users/revoke-all", requireAuth, async (req: Request, res: Response) => {
+  const owner = ownerGate(req, res);
+  if (!owner) return;
+
+  try {
+    const { data, error } = await supabaseAdmin
+      .from("profiles")
+      .select("id, role, access_status, premium_status")
+      .limit(5000);
+
+    if (error) {
+      console.error("[owner] revoke-all list failed:", error.message);
+      res.status(500).json({ error: "Failed to list profiles" });
+      return;
+    }
+
+    const emails = await authEmailsById();
+    const applied: string[] = [];
+    const skipped: Array<{ userId: string; reason: string }> = [];
+
+    for (const row of data ?? []) {
+      const userId = String(row.id);
+      const email = emails.get(userId) ?? null;
+      if (email && isOwnerEmail(email)) {
+        skipped.push({ userId, reason: "Owner email — kept" });
+        // Ensure the owner row stays ACTIVE + owner rung in the live DB.
+        await supabaseAdmin
+          .from("profiles")
+          .update({
+            access_status: "ACTIVE",
+            role: "owner",
+            plan: "pro",
+            premium_status: true,
+          })
+          .eq("id", userId);
+        continue;
+      }
+
+      const access = (row.access_status as string | null) ?? "PENDING";
+      const role = typeof row.role === "string" ? row.role.toLowerCase() : "member";
+      const needsRevoke =
+        access === "ACTIVE" ||
+        role === "owner" ||
+        role === "plus" ||
+        role === "pro" ||
+        row.premium_status === true;
+
+      if (!needsRevoke) {
+        skipped.push({ userId, reason: "Already pending/rejected member" });
+        continue;
+      }
+
+      const { error: updErr } = await supabaseAdmin
+        .from("profiles")
+        .update(REVOKE_PAYLOAD)
+        .eq("id", userId);
+
+      if (updErr) {
+        skipped.push({ userId, reason: "Update failed" });
+        continue;
+      }
+      applied.push(userId);
+    }
+
+    console.info(
+      `[owner] revoke-all by ${owner.user.email}: revoked ${applied.length}, skipped ${skipped.length}`,
+    );
+
+    res.json({
+      success: true,
+      revoked: applied.length,
+      applied,
+      skipped,
+    });
+  } catch (err: any) {
+    console.error("[owner] revoke-all error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/**
  * POST /api/owner/users/bulk-status
  * Approve or revoke access for up to 100 accounts in one call.
  */
@@ -314,7 +428,14 @@ router.post("/users/bulk-status", requireAuth, async (req: Request, res: Respons
   const skipped: Array<{ userId: string; reason: string }> = [];
 
   try {
+    const emails = await authEmailsById();
     for (const userId of userIds) {
+      const email = emails.get(userId) ?? null;
+      if (email && isOwnerEmail(email)) {
+        skipped.push({ userId, reason: "Owner email protected" });
+        continue;
+      }
+
       const { data: target } = await supabaseAdmin
         .from("profiles")
         .select("id, access_status")
@@ -389,7 +510,14 @@ router.post("/users/bulk-tier", requireAuth, async (req: Request, res: Response)
   const skipped: Array<{ userId: string; reason: string }> = [];
 
   try {
+    const emails = await authEmailsById();
     for (const userId of userIds) {
+      const email = emails.get(userId) ?? null;
+      if (email && isOwnerEmail(email)) {
+        skipped.push({ userId, reason: "Owner email protected" });
+        continue;
+      }
+
       const { data, error } = await supabaseAdmin
         .from("profiles")
         .update({
@@ -549,6 +677,9 @@ router.patch("/users/:id/status", requireAuth, async (req: Request<{ id: string 
   const { status, role } = parsed.data;
 
   try {
+    const targetEmail = await resolveTargetEmail(req.params.id);
+    if (refuseRootOwnerEmailTarget(res, targetEmail)) return;
+
     const { data: target } = await supabaseAdmin
       .from("profiles")
       .select("id, access_status")
@@ -635,6 +766,9 @@ router.patch("/users/:id/role", requireAuth, async (req: Request<{ id: string }>
   }
 
   try {
+    const targetEmail = await resolveTargetEmail(req.params.id);
+    if (refuseRootOwnerEmailTarget(res, targetEmail)) return;
+
     const grant = TIER_GRANT[parsed.data.role];
     const { error } = await supabaseAdmin
       .from("profiles")
@@ -860,6 +994,9 @@ router.delete("/users/:id", requireAuth, async (req: Request<{ id: string }>, re
   }
 
   try {
+    const targetEmail = await resolveTargetEmail(req.params.id);
+    if (refuseRootOwnerEmailTarget(res, targetEmail)) return;
+
     const { error: authError } = await supabaseAdmin.auth.admin.deleteUser(req.params.id);
     if (authError) {
       console.error("[owner] auth delete failed:", authError.message);

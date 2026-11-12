@@ -9,7 +9,10 @@ import { apiFetch, setStoredToken } from "@/lib/api-client";
 import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
 import { tierWelcomePathFor } from "@/lib/access-level";
-import { rememberPendingSignup } from "@/features/auth/pending-signup-identity";
+import {
+  clearPendingSignup,
+  rememberPendingSignup,
+} from "@/features/auth/pending-signup-identity";
 import {
   isOAuthAccessBlocked,
   oauthAccessBlockedMessage,
@@ -108,6 +111,11 @@ function AuthCallbackContent() {
           // Hardcoded pending-signup identity survives refresh (owner 2026-11-08).
           rememberPendingSignup(authError.statusToken);
           router.replace("/welcome");
+          return;
+        }
+        if (authError.code === "ACCOUNT_REJECTED") {
+          clearPendingSignup();
+          router.replace("/");
           return;
         }
         setError(callbackError instanceof Error ? callbackError.message : "Sign-in could not be completed.");

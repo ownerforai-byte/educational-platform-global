@@ -27,6 +27,7 @@ import { hasLevel, ACCESS_LABELS, type AccessLevel } from "@/lib/access-level";
 import { NAV_SECTIONS, type NavItem, type NavSection } from "@/lib/navigation";
 import type { AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
 import { FooterQuote } from "@/components/layout/footer-quote";
+import { IndependenceDisclaimer } from "@/components/platform/independence-disclaimer";
 
 // ─── Which nav sections appear in the footer, and what heading to use ────────
 //
@@ -229,6 +230,14 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
           </nav>
           <p>&copy; {new Date().getFullYear()} Ravikisan&apos;s Platform</p>
         </div>
+      </div>
+
+      {/* INDEPENDENCE DISCLAIMER — Google Play "Misleading Claims" (owner
+          2026-11-11: "keep the disclaimer only in footer"). One band, outside
+          both footer views, so it renders once per view instead of on every
+          screen. Wording is the shared constant. */}
+      <div className="mx-auto w-full max-w-7xl px-4 pb-5 md:px-6">
+        <IndependenceDisclaimer className="border-amber-500/40" />
       </div>
 
       {/* ── Website view — unchanged ── */}

@@ -3,31 +3,35 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Crown, Users, Crown as CrownIcon, Database, Settings, Activity, Home, Stethoscope, Coins, MessageSquareText } from "lucide-react";
+import {
+  Crown,
+  Users,
+  Coins,
+  Settings,
+  Home,
+  LayoutDashboard,
+} from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { VerifyingStatus } from "@/features/auth/components/verifying-status";
-import { isOwnerAccount } from "@/lib/owner";
+import { isOwnerAccount, OWNER_EMAIL } from "@/lib/owner";
 import { cn } from "@/lib/utils";
 
+/**
+ * Owner console shell — root owner email or a live role:"owner" grant.
+ * Nav kept short: Approvals is the main job; other tools are secondary.
+ */
 const navItems = [
-  { href: "/owner", label: "Overview", icon: Activity, exact: true },
-  { href: "/owner/users", label: "Users", icon: Users },
+  { href: "/owner", label: "Home", icon: LayoutDashboard, exact: true },
+  { href: "/owner/users", label: "Approvals", icon: Users },
   { href: "/owner/credits", label: "Sparks", icon: Coins },
-  { href: "/owner/tracking", label: "Tracking", icon: MessageSquareText },
-  { href: "/owner/premium", label: "Premium", icon: CrownIcon },
-  { href: "/owner/content", label: "Content", icon: Database },
-  { href: "/owner/activity", label: "Activity", icon: Activity },
   { href: "/owner/settings", label: "Settings", icon: Settings },
-  { href: "/controller", label: "Diagnostics", icon: Stethoscope },
 ];
 
 export default function OwnerLayout({ children }: { children: React.ReactNode }) {
   const { user, isLoading } = useSession();
   const pathname = usePathname();
-
   const isOwner = isOwnerAccount(user);
 
-  // Signed-in non-owners get bounced home; signed-out users go to login.
   useEffect(() => {
     if (isLoading) return;
     if (!user) {
@@ -50,9 +54,10 @@ export default function OwnerLayout({ children }: { children: React.ReactNode })
       <div className="flex min-h-screen items-center justify-center bg-background px-4">
         <div className="max-w-sm text-center space-y-3">
           <Crown className="h-10 w-10 mx-auto text-amber-500" />
-          <h1 className="text-xl font-bold tracking-tight">Owner Access Only</h1>
+          <h1 className="text-xl font-bold tracking-tight">Owner access only</h1>
           <p className="text-sm text-muted-foreground">
-            This console is restricted to owner accounts. Redirecting…
+            Sign in as {OWNER_EMAIL}, or as an email that owner assigned the
+            owner role. Redirecting…
           </p>
         </div>
       </div>
@@ -61,17 +66,14 @@ export default function OwnerLayout({ children }: { children: React.ReactNode })
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Top bar */}
-      {/* Solid — same reason as the AppShell bar: an /80 sticky header let a
-          fifth of the page show through it while scrolling. */}
       <header className="sticky top-0 z-40 border-b border-border/60 bg-background">
-        <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4">
+        <div className="mx-auto flex h-14 max-w-5xl items-center gap-3 px-4">
           <Link href="/owner" className="flex items-center gap-2.5 shrink-0">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow-md shadow-amber-500/20">
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-500">
               <Crown className="h-4 w-4 text-white" />
             </div>
             <span className="font-bold text-sm tracking-tight whitespace-nowrap">
-              Owner Console
+              Owner control
             </span>
           </Link>
 
@@ -89,7 +91,7 @@ export default function OwnerLayout({ children }: { children: React.ReactNode })
                     "flex items-center gap-1.5 whitespace-nowrap rounded-lg px-3 py-1.5 text-xs font-medium transition-all",
                     active
                       ? "bg-primary/10 text-primary"
-                      : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/60",
                   )}
                 >
                   <Icon className="h-3.5 w-3.5" />
@@ -100,7 +102,7 @@ export default function OwnerLayout({ children }: { children: React.ReactNode })
           </nav>
 
           <div className="flex items-center gap-2 shrink-0">
-            <span className="hidden md:inline-block max-w-[180px] truncate text-xs text-muted-foreground">
+            <span className="hidden md:inline-block max-w-[200px] truncate text-xs text-muted-foreground">
               {user.email}
             </span>
             <Link
@@ -115,7 +117,7 @@ export default function OwnerLayout({ children }: { children: React.ReactNode })
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl px-4 py-6">{children}</main>
+      <main className="mx-auto max-w-5xl px-4 py-6">{children}</main>
     </div>
   );
 }

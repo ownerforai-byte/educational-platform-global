@@ -7,38 +7,46 @@ import {
   ShieldCheck,
   Coins,
   ArrowRight,
-  LayoutDashboard,
-  Activity,
-  Users,
-  Database,
-  Settings,
-  MessageSquareText,
-  Stethoscope,
   Loader2,
-  UserPlus,
-  CreditCard,
+  Clock,
+  Users,
+  Settings,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
-import { getOwnerOverview, type OwnerOverview } from "@/lib/api/owner";
+import { getOwnerOverview, getOwnerUsers, type OwnerOverview } from "@/lib/api/owner";
+import { computeUserDirectoryStats } from "@/lib/owner/user-directory";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { OWNER_EMAIL } from "@/lib/owner";
 
-const QUICK_LINKS = [
-  { href: "/owner/users", icon: ShieldCheck, title: "User Management", desc: "Approvals, tiers, bulk actions" },
-  { href: "/owner/premium", icon: Crown, title: "Premium Queue", desc: "Review premium requests" },
-  { href: "/owner/credits", icon: Coins, title: "Spark Grants", desc: "Bulk and everyone credits" },
-  { href: "/owner/sections", icon: LayoutDashboard, title: "Section Minimums", desc: "Per-section tier gates" },
-  { href: "/owner/tracking", icon: MessageSquareText, title: "Chat Tracking", desc: "Veer session audit" },
-  { href: "/owner/content", icon: Database, title: "Content", desc: "Corpus and resources" },
-  { href: "/owner/activity", icon: Activity, title: "Credit Activity", desc: "Grant and spend audit" },
-  { href: "/owner/settings", icon: Settings, title: "Settings", desc: "Platform toggles" },
-  { href: "/controller", icon: Stethoscope, title: "Diagnostics", desc: "Health and AI sources" },
+const TOOLS = [
+  {
+    href: "/owner/users",
+    icon: ShieldCheck,
+    title: "Approvals",
+    desc: "Approve or revoke live access. Grant Member, Plus, or Pro.",
+    primary: true,
+  },
+  {
+    href: "/owner/credits",
+    icon: Coins,
+    title: "Sparks",
+    desc: "Grant or adjust content sparks for approved accounts.",
+  },
+  {
+    href: "/owner/settings",
+    icon: Settings,
+    title: "Settings",
+    desc: "Platform toggles stored in the live database.",
+  },
 ];
 
 export default function OwnerOverviewPage() {
   const { user } = useSession();
   const [overview, setOverview] = useState<OwnerOverview | null>(null);
+  const [pendingCount, setPendingCount] = useState<number | null>(null);
+  const [activeCount, setActiveCount] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -46,7 +54,11 @@ export default function OwnerOverviewPage() {
     try {
       setError(null);
       setIsLoading(true);
-      setOverview(await getOwnerOverview());
+      const [ov, users] = await Promise.all([getOwnerOverview(), getOwnerUsers()]);
+      setOverview(ov);
+      const stats = computeUserDirectoryStats(users);
+      setPendingCount(stats.pending);
+      setActiveCount(stats.active);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to load overview");
     } finally {
@@ -66,16 +78,17 @@ export default function OwnerOverviewPage() {
         <div className="space-y-1">
           <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-600">
             <Crown className="h-3.5 w-3.5" />
-            Owner Console
+            Owner control · {OWNER_EMAIL}
           </div>
-          <h1 className="text-2xl font-bold tracking-tight mt-2">Platform overview</h1>
-          <p className="text-sm text-muted-foreground">
-            Live stats and shortcuts — signed in as{" "}
-            <span className="font-medium text-foreground">{user?.email ?? "…"}</span>
+          <h1 className="text-2xl font-bold tracking-tight mt-2">Control home</h1>
+          <p className="text-sm text-muted-foreground max-w-xl">
+            Root owner is {OWNER_EMAIL}. You can assign another email the owner
+            role so they can run this console too. Member access is live DB
+            approval — nothing hardcoded for members.
           </p>
         </div>
         <Button variant="outline" size="sm" onClick={load} disabled={isLoading}>
-          {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Refresh stats"}
+          {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : "Refresh"}
         </Button>
       </div>
 
@@ -85,84 +98,86 @@ export default function OwnerOverviewPage() {
         </div>
       )}
 
-      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <Link
+        href="/owner/users"
+        className="block rounded-2xl border border-amber-500/40 bg-amber-500/10 p-5 transition-colors hover:bg-amber-500/15"
+      >
+        <div className="flex items-start justify-between gap-3">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wide text-amber-700 dark:text-amber-400">
+              Main job
+            </p>
+            <h2 className="mt-1 text-lg font-bold">
+              {isLoading && pendingCount === null
+                ? "Loading pending…"
+                : pendingCount === 0
+                  ? "No pending approvals"
+                  : `${pendingCount} account${pendingCount === 1 ? "" : "s"} waiting`}
+            </h2>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {activeCount ?? 0} live approved · open Approvals to decide
+            </p>
+          </div>
+          <ArrowRight className="h-5 w-5 text-amber-600 shrink-0 mt-1" />
+        </div>
+      </Link>
+
+      <div className="grid gap-3 sm:grid-cols-3">
         {isLoading && !stats ? (
-          [1, 2, 3, 4].map((i) => <Skeleton key={i} className="h-24 rounded-xl" />)
+          [1, 2, 3].map((i) => <Skeleton key={i} className="h-24 rounded-xl" />)
         ) : (
           <>
             <Card>
               <CardHeader className="pb-1">
                 <CardTitle className="text-xs font-medium text-muted-foreground flex items-center gap-1.5">
+                  <Clock className="h-3.5 w-3.5" />
+                  Pending
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-2xl font-bold tabular-nums text-amber-600">
+                  {pendingCount ?? 0}
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="pb-1">
+                <CardTitle className="text-xs font-medium text-muted-foreground flex items-center gap-1.5">
                   <Users className="h-3.5 w-3.5" />
-                  Total users
+                  Live access
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-2xl font-bold tabular-nums">{activeCount ?? 0}</p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader className="pb-1">
+                <CardTitle className="text-xs font-medium text-muted-foreground flex items-center gap-1.5">
+                  <Users className="h-3.5 w-3.5" />
+                  Total profiles
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-2xl font-bold tabular-nums">{stats?.totalUsers ?? 0}</p>
-                <Link href="/owner/users" className="text-xs text-primary hover:underline mt-1 inline-block">
-                  Open user management →
-                </Link>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="pb-1">
-                <CardTitle className="text-xs font-medium text-muted-foreground flex items-center gap-1.5">
-                  <Crown className="h-3.5 w-3.5" />
-                  Premium
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-2xl font-bold tabular-nums">{stats?.premiumUsers ?? 0}</p>
-                <Link href="/owner/premium" className="text-xs text-primary hover:underline mt-1 inline-block">
-                  Review requests ({stats?.pendingPremiumRequests ?? 0} pending) →
-                </Link>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="pb-1">
-                <CardTitle className="text-xs font-medium text-muted-foreground flex items-center gap-1.5">
-                  <CreditCard className="h-3.5 w-3.5" />
-                  Credit events
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm">
-                  <span className="font-bold text-emerald-600">{stats?.totalCreditsGranted ?? 0}</span> grants ·{" "}
-                  <span className="font-bold text-red-500">{stats?.totalCreditsSpent ?? 0}</span> spends
-                </p>
-                <Link href="/owner/activity" className="text-xs text-primary hover:underline mt-1 inline-block">
-                  Full activity log →
-                </Link>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardHeader className="pb-1">
-                <CardTitle className="text-xs font-medium text-muted-foreground flex items-center gap-1.5">
-                  <Database className="h-3.5 w-3.5" />
-                  Content index
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  {stats?.content.topics ?? 0} topics · {stats?.content.resources ?? 0} resources
-                </p>
-                <Link href="/owner/content" className="text-xs text-primary hover:underline mt-1 inline-block">
-                  Content console →
-                </Link>
               </CardContent>
             </Card>
           </>
         )}
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {QUICK_LINKS.map((tool) => {
+      <div className="grid gap-3 sm:grid-cols-3">
+        {TOOLS.map((tool) => {
           const Icon = tool.icon;
           return (
             <Link
               key={tool.href}
               href={tool.href}
-              className="group flex flex-col rounded-2xl border border-border/70 bg-card p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40"
+              className={
+                tool.primary
+                  ? "group flex flex-col rounded-2xl border border-primary/40 bg-primary/5 p-4 transition-all hover:border-primary/60"
+                  : "group flex flex-col rounded-2xl border border-border/70 bg-card p-4 transition-all hover:border-primary/40"
+              }
             >
               <div className="flex items-start justify-between">
                 <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 text-primary">
@@ -180,12 +195,9 @@ export default function OwnerOverviewPage() {
       {overview && overview.recentUsers.length > 0 && (
         <Card>
           <CardHeader className="pb-2 flex flex-row items-center justify-between">
-            <CardTitle className="text-sm font-medium flex items-center gap-2">
-              <UserPlus className="h-4 w-4" />
-              Recent signups
-            </CardTitle>
+            <CardTitle className="text-sm font-medium">Recent signups</CardTitle>
             <Link href="/owner/users" className="text-xs text-primary hover:underline">
-              View all
+              Decide in Approvals
             </Link>
           </CardHeader>
           <CardContent className="space-y-2">
@@ -198,12 +210,19 @@ export default function OwnerOverviewPage() {
                   <p className="font-medium truncate">{u.full_name || u.email}</p>
                   <p className="text-xs text-muted-foreground truncate">{u.email}</p>
                 </div>
-                <span className="text-[10px] font-bold uppercase shrink-0">{u.role ?? "member"}</span>
+                <span className="text-[10px] font-bold uppercase shrink-0">
+                  {u.access_status ?? u.role ?? "pending"}
+                </span>
               </div>
             ))}
           </CardContent>
         </Card>
       )}
+
+      <p className="text-xs text-muted-foreground">
+        Signed in as {user?.email ?? "…"}. Secondary tools (premium queue, content,
+        activity, diagnostics) remain at their old URLs if you need them.
+      </p>
     </div>
   );
 }

@@ -46,7 +46,6 @@ import { entryStatus, topicHref } from "@/lib/progress/catalog";
 import { daysUntilExam } from "@/lib/study-goals";
 import { useClientClock } from "@/lib/hooks/use-client-clock";
 import { useStreakCount } from "@/lib/hooks/use-streak";
-import { IndependenceDisclaimer } from "@/components/platform/independence-disclaimer";
 
 /**
  * THE TIER INTERFACES — hardcoded (owner direction 2026-10-23:
@@ -399,8 +398,6 @@ function TierPage({
   return (
     <div className="mx-auto w-full max-w-7xl space-y-8 px-4 py-8">
       <TierHero tier={tier} headline={headline} blurb={blurb} />
-      {/* Play "Misleading Claims": the non-affiliation must be above the fold. */}
-      <IndependenceDisclaimer variant="compact" />
       <DeskPulse />
       <QuickLinksRail tier={tier} />
       <SpotlightRow items={spotlights} />

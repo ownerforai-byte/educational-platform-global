@@ -36,6 +36,7 @@ import {
   deleteOwnerUser,
   setOwnerUserAccessStatus,
   bulkOwnerUserAccessStatus,
+  revokeAllOwnerAccess,
 } from "@/lib/api/owner";
 import type { OwnerUser, OwnerUserDetail } from "@/lib/api/owner";
 import { useOwnerUserDirectory } from "@/lib/hooks/use-owner-user-directory";
@@ -44,13 +45,16 @@ import {
   isOwnerUser,
   ownerUsersToCsv,
   partitionOwnerSystems,
+  GRANTABLE_TIERS,
+  type GrantableTier,
   type OwnerSystem,
   type UserTierFilter,
   type UserSortKey,
 } from "@/lib/owner/user-directory";
 import { cn } from "@/lib/utils";
-import { USER_ROLES, type UserRole } from "@/lib/auth/roles";
+import { type UserRole } from "@/lib/auth/roles";
 import { ACCESS_LABELS, TIER_SPARKS, type AccessLevel } from "@/lib/access-level";
+import { OWNER_EMAIL } from "@/lib/owner";
 
 const CREDIT_PRESETS = [50, 100, 250, 500] as const;
 
@@ -111,21 +115,14 @@ export default function OwnerUsersPage() {
     reload,
   } = useOwnerUserDirectory();
 
-  // Two separate systems, recreated cleanly: Review (pending decisions)
-  // and Approved (decided accounts). No overlap — an account is in one.
+  // Pending = waiting for your decision. Members = already decided (live DB).
   const [system, setSystem] = useState<OwnerSystem>("review");
-  // Declared before the callbacks that use them: React Compiler rejects a
-  // setter that is referenced above its declaration (immutability rule).
   const [busyId, setBusyId] = useState<string | null>(null);
   const [selected, setSelected] = useState<Set<string>>(new Set());
   const [bulkBusy, setBulkBusy] = useState(false);
-  const [bulkTier, setBulkTier] = useState<UserRole>("plus");
-  // The tier granted by every approval in Review — single and bulk alike.
-  // Approval and tier are ONE decision (never approve now, set tier later).
-  const [approvalTier, setApprovalTier] = useState<UserRole>("member");
-  // Access is owned by the partition, not the filter dropdown: Review =
-  // PENDING, Approved = ACTIVE/REJECTED. Filters stay at "all" for access
-  // so neither system can hide the other's rows.
+  const [bulkTier, setBulkTier] = useState<GrantableTier>("plus");
+  const [approvalTier, setApprovalTier] = useState<GrantableTier>("member");
+  const [revokeBusy, setRevokeBusy] = useState(false);
   const switchSystem = useCallback((next: OwnerSystem) => {
     setSelected(new Set());
     setSystem(next);
@@ -328,7 +325,7 @@ export default function OwnerUsersPage() {
     if (visiblePendingIds.length === 0) {
       toast.message(
         stats.pending > 0
-          ? "No pending accounts in this view. Switch the access filter to Pending."
+          ? "No pending accounts in this view."
           : "No pending accounts to approve.",
       );
       return;
@@ -354,6 +351,28 @@ export default function OwnerUsersPage() {
     }
   };
 
+  const revokeEveryoneExceptOwner = async () => {
+    if (
+      !window.confirm(
+        `Revoke LIVE access for every account except ${OWNER_EMAIL}?\n\n` +
+          "Approved members lose access immediately. Pending signups stay pending.",
+      )
+    ) {
+      return;
+    }
+    setRevokeBusy(true);
+    try {
+      const res = await revokeAllOwnerAccess();
+      toast.success(`Revoked ${res.revoked} account(s). Only ${OWNER_EMAIL} kept access.`);
+      setSelected(new Set());
+      reload();
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : "Revoke-all failed");
+    } finally {
+      setRevokeBusy(false);
+    }
+  };
+
   const exportCsv = () => {
     const stamp = new Date().toISOString().slice(0, 10);
     downloadTextFile(`platform-users-${system}-${stamp}.csv`, ownerUsersToCsv(systemUsers));
@@ -366,15 +385,24 @@ export default function OwnerUsersPage() {
         <div className="space-y-1">
           <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2">
             <ShieldCheck className="h-6 w-6 text-primary" />
-            User Management
+            Approvals
           </h1>
-          <p className="text-sm text-muted-foreground">
-            Two separate systems — Review decides pending accounts, Approved manages decided ones.
-            Approval grants the tier chosen below in the same action. Owner accounts are a plain
-            roster in Approved: visible, no buttons, never in Review.
+          <p className="text-sm text-muted-foreground max-w-2xl">
+            Approve pending signups or manage live members. Access lives in the database.
+            You can set another email’s tier to Owner so they work as owner;
+            the root address {OWNER_EMAIL} cannot be revoked or deleted.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
+          <Button
+            variant="destructive"
+            size="sm"
+            onClick={revokeEveryoneExceptOwner}
+            disabled={isLoading || revokeBusy || bulkBusy}
+          >
+            <AlertTriangle className="h-4 w-4 mr-1" />
+            {revokeBusy ? "Revoking…" : "Revoke all except owner"}
+          </Button>
           <Button variant="outline" size="sm" onClick={exportCsv} disabled={isLoading || systemUsers.length === 0}>
             <Download className="h-4 w-4 mr-1" />
             Export CSV
@@ -392,36 +420,27 @@ export default function OwnerUsersPage() {
         </div>
       )}
 
-      {/* Stats */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
         <StatChip label="Total" value={stats.total} />
         <StatChip
-          label="Review"
+          label="Pending"
           value={stats.pending}
           accent="text-amber-600"
           active={system === "review"}
           onClick={() => switchSystem("review")}
         />
         <StatChip
-          label="Approved"
-          value={stats.active + stats.rejected}
+          label="Live access"
+          value={stats.active}
           accent="text-emerald-600"
           active={system === "approved"}
           onClick={() => switchSystem("approved")}
         />
-        <StatChip
-          label="Plus"
-          value={stats.byTier.plus ?? 0}
-          accent="text-blue-600"
-          active={filters.tier === "plus"}
-          onClick={() => updateFilters({ tier: filters.tier === "plus" ? "all" : "plus" })}
-        />
-        <StatChip label="Pro+" value={(stats.byTier.pro ?? 0) + (stats.byTier.owner ?? 0)} />
+        <StatChip label="Revoked" value={stats.rejected} accent="text-red-600" />
         <StatChip label="Showing" value={systemUsers.length} />
       </div>
 
-      {/* Two systems — Review vs Approved, no overlap */}
-      <div className="flex gap-2" role="tablist" aria-label="User systems">
+      <div className="flex gap-2" role="tablist" aria-label="Approval queues">
         <Button
           role="tab"
           aria-selected={system === "review"}
@@ -430,7 +449,7 @@ export default function OwnerUsersPage() {
           onClick={() => switchSystem("review")}
         >
           <Clock className="h-4 w-4 mr-1" />
-          Review ({stats.pending})
+          Pending ({stats.pending})
         </Button>
         <Button
           role="tab"
@@ -440,10 +459,10 @@ export default function OwnerUsersPage() {
           onClick={() => switchSystem("approved")}
         >
           <Users className="h-4 w-4 mr-1" />
-          Approved ({stats.active + stats.rejected})
+          Members ({stats.active + stats.rejected})
         </Button>
         <span className="ml-auto self-center text-xs text-muted-foreground">
-          Owners: {ownerRoster.length} plain (Approved only)
+          Owner: {OWNER_EMAIL}
         </span>
       </div>
 
@@ -466,7 +485,7 @@ export default function OwnerUsersPage() {
             aria-label="Filter by tier"
           >
             <option value="all">All tiers</option>
-            {USER_ROLES.map((r) => (
+            {GRANTABLE_TIERS.map((r) => (
               <option key={r} value={r}>
                 {ACCESS_LABELS[r]}
               </option>
@@ -497,13 +516,13 @@ export default function OwnerUsersPage() {
               <select
                 value={approvalTier}
                 onChange={(e) =>
-                  setApprovalTier(e.target.value as UserRole)
+                  setApprovalTier(e.target.value as GrantableTier)
                 }
                 disabled={bulkBusy}
                 className="text-xs border rounded-md px-2 py-1.5 bg-background"
                 aria-label="Tier granted when approving"
               >
-                {USER_ROLES.map((role) => (
+                {GRANTABLE_TIERS.map((role) => (
                   <option key={role} value={role}>
                     {ACCESS_LABELS[role]} · {TIER_SPARKS[role]} Veer sparks
                   </option>
@@ -524,12 +543,12 @@ export default function OwnerUsersPage() {
                 <>
                   <select
                     value={bulkTier}
-                    onChange={(e) => setBulkTier(e.target.value as UserRole)}
+                    onChange={(e) => setBulkTier(e.target.value as GrantableTier)}
                     disabled={bulkBusy}
                     className="text-sm border rounded-md px-2 py-1.5 bg-background"
                     aria-label="Set selected accounts tier"
                   >
-                    {USER_ROLES.map((role) => (
+                    {GRANTABLE_TIERS.map((role) => (
                       <option key={role} value={role}>{ACCESS_LABELS[role]}</option>
                     ))}
                   </select>
@@ -566,21 +585,20 @@ export default function OwnerUsersPage() {
         <div className="rounded-md border border-amber-500/40 bg-amber-500/10 px-4 py-2.5 text-sm text-amber-700 dark:text-amber-400 flex items-center gap-2">
           <Clock className="h-4 w-4 shrink-0" />
           <span>
-            <strong>{stats.pending}</strong> account(s) awaiting approval — decide them in Review.
+            <strong>{stats.pending}</strong> account(s) awaiting approval — open Pending.
           </span>
           <Button size="sm" variant="outline" className="ml-auto" onClick={() => switchSystem("review")}>
-            Open Review
+            Open Pending
           </Button>
         </div>
       )}
 
-      {/* Owner roster — Approved only, plain emails, no buttons/links/actions */}
       {system === "approved" && ownerRoster.length > 0 && (
         <Card>
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium flex items-center gap-2">
               <ShieldCheck className="h-4 w-4" />
-              Owner emails — plain roster (no actions, never in Review)
+              Root owner · {OWNER_EMAIL} (cannot revoke or delete)
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -605,9 +623,9 @@ export default function OwnerUsersPage() {
         <CardHeader className="pb-2 flex flex-row items-center justify-between">
           <CardTitle className="text-sm font-medium flex items-center gap-2">
             <Users className="h-4 w-4" />
-            {system === "review" ? "Review — pending decisions" : "Approved — decided accounts"}
+            {system === "review" ? "Pending — await your approval" : "Members — live access in the database"}
           </CardTitle>
-          <span className="text-xs text-muted-foreground">Instant client-side filters · one API load</span>
+          <span className="text-xs text-muted-foreground">Live from Supabase · one API load</span>
         </CardHeader>
         <CardContent>
           {isLoading && systemUsers.length === 0 ? (
@@ -763,13 +781,13 @@ export default function OwnerUsersPage() {
                             <select
                               value={u.effectiveTier ?? "member"}
                               onChange={(e) =>
-                                handleTier(u, e.target.value as UserRole)
+                                handleTier(u, e.target.value as GrantableTier)
                               }
-                              disabled={busyId === u.id || u.effectiveTier === "owner"}
+                              disabled={busyId === u.id}
                               className="text-xs border rounded-md px-2 py-1.5 bg-background disabled:opacity-50"
                               aria-label={`Tier for ${u.email}`}
                             >
-                              {USER_ROLES.map((r) => (
+                              {GRANTABLE_TIERS.map((r) => (
                                 <option key={r} value={r}>
                                   {ACCESS_LABELS[r]}
                                 </option>

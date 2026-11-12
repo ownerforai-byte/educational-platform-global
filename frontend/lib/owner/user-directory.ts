@@ -1,8 +1,13 @@
 import type { OwnerUser } from "@/lib/api/owner";
+import { isOwnerEmail } from "@/lib/owner";
 
 export type UserAccessFilter = "all" | "PENDING" | "ACTIVE" | "REJECTED";
 export type UserTierFilter = "all" | "member" | "plus" | "pro" | "owner";
 export type UserSortKey = "newest" | "oldest" | "credits_desc" | "credits_asc" | "name";
+
+/** Tiers the console may grant — including assigning another email as owner. */
+export const GRANTABLE_TIERS = ["member", "plus", "pro", "owner"] as const;
+export type GrantableTier = (typeof GRANTABLE_TIERS)[number];
 
 export interface UserDirectoryStats {
   total: number;
@@ -33,21 +38,26 @@ function tierOf(u: OwnerUser): string {
 }
 
 /**
- * Owner account: effective tier or stored role is owner. Owners live in
- * their own plain roster — never in Review, never actionable from the
- * directory (no overlap with the two user systems below).
+ * Root owner email only — fixed platform owner shown in the plain roster.
+ * Assigned operators (`role: "owner"` on another email) stay in Members so
+ * they can be re-tiered or revoked.
  */
 export function isOwnerUser(u: OwnerUser): boolean {
-  return tierOf(u) === "owner" || u.role === "owner";
+  return isOwnerEmail(u.email);
+}
+
+/** Live owner grant on a non-root email. */
+export function isAssignedOwner(u: OwnerUser): boolean {
+  return !isOwnerEmail(u.email) && (tierOf(u) === "owner" || u.role === "owner");
 }
 
 export type OwnerSystem = "review" | "approved";
 
 /**
- * The two owner-console systems, partitioned with no overlap:
- * - review:   PENDING non-owners awaiting a decision
- * - approved: ACTIVE/REJECTED non-owners already decided
- * Owners are in neither — see `owners` (plain roster only).
+ * Partition with no overlap:
+ * - owners:   root owner email only (plain roster)
+ * - review:   PENDING accounts awaiting a decision
+ * - approved: ACTIVE/REJECTED accounts (includes assigned owners)
  */
 export function partitionOwnerSystems(users: OwnerUser[]): {
   review: OwnerUser[];
@@ -58,7 +68,7 @@ export function partitionOwnerSystems(users: OwnerUser[]): {
   const approved: OwnerUser[] = [];
   const owners: OwnerUser[] = [];
   for (const u of users) {
-    if (isOwnerUser(u)) {
+    if (isOwnerEmail(u.email)) {
       owners.push(u);
     } else if ((u.access_status ?? "ACTIVE") === "PENDING") {
       review.push(u);

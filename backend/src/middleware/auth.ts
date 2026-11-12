@@ -113,21 +113,12 @@ export async function loadProfilePlan(
 }
 
 /**
- * ONE owner email (owner 2026-11-11: "keep sahrocky81@gmail.com only as owner
- * and remove other"). Owners are also fully independent of one another: there
- * is no owner-protection guard left, so any owner may re-tier, suspend or
- * delete any account — including another owner.
+ * Root owner email. Always owner. Additional operators become owners only
+ * when this address (or another owner) grants `role: "owner"` live in DB.
  */
-const DEFAULT_OWNER_EMAILS = ["sahrocky81@gmail.com"];
+export const OWNER_EMAIL = "sahrocky81@gmail.com";
 
-const envOwnerEmails = process.env.OWNER_EMAILS
-  ? process.env.OWNER_EMAILS.split(",").map((e) => e.trim().toLowerCase()).filter(Boolean)
-  : [];
-
-export const OWNER_EMAILS = new Set<string>([
-  ...DEFAULT_OWNER_EMAILS,
-  ...envOwnerEmails,
-]);
+export const OWNER_EMAILS = new Set<string>([OWNER_EMAIL]);
 
 export function isOwnerEmail(email?: string | null): boolean {
   if (!email) return false;
@@ -135,11 +126,7 @@ export function isOwnerEmail(email?: string | null): boolean {
 }
 
 /**
- * An owner ACCOUNT: an allowlisted owner email OR the owner rung (explicit
- * owner grant; legacy operator rows normalize to owner).
- *
- * Approve/reject is restricted to owner accounts. Every owner may also decide
- * ANOTHER owner — owner-to-owner changes are no longer blocked.
+ * Owner console / owner APIs: root email OR a live `role: "owner"` grant.
  */
 export function isOwnerAccount(
   user?: { email?: string | null; role?: UserRole | string | null } | null,
@@ -148,6 +135,10 @@ export function isOwnerAccount(
   return isOwnerEmail(user.email) || normalizeRole(user.role) === "owner";
 }
 
+/**
+ * Live approval: root owner + assigned owners always in; everyone else needs
+ * profiles.access_status === ACTIVE (set from the owner console).
+ */
 export function isApprovedAccount(
   user: { email?: string | null; role?: string | null },
   accessStatus: unknown,
@@ -290,12 +281,8 @@ export const requireAdmin = requireRole("pro", "owner");
 export const requireOwner = requireRole("owner");
 
 /**
- * Express middleware: require an allowlisted owner email.
- * Pairs with `requireAuth` (so `req.user` exists) — role alone is NOT enough,
- * mirroring the owner console gate in `api/owner.ts`.
- *
- * Used by owner-only surfaces such as the Image Hub (/mind-studio):
- * any signed-in non-owner email gets a 403.
+ * Express middleware: require an owner account (root email or live owner grant).
+ * Pairs with `requireAuth` so `req.user` exists.
  */
 export function requireOwnerEmail(
   req: Request,
@@ -307,8 +294,8 @@ export function requireOwnerEmail(
     res.status(401).json({ error: "Unauthorized" });
     return;
   }
-  if (!isOwnerEmail(user.email)) {
-    res.status(403).json({ error: "Forbidden — owner emails only" });
+  if (!isOwnerAccount(user)) {
+    res.status(403).json({ error: "Forbidden — owner accounts only" });
     return;
   }
   next();

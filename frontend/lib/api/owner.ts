@@ -183,6 +183,19 @@ export function bulkOwnerUserAccessStatus(
   });
 }
 
+/**
+ * Live wipe: REJECT every ACTIVE non-owner account in the database.
+ * Keeps only sahrocky81@gmail.com. Pending signups stay pending.
+ */
+export function revokeAllOwnerAccess(): Promise<{
+  success: true;
+  revoked: number;
+  applied: string[];
+  skipped: Array<{ userId: string; reason: string }>;
+}> {
+  return apiFetch("/api/owner/users/revoke-all", { method: "POST" });
+}
+
 export function getOwnerPremiumRequests(): Promise<OwnerPremiumRequest[]> {
   return apiFetch<OwnerPremiumRequest[]>("/api/owner/premium-requests");
 }

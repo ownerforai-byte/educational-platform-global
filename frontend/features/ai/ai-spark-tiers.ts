@@ -45,9 +45,8 @@ export interface AiSparkUserLike {
 
 /**
  * Resolve the tier for a session user — the ONE resolver both the access
- * ladder and the spark allowance use. Order matters: the owner allowlist and
- * owner role always win, then pro (role, plan, or the legacy premium flag),
- * then plus, then the signed-in Member base. A signed-out viewer is a guest.
+ * ladder and the spark allowance use. Order: root owner email or live
+ * role:"owner" grant, then pro, then plus, then Member.
  */
 export function aiSparkTierFor(
   user: AiSparkUserLike | null | undefined,

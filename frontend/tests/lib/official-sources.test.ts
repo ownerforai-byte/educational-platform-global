@@ -20,13 +20,13 @@ describe("independence disclaimer", () => {
     expect(INDEPENDENCE_DISCLAIMER).toBe(REQUIRED);
   });
 
-  it("shows it on the landing screen and on every sign-in / sign-up screen", () => {
-    // Landing: the banner renders before the first section, above the fold.
-    expect(read("components/home/home-public.tsx")).toContain("<IndependenceDisclaimer");
-    // Every tier home shares TierPage, so the note rides on all four.
-    expect(read("components/home/tier-interfaces.tsx")).toContain("<IndependenceDisclaimer");
-    // AuthShell wraps both /login and /signup.
-    expect(read("features/auth/components/auth-shell.tsx")).toContain("<IndependenceDisclaimer");
+  it("lives in the footer only", () => {
+    // Owner 2026-11-11: "keep the disclaimer only in footer, remove it from all
+    // other places". The footer band is shared by both footer views.
+    expect(read("components/layout/footer.tsx")).toContain("<IndependenceDisclaimer");
+    expect(read("components/home/home-public.tsx")).not.toContain("<IndependenceDisclaimer");
+    expect(read("components/home/tier-interfaces.tsx")).not.toContain("<IndependenceDisclaimer");
+    expect(read("features/auth/components/auth-shell.tsx")).not.toContain("<IndependenceDisclaimer");
   });
 });
 

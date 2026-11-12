@@ -224,7 +224,7 @@ describe("device signup limit (one account per device without approval)", () => 
     expect(h.store.usage.size).toBe(2);
   });
 
-  it("a REJECTED bound account still blocks the device (no approval)", async () => {
+  it("a REJECTED bound account releases the device for normal guest signup", async () => {
     const { signup } = await mount();
     const first = await signup("first@example.com");
     const boundKey = [...h.store.usage.keys()][0];
@@ -232,8 +232,9 @@ describe("device signup limit (one account per device without approval)", () => 
     h.store.profiles.get(userId)!.access_status = "REJECTED";
 
     const second = await signup("second@example.com", first.deviceCookie);
-    expect(second.status).toBe(403);
-    expect(second.body.code).toBe("DEVICE_SIGNUP_LIMIT");
+    expect(second.status).toBe(200);
+    expect(second.body.accessStatus).toBe("PENDING");
+    expect(h.signUp).toHaveBeenCalledTimes(2);
   });
 
 });

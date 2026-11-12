@@ -18,7 +18,11 @@ import {
 import { apiFetch } from "@/lib/api-client";
 import { VisitorExitNote } from "@/components/layout/visitor-exit-note";
 import { VerifyingStatus } from "./verifying-status";
-import { readStatusToken, rememberPendingSignup } from "../pending-signup-identity";
+import {
+  clearPendingSignup,
+  readStatusToken,
+  rememberPendingSignup,
+} from "../pending-signup-identity";
 
 /**
  * Post-signup status screen (owner-approval flow, 2026-09-26).
@@ -28,13 +32,13 @@ import { readStatusToken, rememberPendingSignup } from "../pending-signup-identi
  *
  *   PENDING  → "account created, awaiting approval" + live stepper (polls)
  *   ACTIVE   → access granted → sign in
- *   REJECTED → not approved → leave a message to this email; sahrocky81@gmail.com
+ *   REJECTED → clear the pending identity and return to the normal guest
+ *              home (no second rejected/no-account status page)
  *
  * The screen polls the server every few seconds, so the moment the owner
  * approves in the control panel, this page flips to "Access granted" on its
  * own. Login/signup stay hidden here — those belong to the auth pages, and
- * the profile interface belongs to the signed-in app: three mutually
- * exclusive states.
+ * the profile interface belongs to the signed-in app.
  */
 
 const POLL_MS = 6000;
@@ -130,14 +134,27 @@ export function WelcomeStatus() {
     };
   }, [check]);
 
+  // Rejection ends the waiting flow: drop the pending identity and hard-nav
+  // to guest home so the shell cannot bounce them onto /welcome/no-account
+  // (that was the duplicate "rejected" experience).
+  useEffect(() => {
+    if (state !== "REJECTED") return;
+    clearPendingSignup();
+    window.location.replace("/");
+  }, [state]);
+
   const firstName = fullName?.trim().split(/\s+/)[0];
   const step = STEP_INDEX[state];
-  const failed = state === "REJECTED";
-  // Only a server-confirmed account may be described as "created". A visitor
-  // with no account is routed to /welcome/no-account by the page gate, but the
-  // banner must also stay hidden while the poll has not confirmed anything.
-  const accountConfirmed =
-    state === "PENDING" || state === "ACTIVE" || state === "REJECTED";
+  // Only PENDING/ACTIVE stay on this waiting screen. REJECTED leaves immediately.
+  const accountConfirmed = state === "PENDING" || state === "ACTIVE";
+
+  if (state === "REJECTED") {
+    return (
+      <div className="flex justify-center py-6" data-testid="account-status-rejected-exit">
+        <VerifyingStatus compact label="Returning to the app" />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6" data-testid="account-status">
@@ -163,34 +180,27 @@ export function WelcomeStatus() {
           const Icon = s.icon;
           const done = i < step || (i === step && state === "ACTIVE");
           const current = i === step && state !== "ACTIVE";
-          const broken = failed && i === step;
           return (
             <li
               key={s.label}
               className={`relative rounded-2xl border p-3 text-center transition-colors ${
-                broken
-                  ? "border-destructive/40 bg-destructive/10"
-                  : done
-                    ? "border-emerald-500/40 bg-emerald-500/10"
-                    : current
-                      ? "border-primary/40 bg-primary/10"
-                      : "border-border/60 bg-muted/30"
+                done
+                  ? "border-emerald-500/40 bg-emerald-500/10"
+                  : current
+                    ? "border-primary/40 bg-primary/10"
+                    : "border-border/60 bg-muted/30"
               }`}
             >
               <span
                 className={`mx-auto mb-2 flex h-9 w-9 items-center justify-center rounded-xl ${
-                  broken
-                    ? "bg-destructive/15 text-destructive"
-                    : done
-                      ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"
-                      : current
-                        ? "bg-primary/15 text-primary"
-                        : "bg-muted text-muted-foreground"
+                  done
+                    ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-400"
+                    : current
+                      ? "bg-primary/15 text-primary"
+                      : "bg-muted text-muted-foreground"
                 }`}
               >
-                {broken ? (
-                  <ShieldAlert className="h-5 w-5" />
-                ) : current && state === "PENDING" ? (
+                {current && state === "PENDING" ? (
                   // Infinite yellow "outgoing" pulse radiating from the
                   // awaiting-approval clock (owner request 2026-10-17). The
                   // clock stays put in the middle while a yellow ring expands
@@ -308,18 +318,8 @@ export function WelcomeStatus() {
         />
       )}
 
-      {state === "REJECTED" && (
-        <StateCard
-          icon={<ShieldAlert className="h-5 w-5 text-destructive" />}
-          title="Account not approved"
-          badge={<StatusPill status="REJECTED" />}
-          body="This account wasn't approved for access. If you believe this is a mistake, leave a message to this email; sahrocky81@gmail.com."
-          actions={<AuthButton href="/" label="Back to home" />}
-        />
-      )}
-
       {/* Owner request 2026-10-17: a candid exit note for visitors. */}
-      <VisitorExitNote />
+      {state === "PENDING" && <VisitorExitNote />}
 
       {/* ── Trust footer — kept, with its sign, below the note (owner 2026-10-17) ── */}
       <p className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground">
@@ -413,11 +413,10 @@ function StateCard({
   );
 }
 
-function StatusPill({ status }: { status: "PENDING" | "ACTIVE" | "REJECTED" }) {
+function StatusPill({ status }: { status: "PENDING" | "ACTIVE" }) {
   const styles = {
     PENDING: "bg-amber-500/15 border-amber-500/30 text-amber-600 dark:text-amber-400",
     ACTIVE: "bg-emerald-500/15 border-emerald-500/30 text-emerald-600 dark:text-emerald-400",
-    REJECTED: "bg-destructive/15 border-destructive/30 text-destructive",
   } as const;
   return (
     <span className={`rounded-full border px-2 py-0.5 text-[10px] font-bold tracking-wider ${styles[status]}`}>

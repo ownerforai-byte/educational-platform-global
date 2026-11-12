@@ -62,30 +62,42 @@ describe("owner user directory", () => {
     expect(rows[0].email).toBe("beta@test.com");
   });
 
-  it("partitions Review vs Approved with no overlap and owners in neither", () => {
+  it("partitions Pending vs Members; only the root owner email is the plain roster", () => {
     const withOwner: OwnerUser[] = [
       ...sample,
       {
         id: "o",
-        email: "boss@test.com",
-        full_name: "Boss",
+        email: "sahrocky81@gmail.com",
+        full_name: "Root Owner",
         role: "owner",
         effectiveTier: "owner",
         credits: 0,
         premium_status: true,
-        access_status: "PENDING",
+        access_status: "ACTIVE",
         created_at: "2026-01-01T00:00:00Z",
+      },
+      {
+        id: "ao",
+        email: "assigned@test.com",
+        full_name: "Assigned Owner",
+        role: "owner",
+        effectiveTier: "owner",
+        credits: 0,
+        premium_status: true,
+        access_status: "ACTIVE",
+        created_at: "2026-01-04T00:00:00Z",
       },
     ];
     const { review, approved, owners } = partitionOwnerSystems(withOwner);
     expect(review.map((u) => u.id)).toEqual(["a"]);
-    expect(approved.map((u) => u.id)).toEqual(["b"]);
+    // Assigned owners stay in Members so they can be re-tiered; root email alone is the roster.
+    expect(approved.map((u) => u.id)).toEqual(["b", "ao"]);
     expect(owners.map((u) => u.id)).toEqual(["o"]);
     expect(isOwnerUser(withOwner[2])).toBe(true);
-    // Owners do not inflate Review/Approved stats.
+    expect(isOwnerUser(withOwner[3])).toBe(false);
     const stats = computeUserDirectoryStats(withOwner);
     expect(stats.pending).toBe(1);
-    expect(stats.active).toBe(1);
+    expect(stats.active).toBe(2);
     expect(stats.owners).toBe(1);
   });
 

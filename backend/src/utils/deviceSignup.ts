@@ -10,9 +10,10 @@ import { getGuestDeviceId, issueGuestDeviceCookie } from "./guestQuota";
  * A device is the HttpOnly `neb-gid` cookie minted by guestQuota — JS cannot
  * read or selectively rewrite it, and it survives IP changes. The first
  * account created on a device is bound to it; while that account is still
- * PENDING (or REJECTED), a second signup from the same device is refused with
- * DEVICE_SIGNUP_LIMIT_MESSAGE. Once an owner APPROVES the bound account
- * (access_status ACTIVE) the device may create another account.
+ * PENDING, a second signup from the same device is refused with
+ * DEVICE_SIGNUP_LIMIT_MESSAGE. Once the owner APPROVES (ACTIVE) or REJECTS
+ * the bound account, the device returns to normal guest use and may create
+ * another account — rejection must not trap the device on a status screen.
  *
  * Bindings live in guest_chat_usage (migration 004) under a NON-expiring day
  * so the hourly quota cleanup (which trims day < today) never removes them —
@@ -101,11 +102,9 @@ export async function checkDeviceSignupLimit(
       console.warn("[device-signup] status read failed, allowing signup:", error.message);
       return { limited: false, deviceId };
     }
-    // A missing profile row reads as ACTIVE (same default as auth.ts), so only
-    // an explicitly unapproved row blocks the device.
-    const limited = (data ?? []).some(
-      (row) => row.access_status === "PENDING" || row.access_status === "REJECTED",
-    );
+    // Only a live PENDING bind blocks the device. REJECTED clears the trap so
+    // the device can browse as a guest and sign up again if needed.
+    const limited = (data ?? []).some((row) => row.access_status === "PENDING");
     return { limited, deviceId };
   } catch (err) {
     console.warn("[device-signup] status read threw, allowing signup:", err instanceof Error ? err.message : err);

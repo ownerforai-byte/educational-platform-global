@@ -11,7 +11,10 @@ import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/access-level";
-import { rememberPendingSignup } from "../pending-signup-identity";
+import {
+  clearPendingSignup,
+  rememberPendingSignup,
+} from "../pending-signup-identity";
 import { DEVICE_SIGNUP_NOTICE } from "./access-notice";
 
 export function LoginForm() {
@@ -43,6 +46,11 @@ export function LoginForm() {
       // Persist the hardcoded identity so the status screen survives refresh.
       rememberPendingSignup(result.statusToken);
       router.push("/welcome");
+    } else if (result.code === "ACCOUNT_REJECTED") {
+      // Rejection ends the waiting flow — back to normal guest browsing.
+      // Do not open /welcome (that duplicated the rejected experience).
+      clearPendingSignup();
+      router.replace("/");
     } else {
       setError(result.error);
     }

@@ -2,7 +2,6 @@ import Link from "next/link";
 import { BookOpen, FlaskConical, History, ShieldCheck } from "lucide-react";
 import { ACCESS_NOTICE } from "@/features/auth/components/access-notice";
 import { VisitorHomeChat } from "@/components/home/visitor-home-chat";
-import { IndependenceDisclaimer } from "@/components/platform/independence-disclaimer";
 
 export { ACCESS_NOTICE } from "@/features/auth/components/access-notice";
 
@@ -39,10 +38,6 @@ export function HomePublic() {
   return (
     <div data-testid="public-home" className="bg-background text-foreground">
       <div className="mx-auto w-full max-w-6xl space-y-14 px-4 py-12 sm:px-6 sm:py-16">
-        {/* Play "Misleading Claims" (2026-11-11): the non-affiliation sentence
-            must be visible without scrolling on the landing screen. */}
-        <IndependenceDisclaimer className="max-w-3xl" />
-
         <section aria-labelledby="landing-title" className="max-w-3xl">
           <p className="text-sm font-semibold tracking-wide text-primary">NEB Class 11 &amp; 12</p>
           <h1 id="landing-title" className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl">

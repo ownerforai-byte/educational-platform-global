@@ -1,22 +1,12 @@
 /**
- * Owner allowlist — mirrors backend/src/middleware/auth.ts OWNER_EMAILS.
- * Keep both lists in sync. The frontend list is a UX convenience only; the
- * backend gate (`/api/owner/*`) is the real security boundary.
+ * Root owner email — mirrors backend/src/middleware/auth.ts.
+ * This address always owns the platform and cannot be replaced by another
+ * coded allowlist entry. Additional operators work as owner only when the
+ * root owner grants them `role: "owner"` live in the database.
  */
-/**
- * ONE owner email — mirrors backend/src/middleware/auth.ts. Owners are equal and
- * independent; any owner may manage any account, including another owner.
- */
-const DEFAULT_OWNER_EMAILS = ["sahrocky81@gmail.com"];
+export const OWNER_EMAIL = "sahrocky81@gmail.com";
 
-const envOwnerEmails = process.env.NEXT_PUBLIC_OWNER_EMAILS
-  ? process.env.NEXT_PUBLIC_OWNER_EMAILS.split(",").map((e) => e.trim().toLowerCase()).filter(Boolean)
-  : [];
-
-export const OWNER_EMAILS = new Set<string>([
-  ...DEFAULT_OWNER_EMAILS,
-  ...envOwnerEmails,
-]);
+export const OWNER_EMAILS = new Set<string>([OWNER_EMAIL]);
 
 export function isOwnerEmail(email?: string | null): boolean {
   if (!email) return false;
@@ -24,11 +14,9 @@ export function isOwnerEmail(email?: string | null): boolean {
 }
 
 /**
- * Whether this session may open the owner console and its management
- * surfaces. An owner ACCOUNT is either an allowlisted owner email or an
- * account on the owner rung (owner grant / normalized legacy operator).
- * Approve/reject is restricted to owner accounts; owner-to-owner changes are
- * blocked server-side separately.
+ * May open the owner console / act as owner:
+ *   - the root owner email, or
+ *   - any account the root owner assigned `role: "owner"` (live DB grant).
  */
 export function isOwnerAccount(
   user: { email?: string | null; role?: string | null } | null | undefined
@@ -37,14 +25,9 @@ export function isOwnerAccount(
   return isOwnerEmail(user.email) || user.role === "owner";
 }
 
-/**
- * Email-allowlist gate for owner-exclusive CONTENT (Diagram Hub, owner design
- * surfaces). Those backend routes still authorize by allowlisted email, so this
- * stays narrower than `isOwnerAccount`.
- */
+/** Same as `isOwnerAccount` — assigned owners count. */
 export function isOwnerUser(
   user: { email?: string | null; role?: string | null } | null | undefined
 ): boolean {
-  if (!user) return false;
-  return isOwnerEmail(user.email);
+  return isOwnerAccount(user);
 }
