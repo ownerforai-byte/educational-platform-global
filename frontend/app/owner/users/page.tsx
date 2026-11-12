@@ -53,10 +53,34 @@ import {
 } from "@/lib/owner/user-directory";
 import { cn } from "@/lib/utils";
 import { type UserRole } from "@/lib/auth/roles";
-import { ACCESS_LABELS, TIER_SPARKS, type AccessLevel } from "@/lib/access-level";
+import { ACCESS_LABELS, type AccessLevel } from "@/lib/access-level";
+import { aiSparkLimitLabel, type AiSparkTier } from "@/features/ai/ai-spark-tiers";
 import { OWNER_EMAIL } from "@/lib/owner";
 
 const CREDIT_PRESETS = [50, 100, 250, 500] as const;
+
+/** Live plan label from profiles.plan (legacy plus_20 → Plus). */
+function livePlanLabel(plan: string | null | undefined): string {
+  const raw = (plan ?? "member").toLowerCase();
+  if (raw === "plus" || raw === "plus_20") return "Plus";
+  if (raw === "pro") return "Pro";
+  if (raw === "owner") return "Owner";
+  return "Member";
+}
+
+/** Prefer API sparkLimit; fall back to the live tier table. */
+function liveSparkLabel(u: {
+  sparkLimit?: number | null;
+  effectiveTier?: AccessLevel | null;
+}): string {
+  if (u.sparkLimit === null) return "Unlimited / day";
+  if (typeof u.sparkLimit === "number" && Number.isFinite(u.sparkLimit)) {
+    return `${u.sparkLimit} / day`;
+  }
+  const tier = (u.effectiveTier ?? "member") as AiSparkTier;
+  const label = aiSparkLimitLabel(tier);
+  return label === "Unlimited" ? "Unlimited / day" : `${label} / day`;
+}
 
 const tierBadge: Record<AccessLevel, string> = {
   guest: "bg-slate-500/15 text-slate-500",
@@ -524,7 +548,7 @@ export default function OwnerUsersPage() {
               >
                 {GRANTABLE_TIERS.map((role) => (
                   <option key={role} value={role}>
-                    {ACCESS_LABELS[role]} · {TIER_SPARKS[role]} Veer sparks
+                    {ACCESS_LABELS[role]} · {aiSparkLimitLabel(role)} Veer sparks / day
                   </option>
                 ))}
               </select>
@@ -706,6 +730,12 @@ export default function OwnerUsersPage() {
                           >
                             {ACCESS_LABELS[u.effectiveTier ?? "member"]}
                           </span>
+                          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded border border-border/60 bg-muted/40 text-muted-foreground">
+                            Plan · {livePlanLabel(u.plan)}
+                          </span>
+                          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded border border-primary/20 bg-primary/5 text-primary">
+                            Sparks · {liveSparkLabel(u)}
+                          </span>
                           <span
                             className={`inline-flex items-center gap-1 text-[10px] font-bold px-1.5 py-0.5 rounded border ${
                               (accessBadge[u.access_status ?? "ACTIVE"] ?? accessBadge.ACTIVE).className
@@ -794,7 +824,7 @@ export default function OwnerUsersPage() {
                               ))}
                             </select>
                             <span className="text-[10px] text-muted-foreground text-center">
-                              Veer sparks: {TIER_SPARKS[u.effectiveTier ?? "member"]}
+                              Plan {livePlanLabel(u.plan)} · Sparks {liveSparkLabel(u)}
                             </span>
                           </div>
                           <Button
@@ -834,6 +864,19 @@ export default function OwnerUsersPage() {
                             <div>
                               <p className="text-muted-foreground">User ID</p>
                               <p className="font-mono mt-0.5 break-all">{u.id}</p>
+                            </div>
+                            <div>
+                              <p className="text-muted-foreground">Live plan</p>
+                              <p className="mt-0.5">{livePlanLabel(detail.profile.plan ?? u.plan)}</p>
+                            </div>
+                            <div>
+                              <p className="text-muted-foreground">Live spark limit</p>
+                              <p className="mt-0.5">
+                                {liveSparkLabel({
+                                  sparkLimit: detail.profile.sparkLimit ?? u.sparkLimit,
+                                  effectiveTier: detail.profile.effectiveTier ?? u.effectiveTier,
+                                })}
+                              </p>
                             </div>
                             <div>
                               <p className="text-muted-foreground">Pro since</p>

@@ -73,7 +73,6 @@ allowances: member 3, plus 25, pro 50, owner unlimited, guest 0.
 | Image input or generation | `ai/image-input.ts`, `ai/image-gen.ts` | `tests/image-input.test.ts`, `tests/ai-image-route.test.ts` |
 | Storage upload, R2 overflow | `api/storage.ts`, `src/storage/` | `tests/storage-r2.test.ts` |
 | Env validation, boot config | `config/env.ts`, `api/config.ts` | `tests/config-route.test.ts`, `tests/security-policy.test.ts` |
-| R1 habits/journal/plans | `api/r1*.ts`, `middleware/r1Access.ts` | `tests/r1-access.test.ts`, `tests/r1-journal.test.ts` |
 | Public platform guide | `api/ai-platform-guide.ts`, `ai/platform-guide-prompt.ts` | `tests/ai-platform-guide.test.ts`, `tests/platform-guide-prompt.test.ts` |
 
 If the symbol you need is not obvious here, use the repo knowledge graph

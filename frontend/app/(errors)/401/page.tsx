@@ -5,7 +5,7 @@ import { ERROR_PAGE_REGISTRY } from "@/lib/errors/error-page";
 export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: ERROR_PAGE_REGISTRY["401"].title,
-  description: ERROR_PAGE_REGISTRY["401"].description,
+  description: ERROR_PAGE_REGISTRY["401"].hint,
 };
 
 export default function UnauthorizedPage() {

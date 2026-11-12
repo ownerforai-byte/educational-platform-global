@@ -8,8 +8,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * Study journal placeholder. The former R1-backed journal API was removed;
- * keep the Pro nav destination so the member surface stays intact.
+ * Study journal placeholder. Keep the Pro nav destination so the member surface stays intact.
  */
 export default function JournalPage() {
   return (
@@ -19,7 +18,7 @@ export default function JournalPage() {
       </span>
       <h1 className="mt-4 text-xl font-extrabold tracking-tight">Study Journal</h1>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        The private daily journal is being rebuilt without the old R1 layer.
+        The private daily journal is currently being refreshed.
         Your other Pro study surfaces stay open meanwhile.
       </p>
       <Link

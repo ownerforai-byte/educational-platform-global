@@ -50,14 +50,15 @@ export type ErrorPageTreatment =
   | "sky"
   | "slate";
 
-export type ErrorPageAction = "retry" | "login" | "home" | "back";
+export type ErrorPageAction = "retry" | "login" | "home" | "back" | "plans";
 
 export interface ErrorPageDefinition {
-  readonly statusLabel: string;
+  /** Big watermark number — the only technical reference left on screen. */
   readonly displayCode: string;
+  /** One short sentence: what happened. */
   readonly title: string;
-  readonly description: string;
-  readonly detail: string;
+  /** One short instruction: what to do about it. */
+  readonly hint: string;
   readonly icon: ErrorPageIcon;
   readonly treatment: ErrorPageTreatment;
   readonly primaryAction: ErrorPageAction;
@@ -67,16 +68,22 @@ export interface ErrorPageDefinition {
 }
 
 /**
- * Safe learner-facing content only. Raw thrown messages never belong here:
- * production RSC errors may contain only a generic message and a digest.
+ * Safe learner-facing content only, and deliberately SHORT (owner 2026-11-11:
+ * "on every error page just show like; check internet connection, plan, refresh
+ * the page and remove all those description … remove all confidential info").
+ *
+ * So each variant is exactly one sentence of what happened plus one sentence of
+ * what to do. No HTTP status prose, no internal error digest, no explanation of
+ * which service talked to which — nothing a student cannot act on.
+ *
+ * Raw thrown messages still never belong here: production RSC errors may carry
+ * only a generic message and a digest.
  */
 export const ERROR_PAGE_REGISTRY = {
   "400": {
-    statusLabel: "HTTP 400 · BAD REQUEST",
     displayCode: "400",
-    title: "That request needs a correction",
-    description: "The address or request was not understood.",
-    detail: "Check the link you used, go back to the previous page, or return home and try a different route.",
+    title: "That link did not work",
+    hint: "Go back and open the page again.",
     icon: "alert",
     treatment: "amber",
     primaryAction: "back",
@@ -85,11 +92,9 @@ export const ERROR_PAGE_REGISTRY = {
     secondaryLabel: "Go home",
   },
   "401": {
-    statusLabel: "HTTP 401 · UNAUTHORIZED",
     displayCode: "401",
-    title: "Sign in to continue",
-    description: "Your account needs to be verified for this page.",
-    detail: "Sign in with your usual account. If your session expired, signing in again will refresh it securely.",
+    title: "Sign in again",
+    hint: "Your session ended. Sign in to continue.",
     icon: "lock",
     treatment: "indigo",
     primaryAction: "login",
@@ -98,24 +103,20 @@ export const ERROR_PAGE_REGISTRY = {
     secondaryLabel: "Go home",
   },
   "403": {
-    statusLabel: "HTTP 403 · FORBIDDEN",
     displayCode: "403",
-    title: "This area is restricted",
-    description: "Your current account does not have access here.",
-    detail: "Return to an available section or go back. Account permissions will not be changed by retrying this page.",
+    title: "Your plan does not include this",
+    hint: "Check the plans, or go home.",
     icon: "shield",
     treatment: "rose",
-    primaryAction: "home",
-    primaryLabel: "Go home",
-    secondaryAction: "back",
-    secondaryLabel: "Go back",
+    primaryAction: "plans",
+    primaryLabel: "See plans",
+    secondaryAction: "home",
+    secondaryLabel: "Go home",
   },
   "404": {
-    statusLabel: "HTTP 404 · NOT FOUND",
     displayCode: "404",
-    title: "We cannot find that page",
-    description: "The page may have moved, or the address may be incomplete.",
-    detail: "Use the homepage to find your study section, or go back and check the link that brought you here.",
+    title: "Page not found",
+    hint: "Check the address, or go home.",
     icon: "search",
     treatment: "violet",
     primaryAction: "home",
@@ -124,106 +125,90 @@ export const ERROR_PAGE_REGISTRY = {
     secondaryLabel: "Go back",
   },
   "408": {
-    statusLabel: "HTTP 408 · REQUEST TIMEOUT",
     displayCode: "408",
-    title: "The request took too long",
-    description: "The connection did not finish in time.",
-    detail: "Try again when your connection is steady. Your previous study activity and saved work are not affected.",
+    title: "The page took too long",
+    hint: "Refresh the page.",
     icon: "clock",
     treatment: "orange",
     primaryAction: "retry",
-    primaryLabel: "Try again",
+    primaryLabel: "Refresh",
     secondaryAction: "home",
     secondaryLabel: "Go home",
   },
   "429": {
-    statusLabel: "HTTP 429 · TOO MANY REQUESTS",
     displayCode: "429",
-    title: "A little too quickly",
-    description: "The service received too many requests in a short period.",
-    detail: "Pause for a moment before trying again. Repeated immediate retries may keep the temporary limit in place.",
+    title: "Too many requests",
+    hint: "Wait a moment, then refresh the page.",
     icon: "rate-limit",
     treatment: "yellow",
     primaryAction: "retry",
-    primaryLabel: "Try again",
+    primaryLabel: "Refresh",
     secondaryAction: "home",
     secondaryLabel: "Go home",
   },
   "500": {
-    statusLabel: "HTTP 500 · INTERNAL ERROR",
     displayCode: "500",
-    title: "Something broke on our side",
-    description: "The page could not finish rendering your request.",
-    detail: "Try this section again or return home. Technical details stay in our logs rather than on this screen.",
+    title: "Something broke",
+    hint: "Refresh the page.",
     icon: "server",
     treatment: "red",
     primaryAction: "retry",
-    primaryLabel: "Try again",
+    primaryLabel: "Refresh",
     secondaryAction: "home",
     secondaryLabel: "Go home",
   },
   "502": {
-    statusLabel: "HTTP 502 · BAD GATEWAY",
     displayCode: "502",
-    title: "The server connection stumbled",
-    description: "One service received an invalid response from another.",
-    detail: "This is usually temporary. Retry the page, or return home while the connection between services recovers.",
+    title: "Connection stumbled",
+    hint: "Check your internet connection, then refresh the page.",
     icon: "gateway",
     treatment: "cyan",
     primaryAction: "retry",
-    primaryLabel: "Try again",
+    primaryLabel: "Refresh",
     secondaryAction: "home",
     secondaryLabel: "Go home",
   },
   "503": {
-    statusLabel: "HTTP 503 · SERVICE UNAVAILABLE",
     displayCode: "503",
-    title: "The service is taking a break",
-    description: "The platform is temporarily unavailable or starting up.",
-    detail: "Wait briefly and try again. Cached pages may still be available from the sections you visited earlier.",
+    title: "The platform is starting",
+    hint: "Wait a few seconds, then refresh the page.",
     icon: "maintenance",
     treatment: "teal",
     primaryAction: "retry",
-    primaryLabel: "Try again",
+    primaryLabel: "Refresh",
     secondaryAction: "home",
     secondaryLabel: "Go home",
   },
   "504": {
-    statusLabel: "HTTP 504 · GATEWAY TIMEOUT",
     displayCode: "504",
-    title: "The upstream server timed out",
-    description: "A service waited too long for another service to answer.",
-    detail: "Try again in a moment. If the problem continues, return home and come back to this section later.",
+    title: "The server timed out",
+    hint: "Refresh the page.",
     icon: "hourglass",
     treatment: "blue",
     primaryAction: "retry",
-    primaryLabel: "Try again",
+    primaryLabel: "Refresh",
     secondaryAction: "home",
     secondaryLabel: "Go home",
   },
   network: {
-    statusLabel: "CONNECTION · NETWORK FAILURE",
     displayCode: "NET",
-    title: "We cannot reach the platform",
-    description: "Your device appears online, but the request could not connect.",
-    detail: "Check your connection, VPN, or DNS and retry. This is different from a confirmed server error or offline state.",
+    title: "Cannot reach the platform",
+    hint: "Check your internet connection, then refresh the page.",
     icon: "network",
     treatment: "sky",
     primaryAction: "retry",
-    primaryLabel: "Retry connection",
+    primaryLabel: "Refresh",
     secondaryAction: "home",
     secondaryLabel: "Go home",
   },
   offline: {
-    statusLabel: "DEVICE · OFFLINE",
     displayCode: "OFF",
     title: "You're offline",
-    description: "There is no internet connection right now.",
-    detail: "Pages you visited before may still open from cache. Reconnect and reload to fetch the latest version.",
+    hint: "Check your internet connection, then refresh the page.",
     icon: "offline",
     treatment: "slate",
     primaryAction: "retry",
-    primaryLabel: "Reload page",
+    primaryLabel: "Refresh",
     secondaryAction: "home",
     secondaryLabel: "Go home",
   },

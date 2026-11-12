@@ -9,11 +9,36 @@ describe("error page registry", () => {
   it("gives every variant distinct copy, icon, code, and treatment", () => {
     const definitions = ERROR_PAGE_VARIANTS.map((variant) => ERROR_PAGE_REGISTRY[variant]);
 
-    for (const key of ["title", "description", "detail", "icon", "displayCode", "treatment"] as const) {
+    // The one-line instruction may repeat ("Refresh the page." serves several
+    // faults); the title still has to identify the fault on its own.
+    for (const key of ["title", "icon", "displayCode", "treatment"] as const) {
       expect(new Set(definitions.map((definition) => definition[key])).size).toBe(
         ERROR_PAGE_VARIANTS.length,
       );
     }
+  });
+
+  it("keeps the copy to one line of what happened and one of what to do", () => {
+    // Owner 2026-11-11: "just show like; check internet connection, plan, refresh
+    // the page and remove all those description".
+    for (const variant of ERROR_PAGE_VARIANTS) {
+      const { title, hint } = ERROR_PAGE_REGISTRY[variant];
+      expect(title.split(". ").length, `${variant} title is short`).toBe(1);
+      expect(hint.length, `${variant} hint is short`).toBeLessThanOrEqual(70);
+    }
+  });
+
+  it("tells the student to refresh or check the connection on transport faults", () => {
+    for (const variant of ["408", "429", "500", "502", "503", "504", "network", "offline"] as const) {
+      expect(ERROR_PAGE_REGISTRY[variant].hint).toMatch(/refresh the page/i);
+    }
+    expect(ERROR_PAGE_REGISTRY.offline.hint).toContain("internet connection");
+    expect(ERROR_PAGE_REGISTRY.network.hint).toContain("internet connection");
+  });
+
+  it("points a plan-locked page at the plans", () => {
+    expect(ERROR_PAGE_REGISTRY["403"].hint).toContain("plans");
+    expect(ERROR_PAGE_REGISTRY["403"].primaryAction).toBe("plans");
   });
 });
 

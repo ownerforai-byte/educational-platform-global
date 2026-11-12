@@ -31,8 +31,7 @@ export function OfflineBanner() {
       className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center gap-2 bg-amber-500 px-4 py-2 pb-safe-bottom text-sm font-medium text-amber-950"
     >
       <WifiOff className="h-4 w-4 shrink-0" aria-hidden="true" />
-      You&apos;re offline — showing cached pages. Content will refresh when you
-      reconnect.
+      You&apos;re offline. Check your internet connection.
     </div>
   );
 }

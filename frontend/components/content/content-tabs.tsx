@@ -171,12 +171,13 @@ function ResourceCard({ title, description, Component }: { title: string; descri
 }
 
 function renderResources(
+  classSlug: string,
   unitId: string,
   subjectSlug: string,
   topicSlug: string,
   topicTitle: string,
 ): ReactNode {
-  const body = renderUnitResources(unitId, subjectSlug, topicSlug, topicTitle);
+  const body = renderUnitResources(classSlug, unitId, subjectSlug, topicSlug, topicTitle);
   const capsuleNo = subjectSlug === "mathematics" ? MATH_UNIT_CAPSULE_NO[unitId] : undefined;
   if (!capsuleNo) return body;
   return (
@@ -188,6 +189,7 @@ function renderResources(
 }
 
 function renderUnitResources(
+  classSlug: string,
   unitId: string,
   subjectSlug: string,
   topicSlug: string,
@@ -221,8 +223,12 @@ function renderUnitResources(
           <ResourceCard title={sub.title} description={sub.description} Component={sub.component} />
         ) : (
           <EmptyState
-            title="Coming soon"
-            description={`Interactive resources for ${topicTitle} will be available here.`}
+            title={`No interactive resource for ${topicTitle} yet`}
+            description={`The theory for ${topicTitle} is fully covered by the Class 11 Algebra master document above and by this topic's Notes tab — nothing is missing from the syllabus itself. An interactive drill for this specific topic is authored here only when it adds something the notes cannot show.`}
+            action={{
+              label: "Open the mathematics notes hub",
+              href: `/${classSlug}-notes/mathematics`,
+            }}
           />
         )}
       </div>
@@ -234,8 +240,12 @@ function renderUnitResources(
   if (!spec) {
     return (
       <EmptyState
-        title="Coming soon"
-        description={`Resources for ${topicTitle} will be available here.`}
+        title={`No dedicated interactive resource for ${topicTitle}`}
+        description="This topic's Notes tab carries the full authored theory, and the chapter documents above cover the unit. A purpose-built interactive for this topic is added only when it genuinely teaches something static notes cannot — a missing one here is not a gap in the syllabus coverage."
+        action={{
+          label: `Open the ${subjectSlug} notes hub`,
+          href: `/${classSlug}-notes/${subjectSlug}`,
+        }}
       />
     );
   }
@@ -320,7 +330,7 @@ function LockedTabCard({ tab }: { tab: ContentTab }) {
   );
 }
 
-/** Topic journal tab — R1-backed storage was removed; keep the Plus tab open. */
+/** Topic journal tab — keep the Plus tab open. */
 function TopicJournalPanel({
   topicTitle,
 }: {
@@ -471,7 +481,7 @@ function TabPanel({
           onOpenNotes={onOpenNotes}
         />
         <DocumentsAndPdfs classSlug={classSlug} subjectSlug={subjectSlug} unitId={unitId} />
-        {renderResources(unitId, subjectSlug, topicSlug, topicTitle)}
+        {renderResources(classSlug, unitId, subjectSlug, topicSlug, topicTitle)}
       </div>
     );
   }

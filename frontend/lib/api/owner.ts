@@ -35,10 +35,12 @@ export interface OwnerUser {
   full_name: string | null;
   email: string;
   role: "member" | "plus" | "pro" | "owner" | null;
-  /** profiles.plan — legacy rows (member, plus_20) read at their mapped rung. */
+  /** Live profiles.plan from the DB. */
   plan?: string | null;
   /** The rung the user actually experiences (role/plan/premium folded by the backend resolver). */
   effectiveTier?: AccessLevel;
+  /** Live daily Veer spark limit for this user (`null` = unlimited). */
+  sparkLimit?: number | null;
   credits: number;
   credits_limit?: number | null;
   premium_status: boolean;

@@ -19,7 +19,7 @@ import { cn } from "@/lib/utils";
 /**
  * Floating focus timer — owner tier only.
  * Status dot: green = running, amber = paused with time, grey = idle.
- * Sessions stay on-device (no R1 activity log).
+ * Sessions stay on-device.
  */
 export function FocusTimer() {
   const { user } = useSession();

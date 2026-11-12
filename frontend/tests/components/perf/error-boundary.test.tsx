@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { ErrorBoundary, withErrorBoundary } from "@/components/perf/error-boundary";
+import { ERROR_PAGE_REGISTRY } from "@/lib/errors/error-page";
 
 /** React logs caught render errors; keep the test output clean. */
 function silenceReactErrors() {
@@ -36,12 +37,12 @@ describe("ErrorBoundary", () => {
       </ErrorBoundary>,
     );
 
-    expect(screen.getByText("Something broke on our side")).toBeTruthy();
+    expect(screen.getByText(ERROR_PAGE_REGISTRY["500"].title)).toBeTruthy();
     expect(screen.queryByText("render exploded")).not.toBeInTheDocument();
-    expect(screen.getByRole("button", { name: "Try again" })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Refresh" })).toBeTruthy();
   });
 
-  it("recovers the subtree when Try again is pressed", () => {
+  it("recovers the subtree when Refresh is pressed", () => {
     silenceReactErrors();
 
     let shouldThrow = true;
@@ -55,10 +56,10 @@ describe("ErrorBoundary", () => {
         <Child />
       </ErrorBoundary>,
     );
-    expect(screen.getByText("Something broke on our side")).toBeTruthy();
+    expect(screen.getByText(ERROR_PAGE_REGISTRY["500"].title)).toBeTruthy();
 
     shouldThrow = false;
-    fireEvent.click(screen.getByRole("button", { name: "Try again" }));
+    fireEvent.click(screen.getByRole("button", { name: "Refresh" }));
     expect(screen.getByText("recovered child")).toBeTruthy();
   });
 
@@ -132,7 +133,7 @@ describe("ErrorBoundary", () => {
         <Boom explode />
       </ErrorBoundary>,
     );
-    expect(screen.getByText("Something broke on our side")).toBeTruthy();
+    expect(screen.getByText(ERROR_PAGE_REGISTRY["500"].title)).toBeTruthy();
 
     rerender(
       <ErrorBoundary name="test" resetKey="/b">

@@ -9,7 +9,7 @@ import {
 import { supabaseAdmin } from "../../db/supabase";
 import { invalidateSectionTierCache } from "../../utils/sectionTiers";
 import { authEmailsById, invalidateAuthEmailsCache } from "../../utils/authEmails";
-import { aiSparkTierFor } from "../../utils/aiSpark";
+import { aiSparkLimitFor, aiSparkTierFor } from "../../utils/aiSpark";
 import { sendApprovalEmail } from "../../utils/mailer";
 
 /**
@@ -293,17 +293,20 @@ router.get("/users", requireAuth, async (req: Request, res: Response) => {
     const emails = await authEmailsById();
     let rows = (data ?? []).map((p: Record<string, unknown>) => {
       const email = emails.get(String(p.id)) ?? "";
+      const plan = (p.plan as string | null) ?? null;
+      // Live rung + spark limit — same resolver Veer uses (not a hardcoded UI map).
+      const effectiveTier = aiSparkTierFor({
+        email,
+        role: p.role as string | null,
+        plan,
+        premiumStatus: p.premium_status as boolean | null,
+      });
       return {
         ...p,
         email,
-        // The rung the user actually experiences — role/plan/premium folded by
-        // the same resolver the spark allowance and section gates use.
-        effectiveTier: aiSparkTierFor({
-          email,
-          role: p.role as string | null,
-          plan: p.plan as string | null,
-          premiumStatus: p.premium_status as boolean | null,
-        }),
+        plan,
+        effectiveTier,
+        sparkLimit: aiSparkLimitFor(effectiveTier),
       };
     });
 
@@ -586,16 +589,19 @@ router.get("/users/:id", requireAuth, async (req: Request, res: Response) => {
         .limit(20),
     ]);
 
+    const effectiveTier = aiSparkTierFor({
+      email,
+      role: profile.role,
+      plan: profile.plan,
+      premiumStatus: profile.premium_status,
+    });
     res.json({
       profile: {
         ...profile,
         email,
-        effectiveTier: aiSparkTierFor({
-          email,
-          role: profile.role,
-          plan: profile.plan,
-          premiumStatus: profile.premium_status,
-        }),
+        plan: profile.plan ?? null,
+        effectiveTier,
+        sparkLimit: aiSparkLimitFor(effectiveTier),
       },
       creditHistory: txRes.data ?? [],
       premiumRequests: reqRes.data ?? [],
@@ -784,7 +790,20 @@ router.patch("/users/:id/role", requireAuth, async (req: Request<{ id: string }>
       return;
     }
 
-    res.json({ success: true, userId: req.params.id, newRole: grant.role, effectiveTier: grant.role });
+    const effectiveTier = aiSparkTierFor({
+      email: targetEmail,
+      role: grant.role,
+      plan: grant.plan,
+      premiumStatus: grant.premium_status,
+    });
+    res.json({
+      success: true,
+      userId: req.params.id,
+      newRole: grant.role,
+      plan: grant.plan,
+      effectiveTier,
+      sparkLimit: aiSparkLimitFor(effectiveTier),
+    });
   } catch (err: any) {
     console.error("[owner] tier grant error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });

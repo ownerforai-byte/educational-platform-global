@@ -5,7 +5,7 @@ import { ERROR_PAGE_REGISTRY } from "@/lib/errors/error-page";
 export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: ERROR_PAGE_REGISTRY["502"].title,
-  description: ERROR_PAGE_REGISTRY["502"].description,
+  description: ERROR_PAGE_REGISTRY["502"].hint,
 };
 
 export default function BadGatewayPage() {

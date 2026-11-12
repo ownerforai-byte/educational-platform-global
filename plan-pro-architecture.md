@@ -174,7 +174,6 @@
 │   │   │   ├── error-handler.ts      # Central error → HTTP response mapper
 │   │   │   ├── async-handler.ts      # Async route wrapper
 │   │   │   ├── request-logger.ts     # Structured request logging (new)
-│   │   │   ├── r1-access.ts          # R1 feature gate
 │   │   │   └── index.ts              # Barrel
 │   │   │
 │   │   ├── api/                      # Route handlers — grouped by domain
@@ -228,12 +227,6 @@
 │   │   │   │   ├── storage.controller.ts
 │   │   │   │   ├── support.controller.ts
 │   │   │   │   └── health.controller.ts  # (new)
-│   │   │   ├── r1/                   # R1 life feature routes
-│   │   │   │   ├── r1.routes.ts
-│   │   │   │   ├── activities.controller.ts
-│   │   │   │   ├── habits.controller.ts
-│   │   │   │   ├── journal.controller.ts
-│   │   │   │   └── plans.controller.ts
 │   │   │   └── index.ts              # Mount all domain routers
 │   │   │
 │   │   ├── services/                 # Business logic layer (new)
@@ -407,7 +400,6 @@
 │   │   ├── mindmap/                  # ✅ exists — mindmap viewer
 │   │   ├── image-hub/                # ✅ exists — image generation/search
 │   │   ├── knowledge/                # ✅ exists — world knowledge, writing
-│   │   ├── r1/                       # ✅ exists — R1 life feature
 │   │   ├── ai/                       # 🆕 NEW — extract from lib/ai + components/ai
 │   │   │   ├── components/           # Chat window, classroom, diagram studio
 │   │   │   ├── hooks/                # useChat, useAIQuiz, etc.
@@ -540,7 +532,6 @@
 │   │   │   ├── owner.ts
 │   │   │   ├── platform-guide.ts
 │   │   │   ├── progress.ts
-│   │   │   ├── r1.ts
 │   │   │   ├── resources.ts
 │   │   │   ├── subjects.ts
 │   │   │   └── index.ts
@@ -852,7 +843,7 @@ Restructure `backend/src/api/` from 50 flat files into domain groups.
 
 **Steps:**
 1. Create domain directories under `backend/src/api/`:
-   - `auth/`, `ai/`, `content/`, `practice/`, `user/`, `social/`, `admin/`, `platform/`, `r1/`
+   - `auth/`, `ai/`, `content/`, `practice/`, `user/`, `social/`, `admin/`, `platform/`
 2. For each domain, create `<domain>.routes.ts` that mounts all controllers
 3. Move each existing route file into its domain folder, renaming to `*.controller.ts`:
 
@@ -906,11 +897,6 @@ Restructure `backend/src/api/` from 50 flat files into domain groups.
    | `api/periodic-table.ts` | `api/content/periodic-table.controller.ts` |
    | `api/periodic-unlock.ts` | `api/content/periodic-table.controller.ts` (merge) |
    | `api/biology.ts` | `api/content/subjects.controller.ts` (merge) |
-   | `api/r1.ts` | `api/r1/r1.routes.ts` |
-   | `api/r1-activities.ts` | `api/r1/activities.controller.ts` |
-   | `api/r1-habits.ts` | `api/r1/habits.controller.ts` |
-   | `api/r1-journal.ts` | `api/r1/journal.controller.ts` |
-   | `api/r1-plans.ts` | `api/r1/plans.controller.ts` |
 
 4. Create `api/index.ts` that imports all domain routers and mounts them
 5. Update `app.ts` to use the single `api/index.ts` mount point

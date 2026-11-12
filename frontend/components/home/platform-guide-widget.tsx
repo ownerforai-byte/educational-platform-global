@@ -48,10 +48,10 @@ function collectUserContext(
       }
     } catch { /* ignore */ }
 
-    // Read habits from r1 localStorage if available
+    // Read habits from localStorage if available
     let habits: string[] = [];
     try {
-      const habitsRaw = localStorage.getItem("neb-r1-habits:v1");
+      const habitsRaw = localStorage.getItem("neb-habits:v1") || localStorage.getItem("neb-r1-habits:v1");
       if (habitsRaw) {
         const parsed: Array<{ name: string; active?: boolean }> = JSON.parse(habitsRaw);
         habits = parsed.filter((h) => h.active !== false).map((h) => h.name).slice(0, 5);
