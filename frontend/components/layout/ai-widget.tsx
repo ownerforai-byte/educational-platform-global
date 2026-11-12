@@ -10,6 +10,7 @@ import {
   GraduationCap,
   History,
   Leaf,
+  Lightbulb,
   Loader2,
   Plus,
   RotateCcw,
