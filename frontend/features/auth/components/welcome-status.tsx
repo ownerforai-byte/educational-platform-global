@@ -176,8 +176,9 @@ export function WelcomeStatus() {
       <ol className="grid grid-cols-3 gap-2" aria-label="Approval progress">
         {STEPS.map((s, i) => {
           const Icon = s.icon;
-          const done = i < step || (i === step && state === "ACTIVE");
-          const current = i === step && state !== "ACTIVE";
+          // ACTIVE/REJECTED hand off above — this stepper only renders wait states.
+          const done = i < step;
+          const current = i === step;
           return (
             <li
               key={s.label}
