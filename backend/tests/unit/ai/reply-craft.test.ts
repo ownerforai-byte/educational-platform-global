@@ -89,6 +89,8 @@ describe("reply craft — the ChatGPT/Claude-grade layer", () => {
     // 2026-11: COMPLETE_REVEAL_RULES added ~1.4k chars; cap raised 65k -> 67k.
     // 2026-11-09: silent question set + in-place contrast rules added ~2.2k;
     // cap raised 67k -> 70k.
-    expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(70_000);
+    // 2026-11-12: 4-section chat/workspace chips added (measured 70.2k);
+    // cap raised 70k -> 71k.
+    expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(71_000);
   });
 });

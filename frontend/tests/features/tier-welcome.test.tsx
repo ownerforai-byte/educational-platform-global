@@ -195,7 +195,8 @@ describe("welcome pages and post-auth landings are wired", () => {
       expect(read(file), file).toContain("tierWelcomePathFor");
       expect(read(file), file).not.toContain("tierHomePathFor");
     }
-    // The approval-status screen keeps its own /welcome route untouched.
-    expect(read("app/welcome/page.tsx")).toContain("WelcomeStatus");
+    // /welcome is a dispatcher (5cd13702); the waiting screen with WelcomeStatus lives at /welcome/pending.
+    expect(read("app/welcome/page.tsx")).toContain("ApprovalDispatch");
+    expect(read("app/welcome/pending/page.tsx")).toContain("WelcomeStatus");
   });
 });
