@@ -117,7 +117,7 @@ describe("SparkGate — inline mode (explicit rung)", () => {
   });
 
   it("renders the block for the owner regardless of plan", () => {
-    session.user = { email: "harindarsah98172@gmail.com", role: "owner" };
+    session.user = { email: "sahrocky81@gmail.com", role: "owner" };
     render(<SparkGate minLevel="pro">{CONTENT}</SparkGate>);
     expect(screen.getByTestId("section-content")).toBeInTheDocument();
   });

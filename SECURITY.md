@@ -11,7 +11,7 @@
 
 **Do not open a public GitHub issue for security vulnerabilities.**
 
-Email **[ravikisan1814@gmail.com]** (the address published in the Privacy
+Email **[sahrocky81@gmail.com]** (the address published in the Privacy
 Policy and the legal pages) with:
 - A description of the vulnerability
 - Steps to reproduce it
@@ -28,7 +28,7 @@ A public, rights-holder-facing version of this process is at
 `SOURCES.md` is the source ledger; this section is the operative process.
 
 **Intake.** Rights holders, publishers, authors, or their authorised agents
-email **ravikisan1814@gmail.com** with the subject `Content takedown request`.
+email **sahrocky81@gmail.com** with the subject `Content takedown request`.
 A complete request includes: the exact page URL(s), a description of the
 original work and the part to review, contact details, evidence of ownership
 or authority, and a good-faith statement. There is no in-app submission form

@@ -223,7 +223,7 @@ describe("ensureDailyCredits", () => {
     db.queue("profiles:update", { data: [{ id: USER }], error: null });
     db.queue("credit_transactions:insert", { data: [], error: null });
 
-    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "owner", false);
+    const result = await ensureDailyCredits(USER, "sahrocky81@gmail.com", "owner", false);
     expect(result).toEqual({ credits: DAILY_CREDIT_POOL, resetDone: true, unlimited: false });
 
     const update = db.calls.find((c) => c.op === "update");
@@ -253,7 +253,7 @@ describe("ensureDailyCredits", () => {
       error: null,
     });
 
-    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "owner", false);
+    const result = await ensureDailyCredits(USER, "sahrocky81@gmail.com", "owner", false);
     // The classic bug: report the stale 0 → caller 402s despite a full pool.
     expect(result).toEqual({ credits: DAILY_CREDIT_POOL, resetDone: false, unlimited: false });
     // No GRANT for a reset this call did not perform.
@@ -273,7 +273,7 @@ describe("ensureDailyCredits", () => {
     db.queue("profiles:update", { data: [{ id: USER }], error: null }); // retry wins
     db.queue("credit_transactions:insert", { data: [], error: null });
 
-    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "owner", false);
+    const result = await ensureDailyCredits(USER, "sahrocky81@gmail.com", "owner", false);
     expect(result).toEqual({ credits: DAILY_CREDIT_POOL, resetDone: true, unlimited: false });
 
     const updates = db.calls.filter((c) => c.op === "update");
@@ -317,7 +317,7 @@ describe("ensureDailyCredits", () => {
     db.queue("profiles:update", { data: [{ id: USER }], error: null });
     db.queue("credit_transactions:insert", { data: [], error: null });
 
-    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "owner", false);
+    const result = await ensureDailyCredits(USER, "sahrocky81@gmail.com", "owner", false);
     expect(result).toEqual({ credits: DAILY_CREDIT_POOL, resetDone: true, unlimited: false });
     expect(db.calls.filter((c) => c.op === "update")).toHaveLength(1);
   });
@@ -328,7 +328,7 @@ describe("ensureDailyCredits", () => {
       error: null,
     });
 
-    const result = await ensureDailyCredits(USER, "ravikisan1814@gmail.com", "owner", true);
+    const result = await ensureDailyCredits(USER, "sahrocky81@gmail.com", "owner", true);
     expect(result.unlimited).toBe(true);
     expect(result.credits).toBe(Infinity);
     expect(db.calls.filter((c) => c.op === "update")).toHaveLength(0);

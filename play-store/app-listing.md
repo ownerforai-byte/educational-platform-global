@@ -78,7 +78,7 @@ v1.0.0 — Initial release:
 
 ## Links (fill on Play Console)
 - Website: https://ravikisan.vercel.app
-- Support email: ravikisan1814@gmail.com
+- Support email: sahrocky81@gmail.com
 - Support website: `[OPTIONAL — e.g. ravikisan.vercel.app/support]`
 - Privacy policy URL: `https://ravikisan.vercel.app/legal/privacy`
 - Terms of Service URL: `https://ravikisan.vercel.app/legal/terms`
@@ -86,7 +86,7 @@ v1.0.0 — Initial release:
 - Purchase/Refund policy URL (if IAP enabled): `https://ravikisan.vercel.app/legal/purchases`
 
 ## Contact
-- Email: ravikisan1814@gmail.com
+- Email: sahrocky81@gmail.com
 - Address: `Kalaiya-25, Bara, Madhesh Province, Nepal`
 
 ---

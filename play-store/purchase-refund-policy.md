@@ -2,11 +2,11 @@
 
 **Last updated:** 14 October 2026
 **Website:** https://ravikisan.vercel.app
-**Contact:** ravikisan1814@gmail.com
+**Contact:** sahrocky81@gmail.com
 
 > This policy applies to **any paid feature** of the App (premium access,
 > added AI credits, or subscriptions). All details are filled in (refund window:
-> 7 days; support: ravikisan1814@gmail.com). If you use Google Play Billing,
+> 7 days; support: sahrocky81@gmail.com). If you use Google Play Billing,
 > keep it consistent with your Play Billing setup before submission. If the app
 > is currently **free**, you can still publish it as free and simply omit the
 > purchase section — but the policy must exist if you add in-app purchases or
@@ -45,7 +45,7 @@
   - AI actions that **fail on our side** are refunded automatically to your pool
     (the platform does not charge you for a failed request).
   - Unused credit or premium purchased **within `7` days** of purchase can be
-    requested for a refund by emailing **ravikisan1814@gmail.com** from your
+    requested for a refund by emailing **sahrocky81@gmail.com** from your
     account address; we will review and process or explain why it cannot be
     refunded.
 - Refunds of subscription periods already used are at Google's discretion per
@@ -60,7 +60,7 @@
 
 ## 6. Support
 
-For billing issues: **ravikisan1814@gmail.com** (include your account email, order
+For billing issues: **sahrocky81@gmail.com** (include your account email, order
 ID, and a short description).
 
 ---

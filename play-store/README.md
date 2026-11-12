@@ -51,7 +51,7 @@ providers, cookies, credit/premium system) so it matches reality.
 - **Credits / premium:** daily AI-credit pool; premium = unlimited; failed AI
   actions auto-refund
 - **No analytics / ad SDKs** (so Data Safety "Ads" = No)
-- **Support email:** ravikisan1814@gmail.com
+- **Support email:** sahrocky81@gmail.com
 
 ## ⚠️ Before submitting
 - Have a **lawyer review** the 4 policies (they are a starting template, not

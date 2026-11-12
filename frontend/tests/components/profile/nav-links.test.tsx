@@ -49,7 +49,7 @@ import { UserNav } from "@/components/layout/user-nav";
 
 const ownerUser = {
   id: "u1",
-  email: "harindarsah98172@gmail.com",
+  email: "sahrocky81@gmail.com",
   fullName: "Harindra Sah",
   role: "owner" as const,
   credits: 42,

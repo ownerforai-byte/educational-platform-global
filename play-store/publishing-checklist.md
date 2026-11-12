@@ -30,7 +30,7 @@ tick this list before hitting **Create app**.
 
 ## 2) Links & contacts
 - [ ] Privacy policy URL → **required** (`privacy-policy.md` hosted)
-- [ ] Support email: `ravikisan1814@gmail.com`
+- [ ] Support email: `sahrocky81@gmail.com`
 - [ ] Support website (optional)
 - [ ] Purchase/Refund policy URL (only if IAP/subscriptions enabled)
 

@@ -3,7 +3,7 @@
 **Last updated:** 14 October 2026
 **Effective date:** 14 October 2026
 **Website:** https://ravikisan.vercel.app
-**Contact:** ravikisan1814@gmail.com
+**Contact:** sahrocky81@gmail.com
 
 > This policy explains what information Ravikisan's Platform ("the App", "we", "us")
 > collects, why, and what choices you have. It is written for Google Play review
@@ -20,8 +20,8 @@ past-year questions, and an AI study assistant ("Veer").
 
 - **Operator / developer:** `Ravikisan`
 - **Country:** Nepal
-- **Support email:** ravikisan1814@gmail.com
-- **App data store (for Data Safety form):** `ravikisan1814@gmail.com`
+- **Support email:** sahrocky81@gmail.com
+- **App data store (for Data Safety form):** `sahrocky81@gmail.com`
 
 ## 2. Information we collect
 
@@ -106,7 +106,7 @@ Subject to applicable law, you can:
 - **Delete** your account and associated data
 - **Export** your learning records
 
-To exercise any of these, email **ravikisan1814@gmail.com** from your account
+To exercise any of these, email **sahrocky81@gmail.com** from your account
 address. We will respond within a reasonable time.
 
 ## 9. Children's privacy
@@ -125,7 +125,7 @@ was collected by mistake, contact us and we will delete it.
 ## 11. Security
 
 We use reasonable safeguards, but no method of transmission or storage is 100%
-secure. Report vulnerabilities to ravikisan1814@gmail.com.
+secure. Report vulnerabilities to sahrocky81@gmail.com.
 
 ## 12. Changes to this policy
 
@@ -135,7 +135,7 @@ the updated policy.
 
 ## 13. Contact
 
-**Email:** ravikisan1814@gmail.com
+**Email:** sahrocky81@gmail.com
 **Address:** `Kalaiya-25, Bara, Madhesh Province, Nepal`
 
 ---

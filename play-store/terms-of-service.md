@@ -2,7 +2,7 @@
 
 **Last updated:** 14 October 2026
 **Website:** https://ravikisan.vercel.app
-**Contact:** ravikisan1814@gmail.com
+**Contact:** sahrocky81@gmail.com
 
 > **IMPORTANT:** By creating an account or using Ravikisan's Platform, you agree
 > to these Terms. All details have been filled in (operator: Ravikisan; address:
@@ -105,7 +105,7 @@ competent courts of `Nepal`.
 
 ## 14. Contact
 
-**Email:** ravikisan1814@gmail.com
+**Email:** sahrocky81@gmail.com
 **Operator:** `Ravikisan`, `Kalaiya-25, Bara, Madhesh Province, Nepal`
 
 ---

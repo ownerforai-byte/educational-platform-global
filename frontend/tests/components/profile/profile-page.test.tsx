@@ -71,7 +71,7 @@ import ProfilePage from "@/app/(app)/profile/page";
 
 const ownerUser = {
   id: "u1",
-  email: "harindarsah98172@gmail.com",
+  email: "sahrocky81@gmail.com",
   fullName: "Harindra Sah",
   role: "owner" as const,
   credits: 42,
@@ -157,7 +157,7 @@ describe("ProfilePage", () => {
     fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
 
     expect(screen.getByText("Harindra Sah")).toBeInTheDocument();
-    expect(screen.getByText("harindarsah98172@gmail.com")).toBeInTheDocument();
+    expect(screen.getByText("sahrocky81@gmail.com")).toBeInTheDocument();
     expect(screen.getByText("HS")).toBeInTheDocument(); // initials
     expect(screen.getByText("Owner")).toBeInTheDocument(); // canonical access-tier badge
     // The unified access-tier card replaces the separate plan badge.

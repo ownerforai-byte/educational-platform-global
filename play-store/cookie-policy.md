@@ -2,7 +2,7 @@
 
 **Last updated:** 14 October 2026
 **Website:** https://ravikisan.vercel.app
-**Contact:** ravikisan1814@gmail.com
+**Contact:** sahrocky81@gmail.com
 
 ## What we use
 
@@ -49,4 +49,4 @@ Session cookies are protected in transit (HTTPS) and at rest on our host
 We may update this policy; material changes are reflected with a new
 "Last updated" date.
 
-**Contact:** ravikisan1814@gmail.com
+**Contact:** sahrocky81@gmail.com
