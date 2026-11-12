@@ -2,6 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
 import Script from "next/script";
 import "./globals.css";
+// KaTeX styles (and its fonts) must be global so every math surface — Veer
+// chat, notes, lessons, quizzes — renders LaTeX identically everywhere.
+import "katex/dist/katex.min.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { QueryProvider } from "@/providers/query-provider";
 import { AuthProvider } from "@/providers/auth-provider";

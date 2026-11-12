@@ -134,7 +134,7 @@ describe("topic learning sections", () => {
     renderSection("notes");
 
     expect(await screen.findByText("Canonical explanation of displacement and distance.")).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: "Understand Motion in a Straight Line in four passes" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Motion in a Straight Line" })).toBeInTheDocument();
     expect(screen.getByText("Motion describes how position changes with time.")).toBeInTheDocument();
     expect(screen.queryByText("Secondary duplicate must not render.")).toBeNull();
     expect(screen.queryByText(/A body moves 3 m east/)).toBeNull();

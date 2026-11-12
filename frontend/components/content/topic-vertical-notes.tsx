@@ -32,6 +32,7 @@ import { MathMarkdown } from "@/components/content/math-markdown";
 import { NoteBlocks } from "@/components/content/rich-note";
 import { selectCanonicalNoteEntry } from "@/lib/note-routes";
 import { EntranceQuiz } from "@/components/content/entrance-quiz";
+import { TopicDocView } from "@/features/docs/doc-view";
 import { getEntranceQuestions } from "@/lib/entrance-questions";
 import { FormulaCard } from "@/components/content/formula-card";
 import {
@@ -684,6 +685,25 @@ export function TopicVerticalNotes({
     [factBank],
   );
 
+  const docData = useMemo(
+    () => ({
+      summary,
+      notes: rawNotes,
+      importantConcepts: rawImportantConcepts,
+      universalFacts: rawUniversalFacts,
+      keyPoints: populatedKeyPoints,
+      formulas: populatedFormulas,
+      examShortTricks: rawExamShortTricks,
+      specialNotes: rawSpecialNotes,
+      confusion: rawConfusion,
+      importantNotes: rawImportantNotes,
+      importantStatements: rawImportantStatements,
+      practiceQuestions: rawPracticeQuestions,
+      practice: rawPractice,
+    }),
+    [summary, rawNotes, rawImportantConcepts, rawUniversalFacts, populatedKeyPoints, populatedFormulas, rawExamShortTricks, rawSpecialNotes, rawConfusion, rawImportantNotes, rawImportantStatements, rawPracticeQuestions, rawPractice],
+  );
+
   if (loading) {
     return (
       <div id="topic-notes" className="flex scroll-mt-24 flex-col items-center justify-center gap-3 py-12" role="status" aria-live="polite" aria-busy="true">
@@ -692,6 +712,7 @@ export function TopicVerticalNotes({
       </div>
     );
   }
+
 
   if (section === "mcq") {
     return (
@@ -874,73 +895,20 @@ export function TopicVerticalNotes({
         </p>
       )}
 
-      <nav aria-label="Note learning path" className="rounded-3xl border border-primary/20 bg-primary/5 p-4 sm:p-5">
-        <div className="flex items-start gap-3"><BookOpen className="mt-0.5 h-5 w-5 shrink-0 text-primary" /><div><h2 className="text-base font-bold">Understand {topicTitle} in four passes</h2><p className="mt-1 text-xs leading-relaxed text-muted-foreground">Start with the big picture, understand the explanation, lock in the terms and formulas, then remove common traps.</p></div></div>
-        <ol className="mt-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-          {[
-            ["1", "Big picture", "note-start"],
-            ["2", "Understand", "note-explain"],
-            ["3", "Remember", "note-remember"],
-            ["4", "Avoid traps", "note-traps"],
-          ].map(([number, label, target]) => (
-            <li key={target}><a href={`#${target}`} className="flex min-h-11 items-center gap-2 rounded-xl border border-border/60 bg-card px-3 text-xs font-semibold transition-colors hover:border-primary/40"><span className="text-primary">{number}.</span>{label}</a></li>
-          ))}
-        </ol>
-      </nav>
+      <TopicDocView
+        classSlug={classSlug}
+        subjectSlug={subjectSlug}
+        unitId={unitId}
+        topicSlug={topicSlug}
+        topicTitle={topicTitle}
+        data={docData}
+      />
 
-      <div id="note-start" className="scroll-mt-24 space-y-6">
-        {(summary || rawImportantConcepts.length > 0 || rawUniversalFacts.length > 0) && (
-          <LearningSection id="note-start-heading" title="1. Start with the big picture" description="Read this first so every later detail has somewhere to fit." icon={Sparkles} badge="Overview">
-            {summary && <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-5"><h4 className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Core summary</h4><p className="mt-2 text-sm leading-7">{summary}</p></div>}
-            {rawImportantConcepts.length > 0 && <div><h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Your concept roadmap</h4><ol className="mt-3 space-y-2">{rawImportantConcepts.map((concept, index) => <li key={`${concept}-${index}`} className="flex items-start gap-3 rounded-xl bg-primary/5 p-3 text-sm leading-relaxed"><span className="font-bold text-primary">{index + 1}.</span>{concept}</li>)}</ol></div>}
-            {rawUniversalFacts.length > 0 && <div><h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Facts that anchor the topic</h4><ul className="mt-3 space-y-2">{rawUniversalFacts.map((fact, index) => <li key={`${fact}-${index}`} className="flex items-start gap-2 text-sm leading-relaxed"><Lightbulb className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />{fact}</li>)}</ul></div>}
-          </LearningSection>
-        )}
-        <VisualWorkspace classSlug={classSlug} subjectSlug={subjectSlug} unitId={unitId} topicSlug={topicSlug} topicTitle={topicTitle} concepts={activeData ? [activeData] : []} />
-      </div>
+      <VisualWorkspace classSlug={classSlug} subjectSlug={subjectSlug} unitId={unitId} topicSlug={topicSlug} topicTitle={topicTitle} concepts={activeData ? [activeData] : []} />
 
-      <div id="note-explain" className="scroll-mt-24">
-        <LearningSection id="note-explain-heading" title="2. Understand the explanation" description="Read one idea at a time. After each block, pause and explain it in your own words before continuing." icon={BookOpen} badge={`${rawNotes.length} explanation blocks`}>
-          {rawNotes.length === 0 ? <p className="rounded-2xl border border-dashed border-border/70 p-5 text-sm text-muted-foreground">No long-form note blocks are authored here. Use the visual, key terms and worked examples to build the explanation.</p> : rawNotes.map((note, index) => (
-            <article key={`${note}-${index}`} className="rounded-2xl border border-border/60 bg-muted/20 p-5">
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-widest text-primary">Idea {index + 1} of {rawNotes.length}</p>
-              <MathMarkdown content={note} className="space-y-3 text-sm leading-7 text-foreground" />
-            </article>
-          ))}
-          <NoteBlocks blocks={activeData?.blocks} formulaSpecs={activeData?.formulaSpecs} />
-        </LearningSection>
-      </div>
+      {hasHighYieldTopicData(highYield) && <FactBank factBank={factBank} />}
 
-      <div id="note-remember" className="scroll-mt-24 space-y-6">
-        {hasHighYieldTopicData(highYield) && <FactBank factBank={factBank} />}
-        {populatedKeyPoints.length > 0 && (
-          <LearningSection id="note-key-points-heading" title="3. Remember the key terms" description="Use these definitions to check whether your explanation is precise." icon={ListOrdered} badge="Vocabulary">
-            <ol className="space-y-3">{populatedKeyPoints.map((point, index) => <li key={`${point}-${index}`} className="flex items-start gap-3 rounded-xl border border-border/60 p-4"><span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500/10 text-xs font-bold text-violet-500">{index + 1}</span><MathMarkdown content={point} className="text-sm leading-relaxed" /></li>)}</ol>
-          </LearningSection>
-        )}
-        {populatedFormulas.length > 0 && (
-          <LearningSection id="note-formulas-heading" title="Formulas and calculation shortcuts" description="Read each formula together with its meaning and conditions, not as an isolated symbol string." icon={Calculator} badge={`${structuredFormulas.length || populatedFormulas.length} formulas`}>
-            {structuredFormulas.length > 0 ? <div className="grid gap-3 lg:grid-cols-2">{structuredFormulas.map((formula, index) => <FormulaCard key={`${formula.name}-${index}`} formula={formula} index={index + 1} />)}</div> : <div className="space-y-3">{populatedFormulas.map((formula, index) => <div key={`${formula}-${index}`} className="rounded-2xl border border-sky-500/20 bg-sky-500/5 p-4"><p className="text-[10px] font-bold uppercase tracking-wider text-sky-500">Equation {index + 1}</p><MathMarkdown content={formula} className="mt-2 text-sm font-semibold" /></div>)}</div>}
-            {rawExamShortTricks.length > 0 && <div className="space-y-2 border-t border-border/60 pt-4"><h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground">Memory shortcuts</h4>{rawExamShortTricks.map((trick, index) => <p key={`${trick}-${index}`} className="rounded-xl bg-amber-500/5 p-3 text-sm leading-relaxed">{trick}</p>)}</div>}
-          </LearningSection>
-        )}
-      </div>
-
-      <div id="note-traps" className="scroll-mt-24 space-y-6">
-        {(rawImportantNotes.length > 0 || rawImportantStatements.length > 0) && (
-          <LearningSection id="note-important-heading" title="Important conditions and formal statements" icon={AlertTriangle} badge="Check before using">
-            {rawImportantNotes.map((note, index) => <div key={`${note}-${index}`} className="flex items-start gap-3 rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4 text-sm leading-relaxed"><AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-500" />{note}</div>)}
-            {rawImportantStatements.map((statement, index) => <div key={`${statement}-${index}`} className="flex items-start gap-3 rounded-xl border border-border/60 p-4 text-sm leading-relaxed"><span className="font-bold text-amber-500">{index + 1}.</span>{statement}</div>)}
-          </LearningSection>
-        )}
-        {(rawSpecialNotes.length > 0 || rawConfusion.length > 0 || factBank.entranceTraps.length > 0) && (
-          <LearningSection id="note-traps-heading" title="4. Avoid the common traps" description="Compare the tempting mistake with the correct reasoning so you can catch it in an exam." icon={ShieldAlert} badge="Final check">
-            {rawSpecialNotes.map((note, index) => <p key={`${note}-${index}`} className="rounded-xl border border-border/60 p-4 text-sm leading-relaxed">{note}</p>)}
-            {rawConfusion.map((confusion, index) => <div key={`${confusion}-${index}`} className="flex items-start gap-3 rounded-xl border border-rose-500/20 bg-rose-500/5 p-4 text-sm leading-relaxed"><HelpCircle className="mt-0.5 h-4 w-4 shrink-0 text-rose-500" />{confusion}</div>)}
-            {factBank.entranceTraps.map((trap, index) => <article key={`${trap.trap}-${index}`} className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-4"><p className="text-xs font-bold uppercase tracking-wide text-rose-500">Trap</p><p className="mt-1 text-sm text-muted-foreground line-through">{trap.trap}</p><p className="mt-3 text-xs font-bold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">Correct idea</p><p className="mt-1 text-sm leading-relaxed">{trap.truth}</p><p className="mt-2 text-[10px] text-muted-foreground">{trap.examRef}</p></article>)}
-          </LearningSection>
-        )}
-      </div>
+      <NoteBlocks blocks={activeData?.blocks} formulaSpecs={activeData?.formulaSpecs} />
     </div>
   );
 }
