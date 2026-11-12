@@ -1,4 +1,6 @@
-export const dynamic = "force-dynamic";
+// Prerendered at build (SSG) — concept JSONs are read from the build workspace.
+export const dynamic = "force-static";
+export const dynamicParams = false;
 import Link from "next/link";
 import { getSubjectLegend } from "@/lib/legend";
 import { getUnitTopic } from "@/lib/queries";

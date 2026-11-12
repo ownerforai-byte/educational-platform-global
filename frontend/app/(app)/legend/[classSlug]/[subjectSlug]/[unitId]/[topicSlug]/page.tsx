@@ -1,4 +1,8 @@
-export const dynamic = "force-dynamic";
+// Prerendered at build (SSG) — same pattern as the formulas pages: the concept
+// JSONs are present in the build workspace, so all 696 topic pages (including
+// Devanagari Nepali slugs) ship as static HTML.
+export const dynamic = "force-static";
+export const dynamicParams = false;
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getUnitTopic } from "@/lib/queries";
@@ -38,10 +42,34 @@ function FactIcon({ type }: { type: string }) {
 
 /**
  * Per-topic "Concepts, Legends & Facts" page — one for every unit/topic of
- * every syllabus subject. Authored concept-JSON content renders here when it
- * exists; the exam shortcuts, time-saving notes and PYQ-with-short-solution
- * sections stay as explicit empty states until that content is added.
+ * every syllabus topic. Prerendered at build time (SSG) so the Devanagari
+ * Nepali slugs and all 696 topic URLs ship as static HTML.
  */
+export async function generateStaticParams() {
+  const { SYLLABUS, slugifySyllabusTopic } = await import("@/lib/syllabus");
+  const params: {
+    classSlug: string;
+    subjectSlug: string;
+    unitId: string;
+    topicSlug: string;
+  }[] = [];
+  for (const cls of SYLLABUS) {
+    for (const subject of cls.subjects) {
+      for (const unit of subject.units) {
+        for (const topic of unit.topics) {
+          params.push({
+            classSlug: cls.slug,
+            subjectSlug: subject.slug,
+            unitId: unit.id,
+            topicSlug: slugifySyllabusTopic(topic),
+          });
+        }
+      }
+    }
+  }
+  return params;
+}
+
 export default async function LegendTopicPage({
   params,
 }: {

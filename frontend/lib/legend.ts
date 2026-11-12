@@ -475,8 +475,27 @@ async function getSubjectsForClass(classSlug: string): Promise<string[]> {
 /**
  * Build the full legend index — scans all subjects, all classes.
  * Returns LegendSubject[] organized for display.
+ *
+ * Memoized per process: the scan reads every concept JSON under
+ * content/notes/concepts, and build-time prerendering of the 696 legend topic
+ * pages calls this once per page — without the cache that would be ~700 file
+ * reads × 696 pages. Content changes take effect on the next build/restart.
  */
+let legendIndexCache: LegendSubject[] | undefined;
+let legendIndexPromise: Promise<LegendSubject[]> | undefined;
+
 export async function getLegendIndex(): Promise<LegendSubject[]> {
+  if (legendIndexCache) return legendIndexCache;
+  if (!legendIndexPromise) {
+    legendIndexPromise = buildLegendIndex().then((index) => {
+      legendIndexCache = index;
+      return index;
+    });
+  }
+  return legendIndexPromise;
+}
+
+async function buildLegendIndex(): Promise<LegendSubject[]> {
   const allTopics: LegendTopic[] = [];
 
   for (const cls of SYLLABUS) {
