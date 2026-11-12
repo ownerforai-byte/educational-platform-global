@@ -88,5 +88,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Poisson models RARE events over fixed time/space: P(X = r) = e^{−m} m^r/r! — mean = variance = m (the defining property).",
+    "Trick 2: When n is large and p small with np = m moderate (n ≥ 50, p ≤ 0.1), binomial ≈ Poisson(m = np) — state the approximation condition for the concept mark.",
+    "Trick 3: Examples bank: calls per minute, typing errors per page, road accidents per day — quote one to justify the model choice.",
+    "Trick 4: P(X = 0) = e^{−m} — the 'no event' probability, and the base for 'at least one' = 1 − e^{−m}."
   ]
 }

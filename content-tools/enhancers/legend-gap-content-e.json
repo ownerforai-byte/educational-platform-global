@@ -1,0 +1,257 @@
+{
+  "class-11-notes/chemistry/aromatic-hydrocarbons/huckel-s-rule-of-aromaticity": {
+    "examShortTricks": [
+      "Trick 1: Rule in one line: planar, cyclic, conjugated system with (4n + 2) π electrons is aromatic — check n = 0, 1, 2 (2, 6, 10 electrons).",
+      "Trick 2: Apply instantly: benzene 6π (n=1) aromatic; cyclooctatetraene 8π non-aromatic (not planar); cyclopentadienyl anion 6π aromatic; cycloheptatrienyl cation (tropylium) 6π aromatic.",
+      "Trick 3: Anti-aromatic = planar cyclic with 4n π electrons (cyclobutadiene, 4π) — the contrast earns the extra mark."
+    ],
+    "keyPoints": [
+      "Hückel's rule: planar cyclic conjugated systems with (4n + 2) π electrons are aromatic.",
+      "Benzene: 6 π electrons (n = 1) — aromatic.",
+      "Non-planar or 4n π systems are non-aromatic or anti-aromatic.",
+      "Charged rings (tropylium cation, cyclopentadienyl anion) can be aromatic."
+    ],
+    "practiceQuestions": [
+      "Q. Apply Hückel's rule to benzene and cyclobutadiene. (2 marks) — benzene 6π aromatic (n=1); cyclobutadiene 4π anti-aromatic.",
+      "Q. Why is cyclooctatetraene non-aromatic? (1 mark) — it is non-planar (tub-shaped), so conjugation is broken."
+    ]
+  },
+  "class-11-notes/chemistry/aromatic-hydrocarbons/resonance-and-isomerism-in-benzene": {
+    "examShortTricks": [
+      "Trick 1: Resonance evidence chain: equal C–C bond lengths (1.39 Å, between single 1.54 and double 1.34) + heat of hydrogenation 36 kcal less than expected → real benzene is a resonance hybrid of two Kekulé structures.",
+      "Trick 2: Isomerism: monosubstituted benzene has ONE isomer; disubstituted give ortho (1,2), meta (1,3), para (1,4) — draw the ring numbering.",
+      "Trick 3: 'Benzene resists addition but undergoes substitution' — resonance stabilisation (36 kcal) is the reason; quote it for the why-mark."
+    ],
+    "keyPoints": [
+      "Benzene is a resonance hybrid of two equivalent Kekulé structures.",
+      "All C–C bonds are equal (1.39 Å); the ring is planar and hexagonal.",
+      "Resonance energy ≈ 150 kJ/mol explains its stability.",
+      "Disubstituted benzenes: ortho, meta and para isomers."
+    ],
+    "practiceQuestions": [
+      "Q. Why are all C–C bonds in benzene equal? (2 marks) — resonance hybrid of two Kekulé forms gives an average bond order of 1.5.",
+      "Q. Name the isomers of xylene. (1 mark) — o-, m- and p-xylene (1,2-, 1,3-, 1,4-dimethylbenzene)."
+    ]
+  },
+  "class-11-notes/chemistry/aromatic-hydrocarbons/preparation-of-benzene-from-decarboxylation-of-sodium-benzoate-phenol-and-ethyne-only": {
+    "examShortTricks": [
+      "Trick 1: Three equations — soda lime: C6H5COONa + NaOH(CaO) → C6H6 + Na2CO3; phenol distillation with zinc dust: C6H5OH + Zn → C6H6 + ZnO; trimerisation: 3C2H2 —(red hot Cu tube, 873 K)→ C6H6.",
+      "Trick 2: Conditions are the marks: ethyne trimerisation needs a RED-HOT copper tube; phenol route needs ZINC DUST (not Cu).",
+      "Trick 3: Industrial: catalytic reforming/dehydrogenation of n-hexane or n-heptane over Cr2O3/Al2O3 — mention as the modern route."
+    ],
+    "keyPoints": [
+      "Sodium benzoate decarboxylates with soda lime to benzene.",
+      "Phenol vapours reduce to benzene over heated zinc dust.",
+      "Trimerisation of ethyne over red-hot Cu/Fe tube gives benzene.",
+      "Catalytic aromatisation of alkanes is the industrial source."
+    ],
+    "practiceQuestions": [
+      "Q. Write the preparation of benzene from ethyne with conditions. (2 marks) — 3C2H2 → C6H6, red-hot Cu tube (873 K).",
+      "Q. How is benzene obtained from phenol? (1 mark) — distil phenol with zinc dust: C6H5OH + Zn → C6H6 + ZnO."
+    ]
+  },
+  "class-11-notes/chemistry/aromatic-hydrocarbons/chemical-properties-of-benzene-addition-reactions-hydrogen-halogen-electrophilic-substitution-re": {
+    "examShortTricks": [
+      "Trick 1: Electrophilic substitution quartet with catalysts — nitration (conc. HNO3 + H2SO4, 50 °C), halogenation (X2 + FeX3/anhyd.), sulphonation (fuming H2SO4), Friedel–Crafts alkylation/acylation (RCl/RCOCl + anhyd. AlCl3).",
+      "Trick 2: The attacking electrophiles: NO2+, X+ (or Cl+), SO3H+, R+/RCO+ — naming the electrophile is the mechanism mark.",
+      "Trick 3: Addition under force: 3H2 (Ni, 475 K) → cyclohexane; 3Cl2 (UV) → benzene hexachloride (BHC, C6H6Cl6) — 'addition needs harsh conditions because aromaticity must break'."
+    ],
+    "keyPoints": [
+      "Benzene prefers electrophilic substitution over addition (resonance stability).",
+      "Nitration uses the NO2+ electrophile from HNO3/H2SO4.",
+      "Halogenation needs a Lewis acid catalyst (FeX3).",
+      "Friedel–Crafts: alkylation/acylation with AlCl3.",
+      "Addition of H2/Cl2 occurs only under forcing conditions."
+    ],
+    "practiceQuestions": [
+      "Q. Write the nitration of benzene and name the electrophile. (2 marks) — C6H6 + HNO3 →(H2SO4) C6H5NO2 + H2O; electrophile NO2+.",
+      "Q. Give the product of benzene with Cl2 in UV light. (1 mark) — benzene hexachloride C6H6Cl6 (addition)."
+    ]
+  },
+  "class-11-notes/chemistry/aromatic-hydrocarbons/combustion-of-benzene-free-combustion-only-and-uses": {
+    "examShortTricks": [
+      "Trick 1: Equation with the sooty flame: 2C6H6 + 15O2 → 12CO2 + 6H2O + heat — 'luminous smoky flame due to high carbon %' is the observation mark.",
+      "Trick 2: Uses list for 2 marks: petrol additive/solvent, manufacture of styrene (polystyrene), phenol, aniline (dyes), insecticides, detergents."
+    ],
+    "keyPoints": [
+      "Benzene burns with a sooty luminous flame (high carbon content).",
+      "2C6H6 + 15O2 → 12CO2 + 6H2O.",
+      "Used as solvent, fuel additive and raw material for styrene, phenol, aniline."
+    ],
+    "practiceQuestions": [
+      "Q. Why does benzene burn with a smoky flame? (1 mark) — high carbon percentage gives incomplete combustion and free carbon particles.",
+      "Q. State two uses of benzene. (1 mark) — solvent; making styrene/phenol."
+    ]
+  },
+  "class-11-notes/chemistry/fundamentals-of-applied-chemistry/economics-of-production-cash-flow-in-the-production-cycle": {
+    "examShortTricks": [
+      "Trick 1: Production cycle order: raw material → money spent (capital) → manufacture → product sale → revenue → reinvest — 'cash flow' means money moving IN and OUT over the cycle.",
+      "Trick 2: Cost split: fixed costs (plant, salaries — constant) vs variable costs (raw materials, power — with output); profit = revenue − total cost.",
+      "Trick 3: Break-even point: output where total revenue = total cost — quote as the decision tool for a plant."
+    ],
+    "keyPoints": [
+      "Cash flow tracks money entering and leaving during production.",
+      "Fixed costs do not vary with output; variable costs do.",
+      "Profit = total revenue − total cost; break-even when they are equal.",
+      "Efficient cash flow keeps a plant solvent between batches."
+    ],
+    "practiceQuestions": [
+      "Q. Distinguish fixed and variable costs with examples. (2 marks) — plant rent vs raw materials.",
+      "Q. What is the break-even point? (1 mark) — production level where revenue equals total cost."
+    ]
+  },
+  "class-11-notes/chemistry/fundamentals-of-applied-chemistry/running-a-chemical-plant-designing-a-chemical-plant": {
+    "examShortTricks": [
+      "Trick 1: Design sequence: market survey → site selection (raw materials, power, water, transport, labour, waste disposal) → process flow sheet → material & energy balance → safety/environment clearance.",
+      "Trick 2: Running the plant: quality control of feed and product, maintenance schedule, pollution control, worker safety (PPE) — four duties for the 2-mark answer.",
+      "Trick 3: 'Site near raw material and market' — quote the twin criterion for the location mark."
+    ],
+    "keyPoints": [
+      "Plant design starts with market survey and site selection.",
+      "Process flow sheet with material and energy balances guides construction.",
+      "Running includes quality control, maintenance and safety management.",
+      "Waste treatment and pollution control are legal requirements."
+    ],
+    "practiceQuestions": [
+      "Q. List four factors for selecting a plant site. (2 marks) — raw material, power, water, transport, labour, waste disposal (any four).",
+      "Q. Why is a flow sheet prepared before construction? (1 mark) — it fixes the process sequence, balances and equipment list."
+    ]
+  },
+  "class-11-notes/chemistry/fundamentals-of-applied-chemistry/continuous-and-batch-processing": {
+    "examShortTricks": [
+      "Trick 1: One-line contrast: batch = charge, react, discharge, repeat (small scale, flexible); continuous = uninterrupted feed and product removal (large scale, automated).",
+      "Trick 2: Choose by product: continuous for bulk chemicals (ammonia, H2SO4, cement); batch for pharmaceuticals, dyes, specialty chemicals (small, varied lots).",
+      "Trick 3: Advantages row: continuous — low unit cost, constant quality, less labour; batch — easy quality change, low capital, good for small demand."
+    ],
+    "keyPoints": [
+      "Batch processing: fixed quantities processed stepwise; flexible, higher unit cost.",
+      "Continuous processing: steady-state flow of materials; economical at scale.",
+      "Continuous suits bulk chemicals; batch suits fine chemicals and drugs.",
+      "Continuous plants need tight automatic control."
+    ],
+    "practiceQuestions": [
+      "Q. Which process suits urea manufacture and why? (2 marks) — continuous; huge steady demand and lower unit cost.",
+      "Q. Give one advantage of batch processing. (1 mark) — flexibility to change product/grade between batches."
+    ]
+  },
+  "class-11-notes/chemistry/fundamentals-of-applied-chemistry/environmental-impact-of-the-chemical-industry": {
+    "examShortTricks": [
+      "Trick 1: Three media, three examples — air: SO2/NOx (acid rain), CO2 (greenhouse); water: heavy metals, dyes, thermal discharge; land: solid waste, effluent sludge.",
+      "Trick 2: Control measures earn the remaining marks: scrubbers/ESP for stack gases, effluent treatment plants (ETP), recycling, green chemistry (fewer by-products).",
+      "Trick 3: Quote one event: Minamata (Hg discharge) as the classic case study for industrial pollution."
+    ],
+    "keyPoints": [
+      "Chemical industry pollutes air (SO2, NOx, CO2), water (metals, organics) and land (solid waste).",
+      "Acid rain and greenhouse gases arise from fossil-fuel combustion in plants.",
+      "Effluent treatment plants and scrubbers reduce discharge.",
+      "Green chemistry designs processes that minimise waste at source."
+    ],
+    "practiceQuestions": [
+      "Q. Name two air pollutants from chemical plants and one effect. (2 marks) — SO2/NOx → acid rain; CO2 → global warming.",
+      "Q. What is an ETP? (1 mark) — effluent treatment plant that cleans liquid waste before discharge."
+    ]
+  },
+  "class-11-notes/chemistry/modern-chemical-manufactures/manufacture-of-ammonia-by-haber-s-process-principle-and-flow-sheet-diagram-only": {
+    "examShortTricks": [
+      "Trick 1: Equation + optimum conditions: N2 + 3H2 ⇌ 2NH3, ΔH = −92 kJ — 200 atm, 450–500 °C, Fe catalyst with Mo promoter; 'compromise temperature' is the scoring phrase (low T favours yield but is too slow).",
+      "Trick 2: Flow sheet order: N2 + H2 purification → compressor → catalyst chamber → cooler → condenser (NH3 liquefies) → recycle unreacted gases — draw boxes with arrows.",
+      "Trick 3: Recycling unreacted N2/H2 raises yield — state it as the efficiency trick of the process."
+    ],
+    "keyPoints": [
+      "N2 + 3H2 ⇌ 2NH3 (exothermic, 4 → 2 moles).",
+      "Optimum: 200 atm, 450–500 °C, iron catalyst + molybdenum promoter.",
+      "Le Chatelier: high pressure and moderate low temperature favour NH3.",
+      "Unreacted gases are recycled; NH3 condensed out."
+    ],
+    "practiceQuestions": [
+      "Q. State the optimum conditions for the Haber process and justify by Le Chatelier. (3 marks) — high P (fewer moles forward), low T favoured but 450–500 °C is a rate compromise.",
+      "Q. Why is the catalyst chamber kept at ~450 °C? (1 mark) — balance between equilibrium yield and reaction rate."
+    ]
+  },
+  "class-11-notes/chemistry/modern-chemical-manufactures/manufacture-of-nitric-acid-by-ostwald-s-process": {
+    "examShortTricks": [
+      "Trick 1: Three-step chain: 4NH3 + 5O2 → 4NO + 6H2O (Pt–Rh gauze, 900 °C) → 2NO + O2 → 2NO2 → 3NO2 + H2O → 2HNO3 + NO (recycled).",
+      "Trick 2: Catalyst and temperature are the two marks: platinum–rhodium gauze at about 900 °C; oxidation of NH3 is exothermic and self-sustaining.",
+      "Trick 3: Concentration: 68% azeotrope by distillation; stronger acid needs conc. H2SO4 dehydration — quote for the extra mark."
+    ],
+    "keyPoints": [
+      "Ostwald process: catalytic oxidation of ammonia over Pt–Rh gauze at ~900 °C.",
+      "NO is oxidised to NO2, absorbed in water to give HNO3.",
+      "NO formed in absorption is recycled.",
+      "Commercial HNO3 is about 68% by mass."
+    ],
+    "practiceQuestions": [
+      "Q. Write the three main reactions of the Ostwald process. (3 marks) — NH3 → NO (Pt–Rh); NO → NO2; NO2 + H2O → HNO3.",
+      "Q. Why is Pt–Rh gauze used? (1 mark) — high catalytic activity and durability at 900 °C."
+    ]
+  },
+  "class-11-notes/chemistry/modern-chemical-manufactures/manufacture-of-sulphuric-acid-by-contact-process": {
+    "examShortTricks": [
+      "Trick 1: Core step: 2SO2 + O2 ⇌ 2SO3, V2O5 catalyst, 1–2 atm, 400–450 °C — 'contact' refers to gases passing over the catalyst bed.",
+      "Trick 2: Absorption trick: SO3 is absorbed in conc. H2SO4 (NOT water — fog forms) to give oleum H2S2O7, then diluted: SO3 + H2SO4 → H2S2O7.",
+      "Trick 3: Conditions justification: exothermic, fewer moles → low T and high P favour SO3; 400–450 °C is the rate compromise; arsenic purifier removes As2O3 which poisons the catalyst."
+    ],
+    "keyPoints": [
+      "SO2 (from roasting sulphide ores or burning S) is oxidised to SO3 over V2O5 at 400–450 °C.",
+      "SO3 absorbed in conc. H2SO4 forms oleum, then diluted to the acid.",
+      "Purification removes dust and arsenic that poison the catalyst.",
+      "Contact process gives pure concentrated H2SO4."
+    ],
+    "practiceQuestions": [
+      "Q. Why is SO3 absorbed in H2SO4 and not in water? (2 marks) — direct absorption in water forms stubborn acid mist/fog; oleum route is efficient.",
+      "Q. State the catalyst and temperature of the contact process. (1 mark) — V2O5, 400–450 °C."
+    ]
+  },
+  "class-11-notes/chemistry/modern-chemical-manufactures/manufacture-of-sodium-hydroxide-by-diaphragm-cell": {
+    "examShortTricks": [
+      "Trick 1: Electrolysis of brine: cathode 2H2O + 2e → H2 + 2OH−; anode 2Cl− → Cl2 + 2e; overall 2NaCl + 2H2O → 2NaOH + H2 + Cl2.",
+      "Trick 2: Diaphragm's job: porous asbestos partition keeps Cl2 (anode) apart from NaOH (cathode) — prevents 2NaOH + Cl2 → NaCl + NaOCl + H2O side reaction; that line is the mark.",
+      "Trick 3: Products leave separately: dilute NaOH drained from cathode compartment (evaporated to solid), Cl2 from the top of the anode compartment, H2 collected separately."
+    ],
+    "keyPoints": [
+      "Concentrated brine is electrolysed in a diaphragm (asbestos) cell.",
+      "Cl2 at anode, H2 and NaOH at cathode.",
+      "Diaphragm prevents chlorine reacting with the alkali.",
+      "Cell liquor is concentrated to give solid NaOH."
+    ],
+    "practiceQuestions": [
+      "Q. Write the electrode reactions in the diaphragm cell. (2 marks) — as above (Cl2 anode; H2 + OH− cathode).",
+      "Q. Why is a diaphragm needed? (1 mark) — separates Cl2 from NaOH to stop bleach formation."
+    ]
+  },
+  "class-11-notes/chemistry/modern-chemical-manufactures/manufacture-of-sodium-carbonate-by-ammonia-soda-or-solvay-process": {
+    "examShortTricks": [
+      "Trick 1: Key reaction: NH3 + H2O + CO2 → NH4HCO3; NH4HCO3 + NaCl → NaHCO3↓ + NH4Cl; then 2NaHCO3 → Na2CO3 + H2O + CO2 (heat).",
+      "Trick 2: Ammonia is RECOVERED: 2NH4Cl + Ca(OH)2 → 2NH3 + CaCl2 + 2H2O — 'ammonia is a catalyst-like recycle' earns the efficiency mark.",
+      "Trick 3: CO2 comes from limestone calcination: CaCO3 → CaO + CO2 — the CaO then regenerates NH3; both loops close.",
+      "Trick 4: NaHCO3 precipitates because it is sparingly soluble in the cold brine — the solubility reason is the classic viva question."
+    ],
+    "keyPoints": [
+      "Solvay process: brine + CO2 + NH3 gives NaHCO3, calcined to Na2CO3.",
+      "Ammonia and CO2 are recycled; only CaCl2 is a by-product.",
+      "CO2 from heating limestone; NH3 recovered with milk of lime.",
+      "NaHCO3 separates due to low solubility in brine."
+    ],
+    "practiceQuestions": [
+      "Q. Write the reactions showing how ammonia is recovered in the Solvay process. (2 marks) — 2NH4Cl + Ca(OH)2 → 2NH3 + CaCl2 + 2H2O.",
+      "Q. Why does NaHCO3 precipitate in the carbonating tower? (1 mark) — it is the least soluble salt in the concentrated brine at low temperature."
+    ]
+  },
+  "class-11-notes/chemistry/modern-chemical-manufactures/fertilizers-chemical-fertilizers-types-of-chemical-fertilizers-production-of-urea-with-flow-shee": {
+    "examShortTricks": [
+      "Trick 1: Three fertiliser types with one example each — nitrogenous (urea, ammonium sulphate), phosphatic (superphosphate, DAP), potassic (KCl/muriate of potash); NPK is the combined grade.",
+      "Trick 2: Urea manufacture two steps: 2NH3 + CO2 → NH2COONH4 (ammonium carbamate, 200 atm, 180 °C); carbamate → NH2CONH2 + H2O (decomposition, lower pressure).",
+      "Trick 3: Urea is the highest-N solid fertiliser (46% N) and releases N slowly after soil hydrolysis — quote for the merit mark."
+    ],
+    "keyPoints": [
+      "Fertilisers supply N, P and K; classified as nitrogenous, phosphatic and potassic.",
+      "Urea: NH3 + CO2 under pressure gives ammonium carbamate, which decomposes to urea.",
+      "Urea contains about 46% nitrogen, the highest among solid nitrogenous fertilisers.",
+      "Overuse causes water pollution (eutrophication)."
+    ],
+    "practiceQuestions": [
+      "Q. Classify chemical fertilisers with one example of each type. (3 marks) — nitrogenous (urea), phosphatic (superphosphate), potassic (KCl).",
+      "Q. Write the two reactions of urea manufacture. (2 marks) — carbamate formation then decomposition to urea + water."
+    ]
+  }
+}

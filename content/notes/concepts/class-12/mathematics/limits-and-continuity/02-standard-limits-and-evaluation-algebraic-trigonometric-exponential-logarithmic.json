@@ -92,5 +92,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Bank of standards — sin x/x → 1; tan x/x → 1; (1 − cos x)/x² → 1/2; (e^x − 1)/x → 1; ln(1+x)/x → 1; (1+x)^(1/x) → e; (a^x − b^x)/x → ln(a/b).",
+    "Trick 2: Force the standard form: whatever the argument (3x, 5x²), rewrite so the inner expression matches the standard's variable — e.g. sin 5x/5x → 1, then rescale.",
+    "Trick 3: ∞ forms: divide numerator and denominator by the highest power of x; the leading coefficients give the answer.",
+    "Trick 4: 1^∞ forms: take log — lim f^g = e^(lim g(f − 1)) when f → 1."
   ]
 }

@@ -92,5 +92,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Symmetry tests in three lines — even: f(−x) = f(x) (mirror about y-axis); odd: f(−x) = −f(x) (rotation about origin); neither: no symmetry.",
+    "Trick 2: Periodicity: find smallest T > 0 with f(x + T) = f(x); for sin/cos T = 2π, tan T = π — check the constant term first.",
+    "Trick 3: Monotonicity from the sign of f′: f′ > 0 increasing, f′ < 0 decreasing; mark the turning points where f′ = 0 and sketch through them.",
+    "Trick 4: Always list intercepts (f(0), f(x) = 0), domain and asymptotes BEFORE drawing — the marking scheme rewards these checkpoints."
   ]
 }

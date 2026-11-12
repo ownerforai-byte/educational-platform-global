@@ -1,0 +1,180 @@
+{
+  "class-12-notes/mathematics/vector-algebra/addition-subtraction-and-scalar-multiplication-of-vectors": {
+    "examShortTricks": [
+      "Trick 1: Triangle law: a + b is the diagonal of the triangle with sides a, b; parallelogram law gives the same for concurrent vectors — state both with the direction 'from tail of a to head of b'.",
+      "Trick 2: Position-vector shortcut: AB = OB − OA — every 'find the vector AB' problem is one subtraction.",
+      "Trick 3: Collinearity test: a and b are collinear ⇔ a = λb for some scalar λ; for points A, B, C check AB = λBC.",
+      "Trick 4: Unit vector: â = a/|a|; a vector in the direction of b with magnitude k is k·b/|b| — the two most-quoted constructions."
+    ],
+    "practiceQuestions": [
+      "Q. If a = 2i − j + 3k and b = i + j − k, find |a + b|. (2 marks) — a+b = 3i + 2k → √13.",
+      "Q. Show that points A(1,2,3), B(4,0,1), C(3,4,-2)... use AB and CB collinearity check. (3 marks) — compute AB, BC vectors and test AB = λBC.",
+      "Q. Find the unit vector along 3i + 4j. (1 mark) — (3i + 4j)/5."
+    ]
+  },
+  "class-12-notes/mathematics/vector-algebra/scalar-and-vector-triple-products": {
+    "examShortTricks": [
+      "Trick 1: Scalar triple product [a b c] = a·(b×c) = determinant of the component rows — volume of the parallelepiped; zero ⇔ coplanar.",
+      "Trick 2: Vector triple product: a×(b×c) = b(a·c) − c(a·b) — the 'bac − cab' rule; it is NOT associative, so bracket order matters.",
+      "Trick 3: Coplanarity of four points: form three vectors from one point and show their STP is zero — the standard 3-mark template.",
+      "Trick 4: [a b c] changes sign on swapping two vectors; cyclic permutations preserve it — quote for sign questions."
+    ],
+    "practiceQuestions": [
+      "Q. Find the volume of the parallelepiped with coterminous edges i+j, j+k, k+i. (2 marks) — [a b c] = 2 cubic units.",
+      "Q. When are three vectors coplanar? (1 mark) — when their scalar triple product is zero.",
+      "Q. Expand a×(b×c). (1 mark) — b(a·c) − c(a·b)."
+    ]
+  },
+  "class-12-notes/mathematics/vector-algebra/applications-work-torque-angular-momentum": {
+    "examShortTricks": [
+      "Trick 1: Work as a dot product: W = F·d = Fd cos θ — zero work when force ⊥ displacement; quote the condition.",
+      "Trick 2: Torque as a cross product: τ = r × F, magnitude rF sin θ, direction by the right-hand rule — state both magnitude and direction for full marks.",
+      "Trick 3: Angular momentum L = r × p = r × mv; conservation when τ = 0 — the link line earns the concept mark.",
+      "Trick 4: Numericals are one substitution each — keep vectors in component form and use the 3×3 determinant for cross products."
+    ],
+    "practiceQuestions": [
+      "Q. F = 2i + 3j N displaces a body by d = 4i m. Find the work done. (1 mark) — 8 J.",
+      "Q. Find the torque of F = 3i + j − k N about the origin acting at r = i + j + k m. (2 marks) — r × F = −4i + 4j + 2k N·m.",
+      "Q. When is the work done by a force zero? (1 mark) — when the force is perpendicular to the displacement."
+    ]
+  },
+  "class-12-notes/mathematics/three-dimensional-geometry/equation-of-a-line-in-space-standard-and-general-form": {
+    "examShortTricks": [
+      "Trick 1: Vector form r = a + λb; Cartesian (x−x1)/l = (y−y1)/m = (z−z1)/n — convert between them by reading a from the constants and b from the denominators.",
+      "Trick 2: Line through two points: direction b = P2 − P1 — subtract the coordinates, then use the point form.",
+      "Trick 3: General (unsymmetric) form: two plane equations simultaneously — convert by eliminating variables to get the symmetric ratios.",
+      "Trick 4: Foot of perpendicular / image problems: parametrise the line, substitute into the plane condition, solve for λ."
+    ],
+    "practiceQuestions": [
+      "Q. Write the Cartesian equation of the line through (1, 2, 3) with direction 2, −1, 4. (1 mark) — (x−1)/2 = (y−2)/−1 = (z−3)/4.",
+      "Q. Convert r = i + j + λ(2i − k) to Cartesian form. (2 marks) — (x−1)/2 = (y−1)/0 = (z−0)/−1 (y−1 = 0)."
+    ]
+  },
+  "class-12-notes/mathematics/three-dimensional-geometry/equation-of-a-plane-normal-form-general-form": {
+    "examShortTricks": [
+      "Trick 1: Point-normal form: r·n̂ = d, or a(x−x1) + b(y−y1) + c(z−z1) = 0 with (a,b,c) the normal — the normal is everything in plane problems.",
+      "Trick 2: Plane through three points: find two in-plane vectors, cross them for the normal, then use the point form.",
+      "Trick 3: Intercept form x/a + y/b + z/c = 1 — read intercepts directly; useful for sketching and for 'find intercepts' questions.",
+      "Trick 4: Distance from origin = |d|/|n| for ax + by + cz + d = 0 — the one-line formula."
+    ],
+    "practiceQuestions": [
+      "Q. Find the plane through (1,1,1) with normal 2i − j + 3k. (2 marks) — 2(x−1) − (y−1) + 3(z−1) = 0 → 2x − y + 3z = 4.",
+      "Q. Distance of 2x + y − 2z + 3 = 0 from the origin. (1 mark) — 3/3 = 1.",
+      "Q. Write the intercept form of 3x + 4y + 12z = 12. (1 mark) — x/4 + y/3 + z/1 = 1."
+    ]
+  },
+  "class-12-notes/mathematics/three-dimensional-geometry/angle-between-two-lines-two-planes-and-a-line-and-a-plane": {
+    "examShortTricks": [
+      "Trick 1: All three angles are cos formulas on direction data — lines: cos θ = |b1·b2|/(|b1||b2|); planes: cos θ = |n1·n2|/(|n1||n2|); line-plane: sin θ = |b·n|/(|b||n|).",
+      "Trick 2: Perpendicular/parallel tests: lines ⊥ ⇔ b1·b2 = 0; planes ∥ ⇔ n1 = λn2; line ∥ plane ⇔ b·n = 0 — the dot-product zero is the fastest test.",
+      "Trick 3: For line-plane angle, remember it is SIN (the line's angle with the plane is the complement of its angle with the normal) — the classic trap."
+    ],
+    "practiceQuestions": [
+      "Q. Find the angle between planes x + y + z = 1 and 2x − y + z = 3. (2 marks) — cos θ = |2 − 1 + 1|/(√3·√6) = 2/√18 → θ ≈ 61.9°.",
+      "Q. When is a line perpendicular to a plane? (1 mark) — when its direction vector is parallel to the plane's normal (b = λn)."
+    ]
+  },
+  "class-12-notes/mathematics/linear-programming/graphical-method-for-solving-lpp-with-two-variables": {
+    "examShortTricks": [
+      "Trick 1: Protocol: convert constraints to lines → shade the feasible region (test with origin) → find corner points → evaluate Z at each → optimum. Corner-point evaluation IS the method mark.",
+      "Trick 2: Feasible-region test: substitute (0,0) into each inequality; if true, shade toward the origin, else away — do this aloud in working.",
+      "Trick 3: If the region is unbounded, Z may not attain an optimum — check with an open half-plane test before declaring max/min.",
+      "Trick 4: For 'minimum cost' problems the optimum is usually at the intersection of two binding constraints — solve the pair simultaneously to get the exact point."
+    ],
+    "practiceQuestions": [
+      "Q. Maximise Z = 3x + 4y subject to x + y ≤ 4, x, y ≥ 0. (3 marks) — corners (0,0), (4,0), (0,4); Z max = 16 at (0,4).",
+      "Q. Why is the optimum found at a corner point? (1 mark) — Z is linear; on a convex polygon its extreme values occur at vertices."
+    ]
+  },
+  "class-12-notes/mathematics/probability/conditional-probability-and-multiplication-theorem": {
+    "examShortTricks": [
+      "Trick 1: P(A|B) = P(A∩B)/P(B) — 'given B' means the sample space SHRINKS to B; recompute from the reduced space as a sanity check.",
+      "Trick 2: Multiplication: P(A∩B) = P(A)P(B|A) = P(B)P(A|B) — for dependent draws without replacement multiply stepwise.",
+      "Trick 3: Without-replacement trap: after one success the denominators drop by one (n−1) — the most common slip in card/urn problems."
+    ],
+    "keyPoints": [
+      "Conditional probability restricts the sample space to the given event.",
+      "P(A∩B) = P(A) · P(B|A).",
+      "For independent events P(B|A) = P(B).",
+      "Tree diagrams encode multiplication along branches and addition across outcomes."
+    ],
+    "practiceQuestions": [
+      "Q. Two cards drawn without replacement; P(both aces)? (2 marks) — (4/52)(3/51) = 1/221.",
+      "Q. P(A) = 1/2, P(B|A) = 1/3 — find P(A∩B). (1 mark) — 1/6."
+    ]
+  },
+  "class-12-notes/mathematics/probability/independent-events": {
+    "examShortTricks": [
+      "Trick 1: Definition test: A, B independent ⇔ P(A∩B) = P(A)P(B); equivalently P(B|A) = P(B) — verify with numbers, never assume from the story.",
+      "Trick 2: 'At least one' trick: P(at least one) = 1 − P(none) — converts messy unions into one multiplication.",
+      "Trick 3: Mutually exclusive ≠ independent: exclusive events with positive probability are ALWAYS dependent (P(A∩B) = 0 ≠ P(A)P(B)) — the classic distinction 2-marker."
+    ],
+    "practiceQuestions": [
+      "Q. P(A) = 0.4, P(B) = 0.5, P(A∩B) = 0.2 — independent? (1 mark) — yes, 0.2 = 0.4 × 0.5.",
+      "Q. Probability that at least one of two independent events (p = 0.5 each) occurs? (1 mark) — 1 − 0.25 = 0.75.",
+      "Q. Can two mutually exclusive events be independent? (1 mark) — no (unless one has probability 0)."
+    ]
+  },
+  "class-12-notes/mathematics/probability/bayes-theorem-and-its-applications": {
+    "examShortTricks": [
+      "Trick 1: Bayes template: P(Ei|A) = P(Ei)P(A|Ei) / ΣP(Ek)P(A|Ek) — label causes E1, E2… and the observation A; fill a two-column table.",
+      "Trick 2: The denominator is the TOTAL probability of the observation — compute it first; every Bayes numerical is one division.",
+      "Trick 3: Prior → posterior language: P(Ei) is the prior (before the evidence), P(Ei|A) the posterior — using these words earns the interpretation mark.",
+      "Trick 4: Classic setups: two machines producing items, two urns drawing balls, disease testing — all reduce to the same table."
+    ],
+    "practiceQuestions": [
+      "Q. Machine 1 makes 60% of items with 2% defective; machine 2 makes 40% with 5% defective. An item is defective — from which machine? (4 marks) — P(M1|D) = 0.6×0.02/(0.6×0.02 + 0.4×0.05) = 0.012/0.032 = 3/8 → machine 2 more likely.",
+      "Q. State Bayes' theorem. (2 marks) — formula above."
+    ]
+  },
+  "class-12-notes/mathematics/probability/random-variable-and-its-probability-distribution": {
+    "examShortTricks": [
+      "Trick 1: A random variable maps outcomes to numbers; the distribution lists X = xi with P(X = xi) — check ΣP = 1 as the first line of every table problem.",
+      "Trick 2: To build a distribution (e.g. number of heads in 2 tosses), enumerate outcomes, count each value, then divide by the total — systematic listing earns method marks.",
+      "Trick 3: Missing-probability questions: set ΣP = 1 and solve for k — instant 1-marker.",
+      "Trick 4: P(X ≥ a) = sum the tail; P(a < X < b) = sum the interior — read the inequality direction carefully (≥ vs >)."
+    ],
+    "practiceQuestions": [
+      "Q. X takes 0, 1, 2 with probabilities k, 2k, 3k — find k and P(X < 2). (2 marks) — 6k = 1 → k = 1/6; P(X<2) = 3/6 = 1/2.",
+      "Q. Define a random variable. (1 mark) — a real-valued function on the sample space."
+    ]
+  },
+  "class-12-notes/mathematics/probability/mean-variance-and-standard-deviation-of-a-random-variable": {
+    "examShortTricks": [
+      "Trick 1: μ = Σxi pi; Var = Σxi² pi − μ² — compute three columns (xipi, xi²pi) and subtract; never average the raw x values.",
+      "Trick 2: SD = √Var — leave as a surd unless the square is exact; quoting Var when SD is asked loses the mark.",
+      "Trick 3: Sanity bounds: μ must lie between min and max xi; Var ≥ 0 — use to catch arithmetic slips.",
+      "Trick 4: For linear transforms Y = aX + b: μY = aμX + b, VarY = a²VarX — the shift b does NOT change variance."
+    ],
+    "practiceQuestions": [
+      "Q. X: 0, 1, 2 with p 0.3, 0.4, 0.3 — find mean and variance. (3 marks) — μ = 1; E(X²) = 1.4; Var = 0.4.",
+      "Q. If Y = 2X + 3 with Var(X) = 4, find Var(Y). (1 mark) — 16."
+    ]
+  },
+  "class-12-notes/mathematics/probability/binomial-distribution-definition-mean-variance": {
+    "examShortTricks": [
+      "Trick 1: B(n, p) checklist: fixed n trials, two outcomes, constant p, independent trials — verify all four before using the model.",
+      "Trick 2: P(X = r) = nCr p^r q^{n−r} with q = 1 − p; mean = np, variance = npq — quote all three; SD = √(npq).",
+      "Trick 3: 'At least one' = 1 − q^n; 'at most r' = cumulative sum — convert the wording before computing.",
+      "Trick 4: Variance < mean always (since npq = np(1−p) < np) — a quick validity check and a known 1-mark fact."
+    ],
+    "practiceQuestions": [
+      "Q. A die is thrown 5 times; find P(exactly 2 sixes). (3 marks) — 5C2 (1/6)²(5/6)³ = 10 × 125/7776 = 1250/7776 ≈ 0.161.",
+      "Q. For B(10, 0.3) find mean and variance. (1 mark) — mean 3, variance 2.1.",
+      "Q. P(at least one head in 4 tosses)? (2 marks) — 1 − (1/2)^4 = 15/16."
+    ]
+  },
+  "class-12-notes/mathematics/probability/poisson-distribution-definition-mean-variance": {
+    "examShortTricks": [
+      "Trick 1: Poisson models RARE events over fixed time/space: P(X = r) = e^{−m} m^r/r! — mean = variance = m (the defining property).",
+      "Trick 2: When n is large and p small with np = m moderate (n ≥ 50, p ≤ 0.1), binomial ≈ Poisson(m = np) — state the approximation condition for the concept mark.",
+      "Trick 3: Examples bank: calls per minute, typing errors per page, road accidents per day — quote one to justify the model choice.",
+      "Trick 4: P(X = 0) = e^{−m} — the 'no event' probability, and the base for 'at least one' = 1 − e^{−m}."
+    ],
+    "practiceQuestions": [
+      "Q. Calls arrive at mean 3 per minute; find P(no calls) and P(exactly 2). (3 marks) — e^{-3} ≈ 0.0498; e^{-3}·9/2 ≈ 0.224.",
+      "Q. What are the mean and variance of a Poisson distribution with m = 4? (1 mark) — both 4.",
+      "Q. When may a binomial be approximated by Poisson? (1 mark) — n large, p small, np moderate."
+    ]
+  }
+}

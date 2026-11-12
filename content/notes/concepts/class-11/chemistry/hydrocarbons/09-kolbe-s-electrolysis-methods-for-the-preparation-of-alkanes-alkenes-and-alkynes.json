@@ -35,7 +35,10 @@
     "Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Write the electrode reactions for the Kolbe electrolysis of sodium acetate. (3 marks) — anode: 2CH3COO− → C2H6 + 2CO2 + 2e; cathode: 2H2O + 2e → H2 + 2OH−.",
+    "Q. Which salt gives ethene by Kolbe's method? (1 mark) — sodium succinate."
+  ],
   "formulas": [
     "ΔG = −nFE",
     "E = E° − (0.0592/n)log Q (25°C)",
@@ -73,5 +76,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Electrode logic: hydrocarbon forms at the ANODE (oxidation of carboxylate), H2 at cathode — stating the electrode earns the first mark.",
+    "Trick 2: Three recipes — sodium acetate → ethane; sodium succinate → ethene (plus CO2); sodium fumarate/maleate → ethyne.",
+    "Trick 3: General anode reaction: 2RCOO− − 2e → R–R + 2CO2; remember CO2 bubbles as the visible observation."
   ]
 }

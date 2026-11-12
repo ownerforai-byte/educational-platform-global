@@ -30,7 +30,10 @@
     "answer pattern for \"Manufacture of sodium carbonate by ammonia soda or Solvay…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Write the reactions showing how ammonia is recovered in the Solvay process. (2 marks) — 2NH4Cl + Ca(OH)2 → 2NH3 + CaCl2 + 2H2O.",
+    "Q. Why does NaHCO3 precipitate in the carbonating tower? (1 mark) — it is the least soluble salt in the concentrated brine at low temperature."
+  ],
   "keyPoints": [
     "• Manufacture of sodium carbonate by ammonia soda or Solvay…"
   ],
@@ -45,5 +48,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Key reaction: NH3 + H2O + CO2 → NH4HCO3; NH4HCO3 + NaCl → NaHCO3↓ + NH4Cl; then 2NaHCO3 → Na2CO3 + H2O + CO2 (heat).",
+    "Trick 2: Ammonia is RECOVERED: 2NH4Cl + Ca(OH)2 → 2NH3 + CaCl2 + 2H2O — 'ammonia is a catalyst-like recycle' earns the efficiency mark.",
+    "Trick 3: CO2 comes from limestone calcination: CaCO3 → CaO + CO2 — the CaO then regenerates NH3; both loops close.",
+    "Trick 4: NaHCO3 precipitates because it is sparingly soluble in the cold brine — the solubility reason is the classic viva question."
   ]
 }

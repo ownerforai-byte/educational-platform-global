@@ -90,5 +90,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Order of tools: product rule → quotient rule → chain rule; write u′v + uv′ or (u′v − uv′)/v² before substituting to avoid sign slips.",
+    "Trick 2: Parametric second derivative: dy/dx = (dy/dt)/(dx/dt); d²y/dx² = d(dy/dx)/dt ÷ dx/dt — the ÷(dx/dt) is the mark students forget.",
+    "Trick 3: Implicit: differentiate both sides treating y as y(x), collect dy/dx terms on one side, factor — never solve for y first.",
+    "Trick 4: For nth derivatives of standard forms memorise: (ax+b)^n → n! pattern; y = e^{ax} sin bx → r^n e^{ax} sin(bx + n tan^-1(b/a))."
   ]
 }

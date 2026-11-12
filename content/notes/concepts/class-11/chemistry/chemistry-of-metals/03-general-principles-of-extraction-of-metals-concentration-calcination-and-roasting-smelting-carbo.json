@@ -39,7 +39,10 @@
     "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Differentiate calcination and roasting with one equation each. (3 marks) — as above (ZnCO3 vs ZnS).",
+    "Q. Why is aluminium extracted by electrolysis, not carbon reduction? (1 mark) — Al is too strong a reductant; carbon cannot reduce Al2O3 economically."
+  ],
   "formulas": [
     "F = qvB sinθ",
     "ε = −N dΦ/dt",
@@ -81,5 +84,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Flow order: concentration (removal of gangue) → calcination (carbonate/hydroxide ores, heated WITHOUT air) → roasting (sulphide ores, heated WITH air) → reduction (smelting/electrolysis) → refining.",
+    "Trick 2: Calcination vs roasting in one line: calcination = carbonate ore + no air (ZnCO3 → ZnO + CO2); roasting = sulphide ore + excess air (2ZnS + 3O2 → 2ZnO + 2SO2).",
+    "Trick 3: Carbon reduction vs electrolytic reduction: metals ABOVE Zn in activity series (Al, Na, Ca) need electrolysis; below Zn use carbon/CO reduction.",
+    "Trick 4: Thermite process for Cr/Mn: Al is the reducing agent (Al + metal oxide → Al2O3 + metal + heat)."
   ]
 }

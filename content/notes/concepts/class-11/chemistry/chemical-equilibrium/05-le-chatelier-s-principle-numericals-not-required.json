@@ -30,7 +30,10 @@
     "answer pattern for \"Le Chatelier's Principle (numericals not required)\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Predict the shift for N2 + 3H2 ⇌ 2NH3 (ΔH < 0) when (a) pressure rises, (b) temperature rises. (2 marks) — (a) forward (4 → 2 moles), (b) backward (exothermic).",
+    "Q. Why does a catalyst not affect the yield of NH3? (1 mark) — it changes only the rate, not the equilibrium constant or position."
+  ],
   "keyPoints": [
     "• Le Chatelier's Principle",
     "• Numericals not required"
@@ -46,5 +49,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: One sentence covers all shifts: the system opposes ANY imposed change — add reactant → forward; add product → backward; raise T → endothermic direction; raise P → fewer gas moles.",
+    "Trick 2: For Haber (N2 + 3H2 ⇌ 2NH3, exothermic): high P, low T, remove NH3 — the standard 3-mark application.",
+    "Trick 3: Catalysts shift NOTHING — they only speed both directions equally; saying 'catalyst shifts equilibrium' loses the mark.",
+    "Trick 4: Inert gas at constant volume: no shift; at constant pressure: shifts toward more moles."
   ]
 }

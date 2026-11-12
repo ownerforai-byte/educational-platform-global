@@ -89,5 +89,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Distance formula: d = |ax1 + by1 + c|/√(a² + b²) — memorise the denominator once and every distance problem is a substitution.",
+    "Trick 2: Bisectors: (a1x + b1y + c1)/√(a1²+b1²) = ±(a2x + b2y + c2)/√(a2²+b2²); choose the sign by substituting a test point (origin) — the sign that gives the bisector of the angle containing the origin is the one with equal signs.",
+    "Trick 3: Foot of perpendicular: use d along the normal direction (a, b) — foot = (x1 − a·t, y1 − b·t) with t = (ax1+by1+c)/(a²+b²)."
   ]
 }

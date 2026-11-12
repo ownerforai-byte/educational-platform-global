@@ -37,7 +37,10 @@
     "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. How will you distinguish ethyne from ethene? (2 marks) — ethyne gives white ppt with ammoniacal AgNO3; ethene does not.",
+    "Q. Why are terminal alkynes acidic? (1 mark) — high s-character of sp carbon stabilises the acetylide anion."
+  ],
   "formulas": [
     "F = qvB sinθ",
     "ε = −N dΦ/dt",
@@ -78,5 +81,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Addition goes in TWO stages: alkyne → alkene → alkane; with HX follow Markovnikov (vinyl → ethylidene halide).",
+    "Trick 2: Hydration with dilute H2SO4/HgSO4: ethyne → acetaldehyde (via enol tautomerisation); other alkynes → ketones — the enol–keto line earns the mark.",
+    "Trick 3: Acidic nature tests (terminal alkynes only): Na metal → sodium acetylide + H2; ammoniacal AgNO3 → white Ag2C2; ammoniacal Cu2Cl2 → red Cu2C2 — three colours to memorise.",
+    "Trick 4: Acidic reason: sp-carbon (50% s-character) holds the electron pair closer to the nucleus."
   ]
 }

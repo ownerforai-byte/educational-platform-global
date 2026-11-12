@@ -71,5 +71,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Growth equations: exponential dN/dt = rN (J-curve, unlimited); logistic dN/dt = rN(K−N)/K (S-curve, carrying capacity K) — quote both equations and their curve shapes.",
+    "Trick 2: r-strategists: small, short-lived, many offspring, unstable habitat; K-strategists: large, few offspring, stable habitat — the contrast pair.",
+    "Trick 3: Interactions table: mutualism (+/+), competition (−/−), predation (+/−), parasitism (+/−), commensalism (+/0), amensalism (−/0) — six signs, six marks.",
+    "Trick 4: Gause's principle: two species with identical niches cannot coexist — competitive exclusion; resource partitioning is the escape."
   ]
 }

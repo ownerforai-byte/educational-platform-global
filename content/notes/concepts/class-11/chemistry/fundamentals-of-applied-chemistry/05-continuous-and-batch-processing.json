@@ -30,7 +30,10 @@
     "answer pattern for \"Continuous and batch processing\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Which process suits urea manufacture and why? (2 marks) — continuous; huge steady demand and lower unit cost.",
+    "Q. Give one advantage of batch processing. (1 mark) — flexibility to change product/grade between batches."
+  ],
   "keyPoints": [
     "• Continuous",
     "• Batch processing"
@@ -46,5 +49,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: One-line contrast: batch = charge, react, discharge, repeat (small scale, flexible); continuous = uninterrupted feed and product removal (large scale, automated).",
+    "Trick 2: Choose by product: continuous for bulk chemicals (ammonia, H2SO4, cement); batch for pharmaceuticals, dyes, specialty chemicals (small, varied lots).",
+    "Trick 3: Advantages row: continuous — low unit cost, constant quality, less labour; batch — easy quality change, low capital, good for small demand."
   ]
 }

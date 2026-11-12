@@ -37,7 +37,10 @@
     "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Write the chlorination of methane in sunlight with mechanism type. (2 marks) — CH4 + Cl2 → CH3Cl + HCl; free-radical substitution.",
+    "Q. Why is iodination reversible? (1 mark) — HI formed reduces the iodide back; needs HNO3/HgO to remove HI."
+  ],
   "formulas": [
     "F = qvB sinθ",
     "ε = −N dΦ/dt",
@@ -78,5 +81,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Conditions are the marks — halogenation needs sunlight/heat (free-radical chain); nitration needs 400–500 °C vapour phase (CH4 + HNO3 → CH3NO2); sulphonation needs fuming H2SO4, long-chain alkanes only.",
+    "Trick 2: Halogenation order of ease: F2 (explosive) > Cl2 > Br2 > I2 (reversible, needs oxidant) — explain via bond energies.",
+    "Trick 3: Free-radical mechanism three steps: initiation (Cl2 → 2Cl·), propagation (Cl· + CH4 → CH3· + HCl), termination (coupling) — name the steps for the 3-mark answer."
   ]
 }

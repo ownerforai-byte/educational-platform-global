@@ -56,5 +56,22 @@
       ],
       "answer": "B"
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Boyle: P1V1 = P2V2 (T constant); Charles: V1/T1 = V2/T2 (P constant); combined: P1V1/T1 = P2V2/T2 — write the one matching the 'constant' word in the question.",
+    "Trick 2: Temperatures MUST be in kelvin — convert T °C + 273 before substituting; this is the most common numerical trap.",
+    "Trick 3: Dalton: P_total = p1 + p2 + …; partial pressure = mole fraction × total pressure (p_i = x_i P).",
+    "Trick 4: Aqueous tension: collected-gas problems subtract the water vapour pressure: P_dry = P_total − aq. tension."
+  ],
+  "keyPoints": [
+    "Boyle's law: V ∝ 1/P at constant T.",
+    "Charles' law: V ∝ T at constant P; −273 °C is the extrapolated zero volume.",
+    "Dalton's law of partial pressures: total pressure = sum of partial pressures.",
+    "Graham's law: rate of diffusion ∝ 1/√M."
+  ],
+  "practiceQuestions": [
+    "Q. 600 mL gas at 27 °C and 700 mmHg — volume at STP? (3 marks) — P2 = 760, T2 = 273 K: V2 = (700 × 600 × 273)/(760 × 300) ≈ 502 mL.",
+    "Q. A vessel holds N2 (p = 0.5 atm) and O2 (p = 0.3 atm); total pressure? (1 mark) — 0.8 atm (Dalton).",
+    "Q. O2 diffuses 4 times faster than gas X; find M_X. (2 marks) — r_O2/r_X = √(M_X/32) = 4 → M_X = 512."
   ]
 }

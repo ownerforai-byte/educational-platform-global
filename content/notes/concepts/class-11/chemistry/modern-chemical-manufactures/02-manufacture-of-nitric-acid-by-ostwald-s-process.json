@@ -30,7 +30,10 @@
     "answer pattern for \"Manufacture of nitric acid by Ostwald's process\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Write the three main reactions of the Ostwald process. (3 marks) — NH3 → NO (Pt–Rh); NO → NO2; NO2 + H2O → HNO3.",
+    "Q. Why is Pt–Rh gauze used? (1 mark) — high catalytic activity and durability at 900 °C."
+  ],
   "keyPoints": [
     "• Manufacture of nitric acid by Ostwald's process"
   ],
@@ -45,5 +48,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Three-step chain: 4NH3 + 5O2 → 4NO + 6H2O (Pt–Rh gauze, 900 °C) → 2NO + O2 → 2NO2 → 3NO2 + H2O → 2HNO3 + NO (recycled).",
+    "Trick 2: Catalyst and temperature are the two marks: platinum–rhodium gauze at about 900 °C; oxidation of NH3 is exothermic and self-sustaining.",
+    "Trick 3: Concentration: 68% azeotrope by distillation; stronger acid needs conc. H2SO4 dehydration — quote for the extra mark."
   ]
 }

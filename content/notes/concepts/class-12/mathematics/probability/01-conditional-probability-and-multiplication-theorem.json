@@ -95,5 +95,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "keyPoints": [
+    "Conditional probability restricts the sample space to the given event.",
+    "P(A∩B) = P(A) · P(B|A).",
+    "For independent events P(B|A) = P(B).",
+    "Tree diagrams encode multiplication along branches and addition across outcomes."
   ]
 }

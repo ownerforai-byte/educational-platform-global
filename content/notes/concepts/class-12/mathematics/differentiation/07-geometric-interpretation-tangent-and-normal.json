@@ -66,5 +66,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Slope pack: m_tangent = dy/dx at the point; m_normal = −1/(dy/dx) — then point-slope form finishes the line.",
+    "Trick 2: Tangent parallel to x-axis → dy/dx = 0; parallel to y-axis → dx/dy = 0 — the two special cases are the standard 2-markers.",
+    "Trick 3: For implicit curves, find dy/dx by implicit differentiation, substitute the given point, then build both lines — never solve for y explicitly.",
+    "Trick 4: Tangent length and subtangent questions: use y = m(x − x1) + y1 and intercepts with the axes."
   ]
 }

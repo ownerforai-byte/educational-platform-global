@@ -95,5 +95,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: The SUVAT set: v = u + at, s = ut + ½at², v² = u² + 2as — pick by what is ABSENT (no v → second; no s → first; no t → third).",
+    "Trick 2: Sign discipline: take one direction positive; deceleration is negative a; 'comes to rest' means v = 0 — most mistakes are sign errors, not formulas.",
+    "Trick 3: Distance in the nth second: s_n = u + a(2n − 1)/2 — the favourite 2-mark formula.",
+    "Trick 4: Gravity problems: g = 9.8 m/s² downward; time of flight 2u/g, max height u²/2g for vertical projection — quote the pair."
   ]
 }

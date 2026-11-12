@@ -1,0 +1,177 @@
+{
+  "class-11-notes/mathematics/algebra/curve-sketching-odd-and-even-functions-periodicity-symmetry-about-origin-x-and-y-axis-monotonici": {
+    "examShortTricks": [
+      "Trick 1: Symmetry tests in three lines — even: f(−x) = f(x) (mirror about y-axis); odd: f(−x) = −f(x) (rotation about origin); neither: no symmetry.",
+      "Trick 2: Periodicity: find smallest T > 0 with f(x + T) = f(x); for sin/cos T = 2π, tan T = π — check the constant term first.",
+      "Trick 3: Monotonicity from the sign of f′: f′ > 0 increasing, f′ < 0 decreasing; mark the turning points where f′ = 0 and sketch through them.",
+      "Trick 4: Always list intercepts (f(0), f(x) = 0), domain and asymptotes BEFORE drawing — the marking scheme rewards these checkpoints."
+    ],
+    "practiceQuestions": [
+      "Q. Test f(x) = x³ − 3x for symmetry and monotonicity. (4 marks) — odd function; f′ = 3x² − 3 = 0 at x = ±1; increasing on (−∞,−1) ∪ (1,∞), decreasing on (−1,1).",
+      "Q. Is f(x) = x² + |x| even? (1 mark) — yes: f(−x) = x² + |x| = f(x)."
+    ]
+  },
+  "class-11-notes/mathematics/algebra/quadratic-equation-nature-and-roots-of-a-quadratic-equation-relation-between-roots-and-coefficie": {
+    "examShortTricks": [
+      "Trick 1: Discriminant decides everything: D = b² − 4ac — D > 0 real distinct, D = 0 real equal, D < 0 complex conjugates; for rational coefficients D a perfect square → rational roots.",
+      "Trick 2: Roots–coefficient pair: α + β = −b/a, αβ = c/a — build ANY requested expression as a combination: α² + β² = (α+β)² − 2αβ, 1/α + 1/β = (α+β)/αβ.",
+      "Trick 3: Form a new quadratic from given roots: x² − (sum)x + product = 0 — instant 2-mark answer.",
+      "Trick 4: 'Roots are equal' → set D = 0 and solve for the unknown parameter; 'roots are reciprocal' → product = 1; 'opposite sign' → product < 0."
+    ],
+    "practiceQuestions": [
+      "Q. For what k does x² + kx + 9 = 0 have equal roots? (2 marks) — D = k² − 36 = 0 → k = ±6.",
+      "Q. If α, β are roots of 2x² − 5x + 3, find α² + β². (2 marks) — sum = 5/2, product = 3/2 → 25/4 − 3 = 13/4.",
+      "Q. Form the quadratic whose roots are 2 and −3. (1 mark) — x² + x − 6 = 0."
+    ]
+  },
+  "class-11-notes/mathematics/algebra/complex-number-imaginary-unit-algebra-of-complex-numbers-geometric-representation-absolute-modul": {
+    "examShortTricks": [
+      "Trick 1: i² = −1 powers cycle in fours: i, −1, −i, 1 — reduce any i^n by dividing n by 4.",
+      "Trick 2: Modulus–argument pack: |z| = √(x² + y²); arg z = tan^-1(y/x) with quadrant check; polar form z = r(cos θ + i sin θ).",
+      "Trick 3: Conjugate tricks: z z̄ = |z|²; to divide by a complex number multiply by the conjugate of the DENOMINATOR — standardises every fraction problem.",
+      "Trick 4: Geometric: |z − z1| = |z − z2| is the perpendicular bisector of the segment z1z2; |z| = r is a circle — recognising the locus halves the work."
+    ],
+    "practiceQuestions": [
+      "Q. Express (1 + i)/(1 − i) in the form a + ib. (2 marks) — multiply by (1+i)/(1+i): (1+i)²/2 = i.",
+      "Q. Find the modulus and argument of z = 1 + i√3. (2 marks) — |z| = 2; arg = 60° (π/3).",
+      "Q. Simplify i^17. (1 mark) — i^(16+1) = i."
+    ]
+  },
+  "class-11-notes/mathematics/analytic-geometry/straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles": {
+    "examShortTricks": [
+      "Trick 1: Distance formula: d = |ax1 + by1 + c|/√(a² + b²) — memorise the denominator once and every distance problem is a substitution.",
+      "Trick 2: Bisectors: (a1x + b1y + c1)/√(a1²+b1²) = ±(a2x + b2y + c2)/√(a2²+b2²); choose the sign by substituting a test point (origin) — the sign that gives the bisector of the angle containing the origin is the one with equal signs.",
+      "Trick 3: Foot of perpendicular: use d along the normal direction (a, b) — foot = (x1 − a·t, y1 − b·t) with t = (ax1+by1+c)/(a²+b²)."
+    ],
+    "practiceQuestions": [
+      "Q. Find the distance from (3, −4) to the line 3x + 4y − 5 = 0. (2 marks) — |9 − 16 − 5|/5 = 12/5.",
+      "Q. Find the equations of the bisectors of the angles between x + 2y − 4 = 0 and 2x − y + 1 = 0. (3 marks) — (x+2y−4)/√5 = ±(2x−y+1)/√5 → x + 2y − 4 = ±(2x − y + 1)."
+    ]
+  },
+  "class-11-notes/mathematics/analytic-geometry/pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a": {
+    "examShortTricks": [
+      "Trick 1: ax² + 2hxy + by² = 0 through the origin → factorise by treating as quadratic in (y/x); slopes m1m2 = a/b, m1 + m2 = −2h/b.",
+      "Trick 2: General second-degree represents a pair of lines when abc + 2fgh − af² − bg² − ch² = 0 — memorise as 'abc + 2fgh − af² − bg² − ch²'.",
+      "Trick 3: Angle between the lines: tan θ = 2√(h² − ab)/(a + b); perpendicular when a + b = 0; parallel when h² = ab.",
+      "Trick 4: For ax² + 2hxy + by² = 0: perpendicular ⇔ a + b = 0 — the fastest 1-mark test."
+    ],
+    "practiceQuestions": [
+      "Q. Find the angle between the lines 2x² + 5xy + 2y² = 0. (3 marks) — h²−ab = 6.25−4 = 2.25; tanθ = 2(1.5)/4 = 0.75 → θ ≈ 36.9°.",
+      "Q. When do the lines of x² + 2hxy + y² = 0 coincide? (1 mark) — h² = ab = 1 → h = ±1."
+    ]
+  },
+  "class-11-notes/mathematics/statistics-and-probability/measure-of-dispersion-standard-deviation-variance-coefficient-of-variation-skewness-karl-pearson": {
+    "examShortTricks": [
+      "Trick 1: CV = (σ/x̄) × 100% — 'less CV = more consistent'; the consistency comparison question is a direct CV calculation.",
+      "Trick 2: Variance shortcut for discrete data: σ² = Σfx²/N − (Σfx/N)² — compute two column sums and subtract; never use the definition formula with huge means.",
+      "Trick 3: Karl Pearson skewness: Sk = (mean − mode)/σ or 3(mean − median)/σ; sign tells direction (positive = right tail).",
+      "Trick 4: Adding a constant to all values changes x̄ but NOT σ; multiplying by k multiplies σ by |k| — the transformation 1-marker."
+    ],
+    "practiceQuestions": [
+      "Q. Two batsmen average 50 and 40 with SDs 12 and 8 — who is more consistent? (2 marks) — CV: 24% vs 20% → the second batsman.",
+      "Q. If each observation is multiplied by 3, what happens to SD? (1 mark) — triples (in absolute value).",
+      "Q. Mean 40, median 42 — find Pearson skewness with σ = 5. (2 marks) — Sk = 3(40−42)/5 = −1.2 (negative skew)."
+    ]
+  },
+  "class-11-notes/mathematics/calculus/limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi": {
+    "examShortTricks": [
+      "Trick 1: 0/0 toolkit in order — factorise and cancel → rationalise (multiply by conjugate) → standard limits (sin x/x → 1, (1+x)^(1/x) → e, (a^x − 1)/x → ln a).",
+      "Trick 2: Substitute FIRST; only if you get 0/0 or ∞/∞ apply the toolkit — most marks are lost by skipping the direct check.",
+      "Trick 3: Continuity checklist at x = a: f(a) defined, lim exists, lim = f(a) — all three must hold; state each explicitly for full marks.",
+      "Trick 4: For piecewise functions set left limit = right limit = value to find unknown constants — the standard exam pattern."
+    ],
+    "practiceQuestions": [
+      "Q. Evaluate lim (x→0) (1 − cos x)/x². (2 marks) — = (2sin²(x/2))/x² → 1/2.",
+      "Q. Find k so that f is continuous at 0: f(x) = (sin 3x)/x for x≠0, f(0) = k. (2 marks) — k = 3.",
+      "Q. Evaluate lim (x→∞) (1 + 2/x)^x. (2 marks) — e²."
+    ]
+  },
+  "class-11-notes/mathematics/calculus/rules-of-differentiation-derivatives-of-parametric-and-implicit-functions-higher-order-derivativ": {
+    "examShortTricks": [
+      "Trick 1: Order of tools: product rule → quotient rule → chain rule; write u′v + uv′ or (u′v − uv′)/v² before substituting to avoid sign slips.",
+      "Trick 2: Parametric second derivative: dy/dx = (dy/dt)/(dx/dt); d²y/dx² = d(dy/dx)/dt ÷ dx/dt — the ÷(dx/dt) is the mark students forget.",
+      "Trick 3: Implicit: differentiate both sides treating y as y(x), collect dy/dx terms on one side, factor — never solve for y first.",
+      "Trick 4: For nth derivatives of standard forms memorise: (ax+b)^n → n! pattern; y = e^{ax} sin bx → r^n e^{ax} sin(bx + n tan^-1(b/a))."
+    ],
+    "practiceQuestions": [
+      "Q. If x = at², y = 2at, find dy/dx and d²y/dx². (3 marks) — dy/dx = 1/t; d²y/dx² = −1/(2at³).",
+      "Q. Differentiate x^x. (2 marks) — y = x^x → ln y = x ln x → y′ = x^x(1 + ln x).",
+      "Q. Find dy/dx if x² + y² = 25. (1 mark) — dy/dx = −x/y."
+    ]
+  },
+  "class-11-notes/mathematics/calculus/geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extre": {
+    "examShortTricks": [
+      "Trick 1: dy/dx = slope of tangent — state this line first; it links every geometric question (parallel to y = mx → set f′ = m; perpendicular → f′ = −1/m).",
+      "Trick 2: Extrema protocol: find f′ = 0 candidates → use second derivative (f″ > 0 minimum, f″ < 0 maximum) or a sign chart — always report the INTERVALS, not just points.",
+      "Trick 3: Points where f′ fails to exist can also be extrema — check them if the function has | | or fractions.",
+      "Trick 4: For max/min word problems, express the quantity in ONE variable, differentiate, and verify with the second derivative — quote the units in the final sentence."
+    ],
+    "practiceQuestions": [
+      "Q. Find the intervals of increase of f(x) = x³ − 3x² + 2. (3 marks) — f′ = 3x(x−2); increasing on (−∞,0) ∪ (2,∞).",
+      "Q. Find max/min of f(x) = x³ − 12x. (3 marks) — f′ = 3x²−12 = 0 → x = ±2; f″ = 6x: max at −2 (16), min at 2 (−16).",
+      "Q. Where is the tangent to y = x² parallel to y = 4x? (1 mark) — 2x = 4 → x = 2."
+    ]
+  },
+  "class-11-notes/mathematics/calculus/anti-derivatives-integration-using-basic-integrals-integration-by-substitution-and-by-parts-meth": {
+    "examShortTricks": [
+      "Trick 1: Method picker — see √(a²−x²), a²+x² etc. → trigonometric substitution; see f(g(x))·g′(x) → substitution; see product of two unlike functions → by parts.",
+      "Trick 2: By parts ILATE order (Inverse, Log, Algebraic, Trig, Exponential) — the factor that comes later in ILATE is 'v'; wrong choice doubles the work.",
+      "Trick 3: Definite integrals of even/odd functions over [−a, a]: even → 2×(0 to a), odd → 0 — instant marks.",
+      "Trick 4: Standard results bank: ∫dx/(x²+a²) = (1/a)tan^-1(x/a); ∫dx/√(a²−x²) = sin^-1(x/a); ∫e^x(f + f′)dx = e^x f — quote the matching standard form before integrating."
+    ],
+    "practiceQuestions": [
+      "Q. Evaluate ∫ x e^x dx. (2 marks) — e^x(x − 1) + C (ILATE: algebraic first).",
+      "Q. Evaluate ∫0^π/2 sin²x dx. (2 marks) — π/4 (even-power identity).",
+      "Q. Integrate 1/(√(4 − x²)). (1 mark) — sin^-1(x/2) + C."
+    ]
+  },
+  "class-11-notes/mathematics/computational-methods-or-mechanics/numerical-computation-roots-of-algebraic-and-transcendental-equations-bisection-and-newton-raphs": {
+    "examShortTricks": [
+      "Trick 1: Bisection protocol: find a, b with f(a)f(b) < 0 → midpoint c = (a+b)/2 → keep the subinterval with the sign change → repeat; each step halves the interval (error after n steps ≤ (b−a)/2^n).",
+      "Trick 2: Newton–Raphson one formula: x_{n+1} = x_n − f(x_n)/f′(x_n) — choose the initial guess near the root; a wrong start (f′ ≈ 0) diverges.",
+      "Trick 3: Speed comparison: NR converges quadratically (doubles correct digits), bisection linearly — quote when asked to compare.",
+      "Trick 4: For transcendental equations (e.g. x = cos x), first isolate f(x) = x − cos x and bracket the root by testing integer values."
+    ],
+    "practiceQuestions": [
+      "Q. Show that x³ − 2x − 5 = 0 has a root between 2 and 3 and do one bisection step. (3 marks) — f(2) = −1, f(3) = 16; c = 2.5, f(2.5) = 5.625 > 0 → root in (2, 2.5).",
+      "Q. One Newton–Raphson iteration for x² − 10 = 0 from x0 = 3. (2 marks) — x1 = 3 − (−1)/6 = 3.1667."
+    ]
+  },
+  "class-11-notes/mathematics/computational-methods-or-mechanics/numerical-integration-trapezoidal-rule-and-simpson-s-rule": {
+    "examShortTricks": [
+      "Trick 1: Trapezoidal: h/2 [y0 + yn + 2(y1 + … + y_{n−1})] — first and last once, middles twice.",
+      "Trick 2: Simpson's 1/3 rule needs an EVEN number of intervals: h/3 [y0 + yn + 4(odd-indexed) + 2(even-indexed)] — the 4-2-4 pattern is the whole trick.",
+      "Trick 3: Simpson is exact for cubics (error O(h^4)), trapezoidal exact for linears (O(h²)) — the comparison 1-marker.",
+      "Trick 4: h = (b − a)/n; compute h FIRST, tabulate y values, then apply — tabulated working earns method marks even if arithmetic slips."
+    ],
+    "practiceQuestions": [
+      "Q. Approximate ∫0^1 dx/(1+x²) with 4 intervals by trapezoidal rule. (3 marks) — h = 0.25; y = 1, 0.9412, 0.8, 0.64, 0.5 → 0.25/2 × (1.5 + 2×2.3812) ≈ 0.7828.",
+      "Q. Why does Simpson's rule need an even number of intervals? (1 mark) — it fits parabolas through PAIRS of adjacent strips."
+    ]
+  },
+  "class-11-notes/mathematics/computational-methods-or-mechanics/mechanics-optional-statics-forces-and-resultant-forces-parallelogram-law-of-forces-composition-a": {
+    "examShortTricks": [
+      "Trick 1: Resultant of two forces: R = √(P² + Q² + 2PQ cos θ); direction tan α = Q sin θ/(P + Q cos θ) — two formulas cover every statics numerical.",
+      "Trick 2: Equilibrium of three forces → Lami's theorem: P/sin α = Q/sin β = R/sin γ — use when three concurrent forces balance.",
+      "Trick 3: Resolution trick: choose axes along and perpendicular to the likely resultant; ΣFx and ΣFy then give R and θ directly.",
+      "Trick 4: Minimum force to move... on a smooth plane: resolve weight along the plane mg sin θ — the standard free-body setup earns the method mark."
+    ],
+    "practiceQuestions": [
+      "Q. Two forces 5 N and 12 N act at right angles — find the resultant. (2 marks) — R = √(25+144) = 13 N at tan^-1(12/5) from the 5 N force.",
+      "Q. State Lami's theorem. (1 mark) — for three concurrent forces in equilibrium, each force is proportional to the sine of the angle between the other two."
+    ]
+  },
+  "class-11-notes/mathematics/computational-methods-or-mechanics/mechanics-optional-dynamics-motion-of-particle-in-a-straight-line-motion-with-uniform-accelerati": {
+    "examShortTricks": [
+      "Trick 1: The SUVAT set: v = u + at, s = ut + ½at², v² = u² + 2as — pick by what is ABSENT (no v → second; no s → first; no t → third).",
+      "Trick 2: Sign discipline: take one direction positive; deceleration is negative a; 'comes to rest' means v = 0 — most mistakes are sign errors, not formulas.",
+      "Trick 3: Distance in the nth second: s_n = u + a(2n − 1)/2 — the favourite 2-mark formula.",
+      "Trick 4: Gravity problems: g = 9.8 m/s² downward; time of flight 2u/g, max height u²/2g for vertical projection — quote the pair."
+    ],
+    "practiceQuestions": [
+      "Q. A body starts from rest with a = 2 m/s². Find the distance in the 5th second. (2 marks) — s5 = 0 + 2(9)/2 = 9 m.",
+      "Q. A ball is thrown up at 20 m/s. Find max height and total flight time (g = 10). (3 marks) — h = 20 m; T = 4 s.",
+      "Q. v² − u² = 2as is best used when? (1 mark) — time is not involved."
+    ]
+  }
+}

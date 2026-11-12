@@ -126,5 +126,11 @@
       ],
       "answer": "B"
     }
+  ],
+  "keyPoints": [
+    "AND, OR, NOT are the basic gates; NAND, NOR are universal.",
+    "Output expressions: AND = A·B, OR = A + B, NAND = (A·B)', NOR = (A + B)'.",
+    "De Morgan's theorems convert between NAND/NOR forms.",
+    "XOR gives 1 for unequal inputs."
   ]
 }

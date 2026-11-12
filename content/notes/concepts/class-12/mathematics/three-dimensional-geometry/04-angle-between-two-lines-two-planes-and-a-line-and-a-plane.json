@@ -81,5 +81,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: All three angles are cos formulas on direction data — lines: cos θ = |b1·b2|/(|b1||b2|); planes: cos θ = |n1·n2|/(|n1||n2|); line-plane: sin θ = |b·n|/(|b||n|).",
+    "Trick 2: Perpendicular/parallel tests: lines ⊥ ⇔ b1·b2 = 0; planes ∥ ⇔ n1 = λn2; line ∥ plane ⇔ b·n = 0 — the dot-product zero is the fastest test.",
+    "Trick 3: For line-plane angle, remember it is SIN (the line's angle with the plane is the complement of its angle with the normal) — the classic trap."
   ]
 }

@@ -42,7 +42,10 @@
     "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Arrange halogens by oxidising power and justify. (2 marks) — F2 > Cl2 > Br2 > I2; decreasing electrode potential down the group.",
+    "Q. Write the lab preparation of chlorine. (2 marks) — MnO2 + 4HCl(conc.) → MnCl2 + Cl2 + 2H2O on heating."
+  ],
   "formulas": [
     "F = qvB sinθ",
     "ε = −N dΦ/dt",
@@ -84,5 +87,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Trend line for the 3-mark answer: reactivity and oxidising power F2 > Cl2 > Br2 > I2; b.p./m.p. and colour intensity increase DOWN the group.",
+    "Trick 2: Displacement series: F2 displaces all; Cl2 displaces Br− and I−; Br2 displaces I− only — write Cl2 + 2KBr → 2KCl + Br2.",
+    "Trick 3: Preparation: MnO2 + 4HCl → MnCl2 + Cl2 + 2H2O (lab method); I2 from KI + oxidant — one equation each.",
+    "Trick 4: Why F2 is strongest oxidant: low bond dissociation energy + high hydration energy of F−."
   ]
 }

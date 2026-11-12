@@ -42,5 +42,21 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Vapour density shortcut — V.D. = M/2, so molecular mass = 2 × V.D. Instantly converts any given V.D. into M.",
+    "Trick 2: At STP one mole of ANY gas occupies 22.4 L — so litres at STP / 22.4 = moles; moles × 22.4 = litres. Two directions, one number.",
+    "Trick 3: Equal volumes of all gases at same T and P contain equal molecules (Avogadro) — this is why the ratio of volumes of reacting gases = ratio of moles (Gay-Lussac's combining volumes).",
+    "Trick 4: Gram molecular volume problems: mass given → moles = mass/M → volume = moles × 22.4 L at STP."
+  ],
+  "keyPoints": [
+    "Avogadro's law: equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules.",
+    "Vapour density = mass of a volume of gas / mass of equal volume of hydrogen (same T, P); M = 2 × V.D.",
+    "One gram-mole of any gas occupies 22.4 L at STP (0 °C, 1 atm).",
+    "Avogadro's number NA = 6.022 × 10^23 particles per mole."
+  ],
+  "practiceQuestions": [
+    "Q. Vapour density of a gas is 22. Find its molecular mass and the volume occupied by 4.4 g at STP. (3 marks) — M = 2 × 22 = 44 (CO2); moles = 4.4/44 = 0.1; V = 0.1 × 22.4 = 2.24 L.",
+    "Q. 500 mL of a gas at STP weighs 0.72 g. Find the molecular mass. (2 marks) — 22.4 L would weigh (0.72/0.5) × 22.4 = 32.256 ≈ 32 g/mol (O2-like)."
   ]
 }

@@ -81,5 +81,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Work as a dot product: W = F·d = Fd cos θ — zero work when force ⊥ displacement; quote the condition.",
+    "Trick 2: Torque as a cross product: τ = r × F, magnitude rF sin θ, direction by the right-hand rule — state both magnitude and direction for full marks.",
+    "Trick 3: Angular momentum L = r × p = r × mv; conservation when τ = 0 — the link line earns the concept mark.",
+    "Trick 4: Numericals are one substitution each — keep vectors in component form and use the 3×3 determinant for cross products."
   ]
 }

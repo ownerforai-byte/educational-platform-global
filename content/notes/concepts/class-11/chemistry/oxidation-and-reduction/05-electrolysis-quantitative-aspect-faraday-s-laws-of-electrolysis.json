@@ -35,7 +35,10 @@
     "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. What mass of Cu is deposited by 2 A in 30 minutes? (Cu = 63.5, Cu2+) (3 marks) — Q = 2 × 1800 = 3600 C; m = 63.5 × 3600/(2 × 96500) ≈ 1.18 g.",
+    "Q. Same current through CuSO4 and AgNO3 deposits 0.3175 g Cu. Find Ag deposited. (2 marks) — mAg = 0.3175 × (108/31.75) ≈ 1.08 g."
+  ],
   "formulas": [
     "F = qvB sinθ",
     "ε = −N dΦ/dt",
@@ -74,5 +77,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: First law one line: m = ZIt with Z = E/96500 (E = equivalent mass) — every numerical is a direct substitution.",
+    "Trick 2: Second law in ratio form: masses deposited by the same charge are in the ratio of equivalent masses, m1/m2 = E1/E2.",
+    "Trick 3: Charge bookkeeping: Q = It (I in amperes, t in seconds); moles of electrons = Q/96500; then divide by the ion charge.",
+    "Trick 4: 1 F deposits 1 equivalent = 1 mole of electrons' worth — Ag (108 g), Cu 63.5/2, Al 27/3."
   ]
 }

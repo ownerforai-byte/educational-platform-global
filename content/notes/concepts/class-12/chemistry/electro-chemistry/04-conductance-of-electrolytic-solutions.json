@@ -73,5 +73,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Chain of definitions: G = 1/R; κ = G·(l/A); Λm = κ·1000/M — each step multiplies by a cell constant or dilution factor; quote units: S m⁻¹ and S cm² mol⁻¹.",
+    "Trick 2: Λm rises on dilution (more dissociation) while κ falls (fewer ions per cm³) — the contrast is the standard 2-mark answer.",
+    "Trick 3: Strong electrolytes: Λm = Λ°m − A√c (Kohlrausch, small slope); weak: Λ°m by extrapolation fails — use Kohlrausch's law of independent migration instead.",
+    "Trick 4: Λ°m of weak electrolyte = sum of Λ° of ion pairs, e.g. Λ°(CH3COOH) = Λ°(HCl) + Λ°(CH3COONa) − Λ°(NaCl) — the classic combination numerical."
   ]
 }

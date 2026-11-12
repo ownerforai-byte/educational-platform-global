@@ -41,7 +41,10 @@
     "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Copper with dilute and concentrated HNO3 — write both equations. (3 marks) — dilute → NO; conc. → NO2 (Cu(NO3)2 + H2O co-products).",
+    "Q. Why is Al not attacked by cold conc. HNO3? (1 mark) — passivation by a protective oxide layer."
+  ],
   "formulas": [
     "F = qvB sinθ",
     "ε = −N dΦ/dt",
@@ -83,5 +86,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Dilute HNO3 + metals → NO; conc. HNO3 + metals → NO2 — pick the gas by acid strength (except Mg with dilute gives H2, and Au/Pt dissolve in aqua regia only).",
+    "Trick 2: Passivity: cold conc. HNO3 makes Fe, Al, Cr passive (oxide film) — a guaranteed 1-marker.",
+    "Trick 3: Non-metals oxidised: S → H2SO4, P → H3PO4, C → CO2 — write one equation: C + 4HNO3 → CO2 + 4NO2 + 2H2O.",
+    "Trick 4: Brown-ring test for nitrate: FeSO4 + conc. H2SO4 gives a brown ring at the junction — the classic identification test."
   ]
 }

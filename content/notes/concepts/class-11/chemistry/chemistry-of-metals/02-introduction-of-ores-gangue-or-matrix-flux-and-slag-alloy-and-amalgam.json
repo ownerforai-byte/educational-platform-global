@@ -38,7 +38,10 @@
     "Cofactors: Cᵢⱼ = (−1)^{i+j} Mᵢⱼ; adj = cofactor matrix transposed; A·adj(A) = det(A) I."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Define flux and slag with one equation. (2 marks) — CaO + SiO2 → CaSiO3.",
+    "Q. What is an amalgam? Give one example. (1 mark) — alloy with mercury, e.g. sodium amalgam."
+  ],
   "formulas": [
     "det([[a,b],[c,d]]) = ad − bc",
     "A⁻¹ = adj(A)/det(A)",
@@ -79,5 +82,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Definitions in one line each — ore: mineral from which metal is extracted profitably; gangue/matrix: unwanted rocky impurity; flux: substance added to remove gangue; slag: fusible product of flux + gangue.",
+    "Trick 2: Slag equation: CaO (flux, basic) + SiO2 (gangue, acidic) → CaSiO3 (slag) — write it; it links all four definitions in one line.",
+    "Trick 3: Alloy vs amalgam: amalgam is an alloy containing MERCURY (Na–Hg, Zn–Hg); examples of alloys: brass (Cu+Zn), bronze (Cu+Sn)."
   ]
 }

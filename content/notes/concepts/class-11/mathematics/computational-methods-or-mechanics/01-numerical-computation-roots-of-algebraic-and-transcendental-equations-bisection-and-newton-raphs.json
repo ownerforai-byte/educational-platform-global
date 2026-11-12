@@ -93,5 +93,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Bisection protocol: find a, b with f(a)f(b) < 0 → midpoint c = (a+b)/2 → keep the subinterval with the sign change → repeat; each step halves the interval (error after n steps ≤ (b−a)/2^n).",
+    "Trick 2: Newton–Raphson one formula: x_{n+1} = x_n − f(x_n)/f′(x_n) — choose the initial guess near the root; a wrong start (f′ ≈ 0) diverges.",
+    "Trick 3: Speed comparison: NR converges quadratically (doubles correct digits), bisection linearly — quote when asked to compare.",
+    "Trick 4: For transcendental equations (e.g. x = cos x), first isolate f(x) = x − cos x and bracket the root by testing integer values."
   ]
 }

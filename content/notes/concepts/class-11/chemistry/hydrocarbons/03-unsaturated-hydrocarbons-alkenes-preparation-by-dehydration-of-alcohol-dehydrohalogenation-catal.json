@@ -31,7 +31,10 @@
     "answer pattern for \"Unsaturated hydrocarbons (Alkenes): preparation by dehydr…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Prepare ethene from ethanol and from bromoethane. (2 marks) — dehydration (conc. H2SO4, 170 °C); dehydrohalogenation (alc. KOH).",
+    "Q. Why is aqueous KOH not used for alkene preparation? (1 mark) — it gives substitution (alcohol) instead of elimination."
+  ],
   "keyPoints": [
     "• Unsaturated hydrocarbons",
     "• Alkenes",
@@ -61,5 +64,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Dehydration: C2H5OH —(conc. H2SO4, 170 °C)→ C2H4 + H2O; dehydrohalogenation: C2H5Br + KOH(alcoholic) → C2H4 + KBr + H2O — 'alcoholic KOH' vs 'aqueous KOH' decides alkene vs alcohol.",
+    "Trick 2: Saytzeff rule for the 2-mark extra: elimination removes H from the β-carbon with FEWER hydrogens → more substituted (stable) alkene predominates.",
+    "Trick 3: Partial hydrogenation: RC≡CR + H2 (Lindlar/Pd–BaSO4) → cis-alkene; full reduction gives alkane."
   ]
 }

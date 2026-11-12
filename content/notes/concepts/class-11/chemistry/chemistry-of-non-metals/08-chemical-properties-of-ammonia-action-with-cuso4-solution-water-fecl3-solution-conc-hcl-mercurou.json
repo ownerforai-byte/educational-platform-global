@@ -40,7 +40,10 @@
     "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. What happens when ammonia is passed into CuSO4 solution? (2 marks) — pale blue Cu(OH)2 then deep blue complex [Cu(NH3)4]SO4 in excess.",
+    "Q. Give one test to identify NH3 gas. (1 mark) — white fumes with conc. HCl (rod dipped in HCl)."
+  ],
   "formulas": [
     "F = qvB sinθ",
     "ε = −N dΦ/dt",
@@ -82,5 +85,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Colour-change table for the 3-mark answer — CuSO4: pale blue → deep blue (tetraammine complex); FeCl3: yellow → brown (Fe(OH)3); Hg2Cl2: black (amido-mercury).",
+    "Trick 2: With conc. HCl: white fumes of NH4Cl (fountain/fuming test); with water: NH3 + H2O ⇌ NH4+ + OH− shows basic nature.",
+    "Trick 3: Always write NH3 + HCl → NH4Cl (white fumes) — it is both a property AND a test for ammonia."
   ]
 }

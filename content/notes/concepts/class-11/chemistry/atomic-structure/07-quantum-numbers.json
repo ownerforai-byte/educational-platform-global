@@ -180,5 +180,20 @@
     }
   ],
   "source": "ravikishan",
-  "filename": "07-quantum-numbers.json"
+  "filename": "07-quantum-numbers.json",
+  "examShortTricks": [
+    "Trick 1: The four numbers in one line each — n: shell/size/energy; l: shape (s,p,d,f = 0,1,2,3); m: orientation (−l…+l); s: spin (+1/2, −1/2).",
+    "Trick 2: Count orbitals instantly: number of m values = 2l + 1; orbitals in shell n = n²; electrons in shell = 2n².",
+    "Trick 3: 'Is 3f possible?' — l must be ≤ n−1; for n = 3, l max = 2 (d) → 3f does not exist. Same check kills 2d and 1p."
+  ],
+  "keyPoints": [
+    "Principal quantum number n: size and energy of the shell (K, L, M, N…).",
+    "Azimuthal ( subsidiary) l: subshell shape; s, p, d, f = 0, 1, 2, 3; l = 0 … n−1.",
+    "Magnetic m: orientation; values −l … 0 … +l.",
+    "Spin s: +1/2 or −1/2 only."
+  ],
+  "practiceQuestions": [
+    "Q. Write all quantum numbers for the last electron of Na (Z = 11). (3 marks) — 3s1: n = 3, l = 0, m = 0, s = +1/2.",
+    "Q. How many orbitals are in the M shell (n = 3)? (1 mark) — n² = 9 (one 3s, three 3p, five 3d)."
+  ]
 }

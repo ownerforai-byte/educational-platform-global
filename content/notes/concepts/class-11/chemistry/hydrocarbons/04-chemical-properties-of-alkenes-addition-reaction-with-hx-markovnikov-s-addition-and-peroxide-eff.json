@@ -36,7 +36,10 @@
     "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Predict the product of propene + HBr with and without peroxide. (2 marks) — 2-bromopropane (Markovnikov); 1-bromopropane (peroxide effect).",
+    "Q. Why does the peroxide effect not operate with HCl? (1 mark) — H–Cl bond is too strong for the propagation step's exothermic requirement."
+  ],
   "formulas": [
     "F = qvB sinθ",
     "ε = −N dΦ/dt",
@@ -76,5 +79,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Markovnikov one line: H goes to the carbon with MORE hydrogens (rich get richer); propene + HBr → 2-bromopropane. Reason: more stable secondary carbocation.",
+    "Trick 2: Peroxide effect (Kharasch) applies to HBr ONLY: Br adds to the less substituted carbon (anti-Markovnikov) via free-radical chain — HCl/HI do not show it.",
+    "Trick 3: Addition order of reactivity of HX: HI > HBr > HCl (bond strength falls) — a favourite 1-marker."
   ]
 }

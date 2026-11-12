@@ -73,5 +73,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Raoult for both components: p1 = x1 p1°, p2 = x2 p2°; total P = x1p1° + x2p2° — a straight line in x1; ideal solutions obey it exactly.",
+    "Trick 2: Positive deviation (P > ideal): A–B attraction weaker than A–A/B–B (ethanol+acetone); negative deviation: stronger (chloroform+acetone H-bond) — one example each is the standard answer.",
+    "Trick 3: Ideal-solution conditions: ΔHmix = 0, ΔVmix = 0, identical A–A, B–B and A–B interactions.",
+    "Trick 4: Azeotropes form at deviation maxima/minima where vapour and liquid have the same composition — cannot be separated by fractional distillation."
   ]
 }

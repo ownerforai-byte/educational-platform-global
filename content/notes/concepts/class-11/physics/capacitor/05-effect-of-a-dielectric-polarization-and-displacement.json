@@ -64,5 +64,11 @@
       "answer": "B",
       "explanation": "Polarization P is dipole moment per volume: (C·m) / m³ = C/m², identical to surface charge density."
     }
+  ],
+  "keyPoints": [
+    "Dielectric constant K = C_dielectric/C_vacuum.",
+    "Polarisation: induced dipoles create an opposing internal field E/K.",
+    "With dielectric inserted: C increases K-fold; E and V decrease K-fold at fixed Q.",
+    "Energy stored falls by K at fixed charge; rises by K at fixed voltage."
   ]
 }

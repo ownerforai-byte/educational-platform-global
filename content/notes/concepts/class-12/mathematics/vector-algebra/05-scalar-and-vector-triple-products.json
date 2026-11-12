@@ -75,5 +75,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Scalar triple product [a b c] = a·(b×c) = determinant of the component rows — volume of the parallelepiped; zero ⇔ coplanar.",
+    "Trick 2: Vector triple product: a×(b×c) = b(a·c) − c(a·b) — the 'bac − cab' rule; it is NOT associative, so bracket order matters.",
+    "Trick 3: Coplanarity of four points: form three vectors from one point and show their STP is zero — the standard 3-mark template.",
+    "Trick 4: [a b c] changes sign on swapping two vectors; cyclic permutations preserve it — quote for sign questions."
   ]
 }

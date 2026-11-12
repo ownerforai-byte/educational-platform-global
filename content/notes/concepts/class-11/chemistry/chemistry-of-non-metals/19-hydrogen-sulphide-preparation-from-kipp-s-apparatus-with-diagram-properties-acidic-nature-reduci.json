@@ -41,7 +41,10 @@
     "Homogeneous: ax² + 2hxy + by² = 0 (two lines through origin); bisectors: (x² − y²)/(a−b) = xy/h."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Write the reaction for preparing H2S in Kipp's apparatus. (1 mark) — FeS + H2SO4 → FeSO4 + H2S.",
+    "Q. Show the reducing action of H2S with SO2. (2 marks) — 2H2S + SO2 → 3S↓ + 2H2O (yellow sulphur)."
+  ],
   "formulas": [
     "d = |ax₁+by₁+c|/√(a²+b²)",
     "h² ≥ ab ⟺ real pair",
@@ -82,5 +85,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Kipp's equation: FeS + H2SO4(dil) → FeSO4 + H2S↑ — apparatus works by stopcock-controlled contact between acid and FeS in the middle bulb; draw the three-bulb shape.",
+    "Trick 2: Acidic nature: 2H2S ⇌ 2H+ + S2−, a weak diprotic acid — reacts with bases to give two series of salts (HS− and S2−).",
+    "Trick 3: Reducing nature equations: H2S + Cl2 → 2HCl + S (decoulourises Cl2 water); 2H2S + SO2 → 3S + 2H2O; H2S turns acidified KMnO4 colourless.",
+    "Trick 4: Analytical use: group II cation sulphides are coloured — PbS black, CdS yellow, ZnS white; 'H2S in qualitative analysis' is the use to quote."
   ]
 }

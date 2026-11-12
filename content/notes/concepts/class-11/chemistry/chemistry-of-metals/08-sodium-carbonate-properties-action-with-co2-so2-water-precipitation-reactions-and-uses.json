@@ -32,7 +32,10 @@
     "answer pattern for \"Sodium carbonate: properties (action with CO2, SO2, water…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Why is Na2CO3 solution alkaline? (2 marks) — carbonate hydrolysis produces OH− ions.",
+    "Q. Write the reaction of Na2CO3 with CO2. (1 mark) — Na2CO3 + CO2 + H2O → 2NaHCO3."
+  ],
   "keyPoints": [
     "• Sodium carbonate",
     "• Properties",
@@ -63,5 +66,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Hydrolysis one-liner: aqueous Na2CO3 is alkaline (CO3²− + H2O ⇌ HCO3− + OH−) — explains why it cleans grease.",
+    "Trick 2: With CO2: Na2CO3 + CO2 + H2O → 2NaHCO3 (sodium bicarbonate); with SO2: Na2SO3 + CO2 + H2O — same pattern, swap the acid gas.",
+    "Trick 3: Precipitation: CaCl2 + Na2CO3 → CaCO3↓ (white) + 2NaCl; Mg2+ similarly — hard-water softening application.",
+    "Trick 4: Heating test: 2NaHCO3 → Na2CO3 + H2O + CO2 — used to distinguish the two salts."
   ]
 }

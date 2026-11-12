@@ -56,5 +56,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Five factors with one line each: concentration (more collisions), temperature (2× rate per 10 °C rule of thumb), catalyst (lowers Ea), surface area (more contact), nature of reactants.",
+    "Trick 2: Collision-theory framing: rate ∝ frequency of collisions × fraction with E ≥ Ea × proper orientation — map each factor onto one of the three.",
+    "Trick 3: Catalyst does NOT change ΔH, K or the final yield — only the rate (both directions equally); saying otherwise loses the mark."
   ]
 }

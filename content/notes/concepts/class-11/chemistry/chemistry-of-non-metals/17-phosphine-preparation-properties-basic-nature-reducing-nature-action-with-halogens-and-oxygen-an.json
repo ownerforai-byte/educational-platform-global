@@ -34,7 +34,10 @@
     "answer pattern for \"Phosphine: preparation, properties (basic nature, reducin…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Write the laboratory preparation of phosphine. (2 marks) — P4 + 3NaOH + 3H2O → PH3 + 3NaH2PO2 (heat).",
+    "Q. Why does impure PH3 catch fire in air? (1 mark) — traces of diphosphine (P2H4) ignite spontaneously."
+  ],
   "keyPoints": [
     "• Phosphine",
     "• Preparation",
@@ -65,5 +68,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Lab preparation: P4 + 3NaOH + 3H2O → PH3 + 3NaH2PO2 (heated, inverted flask over water) — remember the product sodium hypophosphite.",
+    "Trick 2: Purity test: pure PH3 is odourless; impure (P2H4) ignites spontaneously — 'spontaneous flaming rings' is the observation to quote.",
+    "Trick 3: Basic nature weaker than NH3: PH3 + HBr → PH4Br (phosphonium bromide) exists but phosphine is far less basic; reducing: PH3 + 3O2 → P2O5 + 3H2O... use 2PH3 + 4O2 → P2O5 + 3H2O."
   ]
 }

@@ -88,5 +88,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Triangle law: a + b is the diagonal of the triangle with sides a, b; parallelogram law gives the same for concurrent vectors — state both with the direction 'from tail of a to head of b'.",
+    "Trick 2: Position-vector shortcut: AB = OB − OA — every 'find the vector AB' problem is one subtraction.",
+    "Trick 3: Collinearity test: a and b are collinear ⇔ a = λb for some scalar λ; for points A, B, C check AB = λBC.",
+    "Trick 4: Unit vector: â = a/|a|; a vector in the direction of b with magnitude k is k·b/|b| — the two most-quoted constructions."
   ]
 }

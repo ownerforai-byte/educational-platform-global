@@ -32,7 +32,10 @@
     "answer pattern for \"Alkynes: preparation from carbon and hydrogen, 1,2-dibrom…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Write the preparation of ethyne from 1,2-dibromoethane. (2 marks) — CH2BrCH2Br + 2KOH(alc.) → C2H2 + 2KBr + 2H2O.",
+    "Q. Give the industrial preparation of ethyne. (1 mark) — CaC2 + 2H2O → C2H2 + Ca(OH)2."
+  ],
   "keyPoints": [
     "• Alkynes",
     "• Preparation from carbon",
@@ -63,5 +66,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Four routes: C + H2 (electric arc, 2700 °C) → C2H2; vic-dihalide + 2 alc. KOH → alkyne (double dehydrohalogenation); CHCl3 + 2Ag (heat) → C2H2 + 2AgCl; CHI3 + 4Ag → C2H2.",
+    "Trick 2: Double dehydrohalogenation needs TWO equivalents of base and gives the terminal alkyne; the first elimination gives the vinyl halide.",
+    "Trick 3: Ethyne from CaC2 + H2O → C2H2 + Ca(OH)2 — the industrial/lab route; quote 'carbide route' for the mark."
   ]
 }

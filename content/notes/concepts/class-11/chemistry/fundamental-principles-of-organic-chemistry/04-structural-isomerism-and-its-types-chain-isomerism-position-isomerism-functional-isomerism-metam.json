@@ -38,7 +38,10 @@
     "Optical: chiral centre (4 different groups); d/l (+/− enantiomers; meso = optically inactive despite chiral centres)."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Show chain and position isomerism in C4H10/C4H9Cl. (2 marks) — n-butane vs isobutane; 1-chlorobutane vs 2-chlorobutane.",
+    "Q. Ethanol and dimethyl ether illustrate which isomerism? (1 mark) — functional isomerism."
+  ],
   "formulas": [
     "Isomers: same molecular formula, different structure/arrangement"
   ],
@@ -75,5 +78,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Five types with one example each — chain (butane/isobutane), position (1- vs 2-chloropropane), functional (ethanol/dimethyl ether), metamerism (diethyl vs methyl ethyl ether), tautomerism (keto–enol).",
+    "Trick 2: Quick test order: same molecular formula? → same carbon skeleton? (chain) → same group position? (position) → same functional group? (functional) → different alkyl groups around a divalent group? (metamerism).",
+    "Trick 3: Metamerism needs a divalent atom/group (O, S, N) with two alkyl parts — C4H10O ethers show both chain and metamerism."
   ]
 }

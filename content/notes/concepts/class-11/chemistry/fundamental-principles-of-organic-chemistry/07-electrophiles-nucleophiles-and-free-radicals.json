@@ -29,7 +29,10 @@
     "answer pattern for \"Electrophiles, nucleophiles and free-radicals\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Classify: BF3, OH−, Cl·, NH3. (2 marks) — electrophile; nucleophile; free radical; nucleophile.",
+    "Q. Which species attacks benzene in nitration? (1 mark) — nitronium ion NO2+, an electrophile."
+  ],
   "keyPoints": [
     "• Electrophiles",
     "• Nucleophiles",
@@ -57,5 +60,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: One-line trio — electrophile: electron-LOVING, accepts a pair (H+, NO2+, BF3, carbocation); nucleophile: electron-LOVING... donates a pair (OH−, CN−, NH3, carbanion); free radical: neutral with an unpaired electron (Cl·).",
+    "Trick 2: Charge test: electrophiles may be positive OR neutral (BF3, AlCl3); nucleophiles negative OR neutral (H2O, NH3) — 'charge is not the definition, electron pair behaviour is'.",
+    "Trick 3: Reaction mapping: substitution of benzene = electrophilic; hydrolysis of alkyl halide = nucleophilic; halogenation of methane in light = free-radical chain."
   ]
 }

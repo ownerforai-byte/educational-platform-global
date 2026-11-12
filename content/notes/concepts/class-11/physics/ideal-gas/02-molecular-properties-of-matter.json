@@ -54,5 +54,20 @@
     "**Intermolecular vs Intramolecular Forces:** Intermolecular forces (van der Waals, H-bonding, dipole-dipole) are weak ($\\sim 1-100$ kJ/mol) and govern phase changes. Intramolecular (chemical) bonds are strong ($\\sim 100-1000$ kJ/mol) and govern molecular structure. Phase transitions break intermolecular bonds, not intramolecular ones.",
     "**Mean Free Path $\\lambda \\propto 1/(n\\sigma)$:** The average distance between collisions $\\lambda = 1/(\\sqrt{2}n\\sigma)$ decreases with number density $n$ and collision cross-section $\\sigma$. At STP for air, $\\lambda \\approx 68$ nm; at low pressure (vacuum), $\\lambda$ can reach kilometers, enabling ballistic transport."
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "examShortTricks": [
+    "Trick 1: Molecular picture in four points: matter made of molecules, intermolecular spacing decides state, molecules attract each other, molecules are in random motion whose KE measures temperature.",
+    "Trick 2: State differences by spacing and force: solid — close, strong force, fixed position; liquid — close, weaker, mobile; gas — far apart, negligible force, free motion.",
+    "Trick 3: Brownian motion and diffusion are the two EVIDENCES of molecular motion to quote if asked 'how do we know molecules move'."
+  ],
+  "keyPoints": [
+    "Molecules are in continuous random motion; their average KE ∝ absolute temperature.",
+    "Intermolecular forces and spacing distinguish solids, liquids and gases.",
+    "Brownian motion and diffusion evidence molecular motion.",
+    "At absolute zero molecular motion is minimum."
+  ],
+  "practiceQuestions": [
+    "Q. What happens to molecular motion as temperature rises? (1 mark) — average kinetic energy increases proportionally to absolute temperature.",
+    "Q. Give two evidences of molecular motion. (1 mark) — Brownian motion; diffusion."
+  ]
 }

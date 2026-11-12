@@ -1,0 +1,345 @@
+{
+  "class-12-notes/chemistry/general-and-organic-fundamentals/purification-and-qualitative-quantitative-analysis-of-organic-compounds": {
+    "examShortTricks": [
+      "Trick 1: Purification method picker — sublimation (camphor, benzoic acid), crystallisation (impure sugar), distillation (liquid with b.p. difference), fractional distillation (close b.p.), steam distillation (oils immiscible with water), differential extraction (solubility difference).",
+      "Trick 2: Lassaigne's test: fuse with Na → NaCN (N), Na2S (S), NaX (halogen); N + S together → NaSCN — the three conversions are the core answer.",
+      "Trick 3: Qualitative N test: Prussian blue Fe4[Fe(CN)6]3; S: violet with sodium nitroprusside or black with lead acetate; halogens: AgNO3 colours (white/cream/pale yellow).",
+      "Trick 4: Quantitative C and H: Liebig combustion — %C = (12/44)(mass CO2/mass sample)×100, %H = (2/18)(mass H2O/mass)×100 — two ratios, two answers."
+    ],
+    "keyPoints": [
+      "Purification methods: sublimation, crystallisation, distillation, fractional/steam distillation, chromatography.",
+      "Lassaigne's test detects N, S and halogens as sodium salts.",
+      "C and H estimated by combustion (Liebig's method).",
+      "Chromatography separates by differential adsorption/partition."
+    ],
+    "practiceQuestions": [
+      "Q. How will you detect nitrogen by Lassaigne's test? (2 marks) — Prussian blue with FeSO4 + FeCl3 in acid.",
+      "Q. 0.2 g organic compound gives 0.294 g CO2 — find %C. (2 marks) — 0.294×12/44/0.2 ×100 = 40%."
+    ]
+  },
+  "class-12-notes/chemistry/general-and-organic-fundamentals/inductive-effect-resonance-hyperconjugation": {
+    "examShortTricks": [
+      "Trick 1: Inductive effect: permanent polarisation through σ bonds, dies out by C3–C4 (−I: NO2, X, COOH; +I: alkyl) — 'through sigma, distance-limited' is the definition mark.",
+      "Trick 2: Resonance: delocalisation through π bonds/ lone pairs; stability order: resonance structures with full octets and least charge separation dominate.",
+      "Trick 3: Hyperconjugation: 'no-bond resonance' — α-C–H σ electrons delocalise into an adjacent p-orbital; more α-H → more stable alkene/carbocation (Saytzeff and Markovnikov both rest on this).",
+      "Trick 4: Carbocation stability: benzylic/allylic (resonance) > 3° (hyperconjugation + I) > 2° > 1° > methyl — the ordering question is a favourite."
+    ],
+    "keyPoints": [
+      "Inductive effect: electron displacement along σ bonds; permanent, weak, distance-decaying.",
+      "Resonance: electron delocalisation over π systems; stabilises molecules.",
+      "Hyperconjugation: σ(C–H) donation into an adjacent empty p-orbital.",
+      "All three explain stability orders of carbocations, alkenes and substituted benzenes."
+    ],
+    "practiceQuestions": [
+      "Q. Arrange CH3+, CH3CH2+, (CH3)3C+ by stability and justify. (2 marks) — tertiary > primary > methyl via +I and hyperconjugation.",
+      "Q. Why is propene more stable than ethene? (1 mark) — six α-H give more hyperconjugative structures."
+    ]
+  },
+  "class-12-notes/chemistry/general-and-organic-fundamentals/electrophilic-and-nucleophilic-substitution-reactions": {
+    "examShortTricks": [
+      "Trick 1: SN1 vs SN2 in a table — SN1: 2 steps, carbocation, racemisation, favoured by 3° substrates and polar protic solvents; SN2: 1 step, backside attack, inversion, favoured by 1° substrates and polar aprotic solvents.",
+      "Trick 2: Electrophilic aromatic substitution mechanism: E+ generation → π-complex → σ-complex (arenium ion) → deprotonation — naming the σ-complex earns the mechanism mark.",
+      "Trick 3: Nucleophilic aromatic substitution needs EWG ortho/para to the leaving group (2,4-dinitrochlorobenzene + OH−) — quote the activation requirement.",
+      "Trick 4: Rate law evidence: SN1 rate ∝ [RX] only; SN2 rate ∝ [RX][Nu] — kinetics decides the mechanism."
+    ],
+    "keyPoints": [
+      "SN1 proceeds via a carbocation; SN2 via a concerted transition state.",
+      "Tertiary halides favour SN1; primary favour SN2.",
+      "Electrophilic aromatic substitution goes through the arenium (σ) complex.",
+      "Substituents direct incoming groups ortho/para (activating) or meta (deactivating)."
+    ],
+    "practiceQuestions": [
+      "Q. Why does 2-bromo-2-methylpropane hydrolyse by SN1? (2 marks) — stable tertiary carbocation; polar protic solvent stabilises it.",
+      "Q. Give the mechanism steps of benzene nitration. (3 marks) — NO2+ formation, σ-complex, loss of H+."
+    ]
+  },
+  "class-12-notes/chemistry/general-and-organic-fundamentals/free-radical-reactions": {
+    "examShortTricks": [
+      "Trick 1: Three phases: initiation (Cl2 → 2Cl·, light), propagation (Cl· + RH → R· + HCl; R· + Cl2 → RCl + Cl·), termination (radical coupling) — name all three for the mechanism mark.",
+      "Trick 2: Anti-Markovnikov addition of HBr in peroxides is a radical chain: Br· adds to the LESS substituted carbon — quote the exception applies to HBr only.",
+      "Trick 3: Radical stability: benzylic/allylic > 3° > 2° > 1° — resonance-stabilised radicals dominate selectivity.",
+      "Trick 4: Inhibition: BHT/vitamin E donate H to radicals and terminate chains — the antioxidant link."
+    ],
+    "keyPoints": [
+      "Free-radical reactions proceed by homolysis under light or peroxides.",
+      "Chain: initiation, propagation, termination.",
+      "Radical stability follows resonance and substitution.",
+      "Anti-Markovnikov HBr addition is radical-mediated."
+    ],
+    "practiceQuestions": [
+      "Q. Write the propagation steps for methane chlorination. (2 marks) — Cl· + CH4 → CH3· + HCl; CH3· + Cl2 → CH3Cl + Cl·.",
+      "Q. Why is the peroxide effect limited to HBr? (1 mark) — only the HBr chain propagation steps are energetically favourable."
+    ]
+  },
+  "class-12-notes/chemistry/general-and-organic-fundamentals/important-organic-reactions-oxidation-reduction-addition-elimination": {
+    "examShortTricks": [
+      "Trick 1: Oxidising agents ladder: KMnO4 (cold dilute = mild; hot alkaline = strong), K2Cr2O7/H+ (1° alcohol → acid), O3 (cleaves C=C), Cu/573 K (1°→aldehyde, 2°→ketone).",
+      "Trick 2: Reducing agents: LiAlH4 (reduces everything incl. acids), NaBH4 (aldehydes/ketones only), H2/Ni (C=C, C≡C), Sn/HCl (NO2 → NH2) — one line each.",
+      "Trick 3: Elimination (Saytzeff): alcoholic KOH removes HX; the more substituted alkene predominates; E2 needs anti-periplanar H.",
+      "Trick 4: Addition: markovnikov for HX; hydration gives Markovnikov alcohol; hydroboration-oxidation is the anti-Markovnikov hydration route."
+    ],
+    "keyPoints": [
+      "Oxidation: alcohols → aldehydes/ketones → acids; cleavage with ozonolysis.",
+      "Reduction: LiAlH4 and NaBH4 reduce carbonyls; catalytic hydrogenation reduces multiple bonds.",
+      "Elimination: β-elimination with alcoholic KOH; Saytzeff product major.",
+      "Addition: Markovnikov orientation for HX and H2O."
+    ],
+    "practiceQuestions": [
+      "Q. Which reagent converts CH3CH2OH to CH3CHO without over-oxidation? (1 mark) — PCC / Cu at 573 K.",
+      "Q. Predict the major product of 2-bromobutane + alc. KOH. (2 marks) — but-2-ene (Saytzeff)."
+    ]
+  },
+  "class-12-notes/chemistry/hydrocarbons/alkanes-conformations-combustion-free-radical-halogenation": {
+    "examShortTricks": [
+      "Trick 1: Conformation order for ethane: staggered (dihedral 60°, minimum energy) > skew > eclipsed (maximum, 12.5 kJ/mol barrier) — draw Newman projections along the C–C axis.",
+      "Trick 2: Butane anti conformer is most stable (methyl groups farthest); gauche next — quote 'anti > gauche > eclipsed'.",
+      "Trick 3: Combustion: CnH2n+2 + (3n+1)/2 O2 → n CO2 + (n+1) H2O; incomplete combustion gives CO/soot — the general equation earns the mark.",
+      "Trick 4: Halogenation selectivity: 3° > 2° > 1° H (radical stability) — explains major product prediction."
+    ],
+    "keyPoints": [
+      "Conformations arise from rotation about the C–C single bond.",
+      "Staggered (anti) conformer is the energy minimum; eclipsed the maximum.",
+      "Complete combustion gives CO2 and H2O.",
+      "Free-radical halogenation favours substitution at the most substituted carbon."
+    ],
+    "practiceQuestions": [
+      "Q. Draw the staggered and eclipsed conformations of ethane and say which is more stable. (2 marks) — staggered; minimum repulsion between C–H bonds.",
+      "Q. Write the combustion equation for propane. (1 mark) — C3H8 + 5O2 → 3CO2 + 4H2O."
+    ]
+  },
+  "class-12-notes/chemistry/hydrocarbons/alkenes-preparation-geometrical-isomerism-electrophilic-addition-markovnikov-ant": {
+    "examShortTricks": [
+      "Trick 1: Geometrical isomerism requires EACH double-bond carbon to carry two DIFFERENT groups — check this condition before assigning cis/trans (1,1-dichloroethene has none).",
+      "Trick 2: CIP/E-Z shortcut: higher-priority groups on the same side = Z; opposite = E — use when cis/trans naming fails.",
+      "Trick 3: Electrophilic addition mechanism: π bond attacks E+ → more stable carbocation → Nu− attacks — the carbocation choice IS Markovnikov's rule.",
+      "Trick 4: Heat of hydrogenation measures stability: more substituted alkene → lower heat → more stable (tetra > tri > di > mono)."
+    ],
+    "keyPoints": [
+      "Alkenes show geometrical (cis-trans) isomerism about the C=C bond.",
+      "Electrophilic addition proceeds via the more stable carbocation (Markovnikov).",
+      "Peroxide effect: HBr adds anti-Markovnikov by a radical path.",
+      "Stability order: tetrasubstituted > tri > di > monosubstituted alkenes."
+    ],
+    "practiceQuestions": [
+      "Q. Why does but-2-ene show geometrical isomerism but but-1-ene does not? (2 marks) — each sp2 carbon of but-2-ene has two different groups; but-1-ene has two H on C1.",
+      "Q. Give the product of 2-methylpropene + HBr. (1 mark) — 2-bromo-2-methylpropane (Markovnikov)."
+    ]
+  },
+  "class-12-notes/chemistry/hydrocarbons/alkynes-preparation-acidic-character-addition-reactions": {
+    "examShortTricks": [
+      "Trick 1: Acidity order: HC≡CH > terminal alkynes > alkenes > alkanes — sp (50% s) > sp² (33%) > sp³ (25%) s-character pulls the electron pair; tests: AgNO3/NH3 white ppt, Cu2Cl2/NH3 red ppt.",
+      "Trick 2: Addition sequence: alkyne + X2 → trans-dihaloalkene (anti addition) → tetrahalide; + HX twice → gem-dihalide (Markovnikov both times).",
+      "Trick 3: Hydration (H2SO4/HgSO4): terminal alkyne → methyl ketone (Markovnikov enol → keto); only ethyne gives acetaldehyde — the exception to remember.",
+      "Trick 4: Polymerisation: 3C2H2 → benzene (red-hot tube); 2C2H2 → vinyl acetylene (CuCl/NH4Cl) — two products, two catalysts."
+    ],
+    "keyPoints": [
+      "Terminal alkynes are weak acids and form acetylides with Ag, Cu, Na.",
+      "Acidity arises from the high s-character of sp carbon.",
+      "Additions occur in two stages; Markovnikov orientation for HX and H2O.",
+      "Trimerisation of ethyne gives benzene."
+    ],
+    "practiceQuestions": [
+      "Q. How will you distinguish propyne from propene? (2 marks) — propyne gives white ppt with ammoniacal AgNO3.",
+      "Q. Product of propyne + H2O (HgSO4/H2SO4)? (2 marks) — propanone (acetone) via enol tautomerisation."
+    ]
+  },
+  "class-12-notes/chemistry/hydrocarbons/aromatic-hydrocarbons-benzene-resonance-aromaticity-electrophilic-substitution": {
+    "examShortTricks": [
+      "Trick 1: Aromaticity checklist: cyclic + planar + conjugated + (4n+2) π electrons — test each condition explicitly for full marks.",
+      "Trick 2: Directive effects: o,p-directing activators (−OH, −NH2, −CH3 donate electrons); m-directing deactivators (−NO2, −COOH, −X is o,p but deactivating) — halogen's special case is the trap.",
+      "Trick 3: Mechanism core: electrophile attacks → σ-complex (arenium ion, resonance-stabilised) → H+ lost restores aromaticity — draw the three steps.",
+      "Trick 4: Benzene's extra stability: resonance energy ≈ 150 kJ/mol — explains why substitution beats addition."
+    ],
+    "keyPoints": [
+      "Benzene: planar hexagon, 6 delocalised π electrons, Hückel aromatic.",
+      "Electrophilic substitution via the arenium ion intermediate.",
+      "Activating groups direct ortho/para; deactivating direct meta (except halogens).",
+      "Resonance energy makes benzene unusually stable."
+    ],
+    "practiceQuestions": [
+      "Q. Why is nitrobenzene meta-directing? (2 marks) — −NO2 withdraws electrons; the σ-complex for o/p attack puts positive charge next to NO2 and is destabilised.",
+      "Q. State Hückel's rule. (1 mark) — planar cyclic conjugated systems with (4n+2) π electrons are aromatic."
+    ]
+  },
+  "class-12-notes/chemistry/alcohols-phenols-ethers/alcohols-classification-preparation-physical-and-chemical-properties": {
+    "examShortTricks": [
+      "Trick 1: Classification test: number of C atoms bonded to the carbinol carbon (1°/2°/3°) — decide BEFORE choosing oxidant: 1° → aldehyde/acid, 2° → ketone, 3° → no oxidation (dehydration instead).",
+      "Trick 2: Preparation bank: hydration of alkenes (Markovnikov, H2SO4), hydroboration (anti-Markovnikov), reduction of carbonyls (NaBH4/LiAlH4), Grignard + aldehyde/ketone, alkyl halide + aq. KOH.",
+      "Trick 3: b.p. order: 3° < 2° < 1° (branching lowers surface area); alcohols >> alkanes of similar mass (H-bonding) — the two comparison lines.",
+      "Trick 4: Lucas test: 3° immediate cloudiness, 2° in minutes, 1° no reaction at room temperature — the identification test to quote."
+    ],
+    "keyPoints": [
+      "Alcohols are classified as primary, secondary and tertiary.",
+      "Prepared by hydration, hydroboration-oxidation, carbonyl reduction and Grignard synthesis.",
+      "Higher b.p. than alkanes due to hydrogen bonding.",
+      "Lucas test distinguishes 1°, 2°, 3° alcohols by turbidity speed."
+    ],
+    "practiceQuestions": [
+      "Q. How will you distinguish 1°, 2° and 3° alcohols? (2 marks) — Lucas test (ZnCl2/HCl) turbidity: immediate (3°), slow (2°), none (1°).",
+      "Q. Why are alcohols soluble in water? (1 mark) — they form hydrogen bonds with water (solubility falls as chain grows)."
+    ]
+  },
+  "class-12-notes/chemistry/alcohols-phenols-ethers/phenols-acidity-electrophilic-substitution-kolbe-s-reaction-reimer-tiemann-reacti": {
+    "examShortTricks": [
+      "Trick 1: Phenol > water > alcohol in acidity: the phenoxide ion is resonance-stabilised while the negative charge on alkoxide is trapped on oxygen — the resonance argument is the mark.",
+      "Trick 2: Substituent effect: EWG (NO2) increase acidity (stabilise phenoxide); EDG (CH3) decrease — ortho/para nitrophenols are far more acidic.",
+      "Trick 3: Kolbe: phenol → sodium phenoxide + CO2 (125 °C, 5 atm) → salicylic acid; Reimer–Tiemann: CHCl3/NaOH → salicylaldehyde — both give ORTHO products; memorise the two product types.",
+      "Trick 4: Bromination: phenol + bromine water → 2,4,6-tribromophenol (white ppt) without a catalyst — the test for phenol."
+    ],
+    "keyPoints": [
+      "Phenols are more acidic than alcohols due to phenoxide resonance.",
+      "Electron-withdrawing groups increase phenol acidity.",
+      "Kolbe reaction gives salicylic acid; Reimer–Tiemann gives salicylaldehyde.",
+      "Phenol brominates instantly with bromine water (2,4,6-tribromophenol)."
+    ],
+    "practiceQuestions": [
+      "Q. Why is phenol more acidic than ethanol? (2 marks) — phenoxide is resonance-stabilised; ethoxide is not.",
+      "Q. Give the test to identify phenol. (1 mark) — white precipitate with bromine water."
+    ]
+  },
+  "class-12-notes/chemistry/alcohols-phenols-ethers/ethers-preparation-and-chemical-reactions-cleavage-by-hi": {
+    "examShortTricks": [
+      "Trick 1: Williamson synthesis: R–ONa + R′X → R–O–R′ + NaX — use a PRIMARY halide (secondary/tertiary give elimination); mixed ethers need the alkoxide of the larger group.",
+      "Trick 2: Cleavage by HI: with excess HI ethers give 2 R–I; the halide attacks the LESS hindered carbon (SN2) — for aryl alkyl ethers, phenol + R–I (aryl–O bond never breaks).",
+      "Trick 3: Low reactivity of ethers: no polarity at C–O for aryl ethers (resonance) — explains why anisole resists cleavage on the aryl side.",
+      "Trick 4: Dehydration of alcohols: 2 ROH + H2SO4 (413 K) → ether — intermolecular vs intramolecular (433 K → alkene) temperature control."
+    ],
+    "keyPoints": [
+      "Williamson synthesis: alkoxide + primary alkyl halide gives ethers.",
+      "Ethers are cleaved by excess HI to alkyl iodides and alcohol/water.",
+      "Aryl–oxygen bonds resist cleavage (resonance).",
+      "Symmetrical ethers form by acid-catalysed dehydration of alcohols at 413 K."
+    ],
+    "practiceQuestions": [
+      "Q. Write the Williamson synthesis of methoxyethane. (2 marks) — C2H5ONa + CH3Br → C2H5OCH3 + NaBr.",
+      "Q. Anisole + HI gives? (1 mark) — phenol + CH3I (cleavage at the methyl side)."
+    ]
+  },
+  "class-12-notes/chemistry/aldehydes-ketones-carboxylic-acids/aldehydes-and-ketones-preparation-physical-properties-nucleophilic-addition-reacti": {
+    "examShortTricks": [
+      "Trick 1: Preparation pair: oxidation of 1°/2° alcohols; Rosenmund (acyl chloride → aldehyde, poisoned Pd/BaSO4); acyl chloride + dialkylcadmium → ketone — the selectivity of each reagent is the mark.",
+      "Trick 2: Nucleophilic addition order: HCHO > aldehydes > ketones (steric + electronic) — reactivity falls with alkyl substitution.",
+      "Trick 3: Identification quartet: 2,4-DNP (orange ppt, both), Tollens (silver mirror, aldehydes only), Fehling (red Cu2O, aliphatic aldehydes), iodoform (methyl ketones/ethanal) — one line each.",
+      "Trick 4: Clemmensen (Zn–Hg/HCl) and Wolff–Kishner (N2H4/KOH) both reduce C=O to CH2 — acidic vs basic conditions is the distinction."
+    ],
+    "keyPoints": [
+      "Aldehydes and ketones undergo nucleophilic addition at the carbonyl carbon.",
+      "Aldehydes are more reactive than ketones (steric and electronic factors).",
+      "Tollens and Fehling tests detect aldehydes.",
+      "C=O can be reduced to CH2 by Clemmensen or Wolff–Kishner reduction."
+    ],
+    "practiceQuestions": [
+      "Q. Distinguish acetaldehyde from acetone by a chemical test. (2 marks) — Tollens: silver mirror with aldehyde only.",
+      "Q. Why are ketones less reactive than aldehydes? (1 mark) — two alkyl groups hinder attack and donate electrons, reducing the carbonyl's electrophilicity."
+    ]
+  },
+  "class-12-notes/chemistry/aldehydes-ketones-carboxylic-acids/carboxylic-acids-preparation-physical-properties-acidic-character-reactions": {
+    "examShortTricks": [
+      "Trick 1: Acidity order: HCOOH > CH3COOH > substituted... EWG (Cl, NO2) raise acidity by −I; EDG (alkyl) lower it; Cl3CCOOH >> CH3COOH — the inductive argument is the mark.",
+      "Trick 2: Higher b.p. than alcohols: cyclic DIMERS via double H-bonding — quote 'dimerisation' for the physical-property mark.",
+      "Trick 3: HVZ reaction: X2/red P α-halogenates (CH3COOH → ClCH2COOH) — successive halogenation raises acidity stepwise.",
+      "Trick 4: Decarboxylation: soda lime → alkane; NaHCO3 test: brisk effervescence (CO2) — the identification test."
+    ],
+    "keyPoints": [
+      "Carboxylic acids are stronger acids than phenols and alcohols (resonance-stabilised carboxylate).",
+      "Electron-withdrawing substituents increase acidity.",
+      "Form dimers through hydrogen bonding (high b.p.).",
+      "React with NaHCO3 with effervescence; decarboxylate with soda lime."
+    ],
+    "practiceQuestions": [
+      "Q. Why is ClCH2COOH stronger than CH3COOH? (1 mark) — chlorine's −I effect stabilises the carboxylate anion.",
+      "Q. Arrange HCOOH, CH3COOH, ClCH2COOH by acidity. (1 mark) — ClCH2COOH > HCOOH > CH3COOH."
+    ]
+  },
+  "class-12-notes/chemistry/aldehydes-ketones-carboxylic-acids/name-reactions-aldol-condensation-cannizzaro-reaction-hvz-reaction": {
+    "examShortTricks": [
+      "Trick 1: Aldol needs an α-H: dilute NaOH → β-hydroxy carbonyl → heated → α,β-unsaturated aldehyde/ketone (dehydration); crossed aldol uses two different carbonyls.",
+      "Trick 2: Cannizzaro needs NO α-H: conc. NaOH → alcohol + acid salt (disproportionation: one molecule oxidised, one reduced) — 2HCHO + NaOH → CH3OH + HCOONa.",
+      "Trick 3: HVZ: carboxylic acid + X2/red P → α-halo acid — the red phosphorus converts the acid to the acyl halide, enabling enolisation.",
+      "Trick 4: Discriminator: α-H present → aldol; absent → Cannizzaro — answer the 'which reaction' questions with this single check."
+    ],
+    "keyPoints": [
+      "Aldol condensation: α-H carbonyls with dilute base give β-hydroxy aldehydes/ketones, dehydrating to enals/enones.",
+      "Cannizzaro: non-enolisable aldehydes disproportionate in concentrated alkali.",
+      "HVZ: α-halogenation of acids with X2/red phosphorus.",
+      "Crossed aldol gives mixtures unless one partner lacks α-H (Claisen–Schmidt)."
+    ],
+    "practiceQuestions": [
+      "Q. Which reaction does benzaldehyde undergo with conc. NaOH? (2 marks) — Cannizzaro (no α-H): benzyl alcohol + sodium benzoate.",
+      "Q. Write the aldol product of ethanal with dilute NaOH. (2 marks) — 3-hydroxybutanal, dehydrating to but-2-enal."
+    ]
+  },
+  "class-12-notes/chemistry/amines/classification-nomenclature-and-preparation": {
+    "examShortTricks": [
+      "Trick 1: Preparation bank: reduction of nitro compounds (Sn/HCl or H2/Pd), ammonolysis of alkyl halides (excess NH3 to stop polyalkylation), Gabriel phthalimide (1° ONLY), Hofmann bromamide (RCONH2 + Br2/KOH → RNH2, one carbon LESS).",
+      "Trick 2: Hofmann bromamide's 'one carbon less' is the exam trap — the carbonyl carbon leaves as carbonate; quote it.",
+      "Trick 3: Gabriel cannot make aryl amines or 2°/3° amines — the limitation 1-marker.",
+      "Trick 4: Classification: 1° (RNH2), 2° (R2NH), 3° (R3N) by N-substitution — count N–C bonds, not chains."
+    ],
+    "keyPoints": [
+      "Amines classified as primary, secondary and tertiary by N-substitution.",
+      "Nitro compounds reduce to amines with Sn/HCl or catalytic hydrogenation.",
+      "Gabriel synthesis gives pure primary aliphatic amines.",
+      "Hofmann bromamide degradation gives an amine with one carbon fewer."
+    ],
+    "practiceQuestions": [
+      "Q. How will you prepare aniline from nitrobenzene? (1 mark) — reduction with Sn/HCl (or H2/Pd).",
+      "Q. Why is excess ammonia used in ammonolysis of alkyl halides? (1 mark) — to suppress further alkylation to secondary/tertiary amines."
+    ]
+  },
+  "class-12-notes/chemistry/amines/physical-and-chemical-properties": {
+    "examShortTricks": [
+      "Trick 1: b.p. order: 1° > 2° > 3° (H-bonding availability); amines < alcohols (N less electronegative than O) — two comparison lines.",
+      "Trick 2: Solubility falls with chain length; lower amines are water-soluble via H-bonds.",
+      "Trick 3: Reactions bank: alkylation/acylation (Hinsberg), carbylamine (1° only, foul smell), nitrous acid (1° → alcohol + N2, 2° → nitrosamine yellow oil, 3° → salt) — the HNO2 test separates all three classes.",
+      "Trick 4: Aromatic amines: diazotisation at 0–5 °C with NaNO2/HCl — temperature is the scoring condition."
+    ],
+    "keyPoints": [
+      "Boiling points: 1° > 2° > 3° amines; lower than alcohols.",
+      "Amines are basic; aryl amines less basic (aniline pKb ≈ 9.4).",
+      "HNO2 distinguishes 1°, 2°, 3° amines.",
+      "Carbylamine test identifies primary amines."
+    ],
+    "practiceQuestions": [
+      "Q. How does HNO2 distinguish the three classes of amines? (3 marks) — 1°: N2 gas + alcohol; 2°: yellow oily nitrosamine; 3°: soluble nitrite salt.",
+      "Q. Why do tertiary amines have lower boiling points? (1 mark) — no N–H bonds, no intermolecular hydrogen bonding."
+    ]
+  },
+  "class-12-notes/chemistry/amines/basic-character-of-amines": {
+    "examShortTricks": [
+      "Trick 1: Gas phase: 3° > 2° > 1° > NH3 (pure +I); aqueous: 2° > 1° > 3° > NH3 for methyl series — the inversion in water (solvation of the cation) is the standard explanation.",
+      "Trick 2: Aromatic vs aliphatic: aniline << alkylamines — the lone pair delocalises into the ring (resonance), so it is less available; −NH2 ortho/para donation is the same fact from the ring's view.",
+      "Trick 3: Substituent effects on aniline: p-nitroaniline much weaker (−R, −I); p-methoxyaniline stronger (+R) — quote one each.",
+      "Trick 4: Solvation argument in full: 1°/2° ammonium ions H-bond strongly with water, stabilising them; 3° lacks N–H, so its cation is poorly solvated — why 3° falls last in water."
+    ],
+    "keyPoints": [
+      "Basicity in gas phase: 3° > 2° > 1° > NH3.",
+      "In aqueous solution: 2° > 1° > 3° > NH3 (methyl series).",
+      "Aniline is far less basic than alkylamines (lone-pair delocalisation).",
+      "Electron-withdrawing groups reduce basicity; donating groups increase it."
+    ],
+    "practiceQuestions": [
+      "Q. Why is aniline less basic than methylamine? (2 marks) — the lone pair is delocalised into the benzene ring and less available for protonation.",
+      "Q. Order of basicity of ethylamines in water? (1 mark) — (C2H5)2NH > C2H5NH2 > (C2H5)3N > NH3."
+    ]
+  },
+  "class-12-notes/chemistry/amines/reactions-diazotisation-coupling-reactions-hinsberg-test": {
+    "examShortTricks": [
+      "Trick 1: Diazotisation: ArNH2 + NaNO2/HCl at 0–5 °C → ArN2+Cl− — keep it COLD; above 5 °C the diazonium salt decomposes.",
+      "Trick 2: Sandmeyer (Cu2Cl2/Cu2Br2/CuCN) replaces N2+ by Cl/Br/CN; warm water gives phenol; H3PO2 gives benzene — the N2 group is the best leaving group, hence the whole synthetic toolbox.",
+      "Trick 3: Coupling: diazonium + phenol (alkaline, para) or + aniline → azo dyes (–N=N–) — the azo linkage is the colour source.",
+      "Trick 4: Hinsberg: benzenesulphonyl chloride — 1° gives N-substituted sulphonamide soluble in alkali; 2° gives insoluble sulphonamide; 3° no reaction — the solubility difference separates the three."
+    ],
+    "keyPoints": [
+      "Diazotisation of aromatic 1° amines at 0–5 °C gives diazonium salts.",
+      "Diazonium salts undergo Sandmeyer, hydrolysis and reduction replacements.",
+      "Coupling with phenols/anilines gives azo dyes.",
+      "Hinsberg test distinguishes 1°, 2° and 3° amines by sulphonamide solubility."
+    ],
+    "practiceQuestions": [
+      "Q. How is benzenediazonium chloride converted to chlorobenzene? (1 mark) — Sandmeyer: Cu2Cl2/HCl.",
+      "Q. Why is diazotisation done below 5 °C? (1 mark) — diazonium salts are unstable and decompose when warm.",
+      "Q. What is observed in the Hinsberg test with a secondary amine? (1 mark) — an insoluble N,N-disubstituted sulphonamide."
+    ]
+  }
+}

@@ -92,5 +92,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Monotonicity: solve f′ > 0 (increasing) and f′ < 0 (decreasing) as INEQUALITIES on the domain — answer with intervals.",
+    "Trick 2: Second-derivative test: at f′ = 0 point, f″ > 0 → minimum; f″ < 0 → maximum; f″ = 0 → inconclusive, use a sign chart.",
+    "Trick 3: Word-problem protocol: model the quantity in one variable → domain → differentiate → critical points → verify type → answer with units and a sentence.",
+    "Trick 4: Absolute vs local: compare f at all critical points AND the endpoints for a closed interval — forgetting endpoints is the classic lost mark."
   ]
 }

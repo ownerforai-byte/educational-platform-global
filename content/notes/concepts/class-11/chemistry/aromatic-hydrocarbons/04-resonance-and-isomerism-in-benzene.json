@@ -34,7 +34,10 @@
     "Optical: chiral centre (4 different groups); d/l (+/− enantiomers; meso = optically inactive despite chiral centres)."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Why are all C–C bonds in benzene equal? (2 marks) — resonance hybrid of two Kekulé forms gives an average bond order of 1.5.",
+    "Q. Name the isomers of xylene. (1 mark) — o-, m- and p-xylene (1,2-, 1,3-, 1,4-dimethylbenzene)."
+  ],
   "formulas": [
     "Isomers: same molecular formula, different structure/arrangement"
   ],
@@ -56,5 +59,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Resonance evidence chain: equal C–C bond lengths (1.39 Å, between single 1.54 and double 1.34) + heat of hydrogenation 36 kcal less than expected → real benzene is a resonance hybrid of two Kekulé structures.",
+    "Trick 2: Isomerism: monosubstituted benzene has ONE isomer; disubstituted give ortho (1,2), meta (1,3), para (1,4) — draw the ring numbering.",
+    "Trick 3: 'Benzene resists addition but undergoes substitution' — resonance stabilisation (36 kcal) is the reason; quote it for the why-mark."
   ]
 }

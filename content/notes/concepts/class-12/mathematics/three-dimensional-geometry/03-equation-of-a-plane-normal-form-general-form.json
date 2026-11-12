@@ -66,5 +66,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Point-normal form: r·n̂ = d, or a(x−x1) + b(y−y1) + c(z−z1) = 0 with (a,b,c) the normal — the normal is everything in plane problems.",
+    "Trick 2: Plane through three points: find two in-plane vectors, cross them for the normal, then use the point form.",
+    "Trick 3: Intercept form x/a + y/b + z/c = 1 — read intercepts directly; useful for sketching and for 'find intercepts' questions.",
+    "Trick 4: Distance from origin = |d|/|n| for ax + by + cz + d = 0 — the one-line formula."
   ]
 }

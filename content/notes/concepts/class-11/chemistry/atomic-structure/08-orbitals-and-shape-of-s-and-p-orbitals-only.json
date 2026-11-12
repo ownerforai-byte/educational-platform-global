@@ -68,5 +68,19 @@
       ],
       "answer": "B"
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Shapes in one phrase each — s: spherical; p: dumb-bell along x, y, z (three px, py, pz).",
+    "Trick 2: Orbital vs shell: an orbital holds maximum 2 electrons with opposite spins; 1 s-orbital per shell, 3 p-orbitals from n = 2.",
+    "Trick 3: Node question: s-orbital of nth shell has (n−1) nodes — 2s has 1 radial node, 3s has 2."
+  ],
+  "keyPoints": [
+    "An orbital is a region of space where the probability of finding the electron is maximum (~90%).",
+    "s-orbital: spherical, non-directional; size grows with n (1s < 2s < 3s).",
+    "p-orbitals: dumb-bell shaped, three orientations (px, py, pz), first appear at n = 2."
+  ],
+  "practiceQuestions": [
+    "Q. Draw the shape of 1s and 2px orbitals and label them. (2 marks) — sphere; dumb-bell along the x-axis with a node at the nucleus.",
+    "Q. How many electrons can the p-subshell of L shell hold? (1 mark) — 6 (3 orbitals × 2 electrons)."
   ]
 }

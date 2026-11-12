@@ -11,7 +11,7 @@
  * definitions, and key points from there.
  */
 
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS, slugifySyllabusTopic } from "@/lib/syllabus";
 import type { SyllabusUnit, SubjectSyllabus } from "@/lib/syllabus";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -170,7 +170,10 @@ function slugifyFileName(name: string): string {
     .toLowerCase()
     .normalize("NFKD")
     .replace(/[̀-ͯ]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
+    // Keep Devanagari (and other non-ASCII letters) — Nepali file slugs are
+    // Devanagari and must match syllabus slugs; stripping them collapsed every
+    // Nepali file to a bare number ("01-पाठ-..." → "01"), causing collisions.
+    .replace(/[^a-z0-9\u0900-\u097F]+/g, "-")
     .replace(/^-+|-+$/g, "");
 }
 
@@ -280,13 +283,34 @@ function findSyllabusTopic(
   const unit = subj.units.find((u) => u.id === unitId);
   if (!unit) return undefined;
 
-  // Try to match topic slug to syllabus topics
-  const slugLower = topicSlug.toLowerCase().replace(/-/g, " ");
+  // Concept files carry numbered prefixes ("02-relative-velocity"); strip the
+  // leading number before matching, and never fall back to the unit's first
+  // topic — a wrong match mis-files content onto an unrelated topic page.
+  const cleaned = topicSlug.replace(/^\d+[.\-_ ]*/, "").toLowerCase().trim();
+  if (!cleaned) return undefined;
+
+  // 1. Exact slug equality with a syllabus topic.
   for (const t of unit.topics) {
-    if (t.toLowerCase().includes(slugLower.slice(0, 20))) return t;
+    if (slugifySyllabusTopic(t) === cleaned) return t;
   }
-  // Fallback: return first topic of unit
-  return unit.topics[0];
+
+  // 2. Token overlap: most of the syllabus topic's significant words appear
+  //    in the file slug (handles abbreviation/reordering like
+  //    "boyles-law-gas-laws" → "Gas laws: Boyle's law, ...").
+  const cleanedWords = cleaned.replace(/[^a-z0-9\s]/g, " ").split(/\s+/).filter(Boolean);
+  let best: { topic: string; score: number } | undefined;
+  for (const t of unit.topics) {
+    const tWords = t
+      .toLowerCase()
+      .replace(/[^a-z0-9\s]/g, " ")
+      .split(/\s+/)
+      .filter((w) => w.length > 2);
+    if (tWords.length === 0) continue;
+    const hits = tWords.filter((w) => cleanedWords.some((cw) => cw === w || (w.length > 4 && cw.startsWith(w)))).length;
+    const score = hits / tWords.length;
+    if (score >= 0.5 && (!best || score > best.score)) best = { topic: t, score };
+  }
+  return best?.topic;
 }
 
 /** Find all topics in a unit from syllabus */

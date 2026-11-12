@@ -1,0 +1,156 @@
+{
+  "class-11-notes/chemistry/hydrocarbons/saturated-hydrocarbons-alkanes-preparation-from-haloalkanes-reduction-and-wurtz-reaction-decarbo": {
+    "examShortTricks": [
+      "Trick 1: Three preparations to memorise — reduction: RX + 2H → RH + HX (Zn/HCl, LiAlH4); Wurtz: 2RX + 2Na → R–R + 2NaX (dry ether); decarboxylation: RCOONa + NaOH(CaO) → RH + Na2CO3 (soda lime).",
+      "Trick 2: Wurtz product rule: two different halides give a MIXTURE of three alkanes — quote as the limitation when asked why Wurtz is unsuitable for unsymmetrical alkanes.",
+      "Trick 3: Kolbe electrolysis of sodium acetate gives ETHANE: 2CH3COO− → C2H6 + 2CO2 (at anode) — one equation, one mark."
+    ],
+    "keyPoints": [
+      "Haloalkanes reduce to alkanes with Zn/HCl or LiAlH4.",
+      "Wurtz reaction couples two haloalkanes with dry sodium in ether.",
+      "Soda-lime decarboxylation of sodium carboxylates gives alkanes.",
+      "Kolbe electrolysis of acetate yields ethane at the anode."
+    ],
+    "practiceQuestions": [
+      "Q. Write the Wurtz reaction for propane preparation. (2 marks) — C2H5Br + CH3Br... actually use 1-bromopropane: 2C3H7Br + 2Na → C6H14 + 2NaBr (dry ether).",
+      "Q. Why does Wurtz reaction give poor yields with mixed halides? (1 mark) — three possible coupling products form in a mixture."
+    ]
+  },
+  "class-11-notes/chemistry/hydrocarbons/chemical-properties-of-alkanes-substitution-reactions-halogenation-nitration-and-sulphonation-on": {
+    "examShortTricks": [
+      "Trick 1: Conditions are the marks — halogenation needs sunlight/heat (free-radical chain); nitration needs 400–500 °C vapour phase (CH4 + HNO3 → CH3NO2); sulphonation needs fuming H2SO4, long-chain alkanes only.",
+      "Trick 2: Halogenation order of ease: F2 (explosive) > Cl2 > Br2 > I2 (reversible, needs oxidant) — explain via bond energies.",
+      "Trick 3: Free-radical mechanism three steps: initiation (Cl2 → 2Cl·), propagation (Cl· + CH4 → CH3· + HCl), termination (coupling) — name the steps for the 3-mark answer."
+    ],
+    "keyPoints": [
+      "Alkanes undergo free-radical substitution in sunlight.",
+      "Nitration (vapour phase, 400–500 °C) gives nitroalkanes.",
+      "Sulphonation applies to higher alkanes with fuming H2SO4.",
+      "Reactivity of halogens: F2 > Cl2 > Br2 > I2."
+    ],
+    "practiceQuestions": [
+      "Q. Write the chlorination of methane in sunlight with mechanism type. (2 marks) — CH4 + Cl2 → CH3Cl + HCl; free-radical substitution.",
+      "Q. Why is iodination reversible? (1 mark) — HI formed reduces the iodide back; needs HNO3/HgO to remove HI."
+    ]
+  },
+  "class-11-notes/chemistry/hydrocarbons/unsaturated-hydrocarbons-alkenes-preparation-by-dehydration-of-alcohol-dehydrohalogenation-catal": {
+    "examShortTricks": [
+      "Trick 1: Dehydration: C2H5OH —(conc. H2SO4, 170 °C)→ C2H4 + H2O; dehydrohalogenation: C2H5Br + KOH(alcoholic) → C2H4 + KBr + H2O — 'alcoholic KOH' vs 'aqueous KOH' decides alkene vs alcohol.",
+      "Trick 2: Saytzeff rule for the 2-mark extra: elimination removes H from the β-carbon with FEWER hydrogens → more substituted (stable) alkene predominates.",
+      "Trick 3: Partial hydrogenation: RC≡CR + H2 (Lindlar/Pd–BaSO4) → cis-alkene; full reduction gives alkane."
+    ],
+    "keyPoints": [
+      "Alcohols dehydrate with conc. H2SO4 or Al2O3 at high temperature.",
+      "Alcoholic KOH removes HX from haloalkanes (β-elimination).",
+      "Saytzeff: the more substituted alkene is the major product.",
+      "Catalytic partial hydrogenation of alkynes gives alkenes."
+    ],
+    "practiceQuestions": [
+      "Q. Prepare ethene from ethanol and from bromoethane. (2 marks) — dehydration (conc. H2SO4, 170 °C); dehydrohalogenation (alc. KOH).",
+      "Q. Why is aqueous KOH not used for alkene preparation? (1 mark) — it gives substitution (alcohol) instead of elimination."
+    ]
+  },
+  "class-11-notes/chemistry/hydrocarbons/chemical-properties-of-alkenes-addition-reaction-with-hx-markovnikov-s-addition-and-peroxide-eff": {
+    "examShortTricks": [
+      "Trick 1: Markovnikov one line: H goes to the carbon with MORE hydrogens (rich get richer); propene + HBr → 2-bromopropane. Reason: more stable secondary carbocation.",
+      "Trick 2: Peroxide effect (Kharasch) applies to HBr ONLY: Br adds to the less substituted carbon (anti-Markovnikov) via free-radical chain — HCl/HI do not show it.",
+      "Trick 3: Addition order of reactivity of HX: HI > HBr > HCl (bond strength falls) — a favourite 1-marker."
+    ],
+    "keyPoints": [
+      "Markovnikov's rule: the negative part of the addendum attaches to the carbon with fewer hydrogens.",
+      "Reason: stability of the intermediate carbocation.",
+      "Peroxide (Kharasch) effect: HBr adds anti-Markovnikov by a free-radical mechanism.",
+      "Alkenes also add H2 (Ni), X2, HX, H2O (hydration)."
+    ],
+    "practiceQuestions": [
+      "Q. Predict the product of propene + HBr with and without peroxide. (2 marks) — 2-bromopropane (Markovnikov); 1-bromopropane (peroxide effect).",
+      "Q. Why does the peroxide effect not operate with HCl? (1 mark) — H–Cl bond is too strong for the propagation step's exothermic requirement."
+    ]
+  },
+  "class-11-notes/chemistry/hydrocarbons/alkynes-preparation-from-carbon-and-hydrogen-1-2-dibromoethane-chloroform-iodoform-only": {
+    "examShortTricks": [
+      "Trick 1: Four routes: C + H2 (electric arc, 2700 °C) → C2H2; vic-dihalide + 2 alc. KOH → alkyne (double dehydrohalogenation); CHCl3 + 2Ag (heat) → C2H2 + 2AgCl; CHI3 + 4Ag → C2H2.",
+      "Trick 2: Double dehydrohalogenation needs TWO equivalents of base and gives the terminal alkyne; the first elimination gives the vinyl halide.",
+      "Trick 3: Ethyne from CaC2 + H2O → C2H2 + Ca(OH)2 — the industrial/lab route; quote 'carbide route' for the mark."
+    ],
+    "keyPoints": [
+      "Ethyne is prepared from calcium carbide and water.",
+      "Vicinal dihalides lose two HX with alcoholic KOH to give alkynes.",
+      "Chloroform/iodoform with heated silver powder gives ethyne.",
+      "Direct union of carbon and hydrogen needs an electric arc."
+    ],
+    "practiceQuestions": [
+      "Q. Write the preparation of ethyne from 1,2-dibromoethane. (2 marks) — CH2BrCH2Br + 2KOH(alc.) → C2H2 + 2KBr + 2H2O.",
+      "Q. Give the industrial preparation of ethyne. (1 mark) — CaC2 + 2H2O → C2H2 + Ca(OH)2."
+    ]
+  },
+  "class-11-notes/chemistry/hydrocarbons/chemical-properties-of-alkynes-addition-reaction-with-h2-hx-h2o-acidic-nature-action-with-sodium": {
+    "examShortTricks": [
+      "Trick 1: Addition goes in TWO stages: alkyne → alkene → alkane; with HX follow Markovnikov (vinyl → ethylidene halide).",
+      "Trick 2: Hydration with dilute H2SO4/HgSO4: ethyne → acetaldehyde (via enol tautomerisation); other alkynes → ketones — the enol–keto line earns the mark.",
+      "Trick 3: Acidic nature tests (terminal alkynes only): Na metal → sodium acetylide + H2; ammoniacal AgNO3 → white Ag2C2; ammoniacal Cu2Cl2 → red Cu2C2 — three colours to memorise.",
+      "Trick 4: Acidic reason: sp-carbon (50% s-character) holds the electron pair closer to the nucleus."
+    ],
+    "keyPoints": [
+      "Alkynes add H2, X2, HX, H2O in two steps.",
+      "Hydration of ethyne gives acetaldehyde (Kucherov reaction).",
+      "Terminal alkynes are weakly acidic (sp C–H) and form acetylides with Na, Ag and Cu salts.",
+      "sp carbon's 50% s-character explains the acidity."
+    ],
+    "practiceQuestions": [
+      "Q. How will you distinguish ethyne from ethene? (2 marks) — ethyne gives white ppt with ammoniacal AgNO3; ethene does not.",
+      "Q. Why are terminal alkynes acidic? (1 mark) — high s-character of sp carbon stabilises the acetylide anion."
+    ]
+  },
+  "class-11-notes/chemistry/hydrocarbons/test-of-unsaturation-ethene-and-ethyne-bromine-water-test-and-baeyer-s-test": {
+    "examShortTricks": [
+      "Trick 1: Two tests, two decolourisations — bromine water (red-brown → colourless) and Baeyer's reagent (alkaline KMnO4, purple → colourless with brown MnO2).",
+      "Trick 2: Both tests are also passed by aldehydes/phenols — add 'and no reaction with saturated hydrocarbons' to make the test conclusive.",
+      "Trick 3: Distinguishing ethene vs ethyne: ammoniacal AgNO3/Cu2Cl2 precipitate only with ethyne."
+    ],
+    "keyPoints": [
+      "Unsaturated compounds decolourise bromine water without HBr evolution.",
+      "Baeyer's test: cold dilute alkaline KMnO4 decolourised with brown MnO2 (diol formed).",
+      "Saturated hydrocarbons fail both tests.",
+      "Terminal alkynes additionally form metal acetylides."
+    ],
+    "practiceQuestions": [
+      "Q. Give Baeyer's test for unsaturation with observation. (2 marks) — purple KMnO4 decolourises; brown MnO2 precipitates; glycol forms.",
+      "Q. Which reagent distinguishes ethene from ethyne? (1 mark) — ammoniacal AgNO3 (white ppt with ethyne only)."
+    ]
+  },
+  "class-11-notes/chemistry/hydrocarbons/comparative-studies-of-physical-properties-of-alkane-alkene-and-alkyne": {
+    "examShortTricks": [
+      "Trick 1: State/solubility common row: first four members are gases, next are liquids; all are non-polar, insoluble in water, soluble in organic solvents — one row covers three classes.",
+      "Trick 2: Boiling point rises with carbon number; for the SAME carbon number: alkyne > alkene > alkane (more linear packing/s-polarity) — the subtle mark.",
+      "Trick 3: Odour fact: ethene sweet smell, ethyne garlic-like — quick identification line."
+    ],
+    "keyPoints": [
+      "C1–C4 hydrocarbons are gases; C5–C17 liquids; higher are solids.",
+      "All three classes are non-polar and water-insoluble.",
+      "Boiling points increase with chain length; alkynes slightly higher than alkenes/alkanes of equal carbon count.",
+      "Density increases with molecular mass but stays below water."
+    ],
+    "practiceQuestions": [
+      "Q. Compare the boiling points of ethane, ethene and ethyne. (2 marks) — ethyne > ethene > ethane; increasing s-character and linearity.",
+      "Q. Why are alkanes insoluble in water? (1 mark) — non-polar molecules cannot form hydrogen bonds with water."
+    ]
+  },
+  "class-11-notes/chemistry/hydrocarbons/kolbe-s-electrolysis-methods-for-the-preparation-of-alkanes-alkenes-and-alkynes": {
+    "examShortTricks": [
+      "Trick 1: Electrode logic: hydrocarbon forms at the ANODE (oxidation of carboxylate), H2 at cathode — stating the electrode earns the first mark.",
+      "Trick 2: Three recipes — sodium acetate → ethane; sodium succinate → ethene (plus CO2); sodium fumarate/maleate → ethyne.",
+      "Trick 3: General anode reaction: 2RCOO− − 2e → R–R + 2CO2; remember CO2 bubbles as the visible observation."
+    ],
+    "keyPoints": [
+      "Kolbe electrolysis: concentrated sodium carboxylate solution electrolysed.",
+      "Alkane forms at the anode: 2RCOO− → R–R + 2CO2 + 2e.",
+      "Sodium succinate gives ethene; sodium fumarate gives ethyne.",
+      "Hydrogen is liberated at the cathode."
+    ],
+    "practiceQuestions": [
+      "Q. Write the electrode reactions for the Kolbe electrolysis of sodium acetate. (3 marks) — anode: 2CH3COO− → C2H6 + 2CO2 + 2e; cathode: 2H2O + 2e → H2 + 2OH−.",
+      "Q. Which salt gives ethene by Kolbe's method? (1 mark) — sodium succinate."
+    ]
+  }
+}

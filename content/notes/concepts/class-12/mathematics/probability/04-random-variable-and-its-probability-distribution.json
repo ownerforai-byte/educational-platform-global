@@ -75,5 +75,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: A random variable maps outcomes to numbers; the distribution lists X = xi with P(X = xi) — check ΣP = 1 as the first line of every table problem.",
+    "Trick 2: To build a distribution (e.g. number of heads in 2 tosses), enumerate outcomes, count each value, then divide by the total — systematic listing earns method marks.",
+    "Trick 3: Missing-probability questions: set ΣP = 1 and solve for k — instant 1-marker.",
+    "Trick 4: P(X ≥ a) = sum the tail; P(a < X < b) = sum the interior — read the inequality direction carefully (≥ vs >)."
   ]
 }

@@ -34,7 +34,10 @@
     "answer pattern for \"Saturated hydrocarbons (Alkanes): preparation from haloal…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Write the Wurtz reaction for propane preparation. (2 marks) — C2H5Br + CH3Br... actually use 1-bromopropane: 2C3H7Br + 2Na → C6H14 + 2NaBr (dry ether).",
+    "Q. Why does Wurtz reaction give poor yields with mixed halides? (1 mark) — three possible coupling products form in a mixture."
+  ],
   "keyPoints": [
     "• Saturated hydrocarbons",
     "• Alkanes",
@@ -65,5 +68,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Three preparations to memorise — reduction: RX + 2H → RH + HX (Zn/HCl, LiAlH4); Wurtz: 2RX + 2Na → R–R + 2NaX (dry ether); decarboxylation: RCOONa + NaOH(CaO) → RH + Na2CO3 (soda lime).",
+    "Trick 2: Wurtz product rule: two different halides give a MIXTURE of three alkanes — quote as the limitation when asked why Wurtz is unsuitable for unsymmetrical alkanes.",
+    "Trick 3: Kolbe electrolysis of sodium acetate gives ETHANE: 2CH3COO− → C2H6 + 2CO2 (at anode) — one equation, one mark."
   ]
 }

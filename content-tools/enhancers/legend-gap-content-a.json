@@ -1,0 +1,253 @@
+{
+  "class-11-notes/chemistry/stoichiometry/dalton-s-atomic-theory-and-its-postulates": {
+    "examShortTricks": [
+      "Trick 1: Dalton's postulates that later FAILED are the exam favourites — atoms divisible (sub-atomic particles), same element can have different masses (isotopes), atoms can be destroyed (nuclear reactions). Quote these three for a 'limitations' question.",
+      "Trick 2: Law of multiple proportions is the ONLY law Dalton's theory explained directly — link one postulate (atoms combine in fixed whole-number ratios) to that law in 1 line.",
+      "Trick 3: 2-mark question pattern: 'state any two postulates' — always pair one valid postulate with one limitation to show depth."
+    ],
+    "keyPoints": [
+      "Matter is made of indivisible atoms (later disproved by electron, proton, neutron).",
+      "Atoms of the same element are identical in mass and properties — isotopes disproved this.",
+      "Atoms combine in simple whole-number ratios — explains the law of multiple proportions.",
+      "Atoms are neither created nor destroyed in chemical reactions — basis of the law of conservation of mass."
+    ],
+    "practiceQuestions": [
+      "Q. State any two postulates of Dalton's atomic theory and give one limitation of each. (2 marks) — Postulate: indivisible atoms; limitation: electron/proton/neutron exist. Postulate: identical atoms of an element; limitation: isotopes (1H, 2H, 3H) differ in mass.",
+      "Q. Which law of chemical combination is directly explained by Dalton's theory? (1 mark) — Law of multiple proportions."
+    ]
+  },
+  "class-11-notes/chemistry/stoichiometry/laws-of-stoichiometry": {
+    "examShortTricks": [
+      "Trick 1: Match law to example in one line — conservation of mass: 2H2 + O2 -> 2H2O (mass of reactants = mass of products); definite proportions: pure water is always H2O in 1:8 ratio; multiple proportions: CO and CO2.",
+      "Trick 2: For multiple proportions, fix the mass of ONE element and compare the variable element — in CO and CO2, 12 g C combines with 16 g and 32 g O: ratio 16:32 = 1:2 (simple whole number).",
+      "Trick 3: Reciprocal proportions: two elements combining with a THIRD in simple ratios also combine with each other in simple ratios — C:H = 3:1 (CH4), H:O = 1:8 (H2O), so C:O = 3:8 (CO2)."
+    ],
+    "keyPoints": [
+      "Law of conservation of mass (Lavoisier): total mass of reactants = total mass of products.",
+      "Law of definite proportions (Proust): a compound always contains the same elements in the same mass ratio.",
+      "Law of multiple proportions (Dalton): when two elements form more than one compound, masses of one combining with fixed mass of the other are in simple whole-number ratio.",
+      "Law of reciprocal proportions (Richter): elements combining with a third combine with each other in simple ratios."
+    ],
+    "practiceQuestions": [
+      "Q. CO and CO2 illustrate which law? Show the calculation. (2 marks) — Multiple proportions: fixed 12 g C combines with 16 g O (CO) and 32 g O (CO2); 16:32 = 1:2.",
+      "Q. 1.375 g of cupric oxide gave 1.100 g Cu on reduction; 1.79 g of copper gave 2.245 g cupric oxide. Show the law illustrated. (3 marks) — Cu:O ratio is the same (≈ 4:1) in both samples → law of definite proportions."
+    ]
+  },
+  "class-11-notes/chemistry/stoichiometry/avogadro-s-law-and-some-deductions-molecular-mass-and-vapour-density-molecular-mass-and-volume-o": {
+    "examShortTricks": [
+      "Trick 1: Vapour density shortcut — V.D. = M/2, so molecular mass = 2 × V.D. Instantly converts any given V.D. into M.",
+      "Trick 2: At STP one mole of ANY gas occupies 22.4 L — so litres at STP / 22.4 = moles; moles × 22.4 = litres. Two directions, one number.",
+      "Trick 3: Equal volumes of all gases at same T and P contain equal molecules (Avogadro) — this is why the ratio of volumes of reacting gases = ratio of moles (Gay-Lussac's combining volumes).",
+      "Trick 4: Gram molecular volume problems: mass given → moles = mass/M → volume = moles × 22.4 L at STP."
+    ],
+    "keyPoints": [
+      "Avogadro's law: equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules.",
+      "Vapour density = mass of a volume of gas / mass of equal volume of hydrogen (same T, P); M = 2 × V.D.",
+      "One gram-mole of any gas occupies 22.4 L at STP (0 °C, 1 atm).",
+      "Avogadro's number NA = 6.022 × 10^23 particles per mole."
+    ],
+    "practiceQuestions": [
+      "Q. Vapour density of a gas is 22. Find its molecular mass and the volume occupied by 4.4 g at STP. (3 marks) — M = 2 × 22 = 44 (CO2); moles = 4.4/44 = 0.1; V = 0.1 × 22.4 = 2.24 L.",
+      "Q. 500 mL of a gas at STP weighs 0.72 g. Find the molecular mass. (2 marks) — 22.4 L would weigh (0.72/0.5) × 22.4 = 32.256 ≈ 32 g/mol (O2-like)."
+    ]
+  },
+  "class-11-notes/chemistry/stoichiometry/mole-and-its-relation-with-mass-volume-and-number-of-particles": {
+    "examShortTricks": [
+      "Trick 1: The mole triangle — moles = mass/M = particles/6.022e23 = volume(L at STP)/22.4. Write the triangle first in every numerical; every question gives one corner and asks another.",
+      "Trick 2: For ionic solids and atoms use mass ↔ particles only (no 22.4 L); the 22.4 L shortcut is for GASES at STP only.",
+      "Trick 3: Number of moles of atoms vs molecules — 1 mole H2SO4 contains 7 moles of atoms (2H + 1S + 4O); exam asks 'total atoms' — multiply molecules by atoms per molecule."
+    ],
+    "keyPoints": [
+      "One mole = 6.022 × 10^23 particles = gram molecular/atomic mass.",
+      "Number of moles n = given mass (g) / molar mass (g/mol).",
+      "For gases at STP: n = volume (L) / 22.4.",
+      "Number of particles = n × 6.022 × 10^23."
+    ],
+    "practiceQuestions": [
+      "Q. Calculate the number of molecules in 4.9 g H2SO4. (2 marks) — M = 98; n = 4.9/98 = 0.05; molecules = 0.05 × 6.022e23 = 3.011 × 10^22.",
+      "Q. How many moles of atoms are in 0.5 mole H2SO4? (1 mark) — 0.5 × 7 = 3.5 moles of atoms."
+    ]
+  },
+  "class-11-notes/chemistry/stoichiometry/limiting-reactant-and-excess-reactant": {
+    "examShortTricks": [
+      "Trick 1: Convert BOTH reactants to moles, divide each by its stoichiometric coefficient — the SMALLER quotient is the limiting reactant. Never compare masses directly.",
+      "Trick 2: Product yield is always computed from the LIMITING reactant, never from the excess one.",
+      "Trick 3: Amount of excess left over = initial moles of excess − moles consumed (consumed = limiting moles × mole ratio)."
+    ],
+    "keyPoints": [
+      "The limiting reactant is completely consumed and controls the maximum product formed.",
+      "Excess reactant remains partly unreacted after the reaction stops.",
+      "Identify it by comparing moles/coefficient, not masses."
+    ],
+    "practiceQuestions": [
+      "Q. 2 mol H2 reacts with 2 mol O2: 2H2 + O2 -> 2H2O. Find the limiting reactant and water formed. (3 marks) — H2: 2/2 = 1; O2: 2/1 = 2 → H2 limiting; water = 2 mol (36 g).",
+      "Q. 8 g H2 and 32 g O2 explode. What remains and how much? (3 marks) — H2 = 4 mol, O2 = 1 mol → O2 limiting; H2 used = 2 mol → 2 mol (4 g) H2 remains."
+    ]
+  },
+  "class-11-notes/chemistry/stoichiometry/theoretical-yield-experimental-yield-and-yield": {
+    "examShortTricks": [
+      "Trick 1: % yield = (actual / theoretical) × 100 — compute theoretical from the LIMITING reactant, then plug the given experimental mass.",
+      "Trick 2: If % purity is given, first convert impure mass to pure mass (× purity fraction) BEFORE the mole calculation.",
+      "Trick 3: % yield > 100% in an exam answer means the product is wet/impure — state this as the reason if asked."
+    ],
+    "keyPoints": [
+      "Theoretical yield: maximum product from the limiting reactant (stoichiometry).",
+      "Actual (experimental) yield: mass actually obtained in the lab.",
+      "% yield = (actual yield / theoretical yield) × 100."
+    ],
+    "practiceQuestions": [
+      "Q. From 8 g CaO (M = 56 for CaCO3 route) — CaCO3 -> CaO + CO2; if 3.2 g CaO is obtained, find % yield. (3 marks) — theoretical = 8 × 56/100 = 4.48 g; % = 3.2/4.48 × 100 = 71.4%.",
+      "Q. Why can experimental yield never exceed theoretical yield for a pure dry product? (1 mark) — Law of conservation of mass; product cannot contain more matter than the limiting reactant supplies."
+    ]
+  },
+  "class-11-notes/chemistry/stoichiometry/calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-proble": {
+    "examShortTricks": [
+      "Trick 1: % → grams (take 100 g) → divide each % by atomic mass → divide all by the SMALLEST quotient → simplest whole-number ratio = empirical formula.",
+      "Trick 2: If a ratio lands near .5, .33 or .67, multiply ALL numbers by 2, 3 or 3 respectively — never round 0.5 to 0 or 1.",
+      "Trick 3: n = molecular mass / empirical-formula mass; molecular formula = (empirical formula)n.",
+      "Trick 4: Combustion data: moles of CO2 = moles of C; half the moles of H2O = moles of H2 (each H2O carries 2 H)."
+    ],
+    "keyPoints": [
+      "Empirical formula = simplest whole-number atom ratio; molecular formula = actual number of atoms.",
+      "Molecular formula = n × empirical formula, n = M / (empirical formula mass).",
+      "Percent-to-mole: divide mass % by atomic mass, then normalise to the smallest."
+    ],
+    "practiceQuestions": [
+      "Q. A compound has C 40%, H 6.67%, O 53.33%; M = 180. Find the molecular formula. (4 marks) — ratios 3.33 : 6.67 : 3.33 → 1:2:1 → CH2O; n = 180/30 = 6 → C6H12O6.",
+      "Q. 0.2 g of an organic compound on combustion gives 0.294 g CO2 and 0.12 g H2O. Find the empirical formula. (3 marks) — C = 0.294 × 12/44 = 0.08 g; H = 0.12 × 2/18 = 0.0133 g; ratio C:H ≈ 1:1 → CH."
+    ]
+  },
+  "class-11-notes/chemistry/atomic-structure/postulates-of-bohr-s-atomic-model-and-its-application": {
+    "examShortTricks": [
+      "Trick 1: Bohr's three numbered postulates in exam order — (1) fixed circular orbits with fixed energy, (2) angular momentum mvr = nh/2π (quantised), (3) radiation only on jump: ΔE = hν.",
+      "Trick 2: Radius and energy formulas for hydrogen: rn ∝ n² (0.529 n² Å) and En = −13.6/n² eV — every numerical is a one-line substitution.",
+      "Trick 3: Energy of ANY orbit from ground state: E_n = −13.6/n² eV; ionisation from orbit n = +13.6/n² eV."
+    ],
+    "keyPoints": [
+      "Electrons revolve only in fixed orbits (stationary states) without radiating energy.",
+      "Angular momentum is quantised: mvr = nh/2π.",
+      "Energy is emitted/absorbed only during a jump: hν = E2 − E1.",
+      "For hydrogen: rn = 0.529 n² Å; En = −13.6/n² eV."
+    ],
+    "practiceQuestions": [
+      "Q. Calculate the radius and energy of the 2nd orbit of hydrogen. (2 marks) — r = 0.529 × 4 = 2.116 Å; E = −13.6/4 = −3.4 eV.",
+      "Q. How much energy is needed to ionise a hydrogen atom in the ground state? (1 mark) — 13.6 eV (2.18 × 10^-18 J)."
+    ]
+  },
+  "class-11-notes/chemistry/atomic-structure/spectrum-of-hydrogen-atom": {
+    "examShortTricks": [
+      "Trick 1: Name the series by the FALL-TO orbit: Lyman → n=1 (UV), Balmer → n=2 (visible), Paschen → n=3, Brackett → n=4, Pfund → n=5 (all IR).",
+      "Trick 2: Rydberg numerical: 1/λ = R(1/n1² − 1/n2²), R = 1.097 × 10^7 m^-1 — plug n1 (lower) and n2 (higher) directly.",
+      "Trick 3: Balmer's first line (Hα, 3→2) is 6563 Å (red) — quoting it saves the full calculation in 'name the line' questions."
+    ],
+    "keyPoints": [
+      "Hydrogen spectrum is a line spectrum explained by electron jumps between quantised orbits.",
+      "Five series: Lyman (UV), Balmer (visible), Paschen, Brackett, Pfund (infrared).",
+      "Wavenumber obeys 1/λ = R_H (1/n1² − 1/n2²)."
+    ],
+    "practiceQuestions": [
+      "Q. Which transition gives the first line of the Balmer series and its colour? (2 marks) — n=3 → n=2, red, λ = 6563 Å.",
+      "Q. Calculate λ for the transition n=2 → n=1 in hydrogen. (3 marks) — 1/λ = 1.097e7 (1 − 1/4) = 8.23e6 → λ ≈ 1.215 × 10^-7 m (Lyman, UV)."
+    ]
+  },
+  "class-11-notes/chemistry/atomic-structure/defects-of-bohr-s-theory": {
+    "examShortTricks": [
+      "Trick 1: Pair each defect with the model that fixed it — fine spectra → Sommerfeld (elliptical orbits); Zeeman/Stark splitting → magnetic/electric fields; multi-electron atoms → wave mechanics; dual nature → de Broglie.",
+      "Trick 2: 'Bohr fails for multi-electron atoms' is the shortest complete answer — it ignores electron-electron repulsion and treats orbits as fixed paths.",
+      "Trick 3: Bohr violates Heisenberg's uncertainty principle (fixed radius + fixed velocity cannot both be known)."
+    ],
+    "keyPoints": [
+      "Cannot explain fine structure (splitting of spectral lines) — Sommerfeld's elliptical orbits.",
+      "Fails for multi-electron atoms; works only for hydrogen-like (one-electron) species.",
+      "Contradicts the uncertainty principle by defining exact position and momentum.",
+      "Cannot explain Zeeman (magnetic) and Stark (electric) effects."
+    ],
+    "practiceQuestions": [
+      "Q. State two limitations of Bohr's model. (2 marks) — fails for multi-electron atoms; violates the uncertainty principle (fixed path with fixed momentum).",
+      "Q. Which model explained the fine structure of spectral lines? (1 mark) — Sommerfeld's extension with elliptical orbits."
+    ]
+  },
+  "class-11-notes/chemistry/atomic-structure/elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation": {
+    "examShortTricks": [
+      "Trick 1: de Broglie numerical is one line: λ = h/mv (h = 6.63 × 10^-34 Js) — mass in kg, velocity in m/s.",
+      "Trick 2: λ = h/√(2mKE) when kinetic energy is given — memorise this variant; board questions alternate between the two forms.",
+      "Trick 3: Why waves are not seen for large bodies: mass enters the denominator — a cricket ball's λ is ~10^-34 m, undetectable."
+    ],
+    "keyPoints": [
+      "Every moving particle has an associated wave: λ = h/mv = h/p.",
+      "The wave is significant only for particles of atomic mass.",
+      "Justifies quantised orbits: an orbit is allowed when it contains a whole number of wavelengths (2πr = nλ)."
+    ],
+    "practiceQuestions": [
+      "Q. Calculate λ for an electron moving at 10^6 m/s (m = 9.1 × 10^-31 kg). (2 marks) — λ = 6.63e-34/(9.1e-31 × 1e6) = 7.28 × 10^-10 m.",
+      "Q. Why is the wave nature of a moving cricket ball not observed? (1 mark) — λ = h/mv is negligibly small for macroscopic mass."
+    ]
+  },
+  "class-11-notes/chemistry/atomic-structure/heisenberg-s-uncertainty-principle-and-concept-of-probability": {
+    "examShortTricks": [
+      "Trick 1: Δx·Δp ≥ h/4π — the h/4π (not h/2π) constant is the classic 1-mark trap.",
+      "Trick 2: Significance in one line: exact position and exact momentum of an electron cannot be known together — hence orbits become orbitals (probability pictures).",
+      "Trick 3: Numerical: given Δx, find Δv — Δp = mΔv, so Δv = h/(4π·m·Δx)."
+    ],
+    "keyPoints": [
+      "It is impossible to determine position and momentum of a microscopic particle simultaneously with certainty.",
+      "Δx · Δp ≥ h/4π.",
+      "Consequence: atomic pictures use orbitals — regions of maximum probability (ψ²)."
+    ],
+    "practiceQuestions": [
+      "Q. Why did the uncertainty principle reject Bohr's orbits? (1 mark) — Bohr fixed both radius (position) and velocity (momentum) exactly, which is forbidden.",
+      "Q. Calculate Δv if Δx = 1 Å for an electron. (2 marks) — Δv = 6.63e-34/(4π × 9.1e-31 × 1e-10) ≈ 5.8 × 10^5 m/s."
+    ]
+  },
+  "class-11-notes/chemistry/atomic-structure/quantum-numbers": {
+    "examShortTricks": [
+      "Trick 1: The four numbers in one line each — n: shell/size/energy; l: shape (s,p,d,f = 0,1,2,3); m: orientation (−l…+l); s: spin (+1/2, −1/2).",
+      "Trick 2: Count orbitals instantly: number of m values = 2l + 1; orbitals in shell n = n²; electrons in shell = 2n².",
+      "Trick 3: 'Is 3f possible?' — l must be ≤ n−1; for n = 3, l max = 2 (d) → 3f does not exist. Same check kills 2d and 1p."
+    ],
+    "keyPoints": [
+      "Principal quantum number n: size and energy of the shell (K, L, M, N…).",
+      "Azimuthal ( subsidiary) l: subshell shape; s, p, d, f = 0, 1, 2, 3; l = 0 … n−1.",
+      "Magnetic m: orientation; values −l … 0 … +l.",
+      "Spin s: +1/2 or −1/2 only."
+    ],
+    "practiceQuestions": [
+      "Q. Write all quantum numbers for the last electron of Na (Z = 11). (3 marks) — 3s1: n = 3, l = 0, m = 0, s = +1/2.",
+      "Q. How many orbitals are in the M shell (n = 3)? (1 mark) — n² = 9 (one 3s, three 3p, five 3d)."
+    ]
+  },
+  "class-11-notes/chemistry/atomic-structure/orbitals-and-shape-of-s-and-p-orbitals-only": {
+    "examShortTricks": [
+      "Trick 1: Shapes in one phrase each — s: spherical; p: dumb-bell along x, y, z (three px, py, pz).",
+      "Trick 2: Orbital vs shell: an orbital holds maximum 2 electrons with opposite spins; 1 s-orbital per shell, 3 p-orbitals from n = 2.",
+      "Trick 3: Node question: s-orbital of nth shell has (n−1) nodes — 2s has 1 radial node, 3s has 2."
+    ],
+    "keyPoints": [
+      "An orbital is a region of space where the probability of finding the electron is maximum (~90%).",
+      "s-orbital: spherical, non-directional; size grows with n (1s < 2s < 3s).",
+      "p-orbitals: dumb-bell shaped, three orientations (px, py, pz), first appear at n = 2."
+    ],
+    "practiceQuestions": [
+      "Q. Draw the shape of 1s and 2px orbitals and label them. (2 marks) — sphere; dumb-bell along the x-axis with a node at the nucleus.",
+      "Q. How many electrons can the p-subshell of L shell hold? (1 mark) — 6 (3 orbitals × 2 electrons)."
+    ]
+  },
+  "class-11-notes/chemistry/atomic-structure/aufbau-principle-pauli-s-exclusion-principle-hund-s-rule-and-electronic-configurations-of-atoms-": {
+    "examShortTricks": [
+      "Trick 1: Fill by (n + l) rule; for equal (n + l), lower n fills first — that is why 4s (4+0) fills before 3d (3+2).",
+      "Trick 2: Hund's rule in one phrase: degenerate orbitals fill singly first, with parallel spins, before pairing.",
+      "Trick 3: Exceptional configurations are guaranteed 2-mark questions: Cr = [Ar]3d5 4s1 and Cu = [Ar]3d10 4s1 — reason: exactly half-filled and fully-filled d subshells gain extra stability (exchange energy).",
+      "Trick 4: Pauli check: no two electrons in the same orbital share all four quantum numbers — max 2 per orbital, opposite spins."
+    ],
+    "keyPoints": [
+      "Aufbau: orbitals fill in increasing energy order (n + l rule).",
+      "Pauli: an orbital holds at most two electrons with opposite spins.",
+      "Hund: pairing in degenerate orbitals starts only after each has one electron.",
+      "Cr and Cu show half-filled/fully-filled d-subshell stability."
+    ],
+    "practiceQuestions": [
+      "Q. Write the electronic configuration of Cr (Z = 24) and explain the exception. (3 marks) — [Ar] 3d5 4s1; half-filled d5 plus 4s1 maximises exchange energy and symmetry.",
+      "Q. Why is 4s filled before 3d? (1 mark) — lower (n + l) value: 4s has 4, 3d has 5."
+    ]
+  }
+}

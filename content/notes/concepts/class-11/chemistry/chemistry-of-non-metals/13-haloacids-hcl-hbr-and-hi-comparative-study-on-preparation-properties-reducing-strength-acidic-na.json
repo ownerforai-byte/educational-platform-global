@@ -33,7 +33,10 @@
     "answer pattern for \"Haloacids (HCl, HBr and HI): comparative study on prepara…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Why is HI a stronger reducing agent than HCl? (1 mark) — weaker H–I bond; iodide is more easily oxidised.",
+    "Q. Why can HBr not be prepared from KBr and conc. H2SO4? (2 marks) — H2SO4 oxidises the HBr formed to Br2; H3PO4 (non-oxidising) is used."
+  ],
   "keyPoints": [
     "• Haloacids",
     "• : comparative study on preparation",
@@ -64,5 +67,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: One-line comparisons — acidic strength: HF < HCl < HBr < HI (bond weaker down the group); reducing strength: HCl < HBr < HI; stability: HF > HCl > HBr > HI.",
+    "Trick 2: Preparation differences: HCl by NaCl + conc. H2SO4; HBr/HI cannot use H2SO4 (oxidised to Br2/I2) — use H3PO4 instead; that contrast is the mark.",
+    "Trick 3: HI reduces H2SO4 to SO2 and conc. HNO3 to NO2 — quote one equation as evidence of strong reducing nature."
   ]
 }

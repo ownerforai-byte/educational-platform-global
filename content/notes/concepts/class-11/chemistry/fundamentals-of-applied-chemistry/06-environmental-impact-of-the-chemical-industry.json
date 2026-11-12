@@ -33,7 +33,10 @@
     "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Name two air pollutants from chemical plants and one effect. (2 marks) — SO2/NOx → acid rain; CO2 → global warming.",
+    "Q. What is an ETP? (1 mark) — effluent treatment plant that cleans liquid waste before discharge."
+  ],
   "formulas": [
     "F = qvB sinθ",
     "ε = −N dΦ/dt",
@@ -59,5 +62,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Three media, three examples — air: SO2/NOx (acid rain), CO2 (greenhouse); water: heavy metals, dyes, thermal discharge; land: solid waste, effluent sludge.",
+    "Trick 2: Control measures earn the remaining marks: scrubbers/ESP for stack gases, effluent treatment plants (ETP), recycling, green chemistry (fewer by-products).",
+    "Trick 3: Quote one event: Minamata (Hg discharge) as the classic case study for industrial pollution."
   ]
 }

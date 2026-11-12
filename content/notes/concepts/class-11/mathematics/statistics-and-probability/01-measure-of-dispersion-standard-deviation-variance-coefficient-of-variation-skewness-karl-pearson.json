@@ -90,5 +90,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: CV = (σ/x̄) × 100% — 'less CV = more consistent'; the consistency comparison question is a direct CV calculation.",
+    "Trick 2: Variance shortcut for discrete data: σ² = Σfx²/N − (Σfx/N)² — compute two column sums and subtract; never use the definition formula with huge means.",
+    "Trick 3: Karl Pearson skewness: Sk = (mean − mode)/σ or 3(mean − median)/σ; sign tells direction (positive = right tail).",
+    "Trick 4: Adding a constant to all values changes x̄ but NOT σ; multiplying by k multiplies σ by |k| — the transformation 1-marker."
   ]
 }

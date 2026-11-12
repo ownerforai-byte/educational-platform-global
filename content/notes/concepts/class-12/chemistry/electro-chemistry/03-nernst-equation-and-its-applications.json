@@ -75,5 +75,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Nernst at 298 K: E = E° − (0.0591/n)·log([products]/[reactants]) — for the cell, use the reaction quotient Q of the OVERALL cell reaction.",
+    "Trick 2: Pure solids/liquids and 1 M standard states drop out of Q — only ion concentrations appear for metal–metal-ion electrodes.",
+    "Trick 3: Equilibrium condition: E = 0 → E° = (0.0591/n)·log Kc — the Kc-from-E° numerical is a two-line substitution.",
+    "Trick 4: pH electrodes: E depends linearly on log[H+] — quote 'every unit of pH changes E by 0.0591 V' for the H-electrode question."
   ]
 }

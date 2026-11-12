@@ -36,7 +36,10 @@
     "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Classify chemical fertilisers with one example of each type. (3 marks) — nitrogenous (urea), phosphatic (superphosphate), potassic (KCl).",
+    "Q. Write the two reactions of urea manufacture. (2 marks) — carbamate formation then decomposition to urea + water."
+  ],
   "formulas": [
     "F = qvB sinθ",
     "ε = −N dΦ/dt",
@@ -76,5 +79,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Three fertiliser types with one example each — nitrogenous (urea, ammonium sulphate), phosphatic (superphosphate, DAP), potassic (KCl/muriate of potash); NPK is the combined grade.",
+    "Trick 2: Urea manufacture two steps: 2NH3 + CO2 → NH2COONH4 (ammonium carbamate, 200 atm, 180 °C); carbamate → NH2CONH2 + H2O (decomposition, lower pressure).",
+    "Trick 3: Urea is the highest-N solid fertiliser (46% N) and releases N slowly after soil hydrolysis — quote for the merit mark."
   ]
 }

@@ -76,5 +76,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: m = ZIt = (E/96500)·It — E is the EQUIVALENT mass (M/n for M^n+); identify n first, then substitute.",
+    "Trick 2: Products at electrodes: molten NaCl → Na at cathode, Cl2 at anode; aqueous NaCl (brine) → H2 at cathode (water reduced) — overpotential decides water vs metal ions.",
+    "Trick 3: Same charge through cells in series: masses ∝ equivalent masses (second law) — the series numerical is one ratio.",
+    "Trick 4: Charge bookkeeping: Q = I×t (seconds!), moles of electrons = Q/96500 — the unit trap is minutes."
   ]
 }

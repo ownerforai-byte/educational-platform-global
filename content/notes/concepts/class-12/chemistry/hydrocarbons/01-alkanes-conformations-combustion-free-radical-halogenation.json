@@ -73,5 +73,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Conformation order for ethane: staggered (dihedral 60°, minimum energy) > skew > eclipsed (maximum, 12.5 kJ/mol barrier) — draw Newman projections along the C–C axis.",
+    "Trick 2: Butane anti conformer is most stable (methyl groups farthest); gauche next — quote 'anti > gauche > eclipsed'.",
+    "Trick 3: Combustion: CnH2n+2 + (3n+1)/2 O2 → n CO2 + (n+1) H2O; incomplete combustion gives CO/soot — the general equation earns the mark.",
+    "Trick 4: Halogenation selectivity: 3° > 2° > 1° H (radical stability) — explains major product prediction."
   ]
 }

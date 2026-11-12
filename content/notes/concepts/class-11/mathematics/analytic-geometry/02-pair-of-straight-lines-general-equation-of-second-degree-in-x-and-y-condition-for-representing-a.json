@@ -93,5 +93,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: ax² + 2hxy + by² = 0 through the origin → factorise by treating as quadratic in (y/x); slopes m1m2 = a/b, m1 + m2 = −2h/b.",
+    "Trick 2: General second-degree represents a pair of lines when abc + 2fgh − af² − bg² − ch² = 0 — memorise as 'abc + 2fgh − af² − bg² − ch²'.",
+    "Trick 3: Angle between the lines: tan θ = 2√(h² − ab)/(a + b); perpendicular when a + b = 0; parallel when h² = ab.",
+    "Trick 4: For ax² + 2hxy + by² = 0: perpendicular ⇔ a + b = 0 — the fastest 1-mark test."
   ]
 }

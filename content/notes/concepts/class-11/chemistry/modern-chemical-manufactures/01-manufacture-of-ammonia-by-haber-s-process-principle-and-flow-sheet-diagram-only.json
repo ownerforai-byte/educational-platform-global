@@ -29,7 +29,10 @@
     "answer pattern for \"Manufacture of ammonia by Haber's process (principle and …\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. State the optimum conditions for the Haber process and justify by Le Chatelier. (3 marks) — high P (fewer moles forward), low T favoured but 450–500 °C is a rate compromise.",
+    "Q. Why is the catalyst chamber kept at ~450 °C? (1 mark) — balance between equilibrium yield and reaction rate."
+  ],
   "keyPoints": [
     "• Manufacture of ammonia by Haber's process",
     "• Principle",
@@ -57,5 +60,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Equation + optimum conditions: N2 + 3H2 ⇌ 2NH3, ΔH = −92 kJ — 200 atm, 450–500 °C, Fe catalyst with Mo promoter; 'compromise temperature' is the scoring phrase (low T favours yield but is too slow).",
+    "Trick 2: Flow sheet order: N2 + H2 purification → compressor → catalyst chamber → cooler → condenser (NH3 liquefies) → recycle unreacted gases — draw boxes with arrows.",
+    "Trick 3: Recycling unreacted N2/H2 raises yield — state it as the efficiency trick of the process."
   ]
 }

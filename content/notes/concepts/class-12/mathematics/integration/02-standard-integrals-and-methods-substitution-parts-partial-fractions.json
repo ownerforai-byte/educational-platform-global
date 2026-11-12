@@ -81,5 +81,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Method picker — rational with factorable denominator → partial fractions; product of unlike types → by parts; composite f(g(x))g′(x) → substitution; roots of quadratics → complete the square.",
+    "Trick 2: By parts ILATE: pick u = the factor that simplifies on differentiation (log, inverse trig first); ∫u dv = uv − ∫v du.",
+    "Trick 3: Partial fraction forms: (px+q)/((x−a)(x−b)) = A/(x−a) + B/(x−b); repeated factor adds B/(x−a)²; irreducible quadratic adds (Cx+D)/(x²+px+q).",
+    "Trick 4: Standard definite-integral properties save work: ∫0^a f(x)dx = ∫0^a f(a−x)dx — apply to sin/cos symmetric integrands."
   ]
 }

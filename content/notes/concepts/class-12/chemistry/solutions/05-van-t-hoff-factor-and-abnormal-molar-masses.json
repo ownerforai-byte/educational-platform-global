@@ -58,5 +58,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: i = observed colligative value / calculated value; i > 1 dissociation (NaCl i = 2, CaCl2 i = 3); i < 1 association (benzoic acid dimer in benzene, i ≈ 1/2).",
+    "Trick 2: Corrected formulas: ΔTb = i·Kb·m, π = iCRT — multiply by i for dissociation; molar mass then divides by i.",
+    "Trick 3: Abnormal molar mass direction: dissociation → measured M LOWER than true; association → HIGHER — one sentence explains both.",
+    "Trick 4: Degree of dissociation α = (i − 1)/(n − 1) for n ions — the standard follow-up numerical."
   ]
 }

@@ -53,5 +53,20 @@
   "animation3D": "refraction-at-plane-surfaces",
   "motionGraphics": "refraction-at-plane-surfaces",
   "visualType": "snell-law",
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "examShortTricks": [
+    "Trick 1: Index chain: n21 = 1/n12; absolute n = c/v — combine to get n1 v1 = n2 v2 and n1 sin i = n2 sin r (Snell).",
+    "Trick 2: Denser → rarer: light bends away from normal; speed and wavelength increase, FREQUENCY unchanged — 'frequency never changes' is the 1-mark trap.",
+    "Trick 3: Numerical shortcut: n2 = n1 × (v1/v2); with λ: n1 λ1 = n2 λ2."
+  ],
+  "keyPoints": [
+    "Refractive index of medium 2 w.r.t. 1: n21 = sin i/sin r = v1/v2.",
+    "Absolute refractive index n = c/v.",
+    "n21 = n2/n1; reciprocal relations hold between pairs.",
+    "On refraction, frequency stays constant; speed and wavelength change."
+  ],
+  "practiceQuestions": [
+    "Q. Light goes from glass (n = 1.5) to water (n = 1.33). Find n_wg. (2 marks) — n_wg = 1.33/1.5 = 0.887.",
+    "Q. Speed of light in a medium of n = 2? (1 mark) — v = c/n = 1.5 × 10^8 m/s."
+  ]
 }

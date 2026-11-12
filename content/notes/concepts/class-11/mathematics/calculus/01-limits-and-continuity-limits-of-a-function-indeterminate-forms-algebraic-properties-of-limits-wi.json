@@ -95,5 +95,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: 0/0 toolkit in order — factorise and cancel → rationalise (multiply by conjugate) → standard limits (sin x/x → 1, (1+x)^(1/x) → e, (a^x − 1)/x → ln a).",
+    "Trick 2: Substitute FIRST; only if you get 0/0 or ∞/∞ apply the toolkit — most marks are lost by skipping the direct check.",
+    "Trick 3: Continuity checklist at x = a: f(a) defined, lim exists, lim = f(a) — all three must hold; state each explicitly for full marks.",
+    "Trick 4: For piecewise functions set left limit = right limit = value to find unknown constants — the standard exam pattern."
   ]
 }

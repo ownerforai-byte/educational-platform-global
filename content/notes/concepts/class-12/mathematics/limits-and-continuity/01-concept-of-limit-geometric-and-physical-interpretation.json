@@ -73,5 +73,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: One-sided limits first: lim x→a⁻ and lim x→a⁺ must be EQUAL for the limit to exist — check both before answering any piecewise or |x| question.",
+    "Trick 2: Geometric meaning: the curve approaches the height L from both sides of x = a (holes allowed); physical: instantaneous behaviour as t → t0.",
+    "Trick 3: lim f(x) exists but f(a) undefined/unequal → removable discontinuity (a hole) — naming the type earns the mark."
   ]
 }

@@ -87,5 +87,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Resultant of two forces: R = √(P² + Q² + 2PQ cos θ); direction tan α = Q sin θ/(P + Q cos θ) — two formulas cover every statics numerical.",
+    "Trick 2: Equilibrium of three forces → Lami's theorem: P/sin α = Q/sin β = R/sin γ — use when three concurrent forces balance.",
+    "Trick 3: Resolution trick: choose axes along and perpendicular to the likely resultant; ΣFx and ΣFy then give R and θ directly.",
+    "Trick 4: Minimum force to move... on a smooth plane: resolve weight along the plane mg sin θ — the standard free-body setup earns the method mark."
   ]
 }

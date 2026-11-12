@@ -95,5 +95,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "keyPoints": [
+    "Continuity does NOT imply differentiability (counterexample: |x| at x=0).",
+    "Differentiability DOES imply continuity — memorise this one-way implication.",
+    "Check differentiability by testing left-hand and right-hand derivatives separately."
   ]
 }

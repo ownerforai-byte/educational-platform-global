@@ -64,5 +64,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Definition test: A, B independent ⇔ P(A∩B) = P(A)P(B); equivalently P(B|A) = P(B) — verify with numbers, never assume from the story.",
+    "Trick 2: 'At least one' trick: P(at least one) = 1 − P(none) — converts messy unions into one multiplication.",
+    "Trick 3: Mutually exclusive ≠ independent: exclusive events with positive probability are ALWAYS dependent (P(A∩B) = 0 ≠ P(A)P(B)) — the classic distinction 2-marker."
   ]
 }

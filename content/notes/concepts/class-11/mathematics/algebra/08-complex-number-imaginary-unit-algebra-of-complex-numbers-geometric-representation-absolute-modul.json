@@ -98,5 +98,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: i² = −1 powers cycle in fours: i, −1, −i, 1 — reduce any i^n by dividing n by 4.",
+    "Trick 2: Modulus–argument pack: |z| = √(x² + y²); arg z = tan^-1(y/x) with quadrant check; polar form z = r(cos θ + i sin θ).",
+    "Trick 3: Conjugate tricks: z z̄ = |z|²; to divide by a complex number multiply by the conjugate of the DENOMINATOR — standardises every fraction problem.",
+    "Trick 4: Geometric: |z − z1| = |z − z2| is the perpendicular bisector of the segment z1z2; |z| = r is a circle — recognising the locus halves the work."
   ]
 }

@@ -30,7 +30,10 @@
     "answer pattern for \"Alkyl groups, functional groups and homologous series\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Define homologous series with one example. (2 marks) — CH4, C2H6, C3H8… differ by CH2, general CnH2n+2.",
+    "Q. Write the general formula of alkyl groups. (1 mark) — CnH2n+1."
+  ],
   "keyPoints": [
     "• Alkyl groups",
     "• Functional groups",
@@ -58,5 +61,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Alkyl group = alkane minus one H, general CnH2n+1 (methyl CH3–, ethyl C2H5–); functional group = the reactive atom/group (–OH, –CHO, –COOH, –X).",
+    "Trick 2: Homologous series definition in one line: compounds with the SAME general formula, same functional group, successive members differ by CH2 (14 u).",
+    "Trick 3: Exam pattern: 'give the general formula' — alkanes CnH2n+2, alkenes CnH2n, alkynes CnH2n−2, alcohols CnH2n+1OH."
   ]
 }

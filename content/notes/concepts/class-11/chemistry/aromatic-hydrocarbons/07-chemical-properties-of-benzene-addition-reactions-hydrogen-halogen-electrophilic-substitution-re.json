@@ -42,7 +42,10 @@
     "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Write the nitration of benzene and name the electrophile. (2 marks) — C6H6 + HNO3 →(H2SO4) C6H5NO2 + H2O; electrophile NO2+.",
+    "Q. Give the product of benzene with Cl2 in UV light. (1 mark) — benzene hexachloride C6H6Cl6 (addition)."
+  ],
   "formulas": [
     "F = qvB sinθ",
     "ε = −N dΦ/dt",
@@ -84,5 +87,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Electrophilic substitution quartet with catalysts — nitration (conc. HNO3 + H2SO4, 50 °C), halogenation (X2 + FeX3/anhyd.), sulphonation (fuming H2SO4), Friedel–Crafts alkylation/acylation (RCl/RCOCl + anhyd. AlCl3).",
+    "Trick 2: The attacking electrophiles: NO2+, X+ (or Cl+), SO3H+, R+/RCO+ — naming the electrophile is the mechanism mark.",
+    "Trick 3: Addition under force: 3H2 (Ni, 475 K) → cyclohexane; 3Cl2 (UV) → benzene hexachloride (BHC, C6H6Cl6) — 'addition needs harsh conditions because aromaticity must break'."
   ]
 }

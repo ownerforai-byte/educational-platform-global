@@ -92,5 +92,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Geometrical isomerism requires EACH double-bond carbon to carry two DIFFERENT groups — check this condition before assigning cis/trans (1,1-dichloroethene has none).",
+    "Trick 2: CIP/E-Z shortcut: higher-priority groups on the same side = Z; opposite = E — use when cis/trans naming fails.",
+    "Trick 3: Electrophilic addition mechanism: π bond attacks E+ → more stable carbocation → Nu− attacks — the carbocation choice IS Markovnikov's rule.",
+    "Trick 4: Heat of hydrogenation measures stability: more substituted alkene → lower heat → more stable (tetra > tri > di > mono)."
   ]
 }

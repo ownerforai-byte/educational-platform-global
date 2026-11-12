@@ -90,5 +90,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Classifier — can you write g(y)dy = f(x)dx? → variable separable; M dx + N dy with M, N homogeneous of same degree → put y = vx; dy/dx + Py = Q → linear (integrating factor e^{∫P dx}).",
+    "Trick 2: Linear equation answer template: y·IF = ∫Q·IF dx + C — write it immediately after finding the IF.",
+    "Trick 3: For homogeneous equations, the substitution y = vx ALWAYS ends in a separable equation; back-substitute v = y/x at the end.",
+    "Trick 4: Initial conditions determine C — substitute the point BEFORE simplifying the general solution to avoid algebra errors."
   ]
 }

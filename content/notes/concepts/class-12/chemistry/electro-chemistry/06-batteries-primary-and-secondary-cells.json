@@ -58,5 +58,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Classification line: primary = single use (dry cell, mercury cell); secondary = rechargeable (lead storage, Ni–Cd, Li-ion) — one example each earns the pair.",
+    "Trick 2: Lead storage reactions: discharge Pb + PbO2 + 2H2SO4 → 2PbSO4 + 2H2O; cell potential ~2 V per cell, 6 cells = 12 V; recharging reverses it.",
+    "Trick 3: Mercury cell gives a CONSTANT voltage throughout life (used in watches) — the 'why' is the fixed NaOH/ZnO concentration.",
+    "Trick 4: Ni–Cd: 'memory-free' rechargeable; Li-ion: highest energy density, lightweight — the comparison table for 2 marks."
   ]
 }

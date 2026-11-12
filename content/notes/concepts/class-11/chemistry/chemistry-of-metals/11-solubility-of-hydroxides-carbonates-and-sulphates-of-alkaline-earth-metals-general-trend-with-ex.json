@@ -30,7 +30,10 @@
     "answer pattern for \"Solubility of hydroxides, carbonates and sulphates of alk…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Arrange MgSO4, CaSO4, SrSO4, BaSO4 in decreasing solubility. (1 mark) — MgSO4 > CaSO4 > SrSO4 > BaSO4.",
+    "Q. Why is BaSO4 used in X-ray diagnosis? (1 mark) — highly insoluble and opaque to X-rays, non-toxic."
+  ],
   "keyPoints": [
     "• Solubility of hydroxides",
     "• Carbonates",
@@ -59,5 +62,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Three trend lines — hydroxides: solubility INCREASES down (Be(OH)2 insoluble → Ba(OH)2 most); carbonates: all INSOLUBLE, decrease slightly; sulphates: DECREASE down (BaSO4 most insoluble).",
+    "Trick 2: Explain by hydration vs lattice energy: for hydroxides hydration energy wins as size grows; for sulphates lattice energy wins — that contrast earns the explanation mark.",
+    "Trick 3: Application: BaSO4 insolubility → barium meal X-ray; MgSO4 soluble → Epsom salt."
   ]
 }

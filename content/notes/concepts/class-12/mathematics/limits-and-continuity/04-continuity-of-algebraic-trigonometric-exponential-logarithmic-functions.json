@@ -88,5 +88,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Instant classifications: polynomials, sin/cos, e^x continuous everywhere; tan x, sec x break at π/2 + nπ; ln x only for x > 0; |x| continuous but not differentiable at 0.",
+    "Trick 2: Sums/products/quotients of continuous functions are continuous except where the denominator vanishes — locate the bad points, not the whole curve.",
+    "Trick 3: For an unknown constant k in a piecewise function, write the continuity equation lim-left = lim-right (and = f(a)) and solve for k."
   ]
 }

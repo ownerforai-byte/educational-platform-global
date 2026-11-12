@@ -73,5 +73,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: k = Ae^(−Ea/RT); log(k2/k1) = Ea(T2−T1)/(2.303R·T1T2) — the two-temperature form is the numerical workhorse; R = 8.314 J.",
+    "Trick 2: Graph marks: ln k vs 1/T is a straight line with slope −Ea/R and intercept ln A — draw and label axes.",
+    "Trick 3: Threshold statement: reaction occurs only when colliding molecules possess energy ≥ Ea; the fraction e^(−Ea/RT) is the Boltzmann factor.",
+    "Trick 4: A catalyst lowers Ea, so k rises by e^(ΔEa/RT) — quote for the catalysis-kinetics link."
   ]
 }

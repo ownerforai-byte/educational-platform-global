@@ -29,7 +29,10 @@
     "answer pattern for \"Ion pumps (sodium-potassium and sodium-glucose pump)\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. State the ion ratio of the Na+/K+ pump and its energy source. (2 marks) — 3 Na+ out : 2 K+ in; ATP via Na+/K+ ATPase.",
+    "Q. How is glucose absorbed in the intestine against its gradient? (2 marks) — Na–glucose symport driven by the Na+ electrochemical gradient."
+  ],
   "keyPoints": [
     "• Ion pumps",
     "• Sodium-potassium",
@@ -57,5 +60,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Na+/K+ pump stoichiometry: 3 Na+ OUT, 2 K+ IN per ATP — the ratio is the most-asked detail; driven by Na+/K+ ATPase.",
+    "Trick 2: Consequences: maintains resting membrane potential, cell volume and nerve impulse transmission — three outcomes for the 2-mark answer.",
+    "Trick 3: Na–glucose pump: Na+ gradient (secondary active transport) drags glucose INTO the cell against its gradient in the intestine — 'secondary transport' is the keyword."
   ]
 }

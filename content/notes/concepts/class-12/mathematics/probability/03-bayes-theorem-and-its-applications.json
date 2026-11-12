@@ -66,5 +66,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Bayes template: P(Ei|A) = P(Ei)P(A|Ei) / ΣP(Ek)P(A|Ek) — label causes E1, E2… and the observation A; fill a two-column table.",
+    "Trick 2: The denominator is the TOTAL probability of the observation — compute it first; every Bayes numerical is one division.",
+    "Trick 3: Prior → posterior language: P(Ei) is the prior (before the evidence), P(Ei|A) the posterior — using these words earns the interpretation mark.",
+    "Trick 4: Classic setups: two machines producing items, two urns drawing balls, disease testing — all reduce to the same table."
   ]
 }

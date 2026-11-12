@@ -88,5 +88,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: B(n, p) checklist: fixed n trials, two outcomes, constant p, independent trials — verify all four before using the model.",
+    "Trick 2: P(X = r) = nCr p^r q^{n−r} with q = 1 − p; mean = np, variance = npq — quote all three; SD = √(npq).",
+    "Trick 3: 'At least one' = 1 − q^n; 'at most r' = cumulative sum — convert the wording before computing.",
+    "Trick 4: Variance < mean always (since npq = np(1−p) < np) — a quick validity check and a known 1-mark fact."
   ]
 }

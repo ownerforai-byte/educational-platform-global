@@ -90,5 +90,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Method picker — see √(a²−x²), a²+x² etc. → trigonometric substitution; see f(g(x))·g′(x) → substitution; see product of two unlike functions → by parts.",
+    "Trick 2: By parts ILATE order (Inverse, Log, Algebraic, Trig, Exponential) — the factor that comes later in ILATE is 'v'; wrong choice doubles the work.",
+    "Trick 3: Definite integrals of even/odd functions over [−a, a]: even → 2×(0 to a), odd → 0 — instant marks.",
+    "Trick 4: Standard results bank: ∫dx/(x²+a²) = (1/a)tan^-1(x/a); ∫dx/√(a²−x²) = sin^-1(x/a); ∫e^x(f + f′)dx = e^x f — quote the matching standard form before integrating."
   ]
 }

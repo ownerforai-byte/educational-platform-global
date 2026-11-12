@@ -88,5 +88,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: μ = Σxi pi; Var = Σxi² pi − μ² — compute three columns (xipi, xi²pi) and subtract; never average the raw x values.",
+    "Trick 2: SD = √Var — leave as a surd unless the square is exact; quoting Var when SD is asked loses the mark.",
+    "Trick 3: Sanity bounds: μ must lie between min and max xi; Var ≥ 0 — use to catch arithmetic slips.",
+    "Trick 4: For linear transforms Y = aX + b: μY = aμX + b, VarY = a²VarX — the shift b does NOT change variance."
   ]
 }

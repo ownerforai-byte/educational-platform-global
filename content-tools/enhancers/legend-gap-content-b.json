@@ -1,0 +1,296 @@
+{
+  "class-11-notes/chemistry/classification-of-elements-and-periodic-table/modern-periodic-law-and-modern-periodic-table": {
+    "examShortTricks": [
+      "Trick 1: One-line law: 'properties are a periodic function of ATOMIC NUMBER' (Moseley) — not mass; that single word earns the mark.",
+      "Trick 2: Moseley's evidence: √ν ∝ (Z − b) — X-ray frequencies depend on atomic number, not atomic mass.",
+      "Trick 3: Count blocks by last electron: s-block groups 1–2, p-block 13–18, d-block 3–12, f-block separate — draw the staircase if asked to place an element."
+    ],
+    "keyPoints": [
+      "Modern periodic law: physical and chemical properties of elements are periodic functions of their atomic numbers.",
+      "Moseley changed the basis from atomic mass (Mendeleev) to atomic number.",
+      "7 periods and 18 groups; s, p, d, f blocks by the subshell receiving the last electron."
+    ],
+    "practiceQuestions": [
+      "Q. State the modern periodic law. How does it differ from Mendeleev's? (2 marks) — atomic number vs atomic mass as the basis.",
+      "Q. Why did Moseley correct the positions of Ar/K, Co/Ni, Te/I? (1 mark) — their properties depend on Z, and mass order had placed them wrongly."
+    ]
+  },
+  "class-11-notes/chemistry/classification-of-elements-and-periodic-table/classification-of-elements-into-different-groups-periods-and-blocks": {
+    "examShortTricks": [
+      "Trick 1: Period number = shell being filled (n); group of s-block = valence electrons; group of p-block = 10 + valence electrons; d-block group = (n−1)d + ns electrons.",
+      "Trick 2: Quick placements: Na (2,8,1) → group 1 period 3; Cl (2,8,7) → group 17 period 3; Fe (2,8,14,2) → group 8 period 4.",
+      "Trick 3: Diagonal relationships (Li–Mg, Be–Al, B–Si) come from similar ionic potentials — a favourite 1-marker."
+    ],
+    "keyPoints": [
+      "Elements are arranged in 7 periods and 18 groups in increasing atomic number.",
+      "s-block: groups 1 and 2; p-block: groups 13–18; d-block: groups 3–12; f-block: lanthanides and actinides.",
+      "Group number reflects valence-shell configuration."
+    ],
+    "practiceQuestions": [
+      "Q. An element has configuration 2, 8, 7. Give its period, group and block. (2 marks) — period 3, group 17, p-block (Cl).",
+      "Q. What is a diagonal relationship? Give one pair. (1 mark) — similarity of 2nd-period element with the 3rd-period element diagonally right, e.g. Li–Mg."
+    ]
+  },
+  "class-11-notes/chemistry/classification-of-elements-and-periodic-table/iupac-classification-of-elements": {
+    "examShortTricks": [
+      "Trick 1: IUPAC groups 1–18 numbered left to right; the old A/B sub-group labels are dropped — quote '18-group long form' as the IUPAC answer.",
+      "Trick 2: For 'why 18 groups' — the long form splits the short-form subgroups A/B and accommodates d-block elements in proper sequence.",
+      "Trick 3: f-block placement: lanthanides (Ce–Lu) and actinides (Th–Lr) are placed separately below to save width — they belong to group 3, periods 6 and 7."
+    ],
+    "keyPoints": [
+      "IUPAC approves the long form with groups numbered 1 to 18.",
+      "Removes the A/B subgroup ambiguity of Mendeleev's table.",
+      "f-block elements are shown separately below the main table."
+    ],
+    "practiceQuestions": [
+      "Q. How many groups and periods does the IUPAC periodic table have? (1 mark) — 18 groups, 7 periods.",
+      "Q. Where are lanthanides placed and why? (2 marks) — separately below the main table (period 6, group 3) to keep the table compact."
+    ]
+  },
+  "class-11-notes/chemistry/classification-of-elements-and-periodic-table/nuclear-charge-and-effective-nuclear-charge": {
+    "examShortTricks": [
+      "Trick 1: Zeff = Z − σ (screening constant); across a period Zeff increases (σ nearly constant) → smaller radius, higher ionization energy.",
+      "Trick 2: Down a group both Z and σ increase by the same step → Zeff stays nearly constant → size grows. This one line explains ALL group trends.",
+      "Trick 3: Slater quick value: inner electrons shield fully (σ ≈ 0.85–1 per electron) — quote 'shielding by inner shells' as the definition of σ."
+    ],
+    "keyPoints": [
+      "Nuclear charge Z = number of protons; effective nuclear charge Zeff = Z − σ.",
+      "σ (sigma) is the screening effect of inner-shell electrons.",
+      "Zeff governs atomic size, ionization energy and electronegativity trends."
+    ],
+    "practiceQuestions": [
+      "Q. Why is Zeff of Li less than that of Be? (1 mark) — Be has one more proton with similar shielding, so Zeff is higher.",
+      "Q. Why do atomic radii increase down a group despite increasing Z? (2 marks) — new shells are added; σ increases with Z, so Zeff felt by outer electrons is nearly unchanged."
+    ]
+  },
+  "class-11-notes/chemistry/classification-of-elements-and-periodic-table/periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-elec": {
+    "examShortTricks": [
+      "Trick 1: All four trends in one sentence — across a period: radius ↓, IE ↑, EA ↑ (more negative), EN ↑; down a group: exactly the reverse.",
+      "Trick 2: Exceptions that earn marks: noble gases have NO electron affinity (stable octet); Be/N have higher IE than B/O (2s/2p stability); IE3 >> IE2 >> IE1.",
+      "Trick 3: Cation < parent atom < anion in size — compare isoelectronic series by Z: more protons → smaller (Al3+ < Mg2+ < Na+ < F− < O2− < N3−).",
+      "Trick 4: IE units — quote kJ/mol and the successive-IE jump as evidence of the shell being emptied."
+    ],
+    "keyPoints": [
+      "Atomic radius decreases across a period (Zeff ↑) and increases down a group (new shells).",
+      "Ionization energy rises across a period; successive IEs always increase.",
+      "Electron affinity: energy released on adding an electron; Cl > F due to small size repulsion.",
+      "Electronegativity: tendency to attract shared pair; F is the most electronegative (4.0)."
+    ],
+    "practiceQuestions": [
+      "Q. Arrange Na, Mg, Al in increasing ionization energy and explain the Be/B-type exception if asked. (2 marks) — Na < Mg < Al? Actually Al < Mg (3p electron easier to remove than 3s pair) — quote this exception.",
+      "Q. Why is the electron affinity of F lower than that of Cl? (2 marks) — very small F atom: added electron suffers repulsion from compact 2p shell.",
+      "Q. Arrange Al3+, Mg2+, Na+, O2−, N3− in increasing size. (2 marks) — all 10-electron species; size grows as Z falls: Al3+ < Mg2+ < Na+ < O2− < N3−."
+    ]
+  },
+  "class-11-notes/chemistry/chemical-bonding-and-shapes-of-molecules/bond-characteristics-bond-length-ionic-character-dipole-moment": {
+    "examShortTricks": [
+      "Trick 1: Dipole-moment order for board exams: HF > HCl > HBr > HI (ΔEN falls) — and μ = q × d with direction from + to −.",
+      "Trick 2: % ionic character rises with ΔEN; a ΔEN ≥ 1.7 bond is taken as ionic, ≤ 0.4 as covalent — quick classification trick.",
+      "Trick 3: Bond length order: triple < double < single (C≡C < C=C < C–C); larger atoms → longer bonds (H–Cl < H–Br < H–I).",
+      "Trick 4: Zero dipole despite polar bonds = symmetric molecule (CO2, BF3, CCl4) — the vector sum cancels."
+    ],
+    "keyPoints": [
+      "Bond length: equilibrium distance between nuclei of bonded atoms; decreases with higher bond order.",
+      "Dipole moment μ = charge × distance; vector from the positive to the negative end.",
+      "Ionic character increases with electronegativity difference.",
+      "Symmetric molecules with polar bonds can have μ = 0."
+    ],
+    "practiceQuestions": [
+      "Q. Arrange HF, HCl, HBr, HI in increasing dipole moment. (1 mark) — HI < HBr < HCl < HF.",
+      "Q. CO2 has polar bonds but zero dipole moment — why? (2 marks) — linear molecule; the two equal bond dipoles point opposite and cancel.",
+      "Q. Which is longer, C–C or C=C, and why? (1 mark) — C–C; greater s-character/bond order pulls nuclei closer."
+    ]
+  },
+  "class-11-notes/chemistry/oxidation-and-reduction/electrolysis-quantitative-aspect-faraday-s-laws-of-electrolysis": {
+    "examShortTricks": [
+      "Trick 1: First law one line: m = ZIt with Z = E/96500 (E = equivalent mass) — every numerical is a direct substitution.",
+      "Trick 2: Second law in ratio form: masses deposited by the same charge are in the ratio of equivalent masses, m1/m2 = E1/E2.",
+      "Trick 3: Charge bookkeeping: Q = It (I in amperes, t in seconds); moles of electrons = Q/96500; then divide by the ion charge.",
+      "Trick 4: 1 F deposits 1 equivalent = 1 mole of electrons' worth — Ag (108 g), Cu 63.5/2, Al 27/3."
+    ],
+    "keyPoints": [
+      "First law: mass deposited is proportional to the quantity of charge passed (m = ZIt).",
+      "Second law: same charge through different electrolytes deposits masses proportional to equivalent masses.",
+      "1 faraday = 96500 C = charge of 1 mole of electrons."
+    ],
+    "practiceQuestions": [
+      "Q. What mass of Cu is deposited by 2 A in 30 minutes? (Cu = 63.5, Cu2+) (3 marks) — Q = 2 × 1800 = 3600 C; m = 63.5 × 3600/(2 × 96500) ≈ 1.18 g.",
+      "Q. Same current through CuSO4 and AgNO3 deposits 0.3175 g Cu. Find Ag deposited. (2 marks) — mAg = 0.3175 × (108/31.75) ≈ 1.08 g."
+    ]
+  },
+  "class-11-notes/chemistry/states-of-matter/gaseous-state-kinetic-theory-of-gas-and-its-postulates": {
+    "examShortTricks": [
+      "Trick 1: Quote postulates in pairs — (1) tiny molecules, huge empty space; (2) random motion, elastic collisions; (3) no attraction (ideal); (4) pressure = molecular bombardment; (5) KE ∝ T.",
+      "Trick 2: 'KE ∝ absolute temperature' is the postulate that links temperature to molecular speed — always cite it for 'why pressure rises with T'.",
+      "Trick 3: Ideal-gas behaviour follows from 'no intermolecular attraction' — real gases deviate exactly when that fails (high P, low T)."
+    ],
+    "keyPoints": [
+      "Gas molecules are point masses with large intermolecular spaces.",
+      "Molecular collisions are perfectly elastic; pressure arises from wall bombardment.",
+      "Average kinetic energy is directly proportional to absolute temperature.",
+      "No significant intermolecular forces in an ideal gas."
+    ],
+    "practiceQuestions": [
+      "Q. State any four postulates of the kinetic theory of gases. (2 marks) — pick the four above in compact form.",
+      "Q. Why does a gas exert pressure? (1 mark) — molecules bombard the walls; rate × momentum change per collision gives pressure."
+    ]
+  },
+  "class-11-notes/chemistry/states-of-matter/gas-laws-boyle-s-law-charles-law-avogadro-s-law-combined-gas-equation-dalton-s-law-of-partial-pr": {
+    "examShortTricks": [
+      "Trick 1: Boyle: P1V1 = P2V2 (T constant); Charles: V1/T1 = V2/T2 (P constant); combined: P1V1/T1 = P2V2/T2 — write the one matching the 'constant' word in the question.",
+      "Trick 2: Temperatures MUST be in kelvin — convert T °C + 273 before substituting; this is the most common numerical trap.",
+      "Trick 3: Dalton: P_total = p1 + p2 + …; partial pressure = mole fraction × total pressure (p_i = x_i P).",
+      "Trick 4: Aqueous tension: collected-gas problems subtract the water vapour pressure: P_dry = P_total − aq. tension."
+    ],
+    "keyPoints": [
+      "Boyle's law: V ∝ 1/P at constant T.",
+      "Charles' law: V ∝ T at constant P; −273 °C is the extrapolated zero volume.",
+      "Dalton's law of partial pressures: total pressure = sum of partial pressures.",
+      "Graham's law: rate of diffusion ∝ 1/√M."
+    ],
+    "practiceQuestions": [
+      "Q. 600 mL gas at 27 °C and 700 mmHg — volume at STP? (3 marks) — P2 = 760, T2 = 273 K: V2 = (700 × 600 × 273)/(760 × 300) ≈ 502 mL.",
+      "Q. A vessel holds N2 (p = 0.5 atm) and O2 (p = 0.3 atm); total pressure? (1 mark) — 0.8 atm (Dalton).",
+      "Q. O2 diffuses 4 times faster than gas X; find M_X. (2 marks) — r_O2/r_X = √(M_X/32) = 4 → M_X = 512."
+    ]
+  },
+  "class-11-notes/chemistry/states-of-matter/ideal-gas-and-ideal-gas-equation-universal-gas-constant-and-its-significance": {
+    "examShortTricks": [
+      "Trick 1: PV = nRT with R = 0.0821 L atm K^-1 mol^-1 when P in atm and V in litres; SI value 8.314 J K^-1 mol^-1 — pick R to match the units given.",
+      "Trick 2: Same-gas comparison: P1V1/T1 = P2V2/T2 (n cancels); different-gas comparison: use PV = nRT and solve for the missing variable.",
+      "Trick 3: Density form: PM = dRT — molar mass from density, or density from M, in one substitution.",
+      "Trick 4: Significance of R: work done per mole per kelvin — same for ALL gases (universal)."
+    ],
+    "keyPoints": [
+      "Ideal gas equation: PV = nRT.",
+      "R = 8.314 J K^-1 mol^-1 = 0.0821 L atm K^-1 mol^-1 = 2 cal K^-1 mol^-1.",
+      "Universal gas constant has the same value for every gas.",
+      "PM = dRT links density and molar mass."
+    ],
+    "practiceQuestions": [
+      "Q. 2 g of a gas occupies 1.12 L at STP. Find M. (2 marks) — n = 1.12/22.4 = 0.05; M = 2/0.05 = 40 g/mol.",
+      "Q. Find the pressure of 0.5 mol gas in 10 L at 27 °C. (2 marks) — P = nRT/V = 0.5 × 0.0821 × 300/10 = 1.23 atm."
+    ]
+  },
+  "class-11-notes/chemistry/states-of-matter/deviation-of-real-gas-from-ideality-solving-related-numerical-problems-based-on-gas-laws": {
+    "examShortTricks": [
+      "Trick 1: Two causes, two directions — high pressure: molecular volume matters (V_observed > V_ideal); low temperature: attraction matters (P_observed < P_ideal).",
+      "Trick 2: Compressibility Z = PV/nRT: Z = 1 ideal, Z > 1 repulsion-dominated, Z < 1 attraction-dominated — quote Z to classify any deviation.",
+      "Trick 3: Boyle temperature: the one temperature where a real gas behaves ideally over a pressure range (Z = 1).",
+      "Trick 4: van der Waals corrections in one line: (P + a n²/V²)(V − nb) = nRT — 'a' for attraction, 'b' for molecular size."
+    ],
+    "keyPoints": [
+      "Real gases deviate from PV = nRT at high pressure and low temperature.",
+      "Positive deviation: repulsive forces dominate; negative: attractive forces dominate.",
+      "Compressibility factor Z = PV/nRT measures ideality.",
+      "van der Waals equation adds attraction (a) and volume (b) corrections."
+    ],
+    "practiceQuestions": [
+      "Q. Why do real gases deviate at high pressure? (2 marks) — molecules occupy a finite volume; the free volume is less than V, so PV/nRT > 1.",
+      "Q. What is the compressibility factor for an ideal gas? (1 mark) — Z = 1."
+    ]
+  },
+  "class-11-notes/chemistry/states-of-matter/liquid-state-physical-properties-of-liquids-evaporation-and-condensation-vapour-pressure-and-boi": {
+    "examShortTricks": [
+      "Trick 1: Boiling point rises when vapour pressure falls — solutes, strong IMFs and external pressure all raise b.p.; quote 'VP = atmospheric pressure' as the boiling condition.",
+      "Trick 2: Vapour pressure vs temperature is exponential (Clausius) — VP always increases with T, never linearly.",
+      "Trick 3: Surface tension falls with temperature and vanishes at the critical temperature; viscosity also falls with T (opposite to gases).",
+      "Trick 4: Evaporation is surface cooling → causes condensation on a cold mirror — link evaporation, VP and b.p. in one chain."
+    ],
+    "keyPoints": [
+      "Vapour pressure: pressure exerted by vapour in equilibrium with its liquid at a given temperature.",
+      "Boiling occurs when vapour pressure equals the external pressure.",
+      "Surface tension and viscosity decrease with rising temperature.",
+      "Evaporation is endothermic and increases with temperature and surface area."
+    ],
+    "practiceQuestions": [
+      "Q. Why does water boil below 100 °C on Mount Everest? (1 mark) — lower atmospheric pressure; VP reaches it earlier.",
+      "Q. Why does salt raise the boiling point of water? (2 marks) — solute lowers vapour pressure, so a higher temperature is needed to reach 1 atm."
+    ]
+  },
+  "class-11-notes/chemistry/states-of-matter/liquid-crystals-and-their-applications": {
+    "examShortTricks": [
+      "Trick 1: Two orderings define liquid crystals — positional disorder with orientational order; they flow like liquids but diffract like crystals.",
+      "Trick 2: Two classic examples: cholesteryl benzoate (thermotropic, first discovered) and soap/water mixtures (lyotropic) — name both with their class.",
+      "Trick 3: Applications list for 2 marks: LCD displays, temperature sensors (colour change), medical thermography for tumours."
+    ],
+    "keyPoints": [
+      "Liquid crystals: intermediate state with liquid flow and crystal-like optical order.",
+      "Thermotropic: order changes with temperature; lyotropic: with concentration.",
+      "Used in LCDs, digital thermometers and thermal mapping of the body."
+    ],
+    "practiceQuestions": [
+      "Q. What are liquid crystals? Give one example. (2 marks) — states with orientational order but liquid mobility; cholesteryl benzoate.",
+      "Q. Give two applications of liquid crystals. (1 mark) — LCD screens; colour-change thermometry."
+    ]
+  },
+  "class-11-notes/chemistry/states-of-matter/solid-state-types-of-solids-amorphous-and-crystalline-solids": {
+    "examShortTricks": [
+      "Trick 1: Distinguish in one table line — crystalline: sharp m.p., anisotropic, long-range order; amorphous: range of m.p., isotropic, short-range only (glass, plastic).",
+      "Trick 2: Anisotropy is the property-based test: rotate a crystal and properties change; rotate glass and they do not.",
+      "Trick 3: Classify solids by bonding: ionic (NaCl, hard, high m.p.), molecular (ice, soft, low m.p.), covalent (diamond, hardest), metallic (Cu, conductive)."
+    ],
+    "keyPoints": [
+      "Crystalline solids have a regular long-range arrangement and sharp melting points.",
+      "Amorphous solids (glass) lack long-range order and melt over a range.",
+      "Crystals are anisotropic; amorphous solids are isotropic.",
+      "Four types by bonding force: ionic, molecular, covalent-network, metallic."
+    ],
+    "practiceQuestions": [
+      "Q. Differentiate crystalline and amorphous solids (two points). (2 marks) — order/sharp m.p. vs disorder/melting range.",
+      "Q. Why is diamond extremely hard? (1 mark) — 3-D covalent network of sp3 carbon; every atom is bonded to four others."
+    ]
+  },
+  "class-11-notes/chemistry/states-of-matter/efflorescent-deliquescent-and-hygroscopic-solids-crystallization-and-crystal-growth-water-of-cry": {
+    "examShortTricks": [
+      "Trick 1: One-word trio — efflorescent: LOSE water to air (Na2CO3·10H2O); deliquescent: absorb water and DISSOLVE (CaCl2, NaOH); hygroscopic: absorb water but stay solid (silica gel).",
+      "Trick 2: Water of crystallisation count: CuSO4·5H2O (blue vitriol, 5), FeSO4·7H2O (green vitriol, 7), Na2CO3·10H2O (washing soda, 10) — quote salt + n for the 1-marker.",
+      "Trick 3: Crystal growth needs a seed crystal and a saturated solution — slow cooling gives large crystals."
+    ],
+    "keyPoints": [
+      "Efflorescence: loss of water of crystallisation to the atmosphere.",
+      "Deliquescence: absorption of moisture until the solid dissolves.",
+      "Hygroscopic: absorbs moisture without dissolving.",
+      "Water of crystallisation: stoichiometric water in the crystal lattice."
+    ],
+    "practiceQuestions": [
+      "Q. Classify: CaCl2, silica gel, washing soda. (2 marks) — deliquescent; hygroscopic; efflorescent.",
+      "Q. Write the formula of blue vitriol with its water of crystallisation. (1 mark) — CuSO4·5H2O."
+    ]
+  },
+  "class-11-notes/chemistry/states-of-matter/introduction-to-unit-crystal-lattice-and-unit-cell": {
+    "examShortTricks": [
+      "Trick 1: Definitions in one line each — lattice: 3-D array of points; unit cell: smallest repeating unit that builds the whole crystal by translation.",
+      "Trick 2: Seven crystal systems by edge/angle parameters (a,b,c; α,β,γ); cubic is the exam default (a = b = c, α = β = γ = 90°).",
+      "Trick 3: Atom counts per cubic cell: simple = 1 (8 × 1/8), BCC = 2 (8 × 1/8 + 1), FCC = 4 (8 × 1/8 + 6 × 1/2)."
+    ],
+    "keyPoints": [
+      "Crystal lattice: regular 3-D arrangement of points representing the pattern of particles.",
+      "Unit cell: the smallest portion which, repeated in space, generates the whole lattice.",
+      "Seven primitive crystal systems; cubic, tetragonal, orthorhombic are common.",
+      "Particles per unit cell: sc = 1, bcc = 2, fcc = 4."
+    ],
+    "practiceQuestions": [
+      "Q. Define unit cell with one example. (1 mark) — smallest repeating block; NaCl cubic unit cell.",
+      "Q. Calculate the number of atoms per BCC unit cell. (2 marks) — 8 corners × 1/8 + 1 body centre = 2."
+    ]
+  },
+  "class-11-notes/chemistry/chemical-equilibrium/le-chatelier-s-principle-numericals-not-required": {
+    "examShortTricks": [
+      "Trick 1: One sentence covers all shifts: the system opposes ANY imposed change — add reactant → forward; add product → backward; raise T → endothermic direction; raise P → fewer gas moles.",
+      "Trick 2: For Haber (N2 + 3H2 ⇌ 2NH3, exothermic): high P, low T, remove NH3 — the standard 3-mark application.",
+      "Trick 3: Catalysts shift NOTHING — they only speed both directions equally; saying 'catalyst shifts equilibrium' loses the mark.",
+      "Trick 4: Inert gas at constant volume: no shift; at constant pressure: shifts toward more moles."
+    ],
+    "keyPoints": [
+      "Le Chatelier: a system at equilibrium counteracts any change in concentration, pressure or temperature.",
+      "Increased pressure favours the side with fewer gas molecules.",
+      "Raising temperature favours the endothermic direction.",
+      "A catalyst does not change the position of equilibrium."
+    ],
+    "practiceQuestions": [
+      "Q. Predict the shift for N2 + 3H2 ⇌ 2NH3 (ΔH < 0) when (a) pressure rises, (b) temperature rises. (2 marks) — (a) forward (4 → 2 moles), (b) backward (exothermic).",
+      "Q. Why does a catalyst not affect the yield of NH3? (1 mark) — it changes only the rate, not the equilibrium constant or position."
+    ]
+  }
+}

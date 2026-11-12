@@ -94,5 +94,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: dy/dx = slope of tangent — state this line first; it links every geometric question (parallel to y = mx → set f′ = m; perpendicular → f′ = −1/m).",
+    "Trick 2: Extrema protocol: find f′ = 0 candidates → use second derivative (f″ > 0 minimum, f″ < 0 maximum) or a sign chart — always report the INTERVALS, not just points.",
+    "Trick 3: Points where f′ fails to exist can also be extrema — check them if the function has | | or fractions.",
+    "Trick 4: For max/min word problems, express the quantity in ONE variable, differentiate, and verify with the second derivative — quote the units in the final sentence."
   ]
 }

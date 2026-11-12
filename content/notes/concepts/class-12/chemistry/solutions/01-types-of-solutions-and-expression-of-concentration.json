@@ -75,5 +75,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Nine solution types reduce to a 3×3 grid (solute gas/liquid/solid × solvent gas/liquid/solid) — quote two examples: air (gas in gas), brass (solid in solid).",
+    "Trick 2: Concentration conversions — mole fraction x = nA/(nA+nB); molarity M = moles/L solution (temperature-dependent); molality m = moles/kg solvent (temperature-INDEPENDENT, the exam favourite distinction).",
+    "Trick 3: ppm for trace concentrations: ppm = (mass solute/mass solution) × 10^6 — used for pollutants; state the unit pair.",
+    "Trick 4: Molarity ↔ molality bridge: m = M/(d − M·Ms/1000)... quote 'need density to convert' — the conceptual 1-marker."
   ]
 }

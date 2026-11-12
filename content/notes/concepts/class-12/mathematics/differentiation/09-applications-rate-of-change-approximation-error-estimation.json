@@ -81,5 +81,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Related rates recipe: write the relation between variables → differentiate w.r.t. t → substitute known values and rates → solve; keep units in the final answer.",
+    "Trick 2: Approximation: f(x + δx) ≈ f(x) + f′(x)δx — choose the base point where f and f′ are easy (e.g. 25 for √26).",
+    "Trick 3: Relative error = δx/x; percentage error ×100 — for products, relative errors ADD: δ(P)/P = δa/a + δb/b.",
+    "Trick 4: For sphere/volume rates, differentiate V = (4/3)πr³ → dV/dt = 4πr² dr/dt — quote the differentiated form first for the method mark."
   ]
 }

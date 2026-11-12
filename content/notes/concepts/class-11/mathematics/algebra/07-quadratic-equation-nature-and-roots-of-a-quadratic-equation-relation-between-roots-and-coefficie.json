@@ -96,5 +96,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Discriminant decides everything: D = b² − 4ac — D > 0 real distinct, D = 0 real equal, D < 0 complex conjugates; for rational coefficients D a perfect square → rational roots.",
+    "Trick 2: Roots–coefficient pair: α + β = −b/a, αβ = c/a — build ANY requested expression as a combination: α² + β² = (α+β)² − 2αβ, 1/α + 1/β = (α+β)/αβ.",
+    "Trick 3: Form a new quadratic from given roots: x² − (sum)x + product = 0 — instant 2-mark answer.",
+    "Trick 4: 'Roots are equal' → set D = 0 and solve for the unknown parameter; 'roots are reciprocal' → product = 1; 'opposite sign' → product < 0."
   ]
 }

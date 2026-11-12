@@ -64,5 +64,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Protocol: convert constraints to lines → shade the feasible region (test with origin) → find corner points → evaluate Z at each → optimum. Corner-point evaluation IS the method mark.",
+    "Trick 2: Feasible-region test: substitute (0,0) into each inequality; if true, shade toward the origin, else away — do this aloud in working.",
+    "Trick 3: If the region is unbounded, Z may not attain an optimum — check with an open half-plane test before declaring max/min.",
+    "Trick 4: For 'minimum cost' problems the optimum is usually at the intersection of two binding constraints — solve the pair simultaneously to get the exact point."
   ]
 }

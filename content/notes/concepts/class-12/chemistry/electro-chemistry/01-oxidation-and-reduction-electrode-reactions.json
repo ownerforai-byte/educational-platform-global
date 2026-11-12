@@ -58,5 +58,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Electrode half-reactions: anode = oxidation (LEO), cathode = reduction (GER) — in a galvanic cell the anode is NEGATIVE; in electrolysis it is POSITIVE — the sign flip is the classic trap.",
+    "Trick 2: Cell notation order: anode | anode solution || cathode solution | cathode — salt bridge as the double line; write one example: Zn|Zn²⁺||Cu²⁺|Cu.",
+    "Trick 3: Electron flow: external circuit anode → cathode; current convention is opposite; ions migrate through the bridge to keep neutrality."
   ]
 }

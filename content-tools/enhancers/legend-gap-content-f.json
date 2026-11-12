@@ -1,0 +1,275 @@
+{
+  "class-11-notes/physics/thermal-expansion/linear-expansion-and-its-measurement": {
+    "examShortTricks": [
+      "Trick 1: One formula family: l = l0(1 + αΔT); Δl = l0αΔT. Given any three of l, l0, α, ΔT, substitute directly — always keep temperatures in the SAME scale (difference is same in °C and K).",
+      "Trick 2: α of the material decides the gap problem: a rod expands Δl = lαΔT; if a gap is smaller than Δl the rod buckles — classic 2-mark reasoning.",
+      "Trick 3: For a pendulum, length increase slows the clock: T ∝ √l; quote 'pendulum clocks lose time in summer' as the application."
+    ],
+    "keyPoints": [
+      "Linear expansion: Δl = l0 α ΔT, α = coefficient of linear expansion.",
+      "Area expansion: ΔA = 2α A0 ΔT; volume: ΔV = 3α V0 ΔT (β = 3α).",
+      "Applications: bimetallic strips, expansion gaps in rails and bridges."
+    ],
+    "practiceQuestions": [
+      "Q. A steel rod is 1 m at 0 °C; α = 1.2 × 10^-5 K^-1. Find its length at 40 °C. (2 marks) — l = 1(1 + 1.2e-5 × 40) = 1.00048 m.",
+      "Q. Why are small gaps left between railway rails? (1 mark) — to allow thermal expansion in summer without buckling."
+    ]
+  },
+  "class-11-notes/physics/rate-of-heat-flow/convection": {
+    "examShortTricks": [
+      "Trick 1: Define in one line: heat transfer by actual movement of fluid particles (density change with temperature) — the word 'actual movement' separates it from conduction.",
+      "Trick 2: Natural vs forced: natural convection is density-driven (sea breeze, room heater); forced uses a pump/fan — one example pair earns both marks.",
+      "Trick 3: Newton's law of cooling: dQ/dt = k(θ − θ0) — quote for the quantitative side and the 'rate proportional to temperature difference' phrase."
+    ],
+    "keyPoints": [
+      "Convection: heat carried by the bulk motion of the fluid itself.",
+      "Hot fluid expands, becomes lighter and rises; cooler fluid sinks — a convection current.",
+      "Natural convection needs no external agency; forced convection uses fans/pumps.",
+      "Cannot occur in solids; needs a fluid medium."
+    ],
+    "practiceQuestions": [
+      "Q. Why do liquids and gases mainly transfer heat by convection? (1 mark) — their particles can move freely; conduction is poor in fluids.",
+      "Q. What creates a sea breeze? (2 marks) — land heats faster; warm air over land rises, cool sea air flows in to replace it."
+    ]
+  },
+  "class-11-notes/physics/rate-of-heat-flow/radiation-ideal-radiator": {
+    "examShortTricks": [
+      "Trick 1: Four properties in exam order — needs no medium, travels at light speed, obeys inverse-square law, can pass through vacuum — the first property is the definition mark.",
+      "Trick 2: Stefan's law numerical: P = σAeT^4, σ = 5.67 × 10^-8 — doubling the absolute temperature multiplies radiation 16 times.",
+      "Trick 3: Ideal radiator = ideal absorber = black body (a = 1); a good reflector is a poor radiator — one line, and Kirchhoff's law ties them."
+    ],
+    "keyPoints": [
+      "Radiation: heat transfer by electromagnetic waves without a material medium.",
+      "Stefan–Boltzmann: P = σ A e T^4.",
+      "A black body is both the best absorber and the best radiator (Kirchhoff's law).",
+      "Wien's law: λm T = constant — hotter bodies radiate shorter wavelengths."
+    ],
+    "practiceQuestions": [
+      "Q. Why is a thermos flask's silvered surface used? (1 mark) — to minimise heat loss by radiation (poor radiator/absorber).",
+      "Q. By what factor does radiated power increase if absolute temperature doubles? (2 marks) — 2^4 = 16 times (Stefan's law)."
+    ]
+  },
+  "class-11-notes/physics/ideal-gas/molecular-properties-of-matter": {
+    "examShortTricks": [
+      "Trick 1: Molecular picture in four points: matter made of molecules, intermolecular spacing decides state, molecules attract each other, molecules are in random motion whose KE measures temperature.",
+      "Trick 2: State differences by spacing and force: solid — close, strong force, fixed position; liquid — close, weaker, mobile; gas — far apart, negligible force, free motion.",
+      "Trick 3: Brownian motion and diffusion are the two EVIDENCES of molecular motion to quote if asked 'how do we know molecules move'."
+    ],
+    "keyPoints": [
+      "Molecules are in continuous random motion; their average KE ∝ absolute temperature.",
+      "Intermolecular forces and spacing distinguish solids, liquids and gases.",
+      "Brownian motion and diffusion evidence molecular motion.",
+      "At absolute zero molecular motion is minimum."
+    ],
+    "practiceQuestions": [
+      "Q. What happens to molecular motion as temperature rises? (1 mark) — average kinetic energy increases proportionally to absolute temperature.",
+      "Q. Give two evidences of molecular motion. (1 mark) — Brownian motion; diffusion."
+    ]
+  },
+  "class-11-notes/physics/ideal-gas/boltzmann-constant-root-mean-square-speed": {
+    "examShortTricks": [
+      "Trick 1: Constants: kB = R/NA = 1.38 × 10^-23 J/K — one derivation line earns the mark.",
+      "Trick 2: rms speed formulas — vrms = √(3RT/M) = √(3kBT/m); lighter gas → faster molecules (H2 vs O2 ratio √16 = 4).",
+      "Trick 3: Average KE per molecule = (3/2)kBT — depends ONLY on temperature, not on the gas; that line answers 'why do all gases at the same T have the same average KE'."
+    ],
+    "keyPoints": [
+      "Boltzmann constant kB = R/NA = 1.38 × 10^-23 J K^-1.",
+      "vrms = √(3kBT/m) = √(3RT/M).",
+      "Mean kinetic energy of a molecule = (3/2) kBT.",
+      "At fixed temperature lighter molecules move faster."
+    ],
+    "practiceQuestions": [
+      "Q. Find the rms speed of O2 molecules at 27 °C (M = 32 g/mol). (3 marks) — v = √(3 × 8.314 × 300/0.032) ≈ 484 m/s.",
+      "Q. Compare rms speeds of H2 and O2 at the same temperature. (1 mark) — v(H2)/v(O2) = √(32/2) = 4."
+    ]
+  },
+  "class-11-notes/physics/refraction-at-plane-surfaces/relation-between-refractive-indices": {
+    "examShortTricks": [
+      "Trick 1: Index chain: n21 = 1/n12; absolute n = c/v — combine to get n1 v1 = n2 v2 and n1 sin i = n2 sin r (Snell).",
+      "Trick 2: Denser → rarer: light bends away from normal; speed and wavelength increase, FREQUENCY unchanged — 'frequency never changes' is the 1-mark trap.",
+      "Trick 3: Numerical shortcut: n2 = n1 × (v1/v2); with λ: n1 λ1 = n2 λ2."
+    ],
+    "keyPoints": [
+      "Refractive index of medium 2 w.r.t. 1: n21 = sin i/sin r = v1/v2.",
+      "Absolute refractive index n = c/v.",
+      "n21 = n2/n1; reciprocal relations hold between pairs.",
+      "On refraction, frequency stays constant; speed and wavelength change."
+    ],
+    "practiceQuestions": [
+      "Q. Light goes from glass (n = 1.5) to water (n = 1.33). Find n_wg. (2 marks) — n_wg = 1.33/1.5 = 0.887.",
+      "Q. Speed of light in a medium of n = 2? (1 mark) — v = c/n = 1.5 × 10^8 m/s."
+    ]
+  },
+  "class-11-notes/physics/electric-charges/charging-by-induction": {
+    "examShortTricks": [
+      "Trick 1: The four-step answer earns full marks — bring charged rod NEAR (not touching) → charges separate in the sphere → earth the far side (opposite charge escapes... same sign as rod escapes) → remove earth, then remove rod; sphere is left with charge OPPOSITE to the rod.",
+      "Trick 2: Sign rule: the induced charge on the NEAR side has the same sign as the charging body; the far side (and the final charged body after earthing) has the opposite sign.",
+      "Trick 3: Induction needs NO contact and leaves the charging body's charge unchanged — contrast with charging by conduction."
+    ],
+    "keyPoints": [
+      "Charging by induction: charge a body without contact by rearranging charges with a nearby charged body.",
+      "Earthing during induction lets like charge escape, leaving opposite charge.",
+      "The charged rod neither loses nor gains charge.",
+      "Explains why a rubbed rod attracts neutral paper bits."
+    ],
+    "practiceQuestions": [
+      "Q. Describe charging a metal sphere negatively by induction with a positively charged rod. (3 marks) — rod near sphere; earth far side (electrons flow in); remove earth, then rod; sphere negative.",
+      "Q. Why does a charged rod attract uncharged paper? (1 mark) — induction polarises the paper; opposite induced charge is nearer, so attraction wins."
+    ]
+  },
+  "class-11-notes/physics/capacitor/effect-of-a-dielectric-polarization-and-displacement": {
+    "examShortTricks": [
+      "Trick 1: With dielectric fully filling the gap: C = Kε0A/d (capacitance multiplies by K); V falls by K for the same charge; E falls by K — three consequences in one line each.",
+      "Trick 2: Polarisation in one sentence: dielectric molecules align their dipole moments against the field, producing an induced surface charge that partially cancels the applied field.",
+      "Trick 3: Battery connected vs disconnected: battery keeps V constant (Q changes by K); disconnected keeps Q constant (V falls by K) — the standard conceptual trap."
+    ],
+    "keyPoints": [
+      "Dielectric constant K = C_dielectric/C_vacuum.",
+      "Polarisation: induced dipoles create an opposing internal field E/K.",
+      "With dielectric inserted: C increases K-fold; E and V decrease K-fold at fixed Q.",
+      "Energy stored falls by K at fixed charge; rises by K at fixed voltage."
+    ],
+    "practiceQuestions": [
+      "Q. A capacitor is charged and disconnected; a dielectric (K = 4) is inserted. What happens to V and E? (2 marks) — both fall 4 times; charge unchanged.",
+      "Q. Why does a dielectric increase capacitance? (1 mark) — polarisation reduces the effective field, so more charge fits per volt."
+    ]
+  },
+  "class-11-notes/physics/dc-circuits/ohm-s-law-electrical-resistance-resistivity-conductivity": {
+    "examShortTricks": [
+      "Trick 1: Law statement with condition: V ∝ I at constant temperature — 'constant temperature' is the scoring phrase because resistance drifts when hot.",
+      "Trick 2: R = ρl/A; conductivity σ = 1/ρ — combine to R = l/(σA); every wire numerical is one substitution.",
+      "Trick 3: Stretching a wire to n times its length: R multiplies by n² (length n, area 1/n) — the classic 2-mark numerical.",
+      "Trick 4: V–I graph of an ohmic conductor is a straight line through the origin whose slope is R."
+    ],
+    "keyPoints": [
+      "Ohm's law: V = IR at constant temperature.",
+      "Resistance R = ρ l/A; resistivity ρ is a material property.",
+      "Conductivity σ = 1/ρ; unit siemens per metre.",
+      "Resistance increases with temperature for metals."
+    ],
+    "practiceQuestions": [
+      "Q. A wire is stretched to double its length. What happens to its resistance? (2 marks) — R' = 4R (length doubles, area halves).",
+      "Q. Find R of a 2 m copper wire, A = 1 mm², ρ = 1.7 × 10^-8 Ωm. (2 marks) — R = 1.7e-8 × 2/1e-6 = 0.034 Ω."
+    ]
+  },
+  "class-11-notes/physics/nuclear-physics/atomic-mass-isotopes": {
+    "examShortTricks": [
+      "Trick 1: Definitions in one line each — isotopes: same Z, different A (1H, 2H, 3H); isotones: same N; isobars: same A — three terms, three examples.",
+      "Trick 2: Isotopes have identical CHEMICAL properties (same electron configuration) but different physical/mass properties — the contrast is the 2-mark answer.",
+      "Trick 3: Atomic mass unit: 1 u = 1/12 mass of C-12 = 1.66 × 10^-27 kg; atomic mass ≈ mass number in u."
+    ],
+    "keyPoints": [
+      "Isotopes: same proton number, different neutron number.",
+      "Isobars: same mass number; isotones: same neutron number.",
+      "Isotopes share chemical properties; nuclear properties differ.",
+      "1 u = 1.66 × 10^-27 kg (1/12 of C-12 mass)."
+    ],
+    "practiceQuestions": [
+      "Q. Distinguish isotopes and isobars with one example each. (2 marks) — 1H/2H/3H isotopes; 14C and 14N isobars.",
+      "Q. Why do isotopes of an element show the same chemical behaviour? (1 mark) — identical electronic configuration (same Z)."
+    ]
+  },
+  "class-11-notes/physics/solids/intrinsic-and-extrinsic-semiconductors": {
+    "examShortTricks": [
+      "Trick 1: Intrinsic = PURE Si/Ge: electrons and holes equal (n = p), conductivity rises with temperature (negative temperature coefficient) — opposite to metals.",
+      "Trick 2: Extrinsic = DOPED: pentavalent (As, Sb) → n-type (electrons majority); trivalent (B, In) → p-type (holes majority) — one line each with an example dopant.",
+      "Trick 3: Both types are NEUTRAL overall — doping adds atoms, not net charge; the common misconception is the mark."
+    ],
+    "keyPoints": [
+      "Intrinsic semiconductor: pure crystal, n = p, few charge carriers.",
+      "Doping with pentavalent impurity gives n-type (electrons majority).",
+      "Doping with trivalent impurity gives p-type (holes majority).",
+      "Extrinsic conductivity is far higher and doping-controlled."
+    ],
+    "practiceQuestions": [
+      "Q. What happens when Si is doped with arsenic? (2 marks) — n-type; each As donates a free electron (four bonds + one spare).",
+      "Q. Are n-type semiconductors negatively charged? (1 mark) — no; they are electrically neutral (electrons balanced by fixed donor ions)."
+    ]
+  },
+  "class-12-notes/physics/electrostatics/capacitance-and-capacitors-parallel-plate-series-and-parallel-combination": {
+    "examShortTricks": [
+      "Trick 1: Parallel plate formula C = ε0A/d with the three levers: bigger area ↑C, smaller gap ↑C, dielectric K ↑C — most conceptual questions reduce to these.",
+      "Trick 2: Combination rule by analogy with resistors INVERTED: capacitors in parallel ADD (C = C1 + C2); in series reciprocals add (1/C = 1/C1 + 1/C2).",
+      "Trick 3: In series every capacitor holds the SAME charge; in parallel all share the SAME voltage — decide which rule to apply from this.",
+      "Trick 4: Energy U = Q²/2C = ½CV² — connecting a charged and an uncharged capacitor always loses energy (heat/radiation)."
+    ],
+    "keyPoints": [
+      "C = Q/V; parallel plate C = ε0A/d (with dielectric: Kε0A/d).",
+      "Parallel: capacitances add; same V across all.",
+      "Series: reciprocals add; same Q on all.",
+      "Stored energy U = ½CV² = Q²/2C."
+    ],
+    "practiceQuestions": [
+      "Q. Two 4 μF capacitors in series, then the pair in parallel with a 2 μF one — find total C. (2 marks) — series pair = 2 μF; total = 4 μF.",
+      "Q. How does C change if the plate separation halves? (1 mark) — doubles (C ∝ 1/d)."
+    ]
+  },
+  "class-12-notes/physics/current-electricity/electric-current-drift-velocity-and-relaxation-time": {
+    "examShortTricks": [
+      "Trick 1: Master relation: I = neAvd — every numerical (current, drift speed, number density, area) comes from this one equation.",
+      "Trick 2: σ = ne²τ/m links conductivity to relaxation time τ; resistivity ρ = m/(ne²τ) — quote for the 'why do metals conduct' question (large n).",
+      "Trick 3: Drift speed is tiny (~mm/s) yet the bulb glows instantly — because the ELECTRIC FIELD propagates near light speed; that one-liner is the favourite viva mark."
+    ],
+    "keyPoints": [
+      "Current I = neAvd (n = charge-carrier density, vd = drift velocity).",
+      "Drift velocity is the small average velocity superimposed on random thermal motion.",
+      "σ = ne²τ/m; metals conduct because n is huge.",
+      "Current density J = σE (microscopic form of Ohm's law)."
+    ],
+    "practiceQuestions": [
+      "Q. Copper wire, n = 8.5 × 10^28 m^-3, A = 1 mm², I = 1.36 A — find vd. (3 marks) — vd = I/(neA) ≈ 1 × 10^-4 m/s.",
+      "Q. Why does current start instantly although vd is small? (1 mark) — the electric field is established through the circuit almost at light speed."
+    ]
+  },
+  "class-12-notes/physics/alternating-current/lc-oscillations-and-resonance": {
+    "examShortTricks": [
+      "Trick 1: Resonance frequency one formula: f0 = 1/(2π√LC) — every LC numerical is a substitution; state 'XL = XC at resonance'.",
+      "Trick 2: At resonance: impedance = R (minimum), current maximum, power factor 1 — three consequences for the 3-mark answer.",
+      "Trick 3: LC oscillation analogy: energy shuttles between C (electric) and L (magnetic) like mass–spring between KE and PE; frequency same formula shape (ω = 1/√LC)."
+    ],
+    "keyPoints": [
+      "LC circuit oscillates with f0 = 1/(2π√LC).",
+      "At resonance inductive and capacitive reactances cancel.",
+      "Impedance is minimum (= R) and current maximum at resonance.",
+      "Energy alternates between the capacitor's field and the inductor's field."
+    ],
+    "practiceQuestions": [
+      "Q. Find the resonant frequency of a 2 mH inductor with a 5 μF capacitor. (2 marks) — f = 1/(2π√(2e-3 × 5e-6)) ≈ 1.59 kHz.",
+      "Q. What is the phase difference between V and I at resonance? (1 mark) — zero (purely resistive circuit)."
+    ]
+  },
+  "class-12-notes/physics/modern-physics/photoelectric-effect-and-einstein-s-photoelectric-equation": {
+    "examShortTricks": [
+      "Trick 1: Equation first: hν = φ + KEmax — then the three laws: current ∝ intensity; KE depends on FREQUENCY not intensity; emission is instantaneous above threshold.",
+      "Trick 2: Threshold: ν0 = φ/h; stopping potential eV0 = KEmax = hν − φ — every numerical is two of these three lines.",
+      "Trick 3: Graph marks: KE vs ν is a straight line with slope h and x-intercept ν0 — draw it; the slope measures Planck's constant."
+    ],
+    "keyPoints": [
+      "Photoelectric emission happens only above the threshold frequency.",
+      "Einstein's equation: hν = W0 + KEmax.",
+      "Maximum KE depends on frequency, not on intensity.",
+      "Stopping potential measures KEmax: eV0 = hν − W0."
+    ],
+    "practiceQuestions": [
+      "Q. Work function 2 eV, light of 4 eV photon energy — find stopping potential. (2 marks) — KEmax = 2 eV → V0 = 2 V.",
+      "Q. Why does increasing intensity not increase KEmax? (1 mark) — intensity adds photons (more electrons), but each photon's energy hν sets the KE."
+    ]
+  },
+  "class-12-notes/physics/modern-physics/logic-gates-and-or-not-nand-nor": {
+    "examShortTricks": [
+      "Trick 1: Truth tables in one line each — AND: 1 only when both 1; OR: 1 when any 1; NOT: inverts; NAND: NOT of AND (0 only when both 1); NOR: NOT of OR (1 only when both 0).",
+      "Trick 2: Universal gates: NAND and NOR can build every other gate — the 'why' mark; show NOT = NAND with both inputs joined.",
+      "Trick 3: Boolean identities that save time: A + A B = A; A + Ā = 1; (A B)' = Ā + B̄ (De Morgan) — most simplification questions die with De Morgan."
+    ],
+    "keyPoints": [
+      "AND, OR, NOT are the basic gates; NAND, NOR are universal.",
+      "Output expressions: AND = A·B, OR = A + B, NAND = (A·B)', NOR = (A + B)'.",
+      "De Morgan's theorems convert between NAND/NOR forms.",
+      "XOR gives 1 for unequal inputs."
+    ],
+    "practiceQuestions": [
+      "Q. Draw the truth table of a NAND gate. (2 marks) — 00→1, 01→1, 10→1, 11→0.",
+      "Q. Show how a NOR gate can work as NOT. (1 mark) — tie both inputs together: (A+A)' = Ā."
+    ]
+  }
+}

@@ -90,5 +90,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Restriction enzymes: cut palindromic sites; EcoRI = E. coli restriction I; produce sticky ends (5' overhangs) — the nomenclature and sticky ends are the marks.",
+    "Trick 2: Vector requirements: origin of replication (ori), selectable marker (antibiotic resistance), cloning site (MCS), small size, high copy number — five criteria.",
+    "Trick 3: Competent host: CaCl2 + cold shock (0 °C → 42 °C) makes E. coli take up plasmids; alternatives: microinjection, gene gun (biolistics), electroporation — the methods list.",
+    "Trick 4: Insertional inactivation: insert in lacZ/blue-white screening — the selection trick worth a mark."
   ]
 }

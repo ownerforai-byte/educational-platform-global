@@ -89,5 +89,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: E°cell = E°cathode − E°anode (reduction potentials, no multiplication by stoichiometry) — the 'no multiplication' note is the classic 1-mark trap.",
+    "Trick 2: Higher reduction potential = better oxidising agent = cathode; SHE is the zero reference — order species by E° to predict feasibility.",
+    "Trick 3: Spontaneity: E°cell > 0 → ΔG° = −nFE°cell < 0 — the thermodynamic link earns the extra mark.",
+    "Trick 4: EMF is an INTENSIVE property (independent of amount); n and E° combine only inside ΔG."
   ]
 }

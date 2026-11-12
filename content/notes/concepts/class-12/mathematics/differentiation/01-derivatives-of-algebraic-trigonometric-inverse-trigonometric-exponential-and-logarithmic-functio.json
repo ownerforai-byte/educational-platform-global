@@ -92,5 +92,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Inverse-trig derivatives are the exam core: d(sin^-1 u) = u′/√(1−u²); d(tan^-1 u) = u′/(1+u²); d(sec^-1 u) = u′/(|u|√(u²−1)).",
+    "Trick 2: Logarithmic differentiation for f(x)^{g(x)}: take ln both sides, differentiate, multiply back — works for x^x, x^(sin x).",
+    "Trick 3: Simplify BEFORE differentiating: expand products, split fractions, apply log laws — half the algebra work disappears.",
+    "Trick 4: Chain-rule discipline: differentiate the outer function first, multiply by the derivative of the inner — write the layers explicitly for long composites."
   ]
 }

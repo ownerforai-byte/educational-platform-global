@@ -73,5 +73,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Formula: (uv)_n = u_n v + nC1 u_{n−1} v1 + … + u v_n — binomial pattern with derivatives of u descending and of v ascending.",
+    "Trick 2: Choose u = the factor that becomes zero after a few derivatives (polynomial like x²) and v = the repeating one (e^{ax}, sin bx) — the work collapses.",
+    "Trick 3: nth-derivative bank: (e^{ax})_n = a^n e^{ax}; (sin(ax+b))_n = a^n sin(ax + b + nπ/2); (1/(x+a))_n = (−1)^n n!/(x+a)^{n+1} — quote, don't recompute.",
+    "Trick 4: For y = e^{ax}x², write (uv)_n with u = x² (only 3 nonzero terms) — the standard exam example."
   ]
 }

@@ -31,7 +31,10 @@
     "answer pattern for \"Test of unsaturation (ethene and ethyne): bromine water t…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Give Baeyer's test for unsaturation with observation. (2 marks) — purple KMnO4 decolourises; brown MnO2 precipitates; glycol forms.",
+    "Q. Which reagent distinguishes ethene from ethyne? (1 mark) — ammoniacal AgNO3 (white ppt with ethyne only)."
+  ],
   "keyPoints": [
     "• Test of unsaturation",
     "• Ethene",
@@ -61,5 +64,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Two tests, two decolourisations — bromine water (red-brown → colourless) and Baeyer's reagent (alkaline KMnO4, purple → colourless with brown MnO2).",
+    "Trick 2: Both tests are also passed by aldehydes/phenols — add 'and no reaction with saturated hydrocarbons' to make the test conclusive.",
+    "Trick 3: Distinguishing ethene vs ethyne: ammoniacal AgNO3/Cu2Cl2 precipitate only with ethyne."
   ]
 }

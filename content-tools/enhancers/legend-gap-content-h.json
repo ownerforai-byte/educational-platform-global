@@ -1,0 +1,269 @@
+{
+  "class-12-notes/chemistry/solutions/types-of-solutions-and-expression-of-concentration": {
+    "examShortTricks": [
+      "Trick 1: Nine solution types reduce to a 3×3 grid (solute gas/liquid/solid × solvent gas/liquid/solid) — quote two examples: air (gas in gas), brass (solid in solid).",
+      "Trick 2: Concentration conversions — mole fraction x = nA/(nA+nB); molarity M = moles/L solution (temperature-dependent); molality m = moles/kg solvent (temperature-INDEPENDENT, the exam favourite distinction).",
+      "Trick 3: ppm for trace concentrations: ppm = (mass solute/mass solution) × 10^6 — used for pollutants; state the unit pair.",
+      "Trick 4: Molarity ↔ molality bridge: m = M/(d − M·Ms/1000)... quote 'need density to convert' — the conceptual 1-marker."
+    ],
+    "keyPoints": [
+      "Solutions classified by the physical state of solute and solvent.",
+      "Molarity varies with temperature; molality, mole fraction and mass % do not.",
+      "Mole fraction sums to 1 over all components.",
+      "ppm expresses very low concentrations."
+    ],
+    "practiceQuestions": [
+      "Q. Why is molality preferred over molarity for temperature studies? (1 mark) — molality uses mass, which does not change with temperature.",
+      "Q. 18 g glucose in 500 g water — find molality. (2 marks) — 0.1 mol / 0.5 kg = 0.2 m."
+    ]
+  },
+  "class-12-notes/chemistry/solutions/solubility-of-gases-and-solids-in-liquids": {
+    "examShortTricks": [
+      "Trick 1: Henry's law one line: p = KH·x — gas solubility DECREASES with temperature, INCREASES with pressure; scuba diving and soda bottles are the standard applications.",
+      "Trick 2: Higher KH → lower solubility (KH is the pressure needed to dissolve unit mole fraction) — the inverse reading earns the mark.",
+      "Trick 3: Solid solubility rule of thumb: like dissolves like — polar solutes in polar solvents; solubility usually rises with temperature for endothermic dissolution.",
+      "Trick 4: Anoxia at altitude and bends: low pressure → low gas solubility → N2 bubbles in blood — the application 2-marker."
+    ],
+    "keyPoints": [
+      "Henry's law: partial pressure of a gas is proportional to its mole fraction in solution (p = KH x).",
+      "Gas solubility falls as temperature rises.",
+      "Solid solubility generally increases with temperature.",
+      "Like dissolves like governs solid solubility."
+    ],
+    "practiceQuestions": [
+      "Q. State Henry's law and one application. (2 marks) — p = KHx; carbonation of soft drinks / scuba tanks.",
+      "Q. Why does boiling drive dissolved gases out of water? (1 mark) — gas solubility decreases sharply as temperature rises."
+    ]
+  },
+  "class-12-notes/chemistry/solutions/vapour-pressure-of-solutions-raoult-s-law": {
+    "examShortTricks": [
+      "Trick 1: Raoult for both components: p1 = x1 p1°, p2 = x2 p2°; total P = x1p1° + x2p2° — a straight line in x1; ideal solutions obey it exactly.",
+      "Trick 2: Positive deviation (P > ideal): A–B attraction weaker than A–A/B–B (ethanol+acetone); negative deviation: stronger (chloroform+acetone H-bond) — one example each is the standard answer.",
+      "Trick 3: Ideal-solution conditions: ΔHmix = 0, ΔVmix = 0, identical A–A, B–B and A–B interactions.",
+      "Trick 4: Azeotropes form at deviation maxima/minima where vapour and liquid have the same composition — cannot be separated by fractional distillation."
+    ],
+    "keyPoints": [
+      "Raoult's law: partial vapour pressure = mole fraction × pure vapour pressure.",
+      "Ideal solutions: ΔHmix = 0, ΔVmix = 0, obey Raoult over the whole range.",
+      "Positive/negative deviations arise from weaker/stronger A–B interactions.",
+      "Azeotropes boil at constant composition."
+    ],
+    "practiceQuestions": [
+      "Q. Predict the deviation for a mixture of chloroform and acetone and explain. (2 marks) — negative; H-bonding between the two lowers vapour pressure.",
+      "Q. Why can an azeotrope not be separated by simple distillation? (1 mark) — vapour composition equals liquid composition."
+    ]
+  },
+  "class-12-notes/chemistry/solutions/colligative-properties-relative-lowering-of-vapour-pressure-elevation-of-boiling": {
+    "examShortTricks": [
+      "Trick 1: Colligative = depends on the NUMBER of solute particles, not their nature — say the definition first; then the four: Δp/p° = x2, ΔTb = Kb·m, ΔTf = Kf·m, π = CRT.",
+      "Trick 2: ΔTb = Kb·m and ΔTf = Kf·m — molality in both; Kf for water 1.86, Kb 0.52 K kg/mol; every numerical is one multiplication.",
+      "Trick 3: Molar mass from freezing point: M2 = (Kf·w2·1000)/(ΔTf·w1) — the most-asked numerical template.",
+      "Trick 4: Osmotic pressure π = nRT/V — preferred for polymers because it is measurable at room temperature with tiny concentrations."
+    ],
+    "keyPoints": [
+      "Colligative properties depend on the number of solute particles.",
+      "Relative lowering of vapour pressure = mole fraction of solute.",
+      "ΔTb = Kb·m; ΔTf = Kf·m; π = CRT.",
+      "Used to determine molar masses of solutes."
+    ],
+    "practiceQuestions": [
+      "Q. 1.0 g of a non-electrolyte in 50 g benzene lowers f.p. by 0.40 K (Kf = 5.12) — find M. (3 marks) — M = 5.12×1×1000/(0.40×50) = 256 g/mol.",
+      "Q. Why is the boiling point of a solution higher than the pure solvent? (2 marks) — solute lowers vapour pressure; a higher temperature is needed to reach 1 atm."
+    ]
+  },
+  "class-12-notes/chemistry/solutions/van-t-hoff-factor-and-abnormal-molar-masses": {
+    "examShortTricks": [
+      "Trick 1: i = observed colligative value / calculated value; i > 1 dissociation (NaCl i = 2, CaCl2 i = 3); i < 1 association (benzoic acid dimer in benzene, i ≈ 1/2).",
+      "Trick 2: Corrected formulas: ΔTb = i·Kb·m, π = iCRT — multiply by i for dissociation; molar mass then divides by i.",
+      "Trick 3: Abnormal molar mass direction: dissociation → measured M LOWER than true; association → HIGHER — one sentence explains both.",
+      "Trick 4: Degree of dissociation α = (i − 1)/(n − 1) for n ions — the standard follow-up numerical."
+    ],
+    "keyPoints": [
+      "van't Hoff factor i measures dissociation/association in solution.",
+      "i > 1 for electrolytes that dissociate; i < 1 for associating solutes.",
+      "Colligative properties are multiplied by i.",
+      "Abnormal molar masses arise from i ≠ 1."
+    ],
+    "practiceQuestions": [
+      "Q. 0.1 m NaCl solution — expected i and the freezing point depression (Kf = 1.86)? (2 marks) — i = 2; ΔTf = 0.372 K.",
+      "Q. Why does acetic acid in benzene show i < 1? (1 mark) — H-bonded dimers halve the particle count."
+    ]
+  },
+  "class-12-notes/chemistry/electro-chemistry/oxidation-and-reduction-electrode-reactions": {
+    "examShortTricks": [
+      "Trick 1: Electrode half-reactions: anode = oxidation (LEO), cathode = reduction (GER) — in a galvanic cell the anode is NEGATIVE; in electrolysis it is POSITIVE — the sign flip is the classic trap.",
+      "Trick 2: Cell notation order: anode | anode solution || cathode solution | cathode — salt bridge as the double line; write one example: Zn|Zn²⁺||Cu²⁺|Cu.",
+      "Trick 3: Electron flow: external circuit anode → cathode; current convention is opposite; ions migrate through the bridge to keep neutrality."
+    ],
+    "keyPoints": [
+      "Oxidation at anode, reduction at cathode in every electrochemical cell.",
+      "Galvanic cell: anode negative; electrolytic cell: anode positive.",
+      "Salt bridge maintains electrical neutrality.",
+      "Cell notation: anode on the left, cathode on the right."
+    ],
+    "practiceQuestions": [
+      "Q. Write the electrode reactions of the Daniell cell. (2 marks) — Zn → Zn²⁺ + 2e (anode); Cu²⁺ + 2e → Cu (cathode).",
+      "Q. In an electrolytic cell, which electrode is the anode? (1 mark) — the positive one (connected to the battery's positive terminal)."
+    ]
+  },
+  "class-12-notes/chemistry/electro-chemistry/electrochemical-cells-galvanic-cell-cell-potential-standard-electrode-potential": {
+    "examShortTricks": [
+      "Trick 1: E°cell = E°cathode − E°anode (reduction potentials, no multiplication by stoichiometry) — the 'no multiplication' note is the classic 1-mark trap.",
+      "Trick 2: Higher reduction potential = better oxidising agent = cathode; SHE is the zero reference — order species by E° to predict feasibility.",
+      "Trick 3: Spontaneity: E°cell > 0 → ΔG° = −nFE°cell < 0 — the thermodynamic link earns the extra mark.",
+      "Trick 4: EMF is an INTENSIVE property (independent of amount); n and E° combine only inside ΔG."
+    ],
+    "keyPoints": [
+      "Standard electrode potential measured against SHE (E° = 0).",
+      "E°cell = E°cathode − E°anode.",
+      "Positive E°cell means a spontaneous cell reaction.",
+      "ΔG° = −nFE°cell links electricity and thermodynamics."
+    ],
+    "practiceQuestions": [
+      "Q. E°(Zn²⁺/Zn) = −0.76 V, E°(Cu²⁺/Cu) = +0.34 V — find E°cell. (1 mark) — 0.34 − (−0.76) = 1.10 V.",
+      "Q. Can Cu²⁺ oxidise Zn? (1 mark) — yes; E°cell = +1.10 V > 0."
+    ]
+  },
+  "class-12-notes/chemistry/electro-chemistry/nernst-equation-and-its-applications": {
+    "examShortTricks": [
+      "Trick 1: Nernst at 298 K: E = E° − (0.0591/n)·log([products]/[reactants]) — for the cell, use the reaction quotient Q of the OVERALL cell reaction.",
+      "Trick 2: Pure solids/liquids and 1 M standard states drop out of Q — only ion concentrations appear for metal–metal-ion electrodes.",
+      "Trick 3: Equilibrium condition: E = 0 → E° = (0.0591/n)·log Kc — the Kc-from-E° numerical is a two-line substitution.",
+      "Trick 4: pH electrodes: E depends linearly on log[H+] — quote 'every unit of pH changes E by 0.0591 V' for the H-electrode question."
+    ],
+    "keyPoints": [
+      "Nernst equation gives electrode/cell potential under non-standard conditions.",
+      "E = E° − (0.0591/n) log Q at 298 K.",
+      "At equilibrium E = 0 and E° = (0.0591/n) log Kc.",
+      "Concentration cells run on concentration differences alone."
+    ],
+    "practiceQuestions": [
+      "Q. Daniell cell with [Zn²⁺] = 1 M, [Cu²⁺] = 0.1 M — find E. (3 marks) — E = 1.10 − (0.0591/2)·log(0.1/1) = 1.10 + 0.0295 = 1.13 V.",
+      "Q. For E° = 0.295 V and n = 2, find Kc. (2 marks) — log Kc = 2×0.295/0.0591 ≈ 10 → Kc ≈ 10^10."
+    ]
+  },
+  "class-12-notes/chemistry/electro-chemistry/conductance-of-electrolytic-solutions": {
+    "examShortTricks": [
+      "Trick 1: Chain of definitions: G = 1/R; κ = G·(l/A); Λm = κ·1000/M — each step multiplies by a cell constant or dilution factor; quote units: S m⁻¹ and S cm² mol⁻¹.",
+      "Trick 2: Λm rises on dilution (more dissociation) while κ falls (fewer ions per cm³) — the contrast is the standard 2-mark answer.",
+      "Trick 3: Strong electrolytes: Λm = Λ°m − A√c (Kohlrausch, small slope); weak: Λ°m by extrapolation fails — use Kohlrausch's law of independent migration instead.",
+      "Trick 4: Λ°m of weak electrolyte = sum of Λ° of ion pairs, e.g. Λ°(CH3COOH) = Λ°(HCl) + Λ°(CH3COONa) − Λ°(NaCl) — the classic combination numerical."
+    ],
+    "keyPoints": [
+      "Conductance G = 1/R; conductivity κ = G × cell constant.",
+      "Molar conductivity Λm = 1000κ/M; increases with dilution.",
+      "Kohlrausch's law: ions migrate independently; Λ°m = ν+λ°+ + ν−λ°−.",
+      "Degree of dissociation α = Λm/Λ°m."
+    ],
+    "practiceQuestions": [
+      "Q. κ = 0.0248 S/cm for 0.20 M solution — find Λm. (2 marks) — Λm = 1000×0.0248/0.20 = 124 S cm²/mol.",
+      "Q. Why does conductivity decrease on dilution but molar conductivity increase? (2 marks) — fewer ions per volume vs greater dissociation per mole."
+    ]
+  },
+  "class-12-notes/chemistry/electro-chemistry/electrolysis-and-faraday-s-laws": {
+    "examShortTricks": [
+      "Trick 1: m = ZIt = (E/96500)·It — E is the EQUIVALENT mass (M/n for M^n+); identify n first, then substitute.",
+      "Trick 2: Products at electrodes: molten NaCl → Na at cathode, Cl2 at anode; aqueous NaCl (brine) → H2 at cathode (water reduced) — overpotential decides water vs metal ions.",
+      "Trick 3: Same charge through cells in series: masses ∝ equivalent masses (second law) — the series numerical is one ratio.",
+      "Trick 4: Charge bookkeeping: Q = I×t (seconds!), moles of electrons = Q/96500 — the unit trap is minutes."
+    ],
+    "keyPoints": [
+      "First law: m ∝ Q (m = ZIt).",
+      "Second law: same Q deposits masses proportional to equivalent masses.",
+      "1 F = 96500 C deposits one equivalent.",
+      "Preferential discharge follows electrode potentials and overpotential."
+    ],
+    "practiceQuestions": [
+      "Q. Current 1.5 A for 2 h through CuSO4 — mass of Cu deposited (Cu = 63.5)? (3 marks) — Q = 10800 C; m = 63.5×10800/(2×96500) ≈ 3.55 g.",
+      "Q. Why is H2 evolved at the cathode in brine electrolysis instead of Na? (1 mark) — water is reduced more easily than Na+ (lower discharge potential)."
+    ]
+  },
+  "class-12-notes/chemistry/electro-chemistry/batteries-primary-and-secondary-cells": {
+    "examShortTricks": [
+      "Trick 1: Classification line: primary = single use (dry cell, mercury cell); secondary = rechargeable (lead storage, Ni–Cd, Li-ion) — one example each earns the pair.",
+      "Trick 2: Lead storage reactions: discharge Pb + PbO2 + 2H2SO4 → 2PbSO4 + 2H2O; cell potential ~2 V per cell, 6 cells = 12 V; recharging reverses it.",
+      "Trick 3: Mercury cell gives a CONSTANT voltage throughout life (used in watches) — the 'why' is the fixed NaOH/ZnO concentration.",
+      "Trick 4: Ni–Cd: 'memory-free' rechargeable; Li-ion: highest energy density, lightweight — the comparison table for 2 marks."
+    ],
+    "keyPoints": [
+      "Primary cells cannot be recharged; secondary cells can.",
+      "Lead storage battery: Pb/PbSO4 and PbO2/PbSO4 electrodes in H2SO4.",
+      "Dry cell: Zn container anode, MnO2 + C cathode, NH4Cl paste electrolyte.",
+      "Fuel cells convert fuel energy directly with high efficiency."
+    ],
+    "practiceQuestions": [
+      "Q. Distinguish primary and secondary cells with one example each. (2 marks) — dry cell vs lead-acid battery.",
+      "Q. Write the overall reaction of a discharging lead storage cell. (2 marks) — Pb + PbO2 + 2H2SO4 → 2PbSO4 + 2H2O."
+    ]
+  },
+  "class-12-notes/chemistry/electro-chemistry/fuel-cells": {
+    "examShortTricks": [
+      "Trick 1: H2–O2 fuel cell reactions: anode H2 + 2OH− → 2H2O + 2e; cathode O2 + 2H2O + 4e → 4OH−; overall 2H2 + O2 → 2H2O; E ≈ 1.23 V.",
+      "Trick 2: Efficiency ~70% (not Carnot-limited) vs thermal plants ~40% — the efficiency contrast is the standard 2-mark answer.",
+      "Trick 3: Uses: Apollo missions, space shuttles, electric vehicles; product water is drinkable — the space connection is the memorable line."
+    ],
+    "keyPoints": [
+      "Fuel cells convert combustion energy of fuels directly into electricity.",
+      "Hydrogen–oxygen fuel cell uses KOH electrolyte and porous Ni electrodes.",
+      "Efficiency about 70%; pollution-free (water is the only product).",
+      "Used in spacecraft and being developed for vehicles."
+    ],
+    "practiceQuestions": [
+      "Q. Write the electrode reactions of the H2–O2 fuel cell. (2 marks) — as above in alkaline medium.",
+      "Q. Why are fuel cells more efficient than thermal plants? (1 mark) — direct chemical→electrical conversion, no heat-engine limit."
+    ]
+  },
+  "class-12-notes/chemistry/chemical-kinetics/factors-affecting-rate-of-reaction": {
+    "examShortTricks": [
+      "Trick 1: Five factors with one line each: concentration (more collisions), temperature (2× rate per 10 °C rule of thumb), catalyst (lowers Ea), surface area (more contact), nature of reactants.",
+      "Trick 2: Collision-theory framing: rate ∝ frequency of collisions × fraction with E ≥ Ea × proper orientation — map each factor onto one of the three.",
+      "Trick 3: Catalyst does NOT change ΔH, K or the final yield — only the rate (both directions equally); saying otherwise loses the mark."
+    ],
+    "keyPoints": [
+      "Rate increases with concentration, temperature, surface area and catalysts.",
+      "Temperature sensitivity: rate roughly doubles per 10 °C rise.",
+      "Catalyst lowers activation energy without being consumed.",
+      "Nature and physical state of reactants matter."
+    ],
+    "practiceQuestions": [
+      "Q. How does a catalyst increase rate? (2 marks) — provides an alternative path of lower activation energy, raising the fraction of effective collisions.",
+      "Q. Why does powdered zinc react faster than a strip with HCl? (1 mark) — greater surface area, more collision sites."
+    ]
+  },
+  "class-12-notes/chemistry/chemical-kinetics/integrated-rate-equations-zero-order-and-first-order-reactions": {
+    "examShortTricks": [
+      "Trick 1: Zero order: [A] = [A]0 − kt, half-life t½ = [A]0/2k (depends on initial concentration); first order: ln[A]0/[A] = kt, t½ = 0.693/k (independent of concentration) — the half-life contrast is THE exam discriminator.",
+      "Trick 2: Identify order from data: successive half-lives equal → first order; doubling time with concentration halves → zero order.",
+      "Trick 3: First-order numericals: k = (2.303/t)·log(a/(a−x)) — substitute a, a−x, t directly; the 2.303 converts ln to log10.",
+      "Trick 4: Pseudo-first order: ester hydrolysis with excess water — water's concentration is constant, so the bimolecular reaction follows first-order kinetics."
+    ],
+    "keyPoints": [
+      "Zero order: rate independent of concentration; t½ = [A]0/2k.",
+      "First order: rate ∝ [A]; t½ = 0.693/k.",
+      "Integrated first-order: k = (2.303/t) log([A]0/[A]).",
+      "Pseudo-first-order reactions arise when one reactant is in large excess."
+    ],
+    "practiceQuestions": [
+      "Q. A first-order reaction is 20% complete in 10 min. Find k and t½. (3 marks) — k = (2.303/10)log(1/0.8) ≈ 0.0223 min⁻¹; t½ ≈ 31 min.",
+      "Q. Why is the half-life of a first-order reaction constant? (1 mark) — t½ = 0.693/k contains no concentration term."
+    ]
+  },
+  "class-12-notes/chemistry/chemical-kinetics/arrhenius-equation-and-activation-energy": {
+    "examShortTricks": [
+      "Trick 1: k = Ae^(−Ea/RT); log(k2/k1) = Ea(T2−T1)/(2.303R·T1T2) — the two-temperature form is the numerical workhorse; R = 8.314 J.",
+      "Trick 2: Graph marks: ln k vs 1/T is a straight line with slope −Ea/R and intercept ln A — draw and label axes.",
+      "Trick 3: Threshold statement: reaction occurs only when colliding molecules possess energy ≥ Ea; the fraction e^(−Ea/RT) is the Boltzmann factor.",
+      "Trick 4: A catalyst lowers Ea, so k rises by e^(ΔEa/RT) — quote for the catalysis-kinetics link."
+    ],
+    "keyPoints": [
+      "Arrhenius equation: k = A e^(−Ea/RT).",
+      "Activation energy: minimum energy needed for an effective collision.",
+      "ln k vs 1/T is linear with slope −Ea/R.",
+      "Catalysts increase rate by lowering Ea."
+    ],
+    "practiceQuestions": [
+      "Q. Rate doubles from 300 K to 310 K — find Ea. (3 marks) — Ea = 2.303R·(300×310/10)·log2 ≈ 53.6 kJ/mol.",
+      "Q. What does the intercept of the ln k vs 1/T line give? (1 mark) — ln A (frequency factor)."
+    ]
+  }
+}

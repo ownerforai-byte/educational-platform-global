@@ -33,7 +33,10 @@
     "Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Why is Zeff of Li less than that of Be? (1 mark) — Be has one more proton with similar shielding, so Zeff is higher.",
+    "Q. Why do atomic radii increase down a group despite increasing Z? (2 marks) — new shells are added; σ increases with Z, so Zeff felt by outer electrons is nearly unchanged."
+  ],
   "formulas": [
     "BE = Δm c²",
     "N = N₀ e^(−λt)",
@@ -59,5 +62,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Zeff = Z − σ (screening constant); across a period Zeff increases (σ nearly constant) → smaller radius, higher ionization energy.",
+    "Trick 2: Down a group both Z and σ increase by the same step → Zeff stays nearly constant → size grows. This one line explains ALL group trends.",
+    "Trick 3: Slater quick value: inner electrons shield fully (σ ≈ 0.85–1 per electron) — quote 'shielding by inner shells' as the definition of σ."
   ]
 }

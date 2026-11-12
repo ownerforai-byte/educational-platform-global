@@ -66,5 +66,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Vector form r = a + λb; Cartesian (x−x1)/l = (y−y1)/m = (z−z1)/n — convert between them by reading a from the constants and b from the denominators.",
+    "Trick 2: Line through two points: direction b = P2 − P1 — subtract the coordinates, then use the point form.",
+    "Trick 3: General (unsymmetric) form: two plane equations simultaneously — convert by eliminating variables to get the symmetric ratios.",
+    "Trick 4: Foot of perpendicular / image problems: parametrise the line, substitute into the plane condition, solve for λ."
   ]
 }

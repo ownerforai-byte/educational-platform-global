@@ -76,5 +76,11 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Zero order: [A] = [A]0 − kt, half-life t½ = [A]0/2k (depends on initial concentration); first order: ln[A]0/[A] = kt, t½ = 0.693/k (independent of concentration) — the half-life contrast is THE exam discriminator.",
+    "Trick 2: Identify order from data: successive half-lives equal → first order; doubling time with concentration halves → zero order.",
+    "Trick 3: First-order numericals: k = (2.303/t)·log(a/(a−x)) — substitute a, a−x, t directly; the 2.303 converts ln to log10.",
+    "Trick 4: Pseudo-first order: ester hydrolysis with excess water — water's concentration is constant, so the bimolecular reaction follows first-order kinetics."
   ]
 }

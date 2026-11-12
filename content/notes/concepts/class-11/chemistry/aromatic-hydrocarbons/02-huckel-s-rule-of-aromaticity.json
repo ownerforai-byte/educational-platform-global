@@ -27,7 +27,10 @@
     "answer pattern for \"Huckel's rule of aromaticity\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Apply Hückel's rule to benzene and cyclobutadiene. (2 marks) — benzene 6π aromatic (n=1); cyclobutadiene 4π anti-aromatic.",
+    "Q. Why is cyclooctatetraene non-aromatic? (1 mark) — it is non-planar (tub-shaped), so conjugation is broken."
+  ],
   "keyPoints": [
     "• Huckel's rule of aromaticity"
   ],
@@ -42,5 +45,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Rule in one line: planar, cyclic, conjugated system with (4n + 2) π electrons is aromatic — check n = 0, 1, 2 (2, 6, 10 electrons).",
+    "Trick 2: Apply instantly: benzene 6π (n=1) aromatic; cyclooctatetraene 8π non-aromatic (not planar); cyclopentadienyl anion 6π aromatic; cycloheptatrienyl cation (tropylium) 6π aromatic.",
+    "Trick 3: Anti-aromatic = planar cyclic with 4n π electrons (cyclobutadiene, 4π) — the contrast earns the extra mark."
   ]
 }

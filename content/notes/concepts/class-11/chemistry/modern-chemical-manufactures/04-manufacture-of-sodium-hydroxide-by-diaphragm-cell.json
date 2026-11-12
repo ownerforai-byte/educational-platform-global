@@ -30,7 +30,10 @@
     "answer pattern for \"Manufacture of sodium hydroxide by Diaphragm Cell\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [],
-  "practiceQuestions": [],
+  "practiceQuestions": [
+    "Q. Write the electrode reactions in the diaphragm cell. (2 marks) — as above (Cl2 anode; H2 + OH− cathode).",
+    "Q. Why is a diaphragm needed? (1 mark) — separates Cl2 from NaOH to stop bleach formation."
+  ],
   "keyPoints": [
     "• Manufacture of sodium hydroxide by Diaphragm Cell"
   ],
@@ -45,5 +48,10 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
+  ],
+  "examShortTricks": [
+    "Trick 1: Electrolysis of brine: cathode 2H2O + 2e → H2 + 2OH−; anode 2Cl− → Cl2 + 2e; overall 2NaCl + 2H2O → 2NaOH + H2 + Cl2.",
+    "Trick 2: Diaphragm's job: porous asbestos partition keeps Cl2 (anode) apart from NaOH (cathode) — prevents 2NaOH + Cl2 → NaCl + NaOCl + H2O side reaction; that line is the mark.",
+    "Trick 3: Products leave separately: dilute NaOH drained from cathode compartment (evaporated to solid), Cl2 from the top of the anode compartment, H2 collected separately."
   ]
 }
