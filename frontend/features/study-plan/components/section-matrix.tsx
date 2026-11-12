@@ -7,7 +7,7 @@ import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
 
 /**
  * The /plans availability matrix — the content universe derived from the
- * section registry (plan.md §3), with the owner's runtime minimums applied
+ * section registry (plan.md §3), with the current plan configuration applied
  * (plan.md §8 P4), so this table always matches what the section gates
  * actually enforce ("plans-table parity").
  */

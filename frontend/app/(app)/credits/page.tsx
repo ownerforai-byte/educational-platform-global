@@ -281,7 +281,7 @@ export default function CreditsPage() {
               <div>
                 <p className="font-medium">Premium Request Pending</p>
                 <p className="text-sm text-muted-foreground">
-                  Your premium request is being reviewed by the owner.
+                  Your request is being reviewed.
                 </p>
               </div>
             </div>

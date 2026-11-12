@@ -18,8 +18,8 @@ import { asyncHandler } from "../../middleware/asyncHandler";
  * so the frontend opens that detail on hover/click. `parts` carries the same
  * legend as data, so the hub can also list every part without a pointer.
  *
- * OPEN TO OWNER EMAILS ONLY (owner request 2026-10-05: "make the image
- * hub under owner emails only"), exactly like /api/ai/image:
+ * OPEN TO AUTHORISED ACCOUNTS ONLY (owner request 2026-10-05: "make the image
+ * hub under authorised accounts only"), exactly like /api/ai/image:
  * `requireAuth` + `requireOwnerEmail`, and the key is protected by the
  * ai-image rate-limit tier instead. Every drawn figure is saved to the
  * owner's image history on the server (hardcoded, best-effort).

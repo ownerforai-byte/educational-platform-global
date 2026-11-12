@@ -60,7 +60,7 @@ const CHANGES: Change[] = [
     type: "feature",
     entries: [
       "Tier system migrated: Member, Plus, Pro, Owner replace the old free/premium split.",
-      "Section registry: every platform surface has a minimum tier and is gated consistently.",
+      "Section availability is now consistent across the platform.",
       "AI spark quota: daily message limits per tier, with a credits wallet for overage.",
     ],
   },

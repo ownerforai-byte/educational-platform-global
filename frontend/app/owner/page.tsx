@@ -18,21 +18,20 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { getOwnerOverview, getOwnerUsers, type OwnerOverview } from "@/lib/api/owner";
 import { computeUserDirectoryStats } from "@/lib/owner/user-directory";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { OWNER_EMAIL } from "@/lib/owner";
 
 const TOOLS = [
   {
     href: "/owner/users",
     icon: ShieldCheck,
     title: "Approvals",
-    desc: "Approve or revoke live access. Grant Member, Plus, or Pro.",
+    desc: "Review and manage accounts.",
     primary: true,
   },
   {
     href: "/owner/credits",
     icon: Coins,
     title: "Sparks",
-    desc: "Grant or adjust content sparks for approved accounts.",
+    desc: "Manage content sparks.",
   },
   {
     href: "/owner/settings",
@@ -78,13 +77,11 @@ export default function OwnerOverviewPage() {
         <div className="space-y-1">
           <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-600">
             <Crown className="h-3.5 w-3.5" />
-            Owner control · {OWNER_EMAIL}
+            Owner control
           </div>
           <h1 className="text-2xl font-bold tracking-tight mt-2">Control home</h1>
           <p className="text-sm text-muted-foreground max-w-xl">
-            Root owner is {OWNER_EMAIL}. You can assign another email the owner
-            role so they can run this console too. Member access is live DB
-            approval — nothing hardcoded for members.
+            After signing, the account is approved by the system verification and administrative approval.
           </p>
         </div>
         <Button variant="outline" size="sm" onClick={load} disabled={isLoading}>
@@ -111,11 +108,11 @@ export default function OwnerOverviewPage() {
               {isLoading && pendingCount === null
                 ? "Loading pending…"
                 : pendingCount === 0
-                  ? "No pending approvals"
+                  ? "No accounts to review"
                   : `${pendingCount} account${pendingCount === 1 ? "" : "s"} waiting`}
             </h2>
             <p className="mt-1 text-sm text-muted-foreground">
-              {activeCount ?? 0} live approved · open Approvals to decide
+              {activeCount ?? 0} active accounts
             </p>
           </div>
           <ArrowRight className="h-5 w-5 text-amber-600 shrink-0 mt-1" />
@@ -197,7 +194,7 @@ export default function OwnerOverviewPage() {
           <CardHeader className="pb-2 flex flex-row items-center justify-between">
             <CardTitle className="text-sm font-medium">Recent signups</CardTitle>
             <Link href="/owner/users" className="text-xs text-primary hover:underline">
-              Decide in Approvals
+              Review accounts
             </Link>
           </CardHeader>
           <CardContent className="space-y-2">

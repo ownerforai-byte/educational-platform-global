@@ -133,11 +133,11 @@ export default function OwnerContentPage() {
               </span>
             </div>
             <p className="text-xs text-muted-foreground">
-              This page loaded successfully from /api/owner/overview, so the backend is up.
+              This page loaded successfully, so the backend is up.
             </p>
             <div className="pt-2 border-t space-y-1 text-xs text-muted-foreground">
               <p>Stack: Next.js frontend · Express + Supabase backend</p>
-              <p>Owner gate: allowlisted emails via /api/owner/*</p>
+              <p>Access is restricted to authorised accounts.</p>
             </div>
           </CardContent>
         </Card>

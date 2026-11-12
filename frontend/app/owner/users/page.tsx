@@ -412,9 +412,7 @@ export default function OwnerUsersPage() {
             Approvals
           </h1>
           <p className="text-sm text-muted-foreground max-w-2xl">
-            Approve pending signups or manage live members. Access lives in the database.
-            You can set another email’s tier to Owner so they work as owner;
-            the root address {OWNER_EMAIL} cannot be revoked or deleted.
+            After signing, the account is approved by the system verification and administrative approval.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -486,7 +484,7 @@ export default function OwnerUsersPage() {
           Members ({stats.active + stats.rejected})
         </Button>
         <span className="ml-auto self-center text-xs text-muted-foreground">
-          Owner: {OWNER_EMAIL}
+          Operator account
         </span>
       </div>
 
@@ -622,7 +620,7 @@ export default function OwnerUsersPage() {
           <CardHeader className="pb-2">
             <CardTitle className="text-sm font-medium flex items-center gap-2">
               <ShieldCheck className="h-4 w-4" />
-              Root owner · {OWNER_EMAIL} (cannot revoke or delete)
+              Root owner
             </CardTitle>
           </CardHeader>
           <CardContent>

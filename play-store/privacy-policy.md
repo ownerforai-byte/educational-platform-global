@@ -41,7 +41,7 @@ When you sign up we collect:
 - Email address (required)
 - A password (stored only as a one-way cryptographic hash — we never see it)
 
-Accounts are provisioned as **pending** and activated after administrative approval.
+After signing, the account is approved by the system verification and administrative approval.
 
 ### Usage and learning information (only with an account)
 - Your study progress, completed topics, and study statistics
@@ -76,7 +76,7 @@ Your study content is used to ground those answers. We do not sell your prompts.
   hashed passwords, per-user data isolation (row-level security), strict CORS,
   and per-IP rate limiting.
 - In production, session cookies are flagged `secure` and `httpOnly`.
-- We limit who can access your data to the account owner and approved admins.
+- We limit who can access your data to the account holder and authorised administrators.
 
 ## 5. Who we share it with (our processors)
 

@@ -295,7 +295,7 @@ function QuickLinksRail({ tier }: { tier: AccessLevel }) {
           Quick links
         </h2>
         <p className="text-[11px] text-muted-foreground">
-          The fast path at your rung; unavailable destinations are muted.
+          The fast path for your plan; unavailable destinations are muted.
         </p>
       </div>
       <div className="mt-3 flex flex-wrap gap-2">
@@ -339,7 +339,7 @@ function OpenSectionsRail({ tier }: { tier: AccessLevel }) {
             Open for you
           </h2>
           <p className="text-[11px] text-muted-foreground">
-            Every section at or below your rung — {open.length} open.
+            Every section in your plan — {open.length} open.
           </p>
         </div>
       </div>
@@ -375,7 +375,7 @@ function NextRungTeaser({ tier }: { tier: AccessLevel }) {
     <section className="rounded-2xl border border-dashed border-primary/30 bg-primary/5 p-4 text-center">
       <p className="text-xs text-muted-foreground">
         Want more? The{" "}
-        <span className="font-bold text-primary">{ACCESS_LABELS[next]}</span> rung opens{" "}
+        <span className="font-bold text-primary">{ACCESS_LABELS[next]}</span> plan opens{" "}
         {(() => { const count = SECTIONS.filter((s) => s.minTier === next).length; return `${count} more section${count === 1 ? "" : "s"}.`; })()}
       </p>
     </section>
@@ -475,12 +475,12 @@ export function OwnerHome({ rails }: { rails: ReactNode }) {
     <TierPage
       rails={rails}
       tier="owner"
-      headline="Operator console — everything, plus the controls."
-      blurb="Every section is open and every spark is unlimited. The console runs the platform: users and tier grants, section access rules and content control."
+      headline="Everything, in one place."
+      blurb="Every section is open and every spark is unlimited."
       spotlights={[
-        { title: "Owner Console", desc: "The full control surface.", href: "/owner", icon: Crown },
-        { title: "Users & Tier Grants", desc: "Grant or adjust Member / Plus / Pro rungs.", href: "/owner/users", icon: User },
-        { title: "Section Access Rules", desc: "Every section and the rung that opens it.", href: "/owner/sections", icon: Settings },
+        { title: "Study overview", desc: "Everything in one place.", href: "/owner", icon: Crown },
+        { title: "Account tools", desc: "Manage plans and access.", href: "/owner/users", icon: User },
+        { title: "Section settings", desc: "What each plan includes.", href: "/owner/sections", icon: Settings },
       ]}
     />
   );

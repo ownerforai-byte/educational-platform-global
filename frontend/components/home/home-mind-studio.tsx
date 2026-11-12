@@ -12,7 +12,7 @@ import {
  * 2026-10-02: the Mind Studio workspace became the hub; renamed Diagram Hub on
  * 2026-10-07, when the owner asked that no vendor name and no "AI" wording
  * appear anywhere in it). All drawing runs on the platform's own server
- * engines; owner emails only since 2026-10-05.
+ * engines; authorised accounts only since 2026-10-05.
  *
  * The section renders inside <OwnerOnly> on the home page, so the copy speaks
  * to the owner, not to the student. The preview on the right is a static

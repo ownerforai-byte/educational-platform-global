@@ -5,7 +5,7 @@ import { TierHomeGate } from "@/components/home/tier-home-gate";
 
 export const metadata: Metadata = {
   title: "Owner | Ravikisan's Platform",
-  description: "The Owner interface — the operator console, tier grants and section access rules.",
+  description: "Your home on Ravikisan's Platform.",
 };
 
 export default function OwnerHomePage() {

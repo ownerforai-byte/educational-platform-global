@@ -113,7 +113,7 @@ export function BillingView() {
       <ComingSoon
         title="Online payments"
         kind="Notes"
-        message="Subscription and spark purchases by card or wallet are not available yet. Premium is granted after owner approval; payment invoices appear here once a payment provider is connected."
+        message="Subscription and spark purchases by card or wallet are not available yet. payment invoices appear here once a payment provider is connected."
         backHref="/credits"
         backLabel="My Sparks"
       />

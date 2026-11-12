@@ -32,7 +32,7 @@ function CheckingScreen() {
   return (
     <AuthShell
       title="Checking your account"
-      subtitle="Confirming live approval status with the server."
+      subtitle="Confirming account status."
     >
       <div className="flex justify-center py-4">
         <VerifyingStatus compact label="Checking your account status" />
@@ -62,7 +62,7 @@ export function WelcomeApprovalScreen({ waiting }: { waiting: ReactNode }) {
   return (
     <AuthShell
       title="Your account is on its way"
-      subtitle="Live approval status for the account tied to this signup. Sign in after administrative and system approval."
+      subtitle="After signing, the account is approved by the system verification and administrative approval."
     >
       <LoggedInRedirect />
       {waiting}
@@ -78,7 +78,7 @@ export function NoAccountScreen() {
   return (
     <AuthShell
       title="No active account found"
-      subtitle="There is no live signup waiting for approval for this browser."
+      subtitle="No account is linked to this browser yet."
     >
       <LoggedInRedirect />
       <NoAccountCard />
@@ -94,7 +94,7 @@ export function ApprovedScreen() {
   return (
     <AuthShell
       title="Access granted"
-      subtitle="This account is approved live. Sign in to open the library."
+      subtitle="Sign in to open the library."
     >
       <LoggedInRedirect />
       <div className="space-y-5" data-testid="approved-account-card">
@@ -106,7 +106,7 @@ export function ApprovedScreen() {
             Your account is approved
           </h2>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Administrative and system approval is complete. Sign in to continue.
+            Sign in to continue.
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-2">

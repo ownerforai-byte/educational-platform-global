@@ -4,7 +4,7 @@ import { NotebookPen } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Study Journal — Ravikisan's Platform",
-  description: "Private study journal for approved members.",
+  description: "Private study journal for your own entries.",
 };
 
 /**

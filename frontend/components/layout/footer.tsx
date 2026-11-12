@@ -216,7 +216,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
           </li>
         </ul>
         <div className="space-y-3 px-4 pb-6 pt-3 text-[11px] leading-relaxed text-muted-foreground">
-          <p>An approved account is required for the study library; access depends on your plan.</p>
+          <p>After signing, the account is approved by the system verification and administrative approval.</p>
           <nav aria-label="Legal" className="flex flex-wrap gap-x-4 gap-y-2">
             {LEGAL_LINKS.map(([label, href]) => (
               <Link
@@ -251,7 +251,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
           </Link>
           <p className="text-xs leading-relaxed text-muted-foreground sm:text-right">
             Study resources for NEB Class 11 and 12, organised around the CDC curriculum.
-            <span className="hidden lg:inline"> An approved account is required for the study library; access depends on your plan.</span>
+            <span className="hidden lg:inline"> After signing, the account is approved by the system verification and administrative approval.</span>
           </p>
         </div>
 

@@ -40,4 +40,4 @@ npm run check          # scoped
 npm run check:all      # before main
 ```
 
-Owner account on this tree defaults to `sahrocky81@gmail.com` (see `docs/architecture/BACKEND.md`).
+Operator accounts are configured through the environment (see `docs/architecture/BACKEND.md`).

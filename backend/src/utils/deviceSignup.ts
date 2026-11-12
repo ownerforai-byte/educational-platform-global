@@ -11,7 +11,7 @@ import { getGuestDeviceId, issueGuestDeviceCookie } from "./guestQuota";
  * read or selectively rewrite it, and it survives IP changes. The first
  * account created on a device is bound to it; while that account is still
  * PENDING, a second signup from the same device is refused with
- * DEVICE_SIGNUP_LIMIT_MESSAGE. Once the owner APPROVES (ACTIVE) or DENIES
+ * DEVICE_SIGNUP_LIMIT_MESSAGE. Once the account becomes ACTIVE or REJECTED
  * (REJECTED) the bound account, the device returns to normal guest use and may
  * create another account — denial must not trap the device on a status screen.
  *

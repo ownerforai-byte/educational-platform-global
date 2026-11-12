@@ -16,7 +16,7 @@ Bind HTTP to `0.0.0.0:$PORT` on Render. Filesystem is ephemeral — persist in S
 ## Auth & owner
 
 - Session cookies + CSRF for OAuth (`google` only; Facebook is not wired).
-- `OWNER_EMAILS` / `isOwnerEmail` in `middleware/auth.ts` — **one** default owner (`sahrocky81@gmail.com`). Env `OWNER_EMAILS` may extend the set for local/ops.
+- `OWNER_EMAILS` / `isOwnerEmail` in `middleware/auth.ts` — operator accounts are configured through the environment.
 - Owner admin endpoints do **not** block actions against other accounts (independence / `ownerGuard` removed).
 
 ## Content reveal

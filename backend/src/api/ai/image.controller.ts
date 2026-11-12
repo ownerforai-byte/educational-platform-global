@@ -13,8 +13,8 @@ import { asyncHandler } from "../../middleware/asyncHandler";
  * agnes-image-2.0-flash) through generateVeerImage and returns the picture
  * URL plus the model that drew it.
  *
- * OWNER EMAILS ONLY (owner request 2026-10-05: "make the image hub under
- * owner emails only"): `requireAuth` + `requireOwnerEmail` — any signed-in
+ * AUTHORISED ACCOUNTS ONLY (owner request 2026-10-05: "make the image hub under
+ * authorised accounts only"): `requireAuth` + `requireOwnerEmail` — any signed-in
  * non-owner email gets a 403 and never burns the platform AGNES key. The
  * ai-image rate-limit tier stays as the second layer, and when the chain
  * fails the endpoint answers 503 + reason so the caller can retry or show

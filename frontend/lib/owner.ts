@@ -1,5 +1,5 @@
 /**
- * Root owner email — mirrors backend/src/middleware/auth.ts.
+ * Configured operator account — mirrors backend/src/middleware/auth.ts.
  * This address always owns the platform and cannot be replaced by another
  * coded allowlist entry. Additional operators work as owner only when the
  * root owner grants them `role: "owner"` live in the database.
@@ -15,7 +15,7 @@ export function isOwnerEmail(email?: string | null): boolean {
 
 /**
  * May open the owner console / act as owner:
- *   - the root owner email, or
+ *   - the configured operator account, or
  *   - any account the root owner assigned `role: "owner"` (live DB grant).
  */
 export function isOwnerAccount(

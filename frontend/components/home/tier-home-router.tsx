@@ -15,7 +15,7 @@ import {
  * THE TIER ROUTER.
  *
  * Flow (owner 2026-11-12):
- *   Owner Gmail → Sign in on welcome → owner welcome → Go → owner home
+ *   Operator account → sign in on welcome → operator welcome → home
  *   Everyone else → universal welcome → Go → signup (or pending /welcome if
  *   this browser already created an account) → after approval + Sign in →
  *   member welcome → Go → member home with features.

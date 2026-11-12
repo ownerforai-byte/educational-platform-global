@@ -17,7 +17,7 @@ import { isOwnerAccount, OWNER_EMAIL } from "@/lib/owner";
 import { cn } from "@/lib/utils";
 
 /**
- * Owner console shell — root owner email or a live role:"owner" grant.
+ * Owner console shell — configured operator account or a live role:"owner" grant.
  * Nav kept short: Approvals is the main job; other tools are secondary.
  */
 const navItems = [

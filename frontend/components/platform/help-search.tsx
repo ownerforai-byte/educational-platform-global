@@ -14,7 +14,7 @@ export function HelpSearch() {
   return <section aria-labelledby="help-search-title" className="space-y-5">
     <h2 id="help-search-title" className="text-2xl font-bold">Find your answer</h2>
     <label htmlFor="help-query" className="block text-sm font-medium">Search accounts, access, sparks, or study tools</label>
-    <input id="help-query" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="For example: approval or content sparks" className="min-h-12 w-full rounded-xl border border-border bg-background px-4 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
+    <input id="help-query" type="search" value={query} onChange={event => setQuery(event.target.value)} placeholder="For example: plans or content sparks" className="min-h-12 w-full rounded-xl border border-border bg-background px-4 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" />
     <div className="flex flex-wrap gap-2" aria-label="Filter help topics">
       {categories.map(value => <button type="button" key={value} aria-pressed={value === category} onClick={() => setCategory(value)} className={`min-h-11 rounded-full border px-4 text-sm focus-visible:ring-2 focus-visible:ring-ring ${value === category ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card hover:bg-muted"}`}>{value}</button>)}
     </div>

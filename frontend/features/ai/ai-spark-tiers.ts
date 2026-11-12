@@ -45,7 +45,7 @@ export interface AiSparkUserLike {
 
 /**
  * Resolve the tier for a session user — the ONE resolver both the access
- * ladder and the spark allowance use. Order: root owner email or live
+ * ladder and the spark allowance use. Order: configured operator account or live
  * role:"owner" grant, then pro, then plus, then Member.
  */
 export function aiSparkTierFor(

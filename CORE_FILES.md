@@ -44,7 +44,7 @@ Canonical homes after the restructure. Many `@/lib/*` and `@/components/*` paths
 | Stream / PDF catalogs | `frontend/lib/streams/*` | `frontend/lib/chapter-resources.ts`, … |
 | Shared TS hub | `frontend/types/{api,lab,content}.ts` | `frontend/lib/types/lab.ts` → `@/types/lab` |
 | Labs / AI / practice / auth UI | `frontend/features/<domain>/` | `frontend/lib/lab-*.ts(x)`, `frontend/components/lab/*`, … |
-| Owner allowlist | `frontend/lib/owner.ts` + `backend/src/middleware/auth.ts` | — (single owner: `sahrocky81@gmail.com`) |
+| Operator configuration | `frontend/lib/owner.ts` + `backend/src/middleware/auth.ts` | — (configured operator accounts) |
 | Scoped check / gates | `scripts/ci/scoped-check.mjs` | `npm run check` |
 | Classify / corpus build | `scripts/build/*` | `npm run classify`, `content:corpus` |
 | Content tooling | `content-tools/{generators,enhancers,validators,migrators,fixers}/` | root shim `build-syllabus-notes.js` |

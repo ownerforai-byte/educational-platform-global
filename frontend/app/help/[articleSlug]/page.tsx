@@ -20,15 +20,15 @@ const HELP_ARTICLES: Record<string, { title: string; sections: { heading: string
     sections: [
       {
         heading: "How approval works",
-        body: "After you sign up, the owner reviews your account. This is a manual step — there is no automatic approval. Most accounts are approved within a few hours, but it can take longer during busy periods.",
+        body: "After signing, the account is approved by the system verification and administrative approval.",
       },
       {
         heading: "Checking your status",
-        body: "If your account is pending, you will see a status screen when you open the app. If it was denied, the status screen explains why — you can create a new account afterward. You can leave a message to this email; sahrocky81@gmail.com to appeal or ask for an update.",
+        body: "After signing, the account is approved by the system verification and administrative approval.",
       },
       {
         heading: "What to do while you wait",
-        body: "Guest access is available immediately — you can use the home chat box. Once approved, your tier (Member, Plus, Pro, or Owner) determines which sections you can open.",
+        body: "Guest access is available immediately — you can use the home chat box. After signing, the account is approved by the system verification and administrative approval.",
       },
     ],
   },
@@ -54,15 +54,15 @@ const HELP_ARTICLES: Record<string, { title: string; sections: { heading: string
     sections: [
       {
         heading: "How content access works",
-        body: "Every section on the platform has a minimum tier. Guest content is free. Member content requires an approved account. Plus and Pro unlock advanced features like AI Studio, 3D labs, mock exams, and analytics.",
+        body: "Guest content is free. Each plan opens a different set of sections, including AI Studio, 3D labs, mock exams, and analytics. After signing, the account is approved by the system verification and administrative approval.",
       },
       {
-        heading: "Who gets approved, and as what",
-        body: "Everyone except the owner signs in as a Member and then waits for approval. Registering does not open the library by itself: the owner reviews the account, and only an approved Member account can move up the ladder. Questions about a pending approval go to sahrocky81@gmail.com.",
+        heading: "Account approval",
+        body: "After signing, the account is approved by the system verification and administrative approval.",
       },
       {
         heading: "Upgrading your tier",
-        body: "Visit the Plans page to see pricing and upgrade. Your tier is reflected immediately after payment confirmation.",
+        body: "Visit the Plans page to compare what each plan includes.",
       },
     ],
   },

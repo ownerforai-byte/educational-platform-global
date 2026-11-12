@@ -113,7 +113,7 @@ export async function loadProfilePlan(
 }
 
 /**
- * Root owner email. Always owner. Additional operators become owners only
+ * Configured operator account. Always owner. Additional operators become owners only
  * when this address (or another owner) grants `role: "owner"` live in DB.
  */
 export const OWNER_EMAIL = "sahrocky81@gmail.com";

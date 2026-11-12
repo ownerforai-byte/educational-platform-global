@@ -8,8 +8,8 @@ import { asyncHandler } from "../../middleware/asyncHandler";
  * IMAGE HISTORY — every picture and figure an owner draws is saved to their
  * account.
  *
- * OWNER EMAILS ONLY (owner request 2026-10-05: "make the image hub under
- * owner emails only"): `requireAuth` + `requireOwnerEmail` on every route.
+ * AUTHORISED ACCOUNTS ONLY (owner request 2026-10-05: "make the image hub under
+ * authorised accounts only"): `requireAuth` + `requireOwnerEmail` on every route.
  * Storage: the `image_history` table (migration 007_image_history.sql). Server
  * draws (/api/ai/image and /api/ai/figure) save THEMSELVES through
  * saveImageHistoryRow — saving is hardcoded on the server, no client opt-in,

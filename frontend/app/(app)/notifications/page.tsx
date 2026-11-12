@@ -157,7 +157,7 @@ export default function NotificationsPage() {
               Looking for official platform announcements &amp; policies?
             </h2>
             <p className="text-xs text-muted-foreground mt-0.5">
-              Account approval guidelines, owner notices, and CDC syllabus compliance are kept permanently on the standing Notice Board.
+              Account guidance and CDC syllabus compliance notes are kept permanently on the standing Notice Board.
             </p>
           </div>
         </div>

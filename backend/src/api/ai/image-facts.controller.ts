@@ -19,7 +19,7 @@ import { getWorkLaneProvider } from "../../ai/config";
  * contract as /api/ai/enhance), so the details panel degrades to its
  * metadata-only state instead of failing the modal.
  *
- * OWNER EMAILS ONLY (owner request 2026-10-05) — like the rest of the hub.
+ * AUTHORISED ACCOUNTS ONLY (owner request 2026-10-05) — like the rest of the hub.
  */
 const router = Router();
 

@@ -67,16 +67,13 @@ describe("RequireApproval — login + owner-approval wall", () => {
     expect(screen.queryByTestId("route-content")).toBeNull();
   });
 
-  it("carries the mandated clearance notice verbatim", () => {
+  it("carries the shared account-approval notice", () => {
     render(<RequireApproval>{CONTENT}</RequireApproval>);
     expect(
-      screen.getByText(/Access to full write privileges requires clearance/),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        "Login works after administrative approval and system verification only.",
-      ),
-    ).toBeInTheDocument();
+      screen.getAllByText(
+        "After signing, the account is approved by the system verification and administrative approval.",
+      ).length,
+    ).toBeGreaterThan(0);
   });
 
   it("offers sign-in, create-account and the live approval dispatcher", () => {

@@ -55,7 +55,7 @@ const TIER_BLURB: Record<UserTier, string> = {
   pro:
     "The journal, worked numericals, the CEE track and the board exam suite are open, with every index: derivations, the PDF library, graph banks and the knowledge hubs.",
   owner:
-    "Operator access: everything Pro has, unlimited Veer sparks, plus the owner console — user tiers, grants, content control and live audit.",
+    "Everything is open, with unlimited Veer sparks.",
 };
 
 const TIER_CTA: Record<UserTier, string> = {
@@ -99,7 +99,7 @@ function TierWelcome({ tier }: { tier: UserTier }) {
         {/* What this plan opens */}
         <div className="rounded-2xl border-2 border-border/80 bg-muted/20 p-4">
           <p className="text-xs font-semibold text-muted-foreground">
-            What&apos;s open at your rung
+            What&apos;s open in your plan
           </p>
           <div className="mt-2 flex flex-wrap gap-1.5">
             {open.slice(0, 10).map((s) => (
@@ -143,7 +143,7 @@ function TierWelcome({ tier }: { tier: UserTier }) {
  * Flow (owner 2026-11-12): guest → welcome → Go → sign-in / account creation
  * → created-successfully / pending screen. Returning browsers that already
  * created an account keep the same welcome; Go opens the pending page until
- * the owner approves. Signed-in viewers never see this page — the tier router
+ * approval completes. Signed-in viewers never see this page — the tier router
  * replaces them onto their own welcome.
  */
 export function UniversalWelcome() {
@@ -181,8 +181,7 @@ export function UniversalWelcome() {
         <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-muted-foreground">
           NEB Class 11 &amp; 12, taught like a beautiful notebook — complete
           notes, 3D labs, rigorous proofs, past papers and Veer, your tutor.
-          Press Go to create an account and wait for approval. Owner Gmail
-          signs in directly — no waiting queue.
+          Press Go to create an account. After signing, the account is approved by the system verification and administrative approval.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

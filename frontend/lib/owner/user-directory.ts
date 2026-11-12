@@ -38,7 +38,7 @@ function tierOf(u: OwnerUser): string {
 }
 
 /**
- * Root owner email only — fixed platform owner shown in the plain roster.
+ * Configured operator account only — fixed platform owner shown in the plain roster.
  * Assigned operators (`role: "owner"` on another email) stay in Members so
  * they can be re-tiered or revoked.
  */
@@ -55,7 +55,7 @@ export type OwnerSystem = "review" | "approved";
 
 /**
  * Partition with no overlap:
- * - owners:   root owner email only (plain roster)
+ * - owners:   configured operator account only (plain roster)
  * - review:   PENDING accounts awaiting a decision
  * - approved: ACTIVE/REJECTED accounts (includes assigned owners)
  */

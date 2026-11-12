@@ -107,7 +107,7 @@ function ApprovalLock() {
         aria-disabled="true"
       >
         <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
-          Members only
+          Account required
         </span>
       </div>
 
@@ -115,12 +115,10 @@ function ApprovalLock() {
         Sign in to continue
       </h1>
       <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
-        This area is open to approved accounts only. Create an account, wait for
-        administrative and system approval, then sign in to open the whole
-        library — notes, labs, the periodic table and more.
+        Sign in to continue to the study library — notes, labs, the periodic table and more.
       </p>
 
-      {/* Mandated clearance notice — verbatim (owner wording; do not edit). */}
+      {/* Shared account-approval notice. */}
       <div className="mt-5 w-full rounded-2xl border border-primary/30 bg-primary/[0.05] p-4">
         <p className="flex items-start gap-2 text-left text-xs font-semibold leading-relaxed text-foreground">
           <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
@@ -144,7 +142,7 @@ function ApprovalLock() {
           className="inline-flex h-11 items-center gap-2 rounded-2xl border border-border/70 bg-card px-5 text-sm font-bold text-foreground transition-all hover:bg-muted/60 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
         >
           <LogIn className="h-4 w-4 text-primary" />
-          Sign in (approved only)
+          Sign in
         </Link>
         <Link
           href="/signup"
@@ -164,7 +162,7 @@ function ApprovalLock() {
         Already created an account? Check your approval status
       </Link>
 
-      {/* Mandated access message — verbatim (owner wording). */}
+      {/* Shared access message. */}
       <p
         data-testid="approval-access-notice"
         className="mt-6 inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground"

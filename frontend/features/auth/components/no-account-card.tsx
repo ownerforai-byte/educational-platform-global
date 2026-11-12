@@ -29,9 +29,7 @@ export function NoAccountCard() {
       </div>
 
       <p className="text-center text-xs leading-relaxed text-muted-foreground">
-        We checked this device&apos;s signup record and found no account waiting
-        for approval. Create an account first — once it has been approved you can
-        track its status here and sign in.
+        After signing, the account is approved by the system verification and administrative approval.
       </p>
 
       <div className="flex flex-wrap items-center justify-center gap-2">
@@ -53,8 +51,7 @@ export function NoAccountCard() {
       </div>
 
       <p className="text-center text-[11px] text-muted-foreground">
-        Already created an account and waiting for approval? That status page
-        opens automatically from the access screen once your signup is recorded.
+        After signing, the account is approved by the system verification and administrative approval.
       </p>
     </div>
   );

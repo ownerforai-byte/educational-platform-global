@@ -351,7 +351,7 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 - Cookie `secure` flag + strict CORS key off `isProductionEnv()` (`src/config/env.ts`), which
   treats `NODE_ENV=production` OR Render's injected `RENDER=true` / `RENDER_EXTERNAL_URL`
   as production.
-- Owner accounts (5) authenticate with credentials supplied at runtime (`OWNER_PASSWORD_*` env vars, or a Supabase Auth admin reset); role OWNER via `OWNER_EMAILS`. Values are never committed.
+- Operator accounts authenticate with credentials supplied at runtime; roles are resolved from configured operator accounts. Values are never committed.
 
 ### Security posture (fixed & verified live)
 - `/api/ai/generate-questions`: was anonymous (burned paid AI credits) → now requireAuth + credit check.

@@ -20,7 +20,7 @@ import { sendApprovalEmail } from "../../utils/mailer";
  *   2. An owner account: root email (sahrocky81@gmail.com) OR a live
  *      `role: "owner"` grant assigned from the console.
  *
- * Member/Plus/Pro access is live (`access_status`). The root owner email can
+ * Member/Plus/Pro access is live (`access_status`). The configured operator account can
  * assign owner to another Gmail; that address then works as owner. The root
  * email itself cannot be re-tiered, revoked, or deleted.
  */
@@ -42,11 +42,11 @@ async function resolveTargetEmail(userId: string): Promise<string | null> {
   return emails.get(userId) ?? null;
 }
 
-/** Root owner email is fixed — assigned owners cannot replace or strip it. */
+/** Configured operator account is fixed — assigned owners cannot replace or strip it. */
 function refuseRootOwnerEmailTarget(res: Response, email: string | null): boolean {
   if (email && isOwnerEmail(email)) {
     res.status(403).json({
-      error: "The root owner email cannot be re-tiered, revoked, or deleted",
+      error: "The configured operator account cannot be re-tiered, revoked, or deleted",
     });
     return true;
   }

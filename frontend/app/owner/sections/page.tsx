@@ -22,7 +22,7 @@ import { updateOwnerSettings } from "@/lib/api/owner";
  * The section registry (lib/sections.ts) holds the CODE defaults; each change
  * here is stored as `settings.key = "section_min_tier.<id>"`, published on
  * GET /api/config, and applied by the rails, the /plans matrix and the section
- * gate everywhere at once. Operator-only: hidden below the owner rung.
+ * gate everywhere at once. Operator-only: hidden below the operator tier.
  */
 
 const TIER_CHIP: Record<AccessLevel, string> = {
@@ -83,7 +83,7 @@ export default function OwnerSectionsPage() {
           </div>
           <CardTitle className="mt-4 text-xl">Operator surface</CardTitle>
           <CardDescription className="mt-2 text-sm">
-            The section access rules live in the owner console.
+            This area is not available for your account.
           </CardDescription>
         </Card>
       </div>
@@ -99,10 +99,10 @@ export default function OwnerSectionsPage() {
           <Crown className="h-5 w-5 text-amber-500" />
         </div>
         <div>
-          <h1 className="text-2xl font-extrabold tracking-tight">Section Access Rules</h1>
+          <h1 className="text-2xl font-extrabold tracking-tight">Section settings</h1>
           <p className="text-xs text-muted-foreground">
-            Every content section and the minimum rung that opens it — change a rung and the
-            rails, /plans and the gates follow immediately.
+            Each section and the plan that opens it. Changes apply across the
+            rails, /plans and the section views immediately.
           </p>
         </div>
       </div>

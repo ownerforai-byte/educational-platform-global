@@ -119,7 +119,7 @@ function accessDenied(res: Response, status: AccessStatus, userId?: string): voi
     error: pending ? "Account pending approval" : "Account denied",
     code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
     message: pending
-      ? "Your account was created and is awaiting approval. You can sign in after administrative and system approval."
+      ? "After signing, the account is approved by the system verification and administrative approval."
       : "This account was denied. You can create a new account, or leave a message to sahrocky81@gmail.com.",
     statusToken: userId ? createStatusToken(userId) : undefined,
   });
@@ -290,7 +290,7 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
         error: pending ? "Account pending approval" : "Account denied",
         code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
         message: pending
-          ? "Your account was created and is awaiting approval."
+          ? "After signing, the account is approved by the system verification and administrative approval."
           : "This account was denied. You can create a new account, or leave a message to sahrocky81@gmail.com.",
         ...(statusToken ? { statusToken } : {}),
         ...(pending ? { user: null, accessToken: null } : {}),
@@ -361,7 +361,7 @@ router.post("/signup", async (req: Request, res: Response) => {
   }
 
   // One account per device without approval (owner 2026-11-09).
-  // Owner Gmail bypasses the device gate and the pending queue — direct login.
+  // Operator accounts bypass the device gate — direct login.
   const ownerSignup = isOwnerEmail(parsed.data.email);
   let deviceId: string | null = null;
   if (!ownerSignup) {
@@ -421,7 +421,7 @@ router.post("/signup", async (req: Request, res: Response) => {
       return;
     }
 
-    // ── Owner-approval flow: new accounts start PENDING ──
+    // ── Account creation flow: new accounts start PENDING ──
     // NO session cookies are issued; the client gets a signed status token
     // and is sent to the status screen instead of being logged in.
     const accessStatus = await readAccessStatus(result.user.id, result.user.email);
@@ -434,7 +434,7 @@ router.post("/signup", async (req: Request, res: Response) => {
         user: null,
         accessToken: null,
         message:
-          "Your account was created and is awaiting approval. You can sign in after administrative and system approval.",
+          "After signing, the account is approved by the system verification and administrative approval.",
         statusToken: createStatusToken(result.user.id),
         accessStatus: "PENDING",
       };

@@ -95,7 +95,7 @@ export default function PdfLibraryPage() {
   const [mdLoading, setMdLoading] = useState(false);
   const [filter, setFilter] = useState<Filter>("All");
 
-  // Owner Console card: the interactive topics-mindmap site is owner-only.
+  // Reference materials card: the interactive topics-mindmap site.
   // The check is mounted-gated so SSR and first paint match exactly.
   const { user } = useSession();
   const [ownerReady, setOwnerReady] = useState(false);
@@ -150,20 +150,19 @@ export default function PdfLibraryPage() {
         </div>
       </div>
 
-      {/* Owner console — the interactive topics-mindmap site. Owner-only:
-          everyone else gets a plain disabled card (no lock icons, just not
-          highlighted — the platform-wide restricted-access treatment). */}
-      <section className="space-y-3" aria-label="Owner console">
+      {/* Reference materials — the interactive topics-mindmap site. A plain
+          disabled card is shown when the materials are not available. */}
+      <section className="space-y-3" aria-label="Reference materials">
         <div className="flex items-center gap-2.5">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl border border-violet-500/20 bg-violet-500/10 text-violet-600 dark:text-violet-400">
             <Network className="h-5 w-5" />
           </div>
           <div>
-            <h2 className="text-base font-bold tracking-tight">Owner Console</h2>
+            <h2 className="text-base font-bold tracking-tight">Reference materials</h2>
             <p className="text-[11px] text-muted-foreground">
               {isOwner
-                ? "Owner-only materials — enabled for your account."
-                : "Owner-only materials — shown here, access stays with the owner."}
+                ? "Reference materials — available for your account."
+                : "Reference materials — shown here when available."}
             </p>
           </div>
         </div>
@@ -197,7 +196,7 @@ export default function PdfLibraryPage() {
             </a>
           ) : (
             <Button disabled className="rounded-xl px-4 py-2 text-xs">
-              Owner console only
+              Available with full access
             </Button>
           )}
         </div>

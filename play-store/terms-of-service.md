@@ -16,11 +16,10 @@ Class 11 & 12 (+2) students. It is provided **as a learning aid**, not as a
 substitute for your own syllabus, textbooks, teachers, or exam authority
 guidance.
 
-## 2. Eligibility and account approval
+## 2. Eligibility and accounts
 
 - You must be able to form a binding contract, or have parental consent.
-- **New accounts start as "pending"** and are activated by an administrator.
-  You cannot use authenticated features until your account is approved.
+- After signing, the account is approved by the system verification and administrative approval.
 - You must provide a valid email and keep your login credentials confidential.
 - You are responsible for all activity under your account.
 
@@ -39,7 +38,7 @@ guidance.
 You agree NOT to:
 - Use the Service to commit fraud, unlawful acts, or harass others
 - Attempt to break, hack, or reverse-engineer the Service
-- Circumvent rate limits, credit limits, or account approvals
+- Circumvent rate limits, credit limits, or access controls
 - Upload malicious, infringing, or illegal files
 - Use the Service in a way that harms others or interferes with others' use
 

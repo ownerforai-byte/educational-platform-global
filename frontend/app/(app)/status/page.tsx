@@ -166,7 +166,7 @@ export default function StatusPage() {
 
       <p className="sequential-block-reveal rounded-2xl border border-dashed border-border/70 bg-muted/20 p-4 text-xs leading-6 text-muted-foreground" style={{ animationDelay: "270ms" }}>
         If one route fails but the rest of the app works, include the exact path in your feedback. For
-        account or access questions, the Help Center explains the tier gates and approval flow.
+        account or access questions, the Help Center explains the most common access questions.
       </p>
     </div>
   );

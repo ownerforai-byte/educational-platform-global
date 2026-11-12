@@ -13,7 +13,7 @@ A full-stack study platform covering Physics, Chemistry, Biology, Mathematics, E
 
 - **Veer AI tutor** — syllabus-grounded answers via Agnes (primary) + 10 free-tier LLM fallbacks so one provider outage never takes the tutor down
 - **Content vault** — ~1,000 concept notes, formula sheets, PYQ banks, mindmaps, 3D labs and formula derivations locked behind a spark-gated endpoint (CDN leak closed)
-- **Five-tier access ladder** — visitor → member → plus → pro → owner, enforced end-to-end from the backend endpoint to the UI gate
+- **Plan-based access** — each plan opens a different set of sections, applied consistently across the app
 - **PWA** — offline-capable, installable on Android (Play Store) and iOS (Add to Home Screen)
 - **Visual mindmaps** — interactive SVG branch trees per syllabus unit with KaTeX derivations
 

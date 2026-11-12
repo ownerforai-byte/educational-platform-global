@@ -24,7 +24,7 @@ export default function ParentsPage() {
               card turn that work into a repeatable review loop.
             </p>
             <p>
-              Access is approval-based and plan-specific, so a student may not see every section
+              Access depends on the plan, so a student may not see every section
               immediately. That is expected, not a broken page.
             </p>
           </Panel>

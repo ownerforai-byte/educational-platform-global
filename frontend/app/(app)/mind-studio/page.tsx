@@ -4,7 +4,7 @@ import { ImageHubLazy } from "@/features/image-hub/image-hub-lazy";
 export const metadata: Metadata = {
   title: "Diagram Hub · Ravikisan's Platform",
   description:
-    "Owner-only drawing studio: describe a labelled diagram, an academic figure or a picture and the hub draws it on the server, with the gallery saved to your account and downloads.",
+    "Drawing studio: describe a labelled diagram, an academic figure or a picture and the hub draws it on the server, with the gallery saved to your account and downloads.",
 };
 
 /**
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
  * prompt → server drawing engines → gallery. Renamed Diagram Hub on
  * 2026-10-07 (owner: no vendor name, no "AI" wording).
  *
- * Owner emails only (owner requests 2026-10-05 / 2026-10-06): the route sits
+ * Authorised accounts only (owner requests 2026-10-05 / 2026-10-06): the route sits
  * under the coin gate priced at 5 coins — owners open it free, and a
  * non-owner's unlock is refused (provider + the server unlock route), so
  * only owner emails ever reach the studio. The backend gates

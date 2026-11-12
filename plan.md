@@ -38,10 +38,10 @@ Rank order — a viewer reaches everything at or below their rung:
 | Rung | Who | How you get it |
 |---|---|---|
 | **Guest** | Signed-out visitor | Arriving at the site |
-| **Member** | Signed-in base | Account approval (manual loop) |
-| **Plus** | Elevated member | Plan grant (owner-awarded) |
-| **Pro** | Power member | Plan grant (owner-awarded) |
-| **Owner** | Platform owner & trusted operators | Owner email allowlist / owner grant |
+| **Member** | Signed-in base | System verification and administrative approval |
+| **Plus** | Elevated member | Administrative approval |
+| **Pro** | Power member | Administrative approval |
+| **Owner** | Platform operator | Administrative approval |
 
 The legacy role words (STUDENT / TEACHER / ADMIN / OWNER) are **retired**.
 Migration: **every existing account is an Owner-tier account** (there are no
@@ -88,11 +88,9 @@ future accounts enter at `member`).
 - Journal (same as Plus) + richer export
 - Veer AI chat — 50 sparks / day, priority queue
 
-**👑 Owner — "Everything, plus the controls"**
+**👑 Operator — "Everything, in one place"**
 - Everything in Pro, unlimited Veer sparks
-- **Owner rails & console**: user control (grant/adjust tiers), content
-  control (publish/classify/retire sections), grant management (R1 access,
-  temporary `plus_20` passes), platform settings, live audit
+- Full access to every study section and learning tool
 - Control & management surface — see §6
 
 ---
@@ -127,8 +125,8 @@ tutor. Each row is a **section**; sections render as compact horizontal rails.
 | 21 | **AI Quiz** | Adaptive quiz, free guest pool | Guest |
 | 22 | **Resources & Reference** | Extra references, practical notebooks | Member |
 | 23 | **Progress & Profile** | XP, streaks, badges, credits wallet | Member |
-| 24 | **R1 Daily Life** | Activities, plans, journal, habits | Owner-granted |
-| 25 | **Owner Console** | Control & management (§6) | Owner |
+| 24 | **R1 Daily Life** | Activities, plans, journal, habits | Approved |
+| 25 | **Operator Surface** | Configuration & management (§6) | Operator |
 
 Diversity rule: if a new kind of content appears (e.g. "Flashcards"), it lands
 as a **new section row** with a declared `minTier` — never as an endless column
@@ -163,29 +161,23 @@ The guest-facing surface is small and complete:
    (§3 rendered as a matrix). Visible to *everyone*; this replaces `/pro-plan`
    and every scattered "Pro plan" card. Route: **`/plans`** (public, read-through
    — listed in `PUBLIC_PATHS`, never blurred).
-3. **Notice board** — access notices ("Login is mentored at 8:00 PM").
+3. **Notice board** — standing account and study notices.
 4. Free-section rails (Visuals, 3D Labs, Diagram Hub) with locked previews of
    the rest.
 
 ---
 
-## 6. Control & Management (Owner)
+## 6. Control & Management (Operator)
 
-The owner console is the stewardship layer — it manages the ladder and the
-sections:
+The operator surface manages plans and sections:
 
-- **User control** — list accounts, grant/adjust tier (Member/Plus/Pro/Owner),
-  grant temporary passes (`plus_20` with expiry), revoke, view activity.
-  (This replaces the old role dropdown; the underlying role column is retired.)
-- **Content control** — publish / classify / retire sections and their items;
-  set a section's `minTier`; verify classification coverage (every content
-  family lands in exactly one section).
-- **Grant management** — R1 access grants, owner-email allowlist, feature flags.
-- **Platform settings** — spark allotments per tier, unlock-window length,
-  maintenance toggles.
+- **Account control** — list accounts and adjust plans.
+- **Content control** — publish / classify / retire sections and their items.
+- **Plan settings** — available sections and allowances per plan.
+- **Maintenance** — feature flags and service toggles.
 - **Audit** — live content ledger + live smoke status (already wired to CI).
 
-Owner-tier detection: owner email allowlist stays authoritative; everything else
+Operator detection: configured operator accounts stay authoritative; everything else
 enters at `member` and is promoted by grant.
 
 ---
@@ -236,9 +228,9 @@ existing journal store. ✅ Shipped: `lib/sections.ts` (25 rows), the horizontal
 `HomeSections` rail on home AND the class-11/class-12 portals, and the
 `journal` section (minTier plus) behind `hasLevel(user, "plus")`.
 
-**P4 — Availability gates.** Enforce `minTier` per section end-to-end: rails
-dim locked cards, section pages gate entry, APIs scope by tier. Owner console
-gains tier grants + section `minTier` control. ✅ Shipped:
+**P4 — Availability gates.** Enforce plan-based section availability
+end-to-end: rails dim locked cards, section pages gate entry, APIs scope by plan.
+✅ Shipped:
 `SectionTierGate` (dimmed locked card + one-tap `/plans`, never a dead end),
 `requireTier(min)` tier-scoped APIs (`/api/pyqs` at Plus), `/owner/users` tier
 grants, and `/owner/sections` minimums → `settings` → `/api/config` → the
@@ -279,7 +271,7 @@ smoke, deploy `main` (Vercel + Render), verify live.
       (`SectionTierGate`: dimmed card naming the rung + "See plans"/"Go to my
       home"; rails keep locked cards dimmed with the rung chip. Pinned in
       `tests/features/section-tier-gate.test.tsx`.)
-- [x] Owner console can grant/adjust every tier and change section minimums.
+- [x] Plans and section settings can be adjusted from the operator surface.
       (`/owner/users` grants/adjusts member|plus|pro|owner + credits/premium;
       `/owner/sections` edits each section's rung → `settings
       .section_min_tier.<id>` → `GET /api/config` → rails, matrix and gates.)
@@ -659,7 +651,7 @@ raw full suites green, `npm run check:all` green.
 
 - [ ] P1  Privacy-friendly product analytics (Plausible/PostHog): signup->first lesson->quiz funnel, D1/D7/D30 retention
 - [ ] P1  Nepali UI language toggle (no i18n framework today; content is already bilingual in places)
-- [ ] P2  Local payments for premium (eSewa / Khalti / Fonepay); today premium is request + manual approval
+- [ ] P2  Local payments for premium (eSewa / Khalti / Fonepay); today premium is request-based
 - [ ] P2  SEO for public pages (sitemap, structured data), shareable result/streak cards
 - [ ] P2  Teacher/class tools (assign, class progress) if you want school adoption
 

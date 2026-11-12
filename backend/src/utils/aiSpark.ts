@@ -53,7 +53,7 @@ export interface AiSparkUser {
 
 /**
  * Resolve the tier for one request — the ONE resolver the spark allowance
- * and the section gates share. Order: root owner email or live role:"owner"
+ * and the section gates share. Order: configured operator account or live role:"owner"
  * grant, then pro, then plus, then Member. Signed-out is guest.
  */
 export function aiSparkTierFor(

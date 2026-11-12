@@ -3,9 +3,9 @@ import { WelcomeStatus } from "@/features/auth/components/welcome-status";
 import { WelcomeApprovalScreen } from "@/features/auth/components/account-screen-gate";
 
 export const metadata: Metadata = {
-  title: "Awaiting Approval — Ravikisan's Platform",
+  title: "Account Status — Ravikisan's Platform",
   description:
-    "Your account was created on this device and is awaiting administrative and system approval.",
+    "After signing, the account is approved by the system verification and administrative approval.",
 };
 
 /**

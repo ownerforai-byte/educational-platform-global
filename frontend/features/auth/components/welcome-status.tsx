@@ -282,7 +282,7 @@ export function WelcomeStatus() {
           }
           title="Awaiting approval"
           badge={<StatusPill status="PENDING" />}
-          body={`Your account was created and is awaiting approval. You can sign in after administrative and system approval — this page checks live every few seconds (checked ${checkCount}×), so keep it open or come back anytime.`}
+          body={`After signing, the account is approved by the system verification and administrative approval. This page checks live every few seconds (checked ${checkCount}×), so keep it open or come back anytime.`}
           actions={
             <>
               <button
@@ -307,7 +307,7 @@ export function WelcomeStatus() {
       {/* ── Trust footer — kept, with its sign, below the note (owner 2026-10-17) ── */}
       <p className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground">
         <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
-        Approval is handled manually by the platform owner — usually within a day.
+        After signing, the account is approved by the system verification and administrative approval.
       </p>
     </div>
   );
@@ -323,9 +323,9 @@ function MessageOwnerBox({ name }: { name: string | null }) {
   const [message, setMessage] = useState("");
   const first = name?.trim().split(/\s+/)[0] ?? "there";
   const send = () => {
-    const subject = encodeURIComponent("Account approval — a note while I wait");
+    const subject = encodeURIComponent("A note about my account");
     const body = encodeURIComponent(
-      `Hi Ravikisan,\n\nI'm waiting for account approval and wanted to send a quick note.\n\n${
+      `Hi Ravikisan,\n\nI'm writing about my account and wanted to send a quick note.\n\n${
         message.trim() || "(no message)"
       }\n\n— ${name ?? "A new student"}`,
     );

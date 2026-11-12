@@ -132,7 +132,7 @@ describe("tier desk", () => {
     render(<OwnerHome rails={<div data-testid="subject-rails" />} />);
     expect(screen.getByText("Owner interface")).toBeInTheDocument();
     expect(
-      within(screen.getByTestId("spotlights")).getByText("The full control surface."),
+      within(screen.getByTestId("spotlights")).getByText("Everything in one place."),
     ).toBeInTheDocument();
   });
 });

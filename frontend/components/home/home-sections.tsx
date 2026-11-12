@@ -12,7 +12,7 @@ import { ACCESS_LABELS, type AccessLevel } from "@/lib/access-level";
  * Every content section appears as a compact card in ONE horizontal rail:
  * no vertical walls. Restricted sections stay visible in a muted disabled
  * state, without a lock icon or an actionable route. Operator-only surfaces
- * (owner console) are hidden entirely below the owner rung.
+ * (operator surface) are hidden entirely below the operator tier.
  */
 
 const TIER_CHIP: Record<AccessLevel, string> = {

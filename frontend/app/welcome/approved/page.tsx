@@ -4,7 +4,7 @@ import { ApprovedScreen } from "@/features/auth/components/account-screen-gate";
 export const metadata: Metadata = {
   title: "Access Granted — Ravikisan's Platform",
   description:
-    "This device's account was approved. Sign in to open the study library.",
+    "Sign in to open the study library.",
 };
 
 /**

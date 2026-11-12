@@ -181,7 +181,7 @@ export function CreditProvider({ children }: { children: ReactNode }) {
       if (isUnlockedIn(unlocks, key)) return true;
 
       // 2b. The Diagram Hub is owner-exclusive (owner request 2026-10-06:
-      // "available for owner emails only … free for owner and only for
+      // "available for authorised accounts only … free for owner and only for
       // owner"). Non-owners see its unavailable state but must never be charged
       // for it — refuse before any coin moves. The unlock server enforces
       // the same rule authoritatively.

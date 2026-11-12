@@ -28,10 +28,10 @@ export default function TermsOfService() {
       </section>
 
       <section>
-        <h2>2. Eligibility &amp; account approval</h2>
+        <h2>2. Eligibility &amp; accounts</h2>
         <ul>
           <li>You must be able to form a binding contract or have parental consent.</li>
-          <li>New accounts start <strong>pending</strong> and are activated by an administrator; authenticated features are unavailable until approval.</li>
+          <li>After signing, the account is approved by the system verification and administrative approval.</li>
           <li>Provide a valid email and keep credentials confidential; you are responsible for account activity.</li>
         </ul>
       </section>

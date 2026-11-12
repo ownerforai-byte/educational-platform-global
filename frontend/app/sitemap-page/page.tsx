@@ -29,8 +29,8 @@ export default function SitemapPage() {
             indexed. Each card below previews the first {SITEMAP_PREVIEW} entries in its group.
           </p>
           <p>
-            The in-app index adds search and expands every group. Some destinations require an approved
-            account and the matching access tier.
+            The in-app index adds search and expands every group. Some destinations
+            require an account.
           </p>
           <Action href="/site-index" secondary>
             Open the searchable Everything Index

@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: "Notice Board — Ravikisan's Platform",
   description:
-    "Standing notices for Ravikisan's Platform: account approval, the daily spark pool, saved chat history, how Veer grounds its answers, and how to reach the owner.",
+    "Standing notices for Ravikisan's Platform: accounts, the daily spark pool, saved chat history, how Veer grounds its answers, and how to get in touch.",
 };
 
 /**
@@ -35,10 +35,8 @@ export const metadata: Metadata = {
  *     site index — `tests/lib/site-index-coverage.test.ts` only requires the
  *     NAV destinations to be indexed, so a hidden route stays legal.
  *
- * Owner request (2026-09-30, second): the mailto and the Instagram profile come
- * off the footer and live HERE instead. This page is where the owner speaks in
- * his own words, so it is the one place that should also say how to reach him;
- * every other page stops carrying his address.
+ * The contact details and profile live HERE instead of the footer. This is
+ * the one place that carries them; every other page links here.
  *
  * Every notice below states something the platform actually does — no
  * countdowns, no "maintenance windows", nothing that would need updating to
@@ -64,9 +62,9 @@ interface Notice {
 const NOTICES: Notice[] = [
   {
     icon: ShieldCheck,
-    title: "Accounts are approved by the owner",
+    title: "Account approval",
     body:
-      "Login works after administrative approval and system verification only. Sign in with Google and your request is reviewed — until it is approved the account stays closed, and nothing you have written is lost.",
+      "After signing, the account is approved by the system verification and administrative approval.",
   },
   {
     icon: Coins,
@@ -107,7 +105,7 @@ const NOTICES: Notice[] = [
     icon: Mail,
     title: "Corrections, requests and access",
     body:
-      "Found a mistake in a note, want a topic covered, or need PRO access on your account? Write to the owner directly — a wrong note is corrected at the source, for everyone. Everyone except the owner signs in as a Member and waits for approval. His address and profile are on this page and nowhere else on the site.",
+      "Found a mistake in a note, want a topic covered, or need help with access? After signing, the account is approved by the system verification and administrative approval. Contact details are on this page.",
     href: "mailto:sahrocky81@gmail.com",
     linkLabel: "sahrocky81@gmail.com",
   },

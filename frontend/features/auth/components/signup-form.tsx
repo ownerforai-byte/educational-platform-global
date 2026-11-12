@@ -44,7 +44,7 @@ export function SignupForm() {
     setLoading(false);
 
     if (result.ok && result.statusToken) {
-      // Owner-approval flow: account created but NOT logged in — hand the
+      // Account creation flow: account created but NOT logged in — hand the
       // signed status token to the /welcome screen, which shows the
       // "created successfully / awaiting approval" state and polls it.
       // The hardcoded pending-signup identity is persisted in three stores so

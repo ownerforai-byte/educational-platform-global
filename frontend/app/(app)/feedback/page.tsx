@@ -74,7 +74,7 @@ export default function FeedbackPage() {
 
       <div className="rounded-2xl border border-border bg-muted/40 p-5">
         <p className="text-sm text-muted-foreground">
-          All feedback is routed through the owner&apos;s contact channel. There
+          All feedback is routed through the contact channel. There
           is no automated form that pretends to send — your report goes to a real
           person who reads it. Include as much detail as you can.
         </p>

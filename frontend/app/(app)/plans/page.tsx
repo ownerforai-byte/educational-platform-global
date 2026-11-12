@@ -4,7 +4,7 @@ import { PlansGuidance } from "@/components/platform/plans-guidance";
 
 export const metadata: Metadata = {
   title: "Plans & Access | Ravikisan's Platform",
-  description: "Compare platform access levels, section availability, and how to request an owner-granted plan.",
+  description: "Compare platform access levels and section availability.",
 };
 import {
   Crown,
@@ -20,11 +20,11 @@ import { ACCESS_TAGLINES, type AccessLevel } from "@/lib/access-level";
 import { SectionMatrix } from "@/components/plans/section-matrix";
 
 /**
- * /plans — the public tier ladder (plan.md §2.1 + §3).
+ * /plans — the public plan comparison.
  *
  * A guest page: visible to everyone, never blurred, never coin-gated. It is
- * the single place that explains what each access rung includes and which
- * content sections each rung opens. Replaces the retired /pro-plan page.
+ * the single place that explains what each plan includes and which content
+ * sections each plan opens. Replaces the retired /pro-plan page.
  */
 
 interface TierCard {
@@ -59,7 +59,7 @@ const TIER_CARDS: TierCard[] = [
     icon: GraduationCap,
     accent: "border-emerald-500/30 bg-gradient-to-br from-emerald-500/10 via-card to-card",
     chip: "bg-emerald-500/15 text-emerald-500",
-    who: "Approved accounts",
+    who: "Standard accounts",
     features: [
       "The guest home chat widget",
       "13 Veer sparks per day — Study, Nepali, and Grammar chats only",
@@ -72,7 +72,7 @@ const TIER_CARDS: TierCard[] = [
     icon: Sparkles,
     accent: "border-sky-500/30 bg-gradient-to-br from-sky-500/10 via-card to-card",
     chip: "bg-sky-500/15 text-sky-500",
-    who: "Owner-granted plan",
+    who: "Available plan",
     features: [
       "Everything in Member, plus:",
       "Search the whole library",
@@ -94,7 +94,7 @@ const TIER_CARDS: TierCard[] = [
     icon: Rocket,
     accent: "border-violet-500/30 bg-gradient-to-br from-violet-500/10 via-card to-card",
     chip: "bg-violet-500/15 text-violet-500",
-    who: "Owner-granted plan",
+    who: "Available plan",
     features: [
       "Everything in Plus, plus:",
       "Study Journal — private entries, yours",
@@ -116,20 +116,20 @@ const TIER_CARDS: TierCard[] = [
     icon: Crown,
     accent: "border-amber-500/30 bg-gradient-to-br from-amber-500/10 via-card to-card",
     chip: "bg-amber-500/15 text-amber-500",
-    who: "Platform operator",
+    who: "Full access",
     features: [
       "Everything in Pro, unlimited Veer sparks",
-      "Owner console: users, tiers & grants",
-      "Content control: publish, classify, retire",
-      "Section access rules (min-tier per section)",
-      "Platform settings & live audit",
+      "Full access to every study section",
+      "Priority AI assistance",
+      "Advanced study and practice tools",
+      "All available learning resources",
     ],
     cta: null,
   },
 ];
 
 // The availability matrix lives in components/plans/section-matrix.tsx — a
-// client table so it reflects the owner's runtime section minimums.
+// client table so it reflects the current plan configuration.
 
 export default function PlansPage() {
   return (
@@ -140,19 +140,15 @@ export default function PlansPage() {
           Plans &amp; Access
         </p>
         <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
-          One ladder. Five rungs. Everything in its place.
+          Plans for every stage of learning.
         </h1>
         <p className="mx-auto max-w-2xl text-sm text-muted-foreground">
-          Every study section — from past papers to the AI tutor — declares which rung
-          opens it. Start as a guest and grow: request an account, then let the owner
-          grant the plan that fits.
+          Each plan opens a different set of study sections. Choose the one that fits
+          how you study.
         </p>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-foreground">
-          Everyone except the owner signs in as a <strong>Member</strong> first and then
-          waits for approval. Registering does not open the library by itself — the owner
-          approves the account, and only then does the ladder start moving. Any further
-          rung (Plus, Pro) is granted on top of that approved Member account. Questions
-          about a pending account: email{" "}
+          After signing, the account is approved by the system verification and administrative approval.
+          Questions: email{" "}
           <a className="font-semibold text-primary hover:underline" href="mailto:sahrocky81@gmail.com">
             sahrocky81@gmail.com
           </a>
@@ -175,7 +171,7 @@ export default function PlansPage() {
                     <CardTitle className="text-lg">{tier.name}</CardTitle>
                   </div>
                   <span className={`rounded-full px-2 py-0.5 text-[10px] font-bold ${tier.chip}`}>
-                    {tier.id === "guest" ? "Free" : tier.id === "owner" ? "Operator" : "Plan"}
+                    {tier.id === "guest" ? "Free" : tier.id === "owner" ? "Full" : "Plan"}
                   </span>
                 </div>
                 <CardDescription className="text-xs">
@@ -201,8 +197,8 @@ export default function PlansPage() {
                 ) : (
                   <p className="rounded-xl border border-border/60 bg-background/60 px-3 py-2 text-center text-[11px] text-muted-foreground">
                     {tier.id === "owner"
-                      ? "Reserved for the platform operator."
-                      : "Granted by the owner — request it from your profile."}
+                      ? "Full access to the platform."
+                      : "Available with an approved account."}
                   </p>
                 )}
               </CardContent>
@@ -214,9 +210,9 @@ export default function PlansPage() {
       {/* ── Availability matrix ── */}
       <div className="space-y-3">
         <div>
-          <h2 className="text-xl font-bold tracking-tight">What each rung opens</h2>
+          <h2 className="text-xl font-bold tracking-tight">What each plan opens</h2>
           <p className="text-xs text-muted-foreground">
-            The full section map (plan.md §3). A ✓ means the section opens at that rung.
+            A ✓ means the section is included in that plan.
           </p>
         </div>
         <SectionMatrix />
@@ -227,8 +223,7 @@ export default function PlansPage() {
       {/* ── Footer note ── */}
       <div className="rounded-2xl border border-border/70 bg-muted/20 p-5 text-center">
         <p className="text-xs text-muted-foreground">
-          Accounts are created through a manual approval loop — login is mentored at
-          8:00 PM. The notice board opens on the Plus plan.
+          After signing, the account is approved by the system verification and administrative approval.
         </p>
       </div>
     </div>

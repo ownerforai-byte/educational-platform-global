@@ -270,7 +270,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
     const premiumStatus = profile?.premium_status ?? false;
     const owner = isOwnerEmail(user.email);
 
-    // DIAGRAM HUB (owner request 2026-10-06: "available for owner emails only …
+    // DIAGRAM HUB (owner request 2026-10-06: "available for authorised accounts only …
     // under coin gate of 5 coin but free for owner and only for owner"): the
     // section is priced at 5 coins, but only owner emails may open it at all —
     // a non-owner unlock attempt is refused here, never charged. Owners always

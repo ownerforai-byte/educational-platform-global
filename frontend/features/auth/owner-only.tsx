@@ -5,7 +5,7 @@ import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
 
 /**
- * Renders `children` only for allowlisted owner emails (frontend/lib/owner).
+ * Renders `children` only for authorised accounts (frontend/lib/owner).
  *
  * Used to HIDE owner-only surfaces (the Diagram Hub home launcher) rather than
  * redirect: before the session resolves — and for every guest and non-owner

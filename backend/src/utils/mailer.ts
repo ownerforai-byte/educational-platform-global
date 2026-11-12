@@ -154,7 +154,7 @@ function approvalHtml(displayName: string | null): string {
           <h1 style="margin:0 0 12px;font-size:20px;">Your account has been approved! ✅</h1>
           <p style="margin:0 0 14px;line-height:1.6;">${hello}</p>
           <p style="margin:0 0 14px;line-height:1.6;">
-            The platform owner has approved your account. You can now sign in
+            Your account is approved. You can now sign in
             and use everything the platform offers: syllabus notes, 3D labs,
             derivations, PYQs, quizzes and your Veer tutor — with your own
             saved chat histories, AI sparks for Veer, and content sparks for notes.
@@ -176,7 +176,7 @@ function approvalHtml(displayName: string | null): string {
       </tr>
       <tr>
         <td style="padding:18px 32px;background:#f9fafb;border-top:1px solid #e5e7eb;font-size:12px;color:#9ca3af;">
-          This is an automatic approval notice from Ravikisan's Platform.
+          This is an account notice from Ravikisan's Platform.
         </td>
       </tr>
     </table>
@@ -185,7 +185,7 @@ function approvalHtml(displayName: string | null): string {
 }
 
 /**
- * Notify a user that the owner approved their account. Best-effort:
+ * Notify a user that the account is approved. Best-effort:
  * resolves with a result, never throws into the approval flow.
  */
 export async function sendApprovalEmail(
@@ -196,6 +196,6 @@ export async function sendApprovalEmail(
     to,
     subject: "Your Ravikisan account is approved ✅ — sign in now",
     html: approvalHtml(fullName ?? null),
-    text: "Your account has been approved by the owner. Sign in at your Ravikisan platform to start learning.",
+    text: "Your account is approved. Sign in at your Ravikisan platform to start learning.",
   });
 }

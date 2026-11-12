@@ -49,8 +49,8 @@ describe("guest home — sign in is the only action", () => {
     render(<HomePublic />);
 
     expect(
-      screen.getByText(/Login works after administrative approval and system verification only\./),
-    ).toBeInTheDocument();
+      screen.getAllByText(/After signing, the account is approved by the system verification and administrative approval\./).length,
+    ).toBeGreaterThan(0);
     expect(screen.getByRole("link", { name: /sign in/i })).toHaveAttribute("href", "/login");
     expect(screen.getAllByRole("link", { name: /access (notice|works)/i }).some((link) => link.getAttribute("href") === "/plans")).toBe(true);
     expect(screen.getAllByRole("link").map((link) => link.getAttribute("href"))).not.toContain("/notice");

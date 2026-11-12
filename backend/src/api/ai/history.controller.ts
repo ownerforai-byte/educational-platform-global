@@ -17,7 +17,7 @@ import {
  *
  * Owner request (2026-09-30): the tutor gets a separate interface whose work is
  * to search chat history and present it as asked. Owner decision on pricing
- * (2026-10-05): OWNER EMAILS ONLY — `requireAuth` + `requireOwnerEmail` is
+ * (2026-10-05): AUTHORISED ACCOUNTS ONLY — `requireAuth` + `requireOwnerEmail` is
  * therefore the whole gate — no credit is spent and no daily pool is touched,
  * which is why this route never calls spendCredits().
  *

@@ -57,7 +57,7 @@ interface Portal {
   chipClass: string;
   /** null → free/public entry. */
   category: ContentCategory | null;
-  /** Rendered only for allowlisted owner emails. */
+  /** Rendered only for authorised accounts. */
   ownerOnly?: boolean;
   links: PortalLink[];
 }
