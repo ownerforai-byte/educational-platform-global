@@ -100,14 +100,13 @@ async function main() {
     WHERE table_name='profiles' AND table_schema='public'
     ORDER BY ordinal_position`);
 
-  await section("The 5 owners — DB-level truth", `
+  await section("The owner — DB-level truth", `
     SELECT p.id, p.full_name, p.role, p.credits, p.credits_limit,
       p.premium_status, p.premium_approved_at
     FROM profiles p
     WHERE p.id IN (
       SELECT u.id FROM auth.users u WHERE u.email IN (
-        'harindarsah98172@gmail.com','yashsah231@gmail.com',
-        'sahrocky81@gmail.com','ravikisan1814@gmail.com','planephoto88@gmail.com'
+        'sahrocky81@gmail.com'
       )
     )
     ORDER BY p.full_name`);
@@ -116,8 +115,7 @@ async function main() {
     SELECT u.email, u.email_confirmed_at, u.confirmed_at, u.last_sign_in_at
     FROM auth.users u
     WHERE u.email IN (
-      'harindarsah98172@gmail.com','yashsah231@gmail.com',
-      'sahrocky81@gmail.com','ravikisan1814@gmail.com','planephoto88@gmail.com'
+      'sahrocky81@gmail.com'
     )
     ORDER BY u.email`);
 }

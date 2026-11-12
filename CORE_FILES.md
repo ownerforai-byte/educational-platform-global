@@ -33,15 +33,34 @@ Every file in this project strictly belongs to one of two classes:
 
 ---
 
-## 2. The Isolated Main Files (The Essential Few)
+## 2. Pro Architecture map (Phases 5–11)
+
+Canonical homes after the restructure. Many `@/lib/*` and `@/components/*` paths are still **one-line re-export shims** into `features/` — prefer the canonical path for new code; do **not** delete shims until a dedicated import codemod lands.
+
+| Concern | Canonical path | Stable shim (keep) |
+|---|---|---|
+| Syllabus / navigation / access / site index | `frontend/lib/core/*` | `frontend/lib/syllabus.ts`, `navigation.ts`, `access-level.ts`, `site-index.ts`, … |
+| User state / scoped storage | `frontend/lib/state/*` | `frontend/lib/user-state.ts`, … |
+| Stream / PDF catalogs | `frontend/lib/streams/*` | `frontend/lib/chapter-resources.ts`, … |
+| Shared TS hub | `frontend/types/{api,lab,content}.ts` | `frontend/lib/types/lab.ts` → `@/types/lab` |
+| Labs / AI / practice / auth UI | `frontend/features/<domain>/` | `frontend/lib/lab-*.ts(x)`, `frontend/components/lab/*`, … |
+| Owner allowlist | `frontend/lib/owner.ts` + `backend/src/middleware/auth.ts` | — (single owner: `sahrocky81@gmail.com`) |
+| Scoped check / gates | `scripts/ci/scoped-check.mjs` | `npm run check` |
+| Classify / corpus build | `scripts/build/*` | `npm run classify`, `content:corpus` |
+| Content tooling | `content-tools/{generators,enhancers,validators,migrators,fixers}/` | root shim `build-syllabus-notes.js` |
+| Docs | `docs/architecture/`, `docs/guides/`, `docs/adr/`, `docs/runbooks/` | — |
+| Optional Docker | `infra/docker/` | — |
+| Backend tests | `backend/tests/{unit,integration}/` + `fixtures/` | — |
+
+## 3. The Isolated Main Files (The Essential Few)
 
 Whenever you need to know how the platform works and where things route, refer ONLY to these isolated files:
 
 ### A. Routing & Navigation Core (Where pages live & how they link)
 | File | Role |
 |---|---|
-| `frontend/lib/navigation.ts` | **Global Navigation Registry** (`NAV_SECTIONS`, `NAV_HREFS`). Defines sidebar, mobile drawer, all section hubs, access levels, and route paths. |
-| `frontend/lib/site-index.ts` | **Everything Index Registry** (`/site-index`). Aggregates all routable sections across labs, graphs, syllabus, notes, proofs into a unified index. |
+| `frontend/lib/core/navigation.ts` (shim: `frontend/lib/navigation.ts`) | **Global Navigation Registry** (`NAV_SECTIONS`, `NAV_HREFS`). Defines sidebar, mobile drawer, all section hubs, access levels, and route paths. |
+| `frontend/lib/core/site-index.ts` (shim: `frontend/lib/site-index.ts`) | **Everything Index Registry** (`/site-index`). Aggregates all routable sections across labs, graphs, syllabus, notes, proofs into a unified index. |
 | `frontend/lib/srs.ts` | **SM-2 Scheduler & Flashcard Builder** (device-local review state, cards derived from `pyq-bank`). Used by `/srs`. |
 | `frontend/lib/study-plan.ts` | **Weekly Plan Generator** (goals + exam date + weak topics from the progress journey). Used by `/planner`. |
 | `frontend/lib/mock-exam.ts` | **Mock Exam Assembler & Scorer** (entrance MCQs for the OMR section, `pyq-bank` for the written section). Used by `/mock-exams`. |
@@ -52,7 +71,7 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/lib/offline-pack.ts` | **Offline Unit Pack Builder** (presents `pyq-bank`, `formula-sheet` and `syllabus-notes-manifest` readers as one Markdown file). Used by `/downloads`. |
 | `frontend/lib/billing.ts` | **Billing Ledger Reader** (turns `lib/api/credits` transactions into receipts and totals; no payment backend). Used by `/billing`; `/referrals` is a placeholder until a referral data source exists. |
 | `frontend/lib/study-goals.ts` | **Study Goals & Preferences Reader** (device-local). Shared by `/onboarding`, `/settings`, `/dashboard`, `/report-card` (views in `frontend/components/study/`); subject options come from `syllabus.ts`. |
-| `frontend/lib/syllabus.ts` | **Curriculum Single Source of Truth**. Contains official class, subject, unit, and topic hierarchies and slugs. |
+| `frontend/lib/core/syllabus.ts` (shim: `frontend/lib/syllabus.ts`) | **Curriculum Single Source of Truth**. Contains official class, subject, unit, and topic hierarchies and slugs. |
 | `frontend/app/(app)/layout.tsx` | Main App layout shell, wraps pages in header, sidebar, navigation, auth, and credit gates. |
 | `frontend/components/layout/app-shell.tsx` | Main UI layout container and responsive navigation shell. |
 | `frontend/app/(app)/not-found.tsx` | In-app 404 boundary: compact `ErrorPage` for non-lab routes; lab routes keep the prior full-screen fallback. |
@@ -64,7 +83,7 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/features/syllabus/language-pro.ts` | Language pro registry (`LANGUAGE_PRO_SUBJECTS`) — the one list that decides which subjects get companion-only topic pages; read by the `/pro` routes, the tab profile resolver and the topic links. |
 | `frontend/features/syllabus/components/language-pro-topic-view.tsx` | The language topic surface (Nepali and English) rendered by `/chapters/[unit]/topics/[topicSlug]/pro` — seven companion tabs only. |
 | `frontend/components/content/ravikishan-topic-resources.tsx` | Resources-panel shortcut to the canonical topic notes; never a second note renderer. |
-| `frontend/lib/access-level.ts` | **Access ladder** (`visitor → member → plus → pro → owner`): rung resolution, rank comparisons, and the hardcoded `TIER_HOME_PATHS` map (`tierHomePathFor`) that every login flow uses to land the viewer on their own tier interface. |
+| `frontend/lib/core/access-level.ts` (shim: `frontend/lib/access-level.ts`) | **Access ladder** (`visitor → member → plus → pro → owner`): rung resolution, rank comparisons, and the hardcoded `TIER_HOME_PATHS` map (`tierHomePathFor`) that every login flow uses to land the viewer on their own tier interface. |
 | `frontend/components/home/tier-home-router.tsx` | **Instant tier router** (root `/`): resolves the session's rung on first paint and replaces the view with the viewer's exact tier page — visitors, and only visitors, see `HomePublic`. |
 | `frontend/components/home/tier-interfaces.tsx` | **Hardcoded tier interfaces** (`MemberHome`, `PlusHome`, `ProHome`, `OwnerHome`) — one shell + per-rung spotlights, gated rails and section rails; rendered by `/home/member|plus|pro|owner`. |
 | `frontend/app/auth/callback/page.tsx` | OAuth callback: exchanges provider code, sets app session cookies, drops supabase-js local records. |
@@ -73,8 +92,8 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/features/credits/route-gate.tsx` | Spark/coin route unlock gate for paid content categories. |
 | `frontend/components/navigation/back-button.tsx` | In-app history tracker and fallback back-to-home navigation control. |
 | `frontend/lib/ui/subject-visuals.ts` | Canonical per-subject visual identity (natural glyphs and color tokens). |
-| `frontend/lib/access-level.ts` | Canonical tier ladder, rank comparisons, and tier-home routing. |
-| `frontend/lib/sections.ts` | Study-section registry including each section's access tier. |
+| `frontend/lib/core/access-level.ts` (shim: `frontend/lib/access-level.ts`) | Canonical tier ladder, rank comparisons, and tier-home routing. |
+| `frontend/lib/core/sections.ts` (shim: `frontend/lib/sections.ts`) | Study-section registry including each section's access tier. |
 | `frontend/components/content/section-tier-gate.tsx` | Section-tier enforcement and restricted-section presentation. |
 | `frontend/components/home/home-sections.tsx` | Horizontal section-rail renderer using the section registry and tier policy. |
 
@@ -91,8 +110,8 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/lib/content/paths.ts` | The ONE place that knows the classified `content/` tree: section map, class/unit normalization, path parsing. If the tree moves again, it moves here first. |
 | `backend/src/db/migrations/013_user_state.sql` | Account-backed user state schema + RLS (one row per user/namespace, versioned JSONB). Must be applied before `/api/user-state` works. |
 | `backend/src/api/user-state.ts` | Authenticated GET/PUT/DELETE for personal stores; session-derived identity, optimistic concurrency (409 on stale `baseVersion`). Mounted in `backend/src/app.ts`. |
-| `frontend/lib/user-state.ts` | Sync adapter: pull/push, offline queue + flush, `syncNotes()` merge and `pushNotes()` best-effort write. localStorage stays the render source. |
-| `frontend/lib/user-state-core.ts` | Pure conflict policy: `mergeById` (newest edit wins), bounded single-change-per-namespace queue, payload equality. |
+| `frontend/lib/state/user-state.ts` (shim: `frontend/lib/user-state.ts`) | Sync adapter: pull/push, offline queue + flush, `syncNotes()` merge and `pushNotes()` best-effort write. localStorage stays the render source. |
+| `frontend/lib/state/user-state-core.ts` (shim: `frontend/lib/user-state-core.ts`) | Pure conflict policy: `mergeById` (newest edit wins), bounded single-change-per-namespace queue, payload equality. |
 | `frontend/components/study/notes-sync.tsx` | Invisible sync driver for `/my-notes` (mount, reconnect, tab visibility). |
 
 ### C. Backend API & Middlewares (Server Core)
@@ -131,17 +150,17 @@ Whenever you need to know how the platform works and where things route, refer O
 ### E. Specialized Section Registries (Feature Routing)
 | File | Role |
 |---|---|
-| `frontend/lib/lab-registry.tsx` | Registry of all 2D/3D interactive labs, simulations, and calculators. The authoritative list; it is a component module and cannot be imported by data-only consumers. |
-| `frontend/lib/lab-metadata.ts` | Data-only mirror of the registry (id/title/category/type/status/color/unit) for search, site index and the manifest, which must stay free of Three.js. Not trusted: the `labManifest` gate fails on a missing id (`registry-metadata-orphan`) or a drifted title (`registry-metadata-drift`). |
-| `frontend/lib/lab-manifest.ts` | **3D activity manifest** (`plan.md` Phase 2): the typed source of truth for activity metadata — subject (all six: Physics, Chemistry, Biology, Mathematics, English, Nepali), class/unit placement, explicit `topicSlugs` (no fuzzy resolution), kind, lifecycle, device tier, fallback and `replaces` lineage. Data-only: never imports a Three.js visual. Canonical deep link is `activityHref(id)` → `/lab/<id>` (percent-encoded: Nepali slugs are Devanagari). |
-| `frontend/lib/lab-visual-index.ts` | Auto-generated topic-visual index (453 entries from the handoff archive) plus the **manual extension blocks** (343 chapter-animation entries, 2026-11-11) that close every remaining syllabus topic gap — 689/689 topics covered. A regeneration from the archive must PRESERVE the manual blocks. Devanagari is a valid slug charset here (the syllabus emits it for Nepali). |
-| `frontend/components/lab/language-scenes.ts` | Bespoke 3D scenes for the two language subjects (English, Nepali): story, poem, essay, grammar, writing, speech, culture and timeline models, plus the subject-scoped routing table. English/Nepali topics route here ONLY — never into a science scene. |
-| `frontend/lib/lab-activity-loaders.ts` | Exhaustive renderer resolver: manifest `renderer` (`module` / `visual` / `registry` / `catalog`) → lazy `import()`, so adding an activity without wiring its chunk is a type error. |
-| `frontend/lib/syllabus-neighbors.ts` | Curriculum neighbours for the journey (`nextTopic`, `previousTopic`, `topicHref`) — order comes only from `syllabus.ts`. |
-| `frontend/lib/lab-progress.ts` | Device-local “continue where you left off” store for opened activities (no server write, storage failures swallowed). |
-| `frontend/components/lab/activity-stage.tsx` | The one 3D render surface: request-to-load, `use-scene-tier`, single canvas, declared fallback, loading/error/reset, reduced-motion opt-in. |
-| `frontend/components/lab/activity-journey.tsx` | The five journey actions (Open full lab · Check understanding · Ask Veer · Notes · Next topic) for a manifest activity. |
-| `frontend/components/lab/manifest-hub-section.tsx` | Manifest half of `/lab/3d`: subject/kind/“has practice” filters plus the recent-activity strip. |
+| `frontend/features/lab/lab-registry.tsx` (shim: `frontend/lib/lab-registry.tsx`) | Registry of all 2D/3D interactive labs, simulations, and calculators. The authoritative list; it is a component module and cannot be imported by data-only consumers. |
+| `frontend/features/lab/lab-metadata.ts` (shim: `frontend/lib/lab-metadata.ts`) | Data-only mirror of the registry (id/title/category/type/status/color/unit) for search, site index and the manifest, which must stay free of Three.js. Not trusted: the `labManifest` gate fails on a missing id (`registry-metadata-orphan`) or a drifted title (`registry-metadata-drift`). |
+| `frontend/features/lab/lab-manifest.ts` (shim: `frontend/lib/lab-manifest.ts`) | **3D activity manifest** (`plan.md` Phase 2): the typed source of truth for activity metadata — subject (all six: Physics, Chemistry, Biology, Mathematics, English, Nepali), class/unit placement, explicit `topicSlugs` (no fuzzy resolution), kind, lifecycle, device tier, fallback and `replaces` lineage. Data-only: never imports a Three.js visual. Canonical deep link is `activityHref(id)` → `/lab/<id>` (percent-encoded: Nepali slugs are Devanagari). |
+| `frontend/features/lab/lab-visual-index.ts` (shim: `frontend/lib/lab-visual-index.ts`) | Auto-generated topic-visual index (453 entries from the handoff archive) plus the **manual extension blocks** (343 chapter-animation entries, 2026-11-11) that close every remaining syllabus topic gap — 689/689 topics covered. A regeneration from the archive must PRESERVE the manual blocks. Devanagari is a valid slug charset here (the syllabus emits it for Nepali). |
+| `frontend/features/lab/components/language-scenes.ts` (shim via `@/components/lab/*`) | Bespoke 3D scenes for the two language subjects (English, Nepali): story, poem, essay, grammar, writing, speech, culture and timeline models, plus the subject-scoped routing table. English/Nepali topics route here ONLY — never into a science scene. |
+| `frontend/features/lab/lab-activity-loaders.ts` (shim: `frontend/lib/lab-activity-loaders.ts`) | Exhaustive renderer resolver: manifest `renderer` (`module` / `visual` / `registry` / `catalog`) → lazy `import()`, so adding an activity without wiring its chunk is a type error. |
+| `frontend/lib/core/syllabus-neighbors.ts` (shim: `frontend/lib/syllabus-neighbors.ts`) | Curriculum neighbours for the journey (`nextTopic`, `previousTopic`, `topicHref`) — order comes only from `syllabus.ts`. |
+| `frontend/features/lab/lab-progress.ts` (shim: `frontend/lib/lab-progress.ts`) | Device-local “continue where you left off” store for opened activities (no server write, storage failures swallowed). |
+| `frontend/features/lab/components/activity-stage.tsx` | The one 3D render surface: request-to-load, `use-scene-tier`, single canvas, declared fallback, loading/error/reset, reduced-motion opt-in. |
+| `frontend/features/lab/components/activity-journey.tsx` | The five journey actions (Open full lab · Check understanding · Ask Veer · Notes · Next topic) for a manifest activity. |
+| `frontend/features/lab/components/manifest-hub-section.tsx` | Manifest half of `/lab/3d`: subject/kind/“has practice” filters plus the recent-activity strip. |
 | `frontend/scripts/lab-manifest-coverage.ts` | Phase 0 inventory + Phase 2 gate (`npm run audit:lab-manifest -- --check`): topic coverage matrix, 3D source inventory, orphan/exemption list, writes `reports/lab-manifest-coverage.json`. Runs in `npm run check` / `check:all`. |
 | `frontend/lib/graphs.ts` | Registry for all science graphs and visual data banks. |
 | `frontend/lib/pyq-bank.ts` | Registry for past year question banks and solved papers. |
@@ -181,7 +200,7 @@ Whenever you need to know how the platform works and where things route, refer O
 
 ---
 
-## 3. How to Route or Create New Files (Step-by-Step)
+## 4. How to Route or Create New Files (Step-by-Step)
 
 When asked to add a new page, feature, or content:
 
@@ -199,7 +218,7 @@ When asked to add a new page, feature, or content:
 
 ---
 
-## 4. Mandatory Post-Task Marking Protocol
+## 5. Mandatory Post-Task Marking Protocol
 
 Before ending any task, an agent MUST state in its output and record whether the touched or created files are **Important Core Files** or **Content Files**:
 

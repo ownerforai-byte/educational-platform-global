@@ -143,7 +143,7 @@ export default function TermsOfService() {
       <section>
         <h2>14. Contact</h2>
         <p>
-          Email: <a className="font-medium" href="mailto:ravikisan1814@gmail.com">ravikisan1814@gmail.com</a>{" "}
+          Email: <a className="font-medium" href="mailto:sahrocky81@gmail.com">sahrocky81@gmail.com</a>{" "}
           · Operator: <code>Ravikisan</code>
         </p>
       </section>

@@ -107,9 +107,9 @@ const NOTICES: Notice[] = [
     icon: Mail,
     title: "Corrections, requests and access",
     body:
-      "Found a mistake in a note, want a topic covered, or need PRO access on your account? Write to the owner directly — a wrong note is corrected at the source, for everyone. His address and profile are on this page and nowhere else on the site.",
-    href: "mailto:ravikisan1814@gmail.com",
-    linkLabel: "ravikisan1814@gmail.com",
+      "Found a mistake in a note, want a topic covered, or need PRO access on your account? Write to the owner directly — a wrong note is corrected at the source, for everyone. Everyone except the owner signs in as a Member and waits for approval. His address and profile are on this page and nowhere else on the site.",
+    href: "mailto:sahrocky81@gmail.com",
+    linkLabel: "sahrocky81@gmail.com",
   },
 ];
 

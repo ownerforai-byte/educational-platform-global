@@ -37,20 +37,24 @@ A full-stack study platform covering Physics, Chemistry, Biology, Mathematics, E
 /
 ├── frontend/          Next.js 16 app (Vercel)
 │   ├── app/           App Router pages (150+ routes)
-│   ├── components/    UI components
-│   ├── features/      Feature modules (auth, credits, mindmap …)
-│   ├── lib/           Shared utilities, registries, API client
-│   └── tests/         Vitest unit + component tests
+│   ├── features/      Domain modules (auth, lab, ai, practice, …)
+│   ├── lib/           core/ · state/ · streams/ · + Phase 5 shims
+│   ├── types/         Shared type hub (api, lab, content)
+│   ├── components/    UI + shims into features/
+│   └── tests/         Vitest (+ fixtures/)
 ├── backend/           Express API (Render)
-│   ├── src/api/       Route handlers (~50 endpoints)
+│   ├── src/api/       Domain-grouped routers
 │   ├── src/ai/        Agnes + free-tier provider chain, prompts
 │   ├── src/middleware/ Auth, rate limits, spark gates
-│   └── tests/         Vitest backend tests
+│   └── tests/         unit/ · integration/ · fixtures/
 ├── content/           Authored JSON corpus (notes, PYQs, formulas …)
-├── content-tools/     Content tooling (generators/enhancers/validators/migrators/fixers)
-├── scripts/           Shared build/CI scripts
-├── docs/              Architecture, API, deployment docs
-├── plan.md            Living product plan (phases, todos, done items)
+├── content-tools/     generators/ · enhancers/ · validators/ · migrators/ · fixers/
+├── scripts/           ci/ · build/ · audit/ · deploy/ (+ enrichment, tokenkit)
+├── packages/shared/   Cross-app types & constants (@rn/shared)
+├── infra/             Optional Dockerfiles + compose
+├── docs/              architecture/ · guides/ · api/ · adr/ · runbooks/
+├── plan-pro-architecture.md  Restructuring plan (Phases 0–12)
+├── CORE_FILES.md      Agent route/architecture registry
 ├── AGENTS.md          Agent workflow guide
 ├── BRANCHES.md        48-branch area map
 ├── SOURCES.md         Content rights ledger
@@ -163,7 +167,7 @@ This repo uses a 48-branch area workflow with scoped CI checks.
 3. `npm run check` before every commit; `npm run check:all` before pushing `main`
 4. Never push to `main` with failing checks; never force-push
 
-See `docs/ARCHITECTURE.md` for the full system design.
+See `docs/architecture/OVERVIEW.md` for the full system design.
 
 ---
 

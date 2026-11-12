@@ -37,17 +37,20 @@ npm run classify -- --all
 
 | Work area | Begin with | Then inspect only the relevant target |
 |---|---|---|
-| Frontend routes/navigation | `CORE_FILES.md`, `frontend/lib/navigation.ts`, `frontend/lib/site-index.ts` | Route page, linked component, closest test |
-| Auth and tier access | `frontend/lib/access-level.ts`, `frontend/providers/auth-provider.tsx`, `(app)` layout and gates | Target gate/API and its focused tests |
-| Frontend AI experience | AI route/component and `frontend/lib/api/ai.ts` | Matching backend API and focused UI/API tests |
-| Backend API | `backend/src/app.ts` | Mounted route, direct service/middleware, endpoint tests |
+| Frontend routes/navigation | `CORE_FILES.md`, `frontend/lib/core/navigation.ts`, `frontend/lib/core/site-index.ts` | Route page, linked component, closest test |
+| Auth and tier access | `frontend/lib/core/access-level.ts`, `frontend/providers/auth-provider.tsx`, `(app)` layout and gates | Target gate/API and its focused tests |
+| Frontend AI experience | `frontend/features/ai/…`, `frontend/lib/api/ai.ts` | Matching backend API and focused UI/API tests |
+| Backend API | `backend/src/app.ts` | Mounted route, direct service/middleware, endpoint tests under `backend/tests/{unit,integration}/` |
 | AI provider chain/prompts | `backend/src/ai/service.ts`, `backend/src/ai/prompts.ts` | Specific AI route/provider and its tests; never expose keys to frontend |
-| Syllabus/content | `frontend/lib/syllabus.ts`, `frontend/lib/note-routes.ts` | Only the requested subject/unit/topic payload and its schema/test |
+| Syllabus/content | `frontend/lib/core/syllabus.ts`, `frontend/lib/note-routes.ts` | Only the requested subject/unit/topic payload and its schema/test |
 | Backend corpus retrieval | `backend/src/ai/curriculum-corpus.ts` and source tests | Only the named corpus/source record; do not inspect whole OCR or KB directories |
-| Labs, graphs, PYQs, formulas | Registries in `CORE_FILES.md` | Specific registry entry and consumer |
-| Build/check behavior | root and workspace `package.json`, `BRANCHES.md` | The one script/config implicated by the task |
+| Labs, graphs, PYQs, formulas | `frontend/features/lab/…` + registries in `CORE_FILES.md` | Specific registry entry and consumer |
+| Build/check behavior | root `package.json`, `scripts/ci/scoped-check.mjs`, `BRANCHES.md` | The one script/config implicated by the task |
+| Types hub | `frontend/types/` | Feature-local `features/*/types.ts` stay in features |
 
-The frontend is the Next.js app in `frontend/`; the Express API is in `backend/`; `content/`, `backend/kb/`, `backend/.ocr-v2/`, and `frontend/public/data/` hold curricular content or derived corpus; root `scripts/` and `content-tools/` hold shared tooling. `README.md` describes setup. `CORE_FILES.md` is authoritative when this summary differs from the code.
+The frontend is the Next.js app in `frontend/` (`features/` + `lib/core|state|streams` + shims); the Express API is in `backend/`; `content/`, `backend/kb/`, `backend/.ocr-v2/`, and `frontend/public/data/` hold curricular content or derived corpus; `scripts/{ci,build,audit,deploy}/` and `content-tools/` hold shared tooling; `docs/` and `infra/` hold architecture docs and optional Docker. `README.md` describes setup. `CORE_FILES.md` is authoritative when this summary differs from the code.
+
+**Shim rule:** Phase 5/6 left re-exports at old `lib/` / `components/` paths so existing imports keep working. New code should import from `features/` or `lib/core|state|streams`. Do not delete shims without a repo-wide import codemod.
 
 ## What to avoid
 

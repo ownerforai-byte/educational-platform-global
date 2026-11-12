@@ -147,6 +147,17 @@ export default function PlansPage() {
           opens it. Start as a guest and grow: request an account, then let the owner
           grant the plan that fits.
         </p>
+        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-foreground">
+          Everyone except the owner signs in as a <strong>Member</strong> first and then
+          waits for approval. Registering does not open the library by itself — the owner
+          approves the account, and only then does the ladder start moving. Any further
+          rung (Plus, Pro) is granted on top of that approved Member account. Questions
+          about a pending account: email{" "}
+          <a className="font-semibold text-primary hover:underline" href="mailto:sahrocky81@gmail.com">
+            sahrocky81@gmail.com
+          </a>
+          .
+        </p>
       </div>
 
       {/* ── Tier cards ── */}

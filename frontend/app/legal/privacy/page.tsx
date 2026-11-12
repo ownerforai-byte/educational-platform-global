@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
         <ul>
           <li>Operator: <code>Ravikisan</code></li>
           <li>Country: Nepal</li>
-          <li>Support email: <a className="font-medium" href="mailto:ravikisan1814@gmail.com">ravikisan1814@gmail.com</a></li>
+          <li>Support email: <a className="font-medium" href="mailto:sahrocky81@gmail.com">sahrocky81@gmail.com</a></li>
         </ul>
       </section>
 
@@ -124,7 +124,7 @@ export default function PrivacyPolicy() {
         <h2>8. Your rights</h2>
         <p>
           You can access, correct, delete, or export your data. Email{" "}
-          <a className="font-medium" href="mailto:ravikisan1814@gmail.com">ravikisan1814@gmail.com</a> from your
+          <a className="font-medium" href="mailto:sahrocky81@gmail.com">sahrocky81@gmail.com</a> from your
           account address.
         </p>
       </section>
@@ -150,7 +150,7 @@ export default function PrivacyPolicy() {
         <h2>11. Changes &amp; contact</h2>
         <p>
           Changes are posted with a new “Last updated” date. Email:{" "}
-          <a className="font-medium" href="mailto:ravikisan1814@gmail.com">ravikisan1814@gmail.com</a>
+          <a className="font-medium" href="mailto:sahrocky81@gmail.com">sahrocky81@gmail.com</a>
         </p>
         <LegalBlurGate compact>
           <p>

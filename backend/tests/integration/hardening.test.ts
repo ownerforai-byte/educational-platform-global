@@ -1,0 +1,1006 @@
+import http from "node:http";
+import type { AddressInfo } from "node:net";
+import express from "express";
+import { afterAll, beforeEach, describe, expect, it, vi } from "vitest";
+
+// ───────────────────────────────────────────────────────────────────────────
+// Self-contained supabaseAdmin mock (no env vars needed): FIFO result queues
+// per table plus a recorded call log the tests assert against.
+// ───────────────────────────────────────────────────────────────────────────
+const h = vi.hoisted(() => {
+  type QueueResult = { data?: any; error?: any } | null;
+  const queues: Record<string, QueueResult[]> = {};
+  const calls: Array<{ table: string; method: string; args: any[] }> = [];
+  const getUser = vi.fn();
+  const storageFrom = vi.fn();
+  const storageUpload = vi.fn();
+  const storageGetPublicUrl = vi.fn();
+  /** Bucket metadata the upload route validates before writing. */
+  const bucketInfo: { value: { id: string; public: boolean } | null } = {
+    value: { id: "resources", public: true },
+  };
+
+  function enqueue(table: string, result: QueueResult) {
+    (queues[table] ??= []).push(result);
+  }
+
+  function nextFor(table: string): QueueResult {
+    const q = queues[table];
+    return q && q.length > 0 ? q.shift()! : { data: [], error: null };
+  }
+
+  function opsFor(table: string) {
+    return calls.filter((c) => c.table === table && c.method !== "from");
+  }
+
+  function makeBuilder(table: string) {
+    const chain: any = {};
+    const track =
+      (method: string) =>
+      (...args: any[]) => {
+        calls.push({ table, method, args });
+        return chain;
+      };
+    for (const m of [
+      "select",
+      "eq",
+      "neq",
+      "in",
+      "order",
+      "limit",
+      "insert",
+      "update",
+      "delete",
+      "upsert",
+    ]) {
+      chain[m] = track(m);
+    }
+    const finish = () => Promise.resolve(nextFor(table));
+    const terminal = () =>
+      finish().then((r: any) =>
+        Array.isArray(r.data)
+          ? { data: r.data.length > 0 ? r.data[0] : null, error: r.error ?? null }
+          : r
+      );
+    chain.single = (...args: any[]) => {
+      calls.push({ table, method: "single", args });
+      return terminal();
+    };
+    chain.maybeSingle = (...args: any[]) => {
+      calls.push({ table, method: "maybeSingle", args });
+      return terminal();
+    };
+    chain.then = (onFulfilled?: any, onRejected?: any) => finish().then(onFulfilled, onRejected);
+    chain.catch = (onRejected: any) => finish().catch(onRejected);
+    return chain;
+  }
+
+  const supabaseAdmin: any = {
+    auth: {
+      getUser: (...args: any[]) => getUser(...args),
+    },
+    from: (table: string) => makeBuilder(table),
+    storage: {
+      from: (bucket: string) => {
+        storageFrom(bucket);
+        return {
+          upload: (...args: any[]) => storageUpload(...args),
+          getPublicUrl: (...args: any[]) => storageGetPublicUrl(...args),
+          list: async () => ({ data: [], error: null }),
+        };
+      },
+      getBucket: async () =>
+        bucketInfo.value
+          ? { data: bucketInfo.value, error: null }
+          : { data: null, error: { message: "Bucket not found" } },
+    },
+  };
+
+  function reset() {
+    for (const k of Object.keys(queues)) delete queues[k];
+    calls.length = 0;
+    bucketInfo.value = { id: "resources", public: true };
+    getUser.mockReset();
+    storageFrom.mockReset();
+    storageUpload.mockReset();
+    storageGetPublicUrl.mockReset();
+    getUser.mockResolvedValue({ data: { user: { id: "user-1" } }, error: null });
+    storageUpload.mockResolvedValue({ data: { path: "uploaded/x" }, error: null });
+    storageGetPublicUrl.mockReturnValue({
+      data: { publicUrl: "https://example.supabase.co/storage/v1/object/public/resources/uploaded/x" },
+    });
+  }
+
+  // Direct editor guards consume one profile read; omitted status stays absent.
+  function mockRole(role: string | null, accessStatus?: string, userId = "user-1") {
+    getUser.mockResolvedValue({ data: { user: { id: userId } }, error: null });
+    enqueue("profiles", { data: [{ role, access_status: accessStatus }], error: null });
+  }
+
+  function mockApprovedUser(role: string) {
+    // requireAuth consumes role/status, display name, then plan in FIFO order.
+    mockRole(role, "ACTIVE");
+    enqueue("profiles", { data: { full_name: null }, error: null });
+    enqueue("profiles", { data: { plan: "member", premium_status: false }, error: null });
+  }
+
+  return {
+    supabaseAdmin,
+    enqueue,
+    opsFor,
+    reset,
+    mockRole,
+    mockApprovedUser,
+    calls,
+    storageFrom,
+    storageUpload,
+    storageGetPublicUrl,
+    bucketInfo,
+  };
+});
+
+vi.mock("../../src/db/supabase", () => ({
+  supabaseAdmin: h.supabaseAdmin,
+  // Auth calls run on a throwaway client in prod (session isolation); tests
+  // reuse the same mocked client so signIn/refresh assertions keep working.
+  createAuthClient: () => h.supabaseAdmin,
+}));
+
+const resourcesRouter = (await import("../../src/api/resources")).default;
+const progressRouter = (await import("../../src/api/progress")).default;
+const bookmarksRouter = (await import("../../src/api/bookmarks")).default;
+const controllerRouter = (await import("../../src/api/controller")).default;
+const { storageRoutes } = await import("../../src/api/storage");
+
+type TestRes = { status: number; body: any; cacheControl: string | null };
+
+function makeRequest(base: string) {
+  return async (
+    method: string,
+    path: string,
+    body?: unknown,
+    token = "test-token"
+  ): Promise<TestRes> => {
+    const res = await fetch(`${base}${path}`, {
+      method,
+      headers: {
+        "Content-Type": "application/json",
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+      },
+      body: body === undefined ? undefined : JSON.stringify(body),
+    });
+    let parsed: any = null;
+    try {
+      parsed = await res.json();
+    } catch {
+      parsed = null;
+    }
+    return { status: res.status, body: parsed, cacheControl: res.headers.get("cache-control") };
+  };
+}
+
+const servers: Array<http.Server> = [];
+
+async function mount(router: express.Router, mountPath: string) {
+  const app = express();
+  app.use(express.json({ limit: "30mb" }));
+  // Mirror index.ts: every router is mounted under its own /api/<name> path.
+  app.use(mountPath, router);
+  const server = http.createServer(app);
+  servers.push(server);
+  await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", resolve));
+  const { port } = server.address() as AddressInfo;
+  return { request: makeRequest(`http://127.0.0.1:${port}`), server };
+}
+
+afterAll(async () => {
+  await Promise.all(
+    servers.map(
+      (server) => new Promise((resolve) => server.close(resolve))
+    )
+  );
+});
+
+beforeEach(() => {
+  h.reset();
+});
+
+describe("direct editor approval gates", () => {
+  const cases = ["PENDING", "REJECTED"].flatMap((accessStatus) => [
+    {
+      accessStatus, role: "plus", router: resourcesRouter, mountPath: "/api/resources",
+      method: "PATCH", path: "/api/resources/r1", body: { title: "Renamed" },
+    },
+    {
+      accessStatus, role: "pro", router: controllerRouter, mountPath: "/api/controller",
+      method: "PATCH", path: "/api/controller/settings", body: { key: "site_name", value: "X" },
+    },
+    {
+      accessStatus, role: "plus", router: storageRoutes, mountPath: "/api/storage",
+      method: "POST", path: "/api/storage/upload",
+      body: { path: "img.png", contentType: "image/png", dataBase64: "iVBORw==" },
+    },
+  ]);
+
+  it.each(cases)("$accessStatus $role cannot edit $path", async ({
+    accessStatus, role, router, mountPath, method, path, body,
+  }) => {
+    const { request } = await mount(router, mountPath);
+    h.mockRole(role, accessStatus);
+
+    const res = await request(method, path, body);
+
+    expect(res.status).toBe(401);
+    expect(res.body).toEqual({ error: "Unauthorized" });
+    expect(res.cacheControl).toBe("private, no-store");
+    // A single role/status read remains enough; no handler data or writes.
+    expect(h.calls.every((call) => call.table === "profiles")).toBe(true);
+    expect(h.opsFor("profiles").filter((call) => call.method === "select").map((call) => call.args))
+      .toEqual([["role, access_status"]]);
+    expect(h.opsFor("profiles").filter((call) => call.method === "eq").map((call) => call.args))
+      .toEqual([["id", "user-1"]]);
+    expect(h.opsFor("profiles").filter((call) => ["single", "maybeSingle"].includes(call.method)))
+      .toHaveLength(1);
+    expect(h.calls.filter((call) => ["insert", "update", "upsert", "delete"].includes(call.method)))
+      .toHaveLength(0);
+    expect(h.storageFrom).not.toHaveBeenCalled();
+    expect(h.storageUpload).not.toHaveBeenCalled();
+    expect(h.storageGetPublicUrl).not.toHaveBeenCalled();
+  });
+});
+
+// ───────────────────────────────────────────────────────────────────────────
+// resources.ts
+// ───────────────────────────────────────────────────────────────────────────
+describe("PATCH /api/resources/:id allowlist", () => {
+  // The PATCH handler enforces ownership before updating: it fetches the
+  // existing row (first "resources" queue item) and confirms the caller may
+  // manage it (the creator, or an ADMIN/OWNER). Each test enqueues that owned
+  // row; a separate queue item backs the actual update result where checked.
+
+  it("rejects mass-assignment fields (created_by, role, id) with 400", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("plus", "ACTIVE");
+    h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
+
+    const res = await request("PATCH", "/api/resources/r1", {
+      title: "ok",
+      created_by: "user-1",
+      role: "owner",
+      id: "surprise",
+    });
+
+    expect(res.status).toBe(400);
+    expect(res.body.error).toContain("created_by");
+    expect(res.body.fields).toEqual(
+      expect.arrayContaining(["created_by", "role", "id"])
+    );
+    expect(h.opsFor("resources").filter((c) => c.method === "update")).toHaveLength(0);
+  });
+
+  it("rejects is_published from TEACHER but accepts it from ADMIN", async () => {
+    const teacher = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("plus", "ACTIVE");
+    h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
+    const rejected = await teacher.request("PATCH", "/api/resources/r1", {
+      is_published: true,
+    });
+    expect(rejected.status).toBe(400);
+
+    const admin = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("pro", "ACTIVE");
+    h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
+    h.enqueue("resources", { data: [{ id: "r1", is_published: true }], error: null });
+    const accepted = await admin.request("PATCH", "/api/resources/r1", {
+      is_published: true,
+    });
+    expect(accepted.status).toBe(200);
+    const updates = h.opsFor("resources").filter((c) => c.method === "update");
+    expect(updates).toHaveLength(1);
+    expect(updates[0].args[0]).toEqual({ is_published: true });
+  });
+
+  it("accepts a clean title update and forwards only that field", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("plus", "ACTIVE");
+    h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
+    h.enqueue("resources", { data: [{ id: "r1", title: "Renamed" }], error: null });
+
+    const res = await request("PATCH", "/api/resources/r1", { title: "Renamed" });
+
+    expect(res.status).toBe(200);
+    expect(res.body.title).toBe("Renamed");
+    const updates = h.opsFor("resources").filter((c) => c.method === "update");
+    expect(updates).toHaveLength(1);
+    expect(updates[0].args[0]).toEqual({ title: "Renamed" });
+    expect(
+      h.calls.some((c) => c.method === "eq" && c.args[0] === "id" && c.args[1] === "r1")
+    ).toBe(true);
+  });
+
+  it("accepts a content object update from TEACHER and forwards it", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("plus", "ACTIVE");
+    h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
+
+    const content = { text: "Updated body", sections: ["a", "b"] };
+    const res = await request("PATCH", "/api/resources/r1", { content });
+
+    expect(res.status).toBe(200);
+    const updates = h.opsFor("resources").filter((c) => c.method === "update");
+    expect(updates).toHaveLength(1);
+    expect(updates[0].args[0]).toEqual({ content });
+  });
+
+  it("accepts legacy plain-string content", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("plus", "ACTIVE");
+    h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
+
+    const res = await request("PATCH", "/api/resources/r1", {
+      content: "legacy free-form body",
+    });
+
+    expect(res.status).toBe(200);
+    const updates = h.opsFor("resources").filter((c) => c.method === "update");
+    expect(updates[0].args[0]).toEqual({ content: "legacy free-form body" });
+  });
+
+  it("rejects array and primitive content shapes with 400 and no update", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("plus", "ACTIVE");
+
+    for (const bad of [[1, 2, 3], 42, true]) {
+      h.reset();
+      h.mockRole("plus", "ACTIVE");
+      h.enqueue("resources", { data: [{ id: "r1", created_by: "user-1" }], error: null });
+      const res = await request("PATCH", "/api/resources/r1", { content: bad });
+      expect(res.status).toBe(400);
+      expect(res.body.fields).toEqual(["content"]);
+      expect(h.opsFor("resources").filter((c) => c.method === "update")).toHaveLength(0);
+    }
+  });
+
+  it("403 when a TEACHER patches a resource they did not create", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("plus", "ACTIVE");
+    h.enqueue("resources", {
+      data: [{ id: "r1", created_by: "another-teacher" }],
+      error: null,
+    });
+
+    const res = await request("PATCH", "/api/resources/r1", { title: "sneak" });
+
+    expect(res.status).toBe(403);
+    expect(h.opsFor("resources").filter((c) => c.method === "update")).toHaveLength(0);
+  });
+
+  it("404 when the resource does not exist on PATCH", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("plus", "ACTIVE");
+
+    const res = await request("PATCH", "/api/resources/missing", { title: "x" });
+
+    expect(res.status).toBe(404);
+  });
+});
+
+describe("DELETE /api/resources/:id ownership", () => {
+  it("403 when a TEACHER deletes a resource they did not create", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("plus", "ACTIVE");
+    h.enqueue("resources", {
+      data: [{ id: "r1", created_by: "someone-else" }],
+      error: null,
+    });
+
+    const res = await request("DELETE", "/api/resources/r1");
+
+    expect(res.status).toBe(403);
+    expect(h.opsFor("resources").filter((c) => c.method === "delete")).toHaveLength(0);
+  });
+
+  it("proceeds when an ADMIN deletes another user's resource", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("pro", "ACTIVE");
+    h.enqueue("resources", {
+      data: [{ id: "r1", created_by: "someone-else" }],
+      error: null,
+    });
+
+    const res = await request("DELETE", "/api/resources/r1");
+
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ success: true });
+    const deletes = h.opsFor("resources").filter((c) => c.method === "delete");
+    expect(deletes).toHaveLength(1);
+    expect(deletes[0].args).toEqual([]); // scope comes from chained .eq("id", ...)
+    expect(h.calls.some((c) => c.method === "eq" && c.args[0] === "id" && c.args[1] === "r1")).toBe(true);
+  });
+
+  it("404 when the resource does not exist", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.mockRole("plus", "ACTIVE");
+    h.enqueue("resources", { data: [null], error: null });
+
+    const res = await request("DELETE", "/api/resources/missing");
+    expect(res.status).toBe(404);
+  });
+});
+
+// ───────────────────────────────────────────────────────────────────────────
+// progress.ts
+// ───────────────────────────────────────────────────────────────────────────
+describe("POST /api/progress validation", () => {
+  it("400 Invalid payload on a non-uuid topicId", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockApprovedUser("member");
+
+    const res = await request("POST", "/api/progress", {
+      topicId: "not-a-uuid",
+      completed: true,
+    });
+
+    expect(res.status).toBe(400);
+    expect(res.body).toEqual({ error: "Invalid payload" });
+    expect(h.opsFor("user_progress").filter((c) => c.method === "upsert")).toHaveLength(0);
+  });
+
+  it("400 when completed is not boolean or topic is missing", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockApprovedUser("member");
+
+    expect(
+      (await request("POST", "/api/progress", { topicId: crypto.randomUUID() })).status
+    ).toBe(400);
+    h.mockApprovedUser("member");
+    expect(
+      (
+        await request("POST", "/api/progress", {
+          topic_id: crypto.randomUUID(),
+          completed: "yes",
+        })
+      ).status
+    ).toBe(400);
+  });
+
+  it("normalizes topic_id alias into the upsert payload", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockApprovedUser("member");
+    const topicId = crypto.randomUUID();
+    h.enqueue("user_progress", {
+      data: [{ id: "p1", topic_id: topicId, completed: true }],
+      error: null,
+    });
+
+    const res = await request("POST", "/api/progress", {
+      topic_id: topicId,
+      completed: true,
+    });
+
+    expect(res.status).toBe(200);
+    const upserts = h.opsFor("user_progress").filter((c) => c.method === "upsert");
+    expect(upserts).toHaveLength(1);
+    expect(upserts[0].args[0]).toMatchObject({
+      user_id: "user-1",
+      topic_id: topicId,
+      completed: true,
+    });
+  });
+});
+
+// ───────────────────────────────────────────────────────────────────────────
+// progress.ts — syllabus journey (the data source behind "My Progress")
+// ───────────────────────────────────────────────────────────────────────────
+describe("GET /api/progress journey", () => {
+  it("returns the session user's rows only, mapped camelCase", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockApprovedUser("member");
+    h.enqueue("user_journey", {
+      data: [
+        {
+          id: "j1",
+          class_slug: "class-11-notes",
+          subject_slug: "physics",
+          unit_slug: "kinematics",
+          topic_slug: "equations-of-motion",
+          status: "completed",
+          started_at: "2026-10-01T00:00:00Z",
+          last_viewed_at: "2026-10-02T00:00:00Z",
+          view_count: 4,
+          completed_at: "2026-10-02T00:00:00Z",
+          updated_at: "2026-10-02T00:00:00Z",
+        },
+      ],
+      error: null,
+    });
+
+    const res = await request("GET", "/api/progress");
+
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([
+      {
+        id: "j1",
+        classSlug: "class-11-notes",
+        subjectSlug: "physics",
+        unitSlug: "kinematics",
+        topicSlug: "equations-of-motion",
+        status: "completed",
+        startedAt: "2026-10-01T00:00:00Z",
+        lastViewedAt: "2026-10-02T00:00:00Z",
+        viewCount: 4,
+        completedAt: "2026-10-02T00:00:00Z",
+        updatedAt: "2026-10-02T00:00:00Z",
+      },
+    ]);
+
+    // Owner scoping: the read is filtered by the session user's id.
+    expect(
+      h.opsFor("user_journey").some((c) => c.method === "eq" && c.args[0] === "user_id" && c.args[1] === "user-1")
+    ).toBe(true);
+  });
+
+  it("401s without a token", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    const res = await request("GET", "/api/progress", undefined, "");
+    expect(res.status).toBe(401);
+  });
+});
+
+describe("POST /api/progress journey", () => {
+  const topic = {
+    classSlug: "class-11-notes",
+    subjectSlug: "physics",
+    unitSlug: "kinematics",
+    topicSlug: "equations-of-motion",
+  };
+
+  it("starts the journey: first touch inserts a started row", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockApprovedUser("member");
+    // 1st read: no existing row. 2nd (single): the inserted row.
+    h.enqueue("user_journey", { data: null, error: null });
+    h.enqueue("user_journey", {
+      data: [
+        {
+          id: "j1",
+          ...Object.fromEntries(
+            Object.entries(topic).map(([k, v]) => [k.replace(/([A-Z])/g, "_$1").toLowerCase(), v])
+          ),
+          status: "started",
+          started_at: "2026-10-04T00:00:00Z",
+          last_viewed_at: "2026-10-04T00:00:00Z",
+          view_count: 1,
+          completed_at: null,
+          updated_at: "2026-10-04T00:00:00Z",
+        },
+      ],
+      error: null,
+    });
+
+    const res = await request("POST", "/api/progress", topic);
+
+    expect(res.status).toBe(200);
+    expect(res.body).toMatchObject({ status: "started", viewCount: 1, completedAt: null });
+    const inserts = h.opsFor("user_journey").filter((c) => c.method === "insert");
+    expect(inserts).toHaveLength(1);
+    expect(inserts[0].args[0]).toMatchObject({
+      user_id: "user-1",
+      class_slug: "class-11-notes",
+      subject_slug: "physics",
+      unit_slug: "kinematics",
+      topic_slug: "equations-of-motion",
+      status: "started",
+      view_count: 1,
+    });
+  });
+
+  it("marks a topic completed on the first call", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockApprovedUser("member");
+    h.enqueue("user_journey", { data: null, error: null });
+    h.enqueue("user_journey", {
+      data: [
+        {
+          id: "j2",
+          ...Object.fromEntries(
+            Object.entries(topic).map(([k, v]) => [k.replace(/([A-Z])/g, "_$1").toLowerCase(), v])
+          ),
+          status: "completed",
+          started_at: "2026-10-04T00:00:00Z",
+          last_viewed_at: "2026-10-04T00:00:00Z",
+          view_count: 1,
+          completed_at: "2026-10-04T00:00:00Z",
+          updated_at: "2026-10-04T00:00:00Z",
+        },
+      ],
+      error: null,
+    });
+
+    const res = await request("POST", "/api/progress", { ...topic, status: "completed" });
+
+    expect(res.status).toBe(200);
+    expect(res.body).toMatchObject({ status: "completed" });
+    const inserts = h.opsFor("user_journey").filter((c) => c.method === "insert");
+    expect(inserts[0].args[0].completed_at).toBeTruthy();
+  });
+
+  it("never downgrades a completed topic back to started", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockApprovedUser("member");
+    // Existing row: already completed.
+    h.enqueue("user_journey", {
+      data: [{ id: "j3", status: "completed", completed_at: "2026-10-01T00:00:00Z", view_count: 7 }],
+      error: null,
+    });
+    h.enqueue("user_journey", {
+      data: [
+        {
+          id: "j3",
+          ...Object.fromEntries(
+            Object.entries(topic).map(([k, v]) => [k.replace(/([A-Z])/g, "_$1").toLowerCase(), v])
+          ),
+          status: "completed",
+          started_at: "2026-10-01T00:00:00Z",
+          last_viewed_at: "2026-10-04T00:00:00Z",
+          view_count: 8,
+          completed_at: "2026-10-01T00:00:00Z",
+          updated_at: "2026-10-04T00:00:00Z",
+        },
+      ],
+      error: null,
+    });
+
+    const res = await request("POST", "/api/progress", { ...topic, status: "started" });
+
+    expect(res.status).toBe(200);
+    expect(res.body.status).toBe("completed");
+    expect(res.body.completedAt).toBe("2026-10-01T00:00:00Z");
+    expect(res.body.viewCount).toBe(8);
+
+    const updates = h.opsFor("user_journey").filter((c) => c.method === "update");
+    expect(updates).toHaveLength(1);
+    expect(updates[0].args[0]).toMatchObject({ status: "completed", view_count: 8 });
+    // Nothing was written before the owner-scoped read completed.
+    expect(h.opsFor("user_journey").filter((c) => c.method === "insert")).toHaveLength(0);
+  });
+
+  it("an explicit un-complete DOES clear the completion", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockApprovedUser("member");
+    h.enqueue("user_journey", {
+      data: [{ id: "j4", status: "completed", completed_at: "2026-10-01T00:00:00Z", view_count: 2 }],
+      error: null,
+    });
+    h.enqueue("user_journey", {
+      data: [
+        {
+          id: "j4",
+          ...Object.fromEntries(
+            Object.entries(topic).map(([k, v]) => [k.replace(/([A-Z])/g, "_$1").toLowerCase(), v])
+          ),
+          status: "started",
+          started_at: "2026-10-01T00:00:00Z",
+          last_viewed_at: "2026-10-04T00:00:00Z",
+          view_count: 3,
+          completed_at: null,
+          updated_at: "2026-10-04T00:00:00Z",
+        },
+      ],
+      error: null,
+    });
+
+    const res = await request("POST", "/api/progress", { ...topic, status: "not_completed" });
+
+    expect(res.status).toBe(200);
+    expect(res.body.status).toBe("started");
+    expect(res.body.completedAt).toBeNull();
+
+    const updates = h.opsFor("user_journey").filter((c) => c.method === "update");
+    expect(updates).toHaveLength(1);
+    expect(updates[0].args[0]).toMatchObject({ status: "started", completed_at: null });
+  });
+
+  it("400s on an empty slug, an unknown status, or a partial payload", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockApprovedUser("member");
+
+    expect((await request("POST", "/api/progress", { ...topic, classSlug: "" })).status).toBe(400);
+    h.mockApprovedUser("member");
+    expect((await request("POST", "/api/progress", { ...topic, status: "done" })).status).toBe(400);
+    h.mockApprovedUser("member");
+    expect(
+      (await request("POST", "/api/progress", { classSlug: "class-11-notes" })).status
+    ).toBe(400);
+    h.mockApprovedUser("member");
+    expect((await request("POST", "/api/progress", { ...topic, role: "owner" })).status).toBe(400);
+
+    // Nothing reached the table on any rejected payload.
+    expect(h.opsFor("user_journey").filter((c) => c.method !== "eq")).toHaveLength(0);
+  });
+});
+
+// ───────────────────────────────────────────────────────────────────────────
+// bookmarks.ts
+// ───────────────────────────────────────────────────────────────────────────
+describe("POST /api/bookmarks idempotency", () => {
+  it("returns 200 {ok:true} on duplicate instead of overwriting", async () => {
+    const { request } = await mount(bookmarksRouter, "/api/bookmarks");
+    h.mockApprovedUser("member");
+    // ignoreDuplicates upsert that hit an existing row returns no rows.
+    h.enqueue("bookmarks", { data: [], error: null });
+
+    const res = await request("POST", "/api/bookmarks", {
+      resource_id: "res-1",
+      folder: "should-not-overwrite",
+      notes: "nope",
+    });
+
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ ok: true });
+    const upserts = h.opsFor("bookmarks").filter((c) => c.method === "upsert");
+    expect(upserts).toHaveLength(1);
+    expect(upserts[0].args[1]).toEqual({
+      onConflict: "user_id,resource_id",
+      ignoreDuplicates: true,
+    });
+  });
+
+  it("creates a bookmark with only allowlisted fields (201)", async () => {
+    const { request } = await mount(bookmarksRouter, "/api/bookmarks");
+    h.mockApprovedUser("member");
+    h.enqueue("bookmarks", {
+      data: [{ id: "b1", resource_id: "res-1", folder: null, notes: null }],
+      error: null,
+    });
+
+    const res = await request("POST", "/api/bookmarks", {
+      resource_id: "res-1",
+      user_id: "attacker-id",
+      folder: "Week 1",
+    });
+
+    expect(res.status).toBe(201);
+    const upserts = h.opsFor("bookmarks").filter((c) => c.method === "upsert");
+    expect(upserts[0].args[0]).toEqual({
+      user_id: "user-1",
+      resource_id: "res-1",
+      folder: "Week 1",
+      notes: null,
+    });
+  });
+
+  it("DELETE stays scoped to the owning user", async () => {
+    const { request } = await mount(bookmarksRouter, "/api/bookmarks");
+    h.mockApprovedUser("member");
+
+    await request("DELETE", "/api/bookmarks/b1");
+
+    const eqCalls = h.opsFor("bookmarks").filter((c) => c.method === "eq");
+    expect(eqCalls.map((c) => c.args)).toContainEqual(["user_id", "user-1"]);
+    expect(eqCalls.map((c) => c.args)).toContainEqual(["id", "b1"]);
+  });
+});
+
+// ───────────────────────────────────────────────────────────────────────────
+// controller.ts settings
+// ───────────────────────────────────────────────────────────────────────────
+describe("settings endpoints", () => {
+  it("PATCH requires ADMIN/OWNER (student gets 403)", async () => {
+    const { request } = await mount(controllerRouter, "/api/controller");
+    h.mockRole("member", "ACTIVE");
+
+    const res = await request("PATCH", "/api/controller/settings", {
+      key: "site_name",
+      value: "X",
+    });
+
+    expect(res.status).toBe(403);
+    expect(h.opsFor("settings").filter((c) => c.method === "upsert")).toHaveLength(0);
+  });
+
+  it("PATCH upserts with updated_by and returns updated entries", async () => {
+    const { request } = await mount(controllerRouter, "/api/controller");
+    h.mockRole("pro", "ACTIVE");
+    h.enqueue("settings", {
+      data: [{ key: "site_name", value: "New Name" }],
+      error: null,
+    });
+
+    const res = await request("PATCH", "/api/controller/settings", {
+      key: "site_name",
+      value: "New Name",
+    });
+
+    expect(res.status).toBe(200);
+    expect(res.body.settings).toEqual([{ key: "site_name", value: "New Name" }]);
+    const upserts = h.opsFor("settings").filter((c) => c.method === "upsert");
+    expect(upserts).toHaveLength(1);
+    expect(upserts[0].args[0]).toEqual([
+      { key: "site_name", value: "New Name", updated_by: "user-1" },
+    ]);
+    expect(upserts[0].args[1]).toEqual({ onConflict: "key" });
+  });
+
+  it("PATCH accepts batch {settings:[...]} form", async () => {
+    const { request } = await mount(controllerRouter, "/api/controller");
+    h.mockRole("owner");
+    h.enqueue("settings", {
+      data: [
+        { key: "a", value: 1 },
+        { key: "b", value: true },
+      ],
+      error: null,
+    });
+
+    const res = await request("PATCH", "/api/controller/settings", {
+      settings: [
+        { key: "a", value: 1 },
+        { key: "b", value: true },
+      ],
+    });
+
+    expect(res.status).toBe(200);
+    expect(res.body.settings).toHaveLength(2);
+  });
+
+  it("PATCH validates key/value limits", async () => {
+    const { request } = await mount(controllerRouter, "/api/controller");
+
+    const longKey = { key: "k".repeat(101), value: "v" };
+    const longValue = { key: "ok", value: "v".repeat(5001) };
+
+    for (const body of [longKey, longValue]) {
+      h.reset();
+      h.mockRole("pro", "ACTIVE");
+      const res = await request("PATCH", "/api/controller/settings", body);
+      expect(res.status).toBe(400);
+    }
+  });
+
+  it("GET returns original envelope {settings:[{key,value,description}]} plus flat map", async () => {
+    const { request } = await mount(controllerRouter, "/api/controller");
+    h.mockRole("pro", "ACTIVE");
+    h.enqueue("settings", {
+      data: [{ key: "theme", value: "dark", description: "UI theme" }],
+      error: null,
+    });
+
+    const res = await request("GET", "/api/controller/settings");
+
+    expect(res.status).toBe(200);
+    expect(res.body.settings).toEqual([
+      { key: "theme", value: "dark", description: "UI theme" },
+    ]);
+    expect(res.body.map).toEqual({ theme: "dark" });
+  });
+});
+
+// ───────────────────────────────────────────────────────────────────────────
+// storage.ts
+// ───────────────────────────────────────────────────────────────────────────
+describe("POST /api/storage/upload", () => {
+  const VALID_PNG_B64 = Buffer.from([0x89, 0x50, 0x4e, 0x47]).toString("base64");
+
+  async function mountedStorage() {
+    const m = await mount(storageRoutes as unknown as express.Router, "/api/storage");
+    h.mockRole("plus", "ACTIVE");
+    return m;
+  }
+
+  it("rejects payloads larger than 10MB decoded (413)", async () => {
+    const { request } = await mountedStorage();
+    const big = Buffer.alloc(10 * 1024 * 1024 + 1, 97).toString("base64");
+
+    const res = await request("POST", "/api/storage/upload", {
+      path: "files/big.png",
+      contentType: "image/png",
+      dataBase64: big,
+    });
+
+    expect([413, 400]).toContain(res.status);
+    expect(res.status).toBe(413);
+    expect(h.storageUpload).not.toHaveBeenCalled();
+  });
+
+  it("rejects disallowed MIME types (400)", async () => {
+    const { request } = await mountedStorage();
+
+    const res = await request("POST", "/api/storage/upload", {
+      path: "files/page.html",
+      contentType: "text/html",
+      dataBase64: VALID_PNG_B64,
+    });
+
+    expect(res.status).toBe(400);
+    expect(h.storageUpload).not.toHaveBeenCalled();
+  });
+
+  it("rejects path traversal (400)", async () => {
+    const { request } = await mountedStorage();
+
+    const res = await request("POST", "/api/storage/upload", {
+      path: "folder/../secret.png",
+      contentType: "image/png",
+      dataBase64: VALID_PNG_B64,
+    });
+
+    expect(res.status).toBe(400);
+    expect(h.storageUpload).not.toHaveBeenCalled();
+  });
+
+  it("uploads to the default bucket and returns path + publicUrl", async () => {
+    const { request } = await mountedStorage();
+    h.storageUpload.mockResolvedValue({
+      data: { path: "folder/img.png" },
+      error: null,
+    });
+    h.storageGetPublicUrl.mockReturnValue({
+      data: { publicUrl: "https://cdn.example.com/folder/img.png" },
+    });
+
+    const res = await request("POST", "/api/storage/upload", {
+      path: "folder/img.png",
+      contentType: "image/png",
+      dataBase64: VALID_PNG_B64,
+    });
+
+    expect(res.status).toBe(201);
+    expect(res.body).toEqual({
+      path: "folder/img.png",
+      publicUrl: "https://cdn.example.com/folder/img.png",
+    });
+    expect(h.storageFrom).toHaveBeenCalledWith("resources");
+    expect(h.storageUpload).toHaveBeenCalledWith(
+      "folder/img.png",
+      expect.any(Buffer),
+      { contentType: "image/png", upsert: false }
+    );
+  });
+
+  it("400s a bucket that does not exist instead of a 500 after a failed upload", async () => {
+    const { request } = await mountedStorage();
+    h.bucketInfo.value = null;
+
+    const res = await request("POST", "/api/storage/upload", {
+      bucket: "missing-bucket",
+      path: "img.png",
+      contentType: "image/png",
+      dataBase64: VALID_PNG_B64,
+    });
+
+    expect(res.status).toBe(400);
+    expect(res.body.error).toContain("does not exist");
+    expect(h.storageUpload).not.toHaveBeenCalled();
+  });
+
+  it("refuses a private bucket rather than returning a public URL that cannot load", async () => {
+    const { request } = await mountedStorage();
+    h.bucketInfo.value = { id: "educational-materials", public: false };
+
+    const res = await request("POST", "/api/storage/upload", {
+      bucket: "educational-materials",
+      path: "img.png",
+      contentType: "image/png",
+      dataBase64: VALID_PNG_B64,
+    });
+
+    expect(res.status).toBe(400);
+    expect(res.body.error).toContain("private");
+    expect(h.storageUpload).not.toHaveBeenCalled();
+  });
+
+  it("requires TEACHER/ADMIN/OWNER role", async () => {
+    const { request } = await mount(storageRoutes as unknown as express.Router, "/api/storage");
+    h.mockRole("member", "ACTIVE");
+
+    const res = await request("POST", "/api/storage/upload", {
+      path: "img.png",
+      contentType: "image/png",
+      dataBase64: VALID_PNG_B64,
+    });
+
+    expect(res.status).toBe(403);
+    expect(h.storageUpload).not.toHaveBeenCalled();
+  });
+});

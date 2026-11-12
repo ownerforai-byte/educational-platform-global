@@ -84,7 +84,7 @@ export function HomePublic() {
           </h2>
           <p className="mt-3 text-sm leading-relaxed text-foreground">{ACCESS_NOTICE}</p>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Sign in after your account has been approved. Available materials and usage limits depend on your plan.{" "}
+            Sign in as a Member, then wait for approval — available materials and usage limits depend on the plan granted after that.{" "}
             <Link
               href="/plans"
               className="font-medium text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"

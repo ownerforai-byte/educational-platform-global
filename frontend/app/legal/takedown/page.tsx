@@ -44,7 +44,7 @@ export default function TakedownPage() {
       <section>
         <h2>3. Where to send it</h2>
         <p>
-          Email <a className="font-medium" href="mailto:ravikisan1814@gmail.com">ravikisan1814@gmail.com</a> with the subject{" "}
+          Email <a className="font-medium" href="mailto:sahrocky81@gmail.com">sahrocky81@gmail.com</a> with the subject{" "}
           <strong>Content takedown request</strong>. The same address is used for
           account and support enquiries; the subject line routes it to the
           rights review described here. Our written process is recorded in the

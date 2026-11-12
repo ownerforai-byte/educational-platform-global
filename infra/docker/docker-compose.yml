@@ -1,0 +1,33 @@
+# Local stack: frontend + backend. Postgres is expected via Supabase (or attach your own).
+# Usage (from repo root):
+#   docker compose -f infra/docker/docker-compose.yml up --build
+
+services:
+  backend:
+    build:
+      context: ../..
+      dockerfile: infra/docker/Dockerfile.backend
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOST: "0.0.0.0"
+      # Supply secrets via env file / host env — never bake keys into the image.
+    env_file:
+      - ../../backend/.env
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ../..
+      dockerfile: infra/docker/Dockerfile.frontend
+    ports:
+      - "5173:3000"
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      # Point the browser-facing app at the compose backend when proxying.
+    depends_on:
+      - backend
+    restart: unless-stopped

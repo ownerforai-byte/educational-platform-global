@@ -3,20 +3,30 @@
 Scoped to `backend/tests/**`. Read this plus the one closest existing test file;
 that is enough to write a new suite without studying the harness.
 
+## Layout
+
+- `integration/` — HTTP / `createApp` suites
+- `unit/` — module-level suites (`unit/ai/` for AI engine)
+- `fixtures/` — `buildProfile`, `buildChatTurn`, …
+- `helpers/setup.ts` — shared query-chain stubs (do not import `vitest` here)
+
+From `integration/` or `unit/`, import app code as `../../src/...`. From
+`unit/ai/`, use `../../../src/...`.
+
 ## Harness
 
-- Vitest + the **real** Express app: `createApp()` from `../src/app`, then
+- Vitest + the **real** Express app: `createApp()` from `../../src/app`, then
   `app.listen(0)` and call it with global `fetch` against
   `http://127.0.0.1:<port>`. There is no supertest and no separate test server.
 - Close every server in `afterAll`; suites run concurrently and ports are
   ephemeral.
-- Call `resetRateLimits()` (from `../src/middleware/rateLimit`) in `beforeEach`
+- Call `resetRateLimits()` (from `../../src/middleware/rateLimit`) in `beforeEach`
   when a suite makes repeated requests — login is capped at 5/min per IP and a
   whole suite shares `127.0.0.1`.
 
 ## Mocking Supabase
 
-`vi.mock("../src/db/supabase", ...)` **before** importing the app, and provide
+`vi.mock("../../src/db/supabase", ...)` **before** importing the app, and provide
 both shapes the source uses:
 
 ```ts
@@ -26,7 +36,7 @@ return { supabaseAdmin: admin, createAuthClient: () => admin };
 `admin.from` must return a **thenable query chain**: `select/eq/order/single/
 maybeSingle/limit/upsert/update/insert/delete` all return the same object, and
 `then` resolves `{ data, error }`. Copy `makeQueryChain` / `mockProfiles` from
-`tests/auth-flow.test.ts` rather than rebuilding it.
+`tests/integration/auth-flow.test.ts` (or `helpers/setup.ts`) rather than rebuilding it.
 
 Routers owned by other agents may be stubbed with an empty `Router()` (see the
 top of `auth-flow.test.ts`) so a full-app mount stays stable while they edit.

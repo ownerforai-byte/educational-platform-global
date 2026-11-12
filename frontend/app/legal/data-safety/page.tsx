@@ -66,8 +66,8 @@ export default function DataSafety() {
         <h2>5. Contact</h2>
         <p>
           Questions about data safety:{" "}
-          <a className="font-medium" href="mailto:ravikisan1814@gmail.com">
-            ravikisan1814@gmail.com
+          <a className="font-medium" href="mailto:sahrocky81@gmail.com">
+            sahrocky81@gmail.com
           </a>
         </p>
       </section>

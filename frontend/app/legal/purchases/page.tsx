@@ -61,7 +61,7 @@ export default function PurchasesRefund() {
           </li>
           <li>
             <strong>Unused credit/premium</strong> purchased within <code>7</code>{" "}
-            days: email <a className="font-medium" href="mailto:ravikisan1814@gmail.com">ravikisan1814@gmail.com</a>{" "}
+            days: email <a className="font-medium" href="mailto:sahrocky81@gmail.com">sahrocky81@gmail.com</a>{" "}
             from your account address; we review and process or explain.
           </li>
           <li>
@@ -83,7 +83,7 @@ export default function PurchasesRefund() {
       <section>
         <h2>6. Support</h2>
         <p>
-          Email: <a className="font-medium" href="mailto:ravikisan1814@gmail.com">ravikisan1814@gmail.com</a>{" "}
+          Email: <a className="font-medium" href="mailto:sahrocky81@gmail.com">sahrocky81@gmail.com</a>{" "}
           (include account email, order ID, and a short description).
         </p>
       </section>

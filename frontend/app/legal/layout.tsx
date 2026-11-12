@@ -47,7 +47,7 @@ export default function LegalLayout({ children }: { children: React.ReactNode })
           ← Back to home
         </Link>
         <span className="mx-2">·</span>
-        Support: ravikisan1814@gmail.com
+        Support: sahrocky81@gmail.com
       </p>
     </main>
   );

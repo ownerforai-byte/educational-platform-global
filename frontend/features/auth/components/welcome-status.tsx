@@ -28,7 +28,7 @@ import { readStatusToken, rememberPendingSignup } from "../pending-signup-identi
  *
  *   PENDING  → "account created, awaiting approval" + live stepper (polls)
  *   ACTIVE   → access granted → sign in
- *   REJECTED → not approved → leave a message to this email; ravikisan1814@gmail.com
+ *   REJECTED → not approved → leave a message to this email; sahrocky81@gmail.com
  *
  * The screen polls the server every few seconds, so the moment the owner
  * approves in the control panel, this page flips to "Access granted" on its
@@ -313,7 +313,7 @@ export function WelcomeStatus() {
           icon={<ShieldAlert className="h-5 w-5 text-destructive" />}
           title="Account not approved"
           badge={<StatusPill status="REJECTED" />}
-          body="This account wasn't approved for access. If you believe this is a mistake, leave a message to this email; ravikisan1814@gmail.com."
+          body="This account wasn't approved for access. If you believe this is a mistake, leave a message to this email; sahrocky81@gmail.com."
           actions={<AuthButton href="/" label="Back to home" />}
         />
       )}
@@ -346,7 +346,7 @@ function MessageOwnerBox({ name }: { name: string | null }) {
         message.trim() || "(no message)"
       }\n\n— ${name ?? "A new student"}`,
     );
-    window.location.href = `mailto:ravikisan1814@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:sahrocky81@gmail.com?subject=${subject}&body=${body}`;
   };
   return (
     <div className="rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] p-4">

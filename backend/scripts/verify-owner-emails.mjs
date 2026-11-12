@@ -6,13 +6,7 @@ import dotenv from "dotenv";
 dotenv.config({ path: ".env" });
 dotenv.config({ path: "../.env" });
 
-const OWNER_EMAILS = [
-  "harindarsah98172@gmail.com",
-  "yashsah231@gmail.com",
-  "sahrocky81@gmail.com",
-  "ravikisan1814@gmail.com",
-  "planephoto88@gmail.com",
-];
+const OWNER_EMAILS = ["sahrocky81@gmail.com"];
 
 const url = process.env.SUPABASE_URL;
 const key = process.env.SUPABASE_SERVICE_ROLE_KEY;

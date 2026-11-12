@@ -51,11 +51,7 @@ async function rest(path, init = {}) {
 // OWNER_PASSWORD_* in the environment or in backend/.env (gitignored).
 const envPassword = (key) => process.env[key] ?? e[key] ?? "";
 const OWNERS = [
-  { email: "harindarsah98172@gmail.com", password: envPassword("OWNER_PASSWORD_HARINDAR"), name: "Harindra Sah" },
-  { email: "yashsah231@gmail.com", password: envPassword("OWNER_PASSWORD_YASH"), name: "Yash Sah" },
   { email: "sahrocky81@gmail.com", password: envPassword("OWNER_PASSWORD_ROCKY"), name: "Sah Rocky" },
-  { email: "ravikisan1814@gmail.com", password: envPassword("OWNER_PASSWORD_RAVI"), name: "Ravi Kisan" },
-  { email: "planephoto88@gmail.com", password: envPassword("OWNER_PASSWORD_PLANE"), name: "Plane Photo" },
 ];
 
 const missingPasswords = OWNERS.filter((o) => !o.password).map((o) => o.email);

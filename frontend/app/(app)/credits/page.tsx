@@ -296,7 +296,7 @@ export default function CreditsPage() {
               <div>
                 <p className="font-medium">Want Premium Access?</p>
                 <p className="text-sm text-muted-foreground">
-                  Leave a message to this email; ravikisan1814@gmail.com for premium status and full access.
+                  Leave a message to this email; sahrocky81@gmail.com for premium status and full access.
                 </p>
               </div>
             </div>

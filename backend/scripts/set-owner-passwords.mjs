@@ -56,11 +56,7 @@ if (!NEW_PASSWORD) {
 }
 
 const OWNERS = [
-  { email: "harindarsah98172@gmail.com", name: "Harindra Sah" },
-  { email: "yashsah231@gmail.com", name: "Yash Sah" },
   { email: "sahrocky81@gmail.com", name: "Sah Rocky" },
-  { email: "ravikisan1814@gmail.com", name: "Ravi Kisan" },
-  { email: "planephoto88@gmail.com", name: "Plane Photo" },
 ];
 
 async function main() {
