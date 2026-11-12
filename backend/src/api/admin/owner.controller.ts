@@ -4,7 +4,6 @@ import { requireAuth, isOwnerAccount, type AuthedRequest } from "../../middlewar
 import { supabaseAdmin } from "../../db/supabase";
 import { invalidateSectionTierCache } from "../../utils/sectionTiers";
 import { authEmailsById, invalidateAuthEmailsCache } from "../../utils/authEmails";
-import { isProtectedOwnerTarget } from "../../utils/ownerGuard";
 import { invalidateR1GrantCache } from "../../utils/r1Grants";
 import { aiSparkTierFor } from "../../utils/aiSpark";
 import { sendApprovalEmail } from "../../utils/mailer";
@@ -17,10 +16,9 @@ import { sendApprovalEmail } from "../../utils/mailer";
  *   2. The caller to be an owner ACCOUNT: an email on the OWNER_EMAILS
  *      allowlist OR the owner rung (owner grant / normalized legacy operator).
  *
- * Approve/reject is restricted to owner accounts, and ANY owner account may
- * decide a non-owner account. That is the only cross-account restriction:
- * no owner may remove, demote or suspend another owner — see
- * isProtectedOwnerTarget(), which guards owner targets on every route below.
+ * Approve/reject is restricted to owner accounts. Owners are fully equal and
+ * independent of one another: with no owner-protection guard left, any owner
+ * may re-tier, suspend or delete any account — including another owner.
  */
 const router = Router();
 
@@ -43,9 +41,8 @@ const creditAdjustSchema = z.object({
 });
 
 const roleUpdateSchema = z.object({
-  // Owner is grantable to a NON-owner account (approve/promote someone as
-  // owner). An EXISTING owner can never be re-tiered — isProtectedOwnerTarget
-  // blocks that on every route below, so no owner can replace another owner.
+  // Owner is grantable to any account, and an existing owner may be re-tiered,
+  // suspended or deleted like anyone else.
   role: z.enum(["member", "plus", "pro", "owner"]),
 });
 
@@ -319,12 +316,6 @@ router.post("/users/bulk-status", requireAuth, async (req: Request, res: Respons
 
   try {
     for (const userId of userIds) {
-      const guard = await isProtectedOwnerTarget(userId);
-      if (guard.protectedTarget) {
-        skipped.push({ userId, reason: guard.reason ?? "Protected account" });
-        continue;
-      }
-
       const { data: target } = await supabaseAdmin
         .from("profiles")
         .select("id, access_status")
@@ -400,12 +391,6 @@ router.post("/users/bulk-tier", requireAuth, async (req: Request, res: Response)
 
   try {
     for (const userId of userIds) {
-      const guard = await isProtectedOwnerTarget(userId);
-      if (guard.protectedTarget) {
-        skipped.push({ userId, reason: guard.reason ?? "Protected account" });
-        continue;
-      }
-
       const { data, error } = await supabaseAdmin
         .from("profiles")
         .update({
@@ -562,14 +547,6 @@ router.patch("/users/:id/status", requireAuth, async (req: Request<{ id: string 
     return;
   }
 
-  // OWNER INDEPENDENCE (hardcoded 2026-10-12): suspending/rejecting an owner
-  // is a removal of standing — refused for every caller, owner or not.
-  const guard = await isProtectedOwnerTarget(req.params.id);
-  if (guard.protectedTarget) {
-    res.status(403).json({ error: guard.reason });
-    return;
-  }
-
   const { status, role } = parsed.data;
 
   try {
@@ -655,14 +632,6 @@ router.patch("/users/:id/role", requireAuth, async (req: Request<{ id: string }>
   const parsed = roleUpdateSchema.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ error: "Invalid role" });
-    return;
-  }
-
-  // OWNER INDEPENDENCE (hardcoded 2026-10-12): changing another owner's role
-  // is "changing their position" — refused. Each owner stands alone.
-  const guard = await isProtectedOwnerTarget(req.params.id);
-  if (guard.protectedTarget) {
-    res.status(403).json({ error: guard.reason });
     return;
   }
 
@@ -891,14 +860,6 @@ router.delete("/users/:id", requireAuth, async (req: Request<{ id: string }>, re
     return;
   }
 
-  // OWNER INDEPENDENCE (hardcoded 2026-10-12): "no one email can remove other
-  // email" — deleting an owner account is refused for every caller.
-  const guard = await isProtectedOwnerTarget(req.params.id);
-  if (guard.protectedTarget) {
-    res.status(403).json({ error: guard.reason });
-    return;
-  }
-
   try {
     const { error: authError } = await supabaseAdmin.auth.admin.deleteUser(req.params.id);
     if (authError) {
@@ -1019,10 +980,8 @@ router.post("/premium-requests/:id/approve", requireAuth, async (req: Request, r
     const newCredits = (profile?.credits ?? 0) + CREDIT_BONUS;
 
     // Approval is a Pro grant: write role + plan + premium together so the
-    // directory's effective tier matches. Never reposition a protected owner
-    // (owner independence) — for them only the bonus credits + flag apply.
-    const guard = await isProtectedOwnerTarget(requestData.user_id);
-    const tierFields = guard.protectedTarget ? {} : { role: "pro", plan: "pro" };
+    // directory's effective tier matches.
+    const tierFields = { role: "pro", plan: "pro" };
 
     await supabaseAdmin
       .from("profiles")

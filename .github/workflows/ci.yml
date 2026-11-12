@@ -28,9 +28,9 @@ jobs:
       # The 7 React Compiler rules are warnings (legacy backlog), so `npm run
       # lint` alone cannot stop new ones. The ratchet fails on any increase
       # over scripts/lint-ratchet-baseline.json; fixing findings lowers the
-      # ceiling permanently. See scripts/lint-ratchet.mjs.
+      # ceiling permanently. See scripts/ci/lint-ratchet.mjs.
       - name: Enforce the React Compiler lint ratchet
-        run: node ../scripts/lint-ratchet.mjs
+        run: node ../scripts/ci/lint-ratchet.mjs
       # The offline app shell must follow the App Router tree, not a stale
       # hand-written list that misses newly added pages.
       - name: Check service worker precache drift
@@ -38,7 +38,7 @@ jobs:
       # No NEW 🚧 placeholder page may ship. The 26 existing ones are
       # baselined in scripts/dead-end-baseline.json and can only go down.
       - name: Enforce the dead-end route ratchet
-        run: node ../scripts/dead-end-ratchet.mjs
+        run: node ../scripts/audit/dead-end-ratchet.mjs
 
   frontend-typecheck:
     runs-on: ubuntu-latest

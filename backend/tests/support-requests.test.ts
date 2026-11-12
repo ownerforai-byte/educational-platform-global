@@ -45,7 +45,7 @@ describe("support delivery", () => {
       ? "Your account deletion request was delivered to support for review. Identity verification is required before deletion."
       : "Your AI content report was delivered to support for review.");
     const payload = vi.mocked(sendMail).mock.calls[0][0];
-    expect(payload.to).toBe("ravikisan1814@gmail.com");
+    expect(payload.to).toBe("sahrocky81@gmail.com");
     expect(payload.text).toContain("Account: account-123");
     expect(payload.html).toContain("&lt;script&gt;");
     expect(payload.html).not.toContain("<script>");

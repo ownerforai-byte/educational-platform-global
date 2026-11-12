@@ -37,7 +37,7 @@ jobs:
       # failure. Public env is mandatory; missing SMOKE_* credentials only
       # skip their tests, so they are warnings here.
       - name: Preflight smoke environment
-        run: node ../scripts/check-smoke-env.mjs
+        run: node ../scripts/ci/check-smoke-env.mjs
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}

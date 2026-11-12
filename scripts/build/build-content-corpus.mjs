@@ -36,7 +36,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const SRC = path.join(ROOT, "content");
 const MANIFEST = path.join(ROOT, "frontend", "public", "data", "content", "manifest.json");
 const CHECK_ONLY = process.argv.includes("--check");

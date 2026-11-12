@@ -47,7 +47,7 @@ A full-stack study platform covering Physics, Chemistry, Biology, Mathematics, E
 │   ├── src/middleware/ Auth, rate limits, spark gates
 │   └── tests/         Vitest backend tests
 ├── content/           Authored JSON corpus (notes, PYQs, formulas …)
-├── content-tools/     Content build/validation scripts
+├── content-tools/     Content tooling (generators/enhancers/validators/migrators/fixers)
 ├── scripts/           Shared build/CI scripts
 ├── docs/              Architecture, API, deployment docs
 ├── plan.md            Living product plan (phases, todos, done items)

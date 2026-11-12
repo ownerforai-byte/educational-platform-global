@@ -80,11 +80,8 @@ describe("Social login", () => {
     expect(mocks.refresh).toHaveBeenCalledOnce();
   });
 
-  it("renders Google sign-in alongside the password form (Facebook temporarily hidden)", () => {
+  it("renders Google sign-in alongside the password form", () => {
     render(<LoginForm />);
-    // Facebook is intentionally hidden behind SHOW_FACEBOOK=false until the
-    // Meta code-exchange credentials are fixed (see social-auth-buttons.tsx);
-    // the button must stay absent rather than render broken.
     expect(screen.queryByRole("button", { name: /continue with facebook/i })).not.toBeInTheDocument();
     expect(screen.getByRole("button", { name: /continue with google/i })).toBeInTheDocument();
     expect(screen.getByLabelText("Email Address")).toBeInTheDocument();
@@ -102,9 +99,6 @@ describe("Social login", () => {
   });
 
   it("shows a useful message when the provider is disabled", async () => {
-    // Same handler branch the Facebook button used: while Facebook is hidden
-    // (SHOW_FACEBOOK=false) the disabled-provider message is exercised through
-    // the visible Google button.
     mocks.isOAuthProviderEnabled.mockResolvedValue(false);
     render(<LoginForm />);
     fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
@@ -129,9 +123,6 @@ describe("Social login", () => {
         redirectTo: `${window.location.origin}/auth/callback`,
       },
     });
-    expect(
-      mocks.signInWithOAuth.mock.calls.every(([args]) => args.provider !== "facebook"),
-    ).toBe(true);
   });
 
   it("starts Google OAuth with the same CSRF and callback flow", async () => {

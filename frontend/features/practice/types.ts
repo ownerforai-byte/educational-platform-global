@@ -17,13 +17,8 @@
 
 export type PracticeMode = "mcq" | "writing";
 
-export type SubjectSlug =
-  | "physics"
-  | "chemistry"
-  | "biology"
-  | "mathematics"
-  | "english"
-  | "nepali";
+import type { SubjectSlug } from "@/types/content";
+export type { SubjectSlug } from "@/types/content";
 
 export type Difficulty = "easy" | "intermediate" | "hard";
 

@@ -17,10 +17,10 @@ import { LAB_METADATA_LIST } from "@/lib/lab-metadata";
 import { LAB_VISUAL_INDEX } from "@/lib/lab-visual-index";
 import { SYLLABUS, slugifySyllabusTopic } from "@/lib/syllabus";
 import { nextTopic, previousTopic, topicHref } from "@/lib/syllabus-neighbors";
+import { modulePathExists, readLibSource } from "../helpers/resolve-lib-shim";
 
 const FRONTEND_ROOT = process.cwd();
 const APP_ROOT = path.join(FRONTEND_ROOT, "app", "(app)");
-const LOADERS_PATH = path.join(FRONTEND_ROOT, "lib", "lab-activity-loaders.ts");
 
 /** Exact syllabus topic slug → placement (same rule as the coverage script). */
 const placements = new Map<string, { classSlug: string; subject: string; unitId: string }>();
@@ -40,7 +40,7 @@ for (const cls of SYLLABUS) {
   }
 }
 
-const loadersSource = fs.readFileSync(LOADERS_PATH, "utf8");
+const loadersSource = readLibSource(FRONTEND_ROOT, path.join("lib", "lab-activity-loaders.ts"));
 
 describe("3D activity manifest", () => {
   it("keeps ids and canonical slugs unique and URL-safe", () => {
@@ -143,11 +143,10 @@ describe("3D activity manifest", () => {
     for (const activity of ACTIVITY_MANIFEST) {
       const renderer = activity.renderer;
       if (renderer.kind === "module") {
-        const relative = renderer.modulePath.replace(/^@\//, "");
-        const exists = [`${relative}.tsx`, `${relative}.ts`].some((file) =>
-          fs.existsSync(path.join(FRONTEND_ROOT, file)),
-        );
-        expect(exists, `${renderer.modulePath} missing`).toBe(true);
+        expect(
+          modulePathExists(FRONTEND_ROOT, renderer.modulePath),
+          `${renderer.modulePath} missing`,
+        ).toBe(true);
         expect(loadersSource).toContain(`"${renderer.modulePath}"`);
       } else if (renderer.kind === "visual") {
         expect(LAB_VISUAL_INDEX).toContain(renderer.entry);

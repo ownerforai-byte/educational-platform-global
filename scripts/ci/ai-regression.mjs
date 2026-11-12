@@ -23,7 +23,7 @@ import crypto from "node:crypto";
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const CORPUS = path.join(ROOT, "content", "practice", "questions");
 const SET_FILE = path.join(ROOT, "reports", "ai-regression-golden-set.json");
 const RESULTS_FILE = path.join(ROOT, "reports", "ai-regression-results.json");

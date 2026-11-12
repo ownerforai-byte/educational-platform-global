@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const bioDir = path.join(__dirname, '../content/ravikishan/class-11-notes/biology');
+const bioDir = path.join(__dirname, '../../content/ravikishan/class-11-notes/biology');
 
 function processDirectory(dir) {
   const files = fs.readdirSync(dir);

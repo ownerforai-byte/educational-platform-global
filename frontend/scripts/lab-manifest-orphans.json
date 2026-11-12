@@ -1,9 +1,4 @@
 {
   "reason": "Reviewed exemptions for `scripts/lab-manifest-coverage.ts --check`. A 3D file under components/lab/topic-visuals that no live source references must be listed here; a new unreferenced visual fails the gate instead of silently shipping.",
-  "approved": [
-    {
-      "path": "frontend/components/lab/topic-visuals/index.ts",
-      "why": "Barrel no source imports. Reported by the dead-code inventory as a deletion candidate; kept until that pass runs so this gate stays about 3D wiring, not file removal."
-    }
-  ]
+  "approved": []
 }

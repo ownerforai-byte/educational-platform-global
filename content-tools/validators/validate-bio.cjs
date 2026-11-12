@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const ROOT = path.join(__dirname, '..', 'content', 'ravikishan', 'class-11-notes', 'biology');
+const ROOT = path.join(__dirname, '..', '..', 'content', 'ravikishan', 'class-11-notes', 'biology');
 const FIELDS = ['notes','confusion','practice','universalFacts','examples','practiceQuestions','formulas','keyPoints','summary','specialNotes','importantStatements','importantNotes','examShortTricks','examNotes','mcs','importantConcepts','importantTasks','exercises','visualization'];
 const PLACE = /(Core point for|Key concept 1 for|Task for studying|Specialized insight|Key statement for|Important note regarding|Universal scientific fact for|placeholder|Relevant formula|Core point|Added new rich content|frequently tested\.|Question about|\(A\) \(B\)|^\s*\$\s*F\s*=)/;
 let files = 0, jsonErr = 0, emptyTotal = 0, placeholderTotal = 0, issues = [];

@@ -119,17 +119,47 @@ describe("formatCitations", () => {
     expect(formatCitations([])).toBe("");
   });
 
-  it("renders a From your notes block with source paths and a notes link", () => {
+  it("renders a From your notes block that LINKS each record instead of printing its path", () => {
     const out = formatCitations([
-      { kind: "note", id: "n1", title: "Newton's Laws", classLevel: "class-11", subject: "Physics", unit: "Mechanics", topicSlug: "laws", source: "content/11/physics/unit-1/laws.md", strength: "strong" },
-      { kind: "pyq", id: "p1", title: "2079 Set A Q2", classLevel: "class-12", subject: "Chemistry", unit: "Acids", topicSlug: "ph", source: "content/12/chemistry/practice/questions/2079-a2.md", strength: "strong" },
+      { kind: "note", id: "n1", title: "Newton's Laws", classLevel: "class-11", subject: "Physics", unit: "Mechanics", topicSlug: "laws", source: "content/11/physics/unit-1/laws.md", strength: "strong", href: "/class-11-notes/physics/chapters/mechanics" },
+      { kind: "pyq", id: "p1", title: "2079 Set A Q2", classLevel: "class-12", subject: "Chemistry", unit: "Acids", topicSlug: "ph", source: "content/12/chemistry/practice/questions/2079-a2.md", strength: "strong", href: "/class-12-notes/chemistry/chapters/acids" },
     ]);
     expect(out).toContain("From your notes");
-    expect(out).toContain("Newton's Laws");
-    expect(out).toContain("2079 Set A Q2");
-    expect(out).toContain("content/11/physics/unit-1/laws.md");
-    expect(out).toContain("content/12/chemistry/practice/questions/2079-a2.md");
+    expect(out).toContain("[Newton's Laws](/class-11-notes/physics/chapters/mechanics)");
+    expect(out).toContain("[2079 Set A Q2](/class-12-notes/chemistry/chapters/acids)");
     expect(out).toContain("Past paper");
     expect(out).toContain("[Notes archive](/notes)");
+    // The long repo path is what the link replaces.
+    expect(out).not.toContain("content/11/physics/unit-1/laws.md");
+    expect(out).not.toContain("content/12/chemistry/practice/questions/2079-a2.md");
+  });
+
+  it("keeps the raw path for a record with no routable coordinates", () => {
+    const out = formatCitations([
+      { kind: "note", id: "kb1", title: "Drop-in note", classLevel: "class-11", subject: "physics", unit: "kb-folder", topicSlug: "x", source: "backend/kb/drop-in.json", strength: "strong" },
+    ]);
+    expect(out).toContain("**Drop-in note**");
+    expect(out).toContain("`backend/kb/drop-in.json`");
+  });
+});
+
+describe("citation links", () => {
+  it("links a syllabus record to its chapter page", () => {
+    const c = toCitation(hit({ id: "n1", source: "content/a.md" }));
+    expect(c?.href).toBe("/class-11-notes/physics/chapters/mechanics");
+  });
+
+  it("falls back to the subject hub when the unit is not a slug", () => {
+    const c = toCitation(hit({ id: "n2", source: "content/a.md", subject: "Physics", unit: "Unit 1: Motion" }));
+    expect(c?.href).toBe("/class-11-notes/physics");
+  });
+
+  it("builds no link for a drop-in KB record or an unknown class", () => {
+    const dropIn = hit({ id: "kb", source: "backend/kb/a.json" });
+    dropIn.entry.dropIn = true;
+    expect(toCitation(dropIn)?.href).toBeUndefined();
+
+    const unknown = hit({ id: "u", source: "content/a.md", classLevel: "unknown" });
+    expect(toCitation(unknown)?.href).toBeUndefined();
   });
 });

@@ -18,8 +18,10 @@
  */
 
 import { SYLLABUS } from "./syllabus";
+import type { ClassNotesSlug } from "@/types/content";
 
-export type ClassSlug = "class-11-notes" | "class-12-notes";
+/** @deprecated Prefer `ClassNotesSlug` from `@/types/content`. */
+export type ClassSlug = ClassNotesSlug;
 export type TopicImportance = "high-yield" | "core" | "reference";
 export type TopicPayloadKind = "json" | "ts" | "db";
 
@@ -28,7 +30,7 @@ export type TopicEntry = {
   slug: string;
   title: string;
   /** Syllabus class slug (must exist in lib/syllabus.ts). */
-  classSlug: ClassSlug;
+  classSlug: ClassNotesSlug;
   /** Syllabus subject slug. */
   subjectSlug: string;
   /** Syllabus unit slug — the "place" the topic routes to. */

@@ -348,7 +348,7 @@ describe("R1 per-user scoping (no IDOR)", () => {
 // Owner grants API
 // ───────────────────────────────────────────────────────────────────────────
 describe("owner user tier management", () => {
-  it("updates selected non-owner tiers and skips protected owner accounts", async () => {
+  it("updates every selected account, owners included (no protection guard)", async () => {
     const { request } = await mount([["/api/owner", ownerRouter]]);
     h.mockUser("owner-1", OWNER_EMAIL);
     h.getUserById.mockImplementation(async (id: string) => ({
@@ -364,9 +364,11 @@ describe("owner user tier management", () => {
     h.enqueue("profiles", { data: [], error: null });
     h.enqueue("profiles", { data: [], error: null });
     h.enqueue("profiles", { data: [], error: null });
-    // Owner-target guard, then successful tier update.
+    // Per-target reads, then the successful tier updates.
     h.enqueue("profiles", { data: [{ role: "member" }], error: null });
     h.enqueue("profiles", { data: [{ id: "00000000-0000-4000-8000-000000000001" }], error: null });
+    h.enqueue("profiles", { data: [{ role: "owner" }], error: null });
+    h.enqueue("profiles", { data: [{ id: "00000000-0000-4000-8000-000000000002" }], error: null });
 
     const res = await request("POST", "/api/owner/users/bulk-tier", {
       userIds: [
@@ -379,11 +381,13 @@ describe("owner user tier management", () => {
     expect(res.status).toBe(200);
     expect(res.body).toMatchObject({
       role: "pro",
-      applied: ["00000000-0000-4000-8000-000000000001"],
+      applied: [
+        "00000000-0000-4000-8000-000000000001",
+        "00000000-0000-4000-8000-000000000002",
+      ],
       requested: 2,
     });
-    expect(res.body.skipped).toHaveLength(1);
-    expect(res.body.skipped[0].userId).toBe("00000000-0000-4000-8000-000000000002");
+    expect(res.body.skipped).toHaveLength(0);
     const update = h.opsFor("profiles").find((call) => call.method === "update");
     expect(update?.args[0]).toMatchObject({
       role: "pro",
@@ -391,7 +395,7 @@ describe("owner user tier management", () => {
       premium_status: true,
       premium_approved_at: expect.any(String),
     });
-    expect(h.opsFor("profiles").filter((call) => call.method === "update")).toHaveLength(1);
+    expect(h.opsFor("profiles").filter((call) => call.method === "update")).toHaveLength(2);
   });
 
   it("rejects duplicate IDs before changing profiles", async () => {
@@ -564,7 +568,7 @@ describe("owner accounts may decide non-owner accounts", () => {
     expect(update?.args[0]).toEqual({ access_status: "REJECTED" });
   });
 
-  it("still refuses any owner from touching another owner", async () => {
+  it("lets one owner change another owner", async () => {
     const { request } = await mount([["/api/owner", ownerRouter]]);
     h.mockUser("owner-2", ROLE_OWNER_EMAIL);
     h.getUserById.mockResolvedValue({
@@ -578,8 +582,8 @@ describe("owner accounts may decide non-owner accounts", () => {
       status: "REJECTED",
     });
 
-    expect(res.status).toBe(403);
-    expect(h.opsFor("profiles").filter((c) => c.method === "update")).toHaveLength(0);
+    expect(res.status).toBe(200);
+    expect(h.opsFor("profiles").filter((c) => c.method === "update")).toHaveLength(1);
   });
 
   it("promotes a non-owner account to owner from the tier control", async () => {

@@ -71,8 +71,8 @@ export function LoginForm() {
       <AuthField
         id="email"
         label="Email Address"
-        placeholder="Rainer"
-        activePlaceholder="Rainer"
+        placeholder="Verner"
+        activePlaceholder="Verner"
         type="email"
         value={email}
         onChange={setEmail}
@@ -84,8 +84,8 @@ export function LoginForm() {
       <AuthField
         id="password"
         label="Password"
-        placeholder="Rainer"
-        activePlaceholder="Rainer"
+        placeholder="Verner"
+        activePlaceholder="Verner"
         type={showPassword ? "text" : "password"}
         value={password}
         onChange={setPassword}

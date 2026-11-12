@@ -22,7 +22,7 @@ export function SupportRequest({ kind, floating = false }: { kind: "account_dele
       });
       setStatus(result.message); setMessage("");
     } catch {
-      setError("Your request was not confirmed. Retry, sign in if needed, or email ravikisan1814@gmail.com.");
+      setError("Your request was not confirmed. Retry, sign in if needed, or email sahrocky81@gmail.com.");
     } finally { setPending(false); }
   }
   return (

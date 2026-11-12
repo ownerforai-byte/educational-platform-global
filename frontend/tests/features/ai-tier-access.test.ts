@@ -2,13 +2,16 @@ import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { readBackendApiSource } from "../read-backend-api-source.js";
+import { readLibSource } from "../helpers/resolve-lib-shim";
 import {
   AI_SPARK_LIMITS,
   aiSparkLimitLabel,
   aiSparkTierFor,
 } from "@/lib/ai/ai-spark-tiers";
 
-const read = (p: string) => readFileSync(path.resolve(p), "utf8");
+// Phase 5/6 shims: a `lib/*` file may now be a one-line re-export, so the
+// reader follows it into `features/*` before asserting on its content.
+const read = (p: string) => readLibSource(process.cwd(), p);
 const readRoot = (p: string) => readFileSync(path.resolve("..", p), "utf8");
 
 describe("AI spark tier table", () => {

@@ -2,11 +2,7 @@
 
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
-import {
-  getSupabaseBrowserClient,
-  isOAuthProviderEnabled,
-  type OAuthProvider,
-} from "@/lib/supabase/browser";
+import { getSupabaseBrowserClient, isOAuthProviderEnabled } from "@/lib/supabase/browser";
 import { apiFetch } from "@/lib/api-client";
 import {
   isOAuthAccessBlocked,
@@ -37,14 +33,6 @@ export function GoogleIcon({ className = "h-4 w-4" }: { className?: string }) {
   );
 }
 
-export function FacebookIcon({ className = "h-4 w-4" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="#1877F2">
-      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-    </svg>
-  );
-}
-
 interface SocialAuthButtonsProps {
   mode?: "login" | "signup";
   disabled?: boolean;
@@ -52,8 +40,7 @@ interface SocialAuthButtonsProps {
 }
 
 const CSRF_TIMEOUT_MS = 10_000;
-const COLD_START_MESSAGE =
-  "Sign-in is taking too long to start (the server may be warming up). Please try again in a moment.";
+const COLD_START_MESSAGE = "Please try again in moment.";
 
 /**
  * The CSRF handshake talks to the Render backend, which can be cold. A bare
@@ -88,33 +75,22 @@ async function requestOAuthCsrf(): Promise<string> {
   throw lastError instanceof Error ? lastError : new Error(COLD_START_MESSAGE);
 }
 
-/**
- * Facebook sign-in is temporarily HIDDEN from the login/signup pages because
- * the Supabase ⇄ Meta "exchange external code" step was failing (client
- * id/secret + redirect-URI mismatch across the two Meta apps). The flow, routes
- * and this button are all still in place — flip this flag back to `true` to
- * re-show the Facebook button the moment the Meta app credentials are fixed.
- * Google is unaffected and stays visible.
- */
-const SHOW_FACEBOOK = false;
-
 export function SocialAuthButtons({
   mode = "login",
   disabled = false,
   onError,
 }: SocialAuthButtonsProps) {
-  const [socialLoading, setSocialLoading] = useState<OAuthProvider | null>(null);
+  const [socialLoading, setSocialLoading] = useState(false);
 
-  const handleSocialSignIn = async (provider: OAuthProvider) => {
-    setSocialLoading(provider);
+  const handleGoogleSignIn = async () => {
+    setSocialLoading(true);
     onError?.("");
     let redirected = false;
-    const label = provider === "google" ? "Google" : "Facebook";
 
     try {
-      if (!(await isOAuthProviderEnabled(provider))) {
+      if (!(await isOAuthProviderEnabled("google"))) {
         onError?.(
-          `${label} sign-in is temporarily unavailable. Please sign in with email or try again later.`,
+          "Google sign-in is temporarily unavailable. Please sign in with email or try again later.",
         );
         return;
       }
@@ -127,7 +103,7 @@ export function SocialAuthButtons({
       // URI on preview/www/custom hosts — Google rejects every unregistered
       // one with "Access blocked". See lib/supabase/oauth-config.ts.
       const { error: oauthError } = await getSupabaseBrowserClient().auth.signInWithOAuth({
-        provider,
+        provider: "google",
         options: { redirectTo: oauthCallbackUrl() },
       });
       if (oauthError) throw oauthError;
@@ -138,13 +114,13 @@ export function SocialAuthButtons({
       // one — name the exact URLs to register instead of a vague "unavailable".
       onError?.(
         isOAuthAccessBlocked(oauthError)
-          ? oauthAccessBlockedMessage(label)
+          ? oauthAccessBlockedMessage("Google")
           : oauthError instanceof Error
             ? oauthError.message
-            : `${label} sign-in could not be started.`,
+            : "Google sign-in could not be started.",
       );
     } finally {
-      if (!redirected) setSocialLoading(null);
+      if (!redirected) setSocialLoading(false);
     }
   };
 
@@ -157,33 +133,15 @@ export function SocialAuthButtons({
         aria-label={`${actionText} with Google`}
         title={`${actionText} with Google`}
         className="flex h-14 w-14 items-center justify-center rounded-full border border-border bg-background shadow-sm transition-all hover:bg-muted/60 active:scale-95 disabled:opacity-60"
-        onClick={() => handleSocialSignIn("google")}
-        disabled={disabled || socialLoading !== null}
+        onClick={handleGoogleSignIn}
+        disabled={disabled || socialLoading}
       >
-        {socialLoading === "google" ? (
+        {socialLoading ? (
           <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
         ) : (
           <GoogleIcon className="h-6 w-6" />
         )}
       </button>
-
-      {SHOW_FACEBOOK && (
-        <button
-          type="button"
-          aria-label={`${actionText} with Facebook`}
-          title={`${actionText} with Facebook`}
-          className="flex h-14 w-14 items-center justify-center rounded-full border border-border bg-background shadow-sm transition-all hover:bg-muted/60 active:scale-95 disabled:opacity-60"
-          onClick={() => handleSocialSignIn("facebook")}
-          disabled={disabled || socialLoading !== null}
-        >
-          {socialLoading === "facebook" ? (
-            <Loader2 className="h-5 w-5 animate-spin text-[#1877F2]" />
-          ) : (
-            <FacebookIcon className="h-6 w-6" />
-          )}
-        </button>
-      )}
     </div>
   );
 }
-

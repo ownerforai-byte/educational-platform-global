@@ -6,7 +6,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = path.join(__dirname, '..', 'content', 'ravikishan', 'class-11-notes');
+const ROOT = path.join(__dirname, '..', '..', 'content', 'ravikishan', 'class-11-notes');
 
 // ────────────────────────────────────────────────────────────
 // DETECTION

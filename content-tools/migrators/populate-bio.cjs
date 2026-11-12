@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = path.join(__dirname, '..', 'content', 'ravikishan', 'class-11-notes', 'biology');
+const ROOT = path.join(__dirname, '..', '..', 'content', 'ravikishan', 'class-11-notes', 'biology');
 
 // ── Load all content modules into one map ──────────────────────────
 const MODULES = [
@@ -17,7 +17,7 @@ const MODULES = [
 ];
 const TOPICS = {};
 for (const m of MODULES) {
-  Object.assign(TOPICS, require(path.join(__dirname, m + '.cjs')));
+  Object.assign(TOPICS, require(path.join(__dirname, '..', 'generators', m + '.cjs')));
 }
 console.log('Loaded topics:', Object.keys(TOPICS).length);
 

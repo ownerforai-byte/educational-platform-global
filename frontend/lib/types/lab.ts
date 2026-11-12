@@ -1,1 +1,1 @@
-export * from "@/features/lab/types-lab";
+export * from "@/types/lab";

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T16:26:14.576Z",
+  "generatedAt": "2026-11-12T01:56:03.734Z",
   "manifest": {
     "activities": 870,
     "pilots": 3,
@@ -70,9 +70,7 @@
     "catalogMissing": 0
   },
   "exempt": {
-    "orphanVisualsApproved": [
-      "frontend/components/lab/topic-visuals/index.ts"
-    ],
+    "orphanVisualsApproved": [],
     "orphanVisualsUnexpected": [],
     "visualIndexWithoutSyllabusTopic": [
       "physical-quantities",
@@ -193,9 +191,7 @@
       "class11-math:class11",
       "class11-biology:class11"
     ],
-    "orphanTopicVisuals": [
-      "frontend/components/lab/topic-visuals/index.ts"
-    ]
+    "orphanTopicVisuals": []
   },
   "violations": [],
   "ok": true

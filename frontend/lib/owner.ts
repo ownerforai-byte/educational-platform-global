@@ -3,13 +3,11 @@
  * Keep both lists in sync. The frontend list is a UX convenience only; the
  * backend gate (`/api/owner/*`) is the real security boundary.
  */
-const DEFAULT_OWNER_EMAILS = [
-  "harindarsah98172@gmail.com",
-  "yashsah231@gmail.com",
-  "sahrocky81@gmail.com",
-  "ravikisan1814@gmail.com",
-  "planephoto88@gmail.com",
-];
+/**
+ * ONE owner email — mirrors backend/src/middleware/auth.ts. Owners are equal and
+ * independent; any owner may manage any account, including another owner.
+ */
+const DEFAULT_OWNER_EMAILS = ["sahrocky81@gmail.com"];
 
 const envOwnerEmails = process.env.NEXT_PUBLIC_OWNER_EMAILS
   ? process.env.NEXT_PUBLIC_OWNER_EMAILS.split(",").map((e) => e.trim().toLowerCase()).filter(Boolean)

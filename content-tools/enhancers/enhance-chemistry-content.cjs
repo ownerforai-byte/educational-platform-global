@@ -795,7 +795,7 @@ const topicContent = {
 };
 
 // Process each file
-const dir = path.join(__dirname, '../content/ravikishan/class-11-notes/chemistry/stoichiometry/concepts');
+const dir = path.join(__dirname, '../../content/ravikishan/class-11-notes/chemistry/stoichiometry/concepts');
 const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
 
 files.forEach(file => {

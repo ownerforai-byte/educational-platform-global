@@ -14,6 +14,7 @@ import {
 } from "@/lib/physics-xi-academic";
 import { getSubjectSyllabus, slugifySyllabusTopic } from "@/lib/syllabus";
 import { collectRoutes, isResolvable, routeExists } from "../helpers/route-tree";
+import { readLibSource } from "../helpers/resolve-lib-shim";
 
 /**
  * The Physics XI Academic Companion is published in two places: the dataset
@@ -29,10 +30,7 @@ const DOC_DIR = path.join(FRONTEND_ROOT, "public", "resources", "physics-xi");
 
 /** Every lab id in the registry, read from its source. */
 function readLabIds(): Set<string> {
-  const source = readFileSync(
-    path.join(FRONTEND_ROOT, "lib", "lab-registry.tsx"),
-    "utf8",
-  );
+  const source = readLibSource(FRONTEND_ROOT, path.join("lib", "lab-registry.tsx"));
   return new Set(
     [...source.matchAll(/^\s{4}id: "([^"]+)",$/gm)].map((match) => match[1]),
   );

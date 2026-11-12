@@ -5,7 +5,7 @@
  */
 const fs = require("fs");
 const path = require("path");
-const ROOT = path.join(__dirname, "..");
+const ROOT = path.join(__dirname, "..", "..");
 const SRC_DIRS = [path.join(ROOT, "content", "ravikishan", "class-11-notes"),
   path.join(ROOT, "content", "ravikishan", "class-11")];
 const args = process.argv.slice(2);

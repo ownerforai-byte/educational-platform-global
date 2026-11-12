@@ -31,7 +31,7 @@ describe("deep content has its own routed pages", () => {
 
   it("hub cards are real page links, not an inline detail modal", () => {
     const src = readFileSync(
-      path.resolve("components/derivations/derivations-hub-view.tsx"),
+      path.resolve("features/derivations/components/derivations-hub-view.tsx"),
       "utf8",
     );
     expect(src).not.toContain("DerivationDetailView");

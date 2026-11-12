@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const directory = path.join(__dirname, '../content/ravikishan/class-11-notes/chemistry/stoichiometry/concepts');
+const directory = path.join(__dirname, '../../content/ravikishan/class-11-notes/chemistry/stoichiometry/concepts');
 
 function processFile(filePath) {
   try {

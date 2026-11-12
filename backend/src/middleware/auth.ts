@@ -114,8 +114,9 @@ export async function loadProfilePlan(
 
 /**
  * ONE owner email (owner 2026-11-11: "keep sahrocky81@gmail.com only as owner
- * and remove other"). Independence is unchanged and lives in
- * backend/src/utils/ownerGuard.ts: no owner can remove another owner.
+ * and remove other"). Owners are also fully independent of one another: there
+ * is no owner-protection guard left, so any owner may re-tier, suspend or
+ * delete any account — including another owner.
  */
 const DEFAULT_OWNER_EMAILS = ["sahrocky81@gmail.com"];
 
@@ -137,9 +138,8 @@ export function isOwnerEmail(email?: string | null): boolean {
  * An owner ACCOUNT: an allowlisted owner email OR the owner rung (explicit
  * owner grant; legacy operator rows normalize to owner).
  *
- * Approve/reject is restricted to owner accounts, but every owner account may
- * decide a NON-owner account. Owner-to-owner changes stay blocked separately
- * by isProtectedOwnerTarget().
+ * Approve/reject is restricted to owner accounts. Every owner may also decide
+ * ANOTHER owner — owner-to-owner changes are no longer blocked.
  */
 export function isOwnerAccount(
   user?: { email?: string | null; role?: UserRole | string | null } | null,

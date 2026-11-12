@@ -4,7 +4,6 @@ import { requireAuth, type AuthedRequest } from "../../middleware/auth";
 import { normalizeRole } from "../../auth/types";
 import { supabaseAdmin } from "../../db/supabase";
 import { authEmailsById } from "../../utils/authEmails";
-import { isProtectedOwnerTarget } from "../../utils/ownerGuard";
 
 const router = Router();
 
@@ -20,8 +19,7 @@ const creditAdjustSchema = z.object({
 });
 
 const updateUserRoleSchema = z.object({
-  // Owner is grantable to a non-owner; isProtectedOwnerTarget below blocks
-  // re-tiering an EXISTING owner, so no owner can replace another owner.
+  // Any account may become owner, and an owner may be re-tiered like anyone else.
   role: z.enum(["member", "plus", "pro", "owner"]),
 });
 
@@ -247,14 +245,6 @@ router.patch("/users/:id/role", requireAuth, async (req: Request<{ id: string }>
 
   if (!parsed.success) {
     res.status(400).json({ error: "Invalid role" });
-    return;
-  }
-
-  // OWNER INDEPENDENCE (hardcoded 2026-10-12): no owner may reposition
-  // another owner — refused here regardless of the caller's role.
-  const guard = await isProtectedOwnerTarget(id);
-  if (guard.protectedTarget) {
-    res.status(403).json({ error: guard.reason });
     return;
   }
 

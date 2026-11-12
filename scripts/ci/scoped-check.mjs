@@ -99,7 +99,7 @@ const runners = {
       // name convention — see scripts/test-affected.mjs). The full gate keeps
       // the fixed content/note list.
       if (!ALL) {
-        const a = spawnSync(process.execPath, ["scripts/test-affected.mjs", "--workspace", "frontend"], {
+        const a = spawnSync(process.execPath, ["scripts/ci/test-affected.mjs", "--workspace", "frontend"], {
           stdio: "inherit",
         });
         return a.status ?? 1;
@@ -118,7 +118,7 @@ const runners = {
       const t = run("npx", ["tsc", "--noEmit"], { cwd: "backend", stdio: "inherit" });
       if (t.status !== 0) return t.status ?? 1;
       if (!ALL) {
-        const a = spawnSync(process.execPath, ["scripts/test-affected.mjs", "--workspace", "backend"], {
+        const a = spawnSync(process.execPath, ["scripts/ci/test-affected.mjs", "--workspace", "backend"], {
           stdio: "inherit",
         });
         return a.status ?? 1;
@@ -135,7 +135,7 @@ const runners = {
     label: "empty-scope gate (placeholder count must not rise)",
     run() {
       // spawnSync directly (no shell) — see the mindmap runner note.
-      const v = spawnSync(process.execPath, ["scripts/audit-empty-scopes.mjs", "--strict"], {
+      const v = spawnSync(process.execPath, ["scripts/audit/audit-empty-scopes.mjs", "--strict"], {
         stdio: "inherit",
       });
       return v.status ?? 1;

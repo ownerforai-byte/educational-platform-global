@@ -44,6 +44,33 @@ type Violation = { rule: string; detail: string };
 const violations: Violation[] = [];
 const fail = (rule: string, detail: string) => violations.push({ rule, detail });
 
+/** Phase 5: several `lib/*` paths are one-line re-exports into `features/`. */
+function resolveLibSource(libRelativePath: string): string {
+  const shimPath = path.join(FRONTEND, libRelativePath);
+  if (!fs.existsSync(shimPath)) return shimPath;
+  const shim = fs.readFileSync(shimPath, "utf8");
+  const reExport = shim.match(/export \* from ["'](@\/[^"']+)["']/);
+  if (!reExport) return shimPath;
+  const rel = reExport[1].replace(/^@\//, "");
+  for (const ext of [".tsx", ".ts"]) {
+    const candidate = path.join(FRONTEND, `${rel}${ext}`);
+    if (fs.existsSync(candidate)) return candidate;
+  }
+  return shimPath;
+}
+
+/** Manifest paths may still use `@/components/lab/…` while sources live under `features/lab`. */
+function modulePathExists(modulePath: string): boolean {
+  const relative = modulePath.replace(/^@\//, "");
+  const candidates = [
+    relative,
+    relative.replace(/^components\/lab\//, "features/lab/components/"),
+  ];
+  return candidates.some((rel) =>
+    [".tsx", ".ts"].some((ext) => fs.existsSync(path.join(FRONTEND, `${rel}${ext}`))),
+  );
+}
+
 /* ── syllabus index ─────────────────────────────────────────────────────── */
 
 type Placement = { classSlug: string; subject: string; unitId: string; title: string };
@@ -74,7 +101,10 @@ const indexSlugSet = new Set(LAB_VISUAL_INDEX.flatMap((entry) => entry.slugs));
 // Reachability for the orphan rule is "wired into the lazy loader", not "named in
 // some map": `lab-visual-loaders.tsx` is the only module that can mount a topic
 // visual, so a component it never imports can never reach a learner.
-const visualLoadersSource = fs.readFileSync(VISUAL_LOADERS_FILE, "utf8");
+const visualLoadersSource = fs.readFileSync(
+  resolveLibSource(path.join("lib", "lab-visual-loaders.tsx")),
+  "utf8",
+);
 const visualImportPaths = new Set(
   [...visualLoadersSource.matchAll(/import\("(@\/components\/lab\/[^"]+)"\)/g)].map((match) =>
     match[1].replace(/^@\//, ""),
@@ -105,7 +135,10 @@ const orphanVisuals = visualFiles.filter((file) => {
 // pipeline). The mirror therefore cannot be derived, so it is guarded instead:
 // an entry that disappears from the registry, or a title that drifts, fails the
 // gate rather than silently serving stale metadata.
-const registrySource = fs.readFileSync(REGISTRY_FILE, "utf8");
+const registrySource = fs.readFileSync(
+  resolveLibSource(path.join("lib", "lab-registry.tsx")),
+  "utf8",
+);
 const registryTitleById = new Map(
   [...registrySource.matchAll(/id:\s*"([^"]+)",\s*\n\s*title:\s*"([^"]+)"/g)].map((match) => [
     match[1],
@@ -136,7 +169,10 @@ const staleExemptions = [...approvedOrphans].filter((file) => !orphanVisuals.inc
 
 /* ── manifest validation ────────────────────────────────────────────────── */
 
-const loadersSource = fs.readFileSync(LOADERS_FILE, "utf8");
+const loadersSource = fs.readFileSync(
+  resolveLibSource(path.join("lib", "lab-activity-loaders.ts")),
+  "utf8",
+);
 const registryIds = new Set(LAB_METADATA_LIST.map((lab) => lab.id));
 const catalogIds = new Set(Object.keys(LABS));
 const seenIds = new Set<string>();
@@ -147,11 +183,9 @@ function checkRenderer(activity: LabActivity): void {
   const renderer = activity.renderer;
 
   if (renderer.kind === "module") {
-    const relative = renderer.modulePath.replace(/^@\//, "");
-    const exists = [`${relative}.tsx`, `${relative}.ts`].some((file) =>
-      fs.existsSync(path.join(FRONTEND, file)),
-    );
-    if (!exists) fail("renderer-missing", `${activity.id} → ${renderer.modulePath} does not exist`);
+    if (!modulePathExists(renderer.modulePath)) {
+      fail("renderer-missing", `${activity.id} → ${renderer.modulePath} does not exist`);
+    }
     if (!loadersSource.includes(`"${renderer.modulePath}"`)) {
       fail("loader-unwired", `${activity.id} → ${renderer.modulePath} has no lazy loader branch`);
     }

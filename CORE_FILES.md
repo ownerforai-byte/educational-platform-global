@@ -174,7 +174,7 @@ Whenever you need to know how the platform works and where things route, refer O
 | `backend/src/api/ai.ts` | **[IMPORTANT CORE FILE]** Veer chat route. Appends `originalResearchPaperLink()` to `answerSuffix` OUTSIDE the academic-upgrade gate so every answered question ends with the paper link; both SSE and JSON replies use that same suffix. |
 | `backend/tests/ai/research-paper-link.test.ts` | Regression gate for the closing paper link: short names, verified-host preference, insecure/blog rejection, honest fallback, no fabricated DOI. |
 | `frontend/lib/supabase/oauth-config.ts` | **[IMPORTANT CORE FILE]** Single source of truth for Google OAuth wiring: canonical site/callback URLs, `oauthCallbackUrl()`, and the actionable "Access blocked" diagnostic. Both the sign-in button and the callback page read from here. |
-| `frontend/features/auth/components/social-auth-buttons.tsx` | **[IMPORTANT CORE FILE]** Starts Google/Facebook OAuth with the canonical `redirectTo` and surfaces blocked-provider errors with the exact URLs to register. |
+| `frontend/features/auth/components/social-auth-buttons.tsx` | **[IMPORTANT CORE FILE]** Starts Google OAuth with the canonical `redirectTo` and surfaces blocked-provider errors with the exact URLs to register. |
 | `frontend/tests/lib/oauth-config.test.ts` | Regression gate for canonical callback resolution, env overrides and blocked-error diagnosis. |
 
 > Auth surfaces (`/login`, `/signup`, `/welcome`, `/welcome/no-account`, `/auth/callback`) are deliberately **not** listed in `navigation.ts` / `site-index.ts` — they are reached from the access screen, not from the public menu. `route-links.test.ts` still verifies every hardcoded href resolves.

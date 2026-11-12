@@ -12,7 +12,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = path.join(__dirname, '..');
+const ROOT = path.join(__dirname, '..', '..');
 const BIO = path.join(ROOT, 'content', 'ravikishan', 'class-11-notes', 'biology');
 
 // Fields the UI (topic-vertical-notes.tsx) reads at the top level

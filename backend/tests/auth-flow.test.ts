@@ -170,7 +170,7 @@ beforeEach(() => {
   mocked.from.mockImplementation(() => makeQueryChain({ data: [], error: null }));
   mocked.auth.signOut.mockResolvedValue({ data: {}, error: null });
   mocked.auth.getUser.mockResolvedValue({
-    data: { user: { id: "oauth-user", email: "facebook@example.com", user_metadata: { full_name: "Facebook Student" } } },
+    data: { user: { id: "oauth-user", email: "google@example.com", user_metadata: { full_name: "Google Student" } } },
     error: null,
   });
   // The tiered limiter (strict 10/min on auth endpoints) must not leak hits
@@ -255,7 +255,7 @@ describe("auth flow", () => {
 
   test("OAuth session validates the user, enforces owner approval and sets app cookies", async () => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "oauth-user", email: "facebook@example.com", user_metadata: { full_name: "Facebook Student" }, app_metadata: { provider: "facebook" } } },
+      data: { user: { id: "oauth-user", email: "google@example.com", user_metadata: { full_name: "Google Student" }, app_metadata: { provider: "google" } } },
       error: null,
     });
     mockProfiles({ role: "member", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
@@ -275,7 +275,7 @@ describe("auth flow", () => {
     expect(res.status).toBe(200);
     expect(res.headers.get("cache-control")).toBe("no-store");
     expect(await res.json()).toMatchObject({
-      user: { id: "oauth-user", email: "facebook@example.com", fullName: "Facebook Student" },
+      user: { id: "oauth-user", email: "google@example.com", fullName: "Google Student" },
       accessToken: VALID_TOKEN,
     });
     expect(mocked.auth.getUser).toHaveBeenCalledWith(VALID_TOKEN);
@@ -306,14 +306,18 @@ describe("auth flow", () => {
     expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
   });
 
-  test("OAuth session accepts Google identities like Facebook ones", async () => {
+  test("OAuth session rejects Facebook identities (provider not wired)", async () => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "oauth-user", email: "google@example.com", user_metadata: { full_name: "Google Student" }, app_metadata: { provider: "google" } } },
+      data: {
+        user: {
+          id: "oauth-user",
+          email: "student@example.com",
+          app_metadata: { provider: "facebook" },
+        },
+      },
       error: null,
     });
-    mockProfiles({ role: "member", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
     const state = "f".repeat(64);
-
     const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
       method: "POST",
       headers: {
@@ -322,15 +326,10 @@ describe("auth flow", () => {
         "X-CSRF-Token": state,
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "valid-refresh", state }),
+      body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "refresh", state }),
     });
-
-    expect(res.status).toBe(200);
-    expect(await res.json()).toMatchObject({
-      user: { id: "oauth-user", email: "google@example.com", fullName: "Google Student" },
-      accessToken: VALID_TOKEN,
-    });
-    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(true);
+    expect(res.status).toBe(401);
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
   });
 
   test("OAuth session accepts Google sign-ins linked to an existing email account", async () => {
@@ -371,7 +370,7 @@ describe("auth flow", () => {
   test("OAuth session routes pending accounts to the approval screen without issuing cookies", async () => {
     const userId = "11111111-1111-4111-8111-111111111111";
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: userId, email: "facebook@example.com", app_metadata: { provider: "facebook" } } },
+      data: { user: { id: userId, email: "google@example.com", app_metadata: { provider: "google" } } },
       error: null,
     });
     mockProfiles({ access_status: "PENDING" });

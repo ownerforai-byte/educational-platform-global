@@ -64,7 +64,7 @@ const REFRESH_COOKIE_MAX_AGE_SEC = 60 * 60 * 24 * 30;
 const OAUTH_CSRF_COOKIE = "oauth-csrf-token";
 
 /** Social providers the app accepts for OAuth sessions — mirrors the login-form buttons. */
-const ALLOWED_OAUTH_PROVIDERS = new Set(["facebook", "google"]);
+const ALLOWED_OAUTH_PROVIDERS = new Set(["google"]);
 
 function setRefreshCookie(res: Response, token: string): void {
   res.cookie(REFRESH_COOKIE, token, {
@@ -239,7 +239,7 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
       res.status(401).json({ error: "OAuth authentication could not be verified" });
       return;
     }
-    // A Google/Facebook sign-in that links to an existing email/password
+    // A Google sign-in that links to an existing email/password
     // account keeps "email" as the primary provider, so the allowlist must
     // also accept any linked identity (identities never includes the primary
     // provider itself, hence the two-part check).

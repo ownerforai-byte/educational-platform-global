@@ -4,7 +4,7 @@ import {
   PUBLIC_SUPABASE_URL,
 } from "@/lib/supabase/public-config";
 
-export type OAuthProvider = "facebook" | "google";
+export type OAuthProvider = "google";
 
 let browserClient: SupabaseClient | null = null;
 
@@ -47,15 +47,12 @@ const SETTINGS_TIMEOUT_MS = 4_000;
  *     missing key as "disabled" blocked Google even with `google: true` live.
  *   · A slow/CSP-blocked settings request must not stall the click.
  *
- * Facebook is deliberately NOT touched: it is intentionally disabled in this
- * app (SHOW_FACEBOOK = false, Meta code-exchange credentials are broken), and
- * its strict `=== true` check is preserved so nothing here can re-enable it.
  * Cached for 60 seconds, fail-open on any error or timeout.
  */
 export async function isOAuthProviderEnabled(provider: OAuthProvider): Promise<boolean> {
   const now = Date.now();
   if (cachedProviders && now - lastSettingsFetch < SETTINGS_CACHE_TTL_MS) {
-    return cachedProviders[provider] === true;
+    return cachedProviders.google === true;
   }
 
   const controller = new AbortController();
@@ -73,14 +70,12 @@ export async function isOAuthProviderEnabled(provider: OAuthProvider): Promise<b
     };
     const external = settings.external ?? {};
     // Only an explicit `false` disables Google; a missing key across GoTrue
-    // versions must not stop a healthy provider. Facebook keeps its original
-    // strict check — it is intentionally left disabled, do not "fix" it.
+    // versions must not stop a healthy provider.
     cachedProviders = {
-      facebook: external.facebook === true,
       google: external.google !== false,
     };
     lastSettingsFetch = now;
-    return cachedProviders[provider] === true;
+    return cachedProviders.google === true;
   } catch {
     return true;
   } finally {

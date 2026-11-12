@@ -19,13 +19,8 @@ export type SubjectIconName = "atom" | "book" | "dna" | "flask" | "languages" | 
  * focus in the system prompt, and its own starter problems.
  */
 
-export type SubjectSlug =
-  | "physics"
-  | "chemistry"
-  | "biology"
-  | "mathematics"
-  | "nepali"
-  | "english";
+import type { SubjectSlug } from "@/types/content";
+export type { SubjectSlug } from "@/types/content";
 
 export interface SubjectStarter {
   label: string;

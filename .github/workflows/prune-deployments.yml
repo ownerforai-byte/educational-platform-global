@@ -36,4 +36,4 @@ jobs:
           VERCEL_TEAM_ID: team_HGJdEN3XP4NnZY7Gd8xRhD8g
           VERCEL_PROJECT_ID: prj_U2KKPLkeAOqjzes00oGe1f1of2VV
           PRUNE_LIMIT: "6"
-        run: node scripts/prune-vercel-deployments.mjs --limit 6
+        run: node scripts/deploy/prune-vercel-deployments.mjs --limit 6

@@ -36,7 +36,7 @@ function stubSettings(body: unknown, ok = true) {
 
 describe("isOAuthProviderEnabled", () => {
   it("returns true when Supabase reports google enabled", async () => {
-    stubSettings({ external: { google: true, facebook: false } });
+    stubSettings({ external: { google: true } });
     const { isOAuthProviderEnabled } = await loadBrowser();
     expect(await isOAuthProviderEnabled("google")).toBe(true);
   });
@@ -57,14 +57,6 @@ describe("isOAuthProviderEnabled", () => {
     stubSettings({ external: { google: false } });
     const { isOAuthProviderEnabled } = await loadBrowser();
     expect(await isOAuthProviderEnabled("google")).toBe(false);
-  });
-
-  it("leaves Facebook deliberately disabled (not re-enabled by this fix)", async () => {
-    // Facebook's Meta code exchange is broken and SHOW_FACEBOOK is false.
-    // A partial settings payload must NOT make it look available.
-    stubSettings({ external: {} });
-    const { isOAuthProviderEnabled } = await loadBrowser();
-    expect(await isOAuthProviderEnabled("facebook")).toBe(false);
   });
 
   it("fails open when the settings request fails", async () => {

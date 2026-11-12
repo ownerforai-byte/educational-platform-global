@@ -17,7 +17,7 @@ import path from "node:path";
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
 const APP = path.join(ROOT, "frontend", "app");
 const BASELINE = path.join(ROOT, "scripts", "dead-end-baseline.json");
 const REPORT = path.join(ROOT, "reports", "dead-end-routes.json");

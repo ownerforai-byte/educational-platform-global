@@ -1,10 +1,12 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync, statSync } from 'fs';
 import { join } from 'path';
+import { readLibSource } from '../helpers/resolve-lib-shim';
 
 // Mock the parseSyllabus function (same logic as scripts/content-coverage.py)
 function parseSyllabus() {
-  const content = readFileSync('lib/syllabus.ts', 'utf8').replace(/\r\n/g, '\n');
+  // `lib/*` files may be Phase 5/6 re-export shims; follow them to the source.
+  const content = readLibSource(process.cwd(), 'lib/syllabus.ts').replace(/\r\n/g, '\n');
   const lines = content.split('\n');
   const entries: Array<{
     classSlug: string;

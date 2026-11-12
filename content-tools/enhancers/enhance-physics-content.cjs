@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const physicsDir = path.join(__dirname, '../content/ravikishan/class-11-notes/physics');
+const physicsDir = path.join(__dirname, '../../content/ravikishan/class-11-notes/physics');
 
 function processDirectory(dir) {
   const files = fs.readdirSync(dir);

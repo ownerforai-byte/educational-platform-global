@@ -2,7 +2,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
-const ROOT = path.join(__dirname, '..', 'content', 'ravikishan', 'class-11-notes');
+const ROOT = path.join(__dirname, '..', '..', 'content', 'ravikishan', 'class-11-notes');
 
 const HINTS = {
   biology: { cats: ['Cell Biology','Genetics','Evolution','Ecology','Anatomy','Physiology','Microbiology','Botany','Zoology','Biochemistry'] },

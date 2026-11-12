@@ -28,4 +28,4 @@ jobs:
       # site, byte for byte. This is the gate that stops a page promising content
       # that was deleted, renamed or regenerated as a template.
       - name: Content ledger live scan
-        run: node scripts/content-ledger-live.mjs
+        run: node scripts/build/content-ledger-live.mjs

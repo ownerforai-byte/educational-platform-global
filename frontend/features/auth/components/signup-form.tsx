@@ -27,9 +27,7 @@ export function SignupForm() {
   // Same as the login form: a failed social consent lands back here with the
   // provider flag so the user sees a hint instead of a blank form.
   const [error, setError] = useState(() => {
-    const f = searchParams.get("facebook_error");
     const g = searchParams.get("google_error");
-    if (f) return "Facebook sign-in did not complete. Please try again.";
     if (g) return "Google sign-in did not complete. Please try again.";
     return "";
   });

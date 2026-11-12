@@ -219,10 +219,10 @@ export function SettingsView() {
         </GroupCard>
 
         <GroupCard icon={Building2} tint="bg-indigo-500/10 text-indigo-600 dark:text-indigo-400" label="For institutions">
-          <Row icon={School} tint="bg-sky-500/10 text-sky-600 dark:text-sky-400" label="For Schools" subtitle="Enterprise · Email: ravikisan1814@gmail.com">
+          <Row icon={School} tint="bg-sky-500/10 text-sky-600 dark:text-sky-400" label="For Schools" subtitle="Enterprise · Email: sahrocky81@gmail.com">
             <span className="rounded-md bg-muted px-1.5 py-0.5 text-[8.5px] font-bold text-muted-foreground">Confidential</span>
           </Row>
-          <Row icon={Users} tint="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" label="For Teachers" subtitle="Enterprise · Email: ravikisan1814@gmail.com">
+          <Row icon={Users} tint="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" label="For Teachers" subtitle="Enterprise · Email: sahrocky81@gmail.com">
             <span className="rounded-md bg-muted px-1.5 py-0.5 text-[8.5px] font-bold text-muted-foreground">Confidential</span>
           </Row>
         </GroupCard>

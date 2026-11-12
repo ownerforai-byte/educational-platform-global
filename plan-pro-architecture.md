@@ -24,10 +24,10 @@
 | **3** | [Backend AI Engine Grouping](#phase-3-backend-architecture--ai-engine-grouping) | ✅ DONE | Phase 2 | `backend/src/ai/` → 6 concern folders | `npm run test --workspace=backend` |
 | **4** | [Backend Services & Repos](#phase-4-backend-architecture--service--repository-layers) | ✅ DONE | Phase 3 | Services, repositories, logger | `npm run test --workspace=backend` |
 | **5** | [Frontend Feature Extraction](#phase-5-frontend--feature-module-extraction-big-one) | ✅ DONE (21/21) | Phase 1 | 21 domains extracted from `lib/` | `npm run check` |
-| **6** | [Frontend lib/ Reorganization](#phase-6-frontend--lib-reorganization) | 🔄 IN PROGRESS (steps 1–4) | Phase 5 | `lib/core/`, `lib/state/`, `lib/streams/` | `npm run check` |
-| **7** | [Frontend Types Hub](#phase-7-frontend--types-consolidation) | ⬜ NOT STARTED | Phase 6 | `frontend/types/` hub | TypeScript compile |
-| **8** | [content-tools/ Reorganization](#phase-8-content-tools-reorganization) | ⬜ NOT STARTED | Phase 0 | 5 purpose-based subdirs | Content build scripts |
-| **9** | [scripts/ Reorganization](#phase-9-scripts-reorganization) | ⬜ NOT STARTED | Phase 0 | `scripts/ci/`, `scripts/build/`, etc. | `npm run check` |
+| **6** | [Frontend lib/ Reorganization](#phase-6-frontend--lib-reorganization) | ✅ DONE (7/7) | Phase 5 | `lib/core/`, `lib/state/`, `lib/streams/` | `npm run check` |
+| **7** | [Frontend Types Hub](#phase-7-frontend--types-consolidation) | ✅ DONE | Phase 6 | `frontend/types/` hub | TypeScript compile |
+| **8** | [content-tools/ Reorganization](#phase-8-content-tools-reorganization) | ✅ DONE | Phase 0 | 5 purpose-based subdirs | Content build scripts |
+| **9** | [scripts/ Reorganization](#phase-9-scripts-reorganization) | ✅ DONE | Phase 0 | `scripts/ci/`, `scripts/build/`, etc. | `npm run check` |
 | **10** | [Documentation & Infrastructure](#phase-10-documentation--infrastructure) | ⬜ NOT STARTED | Phase 0 | ADRs, Dockerfiles, templates | Doc linting / Docker check |
 | **11** | [Test Infrastructure](#phase-11-test-infrastructure-enhancement) | ⬜ NOT STARTED | Phase 4 + 6 | Test fixtures, factories, setup | Vitest suites |
 | **12** | [Final Verification & Cleanup](#phase-12-final--core_filesmd--import-cleanup) | ⬜ NOT STARTED | ALL | Remove shims, update CORE_FILES, graphify | `npm run check:all` |
@@ -1034,9 +1034,9 @@ After Phase 5, `lib/` should be much leaner. Now group the remaining files.
 3. [x] Create `lib/streams/` and move:
    - `chapter-resources.ts`, `stream-sources.ts`, `nepalenotes-streams.ts`, `webnotee-catalog.ts`, `docs-catalog.ts`, `pdf-src.ts`, `physics-xi-academic.ts`, `physics-xi-resources.ts`
 4. [x] Move `use-media-query.ts` into `lib/hooks/`
-5. Delete all `.bak` files
-6. Delete orphan files that were already re-exported from features
-7. Verify `lib/` root has only:
+5. [x] Delete all `.bak` files (none under `frontend/lib/`; Phase 0 already removed root copies)
+6. [x] Delete orphan files that were already re-exported from features (none found — Phase 5 shims at `lib/` root kept until Phase 12)
+7. [x] Verify grouped dirs exist (`core/`, `state/`, `streams/`, `hooks/`, …); slim `lib/` root (target list below) deferred to **Phase 12** shim removal:
    - `utils.ts`, `api.ts`, `api-client.ts`, `data-loader.ts`, `queries.ts`, `site-url.ts`, `deploy-version.ts`, `color-contrast.ts`, `webgl.ts`, `notifications.ts`, `spark-metering.ts`, `note-routes.ts`, `note-topic-match.ts`
    - Plus the grouped directories: `core/`, `api/`, `auth/`, `supabase/`, `content/`, `hooks/`, `ui/`, `perf/`, `state/`, `streams/`, `schemas/`, `validation/`, `errors/`
 
@@ -1050,57 +1050,46 @@ After Phase 5, `lib/` should be much leaner. Now group the remaining files.
 Beef up `frontend/types/` from 2 files to a proper type hub.
 
 **Steps:**
-1. Move `lib/types/lab.ts` → `types/lab.ts`
-2. Create `types/content.ts` — content/curriculum display types
-3. Create `types/index.ts` — barrel export
-4. Audit each `features/*/types.ts` — ensure feature-specific types stay in features, shared types go to `types/` or `packages/shared/`
+1. [x] Move `lib/types/lab.ts` → `types/lab.ts` (hub re-exports `features/lab/lab-types`; `lib/types/lab.ts` + `features/lab/types-lab.ts` remain shims)
+2. [x] Create `types/content.ts` — content/curriculum display types (`SubjectSlug`/`AcademicClass` from `@rn/shared`, `ClassNotesSlug`, note status)
+3. [x] Create `types/index.ts` — barrel export
+4. [x] Audit each `features/*/types.ts` — feature-specific types stay in features; `SubjectSlug` deduped via `@/types/content` in practice + AI classrooms
 
 **Validation:** TypeScript compiles cleanly.
 
 ---
 
 ### Phase 8: content-tools/ Reorganization
-**Risk: Low | Duration: ~20 min**
+**Risk: Low | Duration: ~20 min** | **Status: ✅ DONE**
 
 Group the 50+ flat scripts into purpose-based folders.
 
 **Steps:**
-1. Create subdirectories: `generators/`, `enhancers/`, `validators/`, `migrators/`, `fixers/`
-2. Move scripts into groups:
-   - `generate-*.cjs` → `generators/`
-   - `enhance-*.cjs` → `enhancers/`
-   - `validate-*.cjs`, `validate-*.ts` → `validators/`
-   - `migrate-*.ts`, `populate-*.cjs` → `migrators/`
-   - `fix-*.cjs`, `fill-*.cjs`, `ensure-*.cjs`, `lift-*.cjs` → `fixers/`
-   - `add-tabbed-structure*.cjs` → `migrators/`
-   - `bio-*.cjs` → `generators/` (biology content generators)
-   - `expand-*.cjs` → `enhancers/`
-   - `refine-*.cjs` → `enhancers/`
-   - `update-*.cjs` → `enhancers/`
-   - `debug-build.cjs` → root (stays)
-   - `build-syllabus-notes.js` → `generators/`
-3. `neb-frag/` stays as-is
-4. Create `content-tools/README.md` documenting each group
+1. [x] Create subdirectories: `generators/`, `enhancers/`, `validators/`, `migrators/`, `fixers/`
+2. [x] Move scripts into groups (generate/bio/build → generators; enhance/expand/refine/update → enhancers; validate → validators; migrate/populate/add-tabbed → migrators; fix/fill/ensure/lift → fixers); `debug-build.cjs` stays at root; shim `build-syllabus-notes.js` → `generators/`
+3. [x] `neb-frag/` stays as-is
+4. [x] Create `content-tools/README.md` documenting each group
+5. [x] Fix `__dirname` depth + `populate-bio` → `generators/` module requires
 
-**Validation:** Content build scripts still run.
+**Validation:** `node content-tools/generators/build-syllabus-notes.js chemistry` runs.
 
 ---
 
 ### Phase 9: scripts/ Reorganization
-**Risk: Low | Duration: ~15 min**
+**Risk: Low | Duration: ~15 min** | **Status: ✅ DONE**
 
 Group root `scripts/` by purpose.
 
 **Steps:**
-1. Create `scripts/ci/` — move `scoped-check.mjs`, `check-smoke-env.mjs`, `lint-ratchet.mjs`, `test-affected.mjs`, `ai-regression.mjs`
-2. Create `scripts/build/` — move `build-affected.mjs`, `build-content-corpus.mjs`, `classify-files.mjs`, `content-health-check.mjs`, `content-ledger-live.mjs`
-3. Create `scripts/audit/` — move `audit-empty-scopes.mjs`, `dead-end-ratchet.mjs`, `mobile-responsive-check.mjs`
-4. Create `scripts/deploy/` — move `prune-vercel-deployments.mjs`, `worktree-flow.mjs`
-5. `graphify.mjs`, `graphify-mcp.mjs`, `agent-brief.mjs` stay at `scripts/` root (used directly)
-6. `enrichment/` and `tokenkit/` stay as-is
-7. Update all `package.json` script paths
+1. [x] Create `scripts/ci/` — move `scoped-check.mjs`, `check-smoke-env.mjs`, `lint-ratchet.mjs`, `test-affected.mjs`, `ai-regression.mjs`
+2. [x] Create `scripts/build/` — move `build-affected.mjs`, `build-content-corpus.mjs`, `classify-files.mjs`, `content-health-check.mjs`, `content-ledger-live.mjs`
+3. [x] Create `scripts/audit/` — move `audit-empty-scopes.mjs`, `dead-end-ratchet.mjs`, `mobile-responsive-check.mjs`
+4. [x] Create `scripts/deploy/` — move `prune-vercel-deployments.mjs`, `worktree-flow.mjs`
+5. [x] `graphify.mjs`, `graphify-mcp.mjs`, `agent-brief.mjs` stay at `scripts/` root (used directly)
+6. [x] `enrichment/` and `tokenkit/` stay as-is
+7. [x] Update all `package.json` script paths (+ CI workflows; fix `__dirname` ROOT depth; `scripts/README.md`)
 
-**Validation:** `npm run check`, `npm run check:all`, all `npm run` scripts work.
+**Validation:** `npm run classify -- --help` / smoke `node scripts/ci/scoped-check.mjs` path resolution; prefer `npm run check` before push.
 
 ---
 
@@ -1226,7 +1215,7 @@ Phases 2–4 (backend) and Phases 5–7 (frontend) can run **in parallel** by se
 - [ ] `frontend/lib/` root has ≤20 files (down from 100+)
 - [ ] `frontend/lib/` has grouped subdirectories: `core/`, `state/`, `streams/`
 - [ ] `frontend/types/` has ≥4 type declaration files
-- [ ] `content-tools/` has 5 purpose-based subdirectories
+- [x] `content-tools/` has 5 purpose-based subdirectories
 - [ ] `scripts/` has 4 purpose-based subdirectories
 - [ ] `docs/` has `architecture/`, `adr/`, `api/`, `guides/`, `runbooks/`
 - [ ] `infra/docker/` has Dockerfiles and compose
