@@ -306,4 +306,96 @@ router.get(
   }),
 );
 
+// ── Personal XP trend (the “accelerated / constant / decelerated” graph) ────
+// One row per UTC day: XP earned, sets played and questions answered that day.
+// The client turns this into the points-over-dates chart and colors each
+// stretch by whether the daily earning rate is rising, flat or falling.
+
+interface HistoryPointRow {
+  answered: number | null;
+  correct: number | null;
+  score_pct: number | null;
+  format?: string | null;
+  created_at: string;
+}
+
+export interface XpPoint {
+  /** UTC day, `YYYY-MM-DD`. */
+  date: string;
+  xp: number;
+  sets: number;
+  answered: number;
+}
+
+router.get(
+  "/history",
+  requireAuth,
+  asyncHandler(async (req: Request, res: Response) => {
+    const user = (req as Request & { user: { id: string } }).user;
+
+    let rows: HistoryPointRow[] = [];
+    let migrated = true;
+
+    const primaryQuery = supabaseAdmin
+      .from("quiz_history")
+      .select("answered, correct, score_pct, format:questions->0->>format, created_at")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: true })
+      .limit(MAX_SETS);
+    const primary = await primaryQuery;
+
+    if (primary.error) {
+      if (isMissingTable(primary.error)) {
+        migrated = false;
+      } else {
+        const fallbackQuery = supabaseAdmin
+          .from("quiz_history")
+          .select("answered, correct, score_pct, created_at")
+          .eq("user_id", user.id)
+          .order("created_at", { ascending: true })
+          .limit(MAX_SETS);
+        const fallback = await fallbackQuery;
+        if (fallback.error) {
+          if (isMissingTable(fallback.error)) {
+            migrated = false;
+          } else {
+            serverError(res, fallback.error, "xp-history");
+            return;
+          }
+        } else {
+          rows = (fallback.data ?? []) as unknown as HistoryPointRow[];
+        }
+      }
+    } else {
+      rows = (primary.data ?? []) as unknown as HistoryPointRow[];
+    }
+
+    res.setHeader("Cache-Control", "private, no-store");
+
+    if (!migrated) {
+      res.json({ points: [], migrated: false });
+      return;
+    }
+
+    const byDate = new Map<string, XpPoint>();
+    for (const row of rows) {
+      const answered = Math.max(0, Math.floor(row.answered ?? 0));
+      const correct = Math.max(0, Math.min(answered, Math.floor(row.correct ?? 0)));
+      const scorePct =
+        typeof row.score_pct === "number" && Number.isFinite(row.score_pct) ? row.score_pct : null;
+      const xp = xpForSet({ answered, correct, scorePct, format: (row.format as never) ?? null });
+      const date = (row.created_at ?? "").slice(0, 10);
+      if (!date || answered === 0) continue;
+      const point = byDate.get(date) ?? { date, xp: 0, sets: 0, answered: 0 };
+      point.xp += xp;
+      point.sets += 1;
+      point.answered += answered;
+      byDate.set(date, point);
+    }
+
+    const points = [...byDate.values()].sort((a, b) => a.date.localeCompare(b.date));
+    res.json({ points, migrated: true });
+  }),
+);
+
 export default router;

@@ -16,13 +16,13 @@ const read = (p: string) => readFileSync(path.resolve(p), "utf8");
 
 describe("Periodic table filter tiers", () => {
   it("nature opens at Member; the s/p/d/f block family stays at Plus", () => {
-    const lib = read("lib/periodic-table.ts");
+    const lib = read("features/periodic-table/index.ts");
     expect(lib).toContain("nature: \"member\"");
     expect(lib).toContain("block: \"plus\"");
   });
 
   it("filters unlock by their tier rung — not by the Pro password gate", () => {
-    const view = read("components/periodic-table/periodic-table-view.tsx");
+    const view = read("features/periodic-table/components/periodic-table-view.tsx");
     expect(view).toContain(
       "hasLevel(user, filterMinTier(cat)) || unlocked",
     );
@@ -31,7 +31,7 @@ describe("Periodic table filter tiers", () => {
   });
 
   it("s/p/d/f characteristics (recolor + block explorer) gate at Plus", () => {
-    const view = read("components/periodic-table/periodic-table-view.tsx");
+    const view = read("features/periodic-table/components/periodic-table-view.tsx");
     expect(view).toContain(
       'const blockTools = hasLevel(user, "plus") || unlocked;',
     );

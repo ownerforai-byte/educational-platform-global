@@ -94,6 +94,11 @@ export function refreshLeaderboard(range: LeaderboardRange = currentRange): void
   void fetchRange(range);
 }
 
+/** Silent re-read for live polling — keeps the current board on screen. */
+export function pollLeaderboard(): void {
+  void fetchRange(currentRange, true);
+}
+
 function ensureStarted(): void {
   if (started || typeof window === "undefined") return;
   started = true;

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
@@ -14,6 +15,7 @@ import {
   Users,
 } from "lucide-react";
 import {
+  pollLeaderboard,
   refreshLeaderboard,
   setLeaderboardRange,
   useLeaderboard,
@@ -21,6 +23,7 @@ import {
 } from "@/lib/hooks/use-leaderboard";
 import type { LeaderboardEntry, LeaderboardRange, LeaderboardResponse } from "@/lib/api/leaderboard";
 import { xpLevel } from "@/lib/practice/xp";
+import { XpTrendChart } from "@/components/leaderboard/xp-trend-chart";
 
 const PODIUM_STYLE = [
   {
@@ -314,6 +317,13 @@ export default function LeaderboardPage() {
   const state = useLeaderboard();
   const range = useLeaderboardRange();
 
+  // Live scores: silently re-read the board every30s so ranks and points
+  // update in place (1st/2nd/3rd… stay ordered as XP changes).
+  useEffect(() => {
+    const id = setInterval(() => pollLeaderboard(), 30000);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <div className="mx-auto w-full max-w-5xl space-y-6 px-3 py-6 sm:px-4 sm:py-8">
       <header className="flex flex-wrap items-end justify-between gap-3">
@@ -409,13 +419,22 @@ export default function LeaderboardPage() {
             <>
               <Podium entries={state.data.entries} />
 
+              <XpTrendChart />
+
               <section
                 aria-labelledby="table-heading"
                 className="overflow-hidden rounded-2xl border border-border bg-card"
               >
                 <div className="flex items-center justify-between border-b border-border px-4 py-3">
-                  <h2 id="table-heading" className="text-sm font-bold text-foreground">
+                  <h2 id="table-heading" className="flex items-center gap-2 text-sm font-bold text-foreground">
                     Full ranking
+                    <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">
+                      <span className="relative flex h-1.5 w-1.5">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+                        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                      </span>
+                      Live
+                    </span>
                   </h2>
                   <p className="text-[11px] text-muted-foreground">
                     Top {state.data.entries.length} · ties share a rank
@@ -449,6 +468,8 @@ export default function LeaderboardPage() {
                       {state.data.entries.map((entry) => {
                         const maxXp = state.data.entries[0]?.xp || 1;
                         const width = Math.max(2, Math.round((entry.xp / maxXp) * 100));
+                        const podium = entry.rank <= 3 ? PODIUM_STYLE[entry.rank - 1] : null;
+                        const BadgeIcon = podium?.icon ?? null;
                         return (
                           <tr
                             key={`${entry.rank}-${entry.name}`}
@@ -458,15 +479,18 @@ export default function LeaderboardPage() {
                             }`}
                           >
                             <td className="px-4 py-2.5">
-                              <span
-                                className={`inline-flex h-6 min-w-6 items-center justify-center rounded-md px-1.5 text-xs font-bold tabular-nums ${
-                                  entry.rank <= 3
-                                    ? "bg-amber-400/20 text-amber-700 dark:text-amber-300"
-                                    : "bg-muted text-muted-foreground"
-                                }`}
-                              >
-                                {entry.rank}
-                              </span>
+                              {podium ? (
+                                <span
+                                  className={`inline-flex h-6 min-w-6 items-center justify-center gap-1 rounded-full px-1.5 text-xs font-bold tabular-nums ${podium.badge}`}
+                                >
+                                  {BadgeIcon && <BadgeIcon className="h-3 w-3" aria-hidden="true" />}
+                                  {entry.rank}
+                                </span>
+                              ) : (
+                                <span className="inline-flex h-6 min-w-6 items-center justify-center rounded-full bg-muted px-1.5 text-xs font-bold tabular-nums text-muted-foreground">
+                                  {entry.rank}
+                                </span>
+                              )}
                             </td>
                             <td className="px-2 py-2.5">
                               <span className="font-semibold text-foreground">{entry.name}</span>

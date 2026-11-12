@@ -73,3 +73,20 @@ export interface LeaderboardResponse {
 export async function getLeaderboard(range: LeaderboardRange = "all"): Promise<LeaderboardResponse> {
   return apiFetch<LeaderboardResponse>(`/api/leaderboard?range=${range}`);
 }
+
+/** One UTC day of the signed-in user's earning, for the XP trend chart. */
+export interface XpPoint {
+  date: string;
+  xp: number;
+  sets: number;
+  answered: number;
+}
+
+export interface XpHistoryResponse {
+  points: XpPoint[];
+  migrated: boolean;
+}
+
+export async function getXpHistory(): Promise<XpHistoryResponse> {
+  return apiFetch<XpHistoryResponse>("/api/leaderboard/history");
+}
