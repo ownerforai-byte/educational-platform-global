@@ -17,6 +17,7 @@
 import { useMemo } from "react";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import type { DocConceptMap, MindMapBranch } from "./doc-mindmap";
+import { plainMath } from "./plain-math";
 
 const BRANCH_TONES = [
   "text-sky-500",
@@ -50,6 +51,15 @@ interface PlacedBranch {
   fill: string;
 }
 
+
+/**
+ * SVG <text> can only hold plain characters — KaTeX typesetting needs HTML.
+ * So map labels get a readable plain-text rendering of inline math instead of
+ * raw `$...$` source: greek letters become Unicode, common commands become
+ * symbols, braces/backslashes are dropped. The expanded key beneath the SVG
+ * shows the untouched original through <MathMarkdown>, so no information is
+ * lost — the diagram just stays legible.
+ */
 function wrap(text: string, perLine: number, maxLines: number): string[] {
   const words = text.split(/\s+/).filter(Boolean);
   const lines: string[] = [];
@@ -159,34 +169,21 @@ export function DocMindMap({ map, className }: DocMindMapProps) {
         {/* branches */}
         {placed.map((p, i) => {
           const nodeW = 210;
-          const lines = wrap(p.branch.topic, 24, 2);
+          const lines = wrap(plainMath(p.branch.topic), 24, 2);
           const details = p.branch.details ?? [];
           const leaves = p.branch.subtopics ?? [];
           const headerH = 22 + lines.length * 15;
           const bodyLines: string[] = [];
-          for (const d of details) bodyLines.push(...wrap(d, 32, 2));
+          for (const d of details) bodyLines.push(...wrap(plainMath(d), 40, 1));
           for (const leaf of leaves) {
-            bodyLines.push(...wrap(leaf.name, 32, 1));
+            bodyLines.push(...wrap(plainMath(leaf.name), 40, 1));
           }
-          const shown = bodyLines.slice(0, 4);
+          const shown = bodyLines.slice(0, 5);
           const boxH = headerH + shown.length * 15 + 12;
           const nodeX = p.x - nodeW / 2;
           const nodeY = p.y;
           return (
             <g key={`branch-${i}`}>
-              {/* connector from branch node to its points */}
-              {shown.length > 0 && (
-                <line
-                  x1={p.x}
-                  y1={nodeY + 16}
-                  x2={p.x}
-                  y2={nodeY + boxH - 4}
-                  strokeWidth="1.5"
-                  strokeDasharray="4 4"
-                  className="stroke-current text-muted-foreground"
-                  opacity="0.5"
-                />
-              )}
               <rect
                 x={nodeX}
                 y={nodeY - 16}
