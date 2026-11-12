@@ -10,7 +10,10 @@ import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
 import { tierWelcomePathFor } from "@/lib/access-level";
 import {
+  REJECTED_ROUTE,
+  WAITING_ROUTE,
   clearPendingSignup,
+  rememberAccessOutcome,
   rememberPendingSignup,
 } from "@/features/auth/pending-signup-identity";
 import {
@@ -98,24 +101,23 @@ function AuthCallbackContent() {
         // safe retry.
         clearSupabaseLocalSession();
         if (!response.accessToken) throw new Error("The server did not issue an application session.");
+        clearPendingSignup();
         setStoredToken(response.accessToken);
         writeCachedSession(response.user, response.accessToken);
         refresh();
-        // Authentication is one stage in the welcome flow: always show the
-        // resolved tier's welcome before allowing the next Go to enter home.
-        // A query-string deep link must not skip that screen.
         router.replace(tierWelcomePathFor(response.user));
       } catch (callbackError) {
         const authError = callbackError as Error & { code?: string; statusToken?: string };
         if (authError.code === "PENDING_APPROVAL" && authError.statusToken) {
-          // Hardcoded pending-signup identity survives refresh (owner 2026-11-08).
           rememberPendingSignup(authError.statusToken);
-          router.replace("/welcome");
+          rememberAccessOutcome("PENDING");
+          router.replace(WAITING_ROUTE);
           return;
         }
         if (authError.code === "ACCOUNT_REJECTED") {
-          clearPendingSignup();
-          router.replace("/");
+          if (authError.statusToken) rememberPendingSignup(authError.statusToken);
+          rememberAccessOutcome("REJECTED");
+          router.replace(REJECTED_ROUTE);
           return;
         }
         setError(callbackError instanceof Error ? callbackError.message : "Sign-in could not be completed.");

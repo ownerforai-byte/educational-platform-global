@@ -53,13 +53,16 @@ describe("requireTier — the ladder as an API guard", () => {
     expect(run(requireTier("owner"), "owner").next).toHaveBeenCalled();
   });
 
-  it("grades legacy role values as owner (the single legacy map)", () => {
-    // A raw legacy role slipped through to the guard must still be graded on
-    // its normalized rung — the ladder is the only vocabulary that counts.
+  it("grades legacy role values onto the ladder (STUDENT→member, ADMIN→owner)", () => {
     expect(run(requireRole("owner"), "ADMIN").next).toHaveBeenCalled();
-    expect(run(requireRole("owner"), "teacher").next).toHaveBeenCalled();
+    expect(run(requireRole("owner"), "OWNER").next).toHaveBeenCalled();
+    const legacyTeacher = run(requireRole("owner"), "teacher");
+    expect(legacyTeacher.next).not.toHaveBeenCalled();
+    expect(legacyTeacher.status).toHaveBeenCalledWith(403);
     const legacyMember = run(requireTier("pro"), "STUDENT");
-    expect(legacyMember.next).toHaveBeenCalled(); // STUDENT → owner → above pro
+    expect(legacyMember.next).not.toHaveBeenCalled(); // STUDENT → member
+    expect(legacyMember.status).toHaveBeenCalledWith(403);
+    expect(run(requireTier("member"), "STUDENT").next).toHaveBeenCalled();
   });
 });
 

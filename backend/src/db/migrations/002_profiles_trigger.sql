@@ -16,8 +16,17 @@ security definer
 set search_path = public
 as $$
 begin
-  insert into public.profiles (id, full_name)
-  values (new.id, new.raw_user_meta_data->>'full_name')
+  -- New accounts always enter as PENDING members. Owner Gmail is promoted
+  -- to ACTIVE/owner by the signup API after insert — never by this trigger.
+  insert into public.profiles (id, full_name, role, plan, access_status, premium_status)
+  values (
+    new.id,
+    new.raw_user_meta_data->>'full_name',
+    'member',
+    'member',
+    'PENDING',
+    false
+  )
   on conflict (id) do nothing;
   return new;
 end;

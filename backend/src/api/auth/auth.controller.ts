@@ -373,15 +373,26 @@ router.post("/signup", async (req: Request, res: Response) => {
       await bindDeviceToAccount(deviceId, result.user.id);
     }
 
-    // Owner Gmail is always ACTIVE — force the profile so signup issues a session.
-    if (result.user && ownerSignup) {
-      try {
-        await supabaseAdmin
-          .from("profiles")
-          .update({ access_status: "ACTIVE", role: "owner" })
-          .eq("id", result.user.id);
-      } catch (ownerErr) {
-        console.error("[auth] owner signup activate failed:", ownerErr);
+    // Force the live profile tier on every signup. The profiles.role column
+    // must accept ladder text (member/plus/pro/owner); a leftover user_role
+    // enum made these writes fail silently and left STUDENT/OWNER defaults
+    // that graded as owner. Non-owner emails always enter as PENDING members.
+    if (result.user) {
+      const { error: profileErr } = await supabaseAdmin
+        .from("profiles")
+        .update(
+          ownerSignup
+            ? { access_status: "ACTIVE", role: "owner", plan: "pro", premium_status: true }
+            : {
+                access_status: "PENDING",
+                role: "member",
+                plan: "member",
+                premium_status: false,
+              },
+        )
+        .eq("id", result.user.id);
+      if (profileErr) {
+        console.error("[auth] signup profile tier write failed:", profileErr.message);
       }
     }
 

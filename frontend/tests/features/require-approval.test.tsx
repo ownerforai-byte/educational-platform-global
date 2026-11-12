@@ -94,7 +94,9 @@ describe("RequireApproval — login + owner-approval wall", () => {
   it("sends a created-and-waiting account to the waiting approval page", () => {
     rememberPendingSignup("signed-status-token");
     render(<RequireApproval>{CONTENT}</RequireApproval>);
-    expect(screen.getByTestId("approval-status-link").getAttribute("href")).toBe("/welcome");
+    expect(screen.getByTestId("approval-status-link").getAttribute("href")).toBe(
+      "/welcome/pending",
+    );
   });
 
   it("opens the route for an approved, signed-in account", () => {
@@ -152,9 +154,9 @@ describe("auth wall wiring", () => {
     expect(sparkGate).toBeGreaterThan(authWall);
   });
 
-  it("decides the approval-status link from the hardcoded signup identity", () => {
+  it("decides the approval-status link from the hardcoded device router", () => {
     const gate = read("features/auth/components/require-approval.tsx");
-    expect(gate).toContain("usePendingSignup()");
+    expect(gate).toContain("deviceApprovalRoute()");
     expect(gate).toContain('data-testid="approval-status-link"');
   });
 

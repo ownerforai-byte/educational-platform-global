@@ -50,7 +50,7 @@ export function SignupForm() {
       // The hardcoded pending-signup identity is persisted in three stores so
       // a refresh cannot drop the "account created" state (owner 2026-11-08).
       rememberPendingSignup(result.statusToken);
-      router.push("/welcome");
+      router.push("/welcome/pending");
     } else if (result.ok && result.message) {
       setMessage(result.message);
     } else if (result.ok) {

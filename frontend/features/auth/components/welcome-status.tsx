@@ -19,26 +19,19 @@ import { apiFetch } from "@/lib/api-client";
 import { VisitorExitNote } from "@/components/layout/visitor-exit-note";
 import { VerifyingStatus } from "./verifying-status";
 import {
-  clearPendingSignup,
+  APPROVED_ROUTE,
+  REJECTED_ROUTE,
   readStatusToken,
+  rememberAccessOutcome,
   rememberPendingSignup,
 } from "../pending-signup-identity";
 
 /**
- * Post-signup status screen (owner-approval flow, 2026-09-26).
+ * WAITING screen body — polls live access for this device's status token.
  *
- * After signup the user is NOT logged in — they land here with a signed
- * status token (localStorage) and see exactly one of these states:
- *
- *   PENDING  → "account created, awaiting approval" + live stepper (polls)
- *   ACTIVE   → access granted → sign in
- *   REJECTED → clear the pending identity and return to the normal guest
- *              home (no second rejected/no-account status page)
- *
- * The screen polls the server every few seconds, so the moment the owner
- * approves in the control panel, this page flips to "Access granted" on its
- * own. Login/signup stay hidden here — those belong to the auth pages, and
- * the profile interface belongs to the signed-in app.
+ *   PENDING  → stay here (awaiting approval)
+ *   ACTIVE   → remember outcome + open /welcome/approved
+ *   REJECTED → remember outcome + open /welcome/rejected
  */
 
 const POLL_MS = 6000;
@@ -112,6 +105,7 @@ export function WelcomeStatus() {
         fullName?: string | null;
       }>(`/api/auth/account-status?token=${encodeURIComponent(token)}`);
       setFullName(res.fullName ?? null);
+      rememberAccessOutcome(res.accessStatus);
       setState(res.accessStatus);
       setChecks((c) => c + 1);
     } catch (err) {
@@ -134,24 +128,28 @@ export function WelcomeStatus() {
     };
   }, [check]);
 
-  // Rejection ends the waiting flow: drop the pending identity and hard-nav
-  // to guest home so the shell cannot bounce them onto /welcome/no-account
-  // (that was the duplicate "rejected" experience).
+  // Terminal outcomes leave the waiting page for their dedicated screens.
   useEffect(() => {
-    if (state !== "REJECTED") return;
-    clearPendingSignup();
-    window.location.replace("/");
+    if (state === "ACTIVE") {
+      window.location.replace(APPROVED_ROUTE);
+      return;
+    }
+    if (state === "REJECTED") {
+      window.location.replace(REJECTED_ROUTE);
+    }
   }, [state]);
 
   const firstName = fullName?.trim().split(/\s+/)[0];
   const step = STEP_INDEX[state];
-  // Only PENDING/ACTIVE stay on this waiting screen. REJECTED leaves immediately.
-  const accountConfirmed = state === "PENDING" || state === "ACTIVE";
+  const accountConfirmed = state === "PENDING";
 
-  if (state === "REJECTED") {
+  if (state === "ACTIVE" || state === "REJECTED") {
     return (
-      <div className="flex justify-center py-6" data-testid="account-status-rejected-exit">
-        <VerifyingStatus compact label="Returning to the app" />
+      <div className="flex justify-center py-6" data-testid="account-status-handoff">
+        <VerifyingStatus
+          compact
+          label={state === "ACTIVE" ? "Opening approved screen" : "Opening rejected screen"}
+        />
       </div>
     );
   }
@@ -307,16 +305,6 @@ export function WelcomeStatus() {
 
       {/* While waiting: the pending user can still send the owner a message. */}
       {state === "PENDING" && <MessageOwnerBox name={fullName} />}
-
-      {state === "ACTIVE" && (
-        <StateCard
-          icon={<BadgeCheck className="h-5 w-5 text-emerald-500" />}
-          title="Access granted!"
-          badge={<StatusPill status="ACTIVE" />}
-          body="Your account has been approved. Sign in for saved chats, AI sparks for Veer, and content sparks for notes."
-          actions={<AuthButton href="/login" label="Sign in now" primary big />}
-        />
-      )}
 
       {/* Owner request 2026-10-17: a candid exit note for visitors. */}
       {state === "PENDING" && <VisitorExitNote />}

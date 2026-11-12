@@ -12,7 +12,10 @@ import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/access-level";
 import {
+  REJECTED_ROUTE,
+  WAITING_ROUTE,
   clearPendingSignup,
+  rememberAccessOutcome,
   rememberPendingSignup,
 } from "../pending-signup-identity";
 import { DEVICE_SIGNUP_NOTICE } from "./access-notice";
@@ -35,22 +38,18 @@ export function LoginForm() {
     setLoading(false);
 
     if (result.ok) {
+      // Signed-in approved session owns the device — drop signup markers.
+      clearPendingSignup();
       refresh();
-      // Go on the visitor welcome is the one step that opens login. Once
-      // authenticated, always show the user's own tier welcome before home;
-      // do not let a stale or supplied ?next= skip that screen.
       router.push(tierWelcomePathFor(result.user));
     } else if (result.code === "PENDING_APPROVAL" && result.statusToken) {
-      // Waiting for approval → MUST land on the pending-status screen, not
-      // stranded on this form with an error the student cannot act on.
-      // Persist the hardcoded identity so the status screen survives refresh.
       rememberPendingSignup(result.statusToken);
-      router.push("/welcome");
+      rememberAccessOutcome("PENDING");
+      router.push(WAITING_ROUTE);
     } else if (result.code === "ACCOUNT_REJECTED") {
-      // Rejection ends the waiting flow — back to normal guest browsing.
-      // Do not open /welcome (that duplicated the rejected experience).
-      clearPendingSignup();
-      router.replace("/");
+      if (result.statusToken) rememberPendingSignup(result.statusToken);
+      rememberAccessOutcome("REJECTED");
+      router.replace(REJECTED_ROUTE);
     } else {
       setError(result.error);
     }

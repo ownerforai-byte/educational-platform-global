@@ -193,7 +193,9 @@ describe("Social login", () => {
 
     render(<AuthCallbackPage />);
 
-    await waitFor(() => expect(mocks.replace).toHaveBeenCalledWith("/welcome"));
+    await waitFor(() =>
+      expect(mocks.replace).toHaveBeenCalledWith("/welcome/pending"),
+    );
     expect(localStorage.getItem("neb_signup_status_token")).toBe("signed-status-token");
     expect(mocks.signOut).not.toHaveBeenCalled();
     expect(mocks.setStoredToken).not.toHaveBeenCalled();
