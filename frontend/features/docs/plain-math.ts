@@ -82,5 +82,10 @@ export function plainMath(src: string): string {
   out = out.replace(/[{}]/g, "");
   out = out.replace(/\\/g, "");
 
+  // 9. Stray delimiters from non-TeX dollar signs or an option like $x$ that
+  //    the earlier passes could not pair up (e.g. "$5 and $10", or a formula
+  //    cut mid-expression). Left alone these printed as raw "$" in the SVG.
+  out = out.split("$").join("");
+
   return out.replace(/\s+/g, " ").trim();
 }
