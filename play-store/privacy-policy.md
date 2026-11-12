@@ -18,6 +18,16 @@ Ravikisan's Platform is a free, offline-capable study service for **NEB Class 11
 (Nepali +2)** students in Nepal. It provides curriculum-aligned notes, interactive labs,
 past-year questions, and an AI study assistant ("Veer").
 
+### Independence disclaimer
+
+> **The App is an independent educational platform and is NOT affiliated with,
+> endorsed by, authorized by, or connected to the National Examination Board
+> (NEB), the Curriculum Development Centre (CDC), or any government entity of
+> Nepal.** The curriculum and examination standards the content is aligned to are
+> published by Government of Nepal bodies — NEB (https://www.neb.gov.np/), CDC
+> (https://moecdc.gov.np/) and MoEST (https://moest.gov.np/). Those official
+> sources are also listed inside the App at `/official-sources`.
+
 - **Operator / developer:** `Ravikisan`
 - **Country:** Nepal
 - **Support email:** sahrocky81@gmail.com

@@ -1,6 +1,6 @@
 # Google Play — App Listing (Ready-to-paste)
 
-**App name:** Ravikisan's Platform
+**App name:** Verner
 **App type:** Educational study PWA (wrapped for Android)
 
 ---
@@ -10,44 +10,58 @@ NEB +2 study app: AI tutor Veer, notes, 3D labs, quizzes & PYQs for Class 11–1
 _(Count: 80. Adjust if your app name changes length.)_
 
 ## Full description (up to 4,000 characters)
-Study smarter for the NEB +2 exam with Ravikisan's Platform — a free,
-offline-capable study app built for Class 11 & 12 students in Nepal.
+_Compliance note (2026-11-11): rejected under **Misleading Claims**. The
+disclaimer now opens and closes the description and the official `.gov.np`
+sources sit directly under the feature list — see /official-sources in the app._
 
-🤖 AI TUTOR — Meet Veer, your study companion. Veer answers doubts grounded in
-the real NEB syllabus and your notes, cross-checks with live web sources, and
-even draws the diagrams and figures for you. Ask anything, get a streamed,
-easy-to-follow answer.
+```text
+DISCLAIMER: Verner is an independent educational platform and is NOT affiliated with, endorsed by, authorized by, or connected to the National Examination Board (NEB), the Curriculum Development Centre (CDC), or any government entity of Nepal.
 
-📚 SYLLABUS-FIRST CONTENT — Curriculum-aligned notes for Physics, Chemistry,
-Biology, Mathematics, English and Nepali. Start from the official topics and
-drill down chapter by chapter.
+Verner is a free, ad-free study app for Class 11 and Class 12 students in Nepal who are preparing for NEB exams. It brings notes, past questions, practice sets and an AI tutor into one place, arranged along the published syllabus so you always know what to read next. Everything here is built for students preparing for NEB exams. Nothing here is issued by a board.
 
-🧪 INTERACTIVE 3D LABS — Projectile motion, an interactive periodic table,
-function and 3D graph plotting. See concepts move, don't just read about them.
+WHAT YOU GET
+- Subject notes for Physics, Chemistry, Biology, Mathematics and English, organised by unit, topic and syllabus
+- Previous Year Questions (PYQs) with solutions, filtered by year and subject
+- Question banks and practice sets modelled on the NEB exam pattern
+- AI Tutor (Verner) - ask any concept, get step-by-step explanations, or quiz yourself in your own words
+- Practical lab notes and guides
+- Formula sheets, mindmaps, diagrams and interactive 3D science labs
+- Offline mode - download units and study without internet
+- Study rooms, activity feeds and leaderboards
+- 100% free, ad-free, no paywalls
 
-📝 PAST-YEAR QUESTIONS (PYQs) — Practice with the real questions that show up
-in the NEB exam, with solutions.
+OFFICIAL GOVERNMENT SOURCES
+The curriculum, syllabus and examination standards originate with Government of Nepal bodies, not with this app. Always confirm a date, a marking scheme or a curriculum change against the primary document:
+- National Examination Board (NEB): https://www.neb.gov.np/
+- Curriculum Development Centre (CDC): https://moecdc.gov.np/
+- Ministry of Education, Science and Technology (MoEST): https://moest.gov.np/
+Official exam notices, syllabus PDFs and model questions are published on those sites. Every link is also collected inside the app, on the Official Sources page: https://ravikisan.vercel.app/official-sources
 
-🧠 MORE TO HELP YOU MEMORISE
-- Mind maps for every topic
-- Flashcards, quizzes & AI-generated quizzes
-- Formulas, theorems & derivations bank
-- Exam countdown + progress tracking + bookmarks
+WHAT IS OURS, WHAT IS OFFICIAL
+- Aligned, not issued. Units and topics follow the published curriculum; the wording, examples and explanations are written by Verner.
+- Past questions are reproduced for practice and are not an official NEB marking service.
+- AI answers can be wrong. Treat Verner as study support and check the textbook and official documents.
+- Only the boards above can confirm an official notice. Where an announcement exists, it beats this app.
 
-YOUR DATA, YOUR CONTROL — Create an account, track progress, save
-bookmarks, and keep your AI history. Your content stays with you.
+DESIGNED FOR NEB STUDENTS
+- Content arranged along the NEB Class 11 & 12 syllabus
+- AI tutor available 24/7
+- Offline-ready - download once, study anywhere
+- One account for all subjects - no juggling five different sources
+- Nepal-focused: nothing to translate, nothing region-locked
 
-📶 WORKS OFFLINE — Notes and key content are available even with a weak
-connection. Best features need internet for the AI assistant.
+GET STARTED
+1. Create a free account and pick your class (11 or 12)
+2. Download units for offline practice, work through PYQs, and ask the AI tutor whenever you get stuck
 
-Free to install. Some AI actions use a small daily credit pool; premium adds
-more.
+SUPPORT
+Email: sahrocky81@gmail.com
+Privacy policy: https://ravikisan.vercel.app/legal/privacy
 
-Subjects covered — Class 11: full (all six subjects). Class 12: rolling out
-now (English first, more subjects soon).
+This is an independent study platform. It is not an official app of NEB, CDC or the Government of Nepal.
 
-Download Ravikisan's Platform and give yourself a personal teacher on your phone.
-
+DISCLAIMER: Verner is an independent educational platform and is NOT affiliated with, endorsed by, authorized by, or connected to the National Examination Board (NEB), the Curriculum Development Centre (CDC), or any government entity of Nepal.
+```
 ---
 
 ## What's new (for each release)
@@ -59,7 +73,7 @@ v1.0.0 — Initial release:
 - Progress tracking, bookmarks, and offline access
 
 ## App name / brand
-- Display name: Ravikisan's Platform
+- Display name: Verner
 - Developer name: `Ravikisan`
 
 ## Categories
@@ -78,6 +92,7 @@ v1.0.0 — Initial release:
 
 ## Links (fill on Play Console)
 - Website: https://ravikisan.vercel.app
+- Official sources page: https://ravikisan.vercel.app/official-sources
 - Support email: sahrocky81@gmail.com
 - Support website: `[OPTIONAL — e.g. ravikisan.vercel.app/support]`
 - Privacy policy URL: `https://ravikisan.vercel.app/legal/privacy`
