@@ -671,15 +671,17 @@ code, kbd, samp, pre {
     );
   }
 
-  /* Tables — constants, comparisons, observation sheets */
-  .prose table {
-    display: block;
-    width: 100%;
-    max-width: 100%;
+  /* Tables — constants, comparisons, observation sheets. Every <table> is
+     wrapped (rehypeWrapTables) in .table-scroll so a wide answer table scrolls
+     horizontally instead of squeezing every column until values are unreadable. */
+  .table-scroll {
     overflow-x: auto;
     margin: 1.1em 0;
     border: 1px solid hsl(var(--border));
     border-radius: 0.75rem;
+  }
+  .prose table {
+    min-width: 100%;
     border-collapse: collapse;
     font-size: 0.92em;
   }
@@ -716,7 +718,8 @@ code, kbd, samp, pre {
   .tutor-dense.prose ul, .tutor-dense.prose ol { margin: 0.5em 0; }
   .tutor-dense.prose li { margin: 0.2em 0; }
   .tutor-dense.prose li > p { margin: 0.2em 0; }
-  .tutor-dense.prose table { margin: 0.7em 0; font-size: 0.95em; }
+  .tutor-dense.prose .table-scroll { margin: 0.7em 0; }
+  .tutor-dense.prose table { font-size: 0.95em; }
   .tutor-dense.prose th { padding: 0.4em 0.6em; }
   .tutor-dense.prose td { padding: 0.35em 0.6em; }
   .tutor-dense.prose pre { margin: 0.7em 0; padding: 0.7em 0.85em; }

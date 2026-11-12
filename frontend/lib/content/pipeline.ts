@@ -97,6 +97,34 @@ const sanitizeSchema: Schema = {
   },
 };
 
+/**
+ * Wrap every `<table>` in a horizontal-scroll container so wide answer tables
+ * (Veer chat comparisons, big observation sheets) stay fully readable instead
+ * of squeezing every column until the values are unreadable.
+ */
+function rehypeWrapTables() {
+  return (tree: unknown): void => {
+    const walk = (node: { children?: unknown[] }): void => {
+      const children = node.children;
+      if (!Array.isArray(children)) return;
+      for (let i = 0; i < children.length; i += 1) {
+        const child = children[i] as { type?: string; tagName?: string; children?: unknown[] };
+        if (child && child.type === "element" && child.tagName === "table") {
+          children[i] = {
+            type: "element",
+            tagName: "div",
+            properties: { className: ["table-scroll"] },
+            children: [child],
+          };
+          continue;
+        }
+        walk(child as { children?: unknown[] });
+      }
+    };
+    walk(tree as { children?: unknown[] });
+  };
+}
+
 export const noteProcessor = unified()
   .use(remarkParse)
   .use(remarkGfm)
@@ -109,6 +137,7 @@ export const noteProcessor = unified()
   .use(rehypeSanitize, sanitizeSchema)
   .use(rehypeHighlight, { detect: false })
   .use(rehypeKatex, KATEX_OPTIONS)
+  .use(rehypeWrapTables)
   .use(rehypeStringify);
 
 /** Markdown/HTML note text → sanitized static HTML string (synchronous). */
