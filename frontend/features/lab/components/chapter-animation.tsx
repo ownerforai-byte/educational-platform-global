@@ -328,23 +328,118 @@ const MoleculeScene: SceneRender = (h) => {
 };
 
 const PeriodicTableScene: SceneRender = (h) => {
-  const palette = [0xef4444, 0xfb923c, 0xfbbf24, 0xfacc15, 0xa3e635, 0xfbbf24, 0x60a5fa, 0xef4444, 0x10b981, 0x8b5cf6];
-  for (let i = 0; i < palette.length; i++) {
-    const cell = new THREE.Mesh(BOX, mat(palette[i], palette[i]));
-    cell.scale.set(0.8, 0.8, 0.4);
-    cell.position.set((i % 5) * 1 - 2, -Math.floor(i / 5) * 1, 0);
+  // A REAL periodic-table layout: 18 group columns, 7 periods, with the
+  // s/p/d/f blocks in their true positions (not a 5×2 row of cubes). Colours
+  // are the standard block categories, so a student can read group numbers.
+  const GROUP_W = 0.62;
+  const PERIOD_H = 0.62;
+  const originX = -(18 * GROUP_W) / 2;
+  const originY = (7 * PERIOD_H) / 2;
+
+  const blockColor: Record<string, number> = {
+    s: 0xef4444, // alkali / alkaline-earth
+    p: 0x22c55e, // p-block
+    d: 0x3b82f6, // transition
+    f: 0xa855f7, // lanthanide / actinide
+  };
+
+  // (group, period, block) for the main-group + transition cells.
+  const cells: Array<[number, number, keyof typeof blockColor]> = [];
+  // Periods 1–3: s-block groups 1–2, p-block 13–18.
+  for (let p = 1; p <= 3; p += 1) {
+    cells.push([1, p, "s"], [2, p, "s"]);
+    if (p > 1) for (let g = 13; g <= 18; g += 1) cells.push([g, p, "p"]);
+  }
+  // Periods 4–5: s, then d (3–12), then p.
+  for (let p = 4; p <= 5; p += 1) {
+    cells.push([1, p, "s"], [2, p, "s"]);
+    for (let g = 3; g <= 12; g += 1) cells.push([g, p, "d"]);
+    for (let g = 13; g <= 18; g += 1) cells.push([g, p, "p"]);
+  }
+  // Periods 6–7: s, f (lanthanides/actinides, drawn as a separate strip), d, p.
+  for (let p = 6; p <= 7; p += 1) {
+    cells.push([1, p, "s"], [2, p, "s"]);
+    for (let g = 3; g <= 12; g += 1) cells.push([g, p, "d"]);
+    for (let g = 13; g <= 18; g += 1) cells.push([g, p, "p"]);
+  }
+
+  for (const [group, period, block] of cells) {
+    const cell = new THREE.Mesh(BOX, mat(blockColor[block], blockColor[block]));
+    cell.scale.set(GROUP_W * 0.82, PERIOD_H * 0.82, 0.22);
+    cell.position.set(
+      originX + (group - 0.5) * GROUP_W,
+      originY - (period - 0.5) * PERIOD_H,
+      0,
+    );
     h.group.add(cell);
   }
+
+  // The f-block strip, separated below the main table (its true placement).
+  for (let i = 0; i < 14; i += 1) {
+    const cell = new THREE.Mesh(BOX, mat(blockColor.f, blockColor.f));
+    cell.scale.set(GROUP_W * 0.82, PERIOD_H * 0.82, 0.22);
+    cell.position.set(originX + (i + 3) * GROUP_W, originY - 8.4 * PERIOD_H, 0);
+    h.group.add(cell);
+  }
+
+  h.group.add(makeTitleSprite("Groups 1–18 across · periods 1–7 down", "#7dd3fc"));
   return () => {};
 };
 
 const CrystalScene: SceneRender = (h) => {
-  for (let x = -2; x <= 2; x++) for (let y = -2; y <= 2; y++) for (let z = -2; z <= 2; z++) {
-    const node = new THREE.Mesh(SPHERE, mat(0x60a5fa, 0x60a5fa));
-    node.scale.setScalar(0.2);
-    node.position.set(x * 1.4, y * 1.4, z * 1.4);
-    h.group.add(node);
+  // A REAL unit cell: a cubic lattice with a visible cell edge, corner atoms
+  // shared between cells, and the cell's dimensions marked. Used for solids,
+  // semiconductors and metals — so the learner sees the repeating unit, not a
+  // cloud of spheres.
+  const N = 2; // 2×2×2 cells
+  const a = 1.5; // lattice parameter
+  const half = (N * a) / 2;
+
+  // Lattice nodes: one atom per lattice point.
+  for (let x = 0; x <= N; x += 1) {
+    for (let y = 0; y <= N; y += 1) {
+      for (let z = 0; z <= N; z += 1) {
+        const corner = x === 0 || x === N || y === 0 || y === N || z === 0 || z === N;
+        const atom = new THREE.Mesh(SPHERE, mat(corner ? 0x60a5fa : 0x38bdf8, 0x60a5fa));
+        atom.scale.setScalar(corner ? 0.2 : 0.14);
+        atom.position.set(x * a - half, y * a - half, z * a - half);
+        h.group.add(atom);
+      }
+    }
   }
+
+  // The cell edges of ONE unit cell, drawn as rods (the repeating box).
+  const edgeMat = new THREE.MeshStandardMaterial({
+    color: 0xfbbf24,
+    emissive: 0xfbbf24,
+    emissiveIntensity: 0.35,
+  });
+  const edges: Array<[THREE.Vector3, THREE.Vector3]> = [
+    [new THREE.Vector3(-half, -half, -half), new THREE.Vector3(half, -half, -half)],
+    [new THREE.Vector3(-half, -half, half), new THREE.Vector3(half, -half, half)],
+    [new THREE.Vector3(-half, half, -half), new THREE.Vector3(half, half, -half)],
+    [new THREE.Vector3(-half, half, half), new THREE.Vector3(half, half, half)],
+    [new THREE.Vector3(-half, -half, -half), new THREE.Vector3(-half, half, -half)],
+    [new THREE.Vector3(half, -half, -half), new THREE.Vector3(half, half, -half)],
+    [new THREE.Vector3(-half, -half, half), new THREE.Vector3(-half, half, half)],
+    [new THREE.Vector3(half, -half, half), new THREE.Vector3(half, half, half)],
+    [new THREE.Vector3(-half, -half, -half), new THREE.Vector3(-half, -half, half)],
+    [new THREE.Vector3(half, -half, -half), new THREE.Vector3(half, -half, half)],
+    [new THREE.Vector3(-half, half, -half), new THREE.Vector3(-half, half, half)],
+    [new THREE.Vector3(half, half, -half), new THREE.Vector3(half, half, half)],
+  ];
+  for (const [from, to] of edges) {
+    const mid = from.clone().add(to).multiplyScalar(0.5);
+    const len = from.distanceTo(to);
+    const rod = new THREE.Mesh(new THREE.BoxGeometry(0.035, len, 0.035), edgeMat);
+    rod.position.copy(mid);
+    rod.lookAt(to);
+    rod.rotateX(Math.PI / 2);
+    h.group.add(rod);
+  }
+
+  h.group.add(makeTitleSprite("Unit cell  a = edge length", "#fbbf24"));
+
   const id = setInterval(() => {
     h.group.rotation.y += 0.003;
     h.group.rotation.x = Math.sin(performance.now() / 2000) * 0.2;
@@ -554,20 +649,105 @@ const TrigScene: SceneRender = (h) => {
 };
 
 const BarChartScene: SceneRender = (h) => {
-  for (let i = 0; i < 10; i++) {
-    const bar = new THREE.Mesh(BOX, mat([0x60a5fa, 0xef4444, 0x10b981, 0xfbbf24][i % 4]));
-    bar.scale.set(0.5, 1 + Math.random() * 2, 0.5);
-    bar.position.set((i - 5) * 0.7, bar.scale.y / 2, 0); h.group.add(bar);
+  // A REAL data chart, not random boxes: an axis frame, tick gridlines and
+  // labelled columns whose heights are the actual values. Used for
+  // statistics, probability distributions, sequences and thermal expansion —
+  // so the learner sees a graph they can read, not decoration.
+  const baseline = new THREE.Mesh(
+    new THREE.BoxGeometry(9.4, 0.08, 0.08),
+    new THREE.MeshStandardMaterial({ color: 0x94a3b8 }),
+  );
+  baseline.position.set(0, 0, 0);
+  h.group.add(baseline);
+
+  const yAxis = new THREE.Mesh(
+    new THREE.BoxGeometry(0.08, 6.4, 0.08),
+    new THREE.MeshStandardMaterial({ color: 0x94a3b8 }),
+  );
+  yAxis.position.set(-4.7, 3.2, 0);
+  h.group.add(yAxis);
+
+  // Horizontal gridlines every 1 unit, so the eye can read a height.
+  for (let g = 1; g <= 6; g += 1) {
+    const grid = new THREE.Mesh(
+      new THREE.BoxGeometry(9.2, 0.012, 0.012),
+      new THREE.MeshBasicMaterial({ color: 0x334155, transparent: true, opacity: 0.7 }),
+    );
+    grid.position.set(0, g, 0);
+    h.group.add(grid);
   }
+
+  // Nine columns of a fixed data set (a distribution), each capped by a
+  // value marker so the top of a column reads as a number.
+  const values = [0.6, 1.2, 2.4, 3.6, 4.8, 3.6, 2.4, 1.2, 0.6];
+  const palette = [0x60a5fa, 0x38bdf8, 0x22d3ee, 0x34d399, 0xfbbf24, 0x34d399, 0x22d3ee, 0x38bdf8, 0x60a5fa];
+  values.forEach((value, i) => {
+    const column = new THREE.Mesh(BOX, mat(palette[i], palette[i]));
+    column.scale.set(0.62, value, 0.62);
+    column.position.set((i - (values.length - 1) / 2) * 1.0, value / 2, 0);
+    h.group.add(column);
+
+    const cap = new THREE.Mesh(SPHERE, mat(0xffffff, 0xffffff));
+    cap.scale.setScalar(0.09);
+    cap.position.set(column.position.x, value + 0.06, 0);
+    h.group.add(cap);
+  });
+
+  h.group.add(makeTitleSprite("Value — axis to gridline", "#7dd3fc"));
   return () => {};
 };
 
 const MatrixScene: SceneRender = (h) => {
-  for (let i = 0; i < 4; i++) for (let j = 0; j < 4; j++) {
-    const cell = new THREE.Mesh(BOX, mat(0x7dd3fc, 0x7dd3fc));
-    cell.scale.set(0.7, 0.7, 0.3);
-    cell.position.set((j - 1.5) * 0.8, (i - 1.5) * 0.8, 0); h.group.add(cell);
+  // A REAL matrix: an n×n array of cells with row/column brackets, where each
+  // cell is a labelled tile. The brackets are what make it read as a matrix
+  // (a determinant / linear system) rather than a plain grid.
+  const N = 4;
+  const span = 0.9;
+  const originX = -((N - 1) * span) / 2;
+  const originY = ((N - 1) * span) / 2;
+
+  const entries = [
+    [2, -1, 0, 3],
+    [0, 4, -2, 1],
+    [5, 0, 3, -1],
+    [1, 2, 2, 6],
+  ];
+
+  for (let i = 0; i < N; i += 1) {
+    for (let j = 0; j < N; j += 1) {
+      const value = entries[i][j];
+      const cell = new THREE.Mesh(BOX, mat(value < 0 ? 0xf87171 : 0x7dd3fc, value < 0 ? 0xf87171 : 0x7dd3fc));
+      cell.scale.set(0.62, 0.62, 0.22);
+      cell.position.set(originX + j * span, originY - i * span, 0);
+      h.group.add(cell);
+
+      // A small marker on negative entries, so the sign is visible at a glance.
+      if (value < 0) {
+        const tick = new THREE.Mesh(BOX, mat(0xffffff, 0xffffff));
+        tick.scale.set(0.28, 0.06, 0.05);
+        tick.position.set(cell.position.x, cell.position.y - 0.16, 0.14);
+        h.group.add(tick);
+      }
+    }
   }
+
+  // Row/column brackets: four corner brackets framing the array.
+  const bracketMat = new THREE.MeshStandardMaterial({ color: 0x38bdf8, emissive: 0x38bdf8, emissiveIntensity: 0.3 });
+  const halfW = (N * span) / 2 + 0.16;
+  const halfH = (N * span) / 2 + 0.16;
+  for (const sx of [-1, 1]) {
+    for (const sy of [-1, 1]) {
+      const vBar = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.7, 0.06), bracketMat);
+      vBar.position.set(sx * halfW, sy * (halfH - 0.35), 0);
+      h.group.add(vBar);
+      const hBar = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.06, 0.06), bracketMat);
+      hBar.position.set(sx * (halfW - 0.35), sy * halfH, 0);
+      h.group.add(hBar);
+    }
+  }
+
+  h.group.add(makeTitleSprite("aᵢⱼ  —  row i, column j", "#7dd3fc"));
+
   const id = setInterval(() => { h.group.rotation.y += 0.005; }, 16);
   return () => clearInterval(id);
 };
@@ -590,13 +770,68 @@ const FunctionScene: SceneRender = (h) => {
 };
 
 const SpiralScene: SceneRender = (h) => {
-  const points: THREE.Vector3[] = [];
-  for (let i = 0; i < 200; i++) {
-    const t = (i / 200) * Math.PI * 6;
-    points.push(new THREE.Vector3(Math.cos(t) * t * 0.15, t * 0.5 - 3, Math.sin(t) * t * 0.15));
+  // A REAL Archimedean spiral on a polar grid — the actual curve r = a + bθ,
+  // with the radius marked at each turn and the polar axis drawn. Used for
+  // polar coordinates, complex-plane arguments and helical growth.
+  const TURNS = 3;
+  const POINTS = 240;
+  const a = 0.25;
+  const b = 0.42;
+  const rMax = a + b * TURNS * Math.PI * 2;
+
+  // Polar grid: concentric circles at each integer radius.
+  for (let ring = 1; ring <= 3; ring += 1) {
+    const radius = (rMax / 3) * ring;
+    const ringMesh = new THREE.Mesh(
+      new THREE.RingGeometry(radius, radius + 0.012, 96),
+      new THREE.MeshBasicMaterial({ color: 0x334155, side: THREE.DoubleSide, transparent: true, opacity: 0.8 }),
+    );
+    ringMesh.rotation.x = -Math.PI / 2;
+    h.group.add(ringMesh);
   }
-  h.group.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(points), new THREE.LineBasicMaterial({ color: 0x8b5cf6 })));
-  const id = setInterval(() => { h.group.rotation.y += 0.005; }, 16);
+
+  // Radial spokes every 30°, so θ can be read off the plane.
+  for (let s = 0; s < 12; s += 1) {
+    const angle = (s / 12) * Math.PI * 2;
+    const spoke = new THREE.Mesh(
+      new THREE.BoxGeometry(rMax, 0.01, 0.01),
+      new THREE.MeshBasicMaterial({ color: 0x475569 }),
+    );
+    spoke.position.set((Math.cos(angle) * rMax) / 2, 0, (Math.sin(angle) * rMax) / 2);
+    spoke.rotation.y = -angle;
+    h.group.add(spoke);
+  }
+
+  // The curve itself: r = a + bθ, lifted so it sits above the grid.
+  const points: THREE.Vector3[] = [];
+  for (let i = 0; i <= POINTS; i += 1) {
+    const t = (i / POINTS) * TURNS * Math.PI * 2;
+    const r = a + b * t;
+    points.push(new THREE.Vector3(Math.cos(t) * r, 0.06, Math.sin(t) * r));
+  }
+  const curve = new THREE.Line(
+    new THREE.BufferGeometry().setFromPoints(points),
+    new THREE.LineBasicMaterial({ color: 0x8b5cf6 }),
+  );
+  h.group.add(curve);
+
+  // A marker at the curve's outer end, plus the polar axis.
+  const head = new THREE.Mesh(SPHERE, mat(0xf472b6, 0xf472b6));
+  head.scale.setScalar(0.16);
+  const end = points[points.length - 1];
+  head.position.copy(end);
+  h.group.add(head);
+
+  const polarAxis = new THREE.Mesh(
+    new THREE.BoxGeometry(rMax + 0.4, 0.02, 0.02),
+    new THREE.MeshBasicMaterial({ color: 0x22d3ee }),
+  );
+  polarAxis.position.set((rMax + 0.4) / 2 - 0.2, 0.02, 0);
+  h.group.add(polarAxis);
+
+  h.group.add(makeTitleSprite("r = a + bθ  (θ measured from the polar axis)", "#a78bfa"));
+
+  const id = setInterval(() => { h.group.rotation.y += 0.004; }, 16);
   return () => clearInterval(id);
 };
 

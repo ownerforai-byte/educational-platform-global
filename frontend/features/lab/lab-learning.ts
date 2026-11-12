@@ -1422,7 +1422,25 @@ export const LAB_LEARNING: Record<string, LabLearningPack> = {
   },
 };
 
-/** Returns the learning pack for a lab id (main registry + class11 module). */
+/**
+ * Extra packs for the labs that originally shipped without content.
+ * Split by subject; `getLabLearning` merges them as fallback sources.
+ */
+import { EXTRA_LEARNING as EXTRA_LEARNING_PHYSICS } from "./lab-learning-extra-physics";
+import { EXTRA_LEARNING_PHYSICS_TOOLS } from "./lab-learning-extra-physics-tools";
+import { EXTRA_LEARNING_CHEMISTRY } from "./lab-learning-extra-chemistry";
+import { EXTRA_LEARNING_BIOLOGY } from "./lab-learning-extra-biology";
+import { EXTRA_LEARNING_MATH } from "./lab-learning-extra-math";
+
+const EXTRA_LEARNING: Record<string, LabLearningPack> = {
+  ...EXTRA_LEARNING_PHYSICS,
+  ...EXTRA_LEARNING_PHYSICS_TOOLS,
+  ...EXTRA_LEARNING_CHEMISTRY,
+  ...EXTRA_LEARNING_BIOLOGY,
+  ...EXTRA_LEARNING_MATH,
+};
+
+/** Returns the learning pack for a lab id (main registry + class11 module + extras). */
 export function getLabLearning(labId: string): LabLearningPack | undefined {
-  return LAB_LEARNING[labId] ?? CLASS11_LEARNING[labId];
+  return LAB_LEARNING[labId] ?? CLASS11_LEARNING[labId] ?? EXTRA_LEARNING[labId];
 }
