@@ -1746,16 +1746,16 @@ body {
 .bottom-safe { bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
 /* The back button shares the right edge with the Veer guide launcher; park it
    one launcher-height plus a small gap above the launcher. */
-.bottom-safe-above-guide { bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
-/* Chat panel docked above the launcher (launcher top edge = 5rem above the
-   gesture bar, so 5.5rem leaves a 0.5rem gap). */
-.bottom-safe-panel { bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px)); }
+/* Back button sits above the enlarged Veer AI launcher (h-14 + gap). */
+.bottom-safe-above-guide { bottom: calc(5.75rem + env(safe-area-inset-bottom, 0px)); }
+/* Chat panel docked above the launcher. */
+.bottom-safe-panel { bottom: calc(6.25rem + env(safe-area-inset-bottom, 0px)); }
 /* Phone tab bar clearance: floating chrome rides above the 56px bottom tab
    bar instead of sitting on top of it (2.25rem bar + 1.5rem gap = 3.75rem). */
 @media (max-width: 767px) {
   .bottom-safe { bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px)); }
-  .bottom-safe-above-guide { bottom: calc(8.75rem + env(safe-area-inset-bottom, 0px)); }
-  .bottom-safe-panel { bottom: calc(9.25rem + env(safe-area-inset-bottom, 0px)); }
+  .bottom-safe-above-guide { bottom: calc(9.5rem + env(safe-area-inset-bottom, 0px)); }
+  .bottom-safe-panel { bottom: calc(10rem + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* Mobile <768: ensure body type never falls below 13 px (WCAG) */
