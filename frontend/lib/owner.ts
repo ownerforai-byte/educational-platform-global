@@ -38,9 +38,9 @@ export function isOwnerAccount(
 }
 
 /**
- * Email-allowlist gate for owner-exclusive CONTENT (R1, Diagram Hub, owner
- * design surfaces). Those backend routes still authorize by allowlisted email,
- * so this stays narrower than `isOwnerAccount`.
+ * Email-allowlist gate for owner-exclusive CONTENT (Diagram Hub, owner design
+ * surfaces). Those backend routes still authorize by allowlisted email, so this
+ * stays narrower than `isOwnerAccount`.
  */
 export function isOwnerUser(
   user: { email?: string | null; role?: string | null } | null | undefined

@@ -11,6 +11,7 @@ import { RouteScrollReset } from "@/components/navigation/route-scroll-reset";
 import { OfflineBanner } from "@/components/pwa/offline-banner";
 import { RawEventRejectionGuard } from "@/components/dev/raw-event-rejection-guard";
 import { DevContrastAudit } from "@/lib/color-contrast";
+import { FocusTimer } from "@/components/owner/focus-timer";
 import { Toaster } from "sonner";
 import { StarField } from "@/components/theme/star-field";
 
@@ -72,6 +73,8 @@ export default async function RootLayout({
                 {/* Task 2: dev-only WCAG contrast audit — logs theme/pair/ratio warnings. */}
                 {process.env.NODE_ENV !== "production" && <DevContrastAudit />}
                 {children}
+                {/* Owner-tier focus timer — hidden for every other rung. */}
+                <FocusTimer />
               </CreditProvider>
             </AuthProvider>
           </ThemeProvider>
