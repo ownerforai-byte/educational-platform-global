@@ -19,28 +19,19 @@ import {
   NORMAL_ROUTE,
   REJECTED_ROUTE,
   WAITING_ROUTE,
-  deviceApprovalRoute,
 } from "../pending-signup-identity";
-import { usePendingSignup } from "../use-pending-signup";
+import { useLiveApprovalRoute } from "../use-live-approval-route";
 
 /**
- * ═══════════════════════════════════════════════════════════════════════════
- * Four HARDCODED device screens (owner 2026-11-12).
- * ═══════════════════════════════════════════════════════════════════════════
- *   NORMAL   /welcome/no-account → device never created an account
- *   WAITING  /welcome/pending    → PENDING (token on device)
- *   APPROVED /welcome/approved   → ACTIVE outcome on device
- *   REJECTED /welcome/rejected   → REJECTED outcome on device
- *
- * `/welcome` is a dispatcher only. Visiting the wrong URL is corrected.
- * ═══════════════════════════════════════════════════════════════════════════
+ * Four welcome screens — shown only after live account-status confirms them.
+ * Visiting the wrong URL is corrected from the API, not from local cookies.
  */
 
 function CheckingScreen() {
   return (
     <AuthShell
       title="Checking your account"
-      subtitle="Hold on while we look up your signup record on this device."
+      subtitle="Confirming live approval status with the server."
     >
       <div className="flex justify-center py-4">
         <VerifyingStatus compact label="Checking your account status" />
@@ -49,30 +40,28 @@ function CheckingScreen() {
   );
 }
 
-/** Redirect this device to its hardcoded screen when the URL does not match. */
-function useDeviceScreenGate(expectedRoute: string) {
+/** Redirect when live status says this URL is the wrong screen. */
+function useLiveScreenGate(expectedRoute: string) {
   const router = useRouter();
-  const hydrated = usePendingSignup() !== null;
+  const liveRoute = useLiveApprovalRoute();
 
   useEffect(() => {
-    if (!hydrated) return;
-    const target = deviceApprovalRoute();
-    if (target !== expectedRoute) router.replace(target);
-  }, [hydrated, expectedRoute, router]);
+    if (!liveRoute) return;
+    if (liveRoute !== expectedRoute) router.replace(liveRoute);
+  }, [liveRoute, expectedRoute, router]);
 
-  return hydrated;
+  return liveRoute;
 }
 
-/** /welcome/pending — WAITING (PENDING) only. */
+/** /welcome/pending — only when live access_status is PENDING. */
 export function WelcomeApprovalScreen({ waiting }: { waiting: ReactNode }) {
-  const ready = useDeviceScreenGate(WAITING_ROUTE);
-  if (!ready) return <CheckingScreen />;
-  if (deviceApprovalRoute() !== WAITING_ROUTE) return <CheckingScreen />;
+  const liveRoute = useLiveScreenGate(WAITING_ROUTE);
+  if (!liveRoute || liveRoute !== WAITING_ROUTE) return <CheckingScreen />;
 
   return (
     <AuthShell
       title="Your account is on its way"
-      subtitle="Account created on this device — track live approval here. Sign in after administrative and system approval."
+      subtitle="Live approval status for the account tied to this signup. Sign in after administrative and system approval."
     >
       <LoggedInRedirect />
       {waiting}
@@ -80,16 +69,15 @@ export function WelcomeApprovalScreen({ waiting }: { waiting: ReactNode }) {
   );
 }
 
-/** /welcome/no-account — NORMAL (no signup on this device). */
+/** /welcome/no-account — only when live status finds no signup. */
 export function NoAccountScreen() {
-  const ready = useDeviceScreenGate(NORMAL_ROUTE);
-  if (!ready) return <CheckingScreen />;
-  if (deviceApprovalRoute() !== NORMAL_ROUTE) return <CheckingScreen />;
+  const liveRoute = useLiveScreenGate(NORMAL_ROUTE);
+  if (!liveRoute || liveRoute !== NORMAL_ROUTE) return <CheckingScreen />;
 
   return (
     <AuthShell
       title="No active account found"
-      subtitle="This device has no signup record waiting for approval."
+      subtitle="There is no live signup waiting for approval for this browser."
     >
       <LoggedInRedirect />
       <NoAccountCard />
@@ -97,16 +85,15 @@ export function NoAccountScreen() {
   );
 }
 
-/** /welcome/approved — APPROVED (ACTIVE on this device). */
+/** /welcome/approved — only when live access_status is ACTIVE. */
 export function ApprovedScreen() {
-  const ready = useDeviceScreenGate(APPROVED_ROUTE);
-  if (!ready) return <CheckingScreen />;
-  if (deviceApprovalRoute() !== APPROVED_ROUTE) return <CheckingScreen />;
+  const liveRoute = useLiveScreenGate(APPROVED_ROUTE);
+  if (!liveRoute || liveRoute !== APPROVED_ROUTE) return <CheckingScreen />;
 
   return (
     <AuthShell
       title="Access granted"
-      subtitle="This device's account was approved. Sign in to open the library."
+      subtitle="This account is approved live. Sign in to open the library."
     >
       <LoggedInRedirect />
       <div className="space-y-5" data-testid="approved-account-card">
@@ -118,8 +105,7 @@ export function ApprovedScreen() {
             Your account is approved
           </h2>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Administrative and system approval is complete for the account created
-            on this device. Sign in to continue.
+            Administrative and system approval is complete. Sign in to continue.
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-2">
@@ -137,16 +123,15 @@ export function ApprovedScreen() {
   );
 }
 
-/** /welcome/rejected — REJECTED on this device. */
+/** /welcome/rejected — only when live access_status is REJECTED. */
 export function RejectedScreen() {
-  const ready = useDeviceScreenGate(REJECTED_ROUTE);
-  if (!ready) return <CheckingScreen />;
-  if (deviceApprovalRoute() !== REJECTED_ROUTE) return <CheckingScreen />;
+  const liveRoute = useLiveScreenGate(REJECTED_ROUTE);
+  if (!liveRoute || liveRoute !== REJECTED_ROUTE) return <CheckingScreen />;
 
   return (
     <AuthShell
       title="Account not approved"
-      subtitle="This device's account was not granted access."
+      subtitle="Live status for this signup is rejected."
     >
       <div className="space-y-5" data-testid="rejected-account-card">
         <div className="flex flex-col items-center gap-3 rounded-2xl border border-destructive/30 bg-destructive/[0.06] p-6 text-center">
@@ -157,9 +142,9 @@ export function RejectedScreen() {
             Access was not approved
           </h2>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            The account created on this device was rejected. You can keep browsing
-            as a guest, or create a new account later. Leave a message to
-            sahrocky81@gmail.com if you believe this is a mistake.
+            This account was rejected. You can keep browsing as a guest, or
+            create a new account later. Leave a message to sahrocky81@gmail.com
+            if you believe this is a mistake.
           </p>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-2">

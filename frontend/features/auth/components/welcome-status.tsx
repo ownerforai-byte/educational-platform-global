@@ -20,7 +20,9 @@ import { VisitorExitNote } from "@/components/layout/visitor-exit-note";
 import { VerifyingStatus } from "./verifying-status";
 import {
   APPROVED_ROUTE,
+  NORMAL_ROUTE,
   REJECTED_ROUTE,
+  clearPendingSignup,
   readStatusToken,
   rememberAccessOutcome,
   rememberPendingSignup,
@@ -95,6 +97,7 @@ export function WelcomeStatus() {
     // refresh or a cleared store cannot lose the "account created" identity.
     const token = readStatusToken();
     if (!token) {
+      clearPendingSignup();
       setState("missing");
       return;
     }
@@ -111,6 +114,8 @@ export function WelcomeStatus() {
     } catch (err) {
       const status = (err as { status?: number }).status;
       if (status === 401 || status === 404) {
+        // Deleted / expired signup — wipe local mirrors so no coded screen sticks.
+        clearPendingSignup();
         setState("expired");
       } else {
         // Transient failure: keep showing the last known state; the poll
@@ -128,7 +133,7 @@ export function WelcomeStatus() {
     };
   }, [check]);
 
-  // Terminal outcomes leave the waiting page for their dedicated screens.
+  // Terminal / empty outcomes leave the waiting page for the live screen.
   useEffect(() => {
     if (state === "ACTIVE") {
       window.location.replace(APPROVED_ROUTE);
@@ -136,6 +141,10 @@ export function WelcomeStatus() {
     }
     if (state === "REJECTED") {
       window.location.replace(REJECTED_ROUTE);
+      return;
+    }
+    if (state === "missing" || state === "expired") {
+      window.location.replace(NORMAL_ROUTE);
     }
   }, [state]);
 
@@ -143,13 +152,21 @@ export function WelcomeStatus() {
   const step = STEP_INDEX[state];
   const accountConfirmed = state === "PENDING";
 
-  if (state === "ACTIVE" || state === "REJECTED") {
+  if (
+    state === "ACTIVE" ||
+    state === "REJECTED" ||
+    state === "missing" ||
+    state === "expired"
+  ) {
+    const label =
+      state === "ACTIVE"
+        ? "Opening approved screen"
+        : state === "REJECTED"
+          ? "Opening rejected screen"
+          : "Opening no-account screen";
     return (
       <div className="flex justify-center py-6" data-testid="account-status-handoff">
-        <VerifyingStatus
-          compact
-          label={state === "ACTIVE" ? "Opening approved screen" : "Opening rejected screen"}
-        />
+        <VerifyingStatus compact label={label} />
       </div>
     );
   }

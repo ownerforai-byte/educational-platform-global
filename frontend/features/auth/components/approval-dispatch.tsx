@@ -4,26 +4,24 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { AuthShell } from "./auth-shell";
 import { VerifyingStatus } from "./verifying-status";
-import { deviceApprovalRoute } from "../pending-signup-identity";
-import { usePendingSignup } from "../use-pending-signup";
+import { useLiveApprovalRoute } from "../use-live-approval-route";
 
 /**
- * `/welcome` dispatcher — not one of the four content screens.
- * After hydration, sends this device to normal / pending / approved / rejected.
+ * `/welcome` dispatcher — opens the screen that live account-status returns.
  */
 export function ApprovalDispatch() {
   const router = useRouter();
-  const hydrated = usePendingSignup() !== null;
+  const liveRoute = useLiveApprovalRoute();
 
   useEffect(() => {
-    if (!hydrated) return;
-    router.replace(deviceApprovalRoute());
-  }, [hydrated, router]);
+    if (!liveRoute) return;
+    router.replace(liveRoute);
+  }, [liveRoute, router]);
 
   return (
     <AuthShell
       title="Checking your account"
-      subtitle="Opening the right status screen for this device."
+      subtitle="Confirming live approval status with the server."
     >
       <div className="flex justify-center py-4" data-testid="approval-dispatch">
         <VerifyingStatus compact label="Checking your account status" />

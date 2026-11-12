@@ -1,20 +1,16 @@
 /**
- * ═══════════════════════════════════════════════════════════════════════════
- * HARDCODED DEVICE → SIGN-IN / APPROVAL SCREENS (owner 2026-11-12)
- * ═══════════════════════════════════════════════════════════════════════════
- * Four mutually exclusive pages. Which one a DEVICE sees is decided only from
- * this hardcoded identity (token + last live access outcome). Refresh, new
- * tabs, or cleared localStorage cannot invent a different screen — the same
- * marker is mirrored in localStorage + sessionStorage + a 7-day cookie.
+ * Signup status-token storage for the four welcome screens.
  *
- *   NORMAL   /welcome/no-account  → this device never created an account
- *   WAITING  /welcome             → account created, live status PENDING
- *   APPROVED /welcome/approved    → owner set access_status ACTIVE (sign in)
- *   REJECTED /welcome/rejected    → owner set access_status REJECTED
+ * Local mirrors (localStorage / sessionStorage / cookie) only keep the signed
+ * status token so GET /api/auth/account-status can be polled. Which screen
+ * opens is decided LIVE by `resolveLiveApprovalRoute` — never by a cached
+ * outcome alone (stale cookies after deleted accounts must not invent
+ * "account created").
  *
- * Live truth still comes from GET /api/auth/account-status; this module only
- * remembers which screen the device must open and survive a reload.
- * ═══════════════════════════════════════════════════════════════════════════
+ *   NORMAL   /welcome/no-account  → no live account for this token
+ *   WAITING  /welcome/pending     → live access_status PENDING
+ *   APPROVED /welcome/approved    → live access_status ACTIVE
+ *   REJECTED /welcome/rejected    → live access_status REJECTED
  */
 
 /** Existing key — kept so signups saved before this change still resolve. */
@@ -247,20 +243,15 @@ export function hasPendingSignup(): boolean {
 }
 
 /**
- * HARDCODED router: which of the four screens this device must open.
- *
- * Priority:
- *   1. REJECTED outcome → rejected page (even if token was cleared)
- *   2. ACTIVE outcome   → approved page
- *   3. status token     → waiting page (PENDING / still polling)
- *   4. otherwise        → normal (no account on this device)
+ * Sync cache hint only — gates/CTAs must prefer `resolveLiveApprovalRoute`.
+ * Without a status token, always NORMAL (never trust a leftover outcome).
  */
 export function deviceApprovalRoute(): string {
+  if (!readStatusToken()) return NORMAL_ROUTE;
   const outcome = readAccessOutcome();
   if (outcome === "REJECTED") return REJECTED_ROUTE;
   if (outcome === "ACTIVE") return APPROVED_ROUTE;
-  if (readStatusToken()) return WAITING_ROUTE;
-  return NORMAL_ROUTE;
+  return WAITING_ROUTE;
 }
 
 /** @deprecated Prefer deviceApprovalRoute — kept for older call sites. */

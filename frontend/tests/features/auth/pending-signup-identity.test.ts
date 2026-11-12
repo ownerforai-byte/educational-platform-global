@@ -20,12 +20,12 @@ import {
   rememberPendingSignup,
 } from "@/features/auth/pending-signup-identity";
 
-describe("hardcoded device approval screens", () => {
+describe("signup status-token storage + sync route hint", () => {
   beforeEach(() => {
     clearPendingSignup();
   });
 
-  it("hardcodes the four page routes and identity keys", () => {
+  it("keeps the four page routes and identity keys", () => {
     expect(PENDING_SIGNUP_ID).toBe("neb-pending-signup-v1");
     expect(PENDING_SIGNUP_COOKIE).toBe("neb_signup_session");
     expect(STATUS_TOKEN_KEY).toBe("neb_signup_status_token");
@@ -38,28 +38,28 @@ describe("hardcoded device approval screens", () => {
     expect(WAITING_APPROVAL_ROUTE).toBe(WAITING_ROUTE);
   });
 
-  it("NORMAL — no signup record on this device", () => {
+  it("NORMAL — no token means no-account (outcome alone cannot invent a screen)", () => {
+    rememberAccessOutcome("ACTIVE");
     expect(hasPendingSignup()).toBe(false);
     expect(readStatusToken()).toBeNull();
-    expect(readAccessOutcome()).toBeNull();
     expect(deviceApprovalRoute()).toBe(NORMAL_ROUTE);
     expect(approvalStatusHref()).toBe(NORMAL_ROUTE);
   });
 
-  it("WAITING — token on device defaults to PENDING", () => {
+  it("WAITING hint — token with PENDING outcome", () => {
     rememberPendingSignup("signed-token-123");
     expect(hasPendingSignup()).toBe(true);
     expect(readAccessOutcome()).toBe("PENDING");
     expect(deviceApprovalRoute()).toBe(WAITING_ROUTE);
   });
 
-  it("APPROVED — ACTIVE outcome wins for this device", () => {
+  it("APPROVED hint — ACTIVE outcome with token", () => {
     rememberPendingSignup("approved-token");
     rememberAccessOutcome("ACTIVE");
     expect(deviceApprovalRoute()).toBe(APPROVED_ROUTE);
   });
 
-  it("REJECTED — REJECTED outcome wins even after token heal", () => {
+  it("REJECTED hint — REJECTED outcome with token", () => {
     rememberPendingSignup("rejected-token");
     rememberAccessOutcome("REJECTED");
     expect(deviceApprovalRoute()).toBe(REJECTED_ROUTE);

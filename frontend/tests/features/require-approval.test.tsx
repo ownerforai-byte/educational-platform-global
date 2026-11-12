@@ -79,23 +79,23 @@ describe("RequireApproval — login + owner-approval wall", () => {
     ).toBeInTheDocument();
   });
 
-  it("offers sign-in, create-account and the approval-status screen", () => {
+  it("offers sign-in, create-account and the live approval dispatcher", () => {
     render(<RequireApproval>{CONTENT}</RequireApproval>);
     const hrefs = screen.getAllByRole("link").map((a) => a.getAttribute("href"));
     expect(hrefs).toContain("/login");
     expect(hrefs).toContain("/signup");
-    // No account record → the link opens the NEW "no active account" page.
-    expect(hrefs).toContain("/welcome/no-account");
+    // Dispatcher re-checks live account-status before opening a content screen.
+    expect(hrefs).toContain("/welcome");
     expect(screen.getByTestId("approval-status-link").getAttribute("href")).toBe(
-      "/welcome/no-account",
+      "/welcome",
     );
   });
 
-  it("sends a created-and-waiting account to the waiting approval page", () => {
+  it("keeps the approval-status link on the live dispatcher even with a local token", () => {
     rememberPendingSignup("signed-status-token");
     render(<RequireApproval>{CONTENT}</RequireApproval>);
     expect(screen.getByTestId("approval-status-link").getAttribute("href")).toBe(
-      "/welcome/pending",
+      "/welcome",
     );
   });
 
@@ -154,9 +154,9 @@ describe("auth wall wiring", () => {
     expect(sparkGate).toBeGreaterThan(authWall);
   });
 
-  it("decides the approval-status link from the hardcoded device router", () => {
+  it("decides the approval-status link via the live dispatcher", () => {
     const gate = read("features/auth/components/require-approval.tsx");
-    expect(gate).toContain("deviceApprovalRoute()");
+    expect(gate).toContain("APPROVAL_DISPATCH_ROUTE");
     expect(gate).toContain('data-testid="approval-status-link"');
   });
 

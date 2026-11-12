@@ -40,7 +40,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { deviceApprovalRoute } from "@/features/auth/pending-signup-identity";
+import { APPROVAL_DISPATCH_ROUTE } from "@/features/auth/pending-signup-identity";
 import { NOTICE_COPY } from "@/features/credits/constants";
 import { ACCESS_NOTICE } from "./access-notice";
 import { VerifyingStatus } from "./verifying-status";
@@ -94,9 +94,8 @@ function ApprovalPending() {
 
 /** The muted access screen shown to visitors without an approved account. */
 function ApprovalLock() {
-  // HARDCODED four-screen router: this device opens normal / waiting /
-  // approved / rejected based on its signup token + last live outcome.
-  const statusHref = deviceApprovalRoute();
+  // Dispatcher re-checks live account-status before opening a content screen.
+  const statusHref = APPROVAL_DISPATCH_ROUTE;
 
   return (
     <div

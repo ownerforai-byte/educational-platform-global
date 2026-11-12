@@ -3,16 +3,16 @@ const { createClient } = require('@supabase/supabase-js');
 const sb = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
 
 async function main() {
-  // 1. Reset ravikishan password
+  // 1. Reset root owner password
   const { data: users } = await sb.auth.admin.listUsers();
-  const ravikishan = users.users.find(u => u.email === 'ravikishan1814@gmail.com');
-  console.log('ravikishan id:', ravikishan?.id);
-  if (ravikishan) {
-    const newPassword = process.env.OWNER_NEW_PASSWORD || process.env.OWNER_PASSWORD_RAVI;
+  const owner = users.users.find(u => u.email === 'sahrocky81@gmail.com');
+  console.log('owner id:', owner?.id);
+  if (owner) {
+    const newPassword = process.env.OWNER_NEW_PASSWORD || process.env.OWNER_PASSWORD;
     if (!newPassword) {
       console.log('password reset: skipped (set OWNER_NEW_PASSWORD to rotate the owner password)');
     } else {
-      const { error } = await sb.auth.admin.updateUserById(ravikishan.id, { password: newPassword });
+      const { error } = await sb.auth.admin.updateUserById(owner.id, { password: newPassword });
       console.log('password reset:', error?.message || 'OK');
     }
   }

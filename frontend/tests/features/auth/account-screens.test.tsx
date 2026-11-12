@@ -1,15 +1,15 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import {
   clearPendingSignup,
-  rememberAccessOutcome,
   rememberPendingSignup,
 } from "@/features/auth/pending-signup-identity";
 import { NO_ACCOUNT_MESSAGE } from "@/features/auth/components/no-account-card";
 
 const nav = vi.hoisted(() => ({ replace: vi.fn() }));
+const apiFetch = vi.hoisted(() => vi.fn());
 
 vi.mock("next/navigation", async () => {
   const actual =
@@ -27,6 +27,10 @@ vi.mock("next/navigation", async () => {
   };
 });
 
+vi.mock("@/lib/api-client", () => ({
+  apiFetch: (...args: unknown[]) => apiFetch(...args),
+}));
+
 import {
   ApprovedScreen,
   NoAccountScreen,
@@ -39,51 +43,75 @@ const WAITING_BODY = <div data-testid="waiting-body">the live status stepper</di
 beforeEach(() => {
   clearPendingSignup();
   nav.replace.mockClear();
+  apiFetch.mockReset();
 });
 
-describe("four hardcoded approval screens", () => {
-  it("NORMAL — visitor with no account stays on no-account", () => {
+describe("live approval screens", () => {
+  it("NORMAL — visitor with no live signup stays on no-account", async () => {
     render(<NoAccountScreen />);
-    expect(screen.getByTestId("no-account-card")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByTestId("no-account-card")).toBeInTheDocument();
+    });
     expect(screen.getByTestId("no-account-message").textContent).toBe(NO_ACCOUNT_MESSAGE);
     expect(nav.replace).not.toHaveBeenCalled();
   });
 
-  it("WAITING — only a PENDING device sees the waiting shell", () => {
+  it("WAITING — only a live PENDING signup sees the waiting shell", async () => {
     rememberPendingSignup("signed-status-token");
+    apiFetch.mockResolvedValue({ accessStatus: "PENDING", fullName: "Ada" });
     render(<WelcomeApprovalScreen waiting={WAITING_BODY} />);
-    expect(screen.getByText(/Your account is on its way/i)).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText(/Your account is on its way/i)).toBeInTheDocument();
+    });
     expect(screen.getByTestId("waiting-body")).toBeInTheDocument();
     expect(nav.replace).not.toHaveBeenCalled();
   });
 
-  it("WAITING — no-account visitor is redirected off the waiting page", () => {
+  it("WAITING — no-account visitor is redirected off the waiting page", async () => {
     render(<WelcomeApprovalScreen waiting={WAITING_BODY} />);
+    await waitFor(() => {
+      expect(nav.replace).toHaveBeenCalledWith("/welcome/no-account");
+    });
     expect(screen.queryByTestId("waiting-body")).toBeNull();
-    expect(nav.replace).toHaveBeenCalledWith("/welcome/no-account");
   });
 
-  it("APPROVED — ACTIVE outcome opens the approved screen", () => {
+  it("APPROVED — live ACTIVE opens the approved screen", async () => {
     rememberPendingSignup("tok");
-    rememberAccessOutcome("ACTIVE");
+    apiFetch.mockResolvedValue({ accessStatus: "ACTIVE" });
     render(<ApprovedScreen />);
-    expect(screen.getByTestId("approved-account-card")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByTestId("approved-account-card")).toBeInTheDocument();
+    });
     expect(nav.replace).not.toHaveBeenCalled();
   });
 
-  it("REJECTED — REJECTED outcome opens the rejected screen", () => {
+  it("REJECTED — live REJECTED opens the rejected screen", async () => {
     rememberPendingSignup("tok");
-    rememberAccessOutcome("REJECTED");
+    apiFetch.mockResolvedValue({ accessStatus: "REJECTED" });
     render(<RejectedScreen />);
-    expect(screen.getByTestId("rejected-account-card")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByTestId("rejected-account-card")).toBeInTheDocument();
+    });
     expect(nav.replace).not.toHaveBeenCalled();
   });
 
-  it("sends a PENDING device away from the no-account page", () => {
+  it("sends a live PENDING signup away from the no-account page", async () => {
     rememberPendingSignup("signed-status-token");
+    apiFetch.mockResolvedValue({ accessStatus: "PENDING" });
     render(<NoAccountScreen />);
+    await waitFor(() => {
+      expect(nav.replace).toHaveBeenCalledWith("/welcome/pending");
+    });
     expect(screen.queryByTestId("no-account-card")).toBeNull();
-    expect(nav.replace).toHaveBeenCalledWith("/welcome/pending");
+  });
+
+  it("stale token for a deleted account is cleared to no-account", async () => {
+    rememberPendingSignup("dead-token");
+    apiFetch.mockRejectedValue(Object.assign(new Error("gone"), { status: 404 }));
+    render(<WelcomeApprovalScreen waiting={WAITING_BODY} />);
+    await waitFor(() => {
+      expect(nav.replace).toHaveBeenCalledWith("/welcome/no-account");
+    });
   });
 });
 
@@ -98,11 +126,14 @@ describe("account-screen wiring", () => {
     expect(read("app/welcome/rejected/page.tsx")).toContain("RejectedScreen");
   });
 
-  it("uses the hardcoded device router in gates and the access link", () => {
+  it("gates and access link use live resolution", () => {
     const gate = read("features/auth/components/account-screen-gate.tsx");
-    expect(gate).toContain("deviceApprovalRoute()");
+    expect(gate).toContain("useLiveApprovalRoute");
     expect(read("features/auth/components/require-approval.tsx")).toContain(
-      "deviceApprovalRoute()",
+      "APPROVAL_DISPATCH_ROUTE",
+    );
+    expect(read("features/auth/components/approval-dispatch.tsx")).toContain(
+      "useLiveApprovalRoute",
     );
   });
 });
