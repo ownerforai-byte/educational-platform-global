@@ -14,6 +14,7 @@ import {
   TIER_STORAGE_LIMITS,
 } from "../../services/profile-storage";
 import { processProfileImage, profileImagePath } from "../../services/profile-image";
+import { profileMediaPublicUrl } from "../../services/profile-media-url";
 import type { SessionUser } from "../../auth/types";
 
 const router = Router();
@@ -93,12 +94,7 @@ function publicProfileFields(): string {
   ].join(", ");
 }
 
-function imageUrl(path: string | null | undefined): string | null {
-  if (!path) return null;
-  const base = process.env.R2_PUBLIC_BASE_URL?.trim();
-  if (base) return `${base.replace(/\/+$/, "")}/${path.replace(/^\/+/, "")}`;
-  return `/api/profile/media?path=${encodeURIComponent(path.replace(/^\/+/, ""))}`;
-}
+const imageUrl = profileMediaPublicUrl;
 
 function presentProfile(row: ProfileRow, viewerId: string | null) {
   const extras = row.profile_extras && typeof row.profile_extras === "object" ? row.profile_extras : {};
@@ -162,6 +158,8 @@ async function loadStats(userId: string): Promise<{
   comments: number;
   likesReceived: number;
   filesShared: number;
+  followers: number;
+  following: number;
 }> {
   const posts = await supabaseAdmin
     .from("community_feed_posts")
@@ -192,12 +190,38 @@ async function loadStats(userId: string): Promise<{
       .in("post_id", ids);
     filesShared = files.count ?? 0;
   }
+  const followers = await supabaseAdmin
+    .from("profile_follows")
+    .select("follower_id", { count: "exact", head: true })
+    .eq("following_id", userId);
+  const following = await supabaseAdmin
+    .from("profile_follows")
+    .select("following_id", { count: "exact", head: true })
+    .eq("follower_id", userId);
+
   return {
     posts: posts.count ?? 0,
     comments: comments.count ?? 0,
     likesReceived,
     filesShared,
+    followers: isMissingTable(followers.error) ? 0 : followers.count ?? 0,
+    following: isMissingTable(following.error) ? 0 : following.count ?? 0,
   };
+}
+
+async function viewerFollowsTargets(
+  viewerId: string | null,
+  targetIds: string[],
+): Promise<Set<string>> {
+  const unique = [...new Set(targetIds)].filter((id) => id && id !== viewerId);
+  if (!viewerId || unique.length === 0) return new Set();
+  const { data, error } = await supabaseAdmin
+    .from("profile_follows")
+    .select("following_id")
+    .eq("follower_id", viewerId)
+    .in("following_id", unique);
+  if (error) return new Set();
+  return new Set((data ?? []).map((row) => row.following_id as string));
 }
 
 const editSchema = z.object({
@@ -686,6 +710,7 @@ router.get(
   "/:username/followers",
   asyncHandler(async (req, res) => {
     const key = param(req.params.username);
+    const viewer = await getUserFromRequest(req);
     const resolved = await resolveProfileKey(key);
     if (resolved === "missing") {
       unavailable(res);
@@ -720,6 +745,7 @@ router.get(
               .select("id, full_name, username, avatar_path")
               .in("id", ids)
           ).data ?? [];
+    const followSet = await viewerFollowsTargets(viewer?.id ?? null, profiles.map((p) => p.id as string));
     noStore(res);
     res.json({
       users: profiles.map((p) => ({
@@ -727,6 +753,7 @@ router.get(
         fullName: (p.full_name as string | null)?.trim() || "Student",
         username: p.username,
         avatarUrl: imageUrl(p.avatar_path as string | null),
+        followingByYou: followSet.has(p.id as string),
       })),
       migrated: true,
     });
@@ -737,6 +764,7 @@ router.get(
   "/:username/following",
   asyncHandler(async (req, res) => {
     const key = param(req.params.username);
+    const viewer = await getUserFromRequest(req);
     const resolved = await resolveProfileKey(key);
     if (resolved === "missing") {
       unavailable(res);
@@ -771,6 +799,7 @@ router.get(
               .select("id, full_name, username, avatar_path")
               .in("id", ids)
           ).data ?? [];
+    const followSet = await viewerFollowsTargets(viewer?.id ?? null, profiles.map((p) => p.id as string));
     noStore(res);
     res.json({
       users: profiles.map((p) => ({
@@ -778,6 +807,7 @@ router.get(
         fullName: (p.full_name as string | null)?.trim() || "Student",
         username: p.username,
         avatarUrl: imageUrl(p.avatar_path as string | null),
+        followingByYou: followSet.has(p.id as string),
       })),
       migrated: true,
     });

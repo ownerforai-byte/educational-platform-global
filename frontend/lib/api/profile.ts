@@ -21,6 +21,8 @@ export interface ProfileStats {
   comments: number;
   likesReceived: number;
   filesShared: number;
+  followers: number;
+  following: number;
 }
 
 export interface StorageInfo {
@@ -70,6 +72,7 @@ export interface ProfileListUser {
   fullName: string;
   username: string | null;
   avatarUrl: string | null;
+  followingByYou?: boolean;
 }
 
 /** Avatar/cover URL when R2 has no public base — matches backend `imageUrl`. */

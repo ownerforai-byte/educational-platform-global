@@ -4,19 +4,18 @@ import { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { FollowButton } from "@/features/profile/follow-button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { publicUrl } from "@/lib/site-url";
 import {
-  followUser,
   getProfileFiles,
   getProfileFollowers,
   getProfileFollowing,
   getProfilePosts,
   getPublicProfile,
   profilePath,
-  unfollowUser,
   type ProfileListUser,
   type ProfileStats,
   type PublicProfile,
@@ -87,16 +86,16 @@ export function PublicProfileShell({
     void load();
   }, [load]);
 
-  const toggleFollow = async () => {
-    if (!profile?.username) return;
-    if (following) {
-      await unfollowUser(profile.username);
-      setFollowing(false);
-    } else {
-      await followUser(profile.username);
-      setFollowing(true);
-    }
-  };
+  const adjustFollowCounts = useCallback((delta: number) => {
+    setStats((current) =>
+      current
+        ? {
+            ...current,
+            followers: Math.max(0, current.followers + delta),
+          }
+        : current,
+    );
+  }, []);
 
   const copyLink = async () => {
     try {
@@ -129,19 +128,32 @@ export function PublicProfileShell({
   return (
     <div className="mx-auto w-full max-w-3xl space-y-4 p-4 pb-16">
       <MotionHero profile={profile} />
-      <p className="text-sm text-muted-foreground">
-        @{profile.username ?? username}
-        {stats ? (
-          <span className="ml-2">
+      <p className="text-sm text-muted-foreground">@{profile.username ?? username}</p>
+      {stats ? (
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+          <Link href={tabHref(profile.username ?? username, "followers")} className="hover:text-foreground hover:underline">
+            <span className="font-semibold text-foreground">{stats.followers ?? 0}</span> followers
+          </Link>
+          <Link href={tabHref(profile.username ?? username, "following")} className="hover:text-foreground hover:underline">
+            <span className="font-semibold text-foreground">{stats.following ?? 0}</span> following
+          </Link>
+          <span>
             · {stats.posts} posts · {stats.comments} comments · {stats.likesReceived} likes · {stats.filesShared} files
           </span>
-        ) : null}
-      </p>
+        </div>
+      ) : null}
       <div className="flex flex-wrap gap-2">
         {user && profile.id !== user.id && profile.username ? (
-          <Button size="sm" variant={following ? "outline" : "default"} onClick={() => void toggleFollow()}>
-            {following ? "Following" : "Follow"}
-          </Button>
+          <FollowButton
+            username={profile.username}
+            targetUserId={profile.id}
+            initialFollowing={following}
+            viewerId={user.id}
+            onChange={(next) => {
+              setFollowing(next);
+              adjustFollowCounts(next ? 1 : -1);
+            }}
+          />
         ) : null}
         {profile.isYou ? (
           <Button size="sm" variant="outline" asChild>
@@ -230,13 +242,32 @@ export function PublicProfileShell({
       ) : null}
 
       {(activeTab === "followers" || activeTab === "following") ? (
-        <ProfilePeopleList people={people} emptyLabel={`No ${activeTab} yet.`} />
+        <ProfilePeopleList
+          people={people}
+          emptyLabel={`No ${activeTab} yet.`}
+          viewerId={user?.id}
+          onFollowToggle={(personId, nextFollowing) => {
+            setPeople((current) =>
+              current.map((p) => (p.id === personId ? { ...p, followingByYou: nextFollowing } : p)),
+            );
+          }}
+        />
       ) : null}
     </div>
   );
 }
 
-function ProfilePeopleList({ people, emptyLabel }: { people: ProfileListUser[]; emptyLabel: string }) {
+function ProfilePeopleList({
+  people,
+  emptyLabel,
+  viewerId,
+  onFollowToggle,
+}: {
+  people: ProfileListUser[];
+  emptyLabel: string;
+  viewerId?: string | null;
+  onFollowToggle?: (personId: string, following: boolean) => void;
+}) {
   if (people.length === 0) {
     return <p className="text-sm text-muted-foreground">{emptyLabel}</p>;
   }
@@ -245,8 +276,8 @@ function ProfilePeopleList({ people, emptyLabel }: { people: ProfileListUser[]; 
       {people.map((person) => {
         const href = profilePath(person.username, person.id);
         return (
-          <li key={person.id}>
-            <Link href={href} className="flex items-center gap-3 rounded-lg border p-3 hover:bg-muted/40">
+          <li key={person.id} className="flex items-center gap-3 rounded-lg border p-3">
+            <Link href={href} className="flex min-w-0 flex-1 items-center gap-3 hover:opacity-90">
               <div
                 className="h-10 w-10 shrink-0 rounded-full bg-muted bg-cover bg-center"
                 style={person.avatarUrl ? { backgroundImage: `url(${person.avatarUrl})` } : undefined}
@@ -259,6 +290,14 @@ function ProfilePeopleList({ people, emptyLabel }: { people: ProfileListUser[]; 
                 </p>
               </div>
             </Link>
+            <FollowButton
+              username={person.username}
+              targetUserId={person.id}
+              initialFollowing={Boolean(person.followingByYou)}
+              viewerId={viewerId}
+              size="xs"
+              onChange={(next) => onFollowToggle?.(person.id, next)}
+            />
           </li>
         );
       })}

@@ -25,10 +25,12 @@ import {
   updatePost,
   uploadAttachment,
   type FeedAttachment,
+  type FeedAuthor,
   type FeedPost,
   type PersonResponse,
   type PostInput,
 } from "@/lib/api/community-feed";
+import { PostAuthorHeader } from "@/features/community/post-author-header";
 
 const POLL_MS = 20_000;
 const MAX_FILES = 4;
@@ -156,9 +158,15 @@ function MarkdownBody({ text }: { text: string }) {
 
 function AttachmentList({
   files,
+  author,
+  viewerId,
+  onAuthorFollowChange,
   onRemove,
 }: {
   files: FeedAttachment[];
+  author?: FeedAuthor;
+  viewerId?: string | null;
+  onAuthorFollowChange?: (following: boolean) => void;
   onRemove?: (file: FeedAttachment) => void;
 }) {
   if (files.length === 0) return null;
@@ -168,6 +176,16 @@ function AttachmentList({
         const image = file.contentType.startsWith("image/");
         return (
           <li key={file.id} className="rounded-xl border border-border bg-background p-3">
+            {author ? (
+              <div className="mb-2 border-b border-border/60 pb-2">
+                <PostAuthorHeader
+                  author={author}
+                  viewerId={viewerId}
+                  compact
+                  onFollowChange={onAuthorFollowChange}
+                />
+              </div>
+            ) : null}
             <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
               <span className="font-medium">{file.filename}</span>
               <span className="text-muted-foreground">
@@ -406,6 +424,8 @@ function Composer({
       {existing.length > 0 ? (
         <AttachmentList
           files={existing}
+          author={initial?.author}
+          viewerId={user?.id}
           onRemove={(file) => {
             if (!user) {
               setError("Sign in to remove files.");
@@ -487,6 +507,30 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
     setPosts((current) => current.map(patch));
     setPost((current) => (current ? patch(current) : current));
     setPerson((current) => current ? { ...current, posts: current.posts.map(patch) } : current);
+  }, []);
+
+  const patchAuthorFollowing = useCallback((authorId: string, following: boolean) => {
+    const patchAuthor = (item: FeedPost) =>
+      item.author.id === authorId
+        ? { ...item, author: { ...item.author, followingByYou: following } }
+        : item;
+    const patchComments = (item: FeedPost) =>
+      item.comments
+        ? {
+            ...item,
+            comments: item.comments.map((c) =>
+              c.author.id === authorId
+                ? { ...c, author: { ...c.author, followingByYou: following } }
+                : c,
+            ),
+          }
+        : item;
+    const patch = (item: FeedPost) => patchComments(patchAuthor(item));
+    setPosts((current) => current.map(patch));
+    setPost((current) => (current ? patch(current) : current));
+    setPerson((current) =>
+      current ? { ...current, posts: current.posts.map(patch) } : current,
+    );
   }, []);
 
   const loadList = useCallback(async (append: boolean, nextCursor?: number | null) => {
@@ -694,18 +738,20 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
     const plan = planLabel(item.author.plan);
     return (
       <article className="space-y-3 rounded-2xl border border-border bg-card p-4">
+        <PostAuthorHeader
+          author={item.author}
+          createdAt={item.createdAt}
+          viewerId={user?.id}
+          onFollowChange={(following) => patchAuthorFollowing(item.author.id, following)}
+        />
         <div className="flex flex-wrap items-start justify-between gap-2">
           <div>
             <h2 className="text-lg font-semibold">
               <Link href={sharePath(item.id)} className="hover:underline">{item.title}</Link>
             </h2>
             <p className="text-xs text-muted-foreground">
-              <Link href={profilePath(item.author.username, item.author.id)} className="font-medium text-foreground hover:underline">
-                {item.author.fullName}
-              </Link>
-              {plan ? ` · ${plan}` : ""}
-              {item.createdAt ? ` · ${formatWhen(item.createdAt)}` : ""}
-              {` · ${item.category}`}
+              {plan ? `${plan} · ` : ""}
+              {item.category}
             </p>
           </div>
           <button type="button" className="text-xs font-medium text-primary" onClick={() => void copy(item.id)}>
@@ -713,7 +759,12 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
           </button>
         </div>
         {detailed ? <MarkdownBody text={item.body} /> : <p className="line-clamp-4 text-sm text-muted-foreground">{item.body}</p>}
-        <AttachmentList files={item.attachments} />
+        <AttachmentList
+          files={item.attachments}
+          author={item.author}
+          viewerId={user?.id}
+          onAuthorFollowChange={(following) => patchAuthorFollowing(item.author.id, following)}
+        />
         <div className="flex flex-wrap gap-3 text-sm">
           <button type="button" className="font-medium text-primary" onClick={() => void onLike(item.id)}>
             {item.likedByYou ? "Liked" : "Like"} · {item.likeCount}
@@ -852,12 +903,13 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
               <ul className="space-y-2">
                 {(post.comments ?? []).map((comment) => (
                   <li key={comment.id} className="rounded-xl border border-border bg-card p-3">
-                    <p className="text-xs text-muted-foreground">
-                      <Link href={profilePath(comment.author.username, comment.author.id)} className="font-medium text-foreground hover:underline">
-                        {comment.author.fullName}
-                      </Link>
-                      {` · ${formatWhen(comment.createdAt)}`}
-                    </p>
+                    <PostAuthorHeader
+                      author={comment.author}
+                      createdAt={comment.createdAt}
+                      viewerId={user?.id}
+                      compact
+                      onFollowChange={(following) => patchAuthorFollowing(comment.author.id, following)}
+                    />
                     {editingComment === comment.id ? (
                       <form
                         className="mt-2 space-y-2"

@@ -18,6 +18,8 @@ export interface FeedAuthor {
   username?: string | null;
   plan: string | null;
   role: string | null;
+  avatarUrl?: string | null;
+  followingByYou?: boolean;
 }
 
 export interface FeedAttachment {

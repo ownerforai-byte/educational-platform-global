@@ -7,6 +7,7 @@ import { asyncHandler } from "../../middleware/asyncHandler";
 import { serverError } from "../../middleware/error-handler";
 import { isR2StorageActive, r2Upload, r2Download, r2Delete } from "../../storage/r2";
 import { reserveStoragePath, releaseStoragePath } from "../../services/profile-storage";
+import { profileMediaPublicUrl } from "../../services/profile-media-url";
 import type { SessionUser } from "../../auth/types";
 
 /**
@@ -74,6 +75,7 @@ interface ProfileRow {
   username?: string | null;
   plan: string | null;
   role: string | null;
+  avatar_path?: string | null;
 }
 
 interface AttachmentRow {
@@ -186,7 +188,11 @@ async function ensureProfile(user: SessionUser): Promise<void> {
   }
 }
 
-function toAuthor(id: string, profile?: ProfileRow) {
+function toAuthor(
+  id: string,
+  profile?: ProfileRow,
+  followingByYou = false,
+) {
   const name = typeof profile?.full_name === "string" ? profile.full_name.trim() : "";
   const username =
     typeof profile?.username === "string" && profile.username.trim()
@@ -198,6 +204,8 @@ function toAuthor(id: string, profile?: ProfileRow) {
     username,
     plan: profile?.plan ?? null,
     role: profile?.role ?? null,
+    avatarUrl: profileMediaPublicUrl(profile?.avatar_path ?? null),
+    followingByYou,
   };
 }
 
@@ -207,11 +215,26 @@ async function profilesById(ids: string[]): Promise<Map<string, ProfileRow>> {
   if (unique.length === 0) return map;
   const { data, error } = await supabaseAdmin
     .from("profiles")
-    .select("id, full_name, username, plan, role")
+    .select("id, full_name, username, plan, role, avatar_path")
     .in("id", unique);
   if (error || !data) return map;
   for (const row of data as ProfileRow[]) map.set(row.id, row);
   return map;
+}
+
+async function followingByAuthor(
+  viewerId: string | null,
+  authorIds: string[],
+): Promise<Set<string>> {
+  const unique = [...new Set(authorIds)].filter((id) => id && id !== viewerId);
+  if (!viewerId || unique.length === 0) return new Set();
+  const { data, error } = await supabaseAdmin
+    .from("profile_follows")
+    .select("following_id")
+    .eq("follower_id", viewerId)
+    .in("following_id", unique);
+  if (error) return new Set();
+  return new Set((data ?? []).map((row) => row.following_id as string));
 }
 
 async function sideData(postIds: string[]): Promise<
@@ -250,6 +273,7 @@ function presentPost(
   commentRows: Array<{ post_id: string }>,
   attachments: AttachmentRow[],
   viewerId: string | null,
+  followingAuthors: Set<string>,
 ) {
   const postLikes = likes.filter((like) => like.post_id === row.id);
   const files = attachments
@@ -263,7 +287,11 @@ function presentPost(
     visibility: "public" as const,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
-    author: toAuthor(row.author_id, profiles.get(row.author_id)),
+    author: toAuthor(
+      row.author_id,
+      profiles.get(row.author_id),
+      followingAuthors.has(row.author_id),
+    ),
     likeCount: postLikes.length,
     likedByYou: viewerId ? postLikes.some((like) => like.user_id === viewerId) : false,
     commentCount: commentRows.filter((comment) => comment.post_id === row.id).length,
@@ -281,9 +309,13 @@ async function presentMany(rows: PostRow[], viewerId: string | null) {
   if ("missing" in side) return { missing: true as const };
   if ("error" in side) return { error: side.error };
   const profiles = await profilesById(rows.map((row) => row.author_id));
+  const followingAuthors = await followingByAuthor(
+    viewerId,
+    rows.map((row) => row.author_id),
+  );
   return {
     posts: rows.map((row) =>
-      presentPost(row, profiles, side.likes, side.comments, side.attachments, viewerId),
+      presentPost(row, profiles, side.likes, side.comments, side.attachments, viewerId, followingAuthors),
     ),
   };
 }
@@ -755,6 +787,10 @@ router.get(
     }
     const comments = (commentRows ?? []) as CommentRow[];
     const profiles = await profilesById(comments.map((comment) => comment.author_id));
+    const commentFollows = await followingByAuthor(
+      viewer?.id ?? null,
+      comments.map((comment) => comment.author_id),
+    );
     noStore(res);
     res.json({
       post: {
@@ -765,7 +801,11 @@ router.get(
           body: comment.body,
           createdAt: comment.created_at,
           updatedAt: comment.updated_at,
-          author: toAuthor(comment.author_id, profiles.get(comment.author_id)),
+          author: toAuthor(
+            comment.author_id,
+            profiles.get(comment.author_id),
+            commentFollows.has(comment.author_id),
+          ),
         })),
       },
       migrated: true,
