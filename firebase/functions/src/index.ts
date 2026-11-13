@@ -5,6 +5,7 @@ import { logger } from "firebase-functions";
 import { processApprovals } from "./jobs/processApprovals";
 import { processExpirations } from "./jobs/processExpirations";
 import { sendReminders } from "./jobs/sendReminders";
+import { runDailyCreditsReset } from "./jobs/resetCredits";
 
 const supabaseUrl = defineSecret("SUPABASE_URL");
 const supabaseServiceRoleKey = defineSecret("SUPABASE_SERVICE_ROLE_KEY");
@@ -63,5 +64,23 @@ export const accessBotRunNow = onRequest(
         error: err instanceof Error ? err.message : "unknown",
       });
     }
+  },
+);
+
+/**
+ * Daily CONTENT spark pool refill at 00:00 Asia/Kathmandu.
+ * Replaces node-cron inside the Render web process (which sleeps on free tier).
+ * Lazy ensureDailyCredits on the API remains the safety net.
+ */
+export const creditsDailyReset = onSchedule(
+  {
+    schedule: "0 0 * * *",
+    timeZone: "Asia/Kathmandu",
+    secrets: [supabaseUrl, supabaseServiceRoleKey],
+    retryCount: 1,
+  },
+  async () => {
+    const reset = await runDailyCreditsReset();
+    logger.info("[creditsDailyReset] done", { reset });
   },
 );

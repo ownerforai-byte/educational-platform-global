@@ -42,13 +42,12 @@ if (!checkStartupEnv()) {
 }
 
 const { createApp } = await import("./app");
-const { startCreditsResetJob, stopCreditsResetJob } = await import("./jobs/creditsResetJob");
 
 const app = createApp();
 
-// Daily platform-credit pool: refill every logged user to 8 credits at
-// 12:00 AM (lazy per-user reset in utils/credits.ts is the safety net).
-startCreditsResetJob();
+// Daily CONTENT spark refill runs as Firebase scheduled Function
+// `creditsDailyReset` (see firebase/functions/src/jobs/resetCredits.ts).
+// Lazy ensureDailyCredits on each request remains the safety net.
 
 const server = app.listen(PORT, HOST, () => {
   console.log(`Backend server running on http://${HOST}:${PORT}`);
@@ -59,12 +58,6 @@ function gracefulShutdown(signal: string) {
   if (isShuttingDown) return;
   isShuttingDown = true;
   console.log(`[Lifecycle] Received ${signal}. Draining connections and shutting down gracefully...`);
-
-  try {
-    stopCreditsResetJob();
-  } catch (err) {
-    console.error("[Lifecycle] Error stopping credits job:", err);
-  }
 
   server.close((err) => {
     if (err) {
