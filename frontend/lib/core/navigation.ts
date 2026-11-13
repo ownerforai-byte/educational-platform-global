@@ -176,7 +176,7 @@ const primaryItems: NavItem[] = [
   { href: "/planner",       label: "Weekly Planner",     icon: Calendar,      minLevel: "plus"    },
   { href: "/srs",           label: "Spaced Repetition",  icon: Layers,        minLevel: "plus"    },
   { href: "/mock-exams",    label: "Mock Exams",         icon: Timer,         minLevel: "pro"     },
-  { href: "/analytics",     label: "Analytics",          icon: LineChart,     minLevel: "pro",    hideFromSidebar: true },
+  { href: "/analytics",     label: "Analytics",          icon: LineChart,     minLevel: "pro" },
   { href: "/streaks",       label: "Streaks and Badges", icon: Award,         minLevel: "member",  hideFromSidebar: true },
   { href: "/community",     label: "Community",          icon: Users,         minLevel: "plus"    },
   { href: "/ask",           label: "Ask Veer",           icon: HelpCircle,    minLevel: "member"  },
@@ -291,6 +291,7 @@ const toolsItems: NavItem[] = [
   { href: "/ai/history",   label: "AI History",              icon: History,    minLevel: "plus"  },
   { href: "/ai-quiz",      label: "Adaptive Veer Quiz",      icon: HelpCircle, minLevel: "plus", hideFromSidebar: true },
   { href: "/ai-quiz/history", label: "Quiz History",         icon: History,    minLevel: "plus"  },
+  { href: "/practice/history", label: "Practice History",    icon: History,    minLevel: "plus"  },
   { href: "/quiz",         label: "Practice Quiz Bank",      icon: Target,     minLevel: "plus", hideFromSidebar: true },
   { href: "/exam-countdown", label: "Exam Countdown",        icon: Target,     minLevel: "pro"   },
 
