@@ -1,4 +1,4 @@
-import type { AccessLevel } from '../constants/tiers.js';
+import type { AccessLevel } from '../constants/tiers';
 
 export interface SparkQuota {
   tier: AccessLevel;

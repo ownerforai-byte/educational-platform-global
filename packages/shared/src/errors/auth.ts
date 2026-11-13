@@ -1,4 +1,4 @@
-import { AppError } from './base.js';
+import { AppError } from './base';
 
 export class AuthError extends AppError {
   constructor(message = 'Authentication required', details?: unknown) {

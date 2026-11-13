@@ -1,3 +1,3 @@
-export * from './subjects.js';
-export * from './tiers.js';
-export * from './limits.js';
+export * from './subjects';
+export * from './tiers';
+export * from './limits';

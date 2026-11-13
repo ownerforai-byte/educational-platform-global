@@ -1,4 +1,4 @@
-import type { SubjectSlug, AcademicClass } from '../constants/subjects.js';
+import type { SubjectSlug, AcademicClass } from '../constants/subjects';
 
 export interface CurriculumTopicRef {
   slug: string;
