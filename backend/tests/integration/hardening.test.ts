@@ -15,7 +15,10 @@ const h = vi.hoisted(() => {
   const storageFrom = vi.fn();
   const storageUpload = vi.fn();
   const storageGetPublicUrl = vi.fn();
-  /** Bucket metadata the upload route validates before writing. */
+  /** Free-tier binaries go to R2 — tests toggle this instead of Supabase buckets. */
+  const r2Active = { value: true };
+  const r2Upload = vi.fn();
+  /** Legacy bucket metadata kept for older assertions that no longer drive uploads. */
   const bucketInfo: { value: { id: string; public: boolean } | null } = {
     value: { id: "resources", public: true },
   };
@@ -104,11 +107,14 @@ const h = vi.hoisted(() => {
     storageFrom.mockReset();
     storageUpload.mockReset();
     storageGetPublicUrl.mockReset();
+    r2Upload.mockReset();
+    r2Active.value = true;
     getUser.mockResolvedValue({ data: { user: { id: "user-1" } }, error: null });
     storageUpload.mockResolvedValue({ data: { path: "uploaded/x" }, error: null });
     storageGetPublicUrl.mockReturnValue({
       data: { publicUrl: "https://example.supabase.co/storage/v1/object/public/resources/uploaded/x" },
     });
+    r2Upload.mockResolvedValue({ url: "https://pub.r2.example/folder/img.png" });
   }
 
   // Direct editor guards consume one profile read; omitted status stays absent.
@@ -136,6 +142,8 @@ const h = vi.hoisted(() => {
     storageUpload,
     storageGetPublicUrl,
     bucketInfo,
+    r2Active,
+    r2Upload,
   };
 });
 
@@ -144,6 +152,36 @@ vi.mock("../../src/db/supabase", () => ({
   // Auth calls run on a throwaway client in prod (session isolation); tests
   // reuse the same mocked client so signIn/refresh assertions keep working.
   createAuthClient: () => h.supabaseAdmin,
+}));
+
+vi.mock("../../src/storage/r2", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("../../src/storage/r2")>();
+  return {
+    ...actual,
+    isR2StorageActive: () => h.r2Active.value,
+    r2Upload: (...args: unknown[]) => h.r2Upload(...args),
+  };
+});
+
+vi.mock("../../src/storage/firebase-admin", () => ({
+  isFirebaseAdminConfigured: () => false,
+  firebaseAdminHealth: () => ({
+    configured: false,
+    ready: false,
+    error: null,
+    storageBucket: null,
+  }),
+  ensureFirebaseAdmin: () => null,
+  getFirestore: () => null,
+  getStorageBucket: () => null,
+  getFirebaseInitError: () => null,
+}));
+
+vi.mock("../../src/storage/firebase-store", () => ({
+  firebaseUpload: vi.fn(),
+  upsertFcmTokenDoc: async () => {},
+  appendNotificationLog: async () => null,
+  upsertAccessSession: async () => {},
 }));
 
 const resourcesRouter = (await import("../../src/api/resources")).default;
@@ -929,15 +967,9 @@ describe("POST /api/storage/upload", () => {
     expect(h.storageUpload).not.toHaveBeenCalled();
   });
 
-  it("uploads to the default bucket and returns path + publicUrl", async () => {
+  it("uploads via free-tier R2 and returns path + publicUrl", async () => {
     const { request } = await mountedStorage();
-    h.storageUpload.mockResolvedValue({
-      data: { path: "folder/img.png" },
-      error: null,
-    });
-    h.storageGetPublicUrl.mockReturnValue({
-      data: { publicUrl: "https://cdn.example.com/folder/img.png" },
-    });
+    h.r2Upload.mockResolvedValue({ url: "https://pub.r2.example/folder/img.png" });
 
     const res = await request("POST", "/api/storage/upload", {
       path: "folder/img.png",
@@ -948,33 +980,37 @@ describe("POST /api/storage/upload", () => {
     expect(res.status).toBe(201);
     expect(res.body).toEqual({
       path: "folder/img.png",
-      publicUrl: "https://cdn.example.com/folder/img.png",
+      publicUrl: "https://pub.r2.example/folder/img.png",
+      storedIn: "r2",
+      tier: 3,
     });
-    expect(h.storageFrom).toHaveBeenCalledWith("resources");
-    expect(h.storageUpload).toHaveBeenCalledWith(
+    expect(h.r2Upload).toHaveBeenCalledWith(
       "folder/img.png",
       expect.any(Buffer),
-      { contentType: "image/png", upsert: false }
+      "image/png",
     );
+    // Free-tier binaries never write Supabase Storage buckets.
+    expect(h.storageFrom).not.toHaveBeenCalled();
+    expect(h.storageUpload).not.toHaveBeenCalled();
   });
 
-  it("400s a bucket that does not exist instead of a 500 after a failed upload", async () => {
+  it("500s when R2 is not configured on free tier (no Supabase Storage fallback)", async () => {
     const { request } = await mountedStorage();
-    h.bucketInfo.value = null;
+    h.r2Active.value = false;
 
     const res = await request("POST", "/api/storage/upload", {
-      bucket: "missing-bucket",
       path: "img.png",
       contentType: "image/png",
       dataBase64: VALID_PNG_B64,
     });
 
-    expect(res.status).toBe(400);
-    expect(res.body.error).toContain("does not exist");
+    expect(res.status).toBe(500);
+    expect(res.body.error).toBe("Upload failed");
+    expect(h.r2Upload).not.toHaveBeenCalled();
     expect(h.storageUpload).not.toHaveBeenCalled();
   });
 
-  it("refuses a private bucket rather than returning a public URL that cannot load", async () => {
+  it("ignores deprecated bucket field and still routes to R2", async () => {
     const { request } = await mountedStorage();
     h.bucketInfo.value = { id: "educational-materials", public: false };
 
@@ -985,8 +1021,10 @@ describe("POST /api/storage/upload", () => {
       dataBase64: VALID_PNG_B64,
     });
 
-    expect(res.status).toBe(400);
-    expect(res.body.error).toContain("private");
+    expect(res.status).toBe(201);
+    expect(res.body.storedIn).toBe("r2");
+    expect(res.body.tier).toBe(3);
+    expect(h.r2Upload).toHaveBeenCalled();
     expect(h.storageUpload).not.toHaveBeenCalled();
   });
 
@@ -1001,6 +1039,7 @@ describe("POST /api/storage/upload", () => {
     });
 
     expect(res.status).toBe(403);
+    expect(h.r2Upload).not.toHaveBeenCalled();
     expect(h.storageUpload).not.toHaveBeenCalled();
   });
 });

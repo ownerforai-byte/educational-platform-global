@@ -14,6 +14,10 @@ const h = vi.hoisted(() => {
   const store = {
     usage: new Map<string, { client_key: string; day: string; count: number }>(),
     profiles: new Map<string, { id: string; access_status: string; role: string }>(),
+    accessRequests: new Map<
+      string,
+      { id: string; user_id: string; status: string; fcm_token: string | null; deep_link: string }
+    >(),
   };
 
   function likeToRegExp(pattern: string): RegExp {
@@ -52,6 +56,24 @@ const h = vi.hoisted(() => {
         if (row) Object.assign(row, patch);
         return Promise.resolve({ data: row ? [row] : [], error: null });
       }
+      if (op?.method === "insert" && table === "user_access_requests") {
+        const row = {
+          id: randomUUID(),
+          fcm_token: null as string | null,
+          deep_link: "/home/member",
+          status: "pending",
+          ...op.args[0],
+        };
+        store.accessRequests.set(row.id, row);
+        return Promise.resolve({ data: single ? row : [row], error: null });
+      }
+      if (op?.method === "update" && table === "user_access_requests") {
+        const patch = op.args[0];
+        const idFilter = filters.find((f) => f.method === "eq" && f.args[0] === "id");
+        const row = idFilter ? store.accessRequests.get(idFilter.args[1]) : undefined;
+        if (row) Object.assign(row, patch);
+        return Promise.resolve({ data: single ? row ?? null : row ? [row] : [], error: null });
+      }
       if (table === "guest_chat_usage") {
         let rows = [...store.usage.values()];
         for (const f of filters) {
@@ -67,6 +89,14 @@ const h = vi.hoisted(() => {
         for (const f of filters) {
           if (f.method === "in") rows = rows.filter((r) => f.args[1].includes((r as any)[f.args[0]]));
           if (f.method === "eq") rows = rows.filter((r) => (r as any)[f.args[0]] === f.args[1]);
+        }
+        return Promise.resolve({ data: single ? rows[0] ?? null : rows, error: null });
+      }
+      if (table === "user_access_requests") {
+        let rows = [...store.accessRequests.values()];
+        for (const f of filters) {
+          if (f.method === "eq") rows = rows.filter((r) => (r as any)[f.args[0]] === f.args[1]);
+          if (f.method === "in") rows = rows.filter((r) => f.args[1].includes((r as any)[f.args[0]]));
         }
         return Promise.resolve({ data: single ? rows[0] ?? null : rows, error: null });
       }
@@ -114,7 +144,7 @@ const h = vi.hoisted(() => {
   function reset() {
     store.usage.clear();
     store.profiles.clear();
-    store.grants = [];
+    store.accessRequests.clear();
     signUp.mockClear();
   }
 
@@ -124,6 +154,13 @@ const h = vi.hoisted(() => {
 vi.mock("../../src/db/supabase", () => ({
   supabaseAdmin: h.supabaseAdmin,
   createAuthClient: () => h.supabaseAdmin,
+}));
+
+vi.mock("../../src/storage/firebase-store", () => ({
+  firebaseUpload: vi.fn(),
+  upsertFcmTokenDoc: async () => {},
+  appendNotificationLog: async () => null,
+  upsertAccessSession: async () => {},
 }));
 
 const authRouter = (await import("../../src/api/auth")).default;

@@ -75,8 +75,11 @@ export async function ensureAccessRequest(
     .select("id, user_id, status, fcm_token, deep_link")
     .single();
 
-  if (insertErr) {
-    console.error("[access-requests] insert failed:", insertErr.message);
+  if (insertErr || !inserted) {
+    console.error(
+      "[access-requests] insert failed:",
+      insertErr?.message ?? "no row returned",
+    );
     return null;
   }
   if (fcmToken) {
