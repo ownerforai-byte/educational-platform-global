@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Clock, ListChecks, Target } from "lucide-react";
-import { findSubjectBySlug, getUnitSyllabus } from "@/lib/syllabus";
+import { findSubjectBySlug, getUnitSyllabus } from "@/lib/core/syllabus";
 
 export async function generateMetadata({
   params,

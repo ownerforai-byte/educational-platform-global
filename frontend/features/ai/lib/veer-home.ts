@@ -13,7 +13,7 @@ import {
   TreePine,
   Wind,
 } from "lucide-react";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 
 export type VeerChip = { id: string; label: string; prompt: string };
 

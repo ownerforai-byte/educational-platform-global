@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { PanelLeftClose, PanelLeftOpen, Atom } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { hasLevel } from "@/lib/access-level";
+import { hasLevel } from "@/lib/core/access-level";
 import { sectionById } from "@/lib/sections";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";

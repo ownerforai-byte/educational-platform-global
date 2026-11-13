@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getChaptersBySubject } from "@/lib/curriculum";
-import { SYLLABUS, getSubjectSyllabus, type SubjectSyllabus } from "@/lib/syllabus";
+import { SYLLABUS, getSubjectSyllabus, type SubjectSyllabus } from "@/lib/core/syllabus";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
 import { ChapterDetailView } from "@/features/syllabus/components/chapter-detail-view";

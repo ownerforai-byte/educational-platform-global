@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
 import { TopicDetailView } from "@/features/syllabus/components/topic-detail-view";

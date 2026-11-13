@@ -33,7 +33,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import { DOCS, type Kind, type Subject } from "@/lib/docs-catalog";
 import { WEBNOTEE_DOCS } from "@/lib/webnotee-catalog";
 import { frameSrcFor } from "@/lib/pdf-src";

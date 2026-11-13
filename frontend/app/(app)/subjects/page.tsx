@@ -21,7 +21,7 @@
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
 import { Compass, Search } from "lucide-react";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import { useLiveStats } from "@/lib/hooks/use-live-stats";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { EmptyState } from "@/components/content/empty-state";

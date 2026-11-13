@@ -11,7 +11,7 @@ import {
   type PeriodicFilterCategory,
 } from "../index";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { hasLevel, ACCESS_LABELS } from "@/lib/access-level";
+import { hasLevel, ACCESS_LABELS } from "@/lib/core/access-level";
 import { apiFetch } from "@/lib/api-client";
 import { reportClientError } from "@/lib/errors/app-error";
 import { BlockExplorer } from "./block-explorer";

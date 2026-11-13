@@ -10,7 +10,7 @@
  * default to the directory name).
  */
 
-import { SYLLABUS, type SyllabusUnit } from "@/lib/syllabus";
+import { SYLLABUS, type SyllabusUnit } from "@/lib/core/syllabus";
 import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 

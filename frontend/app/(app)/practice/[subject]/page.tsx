@@ -10,7 +10,7 @@ import {
   PenLine,
   Sparkles,
 } from "lucide-react";
-import { findSubjectBySlug } from "@/lib/syllabus";
+import { findSubjectBySlug } from "@/lib/core/syllabus";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { mcqQuestionsForSubject } from "@/lib/practice/mcq-bank";
 import { writingQuestionsForSubject } from "@/lib/practice/writing-bank";

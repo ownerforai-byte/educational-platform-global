@@ -1,4 +1,4 @@
-import { ACCESS_RANK } from "@/lib/access-level";
+import { ACCESS_RANK } from "@/lib/core/access-level";
 
 export const USER_ROLES = ["member", "plus", "pro", "owner"] as const;
 

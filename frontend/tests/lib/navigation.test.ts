@@ -8,7 +8,7 @@ import {
   NAV_SECTIONS,
   QUICK_LINKS,
   quickLinkMinTier,
-} from "@/lib/navigation";
+} from "@/lib/core/navigation";
 import { collectRoutes, routeExists } from "../helpers/route-tree";
 
 /**
@@ -117,8 +117,8 @@ describe("navigation menu", () => {
     const sidebar = read("components/layout/sidebar-navigation.tsx");
     const drawer = read("components/layout/mobile-nav.tsx");
 
-    expect(sidebar).toContain('from "@/lib/navigation"');
-    expect(drawer).toContain('from "@/lib/navigation"');
+    expect(sidebar).toContain('from "@/lib/core/navigation"');
+    expect(drawer).toContain('from "@/lib/core/navigation"');
     expect(sidebar).toContain("isSidebarNavItem");
     expect(drawer).toContain("isSidebarNavItem");
 

@@ -1,4 +1,4 @@
-import { accessLevelFor, type AccessLevel } from "@/lib/access-level";
+import { accessLevelFor, type AccessLevel } from "@/lib/core/access-level";
 import type { AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
 
 /**

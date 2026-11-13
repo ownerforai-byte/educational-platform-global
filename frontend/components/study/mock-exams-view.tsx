@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { ComingSoon } from "@/components/content/coming-soon";
 import { getEntranceQuestions } from "@/lib/entrance-questions";
 import type { EntranceQuestion } from "@/lib/entrance-questions/types";
-import { getSubjectSyllabus } from "@/lib/syllabus";
+import { getSubjectSyllabus } from "@/lib/core/syllabus";
 import { assembleMock, answerKey, OMR_LETTERS, scoreMock, type MockPaper, type OmrAnswers } from "@/lib/mock-exam";
 import { useAttemptHold } from "@/features/credits/attempt-hold";
 import { listGoalSubjects } from "@/lib/study-goals";

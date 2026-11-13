@@ -2,7 +2,7 @@ import { getLevelBySlug, getClassesByLevel } from "@/lib/curriculum";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import Link from "next/link";
 import { GraduationCap, BookOpen, Compass, ArrowRight, Layers, Sparkles } from "lucide-react";
 

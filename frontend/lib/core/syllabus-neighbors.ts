@@ -8,7 +8,7 @@
  *   - the previous topic, for a symmetric "back" affordance
  */
 
-import { SYLLABUS, slugifySyllabusTopic } from "@/lib/syllabus";
+import { SYLLABUS, slugifySyllabusTopic } from "@/lib/core/syllabus";
 
 export type TopicRef = {
   classSlug: string;

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { SYLLABUS, getUnitTopicEntries } from "@/lib/syllabus";
+import { SYLLABUS, getUnitTopicEntries } from "@/lib/core/syllabus";
 import {
   buildProgressCatalog,
   entryStatus,

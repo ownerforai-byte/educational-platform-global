@@ -13,7 +13,7 @@ import {
   startFocusTimer,
   useFocusTimer,
 } from "@/features/owner/focus-timer-store";
-import { accessLevelFor } from "@/lib/access-level";
+import { accessLevelFor } from "@/lib/core/access-level";
 import { cn } from "@/lib/utils";
 
 /**

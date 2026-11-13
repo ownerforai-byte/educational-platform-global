@@ -5,7 +5,7 @@ import { TopicComingSoonBanner } from "@/components/content/topic-coming-soon-ba
 import { hasTopicManifestNotes } from "@/lib/topic-content-index";
 import { ContentTabs } from "@/components/content/content-tabs";
 import { TopicProgressControls } from "@/components/progress/topic-progress-controls";
-import { getSubjectSyllabus } from "@/lib/syllabus";
+import { getSubjectSyllabus } from "@/lib/core/syllabus";
 import { getUnitTopic } from "../queries";
 
 /**

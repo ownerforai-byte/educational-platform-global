@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { collectRoutes, routeExists } from "../helpers/route-tree";
-import { SYLLABUS, getUnitTopicEntries } from "@/lib/syllabus";
+import { SYLLABUS, getUnitTopicEntries } from "@/lib/core/syllabus";
 import { getUnitTopic } from "@/lib/queries";
 import {
   NEPALI_EXERCISE_TYPES,

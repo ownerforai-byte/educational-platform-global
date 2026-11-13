@@ -16,7 +16,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ACCESS_TAGLINES, type AccessLevel } from "@/lib/access-level";
+import { ACCESS_TAGLINES, type AccessLevel } from "@/lib/core/access-level";
 import { SectionMatrix } from "@/components/plans/section-matrix";
 
 /**

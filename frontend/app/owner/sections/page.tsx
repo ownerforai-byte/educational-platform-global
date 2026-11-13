@@ -10,7 +10,7 @@ import {
   sectionById,
   type SectionTierOverrides,
 } from "@/lib/sections";
-import { ACCESS_LEVELS, ACCESS_LABELS, type AccessLevel } from "@/lib/access-level";
+import { ACCESS_LEVELS, ACCESS_LABELS, type AccessLevel } from "@/lib/core/access-level";
 import { useSectionTierOverrides, refreshSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
 import { updateOwnerSettings } from "@/lib/api/owner";
 

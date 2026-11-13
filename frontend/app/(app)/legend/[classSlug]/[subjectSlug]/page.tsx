@@ -4,7 +4,7 @@ export const dynamicParams = false;
 import Link from "next/link";
 import { getSubjectLegend } from "@/lib/legend";
 import { getUnitTopic } from "@/lib/queries";
-import { slugifySyllabusTopic } from "@/lib/syllabus";
+import { slugifySyllabusTopic } from "@/lib/core/syllabus";
 import { ChevronRight, Lightbulb, BookOpen, FileText, Zap, AlertCircle, BookMarked, Target, Calculator, Construction } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { MathMarkdown } from "@/components/content/math-markdown";

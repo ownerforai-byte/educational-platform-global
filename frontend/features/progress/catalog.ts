@@ -1,4 +1,4 @@
-import { SYLLABUS, getUnitTopicEntries } from "@/lib/syllabus";
+import { SYLLABUS, getUnitTopicEntries } from "@/lib/core/syllabus";
 import type { JourneyRow, ProgressEntry, ProgressStatus } from "@/types/api";
 
 /**

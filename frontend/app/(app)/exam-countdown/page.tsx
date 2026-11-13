@@ -34,7 +34,7 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { SYLLABUS, slugifySyllabusTopic, type SubjectSyllabus } from "@/lib/syllabus";
+import { SYLLABUS, slugifySyllabusTopic, type SubjectSyllabus } from "@/lib/core/syllabus";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { getProgress } from "@/lib/api/progress";
 import type { ProgressEntry } from "@/types/api";

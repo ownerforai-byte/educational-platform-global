@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Loader2, AlertCircle, BookOpen, Atom, Calculator, ChevronRight, ChevronDown, FlaskConical, Dna, Microscope, Activity, TestTube, Atom as AtomIcon, Brain, Eye, Zap, Thermometer, Scale, Timer, TrendingUp, Star, Globe, Search, Cuboid, Infinity as InfinityIcon, Columns3, Move3d, Target, Crosshair, Binary, Sparkles, Bolt, Grid3x3, Sigma, BarChart3, FunctionSquare, Triangle, Hexagon, Radio, TreeDeciduous, Heart as HeartIcon, Users as UsersIcon, Leaf as LeafIcon, Box, Flame, Wind as WindIcon, CircuitBoard } from "lucide-react";
 import { LabSectionCard } from "@/components/lab/lab-section-card";
-import { getSubjectSyllabus } from "@/lib/syllabus";
+import { getSubjectSyllabus } from "@/lib/core/syllabus";
 import { resolveLabVisualEntry } from "@/lib/lab-visual-index";
 import { useSearchParams } from "next/navigation";
 

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, BookOpen, FileQuestion, FlaskConical, ChevronRight, Search } from "lucide-react";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 
 export const revalidate = 86_400;
 

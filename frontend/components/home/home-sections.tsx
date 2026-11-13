@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { sectionsFor } from "@/lib/sections";
 import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
-import { ACCESS_LABELS, type AccessLevel } from "@/lib/access-level";
+import { ACCESS_LABELS, type AccessLevel } from "@/lib/core/access-level";
 
 /**
  * The home sections rail (plan.md §3 + §4).

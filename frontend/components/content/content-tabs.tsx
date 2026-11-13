@@ -44,15 +44,15 @@ import { VectorsResources } from "./vectors-resources";
 import { StatisticsProbabilityResources } from "./statistics-probability-resources";
 import { getTopicPath } from "@/features/syllabus/content-router";
 import { hasLanguageProTrack } from "@/features/syllabus/language-pro";
-import { getTopicEntryBySlug } from "@/lib/syllabus";
-import type { SyllabusUnit } from "@/lib/syllabus";
+import { getTopicEntryBySlug } from "@/lib/core/syllabus";
+import type { SyllabusUnit } from "@/lib/core/syllabus";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { DirectStreamPdfBlocks } from "./direct-stream-pdf-blocks";
 import { getChapterDocs, getChapterStreamPdfs, type ChapterDoc } from "@/lib/chapter-resources";
 import { pdfViewerHref, downloadDoc, downloadFileName } from "@/lib/pdf-src";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/access-level";
+import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/core/access-level";
 
 export type CompanionTabProfile =
   | "default"

@@ -12,8 +12,8 @@ import { buildReceipts, summarizeLedger } from "@/lib/billing";
 import { buildUnitPack, packFilename, packItemCount, packToMarkdown } from "@/lib/offline-pack";
 import type { SubjectPyqBank } from "@/lib/pyq-bank";
 import { sectionForPath } from "@/lib/sections";
-import { NAV_HREFS } from "@/lib/navigation";
-import { buildSiteIndex } from "@/lib/site-index";
+import { NAV_HREFS } from "@/lib/core/navigation";
+import { buildSiteIndex } from "@/lib/core/site-index";
 import type { ProgressEntry } from "@/types/api";
 
 describe("SM-2", () => {

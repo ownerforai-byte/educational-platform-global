@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
-import { NAV_HREFS } from "@/lib/navigation";
+import { NAV_HREFS } from "@/lib/core/navigation";
 import { collectRoutes, isResolvable } from "../helpers/route-tree";
 
 /**

@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { TopicExercisesView } from "@/features/syllabus/components/topic-exercises-view";
 import { TopicExerciseTypeView } from "@/features/syllabus/components/topic-exercise-type-view";
 import { NEPALI_EXERCISE_TYPES } from "@/features/syllabus/exercise-types";
-import { SYLLABUS, getUnitTopicEntries } from "@/lib/syllabus";
+import { SYLLABUS, getUnitTopicEntries } from "@/lib/core/syllabus";
 
 /**
  * The per-topic exercise-type pages (owner 2026-10-24: "create all types of

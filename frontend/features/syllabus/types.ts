@@ -1,4 +1,4 @@
-import type { SyllabusTopicEntry } from "@/lib/syllabus";
+import type { SyllabusTopicEntry } from "@/lib/core/syllabus";
 
 export type UnitVM = {
   id: string;

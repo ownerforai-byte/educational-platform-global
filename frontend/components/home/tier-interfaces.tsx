@@ -31,13 +31,13 @@ import {
   ACCESS_RANK,
   TIER_SPARKS,
   type AccessLevel,
-} from "@/lib/access-level";
+} from "@/lib/core/access-level";
 import { SECTIONS } from "@/lib/sections";
 import {
   QUICK_LINKS,
   quickLinkMinTier,
   quickLinkUnlocked,
-} from "@/lib/navigation";
+} from "@/lib/core/navigation";
 import { SparkGate } from "@/features/credits/spark-gate";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { useJourney } from "@/components/study/use-journey";

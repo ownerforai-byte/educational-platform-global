@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getPublicConfig } from "@/lib/api/config";
-import { ACCESS_LEVELS, type AccessLevel } from "@/lib/access-level";
+import { ACCESS_LEVELS, type AccessLevel } from "@/lib/core/access-level";
 import type { SectionTierOverrides } from "@/lib/sections";
 
 /**

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getEducationLevels } from "@/lib/curriculum";
 import { apiGetSafe } from "@/lib/api-client";
 import type { EducationLevel } from "@/types/api";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import { LAB_VISUAL_INDEX } from "@/lib/lab-visual-index";
 import { DERIVATIONS_AND_THEOREMS } from "@/lib/derivations-data";
 import {

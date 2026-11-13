@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowLeft, Beaker, Zap, Dna, BookOpen, PenLine, Sparkles, DraftingCompass } from "lucide-react";
+import { ArrowLeft, Beaker, Zap, Dna, BookOpen, PenLine, Sparkles, DraftingCompass, Landmark, Globe } from "lucide-react";
+import { HubIdlePrefetch } from "@/features/knowledge/components/hub-idle-prefetch";
 
 const knowledgeSections = [
   {
@@ -53,9 +54,33 @@ const knowledgeSections = [
   },
 ];
 
+const RELATED_HUBS = [
+  {
+    href: "/loksewa",
+    title: "Loksewa Knowledge",
+    subtitle: "Geography, history, and environment openings wired to curated GK sections",
+    icon: Landmark,
+    color: "#0f766e",
+  },
+  {
+    href: "/world-knowledge",
+    title: "World Knowledge",
+    subtitle: "General knowledge, current affairs, and global topics",
+    icon: Globe,
+    color: "#2563eb",
+  },
+] as const;
+
 export default function KnowledgePage() {
+  const prefetchHrefs = [
+    "/knowledge/pro",
+    ...knowledgeSections.map((s) => s.href),
+    ...RELATED_HUBS.map((h) => h.href),
+  ];
+
   return (
     <div className="mx-auto max-w-6xl space-y-8 py-6 md:py-10 px-4">
+      <HubIdlePrefetch hrefs={prefetchHrefs} />
       <div className="flex items-center gap-3 mb-2">
         <Link href="/" className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors">
           <ArrowLeft className="h-4 w-4" />
@@ -63,7 +88,8 @@ export default function KnowledgePage() {
         </Link>
       </div>
 
-      <div>          <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Knowledge Hub</h1>
+      <div>
+        <h1 className="text-2xl md:text-3xl font-bold tracking-tight">Knowledge Hub</h1>
         <p className="text-muted-foreground mt-1">
           Practice numerical problems, study labeled diagrams, and master grammar &amp; writing — all in one place. Deep Thoughts: every calculation is a clue to how the universe keeps its balance, and every diagram is a window into the machinery behind a living thing.
         </p>
@@ -110,6 +136,33 @@ export default function KnowledgePage() {
                 <p className="text-xs text-muted-foreground mt-0.5 leading-relaxed">{s.subtitle}</p>
               </div>
               <ArrowLeft className="h-4 w-4 text-muted-foreground rotate-180 group-hover:text-primary transition-colors shrink-0" />
+            </Link>
+          );
+        })}
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        {RELATED_HUBS.map((hub) => {
+          const Icon = hub.icon;
+          return (
+            <Link
+              key={hub.href}
+              href={hub.href}
+              className="group flex items-center gap-4 rounded-2xl border border-dashed border-border/70 bg-muted/20 p-5 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:bg-card hover:shadow-md"
+            >
+              <div
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+                style={{ backgroundColor: `${hub.color}18` }}
+              >
+                <Icon className="h-6 w-6" style={{ color: hub.color }} />
+              </div>
+              <div className="min-w-0 flex-1">
+                <h2 className="truncate text-base font-semibold text-foreground transition-colors group-hover:text-primary">
+                  {hub.title}
+                </h2>
+                <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">{hub.subtitle}</p>
+              </div>
+              <ArrowLeft className="h-4 w-4 shrink-0 rotate-180 text-muted-foreground transition-colors group-hover:text-primary" />
             </Link>
           );
         })}

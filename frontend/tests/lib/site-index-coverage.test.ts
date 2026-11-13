@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { buildSiteIndex } from "@/lib/site-index";
-import { NAV_HREFS } from "@/lib/navigation";
+import { buildSiteIndex } from "@/lib/core/site-index";
+import { NAV_HREFS } from "@/lib/core/navigation";
 import { getUnitTopic } from "@/features/syllabus/queries";
 import { buildTopicKnowledge, KIND_LABEL } from "@/lib/topic-visuals";
 import { getUnitConcept } from "@/lib/visual-concept-map";

@@ -10,8 +10,8 @@
  * default to the directory name).
  */
 
-import { SYLLABUS } from "@/lib/syllabus";
-import type { SyllabusUnit } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
+import type { SyllabusUnit } from "@/lib/core/syllabus";
 import { join, resolve } from "node:path";
 import { DERIVATIONS_AND_THEOREMS } from "@/lib/derivations-data";
 import type { DerivationOrTheorem } from "@/lib/derivations-data";

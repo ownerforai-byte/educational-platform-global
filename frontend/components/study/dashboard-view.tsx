@@ -6,12 +6,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { entryStatus, topicHref } from "@/lib/progress/catalog";
 import { getStreak, streakLabel } from "@/lib/streaks";
 import { daysUntilExam, seedDailyPlan } from "@/lib/study-goals";
-import { ACCESS_LABELS, accessLevelFor } from "@/lib/access-level";
+import { ACCESS_LABELS, accessLevelFor } from "@/lib/core/access-level";
 import {
   QUICK_LINKS,
   quickLinkMinTier,
   quickLinkUnlocked,
-} from "@/lib/navigation";
+} from "@/lib/core/navigation";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { useStudyGoals } from "./use-study-goals";
 import { useJourney } from "./use-journey";

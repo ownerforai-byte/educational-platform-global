@@ -8,7 +8,7 @@
  */
 
 import type { EntranceBank, EntranceQuestion, EntranceSubject } from "./types";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import { PHYSICS_ENTRANCE } from "./physics";
 import { PHYSICS_12_ENTRANCE } from "./physics-12";
 import { CHEMISTRY_ENTRANCE } from "./chemistry";

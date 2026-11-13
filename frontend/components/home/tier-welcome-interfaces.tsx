@@ -15,7 +15,7 @@ import {
   TIER_HOME_PATHS,
   TIER_SPARKS,
   type AccessLevel,
-} from "@/lib/access-level";
+} from "@/lib/core/access-level";
 import { SECTIONS } from "@/lib/sections";
 import { WelcomeGoButton } from "@/features/auth/components/welcome-go-button";
 

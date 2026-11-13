@@ -48,9 +48,9 @@ import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerAccount } from "@/lib/owner";
 import { getAiSparkUsage, type AiSparkUsage } from "@/lib/api/ai";
 import { AI_SPARK_LIMITS } from "@/lib/ai/ai-spark-tiers";
-import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/access-level";
+import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/core/access-level";
 import { entryStatus, topicHref } from "@/lib/progress/catalog";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import type { ProgressEntry } from "@/types/api";
 
 const tierBadgeConfig: Record<AccessLevel, { className: string; icon: typeof Crown }> = {

@@ -16,8 +16,8 @@ import {
   navAccent,
   navMinLevel,
   type NavItem,
-} from "@/lib/navigation";
-import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/access-level";
+} from "@/lib/core/navigation";
+import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/core/access-level";
 
 /**
  * The menu DATA lives in lib/navigation.ts — one list shared with the mobile

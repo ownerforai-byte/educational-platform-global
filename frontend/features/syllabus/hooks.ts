@@ -14,7 +14,7 @@ import {
   getTopicEntryBySlug,
   type ClassSyllabus,
   type SyllabusTopicEntry,
-} from "@/lib/syllabus";
+} from "@/lib/core/syllabus";
 import type { UnitVM, SubjectNavVM } from "./types";
 
 const SYLLABUS_KEY = ["syllabus"] as const;

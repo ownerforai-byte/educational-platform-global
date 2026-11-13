@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getSubjectSyllabus } from "@/lib/syllabus";
+import { getSubjectSyllabus } from "@/lib/core/syllabus";
 import { getSyllabusTheoremItems } from "@/lib/theorem-topics";
 import { ChevronRight, FileText, Construction } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";

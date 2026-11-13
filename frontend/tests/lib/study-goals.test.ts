@@ -7,8 +7,8 @@ import {
   seedDailyPlan,
 } from "@/lib/study-goals";
 import { sectionForPath } from "@/lib/sections";
-import { NAV_HREFS } from "@/lib/navigation";
-import { buildSiteIndex } from "@/lib/site-index";
+import { NAV_HREFS } from "@/lib/core/navigation";
+import { buildSiteIndex } from "@/lib/core/site-index";
 
 describe("study goals reader", () => {
   it("lists subjects from the syllabus", () => {

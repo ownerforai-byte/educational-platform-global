@@ -15,7 +15,7 @@ import { describe, expect, it, beforeAll } from "vitest";
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import {
   ALL_HIGH_YIELD_TOPICS,
   getHighYieldEntriesForUnit,

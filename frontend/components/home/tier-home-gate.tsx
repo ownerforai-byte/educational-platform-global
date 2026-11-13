@@ -8,7 +8,7 @@ import {
   TIER_HOME_PATHS,
   TIER_WELCOME_PATHS,
   type AccessLevel,
-} from "@/lib/access-level";
+} from "@/lib/core/access-level";
 
 /**
  * THE RUN GATE — one interface per viewer (owner direction 2026-10-23: "once

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Building2, Users, BookOpen, TrendingUp, ArrowLeft } from "lucide-react";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 
 export const metadata: Metadata = {
   title: "School Dashboard",

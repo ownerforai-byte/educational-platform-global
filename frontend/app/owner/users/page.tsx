@@ -53,7 +53,7 @@ import {
 } from "@/lib/owner/user-directory";
 import { cn } from "@/lib/utils";
 import { type UserRole } from "@/lib/auth/roles";
-import { ACCESS_LABELS, type AccessLevel } from "@/lib/access-level";
+import { ACCESS_LABELS, type AccessLevel } from "@/lib/core/access-level";
 import { aiSparkLimitLabel, type AiSparkTier } from "@/features/ai/ai-spark-tiers";
 import { OWNER_EMAIL } from "@/lib/owner";
 

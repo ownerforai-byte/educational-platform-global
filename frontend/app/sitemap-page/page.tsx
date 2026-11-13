@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { buildSiteIndex, siteIndexTotals } from "@/lib/site-index";
+import { buildSiteIndex, siteIndexTotals } from "@/lib/core/site-index";
 import { PublicPage, Panel, Action } from "@/components/platform/public-page";
 
 export const metadata: Metadata = {

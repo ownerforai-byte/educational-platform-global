@@ -10,7 +10,7 @@ import { loginAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
-import { tierWelcomePathFor } from "@/lib/access-level";
+import { tierWelcomePathFor } from "@/lib/core/access-level";
 import {
   DENIED_ROUTE,
   WAITING_ROUTE,

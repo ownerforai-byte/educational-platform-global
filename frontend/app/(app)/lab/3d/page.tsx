@@ -12,17 +12,27 @@
  *  - Empty units are simply not rendered; every lab stays reachable.
  */
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, Suspense } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Search, Cuboid, BookOpen, BookMarked } from "lucide-react";
 import { LAB_REGISTRY, getLabsByCategory } from "@/lib/lab-registry";
 import { LAB_UNIT_ORDER, LAB_SUBJECTS } from "@/lib/lab-unit-order";
-import { getSubjectSyllabus } from "@/lib/syllabus";
+import { getSubjectSyllabus } from "@/lib/core/syllabus";
 import type { LabMeta } from "@/lib/types/lab";
-import { Analytics } from "@/components/lab/Analytics";
 import { LabSectionCard } from "@/components/lab/lab-section-card";
-import { ManifestHubSection } from "@/components/lab/manifest-hub-section";
 import { listOfferedActivities } from "@/lib/lab-manifest";
+
+/** Keep the 3D hub shell light — analytics + manifest gallery load after paint. */
+const Analytics = dynamic(
+  () => import("@/components/lab/Analytics").then((m) => m.Analytics),
+  { ssr: false, loading: () => null },
+);
+const ManifestHubSection = dynamic(
+  () =>
+    import("@/components/lab/manifest-hub-section").then((m) => m.ManifestHubSection),
+  { ssr: false, loading: () => null },
+);
 
 const CLASS_OPTIONS = ["class-11-notes", "class-12-notes"] as const;
 type ClassSlug = (typeof CLASS_OPTIONS)[number];
@@ -247,7 +257,9 @@ export default function Lab3DPage() {
       </div>
 
       {/* Manifest activities (all subjects) + continue-where-you-left-off */}
-      <ManifestHubSection subject={subject} />
+      <Suspense fallback={null}>
+        <ManifestHubSection subject={subject} />
+      </Suspense>
 
       {/* Unit gallery — derived from the manifest, never a separate catalog */}
       {GALLERY_UNITS.length > 0 && (
@@ -339,7 +351,9 @@ export default function Lab3DPage() {
         title="Performance analytics"
         description="Accuracy, attempts and average time across your lab practice."
       >
-        <Analytics />
+        <Suspense fallback={null}>
+          <Analytics />
+        </Suspense>
       </LabSectionCard>
     </div>
   );

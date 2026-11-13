@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { findSubjectBySlug } from "@/lib/syllabus";
+import { findSubjectBySlug } from "@/lib/core/syllabus";
 import { mcqQuestionsForSubject } from "@/lib/practice/mcq-bank";
 import { writingQuestionsForSubject } from "@/lib/practice/writing-bank";
 import type { PracticeMode } from "@/lib/practice/types";

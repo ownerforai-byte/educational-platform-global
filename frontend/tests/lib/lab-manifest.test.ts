@@ -15,7 +15,7 @@ import {
 import { LABS } from "@/lib/lab-catalog";
 import { LAB_METADATA_LIST } from "@/lib/lab-metadata";
 import { LAB_VISUAL_INDEX } from "@/lib/lab-visual-index";
-import { SYLLABUS, slugifySyllabusTopic } from "@/lib/syllabus";
+import { SYLLABUS, slugifySyllabusTopic } from "@/lib/core/syllabus";
 import { nextTopic, previousTopic, topicHref } from "@/lib/syllabus-neighbors";
 import { modulePathExists, readLibSource } from "../helpers/resolve-lib-shim";
 

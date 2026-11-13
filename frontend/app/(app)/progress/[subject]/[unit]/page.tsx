@@ -3,7 +3,7 @@
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Circle, BookOpen } from "lucide-react";
-import { findSubjectBySlug, getUnitSyllabus } from "@/lib/syllabus";
+import { findSubjectBySlug, getUnitSyllabus } from "@/lib/core/syllabus";
 
 export default function UnitProgressPage() {
   const params = useParams<{ subject: string; unit: string }>();

@@ -31,7 +31,7 @@
 
 import type React from "react";
 
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import { getLoadedHighYieldEntriesForUnit } from "@/lib/high-yield-topic-facts-lazy";
 import type { ConceptAnnotation } from "@/components/lab/schematic-concepts";
 import type {

@@ -2,7 +2,7 @@ import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { getSubjectSyllabus, type SubjectSyllabus } from "@/lib/syllabus";
+import { getSubjectSyllabus, type SubjectSyllabus } from "@/lib/core/syllabus";
 import { resolveUnitSlug } from "@/lib/syllabus-notes-manifest";
 import { isGeneratorJunkLine } from "@/lib/content/generator-junk";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";

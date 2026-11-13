@@ -27,7 +27,7 @@
  */
 
 import type { ComponentType } from "react";
-import { ACCESS_RANK, type AccessLevel } from "@/lib/access-level";
+import { ACCESS_RANK, type AccessLevel } from "@/lib/core/access-level";
 import {
   Home,
   BookOpen,

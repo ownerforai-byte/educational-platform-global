@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import { DOCS } from "@/lib/docs-catalog";
 import { WEBNOTEE_DOCS } from "@/lib/webnotee-catalog";
 import {

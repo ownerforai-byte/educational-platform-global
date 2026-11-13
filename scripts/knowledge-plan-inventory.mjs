@@ -15,7 +15,8 @@ import fs from "node:fs";
 import path from "node:path";
 
 const ROOT = process.cwd();
-const SYLLABUS = path.join(ROOT, "frontend", "lib", "syllabus.ts");
+// Canonical syllabus lives under lib/core; lib/syllabus.ts is only a re-export shim.
+const SYLLABUS = path.join(ROOT, "frontend", "lib", "core", "syllabus.ts");
 const PLAN = path.join(ROOT, "KNOWLEDGE-PLAN.md");
 const START = "<!-- KNOWLEDGE-PLAN:INVENTORY:START -->";
 const END = "<!-- KNOWLEDGE-PLAN:INVENTORY:END -->";

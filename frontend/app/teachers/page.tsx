@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { GraduationCap, Users, BookOpen, ClipboardCheck, ArrowRight } from "lucide-react";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 
 export const metadata: Metadata = {
   title: "Teacher Portal",

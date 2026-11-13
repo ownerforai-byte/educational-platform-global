@@ -12,7 +12,7 @@ import {
 import { readGoals, listGoalSubjects } from "@/lib/study-goals";
 import { getStreak } from "@/lib/streaks";
 import { Button } from "@/components/ui/button";
-import { accessLevelFor, ACCESS_LABELS } from "@/lib/access-level";
+import { accessLevelFor, ACCESS_LABELS } from "@/lib/core/access-level";
 import { AiStatusDot } from "@/components/ai/ai-status-dot";
 import { AdSlot } from "@/components/ai/ad-slot";
 import { VeerChip, VeerSection } from "@/components/ai/veer-chip";

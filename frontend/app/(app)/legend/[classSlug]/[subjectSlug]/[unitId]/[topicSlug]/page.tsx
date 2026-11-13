@@ -7,7 +7,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getUnitTopic } from "@/lib/queries";
 import { getSubjectLegend, type LegendTopic } from "@/lib/legend";
-import { getSubjectSyllabus, slugifySyllabusTopic } from "@/lib/syllabus";
+import { getSubjectSyllabus, slugifySyllabusTopic } from "@/lib/core/syllabus";
 import { EmptyState } from "@/components/content/empty-state";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import {

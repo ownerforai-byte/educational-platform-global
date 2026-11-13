@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { TopicMindMap } from "@/components/lab/topic-mindmap";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import {
   Atom, FlaskConical, Leaf, Sigma, BookOpen, Globe,
   ChevronRight, Layers, Sparkles, BarChart3, Search,

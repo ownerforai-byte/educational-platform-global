@@ -35,7 +35,7 @@ import {
   Timer,
   Layers,
 } from "lucide-react";
-import { hasLevel, type AccessLevel } from "@/lib/access-level";
+import { hasLevel, type AccessLevel } from "@/lib/core/access-level";
 import type { AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
 
 /**

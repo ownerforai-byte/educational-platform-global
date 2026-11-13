@@ -12,7 +12,7 @@ import {
   type SyllabusUnit,
   type ClassSyllabus,
   type SubjectSyllabus,
-} from "@/lib/syllabus";
+} from "@/lib/core/syllabus";
 
 describe("SYLLABUS", () => {
   it("contains both class tracks", () => {

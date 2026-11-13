@@ -10,8 +10,8 @@ import { createPortal } from "react-dom";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isNavItemActive } from "@/lib/nav-active";
 import { isOwnerAccount } from "@/lib/owner";
-import { isSidebarNavItem, NAV_SECTIONS, NAV_SECTION_FEATURES, navAccent, navMinLevel } from "@/lib/navigation";
-import { ACCESS_LABELS, hasLevel } from "@/lib/access-level";
+import { isSidebarNavItem, NAV_SECTIONS, NAV_SECTION_FEATURES, navAccent, navMinLevel } from "@/lib/core/navigation";
+import { ACCESS_LABELS, hasLevel } from "@/lib/core/access-level";
 
 /**
  * Section + item data lives in lib/navigation.ts — one shared list, also used

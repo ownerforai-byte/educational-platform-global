@@ -1,6 +1,6 @@
 import { apiFetch } from "../api-client";
 import type { UserRole } from "@/lib/auth/roles";
-import type { AccessLevel } from "@/lib/access-level";
+import type { AccessLevel } from "@/lib/core/access-level";
 
 /**
  * Owner console API — every call hits /api/owner/*, which the backend gates

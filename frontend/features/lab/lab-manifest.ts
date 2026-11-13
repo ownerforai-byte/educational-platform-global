@@ -35,7 +35,7 @@ import {
   LAB_VISUAL_INDEX,
   type LabVisualIndexEntry,
 } from "@/lib/lab-visual-index";
-import { SYLLABUS, slugifySyllabusTopic } from "@/lib/syllabus";
+import { SYLLABUS, slugifySyllabusTopic } from "@/lib/core/syllabus";
 
 /** What the learner does with the activity. */
 export type ActivityKind = "3d-sim" | "animation" | "theory" | "practical";

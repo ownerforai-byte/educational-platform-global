@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { parseSubjectParams, parseTopicParams, parseUnitParams } from "@/features/syllabus/schema";
 import { getUnitTopic } from "@/features/syllabus/queries";
-import { getSyllabusByClass, getUnitTopicEntries } from "@/lib/syllabus";
+import { getSyllabusByClass, getUnitTopicEntries } from "@/lib/core/syllabus";
 
 /**
  * Route-param parsing for the syllabus tree.

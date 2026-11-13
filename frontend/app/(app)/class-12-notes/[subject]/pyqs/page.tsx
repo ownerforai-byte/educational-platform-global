@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, FileQuestion, ChevronRight } from "lucide-react";
-import { getSubjectSyllabus } from "@/lib/syllabus";
+import { getSubjectSyllabus } from "@/lib/core/syllabus";
 import { NebGuidance } from "@/components/content/neb-guidance";
 
 export async function generateMetadata({

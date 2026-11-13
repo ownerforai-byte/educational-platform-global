@@ -30,7 +30,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/access-level";
+import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/core/access-level";
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 type ToolCategory = "All" | "Learning" | "Language" | "Math & Science" | "Visual Learning" | "Study Tools";

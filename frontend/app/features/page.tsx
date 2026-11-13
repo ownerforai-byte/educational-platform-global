@@ -7,7 +7,7 @@ import {
   ACCESS_LABELS,
   ACCESS_RANK,
   type AccessLevel,
-} from "@/lib/access-level";
+} from "@/lib/core/access-level";
 
 export const metadata: Metadata = {
   title: "Features",

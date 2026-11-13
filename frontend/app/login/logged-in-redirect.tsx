@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/providers/auth-provider";
-import { tierWelcomePathFor } from "@/lib/access-level";
+import { tierWelcomePathFor } from "@/lib/core/access-level";
 
 /**
  * Renders nothing; when the session resolves and a user is present, bounce

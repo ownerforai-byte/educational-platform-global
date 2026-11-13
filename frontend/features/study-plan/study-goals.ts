@@ -8,7 +8,7 @@
  * lib/syllabus.ts (the curriculum source of truth), never a hardcoded list.
  */
 
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import { existingAnonScope, key, keyForScope, storageScope } from "@/lib/scoped-storage";
 
 export const STUDY_GOALS_KEY = "neb-study-goals:v1";

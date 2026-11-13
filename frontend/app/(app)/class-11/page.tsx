@@ -11,7 +11,7 @@ import {
   ArrowRight,
   Lightbulb,
 } from "lucide-react";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { HomeSections } from "@/components/home/home-sections";
 

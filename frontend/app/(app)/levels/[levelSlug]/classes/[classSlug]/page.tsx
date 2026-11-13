@@ -1,5 +1,5 @@
 import { getClassBySlug, getSubjectsByClass } from "@/lib/curriculum";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";

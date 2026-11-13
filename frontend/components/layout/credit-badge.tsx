@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState, useRef } from "react";
 import { Coins, ArrowUpRight, Sparkles } from "lucide-react";
 import { getUserCredits } from "@/lib/api/credits";
 import { setLitePoll } from "@/lib/perf/lite";
-import { accessLevelFor } from "@/lib/access-level";
+import { accessLevelFor } from "@/lib/core/access-level";
 import { useSession } from "@/features/auth/hooks/use-session";
 import Link from "next/link";
 

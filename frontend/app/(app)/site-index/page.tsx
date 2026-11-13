@@ -1,4 +1,4 @@
-import { buildSiteIndex } from "@/lib/site-index";
+import { buildSiteIndex } from "@/lib/core/site-index";
 import { SiteIndexView } from "@/components/index/site-index-view";
 
 export const metadata = {

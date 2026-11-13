@@ -1,7 +1,7 @@
 "use client";
 
 import { Check } from "lucide-react";
-import { ACCESS_LABELS, ACCESS_LEVELS, type AccessLevel } from "@/lib/access-level";
+import { ACCESS_LABELS, ACCESS_LEVELS, type AccessLevel } from "@/lib/core/access-level";
 import { applySectionOverrides } from "@/lib/sections";
 import { useSectionTierOverrides } from "@/lib/hooks/use-section-tiers";
 

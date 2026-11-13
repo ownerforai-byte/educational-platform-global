@@ -15,7 +15,7 @@ import {
   LANGUAGE_SUBJECT_SLUGS,
   pickLanguageScene,
 } from "@/components/lab/language-scenes";
-import { SYLLABUS, slugifySyllabusTopic } from "@/lib/syllabus";
+import { SYLLABUS, slugifySyllabusTopic } from "@/lib/core/syllabus";
 
 function languageTopics() {
   const rows: Array<{ subject: string; unit: string; title: string; slug: string }> = [];

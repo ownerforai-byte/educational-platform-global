@@ -12,7 +12,7 @@
  * universal "Coming Soon" state until content is authored.
  */
 
-import { SYLLABUS, slugifySyllabusTopic, getSubjectSyllabus } from "@/lib/syllabus";
+import { SYLLABUS, slugifySyllabusTopic, getSubjectSyllabus } from "@/lib/core/syllabus";
 import { DERIVATIONS_AND_THEOREMS } from "@/lib/derivations-data";
 import type { DerivationOrTheorem } from "@/lib/derivations-data";
 

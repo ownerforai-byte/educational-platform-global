@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { PLATFORM_SITE_URL } from "@/lib/ai/prompts";
-import { SYLLABUS, getUnitTopicEntries } from "@/lib/syllabus";
+import { SYLLABUS, getUnitTopicEntries } from "@/lib/core/syllabus";
 
 /**
  * /sitemap.xml — the machine-readable map of everything a crawler should

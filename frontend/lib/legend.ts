@@ -11,8 +11,8 @@
  * definitions, and key points from there.
  */
 
-import { SYLLABUS, slugifySyllabusTopic } from "@/lib/syllabus";
-import type { SyllabusUnit, SubjectSyllabus } from "@/lib/syllabus";
+import { SYLLABUS, slugifySyllabusTopic } from "@/lib/core/syllabus";
+import type { SyllabusUnit, SubjectSyllabus } from "@/lib/core/syllabus";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 

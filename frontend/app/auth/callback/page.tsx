@@ -8,7 +8,7 @@ import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
 import { apiFetch, setStoredToken } from "@/lib/api-client";
 import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
-import { tierWelcomePathFor } from "@/lib/access-level";
+import { tierWelcomePathFor } from "@/lib/core/access-level";
 import {
   DENIED_ROUTE,
   WAITING_ROUTE,

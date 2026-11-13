@@ -23,8 +23,8 @@
 import Link from "next/link";
 import { CloudDownload, Star } from "lucide-react";
 import { DEPLOY_VERSION } from "@/lib/deploy-version";
-import { hasLevel, ACCESS_LABELS, type AccessLevel } from "@/lib/access-level";
-import { NAV_SECTIONS, type NavItem, type NavSection } from "@/lib/navigation";
+import { hasLevel, ACCESS_LABELS, type AccessLevel } from "@/lib/core/access-level";
+import { NAV_SECTIONS, type NavItem, type NavSection } from "@/lib/core/navigation";
 import type { AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
 import { FooterQuote } from "@/components/layout/footer-quote";
 import { IndependenceDisclaimer } from "@/components/platform/independence-disclaimer";

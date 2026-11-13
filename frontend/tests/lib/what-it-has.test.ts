@@ -1,8 +1,8 @@
 import { describe, it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { NAV_HREFS } from "@/lib/navigation";
-import { buildSiteIndex } from "@/lib/site-index";
+import { NAV_HREFS } from "@/lib/core/navigation";
+import { buildSiteIndex } from "@/lib/core/site-index";
 import { platformLinks } from "@/components/platform/public-page";
 import { collectRoutes, isResolvable } from "../helpers/route-tree";
 

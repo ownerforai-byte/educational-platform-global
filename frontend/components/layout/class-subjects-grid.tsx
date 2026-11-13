@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import Link from "next/link";
 import {

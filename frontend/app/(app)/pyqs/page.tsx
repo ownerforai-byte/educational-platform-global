@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import type { ComponentType } from "react";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import { getSubjectPyqBank } from "@/lib/pyq-bank";
 import {
   History,

@@ -12,7 +12,7 @@ import {
   physicsXiDocUrl,
   physicsXiUnitHref,
 } from "@/lib/physics-xi-academic";
-import { getSubjectSyllabus, slugifySyllabusTopic } from "@/lib/syllabus";
+import { getSubjectSyllabus, slugifySyllabusTopic } from "@/lib/core/syllabus";
 import { collectRoutes, isResolvable, routeExists } from "../helpers/route-tree";
 import { readLibSource } from "../helpers/resolve-lib-shim";
 

@@ -6,7 +6,7 @@ import {
   canManageContent,
   ROLE_RANK,
 } from "@/lib/auth/roles";
-import { ACCESS_RANK } from "@/lib/access-level";
+import { ACCESS_RANK } from "@/lib/core/access-level";
 
 describe("tier ladder rungs", () => {
   it("ranks the user rungs on the single ladder (lib/access-level.ts)", () => {

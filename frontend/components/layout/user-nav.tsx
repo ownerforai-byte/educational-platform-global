@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/access-level";
+import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/core/access-level";
 import {
   User,
   Crown,

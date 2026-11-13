@@ -150,10 +150,10 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import type {
   ClassSyllabus,
-} from "@/lib/syllabus";
+} from "@/lib/core/syllabus";
 
 /**
  * Match a piece of content against all syllabus topics and return scored results.

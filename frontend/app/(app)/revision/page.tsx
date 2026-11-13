@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Repeat, ArrowLeft, Layers, Clock, ChevronRight } from "lucide-react";
 import { readGoals, listGoalSubjects, daysUntilExam } from "@/lib/study-goals";
 import type { StudyGoals } from "@/lib/study-goals";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 
 export default function RevisionPage() {
   const [goals, setGoals] = useState<StudyGoals | null>(null);

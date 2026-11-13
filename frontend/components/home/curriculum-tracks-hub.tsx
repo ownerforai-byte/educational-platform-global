@@ -15,7 +15,7 @@ import {
   Clock,
   ExternalLink,
 } from "lucide-react";
-import type { ClassSyllabus, SubjectSyllabus } from "@/lib/syllabus";
+import type { ClassSyllabus, SubjectSyllabus } from "@/lib/core/syllabus";
 
 interface CurriculumTracksHubProps {
   class11: ClassSyllabus;

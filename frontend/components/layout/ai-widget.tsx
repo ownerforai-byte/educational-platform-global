@@ -33,7 +33,7 @@ import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { AiReplyCard } from "@/components/ai/ai-reply-card";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { hasLevel } from "@/lib/access-level";
+import { hasLevel } from "@/lib/core/access-level";
 import { isOwnerAccount } from "@/lib/owner";
 import { apiFetch } from "@/lib/api-client";
 import { reportClientError } from "@/lib/errors/app-error";
@@ -60,7 +60,7 @@ import {
   topicChipsForSubject,
 } from "@/features/ai/lib/veer-home";
 import { VOICE_AUTO_SEND_MS } from "@/lib/chat/silence-trigger";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import type {
   AIChatMessage,
   EvaluateAnswersResponse,

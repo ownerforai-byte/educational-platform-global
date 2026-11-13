@@ -29,7 +29,7 @@ import { Label } from "@/components/ui/label";
 import { ComingSoon } from "@/components/content/coming-soon";
 import type { FormulaSheetUnit } from "@/lib/formula-sheet";
 import { buildUnitPack, packItemCount, packToMarkdown } from "@/lib/offline-pack";
-import { getSubjectSyllabus } from "@/lib/syllabus";
+import { getSubjectSyllabus } from "@/lib/core/syllabus";
 import { listGoalSubjects } from "@/lib/study-goals";
 import { useStudyGoals } from "./use-study-goals";
 import { useSubjectBank } from "./use-subject-bank";

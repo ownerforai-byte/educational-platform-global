@@ -9,7 +9,7 @@ import {
   accessLevelFor,
   TIER_HOME_PATHS,
   TIER_WELCOME_PATHS,
-} from "@/lib/access-level";
+} from "@/lib/core/access-level";
 
 /**
  * THE TIER ROUTER.

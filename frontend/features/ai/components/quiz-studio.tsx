@@ -27,7 +27,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { toast } from "sonner";
-import { SYLLABUS } from "@/lib/syllabus";
+import { SYLLABUS } from "@/lib/core/syllabus";
 import { generateQuestions, evaluateAnswers } from "@/lib/api/ai";
 import { recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { MathMarkdown } from "@/components/content/math-markdown";

@@ -4,7 +4,7 @@ import {
   getUnitTopicEntries,
   getTopicEntryBySlug,
   type SyllabusTopicEntry,
-} from "@/lib/syllabus";
+} from "@/lib/core/syllabus";
 import { getExerciseTypes } from "./exercise-types";
 import type { UnitVM } from "./types";
 import {

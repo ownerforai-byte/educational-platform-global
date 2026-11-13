@@ -5,7 +5,7 @@ import {
   type ModelQuestionUnit,
 } from "@/components/exams/entrance-model-questions";
 import { getModelQuestionUnits, hasEntranceBank } from "@/lib/entrance-questions";
-import { findSubjectBySlug } from "@/lib/syllabus";
+import { findSubjectBySlug } from "@/lib/core/syllabus";
 
 /** CEE (Medical entrance) tests the PCB science base. */
 const SUBJECTS = ["physics", "chemistry", "biology"];

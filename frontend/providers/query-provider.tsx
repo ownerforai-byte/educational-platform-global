@@ -1,8 +1,18 @@
 "use client";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import dynamic from "next/dynamic";
 import { useState, type ReactNode } from "react";
+
+/** Devtools stay out of the production client graph. */
+const ReactQueryDevtools =
+  process.env.NODE_ENV === "development"
+    ? dynamic(
+        () =>
+          import("@tanstack/react-query-devtools").then((m) => m.ReactQueryDevtools),
+        { ssr: false },
+      )
+    : () => null;
 
 function makeQueryClient() {
   return new QueryClient({

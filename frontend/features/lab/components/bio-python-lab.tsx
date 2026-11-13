@@ -16,7 +16,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { Dna, FlaskConical } from 'lucide-react';
 import { PythonVisuals } from '@/components/lab/python-visuals';
-import { getSubjectSyllabus } from '@/lib/syllabus';
+import { getSubjectSyllabus } from "@/lib/core/syllabus";
 import { loadData } from '@/lib/data-loader';
 
 /* ------------------------------------------------------------------ *

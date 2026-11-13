@@ -14,7 +14,7 @@
  */
 import { loadData } from "@/lib/data-loader";
 import { normalizeClassDir, classDirOfTrack } from "@/lib/content/paths";
-import { getSubjectSyllabus } from "@/lib/syllabus";
+import { getSubjectSyllabus } from "@/lib/core/syllabus";
 
 export interface BlueprintUnit {
   /** Syllabus unit slug (matches syllabus.ts). */

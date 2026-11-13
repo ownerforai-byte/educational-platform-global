@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { APP_TABS, quickLinkMinTier } from "@/lib/navigation";
-import { hasLevel } from "@/lib/access-level";
+import { APP_TABS, quickLinkMinTier } from "@/lib/core/navigation";
+import { hasLevel } from "@/lib/core/access-level";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isNavItemActive } from "@/lib/nav-active";
 import { cn } from "@/lib/utils";

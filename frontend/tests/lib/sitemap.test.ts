@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import sitemap from "@/app/sitemap";
-import { SYLLABUS, getUnitTopicEntries } from "@/lib/syllabus";
+import { SYLLABUS, getUnitTopicEntries } from "@/lib/core/syllabus";
 
 /**
  * The machine sitemap must mirror the canonical syllabus — every topic page

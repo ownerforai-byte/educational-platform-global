@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { getSubjectSyllabus } from "@/lib/syllabus";
+import { getSubjectSyllabus } from "@/lib/core/syllabus";
 
 /** Legacy shortcut: /class-12-notes/[subject]/[unit] → chapters/[unit] */
 export default async function UnitRedirectPage({

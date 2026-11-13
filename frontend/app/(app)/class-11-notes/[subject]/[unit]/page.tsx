@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { getSubjectSyllabus } from "@/lib/syllabus";
+import { getSubjectSyllabus } from "@/lib/core/syllabus";
 
 
 

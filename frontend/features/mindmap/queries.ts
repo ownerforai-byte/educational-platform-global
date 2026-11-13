@@ -11,7 +11,7 @@ import {
   getUnitTopicEntries,
   type SubjectSyllabus,
   type SyllabusUnit,
-} from "@/lib/syllabus";
+} from "@/lib/core/syllabus";
 import type { MindmapDocument, MindmapItem, MindmapNode, MindmapSource } from "./types";
 export type { MindmapItem };
 

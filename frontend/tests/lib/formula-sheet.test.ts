@@ -7,7 +7,7 @@ import {
   isFormulaSubjectSlug,
   type ClassifiedNoteGroup,
 } from "@/lib/formula-sheet";
-import { getSubjectSyllabus } from "@/lib/syllabus";
+import { getSubjectSyllabus } from "@/lib/core/syllabus";
 
 const CLASS_SLUG = "class-11-notes";
 

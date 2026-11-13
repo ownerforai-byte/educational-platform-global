@@ -5,7 +5,7 @@ import { use } from "react";
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Clock, ListOrdered } from "lucide-react";
-import { SYLLABUS, type ClassSyllabus, type SubjectSyllabus } from "@/lib/syllabus";
+import { SYLLABUS, type ClassSyllabus, type SubjectSyllabus } from "@/lib/core/syllabus";
 import { getSyllabusHistory } from "@/lib/syllabus-history";
 import { SyllabusSection } from "@/components/content/syllabus-section";
 import { History } from "lucide-react";
