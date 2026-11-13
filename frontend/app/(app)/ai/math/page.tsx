@@ -329,20 +329,25 @@ export default function MathStudioPage() {
           {/* Step-by-step solution: each step is its own card on its own line
               (owner 2026-10-25: "step by step not all ending in same line") —
               ```steps fences become numbered StepCards, the rest stays prose. */}
-          <div className="space-y-3">
-            {solutionSegments.map((segment, index) =>
-              segment.kind === "steps" ? (
-                <StepCards key={index} steps={segment.steps} />
-              ) : (
-                <div
-                  key={index}
-                  className="min-w-0 rounded-2xl bg-muted/20 p-3 sm:p-4 border border-border/30"
-                >
-                  <MathMarkdown content={segment.text} className="chat-reading" />
-                </div>
-              ),
-            )}
-          </div>
+          <article aria-label="Math briefing" className="overflow-hidden rounded-xl border border-border/90 bg-card shadow-[0_1px_0_hsl(var(--border)/0.6)]">
+            <header className="flex items-center justify-between gap-2 border-b border-border/80 bg-muted/40 px-3.5 py-2">
+              <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
+                Solution briefing
+              </p>
+              <p className="text-[8px] font-semibold uppercase tracking-[0.16em] text-muted-foreground/80">
+                Organised for learning
+              </p>
+            </header>
+            <div className="space-y-3 px-4 py-4 sm:px-5">
+              {solutionSegments.map((segment, index) =>
+                segment.kind === "steps" ? (
+                  <StepCards key={index} steps={segment.steps} />
+                ) : (
+                  <MathMarkdown key={index} content={segment.text} className="chat-reading" />
+                ),
+              )}
+            </div>
+          </article>
         </div>
       )}
       </div>

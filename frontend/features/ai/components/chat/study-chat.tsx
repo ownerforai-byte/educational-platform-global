@@ -361,19 +361,31 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
                 className={
                   m.role === "user"
                     ? "max-w-[85%] rounded-2xl bg-primary px-4 py-2.5 text-sm leading-relaxed text-primary-foreground"
-                    : "w-full rounded-2xl border border-border/70 bg-card px-5 py-5 text-foreground shadow-sm sm:px-6 sm:py-6"
+                    : "w-full min-w-0 text-foreground"
                 }
               >
                 {m.role === "user" ? (
                   <p className="whitespace-pre-wrap">{m.content}</p>
                 ) : (
-                  (visibleSegments[i] ?? []).map((segment, j) =>
-                    segment.kind === "steps" ? (
-                      <StepCards key={j} steps={segment.steps} />
-                    ) : (
-                      <MathMarkdown key={j} content={segment.text} className="chat-reading" />
-                    ),
-                  )
+                  <article aria-label="Study briefing" className="overflow-hidden rounded-xl border border-border/90 bg-card">
+                    <header className="flex items-center justify-between gap-2 border-b border-border/80 bg-muted/40 px-3.5 py-2">
+                      <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
+                        Study briefing
+                      </p>
+                      <p className="text-[8px] font-semibold uppercase tracking-[0.16em] text-muted-foreground/80">
+                        Organised for learning
+                      </p>
+                    </header>
+                    <div className="space-y-2 px-4 py-4 sm:px-5">
+                      {(visibleSegments[i] ?? []).map((segment, j) =>
+                        segment.kind === "steps" ? (
+                          <StepCards key={j} steps={segment.steps} />
+                        ) : (
+                          <MathMarkdown key={j} content={segment.text} className="chat-reading" />
+                        ),
+                      )}
+                    </div>
+                  </article>
                 )}
               </div>
             </div>

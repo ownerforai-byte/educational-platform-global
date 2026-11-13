@@ -221,9 +221,19 @@ export function HistoryConsole() {
             </div>
           )}
 
-          <div className="mt-3">
-            <MathMarkdown content={answer.response} className="chat-reading" />
-          </div>
+          <article aria-label="History briefing" className="mt-3 overflow-hidden rounded-xl border border-border/90 bg-card">
+            <header className="flex items-center justify-between gap-2 border-b border-border/80 bg-muted/40 px-3.5 py-2">
+              <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
+                History briefing
+              </p>
+              <p className="text-[8px] font-semibold uppercase tracking-[0.16em] text-muted-foreground/80">
+                Organised for learning
+              </p>
+            </header>
+            <div className="px-4 py-4">
+              <MathMarkdown content={answer.response} className="chat-reading" />
+            </div>
+          </article>
 
           <p className="mt-4 flex items-center gap-1.5 border-t border-border/50 pt-3 text-[11px] text-muted-foreground">
             <SignpostBig className="h-3.5 w-3.5" />

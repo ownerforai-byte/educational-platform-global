@@ -246,20 +246,40 @@ export function PlatformGuideWidget() {
           ) : (
             <div
               ref={scrollRef}
-              className="min-h-0 flex-1 space-y-2 overflow-y-auto overscroll-contain px-3 py-2.5 text-[13px] leading-snug"
+              className="min-h-0 flex-1 space-y-3 overflow-y-auto overscroll-contain px-3 py-2.5"
             >
-              {lines.map((line, i) => (
-                <div
-                  key={`${line.role}-${i}`}
-                  className={
-                    line.role === "user"
-                      ? "ml-8 rounded-2xl rounded-tr-sm bg-primary/12 px-3 py-2 text-foreground"
-                      : "mr-8 rounded-2xl rounded-tl-sm bg-muted/60 px-3 py-2 text-muted-foreground"
-                  }
-                >
-                  {line.content}
-                </div>
-              ))}
+              {lines.map((line, i) =>
+                line.role === "user" ? (
+                  <div
+                    key={`${line.role}-${i}`}
+                    className="ml-8 rounded-xl bg-primary/12 px-3 py-2 text-[12px] leading-relaxed text-foreground"
+                  >
+                    {line.content}
+                  </div>
+                ) : (
+                  <article
+                    key={`${line.role}-${i}`}
+                    aria-label="Veer briefing"
+                    className="mr-2 overflow-hidden rounded-xl border border-border/90 bg-card shadow-[0_1px_0_hsl(var(--border)/0.6)]"
+                  >
+                    <header className="flex items-center justify-between gap-2 border-b border-border/80 bg-muted/40 px-3 py-1.5">
+                      <p className="text-[9px] font-bold uppercase tracking-[0.16em] text-muted-foreground">
+                        Study briefing
+                      </p>
+                      <p className="text-[8px] font-semibold uppercase tracking-[0.14em] text-muted-foreground/80">
+                        Organised for learning
+                      </p>
+                    </header>
+                    <div className="space-y-2 px-3.5 py-3 text-[12px] leading-[1.65] tracking-[0.01em] text-foreground/90">
+                      {line.content.split(/\n{2,}/).map((block, bi) => (
+                        <p key={bi} className="max-w-[68ch] whitespace-pre-wrap">
+                          {block.trim()}
+                        </p>
+                      ))}
+                    </div>
+                  </article>
+                ),
+              )}
               {sending && (
                 <p className="ml-1 animate-pulse text-[11px] text-muted-foreground">Veer is thinking…</p>
               )}

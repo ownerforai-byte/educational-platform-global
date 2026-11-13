@@ -278,30 +278,40 @@ export function DiagramStudio() {
               className={
                 message.role === "user"
                   ? "max-w-[85%] min-w-0 rounded-2xl bg-primary px-4 py-3 text-[13px] text-primary-foreground [overflow-wrap:anywhere]"
-                  : "min-w-0 w-full rounded-2xl border-2 border-border/80 bg-card px-3 py-4 shadow-sm sm:px-6 sm:py-6"
+                  : "min-w-0 w-full"
               }
             >
               {message.role === "assistant" ? (
-                <div className="space-y-2">
-                  <MathMarkdown content={message.content} className="chat-reading" />
-                  {!sending && (
-                    <button
-                      type="button"
-                      onClick={handleCopy}
-                      className="mt-1 inline-flex items-center gap-1 text-[10px] font-semibold text-muted-foreground transition hover:text-foreground"
-                    >
-                      {copied ? (
-                        <>
-                          <Check className="h-3 w-3" /> Copied
-                        </>
-                      ) : (
-                        <>
-                          <Copy className="h-3 w-3" /> Copy
-                        </>
-                      )}
-                    </button>
-                  )}
-                </div>
+                <article aria-label="Diagram briefing" className="overflow-hidden rounded-xl border border-border/90 bg-card shadow-[0_1px_0_hsl(var(--border)/0.6)]">
+                  <header className="flex items-center justify-between gap-2 border-b border-border/80 bg-muted/40 px-3.5 py-2">
+                    <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
+                      Diagram briefing
+                    </p>
+                    <p className="text-[8px] font-semibold uppercase tracking-[0.16em] text-muted-foreground/80">
+                      Organised for learning
+                    </p>
+                  </header>
+                  <div className="space-y-2 px-4 py-4 sm:px-5">
+                    <MathMarkdown content={message.content} className="chat-reading" />
+                    {!sending && (
+                      <button
+                        type="button"
+                        onClick={handleCopy}
+                        className="mt-1 inline-flex items-center gap-1 text-[10px] font-semibold text-muted-foreground transition hover:text-foreground"
+                      >
+                        {copied ? (
+                          <>
+                            <Check className="h-3 w-3" /> Copied
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="h-3 w-3" /> Copy
+                          </>
+                        )}
+                      </button>
+                    )}
+                  </div>
+                </article>
               ) : (
                 <p className="whitespace-pre-wrap">{message.content}</p>
               )}

@@ -1201,8 +1201,19 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                     <CaptainAvatar className="h-3.5 w-3.5" />
                   </div>
                   {isIdentityAnswer(msg.content) ? (
-                    <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/70 bg-card px-3 py-3 shadow-sm sm:px-5 sm:py-4">
-                      <div>
+                    <article
+                      aria-label="Veer briefing"
+                      className="min-w-0 flex-1 overflow-hidden rounded-xl border border-border/90 bg-card shadow-[0_1px_0_hsl(var(--border)/0.6)]"
+                    >
+                      <header className="flex items-center justify-between gap-2 border-b border-border/80 bg-muted/40 px-3.5 py-2">
+                        <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-muted-foreground">
+                          Study briefing
+                        </p>
+                        <p className="text-[8px] font-semibold uppercase tracking-[0.16em] text-muted-foreground/80">
+                          Organised for learning
+                        </p>
+                      </header>
+                      <div className="space-y-2 px-4 py-4 sm:px-5">
                         {(displaySegments[index] ?? []).map((segment, segIndex) =>
                           segment.kind === "steps" ? (
                             <StepCards key={segIndex} steps={segment.steps} />
@@ -1215,7 +1226,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                           ),
                         )}
                       </div>
-                    </div>
+                    </article>
                   ) : (
                     <AiReplyCard
                       title="Veer"

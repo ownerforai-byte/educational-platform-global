@@ -34,6 +34,7 @@ import { AiReplyCard } from "@/components/ai/ai-reply-card";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { hasLevel } from "@/lib/access-level";
+import { isOwnerAccount } from "@/lib/owner";
 import { apiFetch } from "@/lib/api-client";
 import { reportClientError } from "@/lib/errors/app-error";
 import {
@@ -1005,9 +1006,17 @@ export function AIWidget() {
                           <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-slate-950 text-white"><CaptainAvatar className="h-4 w-4" /></span>
                           <span className="text-[10px] font-black uppercase tracking-[0.14em]">Veer Professor</span>
                         </div>
-                        <div className="rounded-3xl border-2 border-border/80 bg-card px-4 py-4 shadow-sm sm:px-5 sm:py-5">
+                        <AiReplyCard
+                          compact
+                          title="Professor briefing"
+                          meta={`Class ${classLevel} · ${subjectSlug}`}
+                          reply={line.content}
+                          context={{ surface: "widget", subjectName: subjectSlug, subjectSlug }}
+                          isVerifiedOwner={isOwnerAccount(user)}
+                          onFollowUp={(prompt) => void send(prompt)}
+                        >
                           <InteractiveMarkdown content={line.content} className="chat-reading" />
-                        </div>
+                        </AiReplyCard>
                       </article>
                     ))}
                     {sending && lines.at(-1)?.role !== "assistant" && (

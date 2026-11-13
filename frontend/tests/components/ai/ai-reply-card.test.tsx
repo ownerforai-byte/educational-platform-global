@@ -23,9 +23,8 @@ const reply =
   "**Ohm's law.** The formula is $V = I \\cdot R$.\n\nStep 1: Find the current.\nStep 2: Multiply by the resistance.";
 
 /**
- * The reply frame (owner 2026-11-09): clear boundary outside, every section
- * boxed inside, compact type, suggestion boxes, and the ad box closing the
- * reply — always last.
+ * Briefing document frame: compact type, labelled learning panels for owners,
+ * sponsored slot last.
  */
 describe("AiReplyCard", () => {
   it("boxes every section inside one clear outer boundary", () => {
@@ -42,16 +41,15 @@ describe("AiReplyCard", () => {
     );
 
     const card = screen.getByRole("region", { name: "Veer tutor" });
-    expect(card.className).toContain("border-2");
+    expect(card.className).toContain("border");
+    expect(card.className).toContain("rounded-xl");
 
-    // Every island has its own labelled section.
     for (const label of ["Key terms", "Check yourself", "Suggestions", "Sponsored"]) {
       expect(within(card).getByLabelText(label)).toBeInTheDocument();
     }
-    // The answer body is present.
     expect(within(card).getByText("The formula is V = I R.")).toBeInTheDocument();
-    // Key terms lifted from the reply's bold vocabulary.
     expect(within(card).getByText("Ohm's law.")).toBeInTheDocument();
+    expect(within(card).getByText("Study briefing")).toBeInTheDocument();
   });
 
   it("ends with the ad box as the last section", () => {
@@ -104,7 +102,8 @@ describe("AiReplyCard", () => {
 
   it("shows Related and Contrasts as separate clickable owner lists", () => {
     const onFollowUp = vi.fn();
-    const examReply = "**Related —** displacement, velocity, trajectory\n**Contrasts —** distance vs displacement (scalar vs vector)";
+    const examReply =
+      "**Related —** displacement, velocity, trajectory\n**Contrasts —** distance vs displacement (scalar vs vector)";
     render(
       <AiReplyCard
         title="Veer tutor"
@@ -118,9 +117,12 @@ describe("AiReplyCard", () => {
     );
 
     const terms = screen.getByRole("region", { name: "Key terms" });
-    expect(within(terms).getByText("Related —")).toBeInTheDocument();
-    expect(within(terms).getByText("Contrasts —")).toBeInTheDocument();
-    const contrast = within(terms).getByRole("button", { name: /distance vs displacement/ });
+    expect(within(terms).getByText("displacement")).toBeInTheDocument();
+    expect(within(terms).getByText("velocity")).toBeInTheDocument();
+    expect(within(terms).getByText("trajectory")).toBeInTheDocument();
+
+    const contrasts = screen.getByRole("region", { name: "Contrasts" });
+    const contrast = within(contrasts).getByRole("button", { name: /distance vs displacement/ });
     contrast.click();
     expect(onFollowUp).toHaveBeenCalledWith(expect.stringContaining("Clearly contrast"));
   });
