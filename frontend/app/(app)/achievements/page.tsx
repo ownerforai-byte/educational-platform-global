@@ -28,7 +28,7 @@ import { getLeaderboard } from "@/lib/api/leaderboard";
 import { entryStatus, groupJourney, summarizeJourney } from "@/lib/progress/catalog";
 import { streakLabel } from "@/lib/streaks";
 import { useStreakCount } from "@/lib/hooks/use-streak";
-import { calculateScholarLevel } from "@/app/(app)/profile/page";
+import { calculateScholarLevel } from "@/features/progress/scholar-level";
 import type { ProgressEntry } from "@/types/api";
 
 /** Unit certified = every topic complete; subject certified = every unit. */
