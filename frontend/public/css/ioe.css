@@ -1,0 +1,96 @@
+/* ==========================================================================
+   IOE Entrance Portal — Dedicated Stylesheet
+   Tribhuvan University Pulchowk & TU Affiliated Engineering Entrance
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --ioe-primary: #0284c7;
+  --ioe-cyan: #06b6d4;
+  --ioe-dark-bg: #020617;
+  --ioe-card-bg: rgba(15, 23, 42, 0.7);
+  --ioe-border: rgba(30, 41, 59, 0.8);
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbars */
+.custom-scrollbar::-webkit-scrollbar,
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* Glassmorphism & Cards */
+.ioe-card {
+  background: var(--ioe-card-bg);
+  border: 1px solid var(--ioe-border);
+  backdrop-filter: blur(12px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ioe-card:hover {
+  border-color: rgba(2, 132, 199, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Formula & Code Boxes */
+.formula-badge {
+  background: rgba(2, 6, 23, 0.7);
+  border: 1px solid rgba(30, 41, 59, 0.9);
+  color: #38bdf8;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+/* Quiz Option Hover & Active */
+.opt-btn {
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.opt-btn:hover:not(:disabled) {
+  border-color: #38bdf8;
+  background-color: rgba(14, 165, 233, 0.08);
+}
+
+/* Smooth Tab Transitions */
+.tab-pane {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

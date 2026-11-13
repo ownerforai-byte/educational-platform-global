@@ -94,6 +94,23 @@ repository.
 ## Documentation
 - Agents must update relevant documentation (`CORE_FILES.md` for new core files, `PROJECT_STATUS.md` or `SYSTEM_WORK_TRACKER.md` for major system changes) after significant work.
 
+## 📄 Docs Viewer Layout System (Mandatory for All Academic Content)
+- **Universal Docs Viewer Requirement:** ALL readable academic content — syllabus topics, lab theory, concept panels, exam preparation guides, Loksewa knowledge, IOE/CEE/NEB entrance questions, model papers, and any future knowledge-based content additions — MUST render through the standardized Docs Viewer layout system.
+- **Single Source of Truth:** `frontend/features/docs/academic-doc-layout.tsx` is the canonical layout system. Do NOT create custom or competing document containers.
+- **Required Components for New Additions:** Every new academic content addition must import and implement:
+  - `DocPaper` (`@/features/docs/academic-doc-layout`) — outer printable document card (`<article className="doc-view doc-viewer-paper ...">`).
+  - `DocToolbar` — standard header with document badge, title, subtitle, metadata badges, font size controls (`sm` / `base` / `lg`), copy link, and Print/Save as PDF.
+  - `DocSectionHeading` — numbered/anchored section headings.
+  - `DocHighlightCard` — standardized callout cards (`summary`, `definition`, `formula`, `trap`, `trick`, `example`, `practice`).
+  - `getDocFontClass(fontSize)` — dynamic font sizing utility for readable prose.
+  - `MathMarkdown` (`@/components/ui/math-markdown`) — for all LaTeX / KaTeX mathematical equations and formatted text.
+- **New Content Checklist:** When adding or authoring new academic content or syllabus tracks:
+  1. Wrap the content inside `<DocPaper>`.
+  2. Provide a `<DocToolbar>` with title, badge text, metadata, and wired font size state (`useState<DocFontSize>("base")`).
+  3. Format callouts, formulas, and warnings using `<DocHighlightCard type="...">`.
+  4. Ensure print/PDF view renders cleanly (leveraging `print:` classes provided by the layout system).
+  5. If new content routes are created, add them to the Docs Viewer registry so learners can view them immediately.
+
 ## Platform ops
 - **Render cold-start keep-alive (2026-10-27):** the backend runs on the Render free
   tier at `https://rn01.onrender.com`, which sleeps between requests (~30-60s cold

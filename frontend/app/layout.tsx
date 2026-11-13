@@ -10,6 +10,7 @@ import { QueryProvider } from "@/providers/query-provider";
 import { AuthProvider } from "@/providers/auth-provider";
 import { CreditProvider } from "@/features/credits";
 import { ServiceWorkerRegistrar } from "@/components/pwa/service-worker-registrar";
+import { FcmNotificationListener } from "@/lib/fcm/notification-listener";
 import { RouteScrollReset } from "@/components/navigation/route-scroll-reset";
 import { OfflineBanner } from "@/components/pwa/offline-banner";
 import { RawEventRejectionGuard } from "@/components/dev/raw-event-rejection-guard";
@@ -68,6 +69,7 @@ export default async function RootLayout({
               <CreditProvider>
                 <RawEventRejectionGuard />
                 <ServiceWorkerRegistrar />
+                <FcmNotificationListener />
                 {/* Every route change starts at the header, not the footer. */}
                 <RouteScrollReset />
                 <OfflineBanner />

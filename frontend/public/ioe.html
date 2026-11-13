@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IOE Engineering Entrance Portal — Pulchowk & TU Affiliated</title>
+  <meta name="description" content="Dedicated standalone portal for IOE Pulchowk Entrance preparation: Mathematics, Physics, Chemistry, English, AI numerical solver, and interactive practice sets.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="/css/ioe.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0369a1',
+              700: '#075985',
+              900: '#0c4a6e',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col md:flex-row antialiased selection:bg-sky-500/30 selection:text-sky-200">
+
+  <!-- Mobile Top Bar -->
+  <header class="md:hidden flex items-center justify-between border-b border-slate-800 bg-slate-900/90 px-4 py-3 sticky top-0 z-50 backdrop-blur">
+    <div class="flex items-center gap-2.5">
+      <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-sky-600 to-cyan-400 flex items-center justify-center font-black text-white text-xs shadow-md shadow-sky-500/20">
+        IOE
+      </div>
+      <div>
+        <h1 class="text-sm font-bold tracking-tight">IOE Entrance Hub</h1>
+        <p class="text-[10px] text-slate-400">Pulchowk &amp; TU Engineering</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-2">
+      <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white" title="Toggle theme">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+      </button>
+      <button onclick="toggleSidebarMobile()" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white" title="Menu">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Left Sidebar Navigation -->
+  <aside id="sidebar" class="hidden md:flex flex-col w-64 lg:w-72 border-r border-slate-800 bg-slate-900/95 p-4 flex-shrink-0 sticky top-0 h-screen z-40 backdrop-blur custom-scrollbar overflow-y-auto">
+    <!-- Brand Info -->
+    <div class="flex items-center gap-3 px-2 py-3 mb-4 border-b border-slate-800">
+      <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-sky-600 via-sky-500 to-cyan-400 flex items-center justify-center font-black text-white text-sm shadow-lg shadow-sky-500/25">
+        IOE
+      </div>
+      <div class="flex-1 min-w-0">
+        <h2 class="text-sm font-bold tracking-tight text-white truncate">IOE Pulchowk Hub</h2>
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-sky-500/10 text-sky-400 border border-sky-500/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span> 140 Marks Engine
+        </span>
+      </div>
+    </div>
+
+    <!-- Live Search Input -->
+    <div class="relative mb-5 px-1">
+      <div class="absolute inset-y-0 left-3.5 flex items-center pointer-events-none text-slate-400">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      </div>
+      <input type="text" id="portalSearch" oninput="handleSearch(this.value)" placeholder="Search formulas, MCQs, tricks…"
+        class="w-full bg-slate-800/80 border border-slate-700/80 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all">
+    </div>
+
+    <!-- Navigation Menu Items -->
+    <nav class="space-y-1.5 flex-1">
+      <button onclick="switchTab('home')" class="nav-btn w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all bg-sky-500/10 text-sky-400 border border-sky-500/20" data-tab="home">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+        <span>Overview &amp; Home</span>
+      </button>
+
+      <button onclick="switchTab('learn')" class="nav-btn w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all text-slate-300 hover:bg-slate-800 hover:text-white" data-tab="learn">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+        <span>Syllabus &amp; Learn</span>
+        <span class="ml-auto text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">4 Subjects</span>
+      </button>
+
+      <button onclick="switchTab('ai')" class="nav-btn w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all text-slate-300 hover:bg-slate-800 hover:text-white" data-tab="ai">
+        <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        <span>AI Numerical Solver</span>
+        <span class="ml-auto text-[10px] px-1.5 py-0.5 rounded bg-cyan-500/20 text-cyan-300 font-bold">Veer AI</span>
+      </button>
+
+      <button onclick="switchTab('practice')" class="nav-btn w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all text-slate-300 hover:bg-slate-800 hover:text-white" data-tab="practice">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+        <span>Timed Mock Practice</span>
+        <span class="ml-auto text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300">140 Qs</span>
+      </button>
+
+      <button onclick="switchTab('info')" class="nav-btn w-full flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-semibold transition-all text-slate-300 hover:bg-slate-800 hover:text-white" data-tab="info">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span>Exam Info &amp; Criteria</span>
+      </button>
+    </nav>
+
+    <!-- Bottom Actions -->
+    <div class="pt-4 mt-auto border-t border-slate-800 space-y-2">
+      <a href="/" class="flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs font-medium text-slate-400 hover:bg-slate-800/80 hover:text-slate-200 transition">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+        <span>Back to Main Study Desk</span>
+      </a>
+      <div class="px-3 py-2 rounded-xl bg-slate-800/40 border border-slate-800/80 text-[11px] text-slate-400">
+        <div class="flex items-center justify-between font-semibold text-slate-300 mb-1">
+          <span>IOE Target</span>
+          <span class="text-sky-400">140 / 140</span>
+        </div>
+        <p class="text-[10px] leading-tight text-slate-500">Negative mark: -10% on wrong choice.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content Stage -->
+  <main class="flex-1 flex flex-col min-w-0 bg-slate-950 overflow-y-auto">
+
+    <!-- Top Announcement Strip -->
+    <div class="border-b border-sky-900/30 bg-gradient-to-r from-sky-950/60 via-slate-900 to-cyan-950/40 px-6 py-2.5 text-xs flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="px-2 py-0.5 rounded-full bg-sky-500/20 text-sky-400 font-bold text-[10px] uppercase tracking-wider">Official Matrix</span>
+        <span class="text-slate-300 font-medium">Maths 50 · Physics 45 · Chemistry 25 · English 20 = 140 Total</span>
+      </div>
+      <div class="flex items-center gap-3 text-slate-400 text-[11px]">
+        <span>Duration: <strong>2 Hours</strong></span>
+        <span>•</span>
+        <span>Mode: <strong>Computer Based Test (CBT)</strong></span>
+      </div>
+    </div>
+
+    <!-- Content Sections Container -->
+    <div class="p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto w-full space-y-8">
+
+      <!-- ================= TAB: HOME ================= -->
+      <section id="tab-home" class="tab-pane space-y-8">
+        <!-- Hero Banner -->
+        <div class="relative overflow-hidden rounded-3xl border border-sky-800/40 bg-gradient-to-br from-slate-900 via-sky-950/30 to-slate-900 p-6 sm:p-10 shadow-xl shadow-sky-950/20">
+          <div class="relative z-10 max-w-2xl space-y-4">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20 text-sky-400 text-xs font-semibold">
+              <span class="w-2 h-2 rounded-full bg-sky-400"></span> Dedicated Entrance Track
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+              TU IOE Engineering Entrance Preparation
+            </h1>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              Targeted preparation for Pulchowk Campus, Thapathali, WRC (Pokhara), and ERC (Dharan). High-yield numerical formulae, short-cut tricks, timed computer mock tests, and instant AI numerical assistance.
+            </p>
+            <div class="flex flex-wrap gap-3 pt-2">
+              <button onclick="switchTab('practice')" class="px-5 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs sm:text-sm shadow-lg shadow-sky-500/25 transition">
+                Start Full 140-Mark Practice Drill
+              </button>
+              <button onclick="switchTab('learn')" class="px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs sm:text-sm border border-slate-700 transition">
+                Explore Subject Notes &amp; Formulas
+              </button>
+            </div>
+          </div>
+          <div class="absolute -right-16 -bottom-16 w-80 h-80 rounded-full bg-sky-500/10 blur-3xl pointer-events-none"></div>
+        </div>
+
+        <!-- 4 Core Pillars Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Mathematics -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-sky-500/40 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">50 Marks</span>
+              <span class="text-xs px-2 py-0.5 rounded bg-sky-500/10 text-sky-300 font-mono">Calculus &amp; Vectors</span>
+            </div>
+            <h3 class="text-base font-bold text-white mb-1">Mathematics</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">Definite integration, coordinate geometry, matrices, complex numbers &amp; trigonometry shortcuts.</p>
+            <button onclick="filterLearn('math')" class="text-xs font-bold text-sky-400 hover:text-sky-300 flex items-center gap-1">Study Maths &rarr;</button>
+          </div>
+
+          <!-- Physics -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-cyan-500/40 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider">45 Marks</span>
+              <span class="text-xs px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 font-mono">Mechanics &amp; EM</span>
+            </div>
+            <h3 class="text-base font-bold text-white mb-1">Physics</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">Rotational dynamics, SHM, electricity, wave optics, modern physics and nuclear decay rates.</p>
+            <button onclick="filterLearn('physics')" class="text-xs font-bold text-cyan-400 hover:text-cyan-300 flex items-center gap-1">Study Physics &rarr;</button>
+          </div>
+
+          <!-- Chemistry -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-emerald-500/40 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">25 Marks</span>
+              <span class="text-xs px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300 font-mono">Physical &amp; Org</span>
+            </div>
+            <h3 class="text-base font-bold text-white mb-1">Chemistry</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">Stoichiometry, chemical thermodynamics, periodic trends, metallurgy &amp; organic mechanisms.</p>
+            <button onclick="filterLearn('chemistry')" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1">Study Chemistry &rarr;</button>
+          </div>
+
+          <!-- English -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-purple-500/40 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">20 Marks</span>
+              <span class="text-xs px-2 py-0.5 rounded bg-purple-500/10 text-purple-300 font-mono">Grammar &amp; Vocab</span>
+            </div>
+            <h3 class="text-base font-bold text-white mb-1">English</h3>
+            <p class="text-xs text-slate-400 mb-4 leading-relaxed">Passage comprehension, preposition mastery, tense concordance, synonyms &amp; error identification.</p>
+            <button onclick="filterLearn('english')" class="text-xs font-bold text-purple-400 hover:text-purple-300 flex items-center gap-1">Study English &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Strategy & Blueprint Callout -->
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/40 p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <div class="space-y-1">
+            <h4 class="text-sm font-bold text-white flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span> The IOE Merit Strategy
+            </h4>
+            <p class="text-xs text-slate-400 max-w-2xl leading-relaxed">
+              In IOE entrance, accuracy matters more than wild attempts due to the <strong>10% penalty</strong>. Scoring 100+ marks virtually guarantees a regular scholarship quota seat in top disciplines at Pulchowk Campus.
+            </p>
+          </div>
+          <button onclick="switchTab('info')" class="flex-shrink-0 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-bold text-slate-200 border border-slate-700">
+            View Merit Cutoffs &amp; Ranks &rarr;
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= TAB: LEARN (SYLLABUS & NOTES) ================= -->
+      <section id="tab-learn" class="tab-pane hidden space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+          <div>
+            <h2 class="text-2xl font-bold text-white">IOE Syllabus &amp; Key Concept Notes</h2>
+            <p class="text-xs text-slate-400">Structured according to Tribhuvan University Examination Board criteria.</p>
+          </div>
+          <!-- Subject Filter Pills -->
+          <div class="flex flex-wrap gap-2" id="learnFilterContainer">
+            <button onclick="filterLearn('all')" class="filter-pill px-3 py-1.5 rounded-xl text-xs font-bold bg-sky-500 text-slate-950" data-filter="all">All (140M)</button>
+            <button onclick="filterLearn('math')" class="filter-pill px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white" data-filter="math">Maths (50M)</button>
+            <button onclick="filterLearn('physics')" class="filter-pill px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white" data-filter="physics">Physics (45M)</button>
+            <button onclick="filterLearn('chemistry')" class="filter-pill px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white" data-filter="chemistry">Chemistry (25M)</button>
+            <button onclick="filterLearn('english')" class="filter-pill px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-300 hover:text-white" data-filter="english">English (20M)</button>
+          </div>
+        </div>
+
+        <!-- Topic Cards Accordion / Listing -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="learnCardsContainer">
+          <!-- Card: Calculus -->
+          <div class="learn-card rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-3" data-subject="math">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-sky-500/10 text-sky-400">Mathematics · 18 Marks</span>
+              <span class="text-[11px] text-slate-400">High Weightage</span>
+            </div>
+            <h3 class="text-base font-bold text-white">Calculus &amp; Coordinate Geometry</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Standard limits, L'Hôpital's rule shortcuts, maximum/minimum value shortcuts, definite integrals via symmetry, ellipse and hyperbola eccentricity equations.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-xs font-mono text-sky-300 space-y-1">
+              <div>&bull; &int;₀^(pi/2) ln(sin x) dx = -(pi/2) ln 2</div>
+              <div>&bull; Radius of curvature &rho; = (1 + y'²)^(3/2) / |y''|</div>
+            </div>
+          </div>
+
+          <!-- Card: Mechanics -->
+          <div class="learn-card rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-3" data-subject="physics">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400">Physics · 16 Marks</span>
+              <span class="text-[11px] text-slate-400">Mechanics Spine</span>
+            </div>
+            <h3 class="text-base font-bold text-white">Rotational Dynamics &amp; Gravitation</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Moment of inertia for standard solids, parallel and perpendicular axes theorems, conservation of angular momentum in collisions, orbital and escape velocities.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-xs font-mono text-cyan-300 space-y-1">
+              <div>&bull; Rolling kinetic energy: K = 1/2 mv² (1 + k²/r²)</div>
+              <div>&bull; Escape velocity v_e = &radic;(2GM/R) = &radic;(2gR)</div>
+            </div>
+          </div>
+
+          <!-- Card: Electricity & Magnetism -->
+          <div class="learn-card rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-3" data-subject="physics">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400">Physics · 14 Marks</span>
+              <span class="text-[11px] text-slate-400">Circuits &amp; Induction</span>
+            </div>
+            <h3 class="text-base font-bold text-white">Electromagnetism &amp; AC Circuits</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Kirchhoff's circuit laws, Biot-Savart law, cyclotron frequency, Faraday induction, alternating current resonance in series LCR circuits, and quality factor Q.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-xs font-mono text-cyan-300 space-y-1">
+              <div>&bull; Resonant frequency: &omega;₀ = 1 / &radic;(LC)</div>
+              <div>&bull; Magnetic field in solenoid: B = &mu;₀ n I</div>
+            </div>
+          </div>
+
+          <!-- Card: Physical Chemistry -->
+          <div class="learn-card rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-3" data-subject="chemistry">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400">Chemistry · 12 Marks</span>
+              <span class="text-[11px] text-slate-400">Equilibrium &amp; Solutions</span>
+            </div>
+            <h3 class="text-base font-bold text-white">Chemical Energetics &amp; Ionic Equilibrium</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              pH calculation of buffer solutions, solubility product (Ksp) common ion effect, Hess's Law, Gibbs free energy spontaneity criteria &Delta;G = &Delta;H - T&Delta;S.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-xs font-mono text-emerald-300 space-y-1">
+              <div>&bull; Henderson Equation: pH = pKa + log([Salt]/[Acid])</div>
+              <div>&bull; Nernst Equation: E = E&deg; - (0.0591/n) log Q</div>
+            </div>
+          </div>
+
+          <!-- Card: English & Comprehension -->
+          <div class="learn-card rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-3" data-subject="english">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold px-2 py-0.5 rounded bg-purple-500/10 text-purple-400">English · 20 Marks</span>
+              <span class="text-[11px] text-slate-400">Verbal Scoring Base</span>
+            </div>
+            <h3 class="text-base font-bold text-white">Grammar Rules &amp; Verbal Aptitude</h3>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Subject-verb agreement traps, conditional sentences (Types 1, 2, 3), phrasal verbs, idioms, vocabulary roots, and critical inference reading comprehension.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-950/70 border border-slate-800 text-xs font-mono text-purple-300 space-y-1">
+              <div>&bull; Third Conditional: If + had + V3, would have + V3</div>
+              <div>&bull; Neither ... nor / Either ... or: Verb agrees with closest subject</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB: AI TOOLS ================= -->
+      <section id="tab-ai" class="tab-pane hidden space-y-6">
+        <div class="pb-4 border-b border-slate-800">
+          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 text-xs font-bold mb-2">
+            <span>Powered by Veer Academic AI Engine</span>
+          </div>
+          <h2 class="text-2xl font-bold text-white">IOE AI Numerical Solver &amp; Concept Explainer</h2>
+          <p class="text-xs text-slate-400">Instant step-by-step mathematical reasoning, entrance short-cuts, and formula derivations.</p>
+        </div>
+
+        <!-- Interactive AI Chat Interface Mockup -->
+        <div class="rounded-2xl border border-slate-800 bg-slate-900 overflow-hidden shadow-2xl flex flex-col h-[520px]">
+          <!-- Chat Messages Area -->
+          <div id="aiChatBox" class="flex-1 p-4 sm:p-6 overflow-y-auto space-y-4 custom-scrollbar text-xs">
+            <!-- Bot message -->
+            <div class="flex items-start gap-3">
+              <div class="w-7 h-7 rounded-lg bg-sky-500 text-slate-950 font-black flex items-center justify-center flex-shrink-0 text-xs">V</div>
+              <div class="space-y-1.5 max-w-xl bg-slate-800/80 p-3.5 rounded-2xl border border-slate-700/60 text-slate-200">
+                <p class="font-bold text-sky-400">Veer IOE Tutor</p>
+                <p>Hello! I am your dedicated IOE entrance engineering assistant. Ask me to solve any complex calculus numerical, derive rotational equations, or explain tricky MCQs with the fastest shortcut trick.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Suggested Prompt Chips -->
+          <div class="px-4 py-2 border-t border-slate-800 bg-slate-900/60 flex items-center gap-2 overflow-x-auto custom-scrollbar">
+            <button onclick="sendQuickPrompt('Shortcut trick for finding limits with sin(x) and ln(1+x)?')" class="whitespace-nowrap px-3 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition">
+              Limit shortcut tricks
+            </button>
+            <button onclick="sendQuickPrompt('Derive time period of a simple pendulum inside an accelerating elevator.')" class="whitespace-nowrap px-3 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition">
+              Pendulum in accelerating lift
+            </button>
+            <button onclick="sendQuickPrompt('Explain buffer solution pH calculation with Henderson equation trick.')" class="whitespace-nowrap px-3 py-1 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition">
+              Buffer pH shortcuts
+            </button>
+          </div>
+
+          <!-- Prompt Input Bar -->
+          <div class="p-3 border-t border-slate-800 bg-slate-950 flex items-center gap-2">
+            <input type="text" id="aiInput" placeholder="Ask a physics problem or math equation..."
+              onkeydown="if(event.key === 'Enter') handleAiSend()"
+              class="flex-1 bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <button onclick="handleAiSend()" class="px-4 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs flex items-center gap-1.5 transition">
+              <span>Send</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB: PRACTICE ================= -->
+      <section id="tab-practice" class="tab-pane hidden space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">
+          <div>
+            <h2 class="text-2xl font-bold text-white">Timed IOE Mock Practice (140-Mark Pattern)</h2>
+            <p class="text-xs text-slate-400">Interactive practice with immediate correctness checking, explanations, and score tracking.</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="text-right">
+              <span class="text-[10px] text-slate-400 uppercase tracking-wider block">Your Score</span>
+              <span id="scoreDisplay" class="text-sm font-bold text-emerald-400 font-mono">0 / 4</span>
+            </div>
+            <button onclick="resetPractice()" class="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-300 transition">
+              Reset Quiz
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive Question Set -->
+        <div class="space-y-4" id="practiceQuestionContainer">
+          <!-- Question 1: Math -->
+          <div class="quiz-item rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-3" data-qid="1">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold text-sky-400">Question 1 · Mathematics</span>
+              <span class="text-slate-500 font-mono">1 Mark</span>
+            </div>
+            <p class="text-sm font-semibold text-white">
+              The value of &int; [ (sin x - cos x) / (sin x + cos x) ] dx is:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs pt-1">
+              <button onclick="checkAnswer(1, 'A', false)" class="opt-btn p-3 rounded-xl border border-slate-800 bg-slate-950/60 text-left text-slate-300 hover:border-slate-700 transition">
+                A) ln |sin x - cos x| + C
+              </button>
+              <button onclick="checkAnswer(1, 'B', true)" class="opt-btn p-3 rounded-xl border border-slate-800 bg-slate-950/60 text-left text-slate-300 hover:border-slate-700 transition">
+                B) -ln |sin x + cos x| + C
+              </button>
+              <button onclick="checkAnswer(1, 'C', false)" class="opt-btn p-3 rounded-xl border border-slate-800 bg-slate-950/60 text-left text-slate-300 hover:border-slate-700 transition">
+                C) ln |sin x + cos x| + C
+              </button>
+              <button onclick="checkAnswer(1, 'D', false)" class="opt-btn p-3 rounded-xl border border-slate-800 bg-slate-950/60 text-left text-slate-300 hover:border-slate-700 transition">
+                D) tan(x) + C
+              </button>
+            </div>
+            <div id="explanation-1" class="hidden p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 space-y-1">
+              <span class="font-bold text-sky-400">Explanation:</span>
+              <p>Let u = sin x + cos x. Then du = (cos x - sin x) dx = -(sin x - cos x) dx. Thus &int; -du/u = -ln|u| + C = -ln|sin x + cos x| + C.</p>
+            </div>
+          </div>
+
+          <!-- Question 2: Physics -->
+          <div class="quiz-item rounded-2xl border border-slate-800 bg-slate-900/60 p-5 space-y-3" data-qid="2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold text-cyan-400">Question 2 · Physics</span>
+              <span class="text-slate-500 font-mono">2 Marks</span>
+            </div>
+            <p class="text-sm font-semibold text-white">
+              A solid cylinder and a hollow sphere of equal mass and radius roll down an incline without slipping. Which reaches the bottom first?
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs pt-1">
+              <button onclick="checkAnswer(2, 'A', true)" class="opt-btn p-3 rounded-xl border border-slate-800 bg-slate-950/60 text-left text-slate-300 hover:border-slate-700 transition">
+                A) Solid cylinder
+              </button>
+              <button onclick="checkAnswer(2, 'B', false)" class="opt-btn p-3 rounded-xl border border-slate-800 bg-slate-950/60 text-left text-slate-300 hover:border-slate-700 transition">
+                B) Hollow sphere
+              </button>
+              <button onclick="checkAnswer(2, 'C', false)" class="opt-btn p-3 rounded-xl border border-slate-800 bg-slate-950/60 text-left text-slate-300 hover:border-slate-700 transition">
+                C) Both reach at the same time
+              </button>
+              <button onclick="checkAnswer(2, 'D', false)" class="opt-btn p-3 rounded-xl border border-slate-800 bg-slate-950/60 text-left text-slate-300 hover:border-slate-700 transition">
+                D) Depends on the incline angle
+              </button>
+            </div>
+            <div id="explanation-2" class="hidden p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 space-y-1">
+              <span class="font-bold text-cyan-400">Explanation:</span>
+              <p>Acceleration a = (g sin &theta;) / (1 + k²/r²). Solid cylinder has k²/r² = 1/2 = 0.5. Hollow sphere has k²/r² = 2/3 &approx; 0.67. Smaller k²/r² gives larger acceleration, so the solid cylinder arrives first.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= TAB: INFO ================= -->
+      <section id="tab-info" class="tab-pane hidden space-y-6">
+        <div class="pb-4 border-b border-slate-800">
+          <h2 class="text-2xl font-bold text-white">Official IOE Entrance Examination Handbook</h2>
+          <p class="text-xs text-slate-400">Full guidelines, marks weighting, campus seats, and negative marking rules.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Marks Scheme Table -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 space-y-4">
+            <h3 class="text-base font-bold text-white">Full Marks Distribution (140 Total)</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-xs text-left">
+                <thead class="border-b border-slate-800 text-slate-400 font-semibold">
+                  <tr>
+                    <th class="py-2.5">Subject</th>
+                    <th class="py-2.5 text-center">1-Mark Qs</th>
+                    <th class="py-2.5 text-center">2-Mark Qs</th>
+                    <th class="py-2.5 text-right">Total Marks</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-800 text-slate-200">
+                  <tr>
+                    <td class="py-2.5 font-bold text-sky-400">Mathematics</td>
+                    <td class="py-2.5 text-center">22</td>
+                    <td class="py-2.5 text-center">14</td>
+                    <td class="py-2.5 text-right font-mono font-bold">50</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 font-bold text-cyan-400">Physics</td>
+                    <td class="py-2.5 text-center">21</td>
+                    <td class="py-2.5 text-center">12</td>
+                    <td class="py-2.5 text-right font-mono font-bold">45</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 font-bold text-emerald-400">Chemistry</td>
+                    <td class="py-2.5 text-center">15</td>
+                    <td class="py-2.5 text-center">5</td>
+                    <td class="py-2.5 text-right font-mono font-bold">25</td>
+                  </tr>
+                  <tr>
+                    <td class="py-2.5 font-bold text-purple-400">English</td>
+                    <td class="py-2.5 text-center">20</td>
+                    <td class="py-2.5 text-center">—</td>
+                    <td class="py-2.5 text-right font-mono font-bold">20</td>
+                  </tr>
+                  <tr class="bg-slate-800/40 font-bold">
+                    <td class="py-2.5 text-white">Grand Total</td>
+                    <td class="py-2.5 text-center text-white">78 Qs</td>
+                    <td class="py-2.5 text-center text-white">31 Qs</td>
+                    <td class="py-2.5 text-right font-mono text-sky-400">140 Marks</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Rules & Policy -->
+          <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 space-y-4">
+            <h3 class="text-base font-bold text-white">Key Examination Regulations</h3>
+            <ul class="text-xs text-slate-300 space-y-3">
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></span>
+                <span><strong>Negative Marking:</strong> 10% penalty for every incorrect choice (i.e. -0.1 on 1-mark questions, -0.2 on 2-mark questions). Unanswered questions suffer no penalty.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-sky-400 mt-1.5 flex-shrink-0"></span>
+                <span><strong>Eligibility Criteria:</strong> Minimum 45% or Grade C in Physics, Chemistry, and Mathematics in +2 Science or A-Levels.</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-1.5 flex-shrink-0"></span>
+                <span><strong>Constituent Campuses:</strong> Pulchowk Campus (Central), Thapathali Campus (Kathmandu), Paschimanchal Campus (WRC Pokhara), Purwanchal Campus (ERC Dharan).</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-pane').forEach(el => el.classList.add('hidden'));
+      const activeTab = document.getElementById('tab-' + tabId);
+      if (activeTab) activeTab.classList.remove('hidden');
+
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        if (btn.getAttribute('data-tab') === tabId) {
+          btn.classList.add('bg-sky-500/10', 'text-sky-400', 'border', 'border-sky-500/20');
+          btn.classList.remove('text-slate-300');
+        } else {
+          btn.classList.remove('bg-sky-500/10', 'text-sky-400', 'border', 'border-sky-500/20');
+          btn.classList.add('text-slate-300');
+        }
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function filterLearn(subject) {
+      switchTab('learn');
+      const cards = document.querySelectorAll('.learn-card');
+      cards.forEach(card => {
+        if (subject === 'all' || card.getAttribute('data-subject') === subject) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      document.querySelectorAll('.filter-pill').forEach(pill => {
+        if (pill.getAttribute('data-filter') === subject) {
+          pill.classList.add('bg-sky-500', 'text-slate-950');
+          pill.classList.remove('bg-slate-800', 'text-slate-300');
+        } else {
+          pill.classList.remove('bg-sky-500', 'text-slate-950');
+          pill.classList.add('bg-slate-800', 'text-slate-300');
+        }
+      });
+    }
+
+    function handleSearch(query) {
+      const q = query.trim().toLowerCase();
+      if (!q) {
+        document.querySelectorAll('.learn-card').forEach(c => c.classList.remove('hidden'));
+        return;
+      }
+      switchTab('learn');
+      document.querySelectorAll('.learn-card').forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if (text.includes(q)) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    let score = 0;
+    const answered = {};
+
+    function checkAnswer(qid, choice, isCorrect) {
+      if (answered[qid]) return;
+      answered[qid] = true;
+
+      const parent = document.querySelector(`.quiz-item[data-qid="${qid}"]`);
+      const buttons = parent.querySelectorAll('.opt-btn');
+      buttons.forEach(btn => {
+        btn.disabled = true;
+        btn.classList.remove('hover:border-slate-700');
+      });
+
+      const explanation = document.getElementById(`explanation-${qid}`);
+      if (explanation) explanation.classList.remove('hidden');
+
+      if (isCorrect) {
+        score += 1;
+        event.currentTarget.classList.add('bg-emerald-500/20', 'border-emerald-500', 'text-emerald-300');
+      } else {
+        event.currentTarget.classList.add('bg-rose-500/20', 'border-rose-500', 'text-rose-300');
+      }
+      document.getElementById('scoreDisplay').innerText = `${score} / 2`;
+    }
+
+    function resetPractice() {
+      score = 0;
+      for (const k in answered) delete answered[k];
+      document.getElementById('scoreDisplay').innerText = `0 / 2`;
+      document.querySelectorAll('.opt-btn').forEach(btn => {
+        btn.disabled = false;
+        btn.classList.remove('bg-emerald-500/20', 'border-emerald-500', 'text-emerald-300', 'bg-rose-500/20', 'border-rose-500', 'text-rose-300');
+        btn.classList.add('hover:border-slate-700');
+      });
+      document.querySelectorAll('[id^="explanation-"]').forEach(el => el.classList.add('hidden'));
+    }
+
+    function sendQuickPrompt(promptText) {
+      document.getElementById('aiInput').value = promptText;
+      handleAiSend();
+    }
+
+    function handleAiSend() {
+      const input = document.getElementById('aiInput');
+      const text = input.value.trim();
+      if (!text) return;
+      input.value = '';
+
+      const chatBox = document.getElementById('aiChatBox');
+      
+      // User bubble
+      const userDiv = document.createElement('div');
+      userDiv.className = 'flex items-start gap-3 justify-end';
+      userDiv.innerHTML = `
+        <div class="space-y-1 max-w-xl bg-sky-500/20 p-3.5 rounded-2xl border border-sky-500/30 text-sky-100">
+          <p class="font-bold text-sky-400 text-right">You</p>
+          <p>${escapeHtml(text)}</p>
+        </div>
+      `;
+      chatBox.appendChild(userDiv);
+
+      // Bot response simulating Veer
+      setTimeout(() => {
+        const botDiv = document.createElement('div');
+        botDiv.className = 'flex items-start gap-3';
+        botDiv.innerHTML = `
+          <div class="w-7 h-7 rounded-lg bg-sky-500 text-slate-950 font-black flex items-center justify-center flex-shrink-0 text-xs">V</div>
+          <div class="space-y-2 max-w-xl bg-slate-800/80 p-3.5 rounded-2xl border border-slate-700/60 text-slate-200">
+            <p class="font-bold text-sky-400">Veer IOE Tutor</p>
+            <p><strong>Step-by-Step Engineering Strategy:</strong></p>
+            <p>To solve problems of this type in IOE entrance: apply the conservation of energy principle or substitute boundary conditions to eliminate incorrect options immediately. Remember that on CBT, testing option values saves up to 45 seconds per question.</p>
+            <div class="p-2 rounded bg-slate-900 border border-slate-700 font-mono text-[11px] text-cyan-300">
+              Shortcut formula: T = 2&pi; &radic;(L / g_eff) where g_eff = g &plusmn; a
+            </div>
+            <p class="text-[10px] text-slate-400">Grounded in NEB Class 11 &amp; 12 Physics / Mechanics syllabus.</p>
+          </div>
+        `;
+        chatBox.appendChild(botDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }, 500);
+
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+    }
+
+    function toggleSidebarMobile() {
+      const sb = document.getElementById('sidebar');
+      sb.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>

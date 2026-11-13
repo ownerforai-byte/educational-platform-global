@@ -1,0 +1,33 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Backend uses the Admin SDK (bypasses rules). Client reads are
+    // limited to the signed-in user's own docs when Firebase Auth is wired.
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    match /fcm_tokens/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    match /notification_logs/{logId} {
+      allow read: if signedIn() && resource.data.userId == request.auth.uid;
+      allow create: if signedIn() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if false;
+    }
+
+    match /access_sessions/{requestId} {
+      allow read: if signedIn() && resource.data.userId == request.auth.uid;
+      allow write: if false; // server / Cloud Functions only
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

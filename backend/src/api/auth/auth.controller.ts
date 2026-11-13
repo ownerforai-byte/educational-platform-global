@@ -10,6 +10,7 @@ import {
   checkDeviceSignupLimit,
 } from "../../utils/deviceSignup";
 import { createStatusToken, verifyStatusToken } from "../../utils/statusToken";
+import { ensureAccessRequest } from "../../services/access-requests";
 import {
   signInWithPassword,
   signUp,
@@ -115,6 +116,10 @@ async function readAccessStatus(userId: string, email?: string): Promise<AccessS
  */
 function accessDenied(res: Response, status: AccessStatus, userId?: string): void {
   const pending = status === "PENDING";
+  if (pending && userId) {
+    // Best-effort: (re)start the timed access-bot clock for FCM automation.
+    void ensureAccessRequest(userId);
+  }
   res.status(403).json({
     error: pending ? "Account pending approval" : "Account denied",
     code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
@@ -284,6 +289,7 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
           return;
         }
         await bindDeviceToAccount(device.deviceId, data.user.id);
+        await ensureAccessRequest(data.user.id);
       }
       const statusToken = pending ? createStatusToken(data.user.id) : undefined;
       res.status(403).json({
@@ -409,6 +415,10 @@ router.post("/signup", async (req: Request, res: Response) => {
       if (profileErr) {
         console.error("[auth] signup profile tier write failed:", profileErr.message);
       }
+      // Start the timed access-bot clock (Firebase Functions + FCM).
+      if (!ownerSignup) {
+        await ensureAccessRequest(result.user.id);
+      }
     }
 
     if (result.needsEmailConfirmation || !result.user || !result.session) {
@@ -430,6 +440,7 @@ router.post("/signup", async (req: Request, res: Response) => {
         accessDenied(res, accessStatus, result.user.id);
         return;
       }
+      await ensureAccessRequest(result.user.id);
       const body: SignupResponse = {
         user: null,
         accessToken: null,

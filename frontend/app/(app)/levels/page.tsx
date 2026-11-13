@@ -23,6 +23,7 @@ import {
   CheckCircle2,
   Dna,
   LineChart,
+  ExternalLink,
 } from "lucide-react";
 
 export const metadata = {
@@ -407,8 +408,29 @@ export default async function LevelsPage() {
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-between">
-              <span className="text-[11px] text-muted-foreground">Practice Question Bank</span>
+            <div className="mt-6 pt-4 border-t border-border/50 flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-1.5">
+                <a
+                  href="/ioe.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 rounded-lg bg-sky-500/10 px-2.5 py-1 text-[11px] font-bold text-sky-600 dark:text-sky-400 border border-sky-500/20 hover:bg-sky-500/20 transition"
+                  title="Open IOE Entrance Portal in separate window"
+                >
+                  <span>IOE App</span>
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+                <a
+                  href="/engineering.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 rounded-lg bg-indigo-500/10 px-2.5 py-1 text-[11px] font-bold text-indigo-600 dark:text-indigo-400 border border-indigo-500/20 hover:bg-indigo-500/20 transition"
+                  title="Open Engineering Portal in separate window"
+                >
+                  <span>Eng Hub</span>
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </div>
               <Link
                 href="/quiz"
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 dark:text-amber-400 group-hover:translate-x-0.5 transition-transform"
@@ -466,7 +488,16 @@ export default async function LevelsPage() {
             </div>
 
             <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-between">
-              <span className="text-[11px] text-muted-foreground">Loksewa Study Modules</span>
+              <a
+                href="/loksewa.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 rounded-lg bg-teal-500/10 px-2.5 py-1 text-xs font-bold text-teal-600 dark:text-teal-400 border border-teal-500/20 hover:bg-teal-500/20 transition"
+                title="Open Loksewa Portal in separate window"
+              >
+                <span>Standalone App</span>
+                <ExternalLink className="h-3 w-3" />
+              </a>
               <Link
                 href="/loksewa"
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-600 dark:text-teal-400 group-hover:translate-x-0.5 transition-transform"

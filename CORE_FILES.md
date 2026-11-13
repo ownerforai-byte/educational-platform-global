@@ -78,6 +78,8 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/lib/note-routes.ts` | Canonical note routing and `duplicateType` source selection. |
 | `frontend/components/content/topic-vertical-notes.tsx` | Single theory presentation surface for every canonical topic note. |
 | `frontend/components/content/content-tabs.tsx` | Companion-only topic tabs; no repeated theory, formulas, summaries, or practice. |
+| `frontend/features/docs/academic-doc-layout.tsx` | Global Academic Docs Viewer System: Standardized paper layout (`DocPaper`), reader controls (Print/PDF, font sizing, link copy), KaTeX formula typesetting, and highlighted card system (`DocHighlightCard`) for all academic and knowledge-based data across topics, lab theory, concept panels, Loksewa knowledge, and IOE/CEE/NEB exam preparation guides and model questions. |
+| `frontend/features/docs/doc-view.tsx` | Unified Docs Viewer implementation for all 696 syllabus topics with concept maps, explanations, equations, traps, and practice. |
 | `frontend/lib/content/topic-supplemental.ts` | Classified supplemental content selector: maps the manifest's guides / formula sheets / practice sets / worked examples / PYQs / graphs to their exact syllabus topic, or to the unit page when the file names no topic. |
 | `frontend/components/content/topic-supplemental-materials.tsx` | Renders those selected entries on the topic and unit pages through `MathMarkdown` (never as raw JSON). |
 | `frontend/features/syllabus/language-pro.ts` | Language pro registry (`LANGUAGE_PRO_SUBJECTS`) — the one list that decides which subjects get companion-only topic pages; read by the `/pro` routes, the tab profile resolver and the topic links. |
@@ -195,6 +197,7 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/lib/supabase/oauth-config.ts` | **[IMPORTANT CORE FILE]** Single source of truth for Google OAuth wiring: canonical site/callback URLs, `oauthCallbackUrl()`, and the actionable "Access blocked" diagnostic. Both the sign-in button and the callback page read from here. |
 | `frontend/features/auth/components/social-auth-buttons.tsx` | **[IMPORTANT CORE FILE]** Starts Google OAuth with the canonical `redirectTo` and surfaces blocked-provider errors with the exact URLs to register. |
 | `frontend/tests/lib/oauth-config.test.ts` | Regression gate for canonical callback resolution, env overrides and blocked-error diagnosis. |
+| `frontend/public/{ioe,loksewa,engineering,ad-p-table}.html` | **[IMPORTANT CORE FILE]** Dedicated standalone sub-portal HTML applications (IOE entrance, Loksewa civil service, Engineering/NEC licensure, Ad P Table) with dedicated modular stylesheets in `frontend/public/css/`. |
 
 > Auth surfaces (`/login`, `/signup`, `/welcome`, `/welcome/no-account`, `/auth/callback`) are deliberately **not** listed in `navigation.ts` / `site-index.ts` — they are reached from the access screen, not from the public menu. `route-links.test.ts` still verifies every hardcoded href resolves.
 

@@ -36,6 +36,20 @@ export default function LoksewaPage() {
         <p className="mt-2 text-muted-foreground">
           Prepare for Loksewa with curated materials and practice sets. Big picture: public service is the point where knowledge meets citizenship.
         </p>
+        <div className="mt-4 pt-4 border-t border-border/40 flex flex-wrap items-center gap-3">
+          <a
+            href="/loksewa.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-xs font-bold text-primary-foreground shadow-sm hover:opacity-90 transition"
+          >
+            <span>Open Dedicated Loksewa Portal (Standalone App)</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <span className="text-xs text-muted-foreground">
+            Opens in a separate window with full sidebar, live search, AI tools, and timed GK drills.
+          </span>
+        </div>
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

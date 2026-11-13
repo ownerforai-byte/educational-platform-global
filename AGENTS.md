@@ -45,6 +45,7 @@ npm run classify -- --all
 | Syllabus/content | `frontend/lib/core/syllabus.ts`, `frontend/lib/note-routes.ts` | Only the requested subject/unit/topic payload and its schema/test |
 | Backend corpus retrieval | `backend/src/ai/curriculum-corpus.ts` and source tests | Only the named corpus/source record; do not inspect whole OCR or KB directories |
 | Labs, graphs, PYQs, formulas | `frontend/features/lab/…` + registries in `CORE_FILES.md` | Specific registry entry and consumer |
+| Academic Docs Viewer & Layout | `frontend/features/docs/academic-doc-layout.tsx`, `frontend/features/docs/doc-view.tsx` | Target content view (all new readable academic content must use this layout) |
 | Build/check behavior | root `package.json`, `scripts/ci/scoped-check.mjs`, `BRANCHES.md` | The one script/config implicated by the task |
 | Types hub | `frontend/types/` | Feature-local `features/*/types.ts` stay in features |
 

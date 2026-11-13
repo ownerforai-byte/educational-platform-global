@@ -3,13 +3,7 @@ import { z } from "zod";
 import { normalizeRole } from "../../auth/types";
 import { isApprovedAccount, loadProfileAccess } from "../../middleware/auth";
 import { supabaseAdmin } from "../../db/supabase";
-import {
-  hasR2PublicBase,
-  isR2StorageActive,
-  r2Upload,
-  looksLikeSupabaseStorageLimit,
-  supabaseStorageHealth,
-} from "../../storage/r2";
+import { routeBinaryUpload, storageTiersHealth } from "../../storage/router";
 
 const router = Router();
 
@@ -57,10 +51,7 @@ async function requireContentEditor(req: Request, res: Response) {
 }
 
 /**
- * Storage health: report Supabase usage so we can see "about to run out"
- * BEFORE an upload fails. Read-only, returns sizes only. R2 overflow state
- * is included so the dashboard can say "ready to catch overflow" or
- * "not configured yet".
+ * Three-tier storage health (Supabase / Firebase / R2).
  */
 router.get("/health", async (req: Request, res: Response) => {
   const auth = await requireUser(req, res);
@@ -72,22 +63,12 @@ router.get("/health", async (req: Request, res: Response) => {
     return;
   }
 
-  const supabase = await supabaseStorageHealth();
-  res.json({
-    primary: { provider: "supabase", ...supabase },
-    overflow: {
-      provider: "r2",
-      configured: isR2StorageActive(),
-      // Without a public base, overflow files are only reachable through a
-      // 7-day signed URL. Surfaced here so the dashboard can show that an
-      // overflowed link will expire instead of assuming it is permanent.
-      permanentUrls: hasR2PublicBase(),
-    },
-  });
+  const tiers = await storageTiersHealth();
+  res.json(tiers);
 });
 
 // No multer/busboy available (no new deps), so uploads arrive as base64 JSON.
-const MAX_BYTES = 10 * 1024 * 1024; // 10 MB decoded cap (mirrors original multipart limit)
+const MAX_BYTES = 10 * 1024 * 1024; // 10 MB decoded cap
 const ALLOWED_MIME_TYPES = [
   "image/png",
   "image/jpeg",
@@ -95,11 +76,11 @@ const ALLOWED_MIME_TYPES = [
   "application/pdf",
 ] as const;
 const PATH_REGEX = /^[A-Za-z0-9/._-]+$/;
-const BUCKET_REGEX = /^[A-Za-z0-9._-]{1,100}$/;
 
 const uploadSchema = z
   .object({
-    bucket: z.string().regex(BUCKET_REGEX).optional(),
+    /** Deprecated — binaries no longer use Supabase Storage buckets. */
+    bucket: z.string().optional(),
     path: z.string().min(1).max(1024),
     contentType: z.string().min(1),
     dataBase64: z.string().min(1),
@@ -116,11 +97,8 @@ router.post("/upload", async (req: Request, res: Response) => {
     return;
   }
 
-  const { bucket: bucketParam, path, contentType } = parsed.data;
-  const bucket =
-    (bucketParam ?? process.env.SUPABASE_STORAGE_BUCKET) || "resources";
+  const { path, contentType } = parsed.data;
 
-  // Reject path traversal before anything else touches storage.
   if (path.includes("..")) {
     res.status(400).json({ error: "Invalid path" });
     return;
@@ -154,65 +132,19 @@ router.post("/upload", async (req: Request, res: Response) => {
     return;
   }
 
-  // The bucket is chosen per request, so verify it before uploading. A missing
-  // bucket used to surface as an opaque 500, and a PRIVATE bucket returned a
-  // "publicUrl" that could never load (getPublicUrl does not check visibility)
-  // — a dead link discovered only after the upload had succeeded.
-  const { data: bucketInfo, error: bucketError } = await supabaseAdmin.storage.getBucket(bucket);
-  if (bucketError || !bucketInfo) {
-    res.status(400).json({ error: `Storage bucket "${bucket}" does not exist` });
-    return;
-  }
-  if (bucketInfo.public !== true) {
-    res.status(400).json({
-      error: `Storage bucket "${bucket}" is private and cannot return a public URL`,
-    });
-    return;
-  }
-
   try {
-    const { data, error } = await supabaseAdmin.storage
-      .from(bucket)
-      .upload(path, buffer, { contentType, upsert: false });
-
-    if (error || !data) {
-      console.error("storage upload failed:", error?.message);
-
-      // Overflow (owner 2026-10-24): Supabase is primary; only when its
-      // upload fails on a storage-limit/quota error does the same file go to
-      // Cloudflare R2. R2 is never used before Supabase has actually run out
-      // of room, and nothing is seeded there ahead of time.
-      if (isR2StorageActive() && looksLikeSupabaseStorageLimit(error)) {
-        try {
-          const { url } = await r2Upload(path, buffer, contentType);
-          console.info(
-            `[storage] Supabase at quota - overflowed to R2 "${path}"`,
-          );
-          res.status(201).json({
-            path,
-            publicUrl: url,
-            storedIn: "r2",
-          });
-          return;
-        } catch (r2Err) {
-          console.error(
-            "[storage] R2 overflow failed:",
-            r2Err instanceof Error ? r2Err.message : r2Err,
-          );
-        }
-      }
-
-      res.status(500).json({ error: "Upload failed" });
-      return;
-    }
-
-    const { data: urlData } = supabaseAdmin.storage
-      .from(bucket)
-      .getPublicUrl(data.path);
-
-    res.status(201).json({ path: data.path, publicUrl: urlData.publicUrl });
-  } catch (err: any) {
-    console.error(err);
+    const routed = await routeBinaryUpload({ path, contentType, buffer });
+    res.status(201).json({
+      path: routed.path,
+      publicUrl: routed.publicUrl,
+      storedIn: routed.storedIn,
+      tier: routed.tier,
+    });
+  } catch (err: unknown) {
+    console.error(
+      "[storage] tiered upload failed:",
+      err instanceof Error ? err.message : err,
+    );
     res.status(500).json({ error: "Upload failed" });
   }
 });

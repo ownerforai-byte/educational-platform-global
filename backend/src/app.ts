@@ -46,6 +46,7 @@ import adminRoutes from "./api/admin";
 import ownerRoutes from "./api/owner";
 import userRoutes from "./api/user";
 import userStateRoutes from "./api/user-state";
+import accessRequestsRoutes from "./api/access-requests";
 import biologyRoutes from "./api/biology";
 import periodicTableRoutes from "./api/periodic-table";
 import lessonsRoutes from "./api/lessons";
@@ -178,6 +179,8 @@ export function createApp(): express.Express {
   // the owner's current gate state before it locks a composer on 0 credits.
   app.use("/api/config", configRoutes);
   app.use("/api/auth", authRoutes);
+  // Timed access bot (Firebase Functions + FCM): create/request + device token.
+  app.use("/api/access-requests", accessRequestsRoutes);
   app.use("/api/bookmarks", bookmarksRoutes);
   app.use("/api/chapters", chaptersRoutes);
   app.use("/api/classes", classesRoutes);

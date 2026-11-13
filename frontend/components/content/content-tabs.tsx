@@ -224,7 +224,7 @@ function renderUnitResources(
         ) : (
           <EmptyState
             title={`No interactive resource for ${topicTitle} yet`}
-            description={`The theory for ${topicTitle} is fully covered by the Class 11 Algebra master document above and by this topic's Notes tab — nothing is missing from the syllabus itself. An interactive drill for this specific topic is authored here only when it adds something the notes cannot show.`}
+            description={`The theory for ${topicTitle} is fully covered by the Class 11 Algebra master document above and by this topic's Docs Viewer tab — nothing is missing from the syllabus itself. An interactive drill for this specific topic is authored here only when it adds something the notes cannot show.`}
             action={{
               label: "Open the mathematics notes hub",
               href: `/${classSlug}-notes/mathematics`,
@@ -241,7 +241,7 @@ function renderUnitResources(
     return (
       <EmptyState
         title={`No dedicated interactive resource for ${topicTitle}`}
-        description="This topic's Notes tab carries the full authored theory, and the chapter documents above cover the unit. A purpose-built interactive for this topic is added only when it genuinely teaches something static notes cannot — a missing one here is not a gap in the syllabus coverage."
+        description="This topic's Docs Viewer tab carries the full authored theory, and the chapter documents above cover the unit. A purpose-built interactive for this topic is added only when it genuinely teaches something static notes cannot — a missing one here is not a gap in the syllabus coverage."
         action={{
           label: `Open the ${subjectSlug} notes hub`,
           href: `/${classSlug}-notes/${subjectSlug}`,
@@ -285,11 +285,11 @@ export const LANGUAGE_SYLLABUS_PRO_TAB_IDS = [
 ] as const;
 
 const ALL_COMPANION_TABS: ContentTab[] = [
-  { id: "notes", label: "Notes", icon: BookOpen, minTier: "member", kind: "learning", learningSection: "notes", description: "Understand the canonical notes through a guided four-pass learning path." },
+  { id: "notes", label: "Docs Viewer", icon: FileText, minTier: "member", kind: "learning", learningSection: "notes", description: "Cleanly formatted syllabus document viewer with KaTeX math, highlighted formulas, and key concepts." },
   { id: "mcq", label: "MCQs", icon: ListChecks, minTier: "member", kind: "learning", learningSection: "mcq", description: "Answer topic MCQs vertically with immediate feedback." },
   { id: "numericals", label: "Step-by-step Numericals", icon: Calculator, minTier: "member", kind: "learning", learningSection: "numericals", description: "Follow worked problems, then try the related practice." },
   { id: "entrance", label: "Entrance Question Bank", icon: Target, minTier: "member", kind: "learning", learningSection: "entrance", description: "Practise the full entrance bank in Learn or Test mode." },
-  { id: "self-check", label: "Quick 3 Self-check", icon: Brain, minTier: "member", kind: "learning", learningSection: "self-check", description: "Recall three key ideas without reopening the notes." },
+  { id: "self-check", label: "Quick 3 Self-check", icon: Brain, minTier: "member", kind: "learning", learningSection: "self-check", description: "Recall three key ideas without reopening the document." },
   { id: "curated-notes", label: "Curated Notes", icon: Sparkles, minTier: "member", kind: "curated", description: "One tap — Veer writes compact revision notes from your progress and quiz history." },
   { id: "related", label: "Related Topics", icon: Link2, minTier: "member", kind: "field", field: "related", description: "Topics that connect to this one." },
   { id: "bounds", label: "Bounds & Limits", icon: Target, minTier: "member", kind: "field", field: "bounds", description: "Where each formula stops being valid." },

@@ -1,0 +1,93 @@
+/* ==========================================================================
+   Ad P Table — Dedicated Stylesheet
+   Periodic Table of the Elements & CEE Entrance Preparation
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --primary-glow: rgba(79, 70, 229, 0.45);
+  --active-border: #4f46e5;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+code, kbd, samp, pre {
+  font-family: var(--font-mono);
+}
+
+/* --------------------------------------------------------------------------
+   Element Tile Styling & Interactivity
+   -------------------------------------------------------------------------- */
+.element-cell {
+  min-width: 40px;
+  height: 52px;
+  transition: transform 0.08s ease, opacity 0.12s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+}
+
+@media (min-width: 1024px) {
+  .element-cell {
+    min-width: 48px;
+    height: 58px;
+  }
+}
+
+.element-cell:hover, 
+.element-cell.is-cursor-active {
+  transform: translateY(-3px) scale(1.12);
+  box-shadow: 0 10px 22px -3px rgba(0, 0, 0, 0.28);
+  z-index: 40 !important;
+  opacity: 1 !important;
+  border-color: var(--active-border) !important;
+}
+
+.element-cell.is-pinned {
+  box-shadow: 0 0 0 2.5px var(--active-border), 0 6px 14px -2px var(--primary-glow);
+  z-index: 30;
+  opacity: 1 !important;
+}
+
+/* --------------------------------------------------------------------------
+   Custom Scrollbar
+   -------------------------------------------------------------------------- */
+.custom-scrollbar::-webkit-scrollbar,
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.55);
+}
+
+/* --------------------------------------------------------------------------
+   Animations & Transitions
+   -------------------------------------------------------------------------- */
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.02); }
+}
+
+.pulse-highlight {
+  animation: pulseSubtle 2s infinite ease-in-out;
+}

@@ -1,0 +1,27 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Admin SDK uploads bypass these rules. Client uploads (if enabled later)
+    // are scoped to /users/{uid}/** and capped at 2 MiB for Tier-2 media.
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    match /users/{userId}/{allPaths=**} {
+      allow read: if signedIn() && request.auth.uid == userId;
+      allow write: if signedIn()
+        && request.auth.uid == userId
+        && request.resource.size < 2 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*|application/pdf');
+    }
+
+    match /media/{allPaths=**} {
+      allow read: if true;
+      allow write: if false; // server only
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

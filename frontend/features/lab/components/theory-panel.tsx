@@ -7,17 +7,21 @@ import {
   CheckCircle,
   AlertCircle,
   XCircle,
-  ChevronDown,
   Pencil,
-  Calculator,
-  HelpCircle,
-  Sparkles,
-  Globe,
-  Link2,
+  ChevronDown,
+  FileText,
+  Sigma,
 } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Katex } from "@/components/content/katex";
+import { MathMarkdown } from "@/components/content/math-markdown";
 import { THEORY_CONTENT, type TopicData } from "@/lib/theory-content";
+import {
+  DocPaper,
+  DocToolbar,
+  DocHighlightCard,
+  DocSectionHeading,
+  type DocFontSize,
+  getDocFontClass,
+} from "@/features/docs/academic-doc-layout";
 
 interface TheoryPanelProps {
   title?: string;
@@ -31,10 +35,10 @@ interface TheoryPanelProps {
 }
 
 function NewTheoryPanel({ subject, topic }: { subject?: string; topic?: string }) {
-  const [activeSection, setActiveSection] = useState(0);
-  const [showMistakes, setShowMistakes] = useState(false);
-  const [showPractice, setShowPractice] = useState(false);
   const [activeTab, setActiveTab] = useState<"enriched" | "original">("enriched");
+  const [fontSize, setFontSize] = useState<DocFontSize>("base");
+  const [showMistakes, setShowMistakes] = useState(true);
+  const [showPractice, setShowPractice] = useState(true);
 
   if (!subject || !topic) return null;
 
@@ -42,184 +46,173 @@ function NewTheoryPanel({ subject, topic }: { subject?: string; topic?: string }
 
   if (!data) {
     return (
-      <div className="flex flex-col items-center justify-center py-12 text-center">
-        <BookOpen className="h-12 w-12 text-muted-foreground/50 mb-4" />
-        <h2 className="text-lg font-semibold">Theory Content Coming Soon</h2>
-        <p className="text-sm text-muted-foreground mt-1">
-          Detailed theory for {subject} — {topic} is being prepared.
-        </p>
-      </div>
+      <DocPaper ariaLabel="Theory coming soon">
+        <div className="flex flex-col items-center justify-center py-12 text-center">
+          <BookOpen className="h-12 w-12 text-muted-foreground/50 mb-4" />
+          <h2 className="text-lg font-semibold">Theory Document Coming Soon</h2>
+          <p className="text-sm text-muted-foreground mt-1">
+            Detailed theory for {subject} — {topic} is being prepared in the standard academic format.
+          </p>
+        </div>
+      </DocPaper>
     );
   }
 
   const contentData: TopicData =
     data.enrichedContent && activeTab === "enriched" ? data.enrichedContent : data;
-  const currentSection = contentData.sections[activeSection];
+
+  const fontClass = getDocFontClass(fontSize);
 
   return (
-    <div className="space-y-5">
-      <div className="bg-gradient-to-r from-primary/10 to-transparent p-4 rounded-lg border-l-4 border-primary">
-        <h2 className="text-xl font-bold">{data.title}</h2>
-        <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{data.overview}</p>
-      </div>
+    <DocPaper ariaLabel={`${data.title} lab theory document`}>
+      {/* ── Document Reader Toolbar ── */}
+      <DocToolbar
+        badge="Lab Docs Viewer · Verified Theory Document"
+        title={data.title}
+        subtitle={data.overview}
+        metadata={[
+          { label: subject, tone: "primary" },
+          { label: "Laboratory Theory", tone: "sky" },
+          { label: "LaTeX / KaTeX Typeset", tone: "emerald" },
+          ...(data.enrichedContent
+            ? [{ label: activeTab === "enriched" ? "Enriched Track" : "Original Track", tone: "amber" as const }]
+            : []),
+        ]}
+        fontSize={fontSize}
+        onFontSizeChange={setFontSize}
+      />
 
+      {/* Enriched / Original Tab Switcher if present */}
       {data.enrichedContent && (
-        <div className="flex gap-2 mb-4">
+        <div className="flex gap-2 print:hidden">
           <button
+            type="button"
             onClick={() => setActiveTab("enriched")}
-            className={`px-4 py-2 rounded-lg text-sm font-medium ${
-              activeTab === "enriched" ? "bg-primary text-primary-foreground" : "bg-muted"
+            className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+              activeTab === "enriched"
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted text-muted-foreground hover:text-foreground"
             }`}
           >
-            Enriched Content
+            Enriched Theory
           </button>
           <button
+            type="button"
             onClick={() => setActiveTab("original")}
-            className={`px-4 py-2 rounded-lg text-sm font-medium ${
-              activeTab === "original" ? "bg-primary text-primary-foreground" : "bg-muted"
+            className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+              activeTab === "original"
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted text-muted-foreground hover:text-foreground"
             }`}
           >
-            Original Content
+            Core Theory
           </button>
         </div>
       )}
 
-      <div className="flex flex-wrap gap-1.5">
-        {contentData.sections.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => setActiveSection(idx)}
-            className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-              activeSection === idx
-                ? "bg-primary text-primary-foreground shadow-sm"
-                : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
-            }`}
-          >
-            {idx + 1}. {contentData.sections[idx].heading.replace(/^\d+\.\s*/, "")}
-          </button>
+      {/* ── Theory Sections (Continuous Flow) ── */}
+      <div className="space-y-8">
+        {contentData.sections.map((section, idx) => (
+          <section key={idx} className="space-y-4 print:break-inside-avoid">
+            <DocSectionHeading id={`sec-${idx}`} icon={<BookOpen className="h-4 w-4 text-primary" />}>
+              {section.heading}
+            </DocSectionHeading>
+
+            {/* Main content prose with KaTeX math */}
+            <div className={fontClass}>
+              <MathMarkdown content={section.content} className={fontClass} />
+            </div>
+
+            {/* Formula Block */}
+            {section.formula && (
+              <DocHighlightCard type="formula" title="Mathematical Principle">
+                <div className="overflow-x-auto text-center py-2">
+                  <MathMarkdown content={`$$${section.formula}$$`} className="text-base sm:text-lg" />
+                </div>
+              </DocHighlightCard>
+            )}
+
+            {/* Worked Example */}
+            {section.example && (
+              <DocHighlightCard type="example" title="Worked Application">
+                <div className={fontClass}>
+                  <MathMarkdown content={section.example} className={fontClass} />
+                </div>
+              </DocHighlightCard>
+            )}
+          </section>
         ))}
       </div>
 
-      <Card>
-        <CardHeader className="pb-3">
-          <CardTitle className="flex items-center gap-2 text-lg">
-            <BookOpen className="h-5 w-5 text-primary" />
-            {currentSection.heading}
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <p className="text-foreground leading-relaxed text-sm">{currentSection.content}</p>
-          {currentSection.formula && (
-            <div className="rounded-xl border border-border bg-muted/40 overflow-hidden">
-              <div className="px-4 py-2.5 border-b border-border bg-muted/60">
-                <p className="flex items-center gap-2 text-primary font-semibold text-sm">
-                  <span>📐 Key Formula</span>
-                </p>
-              </div>
-              <div className="p-4 flex items-center justify-center overflow-x-auto">
-                <Katex math={currentSection.formula} displayMode={true} />
-              </div>
-            </div>
-          )}
-          {currentSection.example && (
-            <div className="bg-blue-50 dark:bg-blue-950/20 p-4 rounded-lg border border-blue-200 dark:border-blue-800">
-              <p className="flex items-center gap-2 mb-2 text-blue-700 dark:text-blue-400 font-semibold text-sm">
-                <Lightbulb className="h-4 w-4" />
-                <span>Worked Example</span>
-              </p>
-              <pre className="whitespace-pre-wrap text-sm font-mono text-foreground/90">
-                {currentSection.example}
-              </pre>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-
+      {/* ── Key Points to Remember ── */}
       {contentData.keyPoints && contentData.keyPoints.length > 0 && (
-        <Card className="bg-green-50/50 dark:bg-green-950/20 border-green-200 dark:border-green-800">
-          <CardHeader className="pb-3">
-            <CardTitle className="flex items-center gap-2 text-lg text-green-700 dark:text-green-400">
-              <CheckCircle className="h-5 w-5" />
-              Key Points to Remember
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2">
-              {contentData.keyPoints.map((point, idx) => (
-                <li key={idx} className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 shrink-0" />
-                  <span className="text-sm">{point}</span>
-                </li>
-              ))}
-            </ul>
-          </CardContent>
-        </Card>
+        <section className="space-y-3 print:break-inside-avoid">
+          <DocSectionHeading id="sec-keypoints" icon={<CheckCircle className="h-4 w-4 text-emerald-500" />}>
+            Key Principles &amp; Takeaways
+          </DocSectionHeading>
+          <div className="space-y-2">
+            {contentData.keyPoints.map((point, idx) => (
+              <div
+                key={idx}
+                className="flex items-start gap-3 rounded-xl border border-border/70 bg-emerald-500/5 p-3.5 shadow-2xs print:border-gray-300 print:bg-white"
+              >
+                <CheckCircle className="h-4 w-4 text-emerald-600 mt-0.5 shrink-0 print:text-black" />
+                <div className={fontClass}>
+                  <MathMarkdown content={point} className={`inline ${fontClass}`} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       )}
 
+      {/* ── Common Mistakes to Avoid ── */}
       {contentData.commonMistakes && contentData.commonMistakes.length > 0 && (
-        <Card className="bg-amber-50/50 dark:bg-amber-950/20 border-amber-200 dark:border-amber-800">
-          <CardHeader
-            className="cursor-pointer pb-3"
-            onClick={() => setShowMistakes(!showMistakes)}
-          >
-            <CardTitle className="flex items-center gap-2 text-lg text-amber-700 dark:text-amber-400">
-              <AlertCircle className="h-5 w-5" />
-              Common Mistakes to Avoid
-              <ChevronDown
-                className={`h-4 w-4 ml-auto transition-transform ${
-                  showMistakes ? "rotate-180" : ""
-                }`}
-              />
-            </CardTitle>
-          </CardHeader>
-          {showMistakes && (
-            <CardContent>
-              <ul className="space-y-2">
-                {contentData.commonMistakes.map((mistake, idx) => (
-                  <li key={idx} className="flex items-start gap-2">
-                    <XCircle className="h-4 w-4 text-amber-600 mt-0.5 shrink-0" />
-                    <span className="text-sm">{mistake}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          )}
-        </Card>
+        <section className="space-y-3 print:break-inside-avoid">
+          <DocSectionHeading id="sec-mistakes" icon={<AlertCircle className="h-4 w-4 text-amber-500" />}>
+            Common Misconceptions &amp; Pitfalls
+          </DocSectionHeading>
+          <div className="space-y-2">
+            {contentData.commonMistakes.map((mistake, idx) => (
+              <DocHighlightCard key={idx} type="trap" title={`Pitfall ${idx + 1}`}>
+                <div className={fontClass}>
+                  <MathMarkdown content={mistake} className={`inline ${fontClass}`} />
+                </div>
+              </DocHighlightCard>
+            ))}
+          </div>
+        </section>
       )}
 
+      {/* ── Practice & Test Exercises ── */}
       {contentData.practiceQuestions && contentData.practiceQuestions.length > 0 && (
-        <Card className="bg-violet-50/50 dark:bg-violet-950/20 border-violet-200 dark:border-violet-800">
-          <CardHeader
-            className="cursor-pointer pb-3"
-            onClick={() => setShowPractice(!showPractice)}
-          >
-            <CardTitle className="flex items-center gap-2 text-lg text-violet-700 dark:text-violet-400">
-              <Pencil className="h-5 w-5" />
-              Practice Questions ({contentData.practiceQuestions.length})
-              <ChevronDown
-                className={`h-4 w-4 ml-auto transition-transform ${
-                  showPractice ? "rotate-180" : ""
-                }`}
-              />
-            </CardTitle>
-          </CardHeader>
-          {showPractice && (
-            <CardContent>
-              <ol className="space-y-3">
-                {contentData.practiceQuestions.map((q, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <span className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold bg-violet-100 dark:bg-violet-900/40 text-violet-700 dark:text-violet-300">
-                      {idx + 1}
-                    </span>
-                    <span className="text-sm">{q}</span>
-                  </li>
-                ))}
-              </ol>
-            </CardContent>
-          )}
-        </Card>
+        <section className="space-y-3 print:break-inside-avoid">
+          <DocSectionHeading id="sec-practice" icon={<Pencil className="h-4 w-4 text-violet-500" />}>
+            Practice Questions ({contentData.practiceQuestions.length})
+          </DocSectionHeading>
+          <ol className="space-y-2.5">
+            {contentData.practiceQuestions.map((q, idx) => (
+              <li
+                key={idx}
+                className="flex items-start gap-3 rounded-xl border border-border/70 bg-card p-4 shadow-2xs print:border-gray-300 print:bg-white"
+              >
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-violet-500/10 text-xs font-bold text-violet-600 dark:text-violet-400 print:bg-gray-200 print:text-black">
+                  Q{idx + 1}
+                </span>
+                <div className={`flex-1 ${fontClass}`}>
+                  <MathMarkdown content={q} className={fontClass} />
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
       )}
-    </div>
+
+      {/* Document Footer */}
+      <footer className="border-t border-border/60 pt-4 text-center text-xs text-muted-foreground print:border-black print:text-black">
+        <p>Laboratory &amp; Simulation Theory Document · Formatted with KaTeX &amp; Markdown Engine</p>
+      </footer>
+    </DocPaper>
   );
 }
 
@@ -241,39 +234,44 @@ function OldTheoryPanel({
   if (!title && !vocabulary) return null;
 
   return (
-    <div className="mt-4 space-y-3">
-      {title && <h3 className="font-semibold text-sm text-primary">{title}</h3>}
-      {vocabulary && (
-        <div className="bg-muted p-3 rounded-lg">
-          <p className="text-xs font-semibold text-muted-foreground mb-1">Vocabulary</p>
-          <p className="text-sm">{vocabulary}</p>
-        </div>
+    <DocPaper ariaLabel="Theory document">
+      {title && (
+        <DocToolbar
+          badge="Lab Docs Viewer · Theory Note"
+          title={title}
+          metadata={[{ label: "Core Concept", tone: "primary" }]}
+          showActions={false}
+        />
       )}
-      {look && (
-        <div className="bg-blue-50 dark:bg-blue-950/20 p-3 rounded-lg">
-          <p className="text-xs font-semibold text-blue-700 dark:text-blue-400 mb-1">Look</p>
-          <div className="text-sm">{look}</div>
-        </div>
-      )}
-      {predict && (
-        <div className="bg-amber-50 dark:bg-amber-950/20 p-3 rounded-lg">
-          <p className="text-xs font-semibold text-amber-700 dark:text-amber-400 mb-1">Predict</p>
-          <p className="text-sm">{predict}</p>
-        </div>
-      )}
-      {principle && (
-        <div className="bg-green-50 dark:bg-green-950/20 p-3 rounded-lg">
-          <p className="text-xs font-semibold text-green-700 dark:text-green-400 mb-1">Principle</p>
-          <div className="text-sm">{principle}</div>
-        </div>
-      )}
-      {why && (
-        <div className="bg-purple-50 dark:bg-purple-950/20 p-3 rounded-lg">
-          <p className="text-xs font-semibold text-purple-700 dark:text-purple-400 mb-1">Why</p>
-          <p className="text-sm">{why}</p>
-        </div>
-      )}
-    </div>
+
+      <div className="space-y-4">
+        {vocabulary && (
+          <DocHighlightCard type="definition" title="Vocabulary & Terminology">
+            <p className="text-sm leading-relaxed">{vocabulary}</p>
+          </DocHighlightCard>
+        )}
+        {look && (
+          <DocHighlightCard type="example" title="Visual Observation">
+            <div className="text-sm leading-relaxed">{look}</div>
+          </DocHighlightCard>
+        )}
+        {predict && (
+          <DocHighlightCard type="trick" title="Hypothesis & Prediction">
+            <p className="text-sm leading-relaxed">{predict}</p>
+          </DocHighlightCard>
+        )}
+        {principle && (
+          <DocHighlightCard type="summary" title="Governing Principle">
+            <div className="text-sm leading-relaxed">{principle}</div>
+          </DocHighlightCard>
+        )}
+        {why && (
+          <DocHighlightCard type="formula" title="Underlying Mechanism">
+            <p className="text-sm leading-relaxed">{why}</p>
+          </DocHighlightCard>
+        )}
+      </div>
+    </DocPaper>
   );
 }
 

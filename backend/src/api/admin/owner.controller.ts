@@ -11,6 +11,7 @@ import { invalidateSectionTierCache } from "../../utils/sectionTiers";
 import { authEmailsById, invalidateAuthEmailsCache } from "../../utils/authEmails";
 import { aiSparkLimitFor, aiSparkTierFor } from "../../utils/aiSpark";
 import { sendApprovalEmail } from "../../utils/mailer";
+import { cancelOpenAccessRequests } from "../../services/access-requests";
 
 /**
  * Owner-only router — mounted at /api/owner.
@@ -463,6 +464,7 @@ router.post("/users/bulk-status", requireAuth, async (req: Request, res: Respons
       applied.push(userId);
 
       if (status === "ACTIVE" && target.access_status !== "ACTIVE") {
+        void cancelOpenAccessRequests(userId);
         void (async () => {
           try {
             const { data: authUser } = await supabaseAdmin.auth.admin.getUserById(userId);
@@ -719,6 +721,7 @@ router.patch("/users/:id/status", requireAuth, async (req: Request<{ id: string 
     // becomes ACTIVE the user is told they can sign in. Fire-and-forget —
     // email must never slow down or fail the approval itself.
     if (status === "ACTIVE" && target.access_status !== "ACTIVE") {
+      void cancelOpenAccessRequests(req.params.id);
       void (async () => {
         try {
           const { data: authUser } = await supabaseAdmin.auth.admin.getUserById(

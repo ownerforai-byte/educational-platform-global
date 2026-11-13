@@ -33,6 +33,18 @@ export default function IoePage() {
       ]}
       resources={[
         {
+          label: "Dedicated IOE Entrance Portal (Standalone App)",
+          description: "Opens in a separate window with full sidebar, live search, 140-mark practice drill, and Veer AI numerical solver.",
+          href: "/ioe.html",
+          meta: "Standalone App",
+        },
+        {
+          label: "Engineering Disciplines & NEC License Portal",
+          description: "Dedicated portal for BE Civil, Computer, Electrical, Mechanical disciplines and Nepal Engineering Council licensure prep.",
+          href: "/engineering.html",
+          meta: "Standalone App",
+        },
+        {
           label: "Class 11 Mathematics",
           description: "The first-year mathematics hub and its chapter routes.",
           href: "/class-11-notes/mathematics",

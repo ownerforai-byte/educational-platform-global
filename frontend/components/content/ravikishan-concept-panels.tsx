@@ -4,6 +4,7 @@ import { useEffect, useMemo, useState } from "react";
 import { classDirOfTrack, normalizeClassDir, parseContentPath } from "@/lib/content/paths";
 import { loadData } from "@/lib/data-loader";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { DocPaper, DocToolbar } from "@/features/docs/academic-doc-layout";
 import { EmptyState } from "./empty-state";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -481,31 +482,47 @@ export function ConceptFieldPanel({ field, ...props }: ConceptFieldPanelProps) {
   if (field === "summary") {
     const summary = data.summary?.trim();
     return (
-      <Card className="border-primary/20 bg-gradient-to-br from-primary/5 via-background to-background">
-        <div className="px-3 py-2 flex items-center gap-2 border-b border-border/50">
-          <BookMarked className="h-3.5 w-3.5 text-primary" />
-          <span className="text-xs font-bold text-primary">Topic Summary</span>
-        </div>
-        <div className="p-3 text-sm leading-relaxed">
+      <DocPaper ariaLabel={`Summary for ${props.topicTitle ?? props.topicSlug}`}>
+        <DocToolbar
+          badge="Docs Viewer · Executive Summary"
+          title={`${props.topicTitle ?? props.topicSlug} — Summary`}
+          metadata={[
+            { label: props.subjectSlug, tone: "primary" },
+            { label: "Executive Summary", tone: "emerald" },
+            { label: "LaTeX / KaTeX", tone: "sky" },
+          ]}
+        />
+        <div className="rounded-xl border-l-4 border-emerald-500 bg-emerald-500/10 dark:bg-emerald-500/5 p-5 shadow-2xs">
           {summary ? (
-            <MathMarkdown content={summary} />
+            <MathMarkdown content={summary} className="text-sm leading-relaxed" />
           ) : (
             <p className="text-xs text-muted-foreground/70 italic border border-dashed border-muted-foreground/20 rounded-md p-2.5 bg-background/30">
-              Empty — populate <code className="font-mono text-[10px] bg-muted px-1 rounded">summary</code> when adding content
+              Empty — populate summary when adding content
             </p>
           )}
         </div>
-      </Card>
+      </DocPaper>
     );
   }
 
   const def = KNOWLEDGE_FIELDS.find((f) => f.key === field);
   if (!def) return null;
   return (
-    <FieldCard
-      def={def}
-      items={data[field] as string[] | McqItem[] | string | undefined}
-    />
+    <DocPaper ariaLabel={`${def.label} for ${props.topicTitle ?? props.topicSlug}`}>
+      <DocToolbar
+        badge="Docs Viewer · Knowledge Document"
+        title={`${props.topicTitle ?? props.topicSlug} — ${def.label}`}
+        metadata={[
+          { label: props.subjectSlug, tone: "primary" },
+          { label: def.label, tone: "sky" },
+          { label: "LaTeX / KaTeX", tone: "emerald" },
+        ]}
+      />
+      <FieldCard
+        def={def}
+        items={data[field] as string[] | McqItem[] | string | undefined}
+      />
+    </DocPaper>
   );
 }
 

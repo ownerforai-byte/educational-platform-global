@@ -721,7 +721,7 @@ export function TopicVerticalNotes({
     return (
       <div id="topic-notes" className="flex scroll-mt-24 flex-col items-center justify-center gap-3 py-12" role="status" aria-live="polite" aria-busy="true">
         <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" aria-hidden="true" />
-        <p className="text-sm text-muted-foreground">Loading the canonical notes and learning activities…</p>
+        <p className="text-sm text-muted-foreground">Loading the syllabus document and learning activities…</p>
       </div>
     );
   }
@@ -904,7 +904,7 @@ export function TopicVerticalNotes({
 
       {noteLoadFailed && !activeData && (
         <p role="status" className="rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm leading-relaxed text-foreground">
-          This topic&apos;s note body could not be loaded. Refresh the page to retry; the mind map and quick checks below still work.
+          This topic&apos;s document body could not be loaded. Refresh the page to retry; the mind map and quick checks below still work.
         </p>
       )}
 

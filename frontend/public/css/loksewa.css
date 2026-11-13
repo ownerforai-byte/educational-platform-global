@@ -1,0 +1,89 @@
+/* ==========================================================================
+   Loksewa Aayog Portal — Dedicated Stylesheet
+   Nepal Public Service Commission & General Knowledge Portal
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --loksewa-crimson: #dc2626;
+  --loksewa-crimson-dark: #991b1b;
+  --loksewa-amber: #d97706;
+  --loksewa-emerald: #059669;
+  --loksewa-dark-bg: #030712;
+  --loksewa-card-bg: rgba(17, 24, 39, 0.7);
+  --loksewa-border: rgba(31, 41, 55, 0.8);
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbars */
+.custom-scrollbar::-webkit-scrollbar,
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track,
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}
+
+/* Loksewa Card Glow & Hover */
+.loksewa-card {
+  background: var(--loksewa-card-bg);
+  border: 1px solid var(--loksewa-border);
+  backdrop-filter: blur(12px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.loksewa-card:hover {
+  border-color: rgba(220, 38, 38, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Interactive Option Buttons */
+.opt-btn {
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.opt-btn:hover:not(:disabled) {
+  border-color: #f43f5e;
+  background-color: rgba(244, 63, 94, 0.08);
+}
+
+/* Smooth Tab Transitions */
+.tab-pane {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
