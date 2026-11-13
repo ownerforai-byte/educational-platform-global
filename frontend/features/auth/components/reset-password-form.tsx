@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { AuthField } from "./auth-field";
 import { resetPassword } from "@/lib/api/auth";
 import { AUTH_TRY_AGAIN, authFailureMessage } from "../public-messages";
+import { useAuthFormError } from "../use-auth-form-error";
 
 type Proof = { code?: string; token?: string; oobCode?: string } | null;
 
@@ -21,7 +22,7 @@ export function ResetPasswordForm() {
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState("");
+  const { error, setError, clearError } = useAuthFormError();
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
 
@@ -39,7 +40,7 @@ export function ResetPasswordForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
+    clearError();
 
     if (password.length < 8 || password.length > 72 || password !== confirm) {
       setError(AUTH_TRY_AGAIN);

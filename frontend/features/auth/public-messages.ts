@@ -9,7 +9,14 @@ export const AUTH_NO_CONNECTION =
 export const AUTH_TEMPORARILY_UNAVAILABLE =
   "Temporarily unavailable. Please try again.";
 
+/** How long transient outage copy stays visible before the form clears it. */
+export const AUTH_TEMPORARY_ERROR_MS = 3000;
+
 export const AUTH_TRY_AGAIN = "Please try again.";
+
+export function isTemporaryAuthError(message: string): boolean {
+  return message === AUTH_TEMPORARILY_UNAVAILABLE;
+}
 
 export type AuthFailureKind = "login" | "signup" | "oauth" | "password";
 

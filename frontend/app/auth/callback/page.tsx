@@ -3,7 +3,11 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { firebaseConsumeRedirectResult, useFirebaseClientAuth } from "@/lib/firebase/client-auth";
+import {
+  firebaseConsumeRedirectResult,
+  firebaseGoogleSignIn,
+  useFirebaseClientAuth,
+} from "@/lib/firebase/client-auth";
 import { getSupabaseBrowserClient } from "@/lib/supabase/browser";
 import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
 import { apiFetch, setStoredToken } from "@/lib/api-client";
@@ -18,6 +22,7 @@ import {
   rememberPendingSignup,
 } from "@/features/auth/pending-signup-identity";
 import { authFailureMessage } from "@/features/auth/public-messages";
+import { useAuthFormError } from "@/features/auth/use-auth-form-error";
 import type { OAuthSessionResponse } from "@/types/api";
 
 /**
@@ -48,7 +53,9 @@ function AuthCallbackContent() {
   const searchParams = useSearchParams();
   const { refresh } = useAuth();
   const callbackStarted = useRef(false);
-  const [error, setError] = useState("");
+  const { error, setError } = useAuthFormError("", {
+    onTemporaryCleared: () => router.replace("/login"),
+  });
 
   useEffect(() => {
     if (callbackStarted.current) return;
@@ -61,18 +68,27 @@ function AuthCallbackContent() {
           throw new Error("oauth_denied");
         }
 
-        const state = sessionStorage.getItem("neb_oauth_csrf");
-        if (!state || !/^[a-f0-9]{64}$/.test(state)) {
-          throw new Error("Sign-in verification expired or failed. Please try again.");
-        }
-
         let accessToken: string;
         let refreshToken: string | undefined;
         if (useFirebaseClientAuth()) {
+          const state = sessionStorage.getItem("neb_oauth_csrf");
+          if (!state || !/^[a-f0-9]{64}$/.test(state)) {
+            throw new Error("Sign-in verification expired or failed. Please try again.");
+          }
+
+          if (searchParams.get("firebase_start") === "1") {
+            await firebaseGoogleSignIn("redirect");
+            return;
+          }
+
           const idToken = await firebaseConsumeRedirectResult();
           if (!idToken) throw new Error("The provider did not return a valid session.");
           accessToken = idToken;
         } else {
+          const state = sessionStorage.getItem("neb_oauth_csrf");
+          if (!state || !/^[a-f0-9]{64}$/.test(state)) {
+            throw new Error("Sign-in verification expired or failed. Please try again.");
+          }
           const code = searchParams.get("code");
           if (!code) throw new Error("The provider did not return an authorization code.");
           const client = getSupabaseBrowserClient();
@@ -83,13 +99,16 @@ function AuthCallbackContent() {
           refreshToken = data.session.refresh_token;
         }
 
+        const csrfState = sessionStorage.getItem("neb_oauth_csrf");
+        if (!csrfState) throw new Error("Sign-in verification expired or failed. Please try again.");
+
         const response = await apiFetch<OAuthSessionResponse>("/api/auth/oauth/session", {
           method: "POST",
-          headers: { "X-CSRF-Token": state },
+          headers: { "X-CSRF-Token": csrfState },
           body: JSON.stringify({
             accessToken,
             ...(refreshToken ? { refreshToken } : {}),
-            state,
+            state: csrfState,
           }),
         });
         sessionStorage.removeItem("neb_oauth_csrf");

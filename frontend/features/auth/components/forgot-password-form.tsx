@@ -7,16 +7,17 @@ import { Button } from "@/components/ui/button";
 import { AuthField } from "./auth-field";
 import { forgotPassword } from "@/lib/api/auth";
 import { authFailureMessage } from "../public-messages";
+import { useAuthFormError } from "../use-auth-form-error";
 
 export function ForgotPasswordForm() {
   const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+  const { error, setError, clearError } = useAuthFormError();
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
+    clearError();
     setLoading(true);
     try {
       await forgotPassword(email.trim());

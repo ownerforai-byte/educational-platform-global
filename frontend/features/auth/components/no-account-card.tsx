@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Clock3, GraduationCap, LogIn, PenLine } from "lucide-react";
-import { APPROVAL_DISPATCH_ROUTE } from "@/features/auth/pending-signup-identity";
+import { ArrowRight, GraduationCap, LogIn, PenLine } from "lucide-react";
 import { GUEST_SIGNIN_NOTE } from "./guest-signin-note";
 
 /**
@@ -56,14 +55,6 @@ export function NoAccountCard() {
         >
           <LogIn className="h-4 w-4" />
           Sign in
-        </Link>
-        <Link
-          href={APPROVAL_DISPATCH_ROUTE}
-          data-testid="no-account-check-approval"
-          className="inline-flex h-11 items-center gap-2 rounded-2xl border border-border/70 bg-muted/30 px-5 text-sm font-semibold text-foreground transition-colors hover:bg-muted/60 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
-        >
-          <Clock3 className="h-4 w-4 text-primary" />
-          Check approval status
         </Link>
       </div>
 

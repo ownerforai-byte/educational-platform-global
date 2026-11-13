@@ -1,6 +1,12 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Clock3, GraduationCap, LogIn, PenLine } from "lucide-react";
-import { APPROVAL_DISPATCH_ROUTE } from "@/features/auth/pending-signup-identity";
+import {
+  APPROVAL_DISPATCH_ROUTE,
+  hasPendingSignup,
+} from "@/features/auth/pending-signup-identity";
 import { ACCESS_NOTICE } from "./access-notice";
 
 /**
@@ -8,7 +14,7 @@ import { ACCESS_NOTICE } from "./access-notice";
  * without an account (designer 2026-11-13).
  *
  * One composition: brand first, a short handwritten-feeling note, then the
- * three actions — create account, sign in, check approval status.
+ * create account and sign in; check approval status only after signup on this device.
  */
 
 export const GUEST_SIGNIN_NOTE =
@@ -23,6 +29,11 @@ type GuestSignInNoteProps = {
 
 export function GuestSignInNote({ variant = "page" }: GuestSignInNoteProps) {
   const isPage = variant === "page";
+  const [showApprovalStatus, setShowApprovalStatus] = useState(false);
+
+  useEffect(() => {
+    setShowApprovalStatus(hasPendingSignup());
+  }, []);
 
   return (
     <div
@@ -173,26 +184,30 @@ export function GuestSignInNote({ variant = "page" }: GuestSignInNoteProps) {
             <LogIn className="h-4 w-4" aria-hidden="true" />
             Sign in
           </Link>
-          <Link
-            href={APPROVAL_DISPATCH_ROUTE}
-            data-testid="guest-note-approval"
-            className="inline-flex h-12 items-center gap-2 rounded-2xl border border-border/70 bg-muted/30 px-5 text-sm font-semibold text-foreground transition hover:bg-muted/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-          >
-            <Clock3 className="h-4 w-4 text-primary" aria-hidden="true" />
-            Check approval status
-          </Link>
+          {showApprovalStatus ? (
+            <Link
+              href={APPROVAL_DISPATCH_ROUTE}
+              data-testid="guest-note-approval"
+              className="inline-flex h-12 items-center gap-2 rounded-2xl border border-border/70 bg-muted/30 px-5 text-sm font-semibold text-foreground transition hover:bg-muted/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            >
+              <Clock3 className="h-4 w-4 text-primary" aria-hidden="true" />
+              Check approval status
+            </Link>
+          ) : null}
         </div>
 
-        <Link
-          href={APPROVAL_DISPATCH_ROUTE}
-          data-testid="approval-status-link"
-          className={`mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-primary transition hover:underline ${
-            isPage ? "" : "justify-center"
-          }`}
-        >
-          <Clock3 className="h-3.5 w-3.5" aria-hidden="true" />
-          Already created an account? Check your approval status
-        </Link>
+        {showApprovalStatus ? (
+          <Link
+            href={APPROVAL_DISPATCH_ROUTE}
+            data-testid="approval-status-link"
+            className={`mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-primary transition hover:underline ${
+              isPage ? "" : "justify-center"
+            }`}
+          >
+            <Clock3 className="h-3.5 w-3.5" aria-hidden="true" />
+            Already created an account? Check your approval status
+          </Link>
+        ) : null}
 
         <p
           className={`mt-6 inline-flex items-start gap-1.5 text-[11px] font-medium leading-relaxed text-muted-foreground ${

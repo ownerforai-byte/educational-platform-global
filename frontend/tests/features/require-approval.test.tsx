@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 
@@ -76,24 +76,25 @@ describe("RequireApproval — login + owner-approval wall", () => {
     ).toBeGreaterThan(0);
   });
 
-  it("offers sign-in, create-account and the live approval dispatcher", () => {
+  it("offers sign-in and create-account but not approval status without a pending signup", async () => {
     render(<RequireApproval>{CONTENT}</RequireApproval>);
     const hrefs = screen.getAllByRole("link").map((a) => a.getAttribute("href"));
     expect(hrefs).toContain("/login");
     expect(hrefs).toContain("/signup");
-    // Dispatcher re-checks live account-status before opening a content screen.
-    expect(hrefs).toContain("/welcome");
-    expect(screen.getByTestId("approval-status-link").getAttribute("href")).toBe(
-      "/welcome",
-    );
+    await waitFor(() => {
+      expect(screen.queryByTestId("approval-status-link")).toBeNull();
+    });
+    expect(hrefs).not.toContain("/welcome");
   });
 
-  it("keeps the approval-status link on the live dispatcher even with a local token", () => {
+  it("shows the approval-status link after signup on this device", async () => {
     rememberPendingSignup("signed-status-token");
     render(<RequireApproval>{CONTENT}</RequireApproval>);
-    expect(screen.getByTestId("approval-status-link").getAttribute("href")).toBe(
-      "/welcome",
-    );
+    await waitFor(() => {
+      expect(screen.getByTestId("approval-status-link").getAttribute("href")).toBe(
+        "/welcome",
+      );
+    });
   });
 
   it("opens the route for an approved, signed-in account", () => {

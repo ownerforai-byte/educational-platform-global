@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Mail, Lock, Eye, EyeOff, Info, Clock3 } from "lucide-react";
@@ -16,10 +16,12 @@ import {
   DENIED_ROUTE,
   WAITING_ROUTE,
   clearPendingSignup,
+  hasPendingSignup,
   rememberAccessOutcome,
   rememberPendingSignup,
 } from "../pending-signup-identity";
 import { DEVICE_SIGNUP_NOTICE } from "./access-notice";
+import { useAuthFormError } from "../use-auth-form-error";
 
 export function LoginForm() {
   const router = useRouter();
@@ -27,12 +29,17 @@ export function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState("");
+  const { error, setError, clearError } = useAuthFormError();
   const [loading, setLoading] = useState(false);
+  const [showApprovalStatus, setShowApprovalStatus] = useState(false);
+
+  useEffect(() => {
+    setShowApprovalStatus(hasPendingSignup());
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
+    clearError();
     setLoading(true);
 
     const result = await loginAction({ email, password });
@@ -157,14 +164,16 @@ export function LoginForm() {
         </Link>
       </p>
 
-      <Link
-        href={APPROVAL_DISPATCH_ROUTE}
-        data-testid="login-approval-status-link"
-        className="flex items-center justify-center gap-1.5 pt-1 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
-      >
-        <Clock3 className="h-3.5 w-3.5" aria-hidden="true" />
-        Check approval status
-      </Link>
+      {showApprovalStatus ? (
+        <Link
+          href={APPROVAL_DISPATCH_ROUTE}
+          data-testid="login-approval-status-link"
+          className="flex items-center justify-center gap-1.5 pt-1 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
+        >
+          <Clock3 className="h-3.5 w-3.5" aria-hidden="true" />
+          Check approval status
+        </Link>
+      ) : null}
     </form>
   );
 }

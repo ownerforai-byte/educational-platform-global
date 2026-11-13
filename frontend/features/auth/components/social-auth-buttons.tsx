@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
-import { firebaseGoogleSignIn, useFirebaseClientAuth } from "@/lib/firebase/client-auth";
+import { useFirebaseClientAuth } from "@/lib/firebase/client-auth";
 import { getSupabaseBrowserClient, isOAuthProviderEnabled } from "@/lib/supabase/browser";
 import { apiFetch } from "@/lib/api-client";
 import { oauthCallbackUrl } from "@/lib/supabase/oauth-config";
@@ -90,7 +90,9 @@ export function SocialAuthButtons({
       sessionStorage.setItem("neb_oauth_csrf", csrfToken);
 
       if (useFirebaseClientAuth()) {
-        await firebaseGoogleSignIn("redirect");
+        // Firebase must return to the same route that calls getRedirectResult().
+        const origin = window.location.origin.replace(/\/+$/, "");
+        window.location.assign(`${origin}/auth/callback?firebase_start=1`);
         redirected = true;
         return;
       }

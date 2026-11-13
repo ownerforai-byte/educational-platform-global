@@ -5,6 +5,7 @@ import {
   AUTH_TEMPORARILY_UNAVAILABLE,
   AUTH_TRY_AGAIN,
   authFailureMessage,
+  isTemporaryAuthError,
 } from "@/features/auth/public-messages";
 
 describe("authFailureMessage", () => {
@@ -50,5 +51,13 @@ describe("authFailureMessage", () => {
 
   it("maps signup validation marker to please try again", () => {
     expect(authFailureMessage(new Error("validation"), "signup")).toBe(AUTH_TRY_AGAIN);
+  });
+});
+
+describe("isTemporaryAuthError", () => {
+  it("matches only the transient outage string", () => {
+    expect(isTemporaryAuthError(AUTH_TEMPORARILY_UNAVAILABLE)).toBe(true);
+    expect(isTemporaryAuthError(AUTH_TRY_AGAIN)).toBe(false);
+    expect(isTemporaryAuthError(AUTH_INVALID_CREDENTIALS)).toBe(false);
   });
 });

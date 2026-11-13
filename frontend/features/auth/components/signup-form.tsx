@@ -14,6 +14,7 @@ import { tierWelcomePathFor } from "@/lib/core/access-level";
 import { rememberPendingSignup } from "../pending-signup-identity";
 import { DEVICE_SIGNUP_NOTICE } from "./access-notice";
 import { AUTH_TRY_AGAIN } from "../public-messages";
+import { useAuthFormError } from "../use-auth-form-error";
 
 const PERKS = ["Save progress across subjects", "Bookmark notes & labs", "Veer quiz credits"];
 
@@ -27,7 +28,7 @@ export function SignupForm() {
   const [showPassword, setShowPassword] = useState(false);
   // Same as the login form: a failed social consent lands back here with the
   // provider flag so the user sees a hint instead of a blank form.
-  const [error, setError] = useState(() =>
+  const { error, setError, clearError } = useAuthFormError(
     searchParams.get("google_error") ? AUTH_TRY_AGAIN : "",
   );
   const [message, setMessage] = useState("");
@@ -35,7 +36,7 @@ export function SignupForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError("");
+    clearError();
     setMessage("");
     setLoading(true);
 
