@@ -344,8 +344,11 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
   tests + build, plus live smoke and the deployed content-ledger audit after deploys.
 - **Supabase project:** `lqzjcwbkpeiqslqhxxmu` (rn-global, ap-northeast-2; migrated 2026-10-16 from legacy `tsvbksfegvdjwczzfdcx` — Management API token in `backend/.env`).
 
-### Auth architecture (as shipped 2026-09-25)
+### Auth architecture (as shipped 2026-09-25; T1 hardened 2026-11-13)
 - httpOnly cookies: `sb-access-token` (1h) + `sb-refresh-token` (30d), set at login/signup.
+- Client no longer mirrors the access token into `localStorage` (XSS surface removed);
+  `credentials: "include"` + optional readable-cookie Bearer only. One-time boot purge of
+  legacy `sb-access-token` localStorage key.
 - `POST /api/auth/refresh` **rotates** via Supabase `refreshSession` (preferred) with a legacy
   access-token revalidate fallback. Users stay signed in past the 1h access-token expiry.
 - Cookie `secure` flag + strict CORS key off `isProductionEnv()` (`src/config/env.ts`), which
@@ -555,4 +558,20 @@ insert into public.profiles (id, full_name, access_status)
 ```
 
 Until that runs, those accounts authenticate but resolve a null profile role.
+
+---
+
+## ARCHITECTURE CHANGE — T1 access-token localStorage removal (2026-11-13)
+
+Removed the XSS-exfiltratable `localStorage["sb-access-token"]` mirror. Session
+auth is cookie-only (`credentials: "include"`); `getStoredToken()` reads a
+readable cookie if present; `setStoredToken` is a no-op; boot purges the legacy
+key. Display/expiry cache remains in `rvk:session` via `session-store.ts`.
+
+## ARCHITECTURE CHANGE — T5 env.example hygiene (2026-11-13)
+
+Root `.env.example` is the sole backend/shared template (`PORT=3000`).
+`backend/.env.example` points at it. `frontend/.env.example` keeps
+`NEXT_PUBLIC_*` placeholders only (real Firebase web config removed).
+`firebase/functions/.gitignore` ignores `.env*`, `lib/`, `node_modules/`.
 

@@ -3,14 +3,14 @@
 /**
  * Persisted session ("stay signed in") store.
  *
- * The access token already lived in localStorage (`sb-access-token`), but the
- * *validated user* did not. So on every reload the app started out believing it
- * was signed out and waitied for `GET /api/auth/me` — and because that call is
- * an `auth/*` path the api-client deliberately never refreshes, an expired
- * (1 hour) access token answered 401 and the provider cleared the session even
- * though the 30-day refresh cookie was still valid. Result: log in again.
+ * The access token lives in an httpOnly cookie; this store only caches the
+ * *validated user* (and optionally a JWT `exp` for silent renewal timing).
+ * Without it, every reload started signed-out and waited for `GET /api/auth/me`
+ * — and because that call is an `auth/*` path the api-client deliberately never
+ * refreshes, an expired (1 hour) access token answered 401 and the provider
+ * cleared the session even though the 30-day refresh cookie was still valid.
  *
- * This module keeps the last server-validated user beside the token so:
+ * This module keeps the last server-validated user (plus expiry hint) so:
  *   • the UI renders the correct state immediately on reload (no flicker,
  *     no spurious "Sign in" button),
  *   • the provider can tell "definitely signed out" apart from "we could not

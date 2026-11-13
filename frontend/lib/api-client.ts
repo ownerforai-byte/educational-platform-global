@@ -21,43 +21,50 @@ const API_BASE =
 
 /**
  * Auth model:
- *  - Both localStorage token and httpOnly `sb-access-token` cookie are supported.
- *  - `Authorization: Bearer <token>` is sent automatically on every request.
+ *  - Session is the httpOnly `sb-access-token` cookie (`credentials: "include"`).
+ *  - A readable cookie (non-httpOnly legacy) may also supply `Authorization: Bearer`.
+ *  - Never mirror the access token into localStorage (XSS-exfiltratable).
  */
+
+const LEGACY_ACCESS_TOKEN_KEY = "sb-access-token";
+let legacyTokenCleared = false;
+
+/** One-time boot cleanup of the pre-T1 localStorage token copy. */
+function purgeLegacyAccessToken(): void {
+  if (legacyTokenCleared || typeof window === "undefined") return;
+  legacyTokenCleared = true;
+  try {
+    localStorage.removeItem(LEGACY_ACCESS_TOKEN_KEY);
+  } catch {
+    // Ignore storage restrictions (e.g. private browsing mode)
+  }
+}
 
 export function getStoredToken(): string | null {
   if (typeof window === "undefined") return null;
-  try {
-    return localStorage.getItem("sb-access-token") || getBearerCookie();
-  } catch {
-    return getBearerCookie();
-  }
+  purgeLegacyAccessToken();
+  return getBearerCookie();
 }
 
-export function setStoredToken(token: string): void {
-  if (typeof window !== "undefined") {
-    try {
-      localStorage.setItem("sb-access-token", token);
-    } catch {
-      // Ignore storage restrictions (e.g. private browsing mode)
-    }
-  }
+/** No-op writer kept for call-site compatibility; cookies are set by the API. */
+export function setStoredToken(_token: string): void {
+  purgeLegacyAccessToken();
 }
 
+/** Drops any leftover legacy localStorage copy (cookies cleared by /api/auth/logout). */
 export function clearStoredToken(): void {
-  if (typeof window !== "undefined") {
-    try {
-      localStorage.removeItem("sb-access-token");
-    } catch {
-      // Ignore storage restrictions
-    }
-  }
+  legacyTokenCleared = false;
+  purgeLegacyAccessToken();
 }
 
 function getBearerCookie(): string | null {
   if (typeof document === "undefined") return null;
   const match = document.cookie.match(/(?:^|; )sb-access-token=([^;]+)/);
   return match ? decodeURIComponent(match[1]) : null;
+}
+
+if (typeof window !== "undefined") {
+  purgeLegacyAccessToken();
 }
 
 function buildHeaders(init?: RequestInit): Record<string, string> {
@@ -147,7 +154,6 @@ async function request<T>(path: string, init?: RequestInit, isRetry = false): Pr
   if (response.status === 401 && !isRetry && !isAuthPath(path)) {
     const refreshed = await refreshSessionShared();
     if (refreshed.ok) {
-      if (refreshed.accessToken) setStoredToken(refreshed.accessToken);
       return request<T>(path, init, true);
     }
     throw unauthorizedError();
