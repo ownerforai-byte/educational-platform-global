@@ -123,9 +123,13 @@ function buildContentSecurityPolicy(nonce: string | null) {
   // the page's own inline bootstrap is allowed by 'unsafe-inline'.
   // Only first-party scripts are allowed: the platform no longer loads ANY
   // third-party browser AI runtime (removed 2026-11-12).
+  // `strict-dynamic` lets nonce-bearing scripts load their children without
+  // enumerating every host; without a nonce (prerender) keep unsafe-inline.
   const scriptSrc = nonce
-    ? `script-src 'self' 'nonce-${nonce}'`
+    ? `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`
     : "script-src 'self' 'unsafe-inline'";
+
+  const apiOrigin = process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com";
 
   return (
     [
@@ -137,13 +141,16 @@ function buildContentSecurityPolicy(nonce: string | null) {
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: https:",
       "font-src 'self' data: https://fonts.gstatic.com",
-      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} ${SUPABASE_ORIGIN} wss: ws:`,
+      // FCM registration + push handshake hosts (web messaging).
+      `connect-src 'self' ${apiOrigin} ${SUPABASE_ORIGIN} https://fcm.googleapis.com https://firebaseinstallations.googleapis.com https://firebase.googleapis.com wss: ws:`,
       // In-app embeds: our own PDFs under /pdfs + /materials, PDF resources on
       // Supabase Storage, Google Drive previews, and the video players.
       "frame-src 'self' " + SUPABASE_ORIGIN + " https://drive.google.com https://docs.google.com https://www.youtube.com https://player.vimeo.com https://webnotee.com",
       // Modern equivalent of the X-Frame-Options above: we may frame ourselves,
       // other sites may not frame us.
       "frame-ancestors 'self'",
+      "object-src 'none'",
+      "base-uri 'self'",
       "worker-src 'self' blob:",
     ].join("; ") + ";"
   );
