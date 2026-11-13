@@ -3,7 +3,7 @@
   "installCommand": "sh -c 'if [ -f package-lock.json ]; then env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm ci; else env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm install; fi'",
   "buildCommand": "env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm run build",
   "outputDirectory": ".next",
-  "ignoreCommand": "sh -c 'case $VERCEL_GIT_COMMIT_REF in dependabot/*) exit 0;; *) exit 1;; esac'",
+  "ignoreCommand": "sh -c 'case $VERCEL_GIT_COMMIT_REF in dependabot/*) exit 0;; esac; git diff --quiet HEAD^ HEAD -- . ../packages/shared && exit 0 || exit 1'",
   "git": {
     "deploymentEnabled": {
       "main": true,

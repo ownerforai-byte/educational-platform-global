@@ -3,6 +3,7 @@ import { type NextRequest, NextResponse } from "next/server";
 import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
 import { isBlockedAutomatedClient } from "@rn/shared/utils";
 
+// Depends on @rn/shared (packages/shared); keep a frontend touch when shared changes so Vercel Root Directory builds run.
 /**
  * Supabase project the frontend talks to. Driven by NEXT_PUBLIC_SUPABASE_URL so
  * a project migration can never strand the CSP allowlist again — the 2026-10

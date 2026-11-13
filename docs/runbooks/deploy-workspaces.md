@@ -10,9 +10,22 @@ The monorepo uses a single root lockfile. Workspaces:
 | Root Directory | `frontend` |
 | Install Command | `npm ci --workspace=educational-platform-frontend` |
 | Build Command | `npm run build` (default) |
+| Ignored Build Step | `frontend/vercel.json` → `ignoreCommand` |
 
 Install from the repo root so the workspace graph and root `overrides` apply.
 Do not restore a nested `frontend/package-lock.json`.
+
+### Shared package (`packages/shared`) must trigger frontend builds
+
+Vercel’s Root Directory is `frontend`. A commit that **only** changes
+`packages/shared` is treated as “didn’t affect this project” and the production
+deploy is **canceled** unless the Ignored Build Step says otherwise.
+
+`frontend/vercel.json` `ignoreCommand` builds when either `frontend/` **or**
+`packages/shared/` changed (and still skips `dependabot/*`). If you change
+only `@rn/shared` and a deploy is still skipped, add a one-line touch under
+`frontend/` (e.g. a comment in `frontend/proxy.ts`, which imports
+`@rn/shared/utils`) and push to `main`.
 
 ## Render (backend)
 
