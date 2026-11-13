@@ -22,7 +22,7 @@ vi.mock("../../src/utils/sectionTiers", () => ({
   }),
 }));
 
-import configRoutes from "../../src/api/config";
+import configRoutes from "../../src/api/admin/config.controller";
 
 const app = express();
 app.use("/api/config", configRoutes);

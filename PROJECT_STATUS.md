@@ -582,3 +582,9 @@ Single root lockfile; nested `frontend`/`firebase/functions` lockfiles removed.
 Overrides live at root only. Firebase Functions depends on `@rn/shared` (no
 `file:../..` monorepo pull). Deploy notes: `docs/runbooks/deploy-workspaces.md`.
 
+## ARCHITECTURE CHANGE — T3 single API registry (2026-11-13)
+
+`app.ts` mounts `app.use("/api", apiRouter)` from `api/index.ts`. Flat
+`api/*.ts` re-export shims deleted; tests import domain controllers.
+Deprecated `middleware/errors.ts` removed (use `error-handler.ts`).
+

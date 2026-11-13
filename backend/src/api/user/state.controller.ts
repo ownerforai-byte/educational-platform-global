@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express";
 import { requireAuth, type AuthedRequest } from "../../middleware/auth";
 import { supabaseAdmin } from "../../db/supabase";
-import { serverError } from "../../middleware/errors";
+import { serverError } from "../../middleware/error-handler";
 
 /**
  * /api/user-state/:namespace — the account-backed home for personal stores.

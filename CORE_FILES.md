@@ -113,7 +113,8 @@ Whenever you need to know how the platform works and where things route, refer O
 | `BRANCHES.md` | Git branch assignment (48 area branches) and scoped test rules. |
 | `frontend/lib/content/paths.ts` | The ONE place that knows the classified `content/` tree: section map, class/unit normalization, path parsing. If the tree moves again, it moves here first. |
 | `backend/src/db/migrations/013_user_state.sql` | Account-backed user state schema + RLS (one row per user/namespace, versioned JSONB). Must be applied before `/api/user-state` works. |
-| `backend/src/api/user-state.ts` | Authenticated GET/PUT/DELETE for personal stores; session-derived identity, optimistic concurrency (409 on stale `baseVersion`). Mounted in `backend/src/app.ts`. |
+| `backend/src/api/user/state.controller.ts` | Authenticated GET/PUT/DELETE for personal stores; session-derived identity, optimistic concurrency (409 on stale `baseVersion`). Mounted via `backend/src/api/index.ts`. |
+| `backend/src/api/index.ts` | Single composed `/api` router (T3); `app.ts` mounts `app.use("/api", apiRouter)`. |
 | `frontend/lib/state/user-state.ts` (shim: `frontend/lib/user-state.ts`) | Sync adapter: pull/push, offline queue + flush, `syncNotes()` merge and `pushNotes()` best-effort write. localStorage stays the render source. |
 | `frontend/lib/state/user-state-core.ts` (shim: `frontend/lib/user-state-core.ts`) | Pure conflict policy: `mergeById` (newest edit wins), bounded single-change-per-namespace queue, payload equality. |
 | `frontend/components/study/notes-sync.tsx` | Invisible sync driver for `/my-notes` (mount, reconnect, tab visibility). |
@@ -194,7 +195,7 @@ Whenever you need to know how the platform works and where things route, refer O
 | `frontend/tests/lib/version-purge.test.ts` | Runs the real `sw.js` in a VM to assert activation deletes all caches, plus source guards on the auto-update registrar. |
 | `frontend/tests/components/pwa/service-worker-registrar.test.tsx` | Rendered test for automatic SKIP_WAITING and the removed update prompt. |
 | `backend/src/ai/complete-answer.ts` | **[IMPORTANT CORE FILE]** Owns `originalResearchPaperLink()` / `shortResearchPaperName()` (owner 2026-11-08): one short-named original-paper link appended to EVERY Veer answer, verified paper host first, honest Semantic Scholar topic search fallback, never an invented DOI. Also the deep-concept research + truncation/depth repair helpers. |
-| `backend/src/api/ai.ts` | **[IMPORTANT CORE FILE]** Veer chat route. Appends `originalResearchPaperLink()` to `answerSuffix` OUTSIDE the academic-upgrade gate so every answered question ends with the paper link; both SSE and JSON replies use that same suffix. |
+| `backend/src/api/ai/chat.controller.ts` | **[IMPORTANT CORE FILE]** Veer chat route. Appends `originalResearchPaperLink()` to `answerSuffix` OUTSIDE the academic-upgrade gate so every answered question ends with the paper link; both SSE and JSON replies use that same suffix. |
 | `backend/tests/ai/research-paper-link.test.ts` | Regression gate for the closing paper link: short names, verified-host preference, insecure/blog rejection, honest fallback, no fabricated DOI. |
 | `frontend/lib/supabase/oauth-config.ts` | **[IMPORTANT CORE FILE]** Single source of truth for Google OAuth wiring: canonical site/callback URLs, `oauthCallbackUrl()`, and the actionable "Access blocked" diagnostic. Both the sign-in button and the callback page read from here. |
 | `frontend/features/auth/components/social-auth-buttons.tsx` | **[IMPORTANT CORE FILE]** Starts Google OAuth with the canonical `redirectTo` and surfaces blocked-provider errors with the exact URLs to register. |

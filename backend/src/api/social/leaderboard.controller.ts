@@ -2,7 +2,7 @@ import { Router, Request, Response } from "express";
 import { supabaseAdmin } from "../../db/supabase";
 import { requireAuth } from "../../middleware/auth";
 import { asyncHandler } from "../../middleware/asyncHandler";
-import { serverError } from "../../middleware/errors";
+import { serverError } from "../../middleware/error-handler";
 import { XP_RULE, xpForSet } from "../../utils/xp";
 
 /**

@@ -23,25 +23,9 @@ vi.mock("../../src/db/supabase", () => {
   };
 });
 
-// Routers owned by another agent (resources/progress/bookmarks) are under
-// active concurrent edits; stub them so mounting the full app stays stable.
-// Auth behaviour itself is probed via the real requireAuth below.
-vi.mock("../../src/api/progress", async () => {
-  const { Router } = await import("express");
-  return { default: Router() };
-});
-vi.mock("../../src/api/bookmarks", async () => {
-  const { Router } = await import("express");
-  return { default: Router() };
-});
-vi.mock("../../src/api/resources", async () => {
-  const { Router } = await import("express");
-  return { default: Router() };
-});
-
-import aiGenerateRoutes from "../../src/api/ai-generate";
-import aiGuestRoutes from "../../src/api/ai-guest";
-import biologyRoutes from "../../src/api/biology";
+import aiGenerateRoutes from "../../src/api/ai/generate.controller";
+import aiGuestRoutes from "../../src/api/ai/guest.controller";
+import biologyRoutes from "../../src/api/content/biology.controller";
 import { createApp } from "../../src/app";
 import { supabaseAdmin } from "../../src/db/supabase";
 import { resetRateLimits } from "../../src/middleware/rateLimit";

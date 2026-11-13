@@ -42,7 +42,7 @@ vi.mock("../../src/middleware/auth", async (importOriginal) => {
   };
 });
 
-import aiImageRoutes from "../../src/api/ai-image";
+import aiImageRoutes from "../../src/api/ai/image.controller";
 import { requireOwnerEmail } from "../../src/middleware/auth";
 import { generateVeerImage } from "../../src/ai/image-gen";
 

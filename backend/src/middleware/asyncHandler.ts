@@ -6,7 +6,7 @@ import type { NextFunction, Request, RequestHandler, Response } from "express";
  * Express 4 does NOT catch a rejected promise returned by an async route
  * handler: the rejection becomes an unhandled rejection and the request hangs
  * (no response, no `errorHandler`). Wrapping every async handler here forwards
- * any rejection to `next(err)`, so `middleware/errors.ts#errorHandler` applies
+ * any rejection to `next(err)`, so `middleware/error-handler.ts#errorHandler` applies
  * the "generic out, detailed in" rule exactly as it does for sync throws.
  *
  * Usage:

@@ -19,7 +19,7 @@ import {
   openSseChannel,
   streamAnswerToStudent,
   type StreamState,
-} from "../../../src/api/ai-stream";
+} from "../../../src/api/ai/stream.controller";
 import { DIAGRAM_HUB_PROVIDER } from "../../../src/ai/config";
 
 function fakeRes() {

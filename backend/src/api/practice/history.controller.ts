@@ -3,7 +3,7 @@ import { z } from "zod";
 import { supabaseAdmin } from "../../db/supabase";
 import { requireAuth, type AuthedRequest } from "../../middleware/auth";
 import { asyncHandler } from "../../middleware/asyncHandler";
-import { serverError } from "../../middleware/errors";
+import { serverError } from "../../middleware/error-handler";
 
 /**
  * Per-user practice attempt log for the textbook solution corpus

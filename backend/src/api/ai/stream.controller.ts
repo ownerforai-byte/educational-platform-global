@@ -39,7 +39,7 @@ import {
   wordCount,
   REPLY_FLOOR_WORDS,
 } from "../../ai/syllabus-anchor";
-import { logServerError, newErrorId } from "../../middleware/errors";
+import { logServerError, newErrorId } from "../../middleware/error-handler";
 
 /** Keep Render/Vercel from closing a stream that is quiet during research. */
 const HEARTBEAT_MS = 15_000;

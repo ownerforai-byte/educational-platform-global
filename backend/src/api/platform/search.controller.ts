@@ -1,7 +1,7 @@
 ﻿import { Router, Request, Response } from "express";
 import { createAIService } from "../../ai/service";
 import { PUBLIC_SITE_URL } from "../../config/env";
-import { serverError } from "../../middleware/errors";
+import { serverError } from "../../middleware/error-handler";
 import { supabaseAdmin } from "../../db/supabase";
 
 interface DbClass {

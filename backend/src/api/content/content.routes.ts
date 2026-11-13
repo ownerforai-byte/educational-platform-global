@@ -24,8 +24,9 @@ router.use("/r-notes", rNotesRouter);
 router.use("/content", revealRouter);
 router.use("/classes", classesRouter);
 router.use("/biology", biologyRouter);
-router.use("/periodic-table", periodicTableRouter);
+// Unlock must win over /periodic-table (also mounted explicitly in api/index).
 router.use("/periodic-table/unlock", periodicUnlockRouter);
+router.use("/periodic-table", periodicTableRouter);
 
 export const contentRoutes = router;
 export default router;

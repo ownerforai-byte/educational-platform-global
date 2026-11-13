@@ -37,7 +37,7 @@ vi.mock("../../src/middleware/auth", async (importOriginal) => {
   };
 });
 
-import aiFigureRoutes from "../../src/api/ai-figure";
+import aiFigureRoutes from "../../src/api/ai/figure.controller";
 import { readApiSource } from "../read-api-source.js";
 import { drawAcademicFigure } from "../../src/ai/figure-draw";
 

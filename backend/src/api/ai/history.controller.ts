@@ -2,7 +2,7 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { requireAuth, requireOwnerEmail } from "../../middleware/auth";
 import { supabaseAdmin } from "../../db/supabase";
-import { logServerError, newErrorId } from "../../middleware/errors";
+import { logServerError, newErrorId } from "../../middleware/error-handler";
 import { createAIService, type AIChatMessage } from "../../ai/service";
 import { getWorkLaneProvider } from "../../ai/config";
 import {

@@ -118,7 +118,7 @@ vi.mock("../../src/middleware/auth", () => ({
   },
 }));
 
-import userStateRoutes from "../../src/api/user-state";
+import userStateRoutes from "../../src/api/user/state.controller";
 
 const app = express();
 app.use(express.json({ limit: "1mb" }));

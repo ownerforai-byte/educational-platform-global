@@ -45,10 +45,10 @@ describe("AI evaluate-answers route (source pins)", () => {
   });
 
   test("evaluate-answers is registered before the /api/ai catch-all", () => {
-    const src = readFileSync(path.resolve(__dirname, "../../src/app.ts"), "utf8");
-    expect(src).toContain('app.use("/api/ai/evaluate-answers", aiEvaluateRoutes)');
-    const evaluateIdx = src.indexOf("/api/ai/evaluate-answers");
-    const catchAllIdx = src.indexOf('app.use("/api/ai", aiRoutes)');
+    const src = readFileSync(path.resolve(__dirname, "../../src/api/ai/ai.routes.ts"), "utf8");
+    expect(src).toContain('router.use("/evaluate-answers", evaluateRouter)');
+    const evaluateIdx = src.indexOf('router.use("/evaluate-answers"');
+    const catchAllIdx = src.indexOf('router.use("/", chatRouter)');
     expect(evaluateIdx).toBeGreaterThan(-1);
     expect(catchAllIdx).toBeGreaterThan(-1);
     expect(evaluateIdx).toBeLessThan(catchAllIdx);

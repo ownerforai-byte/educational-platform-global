@@ -184,11 +184,11 @@ vi.mock("../../src/storage/firebase-store", () => ({
   upsertAccessSession: async () => {},
 }));
 
-const resourcesRouter = (await import("../../src/api/resources")).default;
-const progressRouter = (await import("../../src/api/progress")).default;
-const bookmarksRouter = (await import("../../src/api/bookmarks")).default;
-const controllerRouter = (await import("../../src/api/controller")).default;
-const { storageRoutes } = await import("../../src/api/storage");
+const resourcesRouter = (await import("../../src/api/content/resources.controller")).default;
+const progressRouter = (await import("../../src/api/user/progress.controller")).default;
+const bookmarksRouter = (await import("../../src/api/user/bookmarks.controller")).default;
+const controllerRouter = (await import("../../src/api/admin/controller.controller")).default;
+const storageRoutes = (await import("../../src/api/platform/storage.controller")).default;
 
 type TestRes = { status: number; body: any; cacheControl: string | null };
 

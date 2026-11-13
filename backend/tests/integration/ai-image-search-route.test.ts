@@ -46,7 +46,7 @@ vi.mock("../../src/middleware/auth", async (importOriginal) => {
   };
 });
 
-import imageSearchRoutes from "../../src/api/ai-image-search";
+import imageSearchRoutes from "../../src/api/ai/image-search.controller";
 
 const app = express();
 app.use("/api/ai/image-search", imageSearchRoutes);

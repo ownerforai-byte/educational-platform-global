@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { serverError } from "../../middleware/errors";
+import { serverError } from "../../middleware/error-handler";
 import { normalizeRole } from "../../auth/types";
 import { isApprovedAccount } from "../../middleware/auth";
 import { supabaseAdmin } from "../../db/supabase";

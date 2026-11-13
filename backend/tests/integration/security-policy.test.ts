@@ -4,7 +4,7 @@ import { isOriginAllowed } from "../../src/middleware/cors";
 import { checkStartupEnv, inspectStartupEnv, isProductionEnv } from "../../src/config/env";
 import { rateLimit, resetRateLimits } from "../../src/middleware/rateLimit";
 import { securityHeaders, HSTS_MAX_AGE_SECONDS } from "../../src/middleware/securityHeaders";
-import { errorHandler, serverError } from "../../src/middleware/errors";
+import { errorHandler, serverError } from "../../src/middleware/error-handler";
 
 // ───────────────────────────────────────────────────────────────────────────
 // Test server helper — a fresh app per test so tiers/servers never collide.

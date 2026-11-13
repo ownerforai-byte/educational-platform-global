@@ -95,7 +95,7 @@ vi.mock("../../src/storage/firebase-store", () => ({
   upsertAccessSession: async () => {},
 }));
 
-const { storageRoutes } = await import("../../src/api/storage");
+const storageRoutes = (await import("../../src/api/platform/storage.controller")).default;
 
 type TestRes = { status: number; body: any };
 

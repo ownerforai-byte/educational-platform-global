@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { serverError, ERROR_ID_HEADER } from "../../middleware/errors";
+import { serverError, ERROR_ID_HEADER } from "../../middleware/error-handler";
 import { createAIService, type AIChatMessage } from "../../ai/service";
 import { requireAuth, type AuthedRequest } from "../../middleware/auth";
 import { consumeUserSlot, rollbackUserSlot, readUserSlot } from "../../utils/guestQuota";
@@ -13,7 +13,7 @@ import {
 // only and metered by AI sparks — member 3 / plus 25 / pro 50 per UTC day,
 // owner unlimited. Guests have no Veer access at all: the /api/ai/guest
 // route is closed and answers 403, so only approved members can chat.)
-import { logServerError, newErrorId } from "../../middleware/errors";
+import { logServerError, newErrorId } from "../../middleware/error-handler";
 import {
   answerTierRules,
   appendConsoleRules,

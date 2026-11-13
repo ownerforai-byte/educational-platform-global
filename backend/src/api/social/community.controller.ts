@@ -3,7 +3,7 @@ import { z } from "zod";
 import { supabaseAdmin } from "../../db/supabase";
 import { requireAuth } from "../../middleware/auth";
 import { asyncHandler } from "../../middleware/asyncHandler";
-import { serverError } from "../../middleware/errors";
+import { serverError } from "../../middleware/error-handler";
 import { maskName } from "./leaderboard.controller";
 
 /**

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { XP_RULE, setAccuracy, xpForSet, xpForSets } from "../../src/utils/xp";
-import { cohortSummary, maskName, parseRange, rangeCutoff, rankEntries } from "../../src/api/leaderboard";
+import { cohortSummary, maskName, parseRange, rangeCutoff, rankEntries } from "../../src/api/social/leaderboard.controller";
 
 /**
  * The leaderboard's two kinds of correctness:

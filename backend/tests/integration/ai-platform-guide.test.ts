@@ -6,7 +6,7 @@ import { afterAll, afterEach, beforeEach, describe, expect, it, vi } from "vites
 process.env.AGNES_API_KEY = "test-key";
 process.env.AGNES_PLATFORM_GUIDE_RETRY_DELAY_MS = "1";
 
-const guideRouter = (await import("../../src/api/ai-platform-guide")).default;
+const guideRouter = (await import("../../src/api/ai/platform-guide.controller")).default;
 const { PLATFORM_GUIDE_CREATOR_REPLY, PLATFORM_GUIDE_EMPTY_REPLY, PLATFORM_GUIDE_SYSTEM_PROMPT } =
   await import("../../src/ai/platform-guide-prompt");
 const { resetRateLimits } = await import("../../src/middleware/rateLimit");

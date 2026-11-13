@@ -40,7 +40,7 @@ vi.mock("../../src/middleware/auth", async (importOriginal) => {
   };
 });
 
-import imageHistoryRoutes from "../../src/api/ai-image-history";
+import imageHistoryRoutes from "../../src/api/ai/image-history.controller";
 
 const app = express();
 app.use(cookieParser());

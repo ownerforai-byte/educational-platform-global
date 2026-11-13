@@ -24,7 +24,7 @@ vi.mock("../../src/db/supabase", () => {
 });
 
 import { supabaseAdmin } from "../../src/db/supabase";
-import authRoutes from "../../src/api/auth";
+import authRoutes from "../../src/api/auth/auth.routes";
 import { resetRateLimits } from "../../src/middleware/rateLimit";
 import { sendMail, sendApprovalEmail } from "../../src/utils/mailer";
 

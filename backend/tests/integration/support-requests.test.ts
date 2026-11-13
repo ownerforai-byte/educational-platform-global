@@ -13,7 +13,7 @@ vi.mock("../../src/middleware/auth", () => ({
   },
 }));
 vi.mock("../../src/utils/mailer", () => ({ sendMail: vi.fn() }));
-import router from "../../src/api/support-requests";
+import router from "../../src/api/platform/support.controller";
 import { sendMail } from "../../src/utils/mailer";
 import { rateLimit, resetRateLimits } from "../../src/middleware/rateLimit";
 let server: Server; let base: string;

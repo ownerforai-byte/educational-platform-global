@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { serverError } from "../../middleware/errors";
+import { serverError } from "../../middleware/error-handler";
 import { rateLimit } from "../../middleware/rateLimit";
 import { createAIService, type AIChatMessage } from "../../ai/service";
 import { getWorkLaneProvider } from "../../ai/config";

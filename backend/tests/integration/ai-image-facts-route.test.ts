@@ -44,7 +44,7 @@ vi.mock("../../src/ai/service", () => ({
   createAIService: () => ({ chat: chatMock }),
 }));
 
-import imageFactsRoutes, { parseFactLines } from "../../src/api/ai-image-facts";
+import imageFactsRoutes, { parseFactLines } from "../../src/api/ai/image-facts.controller";
 
 const app = express();
 app.use(express.json());

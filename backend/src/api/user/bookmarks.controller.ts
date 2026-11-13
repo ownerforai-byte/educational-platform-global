@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { serverError } from "../../middleware/errors";
+import { serverError } from "../../middleware/error-handler";
 import { supabaseAdmin } from "../../db/supabase";
 import { requireAuth, type AuthedRequest } from "../../middleware/auth";
 

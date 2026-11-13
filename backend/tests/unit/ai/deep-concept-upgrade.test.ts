@@ -74,9 +74,9 @@ vi.mock("../../../src/middleware/aiSparkGate", () => ({
   requirePlusAiStudio: () => (_req: Request, _res: Response, next: () => void) => next(),
 }));
 
-import chatRoutes from "../../../src/api/ai";
-import mathRoutes from "../../../src/api/ai-math";
-import deepRoutes from "../../../src/api/ai-deep-dive";
+import chatRoutes from "../../../src/api/ai/chat.controller";
+import mathRoutes from "../../../src/api/ai/math.controller";
+import deepRoutes from "../../../src/api/ai/deep-dive.controller";
 import {
   deepConceptResearch,
   formatResearchPaperReferences,

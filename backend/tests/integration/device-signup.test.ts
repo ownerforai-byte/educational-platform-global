@@ -163,7 +163,7 @@ vi.mock("../../src/storage/firebase-store", () => ({
   upsertAccessSession: async () => {},
 }));
 
-const authRouter = (await import("../../src/api/auth")).default;
+const authRouter = (await import("../../src/api/auth/auth.routes")).default;
 const { DEVICE_SIGNUP_LIMIT_MESSAGE, resetDeviceSignupMemory } = await import(
   "../../src/utils/deviceSignup"
 );
