@@ -153,8 +153,10 @@ describe("auth wall wiring", () => {
 
   it("decides the approval-status link via the live dispatcher", () => {
     const gate = read("features/auth/components/require-approval.tsx");
-    expect(gate).toContain("APPROVAL_DISPATCH_ROUTE");
-    expect(gate).toContain('data-testid="approval-status-link"');
+    expect(gate).toContain("GuestSignInNote");
+    const note = read("features/auth/components/guest-signin-note.tsx");
+    expect(note).toContain("APPROVAL_DISPATCH_ROUTE");
+    expect(note).toContain('data-testid="approval-status-link"');
   });
 
   it("keeps the guest home and the plans page public, and the notice board member-only", () => {

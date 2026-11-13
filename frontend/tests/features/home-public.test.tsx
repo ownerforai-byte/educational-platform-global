@@ -51,23 +51,33 @@ describe("guest home — sign in is the only action", () => {
     expect(
       screen.getAllByText(/After signing, the account is approved by the system verification and administrative approval\./).length,
     ).toBeGreaterThan(0);
-    expect(screen.getByRole("link", { name: /sign in/i })).toHaveAttribute("href", "/login");
+    expect(screen.getByRole("link", { name: /^sign in$/i })).toHaveAttribute(
+      "href",
+      "/welcome/join",
+    );
+    expect(screen.getByTestId("guest-home-note-link")).toHaveAttribute(
+      "href",
+      "/welcome/join",
+    );
     expect(screen.getAllByRole("link", { name: /access (notice|works)/i }).some((link) => link.getAttribute("href") === "/plans")).toBe(true);
     expect(screen.getAllByRole("link").map((link) => link.getAttribute("href"))).not.toContain("/notice");
   });
 
-  it("hides every other action — one or two sign-in buttons, nothing else", () => {
+  it("routes guests to the inspiring note before the bare login wall", () => {
     render(<HomePublic />);
 
-    // Account-request and plan CTAs are hidden on the guest home ("hide
-    // others"): sign-up stays on the login page, plans stay on /plans.
+    // Account-request and plan CTAs stay hidden; primary actions open the
+    // guest note (create / sign-in / check approval), not a bare /login wall.
     expect(screen.queryByRole("link", { name: /request an account/i })).toBeNull();
     expect(screen.queryByRole("link", { name: /see all plans/i })).toBeNull();
 
-    const signInLinks = screen
+    const joinLinks = screen
       .getAllByRole("link")
-      .filter((link) => link.getAttribute("href") === "/login");
-    expect(signInLinks).toHaveLength(1); // the shell account button is the second
+      .filter((link) => link.getAttribute("href") === "/welcome/join");
+    expect(joinLinks.length).toBeGreaterThanOrEqual(2);
+    expect(
+      screen.getAllByRole("link").map((link) => link.getAttribute("href")),
+    ).not.toContain("/login");
   });
 
   it("keeps the public overview clear and factual", () => {

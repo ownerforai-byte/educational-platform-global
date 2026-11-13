@@ -30,19 +30,9 @@
  */
 
 import type { ReactNode } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  ArrowRight,
-  Clock3,
-  GraduationCap,
-  LogIn,
-  ShieldCheck,
-} from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { APPROVAL_DISPATCH_ROUTE } from "@/features/auth/pending-signup-identity";
-import { NOTICE_COPY } from "@/features/credits/constants";
-import { ACCESS_NOTICE } from "./access-notice";
+import { GuestSignInNote } from "./guest-signin-note";
 import { VerifyingStatus } from "./verifying-status";
 
 /**
@@ -92,84 +82,11 @@ function ApprovalPending() {
   );
 }
 
-/** The muted access screen shown to visitors without an approved account. */
+/** Inspiring guest note shown to visitors without an approved account. */
 function ApprovalLock() {
-  // Dispatcher re-checks live account-status before opening a content screen.
-  const statusHref = APPROVAL_DISPATCH_ROUTE;
-
   return (
-    <div
-      data-testid="approval-lock"
-      className="mx-auto flex w-full max-w-xl flex-col items-center px-4 py-10 text-center"
-    >
-      <div
-        className="mx-auto inline-flex items-center rounded-2xl border border-border/60 bg-muted/50 px-3 py-1.5 text-muted-foreground/70 grayscale opacity-70"
-        aria-disabled="true"
-      >
-        <span className="text-[10px] font-extrabold uppercase tracking-wider text-primary">
-          Account required
-        </span>
-      </div>
-
-      <h1 className="mt-5 text-xl font-extrabold tracking-tight sm:text-2xl">
-        Sign in to continue
-      </h1>
-      <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
-        Sign in to continue to the study library — notes, labs, the periodic table and more.
-      </p>
-
-      {/* Shared account-approval notice. */}
-      <div className="mt-5 w-full rounded-2xl border border-primary/30 bg-primary/[0.05] p-4">
-        <p className="flex items-start gap-2 text-left text-xs font-semibold leading-relaxed text-foreground">
-          <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-          <span>{NOTICE_COPY}</span>
-        </p>
-      </div>
-
-      {/* Plans live in the footer only (owner 2026-10-25) — no plans button
-          here; sign-in is the single action. */}
-      <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-        <Link
-          href={statusHref}
-          className="inline-flex h-11 items-center gap-2 rounded-2xl bg-primary px-6 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
-        >
-          <Clock3 className="h-4 w-4" />
-          Check approval status
-          <ArrowRight className="h-4 w-4" />
-        </Link>
-        <Link
-          href="/login"
-          className="inline-flex h-11 items-center gap-2 rounded-2xl border border-border/70 bg-card px-5 text-sm font-bold text-foreground transition-all hover:bg-muted/60 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
-        >
-          <LogIn className="h-4 w-4 text-primary" />
-          Sign in
-        </Link>
-        <Link
-          href="/signup"
-          className="inline-flex h-11 items-center gap-2 rounded-2xl border border-border/70 bg-card px-5 text-sm font-bold text-foreground transition-all hover:bg-muted/60 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
-        >
-          <GraduationCap className="h-4 w-4 text-primary" />
-          Create account
-        </Link>
-      </div>
-
-      <Link
-        href={statusHref}
-        data-testid="approval-status-link"
-        className="mt-5 inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:underline"
-      >
-        <Clock3 className="h-3.5 w-3.5" />
-        Already created an account? Check your approval status
-      </Link>
-
-      {/* Shared access message. */}
-      <p
-        data-testid="approval-access-notice"
-        className="mt-6 inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground"
-      >
-        <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
-        {ACCESS_NOTICE}
-      </p>
+    <div data-testid="approval-lock">
+      <GuestSignInNote variant="embedded" />
     </div>
   );
 }

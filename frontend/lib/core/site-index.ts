@@ -739,6 +739,13 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       "The public pages: what the platform does, who it is for, how it works, and what each plan costs.",
     entries: [
       {
+        name: "Guest sign-in note",
+        opening:
+          "An inspiring note for guests without an account — create one, sign in, or check approval status.",
+        href: "/welcome/join",
+        meta: "Public",
+      },
+      {
         name: "About",
         opening: "What this platform is, who builds it and the NEB curriculum it follows.",
         href: "/about",

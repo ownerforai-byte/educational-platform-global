@@ -118,19 +118,23 @@ describe("live approval screens", () => {
 describe("account-screen wiring", () => {
   const read = (p: string) => readFileSync(path.resolve(p), "utf8");
 
-  it("wires all four routes plus the /welcome dispatcher", () => {
+  it("wires all four routes plus the /welcome dispatcher and guest note", () => {
     expect(read("app/welcome/page.tsx")).toContain("ApprovalDispatch");
     expect(read("app/welcome/no-account/page.tsx")).toContain("NoAccountScreen");
     expect(read("app/welcome/pending/page.tsx")).toContain("WelcomeApprovalScreen");
     expect(read("app/welcome/approved/page.tsx")).toContain("ApprovedScreen");
     expect(read("app/welcome/denied/page.tsx")).toContain("DeniedScreen");
     expect(read("app/welcome/rejected/page.tsx")).toContain("DENIED_ROUTE");
+    expect(read("app/welcome/join/page.tsx")).toContain("GuestSignInNote");
   });
 
   it("gates and access link use live resolution", () => {
     const gate = read("features/auth/components/account-screen-gate.tsx");
     expect(gate).toContain("useLiveApprovalRoute");
     expect(read("features/auth/components/require-approval.tsx")).toContain(
+      "GuestSignInNote",
+    );
+    expect(read("features/auth/components/guest-signin-note.tsx")).toContain(
       "APPROVAL_DISPATCH_ROUTE",
     );
     expect(read("features/auth/components/approval-dispatch.tsx")).toContain(

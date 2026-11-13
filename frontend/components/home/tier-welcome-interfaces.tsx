@@ -193,6 +193,13 @@ export function UniversalWelcome() {
           >
             Sign in
           </Link>
+          <Link
+            href="/welcome/join"
+            data-testid="welcome-guest-note"
+            className="inline-flex h-12 items-center rounded-2xl border border-border/70 px-6 text-sm font-semibold text-muted-foreground transition hover:border-primary hover:text-primary"
+          >
+            Read the guest note
+          </Link>
         </div>
 
         {/* ── What lives inside — display-only cards (no server-only imports) ── */}

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Mail, Lock, Eye, EyeOff, Info } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, Info, Clock3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AuthField } from "./auth-field";
 import { loginAction } from "../actions";
@@ -12,6 +12,7 @@ import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/core/access-level";
 import {
+  APPROVAL_DISPATCH_ROUTE,
   DENIED_ROUTE,
   WAITING_ROUTE,
   clearPendingSignup,
@@ -150,7 +151,23 @@ export function LoginForm() {
         >
           Sign Up
         </Link>
+        {" · "}
+        <Link
+          href="/welcome/join"
+          className="font-bold text-[#D2223D] transition-colors hover:underline"
+        >
+          Read the guest note
+        </Link>
       </p>
+
+      <Link
+        href={APPROVAL_DISPATCH_ROUTE}
+        data-testid="login-approval-status-link"
+        className="flex items-center justify-center gap-1.5 pt-1 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
+      >
+        <Clock3 className="h-3.5 w-3.5" aria-hidden="true" />
+        Check approval status
+      </Link>
     </form>
   );
 }

@@ -77,8 +77,8 @@ export function NoAccountScreen() {
 
   return (
     <AuthShell
-      title="No active account found"
-      subtitle="No account is linked to this browser yet."
+      title="A note before you begin"
+      subtitle="No account is linked to this browser yet — create one, sign in, or check approval status."
     >
       <LoggedInRedirect />
       <NoAccountCard />

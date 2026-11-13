@@ -34,7 +34,10 @@ describe("TierHomeRouter — guest first paint", () => {
     render(<TierHomeRouter />);
 
     expect(screen.getByTestId("public-home")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /sign in/i })).toHaveAttribute("href", "/login");
+    expect(screen.getByRole("link", { name: /^sign in$/i })).toHaveAttribute(
+      "href",
+      "/welcome/join",
+    );
     expect(replace).not.toHaveBeenCalled();
   });
 
