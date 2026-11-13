@@ -475,7 +475,7 @@ describe("auth flow", () => {
     { name: "missing status", profile: { role: "member" }, error: null },
     { name: "missing profile", profile: null, error: null },
     { name: "profile lookup failure", profile: null, error: { message: "Unavailable" } },
-  ])("login never issues a session for a non-owner with $name", async ({ profile, error }) => {
+  ])("login never issues a session for a non-owner with $name", async ({ name, profile, error }) => {
     const userId = "11111111-1111-4111-8111-111111111111";
     mocked.auth.signInWithPassword.mockResolvedValue({
       data: {
@@ -499,7 +499,16 @@ describe("auth flow", () => {
       expect(body).not.toHaveProperty("accessToken");
       expect(body).not.toHaveProperty("user");
       expect(setCookiesOf(res)).toEqual([]);
-      expect(mocked.from.mock.calls).toEqual([["profiles"]]);
+      // PENDING paths fire ensureAccessRequest (user_access_requests); REJECTED does not.
+      await vi.waitFor(() => {
+        const tables = mocked.from.mock.calls.map((call) => call[0]);
+        expect(tables[0]).toBe("profiles");
+        if (name === "rejected") {
+          expect(tables).toEqual(["profiles"]);
+        } else {
+          expect(tables).toContain("user_access_requests");
+        }
+      });
     } finally {
       vi.unstubAllEnvs();
     }
@@ -1041,7 +1050,16 @@ describe("auth flow", () => {
       const cleared = setCookiesOf(res).find((value) => value.startsWith("sb-access-token="));
       expect(cleared).toMatch(/expires=thu, 01 jan 1970/i);
       expect(setCookiesOf(res).some((value) => value.startsWith("sb-refresh-token=new-refresh"))).toBe(false);
-      expect(mocked.from.mock.calls).toEqual([["profiles"], ["profiles"], ["profiles"], ["profiles"]]);
+      // PENDING denial also ensures an access-request row (FCM clock); REJECTED does not.
+      await vi.waitFor(() => {
+        const tables = mocked.from.mock.calls.map((call) => call[0]);
+        expect(tables.filter((table) => table === "profiles").length).toBeGreaterThanOrEqual(4);
+        if (accessStatus === "PENDING") {
+          expect(tables).toContain("user_access_requests");
+        } else {
+          expect(tables.every((table) => table === "profiles")).toBe(true);
+        }
+      });
     } finally {
       if (originalKey === undefined) delete process.env.SUPABASE_SERVICE_ROLE_KEY;
       else process.env.SUPABASE_SERVICE_ROLE_KEY = originalKey;
