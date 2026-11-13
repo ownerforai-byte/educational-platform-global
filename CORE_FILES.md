@@ -115,7 +115,11 @@ Whenever you need to know how the platform works and where things route, refer O
 | `backend/src/db/migrations/013_user_state.sql` | Account-backed user state schema + RLS (one row per user/namespace, versioned JSONB). Must be applied before `/api/user-state` works. |
 | `backend/src/api/user/state.controller.ts` | Authenticated GET/PUT/DELETE for personal stores; session-derived identity, optimistic concurrency (409 on stale `baseVersion`). Mounted via `backend/src/api/index.ts`. |
 | `backend/src/api/index.ts` | Single composed `/api` router (T3); `app.ts` mounts `app.use("/api", apiRouter)`. |
-| `frontend/lib/state/user-state.ts` (shim: `frontend/lib/user-state.ts`) | Sync adapter: pull/push, offline queue + flush, `syncNotes()` merge and `pushNotes()` best-effort write. localStorage stays the render source. |
+| `frontend/lib/state/user-state.ts` (shim: `frontend/lib/user-state.ts`) | Sync adapter: pull/push, offline queue + flush, `syncNotes()` / `syncJsonNamespace()` / `scheduleNamespacePush()` for notes + srs/streaks/study-goals/lab-progress/preferences. localStorage stays the render source. |
+| `backend/src/services/credit.service.ts` | CONTENT spark business rules + CAS (real home); `utils/credits.ts` re-exports. |
+| `backend/src/lib/cache.ts` | In-process LRU+TTL for read-only curriculum loaders; pairs with CDN Cache-Control. |
+| `packages/shared/src/api/*` | Shared zod API contracts + envelope types (`@rn/shared/api`). |
+| `firebase/functions/src/jobs/resetCredits.ts` | Scheduled daily spark refill (replaces web-process node-cron). |
 | `frontend/lib/state/user-state-core.ts` (shim: `frontend/lib/user-state-core.ts`) | Pure conflict policy: `mergeById` (newest edit wins), bounded single-change-per-namespace queue, payload equality. |
 | `frontend/components/study/notes-sync.tsx` | Invisible sync driver for `/my-notes` (mount, reconnect, tab visibility). |
 

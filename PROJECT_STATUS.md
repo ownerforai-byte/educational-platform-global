@@ -612,3 +612,20 @@ Deprecated `middleware/errors.ts` removed (use `error-handler.ts`).
 - **T14:** `RateLimitStore` port (`MemoryStore` + optional `UpstashStore`);
   policy table unchanged; selected by `UPSTASH_REDIS_REST_*`.
 
+## ARCHITECTURE CHANGE — T12/T13/T15/T18/T19/T20 (2026-11-13)
+
+- **T12:** Hot paths (`auth` middleware/controller, `creditCheck`, `profile`)
+  use `db/repositories/{user,credit}`; `services/credit.service.ts` owns
+  spend/refund/ensureDailyCredits; `utils/credits.ts` is a shim.
+- **T13:** `@rn/shared/api` zod contracts + envelope; `sendSuccess`/`sendError`
+  adopted on top content/user/config/search routes; `api-client` unwraps
+  `{ ok:true, data }`.
+- **T15:** `backend/src/lib/cache.ts` LRU+TTL on subjects/chapters/r-notes/pyqs;
+  CDN `Cache-Control` on public GETs; `PUBLIC_STATIC` allowlist in next.config.
+- **T18:** Daily credits reset → Firebase `creditsDailyReset`; removed
+  `node-cron` + `jobs/creditsResetJob.ts` from the web process.
+- **T19:** SRS/streaks/study-goals/lab-progress + preferences push through
+  `lib/state/user-state.ts` namespaces; scoped-storage for shell/profile/guide.
+- **T20:** CSP nonces via `frontend/proxy.ts` (`strict-dynamic`, FCM
+  `connect-src`); static CSP line removed from `next.config.mjs`.
+
