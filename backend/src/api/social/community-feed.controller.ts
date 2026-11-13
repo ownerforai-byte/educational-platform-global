@@ -55,6 +55,8 @@ const FILE_TYPES: Record<string, { mime: string; kind: "png" | "jpeg" | "pdf" | 
 };
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+/** Firebase Auth uid or legacy Supabase uuid stored in profiles.id / author_id. */
+const USER_ID_RE = /^[A-Za-z0-9_-]{8,128}$/;
 
 type DbError = { message?: string; code?: string } | null;
 
@@ -157,6 +159,10 @@ function queryOne(value: unknown): string | undefined {
 
 function isUuid(value: string): boolean {
   return UUID_RE.test(value);
+}
+
+function isUserId(value: string): boolean {
+  return isUuid(value) || USER_ID_RE.test(value);
 }
 
 function param(value: string | string[] | undefined): string {
@@ -362,7 +368,7 @@ function readListQuery(req: Request): { q?: string; category?: string; authorId?
   if (category && !CATEGORIES.includes(category as (typeof CATEGORIES)[number])) {
     return { error: "Unknown category" };
   }
-  if (authorId && !isUuid(authorId)) return { error: "Unknown author" };
+  if (authorId && !isUserId(authorId)) return { error: "Unknown author" };
   let cursor = 0;
   if (cursorRaw) {
     if (!/^\d+$/.test(cursorRaw)) return { error: "Invalid cursor" };
@@ -1363,7 +1369,7 @@ router.get(
       await ensureProfile(user);
       userId = user.id;
       viewerId = user.id;
-    } else if (!isUuid(userId)) {
+    } else if (!isUserId(userId)) {
       bad(res, "Profile not found", 404);
       return;
     } else {
