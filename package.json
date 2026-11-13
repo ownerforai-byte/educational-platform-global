@@ -24,13 +24,19 @@
     "nepal"
   ],
   "workspaces": [
-    "backend"
+    "backend",
+    "frontend",
+    "packages/shared",
+    "firebase/functions"
   ],
   "scripts": {
     "dev": "npm run dev --workspace=educational-platform-backend",
     "dev:backend": "npm run dev --workspace=educational-platform-backend",
+    "dev:frontend": "npm run dev --workspace=educational-platform-frontend",
     "build": "npm run build --workspace=educational-platform-backend",
     "build:backend": "npm run build --workspace=educational-platform-backend",
+    "build:frontend": "npm run build --workspace=educational-platform-frontend",
+    "test:frontend": "npm run test:run --workspace=educational-platform-frontend",
     "build:affected": "node scripts/build/build-affected.mjs",
     "build:affected:list": "node scripts/build/build-affected.mjs --list",
     "wt": "node scripts/deploy/worktree-flow.mjs",
@@ -99,7 +105,11 @@
     "minimatch": "11.0.3",
     "source-map-js": "1.2.2",
     "vite": "8.3.5",
-    "@sentry/node": "11.10.0"
+    "@sentry/node": "11.10.0",
+    "undici": "^6.21.3",
+    "sharp": "0.35.5",
+    "postcss-selector-parser": "6.1.5",
+    "katex": "^0.19.1"
   },
   "devDependencies": {
     "tsx": "^4.23.15",

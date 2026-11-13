@@ -49,6 +49,8 @@ Canonical homes after the restructure. Many `@/lib/*` and `@/components/*` paths
 | Classify / corpus build | `scripts/build/*` | `npm run classify`, `content:corpus` |
 | Content tooling | `content-tools/{generators,enhancers,validators,migrators,fixers}/` | root shim `build-syllabus-notes.js` |
 | Docs | `docs/architecture/`, `docs/guides/`, `docs/adr/`, `docs/runbooks/` | — |
+| Shared package (workspace) | `packages/shared` (`@rn/shared`) | — |
+| Workspace deploy | `docs/runbooks/deploy-workspaces.md` | — |
 | Optional Docker | `infra/docker/` | — |
 | Backend tests | `backend/tests/{unit,integration}/` + `fixtures/` | — |
 

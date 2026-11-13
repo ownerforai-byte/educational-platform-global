@@ -8,6 +8,9 @@
     "lint": {
       "tags": ["ci"]
     },
+    "typecheck": {
+      "tags": ["ci"]
+    },
     "test:run": {
       "tags": ["ci"]
     }

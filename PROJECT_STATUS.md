@@ -575,3 +575,10 @@ Root `.env.example` is the sole backend/shared template (`PORT=3000`).
 `NEXT_PUBLIC_*` placeholders only (real Firebase web config removed).
 `firebase/functions/.gitignore` ignores `.env*`, `lib/`, `node_modules/`.
 
+## ARCHITECTURE CHANGE — T2 npm workspaces (2026-11-13)
+
+Root `workspaces`: `backend`, `frontend`, `packages/shared`, `firebase/functions`.
+Single root lockfile; nested `frontend`/`firebase/functions` lockfiles removed.
+Overrides live at root only. Firebase Functions depends on `@rn/shared` (no
+`file:../..` monorepo pull). Deploy notes: `docs/runbooks/deploy-workspaces.md`.
+
