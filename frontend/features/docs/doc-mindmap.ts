@@ -58,6 +58,14 @@ export interface MindMapInput {
   confusion?: string[];
   specialNotes?: string[];
   practiceQuestions?: string[];
+  /** Real fields already present in most concept JSONs — used to deepen the
+   *  derived map without inventing any facts. */
+  examples?: string[];
+  examNotes?: string[];
+  importantTasks?: string[];
+  numericals?: string[];
+  importantStatements?: string[];
+  universalFacts?: string[];
   mindmap?: RawMindmap | null;
 }
 
@@ -65,6 +73,29 @@ const MAX_DETAILS = 5;
 const MAX_BRANCHES = 6;
 const MAX_SUBTOPICS = 4;
 const MAX_LEAF_POINTS = 4;
+
+/**
+ * Canonical branch order. Each entry pulls from a distinct concept-JSON field,
+ * so a topic's map reflects the material that actually exists for it and the
+ * six branches never repeat one another's content.
+ */
+const BRANCH_SOURCES: Array<{ topic: string; pick: (i: MindMapInput) => string[] | undefined }> = [
+  { topic: "Core ideas", pick: (i) => i.importantConcepts },
+  { topic: "Key points", pick: (i) => i.keyPoints },
+  { topic: "Formulas", pick: (i) => i.formulas },
+  { topic: "Memory shortcuts", pick: (i) => i.examShortTricks },
+  { topic: "Watch out", pick: (i) => (i.confusion?.length ? i.confusion : i.specialNotes) },
+  { topic: "Practice focus", pick: (i) => i.practiceQuestions },
+];
+
+/** Secondary sources, used when the six primary ones leave too few branches. */
+const BRANCH_FALLBACKS: Array<{ topic: string; pick: (i: MindMapInput) => string[] | undefined }> = [
+  { topic: "Worked examples", pick: (i) => i.examples },
+  { topic: "Exam technique", pick: (i) => (i.examNotes?.length ? i.examNotes : i.importantTasks) },
+  { topic: "Exam statements", pick: (i) => i.importantStatements },
+  { topic: "Universal facts", pick: (i) => i.universalFacts },
+  { topic: "Numericals", pick: (i) => i.numericals },
+];
 
 function strList(value: unknown, limit = MAX_DETAILS): string[] {
   if (!Array.isArray(value)) return [];
@@ -161,6 +192,32 @@ export function deriveMindmap(input: MindMapInput): DocConceptMap {
   push("Memory shortcuts", input.examShortTricks);
   push("Watch out", input.confusion?.length ? input.confusion : input.specialNotes);
   push("Practice focus", input.practiceQuestions);
+
+  // Second pass: the concept JSONs carry many more authored fields
+  // (examples, examNotes/importantTasks, importantStatements, universalFacts,
+  // numericals). Using them turns a thin map into a real one without inventing
+  // anything — every point is text the topic already ships.
+  if (branches.length < MAX_BRANCHES) {
+    for (const { topic, pick } of BRANCH_FALLBACKS) {
+      if (branches.length >= MAX_BRANCHES) break;
+      push(topic, pick(input));
+    }
+  }
+
+  // Duplicate points across branches add noise, so points already shown are
+  // dropped from later branches.
+  const seenPoints = new Set<string>();
+  for (const branch of branches) {
+    branch.details = (branch.details ?? []).filter((d) => {
+      const key = d.toLowerCase().slice(0, 60);
+      if (seenPoints.has(key)) return false;
+      seenPoints.add(key);
+      return true;
+    });
+  }
+  const pruned = branches.filter((b) => (b.details?.length ?? 0) > 0);
+  branches.length = 0;
+  branches.push(...pruned);
 
   // Notes are the universal fallback: every concept JSON has them. When the
   // structured fields are sparse (56 topics only yield one branch), the note
