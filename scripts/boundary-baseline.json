@@ -31,6 +31,7 @@
     "backend/src/api/user/state.controller.ts::supabaseAdmin",
     "backend/src/auth/auth-mode.ts::supabaseAdmin",
     "backend/src/auth/supabase.ts::supabaseAdmin",
+    "backend/src/lib/community-bot.ts::supabaseAdmin",
     "backend/src/middleware/auth.ts::supabaseAdmin",
     "backend/src/middleware/creditCheck.ts::supabaseAdmin",
     "backend/src/services/access-requests.ts::supabaseAdmin",
