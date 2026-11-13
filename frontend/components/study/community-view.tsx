@@ -17,6 +17,10 @@ export function CommunityView() {
           <Link href="/ask" className="font-medium text-primary hover:underline">
             <HelpCircle className="inline h-3.5 w-3.5" /> Ask board
           </Link>
+          . To publish a post everyone can read, use the{" "}
+          <Link href="/ai/community" className="font-medium text-primary hover:underline">
+            community feed
+          </Link>
           .
         </p>
       </div>

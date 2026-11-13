@@ -129,6 +129,14 @@ export const SECTIONS: PlatformSection[] = [
     href: "/ai",
   },
   {
+    id: "community-feed",
+    title: "Community",
+    description: "Public study posts. Guests can read. Verified members and every higher tier can publish.",
+    minTier: "guest",
+    icon: Users,
+    href: "/ai/community",
+  },
+  {
     id: "veer-math",
     title: "Veer Math Solver",
     description: "Step-by-step calculus, algebra and formula derivations solver.",
@@ -387,8 +395,8 @@ export const SECTIONS: PlatformSection[] = [
 
   {
     id: "community",
-    title: "Community",
-    description: "Subject study spaces with a link to the Ask board; peer threads are coming soon. Opens at Plus.",
+    title: "Study Spaces",
+    description: "Subject study spaces with a link to the Ask board. Opens at Plus.",
     minTier: "plus",
     icon: Users,
     href: "/community",

@@ -61,6 +61,10 @@ const creditAdjustSchema = z.object({
   reason: z.string().max(200).optional(),
 });
 
+const storageLimitSchema = z.object({
+  storage_limit_bytes: z.union([z.number().int().min(0), z.null()]),
+});
+
 /** Tiers the console may grant — including assigning owner to another email. */
 const roleUpdateSchema = z.object({
   role: z.enum(["member", "plus", "pro", "owner"]),
@@ -610,6 +614,52 @@ router.get("/users/:id", requireAuth, async (req: Request, res: Response) => {
     });
   } catch (err: any) {
     console.error("[owner] user detail error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/** PATCH /api/owner/users/:id/storage-limit — per-user quota override (null = tier default). */
+router.patch("/users/:id/storage-limit", requireAuth, async (req: Request, res: Response) => {
+  const owner = ownerGate(req, res);
+  if (!owner) return;
+
+  const parsed = storageLimitSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid payload", details: parsed.error.flatten() });
+    return;
+  }
+
+  try {
+    const { data: target, error: findError } = await supabaseAdmin
+      .from("profiles")
+      .select("id")
+      .eq("id", req.params.id)
+      .maybeSingle();
+
+    if (findError || !target) {
+      res.status(404).json({ error: "User not found" });
+      return;
+    }
+
+    const { error: updateError } = await supabaseAdmin
+      .from("profiles")
+      .update({ storage_limit_bytes: parsed.data.storage_limit_bytes })
+      .eq("id", req.params.id);
+
+    if (updateError) {
+      console.error("[owner] storage limit update error:", updateError.message);
+      res.status(500).json({ error: "Failed to update storage limit" });
+      return;
+    }
+
+    res.json({
+      success: true,
+      userId: req.params.id,
+      storage_limit_bytes: parsed.data.storage_limit_bytes,
+    });
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("[owner] storage limit error:", message);
     res.status(500).json({ error: "Internal server error" });
   }
 });

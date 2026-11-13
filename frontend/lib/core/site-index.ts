@@ -530,9 +530,22 @@ export function buildSiteIndex(): SiteIndexGroup[] {
     entries: [
       {
         name: "Veer Studio Hub",
-        opening: "The door to all four Veer tools, with your live credits and daily pool on top.",
+        opening: "The door to the Veer tools, practice, and the community feed.",
         href: "/ai",
         meta: "Hub",
+        links: [
+          { label: "Practice Hub", href: "/practice" },
+          { label: "Community", href: "/ai/community" },
+        ],
+      },
+      {
+        name: "Community",
+        opening: "Read study posts as a guest. Verified members and every higher tier can publish, attach files, like, and comment.",
+        href: "/ai/community",
+        meta: "Social",
+        links: [
+          { label: "My posts", href: "/ai/community/me" },
+        ],
       },
       {
         name: "Veer Study Assistant",
@@ -917,7 +930,7 @@ export function buildSiteIndex(): SiteIndexGroup[] {
       },
       {
         name: "Practice Hub",
-        opening: "Every practice surface in one place: quiz bank, PYQs, drills and mock papers.",
+        opening: "Practice lives under AI Tools: quiz bank, past questions, drills and mock papers.",
         href: "/practice",
         meta: "Practice",
       },

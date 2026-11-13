@@ -1,7 +1,19 @@
 import { fileURLToPath } from "node:url";
+import fs from "node:fs";
 import path from "node:path";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+/** Workspace hoisting may leave this package only under the repo root. */
+function resolveHastUtilEntry() {
+  const candidates = [
+    path.join(__dirname, "node_modules/hast-util-from-html-isomorphic/index.js"),
+    path.join(__dirname, "../node_modules/hast-util-from-html-isomorphic/index.js"),
+  ];
+  return candidates.find((p) => fs.existsSync(p)) ?? candidates[1];
+}
+
+const hastUtilEntry = resolveHastUtilEntry();
 
 const nextConfig = {
   // Fresh deploys must win — but only for DOCUMENTS. A blanket no-store on
@@ -110,10 +122,7 @@ const nextConfig = {
   turbopack: {
     root: path.resolve(__dirname, ".."),
     resolveAlias: {
-      "hast-util-from-html-isomorphic": path.resolve(
-        __dirname,
-        "node_modules/hast-util-from-html-isomorphic/index.js",
-      ),
+      "hast-util-from-html-isomorphic": hastUtilEntry,
     },
   },
   typescript: {
@@ -136,14 +145,10 @@ const nextConfig = {
     reactRemoveProperties: false,
   },
   webpack: (config) => {
-    const entry = path.resolve(
-      __dirname,
-      "node_modules/hast-util-from-html-isomorphic/index.js",
-    );
     config.resolve.alias = {
       ...config.resolve.alias,
-      "hast-util-from-html-isomorphic": entry,
-      "hast-util-from-html-isomorphic/lib/index.js": entry,
+      "hast-util-from-html-isomorphic": hastUtilEntry,
+      "hast-util-from-html-isomorphic/lib/index.js": hastUtilEntry,
     };
     return config;
   },

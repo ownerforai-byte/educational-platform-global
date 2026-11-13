@@ -14,11 +14,15 @@
 const fs = require("fs");
 const path = require("path");
 
-const target = path.join(__dirname, "..", "node_modules", "rehype-katex", "lib", "index.js");
+const candidates = [
+  path.join(__dirname, "..", "node_modules", "rehype-katex", "lib", "index.js"),
+  path.join(__dirname, "..", "..", "node_modules", "rehype-katex", "lib", "index.js"),
+];
+const target = candidates.find((p) => fs.existsSync(p));
 const BARE = "from 'hast-util-from-html-isomorphic'";
 const FIXED = "from '../../hast-util-from-html-isomorphic/index.js'";
 
-if (!fs.existsSync(target)) {
+if (!target) {
   console.log("[patch-rehype-katex] rehype-katex not installed yet — skipping.");
   process.exit(0);
 }

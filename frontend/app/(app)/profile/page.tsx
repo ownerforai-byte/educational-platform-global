@@ -33,6 +33,7 @@ import {
   Trophy,
   User,
   UserCheck,
+  Users,
   X,
   Zap,
 } from "lucide-react";
@@ -1210,6 +1211,9 @@ function ProfileDetails({ onBack }: { onBack?: () => void }) {
  */
 const YOU_MENU: Array<{ icon: typeof BookOpen; label: string; href: string; tint: string; subtitle?: string }> = [
   { icon: BookOpen, label: "Curriculum & Notes", href: "/subjects", tint: "bg-violet-500/10 text-violet-600 dark:text-violet-400", subtitle: "All subjects, notes and syllabus" },
+  { icon: Users, label: "Community", href: "/ai/community", tint: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400", subtitle: "Public study posts" },
+  { icon: User, label: "Public profile", href: "/profile/edit", tint: "bg-primary/10 text-primary", subtitle: "Avatar, bio & storage" },
+  { icon: Search, label: "Find students", href: "/users", tint: "bg-sky-500/10 text-sky-600 dark:text-sky-400" },
   { icon: BarChart3, label: "Analytics", href: "/analytics", tint: "bg-sky-500/10 text-sky-600 dark:text-sky-400" },
   { icon: Award, label: "Streaks and Badges", href: "/streaks", tint: "bg-amber-500/10 text-amber-600 dark:text-amber-400" },
   { icon: NotebookPen, label: "My Notes", href: "/my-notes", tint: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400" },

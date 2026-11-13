@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   Coins,
@@ -31,6 +31,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import {
   getOwnerUserDetail,
   adjustOwnerUserCredits,
+  updateOwnerUserStorageLimit,
   updateOwnerUserRole,
   bulkUpdateOwnerUserRole,
   deleteOwnerUser,
@@ -123,6 +124,85 @@ function StatChip({
       <p className="text-[10px] font-bold uppercase tracking-wide text-muted-foreground">{label}</p>
       <p className={cn("text-lg font-bold tabular-nums", accent)}>{value}</p>
     </Comp>
+  );
+}
+
+function OwnerStorageLimitEditor({
+  userId,
+  initialLimit,
+  usedBytes,
+  onSaved,
+}: {
+  userId: string;
+  initialLimit: number | null | undefined;
+  usedBytes?: number;
+  onSaved: () => void;
+}) {
+  const [useDefault, setUseDefault] = useState(initialLimit == null);
+  const [mb, setMb] = useState(
+    initialLimit != null && Number.isFinite(initialLimit)
+      ? String(Math.round(initialLimit / (1024 * 1024)))
+      : "25",
+  );
+  const [busy, setBusy] = useState(false);
+
+  useEffect(() => {
+    setUseDefault(initialLimit == null);
+    if (initialLimit != null && Number.isFinite(initialLimit)) {
+      setMb(String(Math.round(initialLimit / (1024 * 1024))));
+    }
+  }, [initialLimit, userId]);
+
+  const save = async () => {
+    setBusy(true);
+    try {
+      const bytes = useDefault ? null : Math.max(0, Math.round(Number(mb) * 1024 * 1024));
+      if (!useDefault && !Number.isFinite(Number(mb))) {
+        toast.error("Enter a valid size in MB");
+        return;
+      }
+      await updateOwnerUserStorageLimit(userId, bytes);
+      toast.success(useDefault ? "Storage limit reset to tier default" : "Storage limit saved");
+      onSaved();
+    } catch (e) {
+      toast.error(e instanceof Error ? e.message : "Save failed");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <div className="rounded-md border border-border/70 p-3 space-y-2 md:col-span-2">
+      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Profile storage limit</p>
+      {typeof usedBytes === "number" ? (
+        <p className="text-xs text-muted-foreground">Used: {Math.round(usedBytes / 1024)} KB</p>
+      ) : null}
+      <label className="flex items-center gap-2 text-sm">
+        <input
+          type="checkbox"
+          checked={useDefault}
+          onChange={(e) => setUseDefault(e.target.checked)}
+          className="rounded border"
+        />
+        Tier default (clear override)
+      </label>
+      {!useDefault ? (
+        <div className="flex items-center gap-2">
+          <Input
+            type="number"
+            min={0}
+            value={mb}
+            onChange={(e) => setMb(e.target.value)}
+            className="max-w-[120px]"
+            aria-label="Storage limit in megabytes"
+          />
+          <span className="text-xs text-muted-foreground">MB</span>
+        </div>
+      ) : null}
+      <Button type="button" size="sm" disabled={busy} onClick={() => void save()}>
+        {busy ? "Saving…" : "Save storage limit"}
+      </Button>
+    </div>
   );
 }
 
@@ -920,6 +1000,26 @@ export default function OwnerUsersPage() {
                               </div>
                             </div>
                           )}
+
+                          <OwnerStorageLimitEditor
+                            userId={u.id}
+                            initialLimit={
+                              typeof detail.profile.storage_limit_bytes === "number"
+                                ? detail.profile.storage_limit_bytes
+                                : detail.profile.storage_limit_bytes === null
+                                  ? null
+                                  : undefined
+                            }
+                            usedBytes={
+                              typeof detail.profile.storage_used_bytes === "number"
+                                ? detail.profile.storage_used_bytes
+                                : undefined
+                            }
+                            onSaved={() => {
+                              void reload();
+                              void toggleDetail(u.id);
+                            }}
+                          />
 
                           {detail.premiumRequests.length > 0 && (
                             <div>

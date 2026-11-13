@@ -1,0 +1,13 @@
+{
+  "name": "rn-firebase-cli",
+  "private": true,
+  "scripts": {
+    "login": "firebase login",
+    "setup": "node ../backend/scripts/setup-firebase-cli.mjs",
+    "env:web": "node ../backend/scripts/generate-firebase-env-from-cli.mjs",
+    "sdkconfig:web": "firebase apps:sdkconfig web --project rn01-af00b"
+  },
+  "devDependencies": {
+    "firebase-tools": "^13.29.1"
+  }
+}

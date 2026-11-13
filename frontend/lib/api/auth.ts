@@ -1,3 +1,12 @@
+import {
+  firebaseEmailLogin,
+  firebaseEmailSignup,
+  firebaseRefreshIdToken,
+  firebaseClientLogout,
+  firebaseClientForgotPassword,
+  firebaseClientConfirmPasswordReset,
+  useFirebaseClientAuth,
+} from "@/lib/firebase/client-auth";
 import { apiFetch, refreshSessionShared, setStoredToken, clearStoredToken, getStoredToken } from "../api-client";
 import {
   clearCachedSession,
@@ -20,9 +29,12 @@ import type {
 export async function login(
   data: AuthLoginRequest
 ): Promise<AuthLoginResponse> {
+  const payload = useFirebaseClientAuth()
+    ? { idToken: await firebaseEmailLogin(data.email, data.password) }
+  : data;
   const res = await apiFetch<AuthLoginResponse>("/api/auth/login", {
     method: "POST",
-    body: JSON.stringify(data),
+    body: JSON.stringify(payload),
   });
   if (res?.accessToken) {
     setStoredToken(res.accessToken);
@@ -41,9 +53,15 @@ export async function login(
 export async function signup(
   data: AuthSignupRequest
 ): Promise<AuthSignupResponse> {
+  const payload = useFirebaseClientAuth()
+    ? {
+        idToken: await firebaseEmailSignup(data.email, data.password),
+        fullName: data.fullName,
+      }
+    : data;
   const res = await apiFetch<AuthSignupResponse>("/api/auth/signup", {
     method: "POST",
-    body: JSON.stringify(data),
+    body: JSON.stringify(payload),
   });
   if (res?.accessToken) {
     setStoredToken(res.accessToken);
@@ -62,7 +80,8 @@ export async function signup(
  * into ONE POST /api/auth/refresh instead of one per caller.
  */
 export async function refreshSession(): Promise<AuthRefreshResponse> {
-  const r = await refreshSessionShared();
+  const idToken = useFirebaseClientAuth() ? await firebaseRefreshIdToken() : null;
+  const r = await refreshSessionShared(idToken ? { idToken } : undefined);
   if (!r.ok) {
     throw Object.assign(new Error("Session refresh failed"), {
       status: 401,
@@ -85,6 +104,13 @@ export async function refreshSession(): Promise<AuthRefreshResponse> {
 export async function logout(): Promise<AuthLogoutResponse> {
   clearStoredToken();
   clearCachedSession();
+  if (useFirebaseClientAuth()) {
+    try {
+      await firebaseClientLogout();
+    } catch {
+      // Local sign-out still runs; backend revoke is best-effort below.
+    }
+  }
   return apiFetch<AuthLogoutResponse>("/api/auth/logout", {
     method: "POST",
     // The logout click is almost always followed by a navigation (or a tab
@@ -165,6 +191,10 @@ export async function ensureSession(): Promise<SessionUser | null> {
 export async function forgotPassword(
   email: string
 ): Promise<{ sent: boolean }> {
+  if (useFirebaseClientAuth()) {
+    await firebaseClientForgotPassword(email);
+    return { sent: true };
+  }
   return apiFetch<{ sent: boolean }>("/api/auth/forgot-password", {
     method: "POST",
     body: JSON.stringify({ email }),
@@ -180,7 +210,13 @@ export async function resetPassword(data: {
   password: string;
   code?: string;
   token?: string;
+  oobCode?: string;
 }): Promise<{ success: boolean }> {
+  const oob = data.oobCode ?? data.code;
+  if (useFirebaseClientAuth() && oob) {
+    await firebaseClientConfirmPasswordReset(oob, data.password);
+    return { success: true };
+  }
   return apiFetch<{ success: boolean }>("/api/auth/reset-password", {
     method: "POST",
     body: JSON.stringify(data),

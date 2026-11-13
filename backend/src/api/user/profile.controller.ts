@@ -17,6 +17,7 @@ import {
   spendCredits,
   DAILY_CREDIT_POOL,
 } from "../../services/credit.service.js";
+import { getStorageSnapshot, TIER_STORAGE_LIMITS } from "../../services/profile-storage";
 
 /**
  * Persist the spark-unlock window for `moduleKey` into `profiles.credits_unlock`
@@ -48,6 +49,31 @@ router.use("/support-requests", supportRequests);
 
 const premiumRequestSchema = z.object({
   message: z.string().max(500).optional(),
+});
+
+router.get("/storage", requireAuth, async (req: Request, res: Response) => {
+  const user = (req as AuthedRequest).user;
+  try {
+    const snap = await getStorageSnapshot(user.id, user);
+    if ("missing" in snap) {
+      res.status(503).json({
+        error:
+          "Profile storage is unavailable until migration 019 is applied. From backend/, run: node scripts/migrate.mjs",
+      });
+      return;
+    }
+    res.setHeader("Cache-Control", "no-store");
+    res.json({
+      usedBytes: snap.usedBytes,
+      limitBytes: snap.limitBytes,
+      remainingBytes: snap.remainingBytes,
+      unlimited: snap.unlimited,
+      tierDefaults: TIER_STORAGE_LIMITS,
+    });
+  } catch (err: unknown) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
 });
 
 router.get("/me", requireAuth, async (req: Request, res: Response) => {

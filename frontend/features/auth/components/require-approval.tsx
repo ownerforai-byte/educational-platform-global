@@ -46,7 +46,7 @@ import { VerifyingStatus } from "./verifying-status";
  * /welcome → after approval + sign-in → member. /home stays open as a light
  * guest surface; tier homes stay behind this wall.
  */
-const PUBLIC_PATHS = ["/home", "/plans", "/onboarding"] as const;
+const PUBLIC_PATHS = ["/home", "/plans", "/onboarding", "/ai/community"] as const;
 
 function isPublicPath(pathname: string): boolean {
   return PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(`${p}/`));

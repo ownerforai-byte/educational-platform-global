@@ -20,6 +20,8 @@ const WRITE = process.argv.includes("--write-baseline");
 const ALLOW = [
   /^backend[/\\]src[/\\]db[/\\]/,
   /^backend[/\\]src[/\\]storage[/\\]adapters[/\\]/,
+  /^backend[/\\]src[/\\]auth[/\\]firebase-admin-auth\.ts$/,
+  /^backend[/\\]src[/\\]auth[/\\]token-verify\.ts$/,
   /^backend[/\\]src[/\\]storage[/\\]firebase-admin\.ts$/,
   /^backend[/\\]src[/\\]storage[/\\]firebase-store\.ts$/,
   /^backend[/\\]src[/\\]storage[/\\]r2\.ts$/,
@@ -30,7 +32,10 @@ const ALLOW = [
 const PATTERNS = [
   { id: "supabaseAdmin", re: /supabaseAdmin/ },
   { id: "aws-sdk", re: /@aws-sdk\// },
-  { id: "firebase-admin", re: /firebase-admin|from ["'].*firebase-admin/ },
+  {
+    id: "firebase-admin",
+    re: /from\s+["']firebase-admin(?:\/[^"']*|["'])/,
+  },
 ];
 
 function gitLs() {

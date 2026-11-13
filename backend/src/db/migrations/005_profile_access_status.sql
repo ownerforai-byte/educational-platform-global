@@ -25,8 +25,15 @@ update public.profiles set access_status = 'ACTIVE' where access_status is null;
 alter table public.profiles
   alter column access_status set default 'PENDING';
 
-alter table public.profiles
-  add constraint access_status_valid
-  check (access_status in ('PENDING', 'ACTIVE', 'REJECTED'));
+do $$
+begin
+  if not exists (
+    select 1 from pg_constraint where conname = 'access_status_valid'
+  ) then
+    alter table public.profiles
+      add constraint access_status_valid
+      check (access_status in ('PENDING', 'ACTIVE', 'REJECTED'));
+  end if;
+end $$;
 
 create index if not exists profiles_access_status_idx on public.profiles (access_status);

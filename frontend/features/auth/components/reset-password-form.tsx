@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { AuthField } from "./auth-field";
 import { resetPassword } from "@/lib/api/auth";
 
-type Proof = { code?: string; token?: string } | null;
+type Proof = { code?: string; token?: string; oobCode?: string } | null;
 
 /**
  * Landing page for the Supabase recovery link. Depending on the project's
@@ -29,10 +29,11 @@ export function ResetPasswordForm() {
   useEffect(() => {
     const search = new URLSearchParams(window.location.search);
     const hash = new URLSearchParams(window.location.hash.replace(/^#/, ""));
-    const code = search.get("code") || hash.get("code") || undefined;
+    const oobCode = search.get("oobCode") || hash.get("oobCode") || undefined;
+    const code = oobCode || search.get("code") || hash.get("code") || undefined;
     const token =
       hash.get("access_token") || search.get("access_token") || undefined;
-    setProof(code || token ? { code, token } : null);
+    setProof(code || token ? { code, token, ...(oobCode ? { oobCode } : {}) } : null);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {

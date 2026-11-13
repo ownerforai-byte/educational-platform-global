@@ -1,0 +1,854 @@
+import { Router, Request, Response } from "express";
+import { z } from "zod";
+import { supabaseAdmin } from "../../db/supabase";
+import { requireAuth, getUserFromRequest, type AuthedRequest } from "../../middleware/auth";
+import { asyncHandler } from "../../middleware/asyncHandler";
+import { serverError } from "../../middleware/error-handler";
+import { isR2StorageActive, r2Download, r2Upload, r2Delete } from "../../storage/r2";
+import { normalizeMediaObjectPath } from "../../storage/safe-object-path";
+import {
+  getStorageSnapshot,
+  replaceReservedPath,
+  releaseStoragePath,
+  reserveStoragePath,
+  TIER_STORAGE_LIMITS,
+} from "../../services/profile-storage";
+import { processProfileImage, profileImagePath } from "../../services/profile-image";
+import type { SessionUser } from "../../auth/types";
+
+const router = Router();
+
+const MIGRATION_MESSAGE =
+  "Profile storage is unavailable until migration 019 is applied. From backend/, run: node scripts/migrate.mjs";
+
+const USERNAME_RE = /^[a-z0-9][a-z0-9_-]{1,28}[a-z0-9]$/i;
+
+type DbError = { message?: string; code?: string } | null;
+
+interface ProfileRow {
+  id: string;
+  full_name: string | null;
+  username: string | null;
+  bio: string | null;
+  location: string | null;
+  website: string | null;
+  avatar_path: string | null;
+  avatar_bytes: number | null;
+  cover_path: string | null;
+  cover_bytes: number | null;
+  plan: string | null;
+  role: string | null;
+  profile_visibility: string | null;
+  profile_extras: Record<string, unknown> | null;
+  storage_used_bytes?: number | null;
+  storage_limit_bytes?: number | null;
+}
+
+function isMissingTable(error: DbError): boolean {
+  const msg = (error?.message ?? "").toLowerCase();
+  return (
+    msg.includes("could not find the table") ||
+    msg.includes("does not exist") ||
+    msg.includes("schema cache") ||
+    msg.includes("column") && msg.includes("does not exist")
+  );
+}
+
+function noStore(res: Response): void {
+  res.setHeader("Cache-Control", "no-store");
+}
+
+function bad(res: Response, message: string, status = 400): void {
+  noStore(res);
+  res.status(status).json({ error: message });
+}
+
+function unavailable(res: Response): void {
+  noStore(res);
+  res.status(503).json({ error: MIGRATION_MESSAGE });
+}
+
+function param(value: unknown): string {
+  if (typeof value === "string") return value;
+  if (Array.isArray(value) && typeof value[0] === "string") return value[0];
+  return "";
+}
+
+function publicProfileFields(): string {
+  return [
+    "id",
+    "full_name",
+    "username",
+    "bio",
+    "location",
+    "website",
+    "avatar_path",
+    "avatar_bytes",
+    "cover_path",
+    "cover_bytes",
+    "plan",
+    "role",
+    "profile_visibility",
+    "profile_extras",
+  ].join(", ");
+}
+
+function imageUrl(path: string | null | undefined): string | null {
+  if (!path) return null;
+  const base = process.env.R2_PUBLIC_BASE_URL?.trim();
+  if (base) return `${base.replace(/\/+$/, "")}/${path.replace(/^\/+/, "")}`;
+  return `/api/profile/media?path=${encodeURIComponent(path.replace(/^\/+/, ""))}`;
+}
+
+function presentProfile(row: ProfileRow, viewerId: string | null) {
+  const extras = row.profile_extras && typeof row.profile_extras === "object" ? row.profile_extras : {};
+  return {
+    id: row.id,
+    fullName: (row.full_name ?? "").trim() || "Student",
+    username: row.username,
+    bio: row.bio,
+    location: row.location,
+    website: row.website,
+    plan: row.plan,
+    role: row.role,
+    visibility: row.profile_visibility ?? "public",
+    avatarUrl: imageUrl(row.avatar_path),
+    coverUrl: imageUrl(row.cover_path),
+    extras,
+    isYou: viewerId === row.id,
+  };
+}
+
+async function resolveProfileKey(key: string): Promise<ProfileRow | null | "missing"> {
+  const byUser = await supabaseAdmin
+    .from("profiles")
+    .select(publicProfileFields())
+    .eq("username", key)
+    .maybeSingle();
+  if (byUser.error) {
+    if (isMissingTable(byUser.error)) return "missing";
+    throw byUser.error;
+  }
+  if (byUser.data) return byUser.data as unknown as ProfileRow;
+
+  const uuidRe = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  if (!uuidRe.test(key)) return null;
+  const byId = await supabaseAdmin
+    .from("profiles")
+    .select(publicProfileFields())
+    .eq("id", key)
+    .maybeSingle();
+  if (byId.error) {
+    if (isMissingTable(byId.error)) return "missing";
+    throw byId.error;
+  }
+  return (byId.data as unknown as ProfileRow | null) ?? null;
+}
+
+function canViewProfile(
+  profile: ProfileRow,
+  viewer: SessionUser | null,
+): boolean {
+  const vis = (profile.profile_visibility ?? "public").toLowerCase();
+  if (vis === "public") return true;
+  if (!viewer) return false;
+  if (viewer.id === profile.id) return true;
+  if (vis === "members") return true;
+  return false;
+}
+
+async function loadStats(userId: string): Promise<{
+  posts: number;
+  comments: number;
+  likesReceived: number;
+  filesShared: number;
+}> {
+  const posts = await supabaseAdmin
+    .from("community_feed_posts")
+    .select("id", { count: "exact", head: true })
+    .eq("author_id", userId);
+  const comments = await supabaseAdmin
+    .from("community_feed_comments")
+    .select("id", { count: "exact", head: true })
+    .eq("author_id", userId);
+  const postIds = await supabaseAdmin
+    .from("community_feed_posts")
+    .select("id")
+    .eq("author_id", userId);
+  let likesReceived = 0;
+  const ids = (postIds.data ?? []).map((r) => r.id as string);
+  if (ids.length > 0) {
+    const likes = await supabaseAdmin
+      .from("community_feed_likes")
+      .select("post_id", { count: "exact", head: true })
+      .in("post_id", ids);
+    likesReceived = likes.count ?? 0;
+  }
+  let filesShared = 0;
+  if (ids.length > 0) {
+    const files = await supabaseAdmin
+      .from("community_feed_attachments")
+      .select("id", { count: "exact", head: true })
+      .in("post_id", ids);
+    filesShared = files.count ?? 0;
+  }
+  return {
+    posts: posts.count ?? 0,
+    comments: comments.count ?? 0,
+    likesReceived,
+    filesShared,
+  };
+}
+
+const editSchema = z.object({
+  fullName: z.string().trim().min(1).max(120).optional(),
+  username: z.string().trim().min(3).max(30).optional(),
+  bio: z.string().trim().max(2000).optional(),
+  location: z.string().trim().max(120).optional(),
+  website: z.string().trim().url().max(300).optional().or(z.literal("")),
+  visibility: z.enum(["public", "members", "private"]).optional(),
+});
+
+const imageSchema = z.object({
+  dataBase64: z.string().min(1).max(6_000_000),
+  contentType: z.string().trim().optional(),
+});
+
+function decodeBase64(raw: string): Buffer | null {
+  try {
+    const stripped = raw.replace(/^data:[^;]+;base64,/, "").trim();
+    const buf = Buffer.from(stripped, "base64");
+    return buf.length > 0 ? buf : null;
+  } catch {
+    return null;
+  }
+}
+
+router.get(
+  "/media",
+  asyncHandler(async (req, res) => {
+    const raw = typeof req.query.path === "string" ? req.query.path : "";
+    const key = normalizeMediaObjectPath(raw);
+    if (!key) {
+      bad(res, "Invalid or forbidden path", 400);
+      return;
+    }
+    const publicBase = process.env.R2_PUBLIC_BASE_URL?.trim();
+    if (publicBase) {
+      noStore(res);
+      res.redirect(302, `${publicBase.replace(/\/+$/, "")}/${key}`);
+      return;
+    }
+    if (!isR2StorageActive()) {
+      bad(res, "Media storage is not configured", 503);
+      return;
+    }
+    const downloaded = await r2Download(key);
+    if (!downloaded) {
+      bad(res, "Not found", 404);
+      return;
+    }
+    res.setHeader("Cache-Control", "public, max-age=86400");
+    res.setHeader("Content-Type", downloaded.contentType);
+    res.send(downloaded.buffer);
+  }),
+);
+
+router.get(
+  "/storage",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = (req as AuthedRequest).user;
+    const snap = await getStorageSnapshot(user.id, user);
+    if ("missing" in snap) {
+      unavailable(res);
+      return;
+    }
+    noStore(res);
+    res.json({
+      usedBytes: snap.usedBytes,
+      limitBytes: snap.limitBytes,
+      remainingBytes: snap.remainingBytes,
+      unlimited: snap.unlimited,
+      tierDefaults: TIER_STORAGE_LIMITS,
+    });
+  }),
+);
+
+router.get(
+  "/me",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = (req as AuthedRequest).user;
+    const { data, error } = await supabaseAdmin
+      .from("profiles")
+      .select(
+        "id, full_name, username, bio, location, website, avatar_path, avatar_bytes, cover_path, cover_bytes, plan, role, profile_visibility, profile_extras, storage_used_bytes, storage_limit_bytes",
+      )
+      .eq("id", user.id)
+      .maybeSingle();
+    if (error) {
+      if (isMissingTable(error)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, error, "profile-hub");
+      return;
+    }
+    if (!data) {
+      bad(res, "Profile not found", 404);
+      return;
+    }
+    const stats = await loadStats(user.id);
+    const snap = await getStorageSnapshot(user.id, user);
+    noStore(res);
+    res.json({
+      profile: presentProfile(data as unknown as ProfileRow, user.id),
+      stats,
+      storage: "missing" in snap ? null : snap,
+    });
+  }),
+);
+
+router.patch(
+  "/me",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = (req as AuthedRequest).user;
+    const parsed = editSchema.safeParse(req.body);
+    if (!parsed.success) {
+      bad(res, "Invalid profile payload");
+      return;
+    }
+    const patch: Record<string, unknown> = {};
+    if (parsed.data.fullName !== undefined) patch.full_name = parsed.data.fullName;
+    if (parsed.data.bio !== undefined) patch.bio = parsed.data.bio || null;
+    if (parsed.data.location !== undefined) patch.location = parsed.data.location || null;
+    if (parsed.data.website !== undefined) patch.website = parsed.data.website || null;
+    if (parsed.data.visibility !== undefined) patch.profile_visibility = parsed.data.visibility;
+    if (parsed.data.username !== undefined) {
+      const name = parsed.data.username.toLowerCase();
+      if (!USERNAME_RE.test(name)) {
+        bad(res, "Username must be 3–30 characters: letters, numbers, _ or -");
+        return;
+      }
+      const taken = await supabaseAdmin
+        .from("profiles")
+        .select("id")
+        .eq("username", name)
+        .neq("id", user.id)
+        .maybeSingle();
+      if (taken.error && !isMissingTable(taken.error)) {
+        serverError(res, taken.error, "profile-hub");
+        return;
+      }
+      if (taken.data) {
+        bad(res, "That username is already taken");
+        return;
+      }
+      patch.username = name;
+    }
+    if (Object.keys(patch).length === 0) {
+      bad(res, "Nothing to update");
+      return;
+    }
+    const { data, error } = await supabaseAdmin
+      .from("profiles")
+      .update(patch)
+      .eq("id", user.id)
+      .select(publicProfileFields())
+      .single();
+    if (error) {
+      if (isMissingTable(error)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, error, "profile-hub");
+      return;
+    }
+    noStore(res);
+    res.json({ profile: presentProfile(data as unknown as ProfileRow, user.id) });
+  }),
+);
+
+async function uploadProfileImage(
+  user: SessionUser,
+  kind: "avatar" | "cover",
+  body: z.infer<typeof imageSchema>,
+  res: Response,
+): Promise<void> {
+  if (!isR2StorageActive()) {
+    bad(res, "Image storage is not configured on this server.", 503);
+    return;
+  }
+  const raw = decodeBase64(body.dataBase64);
+  if (!raw || raw.length > 8 * 1024 * 1024) {
+    bad(res, "Invalid or oversized image payload", 413);
+    return;
+  }
+  let processed: { buffer: Buffer; contentType: string };
+  try {
+    processed = await processProfileImage(raw, kind);
+  } catch (err) {
+    bad(res, "Could not process image — use a JPEG or PNG photo.");
+    return;
+  }
+  const { data: current, error: curErr } = await supabaseAdmin
+    .from("profiles")
+    .select("avatar_path, cover_path, avatar_bytes, cover_bytes")
+    .eq("id", user.id)
+    .maybeSingle();
+  if (curErr) {
+    if (isMissingTable(curErr)) {
+      unavailable(res);
+      return;
+    }
+    serverError(res, curErr, "profile-hub");
+    return;
+  }
+  const path = profileImagePath(user.id, kind);
+  const reserved = await replaceReservedPath(
+    user.id,
+    kind === "avatar" ? current?.avatar_path : current?.cover_path,
+    path,
+    processed.buffer.length,
+    user,
+  );
+  if (!reserved.ok) {
+    if (reserved.reason === "missing") unavailable(res);
+    else bad(res, "Storage quota exceeded — delete files or upgrade your plan.", 413);
+    return;
+  }
+  try {
+    await r2Upload(path, processed.buffer, processed.contentType);
+  } catch (err) {
+    await releaseStoragePath(user.id, path);
+    serverError(res, err, "profile-hub");
+    return;
+  }
+  const oldPath = kind === "avatar" ? current?.avatar_path : current?.cover_path;
+  if (oldPath && oldPath !== path) {
+    try {
+      await r2Delete(oldPath);
+    } catch {
+      /* best effort */
+    }
+    await releaseStoragePath(user.id, oldPath);
+  }
+  const colPath = kind === "avatar" ? "avatar_path" : "cover_path";
+  const colBytes = kind === "avatar" ? "avatar_bytes" : "cover_bytes";
+  const { data, error } = await supabaseAdmin
+    .from("profiles")
+    .update({ [colPath]: path, [colBytes]: processed.buffer.length })
+    .eq("id", user.id)
+    .select(publicProfileFields())
+    .single();
+  if (error) {
+    serverError(res, error, "profile-hub");
+    return;
+  }
+  noStore(res);
+  res.json({
+    profile: presentProfile(data as unknown as ProfileRow, user.id),
+    byteSize: processed.buffer.length,
+  });
+}
+
+router.post(
+  "/me/avatar",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const parsed = imageSchema.safeParse(req.body);
+    if (!parsed.success) {
+      bad(res, "Invalid image payload");
+      return;
+    }
+    await uploadProfileImage((req as AuthedRequest).user, "avatar", parsed.data, res);
+  }),
+);
+
+router.post(
+  "/me/cover",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const parsed = imageSchema.safeParse(req.body);
+    if (!parsed.success) {
+      bad(res, "Invalid image payload");
+      return;
+    }
+    await uploadProfileImage((req as AuthedRequest).user, "cover", parsed.data, res);
+  }),
+);
+
+async function userSearch(req: Request, res: Response): Promise<void> {
+    const q = (param(req.query.q) || param(req.query.search) || "").trim().toLowerCase();
+    if (q.length < 2) {
+      bad(res, "Enter at least 2 characters to search");
+      return;
+    }
+    const { data, error } = await supabaseAdmin
+      .from("profiles")
+      .select("id, full_name, username, avatar_path, plan, role")
+      .or(`username.ilike.%${q}%,full_name.ilike.%${q}%`)
+      .limit(20);
+    if (error) {
+      if (isMissingTable(error)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, error, "profile-hub");
+      return;
+    }
+    noStore(res);
+    res.json({
+      users: (data ?? []).map((row) => ({
+        id: row.id as string,
+        fullName: (row.full_name as string | null)?.trim() || "Student",
+        username: row.username as string | null,
+        avatarUrl: imageUrl(row.avatar_path as string | null),
+        plan: row.plan ?? null,
+        role: row.role ?? null,
+      })),
+    });
+}
+
+router.get("/", asyncHandler(userSearch));
+
+router.get(
+  "/:username",
+  asyncHandler(async (req, res) => {
+    const key = param(req.params.username);
+    const viewer = await getUserFromRequest(req);
+    const resolved = await resolveProfileKey(key);
+    if (resolved === "missing") {
+      unavailable(res);
+      return;
+    }
+    if (!resolved) {
+      bad(res, "Profile not found", 404);
+      return;
+    }
+    if (!canViewProfile(resolved, viewer)) {
+      bad(res, "This profile is private", 403);
+      return;
+    }
+    const stats = await loadStats(resolved.id);
+    let following = false;
+    if (viewer && viewer.id !== resolved.id) {
+      const { data: edge } = await supabaseAdmin
+        .from("profile_follows")
+        .select("follower_id")
+        .eq("follower_id", viewer.id)
+        .eq("following_id", resolved.id)
+        .maybeSingle();
+      following = Boolean(edge);
+    }
+    noStore(res);
+    res.json({
+      profile: presentProfile(resolved, viewer?.id ?? null),
+      stats,
+      following,
+      migrated: true,
+    });
+  }),
+);
+
+router.get(
+  "/:username/about",
+  asyncHandler(async (req, res) => {
+    const key = param(req.params.username);
+    const viewer = await getUserFromRequest(req);
+    const resolved = await resolveProfileKey(key);
+    if (resolved === "missing") {
+      unavailable(res);
+      return;
+    }
+    if (!resolved) {
+      bad(res, "Profile not found", 404);
+      return;
+    }
+    if (!canViewProfile(resolved, viewer)) {
+      bad(res, "This profile is private", 403);
+      return;
+    }
+    noStore(res);
+    res.json({ profile: presentProfile(resolved, viewer?.id ?? null) });
+  }),
+);
+
+router.get(
+  "/:username/posts",
+  asyncHandler(async (req, res) => {
+    const key = param(req.params.username);
+    const viewer = await getUserFromRequest(req);
+    const resolved = await resolveProfileKey(key);
+    if (resolved === "missing") {
+      unavailable(res);
+      return;
+    }
+    if (!resolved) {
+      bad(res, "Profile not found", 404);
+      return;
+    }
+    if (!canViewProfile(resolved, viewer)) {
+      bad(res, "This profile is private", 403);
+      return;
+    }
+    const { data, error } = await supabaseAdmin
+      .from("community_feed_posts")
+      .select("id, title, body, category, created_at, updated_at")
+      .eq("author_id", resolved.id)
+      .order("created_at", { ascending: false })
+      .limit(30);
+    if (error) {
+      if (isMissingTable(error)) {
+        noStore(res);
+        res.json({ posts: [], migrated: false });
+        return;
+      }
+      serverError(res, error, "profile-hub");
+      return;
+    }
+    noStore(res);
+    res.json({
+      posts: (data ?? []).map((row) => ({
+        id: row.id,
+        title: row.title,
+        body: row.body,
+        category: row.category,
+        createdAt: row.created_at,
+        updatedAt: row.updated_at,
+      })),
+      migrated: true,
+    });
+  }),
+);
+
+router.get(
+  "/:username/files",
+  asyncHandler(async (req, res) => {
+    const key = param(req.params.username);
+    const viewer = await getUserFromRequest(req);
+    const resolved = await resolveProfileKey(key);
+    if (resolved === "missing") {
+      unavailable(res);
+      return;
+    }
+    if (!resolved) {
+      bad(res, "Profile not found", 404);
+      return;
+    }
+    if (!canViewProfile(resolved, viewer)) {
+      bad(res, "This profile is private", 403);
+      return;
+    }
+    const posts = await supabaseAdmin
+      .from("community_feed_posts")
+      .select("id")
+      .eq("author_id", resolved.id);
+    const postIds = (posts.data ?? []).map((p) => p.id as string);
+    if (postIds.length === 0) {
+      noStore(res);
+      res.json({ files: [], migrated: true });
+      return;
+    }
+    const { data, error } = await supabaseAdmin
+      .from("community_feed_attachments")
+      .select("id, post_id, filename, content_type, byte_size, created_at")
+      .in("post_id", postIds)
+      .order("created_at", { ascending: false })
+      .limit(60);
+    if (error) {
+      if (isMissingTable(error)) {
+        noStore(res);
+        res.json({ files: [], migrated: false });
+        return;
+      }
+      serverError(res, error, "profile-hub");
+      return;
+    }
+    noStore(res);
+    res.json({
+      files: (data ?? []).map((row) => ({
+        id: row.id,
+        postId: row.post_id,
+        filename: row.filename,
+        contentType: row.content_type,
+        byteSize: row.byte_size,
+        createdAt: row.created_at,
+      })),
+      migrated: true,
+    });
+  }),
+);
+
+router.get(
+  "/:username/followers",
+  asyncHandler(async (req, res) => {
+    const key = param(req.params.username);
+    const resolved = await resolveProfileKey(key);
+    if (resolved === "missing") {
+      unavailable(res);
+      return;
+    }
+    if (!resolved) {
+      bad(res, "Profile not found", 404);
+      return;
+    }
+    const { data, error } = await supabaseAdmin
+      .from("profile_follows")
+      .select("follower_id, created_at")
+      .eq("following_id", resolved.id)
+      .order("created_at", { ascending: false })
+      .limit(50);
+    if (error) {
+      if (isMissingTable(error)) {
+        noStore(res);
+        res.json({ users: [], migrated: false });
+        return;
+      }
+      serverError(res, error, "profile-hub");
+      return;
+    }
+    const ids = (data ?? []).map((r) => r.follower_id as string);
+    const profiles =
+      ids.length === 0
+        ? []
+        : (
+            await supabaseAdmin
+              .from("profiles")
+              .select("id, full_name, username, avatar_path")
+              .in("id", ids)
+          ).data ?? [];
+    noStore(res);
+    res.json({
+      users: profiles.map((p) => ({
+        id: p.id,
+        fullName: (p.full_name as string | null)?.trim() || "Student",
+        username: p.username,
+        avatarUrl: imageUrl(p.avatar_path as string | null),
+      })),
+      migrated: true,
+    });
+  }),
+);
+
+router.get(
+  "/:username/following",
+  asyncHandler(async (req, res) => {
+    const key = param(req.params.username);
+    const resolved = await resolveProfileKey(key);
+    if (resolved === "missing") {
+      unavailable(res);
+      return;
+    }
+    if (!resolved) {
+      bad(res, "Profile not found", 404);
+      return;
+    }
+    const { data, error } = await supabaseAdmin
+      .from("profile_follows")
+      .select("following_id, created_at")
+      .eq("follower_id", resolved.id)
+      .order("created_at", { ascending: false })
+      .limit(50);
+    if (error) {
+      if (isMissingTable(error)) {
+        noStore(res);
+        res.json({ users: [], migrated: false });
+        return;
+      }
+      serverError(res, error, "profile-hub");
+      return;
+    }
+    const ids = (data ?? []).map((r) => r.following_id as string);
+    const profiles =
+      ids.length === 0
+        ? []
+        : (
+            await supabaseAdmin
+              .from("profiles")
+              .select("id, full_name, username, avatar_path")
+              .in("id", ids)
+          ).data ?? [];
+    noStore(res);
+    res.json({
+      users: profiles.map((p) => ({
+        id: p.id,
+        fullName: (p.full_name as string | null)?.trim() || "Student",
+        username: p.username,
+        avatarUrl: imageUrl(p.avatar_path as string | null),
+      })),
+      migrated: true,
+    });
+  }),
+);
+
+router.post(
+  "/:username/follow",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = (req as AuthedRequest).user;
+    const key = param(req.params.username);
+    const resolved = await resolveProfileKey(key);
+    if (resolved === "missing") {
+      unavailable(res);
+      return;
+    }
+    if (!resolved) {
+      bad(res, "Profile not found", 404);
+      return;
+    }
+    if (resolved.id === user.id) {
+      bad(res, "You cannot follow yourself");
+      return;
+    }
+    const { error } = await supabaseAdmin.from("profile_follows").insert({
+      follower_id: user.id,
+      following_id: resolved.id,
+    });
+    if (error) {
+      const msg = (error.message ?? "").toLowerCase();
+      if (isMissingTable(error)) {
+        unavailable(res);
+        return;
+      }
+      if (msg.includes("duplicate")) {
+        noStore(res);
+        res.json({ ok: true, following: true });
+        return;
+      }
+      serverError(res, error, "profile-hub");
+      return;
+    }
+    noStore(res);
+    res.json({ ok: true, following: true });
+  }),
+);
+
+router.delete(
+  "/:username/follow",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = (req as AuthedRequest).user;
+    const key = param(req.params.username);
+    const resolved = await resolveProfileKey(key);
+    if (resolved === "missing") {
+      unavailable(res);
+      return;
+    }
+    if (!resolved) {
+      bad(res, "Profile not found", 404);
+      return;
+    }
+    await supabaseAdmin
+      .from("profile_follows")
+      .delete()
+      .eq("follower_id", user.id)
+      .eq("following_id", resolved.id);
+    noStore(res);
+    res.json({ ok: true, following: false });
+  }),
+);
+
+export default router;

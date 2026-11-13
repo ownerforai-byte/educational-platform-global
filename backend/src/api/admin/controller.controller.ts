@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
 import { serverError } from "../../middleware/error-handler";
+import { verifyAccessToken } from "../../auth/token-verify.js";
 import { supabaseAdmin } from "../../db/supabase";
 import { extractToken, isApprovedAccount } from "../../middleware/auth";
 import { normalizeRole } from "../../auth/types";
@@ -17,9 +18,9 @@ async function requireAdmin(req: Request, res: Response) {
     return null;
   }
 
-  const { data, error } = await supabaseAdmin.auth.getUser(token);
+  const authUser = await verifyAccessToken(token);
 
-  if (error || !data.user) {
+  if (!authUser) {
     res.status(401).json({ error: "Unauthorized" });
     return null;
   }
@@ -27,10 +28,10 @@ async function requireAdmin(req: Request, res: Response) {
   const { data: profile } = await supabaseAdmin
     .from("profiles")
     .select("role, access_status")
-    .eq("id", data.user.id)
+    .eq("id", authUser.id)
     .single();
 
-  if (!isApprovedAccount({ email: data.user.email, role: profile?.role }, profile?.access_status)) {
+  if (!isApprovedAccount({ email: authUser.email, role: profile?.role }, profile?.access_status)) {
     res.status(401).json({ error: "Unauthorized" });
     return null;
   }
@@ -40,7 +41,7 @@ async function requireAdmin(req: Request, res: Response) {
     return null;
   }
 
-  return { user: data.user, profile };
+  return { user: { id: authUser.id, email: authUser.email ?? undefined }, profile };
 }
 
 router.get("/health", asyncHandler(async (req: Request, res: Response) => {

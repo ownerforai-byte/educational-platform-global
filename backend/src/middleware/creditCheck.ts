@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { supabaseAdmin } from "../db/supabase";
+import { verifyAccessToken } from "../auth/token-verify.js";
 import { getProfileGateRow } from "../db/repositories/user.repository.js";
 import { extractToken, hasFullAccess, isApprovedAccount, type AuthedRequest } from "./auth";
 import {
@@ -48,19 +48,19 @@ async function resolveCreditUser(req: Request): Promise<ResolvedCreditUser | nul
   const token = extractToken(req);
   if (!token) return null;
 
-  const { data: authData, error: authError } = await supabaseAdmin.auth.getUser(token);
-  if (authError || !authData.user) return null;
+  const authUser = await verifyAccessToken(token);
+  if (!authUser) return null;
 
-  const userId = authData.user.id;
+  const userId = authUser.id;
   const profile = await getProfileGateRow(userId);
 
-  if (!isApprovedAccount({ email: authData.user.email, role: profile?.role }, profile?.access_status)) {
+  if (!isApprovedAccount({ email: authUser.email, role: profile?.role }, profile?.access_status)) {
     return null;
   }
 
   return {
     userId,
-    email: authData.user.email,
+    email: authUser.email ?? undefined,
     role: (profile?.role as string | undefined)?.toUpperCase() ?? null,
     premiumStatus: profile?.premium_status ?? false,
   };

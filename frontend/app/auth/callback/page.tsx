@@ -3,6 +3,7 @@
 import { Suspense, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { firebaseConsumeRedirectResult, useFirebaseClientAuth } from "@/lib/firebase/client-auth";
 import { getSupabaseBrowserClient } from "@/lib/supabase/browser";
 import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
 import { apiFetch, setStoredToken } from "@/lib/api-client";
@@ -72,24 +73,34 @@ function AuthCallbackContent() {
           throw new Error(errorDesc || errorCode || "Sign-in could not be completed.");
         }
 
-        const code = searchParams.get("code");
-        if (!code) throw new Error("The provider did not return an authorization code.");
         const state = sessionStorage.getItem("neb_oauth_csrf");
         if (!state || !/^[a-f0-9]{64}$/.test(state)) {
           throw new Error("Sign-in verification expired or failed. Please try again.");
         }
 
-        const client = getSupabaseBrowserClient();
-        const { data, error: exchangeError } = await client.auth.exchangeCodeForSession(code);
-        if (exchangeError) throw exchangeError;
-        if (!data.session?.access_token) throw new Error("The provider did not return a valid session.");
+        let accessToken: string;
+        let refreshToken: string | undefined;
+        if (useFirebaseClientAuth()) {
+          const idToken = await firebaseConsumeRedirectResult();
+          if (!idToken) throw new Error("The provider did not return a valid session.");
+          accessToken = idToken;
+        } else {
+          const code = searchParams.get("code");
+          if (!code) throw new Error("The provider did not return an authorization code.");
+          const client = getSupabaseBrowserClient();
+          const { data, error: exchangeError } = await client.auth.exchangeCodeForSession(code);
+          if (exchangeError) throw exchangeError;
+          if (!data.session?.access_token) throw new Error("The provider did not return a valid session.");
+          accessToken = data.session.access_token;
+          refreshToken = data.session.refresh_token;
+        }
 
         const response = await apiFetch<OAuthSessionResponse>("/api/auth/oauth/session", {
           method: "POST",
           headers: { "X-CSRF-Token": state },
           body: JSON.stringify({
-            accessToken: data.session.access_token,
-            refreshToken: data.session.refresh_token,
+            accessToken,
+            ...(refreshToken ? { refreshToken } : {}),
             state,
           }),
         });

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
+import { firebaseGoogleSignIn, useFirebaseClientAuth } from "@/lib/firebase/client-auth";
 import { getSupabaseBrowserClient, isOAuthProviderEnabled } from "@/lib/supabase/browser";
 import { apiFetch } from "@/lib/api-client";
 import {
@@ -98,10 +99,13 @@ export function SocialAuthButtons({
       const csrfToken = await requestOAuthCsrf();
       sessionStorage.setItem("neb_oauth_csrf", csrfToken);
 
+      if (useFirebaseClientAuth()) {
+        await firebaseGoogleSignIn("redirect");
+        redirected = true;
+        return;
+      }
+
       // ONE canonical callback for every deployed host (owner 2026-11-08).
-      // Building it from window.location.origin produced a different redirect
-      // URI on preview/www/custom hosts — Google rejects every unregistered
-      // one with "Access blocked". See lib/supabase/oauth-config.ts.
       const { error: oauthError } = await getSupabaseBrowserClient().auth.signInWithOAuth({
         provider: "google",
         options: { redirectTo: oauthCallbackUrl() },

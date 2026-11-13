@@ -119,7 +119,7 @@ let refreshCooldownUntil = 0;
  */
 const REFRESH_COOLDOWN_MS = 5_000;
 
-export function refreshSessionShared(): Promise<SharedRefreshResult> {
+export function refreshSessionShared(body?: { idToken?: string }): Promise<SharedRefreshResult> {
   if (refreshFlight) return refreshFlight;
   const now = Date.now();
   if (now < refreshCooldownUntil) {
@@ -130,6 +130,7 @@ export function refreshSessionShared(): Promise<SharedRefreshResult> {
     method: "POST",
     credentials: "include",
     headers: { "Content-Type": "application/json" },
+    ...(body?.idToken ? { body: JSON.stringify({ idToken: body.idToken }) } : {}),
   })
     .then(async (res) => {
       if (!res.ok) return { ok: false };

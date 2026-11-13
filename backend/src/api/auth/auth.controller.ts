@@ -15,12 +15,22 @@ import {
 } from "../../utils/deviceSignup";
 import { createStatusToken, verifyStatusToken } from "../../utils/statusToken";
 import { ensureAccessRequest } from "../../services/access-requests";
+import { useFirebaseAuth } from "../../auth/auth-mode.js";
+import {
+  firebaseCreateUser,
+  firebaseSendPasswordResetEmail,
+  firebaseUpdatePassword,
+  revokeFirebaseSessions,
+  verifyFirebaseIdToken,
+} from "../../auth/firebase-admin-auth.js";
+import { verifyAccessToken } from "../../auth/token-verify.js";
 import {
   signInWithPassword,
   signUp,
   signOut,
   AuthProviderError,
 } from "../../auth/supabase";
+import { ensureAuthProfile } from "../../services/auth-profile.js";
 import {
   SESSION_COOKIE,
   extractToken,
@@ -85,20 +95,35 @@ function clearSessionCookie(res: Response): void {
 
 // ── Validation schemas ─────────────────────────────────────────────────────
 
-const loginSchema = z.object({
-  email: z.string().email(),
-  password: z.string().min(1),
-});
+const loginSchema = z
+  .object({
+    email: z.string().email().optional(),
+    password: z.string().min(1).optional(),
+    idToken: z.string().min(1).max(8192).optional(),
+  })
+  .refine((body) => Boolean(body.idToken?.trim()) || Boolean(body.email && body.password), {
+    message: "Invalid email or password format",
+  });
 
-const signupSchema = z.object({
-  fullName: z.string().trim().min(2).max(80).optional(),
-  email: z.string().email(),
-  password: z.string().min(8).max(72),
+const signupSchema = z
+  .object({
+    fullName: z.string().trim().min(2).max(80).optional(),
+    email: z.string().email().optional(),
+    password: z.string().min(8).max(72).optional(),
+    idToken: z.string().min(1).max(8192).optional(),
+  })
+  .refine(
+    (body) => Boolean(body.idToken?.trim()) || Boolean(body.email && body.password),
+    { message: "Invalid signup details" },
+  );
+
+const refreshSchema = z.object({
+  idToken: z.string().min(1).max(8192).optional(),
 });
 
 const oauthSessionSchema = z.object({
   accessToken: z.string().min(1).max(8192),
-  refreshToken: z.string().min(1).max(8192),
+  refreshToken: z.string().min(1).max(8192).optional(),
   state: z.string().regex(/^[a-f0-9]{64}$/),
 });
 
@@ -254,30 +279,27 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
     return;
   }
   try {
-    const { data, error } = await supabaseAdmin.auth.getUser(parsed.data.accessToken);
-    if (error || !data.user || !data.user.email) {
+    const identity = await verifyAccessToken(parsed.data.accessToken);
+    if (!identity?.email) {
       res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
       res.status(401).json({ error: "OAuth authentication could not be verified" });
       return;
     }
-    // A Google sign-in that links to an existing email/password
-    // account keeps "email" as the primary provider, so the allowlist must
-    // also accept any linked identity (identities never includes the primary
-    // provider itself, hence the two-part check).
-    const provider = data.user.app_metadata?.provider as string | undefined;
-    const linkedProviders = (data.user.identities ?? [])
-      .map((identity) => identity?.provider)
-      .filter((p): p is string => typeof p === "string");
     const hasAllowedProvider =
-      (provider !== undefined && ALLOWED_OAUTH_PROVIDERS.has(provider)) ||
-      linkedProviders.some((p) => ALLOWED_OAUTH_PROVIDERS.has(p));
+      identity.providerIds.some((p) => p === "google" || p === "google.com") ||
+      (!useFirebaseAuth() && identity.providerIds.some((p) => ALLOWED_OAUTH_PROVIDERS.has(p)));
     if (parsed.data.state !== csrfToken || !hasAllowedProvider) {
       res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
       res.status(401).json({ error: "OAuth authentication could not be verified" });
       return;
     }
 
-    const accessStatus = await readAccessStatus(data.user.id, data.user.email);
+    await ensureAuthProfile(identity.id, {
+      email: identity.email,
+      fullName: identity.fullName,
+    });
+
+    const accessStatus = await readAccessStatus(identity.id, identity.email);
     if (accessStatus !== "ACTIVE") {
       res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
       const pending = accessStatus === "PENDING";
@@ -285,15 +307,15 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
       // DIFFERENT unapproved account on this device, otherwise bind this one
       // (the same account re-signing in must not block itself).
       if (pending) {
-        const device = await checkDeviceSignupLimit(req, res, data.user.id);
+        const device = await checkDeviceSignupLimit(req, res, identity.id);
         if (device.limited) {
           res.status(403).json({ error: DEVICE_SIGNUP_LIMIT_MESSAGE, code: "DEVICE_SIGNUP_LIMIT" });
           return;
         }
-        await bindDeviceToAccount(device.deviceId, data.user.id);
-        await ensureAccessRequest(data.user.id);
+        await bindDeviceToAccount(device.deviceId, identity.id);
+        await ensureAccessRequest(identity.id);
       }
-      const statusToken = pending ? createStatusToken(data.user.id) : undefined;
+      const statusToken = pending ? createStatusToken(identity.id) : undefined;
       res.status(403).json({
         error: pending ? "Account pending approval" : "Account denied",
         code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
@@ -306,15 +328,17 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
       return;
     }
 
-    const role = await loadProfileRole(data.user.id);
+    const role = await loadProfileRole(identity.id);
     const user = await buildExtendedUser(
-      data.user.id,
-      data.user.email,
+      identity.id,
+      identity.email,
       role,
-      (data.user.user_metadata?.full_name as string | undefined) ?? null,
+      identity.fullName,
     );
     setSessionCookie(res, parsed.data.accessToken);
-    setRefreshCookie(res, parsed.data.refreshToken);
+    if (!useFirebaseAuth() && parsed.data.refreshToken) {
+      setRefreshCookie(res, parsed.data.refreshToken);
+    }
     res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
     res.json({ user, accessToken: parsed.data.accessToken });
   } catch (err) {
@@ -330,7 +354,37 @@ router.post("/login", async (req: Request, res: Response) => {
     return;
   }
 
-  const { data, error } = await signInWithPassword(parsed.data.email, parsed.data.password);
+  if (useFirebaseAuth()) {
+    const idToken = parsed.data.idToken?.trim();
+    if (!idToken) {
+      res.status(400).json({
+        error: "Sign in with the Firebase client SDK and send idToken",
+        code: "FIREBASE_CLIENT_AUTH",
+      });
+      return;
+    }
+    const verified = await verifyFirebaseIdToken(idToken);
+    if (!verified?.email) {
+      res.status(401).json({ error: "Invalid email or password" });
+      return;
+    }
+    await ensureAuthProfile(verified.uid, { email: verified.email, fullName: verified.displayName });
+    const accessStatus = await readAccessStatus(verified.uid, verified.email);
+    if (accessStatus !== "ACTIVE") {
+      accessDenied(res, accessStatus, verified.uid);
+      return;
+    }
+    const user = await resolveSessionUser(verified.uid, verified.email);
+    const extended = await buildExtendedUser(user.id, user.email, user.role, verified.displayName);
+    setSessionCookie(res, idToken);
+    const body: LoginResponse = { user: extended, accessToken: idToken };
+    res.json(body);
+    return;
+  }
+
+  const email = parsed.data.email!;
+  const password = parsed.data.password!;
+  const { data, error } = await signInWithPassword(email, password);
 
   if (error || !data.user || !data.session) {
     res.status(401).json({ error: "Invalid email or password" });
@@ -345,7 +399,7 @@ router.post("/login", async (req: Request, res: Response) => {
     return;
   }
 
-  const user = await resolveSessionUser(data.user.id, data.user.email ?? parsed.data.email);
+  const user = await resolveSessionUser(data.user.id, data.user.email ?? email);
   const extended = await buildExtendedUser(user.id, user.email, user.role);
 
   setSessionCookie(res, data.session.access_token, data.session.expires_in);
@@ -368,6 +422,105 @@ router.post("/signup", async (req: Request, res: Response) => {
     return;
   }
 
+  if (useFirebaseAuth()) {
+    const idToken = parsed.data.idToken?.trim();
+    let uid: string;
+    let email: string;
+    let fullName = parsed.data.fullName ?? null;
+    let accessToken = idToken ?? "";
+
+    if (idToken) {
+      const verified = await verifyFirebaseIdToken(idToken);
+      if (!verified?.email) {
+        res.status(401).json({ error: "Invalid signup session" });
+        return;
+      }
+      uid = verified.uid;
+      email = verified.email;
+      fullName = fullName ?? verified.displayName;
+    } else if (parsed.data.email && parsed.data.password) {
+      const created = await firebaseCreateUser({
+        email: parsed.data.email,
+        password: parsed.data.password,
+        displayName: fullName,
+        emailVerified: isOwnerEmail(parsed.data.email),
+      });
+      if (!created) {
+        res.status(400).json({ error: "Something went wrong. Please try again." });
+        return;
+      }
+      uid = created.uid;
+      email = created.email;
+      res.status(202).json({
+        user: null,
+        accessToken: null,
+        message: "Account created — sign in to continue.",
+      } satisfies SignupResponse);
+      await ensureAuthProfile(uid, { email, fullName, isSignup: true });
+      return;
+    } else {
+      res.status(400).json({ error: "Invalid signup details" });
+      return;
+    }
+
+    const ownerSignup = isOwnerEmail(email);
+    let deviceId: string | null = null;
+    if (!ownerSignup) {
+      const device = await checkDeviceSignupLimit(req, res);
+      if (device.limited) {
+        res.status(403).json({ error: DEVICE_SIGNUP_LIMIT_MESSAGE, code: "DEVICE_SIGNUP_LIMIT" });
+        return;
+      }
+      deviceId = device.deviceId;
+    }
+
+    await ensureAuthProfile(uid, { email, fullName, isSignup: true });
+    if (deviceId) await bindDeviceToAccount(deviceId, uid);
+
+    const { error: profileErr } = await updateProfileFields(
+      uid,
+      ownerSignup
+        ? { access_status: "ACTIVE", role: "owner", plan: "pro", premium_status: true, full_name: fullName }
+        : {
+            access_status: "PENDING",
+            role: "member",
+            plan: "member",
+            premium_status: false,
+            full_name: fullName,
+          },
+    );
+    if (profileErr) console.error("[auth] signup profile tier write failed:", profileErr.message);
+    if (!ownerSignup) await ensureAccessRequest(uid);
+
+    const accessStatus = await readAccessStatus(uid, email);
+    if (accessStatus !== "ACTIVE") {
+      if (accessStatus === "REJECTED") {
+        accessDenied(res, accessStatus, uid);
+        return;
+      }
+      const body: SignupResponse = {
+        user: null,
+        accessToken: null,
+        message:
+          "After signing, the account is approved by the system verification and administrative approval.",
+        statusToken: createStatusToken(uid),
+        accessStatus: "PENDING",
+      };
+      res.json(body);
+      return;
+    }
+
+    const user = await resolveSessionUser(uid, email);
+    const extended = await buildExtendedUser(user.id, user.email, user.role, fullName);
+    if (!accessToken) {
+      res.status(400).json({ error: "Missing idToken for signup session" });
+      return;
+    }
+    setSessionCookie(res, accessToken);
+    res.json({ user: extended, accessToken } satisfies SignupResponse);
+    return;
+  }
+
   // One account per device without approval (owner 2026-11-09).
   // Operator accounts bypass the device gate — direct login.
   const ownerSignup = isOwnerEmail(parsed.data.email);
@@ -382,7 +535,11 @@ router.post("/signup", async (req: Request, res: Response) => {
   }
 
   try {
-    const result = await signUp(parsed.data);
+    const result = await signUp({
+      email: parsed.data.email!,
+      password: parsed.data.password!,
+      fullName: parsed.data.fullName,
+    });
 
     if (result.error) {
       res.status(400).json({ error: "Something went wrong. Please try again." });
@@ -495,6 +652,35 @@ router.post("/signup", async (req: Request, res: Response) => {
  * 401 → no valid session to refresh
  */
 router.post("/refresh", async (req: Request, res: Response) => {
+  if (useFirebaseAuth()) {
+    const parsed = refreshSchema.safeParse(req.body ?? {});
+    const idToken = parsed.success ? parsed.data.idToken?.trim() : undefined;
+    const token = idToken || extractToken(req);
+    if (!token) {
+      res.status(401).json({ error: "No session to refresh" });
+      return;
+    }
+    const user = await getUserFromRequest(
+      { headers: { authorization: `Bearer ${token}` } } as unknown as Request,
+      { allowUnapproved: true },
+    );
+    if (!user) {
+      res.status(401).json({ error: "Invalid or expired session" });
+      return;
+    }
+    const accessStatus = await readAccessStatus(user.id, user.email);
+    if (accessStatus !== "ACTIVE") {
+      clearSessionCookie(res);
+      accessDenied(res, accessStatus, user.id);
+      return;
+    }
+    const extended = await buildExtendedUser(user.id, user.email, user.role);
+    setSessionCookie(res, token);
+    const body: RefreshResponse = { user: extended, accessToken: token };
+    res.json(body);
+    return;
+  }
+
   const refreshToken =
     (req.cookies?.[REFRESH_COOKIE] as string | undefined) || undefined;
 
@@ -567,7 +753,12 @@ router.post("/refresh", async (req: Request, res: Response) => {
 router.post("/logout", async (req: Request, res: Response) => {
   const token = extractToken(req);
   if (token) {
-    await signOut(token);
+    if (useFirebaseAuth()) {
+      const verified = await verifyFirebaseIdToken(token);
+      if (verified) await revokeFirebaseSessions(verified.uid);
+    } else {
+      await signOut(token);
+    }
   }
   clearSessionCookie(res);
   const body: LogoutResponse = { ok: true };
@@ -684,15 +875,25 @@ router.post("/forgot-password", async (req: Request, res: Response) => {
   const redirectTo = `${base}/reset-password`;
 
   try {
-    const { error } = await supabaseAdmin.auth.resetPasswordForEmail(parsed.data.email, {
-      redirectTo,
-    });
-    if (error) {
-      // Never leak whether the address exists; log for ops instead.
-      console.warn("[auth] resetPasswordForEmail failed:", error.message);
+    if (useFirebaseAuth()) {
+      const ok = await firebaseSendPasswordResetEmail(parsed.data.email, redirectTo);
+      if (!ok) {
+        console.warn("[auth] Firebase resetPasswordForEmail failed");
+      }
+    } else {
+      const { error } = await supabaseAdmin.auth.resetPasswordForEmail(parsed.data.email, {
+        redirectTo,
+      });
+      if (error) {
+        // Never leak whether the address exists; log for ops instead.
+        console.warn("[auth] resetPasswordForEmail failed:", error.message);
+      }
     }
-  } catch (err: any) {
-    console.warn("[auth] resetPasswordForEmail error:", err?.message ?? err);
+  } catch (err: unknown) {
+    console.warn(
+      "[auth] resetPasswordForEmail error:",
+      err instanceof Error ? err.message : err,
+    );
   }
 
   res.json({ sent: true });
@@ -736,15 +937,27 @@ router.post("/reset-password", async (req: Request, res: Response) => {
       }
       userId = data.user.id;
     } else if (token) {
-      const { data, error } = await supabaseAdmin.auth.getUser(token);
-      if (error || !data?.user) {
-        console.warn("[auth] recovery token rejected:", error?.message ?? "no user");
-        res
-          .status(400)
-          .json({ error: "This reset link is invalid or has expired. Please request a new one." });
-        return;
+      if (useFirebaseAuth()) {
+        const verified = await verifyFirebaseIdToken(token);
+        if (!verified) {
+          console.warn("[auth] Firebase recovery token rejected");
+          res
+            .status(400)
+            .json({ error: "This reset link is invalid or has expired. Please request a new one." });
+          return;
+        }
+        userId = verified.uid;
+      } else {
+        const { data, error } = await supabaseAdmin.auth.getUser(token);
+        if (error || !data?.user) {
+          console.warn("[auth] recovery token rejected:", error?.message ?? "no user");
+          res
+            .status(400)
+            .json({ error: "This reset link is invalid or has expired. Please request a new one." });
+          return;
+        }
+        userId = data.user.id;
       }
-      userId = data.user.id;
     }
 
     if (!userId) {
@@ -754,11 +967,17 @@ router.post("/reset-password", async (req: Request, res: Response) => {
       return;
     }
 
-    const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(userId, {
-      password,
-    });
-    if (updateError) {
-      console.error("[auth] password reset failed:", updateError.message);
+    let passwordOk = false;
+    if (useFirebaseAuth()) {
+      passwordOk = await firebaseUpdatePassword(userId, password);
+    } else {
+      const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(userId, {
+        password,
+      });
+      passwordOk = !updateError;
+    }
+    if (!passwordOk) {
+      console.error("[auth] password reset failed for user", userId);
       res.status(400).json({
         error:
           "Could not update the password. The link may have expired — please request a new one.",

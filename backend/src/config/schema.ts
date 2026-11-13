@@ -41,7 +41,9 @@ export const backendEnvSchema = z.object({
   FIREBASE_CLIENT_EMAIL: optionalString,
   FIREBASE_PRIVATE_KEY: optionalString,
   FIREBASE_SERVICE_ACCOUNT_JSON: optionalString,
+  FIREBASE_SERVICE_ACCOUNT_PATH: optionalString,
   FIREBASE_STORAGE_BUCKET: optionalString,
+  USE_FIREBASE_AUTH: truthy.optional(),
 
   RATE_LIMIT_MAX_REQUESTS: optionalString,
   RATE_LIMIT_WINDOW_MS: optionalString,

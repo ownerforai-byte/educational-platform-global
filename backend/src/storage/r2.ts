@@ -16,6 +16,7 @@ import {
   S3,
   PutObjectCommand,
   GetObjectCommand,
+  DeleteObjectCommand,
 } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 import { supabaseAdmin } from "../db/supabase";
@@ -85,6 +86,32 @@ export async function r2Upload(
     { expiresIn: 7 * 24 * 60 * 60 },
   );
   return { url: signed };
+}
+
+/** Read an object back. Returns null when R2 is off or the key is missing. */
+export async function r2Download(
+  path: string,
+): Promise<{ buffer: Buffer; contentType: string } | null> {
+  if (!isR2StorageActive()) return null;
+  const key = path.replace(/^\/+/, "");
+  const out = await r2Client().send(
+    new GetObjectCommand({ Bucket: BUCKET_NAME, Key: key }),
+  );
+  const bytes = await out.Body?.transformToByteArray();
+  if (!bytes) return null;
+  return {
+    buffer: Buffer.from(bytes),
+    contentType: out.ContentType || "application/octet-stream",
+  };
+}
+
+/** Best-effort delete. Missing keys are ignored by the caller. */
+export async function r2Delete(path: string): Promise<void> {
+  if (!isR2StorageActive()) return;
+  const key = path.replace(/^\/+/, "");
+  await r2Client().send(
+    new DeleteObjectCommand({ Bucket: BUCKET_NAME, Key: key }),
+  );
 }
 
 /** Buckets the storage health report walks. */

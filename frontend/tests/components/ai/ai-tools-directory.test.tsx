@@ -35,7 +35,11 @@ describe("AI tools directory", () => {
   it("lists the AI interfaces and marks higher-tier tools unavailable without a lock", () => {
     render(<AiToolsDirectory subjects={subjects} />);
 
-    expect(screen.getAllByRole("link")).toHaveLength(4);
+    expect(screen.getAllByRole("link")).toHaveLength(5);
+    expect(screen.getByRole("link", { name: /Community/ })).toHaveAttribute(
+      "href",
+      "/ai/community",
+    );
     expect(screen.getByRole("link", { name: /Veer Study Assistant/ })).toHaveAttribute(
       "href",
       "/chat",

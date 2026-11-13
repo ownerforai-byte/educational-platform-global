@@ -161,7 +161,7 @@ describe("auth wall wiring", () => {
 
   it("keeps the guest home and the plans page public, and the notice board member-only", () => {
     const gate = read("features/auth/components/require-approval.tsx");
-    expect(gate).toContain('const PUBLIC_PATHS = ["/home", "/plans", "/onboarding"] as const;');
+    expect(gate).toContain('const PUBLIC_PATHS = ["/home", "/plans", "/onboarding", "/ai/community"] as const;');
     expect(gate).not.toContain('"/notice"');
     // The periodic table must NOT be on the open list.
     expect(gate).not.toContain('"/periodic-table"');

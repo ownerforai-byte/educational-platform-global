@@ -167,4 +167,13 @@ describe("navigation menu", () => {
       expect(routeExists(tab.href), `tab ${tab.href} has no page`).toBe(true);
     }
   });
+
+  it("puts Community in the app tab bar where Practice used to be", () => {
+    const hrefs = APP_TABS.map((t) => t.href);
+    expect(hrefs).toContain("/ai/community");
+    expect(hrefs).not.toContain("/quiz");
+    const communityTab = APP_TABS.find((t) => t.href === "/ai/community");
+    expect(communityTab?.label).toBe("Community");
+    expect(quickLinkMinTier("/practice")).toBe("plus");
+  });
 });

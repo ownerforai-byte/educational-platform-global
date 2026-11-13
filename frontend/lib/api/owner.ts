@@ -120,6 +120,17 @@ export function adjustOwnerUserCredits(
   });
 }
 
+/** Bytes cap for profile/community storage; `null` restores the tier default. */
+export function updateOwnerUserStorageLimit(
+  userId: string,
+  storage_limit_bytes: number | null,
+): Promise<{ success: true; storage_limit_bytes: number | null }> {
+  return apiFetch(`/api/owner/users/${userId}/storage-limit`, {
+    method: "PATCH",
+    body: JSON.stringify({ storage_limit_bytes }),
+  });
+}
+
 /** Grant an access tier — the backend writes role + plan + premium together. Owner is grantable to a non-owner; existing owners are protected server-side. */
 export function updateOwnerUserRole(
   userId: string,

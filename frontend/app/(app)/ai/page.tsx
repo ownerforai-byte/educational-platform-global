@@ -43,6 +43,18 @@ export default function AIStudioPage() {
           >
             Subject classrooms
           </Link>
+          <Link
+            href="/practice"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-border px-4 py-2 text-xs font-bold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            Practice
+          </Link>
+          <Link
+            href="/ai/community"
+            className="inline-flex items-center gap-1.5 rounded-xl border border-border px-4 py-2 text-xs font-bold text-foreground transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            Community
+          </Link>
         </div>
       </header>
 

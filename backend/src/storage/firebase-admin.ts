@@ -1,13 +1,32 @@
 /**
  * Firebase Admin bootstrap for Storage + Firestore (Tier 2).
- * Uses FIREBASE_SERVICE_ACCOUNT_JSON (full JSON string) or discrete
+ * Uses FIREBASE_SERVICE_ACCOUNT_PATH (gitignored JSON file), or
+ * FIREBASE_SERVICE_ACCOUNT_JSON (single-line string), or discrete
  * FIREBASE_PROJECT_ID + FIREBASE_CLIENT_EMAIL + FIREBASE_PRIVATE_KEY.
  * When unset, Tier-2 writes no-op / report inactive — Supabase + R2 still work.
  */
+import { existsSync, readFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
 
 type AdminApp = {
   name: string;
+};
+
+export type FirebaseAuthAdmin = {
+  verifyIdToken: (
+    token: string,
+    checkRevoked?: boolean,
+  ) => Promise<Record<string, unknown>>;
+  revokeRefreshTokens: (uid: string) => Promise<void>;
+  createUser: (props: Record<string, unknown>) => Promise<{ uid: string; email?: string }>;
+  updateUser: (uid: string, props: Record<string, unknown>) => Promise<void>;
+  getUserByEmail: (email: string) => Promise<{ uid: string; email?: string; displayName?: string }>;
+  generatePasswordResetLink: (
+    email: string,
+    actionCodeSettings?: { url: string },
+  ) => Promise<string>;
 };
 
 type AdminNamespace = {
@@ -21,6 +40,7 @@ type AdminNamespace = {
   credential: {
     cert: (serviceAccount: object) => unknown;
   };
+  auth: (app?: AdminApp) => FirebaseAuthAdmin;
   firestore: (app?: AdminApp) => FirebaseFirestore;
   storage: (app?: AdminApp) => { bucket: (name?: string) => FirebaseBucket };
 };
@@ -62,15 +82,56 @@ function loadAdmin(): AdminNamespace | null {
   }
 }
 
+function parseJsonServiceAccount(raw: string): object | null {
+  const trimmed = raw.trim();
+  if (!trimmed) return null;
+  const candidates = [trimmed];
+  if (trimmed.includes("\\n") || trimmed.includes('\\"')) {
+    candidates.push(trimmed.replace(/\\n/g, "\n").replace(/\\"/g, '"'));
+  }
+  for (const candidate of candidates) {
+    try {
+      return JSON.parse(candidate) as object;
+    } catch {
+      /* try next */
+    }
+  }
+  return null;
+}
+
+function serviceAccountSearchBases(): string[] {
+  const cwd = process.cwd();
+  const here = dirname(fileURLToPath(import.meta.url));
+  const backendRoot = resolve(here, "../..");
+  const repoRoot = resolve(backendRoot, "..");
+  return [...new Set([cwd, backendRoot, repoRoot, resolve(cwd, "backend"), resolve(repoRoot, "backend")])];
+}
+
+function readServiceAccountFile(pathRel: string): object | null {
+  for (const base of serviceAccountSearchBases()) {
+    const abs = resolve(base, pathRel);
+    if (!existsSync(abs)) continue;
+    const obj = parseJsonServiceAccount(readFileSync(abs, "utf8"));
+    if (obj) return obj;
+  }
+  return null;
+}
+
 function parseServiceAccount(): object | null {
+  const pathRel = process.env.FIREBASE_SERVICE_ACCOUNT_PATH?.trim();
+  if (pathRel) {
+    const fromFile = readServiceAccountFile(pathRel);
+    if (fromFile) return fromFile;
+    initError = `FIREBASE_SERVICE_ACCOUNT_PATH not readable: ${pathRel}`;
+    return null;
+  }
+
   const raw = process.env.FIREBASE_SERVICE_ACCOUNT_JSON?.trim();
   if (raw) {
-    try {
-      return JSON.parse(raw) as object;
-    } catch {
-      initError = "FIREBASE_SERVICE_ACCOUNT_JSON is not valid JSON";
-      return null;
-    }
+    const obj = parseJsonServiceAccount(raw);
+    if (obj) return obj;
+    initError = "FIREBASE_SERVICE_ACCOUNT_JSON is not valid JSON";
+    return null;
   }
   const projectId = process.env.FIREBASE_PROJECT_ID?.trim();
   const clientEmail = process.env.FIREBASE_CLIENT_EMAIL?.trim();
@@ -81,7 +142,13 @@ function parseServiceAccount(): object | null {
 }
 
 export function isFirebaseAdminConfigured(): boolean {
-  return Boolean(parseServiceAccount() || process.env.FIREBASE_SERVICE_ACCOUNT_JSON?.trim());
+  return Boolean(
+    process.env.FIREBASE_SERVICE_ACCOUNT_PATH?.trim() ||
+      process.env.FIREBASE_SERVICE_ACCOUNT_JSON?.trim() ||
+      (process.env.FIREBASE_PROJECT_ID?.trim() &&
+        process.env.FIREBASE_CLIENT_EMAIL?.trim() &&
+        process.env.FIREBASE_PRIVATE_KEY?.trim()),
+  );
 }
 
 export function getFirebaseInitError(): string | null {
@@ -140,6 +207,13 @@ export function getStorageBucket(): FirebaseBucket | null {
   if (!admin || !app) return null;
   const name = process.env.FIREBASE_STORAGE_BUCKET?.trim();
   return name ? admin.storage(app).bucket(name) : admin.storage(app).bucket();
+}
+
+export function getFirebaseAuth(): FirebaseAuthAdmin | null {
+  const admin = loadAdmin();
+  const app = ensureFirebaseAdmin();
+  if (!admin || !app) return null;
+  return admin.auth(app);
 }
 
 export function firebaseAdminHealth(): {

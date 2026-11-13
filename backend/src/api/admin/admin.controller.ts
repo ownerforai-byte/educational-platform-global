@@ -23,6 +23,10 @@ const updateUserRoleSchema = z.object({
   role: z.enum(["member", "plus", "pro", "owner"]),
 });
 
+const storageLimitSchema = z.object({
+  storage_limit_bytes: z.union([z.number().int().min(0), z.null()]),
+});
+
 /**
  * GET /api/admin/users
  * List all users with their credits, rungs, and premium status.
@@ -262,6 +266,61 @@ router.patch("/users/:id/role", requireAuth, async (req: Request<{ id: string }>
 
     res.json({ success: true, userId: id, newRole: parsed.data.role });
   } catch (err: any) {
+    console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/**
+ * PATCH /api/admin/users/:id/storage-limit
+ * Set per-user profile storage cap (null restores tier default). Owner rung only.
+ */
+router.patch("/users/:id/storage-limit", requireAuth, async (req: Request, res: Response) => {
+  const user = (req as AuthedRequest).user;
+  const role = normalizeRole(user.role);
+
+  if (role !== "owner") {
+    res.status(403).json({ error: "Forbidden" });
+    return;
+  }
+
+  const { id } = req.params;
+  const parsed = storageLimitSchema.safeParse(req.body);
+
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid payload", details: parsed.error.flatten() });
+    return;
+  }
+
+  try {
+    const { data: targetProfile } = await supabaseAdmin
+      .from("profiles")
+      .select("id")
+      .eq("id", id)
+      .single();
+
+    if (!targetProfile) {
+      res.status(404).json({ error: "User not found" });
+      return;
+    }
+
+    const { error: updateError } = await supabaseAdmin
+      .from("profiles")
+      .update({ storage_limit_bytes: parsed.data.storage_limit_bytes })
+      .eq("id", id);
+
+    if (updateError) {
+      console.error("Failed to update storage limit:", updateError.message);
+      res.status(500).json({ error: "Failed to update storage limit" });
+      return;
+    }
+
+    res.json({
+      success: true,
+      userId: id,
+      storage_limit_bytes: parsed.data.storage_limit_bytes,
+    });
+  } catch (err: unknown) {
     console.error(err);
     res.status(500).json({ error: "Internal server error" });
   }

@@ -178,7 +178,7 @@ const primaryItems: NavItem[] = [
   { href: "/mock-exams",    label: "Mock Exams",         icon: Timer,         minLevel: "pro"     },
   { href: "/analytics",     label: "Analytics",          icon: LineChart,     minLevel: "pro" },
   { href: "/streaks",       label: "Streaks and Badges", icon: Award,         minLevel: "member",  hideFromSidebar: true },
-  { href: "/community",     label: "Community",          icon: Users,         minLevel: "plus"    },
+  { href: "/community",     label: "Study Spaces",       icon: Users,         minLevel: "plus"    },
   { href: "/ask",           label: "Ask Veer",           icon: HelpCircle,    minLevel: "member"  },
   { href: "/my-notes",      label: "My Notes",           icon: NotebookPen,   minLevel: "member",  hideFromSidebar: true },
   { href: "/downloads",     label: "Offline Study",      icon: Download,      minLevel: "owner",   hideFromSidebar: true },
@@ -186,7 +186,6 @@ const primaryItems: NavItem[] = [
   { href: "/referrals",     label: "Referrals",          icon: Gift,          minLevel: "plus",    hideFromSidebar: true },
   { href: "/site-index",    label: "Everything Index",   icon: ListTree,      minLevel: "pro"     },
   { href: "/levels",        label: "Curriculum Levels",  icon: Compass,       minLevel: "pro"     },
-  { href: "/practice",      label: "Practice Hub",       icon: Target,        minLevel: "plus", hideFromSidebar: true },
   { href: "/exams",         label: "Exam Hub",           icon: GraduationCap, minLevel: "plus", hideFromSidebar: true },
   { href: "/revision",      label: "Quick Revision",     icon: Repeat,        minLevel: "plus"    },
   { href: "/leaderboard",   label: "Leaderboard",        icon: Award,         minLevel: "plus"    },
@@ -279,8 +278,12 @@ const toolsItems: NavItem[] = [
   { href: "/chat/nepali",  label: "Nepali Assistant",        icon: Languages,  minLevel: "member" },
   { href: "/chat/grammar", label: "Grammar Console",         icon: BookOpen,   minLevel: "member" },
 
-  // Available to Plus and above (full AI studio)
+  // Available to Plus and above (full AI studio).
+  // Practice Hub stays out of the sidebar (the footer already links it) and
+  // is grouped here so AI Tools is its parent. Community is the public feed.
   { href: "/ai",           label: "AI Tools",                icon: Bot,        minLevel: "member", hideFromSidebar: true },
+  { href: "/practice",     label: "Practice Hub",            icon: Target,     minLevel: "plus", hideFromSidebar: true },
+  { href: "/ai/community", label: "Community",               icon: Users,      minLevel: "guest" },
   { href: "/ai/math",      label: "Veer Math Solver",        icon: Sigma,      minLevel: "plus"  },
   { href: "/ai/deep-dive", label: "Deep Concept Studio",     icon: Lightbulb,  minLevel: "plus"  },
   { href: "/ai/diagrams",  label: "Diagram Hub",             icon: Shapes,     minLevel: "plus"  },
@@ -334,6 +337,8 @@ const extendedItems: NavItem[] = [
  */
 const accountItems: NavItem[] = [
   { href: "/profile",       label: "My Profile",       icon: User,        minLevel: "member", hideFromSidebar: true },
+  { href: "/profile/edit",  label: "Edit Profile",     icon: User,        minLevel: "member", hideFromSidebar: true },
+  { href: "/users",         label: "Find Students",    icon: Users,       minLevel: "member", hideFromSidebar: true },
   { href: "/progress",      label: "My Progress",      icon: UserCheck,   minLevel: "member" },
   { href: "/bookmarks",     label: "Saved Bookmarks",  icon: Bookmark,    minLevel: "member" },
   { href: "/report-card",   label: "Report Card",      icon: FileText,    minLevel: "plus"   },
@@ -456,7 +461,7 @@ export const APP_TABS = [
   { href: "/home",     label: "Home",     short: "Home",     icon: Home },
   { href: "/subjects", label: "Learn",    short: "Learn",    icon: BookOpen },
   { href: "/ai",      label: "AI Tools",  short: "AI Tools", icon: Bot     },
-  { href: "/quiz",     label: "Practice", short: "Practice", icon: Target },
+  { href: "/ai/community", label: "Community", short: "Community", icon: Users },
   { href: "/profile",  label: "Info",       short: "Info",       icon: Info   },
 ] as const;
 

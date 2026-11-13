@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { supabaseAdmin } from "../db/supabase";
+import { verifyAccessToken } from "../auth/token-verify.js";
 import {
   getProfileAccessRow,
   getProfileFullName,
@@ -15,8 +15,13 @@ import {
 /** Request augmented with the validated session user after requireAuth. */
 export type AuthedRequest = Request & { user: SessionUser };
 
-/** The httpOnly cookie name used for the Supabase access token. */
+/**
+ * HttpOnly session cookie carrying the current ID token (Supabase JWT or Firebase).
+ * Name kept for same-origin proxy / client compatibility during migration.
+ */
 export const SESSION_COOKIE = "sb-access-token";
+/** Alias documented for Firebase cutover — same cookie value. */
+export const FIREBASE_SESSION_COOKIE = SESSION_COOKIE;
 
 const USER_ROLE_SET = new Set<string>(USER_ROLES);
 
@@ -172,27 +177,24 @@ export async function getUserFromRequest(
   if (!token) return null;
 
   try {
-    const { data, error } = await supabaseAdmin.auth.getUser(token);
-    if (error || !data.user) {
-      if (error) console.warn("[Auth] Token validation failed:", error.message);
-      return null;
-    }
+    const identity = await verifyAccessToken(token);
+    if (!identity) return null;
     const [profileAccess, profileName, planInfo] = await Promise.all([
-      loadProfileAccess(data.user.id),
-      loadProfileFullName(data.user.id),
-      loadProfilePlan(data.user.id),
+      loadProfileAccess(identity.id),
+      loadProfileFullName(identity.id),
+      loadProfilePlan(identity.id),
     ]);
     if (
       !allowUnapproved &&
-      !isApprovedAccount({ email: data.user.email, role: profileAccess.role }, profileAccess.accessStatus)
+      !isApprovedAccount({ email: identity.email, role: profileAccess.role }, profileAccess.accessStatus)
     ) {
       return null;
     }
     return buildSessionUser(
-      data.user.id,
-      data.user.email ?? "",
+      identity.id,
+      identity.email ?? "",
       profileAccess.role,
-      profileName ?? (data.user.user_metadata?.full_name as string) ?? null,
+      profileName ?? identity.fullName,
       planInfo.plan,
       planInfo.premiumStatus,
     );

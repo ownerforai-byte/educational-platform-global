@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { normalizeRole } from "../../auth/types";
 import { isApprovedAccount, loadProfileAccess } from "../../middleware/auth";
+import { verifyAccessToken } from "../../auth/token-verify.js";
 import { supabaseAdmin } from "../../db/supabase";
 import { routeBinaryUpload, storageTiersHealth } from "../../storage/router";
 
@@ -16,14 +17,14 @@ async function requireUser(req: Request, res: Response) {
   }
 
   const token = authHeader.slice(7);
-  const { data, error } = await supabaseAdmin.auth.getUser(token);
+  const user = await verifyAccessToken(token);
 
-  if (error || !data.user) {
+  if (!user) {
     res.status(401).json({ error: "Unauthorized" });
     return null;
   }
 
-  return data.user;
+  return { id: user.id, email: user.email ?? undefined };
 }
 
 // Upload gate: the plus rung and up (legacy values normalize to owner first).
