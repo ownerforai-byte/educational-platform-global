@@ -2207,6 +2207,53 @@ pre {
   }
 }
 
+/* ── Community board — decorative motion (respects reduced motion) ───── */
+@keyframes community-shimmer-slide {
+  0% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+.community-bot-badge {
+  position: relative;
+  overflow: hidden;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .community-bot-badge::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 35%,
+      hsl(var(--primary) / 0.12) 50%,
+      transparent 65%
+    );
+    animation: community-shimmer-slide 2.8s ease-in-out infinite;
+  }
+}
+.community-upload-pulse {
+  animation: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .community-upload-pulse {
+    animation: community-upload-glow 1.6s ease-in-out infinite;
+  }
+}
+@keyframes community-upload-glow {
+  0%,
+  100% {
+    border-color: hsl(var(--border) / 0.85);
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0);
+  }
+  50% {
+    border-color: hsl(var(--primary) / 0.45);
+    box-shadow: 0 0 0 3px hsl(var(--primary) / 0.08);
+  }
+}
+
 /* ── On-demand rendering for card grids (owner 2026-11-09) ────────────────
    The browser skips layout/paint for offscreen cards until they approach the
    viewport, so the full class-subject and AI-tool grids are never all

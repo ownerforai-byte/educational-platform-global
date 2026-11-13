@@ -82,7 +82,8 @@ export function SocialAuthButtons({
     let redirected = false;
 
     try {
-      if (!(await isOAuthProviderEnabled("google"))) {
+      const firebaseAuth = useFirebaseClientAuth();
+      if (!firebaseAuth && !(await isOAuthProviderEnabled("google"))) {
         onError?.(authFailureMessage(new Error("unavailable"), "oauth"));
         return;
       }
@@ -90,7 +91,7 @@ export function SocialAuthButtons({
       const csrfToken = await requestOAuthCsrf();
       sessionStorage.setItem("neb_oauth_csrf", csrfToken);
 
-      if (useFirebaseClientAuth()) {
+      if (firebaseAuth) {
         // Same canonical callback as Supabase — never a preview deployment host.
         window.location.assign(publicUrl("/auth/callback?firebase_start=1"));
         redirected = true;

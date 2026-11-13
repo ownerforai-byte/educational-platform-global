@@ -8,7 +8,14 @@ import { serverError } from "../../middleware/error-handler";
 import { isR2StorageActive, r2Upload, r2Download, r2Delete } from "../../storage/r2";
 import { reserveStoragePath, releaseStoragePath } from "../../services/profile-storage";
 import { profileMediaPublicUrl } from "../../services/profile-media-url";
+import {
+  COMMUNITY_BOT_ID,
+  communityBotAuthorOverlay,
+  ensureCommunityBotProfile,
+  isCommunityBotId,
+} from "../../lib/community-bot";
 import type { SessionUser } from "../../auth/types";
+import { generateCommunityAssistantReply } from "../../services/community-ai-reply";
 
 /**
  * Public community feed. Guests read; any approved session (requireAuth)
@@ -199,6 +206,9 @@ function toAuthor(
   profile?: ProfileRow,
   followingByYou = false,
 ) {
+  if (isCommunityBotId(id)) {
+    return communityBotAuthorOverlay(id, profile, followingByYou);
+  }
   const name = typeof profile?.full_name === "string" ? profile.full_name.trim() : "";
   const username =
     typeof profile?.username === "string" && profile.username.trim()
@@ -226,6 +236,31 @@ async function profilesById(ids: string[]): Promise<Map<string, ProfileRow>> {
   if (error || !data) return map;
   for (const row of data as ProfileRow[]) map.set(row.id, row);
   return map;
+}
+
+async function assistantReplyMeta(
+  postId: string,
+  postAuthorId: string,
+  viewerId: string | null,
+): Promise<{ posted: boolean; canApprove: boolean }> {
+  let posted = false;
+  const { data, error } = await supabaseAdmin
+    .from("community_feed_ai_replies")
+    .select("post_id")
+    .eq("post_id", postId)
+    .maybeSingle();
+  if (!error && data) posted = true;
+  if (!posted && !isMissingTable(error)) {
+    const legacy = await supabaseAdmin
+      .from("community_feed_comments")
+      .select("id")
+      .eq("post_id", postId)
+      .eq("author_id", COMMUNITY_BOT_ID)
+      .limit(1);
+    if (!legacy.error && (legacy.data ?? []).length > 0) posted = true;
+  }
+  const canApprove = Boolean(viewerId && viewerId === postAuthorId && !posted);
+  return { posted, canApprove };
 }
 
 async function followingByAuthor(
@@ -797,11 +832,17 @@ router.get(
       viewer?.id ?? null,
       comments.map((comment) => comment.author_id),
     );
+    const assistantReply = await assistantReplyMeta(
+      postId,
+      found.row.author_id,
+      viewer?.id ?? null,
+    );
     noStore(res);
     res.json({
       post: {
         ...presented.posts[0],
         commentCount: comments.length,
+        assistantReply,
         comments: comments.map((comment) => ({
           id: comment.id,
           body: comment.body,
@@ -815,6 +856,107 @@ router.get(
         })),
       },
       migrated: true,
+    });
+  }),
+);
+
+router.post(
+  "/feed/:postId/ai-assistant/reply",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = userOf(req);
+    const postId = param(req.params.postId);
+    if (!isUuid(postId)) {
+      bad(res, "Post not found", 404);
+      return;
+    }
+    const parsed = z.object({ approve: z.literal(true) }).safeParse(req.body ?? {});
+    if (!parsed.success) {
+      bad(res, "Confirm approval with { \"approve\": true }.");
+      return;
+    }
+    const found = await findPost(postId);
+    if ("missing" in found) {
+      unavailable(res);
+      return;
+    }
+    if ("error" in found) {
+      serverError(res, found.error, "community-feed");
+      return;
+    }
+    if (!found.row) {
+      bad(res, "Post not found", 404);
+      return;
+    }
+    if (found.row.author_id !== user.id) {
+      bad(res, "Only the post author can approve a Study Assistant reply.", 403);
+      return;
+    }
+    const existing = await assistantReplyMeta(postId, found.row.author_id, user.id);
+    if (existing.posted) {
+      bad(res, "A Study Assistant reply was already published on this post.", 409);
+      return;
+    }
+    await ensureCommunityBotProfile();
+    let body: string;
+    try {
+      body = await generateCommunityAssistantReply({
+        title: found.row.title,
+        body: found.row.body,
+        category: found.row.category,
+      });
+    } catch (err) {
+      serverError(
+        res,
+        err instanceof Error ? err : new Error(String(err)),
+        "community-feed-ai",
+      );
+      return;
+    }
+    const now = new Date().toISOString();
+    const commentId = randomUUID();
+    const { error: commentError } = await supabaseAdmin.from("community_feed_comments").insert({
+      id: commentId,
+      post_id: postId,
+      author_id: COMMUNITY_BOT_ID,
+      body,
+      created_at: now,
+      updated_at: now,
+    });
+    if (commentError) {
+      if (isMissingTable(commentError)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, commentError, "community-feed");
+      return;
+    }
+    const { error: ledgerError } = await supabaseAdmin.from("community_feed_ai_replies").insert({
+      post_id: postId,
+      comment_id: commentId,
+      approved_by: user.id,
+      created_at: now,
+    });
+    if (ledgerError && !isMissingTable(ledgerError)) {
+      await supabaseAdmin.from("community_feed_comments").delete().eq("id", commentId);
+      serverError(res, ledgerError, "community-feed");
+      return;
+    }
+    const botProfiles = await profilesById([COMMUNITY_BOT_ID]);
+    noStore(res);
+    res.status(201).json({
+      comment: {
+        id: commentId,
+        body,
+        createdAt: now,
+        updatedAt: now,
+        author: toAuthor(
+          COMMUNITY_BOT_ID,
+          botProfiles.get(COMMUNITY_BOT_ID),
+          false,
+        ),
+      },
+      assistantReply: { posted: true, canApprove: false },
     });
   }),
 );
@@ -1378,7 +1520,7 @@ router.get(
     }
     const { data, error } = await supabaseAdmin
       .from("profiles")
-      .select("id, full_name, plan, role")
+      .select("id, full_name, username, plan, role, avatar_path")
       .eq("id", userId)
       .maybeSingle();
     if (error) {

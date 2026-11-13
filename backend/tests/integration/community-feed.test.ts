@@ -20,7 +20,17 @@ const memory = vi.hoisted(() => {
         plan: "member",
         premium_status: false,
       },
+      {
+        id: "rn-study-assistant",
+        role: "assistant",
+        access_status: "ACTIVE",
+        full_name: "Community bot",
+        username: "community-bot",
+        plan: "pro",
+        premium_status: false,
+      },
     ];
+    tables.community_feed_ai_replies = [];
   }
 
   class Query {
@@ -188,6 +198,18 @@ vi.mock("../../src/db/supabase", () => ({
   createAuthClient: () => memory.client,
 }));
 
+vi.mock("../../src/services/community-ai-reply", () => ({
+  generateCommunityAssistantReply: vi.fn(async () => "Grounded **assistant** reply for the post."),
+}));
+
+vi.mock("../../src/lib/community-bot", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("../../src/lib/community-bot")>();
+  return {
+    ...actual,
+    ensureCommunityBotProfile: vi.fn(async () => {}),
+  };
+});
+
 vi.mock("../../src/storage/r2", () => ({
   isR2StorageActive: () => false,
   r2Upload: vi.fn(),
@@ -334,5 +356,77 @@ describe("community feed", () => {
 
     const missing = await fetch(`${base}/feed/${postId}`);
     expect(missing.status).toBe(404);
+  });
+
+  it("requires post author approval before publishing a Study Assistant comment", async () => {
+    const created = await fetch(`${base}/feed`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({
+        title: "What is photosynthesis?",
+        body: "How do plants make food?",
+        category: "biology",
+      }),
+    });
+    expect(created.status).toBe(201);
+    const { post } = await created.json() as { post: { id: string } };
+    const postId = post.id;
+
+    const denied = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ approve: true }),
+    });
+    expect(denied.status).toBe(401);
+
+    const badBody = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({ approve: false }),
+    });
+    expect(badBody.status).toBe(400);
+
+    const detailBefore = await fetch(`${base}/feed/${postId}`, { headers: memberHeaders() });
+    const before = await detailBefore.json() as {
+      post: { assistantReply: { posted: boolean; canApprove: boolean }; commentCount: number };
+    };
+    expect(before.post.assistantReply.posted).toBe(false);
+    expect(before.post.assistantReply.canApprove).toBe(true);
+    expect(before.post.commentCount).toBe(0);
+
+    const approved = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({ approve: true }),
+    });
+    expect(approved.status).toBe(201);
+    const approvedBody = await approved.json() as {
+      comment: { body: string; author: { id: string; fullName: string; role: string | null } };
+      assistantReply: { posted: boolean; canApprove: boolean };
+    };
+    expect(approvedBody.comment.author.id).toBe("rn-study-assistant");
+    expect(approvedBody.comment.author.fullName).toBe("Community bot");
+    expect(approvedBody.comment.author.role).toBe("assistant");
+    expect(approvedBody.comment.body).toContain("assistant");
+    expect(approvedBody.assistantReply).toEqual({ posted: true, canApprove: false });
+
+    const duplicate = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({ approve: true }),
+    });
+    expect(duplicate.status).toBe(409);
+
+    const detailAfter = await fetch(`${base}/feed/${postId}`, { headers: memberHeaders() });
+    const after = await detailAfter.json() as {
+      post: {
+        commentCount: number;
+        comments: Array<{ author: { role: string | null } }>;
+        assistantReply: { posted: boolean };
+      };
+    };
+    expect(after.post.commentCount).toBe(1);
+    expect(after.post.assistantReply.posted).toBe(true);
+    expect(after.post.comments[0]?.author.role).toBe("assistant");
   });
 });

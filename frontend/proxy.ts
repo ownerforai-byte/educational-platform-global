@@ -131,6 +131,10 @@ function buildContentSecurityPolicy(nonce: string | null) {
     : "script-src 'self' 'unsafe-inline'";
 
   const apiOrigin = process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com";
+  const firebaseAuthDomain = process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN?.trim().replace(/\/+$/, "");
+  const firebaseAuthOrigin = firebaseAuthDomain
+    ? `https://${firebaseAuthDomain.replace(/^https?:\/\//, "")}`
+    : "";
 
   return (
     [
@@ -142,11 +146,11 @@ function buildContentSecurityPolicy(nonce: string | null) {
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: https:",
       "font-src 'self' data: https://fonts.gstatic.com",
-      // FCM registration + push handshake hosts (web messaging).
-      `connect-src 'self' ${apiOrigin} ${SUPABASE_ORIGIN} https://fcm.googleapis.com https://firebaseinstallations.googleapis.com https://firebase.googleapis.com wss: ws:`,
+      // Firebase Auth REST/token exchange plus FCM registration and push handshake hosts.
+      `connect-src 'self' ${apiOrigin} ${SUPABASE_ORIGIN} https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://fcm.googleapis.com https://firebaseinstallations.googleapis.com https://firebase.googleapis.com wss: ws:`,
       // In-app embeds: our own PDFs under /pdfs + /materials, PDF resources on
       // Supabase Storage, Google Drive previews, and the video players.
-      "frame-src 'self' " + SUPABASE_ORIGIN + " https://drive.google.com https://docs.google.com https://www.youtube.com https://player.vimeo.com https://webnotee.com",
+      "frame-src 'self' " + SUPABASE_ORIGIN + (firebaseAuthOrigin ? ` ${firebaseAuthOrigin}` : "") + " https://drive.google.com https://docs.google.com https://www.youtube.com https://player.vimeo.com https://webnotee.com",
       // Modern equivalent of the X-Frame-Options above: we may frame ourselves,
       // other sites may not frame us.
       "frame-ancestors 'self'",

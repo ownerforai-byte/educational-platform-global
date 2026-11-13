@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { NextRequest } from "next/server";
 import { config, proxy, SUPABASE_ORIGIN } from "@/proxy";
 import robots from "@/app/robots";
@@ -48,6 +48,20 @@ describe("proxy security headers", () => {
     expect(csp).toContain("https://player.vimeo.com");
     expect(csp).toContain("https://webnotee.com");
     expect(csp).toContain(SUPABASE_ORIGIN);
+  });
+
+  it("allows Firebase authentication and its configured auth handler", () => {
+    vi.stubEnv("NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN", "rn01-af00b.firebaseapp.com");
+    try {
+      const csp = headersFor("/login").get("content-security-policy") ?? "";
+
+      expect(csp).toContain("https://identitytoolkit.googleapis.com");
+      expect(csp).toContain("https://securetoken.googleapis.com");
+      expect(csp).toContain("frame-src 'self'");
+      expect(csp).toContain("https://rn01-af00b.firebaseapp.com");
+    } finally {
+      vi.unstubAllEnvs();
+    }
   });
 
   it("keeps clickjacking protection: same-origin framing only", () => {

@@ -15,6 +15,9 @@ const mocks = vi.hoisted(() => {
     writeCachedSession: vi.fn(),
     apiFetch: vi.fn(),
     isOAuthProviderEnabled: vi.fn(),
+    firebaseGoogleSignIn: vi.fn(),
+    firebaseConsumeRedirectResult: vi.fn(),
+    firebaseMode: false,
     loginAction: vi.fn(),
     authState: { user: null as unknown, isLoading: false, refresh },
   };
@@ -40,6 +43,11 @@ vi.mock("@/lib/supabase/browser", () => ({
   } }),
   isOAuthProviderEnabled: mocks.isOAuthProviderEnabled,
 }));
+vi.mock("@/lib/firebase/client-auth", () => ({
+  useFirebaseClientAuth: () => mocks.firebaseMode,
+  firebaseGoogleSignIn: mocks.firebaseGoogleSignIn,
+  firebaseConsumeRedirectResult: mocks.firebaseConsumeRedirectResult,
+}));
 
 import { LoginForm } from "@/features/auth/components/login-form";
 import AuthCallbackPage from "@/app/auth/callback/page";
@@ -48,6 +56,7 @@ beforeEach(() => {
   vi.clearAllMocks();
   mocks.authState.user = null;
   mocks.authState.isLoading = false;
+  mocks.firebaseMode = false;
   vi.unstubAllEnvs();
   sessionStorage.clear();
   localStorage.clear();
@@ -104,6 +113,19 @@ describe("Social login", () => {
     fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
     expect(await screen.findByText(/Temporarily unavailable/i)).toBeInTheDocument();
     expect(mocks.apiFetch).not.toHaveBeenCalled();
+    expect(mocks.signInWithOAuth).not.toHaveBeenCalled();
+  });
+
+  it("starts Firebase Google OAuth without checking Supabase provider settings", async () => {
+    mocks.firebaseMode = true;
+    render(<LoginForm />);
+    fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
+
+    await waitFor(() => expect(mocks.apiFetch).toHaveBeenCalledWith(
+      "/api/auth/oauth/csrf",
+      expect.objectContaining({ method: "POST" }),
+    ));
+    expect(mocks.isOAuthProviderEnabled).not.toHaveBeenCalled();
     expect(mocks.signInWithOAuth).not.toHaveBeenCalled();
   });
 

@@ -37,6 +37,11 @@ export interface FeedComment {
   author: FeedAuthor;
 }
 
+export interface FeedAssistantReply {
+  posted: boolean;
+  canApprove: boolean;
+}
+
 export interface FeedPost {
   id: string;
   title: string;
@@ -51,6 +56,7 @@ export interface FeedPost {
   commentCount: number;
   attachments: FeedAttachment[];
   comments?: FeedComment[];
+  assistantReply?: FeedAssistantReply;
 }
 
 export interface FeedList {
@@ -139,6 +145,17 @@ export function addComment(postId: string, body: string): Promise<{ comment: Fee
   return call(`${ROOT}/feed/${postId}/comments`, {
     method: "POST",
     body: JSON.stringify({ body }),
+  });
+}
+
+/** Post author approves a curriculum-grounded Study Assistant comment on their post. */
+export function approveAssistantReply(postId: string): Promise<{
+  comment: FeedComment;
+  assistantReply: FeedAssistantReply;
+}> {
+  return call(`${ROOT}/feed/${postId}/ai-assistant/reply`, {
+    method: "POST",
+    body: JSON.stringify({ approve: true }),
   });
 }
 
