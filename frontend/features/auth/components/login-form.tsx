@@ -141,7 +141,11 @@ export function LoginForm() {
         <div className="h-px flex-1 bg-border/80" />
       </div>
 
-      <SocialAuthButtons mode="login" disabled={loading} onError={setError} />
+      <SocialAuthButtons
+        mode="login"
+        disabled={loading}
+        onError={(msg) => setError(msg)}
+      />
 
       <p className="pt-4 text-center text-sm text-muted-foreground">
         Don&apos;t have an account?{" "}

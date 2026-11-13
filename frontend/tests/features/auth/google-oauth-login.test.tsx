@@ -102,7 +102,7 @@ describe("Social login", () => {
     mocks.isOAuthProviderEnabled.mockResolvedValue(false);
     render(<LoginForm />);
     fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
-    expect(await screen.findByText(/Google sign-in is temporarily unavailable/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Temporarily unavailable/i)).toBeInTheDocument();
     expect(mocks.apiFetch).not.toHaveBeenCalled();
     expect(mocks.signInWithOAuth).not.toHaveBeenCalled();
   });

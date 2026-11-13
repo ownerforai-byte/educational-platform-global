@@ -13,6 +13,7 @@ import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/core/access-level";
 import { rememberPendingSignup } from "../pending-signup-identity";
 import { DEVICE_SIGNUP_NOTICE } from "./access-notice";
+import { AUTH_TRY_AGAIN } from "../public-messages";
 
 const PERKS = ["Save progress across subjects", "Bookmark notes & labs", "Veer quiz credits"];
 
@@ -26,11 +27,9 @@ export function SignupForm() {
   const [showPassword, setShowPassword] = useState(false);
   // Same as the login form: a failed social consent lands back here with the
   // provider flag so the user sees a hint instead of a blank form.
-  const [error, setError] = useState(() => {
-    const g = searchParams.get("google_error");
-    if (g) return "Google sign-in did not complete. Please try again.";
-    return "";
-  });
+  const [error, setError] = useState(() =>
+    searchParams.get("google_error") ? AUTH_TRY_AGAIN : "",
+  );
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -160,7 +159,11 @@ export function SignupForm() {
         <div className="h-px flex-1 bg-border/80" />
       </div>
 
-      <SocialAuthButtons mode="signup" disabled={loading} onError={setError} />
+      <SocialAuthButtons
+        mode="signup"
+        disabled={loading}
+        onError={(msg) => setError(msg)}
+      />
 
       <p className="pt-4 text-center text-sm text-muted-foreground">
         Already have an account?{" "}

@@ -101,11 +101,8 @@ async function proxyRequest(request: NextRequest, { params }: { params: Promise<
     });
   } catch (err: any) {
     return NextResponse.json(
-      {
-        error: "Backend service unreachable (Render cold-start or offline). Please retry in 10-15s.",
-        details: err?.message,
-      },
-      { status: 503 }
+      { error: "Temporarily unavailable. Please try again." },
+      { status: 503 },
     );
   }
 }

@@ -56,7 +56,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
     const e = err as Error;
     return NextResponse.json(
       {
-        error: "Backend unreachable. Please retry in a moment.",
+        error: "Temporarily unavailable. Please try again.",
         details: e?.message,
       },
       { status: 503 },

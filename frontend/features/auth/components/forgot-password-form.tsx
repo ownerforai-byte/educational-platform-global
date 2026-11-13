@@ -6,6 +6,7 @@ import { Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AuthField } from "./auth-field";
 import { forgotPassword } from "@/lib/api/auth";
+import { authFailureMessage } from "../public-messages";
 
 export function ForgotPasswordForm() {
   const [email, setEmail] = useState("");
@@ -23,11 +24,7 @@ export function ForgotPasswordForm() {
       // (anti-enumeration) — show the same confirmation either way.
       setSent(true);
     } catch (err) {
-      setError(
-        err instanceof Error && err.message
-          ? err.message
-          : "Could not send the reset email right now. Please try again."
-      );
+      setError(authFailureMessage(err, "password"));
     } finally {
       setLoading(false);
     }

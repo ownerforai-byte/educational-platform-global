@@ -17,10 +17,7 @@ import {
   rememberAccessOutcome,
   rememberPendingSignup,
 } from "@/features/auth/pending-signup-identity";
-import {
-  isOAuthAccessBlocked,
-  oauthAccessBlockedMessage,
-} from "@/lib/supabase/oauth-config";
+import { authFailureMessage } from "@/features/auth/public-messages";
 import type { OAuthSessionResponse } from "@/types/api";
 
 /**
@@ -61,16 +58,7 @@ function AuthCallbackContent() {
         const errorCode = searchParams.get("error");
         const errorDesc = searchParams.get("error_description");
         if (errorCode || errorDesc) {
-          const combined = `${errorCode ?? ""} ${errorDesc ?? ""}`;
-          // A blocked OAuth client often arrives as `access_denied` too — do
-          // NOT mislabel that as "you cancelled", name the URLs to register.
-          if (isOAuthAccessBlocked({ message: combined })) {
-            throw new Error(oauthAccessBlockedMessage());
-          }
-          if (errorCode === "access_denied" || errorDesc?.toLowerCase().includes("denied")) {
-            throw new Error("Sign-in was cancelled. You can sign in with email and password or try again.");
-          }
-          throw new Error(errorDesc || errorCode || "Sign-in could not be completed.");
+          throw new Error("oauth_denied");
         }
 
         const state = sessionStorage.getItem("neb_oauth_csrf");
@@ -131,7 +119,7 @@ function AuthCallbackContent() {
           router.replace(DENIED_ROUTE);
           return;
         }
-        setError(callbackError instanceof Error ? callbackError.message : "Sign-in could not be completed.");
+        setError(authFailureMessage(callbackError, "oauth"));
       }
     };
 
@@ -148,7 +136,7 @@ function AuthCallbackContent() {
         {error ? (
           <div className="space-y-4">
             <div className="space-y-2">
-              <h1 className="text-xl font-bold tracking-tight text-foreground">Sign-in could not be completed</h1>
+              <h1 className="text-xl font-bold tracking-tight text-foreground">Sign-in did not complete</h1>
               <p className="rounded-xl border border-destructive/30 bg-destructive/10 px-3.5 py-2.5 text-xs font-medium text-destructive">
                 {error}
               </p>

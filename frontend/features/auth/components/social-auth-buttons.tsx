@@ -5,11 +5,8 @@ import { Loader2 } from "lucide-react";
 import { firebaseGoogleSignIn, useFirebaseClientAuth } from "@/lib/firebase/client-auth";
 import { getSupabaseBrowserClient, isOAuthProviderEnabled } from "@/lib/supabase/browser";
 import { apiFetch } from "@/lib/api-client";
-import {
-  isOAuthAccessBlocked,
-  oauthAccessBlockedMessage,
-  oauthCallbackUrl,
-} from "@/lib/supabase/oauth-config";
+import { oauthCallbackUrl } from "@/lib/supabase/oauth-config";
+import { authFailureMessage } from "../public-messages";
 
 export function GoogleIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -41,7 +38,6 @@ interface SocialAuthButtonsProps {
 }
 
 const CSRF_TIMEOUT_MS = 10_000;
-const COLD_START_MESSAGE = "Please try again in moment.";
 
 /**
  * The CSRF handshake talks to the Render backend, which can be cold. A bare
@@ -69,11 +65,7 @@ async function requestOAuthCsrf(): Promise<string> {
       clearTimeout(timer);
     }
   }
-  const message = lastError instanceof Error ? lastError.message : "";
-  if (/abort|aborted|timeout/i.test(message) || !message) {
-    throw new Error(COLD_START_MESSAGE);
-  }
-  throw lastError instanceof Error ? lastError : new Error(COLD_START_MESSAGE);
+  throw lastError instanceof Error ? lastError : new Error("timeout");
 }
 
 export function SocialAuthButtons({
@@ -90,9 +82,7 @@ export function SocialAuthButtons({
 
     try {
       if (!(await isOAuthProviderEnabled("google"))) {
-        onError?.(
-          "Google sign-in is temporarily unavailable. Please sign in with email or try again later.",
-        );
+        onError?.(authFailureMessage(new Error("unavailable"), "oauth"));
         return;
       }
 
@@ -114,15 +104,7 @@ export function SocialAuthButtons({
       redirected = true;
     } catch (oauthError) {
       sessionStorage.removeItem("neb_oauth_csrf");
-      // A blocked/mismatched OAuth client is a CONFIG problem, not a transient
-      // one — name the exact URLs to register instead of a vague "unavailable".
-      onError?.(
-        isOAuthAccessBlocked(oauthError)
-          ? oauthAccessBlockedMessage("Google")
-          : oauthError instanceof Error
-            ? oauthError.message
-            : "Google sign-in could not be started.",
-      );
+      onError?.(authFailureMessage(oauthError, "oauth"));
     } finally {
       if (!redirected) setSocialLoading(false);
     }

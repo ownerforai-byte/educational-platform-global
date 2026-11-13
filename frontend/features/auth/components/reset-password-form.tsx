@@ -6,6 +6,7 @@ import { Lock, Eye, EyeOff, AlertTriangle, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AuthField } from "./auth-field";
 import { resetPassword } from "@/lib/api/auth";
+import { AUTH_TRY_AGAIN, authFailureMessage } from "../public-messages";
 
 type Proof = { code?: string; token?: string; oobCode?: string } | null;
 
@@ -40,12 +41,8 @@ export function ResetPasswordForm() {
     e.preventDefault();
     setError("");
 
-    if (password.length < 8 || password.length > 72) {
-      setError("Password must be between 8 and 72 characters.");
-      return;
-    }
-    if (password !== confirm) {
-      setError("The two passwords do not match.");
+    if (password.length < 8 || password.length > 72 || password !== confirm) {
+      setError(AUTH_TRY_AGAIN);
       return;
     }
     if (!proof) return;
@@ -55,11 +52,7 @@ export function ResetPasswordForm() {
       await resetPassword({ password, ...proof });
       setDone(true);
     } catch (err) {
-      setError(
-        err instanceof Error && err.message
-          ? err.message
-          : "Could not update the password. Please request a new link."
-      );
+      setError(authFailureMessage(err, "password"));
     } finally {
       setLoading(false);
     }

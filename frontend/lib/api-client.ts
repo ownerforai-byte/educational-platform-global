@@ -157,9 +157,7 @@ async function request<T>(path: string, init?: RequestInit, isRetry = false): Pr
     });
   } catch (err: any) {
     if (err?.name === "TypeError" && err?.message?.includes("fetch")) {
-      throw new Error(
-        "Unable to connect to server. The backend may be spinning up (Render cold start) or offline. Please retry in 10-15 seconds."
-      );
+      throw Object.assign(new Error("service_unreachable"), { status: 503 });
     }
     throw err;
   }

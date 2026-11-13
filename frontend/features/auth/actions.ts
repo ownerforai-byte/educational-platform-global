@@ -1,6 +1,11 @@
 import { loginSchema, signupSchema } from "./schema";
 import { login as apiLogin, signup as apiSignup, logout as apiLogout } from "@/lib/api/auth";
 import type { SessionUser } from "./types";
+import {
+  AUTH_INVALID_CREDENTIALS,
+  AUTH_TRY_AGAIN,
+  authFailureMessage,
+} from "./public-messages";
 
 export type AuthActionResult =
   | { ok: true; user?: SessionUser | null; message?: string; statusToken?: string }
@@ -16,7 +21,7 @@ export type AuthActionResult =
 export async function loginAction(input: unknown): Promise<AuthActionResult> {
   const parsed = loginSchema.safeParse(input);
   if (!parsed.success) {
-    return { ok: false, error: "Invalid email or password format" };
+    return { ok: false, error: AUTH_INVALID_CREDENTIALS };
   }
 
   try {
@@ -26,7 +31,7 @@ export async function loginAction(input: unknown): Promise<AuthActionResult> {
     const e = err as Error & { code?: string; statusToken?: string };
     return {
       ok: false,
-      error: e instanceof Error ? e.message : "Something went wrong. Please try again.",
+      error: authFailureMessage(err, "login"),
       code: e.code,
       statusToken: e.statusToken,
     };
@@ -36,16 +41,19 @@ export async function loginAction(input: unknown): Promise<AuthActionResult> {
 export async function signupAction(input: unknown): Promise<AuthActionResult> {
   const parsed = signupSchema.safeParse(input);
   if (!parsed.success) {
-    return { ok: false, error: "Please check your details and try again." };
+    return { ok: false, error: AUTH_TRY_AGAIN }; // weak client validation only
   }
 
   try {
     const res = await apiSignup(parsed.data);
     return { ok: true, user: res.user ?? null, message: res.message, statusToken: res.statusToken };
   } catch (err) {
+    const e = err as Error & { code?: string; statusToken?: string };
     return {
       ok: false,
-      error: err instanceof Error ? err.message : "Something went wrong. Please try again.",
+      error: authFailureMessage(err, "signup"),
+      code: e.code,
+      statusToken: e.statusToken,
     };
   }
 }
@@ -54,10 +62,7 @@ export async function logoutAction(): Promise<AuthActionResult> {
   try {
     await apiLogout();
     return { ok: true, user: null };
-  } catch (err) {
-    return {
-      ok: false,
-      error: err instanceof Error ? err.message : "Something went wrong. Please try again.",
-    };
+  } catch {
+    return { ok: false, error: AUTH_TRY_AGAIN };
   }
 }

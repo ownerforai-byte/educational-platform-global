@@ -545,6 +545,7 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "Social",
         links: [
           { label: "My posts", href: "/ai/community/me" },
+          { label: "Find students", href: "/users" },
         ],
       },
       {
@@ -933,6 +934,13 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         opening: "Practice lives under AI Tools: quiz bank, past questions, drills and mock papers.",
         href: "/practice",
         meta: "Practice",
+        links: [{ label: "Practice history", href: "/practice/history" }],
+      },
+      {
+        name: "Edit profile",
+        opening: "Update your public name, bio, and profile photo.",
+        href: "/profile/edit",
+        meta: "Account",
       },
       {
         name: "Exam Hub",
