@@ -19,6 +19,11 @@ const SURFACES = [
   "lib/data-loader.ts",
   "app/(app)/resources/page.tsx",
   "components/lab/AnnotatedModelViewer.tsx",
+  "features/auth/components/social-auth-buttons.tsx",
+  "lib/firebase/client-auth.ts",
+  "components/study/referrals-view.tsx",
+  "features/profile/public-profile-shell.tsx",
+  "features/community/community-board.tsx",
 ];
 
 afterEach(() => {
@@ -67,6 +72,9 @@ describe("no surface resolves the host on its own", () => {
     expect(read("app/(app)/resources/page.tsx")).not.toContain("window.location.origin");
     expect(read("components/lab/AnnotatedModelViewer.tsx")).not.toContain(
       "${window.location.origin}",
+    );
+    expect(read("features/auth/components/social-auth-buttons.tsx")).not.toContain(
+      "window.location.origin",
     );
   });
 });

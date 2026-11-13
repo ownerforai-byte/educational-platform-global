@@ -6,6 +6,7 @@ import { useFirebaseClientAuth } from "@/lib/firebase/client-auth";
 import { getSupabaseBrowserClient, isOAuthProviderEnabled } from "@/lib/supabase/browser";
 import { apiFetch } from "@/lib/api-client";
 import { oauthCallbackUrl } from "@/lib/supabase/oauth-config";
+import { publicUrl } from "@/lib/site-url";
 import { authFailureMessage } from "../public-messages";
 
 export function GoogleIcon({ className = "h-4 w-4" }: { className?: string }) {
@@ -90,9 +91,8 @@ export function SocialAuthButtons({
       sessionStorage.setItem("neb_oauth_csrf", csrfToken);
 
       if (useFirebaseClientAuth()) {
-        // Firebase must return to the same route that calls getRedirectResult().
-        const origin = window.location.origin.replace(/\/+$/, "");
-        window.location.assign(`${origin}/auth/callback?firebase_start=1`);
+        // Same canonical callback as Supabase — never a preview deployment host.
+        window.location.assign(publicUrl("/auth/callback?firebase_start=1"));
         redirected = true;
         return;
       }

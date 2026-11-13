@@ -14,8 +14,9 @@ import {
   onAuthStateChanged,
   type User,
 } from "firebase/auth";
-import { getFirebaseApp } from "@/lib/fcm/firebase-app";
 import { getPublicEnv } from "@/lib/env";
+import { getFirebaseApp } from "@/lib/fcm/firebase-app";
+import { publicOrigin } from "@/lib/site-url";
 
 export function useFirebaseClientAuth(): boolean {
   const flag = getPublicEnv().NEXT_PUBLIC_USE_FIREBASE_AUTH?.trim().toLowerCase();
@@ -78,7 +79,7 @@ export async function firebaseClientLogout(): Promise<void> {
 export async function firebaseClientForgotPassword(email: string): Promise<void> {
   const auth = getFirebaseAuth();
   if (!auth) throw new Error("Firebase Auth is not configured");
-  const base = (getPublicEnv().NEXT_PUBLIC_SITE_URL || window.location.origin).replace(/\/+$/, "");
+  const base = publicOrigin().replace(/\/+$/, "");
   await sendPasswordResetEmail(auth, email, { url: `${base}/reset-password`, handleCodeInApp: true });
 }
 

@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState, type FormEvent, type ReactNode } from "react";
 import Link from "next/link";
 import { profilePath } from "@/lib/api/profile";
+import { publicUrl } from "@/lib/site-url";
 import { useRouter } from "next/navigation";
 import { useSession } from "@/features/auth/hooks/use-session";
 import type { SessionUser } from "@/features/auth/types";
@@ -454,7 +455,7 @@ function Composer({
 function useCopyLink() {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const copy = useCallback(async (id: string) => {
-    const url = `${window.location.origin}${sharePath(id)}`;
+    const url = publicUrl(sharePath(id));
     await navigator.clipboard.writeText(url);
     setCopiedId(id);
     window.setTimeout(() => setCopiedId((current) => (current === id ? null : current)), 2000);

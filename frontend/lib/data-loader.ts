@@ -9,14 +9,13 @@ const cache = new Map<string, Promise<unknown>>();
 /**
  * Builds the URL for a /public/data asset. Browsers can use a relative URL;
  * Node's fetch (SSR/prerender) requires an absolute one, so we point at this
- * Next.js server itself. Override with NEXT_PUBLIC_SITE_URL when deployed
- * behind a different origin.
+ * Next.js server itself via the canonical production origin (local loopback
+ * only when Node runs without a production URL).
  */
 function dataUrl(safe: string): string {
   const relPath = `/data/${safe}`;
   if (typeof window !== "undefined") return relPath;
   const base =
-    process.env.NEXT_PUBLIC_SITE_URL ||
     CANONICAL_SITE_URL ||
     `http://127.0.0.1:${process.env.PORT || 3000}`;
   return new URL(relPath, base).toString();

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Check, Gift, Link2 } from "lucide-react";
 import { ComingSoon } from "@/components/content/coming-soon";
+import { publicOrigin } from "@/lib/site-url";
 
 /**
  * /referrals — copy the app link to share (owner: "in it add copy link of
@@ -12,7 +13,7 @@ export function ReferralsView() {
   const [copied, setCopied] = useState(false);
 
   const copyAppLink = async () => {
-    const url = typeof window !== "undefined" ? window.location.origin : "";
+    const url = typeof window !== "undefined" ? publicOrigin() : "";
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);

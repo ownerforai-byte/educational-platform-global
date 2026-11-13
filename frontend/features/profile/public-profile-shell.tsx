@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { publicUrl } from "@/lib/site-url";
 import {
   followUser,
   getProfileFiles,
@@ -99,7 +100,7 @@ export function PublicProfileShell({
 
   const copyLink = async () => {
     try {
-      await navigator.clipboard.writeText(window.location.origin + profilePath(username, username));
+      await navigator.clipboard.writeText(publicUrl(profilePath(username, username)));
     } catch {
       /* ignore */
     }
