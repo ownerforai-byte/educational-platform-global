@@ -1,6 +1,13 @@
 import { Request, Response, NextFunction } from "express";
 import type { AuthedRequest } from "./auth";
 import { getClientIp } from "../utils/clientIp";
+import {
+  configureRateLimitStore,
+  getRateLimitStore,
+  resetRateLimitStoreForTests,
+} from "./rateLimitStore";
+
+configureRateLimitStore();
 
 /**
  * Positive-number env parsing. `Number("abc")` is NaN, and a NaN limit
@@ -48,15 +55,6 @@ const AI_IMAGE_MAX_REQUESTS = positiveNumber(
   process.env.AI_IMAGE_RATE_LIMIT_MAX_REQUESTS,
   12,
 );
-
-const hits = new Map<string, { count: number; reset: number }>();
-
-function pruneExpiredHits(now: number): void {
-  if (hits.size <= 5000) return;
-  for (const [key, entry] of hits) {
-    if (now > entry.reset) hits.delete(key);
-  }
-}
 
 type Tier = "support" | "auth" | "oauth" | "password-reset" | "guest-ai" | "ai-image" | "default" | "default-unlimited";
 
@@ -131,7 +129,7 @@ export function rateLimit(req: Request, res: Response, next: NextFunction) {
   ) {
     res.setHeader("Cache-Control", "no-store");
   }
-  applyLimit(req, res, next, tierFor(req.originalUrl), getClientIp(req));
+  void applyLimit(req, res, next, tierFor(req.originalUrl), getClientIp(req));
 }
 
 /**
@@ -144,10 +142,10 @@ export function supportRequestLimit(req: Request, res: Response, next: NextFunct
     res.status(401).json({ error: "Unauthorized" });
     return;
   }
-  applyLimit(req, res, next, "support", user.id);
+  void applyLimit(req, res, next, "support", user.id);
 }
 
-function applyLimit(
+async function applyLimit(
   req: Request,
   res: Response,
   next: NextFunction,
@@ -161,36 +159,27 @@ function applyLimit(
     return;
   }
 
-  // Long-lived process guard: drop expired entries before the Map can grow
-  // unbounded under distributed-IP traffic (CDN/corp proxies).
-  const now = Date.now();
-  pruneExpiredHits(now);
-
   // Per-tier isolation (Greptile review 2026-09-25): one shared counter let a
   // heavy curriculum page (>10 content calls) consume the login/refresh budget
   // and 429 the user's next authentication attempt.
   const id = `${tier}:${identity}`;
-  const entry = hits.get(id);
-
-  if (!entry || now > entry.reset) {
-    hits.set(id, { count: 1, reset: now + limit.windowMs });
+  try {
+    const entry = await getRateLimitStore().hit(id, limit.windowMs);
+    if (entry.count > limit.max) {
+      const retryAfterSec = Math.max(1, Math.ceil((entry.reset - Date.now()) / 1000));
+      res.setHeader("Retry-After", String(retryAfterSec));
+      res.status(429).json({ error: "Too many requests" });
+      return;
+    }
     next();
-    return;
+  } catch {
+    // Store failure must not take down the API — fail open for this request.
+    next();
   }
-
-  entry.count += 1;
-
-  if (entry.count > limit.max) {
-    const retryAfterSec = Math.max(1, Math.ceil((entry.reset - now) / 1000));
-    res.setHeader("Retry-After", String(retryAfterSec));
-    res.status(429).json({ error: "Too many requests" });
-    return;
-  }
-
-  next();
 }
 
 /** Test hook: clear the in-memory hit counters. */
 export function resetRateLimits(): void {
-  hits.clear();
+  resetRateLimitStoreForTests();
+  getRateLimitStore().clear();
 }

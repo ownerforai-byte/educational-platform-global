@@ -609,4 +609,6 @@ Deprecated `middleware/errors.ts` removed (use `error-handler.ts`).
   frontend api-client forwards a per-page-load request id.
 - **T17:** `IslandErrorBoundary` wraps diagram/periodic/image-hub/lab stage;
   route `error.tsx` for ai/chat/notes.
+- **T14:** `RateLimitStore` port (`MemoryStore` + optional `UpstashStore`);
+  policy table unchanged; selected by `UPSTASH_REDIS_REST_*`.
 
