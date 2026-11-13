@@ -79,9 +79,13 @@ export function parsePartTitle(rawText: string): ParsedPartInfo {
  * `|`, with `;`-separated items inside a field:
  *
  *   DETAIL DOT | Diffusion | Related: Osmosis; Active transport |
- *   Relations: Gradient drives flux because J = -D dC/dx |
+ *   Relations: Multiplicative: flux scales with gradient because J = -D dC/dx;
+ *   Inverse: concentration difference falls as mixing proceeds because 1/t decay |
  *   Contrasts: Diffusion vs Osmosis — solvent only in osmosis |
  *   Detail: Particles move down a concentration gradient… | Exam: no ATP
+ *
+ * Owner 2026-11-13: EACH dot must carry Related + Relations (multiplicative AND
+ * inverse) + Contrasts — a complete mini-briefing, not a single-purpose job.
  *
  * The payload lives in the <title> (an already-allowed SVG element), so it
  * survives the sanitizer unchanged — no new attributes, no scripts. Hovering
@@ -167,7 +171,41 @@ export function parseDetailDot(rawText: string): ParsedDetailDot {
   if (!sections.length) {
     sections.push({ label: "Detail", value: raw, items: [] });
   }
+
   return { name, sections, raw };
+}
+
+function sectionByLabel(dot: ParsedDetailDot, label: string): DetailDotSection | undefined {
+  return dot.sections.find((section) => section.label.toLowerCase() === label.toLowerCase());
+}
+
+/** True when Relations text names both multiplicative and inverse links. */
+export function relationsCoverBothKinds(relations: string): boolean {
+  const text = relations || "";
+  const hasMultiplicative =
+    /\bmultiplicative\b/i.test(text) ||
+    /\bscales with\b/i.test(text) ||
+    /\bproportional to\b/i.test(text) ||
+    /∝\s*[A-Za-z]/.test(text);
+  const hasInverse =
+    /\binverse\b/i.test(text) ||
+    /\breciprocal\b/i.test(text) ||
+    /\bfalls as\b/i.test(text) ||
+    /∝\s*1\s*\//.test(text) ||
+    /\binversely\b/i.test(text);
+  return hasMultiplicative && hasInverse;
+}
+
+/**
+ * Owner 2026-11-13: every detail dot is a complete mini-briefing — Related,
+ * Relations (multiplicative + inverse), and Contrasts must all be present.
+ */
+export function detailDotIsComplete(dot: ParsedDetailDot): boolean {
+  const related = sectionByLabel(dot, "Related");
+  const relations = sectionByLabel(dot, "Relations");
+  const contrasts = sectionByLabel(dot, "Contrasts");
+  if (!related?.value || !relations?.value || !contrasts?.value) return false;
+  return relationsCoverBothKinds(relations.value);
 }
 
 /** Every dot + its parsed payload inside one figure, in document order. */

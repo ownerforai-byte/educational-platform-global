@@ -28,7 +28,7 @@ import { DiagramStudio } from "@/components/ai/diagram-studio";
 
 const HEART_SVG = `<svg viewBox="0 0 100 100">
   <g><title>Left atrium | Receives oxygenated blood</title><circle cx='50' cy='50' r='10'/></g>
-  <g class="edu-detail-dot"><title>DETAIL DOT | Atrial pressure | Related: Right atrium; Ventricle; Pulmonary vein | Relations: Pulmonary vein drives atrial pressure because inflow exceeds outflow in diastole; Atrial pressure drives mitral opening because the gradient exceeds ventricular pressure | Contrasts: Atrium vs Ventricle — atria receive, ventricles pump; Systole vs Diastole — contraction vs relaxation | Detail: Low-pressure filling phase driven by the pressure gradient, no valve resistance | Exam: do not confuse atrial systole with ventricular systole</title><circle cx='80' cy='20' r='5'/></g>
+  <g class="edu-detail-dot"><title>DETAIL DOT | Atrial pressure | Related: Right atrium; Ventricle; Pulmonary vein | Relations: Multiplicative: atrial pressure scales with venous inflow because more volume raises wall tension; Inverse: filling rate falls as ventricular pressure rises because the gradient shrinks | Contrasts: Atrium vs Ventricle — atria receive, ventricles pump; Systole vs Diastole — contraction vs relaxation | Detail: Low-pressure filling phase driven by the pressure gradient, no valve resistance | Exam: do not confuse atrial systole with ventricular systole</title><circle cx='80' cy='20' r='5'/></g>
 </svg>`;
 
 /** The dedicated lane streams ONE svg fence directly — no background draw. */
@@ -92,6 +92,9 @@ describe("DiagramStudio", () => {
     expect(payload[0].content).toContain("Related:");
     expect(payload[0].content).toContain("Relations:");
     expect(payload[0].content).toContain("Contrasts:");
+    expect(payload[0].content).toContain("Multiplicative:");
+    expect(payload[0].content).toContain("Inverse:");
+    expect(payload[0].content).toContain("EACH DOT MUST");
     // The agent is trained to CREATE the dot information per question,
     // from a freshly generated knowledge brief — not pre-coded content.
     expect(payload[0].content).toContain("THE AGENT CREATES THE INFORMATION");
@@ -169,7 +172,9 @@ describe("DiagramStudio", () => {
     expect(widget.textContent).toContain("Atrial pressure");
     expect(widget.textContent).toContain("Right atrium");
     expect(widget.textContent).toContain("Pulmonary vein");
-    expect(widget.textContent).toContain("Pulmonary vein drives atrial pressure");
+    expect(widget.textContent).toContain("Multiplicative:");
+    expect(widget.textContent).toContain("Inverse:");
+    expect(widget.textContent).toContain("scales with venous inflow");
     expect(widget.querySelector(".edu-visual__dot-section--relations")).not.toBeNull();
     expect(widget.textContent).toContain("Atrium vs Ventricle");
     expect(widget.textContent).toContain("Systole vs Diastole");

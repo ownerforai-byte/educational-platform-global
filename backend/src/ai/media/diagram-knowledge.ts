@@ -68,13 +68,14 @@ Return EXACTLY seven lines, each starting with its label in capitals, and NOTHIN
 FOCUS: the single concept this diagram must teach, in the question's own words.
 ENTITIES: the 4-8 named parts, variables, quantities or structures that will actually be labelled in this diagram, comma separated.
 RELATED: 3-5 concepts genuinely connected to THIS question, each followed by a short clause saying WHY it connects to this exact diagram; separate items with semicolons.
-RELATIONS: 3-5 CAUSAL, FUNCTIONAL or MATHEMATICAL relations BETWEEN the ENTITIES above, each written as "A drives B because ..." and including the real formula, sign, units, direction or condition; separate items with semicolons. Relations are NOT the same as related concepts — they are the links INSIDE the diagram.
+RELATIONS: 4-6 mathematical or physical links BETWEEN the ENTITIES above. The set MUST include BOTH kinds: (1) at least one MULTIPLICATIVE / direct-proportion item tagged "Multiplicative: A scales with B because …" (product, A ∝ B, F = ma, P = IV, …); (2) at least one INVERSE / reciprocal item tagged "Inverse: A falls as B rises because …" (A ∝ 1/B, I = V/R, inverse-square, reciprocal formula). Add other causal links as needed. Separate items with semicolons. Relations are NOT the same as related concepts — they are the links INSIDE the diagram.
 CONTRASTS: 2-4 pairs that students actually confuse in THIS topic, each as "A vs B — the exact difference", explicitly correcting the misconception; separate items with semicolons.
 MECHANISM: 2-3 sentences explaining the underlying mechanism, with units and the conditions under which it holds, for THIS question.
 EXAM: the specific marking point or trap examiners use for THIS exact topic.
 
 HARD RULES
 - Name the question's own entities in FOCUS, ENTITIES, RELATIONS and CONTRASTS. If the question is about a specific organ, circuit, reaction, graph or theorem, every line must be about THAT one, not about the subject in general.
+- EVERY detail dot that will later be drawn must be able to carry Related AND Relations (multiplicative + inverse) AND Contrasts for its anchored part — the brief must supply enough of each so no dot is left with only one of those three.
 - Never write "in general", "in science", "it is important to note", or any line that would fit any other question equally well.
 - Plain English only. NEVER use | < > & characters. Never put a line break inside a field. Keep each line under 600 characters.
 - Do not invent sources, citations or links.`;
@@ -131,9 +132,27 @@ export function formatDiagramKnowledgeBlock(brief: DiagramKnowledgeBrief): strin
   return [
     `[${DIAGRAM_KNOWLEDGE_MARKER}]`,
     "This block was DERIVED FROM THIS STUDENT'S QUESTION moments ago by a separate reasoning pass. It is regenerated on EVERY diagram creation. It is the SOURCE OF TRUTH for the detail dots. Never replace it with memorised, generic or previously used textbook lines, and never show it to the student as prose — the knowledge belongs INSIDE the dots.",
+    "PER-DOT LAW: every edu-detail-dot <title> must include Related:, Relations: (at least one Multiplicative: item AND at least one Inverse: item) and Contrasts: for that dot's anchored part. Do not give dots single-purpose jobs.",
     ...DIAGRAM_KNOWLEDGE_FIELDS.map((field) => `${field}: ${brief[field]}`.trimEnd()),
     "[END OF DIAGRAM KNOWLEDGE BRIEF]",
   ].join("\n");
+}
+
+/** True when a Relations string names both multiplicative and inverse links. */
+export function relationsCoverBothKinds(relations: string): boolean {
+  const text = relations || "";
+  const hasMultiplicative =
+    /\bmultiplicative\b/i.test(text) ||
+    /\bscales with\b/i.test(text) ||
+    /\bproportional to\b/i.test(text) ||
+    /∝\s*[A-Za-z]/.test(text);
+  const hasInverse =
+    /\binverse\b/i.test(text) ||
+    /\breciprocal\b/i.test(text) ||
+    /\bfalls as\b/i.test(text) ||
+    /∝\s*1\s*\//.test(text) ||
+    /\binversely\b/i.test(text);
+  return hasMultiplicative && hasInverse;
 }
 
 function buildUserTurn(question: string, options: DiagramKnowledgeOptions): string {

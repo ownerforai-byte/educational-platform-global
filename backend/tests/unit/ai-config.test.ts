@@ -204,6 +204,9 @@ describe("Diagram Hub free Gemini lane", () => {
     expect(DIAGRAM_HUB_RULES).toContain("Relations:");
     expect(DIAGRAM_HUB_RULES).toContain("Contrasts:");
     expect(DIAGRAM_HUB_RULES).toContain("FIELD LAW");
+    expect(DIAGRAM_HUB_RULES).toContain("Multiplicative:");
+    expect(DIAGRAM_HUB_RULES).toContain("Inverse:");
+    expect(DIAGRAM_HUB_RULES).toContain("EACH DOT MUST include Related:");
     // Owner follow-up 2026-11-12: the AGENT CREATES the information per
     // question, on every diagram creation — not pre-coded widget content.
     expect(DIAGRAM_HUB_RULES).toContain("DIAGRAM KNOWLEDGE BRIEF");

@@ -1,9 +1,11 @@
 import { describe, it, expect } from "vitest";
 import {
   collectDetailDots,
+  detailDotIsComplete,
   isDetailDotElement,
   parseDetailDot,
   parsePartTitle,
+  relationsCoverBothKinds,
 } from "@/components/content/edu-visual";
 
 describe("parsePartTitle", () => {
@@ -44,7 +46,7 @@ describe("parsePartTitle", () => {
 describe("parseDetailDot", () => {
   const PAYLOAD =
     "DETAIL DOT | Diffusion | Related: Osmosis; Active transport; Facilitated diffusion | " +
-    "Relations: Gradient drives flux because J = -D dC/dx; Higher temperature raises D because molecular speed increases | " +
+    "Relations: Multiplicative: flux scales with gradient because J = -D dC/dx; Inverse: concentration difference falls as mixing proceeds because 1/t decay | " +
     "Contrasts: Diffusion vs Osmosis — only water moves in osmosis; Passive vs Active — no ATP vs ATP | " +
     "Detail: Particles move down a concentration gradient until equilibrium. | " +
     "Exam: never say diffusion needs energy";
@@ -67,11 +69,30 @@ describe("parseDetailDot", () => {
     // Relations are causal / mathematical links, parsed as their own section.
     expect(dot.sections[1].label).toBe("Relations");
     expect(dot.sections[1].items).toHaveLength(2);
+    expect(dot.sections[1].items[0]).toContain("Multiplicative:");
     expect(dot.sections[1].items[0]).toContain("dC/dx");
+    expect(dot.sections[1].items[1]).toContain("Inverse:");
     expect(dot.sections[2].items).toHaveLength(2);
     expect(dot.sections[2].items[0]).toContain("Diffusion vs Osmosis");
     expect(dot.sections[3].items).toEqual([]);
     expect(dot.sections[3].value).toContain("concentration gradient");
+    expect(detailDotIsComplete(dot)).toBe(true);
+    expect(relationsCoverBothKinds(dot.sections[1].value)).toBe(true);
+  });
+
+  it("marks incomplete dots that omit related, contrasts, or one relation kind", () => {
+    expect(
+      detailDotIsComplete(
+        parseDetailDot("DETAIL DOT | X | Related: A | Relations: Multiplicative: a scales with b | Contrasts: A vs B — z"),
+      ),
+    ).toBe(false);
+    expect(
+      detailDotIsComplete(
+        parseDetailDot(
+          "DETAIL DOT | X | Related: A | Relations: Multiplicative: a scales with b; Inverse: a falls as b rises | Contrasts: A vs B — z",
+        ),
+      ),
+    ).toBe(true);
   });
 
   it("accepts a payload with no topic and tolerates a legacy pipe label", () => {

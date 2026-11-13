@@ -6,6 +6,7 @@ import {
   DIAGRAM_KNOWLEDGE_MARKER,
   formatDiagramKnowledgeBlock,
   parseDiagramKnowledge,
+  relationsCoverBothKinds,
 } from "../../../src/ai/media/diagram-knowledge";
 
 /**
@@ -22,7 +23,7 @@ const BRIEF = [
   "FOCUS: Pressure-driven filling of the left atrium",
   "ENTITIES: Left atrium, Mitral valve, Left ventricle, Pulmonary vein, Atrial pressure",
   "RELATED: Preload because it sets end-diastolic volume; Compliance because the atrial wall stretches; Frank-Starling law because filling sets stroke volume",
-  "RELATIONS: Pulmonary vein drives left atrial pressure because inflow exceeds outflow during diastole; Atrial pressure drives mitral opening because the gradient exceeds ventricular pressure in mmHg; Left ventricle limits atrial emptying because afterload rises in systole",
+  "RELATIONS: Multiplicative: atrial pressure scales with venous inflow because more volume raises wall tension; Inverse: filling rate falls as ventricular pressure rises because the gradient shrinks; Atrial pressure drives mitral opening because the gradient exceeds ventricular pressure in mmHg",
   "CONTRASTS: Atrium vs Ventricle — atria receive blood while ventricles eject it; Systole vs Diastole — contraction raises pressure while relaxation lowers it",
   "MECHANISM: During diastole the mitral valve is open and left atrial pressure stays near 8-12 mmHg. Blood moves down the gradient until the two pressures equalise.",
   "EXAM: Do not confuse atrial systole with ventricular systole; the atrial kick adds only the final fraction of filling.",
@@ -81,6 +82,15 @@ describe("diagram knowledge contract", () => {
     expect(parseDiagramKnowledge("a generic essay about science")).toBeNull();
     expect(parseDiagramKnowledge("")).toBeNull();
   });
+
+  it("requires relations to cover both multiplicative and inverse kinds", () => {
+    expect(
+      relationsCoverBothKinds(
+        "Multiplicative: flux scales with gradient because J = -D dC/dx; Inverse: concentration difference falls as mixing proceeds",
+      ),
+    ).toBe(true);
+    expect(relationsCoverBothKinds("Gradient drives flux because J = -D dC/dx")).toBe(false);
+  });
 });
 
 describe("cleanKnowledgeValue", () => {
@@ -98,10 +108,13 @@ describe("formatDiagramKnowledgeBlock", () => {
     expect(block).toContain(DIAGRAM_KNOWLEDGE_MARKER);
     expect(block).toContain("SOURCE OF TRUTH");
     expect(block).toContain("EVERY diagram creation");
+    expect(block).toContain("PER-DOT LAW");
+    expect(block).toContain("Multiplicative:");
+    expect(block).toContain("Inverse:");
     for (const field of DIAGRAM_KNOWLEDGE_FIELDS) {
       expect(block).toContain(`${field}:`);
     }
-    expect(block).toContain("RELATIONS: Pulmonary vein drives");
+    expect(block).toContain("RELATIONS: Multiplicative:");
     expect(block).toContain("[END OF DIAGRAM KNOWLEDGE BRIEF]");
     expect(block).not.toContain("undefined");
   });
@@ -129,6 +142,8 @@ describe("buildDiagramKnowledge", () => {
     expect(chat).toHaveBeenCalledTimes(1);
     expect(captured[0].role).toBe("system");
     expect(captured[0].content).toContain("RELATIONS");
+    expect(captured[0].content).toContain("Multiplicative:");
+    expect(captured[0].content).toContain("Inverse:");
     expect(captured[0].content).toContain("generic study advice");
     const userTurn = captured[1].content;
     expect(userTurn).toContain(QUESTION);
