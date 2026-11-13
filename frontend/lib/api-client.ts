@@ -67,9 +67,22 @@ if (typeof window !== "undefined") {
   purgeLegacyAccessToken();
 }
 
+/** Stable per page-load correlation id forwarded as `x-request-id`. */
+let pageRequestId: string | null = null;
+
+function getPageRequestId(): string {
+  if (pageRequestId) return pageRequestId;
+  pageRequestId =
+    typeof crypto !== "undefined" && typeof crypto.randomUUID === "function"
+      ? crypto.randomUUID()
+      : `req-${Date.now().toString(36)}`;
+  return pageRequestId;
+}
+
 function buildHeaders(init?: RequestInit): Record<string, string> {
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
+    "X-Request-Id": getPageRequestId(),
     ...(init?.headers as Record<string, string> | undefined),
   };
   const token = getStoredToken();

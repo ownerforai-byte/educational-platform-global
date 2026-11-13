@@ -597,3 +597,16 @@ Deprecated `middleware/errors.ts` removed (use `error-handler.ts`).
 - **T8:** `bot-policy` in `@rn/shared/utils`; `frontend/proxy.ts` imports it
   (backend keeps a rootDir-local copy).
 
+## ARCHITECTURE CHANGE — T9/T10/T11/T16/T17 (2026-11-13)
+
+- **T9:** `backend/src/config/schema.ts` + `frontend/lib/env.ts` typed contracts;
+  FCM/public-config read through `getPublicEnv()`. AI keys still in `ai/config.ts`.
+- **T10:** `000_schema_migrations.sql` + `backend/scripts/migrate.mjs` /
+  `migrate-lib.mjs`; root `db:migrate` / `db:migrate:check`.
+- **T11:** Storage ports/adapters + `scripts/ci/boundary-check.mjs` ratchet
+  (baseline 38); access-request Firestore mirrors use `Promise.allSettled`.
+- **T16:** Dropped morgan; `x-request-id` middleware + logger/error/Sentry tags;
+  frontend api-client forwards a per-page-load request id.
+- **T17:** `IslandErrorBoundary` wraps diagram/periodic/image-hub/lab stage;
+  route `error.tsx` for ai/chat/notes.
+

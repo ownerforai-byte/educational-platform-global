@@ -20,6 +20,7 @@ import { createElement, useCallback, useEffect, useRef, useState } from "react";
 import { AlertTriangle, Loader2, Play, RotateCcw } from "lucide-react";
 
 import { useSceneTier } from "@/components/lab/3d-rig/use-scene-tier";
+import { IslandErrorBoundary } from "@/components/ui/island-error-boundary";
 import {
   loadActivityRenderer,
   type ActivityRenderer,
@@ -264,7 +265,9 @@ export function ActivityStage({ activity }: { activity: LabActivity }) {
       >
         {/* Exactly one canvas: swapping activities unmounts this subtree, which
             is what disposes the previous scene. */}
-        {createElement(Renderer)}
+        <IslandErrorBoundary name={`lab-activity:${activity.slug}`}>
+          {createElement(Renderer)}
+        </IslandErrorBoundary>
       </div>
       <div className="flex items-center justify-between gap-2">
         <p className="text-[11px] text-muted-foreground">

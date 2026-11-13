@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { Skeleton } from "@/components/ui/skeleton";
+import { IslandErrorBoundary } from "@/components/ui/island-error-boundary";
 
 // PHASE 3 (2026-10-27): load the hub lazily so the route shell paints
 // before the drawing runtime downloads. Next 16 forbids
@@ -21,5 +22,9 @@ const ImageHub = dynamic(
 );
 
 export function ImageHubLazy() {
-  return <ImageHub />;
+  return (
+    <IslandErrorBoundary name="image-hub">
+      <ImageHub />
+    </IslandErrorBoundary>
+  );
 }

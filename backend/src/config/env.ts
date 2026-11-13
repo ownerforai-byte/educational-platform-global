@@ -1,3 +1,11 @@
+import { parseBackendEnv, type BackendEnv } from "./schema.js";
+
+/**
+ * Typed env snapshot (T9). Soft-parsed once; AI provider keys still live in
+ * `ai/config.ts` as a follow-up.
+ */
+export const env: BackendEnv = parseBackendEnv(process.env);
+
 /**
  * Deployment-environment detection.
  *

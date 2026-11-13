@@ -49,6 +49,8 @@
     "ai:regression:build": "node scripts/ci/ai-regression.mjs --build-set",
     "ai:regression:live": "node scripts/ci/ai-regression.mjs --live",
     "smoke:env": "node scripts/ci/check-smoke-env.mjs",
+    "db:migrate": "node backend/scripts/migrate.mjs",
+    "db:migrate:check": "node backend/scripts/migrate.mjs --check",
     "dead-ends": "node scripts/audit/dead-end-ratchet.mjs",
     "dead-ends:baseline": "node scripts/audit/dead-end-ratchet.mjs --write-baseline",
     "test": "npm run test:run --workspace=educational-platform-backend",

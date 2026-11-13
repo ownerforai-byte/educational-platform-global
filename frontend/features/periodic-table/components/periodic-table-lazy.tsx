@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { Skeleton } from "@/components/ui/skeleton";
+import { IslandErrorBoundary } from "@/components/ui/island-error-boundary";
 
 // PHASE 3 (2026-10-27): the table is a heavy client island (136K element
 // bank + block explorer); loaded lazily so the route shell paints first.
@@ -25,5 +26,9 @@ const PeriodicTableView = dynamic(
 );
 
 export function PeriodicTableLazy() {
-  return <PeriodicTableView />;
+  return (
+    <IslandErrorBoundary name="periodic-table">
+      <PeriodicTableView />
+    </IslandErrorBoundary>
+  );
 }

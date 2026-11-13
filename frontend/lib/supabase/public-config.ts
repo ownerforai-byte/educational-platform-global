@@ -14,10 +14,15 @@
  * even though the project itself was healthy.
  */
 
+import { getPublicEnv } from "@/lib/env";
+
+const FALLBACK_SUPABASE_URL = "https://lqzjcwbkpeiqslqhxxmu.supabase.co";
+const FALLBACK_SUPABASE_ANON_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxxempjd2JrcGVpcXNscWh4eG11Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIwOTQyOTksImV4cCI6MjEwNzY3MDI5OX0.qJtJK8-3yawbSwELAQxV4mF9p1uu1slXeDTNHTsdHlI";
+
 export const PUBLIC_SUPABASE_URL =
-  process.env.NEXT_PUBLIC_SUPABASE_URL?.trim().replace(/\/+$/, "") ||
-  "https://lqzjcwbkpeiqslqhxxmu.supabase.co";
+  getPublicEnv().NEXT_PUBLIC_SUPABASE_URL?.trim().replace(/\/+$/, "") ||
+  FALLBACK_SUPABASE_URL;
 
 export const PUBLIC_SUPABASE_ANON_KEY =
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim() ||
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imxxempjd2JrcGVpcXNscWh4eG11Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTIwOTQyOTksImV4cCI6MjEwNzY3MDI5OX0.qJtJK8-3yawbSwELAQxV4mF9p1uu1slXeDTNHTsdHlI";
+  getPublicEnv().NEXT_PUBLIC_SUPABASE_ANON_KEY?.trim() || FALLBACK_SUPABASE_ANON_KEY;

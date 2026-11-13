@@ -1,9 +1,10 @@
 import type { NextFunction, Request, Response } from "express";
 import { logger } from "../lib/logger.js";
+import { getRequestId } from "./request-id.js";
 
 /**
- * Structured request log (method, path, status, duration). Complements morgan
- * with JSON-friendly fields for production log aggregation.
+ * Structured request log (method, path, status, duration, requestId).
+ * Replaces morgan — single JSON line per request.
  */
 export function requestLogger(req: Request, res: Response, next: NextFunction): void {
   const start = Date.now();
@@ -14,6 +15,7 @@ export function requestLogger(req: Request, res: Response, next: NextFunction): 
       path: req.originalUrl ?? req.url,
       status: res.statusCode,
       durationMs: Date.now() - start,
+      requestId: getRequestId(res),
     });
   });
 

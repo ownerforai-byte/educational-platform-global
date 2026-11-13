@@ -1,5 +1,6 @@
 import { supabaseAdmin } from "../db/supabase";
-import { upsertAccessSession, upsertFcmTokenDoc } from "../storage/firebase-store";
+import { logger } from "../lib/logger.js";
+import { getRealtimeStore } from "../storage/index.js";
 
 export type AccessRequestRow = {
   id: string;
@@ -8,6 +9,20 @@ export type AccessRequestRow = {
   fcm_token: string | null;
   deep_link: string;
 };
+
+async function mirrorSettled(
+  label: string,
+  tasks: Array<Promise<unknown>>,
+): Promise<void> {
+  const results = await Promise.allSettled(tasks);
+  for (const result of results) {
+    if (result.status === "rejected") {
+      logger.warn(`[access-requests] ${label} mirror failed`, {
+        detail: result.reason instanceof Error ? result.reason.message : result.reason,
+      });
+    }
+  }
+}
 
 /**
  * Ensure the user has an open timed-access request.
@@ -20,6 +35,7 @@ export async function ensureAccessRequest(
 ): Promise<AccessRequestRow | null> {
   const deepLink = opts?.deepLink ?? "/home/member";
   const fcmToken = opts?.fcmToken?.trim() || null;
+  const realtime = getRealtimeStore();
 
   const { data: existing, error: readErr } = await supabaseAdmin
     .from("user_access_requests")
@@ -47,20 +63,23 @@ export async function ensureAccessRequest(
         console.error("[access-requests] fcm update failed:", updErr.message);
         return existing as AccessRequestRow;
       }
-      // Tier 2 mirror — Firestore (best-effort).
-      void upsertFcmTokenDoc(userId, fcmToken, { requestId: updated.id });
-      void upsertAccessSession({
-        requestId: updated.id,
-        userId,
-        status: updated.status,
-      });
+      await mirrorSettled("fcm-update", [
+        realtime.upsertFcmToken(userId, fcmToken, { requestId: updated.id }),
+        realtime.upsertAccessSession({
+          requestId: updated.id,
+          userId,
+          status: updated.status,
+        }),
+      ]);
       return updated as AccessRequestRow;
     }
-    void upsertAccessSession({
-      requestId: existing.id,
-      userId,
-      status: existing.status,
-    });
+    await mirrorSettled("existing-session", [
+      realtime.upsertAccessSession({
+        requestId: existing.id,
+        userId,
+        status: existing.status,
+      }),
+    ]);
     return existing as AccessRequestRow;
   }
 
@@ -82,15 +101,18 @@ export async function ensureAccessRequest(
     );
     return null;
   }
+  const mirrors: Array<Promise<unknown>> = [
+    realtime.upsertAccessSession({
+      requestId: inserted.id,
+      userId,
+      status: inserted.status,
+      requestedAt: new Date().toISOString(),
+    }),
+  ];
   if (fcmToken) {
-    void upsertFcmTokenDoc(userId, fcmToken, { requestId: inserted.id });
+    mirrors.unshift(realtime.upsertFcmToken(userId, fcmToken, { requestId: inserted.id }));
   }
-  void upsertAccessSession({
-    requestId: inserted.id,
-    userId,
-    status: inserted.status,
-    requestedAt: new Date().toISOString(),
-  });
+  await mirrorSettled("insert", mirrors);
   return inserted as AccessRequestRow;
 }
 
@@ -98,10 +120,11 @@ export async function ensureAccessRequest(
 export async function saveFcmTokenForUser(
   userId: string,
   fcmToken: string,
+  opts?: { deepLink?: string },
 ): Promise<AccessRequestRow | null> {
   const token = fcmToken.trim();
   if (!token) return null;
-  return ensureAccessRequest(userId, { fcmToken: token });
+  return ensureAccessRequest(userId, { fcmToken: token, deepLink: opts?.deepLink });
 }
 
 /**

@@ -22,6 +22,16 @@ if (process.env.SENTRY_DSN) {
     // Lean free-tier setup: errors + request context only, no tracing.
     tracesSampleRate: 0,
   });
+  // Propagate x-request-id onto every captured event when present on the hint.
+  Sentry.addEventProcessor((event, hint) => {
+    const maybe = hint as { request?: { headers?: Record<string, unknown> } };
+    const raw = maybe.request?.headers?.["x-request-id"];
+    const requestId = Array.isArray(raw) ? String(raw[0]) : typeof raw === "string" ? raw : undefined;
+    if (requestId) {
+      event.tags = { ...event.tags, request_id: requestId };
+    }
+    return event;
+  });
   console.log("[Sentry] error monitoring enabled");
 }
 

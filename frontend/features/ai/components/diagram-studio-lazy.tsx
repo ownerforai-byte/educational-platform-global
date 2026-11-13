@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { Skeleton } from "@/components/ui/skeleton";
+import { IslandErrorBoundary } from "@/components/ui/island-error-boundary";
 
 // PHASE 3 (2026-10-27): load the studio lazily so the route shell paints
 // before the drawing runtime downloads. Next 16 forbids
@@ -22,5 +23,9 @@ const DiagramStudio = dynamic(
 );
 
 export function DiagramStudioLazy() {
-  return <DiagramStudio />;
+  return (
+    <IslandErrorBoundary name="diagram-studio">
+      <DiagramStudio />
+    </IslandErrorBoundary>
+  );
 }

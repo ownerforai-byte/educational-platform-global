@@ -1,13 +1,13 @@
 import express from "express";
 import cors from "cors";
 import compression from "compression";
-import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import apiRouter from "./api/index.js";
 import { rateLimit } from "./middleware/rateLimit";
 import { isOriginAllowed } from "./middleware/cors";
 import { securityHeaders, LEGACY_STATIC_PAGE_CSP } from "./middleware/securityHeaders";
 import { errorHandler, notFoundHandler } from "./middleware/error-handler";
+import { requestId } from "./middleware/request-id";
 import { requestLogger } from "./middleware/request-logger";
 import { logRegisteredRoutes } from "./utils/routeDebug";
 import { hasAnyLlmKey } from "./ai/config";
@@ -22,6 +22,7 @@ export function createApp(): express.Express {
   const app = express();
 
   app.set("trust proxy", TRUST_PROXY_HOPS);
+  app.use(requestId);
   app.use(securityHeaders);
   app.use(
     cors({
@@ -33,10 +34,9 @@ export function createApp(): express.Express {
       // The OAuth callback POSTs X-CSRF-Token. When a deployment calls the
       // backend directly (instead of the same-origin Next.js proxy), the CORS
       // preflight must allow that header or the exchange is blocked.
-      allowedHeaders: ["Content-Type", "Authorization", "X-CSRF-Token"],
+      allowedHeaders: ["Content-Type", "Authorization", "X-CSRF-Token", "X-Request-Id"],
     }),
   );
-  app.use(morgan("combined"));
   app.use(requestLogger);
   // gzip/deflate JSON responses (perf pass 2026-10-27): the curriculum
   // endpoints return large JSON bodies; compression shrinks them several-fold

@@ -1,6 +1,7 @@
 import type { NextFunction, Request, Response } from "express";
 import { randomUUID } from "node:crypto";
 import { logger } from "../lib/logger.js";
+import { getRequestId } from "./request-id.js";
 
 /**
  * Error handling — security policy (2026-09-25)
@@ -117,13 +118,26 @@ export function errorHandler(
   }
 
   const errorId = newErrorId();
+  const requestId = getRequestId(res);
   const status = (err as { status?: number })?.status;
-  logServerError(err, errorId, `${req.method} ${req.originalUrl ?? req.url}`);
+  logServerError(
+    err,
+    errorId,
+    `${req.method} ${req.originalUrl ?? req.url}${requestId ? ` req=${requestId}` : ""}`,
+  );
 
   res.setHeader(ERROR_ID_HEADER, errorId);
   if (typeof status === "number" && status >= 400 && status < 500) {
-    respondKnownError(res, status, { error: "Bad request", errorId });
+    respondKnownError(res, status, {
+      error: "Bad request",
+      errorId,
+      ...(requestId ? { requestId } : {}),
+    });
     return;
   }
-  respondKnownError(res, 500, { error: "Internal server error", errorId });
+  respondKnownError(res, 500, {
+    error: "Internal server error",
+    errorId,
+    ...(requestId ? { requestId } : {}),
+  });
 }

@@ -127,6 +127,13 @@ Whenever you need to know how the platform works and where things route, refer O
 | `backend/src/middleware/auth.ts` | Supabase authentication middleware, session verification, user role injection. |
 | `backend/src/middleware/creditCheck.ts` | AI and platform credit check and deduction gating. |
 | `backend/src/config/env.ts` | Environment variable validation and production detection. |
+| `backend/src/config/schema.ts` | Zod typed env contract (T9); consumed by `env.ts`. |
+| `backend/src/middleware/request-id.ts` | `x-request-id` passthrough/mint (T16). |
+| `backend/src/storage/ports.ts` | ObjectStore / RealtimeDocStore / NotificationSender ports (T11). |
+| `backend/scripts/migrate.mjs` | Ordered SQL migration runner + `--check` drift gate (T10). |
+| `scripts/ci/boundary-check.mjs` | Vendor-import boundary ratchet (T11). |
+| `frontend/lib/env.ts` | Zod-validated `NEXT_PUBLIC_*` contract (T9). |
+| `frontend/components/ui/island-error-boundary.tsx` | Compact island crash boundary (T17). |
 | `backend/src/utils/botPolicy.ts` | Named AI-client deny policy (backend copy). Frontend proxy imports `packages/shared/src/utils/bot-policy.ts` via `@rn/shared/utils`. |
 | `packages/shared/src/utils/bot-policy.ts` | Shared bot deny policy for Next middleware (`frontend/proxy.ts`). |
 

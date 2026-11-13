@@ -130,6 +130,10 @@ const runners = {
     run() {
       const t = run("npx", ["tsc", "--noEmit"], { cwd: "backend", stdio: "inherit" });
       if (t.status !== 0) return t.status ?? 1;
+      const boundary = spawnSync(process.execPath, ["scripts/ci/boundary-check.mjs"], {
+        stdio: "inherit",
+      });
+      if (boundary.status !== 0) return boundary.status ?? 1;
       if (!ALL) {
         const a = spawnSync(process.execPath, ["scripts/ci/test-affected.mjs", "--workspace", "backend"], {
           stdio: "inherit",
