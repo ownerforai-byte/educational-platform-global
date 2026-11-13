@@ -147,7 +147,7 @@ export function clearPracticeDraft(draftKey?: string): void {
     writeJson(DRAFT_KEY, null);
     return;
   }
-  const current = readJson<PracticeDraft>(DRAFT_KEY);
+  const current = loadDraft();
   if (current?.draftKey === draftKey) writeJson(DRAFT_KEY, null);
 }
 
