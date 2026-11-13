@@ -105,5 +105,46 @@
       ],
       "answer": "C"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Laws of Vector Addition",
+    "branches": [
+      {
+        "topic": "Triangle law",
+        "details": [
+          "Place vectors head to tail; the closing side gives the resultant",
+          "Only two vectors at a time",
+          "Order does not matter — vector addition is commutative",
+          "Resultant direction runs from the first tail to the last head"
+        ]
+      },
+      {
+        "topic": "Parallelogram law",
+        "details": [
+          "Draw both vectors from a common point; the diagonal is the resultant",
+          "Magnitude R = √(P² + Q² + 2PQ cos θ)",
+          "Direction given by tan α = Q sin θ / (P + Q cos θ)",
+          "Reduces to the Pythagorean result when θ = 90°"
+        ]
+      },
+      {
+        "topic": "Polygon law",
+        "details": [
+          "Extends the triangle law to any number of vectors",
+          "Place all vectors head to tail; the closing side is the resultant",
+          "If the polygon closes exactly, the resultant is zero",
+          "Equilibrium condition: the vector sum of all forces vanishes"
+        ]
+      },
+      {
+        "topic": "Special results and traps",
+        "details": [
+          "Maximum resultant = P + Q when θ = 0° (parallel)",
+          "Minimum resultant = |P − Q| when θ = 180° (antiparallel)",
+          "Equal vectors at 120° have a zero resultant — a classic exam item",
+          "Subtracting a vector means adding its negative"
+        ]
+      }
+    ]
+  }
 }

@@ -1,0 +1,426 @@
+{
+  "class-11/physics/kinematics/projectile-motion-and-its-applications": {
+    "centralConcept": "Projectile Motion",
+    "branches": [
+      {
+        "topic": "The master idea",
+        "details": [
+          "Horizontal and vertical motions are independent — they share only the clock t",
+          "Galileo's principle (1632): solve two separate 1D problems, then recombine",
+          "A ball dropped and a ball thrown horizontally from the same height land together",
+          "Air resistance neglected; g is constant and acts only vertically"
+        ]
+      },
+      {
+        "topic": "Components and equations",
+        "details": [
+          "Launch speed u at angle θ: u_x = u cos θ, u_y = u sin θ",
+          "Horizontal: x = (u cos θ)t, v_x = u cos θ constant, a_x = 0",
+          "Vertical: y = (u sin θ)t − ½gt², v_y = u sin θ − gt, a_y = −g",
+          "At the apex v_y = 0 but v_x = u cos θ is still there"
+        ]
+      },
+      {
+        "topic": "The three standard results",
+        "details": [
+          "Time of flight T = 2u sin θ / g (set by the VERTICAL component only)",
+          "Maximum height H = u² sin²θ / 2g (proportional to sin²θ)",
+          "Horizontal range R = u² sin 2θ / g",
+          "Trajectory y = x tan θ − gx²/(2u²cos²θ) — a downward parabola"
+        ]
+      },
+      {
+        "topic": "Angle behaviour and traps",
+        "details": [
+          "R is maximum at θ = 45° because sin 2θ peaks at 1",
+          "Complementary angles give equal range: R(30°) = R(60°)",
+          "H is maximum at θ = 90° (vertical throw); R is 0 there",
+          "Trap: treating the projectile speed as one number — always combine v_x and v_y separately"
+        ]
+      },
+      {
+        "topic": "Horizontal launch and applications",
+        "details": [
+          "Horizontal launch: u_y = 0, so y = ½gt² and T = √(2h/g)",
+          "Range for horizontal launch: R = u√(2h/g)",
+          "Launch speed equals landing speed at the same height (symmetry)",
+          "Used for artillery, javelin, relief drops, sports ball flight"
+        ]
+      }
+    ]
+  },
+  "class-11/physics/kinematics/instantaneous-velocity-and-acceleration": {
+    "centralConcept": "Instantaneous Velocity & Acceleration",
+    "branches": [
+      {
+        "topic": "From average to instantaneous",
+        "details": [
+          "Average velocity = total displacement / total time",
+          "Instantaneous velocity is the limit of average velocity as Δt → 0",
+          "v = dx/dt — the slope of the x–t tangent",
+          "Instantaneous speed = |v|, the magnitude of instantaneous velocity"
+        ]
+      },
+      {
+        "topic": "Acceleration",
+        "details": [
+          "Average acceleration = change in velocity / time taken",
+          "Instantaneous acceleration a = dv/dt = d²x/dt²",
+          "Slope of the v–t tangent gives a",
+          "Negative a means velocity more negative — not necessarily slowing down"
+        ]
+      },
+      {
+        "topic": "Graph reading",
+        "details": [
+          "x–t slope → velocity; curvature shows acceleration",
+          "v–t slope → acceleration; area under v–t → displacement",
+          "a–t area → change in velocity",
+          "Straight x–t line = uniform velocity; straight v–t line = uniform acceleration"
+        ]
+      },
+      {
+        "topic": "Standard traps",
+        "details": [
+          "Zero velocity does not mean zero acceleration (a ball at its peak)",
+          "Zero acceleration with non-zero velocity is uniform motion",
+          "Displacement can be zero while distance is not",
+          "Direction of a need not match direction of v"
+        ]
+      }
+    ]
+  },
+  "class-11/physics/kinematics/relative-velocity": {
+    "centralConcept": "Relative Velocity",
+    "branches": [
+      {
+        "topic": "The core relation",
+        "details": [
+          "Velocity of A relative to B: v_AB = v_A − v_B (vector subtraction)",
+          "Frame changes do not change physical laws — only the measured velocities",
+          "Relative speed of approach = relative speed of separation in elastic cases",
+          "Symbol order matters: v_AB = −v_BA"
+        ]
+      },
+      {
+        "topic": "One-dimensional cases",
+        "details": [
+          "Same direction: relative speed is the difference of speeds",
+          "Opposite direction: relative speed is the sum of speeds",
+          "Two trains passing: use relative speed, length sum over relative speed",
+          "Always fix a positive direction before substituting signs"
+        ]
+      },
+      {
+        "topic": "River and rain problems",
+        "details": [
+          "Boat crossing: aim the boat so the resultant points straight across for minimum time",
+          "Shortest path crossing needs a heading upstream against current",
+          "Rain falling on a moving person: apparent direction is v_rain − v_person",
+          "Draw the vector triangle before computing anything"
+        ]
+      },
+      {
+        "topic": "Traps",
+        "details": [
+          "Do not add speeds unless the directions justify it",
+          "Minimum crossing time is set by the boat's own capability, not the current",
+          "Relative velocity is instant, not a time average",
+          "Relative to the ground vs relative to a moving frame give different answers"
+        ]
+      }
+    ]
+  },
+  "class-11/physics/kinematics/equation-of-motion-graphical-treatment": {
+    "centralConcept": "Equations of Motion (Graphical Treatment)",
+    "branches": [
+      {
+        "topic": "The three equations",
+        "details": [
+          "v = u + at — velocity after time t",
+          "s = ut + ½at² — displacement in time t",
+          "v² = u² + 2as — velocity independent of time",
+          "Valid only for constant acceleration in a straight line"
+        ]
+      },
+      {
+        "topic": "Deriving v = u + at",
+        "details": [
+          "Use a v–t graph: straight line, intercept u, slope a",
+          "Acceleration = slope = (v − u)/t, so v = u + at",
+          "Area under the graph gives displacement"
+        ]
+      },
+      {
+        "topic": "Deriving s = ut + ½at²",
+        "details": [
+          "Area under v–t = rectangle (ut) + triangle (½(v−u)t)",
+          "Substituting v − u = at gives s = ut + ½at²",
+          "Area is a signed quantity — displacement, not distance"
+        ]
+      },
+      {
+        "topic": "Deriving v² = u² + 2as",
+        "details": [
+          "Eliminate t between the first two equations",
+          "Rearranging gives v² = u² + 2as",
+          "Useful when time is neither given nor asked"
+        ]
+      },
+      {
+        "topic": "Sign conventions and traps",
+        "details": [
+          "Choose one positive direction and keep it throughout",
+          "For free fall take a = +g or −g consistently with your choice",
+          "Equations fail for non-uniform acceleration (use calculus instead)",
+          "Distance travelled ≠ |displacement| if the body reverses direction"
+        ]
+      }
+    ]
+  },
+  "class-11/physics/kinematics/motion-of-a-freely-falling-body": {
+    "centralConcept": "Free Fall",
+    "branches": [
+      {
+        "topic": "Definition",
+        "details": [
+          "Motion under gravity alone — air resistance neglected",
+          "Acceleration is g ≈ 9.8 m/s² downward, independent of mass",
+          "Heavy and light bodies fall together in vacuum (Galileo)",
+          "Takes u = 0 for a body dropped from rest"
+        ]
+      },
+      {
+        "topic": "Equations with a = g",
+        "details": [
+          "v = u + gt",
+          "h = ut + ½gt²",
+          "v² = u² + 2gh",
+          "Take downward as positive to keep every term positive"
+        ]
+      },
+      {
+        "topic": "Key results for a dropped body",
+        "details": [
+          "Fall time from height h: t = √(2h/g)",
+          "Impact speed: v = √(2gh)",
+          "Distances in successive equal intervals follow the 1 : 3 : 5 : 7 ratio",
+          "Velocity increases uniformly — v–t graph is a straight line"
+        ]
+      },
+      {
+        "topic": "Thrown upward",
+        "details": [
+          "Time to reach the top = u/g; total flight = 2u/g",
+          "Maximum height = u²/2g",
+          "Speed at a given height is the same going up and coming down",
+          "Acceleration stays g downward throughout — even at the top"
+        ]
+      }
+    ]
+  },
+  "class-11/physics/physical-quantities/precision-and-significant-figures": {
+    "centralConcept": "Precision, Accuracy & Significant Figures",
+    "branches": [
+      {
+        "topic": "Accuracy vs precision",
+        "details": [
+          "Accuracy = closeness to the true value",
+          "Precision = agreement among repeated measurements (resolution)",
+          "A reading can be precise but inaccurate (systematic offset)",
+          "Random errors reduce precision; systematic errors reduce accuracy"
+        ]
+      },
+      {
+        "topic": "Types of error",
+        "details": [
+          "Systematic: instrument zero error, calibration, personal bias",
+          "Random: unpredictable fluctuations, reduced by averaging",
+          "Least count error: bounded by instrument resolution",
+          "Absolute, relative and percentage error = Δa, Δa/a, (Δa/a)×100%"
+        ]
+      },
+      {
+        "topic": "Significant figures rules",
+        "details": [
+          "All non-zero digits are significant",
+          "Zeros between non-zero digits are significant",
+          "Leading zeros are never significant",
+          "Trailing zeros after a decimal point are significant"
+        ]
+      },
+      {
+        "topic": "Combining uncertainties",
+        "details": [
+          "Addition/subtraction: absolute errors add",
+          "Multiplication/division: relative (percentage) errors add",
+          "Power: percentage error multiplies by the exponent",
+          "Round the final result to the least number of significant figures in the data"
+        ]
+      }
+    ]
+  },
+  "class-11/physics/physical-quantities/dimensions-and-uses-of-dimensional-analysis": {
+    "centralConcept": "Dimensions & Dimensional Analysis",
+    "branches": [
+      {
+        "topic": "Base dimensions",
+        "details": [
+          "Seven bases: M, L, T, A (current), K (temperature), mol, cd",
+          "Derived quantities are products of powers of the bases",
+          "Force: [M L T⁻²]; Energy/Work: [M L² T⁻²]",
+          "Pressure: [M L⁻¹ T⁻²]; Power: [M L² T⁻³]"
+        ]
+      },
+      {
+        "topic": "Principle of homogeneity",
+        "details": [
+          "Every term in a physical equation must carry the same dimensions",
+          "Only quantities with identical dimensions can be added or equated",
+          "Dimensionless groups include angle, strain and refractive index"
+        ]
+      },
+      {
+        "topic": "Uses",
+        "details": [
+          "Check whether an equation is dimensionally consistent",
+          "Convert units between systems",
+          "Derive the form of a relation up to a dimensionless constant",
+          "Predict how a quantity depends on the variables involved"
+        ]
+      },
+      {
+        "topic": "Limitations",
+        "details": [
+          "Cannot determine dimensionless numerical constants",
+          "Cannot distinguish quantities with the same dimensions (work vs torque)",
+          "Fails for equations involving trigonometric, exponential or logarithmic functions",
+          "Cannot verify an equation that is already dimensionally consistent but physically wrong"
+        ]
+      }
+    ]
+  },
+  "class-11/physics/vectors/triangle-parallelogram-and-polygon-laws-of-vectors": {
+    "centralConcept": "Laws of Vector Addition",
+    "branches": [
+      {
+        "topic": "Triangle law",
+        "details": [
+          "Place vectors head to tail; the closing side gives the resultant",
+          "Only two vectors at a time",
+          "Order does not matter — vector addition is commutative",
+          "Resultant direction runs from the first tail to the last head"
+        ]
+      },
+      {
+        "topic": "Parallelogram law",
+        "details": [
+          "Draw both vectors from a common point; the diagonal is the resultant",
+          "Magnitude R = √(P² + Q² + 2PQ cos θ)",
+          "Direction given by tan α = Q sin θ / (P + Q cos θ)",
+          "Reduces to the Pythagorean result when θ = 90°"
+        ]
+      },
+      {
+        "topic": "Polygon law",
+        "details": [
+          "Extends the triangle law to any number of vectors",
+          "Place all vectors head to tail; the closing side is the resultant",
+          "If the polygon closes exactly, the resultant is zero",
+          "Equilibrium condition: the vector sum of all forces vanishes"
+        ]
+      },
+      {
+        "topic": "Special results and traps",
+        "details": [
+          "Maximum resultant = P + Q when θ = 0° (parallel)",
+          "Minimum resultant = |P − Q| when θ = 180° (antiparallel)",
+          "Equal vectors at 120° have a zero resultant — a classic exam item",
+          "Subtracting a vector means adding its negative"
+        ]
+      }
+    ]
+  },
+  "class-11/physics/vectors/resolution-of-vectors-unit-vectors": {
+    "centralConcept": "Resolution of Vectors & Unit Vectors",
+    "branches": [
+      {
+        "topic": "Rectangular components",
+        "details": [
+          "A vector splits into perpendicular components along chosen axes",
+          "A_x = A cos θ, A_y = A sin θ",
+          "Recombine with A = √(A_x² + A_y²)",
+          "Direction: tan θ = A_y / A_x"
+        ]
+      },
+      {
+        "topic": "Unit vectors",
+        "details": [
+          "A unit vector has magnitude 1 and shows direction only",
+          "Â = A / |A|",
+          "Cartesian basis: î, ĵ, k̂ along x, y, z",
+          "A = A_x î + A_y ĵ + A_z k̂, and |A| = √(A_x² + A_y² + A_z²)"
+        ]
+      },
+      {
+        "topic": "Why resolve?",
+        "details": [
+          "Turns a 2D/3D problem into independent 1D problems",
+          "Essential for inclined planes and force analysis",
+          "Components along different axes are independent",
+          "Choose axes to minimise the number of component vectors"
+        ]
+      },
+      {
+        "topic": "Traps",
+        "details": [
+          "Components are not the original vector — never add them as scalars without direction",
+          "Resolution is not unique; it depends on the chosen axes",
+          "cos/sin swap if the angle is measured from the other axis",
+          "A component can exceed the magnitude only if signs are mishandled"
+        ]
+      }
+    ]
+  },
+  "class-11/physics/vectors/scalar-and-vector-products": {
+    "centralConcept": "Scalar & Vector Products",
+    "branches": [
+      {
+        "topic": "Dot (scalar) product",
+        "details": [
+          "A · B = AB cos θ — result is a scalar",
+          "A · B = A_xB_x + A_yB_y + A_zB_z",
+          "Zero when the vectors are perpendicular",
+          "Work W = F · d is the standard physical example"
+        ]
+      },
+      {
+        "topic": "Cross (vector) product",
+        "details": [
+          "A × B = AB sin θ n̂ — result is a vector perpendicular to both",
+          "Magnitude equals the area of the parallelogram they span",
+          "A × B = −B × A (anticommutative)",
+          "Torque τ = r × F and angular momentum L = r × p"
+        ]
+      },
+      {
+        "topic": "Properties",
+        "details": [
+          "Dot product is commutative; cross product is not",
+          "Parallel vectors: dot is maximum, cross is zero",
+          "Perpendicular vectors: dot is zero, cross is maximum",
+          "i · i = 1, i × i = 0, i × j = k"
+        ]
+      },
+      {
+        "topic": "Traps",
+        "details": [
+          "Do not mix up the results: dot gives a scalar, cross gives a vector",
+          "Right-hand rule fixes the direction of the cross product",
+          "Both products vanish only when one vector is zero",
+          "Angle used is always the smaller angle between the vectors"
+        ]
+      }
+    ]
+  }
+}

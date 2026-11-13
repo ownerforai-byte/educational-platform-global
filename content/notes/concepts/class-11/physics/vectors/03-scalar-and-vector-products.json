@@ -91,5 +91,46 @@
       ],
       "answer": "C"
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Scalar & Vector Products",
+    "branches": [
+      {
+        "topic": "Dot (scalar) product",
+        "details": [
+          "A · B = AB cos θ — result is a scalar",
+          "A · B = A_xB_x + A_yB_y + A_zB_z",
+          "Zero when the vectors are perpendicular",
+          "Work W = F · d is the standard physical example"
+        ]
+      },
+      {
+        "topic": "Cross (vector) product",
+        "details": [
+          "A × B = AB sin θ n̂ — result is a vector perpendicular to both",
+          "Magnitude equals the area of the parallelogram they span",
+          "A × B = −B × A (anticommutative)",
+          "Torque τ = r × F and angular momentum L = r × p"
+        ]
+      },
+      {
+        "topic": "Properties",
+        "details": [
+          "Dot product is commutative; cross product is not",
+          "Parallel vectors: dot is maximum, cross is zero",
+          "Perpendicular vectors: dot is zero, cross is maximum",
+          "i · i = 1, i × i = 0, i × j = k"
+        ]
+      },
+      {
+        "topic": "Traps",
+        "details": [
+          "Do not mix up the results: dot gives a scalar, cross gives a vector",
+          "Right-hand rule fixes the direction of the cross product",
+          "Both products vanish only when one vector is zero",
+          "Angle used is always the smaller angle between the vectors"
+        ]
+      }
+    ]
+  }
 }

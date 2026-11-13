@@ -278,5 +278,45 @@
     "1 N = 10⁵ dyne; 1 J = 10⁷ erg by the n₂ conversion rule.",
     "String wave: v ∝ T^a μ^b → v = k√(T/μ).",
     "Spring constant [k] = [MT⁻²] — same as surface tension (the clash)."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Dimensions & Dimensional Analysis",
+    "branches": [
+      {
+        "topic": "Base dimensions",
+        "details": [
+          "Seven bases: M, L, T, A (current), K (temperature), mol, cd",
+          "Derived quantities are products of powers of the bases",
+          "Force: [M L T⁻²]; Energy/Work: [M L² T⁻²]",
+          "Pressure: [M L⁻¹ T⁻²]; Power: [M L² T⁻³]"
+        ]
+      },
+      {
+        "topic": "Principle of homogeneity",
+        "details": [
+          "Every term in a physical equation must carry the same dimensions",
+          "Only quantities with identical dimensions can be added or equated",
+          "Dimensionless groups include angle, strain and refractive index"
+        ]
+      },
+      {
+        "topic": "Uses",
+        "details": [
+          "Check whether an equation is dimensionally consistent",
+          "Convert units between systems",
+          "Derive the form of a relation up to a dimensionless constant",
+          "Predict how a quantity depends on the variables involved"
+        ]
+      },
+      {
+        "topic": "Limitations",
+        "details": [
+          "Cannot determine dimensionless numerical constants",
+          "Cannot distinguish quantities with the same dimensions (work vs torque)",
+          "Fails for equations involving trigonometric, exponential or logarithmic functions",
+          "Cannot verify an equation that is already dimensionally consistent but physically wrong"
+        ]
+      }
+    ]
+  }
 }

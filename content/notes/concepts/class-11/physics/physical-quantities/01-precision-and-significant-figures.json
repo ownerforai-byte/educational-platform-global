@@ -280,5 +280,46 @@
     "Round-off: 12.5+3.42+0.625 → 16.5; 4.0×3.142 → 12.6.",
     "Density error: m=(50.0±0.1)g, r=(2.00±0.01)cm, l=(10.0±0.1)cm → ±2.2%, radius term dominates.",
     "Pendulum g: l=(98.4±0.1)cm, T=(1.99±0.01)s → g=9.80 m/s² ±1.1%."
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Precision, Accuracy & Significant Figures",
+    "branches": [
+      {
+        "topic": "Accuracy vs precision",
+        "details": [
+          "Accuracy = closeness to the true value",
+          "Precision = agreement among repeated measurements (resolution)",
+          "A reading can be precise but inaccurate (systematic offset)",
+          "Random errors reduce precision; systematic errors reduce accuracy"
+        ]
+      },
+      {
+        "topic": "Types of error",
+        "details": [
+          "Systematic: instrument zero error, calibration, personal bias",
+          "Random: unpredictable fluctuations, reduced by averaging",
+          "Least count error: bounded by instrument resolution",
+          "Absolute, relative and percentage error = Δa, Δa/a, (Δa/a)×100%"
+        ]
+      },
+      {
+        "topic": "Significant figures rules",
+        "details": [
+          "All non-zero digits are significant",
+          "Zeros between non-zero digits are significant",
+          "Leading zeros are never significant",
+          "Trailing zeros after a decimal point are significant"
+        ]
+      },
+      {
+        "topic": "Combining uncertainties",
+        "details": [
+          "Addition/subtraction: absolute errors add",
+          "Multiplication/division: relative (percentage) errors add",
+          "Power: percentage error multiplies by the exponent",
+          "Round the final result to the least number of significant figures in the data"
+        ]
+      }
+    ]
+  }
 }

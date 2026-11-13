@@ -179,5 +179,52 @@
     "**Graphical Derivation Logic:** The $v$-$t$ graph for constant $a$ is a straight line. Slope = $a$ gives $v = u + at$. Area (trapezoid) = $s = \\frac{u+v}{2}t = ut + \\frac{1}{2}at^2$. Eliminating $t$ gives $v^2 = u^2 + 2as$. These derivations are NEB favorites.",
     "**Sign Convention Consistency:** Choose one positive direction (e.g., up = +) and keep it. For free fall, $a = -g$ if up is +. For braking, $a$ is opposite to $v$. The equations work with signed quantities; plug in signs consistently."
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "mindmap": {
+    "centralConcept": "Equations of Motion (Graphical Treatment)",
+    "branches": [
+      {
+        "topic": "The three equations",
+        "details": [
+          "v = u + at — velocity after time t",
+          "s = ut + ½at² — displacement in time t",
+          "v² = u² + 2as — velocity independent of time",
+          "Valid only for constant acceleration in a straight line"
+        ]
+      },
+      {
+        "topic": "Deriving v = u + at",
+        "details": [
+          "Use a v–t graph: straight line, intercept u, slope a",
+          "Acceleration = slope = (v − u)/t, so v = u + at",
+          "Area under the graph gives displacement"
+        ]
+      },
+      {
+        "topic": "Deriving s = ut + ½at²",
+        "details": [
+          "Area under v–t = rectangle (ut) + triangle (½(v−u)t)",
+          "Substituting v − u = at gives s = ut + ½at²",
+          "Area is a signed quantity — displacement, not distance"
+        ]
+      },
+      {
+        "topic": "Deriving v² = u² + 2as",
+        "details": [
+          "Eliminate t between the first two equations",
+          "Rearranging gives v² = u² + 2as",
+          "Useful when time is neither given nor asked"
+        ]
+      },
+      {
+        "topic": "Sign conventions and traps",
+        "details": [
+          "Choose one positive direction and keep it throughout",
+          "For free fall take a = +g or −g consistently with your choice",
+          "Equations fail for non-uniform acceleration (use calculus instead)",
+          "Distance travelled ≠ |displacement| if the body reverses direction"
+        ]
+      }
+    ]
+  }
 }

@@ -181,5 +181,55 @@
     "**Trajectory is a Parabola:** Eliminating $t$ gives $y = x\tan\theta - \frac{g x^2}{2u^2\\cos^2\theta}$, a downward-opening parabola. This assumes no air resistance, constant $g$, and flat ground. With drag, the trajectory is not a parabola and range decreases.",
     "**Symmetry and Range Maxima:** Time of flight $T = \frac{2u\\sin\theta}{g}$, max height $H = \frac{u^2\\sin^2\theta}{2g}$, range $R = \frac{u^2\\sin 2\theta}{g}$. Maximum range at $\theta = 45^\\circ$. Complementary angles ($\theta$ and $90^\\circ-\theta$) give identical ranges because $\\sin 2\theta = \\sin(180^\\circ-2\theta)$. Speed at launch = speed at landing (symmetry)."
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "mindmap": {
+    "centralConcept": "Projectile Motion",
+    "branches": [
+      {
+        "topic": "The master idea",
+        "details": [
+          "Horizontal and vertical motions are independent — they share only the clock t",
+          "Galileo's principle (1632): solve two separate 1D problems, then recombine",
+          "A ball dropped and a ball thrown horizontally from the same height land together",
+          "Air resistance neglected; g is constant and acts only vertically"
+        ]
+      },
+      {
+        "topic": "Components and equations",
+        "details": [
+          "Launch speed u at angle θ: u_x = u cos θ, u_y = u sin θ",
+          "Horizontal: x = (u cos θ)t, v_x = u cos θ constant, a_x = 0",
+          "Vertical: y = (u sin θ)t − ½gt², v_y = u sin θ − gt, a_y = −g",
+          "At the apex v_y = 0 but v_x = u cos θ is still there"
+        ]
+      },
+      {
+        "topic": "The three standard results",
+        "details": [
+          "Time of flight T = 2u sin θ / g (set by the VERTICAL component only)",
+          "Maximum height H = u² sin²θ / 2g (proportional to sin²θ)",
+          "Horizontal range R = u² sin 2θ / g",
+          "Trajectory y = x tan θ − gx²/(2u²cos²θ) — a downward parabola"
+        ]
+      },
+      {
+        "topic": "Angle behaviour and traps",
+        "details": [
+          "R is maximum at θ = 45° because sin 2θ peaks at 1",
+          "Complementary angles give equal range: R(30°) = R(60°)",
+          "H is maximum at θ = 90° (vertical throw); R is 0 there",
+          "Trap: treating the projectile speed as one number — always combine v_x and v_y separately"
+        ]
+      },
+      {
+        "topic": "Horizontal launch and applications",
+        "details": [
+          "Horizontal launch: u_y = 0, so y = ½gt² and T = √(2h/g)",
+          "Range for horizontal launch: R = u√(2h/g)",
+          "Launch speed equals landing speed at the same height (symmetry)",
+          "Used for artillery, javelin, relief drops, sports ball flight"
+        ]
+      }
+    ]
+  }
 }

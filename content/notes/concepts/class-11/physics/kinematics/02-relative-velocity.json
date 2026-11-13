@@ -83,5 +83,46 @@
   "specialNotes": [],
   "examNotes": [],
   "importantTasks": [],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "mindmap": {
+    "centralConcept": "Relative Velocity",
+    "branches": [
+      {
+        "topic": "The core relation",
+        "details": [
+          "Velocity of A relative to B: v_AB = v_A − v_B (vector subtraction)",
+          "Frame changes do not change physical laws — only the measured velocities",
+          "Relative speed of approach = relative speed of separation in elastic cases",
+          "Symbol order matters: v_AB = −v_BA"
+        ]
+      },
+      {
+        "topic": "One-dimensional cases",
+        "details": [
+          "Same direction: relative speed is the difference of speeds",
+          "Opposite direction: relative speed is the sum of speeds",
+          "Two trains passing: use relative speed, length sum over relative speed",
+          "Always fix a positive direction before substituting signs"
+        ]
+      },
+      {
+        "topic": "River and rain problems",
+        "details": [
+          "Boat crossing: aim the boat so the resultant points straight across for minimum time",
+          "Shortest path crossing needs a heading upstream against current",
+          "Rain falling on a moving person: apparent direction is v_rain − v_person",
+          "Draw the vector triangle before computing anything"
+        ]
+      },
+      {
+        "topic": "Traps",
+        "details": [
+          "Do not add speeds unless the directions justify it",
+          "Minimum crossing time is set by the boat's own capability, not the current",
+          "Relative velocity is instant, not a time average",
+          "Relative to the ground vs relative to a moving frame give different answers"
+        ]
+      }
+    ]
+  }
 }

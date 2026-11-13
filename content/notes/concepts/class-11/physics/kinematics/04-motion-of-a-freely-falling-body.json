@@ -181,5 +181,46 @@
     "**Sign Convention Discipline:** Choose one positive direction (e.g., up = +) and use it consistently. For up-positive: $a = -g$, $v = u - gt$, $h = ut - \frac{1}{2}gt^2$. The sign of $g$ goes into the equation ONCE — never mix conventions.",
     "**Up-Down Symmetry (No Air Resistance):** Time up = time down = $u/g$. Velocity at equal heights going up and down are equal in magnitude, opposite in direction. At the top, $v=0$ but $a=g$ downward — zero velocity does NOT mean zero acceleration."
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "mindmap": {
+    "centralConcept": "Free Fall",
+    "branches": [
+      {
+        "topic": "Definition",
+        "details": [
+          "Motion under gravity alone — air resistance neglected",
+          "Acceleration is g ≈ 9.8 m/s² downward, independent of mass",
+          "Heavy and light bodies fall together in vacuum (Galileo)",
+          "Takes u = 0 for a body dropped from rest"
+        ]
+      },
+      {
+        "topic": "Equations with a = g",
+        "details": [
+          "v = u + gt",
+          "h = ut + ½gt²",
+          "v² = u² + 2gh",
+          "Take downward as positive to keep every term positive"
+        ]
+      },
+      {
+        "topic": "Key results for a dropped body",
+        "details": [
+          "Fall time from height h: t = √(2h/g)",
+          "Impact speed: v = √(2gh)",
+          "Distances in successive equal intervals follow the 1 : 3 : 5 : 7 ratio",
+          "Velocity increases uniformly — v–t graph is a straight line"
+        ]
+      },
+      {
+        "topic": "Thrown upward",
+        "details": [
+          "Time to reach the top = u/g; total flight = 2u/g",
+          "Maximum height = u²/2g",
+          "Speed at a given height is the same going up and coming down",
+          "Acceleration stays g downward throughout — even at the top"
+        ]
+      }
+    ]
+  }
 }

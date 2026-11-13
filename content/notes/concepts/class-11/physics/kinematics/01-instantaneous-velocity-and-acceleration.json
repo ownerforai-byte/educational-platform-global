@@ -178,5 +178,46 @@
     "**Graph Duality — Slopes vs Areas:** On $x$-$t$ graph: slope of tangent = $v$. On $v$-$t$ graph: slope of tangent = $a$; area under curve = displacement. On $a$-$t$ graph: area under curve = change in velocity. Mixing up slope/area is the most common graph error.",
     "**Sign Logic for Speeding/Slowing:** Speeding up $\\Leftrightarrow$ $v$ and $a$ have *same* sign. Slowing down $\\Leftrightarrow$ $v$ and $a$ have *opposite* signs. This is true regardless of coordinate choice. At a turning point ($v=0$), $a \neq 0$ (e.g., ball at top of flight: $v=0$, $a=g$)."
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "mindmap": {
+    "centralConcept": "Instantaneous Velocity & Acceleration",
+    "branches": [
+      {
+        "topic": "From average to instantaneous",
+        "details": [
+          "Average velocity = total displacement / total time",
+          "Instantaneous velocity is the limit of average velocity as Δt → 0",
+          "v = dx/dt — the slope of the x–t tangent",
+          "Instantaneous speed = |v|, the magnitude of instantaneous velocity"
+        ]
+      },
+      {
+        "topic": "Acceleration",
+        "details": [
+          "Average acceleration = change in velocity / time taken",
+          "Instantaneous acceleration a = dv/dt = d²x/dt²",
+          "Slope of the v–t tangent gives a",
+          "Negative a means velocity more negative — not necessarily slowing down"
+        ]
+      },
+      {
+        "topic": "Graph reading",
+        "details": [
+          "x–t slope → velocity; curvature shows acceleration",
+          "v–t slope → acceleration; area under v–t → displacement",
+          "a–t area → change in velocity",
+          "Straight x–t line = uniform velocity; straight v–t line = uniform acceleration"
+        ]
+      },
+      {
+        "topic": "Standard traps",
+        "details": [
+          "Zero velocity does not mean zero acceleration (a ball at its peak)",
+          "Zero acceleration with non-zero velocity is uniform motion",
+          "Displacement can be zero while distance is not",
+          "Direction of a need not match direction of v"
+        ]
+      }
+    ]
+  }
 }

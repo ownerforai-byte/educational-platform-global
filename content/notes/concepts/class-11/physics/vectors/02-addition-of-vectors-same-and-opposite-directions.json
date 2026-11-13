@@ -230,5 +230,46 @@
       ],
       "answer": "7 N east."
     }
-  ]
+  ],
+  "mindmap": {
+    "centralConcept": "Resolution of Vectors & Unit Vectors",
+    "branches": [
+      {
+        "topic": "Rectangular components",
+        "details": [
+          "A vector splits into perpendicular components along chosen axes",
+          "A_x = A cos θ, A_y = A sin θ",
+          "Recombine with A = √(A_x² + A_y²)",
+          "Direction: tan θ = A_y / A_x"
+        ]
+      },
+      {
+        "topic": "Unit vectors",
+        "details": [
+          "A unit vector has magnitude 1 and shows direction only",
+          "Â = A / |A|",
+          "Cartesian basis: î, ĵ, k̂ along x, y, z",
+          "A = A_x î + A_y ĵ + A_z k̂, and |A| = √(A_x² + A_y² + A_z²)"
+        ]
+      },
+      {
+        "topic": "Why resolve?",
+        "details": [
+          "Turns a 2D/3D problem into independent 1D problems",
+          "Essential for inclined planes and force analysis",
+          "Components along different axes are independent",
+          "Choose axes to minimise the number of component vectors"
+        ]
+      },
+      {
+        "topic": "Traps",
+        "details": [
+          "Components are not the original vector — never add them as scalars without direction",
+          "Resolution is not unique; it depends on the chosen axes",
+          "cos/sin swap if the angle is measured from the other axis",
+          "A component can exceed the magnitude only if signs are mishandled"
+        ]
+      }
+    ]
+  }
 }
