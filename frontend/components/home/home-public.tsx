@@ -53,13 +53,6 @@ export function HomePublic() {
             >
               Sign in
             </Link>
-            <Link
-              href="/welcome/join"
-              data-testid="guest-home-note-link"
-              className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-border/80 px-5 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            >
-              A note before you begin
-            </Link>
           </div>
           <div className="mt-8">
             <VisitorHomeChat />

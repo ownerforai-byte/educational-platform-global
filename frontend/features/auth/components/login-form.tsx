@@ -155,13 +155,6 @@ export function LoginForm() {
         >
           Sign Up
         </Link>
-        {" · "}
-        <Link
-          href="/welcome/join"
-          className="font-bold text-[#D2223D] transition-colors hover:underline"
-        >
-          Read the guest note
-        </Link>
       </p>
 
       <Link

@@ -55,26 +55,20 @@ describe("guest home — sign in is the only action", () => {
       "href",
       "/welcome/join",
     );
-    expect(screen.getByTestId("guest-home-note-link")).toHaveAttribute(
-      "href",
-      "/welcome/join",
-    );
     expect(screen.getAllByRole("link", { name: /access (notice|works)/i }).some((link) => link.getAttribute("href") === "/plans")).toBe(true);
     expect(screen.getAllByRole("link").map((link) => link.getAttribute("href"))).not.toContain("/notice");
   });
 
-  it("routes guests to the inspiring note before the bare login wall", () => {
+  it("routes guests through /welcome/join before the bare login wall", () => {
     render(<HomePublic />);
 
-    // Account-request and plan CTAs stay hidden; primary actions open the
-    // guest note (create / sign-in / check approval), not a bare /login wall.
     expect(screen.queryByRole("link", { name: /request an account/i })).toBeNull();
     expect(screen.queryByRole("link", { name: /see all plans/i })).toBeNull();
 
     const joinLinks = screen
       .getAllByRole("link")
       .filter((link) => link.getAttribute("href") === "/welcome/join");
-    expect(joinLinks.length).toBeGreaterThanOrEqual(2);
+    expect(joinLinks.length).toBeGreaterThanOrEqual(1);
     expect(
       screen.getAllByRole("link").map((link) => link.getAttribute("href")),
     ).not.toContain("/login");
