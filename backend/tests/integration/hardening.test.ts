@@ -178,7 +178,6 @@ vi.mock("../../src/storage/firebase-admin", () => ({
 }));
 
 vi.mock("../../src/storage/firebase-store", () => ({
-  firebaseUpload: vi.fn(),
   upsertFcmTokenDoc: async () => {},
   appendNotificationLog: async () => null,
   upsertAccessSession: async () => {},

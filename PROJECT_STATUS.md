@@ -588,3 +588,12 @@ Overrides live at root only. Firebase Functions depends on `@rn/shared` (no
 `api/*.ts` re-export shims deleted; tests import domain controllers.
 Deprecated `middleware/errors.ts` removed (use `error-handler.ts`).
 
+## ARCHITECTURE CHANGE — T4/T6/T7/T8 (2026-11-13)
+
+- **T4:** R2 is Tier 3 primary object store (`r2Ready`); Firebase Storage branch
+  and `firebaseUpload` removed; `STORAGE_UPLOADS_ENABLED` makes R2 critical in prod.
+- **T6:** Removed `@tanstack/react-query`; syllabus hooks use local `useMemo`.
+- **T7:** Firebase client trimmed to app + messaging; FCM modules lazy-import.
+- **T8:** `bot-policy` in `@rn/shared/utils`; `frontend/proxy.ts` imports it
+  (backend keeps a rootDir-local copy).
+

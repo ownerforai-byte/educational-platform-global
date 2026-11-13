@@ -1,34 +1,4 @@
-import { getFirestore, getStorageBucket, isFirebaseAdminConfigured } from "./firebase-admin";
-
-export async function firebaseUpload(
-  path: string,
-  buffer: Buffer,
-  contentType: string,
-): Promise<{ url: string; path: string }> {
-  if (!isFirebaseAdminConfigured()) {
-    throw new Error("Firebase Storage is not configured");
-  }
-  const bucket = getStorageBucket();
-  if (!bucket) throw new Error("Firebase Storage bucket unavailable");
-
-  const key = path.replace(/^\/+/, "");
-  const file = bucket.file(`media/${key}`);
-  await file.save(buffer, {
-    contentType,
-    resumable: false,
-    metadata: {
-      cacheControl: "public, max-age=86400",
-      contentType,
-    },
-  });
-
-  // Prefer a signed URL (works with uniform bucket-level access).
-  const [url] = await file.getSignedUrl({
-    action: "read",
-    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
-  });
-  return { url, path: `media/${key}` };
-}
+import { getFirestore } from "./firebase-admin";
 
 export async function upsertFcmTokenDoc(
   userId: string,

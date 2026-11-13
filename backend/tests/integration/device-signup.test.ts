@@ -157,7 +157,6 @@ vi.mock("../../src/db/supabase", () => ({
 }));
 
 vi.mock("../../src/storage/firebase-store", () => ({
-  firebaseUpload: vi.fn(),
   upsertFcmTokenDoc: async () => {},
   appendNotificationLog: async () => null,
   upsertAccessSession: async () => {},

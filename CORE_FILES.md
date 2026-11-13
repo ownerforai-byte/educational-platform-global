@@ -127,7 +127,8 @@ Whenever you need to know how the platform works and where things route, refer O
 | `backend/src/middleware/auth.ts` | Supabase authentication middleware, session verification, user role injection. |
 | `backend/src/middleware/creditCheck.ts` | AI and platform credit check and deduction gating. |
 | `backend/src/config/env.ts` | Environment variable validation and production detection. |
-| `backend/src/utils/botPolicy.ts` | Dependency-free named AI-client deny policy shared by the frontend request proxy, crawler directives, and backend security middleware. |
+| `backend/src/utils/botPolicy.ts` | Named AI-client deny policy (backend copy). Frontend proxy imports `packages/shared/src/utils/bot-policy.ts` via `@rn/shared/utils`. |
+| `packages/shared/src/utils/bot-policy.ts` | Shared bot deny policy for Next middleware (`frontend/proxy.ts`). |
 
 ### D. AI & Core Service Engines
 | File | Role |

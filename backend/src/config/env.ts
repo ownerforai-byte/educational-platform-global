@@ -40,16 +40,19 @@ export const CRITICAL_ENV_VARS = [
 export const AI_PROVIDER_KEY_VARS = ["AGNES_API_KEY"] as const;
 
 /**
- * The Cloudflare R2 overflow layer (src/storage/r2.ts) — OPTIONAL, but all
- * four must be present together: a partial set silently keeps the overflow
- * disabled, so the startup report calls that out.
+ * Cloudflare R2 — Tier 3 primary object store (src/storage/r2.ts).
+ * All four must be present together; a partial set keeps uploads disabled.
+ * When STORAGE_UPLOADS_ENABLED=true in production, missing R2 is critical.
  */
-export const R2_OVERFLOW_ENV_VARS = [
+export const R2_ENV_VARS = [
   "R2_ACCOUNT_ID",
   "R2_BUCKET",
   "R2_ACCESS_KEY_ID",
   "R2_SECRET_ACCESS_KEY",
 ] as const;
+
+/** @deprecated Use R2_ENV_VARS — kept for any external references. */
+export const R2_OVERFLOW_ENV_VARS = R2_ENV_VARS;
 
 /** Numeric tuning knobs that silently disable a control when malformed. */
 const OPTIONAL_NUMBER_ENV_VARS = [
@@ -65,10 +68,15 @@ export interface StartupEnvReport {
   noAIProvider: boolean;
   /** Tuning variables present but not usable (would weaken a control). */
   malformedNumbers: string[];
-  /** All four R2 vars set — the Supabase → R2 quota-overflow backup is live. */
-  r2OverflowReady: boolean;
-  /** R2 vars set while others are missing — overflow stays off until fixed. */
+  /** All four R2 vars set — Tier 3 object store is live. */
+  r2Ready: boolean;
+  /** R2 vars set while others are missing — uploads stay off until fixed. */
   r2Partial: string[];
+  /**
+   * When STORAGE_UPLOADS_ENABLED is truthy, R2 is required in production
+   * (missing R2 blocks boot alongside the critical Supabase vars).
+   */
+  storageUploadsEnabled: boolean;
 }
 
 /** Inspect the environment without side effects (safe to call from tests). */
@@ -87,10 +95,14 @@ export function inspectStartupEnv(env: NodeJS.ProcessEnv = process.env): Startup
       const value = Number(scope[name]);
       return !Number.isFinite(value) || value <= 0;
     }),
-    r2OverflowReady: R2_OVERFLOW_ENV_VARS.every((name) => has(name)),
-    r2Partial: R2_OVERFLOW_ENV_VARS.every((name) => has(name))
+    r2Ready: R2_ENV_VARS.every((name) => has(name)),
+    r2Partial: R2_ENV_VARS.every((name) => has(name))
       ? []
-      : R2_OVERFLOW_ENV_VARS.filter((name) => has(name)),
+      : R2_ENV_VARS.filter((name) => has(name)),
+    storageUploadsEnabled: (() => {
+      const raw = (scope.STORAGE_UPLOADS_ENABLED ?? "").trim().toLowerCase();
+      return raw === "1" || raw === "true" || raw === "yes";
+    })(),
   };
 }
 
@@ -114,23 +126,35 @@ export function checkStartupEnv(env: NodeJS.ProcessEnv = process.env): boolean {
     );
   }
 
-  if (report.r2OverflowReady) {
-    console.info(
-      "[Config] R2 overflow backup: ready (Supabase → Cloudflare R2 on quota).",
-    );
+  if (report.r2Ready) {
+    console.info("[Config] R2 Tier 3 object store: ready.");
   } else if (report.r2Partial.length > 0) {
     console.warn(
-      `[Config] R2 overflow partially configured — set ALL of ${R2_OVERFLOW_ENV_VARS.join(", ")} (found only: ${report.r2Partial.join(", ")}). Overflow stays disabled.`,
+      `[Config] R2 partially configured — set ALL of ${R2_ENV_VARS.join(", ")} (found only: ${report.r2Partial.join(", ")}). Binary uploads stay disabled.`,
+    );
+  } else if (report.storageUploadsEnabled) {
+    console.warn(
+      "[Config] STORAGE_UPLOADS_ENABLED=true but R2 is not configured — binary uploads will fail.",
     );
   } else {
     console.info(
-      "[Config] R2 overflow backup: not configured — Supabase-only storage.",
+      "[Config] R2 Tier 3 object store: not configured — binary uploads disabled.",
     );
   }
 
-  if (report.missingCritical.length === 0) return true;
+  const missing = [...report.missingCritical];
+  if (production && report.storageUploadsEnabled && !report.r2Ready) {
+    for (const name of R2_ENV_VARS) {
+      // r2Partial lists vars that ARE set when the set is incomplete.
+      if (!report.r2Partial.includes(name) && !missing.includes(name)) {
+        missing.push(name);
+      }
+    }
+  }
 
-  const message = `[Config] Missing required environment variable(s): ${report.missingCritical.join(", ")}`;
+  if (missing.length === 0) return true;
+
+  const message = `[Config] Missing required environment variable(s): ${missing.join(", ")}`;
   if (production) {
     console.error(
       `${message}. Refusing to start in production — set them and redeploy (the mock database fallback is development-only).`,

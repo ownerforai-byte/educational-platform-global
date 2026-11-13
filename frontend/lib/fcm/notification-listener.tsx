@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
-import { onMessage } from "firebase/messaging";
 import { usePathname, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { pushNotification } from "@/lib/notifications";
 import { readStatusToken } from "@/features/auth/pending-signup-identity";
 import { useAuth } from "@/providers/auth-provider";
-import { getFirebaseMessaging } from "./firebase-app";
 import { isFcmConfigured } from "./config";
 import { registerFcmToken } from "./register-token";
 
@@ -62,6 +60,10 @@ export function FcmNotificationListener() {
     let cancelled = false;
 
     void (async () => {
+      const [{ onMessage }, { getFirebaseMessaging }] = await Promise.all([
+        import("firebase/messaging"),
+        import("./firebase-app"),
+      ]);
       const messaging = await getFirebaseMessaging();
       if (!messaging || cancelled) return;
 

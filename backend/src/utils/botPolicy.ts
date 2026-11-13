@@ -1,3 +1,9 @@
+/**
+ * Named AI-client deny policy. Canonical copy also lives in
+ * `packages/shared/src/utils/bot-policy.ts` for the Next.js proxy
+ * (`@rn/shared/utils`). Keep both in sync — backend cannot import outside
+ * `rootDir` / emit TS sources from the shared package at runtime.
+ */
 export const BLOCKED_AI_AGENTS = [
   "OpenCode",
   "Codex",

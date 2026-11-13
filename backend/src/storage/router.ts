@@ -3,19 +3,13 @@
  *
  * - Tier 1 (Supabase): relational only — callers keep using supabaseAdmin.
  * - Tier 2 (Firestore): FCM tokens, notification logs, access sessions.
- * - Tier 3 (R2): all binary uploads on Spark free tier.
+ * - Tier 3 (R2): all binary uploads.
  *
- * Firebase Storage stays opt-in (`FIREBASE_STORAGE_ENABLED=true`) because it
- * requires the Blaze plan; Spark projects cannot create a Storage bucket.
+ * Firebase Storage is not used on free tier (Blaze-only; branch removed).
  */
 import { r2Upload, isR2StorageActive, supabaseStorageHealth } from "./r2";
-import { firebaseUpload } from "./firebase-store";
-import { firebaseAdminHealth, isFirebaseAdminConfigured } from "./firebase-admin";
-import {
-  classifyBinaryUpload,
-  isFirebaseStorageEnabled,
-  type StorageProvider,
-} from "./tiers";
+import { firebaseAdminHealth } from "./firebase-admin";
+import { classifyBinaryUpload, type StorageProvider } from "./tiers";
 
 export type RoutedUploadResult = {
   path: string;
@@ -33,62 +27,25 @@ export type RouteUploadInput = {
 export async function routeBinaryUpload(
   input: RouteUploadInput,
 ): Promise<RoutedUploadResult> {
-  const tier = classifyBinaryUpload({
+  // Free-tier policy: every binary goes to R2.
+  classifyBinaryUpload({
     contentType: input.contentType,
     byteLength: input.buffer.byteLength,
     path: input.path,
   });
 
-  // Free tier (default): everything object-shaped goes to R2.
-  if (tier === 3 || !isFirebaseStorageEnabled()) {
-    if (!isR2StorageActive()) {
-      throw new Error(
-        "Tier 3 (Cloudflare R2) is not configured — required on free tier for all file uploads",
-      );
-    }
-    const { url } = await r2Upload(input.path, input.buffer, input.contentType);
-    return {
-      path: input.path,
-      publicUrl: url,
-      storedIn: "r2",
-      tier: 3,
-    };
+  if (!isR2StorageActive()) {
+    throw new Error(
+      "Tier 3 (Cloudflare R2) is not configured — required on free tier for all file uploads",
+    );
   }
-
-  // Optional Blaze path: small images → Firebase Storage, with R2 fallback.
-  if (isFirebaseAdminConfigured()) {
-    try {
-      const { url, path } = await firebaseUpload(
-        input.path,
-        input.buffer,
-        input.contentType,
-      );
-      return { path, publicUrl: url, storedIn: "firebase", tier: 2 };
-    } catch (err) {
-      if (isR2StorageActive()) {
-        const { url } = await r2Upload(input.path, input.buffer, input.contentType);
-        return {
-          path: input.path,
-          publicUrl: url,
-          storedIn: "r2",
-          tier: 3,
-        };
-      }
-      throw err;
-    }
-  }
-
-  if (isR2StorageActive()) {
-    const { url } = await r2Upload(input.path, input.buffer, input.contentType);
-    return {
-      path: input.path,
-      publicUrl: url,
-      storedIn: "r2",
-      tier: 3,
-    };
-  }
-
-  throw new Error("No object store configured (set R2_* for free-tier uploads)");
+  const { url } = await r2Upload(input.path, input.buffer, input.contentType);
+  return {
+    path: input.path,
+    publicUrl: url,
+    storedIn: "r2",
+    tier: 3,
+  };
 }
 
 export async function storageTiersHealth(): Promise<{
@@ -103,7 +60,7 @@ export async function storageTiersHealth(): Promise<{
     provider: "firebase-firestore";
     role: string;
     admin: ReturnType<typeof firebaseAdminHealth>;
-    firebaseStorage: "disabled-on-spark" | "opt-in-blaze";
+    firebaseStorage: "disabled-on-spark";
   };
   tier3: { provider: "r2"; role: string; configured: boolean };
   routing: {
@@ -126,9 +83,7 @@ export async function storageTiersHealth(): Promise<{
       provider: "firebase-firestore",
       role: "FCM tokens, notification logs, access sessions (Spark)",
       admin: firebaseAdminHealth(),
-      firebaseStorage: isFirebaseStorageEnabled()
-        ? "opt-in-blaze"
-        : "disabled-on-spark",
+      firebaseStorage: "disabled-on-spark",
     },
     tier3: {
       provider: "r2",

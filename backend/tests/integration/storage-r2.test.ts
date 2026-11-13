@@ -16,16 +16,12 @@ const m = vi.hoisted(() => {
   const accessStatus = { value: undefined as string | undefined };
   const r2Upload = vi.fn();
   const r2Active = { value: true };
-  const firebaseUpload = vi.fn();
-  const firebaseConfigured = { value: false };
   return {
     getUser,
     role,
     accessStatus,
     r2Upload,
     r2Active,
-    firebaseUpload,
-    firebaseConfigured,
   };
 });
 
@@ -75,10 +71,10 @@ vi.mock("../../src/storage/r2", async (importOriginal) => {
 });
 
 vi.mock("../../src/storage/firebase-admin", () => ({
-  isFirebaseAdminConfigured: () => m.firebaseConfigured.value,
+  isFirebaseAdminConfigured: () => false,
   firebaseAdminHealth: () => ({
-    configured: m.firebaseConfigured.value,
-    ready: m.firebaseConfigured.value,
+    configured: false,
+    ready: false,
     error: null,
     storageBucket: null,
   }),
@@ -89,7 +85,6 @@ vi.mock("../../src/storage/firebase-admin", () => ({
 }));
 
 vi.mock("../../src/storage/firebase-store", () => ({
-  firebaseUpload: (...args: unknown[]) => m.firebaseUpload(...args),
   upsertFcmTokenDoc: async () => {},
   appendNotificationLog: async () => null,
   upsertAccessSession: async () => {},
@@ -150,20 +145,13 @@ const IMAGE_BODY = {
 };
 
 beforeEach(() => {
-  delete process.env.FIREBASE_STORAGE_ENABLED;
   m.getUser.mockReset();
   m.r2Upload.mockReset();
-  m.firebaseUpload.mockReset();
   m.role.value = "owner";
   m.accessStatus.value = undefined;
   m.r2Active.value = true;
-  m.firebaseConfigured.value = false;
   m.getUser.mockResolvedValue({ data: { user: { id: "user-1" } }, error: null });
   m.r2Upload.mockResolvedValue({ url: "https://pub.r2.example/class-11/x.pdf" });
-  m.firebaseUpload.mockResolvedValue({
-    url: "https://firebasestorage.example/media/diagram.png",
-    path: "media/class-11/physics/diagram.png",
-  });
 });
 
 afterAll(async () => {
@@ -204,7 +192,6 @@ describe("POST /api/storage/upload — free-tier R2 routing", () => {
     expect(res.body.storedIn).toBe("r2");
     expect(res.body.tier).toBe(3);
     expect(m.r2Upload).toHaveBeenCalledTimes(1);
-    expect(m.firebaseUpload).not.toHaveBeenCalled();
   });
 
   it("routes small images to R2 on free tier (no Firebase Storage)", async () => {
@@ -214,7 +201,6 @@ describe("POST /api/storage/upload — free-tier R2 routing", () => {
     expect(res.body.storedIn).toBe("r2");
     expect(res.body.tier).toBe(3);
     expect(m.r2Upload).toHaveBeenCalledTimes(1);
-    expect(m.firebaseUpload).not.toHaveBeenCalled();
   });
 
   it("500s when R2 is not configured on free tier", async () => {
@@ -227,8 +213,7 @@ describe("POST /api/storage/upload — free-tier R2 routing", () => {
 });
 
 describe("tier classifier (free tier)", () => {
-  it("sends every binary to tier 3 when Firebase Storage is disabled", async () => {
-    delete process.env.FIREBASE_STORAGE_ENABLED;
+  it("sends every binary to tier 3", async () => {
     const { classifyBinaryUpload } = await import("../../src/storage/tiers");
     expect(
       classifyBinaryUpload({

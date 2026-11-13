@@ -3,12 +3,9 @@
  *
  * Tier 1 — Supabase Postgres (≤500MB): relational CRUD only. Never binaries.
  * Tier 2 — Firebase Firestore (Spark free DB quota): FCM tokens, notification
- *          logs, access-session mirrors. Firebase Storage is NOT used on
- *          Spark (requires Blaze); medium files share Tier 3 (R2).
+ *          logs, access-session mirrors. Firebase Storage is NOT used
+ *          (Blaze-only; free-tier policy is final).
  * Tier 3 — Cloudflare R2 (10GB free): ALL binaries (PDF, images, AV, uploads).
- *
- * Set FIREBASE_STORAGE_ENABLED=true only after upgrading to Blaze if you want
- * medium images on Firebase Storage again.
  */
 
 export type StorageTier = 1 | 2 | 3;
@@ -20,39 +17,14 @@ export const TIER_PROVIDER = {
   3: "r2" as const,
 };
 
-/** True only when explicitly opted into Blaze Firebase Storage. */
-export function isFirebaseStorageEnabled(): boolean {
-  const raw = (process.env.FIREBASE_STORAGE_ENABLED ?? "").trim().toLowerCase();
-  return raw === "1" || raw === "true" || raw === "yes";
-}
-
 export type UploadClassInput = {
   contentType: string;
   byteLength: number;
   path?: string;
 };
 
-/**
- * Binary uploads: free-tier → always Tier 3 (R2).
- * Optional Blaze: small images can use Firebase Storage (Tier 2 object lane).
- */
-export function classifyBinaryUpload(input: UploadClassInput): 2 | 3 {
-  if (!isFirebaseStorageEnabled()) return 3;
-
-  const mime = input.contentType.toLowerCase().trim();
-  const path = (input.path ?? "").toLowerCase();
-  const heavy =
-    mime === "application/pdf" ||
-    mime.startsWith("video/") ||
-    mime.startsWith("audio/") ||
-    path.endsWith(".pdf") ||
-    path.endsWith(".mp4") ||
-    path.endsWith(".webm") ||
-    path.endsWith(".mp3") ||
-    input.byteLength >= 1 * 1024 * 1024;
-
-  if (heavy) return 3;
-  if (mime.startsWith("image/")) return 2;
+/** Binary uploads always go to Tier 3 (R2) on the free-tier policy. */
+export function classifyBinaryUpload(_input: UploadClassInput): 3 {
   return 3;
 }
 

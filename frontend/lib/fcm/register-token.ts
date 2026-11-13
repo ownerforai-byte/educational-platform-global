@@ -1,9 +1,7 @@
 "use client";
 
-import { getToken } from "firebase/messaging";
 import { apiFetch } from "@/lib/api-client";
 import { readStatusToken } from "@/features/auth/pending-signup-identity";
-import { getFirebaseMessaging } from "./firebase-app";
 import { isFcmConfigured, readFcmVapidKey, readFirebaseWebConfig } from "./config";
 
 function encodeConfigQuery(): string | null {
@@ -44,6 +42,10 @@ export async function registerFcmToken(opts?: {
     return { ok: false, reason: "permission-denied" };
   }
 
+  const [{ getToken }, { getFirebaseMessaging }] = await Promise.all([
+    import("firebase/messaging"),
+    import("./firebase-app"),
+  ]);
   const messaging = await getFirebaseMessaging();
   const vapidKey = readFcmVapidKey();
   if (!messaging || !vapidKey) {

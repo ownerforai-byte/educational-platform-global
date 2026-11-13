@@ -1,7 +1,7 @@
 import { randomBytes } from "node:crypto";
 import { type NextRequest, NextResponse } from "next/server";
 import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
-import { isBlockedAutomatedClient } from "../backend/src/utils/botPolicy";
+import { isBlockedAutomatedClient } from "@rn/shared/utils";
 
 /**
  * Supabase project the frontend talks to. Driven by NEXT_PUBLIC_SUPABASE_URL so

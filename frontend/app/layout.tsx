@@ -6,7 +6,6 @@ import "./globals.css";
 // chat, notes, lessons, quizzes — renders LaTeX identically everywhere.
 import "katex/dist/katex.min.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
-import { QueryProvider } from "@/providers/query-provider";
 import { AuthProvider } from "@/providers/auth-provider";
 import { CreditProvider } from "@/features/credits";
 import { ServiceWorkerRegistrar } from "@/components/pwa/service-worker-registrar";
@@ -62,28 +61,26 @@ export default async function RootLayout({
     <link rel="apple-touch-icon" href="/icon-192.png" />
   </head>
       <body className="min-h-screen bg-background text-foreground antialiased">
-        <QueryProvider>
-          <ThemeProvider defaultTheme="system" storageKey="neb-theme">
-            <StarField />
-            <AuthProvider>
-              <CreditProvider>
-                <RawEventRejectionGuard />
-                <ServiceWorkerRegistrar />
-                <FcmNotificationListener />
-                {/* Every route change starts at the header, not the footer. */}
-                <RouteScrollReset />
-                <OfflineBanner />
-                {/* Toast notifications (quiz studio, quiz history, …). */}
-                <Toaster />
-                {/* Task 2: dev-only WCAG contrast audit — logs theme/pair/ratio warnings. */}
-                {process.env.NODE_ENV !== "production" && <DevContrastAudit />}
-                {children}
-                {/* Owner-tier focus timer — hidden for every other rung. */}
-                <FocusTimer />
-              </CreditProvider>
-            </AuthProvider>
-          </ThemeProvider>
-        </QueryProvider>
+        <ThemeProvider defaultTheme="system" storageKey="neb-theme">
+          <StarField />
+          <AuthProvider>
+            <CreditProvider>
+              <RawEventRejectionGuard />
+              <ServiceWorkerRegistrar />
+              <FcmNotificationListener />
+              {/* Every route change starts at the header, not the footer. */}
+              <RouteScrollReset />
+              <OfflineBanner />
+              {/* Toast notifications (quiz studio, quiz history, …). */}
+              <Toaster />
+              {/* Task 2: dev-only WCAG contrast audit — logs theme/pair/ratio warnings. */}
+              {process.env.NODE_ENV !== "production" && <DevContrastAudit />}
+              {children}
+              {/* Owner-tier focus timer — hidden for every other rung. */}
+              <FocusTimer />
+            </CreditProvider>
+          </AuthProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
