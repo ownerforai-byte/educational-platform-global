@@ -3,7 +3,11 @@ import { randomBytes, timingSafeEqual } from "node:crypto";
 import { z } from "zod";
 import { isProductionEnv } from "../../config/env";
 import { createAuthClient, supabaseAdmin } from "../../db/supabase";
-import { ensureDailyCredits } from "../../utils/credits";
+import {
+  getProfileById,
+  updateProfileFields,
+} from "../../db/repositories/user.repository.js";
+import { ensureDailyCredits } from "../../services/credit.service.js";
 import {
   DEVICE_SIGNUP_LIMIT_MESSAGE,
   bindDeviceToAccount,
@@ -144,10 +148,7 @@ async function buildExtendedUser(
   // Persist the display name on signup/first login (the profiles trigger only
   // copies it from raw_user_meta_data; refresh flows may not have it).
   if (typeof fullName === "string" && fullName.trim().length > 0) {
-    await supabaseAdmin
-      .from("profiles")
-      .update({ full_name: fullName.trim() })
-      .eq("id", userId);
+    await updateProfileFields(userId, { full_name: fullName.trim() });
   }
 
   // Live plan + role folded the same way requireAuth / spark / section gates do —
@@ -167,15 +168,14 @@ async function buildExtendedUser(
   // reports today's daily pool, not yesterday's spent balance.
   await ensureDailyCredits(userId, email, session.role, session.premiumStatus === true);
 
-  const profile = await supabaseAdmin
-    .from("profiles")
-    .select("full_name, credits, credits_limit, premium_status, premium_approved_at")
-    .eq("id", userId)
-    .maybeSingle();
+  const { data: profile } = await getProfileById(
+    userId,
+    "full_name, credits, credits_limit, premium_status, premium_approved_at",
+  );
 
   const persistedName =
-    typeof profile?.data?.full_name === "string" && profile.data.full_name.trim()
-      ? profile.data.full_name.trim()
+    typeof profile?.full_name === "string" && profile.full_name.trim()
+      ? profile.full_name.trim()
       : null;
 
   return {
@@ -184,12 +184,14 @@ async function buildExtendedUser(
     fullName: fullName ?? persistedName ?? session.fullName,
     role: session.role,
     plan: session.plan ?? planInfo.plan,
-    credits: isOwner ? 999999 : (profile?.data?.credits ?? 0),
-    creditsLimit: isOwner ? 999999 : (profile?.data?.credits_limit ?? 100),
-    premiumStatus: isOwner ? true : (planInfo.premiumStatus ?? profile?.data?.premium_status ?? false),
+    credits: isOwner ? 999999 : ((profile?.credits as number | undefined) ?? 0),
+    creditsLimit: isOwner ? 999999 : ((profile?.credits_limit as number | undefined) ?? 100),
+    premiumStatus: isOwner
+      ? true
+      : (planInfo.premiumStatus ?? (profile?.premium_status as boolean | undefined) ?? false),
     premiumApprovedAt: isOwner
-      ? (profile?.data?.premium_approved_at ?? new Date().toISOString())
-      : (profile?.data?.premium_approved_at ?? null),
+      ? ((profile?.premium_approved_at as string | null) ?? new Date().toISOString())
+      : ((profile?.premium_approved_at as string | null) ?? null),
   };
 }
 
@@ -399,19 +401,17 @@ router.post("/signup", async (req: Request, res: Response) => {
     // enum made these writes fail silently and left STUDENT/OWNER defaults
     // that graded as owner. Non-owner emails always enter as PENDING members.
     if (result.user) {
-      const { error: profileErr } = await supabaseAdmin
-        .from("profiles")
-        .update(
-          ownerSignup
-            ? { access_status: "ACTIVE", role: "owner", plan: "pro", premium_status: true }
-            : {
-                access_status: "PENDING",
-                role: "member",
-                plan: "member",
-                premium_status: false,
-              },
-        )
-        .eq("id", result.user.id);
+      const { error: profileErr } = await updateProfileFields(
+        result.user.id,
+        ownerSignup
+          ? { access_status: "ACTIVE", role: "owner", plan: "pro", premium_status: true }
+          : {
+              access_status: "PENDING",
+              role: "member",
+              plan: "member",
+              premium_status: false,
+            },
+      );
       if (profileErr) {
         console.error("[auth] signup profile tier write failed:", profileErr.message);
       }
@@ -598,11 +598,10 @@ router.get("/account-status", async (req: Request, res: Response) => {
     req.query.bump === "true" ||
     req.query.bump === "yes";
 
-  const { data: profile } = await supabaseAdmin
-    .from("profiles")
-    .select("access_status, full_name, status_check_count")
-    .eq("id", userId)
-    .maybeSingle();
+  const { data: profile } = await getProfileById(
+    userId,
+    "access_status, full_name, status_check_count",
+  );
 
   if (!profile) {
     res.status(404).json({ error: "Account not found" });
@@ -611,15 +610,14 @@ router.get("/account-status", async (req: Request, res: Response) => {
 
   const prev =
     typeof profile.status_check_count === "number" && Number.isFinite(profile.status_check_count)
-      ? profile.status_check_count
+      ? (profile.status_check_count as number)
       : 0;
   let checkCount = prev;
   if (bump) {
     checkCount = prev + 1;
-    const { error: bumpErr } = await supabaseAdmin
-      .from("profiles")
-      .update({ status_check_count: checkCount })
-      .eq("id", userId);
+    const { error: bumpErr } = await updateProfileFields(userId, {
+      status_check_count: checkCount,
+    });
     if (bumpErr) {
       console.error("[auth] status_check_count bump failed:", bumpErr.message);
       checkCount = prev;

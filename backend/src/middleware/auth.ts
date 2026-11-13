@@ -1,6 +1,11 @@
 import { Request, Response, NextFunction } from "express";
 import { supabaseAdmin } from "../db/supabase";
 import {
+  getProfileAccessRow,
+  getProfileFullName,
+  getProfilePlanRow,
+} from "../db/repositories/user.repository.js";
+import {
   USER_ROLES,
   normalizeRole,
   type UserRole,
@@ -37,21 +42,19 @@ export async function loadProfileAccess(userId: string): Promise<{
   accessStatus: string | null;
 }> {
   try {
-    const { data: profile, error } = await supabaseAdmin
-      .from("profiles")
-      .select("role, access_status")
-      .eq("id", userId)
-      .maybeSingle();
-
-    if (error) {
-      console.warn(`[Auth] Unable to load profile for user ${userId}:`, error.message);
+    const profile = await getProfileAccessRow(userId);
+    if (!profile) {
       return { role: null, accessStatus: null };
     }
     return {
-      role: normalizeRole(profile?.role),
-      accessStatus: typeof profile?.access_status === "string" ? profile.access_status : null,
+      role: normalizeRole(profile.role),
+      accessStatus: typeof profile.access_status === "string" ? profile.access_status : null,
     };
-  } catch {
+  } catch (err) {
+    console.warn(
+      `[Auth] Unable to load profile for user ${userId}:`,
+      err instanceof Error ? err.message : err,
+    );
     return { role: null, accessStatus: null };
   }
 }
@@ -66,15 +69,7 @@ export async function loadProfileRole(userId: string): Promise<UserRole | null> 
  */
 export async function loadProfileFullName(userId: string): Promise<string | null> {
   try {
-    const { data: profile, error } = await supabaseAdmin
-      .from("profiles")
-      .select("full_name")
-      .eq("id", userId)
-      .maybeSingle();
-
-    if (error) return null;
-    const name = profile?.full_name;
-    return typeof name === "string" && name.trim() ? name.trim() : null;
+    return await getProfileFullName(userId);
   } catch {
     return null;
   }
@@ -89,24 +84,18 @@ export async function loadProfilePlan(
   userId: string,
 ): Promise<{ plan: "member" | "plus" | "pro" | null; premiumStatus: boolean | null }> {
   try {
-    const { data: profile, error } = await supabaseAdmin
-      .from("profiles")
-      .select("plan, premium_status")
-      .eq("id", userId)
-      .maybeSingle();
-    if (error) {
-      // `plan` column missing (migration 008 not applied) → legacy read.
-      const { data: legacy } = await supabaseAdmin
-        .from("profiles")
-        .select("premium_status")
-        .eq("id", userId)
-        .maybeSingle();
-      const premium = legacy?.premium_status === true;
+    const profile = await getProfilePlanRow(userId);
+    if (!profile) {
+      return { plan: null, premiumStatus: null };
+    }
+    if (profile.planColumnMissing) {
+      const premium = profile.premium_status === true;
       return { plan: premium ? "pro" : null, premiumStatus: premium };
     }
-    const raw = typeof profile?.plan === "string" ? profile.plan.toLowerCase() : "";
-    const plan = raw === "pro" ? "pro" : raw === "plus" || raw === "plus_20" ? "plus" : "member";
-    return { plan, premiumStatus: profile?.premium_status === true };
+    const raw = typeof profile.plan === "string" ? profile.plan.toLowerCase() : "";
+    const plan: "member" | "plus" | "pro" =
+      raw === "pro" ? "pro" : raw === "plus" || raw === "plus_20" ? "plus" : "member";
+    return { plan, premiumStatus: profile.premium_status === true };
   } catch {
     return { plan: null, premiumStatus: null };
   }

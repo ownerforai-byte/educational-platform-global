@@ -1,7 +1,12 @@
 import { Request, Response, NextFunction } from "express";
 import { supabaseAdmin } from "../db/supabase";
+import { getProfileGateRow } from "../db/repositories/user.repository.js";
 import { extractToken, hasFullAccess, isApprovedAccount, type AuthedRequest } from "./auth";
-import { ensureDailyCredits, spendCredits, refundCredits } from "../utils/credits";
+import {
+  ensureDailyCredits,
+  spendCredits,
+  refundCredits,
+} from "../services/credit.service.js";
 
 // ── Feature cost table (CONTENT sparks only) ────────────────────────────────
 // Veer / AI Studio routes meter AI sparks separately (middleware/aiSparkGate.ts
@@ -47,11 +52,7 @@ async function resolveCreditUser(req: Request): Promise<ResolvedCreditUser | nul
   if (authError || !authData.user) return null;
 
   const userId = authData.user.id;
-  const { data: profile } = await supabaseAdmin
-    .from("profiles")
-    .select("role, premium_status, access_status")
-    .eq("id", userId)
-    .maybeSingle();
+  const profile = await getProfileGateRow(userId);
 
   if (!isApprovedAccount({ email: authData.user.email, role: profile?.role }, profile?.access_status)) {
     return null;
