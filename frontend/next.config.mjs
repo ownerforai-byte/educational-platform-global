@@ -27,7 +27,12 @@ const nextConfig = {
   // Next warn that it can break its own cache behaviour.
   async headers() {
     const HTML_NAVIGATION = ".*text/html.*";
-    const NON_CORPUS = "/((?!class-11-notes|class-12-notes).*)";
+    // Corpus notes + a short allowlist of public marketing shells that are
+    // safe to ISR at the CDN (no per-request cookies/API data in the HTML).
+    const PUBLIC_STATIC =
+      "/(class-11-notes|class-12-notes|about|pricing|privacy|terms)(/.*)?";
+    const NON_CORPUS =
+      "/((?!class-11-notes|class-12-notes|about|pricing|privacy|terms).*)";
     return [
       {
         // Security headers (vibe-code security pass 2026-11-08): the backend
@@ -45,10 +50,7 @@ const nextConfig = {
           },
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "Permissions-Policy", value: "geolocation=(), payment=()" },
-          {
-            key: "Content-Security-Policy",
-            value: "object-src 'none'; base-uri 'self'; frame-ancestors 'self'",
-          },
+          // CSP (script-src/connect-src/nonces) is set per-request in proxy.ts.
         ],
       },
       {
@@ -61,6 +63,17 @@ const nextConfig = {
           {
             key: "Strict-Transport-Security",
             value: "max-age=63072000; includeSubDomains; preload",
+          },
+        ],
+      },
+      {
+        // PUBLIC_STATIC: marketing/auth shells + corpus notes keep ISR-friendly
+        // CDN caching. Everything else revalidates on each navigation.
+        source: PUBLIC_STATIC,
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=86400, stale-while-revalidate=604800",
           },
         ],
       },

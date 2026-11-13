@@ -1,6 +1,12 @@
 import { Router, Request, Response } from "express";
 import { readFile } from "fs/promises";
 import { resolveDataPath } from "../../utils/paths";
+import {
+  CONTENT_CACHE_TTL_MS,
+  CONTENT_CDN_CACHE_CONTROL,
+  contentCache,
+} from "../../lib/cache.js";
+import { sendError, sendSuccess } from "../../lib/response.js";
 
 const router = Router();
 
@@ -21,9 +27,11 @@ type RNoteEntry = {
 };
 
 async function loadManifest(): Promise<RExportManifestItem[]> {
-  const manifestPath = resolveDataPath("resources", "exports", "manifest.json");
-  const content = await readFile(manifestPath, "utf-8");
-  return JSON.parse(content) as RExportManifestItem[];
+  return contentCache.getOrLoad("r-notes:manifest", CONTENT_CACHE_TTL_MS, async () => {
+    const manifestPath = resolveDataPath("resources", "exports", "manifest.json");
+    const content = await readFile(manifestPath, "utf-8");
+    return JSON.parse(content) as RExportManifestItem[];
+  });
 }
 
 router.get("/", async (req: Request, res: Response) => {
@@ -52,10 +60,11 @@ router.get("/", async (req: Request, res: Response) => {
       noteCount: Array.isArray(item.notes) ? item.notes.length : 0,
     }));
 
-    res.json({ subjects, chapters, notes });
+    res.setHeader("Cache-Control", CONTENT_CDN_CACHE_CONTROL);
+    sendSuccess(res, { subjects, chapters, notes });
   } catch (err) {
     console.error("Failed to load r-notes manifest:", err);
-    res.status(500).json({ error: "Could not load r-notes" });
+    sendError(res, "Could not load r-notes", 500);
   }
 });
 
@@ -65,13 +74,14 @@ router.get("/:id", async (req: Request, res: Response) => {
     const manifest = await loadManifest();
     const item = manifest.find((m) => m.id === id);
     if (!item) {
-      res.status(404).json({ error: "Note not found" });
+      sendError(res, "Note not found", 404);
       return;
     }
-    res.json(item);
+    res.setHeader("Cache-Control", CONTENT_CDN_CACHE_CONTROL);
+    sendSuccess(res, item);
   } catch (err) {
     console.error("Failed to load note:", err);
-    res.status(500).json({ error: "Could not load note" });
+    sendError(res, "Could not load note", 500);
   }
 });
 
