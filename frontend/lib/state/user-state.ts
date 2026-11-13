@@ -337,3 +337,78 @@ export async function syncNotes(): Promise<SyncResult> {
     notes: merged,
   };
 }
+
+/** Sanctioned namespaces for personal stores (AGENT_RULES / T19). */
+export const SRS_NAMESPACE = "srs";
+export const STREAKS_NAMESPACE = "streaks";
+export const STUDY_GOALS_NAMESPACE = "study-goals";
+export const LAB_PROGRESS_NAMESPACE = "lab-progress";
+export const PREFERENCES_NAMESPACE = "preferences";
+
+export type PreferencesPayload = {
+  sidebarCollapsed?: boolean;
+  targetGrade?: string | null;
+  guideProgress?: unknown;
+  habits?: unknown;
+};
+
+/**
+ * Generic JSON-document sync (same merge rules as notes when both sides are
+ * plain objects; arrays are replaced by newest non-empty). Local storage stays
+ * the render source; the server row is the durable cross-device copy.
+ */
+export async function syncJsonNamespace<T>(
+  namespace: string,
+  readLocal: () => T,
+  writeLocal: (value: T) => void,
+  merge: (local: T, remote: T | null) => T,
+): Promise<{ changed: boolean; status: SyncResult["status"]; value: T }> {
+  if (typeof window === "undefined") {
+    return { changed: false, status: "offline", value: readLocal() };
+  }
+  const scope = notesScope();
+  const local = readLocal();
+  const pulled = await pullState<T>(namespace);
+  if (pulled.kind === "guest") {
+    return { changed: false, status: "guest", value: local };
+  }
+  if (pulled.kind === "offline") {
+    if (isCurrentScope(scope)) queueState(namespace, local, lastVersion(namespace));
+    return { changed: false, status: "offline", value: local };
+  }
+  if (!isCurrentScope(scope)) {
+    return { changed: false, status: "conflict", value: local };
+  }
+
+  const remote = (pulled.state.payload as T | null) ?? null;
+  const merged = merge(local, remote);
+  const changed = !samePayload(merged, local);
+  if (changed) writeLocal(merged);
+  rememberVersion(namespace, pulled.state.version);
+
+  if (samePayload(merged, remote) && pulled.state.version > 0) {
+    return { changed, status: "synced", value: merged };
+  }
+
+  const pushed = await pushState(namespace, merged, pulled.state.version);
+  if (!pushed.ok && pushed.reason === "offline") {
+    if (isCurrentScope(scope)) queueState(namespace, merged, pulled.state.version);
+    return { changed, status: "offline", value: merged };
+  }
+  return {
+    changed,
+    status: pushed.ok ? "synced" : "conflict",
+    value: merged,
+  };
+}
+
+/** Fire-and-forget durable push after a local edit (never blocks UI). */
+export function scheduleNamespacePush(namespace: string, payload: unknown): void {
+  if (typeof window === "undefined") return;
+  const base = lastVersion(namespace);
+  void pushState(namespace, payload, base).then((result) => {
+    if (!result.ok && result.reason === "offline") {
+      queueState(namespace, payload, base);
+    }
+  });
+}

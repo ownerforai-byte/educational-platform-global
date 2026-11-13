@@ -10,6 +10,7 @@
 
 import { SYLLABUS } from "@/lib/core/syllabus";
 import { existingAnonScope, key, keyForScope, storageScope } from "@/lib/scoped-storage";
+import { scheduleNamespacePush, STUDY_GOALS_NAMESPACE } from "@/lib/state/user-state";
 
 export const STUDY_GOALS_KEY = "neb-study-goals:v1";
 
@@ -137,6 +138,7 @@ export function writeGoals(goals: StudyGoals): StudyGoals {
   if (typeof window !== "undefined") {
     try {
       window.localStorage.setItem(key(STUDY_GOALS_KEY), JSON.stringify(next));
+      scheduleNamespacePush(STUDY_GOALS_NAMESPACE, next);
     } catch {
       /* storage full or blocked: keep working in memory */
     }

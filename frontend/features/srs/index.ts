@@ -8,6 +8,7 @@
 
 import type { SubjectPyqBank } from "@/lib/pyq-bank";
 import { key } from "@/lib/scoped-storage";
+import { scheduleNamespacePush, SRS_NAMESPACE } from "@/lib/state/user-state";
 
 export const SRS_KEY = "neb-srs:v1";
 
@@ -139,6 +140,7 @@ export function writeSrsStore(store: SrsStore): void {
   if (typeof window === "undefined") return;
   try {
     window.localStorage.setItem(key(SRS_KEY), JSON.stringify(store));
+    scheduleNamespacePush(SRS_NAMESPACE, store);
   } catch {
     /* storage full or blocked: keep working in memory */
   }

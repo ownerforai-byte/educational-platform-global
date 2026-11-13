@@ -52,6 +52,11 @@ import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/core/acce
 import { entryStatus, topicHref } from "@/lib/progress/catalog";
 import { SYLLABUS } from "@/lib/core/syllabus";
 import type { ProgressEntry } from "@/types/api";
+import { key } from "@/lib/scoped-storage";
+import {
+  PREFERENCES_NAMESPACE,
+  scheduleNamespacePush,
+} from "@/lib/state/user-state";
 
 const tierBadgeConfig: Record<AccessLevel, { className: string; icon: typeof Crown }> = {
   guest: { className: "bg-slate-500/15 border-slate-500/30 text-slate-500", icon: User },
@@ -260,10 +265,10 @@ function ProfileDetails({ onBack }: { onBack?: () => void }) {
     setActivityCutoffMs(rangeCutoffMs(value));
   };
 
-  // Load target grade preference from localStorage
+  // Load target grade preference from scoped localStorage (+ preferences sync)
   useEffect(() => {
     try {
-      const saved = localStorage.getItem("neb_target_grade");
+      const saved = localStorage.getItem(key("neb_target_grade"));
       if (saved) setTargetGrade(saved);
     } catch {
       // Storage unavailable / private mode
@@ -273,7 +278,8 @@ function ProfileDetails({ onBack }: { onBack?: () => void }) {
   const handleSelectGrade = (grade: string) => {
     setTargetGrade(grade);
     try {
-      localStorage.setItem("neb_target_grade", grade);
+      localStorage.setItem(key("neb_target_grade"), grade);
+      scheduleNamespacePush(PREFERENCES_NAMESPACE, { targetGrade: grade });
     } catch {
       // Ignore storage errors
     }

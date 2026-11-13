@@ -19,6 +19,11 @@ import { UserNav } from "./user-nav";
 import { PlatformGuideWidget } from "@/components/home/platform-guide-widget";
 import { AIWidget } from "./ai-widget";
 import { useMediaQuery } from "@/lib/use-media-query";
+import { key } from "@/lib/scoped-storage";
+import {
+  PREFERENCES_NAMESPACE,
+  scheduleNamespacePush,
+} from "@/lib/state/user-state";
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -44,17 +49,20 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
 
   useEffect(() => {
     try {
-    const savedSidebar = localStorage.getItem("sidebar-collapsed");
-    if (savedSidebar !== null) {
-      setSidebarCollapsed(savedSidebar === "true");
-    }
+      const savedSidebar = localStorage.getItem(key("sidebar-collapsed"));
+      if (savedSidebar !== null) {
+        setSidebarCollapsed(savedSidebar === "true");
+      }
     } catch { /* Storage may be unavailable in private/embedded browsers. */ }
     setPreferencesLoaded(true);
   }, []);
 
   useEffect(() => {
     if (!preferencesLoaded) return;
-    try { localStorage.setItem("sidebar-collapsed", String(sidebarCollapsed)); } catch { /* Optional preference. */ }
+    try {
+      localStorage.setItem(key("sidebar-collapsed"), String(sidebarCollapsed));
+      scheduleNamespacePush(PREFERENCES_NAMESPACE, { sidebarCollapsed });
+    } catch { /* Optional preference. */ }
   }, [sidebarCollapsed, preferencesLoaded]);
 
   return (

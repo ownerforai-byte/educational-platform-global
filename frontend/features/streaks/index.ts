@@ -14,6 +14,7 @@
  */
 
 import { key } from "@/lib/scoped-storage";
+import { scheduleNamespacePush, STREAKS_NAMESPACE } from "@/lib/state/user-state";
 
 const LAST_CHECK_IN_KEY = "neb-streak:last-check-in";
 const COUNT_KEY = "neb-streak:count";
@@ -98,7 +99,12 @@ export function markCheckIn(): StreakState {
 
   safeSet(key(LAST_CHECK_IN_KEY), today);
   safeSet(key(COUNT_KEY), String(newCount));
-  return getStreak();
+  const next = getStreak();
+  scheduleNamespacePush(STREAKS_NAMESPACE, {
+    count: next.count,
+    lastCheckIn: next.lastCheckIn,
+  });
+  return next;
 }
 
 /**

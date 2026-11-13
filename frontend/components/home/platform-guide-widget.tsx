@@ -5,6 +5,11 @@ import { usePathname } from "next/navigation";
 import { Bot, ChevronDown, Leaf, Send, X } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { shouldShowPlatformGuideWidget } from "@/lib/platform-guide-widget";
+import { key } from "@/lib/scoped-storage";
+import {
+  PREFERENCES_NAMESPACE,
+  scheduleNamespacePush,
+} from "@/lib/state/user-state";
 import {
   postPlatformGuideMessage,
   type PlatformGuideUserContext,
@@ -48,12 +53,15 @@ function collectUserContext(
     let inProgressTopics = 0;
     let notStartedTopics = 0;
     try {
-      const raw = localStorage.getItem("neb-progress:v1");
+      const raw =
+        localStorage.getItem(key("neb-progress:v1")) ||
+        localStorage.getItem("neb-progress:v1");
       if (raw) {
         const entries: Array<{ status: string }> = JSON.parse(raw);
         completedTopics = entries.filter((e) => e.status === "completed").length;
         inProgressTopics = entries.filter((e) => e.status === "in-progress").length;
         notStartedTopics = entries.filter((e) => e.status === "not-started").length;
+        scheduleNamespacePush(PREFERENCES_NAMESPACE, { guideProgress: entries });
       }
     } catch {
       /* ignore */
@@ -62,13 +70,16 @@ function collectUserContext(
     let habits: string[] = [];
     try {
       const habitsRaw =
-        localStorage.getItem("neb-habits:v1") || localStorage.getItem("neb-r1-habits:v1");
+        localStorage.getItem(key("neb-habits:v1")) ||
+        localStorage.getItem("neb-habits:v1") ||
+        localStorage.getItem("neb-r1-habits:v1");
       if (habitsRaw) {
         const parsed: Array<{ name: string; active?: boolean }> = JSON.parse(habitsRaw);
         habits = parsed
           .filter((h) => h.active !== false)
           .map((h) => h.name)
           .slice(0, 5);
+        scheduleNamespacePush(PREFERENCES_NAMESPACE, { habits: parsed });
       }
     } catch {
       /* ignore */
