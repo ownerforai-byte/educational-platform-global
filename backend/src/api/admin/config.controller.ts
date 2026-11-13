@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
-import { AI_MESSAGE_COST, DAILY_CREDIT_POOL } from "../../utils/credits";
+import { AI_MESSAGE_COST, DAILY_CREDIT_POOL } from "../../services/credit.service.js";
+import { sendError, sendSuccess } from "../../lib/response.js";
 import { readSectionMinTiers } from "../../utils/sectionTiers";
 
 /**
@@ -17,7 +18,7 @@ const router = Router();
 router.get("/", async (_req: Request, res: Response) => {
   try {
     res.setHeader("Cache-Control", "no-store");
-    res.json({
+    return sendSuccess(res, {
       dailyCreditPool: DAILY_CREDIT_POOL,
       aiMessageCost: AI_MESSAGE_COST,
       // Owner-set section minimums (sectionId → rung) — empty when the code
@@ -26,7 +27,7 @@ router.get("/", async (_req: Request, res: Response) => {
     });
   } catch (err) {
     console.error("[config] public config error:", err);
-    res.status(500).json({ error: "Failed to load config" });
+    return sendError(res, "Failed to load config", 500);
   }
 });
 

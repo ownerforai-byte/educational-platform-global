@@ -48,9 +48,12 @@ describe("GET /api/config", () => {
     const res = await fetch(`${baseUrl}/api/config`);
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual({
-      dailyCreditPool: 4,
-      aiMessageCost: 0,
-      sectionMinTiers: {},
+      ok: true,
+      data: {
+        dailyCreditPool: 4,
+        aiMessageCost: 0,
+        sectionMinTiers: {},
+      },
     });
   });
 
@@ -58,9 +61,12 @@ describe("GET /api/config", () => {
     minTiers.pdfs = "owner";
 
     const res = await fetch(`${baseUrl}/api/config`);
-    const body = (await res.json()) as { sectionMinTiers: Record<string, string> };
+    const body = (await res.json()) as {
+      ok: boolean;
+      data: { sectionMinTiers: Record<string, string> };
+    };
     expect(res.status).toBe(200);
-    expect(body.sectionMinTiers).toEqual({ pdfs: "owner" });
+    expect(body.data.sectionMinTiers).toEqual({ pdfs: "owner" });
     delete minTiers.pdfs;
   });
 

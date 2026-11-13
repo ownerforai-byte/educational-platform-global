@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { requireAuth, type AuthedRequest } from "../../middleware/auth";
 import { supabaseAdmin } from "../../db/supabase";
 import { serverError } from "../../middleware/error-handler";
+import { sendError, sendSuccess } from "../../lib/response.js";
 
 /**
  * /api/user-state/:namespace — the account-backed home for personal stores.
@@ -62,12 +63,12 @@ router.get("/:namespace", requireAuth, async (req: Request, res: Response) => {
   try {
     const { namespace } = req.params;
     if (!validNamespace(namespace)) {
-      res.status(400).json({ error: "Invalid namespace" });
+      sendError(res, "Invalid namespace", 400);
       return;
     }
     const user = (req as AuthedRequest).user;
     const row = await readRow(user.id, namespace);
-    res.json({
+    sendSuccess(res, {
       namespace,
       payload: row?.payload ?? null,
       version: row?.version ?? 0,

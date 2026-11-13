@@ -3,6 +3,7 @@ import { serverError } from "../../middleware/error-handler";
 import { z } from "zod";
 import { requireAuth, type AuthedRequest } from "../../middleware/auth";
 import * as userService from "../../services/user.service.js";
+import { sendSuccess } from "../../lib/response.js";
 
 const router = Router();
 
@@ -50,7 +51,7 @@ router.get("/", requireAuth, async (req: Request, res: Response) => {
       serverError(res, error);
       return;
     }
-    res.json(rows);
+    sendSuccess(res, rows);
   } catch (err: unknown) {
     console.error(err);
     serverError(res, err);

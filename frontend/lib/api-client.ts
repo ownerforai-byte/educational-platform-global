@@ -201,7 +201,18 @@ async function request<T>(path: string, init?: RequestInit, isRetry = false): Pr
   }
 
   if (response.status === 204) return undefined as T;
-  return response.json() as Promise<T>;
+  const body = (await response.json()) as unknown;
+  // Unified envelope (T13): `{ ok: true, data }` unwraps to `data` so existing
+  // callers keep receiving the payload shape they already typed.
+  if (
+    body &&
+    typeof body === "object" &&
+    (body as { ok?: unknown }).ok === true &&
+    "data" in (body as object)
+  ) {
+    return (body as { data: T }).data;
+  }
+  return body as T;
 }
 
 export function apiFetch<T>(path: string, init?: RequestInit): Promise<T> {

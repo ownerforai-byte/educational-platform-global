@@ -34,6 +34,10 @@ const FLAT_TO_DOMAIN: Record<string, string> = {
   "user-state.ts": "user/state.controller.ts",
   "support-requests.ts": "platform/support.controller.ts",
   "leaderboard.ts": "social/leaderboard.controller.ts",
+  "pyqs.ts": "practice/pyqs.controller.ts",
+  "subjects.ts": "content/subjects.controller.ts",
+  "chapters.ts": "content/chapters.controller.ts",
+  "r-notes.ts": "content/r-notes.controller.ts",
 };
 
 /**

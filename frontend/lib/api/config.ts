@@ -1,3 +1,4 @@
+import type { PublicConfigDto } from "@rn/shared/api";
 import { apiFetch } from "../api-client";
 
 /**
@@ -8,17 +9,7 @@ import { apiFetch } from "../api-client";
  * constants and the owner-set section minimums. AI chat is metered separately
  * via AI sparks, not here.
  */
-export interface PublicConfig {
-  /** Daily content spark pool for signed-in users. */
-  dailyCreditPool: number;
-  /** Legacy — always 0; AI uses AI sparks. */
-  aiMessageCost: number;
-  /**
-   * Owner-set section minimums (sectionId → rung), from /owner/sections.
-   * Empty when the code defaults rule (plan.md §8 P4).
-   */
-  sectionMinTiers: Record<string, string>;
-}
+export type PublicConfig = PublicConfigDto;
 
 /** Server default when the config read fails. */
 export const DEFAULT_PUBLIC_CONFIG: PublicConfig = {

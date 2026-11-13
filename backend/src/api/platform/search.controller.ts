@@ -3,6 +3,7 @@ import { createAIService } from "../../ai/service";
 import { PUBLIC_SITE_URL } from "../../config/env";
 import { serverError } from "../../middleware/error-handler";
 import { supabaseAdmin } from "../../db/supabase";
+import { sendError, sendSuccess } from "../../lib/response.js";
 
 interface DbClass {
   id: string;
@@ -41,7 +42,7 @@ router.post("/", async (req: Request, res: Response) => {
     const provider: string = typeof req.body?.provider === "string" ? req.body.provider : "";
 
     if (!query.trim()) {
-      res.status(400).json({ error: "query is required" });
+      sendError(res, "query is required", 400);
       return;
     }
 
@@ -179,7 +180,7 @@ router.post("/", async (req: Request, res: Response) => {
 
     const officialLink = settingsData?.[0]?.value ?? (process.env.FRONTEND_URL || PUBLIC_SITE_URL);
 
-    res.json({
+    sendSuccess(res, {
       query,
       results: [...results, ...dbResults, ...resourceResults],
       fallbackMessage: aiResult.fallbackMessage,

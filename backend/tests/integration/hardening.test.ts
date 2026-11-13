@@ -555,7 +555,9 @@ describe("GET /api/progress journey", () => {
     const res = await request("GET", "/api/progress");
 
     expect(res.status).toBe(200);
-    expect(res.body).toEqual([
+    expect(res.body).toEqual({
+      ok: true,
+      data: [
       {
         id: "j1",
         classSlug: "class-11-notes",
@@ -569,7 +571,8 @@ describe("GET /api/progress journey", () => {
         completedAt: "2026-10-02T00:00:00Z",
         updatedAt: "2026-10-02T00:00:00Z",
       },
-    ]);
+      ],
+    });
 
     // Owner scoping: the read is filtered by the session user's id.
     expect(

@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { serverError } from "../../middleware/error-handler";
 import { supabaseAdmin } from "../../db/supabase";
 import { requireAuth, type AuthedRequest } from "../../middleware/auth";
+import { sendSuccess } from "../../lib/response.js";
 
 const router = Router();
 
@@ -27,7 +28,7 @@ router.get("/", requireAuth, async (req: Request, res: Response) => {
       return;
     }
 
-    res.json(data ?? []);
+    sendSuccess(res, data ?? []);
   } catch (err: any) {
     console.error(err);
     serverError(res, err);

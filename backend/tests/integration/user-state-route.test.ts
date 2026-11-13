@@ -146,7 +146,13 @@ async function call(method: string, namespace: string, body?: unknown, user = "u
     headers: { "content-type": "application/json", "x-test-user": user },
     body: body === undefined ? undefined : JSON.stringify(body),
   });
-  return { status: res.status, json: (await res.json().catch(() => ({}))) as Record<string, any> };
+  const raw = (await res.json().catch(() => ({}))) as Record<string, any>;
+  // T13 envelope: successful GETs return `{ ok: true, data }` — unwrap for assertions.
+  const json =
+    method === "GET" && raw && raw.ok === true && raw.data && typeof raw.data === "object"
+      ? (raw.data as Record<string, any>)
+      : raw;
+  return { status: res.status, json };
 }
 
 describe("/api/user-state", () => {

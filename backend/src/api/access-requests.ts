@@ -114,7 +114,8 @@ router.get("/me", requireAuth, async (req: Request, res: Response) => {
     return;
   }
   const row = await ensureAccessRequest(userId);
-  res.json({ ok: true, request: row });
+  // Additive envelope: keep top-level ok + request for legacy, also `data`.
+  res.json({ ok: true, request: row, data: { request: row } });
 });
 
 export default router;
