@@ -31,6 +31,8 @@ import {
 } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/core/access-level";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useStaggeredReveal } from "@/lib/hooks/use-staggered-reveal";
 
 // ─── Types ─────────────────────────────────────────────────────────────────
 type ToolCategory = "All" | "Learning" | "Language" | "Math & Science" | "Visual Learning" | "Study Tools";
@@ -249,10 +251,23 @@ const TABS: ToolCategory[] = [
 ];
 
 // ─── Single tool card ──────────────────────────────────────────────────────
-function ToolCard({ tool, available, index }: { tool: Tool; available: boolean; index: number }) {
+function ToolCardSkeleton() {
+  return (
+    <div
+      aria-hidden="true"
+      className="lazy-render flex min-h-[176px] flex-col rounded-3xl border border-border/60 bg-card p-3.5"
+    >
+      <Skeleton className="h-11 w-11 rounded-2xl" />
+      <Skeleton className="mt-2.5 h-4 w-4/5" />
+      <Skeleton className="mt-2 h-3 w-1/3 rounded-full" />
+      <Skeleton className="mt-2 h-8 w-full" />
+    </div>
+  );
+}
+
+function ToolCard({ tool, available }: { tool: Tool; available: boolean }) {
   const Icon = tool.icon;
   const chipClass = CHIP[tool.category];
-  const delay = { animationDelay: `${Math.min(index, 12) * 60}ms` };
 
   const inner = (
     <>
@@ -301,7 +316,6 @@ function ToolCard({ tool, available, index }: { tool: Tool; available: boolean; 
   return available ? (
     <Link
       href={tool.href}
-      style={delay}
       className={`card-rise-in ${base} border-border/60 bg-card hover:border-primary/40 hover:shadow-sm`}
     >
       {inner}
@@ -309,7 +323,6 @@ function ToolCard({ tool, available, index }: { tool: Tool; available: boolean; 
   ) : (
     <div
       aria-disabled="true"
-      style={delay}
       className={`card-rise-in ${base} cursor-not-allowed border-border/30 bg-muted/25 opacity-55 grayscale`}
     >
       {inner}
@@ -323,6 +336,7 @@ export function AiToolsDirectory({ subjects }: { subjects: SubjectClassroom[] })
   const [active, setActive] = useState<ToolCategory>("All");
   const all = buildTools(subjects);
   const visible = active === "All" ? all : all.filter((t) => t.category === active);
+  const visibleCount = useStaggeredReveal(visible.length);
 
   return (
     <section aria-label="AI tools directory" className="space-y-5">
@@ -360,15 +374,22 @@ export function AiToolsDirectory({ subjects }: { subjects: SubjectClassroom[] })
 
       {/* 2-column grid — cards load one by one (owner 2026-11-09); the key
           replays the entrance whenever the category filter changes. */}
-      <div key={active} className="grid grid-cols-2 gap-3 sm:gap-4">
-        {visible.map((tool, index) => (
-          <ToolCard
-            key={tool.href}
-            index={index}
-            tool={tool}
-            available={!isLoading && hasLevel(user, tool.minLevel)}
-          />
-        ))}
+      <div
+        key={active}
+        className="grid grid-cols-2 gap-3 sm:gap-4"
+        aria-busy={visibleCount < visible.length}
+      >
+        {visible.map((tool, index) =>
+          index < visibleCount ? (
+            <ToolCard
+              key={tool.href}
+              tool={tool}
+              available={!isLoading && hasLevel(user, tool.minLevel)}
+            />
+          ) : (
+            <ToolCardSkeleton key={`skel-${tool.href}`} />
+          ),
+        )}
       </div>
     </section>
   );

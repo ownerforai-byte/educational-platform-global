@@ -1,10 +1,11 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { act, fireEvent, render, screen, within } from "@testing-library/react";
+import { SYLLABUS } from "@/lib/core/syllabus";
+import { CARD_STAGGER_MS } from "@/lib/hooks/use-staggered-reveal";
 
 /**
- * /subjects render tests — guards the 2026-11-09 rebuild (plan-pro-app.md
- * verdict #4): no fake staged loading, canonical subject visuals, honest
- * filters (every grade the platform serves), real progress numbers.
+ * /subjects render tests — canonical subject visuals, honest filters, real
+ * progress numbers, and one-by-one card reveal (1 s stagger).
  */
 
 let mockProgress: Record<string, { completedUnits: number; totalUnits: number; percent: number }> = {};
@@ -15,20 +16,37 @@ vi.mock("@/lib/hooks/use-live-stats", () => ({
 
 import SubjectsPage from "@/app/(app)/subjects/page";
 
+function advanceSubjectReveal(count: number) {
+  act(() => {
+    vi.advanceTimersByTime(Math.max(0, count - 1) * CARD_STAGGER_MS);
+  });
+}
+
 describe("/subjects (rebuilt)", () => {
   beforeEach(() => {
+    vi.useFakeTimers();
     mockProgress = {};
   });
 
-  it("renders Class 11 subjects immediately — no staged loading timers", () => {
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it("reveals class subjects one per second", () => {
     render(<SubjectsPage />);
+    const class11 = SYLLABUS.find((c) => c.slug === "class-11-notes")!;
+    expect(screen.getByText(class11.subjects[0]!.name)).toBeInTheDocument();
+    for (let i = 1; i < class11.subjects.length; i++) {
+      expect(screen.queryByText(class11.subjects[i]!.name)).not.toBeInTheDocument();
+      act(() => {
+        vi.advanceTimersByTime(CARD_STAGGER_MS);
+      });
+      expect(screen.getByText(class11.subjects[i]!.name)).toBeInTheDocument();
+    }
 
-    // Physics card is present on first paint (no skeleton-stagger delay).
-    expect(screen.getByText("Physics")).toBeInTheDocument();
-
-    // Switching to Class 12 shows its subjects immediately too.
     fireEvent.click(screen.getByRole("button", { name: "Class 12" }));
-    expect(screen.getByText("Physics")).toBeInTheDocument(); // both classes have physics
+    const class12 = SYLLABUS.find((c) => c.slug === "class-12-notes")!;
+    expect(screen.getByText(class12.subjects[0]!.name)).toBeInTheDocument();
   });
 
   it("shows real progress from useLiveStats — zero means zero", () => {
@@ -36,6 +54,7 @@ describe("/subjects (rebuilt)", () => {
       "class-11-notes/physics": { completedUnits: 3, totalUnits: 10, percent: 30 },
     };
     render(<SubjectsPage />);
+    advanceSubjectReveal(6);
     const physicsCard = screen.getByText("Physics").closest("a")!;
     expect(within(physicsCard).getAllByText("30%").length).toBe(2); // ring + footer
     expect(physicsCard.textContent).toContain("3/26 ch");
@@ -46,6 +65,7 @@ describe("/subjects (rebuilt)", () => {
 
   it("uses canonical subject-visual tokens — no ad-hoc hex gradients", () => {
     render(<SubjectsPage />);
+    advanceSubjectReveal(6);
     const physicsCard = screen.getByText("Physics").closest("a")!;
     // Token-based ring/badge classes from subject-visuals.ts are present…
     expect(physicsCard.querySelector("svg")).toBeInTheDocument();
@@ -57,6 +77,7 @@ describe("/subjects (rebuilt)", () => {
 
   it("lists every grade the platform serves and labels the filter group", () => {
     render(<SubjectsPage />);
+    advanceSubjectReveal(6);
     const group = screen.getByRole("group", { name: /filter subjects by class/i });
     const buttons = within(group).getAllByRole("button");
     // Owner 2026-11-09: "add class 8,9,10 with their all respective subject" —

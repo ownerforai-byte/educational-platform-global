@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useStaggeredReveal } from "@/lib/hooks/use-staggered-reveal";
 import { SYLLABUS } from "@/lib/core/syllabus";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import Link from "next/link";
@@ -76,11 +78,36 @@ type ClassSubjectsGridProps = {
   className: string;
 };
 
+function ClassSubjectBlockSkeleton() {
+  return (
+    <div
+      aria-hidden="true"
+      className="lazy-render flex min-h-[320px] flex-col rounded-3xl border border-border/70 bg-card p-6"
+    >
+      <div className="flex items-center gap-3">
+        <Skeleton className="h-11 w-11 rounded-2xl" />
+        <div className="flex-1 space-y-2">
+          <Skeleton className="h-5 w-2/3" />
+          <Skeleton className="h-3 w-1/2" />
+        </div>
+      </div>
+      <Skeleton className="mt-4 h-10 w-full" />
+      <div className="mt-4 flex flex-wrap gap-1.5">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <Skeleton key={i} className="h-7 w-16 rounded-xl" />
+        ))}
+      </div>
+      <Skeleton className="mt-auto h-4 w-40" />
+    </div>
+  );
+}
+
 export function ClassSubjectsGrid({ classSlug, className }: ClassSubjectsGridProps) {
   const [filterQuery, setFilterQuery] = useState("");
   const cls = SYLLABUS.find((c) => c.slug === classSlug);
-  if (!cls) return <div className="p-8 text-center text-muted-foreground">Class not found</div>;
+  const visibleBlocks = useStaggeredReveal(cls?.subjects.length ?? 0);
 
+  if (!cls) return <div className="p-8 text-center text-muted-foreground">Class not found</div>;
   const totalUnits = cls.subjects.reduce((sum, s) => sum + s.units.length, 0);
   const totalHours = cls.subjects.reduce(
     (sum, s) => sum + s.units.reduce((uSum, u) => uSum + (u.hours ?? 0), 0),
@@ -135,8 +162,14 @@ export function ClassSubjectsGrid({ classSlug, className }: ClassSubjectsGridPro
       </div>
 
       {/* Main Subjects Grid */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {cls.subjects.map((subject) => {
+      <div
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        aria-busy={visibleBlocks < cls.subjects.length}
+      >
+        {cls.subjects.map((subject, index) => {
+          if (index >= visibleBlocks) {
+            return <ClassSubjectBlockSkeleton key={`skel-${subject.slug}`} />;
+          }
           const conf = SUBJECT_META[subject.name] ?? {
             tagline: subject.description,
             hasLabs: false,
@@ -148,7 +181,7 @@ export function ClassSubjectsGrid({ classSlug, className }: ClassSubjectsGridPro
           return (
             <div
               key={subject.slug}
-              className={`group relative flex flex-col justify-between rounded-3xl border border-border/70 bg-gradient-to-b ${visual.bg} p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${visual.border}`}
+              className={`card-rise-in lazy-render group relative flex flex-col justify-between rounded-3xl border border-border/70 bg-gradient-to-b ${visual.bg} p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${visual.border}`}
             >
               <div>
                 <div className="flex items-center justify-between gap-2">

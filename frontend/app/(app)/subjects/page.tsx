@@ -4,8 +4,8 @@
  * /subjects — the student's subject picker.
  *
  * Rebuilt 2026-11-09 per plan-pro-app.md verdict #4 (poor → rebuild):
- * - No fake staged loading: cards render immediately (the old page delayed
- *   real content behind 120 ms-per-card timers as performance theater).
+ * - Class subject cards mount one-by-one (1 s apart) with skeleton placeholders
+ *   until each real card appears (`useStaggeredReveal`).
  * - Subject identity comes from the canonical `lib/ui/subject-visuals.ts`
  *   tokens — no ad-hoc hex gradients (finding CC-1).
  * - No fabricated "New" badges on every card: every number comes from a real
@@ -25,6 +25,8 @@ import { SYLLABUS } from "@/lib/core/syllabus";
 import { useLiveStats } from "@/lib/hooks/use-live-stats";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { EmptyState } from "@/components/content/empty-state";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useStaggeredReveal } from "@/lib/hooks/use-staggered-reveal";
 
 // ─── Progress ring ─────────────────────────────────────────────────────────
 function ProgressRing({ percent, textClass }: { percent: number; textClass: string }) {
@@ -45,20 +47,17 @@ function ProgressRing({ percent, textClass }: { percent: number; textClass: stri
 }
 
 // ─── Live subject card ─────────────────────────────────────────────────────
-function SubjectCard({ subject, classLabel, notesSlug, percent, completedChapters, index }: {
+function SubjectCard({ subject, classLabel, notesSlug, percent, completedChapters }: {
   subject: { slug: string; name: string; units: { id: string }[] };
   classLabel: string;
   notesSlug: string;
   /** Real completion from the student's progress journey. */
   percent: number;
   completedChapters: number;
-  /** Position in the grid — drives the one-by-one entrance. */
-  index: number;
 }) {
   const visual = getSubjectVisual(subject.slug);
   return (
     <Link href={`/${notesSlug}/${subject.slug}`}
-      style={{ animationDelay: `${Math.min(index, 10) * 70}ms` }}
       className={`card-rise-in lazy-render flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5 ${visual.border}`}>
       <div className={`relative flex items-center justify-center bg-gradient-to-br py-6 ${visual.bg}`}>
         <ProgressRing percent={percent} textClass={visual.text} />
@@ -89,15 +88,29 @@ function SubjectCard({ subject, classLabel, notesSlug, percent, completedChapter
  * their notes are still being written, so the card says so honestly instead
  * of inventing progress or a dead route.
  */
-function LowerGradeSubjectCard({ name, classLabel, index }: {
+function SubjectCardSkeleton() {
+  return (
+    <div
+      aria-hidden="true"
+      className="lazy-render flex h-full min-h-[168px] flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm"
+    >
+      <Skeleton className="h-[76px] w-full rounded-none" />
+      <div className="flex flex-col gap-2 p-3.5">
+        <Skeleton className="h-4 w-4/5" />
+        <Skeleton className="h-3 w-1/3" />
+        <Skeleton className="mt-1 h-1.5 w-full" />
+      </div>
+    </div>
+  );
+}
+
+function LowerGradeSubjectCard({ name, classLabel }: {
   name: string;
   classLabel: string;
-  index: number;
 }) {
   const visual = getSubjectVisual(name);
   return (
     <article
-      style={{ animationDelay: `${Math.min(index, 10) * 70}ms` }}
       className={`card-rise-in lazy-render flex h-full flex-col overflow-hidden rounded-3xl border border-border/60 bg-card shadow-sm ${visual.border}`}
     >
       <div className={`relative flex items-center justify-center bg-gradient-to-br py-6 ${visual.bg}`}>
@@ -185,6 +198,8 @@ export default function SubjectsPage() {
         )
       : 0;
 
+  const visibleCount = useStaggeredReveal(totalSubjects);
+
   return (
     <div className="mx-auto max-w-2xl space-y-5 px-4 py-6">
 
@@ -230,28 +245,34 @@ export default function SubjectsPage() {
       {/* Subject count */}
       <p className="text-xs font-semibold text-muted-foreground">{totalSubjects} subjects</p>
 
-      {/* Cards — rendered immediately, animated in one by one (no JS timers) */}
-      <div className="grid grid-cols-2 gap-3">
+      {/* Cards — one real card per second; skeleton holds the slot until then */}
+      <div key={classFilter} className="grid grid-cols-2 gap-3" aria-busy={visibleCount < totalSubjects}>
         {isLowerGrade
-          ? lowerGradeSubjects.map((subject, index) => (
-              <LowerGradeSubjectCard
-                key={subject.name}
-                name={subject.name}
-                classLabel={classFilter}
-                index={index}
-              />
-            ))
-          : liveSubjects.map((subject, index) => (
-              <SubjectCard
-                key={subject.slug}
-                index={index}
-                subject={subject as { slug: string; name: string; units: { id: string }[] }}
-                classLabel={classFilter}
-                notesSlug={notesSlug ?? ""}
-                percent={progressFor(subject.slug).percent}
-                completedChapters={progressFor(subject.slug).completedUnits}
-              />
-            ))}
+          ? lowerGradeSubjects.map((subject, index) =>
+              index < visibleCount ? (
+                <LowerGradeSubjectCard
+                  key={subject.name}
+                  name={subject.name}
+                  classLabel={classFilter}
+                />
+              ) : (
+                <SubjectCardSkeleton key={`skel-${subject.name}`} />
+              ),
+            )
+          : liveSubjects.map((subject, index) =>
+              index < visibleCount ? (
+                <SubjectCard
+                  key={subject.slug}
+                  subject={subject as { slug: string; name: string; units: { id: string }[] }}
+                  classLabel={classFilter}
+                  notesSlug={notesSlug ?? ""}
+                  percent={progressFor(subject.slug).percent}
+                  completedChapters={progressFor(subject.slug).completedUnits}
+                />
+              ) : (
+                <SubjectCardSkeleton key={`skel-${subject.slug}`} />
+              ),
+            )}
       </div>
 
       {!isLowerGrade && liveSubjects.length === 0 && (

@@ -1,7 +1,8 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
-import { fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { AiToolsDirectory } from "@/components/ai/ai-tools-directory";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { CARD_STAGGER_MS } from "@/lib/hooks/use-staggered-reveal";
 
 vi.mock("@/features/auth/hooks/use-session", () => ({
   useSession: vi.fn(),
@@ -16,8 +17,15 @@ const subjects = [
   { slug: "english", title: "English Classroom", description: "English help." },
 ];
 
+function revealAllTools(count: number) {
+  act(() => {
+    vi.advanceTimersByTime(Math.max(0, count - 1) * CARD_STAGGER_MS);
+  });
+}
+
 describe("AI tools directory", () => {
   beforeEach(() => {
+    vi.useFakeTimers();
     vi.mocked(useSession).mockReturnValue({
       user: {
         id: "member-1",
@@ -32,8 +40,13 @@ describe("AI tools directory", () => {
     });
   });
 
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
   it("lists the AI interfaces and marks higher-tier tools unavailable without a lock", () => {
     render(<AiToolsDirectory subjects={subjects} />);
+    revealAllTools(20);
 
     expect(screen.getAllByRole("link")).toHaveLength(5);
     expect(screen.getByRole("link", { name: /Community/ })).toHaveAttribute(
@@ -54,8 +67,10 @@ describe("AI tools directory", () => {
 
   it("filters cards by category", () => {
     render(<AiToolsDirectory subjects={subjects} />);
+    revealAllTools(20);
 
     fireEvent.click(screen.getByRole("button", { name: "Language" }));
+    revealAllTools(6);
 
     expect(screen.getByText("Nepali Language Tutor")).toBeInTheDocument();
     expect(screen.getByText("English Grammar Console")).toBeInTheDocument();
@@ -79,6 +94,7 @@ describe("AI tools directory", () => {
     });
 
     render(<AiToolsDirectory subjects={subjects} />);
+    revealAllTools(20);
 
     expect(screen.getByRole("link", { name: /Math & Derivation Solver/ })).toHaveAttribute(
       "href",
