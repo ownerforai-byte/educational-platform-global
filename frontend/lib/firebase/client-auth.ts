@@ -70,6 +70,29 @@ export async function firebaseConsumeRedirectResult(): Promise<string | null> {
   return result.user.getIdToken();
 }
 
+/**
+ * Fallback token read for the OAuth redirect return. `getRedirectResult` can
+ * resolve empty even after a successful `signInWithRedirect` (the credential
+ * was already consumed, or the SDK restored the user from persistence). The
+ * signed-in user is still on `auth.currentUser` once auth state settles, so
+ * wait for it and read the token there instead of failing the sign-in.
+ */
+export async function firebaseCurrentUserToken(): Promise<string | null> {
+  const auth = getFirebaseAuth();
+  if (!auth) return null;
+  const user = await new Promise<User | null>((resolve) => {
+    if (auth.currentUser) {
+      resolve(auth.currentUser);
+      return;
+    }
+    const unsub = onAuthStateChanged(auth, (u) => {
+      unsub();
+      resolve(u);
+    });
+  });
+  return user ? user.getIdToken() : null;
+}
+
 export async function firebaseClientLogout(): Promise<void> {
   const auth = getFirebaseAuth();
   if (!auth) return;

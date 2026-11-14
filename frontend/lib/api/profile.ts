@@ -186,6 +186,7 @@ export interface ProfileImageUploadResult {
   storage: StorageInfo | null;
 }
 
+/** POST raw image bytes — no JSON/base64 envelope. */
 async function postProfileImage(
   path: string,
   file: File,

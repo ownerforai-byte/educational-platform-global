@@ -1,6 +1,10 @@
 /**
  * Profile avatar/cover pipeline — one live WebP per slot, no original retained.
  *
+ * Input arrives as a bounded Buffer (stream-collected, max PROFILE_IMAGE_INPUT_MAX_BYTES).
+ * Sharp decodes the full input in memory for resize/WebP encode; output buffers are small
+ * and are streamed to R2 on upload.
+ *
  * Adaptive quality aims for small files without ugly artifacts:
  *   avatar  ≤ 256×256,  target 30–80 KB,  hard cap 100 KB
  *   cover   ≤ 1200×400, target 100–200 KB, hard cap 300 KB

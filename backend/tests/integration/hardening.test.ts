@@ -1002,7 +1002,7 @@ describe("POST /api/storage/upload", () => {
     expect(h.storageUpload).not.toHaveBeenCalled();
   });
 
-  it("500s when R2 is not configured on free tier (no Supabase Storage fallback)", async () => {
+  it("503s when R2 is not configured on free tier (no Supabase Storage fallback)", async () => {
     const { request } = await mountedStorage();
     h.r2Active.value = false;
 
@@ -1012,8 +1012,8 @@ describe("POST /api/storage/upload", () => {
       dataBase64: VALID_PNG_B64,
     });
 
-    expect(res.status).toBe(500);
-    expect(res.body.error).toBe("Upload failed");
+    expect(res.status).toBe(503);
+    expect(res.body.error).toMatch(/not configured/i);
     expect(h.r2Upload).not.toHaveBeenCalled();
     expect(h.storageUpload).not.toHaveBeenCalled();
   });

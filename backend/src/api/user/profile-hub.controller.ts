@@ -1,4 +1,5 @@
-import express, { Router, Request, Response } from "express";
+import { Readable } from "node:stream";
+import { Router, Request, Response, NextFunction } from "express";
 import { z } from "zod";
 import { supabaseAdmin } from "../../db/supabase";
 import { requireAuth, getUserFromRequest, type AuthedRequest } from "../../middleware/auth";
@@ -29,6 +30,7 @@ import {
 } from "../../services/profile-image";
 import { profileMediaPublicUrl } from "../../services/profile-media-url";
 import type { SessionUser } from "../../auth/types";
+import { PayloadTooLargeError, readBoundedRequestBody } from "../../http/bounded-body.js";
 
 const router = Router();
 
@@ -257,20 +259,7 @@ async function loadHubProfile(
   return { row: data as unknown as ProfileRow, missing: false, error: null };
 }
 
-const imageSchema = z.object({
-  dataBase64: z.string().min(1).max(6_000_000),
-  contentType: z.string().trim().optional(),
-});
-
-function decodeBase64(raw: string): Buffer | null {
-  try {
-    const stripped = raw.replace(/^data:[^;]+;base64,/, "").trim();
-    const buf = Buffer.from(stripped, "base64");
-    return buf.length > 0 ? buf : null;
-  } catch {
-    return null;
-  }
-}
+const PROFILE_IMAGE_CONTENT_TYPES = /^(image\/[\w.+-]+|application\/octet-stream)$/i;
 
 router.get(
   "/media",
@@ -444,19 +433,71 @@ router.patch(
 function decodeUploadedImage(req: Request): { ok: true; buffer: Buffer } | { ok: false; message: string; status: number } {
   if (Buffer.isBuffer(req.body)) {
     if (req.body.length === 0) return { ok: false, message: "Invalid image payload", status: 400 };
-    if (req.body.length > PROFILE_IMAGE_INPUT_MAX_BYTES) {
-      return { ok: false, message: "Invalid or oversized image payload", status: 413 };
-    }
     return { ok: true, buffer: req.body };
   }
-  const parsed = imageSchema.safeParse(req.body);
-  if (!parsed.success) return { ok: false, message: "Invalid image payload", status: 400 };
-  const raw = decodeBase64(parsed.data.dataBase64);
-  if (!raw) return { ok: false, message: "Invalid image payload", status: 400 };
-  if (raw.length > PROFILE_IMAGE_INPUT_MAX_BYTES) {
-    return { ok: false, message: "Invalid or oversized image payload", status: 413 };
+  if (req.is("application/json") || req.is("application/*+json")) {
+    return {
+      ok: false,
+      message:
+        "Profile images must be sent as raw binary (Content-Type image/* or application/octet-stream). JSON base64 uploads are not supported.",
+      status: 415,
+    };
   }
-  return { ok: true, buffer: raw };
+  if (req.body && typeof req.body === "object") {
+    return {
+      ok: false,
+      message:
+        "Profile images must be sent as raw binary (Content-Type image/* or application/octet-stream). JSON base64 uploads are not supported.",
+      status: 415,
+    };
+  }
+  return { ok: false, message: "Invalid image payload", status: 400 };
+}
+
+/**
+ * Streams the request body with a byte cap into `req.body` as a Buffer.
+ * Sharp still needs the full decoded input in memory, but that is bounded by
+ * PROFILE_IMAGE_INPUT_MAX_BYTES; the final WebP written to R2 is streamed.
+ */
+function profileImageBody(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): void {
+  const header = typeof req.headers["content-type"] === "string" ? req.headers["content-type"] : "";
+  const contentType = header.split(";")[0]?.trim().toLowerCase() ?? "";
+  if (!contentType) {
+    bad(res, "Content-Type is required (image/jpeg, image/png, image/webp, or application/octet-stream).", 415);
+    return;
+  }
+  if (contentType === "application/json" || contentType.endsWith("+json")) {
+    bad(
+      res,
+      "Profile images must be sent as raw binary (Content-Type image/* or application/octet-stream). JSON base64 uploads are not supported.",
+      415,
+    );
+    return;
+  }
+  if (!PROFILE_IMAGE_CONTENT_TYPES.test(contentType)) {
+    bad(
+      res,
+      "Unsupported Content-Type. Use image/jpeg, image/png, image/webp, or application/octet-stream.",
+      415,
+    );
+    return;
+  }
+  void readBoundedRequestBody(req, PROFILE_IMAGE_INPUT_MAX_BYTES)
+    .then((buffer) => {
+      req.body = buffer;
+      next();
+    })
+    .catch((err: unknown) => {
+      if (err instanceof PayloadTooLargeError) {
+        bad(res, "Invalid or oversized image payload", 413);
+        return;
+      }
+      bad(res, "Invalid image payload", 400);
+    });
 }
 
 async function purgeAbandonedProfileMedia(
@@ -525,8 +566,10 @@ async function uploadProfileImage(
     return;
   }
   try {
-    await r2Upload(path, processed.buffer, processed.contentType, {
+    // Processed WebP is small (≤300 KB); stream avoids holding a second full copy during PUT.
+    await r2Upload(path, Readable.from(processed.buffer), processed.contentType, {
       cacheControl: PROFILE_MEDIA_CACHE_CONTROL,
+      contentLength: processed.buffer.length,
     });
   } catch (err) {
     await releaseStoragePath(user.id, path);
@@ -578,15 +621,10 @@ async function uploadProfileImage(
   });
 }
 
-const rawImageBody = express.raw({
-  type: ["image/*", "application/octet-stream"],
-  limit: PROFILE_IMAGE_INPUT_MAX_BYTES,
-});
-
 router.post(
   "/me/avatar",
   requireAuth,
-  rawImageBody,
+  profileImageBody,
   asyncHandler(async (req, res) => {
     const decoded = decodeUploadedImage(req);
     if (!decoded.ok) {
@@ -600,7 +638,7 @@ router.post(
 router.post(
   "/me/cover",
   requireAuth,
-  rawImageBody,
+  profileImageBody,
   asyncHandler(async (req, res) => {
     const decoded = decodeUploadedImage(req);
     if (!decoded.ok) {

@@ -51,6 +51,21 @@ function isMissingTable(error: { message?: string } | null): boolean {
   );
 }
 
+/** Firebase UID written into a uuid column (migration 014) before 024. */
+function isLegacyUuidIdentityError(error: { message?: string; code?: string } | null): boolean {
+  const code = (error?.code ?? "").toUpperCase();
+  const msg = (error?.message ?? "").toLowerCase();
+  return (
+    code === "22P02" ||
+    msg.includes("invalid input syntax for type uuid") ||
+    (code === "23503" && msg.includes("user_id"))
+  );
+}
+
+function isDegradedCommunityStore(error: { message?: string; code?: string } | null): boolean {
+  return isMissingTable(error) || isLegacyUuidIdentityError(error);
+}
+
 const titleSchema = z.string().trim().min(4).max(140);
 const bodySchema = z.string().trim().min(1).max(4000);
 
@@ -129,7 +144,7 @@ router.get(
       .limit(1);
 
     if (error) {
-      if (isMissingTable(error)) {
+      if (isDegradedCommunityStore(error)) {
         res.json({ thread: null, replies: [], migrated: false });
         return;
       }
@@ -151,7 +166,7 @@ router.get(
       .limit(500);
 
     if (replyError) {
-      if (isMissingTable(replyError)) {
+      if (isDegradedCommunityStore(replyError)) {
         res.json({ thread: null, replies: [], migrated: false });
         return;
       }
@@ -206,7 +221,7 @@ router.post(
       .single();
 
     if (error) {
-      if (isMissingTable(error)) {
+      if (isDegradedCommunityStore(error)) {
         res.json({ reply: null, migrated: false });
         return;
       }
@@ -244,7 +259,7 @@ router.post(
       .limit(1);
 
     if (readError) {
-      if (isMissingTable(readError)) {
+      if (isDegradedCommunityStore(readError)) {
         res.json({ upvotes: 0, upvotedByYou: false, migrated: false });
         return;
       }
@@ -264,6 +279,10 @@ router.post(
           .insert({ thread_id: threadId, user_id: user.id });
 
     if (write.error) {
+      if (isDegradedCommunityStore(write.error)) {
+        res.json({ upvotes: 0, upvotedByYou: false, migrated: false });
+        return;
+      }
       serverError(res, write.error, "community");
       return;
     }
@@ -294,7 +313,7 @@ router.get(
       .limit(MAX_LIST);
 
     if (error) {
-      if (isMissingTable(error)) {
+      if (isDegradedCommunityStore(error)) {
         res.json({ threads: [], migrated: false });
         return;
       }
@@ -351,7 +370,7 @@ router.post(
       .single();
 
     if (error) {
-      if (isMissingTable(error)) {
+      if (isDegradedCommunityStore(error)) {
         res.json({ thread: null, migrated: false });
         return;
       }

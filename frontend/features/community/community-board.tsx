@@ -674,19 +674,45 @@ function Composer({
           Open the post
         </Link>
       ) : null}
-      <button type="submit" disabled={busy || sessionLoading} className={primaryCta}>
-        {busy ? (
-          <>
-            <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
-            Publishing…
-          </>
-        ) : (
-          <>
-            <Send className="h-4 w-4" aria-hidden />
-            {mode === "edit" ? "Save changes" : "Publish"}
-          </>
-        )}
-      </button>
+      <div className="flex flex-wrap items-center gap-2">
+        <button type="submit" disabled={busy || sessionLoading} className={primaryCta}>
+          {busy ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+              Publishing…
+            </>
+          ) : (
+            <>
+              <Send className="h-4 w-4" aria-hidden />
+              {mode === "edit" ? "Save changes" : "Publish"}
+            </>
+          )}
+        </button>
+        <button
+          type="button"
+          className={cn(chipBtn, "text-foreground")}
+          disabled={busy}
+          onClick={() => {
+            const dirty =
+              title !== (initial?.title ?? "") ||
+              body !== (initial?.body ?? "") ||
+              category !== (initial?.category ?? "general") ||
+              files.length > 0;
+            if (dirty && !window.confirm("Discard this post? Unsaved changes will be lost.")) return;
+            if (redirectOnSuccess) {
+              router.push(mode === "edit" && initial ? sharePath(initial.id) : "/ai/community");
+              return;
+            }
+            setTitle("");
+            setBody("");
+            setCategory("general");
+            setFiles([]);
+            setError(null);
+          }}
+        >
+          Cancel
+        </button>
+      </div>
     </form>
   );
 }
@@ -1214,14 +1240,6 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
       ) : null}
       {loading ? <CommunityLoading /> : null}
 
-      {view === "feed" ? (
-        <Composer
-          user={user}
-          sessionLoading={sessionLoading}
-          mode="create"
-          onPublished={(created) => setPosts((current) => [created, ...current.filter((item) => item.id !== created.id)])}
-        />
-      ) : null}
       {view === "new" ? (
         <Composer user={user} sessionLoading={sessionLoading} mode="create" redirectOnSuccess />
       ) : null}

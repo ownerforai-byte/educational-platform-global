@@ -485,11 +485,16 @@ describe("profile storage", () => {
     expect(swapped.ok).toBe(true);
   });
 
-  it("uploads an avatar over JSON base64 and records bytes", async () => {
+  const imageUploadHeaders: HeadersInit = {
+    Authorization: "Bearer member-token",
+    "Content-Type": "image/jpeg",
+  };
+
+  it("uploads a raw binary avatar and records bytes", async () => {
     const res = await fetch(`${base}/profile/me/avatar`, {
       method: "POST",
-      headers: memberHeaders,
-      body: JSON.stringify({ dataBase64: Buffer.from("fake-photo").toString("base64"), contentType: "image/jpeg" }),
+      headers: imageUploadHeaders,
+      body: Buffer.from("fake-photo"),
     });
     expect(res.status).toBe(200);
     const body = (await res.json()) as { byteSize: number; storage: { usedBytes: number } | null };
@@ -500,19 +505,31 @@ describe("profile storage", () => {
     expect(r2.upload).toHaveBeenCalled();
   });
 
+  it("rejects JSON base64 avatar uploads", async () => {
+    const res = await fetch(`${base}/profile/me/avatar`, {
+      method: "POST",
+      headers: memberHeaders,
+      body: JSON.stringify({ dataBase64: Buffer.from("fake-photo").toString("base64"), contentType: "image/jpeg" }),
+    });
+    expect(res.status).toBe(415);
+    const body = (await res.json()) as { error: string };
+    expect(body.error).toMatch(/raw binary/i);
+    expect(r2.upload).not.toHaveBeenCalled();
+  });
+
   it("releases the old R2 key and does not double-count on replace", async () => {
     const first = await fetch(`${base}/profile/me/avatar`, {
       method: "POST",
-      headers: memberHeaders,
-      body: JSON.stringify({ dataBase64: Buffer.from("one").toString("base64") }),
+      headers: imageUploadHeaders,
+      body: Buffer.from("one"),
     });
     expect(first.status).toBe(200);
     const oldPath = memory.tables.profiles[0]!.avatar_path as string;
 
     const second = await fetch(`${base}/profile/me/avatar`, {
       method: "POST",
-      headers: memberHeaders,
-      body: JSON.stringify({ dataBase64: Buffer.from("two").toString("base64") }),
+      headers: imageUploadHeaders,
+      body: Buffer.from("two"),
     });
     expect(second.status).toBe(200);
     const newPath = memory.tables.profiles[0]!.avatar_path as string;
@@ -521,19 +538,6 @@ describe("profile storage", () => {
     expect(memory.tables.profiles[0]!.avatar_bytes).toBe(10);
     expect(memory.tables.storage_objects.filter((row) => String(row.path).startsWith("profiles/"))).toHaveLength(1);
     expect(r2.delete).toHaveBeenCalledWith(oldPath);
-  });
-
-  it("accepts a raw binary avatar body", async () => {
-    const res = await fetch(`${base}/profile/me/avatar`, {
-      method: "POST",
-      headers: {
-        Authorization: "Bearer member-token",
-        "Content-Type": "image/jpeg",
-      },
-      body: Buffer.from("raw-jpeg-bytes"),
-    });
-    expect(res.status).toBe(200);
-    expect(memory.tables.profiles[0]!.avatar_bytes).toBe(10);
   });
 
   it("cleans abandoned profile temps but never community attachments", async () => {
@@ -555,8 +559,8 @@ describe("profile storage", () => {
 
     const res = await fetch(`${base}/profile/me/avatar`, {
       method: "POST",
-      headers: memberHeaders,
-      body: JSON.stringify({ dataBase64: Buffer.from("fresh").toString("base64") }),
+      headers: imageUploadHeaders,
+      body: Buffer.from("fresh"),
     });
     expect(res.status).toBe(200);
     const paths = memory.tables.storage_objects.map((row) => row.path as string);

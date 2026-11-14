@@ -210,11 +210,29 @@ vi.mock("../../src/lib/community-bot", async (importOriginal) => {
   };
 });
 
+const r2 = vi.hoisted(() => {
+  const objects = new Map<string, { buffer: Buffer; contentType: string }>();
+  return {
+    active: false,
+    objects,
+    upload: vi.fn(async (path: unknown, body: unknown, contentType: unknown) => {
+      const key = String(path);
+      const buffer = Buffer.isBuffer(body) ? body : Buffer.from(body as Uint8Array);
+      objects.set(key, { buffer, contentType: String(contentType) });
+      return { url: `https://r2.test/${key}` };
+    }),
+    download: vi.fn(async (path: unknown) => objects.get(String(path)) ?? null),
+    remove: vi.fn(async (path: unknown) => {
+      objects.delete(String(path));
+    }),
+  };
+});
+
 vi.mock("../../src/storage/r2", () => ({
-  isR2StorageActive: () => false,
-  r2Upload: vi.fn(),
-  r2Download: vi.fn(async () => null),
-  r2Delete: vi.fn(async () => undefined),
+  isR2StorageActive: () => r2.active,
+  r2Upload: (...args: unknown[]) => r2.upload(...args),
+  r2Download: (...args: unknown[]) => r2.download(...args),
+  r2Delete: (...args: unknown[]) => r2.remove(...args),
   supabaseStorageHealth: vi.fn(async () => ({ available: false, size: 0, objects: 0, buckets: [] })),
 }));
 
@@ -238,6 +256,11 @@ afterAll(() => new Promise<void>((resolve, reject) => server.close((err) => (err
 beforeEach(() => {
   memory.reset();
   resetRateLimits();
+  r2.active = false;
+  r2.objects.clear();
+  r2.upload.mockClear();
+  r2.download.mockClear();
+  r2.remove.mockClear();
 });
 
 const png = Buffer.from([
@@ -428,5 +451,103 @@ describe("community feed", () => {
     expect(after.post.commentCount).toBe(1);
     expect(after.post.assistantReply.posted).toBe(true);
     expect(after.post.comments[0]?.author.role).toBe("assistant");
+  });
+
+  it("accepts a PDF when the browser sends application/octet-stream", async () => {
+    const created = await fetch(`${base}/feed`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({
+        title: "Notes PDF",
+        body: "Attached scan.",
+        category: "physics",
+      }),
+    });
+    expect(created.status).toBe(201);
+    const { post } = await created.json() as { post: { id: string } };
+    const pdf = Buffer.from("%PDF-1.4 fixture");
+
+    const uploaded = await fetch(`${base}/feed/${post.id}/attachments`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({
+        filename: "scan.pdf",
+        contentType: "application/octet-stream",
+        dataBase64: pdf.toString("base64"),
+      }),
+    });
+    expect(uploaded.status).toBe(201);
+    const uploadedBody = await uploaded.json() as { attachment: { contentType: string; filename: string } };
+    expect(uploadedBody.attachment.filename).toBe("scan.pdf");
+    expect(uploadedBody.attachment.contentType).toBe("application/pdf");
+
+    const file = await fetch(`${base}/feed/attachments/${uploadedBody.attachment.id}/file`);
+    expect(file.status).toBe(200);
+    expect(file.headers.get("content-type")).toContain("application/pdf");
+    expect(Buffer.from(await file.arrayBuffer()).equals(pdf)).toBe(true);
+  });
+
+  it("stores attachments in R2 when configured and 404s a missing object", async () => {
+    r2.active = true;
+    const created = await fetch(`${base}/feed`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({
+        title: "R2 diagram",
+        body: "Cloud object.",
+        category: "physics",
+      }),
+    });
+    expect(created.status).toBe(201);
+    const { post } = await created.json() as { post: { id: string } };
+
+    const uploaded = await fetch(`${base}/feed/${post.id}/attachments`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({
+        filename: "diagram.png",
+        contentType: "image/png",
+        dataBase64: png.toString("base64"),
+      }),
+    });
+    expect(uploaded.status).toBe(201);
+    expect(r2.upload).toHaveBeenCalled();
+    const uploadedBody = await uploaded.json() as { attachment: { id: string } };
+
+    const file = await fetch(`${base}/feed/attachments/${uploadedBody.attachment.id}/file`);
+    expect(file.status).toBe(200);
+    expect(Buffer.from(await file.arrayBuffer()).equals(png)).toBe(true);
+
+    r2.objects.clear();
+    const missing = await fetch(`${base}/feed/attachments/${uploadedBody.attachment.id}/file`);
+    expect(missing.status).toBe(404);
+  });
+
+  it("accepts a raw binary PNG with Content-Type and X-Upload-Filename", async () => {
+    const created = await fetch(`${base}/feed`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({
+        title: "Raw binary diagram",
+        body: "Direct file body upload.",
+        category: "physics",
+      }),
+    });
+    expect(created.status).toBe(201);
+    const { post } = await created.json() as { post: { id: string } };
+
+    const uploaded = await fetch(`${base}/feed/${post.id}/attachments`, {
+      method: "POST",
+      headers: {
+        ...memberHeaders(),
+        "Content-Type": "image/png",
+        "X-Upload-Filename": encodeURIComponent("diagram.png"),
+      },
+      body: png,
+    });
+    expect(uploaded.status).toBe(201);
+    const uploadedBody = await uploaded.json() as { attachment: { filename: string; contentType: string } };
+    expect(uploadedBody.attachment.filename).toBe("diagram.png");
+    expect(uploadedBody.attachment.contentType).toBe("image/png");
   });
 });

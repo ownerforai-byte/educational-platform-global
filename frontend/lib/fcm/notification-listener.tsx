@@ -4,7 +4,11 @@ import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { pushNotification } from "@/lib/notifications";
-import { readStatusToken } from "@/features/auth/pending-signup-identity";
+import {
+  APPROVED_ROUTE,
+  readStatusToken,
+  rememberAccessOutcome,
+} from "@/features/auth/pending-signup-identity";
 import { useAuth } from "@/providers/auth-provider";
 import { isFcmConfigured } from "./config";
 import { registerFcmToken, syncFcmToken } from "./register-token";
@@ -33,9 +37,17 @@ function normalizeDeepLink(pathname: string | null | undefined): string {
  * Registers the FCM token after login / pending signup, keeps it fresh across
  * FCM token rotation (re-check + re-register on focus / visibility / interval),
  * listens for foreground messages, and deep-links on tap via toast action.
+ *
+ * Contract constant: the server's approval push carries
+ * `data.kind === "account_approved"` with `deepLink: "/welcome/approved"` —
+ * `ACCOUNT_APPROVED_KIND` is exported so the handler and its tests share one
+ * definition. On that message the listener refreshes the auth session and
+ * navigates to the deep link (see the `onMessage` handler below).
  */
+export const ACCOUNT_APPROVED_KIND = "account_approved";
+
 export function FcmNotificationListener() {
-  const { user, isLoading } = useAuth();
+  const { user, isLoading, refresh } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
 
@@ -85,27 +97,59 @@ export function FcmNotificationListener() {
         if (!messaging || cancelled) return;
 
         unsub = onMessage(messaging, (payload) => {
+          // The notification path must NEVER break the app — every step is
+          // individually guarded, so one failing extra (inbox, toast, router)
+          // can never take the others (or the app) down with it.
+          const step = (run: () => void) => {
+            try {
+              run();
+            } catch {
+              /* never break the app over a push payload */
+            }
+          };
+
           const title = payload.notification?.title ?? "Verner";
           const body = payload.notification?.body ?? "Open the app to continue.";
           const data = (payload.data ?? {}) as Record<string, string>;
-          const deepLink = deepLinkFromPayload(data) ?? "/home/member";
+          const isApproval = data.kind === ACCOUNT_APPROVED_KIND;
+          const deepLink =
+            deepLinkFromPayload(data) ?? (isApproval ? APPROVED_ROUTE : "/home/member");
           const id = `fcm:${data.requestId ?? data.kind ?? Date.now()}`;
 
-          pushNotification({
-            id,
-            category: "account",
-            title,
-            body,
-            href: deepLink,
-            actionLabel: "Open",
+          // ── Contract: automated account approval ────────────────────
+          // data.kind === "account_approved" → the background bot just
+          // flipped this account to ACTIVE. Refresh the auth session so the
+          // UI reflects the new state and move straight to the deep link
+          // (data.deepLink → /welcome/approved).
+          if (isApproval) {
+            step(() => {
+              // Mirror the verdict locally so cached route hints agree while
+              // the live gates re-validate.
+              rememberAccessOutcome("ACTIVE");
+              refresh();
+              router.replace(deepLink);
+            });
+          }
+
+          step(() => {
+            pushNotification({
+              id,
+              category: "account",
+              title,
+              body,
+              href: deepLink,
+              actionLabel: "Open",
+            });
           });
 
-          toast(title, {
-            description: body,
-            action: {
-              label: "Open",
-              onClick: () => router.push(deepLink),
-            },
+          step(() => {
+            toast(title, {
+              description: body,
+              action: {
+                label: "Open",
+                onClick: () => router.push(deepLink),
+              },
+            });
           });
         });
       } catch {
@@ -117,7 +161,7 @@ export function FcmNotificationListener() {
       cancelled = true;
       unsub?.();
     };
-  }, [router]);
+  }, [router, refresh]);
 
   return null;
 }

@@ -5,6 +5,11 @@ import { isApprovedAccount, loadProfileAccess } from "../../middleware/auth";
 import { verifyAccessToken } from "../../auth/token-verify.js";
 import { supabaseAdmin } from "../../db/supabase";
 import { routeBinaryUpload, storageTiersHealth } from "../../storage/router";
+import { isR2StorageActive } from "../../storage/r2";
+import {
+  resolveStorageApiMime,
+  STORAGE_API_UPLOAD_MAX_BYTES,
+} from "../../storage/binary-upload-policy.js";
 
 const router = Router();
 
@@ -68,14 +73,8 @@ router.get("/health", async (req: Request, res: Response) => {
   res.json(tiers);
 });
 
-// No multer/busboy available (no new deps), so uploads arrive as base64 JSON.
-const MAX_BYTES = 10 * 1024 * 1024; // 10 MB decoded cap
-const ALLOWED_MIME_TYPES = [
-  "image/png",
-  "image/jpeg",
-  "image/webp",
-  "application/pdf",
-] as const;
+// No multer/busboy available (no new deps), so JSON uploads use base64; MIME rules live in binary-upload-policy.
+const MAX_BYTES = STORAGE_API_UPLOAD_MAX_BYTES;
 const PATH_REGEX = /^[A-Za-z0-9/._-]+$/;
 
 const uploadSchema = z
@@ -98,7 +97,12 @@ router.post("/upload", async (req: Request, res: Response) => {
     return;
   }
 
-  const { path, contentType } = parsed.data;
+  const { path } = parsed.data;
+  const contentType = resolveStorageApiMime(path, parsed.data.contentType);
+  if (!contentType) {
+    res.status(400).json({ error: "Unsupported content type" });
+    return;
+  }
 
   if (path.includes("..")) {
     res.status(400).json({ error: "Invalid path" });
@@ -106,11 +110,6 @@ router.post("/upload", async (req: Request, res: Response) => {
   }
   if (!PATH_REGEX.test(path)) {
     res.status(400).json({ error: "Invalid path" });
-    return;
-  }
-
-  if (!(ALLOWED_MIME_TYPES as readonly string[]).includes(contentType)) {
-    res.status(400).json({ error: "Unsupported content type" });
     return;
   }
 
@@ -130,6 +129,14 @@ router.post("/upload", async (req: Request, res: Response) => {
   }
   if (buffer.length > MAX_BYTES) {
     res.status(413).json({ error: "File exceeds the 10MB limit" });
+    return;
+  }
+
+  if (!isR2StorageActive()) {
+    res.status(503).json({
+      error:
+        "Cloud storage is not configured. Set R2_ACCOUNT_ID, R2_BUCKET, R2_ACCESS_KEY_ID, and R2_SECRET_ACCESS_KEY.",
+    });
     return;
   }
 

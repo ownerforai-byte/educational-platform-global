@@ -203,12 +203,24 @@ describe("POST /api/storage/upload — free-tier R2 routing", () => {
     expect(m.r2Upload).toHaveBeenCalledTimes(1);
   });
 
-  it("500s when R2 is not configured on free tier", async () => {
+  it("503s when R2 is not configured on free tier", async () => {
     m.r2Active.value = false;
     const request = await mount();
     const res = await request("POST", "/api/storage/upload", PDF_BODY);
-    expect(res.status).toBe(500);
+    expect(res.status).toBe(503);
     expect(m.r2Upload).not.toHaveBeenCalled();
+  });
+
+  it("routes office documents to R2", async () => {
+    const request = await mount();
+    const res = await request("POST", "/api/storage/upload", {
+      path: "class-11/physics/worksheet.docx",
+      contentType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      dataBase64: "aGVsbG8=",
+    });
+    expect(res.status).toBe(201);
+    expect(res.body.storedIn).toBe("r2");
+    expect(m.r2Upload).toHaveBeenCalledTimes(1);
   });
 });
 

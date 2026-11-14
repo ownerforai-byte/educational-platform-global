@@ -6,6 +6,7 @@ import {
   PROFILES_COLLECTION,
   type Profile,
 } from "../firestore";
+import { sendApprovalPush } from "../fcm";
 
 /** New signups stay PENDING exactly this long before auto-approval (300 s = 5 min). */
 export const APPROVAL_DELAY_MS = 300_000;
@@ -18,6 +19,10 @@ export interface ApprovalSummary {
   approved: number;
   skipped: number;
   errors: number;
+  /** Approvals whose FCM push dispatch completed (per-token detail in logs). */
+  notified: number;
+  /** Approvals where the push dispatch itself failed (the approval still stands). */
+  notifyErrors: number;
 }
 
 /**
@@ -29,11 +34,21 @@ export interface ApprovalSummary {
  *   decisions always win.
  * - Tolerant: missing / unparseable `created_at` is logged and skipped (age
  *   unknown → never guess); docs disappearing mid-run are no-ops.
+ * - Notifying: each successful approval (PENDING → ACTIVE) fires the FCM
+ *   approval push for that uid exactly once (see `sendApprovalPush`); push
+ *   failures are logged and never undo or fail the approval.
  */
 export async function approvePendingProfiles(now = Date.now()): Promise<ApprovalSummary> {
   const db = getFirestoreAdmin();
   const dueBeforeMs = now - APPROVAL_DELAY_MS;
-  const summary: ApprovalSummary = { scanned: 0, approved: 0, skipped: 0, errors: 0 };
+  const summary: ApprovalSummary = {
+    scanned: 0,
+    approved: 0,
+    skipped: 0,
+    errors: 0,
+    notified: 0,
+    notifyErrors: 0,
+  };
   let cursor: QueryDocumentSnapshot | null = null;
 
   for (let page = 0; page < MAX_PAGES_PER_RUN; page += 1) {
@@ -63,8 +78,25 @@ export async function approvePendingProfiles(now = Date.now()): Promise<Approval
       }
       try {
         const approved = await approveIfStillPending(doc.ref, dueBeforeMs);
-        if (approved) summary.approved += 1;
-        else summary.skipped += 1;
+        if (approved) {
+          summary.approved += 1;
+          // Fire the approval push exactly once per PENDING → ACTIVE flip:
+          // approveIfStillPending returns true only on the single successful
+          // transactional transition, so scheduler retries / re-runs never
+          // re-notify. Push failures never undo or fail the approval.
+          try {
+            await sendApprovalPush(doc.id);
+            summary.notified += 1;
+          } catch (err) {
+            summary.notifyErrors += 1;
+            logger.error("approvePendingProfiles: approval push failed", {
+              uid: doc.id,
+              error: err instanceof Error ? err.message : String(err),
+            });
+          }
+        } else {
+          summary.skipped += 1;
+        }
       } catch (err) {
         summary.errors += 1;
         logger.error("approvePendingProfiles: failed to approve profile", {

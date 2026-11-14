@@ -16,6 +16,18 @@ import {
 } from "../../lib/community-bot";
 import type { SessionUser } from "../../auth/types";
 import { generateCommunityAssistantReply } from "../../services/community-ai-reply";
+import {
+  BINARY_FILE_BY_EXTENSION,
+  COMMUNITY_ATTACHMENT_MAX_BYTES,
+  decodeBase64Upload,
+  matchBinaryMagic,
+  resolveUploadMime,
+  sanitizeUploadFilename,
+} from "../../storage/binary-upload-policy.js";
+import {
+  ingestCommunityAttachment,
+  type RequestWithCommunityAttachment,
+} from "../../http/community-attachment-body.js";
 
 /**
  * Public community feed. Guests read; any approved session (requireAuth)
@@ -33,7 +45,7 @@ const router = Router();
 const PAGE_SIZE = 10;
 const SCAN_LIMIT = 300;
 const MAX_FILES = 4;
-const MAX_FILE_BYTES = 3 * 1024 * 1024;
+const MAX_FILE_BYTES = COMMUNITY_ATTACHMENT_MAX_BYTES;
 const MIGRATION_MESSAGE =
   "Community feed is unavailable until migration 018 is applied. From backend/, run: node scripts/migrate.mjs";
 
@@ -46,20 +58,6 @@ const CATEGORIES = [
   "english",
   "nepali",
 ] as const;
-
-const FILE_TYPES: Record<string, { mime: string; kind: "png" | "jpeg" | "pdf" | "ole" | "zip" | "txt" }> = {
-  png: { mime: "image/png", kind: "png" },
-  jpg: { mime: "image/jpeg", kind: "jpeg" },
-  jpeg: { mime: "image/jpeg", kind: "jpeg" },
-  pdf: { mime: "application/pdf", kind: "pdf" },
-  doc: { mime: "application/msword", kind: "ole" },
-  xls: { mime: "application/vnd.ms-excel", kind: "ole" },
-  ppt: { mime: "application/vnd.ms-powerpoint", kind: "ole" },
-  docx: { mime: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", kind: "zip" },
-  xlsx: { mime: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", kind: "zip" },
-  pptx: { mime: "application/vnd.openxmlformats-officedocument.presentationml.presentation", kind: "zip" },
-  txt: { mime: "text/plain", kind: "txt" },
-};
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 /** Firebase Auth uid or legacy Supabase uuid stored in profiles.id / author_id. */
@@ -513,46 +511,6 @@ async function deletePostTree(postId: string): Promise<{ missing: true } | { err
   return { ok: true };
 }
 
-function sanitizeFilename(raw: string): string | null {
-  const name = raw.normalize("NFKC").replace(/^\uFEFF/, "").trim();
-  if (!name || name.length > 180) return null;
-  if (name.includes("..") || name.includes("/") || name.includes("\\") || name.includes("\0")) return null;
-  if (name === "." || name.startsWith(".")) return null;
-  const safe = name.replace(/[^A-Za-z0-9._-]/g, "_").replace(/_+/g, "_");
-  if (!safe || !safe.includes(".") || safe.startsWith(".") || safe.includes("..")) return null;
-  return safe;
-}
-
-function magicOk(buf: Buffer, kind: (typeof FILE_TYPES)[string]["kind"]): boolean {
-  if (kind === "png") {
-    return buf.length >= 8 && buf.subarray(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]));
-  }
-  if (kind === "jpeg") return buf.length >= 3 && buf[0] === 0xff && buf[1] === 0xd8 && buf[2] === 0xff;
-  if (kind === "pdf") return buf.length >= 4 && buf.subarray(0, 4).toString("latin1") === "%PDF";
-  if (kind === "ole") {
-    return buf.length >= 8 && buf.subarray(0, 8).equals(Buffer.from([0xd0, 0xcf, 0x11, 0xe0, 0xa1, 0xb1, 0x1a, 0xe1]));
-  }
-  if (kind === "zip") {
-    return (
-      buf.length >= 4 &&
-      buf[0] === 0x50 &&
-      buf[1] === 0x4b &&
-      (buf[2] === 0x03 || buf[2] === 0x05 || buf[2] === 0x07) &&
-      (buf[3] === 0x04 || buf[3] === 0x06 || buf[3] === 0x08)
-    );
-  }
-  const slice = buf.subarray(0, Math.min(buf.length, 8192));
-  return !slice.includes(0);
-}
-
-function decodeBase64(input: string): Buffer | null {
-  const trimmed = input.trim();
-  if (!/^[A-Za-z0-9+/]+={0,2}$/.test(trimmed)) return null;
-  const buf = Buffer.from(trimmed, "base64");
-  if (buf.length === 0) return null;
-  return buf;
-}
-
 router.get(
   "/feed",
   asyncHandler(async (req, res) => {
@@ -677,7 +635,9 @@ router.get(
       return;
     }
     let bytes: Buffer | null = null;
-    let contentType = FILE_TYPES[row.filename.split(".").pop()?.toLowerCase() ?? ""]?.mime || "application/octet-stream";
+    let contentType =
+      BINARY_FILE_BY_EXTENSION[row.filename.split(".").pop()?.toLowerCase() ?? ""]?.mime ||
+      "application/octet-stream";
     if (row.storage_path) {
       try {
         const downloaded = await r2Download(row.storage_path);
@@ -701,7 +661,7 @@ router.get(
       bad(res, "File not found", 404);
       return;
     }
-    const allowed = new Set(Object.values(FILE_TYPES).map((spec) => spec.mime));
+    const allowed = new Set(Object.values(BINARY_FILE_BY_EXTENSION).map((spec) => spec.mime));
     if (!allowed.has(contentType)) contentType = "application/octet-stream";
     const inline = queryOne(req.query.disposition) === "inline";
     const ascii = row.filename.replace(/[^\x20-\x7E]/g, "_").replace(/["\\]/g, "_");
@@ -1365,6 +1325,7 @@ router.delete(
 router.post(
   "/feed/:postId/attachments",
   requireAuth,
+  ingestCommunityAttachment,
   asyncHandler(async (req, res) => {
     const user = userOf(req);
     const postId = param(req.params.postId);
@@ -1372,32 +1333,51 @@ router.post(
       bad(res, "Post not found", 404);
       return;
     }
-    const parsed = attachmentSchema.safeParse(req.body);
-    if (!parsed.success) {
-      bad(res, "Invalid file payload");
-      return;
+    const rawUpload = (req as RequestWithCommunityAttachment).communityAttachmentUpload;
+    let safeName: string | null;
+    let mime: string | null;
+    let buffer: Buffer | null;
+    let dataBase64Payload: string | null = null;
+
+    if (rawUpload) {
+      safeName = sanitizeUploadFilename(rawUpload.filename);
+      if (!safeName) {
+        bad(res, "Invalid filename");
+        return;
+      }
+      mime = resolveUploadMime(safeName, rawUpload.contentType);
+      buffer = rawUpload.buffer;
+    } else {
+      const parsed = attachmentSchema.safeParse(req.body);
+      if (!parsed.success) {
+        bad(res, "Invalid file payload");
+        return;
+      }
+      safeName = sanitizeUploadFilename(parsed.data.filename);
+      if (!safeName) {
+        bad(res, "Invalid filename");
+        return;
+      }
+      mime = resolveUploadMime(safeName, parsed.data.contentType);
+      buffer = decodeBase64Upload(parsed.data.dataBase64);
+      if (!buffer) {
+        bad(res, "Invalid base64 payload");
+        return;
+      }
+      dataBase64Payload = parsed.data.dataBase64.trim();
     }
-    const safeName = sanitizeFilename(parsed.data.filename);
-    if (!safeName) {
-      bad(res, "Invalid filename");
-      return;
-    }
+
     const ext = safeName.split(".").pop()?.toLowerCase() ?? "";
-    const spec = FILE_TYPES[ext];
-    if (!spec || parsed.data.contentType.toLowerCase() !== spec.mime) {
+    const spec = BINARY_FILE_BY_EXTENSION[ext];
+    if (!spec || !mime || !buffer) {
       bad(res, "This file type is not allowed");
-      return;
-    }
-    const buffer = decodeBase64(parsed.data.dataBase64);
-    if (!buffer) {
-      bad(res, "Invalid base64 payload");
       return;
     }
     if (buffer.length > MAX_FILE_BYTES) {
       bad(res, "Each file must be 3 MB or smaller", 413);
       return;
     }
-    if (!magicOk(buffer, spec.kind)) {
+    if (!matchBinaryMagic(buffer, spec.kind)) {
       bad(res, "File contents do not match its type");
       return;
     }
@@ -1437,7 +1417,7 @@ router.post(
     await ensureProfile(user);
     const attachmentId = randomUUID();
     let storagePath: string | null = null;
-    let dataBase64: string | null = null;
+    let dataBase64: string | null = dataBase64Payload;
     if (isR2StorageActive()) {
       storagePath = `community/${postId}/${attachmentId}/${safeName}`;
       const reserved = await reserveStoragePath(user.id, storagePath, buffer.length, user);
@@ -1450,20 +1430,20 @@ router.post(
         return;
       }
       try {
-        await r2Upload(storagePath, buffer, spec.mime);
+        await r2Upload(storagePath, buffer, mime);
       } catch (err) {
         await releaseStoragePath(user.id, storagePath);
         serverError(res, err, "community-feed");
         return;
       }
     } else {
-      dataBase64 = parsed.data.dataBase64.trim();
+      dataBase64 = dataBase64Payload ?? buffer.toString("base64");
     }
     const { error } = await supabaseAdmin.from("community_feed_attachments").insert({
       id: attachmentId,
       post_id: postId,
       filename: safeName,
-      content_type: spec.mime,
+      content_type: mime,
       byte_size: buffer.length,
       storage_path: storagePath,
       data_base64: dataBase64,
@@ -1490,7 +1470,7 @@ router.post(
       attachment: {
         id: attachmentId,
         filename: safeName,
-        contentType: spec.mime,
+        contentType: mime,
         byteSize: buffer.length,
       },
     });

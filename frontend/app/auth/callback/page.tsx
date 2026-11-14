@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import {
   firebaseConsumeRedirectResult,
+  firebaseCurrentUserToken,
   firebaseGoogleSignIn,
   useFirebaseClientAuth,
 } from "@/lib/firebase/client-auth";
@@ -82,19 +83,23 @@ function AuthCallbackContent() {
           // string that round-trip preserved. Deciding on ?firebase_start alone
           // re-triggered signInWithRedirect on the post-redirect land (the
           // marker was never stripped), looping "Finishing sign-in…" forever.
-          const idToken = await firebaseConsumeRedirectResult();
-          if (idToken) {
-            accessToken = idToken;
-          } else if (searchParams.get("firebase_start") === "1") {
+          let idToken = await firebaseConsumeRedirectResult();
+          if (!idToken && searchParams.get("firebase_start") === "1") {
             // Initial handoff: no result yet and the caller asked us to start
             // the redirect. Drop the marker before leaving so Firebase's return
             // URL is clean and this branch can never fire again on the way back.
             window.history.replaceState(null, "", window.location.pathname);
             await firebaseGoogleSignIn("redirect");
             return;
-          } else {
-            throw new Error("The provider did not return a valid session.");
           }
+          if (!idToken) {
+            // Return trip where `getRedirectResult` came back empty (already
+            // consumed, or the SDK restored the user from persistence): read the
+            // token from the signed-in user instead of failing the sign-in.
+            idToken = await firebaseCurrentUserToken();
+          }
+          if (!idToken) throw new Error("The provider did not return a valid session.");
+          accessToken = idToken;
         } else {
           const state = sessionStorage.getItem("neb_oauth_csrf");
           if (!state || !/^[a-f0-9]{64}$/.test(state)) {
@@ -129,6 +134,21 @@ function AuthCallbackContent() {
         // after the exchange succeeds; on failure keep OAuth details for a
         // safe retry.
         clearSupabaseLocalSession();
+
+        // A brand-new Google account is PENDING (bot auto-approves in ~5 min).
+        // The backend answers 200 + { code: "PENDING_APPROVAL", statusToken }
+        // with NO accessToken — that is not a failure, it's the waiting-screen
+        // handoff. The login form handles this in pendingApprovalResult; the
+        // OAuth path must too or every new Google sign-in dies on the generic
+        // "did not issue a session" error below.
+        const oauthBody = response as unknown as { code?: string; statusToken?: string };
+        if (oauthBody.code === "PENDING_APPROVAL") {
+          if (oauthBody.statusToken) rememberPendingSignup(oauthBody.statusToken);
+          rememberAccessOutcome("PENDING");
+          router.replace(WAITING_ROUTE);
+          return;
+        }
+
         if (!response.accessToken) throw new Error("The server did not issue an application session.");
         clearPendingSignup();
         setStoredToken(response.accessToken);

@@ -222,4 +222,40 @@ describe("Social login", () => {
     expect(mocks.signOut).not.toHaveBeenCalled();
     expect(mocks.setStoredToken).not.toHaveBeenCalled();
   });
+
+  it("routes a brand-new Google account (200 + PENDING_APPROVAL body) to the waiting screen", async () => {
+    // The OAuth exchange answers a new PENDING account with HTTP 200 and
+    // { code: "PENDING_APPROVAL", statusToken } and NO app session — the
+    // callback must treat that as the waiting-screen handoff, not an error.
+    const state = "d".repeat(64);
+    sessionStorage.setItem("neb_oauth_csrf", state);
+    mocks.apiFetch.mockResolvedValueOnce({ code: "PENDING_APPROVAL", statusToken: "signed-status-token" });
+
+    render(<AuthCallbackPage />);
+
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledWith("/welcome/pending"));
+    expect(localStorage.getItem("neb_signup_status_token")).toBe("signed-status-token");
+    expect(localStorage.getItem("neb_signup_access_outcome")).toBe("PENDING");
+    expect(mocks.setStoredToken).not.toHaveBeenCalled();
+  });
+
+  it("sends a PENDING password login to the waiting screen instead of signing in", async () => {
+    mocks.loginAction.mockResolvedValue({
+      ok: true,
+      code: "PENDING_APPROVAL",
+      statusToken: "signed-status-token",
+    });
+    render(<LoginForm />);
+    fireEvent.change(screen.getByLabelText("Email Address"), {
+      target: { value: "new.student@example.com" },
+    });
+    fireEvent.change(screen.getByLabelText("Password"), {
+      target: { value: "correct horse battery staple" },
+    });
+    fireEvent.click(screen.getByRole("button", { name: /sign in/i }));
+
+    await waitFor(() => expect(mocks.push).toHaveBeenCalledWith("/welcome/pending"));
+    expect(localStorage.getItem("neb_signup_status_token")).toBe("signed-status-token");
+    expect(mocks.refresh).not.toHaveBeenCalled();
+  });
 });

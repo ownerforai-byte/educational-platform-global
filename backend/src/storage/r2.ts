@@ -12,6 +12,7 @@
  * When the R2_* vars are unset, every function here is a no-op
  * (`active === false`) and uploads fail closed (router requires R2).
  */
+import type { Readable } from "node:stream";
 import {
   S3,
   PutObjectCommand,
@@ -56,21 +57,27 @@ function r2Client(): S3 {
   return client;
 }
 
+export type R2UploadBody = Buffer | Uint8Array | Readable;
+
 export async function r2Upload(
   path: string,
-  buffer: Buffer,
+  body: R2UploadBody,
   contentType: string,
-  options?: { cacheControl?: string },
+  options?: { cacheControl?: string; contentLength?: number },
 ): Promise<{ url: string }> {
   if (!isR2StorageActive()) {
     throw new Error("R2 is not configured");
   }
   const key = path.replace(/^\/+/, "");
+  const length =
+    options?.contentLength ??
+    (Buffer.isBuffer(body) ? body.length : undefined);
   await r2Client().send(
     new PutObjectCommand({
       Bucket: BUCKET_NAME,
       Key: key,
-      Body: buffer,
+      Body: body,
+      ...(length !== undefined ? { ContentLength: length } : {}),
       ContentType: contentType,
       CacheControl: options?.cacheControl ?? "public, max-age=86400",
     }),
@@ -89,30 +96,54 @@ export async function r2Upload(
   return { url: signed };
 }
 
+/** S3/R2 missing-object errors. Callers map these to 404, not 500. */
+export function isR2ObjectMissingError(err: unknown): boolean {
+  if (!err || typeof err !== "object") return false;
+  const rec = err as {
+    name?: string;
+    Code?: string;
+    code?: string;
+    $metadata?: { httpStatusCode?: number };
+  };
+  const token = `${rec.name ?? ""} ${rec.Code ?? ""} ${rec.code ?? ""}`;
+  if (/\bNoSuchKey\b/i.test(token) || /\bNotFound\b/i.test(token)) return true;
+  return rec.$metadata?.httpStatusCode === 404 && !/\bNoSuchBucket\b/i.test(token);
+}
+
 /** Read an object back. Returns null when R2 is off or the key is missing. */
 export async function r2Download(
   path: string,
 ): Promise<{ buffer: Buffer; contentType: string } | null> {
   if (!isR2StorageActive()) return null;
   const key = path.replace(/^\/+/, "");
-  const out = await r2Client().send(
-    new GetObjectCommand({ Bucket: BUCKET_NAME, Key: key }),
-  );
-  const bytes = await out.Body?.transformToByteArray();
-  if (!bytes) return null;
-  return {
-    buffer: Buffer.from(bytes),
-    contentType: out.ContentType || "application/octet-stream",
-  };
+  try {
+    const out = await r2Client().send(
+      new GetObjectCommand({ Bucket: BUCKET_NAME, Key: key }),
+    );
+    const bytes = await out.Body?.transformToByteArray();
+    if (!bytes) return null;
+    return {
+      buffer: Buffer.from(bytes),
+      contentType: out.ContentType || "application/octet-stream",
+    };
+  } catch (err) {
+    if (isR2ObjectMissingError(err)) return null;
+    throw err;
+  }
 }
 
 /** Best-effort delete. Missing keys are ignored by the caller. */
 export async function r2Delete(path: string): Promise<void> {
   if (!isR2StorageActive()) return;
   const key = path.replace(/^\/+/, "");
-  await r2Client().send(
-    new DeleteObjectCommand({ Bucket: BUCKET_NAME, Key: key }),
-  );
+  try {
+    await r2Client().send(
+      new DeleteObjectCommand({ Bucket: BUCKET_NAME, Key: key }),
+    );
+  } catch (err) {
+    if (isR2ObjectMissingError(err)) return;
+    throw err;
+  }
 }
 
 /** Buckets the storage health report walks. */

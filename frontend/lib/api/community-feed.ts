@@ -178,46 +178,59 @@ export function getPerson(userId: string): Promise<PersonResponse> {
   return call(`${ROOT}/people/${userId}`);
 }
 
+const ATTACHMENT_MIME_BY_EXT: Record<string, string> = {
+  png: "image/png",
+  jpg: "image/jpeg",
+  jpeg: "image/jpeg",
+  pdf: "application/pdf",
+  doc: "application/msword",
+  xls: "application/vnd.ms-excel",
+  ppt: "application/vnd.ms-powerpoint",
+  docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  xlsx: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  pptx: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  txt: "text/plain",
+};
+
+/** Browser `File.type` is often empty for office docs; the server allow-list is extension-based. */
+export function mimeForAttachment(file: Pick<File, "name" | "type">): string {
+  const ext = file.name.split(".").pop()?.toLowerCase() ?? "";
+  return ATTACHMENT_MIME_BY_EXT[ext] || file.type || "application/octet-stream";
+}
+
+/** Aligns with `backend/src/storage/binary-upload-policy.ts` extension map. */
+export const UPLOAD_FILENAME_HEADER = "x-upload-filename";
+
 export function uploadAttachment(
   postId: string,
   file: File,
   onProgress: (fraction: number) => void,
 ): Promise<FeedAttachment> {
   return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onerror = () => reject(new Error("Could not read that file"));
-    reader.onload = () => {
-      const result = typeof reader.result === "string" ? reader.result : "";
-      const comma = result.indexOf(",");
-      const dataBase64 = comma >= 0 ? result.slice(comma + 1) : result;
-      const xhr = new XMLHttpRequest();
-      xhr.open("POST", `${ROOT}/feed/${postId}/attachments`);
-      xhr.withCredentials = true;
-      xhr.setRequestHeader("Content-Type", "application/json");
-      xhr.upload.onprogress = (event) => {
-        if (event.lengthComputable && event.total > 0) onProgress(event.loaded / event.total);
-      };
-      xhr.onerror = () => reject(new Error("Upload failed"));
-      xhr.onload = () => {
-        let payload: { attachment?: FeedAttachment; error?: string } = {};
-        try {
-          payload = JSON.parse(xhr.responseText) as { attachment?: FeedAttachment; error?: string };
-        } catch {
-          payload = {};
-        }
-        if (xhr.status < 200 || xhr.status >= 300 || !payload.attachment) {
-          reject(Object.assign(new Error(payload.error || "Upload failed"), { status: xhr.status }));
-          return;
-        }
-        onProgress(1);
-        resolve(payload.attachment);
-      };
-      xhr.send(JSON.stringify({
-        filename: file.name,
-        contentType: file.type || "application/octet-stream",
-        dataBase64,
-      }));
+    const xhr = new XMLHttpRequest();
+    const mime = mimeForAttachment(file);
+    xhr.open("POST", `${ROOT}/feed/${postId}/attachments`);
+    xhr.withCredentials = true;
+    xhr.setRequestHeader("Content-Type", mime);
+    xhr.setRequestHeader(UPLOAD_FILENAME_HEADER, encodeURIComponent(file.name));
+    xhr.upload.onprogress = (event) => {
+      if (event.lengthComputable && event.total > 0) onProgress(event.loaded / event.total);
     };
-    reader.readAsDataURL(file);
+    xhr.onerror = () => reject(new Error("Upload failed"));
+    xhr.onload = () => {
+      let payload: { attachment?: FeedAttachment; error?: string } = {};
+      try {
+        payload = JSON.parse(xhr.responseText) as { attachment?: FeedAttachment; error?: string };
+      } catch {
+        payload = {};
+      }
+      if (xhr.status < 200 || xhr.status >= 300 || !payload.attachment) {
+        reject(Object.assign(new Error(payload.error || "Upload failed"), { status: xhr.status }));
+        return;
+      }
+      onProgress(1);
+      resolve(payload.attachment);
+    };
+    xhr.send(file);
   });
 }
