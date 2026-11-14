@@ -148,16 +148,19 @@ export function addComment(postId: string, body: string): Promise<{ comment: Fee
   });
 }
 
-/** Post author approves a curriculum-grounded Study Assistant comment on their post. */
-export function approveAssistantReply(postId: string): Promise<{
+/** One-click: generate and publish a curriculum-grounded Veer comment. Idempotent per post. */
+export function publishAssistantReply(postId: string): Promise<{
   comment: FeedComment;
   assistantReply: FeedAssistantReply;
 }> {
   return call(`${ROOT}/feed/${postId}/ai-assistant/reply`, {
     method: "POST",
-    body: JSON.stringify({ approve: true }),
+    body: JSON.stringify({}),
   });
 }
+
+/** @deprecated Use {@link publishAssistantReply} — kept for older callers. */
+export const approveAssistantReply = publishAssistantReply;
 
 export function updateComment(postId: string, commentId: string, body: string): Promise<{ comment: FeedComment }> {
   return call(`${ROOT}/feed/${postId}/comments/${commentId}`, {

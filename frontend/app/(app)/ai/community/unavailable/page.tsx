@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CommunityUnavailable } from "@/features/community/community-board";
+import { CommunityUnavailable } from "@/features/community/community-helpers";
 
 export const metadata: Metadata = {
   title: "Community post unavailable",

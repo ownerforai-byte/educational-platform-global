@@ -59,6 +59,7 @@ vi.mock("@/lib/api/community-feed", () => ({
   deleteAttachment: vi.fn(),
   uploadAttachment: vi.fn(),
   approveAssistantReply: vi.fn(),
+  publishAssistantReply: vi.fn(),
   sharePath: (id: string) => `/ai/community/posts/${id}`,
   attachmentFileUrl: (id: string) => `/api/community/feed/attachments/${id}/file`,
 }));

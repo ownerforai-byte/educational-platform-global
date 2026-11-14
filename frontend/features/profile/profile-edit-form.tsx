@@ -275,10 +275,10 @@ export function ProfileEditForm() {
             </div>
           </details>
           <div className="flex flex-wrap gap-2">
-            <Button onClick={() => void onSave()} disabled={saving || !dirty}>
+            <Button className="min-h-11" onClick={() => void onSave()} disabled={saving || !dirty} aria-label={saving ? "Saving profile" : "Save profile"}>
               {saving ? "Saving…" : "Save changes"}
             </Button>
-            <Button type="button" variant="outline" onClick={onCancel} disabled={!dirty || saving}>
+            <Button type="button" variant="outline" className="min-h-11" onClick={onCancel} disabled={!dirty || saving}>
               Cancel
             </Button>
             <Button variant="outline" asChild>

@@ -63,8 +63,8 @@ export function FollowButton({
         aria-pressed={following}
         aria-label={following ? `Unfollow @${username}` : `Follow @${username}`}
         className={cn(
-          "inline-flex shrink-0 items-center gap-1 rounded-full border font-medium transition-colors",
-          compact ? "h-7 px-2.5 text-[11px]" : "h-8 px-3 text-xs",
+          "inline-flex min-h-11 min-w-11 shrink-0 items-center gap-1 rounded-full border font-medium transition-colors",
+          compact ? "h-11 px-3 text-[11px]" : "h-11 px-3 text-xs",
           following
             ? "border-border bg-muted/50 text-foreground hover:bg-muted"
             : "border-primary/40 bg-primary/10 text-primary hover:bg-primary/15",

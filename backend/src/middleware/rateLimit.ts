@@ -55,8 +55,16 @@ const AI_IMAGE_MAX_REQUESTS = positiveNumber(
   process.env.AI_IMAGE_RATE_LIMIT_MAX_REQUESTS,
   12,
 );
+const COMMUNITY_AI_REPLY_MAX_REQUESTS = positiveNumber(
+  process.env.COMMUNITY_AI_REPLY_MAX_REQUESTS,
+  6,
+);
+const COMMUNITY_AI_REPLY_WINDOW_MS = positiveNumber(
+  process.env.COMMUNITY_AI_REPLY_WINDOW_MS,
+  10 * 60 * 1000,
+);
 
-type Tier = "support" | "auth" | "oauth" | "password-reset" | "guest-ai" | "ai-image" | "default" | "default-unlimited";
+type Tier = "support" | "auth" | "oauth" | "password-reset" | "guest-ai" | "ai-image" | "community-ai-reply" | "default" | "default-unlimited";
 
 /** Which tier does this request fall into? */
 function tierFor(originalUrl: string | undefined): Tier {
@@ -118,6 +126,7 @@ const TIERS: Record<Tier, TierLimit> = {
   "password-reset": { max: PASSWORD_RESET_MAX_REQUESTS, windowMs: PASSWORD_RESET_WINDOW_MS },
   "guest-ai": { max: MAX_REQUESTS, windowMs: WINDOW_MS },
   "ai-image": { max: AI_IMAGE_MAX_REQUESTS, windowMs: WINDOW_MS },
+  "community-ai-reply": { max: COMMUNITY_AI_REPLY_MAX_REQUESTS, windowMs: COMMUNITY_AI_REPLY_WINDOW_MS },
   default: { max: MAX_REQUESTS, windowMs: WINDOW_MS },
   "default-unlimited": { max: Infinity, windowMs: WINDOW_MS },
 };
@@ -143,6 +152,19 @@ export function supportRequestLimit(req: Request, res: Response, next: NextFunct
     return;
   }
   void applyLimit(req, res, next, "support", user.id);
+}
+
+/**
+ * Per-account budget for one-click Veer replies. Mount after `requireAuth`.
+ * Idempotency (one reply per post) is enforced in the route; this only bounds generation spam.
+ */
+export function communityAiReplyLimit(req: Request, res: Response, next: NextFunction) {
+  const user = (req as AuthedRequest).user;
+  if (!user) {
+    res.status(401).json({ error: "Unauthorized" });
+    return;
+  }
+  void applyLimit(req, res, next, "community-ai-reply", user.id);
 }
 
 async function applyLimit(

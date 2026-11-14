@@ -43,12 +43,12 @@ Full gate before pushing `main`: `npm run check:all`.
 
 ## Bot
 
-- [ ] Same id `rn-study-assistant` (no second bot).
-- [ ] Badge on comments + profile; not a human “verified” control.
-- [ ] Approve/reply publishes a real comment; refresh keeps it; comment count updates.
-- [ ] Repeat click does not duplicate (`community_feed_ai_replies`).
-- [ ] Unauthorized invoke 401/403.
-- [ ] One-click for non-authors: **not implemented** until P2.
+- [x] Same id `rn-study-assistant` (no second bot).
+- [x] Badge on comments + profile; not a human “verified” control.
+- [x] One-click reply publishes a real comment; refresh keeps it; comment count updates.
+- [x] Repeat click does not duplicate (`community_feed_ai_replies`).
+- [x] Unauthorized invoke 401.
+- [x] One-click for non-authors (any approved session).
 
 ## Global buttons
 

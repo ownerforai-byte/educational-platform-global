@@ -157,11 +157,11 @@ export function PublicProfileShell({
           />
         ) : null}
         {profile.isYou ? (
-          <Button size="sm" variant="outline" asChild>
+          <Button size="sm" variant="outline" asChild className="min-h-11">
             <Link href="/profile/edit">Edit profile</Link>
           </Button>
         ) : null}
-        <Button size="sm" variant="outline" onClick={() => void copyLink()}>
+        <Button size="sm" variant="outline" className="min-h-11" aria-label="Copy profile link" onClick={() => void copyLink()}>
           Copy link
         </Button>
       </div>
@@ -172,9 +172,10 @@ export function PublicProfileShell({
             key={tab}
             href={tabHref(profile.username ?? username, tab)}
             className={cn(
-              "rounded-md px-3 py-1.5 text-sm capitalize",
+              "min-h-11 rounded-md px-3 py-2 text-sm capitalize",
               activeTab === tab ? "bg-muted font-medium" : "text-muted-foreground hover:text-foreground",
             )}
+            aria-current={activeTab === tab ? "page" : undefined}
           >
             {tab}
           </Link>

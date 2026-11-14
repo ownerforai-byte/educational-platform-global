@@ -41,7 +41,7 @@ export const inputClass =
   "w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm outline-none transition-colors duration-200 ease-out focus-visible:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/25";
 
 export const chipBtn = cn(
-  "inline-flex items-center gap-1.5 rounded-xl border border-border/80 bg-background px-3 py-1.5 text-xs font-semibold text-muted-foreground",
+  "inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/80 bg-background px-3 py-1.5 text-xs font-semibold text-muted-foreground",
   motionEase,
   "transition-[colors,transform,box-shadow,border-color]",
   "hover:border-primary/40 hover:bg-muted/50 hover:text-foreground",
@@ -50,7 +50,7 @@ export const chipBtn = cn(
 );
 
 export const toolbarBtn = cn(
-  "inline-flex items-center gap-1 rounded-lg border border-border/80 bg-background px-2.5 py-1.5 text-xs font-semibold text-muted-foreground",
+  "inline-flex min-h-11 items-center gap-1 rounded-lg border border-border/80 bg-background px-2.5 py-1.5 text-xs font-semibold text-muted-foreground",
   motionEase,
   "transition-[colors,transform,border-color]",
   "hover:border-primary/40 hover:text-foreground",
@@ -60,7 +60,7 @@ export const toolbarBtn = cn(
 );
 
 export const actionBtn = cn(
-  "inline-flex items-center gap-1.5 rounded-lg px-2 py-1 text-sm font-medium",
+  "inline-flex min-h-11 min-w-11 items-center gap-1.5 rounded-lg px-2 py-1 text-sm font-medium",
   motionEase,
   "transition-[colors,transform,background-color]",
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
@@ -69,7 +69,7 @@ export const actionBtn = cn(
 );
 
 export const primaryCta = cn(
-  "inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground",
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground",
   "shadow-sm shadow-primary/25",
   motionEase,
   "transition-[background-color,transform,box-shadow]",

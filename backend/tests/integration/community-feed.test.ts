@@ -7,6 +7,7 @@ interface Row {
 
 const memory = vi.hoisted(() => {
   const USER_ID = "11111111-1111-4111-8111-111111111111";
+  const OTHER_ID = "22222222-2222-4222-8222-222222222222";
   const tables: Record<string, Row[]> = {};
 
   function reset() {
@@ -17,6 +18,14 @@ const memory = vi.hoisted(() => {
         role: "member",
         access_status: "ACTIVE",
         full_name: "Member Student",
+        plan: "member",
+        premium_status: false,
+      },
+      {
+        id: OTHER_ID,
+        role: "member",
+        access_status: "ACTIVE",
+        full_name: "Other Student",
         plan: "member",
         premium_status: false,
       },
@@ -119,6 +128,18 @@ const memory = vi.hoisted(() => {
       if (this.done) return this.result;
       this.done = true;
       if (this.op === "insert") {
+        if (this.table === "community_feed_ai_replies") {
+          const duplicate = this.payload.some((row) =>
+            tables[this.table].some((existing) => existing.post_id === row.post_id),
+          );
+          if (duplicate) {
+            this.result = {
+              data: null,
+              error: { message: "duplicate key value violates unique constraint", code: "23505" },
+            } as { data: Row | Row[] | null; error: null };
+            return this.result;
+          }
+        }
         tables[this.table].push(...this.payload.map((row) => ({ ...row })));
         const stored = tables[this.table].slice(-this.payload.length);
         this.result = {
@@ -170,6 +191,18 @@ const memory = vi.hoisted(() => {
     },
     auth: {
       async getUser(token?: string) {
+        if (token === "other-token") {
+          return {
+            data: {
+              user: {
+                id: OTHER_ID,
+                email: "other@example.com",
+                user_metadata: { full_name: "Other Student" },
+              },
+            },
+            error: null,
+          };
+        }
         if (token !== "member-token") {
           return { data: { user: null }, error: { message: "Invalid JWT" } };
         }
@@ -188,10 +221,11 @@ const memory = vi.hoisted(() => {
   };
 
   reset();
-  return { client, reset, USER_ID };
+  return { client, reset, USER_ID, OTHER_ID };
 });
 
 const USER_ID = memory.USER_ID;
+const OTHER_ID = memory.OTHER_ID;
 
 vi.mock("../../src/db/supabase", () => ({
   supabaseAdmin: memory.client,
@@ -381,7 +415,7 @@ describe("community feed", () => {
     expect(missing.status).toBe(404);
   });
 
-  it("requires post author approval before publishing a Study Assistant comment", async () => {
+  it("lets any signed-in member one-click publish a Veer comment and rejects duplicates", async () => {
     const created = await fetch(`${base}/feed`, {
       method: "POST",
       headers: memberHeaders(true),
@@ -398,7 +432,7 @@ describe("community feed", () => {
     const denied = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ approve: true }),
+      body: JSON.stringify({}),
     });
     expect(denied.status).toBe(401);
 
@@ -409,48 +443,71 @@ describe("community feed", () => {
     });
     expect(badBody.status).toBe(400);
 
-    const detailBefore = await fetch(`${base}/feed/${postId}`, { headers: memberHeaders() });
-    const before = await detailBefore.json() as {
+    const guestDetail = await fetch(`${base}/feed/${postId}`);
+    const guest = await guestDetail.json() as {
+      post: { assistantReply: { posted: boolean; canApprove: boolean } };
+    };
+    expect(guest.post.assistantReply).toEqual({ posted: false, canApprove: false });
+
+    const otherBefore = await fetch(`${base}/feed/${postId}`, {
+      headers: { Authorization: "Bearer other-token" },
+    });
+    const otherView = await otherBefore.json() as {
       post: { assistantReply: { posted: boolean; canApprove: boolean }; commentCount: number };
     };
-    expect(before.post.assistantReply.posted).toBe(false);
-    expect(before.post.assistantReply.canApprove).toBe(true);
-    expect(before.post.commentCount).toBe(0);
+    expect(otherView.post.assistantReply.posted).toBe(false);
+    expect(otherView.post.assistantReply.canApprove).toBe(true);
+    expect(otherView.post.commentCount).toBe(0);
 
-    const approved = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
+    const published = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
       method: "POST",
-      headers: memberHeaders(true),
-      body: JSON.stringify({ approve: true }),
+      headers: {
+        Authorization: "Bearer other-token",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({}),
     });
-    expect(approved.status).toBe(201);
-    const approvedBody = await approved.json() as {
+    expect(published.status).toBe(201);
+    const publishedBody = await published.json() as {
       comment: { body: string; author: { id: string; fullName: string; role: string | null } };
       assistantReply: { posted: boolean; canApprove: boolean };
     };
-    expect(approvedBody.comment.author.id).toBe("rn-study-assistant");
-    expect(approvedBody.comment.author.fullName).toBe("Community bot");
-    expect(approvedBody.comment.author.role).toBe("assistant");
-    expect(approvedBody.comment.body).toContain("assistant");
-    expect(approvedBody.assistantReply).toEqual({ posted: true, canApprove: false });
+    expect(publishedBody.comment.author.id).toBe("rn-study-assistant");
+    expect(publishedBody.comment.author.fullName).toBe("Community bot");
+    expect(publishedBody.comment.author.role).toBe("assistant");
+    expect(publishedBody.comment.body).toContain("assistant");
+    expect(publishedBody.assistantReply).toEqual({ posted: true, canApprove: false });
 
-    const duplicate = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
+    const duplicateAuthor = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
       method: "POST",
       headers: memberHeaders(true),
       body: JSON.stringify({ approve: true }),
     });
-    expect(duplicate.status).toBe(409);
+    expect(duplicateAuthor.status).toBe(409);
+
+    const duplicateOther = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer other-token",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({}),
+    });
+    expect(duplicateOther.status).toBe(409);
 
     const detailAfter = await fetch(`${base}/feed/${postId}`, { headers: memberHeaders() });
     const after = await detailAfter.json() as {
       post: {
         commentCount: number;
-        comments: Array<{ author: { role: string | null } }>;
-        assistantReply: { posted: boolean };
+        comments: Array<{ author: { role: string | null; id: string } }>;
+        assistantReply: { posted: boolean; canApprove: boolean };
       };
     };
     expect(after.post.commentCount).toBe(1);
-    expect(after.post.assistantReply.posted).toBe(true);
+    expect(after.post.assistantReply).toEqual({ posted: true, canApprove: false });
     expect(after.post.comments[0]?.author.role).toBe("assistant");
+    expect(after.post.comments[0]?.author.id).toBe("rn-study-assistant");
+    expect(after.post.comments[0]?.author.id).not.toBe(OTHER_ID);
   });
 
   it("accepts a PDF when the browser sends application/octet-stream", async () => {
@@ -549,5 +606,39 @@ describe("community feed", () => {
     const uploadedBody = await uploaded.json() as { attachment: { filename: string; contentType: string } };
     expect(uploadedBody.attachment.filename).toBe("diagram.png");
     expect(uploadedBody.attachment.contentType).toBe("image/png");
+  });
+
+  it("accepts a raw binary PDF and returns the same bytes on download", async () => {
+    const created = await fetch(`${base}/feed`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({
+        title: "Raw PDF notes",
+        body: "Direct PDF body upload.",
+        category: "physics",
+      }),
+    });
+    expect(created.status).toBe(201);
+    const { post } = await created.json() as { post: { id: string } };
+    const pdf = Buffer.from("%PDF-1.4 raw-binary-fixture");
+
+    const uploaded = await fetch(`${base}/feed/${post.id}/attachments`, {
+      method: "POST",
+      headers: {
+        ...memberHeaders(),
+        "Content-Type": "application/pdf",
+        "X-Upload-Filename": encodeURIComponent("notes.pdf"),
+      },
+      body: pdf,
+    });
+    expect(uploaded.status).toBe(201);
+    const uploadedBody = await uploaded.json() as { attachment: { id: string; filename: string; contentType: string } };
+    expect(uploadedBody.attachment.filename).toBe("notes.pdf");
+    expect(uploadedBody.attachment.contentType).toBe("application/pdf");
+
+    const file = await fetch(`${base}/feed/attachments/${uploadedBody.attachment.id}/file`);
+    expect(file.status).toBe(200);
+    expect(file.headers.get("content-type")).toContain("application/pdf");
+    expect(Buffer.from(await file.arrayBuffer()).equals(pdf)).toBe(true);
   });
 });

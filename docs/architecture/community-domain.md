@@ -44,11 +44,11 @@ Default feed:
 `GET  /api/community/feed/attachments/:id/file`  
 `DELETE /api/community/feed/attachments/:id`
 
-Upload is JSON `{ filename, contentType, dataBase64 }` (no multer). Server infers MIME from extension when the browser sends empty/`octet-stream`. Magic bytes must match. R2 key: `community/{postId}/{attachmentId}/{safeName}`.
+Upload is raw binary (`Content-Type` + `X-Upload-Filename`) or JSON `{ filename, contentType, dataBase64 }`. Server infers MIME from extension when the browser sends empty/`octet-stream`. Magic bytes must match. R2 key: `community/{postId}/{attachmentId}/{safeName}`.
 
 ## Bot
 
-Canonical id `rn-study-assistant` (`packages/shared/src/constants/community-bot.ts`). Comments use that `author_id`. Overlay in `resolveFeedAuthor`. Generation: `generateCommunityAssistantReply` + `community_feed_ai_replies`. Today the post **author** must approve; one-click for other authorized users is P2.
+Canonical id `rn-study-assistant` (`packages/shared/src/constants/community-bot.ts`). Comments use that `author_id`. Overlay in `resolveFeedAuthor`. Generation: `generateCommunityAssistantReply` + `community_feed_ai_replies`. Any approved session may one-click **Answer with Veer**; the reply publishes immediately as a bot comment. `community_feed_ai_replies.post_id` is the idempotency key (409 on repeat). Per-account rate limit: `communityAiReplyLimit`. Badge is **Verified AI**, not a human blue check.
 
 ## UID notes
 

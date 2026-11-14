@@ -7,6 +7,7 @@ import { FollowButton } from "@/features/profile/follow-button";
 import { Bot, Clock3, UserRound } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { isCommunityBot, resolveFeedAuthor } from "@/lib/community-bot";
+import { BotIdentityBadge } from "@/features/community/bot-identity-badge";
 import { planLabel } from "@/features/community/community-ui";
 
 function formatPostWhen(iso: string): string {
@@ -69,10 +70,7 @@ export function PostAuthorHeader({
             {resolved.fullName}
           </Link>
           {bot ? (
-            <span className="community-bot-badge inline-flex items-center gap-0.5 rounded-md border border-primary/20 bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary shadow-sm shadow-primary/10">
-              <Bot className="relative z-[1] h-3 w-3" aria-hidden />
-              <span className="relative z-[1]">Bot</span>
-            </span>
+            <BotIdentityBadge compact={compact} />
           ) : (
             <span className="rounded-md border border-border/80 bg-muted/40 px-1.5 py-0.5 text-[10px] font-semibold capitalize text-muted-foreground">
               {planLabel(resolved.plan)}

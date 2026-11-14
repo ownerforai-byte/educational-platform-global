@@ -81,7 +81,7 @@ Rules:
 
 **Today (canonical):**
 
-- Feed: `frontend/features/community/community-board.tsx` (+ `post-author-header.tsx`, `community-ui.ts`)
+- Feed: `frontend/features/community/community-board.tsx` + `community-feed.tsx` (shell), `post-composer.tsx` (only on `/new` and edit), `bot-answer-button.tsx`, `bot-identity-badge.tsx`, `post-author-header.tsx`, `community-ui.ts`
 - Spaces: `frontend/components/study/community-view.tsx`, `community-space-view.tsx`, `community-thread-view.tsx`
 - Profile: `frontend/app/(app)/profile/page.tsx`, `frontend/features/profile/**`, `frontend/lib/api/profile.ts`
 
@@ -144,14 +144,13 @@ Client File
 
 Profile images skip JSON; they are raw `image/*` bodies, Sharp → WebP, then R2 `profiles/{uid}/…`.
 
-## AI bot workflow (existing)
+## AI bot workflow
 
-1. Eligible question post; author (today) POSTs `/feed/:postId/ai-assistant/reply` with `{ approve: true }`.
+1. Signed-in viewer POSTs `/feed/:postId/ai-assistant/reply` (empty JSON or `{ approve: true }`).
 2. `generateCommunityAssistantReply` grounds on curriculum.
 3. Comment inserted as `author_id = rn-study-assistant`; ledger row in `community_feed_ai_replies`.
-4. UI overlays canonical name + `/avatars/community-bot.svg`.
-
-**Target P2:** one click for authorized viewers, idempotent, verified-bot badge distinct from human verification.
+4. UI overlays canonical name + `/avatars/community-bot.svg` and a **Verified AI** badge (not a human tick).
+5. Repeat POST is 409; per-account generation is rate-limited.
 
 ## Global button placement
 

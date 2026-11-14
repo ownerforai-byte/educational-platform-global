@@ -55,6 +55,6 @@ Current Feed wiring:
 | Like | `POST /api/community/feed/:id/like` |
 | Comment | `POST /api/community/feed/:id/comments` |
 | Delete post | `DELETE /api/community/feed/:id` |
-| Assistant reply | `POST /api/community/feed/:id/ai-assistant/reply` |
+| Answer with Veer | `POST /api/community/feed/:id/ai-assistant/reply` (one-click, 409 if posted) |
 | Follow | profile follow endpoints |
 | Save profile | `PATCH /api/profile/me` |
