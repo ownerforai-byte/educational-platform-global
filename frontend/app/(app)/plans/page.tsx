@@ -18,6 +18,7 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ACCESS_TAGLINES, type AccessLevel } from "@/lib/core/access-level";
 import { SectionMatrix } from "@/components/plans/section-matrix";
+import { PlansPageFooter } from "@/components/plans/plans-page-footer";
 
 /**
  * /plans — the public plan comparison.
@@ -220,12 +221,7 @@ export default function PlansPage() {
 
       <PlansGuidance />
 
-      {/* ── Footer note ── */}
-      <div className="rounded-2xl border border-border/70 bg-muted/20 p-5 text-center">
-        <p className="text-xs text-muted-foreground">
-          After signing, the account is approved by the system verification and administrative approval.
-        </p>
-      </div>
+      <PlansPageFooter />
     </div>
   );
 }

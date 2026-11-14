@@ -48,7 +48,9 @@ R2_PUBLIC_BASE_URL=
 
 ```bash
 NEXT_PUBLIC_FIREBASE_API_KEY=AIzaSyBGJm9-JoDwSGp7VAyc_rlsIo6R8NUOO5g
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=rn01-af00b.firebaseapp.com
+# Auth handler domain — your own domain, NOT the default rn01-af00b.firebaseapp.com.
+# See "Custom domain instead of *.firebaseapp.com" below before switching.
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=auth.harindrasah.com.np
 NEXT_PUBLIC_FIREBASE_PROJECT_ID=rn01-af00b
 NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=rn01-af00b.firebasestorage.app
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=906118704805
@@ -58,13 +60,48 @@ NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-MYB98RBWSH
 NEXT_PUBLIC_FIREBASE_VAPID_KEY=
 ```
 
-## Access bot (Cloud Functions + FCM)
+## Custom domain instead of `*.firebaseapp.com`
 
-See functions under `firebase/functions/`. Deploy when ready:
+Google sign-in popups/redirects and Firebase email action links are served from
+`NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN` (default: `rn01-af00b.firebaseapp.com`).
+To show `harindrasah.com.np` instead — apex/www stays on Vercel, so use a
+dedicated subdomain for Firebase:
+
+1. **Firebase Console → Hosting → Add custom domain** →
+   `auth.harindrasah.com.np`. Add the DNS record Firebase prints
+   (a `CNAME` → `rn01-af00b.web.app`). Firebase Hosting then serves the auth
+   handler on it automatically (`/__/auth/handler`, `/__/auth/action`) —
+   no `firebase.json` change needed, works on the Spark plan.
+2. **Firebase Console → Authentication → Settings → Authorized domains** →
+   Add domain `auth.harindrasah.com.np` (required for OAuth redirects).
+3. Set `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=auth.harindrasah.com.np` in Vercel
+   env **and** `frontend/.env.local`, then redeploy the frontend.
+
+Notes:
+
+- Email/password sign-in is unaffected; only Google popup/redirect and Firebase
+  email action links use this domain.
+- Password-reset / verification emails open Firebase's action URL first, then
+  land on the `continueUrl` passed by the backend (already wired in
+  `backend/src/auth/firebase-admin-auth.ts`), so users end up on your domain.
+- Want `www.harindrasah.com.np` instead of `auth.`? That means pointing the
+  apex/www DNS at Firebase Hosting, which would take the site away from Vercel —
+  only do that if you intend to serve the app from Firebase Hosting.
+- Applied but not yet active: `frontend/.env.local` already points at
+  `auth.harindrasah.com.np`; Google sign-in breaks until steps 1–2 are done —
+  temporarily revert it to `rn01-af00b.firebaseapp.com` if you need it sooner.
+
+## Approval bot (Cloud Functions — Firestore only)
+
+Supabase is **storage-only** for files/buckets; access automation on Firebase
+uses Firestore `profiles` (PENDING → ACTIVE after 5 min). See
+`firebase/functions/README.md`.
 
 ```bash
 cd firebase
-npx -y firebase-tools@latest deploy --only functions
+npx -y firebase-tools@latest deploy --only functions:approvalBotTick,functions:approvalBotRunNow
 ```
 
-Set secrets `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` for the scheduler.
+No Supabase secrets are required for this deploy. Delete legacy remote functions
+`accessBotTick`, `accessBotRunNow`, and `creditsDailyReset` if they still exist
+from older bundles.

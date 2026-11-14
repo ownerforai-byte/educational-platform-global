@@ -1,17 +1,22 @@
 # Firebase Cloud Functions — deploy note
 
-## Firebase approval bot (Supabase→Firebase auth migration)
+## What ships from this bundle
 
-- `src/jobs/approvePendingProfiles.ts` — every run finds Firestore `profiles`
+Only the **Firestore approval bot** is exported and deployed:
+
+- `src/jobs/approvePendingProfiles.ts` — each run finds Firestore `profiles`
   with `access_status == "PENDING"` whose `created_at` is at least 300 s
   (5 min) old and sets `access_status: "ACTIVE"`.
 - Exported from `src/index.ts`:
-  - `approvalBotTick` — Cloud Scheduler (`every 1 minutes`), the primary trigger.
-  - `approvalBotRunNow` — HTTPS manual/health trigger (POST; guarded by the
-    `ACCESS_BOT_RUN_KEY` param + `x-access-bot-key` header when set).
-- Safe to run repeatedly: only `PENDING` docs are written (a transaction
-  re-checks status first), missing/unparseable `created_at` is logged and
-  skipped, and every decision is logged with the profile uid.
+  - `approvalBotTick` — Cloud Scheduler (`every 1 minutes`), primary trigger.
+  - `approvalBotRunNow` — HTTPS manual/health trigger (POST; guarded by
+    `ACCESS_BOT_RUN_KEY` + `x-access-bot-key` when set).
+
+**Supabase** is storage-only for the product direction. The older Supabase
+Postgres jobs (`accessBot*`, `creditsDailyReset`) are kept under
+`legacy-supabase-jobs/` for reference only — they are **not** compiled or
+deployed. Platform auth/profiles live on Firebase/Firestore; daily credits
+safety net remains `ensureDailyCredits` on the Render API (see backend).
 
 ## Deploy commands
 
@@ -19,15 +24,27 @@ Run from the `firebase/` directory (project `rn01-af00b`, see `.firebaserc`).
 The predeploy hook runs `npm run build` (`tsc`) automatically.
 
 ```bash
-# All functions (approval bot + existing access bot + credits reset)
-firebase deploy --only functions
-
-# Approval bot only
+# Approval bot only (recommended)
 firebase deploy --only functions:approvalBotTick,functions:approvalBotRunNow
+
+# Same as targeting both exports explicitly
+firebase deploy --only functions
 
 # Tail logs after deploy
 firebase functions:log
 ```
 
-Do not run these from inside the agent working tree unless the coordinator
-asks for it — deploys are performed by the integrator.
+### Remove stale remote functions (one-time)
+
+If `accessBotTick`, `accessBotRunNow`, or `creditsDailyReset` still exist in
+the Firebase console from an earlier deploy, delete them after the trim:
+
+```bash
+firebase functions:delete accessBotTick accessBotRunNow creditsDailyReset --force
+```
+
+No Supabase secrets are required for the approval bot. Optional param:
+`ACCESS_BOT_RUN_KEY` for manual run endpoints.
+
+Do not run deploys from an agent working tree unless the coordinator asks —
+production deploys are performed by the integrator.

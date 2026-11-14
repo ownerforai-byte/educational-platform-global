@@ -119,7 +119,7 @@ Whenever you need to know how the platform works and where things route, refer O
 | `backend/src/services/credit.service.ts` | CONTENT spark business rules + CAS (real home); `utils/credits.ts` re-exports. |
 | `backend/src/lib/cache.ts` | In-process LRU+TTL for read-only curriculum loaders; pairs with CDN Cache-Control. |
 | `packages/shared/src/api/*` | Shared zod API contracts + envelope types (`@rn/shared/api`). |
-| `firebase/functions/src/jobs/resetCredits.ts` | Scheduled daily spark refill (replaces web-process node-cron). |
+| `firebase/functions/src/index.ts` | Cloud Functions exports: Firestore `approvalBotTick` / `approvalBotRunNow` only (Supabase jobs archived under `firebase/functions/legacy-supabase-jobs/`). |
 | `frontend/lib/state/user-state-core.ts` (shim: `frontend/lib/user-state-core.ts`) | Pure conflict policy: `mergeById` (newest edit wins), bounded single-change-per-namespace queue, payload equality. |
 | `frontend/components/study/notes-sync.tsx` | Invisible sync driver for `/my-notes` (mount, reconnect, tab visibility). |
 
