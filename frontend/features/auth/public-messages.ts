@@ -30,15 +30,27 @@ function errorMessage(err: unknown): string {
   return String(err).toLowerCase();
 }
 
+/** Firebase attaches a machine code (`auth/invalid-credential`, …) on `err.code`. */
+function authErrorCode(err: unknown): string {
+  return String((err as { code?: string } | null)?.code ?? "").toLowerCase();
+}
+
 function looksLikeOffline(message: string): boolean {
-  return /failed to fetch|networkerror|network error|load failed|offline|internet|enotfound|econnrefused/.test(
+  return /failed to fetch|networkerror|network error|load failed|offline|internet|enotfound|econnrefused|network-request-failed/.test(
     message,
   );
 }
 
-function looksLikeInvalidLogin(message: string, status: number | undefined): boolean {
+function looksLikeInvalidLogin(message: string, status: number | undefined, code: string): boolean {
   if (status === 401) return true;
-  return /auth\/(wrong-password|invalid-credential|invalid-email|user-not-found|invalid-login-credentials)/.test(
+  // Firebase machine codes for bad credentials.
+  if (/^auth\/(wrong-password|invalid-credential|invalid-email|user-not-found|invalid-login-credentials)$/.test(code)) {
+    return true;
+  }
+  // Message fallbacks — the modern SDK returns "The supplied auth credential
+  // is incorrect…" with no `auth/...` code in the text, which the old regex
+  // missed and wrongly reported as a server outage.
+  return /wrong[- ]password|invalid[- ]credential|invalid[- ]email|user[- ]not[- ]found|invalid[- ]login[- ]credentials|supplied auth credential|no account|user does not exist|incorrect.*password|email.*password.*invalid/i.test(
     message,
   );
 }
@@ -60,18 +72,31 @@ export function authFailureMessage(
 
   const message = errorMessage(err);
   const status = errorStatus(err);
+  const code = authErrorCode(err);
 
   if (looksLikeOffline(message)) {
     return AUTH_NO_CONNECTION;
   }
 
-  if (kind === "login" && looksLikeInvalidLogin(message, status)) {
+  if (kind === "login" && looksLikeInvalidLogin(message, status, code)) {
     return AUTH_INVALID_CREDENTIALS;
   }
 
   // Signup form validation only — not a server outage.
   if (kind === "signup" && status === undefined && message === "validation") {
     return AUTH_TRY_AGAIN;
+  }
+
+  // Specific, actionable copy for the common non-credential failures so the
+  // user is never shown a vague "temporarily unavailable" for a real cause.
+  if (/too-many-requests|too many requests|too many attempts|quota exceeded|rate limit/.test(code + " " + message)) {
+    return "Too many sign-in attempts. Please wait a minute and try again.";
+  }
+  if (/user-disabled/.test(code)) {
+    return "This account has been disabled. Contact us if this looks wrong.";
+  }
+  if (/unauthorized-domain|operation-not-allowed|invalid-api-key|configuration-not-found|api-key-not-valid/.test(code + " " + message)) {
+    return "Sign-in isn't reachable from this site yet. Please contact us.";
   }
 
   return AUTH_TEMPORARILY_UNAVAILABLE;
