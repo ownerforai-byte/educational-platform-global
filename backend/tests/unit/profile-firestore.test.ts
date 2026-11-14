@@ -64,6 +64,9 @@ const h = vi.hoisted(() => {
         if (m === "eq") {
           matched = matched.filter((r) => (r as Record<string, unknown>)[args[0] as string] === args[1]);
         }
+        if (m === "neq") {
+          matched = matched.filter((r) => (r as Record<string, unknown>)[args[0] as string] !== args[1]);
+        }
       }
       return { data: single ? matched[0] ?? null : matched, error: null };
     };
@@ -100,11 +103,13 @@ vi.mock("../../src/db/supabase", () => ({
 
 import { ensureAuthProfile } from "../../src/services/auth-profile";
 import {
+  findProfileIdByUsername,
   getProfileAccessRow,
   getProfileById,
   updateProfileFields,
   upsertProfileFields,
 } from "../../src/db/repositories/user.repository";
+import { profileImagePath } from "../../src/services/profile-image";
 
 const UID = "11111111-1111-4111-8111-111111111111";
 
@@ -207,5 +212,99 @@ describe("transition merge rules (Firestore ⇄ legacy row)", () => {
     await updateProfileFields(UID, { full_name: "Mirror Me" });
     expect(h.docs.get(UID)!.full_name).toBe("Mirror Me");
     expect(h.rows.get(UID)!.full_name).toBe("Mirror Me");
+  });
+});
+
+describe("field-aware identity sync (read-after-write)", () => {
+  function seed(doc: Record<string, unknown>, row: Record<string, unknown>) {
+    h.docs.set(UID, { id: UID, ...doc });
+    h.rows.set(UID, { id: UID, ...row });
+  }
+
+  it("partial identity PATCH does not erase unrelated fields or privileged rungs", async () => {
+    seed(
+      { access_status: "ACTIVE", role: "plus", full_name: "Keep Me", plan: "plus" },
+      {
+        access_status: "ACTIVE",
+        role: "plus",
+        full_name: "Keep Me",
+        plan: "plus",
+        bio: "original bio",
+        location: "Kathmandu",
+        username: "keeper",
+      },
+    );
+    await updateProfileFields(UID, { location: "Pokhara" });
+    expect(h.rows.get(UID)).toMatchObject({
+      bio: "original bio",
+      location: "Pokhara",
+      username: "keeper",
+      full_name: "Keep Me",
+      role: "plus",
+    });
+    expect(h.docs.get(UID)).toMatchObject({
+      full_name: "Keep Me",
+      role: "plus",
+      access_status: "ACTIVE",
+    });
+    expect(h.docs.get(UID)).not.toHaveProperty("location");
+    const { data } = await getProfileById(UID, "bio, location, username, role, access_status, full_name");
+    expect(data).toMatchObject({
+      bio: "original bio",
+      location: "Pokhara",
+      username: "keeper",
+      role: "plus",
+      access_status: "ACTIVE",
+      full_name: "Keep Me",
+    });
+  });
+
+  it("stale Firestore identity cannot shadow a Supabase PATCH", async () => {
+    seed(
+      { full_name: "Old Firestore", bio: "stale-bio", avatar_path: "profiles/old/avatar.webp", role: "member" },
+      {
+        full_name: "Old Firestore",
+        bio: "stale-bio",
+        avatar_path: "profiles/old/avatar.webp",
+        username: "student",
+        role: "member",
+      },
+    );
+    await updateProfileFields(UID, {
+      bio: "fresh-bio",
+      avatar_path: "profiles/u/avatar-2.webp",
+    });
+    expect(h.rows.get(UID)!.bio).toBe("fresh-bio");
+    expect(h.rows.get(UID)!.avatar_path).toBe("profiles/u/avatar-2.webp");
+    expect(h.docs.get(UID)!.bio).toBe("stale-bio");
+    const { data } = await getProfileById(UID, "bio, avatar_path, username");
+    expect(data).toMatchObject({
+      bio: "fresh-bio",
+      avatar_path: "profiles/u/avatar-2.webp",
+      username: "student",
+    });
+  });
+
+  it("full_name PATCH writes both stores and reads back the new name", async () => {
+    seed({ full_name: "Before", role: "member" }, { full_name: "Before", role: "member" });
+    await updateProfileFields(UID, { full_name: "After Patch" });
+    expect(h.docs.get(UID)!.full_name).toBe("After Patch");
+    expect(h.rows.get(UID)!.full_name).toBe("After Patch");
+    const { data } = await getProfileById(UID, "full_name");
+    expect(data?.full_name).toBe("After Patch");
+  });
+
+  it("username uniqueness ignores the caller's own row", async () => {
+    seed({ role: "member" }, { username: "keeper", role: "member" });
+    h.rows.set("other", { id: "other", username: "takenname" });
+    expect(await findProfileIdByUsername("keeper", UID)).toBeNull();
+    expect(await findProfileIdByUsername("takenname", UID)).toMatchObject({ id: "other" });
+  });
+});
+
+describe("profile image object keys", () => {
+  it("versions avatar and cover paths so replacements can be deleted", () => {
+    expect(profileImagePath(UID, "avatar", 1)).toBe(`profiles/${UID}/avatar-1.webp`);
+    expect(profileImagePath(UID, "cover", 2)).not.toBe(profileImagePath(UID, "cover", 3));
   });
 });

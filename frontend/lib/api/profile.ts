@@ -114,6 +114,15 @@ export async function searchUsers(q: string) {
   );
 }
 
+export interface ProfileExtras {
+  occupation?: string;
+  education?: string;
+  skills?: string;
+  interests?: string;
+  portfolio?: string;
+  intro?: string;
+}
+
 export async function updateMyProfile(payload: {
   fullName?: string;
   username?: string;
@@ -121,6 +130,7 @@ export async function updateMyProfile(payload: {
   location?: string;
   website?: string;
   visibility?: "public" | "members" | "private";
+  extras?: ProfileExtras;
 }) {
   return apiFetch<{ profile: PublicProfile }>(`${ROOT}/me`, {
     method: "PATCH",
@@ -128,26 +138,75 @@ export async function updateMyProfile(payload: {
   });
 }
 
-async function fileToBase64(file: File): Promise<string> {
-  const buf = await file.arrayBuffer();
-  const bytes = new Uint8Array(buf);
-  let binary = "";
-  for (let i = 0; i < bytes.length; i += 1) binary += String.fromCharCode(bytes[i]!);
-  return btoa(binary);
+export async function checkUsername(username: string): Promise<{ available: boolean; reason?: string }> {
+  return apiFetch(`${ROOT}/username-check?username=${encodeURIComponent(username)}`);
 }
 
-export async function uploadAvatar(file: File) {
-  return apiFetch<{ profile: PublicProfile; byteSize: number }>(`${ROOT}/me/avatar`, {
+const CLIENT_MAX = {
+  avatar: { w: 256, h: 256, skipUnderBytes: 80 * 1024 },
+  cover: { w: 1200, h: 400, skipUnderBytes: 200 * 1024 },
+} as const;
+
+/**
+ * Downsample with the platform canvas (no extra deps) so the upload is closer
+ * to the server's output size. Server Sharp is still the source of truth.
+ */
+export async function downsampleForUpload(file: File, kind: "avatar" | "cover"): Promise<Blob> {
+  const spec = CLIENT_MAX[kind];
+  if (file.size <= spec.skipUnderBytes) return file;
+  if (typeof createImageBitmap !== "function") return file;
+  try {
+    const bitmap = await createImageBitmap(file);
+    const scale = Math.min(1, spec.w / bitmap.width, spec.h / bitmap.height);
+    const dw = Math.max(1, Math.round(bitmap.width * scale));
+    const dh = Math.max(1, Math.round(bitmap.height * scale));
+    const canvas = document.createElement("canvas");
+    canvas.width = dw;
+    canvas.height = dh;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) {
+      bitmap.close();
+      return file;
+    }
+    ctx.drawImage(bitmap, 0, 0, dw, dh);
+    bitmap.close();
+    const blob = await new Promise<Blob | null>((resolve) => {
+      canvas.toBlob(resolve, "image/jpeg", 0.82);
+    });
+    if (!blob || blob.size >= file.size) return file;
+    return blob;
+  } catch {
+    return file;
+  }
+}
+
+export interface ProfileImageUploadResult {
+  profile: PublicProfile;
+  byteSize: number;
+  storage: StorageInfo | null;
+}
+
+async function postProfileImage(
+  path: string,
+  file: File,
+  kind: "avatar" | "cover",
+  signal?: AbortSignal,
+): Promise<ProfileImageUploadResult> {
+  const body = await downsampleForUpload(file, kind);
+  return apiFetch<ProfileImageUploadResult>(path, {
     method: "POST",
-    body: JSON.stringify({ dataBase64: await fileToBase64(file), contentType: file.type }),
+    headers: { "Content-Type": body.type || file.type || "application/octet-stream" },
+    body,
+    signal,
   });
 }
 
-export async function uploadCover(file: File) {
-  return apiFetch<{ profile: PublicProfile; byteSize: number }>(`${ROOT}/me/cover`, {
-    method: "POST",
-    body: JSON.stringify({ dataBase64: await fileToBase64(file), contentType: file.type }),
-  });
+export async function uploadAvatar(file: File, signal?: AbortSignal) {
+  return postProfileImage(`${ROOT}/me/avatar`, file, "avatar", signal);
+}
+
+export async function uploadCover(file: File, signal?: AbortSignal) {
+  return postProfileImage(`${ROOT}/me/cover`, file, "cover", signal);
 }
 
 export async function followUser(username: string) {

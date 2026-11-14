@@ -65,6 +65,13 @@ vi.mock("@/lib/api/ai", async (importOriginal) => ({
   getAiSparkUsage: (...args: unknown[]) => getAiSparkUsage(...args),
 }));
 
+const getMyProfile = vi.fn();
+
+vi.mock("@/lib/api/profile", async (importOriginal) => ({
+  ...(await importOriginal<object>()),
+  getMyProfile: (...args: unknown[]) => getMyProfile(...args),
+}));
+
 import ProfilePage from "@/app/(app)/profile/page";
 
 // ─── Fixtures ───────────────────────────────────────────────────────────────
@@ -129,6 +136,28 @@ beforeEach(() => {
     limit: null,
     used: 3,
     remaining: null,
+  });
+  getMyProfile.mockImplementation(async () => {
+    const current = sessionState.user as { id: string; fullName: string; role: string } | null;
+    return {
+      profile: {
+        id: current?.id ?? "u1",
+        fullName: current?.fullName ?? "User",
+        username: current?.id === "u1" ? "harindra" : "aayush",
+        bio: null,
+        location: null,
+        website: null,
+        plan: current?.role === "owner" ? "pro" : "member",
+        role: current?.role ?? "member",
+        visibility: "public",
+        avatarUrl: null,
+        coverUrl: null,
+        extras: {},
+        isYou: true,
+      },
+      stats: { posts: 0, comments: 0, likesReceived: 0, filesShared: 0, followers: 0, following: 0 },
+      storage: null,
+    };
   });
 });
 
@@ -282,6 +311,45 @@ describe("ProfilePage", () => {
     // But student DOES see level details
     expect(screen.getByText("Scholar Rank")).toBeInTheDocument();
     expect(screen.getByText("Total Scholar XP")).toBeInTheDocument();
+  });
+
+  it("renders uploaded avatar and cover instead of initials or a fake gradient", async () => {
+    getMyProfile.mockResolvedValue({
+      profile: {
+        id: ownerUser.id,
+        fullName: ownerUser.fullName,
+        username: "harindra",
+        bio: null,
+        location: null,
+        website: null,
+        plan: "pro",
+        role: "owner",
+        visibility: "public",
+        avatarUrl: "/api/profile/media?path=profiles%2Fu1%2Favatar-1.webp",
+        coverUrl: "/api/profile/media?path=profiles%2Fu1%2Fcover-1.webp",
+        extras: {},
+        isYou: true,
+      },
+      stats: { posts: 0, comments: 0, likesReceived: 0, filesShared: 0, followers: 0, following: 0 },
+      storage: null,
+    });
+
+    render(<ProfilePage />);
+    const avatar = await screen.findByRole("img", { name: "Harindra Sah" });
+    expect(avatar).toHaveAttribute("src", "/api/profile/media?path=profiles%2Fu1%2Favatar-1.webp");
+    expect(avatar).toHaveAttribute("loading", "lazy");
+    expect(avatar).toHaveAttribute("sizes");
+    expect(screen.queryByText("HS")).not.toBeInTheDocument();
+    const cover = document.querySelector(
+      'img[src="/api/profile/media?path=profiles%2Fu1%2Fcover-1.webp"]',
+    );
+    expect(cover).toBeTruthy();
+    expect(cover).toHaveAttribute("loading", "lazy");
+    expect(cover).toHaveAttribute("sizes");
+
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
+    expect(await screen.findAllByRole("img", { name: "Harindra Sah" })).not.toHaveLength(0);
+    expect(screen.queryByText("HS")).not.toBeInTheDocument();
   });
 
   it("filters the activity feed with search, status chips and clear", async () => {

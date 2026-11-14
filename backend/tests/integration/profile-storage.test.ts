@@ -226,20 +226,23 @@ vi.mock("../../src/db/supabase", () => ({
   createAuthClient: () => memory.client,
 }));
 
-const r2DownloadMock = vi.hoisted(() =>
-  vi.fn(async (path: string) => {
+const r2 = vi.hoisted(() => ({
+  download: vi.fn(async (path: string) => {
     if (path === "profiles/11111111-1111-4111-8111-111111111111/avatar.webp") {
       return { buffer: Buffer.from("img"), contentType: "image/webp" };
     }
     return null;
   }),
-);
+  upload: vi.fn(async () => ({ url: "https://example.test/x" })),
+  delete: vi.fn(async () => undefined),
+  stamp: 0,
+}));
 
 vi.mock("../../src/storage/r2", () => ({
   isR2StorageActive: () => true,
-  r2Upload: vi.fn(async () => ({ url: "https://example.test/x" })),
-  r2Download: r2DownloadMock,
-  r2Delete: vi.fn(async () => undefined),
+  r2Upload: (...args: unknown[]) => r2.upload(...args),
+  r2Download: (...args: unknown[]) => r2.download(...args),
+  r2Delete: (...args: unknown[]) => r2.delete(...args),
   supabaseStorageHealth: vi.fn(async () => ({ available: false, size: 0, objects: 0, buckets: [] })),
 }));
 
@@ -247,13 +250,27 @@ vi.mock("../../src/services/profile-image", () => ({
   processProfileImage: vi.fn(async () => ({
     buffer: Buffer.from("webp-bytes"),
     contentType: "image/webp",
+    byteSize: 10,
   })),
-  profileImagePath: (userId: string, kind: string) => `profiles/${userId}/${kind}.webp`,
+  profileImagePath: (userId: string, kind: string) => {
+    r2.stamp += 1;
+    return `profiles/${userId}/${kind}-${r2.stamp}.webp`;
+  },
+  isProfileImageCapError: (err: unknown) =>
+    Boolean(err && typeof err === "object" && (err as { code?: string }).code === "PROFILE_IMAGE_CAP"),
+  PROFILE_IMAGE_INPUT_MAX_BYTES: 8 * 1024 * 1024,
+  PROFILE_MEDIA_CACHE_CONTROL: "public, max-age=31536000, immutable",
 }));
 
 import { createApp } from "../../src/app";
 import { resetRateLimits } from "../../src/middleware/rateLimit";
-import { reserveStoragePath } from "../../src/services/profile-storage";
+import {
+  compactProfileExtras,
+  listAbandonedProfilePaths,
+  releaseStoragePath,
+  replaceReservedPath,
+  reserveStoragePath,
+} from "../../src/services/profile-storage";
 
 let server: Server;
 let base: string;
@@ -272,6 +289,10 @@ afterAll(() => new Promise<void>((resolve, reject) => server.close((err) => (err
 beforeEach(() => {
   memory.reset();
   resetRateLimits();
+  r2.stamp = 0;
+  r2.upload.mockClear();
+  r2.delete.mockClear();
+  r2.download.mockClear();
 });
 
 const memberHeaders: HeadersInit = {
@@ -334,7 +355,58 @@ describe("profile storage", () => {
     expect(res.headers.get("content-type")).toContain("image/webp");
     const body = await res.arrayBuffer();
     expect(body.byteLength).toBeGreaterThan(0);
-    expect(r2DownloadMock).toHaveBeenCalledWith(key);
+    expect(r2.download).toHaveBeenCalledWith(key);
+  });
+
+  it("PATCH /profile/me is a partial update and reads back the new fields", async () => {
+    memory.tables.profiles[0]!.bio = "keep-me";
+    memory.tables.profiles[0]!.location = "Kathmandu";
+    const patch = await fetch(`${base}/profile/me`, {
+      method: "PATCH",
+      headers: memberHeaders,
+      body: JSON.stringify({ location: "Pokhara", extras: { occupation: "Student" } }),
+    });
+    expect(patch.status).toBe(200);
+    const patched = (await patch.json()) as {
+      profile: { location: string | null; bio: string | null; extras: Record<string, unknown> };
+    };
+    expect(patched.profile.location).toBe("Pokhara");
+    expect(patched.profile.bio).toBe("keep-me");
+    expect(patched.profile.extras.occupation).toBe("Student");
+
+    const read = await fetch(`${base}/profile/me`, { headers: memberHeaders });
+    expect(read.status).toBe(200);
+    const body = (await read.json()) as {
+      profile: { location: string | null; bio: string | null; extras: Record<string, unknown> };
+    };
+    expect(body.profile.location).toBe("Pokhara");
+    expect(body.profile.bio).toBe("keep-me");
+    expect(body.profile.extras.occupation).toBe("Student");
+  });
+
+  it("username-check reports taken names", async () => {
+    const free = await fetch(`${base}/profile/username-check?username=brand-new-user`, {
+      headers: memberHeaders,
+    });
+    expect(free.status).toBe(200);
+    expect(await free.json()).toMatchObject({ available: true });
+
+    const taken = await fetch(`${base}/profile/username-check?username=member`, {
+      headers: memberHeaders,
+    });
+    expect(taken.status).toBe(200);
+    expect(await taken.json()).toMatchObject({ available: true, reason: "ok" });
+
+    memory.tables.profiles.push({
+      id: "22222222-2222-4222-8222-222222222222",
+      username: "takenname",
+      full_name: "Other",
+    });
+    const other = await fetch(`${base}/profile/username-check?username=takenname`, {
+      headers: memberHeaders,
+    });
+    expect(other.status).toBe(200);
+    expect(await other.json()).toMatchObject({ available: false, reason: "taken" });
   });
 
   it("does not double-count the same storage path", async () => {
@@ -355,5 +427,161 @@ describe("profile storage", () => {
     expect(memory.tables.profiles[0]!.storage_used_bytes).toBe(4096);
     expect(memory.tables.storage_objects).toHaveLength(1);
     expect(memory.tables.storage_objects[0]!.ref_count).toBe(2);
+  });
+
+  it("omits empty extras keys on write", async () => {
+    memory.tables.profiles[0]!.profile_extras = { occupation: "Teacher", intro: "Hi" };
+    const patch = await fetch(`${base}/profile/me`, {
+      method: "PATCH",
+      headers: memberHeaders,
+      body: JSON.stringify({ extras: { occupation: "", education: "Grade 12", intro: "  " } }),
+    });
+    expect(patch.status).toBe(200);
+    const body = (await patch.json()) as { profile: { extras: Record<string, unknown> } };
+    expect(body.profile.extras).toEqual({ education: "Grade 12" });
+    expect(memory.tables.profiles[0]!.profile_extras).toEqual({ education: "Grade 12" });
+  });
+
+  it("replaceReservedPath counts both keys until the old one is released", async () => {
+    const user = {
+      id: memory.USER_ID,
+      role: "member" as const,
+      plan: "member",
+      email: "member@example.com",
+    };
+    const first = await reserveStoragePath(memory.USER_ID, "profiles/u/avatar-1.webp", 100, user);
+    expect(first.ok).toBe(true);
+    const swapped = await replaceReservedPath(
+      memory.USER_ID,
+      "profiles/u/avatar-1.webp",
+      "profiles/u/avatar-2.webp",
+      80,
+      user,
+    );
+    expect(swapped.ok).toBe(true);
+    expect(memory.tables.profiles[0]!.storage_used_bytes).toBe(180);
+    await releaseStoragePath(memory.USER_ID, "profiles/u/avatar-1.webp");
+    expect(memory.tables.profiles[0]!.storage_used_bytes).toBe(80);
+    expect(memory.tables.storage_objects.map((row) => row.path)).toEqual(["profiles/u/avatar-2.webp"]);
+  });
+
+  it("does not reject a same-size replace at quota (net delta)", async () => {
+    const user = {
+      id: memory.USER_ID,
+      role: "member" as const,
+      plan: "member",
+      email: "member@example.com",
+    };
+    memory.tables.profiles[0]!.storage_used_bytes = 25 * 1024 * 1024 - 50;
+    const first = await reserveStoragePath(memory.USER_ID, "profiles/u/cover-1.webp", 50, user);
+    expect(first.ok).toBe(true);
+    const swapped = await replaceReservedPath(
+      memory.USER_ID,
+      "profiles/u/cover-1.webp",
+      "profiles/u/cover-2.webp",
+      50,
+      user,
+    );
+    expect(swapped.ok).toBe(true);
+  });
+
+  it("uploads an avatar over JSON base64 and records bytes", async () => {
+    const res = await fetch(`${base}/profile/me/avatar`, {
+      method: "POST",
+      headers: memberHeaders,
+      body: JSON.stringify({ dataBase64: Buffer.from("fake-photo").toString("base64"), contentType: "image/jpeg" }),
+    });
+    expect(res.status).toBe(200);
+    const body = (await res.json()) as { byteSize: number; storage: { usedBytes: number } | null };
+    expect(body.byteSize).toBe(10);
+    expect(body.storage?.usedBytes).toBe(10);
+    expect(memory.tables.profiles[0]!.avatar_bytes).toBe(10);
+    expect(String(memory.tables.profiles[0]!.avatar_path)).toMatch(/avatar-1\.webp$/);
+    expect(r2.upload).toHaveBeenCalled();
+  });
+
+  it("releases the old R2 key and does not double-count on replace", async () => {
+    const first = await fetch(`${base}/profile/me/avatar`, {
+      method: "POST",
+      headers: memberHeaders,
+      body: JSON.stringify({ dataBase64: Buffer.from("one").toString("base64") }),
+    });
+    expect(first.status).toBe(200);
+    const oldPath = memory.tables.profiles[0]!.avatar_path as string;
+
+    const second = await fetch(`${base}/profile/me/avatar`, {
+      method: "POST",
+      headers: memberHeaders,
+      body: JSON.stringify({ dataBase64: Buffer.from("two").toString("base64") }),
+    });
+    expect(second.status).toBe(200);
+    const newPath = memory.tables.profiles[0]!.avatar_path as string;
+    expect(newPath).not.toBe(oldPath);
+    expect(memory.tables.profiles[0]!.storage_used_bytes).toBe(10);
+    expect(memory.tables.profiles[0]!.avatar_bytes).toBe(10);
+    expect(memory.tables.storage_objects.filter((row) => String(row.path).startsWith("profiles/"))).toHaveLength(1);
+    expect(r2.delete).toHaveBeenCalledWith(oldPath);
+  });
+
+  it("accepts a raw binary avatar body", async () => {
+    const res = await fetch(`${base}/profile/me/avatar`, {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer member-token",
+        "Content-Type": "image/jpeg",
+      },
+      body: Buffer.from("raw-jpeg-bytes"),
+    });
+    expect(res.status).toBe(200);
+    expect(memory.tables.profiles[0]!.avatar_bytes).toBe(10);
+  });
+
+  it("cleans abandoned profile temps but never community attachments", async () => {
+    memory.tables.storage_objects.push(
+      {
+        path: `profiles/${memory.USER_ID}/avatar-stale.webp`,
+        owner_id: memory.USER_ID,
+        byte_size: 40,
+        ref_count: 1,
+      },
+      {
+        path: "community/post-1/file.png",
+        owner_id: memory.USER_ID,
+        byte_size: 200,
+        ref_count: 1,
+      },
+    );
+    memory.tables.profiles[0]!.storage_used_bytes = 240;
+
+    const res = await fetch(`${base}/profile/me/avatar`, {
+      method: "POST",
+      headers: memberHeaders,
+      body: JSON.stringify({ dataBase64: Buffer.from("fresh").toString("base64") }),
+    });
+    expect(res.status).toBe(200);
+    const paths = memory.tables.storage_objects.map((row) => row.path as string);
+    expect(paths.some((p) => p.endsWith("avatar-stale.webp"))).toBe(false);
+    expect(paths).toContain("community/post-1/file.png");
+    expect(r2.delete).toHaveBeenCalledWith(`profiles/${memory.USER_ID}/avatar-stale.webp`);
+    expect(r2.delete).not.toHaveBeenCalledWith("community/post-1/file.png");
+    expect(memory.tables.profiles[0]!.storage_used_bytes).toBe(210);
+  });
+});
+
+describe("profile extras compact", () => {
+  it("drops empty strings and trims values", () => {
+    expect(
+      compactProfileExtras({ occupation: "Teacher", skills: "x" }, { occupation: "", education: "  Grade 12  " }),
+    ).toEqual({ skills: "x", education: "Grade 12" });
+  });
+
+  it("lists only unreferenced profile-slot objects", async () => {
+    memory.tables.storage_objects.push(
+      { path: "profiles/u/live.webp", owner_id: memory.USER_ID, byte_size: 1, ref_count: 1 },
+      { path: "profiles/u/tmp.webp", owner_id: memory.USER_ID, byte_size: 1, ref_count: 1 },
+      { path: "community/p/a.bin", owner_id: memory.USER_ID, byte_size: 1, ref_count: 1 },
+    );
+    const abandoned = await listAbandonedProfilePaths(memory.USER_ID, ["profiles/u/live.webp"]);
+    expect(abandoned.map((row) => row.path)).toEqual(["profiles/u/tmp.webp"]);
   });
 });

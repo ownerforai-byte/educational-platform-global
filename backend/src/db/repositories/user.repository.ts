@@ -13,7 +13,7 @@
  *   privileged rung wins (console grants live only on the legacy row);
  *   `premium_status`: granted when either store grants it.
  */
-import { getAdminClient } from "./base.repository.js";
+import { getAdminClient, isMissingTable } from "./base.repository.js";
 import {
   readProfileDoc,
   upsertProfileDoc,
@@ -35,6 +35,89 @@ export interface ProfileAccessRow {
 }
 
 type ProfileRecord = Record<string, unknown>;
+
+/**
+ * Field ownership (split-storage policy — do not blindly dual-write):
+ * - Firestore owns auth/ops contract fields (access, role, plan, credits).
+ * - Supabase owns structured identity/media (username, bio, avatar/cover…).
+ * - `full_name` is shared: PATCH writes both so login refresh cannot shadow it.
+ */
+export const SUPABASE_IDENTITY_KEYS = [
+  "username",
+  "bio",
+  "location",
+  "website",
+  "avatar_path",
+  "avatar_bytes",
+  "cover_path",
+  "cover_bytes",
+  "profile_visibility",
+  "profile_extras",
+  "storage_used_bytes",
+  "storage_limit_bytes",
+] as const;
+
+const FIRESTORE_AUTH_KEYS = [
+  "email",
+  "access_status",
+  "role",
+  "plan",
+  "premium_status",
+  "created_at",
+  "credits",
+  "credits_limit",
+  "credits_reset_date",
+  "credits_unlock",
+  "premium_approved_at",
+] as const;
+
+const FIRESTORE_WRITE_KEYS = new Set<string>(["full_name", ...FIRESTORE_AUTH_KEYS]);
+const SUPABASE_WRITE_KEYS = new Set<string>([
+  "full_name",
+  ...FIRESTORE_AUTH_KEYS,
+  ...SUPABASE_IDENTITY_KEYS,
+]);
+
+const IDENTITY_KEY_SET = new Set<string>(SUPABASE_IDENTITY_KEYS);
+
+function partitionProfileWrite(fields: Record<string, unknown>): {
+  firestore: Record<string, unknown>;
+  supabase: Record<string, unknown>;
+} {
+  const firestore: Record<string, unknown> = {};
+  const supabase: Record<string, unknown> = {};
+  for (const [key, value] of Object.entries(fields)) {
+    if (key === "id") continue;
+    if (FIRESTORE_WRITE_KEYS.has(key)) firestore[key] = value;
+    if (SUPABASE_WRITE_KEYS.has(key)) supabase[key] = value;
+  }
+  return { firestore, supabase };
+}
+
+async function writePartitioned(
+  userId: string,
+  fields: Record<string, unknown>,
+  mode: "update" | "upsert",
+): Promise<{ error: { message: string } | null }> {
+  const { firestore: fsFields, supabase: sbFields } = partitionProfileWrite(fields);
+  if (Object.keys(fsFields).length > 0) {
+    const firestore =
+      mode === "upsert"
+        ? await upsertProfileDoc(userId, fsFields)
+        : await updateProfileDoc(userId, fsFields);
+    if (firestore.error) return firestore;
+  }
+  if (Object.keys(sbFields).length > 0) {
+    const payload = mode === "upsert" ? { ...sbFields, id: userId } : sbFields;
+    const query =
+      mode === "upsert"
+        ? getAdminClient().from("profiles").upsert(payload)
+        : getAdminClient().from("profiles").update(payload).eq("id", userId);
+    const { error } = await query;
+    if (error) return { error };
+  }
+  return { error: null };
+}
 
 // ── Firestore ⇄ legacy merge helpers ────────────────────────────────────────
 
@@ -101,12 +184,19 @@ function mergeProfile(doc: ProfileRecord | null, row: ProfileRecord | null): Pro
   if (!doc && !row) return null;
   const merged: ProfileRecord = { ...(row ?? {}) };
   for (const [key, value] of Object.entries(doc ?? {})) merged[key] = value;
+  // Structured identity lives on the Postgres row. Restore those keys so a
+  // stale Firestore copy cannot shadow a PATCH that only landed in Supabase.
+  if (row) {
+    for (const key of IDENTITY_KEY_SET) {
+      if (Object.prototype.hasOwnProperty.call(row, key)) merged[key] = row[key];
+    }
+  }
   merged.access_status = mergeAccessStatus(doc?.access_status, row?.access_status);
   merged.role = betterRole(doc?.role, row?.role);
   merged.plan = betterPlan(doc?.plan, row?.plan);
   merged.premium_status = mergePremium(doc?.premium_status, row?.premium_status);
   // Display name: first non-empty (a null contract field must not wipe a
-  // legacy name and vice versa).
+  // legacy name and vice versa). PATCH writes both stores so they stay aligned.
   const name = [doc?.full_name, row?.full_name].find(
     (v) => typeof v === "string" && v.trim(),
   );
@@ -219,19 +309,29 @@ export async function upsertProfileFields(
   userId: string,
   fields: Record<string, unknown>,
 ): Promise<{ error: { message: string } | null }> {
-  const payload = { ...fields, id: userId };
-  const firestore = await upsertProfileDoc(userId, payload);
-  const { error } = await getAdminClient().from("profiles").upsert(payload);
-  return { error: firestore.error ?? error };
+  return writePartitioned(userId, fields, "upsert");
 }
 
 export async function updateProfileFields(
   userId: string,
   fields: Record<string, unknown>,
 ): Promise<{ error: { message: string } | null }> {
-  const firestore = await updateProfileDoc(userId, fields);
-  const { error } = await getAdminClient().from("profiles").update(fields).eq("id", userId);
-  return { error: firestore.error ?? error };
+  return writePartitioned(userId, fields, "update");
+}
+
+/** Username uniqueness lives on the Postgres unique index. */
+export async function findProfileIdByUsername(
+  username: string,
+  exceptUserId?: string,
+): Promise<{ id: string } | null | "missing"> {
+  let query = getAdminClient().from("profiles").select("id").eq("username", username);
+  if (exceptUserId) query = query.neq("id", exceptUserId);
+  const { data, error } = await query.maybeSingle();
+  if (error) {
+    if (isMissingTable(error)) return "missing";
+    throw error;
+  }
+  return (data as { id: string } | null) ?? null;
 }
 
 // ── Premium requests (unchanged — stays on Supabase) ───────────────────────

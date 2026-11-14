@@ -60,6 +60,7 @@ export async function r2Upload(
   path: string,
   buffer: Buffer,
   contentType: string,
+  options?: { cacheControl?: string },
 ): Promise<{ url: string }> {
   if (!isR2StorageActive()) {
     throw new Error("R2 is not configured");
@@ -71,7 +72,7 @@ export async function r2Upload(
       Key: key,
       Body: buffer,
       ContentType: contentType,
-      CacheControl: "public, max-age=86400",
+      CacheControl: options?.cacheControl ?? "public, max-age=86400",
     }),
   );
 

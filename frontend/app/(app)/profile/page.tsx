@@ -58,6 +58,8 @@ import {
   PREFERENCES_NAMESPACE,
   scheduleNamespacePush,
 } from "@/lib/state/user-state";
+import { ProfileAvatar, ProfileCover } from "@/features/profile/profile-media";
+import { getMyProfile, type PublicProfile } from "@/lib/api/profile";
 
 const tierBadgeConfig: Record<AccessLevel, { className: string; icon: typeof Crown }> = {
   guest: { className: "bg-slate-500/15 border-slate-500/30 text-slate-500", icon: User },
@@ -190,7 +192,13 @@ const filterChipClass = (active: boolean) =>
  * Gate toggle: ON → owners pay coins like students; OFF → owners free.
  * Students/customers ALWAYS pay regardless of the toggle.
  */
-function ProfileDetails({ onBack }: { onBack?: () => void }) {
+function ProfileDetails({
+  onBack,
+  media,
+}: {
+  onBack?: () => void;
+  media: PublicProfile | null;
+}) {
   const router = useRouter();
   const { user, isLoading, logoutUser } = useSession();
 
@@ -368,13 +376,9 @@ function ProfileDetails({ onBack }: { onBack?: () => void }) {
   }
 
   const email = user.email || "";
-  const displayName = user.fullName || email.split("@")[0] || "User";
-  const initials = displayName
-    .split(" ")
-    .map((n) => n[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
+  const displayName = media?.fullName || user.fullName || email.split("@")[0] || "User";
+  const avatarUrl = media?.avatarUrl ?? null;
+  const coverUrl = media?.coverUrl ?? null;
 
   const badge = tierBadgeConfig[tier];
   const RoleIcon = badge.icon;
@@ -399,22 +403,19 @@ function ProfileDetails({ onBack }: { onBack?: () => void }) {
 
       {/* ── Identity hero — cover banner, avatar, badges, quick actions ─── */}
       <Card className="overflow-hidden border-primary/20 shadow-sm">
-        {/* Cover banner */}
-        <div className="relative h-32 sm:h-40 overflow-hidden bg-gradient-to-r from-primary via-primary/80 to-violet-600">
-          <div className="absolute -top-10 -right-10 h-44 w-44 rounded-full bg-white/10" />
-          <div className="absolute top-6 right-24 h-24 w-24 rounded-full bg-white/10" />
-          <div className="absolute -bottom-12 -left-8 h-40 w-40 rounded-full bg-black/10" />
-          <div className="absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-card/90 to-transparent" />
-        </div>
+        <ProfileCover url={coverUrl} className="h-32 sm:h-40" />
 
         <CardContent className="pt-0 pb-6">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
             <div className="flex flex-col sm:flex-row sm:items-end gap-4 min-w-0">
               {/* Avatar with level chip */}
               <div className="relative -mt-12 sm:-mt-14 shrink-0 self-start">
-                <div className="h-24 w-24 rounded-2xl border-4 border-background bg-gradient-to-tr from-primary/30 via-primary/15 to-violet-500/30 shadow-xl flex items-center justify-center text-2xl font-extrabold text-primary">
-                  {initials}
-                </div>
+                <ProfileAvatar
+                  url={avatarUrl}
+                  name={displayName}
+                  className="h-24 w-24 rounded-2xl border-4 border-background shadow-xl"
+                  textClassName="text-2xl"
+                />
                 <div
                   className="absolute -bottom-2 -right-2 h-8 w-8 rounded-full bg-amber-500 border-2 border-background flex items-center justify-center text-xs font-black text-black shadow"
                   title={scholarLevel.badgeName}
@@ -438,6 +439,9 @@ function ProfileDetails({ onBack }: { onBack?: () => void }) {
                     Level {scholarLevel.level} · {scholarLevel.title}
                   </span>
                 </div>
+                {media?.username ? (
+                  <p className="text-sm text-muted-foreground truncate mt-1">@{media.username}</p>
+                ) : null}
                 <p className="text-sm text-muted-foreground truncate flex items-center gap-1.5 mt-1">
                   <Mail className="h-3.5 w-3.5 shrink-0" />
                   {email}
@@ -1223,7 +1227,13 @@ const YOU_MENU: Array<{ icon: typeof BookOpen; label: string; href: string; tint
   { icon: Settings, label: "App Settings", href: "/settings", tint: "bg-violet-500/10 text-violet-600 dark:text-violet-400", subtitle: "Version, rate this app & more" },
 ];
 
-function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
+function YouHub({
+  onOpenProfile,
+  media,
+}: {
+  onOpenProfile: () => void;
+  media: PublicProfile | null;
+}) {
   const { user, isLoading } = useSession();
 
   // Session still resolving — same skeleton language as the profile view.
@@ -1239,13 +1249,19 @@ function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
 
   const tier = accessLevelFor(user);
   const displayName =
-    user?.fullName || (user?.email ? user.email.split("@")[0] : "Student");
-  const initials = displayName
-    .split(" ")
-    .map((word) => word[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
+    media?.fullName || user?.fullName || (user?.email ? user.email.split("@")[0] : "Student");
+  const avatarUrl = media?.avatarUrl ?? null;
+  const coverUrl = media?.coverUrl ?? null;
+  const filled = [
+    avatarUrl,
+    coverUrl,
+    displayName && displayName !== "Student",
+    media?.username,
+    media?.bio,
+    media?.location,
+    media?.website,
+  ].filter(Boolean).length;
+  const completion = Math.round((filled / 7) * 100);
 
   return (
     <div>
@@ -1263,21 +1279,28 @@ function YouHub({ onOpenProfile }: { onOpenProfile: () => void }) {
           </Link>
         </div>
         <Card className="overflow-hidden border-primary/20 shadow-sm">
-        <div className="relative h-20 overflow-hidden bg-gradient-to-r from-primary via-primary/80 to-violet-600">
-          <div className="absolute -top-10 -right-10 h-36 w-36 rounded-full bg-white/10" />
-          <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-card/90 to-transparent" />
-        </div>
+        <ProfileCover url={coverUrl} className="h-20" />
         <CardContent className="pb-5 pt-0">
           <div className="flex items-center gap-4">
-            <div className="-mt-9 flex h-[72px] w-[72px] shrink-0 items-center justify-center rounded-2xl border-4 border-background bg-gradient-to-tr from-primary/30 via-primary/15 to-violet-500/30 text-lg font-extrabold text-primary shadow-xl">
-              {initials}
-            </div>
+            <ProfileAvatar
+              url={avatarUrl}
+              name={displayName}
+              className="-mt-9 h-[72px] w-[72px] shrink-0 rounded-2xl border-4 border-background shadow-xl"
+              textClassName="text-lg"
+            />
             <div className="min-w-0">
               <h1 className="truncate text-lg font-extrabold tracking-tight">{displayName}</h1>
+              {media?.username ? (
+                <p className="truncate text-xs text-muted-foreground">@{media.username}</p>
+              ) : null}
               <span className="mt-1 inline-flex items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary">
                 {ACCESS_LABELS[tier]}
               </span>
             </div>
+          </div>
+          <p className="mt-3 text-[11px] text-muted-foreground">Profile {completion}% complete</p>
+          <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-muted">
+            <div className="h-full bg-primary" style={{ width: `${completion}%` }} />
           </div>
           <Button
             onClick={onOpenProfile}
@@ -1331,6 +1354,7 @@ export default function ProfilePage() {
   const router = useRouter();
   const { user, isLoading } = useSession();
   const [view, setView] = useState<"you" | "profile">("you");
+  const [media, setMedia] = useState<PublicProfile | null>(null);
 
   // Guests: send to login and return here afterwards
   useEffect(() => {
@@ -1339,8 +1363,23 @@ export default function ProfilePage() {
     }
   }, [isLoading, user, router]);
 
+  useEffect(() => {
+    if (!user) return;
+    let alive = true;
+    getMyProfile()
+      .then((me) => {
+        if (alive) setMedia(me.profile);
+      })
+      .catch(() => {
+        /* session-only fallback — initials until media loads */
+      });
+    return () => {
+      alive = false;
+    };
+  }, [user]);
+
   if (view === "profile") {
-    return <ProfileDetails onBack={() => setView("you")} />;
+    return <ProfileDetails onBack={() => setView("you")} media={media} />;
   }
-  return <YouHub onOpenProfile={() => setView("profile")} />;
+  return <YouHub onOpenProfile={() => setView("profile")} media={media} />;
 }

@@ -1,4 +1,4 @@
-import { Router, Request, Response } from "express";
+import express, { Router, Request, Response } from "express";
 import { z } from "zod";
 import { supabaseAdmin } from "../../db/supabase";
 import { requireAuth, getUserFromRequest, type AuthedRequest } from "../../middleware/auth";
@@ -7,13 +7,26 @@ import { serverError } from "../../middleware/error-handler";
 import { isR2StorageActive, r2Download, r2Upload, r2Delete } from "../../storage/r2";
 import { normalizeMediaObjectPath } from "../../storage/safe-object-path";
 import {
+  findProfileIdByUsername,
+  getProfileById,
+  updateProfileFields,
+} from "../../db/repositories/user.repository.js";
+import {
+  compactProfileExtras,
   getStorageSnapshot,
+  isCommunityStoragePath,
+  listAbandonedProfilePaths,
   replaceReservedPath,
   releaseStoragePath,
-  reserveStoragePath,
   TIER_STORAGE_LIMITS,
 } from "../../services/profile-storage";
-import { processProfileImage, profileImagePath } from "../../services/profile-image";
+import {
+  isProfileImageCapError,
+  processProfileImage,
+  profileImagePath,
+  PROFILE_IMAGE_INPUT_MAX_BYTES,
+  PROFILE_MEDIA_CACHE_CONTROL,
+} from "../../services/profile-image";
 import { profileMediaPublicUrl } from "../../services/profile-media-url";
 import type { SessionUser } from "../../auth/types";
 
@@ -161,43 +174,25 @@ async function loadStats(userId: string): Promise<{
   followers: number;
   following: number;
 }> {
-  const posts = await supabaseAdmin
-    .from("community_feed_posts")
-    .select("id", { count: "exact", head: true })
-    .eq("author_id", userId);
-  const comments = await supabaseAdmin
-    .from("community_feed_comments")
-    .select("id", { count: "exact", head: true })
-    .eq("author_id", userId);
-  const postIds = await supabaseAdmin
-    .from("community_feed_posts")
-    .select("id")
-    .eq("author_id", userId);
-  let likesReceived = 0;
+  const [posts, comments, postIds, followers, following] = await Promise.all([
+    supabaseAdmin.from("community_feed_posts").select("id", { count: "exact", head: true }).eq("author_id", userId),
+    supabaseAdmin.from("community_feed_comments").select("id", { count: "exact", head: true }).eq("author_id", userId),
+    supabaseAdmin.from("community_feed_posts").select("id").eq("author_id", userId),
+    supabaseAdmin.from("profile_follows").select("follower_id", { count: "exact", head: true }).eq("following_id", userId),
+    supabaseAdmin.from("profile_follows").select("following_id", { count: "exact", head: true }).eq("follower_id", userId),
+  ]);
+
   const ids = (postIds.data ?? []).map((r) => r.id as string);
-  if (ids.length > 0) {
-    const likes = await supabaseAdmin
-      .from("community_feed_likes")
-      .select("post_id", { count: "exact", head: true })
-      .in("post_id", ids);
-    likesReceived = likes.count ?? 0;
-  }
+  let likesReceived = 0;
   let filesShared = 0;
   if (ids.length > 0) {
-    const files = await supabaseAdmin
-      .from("community_feed_attachments")
-      .select("id", { count: "exact", head: true })
-      .in("post_id", ids);
+    const [likes, files] = await Promise.all([
+      supabaseAdmin.from("community_feed_likes").select("post_id", { count: "exact", head: true }).in("post_id", ids),
+      supabaseAdmin.from("community_feed_attachments").select("id", { count: "exact", head: true }).in("post_id", ids),
+    ]);
+    likesReceived = likes.count ?? 0;
     filesShared = files.count ?? 0;
   }
-  const followers = await supabaseAdmin
-    .from("profile_follows")
-    .select("follower_id", { count: "exact", head: true })
-    .eq("following_id", userId);
-  const following = await supabaseAdmin
-    .from("profile_follows")
-    .select("following_id", { count: "exact", head: true })
-    .eq("follower_id", userId);
 
   return {
     posts: posts.count ?? 0,
@@ -224,6 +219,17 @@ async function viewerFollowsTargets(
   return new Set((data ?? []).map((row) => row.following_id as string));
 }
 
+const extrasSchema = z
+  .object({
+    occupation: z.string().trim().max(120).optional(),
+    education: z.string().trim().max(200).optional(),
+    skills: z.string().trim().max(400).optional(),
+    interests: z.string().trim().max(400).optional(),
+    portfolio: z.string().trim().url().max(300).optional().or(z.literal("")),
+    intro: z.string().trim().max(2000).optional(),
+  })
+  .partial();
+
 const editSchema = z.object({
   fullName: z.string().trim().min(1).max(120).optional(),
   username: z.string().trim().min(3).max(30).optional(),
@@ -231,7 +237,25 @@ const editSchema = z.object({
   location: z.string().trim().max(120).optional(),
   website: z.string().trim().url().max(300).optional().or(z.literal("")),
   visibility: z.enum(["public", "members", "private"]).optional(),
+  extras: extrasSchema.optional(),
 });
+
+const HUB_PROFILE_COLUMNS = [
+  publicProfileFields(),
+  "storage_used_bytes",
+  "storage_limit_bytes",
+].join(", ");
+
+async function loadHubProfile(
+  userId: string,
+): Promise<{ row: ProfileRow | null; missing: boolean; error: { message: string } | null }> {
+  const { data, error } = await getProfileById(userId, HUB_PROFILE_COLUMNS);
+  if (error && isMissingTable(error) && !data) {
+    return { row: null, missing: true, error };
+  }
+  if (!data) return { row: null, missing: false, error };
+  return { row: data as unknown as ProfileRow, missing: false, error: null };
+}
 
 const imageSchema = z.object({
   dataBase64: z.string().min(1).max(6_000_000),
@@ -259,8 +283,8 @@ router.get(
     }
     const publicBase = process.env.R2_PUBLIC_BASE_URL?.trim();
     if (publicBase) {
-      noStore(res);
-      res.redirect(302, `${publicBase.replace(/\/+$/, "")}/${key}`);
+      res.setHeader("Cache-Control", PROFILE_MEDIA_CACHE_CONTROL);
+      res.redirect(301, `${publicBase.replace(/\/+$/, "")}/${key}`);
       return;
     }
     if (!isR2StorageActive()) {
@@ -272,7 +296,7 @@ router.get(
       bad(res, "Not found", 404);
       return;
     }
-    res.setHeader("Cache-Control", "public, max-age=86400");
+    res.setHeader("Cache-Control", PROFILE_MEDIA_CACHE_CONTROL);
     res.setHeader("Content-Type", downloaded.contentType);
     res.send(downloaded.buffer);
   }),
@@ -304,22 +328,16 @@ router.get(
   requireAuth,
   asyncHandler(async (req, res) => {
     const user = (req as AuthedRequest).user;
-    const { data, error } = await supabaseAdmin
-      .from("profiles")
-      .select(
-        "id, full_name, username, bio, location, website, avatar_path, avatar_bytes, cover_path, cover_bytes, plan, role, profile_visibility, profile_extras, storage_used_bytes, storage_limit_bytes",
-      )
-      .eq("id", user.id)
-      .maybeSingle();
-    if (error) {
-      if (isMissingTable(error)) {
-        unavailable(res);
-        return;
-      }
-      serverError(res, error, "profile-hub");
+    const loaded = await loadHubProfile(user.id);
+    if (loaded.missing) {
+      unavailable(res);
       return;
     }
-    if (!data) {
+    if (loaded.error && !loaded.row) {
+      serverError(res, loaded.error, "profile-hub");
+      return;
+    }
+    if (!loaded.row) {
       bad(res, "Profile not found", 404);
       return;
     }
@@ -327,10 +345,35 @@ router.get(
     const snap = await getStorageSnapshot(user.id, user);
     noStore(res);
     res.json({
-      profile: presentProfile(data as unknown as ProfileRow, user.id),
+      profile: presentProfile(loaded.row, user.id),
       stats,
       storage: "missing" in snap ? null : snap,
     });
+  }),
+);
+
+router.get(
+  "/username-check",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = (req as AuthedRequest).user;
+    const raw = (param(req.query.username) || param(req.query.q) || "").trim().toLowerCase();
+    if (!raw) {
+      bad(res, "Username is required");
+      return;
+    }
+    if (!USERNAME_RE.test(raw)) {
+      noStore(res);
+      res.json({ available: false, reason: "invalid" });
+      return;
+    }
+    const taken = await findProfileIdByUsername(raw, user.id);
+    if (taken === "missing") {
+      unavailable(res);
+      return;
+    }
+    noStore(res);
+    res.json({ available: !taken, reason: taken ? "taken" : "ok" });
   }),
 );
 
@@ -356,32 +399,30 @@ router.patch(
         bad(res, "Username must be 3–30 characters: letters, numbers, _ or -");
         return;
       }
-      const taken = await supabaseAdmin
-        .from("profiles")
-        .select("id")
-        .eq("username", name)
-        .neq("id", user.id)
-        .maybeSingle();
-      if (taken.error && !isMissingTable(taken.error)) {
-        serverError(res, taken.error, "profile-hub");
+      const taken = await findProfileIdByUsername(name, user.id);
+      if (taken === "missing") {
+        unavailable(res);
         return;
       }
-      if (taken.data) {
+      if (taken) {
         bad(res, "That username is already taken");
         return;
       }
       patch.username = name;
     }
+    if (parsed.data.extras !== undefined) {
+      const current = await getProfileById(user.id, "profile_extras");
+      const prev =
+        current.data?.profile_extras && typeof current.data.profile_extras === "object"
+          ? (current.data.profile_extras as Record<string, unknown>)
+          : {};
+      patch.profile_extras = compactProfileExtras(prev, parsed.data.extras);
+    }
     if (Object.keys(patch).length === 0) {
       bad(res, "Nothing to update");
       return;
     }
-    const { data, error } = await supabaseAdmin
-      .from("profiles")
-      .update(patch)
-      .eq("id", user.id)
-      .select(publicProfileFields())
-      .single();
+    const { error } = await updateProfileFields(user.id, patch);
     if (error) {
       if (isMissingTable(error)) {
         unavailable(res);
@@ -390,50 +431,90 @@ router.patch(
       serverError(res, error, "profile-hub");
       return;
     }
+    const loaded = await loadHubProfile(user.id);
+    if (!loaded.row) {
+      serverError(res, loaded.error ?? { message: "read-after-write missed the profile" }, "profile-hub");
+      return;
+    }
     noStore(res);
-    res.json({ profile: presentProfile(data as unknown as ProfileRow, user.id) });
+    res.json({ profile: presentProfile(loaded.row, user.id) });
   }),
 );
+
+function decodeUploadedImage(req: Request): { ok: true; buffer: Buffer } | { ok: false; message: string; status: number } {
+  if (Buffer.isBuffer(req.body)) {
+    if (req.body.length === 0) return { ok: false, message: "Invalid image payload", status: 400 };
+    if (req.body.length > PROFILE_IMAGE_INPUT_MAX_BYTES) {
+      return { ok: false, message: "Invalid or oversized image payload", status: 413 };
+    }
+    return { ok: true, buffer: req.body };
+  }
+  const parsed = imageSchema.safeParse(req.body);
+  if (!parsed.success) return { ok: false, message: "Invalid image payload", status: 400 };
+  const raw = decodeBase64(parsed.data.dataBase64);
+  if (!raw) return { ok: false, message: "Invalid image payload", status: 400 };
+  if (raw.length > PROFILE_IMAGE_INPUT_MAX_BYTES) {
+    return { ok: false, message: "Invalid or oversized image payload", status: 413 };
+  }
+  return { ok: true, buffer: raw };
+}
+
+async function purgeAbandonedProfileMedia(
+  ownerId: string,
+  livePaths: Array<string | null | undefined>,
+): Promise<void> {
+  const abandoned = await listAbandonedProfilePaths(ownerId, livePaths);
+  for (const item of abandoned) {
+    if (isCommunityStoragePath(item.path)) continue;
+    if (item.refCount <= 1) {
+      try {
+        await r2Delete(item.path);
+      } catch {
+        /* best effort — DB release still drops the quota row */
+      }
+    }
+    await releaseStoragePath(ownerId, item.path);
+  }
+}
 
 async function uploadProfileImage(
   user: SessionUser,
   kind: "avatar" | "cover",
-  body: z.infer<typeof imageSchema>,
+  raw: Buffer,
   res: Response,
 ): Promise<void> {
   if (!isR2StorageActive()) {
     bad(res, "Image storage is not configured on this server.", 503);
     return;
   }
-  const raw = decodeBase64(body.dataBase64);
-  if (!raw || raw.length > 8 * 1024 * 1024) {
-    bad(res, "Invalid or oversized image payload", 413);
-    return;
-  }
   let processed: { buffer: Buffer; contentType: string };
   try {
     processed = await processProfileImage(raw, kind);
   } catch (err) {
+    if (isProfileImageCapError(err)) {
+      bad(res, "Image is too large after compression.", 413);
+      return;
+    }
     bad(res, "Could not process image — use a JPEG or PNG photo.");
     return;
   }
-  const { data: current, error: curErr } = await supabaseAdmin
-    .from("profiles")
-    .select("avatar_path, cover_path, avatar_bytes, cover_bytes")
-    .eq("id", user.id)
-    .maybeSingle();
-  if (curErr) {
-    if (isMissingTable(curErr)) {
-      unavailable(res);
-      return;
-    }
-    serverError(res, curErr, "profile-hub");
+  const current = await getProfileById(user.id, "avatar_path, cover_path, avatar_bytes, cover_bytes");
+  if (current.error && isMissingTable(current.error) && !current.data) {
+    unavailable(res);
+    return;
+  }
+  if (current.error && !current.data) {
+    serverError(res, current.error, "profile-hub");
     return;
   }
   const path = profileImagePath(user.id, kind);
+  const oldPath =
+    kind === "avatar"
+      ? (current.data?.avatar_path as string | null | undefined)
+      : (current.data?.cover_path as string | null | undefined);
   const reserved = await replaceReservedPath(
     user.id,
-    kind === "avatar" ? current?.avatar_path : current?.cover_path,
+    oldPath,
     path,
     processed.buffer.length,
     user,
@@ -444,13 +525,30 @@ async function uploadProfileImage(
     return;
   }
   try {
-    await r2Upload(path, processed.buffer, processed.contentType);
+    await r2Upload(path, processed.buffer, processed.contentType, {
+      cacheControl: PROFILE_MEDIA_CACHE_CONTROL,
+    });
   } catch (err) {
     await releaseStoragePath(user.id, path);
     serverError(res, err, "profile-hub");
     return;
   }
-  const oldPath = kind === "avatar" ? current?.avatar_path : current?.cover_path;
+  const colPath = kind === "avatar" ? "avatar_path" : "cover_path";
+  const colBytes = kind === "avatar" ? "avatar_bytes" : "cover_bytes";
+  const { error } = await updateProfileFields(user.id, {
+    [colPath]: path,
+    [colBytes]: processed.buffer.length,
+  });
+  if (error) {
+    try {
+      await r2Delete(path);
+    } catch {
+      /* best effort — quota already reserved */
+    }
+    await releaseStoragePath(user.id, path);
+    serverError(res, error, "profile-hub");
+    return;
+  }
   if (oldPath && oldPath !== path) {
     try {
       await r2Delete(oldPath);
@@ -459,48 +557,57 @@ async function uploadProfileImage(
     }
     await releaseStoragePath(user.id, oldPath);
   }
-  const colPath = kind === "avatar" ? "avatar_path" : "cover_path";
-  const colBytes = kind === "avatar" ? "avatar_bytes" : "cover_bytes";
-  const { data, error } = await supabaseAdmin
-    .from("profiles")
-    .update({ [colPath]: path, [colBytes]: processed.buffer.length })
-    .eq("id", user.id)
-    .select(publicProfileFields())
-    .single();
-  if (error) {
-    serverError(res, error, "profile-hub");
+  const liveAvatar = kind === "avatar" ? path : (current.data?.avatar_path as string | null | undefined);
+  const liveCover = kind === "cover" ? path : (current.data?.cover_path as string | null | undefined);
+  try {
+    await purgeAbandonedProfileMedia(user.id, [liveAvatar, liveCover]);
+  } catch {
+    /* best effort — live object is already committed */
+  }
+  const loaded = await loadHubProfile(user.id);
+  if (!loaded.row) {
+    serverError(res, loaded.error ?? { message: "read-after-write missed the profile" }, "profile-hub");
     return;
   }
+  const snap = await getStorageSnapshot(user.id, user);
   noStore(res);
   res.json({
-    profile: presentProfile(data as unknown as ProfileRow, user.id),
+    profile: presentProfile(loaded.row, user.id),
     byteSize: processed.buffer.length,
+    storage: "missing" in snap ? null : snap,
   });
 }
+
+const rawImageBody = express.raw({
+  type: ["image/*", "application/octet-stream"],
+  limit: PROFILE_IMAGE_INPUT_MAX_BYTES,
+});
 
 router.post(
   "/me/avatar",
   requireAuth,
+  rawImageBody,
   asyncHandler(async (req, res) => {
-    const parsed = imageSchema.safeParse(req.body);
-    if (!parsed.success) {
-      bad(res, "Invalid image payload");
+    const decoded = decodeUploadedImage(req);
+    if (!decoded.ok) {
+      bad(res, decoded.message, decoded.status);
       return;
     }
-    await uploadProfileImage((req as AuthedRequest).user, "avatar", parsed.data, res);
+    await uploadProfileImage((req as AuthedRequest).user, "avatar", decoded.buffer, res);
   }),
 );
 
 router.post(
   "/me/cover",
   requireAuth,
+  rawImageBody,
   asyncHandler(async (req, res) => {
-    const parsed = imageSchema.safeParse(req.body);
-    if (!parsed.success) {
-      bad(res, "Invalid image payload");
+    const decoded = decodeUploadedImage(req);
+    if (!decoded.ok) {
+      bad(res, decoded.message, decoded.status);
       return;
     }
-    await uploadProfileImage((req as AuthedRequest).user, "cover", parsed.data, res);
+    await uploadProfileImage((req as AuthedRequest).user, "cover", decoded.buffer, res);
   }),
 );
 

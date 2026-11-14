@@ -22,6 +22,7 @@ import {
 } from "@/lib/api/profile";
 import { attachmentFileUrl } from "@/lib/api/community-feed";
 import { cn } from "@/lib/utils";
+import { ProfileAvatar, ProfileCover } from "@/features/profile/profile-media";
 
 const TABS = ["posts", "about", "files", "followers", "following"] as const;
 type Tab = (typeof TABS)[number];
@@ -193,6 +194,15 @@ export function PublicProfileShell({
                 {profile.website}
               </a>
             ) : null}
+            {typeof profile.extras.occupation === "string" && profile.extras.occupation ? (
+              <p>Occupation: {profile.extras.occupation}</p>
+            ) : null}
+            {typeof profile.extras.education === "string" && profile.extras.education ? (
+              <p>Education: {profile.extras.education}</p>
+            ) : null}
+            {typeof profile.extras.skills === "string" && profile.extras.skills ? (
+              <p>Skills: {profile.extras.skills}</p>
+            ) : null}
           </CardContent>
         </Card>
       ) : null}
@@ -278,10 +288,12 @@ function ProfilePeopleList({
         return (
           <li key={person.id} className="flex items-center gap-3 rounded-lg border p-3">
             <Link href={href} className="flex min-w-0 flex-1 items-center gap-3 hover:opacity-90">
-              <div
-                className="h-10 w-10 shrink-0 rounded-full bg-muted bg-cover bg-center"
-                style={person.avatarUrl ? { backgroundImage: `url(${person.avatarUrl})` } : undefined}
-                aria-hidden
+              <ProfileAvatar
+                url={person.avatarUrl}
+                name={person.fullName}
+                className="h-10 w-10 shrink-0 rounded-full"
+                textClassName="text-xs"
+                sizes="40px"
               />
               <div className="min-w-0">
                 <p className="truncate font-medium">{person.fullName}</p>
@@ -308,16 +320,13 @@ function ProfilePeopleList({
 function MotionHero({ profile }: { profile: PublicProfile }) {
   return (
     <div className="overflow-hidden rounded-xl border bg-card">
-      <div
-        className="h-28 bg-muted bg-cover bg-center"
-        style={profile.coverUrl ? { backgroundImage: `url(${profile.coverUrl})` } : undefined}
-      />
+      <ProfileCover url={profile.coverUrl} className="h-28" />
       <div className="flex items-end gap-3 px-4 pb-4">
-        <div
-          className="-mt-10 h-20 w-20 shrink-0 rounded-full border-4 border-card bg-muted bg-cover"
-          style={profile.avatarUrl ? { backgroundImage: `url(${profile.avatarUrl})` } : undefined}
-          role="img"
-          aria-label={profile.fullName}
+        <ProfileAvatar
+          url={profile.avatarUrl}
+          name={profile.fullName}
+          className="-mt-10 h-20 w-20 shrink-0 rounded-full border-4 border-card"
+          textClassName="text-lg"
         />
         <div>
           <h1 className="text-xl font-semibold">{profile.fullName}</h1>
