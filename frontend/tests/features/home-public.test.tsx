@@ -49,7 +49,7 @@ describe("guest home — sign in is the only action", () => {
     render(<HomePublic />);
 
     expect(
-      screen.getAllByText(/After signing, the account is approved by the system verification and administrative approval\./).length,
+      screen.getAllByText(/After signing, your account is approved automatically by system verification — usually within about 5 minutes\./).length,
     ).toBeGreaterThan(0);
     expect(screen.getByRole("link", { name: /^sign in$/i })).toHaveAttribute(
       "href",

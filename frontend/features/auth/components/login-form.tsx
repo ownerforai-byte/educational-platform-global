@@ -45,15 +45,19 @@ export function LoginForm() {
     const result = await loginAction({ email, password });
     setLoading(false);
 
-    if (result.ok) {
+    if (result.code === "PENDING_APPROVAL") {
+      // NOT a deny — the account is PENDING and a bot approves it
+      // automatically within ~5 minutes. Hand the signed status token to the
+      // waiting screen, which polls until the account flips to ACTIVE and
+      // then opens /welcome/approved.
+      if (result.statusToken) rememberPendingSignup(result.statusToken);
+      rememberAccessOutcome("PENDING");
+      router.push(WAITING_ROUTE);
+    } else if (result.ok) {
       // Signed-in approved session owns the device — drop signup markers.
       clearPendingSignup();
       refresh();
       router.push(tierWelcomePathFor(result.user));
-    } else if (result.code === "PENDING_APPROVAL" && result.statusToken) {
-      rememberPendingSignup(result.statusToken);
-      rememberAccessOutcome("PENDING");
-      router.push(WAITING_ROUTE);
     } else if (result.code === "ACCOUNT_REJECTED") {
       if (result.statusToken) rememberPendingSignup(result.statusToken);
       rememberAccessOutcome("REJECTED");

@@ -160,6 +160,13 @@ vi.mock("../../src/storage/firebase-store", () => ({
   upsertFcmTokenDoc: async () => {},
   appendNotificationLog: async () => null,
   upsertAccessSession: async () => {},
+  // Profile docs live on Firestore in prod; this suite's stateful Supabase
+  // mock is the legacy store the repository merges with — keep the doc side
+  // empty so reads/writes exercise the legacy path end to end.
+  PROFILES_COLLECTION: "profiles",
+  readProfileDoc: async () => null,
+  upsertProfileDoc: async () => ({ error: null }),
+  updateProfileDoc: async () => ({ error: null }),
 }));
 
 const authRouter = (await import("../../src/api/auth/auth.routes")).default;

@@ -43,13 +43,15 @@ export function SignupForm() {
     const result = await signupAction({ fullName, email, password });
     setLoading(false);
 
-    if (result.ok && result.statusToken) {
-      // Account creation flow: account created but NOT logged in — hand the
-      // signed status token to the /welcome screen, which shows the
-      // "created successfully / awaiting approval" state and polls it.
+    if (result.code === "PENDING_APPROVAL" || (result.ok && result.statusToken)) {
+      // Account created (HTTP 200 { code: "PENDING_APPROVAL", statusToken })
+      // — NOT logged in yet. The bot approves new accounts automatically
+      // within ~5 minutes, so hand the signed status token to the waiting
+      // screen: it shows the "created" confirmation and polls until the
+      // account flips to ACTIVE, then opens /welcome/approved.
       // The hardcoded pending-signup identity is persisted in three stores so
       // a refresh cannot drop the "account created" state (owner 2026-11-08).
-      rememberPendingSignup(result.statusToken);
+      if (result.statusToken) rememberPendingSignup(result.statusToken);
       router.push("/welcome/pending");
     } else if (result.ok && result.message) {
       setMessage(result.message);

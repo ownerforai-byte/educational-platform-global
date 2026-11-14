@@ -1,5 +1,5 @@
 export const ACCESS_NOTICE =
-  "After signing, the account is approved by the system verification and administrative approval.";
+  "After signing, your account is approved automatically by system verification — usually within about 5 minutes.";
 
 /** Owner wording 2026-11-09 — shown before sign-in and on the signup form. */
 export const DEVICE_SIGNUP_NOTICE =

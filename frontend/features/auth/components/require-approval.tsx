@@ -1,7 +1,9 @@
 "use client";
 
 /**
- * RequireApproval — the global login + owner-approval wall ("the auth system").
+ * RequireApproval — the global login + approval wall ("the auth system").
+ * Approval is bot-driven: new accounts are PENDING and flipped to ACTIVE
+ * automatically ~5 minutes after creation — there is no manual owner step.
  *
  * Owner request (2026-10-17): restore the auth system and approval flow for
  * every route in the (app) shell, including the periodic table in the header.
@@ -15,7 +17,8 @@
  *     present `user` already means "approved + verified + signed in".
  *   - A PENDING account never receives a session: signing in answers
  *     PENDING_APPROVAL and the login form routes to /welcome — the live
- *     "awaiting approval" screen. REJECTED accounts are refused a session too.
+ *     waiting screen (bot approval is automatic, ~5 minutes). REJECTED
+ *     accounts are refused a session too.
  *
  * So the wall needs only two visible states:
  *   approved + signed in → render the route.

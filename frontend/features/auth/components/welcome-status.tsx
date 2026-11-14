@@ -6,11 +6,7 @@ import {
   ArrowRight,
   BadgeCheck,
   Clock3,
-  Home,
-  Mail,
   RefreshCw,
-  ShieldAlert,
-  Send,
   ShieldCheck,
   Sparkles,
   UserCheck,
@@ -31,12 +27,13 @@ import {
 /**
  * WAITING screen body — polls live access for this device's status token.
  *
- *   PENDING  → stay here (awaiting approval)
+ *   PENDING  → stay here (bot approval is automatic, ~5 minutes)
  *   ACTIVE   → remember outcome + open /welcome/approved
  *   REJECTED → remember outcome + open /welcome/denied
  */
 
-const POLL_MS = 6000;
+/** Gentle interval — approval is automatic (bot, ~5 min); focus re-checks catch it sooner. */
+const POLL_MS = 15000;
 
 type StatusState =
   | "loading"
@@ -60,7 +57,7 @@ const STEP_INDEX: Record<StatusState, number> = {
 
 const STEPS = [
   { icon: UserCheck, label: "Account created", hint: "Your details are saved" },
-  { icon: Clock3, label: "Awaiting approval", hint: "Administrative review" },
+  { icon: Clock3, label: "Awaiting approval", hint: "Automatic — about 5 minutes" },
   { icon: BadgeCheck, label: "Access granted", hint: "Sign in and start learning" },
 ];
 
@@ -135,9 +132,19 @@ export function WelcomeStatus() {
 
   useEffect(() => {
     void check();
+    // Gentle interval, plus an instant re-check whenever the tab regains
+    // focus/visibility — a backgrounded tab doesn't hammer the API, but picks
+    // up an approval the moment the student comes back.
     timerRef.current = window.setInterval(() => void check(), POLL_MS);
+    const onWake = () => {
+      if (document.visibilityState === "visible") void check();
+    };
+    document.addEventListener("visibilitychange", onWake);
+    window.addEventListener("focus", onWake);
     return () => {
       if (timerRef.current) window.clearInterval(timerRef.current);
+      document.removeEventListener("visibilitychange", onWake);
+      window.removeEventListener("focus", onWake);
     };
   }, [check]);
 
@@ -282,7 +289,7 @@ export function WelcomeStatus() {
           }
           title="Awaiting approval"
           badge={<StatusPill status="PENDING" />}
-          body={`After signing, the account is approved by the system verification and administrative approval. This page checks live every few seconds (checked ${checkCount}×), so keep it open or come back anytime.`}
+          body={`Approval is automatic — system verification activates your account, usually within about 5 minutes. This page re-checks on its own (checked ${checkCount}×), so keep it open or come back anytime.`}
           actions={
             <>
               <button
@@ -298,70 +305,14 @@ export function WelcomeStatus() {
         />
       )}
 
-      {/* While waiting: the pending user can still send the owner a message. */}
-      {state === "PENDING" && <MessageOwnerBox name={fullName} />}
-
       {/* Owner request 2026-10-17: a candid exit note for visitors. */}
       {state === "PENDING" && <VisitorExitNote />}
 
       {/* ── Trust footer — kept, with its sign, below the note (owner 2026-10-17) ── */}
       <p className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground">
         <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
-        After signing, the account is approved by the system verification and administrative approval.
+        Approval is automatic — handled by system verification, usually within about 5 minutes.
       </p>
-    </div>
-  );
-}
-
-/**
- * A pending user can write to the owner while they wait (owner request
- * 2026-10-17: "also sending message do available"). The composer opens the
- * sender's own mail app addressed to the owner, with their identity and the
- * note prefilled — honest "sending" with no backend inbox to wire up.
- */
-function MessageOwnerBox({ name }: { name: string | null }) {
-  const [message, setMessage] = useState("");
-  const first = name?.trim().split(/\s+/)[0] ?? "there";
-  const send = () => {
-    const subject = encodeURIComponent("A note about my account");
-    const body = encodeURIComponent(
-      `Hi Ravikisan,\n\nI'm writing about my account and wanted to send a quick note.\n\n${
-        message.trim() || "(no message)"
-      }\n\n— ${name ?? "A new student"}`,
-    );
-    window.location.href = `mailto:sahrocky81@gmail.com?subject=${subject}&body=${body}`;
-  };
-  return (
-    <div className="rounded-2xl border border-amber-500/30 bg-amber-500/[0.06] p-4">
-      <p className="flex items-center gap-1.5 text-xs font-bold text-foreground">
-        <Mail className="h-3.5 w-3.5 text-amber-500" />
-        Send a message while you wait
-      </p>
-      <p className="mt-1 text-[11px] text-muted-foreground">
-        {name ? (
-          <>
-            Signed as{" "}
-            <span className="font-semibold text-foreground">{name}</span>.{" "}
-          </>
-        ) : null}
-        The owner reads every note — say hello, ask a question, or tell us what
-        you need.
-      </p>
-      <textarea
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        placeholder={`Hi ${first} — write your message here…`}
-        rows={3}
-        className="mt-2 w-full rounded-xl border border-border/70 bg-background/60 px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground/70 focus:border-amber-500/50 focus:outline-none focus:ring-1 focus:ring-amber-500/30"
-      />
-      <button
-        type="button"
-        onClick={send}
-        className="mt-2 inline-flex items-center gap-1.5 rounded-xl bg-primary px-4 py-2 text-xs font-semibold text-primary-foreground hover:opacity-90 transition-opacity"
-      >
-        <Send className="h-3.5 w-3.5" />
-        Send to owner
-      </button>
     </div>
   );
 }

@@ -131,6 +131,14 @@ const oauthSessionSchema = z.object({
 
 type AccessStatus = "PENDING" | "ACTIVE" | "REJECTED";
 
+const PENDING_MESSAGE =
+  "Your account is being verified — approval is automatic and usually completes within 5 minutes.";
+
+/**
+ * Live approval state — reads the Firestore `profiles` doc (auth migration
+ * contract; the auto-approval bot flips it PENDING → ACTIVE there) merged
+ * with any not-yet-migrated legacy row via the profile repository.
+ */
 async function readAccessStatus(userId: string, email?: string): Promise<AccessStatus> {
   const { role, accessStatus } = await loadProfileAccess(userId);
   if (isApprovedAccount({ email, role }, accessStatus)) return "ACTIVE";
@@ -138,10 +146,29 @@ async function readAccessStatus(userId: string, email?: string): Promise<AccessS
 }
 
 /**
- * 403 for a non-ACTIVE account — never issues or renews cookies.
- * Carries a signed `statusToken` so the client can bounce the user straight
- * to the /welcome status screen (pending page) instead of stranding them on
- * the login form with an error they cannot act on.
+ * 200 "waiting" response for a PENDING account on login/signup — NOT a deny.
+ * The account is auto-approved by the bot within ~5 minutes; the client shows
+ * the waiting screen and polls /api/auth/account-status with the signed
+ * statusToken. No session is issued on this path.
+ */
+function pendingApproval(res: Response, userId: string): void {
+  // Best-effort: (re)start the timed access-bot clock for FCM automation.
+  void ensureAccessRequest(userId);
+  res.status(200).json({
+    code: "PENDING_APPROVAL",
+    message: PENDING_MESSAGE,
+    statusToken: createStatusToken(userId),
+    accessStatus: "PENDING",
+    user: null,
+    accessToken: null,
+  });
+}
+
+/**
+ * 403 for a REJECTED account (or a non-ACTIVE session on /me|/refresh) —
+ * never issues or renews cookies. Carries a signed `statusToken` so the
+ * client can bounce the user straight to the /welcome status screen instead
+ * of stranding them on the login form with an error they cannot act on.
  */
 function accessDenied(res: Response, status: AccessStatus, userId?: string): void {
   const pending = status === "PENDING";
@@ -153,7 +180,7 @@ function accessDenied(res: Response, status: AccessStatus, userId?: string): voi
     error: pending ? "Account pending approval" : "Account denied",
     code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
     message: pending
-      ? "After signing, the account is approved by the system verification and administrative approval."
+      ? PENDING_MESSAGE
       : "This account was denied. You can create a new account, or leave a message to sahrocky81@gmail.com.",
     statusToken: userId ? createStatusToken(userId) : undefined,
   });
@@ -302,29 +329,22 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
     const accessStatus = await readAccessStatus(identity.id, identity.email);
     if (accessStatus !== "ACTIVE") {
       res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
-      const pending = accessStatus === "PENDING";
+      if (accessStatus === "REJECTED") {
+        accessDenied(res, accessStatus, identity.id);
+        return;
+      }
       // A pending OAuth account is also the device's one account: refuse a
       // DIFFERENT unapproved account on this device, otherwise bind this one
       // (the same account re-signing in must not block itself).
-      if (pending) {
-        const device = await checkDeviceSignupLimit(req, res, identity.id);
-        if (device.limited) {
-          res.status(403).json({ error: DEVICE_SIGNUP_LIMIT_MESSAGE, code: "DEVICE_SIGNUP_LIMIT" });
-          return;
-        }
-        await bindDeviceToAccount(device.deviceId, identity.id);
-        await ensureAccessRequest(identity.id);
+      const device = await checkDeviceSignupLimit(req, res, identity.id);
+      if (device.limited) {
+        res.status(403).json({ error: DEVICE_SIGNUP_LIMIT_MESSAGE, code: "DEVICE_SIGNUP_LIMIT" });
+        return;
       }
-      const statusToken = pending ? createStatusToken(identity.id) : undefined;
-      res.status(403).json({
-        error: pending ? "Account pending approval" : "Account denied",
-        code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
-        message: pending
-          ? "After signing, the account is approved by the system verification and administrative approval."
-          : "This account was denied. You can create a new account, or leave a message to sahrocky81@gmail.com.",
-        ...(statusToken ? { statusToken } : {}),
-        ...(pending ? { user: null, accessToken: null } : {}),
-      });
+      await bindDeviceToAccount(device.deviceId, identity.id);
+      // PENDING is not a deny: 200 + statusToken → the client shows the
+      // waiting screen while the bot auto-approves within ~5 minutes.
+      pendingApproval(res, identity.id);
       return;
     }
 
@@ -370,8 +390,12 @@ router.post("/login", async (req: Request, res: Response) => {
     }
     await ensureAuthProfile(verified.uid, { email: verified.email, fullName: verified.displayName });
     const accessStatus = await readAccessStatus(verified.uid, verified.email);
-    if (accessStatus !== "ACTIVE") {
+    if (accessStatus === "REJECTED") {
       accessDenied(res, accessStatus, verified.uid);
+      return;
+    }
+    if (accessStatus !== "ACTIVE") {
+      pendingApproval(res, verified.uid);
       return;
     }
     const user = await resolveSessionUser(verified.uid, verified.email);
@@ -392,10 +416,16 @@ router.post("/login", async (req: Request, res: Response) => {
   }
 
   // Credentials are valid, but access may not be: PENDING/REJECTED accounts
-  // never receive a session (no cookies are set on this path).
+  // never receive a session (no cookies are set on this path). PENDING is no
+  // longer a hard deny — the bot auto-approves within ~5 minutes, so the
+  // client gets 200 + statusToken and shows the waiting screen.
   const accessStatus = await readAccessStatus(data.user.id, data.user.email);
-  if (accessStatus !== "ACTIVE") {
+  if (accessStatus === "REJECTED") {
     accessDenied(res, accessStatus, data.user.id);
+    return;
+  }
+  if (accessStatus !== "ACTIVE") {
+    pendingApproval(res, data.user.id);
     return;
   }
 
@@ -498,11 +528,11 @@ router.post("/signup", async (req: Request, res: Response) => {
         accessDenied(res, accessStatus, uid);
         return;
       }
-      const body: SignupResponse = {
+      const body: SignupResponse & { code: string } = {
+        code: "PENDING_APPROVAL",
         user: null,
         accessToken: null,
-        message:
-          "After signing, the account is approved by the system verification and administrative approval.",
+        message: PENDING_MESSAGE,
         statusToken: createStatusToken(uid),
         accessStatus: "PENDING",
       };
@@ -590,7 +620,8 @@ router.post("/signup", async (req: Request, res: Response) => {
 
     // ── Account creation flow: new accounts start PENDING ──
     // NO session cookies are issued; the client gets a signed status token
-    // and is sent to the status screen instead of being logged in.
+    // and is sent to the waiting screen instead of being logged in. The bot
+    // auto-approves within ~5 minutes (200, not a hard deny).
     const accessStatus = await readAccessStatus(result.user.id, result.user.email);
     if (accessStatus !== "ACTIVE") {
       if (accessStatus === "REJECTED") {
@@ -598,11 +629,11 @@ router.post("/signup", async (req: Request, res: Response) => {
         return;
       }
       await ensureAccessRequest(result.user.id);
-      const body: SignupResponse = {
+      const body: SignupResponse & { code: string } = {
+        code: "PENDING_APPROVAL",
         user: null,
         accessToken: null,
-        message:
-          "After signing, the account is approved by the system verification and administrative approval.",
+        message: PENDING_MESSAGE,
         statusToken: createStatusToken(result.user.id),
         accessStatus: "PENDING",
       };

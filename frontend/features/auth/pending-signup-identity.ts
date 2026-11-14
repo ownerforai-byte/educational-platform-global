@@ -8,7 +8,7 @@
  * "account created").
  *
  *   NORMAL   /welcome/no-account  → no live account for this token
- *   WAITING  /welcome/pending     → live access_status PENDING
+ *   WAITING  /welcome/pending     → live access_status PENDING (bot approval pending)
  *   APPROVED /welcome/approved    → live access_status ACTIVE
  *   DENIED   /welcome/denied      → live access_status REJECTED (denied)
  */
@@ -31,7 +31,7 @@ export const ACCESS_OUTCOME_COOKIE = "neb_signup_outcome";
 /**
  * Hardcoded routes — exactly four approval screens.
  *   1. NORMAL   — no signup on this device
- *   2. WAITING  — PENDING (created, awaiting owner)
+ *   2. WAITING  — PENDING (created, awaiting automatic bot approval)
  *   3. APPROVED — ACTIVE (sign in)
  *   4. DENIED — access denied (continue as guest / create a new account)
  * `/welcome` itself is only a dispatcher onto one of these four.

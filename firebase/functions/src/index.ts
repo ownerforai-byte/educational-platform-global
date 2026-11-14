@@ -2,6 +2,7 @@ import { onSchedule } from "firebase-functions/v2/scheduler";
 import { onRequest } from "firebase-functions/v2/https";
 import { defineSecret, defineString } from "firebase-functions/params";
 import { logger } from "firebase-functions";
+import { approvePendingProfiles } from "./jobs/approvePendingProfiles";
 import { processApprovals } from "./jobs/processApprovals";
 import { processExpirations } from "./jobs/processExpirations";
 import { sendReminders } from "./jobs/sendReminders";
@@ -59,6 +60,56 @@ export const accessBotRunNow = onRequest(
       res.json({ ok: true, ...result });
     } catch (err) {
       logger.error("accessBotRunNow failed", err);
+      res.status(500).json({
+        ok: false,
+        error: err instanceof Error ? err.message : "unknown",
+      });
+    }
+  },
+);
+
+/**
+ * Firebase approval bot (Supabase→Firebase auth migration) — every minute
+ * promotes Firestore `profiles` docs PENDING → ACTIVE exactly 300 s after
+ * their `created_at`. Idempotent: never touches docs already ACTIVE/REJECTED.
+ *
+ * Deploy (from `firebase/`):
+ *   firebase deploy --only functions:approvalBotTick,functions:approvalBotRunNow
+ * See `firebase/functions/README.md` for the full deploy note.
+ */
+export const approvalBotTick = onSchedule(
+  {
+    schedule: "every 1 minutes",
+    timeZone: "Asia/Kathmandu",
+    retryCount: 1,
+  },
+  async () => {
+    const summary = await approvePendingProfiles();
+    logger.info("[approvalBotTick] cycle", summary);
+  },
+);
+
+/**
+ * Manual / health trigger for the Firebase approval bot. When
+ * ACCESS_BOT_RUN_KEY is set, require header `x-access-bot-key` to match.
+ */
+export const approvalBotRunNow = onRequest(
+  { cors: false },
+  async (req, res) => {
+    if (req.method !== "POST") {
+      res.status(405).send("POST only");
+      return;
+    }
+    const expected = accessBotRunKey.value();
+    if (expected && req.get("x-access-bot-key") !== expected) {
+      res.status(401).json({ error: "Unauthorized" });
+      return;
+    }
+    try {
+      const summary = await approvePendingProfiles();
+      res.json({ ok: true, ...summary });
+    } catch (err) {
+      logger.error("approvalBotRunNow failed", err);
       res.status(500).json({
         ok: false,
         error: err instanceof Error ? err.message : "unknown",

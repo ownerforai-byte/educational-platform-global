@@ -351,7 +351,7 @@ describe("auth flow", () => {
     expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(true);
   });
 
-  test("OAuth session routes pending accounts to the approval screen without issuing cookies", async () => {
+  test("OAuth session routes pending accounts to the waiting screen without issuing cookies", async () => {
     const userId = "11111111-1111-4111-8111-111111111111";
     mocked.auth.getUser.mockResolvedValue({
       data: { user: { id: userId, email: "google@example.com", app_metadata: { provider: "google" } } },
@@ -372,10 +372,17 @@ describe("auth flow", () => {
         },
         body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "refresh", state }),
       });
-      expect(res.status).toBe(403);
+      // PENDING is not a deny: 200 + statusToken so the client shows the
+      // waiting screen while the auto-approval bot runs (contract 2026).
+      expect(res.status).toBe(200);
       expect(res.headers.get("cache-control")).toBe("no-store");
       const payload = await res.json();
-      expect(payload).toMatchObject({ code: "PENDING_APPROVAL", user: null, accessToken: null });
+      expect(payload).toMatchObject({
+        code: "PENDING_APPROVAL",
+        accessStatus: "PENDING",
+        user: null,
+        accessToken: null,
+      });
       expect(verifyStatusToken(payload.statusToken)).toBe(userId);
       expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
     } finally {
@@ -476,12 +483,22 @@ describe("auth flow", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: "student@example.com", password: "password123" }),
       });
-      expect(res.status).toBe(403);
+      // REJECTED stays a hard deny (403); PENDING-ish states get the 200
+      // "waiting" contract response — never a session either way.
+      expect(res.status).toBe(name === "rejected" ? 403 : 200);
       expect(res.headers.get("cache-control")).toBe("private, no-store");
       const body = await res.json();
       expect(verifyStatusToken(body.statusToken)).toBe(userId);
-      expect(body).not.toHaveProperty("accessToken");
-      expect(body).not.toHaveProperty("user");
+      if (name === "rejected") {
+        expect(body.code).toBe("ACCOUNT_REJECTED");
+        expect(body).not.toHaveProperty("accessToken");
+        expect(body).not.toHaveProperty("user");
+      } else {
+        expect(body.code).toBe("PENDING_APPROVAL");
+        expect(body.accessStatus).toBe("PENDING");
+        expect(body.accessToken).toBeNull();
+        expect(body.user).toBeNull();
+      }
       expect(setCookiesOf(res)).toEqual([]);
       // PENDING paths fire ensureAccessRequest (user_access_requests); REJECTED does not.
       await vi.waitFor(() => {

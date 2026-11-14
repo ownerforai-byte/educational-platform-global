@@ -33,7 +33,7 @@ describe("GuestSignInNote", () => {
     });
     expect(
       screen.getByText(
-        /After signing, the account is approved by the system verification and administrative approval/,
+        /After signing, your account is approved automatically by system verification — usually within about 5 minutes\./,
       ),
     ).toBeInTheDocument();
   });

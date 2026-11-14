@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, GraduationCap, LogIn, PenLine } from "lucide-react";
 import { GUEST_SIGNIN_NOTE } from "./guest-signin-note";
+import { ACCESS_NOTICE } from "./access-notice";
 
 /**
  * Owner request 2026-11-08: the SECOND of the two approval-status screens.
@@ -37,7 +38,7 @@ export function NoAccountCard() {
       </div>
 
       <p className="text-center text-xs leading-relaxed text-muted-foreground">
-        After signing, the account is approved by the system verification and administrative approval.
+        {ACCESS_NOTICE}
       </p>
 
       <div className="flex flex-wrap items-center justify-center gap-2">
@@ -59,7 +60,7 @@ export function NoAccountCard() {
       </div>
 
       <p className="text-center text-[11px] text-muted-foreground">
-        After signing, the account is approved by the system verification and administrative approval.
+        {ACCESS_NOTICE}
       </p>
     </div>
   );

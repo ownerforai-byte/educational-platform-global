@@ -181,6 +181,12 @@ vi.mock("../../src/storage/firebase-store", () => ({
   upsertFcmTokenDoc: async () => {},
   appendNotificationLog: async () => null,
   upsertAccessSession: async () => {},
+  // Firestore is inactive in this suite (see the firebase-admin mock above);
+  // the profile helpers must no-op the same way the real ones do.
+  PROFILES_COLLECTION: "profiles",
+  readProfileDoc: async () => null,
+  upsertProfileDoc: async () => ({ error: null }),
+  updateProfileDoc: async () => ({ error: null }),
 }));
 
 const resourcesRouter = (await import("../../src/api/content/resources.controller")).default;
