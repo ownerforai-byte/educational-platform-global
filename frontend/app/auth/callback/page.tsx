@@ -76,14 +76,25 @@ function AuthCallbackContent() {
             throw new Error("Sign-in verification expired or failed. Please try again.");
           }
 
-          if (searchParams.get("firebase_start") === "1") {
+          // Consume any pending Google redirect result FIRST. `getRedirectResult`
+          // resolves the credential exactly once — when Firebase lands back on
+          // this URL after the provider round-trip — regardless of the query
+          // string that round-trip preserved. Deciding on ?firebase_start alone
+          // re-triggered signInWithRedirect on the post-redirect land (the
+          // marker was never stripped), looping "Finishing sign-in…" forever.
+          const idToken = await firebaseConsumeRedirectResult();
+          if (idToken) {
+            accessToken = idToken;
+          } else if (searchParams.get("firebase_start") === "1") {
+            // Initial handoff: no result yet and the caller asked us to start
+            // the redirect. Drop the marker before leaving so Firebase's return
+            // URL is clean and this branch can never fire again on the way back.
+            window.history.replaceState(null, "", window.location.pathname);
             await firebaseGoogleSignIn("redirect");
             return;
+          } else {
+            throw new Error("The provider did not return a valid session.");
           }
-
-          const idToken = await firebaseConsumeRedirectResult();
-          if (!idToken) throw new Error("The provider did not return a valid session.");
-          accessToken = idToken;
         } else {
           const state = sessionStorage.getItem("neb_oauth_csrf");
           if (!state || !/^[a-f0-9]{64}$/.test(state)) {
