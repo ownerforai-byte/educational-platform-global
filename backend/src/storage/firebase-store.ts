@@ -91,10 +91,17 @@ export async function upsertFcmTokenDoc(
 ): Promise<void> {
   const db = getFirestore();
   if (!db) return;
-  await db.collection("fcm_tokens").doc(userId).set(
+  const ref = db.collection("fcm_tokens").doc(userId);
+  const snap = await ref.get();
+  const existingCreatedAt = snap.exists
+    ? (snap.data()?.createdAt as string | undefined)
+    : undefined;
+  const createdAt = existingCreatedAt || new Date().toISOString();
+  await ref.set(
     {
       userId,
       token,
+      createdAt,
       updatedAt: new Date().toISOString(),
       ...extra,
     },

@@ -43,6 +43,12 @@ export function readFcmVapidKey(): string | null {
   return getPublicEnv().NEXT_PUBLIC_FIREBASE_VAPID_KEY?.trim() || null;
 }
 
+/** Firebase web config present (auth/messaging app can be created). */
+export function isFirebaseWebConfigured(): boolean {
+  return Boolean(readFirebaseWebConfig());
+}
+
+/** Full FCM readiness: web config AND the VAPID key are both set. */
 export function isFcmConfigured(): boolean {
   return Boolean(readFirebaseWebConfig() && readFcmVapidKey());
 }
