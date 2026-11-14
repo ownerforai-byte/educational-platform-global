@@ -19,5 +19,5 @@ export const ACCESS_BOT = {
   /** Send first onboarding tip this many minutes after approval. */
   guidanceAfterApprovalMinutes: intEnv("GUIDANCE_AFTER_APPROVAL_MINUTES", 15),
   /** Absolute site origin used to build deep links in push payloads. */
-  siteUrl: (process.env.SITE_URL || "https://ravikisan.vercel.app").replace(/\/$/, ""),
+  siteUrl: (process.env.SITE_URL || "https://www.harindrasah.com.np").replace(/\/$/, ""),
 } as const;

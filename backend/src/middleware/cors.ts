@@ -23,8 +23,8 @@ export function getAllowedOrigins(): string[] {
   if (origins.length === 0) {
     origins.push("http://localhost:5173", "http://localhost:3000", "http://0.0.0.0:3000");
   }
-  if (!origins.includes("https://ravikisan.vercel.app")) {
-    origins.push("https://ravikisan.vercel.app");
+  if (!origins.includes("https://www.harindrasah.com.np")) {
+    origins.push("https://www.harindrasah.com.np");
   }
   return Array.from(new Set(origins));
 }

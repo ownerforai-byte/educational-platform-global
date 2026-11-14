@@ -1,6 +1,6 @@
 # Android TWA Build — Ravikisan's Platform
 
-This folder wraps the live PWA (`https://ravikisan.vercel.app`) into a native
+This folder wraps the live PWA (`https://www.harindrasah.com.np`) into a native
 Android **Trusted Web Activity (TWA)** app using Google's **Bubblewrap**.
 The result is a Play-ready `.aab` that you upload to Play Console.
 
@@ -38,12 +38,12 @@ It will ask two questions:
   (`...\Android\jbr` / `...\Android Studio\jbr`).
 
 Bubblewrap will:
-- Pull `https://ravikisan.vercel.app/manifest.json`
+- Pull `https://www.harindrasah.com.np/manifest.json`
 - Download the 192/512 icons (from `/icon-192.png`, `/icon-512.png`)
 - Scaffold `MainActivity`, `AndroidManifest.xml`, Gradle files, and assets
 
 > If icon download fails, verify the two PNGs are reachable at
-> `https://ravikisan.vercel.app/icon-512.png` and `/icon-192.png`.
+> `https://www.harindrasah.com.np/icon-512.png` and `/icon-192.png`.
 
 ## 3) Build
 
@@ -66,7 +66,7 @@ AABs and keystores are ignored by git.
 npm run serve        # starts a local server + QR + sideload
 ```
 
-Open https://ravikisan.vercel.app on your phone, accept "Install app?", and
+Open https://www.harindrasah.com.np on your phone, accept "Install app?", and
 the TWA sideloads.
 
 ## 5) Package config
@@ -77,8 +77,8 @@ the TWA sideloads.
 |---|---|
 | `package` | `com.ravikisan.platform` |
 | `name` | Ravikisan's Platform |
-| `url` | `https://ravikisan.vercel.app` |
-| `manifestPath` | `https://ravikisan.vercel.app/manifest.json` |
+| `url` | `https://www.harindrasah.com.np` |
+| `manifestPath` | `https://www.harindrasah.com.np/manifest.json` |
 | `minSdk` | 30 (Android 11) — Play minimum for new apps is now higher; see below |
 | `targetSdk` | 36 (Gradle property `twaTargetSdk`) |
 
@@ -91,8 +91,8 @@ the TWA sideloads.
 ## 6) Privacy / policy URLs
 
 Play requires the privacy policy URL. Point it at your hosted page:
-- `https://ravikisan.vercel.app/legal/privacy`
-- Terms: `https://ravikisan.vercel.app/legal/terms`
+- `https://www.harindrasah.com.np/legal/privacy`
+- Terms: `https://www.harindrasah.com.np/legal/terms`
 
 Make sure the **live site** is stable before submitting — Play reviewers
 open the TWA and it loads this site.

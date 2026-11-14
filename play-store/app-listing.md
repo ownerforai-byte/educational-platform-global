@@ -35,7 +35,7 @@ The curriculum, syllabus and examination standards originate with Government of 
 - National Examination Board (NEB): https://www.neb.gov.np/
 - Curriculum Development Centre (CDC): https://moecdc.gov.np/
 - Ministry of Education, Science and Technology (MoEST): https://moest.gov.np/
-Official exam notices, syllabus PDFs and model questions are published on those sites. Every link is also collected inside the app, on the Official Sources page: https://ravikisan.vercel.app/official-sources
+Official exam notices, syllabus PDFs and model questions are published on those sites. Every link is also collected inside the app, on the Official Sources page: https://www.harindrasah.com.np/official-sources
 
 WHAT IS OURS, WHAT IS OFFICIAL
 - Aligned, not issued. Units and topics follow the published curriculum; the wording, examples and explanations are written by Verner.
@@ -56,7 +56,7 @@ GET STARTED
 
 SUPPORT
 Email: sahrocky81@gmail.com
-Privacy policy: https://ravikisan.vercel.app/legal/privacy
+Privacy policy: https://www.harindrasah.com.np/legal/privacy
 
 This is an independent study platform. It is not an official app of NEB, CDC or the Government of Nepal.
 
@@ -91,14 +91,14 @@ v1.0.0 — Initial release:
   portrait/landscape as requested by Play
 
 ## Links (fill on Play Console)
-- Website: https://ravikisan.vercel.app
-- Official sources page: https://ravikisan.vercel.app/official-sources
+- Website: https://www.harindrasah.com.np
+- Official sources page: https://www.harindrasah.com.np/official-sources
 - Support email: sahrocky81@gmail.com
-- Support website: `[OPTIONAL — e.g. ravikisan.vercel.app/support]`
-- Privacy policy URL: `https://ravikisan.vercel.app/legal/privacy`
-- Terms of Service URL: `https://ravikisan.vercel.app/legal/terms`
-- Cookie policy URL: `https://ravikisan.vercel.app/legal/cookies`
-- Purchase/Refund policy URL (if IAP enabled): `https://ravikisan.vercel.app/legal/purchases`
+- Support website: `[OPTIONAL — e.g. www.harindrasah.com.np/support]`
+- Privacy policy URL: `https://www.harindrasah.com.np/legal/privacy`
+- Terms of Service URL: `https://www.harindrasah.com.np/legal/terms`
+- Cookie policy URL: `https://www.harindrasah.com.np/legal/cookies`
+- Purchase/Refund policy URL (if IAP enabled): `https://www.harindrasah.com.np/legal/purchases`
 
 ## Contact
 - Email: sahrocky81@gmail.com

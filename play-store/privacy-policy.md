@@ -2,7 +2,7 @@
 
 **Last updated:** 14 October 2026
 **Effective date:** 14 October 2026
-**Website:** https://ravikisan.vercel.app
+**Website:** https://www.harindrasah.com.np
 **Contact:** sahrocky81@gmail.com
 
 > This policy explains what information Ravikisan's Platform ("the App", "we", "us")

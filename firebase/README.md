@@ -1,6 +1,6 @@
 # Verner Firebase (free-tier / Spark)
 
-Project: **rn01** (`rn01-af00b`) · Web app: `ravikisan.vercel.app`
+Project: **rn01** (`rn01-af00b`) · Web app: `www.harindrasah.com.np`
 
 ## Free-tier three lanes
 

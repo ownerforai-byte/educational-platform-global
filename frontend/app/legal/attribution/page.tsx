@@ -48,7 +48,7 @@ export default function AttributionPage() {
         </p>
         <p>
           <em>
-            Notes adapted from Ravikisan&apos;s Platform (https://ravikisan.vercel.app),
+            Notes adapted from Ravikisan&apos;s Platform (https://www.harindrasah.com.np),
             CC BY-NC 4.0. Sections on gas laws shortened; examples added.
           </em>
         </p>

@@ -20,7 +20,7 @@ You are free to:
 
 Under the following terms:
 - **Attribution** — You must give appropriate credit to Ravikisan's Platform,
-  provide a link to `https://ravikisan.vercel.app`, and indicate if changes
+  provide a link to `https://www.harindrasah.com.np`, and indicate if changes
   were made.
 - **NonCommercial** — You may not use the material for commercial purposes.
 

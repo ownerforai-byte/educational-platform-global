@@ -64,17 +64,17 @@ describe("OAuth callback wiring", () => {
     vi.resetModules();
     vi.stubEnv("NEXT_PUBLIC_SITE_URL", siteUrl);
     const fresh = await import("@/lib/supabase/oauth-config");
-    expect(fresh.CANONICAL_SITE_URL).toBe("https://ravikisan.vercel.app");
-    expect(fresh.APP_OAUTH_CALLBACK_URL).toBe("https://ravikisan.vercel.app/auth/callback");
+    expect(fresh.CANONICAL_SITE_URL).toBe("https://www.harindrasah.com.np");
+    expect(fresh.APP_OAUTH_CALLBACK_URL).toBe("https://www.harindrasah.com.np/auth/callback");
     vi.unstubAllEnvs();
     vi.resetModules();
   });
 
   it("still allows a custom production domain", async () => {
     vi.resetModules();
-    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://study.ravikisan.edu.np/");
+    vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://study.harindrasah.com.np/");
     const fresh = await import("@/lib/supabase/oauth-config");
-    expect(fresh.CANONICAL_SITE_URL).toBe("https://study.ravikisan.edu.np");
+    expect(fresh.CANONICAL_SITE_URL).toBe("https://study.harindrasah.com.np");
     vi.unstubAllEnvs();
     vi.resetModules();
   });
@@ -99,6 +99,6 @@ describe("Google 'Access blocked' diagnosis", () => {
   it("wires both OAuth ends to the canonical helper", () => {
     expect(read("features/auth/components/social-auth-buttons.tsx")).toContain("oauthCallbackUrl()");
     expect(read("features/auth/components/social-auth-buttons.tsx")).not.toContain('new URL("/auth/callback"');
-    expect(read("app/auth/callback/page.tsx")).toContain("isOAuthAccessBlocked");
+    expect(read("app/auth/callback/page.tsx")).toContain("authFailureMessage");
   });
 });

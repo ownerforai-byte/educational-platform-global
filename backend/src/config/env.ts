@@ -181,5 +181,5 @@ export function checkStartupEnv(env: NodeJS.ProcessEnv = process.env): boolean {
 export const PUBLIC_SITE_URL = (
   process.env.FRONTEND_URL ||
   process.env.PUBLIC_SITE_URL ||
-  "https://ravikisan.vercel.app"
+  "https://www.harindrasah.com.np"
 ).replace(/\/$/, "");

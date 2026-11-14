@@ -1,8 +1,7 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * ONE canonical public origin — owner request 2026-11-11: "make
- * ravikisan.vercel.app everywhere in working state; i am saving it but it
- * automatically is changing itself".
+ * ONE canonical public origin — owner request 2026-11-14: remove the
+ * retired Vercel application alias and keep www.harindrasah.com.np everywhere.
  *
  * WHY THE HOST KEPT DRIFTING: several surfaces each resolved the deployment
  * host their own way — OAuth used `window.location.origin`, the AI prompt and
@@ -26,8 +25,8 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-/** The one stable production alias. */
-export const PRODUCTION_ALIAS = "ravikisan.vercel.app";
+/** The one public production origin. Vercel hosts are deployment infrastructure only. */
+export const PRODUCTION_ALIAS = "www.harindrasah.com.np";
 
 /**
  * Only a real HTTPS deployment URL may override the canonical origin.

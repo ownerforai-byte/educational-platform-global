@@ -148,6 +148,8 @@ describe("CORS policy", () => {
     vi.stubEnv("FRONTEND_URL", "https://real-frontend.example.com");
 
     expect(isOriginAllowed("https://real-frontend.example.com")).toBe(true);
+    expect(isOriginAllowed("https://www.harindrasah.com.np")).toBe(true);
+    expect(isOriginAllowed("https://ravikisan.vercel.app")).toBe(false);
     // The old wildcard rules used to allow these:
     expect(isOriginAllowed("https://attacker.vercel.app")).toBe(false);
     expect(isOriginAllowed("https://attacker.onrender.com")).toBe(false);

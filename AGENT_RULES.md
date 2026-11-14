@@ -122,7 +122,7 @@ repository.
 - **Vercel only (2026-10-27):** the Cloudflare/open-next deployment path is gone —
   `frontend/open-next.config.ts`, `frontend/wrangler.jsonc` and the
   `@opennextjs/cloudflare` devDependency were removed. Frontend deploys to Vercel
-  (`ravikisan.vercel.app`), backend to Render; there is no third target.
+  (`www.harindrasah.com.np`), backend to Render; there is no third target.
 - **ISR corpus pages (2026-10-27):** the 20 class-11/class-12-notes corpus pages
   (subject, chapters, unit, topic, exercises, exercise-type, mindmap, syllabus,
   theory) are prerendered at build via `generateStaticParams` +

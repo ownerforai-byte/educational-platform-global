@@ -35,7 +35,7 @@ const flag = (name, fallback) => {
   return at >= 0 && args[at + 1] ? args[at + 1] : fallback;
 };
 
-const BASE = flag("base", process.env.LEDGER_BASE_URL || "https://ravikisan.vercel.app").replace(/\/$/, "");
+const BASE = flag("base", process.env.LEDGER_BASE_URL || "https://www.harindrasah.com.np").replace(/\/$/, "");
 const CONCURRENCY = Number(flag("concurrency", "6"));
 const FILTER = flag("filter", "");
 const LIMIT = Number(flag("limit", "0"));

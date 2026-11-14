@@ -123,7 +123,7 @@ function buildPayload() {
   }
   vars.FIREBASE_SERVICE_ACCOUNT_JSON = saJson;
   vars.FRONTEND_URL =
-    env.FRONTEND_URL?.trim() || "https://ravikisan.vercel.app";
+    env.FRONTEND_URL?.trim() || "https://www.harindrasah.com.np";
 
   return vars;
 }

@@ -25,23 +25,23 @@ providers, cookies, credit/premium system) so it matches reality.
    support site, refund window) in both the `.md` files and the `host/*.html`
    files are correct.
 3. **Host the 4 legal pages** from `host/` at stable public URLs, e.g.:
-   - `https://ravikisan.vercel.app/privacy-policy`
-   - `https://ravikisan.vercel.app/terms`
-   - `https://ravikisan.vercel.app/cookie-policy`
-   - `https://ravikisan.vercel.app/purchase-refund-policy`
+   - `https://www.harindrasah.com.np/privacy-policy`
+   - `https://www.harindrasah.com.np/terms`
+   - `https://www.harindrasah.com.np/cookie-policy`
+   - `https://www.harindrasah.com.np/purchase-refund-policy`
 
    The HTML files are self-contained (inline CSS, no external deps) — drop
    them into your Next.js frontend as static pages, or host on any static
    host (GitHub Pages, Netlify, Cloudflare Pages). Play requires a
    **publicly reachable URL**, not a PDF.
 4. **Build the Android app** (this is a web PWA) — wrap
-   `https://ravikisan.vercel.app` with **TWA/Bubblewrap** (recommended) or
+   `https://www.harindrasah.com.np` with **TWA/Bubblewrap** (recommended) or
    **Capacitor**, sign the `.aab`.
 5. **Create the app in Play Console**, fill in every section using the files
    above, attach the hosted URLs, and submit for review.
 
 ## Facts these docs are based on (verified in repo)
-- **Frontend host:** Vercel — `https://ravikisan.vercel.app`
+- **Frontend host:** Vercel — `https://www.harindrasah.com.np`
 - **Backend host:** Render — `https://rn01.onrender.com`
 - **Data host:** Supabase (auth, PostgreSQL DB, storage, transactional email)
 - **AI:** third-party provider chain (LLM + image generation) powering "Veer"

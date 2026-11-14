@@ -7,7 +7,7 @@
   provider dashboards need:
   - `SUPABASE_AUTH_CALLBACK_URL` = `https://<supabase-project>.supabase.co/auth/v1/callback`
   - `APP_OAUTH_CALLBACK_URL`     = `<CANONICAL_SITE_URL>/auth/callback` (default
-    `https://ravikisan.vercel.app/auth/callback`)
+    `https://www.harindrasah.com.np/auth/callback`)
 - `social-auth-buttons.tsx` now calls `oauthCallbackUrl()` for `redirectTo`
   (was `window.location.origin` → different callback per host → blocked).
 - `app/auth/callback/page.tsx` detects a blocked OAuth client and shows an
@@ -26,8 +26,8 @@ dashboards list the right redirect URIs. Do this in the next session:
    `tsvbksfegvdjwczzfdcx` must be removed — that mismatch is the root cause).
 
 2. **Supabase** (project `lqzjcwbkpeiqslqhxxmu`) → Authentication → URL Configuration:
-   - Site URL: `https://ravikisan.vercel.app`
-   - Redirect URLs: add `https://ravikisan.vercel.app/auth/callback`
+   - Site URL: `https://www.harindrasah.com.np`
+   - Redirect URLs: add `https://www.harindrasah.com.np/auth/callback`
    - Confirm Google is enabled under Authentication → Providers.
 
 3. Verify end-to-end: open the login page on the deployed URL, click "Continue with
@@ -42,7 +42,7 @@ The Google OAuth "access blocked" code fix is pushed. Now finish the manual
 provider-side configuration: verify the Supabase project is lqzjcwbkpeiqslqhxxmu,
 register https://lqzjcwbkpeiqslqhxxmu.supabase.co/auth/v1/callback in the Google
 Cloud OAuth client's Authorized redirect URIs (and remove the legacy
-tsvbksfegvdjwczzfdcx entry), and confirm https://ravikisan.vercel.app/auth/callback
+tsvbksfegvdjwczzfdcx entry), and confirm https://www.harindrasah.com.np/auth/callback
 is in Supabase Redirect URLs + Site URL. Then run `npm run check:all` and do a live
 Google sign-in test on the deployed URL, reporting the exact result.
 ```

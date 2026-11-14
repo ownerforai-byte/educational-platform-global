@@ -210,7 +210,7 @@ jobs:
           const aabPath = path.join(appDir, 'play-store/ravikisan-platform-release.aab');
 
           const ASSETLINKS_PACKAGE = 'com.ravikisan.platform';
-          const ASSETLINKS_HOST = 'ravikisan.vercel.app';
+          const ASSETLINKS_HOST = 'www.harindrasah.com.np';
           const ASSETLINKS_ORIGIN = `https://${ASSETLINKS_HOST}`;
 
           console.log(`Verifying assetlinks for ${ASSETLINKS_PACKAGE} on ${ASSETLINKS_ORIGIN}`);

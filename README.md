@@ -3,7 +3,7 @@
 > Curriculum-aligned, exam-grade study infrastructure for **NEB Class 11 & 12** students in Nepal.
 > Free, open-source, and built to work on a phone with a slow connection.
 
-**Live:** [ravikisan.vercel.app](https://ravikisan.vercel.app) · **API:** [rn01.onrender.com](https://rn01.onrender.com)
+**Live:** [www.harindrasah.com.np](https://www.harindrasah.com.np) · **API:** [rn01.onrender.com](https://rn01.onrender.com)
 
 ---
 

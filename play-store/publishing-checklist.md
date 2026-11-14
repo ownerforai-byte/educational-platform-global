@@ -15,7 +15,7 @@ tick this list before hitting **Create app**.
       (see §7). Play requires a URL, not a PDF, for the Privacy Policy.
 - [ ] An **Android build** of the PWA (`.aab`), since this is a web app:
       - Recommended: **TWA (Bubblewrap)** or **Capacitor** wrapping
-        `https://ravikisan.vercel.app`
+        `https://www.harindrasah.com.np`
       - Or a signed APK/AAB from a native wrapper
 - [ ] Your app's **signing key** (Play App Signing will manage it)
 
@@ -25,7 +25,7 @@ tick this list before hitting **Create app**.
 - [ ] Category = Education; sub-category if prompted
 - [ ] App icon (512×512), feature graphic (1024×500), screenshots (phone +
       tablet)
-- [ ] Website link: `https://ravikisan.vercel.app`
+- [ ] Website link: `https://www.harindrasah.com.np`
 - [ ] "What's new" text for the first release
 
 ## 2) Links & contacts
@@ -59,10 +59,10 @@ tick this list before hitting **Create app**.
 ## 7) Host the legal pages (required for Play URLs)
 - [x] **Already done** — 4 legal pages were added to the Next.js frontend and
       auto-publish on the live site (they deploy with every push to `main`):
-      - `https://ravikisan.vercel.app/legal/privacy`
-      - `https://ravikisan.vercel.app/legal/terms`
-      - `https://ravikisan.vercel.app/legal/cookies`
-      - `https://ravikisan.vercel.app/legal/purchases`
+      - `https://www.harindrasah.com.np/legal/privacy`
+      - `https://www.harindrasah.com.np/legal/terms`
+      - `https://www.harindrasah.com.np/legal/cookies`
+      - `https://www.harindrasah.com.np/legal/purchases`
 - [ ] After the next deploy, open each URL in a browser to confirm 200 + public
       (no login). They are public, never-gated pages.
 - [ ] Put these URLs into the Play Console "Privacy policy" / "Website" fields.

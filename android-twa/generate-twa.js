@@ -56,12 +56,12 @@ function enforcePlayTargetSdk() {
 
 async function main() {
   fs.writeFileSync(LOG, "");
-  logFile("[1/4] Fetching web manifest from ravikisan.vercel.app ...");
+  logFile("[1/4] Fetching web manifest from www.harindrasah.com.np ...");
   const twaManifest = await TwaManifest.fromWebManifest(
-    "https://ravikisan.vercel.app/manifest.json",
+    "https://www.harindrasah.com.np/manifest.json",
   );
 
-  twaManifest.host = "ravikisan.vercel.app";
+  twaManifest.host = "www.harindrasah.com.np";
   twaManifest.startUrl = "/";
   twaManifest.name = "Ravikisan's Platform";
   twaManifest.launcherName = "Ravikisan";
@@ -72,13 +72,13 @@ async function main() {
   twaManifest.orientation = "portrait";
   twaManifest.themeColor = require("color")("#3b82f6");
   twaManifest.backgroundColor = require("color")("#0f172a");
-  twaManifest.iconUrl = "https://ravikisan.vercel.app/icon-512.png";
-  twaManifest.maskableIconUrl = "https://ravikisan.vercel.app/icon-512.png";
+  twaManifest.iconUrl = "https://www.harindrasah.com.np/icon-512.png";
+  twaManifest.maskableIconUrl = "https://www.harindrasah.com.np/icon-512.png";
   twaManifest.enableNotifications = true;
   twaManifest.minSdkVersion = 30;
   twaManifest.generatorApp = "bubblewrap";
   twaManifest.webManifestUrl = new URL(
-    "https://ravikisan.vercel.app/manifest.json",
+    "https://www.harindrasah.com.np/manifest.json",
   );
   twaManifest.features = {};
 

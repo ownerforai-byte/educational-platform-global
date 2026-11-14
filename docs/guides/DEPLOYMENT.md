@@ -4,7 +4,7 @@
 
 | Service | Platform | URL |
 |---|---|---|
-| Frontend | Vercel | https://ravikisan.vercel.app |
+| Frontend | Vercel | https://www.harindrasah.com.np |
 | Backend API | Render (free tier) | https://rn01.onrender.com |
 
 Both auto-deploy on push to `main`. Never push `main` with failing `npm run check:all`.
@@ -21,7 +21,7 @@ Required environment variables (set in Vercel dashboard → Settings → Environ
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 NEXT_PUBLIC_API_URL=https://rn01.onrender.com
-NEXT_PUBLIC_SITE_URL=https://ravikisan.vercel.app
+NEXT_PUBLIC_SITE_URL=https://www.harindrasah.com.np
 ```
 
 Optional:
@@ -41,7 +41,7 @@ Required environment variables (set in Render dashboard → Environment):
 SUPABASE_URL=
 SUPABASE_SERVICE_ROLE_KEY=
 AGNES_API_KEY=              # primary LLM provider
-FRONTEND_URL=https://ravikisan.vercel.app
+FRONTEND_URL=https://www.harindrasah.com.np
 NODE_ENV=production
 ```
 

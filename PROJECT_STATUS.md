@@ -1,5 +1,9 @@
 # PROJECT STATUS
 
+## CANONICAL PUBLIC ORIGIN (2026-11-14 — supersedes older URL references)
+**`https://www.harindrasah.com.np`**. The retired `ravikisan.vercel.app` application alias is no longer accepted; Vercel remains the hosting provider and Render remains the API host. Firebase authentication permits the custom `www` and apex domains while retaining its default Firebase auth-handler origin. All files modified for this migration are [IMPORTANT CORE FILE] under the repository classifier.
+
+
 ## PROJECT
 NEB Study Vault / Educational Platform Global
 
@@ -333,7 +337,7 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 - **Workspace:** `C:\Users\ASUS\Desktop\rn` (monorepo: `frontend/` Next.js 16 + `backend/` Express 4 TS).
 - **Repo:** `github.com/ownerforai-byte/educational-platform-global` (branch `main`).
 - **Deploy:** both halves auto-deploy on every push to `main`. Frontend: Vercel production
-  `https://ravikisan.vercel.app`; backend: Render `https://rn01.onrender.com` (`/health`
+  `https://www.harindrasah.com.np`; backend: Render `https://rn01.onrender.com` (`/health`
   reports the deployed SHA). The foreign-WIP ship was verified READY at `0a52272b` (six
   commits: bill-everyone credits, AI image history, coin-gate UI, Image Hub for every
   student, PYQ reader + syllabus-by-year, PYQ corpus); the four-partial completions
