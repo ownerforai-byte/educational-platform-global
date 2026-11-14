@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Lock } from "lucide-react";
 import { LEGAL_LINKS } from "@/components/layout/footer";
 import { platformLinks } from "@/components/platform/public-page";
 import { IndependenceDisclaimer } from "@/components/platform/independence-disclaimer";
@@ -28,10 +29,10 @@ export function PlansPageFooter() {
 
       <IndependenceDisclaimer variant="compact" className="border-amber-500/40" />
 
-      <div className="grid gap-6 rounded-2xl border border-border/70 bg-muted/20 p-5 sm:grid-cols-2">
-        <nav aria-label="Legal and policies">
+      <div className="grid gap-6 rounded-2xl border border-border/70 bg-muted/20 p-5 sm:grid-cols-3">
+        <nav aria-label="LEGALITY and policies">
           <h3 className="text-xs font-semibold uppercase tracking-widest text-primary">
-            Legal &amp; policies
+            LEGALITY &amp; policies
           </h3>
           <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-2">
             {LEGAL_LINKS.map(([label, href]) => (
@@ -63,6 +64,33 @@ export function PlansPageFooter() {
               </li>
             ))}
           </ul>
+        </nav>
+
+        {/* Further — locked. Owner request 2026-07-10: a third group for schools,
+            teachers and parents, sealed behind a Confidential overlay. The
+            destination is not public yet, so the row is inert (not a link) and
+            the content sits under a blurred Confidential mark. */}
+        <nav aria-label="Further">
+          <h3 className="text-xs font-semibold uppercase tracking-widest text-primary">
+            Further
+          </h3>
+          <div className="relative mt-3">
+            <ul className="flex flex-wrap gap-x-4 gap-y-2" aria-hidden="true">
+              <li>
+                <span className="inline-flex min-h-8 items-center gap-1.5 text-xs text-muted-foreground/60 blur-[3px] select-none">
+                  For schools, teachers, and parents
+                </span>
+              </li>
+            </ul>
+            {/* Confidential overlay — the section is locked. */}
+            <div className="absolute inset-0 flex items-center justify-start">
+              <span className="inline-flex items-center gap-1 rounded-md border border-border/70 bg-background/85 px-2 py-1 text-[9px] font-bold uppercase tracking-widest text-muted-foreground">
+                <Lock className="h-2.5 w-2.5" aria-hidden="true" />
+                Confidential
+              </span>
+            </div>
+            <span className="sr-only">Further — Confidential. For schools, teachers, and parents.</span>
+          </div>
         </nav>
       </div>
 
