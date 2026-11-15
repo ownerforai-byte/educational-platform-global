@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { supabaseAdmin } from "../db/supabase.js";
+import { insertCommunityFeedPost } from "../db/repositories/community-feed.repository.js";
 import { COMMUNITY_BOT_ID, ensureCommunityBotProfile } from "../lib/community-bot.js";
 
 const NATURE_DIGEST = [
@@ -48,7 +48,7 @@ async function insertBotPost(opts: {
   await ensureCommunityBotProfile();
   const now = new Date().toISOString();
   const id = randomUUID();
-  const { error } = await supabaseAdmin.from("community_feed_posts").insert({
+  const { error } = await insertCommunityFeedPost({
     id,
     author_id: COMMUNITY_BOT_ID,
     title: opts.title,
@@ -58,7 +58,7 @@ async function insertBotPost(opts: {
     created_at: now,
     updated_at: now,
   });
-  if (error) return { ok: false, reason: error.message ?? "insert failed" };
+  if (error) return { ok: false, reason: error.message };
   return { ok: true, id };
 }
 
