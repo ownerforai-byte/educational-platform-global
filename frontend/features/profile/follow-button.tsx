@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { Check, Plus } from "lucide-react";
 import { followUser, unfollowUser } from "@/lib/api/profile";
 import { cn } from "@/lib/utils";
@@ -24,18 +24,19 @@ export function FollowButton({
   className,
   onChange,
 }: FollowButtonProps) {
-  const [following, setFollowing] = useState(initialFollowing);
   const [pending, setPending] = useState(false);
   const [notice, setNotice] = useState<string | null>(null);
 
-  useEffect(() => {
-    setFollowing(initialFollowing);
-  }, [initialFollowing, targetUserId]);
+  // Local opinion wins over the server value, but only for THIS target and
+  // THIS incoming value — no state mirroring in an effect.
+  const stateKey = `${targetUserId}:${String(initialFollowing)}`;
+  const [override, setOverride] = useState<{ key: string; following: boolean } | null>(null);
+  const following = override?.key === stateKey ? override.following : initialFollowing;
 
   const toggle = useCallback(async () => {
     if (!username || pending) return;
     const prev = following;
-    setFollowing(!prev);
+    setOverride({ key: stateKey, following: !prev });
     setPending(true);
     setNotice(null);
     try {
@@ -43,12 +44,12 @@ export function FollowButton({
       else await followUser(username);
       onChange?.(!prev);
     } catch {
-      setFollowing(prev);
+      setOverride({ key: stateKey, following: prev });
       setNotice("Could not update follow");
     } finally {
       setPending(false);
     }
-  }, [username, pending, following, onChange]);
+  }, [username, pending, following, onChange, stateKey]);
 
   if (!viewerId || viewerId === targetUserId || !username) return null;
 

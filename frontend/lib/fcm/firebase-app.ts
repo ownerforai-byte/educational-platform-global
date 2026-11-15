@@ -20,7 +20,10 @@ export function getFirebaseApp(): FirebaseApp | null {
   if (!config) return null;
   try {
     app = getApps()[0] ?? initializeApp(config);
-  } catch {
+  } catch (err) {
+    if (process.env.NODE_ENV !== "production") {
+      console.warn("[firebase] initializeApp failed", err);
+    }
     app = null;
   }
   return app;

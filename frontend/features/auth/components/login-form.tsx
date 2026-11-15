@@ -27,7 +27,7 @@ import {
 } from "../pending-signup-identity";
 import { DEVICE_SIGNUP_NOTICE } from "./access-notice";
 import { useAuthFormError } from "../use-auth-form-error";
-import { AUTH_INVALID_CREDENTIALS } from "../public-messages";
+import { AUTH_INVALID_CREDENTIALS, authFailureMessage } from "../public-messages";
 
 export function LoginForm() {
   const router = useRouter();
@@ -82,7 +82,7 @@ export function LoginForm() {
     if (err instanceof FirebaseMfaRequiredError) {
       setMfaResolver(err.resolver);
     } else {
-      setError(err instanceof Error ? err.message : "Sign-in failed");
+      setError(authFailureMessage(err, "login"));
     }
   } finally {
     setLoading(false);
@@ -114,7 +114,7 @@ export function LoginForm() {
       }
       setError(AUTH_INVALID_CREDENTIALS);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Sign-in failed");
+      setError(authFailureMessage(err, "login"));
     } finally {
       setLoading(false);
       setMfaResolver(null);

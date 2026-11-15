@@ -123,7 +123,15 @@ export function PublicProfileShell({
   }, [username, activeTab]);
 
   useEffect(() => {
-    void load();
+    // Deferred a microtask so the loader's first setState lands outside the
+    // effect body (React Compiler `set-state-in-effect`).
+    let cancelled = false;
+    queueMicrotask(() => {
+      if (!cancelled) void load();
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [load]);
 
   const handleFollowingChange = useCallback((next: boolean) => {

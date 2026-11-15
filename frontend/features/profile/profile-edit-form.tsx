@@ -63,7 +63,7 @@ export function ProfileEditForm() {
     visibility: "public" as Visibility,
     extras: emptyExtras,
   });
-  const baseline = useRef<string>("");
+  const [baseline, setBaseline] = useState<string>("");
 
   useEffect(() => {
     void (async () => {
@@ -81,14 +81,14 @@ export function ProfileEditForm() {
           extras: extrasFrom(me.profile),
         };
         setForm(next);
-        baseline.current = JSON.stringify(next);
+        setBaseline(JSON.stringify(next));
       } catch (e) {
         setMessage(e instanceof Error ? e.message : "Could not load profile");
       }
     })();
   }, []);
 
-  const dirty = useMemo(() => JSON.stringify(form) !== baseline.current, [form]);
+  const dirty = useMemo(() => Boolean(baseline) && JSON.stringify(form) !== baseline, [form, baseline]);
 
   useEffect(() => {
     if (!dirty) return;
@@ -102,11 +102,11 @@ export function ProfileEditForm() {
 
   useEffect(() => {
     const name = form.username.trim().toLowerCase();
-    if (name.length < 3 || name === (profile?.username ?? "")) {
-      setUsernameStatus(null);
-      return;
-    }
     const t = window.setTimeout(() => {
+      if (name.length < 3 || name === (profile?.username ?? "")) {
+        setUsernameStatus(null);
+        return;
+      }
       void checkUsername(name)
         .then((r) => setUsernameStatus(r.available ? "Available" : "Taken"))
         .catch(() => setUsernameStatus(null));
@@ -130,7 +130,7 @@ export function ProfileEditForm() {
       setProfile(next);
       const saved = { ...form, extras: extrasFrom(next) };
       setForm(saved);
-      baseline.current = JSON.stringify(saved);
+      setBaseline(JSON.stringify(saved));
       setMessage("Profile saved.");
       if (next.username) router.push(profilePath(next.username, next.id));
     } catch (e) {
@@ -141,8 +141,8 @@ export function ProfileEditForm() {
   };
 
   const onCancel = () => {
-    if (!baseline.current) return;
-    setForm(JSON.parse(baseline.current) as typeof form);
+    if (!baseline) return;
+    setForm(JSON.parse(baseline) as typeof form);
     setMessage(null);
   };
 

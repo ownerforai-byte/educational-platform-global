@@ -23,6 +23,7 @@ import {
   rememberAccessOutcome,
   rememberPendingSignup,
 } from "@/features/auth/pending-signup-identity";
+import { logAuthFailureDetail } from "@/features/auth/auth-debug";
 import { authFailureMessage } from "@/features/auth/public-messages";
 import { useAuthFormError } from "@/features/auth/use-auth-form-error";
 import type { OAuthSessionResponse } from "@/types/api";
@@ -158,9 +159,10 @@ function AuthCallbackContent() {
         router.replace(tierWelcomePathFor(response.user));
       } catch (callbackError) {
         if (callbackError instanceof FirebaseMfaRequiredError) {
-          setError(
-            "Google sign-in needs your SMS verification code. Use email and password on the login page, then enter the code when prompted.",
-          );
+          const mfaMessage =
+            "Google sign-in needs your SMS verification code. Use email and password on the login page, then enter the code when prompted.";
+          logAuthFailureDetail(callbackError, "oauth", mfaMessage);
+          setError(mfaMessage);
           return;
         }
         const authError = callbackError as Error & { code?: string; statusToken?: string };

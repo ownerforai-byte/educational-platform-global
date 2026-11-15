@@ -2,6 +2,7 @@
 
 import { apiFetch } from "@/lib/api-client";
 import { readStatusToken } from "@/features/auth/pending-signup-identity";
+import { getPublicEnv } from "@/lib/env";
 import {
   isFirebaseWebConfigured,
   readFcmVapidKey,
@@ -134,10 +135,29 @@ function registerMessagingServiceWorker(): Promise<ServiceWorkerRegistration> {
  * Permission + token
  * ------------------------------------------------------------------ */
 
+function fcmDebugLoggingEnabled(): boolean {
+  if (process.env.NODE_ENV !== "production") return true;
+  const flag = getPublicEnv().NEXT_PUBLIC_FCM_DEBUG?.trim().toLowerCase();
+  return flag === "1" || flag === "true" || flag === "yes";
+}
+
 function logDetail(context: string, err: unknown): void {
-  if (process.env.NODE_ENV !== "production") {
+  if (fcmDebugLoggingEnabled()) {
     console.warn(`[fcm] ${context}`, err);
   }
+}
+
+/** Log structured FCM registration/sync outcomes (no raw tokens). */
+export function logFcmResult(
+  op: "register" | "sync",
+  result: { ok: boolean; reason?: string },
+): void {
+  if (!fcmDebugLoggingEnabled()) return;
+  if (result.ok) {
+    console.info(`[fcm] ${op} ok`);
+    return;
+  }
+  console.warn(`[fcm] ${op} failed`, { reason: result.reason ?? "unknown" });
 }
 
 /**

@@ -8,12 +8,20 @@ The monorepo uses a single root lockfile. Workspaces:
 | Setting | Value |
 |---|---|
 | Root Directory | `frontend` |
-| Install Command | `npm ci --workspace=educational-platform-frontend` |
-| Build Command | `npm run build` (default) |
+| Install Command | `npm ci --workspace=educational-platform-frontend` (from repo root; see `frontend/vercel.json`) |
+| Build Command | `npm run build` (default — runs `next build` in `frontend/`) |
 | Ignored Build Step | `frontend/vercel.json` → `ignoreCommand` |
 
 Install from the repo root so the workspace graph and root `overrides` apply.
 Do not restore a nested `frontend/package-lock.json`.
+
+**Misconfigured project (repo root):** If Root Directory is left blank, Vercel runs the
+**root** `package.json` `build` script (backend `tsc` only) and then fails with
+`.next` missing at `/vercel/path0/.next`. Either set Root Directory to `frontend`
+(preferred) or rely on root `vercel.json`, which builds
+`educational-platform-frontend` and sets `outputDirectory` to `frontend/.next`.
+Disable or delete duplicate Vercel projects that deploy the same repo without
+`frontend` as Root Directory unless you intend to use root `vercel.json`.
 
 ### Shared package (`packages/shared`) must trigger frontend builds
 

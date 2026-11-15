@@ -11,7 +11,7 @@ import {
 } from "@/features/auth/pending-signup-identity";
 import { useAuth } from "@/providers/auth-provider";
 import { isFcmConfigured } from "./config";
-import { registerFcmToken, syncFcmToken } from "./register-token";
+import { logFcmResult, registerFcmToken, syncFcmToken } from "./register-token";
 import { startFcmTokenRefresh } from "./token-refresh";
 
 function deepLinkFromPayload(data: Record<string, string> | undefined): string | null {
@@ -63,7 +63,7 @@ export function FcmNotificationListener() {
     void registerFcmToken({
       statusToken,
       deepLink: normalizeDeepLink(window.location.pathname),
-    });
+    }).then((result) => logFcmResult("register", result));
 
     // Token-rotation guard: re-checks `getToken` on focus / visibility /
     // interval and re-registers only when the token (or deep link) changed.
@@ -79,7 +79,9 @@ export function FcmNotificationListener() {
     if (!isFcmConfigured() || isLoading) return;
     const statusToken = readStatusToken();
     if (!user && !statusToken) return;
-    void syncFcmToken({ statusToken, deepLink: normalizeDeepLink(pathname) });
+    void syncFcmToken({ statusToken, deepLink: normalizeDeepLink(pathname) }).then((result) =>
+      logFcmResult("sync", result),
+    );
   }, [user, isLoading, pathname]);
 
   useEffect(() => {

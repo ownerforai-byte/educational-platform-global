@@ -60,11 +60,12 @@ export function SelectTrigger({
   children,
   className,
   id,
+  ...rest
 }: {
   children: React.ReactNode;
   className?: string;
   id?: string;
-}) {
+} & Omit<React.ComponentProps<typeof Button>, "children" | "className" | "id">) {
   const { open, setOpen } = useSelect();
 
   return (
@@ -77,6 +78,7 @@ export function SelectTrigger({
       aria-haspopup="listbox"
       className={cn("w-full justify-between font-normal", className)}
       onClick={() => setOpen(!open)}
+      {...rest}
     >
       <span className="flex items-center gap-2 truncate">{children}</span>
       <svg

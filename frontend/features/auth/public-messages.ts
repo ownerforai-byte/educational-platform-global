@@ -1,3 +1,5 @@
+import { logAuthFailureDetail } from "./auth-debug";
+
 /** User-facing auth errors — never echo server, Firebase, or provider text. */
 
 export const AUTH_INVALID_CREDENTIALS =
@@ -55,13 +57,7 @@ function looksLikeInvalidLogin(message: string, status: number | undefined, code
   );
 }
 
-/**
- * Map an internal failure to safe copy for the auth UI.
- */
-export function authFailureMessage(
-  err: unknown,
-  kind: AuthFailureKind = "login",
-): string {
+function resolveAuthFailureMessage(err: unknown, kind: AuthFailureKind): string {
   if (
     typeof navigator !== "undefined" &&
     typeof navigator.onLine === "boolean" &&
@@ -82,13 +78,10 @@ export function authFailureMessage(
     return AUTH_INVALID_CREDENTIALS;
   }
 
-  // Signup form validation only — not a server outage.
   if (kind === "signup" && status === undefined && message === "validation") {
     return AUTH_TRY_AGAIN;
   }
 
-  // Specific, actionable copy for the common non-credential failures so the
-  // user is never shown a vague "temporarily unavailable" for a real cause.
   if (/too-many-requests|too many requests|too many attempts|quota exceeded|rate limit/.test(code + " " + message)) {
     return "Too many sign-in attempts. Please wait a minute and try again.";
   }
@@ -98,9 +91,25 @@ export function authFailureMessage(
   if (/multi-factor-auth-required/.test(code)) {
     return "Enter the verification code sent to your phone to finish signing in.";
   }
+  if (/popup-closed-by-user|cancelled-popup-request/.test(code)) {
+    return "Sign-in was cancelled. Tap Continue with Google to try again.";
+  }
   if (/unauthorized-domain|operation-not-allowed|invalid-api-key|configuration-not-found|api-key-not-valid/.test(code + " " + message)) {
     return "Sign-in isn't reachable from this site yet. Please contact us.";
   }
 
   return AUTH_TEMPORARILY_UNAVAILABLE;
+}
+
+/**
+ * Map an internal failure to safe copy for the auth UI.
+ * In dev (or with `NEXT_PUBLIC_AUTH_DEBUG`), also logs `code` / status to the console.
+ */
+export function authFailureMessage(
+  err: unknown,
+  kind: AuthFailureKind = "login",
+): string {
+  const userMessage = resolveAuthFailureMessage(err, kind);
+  logAuthFailureDetail(err, kind, userMessage);
+  return userMessage;
 }

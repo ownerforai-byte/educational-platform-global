@@ -585,10 +585,28 @@ export function PrivateProfileDashboard({
   const [progressEntries, setProgressEntries] = useState<ProgressEntry[]>([]);
   const [targetGrade, setTargetGrade] = useState(GRADES[0]);
   const [sparkUsage, setSparkUsage] = useState<AiSparkUsage | null>(null);
-  const [storageInfo, setStorageInfo] = useState<StorageInfo | null>(storage);
-  const [visibility, setVisibility] = useState(media?.visibility ?? "public");
+  const [storageOverride, setStorageOverride] = useState<StorageInfo | null>(null);
+  const [visibilityOverride, setVisibilityOverride] = useState<string | null>(null);
   const [savingVisibility, setSavingVisibility] = useState(false);
   const [visibilityError, setVisibilityError] = useState(false);
+
+  // Derived, never mirrored: the freshest server value wins, and an optimistic
+  // edit only overrides until the PATCH answers.
+  const storageInfo = storageOverride ?? storage ?? null;
+  const visibility = visibilityOverride ?? media?.visibility ?? "public";
+
+  /**
+   * Own the fresh quota from an upload/removal locally as well as forwarding it
+   * up: a caller is not guaranteed to re-render with new props, and a stale
+   * storage meter after deleting a picture would be a lie.
+   */
+  const handleMediaChanged = useCallback(
+    (result: { profile: PublicProfile; storage: StorageInfo | null }) => {
+      if (result.storage) setStorageOverride(result.storage);
+      onMediaChanged(result);
+    },
+    [onMediaChanged],
+  );
 
   // Overview needs the journey up front (the Progress tab's panel refetches).
   useEffect(() => {
@@ -624,7 +642,7 @@ export function PrivateProfileDashboard({
     let alive = true;
     getStorage()
       .then((info) => {
-        if (alive) setStorageInfo(info);
+        if (alive) setStorageOverride(info);
       })
       .catch(() => {
         /* keep the storage figure that came with the profile payload */
@@ -635,20 +653,15 @@ export function PrivateProfileDashboard({
   }, []);
 
   useEffect(() => {
-    setStorageInfo(storage);
-  }, [storage]);
-
-  useEffect(() => {
-    if (media?.visibility) setVisibility(media.visibility);
-  }, [media?.visibility]);
-
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem(key("neb_target_grade"));
-      if (saved) setTargetGrade(saved);
-    } catch {
-      /* storage unavailable / private mode */
-    }
+    // Deferred so the synchronous setState lands outside the effect body.
+    queueMicrotask(() => {
+      try {
+        const saved = localStorage.getItem(key("neb_target_grade"));
+        if (saved) setTargetGrade(saved);
+      } catch {
+        /* storage unavailable / private mode */
+      }
+    });
   }, []);
 
   const handleProgressLoaded = useCallback((entries: ProgressEntry[]) => {
@@ -698,7 +711,7 @@ export function PrivateProfileDashboard({
 
   const handleVisibility = async (next: string) => {
     if (next === visibility) return;
-    setVisibility(next);
+    setVisibilityOverride(next);
     setSavingVisibility(true);
     setVisibilityError(false);
     try {
@@ -706,6 +719,8 @@ export function PrivateProfileDashboard({
         visibility: next as "public" | "members" | "private",
       });
       onMediaChanged({ profile: result.profile, storage: null });
+      // The server now owns the value — drop the optimistic override.
+      setVisibilityOverride(null);
     } catch {
       // Keep the chosen value and surface the error — the user can retry
       // without re-picking (QA contract: an error never loses the selection).
@@ -856,7 +871,7 @@ export function PrivateProfileDashboard({
                 currentUrl={coverUrl}
                 displayName={displayName}
                 hasImage={Boolean(coverUrl)}
-                onChanged={onMediaChanged}
+                onChanged={handleMediaChanged}
                 className="absolute right-3 top-3 z-10"
               />
             </div>
@@ -876,7 +891,7 @@ export function PrivateProfileDashboard({
                       currentUrl={avatarUrl}
                       displayName={displayName}
                       hasImage={Boolean(avatarUrl)}
-                      onChanged={onMediaChanged}
+                      onChanged={handleMediaChanged}
                       className="absolute -bottom-1.5 -right-1.5 z-10"
                     />
                     <div

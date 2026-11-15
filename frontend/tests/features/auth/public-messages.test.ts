@@ -40,6 +40,12 @@ describe("authFailureMessage", () => {
     );
   });
 
+  it("maps popup closed to a retry hint", () => {
+    expect(authFailureMessage({ code: "auth/popup-closed-by-user" }, "oauth")).toContain(
+      "cancelled",
+    );
+  });
+
   it("falls back to temporarily unavailable", () => {
     expect(authFailureMessage(new Error("FIREBASE_CLIENT_AUTH"), "oauth")).toBe(
       AUTH_TEMPORARILY_UNAVAILABLE,
