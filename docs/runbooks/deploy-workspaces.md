@@ -29,8 +29,8 @@ Vercel’s Root Directory is `frontend`. A commit that **only** changes
 `packages/shared` is treated as “didn’t affect this project” and the production
 deploy is **canceled** unless the Ignored Build Step says otherwise.
 
-`frontend/vercel.json` `ignoreCommand` builds when either `frontend/` **or**
-`packages/shared/` changed (and still skips `dependabot/*`). If you change
+`frontend/vercel.json` `ignoreCommand` builds when `frontend/`, `packages/shared/`,
+or repo-root `.well-known/` changed (and still skips `dependabot/*`). If you change
 only `@rn/shared` and a deploy is still skipped, add a one-line touch under
 `frontend/` (e.g. a comment in `frontend/proxy.ts`, which imports
 `@rn/shared/utils`) and push to `main`.
