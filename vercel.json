@@ -1,0 +1,23 @@
+{
+  "framework": "nextjs",
+  "installCommand": "sh -c 'env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm ci --workspace=educational-platform-frontend'",
+  "buildCommand": "env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm run build --workspace=educational-platform-frontend",
+  "outputDirectory": "frontend/.next",
+  "ignoreCommand": "sh -c 'case $VERCEL_GIT_COMMIT_REF in dependabot/*) exit 0;; esac; git diff --quiet HEAD^ HEAD -- frontend packages/shared && exit 0 || exit 1'",
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "dependabot/*": false,
+      "content/*": false,
+      "feature/*": false,
+      "backend/*": false,
+      "test/*": false,
+      "ci/*": false,
+      "chore/*": false,
+      "docs/*": false,
+      "agents/*": false,
+      "claude/*": false,
+      "worktree/*": false
+    }
+  }
+}

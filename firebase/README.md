@@ -95,11 +95,28 @@ Notes:
 
 ### Local env cheat sheet
 
+From the **repo root** (works on Windows PowerShell 5 — uses npm’s shell, not `&&` in PS):
+
 ```bash
-cd firebase && npm run sdkconfig:web          # web SDK (no VAPID)
-cd firebase && npm run env:web                  # writes backend/.env.firebase.generated
-cd firebase && npm run env:pull-frontend        # VAPID + full NEXT_PUBLIC_* from Vercel
-node backend/scripts/verify-firebase-env-sync.mjs # compare .env.local vs CLI output
+npm run firebase:refresh-local     # env:web + verify-env + sdkconfig (prints JSON)
+npm run firebase:pull-vercel-env # VAPID + NEXT_PUBLIC_* → frontend/.env.local
+```
+
+PowerShell 5 does **not** support `&&`. Use `;` between commands, or the npm scripts above:
+
+```powershell
+cd C:\Users\ASUS\Desktop\rn
+npm run firebase:refresh-local
+npm run firebase:pull-vercel-env
+```
+
+Bash / PowerShell 7+:
+
+```bash
+cd firebase && npm run sdkconfig:web
+cd firebase && npm run env:web
+cd firebase && npm run env:pull-frontend
+npm run firebase:verify-env
 ```
 
 ## Approval bot (Cloud Functions — Firestore only)
