@@ -137,7 +137,7 @@ describe("navigation menu", () => {
     expect(quickLinkMinTier("/class-12-notes")).toBe("plus");
     expect(quickLinkMinTier("/lab")).toBe("plus");
     expect(quickLinkMinTier("/quiz")).toBe("plus");
-    expect(quickLinkMinTier("/chat")).toBe("member"); // three chat consoles
+    expect(quickLinkMinTier("/chat")).toBe("plus"); // Veer study consoles
     expect(quickLinkMinTier("/ai/math")).toBe("plus"); // studio tools open at Plus
     expect(quickLinkMinTier("/pdfs")).toBe("pro"); // §3 row 18
     // Every quick link resolves through the real registry (no silent fallback).

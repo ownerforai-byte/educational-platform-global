@@ -101,7 +101,7 @@ interface Case {
 
 const CASES: Case[] = [
   { name: "analytics", View: AnalyticsView, section: "analytics", minTier: "pro", path: "/analytics", sparkGated: false, comingSoon: false },
-  { name: "ask", View: AskView, section: "ask", minTier: "member", path: "/ask", sparkGated: false, comingSoon: false },
+  { name: "ask", View: AskView, section: "ask", minTier: "plus", path: "/ask", sparkGated: false, comingSoon: false },
   { name: "billing", View: BillingView, section: "billing", minTier: "member", path: "/billing", sparkGated: false, comingSoon: true },
   { name: "community-space", View: () => <CommunitySpaceView space={space} />, section: "community", minTier: "plus", path: "/community/x", sparkGated: false, comingSoon: false },
   { name: "community", View: CommunityView, section: "community", minTier: "plus", path: "/community", sparkGated: false, comingSoon: false },

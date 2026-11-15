@@ -7,7 +7,7 @@ export const COMMUNITY_BOT_ID = "rn-study-assistant";
 
 export const COMMUNITY_BOT_USERNAME = "community-bot";
 
-export const COMMUNITY_BOT_DISPLAY_NAME = "Community bot";
+export const COMMUNITY_BOT_DISPLAY_NAME = "Sahrocky81";
 
 export const COMMUNITY_BOT_AVATAR_URL = "/avatars/community-bot.svg";
 
@@ -49,7 +49,7 @@ export async function ensureCommunityBotProfile(): Promise<void> {
     username: COMMUNITY_BOT_USERNAME,
     avatar_path: COMMUNITY_BOT_AVATAR_PATH,
     role: "assistant",
-    plan: "pro",
+    plan: "owner",
     access_status: "ACTIVE",
     premium_status: false,
   };
@@ -62,6 +62,7 @@ export async function ensureCommunityBotProfile(): Promise<void> {
         username: COMMUNITY_BOT_USERNAME,
         avatar_path: COMMUNITY_BOT_AVATAR_PATH,
         role: "assistant",
+        plan: "owner",
       })
       .eq("id", COMMUNITY_BOT_ID);
     if (updateError && !isMissingTable(updateError)) {

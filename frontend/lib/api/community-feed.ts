@@ -141,10 +141,14 @@ export function toggleLike(id: string): Promise<{ likeCount: number; likedByYou:
   return call(`${ROOT}/feed/${id}/like`, { method: "POST" });
 }
 
-export function addComment(postId: string, body: string): Promise<{ comment: FeedComment }> {
+export function addComment(
+  postId: string,
+  body: string,
+  opts?: { followUpToBot?: boolean },
+): Promise<{ comment: FeedComment; botComment?: FeedComment | null }> {
   return call(`${ROOT}/feed/${postId}/comments`, {
     method: "POST",
-    body: JSON.stringify({ body }),
+    body: JSON.stringify({ body, followUpToBot: opts?.followUpToBot === true }),
   });
 }
 

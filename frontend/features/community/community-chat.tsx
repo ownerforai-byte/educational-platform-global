@@ -6,7 +6,7 @@ import { LobbyChat } from "@/features/realtime-chat/lobby-chat";
 import { glassShell } from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
 
-/** Live Firestore lobby opened from Community → Chat. */
+/** Platform-wide community chat opened from Community → Chat. */
 export function CommunityChat() {
   return (
     <div className="mx-auto flex w-full max-w-2xl flex-col gap-4 px-4 pb-8 pt-6">
@@ -19,7 +19,7 @@ export function CommunityChat() {
           Chat
         </h1>
         <p className="text-sm text-muted-foreground">
-          Realtime lobby for verified members — messages sync live over Firestore.
+          A chat room for everyone on the platform — say hello, share study updates, and help each other.
         </p>
       </header>
       <LobbyChat />

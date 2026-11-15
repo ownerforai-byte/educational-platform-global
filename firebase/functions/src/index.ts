@@ -5,6 +5,27 @@ import { logger } from "firebase-functions";
 import { approvePendingProfiles } from "./jobs/approvePendingProfiles";
 
 const accessBotRunKey = defineString("ACCESS_BOT_RUN_KEY", { default: "" });
+const communityBotApiBase = defineString("COMMUNITY_BOT_API_BASE", { default: "" });
+const communityBotCronKey = defineString("COMMUNITY_BOT_CRON_KEY", { default: "" });
+
+async function postCommunityBotCron(path: "daily-public" | "profile-discovery"): Promise<void> {
+  const base = communityBotApiBase.value().replace(/\/+$/, "");
+  const key = communityBotCronKey.value();
+  if (!base || !key) {
+    logger.warn("[communityBotCron] skipped — set COMMUNITY_BOT_API_BASE and COMMUNITY_BOT_CRON_KEY");
+    return;
+  }
+  const url = `${base}/api/community/cron/${path}`;
+  const res = await fetch(url, {
+    method: "POST",
+    headers: { "x-community-bot-cron-key": key },
+  });
+  if (!res.ok) {
+    const text = await res.text().catch(() => "");
+    throw new Error(`community bot cron ${path} failed: ${res.status} ${text.slice(0, 200)}`);
+  }
+  logger.info(`[communityBotCron] ${path}`, { status: res.status });
+}
 
 /**
  * Firebase approval bot — every minute promotes Firestore `profiles` docs
@@ -36,6 +57,30 @@ export const approvalBotTick = onSchedule(
  * Manual / health trigger for the Firebase approval bot. When
  * ACCESS_BOT_RUN_KEY is set, require header `x-access-bot-key` to match.
  */
+/** Daily 2:00 Asia/Kathmandu — public nature & news post on the community feed. */
+export const communityBotDailyPost = onSchedule(
+  {
+    schedule: "0 2 * * *",
+    timeZone: "Asia/Kathmandu",
+    retryCount: 1,
+  },
+  async () => {
+    await postCommunityBotCron("daily-public");
+  },
+);
+
+/** Every two hours — profile-only science discovery timeline (not on the main feed). */
+export const communityBotProfileDiscovery = onSchedule(
+  {
+    schedule: "every 2 hours",
+    timeZone: "Asia/Kathmandu",
+    retryCount: 1,
+  },
+  async () => {
+    await postCommunityBotCron("profile-discovery");
+  },
+);
+
 export const approvalBotRunNow = onRequest(
   { cors: false },
   async (req, res) => {

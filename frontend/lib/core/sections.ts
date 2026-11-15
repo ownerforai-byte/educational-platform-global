@@ -115,8 +115,8 @@ export const SECTIONS: PlatformSection[] = [
   {
     id: "veer-chat",
     title: "Veer AI Chat",
-    description: "The three chat consoles. Members get 13 messages per day.",
-    minTier: "member",
+    description: "Study, Nepali, and Grammar consoles. Opens at Plus (25 sparks/day).",
+    minTier: "plus",
     icon: MessageCircle,
     href: "/chat",
   },
@@ -131,7 +131,8 @@ export const SECTIONS: PlatformSection[] = [
   {
     id: "community-feed",
     title: "Community",
-    description: "Public study posts. Guests can read. Verified members and every higher tier can publish.",
+    description:
+      "Open to all: read posts and use Community Chat. Members read bot answers; guests see a sign-in gate on replies.",
     minTier: "guest",
     icon: Users,
     href: "/ai/community",
@@ -404,8 +405,8 @@ export const SECTIONS: PlatformSection[] = [
   {
     id: "ask",
     title: "Ask",
-    description: "Ask a study question and get a Veer tutor answer. Opens at Member.",
-    minTier: "member",
+    description: "Private Veer tutor channel. Opens at Plus — members ask in Community instead.",
+    minTier: "plus",
     icon: HelpCircle,
     href: "/ask",
   },

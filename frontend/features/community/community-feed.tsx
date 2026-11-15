@@ -93,7 +93,7 @@ export function CommunityFeed({
             <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
               {view === "mine"
                 ? "Posts you have published."
-                : "Read study posts. Verified members can publish."}
+                : "Open to all. Members publish and read Sahrocky81 answers; guests see blurred bot replies."}
             </p>
           </div>
           <div className="flex flex-wrap gap-2">

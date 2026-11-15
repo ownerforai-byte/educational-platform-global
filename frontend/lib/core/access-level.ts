@@ -17,9 +17,8 @@ import {
  * Ladder (low → high):
  *
  *   guest  → signed out. The home chat widget only; no notes, labs, or Veer.
- *   member → any signed-in account. The study desk: dashboard, settings,
- *              streaks, ask, my notes, billing, and the three chat consoles —
- *              13 Veer sparks a day.
+ *   member → any signed-in account. Community posts, Community Chat, and
+ *              Sahrocky81 bot answers; public study questions on the board.
  *   plus   → search, Student Desk, Class 11 + 12 notes, formula sheets,
  *              practice sets, the notice board, labs, simulations, and Veer
  *              studio — 25 Veer sparks a day.
@@ -66,7 +65,7 @@ export const ACCESS_LABELS: Record<AccessLevel, string> = {
 /** The same rung in plain words, shown on the public overview + /plans. */
 export const ACCESS_TAGLINES: Record<AccessLevel, string> = {
   guest: "Home chat widget only",
-  member: "13 Veer chats a day",
+  member: "Community, chat, and bot answers",
   plus: "Search, notes, labs, and Veer studio",
   pro: "Every index, 50 Veer sparks a day",
   owner: "Everything, plus the rails and console",

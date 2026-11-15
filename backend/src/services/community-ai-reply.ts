@@ -62,6 +62,27 @@ function orderedPoolForToday(liveNames: string[]): string[] {
  * Ground a community post in curriculum retrieval, then produce a concise
  * public comment (not a private chat turn).
  */
+export async function generateCommunityFollowUpReply(opts: {
+  title: string;
+  body: string;
+  category: string;
+  question: string;
+  priorAssistantReply?: string;
+}): Promise<string> {
+  const context = [
+    `Original post:\n${opts.title}\n\n${opts.body}`,
+    opts.priorAssistantReply ? `Your earlier public reply:\n${opts.priorAssistantReply}` : null,
+    `Student follow-up question:\n${opts.question.trim()}`,
+  ]
+    .filter(Boolean)
+    .join("\n\n");
+  return generateCommunityAssistantReply({
+    title: "Follow-up",
+    body: context,
+    category: opts.category,
+  });
+}
+
 export async function generateCommunityAssistantReply(opts: {
   title: string;
   body: string;

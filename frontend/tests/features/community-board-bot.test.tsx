@@ -109,7 +109,7 @@ beforeEach(() => {
       updatedAt: "2026-01-01T00:00:01.000Z",
       author: {
         id: "rn-study-assistant",
-        fullName: "Community bot",
+        fullName: "Sahrocky81",
         username: "community-bot",
         plan: "pro",
         role: "assistant",
@@ -165,7 +165,7 @@ describe("CommunityBoard Answer with Veer", () => {
             updatedAt: "2026-01-01T00:00:01.000Z",
             author: {
               id: "rn-study-assistant",
-              fullName: "Community bot",
+              fullName: "Sahrocky81",
               username: "community-bot",
               plan: "pro",
               role: "assistant",
@@ -180,6 +180,6 @@ describe("CommunityBoard Answer with Veer", () => {
     render(<CommunityBoard view="post" id={questionPost.id} />);
     expect(await screen.findByText("Already posted.")).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: "Answer with Veer" })).not.toBeInTheDocument();
-    expect(screen.getByLabelText("Verified AI assistant")).toBeInTheDocument();
+    expect(screen.getByLabelText("Sahrocky81 owner verified")).toBeInTheDocument();
   });
 });

@@ -24,7 +24,12 @@ import type { SessionUser } from "../../auth/types";
 import {
   CommunityAssistantReplyError,
   generateCommunityAssistantReply,
+  generateCommunityFollowUpReply,
 } from "../../services/community-ai-reply";
+import {
+  runCommunityBotDailyPublicPost,
+  runCommunityBotProfileDiscoveryPost,
+} from "../../services/community-bot-scheduler";
 import { ERROR_ID_HEADER, logServerError, newErrorId } from "../../middleware/error-handler";
 import {
   BINARY_FILE_BY_EXTENSION,
@@ -123,6 +128,8 @@ const postSchema = z.object({
 
 const commentSchema = z.object({
   body: z.string().trim().min(1).max(8000),
+  /** When true, Sahrocky81 auto-replies after the member comment is saved. */
+  followUpToBot: z.boolean().optional(),
 });
 
 const attachmentSchema = z.object({
@@ -260,6 +267,63 @@ function canPublishCommunityBotReply(postAuthorId: string, viewer: SessionUser |
   return viewer.id === postAuthorId || isOwnerAccount(viewer);
 }
 
+async function publishBotThreadReply(opts: {
+  postId: string;
+  post: PostRow;
+  question: string;
+}): Promise<{
+  comment: {
+    id: string;
+    body: string;
+    createdAt: string;
+    updatedAt: string;
+    author: ReturnType<typeof toAuthor>;
+  };
+} | null> {
+  try {
+    await ensureCommunityBotProfile();
+    const { data: priorRows } = await supabaseAdmin
+      .from("community_feed_comments")
+      .select("body, author_id")
+      .eq("post_id", opts.postId)
+      .order("created_at", { ascending: false })
+      .limit(12);
+    const priorAssistant = (priorRows ?? []).find((row) => isCommunityBotId(row.author_id))?.body as
+      | string
+      | undefined;
+    const body = await generateCommunityFollowUpReply({
+      title: opts.post.title,
+      body: opts.post.body,
+      category: opts.post.category,
+      question: opts.question,
+      priorAssistantReply: priorAssistant,
+    });
+    const now = new Date().toISOString();
+    const commentId = randomUUID();
+    const { error } = await supabaseAdmin.from("community_feed_comments").insert({
+      id: commentId,
+      post_id: opts.postId,
+      author_id: COMMUNITY_BOT_ID,
+      body,
+      created_at: now,
+      updated_at: now,
+    });
+    if (error) return null;
+    const botProfiles = await profilesById([COMMUNITY_BOT_ID]);
+    return {
+      comment: {
+        id: commentId,
+        body,
+        createdAt: now,
+        updatedAt: now,
+        author: toAuthor(COMMUNITY_BOT_ID, botProfiles.get(COMMUNITY_BOT_ID), false),
+      },
+    };
+  } catch {
+    return null;
+  }
+}
+
 async function assistantReplyMeta(
   postId: string,
   postAuthorId: string,
@@ -389,7 +453,7 @@ async function loadRecent(authorId?: string): Promise<{ rows: PostRow[] } | { mi
     .select("id, author_id, title, body, category, visibility, created_at, updated_at");
   const query = authorId
     ? base.eq("author_id", authorId).order("created_at", { ascending: false }).limit(SCAN_LIMIT)
-    : base.order("created_at", { ascending: false }).limit(SCAN_LIMIT);
+    : base.eq("visibility", "public").order("created_at", { ascending: false }).limit(SCAN_LIMIT);
   const { data, error } = await query;
   if (error) {
     if (isMissingTable(error)) return { missing: true };
@@ -1238,21 +1302,63 @@ router.post(
       serverError(res, error, "community-feed");
       return;
     }
+    const humanComment = {
+      id,
+      body: parsed.data.body,
+      createdAt: now,
+      updatedAt: now,
+      author: toAuthor(user.id, {
+        id: user.id,
+        full_name: user.fullName,
+        plan: user.plan ?? null,
+        role: user.role,
+      }),
+    };
+
+    let botComment: Awaited<ReturnType<typeof publishBotThreadReply>> | null = null;
+    if (parsed.data.followUpToBot) {
+      botComment = await publishBotThreadReply({
+        postId,
+        post: found.row,
+        question: parsed.data.body,
+      });
+    }
+
     noStore(res);
     res.status(201).json({
-      comment: {
-        id,
-        body: parsed.data.body,
-        createdAt: now,
-        updatedAt: now,
-        author: toAuthor(user.id, {
-          id: user.id,
-          full_name: user.fullName,
-          plan: user.plan ?? null,
-          role: user.role,
-        }),
-      },
+      comment: humanComment,
+      botComment: botComment?.comment ?? null,
     });
+  }),
+);
+
+function cronKeyOk(req: Request): boolean {
+  const expected = process.env.COMMUNITY_BOT_CRON_KEY?.trim();
+  if (!expected) return false;
+  return req.get("x-community-bot-cron-key") === expected;
+}
+
+router.post(
+  "/cron/daily-public",
+  asyncHandler(async (req, res) => {
+    if (!cronKeyOk(req)) {
+      bad(res, "Unauthorized", 401);
+      return;
+    }
+    const result = await runCommunityBotDailyPublicPost();
+    res.json(result);
+  }),
+);
+
+router.post(
+  "/cron/profile-discovery",
+  asyncHandler(async (req, res) => {
+    if (!cronKeyOk(req)) {
+      bad(res, "Unauthorized", 401);
+      return;
+    }
+    const result = await runCommunityBotProfileDiscoveryPost();
+    res.json(result);
   }),
 );
 

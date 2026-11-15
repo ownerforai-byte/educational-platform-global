@@ -179,7 +179,7 @@ const primaryItems: NavItem[] = [
   { href: "/analytics",     label: "Analytics",          icon: LineChart,     minLevel: "pro" },
   { href: "/streaks",       label: "Streaks and Badges", icon: Award,         minLevel: "member",  hideFromSidebar: true },
   { href: "/community",     label: "Study Spaces",       icon: Users,         minLevel: "plus"    },
-  { href: "/ask",           label: "Ask Veer",           icon: HelpCircle,    minLevel: "member"  },
+  { href: "/ask",           label: "Ask Veer",           icon: HelpCircle,    minLevel: "plus"  },
   { href: "/my-notes",      label: "My Notes",           icon: NotebookPen,   minLevel: "member",  hideFromSidebar: true },
   { href: "/downloads",     label: "Offline Study",      icon: Download,      minLevel: "owner",   hideFromSidebar: true },
   { href: "/billing",       label: "Billing",            icon: Receipt,       minLevel: "member", hideFromSidebar: true },
@@ -274,14 +274,14 @@ const stemAndRigorItems: NavItem[] = [
 const toolsItems: NavItem[] = [
   // Available to Members (13 AI sparks/day)
   // Reachable as soon as an account is approved (member, 13 sparks/day).
-  { href: "/chat",         label: "Veer Study Assistant",    icon: Sparkles,   minLevel: "member" },
-  { href: "/chat/nepali",  label: "Nepali Assistant",        icon: Languages,  minLevel: "member" },
-  { href: "/chat/grammar", label: "Grammar Console",         icon: BookOpen,   minLevel: "member" },
+  { href: "/chat",         label: "Veer Study Assistant",    icon: Sparkles,   minLevel: "plus" },
+  { href: "/chat/nepali",  label: "Nepali Assistant",        icon: Languages,  minLevel: "plus" },
+  { href: "/chat/grammar", label: "Grammar Console",         icon: BookOpen,   minLevel: "plus" },
 
   // Available to Plus and above (full AI studio).
   // Practice Hub stays out of the sidebar (the footer already links it) and
   // is grouped here so AI Tools is its parent. Community is the public feed.
-  { href: "/ai",           label: "AI Tools",                icon: Bot,        minLevel: "member", hideFromSidebar: true },
+  { href: "/ai",           label: "AI Tools",                icon: Bot,        minLevel: "plus", hideFromSidebar: true },
   { href: "/practice",     label: "Practice Hub",            icon: Target,     minLevel: "plus", hideFromSidebar: true },
   { href: "/ai/community", label: "Community",               icon: Users,      minLevel: "guest" },
   { href: "/ai/math",      label: "Veer Math Solver",        icon: Sigma,      minLevel: "plus"  },

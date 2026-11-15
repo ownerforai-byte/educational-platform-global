@@ -25,6 +25,10 @@ export function PlansGuidance() {
           "Where are payment and privacy conditions?",
           "Read Purchases, Terms, and Privacy in the footer before making a payment or sharing information. Never send card details, passwords, or one-time codes in a support request.",
         ],
+        [
+          "Community vs Veer chat?",
+          "Community and Community Chat are open to everyone. Signed-in members read Sahrocky81 bot answers on posts. Veer Study/Nepali/Grammar chats and private Ask open at Plus.",
+        ],
       ].map(([question, answer]) => <details key={question} className="py-4"><summary className="cursor-pointer rounded font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-ring">{question}</summary><p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground">{answer}</p></details>)}
     </div>
     <Link href="/contact" className="mt-4 inline-flex min-h-11 items-center rounded-lg font-semibold text-primary focus-visible:ring-2 focus-visible:ring-ring">Questions? Get in touch →</Link>

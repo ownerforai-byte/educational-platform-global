@@ -113,6 +113,14 @@ from older bundles.
 - Auth: Email/Password, Google, and Phone via `frontend/lib/firebase/client-auth.ts`
 - Enable Phone: `npm run firebase:enable-phone` (adds test `+9779800000000` → `123456`)
 
+**Manual phone sign-in check (staging or prod)**
+
+1. Vercel: `NEXT_PUBLIC_USE_FIREBASE_AUTH=true` and all `NEXT_PUBLIC_FIREBASE_*` keys for `rn01-af00b`.
+2. Render API: `USE_FIREBASE_AUTH=true` plus Firebase Admin credentials (`FIREBASE_PROJECT_ID`, service account JSON / individual fields).
+3. Firebase Console → Authentication → Phone **enabled**; authorized domains include your site origin and `rn01-af00b.firebaseapp.com`.
+4. Local or preview: open `/login`, scroll to **Phone sign-in**, enter `+9779800000000`, send code, enter test code `123456` (from `firebase/firebase.json` / `firebase:enable-phone`).
+5. Expect a normal session (tier welcome) or the pending-approval waiting screen—backend maps the phone to `phone+<digits>@phone.signin.harindrasah.com.np` before profile lookup.
+
 ```bash
 cd firebase
 npx -y firebase-tools@latest deploy --only firestore:rules,firestore:indexes,auth

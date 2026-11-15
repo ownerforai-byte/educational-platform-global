@@ -59,7 +59,7 @@ export function LobbyChat() {
   return (
     <div className="flex h-[min(70dvh,640px)] min-h-0 flex-col rounded-2xl border border-border bg-card shadow-sm">
       <p className="border-b border-border px-4 py-2 text-xs text-muted-foreground">
-        Live messages sync instantly for signed-in members.
+        Community chat for the whole platform — be kind, keep it study-friendly.
       </p>
       <div ref={scrollerRef} className="min-h-0 flex-1 space-y-3 overflow-y-auto px-4 py-3">
         {!ready ? (

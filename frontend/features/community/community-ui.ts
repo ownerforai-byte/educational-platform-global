@@ -41,10 +41,10 @@ export const inputClass =
   "w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm outline-none transition-colors duration-200 ease-out focus-visible:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/25";
 
 export const chipBtn = cn(
-  "inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border/80 bg-background px-3 py-1.5 text-xs font-semibold text-muted-foreground",
+  "inline-flex min-h-11 items-center gap-1.5 rounded-full border border-border/80 bg-gradient-to-b from-background to-muted/30 px-3.5 py-1.5 text-xs font-semibold text-foreground shadow-sm",
   motionEase,
   "transition-[colors,transform,box-shadow,border-color]",
-  "hover:border-primary/40 hover:bg-muted/50 hover:text-foreground",
+  "hover:border-primary/45 hover:bg-primary/5 hover:shadow-md hover:shadow-primary/10",
   "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
   "motion-safe:active:scale-[0.97]",
 );
@@ -69,11 +69,11 @@ export const actionBtn = cn(
 );
 
 export const primaryCta = cn(
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground",
-  "shadow-sm shadow-primary/25",
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-full bg-gradient-to-br from-primary via-primary to-primary/85 px-5 py-2.5 text-sm font-semibold text-primary-foreground",
+  "shadow-md shadow-primary/25 ring-1 ring-primary/25",
   motionEase,
-  "transition-[background-color,transform,box-shadow]",
-  "hover:bg-primary/90 motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.98]",
+  "transition-[background-color,transform,box-shadow,filter]",
+  "hover:brightness-105 motion-safe:hover:scale-[1.02] motion-safe:active:scale-[0.98]",
   "disabled:pointer-events-none disabled:opacity-60",
 );
 

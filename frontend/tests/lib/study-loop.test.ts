@@ -180,10 +180,10 @@ describe("community and ask", () => {
     expect(buildAskPrompt("  Why? ", "Physics")).toBe("[NEB Physics] Why?");
     expect(buildAskPrompt("Why?")).toBe("Why?");
   });
-  it("gates /community (plus), /community/[id] by prefix and /ask (member)", () => {
+  it("gates /community (plus), /community/[id] by prefix and /ask (plus)", () => {
     expect(sectionForPath("/community")?.minTier).toBe("plus");
     expect(sectionForPath(`/community/${listCommunitySpaces()[0].id}`)?.minTier).toBe("plus");
-    expect(sectionForPath("/ask")?.minTier).toBe("member");
+    expect(sectionForPath("/ask")?.minTier).toBe("plus");
     expect(NAV_HREFS).toEqual(expect.arrayContaining(["/community", "/ask"]));
     const flat = JSON.stringify(buildSiteIndex());
     expect(flat).toContain('"/community"');

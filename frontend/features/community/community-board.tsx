@@ -32,6 +32,8 @@ import { BotAnswerButton } from "@/features/community/bot-answer-button";
 import { CommunityFeed } from "@/features/community/community-feed";
 import { PostComposer } from "@/features/community/post-composer";
 import { MarkdownBody } from "@/features/community/markdown-body";
+import { MemberOnlyMarkdown } from "@/features/community/member-only-markdown";
+import { isCommunityBot } from "@/lib/community-bot";
 import {
   POLL_MS,
   type BoardView,
@@ -103,6 +105,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
   const [editingComment, setEditingComment] = useState<string | null>(null);
   const [commentDraft, setCommentDraft] = useState("");
   const [aiReplyBusy, setAiReplyBusy] = useState(false);
+  const [followUpBotCommentId, setFollowUpBotCommentId] = useState<string | null>(null);
 
   const applyLike = useCallback((postId: string, likeCount: number, likedByYou: boolean) => {
     const patch = (item: FeedPost) => item.id === postId ? { ...item, likeCount, likedByYou } : item;
@@ -321,13 +324,19 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
       setError("Sign in to comment.");
       return;
     }
+    const body = commentBody.trim();
+    if (!body) return;
     try {
-      const result = await addComment(post.id, commentBody.trim());
+      const result = await addComment(post.id, body, {
+        followUpToBot: followUpBotCommentId != null,
+      });
       setCommentBody("");
+      setFollowUpBotCommentId(null);
+      const added = [result.comment, ...(result.botComment ? [result.botComment] : [])];
       setPost({
         ...post,
-        commentCount: post.commentCount + 1,
-        comments: [...(post.comments ?? []), result.comment],
+        commentCount: post.commentCount + added.length,
+        comments: [...(post.comments ?? []), ...added],
       });
     } catch (err) {
       setError(statusOf(err) === 401 ? "Sign in to comment." : messageOf(err));
@@ -590,7 +599,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
               role="status"
             >
               <Bot className="h-4 w-4 shrink-0 text-primary" aria-hidden />
-              Veer (verified AI) replied on this post.
+              Sahrocky81 replied on this post.
             </p>
           ) : null}
           <section className="space-y-3">
@@ -616,13 +625,16 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
               </p>
             ) : (
               <ul className="space-y-2">
-                {(post.comments ?? []).map((comment, commentIndex) => (
+                {(post.comments ?? []).map((comment, commentIndex) => {
+                  const botComment =
+                    comment.author.role === "assistant" || isCommunityBot(comment.author.id);
+                  return (
                   <li
                     key={comment.id}
                     className={cn(
                       surfaceCardFlat,
                       "card-rise-in space-y-1 p-3 motion-safe:hover:shadow-sm sm:p-4",
-                      comment.author.role === "assistant" &&
+                      botComment &&
                         "border-primary/25 bg-primary/[0.04] shadow-sm shadow-primary/5 ring-1 ring-primary/10",
                     )}
                     style={{ animationDelay: `${Math.min(commentIndex * 45, 280)}ms` }}
@@ -668,11 +680,38 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                       </form>
                     ) : (
                       <div className="mt-1">
-                        <MarkdownBody text={comment.body} />
+                        <MemberOnlyMarkdown
+                          text={comment.body}
+                          locked={botComment && !user}
+                        />
                       </div>
                     )}
+                    {user && botComment ? (
+                      <div className="mt-2 flex flex-wrap gap-2">
+                        <button
+                          type="button"
+                          className={cn(
+                            chipBtn,
+                            "min-h-10",
+                            followUpBotCommentId === comment.id &&
+                              "border-primary/50 bg-primary/10 text-primary",
+                          )}
+                          aria-pressed={followUpBotCommentId === comment.id}
+                          aria-label="Ask Sahrocky81 a follow-up"
+                          onClick={() => {
+                            setFollowUpBotCommentId((current) =>
+                              current === comment.id ? null : comment.id,
+                            );
+                            setError(null);
+                          }}
+                        >
+                          <MessageCircle className="h-3.5 w-3.5" aria-hidden />
+                          {followUpBotCommentId === comment.id ? "Follow-up on" : "Ask follow-up"}
+                        </button>
+                      </div>
+                    ) : null}
                     {user &&
-                    ((user.id === comment.author.id && comment.author.role !== "assistant") ||
+                    ((user.id === comment.author.id && !botComment) ||
                       canModerate(user)) ? (
                       <div className="mt-2 flex flex-wrap gap-2">
                         {user.id === comment.author.id && comment.author.role !== "assistant" ? (
@@ -711,14 +750,19 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                       </div>
                     ) : null}
                   </li>
-                ))}
+                );
+                })}
               </ul>
             )}
             <form className={cn(glassShell, "space-y-3 p-4")} onSubmit={(event) => void onComment(event)}>
               <label className="block text-sm">
                 <span className="mb-1.5 flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
                   <MessageSquare className="h-3.5 w-3.5" aria-hidden />
-                  {user ? "Write a comment" : "Sign in to comment."}
+                  {user
+                    ? followUpBotCommentId
+                      ? "Follow-up question for Sahrocky81 (posted after you comment)"
+                      : "Write a comment"
+                    : "Sign in to comment."}
                 </span>
                 <textarea
                   value={commentBody}

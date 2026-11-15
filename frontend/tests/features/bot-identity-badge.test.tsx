@@ -4,11 +4,11 @@ import { BotIdentityBadge } from "@/features/community/bot-identity-badge";
 import { BotAnswerButton } from "@/features/community/bot-answer-button";
 
 describe("BotIdentityBadge", () => {
-  it("exposes a verified AI name rather than a human checkmark", () => {
+  it("shows Sahrocky81 owner-verified branding", () => {
     render(<BotIdentityBadge />);
-    expect(screen.getByLabelText("Verified AI assistant")).toBeInTheDocument();
-    expect(screen.getByText("Verified AI")).toBeInTheDocument();
-    expect(screen.queryByText(/verified$/i)).not.toBeInTheDocument();
+    expect(screen.getByLabelText("Sahrocky81 owner verified")).toBeInTheDocument();
+    expect(screen.getByText("Sahrocky81")).toBeInTheDocument();
+    expect(screen.getByText(/Owner/)).toBeInTheDocument();
   });
 });
 
