@@ -507,7 +507,7 @@ describe("community feed", () => {
       assistantReply: { posted: boolean; canApprove: boolean };
     };
     expect(publishedBody.comment.author.id).toBe("rn-study-assistant");
-    expect(publishedBody.comment.author.fullName).toBe("Sahrocky81");
+    expect(publishedBody.comment.author.fullName).toBe("Community bot");
     expect(publishedBody.comment.author.role).toBe("assistant");
     expect(publishedBody.comment.body).toContain("assistant");
     expect(publishedBody.assistantReply).toEqual({ posted: true, canApprove: false });

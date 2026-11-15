@@ -6,6 +6,9 @@
  */
 export const OWNER_EMAIL = "sahrocky81@gmail.com";
 
+/** Canonical owner display / username — not used for the community bot persona. */
+export const OWNER_DISPLAY_NAME = "Sahrocky81";
+
 export const OWNER_EMAILS = new Set<string>([OWNER_EMAIL]);
 
 export function isOwnerEmail(email?: string | null): boolean {

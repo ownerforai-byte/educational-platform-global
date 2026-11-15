@@ -27,7 +27,7 @@ export function PlansGuidance() {
         ],
         [
           "Community vs Veer chat?",
-          "Community and Community Chat are open to everyone. Signed-in members read Sahrocky81 bot answers on posts. Veer Study/Nepali/Grammar chats and private Ask open at Plus.",
+          "Community and Community Chat are open to everyone. Signed-in members read Community bot answers on posts. Veer Study/Nepali/Grammar chats and private Ask open at Plus.",
         ],
       ].map(([question, answer]) => <details key={question} className="py-4"><summary className="cursor-pointer rounded font-semibold text-foreground focus-visible:ring-2 focus-visible:ring-ring">{question}</summary><p className="mt-3 max-w-3xl text-sm leading-7 text-muted-foreground">{answer}</p></details>)}
     </div>

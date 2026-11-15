@@ -13,6 +13,6 @@ describe("community bot identity", () => {
   });
 
   it("uses the canonical display name constant", () => {
-    expect(COMMUNITY_BOT_DISPLAY_NAME).toBe("Sahrocky81");
+    expect(COMMUNITY_BOT_DISPLAY_NAME).toBe("Community bot");
   });
 });

@@ -12,6 +12,7 @@ import { communityAiReplyLimit } from "../../middleware/rateLimit";
 import { asyncHandler } from "../../middleware/asyncHandler";
 import { serverError } from "../../middleware/error-handler";
 import { isR2StorageActive, r2Upload, r2Download, r2Delete } from "../../storage/r2";
+import { removeSupersededObject } from "../../storage/remove-superseded";
 import { reserveStoragePath, releaseStoragePath } from "../../services/profile-storage";
 import { profileMediaPublicUrl } from "../../services/profile-media-url";
 import {
@@ -128,7 +129,7 @@ const postSchema = z.object({
 
 const commentSchema = z.object({
   body: z.string().trim().min(1).max(8000),
-  /** When true, Sahrocky81 auto-replies after the member comment is saved. */
+  /** When true, Community bot auto-replies after the member comment is saved. */
   followUpToBot: z.boolean().optional(),
 });
 
@@ -804,13 +805,7 @@ router.delete(
       return;
     }
     if (row.storage_path) {
-      try {
-        await r2Delete(row.storage_path);
-        await releaseStoragePath(post.row.author_id, row.storage_path);
-      } catch (err) {
-        serverError(res, err, "community-feed");
-        return;
-      }
+      await removeSupersededObject(post.row.author_id, row.storage_path);
     }
     const removed = await supabaseAdmin.from("community_feed_attachments").delete().eq("id", attachmentId);
     if (removed.error) {

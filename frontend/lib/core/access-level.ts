@@ -18,7 +18,7 @@ import {
  *
  *   guest  → signed out. The home chat widget only; no notes, labs, or Veer.
  *   member → any signed-in account. Community posts, Community Chat, and
- *              Sahrocky81 bot answers; public study questions on the board.
+ *              Community bot answers; public study questions on the board.
  *   plus   → search, Student Desk, Class 11 + 12 notes, formula sheets,
  *              practice sets, the notice board, labs, simulations, and Veer
  *              studio — 25 Veer sparks a day.

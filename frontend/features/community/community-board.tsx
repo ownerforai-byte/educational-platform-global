@@ -599,7 +599,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
               role="status"
             >
               <Bot className="h-4 w-4 shrink-0 text-primary" aria-hidden />
-              Sahrocky81 replied on this post.
+              Community bot replied on this post.
             </p>
           ) : null}
           <section className="space-y-3">
@@ -697,7 +697,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                               "border-primary/50 bg-primary/10 text-primary",
                           )}
                           aria-pressed={followUpBotCommentId === comment.id}
-                          aria-label="Ask Sahrocky81 a follow-up"
+                          aria-label="Ask Community bot a follow-up"
                           onClick={() => {
                             setFollowUpBotCommentId((current) =>
                               current === comment.id ? null : comment.id,
@@ -760,7 +760,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                   <MessageSquare className="h-3.5 w-3.5" aria-hidden />
                   {user
                     ? followUpBotCommentId
-                      ? "Follow-up question for Sahrocky81 (posted after you comment)"
+                      ? "Follow-up question for Community bot (posted after you comment)"
                       : "Write a comment"
                     : "Sign in to comment."}
                 </span>

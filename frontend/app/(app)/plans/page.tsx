@@ -65,7 +65,7 @@ const TIER_CARDS: TierCard[] = [
       "Everything guests see on Community",
       "Publish and comment on public study posts",
       "Community Chat — talk with everyone on the platform",
-      "Read Sahrocky81 bot answers (guests see a sign-in gate)",
+      "Read Community bot answers (guests see a sign-in gate)",
       "Ask study questions publicly on the board",
     ],
     cta: { label: "Request an account", href: "/signup" },

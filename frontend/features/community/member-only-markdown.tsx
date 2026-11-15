@@ -28,7 +28,7 @@ export function MemberOnlyMarkdown({
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-background/75 p-4 text-center backdrop-blur-[2px]">
         <p className="text-xs font-semibold text-foreground">Bot answers are for members</p>
         <p className="max-w-xs text-[11px] text-muted-foreground">
-          Community is open to everyone. Sign in to read Sahrocky81&apos;s replies.
+          Community is open to everyone. Sign in to read Community bot replies.
         </p>
         <Link href="/login" className="text-xs font-bold text-primary underline-offset-2 hover:underline">
           Sign in

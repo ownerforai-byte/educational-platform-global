@@ -90,7 +90,7 @@ beforeEach(() => {
           updatedAt: "2026-01-01T00:00:01.000Z",
           author: {
             id: "rn-study-assistant",
-            fullName: "Sahrocky81 81",
+            fullName: "Community bot",
             username: "community-bot",
             plan: "owner",
             role: "assistant",
@@ -102,7 +102,7 @@ beforeEach(() => {
 });
 
 describe("CommunityBoard guest bot gate", () => {
-  it("blurs Sahrocky81 replies for signed-out viewers", async () => {
+  it("blurs Community bot replies for signed-out viewers", async () => {
     render(<CommunityBoard view="post" id={postId} />);
     expect(await screen.findByTestId("bot-answer-guest-gate")).toBeInTheDocument();
     expect(screen.getByText("Bot answers are for members")).toBeInTheDocument();
