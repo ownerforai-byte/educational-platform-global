@@ -56,9 +56,14 @@ export function AttachmentList({
               </div>
             </div>
             {image ? (
+              // Loaded only on community post surfaces — defer binary fetch until needed.
+              // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={attachmentFileUrl(file.id, "inline")}
                 alt={file.filename}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
                 className="mt-3 max-h-64 w-full rounded-xl border border-border object-cover shadow-sm"
               />
             ) : null}

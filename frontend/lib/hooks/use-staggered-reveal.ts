@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-/** Sequential card entrance interval (owner: one item per second). */
-export const CARD_STAGGER_MS = 1000;
+/** Sequential card entrance interval (fast grid reveal). */
+export const CARD_STAGGER_MS = 10;
 
 function prefersReducedMotion(): boolean {
   if (typeof window === "undefined" || typeof window.matchMedia !== "function") return false;

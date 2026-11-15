@@ -53,16 +53,24 @@ export function PostAuthorHeader({
             : "ring-border/80",
           compact ? "h-8 w-8" : "h-11 w-11",
         )}
-        style={resolved.avatarUrl ? { backgroundImage: `url(${resolved.avatarUrl})` } : undefined}
         aria-label={`${resolved.fullName} profile`}
       >
-        {!resolved.avatarUrl ? (
-          bot ? (
-            <Bot className={cn("text-primary", compact ? "h-4 w-4" : "h-5 w-5")} aria-hidden />
-          ) : (
-            <UserRound className={cn("text-muted-foreground", compact ? "h-4 w-4" : "h-5 w-5")} aria-hidden />
-          )
-        ) : null}
+        {resolved.avatarUrl ? (
+          // Community feed only — lazy load profile avatars (not prefetched app-wide).
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={resolved.avatarUrl}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            fetchPriority="low"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        ) : bot ? (
+          <Bot className={cn("text-primary", compact ? "h-4 w-4" : "h-5 w-5")} aria-hidden />
+        ) : (
+          <UserRound className={cn("text-muted-foreground", compact ? "h-4 w-4" : "h-5 w-5")} aria-hidden />
+        )}
       </Link>
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">

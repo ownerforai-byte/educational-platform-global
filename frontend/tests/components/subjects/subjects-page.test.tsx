@@ -5,7 +5,7 @@ import { CARD_STAGGER_MS } from "@/lib/hooks/use-staggered-reveal";
 
 /**
  * /subjects render tests — canonical subject visuals, honest filters, real
- * progress numbers, and one-by-one card reveal (1 s stagger).
+ * progress numbers, and quick staggered card reveal.
  */
 
 let mockProgress: Record<string, { completedUnits: number; totalUnits: number; percent: number }> = {};
@@ -32,7 +32,7 @@ describe("/subjects (rebuilt)", () => {
     vi.useRealTimers();
   });
 
-  it("reveals class subjects one per second", () => {
+  it("reveals class subjects on a short stagger interval", () => {
     render(<SubjectsPage />);
     const class11 = SYLLABUS.find((c) => c.slug === "class-11-notes")!;
     expect(screen.getByText(class11.subjects[0]!.name)).toBeInTheDocument();

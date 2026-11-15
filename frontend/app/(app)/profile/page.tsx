@@ -218,18 +218,29 @@ export default function ProfilePage() {
   useEffect(() => {
     if (!user) return;
     let alive = true;
-    getMyProfile()
-      .then((me) => {
-        if (!alive) return;
-        setMedia(me.profile);
-        setStats(me.stats);
-        setStorage(me.storage);
-      })
-      .catch(() => {
-        /* session-only fallback — initials until media loads */
-      });
+    const load = () => {
+      void getMyProfile()
+        .then((me) => {
+          if (!alive) return;
+          setMedia(me.profile);
+          setStats(me.stats);
+          setStorage(me.storage);
+        })
+        .catch(() => {
+          /* session-only fallback — initials until media loads */
+        });
+    };
+    const useIdle = typeof requestIdleCallback === "function";
+    const handle = useIdle
+      ? requestIdleCallback(load, { timeout: 2000 })
+      : setTimeout(load, 0);
     return () => {
       alive = false;
+      if (useIdle && typeof cancelIdleCallback === "function") {
+        cancelIdleCallback(handle as number);
+      } else {
+        clearTimeout(handle as ReturnType<typeof setTimeout>);
+      }
     };
   }, [user]);
 
