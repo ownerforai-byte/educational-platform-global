@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { GuestSignInNote } from "@/features/auth/components/guest-signin-note";
 
 export const metadata: Metadata = {
-  title: "A note before you begin — Ravikisan's Platform",
+  title: "Welcome — NEB Study Platform",
   description:
-    "An inspiring note for guests: create an account, sign in, or check your approval status.",
+    "Create an account, sign in, or check your approval status for NEB Class 11 & 12 study.",
 };
 
 /**

@@ -5,9 +5,14 @@ import {
   CheckCircle2,
   FlaskConical,
   GraduationCap,
+  Leaf,
   Sparkles,
   Trophy,
 } from "lucide-react";
+import {
+  PLATFORM_DISPLAY_NAME,
+  PLATFORM_TAGLINE,
+} from "@/lib/core/platform-brand";
 import {
   ACCESS_LABELS,
   ACCESS_RANK,
@@ -155,9 +160,18 @@ export function UniversalWelcome() {
 
       <header className="relative border-b border-border/60 bg-background/70 backdrop-blur">
         <div className="mx-auto flex min-h-20 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-          <Link href="/" aria-label="Ravikisan's Platform home" className="flex items-center gap-3">
-            <span aria-hidden="true" className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary text-lg font-extrabold text-primary-foreground shadow-md shadow-primary/20">R</span>
-            <span className="text-lg font-bold tracking-tight">Ravikisan&apos;s Platform</span>
+          <Link
+            href="/"
+            aria-label={`${PLATFORM_DISPLAY_NAME} home`}
+            className="flex items-center gap-3"
+          >
+            <span
+              aria-hidden="true"
+              className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-600 text-primary-foreground shadow-md shadow-emerald-600/20"
+            >
+              <Leaf className="h-5 w-5 text-white" />
+            </span>
+            <span className="text-lg font-bold tracking-tight">{PLATFORM_DISPLAY_NAME}</span>
           </Link>
           {/* Plans live in the footer only (owner 2026-10-25) — the universal
               welcome carries zero plans traces. */}
@@ -173,8 +187,8 @@ export function UniversalWelcome() {
 
         <h1 className="mt-6 text-center text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl">
           Welcome to{" "}
-          <span className="bg-gradient-to-r from-primary via-violet-500 to-emerald-400 bg-clip-text text-transparent">
-            Ravikisan&apos;s Platform
+          <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-sky-500 bg-clip-text text-transparent">
+            {PLATFORM_DISPLAY_NAME}
           </span>
         </h1>
 
@@ -245,7 +259,9 @@ export function UniversalWelcome() {
             brand line only, so the first thing a visitor reads is the welcome
             itself, not a price ladder. */}
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
-          <span suppressHydrationWarning>© {new Date().getFullYear()} Ravikisan&apos;s Platform · NEB Class 11 &amp; 12</span>
+          <span suppressHydrationWarning>
+            © {new Date().getFullYear()} {PLATFORM_DISPLAY_NAME} · {PLATFORM_TAGLINE}
+          </span>
         </div>
       </footer>
     </div>

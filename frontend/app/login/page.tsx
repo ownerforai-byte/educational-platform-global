@@ -6,7 +6,7 @@ import { LoggedInRedirect } from "@/app/login/logged-in-redirect";
 
 export const metadata: Metadata = {
   title: "Welcome back — your notes are waiting",
-  description: "Sign in to your Ravikisan account to track progress, save bookmarks, and manage credits.",
+  description: "Sign in to track progress, save bookmarks, and manage credits.",
 };
 
 export default function LoginPage() {

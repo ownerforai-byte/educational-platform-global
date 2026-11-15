@@ -5,8 +5,8 @@ import { CreatedAccountGate } from "@/features/auth/components/created-account-g
 import { LoggedInRedirect } from "@/app/login/logged-in-redirect";
 
 export const metadata: Metadata = {
-  title: "Create Account — Ravikisan's Platform",
-  description: "Create your Ravikisan account to save progress, bookmark notes, and track credits.",
+  title: "Create Account — NEB Study Platform",
+  description: "Create your account to save progress, bookmark notes, and track credits.",
 };
 
 export default function SignupPage() {

@@ -3,7 +3,7 @@ import { UniversalWelcome } from "@/components/home/tier-welcome-interfaces";
 import { TierWelcomeGate } from "@/components/home/tier-home-gate";
 
 export const metadata: Metadata = {
-  title: "Welcome | Ravikisan's Platform",
+  title: "Welcome | NEB Study Platform",
   description: "The universal guest welcome — browse freely, then Go to sign in.",
 };
 

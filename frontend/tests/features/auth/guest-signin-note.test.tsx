@@ -2,11 +2,8 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import {
-  GuestSignInNote,
-  GUEST_SIGNIN_NOTE,
-  GUEST_SIGNIN_NOTE_TITLE,
-} from "@/features/auth/components/guest-signin-note";
+import { GuestSignInNote } from "@/features/auth/components/guest-signin-note";
+import { PLATFORM_DISPLAY_NAME } from "@/lib/core/platform-brand";
 import {
   clearPendingSignup,
   rememberPendingSignup,
@@ -21,10 +18,9 @@ describe("GuestSignInNote", () => {
     render(<GuestSignInNote variant="page" />);
 
     expect(screen.getByTestId("guest-signin-note")).toBeInTheDocument();
-    expect(screen.getByText(GUEST_SIGNIN_NOTE_TITLE)).toBeInTheDocument();
-    expect(screen.getByTestId("guest-signin-note-body").textContent).toContain(
-      GUEST_SIGNIN_NOTE,
-    );
+    expect(screen.getByText(PLATFORM_DISPLAY_NAME)).toBeInTheDocument();
+    expect(screen.queryByText(/Ravikisan/i)).toBeNull();
+    expect(screen.queryByText(/a note before you begin/i)).toBeNull();
     expect(screen.getByTestId("guest-note-create")).toHaveAttribute("href", "/signup");
     expect(screen.getByTestId("guest-note-signin")).toHaveAttribute("href", "/login");
     await waitFor(() => {

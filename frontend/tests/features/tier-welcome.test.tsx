@@ -54,7 +54,7 @@ describe("TierWelcomeGate — one welcome page per viewer", () => {
       </TierWelcomeGate>,
     );
     expect(
-      screen.getByRole("heading", { name: /welcome to ravikisan/i }),
+      screen.getByRole("heading", { name: /welcome to neb study platform/i }),
     ).toBeInTheDocument();
     expect(screen.getByTestId("welcome-go")).toHaveAttribute("href", "/signup");
     expect(screen.getByTestId("welcome-owner-signin")).toHaveAttribute("href", "/login");
@@ -74,7 +74,7 @@ describe("TierWelcomeGate — one welcome page per viewer", () => {
       </TierWelcomeGate>,
     );
     expect(
-      screen.queryByRole("heading", { name: /welcome to ravikisan/i }),
+      screen.queryByRole("heading", { name: /welcome to neb study platform/i }),
     ).toBeNull();
     expect(replace).toHaveBeenCalledWith("/welcome/member");
   });
@@ -149,7 +149,7 @@ describe("the entry feed — access first, then the matching welcome", () => {
     // Guest at the root: the universal welcome is rendered directly.
     const { unmount } = render(<TierHomeRouter landOn="welcome" />);
     expect(
-      screen.getByRole("heading", { name: /welcome to ravikisan/i }),
+      screen.getByRole("heading", { name: /welcome to neb study platform/i }),
     ).toBeInTheDocument();
     unmount();
 
