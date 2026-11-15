@@ -9,6 +9,6 @@
     "env:pull-frontend": "cd ../frontend && vercel env pull .env.local --yes"
   },
   "devDependencies": {
-    "firebase-tools": "^13.29.1"
+    "firebase-tools": "^15.36.0"
   }
 }
