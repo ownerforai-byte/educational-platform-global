@@ -622,7 +622,6 @@
 │   │   └── index.ts                  # Barrel
 │   │
 │   ├── public/                       # Static assets
-│   │   ├── .well-known/
 │   │   ├── data/                     # Built content JSON [CONTENT]
 │   │   ├── materials/                # Educational materials [CONTENT]
 │   │   ├── pdfs/

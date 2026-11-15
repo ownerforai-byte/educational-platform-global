@@ -205,7 +205,7 @@ jobs:
           import crypto from 'node:crypto';
 
           const appDir = process.cwd();
-          const assetlinksPath = path.join(appDir, 'frontend/public/.well-known/assetlinks.json');
+          const assetlinksPath = path.join(appDir, '.well-known/assetlinks.json');
           const manifestPath = path.join(appDir, 'frontend/public/manifest.json');
           const aabPath = path.join(appDir, 'play-store/ravikisan-platform-release.aab');
 
