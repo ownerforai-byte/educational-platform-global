@@ -3,7 +3,7 @@
   "installCommand": "sh -c 'cd .. && env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm ci --workspace=educational-platform-frontend'",
   "buildCommand": "env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm run build",
   "outputDirectory": ".next",
-  "ignoreCommand": "sh scripts/ci/vercel-should-build.sh",
+  "ignoreCommand": "sh -c 'case \"$VERCEL_GIT_COMMIT_REF\" in dependabot/*) exit 0;; esac; git rev-parse HEAD^ >/dev/null 2>&1 || exit 1; git diff --quiet HEAD^ HEAD -- frontend packages/shared .well-known && exit 0 || exit 1'",
   "git": {
     "deploymentEnabled": {
       "main": true,

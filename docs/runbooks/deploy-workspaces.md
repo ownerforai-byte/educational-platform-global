@@ -10,7 +10,7 @@ The monorepo uses a single root lockfile. Workspaces:
 | Root Directory | `frontend` |
 | Install Command | `npm ci --workspace=educational-platform-frontend` (from repo root; see `frontend/vercel.json`) |
 | Build Command | `npm run build` (default — runs `next build` in `frontend/`) |
-| Ignored Build Step | `frontend/vercel.json` → `ignoreCommand` |
+| Ignored Build Step | `frontend/vercel.json` → `ignoreCommand` (inline `sh -c`, not a separate script — Vercel runs it from Root Directory `frontend`) |
 
 Install from the repo root so the workspace graph and root `overrides` apply.
 Do not restore a nested `frontend/package-lock.json`.

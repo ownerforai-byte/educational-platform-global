@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-/** Canonical Digital Asset Links file lives at the monorepo root (`.well-known/`). */
+/** Canonical Digital Asset Links file: monorepo root `.well-known/assetlinks.json` (not `public/`). */
 const ASSETLINKS_PATH = path.join(
   path.dirname(fileURLToPath(import.meta.url)),
   "..",
