@@ -1536,6 +1536,28 @@ export class AIService {
     );
   }
 
+  /**
+   * One provider attempt with no chain fallback — for community bot day-pool
+   * rotation so a broken daily link does not consume the whole chain budget.
+   */
+  async tryChatProvider(providerName: string, messages: AIChatMessage[]): Promise<string | null> {
+    const requested = providerName?.toLowerCase();
+    if (!requested || requested === "internal" || requested === "auto" || !this.providers.has(requested)) {
+      return null;
+    }
+    try {
+      const text = await this.providers.get(requested)!.chat(messages);
+      const trimmed = text?.trim();
+      return trimmed ? trimmed : null;
+    } catch (err) {
+      console.warn(
+        `[AI] tryChatProvider "${requested}" failed:`,
+        err instanceof Error ? err.message : err,
+      );
+      return null;
+    }
+  }
+
   async chat(providerName: string, messages: AIChatMessage[]): Promise<string> {
     const internal = this.providers.get("internal")!;
 

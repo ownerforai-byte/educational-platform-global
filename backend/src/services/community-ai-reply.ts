@@ -1,6 +1,9 @@
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { buildCurriculumContext, DEFAULT_RECORD_LIMIT } from "../ai/curriculum-retrieval";
-import { getWorkLaneProvider } from "../ai/config";
+import {
+  configuredCommunityBotProviderPool,
+  getCommunityBotDailyProvider,
+} from "../ai/community-bot-daily-provider";
 import { COMMUNITY_BOT_DISPLAY_NAME } from "../lib/community-bot";
 
 const CATEGORY_HINT: Record<string, string> = {
@@ -15,6 +18,44 @@ const CATEGORY_HINT: Record<string, string> = {
 
 function subjectLine(category: string): string {
   return CATEGORY_HINT[category] ?? CATEGORY_HINT.general;
+}
+
+/** HTTP-safe failure from community bot generation (no keys or stacks on the wire). */
+export class CommunityAssistantReplyError extends Error {
+  readonly status: number;
+
+  constructor(message: string, status = 503) {
+    super(message);
+    this.name = "CommunityAssistantReplyError";
+    this.status = status;
+  }
+}
+
+function capReply(trimmed: string): string {
+  return trimmed.length > 8000 ? `${trimmed.slice(0, 7997)}…` : trimmed;
+}
+
+function mapAiFailure(err: unknown): never {
+  const message = err instanceof Error ? err.message : String(err);
+  if (/timeout|timed out|deadline/i.test(message)) {
+    throw new CommunityAssistantReplyError(
+      "The Study Assistant took too long to answer. Please try again in a moment.",
+      504,
+    );
+  }
+  throw new CommunityAssistantReplyError(
+    "The Study Assistant is temporarily unavailable. Please try again in a moment.",
+    503,
+  );
+}
+
+function orderedPoolForToday(liveNames: string[]): string[] {
+  const live = new Set(liveNames.map((n) => n.toLowerCase()));
+  const pool = configuredCommunityBotProviderPool().filter((n) => live.has(n.toLowerCase()));
+  if (pool.length === 0) return [];
+  const daily = getCommunityBotDailyProvider(Date.now(), liveNames);
+  const start = daily && pool.includes(daily) ? pool.indexOf(daily) : 0;
+  return [...pool.slice(start), ...pool.slice(0, start)];
 }
 
 /**
@@ -48,9 +89,26 @@ export async function generateCommunityAssistantReply(opts: {
   ];
 
   const service = createAIService();
-  const lane = getWorkLaneProvider("enhance") || getWorkLaneProvider("chat");
-  const reply = await service.chat(lane, messages);
-  const trimmed = reply.trim();
-  if (!trimmed) throw new Error("Assistant produced an empty reply.");
-  return trimmed.length > 8000 ? `${trimmed.slice(0, 7997)}…` : trimmed;
+  const liveNames = service.getProviders();
+  const poolOrder = orderedPoolForToday(liveNames);
+
+  for (const providerName of poolOrder) {
+    const reply = await service.tryChatProvider(providerName, messages);
+    if (reply?.trim()) return capReply(reply.trim());
+  }
+
+  try {
+    const chainReply = await service.chat("", messages);
+    const trimmed = chainReply.trim();
+    if (!trimmed) {
+      throw new CommunityAssistantReplyError(
+        "The Study Assistant could not produce a reply. Please try again in a moment.",
+        502,
+      );
+    }
+    return capReply(trimmed);
+  } catch (err) {
+    if (err instanceof CommunityAssistantReplyError) throw err;
+    mapAiFailure(err);
+  }
 }

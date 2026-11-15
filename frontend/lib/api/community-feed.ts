@@ -155,7 +155,7 @@ export function publishAssistantReply(postId: string): Promise<{
 }> {
   return call(`${ROOT}/feed/${postId}/ai-assistant/reply`, {
     method: "POST",
-    body: JSON.stringify({}),
+    body: JSON.stringify({ approve: true }),
   });
 }
 

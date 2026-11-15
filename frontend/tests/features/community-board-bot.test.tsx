@@ -121,7 +121,21 @@ beforeEach(() => {
 });
 
 describe("CommunityBoard Answer with Veer", () => {
+  it("hides Answer with Veer when the viewer cannot approve", async () => {
+    sessionState.user = { id: "user-2" };
+    getPost.mockResolvedValue({
+      post: { ...questionPost, assistantReply: { posted: false, canApprove: false } },
+      migrated: true,
+    });
+
+    render(<CommunityBoard view="post" id={questionPost.id} />);
+    await screen.findByText("What is photosynthesis?");
+    expect(screen.queryByRole("button", { name: "Answer with Veer" })).not.toBeInTheDocument();
+    expect(publishAssistantReply).not.toHaveBeenCalled();
+  });
+
   it("one-click publishes a verified AI comment without a confirm dialog", async () => {
+    sessionState.user = { id: "author-1" };
     const confirm = vi.spyOn(window, "confirm");
     render(<CommunityBoard view="post" id={questionPost.id} />);
 

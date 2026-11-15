@@ -361,11 +361,13 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
         setError(
           statusOf(err) === 401
             ? "Sign in to ask Veer to reply."
-            : statusOf(err) === 409
-              ? "A Community bot reply is already on this post."
-              : statusOf(err) === 429
-                ? "Too many Veer replies just now. Try again in a few minutes."
-                : messageOf(err, "Could not publish the assistant reply."),
+            : statusOf(err) === 403
+              ? "Only the post author can ask Veer to reply on this thread."
+              : statusOf(err) === 409
+                ? "A Community bot reply is already on this post."
+                : statusOf(err) === 429
+                  ? "Too many Veer replies just now. Try again in a few minutes."
+                  : messageOf(err, "Could not publish the assistant reply."),
         ),
       )
       .finally(() => setAiReplyBusy(false));
@@ -415,11 +417,14 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
             )}
           </button>
         </div>
-        {detailed ? (
-          <MarkdownBody text={item.body} />
-        ) : (
-          <p className="line-clamp-4 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-        )}
+        <MarkdownBody
+          text={item.body}
+          clamp={!detailed}
+          className={cn(
+            "text-sm leading-relaxed",
+            !detailed && "text-muted-foreground",
+          )}
+        />
         {item.attachments.length > 0 ? <AttachmentList files={item.attachments} /> : null}
         <div className="flex flex-wrap items-center gap-1 rounded-xl border-t border-border/60 bg-muted/[0.12] px-1 py-1 pt-3 sm:gap-2 sm:px-1.5">
           <button

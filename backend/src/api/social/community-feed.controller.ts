@@ -2,7 +2,12 @@ import { randomUUID } from "node:crypto";
 import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { supabaseAdmin } from "../../db/supabase";
-import { requireAuth, getUserFromRequest, type AuthedRequest } from "../../middleware/auth";
+import {
+  requireAuth,
+  getUserFromRequest,
+  isOwnerAccount,
+  type AuthedRequest,
+} from "../../middleware/auth";
 import { communityAiReplyLimit } from "../../middleware/rateLimit";
 import { asyncHandler } from "../../middleware/asyncHandler";
 import { serverError } from "../../middleware/error-handler";
@@ -16,7 +21,11 @@ import {
   isCommunityBotId,
 } from "../../lib/community-bot";
 import type { SessionUser } from "../../auth/types";
-import { generateCommunityAssistantReply } from "../../services/community-ai-reply";
+import {
+  CommunityAssistantReplyError,
+  generateCommunityAssistantReply,
+} from "../../services/community-ai-reply";
+import { ERROR_ID_HEADER, logServerError, newErrorId } from "../../middleware/error-handler";
 import {
   BINARY_FILE_BY_EXTENSION,
   COMMUNITY_ATTACHMENT_MAX_BYTES,
@@ -246,10 +255,15 @@ async function profilesById(ids: string[]): Promise<Map<string, ProfileRow>> {
   return map;
 }
 
+function canPublishCommunityBotReply(postAuthorId: string, viewer: SessionUser | null): boolean {
+  if (!viewer) return false;
+  return viewer.id === postAuthorId || isOwnerAccount(viewer);
+}
+
 async function assistantReplyMeta(
   postId: string,
-  _postAuthorId: string,
-  viewerId: string | null,
+  postAuthorId: string,
+  viewer: SessionUser | null,
 ): Promise<{ posted: boolean; canApprove: boolean }> {
   let posted = false;
   const { data, error } = await supabaseAdmin
@@ -267,7 +281,7 @@ async function assistantReplyMeta(
       .limit(1);
     if (!legacy.error && (legacy.data ?? []).length > 0) posted = true;
   }
-  const canApprove = Boolean(viewerId && !posted);
+  const canApprove = !posted && canPublishCommunityBotReply(postAuthorId, viewer);
   return { posted, canApprove };
 }
 
@@ -802,11 +816,7 @@ router.get(
       viewer?.id ?? null,
       comments.map((comment) => comment.author_id),
     );
-    const assistantReply = await assistantReplyMeta(
-      postId,
-      found.row.author_id,
-      viewer?.id ?? null,
-    );
+    const assistantReply = await assistantReplyMeta(postId, found.row.author_id, viewer);
     noStore(res);
     res.json({
       post: {
@@ -859,7 +869,11 @@ router.post(
       bad(res, "Post not found", 404);
       return;
     }
-    const existing = await assistantReplyMeta(postId, found.row.author_id, user.id);
+    if (!canPublishCommunityBotReply(found.row.author_id, user)) {
+      bad(res, "Only the post author or a platform owner can publish a Community bot reply.", 403);
+      return;
+    }
+    const existing = await assistantReplyMeta(postId, found.row.author_id, user);
     if (existing.posted) {
       bad(res, "A Study Assistant reply was already published on this post.", 409);
       return;
@@ -879,10 +893,29 @@ router.post(
           category: found.row.category,
         });
       } catch (err) {
+        if (err instanceof CommunityAssistantReplyError) {
+          const errorId = newErrorId();
+          logServerError(err, errorId, "community-feed-ai");
+          res.setHeader(ERROR_ID_HEADER, errorId);
+          res.status(err.status).json({ error: err.message, errorId });
+          return;
+        }
+        const message = err instanceof Error ? err.message : String(err);
+        if (/timeout|timed out|deadline/i.test(message)) {
+          const errorId = newErrorId();
+          logServerError(err, errorId, "community-feed-ai");
+          res.setHeader(ERROR_ID_HEADER, errorId);
+          res.status(504).json({
+            error: "The Study Assistant took too long to answer. Please try again in a moment.",
+            errorId,
+          });
+          return;
+        }
         serverError(
           res,
           err instanceof Error ? err : new Error(String(err)),
           "community-feed-ai",
+          "The Study Assistant could not answer right now. Please try again in a moment.",
         );
         return;
       }

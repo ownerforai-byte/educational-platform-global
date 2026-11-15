@@ -8,6 +8,7 @@ interface Row {
 const memory = vi.hoisted(() => {
   const USER_ID = "11111111-1111-4111-8111-111111111111";
   const OTHER_ID = "22222222-2222-4222-8222-222222222222";
+  const OWNER_ID = "33333333-3333-4333-8333-333333333333";
   const tables: Record<string, Row[]> = {};
 
   function reset() {
@@ -27,6 +28,14 @@ const memory = vi.hoisted(() => {
         access_status: "ACTIVE",
         full_name: "Other Student",
         plan: "member",
+        premium_status: false,
+      },
+      {
+        id: OWNER_ID,
+        role: "member",
+        access_status: "ACTIVE",
+        full_name: "Platform Owner",
+        plan: "pro",
         premium_status: false,
       },
       {
@@ -203,6 +212,18 @@ const memory = vi.hoisted(() => {
             error: null,
           };
         }
+        if (token === "owner-token") {
+          return {
+            data: {
+              user: {
+                id: OWNER_ID,
+                email: "sahrocky81@gmail.com",
+                user_metadata: { full_name: "Platform Owner" },
+              },
+            },
+            error: null,
+          };
+        }
         if (token !== "member-token") {
           return { data: { user: null }, error: { message: "Invalid JWT" } };
         }
@@ -221,7 +242,7 @@ const memory = vi.hoisted(() => {
   };
 
   reset();
-  return { client, reset, USER_ID, OTHER_ID };
+  return { client, reset, USER_ID, OTHER_ID, OWNER_ID };
 });
 
 const USER_ID = memory.USER_ID;
@@ -415,7 +436,7 @@ describe("community feed", () => {
     expect(missing.status).toBe(404);
   });
 
-  it("lets any signed-in member one-click publish a Veer comment and rejects duplicates", async () => {
+  it("lets only the post author or platform owner publish a Veer comment", async () => {
     const created = await fetch(`${base}/feed`, {
       method: "POST",
       headers: memberHeaders(true),
@@ -456,16 +477,29 @@ describe("community feed", () => {
       post: { assistantReply: { posted: boolean; canApprove: boolean }; commentCount: number };
     };
     expect(otherView.post.assistantReply.posted).toBe(false);
-    expect(otherView.post.assistantReply.canApprove).toBe(true);
+    expect(otherView.post.assistantReply.canApprove).toBe(false);
     expect(otherView.post.commentCount).toBe(0);
 
-    const published = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
+    const deniedOther = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
       method: "POST",
       headers: {
         Authorization: "Bearer other-token",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({}),
+      body: JSON.stringify({ approve: true }),
+    });
+    expect(deniedOther.status).toBe(403);
+
+    const authorBefore = await fetch(`${base}/feed/${postId}`, { headers: memberHeaders() });
+    const authorView = await authorBefore.json() as {
+      post: { assistantReply: { posted: boolean; canApprove: boolean } };
+    };
+    expect(authorView.post.assistantReply).toEqual({ posted: false, canApprove: true });
+
+    const published = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({ approve: true }),
     });
     expect(published.status).toBe(201);
     const publishedBody = await published.json() as {
@@ -491,9 +525,17 @@ describe("community feed", () => {
         Authorization: "Bearer other-token",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({}),
+      body: JSON.stringify({ approve: true }),
     });
-    expect(duplicateOther.status).toBe(409);
+    expect(duplicateOther.status).toBe(403);
+
+    const ownerOnOthersPost = await fetch(`${base}/feed/${postId}`, {
+      headers: { Authorization: "Bearer owner-token" },
+    });
+    const ownerView = await ownerOnOthersPost.json() as {
+      post: { assistantReply: { posted: boolean; canApprove: boolean } };
+    };
+    expect(ownerView.post.assistantReply).toEqual({ posted: true, canApprove: false });
 
     const detailAfter = await fetch(`${base}/feed/${postId}`, { headers: memberHeaders() });
     const after = await detailAfter.json() as {
@@ -508,6 +550,41 @@ describe("community feed", () => {
     expect(after.post.comments[0]?.author.role).toBe("assistant");
     expect(after.post.comments[0]?.author.id).toBe("rn-study-assistant");
     expect(after.post.comments[0]?.author.id).not.toBe(OTHER_ID);
+  });
+
+  it("lets the platform owner publish Veer on another member's post", async () => {
+    const created = await fetch(`${base}/feed`, {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer other-token",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        title: "Help with cells",
+        body: "What is mitosis?",
+        category: "biology",
+      }),
+    });
+    expect(created.status).toBe(201);
+    const { post } = await created.json() as { post: { id: string } };
+
+    const ownerDetail = await fetch(`${base}/feed/${post.id}`, {
+      headers: { Authorization: "Bearer owner-token" },
+    });
+    const ownerBody = await ownerDetail.json() as {
+      post: { assistantReply: { posted: boolean; canApprove: boolean } };
+    };
+    expect(ownerBody.post.assistantReply).toEqual({ posted: false, canApprove: true });
+
+    const published = await fetch(`${base}/feed/${post.id}/ai-assistant/reply`, {
+      method: "POST",
+      headers: {
+        Authorization: "Bearer owner-token",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ approve: true }),
+    });
+    expect(published.status).toBe(201);
   });
 
   it("accepts a PDF when the browser sends application/octet-stream", async () => {

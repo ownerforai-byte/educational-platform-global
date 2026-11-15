@@ -16,6 +16,11 @@ alter table public.community_feed_ai_replies enable row level security;
 revoke all on table public.community_feed_ai_replies from anon, authenticated;
 grant all on table public.community_feed_ai_replies to service_role;
 
+alter table public.profiles drop constraint if exists profiles_role_ladder_check;
+alter table public.profiles
+  add constraint profiles_role_ladder_check
+  check (role is null or role in ('member', 'plus', 'pro', 'owner', 'assistant'));
+
 insert into public.profiles (
   id,
   full_name,
