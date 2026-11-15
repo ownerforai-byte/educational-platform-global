@@ -1,6 +1,6 @@
 {
   "packageId": "com.ravikisan.platform",
-  "host": "www.harindrasah.com.np",
+  "host": "harindrasah.com.np",
   "name": "Ravikisan's Platform",
   "launcherName": "Ravikisan",
   "display": "standalone",
@@ -13,14 +13,14 @@
   "backgroundColor": "#0F172A",
   "enableNotifications": true,
   "startUrl": "/",
-  "iconUrl": "https://www.harindrasah.com.np/icon-512.png",
-  "maskableIconUrl": "https://www.harindrasah.com.np/icon-512.png",
+  "iconUrl": "https://harindrasah.com.np/icon-512.png",
+  "maskableIconUrl": "https://harindrasah.com.np/icon-512.png",
   "splashScreenFadeOutDuration": 300,
-  "appVersionName": "1",
-  "appVersionCode": 1,
+  "appVersionName": "1.0.3",
+  "appVersionCode": 5,
   "shortcuts": [],
   "generatorApp": "bubblewrap",
-  "webManifestUrl": "https://www.harindrasah.com.np/manifest.json",
+  "webManifestUrl": "https://harindrasah.com.np/manifest.json",
   "fallbackType": "customtabs",
   "features": {},
   "alphaDependencies": {
@@ -29,7 +29,7 @@
   "enableSiteSettingsShortcut": true,
   "isChromeOSOnly": false,
   "isMetaQuest": false,
-  "fullScopeUrl": "https://www.harindrasah.com.np/",
+  "fullScopeUrl": "https://harindrasah.com.np/",
   "minSdkVersion": 30,
   "orientation": "portrait",
   "fingerprints": [],
@@ -39,5 +39,5 @@
   "fileHandlers": [],
   "launchHandlerClientMode": "",
   "displayOverride": [],
-  "appVersion": "1"
+  "appVersion": "1.0.3"
 }
