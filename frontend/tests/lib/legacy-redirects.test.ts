@@ -55,6 +55,11 @@ describe("legacy note URL redirects", () => {
     expect(matchRedirect("/pro-plan", rules)?.destination).toBe("/plans");
   });
 
+  it("does not redirect Android Digital Asset Links", async () => {
+    const rules = await redirects();
+    expect(matchRedirect("/.well-known/assetlinks.json", rules)).toBeUndefined();
+  });
+
   it("keeps the class-11e / class-12e deep alias redirects intact", async () => {
     const rules = await redirects();
     expect(matchRedirect("/class-11e/chemistry/atomic-structure", rules)?.destination).toBe(

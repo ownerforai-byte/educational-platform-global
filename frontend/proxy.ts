@@ -227,7 +227,8 @@ export function proxy(request: NextRequest) {
     pathname === "/favicon.ico" ||
     pathname.startsWith("/icon-") ||
     pathname === "/sw.js" ||
-    pathname === "/all_elements.json"
+    pathname === "/all_elements.json" ||
+    pathname.startsWith("/.well-known/")
   ) {
     return NextResponse.next();
   }

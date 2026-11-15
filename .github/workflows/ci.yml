@@ -206,6 +206,25 @@ jobs:
 
           const appDir = process.cwd();
           const assetlinksPath = path.join(appDir, '.well-known/assetlinks.json');
+          const forbiddenCopies = [
+            path.join(appDir, 'frontend/public/.well-known/assetlinks.json'),
+          ];
+          for (const forbidden of forbiddenCopies) {
+            try {
+              await fs.access(forbidden);
+              throw new Error(
+                `Duplicate assetlinks forbidden — keep only repo-root ${assetlinksPath} (found ${forbidden})`
+              );
+            } catch (err) {
+              if (err && typeof err === 'object' && 'code' in err && err.code === 'ENOENT') continue;
+              throw err;
+            }
+          }
+          try {
+            await fs.access(assetlinksPath);
+          } catch {
+            throw new Error(`Missing mandatory repo-root assetlinks: ${assetlinksPath}`);
+          }
           const manifestPath = path.join(appDir, 'frontend/public/manifest.json');
           const aabPath = path.join(appDir, 'play-store/ravikisan-platform-release.aab');
 

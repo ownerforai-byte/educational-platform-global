@@ -107,7 +107,7 @@ The current AAB lives at `play-store/ravikisan-platform-release.aab`.
 ## Pre-flight (still manual)
 - [x] Signing keys are on disk and accounted for in `android-twa/` setup docs.
 - [x] TWA manifest and PWA manifest are aligned on `com.ravikisan.platform`.
-- [x] `.well-known/assetlinks.json` (repo root; served by the Next.js route) declares the package + fingerprint.
+- [x] `.well-known/assetlinks.json` (**repo root only — mandatory**; served by the Next.js route; no `public/` copy) declares the package + fingerprint.
 - [x] Mandatory legal pages exist (`/legal/privacy`, `/legal/terms`,
       `/legal/cookies`, `/legal/purchases`) and are linked from the footer.
 - [x] Play Store metadata drafts exist locally:
