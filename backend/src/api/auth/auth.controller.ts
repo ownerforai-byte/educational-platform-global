@@ -20,6 +20,7 @@ import {
   firebaseCreateUser,
   firebaseSendPasswordResetEmail,
   firebaseUpdatePassword,
+  isFirebaseAuthReady,
   revokeFirebaseSessions,
   firebaseSessionEmail,
   verifyFirebaseIdToken,
@@ -307,6 +308,13 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
     return;
   }
   try {
+    if (useFirebaseAuth() && !isFirebaseAuthReady()) {
+      res.status(503).json({
+        error: "Firebase Admin is not configured on the API",
+        code: "FIREBASE_ADMIN_NOT_CONFIGURED",
+      });
+      return;
+    }
     const identity = await verifyAccessToken(parsed.data.accessToken);
     if (!identity?.email) {
       res.clearCookie(OAUTH_CSRF_COOKIE, cookieOptions());
@@ -384,10 +392,20 @@ router.post("/login", async (req: Request, res: Response) => {
       });
       return;
     }
+    if (!isFirebaseAuthReady()) {
+      res.status(503).json({
+        error: "Firebase Admin is not configured on the API",
+        code: "FIREBASE_ADMIN_NOT_CONFIGURED",
+      });
+      return;
+    }
     const verified = await verifyFirebaseIdToken(idToken);
     const accountEmail = verified ? firebaseSessionEmail(verified) : null;
     if (!verified || !accountEmail) {
-      res.status(401).json({ error: "Invalid email or password" });
+      res.status(401).json({
+        error: "Invalid email or password",
+        code: "FIREBASE_TOKEN_REJECTED",
+      });
       return;
     }
     await ensureAuthProfile(verified.uid, { email: accountEmail, fullName: verified.displayName });
@@ -462,10 +480,17 @@ router.post("/signup", async (req: Request, res: Response) => {
     let accessToken = idToken ?? "";
 
     if (idToken) {
+      if (!isFirebaseAuthReady()) {
+        res.status(503).json({
+          error: "Firebase Admin is not configured on the API",
+          code: "FIREBASE_ADMIN_NOT_CONFIGURED",
+        });
+        return;
+      }
       const verified = await verifyFirebaseIdToken(idToken);
       const accountEmail = verified ? firebaseSessionEmail(verified) : null;
       if (!verified || !accountEmail) {
-        res.status(401).json({ error: "Invalid signup session" });
+        res.status(401).json({ error: "Invalid signup session", code: "FIREBASE_TOKEN_REJECTED" });
         return;
       }
       uid = verified.uid;
@@ -694,6 +719,13 @@ router.post("/refresh", async (req: Request, res: Response) => {
       res.status(401).json({ error: "No session to refresh" });
       return;
     }
+    if (!isFirebaseAuthReady()) {
+      res.status(503).json({
+        error: "Firebase Admin is not configured on the API",
+        code: "FIREBASE_ADMIN_NOT_CONFIGURED",
+      });
+      return;
+    }
     const user = await getUserFromRequest(
       { headers: { authorization: `Bearer ${token}` } } as unknown as Request,
       { allowUnapproved: true },
@@ -788,6 +820,8 @@ router.post("/logout", async (req: Request, res: Response) => {
   const token = extractToken(req);
   if (token) {
     if (useFirebaseAuth()) {
+      // Session revocation is best-effort: skipped when Firebase Admin is not
+      // configured (verifyFirebaseIdToken returns null) — logout still succeeds.
       const verified = await verifyFirebaseIdToken(token);
       if (verified) await revokeFirebaseSessions(verified.uid);
     } else {
@@ -863,6 +897,13 @@ router.get("/account-status", async (req: Request, res: Response) => {
  * 401 → no valid session
  */
 router.get("/me", async (req: Request, res: Response) => {
+  if (useFirebaseAuth() && !isFirebaseAuthReady()) {
+    res.status(503).json({
+      error: "Firebase Admin is not configured on the API",
+      code: "FIREBASE_ADMIN_NOT_CONFIGURED",
+    });
+    return;
+  }
   const user = await getUserFromRequest(req, { allowUnapproved: true });
 
   if (!user) {
@@ -972,6 +1013,13 @@ router.post("/reset-password", async (req: Request, res: Response) => {
       userId = data.user.id;
     } else if (token) {
       if (useFirebaseAuth()) {
+        if (!isFirebaseAuthReady()) {
+          res.status(503).json({
+            error: "Firebase Admin is not configured on the API",
+            code: "FIREBASE_ADMIN_NOT_CONFIGURED",
+          });
+          return;
+        }
         const verified = await verifyFirebaseIdToken(token);
         if (!verified) {
           console.warn("[auth] Firebase recovery token rejected");

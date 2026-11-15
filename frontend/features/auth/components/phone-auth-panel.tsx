@@ -10,7 +10,12 @@ import {
   firebasePhoneSendCode,
   useFirebaseClientAuth,
 } from "@/lib/firebase/client-auth";
-import { loginWithFirebaseIdToken, type FirebaseIdTokenLoginResult } from "@/lib/api/auth";
+import {
+  loginWithFirebaseIdToken,
+  signupWithFirebaseIdToken,
+  type FirebaseIdTokenLoginResult,
+  type FirebaseIdTokenSignupResult,
+} from "@/lib/api/auth";
 import {
   DENIED_ROUTE,
   rememberAccessOutcome,
@@ -20,13 +25,24 @@ import {
 import { authFailureMessage } from "../public-messages";
 import type { ConfirmationResult } from "firebase/auth";
 interface PhoneAuthPanelProps {
+  mode?: "login" | "signup";
+  signupFullName?: string;
   disabled?: boolean;
-  onSignedIn: (res: FirebaseIdTokenLoginResult) => void | Promise<void>;
+  onSignedIn?: (res: FirebaseIdTokenLoginResult) => void | Promise<void>;
+  onSignedUp?: (res: FirebaseIdTokenSignupResult) => void | Promise<void>;
   onError: (message: string) => void;
   onNavigate?: (path: string) => void;
 }
 
-export function PhoneAuthPanel({ disabled, onSignedIn, onError, onNavigate }: PhoneAuthPanelProps) {
+export function PhoneAuthPanel({
+  mode = "login",
+  signupFullName = "",
+  disabled,
+  onSignedIn,
+  onSignedUp,
+  onError,
+  onNavigate,
+}: PhoneAuthPanelProps) {
   const firebaseMode = useFirebaseClientAuth();
   const recaptchaHostId = useId().replace(/:/g, "");
   const [phone, setPhone] = useState("");
@@ -37,33 +53,63 @@ export function PhoneAuthPanel({ disabled, onSignedIn, onError, onNavigate }: Ph
 
   if (!firebaseMode) return null;
 
-  const finishWithToken = async (idToken: string) => {
-    const res = await loginWithFirebaseIdToken(idToken);
-    clearPhoneRecaptcha();
-    if (res.code === "PENDING_APPROVAL") {
-      if (res.statusToken) rememberPendingSignup(res.statusToken);
-      rememberAccessOutcome("PENDING");
-      onNavigate?.(WAITING_ROUTE);
-      return;
+  /** Backend access outcome — a resolved body OR a thrown apiFetch error
+   * (accessDenied() answers 403, and apiFetch throws on non-2xx while still
+   * attaching `code` + `statusToken` to the error). */
+  type AccessOutcome = { code?: string; statusToken?: string; user?: unknown };
+
+  const routeAccessOutcome = (outcome: AccessOutcome): boolean => {
+    const code = String(outcome.code ?? "").toUpperCase();
+    const rejected = code === "ACCOUNT_REJECTED";
+    // `statusToken && !user` is the pending shape — but an explicit rejection
+    // code wins, so rejected users land on the denied screen, not the waiting one.
+    if (!rejected && code !== "PENDING_APPROVAL" && !(outcome.statusToken && !outcome.user)) {
+      return false;
     }
-    if (res.code === "ACCOUNT_REJECTED") {
-      if (res.statusToken) rememberPendingSignup(res.statusToken);
+    if (outcome.statusToken) rememberPendingSignup(outcome.statusToken);
+    if (rejected) {
       rememberAccessOutcome("REJECTED");
       onNavigate?.(DENIED_ROUTE);
+    } else {
+      rememberAccessOutcome("PENDING");
+      onNavigate?.(WAITING_ROUTE);
+    }
+    return true;
+  };
+
+  const finishWithToken = async (idToken: string) => {
+    clearPhoneRecaptcha();
+    const signup = mode === "signup";
+    let outcome: AccessOutcome;
+    try {
+      outcome = signup
+        ? await signupWithFirebaseIdToken(idToken, signupFullName)
+        : await loginWithFirebaseIdToken(idToken);
+    } catch (err) {
+      if (!routeAccessOutcome((err ?? {}) as AccessOutcome)) throw err;
       return;
     }
-    await onSignedIn(res);
+    if (routeAccessOutcome(outcome)) return;
+    if (signup) {
+      await onSignedUp?.(outcome as FirebaseIdTokenSignupResult);
+    } else {
+      await onSignedIn?.(outcome as FirebaseIdTokenLoginResult);
+    }
   };
 
   const sendCode = async () => {
     onError("");
+    if (mode === "signup" && signupFullName.trim().length < 2) {
+      onError("Enter your full name above before verifying your phone number.");
+      return;
+    }
     setLoading(true);
     try {
       const confirmation = await firebasePhoneSendCode(phone, recaptchaHostId);
       setPending(confirmation);
       setStep("code");
     } catch (err) {
-      onError(authFailureMessage(err, "oauth"));
+      onError(authFailureMessage(err, mode === "signup" ? "signup" : "oauth"));
     } finally {
       setLoading(false);
     }
@@ -77,7 +123,7 @@ export function PhoneAuthPanel({ disabled, onSignedIn, onError, onNavigate }: Ph
       const idToken = await firebasePhoneConfirm(pending, code);
       await finishWithToken(idToken);
     } catch (err) {
-      onError(authFailureMessage(err, "oauth"));
+      onError(authFailureMessage(err, mode === "signup" ? "signup" : "oauth"));
     } finally {
       setLoading(false);
     }
@@ -85,7 +131,15 @@ export function PhoneAuthPanel({ disabled, onSignedIn, onError, onNavigate }: Ph
 
   return (
     <div className="space-y-3 rounded-2xl border border-border/80 bg-muted/20 p-4">
-      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Phone sign-in</p>
+      <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+        {mode === "signup" ? "Phone sign-up" : "Phone sign-in"}
+      </p>
+      {mode === "signup" ? (
+        <p className="text-[11px] leading-relaxed text-muted-foreground">
+          SMS verification creates your Firebase login. After the code, we start your platform access
+          request (same as email sign-up).
+        </p>
+      ) : null}
       <div
         id={recaptchaHostId}
         className="pointer-events-none fixed left-0 top-0 h-px w-px overflow-hidden opacity-0"
@@ -130,7 +184,7 @@ export function PhoneAuthPanel({ disabled, onSignedIn, onError, onNavigate }: Ph
         ) : step === "phone" ? (
           "Send verification code"
         ) : (
-          "Verify and sign in"
+          mode === "signup" ? "Verify and create account" : "Verify and sign in"
         )}
       </Button>
       {step === "code" ? (

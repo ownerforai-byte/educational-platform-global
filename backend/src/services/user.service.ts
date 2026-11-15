@@ -7,6 +7,10 @@ import {
   updateUserJourney,
   upsertLegacyUserProgress,
 } from "../db/repositories/progress.repository.js";
+import { isMissingTable } from "../db/repositories/base.repository.js";
+
+/** Returned when migration `006_user_journey.sql` has not been applied yet. */
+export const PROGRESS_TABLE_UNAVAILABLE = "PROGRESS_TABLE_UNAVAILABLE";
 
 export interface JourneyDto {
   id: string;
@@ -43,7 +47,10 @@ export async function getUserJourney(userId: string): Promise<{
   error: { message: string } | null;
 }> {
   const { data, error } = await listUserJourney(userId);
-  if (error) return { rows: [], error };
+  if (error) {
+    if (isMissingTable(error)) return { rows: [], error: null };
+    return { rows: [], error };
+  }
   return { rows: (data ?? []).map(mapJourneyRow), error: null };
 }
 
@@ -70,7 +77,12 @@ export async function recordUserJourney(
     topicSlug: data.topicSlug,
   });
 
-  if (readError) return { row: null, error: readError };
+  if (readError) {
+    if (isMissingTable(readError)) {
+      return { row: null, error: { message: PROGRESS_TABLE_UNAVAILABLE } };
+    }
+    return { row: null, error: readError };
+  }
 
   if (!existing) {
     const status = requested === "completed" ? "completed" : "started";
@@ -88,7 +100,12 @@ export async function recordUserJourney(
       updated_at: now,
     });
 
-    if (insertError) return { row: null, error: insertError };
+    if (insertError) {
+      if (isMissingTable(insertError)) {
+        return { row: null, error: { message: PROGRESS_TABLE_UNAVAILABLE } };
+      }
+      return { row: null, error: insertError };
+    }
     return { row: created ? mapJourneyRow(created) : null, error: null };
   }
 
@@ -106,7 +123,12 @@ export async function recordUserJourney(
     updated_at: now,
   });
 
-  if (updateError) return { row: null, error: updateError };
+  if (updateError) {
+    if (isMissingTable(updateError)) {
+      return { row: null, error: { message: PROGRESS_TABLE_UNAVAILABLE } };
+    }
+    return { row: null, error: updateError };
+  }
   return { row: updated ? mapJourneyRow(updated) : null, error: null };
 }
 

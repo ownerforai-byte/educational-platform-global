@@ -4,6 +4,7 @@ import {
   AUTH_NO_CONNECTION,
   AUTH_TEMPORARILY_UNAVAILABLE,
   AUTH_TRY_AGAIN,
+  authFailureDetail,
   authFailureMessage,
   isTemporaryAuthError,
 } from "@/features/auth/public-messages";
@@ -68,5 +69,79 @@ describe("isTemporaryAuthError", () => {
     expect(isTemporaryAuthError(AUTH_TEMPORARILY_UNAVAILABLE)).toBe(true);
     expect(isTemporaryAuthError(AUTH_TRY_AGAIN)).toBe(false);
     expect(isTemporaryAuthError(AUTH_INVALID_CREDENTIALS)).toBe(false);
+  });
+});
+
+describe("API machine-code mappings", () => {
+  it("explains a missing Firebase Admin config instead of blaming credentials", () => {
+    expect(
+      authFailureMessage(
+        Object.assign(new Error("x"), { status: 503, code: "FIREBASE_ADMIN_NOT_CONFIGURED" }),
+        "login",
+      ),
+    ).toContain("server env");
+  });
+
+  it("maps FIREBASE_TOKEN_REJECTED per flow kind", () => {
+    const err = Object.assign(new Error("x"), { status: 401, code: "FIREBASE_TOKEN_REJECTED" });
+    expect(authFailureMessage(err, "login")).toBe(AUTH_INVALID_CREDENTIALS);
+    expect(authFailureMessage(err, "signup")).toContain("verify");
+  });
+
+  it("maps device limit and access outcomes", () => {
+    expect(
+      authFailureMessage(Object.assign(new Error("x"), { code: "DEVICE_SIGNUP_LIMIT" }), "signup"),
+    ).toContain("device");
+    expect(
+      authFailureMessage(Object.assign(new Error("x"), { code: "PENDING_APPROVAL" }), "login"),
+    ).toBe(AUTH_TRY_AGAIN);
+    expect(
+      authFailureMessage(Object.assign(new Error("x"), { code: "ACCOUNT_REJECTED" }), "login"),
+    ).toContain("denied");
+  });
+
+  it("maps phone SMS failures to actionable hints", () => {
+    expect(
+      authFailureMessage(Object.assign(new Error("x"), { code: "auth/invalid-verification-code" }), "oauth"),
+    ).toContain("SMS code");
+    expect(
+      authFailureMessage(Object.assign(new Error("x"), { code: "auth/invalid-phone-number" }), "oauth"),
+    ).toContain("international format");
+    expect(
+      authFailureMessage(Object.assign(new Error("x"), { code: "auth/billing-not-enabled" }), "signup"),
+    ).toContain("Blaze");
+    expect(
+      authFailureMessage(Object.assign(new Error("x"), { code: "auth/captcha-check-failed" }), "oauth"),
+    ).toContain("reCAPTCHA");
+  });
+
+  it("maps an existing-account conflict", () => {
+    expect(
+      authFailureMessage(Object.assign(new Error("x"), { code: "auth/email-already-in-use" }), "signup"),
+    ).toContain("already exists");
+  });
+
+  it("maps 502/504 outages like 503", () => {
+    for (const status of [502, 503, 504]) {
+      expect(authFailureMessage(Object.assign(new Error("x"), { status }), "login")).toBe(
+        AUTH_TEMPORARILY_UNAVAILABLE,
+      );
+    }
+  });
+});
+
+describe("authFailureDetail", () => {
+  it("labels firebase vs api codes and the http status", () => {
+    expect(
+      authFailureDetail(Object.assign(new Error("x"), { code: "auth/invalid-credential", status: 401 })),
+    ).toBe("firebase:auth/invalid-credential · http:401");
+    expect(
+      authFailureDetail(Object.assign(new Error("x"), { code: "DEVICE_SIGNUP_LIMIT", status: 403 })),
+    ).toBe("api:DEVICE_SIGNUP_LIMIT · http:403");
+  });
+
+  it("falls back to a truncated message when no code or status is present", () => {
+    expect(authFailureDetail(new Error("boom"))).toBe("boom");
+    expect(authFailureDetail("plain")).toBeNull();
   });
 });

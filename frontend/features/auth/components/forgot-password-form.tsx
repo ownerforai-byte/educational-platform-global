@@ -6,7 +6,7 @@ import { Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AuthField } from "./auth-field";
 import { forgotPassword } from "@/lib/api/auth";
-import { authFailureMessage } from "../public-messages";
+import { authFailureDetail, authFailureMessage } from "../public-messages";
 import { useAuthFormError } from "../use-auth-form-error";
 
 export function ForgotPasswordForm() {
@@ -14,6 +14,7 @@ export function ForgotPasswordForm() {
   const { error, setError, clearError } = useAuthFormError();
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
+  const [errorDetail, setErrorDetail] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,6 +27,7 @@ export function ForgotPasswordForm() {
       setSent(true);
     } catch (err) {
       setError(authFailureMessage(err, "password"));
+      setErrorDetail(authFailureDetail(err));
     } finally {
       setLoading(false);
     }
@@ -86,9 +88,12 @@ export function ForgotPasswordForm() {
       />
 
       {error && (
-        <p className="rounded-xl border border-destructive/30 bg-destructive/10 px-3.5 py-2.5 text-xs font-medium text-destructive">
-          {error}
-        </p>
+        <div className="rounded-xl border border-destructive/30 bg-destructive/10 px-3.5 py-2.5 text-xs font-medium text-destructive">
+          <p>{error}</p>
+          {errorDetail ? (
+            <p className="mt-1.5 font-mono text-[10px] font-normal text-destructive/80">{errorDetail}</p>
+          ) : null}
+        </div>
       )}
 
       <Button

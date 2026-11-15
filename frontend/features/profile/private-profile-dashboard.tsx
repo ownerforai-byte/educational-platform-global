@@ -865,7 +865,7 @@ export function PrivateProfileDashboard({
           {/* ROW 1 — identity hero */}
           <Card className="overflow-hidden border-primary/20 shadow-sm">
             <div className="relative">
-              <ProfileCover url={coverUrl} className="h-32 sm:h-40" />
+              <ProfileCover url={coverUrl} className="h-32 sm:h-40" priority />
               <ProfileImageEditButton
                 kind="cover"
                 currentUrl={coverUrl}
@@ -885,6 +885,7 @@ export function PrivateProfileDashboard({
                       name={displayName}
                       className="h-24 w-24 rounded-2xl border-4 border-background shadow-xl"
                       textClassName="text-2xl"
+                      priority
                     />
                     <ProfileImageEditButton
                       kind="avatar"

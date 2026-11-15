@@ -17,10 +17,13 @@ export function ProfileCover({
   url,
   className,
   sizes = "(max-width: 768px) 100vw, 768px",
+  priority = false,
 }: {
   url: string | null | undefined;
   className?: string;
   sizes?: string;
+  /** When true, load immediately (hero cover only). */
+  priority?: boolean;
 }) {
   // The URL that failed is remembered instead of resetting state in an effect:
   // a new URL is automatically "not failed" again.
@@ -36,7 +39,8 @@ export function ProfileCover({
           src={url!}
           alt=""
           sizes={sizes}
-          loading="lazy"
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "low"}
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover"
           onError={() => setFailedUrl(url ?? null)}
@@ -52,12 +56,14 @@ export function ProfileAvatar({
   className,
   textClassName,
   sizes = "96px",
+  priority = false,
 }: {
   url: string | null | undefined;
   name: string;
   className?: string;
   textClassName?: string;
   sizes?: string;
+  priority?: boolean;
 }) {
   const [failedUrl, setFailedUrl] = useState<string | null>(null);
   const showImage = Boolean(url) && failedUrl !== url;
@@ -75,7 +81,8 @@ export function ProfileAvatar({
           src={url!}
           alt={name}
           sizes={sizes}
-          loading="lazy"
+          loading={priority ? "eager" : "lazy"}
+          fetchPriority={priority ? "high" : "low"}
           decoding="async"
           className="h-full w-full object-cover"
           onError={() => setFailedUrl(url ?? null)}

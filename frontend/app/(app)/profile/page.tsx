@@ -109,7 +109,7 @@ function YouHub({
         </div>
         <Card className="overflow-hidden border-primary/20 shadow-sm">
           <div className="relative">
-            <ProfileCover url={coverUrl} className="h-20" />
+            <ProfileCover url={coverUrl} className="h-20" priority />
             <ProfileImageEditButton
               kind="cover"
               currentUrl={coverUrl}
@@ -127,6 +127,7 @@ function YouHub({
                   name={displayName}
                   className="h-[72px] w-[72px] rounded-2xl border-4 border-background shadow-xl"
                   textClassName="text-lg"
+                  priority
                 />
                 <ProfileImageEditButton
                   kind="avatar"

@@ -15,26 +15,44 @@ export type AuthActionResult =
       message?: string;
       statusToken?: string;
       /**
-       * PENDING accounts resolve HTTP 200 with `code: "PENDING_APPROVAL"` —
-       * not a hard deny. The bot approves automatically within ~5 minutes.
+       * Machine-readable outcome code. The HTTP status is NOT authoritative:
+       * `code: "PENDING_APPROVAL"` arrives as HTTP 200 from the login/signup
+       * create paths AND as HTTP 403 from the session-gate paths (/me,
+       * /refresh) — and `code: "ACCOUNT_REJECTED"` arrives as HTTP 403.
+       * Callers must route on the `code` value, never on the HTTP status.
+       * PENDING is not a hard deny: the bot approves automatically within
+       * ~5 minutes.
        */
       code?: string;
     }
   | {
       ok: false;
       error: string;
-      /** Machine-readable failure reason (PENDING_APPROVAL / ACCOUNT_REJECTED). */
+      /**
+       * Machine-readable failure reason (PENDING_APPROVAL / ACCOUNT_REJECTED).
+       * Same status-agnostic contract as above: PENDING_APPROVAL can arrive
+       * here with HTTP 200 or 403 depending on the route, ACCOUNT_REJECTED
+       * with HTTP 403. Route on this value, not on the HTTP status.
+       */
       code?: string;
       /** Signed token that opens the /welcome pending-status screen. */
       statusToken?: string;
     };
 
 /**
- * The login/signup API answers a PENDING account with HTTP 200 and
- * `{ code: "PENDING_APPROVAL", statusToken }` (never a hard deny) — the bot
- * flips `access_status` to ACTIVE ~5 minutes after creation. Detect that body
- * on the RESOLVED response so the caller routes to the waiting screen instead
- * of treating it as a sign-in.
+ * Detect a PENDING account on the RESOLVED response body so the caller routes
+ * to the waiting screen instead of treating it as a sign-in.
+ *
+ * Status-agnostic contract: `code: "PENDING_APPROVAL"` can arrive as HTTP 200
+ * (login/signup create) or HTTP 403 (session-gate on /me|/refresh), and
+ * `code: "ACCOUNT_REJECTED"` always arrives as HTTP 403 — so callers must
+ * route on the `code` value, never on the HTTP status. Both carrier shapes
+ * here preserve that contract:
+ *  - RESOLVED body (HTTP 200 create paths): handled below.
+ *  - THROWN error (non-2xx, e.g. the 403 session-gate): `apiFetch` copies the
+ *    body's `code`/`statusToken` onto the thrown Error, and `loginAction`/
+ *    `signupAction`'s catch blocks surface them on the returned result — so
+ *    callers can route on `result.code` regardless of `ok`.
  */
 function pendingApprovalResult(res: unknown): AuthActionResult | null {
   const body = res as { code?: string; statusToken?: string } | null;

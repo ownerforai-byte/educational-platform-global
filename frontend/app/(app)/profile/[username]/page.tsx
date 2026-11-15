@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { PublicProfileShell } from "@/features/profile/public-profile-shell";
 
 export const metadata: Metadata = {
   title: "Profile",
   description: "Public learner profile: learning progress, badges and community contributions.",
 };
 
-export default async function PublicProfilePage({ params }: { params: Promise<{ username: string }> }) {
-  const { username } = await params;
-  return <PublicProfileShell username={decodeURIComponent(username)} initialTab="overview" />;
+/** Tab UI lives in `layout.tsx` (`PublicProfileShell`). */
+export default function PublicProfilePage() {
+  return null;
 }

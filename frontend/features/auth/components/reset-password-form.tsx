@@ -6,7 +6,7 @@ import { Lock, Eye, EyeOff, AlertTriangle, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AuthField } from "./auth-field";
 import { resetPassword } from "@/lib/api/auth";
-import { AUTH_TRY_AGAIN, authFailureMessage } from "../public-messages";
+import { AUTH_TRY_AGAIN, authFailureDetail, authFailureMessage } from "../public-messages";
 import { useAuthFormError } from "../use-auth-form-error";
 
 type Proof = { code?: string; token?: string; oobCode?: string } | null;
@@ -25,6 +25,7 @@ export function ResetPasswordForm() {
   const { error, setError, clearError } = useAuthFormError();
   const [loading, setLoading] = useState(false);
   const [done, setDone] = useState(false);
+  const [errorDetail, setErrorDetail] = useState<string | null>(null);
 
   // The proof lives in the URL (query + hash), so it can only be read after
   // mount — the first client paint must match the server render.
@@ -44,6 +45,7 @@ export function ResetPasswordForm() {
 
     if (password.length < 8 || password.length > 72 || password !== confirm) {
       setError(AUTH_TRY_AGAIN);
+      setErrorDetail(null);
       return;
     }
     if (!proof) return;
@@ -54,6 +56,7 @@ export function ResetPasswordForm() {
       setDone(true);
     } catch (err) {
       setError(authFailureMessage(err, "password"));
+      setErrorDetail(authFailureDetail(err));
     } finally {
       setLoading(false);
     }
@@ -153,9 +156,12 @@ export function ResetPasswordForm() {
       />
 
       {error && (
-        <p className="rounded-xl border border-destructive/30 bg-destructive/10 px-3.5 py-2.5 text-xs font-medium text-destructive">
-          {error}
-        </p>
+        <div className="rounded-xl border border-destructive/30 bg-destructive/10 px-3.5 py-2.5 text-xs font-medium text-destructive">
+          <p>{error}</p>
+          {errorDetail ? (
+            <p className="mt-1.5 font-mono text-[10px] font-normal text-destructive/80">{errorDetail}</p>
+          ) : null}
+        </div>
       )}
 
       <Button

@@ -591,6 +591,20 @@ describe("GET /api/progress journey", () => {
     const res = await request("GET", "/api/progress", undefined, "");
     expect(res.status).toBe(401);
   });
+
+  it("returns an empty journey when user_journey has not been migrated", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockApprovedUser("member");
+    h.enqueue("user_journey", {
+      data: null,
+      error: { message: "Could not find the table public.user_journey in the schema cache" },
+    });
+
+    const res = await request("GET", "/api/progress");
+
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ ok: true, data: [] });
+  });
 });
 
 describe("POST /api/progress journey", () => {

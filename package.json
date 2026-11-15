@@ -49,6 +49,7 @@
     "ai:regression:build": "node scripts/ci/ai-regression.mjs --build-set",
     "ai:regression:live": "node scripts/ci/ai-regression.mjs --live",
     "smoke:env": "node scripts/ci/check-smoke-env.mjs",
+    "auth:wiring": "node scripts/auth-wiring-check.mjs",
     "firebase:login": "npm exec --yes firebase-tools@15.36.0 -- login",
     "firebase:setup": "node backend/scripts/setup-firebase-cli.mjs",
     "firebase:enable-phone": "node backend/scripts/enable-firebase-phone-auth.mjs",

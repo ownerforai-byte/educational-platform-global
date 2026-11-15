@@ -10,7 +10,7 @@
  * visitor can never read a credit, wallet or owner-only figure here.
  */
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -79,60 +79,127 @@ export function PublicProfileShell({
   const [people, setPeople] = useState<ProfileListUser[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [baseReady, setBaseReady] = useState(false);
+  const extrasLoaded = useRef({
+    posts: false,
+    files: false,
+    followers: false,
+    following: false,
+  });
 
   const activeTab: Tab = activeTabFromPath(pathname, initialTab);
 
-  const load = useCallback(async () => {
+  useEffect(() => {
+    let cancelled = false;
+    setBaseReady(false);
+    extrasLoaded.current = { posts: false, files: false, followers: false, following: false };
     setLoading(true);
     setError(null);
-    const wantsPosts = activeTab === "overview" || activeTab === "posts";
-    const wantsFiles = activeTab === "overview" || activeTab === "files";
-    const wantsPeople = activeTab === "followers" || activeTab === "following";
+    setPosts([]);
+    setFiles([]);
+    setPeople([]);
 
-    try {
-      const [base, progressRes, postsRes, filesRes, peopleRes] = await Promise.all([
-        getPublicProfile(username),
-        // A hidden payload and a failed request both mean "nothing to show".
-        getProfileProgress(username).catch(() => EMPTY_PROGRESS),
-        wantsPosts
-          ? getProfilePosts(username).catch(() => ({ posts: [], migrated: false }))
-          : Promise.resolve(null),
-        wantsFiles
-          ? getProfileFiles(username).catch(() => ({ files: [], migrated: false }))
-          : Promise.resolve(null),
-        wantsPeople
-          ? (activeTab === "followers"
-              ? getProfileFollowers(username)
-              : getProfileFollowing(username)
-            ).catch(() => ({ users: [], migrated: false }))
-          : Promise.resolve(null),
-      ]);
+    void Promise.all([
+      getPublicProfile(username),
+      getProfileProgress(username).catch(() => EMPTY_PROGRESS),
+    ])
+      .then(([base, progressRes]) => {
+        if (cancelled) return;
+        setProfile(base.profile);
+        setStats(base.stats);
+        setFollowing(base.following);
+        setProgress(progressRes.progress ?? null);
+        setBaseReady(true);
+        setLoading(false);
+      })
+      .catch((e) => {
+        if (cancelled) return;
+        setError(e instanceof Error ? e.message : "Could not load profile");
+        setLoading(false);
+      });
 
-      setProfile(base.profile);
-      setStats(base.stats);
-      setFollowing(base.following);
-      setProgress(progressRes.progress ?? null);
-      setPosts(postsRes?.posts ?? []);
-      setFiles(filesRes?.files ?? []);
-      setPeople(peopleRes?.users ?? []);
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Could not load profile");
-    } finally {
-      setLoading(false);
-    }
-  }, [username, activeTab]);
-
-  useEffect(() => {
-    // Deferred a microtask so the loader's first setState lands outside the
-    // effect body (React Compiler `set-state-in-effect`).
-    let cancelled = false;
-    queueMicrotask(() => {
-      if (!cancelled) void load();
-    });
     return () => {
       cancelled = true;
     };
-  }, [load]);
+  }, [username]);
+
+  useEffect(() => {
+    if (!baseReady) return;
+    let cancelled = false;
+    const jobs: Array<Promise<void>> = [];
+
+    if (
+      (activeTab === "overview" || activeTab === "posts") &&
+      !extrasLoaded.current.posts
+    ) {
+      jobs.push(
+        getProfilePosts(username)
+          .then((res) => {
+            if (!cancelled) setPosts(res.posts);
+          })
+          .catch(() => {
+            if (!cancelled) setPosts([]);
+          })
+          .finally(() => {
+            extrasLoaded.current.posts = true;
+          }),
+      );
+    }
+
+    if (
+      (activeTab === "overview" || activeTab === "files") &&
+      !extrasLoaded.current.files
+    ) {
+      jobs.push(
+        getProfileFiles(username)
+          .then((res) => {
+            if (!cancelled) setFiles(res.files);
+          })
+          .catch(() => {
+            if (!cancelled) setFiles([]);
+          })
+          .finally(() => {
+            extrasLoaded.current.files = true;
+          }),
+      );
+    }
+
+    if (activeTab === "followers" && !extrasLoaded.current.followers) {
+      jobs.push(
+        getProfileFollowers(username)
+          .then((res) => {
+            if (!cancelled) setPeople(res.users);
+          })
+          .catch(() => {
+            if (!cancelled) setPeople([]);
+          })
+          .finally(() => {
+            extrasLoaded.current.followers = true;
+          }),
+      );
+    }
+
+    if (activeTab === "following" && !extrasLoaded.current.following) {
+      jobs.push(
+        getProfileFollowing(username)
+          .then((res) => {
+            if (!cancelled) setPeople(res.users);
+          })
+          .catch(() => {
+            if (!cancelled) setPeople([]);
+          })
+          .finally(() => {
+            extrasLoaded.current.following = true;
+          }),
+      );
+    }
+
+    if (jobs.length === 0) return;
+    void Promise.all(jobs);
+    return () => {
+      cancelled = true;
+    };
+  }, [username, activeTab, baseReady]);
 
   const handleFollowingChange = useCallback((next: boolean) => {
     setFollowing(next);

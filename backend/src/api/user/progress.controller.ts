@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
 import { serverError } from "../../middleware/error-handler";
+import { PROGRESS_TABLE_UNAVAILABLE } from "../../services/user.service.js";
 import { z } from "zod";
 import { requireAuth, type AuthedRequest } from "../../middleware/auth";
 import * as userService from "../../services/user.service.js";
@@ -70,6 +71,13 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       const user = (req as AuthedRequest).user;
       const { row, error } = await userService.recordUserJourney(user.id, parsed.data);
       if (error) {
+        if (error.message === PROGRESS_TABLE_UNAVAILABLE) {
+          res.status(503).json({
+            error: "Progress tracking is not available on this server yet.",
+            code: "PROGRESS_NOT_MIGRATED",
+          });
+          return;
+        }
         serverError(res, error);
         return;
       }

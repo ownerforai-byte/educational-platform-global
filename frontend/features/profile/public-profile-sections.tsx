@@ -267,7 +267,7 @@ export function PublicIdentityRow({
 
   return (
     <header className="overflow-hidden rounded-xl border border-border bg-card">
-      <ProfileCover url={profile.coverUrl} className="h-32 sm:h-40" />
+      <ProfileCover url={profile.coverUrl} className="h-32 sm:h-40" priority />
       <div className="px-4 pb-4 sm:px-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div className="flex min-w-0 items-end gap-3">
@@ -276,6 +276,7 @@ export function PublicIdentityRow({
               name={profile.fullName}
               className="-mt-12 h-20 w-20 shrink-0 rounded-full border-4 border-card sm:h-24 sm:w-24"
               textClassName="text-lg"
+              priority
             />
             <div className="min-w-0 pb-1">
               <h1 className="truncate text-xl font-semibold sm:text-2xl">{profile.fullName}</h1>

@@ -23,9 +23,11 @@ import {
   sharePath,
   toggleLike,
   updateComment,
+  type FeedComment,
   type FeedPost,
   type PersonResponse,
 } from "@/lib/api/community-feed";
+import type { SessionUser } from "@/features/auth/types";
 import { PostAuthorHeader } from "@/features/community/post-author-header";
 import { AttachmentList } from "@/features/community/attachment-list";
 import { BotAnswerButton } from "@/features/community/bot-answer-button";
@@ -43,6 +45,7 @@ import {
   CommunityUnavailable,
   looksLikeQuestion,
   mergeById,
+  mergePostSnapshot,
   messageOf,
   statusOf,
 } from "@/features/community/community-helpers";
@@ -84,6 +87,30 @@ function useCopyLink() {
   return { copiedId, copy };
 }
 
+/** Pause feed polling briefly so background refresh does not undo optimistic UI. */
+const INTERACTION_POLL_PAUSE_MS = 8_000;
+
+function optimisticCommentId(): string {
+  return `pending-comment-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+}
+
+function optimisticComment(body: string, user: SessionUser): FeedComment {
+  const now = new Date().toISOString();
+  return {
+    id: optimisticCommentId(),
+    body,
+    createdAt: now,
+    updatedAt: now,
+    author: {
+      id: user.id,
+      fullName: user.fullName?.trim() || "You",
+      username: null,
+      plan: user.plan ?? null,
+      role: user.role ?? null,
+    },
+  };
+}
+
 export { CommunityUnavailable };
 
 export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
@@ -106,6 +133,20 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
   const [commentDraft, setCommentDraft] = useState("");
   const [aiReplyBusy, setAiReplyBusy] = useState(false);
   const [followUpBotCommentId, setFollowUpBotCommentId] = useState<string | null>(null);
+  const likeInFlight = useRef(new Set<string>());
+  const pollPausedUntil = useRef(0);
+
+  const bumpPollPause = useCallback(() => {
+    pollPausedUntil.current = Date.now() + INTERACTION_POLL_PAUSE_MS;
+  }, []);
+
+  const patchPostEverywhere = useCallback((postId: string, patch: (item: FeedPost) => FeedPost) => {
+    setPosts((current) => current.map((item) => (item.id === postId ? patch(item) : item)));
+    setPost((current) => (current?.id === postId ? patch(current) : current));
+    setPerson((current) =>
+      current ? { ...current, posts: current.posts.map((item) => (item.id === postId ? patch(item) : item)) } : current,
+    );
+  }, []);
 
   const applyLike = useCallback((postId: string, likeCount: number, likedByYou: boolean) => {
     const patch = (item: FeedPost) => item.id === postId ? { ...item, likeCount, likedByYou } : item;
@@ -255,6 +296,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
   useEffect(() => {
     if (view !== "feed" && view !== "mine" && view !== "post" && view !== "person") return;
     const timer = window.setInterval(() => {
+      if (Date.now() < pollPausedUntil.current) return;
       if (view === "feed" || (view === "mine" && user)) {
         const params = { q: filters.current.q, category: filters.current.category };
         const request = view === "mine" ? listMine(params) : listFeed(params);
@@ -267,9 +309,15 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
         return;
       }
       if (view === "post" && id) {
+        if (likeInFlight.current.has(id)) return;
         getPost(id)
           .then((detail) => {
-            if (detail.post) setPost(detail.post);
+            if (!detail.post) return;
+            setPost((current) =>
+              current && current.id === detail.post!.id
+                ? mergePostSnapshot(current, detail.post!)
+                : detail.post!,
+            );
           })
           .catch(() => undefined);
         return;
@@ -288,17 +336,41 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
     return () => window.clearInterval(timer);
   }, [view, id, user]);
 
-  async function onLike(postId: string) {
+  function onLike(target: FeedPost) {
     if (!user) {
       setError("Sign in to like posts.");
       return;
     }
-    try {
-      const result = await toggleLike(postId);
-      applyLike(postId, result.likeCount, result.likedByYou);
-    } catch (err) {
-      setError(statusOf(err) === 401 ? "Sign in to like posts." : messageOf(err));
-    }
+    if (likeInFlight.current.has(target.id)) return;
+
+    const prevLiked = target.likedByYou;
+    const prevCount = target.likeCount;
+    const nextLiked = !prevLiked;
+    const nextCount = Math.max(0, prevCount + (nextLiked ? 1 : -1));
+
+    bumpPollPause();
+    likeInFlight.current.add(target.id);
+    patchPostEverywhere(target.id, (item) => ({
+      ...item,
+      likedByYou: nextLiked,
+      likeCount: nextCount,
+    }));
+
+    void toggleLike(target.id)
+      .then((result) => {
+        applyLike(target.id, result.likeCount, result.likedByYou);
+      })
+      .catch((err) => {
+        patchPostEverywhere(target.id, (item) => ({
+          ...item,
+          likedByYou: prevLiked,
+          likeCount: prevCount,
+        }));
+        setError(statusOf(err) === 401 ? "Sign in to like posts." : messageOf(err));
+      })
+      .finally(() => {
+        likeInFlight.current.delete(target.id);
+      });
   }
 
   async function onDeletePost(postId: string) {
@@ -307,12 +379,33 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
       return;
     }
     if (!window.confirm("Delete this post?")) return;
+
+    bumpPollPause();
+    let postsBackup: FeedPost[] | null = null;
+    let personBackup: PersonResponse | null = null;
+    let postBackup: FeedPost | null = null;
+
+    setPosts((current) => {
+      postsBackup = current;
+      return current.filter((item) => item.id !== postId);
+    });
+    setPerson((current) => {
+      if (!current) return current;
+      personBackup = current;
+      return { ...current, posts: current.posts.filter((item) => item.id !== postId) };
+    });
+    setPost((current) => {
+      if (current?.id === postId) postBackup = current;
+      return current?.id === postId ? null : current;
+    });
+
     try {
       await deletePost(postId);
-      setPosts((current) => current.filter((item) => item.id !== postId));
-      setPerson((current) => current ? { ...current, posts: current.posts.filter((item) => item.id !== postId) } : current);
       if (view === "post") router.push("/ai/community");
     } catch (err) {
+      if (postsBackup) setPosts(postsBackup);
+      if (personBackup) setPerson(personBackup);
+      if (postBackup) setPost(postBackup);
       setError(statusOf(err) === 401 ? "Sign in to delete posts." : messageOf(err));
     }
   }
@@ -326,19 +419,38 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
     }
     const body = commentBody.trim();
     if (!body) return;
+
+    const followUpToBot = followUpBotCommentId != null;
+    const pending = optimisticComment(body, user);
+    const postId = post.id;
+
+    bumpPollPause();
+    setCommentBody("");
+    setFollowUpBotCommentId(null);
+    patchPostEverywhere(postId, (item) => ({
+      ...item,
+      commentCount: item.commentCount + 1,
+      comments: [...(item.comments ?? []), pending],
+    }));
+
     try {
-      const result = await addComment(post.id, body, {
-        followUpToBot: followUpBotCommentId != null,
-      });
-      setCommentBody("");
-      setFollowUpBotCommentId(null);
+      const result = await addComment(postId, body, { followUpToBot });
       const added = [result.comment, ...(result.botComment ? [result.botComment] : [])];
-      setPost({
-        ...post,
-        commentCount: post.commentCount + added.length,
-        comments: [...(post.comments ?? []), ...added],
+      patchPostEverywhere(postId, (item) => {
+        const withoutPending = (item.comments ?? []).filter((c) => c.id !== pending.id);
+        return {
+          ...item,
+          commentCount: withoutPending.length + added.length,
+          comments: [...withoutPending, ...added],
+        };
       });
     } catch (err) {
+      patchPostEverywhere(postId, (item) => ({
+        ...item,
+        commentCount: Math.max(0, item.commentCount - 1),
+        comments: (item.comments ?? []).filter((c) => c.id !== pending.id),
+      }));
+      setCommentBody(body);
       setError(statusOf(err) === 401 ? "Sign in to comment." : messageOf(err));
     }
   }
@@ -347,24 +459,15 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
     if (aiReplyBusy) return;
     setAiReplyBusy(true);
     setError(null);
+    bumpPollPause();
     void Promise.resolve(publishAssistantReply(target.id))
       .then((result) => {
-        setPost((current) => {
-          const base = current && current.id === target.id ? current : target;
-          return {
-            ...base,
-            commentCount: base.commentCount + 1,
-            assistantReply: result.assistantReply,
-            comments: [...(base.comments ?? []), result.comment],
-          };
-        });
-        setPosts((current) =>
-          current.map((item) =>
-            item.id === target.id
-              ? { ...item, commentCount: item.commentCount + 1, assistantReply: result.assistantReply }
-              : item,
-          ),
-        );
+        patchPostEverywhere(target.id, (item) => ({
+          ...item,
+          commentCount: item.commentCount + 1,
+          assistantReply: result.assistantReply,
+          comments: [...(item.comments ?? []), result.comment],
+        }));
       })
       .catch((err) =>
         setError(
@@ -421,7 +524,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
             ) : (
               <>
                 <Link2 className="h-3.5 w-3.5" aria-hidden />
-                Copy link
+                Share
               </>
             )}
           </button>
@@ -445,7 +548,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                 ? "text-primary hover:bg-primary/10 motion-safe:hover:scale-105"
                 : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
             )}
-            onClick={() => void onLike(item.id)}
+            onClick={() => onLike(item)}
             aria-pressed={item.likedByYou}
             aria-label={item.likedByYou ? "Unlike post" : "Like post"}
           >
@@ -628,12 +731,14 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                 {(post.comments ?? []).map((comment, commentIndex) => {
                   const botComment =
                     comment.author.role === "assistant" || isCommunityBot(comment.author.id);
+                  const pendingComment = comment.id.startsWith("pending-comment-");
                   return (
                   <li
                     key={comment.id}
                     className={cn(
                       surfaceCardFlat,
                       "card-rise-in space-y-1 p-3 motion-safe:hover:shadow-sm sm:p-4",
+                      pendingComment && "opacity-90",
                       botComment &&
                         "border-primary/25 bg-primary/[0.04] shadow-sm shadow-primary/5 ring-1 ring-primary/10",
                     )}
@@ -655,15 +760,39 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                             setError("Sign in to edit comments.");
                             return;
                           }
-                          void updateComment(post.id, comment.id, commentDraft)
+                          const nextBody = commentDraft.trim();
+                          if (!nextBody) return;
+                          const postId = post.id;
+                          const commentId = comment.id;
+                          const prevBody = comment.body;
+                          bumpPollPause();
+                          patchPostEverywhere(postId, (item) => ({
+                            ...item,
+                            comments: (item.comments ?? []).map((entry) =>
+                              entry.id === commentId ? { ...entry, body: nextBody, updatedAt: new Date().toISOString() } : entry,
+                            ),
+                          }));
+                          setEditingComment(null);
+                          void updateComment(postId, commentId, nextBody)
                             .then((result) => {
-                              setPost({
-                                ...post,
-                                comments: (post.comments ?? []).map((item) => item.id === comment.id ? result.comment : item),
-                              });
-                              setEditingComment(null);
+                              patchPostEverywhere(postId, (item) => ({
+                                ...item,
+                                comments: (item.comments ?? []).map((entry) =>
+                                  entry.id === commentId ? result.comment : entry,
+                                ),
+                              }));
                             })
-                            .catch((err) => setError(statusOf(err) === 401 ? "Sign in to edit comments." : messageOf(err)));
+                            .catch((err) => {
+                              patchPostEverywhere(postId, (item) => ({
+                                ...item,
+                                comments: (item.comments ?? []).map((entry) =>
+                                  entry.id === commentId ? { ...entry, body: prevBody } : entry,
+                                ),
+                              }));
+                              setEditingComment(commentId);
+                              setCommentDraft(prevBody);
+                              setError(statusOf(err) === 401 ? "Sign in to edit comments." : messageOf(err));
+                            });
                         }}
                       >
                         <textarea
@@ -733,15 +862,25 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                           aria-label="Delete comment"
                           onClick={() => {
                             if (!window.confirm("Delete this comment?")) return;
-                            void deleteComment(post.id, comment.id)
-                              .then(() => {
-                                setPost({
-                                  ...post,
-                                  commentCount: Math.max(0, post.commentCount - 1),
-                                  comments: (post.comments ?? []).filter((item) => item.id !== comment.id),
-                                });
-                              })
-                              .catch((err) => setError(statusOf(err) === 401 ? "Sign in to delete comments." : messageOf(err)));
+                            const postId = post.id;
+                            const commentId = comment.id;
+                            const prevComments = post.comments ?? [];
+                            const prevCount = post.commentCount;
+                            bumpPollPause();
+                            patchPostEverywhere(postId, (item) => ({
+                              ...item,
+                              commentCount: Math.max(0, item.commentCount - 1),
+                              comments: (item.comments ?? []).filter((entry) => entry.id !== commentId),
+                            }));
+                            void deleteComment(postId, commentId)
+                              .catch((err) => {
+                                patchPostEverywhere(postId, (item) => ({
+                                  ...item,
+                                  commentCount: prevCount,
+                                  comments: prevComments,
+                                }));
+                                setError(statusOf(err) === 401 ? "Sign in to delete comments." : messageOf(err));
+                              });
                           }}
                         >
                           <Trash2 className="h-3.5 w-3.5" aria-hidden />

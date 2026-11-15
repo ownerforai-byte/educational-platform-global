@@ -382,14 +382,14 @@ describe("ProfilePage", () => {
     render(<ProfilePage />);
     const avatar = await screen.findByRole("img", { name: "Harindra Sah" });
     expect(avatar).toHaveAttribute("src", "/api/profile/media?path=profiles%2Fu1%2Favatar-1.webp");
-    expect(avatar).toHaveAttribute("loading", "lazy");
+    expect(avatar).toHaveAttribute("loading", "eager");
     expect(avatar).toHaveAttribute("sizes");
     expect(screen.queryByText("HS")).not.toBeInTheDocument();
     const cover = document.querySelector(
       'img[src="/api/profile/media?path=profiles%2Fu1%2Fcover-1.webp"]',
     );
     expect(cover).toBeTruthy();
-    expect(cover).toHaveAttribute("loading", "lazy");
+    expect(cover).toHaveAttribute("loading", "eager");
     expect(cover).toHaveAttribute("sizes");
 
     fireEvent.click(screen.getByRole("button", { name: /my profile/i }));

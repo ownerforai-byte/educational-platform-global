@@ -51,7 +51,7 @@ export async function trackTopic(input: JourneyTrackInput): Promise<JourneyRow> 
  */
 export async function getProgress(): Promise<ProgressEntry[]> {
   const rows = await getJourney();
-  return buildProgressCatalog(rows);
+  return buildProgressCatalog(Array.isArray(rows) ? rows : []);
 }
 
 /**

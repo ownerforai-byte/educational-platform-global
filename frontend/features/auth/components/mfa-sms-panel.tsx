@@ -9,7 +9,7 @@ import {
   firebaseMfaConfirmSmsAndFinish,
   firebaseMfaSendSmsCode,
 } from "@/lib/firebase/client-auth";
-import { authFailureMessage } from "../public-messages";
+import { authFailureDetail, authFailureMessage } from "../public-messages";
 import type { MultiFactorResolver } from "firebase/auth";
 
 interface MfaSmsPanelProps {
@@ -17,7 +17,7 @@ interface MfaSmsPanelProps {
   disabled?: boolean;
   onCancel: () => void;
   onIdToken: (idToken: string) => void | Promise<void>;
-  onError: (message: string) => void;
+  onError: (message: string, detail?: string | null) => void;
 }
 
 export function MfaSmsPanel({ resolver, disabled, onCancel, onIdToken, onError }: MfaSmsPanelProps) {
@@ -33,7 +33,7 @@ export function MfaSmsPanel({ resolver, disabled, onCancel, onIdToken, onError }
       const id = await firebaseMfaSendSmsCode(resolver, recaptchaHostId);
       setVerificationId(id);
     } catch (err) {
-      onError(authFailureMessage(err, "login"));
+      onError(authFailureMessage(err, "login"), authFailureDetail(err));
     } finally {
       setLoading(false);
     }
@@ -48,7 +48,7 @@ export function MfaSmsPanel({ resolver, disabled, onCancel, onIdToken, onError }
       clearPhoneRecaptcha();
       await onIdToken(idToken);
     } catch (err) {
-      onError(authFailureMessage(err, "login"));
+      onError(authFailureMessage(err, "login"), authFailureDetail(err));
     } finally {
       setLoading(false);
     }

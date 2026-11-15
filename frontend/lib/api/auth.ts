@@ -70,6 +70,25 @@ export async function loginWithFirebaseIdToken(idToken: string): Promise<Firebas
   return res;
 }
 
+export type FirebaseIdTokenSignupResult = AuthSignupResponse & {
+  code?: string;
+  statusToken?: string;
+};
+
+/** Register after phone (or other Firebase) verification — uses existing idToken + profile name. */
+export async function signupWithFirebaseIdToken(
+  idToken: string,
+  fullName?: string | null,
+): Promise<FirebaseIdTokenSignupResult> {
+  const res = await apiFetch<FirebaseIdTokenSignupResult>("/api/auth/signup", {
+    method: "POST",
+    body: JSON.stringify({ idToken, fullName: fullName?.trim() || undefined }),
+  });
+  if (res?.accessToken) setStoredToken(res.accessToken);
+  if (res?.user) writeCachedSession(res.user, res.accessToken ?? null);
+  return res;
+}
+
 /**
  * Register a new user account. May resolve with 202 (user needs email
  * confirmation) — the response shape carries `needsEmailConfirmation`.

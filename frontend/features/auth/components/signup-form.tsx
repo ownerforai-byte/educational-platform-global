@@ -9,9 +9,15 @@ import { AuthField } from "./auth-field";
 import { signupAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
+import { PhoneAuthPanel } from "./phone-auth-panel";
 import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/core/access-level";
-import { rememberPendingSignup } from "../pending-signup-identity";
+import {
+  DENIED_ROUTE,
+  WAITING_ROUTE,
+  rememberAccessOutcome,
+  rememberPendingSignup,
+} from "../pending-signup-identity";
 import { DEVICE_SIGNUP_NOTICE } from "./access-notice";
 import { AUTH_TRY_AGAIN } from "../public-messages";
 import { useAuthFormError } from "../use-auth-form-error";
@@ -33,6 +39,7 @@ export function SignupForm() {
   );
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [errorDetail, setErrorDetail] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,7 +59,7 @@ export function SignupForm() {
       // The hardcoded pending-signup identity is persisted in three stores so
       // a refresh cannot drop the "account created" state (owner 2026-11-08).
       if (result.statusToken) rememberPendingSignup(result.statusToken);
-      router.push("/welcome/pending");
+      router.push(WAITING_ROUTE);
     } else if (result.ok && result.message) {
       setMessage(result.message);
     } else if (result.ok) {
@@ -60,8 +67,13 @@ export function SignupForm() {
       // Fresh accounts land on their own tier WELCOME page first (2026-10-23) —
       // its Go button opens the tier home with all study materials.
       router.push(tierWelcomePathFor(result.user));
+    } else if (result.code === "ACCOUNT_REJECTED") {
+      if (result.statusToken) rememberPendingSignup(result.statusToken);
+      rememberAccessOutcome("REJECTED");
+      router.replace(DENIED_ROUTE);
     } else {
       setError(result.error);
+      setErrorDetail(null);
     }
   };
 
@@ -138,9 +150,12 @@ export function SignupForm() {
       </ul>
 
       {error && (
-        <p className="rounded-xl border border-destructive/30 bg-destructive/10 px-3.5 py-2.5 text-xs font-medium text-destructive">
-          {error}
-        </p>
+        <div className="rounded-xl border border-destructive/30 bg-destructive/10 px-3.5 py-2.5 text-xs font-medium text-destructive">
+          <p>{error}</p>
+          {errorDetail ? (
+            <p className="mt-1.5 font-mono text-[10px] font-normal text-destructive/80">{errorDetail}</p>
+          ) : null}
+        </div>
       )}
       {message && (
         <p className="rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-2.5 text-xs font-medium text-emerald-600 dark:text-emerald-400">
@@ -165,7 +180,29 @@ export function SignupForm() {
       <SocialAuthButtons
         mode="signup"
         disabled={loading}
-        onError={(msg) => setError(msg)}
+        onError={(msg, detail) => {
+          setError(msg);
+          setErrorDetail(detail ?? null);
+        }}
+      />
+
+      <PhoneAuthPanel
+        mode="signup"
+        signupFullName={fullName}
+        disabled={loading}
+        onError={(msg: string, detail?: string | null) => {
+          setError(msg);
+          setErrorDetail(detail ?? null);
+        }}
+        onNavigate={(path) => router.push(path)}
+        onSignedUp={async (result) => {
+          if (result.user) {
+            refresh();
+            router.push(tierWelcomePathFor(result.user));
+            return;
+          }
+          if (result.message) setMessage(result.message);
+        }}
       />
 
       <p className="pt-4 text-center text-sm text-muted-foreground">

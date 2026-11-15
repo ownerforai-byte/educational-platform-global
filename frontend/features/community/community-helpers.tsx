@@ -33,12 +33,34 @@ export function looksLikeQuestion(post: Pick<FeedPost, "title" | "body">): boole
   return /^(how|what|why|when|where|which|can|could|should|is|are|do|does|explain|define)\b/i.test(title);
 }
 
+/** Merge a refreshed post with local UI state (pending comments, in-flight likes). */
+export function mergePostSnapshot(local: FeedPost, incoming: FeedPost): FeedPost {
+  const localComments = local.comments ?? [];
+  const incomingComments = incoming.comments ?? [];
+  let comments = incomingComments;
+  if (localComments.length > incomingComments.length) {
+    const extras = localComments.filter(
+      (row) =>
+        row.id.startsWith("pending-comment-") || !incomingComments.some((item) => item.id === row.id),
+    );
+    if (extras.length > 0) comments = [...incomingComments, ...extras];
+  }
+  const likeCount = Math.max(local.likeCount, incoming.likeCount);
+  const likedByYou =
+    local.likeCount !== incoming.likeCount ? local.likedByYou : incoming.likedByYou;
+  const commentCount = Math.max(local.commentCount, incoming.commentCount, comments.length);
+  return { ...incoming, comments, likeCount, likedByYou, commentCount };
+}
+
 export function mergeById(current: FeedPost[], incoming: FeedPost[]): FeedPost[] {
   const seen = new Set(incoming.map((post) => post.id));
   const fresh = incoming.map((post) => {
     const previous = current.find((item) => item.id === post.id);
-    if (previous?.comments && !post.comments) return { ...post, comments: previous.comments };
-    return post;
+    if (!previous) return post;
+    if (previous.comments && !post.comments) {
+      return mergePostSnapshot(previous, { ...post, comments: previous.comments });
+    }
+    return mergePostSnapshot(previous, post);
   });
   return [...fresh, ...current.filter((post) => !seen.has(post.id))];
 }

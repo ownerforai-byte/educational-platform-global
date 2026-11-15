@@ -43,6 +43,11 @@ const VIEW_W = 900;
 const VIEW_H = 520;
 const MIN_ZOOM = 0.6;
 const MAX_ZOOM = 3;
+const DOUBLE_TAP_MS = 320;
+const DOUBLE_TAP_PX = 28;
+/** Below this scale, double-tap zooms in; at/above, double-tap resets to fit. */
+const DOUBLE_TAP_ZOOMED_IN_K = 1.08;
+const DOUBLE_TAP_ZOOM_IN_K = 2.2;
 
 // Motion styles (scoped `sd-` prefix; injected once). Pure CSS so we add no dependency.
 const SD_CSS = `
@@ -164,8 +169,25 @@ export function SchematicDiagram({
   const [exportError, setExportError] = useState<string | null>(null);
   const dragRef = useRef<{ px: number; py: number; ox: number; oy: number; moved: boolean } | null>(null);
   const didDragRef = useRef(false);
+  const lastTapRef = useRef<{ t: number; x: number; y: number } | null>(null);
 
   const clampZoom = (k: number) => Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, k));
+
+  const toggleZoomAt = useCallback((clientX: number, clientY: number) => {
+    const el = svgRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const px = ((clientX - rect.left) / rect.width) * VIEW_W;
+    const py = ((clientY - rect.top) / rect.height) * VIEW_H;
+    setView((v) => {
+      if (v.k < DOUBLE_TAP_ZOOMED_IN_K) {
+        const k = clampZoom(Math.max(v.k * DOUBLE_TAP_ZOOM_IN_K, DOUBLE_TAP_ZOOM_IN_K));
+        const s = k / v.k;
+        return { k, x: px - (px - v.x) * s, y: py - (py - v.y) * s };
+      }
+      return { x: 0, y: 0, k: 1 };
+    });
+  }, []);
 
   // Native non-passive wheel listener so we can preventDefault while zooming.
   useEffect(() => {
@@ -219,6 +241,38 @@ export function SchematicDiagram({
       didDragRef.current = false;
     }, 0);
   };
+
+  const onDiagramDoubleActivate = (clientX: number, clientY: number) => {
+    if (didDragRef.current) return;
+    toggleZoomAt(clientX, clientY);
+  };
+
+  const onDiagramDoubleClick = (e: React.MouseEvent<SVGSVGElement>) => {
+    if ((e.target as Element).closest('[role="button"]')) return;
+    e.preventDefault();
+    onDiagramDoubleActivate(e.clientX, e.clientY);
+  };
+
+  const onDiagramPointerUp = (e: React.PointerEvent<SVGSVGElement>) => {
+    endDrag();
+    if (e.pointerType !== "touch") return;
+    if (didDragRef.current) return;
+    if ((e.target as Element).closest('[role="button"]')) return;
+    const now = Date.now();
+    const last = lastTapRef.current;
+    if (
+      last &&
+      now - last.t < DOUBLE_TAP_MS &&
+      Math.hypot(e.clientX - last.x, e.clientY - last.y) < DOUBLE_TAP_PX
+    ) {
+      lastTapRef.current = null;
+      e.preventDefault();
+      onDiagramDoubleActivate(e.clientX, e.clientY);
+      return;
+    }
+    lastTapRef.current = { t: now, x: e.clientX, y: e.clientY };
+  };
+
   const resetView = () => setView({ x: 0, y: 0, k: 1 });
   const nudgeZoom = (dir: 1 | -1) =>
     setView((v) => {
@@ -1217,7 +1271,7 @@ export function SchematicDiagram({
       </div>
 
       {exportError && <p role="alert" className="text-sm text-destructive">{exportError}</p>}
-      <p className="text-xs text-muted-foreground">Scroll to read · Ctrl/⌘ + scroll to zoom · Enable Pan to drag · Focus the drawing and use + / − / 0 or ← / →</p>
+      <p className="text-xs text-muted-foreground">Scroll to read · Ctrl/⌘ + scroll to zoom · Double-tap the drawing to zoom in/out · Enable Pan to drag · Focus the drawing and use + / − / 0 or ← / →</p>
       {/* ── Guided walk-through banner ── */}
       {tour !== null && (
         <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-primary/30 bg-primary/5 px-3 py-2">
@@ -1269,10 +1323,10 @@ export function SchematicDiagram({
         aria-label={`Annotated schematic: ${topicTitle}`}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
-        onPointerUp={endDrag}
+        onPointerUp={onDiagramPointerUp}
         onPointerCancel={endDrag}
         onLostPointerCapture={endDrag}
-        onDoubleClick={resetView}
+        onDoubleClick={onDiagramDoubleClick}
       >
       <defs>
         <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">

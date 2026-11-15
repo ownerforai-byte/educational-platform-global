@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { PublicProfileShell } from "@/features/profile/public-profile-shell";
 
 export const metadata: Metadata = {
   title: "About · Profile",
 };
 
-export default async function ProfileAboutPage({ params }: { params: Promise<{ username: string }> }) {
-  const { username } = await params;
-  return <PublicProfileShell username={decodeURIComponent(username)} initialTab="about" />;
+export default function ProfileAboutPage() {
+  return null;
 }

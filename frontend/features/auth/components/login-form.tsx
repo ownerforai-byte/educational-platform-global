@@ -27,7 +27,7 @@ import {
 } from "../pending-signup-identity";
 import { DEVICE_SIGNUP_NOTICE } from "./access-notice";
 import { useAuthFormError } from "../use-auth-form-error";
-import { AUTH_INVALID_CREDENTIALS, authFailureMessage } from "../public-messages";
+import { AUTH_INVALID_CREDENTIALS, authFailureDetail, authFailureMessage } from "../public-messages";
 
 export function LoginForm() {
   const router = useRouter();
@@ -39,6 +39,12 @@ export function LoginForm() {
   const [loading, setLoading] = useState(false);
   const [showApprovalStatus, setShowApprovalStatus] = useState(false);
   const [mfaResolver, setMfaResolver] = useState<MultiFactorResolver | null>(null);
+  const [errorDetail, setErrorDetail] = useState<string | null>(null);
+
+  const reportError = (err: unknown) => {
+    setError(authFailureMessage(err, "login"));
+    setErrorDetail(authFailureDetail(err));
+  };
 
   useEffect(() => {
     setShowApprovalStatus(hasPendingSignup());
@@ -66,6 +72,7 @@ export function LoginForm() {
       router.replace(DENIED_ROUTE);
     } else {
       setError(result.error);
+      setErrorDetail(null);
     }
   };
 
@@ -82,7 +89,7 @@ export function LoginForm() {
     if (err instanceof FirebaseMfaRequiredError) {
       setMfaResolver(err.resolver);
     } else {
-      setError(authFailureMessage(err, "login"));
+      reportError(err);
     }
   } finally {
     setLoading(false);
@@ -114,7 +121,18 @@ export function LoginForm() {
       }
       setError(AUTH_INVALID_CREDENTIALS);
     } catch (err) {
-      setError(authFailureMessage(err, "login"));
+      const e = err as Error & { code?: string; statusToken?: string };
+      if (e.code === "PENDING_APPROVAL") {
+        if (e.statusToken) rememberPendingSignup(e.statusToken);
+        rememberAccessOutcome("PENDING");
+        router.push(WAITING_ROUTE);
+      } else if (e.code === "ACCOUNT_REJECTED") {
+        if (e.statusToken) rememberPendingSignup(e.statusToken);
+        rememberAccessOutcome("REJECTED");
+        router.replace(DENIED_ROUTE);
+      } else {
+        reportError(err);
+      }
     } finally {
       setLoading(false);
       setMfaResolver(null);
@@ -187,9 +205,12 @@ export function LoginForm() {
       </div>
 
       {error && (
-        <p className="rounded-xl border border-destructive/30 bg-destructive/10 px-3.5 py-2.5 text-xs font-medium text-destructive">
-          {error}
-        </p>
+        <div className="rounded-xl border border-destructive/30 bg-destructive/10 px-3.5 py-2.5 text-xs font-medium text-destructive">
+          <p>{error}</p>
+          {errorDetail ? (
+            <p className="mt-1.5 font-mono text-[10px] font-normal text-destructive/80">{errorDetail}</p>
+          ) : null}
+        </div>
       )}
 
       {mfaResolver ? (
@@ -198,7 +219,10 @@ export function LoginForm() {
           disabled={loading}
           onCancel={() => setMfaResolver(null)}
           onIdToken={handleMfaIdToken}
-          onError={setError}
+          onError={(msg, detail) => {
+            setError(msg);
+            setErrorDetail(detail ?? null);
+          }}
         />
       ) : null}
 
@@ -219,12 +243,18 @@ export function LoginForm() {
       <SocialAuthButtons
         mode="login"
         disabled={loading}
-        onError={(msg) => setError(msg)}
+        onError={(msg, detail) => {
+          setError(msg);
+          setErrorDetail(detail ?? null);
+        }}
       />
 
       <PhoneAuthPanel
         disabled={loading}
-        onError={setError}
+        onError={(msg: string, detail?: string | null) => {
+          setError(msg);
+          setErrorDetail(detail ?? null);
+        }}
         onNavigate={(path) => (path === DENIED_ROUTE ? router.replace(path) : router.push(path))}
         onSignedIn={async (result) => {
           if (result.user) {

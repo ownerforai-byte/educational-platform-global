@@ -18,6 +18,7 @@ const mocks = vi.hoisted(() => ({
   toast: vi.fn(),
   pushNotification: vi.fn(),
   registerFcmToken: vi.fn(async (..._args: unknown[]) => ({ ok: true, token: "device-token" })),
+  logFcmResult: vi.fn(),
   syncFcmToken: vi.fn(async (..._args: unknown[]) => ({ ok: true, token: "device-token", changed: false })),
   startFcmTokenRefresh: vi.fn((..._args: unknown[]) => () => {}),
   onMessageHandlers: [] as Array<(payload: unknown) => void>,
@@ -47,6 +48,7 @@ vi.mock("@/lib/fcm/firebase-app", () => ({
 vi.mock("@/lib/fcm/register-token", () => ({
   registerFcmToken: (...args: unknown[]) => mocks.registerFcmToken(...args),
   syncFcmToken: (...args: unknown[]) => mocks.syncFcmToken(...args),
+  logFcmResult: (...args: unknown[]) => mocks.logFcmResult(...args),
 }));
 vi.mock("@/lib/fcm/token-refresh", () => ({
   startFcmTokenRefresh: (...args: unknown[]) => mocks.startFcmTokenRefresh(...args),

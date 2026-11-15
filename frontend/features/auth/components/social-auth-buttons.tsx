@@ -7,7 +7,7 @@ import { getSupabaseBrowserClient, isOAuthProviderEnabled } from "@/lib/supabase
 import { apiFetch } from "@/lib/api-client";
 import { oauthCallbackUrl } from "@/lib/supabase/oauth-config";
 import { publicUrl } from "@/lib/site-url";
-import { authFailureMessage } from "../public-messages";
+import { authFailureDetail, authFailureMessage } from "../public-messages";
 
 export function GoogleIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -35,7 +35,7 @@ export function GoogleIcon({ className = "h-4 w-4" }: { className?: string }) {
 interface SocialAuthButtonsProps {
   mode?: "login" | "signup";
   disabled?: boolean;
-  onError?: (error: string) => void;
+  onError?: (error: string, detail?: string | null) => void;
 }
 
 /** Must exceed Render cold start; proxy allows up to ~55s per hop. */
@@ -85,7 +85,11 @@ export function SocialAuthButtons({
     try {
       const firebaseAuth = useFirebaseClientAuth();
       if (!firebaseAuth && !(await isOAuthProviderEnabled("google"))) {
-        onError?.(authFailureMessage(new Error("unavailable"), "oauth"));
+        const unavailable = new Error("unavailable");
+        onError?.(
+          authFailureMessage(unavailable, "oauth"),
+          authFailureDetail(unavailable),
+        );
         return;
       }
 
@@ -108,7 +112,7 @@ export function SocialAuthButtons({
       redirected = true;
     } catch (oauthError) {
       sessionStorage.removeItem("neb_oauth_csrf");
-      onError?.(authFailureMessage(oauthError, "oauth"));
+      onError?.(authFailureMessage(oauthError, "oauth"), authFailureDetail(oauthError));
     } finally {
       if (!redirected) setSocialLoading(false);
     }

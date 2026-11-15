@@ -252,6 +252,9 @@ export function MindmapInterface({
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [isPanning, setIsPanning] = useState(false);
   const [panStart, setPanStart] = useState({ x: 0, y: 0 });
+  const panMovedRef = useRef(false);
+  const panAnchorRef = useRef({ x: 0, y: 0 });
+  const lastTapRef = useRef<{ t: number; x: number; y: number } | null>(null);
   const [treeRoot, setTreeRoot] = useState<LayoutNode | null>(null);
 
   // Build tree layout with branch indexing
@@ -332,6 +335,8 @@ export function MindmapInterface({
   // Pointer pan — works for mouse, touch and pen.
   const handlePointerDown = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
     if (e.pointerType === "mouse" && e.button !== 0) return;
+    panMovedRef.current = false;
+    panAnchorRef.current = { x: e.clientX, y: e.clientY };
     setIsPanning(true);
     setPanStart({ x: e.clientX - offsetRef.current.x, y: e.clientY - offsetRef.current.y });
   }, []);
@@ -339,12 +344,74 @@ export function MindmapInterface({
   const handlePointerMove = useCallback(
     (e: React.PointerEvent<HTMLDivElement>) => {
       if (!isPanning) return;
+      if (
+        Math.hypot(e.clientX - panAnchorRef.current.x, e.clientY - panAnchorRef.current.y) > 4
+      ) {
+        panMovedRef.current = true;
+      }
       setOffset({ x: e.clientX - panStart.x, y: e.clientY - panStart.y });
     },
     [isPanning, panStart]
   );
 
-  const handlePointerUp = useCallback(() => setIsPanning(false), []);
+  const toggleZoomAt = useCallback((clientX: number, clientY: number) => {
+    const el = containerRef.current;
+    if (!el) return;
+    const s = scaleRef.current;
+    const o = offsetRef.current;
+    const rect = el.getBoundingClientRect();
+    const cx = clientX - rect.left;
+    const cy = clientY - rect.top;
+    if (s < 1.08) {
+      const next = Math.min(4, Math.max(2, s * 2));
+      setOffset({ x: cx - ((cx - o.x) * next) / s, y: cy - ((cy - o.y) * next) / s });
+      setScale(next);
+    } else {
+      setScale(1);
+      setOffset({ x: 0, y: 0 });
+    }
+  }, []);
+
+  const handleCanvasDoubleActivate = useCallback(
+    (clientX: number, clientY: number) => {
+      if (panMovedRef.current) return;
+      toggleZoomAt(clientX, clientY);
+    },
+    [toggleZoomAt],
+  );
+
+  const handleDoubleClick = useCallback(
+    (e: React.MouseEvent<HTMLDivElement>) => {
+      if ((e.target as Element).closest("button")) return;
+      e.preventDefault();
+      handleCanvasDoubleActivate(e.clientX, e.clientY);
+    },
+    [handleCanvasDoubleActivate],
+  );
+
+  const handlePointerUp = useCallback(
+    (e: React.PointerEvent<HTMLDivElement>) => {
+      setIsPanning(false);
+      if (e.pointerType !== "touch" || panMovedRef.current) return;
+      if ((e.target as Element).closest("button")) return;
+      const now = Date.now();
+      const last = lastTapRef.current;
+      const DOUBLE_TAP_MS = 320;
+      const DOUBLE_TAP_PX = 28;
+      if (
+        last &&
+        now - last.t < DOUBLE_TAP_MS &&
+        Math.hypot(e.clientX - last.x, e.clientY - last.y) < DOUBLE_TAP_PX
+      ) {
+        lastTapRef.current = null;
+        e.preventDefault();
+        handleCanvasDoubleActivate(e.clientX, e.clientY);
+        return;
+      }
+      lastTapRef.current = { t: now, x: e.clientX, y: e.clientY };
+    },
+    [handleCanvasDoubleActivate],
+  );
 
   // Wheel zoom around the cursor. Registered non-passively so the page does
   // not scroll underneath the canvas (React's synthetic onWheel is passive
@@ -567,6 +634,7 @@ export function MindmapInterface({
         onPointerMove={handlePointerMove}
         onPointerUp={handlePointerUp}
         onPointerLeave={handlePointerUp}
+        onDoubleClick={handleDoubleClick}
       >
         {/* Subtle engineering grid dot pattern */}
         <div
