@@ -129,7 +129,7 @@ export function subscribeFirebaseUser(cb: (user: User | null) => void): () => vo
 
 let phoneRecaptcha: RecaptchaVerifier | null = null;
 
-function getPhoneRecaptcha(containerId: string): RecaptchaVerifier {
+async function getPhoneRecaptcha(containerId: string): Promise<RecaptchaVerifier> {
   const auth = getFirebaseAuth();
   if (!auth) throw new Error("Firebase Auth is not configured");
   if (phoneRecaptcha) {
@@ -141,6 +141,8 @@ function getPhoneRecaptcha(containerId: string): RecaptchaVerifier {
     phoneRecaptcha = null;
   }
   phoneRecaptcha = new RecaptchaVerifier(auth, containerId, { size: "invisible" });
+  // Invisible reCAPTCHA must render into a real (non–display:none) container before send.
+  await phoneRecaptcha.render();
   return phoneRecaptcha;
 }
 
@@ -151,7 +153,7 @@ export async function firebasePhoneSendCode(
 ): Promise<ConfirmationResult> {
   const auth = getFirebaseAuth();
   if (!auth) throw new Error("Firebase Auth is not configured");
-  const verifier = getPhoneRecaptcha(recaptchaContainerId);
+  const verifier = await getPhoneRecaptcha(recaptchaContainerId);
   return signInWithPhoneNumber(auth, phoneNumber.trim(), verifier);
 }
 

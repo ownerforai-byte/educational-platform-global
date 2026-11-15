@@ -86,7 +86,11 @@ export function PhoneAuthPanel({ disabled, onSignedIn, onError, onNavigate }: Ph
   return (
     <div className="space-y-3 rounded-2xl border border-border/80 bg-muted/20 p-4">
       <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Phone sign-in</p>
-      <div id={recaptchaHostId} className="hidden" aria-hidden="true" />
+      <div
+        id={recaptchaHostId}
+        className="pointer-events-none fixed left-0 top-0 h-px w-px overflow-hidden opacity-0"
+        aria-hidden="true"
+      />
       {step === "phone" ? (
         <AuthField
           id="phone"
