@@ -38,7 +38,8 @@ interface SocialAuthButtonsProps {
   onError?: (error: string) => void;
 }
 
-const CSRF_TIMEOUT_MS = 10_000;
+/** Must exceed Render cold start; proxy allows up to ~55s per hop. */
+const CSRF_TIMEOUT_MS = 35_000;
 
 /**
  * The CSRF handshake talks to the Render backend, which can be cold. A bare

@@ -22,22 +22,31 @@ const STRIPPED_RESPONSE_HEADERS = new Set([
   "set-cookie",
 ]);
 
+/** Render free-tier cold starts routinely exceed 30s; keep below browser limits. */
+const BACKEND_FETCH_TIMEOUT_MS = 55_000;
+const BACKEND_FETCH_ATTEMPTS = 3;
+const BACKEND_FETCH_RETRY_MS = [400, 1_200] as const;
+
 /**
- * Render's free tier cold-starts in ~30s and resets the TCP connection on the
+ * Render's free tier cold-starts in ~30–45s and resets the TCP connection on the
  * first request (`ECONNRESET` / "socket hang up"). The browser used to get a
  * 503 for /api/auth/me and /api/auth/login, which left the guest home on its
- * session spinner and made owner sign-in time out. A single bounded retry
- * after 400ms rides out that first reset; a hard timeout stops a hung cold
- * start from holding the request open indefinitely.
+ * session spinner and made owner sign-in time out. Bounded retries with a
+ * cold-start-aware timeout ride out the first reset; a hard cap still stops a
+ * hung backend from holding the request open indefinitely.
  */
 async function fetchBackend(targetUrl: string, init: RequestInit): Promise<Response> {
   let lastError: unknown;
-  for (let attempt = 0; attempt < 2; attempt += 1) {
+  for (let attempt = 0; attempt < BACKEND_FETCH_ATTEMPTS; attempt += 1) {
     try {
-      return await fetch(targetUrl, { ...init, signal: AbortSignal.timeout(20_000) });
+      return await fetch(targetUrl, {
+        ...init,
+        signal: AbortSignal.timeout(BACKEND_FETCH_TIMEOUT_MS),
+      });
     } catch (error) {
       lastError = error;
-      if (attempt === 0) await new Promise((resolve) => setTimeout(resolve, 400));
+      const delay = BACKEND_FETCH_RETRY_MS[attempt];
+      if (delay !== undefined) await new Promise((resolve) => setTimeout(resolve, delay));
     }
   }
   throw lastError;

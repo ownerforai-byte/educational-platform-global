@@ -36,7 +36,7 @@ function authErrorCode(err: unknown): string {
 }
 
 function looksLikeOffline(message: string): boolean {
-  return /failed to fetch|networkerror|network error|load failed|offline|internet|enotfound|econnrefused|network-request-failed/.test(
+  return /failed to fetch|networkerror|network error|load failed|offline|internet|enotfound|econnrefused|network-request-failed|service_unreachable|econnreset|socket hang up/.test(
     message,
   );
 }

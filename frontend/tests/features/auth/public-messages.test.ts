@@ -17,6 +17,9 @@ describe("authFailureMessage", () => {
 
   it("maps fetch failures to no connection", () => {
     expect(authFailureMessage(new TypeError("Failed to fetch"), "login")).toBe(AUTH_NO_CONNECTION);
+    expect(
+      authFailureMessage(Object.assign(new Error("service_unreachable"), { status: 503 }), "login"),
+    ).toBe(AUTH_NO_CONNECTION);
   });
 
   it("maps server failures to temporarily unavailable", () => {
@@ -24,7 +27,7 @@ describe("authFailureMessage", () => {
       AUTH_TEMPORARILY_UNAVAILABLE,
     );
     expect(authFailureMessage(new Error("service_unreachable"), "oauth")).toBe(
-      AUTH_TEMPORARILY_UNAVAILABLE,
+      AUTH_NO_CONNECTION,
     );
   });
 
