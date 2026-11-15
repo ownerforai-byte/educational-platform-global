@@ -3,7 +3,7 @@
   "installCommand": "sh -c 'env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm ci --workspace=educational-platform-frontend'",
   "buildCommand": "env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm run build --workspace=educational-platform-frontend",
   "outputDirectory": "frontend/.next",
-  "ignoreCommand": "sh scripts/ci/vercel-should-build.sh",
+  "ignoreCommand": "sh frontend/scripts/ci/vercel-should-build.sh",
   "git": {
     "deploymentEnabled": {
       "main": true,

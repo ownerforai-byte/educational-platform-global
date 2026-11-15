@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # Vercel Ignored Build Step (exit 0 = skip, exit 1 = build).
-# Builds when frontend/, packages/shared/, or repo-root .well-known/ changed.
+# Root Directory is `frontend`; paths below are from the monorepo git root.
 case "$VERCEL_GIT_COMMIT_REF" in
   dependabot/*) exit 0 ;;
 esac
