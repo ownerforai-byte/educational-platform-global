@@ -5,3 +5,4 @@
 - Do **not** add `frontend/public/.well-known/` or any other duplicate copy.
 - Production serves this file via `frontend/app/.well-known/assetlinks.json/route.ts`, which reads the repo-root JSON at build and runtime.
 - CI validates **only** `.well-known/assetlinks.json` on this path.
+- The TWA / Play App Links host is **`www.harindrasah.com.np`** (apex redirects break Google verification).

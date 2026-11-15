@@ -56,29 +56,29 @@ function enforcePlayTargetSdk() {
 
 async function main() {
   fs.writeFileSync(LOG, "");
-  logFile("[1/4] Fetching web manifest from harindrasah.com.np ...");
+  logFile("[1/4] Fetching web manifest from www.harindrasah.com.np ...");
   const twaManifest = await TwaManifest.fromWebManifest(
-    "https://harindrasah.com.np/manifest.json",
+    "https://www.harindrasah.com.np/manifest.json",
   );
 
-  twaManifest.host = "harindrasah.com.np";
+  twaManifest.host = "www.harindrasah.com.np";
   twaManifest.startUrl = "/";
   twaManifest.name = "Ravikisan's Platform";
   twaManifest.launcherName = "Ravikisan";
   twaManifest.packageId = "com.ravikisan.platform";
-  twaManifest.appVersionCode = 5;
-  twaManifest.appVersionName = "1.0.3";
+  twaManifest.appVersionCode = 6;
+  twaManifest.appVersionName = "1.0.4";
   twaManifest.display = "standalone";
   twaManifest.orientation = "portrait";
   twaManifest.themeColor = require("color")("#3b82f6");
   twaManifest.backgroundColor = require("color")("#0f172a");
-  twaManifest.iconUrl = "https://harindrasah.com.np/icon-512.png";
-  twaManifest.maskableIconUrl = "https://harindrasah.com.np/icon-512.png";
+  twaManifest.iconUrl = "https://www.harindrasah.com.np/icon-512.png";
+  twaManifest.maskableIconUrl = "https://www.harindrasah.com.np/icon-512.png";
   twaManifest.enableNotifications = true;
   twaManifest.minSdkVersion = 30;
   twaManifest.generatorApp = "bubblewrap";
   twaManifest.webManifestUrl = new URL(
-    "https://harindrasah.com.np/manifest.json",
+    "https://www.harindrasah.com.np/manifest.json",
   );
   twaManifest.features = {};
 
