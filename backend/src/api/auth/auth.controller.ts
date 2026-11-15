@@ -21,6 +21,7 @@ import {
   firebaseSendPasswordResetEmail,
   firebaseUpdatePassword,
   revokeFirebaseSessions,
+  firebaseSessionEmail,
   verifyFirebaseIdToken,
 } from "../../auth/firebase-admin-auth.js";
 import { verifyAccessToken } from "../../auth/token-verify.js";
@@ -384,12 +385,13 @@ router.post("/login", async (req: Request, res: Response) => {
       return;
     }
     const verified = await verifyFirebaseIdToken(idToken);
-    if (!verified?.email) {
+    const accountEmail = verified ? firebaseSessionEmail(verified) : null;
+    if (!verified || !accountEmail) {
       res.status(401).json({ error: "Invalid email or password" });
       return;
     }
-    await ensureAuthProfile(verified.uid, { email: verified.email, fullName: verified.displayName });
-    const accessStatus = await readAccessStatus(verified.uid, verified.email);
+    await ensureAuthProfile(verified.uid, { email: accountEmail, fullName: verified.displayName });
+    const accessStatus = await readAccessStatus(verified.uid, accountEmail);
     if (accessStatus === "REJECTED") {
       accessDenied(res, accessStatus, verified.uid);
       return;
@@ -398,7 +400,7 @@ router.post("/login", async (req: Request, res: Response) => {
       pendingApproval(res, verified.uid);
       return;
     }
-    const user = await resolveSessionUser(verified.uid, verified.email);
+    const user = await resolveSessionUser(verified.uid, accountEmail);
     const extended = await buildExtendedUser(user.id, user.email, user.role, verified.displayName);
     setSessionCookie(res, idToken);
     const body: LoginResponse = { user: extended, accessToken: idToken };
@@ -461,12 +463,13 @@ router.post("/signup", async (req: Request, res: Response) => {
 
     if (idToken) {
       const verified = await verifyFirebaseIdToken(idToken);
-      if (!verified?.email) {
+      const accountEmail = verified ? firebaseSessionEmail(verified) : null;
+      if (!verified || !accountEmail) {
         res.status(401).json({ error: "Invalid signup session" });
         return;
       }
       uid = verified.uid;
-      email = verified.email;
+      email = accountEmail;
       fullName = fullName ?? verified.displayName;
     } else if (parsed.data.email && parsed.data.password) {
       const created = await firebaseCreateUser({

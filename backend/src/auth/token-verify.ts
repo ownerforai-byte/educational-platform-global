@@ -1,6 +1,6 @@
 import { getUserByToken } from "./supabase.js";
 import { useFirebaseAuth } from "./auth-mode.js";
-import { verifyFirebaseIdToken } from "./firebase-admin-auth.js";
+import { firebaseSessionEmail, verifyFirebaseIdToken } from "./firebase-admin-auth.js";
 
 export type VerifiedTokenUser = {
   id: string;
@@ -20,7 +20,7 @@ export async function verifyAccessToken(token: string): Promise<VerifiedTokenUse
     if (!firebaseUser) return null;
     return {
       id: firebaseUser.uid,
-      email: firebaseUser.email,
+      email: firebaseSessionEmail(firebaseUser),
       fullName: firebaseUser.displayName,
       providerIds: firebaseUser.providerIds,
     };

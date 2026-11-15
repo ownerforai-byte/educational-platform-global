@@ -34,6 +34,14 @@ export function routeForLiveAccess(status: AccessOutcome): string {
  * Throws only on transient network/server failures so callers can keep
  * showing the checking state and retry.
  */
+/**
+ * Best-effort route when live account-status cannot be reached after retries.
+ * Token present → waiting screen (signup still in flight); otherwise normal.
+ */
+export function resolveLiveApprovalRouteFallback(): string {
+  return readStatusToken() ? WAITING_ROUTE : NORMAL_ROUTE;
+}
+
 export async function resolveLiveApprovalRoute(): Promise<string> {
   const token = readStatusToken();
   if (!token) {

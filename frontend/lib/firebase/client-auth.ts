@@ -19,11 +19,17 @@ import {
 } from "firebase/auth";
 import { getPublicEnv } from "@/lib/env";
 import { getFirebaseApp } from "@/lib/fcm/firebase-app";
+import { isFirebaseWebConfigured } from "@/lib/fcm/config";
 import { publicOrigin } from "@/lib/site-url";
 
 export function useFirebaseClientAuth(): boolean {
   const flag = getPublicEnv().NEXT_PUBLIC_USE_FIREBASE_AUTH?.trim().toLowerCase();
-  return flag === "1" || flag === "true" || flag === "yes";
+  const enabled = flag === "1" || flag === "true" || flag === "yes";
+  if (!enabled) return false;
+  // Flag without NEXT_PUBLIC_FIREBASE_* values must not hijack email/password
+  // or Google into the Firebase SDK — fall back to the Supabase client path.
+  if (typeof window !== "undefined" && !isFirebaseWebConfigured()) return false;
+  return true;
 }
 
 export function getFirebaseAuth() {

@@ -23,6 +23,7 @@ import {
 } from "../pending-signup-identity";
 import { DEVICE_SIGNUP_NOTICE } from "./access-notice";
 import { useAuthFormError } from "../use-auth-form-error";
+import { AUTH_INVALID_CREDENTIALS } from "../public-messages";
 
 export function LoginForm() {
   const router = useRouter();
@@ -162,18 +163,15 @@ export function LoginForm() {
       <PhoneAuthPanel
         disabled={loading}
         onError={setError}
+        onNavigate={(path) => (path === DENIED_ROUTE ? router.replace(path) : router.push(path))}
         onSignedIn={async (result) => {
-          if (result.code === "PENDING_APPROVAL") {
-            if (result.statusToken) rememberPendingSignup(result.statusToken);
-            rememberAccessOutcome("PENDING");
-            router.push(WAITING_ROUTE);
-            return;
-          }
           if (result.user) {
             clearPendingSignup();
             await refresh();
             router.push(tierWelcomePathFor(result.user));
+            return;
           }
+          setError(AUTH_INVALID_CREDENTIALS);
         }}
       />
 

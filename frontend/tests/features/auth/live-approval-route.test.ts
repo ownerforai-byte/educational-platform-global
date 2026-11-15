@@ -18,6 +18,7 @@ vi.mock("@/lib/api-client", () => ({
 
 import {
   resolveLiveApprovalRoute,
+  resolveLiveApprovalRouteFallback,
   routeForLiveAccess,
 } from "@/features/auth/live-approval-route";
 
@@ -64,5 +65,14 @@ describe("resolveLiveApprovalRoute", () => {
     apiFetch.mockRejectedValue(err);
     await expect(resolveLiveApprovalRoute()).resolves.toBe(NORMAL_ROUTE);
     expect(hasPendingSignup()).toBe(false);
+  });
+
+  it("fallback routes visitors without a token to no-account", () => {
+    expect(resolveLiveApprovalRouteFallback()).toBe(NORMAL_ROUTE);
+  });
+
+  it("fallback keeps token holders on the waiting screen", () => {
+    rememberPendingSignup("tok");
+    expect(resolveLiveApprovalRouteFallback()).toBe(WAITING_ROUTE);
   });
 });

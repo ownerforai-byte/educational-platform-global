@@ -6,10 +6,25 @@ import { getFirebaseAuth, type FirebaseAuthAdmin } from "../storage/firebase-adm
 export type FirebaseVerifiedUser = {
   uid: string;
   email: string | null;
+  phoneNumber: string | null;
   displayName: string | null;
   emailVerified: boolean;
   providerIds: string[];
 };
+
+/** Stable profile/session email when Firebase phone sign-in has no email claim. */
+export function firebaseSessionEmail(verified: Pick<FirebaseVerifiedUser, "email" | "phoneNumber" | "uid">): string | null {
+  const email = verified.email?.trim();
+  if (email) return email;
+  const phone = verified.phoneNumber?.trim();
+  if (phone) {
+    const digits = phone.replace(/\D/g, "");
+    if (digits) return `phone+${digits}@phone.signin.harindrasah.com.np`;
+  }
+  // Last resort: uid-based placeholder (should not happen for well-formed tokens).
+  const uid = verified.uid?.trim();
+  return uid ? `phone+${uid}@phone.signin.harindrasah.com.np` : null;
+}
 
 function auth(): FirebaseAuthAdmin | null {
   return getFirebaseAuth();
@@ -41,6 +56,7 @@ export async function verifyFirebaseIdToken(
     const decoded = (await adminAuth.verifyIdToken(token, checkRevoked)) as {
       uid: string;
       email?: string;
+      phone_number?: string;
       name?: string;
       email_verified?: boolean;
       firebase?: { sign_in_provider?: string; identities?: Record<string, string[]> };
@@ -48,6 +64,7 @@ export async function verifyFirebaseIdToken(
     return {
       uid: decoded.uid,
       email: decoded.email ?? null,
+      phoneNumber: decoded.phone_number ?? null,
       displayName: decoded.name ?? null,
       emailVerified: decoded.email_verified === true,
       providerIds: providersFromClaims(decoded.firebase),

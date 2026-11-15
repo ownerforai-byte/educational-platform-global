@@ -7,8 +7,15 @@
         "supportEmail": "support@harindrasah.com.np",
         "authorizedRedirectUris": [
           "https://www.harindrasah.com.np",
-          "http://localhost:5173"
+          "https://www.harindrasah.com.np/auth/callback",
+          "http://localhost:5173",
+          "http://localhost:5173/auth/callback"
         ]
+      },
+      "phoneSignIn": {
+        "testPhoneNumbers": {
+          "+9779800000000": "123456"
+        }
       }
     },
     "authorizedDomains": [

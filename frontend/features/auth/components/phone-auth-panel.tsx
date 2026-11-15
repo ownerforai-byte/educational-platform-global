@@ -11,15 +11,22 @@ import {
   useFirebaseClientAuth,
 } from "@/lib/firebase/client-auth";
 import { loginWithFirebaseIdToken, type FirebaseIdTokenLoginResult } from "@/lib/api/auth";
+import {
+  DENIED_ROUTE,
+  rememberAccessOutcome,
+  rememberPendingSignup,
+  WAITING_ROUTE,
+} from "../pending-signup-identity";
 import { authFailureMessage } from "../public-messages";
 import type { ConfirmationResult } from "firebase/auth";
 interface PhoneAuthPanelProps {
   disabled?: boolean;
   onSignedIn: (res: FirebaseIdTokenLoginResult) => void | Promise<void>;
   onError: (message: string) => void;
+  onNavigate?: (path: string) => void;
 }
 
-export function PhoneAuthPanel({ disabled, onSignedIn, onError }: PhoneAuthPanelProps) {
+export function PhoneAuthPanel({ disabled, onSignedIn, onError, onNavigate }: PhoneAuthPanelProps) {
   const firebaseMode = useFirebaseClientAuth();
   const recaptchaHostId = useId().replace(/:/g, "");
   const [phone, setPhone] = useState("");
@@ -33,6 +40,18 @@ export function PhoneAuthPanel({ disabled, onSignedIn, onError }: PhoneAuthPanel
   const finishWithToken = async (idToken: string) => {
     const res = await loginWithFirebaseIdToken(idToken);
     clearPhoneRecaptcha();
+    if (res.code === "PENDING_APPROVAL") {
+      if (res.statusToken) rememberPendingSignup(res.statusToken);
+      rememberAccessOutcome("PENDING");
+      onNavigate?.(WAITING_ROUTE);
+      return;
+    }
+    if (res.code === "ACCOUNT_REJECTED") {
+      if (res.statusToken) rememberPendingSignup(res.statusToken);
+      rememberAccessOutcome("REJECTED");
+      onNavigate?.(DENIED_ROUTE);
+      return;
+    }
     await onSignedIn(res);
   };
 

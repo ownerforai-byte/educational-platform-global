@@ -6,6 +6,7 @@ import {
   APPROVED_ROUTE,
   DENIED_ROUTE,
   WAITING_ROUTE,
+  readStatusToken,
 } from "../pending-signup-identity";
 import { useLiveApprovalRoute } from "../use-live-approval-route";
 import { VerifyingStatus } from "./verifying-status";
@@ -27,7 +28,16 @@ export function CreatedAccountGate({
   children: React.ReactNode;
 }) {
   const router = useRouter();
+  // Visitors without a device signup token must never sit behind a live
+  // account-status poll — a cold backend or 5xx on /account-status used to
+  // leave login/signup on "Checking your account status" forever while email,
+  // Google, and password flows stayed unreachable.
+  const hasSignupToken = Boolean(readStatusToken());
   const live = useLiveApprovalRoute();
+
+  if (!hasSignupToken) {
+    return <>{children}</>;
+  }
 
   useEffect(() => {
     if (!live) return;
