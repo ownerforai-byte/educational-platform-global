@@ -3,7 +3,7 @@
   "installCommand": "sh -c 'env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm ci --workspace=educational-platform-frontend'",
   "buildCommand": "env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm run build --workspace=educational-platform-frontend",
   "outputDirectory": "frontend/.next",
-  "ignoreCommand": "sh -c 'case $VERCEL_GIT_COMMIT_REF in dependabot/*) exit 0;; esac; prev=\"${VERCEL_GIT_PREVIOUS_SHA:-}\"; sha=\"${VERCEL_GIT_COMMIT_SHA:?}\"; if [ -z \"$prev\" ] || ! git cat-file -e \"$prev^{commit}\" 2>/dev/null; then exit 1; fi; git diff --quiet \"$prev\" \"$sha\" -- frontend packages/shared .well-known && exit 0 || exit 1'",
+  "ignoreCommand": "sh -c 'case $VERCEL_GIT_COMMIT_REF in dependabot/*) exit 0;; esac; prev=\"${VERCEL_GIT_PREVIOUS_SHA:-}\"; sha=\"${VERCEL_GIT_COMMIT_SHA:-}\"; if [ -z \"$sha\" ]; then exit 1; fi; if [ -z \"$prev\" ] || ! git cat-file -e \"$prev^{commit}\" 2>/dev/null; then exit 1; fi; git diff --quiet \"$prev\" \"$sha\" -- frontend packages/shared .well-known && exit 0 || exit 1'",
   "git": {
     "deploymentEnabled": {
       "main": true,
