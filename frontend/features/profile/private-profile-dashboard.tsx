@@ -5,7 +5,7 @@
  *
  * One dense, responsive owner view: identity hero, real quick statistics,
  * learning & progress, personal/account settings and the activity feed — all
- * numbers derived from `profile-derivations` so the owner and a visitor never
+ * numbers derived from `profile-derived` so the owner and a visitor never
  * read a different figure.
  *
  * Every statistic comes from live data:
@@ -99,7 +99,6 @@ import {
   computeStudyStreak,
   deriveAchievements,
   learningProgress,
-  profileCompletion,
   profileOverview,
   scholarLevelFor,
   subjectDisplayName,
@@ -108,7 +107,7 @@ import {
 } from "@/features/profile/profile-derived";
 
 const tierBadgeConfig: Record<AccessLevel, { className: string; icon: typeof Crown }> = {
-  guest: { className: "bg-slate-500/15 border-slate-500/30 text-slate-500", icon: User },
+  guest: { className: "bg-muted border-border text-muted-foreground", icon: User },
   member: { className: "bg-emerald-500/15 border-emerald-500/30 text-emerald-500", icon: User },
   plus: { className: "bg-blue-500/15 border-blue-500/30 text-blue-500", icon: GraduationCap },
   pro: { className: "bg-rose-500/15 border-rose-500/30 text-rose-500", icon: ShieldCheck },
@@ -117,13 +116,18 @@ const tierBadgeConfig: Record<AccessLevel, { className: string; icon: typeof Cro
 
 const GRADES = ["Class 11 Science", "Class 12 Science", "Combined (+2 Both)"];
 
+/**
+ * Level rungs mirror the frozen `calculateScholarLevel` tiers (100 XP per
+ * completed topic — perks in `features/progress/scholar-level.ts` are the
+ * canonical boundaries: 2 / 5 / 10 / 20 / 35 topics).
+ */
 const SCHOLAR_LADDER = [
-  { lvl: 1, title: "Novice Scholar", req: "0 - 2 topics", desc: "First steps into NEB syllabus" },
-  { lvl: 2, title: "Curious Explorer", req: "3 - 5 topics", desc: "Solid conceptual foundation" },
-  { lvl: 3, title: "Active Scholar", req: "6 - 10 topics", desc: "Core derivations & problem solving" },
-  { lvl: 4, title: "Academic Achiever", req: "11 - 20 topics", desc: "Advanced cross-topic mastery" },
-  { lvl: 5, title: "Master Scholar", req: "21 - 35 topics", desc: "Near-total syllabus mastery" },
-  { lvl: 6, title: "NEB Grandmaster", req: "36+ topics", desc: "Board exam excellence tier" },
+  { lvl: 1, title: "Novice Scholar", req: "0 - 1 topics", desc: "First steps into NEB syllabus" },
+  { lvl: 2, title: "Curious Explorer", req: "2 - 4 topics", desc: "Solid conceptual foundation" },
+  { lvl: 3, title: "Active Scholar", req: "5 - 9 topics", desc: "Core derivations & problem solving" },
+  { lvl: 4, title: "Academic Achiever", req: "10 - 19 topics", desc: "Advanced cross-topic mastery" },
+  { lvl: 5, title: "Master Scholar", req: "20 - 34 topics", desc: "Near-total syllabus mastery" },
+  { lvl: 6, title: "NEB Grandmaster", req: "35+ topics", desc: "Board exam excellence tier" },
 ];
 
 const VISIBILITY_OPTIONS = [
@@ -159,8 +163,11 @@ function rangeCutoffMs(value: ActivityRange): number {
 
 const activityDurationLabel = (iso: string | null): string => (iso ? relativeTime(iso) : "");
 
+const focusRingClass =
+  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2";
+
 const filterChipClass = (active: boolean) =>
-  `rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
+  `rounded-full border px-3 py-1 text-xs font-medium transition-colors ${focusRingClass} ${
     active
       ? "border-primary bg-primary text-primary-foreground"
       : "border-border bg-card text-foreground hover:border-primary/50"
@@ -284,7 +291,7 @@ function ActivityFeed({
               <button
                 type="button"
                 onClick={onViewAll}
-                className="inline-flex items-center gap-0.5 text-[11px] font-semibold text-primary transition-colors hover:underline"
+                className={`inline-flex items-center gap-0.5 rounded text-[11px] font-semibold text-primary transition-colors hover:underline ${focusRingClass}`}
               >
                 View All
                 <ChevronRight className="h-3 w-3" aria-hidden="true" />
@@ -327,7 +334,7 @@ function ActivityFeed({
       </CardHeader>
       <CardContent className="space-y-3">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <Search aria-hidden="true" className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
           <Input
             value={query}
             onChange={(e) => {
@@ -346,7 +353,7 @@ function ActivityFeed({
                 setPage(0);
               }}
               aria-label="Clear search"
-              className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded-full p-0.5 text-muted-foreground transition-colors hover:text-foreground"
+              className={`absolute right-2.5 top-1/2 -translate-y-1/2 rounded-full p-0.5 text-muted-foreground transition-colors hover:text-foreground ${focusRingClass}`}
             >
               <X className="h-3.5 w-3.5" />
             </button>
@@ -426,7 +433,7 @@ function ActivityFeed({
             <button
               type="button"
               onClick={clearFilters}
-              className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
+              className={`inline-flex items-center gap-1 rounded font-semibold text-primary hover:underline ${focusRingClass}`}
             >
               <X className="h-3 w-3" aria-hidden="true" />
               Clear filters
@@ -474,7 +481,7 @@ function ActivityFeed({
 
         {filtered.length > ACTIVITY_PAGE_SIZE && (
           <div className="flex items-center justify-between gap-2 border-t pt-2">
-            <span className="text-[11px] text-muted-foreground">
+            <span className="text-[11px] text-muted-foreground" aria-live="polite">
               Page {safePage + 1} of {pageCount}
             </span>
             <div className="flex items-center gap-1.5">
@@ -516,7 +523,7 @@ function ActivityRowLink({ entry, at }: { entry: ProgressEntry; at: string }) {
   return (
     <Link
       href={topicHref(entry)}
-      className="flex items-center justify-between gap-3 rounded-xl border border-border/50 px-3 py-2 transition-colors hover:border-primary/30 hover:bg-muted/50"
+      className={`flex items-center justify-between gap-3 rounded-xl border border-border/50 px-3 py-2 transition-colors hover:border-primary/30 hover:bg-muted/50 ${focusRingClass}`}
     >
       <span className="flex min-w-0 items-center gap-2.5">
         {done ? (
@@ -581,6 +588,7 @@ export function PrivateProfileDashboard({
   const [storageInfo, setStorageInfo] = useState<StorageInfo | null>(storage);
   const [visibility, setVisibility] = useState(media?.visibility ?? "public");
   const [savingVisibility, setSavingVisibility] = useState(false);
+  const [visibilityError, setVisibilityError] = useState(false);
 
   // Overview needs the journey up front (the Progress tab's panel refetches).
   useEffect(() => {
@@ -690,16 +698,18 @@ export function PrivateProfileDashboard({
 
   const handleVisibility = async (next: string) => {
     if (next === visibility) return;
-    const previous = visibility;
     setVisibility(next);
     setSavingVisibility(true);
+    setVisibilityError(false);
     try {
       const result = await updateMyProfile({
         visibility: next as "public" | "members" | "private",
       });
       onMediaChanged({ profile: result.profile, storage: null });
     } catch {
-      setVisibility(previous);
+      // Keep the chosen value and surface the error — the user can retry
+      // without re-picking (QA contract: an error never loses the selection).
+      setVisibilityError(true);
     } finally {
       setSavingVisibility(false);
     }
@@ -870,7 +880,9 @@ export function PrivateProfileDashboard({
                       className="absolute -bottom-1.5 -right-1.5 z-10"
                     />
                     <div
-                      className="absolute -left-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full border-2 border-background bg-amber-500 text-xs font-black text-black shadow"
+                      role="img"
+                      aria-label={`Scholar level ${scholarLevel.level}: ${scholarLevel.badgeName}`}
+                      className="absolute -left-2 -top-2 flex h-8 w-8 items-center justify-center rounded-full border-2 border-background bg-amber-500 text-xs font-black text-amber-950 shadow"
                       title={scholarLevel.badgeName}
                     >
                       {scholarLevel.level}
@@ -896,9 +908,9 @@ export function PrivateProfileDashboard({
                     {username ? (
                       <p className="mt-1 truncate text-sm text-muted-foreground">@{username}</p>
                     ) : null}
-                    <p className="mt-1 flex items-center gap-1.5 truncate text-sm text-muted-foreground">
+                    <p className="mt-1 flex min-w-0 items-center gap-1.5 text-sm text-muted-foreground">
                       <Mail className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-                      {email}
+                      <span className="truncate">{email}</span>
                     </p>
                     {media?.bio ? (
                       <p className="mt-1.5 line-clamp-2 max-w-xl text-xs text-muted-foreground">
@@ -966,7 +978,7 @@ export function PrivateProfileDashboard({
                   <Button
                     asChild
                     size="sm"
-                    className="rounded-xl bg-amber-500 font-semibold text-black hover:bg-amber-600"
+                    className="rounded-xl bg-amber-500 font-semibold text-amber-950 hover:bg-amber-600"
                   >
                     <Link href="/owner">
                       <Crown className="h-3.5 w-3.5" aria-hidden="true" />
@@ -982,7 +994,7 @@ export function PrivateProfileDashboard({
                     Profile {overview.completion.percent}% complete ·{" "}
                     {overview.completion.filled}/{overview.completion.total} fields
                   </span>
-                  <Link href="/profile/edit" className="font-semibold text-primary hover:underline">
+                  <Link href="/profile/edit" className={`rounded font-semibold text-primary hover:underline ${focusRingClass}`}>
                     Complete profile
                   </Link>
                 </div>
@@ -992,8 +1004,9 @@ export function PrivateProfileDashboard({
           </Card>
 
           {/* ROW 2 — quick statistics */}
+          <h2 className="sr-only">Overview</h2>
           <div
-            className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6"
+            className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3"
             data-testid="stat-grid"
           >
             {statCards.map((stat) => {
@@ -1008,7 +1021,7 @@ export function PrivateProfileDashboard({
                     <button
                       type="button"
                       onClick={stat.onClick}
-                      className="w-full text-left"
+                      className={`w-full rounded-lg text-left ${focusRingClass}`}
                       aria-label={`${stat.label}: ${stat.value}`}
                     >
                       <Icon className={`h-4 w-4 ${stat.tint}`} aria-hidden="true" />
@@ -1120,7 +1133,7 @@ export function PrivateProfileDashboard({
                     <Link
                       key={row.subjectSlug}
                       href={`/class-11-notes/${row.subjectSlug}`}
-                      className="block space-y-1 rounded-lg p-1 transition-colors hover:bg-muted/50"
+                      className={`block space-y-1 rounded-lg p-1 transition-colors hover:bg-muted/50 ${focusRingClass}`}
                     >
                       <div className="flex items-center justify-between text-[11px]">
                         <span className="truncate font-semibold text-foreground">
@@ -1207,7 +1220,7 @@ export function PrivateProfileDashboard({
                       type="button"
                       onClick={() => handleSelectGrade(grade)}
                       aria-pressed={targetGrade === grade}
-                      className={`flex items-center justify-between rounded-lg border px-2.5 py-1.5 text-xs font-semibold transition-colors ${
+                      className={`flex items-center justify-between rounded-lg border px-2.5 py-1.5 text-xs font-semibold transition-colors ${focusRingClass} ${
                         targetGrade === grade
                           ? "border-primary bg-primary/10 text-primary"
                           : "border-border bg-card text-foreground hover:border-primary/40"
@@ -1292,7 +1305,7 @@ export function PrivateProfileDashboard({
                       ? `${formatBytes(storageInfo.remainingBytes)} free`
                       : "—"}
                   </span>
-                  <Link href="/profile/edit" className="font-semibold text-primary hover:underline">
+                  <Link href="/profile/edit" className={`rounded font-semibold text-primary hover:underline ${focusRingClass}`}>
                     Manage media
                   </Link>
                 </div>
@@ -1351,9 +1364,16 @@ export function PrivateProfileDashboard({
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-2">
+                {/* SelectTrigger drops aria-label (shared ui/select forwards only
+                    id), so the distinct accessible name comes from a label. */}
+                <label htmlFor="profile-visibility-overview" className="sr-only">
+                  Profile visibility (Overview)
+                </label>
                 <Select value={visibility} onValueChange={handleVisibility}>
-                  <SelectTrigger className="h-9 text-xs" aria-label="Profile visibility">
-                    <SelectValue />
+                  <SelectTrigger id="profile-visibility-overview" className="h-9 text-xs">
+                    <SelectValue>
+                      {VISIBILITY_OPTIONS.find((option) => option.value === visibility)?.label}
+                    </SelectValue>
                   </SelectTrigger>
                   <SelectContent>
                     {VISIBILITY_OPTIONS.map((option) => (
@@ -1363,10 +1383,12 @@ export function PrivateProfileDashboard({
                     ))}
                   </SelectContent>
                 </Select>
-                <p className="text-[11px] text-muted-foreground">
+                <p role="status" className="text-[11px] text-muted-foreground">
                   {savingVisibility
                     ? "Saving…"
-                    : "Progress, badges and credits stay private to you."}
+                    : visibilityError
+                      ? "Couldn't save visibility — try again."
+                      : "Progress, badges and credits stay private to you."}
                 </p>
               </CardContent>
             </Card>
@@ -1411,7 +1433,7 @@ export function PrivateProfileDashboard({
                     Resets in {resetCountdown}
                   </span>
                   <span className="inline-flex items-center gap-0.5 font-semibold">
-                    Plus 25 · Pro 50
+                    Plus {AI_SPARK_LIMITS.plus} · Pro {AI_SPARK_LIMITS.pro}
                   </span>
                 </div>
               </CardContent>
@@ -1489,7 +1511,8 @@ export function PrivateProfileDashboard({
                   </div>
                 </div>
                 <p className="text-[11px] text-muted-foreground">
-                  {stats?.followers ?? 0} followers · {stats?.following ?? 0} following
+                  {stats?.followers ?? 0} followers · {stats?.following ?? 0} following ·{" "}
+                  {stats?.likesReceived ?? 0} likes received
                 </p>
                 <Button asChild size="sm" variant="outline" className="w-full rounded-xl text-xs">
                   <Link href="/ai/community">Open community</Link>
@@ -1515,6 +1538,7 @@ export function PrivateProfileDashboard({
 
         {/* ── Achievements: earned badges + the level ladder ────────────── */}
         <TabsContent value="achievements" className="space-y-4 pt-2">
+          <h2 className="sr-only">Achievements</h2>
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-base font-bold">
@@ -1642,6 +1666,7 @@ export function PrivateProfileDashboard({
 
         {/* ── Curriculum ────────────────────────────────────────────────── */}
         <TabsContent value="curriculum" className="space-y-4 pt-2">
+          <h2 className="sr-only">Curriculum</h2>
           <Card>
             <CardHeader className="pb-3">
               <CardTitle className="flex items-center gap-2 text-base font-bold">
@@ -1672,6 +1697,7 @@ export function PrivateProfileDashboard({
                     <Button
                       key={grade}
                       type="button"
+                      aria-pressed={targetGrade === grade}
                       variant={targetGrade === grade ? "default" : "outline"}
                       className="justify-start rounded-xl text-xs font-semibold"
                       onClick={() => handleSelectGrade(grade)}
@@ -1692,7 +1718,7 @@ export function PrivateProfileDashboard({
                     <Link
                       key={subject.slug}
                       href={subject.href}
-                      className="group flex items-center justify-between rounded-xl border bg-muted/20 p-2.5 text-xs transition-colors hover:bg-muted/40"
+                      className={`group flex items-center justify-between rounded-xl border bg-muted/20 p-2.5 text-xs transition-colors hover:bg-muted/40 ${focusRingClass}`}
                     >
                       <span className="flex items-center gap-2">
                         <BookOpen className="h-3.5 w-3.5 text-primary" aria-hidden="true" />
@@ -1708,32 +1734,13 @@ export function PrivateProfileDashboard({
               </div>
             </CardContent>
           </Card>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {learning.subjects.length > 0 ? (
-              learning.subjects.map((row) => (
-                <Card key={row.subjectSlug}>
-                  <CardContent className="pt-4">
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="font-semibold text-foreground">{row.subjectName}</span>
-                      <span className="tabular-nums text-muted-foreground">{row.percent}%</span>
-                    </div>
-                    <Progress value={row.percent} className="mt-1.5 h-1.5" />
-                    <p className="mt-1 text-[11px] text-muted-foreground">
-                      {row.completed} completed · {row.inProgress} in progress · {row.total} tracked
-                    </p>
-                  </CardContent>
-                </Card>
-              ))
-            ) : (
-              <p className="rounded-xl border border-dashed px-3 py-6 text-center text-xs text-muted-foreground sm:col-span-2">
-                No subject activity yet — open a subject to start tracking.
-              </p>
-            )}
-          </div>
+          {/* Per-subject progress rows live on the Overview "Subject Progress"
+              card — kept out of this tab so one statistic never appears twice. */}
         </TabsContent>
 
         {/* ── Activity: full feed + community + Veer ────────────────────── */}
         <TabsContent value="activity" className="space-y-4 pt-2">
+          <h2 className="sr-only">Activity</h2>
           <ActivityFeed entries={progressEntries} />
 
           <div className="grid gap-4 sm:grid-cols-2">
@@ -1744,8 +1751,7 @@ export function PrivateProfileDashboard({
                   Community activity
                 </CardTitle>
                 <CardDescription className="text-xs">
-                  {stats?.posts ?? 0} posts · {stats?.comments ?? 0} comments ·{" "}
-                  {stats?.likesReceived ?? 0} likes received
+                  Public study posts and replies — every question helps the batch.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-wrap gap-2">
@@ -1765,9 +1771,7 @@ export function PrivateProfileDashboard({
                   Continue with Veer
                 </CardTitle>
                 <CardDescription className="text-xs">
-                  {tierMetered
-                    ? `${sparkUsed} of ${tierLimit} AI sparks used today.`
-                    : "Unlimited AI sparks on the owner plan."}
+                  Chat with your AI study buddy — powered by daily AI sparks.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-wrap gap-2">
@@ -1784,6 +1788,7 @@ export function PrivateProfileDashboard({
 
         {/* ── Account ───────────────────────────────────────────────────── */}
         <TabsContent value="account" className="space-y-4 pt-2">
+          <h2 className="sr-only">Account</h2>
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="flex items-center gap-2 text-base font-bold">
@@ -1808,7 +1813,7 @@ export function PrivateProfileDashboard({
                   </span>
                 </span>
               </div>
-              <div className="flex items-center justify-between gap-4 border-b py-1.5">
+              <div className="flex items-center justify-between gap-4 py-1.5">
                 <span className="text-muted-foreground">Access tier</span>
                 <span className="flex items-center gap-2">
                   <span
@@ -1822,64 +1827,43 @@ export function PrivateProfileDashboard({
                   </span>
                 </span>
               </div>
-              <div className="flex items-center justify-between gap-4 border-b py-1.5">
-                <span className="text-muted-foreground">Scholar Level</span>
-                <span className="text-right font-medium">
-                  Level {scholarLevel.level} ({scholarLevel.title})
-                </span>
-              </div>
-              <div className="flex items-center justify-between gap-4 border-b py-1.5">
-                <span className="text-muted-foreground">Daily Credits</span>
-                <span className="font-medium tabular-nums">
-                  {user.credits ?? 0}
-                  {user.creditsLimit !== undefined && ` / ${user.creditsLimit}`}
-                </span>
-              </div>
-              <div className="flex items-center justify-between gap-4 py-1.5">
-                <span className="text-muted-foreground">Daily Reset Rule</span>
-                <span className="text-xs text-muted-foreground">
-                  4 platform credits replenished at 12:00 AM UTC (in {resetCountdown})
-                </span>
-              </div>
-              <div className="flex items-center justify-between gap-4 border-t pt-2">
-                <span className="text-muted-foreground">Profile privacy</span>
-                <Select value={visibility} onValueChange={handleVisibility}>
-                  <SelectTrigger className="h-8 w-44 text-xs" aria-label="Profile visibility">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {VISIBILITY_OPTIONS.map((option) => (
-                      <SelectItem key={option.value} value={option.value}>
-                        {option.label}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+              {/* Level, credit balance and daily reset are summary rows on the
+                  Overview tab — not repeated here so one statistic never shows
+                  up in several tabs. */}
+              <div className="space-y-1 pt-2">
+                <div className="flex flex-wrap items-center justify-between gap-4">
+                  <span className="text-muted-foreground">Profile visibility</span>
+                  <label htmlFor="profile-visibility-account" className="sr-only">
+                    Profile visibility (Account)
+                  </label>
+                  <Select value={visibility} onValueChange={handleVisibility}>
+                    <SelectTrigger id="profile-visibility-account" className="h-8 w-52 text-xs">
+                      <SelectValue>
+                        {VISIBILITY_OPTIONS.find((option) => option.value === visibility)?.label}
+                      </SelectValue>
+                    </SelectTrigger>
+                    <SelectContent>
+                      {VISIBILITY_OPTIONS.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+                <p role="status" className="text-right text-[11px] text-muted-foreground">
+                  {savingVisibility
+                    ? "Saving…"
+                    : visibilityError
+                      ? "Couldn't save visibility — try again."
+                      : ""}
+                </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card>
-            <CardHeader className="pb-2">
-              <CardTitle className="flex items-center gap-2 text-sm font-semibold">
-                <Layers className="h-4 w-4 text-primary" aria-hidden="true" />
-                Storage
-              </CardTitle>
-              <CardDescription className="text-xs">
-                Avatar, cover and shared files count against your tier limit.
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              {storageInfo ? (
-                <StorageMeter storage={storageInfo} />
-              ) : (
-                <p className="text-xs text-muted-foreground">Storage figures loading…</p>
-              )}
-              <Button asChild size="sm" variant="outline" className="rounded-xl text-xs">
-                <Link href="/profile/edit">Manage profile media</Link>
-              </Button>
-            </CardContent>
-          </Card>
+          {/* Storage lives on the Overview "Storage usage" card — one meter,
+              not two. */}
 
           {owner && (
             <Card className="border-amber-500/30">

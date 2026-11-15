@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 function initialsFrom(name: string | null | undefined): string {
@@ -22,11 +22,10 @@ export function ProfileCover({
   className?: string;
   sizes?: string;
 }) {
-  const [failed, setFailed] = useState(false);
-  useEffect(() => {
-    setFailed(false);
-  }, [url]);
-  const showImage = Boolean(url) && !failed;
+  // The URL that failed is remembered instead of resetting state in an effect:
+  // a new URL is automatically "not failed" again.
+  const [failedUrl, setFailedUrl] = useState<string | null>(null);
+  const showImage = Boolean(url) && failedUrl !== url;
 
   return (
     <div className={cn("relative overflow-hidden bg-muted", className)}>
@@ -40,7 +39,7 @@ export function ProfileCover({
           loading="lazy"
           decoding="async"
           className="absolute inset-0 h-full w-full object-cover"
-          onError={() => setFailed(true)}
+          onError={() => setFailedUrl(url ?? null)}
         />
       ) : null}
     </div>
@@ -60,11 +59,8 @@ export function ProfileAvatar({
   textClassName?: string;
   sizes?: string;
 }) {
-  const [failed, setFailed] = useState(false);
-  useEffect(() => {
-    setFailed(false);
-  }, [url]);
-  const showImage = Boolean(url) && !failed;
+  const [failedUrl, setFailedUrl] = useState<string | null>(null);
+  const showImage = Boolean(url) && failedUrl !== url;
 
   return (
     <div
@@ -82,7 +78,7 @@ export function ProfileAvatar({
           loading="lazy"
           decoding="async"
           className="h-full w-full object-cover"
-          onError={() => setFailed(true)}
+          onError={() => setFailedUrl(url ?? null)}
         />
       ) : (
         <span className={cn("font-extrabold", textClassName)}>{initialsFrom(name)}</span>

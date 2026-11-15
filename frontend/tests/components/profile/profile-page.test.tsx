@@ -428,4 +428,78 @@ describe("ProfilePage", () => {
     fireEvent.click(within(panel).getByRole("button", { name: /clear filters/i }));
     expect(await within(panel).findByText("Laws of Motion")).toBeInTheDocument();
   });
+
+  it("wires the hero actions to real routes", async () => {
+    render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
+
+    expect(screen.getByRole("link", { name: "Edit Profile" })).toHaveAttribute(
+      "href",
+      "/profile/edit",
+    );
+    expect(screen.getByRole("link", { name: "Wallet" })).toHaveAttribute("href", "/credits");
+    expect(screen.getByRole("link", { name: "Bookmarks" })).toHaveAttribute(
+      "href",
+      "/bookmarks",
+    );
+    // The public link resolves to /profile/<username> once media has loaded.
+    await waitFor(() =>
+      expect(screen.getByRole("link", { name: "View Public Profile" })).toHaveAttribute(
+        "href",
+        "/profile/harindra",
+      ),
+    );
+  });
+
+  it("keeps both visibility selects uniquely labelled and reports save failures without losing the selection", async () => {
+    let resolveUpdate: (value: unknown) => void = () => {};
+    updateMyProfile.mockImplementation(
+      () => new Promise((resolve) => void (resolveUpdate = resolve)),
+    );
+
+    render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
+
+    // The trigger shows the friendly option label, not the raw API value.
+    const overviewSelect = screen.getByLabelText("Profile visibility (Overview)");
+    expect(overviewSelect).toHaveTextContent(/Public — anyone with the link/);
+
+    // Persist through updateMyProfile with visible save state.
+    fireEvent.click(overviewSelect);
+    fireEvent.click(screen.getByRole("option", { name: /members only/i }));
+    await waitFor(() => expect(updateMyProfile).toHaveBeenCalledWith({ visibility: "members" }));
+    expect(screen.getByText("Saving…")).toBeInTheDocument();
+    resolveUpdate({ profile: { id: "u1", visibility: "members" } });
+    await waitFor(() =>
+      expect(screen.getByText(/Progress, badges and credits stay private/)).toBeInTheDocument(),
+    );
+    expect(screen.getByLabelText("Profile visibility (Overview)")).toHaveTextContent(
+      /Members only/,
+    );
+
+    // Both tabs are mounted now — each select still resolves exactly once.
+    fireEvent.click(screen.getByRole("tab", { name: /account/i }));
+    expect(screen.getByLabelText("Profile visibility (Overview)")).toBeInTheDocument();
+    const accountSelect = screen.getByLabelText("Profile visibility (Account)");
+    expect(accountSelect).toHaveTextContent(/Members only/); // shared state stays in sync
+
+    // A rejected save surfaces an error and keeps the chosen selection.
+    updateMyProfile.mockRejectedValueOnce(new Error("offline"));
+    fireEvent.click(accountSelect);
+    fireEvent.click(screen.getByRole("option", { name: /only you/i }));
+    await waitFor(() => expect(updateMyProfile).toHaveBeenLastCalledWith({ visibility: "private" }));
+    const accountPanel = screen.getByRole("tabpanel", { name: /account/i });
+    expect(await within(accountPanel).findByText(/Couldn.t save visibility/)).toBeInTheDocument();
+    expect(screen.getByLabelText("Profile visibility (Account)")).toHaveTextContent(/only you/i);
+  });
+
+  it("logs out and routes home", async () => {
+    render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
+    fireEvent.click(screen.getByRole("tab", { name: /account/i }));
+
+    fireEvent.click(screen.getByRole("button", { name: /log out/i }));
+    await waitFor(() => expect(logoutUser).toHaveBeenCalled());
+    await waitFor(() => expect(push).toHaveBeenCalledWith("/home"));
+  });
 });

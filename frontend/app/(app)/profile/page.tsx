@@ -138,7 +138,7 @@ function YouHub({
                 />
               </div>
               <div className="min-w-0">
-                <h1 className="truncate text-lg font-extrabold tracking-tight">{displayName}</h1>
+                <h2 className="truncate text-lg font-extrabold tracking-tight">{displayName}</h2>
                 {media?.username ? (
                   <p className="truncate text-xs text-muted-foreground">@{media.username}</p>
                 ) : null}
