@@ -9,14 +9,16 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { StorageMeter } from "@/features/profile/storage-meter";
+import {
+  ProfileImageEditButton,
+  type ProfileImageChangeResult,
+} from "@/features/profile/profile-image-editor";
 import { ProfileAvatar, ProfileCover } from "@/features/profile/profile-media";
 import {
   checkUsername,
   getMyProfile,
   profilePath,
   updateMyProfile,
-  uploadAvatar,
-  uploadCover,
   type ProfileExtras,
   type PublicProfile,
   type StorageInfo,
@@ -50,7 +52,6 @@ export function ProfileEditForm() {
   const [profile, setProfile] = useState<PublicProfile | null>(null);
   const [storage, setStorage] = useState<StorageInfo | null>(null);
   const [saving, setSaving] = useState(false);
-  const [uploading, setUploading] = useState<"avatar" | "cover" | null>(null);
   const [message, setMessage] = useState<string | null>(null);
   const [usernameStatus, setUsernameStatus] = useState<string | null>(null);
   const [form, setForm] = useState({
@@ -63,11 +64,6 @@ export function ProfileEditForm() {
     extras: emptyExtras,
   });
   const baseline = useRef<string>("");
-  const uploadAbort = useRef<AbortController | null>(null);
-
-  useEffect(() => {
-    return () => uploadAbort.current?.abort();
-  }, []);
 
   useEffect(() => {
     void (async () => {
@@ -150,43 +146,20 @@ export function ProfileEditForm() {
     setMessage(null);
   };
 
-  const runUpload = async (kind: "avatar" | "cover", file: File) => {
-    uploadAbort.current?.abort();
-    const ac = new AbortController();
-    uploadAbort.current = ac;
-    setUploading(kind);
-    setMessage(null);
-    try {
-      const result = kind === "avatar" ? await uploadAvatar(file, ac.signal) : await uploadCover(file, ac.signal);
-      if (ac.signal.aborted) return;
-      setProfile(result.profile);
-      if (result.storage) setStorage(result.storage);
-      setMessage(kind === "avatar" ? "Avatar uploaded." : "Cover uploaded.");
-    } catch (e) {
-      if (ac.signal.aborted || (e instanceof DOMException && e.name === "AbortError")) return;
-      if (e instanceof Error && e.name === "AbortError") return;
-      setMessage(e instanceof Error ? e.message : `${kind === "avatar" ? "Avatar" : "Cover"} upload failed`);
-    } finally {
-      if (uploadAbort.current === ac) {
-        uploadAbort.current = null;
-        setUploading(null);
-      }
-    }
-  };
-
-  const onAvatar = async (file: File | null) => {
-    if (!file) return;
-    await runUpload("avatar", file);
-  };
-
-  const onCover = async (file: File | null) => {
-    if (!file) return;
-    await runUpload("cover", file);
+  /** The editor uploads or removes one image and hands back the fresh profile. */
+  const onMediaChanged = (kind: "avatar" | "cover", result: ProfileImageChangeResult) => {
+    setProfile(result.profile);
+    if (result.storage) setStorage(result.storage);
+    setMessage(
+      `${kind === "avatar" ? "Profile picture" : "Cover image"} ${
+        kind === "avatar" ? (result.profile.avatarUrl ? "updated" : "removed") : result.profile.coverUrl ? "updated" : "removed"
+      }.`,
+    );
   };
 
   return (
     <div className="mx-auto w-full max-w-xl space-y-4 p-4 pb-16">
-      <MotionHero profile={profile} />
+      <IdentityHero profile={profile} onChanged={onMediaChanged} />
       {storage ? <StorageMeter storage={storage} /> : null}
       <Card>
         <CardHeader>
@@ -228,11 +201,15 @@ export function ProfileEditForm() {
               <option value="private">Private</option>
             </select>
           </Field>
-          <Field label={`Avatar (max 256² WebP)${uploading === "avatar" ? " — uploading…" : ""}`} id="avatar">
-            <Input type="file" accept="image/*" onChange={(e) => void onAvatar(e.target.files?.[0] ?? null)} />
+          <Field label="Avatar (max 256² WebP, all common formats)" id="avatar">
+            <p className="text-xs text-muted-foreground">
+              Use the pencil on the profile picture above — replace or remove it there.
+            </p>
           </Field>
-          <Field label={`Cover (max 1200×400 WebP)${uploading === "cover" ? " — uploading…" : ""}`} id="cover">
-            <Input type="file" accept="image/*" onChange={(e) => void onCover(e.target.files?.[0] ?? null)} />
+          <Field label="Cover (max 1200×400 WebP, all common formats)" id="cover">
+            <p className="text-xs text-muted-foreground">
+              Use the pencil on the cover image above — it is independent of the profile picture.
+            </p>
           </Field>
           <details className="rounded-lg border p-3">
             <summary className="cursor-pointer text-sm font-medium">More about you (optional)</summary>
@@ -312,18 +289,44 @@ function Field({
   );
 }
 
-function MotionHero({ profile }: { profile: PublicProfile | null }) {
+function IdentityHero({
+  profile,
+  onChanged,
+}: {
+  profile: PublicProfile | null;
+  onChanged: (kind: "avatar" | "cover", result: ProfileImageChangeResult) => void;
+}) {
   if (!profile) return null;
   return (
     <div className="overflow-hidden rounded-xl border bg-card">
-      <ProfileCover url={profile.coverUrl} className="h-24" />
-      <div className="flex items-center gap-3 px-4 py-3">
-        <ProfileAvatar
-          url={profile.avatarUrl}
-          name={profile.fullName}
-          className="h-14 w-14 rounded-full border"
-          textClassName="text-sm"
+      <div className="relative">
+        <ProfileCover url={profile.coverUrl} className="h-24" />
+        <ProfileImageEditButton
+          kind="cover"
+          currentUrl={profile.coverUrl}
+          displayName={profile.fullName}
+          hasImage={Boolean(profile.coverUrl)}
+          onChanged={(result) => onChanged("cover", result)}
+          className="right-2 top-2"
         />
+      </div>
+      <div className="flex items-center gap-3 px-4 py-3">
+        <div className="relative">
+          <ProfileAvatar
+            url={profile.avatarUrl}
+            name={profile.fullName}
+            className="h-14 w-14 rounded-full border"
+            textClassName="text-sm"
+          />
+          <ProfileImageEditButton
+            kind="avatar"
+            currentUrl={profile.avatarUrl}
+            displayName={profile.fullName}
+            hasImage={Boolean(profile.avatarUrl)}
+            onChanged={(result) => onChanged("avatar", result)}
+            className="-bottom-1 -right-1 h-7 w-7"
+          />
+        </div>
         <p className="font-medium">{profile.fullName}</p>
       </div>
     </div>

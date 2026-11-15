@@ -15,6 +15,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { profilePath } from "@/lib/api/profile";
+import { publicUrl } from "@/lib/site-url";
 import {
   getProfileFiles,
   getProfileProgress,
@@ -146,14 +148,18 @@ export function PublicProfileShell({
 
   const handle = profile.username ?? username;
   const viewerId = user?.id ?? null;
+  // Resolve the public host once, through the single site-url owner.
+  const shareUrl = publicUrl(profilePath(profile.username, profile.id));
 
   return (
     <div className="mx-auto w-full max-w-3xl space-y-4 p-4 pb-16">
       <PublicIdentityRow
         profile={profile}
         username={handle}
+        shareUrl={shareUrl}
         following={following}
         viewerId={viewerId}
+        completedTopics={progress?.completed ?? null}
         onFollowingChange={handleFollowingChange}
       />
 
@@ -183,14 +189,22 @@ export function PublicProfileShell({
 
       {activeTab === "posts" ? (
         <section className="rounded-xl border border-border bg-card p-4">
-          <h2 className="mb-3 text-base font-semibold">Community posts</h2>
+          <h2 className="text-base font-semibold">Community posts</h2>
+          <p className="mb-3 mt-1 text-xs text-muted-foreground">
+            {stats
+              ? `${stats.posts} posts · ${stats.comments} comments · ${stats.likesReceived} likes received`
+              : "Community contributions"}
+          </p>
           <PublicPostsList posts={posts} />
         </section>
       ) : null}
 
       {activeTab === "files" ? (
         <section className="rounded-xl border border-border bg-card p-4">
-          <h2 className="mb-3 text-base font-semibold">Shared files</h2>
+          <h2 className="text-base font-semibold">Shared files</h2>
+          <p className="mb-3 mt-1 text-xs text-muted-foreground">
+            {stats ? `${stats.filesShared} files shared` : "Shared files"}
+          </p>
           <PublicFilesList files={files} />
         </section>
       ) : null}

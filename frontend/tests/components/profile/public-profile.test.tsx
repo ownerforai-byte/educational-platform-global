@@ -231,6 +231,22 @@ describe("public profile identity", () => {
     await waitFor(() => expect(api.followUser).toHaveBeenCalledWith("alice"));
     expect(await screen.findByLabelText("Unfollow @alice")).toBeInTheDocument();
   });
+
+  it("copies the public profile link and confirms it briefly", async () => {
+    const writeText = vi.fn().mockResolvedValue(undefined);
+    Object.defineProperty(navigator, "clipboard", {
+      value: { writeText },
+      configurable: true,
+    });
+    seed();
+    renderTab("overview");
+
+    fireEvent.click(await screen.findByLabelText("Copy profile link"));
+
+    await waitFor(() => expect(writeText).toHaveBeenCalledTimes(1));
+    expect(writeText.mock.calls[0][0]).toContain("/profile/alice");
+    expect(await screen.findByText("Copied")).toBeInTheDocument();
+  });
 });
 
 // ─── Row 2 + 3: statistics and progress ─────────────────────────────────────

@@ -47,8 +47,7 @@ import {
   type LearningProgress,
 } from "@/features/profile/profile-derived";
 import { ACHIEVEMENT_RULES } from "@/features/achievements";
-import { attachmentFileUrl } from "@/lib/api/community-feed";
-import {
+import { attachmentFileUrl } from "@/lib/api/community-feed";import {
   formatBytes,
   profilePath,
   type ProfileListUser,
@@ -56,7 +55,6 @@ import {
   type PublicProfile,
   type PublicProgressCounts,
 } from "@/lib/api/profile";
-import { publicUrl } from "@/lib/site-url";
 import { cn } from "@/lib/utils";
 
 // ── Tab registry (single source of truth for the public profile) ───────────
@@ -210,7 +208,7 @@ function badgeIcon(id: string): typeof Award {
 
 // ── Row 1 · Public identity ────────────────────────────────────────────────
 
-function ShareProfileButton({ username }: { username: string }) {
+function ShareProfileButton({ url }: { url: string }) {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
@@ -220,7 +218,6 @@ function ShareProfileButton({ username }: { username: string }) {
   }, [copied]);
 
   const copy = async () => {
-    const url = publicUrl(profilePath(username, username));
     try {
       await navigator.clipboard.writeText(url);
       setCopied(true);
@@ -247,19 +244,26 @@ function ShareProfileButton({ username }: { username: string }) {
 export function PublicIdentityRow({
   profile,
   username,
+  shareUrl,
   following,
   viewerId,
+  completedTopics,
   onFollowingChange,
 }: {
   profile: PublicProfile;
   username: string;
+  /** Absolute link resolved by the shell through lib/site-url. */
+  shareUrl: string;
   following: boolean;
   viewerId?: string | null;
+  /** Public completed-topic count; credits are owner-only so they are not passed. */
+  completedTopics?: number | null;
   onFollowingChange?: (following: boolean) => void;
 }) {
   const handle = profile.username ?? username;
   const plan = membershipLabel(profile.plan);
   const website = profile.website ? asHref(profile.website) : null;
+  const level = typeof completedTopics === "number" ? scholarLevelFor(completedTopics) : null;
 
   return (
     <header className="overflow-hidden rounded-xl border border-border bg-card">
@@ -292,11 +296,17 @@ export function PublicIdentityRow({
                 onChange={onFollowingChange}
               />
             )}
-            <ShareProfileButton username={handle} />
+            <ShareProfileButton url={shareUrl} />
           </div>
         </div>
 
         <div className="mt-3 flex flex-wrap items-center gap-2">
+          {level ? (
+            <Badge variant="secondary" className="gap-1" aria-label={`Scholar level ${level.level}, ${level.title}`}>
+              <Award className="h-3 w-3" aria-hidden />
+              Level {level.level} · {level.title}
+            </Badge>
+          ) : null}
           {plan ? (
             <Badge variant="secondary" className="gap-1">
               <Star className="h-3 w-3" aria-hidden />
@@ -822,8 +832,8 @@ export function PublicContributionsRow({
 }) {
   const postCount = stats?.posts ?? posts.length;
   const fileCount = stats?.filesShared ?? files.length;
-  const nothing = posts.length === 0 && files.length === 0;
-
+  const hasLists = posts.length > 0 || files.length > 0;
+  const hasCounts = postCount > 0 || fileCount > 0;
   return (
     <Section
       title="Community contributions"
@@ -837,7 +847,7 @@ export function PublicContributionsRow({
       }
     >
       <div className="space-y-4">
-        {stats ? (
+      {stats && !compact ? (
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
             <StatCell label="posts" value={postCount} icon={FileText} />
             <StatCell label="comments" value={stats.comments} icon={MessageSquare} />
@@ -846,9 +856,12 @@ export function PublicContributionsRow({
           </div>
         ) : null}
 
-        {nothing ? (
-          <QuietNote>No public contributions yet.</QuietNote>
-        ) : (
+        {!hasLists && !hasCounts ? <QuietNote>No public contributions yet.</QuietNote> : null}
+        {!hasLists && hasCounts ? (
+          <QuietNote>Recent posts and files are not available.</QuietNote>
+        ) : null}
+
+        {hasLists ? (
           <div className={cn("grid gap-4", compact ? "grid-cols-1" : "grid-cols-1 lg:grid-cols-2")}>
             {posts.length > 0 ? (
               <div>
@@ -863,7 +876,7 @@ export function PublicContributionsRow({
               </div>
             ) : null}
           </div>
-        )}
+        ) : null}
       </div>
     </Section>
   );
