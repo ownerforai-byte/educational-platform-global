@@ -1,5 +1,6 @@
 import { loginSchema, signupSchema } from "./schema";
 import { login as apiLogin, signup as apiSignup, logout as apiLogout } from "@/lib/api/auth";
+import { FirebaseMfaRequiredError } from "@/lib/firebase/client-auth";
 import type { SessionUser } from "./types";
 import {
   AUTH_INVALID_CREDENTIALS,
@@ -51,6 +52,7 @@ export async function loginAction(input: unknown): Promise<AuthActionResult> {
     const res = await apiLogin(parsed.data);
     return pendingApprovalResult(res) ?? { ok: true, user: res.user ?? null };
   } catch (err) {
+    if (err instanceof FirebaseMfaRequiredError) throw err;
     const e = err as Error & { code?: string; statusToken?: string };
     return {
       ok: false,

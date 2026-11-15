@@ -7,6 +7,10 @@ import { Mail, Lock, Eye, EyeOff, Info, Clock3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AuthField } from "./auth-field";
 import { loginAction } from "../actions";
+import { FirebaseMfaRequiredError } from "@/lib/firebase/client-auth";
+import { loginWithFirebaseIdToken } from "@/lib/api/auth";
+import { MfaSmsPanel } from "./mfa-sms-panel";
+import type { MultiFactorResolver } from "firebase/auth";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
 import { PhoneAuthPanel } from "./phone-auth-panel";
@@ -34,19 +38,15 @@ export function LoginForm() {
   const { error, setError, clearError } = useAuthFormError();
   const [loading, setLoading] = useState(false);
   const [showApprovalStatus, setShowApprovalStatus] = useState(false);
+  const [mfaResolver, setMfaResolver] = useState<MultiFactorResolver | null>(null);
 
   useEffect(() => {
     setShowApprovalStatus(hasPendingSignup());
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    clearError();
-    setLoading(true);
-
-    const result = await loginAction({ email, password });
-    setLoading(false);
-
+  const finishSession = async (
+    result: Awaited<ReturnType<typeof loginAction>>,
+  ) => {
     if (result.code === "PENDING_APPROVAL") {
       // NOT a deny — the account is PENDING and a bot approves it
       // automatically within ~5 minutes. Hand the signed status token to the
@@ -66,6 +66,58 @@ export function LoginForm() {
       router.replace(DENIED_ROUTE);
     } else {
       setError(result.error);
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    clearError();
+    setMfaResolver(null);
+    setLoading(true);
+
+  try {
+    const result = await loginAction({ email, password });
+    await finishSession(result);
+  } catch (err) {
+    if (err instanceof FirebaseMfaRequiredError) {
+      setMfaResolver(err.resolver);
+    } else {
+      setError(err instanceof Error ? err.message : "Sign-in failed");
+    }
+  } finally {
+    setLoading(false);
+  }
+  };
+
+  const handleMfaIdToken = async (idToken: string) => {
+    setLoading(true);
+    clearError();
+    try {
+      const res = await loginWithFirebaseIdToken(idToken);
+      if (res.code === "PENDING_APPROVAL") {
+        if (res.statusToken) rememberPendingSignup(res.statusToken);
+        rememberAccessOutcome("PENDING");
+        router.push(WAITING_ROUTE);
+        return;
+      }
+      if (res.code === "ACCOUNT_REJECTED") {
+        if (res.statusToken) rememberPendingSignup(res.statusToken);
+        rememberAccessOutcome("REJECTED");
+        router.replace(DENIED_ROUTE);
+        return;
+      }
+      if (res.user) {
+        clearPendingSignup();
+        await refresh();
+        router.push(tierWelcomePathFor(res.user));
+        return;
+      }
+      setError(AUTH_INVALID_CREDENTIALS);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Sign-in failed");
+    } finally {
+      setLoading(false);
+      setMfaResolver(null);
     }
   };
 
@@ -139,6 +191,16 @@ export function LoginForm() {
           {error}
         </p>
       )}
+
+      {mfaResolver ? (
+        <MfaSmsPanel
+          resolver={mfaResolver}
+          disabled={loading}
+          onCancel={() => setMfaResolver(null)}
+          onIdToken={handleMfaIdToken}
+          onError={setError}
+        />
+      ) : null}
 
       <Button
         type="submit"

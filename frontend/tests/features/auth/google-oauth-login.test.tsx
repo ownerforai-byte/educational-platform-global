@@ -43,11 +43,16 @@ vi.mock("@/lib/supabase/browser", () => ({
   } }),
   isOAuthProviderEnabled: mocks.isOAuthProviderEnabled,
 }));
-vi.mock("@/lib/firebase/client-auth", () => ({
-  useFirebaseClientAuth: () => mocks.firebaseMode,
-  firebaseGoogleSignIn: mocks.firebaseGoogleSignIn,
-  firebaseConsumeRedirectResult: mocks.firebaseConsumeRedirectResult,
-}));
+vi.mock("@/lib/firebase/client-auth", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("@/lib/firebase/client-auth")>();
+  return {
+    ...actual,
+    useFirebaseClientAuth: () => mocks.firebaseMode,
+    firebaseGoogleSignIn: mocks.firebaseGoogleSignIn,
+    firebaseConsumeRedirectResult: mocks.firebaseConsumeRedirectResult,
+    firebaseCurrentUserToken: vi.fn(async () => "firebase-id-token"),
+  };
+});
 
 import { LoginForm } from "@/features/auth/components/login-form";
 import AuthCallbackPage from "@/app/auth/callback/page";

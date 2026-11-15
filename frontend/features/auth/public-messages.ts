@@ -95,6 +95,9 @@ export function authFailureMessage(
   if (/user-disabled/.test(code)) {
     return "This account has been disabled. Contact us if this looks wrong.";
   }
+  if (/multi-factor-auth-required/.test(code)) {
+    return "Enter the verification code sent to your phone to finish signing in.";
+  }
   if (/unauthorized-domain|operation-not-allowed|invalid-api-key|configuration-not-found|api-key-not-valid/.test(code + " " + message)) {
     return "Sign-in isn't reachable from this site yet. Please contact us.";
   }

@@ -56,7 +56,9 @@ NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=rn01-af00b.firebasestorage.app
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=906118704805
 NEXT_PUBLIC_FIREBASE_APP_ID=1:906118704805:web:3f5d4efee58a246bb7e74c
 NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=G-MYB98RBWSH
-# VAPID from Console → Project settings → Cloud Messaging → Web Push certificates
+# VAPID (public) — CLI cannot export this; use Console or sync from Vercel:
+#   cd frontend && vercel env pull .env.local --yes
+# Console → Project settings → Cloud Messaging → Web Push certificates
 NEXT_PUBLIC_FIREBASE_VAPID_KEY=
 ```
 
@@ -87,9 +89,18 @@ Notes:
 - Want `www.harindrasah.com.np` instead of `auth.`? That means pointing the
   apex/www DNS at Firebase Hosting, which would take the site away from Vercel —
   only do that if you intend to serve the app from Firebase Hosting.
-- Applied but not yet active: `frontend/.env.local` already points at
-  `auth.harindrasah.com.np`; Google sign-in breaks until steps 1–2 are done —
-  temporarily revert it to `rn01-af00b.firebaseapp.com` if you need it sooner.
+- **Until Hosting is live:** keep `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=rn01-af00b.firebaseapp.com`
+  (Vercel production/dev already use this). `auth.harindrasah.com.np` currently resolves to
+  Vercel, not Firebase — OAuth breaks if you point `authDomain` there without step 1.
+
+### Local env cheat sheet
+
+```bash
+cd firebase && npm run sdkconfig:web          # web SDK (no VAPID)
+cd firebase && npm run env:web                  # writes backend/.env.firebase.generated
+cd firebase && npm run env:pull-frontend        # VAPID + full NEXT_PUBLIC_* from Vercel
+node backend/scripts/verify-firebase-env-sync.mjs # compare .env.local vs CLI output
+```
 
 ## Approval bot (Cloud Functions — Firestore only)
 

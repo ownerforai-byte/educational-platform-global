@@ -5,8 +5,8 @@
  * frontend/lib/fcm/register-token.ts. No secrets here; the config is the
  * public NEXT_PUBLIC_FIREBASE_* web config only.
  */
-importScripts("https://www.gstatic.com/firebasejs/11.0.2/firebase-app-compat.js");
-importScripts("https://www.gstatic.com/firebasejs/11.0.2/firebase-messaging-compat.js");
+importScripts("https://www.gstatic.com/firebasejs/11.10.0/firebase-app-compat.js");
+importScripts("https://www.gstatic.com/firebasejs/11.10.0/firebase-messaging-compat.js");
 
 function readConfigFromUrl() {
   try {

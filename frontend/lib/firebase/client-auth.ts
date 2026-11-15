@@ -14,7 +14,12 @@ import {
   sendPasswordResetEmail,
   confirmPasswordReset,
   onAuthStateChanged,
+  getMultiFactorResolver,
+  PhoneAuthProvider,
+  PhoneMultiFactorGenerator,
   type ConfirmationResult,
+  type MultiFactorError,
+  type MultiFactorResolver,
   type User,
 } from "firebase/auth";
 import { getPublicEnv } from "@/lib/env";
@@ -38,11 +43,34 @@ export function getFirebaseAuth() {
   return getAuth(app);
 }
 
+export class FirebaseMfaRequiredError extends Error {
+  readonly code = "auth/multi-factor-auth-required" as const;
+  constructor(readonly resolver: MultiFactorResolver) {
+    super("Multi-factor authentication required");
+    this.name = "FirebaseMfaRequiredError";
+  }
+}
+
+function isMultiFactorError(err: unknown): err is MultiFactorError {
+  return (err as MultiFactorError)?.code === "auth/multi-factor-auth-required";
+}
+
+async function throwOnMfa(auth: NonNullable<ReturnType<typeof getFirebaseAuth>>, err: unknown): Promise<never> {
+  if (isMultiFactorError(err)) {
+    throw new FirebaseMfaRequiredError(getMultiFactorResolver(auth, err));
+  }
+  throw err;
+}
+
 export async function firebaseEmailLogin(email: string, password: string): Promise<string> {
   const auth = getFirebaseAuth();
   if (!auth) throw new Error("Firebase Auth is not configured");
-  const cred = await signInWithEmailAndPassword(auth, email, password);
-  return cred.user.getIdToken();
+  try {
+    const cred = await signInWithEmailAndPassword(auth, email, password);
+    return cred.user.getIdToken();
+  } catch (err) {
+    return throwOnMfa(auth, err);
+  }
 }
 
 export async function firebaseEmailSignup(email: string, password: string): Promise<string> {
@@ -67,16 +95,24 @@ export async function firebaseGoogleSignIn(mode: "popup" | "redirect"): Promise<
     await signInWithRedirect(auth, provider);
     return null;
   }
-  const result = await signInWithPopup(auth, provider);
-  return result.user.getIdToken();
+  try {
+    const result = await signInWithPopup(auth, provider);
+    return result.user.getIdToken();
+  } catch (err) {
+    return throwOnMfa(auth, err);
+  }
 }
 
 export async function firebaseConsumeRedirectResult(): Promise<string | null> {
   const auth = getFirebaseAuth();
   if (!auth) return null;
-  const result = await getRedirectResult(auth);
-  if (!result?.user) return null;
-  return result.user.getIdToken();
+  try {
+    const result = await getRedirectResult(auth);
+    if (!result?.user) return null;
+    return result.user.getIdToken();
+  } catch (err) {
+    return throwOnMfa(auth, err);
+  }
 }
 
 /**
@@ -170,4 +206,30 @@ export function clearPhoneRecaptcha(): void {
     // ignore
   }
   phoneRecaptcha = null;
+}
+
+/** Send SMS for an enrolled phone MFA factor after email/password or Google popup. */
+export async function firebaseMfaSendSmsCode(
+  resolver: MultiFactorResolver,
+  recaptchaContainerId: string,
+): Promise<string> {
+  const auth = getFirebaseAuth();
+  if (!auth) throw new Error("Firebase Auth is not configured");
+  const hint = resolver.hints.find((h) => h.factorId === PhoneMultiFactorGenerator.FACTOR_ID);
+  if (!hint) throw new Error("No phone second factor is enrolled on this account");
+  const verifier = await getPhoneRecaptcha(recaptchaContainerId);
+  const provider = new PhoneAuthProvider(auth);
+  return provider.verifyPhoneNumber({ multiFactorHint: hint, session: resolver.session }, verifier);
+}
+
+export async function firebaseMfaConfirmSmsAndFinish(
+  resolver: MultiFactorResolver,
+  verificationId: string,
+  smsCode: string,
+): Promise<string> {
+  const assertion = PhoneMultiFactorGenerator.assertion(
+    PhoneAuthProvider.credential(verificationId, smsCode.trim()),
+  );
+  const result = await resolver.resolveSignIn(assertion);
+  return result.user.getIdToken();
 }

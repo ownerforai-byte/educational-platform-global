@@ -16,6 +16,10 @@ const repoRoot = resolve(__dirname, "../..");
 const firebaseDir = resolve(repoRoot, "firebase");
 const outPath = resolve(__dirname, "../.env.firebase.generated");
 
+/** Production site web app (harindrasah.com.np) — rn01 has two WEB apps. */
+const DEFAULT_WEB_APP_ID =
+  process.env.FIREBASE_WEB_APP_ID?.trim() || "1:906118704805:web:3f5d4efee58a246bb7e74c";
+
 function projectId() {
   try {
     const rc = JSON.parse(readFileSync(resolve(firebaseDir, ".firebaserc"), "utf8"));
@@ -35,6 +39,7 @@ function runSdkConfig(pid) {
       "--",
       "apps:sdkconfig",
       "WEB",
+      DEFAULT_WEB_APP_ID,
       "--project",
       pid,
     ],
@@ -87,6 +92,10 @@ function main() {
     `NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=${cfg.messagingSenderId ?? ""}`,
     `NEXT_PUBLIC_FIREBASE_APP_ID=${cfg.appId ?? ""}`,
     cfg.measurementId ? `NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=${cfg.measurementId}` : null,
+    "# Web Push VAPID (public) — Firebase CLI cannot fetch this; copy from Console",
+    "# → Project settings → Cloud Messaging → Web Push certificates (or Vercel:",
+    "#   cd frontend && vercel env pull .env.local)",
+    "# NEXT_PUBLIC_FIREBASE_VAPID_KEY=",
     "",
     "# Backend Admin — set ONE of:",
     "# FIREBASE_SERVICE_ACCOUNT_JSON={\"type\":\"service_account\",...}",

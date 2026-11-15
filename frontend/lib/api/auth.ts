@@ -6,6 +6,7 @@ import {
   firebaseClientForgotPassword,
   firebaseClientConfirmPasswordReset,
   useFirebaseClientAuth,
+  FirebaseMfaRequiredError,
 } from "@/lib/firebase/client-auth";
 import { apiFetch, refreshSessionShared, setStoredToken, clearStoredToken, getStoredToken } from "../api-client";
 import {
@@ -29,9 +30,16 @@ import type {
 export async function login(
   data: AuthLoginRequest
 ): Promise<AuthLoginResponse> {
-  const payload = useFirebaseClientAuth()
-    ? { idToken: await firebaseEmailLogin(data.email, data.password) }
-  : data;
+  let idToken: string | undefined;
+  if (useFirebaseClientAuth()) {
+    try {
+      idToken = await firebaseEmailLogin(data.email, data.password);
+    } catch (err) {
+      if (err instanceof FirebaseMfaRequiredError) throw err;
+      throw err;
+    }
+  }
+  const payload = idToken ? { idToken } : data;
   const res = await apiFetch<AuthLoginResponse>("/api/auth/login", {
     method: "POST",
     body: JSON.stringify(payload),

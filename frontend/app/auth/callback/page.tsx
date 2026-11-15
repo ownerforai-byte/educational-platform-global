@@ -8,6 +8,7 @@ import {
   firebaseCurrentUserToken,
   firebaseGoogleSignIn,
   useFirebaseClientAuth,
+  FirebaseMfaRequiredError,
 } from "@/lib/firebase/client-auth";
 import { getSupabaseBrowserClient } from "@/lib/supabase/browser";
 import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
@@ -156,6 +157,12 @@ function AuthCallbackContent() {
         refresh();
         router.replace(tierWelcomePathFor(response.user));
       } catch (callbackError) {
+        if (callbackError instanceof FirebaseMfaRequiredError) {
+          setError(
+            "Google sign-in needs your SMS verification code. Use email and password on the login page, then enter the code when prompted.",
+          );
+          return;
+        }
         const authError = callbackError as Error & { code?: string; statusToken?: string };
         if (authError.code === "PENDING_APPROVAL" && authError.statusToken) {
           rememberPendingSignup(authError.statusToken);

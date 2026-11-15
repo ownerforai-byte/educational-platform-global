@@ -5,7 +5,8 @@
     "login": "firebase login",
     "setup": "node ../backend/scripts/setup-firebase-cli.mjs",
     "env:web": "node ../backend/scripts/generate-firebase-env-from-cli.mjs",
-    "sdkconfig:web": "firebase apps:sdkconfig web --project rn01-af00b"
+    "sdkconfig:web": "firebase apps:sdkconfig web 1:906118704805:web:3f5d4efee58a246bb7e74c --project rn01-af00b",
+    "env:pull-frontend": "cd ../frontend && vercel env pull .env.local --yes"
   },
   "devDependencies": {
     "firebase-tools": "^13.29.1"

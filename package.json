@@ -54,6 +54,7 @@
     "firebase:enable-phone": "node backend/scripts/enable-firebase-phone-auth.mjs",
     "firebase:link-owner": "node backend/scripts/link-firebase-owner-profile.mjs",
     "firebase:purge-legacy-auth": "node backend/scripts/purge-legacy-supabase-auth.mjs",
+    "firebase:verify-env": "node backend/scripts/verify-firebase-env-sync.mjs",
     "render:sync-env": "node backend/scripts/sync-render-firebase-env.mjs",
     "db:migrate": "node backend/scripts/migrate.mjs",
     "db:migrate:check": "node backend/scripts/migrate.mjs --check",
