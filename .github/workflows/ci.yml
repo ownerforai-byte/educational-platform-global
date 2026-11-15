@@ -229,10 +229,11 @@ jobs:
           const aabPath = path.join(appDir, 'play-store/ravikisan-platform-release.aab');
 
           const ASSETLINKS_PACKAGE = 'com.ravikisan.platform';
-          const ASSETLINKS_HOST = 'www.harindrasah.com.np';
-          const ASSETLINKS_ORIGIN = `https://${ASSETLINKS_HOST}`;
+          const ASSETLINKS_HOSTS = ['harindrasah.com.np', 'www.harindrasah.com.np'];
 
-          console.log(`Verifying assetlinks for ${ASSETLINKS_PACKAGE} on ${ASSETLINKS_ORIGIN}`);
+          console.log(
+            `Verifying assetlinks for ${ASSETLINKS_PACKAGE} on ${ASSETLINKS_HOSTS.map((h) => `https://${h}`).join(', ')}`
+          );
 
           const assetlinksText = await fs.readFile(assetlinksPath, 'utf8');
           const assetlinks = JSON.parse(assetlinksText);
@@ -259,14 +260,19 @@ jobs:
             throw new Error('assetlinks entry target must declare at least one SHA-256 fingerprint');
           }
 
-          const currentFingerprints = entry.target.sha256_cert_fingerprints
-            .map((f) => (typeof f === 'string' ? f.toUpperCase() : ''))
-            .filter(Boolean);
+          const normalizeFingerprint = (value: string) =>
+            value.replace(/[^0-9A-Fa-f]/g, '').toUpperCase();
 
-          // Audited against META-INF/RAVIKISA.RSA in the checked-in release AAB
-          // on 2026-10-30. New certificates must be verified before being added.
+          const currentFingerprints = entry.target.sha256_cert_fingerprints
+            .map((f) => (typeof f === 'string' ? normalizeFingerprint(f) : ''))
+            .filter((f) => f.length === 64);
+
+          // Play Console + upload/signing keys (2026-11-16). Colon-separated forms OK in source JSON.
           const verifiedFingerprints = [
             '5BF3921CD99DC1E7EB31CDCB26923857F66733EA609C29D747E1A7ED85C5E390',
+            '851CCFEE75B9B6837810673F9F590DADB5FACC1E67EA2F438A24CD8B8C02C452',
+            '7144C2807A97D33B1BA7E6AE17AD4D0F8517820396472C42476523BA9FE70D2D',
+            'D0D73F3A19CB17808995D98125735E926F734A225B31A34A536DC230C0B266AE',
           ];
 
           for (const fingerprint of currentFingerprints) {

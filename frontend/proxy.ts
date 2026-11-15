@@ -14,6 +14,10 @@ import { isBlockedAutomatedClient } from "@rn/shared/utils";
  */
 export const SUPABASE_ORIGIN = PUBLIC_SUPABASE_URL;
 
+/** Apex App Links must serve `/.well-known/*` with 200 (no redirect to www). */
+const APEX_HOST = "harindrasah.com.np";
+const WWW_HOST = "www.harindrasah.com.np";
+
 const RATE_LIMIT_WINDOW = 60_000;
 const RATE_LIMIT_MAX = 120;
 // Only page routes are counted against that cap. One page load also pulls
@@ -208,6 +212,19 @@ function isSpeculativeRequest(request: NextRequest) {
 }
 
 export function proxy(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  if (pathname.startsWith("/.well-known/")) {
+    return NextResponse.next();
+  }
+
+  const host = request.headers.get("host")?.split(":")[0]?.toLowerCase() ?? "";
+  if (host === APEX_HOST) {
+    const url = request.nextUrl.clone();
+    url.hostname = WWW_HOST;
+    return NextResponse.redirect(url, 308);
+  }
+
   if (isBlockedAutomatedClient(request.headers.get("user-agent"))) {
     const denied = NextResponse.json(
       { error: "Automated client access denied" },
@@ -219,7 +236,6 @@ export function proxy(request: NextRequest) {
     return denied;
   }
 
-  const { pathname } = request.nextUrl;
   if (
     pathname.startsWith("/_next/static/") ||
     pathname === "/_next/image" ||

@@ -233,3 +233,25 @@ describe("proxy per-IP request budget", () => {
     expect(codes[600]).toBe(429);
   });
 });
+
+describe("proxy apex host for App Links", () => {
+  it("does not redirect apex /.well-known/assetlinks.json", () => {
+    const response = proxy(
+      new NextRequest("https://harindrasah.com.np/.well-known/assetlinks.json", {
+        headers: { host: "harindrasah.com.np" },
+      }),
+    );
+    expect(response.status).toBe(200);
+    expect(response.headers.get("location")).toBeNull();
+  });
+
+  it("redirects other apex paths to www", () => {
+    const response = proxy(
+      new NextRequest("https://harindrasah.com.np/home", {
+        headers: { host: "harindrasah.com.np" },
+      }),
+    );
+    expect(response.status).toBe(308);
+    expect(response.headers.get("location")).toBe("https://www.harindrasah.com.np/home");
+  });
+});

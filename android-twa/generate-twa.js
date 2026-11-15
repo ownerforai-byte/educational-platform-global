@@ -61,13 +61,13 @@ async function main() {
     "https://www.harindrasah.com.np/manifest.json",
   );
 
-  twaManifest.host = "www.harindrasah.com.np";
+  twaManifest.host = "harindrasah.com.np";
   twaManifest.startUrl = "/";
   twaManifest.name = "Ravikisan's Platform";
   twaManifest.launcherName = "Ravikisan";
   twaManifest.packageId = "com.ravikisan.platform";
-  twaManifest.appVersionCode = 6;
-  twaManifest.appVersionName = "1.0.4";
+  twaManifest.appVersionCode = 7;
+  twaManifest.appVersionName = "1.0.5";
   twaManifest.display = "standalone";
   twaManifest.orientation = "portrait";
   twaManifest.themeColor = require("color")("#3b82f6");

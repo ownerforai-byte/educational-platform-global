@@ -128,10 +128,11 @@ The current AAB lives at `play-store/ravikisan-platform-release.aab`.
 - [ ] Confirm signing config matches the Play Console release key.
 
 ## Store validation
-- [ ] Deep link verification passes: TWA host is **`www.harindrasah.com.np`**
-      (apex returns **308** on `/.well-known/assetlinks.json` — Play fails on
-      the app host). `assetlinks.json` on www must match the AAB fingerprint.
-      Upload **v1.0.4 (versionCode 6)** after building a new signed AAB.
+- [ ] Deep link verification passes: TWA host is **`harindrasah.com.np`** with
+      all Play Console SHA-256 fingerprints in repo-root `assetlinks.json`.
+      Apex must serve `/.well-known/assetlinks.json` with **200** (disable
+      Vercel dashboard apex→www redirect; `proxy.ts` handles canonical traffic).
+      Upload **v1.0.5 (versionCode 7)** after building a new signed AAB.
 - [ ] Universal links / app links open the app from the Play-registered domain.
 
 ## Notes
