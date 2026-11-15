@@ -13,6 +13,13 @@
  * R2 object; only the current path stays referenced on the profile row.
  */
 import sharp from "sharp";
+import {
+  ACCEPTED_IMAGE_FORMATS_LABEL,
+  decodeBmpToRgba,
+  detectImageFormat,
+  UnsupportedBmpVariantError,
+  UnsupportedImageFormatError,
+} from "./profile-image-formats.js";
 
 export type ProfileImageKind = "avatar" | "cover";
 
@@ -59,6 +66,33 @@ export function isProfileImageCapError(err: unknown): boolean {
   return Boolean(err && typeof err === "object" && (err as { code?: string }).code === "PROFILE_IMAGE_CAP");
 }
 
+/** True for the "send a different format" errors the route answers with 415. */
+export function isUnsupportedImageFormatError(err: unknown): boolean {
+  if (err instanceof UnsupportedImageFormatError || err instanceof UnsupportedBmpVariantError) return true;
+  const code = err && typeof err === "object" ? (err as { code?: string }).code : undefined;
+  return code === "UNSUPPORTED_IMAGE_FORMAT" || code === "UNSUPPORTED_BMP_VARIANT";
+}
+
+/**
+ * Hand `sharp` something it can decode.
+ *
+ * Signature-first: an unknown payload is rejected before any decode attempt.
+ * BMP (which this libvips build cannot read) is decoded here to raw RGBA.
+ */
+function sharpSource(input: Buffer): {
+  source: Buffer;
+  raw: { width: number; height: number; channels: 4 } | undefined;
+} {
+  const detected = detectImageFormat(input);
+  if (!detected) throw new UnsupportedImageFormatError();
+  if (detected.format !== "bmp") return { source: input, raw: undefined };
+  const rgba = decodeBmpToRgba(input);
+  return {
+    source: rgba.data,
+    raw: { width: rgba.width, height: rgba.height, channels: 4 },
+  };
+}
+
 /**
  * Resize, strip EXIF/orientation, encode WebP. Never keeps a second size or
  * the original buffer — caller must drop `input` after this resolves.
@@ -68,7 +102,9 @@ export async function processProfileImage(
   kind: ProfileImageKind,
 ): Promise<{ buffer: Buffer; contentType: "image/webp"; byteSize: number }> {
   const spec = PROFILE_IMAGE_LIMITS[kind];
-  const base = sharp(input, { failOn: "none" })
+  const detected = detectImageFormat(input);
+  const { source, raw } = sharpSource(input);
+  const base = sharp(source, { failOn: "none", ...(raw ? { raw } : {}) })
     .rotate()
     .resize(spec.maxWidth, spec.maxHeight, {
       fit: "cover",
@@ -78,17 +114,24 @@ export async function processProfileImage(
 
   const qualities = kind === "avatar" ? AVATAR_QUALITIES : COVER_QUALITIES;
   let chosen: Buffer | null = null;
-  for (const quality of qualities) {
-    const buffer = await base
-      .clone()
-      .webp({ quality, effort: 6, smartSubsample: true })
-      .toBuffer();
-    if (buffer.length > spec.hardCapBytes) {
+  try {
+    for (const quality of qualities) {
+      const buffer = await base
+        .clone()
+        .webp({ quality, effort: 6, smartSubsample: true })
+        .toBuffer();
       chosen = buffer;
-      continue;
+      if (buffer.length <= spec.targetMaxBytes) break;
     }
-    chosen = buffer;
-    if (buffer.length <= spec.targetMaxBytes) break;
+  } catch (err) {
+    if (isUnsupportedImageFormatError(err)) throw err;
+    // HEIC/HEIF from a phone: this libvips build has no HEVC decoder.
+    if (detected?.format === "heic") {
+      throw new UnsupportedImageFormatError(
+        `HEIC/HEIF could not be decoded by this server — re-save it as ${ACCEPTED_IMAGE_FORMATS_LABEL.split(", ").slice(0, 3).join(", ")} and try again.`,
+      );
+    }
+    throw err;
   }
   if (!chosen) {
     throw new Error("Could not encode profile image");

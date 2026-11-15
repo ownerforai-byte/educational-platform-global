@@ -1,81 +1,118 @@
 "use client";
 
+/**
+ * Public (visitor) profile shell.
+ *
+ * A read-only window into another learner's profile: identity, statistics,
+ * learning progress, badges, about, community contributions and the
+ * follower/following lists. Navigation is link-based (each tab has its own
+ * server page) and every number comes from the frozen public foundations, so a
+ * visitor can never read a credit, wallet or owner-only figure here.
+ */
+
 import { useCallback, useEffect, useState } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { FollowButton } from "@/features/profile/follow-button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { publicUrl } from "@/lib/site-url";
 import {
   getProfileFiles,
+  getProfileProgress,
+  getPublicProfile,
   getProfileFollowers,
   getProfileFollowing,
   getProfilePosts,
-  getPublicProfile,
-  profilePath,
   type ProfileListUser,
   type ProfileStats,
   type PublicProfile,
+  type PublicProgressCounts,
 } from "@/lib/api/profile";
-import { attachmentFileUrl } from "@/lib/api/community-feed";
-import { cn } from "@/lib/utils";
-import { ProfileAvatar, ProfileCover } from "@/features/profile/profile-media";
+import {
+  PUBLIC_PROFILE_TABS,
+  PublicAboutRow,
+  PublicBadgesRow,
+  PublicContributionsRow,
+  PublicFilesList,
+  PublicIdentityRow,
+  PublicPeopleRow,
+  PublicPostsList,
+  PublicProfileSkeleton,
+  PublicProfileTabs,
+  PublicProgressRow,
+  PublicStatsRow,
+  publicTabHref,
+  type PublicProfileTab,
+  type PublicFileRow,
+  type PublicPostRow,
+} from "@/features/profile/public-profile-sections";
 
-const TABS = ["posts", "about", "files", "followers", "following"] as const;
-type Tab = (typeof TABS)[number];
+type Tab = PublicProfileTab;
 
-function tabHref(username: string, tab: Tab): string {
-  if (tab === "posts") return profilePath(username, username);
-  return `${profilePath(username, username)}/${tab}`;
+function activeTabFromPath(pathname: string | null, fallback: Tab): Tab {
+  if (!pathname) return fallback;
+  const match = PUBLIC_PROFILE_TABS.find(
+    (tab) => tab.id !== "overview" && pathname.endsWith(`/${tab.id}`),
+  );
+  return match?.id ?? "overview";
 }
+
+const EMPTY_PROGRESS = { progress: null as PublicProgressCounts | null };
 
 export function PublicProfileShell({
   username,
-  initialTab = "posts",
+  initialTab = "overview",
 }: {
   username: string;
   initialTab?: Tab;
 }) {
   const pathname = usePathname();
   const { user } = useSession();
+
   const [profile, setProfile] = useState<PublicProfile | null>(null);
   const [stats, setStats] = useState<ProfileStats | null>(null);
   const [following, setFollowing] = useState(false);
+  const [progress, setProgress] = useState<PublicProgressCounts | null>(null);
+  const [posts, setPosts] = useState<PublicPostRow[]>([]);
+  const [files, setFiles] = useState<PublicFileRow[]>([]);
+  const [people, setPeople] = useState<ProfileListUser[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [posts, setPosts] = useState<Array<{ id: string; title: string; body: string; category: string; createdAt: string }>>([]);
-  const [files, setFiles] = useState<Array<{ id: string; filename: string; byteSize: number; contentType: string }>>([]);
-  const [people, setPeople] = useState<ProfileListUser[]>([]);
 
-  const activeTab: Tab = TABS.find((t) => pathname.endsWith(`/${t}`)) ?? initialTab;
+  const activeTab: Tab = activeTabFromPath(pathname, initialTab);
 
   const load = useCallback(async () => {
     setLoading(true);
     setError(null);
+    const wantsPosts = activeTab === "overview" || activeTab === "posts";
+    const wantsFiles = activeTab === "overview" || activeTab === "files";
+    const wantsPeople = activeTab === "followers" || activeTab === "following";
+
     try {
-      const base = await getPublicProfile(username);
+      const [base, progressRes, postsRes, filesRes, peopleRes] = await Promise.all([
+        getPublicProfile(username),
+        // A hidden payload and a failed request both mean "nothing to show".
+        getProfileProgress(username).catch(() => EMPTY_PROGRESS),
+        wantsPosts
+          ? getProfilePosts(username).catch(() => ({ posts: [], migrated: false }))
+          : Promise.resolve(null),
+        wantsFiles
+          ? getProfileFiles(username).catch(() => ({ files: [], migrated: false }))
+          : Promise.resolve(null),
+        wantsPeople
+          ? (activeTab === "followers"
+              ? getProfileFollowers(username)
+              : getProfileFollowing(username)
+            ).catch(() => ({ users: [], migrated: false }))
+          : Promise.resolve(null),
+      ]);
+
       setProfile(base.profile);
       setStats(base.stats);
       setFollowing(base.following);
-      if (activeTab === "posts") {
-        const p = await getProfilePosts(username);
-        setPosts(p.posts);
-      }
-      if (activeTab === "files") {
-        const f = await getProfileFiles(username);
-        setFiles(f.files);
-      }
-      if (activeTab === "followers") {
-        const f = await getProfileFollowers(username);
-        setPeople(f.users);
-      }
-      if (activeTab === "following") {
-        const f = await getProfileFollowing(username);
-        setPeople(f.users);
-      }
+      setProgress(progressRes.progress ?? null);
+      setPosts(postsRes?.posts ?? []);
+      setFiles(filesRes?.files ?? []);
+      setPeople(peopleRes?.users ?? []);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Could not load profile");
     } finally {
@@ -87,252 +124,113 @@ export function PublicProfileShell({
     void load();
   }, [load]);
 
-  const adjustFollowCounts = useCallback((delta: number) => {
+  const handleFollowingChange = useCallback((next: boolean) => {
+    setFollowing(next);
     setStats((current) =>
-      current
-        ? {
-            ...current,
-            followers: Math.max(0, current.followers + delta),
-          }
-        : current,
+      current ? { ...current, followers: Math.max(0, current.followers + (next ? 1 : -1)) } : current,
     );
   }, []);
 
-  const copyLink = async () => {
-    try {
-      await navigator.clipboard.writeText(publicUrl(profilePath(username, username)));
-    } catch {
-      /* ignore */
-    }
-  };
-
-  if (loading && !profile) {
-    return (
-      <div className="mx-auto w-full max-w-3xl space-y-4 p-4">
-        <Skeleton className="h-32 w-full" />
-        <Skeleton className="h-24 w-full" />
-      </div>
-    );
-  }
+  if (loading && !profile) return <PublicProfileSkeleton />;
 
   if (error || !profile) {
     return (
       <div className="mx-auto max-w-3xl p-6">
         <p className="text-destructive">{error ?? "Profile not found"}</p>
-        <Button variant="outline" asChild className="mt-4">
+        <Button variant="outline" asChild className="mt-4 min-h-11">
           <Link href="/users">Search users</Link>
         </Button>
       </div>
     );
   }
 
+  const handle = profile.username ?? username;
+  const viewerId = user?.id ?? null;
+
   return (
     <div className="mx-auto w-full max-w-3xl space-y-4 p-4 pb-16">
-      <MotionHero profile={profile} />
-      <p className="text-sm text-muted-foreground">@{profile.username ?? username}</p>
-      {stats ? (
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
-          <Link href={tabHref(profile.username ?? username, "followers")} className="hover:text-foreground hover:underline">
-            <span className="font-semibold text-foreground">{stats.followers ?? 0}</span> followers
-          </Link>
-          <Link href={tabHref(profile.username ?? username, "following")} className="hover:text-foreground hover:underline">
-            <span className="font-semibold text-foreground">{stats.following ?? 0}</span> following
-          </Link>
-          <span>
-            · {stats.posts} posts · {stats.comments} comments · {stats.likesReceived} likes · {stats.filesShared} files
-          </span>
-        </div>
-      ) : null}
-      <div className="flex flex-wrap gap-2">
-        {user && profile.id !== user.id && profile.username ? (
-          <FollowButton
-            username={profile.username}
-            targetUserId={profile.id}
-            initialFollowing={following}
-            viewerId={user.id}
-            onChange={(next) => {
-              setFollowing(next);
-              adjustFollowCounts(next ? 1 : -1);
-            }}
+      <PublicIdentityRow
+        profile={profile}
+        username={handle}
+        following={following}
+        viewerId={viewerId}
+        onFollowingChange={handleFollowingChange}
+      />
+
+      <PublicProfileTabs username={handle} activeTab={activeTab} />
+
+      {activeTab === "overview" ? (
+        <>
+          <PublicStatsRow stats={stats} progress={progress} username={handle} />
+          <PublicProgressRow progress={progress} username={handle} compact />
+          <PublicBadgesRow progress={progress} username={handle} compact />
+          <PublicAboutRow profile={profile} username={handle} compact />
+          <PublicContributionsRow
+            posts={posts}
+            files={files}
+            stats={stats}
+            username={handle}
+            compact
           />
-        ) : null}
-        {profile.isYou ? (
-          <Button size="sm" variant="outline" asChild className="min-h-11">
-            <Link href="/profile/edit">Edit profile</Link>
-          </Button>
-        ) : null}
-        <Button size="sm" variant="outline" className="min-h-11" aria-label="Copy profile link" onClick={() => void copyLink()}>
-          Copy link
-        </Button>
-      </div>
-
-      <nav className="flex flex-wrap gap-1 border-b pb-2">
-        {TABS.map((tab) => (
-          <Link
-            key={tab}
-            href={tabHref(profile.username ?? username, tab)}
-            className={cn(
-              "min-h-11 rounded-md px-3 py-2 text-sm capitalize",
-              activeTab === tab ? "bg-muted font-medium" : "text-muted-foreground hover:text-foreground",
-            )}
-            aria-current={activeTab === tab ? "page" : undefined}
-          >
-            {tab}
-          </Link>
-        ))}
-      </nav>
-
-      {activeTab === "about" ? (
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-base">About</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3 text-sm">
-            <p className="whitespace-pre-wrap">{profile.bio || "No bio yet."}</p>
-            {profile.location ? <p>📍 {profile.location}</p> : null}
-            {profile.website ? (
-              <a href={profile.website} className="text-primary underline" target="_blank" rel="noreferrer">
-                {profile.website}
-              </a>
-            ) : null}
-            {typeof profile.extras.occupation === "string" && profile.extras.occupation ? (
-              <p>Occupation: {profile.extras.occupation}</p>
-            ) : null}
-            {typeof profile.extras.education === "string" && profile.extras.education ? (
-              <p>Education: {profile.extras.education}</p>
-            ) : null}
-            {typeof profile.extras.skills === "string" && profile.extras.skills ? (
-              <p>Skills: {profile.extras.skills}</p>
-            ) : null}
-          </CardContent>
-        </Card>
+        </>
       ) : null}
+
+      {activeTab === "about" ? <PublicAboutRow profile={profile} username={handle} /> : null}
+
+      {activeTab === "progress" ? <PublicProgressRow progress={progress} username={handle} /> : null}
+
+      {activeTab === "badges" ? <PublicBadgesRow progress={progress} username={handle} /> : null}
 
       {activeTab === "posts" ? (
-        <div className="space-y-3">
-          {posts.length === 0 ? (
-            <p className="text-sm text-muted-foreground">No community posts yet.</p>
-          ) : (
-            posts.map((post) => (
-              <Card key={post.id}>
-                <CardHeader className="pb-2">
-                  <Link href={`/ai/community/posts/${post.id}`} className="font-medium hover:underline">
-                    {post.title}
-                  </Link>
-                  <p className="text-xs text-muted-foreground">{post.category}</p>
-                </CardHeader>
-                <CardContent>
-                  <p className="line-clamp-4 text-sm text-muted-foreground">{post.body}</p>
-                </CardContent>
-              </Card>
-            ))
-          )}
-        </div>
+        <section className="rounded-xl border border-border bg-card p-4">
+          <h2 className="mb-3 text-base font-semibold">Community posts</h2>
+          <PublicPostsList posts={posts} />
+        </section>
       ) : null}
 
       {activeTab === "files" ? (
-        <ul className="space-y-2">
-          {files.length === 0 ? (
-            <li className="text-sm text-muted-foreground">No shared files yet.</li>
-          ) : (
-            files.map((file) => (
-              <li key={file.id}>
-                <a
-                  href={attachmentFileUrl(file.id)}
-                  className="text-sm text-primary underline"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {file.filename}
-                </a>
-                <span className="ml-2 text-xs text-muted-foreground">({Math.round(file.byteSize / 1024)} KB)</span>
-              </li>
-            ))
-          )}
-        </ul>
+        <section className="rounded-xl border border-border bg-card p-4">
+          <h2 className="mb-3 text-base font-semibold">Shared files</h2>
+          <PublicFilesList files={files} />
+        </section>
       ) : null}
 
-      {(activeTab === "followers" || activeTab === "following") ? (
-        <ProfilePeopleList
+      {activeTab === "followers" ? (
+        <PublicPeopleRow
           people={people}
-          emptyLabel={`No ${activeTab} yet.`}
-          viewerId={user?.id}
-          onFollowToggle={(personId, nextFollowing) => {
+          title="Followers"
+          emptyLabel="No followers yet."
+          viewerId={viewerId}
+          onFollowToggle={(personId, next) =>
             setPeople((current) =>
-              current.map((p) => (p.id === personId ? { ...p, followingByYou: nextFollowing } : p)),
-            );
-          }}
+              current.map((p) => (p.id === personId ? { ...p, followingByYou: next } : p)),
+            )
+          }
         />
       ) : null}
-    </div>
-  );
-}
 
-function ProfilePeopleList({
-  people,
-  emptyLabel,
-  viewerId,
-  onFollowToggle,
-}: {
-  people: ProfileListUser[];
-  emptyLabel: string;
-  viewerId?: string | null;
-  onFollowToggle?: (personId: string, following: boolean) => void;
-}) {
-  if (people.length === 0) {
-    return <p className="text-sm text-muted-foreground">{emptyLabel}</p>;
-  }
-  return (
-    <ul className="space-y-2">
-      {people.map((person) => {
-        const href = profilePath(person.username, person.id);
-        return (
-          <li key={person.id} className="flex items-center gap-3 rounded-lg border p-3">
-            <Link href={href} className="flex min-w-0 flex-1 items-center gap-3 hover:opacity-90">
-              <ProfileAvatar
-                url={person.avatarUrl}
-                name={person.fullName}
-                className="h-10 w-10 shrink-0 rounded-full"
-                textClassName="text-xs"
-                sizes="40px"
-              />
-              <div className="min-w-0">
-                <p className="truncate font-medium">{person.fullName}</p>
-                <p className="truncate text-xs text-muted-foreground">
-                  {person.username ? `@${person.username}` : person.id.slice(0, 8)}
-                </p>
-              </div>
-            </Link>
-            <FollowButton
-              username={person.username}
-              targetUserId={person.id}
-              initialFollowing={Boolean(person.followingByYou)}
-              viewerId={viewerId}
-              size="xs"
-              onChange={(next) => onFollowToggle?.(person.id, next)}
-            />
-          </li>
-        );
-      })}
-    </ul>
-  );
-}
-
-function MotionHero({ profile }: { profile: PublicProfile }) {
-  return (
-    <div className="overflow-hidden rounded-xl border bg-card">
-      <ProfileCover url={profile.coverUrl} className="h-28" />
-      <div className="flex items-end gap-3 px-4 pb-4">
-        <ProfileAvatar
-          url={profile.avatarUrl}
-          name={profile.fullName}
-          className="-mt-10 h-20 w-20 shrink-0 rounded-full border-4 border-card"
-          textClassName="text-lg"
+      {activeTab === "following" ? (
+        <PublicPeopleRow
+          people={people}
+          title="Following"
+          emptyLabel="Not following anyone yet."
+          viewerId={viewerId}
+          onFollowToggle={(personId, next) =>
+            setPeople((current) =>
+              current.map((p) => (p.id === personId ? { ...p, followingByYou: next } : p)),
+            )
+          }
         />
-        <div>
-          <h1 className="text-xl font-semibold">{profile.fullName}</h1>
-        </div>
-      </div>
+      ) : null}
+
+      {following && !profile.isYou ? (
+        <p className="text-xs text-muted-foreground">
+          You are following @{handle}.{" "}
+          <Link href={publicTabHref(handle, "following")} className="underline-offset-4 hover:underline">
+            See who they follow
+          </Link>
+        </p>
+      ) : null}
     </div>
   );
 }

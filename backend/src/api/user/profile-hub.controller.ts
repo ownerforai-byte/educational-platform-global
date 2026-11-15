@@ -23,6 +23,7 @@ import {
 } from "../../services/profile-storage";
 import {
   isProfileImageCapError,
+  isUnsupportedImageFormatError,
   processProfileImage,
   profileImagePath,
   PROFILE_IMAGE_INPUT_MAX_BYTES,
@@ -261,6 +262,10 @@ async function loadHubProfile(
 
 const PROFILE_IMAGE_CONTENT_TYPES = /^(image\/[\w.+-]+|application\/octet-stream)$/i;
 
+/** Formats the pipeline accepts — validated by signature, listed for humans. */
+const PROFILE_IMAGE_FORMAT_HINT =
+  "JPEG, PNG, WebP, GIF, AVIF, BMP or TIFF";
+
 router.get(
   "/media",
   asyncHandler(async (req, res) => {
@@ -467,7 +472,7 @@ function profileImageBody(
   const header = typeof req.headers["content-type"] === "string" ? req.headers["content-type"] : "";
   const contentType = header.split(";")[0]?.trim().toLowerCase() ?? "";
   if (!contentType) {
-    bad(res, "Content-Type is required (image/jpeg, image/png, image/webp, or application/octet-stream).", 415);
+    bad(res, `Content-Type is required (image/* or application/octet-stream). Accepted formats: ${PROFILE_IMAGE_FORMAT_HINT}.`, 415);
     return;
   }
   if (contentType === "application/json" || contentType.endsWith("+json")) {
@@ -481,7 +486,7 @@ function profileImageBody(
   if (!PROFILE_IMAGE_CONTENT_TYPES.test(contentType)) {
     bad(
       res,
-      "Unsupported Content-Type. Use image/jpeg, image/png, image/webp, or application/octet-stream.",
+      `Unsupported Content-Type. Send raw image bytes (image/* or application/octet-stream). Accepted formats: ${PROFILE_IMAGE_FORMAT_HINT}.`,
       415,
     );
     return;
@@ -536,7 +541,11 @@ async function uploadProfileImage(
       bad(res, "Image is too large after compression.", 413);
       return;
     }
-    bad(res, "Could not process image — use a JPEG or PNG photo.");
+    if (isUnsupportedImageFormatError(err)) {
+      bad(res, (err as Error).message, 415);
+      return;
+    }
+    bad(res, "Could not process image — use a JPEG, PNG, WebP, GIF, AVIF, BMP or TIFF photo.");
     return;
   }
   const current = await getProfileById(user.id, "avatar_path, cover_path, avatar_bytes, cover_bytes");
@@ -649,8 +658,84 @@ router.post(
   }),
 );
 
+async function removeProfileImage(
+  user: SessionUser,
+  kind: "avatar" | "cover",
+  res: Response,
+): Promise<void> {
+  const colPath = kind === "avatar" ? "avatar_path" : "cover_path";
+  const colBytes = kind === "avatar" ? "avatar_bytes" : "cover_bytes";
+  const current = await getProfileById(
+    user.id,
+    "avatar_path, cover_path, avatar_bytes, cover_bytes",
+  );
+  if (current.error && isMissingTable(current.error) && !current.data) {
+    unavailable(res);
+    return;
+  }
+  if (current.error && !current.data) {
+    serverError(res, current.error, "profile-hub");
+    return;
+  }
+
+  const row = current.data as Record<string, unknown> | null;
+  const oldPath = (row?.[colPath] as string | null | undefined) ?? null;
+  const liveAvatar = kind === "avatar" ? null : ((row?.avatar_path as string | null | undefined) ?? null);
+  const liveCover = kind === "cover" ? null : ((row?.cover_path as string | null | undefined) ?? null);
+
+  // Idempotent: nothing stored in this slot is still a success, and the other
+  // slot is never touched either way.
+  if (oldPath) {
+    const { error } = await updateProfileFields(user.id, { [colPath]: null, [colBytes]: null });
+    if (error) {
+      serverError(res, error, "profile-hub");
+      return;
+    }
+    try {
+      await r2Delete(oldPath);
+    } catch {
+      /* best effort — the DB released the slot either way */
+    }
+    await releaseStoragePath(user.id, oldPath);
+  }
+
+  try {
+    await purgeAbandonedProfileMedia(user.id, [liveAvatar, liveCover]);
+  } catch {
+    /* best effort — the live rows are already committed */
+  }
+
+  const loaded = await loadHubProfile(user.id);
+  if (!loaded.row) {
+    serverError(res, loaded.error ?? { message: "read-after-write missed the profile" }, "profile-hub");
+    return;
+  }
+  const snap = await getStorageSnapshot(user.id, user);
+  noStore(res);
+  res.json({
+    profile: presentProfile(loaded.row, user.id),
+    storage: "missing" in snap ? null : snap,
+  });
+}
+
+router.delete(
+  "/me/avatar",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    await removeProfileImage((req as AuthedRequest).user, "avatar", res);
+  }),
+);
+
+router.delete(
+  "/me/cover",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    await removeProfileImage((req as AuthedRequest).user, "cover", res);
+  }),
+);
+
 async function userSearch(req: Request, res: Response): Promise<void> {
-    const q = (param(req.query.q) || param(req.query.search) || "").trim().toLowerCase();
+  const q = (param(req.query.q) || param(req.query.search) || "").trim().toLowerCase();
     if (q.length < 2) {
       bad(res, "Enter at least 2 characters to search");
       return;
@@ -717,6 +802,92 @@ router.get(
       profile: presentProfile(resolved, viewer?.id ?? null),
       stats,
       following,
+      migrated: true,
+    });
+  }),
+);
+
+router.get(
+  "/:username/progress",
+  asyncHandler(async (req, res) => {
+    const key = param(req.params.username);
+    const viewer = await getUserFromRequest(req);
+    const resolved = await resolveProfileKey(key);
+    if (resolved === "missing") {
+      unavailable(res);
+      return;
+    }
+    if (!resolved) {
+      bad(res, "Profile not found", 404);
+      return;
+    }
+    if (!canViewProfile(resolved, viewer)) {
+      // Visibility hides the profile itself, so it hides its progress too.
+      noStore(res);
+      res.json({ progress: null, migrated: true });
+      return;
+    }
+
+    const extras =
+      resolved.profile_extras && typeof resolved.profile_extras === "object"
+        ? (resolved.profile_extras as Record<string, unknown>)
+        : {};
+    if (extras.hideProgress === true) {
+      noStore(res);
+      res.json({ progress: null, migrated: true });
+      return;
+    }
+
+    const { data, error } = await supabaseAdmin
+      .from("user_journey")
+      .select("subject_slug, status, completed_at")
+      .eq("user_id", resolved.id);
+    if (error) {
+      if (isMissingTable(error)) {
+        noStore(res);
+        res.json({ progress: null, migrated: false });
+        return;
+      }
+      serverError(res, error, "profile-hub");
+      return;
+    }
+
+    const rows = (data ?? []) as Array<{
+      subject_slug: string | null;
+      status: string | null;
+      completed_at: string | null;
+    }>;
+
+    let completed = 0;
+    let inProgress = 0;
+    const bySubject = new Map<string, { completed: number; inProgress: number; total: number }>();
+    for (const row of rows) {
+      const subject = row.subject_slug || "general";
+      const bucket = bySubject.get(subject) ?? { completed: 0, inProgress: 0, total: 0 };
+      bucket.total += 1;
+      if (row.status === "completed" || row.completed_at) {
+        bucket.completed += 1;
+        completed += 1;
+      } else {
+        bucket.inProgress += 1;
+        inProgress += 1;
+      }
+      bySubject.set(subject, bucket);
+    }
+
+    const total = rows.length;
+    noStore(res);
+    res.json({
+      progress: {
+        completed,
+        inProgress,
+        notStarted: Math.max(0, total - completed - inProgress),
+        total,
+        percent: total > 0 ? Math.round((completed / total) * 100) : 0,
+        subjects: [...bySubject.entries()]
+          .sort((a, b) => a[0].localeCompare(b[0]))
+          .map(([subjectSlug, counts]) => ({ subjectSlug, ...counts })),
+      },
       migrated: true,
     });
   }),

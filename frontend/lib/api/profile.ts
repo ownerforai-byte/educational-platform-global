@@ -210,6 +210,79 @@ export async function uploadCover(file: File, signal?: AbortSignal) {
   return postProfileImage(`${ROOT}/me/cover`, file, "cover", signal);
 }
 
+/**
+ * Server-side aggregate of a profile's learning progress.
+ *
+ * Counts only — names come from the canonical syllabus on the client, and no
+ * credit/owner figure is ever part of this payload. `null` means the owner's
+ * privacy settings hide progress from this viewer.
+ */
+export interface PublicProgressCounts {
+  completed: number;
+  inProgress: number;
+  notStarted: number;
+  total: number;
+  percent: number;
+  subjects: Array<{
+    subjectSlug: string;
+    completed: number;
+    inProgress: number;
+    total: number;
+  }>;
+}
+
+export async function getProfileProgress(username: string): Promise<{
+  progress: PublicProgressCounts | null;
+  migrated: boolean;
+}> {
+  return apiFetch(
+    `${ROOT}/${encodeURIComponent(username)}/progress`,
+  );
+}
+
+/**
+ * Remove ONLY the profile picture. The cover, bio and every other field stay
+ * untouched; the stored object is released server-side.
+ */
+export async function removeAvatar(): Promise<{
+  profile: PublicProfile;
+  storage: StorageInfo | null;
+}> {
+  return apiFetch(`${ROOT}/me/avatar`, { method: "DELETE" });
+}
+
+/**
+ * Remove ONLY the cover image. The profile picture and every other field stay
+ * untouched; the stored object is released server-side.
+ */
+export async function removeCover(): Promise<{
+  profile: PublicProfile;
+  storage: StorageInfo | null;
+}> {
+  return apiFetch(`${ROOT}/me/cover`, { method: "DELETE" });
+}
+
+/**
+ * Every image format the editor accepts. This is only a picker hint — the
+ * server validates the real file signature, so a wrong extension still works
+ * and a fake extension still fails.
+ */
+export const PROFILE_IMAGE_EXTENSIONS = [
+  "jpg",
+  "jpeg",
+  "png",
+  "webp",
+  "gif",
+  "avif",
+  "heic",
+  "heif",
+  "bmp",
+  "tif",
+  "tiff",
+] as const;
+
+export const PROFILE_IMAGE_ACCEPT = PROFILE_IMAGE_EXTENSIONS.map((ext) => `.${ext}`).join(",");
+
 export async function followUser(username: string) {
   return apiFetch(`${ROOT}/${encodeURIComponent(username)}/follow`, { method: "POST" });
 }

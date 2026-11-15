@@ -66,10 +66,14 @@ vi.mock("@/lib/api/ai", async (importOriginal) => ({
 }));
 
 const getMyProfile = vi.fn();
+const getStorage = vi.fn();
+const updateMyProfile = vi.fn();
 
 vi.mock("@/lib/api/profile", async (importOriginal) => ({
   ...(await importOriginal<object>()),
   getMyProfile: (...args: unknown[]) => getMyProfile(...args),
+  getStorage: (...args: unknown[]) => getStorage(...args),
+  updateMyProfile: (...args: unknown[]) => updateMyProfile(...args),
 }));
 
 import ProfilePage from "@/app/(app)/profile/page";
@@ -117,11 +121,17 @@ const progressEntries = [
     id: "p2",
     topicId: "t2",
     completed: false,
-    completedAt: null,
     updatedAt: "2026-09-01T00:00:00.000Z",
     topic: { slug: "motion", title: "Laws of Motion" },
   },
 ];
+
+const storageFixture = {
+  usedBytes: 2 * 1024 * 1024,
+  limitBytes: 20 * 1024 * 1024,
+  remainingBytes: 18 * 1024 * 1024,
+  unlimited: false,
+};
 
 beforeEach(() => {
   vi.clearAllMocks();
@@ -131,6 +141,8 @@ beforeEach(() => {
   updateProgress.mockResolvedValue({});
   getOwnerSettings.mockResolvedValue({ settings: [] });
   updateOwnerSettings.mockResolvedValue({ settings: [] });
+  getStorage.mockResolvedValue(storageFixture);
+  updateMyProfile.mockResolvedValue({ profile: { id: "u1", visibility: "members" } });
   getAiSparkUsage.mockResolvedValue({
     tier: "owner",
     limit: null,
@@ -156,7 +168,7 @@ beforeEach(() => {
         isYou: true,
       },
       stats: { posts: 0, comments: 0, likesReceived: 0, filesShared: 0, followers: 0, following: 0 },
-      storage: null,
+      storage: storageFixture,
     };
   });
 });
@@ -164,46 +176,75 @@ beforeEach(() => {
 // ─── Tests ──────────────────────────────────────────────────────────────────
 
 describe("ProfilePage", () => {
-  it("opens directly on the Progress tab (profile → progress)", async () => {
+  it("opens the dashboard on the Overview tab with the progress tracker one tab away", async () => {
     render(<ProfilePage />);
     fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
 
-    // Default tab heading is the progress view.
+    // Overview is the default tab; no placeholder-only landing view.
+    const overviewTab = screen.getByRole("tab", { name: /overview/i });
+    expect(overviewTab).toHaveAttribute("aria-selected", "true");
+
+    // The full progress tracker lives on the Progress tab.
+    fireEvent.click(screen.getByRole("tab", { name: /progress/i }));
     expect(screen.getByText("My Progress")).toBeInTheDocument();
 
     // The shared progress panel loaded its data (ring + topics visible).
-    expect(await screen.findByText("Cell Structure")).toBeInTheDocument();
-    expect(screen.getByText("Laws of Motion")).toBeInTheDocument();
-    expect(getProgress).toHaveBeenCalledTimes(1);
+    expect((await screen.findAllByText("Cell Structure")).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("Laws of Motion").length).toBeGreaterThanOrEqual(1);
+    expect(getProgress).toHaveBeenCalled();
 
-    // Progress tab is the selected one.
-    const progressTab = screen.getByRole("tab", { name: /progress/i });
-    expect(progressTab).toHaveAttribute("aria-selected", "true");
+    expect(screen.getByRole("tab", { name: /progress/i })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
   });
 
   it("renders the identity header from the session user", () => {
     render(<ProfilePage />);
     fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
 
-    expect(screen.getByText("Harindra Sah")).toBeInTheDocument();
-    expect(screen.getByText("sahrocky81@gmail.com")).toBeInTheDocument();
+    expect(screen.getAllByText("Harindra Sah").length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText("sahrocky81@gmail.com").length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText("HS")).toBeInTheDocument(); // initials
-    expect(screen.getByText("Owner")).toBeInTheDocument(); // canonical access-tier badge
+    expect(screen.getAllByText("Owner").length).toBeGreaterThanOrEqual(1); // canonical access-tier badge
     // The unified access-tier card replaces the separate plan badge.
     expect(screen.getByText(/Owner plan/)).toBeInTheDocument();
-    // Balance shows in the wallet card (and wherever else it appears) —
-    // profile features 2026-10-13 added the Content Spark Wallet card.
+    // Balance shows in the wallet card (and wherever else it appears).
     expect(screen.getAllByText(/42/).length).toBeGreaterThanOrEqual(1);
     // Plan & AI spark card: tier, allowance meter and reset countdown.
     expect(screen.getByText(/Plan & AI Spark/)).toBeInTheDocument();
     expect(screen.getByText("content sparks available")).toBeInTheDocument();
     // Study stats strip: streak + counters.
-    expect(screen.getByText("day streak")).toBeInTheDocument();
+    expect(screen.getAllByText(/day streak/i).length).toBeGreaterThanOrEqual(1);
     // Owner console shortcut present for allowlisted owners.
     expect(screen.getByRole("link", { name: /owner console/i })).toHaveAttribute(
       "href",
       "/owner"
     );
+  });
+
+  it("renders both media pencils and six real statistic cards", async () => {
+    render(<ProfilePage />);
+    fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
+
+    expect(
+      screen.getByRole("button", { name: /edit profile picture/i })
+    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /edit cover image/i })).toBeInTheDocument();
+
+    // Six quick statistics, each fed by real data.
+    const cards = screen.getAllByTestId("stat-card");
+    expect(cards).toHaveLength(6);
+    expect(within(cards[0]).getByText("Topics completed")).toBeInTheDocument();
+    expect(within(cards[1]).getByText("In progress")).toBeInTheDocument();
+    expect(within(cards[2]).getByText("Scholar XP")).toBeInTheDocument();
+    expect(within(cards[3]).getByText("Day streak")).toBeInTheDocument();
+    expect(within(cards[4]).getByText("Community posts")).toBeInTheDocument();
+    expect(within(cards[5]).getByText("Followers")).toBeInTheDocument();
+
+    // The completed counter comes from the journey, not a literal.
+    await waitFor(() => expect(within(cards[0]).getByText("1")).toBeInTheDocument());
+    expect(getProgress).toHaveBeenCalled();
   });
 
   it("switches to the Account tab with account details", async () => {
@@ -212,16 +253,17 @@ describe("ProfilePage", () => {
 
     fireEvent.click(screen.getByRole("tab", { name: /account/i }));
 
-    expect(screen.getByText("Full name")).toBeInTheDocument();
+    // "Full name" also labels the Overview personal-information row.
+    expect(screen.getAllByText("Full name").length).toBeGreaterThanOrEqual(1);
     // The Account tab shows the unified access-tier row, not duplicated plan text.
-    expect(screen.getByText("Access tier")).toBeInTheDocument();
+    expect(screen.getAllByText("Access tier").length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText(/Unlimited Veer sparks/)).toBeInTheDocument();
     expect(
       screen.getByRole("link", { name: /full progress page/i })
     ).toHaveAttribute("href", "/progress");
 
-    // Progress panel stays mounted (previous tab content preserved).
-    expect(await screen.findByText("Cell Structure")).toBeInTheDocument();
+    // Overview content stays mounted (previous tab content preserved).
+    expect((await screen.findAllByText("Cell Structure")).length).toBeGreaterThanOrEqual(1);
   });
 
   it("redirects guests to login with a next return target", () => {
@@ -255,16 +297,17 @@ describe("ProfilePage", () => {
     expect(screen.getByText(/Level 1 · Novice Scholar/i)).toBeInTheDocument();
   });
 
-  it("switches to Level Details tab to see scholar progression", async () => {
+  it("switches to the Achievements tab for badges and the scholar ladder", async () => {
     render(<ProfilePage />);
     fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
 
-    const levelTab = screen.getByRole("tab", { name: /level details/i });
-    expect(levelTab).toBeInTheDocument();
-    fireEvent.click(levelTab);
+    const achievementsTab = screen.getByRole("tab", { name: /achievements/i });
+    expect(achievementsTab).toBeInTheDocument();
+    fireEvent.click(achievementsTab);
 
     expect(screen.getByText("Scholar Level & Academic Hierarchy")).toBeInTheDocument();
     expect(screen.getByText("Scholar Progression Roadmap")).toBeInTheDocument();
+    expect(screen.getByText(/Earned badges/)).toBeInTheDocument();
   });
 
   it("switches to Curriculum tab for grade focus and subjects", () => {
@@ -275,9 +318,11 @@ describe("ProfilePage", () => {
 
     expect(screen.getByText("Academic Grade & Curriculum Settings")).toBeInTheDocument();
     expect(screen.getByText("CDC Nepal Curriculum")).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /class 11 science/i })).toBeInTheDocument();
-    expect(screen.getByRole("button", { name: /class 12 science/i })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /physics/i })).toHaveAttribute(
+    // Grade chips double as pressed-state buttons in Overview — scope to the tab.
+    const panel = screen.getByRole("tabpanel", { name: /curriculum/i });
+    expect(within(panel).getByRole("button", { name: /class 11 science/i })).toBeInTheDocument();
+    expect(within(panel).getByRole("button", { name: /class 12 science/i })).toBeInTheDocument();
+    expect(within(panel).getByRole("link", { name: /physics/i })).toHaveAttribute(
       "href",
       "/class-11-notes/physics",
     );
@@ -331,7 +376,7 @@ describe("ProfilePage", () => {
         isYou: true,
       },
       stats: { posts: 0, comments: 0, likesReceived: 0, filesShared: 0, followers: 0, following: 0 },
-      storage: null,
+      storage: storageFixture,
     });
 
     render(<ProfilePage />);
