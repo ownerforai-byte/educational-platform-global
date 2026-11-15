@@ -62,7 +62,7 @@ export async function ensureCommunityBotProfile(): Promise<void> {
         username: COMMUNITY_BOT_USERNAME,
         avatar_path: COMMUNITY_BOT_AVATAR_PATH,
         role: "assistant",
-        plan: "owner",
+        plan: "pro",
       })
       .eq("id", COMMUNITY_BOT_ID);
     if (updateError && !isMissingTable(updateError)) {
