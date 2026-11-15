@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getOwnerSettings, updateOwnerSettings } from "@/lib/api/owner";
 import type { OwnerSetting } from "@/lib/api/owner";
+import { isSensitiveConfigKey } from "@rn/shared/utils";
 
 export default function OwnerSettingsPage() {
   const [settings, setSettings] = useState<OwnerSetting[]>([]);
@@ -195,6 +196,8 @@ export default function OwnerSettingsPage() {
                     )}
                   </div>
                   <Input
+                    type={isSensitiveConfigKey(s.key) ? "password" : "text"}
+                    autoComplete={isSensitiveConfigKey(s.key) ? "off" : undefined}
                     value={drafts[s.key] ?? ""}
                     onChange={(e) => setDrafts((d) => ({ ...d, [s.key]: e.target.value }))}
                     className="flex-1 font-mono text-sm"
@@ -227,6 +230,8 @@ export default function OwnerSettingsPage() {
             className="sm:w-56 font-mono text-sm"
           />
           <Input
+            type={isSensitiveConfigKey(newKey) ? "password" : "text"}
+            autoComplete={isSensitiveConfigKey(newKey) ? "off" : undefined}
             value={newValue}
             onChange={(e) => setNewValue(e.target.value)}
             placeholder='value (e.g. true, "text", 42, {"json":true})'
