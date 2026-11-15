@@ -9,6 +9,7 @@ import { ComingSoon } from "@/components/content/coming-soon";
 import { getUserCredits, getUserTransactions } from "@/lib/api/credits";
 import type { CreditTransaction, UserCreditInfo } from "@/lib/api/credits";
 import { buildReceipts, summarizeLedger } from "@/lib/billing";
+import { ACCESS_LABELS, accessLevelFor } from "@/lib/core/access-level";
 
 /** /billing: spark balance, plan status and receipt history from lib/api/credits. */
 export function BillingView() {
@@ -60,7 +61,9 @@ export function BillingView() {
             <Card>
               <CardHeader>
                 <CardDescription>Plan</CardDescription>
-                <CardTitle className="text-xl">{info.premiumStatus ? "Premium" : "Standard"}</CardTitle>
+                <CardTitle className="text-xl">
+                  {ACCESS_LABELS[accessLevelFor({ email: info.email, role: info.role, premiumStatus: info.premiumStatus })]}
+                </CardTitle>
               </CardHeader>
               <CardContent className="text-xs text-muted-foreground">
                 {info.pendingRequests.length > 0

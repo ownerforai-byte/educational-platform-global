@@ -6,9 +6,17 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getUserCredits, getUserTransactions } from "@/lib/api/credits";
 import type { UserCreditInfo, CreditTransaction } from "@/lib/api/credits";
-import { hasFullAccess, isUserRole, type UserRole } from "@/lib/auth/roles";
+import { useSession } from "@/features/auth/hooks/use-session";
+import {
+  ACCESS_LABELS,
+  ACCESS_RANK,
+  ACCESS_TAGLINES,
+  accessLevelFor,
+} from "@/lib/core/access-level";
+import { AI_SPARK_LIMITS } from "@/lib/ai/ai-spark-tiers";
 
 export default function CreditsPage() {
+  const { user: sessionUser } = useSession();
   const [credits, setCredits] = useState<UserCreditInfo | null>(null);
   const [transactions, setTransactions] = useState<CreditTransaction[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -94,8 +102,10 @@ export default function CreditsPage() {
               </div>
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Account Status</p>
-                <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">Guest</p>
-                <p className="text-[11px] text-muted-foreground">Free Student Tier</p>
+                <p className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                  {ACCESS_LABELS.guest}
+                </p>
+                <p className="text-[11px] text-muted-foreground">{ACCESS_TAGLINES.guest}</p>
               </div>
             </CardContent>
           </Card>
@@ -206,10 +216,18 @@ export default function CreditsPage() {
     );
   }
 
-  const isPremium = hasFullAccess(
-    isUserRole(credits.role) ? (credits.role as UserRole) : null,
-    credits.premiumStatus,
+  const tier = accessLevelFor(
+    sessionUser ?? {
+      email: credits.email,
+      role: credits.role,
+      premiumStatus: credits.premiumStatus,
+    },
   );
+  const unlimitedContent = tier === "owner" || tier === "pro";
+  const sparkAllowance = AI_SPARK_LIMITS[tier];
+  const sparkAllowanceLabel = Number.isFinite(sparkAllowance)
+    ? `${sparkAllowance} / day`
+    : "Unlimited";
 
   return (
     <div className="container max-w-4xl py-8 space-y-6">
@@ -250,8 +268,8 @@ export default function CreditsPage() {
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Sparks Limit</p>
-              <p className="text-3xl font-bold">{isPremium ? "Unlimited" : credits.creditsLimit}</p>
-              {isPremium && (
+              <p className="text-3xl font-bold">{unlimitedContent ? "Unlimited" : credits.creditsLimit}</p>
+              {unlimitedContent && (
                 <p className="text-[11px] font-semibold text-violet-500">No daily cap</p>
               )}
             </div>
@@ -264,10 +282,10 @@ export default function CreditsPage() {
               <Crown className="h-6 w-6 text-purple-600" />
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Account Plan</p>
-              <p className={`text-xl font-bold ${isPremium ? "text-green-600" : "text-orange-600"}`}>
-                {isPremium ? "PRO · Active" : "Free"}
-              </p>
+              <p className="text-sm text-muted-foreground">Account Status</p>
+              <p className="text-xl font-bold text-foreground">{ACCESS_LABELS[tier]}</p>
+              <p className="text-[11px] text-muted-foreground">{ACCESS_TAGLINES[tier]}</p>
+              <p className="text-[11px] text-muted-foreground">Veer: {sparkAllowanceLabel}</p>
             </div>
           </CardContent>
         </Card>
@@ -289,7 +307,7 @@ export default function CreditsPage() {
         </Card>
       )}
 
-      {!isPremium && (
+      {ACCESS_RANK[tier] < ACCESS_RANK.pro && (
         <Card className="border-dashed">
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
