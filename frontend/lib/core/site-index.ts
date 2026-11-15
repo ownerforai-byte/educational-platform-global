@@ -544,6 +544,7 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         href: "/ai/community",
         meta: "Social",
         links: [
+          { label: "Chat", href: "/ai/community/chat" },
           { label: "My posts", href: "/ai/community/me" },
           { label: "Find students", href: "/users" },
         ],

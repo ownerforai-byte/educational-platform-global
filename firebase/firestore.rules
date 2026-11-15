@@ -26,6 +26,17 @@ service cloud.firestore {
       allow write: if false; // server / Cloud Functions only
     }
 
+  match /realtime_chats/{roomId}/messages/{messageId} {
+    allow read: if signedIn();
+    allow create: if signedIn()
+      && request.resource.data.senderId == request.auth.uid
+      && request.resource.data.text is string
+      && request.resource.data.text.size() > 0
+      && request.resource.data.text.size() <= 2000
+      && request.resource.data.keys().hasAll(["senderId", "text", "createdAt"]);
+    allow update, delete: if false;
+  }
+
     match /{document=**} {
       allow read, write: if false;
     }

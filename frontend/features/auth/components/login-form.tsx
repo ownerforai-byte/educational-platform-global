@@ -9,6 +9,7 @@ import { AuthField } from "./auth-field";
 import { loginAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
+import { PhoneAuthPanel } from "./phone-auth-panel";
 import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/core/access-level";
 import {
@@ -156,6 +157,24 @@ export function LoginForm() {
         mode="login"
         disabled={loading}
         onError={(msg) => setError(msg)}
+      />
+
+      <PhoneAuthPanel
+        disabled={loading}
+        onError={setError}
+        onSignedIn={async (result) => {
+          if (result.code === "PENDING_APPROVAL") {
+            if (result.statusToken) rememberPendingSignup(result.statusToken);
+            rememberAccessOutcome("PENDING");
+            router.push(WAITING_ROUTE);
+            return;
+          }
+          if (result.user) {
+            clearPendingSignup();
+            await refresh();
+            router.push(tierWelcomePathFor(result.user));
+          }
+        }}
       />
 
       <p className="pt-4 text-center text-sm text-muted-foreground">

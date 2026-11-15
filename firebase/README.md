@@ -105,3 +105,15 @@ npx -y firebase-tools@latest deploy --only functions:approvalBotTick,functions:a
 No Supabase secrets are required for this deploy. Delete legacy remote functions
 `accessBotTick`, `accessBotRunNow`, and `creditsDailyReset` if they still exist
 from older bundles.
+
+## Realtime chat (Firestore client)
+
+- UI: Community → **Chat** (`/ai/community/chat`) — signed-in lobby (`realtime_chats/{roomId}/messages`)
+- Rules: `firebase/firestore.rules` (deploy below)
+- Auth: Email/Password, Google, and Phone via `frontend/lib/firebase/client-auth.ts`
+- Enable Phone: `npm run firebase:enable-phone` (adds test `+9779800000000` → `123456`)
+
+```bash
+cd firebase
+npx -y firebase-tools@latest deploy --only firestore:rules,firestore:indexes,auth
+```

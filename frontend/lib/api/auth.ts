@@ -46,6 +46,22 @@ export async function login(
   return res;
 }
 
+export type FirebaseIdTokenLoginResult = AuthLoginResponse & {
+  code?: string;
+  statusToken?: string;
+};
+
+/** Exchange a Firebase ID token (phone, Google redirect, etc.) for an app session. */
+export async function loginWithFirebaseIdToken(idToken: string): Promise<FirebaseIdTokenLoginResult> {
+  const res = await apiFetch<FirebaseIdTokenLoginResult>("/api/auth/login", {
+    method: "POST",
+    body: JSON.stringify({ idToken }),
+  });
+  if (res?.accessToken) setStoredToken(res.accessToken);
+  if (res?.user) writeCachedSession(res.user, res.accessToken ?? null);
+  return res;
+}
+
 /**
  * Register a new user account. May resolve with 202 (user needs email
  * confirmation) — the response shape carries `needsEmailConfirmation`.

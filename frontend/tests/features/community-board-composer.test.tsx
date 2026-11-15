@@ -79,6 +79,7 @@ describe("CommunityBoard composer", () => {
 
     expect(await screen.findByRole("heading", { name: "Community" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /new post/i })).toHaveAttribute("href", "/ai/community/new");
+    expect(screen.getByTestId("community-chat-link")).toHaveAttribute("href", "/ai/community/chat");
     expect(screen.getByLabelText("Search posts")).toBeInTheDocument();
     expect(screen.queryByLabelText("Title")).not.toBeInTheDocument();
     expect(screen.queryByLabelText("Body")).not.toBeInTheDocument();

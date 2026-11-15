@@ -20,7 +20,7 @@ import {
   messageOf,
 } from "@/features/community/community-helpers";
 import { cn } from "@/lib/utils";
-import { Filter, Loader2, MessageSquare, Plus, Search, UserRound } from "lucide-react";
+import { Filter, Loader2, MessageSquare, Plus, Radio, Search, UserRound } from "lucide-react";
 
 function applyCategoryFilter(
   nextCategory: string,
@@ -100,6 +100,14 @@ export function CommunityFeed({
             <Link href="/ai/community/new" className={cn(primaryCta, "min-h-11 px-3 py-2")}>
               <Plus className="h-4 w-4" aria-hidden />
               New post
+            </Link>
+            <Link
+              href="/ai/community/chat"
+              className={cn(chipBtn, "min-h-11 text-foreground")}
+              data-testid="community-chat-link"
+            >
+              <Radio className="h-3.5 w-3.5" aria-hidden />
+              Chat
             </Link>
             <Link
               href="/ai/community/me"

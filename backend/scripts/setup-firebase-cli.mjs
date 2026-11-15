@@ -230,7 +230,7 @@ async function enableEmailPasswordSignIn(pid) {
     return;
   }
   const { access_token: token } = await cred.getAccessToken();
-  const url = `https://identitytoolkit.googleapis.com/v2/projects/${pid}/config?updateMask=signIn.email.enabled`;
+  const url = `https://identitytoolkit.googleapis.com/v2/projects/${pid}/config?updateMask=signIn.email.enabled,signIn.phoneNumber.enabled`;
   const res = await fetch(url, {
     method: "PATCH",
     headers: {
@@ -240,6 +240,7 @@ async function enableEmailPasswordSignIn(pid) {
     body: JSON.stringify({
       signIn: {
         email: { enabled: true, passwordRequired: true },
+        phoneNumber: { enabled: true },
       },
     }),
   });
@@ -247,7 +248,7 @@ async function enableEmailPasswordSignIn(pid) {
     console.warn("Email/Password enable:", (await res.text()).slice(0, 300));
     return;
   }
-  console.log("Enabled Email + Password sign-in on Firebase project");
+  console.log("Enabled Email/Password and Phone sign-in on Firebase project");
 }
 
 async function main() {

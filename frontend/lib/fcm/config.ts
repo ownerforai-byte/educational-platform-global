@@ -30,7 +30,7 @@ export function readFirebaseWebConfig(): FirebaseWebConfig | null {
 
   return {
     apiKey,
-    authDomain,
+    authDomain: resolveAuthDomain(authDomain, projectId),
     projectId,
     storageBucket,
     messagingSenderId,
@@ -51,4 +51,18 @@ export function isFirebaseWebConfigured(): boolean {
 /** Full FCM readiness: web config AND the VAPID key are both set. */
 export function isFcmConfigured(): boolean {
   return Boolean(readFirebaseWebConfig() && readFcmVapidKey());
+}
+
+/**
+ * Custom auth subdomains (e.g. auth.example.com) need Firebase Hosting DNS
+ * before they work. On localhost, fall back to the default *.firebaseapp.com
+ * handler so Google / phone auth keep working during local dev.
+ */
+export function resolveAuthDomain(authDomain: string, projectId: string): string {
+  if (typeof window === "undefined") return authDomain;
+  const host = window.location.hostname;
+  if ((host === "localhost" || host === "127.0.0.1") && !authDomain.endsWith(".firebaseapp.com")) {
+    return `${projectId}.firebaseapp.com`;
+  }
+  return authDomain;
 }

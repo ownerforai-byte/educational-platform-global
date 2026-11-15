@@ -8,10 +8,13 @@ import {
   signInWithRedirect,
   getRedirectResult,
   GoogleAuthProvider,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
   signOut as firebaseSignOut,
   sendPasswordResetEmail,
   confirmPasswordReset,
   onAuthStateChanged,
+  type ConfirmationResult,
   type User,
 } from "firebase/auth";
 import { getPublicEnv } from "@/lib/env";
@@ -116,4 +119,47 @@ export function subscribeFirebaseUser(cb: (user: User | null) => void): () => vo
   const auth = getFirebaseAuth();
   if (!auth) return () => {};
   return onAuthStateChanged(auth, cb);
+}
+
+let phoneRecaptcha: RecaptchaVerifier | null = null;
+
+function getPhoneRecaptcha(containerId: string): RecaptchaVerifier {
+  const auth = getFirebaseAuth();
+  if (!auth) throw new Error("Firebase Auth is not configured");
+  if (phoneRecaptcha) {
+    try {
+      phoneRecaptcha.clear();
+    } catch {
+      // stale widget — replace below
+    }
+    phoneRecaptcha = null;
+  }
+  phoneRecaptcha = new RecaptchaVerifier(auth, containerId, { size: "invisible" });
+  return phoneRecaptcha;
+}
+
+/** E.164 recommended (e.g. +9779812345678). Returns an object to pass to {@link firebasePhoneConfirm}. */
+export async function firebasePhoneSendCode(
+  phoneNumber: string,
+  recaptchaContainerId: string,
+): Promise<ConfirmationResult> {
+  const auth = getFirebaseAuth();
+  if (!auth) throw new Error("Firebase Auth is not configured");
+  const verifier = getPhoneRecaptcha(recaptchaContainerId);
+  return signInWithPhoneNumber(auth, phoneNumber.trim(), verifier);
+}
+
+export async function firebasePhoneConfirm(confirmation: ConfirmationResult, smsCode: string): Promise<string> {
+  const cred = await confirmation.confirm(smsCode.trim());
+  return cred.user.getIdToken();
+}
+
+export function clearPhoneRecaptcha(): void {
+  if (!phoneRecaptcha) return;
+  try {
+    phoneRecaptcha.clear();
+  } catch {
+    // ignore
+  }
+  phoneRecaptcha = null;
 }
