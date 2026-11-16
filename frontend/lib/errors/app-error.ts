@@ -220,11 +220,10 @@ export function publicErrorMessage(
       message: getErrorMessage(error, fallback),
     });
   const isSensitive =
-    status >= 500 ||
-    status === 0 ||
     isNetworkError(error) ||
     isTimeoutError(error) ||
-    (typeof status === "number" && status >= 502 && status <= 504);
+    (typeof status === "number" &&
+      (status === 0 || status >= 500 || (status >= 502 && status <= 504)));
   if (isSensitive) {
     const ref = formatPublicErrorRef(errorNo, errorId);
     return process.env.NODE_ENV === "production"

@@ -174,6 +174,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
       try {
         const fresh = await getPost(postId);
         const incoming = fresh.post;
+        if (!incoming) continue;
         const botRows = (incoming.comments ?? []).filter((row) => isCommunityBot(row.author.id));
         const gained = botRows.some((row) => !beforeIds.has(row.id));
         if (gained || (incoming.comments?.length ?? 0) > beforeIds.size) {

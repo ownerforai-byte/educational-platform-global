@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { CommunityBoard, CommunityLoading } from "@/features/community/community-board";
+import { CommunityBoard } from "@/features/community/community-board";
+import { CommunityLoading } from "@/features/community/community-helpers";
 
 export const metadata: Metadata = {
   title: "Community post",

@@ -205,14 +205,12 @@ describe("createTimeoutSignal", () => {
 });
 
 describe("publicErrorMessage", () => {
-  const originalEnv = process.env.NODE_ENV;
-
   afterEach(() => {
-    process.env.NODE_ENV = originalEnv;
+    vi.unstubAllEnvs();
   });
 
   it("shows a stable error number and short incident suffix in production", () => {
-    process.env.NODE_ENV = "production";
+    vi.stubEnv("NODE_ENV", "production");
     const err = Object.assign(new Error("database timeout"), {
       status: 502,
       errorId: "a1b2c3d4",
@@ -222,7 +220,7 @@ describe("publicErrorMessage", () => {
   });
 
   it("keeps explicit auth messages", () => {
-    process.env.NODE_ENV = "production";
+    vi.stubEnv("NODE_ENV", "production");
     const err = Object.assign(new Error("Sign in required"), { status: 401 });
     expect(publicErrorMessage(err)).toBe("Sign in required");
   });
