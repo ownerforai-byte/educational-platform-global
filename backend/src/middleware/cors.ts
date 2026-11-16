@@ -21,7 +21,13 @@ export function parseAllowedOrigins(raw: string | undefined): string[] {
 export function getAllowedOrigins(): string[] {
   const origins = parseAllowedOrigins(process.env.FRONTEND_URL);
   if (origins.length === 0) {
-    origins.push("http://localhost:5173", "http://localhost:3000", "http://0.0.0.0:3000");
+    origins.push(
+      "http://localhost:5173",
+      "http://localhost:3000",
+      "http://127.0.0.1:5173",
+      "http://127.0.0.1:3000",
+      "http://0.0.0.0:3000"
+    );
   }
   const apex = "https://harindrasah.com.np";
   if (!origins.includes(apex)) {

@@ -82,9 +82,8 @@ export function SocialAuthButtons({
     try {
       const csrfToken = await requestOAuthCsrf();
       sessionStorage.setItem("neb_oauth_csrf", csrfToken);
-      // Firebase-only (Supabase auth removed 2026-01): hand off to the canonical
-      // /auth/callback, which starts the Firebase Google redirect round-trip on
-      // the firebaseapp.com handler — works from either apex or www origin.
+      // Firebase-only: hand off to the canonical /auth/callback, which starts
+      // the Firebase Google redirect round-trip on the firebaseapp.com handler.
       window.location.assign(publicUrl("/auth/callback?firebase_start=1"));
       redirected = true;
     } catch (oauthError) {
