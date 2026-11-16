@@ -188,6 +188,7 @@ export async function runCommunityBotProfileDiscoveryPost(now = new Date()) {
   return insertBotPost({
     title: `Science timeline · ${pick.year}`,
     body,
+    category: "general",
     visibility: "profile_only",
   });
 }
