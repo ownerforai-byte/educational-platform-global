@@ -2,10 +2,7 @@
 
 import { useState } from "react";
 import { Loader2 } from "lucide-react";
-import { useFirebaseClientAuth } from "@/lib/firebase/client-auth";
-import { getSupabaseBrowserClient, isOAuthProviderEnabled } from "@/lib/supabase/browser";
 import { apiFetch } from "@/lib/api-client";
-import { oauthCallbackUrl } from "@/lib/supabase/oauth-config";
 import { publicUrl } from "@/lib/site-url";
 import { authFailureDetail, authFailureMessage } from "../public-messages";
 
@@ -83,32 +80,12 @@ export function SocialAuthButtons({
     let redirected = false;
 
     try {
-      const firebaseAuth = useFirebaseClientAuth();
-      if (!firebaseAuth && !(await isOAuthProviderEnabled("google"))) {
-        const unavailable = new Error("unavailable");
-        onError?.(
-          authFailureMessage(unavailable, "oauth"),
-          authFailureDetail(unavailable),
-        );
-        return;
-      }
-
       const csrfToken = await requestOAuthCsrf();
       sessionStorage.setItem("neb_oauth_csrf", csrfToken);
-
-      if (firebaseAuth) {
-        // Same canonical callback as Supabase — never a preview deployment host.
-        window.location.assign(publicUrl("/auth/callback?firebase_start=1"));
-        redirected = true;
-        return;
-      }
-
-      // ONE canonical callback for every deployed host (owner 2026-11-08).
-      const { error: oauthError } = await getSupabaseBrowserClient().auth.signInWithOAuth({
-        provider: "google",
-        options: { redirectTo: oauthCallbackUrl() },
-      });
-      if (oauthError) throw oauthError;
+      // Firebase-only (Supabase auth removed 2026-01): hand off to the canonical
+      // /auth/callback, which starts the Firebase Google redirect round-trip on
+      // the firebaseapp.com handler — works from either apex or www origin.
+      window.location.assign(publicUrl("/auth/callback?firebase_start=1"));
       redirected = true;
     } catch (oauthError) {
       sessionStorage.removeItem("neb_oauth_csrf");

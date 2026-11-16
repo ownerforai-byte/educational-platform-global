@@ -23,8 +23,14 @@ export function getAllowedOrigins(): string[] {
   if (origins.length === 0) {
     origins.push("http://localhost:5173", "http://localhost:3000", "http://0.0.0.0:3000");
   }
-  if (!origins.includes("https://www.harindrasah.com.np")) {
-    origins.push("https://www.harindrasah.com.np");
+  // Both production hosts must be accepted: the apex (bare domain) and www.
+  // The apex was missing here, so backend CORS + /oauth/session rejected any
+  // request whose Origin was https://harindrasah.com.np — breaking Google
+  // sign-in on the apex domain.
+  for (const host of ["https://www.harindrasah.com.np", "https://harindrasah.com.np"]) {
+    if (!origins.includes(host)) {
+      origins.push(host);
+    }
   }
   return Array.from(new Set(origins));
 }

@@ -14,8 +14,13 @@ import { isBlockedAutomatedClient } from "@rn/shared/utils";
  */
 export const SUPABASE_ORIGIN = PUBLIC_SUPABASE_URL;
 
-/** Apex App Links must serve `/.well-known/*` with 200 (no redirect to www). */
-const APEX_HOST = "harindrasah.com.np";
+/**
+ * Canonical production host (www). The apex host (harindrasah.com.np) is now a
+ * first-class origin — NO apex→www 308 (owner request 2026-01: both domains
+ * serve Production directly so Firebase auth, OAuth round-trips and API calls
+ * work on either host). `/.well-known/*` and the apex host both serve directly;
+ * www remains the canonical host for the `<link rel="canonical">` SEO hint only.
+ */
 const WWW_HOST = "www.harindrasah.com.np";
 
 const RATE_LIMIT_WINDOW = 60_000;
@@ -130,9 +135,12 @@ function buildContentSecurityPolicy(nonce: string | null) {
   // third-party browser AI runtime (removed 2026-11-12).
   // `strict-dynamic` lets nonce-bearing scripts load their children without
   // enumerating every host; without a nonce (prerender) keep unsafe-inline.
+  // reCAPTCHA (phone auth) loads from gstatic / google / recaptcha; allow it on
+  // the nonce-free (prerendered) path and as a safety net. With a nonce,
+  // 'strict-dynamic' lets the Firebase SDK chain-load reCAPTCHA.
   const scriptSrc = nonce
     ? `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`
-    : "script-src 'self' 'unsafe-inline'";
+    : "script-src 'self' 'unsafe-inline' https://www.gstatic.com https://www.recaptcha.net https://www.google.com";
 
   const apiOrigin = process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com";
   const firebaseAuthDomain = process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN?.trim().replace(/\/+$/, "");
@@ -150,11 +158,17 @@ function buildContentSecurityPolicy(nonce: string | null) {
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: https:",
       "font-src 'self' data: https://fonts.gstatic.com",
-      // Firebase Auth REST/token exchange plus FCM registration and push handshake hosts.
-      `connect-src 'self' ${apiOrigin} ${SUPABASE_ORIGIN} https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://fcm.googleapis.com https://firebaseinstallations.googleapis.com https://firebase.googleapis.com wss: ws:`,
-      // In-app embeds: our own PDFs under /pdfs + /materials, PDF resources on
-      // Supabase Storage, Google Drive previews, and the video players.
-      "frame-src 'self' " + SUPABASE_ORIGIN + (firebaseAuthOrigin ? ` ${firebaseAuthOrigin}` : "") + " https://drive.google.com https://docs.google.com https://www.youtube.com https://player.vimeo.com https://webnotee.com",
+      // Firebase Auth REST/token exchange (identitytoolkit / securetoken),
+      // Google Sign-In (accounts.google.com + OAuth token endpoints), FCM /
+      // installations, phone-auth reCAPTCHA (google.com / gstatic / recaptcha)
+      // and Facebook Login — all allow-listed so auth works on both the apex
+      // and www origins.
+      `connect-src 'self' ${apiOrigin} ${SUPABASE_ORIGIN} https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://fcm.googleapis.com https://firebaseinstallations.googleapis.com https://firebase.googleapis.com https://*.googleapis.com https://www.googleapis.com https://accounts.google.com https://*.firebaseapp.com https://*.gstatic.com https://www.google.com https://recaptcha.google.com https://recaptcha.net https://www.facebook.com https://graph.facebook.com wss: ws:`,
+      // In-app embeds + auth: the Firebase auth handler (firebaseapp.com),
+      // Google Sign-In (accounts.google.com), phone-auth reCAPTCHA, Facebook
+      // Login, our own PDFs under /pdfs + /materials, PDF resources on Supabase
+      // Storage, Google Drive previews, and the video players.
+      "frame-src 'self' " + SUPABASE_ORIGIN + (firebaseAuthOrigin ? ` ${firebaseAuthOrigin}` : "") + " https://*.firebaseapp.com https://accounts.google.com https://www.google.com https://recaptcha.google.com https://*.facebook.com https://drive.google.com https://docs.google.com https://www.youtube.com https://player.vimeo.com https://webnotee.com",
       // Modern equivalent of the X-Frame-Options above: we may frame ourselves,
       // other sites may not frame us.
       "frame-ancestors 'self'",
@@ -216,13 +230,6 @@ export function proxy(request: NextRequest) {
 
   if (pathname.startsWith("/.well-known/")) {
     return NextResponse.next();
-  }
-
-  const host = request.headers.get("host")?.split(":")[0]?.toLowerCase() ?? "";
-  if (host === APEX_HOST) {
-    const url = request.nextUrl.clone();
-    url.hostname = WWW_HOST;
-    return NextResponse.redirect(url, 308);
   }
 
   if (isBlockedAutomatedClient(request.headers.get("user-agent"))) {

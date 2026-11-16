@@ -1,6 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
-import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
 
 const mocks = vi.hoisted(() => {
   const refresh = vi.fn();
@@ -17,6 +16,7 @@ const mocks = vi.hoisted(() => {
     isOAuthProviderEnabled: vi.fn(),
     firebaseGoogleSignIn: vi.fn(),
     firebaseConsumeRedirectResult: vi.fn(),
+    publicUrl: vi.fn((p: string) => `http://localhost:3000${p}`),
     firebaseMode: false,
     loginAction: vi.fn(),
     authState: { user: null as unknown, isLoading: false, refresh },
@@ -43,6 +43,7 @@ vi.mock("@/lib/supabase/browser", () => ({
   } }),
   isOAuthProviderEnabled: mocks.isOAuthProviderEnabled,
 }));
+vi.mock("@/lib/site-url", () => ({ publicUrl: mocks.publicUrl }));
 vi.mock("@/lib/firebase/client-auth", async (importOriginal) => {
   const actual = await importOriginal<typeof import("@/lib/firebase/client-auth")>();
   return {
@@ -112,15 +113,6 @@ describe("Social login", () => {
     expect(screen.queryByText(/Checking your session/i)).not.toBeInTheDocument();
   });
 
-  it("shows a useful message when the provider is disabled", async () => {
-    mocks.isOAuthProviderEnabled.mockResolvedValue(false);
-    render(<LoginForm />);
-    fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
-    expect(await screen.findByText(/Temporarily unavailable/i)).toBeInTheDocument();
-    expect(mocks.apiFetch).not.toHaveBeenCalled();
-    expect(mocks.signInWithOAuth).not.toHaveBeenCalled();
-  });
-
   it("starts Firebase Google OAuth without checking Supabase provider settings", async () => {
     mocks.firebaseMode = true;
     render(<LoginForm />);
@@ -139,67 +131,49 @@ describe("Social login", () => {
     render(<LoginForm />);
     fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
 
-    await waitFor(() => expect(mocks.signInWithOAuth).toHaveBeenCalledOnce());
+    await waitFor(() => expect(mocks.publicUrl).toHaveBeenCalledWith("/auth/callback?firebase_start=1"));
     expect(mocks.apiFetch).toHaveBeenCalledWith(
       "/api/auth/oauth/csrf",
       expect.objectContaining({ method: "POST" }),
     );
-    expect(mocks.signInWithOAuth).toHaveBeenCalledWith({
-      provider: "google",
-      options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
-      },
-    });
+    // Firebase-only: the handoff is a FIXED callback URL with no next/destination
+    // param, so a requested path can never skip the tier welcome.
+    expect(mocks.signInWithOAuth).not.toHaveBeenCalled();
   });
 
   it("starts Google OAuth with the same CSRF and callback flow", async () => {
     render(<LoginForm />);
     fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
 
-    await waitFor(() => expect(mocks.signInWithOAuth).toHaveBeenCalledOnce());
+    await waitFor(() => expect(mocks.publicUrl).toHaveBeenCalledWith("/auth/callback?firebase_start=1"));
+    // Firebase-only (Supabase removed): CSRF handshake → fixed
+    // /auth/callback?firebase_start=1 handoff. The CSRF token is stored for the
+    // callback to verify against the OAuth round-trip.
     expect(mocks.apiFetch).toHaveBeenCalledWith(
       "/api/auth/oauth/csrf",
       expect.objectContaining({ method: "POST" }),
     );
-    expect(mocks.signInWithOAuth).toHaveBeenCalledWith({
-      provider: "google",
-      options: {
-        redirectTo: `${window.location.origin}/auth/callback`,
-      },
-    });
+    expect(mocks.signInWithOAuth).not.toHaveBeenCalled();
   });
 
-  it("exchanges the callback code and always shows the resolved tier welcome before home", async () => {
+  it("exchanges the Firebase token and always shows the resolved tier welcome before home", async () => {
+    // Firebase-only callback (Supabase auth removed 2026-01): the page consumes
+    // the Firebase redirect credential and hands the ID token to the app backend.
+    mocks.firebaseMode = true;
     const state = "f".repeat(64);
     sessionStorage.setItem("neb_oauth_csrf", state);
-    // public-config.ts resolves the URL once at module load, so a runtime
-    // vi.stubEnv cannot redirect the storage-key prefix. Derive the keys from
-    // the same shared constant the callback uses (as supabase-browser.test.ts
-    // does) so the sweep assertion still exercises the real prefix.
-    const projectRef = new URL(PUBLIC_SUPABASE_URL).hostname.split(".")[0];
-    const authTokenKey = `sb-${projectRef}-auth-token`;
-    localStorage.setItem(authTokenKey, "{}");
-    localStorage.setItem(`${authTokenKey}-code-verifier`, "{}");
-    localStorage.setItem("unrelated-key", "keep");
+    mocks.firebaseConsumeRedirectResult.mockResolvedValueOnce("firebase-id-token");
     // The callback ignores the legacy next path and chooses by the returned user tier.
     mocks.apiFetch.mockResolvedValueOnce({ user: { id: "user-1", email: "student@example.com" }, accessToken: "app-access" });
 
     render(<AuthCallbackPage />);
 
     await waitFor(() => expect(mocks.replace).toHaveBeenCalledWith("/welcome/member"));
-    expect(mocks.exchangeCodeForSession).toHaveBeenCalledWith("oauth-code");
     expect(mocks.apiFetch).toHaveBeenCalledWith("/api/auth/oauth/session", {
       method: "POST",
       headers: { "X-CSRF-Token": state },
-      body: JSON.stringify({ accessToken: "supabase-access", refreshToken: "supabase-refresh", state }),
+      body: JSON.stringify({ accessToken: "firebase-id-token", state }),
     });
-    // The supabase-js local record is swept WITHOUT signOut: signOut still hits
-    // /auth/v1/logout and GoTrue deletes the server session the backend just
-    // minted (see auth/callback/page.tsx clearSupabaseLocalSession).
-    expect(mocks.signOut).not.toHaveBeenCalled();
-    expect(localStorage.getItem(authTokenKey)).toBeNull();
-    expect(localStorage.getItem(`${authTokenKey}-code-verifier`)).toBeNull();
-    expect(localStorage.getItem("unrelated-key")).toBe("keep");
     expect(mocks.setStoredToken).toHaveBeenCalledWith("app-access");
     expect(mocks.writeCachedSession).toHaveBeenCalledWith(
       { id: "user-1", email: "student@example.com" },
@@ -210,6 +184,7 @@ describe("Social login", () => {
   });
 
   it("sends pending social accounts to the owner-approval status screen", async () => {
+    mocks.firebaseMode = true;
     const state = "c".repeat(64);
     sessionStorage.setItem("neb_oauth_csrf", state);
     const pendingError = Object.assign(new Error("Account pending approval"), {
@@ -232,6 +207,7 @@ describe("Social login", () => {
     // The OAuth exchange answers a new PENDING account with HTTP 200 and
     // { code: "PENDING_APPROVAL", statusToken } and NO app session — the
     // callback must treat that as the waiting-screen handoff, not an error.
+    mocks.firebaseMode = true;
     const state = "d".repeat(64);
     sessionStorage.setItem("neb_oauth_csrf", state);
     mocks.apiFetch.mockResolvedValueOnce({ code: "PENDING_APPROVAL", statusToken: "signed-status-token" });

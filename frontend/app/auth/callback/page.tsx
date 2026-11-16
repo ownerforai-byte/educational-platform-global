@@ -10,8 +10,6 @@ import {
   useFirebaseClientAuth,
   FirebaseMfaRequiredError,
 } from "@/lib/firebase/client-auth";
-import { getSupabaseBrowserClient } from "@/lib/supabase/browser";
-import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
 import { apiFetch, setStoredToken } from "@/lib/api-client";
 import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
@@ -27,29 +25,6 @@ import { logAuthFailureDetail } from "@/features/auth/auth-debug";
 import { authFailureMessage } from "@/features/auth/public-messages";
 import { useAuthFormError } from "@/features/auth/use-auth-form-error";
 import type { OAuthSessionResponse } from "@/types/api";
-
-/**
- * Drop the supabase-js session record WITHOUT hitting its logout endpoint.
- * `signOut({ scope: "local" })` still POSTs /auth/v1/logout — and Supabase
- * GoTrue deletes the server-side session on any logout, killing the exact
- * access + refresh tokens this page just handed to the app backend. The
- * backend's own /me then 401s and a successful OAuth sign-in ends signed out.
- */
-function clearSupabaseLocalSession(): void {
-  try {
-    const projectRef = new URL(PUBLIC_SUPABASE_URL).hostname.split(".")[0];
-    // supabase-js keeps the session under `sb-<ref>-auth-token` and PKCE
-    // verifiers under per-flow variants of that key — sweep the whole prefix.
-    const prefix = `sb-${projectRef}-auth-token`;
-    for (const key of Object.keys(localStorage)) {
-      if (key === prefix || key.startsWith(`${prefix}-`)) {
-        localStorage.removeItem(key);
-      }
-    }
-  } catch {
-    // Best-effort hygiene: an orphaned SDK record is inert (auto-refresh off).
-  }
-}
 
 function AuthCallbackContent() {
   const router = useRouter();
@@ -72,7 +47,6 @@ function AuthCallbackContent() {
         }
 
         let accessToken: string;
-        let refreshToken: string | undefined;
         if (useFirebaseClientAuth()) {
           const state = sessionStorage.getItem("neb_oauth_csrf");
           if (!state || !/^[a-f0-9]{64}$/.test(state)) {
@@ -103,18 +77,10 @@ function AuthCallbackContent() {
           if (!idToken) throw new Error("The provider did not return a valid session.");
           accessToken = idToken;
         } else {
-          const state = sessionStorage.getItem("neb_oauth_csrf");
-          if (!state || !/^[a-f0-9]{64}$/.test(state)) {
-            throw new Error("Sign-in verification expired or failed. Please try again.");
-          }
-          const code = searchParams.get("code");
-          if (!code) throw new Error("The provider did not return an authorization code.");
-          const client = getSupabaseBrowserClient();
-          const { data, error: exchangeError } = await client.auth.exchangeCodeForSession(code);
-          if (exchangeError) throw exchangeError;
-          if (!data.session?.access_token) throw new Error("The provider did not return a valid session.");
-          accessToken = data.session.access_token;
-          refreshToken = data.session.refresh_token;
+          // Auth is Firebase-only (Supabase auth fully removed 2026-01). If the
+          // Firebase client isn't configured, fail loudly rather than fall
+          // through to a removed Supabase exchange path.
+          throw new Error("Firebase sign-in is not configured on this deployment.");
         }
 
         const csrfState = sessionStorage.getItem("neb_oauth_csrf");
@@ -125,17 +91,12 @@ function AuthCallbackContent() {
           headers: { "X-CSRF-Token": csrfState },
           body: JSON.stringify({
             accessToken,
-            ...(refreshToken ? { refreshToken } : {}),
             state: csrfState,
           }),
         });
         sessionStorage.removeItem("neb_oauth_csrf");
 
         // The app's backend validates the access token and sets its own
-        // HttpOnly session/refresh cookies. Drop the local SDK record only
-        // after the exchange succeeds; on failure keep OAuth details for a
-        // safe retry.
-        clearSupabaseLocalSession();
 
         // A brand-new Google account is PENDING (bot auto-approves in ~5 min).
         // The backend answers 200 + { code: "PENDING_APPROVAL", statusToken }
