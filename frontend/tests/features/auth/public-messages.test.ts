@@ -73,13 +73,15 @@ describe("isTemporaryAuthError", () => {
 });
 
 describe("API machine-code mappings", () => {
-  it("explains a missing Firebase Admin config instead of blaming credentials", () => {
+  it("does not blame credentials for a server-side sign-in outage", () => {
+    // The real cause (Firebase Admin / server env) stays out of the message; it
+    // must read as a transient outage, never as bad credentials.
     expect(
       authFailureMessage(
         Object.assign(new Error("x"), { status: 503, code: "FIREBASE_ADMIN_NOT_CONFIGURED" }),
         "login",
       ),
-    ).toContain("server env");
+    ).toBe(AUTH_TEMPORARILY_UNAVAILABLE);
   });
 
   it("maps FIREBASE_TOKEN_REJECTED per flow kind", () => {
@@ -100,19 +102,22 @@ describe("API machine-code mappings", () => {
     ).toContain("denied");
   });
 
-  it("maps phone SMS failures to actionable hints", () => {
+  it("maps phone SMS failures to friendly messages", () => {
+    // Actionable, user-facing hints are kept:
     expect(
       authFailureMessage(Object.assign(new Error("x"), { code: "auth/invalid-verification-code" }), "oauth"),
     ).toContain("SMS code");
     expect(
       authFailureMessage(Object.assign(new Error("x"), { code: "auth/invalid-phone-number" }), "oauth"),
     ).toContain("international format");
+    // Infrastructure failures (SMS billing, reCAPTCHA) collapse to the generic
+    // unavailable message so internal setup is never exposed:
     expect(
       authFailureMessage(Object.assign(new Error("x"), { code: "auth/billing-not-enabled" }), "signup"),
-    ).toContain("Blaze");
+    ).toBe(AUTH_TEMPORARILY_UNAVAILABLE);
     expect(
       authFailureMessage(Object.assign(new Error("x"), { code: "auth/captcha-check-failed" }), "oauth"),
-    ).toContain("reCAPTCHA");
+    ).toBe(AUTH_TEMPORARILY_UNAVAILABLE);
   });
 
   it("maps an existing-account conflict", () => {
