@@ -168,6 +168,9 @@ function resolveAuthFailureMessage(err: unknown, kind: AuthFailureKind): string 
   if (/invalid-api-key|api-key-not-valid|configuration-not-found/.test(code + " " + message)) {
     return "Firebase web configuration is missing or invalid (check the NEXT_PUBLIC_FIREBASE_* values).";
   }
+  if (/FIREBASE_ADMIN_NOT_CONFIGURED/i.test(code + " " + message)) {
+    return "Sign-in is offline: the server's Firebase Admin isn't configured (set FIREBASE_SERVICE_ACCOUNT_JSON on the API).";
+  }
 
   if (status === 503 || status === 502 || status === 504) {
     return AUTH_TEMPORARILY_UNAVAILABLE;

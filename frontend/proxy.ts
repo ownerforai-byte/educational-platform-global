@@ -168,7 +168,7 @@ function buildContentSecurityPolicy(nonce: string | null) {
       // Google Sign-In (accounts.google.com), phone-auth reCAPTCHA, Facebook
       // Login, our own PDFs under /pdfs + /materials, PDF resources on Supabase
       // Storage, Google Drive previews, and the video players.
-      "frame-src 'self' " + SUPABASE_ORIGIN + (firebaseAuthOrigin ? ` ${firebaseAuthOrigin}` : "") + " https://*.firebaseapp.com https://accounts.google.com https://www.google.com https://recaptcha.google.com https://*.facebook.com https://drive.google.com https://docs.google.com https://www.youtube.com https://player.vimeo.com https://webnotee.com",
+      "frame-src 'self' " + SUPABASE_ORIGIN + (firebaseAuthOrigin ? ` ${firebaseAuthOrigin}` : "") + " https://*.firebaseapp.com https://accounts.google.com https://www.google.com https://recaptcha.google.com https://*.facebook.com https://drive.google.com https://docs.google.com https://www.youtube.com https://player.vimeo.com https://webnotee.com https://vercel.live",
       // Modern equivalent of the X-Frame-Options above: we may frame ourselves,
       // other sites may not frame us.
       "frame-ancestors 'self'",
