@@ -18,5 +18,7 @@ describe("assetlinks.json route", () => {
     );
     expect(fingerprints).toHaveLength(4);
     expect(body[0]?.target?.package_name).toBe("com.ravikisan.platform");
+    const raw = body[0]?.target?.sha256_cert_fingerprints ?? [];
+    expect(raw.every((f: string) => /^[0-9a-f]{2}(:[0-9a-f]{2}){31}$/.test(f))).toBe(true);
   });
 });
