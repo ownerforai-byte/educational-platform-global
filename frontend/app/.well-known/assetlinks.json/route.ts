@@ -2,7 +2,9 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { REPO_ROOT_ASSETLINKS_PATH } from "@/lib/well-known";
 
-export const revalidate = 86_400;
+/** Never ISR-cache — Play/Google refetch must see fingerprint updates immediately. */
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 /**
  * Read `assetlinks.json` robustly across deployments. `REPO_ROOT_ASSETLINKS_PATH`
@@ -35,7 +37,7 @@ export async function GET() {
   return new Response(body, {
     headers: {
       "Content-Type": "application/json; charset=utf-8",
-      "Cache-Control": "public, max-age=3600, s-maxage=86400",
+      "Cache-Control": "public, max-age=300, must-revalidate",
     },
   });
 }
