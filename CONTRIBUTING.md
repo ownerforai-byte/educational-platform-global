@@ -33,7 +33,8 @@ cd frontend && npm run dev  # Next.js 15 App Router
 ## Branch model
 
 - `main` is the only deployable branch (pushing it triggers the Vercel
-  production deploy + Render backend deploy).
+  production deploy; the backend deploys to Firebase Cloud Functions via
+  `firebase deploy --only functions:api`).
 - 48 area branches exist for parallel work: `content/*` (subjects),
   `feature/*` (frontend routes), `backend/*` (API areas), `test/*`, `ci/*`,
   `chore/tooling`, `docs/agents-guides`. All start at `main`.

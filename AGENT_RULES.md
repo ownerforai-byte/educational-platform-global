@@ -62,7 +62,8 @@ repository.
 - Failed work must be recorded with the reason.
 
 ## Branches
-- `main` is the only deployable branch (push = Vercel/Render production deploy).
+- `main` is the only deployable branch (push = Vercel production deploy; the backend
+  deploys with `firebase deploy --only functions:api`).
 - One area per branch; merge area branches back to `main` often; delete a branch
   only after `git branch --merged main` confirms it is merged.
 - Never force-push; never push all branches at once (each push of a branch
@@ -112,17 +113,19 @@ repository.
   5. If new content routes are created, add them to the Docs Viewer registry so learners can view them immediately.
 
 ## Platform ops
-- **Render cold-start keep-alive (2026-10-27):** the backend runs on the Render free
-  tier at `https://rn01.onrender.com`, which sleeps between requests (~30-60s cold
-  start). `.github/workflows/keep-alive.yml` pings `/health` every 10 minutes on a
-  GitHub Actions schedule so the instance stays warm; the job is intentionally
-  always-green (even a timeout wakes the dyno). Alternative if the ping load is
-  ever unwanted: disable the workflow and switch the Render service to an
-  always-on plan in the Render dashboard (paid) — no code change needed.
+- **Backend host (Firebase Cloud Functions, 2026):** the backend runs as the
+  Cloud Functions gen2 function `api` (us-central1) at
+  `https://us-central1-rn01-af00b.cloudfunctions.net/api`. The former Render
+  free tier is decommissioned, and the keep-alive workflow
+  (`.github/workflows/keep-alive.yml`) that pinged it every 10 minutes has been
+  removed. Cold starts are ridden out by the bounded retries in the frontend
+  proxy (`frontend/app/api/[...path]/route.ts`); deploy the backend with
+  `firebase deploy --only functions:api`.
 - **Vercel only (2026-10-27):** the Cloudflare/open-next deployment path is gone —
   `frontend/open-next.config.ts`, `frontend/wrangler.jsonc` and the
   `@opennextjs/cloudflare` devDependency were removed. Frontend deploys to Vercel
-  (`www.harindrasah.com.np`), backend to Render; there is no third target.
+  (`www.harindrasah.com.np`), backend to Firebase Cloud Functions; there is no
+  third target.
 - **ISR corpus pages (2026-10-27):** the 20 class-11/class-12-notes corpus pages
   (subject, chapters, unit, topic, exercises, exercise-type, mindmap, syllabus,
   theory) are prerendered at build via `generateStaticParams` +
@@ -152,11 +155,11 @@ repository.
     `NEXT_PUBLIC_SENTRY_DSN` (client/browser, public by design) and/or
     `SENTRY_DSN` (server) in the Vercel project env or `frontend/.env.local`.
   - **Backend (Express):** `backend/src/index.ts` initializes Sentry before the
-    Express listen. Set `SENTRY_DSN` in the Render service env or `backend/.env`.
+    Express listen. Set `SENTRY_DSN` in the Cloud Functions environment or `backend/.env`.
 - DSN values are NEVER committed — `frontend/.env.example` and
   `backend/.env.example` carry placeholders only.
 - To activate: create a free Sentry project, copy its DSN into the platform's
-  env settings (Vercel / Render dashboards), and redeploy.
+  env settings (Vercel / Firebase consoles), and redeploy.
 
 ## E2E smoke (Playwright)
 - `frontend/tests/e2e/smoke.spec.ts` runs on push to `main` only

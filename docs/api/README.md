@@ -1,6 +1,6 @@
 # API Reference
 
-Base URL (production): `https://rn01.onrender.com`
+Base URL (production): `https://us-central1-rn01-af00b.cloudfunctions.net/api`
 
 All endpoints use JSON. Authenticated endpoints require either:
 - `Authorization: Bearer <token>` header

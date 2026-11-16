@@ -142,7 +142,7 @@ function buildContentSecurityPolicy(nonce: string | null) {
     ? `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`
     : "script-src 'self' 'unsafe-inline' https://www.gstatic.com https://www.recaptcha.net https://www.google.com";
 
-  const apiOrigin = process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com";
+  const apiOrigin = process.env.NEXT_PUBLIC_API_URL || "https://us-central1-rn01-af00b.cloudfunctions.net";
   const firebaseAuthDomain = process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN?.trim().replace(/\/+$/, "");
   const firebaseAuthOrigin = firebaseAuthDomain
     ? `https://${firebaseAuthDomain.replace(/^https?:\/\//, "")}`
@@ -163,12 +163,12 @@ function buildContentSecurityPolicy(nonce: string | null) {
       // installations, phone-auth reCAPTCHA (google.com / gstatic / recaptcha)
       // and Facebook Login — all allow-listed so auth works on both the apex
       // and www origins.
-      `connect-src 'self' ${apiOrigin} ${SUPABASE_ORIGIN} https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://fcm.googleapis.com https://firebaseinstallations.googleapis.com https://firebase.googleapis.com https://*.googleapis.com https://www.googleapis.com https://accounts.google.com https://*.firebaseapp.com https://*.gstatic.com https://www.google.com https://recaptcha.google.com https://recaptcha.net https://www.facebook.com https://graph.facebook.com wss: ws:`,
+      `connect-src 'self' ${apiOrigin} https://us-central1-rn01-af00b.cloudfunctions.net ${SUPABASE_ORIGIN} https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://fcm.googleapis.com https://firebaseinstallations.googleapis.com https://firebase.googleapis.com https://*.googleapis.com https://www.googleapis.com https://accounts.google.com https://*.firebaseapp.com https://*.gstatic.com https://www.google.com https://recaptcha.google.com https://recaptcha.net https://www.facebook.com https://graph.facebook.com wss: ws:`,
       // In-app embeds + auth: the Firebase auth handler (firebaseapp.com),
       // Google Sign-In (accounts.google.com), phone-auth reCAPTCHA, Facebook
       // Login, our own PDFs under /pdfs + /materials, PDF resources on Supabase
       // Storage, Google Drive previews, and the video players.
-      "frame-src 'self' " + SUPABASE_ORIGIN + (firebaseAuthOrigin ? ` ${firebaseAuthOrigin}` : "") + " https://*.firebaseapp.com https://accounts.google.com https://www.google.com https://recaptcha.google.com https://*.facebook.com https://drive.google.com https://docs.google.com https://www.youtube.com https://player.vimeo.com https://webnotee.com https://vercel.live",
+      "frame-src 'self' " + SUPABASE_ORIGIN + " https://us-central1-rn01-af00b.cloudfunctions.net" + (firebaseAuthOrigin ? ` ${firebaseAuthOrigin}` : "") + " https://*.firebaseapp.com https://accounts.google.com https://www.google.com https://recaptcha.google.com https://*.facebook.com https://drive.google.com https://docs.google.com https://www.youtube.com https://player.vimeo.com https://webnotee.com https://vercel.live",
       // Modern equivalent of the X-Frame-Options above: we may frame ourselves,
       // other sites may not frame us.
       "frame-ancestors 'self'",

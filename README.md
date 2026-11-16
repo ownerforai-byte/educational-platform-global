@@ -3,7 +3,7 @@
 > Curriculum-aligned, exam-grade study infrastructure for **NEB Class 11 & 12** students in Nepal.
 > Free, open-source, and built to work on a phone with a slow connection.
 
-**Live:** [www.harindrasah.com.np](https://www.harindrasah.com.np) · **API:** [rn01.onrender.com](https://rn01.onrender.com)
+**Live:** [www.harindrasah.com.np](https://www.harindrasah.com.np) · **API:** [us-central1-rn01-af00b.cloudfunctions.net/api](https://us-central1-rn01-af00b.cloudfunctions.net/api)
 
 ---
 
@@ -26,8 +26,8 @@ A full-stack study platform covering Physics, Chemistry, Biology, Mathematics, E
 | Frontend | Next.js 16 · React 19 · TypeScript · Tailwind CSS · shadcn/ui |
 | Backend | Express 4 · TypeScript ESM · Supabase (PostgreSQL) |
 | AI | Agnes (primary) · 10 free OpenAI-compatible fallbacks (LLM7, OVHcloud, OpenRouter …) |
-| Deploy | Vercel (frontend) · Render (backend) |
-| CI | GitHub Actions — CI, E2E smoke, Lighthouse, URL hygiene, keep-alive |
+| Deploy | Vercel (frontend) · Firebase Cloud Functions (backend) |
+| CI | GitHub Actions — CI, E2E smoke, Lighthouse, URL hygiene |
 
 ---
 
@@ -42,7 +42,7 @@ A full-stack study platform covering Physics, Chemistry, Biology, Mathematics, E
 │   ├── types/         Shared type hub (api, lab, content)
 │   ├── components/    UI + shims into features/
 │   └── tests/         Vitest (+ fixtures/)
-├── backend/           Express API (Render)
+├── backend/           Express API (Firebase Cloud Functions)
 │   ├── src/api/       Domain-grouped routers
 │   ├── src/ai/        Agnes + free-tier provider chain, prompts
 │   ├── src/middleware/ Auth, rate limits, spark gates
@@ -141,11 +141,9 @@ npm run check:all      # full gate — required before pushing main
 | Service | Branch trigger | Build command | Start |
 |---|---|---|---|
 | Vercel (frontend) | push to `main` | `cd frontend && npm run build` | Next.js server |
-| Render (backend) | push to `main` | `cd backend && npm run build` | `node dist/index.js` |
+| Firebase Cloud Functions (backend) | manual — `firebase deploy --only functions:api` | `cd backend && npm run build` | Cloud Functions `api` (gen2, us-central1) |
 
-The backend refuses to start in production without `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`. Set them in the Render service environment dashboard.
-
-A GitHub Actions keep-alive job pings `/health` every 10 minutes to keep the Render free-tier instance warm (`.github/workflows/keep-alive.yml`).
+The backend refuses to start in production without `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`. Set them in the Cloud Functions environment for the `api` function.
 
 ---
 

@@ -1,7 +1,7 @@
 # PROJECT STATUS
 
 ## CANONICAL PUBLIC ORIGIN (2026-11-14 — supersedes older URL references)
-**`https://www.harindrasah.com.np`**. The retired `ravikisan.vercel.app` application alias is no longer accepted; Vercel remains the hosting provider and Render remains the API host. Firebase authentication permits the custom `www` and apex domains while retaining its default Firebase auth-handler origin. All files modified for this migration are [IMPORTANT CORE FILE] under the repository classifier.
+**`https://www.harindrasah.com.np`**. The retired `ravikisan.vercel.app` application alias is no longer accepted; Vercel remains the hosting provider and Firebase Cloud Functions is the API host. Firebase authentication permits the custom `www` and apex domains while retaining its default Firebase auth-handler origin. All files modified for this migration are [IMPORTANT CORE FILE] under the repository classifier.
 
 
 ## PROJECT
@@ -24,7 +24,8 @@ main
 
 ## REPOSITORY STATE
 - Monorepo split complete: `frontend/` (Next.js 16 App Router) + `backend/` (Express 4 TS ESM).
-- Every push to `main` auto-deploys: Vercel (frontend) and Render (backend).
+- Every push to `main` auto-deploys the frontend to Vercel; the backend deploys with
+  `firebase deploy --only functions:api`.
 - See CURRENT TRUTH (bottom) for the verified live state; SYSTEM_WORK_TRACKER.md tracks
   each work type's completion.
 
@@ -337,7 +338,7 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 - **Workspace:** `C:\Users\ASUS\Desktop\rn` (monorepo: `frontend/` Next.js 16 + `backend/` Express 4 TS).
 - **Repo:** `github.com/ownerforai-byte/educational-platform-global` (branch `main`).
 - **Deploy:** both halves auto-deploy on every push to `main`. Frontend: Vercel production
-  `https://www.harindrasah.com.np`; backend: Render `https://rn01.onrender.com` (`/health`
+  `https://www.harindrasah.com.np`; backend: Firebase Cloud Functions `https://us-central1-rn01-af00b.cloudfunctions.net/api` (`/health`
   reports the deployed SHA). The foreign-WIP ship was verified READY at `0a52272b` (six
   commits: bill-everyone credits, AI image history, coin-gate UI, Image Hub for every
   student, PYQ reader + syllabus-by-year, PYQ corpus); the four-partial completions
@@ -364,7 +365,7 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 - `/api/ai/generate-questions`: was anonymous (burned paid AI credits) → now requireAuth + credit check.
 - Biology lab progress: was arbitrary `userId` read/write → now session-derived; **in-memory
   fallback store removed** — failures return honest 503 (`PROGRESS_STORE_UNAVAILABLE` / `PROGRESS_STORE_MISSING`).
-- CORS: production = exact `FRONTEND_URL` allowlist only (wildcards `*.vercel.app`/`*.onrender.com`
+- CORS: production = exact `FRONTEND_URL` allowlist only (host wildcards
   and non-prod allow-all removed; dev keeps localhost + preview wildcards).
 - Rate limits (tiered, in `middleware/rateLimit.ts`): login/refresh 10/min/IP; guest AI + global
   default 60/min/IP; authenticated AI unlimited (provider-gateway enforced).
@@ -381,7 +382,7 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 - The Next.js **14.x** advisory above belongs to the retired pre-split tree — the frontend now
   runs Next `^16.3.3` (`frontend/package.json`).
 - CORS: browser traffic reaches the backend through the frontend's `/api/*` proxy
-  (same-origin), so the Render `FRONTEND_URL` allowlist only matters for direct cross-origin
+  (same-origin), so the backend's `FRONTEND_URL` allowlist only matters for direct cross-origin
   calls; re-check it when that env changes.
 
 ### Verification state (2026-10-04)
@@ -405,8 +406,8 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 Track 1 foundation ✅ · Track 2 content gaps (class-11 authored + ledgered; class-12 authoring
 is the main open content campaign) · Track 3 architecture ✅ (tests.ts deduped, N+1 batched,
 admin O(N) fixed) · Track 4 tests ✅ (frontend + backend suites in CI) · Track 5 UI polish
-(ongoing) · Track 6 perf (open: bundle audit, Render cold-start keep-alive) · Track 7 deploy ✅
-(frontend Vercel + backend Render, verified live) · Track 8 system tracking ✅
+(ongoing) · Track 6 perf (open: bundle audit) · Track 7 deploy ✅
+(frontend Vercel + backend Firebase Cloud Functions, verified live) · Track 8 system tracking ✅
 (`SYSTEM_WORK_TRACKER.md` + `scripts/system-work-audit.mjs`).
 
 ---

@@ -42,7 +42,7 @@ providers, cookies, credit/premium system) so it matches reality.
 
 ## Facts these docs are based on (verified in repo)
 - **Frontend host:** Vercel — `https://www.harindrasah.com.np`
-- **Backend host:** Render — `https://rn01.onrender.com`
+- **Backend host:** Firebase Cloud Functions (gen2) — `https://us-central1-rn01-af00b.cloudfunctions.net/api`
 - **Data host:** Supabase (auth, PostgreSQL DB, storage, transactional email)
 - **AI:** third-party provider chain (LLM + image generation) powering "Veer"
 - **Cookies:** `sb-access-token` (~1h) + `sb-refresh-token` (30d), `httpOnly`,

@@ -153,9 +153,10 @@ const nextConfig = {
     return config;
   },
   async rewrites() {
-    // Backend origin — rn01.onrender.com is the live deployment (verified 200
-    // on /health). Override with NEXT_PUBLIC_API_URL for local/other targets.
-    const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com";
+    // Backend origin — the Firebase Cloud Functions `api` function (gen2,
+    // us-central1) is the live deployment. Override with NEXT_PUBLIC_API_URL
+    // for local/other targets.
+    const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "https://us-central1-rn01-af00b.cloudfunctions.net/api";
     return [
       {
         source: "/api/:path*",

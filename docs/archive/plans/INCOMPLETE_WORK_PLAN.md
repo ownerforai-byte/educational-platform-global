@@ -51,7 +51,7 @@ for quality or launch · **P2** = polish, later.
         member Plus-gated sign-in spec stops skipping. No code change needed.
 - Level: **owner secrets only**; auth code is healthy.
 - Concerned files:
-  - `.github/workflows/live-smoke.yml` lines 19–23 — reads `SMOKE_OWNER_EMAIL` / `SMOKE_OWNER_PASSWORD`; targets `https://rn01.onrender.com`.
+  - `.github/workflows/live-smoke.yml` lines 19–23 — reads `SMOKE_OWNER_EMAIL` / `SMOKE_OWNER_PASSWORD`; targeted the then-live Render backend (since migrated to Firebase Cloud Functions).
   - `.github/workflows/e2e-smoke.yml` — reads the two public Supabase values and all four `SMOKE_*` credentials.
   - `.github/workflows/lighthouse.yml` lines 34–35 — same two public values.
   - `frontend/tests/e2e/smoke.spec.ts` lines 61–67 (owner) and 114–116 (member) — in-body skips.
@@ -78,8 +78,8 @@ for quality or launch · **P2** = polish, later.
 - Concerned files:
   - `backend/.env.example` and `backend/.env` (local, gitignored via `.gitignore:33`; contents not read).
   - `frontend/vercel.json` — Vercel frontend config (the only deploy config file found; no `render.yaml` in the repo).
-  - `.github/workflows/live-smoke.yml` line 20 — `SMOKE_BASE_URL` points at Render (`rn01.onrender.com`), which backs the "Render backend" claim.
-  - `.github/workflows/keep-alive.yml` — the cron ping for Render cold starts. Opened in a later pass: runs every 10 minutes, curls `https://rn01.onrender.com/health`, and never fails the run.
+  - `.github/workflows/live-smoke.yml` line 20 — `SMOKE_BASE_URL` pointed at the then-live Render backend (since migrated to Firebase Cloud Functions), which backs the "Render backend" claim.
+  - `.github/workflows/keep-alive.yml` — the cron ping for Render cold starts. Opened in a later pass: runs every 10 minutes, curls the then-live Render `/health`, and never fails the run. (The workflow has since been removed with the Render decommission.)
   - `PROJECT_STATUS.md` — the "UNDECIDED" line to reconcile.
 
 ### 0.6 Repo cleanup of sensitive/bulk artifacts — PARTLY DONE (checked 2026-11-10)
@@ -312,7 +312,7 @@ Source: `plan.md` lines 579–664, every `- [ ]` box. Boxes already covered abov
 
 **Phase 5 — Reliability & brand**
 - [ ] Custom domain for frontend and API (`plan.md` 631, P0) — Level: **Ops/owner** (DNS and hosting; no code). Concerned: `frontend/lib/` API base URL config (not located in this pass), `frontend/next.config.mjs`, `backend/src/app.ts` (CORS allowlist, to be checked when the domain changes).
-- [ ] Replace the cron-ping workaround (`plan.md` 632, P1) — Level: **Owner decision** (hosting plan cost) plus **Ops**. Concerned: `.github/workflows/keep-alive.yml` (pings `https://rn01.onrender.com/health` every 10 minutes and never fails the run; read in an earlier pass).
+- [ ] Replace the cron-ping workaround (`plan.md` 632, P1) — Level: **Owner decision** (hosting plan cost) plus **Ops**. Concerned: `.github/workflows/keep-alive.yml` (pinged the then-live Render backend's `/health` every 10 minutes and never failed the run; read in an earlier pass; the workflow was removed when the backend moved to Firebase Cloud Functions).
 - [ ] Public status page, uptime monitoring and alerting (`plan.md` 633, P1) — Level: **Ops/owner** (external monitor account). Concerned: `backend/src/app.ts` (health route), `.github/workflows/keep-alive.yml`.
 - [ ] Staging environment, preview deploys for backend, documented rollback (`plan.md` 634, P1) — Level: **Ops/owner**. Concerned: `.github/workflows/`, `BRANCHES.md` (branch rules apply), `docs/DEPLOYMENT.md` (exists per the Phase 2 checkbox).
 - [ ] Backups, restore drill for Supabase, migration runbook (`plan.md` 635, P2) — Level: **Ops/owner** plus **Validation** (restore drill is a live action; needs owner approval). Concerned: `backend/` migrations folder (not located in this pass), `docs/DEPLOYMENT.md`.

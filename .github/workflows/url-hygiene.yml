@@ -33,8 +33,29 @@ jobs:
           #   frontend/lib/supabase/oauth-config.ts (re-exports the canonical
           #     origin next to the OAuth wiring)
           #   *.env.example (documentation of an example value, not a runtime path)
+          # The canonical API host is
+          # https://us-central1-rn01-af00b.cloudfunctions.net (Firebase Cloud
+          # Functions gen2 function `api`); it may be hard-coded only in the
+          # config homes above.
+          #
+          # The retired Render host is allowed NOWHERE — no allowlist. (The
+          # bracketed [o] is the grep-guard idiom: the pattern matches the host
+          # while this file itself stays free of the literal.)
+          RETIRED=$(git grep -n -E \
+            'https://[a-z0-9-]+\.[o]nrender\.com' \
+            -- \
+            frontend \
+            scripts \
+            docs \
+            .github \
+            play-store \
+            '*.md' \
+            ':(exclude)backend' \
+            ':(exclude)firebase' \
+            ':(exclude)frontend/public' || true)
+
           VIOLATIONS=$(git grep -n -E \
-            '(https://[a-z0-9-]+\.vercel\.app|https://[a-z0-9-]+\.onrender\.com)' \
+            '(https://[a-z0-9-]+\.vercel\.app|https://us-central1-rn01-af00b\.cloudfunctions\.net)' \
             -- \
             'backend/src' \
             ':(exclude)backend/src/config/env.ts' \
@@ -55,12 +76,18 @@ jobs:
             ':(exclude)*.test.*' \
             ':(exclude)*.spec.*' || true)
 
+          if [ -n "$RETIRED" ]; then
+            echo "::error::Retired Render host hard-coded — it is allowed nowhere."
+            echo "$RETIRED"
+          fi
           if [ -n "$VIOLATIONS" ]; then
             echo "::error::Hardcoded deployment URL(s) found outside config files."
             echo "$VIOLATIONS"
             echo ""
             echo "Fix: import { PUBLIC_SITE_URL } from 'backend/src/config/env' (backend)"
             echo "or read process.env.NEXT_PUBLIC_API_URL (frontend) instead."
+          fi
+          if [ -n "$RETIRED" ] || [ -n "$VIOLATIONS" ]; then
             exit 1
           fi
           echo "OK: no hardcoded deployment URLs outside config files."

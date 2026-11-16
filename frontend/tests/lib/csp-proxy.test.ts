@@ -21,7 +21,7 @@ function buildPolicy(nonce: string | null, apiOrigin: string, supabaseOrigin: st
 
 describe("CSP nonce policy shape (T20)", () => {
   it("includes nonce, strict-dynamic, Firebase Auth/FCM hosts, and object-src none", () => {
-    const csp = buildPolicy("abc123", "https://rn01.onrender.com", "https://xyz.supabase.co");
+    const csp = buildPolicy("abc123", "https://us-central1-rn01-af00b.cloudfunctions.net", "https://xyz.supabase.co");
     expect(csp).toContain("script-src 'self' 'nonce-abc123' 'strict-dynamic'");
     expect(csp).toContain("https://identitytoolkit.googleapis.com");
     expect(csp).toContain("https://securetoken.googleapis.com");
@@ -31,7 +31,7 @@ describe("CSP nonce policy shape (T20)", () => {
   });
 
   it("allows unsafe-inline only when nonce is absent (prerender)", () => {
-    const csp = buildPolicy(null, "https://rn01.onrender.com", "https://xyz.supabase.co");
+    const csp = buildPolicy(null, "https://us-central1-rn01-af00b.cloudfunctions.net", "https://xyz.supabase.co");
     expect(csp).toContain("script-src 'self' 'unsafe-inline'");
     expect(csp).not.toContain("strict-dynamic");
   });

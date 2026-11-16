@@ -1,8 +1,8 @@
 name: Live Smoke Test
 
 on:
-  # After every push to main, wait until Render has actually deployed the
-  # triggering revision, then verify the deployed backend.
+  # After every push to main, wait until the deployed backend is actually
+  # serving the triggering revision, then verify it.
   push:
     branches: [main]
   workflow_dispatch: {}
@@ -17,7 +17,7 @@ jobs:
       - name: Run live smoke test (polls until the pushed revision is live)
         working-directory: backend
         env:
-          SMOKE_BASE_URL: https://rn01.onrender.com
+          SMOKE_BASE_URL: https://us-central1-rn01-af00b.cloudfunctions.net/api
           SMOKE_EXPECTED_COMMIT: ${{ github.sha }}
           SMOKE_OWNER_EMAIL: ${{ secrets.SMOKE_OWNER_EMAIL }}
           SMOKE_OWNER_PASSWORD: ${{ secrets.SMOKE_OWNER_PASSWORD }}

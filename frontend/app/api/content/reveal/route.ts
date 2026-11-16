@@ -3,7 +3,8 @@ import { NextRequest, NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 
 const BACKEND_URL =
-  process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com";
+  process.env.NEXT_PUBLIC_API_URL ||
+  "https://us-central1-rn01-af00b.cloudfunctions.net/api";
 
 /**
  * POST /api/content/reveal

@@ -2,7 +2,7 @@
  * Quick production wiring checks (no secrets). Run: node scripts/auth-wiring-check.mjs
  */
 const SITE = process.env.AUTH_CHECK_SITE || "https://www.harindrasah.com.np";
-const API = process.env.AUTH_CHECK_API || "https://rn01.onrender.com";
+const API = process.env.AUTH_CHECK_API || "https://us-central1-rn01-af00b.cloudfunctions.net/api";
 const FIREBASE_AUTH_DOMAIN =
   process.env.AUTH_CHECK_FIREBASE_DOMAIN || "rn01-af00b.firebaseapp.com";
 

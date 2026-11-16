@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com";
+const BACKEND_URL =
+  process.env.NEXT_PUBLIC_API_URL || "https://us-central1-rn01-af00b.cloudfunctions.net/api";
 
 /**
  * Hop-by-hop / framing headers must not be replayed: `fetch` already
@@ -22,18 +23,19 @@ const STRIPPED_RESPONSE_HEADERS = new Set([
   "set-cookie",
 ]);
 
-/** Render free-tier cold starts routinely exceed 30s; keep below browser limits. */
+/** Serverless cold starts can exceed 30s; keep below browser limits. */
 const BACKEND_FETCH_TIMEOUT_MS = 55_000;
 const BACKEND_FETCH_ATTEMPTS = 3;
 const BACKEND_FETCH_RETRY_MS = [400, 1_200] as const;
 
 /**
- * Render's free tier cold-starts in ~30–45s and resets the TCP connection on the
- * first request (`ECONNRESET` / "socket hang up"). The browser used to get a
- * 503 for /api/auth/me and /api/auth/login, which left the guest home on its
- * session spinner and made owner sign-in time out. Bounded retries with a
- * cold-start-aware timeout ride out the first reset; a hard cap still stops a
- * hung backend from holding the request open indefinitely.
+ * Serverless backends (Firebase Cloud Functions gen2) cold-start on the first
+ * request and can reset the TCP connection (`ECONNRESET` / "socket hang up")
+ * while the instance boots. The browser used to get a 503 for /api/auth/me and
+ * /api/auth/login, which left the guest home on its session spinner and made
+ * owner sign-in time out. Bounded retries with a cold-start-aware timeout ride
+ * out the first reset; a hard cap still stops a hung backend from holding the
+ * request open indefinitely.
  */
 async function fetchBackend(targetUrl: string, init: RequestInit): Promise<Response> {
   let lastError: unknown;

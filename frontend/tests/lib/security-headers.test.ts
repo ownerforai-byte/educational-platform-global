@@ -245,13 +245,13 @@ describe("proxy apex host for App Links", () => {
     expect(response.headers.get("location")).toBeNull();
   });
 
-  it("redirects other apex paths to www", () => {
+  it("serves other apex paths directly, since apex and www are both first-class", () => {
     const response = proxy(
       new NextRequest("https://harindrasah.com.np/home", {
         headers: { host: "harindrasah.com.np" },
       }),
     );
-    expect(response.status).toBe(308);
-    expect(response.headers.get("location")).toBe("https://www.harindrasah.com.np/home");
+    expect(response.status).toBe(200);
+    expect(response.headers.get("location")).toBeNull();
   });
 });

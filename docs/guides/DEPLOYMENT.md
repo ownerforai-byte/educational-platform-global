@@ -5,9 +5,12 @@
 | Service | Platform | URL |
 |---|---|---|
 | Frontend | Vercel | https://www.harindrasah.com.np |
-| Backend API | Render (free tier) | https://rn01.onrender.com |
+| Backend API | Firebase Cloud Functions (gen2) | https://us-central1-rn01-af00b.cloudfunctions.net/api |
 
-Both auto-deploy on push to `main`. Never push `main` with failing `npm run check:all`.
+The frontend auto-deploys on push to `main`. The backend deploys as the
+Cloud Functions `api` function with `firebase deploy --only functions:api`.
+The former Render backend is decommissioned. Never push `main` with failing
+`npm run check:all`.
 
 ## Frontend — Vercel
 
@@ -20,7 +23,7 @@ Required environment variables (set in Vercel dashboard → Settings → Environ
 ```
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
-NEXT_PUBLIC_API_URL=https://rn01.onrender.com
+NEXT_PUBLIC_API_URL=https://us-central1-rn01-af00b.cloudfunctions.net/api
 NEXT_PUBLIC_SITE_URL=https://www.harindrasah.com.np
 ```
 
@@ -29,13 +32,15 @@ Optional:
 NEXT_PUBLIC_SENTRY_DSN=     # enables error monitoring (see AGENTS.md)
 ```
 
-## Backend — Render
+## Backend — Firebase Cloud Functions (gen2)
 
 **Build command:** `cd backend && npm install && npm run build`
-**Start command:** `node backend/dist/index.js`
+**Deploy command:** `firebase deploy --only functions:api` (from the repo root;
+deploys the `api` function, gen2, region `us-central1`)
 **Node version:** 20+
 
-Required environment variables (set in Render dashboard → Environment):
+Required environment variables (set in the Cloud Functions environment for
+the `api` function):
 
 ```
 SUPABASE_URL=
@@ -61,11 +66,12 @@ The backend refuses to start in production if `SUPABASE_URL` or
 `SUPABASE_SERVICE_ROLE_KEY` is missing. It will log the missing variables
 and exit with code 1.
 
-## Keep-alive (Render free tier)
+## Cold starts
 
-`.github/workflows/keep-alive.yml` pings `/health` every 10 minutes to
-prevent the Render instance from sleeping. This adds ~150 GitHub Actions
-minutes/month. Switch to an always-on Render plan to remove the dependency.
+Cloud Functions scale to zero, so a cold start can take ~30s on the first
+request. The frontend proxy retries with a cold-start-aware timeout
+(`frontend/app/api/[...path]/route.ts`), so no keep-alive ping is needed —
+the old Render keep-alive workflow was removed with the Render decommission.
 
 ## Database migrations
 
@@ -98,9 +104,8 @@ Vercel runs the build command above which includes the content build step.
 # Revert to the previous deploy on Vercel:
 # Dashboard → Deployments → select the previous → Promote to Production
 
-# Revert to a previous commit on Render:
-# Change the "Deploy on push" commit in Render dashboard, or redeploy
-# a specific commit hash.
+# Redeploy a previous backend revision: check out the desired commit and
+# run `firebase deploy --only functions:api`.
 
 # Emergency: revert main to a specific commit
 git revert HEAD --no-edit
@@ -114,6 +119,5 @@ git push origin main
 | CI (typecheck + tests) | `.github/workflows/ci.yml` | push to main |
 | E2E smoke | `.github/workflows/e2e-smoke.yml` | push to main |
 | Lighthouse | `.github/workflows/lighthouse.yml` | push to main |
-| Keep-alive | `.github/workflows/keep-alive.yml` | every 10 min |
 | URL hygiene | `.github/workflows/url-hygiene.yml` | schedule |
 | CodeQL | `.github/workflows/codeql.yml` | push + weekly |
