@@ -58,6 +58,19 @@ const EXACT_SKIP = new Set([
 ]);
 const PREFIX_SKIP = ["NEXT_PUBLIC_", "SMOKE_"];
 
+// The Functions env loader reserves the FIREBASE_/X_GOOGLE_/EXT_/KIT_ prefixes
+// for its own params, so these cannot appear in .env.rn01-af00b. Emit them
+// under GCP_* aliases; firebase/functions-api/src/index.ts translates them
+// back onto the FIREBASE_* names before any backend module reads process.env.
+const RESERVED_REWRITE = new Map([
+  ["FIREBASE_PROJECT_ID", "GCP_PROJECT_ID"],
+  ["FIREBASE_STORAGE_BUCKET", "GCP_STORAGE_BUCKET"],
+]);
+
+function rewriteReserved(name) {
+  return RESERVED_REWRITE.get(name) ?? name;
+}
+
 function shouldSkip(name) {
   return EXACT_SKIP.has(name) || PREFIX_SKIP.some((p) => name.startsWith(p));
 }
@@ -100,7 +113,7 @@ for (const { name, value } of entries) {
     skipped.push(name); // empty values are unset values
     continue;
   }
-  kept.set(name, value);
+  kept.set(rewriteReserved(name), value);
 }
 
 const names = [...kept.keys()];

@@ -2,7 +2,9 @@
  * Firebase Admin bootstrap for Storage + Firestore (Tier 2).
  * Uses FIREBASE_SERVICE_ACCOUNT_PATH (gitignored JSON file), or
  * FIREBASE_SERVICE_ACCOUNT_JSON (single-line string), or discrete
- * FIREBASE_PROJECT_ID + FIREBASE_CLIENT_EMAIL + FIREBASE_PRIVATE_KEY.
+ * FIREBASE_PROJECT_ID + FIREBASE_CLIENT_EMAIL + FIREBASE_PRIVATE_KEY,
+ * or — on Google Cloud (Cloud Functions / Cloud Run) — Application Default
+ * Credentials from the runtime service account (no key material shipped).
  * When unset, Tier-2 writes no-op / report inactive — Supabase + R2 still work.
  */
 import { existsSync, readFileSync } from "node:fs";
@@ -39,6 +41,7 @@ type AdminNamespace = {
   }) => AdminApp;
   credential: {
     cert: (serviceAccount: object) => unknown;
+    applicationDefault?: () => unknown;
   };
   auth: (app?: AdminApp) => FirebaseAuthAdmin;
   firestore: (app?: AdminApp) => FirebaseFirestore;
@@ -147,8 +150,14 @@ export function isFirebaseAdminConfigured(): boolean {
       process.env.FIREBASE_SERVICE_ACCOUNT_JSON?.trim() ||
       (process.env.FIREBASE_PROJECT_ID?.trim() &&
         process.env.FIREBASE_CLIENT_EMAIL?.trim() &&
-        process.env.FIREBASE_PRIVATE_KEY?.trim()),
+        process.env.FIREBASE_PRIVATE_KEY?.trim()) ||
+      runsOnGoogleCloud(),
   );
+}
+
+/** True when running inside a Google Cloud host that provides ADC (Cloud Functions / Cloud Run). */
+function runsOnGoogleCloud(): boolean {
+  return Boolean(process.env.K_SERVICE?.trim() || process.env.FUNCTION_TARGET?.trim());
 }
 
 export function getFirebaseInitError(): string | null {
@@ -168,26 +177,37 @@ export function ensureFirebaseAdmin(): AdminApp | null {
   if (admin.apps.length) return admin.app();
 
   const account = parseServiceAccount();
-  if (!account) {
-    initError = initError ?? "Firebase Admin credentials not set";
-    return null;
-  }
+  const projectId =
+    (account as { project_id?: string; projectId?: string } | null)?.project_id ??
+    (account as { projectId?: string } | null)?.projectId ??
+    process.env.FIREBASE_PROJECT_ID?.trim() ??
+    process.env.GCLOUD_PROJECT?.trim() ??
+    process.env.GOOGLE_CLOUD_PROJECT?.trim();
+  const bucket = process.env.FIREBASE_STORAGE_BUCKET?.trim() || `${projectId ?? "app"}.appspot.com`;
 
   try {
-    const bucket =
-      process.env.FIREBASE_STORAGE_BUCKET?.trim() ||
-      `${(account as { project_id?: string; projectId?: string }).project_id
-        ?? (account as { projectId?: string }).projectId
-        ?? "app"}.appspot.com`;
-    const app = admin.initializeApp({
-      credential: admin.credential.cert(account),
-      storageBucket: bucket,
-      projectId:
-        (account as { project_id?: string }).project_id ??
-        (account as { projectId?: string }).projectId,
-    });
-    initError = null;
-    return app;
+    if (account) {
+      const app = admin.initializeApp({
+        credential: admin.credential.cert(account),
+        storageBucket: bucket,
+        projectId: projectId,
+      });
+      initError = null;
+      return app;
+    }
+    if (runsOnGoogleCloud() && typeof admin.credential.applicationDefault === "function") {
+      // Cloud Functions / Cloud Run: the runtime service account is the
+      // credential — nothing to ship or rotate in env vars.
+      const app = admin.initializeApp({
+        credential: admin.credential.applicationDefault(),
+        storageBucket: bucket,
+        projectId: projectId,
+      });
+      initError = null;
+      return app;
+    }
+    initError = initError ?? "Firebase Admin credentials not set";
+    return null;
   } catch (err) {
     initError = err instanceof Error ? err.message : "Firebase Admin init failed";
     return null;

@@ -147,9 +147,9 @@ jobs:
           echo "::endgroup::"
 
   # Structured live smoke testing — only for commits that actually landed on
-  # main, and only after the build gate is green. It polls the deployed backend
-  # backend until the pushed revision is live. This is non-blocking because the
-  # external deploy is asynchronous; the annotation still surfaces regressions.
+  # main, and only after the build gate is green. It verifies the deployed
+  # backend (deploys are manual, so it does not wait for the pushed revision).
+  # This is non-blocking; the annotation still surfaces regressions.
   live-smoke:
     name: Live smoke (deployed backend)
     needs: validate-and-test
@@ -163,15 +163,14 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Verify deployed backend revision and health
+      - name: Verify deployed backend health
         working-directory: backend
         env:
           SMOKE_BASE_URL: https://us-central1-rn01-af00b.cloudfunctions.net/api
-          SMOKE_EXPECTED_COMMIT: ${{ github.sha }}
           SMOKE_OWNER_EMAIL: ${{ secrets.SMOKE_OWNER_EMAIL }}
           SMOKE_OWNER_PASSWORD: ${{ secrets.SMOKE_OWNER_PASSWORD }}
           CI: "true"
         run: |
           set -Eeuo pipefail
-          trap 'rc=$?; echo "::error::live smoke failed (line $LINENO, exit $rc) — confirm the deployed backend is serving ${GITHUB_SHA}"; exit "$rc"' ERR
+          trap 'rc=$?; echo "::error::live smoke failed (line $LINENO, exit $rc) — confirm the deployed backend is healthy at ${SMOKE_BASE_URL}"; exit "$rc"' ERR
           node scripts/smoke-live.mjs

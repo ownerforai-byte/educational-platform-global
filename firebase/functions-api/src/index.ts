@@ -1,6 +1,18 @@
 import { onRequest } from "firebase-functions/v2/https";
 import type { IncomingMessage, ServerResponse } from "node:http";
 
+// The Functions env loader reserves the FIREBASE_ prefix for its own params,
+// so the migrate script emits these under GCP_* aliases
+// (backend/scripts/migrate-backend-env-to-functions.mjs). Translate them back
+// before any backend module reads process.env. Tiny enough to stay at module
+// scope despite the deploy-discovery load budget (see below).
+if (!process.env.FIREBASE_PROJECT_ID && process.env.GCP_PROJECT_ID) {
+  process.env.FIREBASE_PROJECT_ID = process.env.GCP_PROJECT_ID;
+}
+if (!process.env.FIREBASE_STORAGE_BUCKET && process.env.GCP_STORAGE_BUCKET) {
+  process.env.FIREBASE_STORAGE_BUCKET = process.env.GCP_STORAGE_BUCKET;
+}
+
 // Nothing heavy is imported at module scope ON PURPOSE. The deploy-time
 // functions discovery probe ("Loading and analyzing source code … Timeout
 // after 10000") loads this module with a ~10s budget, and the full backend

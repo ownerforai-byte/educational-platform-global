@@ -141,7 +141,7 @@ npm run check:all      # full gate — required before pushing main
 | Service | Branch trigger | Build command | Start |
 |---|---|---|---|
 | Vercel (frontend) | push to `main` | `cd frontend && npm run build` | Next.js server |
-| Firebase Cloud Functions (backend) | manual — `firebase deploy --only functions:api` | `cd backend && npm run build` | Cloud Functions `api` (gen2, us-central1) |
+| Firebase Cloud Functions (backend) | manual — `firebase deploy --only functions:functions-api:api` | `cd backend && npm run build` | Cloud Functions `api` (gen2, us-central1) |
 
 The backend refuses to start in production without `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`. Set them in the Cloud Functions environment for the `api` function.
 

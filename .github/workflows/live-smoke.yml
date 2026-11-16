@@ -1,8 +1,9 @@
 name: Live Smoke Test
 
 on:
-  # After every push to main, wait until the deployed backend is actually
-  # serving the triggering revision, then verify it.
+  # After every push to main, verify the deployed backend is healthy and
+  # behaving (backend deploys are manual, so this checks the live deployment
+  # rather than waiting for the pushed revision to roll out).
   push:
     branches: [main]
   workflow_dispatch: {}
@@ -14,11 +15,10 @@ jobs:
     steps:
       - uses: actions/checkout@v7
 
-      - name: Run live smoke test (polls until the pushed revision is live)
+      - name: Run live smoke test (verifies the deployed backend)
         working-directory: backend
         env:
           SMOKE_BASE_URL: https://us-central1-rn01-af00b.cloudfunctions.net/api
-          SMOKE_EXPECTED_COMMIT: ${{ github.sha }}
           SMOKE_OWNER_EMAIL: ${{ secrets.SMOKE_OWNER_EMAIL }}
           SMOKE_OWNER_PASSWORD: ${{ secrets.SMOKE_OWNER_PASSWORD }}
           CI: "true"

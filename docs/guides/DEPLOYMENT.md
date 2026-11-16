@@ -8,7 +8,7 @@
 | Backend API | Firebase Cloud Functions (gen2) | https://us-central1-rn01-af00b.cloudfunctions.net/api |
 
 The frontend auto-deploys on push to `main`. The backend deploys as the
-Cloud Functions `api` function with `firebase deploy --only functions:api`.
+Cloud Functions `api` function with `firebase deploy --only functions:functions-api:api`.
 The former Render backend is decommissioned. Never push `main` with failing
 `npm run check:all`.
 
@@ -35,8 +35,9 @@ NEXT_PUBLIC_SENTRY_DSN=     # enables error monitoring (see AGENTS.md)
 ## Backend — Firebase Cloud Functions (gen2)
 
 **Build command:** `cd backend && npm install && npm run build`
-**Deploy command:** `firebase deploy --only functions:api` (from the repo root;
-deploys the `api` function, gen2, region `us-central1`)
+**Deploy command:** `firebase deploy --only functions:functions-api:api` (from the repo root;
+deploys the `api` function from the `functions-api` codebase, gen2, region `us-central1` —
+note `--only functions:api` silently targets the bot codebase instead)
 **Node version:** 20+
 
 Required environment variables (set in the Cloud Functions environment for
@@ -105,7 +106,7 @@ Vercel runs the build command above which includes the content build step.
 # Dashboard → Deployments → select the previous → Promote to Production
 
 # Redeploy a previous backend revision: check out the desired commit and
-# run `firebase deploy --only functions:api`.
+# run `firebase deploy --only functions:functions-api:api`.
 
 # Emergency: revert main to a specific commit
 git revert HEAD --no-edit
