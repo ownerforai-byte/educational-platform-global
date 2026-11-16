@@ -58,7 +58,7 @@ Full gate before pushing `main`: `npm run check:all`.
 
 ## Manual R2
 
-Requires `R2_ACCOUNT_ID`, `R2_BUCKET`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY` on the API (Render). Frontend never holds those secrets.
+Requires `R2_ACCOUNT_ID`, `R2_BUCKET`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY` on the API (Cloud Functions). Frontend never holds those secrets.
 
 1. Publish a post with image + PDF.
 2. Confirm objects under `community/{postId}/` in the bucket.

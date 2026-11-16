@@ -1,7 +1,7 @@
 /**
  * ═══════════════════════════════════════════════════════════════════════════
- * ONE canonical public origin — owner request 2026-11-14: remove the
- * retired Vercel application alias and keep www.harindrasah.com.np everywhere.
+ * ONE canonical public origin — owner request 2026-11-16: apex only
+ * (harindrasah.com.np). www permanently 308-redirects to apex.
  *
  * WHY THE HOST KEPT DRIFTING: several surfaces each resolved the deployment
  * host their own way — OAuth used `window.location.origin`, the AI prompt and
@@ -26,7 +26,7 @@
  */
 
 /** The one public production origin. Vercel hosts are deployment infrastructure only. */
-export const PRODUCTION_ALIAS = "www.harindrasah.com.np";
+export const PRODUCTION_ALIAS = "harindrasah.com.np";
 
 /**
  * Only a real HTTPS deployment URL may override the canonical origin.

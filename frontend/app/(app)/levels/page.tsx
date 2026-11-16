@@ -37,7 +37,7 @@ export default async function LevelsPage() {
   try {
     const [staticLevels, apiResult] = await Promise.all([
       getEducationLevels(),
-      // Bounded read: a Render cold-start / offline backend must never be able
+      // Bounded read: a cold-start / offline backend must never be able
       // to hang this SSG page past Next.js's 60s prerender limit (build-safe).
       apiGetSafe<EducationLevel[]>("/api/levels", { timeoutMs: 8000, retries: 0 }),
     ]);

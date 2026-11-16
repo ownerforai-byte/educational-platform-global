@@ -121,22 +121,24 @@ describe("automated client access", () => {
 });
 
 describe("CORS policy", () => {
-  test("isProductionEnv detects Render runtime env", () => {
-    vi.stubEnv("RENDER", "true");
-    expect(isProductionEnv()).toBe(true);
-
-    vi.stubEnv("RENDER", "");
-    vi.stubEnv("RENDER_EXTERNAL_URL", "https://x.onrender.com");
+  test("isProductionEnv detects Cloud Functions runtime env", () => {
+    vi.stubEnv("K_SERVICE", "api");
     expect(isProductionEnv()).toBe(true);
 
     vi.unstubAllEnvs();
-    vi.stubEnv("RENDER_EXTERNAL_URL", "");
+    vi.stubEnv("K_SERVICE", "");
+    vi.stubEnv("FUNCTION_TARGET", "api");
+    expect(isProductionEnv()).toBe(true);
+
+    vi.unstubAllEnvs();
+    vi.stubEnv("K_SERVICE", "");
+    vi.stubEnv("FUNCTION_TARGET", "");
     expect(isProductionEnv()).toBe(process.env.NODE_ENV === "production");
     vi.unstubAllEnvs();
   });
 
   test("development: localhost and preview wildcards allowed, random origins rejected", () => {
-    // Test env runs without RENDER/NODE_ENV=production → development behavior.
+    // Test env runs without platform signals/NODE_ENV=production → development behavior.
     expect(isOriginAllowed("http://localhost:5173")).toBe(true);
     expect(isOriginAllowed("http://127.0.0.1:3000")).toBe(true);
     expect(isOriginAllowed("https://preview-abc.vercel.app")).toBe(true);
@@ -148,11 +150,10 @@ describe("CORS policy", () => {
     vi.stubEnv("FRONTEND_URL", "https://real-frontend.example.com");
 
     expect(isOriginAllowed("https://real-frontend.example.com")).toBe(true);
-    expect(isOriginAllowed("https://www.harindrasah.com.np")).toBe(true);
+    expect(isOriginAllowed("https://harindrasah.com.np")).toBe(true);
     expect(isOriginAllowed("https://ravikisan.vercel.app")).toBe(false);
     // The old wildcard rules used to allow these:
     expect(isOriginAllowed("https://attacker.vercel.app")).toBe(false);
-    expect(isOriginAllowed("https://attacker.onrender.com")).toBe(false);
     expect(isOriginAllowed("https://random.example.com")).toBe(false);
 
     vi.unstubAllEnvs();
@@ -315,7 +316,7 @@ describe("error responses", () => {
 
     const thrown = await json("/thrown");
     expect(thrown.status).toBe(500);
-    expect(thrown.body.error).toBe("Internal server error");
+    expect(thrown.body.error).toBe("Something went wrong.");
     expect(JSON.stringify(thrown.body)).not.toContain("ECONNREFUSED");
     expect(thrown.body.errorId).toBeTruthy();
 
@@ -376,7 +377,6 @@ describe("startup environment gate", () => {
     const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
 
     vi.stubEnv("NODE_ENV", "production");
-    vi.stubEnv("RENDER", "");
     expect(checkStartupEnv({} as unknown as NodeJS.ProcessEnv)).toBe(false);
 
     vi.stubEnv("NODE_ENV", "development");

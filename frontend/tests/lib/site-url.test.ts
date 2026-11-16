@@ -5,7 +5,7 @@ import { CANONICAL_SITE_URL, publicOrigin, publicUrl } from "@/lib/site-url";
 
 /**
  * Owner request 2026-11-14: remove the Vercel application alias and keep
- * www.harindrasah.com.np everywhere. The host had no single owner — each surface resolved it separately, so a preview URL or a
+ * harindrasah.com.np everywhere. The host had no single owner — each surface resolved it separately, so a preview URL or a
  * missing env var changed the address on every surface at once. These tests pin
  * the one owner and forbid the drifting patterns from coming back.
  */
@@ -32,7 +32,7 @@ afterEach(() => {
 
 describe("canonical site origin", () => {
   it("is always the stable HTTPS production alias", () => {
-    expect(CANONICAL_SITE_URL).toBe("https://www.harindrasah.com.np");
+    expect(CANONICAL_SITE_URL).toBe("https://harindrasah.com.np");
   });
 
   it("is used for absolute links instead of whatever host the tab is on", () => {
@@ -46,7 +46,7 @@ describe("canonical site origin", () => {
     vi.resetModules();
     vi.stubEnv("NEXT_PUBLIC_SITE_URL", "https://ravikisan-8f3a2c9b-ownerforai-byte.vercel.app");
     const fresh = await import("@/lib/site-url");
-    expect(fresh.CANONICAL_SITE_URL).toBe("https://www.harindrasah.com.np");
+    expect(fresh.CANONICAL_SITE_URL).toBe("https://harindrasah.com.np");
   });
 
   it("accepts an HTTPS custom domain and normalises a trailing slash", async () => {

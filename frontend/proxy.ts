@@ -14,15 +14,6 @@ import { isBlockedAutomatedClient } from "@rn/shared/utils";
  */
 export const SUPABASE_ORIGIN = PUBLIC_SUPABASE_URL;
 
-/**
- * Canonical production host (www). The apex host (harindrasah.com.np) is now a
- * first-class origin — NO apex→www 308 (owner request 2026-01: both domains
- * serve Production directly so Firebase auth, OAuth round-trips and API calls
- * work on either host). `/.well-known/*` and the apex host both serve directly;
- * www remains the canonical host for the `<link rel="canonical">` SEO hint only.
- */
-const WWW_HOST = "www.harindrasah.com.np";
-
 const RATE_LIMIT_WINDOW = 60_000;
 const RATE_LIMIT_MAX = 120;
 // Only page routes are counted against that cap. One page load also pulls

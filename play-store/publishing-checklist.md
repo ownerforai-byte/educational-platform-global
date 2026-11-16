@@ -15,7 +15,7 @@ tick this list before hitting **Create app**.
       (see §7). Play requires a URL, not a PDF, for the Privacy Policy.
 - [ ] An **Android build** of the PWA (`.aab`), since this is a web app:
       - Recommended: **TWA (Bubblewrap)** or **Capacitor** wrapping
-        `https://www.harindrasah.com.np`
+        `https://harindrasah.com.np`
       - Or a signed APK/AAB from a native wrapper
 - [ ] Your app's **signing key** (Play App Signing will manage it)
 
@@ -25,7 +25,7 @@ tick this list before hitting **Create app**.
 - [ ] Category = Education; sub-category if prompted
 - [ ] App icon (512×512), feature graphic (1024×500), screenshots (phone +
       tablet)
-- [ ] Website link: `https://www.harindrasah.com.np`
+- [ ] Website link: `https://harindrasah.com.np`
 - [ ] "What's new" text for the first release
 
 ## 2) Links & contacts
@@ -59,10 +59,10 @@ tick this list before hitting **Create app**.
 ## 7) Host the legal pages (required for Play URLs)
 - [x] **Already done** — 4 legal pages were added to the Next.js frontend and
       auto-publish on the live site (they deploy with every push to `main`):
-      - `https://www.harindrasah.com.np/legal/privacy`
-      - `https://www.harindrasah.com.np/legal/terms`
-      - `https://www.harindrasah.com.np/legal/cookies`
-      - `https://www.harindrasah.com.np/legal/purchases`
+      - `https://harindrasah.com.np/legal/privacy`
+      - `https://harindrasah.com.np/legal/terms`
+      - `https://harindrasah.com.np/legal/cookies`
+      - `https://harindrasah.com.np/legal/purchases`
 - [ ] After the next deploy, open each URL in a browser to confirm 200 + public
       (no login). They are public, never-gated pages.
 - [ ] Put these URLs into the Play Console "Privacy policy" / "Website" fields.
@@ -128,12 +128,10 @@ The current AAB lives at `play-store/ravikisan-platform-release.aab`.
 - [ ] Confirm signing config matches the Play Console release key.
 
 ## Store validation
-- [ ] Deep link verification passes: TWA host is **`harindrasah.com.np`** with
-      all Play Console SHA-256 fingerprints in repo-root `assetlinks.json`.
-      Apex must serve `/.well-known/assetlinks.json` with **200** (disable
-      Vercel dashboard apex→www redirect; `proxy.ts` handles canonical traffic).
-      Upload **v1.0.6 (versionCode 8)** after building a new signed AAB (dual
-      host `harindrasah.com.np` + `www.harindrasah.com.np` autoVerify).
+- [ ] Deep link verification passes: TWA host is **`harindrasah.com.np`** (apex
+      only) with all Play Console SHA-256 fingerprints in repo-root
+      `assetlinks.json`. Apex `/.well-known/assetlinks.json` must return **200**;
+      www may **308** to apex. Upload AAB with single `autoVerify` intent for apex.
 - [ ] Universal links / app links open the app from the Play-registered domain.
 
 ## Notes

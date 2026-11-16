@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Migrate the backend's local env file to the Firebase Cloud Functions
- * env file for the `api` function (Task A — Render → Cloud Functions).
+ * env file for the `api` function (Task A — backend → Cloud Functions).
  *
  *   node scripts/migrate-backend-env-to-functions.mjs [--source <path>] [--out <path>] [--dry-run]
  *
@@ -17,7 +17,6 @@
  *
  * Skipped (not runtime-needed on Cloud Functions):
  *   - NODE_ENV, PORT              — set by the platform
- *   - RENDER, RENDER_EXTERNAL_URL — Render-only signals (kept working in code)
  *   - K_SERVICE, FUNCTION_TARGET, K_REVISION — injected by the platform
  *   - NEXT_PUBLIC_*               — frontend build-time variables
  *   - SMOKE_*                     — live smoke-test tooling
@@ -47,8 +46,6 @@ const OUT = path.resolve(flagValue("--out") ?? path.join(repoRoot, "firebase", "
 const EXACT_SKIP = new Set([
   "NODE_ENV",
   "PORT",
-  "RENDER",
-  "RENDER_EXTERNAL_URL",
   "K_SERVICE",
   "FUNCTION_TARGET",
   "K_REVISION",

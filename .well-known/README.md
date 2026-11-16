@@ -9,7 +9,8 @@
 - **Credential sharing (Play):** one statement with **both** `delegate_permission/common.handle_all_urls` and `delegate_permission/common.get_login_creds`, all fingerprints in one `target` (match Play’s generated JSON byte-for-byte).
 - The assetlinks route is **force-dynamic** so Vercel does not serve a stale prerender to Google’s verifier.
 
-**Hosts:** Google verifies the host declared in the Android app / Play Console. Both `https://harindrasah.com.np` and `https://www.harindrasah.com.np` must return **200** on `/.well-known/assetlinks.json` (no redirect).
+**Canonical host:** `https://harindrasah.com.np` only (no `www` hostname in app config, env, or Firebase authorized domains).
 
-- `frontend/proxy.ts` skips apex→www redirect for `/.well-known/*` so apex can serve App Links.
-- In **Vercel → Domains**, assign apex and www to Production but **do not** use the dashboard “redirect apex to www” option (it 308s asset links before the app runs). Canonical site traffic is redirected in `proxy.ts` instead.
+- Production must return **200** on `https://harindrasah.com.np/.well-known/assetlinks.json` (no redirect on that URL).
+- TWA / Play Console domain must be **`harindrasah.com.np`**.
+- Legacy `www` DNS, if any, should **308/301 to apex at the registrar or CDN** before you detach the `www` record from Vercel.

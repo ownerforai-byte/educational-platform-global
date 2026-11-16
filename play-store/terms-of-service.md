@@ -1,7 +1,7 @@
 # Terms of Service — Ravikisan's Platform
 
 **Last updated:** 14 October 2026
-**Website:** https://www.harindrasah.com.np
+**Website:** https://harindrasah.com.np
 **Contact:** sahrocky81@gmail.com
 
 > **IMPORTANT:** By creating an account or using Ravikisan's Platform, you agree

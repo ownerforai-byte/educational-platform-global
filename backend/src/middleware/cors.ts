@@ -23,22 +23,17 @@ export function getAllowedOrigins(): string[] {
   if (origins.length === 0) {
     origins.push("http://localhost:5173", "http://localhost:3000", "http://0.0.0.0:3000");
   }
-  // Both production hosts must be accepted: the apex (bare domain) and www.
-  // The apex was missing here, so backend CORS + /oauth/session rejected any
-  // request whose Origin was https://harindrasah.com.np — breaking Google
-  // sign-in on the apex domain.
-  for (const host of ["https://www.harindrasah.com.np", "https://harindrasah.com.np"]) {
-    if (!origins.includes(host)) {
-      origins.push(host);
-    }
+  const apex = "https://harindrasah.com.np";
+  if (!origins.includes(apex)) {
+    origins.push(apex);
   }
   return Array.from(new Set(origins));
 }
 
 /**
  * Hardening 2026-09-25: in production only the configured FRONTEND_URL
- * allowlist is accepted — the wildcard *.vercel.app / *.onrender.com rules let
- * anyone host a phishing frontend that talks to this API with credentials.
+ * allowlist is accepted — preview-host wildcard rules let anyone host a
+ * phishing frontend that talks to this API with credentials.
  * Development stays permissive (localhost ports, preview wildcards) so local
  * work and previews keep flowing.
  */
@@ -54,7 +49,6 @@ export function isOriginAllowed(origin: string): boolean {
       url.hostname === "0.0.0.0";
     const isPreviewHost =
       url.hostname.endsWith(".vercel.app") ||
-      url.hostname.endsWith(".onrender.com") ||
       url.hostname.endsWith(".google.com") ||
       url.hostname.endsWith(".googleusercontent.com");
 

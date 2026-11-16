@@ -3,12 +3,14 @@ import { NextRequest } from "next/server";
 import { config, proxy, SUPABASE_ORIGIN } from "@/proxy";
 import robots from "@/app/robots";
 
+const APEX = "https://harindrasah.com.np";
+
 function headersFor(path: string) {
-  return proxy(new NextRequest(`https://www.harindrasah.com.np${path}`)).headers;
+  return proxy(new NextRequest(`${APEX}${path}`)).headers;
 }
 
 function statusFor(path: string, headers: Record<string, string>) {
-  return proxy(new NextRequest(`https://www.harindrasah.com.np${path}`, { headers })).status;
+  return proxy(new NextRequest(`${APEX}${path}`, { headers })).status;
 }
 
 /** A browser's top-level navigation: what the page budget is meant to bound. */
@@ -20,7 +22,7 @@ function requestStatuses(count: number, path: string, headers: Record<string, st
 
 describe("proxy security headers", () => {
   it("uses a per-request nonce for scripts without enabling eval or inline scripts", () => {
-    const response = proxy(new NextRequest("https://www.harindrasah.com.np/"));
+    const response = proxy(new NextRequest(`${APEX}/`));
     const csp = response.headers.get("content-security-policy") ?? "";
     const scriptSrc = csp.split(";").find((directive) => directive.trim().startsWith("script-src")) ?? "";
     const nonce = scriptSrc.match(/'nonce-([^']+)'/)?.[1];
@@ -93,7 +95,7 @@ describe("automated client access", () => {
       "/_next/static/chunk.js", "/_next/image?url=x", "/data/private.json",
       "/favicon.ico", "/icon-192.png", "/sw.js", "/all_elements.json",
     ]) {
-      const response = proxy(new NextRequest(`https://www.harindrasah.com.np${path}`, {
+      const response = proxy(new NextRequest(`${APEX}${path}`, {
         headers: { "user-agent": userAgent, authorization: "Bearer valid-session" },
       }));
       expect(response.status).toBe(403);
@@ -114,7 +116,7 @@ describe("automated client access", () => {
 
   it("rejects named clients regardless of HTTP method", () => {
     for (const method of ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]) {
-      expect(proxy(new NextRequest("https://www.harindrasah.com.np/api/ai", {
+      expect(proxy(new NextRequest(`${APEX}/api/ai`, {
         method, headers: { "user-agent": "cOdEx/1.0" },
       })).status).toBe(403);
     }
@@ -245,7 +247,7 @@ describe("proxy apex host for App Links", () => {
     expect(response.headers.get("location")).toBeNull();
   });
 
-  it("serves other apex paths directly, since apex and www are both first-class", () => {
+  it("serves apex paths directly without redirect", () => {
     const response = proxy(
       new NextRequest("https://harindrasah.com.np/home", {
         headers: { host: "harindrasah.com.np" },

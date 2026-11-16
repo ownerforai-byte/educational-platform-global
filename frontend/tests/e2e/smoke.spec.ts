@@ -19,7 +19,7 @@ const MEMBER_EMAIL = process.env.SMOKE_MEMBER_EMAIL ?? "";
 const MEMBER_PASSWORD = process.env.SMOKE_MEMBER_PASSWORD ?? "";
 /**
  * Set by the e2e-smoke workflow's backend warm-up step only when the external
- * Render backend never answers /health. Auth-dependent specs cannot sign in
+ * backend never answers /health. Auth-dependent specs cannot sign in
  * without it, so they skip with a visible reason; the guest and error specs
  * still run. A warm backend leaves this unset and every spec runs.
  */

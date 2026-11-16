@@ -1,6 +1,6 @@
 // Pre-build dependency guard for npm workspaces.
 //
-// Problem: on Render the build can run against a *cached* node_modules that
+// Problem: a platform build can run against a *cached* node_modules that
 // predates a dependency added to backend/package.json. `tsc` then dies with
 // TS2307 "Cannot find module '<new dep>'", npm reports exit code 2 and the
 // deploy fails — while CI (fresh install) stays green, which makes it look like
@@ -55,7 +55,7 @@ function hasLock(dir) {
 
 function runNpmCi(dir) {
   console.log(`ensure-deps: running npm ci in ${dir}`);
-  // --include=dev: NODE_ENV=production (Render's default) would otherwise omit
+  // --include=dev: NODE_ENV=production (the production default) would otherwise omit
   // typescript and @types/*, which is exactly what tsc needs.
   const r = spawnSync("npm", ["ci", "--include=dev", "--no-audit", "--no-fund"], {
     cwd: dir,

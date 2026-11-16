@@ -57,9 +57,9 @@ import type {
 
 // ── Cookie helpers ─────────────────────────────────────────────────────────
 
-// Secure flag evaluated per-call (isProductionEnv, not raw NODE_ENV): Render's
-// runtime may not set NODE_ENV, and cross-site OAuth redirects require the
-// Secure flag in production.
+// Secure flag evaluated per-call (isProductionEnv, not raw NODE_ENV): some
+// platform runtimes do not set NODE_ENV, and cross-site OAuth redirects
+// require the Secure flag in production.
 const cookieOptions = () => ({
   httpOnly: true,
   sameSite: "lax" as const,

@@ -1,7 +1,7 @@
 # PROJECT STATUS
 
 ## CANONICAL PUBLIC ORIGIN (2026-11-14 — supersedes older URL references)
-**`https://www.harindrasah.com.np`**. The retired `ravikisan.vercel.app` application alias is no longer accepted; Vercel remains the hosting provider and Firebase Cloud Functions is the API host. Firebase authentication permits the custom `www` and apex domains while retaining its default Firebase auth-handler origin. All files modified for this migration are [IMPORTANT CORE FILE] under the repository classifier.
+**`https://harindrasah.com.np`**. The retired `ravikisan.vercel.app` application alias is no longer accepted; Vercel remains the hosting provider and Firebase Cloud Functions is the API host. Firebase authentication permits the custom `www` and apex domains while retaining its default Firebase auth-handler origin. All files modified for this migration are [IMPORTANT CORE FILE] under the repository classifier.
 
 
 ## PROJECT
@@ -338,7 +338,7 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 - **Workspace:** `C:\Users\ASUS\Desktop\rn` (monorepo: `frontend/` Next.js 16 + `backend/` Express 4 TS).
 - **Repo:** `github.com/ownerforai-byte/educational-platform-global` (branch `main`).
 - **Deploy:** both halves auto-deploy on every push to `main`. Frontend: Vercel production
-  `https://www.harindrasah.com.np`; backend: Firebase Cloud Functions `https://us-central1-rn01-af00b.cloudfunctions.net/api` (`/health`
+  `https://harindrasah.com.np`; backend: Firebase Cloud Functions `https://us-central1-rn01-af00b.cloudfunctions.net/api` (`/health`
   reports the deployed SHA). The foreign-WIP ship was verified READY at `0a52272b` (six
   commits: bill-everyone credits, AI image history, coin-gate UI, Image Hub for every
   student, PYQ reader + syllabus-by-year, PYQ corpus); the four-partial completions
@@ -357,8 +357,8 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 - `POST /api/auth/refresh` **rotates** via Supabase `refreshSession` (preferred) with a legacy
   access-token revalidate fallback. Users stay signed in past the 1h access-token expiry.
 - Cookie `secure` flag + strict CORS key off `isProductionEnv()` (`src/config/env.ts`), which
-  treats `NODE_ENV=production` OR Render's injected `RENDER=true` / `RENDER_EXTERNAL_URL`
-  as production.
+  treats `NODE_ENV=production` OR the Cloud Functions platform signals (`K_SERVICE` /
+  `FUNCTION_TARGET`) as production.
 - Operator accounts authenticate with credentials supplied at runtime; roles are resolved from configured operator accounts. Values are never committed.
 
 ### Security posture (fixed & verified live)
@@ -395,7 +395,7 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
   `/api/ai/image-history` answers 401 unauthenticated; a signed-in draw in the Image Hub
   saved a `figure` row into `public.image_history` (migration 007 applied via
   `scripts/run-sql.mjs`) and the history survived a reload.
-- Live rotation e2e on Render: 7/8 (the one ⚠️ is the Supabase reuse quirk above).
+- Live rotation e2e (previous backend host): 7/8 (the one ⚠️ is the Supabase reuse quirk above).
 - **Permanent smoke test:** `backend/scripts/smoke-live.mjs` (`npm run smoke`), runs in CI via
   `.github/workflows/live-smoke.yml` after every push to main. Needs repo secrets
   `SMOKE_OWNER_EMAIL` + `SMOKE_OWNER_PASSWORD` for the auth round-trip (guest/health/401 checks run without).

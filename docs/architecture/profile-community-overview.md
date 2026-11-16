@@ -12,7 +12,7 @@ Browser (Next.js App Router, Vercel)
         │
         │  POST/GET /api/*  (Next rewrite → Express)
         ▼
-Express (Render, 0.0.0.0:$PORT)
+Express (Firebase Cloud Functions, 0.0.0.0:$PORT when standalone)
   backend/src/api/user/profile-hub.controller.ts
   backend/src/api/social/community-feed.controller.ts
   backend/src/api/social/community.controller.ts

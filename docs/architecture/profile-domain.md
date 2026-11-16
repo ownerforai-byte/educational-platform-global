@@ -29,7 +29,7 @@ The community bot is a **system profile** (`rn-study-assistant`), not a human Fi
 - `PUT` raw `image/jpeg|png|webp` (or `octet-stream`) — JSON base64 is **415**.
 - Sharp compresses to WebP; R2 path `profiles/{uid}/avatar|cover-…`.
 - Public read: `R2_PUBLIC_BASE_URL` redirect, else authenticated stream `GET /api/profile/media?path=`.
-- If R2 is unset: **503**, not a silent local file (Render disk is ephemeral).
+- If R2 is unset: **503**, not a silent local file (serverless disk is ephemeral).
 
 ## Privacy and stats
 

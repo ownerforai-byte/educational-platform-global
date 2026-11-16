@@ -1,7 +1,7 @@
 /**
  * Quick production wiring checks (no secrets). Run: node scripts/auth-wiring-check.mjs
  */
-const SITE = process.env.AUTH_CHECK_SITE || "https://www.harindrasah.com.np";
+const SITE = process.env.AUTH_CHECK_SITE || "https://harindrasah.com.np";
 const API = process.env.AUTH_CHECK_API || "https://us-central1-rn01-af00b.cloudfunctions.net/api";
 const FIREBASE_AUTH_DOMAIN =
   process.env.AUTH_CHECK_FIREBASE_DOMAIN || "rn01-af00b.firebaseapp.com";
@@ -60,7 +60,7 @@ const login = results[3];
 const signup = results[4];
 if (login?.body?.code === "FIREBASE_ADMIN_NOT_CONFIGURED" || signup?.body?.code === "FIREBASE_ADMIN_NOT_CONFIGURED") {
   console.error(
-    "\nFAIL: Render is missing Firebase Admin credentials (FIREBASE_PROJECT_ID + service account).",
+    "\nFAIL: the backend is missing Firebase Admin credentials (FIREBASE_PROJECT_ID + service account).",
   );
   process.exitCode = 1;
 } else if (login?.status === 401 && signup?.status === 401) {

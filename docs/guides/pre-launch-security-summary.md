@@ -17,7 +17,7 @@ Actionable items applied or verified for this app ahead of production. Full thir
 ## Auth
 
 - Session cookies are httpOnly; refresh tokens are not exposed to client JS.
-- Phone sign-in uses Firebase invisible reCAPTCHA with a rendered container (not `display:none` on the widget host).
+- Phone sign-in is removed; phone numbers appear only in the enrolled-user MFA second factor, which uses Firebase invisible reCAPTCHA with a rendered container (not `display:none` on the widget host).
 - Community bot cron routes require `COMMUNITY_BOT_CRON_KEY` header — not callable without the secret.
 
 ## Storage (R2)

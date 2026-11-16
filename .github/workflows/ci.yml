@@ -229,7 +229,7 @@ jobs:
           const aabPath = path.join(appDir, 'play-store/ravikisan-platform-release.aab');
 
           const ASSETLINKS_PACKAGE = 'com.ravikisan.platform';
-          const ASSETLINKS_HOSTS = ['harindrasah.com.np', 'www.harindrasah.com.np'];
+          const ASSETLINKS_HOSTS = ['harindrasah.com.np'];
 
           console.log(
             `Verifying assetlinks for ${ASSETLINKS_PACKAGE} on ${ASSETLINKS_HOSTS.map((h) => `https://${h}`).join(', ')}`

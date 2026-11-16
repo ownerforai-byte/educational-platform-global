@@ -3,7 +3,7 @@
 > Curriculum-aligned, exam-grade study infrastructure for **NEB Class 11 & 12** students in Nepal.
 > Free, open-source, and built to work on a phone with a slow connection.
 
-**Live:** [www.harindrasah.com.np](https://www.harindrasah.com.np) · **API:** [us-central1-rn01-af00b.cloudfunctions.net/api](https://us-central1-rn01-af00b.cloudfunctions.net/api)
+**Live:** [harindrasah.com.np](https://harindrasah.com.np) · **API:** [us-central1-rn01-af00b.cloudfunctions.net/api](https://us-central1-rn01-af00b.cloudfunctions.net/api)
 
 ---
 

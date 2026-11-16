@@ -86,7 +86,7 @@ function build(isProduction: boolean): RequestHandler {
 }
 
 // Two pre-built policies; the right one is chosen per request so that tests and
-// runtime env changes (NODE_ENV/RENDER) are honoured without a rebuild.
+// runtime env changes (NODE_ENV/platform signals) are honoured without a rebuild.
 const productionHeaders = build(true);
 const developmentHeaders = build(false);
 

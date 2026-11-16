@@ -1,6 +1,6 @@
 # Verner Firebase (free-tier / Spark)
 
-Project: **rn01** (`rn01-af00b`) · Web app: `www.harindrasah.com.np`
+Project: **rn01** (`rn01-af00b`) · Web app: `harindrasah.com.np`
 
 ## Free-tier three lanes
 
@@ -24,7 +24,7 @@ New Firebase projects require a **Blaze** upgrade to create Storage. Spark canno
 - Firestore security rules deployed (`firestore.rules`)
 - Storage rules file ready (`storage.rules`) — deploy after Blaze if ever needed
 
-## Backend env (Render)
+## Backend env (Cloud Functions / backend)
 
 ```bash
 # Tier 2 — Firestore via Admin SDK (create a service account key in GCP IAM)
@@ -86,7 +86,7 @@ Notes:
 - Password-reset / verification emails open Firebase's action URL first, then
   land on the `continueUrl` passed by the backend (already wired in
   `backend/src/auth/firebase-admin-auth.ts`), so users end up on your domain.
-- Want `www.harindrasah.com.np` instead of `auth.`? That means pointing the
+- Want `harindrasah.com.np` instead of `auth.`? That means pointing the
   apex/www DNS at Firebase Hosting, which would take the site away from Vercel —
   only do that if you intend to serve the app from Firebase Hosting.
 - **Until Hosting is live:** keep `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=rn01-af00b.firebaseapp.com`
@@ -138,16 +138,16 @@ from older bundles.
 
 - UI: Community → **Chat** (`/ai/community/chat`) — signed-in lobby (`realtime_chats/{roomId}/messages`)
 - Rules: `firebase/firestore.rules` (deploy below)
-- Auth: Email/Password, Google, and Phone via `frontend/lib/firebase/client-auth.ts`
+- Auth: Email/Password, Google (phone identity removed 2026-11-16 — SMS OTP remains only as the enrolled-user MFA second factor) via `frontend/lib/firebase/client-auth.ts`
 - Enable Phone: `npm run firebase:enable-phone` (adds test `+9779800000000` → `123456`)
 
-**Manual phone sign-in check (staging or prod)**
+**Phone identity removed (2026-11-16)** — the phone sign-in/sign-up panel is gone from `/login` and `/signup`. Phone numbers are collected only during MFA enrollment (`MfaSmsPanel`); existing `phone+…@phone.signin.harindrasah.com.np` accounts still work at the API level (backend maps the phone to that synthetic email before profile lookup).
+
+**MFA SMS prerequisites (staging or prod)**:
 
 1. Vercel: `NEXT_PUBLIC_USE_FIREBASE_AUTH=true` and all `NEXT_PUBLIC_FIREBASE_*` keys for `rn01-af00b`.
-2. Render API: `USE_FIREBASE_AUTH=true` plus Firebase Admin credentials (`FIREBASE_PROJECT_ID`, service account JSON / individual fields).
-3. Firebase Console → Authentication → Phone **enabled**; authorized domains include your site origin and `rn01-af00b.firebaseapp.com`.
-4. Local or preview: open `/login`, scroll to **Phone sign-in**, enter `+9779800000000`, send code, enter test code `123456` (from `firebase/firebase.json` / `firebase:enable-phone`).
-5. Expect a normal session (tier welcome) or the pending-approval waiting screen—backend maps the phone to `phone+<digits>@phone.signin.harindrasah.com.np` before profile lookup.
+2. Backend API: `USE_FIREBASE_AUTH=true` plus Firebase Admin credentials (`FIREBASE_PROJECT_ID`, service account JSON / individual fields — or none on Cloud Functions, where ADC supplies them).
+3. Firebase Console → Authentication → Phone **enabled** (needed for MFA OTP delivery); authorized domains include your site origin and `rn01-af00b.firebaseapp.com`.
 
 ```bash
 cd firebase

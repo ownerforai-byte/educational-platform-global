@@ -66,14 +66,14 @@ function loadHandler(): Promise<NodeHandler> {
 // first "/api" segment is stripped; WITHOUT the prefix ("/api/x", "/health")
 // the URL passes through unchanged. The frontend call shapes
 // `${base}/api/<path>` and `${base}/health` therefore hit the same Express
-// routes as the Render deployment did.
+// routes as the standalone Express deployment did.
 //
 // FIXED CONTRACT: the function is exported as `api`, gen2, region us-central1
 // → https://us-central1-rn01-af00b.cloudfunctions.net/api
 // - memory ≥ 1GiB: the curriculum corpus + sharp image work run in-process.
 // - timeoutSeconds 3600: SSE AI streams can run for minutes.
 // - concurrency 10: steady traffic should ride warm instances.
-// - minInstances 0: no idle cost while Render still serves production.
+// - minInstances 0: no idle cost while the function is not serving traffic.
 export const api = onRequest(
   {
     region: "us-central1",

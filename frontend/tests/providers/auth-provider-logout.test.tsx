@@ -59,7 +59,7 @@ beforeEach(() => {
 describe("instant logout", () => {
   it("flips to the signed-out customer in the click, while the revoke hangs", async () => {
     ensureSession.mockResolvedValue(OWNER_USER);
-    // The backend revoke NEVER resolves — Render cold start / offline.
+    // The backend revoke NEVER resolves — cold start / offline.
     apiLogout.mockReturnValue(new Promise(() => {}));
 
     render(

@@ -110,7 +110,7 @@ describe("openSseChannel", () => {
     expect(res.headersSent).toBe(true);
 
     // The research step can take ~20s with no content: the heartbeat is what
-    // keeps Render/Vercel from treating the stream as dead.
+    // keeps hosting platforms from treating the stream as dead.
     vi.advanceTimersByTime(15_000);
     expect(written.join("")).toContain(": ping");
 

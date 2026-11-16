@@ -9,7 +9,7 @@
  *   2. in-flight de-duplication — N parallel callers share one request,
  *   3. stale-while-revalidate — an expired entry is served instantly while a
  *      background refresh keeps it warm, and a failed refresh never wipes the
- *      last good value (Render cold-start / offline resilience).
+ *      last good value (cold-start / offline resilience).
  *
  * SSR-safe: plain Maps and `Date.now()`, no timers, no `window` access.
  */

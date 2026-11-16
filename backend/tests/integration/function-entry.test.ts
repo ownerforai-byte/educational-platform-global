@@ -106,9 +106,8 @@ describe("function entry dispatching createApp()", () => {
     }
   });
 
-  test("health commit stamp falls back RENDER_GIT_COMMIT → COMMIT_SHA → K_REVISION", async () => {
+  test("health commit stamp falls back COMMIT_SHA → K_REVISION", async () => {
     const saved = {
-      RENDER_GIT_COMMIT: process.env.RENDER_GIT_COMMIT,
       COMMIT_SHA: process.env.COMMIT_SHA,
       K_REVISION: process.env.K_REVISION,
     };
@@ -118,7 +117,6 @@ describe("function entry dispatching createApp()", () => {
         else process.env[key] = value;
       }
     };
-    delete process.env.RENDER_GIT_COMMIT;
     try {
       process.env.COMMIT_SHA = "testsha-000";
       let body = (await (await fetch(`${baseUrl}/api/health`)).json()) as { commit: string };

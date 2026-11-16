@@ -41,7 +41,7 @@ import {
 } from "../../ai/syllabus-anchor";
 import { logServerError, newErrorId } from "../../middleware/error-handler";
 
-/** Keep Render/Vercel from closing a stream that is quiet during research. */
+/** Keep hosting platforms (Vercel, Cloud Functions) from closing a quiet stream. */
 const HEARTBEAT_MS = 15_000;
 
 /** A live SSE channel: `send` writes one JSON event, `end` closes cleanly. */

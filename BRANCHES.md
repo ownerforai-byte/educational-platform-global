@@ -10,7 +10,8 @@
 ## 1. Ground rules
 
 1. **`main` is the only deployable branch.** Pushing `main` triggers the
-   Vercel production deploy (frontend) and Render deploy (backend). Never
+   Vercel production deploy (frontend); the backend deploys manually via
+   `firebase deploy --only functions:functions-api:api`. Never
    push to `main` with failing checks.
 2. **One area per branch.** Work on files that belong to your branch's area.
    Cross-area changes are allowed only when the user explicitly asks.

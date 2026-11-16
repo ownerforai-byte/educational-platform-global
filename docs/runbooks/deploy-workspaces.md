@@ -35,9 +35,15 @@ path always looks empty from inside `frontend/` and Vercel cancels every build).
 Still skips `dependabot/*`. If you change only `@rn/shared` and a deploy is still
 skipped, add a one-line touch under `frontend/` and push to `main`.
 
-## Render (backend)
+## Backend (Firebase Cloud Functions)
 
-Build / start from the repo root:
+Deploy from `firebase/` (see `docs/guides/DEPLOYMENT.md`):
+
+```bash
+firebase deploy --only functions:functions-api:api
+```
+
+Build / start from the repo root (local or container):
 
 ```bash
 npm ci

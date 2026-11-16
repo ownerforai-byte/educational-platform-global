@@ -35,11 +35,11 @@ interface SocialAuthButtonsProps {
   onError?: (error: string, detail?: string | null) => void;
 }
 
-/** Must exceed Render cold start; proxy allows up to ~55s per hop. */
+/** Must exceed a backend cold start; proxy allows up to ~55s per hop. */
 const CSRF_TIMEOUT_MS = 35_000;
 
 /**
- * The CSRF handshake talks to the Render backend, which can be cold. A bare
+ * The CSRF handshake talks to the backend, which can be cold. A bare
  * fetch with no timeout left the Google button spinning forever with no
  * feedback, which reads as "OAuth is blocked". Bound each attempt and retry
  * once so a cold start recovers on its own.

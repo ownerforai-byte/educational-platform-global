@@ -7,8 +7,8 @@
  *   npm run smoke -- https://us-central1-rn01-af00b.cloudfunctions.net/api
  *
  * Default base URL comes from SMOKE_BASE_URL or the Firebase Cloud Functions
- * base URL (the backend moved off Render; pass an explicit baseUrl to smoke a
- * different deployment).
+ * base URL (the backend runs on Cloud Functions; pass an explicit baseUrl to
+ * smoke a different deployment).
  * Requires SMOKE_OWNER_EMAIL + SMOKE_OWNER_PASSWORD for the auth round-trip;
  * those checks are skipped when unset (run in read-only mode).
  */
@@ -43,8 +43,8 @@ const j = async (path, opts = {}) => {
 // ── 0. Deploy-aware wait: confirm we are testing the RIGHT release ──
 // Greptile review 2026-09-25: a fixed sleep can run the smoke against the
 // PREVIOUS release when the platform is slow to roll. /health reports the
-// deployed revision via the platform fallback chain (RENDER_GIT_COMMIT →
-// COMMIT_SHA → K_REVISION, see backend/src/app.ts), so when
+// deployed revision via the platform fallback chain (COMMIT_SHA →
+// K_REVISION, see backend/src/app.ts), so when
 // SMOKE_EXPECTED_COMMIT is set (CI passes GITHUB_SHA) we poll /health
 // until the deployed revision matches, then proceed.
 const EXPECTED_COMMIT = process.env.SMOKE_EXPECTED_COMMIT || null;

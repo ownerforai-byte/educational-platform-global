@@ -67,7 +67,7 @@ const nextConfig = {
       },
       {
         // HSTS on the Vercel-served origin (security pass 2026-10-27): the
-        // backend sets the same policy for the Render API; the frontend had
+        // backend sets the same policy for its API; the frontend had
         // none. Sent on every response; browsers ignore it over local http://,
         // so dev is unaffected.
         source: "/:path*",

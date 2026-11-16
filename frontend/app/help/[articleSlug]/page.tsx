@@ -71,7 +71,7 @@ const HELP_ARTICLES: Record<string, { title: string; sections: { heading: string
     sections: [
       {
         heading: "Page not loading",
-        body: "If a page is blank or stuck on a spinner, try refreshing. The backend may be spinning up from a cold start (Render) — wait 10–15 seconds and retry.",
+        body: "If a page is blank or stuck on a spinner, try refreshing. The backend may be spinning up from a cold start — wait 10–15 seconds and retry.",
       },
       {
         heading: "401 Unauthorized",

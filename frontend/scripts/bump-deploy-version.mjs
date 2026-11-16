@@ -34,7 +34,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 // Prevent npm 10+ warning: "Unknown env config cache-dir"
-// Hosting platforms (Vercel/Render) set this; npm only recognises "cache".
+// Hosting platforms (Vercel, Cloud Functions) set this; npm only recognises "cache".
 delete process.env.npm_config_cache_dir;
 delete process.env.NPM_CONFIG_CACHE_DIR;
 

@@ -115,8 +115,8 @@ repository.
 ## Platform ops
 - **Backend host (Firebase Cloud Functions, 2026):** the backend runs as the
   Cloud Functions gen2 function `api` (us-central1) at
-  `https://us-central1-rn01-af00b.cloudfunctions.net/api`. The former Render
-  free tier is decommissioned, and the keep-alive workflow
+  `https://us-central1-rn01-af00b.cloudfunctions.net/api`. The former
+  free-tier backend host is decommissioned, and the keep-alive workflow
   (`.github/workflows/keep-alive.yml`) that pinged it every 10 minutes has been
   removed. Cold starts are ridden out by the bounded retries in the frontend
   proxy (`frontend/app/api/[...path]/route.ts`); deploy the backend with
@@ -124,7 +124,7 @@ repository.
 - **Vercel only (2026-10-27):** the Cloudflare/open-next deployment path is gone —
   `frontend/open-next.config.ts`, `frontend/wrangler.jsonc` and the
   `@opennextjs/cloudflare` devDependency were removed. Frontend deploys to Vercel
-  (`www.harindrasah.com.np`), backend to Firebase Cloud Functions; there is no
+  (`harindrasah.com.np`), backend to Firebase Cloud Functions; there is no
   third target.
 - **ISR corpus pages (2026-10-27):** the 20 class-11/class-12-notes corpus pages
   (subject, chapters, unit, topic, exercises, exercise-type, mindmap, syllabus,

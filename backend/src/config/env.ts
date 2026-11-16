@@ -9,9 +9,9 @@ export const env: BackendEnv = parseBackendEnv(process.env);
 /**
  * Deployment-environment detection.
  *
- * Render injects `RENDER=true` and `RENDER_EXTERNAL_URL`; Cloud Functions /
- * Cloud Run inject `K_SERVICE` (Cloud Functions also `FUNCTION_TARGET`).
- * Historically NODE_ENV has not been guaranteed on any of these platforms, and
+ * Cloud Functions / Cloud Run inject `K_SERVICE` (Cloud Functions also
+ * `FUNCTION_TARGET`). Historically NODE_ENV has not been guaranteed on any of
+ * these platforms, and
  * several security behaviors (Secure cookie flag, strict CORS) key off "is
  * this production". Treat any of the platform signals as production so
  * behavior is deterministic per platform.
@@ -22,8 +22,6 @@ export const env: BackendEnv = parseBackendEnv(process.env);
 export function isProductionEnv(): boolean {
   return (
     process.env.NODE_ENV === "production" ||
-    process.env.RENDER === "true" ||
-    !!process.env.RENDER_EXTERNAL_URL ||
     !!process.env.K_SERVICE ||
     !!process.env.FUNCTION_TARGET
   );
@@ -185,5 +183,5 @@ export function checkStartupEnv(env: NodeJS.ProcessEnv = process.env): boolean {
 export const PUBLIC_SITE_URL = (
   process.env.FRONTEND_URL ||
   process.env.PUBLIC_SITE_URL ||
-  "https://www.harindrasah.com.np"
+  "https://harindrasah.com.np"
 ).replace(/\/$/, "");

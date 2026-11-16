@@ -138,7 +138,7 @@ export function LoginForm() {
     }
   };
 
-  // A slow or hanging /api/auth/me (Render cold start, offline, proxy timeout)
+  // A slow or hanging /api/auth/me (cold start, offline, proxy timeout)
   // used to hide this ENTIRE form behind "Checking your session" — which also
   // hid "Continue with Google", making OAuth look blocked even though Supabase
   // was healthy. Render the form immediately; only a KNOWN signed-in session

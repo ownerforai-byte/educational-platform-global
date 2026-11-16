@@ -11,7 +11,7 @@ Browser / PWA
     │
     │   POST /api/*  (proxy rewrites → backend)
     │
-    └─ Express API (Render)  ──  backend/
+    └─ Express API (Cloud Functions)  ──  backend/
           Supabase (PostgreSQL) · Agnes LLM chain
 ```
 

@@ -6,8 +6,8 @@
         "oAuthBrandDisplayName": "Verner",
         "supportEmail": "support@harindrasah.com.np",
         "authorizedRedirectUris": [
-          "https://www.harindrasah.com.np",
-          "https://www.harindrasah.com.np/auth/callback",
+          "https://harindrasah.com.np",
+          "https://harindrasah.com.np/auth/callback",
           "http://localhost:5173",
           "http://localhost:5173/auth/callback"
         ]
@@ -21,7 +21,6 @@
     "authorizedDomains": [
       "localhost",
       "127.0.0.1",
-      "www.harindrasah.com.np",
       "harindrasah.com.np",
       "auth.harindrasah.com.np",
       "rn01-af00b.firebaseapp.com",

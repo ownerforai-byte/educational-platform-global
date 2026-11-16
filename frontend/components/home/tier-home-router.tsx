@@ -55,7 +55,7 @@ export function TierHomeRouter({
 
   // A visitor with no cached session is a guest with certainty — render the
   // public view on the FIRST paint. `isLoading` stays true for up to
-  // SESSION_PROBE_MAX_MS (6s) while /api/auth/me runs; a cold Render backend
+  // SESSION_PROBE_MAX_MS (6s) while /api/auth/me runs; a cold backend
   // therefore blanked /home behind a spinner for every new visitor and broke
   // the guest smoke spec's 5s visibility assertion. If the probe does find a
   // session, `user` changes and the effect above redirects to that tier's

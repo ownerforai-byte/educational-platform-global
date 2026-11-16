@@ -19,7 +19,7 @@ Never commit secrets. Use `.secrets/` locally if you must keep tokens on disk.
 ## 3. Run
 
 ```bash
-# Terminal A — API (Render-shaped: 0.0.0.0:$PORT in prod)
+# Terminal A — API (0.0.0.0:$PORT in prod)
 cd backend && npm run dev
 
 # Terminal B — Next

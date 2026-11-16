@@ -32,7 +32,7 @@ import {
  *   2. Revalidate through `ensureSession()`, which silently renews an expired
  *      access token with the 30-day refresh cookie before giving up.
  *   3. Only a definite refusal (401/403) signs the user out. An unreachable
- *      backend (Render cold start), offline mode or a 5xx keeps the cached
+ *      backend (cold start), offline mode or a 5xx keeps the cached
  *      session — a network blip is not a logout.
  */
 export interface AuthContextValue {
@@ -65,7 +65,7 @@ const RENEW_CHECK_INTERVAL_MS = 10 * 60 * 1000;
 const MIN_RENEW_GAP_MS = 30 * 1000;
 /**
  * Hard ceiling on the first session probe. `ensureSession()` has no request
- * timeout of its own, so a hung Render cold start could leave `isLoading`
+ * timeout of its own, so a hung cold start could leave `isLoading`
  * true forever and blank out every auth screen (including Google sign-in).
  * The probe still runs to completion; this only stops it gating the UI.
  */

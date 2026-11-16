@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 
 /**
  * Regression for the E2E guest-home failure (2026-11-08): /api/auth/me keeps
- * isLoading true for up to 6s on a cold Render backend, and TierHomeRouter
+ * isLoading true for up to 6s on a cold backend, and TierHomeRouter
  * used to render only its spinner for that whole window — so a first-time
  * visitor saw no "Sign in" and the guest smoke spec's 5s visibility check
  * failed. A visitor with no cached session is a guest with certainty, so the

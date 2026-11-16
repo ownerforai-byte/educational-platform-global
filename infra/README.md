@@ -1,6 +1,6 @@
 # infra/
 
-Optional Docker packaging. Production today is **Vercel (frontend)** + **Render (backend)** + **Supabase**.
+Optional Docker packaging. Production today is **Vercel (frontend)** + **Firebase Cloud Functions (backend)** + **Supabase**.
 
 | Path | Purpose |
 |------|---------|

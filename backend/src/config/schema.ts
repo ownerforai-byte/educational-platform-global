@@ -19,8 +19,6 @@ const truthy = z.preprocess((value) => {
 export const backendEnvSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).optional(),
   PORT: optionalString,
-  RENDER: optionalString,
-  RENDER_EXTERNAL_URL: optionalUrl,
   // Cloud Functions / Cloud Run platform signals (production detection +
   // deployed-revision stamp — see config/env.ts and src/app.ts).
   K_SERVICE: optionalString,

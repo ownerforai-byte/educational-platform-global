@@ -1,6 +1,6 @@
 # Backend architecture
 
-Express TypeScript API in `backend/` (Render). Domain routers under `backend/src/api/` (Phase 2).
+Express TypeScript API in `backend/` (Firebase Cloud Functions). Domain routers under `backend/src/api/` (Phase 2).
 
 ## Layers
 
@@ -11,7 +11,7 @@ Express TypeScript API in `backend/` (Render). Domain routers under `backend/src
 | Services / repos | `src/services/`, `src/repositories/` | Business + data access (Phase 4) |
 | Middleware | `src/middleware/` | Auth, rate limits, spark gates |
 
-Bind HTTP to `0.0.0.0:$PORT` on Render. Filesystem is ephemeral — persist in Supabase.
+Bind HTTP to `0.0.0.0:$PORT` when run standalone. Filesystem is ephemeral — persist in Supabase.
 
 ## Auth & owner
 

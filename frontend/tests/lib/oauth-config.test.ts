@@ -64,8 +64,8 @@ describe("OAuth callback wiring", () => {
     vi.resetModules();
     vi.stubEnv("NEXT_PUBLIC_SITE_URL", siteUrl);
     const fresh = await import("@/lib/supabase/oauth-config");
-    expect(fresh.CANONICAL_SITE_URL).toBe("https://www.harindrasah.com.np");
-    expect(fresh.APP_OAUTH_CALLBACK_URL).toBe("https://www.harindrasah.com.np/auth/callback");
+    expect(fresh.CANONICAL_SITE_URL).toBe("https://harindrasah.com.np");
+    expect(fresh.APP_OAUTH_CALLBACK_URL).toBe("https://harindrasah.com.np/auth/callback");
     vi.unstubAllEnvs();
     vi.resetModules();
   });
@@ -96,9 +96,10 @@ describe("Google 'Access blocked' diagnosis", () => {
     expect(message).toContain("Google Cloud Console");
   });
 
-  it("wires both OAuth ends to the canonical helper", () => {
-    expect(read("features/auth/components/social-auth-buttons.tsx")).toContain("oauthCallbackUrl()");
-    expect(read("features/auth/components/social-auth-buttons.tsx")).not.toContain('new URL("/auth/callback"');
+  it("wires Google sign-in through the canonical site URL callback", () => {
+    const social = read("features/auth/components/social-auth-buttons.tsx");
+    expect(social).toContain('publicUrl("/auth/callback?firebase_start=1")');
+    expect(social).not.toContain('new URL("/auth/callback"');
     expect(read("app/auth/callback/page.tsx")).toContain("authFailureMessage");
   });
 });

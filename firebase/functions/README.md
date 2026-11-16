@@ -13,13 +13,13 @@ Only the **Firestore approval bot** is exported and deployed:
     `ACCESS_BOT_RUN_KEY` + `x-access-bot-key` when set).
   - `communityBotDailyPost` — 2:00 Asia/Kathmandu → `POST {COMMUNITY_BOT_API_BASE}/api/community/cron/daily-public`
   - `communityBotProfileDiscovery` — every 2 hours → `POST …/cron/profile-discovery`
-    (headers: `x-community-bot-cron-key` = `COMMUNITY_BOT_CRON_KEY`; same value as Render `COMMUNITY_BOT_CRON_KEY`).
+    (headers: `x-community-bot-cron-key` = `COMMUNITY_BOT_CRON_KEY`; same value as the backend `COMMUNITY_BOT_CRON_KEY`).
 
 **Supabase** is storage-only for the product direction. The older Supabase
 Postgres jobs (`accessBot*`, `creditsDailyReset`) are kept under
 `legacy-supabase-jobs/` for reference only — they are **not** compiled or
 deployed. Platform auth/profiles live on Firebase/Firestore; daily credits
-safety net remains `ensureDailyCredits` on the Render API (see backend).
+safety net remains `ensureDailyCredits` on the backend API (see backend).
 
 ## Deploy commands
 

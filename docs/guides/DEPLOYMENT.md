@@ -4,12 +4,12 @@
 
 | Service | Platform | URL |
 |---|---|---|
-| Frontend | Vercel | https://www.harindrasah.com.np |
+| Frontend | Vercel | https://harindrasah.com.np |
 | Backend API | Firebase Cloud Functions (gen2) | https://us-central1-rn01-af00b.cloudfunctions.net/api |
 
 The frontend auto-deploys on push to `main`. The backend deploys as the
 Cloud Functions `api` function with `firebase deploy --only functions:functions-api:api`.
-The former Render backend is decommissioned. Never push `main` with failing
+The former backend host is decommissioned. Never push `main` with failing
 `npm run check:all`.
 
 ## Frontend — Vercel
@@ -24,13 +24,23 @@ Required environment variables (set in Vercel dashboard → Settings → Environ
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 NEXT_PUBLIC_API_URL=https://us-central1-rn01-af00b.cloudfunctions.net/api
-NEXT_PUBLIC_SITE_URL=https://www.harindrasah.com.np
+NEXT_PUBLIC_SITE_URL=https://harindrasah.com.np
 ```
 
 Optional:
 ```
 NEXT_PUBLIC_SENTRY_DSN=     # enables error monitoring (see AGENTS.md)
 ```
+
+### Canonical domain (apex only)
+
+Production uses **`https://harindrasah.com.np`** only. The repository must not list a `www` hostname in env examples, CORS defaults, Firebase authorized domains, or OAuth URLs.
+
+1. Set **`NEXT_PUBLIC_SITE_URL`** and Firebase **`FRONTEND_URL`** to `https://harindrasah.com.np`.
+2. In **Vercel → Project → Settings → Domains**: attach **only** `harindrasah.com.np` to Production; remove any `www` domain from the project after DNS redirects legacy traffic to apex.
+3. In **Firebase Auth → Authorized domains**: keep `harindrasah.com.np` only for production (plus localhost / Firebase defaults as needed).
+4. In **Google Cloud Console / OAuth**: redirect URIs must use `https://harindrasah.com.np/auth/callback`.
+5. Verify: `curl -sI https://harindrasah.com.np/.well-known/assetlinks.json` → `200`; spot-check login and deep links on the apex host.
 
 ## Backend — Firebase Cloud Functions (gen2)
 
@@ -47,7 +57,7 @@ the `api` function):
 SUPABASE_URL=
 SUPABASE_SERVICE_ROLE_KEY=
 AGNES_API_KEY=              # primary LLM provider
-FRONTEND_URL=https://www.harindrasah.com.np
+FRONTEND_URL=https://harindrasah.com.np
 NODE_ENV=production
 ```
 
@@ -72,7 +82,7 @@ and exit with code 1.
 Cloud Functions scale to zero, so a cold start can take ~30s on the first
 request. The frontend proxy retries with a cold-start-aware timeout
 (`frontend/app/api/[...path]/route.ts`), so no keep-alive ping is needed —
-the old Render keep-alive workflow was removed with the Render decommission.
+the old keep-alive workflow was removed with the decommission.
 
 ## Database migrations
 
