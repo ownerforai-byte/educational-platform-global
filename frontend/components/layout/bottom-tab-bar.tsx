@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
  * Bottom tab bar — five thumb destinations.
  * No lock icons: locked tabs just dim; tapping always navigates (the page
  * shows the muted "Unavailable on this plan" card instead).
- * Hidden on md+ (tablet rail / desktop sidebar take over).
+ * Hidden on lg+ (desktop sidebar). Phones and tablets share the same tab bar.
  */
 export function BottomTabBar() {
   const pathname = usePathname();
@@ -22,7 +22,7 @@ export function BottomTabBar() {
     <nav
       aria-label="App tabs"
       className={cn(
-        "fixed inset-x-0 bottom-0 z-40 md:hidden",
+        "fixed inset-x-0 bottom-0 z-40 lg:hidden",
         "border-t border-border/60 bg-background/95 backdrop-blur-xl",
         "supports-[backdrop-filter]:bg-background/80",
         "pb-safe-bottom select-none",

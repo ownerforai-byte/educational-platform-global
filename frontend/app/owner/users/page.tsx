@@ -57,6 +57,7 @@ import { type UserRole } from "@/lib/auth/roles";
 import { ACCESS_LABELS, type AccessLevel } from "@/lib/core/access-level";
 import { aiSparkLimitLabel, type AiSparkTier } from "@/features/ai/ai-spark-tiers";
 import { OWNER_EMAIL } from "@/lib/owner";
+import { OwnerUserBadgesPanel } from "@/features/owner/owner-user-badges-panel";
 
 const CREDIT_PRESETS = [50, 100, 250, 500] as const;
 
@@ -1000,6 +1001,18 @@ export default function OwnerUsersPage() {
                               </div>
                             </div>
                           )}
+
+                          <OwnerUserBadgesPanel
+                            key={`${u.id}-${(detail.profile.profile_extras as Record<string, unknown> | undefined)?.assignedBadgeIds ?? ""}`}
+                            userId={u.id}
+                            profileExtras={
+                              detail.profile.profile_extras as Record<string, unknown> | undefined
+                            }
+                            onSaved={() => {
+                              void reload();
+                              void toggleDetail(u.id);
+                            }}
+                          />
 
                           <OwnerStorageLimitEditor
                             userId={u.id}

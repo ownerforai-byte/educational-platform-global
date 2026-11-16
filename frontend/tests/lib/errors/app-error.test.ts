@@ -15,6 +15,7 @@ import {
   isNetworkError,
   isRetryableError,
   isRetryableStatus,
+  publicErrorMessage,
   reportClientError,
   retryWithBackoff,
   runSafely,
@@ -200,6 +201,30 @@ describe("createTimeoutSignal", () => {
     expect(timeout.signal.aborted).toBe(true);
     expect(timeout.timedOut()).toBe(false);
     timeout.clear();
+  });
+});
+
+describe("publicErrorMessage", () => {
+  const originalEnv = process.env.NODE_ENV;
+
+  afterEach(() => {
+    process.env.NODE_ENV = originalEnv;
+  });
+
+  it("shows a stable error number and short incident suffix in production", () => {
+    process.env.NODE_ENV = "production";
+    const err = Object.assign(new Error("database timeout"), {
+      status: 502,
+      errorId: "a1b2c3d4",
+      errorNo: 5020,
+    });
+    expect(publicErrorMessage(err)).toBe("Something went wrong. Error #5020-A1B2");
+  });
+
+  it("keeps explicit auth messages", () => {
+    process.env.NODE_ENV = "production";
+    const err = Object.assign(new Error("Sign in required"), { status: 401 });
+    expect(publicErrorMessage(err)).toBe("Sign in required");
   });
 });
 

@@ -93,8 +93,8 @@ android {
         applicationId "com.ravikisan.platform"
         minSdkVersion 30
         targetSdkVersion 36
-        versionCode 7
-        versionName "1.0.5"
+        versionCode 8
+        versionName "1.0.6"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
@@ -112,12 +112,12 @@ android {
             // The URL the Web Manifest for the Progressive Web App that the TWA points to. This
             // is used by Chrome OS and Meta Quest to open the Web version of the PWA instead of
             // the TWA, as it will probably give a better user experience for non-mobile devices.
-            resValue "string", "webManifestUrl", 'https://' + twaManifest.hostName + '/manifest.json'
+            resValue "string", "webManifestUrl", 'https://www.harindrasah.com.np/manifest.json'
 
 
 
             // This is used by Meta Quest.
-            resValue "string", "fullScopeUrl", 'https://' + twaManifest.hostName + '/'
+            resValue "string", "fullScopeUrl", 'https://www.harindrasah.com.np/'
 
 
 

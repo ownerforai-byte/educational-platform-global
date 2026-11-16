@@ -16,8 +16,8 @@
   "iconUrl": "https://www.harindrasah.com.np/icon-512.png",
   "maskableIconUrl": "https://www.harindrasah.com.np/icon-512.png",
   "splashScreenFadeOutDuration": 300,
-  "appVersionName": "1.0.5",
-  "appVersionCode": 7,
+  "appVersionName": "1.0.6",
+  "appVersionCode": 8,
   "shortcuts": [],
   "generatorApp": "bubblewrap",
   "webManifestUrl": "https://www.harindrasah.com.np/manifest.json",
@@ -33,7 +33,9 @@
   "minSdkVersion": 30,
   "orientation": "portrait",
   "fingerprints": [],
-  "additionalTrustedOrigins": [],
+  "additionalTrustedOrigins": [
+    "https://www.harindrasah.com.np"
+  ],
   "retainedBundles": [],
   "protocolHandlers": [],
   "fileHandlers": [],

@@ -24,6 +24,12 @@ import {
 import type { LeaderboardEntry, LeaderboardRange, LeaderboardResponse } from "@/lib/api/leaderboard";
 import { xpLevel } from "@/lib/practice/xp";
 import { XpTrendChart } from "@/components/leaderboard/xp-trend-chart";
+import { MERIT_XP_BAND } from "@/features/merit-badges/merit-badges";
+import {
+  PlatformBadgesRow,
+  resolveLeaderboardBadges,
+  useProfileBadges,
+} from "@/features/badges";
 
 const PODIUM_STYLE = [
   {
@@ -143,6 +149,16 @@ function Podium({ entries }: { entries: LeaderboardEntry[] }) {
               <p className={`mt-0.5 text-[11px] font-medium ${accuracyTone(entry.accuracy)}`}>
                 {entry.accuracy}% accuracy · {entry.answered} answered
               </p>
+              <PlatformBadgesRow
+                compact
+                className="mt-2"
+                badges={resolveLeaderboardBadges({
+                  rank: entry.rank,
+                  xp: entry.xp,
+                  accuracy: entry.accuracy,
+                  sets: entry.sets,
+                })}
+              />
             </li>
           );
         })}
@@ -159,6 +175,7 @@ function YourPosition({
   onRefresh: () => void;
 }) {
   const { you } = data;
+  const { badges: yourMeritBadges } = useProfileBadges();
 
   if (!you) {
     return (
@@ -221,6 +238,8 @@ function YourPosition({
         </div>
       </div>
 
+      <PlatformBadgesRow badges={yourMeritBadges} className="mt-2" compact />
+
       <div className="mt-3 flex items-center gap-2">
         <div
           className="h-1.5 flex-1 overflow-hidden rounded-full bg-primary/15"
@@ -279,8 +298,9 @@ function RuleCard({ rule }: { rule: LeaderboardResponse["rule"] }) {
         How XP is earned
       </h2>
       <p className="mt-1 text-xs text-muted-foreground">
-        XP comes from quiz accuracy only. Opening a set, watching time pass, or repeating a
-        question you already know earns nothing extra.
+        XP comes from quiz accuracy only (each set scored 0–100%). Student badges unlock from XP and
+        accuracy; teacher &amp; special badges are assigned by the owner. Flash tiers rise every{" "}
+        {MERIT_XP_BAND.toLocaleString()} XP.
       </p>
       <dl className="mt-3 grid gap-2 sm:grid-cols-2">
         {[
@@ -502,6 +522,17 @@ export default function LeaderboardPage() {
                               <span className="ml-2 text-[11px] text-muted-foreground">
                                 {xpLevel(entry.xp).title}
                               </span>
+                              <div className="mt-1">
+                                <PlatformBadgesRow
+                                  compact
+                                  badges={resolveLeaderboardBadges({
+                                    rank: entry.rank,
+                                    xp: entry.xp,
+                                    accuracy: entry.accuracy,
+                                    sets: entry.sets,
+                                  })}
+                                />
+                              </div>
                             </td>
                             <td className="px-2 py-2.5">
                               <div className="flex items-center gap-2">

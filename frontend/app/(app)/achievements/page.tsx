@@ -30,6 +30,10 @@ import { streakLabel } from "@/lib/streaks";
 import { useStreakCount } from "@/lib/hooks/use-streak";
 import { calculateScholarLevel } from "@/features/progress/scholar-level";
 import type { ProgressEntry } from "@/types/api";
+import { MERIT_XP_BAND } from "@/features/merit-badges/merit-badges";
+import { BADGE_CATALOG } from "@rn/shared/badges";
+import { PlatformBadgesRow, useProfileBadges } from "@/features/badges";
+import { PlatformBadge } from "@/features/badges/platform-badge";
 
 /** Unit certified = every topic complete; subject certified = every unit. */
 function certificateCounts(entries: ProgressEntry[]): { units: number; subjects: number } {
@@ -92,6 +96,11 @@ export default function AchievementsPage() {
   const level = useMemo(
     () => calculateScholarLevel(summary.completed, user?.credits ?? 0),
     [summary.completed, user?.credits],
+  );
+  const { badges: profileBadges, loading: badgesLoading } = useProfileBadges();
+  const studentEarnedCatalog = useMemo(
+    () => BADGE_CATALOG.filter((row) => row.audience === "student" && row.assignment === "earned"),
+    [],
   );
 
   const milestones = [
@@ -191,6 +200,49 @@ export default function AchievementsPage() {
             </div>
             <Progress value={level.progressPercent} className="h-2" />
           </div>
+        </CardContent>
+      </Card>
+
+      <Card className="border-sky-500/25 bg-gradient-to-br from-sky-500/[0.06] via-card to-card">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-sm">Study badges</CardTitle>
+          <CardDescription>
+            Student badges unlock from quiz accuracy (0–100%) and XP every{" "}
+            {MERIT_XP_BAND.toLocaleString()} points. Teacher, expert mentor, and special badges are
+            assigned by the owner. Rarity: common → legendary (each has its own gradient flash).
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          {badgesLoading ? (
+            <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" aria-label="Loading badges" />
+          ) : (
+            <>
+              <PlatformBadgesRow badges={profileBadges} />
+              {profileBadges.length === 0 ? (
+                <p className="text-xs text-muted-foreground">
+                  Score practice sets to earn your first badge — aim for steady accuracy and{" "}
+                  {MERIT_XP_BAND.toLocaleString()}+ XP per flash tier.
+                </p>
+              ) : null}
+              <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                Earned-from-quizzes catalog
+              </p>
+              <ul className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 text-[11px]">
+                {studentEarnedCatalog.map((row) => {
+                  const earned = profileBadges.some((b) => b.id === row.id);
+                  return (
+                    <li
+                      key={row.id}
+                      className={`rounded-lg border px-2 py-1.5 ${earned ? "border-primary/30 bg-primary/[0.04]" : "border-border/70"}`}
+                    >
+                      <PlatformBadge badgeId={row.id} compact />
+                      <span className="mt-1 block capitalize text-muted-foreground">{row.rarity}</span>
+                    </li>
+                  );
+                })}
+              </ul>
+            </>
+          )}
         </CardContent>
       </Card>
 

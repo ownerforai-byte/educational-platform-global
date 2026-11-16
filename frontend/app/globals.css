@@ -2216,22 +2216,92 @@ pre {
     transform: translateX(120%);
   }
 }
+/* Quiz & role merit badges — tiered gradient flash (data-merit-tier 1–5) */
+.merit-badge-flash,
 .community-bot-badge {
   position: relative;
   overflow: hidden;
 }
 @media (prefers-reduced-motion: no-preference) {
+  .merit-badge-flash::after,
   .community-bot-badge::after {
     content: "";
     position: absolute;
     inset: 0;
+    pointer-events: none;
     background: linear-gradient(
       105deg,
-      transparent 35%,
-      hsl(var(--primary) / 0.12) 50%,
-      transparent 65%
+      transparent 32%,
+      hsl(var(--primary) / 0.14) 50%,
+      transparent 68%
     );
-    animation: community-shimmer-slide 2.8s ease-in-out infinite;
+    animation: community-shimmer-slide 3.2s ease-in-out infinite;
+  }
+  .merit-badge-flash[data-merit-tier="2"]::after,
+  .community-bot-badge[data-merit-tier="2"]::after {
+    animation-duration: 2.8s;
+    opacity: 0.92;
+  }
+  .merit-badge-flash[data-merit-tier="3"]::after,
+  .community-bot-badge[data-merit-tier="3"]::after {
+    animation-duration: 2.4s;
+    opacity: 0.96;
+  }
+  .merit-badge-flash[data-merit-tier="4"]::after,
+  .community-bot-badge[data-merit-tier="4"]::after {
+    animation-duration: 2s;
+    opacity: 1;
+  }
+  .merit-badge-flash[data-merit-tier="5"]::after,
+  .community-bot-badge[data-merit-tier="5"]::after {
+    animation-duration: 1.65s;
+    opacity: 1;
+  }
+  .merit-badge-flash[data-merit-kind="creator"]::after {
+    background: linear-gradient(
+      105deg,
+      transparent 32%,
+      hsl(38 92% 50% / 0.22) 50%,
+      transparent 68%
+    );
+  }
+  .merit-badge-flash[data-merit-kind="teacher"]::after {
+    background: linear-gradient(
+      105deg,
+      transparent 32%,
+      hsl(199 89% 48% / 0.2) 50%,
+      transparent 68%
+    );
+  }
+  .merit-badge-flash[data-merit-kind="expert"]::after {
+    background: linear-gradient(
+      105deg,
+      transparent 32%,
+      hsl(270 75% 60% / 0.22) 50%,
+      transparent 68%
+    );
+  }
+  .merit-badge-flash[data-merit-kind="leaderboard-1"]::after,
+  .merit-badge-flash[data-merit-kind="high-scorer"]::after {
+    background: linear-gradient(
+      105deg,
+      transparent 30%,
+      hsl(45 96% 52% / 0.28) 50%,
+      transparent 70%
+    );
+  }
+  .merit-badge-flash[data-badge-rarity="uncommon"]::after {
+    filter: saturate(1.1);
+  }
+  .merit-badge-flash[data-badge-rarity="rare"]::after {
+    filter: saturate(1.25) brightness(1.05);
+  }
+  .merit-badge-flash[data-badge-rarity="epic"]::after {
+    filter: saturate(1.35) brightness(1.08);
+  }
+  .merit-badge-flash[data-badge-rarity="legendary"]::after {
+    filter: saturate(1.45) brightness(1.12);
+    animation-timing-function: ease-in-out;
   }
 }
 .community-upload-pulse {

@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { FeedAuthor } from "@/lib/api/community-feed";
 import { profilePath } from "@/lib/api/profile";
 import { FollowButton } from "@/features/profile/follow-button";
-import { Bot, Clock3, UserRound } from "lucide-react";
+import { BadgeCheck, Bot, Clock3, UserRound } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { isCommunityBot, resolveFeedAuthor } from "@/lib/community-bot";
 import { BotIdentityBadge } from "@/features/community/bot-identity-badge";
@@ -74,11 +74,38 @@ export function PostAuthorHeader({
         ) : (
           <UserRound className={cn("text-muted-foreground", compact ? "h-4 w-4" : "h-5 w-5")} aria-hidden />
         )}
+        {bot ? (
+          <span
+            className={cn(
+              "absolute z-10 flex items-center justify-center rounded-full bg-background shadow-sm ring-2 ring-primary/45",
+              compact ? "-bottom-0.5 -right-0.5 h-3.5 w-3.5" : "-bottom-0.5 -right-0.5 h-4 w-4",
+            )}
+            aria-hidden
+          >
+            <BadgeCheck className={cn("text-primary", compact ? "h-2.5 w-2.5" : "h-3 w-3")} />
+          </span>
+        ) : null}
       </Link>
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-          <Link href={href} className="truncate text-sm font-semibold text-foreground hover:underline">
-            {resolved.fullName}
+          <Link
+            href={href}
+            className={cn(
+              "truncate text-sm font-semibold hover:underline",
+              bot
+                ? "community-bot-badge max-w-full rounded-md px-1.5 py-0.5 text-primary"
+                : "text-foreground",
+            )}
+          >
+            <span
+              className={cn(
+                "relative z-[1]",
+                bot &&
+                  "bg-gradient-to-r from-primary via-violet-500 to-primary bg-[length:200%_auto] bg-clip-text font-bold text-transparent motion-safe:animate-gradient-text",
+              )}
+            >
+              {resolved.fullName}
+            </span>
           </Link>
           {bot ? (
             <BotIdentityBadge compact={compact} />

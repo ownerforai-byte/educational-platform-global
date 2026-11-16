@@ -9,7 +9,7 @@ import {
 } from "react";
 import Link from "next/link";
 import { publicUrl } from "@/lib/site-url";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useSession } from "@/features/auth/hooks/use-session";
 import {
   addComment,
@@ -115,6 +115,7 @@ export { CommunityUnavailable };
 
 export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { user, isLoading: sessionLoading } = useSession();
   const { copiedId, copy } = useCopyLink();
   const filters = useRef({ q: "", category: "" });
@@ -133,12 +134,31 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
   const [commentDraft, setCommentDraft] = useState("");
   const [aiReplyBusy, setAiReplyBusy] = useState(false);
   const [followUpBotCommentId, setFollowUpBotCommentId] = useState<string | null>(null);
+  const [commentComposerOpen, setCommentComposerOpen] = useState(false);
+  const commentComposerRef = useRef<HTMLFormElement | null>(null);
   const likeInFlight = useRef(new Set<string>());
   const pollPausedUntil = useRef(0);
 
   const bumpPollPause = useCallback(() => {
     pollPausedUntil.current = Date.now() + INTERACTION_POLL_PAUSE_MS;
   }, []);
+
+  useEffect(() => {
+    if (view !== "post") {
+      setCommentComposerOpen(false);
+      return;
+    }
+    if (searchParams.get("comment") === "1") {
+      setCommentComposerOpen(true);
+    }
+  }, [view, searchParams]);
+
+  useEffect(() => {
+    if (!commentComposerOpen || view !== "post") return;
+    const node = commentComposerRef.current;
+    if (!node) return;
+    node.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }, [commentComposerOpen, view]);
 
   const patchPostEverywhere = useCallback((postId: string, patch: (item: FeedPost) => FeedPost) => {
     setPosts((current) => current.map((item) => (item.id === postId ? patch(item) : item)));
@@ -147,6 +167,24 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
       current ? { ...current, posts: current.posts.map((item) => (item.id === postId ? patch(item) : item)) } : current,
     );
   }, []);
+
+  const refreshPostForBotReply = useCallback(async (postId: string, beforeIds: Set<string>) => {
+    for (let attempt = 0; attempt < 10; attempt += 1) {
+      await new Promise((resolve) => window.setTimeout(resolve, 2_500));
+      try {
+        const fresh = await getPost(postId);
+        const incoming = fresh.post;
+        const botRows = (incoming.comments ?? []).filter((row) => isCommunityBot(row.author.id));
+        const gained = botRows.some((row) => !beforeIds.has(row.id));
+        if (gained || (incoming.comments?.length ?? 0) > beforeIds.size) {
+          patchPostEverywhere(postId, (item) => mergePostSnapshot(item, incoming));
+          return;
+        }
+      } catch {
+        /* polling is best-effort */
+      }
+    }
+  }, [patchPostEverywhere]);
 
   const applyLike = useCallback((postId: string, likeCount: number, likedByYou: boolean) => {
     const patch = (item: FeedPost) => item.id === postId ? { ...item, likeCount, likedByYou } : item;
@@ -421,9 +459,11 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
     const body = commentBody.trim();
     if (!body) return;
 
-    const followUpToBot = followUpBotCommentId != null;
+    const followUpToBot =
+      followUpBotCommentId != null || isCommunityBot(post.author.id);
     const pending = optimisticComment(body, user);
     const postId = post.id;
+    const commentIdsBefore = new Set((post.comments ?? []).map((row) => row.id));
 
     bumpPollPause();
     setCommentBody("");
@@ -445,6 +485,10 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
           comments: [...withoutPending, ...added],
         };
       });
+      if (result.botReplyPending) {
+        void refreshPostForBotReply(postId, commentIdsBefore);
+      }
+      setCommentComposerOpen(false);
     } catch (err) {
       patchPostEverywhere(postId, (item) => ({
         ...item,
@@ -563,15 +607,16 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
             <span>{item.likeCount}</span>
             <span className="sr-only">{item.likedByYou ? "Liked" : "Like"}</span>
           </button>
-          <Link
-            href={sharePath(item.id)}
+          <button
+            type="button"
             className={cn(actionBtn, "min-h-11 min-w-11 text-muted-foreground hover:bg-muted/60 hover:text-foreground")}
             aria-label={`${item.commentCount} comments`}
+            onClick={() => router.push(`${sharePath(item.id)}?comment=1`)}
           >
             <MessageCircle className="h-4 w-4" aria-hidden />
             {item.commentCount}
             <span className="hidden sm:inline">comments</span>
-          </Link>
+          </button>
           {canInvokeBot && looksLikeQuestion(item) ? (
             <BotAnswerButton
               visible
@@ -721,13 +766,37 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                   {(post.comments ?? []).length}
                 </span>
               </h2>
-              <BotAnswerButton
-                visible={Boolean(user && post.assistantReply?.canApprove && !post.assistantReply.posted)}
-                busy={aiReplyBusy}
-                variant="comment"
-                onPublish={() => onAssistantReply(post)}
-              />
+              <div className="flex flex-wrap items-center gap-2">
+                <button
+                  type="button"
+                  className={cn(chipBtn, "min-h-10", commentComposerOpen && "border-primary/40 text-primary")}
+                  aria-expanded={commentComposerOpen}
+                  onClick={() => {
+                    setCommentComposerOpen((open) => !open);
+                    setError(null);
+                  }}
+                >
+                  <MessageCircle className="h-3.5 w-3.5" aria-hidden />
+                  {commentComposerOpen ? "Hide comment box" : "Add comment"}
+                </button>
+                <BotAnswerButton
+                  visible={Boolean(
+                    user &&
+                      !isCommunityBot(post.author.id) &&
+                      post.assistantReply?.canApprove &&
+                      !post.assistantReply.posted,
+                  )}
+                  busy={aiReplyBusy}
+                  variant="comment"
+                  onPublish={() => onAssistantReply(post)}
+                />
+              </div>
             </div>
+            {isCommunityBot(post.author.id) && user ? (
+              <p className="text-xs text-muted-foreground">
+                Ask Community bot anything in a comment — it will reply on this thread.
+              </p>
+            ) : null}
             {(post.comments ?? []).length === 0 ? (
               <p className={cn(emptyStatePanel, "p-6 text-center text-sm text-muted-foreground")}>
                 <MessageSquare className="mx-auto mb-2 h-8 w-8 text-primary/35" aria-hidden />
@@ -900,29 +969,35 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                 })}
               </ul>
             )}
-            <form className={cn(glassShell, "space-y-3 p-4")} onSubmit={(event) => void onComment(event)}>
-              <label className="block text-sm">
-                <span className="mb-1.5 flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
-                  <MessageSquare className="h-3.5 w-3.5" aria-hidden />
-                  {user
-                    ? followUpBotCommentId
-                      ? "Follow-up question for Community bot (posted after you comment)"
-                      : "Write a comment"
-                    : "Sign in to comment."}
-                </span>
-                <textarea
-                  value={commentBody}
-                  onChange={(event) => setCommentBody(event.target.value)}
-                  rows={3}
-                  aria-label="Write a comment"
-                  className={inputClass}
-                />
-              </label>
-              <button type="submit" className={cn(primaryCta, "min-h-11 px-3 py-2")}>
-                <Send className="h-4 w-4" aria-hidden />
-                Comment
-              </button>
-            </form>
+            {commentComposerOpen ? (
+              <form
+                ref={commentComposerRef}
+                className={cn(glassShell, "space-y-3 p-4")}
+                onSubmit={(event) => void onComment(event)}
+              >
+                <label className="block text-sm">
+                  <span className="mb-1.5 flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
+                    <MessageSquare className="h-3.5 w-3.5" aria-hidden />
+                    {user
+                      ? followUpBotCommentId || isCommunityBot(post.author.id)
+                        ? "Question for Community bot (it replies after you post)"
+                        : "Write a comment"
+                      : "Sign in to comment."}
+                  </span>
+                  <textarea
+                    value={commentBody}
+                    onChange={(event) => setCommentBody(event.target.value)}
+                    rows={3}
+                    aria-label="Write a comment"
+                    className={inputClass}
+                  />
+                </label>
+                <button type="submit" className={cn(primaryCta, "min-h-11 px-3 py-2")}>
+                  <Send className="h-4 w-4" aria-hidden />
+                  Comment
+                </button>
+              </form>
+            ) : null}
           </section>
         </div>
       ) : null}

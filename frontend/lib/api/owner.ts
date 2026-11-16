@@ -121,6 +121,16 @@ export function adjustOwnerUserCredits(
 }
 
 /** Bytes cap for profile/community storage; `null` restores the tier default. */
+export function updateOwnerUserBadges(
+  userId: string,
+  badgeIds: string[],
+): Promise<{ success: true; assignedBadgeIds: string[] }> {
+  return apiFetch(`/api/owner/users/${userId}/badges`, {
+    method: "PATCH",
+    body: JSON.stringify({ badgeIds }),
+  });
+}
+
 export function updateOwnerUserStorageLimit(
   userId: string,
   storage_limit_bytes: number | null,

@@ -23,6 +23,9 @@ import {
   type PublicProfile,
   type StorageInfo,
 } from "@/lib/api/profile";
+import { useSession } from "@/features/auth/hooks/use-session";
+import { ACCESS_LABELS, accessLevelFor } from "@/lib/core/access-level";
+import { isCreatorAuthor } from "@/lib/owner";
 
 type Visibility = "public" | "members" | "private";
 
@@ -49,6 +52,7 @@ function extrasFrom(profile: PublicProfile | null): ProfileExtras {
 
 export function ProfileEditForm() {
   const router = useRouter();
+  const { user } = useSession();
   const [profile, setProfile] = useState<PublicProfile | null>(null);
   const [storage, setStorage] = useState<StorageInfo | null>(null);
   const [saving, setSaving] = useState(false);
@@ -157,8 +161,18 @@ export function ProfileEditForm() {
     );
   };
 
+  const tier = accessLevelFor(user);
+  const accountLabel = user && isCreatorAuthor(user) ? "Creator" : ACCESS_LABELS[tier];
+
   return (
     <div className="mx-auto w-full max-w-xl space-y-4 p-4 pb-16">
+      <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-primary/25 bg-primary/5 px-4 py-3 text-sm">
+        <div>
+          <p className="text-xs font-medium text-muted-foreground">Account status</p>
+          <p className="font-semibold text-foreground">{accountLabel}</p>
+        </div>
+        <p className="text-xs text-muted-foreground">Member, Plus, Pro, and Creator plans can edit this profile.</p>
+      </div>
       <IdentityHero profile={profile} onChanged={onMediaChanged} />
       {storage ? <StorageMeter storage={storage} /> : null}
       <Card>

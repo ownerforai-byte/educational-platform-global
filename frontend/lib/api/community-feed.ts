@@ -145,7 +145,7 @@ export function addComment(
   postId: string,
   body: string,
   opts?: { followUpToBot?: boolean },
-): Promise<{ comment: FeedComment; botComment?: FeedComment | null }> {
+): Promise<{ comment: FeedComment; botComment?: FeedComment | null; botReplyPending?: boolean }> {
   return call(`${ROOT}/feed/${postId}/comments`, {
     method: "POST",
     body: JSON.stringify({ body, followUpToBot: opts?.followUpToBot === true }),

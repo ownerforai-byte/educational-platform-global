@@ -4,10 +4,12 @@
  * Nothing here replaces existing behaviour: every current call site keeps its
  * current code path. This module only *adds* one canonical way to classify,
  * inspect, report and retry the errors that already flow through
- * `lib/api-client.ts` (which hangs `status`, `code`, `errorId` and
+ * `lib/api-client.ts` (which hangs `status`, `code`, `errorId`, `errorNo` and
  * `statusToken` off the thrown error via `Object.assign`), so call sites can
  * handle edge cases without `any`-casts.
  */
+
+import { formatPublicErrorRef, resolveClientErrorNumber } from "@/lib/errors/error-numbers";
 
 /** Stable machine-readable bucket for an error. */
 export type ErrorKind =
@@ -32,8 +34,11 @@ export interface ErrorShape {
   status?: number;
   code?: string;
   errorId?: string;
+  errorNo?: number;
   statusToken?: string;
 }
+
+export type { ErrorNumber } from "@/lib/errors/error-numbers";
 
 /** Constructor options for {@link AppError}. */
 export interface AppErrorOptions extends ErrorShape {
@@ -85,6 +90,7 @@ export class AppError extends Error {
   readonly status?: number;
   readonly code?: string;
   readonly errorId?: string;
+  readonly errorNo?: number;
   readonly statusToken?: string;
   readonly retryable: boolean;
   readonly path?: string;
@@ -102,6 +108,7 @@ export class AppError extends Error {
     if (typeof options.status === "number") this.status = options.status;
     if (typeof options.code === "string") this.code = options.code;
     if (typeof options.errorId === "string") this.errorId = options.errorId;
+    if (typeof options.errorNo === "number") this.errorNo = options.errorNo;
     if (typeof options.statusToken === "string") this.statusToken = options.statusToken;
     if (typeof options.path === "string") this.path = options.path;
     this.retryable = options.retryable ?? isRetryableStatus(options.status);
@@ -132,6 +139,13 @@ export function getErrorId(error: unknown): string | undefined {
   if (isAppError(error)) return error.errorId;
   const errorId = (error as ErrorShape | undefined)?.errorId;
   return typeof errorId === "string" && errorId.length > 0 ? errorId : undefined;
+}
+
+/** Reads the stable public catalog number from API errors (`errorNo` / `x-error-no`). */
+export function getErrorNumber(error: unknown): number | undefined {
+  if (isAppError(error) && typeof error.errorNo === "number") return error.errorNo;
+  const errorNo = (error as ErrorShape | undefined)?.errorNo;
+  return typeof errorNo === "number" && Number.isFinite(errorNo) ? errorNo : undefined;
 }
 
 /** Reads the signed `statusToken` some auth flows return (pending approval). */
@@ -181,6 +195,45 @@ export function getErrorMessage(
   return fallback;
 }
 
+const PUBLIC_SERVER_FALLBACK = "We couldn't complete that request.";
+
+/**
+ * User-visible error text — no internal details on 5xx / unknown transport failures.
+ * Surfaces the backend correlation id as a short reference number (like support tickets).
+ */
+export function publicErrorMessage(
+  error: unknown,
+  fallback = "Something went wrong.",
+  opts: { preserveStatuses?: number[] } = {},
+): string {
+  const status = getErrorStatus(error);
+  const preserve = opts.preserveStatuses ?? [401, 403, 404, 409, 429];
+  if (typeof status === "number" && preserve.includes(status)) {
+    return getErrorMessage(error, fallback);
+  }
+  const errorId = getErrorId(error);
+  const errorNo =
+    getErrorNumber(error) ??
+    resolveClientErrorNumber({
+      status,
+      code: getErrorCode(error),
+      message: getErrorMessage(error, fallback),
+    });
+  const isSensitive =
+    status >= 500 ||
+    status === 0 ||
+    isNetworkError(error) ||
+    isTimeoutError(error) ||
+    (typeof status === "number" && status >= 502 && status <= 504);
+  if (isSensitive) {
+    const ref = formatPublicErrorRef(errorNo, errorId);
+    return process.env.NODE_ENV === "production"
+      ? `Something went wrong. Error #${ref}`
+      : `${getErrorMessage(error, fallback)} (Error #${ref})`;
+  }
+  return getErrorMessage(error, fallback);
+}
+
 /** Decides whether retrying a failed operation could plausibly succeed. */
 export function isRetryableError(error: unknown): boolean {
   if (isAbortError(error)) return false;
@@ -211,6 +264,7 @@ export function asAppError(error: unknown, context: { path?: string } = {}): App
           ? "network"
           : classifyStatus(status),
     errorId: getErrorId(error),
+    errorNo: getErrorNumber(error),
     code: getErrorCode(error),
     statusToken: getStatusToken(error),
     original: error,

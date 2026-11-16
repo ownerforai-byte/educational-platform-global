@@ -18,6 +18,7 @@ import { NotificationBell } from "./notification-bell";
 import { UserNav } from "./user-nav";
 import { PlatformGuideWidget } from "@/components/home/platform-guide-widget";
 import { AIWidget } from "./ai-widget";
+import { Footer } from "./footer";
 import { useMediaQuery } from "@/lib/use-media-query";
 import { key } from "@/lib/scoped-storage";
 import {
@@ -39,13 +40,10 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   const searchUnlocked = hasLevel(user, sectionById("search")?.minTier ?? "member");
   const [preferencesLoaded, setPreferencesLoaded] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  // Three shells, one component: phone (bottom tabs + drawer), tablet
-  // (the sidebar collapsed to an icon rail) and desktop (full sidebar). The
-  // rail is the same navigation, so a tablet keeps every destination instead
-  // of falling back to a phone-width page.
+  // Three shells: phone and tablet share bottom tabs + drawer (footer on
+  // tablet only, below lg). Desktop (lg+) uses the persistent sidebar.
   const isDesktop = useMediaQuery("(min-width: 1024px)", true);
-  const railOnly = !isDesktop;
-  const navCollapsed = railOnly || sidebarCollapsed;
+  const navCollapsed = !isDesktop || sidebarCollapsed;
 
   useEffect(() => {
     try {
@@ -70,14 +68,14 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
       className={
         isChatRoom
           ? "flex h-[100dvh] max-h-[100dvh] flex-col overflow-hidden bg-background"
-          : "flex min-h-screen flex-col bg-background pb-tabbar md:pb-0"
+          : "flex min-h-screen flex-col bg-background pb-tabbar lg:pb-0"
       }
     >
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-background focus:px-4 focus:py-3 focus:text-primary focus:shadow-lg">Skip to content</a>
       <header
         className="pt-safe-top sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70 translate-y-0"
       >
-        <div className="grid min-h-12 md:min-h-14 grid-cols-[auto_minmax(0,1fr)] md:grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-2 gap-y-2 px-4 md:px-6 py-1.5">
+        <div className="grid min-h-12 lg:min-h-14 grid-cols-[auto_minmax(0,1fr)] lg:grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-2 gap-y-2 px-4 lg:px-6 py-1.5">
           <div className="flex items-center gap-2 min-w-0">
             <MobileNav />
 
@@ -114,12 +112,12 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               (owner 2026-11-09: "make the position of square of cee in center
               in header"). */}
           {(searchUnlocked || user) && (
-            <div className="col-span-2 row-start-2 flex min-w-0 items-center justify-center gap-2 px-1 md:col-span-1 md:col-start-2 md:row-start-1 md:px-4">
+            <div className="col-span-2 row-start-2 flex min-w-0 items-center justify-center gap-2 px-1 lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:px-4">
               {searchUnlocked && <GlobalSearch />}
               {user && (
                 <Link
                   href="/periodic-table"
-                  className="inline-flex shrink-0 items-center gap-1.5 px-2.5 min-h-10 md:min-h-8 rounded-xl border border-teal-500/30 bg-teal-500/10 text-xs font-semibold text-teal-600 dark:text-teal-400 hover:bg-teal-500/20 transition-all shadow-sm whitespace-nowrap"
+                  className="inline-flex shrink-0 items-center gap-1.5 px-2.5 min-h-10 lg:min-h-8 rounded-xl border border-teal-500/30 bg-teal-500/10 text-xs font-semibold text-teal-600 dark:text-teal-400 hover:bg-teal-500/20 transition-all shadow-sm whitespace-nowrap"
                   title="118-Element CEE Periodic Table & Chemistry Question Bank"
                   aria-label="Periodic table and CEE chemistry question bank"
                 >
@@ -131,7 +129,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </div>
           )}
 
-          <div className="col-start-2 row-start-1 flex items-center justify-end gap-1.5 shrink-0 md:col-start-3">
+          <div className="col-start-2 row-start-1 flex items-center justify-end gap-1.5 shrink-0 lg:col-start-3">
 
             {/* State-driven badge (plan.md §14 5.2) — hides at zero, syncs
                 across tabs; the old static pulsing dot ignored real state. */}
@@ -149,14 +147,12 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
 
       {/* ── Body: sidebar + main ───────────────────────────────────── */}
       <div className={`relative flex flex-1 ${isChatRoom ? "min-h-0 overflow-hidden" : ""}`}>
-        {/* Persistent navigation: full sidebar on desktop, icon rail on tablet.
-            One instance, one nav landmark — the compact rail is the same
-            SidebarNavigation, so both widths show every destination. */}
+        {/* Persistent navigation: lg+ only (tablet matches phone tabs + drawer). */}
         <aside
           className={`
-            hidden md:block
-            md:sticky md:top-14 lg:top-16
-            md:h-[calc(100dvh-3.5rem)] lg:h-[calc(100vh-4rem)]
+            hidden lg:block
+            lg:sticky lg:top-16
+            lg:h-[calc(100vh-4rem)]
             flex-shrink-0 overflow-hidden
             border-r border-border/40 bg-background
             transition-[width] duration-200 ease-in-out
@@ -172,8 +168,8 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           tabIndex={-1}
           className={
             isChatRoom
-              ? "flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden px-1 pt-1 pb-0 focus:outline-none md:px-1.5"
-              : "min-w-0 flex-1 px-4 py-5 pb-tabbar focus:outline-none sm:py-6 sm:pb-tabbar md:px-6 md:pb-8 lg:px-8"
+              ? "flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden px-1 pt-1 pb-0 focus:outline-none lg:px-1.5"
+              : "min-w-0 flex-1 px-4 py-5 pb-tabbar focus:outline-none sm:py-6 sm:pb-tabbar lg:px-8 lg:pb-8"
           }
         >
           {!isChatRoom && breadcrumbs && breadcrumbs.length > 0 && (
@@ -211,11 +207,14 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
         </main>
       </div>
 
-      {/* Site footer (tier-aware directory) — lives ONLY on the Info page
-          now (owner 2026-11-09: "keep the footer to limited place … not at all
-          place, like all footer to 'info' page"). */}
+      {/* Tablet-only site directory footer — phones stay compact (You / settings). */}
+      {!isChatRoom ? (
+        <div className="hidden md:block lg:hidden pb-tabbar">
+          <Footer user={user} />
+        </div>
+      ) : null}
 
-      {/* Phone app frame: hide on chat so Veer sits flush to the bottom */}
+      {/* Phone + tablet tab bar; hide on chat so Veer sits flush to the bottom */}
       {!isChatRoom && <BottomTabBar />}
 
       {/* Back navigation — chat has its own header controls */}

@@ -2,6 +2,7 @@ import type { NextFunction, Request, Response } from "express";
 import { randomUUID } from "node:crypto";
 import { logger } from "../lib/logger.js";
 import { getRequestId } from "./request-id.js";
+import { formatPublicErrorRef, resolveErrorNumber } from "../lib/error-numbers.js";
 
 /**
  * Error handling — security policy (2026-09-25)
@@ -13,6 +14,8 @@ import { getRequestId } from "./request-id.js";
 
 /** Response header carrying the correlation id, for support + log lookup. */
 export const ERROR_ID_HEADER = "x-error-id";
+/** Stable public error type number (catalog; pairs with errorId for a unique ref). */
+export const ERROR_NO_HEADER = "x-error-no";
 
 /**
  * An error that is safe to show the user verbatim (validation, "already
@@ -45,9 +48,15 @@ function describeContext(res: Response, context?: string): string {
   return `${req.method ?? "?"} ${route}`;
 }
 
-export function logServerError(err: unknown, errorId: string, context: string): void {
+export function logServerError(
+  err: unknown,
+  errorId: string,
+  context: string,
+  errorNo?: number,
+): void {
   const detail = err instanceof Error ? (err.stack ?? err.message) : err;
-  logger.error(`[error ${errorId}] ${context}`, { detail });
+  const ref = errorNo != null ? formatPublicErrorRef(errorNo, errorId) : errorId;
+  logger.error(`[error #${ref}] ${context}`, { detail, errorId, errorNo });
 }
 
 export function serverError(
@@ -57,12 +66,14 @@ export function serverError(
   publicMessage = "Internal server error",
 ): void {
   const errorId = newErrorId();
-  logServerError(err, errorId, describeContext(res, context));
+  const errorNo = resolveErrorNumber({ context, status: 500 });
+  logServerError(err, errorId, describeContext(res, context), errorNo);
 
   if (res.headersSent) return;
 
   res.setHeader(ERROR_ID_HEADER, errorId);
-  res.status(500).json({ error: publicMessage, errorId });
+  res.setHeader(ERROR_NO_HEADER, String(errorNo));
+  res.status(500).json({ error: publicMessage, errorId, errorNo });
 }
 
 export function notFoundHandler(_req: Request, res: Response): void {
@@ -101,17 +112,21 @@ export function errorHandler(
   }
 
   if (err instanceof AppError) {
+    const errorNo = resolveErrorNumber({ status: err.status, code: err.code });
     respondKnownError(res, err.status, {
       error: err.message,
       ...(err.code ? { code: err.code } : {}),
+      errorNo,
     });
     return;
   }
 
   if (isSharedAppError(err)) {
+    const errorNo = resolveErrorNumber({ status: err.statusCode, code: err.code });
     respondKnownError(res, err.statusCode, {
       error: err.message,
       code: err.code,
+      errorNo,
       ...(err.details !== undefined ? { details: err.details } : {}),
     });
     return;
@@ -120,24 +135,29 @@ export function errorHandler(
   const errorId = newErrorId();
   const requestId = getRequestId(res);
   const status = (err as { status?: number })?.status;
+  const errorNo = resolveErrorNumber({ status: typeof status === "number" ? status : 500 });
   logServerError(
     err,
     errorId,
     `${req.method} ${req.originalUrl ?? req.url}${requestId ? ` req=${requestId}` : ""}`,
+    errorNo,
   );
 
   res.setHeader(ERROR_ID_HEADER, errorId);
+  res.setHeader(ERROR_NO_HEADER, String(errorNo));
   if (typeof status === "number" && status >= 400 && status < 500) {
     respondKnownError(res, status, {
-      error: "Bad request",
+      error: "Something went wrong.",
       errorId,
+      errorNo,
       ...(requestId ? { requestId } : {}),
     });
     return;
   }
   respondKnownError(res, 500, {
-    error: "Internal server error",
+    error: "Something went wrong.",
     errorId,
+    errorNo,
     ...(requestId ? { requestId } : {}),
   });
 }

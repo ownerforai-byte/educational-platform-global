@@ -12,6 +12,8 @@ import { authEmailsById, invalidateAuthEmailsCache } from "../../utils/authEmail
 import { aiSparkLimitFor, aiSparkTierFor } from "../../utils/aiSpark";
 import { sendApprovalEmail } from "../../utils/mailer";
 import { cancelOpenAccessRequests } from "../../services/access-requests";
+import { assignedBadgeIdsSchema, PROFILE_EXTRAS_BADGE_KEY } from "../../badges/assigned-badges.js";
+import { compactProfileExtras } from "../../services/profile-storage.js";
 
 /**
  * Owner-only router — mounted at /api/owner.
@@ -614,6 +616,61 @@ router.get("/users/:id", requireAuth, async (req: Request, res: Response) => {
     });
   } catch (err: any) {
     console.error("[owner] user detail error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/** PATCH /api/owner/users/:id/badges — assign teacher / special / manual student badges. */
+router.patch("/users/:id/badges", requireAuth, async (req: Request<{ id: string }>, res: Response) => {
+  const owner = ownerGate(req, res);
+  if (!owner) return;
+
+  const parsed = assignedBadgeIdsSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid badge list", details: parsed.error.flatten() });
+    return;
+  }
+
+  try {
+    const targetEmail = await resolveTargetEmail(req.params.id);
+    if (refuseRootOwnerEmailTarget(res, targetEmail)) return;
+
+    const { data: existing, error: readError } = await supabaseAdmin
+      .from("profiles")
+      .select("id, profile_extras")
+      .eq("id", req.params.id)
+      .maybeSingle();
+
+    if (readError || !existing) {
+      res.status(404).json({ error: "User not found" });
+      return;
+    }
+
+    const prev =
+      existing.profile_extras && typeof existing.profile_extras === "object"
+        ? (existing.profile_extras as Record<string, unknown>)
+        : {};
+    const unique = [...new Set(parsed.data.badgeIds.map((id) => id.trim()).filter(Boolean))];
+    const nextExtras = compactProfileExtras(prev, { [PROFILE_EXTRAS_BADGE_KEY]: unique });
+
+    const { error: updateError } = await supabaseAdmin
+      .from("profiles")
+      .update({ profile_extras: nextExtras })
+      .eq("id", req.params.id);
+
+    if (updateError) {
+      console.error("[owner] badge assign failed:", updateError.message);
+      res.status(500).json({ error: "Failed to update badges" });
+      return;
+    }
+
+    res.json({
+      success: true,
+      userId: req.params.id,
+      assignedBadgeIds: nextExtras.assignedBadgeIds ?? [],
+    });
+  } catch (err: unknown) {
+    console.error("[owner] badges error:", err instanceof Error ? err.message : err);
     res.status(500).json({ error: "Internal server error" });
   }
 });

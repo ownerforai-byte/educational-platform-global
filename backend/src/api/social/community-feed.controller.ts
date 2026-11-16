@@ -31,7 +31,8 @@ import {
   runCommunityBotDailyPublicPost,
   runCommunityBotProfileDiscoveryPost,
 } from "../../services/community-bot-scheduler";
-import { ERROR_ID_HEADER, logServerError, newErrorId } from "../../middleware/error-handler";
+import { ERROR_ID_HEADER, ERROR_NO_HEADER, logServerError, newErrorId } from "../../middleware/error-handler";
+import { resolveErrorNumber } from "../../lib/error-numbers.js";
 import {
   BINARY_FILE_BY_EXTENSION,
   COMMUNITY_ATTACHMENT_MAX_BYTES,
@@ -1007,28 +1008,24 @@ router.post(
       } catch (err) {
         if (err instanceof CommunityAssistantReplyError) {
           const errorId = newErrorId();
-          logServerError(err, errorId, "community-feed-ai");
+          const errorNo = resolveErrorNumber({ context: "community-feed-ai", status: err.status });
+          logServerError(err, errorId, "community-feed-ai", errorNo);
           res.setHeader(ERROR_ID_HEADER, errorId);
-          res.status(err.status).json({ error: err.message, errorId });
+          res.setHeader(ERROR_NO_HEADER, String(errorNo));
+          res.status(err.status).json({ error: "Something went wrong.", errorId, errorNo });
           return;
         }
         const message = err instanceof Error ? err.message : String(err);
         if (/timeout|timed out|deadline/i.test(message)) {
           const errorId = newErrorId();
-          logServerError(err, errorId, "community-feed-ai");
+          const errorNo = resolveErrorNumber({ context: "community-feed-ai", status: 504 });
+          logServerError(err, errorId, "community-feed-ai", errorNo);
           res.setHeader(ERROR_ID_HEADER, errorId);
-          res.status(504).json({
-            error: "The Study Assistant took too long to answer. Please try again in a moment.",
-            errorId,
-          });
+          res.setHeader(ERROR_NO_HEADER, String(errorNo));
+          res.status(504).json({ error: "Something went wrong.", errorId, errorNo });
           return;
         }
-        serverError(
-          res,
-          err instanceof Error ? err : new Error(String(err)),
-          "community-feed-ai",
-          "The Study Assistant could not answer right now. Please try again in a moment.",
-        );
+        serverError(res, err instanceof Error ? err : new Error(String(err)), "community-feed-ai");
         return;
       }
       const now = new Date().toISOString();
@@ -1363,19 +1360,30 @@ router.post(
       }),
     };
 
-    let botComment: Awaited<ReturnType<typeof publishBotThreadReply>> | null = null;
-    if (parsed.data.followUpToBot) {
-      botComment = await publishBotThreadReply({
+    const wantBotReply =
+      parsed.data.followUpToBot === true || isCommunityBotId(found.row.author_id);
+
+    noStore(res);
+    if (wantBotReply) {
+      res.status(201).json({
+        comment: humanComment,
+        botComment: null,
+        botReplyPending: true,
+      });
+      void publishBotThreadReply({
         postId,
         post: found.row,
         question: parsed.data.body,
+      }).catch((err) => {
+        const errorId = newErrorId();
+        logServerError(err, errorId, "community-feed-bot-deferred");
       });
+      return;
     }
 
-    noStore(res);
     res.status(201).json({
       comment: humanComment,
-      botComment: botComment?.comment ?? null,
+      botComment: null,
     });
   }),
 );

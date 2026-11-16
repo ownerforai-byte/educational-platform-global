@@ -578,15 +578,18 @@ export function PeriodicTableView() {
             const isSelected = activeFilterId === cat.id;
             const unlocked = filterUnlocked(cat);
             if (!unlocked) {
-              // Plans live in the footer only; restricted filters stay disabled.
+              // Plans live in the footer only; locked filters stay visible but blurred for members.
               return (
                 <span
                   key={cat.id}
                   aria-disabled="true"
                   title={`${cat.name} opens at ${ACCESS_LABELS[filterMinTier(cat)]}`}
-                  className="flex cursor-not-allowed items-center gap-1 rounded-lg border border-border/60 bg-muted/40 px-2 py-0.5 text-[11px] font-bold text-muted-foreground/50 opacity-60 grayscale"
+                  className="relative flex cursor-not-allowed items-center gap-1 overflow-hidden rounded-lg border border-border/60 bg-muted/30 px-2 py-0.5 text-[11px] font-bold"
                 >
-                  {cat.name}
+                  <span className="select-none blur-[4px] opacity-70">{cat.name}</span>
+                  <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background/25 text-[9px] font-bold uppercase tracking-wide text-muted-foreground">
+                    {ACCESS_LABELS[filterMinTier(cat)]}
+                  </span>
                 </span>
               );
             }

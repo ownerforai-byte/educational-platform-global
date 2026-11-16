@@ -178,6 +178,8 @@ async function request<T>(path: string, init?: RequestInit, isRetry = false): Pr
       message?: string;
       /** Correlation id the backend logged the full error under. */
       errorId?: string;
+      /** Stable public error catalog number. */
+      errorNo?: number;
       /** Machine-readable reason (e.g. PENDING_APPROVAL / ACCOUNT_REJECTED). */
       code?: string;
       /** Signed token that opens the /welcome status (pending) screen. */
@@ -193,6 +195,9 @@ async function request<T>(path: string, init?: RequestInit, isRetry = false): Pr
     const err = new Error(text);
     (err as unknown as { status?: number }).status = response.status;
     if (error.errorId) (err as unknown as { errorId?: string }).errorId = error.errorId;
+    if (typeof error.errorNo === "number" && Number.isFinite(error.errorNo)) {
+      (err as unknown as { errorNo?: number }).errorNo = error.errorNo;
+    }
     if (error.code) (err as unknown as { code?: string }).code = error.code;
     if (error.statusToken)
       (err as unknown as { statusToken?: string }).statusToken = error.statusToken;

@@ -121,6 +121,8 @@ export interface ProfileExtras {
   interests?: string;
   portfolio?: string;
   intro?: string;
+  /** Owner-assigned badge ids (teacher, special, honorary). */
+  assignedBadgeIds?: string[];
 }
 
 export async function updateMyProfile(payload: {

@@ -66,8 +66,8 @@ async function main() {
   twaManifest.name = "Ravikisan's Platform";
   twaManifest.launcherName = "Ravikisan";
   twaManifest.packageId = "com.ravikisan.platform";
-  twaManifest.appVersionCode = 7;
-  twaManifest.appVersionName = "1.0.5";
+  twaManifest.appVersionCode = 8;
+  twaManifest.appVersionName = "1.0.6";
   twaManifest.display = "standalone";
   twaManifest.orientation = "portrait";
   twaManifest.themeColor = require("color")("#3b82f6");

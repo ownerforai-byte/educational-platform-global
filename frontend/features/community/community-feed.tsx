@@ -78,25 +78,27 @@ export function CommunityFeed({
 }) {
   return (
     <>
-      <header className="space-y-4">
+      <header className="space-y-3">
         {view === "mine" ? (
           <CommunityBackLink href="/ai/community" label="Back to feed" />
         ) : null}
-        <div className="flex flex-wrap items-end justify-between gap-3">
-          <div>
-            <h1 className="flex items-center gap-2.5 text-2xl font-semibold tracking-tight">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl border border-border/80 bg-card text-primary shadow-sm shadow-primary/10 ring-1 ring-primary/10">
-                <MessageSquare className="h-5 w-5" aria-hidden />
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div className="min-w-0">
+            <h1 className="flex items-center gap-2 text-xl font-semibold tracking-tight sm:text-2xl">
+              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border/80 bg-card text-primary shadow-sm ring-1 ring-primary/10 sm:h-10 sm:w-10 sm:rounded-xl">
+                <MessageSquare className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden />
               </span>
-              {view === "mine" ? "My posts" : "Community"}
+              <span className="truncate">{view === "mine" ? "My posts" : "Community"}</span>
             </h1>
-            <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
-              {view === "mine"
-                ? "Posts you have published."
-                : "Open study space — nature notes from Community bot through the day, member questions, and crisp visuals without heavy uploads."}
-            </p>
+            {view === "feed" ? (
+              <p className="mt-1 line-clamp-2 text-xs text-muted-foreground sm:text-sm">
+                Bot study notes, member questions, and quick visuals.
+              </p>
+            ) : (
+              <p className="mt-1 text-xs text-muted-foreground sm:text-sm">Posts you have published.</p>
+            )}
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex shrink-0 flex-wrap gap-1.5 sm:gap-2">
             <Link href="/ai/community/new" className={cn(primaryCta, "min-h-11 px-3 py-2")}>
               <Plus className="h-4 w-4" aria-hidden />
               New post

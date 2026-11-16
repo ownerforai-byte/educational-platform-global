@@ -3,6 +3,7 @@ import type { SessionUser } from "@/features/auth/types";
 import type { FeedPost } from "@/lib/api/community-feed";
 import { emptyStatePanel, ghostLink, surfaceCardFlat } from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
+import { publicErrorMessage } from "@/lib/errors/app-error";
 import { AlertCircle, ArrowLeft, MessageSquare } from "lucide-react";
 
 export const POLL_MS = 45_000;
@@ -17,7 +18,7 @@ export function statusOf(err: unknown): number {
 }
 
 export function messageOf(err: unknown, fallback = "Something went wrong."): string {
-  return err instanceof Error && err.message ? err.message : fallback;
+  return publicErrorMessage(err, fallback);
 }
 
 export function formatBytes(size: number): string {
