@@ -19,5 +19,5 @@ Supabase Auth issues identities; the Express API validates tokens and sets appli
 
 ## Ops notes
 
-- Free Render + free Postgres plan limits apply when used; prefer managed Supabase for durable data.
-- Never commit service-role keys; use ignored `.env` / Render env groups.
+- Managed Supabase is the durable datastore; watch plan/quotas on whatever hosts the API (Firebase Cloud Functions today).
+- Never commit service-role keys; use ignored `.env` locally and the functions env file / Secret Manager in cloud.

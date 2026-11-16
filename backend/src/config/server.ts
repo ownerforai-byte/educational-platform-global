@@ -9,7 +9,7 @@ import path from "path";
  * server, and no two files can drift apart on a limit.
  */
 
-/** Port the API listens on. Render/platform sets PORT; local dev defaults to 3000. */
+/** Port the API listens on. The platform sets PORT; local dev defaults to 3000. */
 export const PORT = Number(process.env.PORT) || 3000;
 
 /** Interface the server binds. 0.0.0.0 so containerised deploys are reachable. */
@@ -33,7 +33,8 @@ export const STATIC_PUBLIC_DIRS: string[] = [
 ];
 
 /**
- * Proxy chain in production: browser -> Vercel /api proxy -> Render LB -> app.
+ * Proxy chain in production: browser -> Vercel /api proxy -> platform load
+ * balancer -> app.
  * That is TWO trusted hops. With 1, Express resolved `req.ip` to the Vercel
  * edge IP for EVERY visitor, so all users shared one rate-limit bucket and the
  * strict auth cap (5/min) throttled OAuth CSRF/session handshakes collectively

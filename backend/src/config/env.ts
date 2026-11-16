@@ -9,10 +9,12 @@ export const env: BackendEnv = parseBackendEnv(process.env);
 /**
  * Deployment-environment detection.
  *
- * Render injects `RENDER=true` and `RENDER_EXTERNAL_URL` into the runtime but
- * historically NODE_ENV has not been guaranteed there, and several security
- * behaviors (Secure cookie flag, strict CORS) key off "is this production".
- * Treat either signal as production so behavior is deterministic per platform.
+ * Render injects `RENDER=true` and `RENDER_EXTERNAL_URL`; Cloud Functions /
+ * Cloud Run inject `K_SERVICE` (Cloud Functions also `FUNCTION_TARGET`).
+ * Historically NODE_ENV has not been guaranteed on any of these platforms, and
+ * several security behaviors (Secure cookie flag, strict CORS) key off "is
+ * this production". Treat any of the platform signals as production so
+ * behavior is deterministic per platform.
  *
  * Use `isProductionEnv()` (re-evaluated per call) in request paths; the
  * `isProduction` constant is a boot-time snapshot for module-level defaults.
@@ -21,7 +23,9 @@ export function isProductionEnv(): boolean {
   return (
     process.env.NODE_ENV === "production" ||
     process.env.RENDER === "true" ||
-    !!process.env.RENDER_EXTERNAL_URL
+    !!process.env.RENDER_EXTERNAL_URL ||
+    !!process.env.K_SERVICE ||
+    !!process.env.FUNCTION_TARGET
   );
 }
 

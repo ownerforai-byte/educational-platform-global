@@ -73,9 +73,11 @@ export function createApp(): express.Express {
     res.json({
       status: "ok",
       timestamp: new Date().toISOString(),
-      // Render injects the deployed revision — lets the live smoke test confirm
-      // it is checking the release that triggered it (not the previous one).
-      commit: process.env.RENDER_GIT_COMMIT ?? null,
+      // Deployed-revision stamp — lets the live smoke test confirm it is
+      // checking the release that triggered it (not the previous one). The
+      // platform injects the revision (Render: RENDER_GIT_COMMIT; Cloud Run /
+      // Cloud Functions: K_REVISION; generic CI: COMMIT_SHA).
+      commit: process.env.RENDER_GIT_COMMIT ?? process.env.COMMIT_SHA ?? process.env.K_REVISION ?? null,
     });
   });
 

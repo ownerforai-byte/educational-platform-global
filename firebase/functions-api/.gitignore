@@ -1,0 +1,17 @@
+# Staging output of scripts/build.mjs — fully regenerated on every build.
+/lib/
+/content/
+/public/
+/backend/
+
+# Dependencies are installed server-side by the Cloud Functions buildpacks
+# (the firebase.json "ignore" list keeps node_modules out of the upload too).
+# The lockfile is machine-generated; firebase/functions commits none either.
+node_modules/
+package-lock.json
+
+# Env files hold live secrets; only .env.example templates may be committed.
+.env*
+!.env.example
+*.local
+*.log

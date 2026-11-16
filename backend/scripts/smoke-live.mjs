@@ -4,13 +4,15 @@
  *
  * Usage:
  *   node scripts/smoke-live.mjs [baseUrl]
- *   npm run smoke -- https://rn01.onrender.com
+ *   npm run smoke -- https://us-central1-rn01-af00b.cloudfunctions.net/api
  *
- * Default base URL comes from SMOKE_BASE_URL or https://rn01.onrender.com.
+ * Default base URL comes from SMOKE_BASE_URL or the Firebase Cloud Functions
+ * base URL (the backend moved off Render; pass an explicit baseUrl to smoke a
+ * different deployment).
  * Requires SMOKE_OWNER_EMAIL + SMOKE_OWNER_PASSWORD for the auth round-trip;
  * those checks are skipped when unset (run in read-only mode).
  */
-const BASE = process.argv[2] || process.env.SMOKE_BASE_URL || "https://rn01.onrender.com";
+const BASE = process.argv[2] || process.env.SMOKE_BASE_URL || "https://us-central1-rn01-af00b.cloudfunctions.net/api";
 
 let failures = 0;
 const step = (name, ok, detail = "") => {
@@ -40,8 +42,10 @@ const j = async (path, opts = {}) => {
 
 // ── 0. Deploy-aware wait: confirm we are testing the RIGHT release ──
 // Greptile review 2026-09-25: a fixed sleep can run the smoke against the
-// PREVIOUS release when Render is slow. Render injects RENDER_GIT_COMMIT, so
-// when SMOKE_EXPECTED_COMMIT is set (CI passes GITHUB_SHA) we poll /health
+// PREVIOUS release when the platform is slow to roll. /health reports the
+// deployed revision via the platform fallback chain (RENDER_GIT_COMMIT →
+// COMMIT_SHA → K_REVISION, see backend/src/app.ts), so when
+// SMOKE_EXPECTED_COMMIT is set (CI passes GITHUB_SHA) we poll /health
 // until the deployed revision matches, then proceed.
 const EXPECTED_COMMIT = process.env.SMOKE_EXPECTED_COMMIT || null;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

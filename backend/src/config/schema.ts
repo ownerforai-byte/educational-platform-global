@@ -21,6 +21,12 @@ export const backendEnvSchema = z.object({
   PORT: optionalString,
   RENDER: optionalString,
   RENDER_EXTERNAL_URL: optionalUrl,
+  // Cloud Functions / Cloud Run platform signals (production detection +
+  // deployed-revision stamp — see config/env.ts and src/app.ts).
+  K_SERVICE: optionalString,
+  FUNCTION_TARGET: optionalString,
+  K_REVISION: optionalString,
+  COMMIT_SHA: optionalString,
   FRONTEND_URL: optionalString,
   PUBLIC_SITE_URL: optionalUrl,
   TRUST_PROXY_HOPS: optionalString,

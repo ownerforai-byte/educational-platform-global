@@ -60,7 +60,6 @@
     "firebase:sdkconfig-web": "npm --prefix firebase run sdkconfig:web",
     "firebase:pull-vercel-env": "npm --prefix firebase run env:pull-frontend",
     "firebase:refresh-local": "npm run firebase:env-web && npm run firebase:verify-env && npm run firebase:sdkconfig-web",
-    "render:sync-env": "node backend/scripts/sync-render-firebase-env.mjs",
     "db:migrate": "node backend/scripts/migrate.mjs",
     "db:migrate:check": "node backend/scripts/migrate.mjs --check",
     "dead-ends": "node scripts/audit/dead-end-ratchet.mjs",

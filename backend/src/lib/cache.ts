@@ -1,6 +1,6 @@
 /**
  * Bounded in-process LRU + TTL cache for read-only curriculum loaders.
- * Not shared across Render instances — CDN Cache-Control is the multi-node layer.
+ * Not shared across platform instances — CDN Cache-Control is the multi-node layer.
  */
 
 interface Entry<T> {

@@ -17,7 +17,8 @@ import type { Request } from "express";
  * CLOSED (one shared budget) instead of open.
  *
  * Deploy note: TRUST_PROXY_HOPS (config/server.ts) must match the real proxy
- * chain (browser -> Vercel proxy -> Render is TWO hops, not one); too few
+ * chain (browser -> Vercel proxy -> platform load balancer is TWO hops, not
+ * one); too few
  * trusted hops over-cluster users onto shared identities and throttle them
  * collectively instead of per user.
  */
