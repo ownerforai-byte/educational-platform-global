@@ -1,7 +1,7 @@
 # Google Play — Data Safety & Monetization Answers
 
 **App:** Ravikisan's Platform
-**Date:** 14 October 2026
+**Date:** 16 November 2026
 
 > Use this to fill the **Data safety** section of Play Console. Every "Yes/No"
 > must match the Privacy Policy (`privacy-policy.md`). Where the app is truly
@@ -23,7 +23,7 @@
 
 ### 2. Data shared with third parties (our processors)
 - **Supabase** — Name, Email, User ID, Other content (all data we store)
-- **Vercel / Render** (hosting) — App interaction / technical logs
+- **Vercel / Google Firebase (Cloud Functions)** (hosting) — App interaction / technical logs
 - **AI provider** (used by "Veer") — **Prompts / generated content** (Other
   content) and, for a logged-in user, their User ID
 
@@ -63,7 +63,7 @@
 
 ## G. Data safety declaration checklist
 - [ ] All "Yes" answers have a matching Privacy Policy section
-- [ ] Third-party names (Supabase, Vercel, Render, AI provider) are spelled
+- [ ] Third-party names (Supabase, Vercel, Google Firebase, AI provider) are spelled
       exactly as registered
 - [ ] "Sensitive data" set to No (we collect no health/financial/financial
       identity data from the user directly)

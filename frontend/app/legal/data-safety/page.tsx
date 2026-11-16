@@ -12,7 +12,7 @@ export default function DataSafety() {
   return (
     <LegalDoc
       title="Data Safety"
-      updated="14 October 2026"
+      updated="16 November 2026"
       intro="This page summarizes the Google Play Data Safety declaration for Ravikisan's Platform."
       doc="data-safety"
     >
@@ -30,7 +30,7 @@ export default function DataSafety() {
           <h3>Data shared with third parties</h3>
           <ul>
             <li><strong>Supabase</strong> — Name, Email, User ID, Other content</li>
-            <li><strong>Vercel / Render</strong> — App interaction / technical logs</li>
+            <li><strong>Vercel / Google Firebase (Cloud Functions)</strong> — App interaction / technical logs</li>
             <li><strong>AI provider (Veer)</strong> — Prompts, generated content, and User ID (for logged-in users)</li>
           </ul>
         </LegalBlurGate>

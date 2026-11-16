@@ -36,7 +36,7 @@ tick this list before hitting **Create app**.
 
 ## 3) Data safety
 - [ ] Complete the Data Safety form → `data-safety.md`
-- [ ] Third parties: Supabase, Vercel, Render, AI provider
+- [ ] Third parties: Supabase, Vercel, Google Firebase (Cloud Functions), AI provider
 - [ ] "Data can be deleted" = Yes
 - [ ] Ads = No (unless you add ads)
 
@@ -132,7 +132,8 @@ The current AAB lives at `play-store/ravikisan-platform-release.aab`.
       all Play Console SHA-256 fingerprints in repo-root `assetlinks.json`.
       Apex must serve `/.well-known/assetlinks.json` with **200** (disable
       Vercel dashboard apex→www redirect; `proxy.ts` handles canonical traffic).
-      Upload **v1.0.5 (versionCode 7)** after building a new signed AAB.
+      Upload **v1.0.6 (versionCode 8)** after building a new signed AAB (dual
+      host `harindrasah.com.np` + `www.harindrasah.com.np` autoVerify).
 - [ ] Universal links / app links open the app from the Play-registered domain.
 
 ## Notes

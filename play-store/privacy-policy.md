@@ -75,6 +75,8 @@ Your study content is used to ground those answers. We do not sell your prompts.
 - We use industry-standard protections: encrypted connections (HTTPS/TLS),
   hashed passwords, per-user data isolation (row-level security), strict CORS,
   and per-IP rate limiting.
+- The back-end API runs on **Google Firebase Cloud Functions** (United States,
+  `us-central1`).
 - In production, session cookies are flagged `secure` and `httpOnly`.
 - We limit who can access your data to the account holder and authorised administrators.
 
@@ -88,11 +90,12 @@ only to the extent needed to run the service:
 |---|---|---|
 | **Supabase** (auth, database, storage, transactional email) | Accounts, learning data, uploads, password emails | Processor / data host |
 | **Vercel** | Hosts the front-end web app | Hosting provider |
-| **Render** | Hosts the back-end API server | Hosting provider |
+| **Google Firebase (Cloud Functions)** | Hosts the back-end API server | Hosting provider |
 | **AI provider** (LLM + image generation used by "Veer") | AI prompt/response processing to produce answers & figures | Third-party AI service |
 
 Data may be processed and stored on servers located in **multiple countries**,
-including **Nepal** and **India/US** data centers depending on the provider.
+including **Nepal**, the **United States** (API hosting), and **India/US/EU**
+regions depending on the provider.
 
 ## 6. Cookies and session storage
 

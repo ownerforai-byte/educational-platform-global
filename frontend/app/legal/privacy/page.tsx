@@ -15,7 +15,7 @@ export default function PrivacyPolicy() {
   return (
     <LegalDoc
       title="Privacy Policy"
-      updated="14 October 2026"
+      updated="16 November 2026"
       intro="This policy explains what information Ravikisan's Platform (the “App”, “we”, “us”) collects, why, and what choices you have. It is written for Google Play review and for students."
       doc="privacy-policy"
     >
@@ -73,9 +73,11 @@ export default function PrivacyPolicy() {
         <h2>4. How we protect it</h2>
         <p>
           Data is stored on <strong>Supabase</strong> (PostgreSQL, auth,
-          storage) under our processor agreement. We use HTTPS/TLS, hashed
-          passwords, per-user row-level security, strict CORS, per-IP rate
-          limiting, and secure, httpOnly session cookies in production.
+          storage) under our processor agreement. The back-end API runs on{" "}
+          <strong>Google Firebase Cloud Functions</strong> (United States,{" "}
+          <code>us-central1</code>). We use HTTPS/TLS, hashed passwords,
+          per-user row-level security, strict CORS, per-IP rate limiting, and
+          secure, httpOnly session cookies in production.
         </p>
       </section>
 
@@ -89,13 +91,14 @@ export default function PrivacyPolicy() {
           <tbody>
             <tr><td>Supabase</td><td>Accounts, learning data, uploads, password emails</td><td>Processor / host</td></tr>
             <tr><td>Vercel</td><td>Front-end hosting</td><td>Host</td></tr>
-            <tr><td>Render</td><td>Back-end API hosting</td><td>Host</td></tr>
+            <tr><td>Google Firebase (Cloud Functions)</td><td>Back-end API hosting</td><td>Host</td></tr>
             <tr><td>AI provider (Veer)</td><td>AI prompt/response processing</td><td>Third-party AI</td></tr>
           </tbody>
         </table>
         <p>
-          Data may be processed in <strong>Nepal</strong> and{" "}
-          <strong>India/US</strong> data centers.
+          Data may be processed in <strong>Nepal</strong> and in provider
+          regions including the <strong>United States</strong> (API) and{" "}
+          <strong>India/US/EU</strong> data centers.
         </p>
       </section>
 

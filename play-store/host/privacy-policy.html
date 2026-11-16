@@ -51,7 +51,7 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:2rem 0}
 <p>To create and manage your account, provide study content and AI features, track progress, keep bookmarks, and secure the service (rate-limiting, abuse blocking).</p>
 
 <h2>4. How we protect it</h2>
-<p>Data is stored on <strong>Supabase</strong> (PostgreSQL, auth, storage) under our processor agreement. We use HTTPS/TLS, hashed passwords, per-user row-level security, strict CORS, per-IP rate limiting, and <code>secure</code>+<code>httpOnly</code> session cookies in production.</p>
+<p>Data is stored on <strong>Supabase</strong> (PostgreSQL, auth, storage) under our processor agreement. The back-end API runs on <strong>Google Firebase Cloud Functions</strong> (United States, <code>us-central1</code>). We use HTTPS/TLS, hashed passwords, per-user row-level security, strict CORS, per-IP rate limiting, and <code>secure</code>+<code>httpOnly</code> session cookies in production.</p>
 
 <h2>5. Who we share it with (processors)</h2>
 <p>We do <strong>not sell</strong> personal data. We use these service providers:</p>
@@ -59,10 +59,10 @@ hr{border:0;border-top:1px solid #e2e8f0;margin:2rem 0}
 <tr><th>Provider</th><th>Handles</th><th>Role</th></tr>
 <tr><td>Supabase</td><td>Accounts, learning data, uploads, password emails</td><td>Processor / host</td></tr>
 <tr><td>Vercel</td><td>Front-end hosting</td><td>Host</td></tr>
-<tr><td>Render</td><td>Back-end API hosting</td><td>Host</td></tr>
+<tr><td>Google Firebase (Cloud Functions)</td><td>Back-end API hosting</td><td>Host</td></tr>
 <tr><td>AI provider (Veer)</td><td>AI prompt/response processing</td><td>Third-party AI</td></tr>
 </table>
-<p>Data may be processed in <strong>Nepal</strong> and <strong>India/US</strong> data centers.</p>
+<p>Data may be processed in <strong>Nepal</strong> and in provider regions including the <strong>United States</strong> (API) and <strong>India/US/EU</strong> data centers.</p>
 
 <h2>6. Cookies</h2>
 <p>Two <code>httpOnly</code> session cookies (<code>sb-access-token</code>, <code>sb-refresh-token</code>) keep you signed in. No advertising or analytics cookies. See the Cookie Policy.</p>
