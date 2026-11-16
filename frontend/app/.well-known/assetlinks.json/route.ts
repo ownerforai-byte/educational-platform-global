@@ -37,7 +37,8 @@ export async function GET() {
   return new Response(body, {
     headers: {
       "Content-Type": "application/json; charset=utf-8",
-      "Cache-Control": "public, max-age=300, must-revalidate",
+      "Cache-Control": "public, max-age=0, must-revalidate",
+      "CDN-Cache-Control": "public, max-age=60, must-revalidate",
     },
   });
 }

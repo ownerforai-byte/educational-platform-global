@@ -238,32 +238,38 @@ jobs:
           const assetlinksText = await fs.readFile(assetlinksPath, 'utf8');
           const assetlinks = JSON.parse(assetlinksText);
 
-          const entry = assetlinks.find((entry) =>
-            entry.target?.namespace === 'android_app' &&
-            entry.target?.package_name === ASSETLINKS_PACKAGE
+          const entries = assetlinks.filter(
+            (entry) =>
+              entry.target?.namespace === 'android_app' &&
+              entry.target?.package_name === ASSETLINKS_PACKAGE,
           );
-          if (!entry) {
+          if (entries.length === 0) {
             throw new Error(`No assetlinks entry for package ${ASSETLINKS_PACKAGE}`);
           }
 
-          if (!entry.relation || !Array.isArray(entry.relation)) {
-            throw new Error('assetlinks entry is missing a relation array');
-          }
-          if (!entry.relation.includes('delegate_permission/common.handle_all_urls')) {
-            throw new Error('assetlinks entry must declare delegate_permission/common.handle_all_urls');
-          }
-
-          if (!entry.target?.sha256_cert_fingerprints || !Array.isArray(entry.target.sha256_cert_fingerprints)) {
-            throw new Error('assetlinks entry target must include sha256_cert_fingerprints');
-          }
-          if (entry.target.sha256_cert_fingerprints.length === 0) {
-            throw new Error('assetlinks entry target must declare at least one SHA-256 fingerprint');
+          for (const entry of entries) {
+            if (!entry.relation || !Array.isArray(entry.relation)) {
+              throw new Error('assetlinks entry is missing a relation array');
+            }
+            if (!entry.relation.includes('delegate_permission/common.handle_all_urls')) {
+              throw new Error('assetlinks entry must declare delegate_permission/common.handle_all_urls');
+            }
+            if (!entry.relation.includes('delegate_permission/common.get_login_creds')) {
+              throw new Error('assetlinks entry must declare delegate_permission/common.get_login_creds for Play credential sharing');
+            }
+            if (!entry.target?.sha256_cert_fingerprints || !Array.isArray(entry.target.sha256_cert_fingerprints)) {
+              throw new Error('assetlinks entry target must include sha256_cert_fingerprints');
+            }
+            if (entry.target.sha256_cert_fingerprints.length === 0) {
+              throw new Error('assetlinks entry target must declare at least one SHA-256 fingerprint');
+            }
           }
 
           const normalizeFingerprint = (value: string) =>
             value.replace(/[^0-9A-Fa-f]/g, '').toUpperCase();
 
-          const currentFingerprints = entry.target.sha256_cert_fingerprints
+          const currentFingerprints = entries
+            .flatMap((entry) => entry.target.sha256_cert_fingerprints)
             .map((f) => (typeof f === 'string' ? normalizeFingerprint(f) : ''))
             .filter((f) => f.length === 64);
 

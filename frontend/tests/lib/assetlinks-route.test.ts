@@ -9,6 +9,9 @@ describe("assetlinks.json route", () => {
 
     const body = await response.json();
     expect(Array.isArray(body)).toBe(true);
+    expect(body).toHaveLength(1);
+    expect(body[0]?.relation).toContain("delegate_permission/common.handle_all_urls");
+    expect(body[0]?.relation).toContain("delegate_permission/common.get_login_creds");
     const fingerprints =
       body[0]?.target?.sha256_cert_fingerprints?.map((f: string) =>
         f.replace(/[^0-9A-Fa-f]/g, "").toUpperCase(),
