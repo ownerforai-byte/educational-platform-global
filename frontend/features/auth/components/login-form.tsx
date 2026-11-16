@@ -13,7 +13,6 @@ import { MfaSmsPanel } from "./mfa-sms-panel";
 import type { MultiFactorResolver } from "firebase/auth";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
-import { PhoneAuthPanel } from "./phone-auth-panel";
 import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/core/access-level";
 import {
@@ -246,24 +245,6 @@ export function LoginForm() {
         onError={(msg, detail) => {
           setError(msg);
           setErrorDetail(detail ?? null);
-        }}
-      />
-
-      <PhoneAuthPanel
-        disabled={loading}
-        onError={(msg: string, detail?: string | null) => {
-          setError(msg);
-          setErrorDetail(detail ?? null);
-        }}
-        onNavigate={(path) => (path === DENIED_ROUTE ? router.replace(path) : router.push(path))}
-        onSignedIn={async (result) => {
-          if (result.user) {
-            clearPendingSignup();
-            await refresh();
-            router.push(tierWelcomePathFor(result.user));
-            return;
-          }
-          setError(AUTH_INVALID_CREDENTIALS);
         }}
       />
 

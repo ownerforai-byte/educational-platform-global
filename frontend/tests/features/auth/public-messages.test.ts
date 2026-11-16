@@ -102,14 +102,15 @@ describe("API machine-code mappings", () => {
     ).toContain("denied");
   });
 
-  it("maps phone SMS failures to friendly messages", () => {
-    // Actionable, user-facing hints are kept:
+  it("maps SMS second-factor failures to friendly messages", () => {
+    // Actionable, user-facing hints are kept (MFA OTP path):
     expect(
       authFailureMessage(Object.assign(new Error("x"), { code: "auth/invalid-verification-code" }), "oauth"),
     ).toContain("SMS code");
+    // The old phone sign-in error codes no longer map to phone-format hints:
     expect(
       authFailureMessage(Object.assign(new Error("x"), { code: "auth/invalid-phone-number" }), "oauth"),
-    ).toContain("international format");
+    ).toBe(AUTH_TEMPORARILY_UNAVAILABLE);
     // Infrastructure failures (SMS billing, reCAPTCHA) collapse to the generic
     // unavailable message so internal setup is never exposed:
     expect(

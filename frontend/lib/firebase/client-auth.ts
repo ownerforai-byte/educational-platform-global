@@ -9,7 +9,6 @@ import {
   getRedirectResult,
   GoogleAuthProvider,
   RecaptchaVerifier,
-  signInWithPhoneNumber,
   signOut as firebaseSignOut,
   sendPasswordResetEmail,
   confirmPasswordReset,
@@ -17,7 +16,6 @@ import {
   getMultiFactorResolver,
   PhoneAuthProvider,
   PhoneMultiFactorGenerator,
-  type ConfirmationResult,
   type MultiFactorError,
   type MultiFactorResolver,
   type User,
@@ -182,21 +180,8 @@ async function getPhoneRecaptcha(containerId: string): Promise<RecaptchaVerifier
   return phoneRecaptcha;
 }
 
-/** E.164 recommended (e.g. +9779812345678). Returns an object to pass to {@link firebasePhoneConfirm}. */
-export async function firebasePhoneSendCode(
-  phoneNumber: string,
-  recaptchaContainerId: string,
-): Promise<ConfirmationResult> {
-  const auth = getFirebaseAuth();
-  if (!auth) throw new Error("Firebase Auth is not configured");
-  const verifier = await getPhoneRecaptcha(recaptchaContainerId);
-  return signInWithPhoneNumber(auth, phoneNumber.trim(), verifier);
-}
-
-export async function firebasePhoneConfirm(confirmation: ConfirmationResult, smsCode: string): Promise<string> {
-  const cred = await confirmation.confirm(smsCode.trim());
-  return cred.user.getIdToken();
-}
+/** E.164 phone sign-in/sign-up was removed (auth is email + Google + MFA OTP only).
+ *  The reCAPTCHA helper below is kept for the enrolled-phone MFA factor. */
 
 export function clearPhoneRecaptcha(): void {
   if (!phoneRecaptcha) return;

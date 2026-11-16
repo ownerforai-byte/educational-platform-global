@@ -130,7 +130,7 @@ function resolveAuthFailureMessage(err: unknown, kind: AuthFailureKind): string 
     return AUTH_TRY_AGAIN;
   }
   if (/email-already-in-use|account-exists-with-different-credential|credential-already-in-use/.test(code)) {
-    return "An account already exists with this email or phone. Try signing in instead.";
+    return "An account already exists with this email. Try signing in instead.";
   }
 
   if (/too-many-requests|too many requests|too many attempts|quota exceeded|rate limit/.test(code + " " + message)) {
@@ -138,9 +138,6 @@ function resolveAuthFailureMessage(err: unknown, kind: AuthFailureKind): string 
   }
   if (/invalid-verification-code|invalid-verification-id|session-expired|code-expired/.test(code)) {
     return "That SMS code is wrong or expired. Request a new code.";
-  }
-  if (/invalid-phone-number|missing-phone-number/.test(code)) {
-    return "Enter a valid mobile number in international format (e.g. +97798xxxxxxxx).";
   }
   if (/user-disabled/.test(code)) {
     return "This account has been disabled. Contact us if this looks wrong.";

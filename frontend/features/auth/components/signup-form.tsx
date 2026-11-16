@@ -9,7 +9,6 @@ import { AuthField } from "./auth-field";
 import { signupAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
-import { PhoneAuthPanel } from "./phone-auth-panel";
 import { VerifyingStatus } from "./verifying-status";
 import { tierWelcomePathFor } from "@/lib/core/access-level";
 import {
@@ -183,25 +182,6 @@ export function SignupForm() {
         onError={(msg, detail) => {
           setError(msg);
           setErrorDetail(detail ?? null);
-        }}
-      />
-
-      <PhoneAuthPanel
-        mode="signup"
-        signupFullName={fullName}
-        disabled={loading}
-        onError={(msg: string, detail?: string | null) => {
-          setError(msg);
-          setErrorDetail(detail ?? null);
-        }}
-        onNavigate={(path) => router.push(path)}
-        onSignedUp={async (result) => {
-          if (result.user) {
-            refresh();
-            router.push(tierWelcomePathFor(result.user));
-            return;
-          }
-          if (result.message) setMessage(result.message);
         }}
       />
 
