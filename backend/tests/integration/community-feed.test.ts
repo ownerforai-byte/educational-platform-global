@@ -56,6 +56,8 @@ const memory = vi.hoisted(() => {
     private orderField?: string;
     private ascending = true;
     private limitCount?: number;
+    private rangeFrom?: number;
+    private rangeTo?: number;
     private op: "select" | "insert" | "update" | "delete" = "select";
     private payload: Row[] = [];
     private patch: Row = {};
@@ -88,6 +90,12 @@ const memory = vi.hoisted(() => {
 
     limit(count: number) {
       this.limitCount = count;
+      return this;
+    }
+
+    range(from: number, to: number) {
+      this.rangeFrom = from;
+      this.rangeTo = to;
       return this;
     }
 
@@ -130,6 +138,9 @@ const memory = vi.hoisted(() => {
         });
       }
       if (this.limitCount !== undefined) list = list.slice(0, this.limitCount);
+      if (this.rangeFrom !== undefined && this.rangeTo !== undefined) {
+        list = list.slice(this.rangeFrom, this.rangeTo + 1);
+      }
       return list;
     }
 

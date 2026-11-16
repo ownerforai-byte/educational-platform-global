@@ -28,7 +28,9 @@ export function MarkdownBody({
         content={text}
         className={cn(
           "prose-sm dark:prose-invert max-w-none text-foreground",
-          clamp && "prose-headings:my-1 prose-p:my-0.5 prose-ul:my-0.5 prose-ol:my-0.5",
+          "[&_img]:my-3 [&_img]:w-full [&_img]:max-h-52 [&_img]:rounded-xl [&_img]:border [&_img]:border-border/70 [&_img]:object-cover [&_img]:shadow-sm",
+          "[&_p]:leading-relaxed",
+          clamp && "prose-headings:my-1 prose-p:my-0.5 prose-ul:my-0.5 prose-ol:my-0.5 [&_img]:max-h-40",
         )}
       />
     </div>

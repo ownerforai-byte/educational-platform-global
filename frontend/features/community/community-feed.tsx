@@ -93,7 +93,7 @@ export function CommunityFeed({
             <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
               {view === "mine"
                 ? "Posts you have published."
-                : "Open to all. Members publish and read Community bot answers; guests see blurred bot replies."}
+                : "Open study space — nature notes from Community bot through the day, member questions, and crisp visuals without heavy uploads."}
             </p>
           </div>
           <div className="flex flex-wrap gap-2">

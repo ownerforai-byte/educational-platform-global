@@ -2,23 +2,125 @@ import { randomUUID } from "node:crypto";
 import { insertCommunityFeedPost } from "../db/repositories/community-feed.repository.js";
 import { COMMUNITY_BOT_ID, ensureCommunityBotProfile } from "../lib/community-bot.js";
 
-const NATURE_DIGEST = [
+/**
+ * Tiny scenic SVGs in `frontend/public/community/vibes/` (~2–4 KB each).
+ * Markdown embeds stay lightweight; UI prose styles sharpen presentation.
+ */
+const VIBE_POSTS: ReadonlyArray<{
+  title: string;
+  body: string;
+  image: string;
+  category: string;
+}> = [
   {
-    title: "Morning nature note",
-    body: "Today notice how light arrives before sound — dew, birds, then traffic. A two-minute pause outdoors often resets focus better than another scroll.",
+    title: "Dawn over the hills",
+    image: "/community/vibes/dawn.svg",
+    category: "nepali",
+    body: "Before you open a textbook, notice the light on the ridges. Two quiet breaths outdoors often clear the fog better than one more scroll.",
   },
   {
-    title: "Weather and study",
-    body: "Nepal's pre-monsoon heat makes hydration matter for concentration. Keep water nearby; short breaks beat long unfocused sessions.",
+    title: "Monsoon mood",
+    image: "/community/vibes/monsoon.svg",
+    category: "nepali",
+    body: "Rainy afternoons are good for short revision sprints — 25 minutes on one topic, then tea. Hydration matters when humidity is high.",
   },
   {
-    title: "Public news for students",
-    body: "Board and entrance calendars shift yearly — check your college notice board and this platform's announcements. Plan backward from the exam month.",
+    title: "Terrace study light",
+    image: "/community/vibes/terrace.svg",
+    category: "general",
+    body: "If your desk feels cramped, move to softer daylight. Rewrite one hard definition in your own words; that counts as real study.",
+  },
+  {
+    title: "Himalaya horizon",
+    image: "/community/vibes/himalaya.svg",
+    category: "nepali",
+    body: "Big goals feel nearer when you break them into this week only: one chapter, one diagram, one past question.",
+  },
+  {
+    title: "Wildflowers & focus",
+    image: "/community/vibes/wildflower.svg",
+    category: "biology",
+    body: "Notice small patterns in nature — symmetry in petals mirrors symmetry in chemistry. Quick sketches lock memory better than passive rereading.",
+  },
+  {
+    title: "Quiet window",
+    image: "/community/vibes/study-window.svg",
+    category: "general",
+    body: "Evening study works when the room is calm. Put your phone face-down; one distraction-free page beats three distracted chapters.",
+  },
+  {
+    title: "Morning birds",
+    image: "/community/vibes/dawn.svg",
+    category: "general",
+    body: "Sound arrives before the city wakes. Match that calm: review yesterday's mistakes before learning anything new.",
+  },
+  {
+    title: "Cloudbreak",
+    image: "/community/vibes/monsoon.svg",
+    category: "physics",
+    body: "After a cloud passes, light changes fast — like finally grasping a formula. Teach it aloud once; if you stumble, you found the gap.",
+  },
+  {
+    title: "Village path",
+    image: "/community/vibes/terrace.svg",
+    category: "nepali",
+    body: "Steady steps matter on long slopes. Pick one subject today, not five. Depth on one unit beats skimming an entire book.",
+  },
+  {
+    title: "Snow line",
+    image: "/community/vibes/himalaya.svg",
+    category: "general",
+    body: "Cold air is sharp — use that clarity for maths or physics problems while your mind is fresh.",
+  },
+  {
+    title: "Field biology",
+    image: "/community/vibes/wildflower.svg",
+    category: "biology",
+    body: "Classification starts with honest observation. Name three traits you see; then map them to your syllabus topic.",
+  },
+  {
+    title: "Night lamp",
+    image: "/community/vibes/study-window.svg",
+    category: "general",
+    body: "Late sessions need a hard stop. Set an alarm; sleep is part of preparation, especially before board week.",
+  },
+  {
+    title: "Market morning",
+    image: "/community/vibes/terrace.svg",
+    category: "nepali",
+    body: "Public notices and exam dates change — check your college board and this app's announcements every few days.",
+  },
+  {
+    title: "River mist",
+    image: "/community/vibes/monsoon.svg",
+    category: "chemistry",
+    body: "Evaporation and condensation are everywhere in the valley weather. Tie today's lesson to something you see outside.",
+  },
+  {
+    title: "Golden hour",
+    image: "/community/vibes/dawn.svg",
+    category: "english",
+    body: "Read one short paragraph aloud for English fluency. Tone and pacing improve faster with voice than silent skimming.",
+  },
+  {
+    title: "Ridge wind",
+    image: "/community/vibes/himalaya.svg",
+    category: "physics",
+    body: "Wind on a ridge is vector thinking in real life. Draw a quick diagram when intuition feels fuzzy.",
+  },
+  {
+    title: "Garden pause",
+    image: "/community/vibes/wildflower.svg",
+    category: "general",
+    body: "A five-minute walk resets attention. Come back to one unsolved problem instead of restarting from page one.",
+  },
+  {
+    title: "Desk candle",
+    image: "/community/vibes/study-window.svg",
+    category: "mathematics",
+    body: "One clean proof beats ten half-understood examples. Close the book and rebuild the steps from memory.",
   },
 ] as const;
-
-/** Smallest inline asset — platform bot avatar (~1 KB svg). */
-const DISCOVERY_IMG = "![Discovery](/avatars/community-bot.svg)";
 
 const DISCOVERIES: Array<{ year: number; title: string; body: string }> = [
   { year: -350, title: "Aristotle — biology beginnings", body: "Classification of living things; foundations of natural science." },
@@ -30,9 +132,9 @@ const DISCOVERIES: Array<{ year: number; title: string; body: string }> = [
   { year: 2012, title: "Higgs boson evidence", body: "CERN confirms mass-giving particle." },
 ];
 
-function digestIndex(now: Date): number {
-  const day = Math.floor(now.getTime() / 86_400_000);
-  return Math.abs(day) % NATURE_DIGEST.length;
+function vibeIndex(now: Date): number {
+  const minuteSlot = Math.floor(now.getTime() / (2 * 3_600_000));
+  return Math.abs(minuteSlot) % VIBE_POSTS.length;
 }
 
 function discoveryIndex(now: Date): number {
@@ -40,9 +142,15 @@ function discoveryIndex(now: Date): number {
   return Math.abs(slot) % DISCOVERIES.length;
 }
 
+function formatVibeMarkdown(vibe: (typeof VIBE_POSTS)[number]): string {
+  const caption = vibe.title;
+  return `![${caption}](${vibe.image} "Natural light — study pause")\n\n${vibe.body}`;
+}
+
 async function insertBotPost(opts: {
   title: string;
   body: string;
+  category: string;
   visibility: "public" | "profile_only";
 }): Promise<{ ok: true; id: string } | { ok: false; reason: string }> {
   await ensureCommunityBotProfile();
@@ -53,7 +161,7 @@ async function insertBotPost(opts: {
     author_id: COMMUNITY_BOT_ID,
     title: opts.title,
     body: opts.body,
-    category: "general",
+    category: opts.category,
     visibility: opts.visibility,
     created_at: now,
     updated_at: now,
@@ -62,12 +170,13 @@ async function insertBotPost(opts: {
   return { ok: true, id };
 }
 
-/** 02:00 Asia/Kathmandu — one public nature/news post on the main feed. */
+/** Rotating public vibe post — called on a few-hour cron (not the same slot every day). */
 export async function runCommunityBotDailyPublicPost(now = new Date()) {
-  const pick = NATURE_DIGEST[digestIndex(now)]!;
+  const vibe = VIBE_POSTS[vibeIndex(now)]!;
   return insertBotPost({
-    title: pick.title,
-    body: pick.body,
+    title: vibe.title,
+    body: formatVibeMarkdown(vibe),
+    category: vibe.category,
     visibility: "public",
   });
 }
@@ -75,7 +184,7 @@ export async function runCommunityBotDailyPublicPost(now = new Date()) {
 /** Every 2 hours — discovery timeline on bot profile only (hidden from feed). */
 export async function runCommunityBotProfileDiscoveryPost(now = new Date()) {
   const pick = DISCOVERIES[discoveryIndex(now)]!;
-  const body = `${DISCOVERY_IMG}\n\n**${pick.year} — ${pick.title}**\n\n${pick.body}`;
+  const body = `![Science timeline](/community/vibes/himalaya.svg)\n\n**${pick.year} — ${pick.title}**\n\n${pick.body}`;
   return insertBotPost({
     title: `Science timeline · ${pick.year}`,
     body,

@@ -101,15 +101,13 @@ function resolveAuthFailureMessage(err: unknown, kind: AuthFailureKind): string 
   }
 
   if (apiCode === "FIREBASE_CLIENT_AUTH") {
-    return "This page didn't complete Firebase sign-in. Hard-refresh and try again.";
+    return "Sign-in didn't complete. Hard-refresh and try again.";
   }
   if (apiCode === "FIREBASE_ADMIN_NOT_CONFIGURED") {
-    return "The API can't verify Firebase tokens yet — server env is incomplete.";
+    return AUTH_TEMPORARILY_UNAVAILABLE;
   }
   if (apiCode === "FIREBASE_TOKEN_REJECTED") {
-    return kind === "login"
-      ? AUTH_INVALID_CREDENTIALS
-      : "We couldn't verify your phone or Google session. Try again.";
+    return kind === "login" ? AUTH_INVALID_CREDENTIALS : "We couldn't verify your session. Try again.";
   }
   if (apiCode === "DEVICE_SIGNUP_LIMIT") {
     return "This device already has an account. Sign in or wait for approval on that account.";
@@ -138,12 +136,6 @@ function resolveAuthFailureMessage(err: unknown, kind: AuthFailureKind): string 
   if (/too-many-requests|too many requests|too many attempts|quota exceeded|rate limit/.test(code + " " + message)) {
     return "Too many sign-in attempts. Please wait a minute and try again.";
   }
-  if (/billing-not-enabled/.test(code)) {
-    return "Phone SMS isn't enabled on the Firebase project (Blaze plan required for real numbers).";
-  }
-  if (/captcha-check-failed|missing-recaptcha|invalid-app-credential|app-not-authorized|missing-client-identifier/.test(code)) {
-    return "Phone or Google verification failed (reCAPTCHA / API key / authorized domain). Check Firebase Console settings.";
-  }
   if (/invalid-verification-code|invalid-verification-id|session-expired|code-expired/.test(code)) {
     return "That SMS code is wrong or expired. Request a new code.";
   }
@@ -159,18 +151,13 @@ function resolveAuthFailureMessage(err: unknown, kind: AuthFailureKind): string 
   if (/popup-closed-by-user|cancelled-popup-request/.test(code)) {
     return "Sign-in was cancelled. Tap Continue with Google to try again.";
   }
-  if (/unauthorized-domain/.test(code)) {
-    return "This site's origin isn't authorized in Firebase (Auth → Settings → Authorized domains).";
-  }
-  if (/operation-not-allowed/.test(code)) {
-    return "This sign-in method isn't enabled in Firebase (Auth → Sign-in method → turn on Email/Password and Google).";
-  }
-  if (/invalid-api-key|api-key-not-valid|configuration-not-found/.test(code + " " + message)) {
-    return "Firebase web configuration is missing or invalid (check the NEXT_PUBLIC_FIREBASE_* values).";
-  }
-  if (/FIREBASE_ADMIN_NOT_CONFIGURED/i.test(code + " " + message)) {
-    return "Sign-in is offline: the server's Firebase Admin isn't configured (set FIREBASE_SERVICE_ACCOUNT_JSON on the API).";
-  }
+  // Infrastructure / configuration failures (unauthorized-domain,
+  // operation-not-allowed, invalid-api-key, configuration-not-found,
+  // FIREBASE_ADMIN_NOT_CONFIGURED, billing-not-enabled, reCAPTCHA / API-key
+  // verification) intentionally collapse to the SAME friendly fallback below.
+  // They describe internal setup and must never be surfaced to the signed-in
+  // user. The precise cause is logged for developers via logAuthFailureDetail
+  // (NEXT_PUBLIC_AUTH_DEBUG) and in the API's server logs.
 
   if (status === 503 || status === 502 || status === 504) {
     return AUTH_TEMPORARILY_UNAVAILABLE;

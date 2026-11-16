@@ -58,8 +58,9 @@ import {
 
 const router = Router();
 
-const PAGE_SIZE = 10;
+const PAGE_SIZE = 12;
 const SCAN_LIMIT = 300;
+const FILTERED_SCAN_LIMIT = 120;
 const MAX_FILES = 4;
 const MAX_FILE_BYTES = COMMUNITY_ATTACHMENT_MAX_BYTES;
 const MIGRATION_MESSAGE =
@@ -448,19 +449,45 @@ async function presentMany(rows: PostRow[], viewerId: string | null) {
   };
 }
 
-async function loadRecent(authorId?: string): Promise<{ rows: PostRow[] } | { missing: true } | { error: DbError }> {
+async function loadRecent(authorId?: string, limit = SCAN_LIMIT): Promise<{ rows: PostRow[] } | { missing: true } | { error: DbError }> {
   const base = supabaseAdmin
     .from("community_feed_posts")
     .select("id, author_id, title, body, category, visibility, created_at, updated_at");
   const query = authorId
-    ? base.eq("author_id", authorId).order("created_at", { ascending: false }).limit(SCAN_LIMIT)
-    : base.eq("visibility", "public").order("created_at", { ascending: false }).limit(SCAN_LIMIT);
+    ? base.eq("author_id", authorId).order("created_at", { ascending: false }).limit(limit)
+    : base.eq("visibility", "public").order("created_at", { ascending: false }).limit(limit);
   const { data, error } = await query;
   if (error) {
     if (isMissingTable(error)) return { missing: true };
     return { error };
   }
   return { rows: (data ?? []) as PostRow[] };
+}
+
+async function loadFeedPage(opts: {
+  authorId?: string;
+  category?: string;
+  cursor: number;
+}): Promise<{ rows: PostRow[]; nextCursor: number | null } | { missing: true } | { error: DbError }> {
+  const from = opts.cursor;
+  const to = opts.cursor + PAGE_SIZE;
+  const base = supabaseAdmin
+    .from("community_feed_posts")
+    .select("id, author_id, title, body, category, visibility, created_at, updated_at");
+  let query = opts.authorId
+    ? base.eq("author_id", opts.authorId).order("created_at", { ascending: false })
+    : base.eq("visibility", "public").order("created_at", { ascending: false });
+  if (opts.category) query = query.eq("category", opts.category);
+  const { data, error } = await query.range(from, to);
+  if (error) {
+    if (isMissingTable(error)) return { missing: true };
+    return { error };
+  }
+  const rows = (data ?? []) as PostRow[];
+  const hasMore = rows.length > PAGE_SIZE;
+  const page = hasMore ? rows.slice(0, PAGE_SIZE) : rows;
+  const nextCursor = hasMore ? opts.cursor + PAGE_SIZE : null;
+  return { rows: page, nextCursor };
 }
 
 function filterRows(
@@ -516,22 +543,48 @@ async function sendList(
     bad(res, parsed.error);
     return;
   }
-  const loaded = await loadRecent(scopedAuthorId);
-  if ("missing" in loaded) {
-    noStore(res);
-    res.json({ posts: [], nextCursor: null, migrated: false });
-    return;
+  const needsScan = Boolean(parsed.q?.trim() || parsed.authorId);
+  let page: PostRow[];
+  let nextCursor: number | null;
+
+  if (!needsScan) {
+    const loaded = await loadFeedPage({
+      authorId: scopedAuthorId ?? parsed.authorId,
+      category: parsed.category,
+      cursor: parsed.cursor,
+    });
+    if ("missing" in loaded) {
+      noStore(res);
+      res.json({ posts: [], nextCursor: null, migrated: false });
+      return;
+    }
+    if ("error" in loaded) {
+      serverError(res, loaded.error, "community-feed");
+      return;
+    }
+    page = loaded.rows;
+    nextCursor = loaded.nextCursor;
+  } else {
+    const loaded = await loadRecent(scopedAuthorId ?? parsed.authorId, FILTERED_SCAN_LIMIT);
+    if ("missing" in loaded) {
+      noStore(res);
+      res.json({ posts: [], nextCursor: null, migrated: false });
+      return;
+    }
+    if ("error" in loaded) {
+      serverError(res, loaded.error, "community-feed");
+      return;
+    }
+    const filtered = filterRows(loaded.rows, {
+      q: parsed.q,
+      category: parsed.category,
+      authorId: scopedAuthorId ? undefined : parsed.authorId,
+      cursor: parsed.cursor,
+    });
+    page = filtered.page;
+    nextCursor = filtered.nextCursor;
   }
-  if ("error" in loaded) {
-    serverError(res, loaded.error, "community-feed");
-    return;
-  }
-  const { page, nextCursor } = filterRows(loaded.rows, {
-    q: parsed.q,
-    category: parsed.category,
-    authorId: scopedAuthorId ? undefined : parsed.authorId,
-    cursor: parsed.cursor,
-  });
+
   const presented = await presentMany(page, viewerId);
   if ("missing" in presented) {
     noStore(res);

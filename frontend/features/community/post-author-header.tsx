@@ -8,7 +8,9 @@ import { Bot, Clock3, UserRound } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { isCommunityBot, resolveFeedAuthor } from "@/lib/community-bot";
 import { BotIdentityBadge } from "@/features/community/bot-identity-badge";
+import { CreatorIdentityBadge } from "@/features/community/creator-identity-badge";
 import { planLabel } from "@/features/community/community-ui";
+import { isCreatorAuthor } from "@/lib/owner";
 
 function formatPostWhen(iso: string): string {
   try {
@@ -36,6 +38,7 @@ export function PostAuthorHeader({
 }) {
   const resolved = resolveFeedAuthor(author);
   const bot = isCommunityBot(resolved.id);
+  const creator = !bot && isCreatorAuthor(resolved);
   const href = profilePath(resolved.username, resolved.id);
   const handle = resolved.username ? `@${resolved.username}` : resolved.id.slice(0, 8);
 
@@ -79,6 +82,8 @@ export function PostAuthorHeader({
           </Link>
           {bot ? (
             <BotIdentityBadge compact={compact} />
+          ) : creator ? (
+            <CreatorIdentityBadge compact={compact} />
           ) : (
             <span className="rounded-md border border-border/80 bg-muted/40 px-1.5 py-0.5 text-[10px] font-semibold capitalize text-muted-foreground">
               {planLabel(resolved.plan)}

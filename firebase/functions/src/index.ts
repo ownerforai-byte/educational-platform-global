@@ -57,10 +57,10 @@ export const approvalBotTick = onSchedule(
  * Manual / health trigger for the Firebase approval bot. When
  * ACCESS_BOT_RUN_KEY is set, require header `x-access-bot-key` to match.
  */
-/** Daily 2:00 Asia/Kathmandu — public nature & news post on the community feed. */
+/** Every 3 hours (6:00–21:00 Kathmandu) — rotating public vibe posts on the feed. */
 export const communityBotDailyPost = onSchedule(
   {
-    schedule: "0 2 * * *",
+    schedule: "0 6-21/3 * * *",
     timeZone: "Asia/Kathmandu",
     retryCount: 1,
   },

@@ -5,7 +5,7 @@ import { emptyStatePanel, ghostLink, surfaceCardFlat } from "@/features/communit
 import { cn } from "@/lib/utils";
 import { AlertCircle, ArrowLeft, MessageSquare } from "lucide-react";
 
-export const POLL_MS = 20_000;
+export const POLL_MS = 45_000;
 export const MAX_FILES = 4;
 export const MAX_BYTES = 3 * 1024 * 1024;
 export const ACCEPT = ".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.png,.jpg,.jpeg";

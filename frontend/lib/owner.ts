@@ -34,3 +34,13 @@ export function isOwnerUser(
 ): boolean {
   return isOwnerAccount(user);
 }
+
+/** Public community profile badge — owner role or canonical creator username. */
+export function isCreatorAuthor(author: {
+  role?: string | null;
+  username?: string | null;
+}): boolean {
+  if (author.role === "owner") return true;
+  const handle = author.username?.trim().toLowerCase();
+  return handle === OWNER_DISPLAY_NAME.toLowerCase();
+}

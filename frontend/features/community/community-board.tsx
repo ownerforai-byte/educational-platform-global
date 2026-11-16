@@ -296,6 +296,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
   useEffect(() => {
     if (view !== "feed" && view !== "mine" && view !== "post" && view !== "person") return;
     const timer = window.setInterval(() => {
+      if (typeof document !== "undefined" && document.visibilityState === "hidden") return;
       if (Date.now() < pollPausedUntil.current) return;
       if (view === "feed" || (view === "mine" && user)) {
         const params = { q: filters.current.q, category: filters.current.category };
@@ -490,7 +491,13 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
     const moderate = canModerate(user);
     const canInvokeBot = Boolean(user && item.assistantReply?.canApprove && !item.assistantReply.posted);
     return (
-      <article className={cn(surfaceCard, "space-y-3 p-4 sm:p-5")}>
+      <article
+        className={cn(
+          surfaceCard,
+          "space-y-3 p-4 sm:p-5",
+          isCommunityBot(item.author.id) && "border-primary/25 bg-gradient-to-b from-primary/[0.04] via-card to-card",
+        )}
+      >
         <PostAuthorHeader
           author={item.author}
           createdAt={item.createdAt}
