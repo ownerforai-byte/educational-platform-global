@@ -159,8 +159,14 @@ function resolveAuthFailureMessage(err: unknown, kind: AuthFailureKind): string 
   if (/popup-closed-by-user|cancelled-popup-request/.test(code)) {
     return "Sign-in was cancelled. Tap Continue with Google to try again.";
   }
-  if (/unauthorized-domain|operation-not-allowed|invalid-api-key|configuration-not-found|api-key-not-valid/.test(code + " " + message)) {
+  if (/unauthorized-domain/.test(code)) {
     return "This site's origin isn't authorized in Firebase (Auth → Settings → Authorized domains).";
+  }
+  if (/operation-not-allowed/.test(code)) {
+    return "This sign-in method isn't enabled in Firebase (Auth → Sign-in method → turn on Email/Password and Google).";
+  }
+  if (/invalid-api-key|api-key-not-valid|configuration-not-found/.test(code + " " + message)) {
+    return "Firebase web configuration is missing or invalid (check the NEXT_PUBLIC_FIREBASE_* values).";
   }
 
   if (status === 503 || status === 502 || status === 504) {
