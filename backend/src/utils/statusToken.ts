@@ -50,8 +50,8 @@ export function verifyStatusToken(token: string | null | undefined): string | nu
 
   try {
     const userId = Buffer.from(idB64, "base64url").toString("utf8");
-    // uuid-shaped sanity check — the token must name exactly one user.
-    return /^[0-9a-f-]{36}$/i.test(userId) ? userId : null;
+    // User ID check — supports both Supabase UUIDs (36-char) and Firebase UIDs (alphanumeric, 1-128 chars).
+    return /^[0-9a-zA-Z_-]{1,128}$/.test(userId) ? userId : null;
   } catch {
     return null;
   }
