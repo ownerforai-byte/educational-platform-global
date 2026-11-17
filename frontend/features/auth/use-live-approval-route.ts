@@ -30,9 +30,13 @@ function initialRoute(): string | null {
 }
 
 export function useLiveApprovalRoute(): string | null {
-  const [route, setRoute] = useState<string | null>(initialRoute);
+  const [route, setRoute] = useState<string | null>(null);
 
   useEffect(() => {
+    // Immediately set synchronous best-effort route on mount (post-hydration)
+    const initial = initialRoute();
+    if (initial) setRoute(initial);
+
     let cancelled = false;
     let timer: number | null = null;
     let attempts = 0;
