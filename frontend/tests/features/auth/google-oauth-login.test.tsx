@@ -141,19 +141,25 @@ describe("Social login", () => {
     expect(mocks.signInWithOAuth).not.toHaveBeenCalled();
   });
 
-  it("starts Google OAuth with the same CSRF and callback flow", async () => {
+  it("completes Firebase Google popup login directly and navigates to welcome screen", async () => {
+    mocks.firebaseMode = true;
+    mocks.firebaseGoogleSignIn.mockResolvedValueOnce("firebase-popup-id-token");
+    mocks.apiFetch
+      .mockResolvedValueOnce({ csrfToken: "b".repeat(64) }) // /api/auth/oauth/csrf
+      .mockResolvedValueOnce({ user: { id: "user-popup", email: "popup@example.com" }, accessToken: "popup-access" }); // /api/auth/oauth/session
+
     render(<LoginForm />);
     fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
 
-    await waitFor(() => expect(mocks.publicUrl).toHaveBeenCalledWith("/auth/callback?firebase_start=1"));
-    // Firebase-only (Supabase removed): CSRF handshake → fixed
-    // /auth/callback?firebase_start=1 handoff. The CSRF token is stored for the
-    // callback to verify against the OAuth round-trip.
-    expect(mocks.apiFetch).toHaveBeenCalledWith(
-      "/api/auth/oauth/csrf",
-      expect.objectContaining({ method: "POST" }),
-    );
-    expect(mocks.signInWithOAuth).not.toHaveBeenCalled();
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledWith("/welcome/member"));
+    expect(mocks.firebaseGoogleSignIn).toHaveBeenCalledWith("popup");
+    expect(mocks.apiFetch).toHaveBeenCalledWith("/api/auth/oauth/session", {
+      method: "POST",
+      headers: { "X-CSRF-Token": "b".repeat(64) },
+      body: JSON.stringify({ accessToken: "firebase-popup-id-token", state: "b".repeat(64) }),
+    });
+    expect(mocks.setStoredToken).toHaveBeenCalledWith("popup-access");
+    expect(mocks.refresh).toHaveBeenCalledOnce();
   });
 
   it("exchanges the Firebase token and always shows the resolved tier welcome before home", async () => {

@@ -1,10 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
-import { apiFetch } from "@/lib/api-client";
+import { apiFetch, setStoredToken } from "@/lib/api-client";
 import { publicUrl } from "@/lib/site-url";
+import { firebaseGoogleSignIn, useFirebaseClientAuth } from "@/lib/firebase/client-auth";
+import { writeCachedSession } from "@/lib/auth/session-store";
+import { useAuth } from "@/providers/auth-provider";
+import { tierWelcomePathFor } from "@/lib/core/access-level";
+import {
+  clearPendingSignup,
+  rememberAccessOutcome,
+  rememberPendingSignup,
+  WAITING_ROUTE,
+} from "../pending-signup-identity";
 import { authFailureDetail, authFailureMessage } from "../public-messages";
+import type { OAuthSessionResponse } from "@/types/api";
 
 export function GoogleIcon({ className = "h-4 w-4" }: { className?: string }) {
   return (
@@ -73,6 +85,8 @@ export function SocialAuthButtons({
   onError,
 }: SocialAuthButtonsProps) {
   const [socialLoading, setSocialLoading] = useState(false);
+  const router = useRouter();
+  const { refresh } = useAuth();
 
   const handleGoogleSignIn = async () => {
     setSocialLoading(true);
@@ -82,9 +96,65 @@ export function SocialAuthButtons({
     try {
       const csrfToken = await requestOAuthCsrf();
       sessionStorage.setItem("neb_oauth_csrf", csrfToken);
-      // Firebase-only: hand off to the canonical /auth/callback, which starts
-      // the Firebase Google redirect round-trip on the firebaseapp.com handler.
-      window.location.assign(publicUrl("/auth/callback?firebase_start=1"));
+
+      // In browser with active user gesture: try signInWithPopup first.
+      // Popups avoid cross-origin redirect storage partitioning (Chrome/Safari third-party cookie restrictions).
+      let idToken: string | null = null;
+      if (useFirebaseClientAuth()) {
+        try {
+          idToken = await firebaseGoogleSignIn("popup");
+        } catch (popupErr: unknown) {
+          const err = popupErr as { code?: string };
+          if (err?.code === "auth/popup-closed-by-user" || err?.code === "auth/cancelled-popup-request") {
+            sessionStorage.removeItem("neb_oauth_csrf");
+            setSocialLoading(false);
+            return;
+          }
+          // If popup is blocked by browser or environment doesn't support it, fall back to redirect
+          if (err?.code === "auth/popup-blocked" || err?.code === "auth/operation-not-supported-in-this-environment") {
+            window.location.assign(publicUrl("/auth/callback?firebase_start=1"));
+            redirected = true;
+            return;
+          }
+          throw popupErr;
+        }
+      }
+
+      if (!idToken) {
+        // Fallback to canonical redirect round-trip on the firebaseapp.com handler
+        window.location.assign(publicUrl("/auth/callback?firebase_start=1"));
+        redirected = true;
+        return;
+      }
+
+      // Exchange ID token directly with backend session endpoint
+      const response = await apiFetch<OAuthSessionResponse>("/api/auth/oauth/session", {
+        method: "POST",
+        headers: { "X-CSRF-Token": csrfToken },
+        body: JSON.stringify({
+          accessToken: idToken,
+          state: csrfToken,
+        }),
+      });
+      sessionStorage.removeItem("neb_oauth_csrf");
+
+      const oauthBody = response as unknown as { code?: string; statusToken?: string };
+      if (oauthBody.code === "PENDING_APPROVAL") {
+        if (oauthBody.statusToken) rememberPendingSignup(oauthBody.statusToken);
+        rememberAccessOutcome("PENDING");
+        router.replace(WAITING_ROUTE);
+        redirected = true;
+        return;
+      }
+
+      if (!response.accessToken) {
+        throw new Error("The server did not issue an application session.");
+      }
+      clearPendingSignup();
+      setStoredToken(response.accessToken);
+      writeCachedSession(response.user, response.accessToken);
+      refresh();
+      router.replace(tierWelcomePathFor(response.user));
       redirected = true;
     } catch (oauthError) {
       sessionStorage.removeItem("neb_oauth_csrf");

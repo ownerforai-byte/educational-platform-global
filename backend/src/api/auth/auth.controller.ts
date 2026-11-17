@@ -297,13 +297,19 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
   }
   const csrfToken = req.get("x-csrf-token");
   const cookieToken = req.cookies?.[OAUTH_CSRF_COOKIE] as string | undefined;
+  // If the browser sent the CSRF cookie, it must strictly match via timingSafeEqual.
+  // In cross-origin redirect flows where modern browser privacy partition/strip cookies,
+  // the sessionStorage-backed x-csrf-token header matching state is accepted.
+  const cookieMatches =
+    !cookieToken ||
+    (/^[a-f0-9]{64}$/.test(cookieToken) &&
+      timingSafeEqual(Buffer.from(csrfToken ?? "", "hex"), Buffer.from(cookieToken, "hex")));
   const csrfMatches =
-    csrfToken &&
-    cookieToken &&
-    /^[a-f0-9]{64}$/.test(csrfToken) &&
-    /^[a-f0-9]{64}$/.test(cookieToken) &&
-    timingSafeEqual(Buffer.from(csrfToken, "hex"), Buffer.from(cookieToken, "hex"));
-  if (!csrfMatches || parsed.data.state !== csrfToken) {
+    Boolean(csrfToken) &&
+    /^[a-f0-9]{64}$/.test(csrfToken ?? "") &&
+    parsed.data.state === csrfToken &&
+    cookieMatches;
+  if (!csrfMatches) {
     res.status(403).json({ error: "OAuth session exchange could not be verified" });
     return;
   }

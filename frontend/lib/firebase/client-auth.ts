@@ -123,17 +123,35 @@ export async function firebaseConsumeRedirectResult(): Promise<string | null> {
 export async function firebaseCurrentUserToken(): Promise<string | null> {
   const auth = getFirebaseAuth();
   if (!auth) return null;
-  const user = await new Promise<User | null>((resolve) => {
-    if (auth.currentUser) {
-      resolve(auth.currentUser);
-      return;
+  if (auth.currentUser) {
+    try {
+      return await auth.currentUser.getIdToken();
+    } catch {
+      return null;
     }
-    const unsub = onAuthStateChanged(auth, (u) => {
-      unsub();
-      resolve(u);
+  }
+  return new Promise<string | null>((resolve) => {
+    let settled = false;
+    const timer = setTimeout(() => {
+      if (!settled) {
+        settled = true;
+        unsub();
+        resolve(auth.currentUser ? auth.currentUser.getIdToken().catch(() => null) : null);
+      }
+    }, 4000);
+    const unsub = onAuthStateChanged(auth, async (u) => {
+      if (u && !settled) {
+        settled = true;
+        clearTimeout(timer);
+        unsub();
+        try {
+          resolve(await u.getIdToken());
+        } catch {
+          resolve(null);
+        }
+      }
     });
   });
-  return user ? user.getIdToken() : null;
 }
 
 export async function firebaseClientLogout(): Promise<void> {

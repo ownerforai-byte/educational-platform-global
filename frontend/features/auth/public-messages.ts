@@ -156,6 +156,18 @@ function resolveAuthFailureMessage(err: unknown, kind: AuthFailureKind): string 
   // user. The precise cause is logged for developers via logAuthFailureDetail
   // (NEXT_PUBLIC_AUTH_DEBUG) and in the API's server logs.
 
+  if (kind === "oauth") {
+    if (status === 401 || message.includes("oauth authentication could not be verified")) {
+      return "We couldn't verify your Google session. Please try signing in again.";
+    }
+    if (status === 403 || message.includes("oauth session exchange could not be verified") || message.includes("expired or failed")) {
+      return "Sign-in verification expired or failed. Please try again.";
+    }
+    if (message.includes("did not return a valid session")) {
+      return "Google did not return a valid session. Please try signing in again.";
+    }
+  }
+
   if (status === 503 || status === 502 || status === 504) {
     return AUTH_TEMPORARILY_UNAVAILABLE;
   }
