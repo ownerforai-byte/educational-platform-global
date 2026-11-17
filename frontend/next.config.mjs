@@ -61,6 +61,10 @@ const nextConfig = {
             value: "strict-origin-when-cross-origin",
           },
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          {
+            key: "Cross-Origin-Opener-Policy",
+            value: "same-origin-allow-popups",
+          },
           { key: "Permissions-Policy", value: "geolocation=(), payment=()" },
           // CSP (script-src/connect-src/nonces) is set per-request in proxy.ts.
         ],
