@@ -41,7 +41,7 @@ const SOURCES: Array<{
   {
     name: "National Examination Board (NEB)",
     abbr: "NEB",
-    url: "https://www.neb.gov.np/",
+    url: "https://neb.gov.np/",
     publishes:
       "Exam notices, examination routines, model questions, results and administrative announcements for the Grade 11 and 12 examinations.",
   },

@@ -34,8 +34,9 @@ describe("official sources page", () => {
   const page = read("app/official-sources/page.tsx");
 
   it("links the three official .gov.np domains over HTTPS with external target", () => {
+    expect(page).not.toContain("www.neb.gov.np");
     for (const url of [
-      "https://www.neb.gov.np/",
+      "https://neb.gov.np/",
       "https://moecdc.gov.np/",
       "https://moest.gov.np/",
     ]) {

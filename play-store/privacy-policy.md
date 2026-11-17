@@ -24,7 +24,7 @@ past-year questions, and an AI study assistant ("Veer").
 > endorsed by, authorized by, or connected to the National Examination Board
 > (NEB), the Curriculum Development Centre (CDC), or any government entity of
 > Nepal.** The curriculum and examination standards the content is aligned to are
-> published by Government of Nepal bodies — NEB (https://www.neb.gov.np/), CDC
+> published by Government of Nepal bodies — NEB (https://neb.gov.np/), CDC
 > (https://moecdc.gov.np/) and MoEST (https://moest.gov.np/). Those official
 > sources are also listed inside the App at `/official-sources`.
 

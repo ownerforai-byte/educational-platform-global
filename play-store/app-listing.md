@@ -12,7 +12,9 @@ _(Count: 80. Adjust if your app name changes length.)_
 ## Full description (up to 4,000 characters)
 _Compliance note (2026-11-11): rejected under **Misleading Claims**. The
 disclaimer now opens and closes the description and the official `.gov.np`
-sources sit directly under the feature list — see /official-sources in the app._
+sources sit directly under the feature list — see /official-sources in the app.
+Use **https://neb.gov.np/** (no `www`); Play’s link checker hits HTTP 500 on
+https://www.neb.gov.np/._
 
 ```text
 DISCLAIMER: Verner is an independent educational platform and is NOT affiliated with, endorsed by, authorized by, or connected to the National Examination Board (NEB), the Curriculum Development Centre (CDC), or any government entity of Nepal.
@@ -32,7 +34,7 @@ WHAT YOU GET
 
 OFFICIAL GOVERNMENT SOURCES
 The curriculum, syllabus and examination standards originate with Government of Nepal bodies, not with this app. Always confirm a date, a marking scheme or a curriculum change against the primary document:
-- National Examination Board (NEB): https://www.neb.gov.np/
+- National Examination Board (NEB): https://neb.gov.np/
 - Curriculum Development Centre (CDC): https://moecdc.gov.np/
 - Ministry of Education, Science and Technology (MoEST): https://moest.gov.np/
 Official exam notices, syllabus PDFs and model questions are published on those sites. Every link is also collected inside the app, on the Official Sources page: https://harindrasah.com.np/official-sources
