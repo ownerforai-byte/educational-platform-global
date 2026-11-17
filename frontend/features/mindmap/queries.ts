@@ -13,7 +13,16 @@ import {
   type SyllabusUnit,
 } from "@/lib/core/syllabus";
 import type { MindmapDocument, MindmapItem, MindmapNode, MindmapSource } from "./types";
+import {
+  buildTopicMindmap,
+  buildUnitMindmap,
+  splitTopicTitle,
+  type TopicMapInput,
+} from "./topic-map-builder";
 export type { MindmapItem };
+
+/** Loose content payload carried by the manifest — only the fields the map reads. */
+export type TopicMapContent = NonNullable<TopicMapInput>;
 
 type ManifestItem = {
   path: string;
@@ -46,32 +55,7 @@ function nodeId(prefix: string, label: string, index: number): string {
 
 /** Split a NEB topic title into mind-map branches (works for current + future topics). */
 export function topicTitleToBranches(title: string): string[] {
-  const cleaned = title.replace(/\s+/g, " ").trim();
-  if (!cleaned) return [];
-
-  const afterColon = cleaned.includes(":")
-    ? cleaned.slice(cleaned.indexOf(":") + 1).trim()
-    : cleaned;
-
-  const listMatch = afterColon.match(
-    /(?:introduction and functions of|functions of|types of|concept of|including|such as)\s+(.+)$/i,
-  );
-  const listPart = listMatch?.[1] ?? afterColon;
-
-  const parts = listPart
-    .split(/,| and |;|\/|·|\|/)
-    .map((p) => p.replace(/^(and|of|the|a|an)\s+/i, "").trim())
-    .filter((p) => p.length > 2 && p.length < 80);
-
-  const unique = [...new Set(parts)];
-  if (unique.length >= 2) return unique.slice(0, 12);
-
-  if (cleaned.includes(":")) {
-    const head = cleaned.slice(0, cleaned.indexOf(":")).trim();
-    return [head, afterColon].filter(Boolean).slice(0, 8);
-  }
-
-  return [cleaned];
+  return splitTopicTitle(title);
 }
 
 export function buildTreeFromOutlineNotes(title: string, notes: string[]): MindmapNode {
@@ -111,41 +95,25 @@ export function buildTreeFromOutlineNotes(title: string, notes: string[]): Mindm
 export function buildSyllabusTopicMindmap(
   topicTitle: string,
   topicSlug: string,
+  extra?: {
+    content?: TopicMapContent;
+    unitTitle?: string;
+    unitTopics?: string[];
+  },
 ): MindmapNode {
-  const branches = topicTitleToBranches(topicTitle);
-  const rootLabel =
-    topicTitle.includes(":")
-      ? topicTitle.slice(0, topicTitle.indexOf(":")).trim()
-      : topicTitle.length > 60
-        ? `${topicTitle.slice(0, 57)}…`
-        : topicTitle;
-
-  return {
-    id: `topic-${topicSlug}`,
-    label: rootLabel || topicTitle,
-    children: branches.map((label, i) => ({
-      id: nodeId(topicSlug, label, i),
-      label,
-    })),
-  };
+  return buildTopicMindmap({
+    topicTitle,
+    topicSlug,
+    ...extra,
+  });
 }
 
 export function buildSyllabusUnitMindmap(unit: SyllabusUnit): MindmapNode {
   const entries = getUnitTopicEntries(unit);
-  return {
-    id: `unit-${unit.id}`,
-    label: unit.title,
-    children: entries.map((t) => ({
-      id: `unit-topic-${t.slug}`,
-      label: t.title.length > 72 ? `${t.title.slice(0, 69)}…` : t.title,
-      children: topicTitleToBranches(t.title)
-        .slice(0, 6)
-        .map((label, i) => ({
-          id: nodeId(t.slug, label, i),
-          label,
-        })),
-    })),
-  };
+  return buildUnitMindmap(
+    unit.title,
+    entries.map((t) => ({ title: t.title, slug: t.slug })),
+  );
 }
 
 function mapRavUnitToSyllabus(subject: string, unit: string): string | undefined {
@@ -277,6 +245,87 @@ async function findImportedForTopic(
   });
 }
 
+/**
+ * Content index for mind-map enrichment: the manifest already embeds every
+ * topic's payload, so a map can be grounded in the real notes/formulas without
+ * a second fetch. Keyed by class + subject + unit + topic slug.
+ */
+function contentKey(
+  classDir: string,
+  subjectSlug: string,
+  unitSlug: string,
+  topicSlug: string,
+): string {
+  return `${classDir}|${subjectSlug}|${unitSlug}|${topicSlug}`;
+}
+
+function buildTopicContentIndex(manifest: ManifestItem[]): Map<string, TopicMapContent> {
+  const index = new Map<string, TopicMapContent>();
+  for (const item of manifest) {
+    const parsed = parseContentPath(item.path);
+    if (!parsed) continue;
+    const data = item.data as (TopicMapContent & { topicSlug?: unknown }) | undefined;
+    const topicSlug = typeof data?.topicSlug === "string" ? data.topicSlug.trim() : "";
+    if (!data || !topicSlug) continue;
+    const classDir = normalizeClassDir(parsed.classDir ?? "");
+    const subjectSlug = parsed.subjectSlug ?? "";
+    const resolvedUnit = resolveUnitSlug(parsed.unitSlug ?? "");
+    const keys = [
+      contentKey(classDir, subjectSlug, parsed.unitSlug ?? "", topicSlug),
+      contentKey(classDir, subjectSlug, resolvedUnit, topicSlug),
+    ];
+    for (const key of keys) {
+      if (!index.has(key)) index.set(key, data);
+    }
+  }
+  return index;
+}
+
+let topicContentIndexPromise: Promise<Map<string, TopicMapContent>> | null = null;
+
+function getTopicContentIndex(): Promise<Map<string, TopicMapContent>> {
+  if (!topicContentIndexPromise) {
+    topicContentIndexPromise = (async () => {
+      try {
+        const manifest = await loadData<ManifestItem[]>("content/manifest.json");
+        return buildTopicContentIndex(Array.isArray(manifest) ? manifest : []);
+      } catch {
+        return new Map<string, TopicMapContent>();
+      }
+    })();
+  }
+  return topicContentIndexPromise;
+}
+
+async function findTopicContent(args: {
+  classSlug: string;
+  subjectSlug: string;
+  unitId: string;
+  topicSlug: string;
+}): Promise<TopicMapContent | undefined> {
+  const index = await getTopicContentIndex();
+  const classDir = normalizeClassDir(args.classSlug.replace(/-notes$/, ""));
+  return (
+    index.get(contentKey(classDir, args.subjectSlug, args.unitId, args.topicSlug)) ??
+    index.get(contentKey(classDir, args.subjectSlug, resolveUnitSlug(args.unitId), args.topicSlug))
+  );
+}
+
+/** Unit context for a topic map (unit title + sibling topics). */
+async function findUnitContext(
+  classSlug: string,
+  subjectSlug: string,
+  unitId: string,
+): Promise<{ unitTitle: string; unitTopics: string[] } | undefined> {
+  const subject = getSubjectSyllabus(classSlug, subjectSlug);
+  const unit = subject?.units.find((u) => u.id === unitId || resolveUnitSlug(u.id) === resolveUnitSlug(unitId));
+  if (!unit) return undefined;
+  return {
+    unitTitle: unit.title,
+    unitTopics: getUnitTopicEntries(unit).map((t) => t.title),
+  };
+}
+
 export async function getTopicMindmap(args: {
   classSlug: string;
   subjectSlug: string;
@@ -292,9 +341,15 @@ export async function getTopicMindmap(args: {
     args.topicSlug,
   );
   const source: MindmapSource = imported ? "imported" : "syllabus";
+
+  // Imported maps keep their authored tree; everything else is built deep from
+  // the topic's own content (falling back to the syllabus scope).
   const root = imported
     ? imported.root
-    : buildSyllabusTopicMindmap(args.topicTitle, args.topicSlug);
+    : buildSyllabusTopicMindmap(args.topicTitle, args.topicSlug, {
+        content: await findTopicContent(args),
+        ...(await findUnitContext(args.classSlug, args.subjectSlug, args.unitId)),
+      });
 
   return {
     id: `${args.classSlug}/${args.subjectSlug}/${args.unitId}/${args.topicSlug}`,

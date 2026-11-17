@@ -177,6 +177,9 @@ export function TopicMindMap({
   const [orderSort, setOrderSort] = useState<OrderSortType>("syllabus");
   const [searchQuery, setSearchQuery] = useState("");
   const [collapsedSubBranches, setCollapsedSubBranches] = useState<Record<string, boolean>>({});
+  // How many leaves each sub-branch fans out to. Deeper settings reveal more of
+  // the topic's own material; the map stays readable because sub-branches fold.
+  const [leafCap, setLeafCap] = useState(8);
   const [isMindmapFullscreen, setIsMindmapFullscreen] = useState(false);
   const mindmapRootRef = useRef<HTMLDivElement>(null);
 
@@ -2313,7 +2316,7 @@ export function TopicMindMap({
     const leafPos: { node: MindMapLeafNode; x: number; y: number; subId: string }[] = [];
     subPos.forEach(({ sub, x: sxp, y: syp }) => {
       const outward = Math.atan2(syp - by, sxp - bx);
-      const leaves = sub.nodes.slice(0, 4); // cap per-sub leaves for readability
+      const leaves = sub.nodes.slice(0, leafCap);
       leaves.forEach((node, li) => {
         const perp = outward + Math.PI / 2;
         const side = li % 2 === 0 ? -1 : 1;
@@ -2377,6 +2380,28 @@ export function TopicMindMap({
 
         {/* Zoom / expand toolbar */}
         <div className="flex items-center gap-1.5 text-xs">
+          <div
+            className="flex items-center gap-0.5 rounded-lg border border-slate-700 bg-slate-800/60 p-0.5"
+            role="group"
+            aria-label="Leaves per sub-branch"
+          >
+            {[4, 8, 12].map((cap) => (
+              <button
+                key={cap}
+                type="button"
+                onClick={() => setLeafCap(cap)}
+                title={`Show up to ${cap} leaves per sub-branch`}
+                className="rounded-md px-1.5 py-1 text-[10px] font-bold transition-colors"
+                style={
+                  leafCap === cap
+                    ? { backgroundColor: `${accentColor}30`, color: accentColor }
+                    : { color: "#94a3b8" }
+                }
+              >
+                {cap}
+              </button>
+            ))}
+          </div>
           <button
             onClick={() => setAllBranchesHeld(true)}
             disabled={heldCount === filteredTreeBranches.length && heldCount > 0}

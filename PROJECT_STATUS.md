@@ -634,3 +634,38 @@ Deprecated `middleware/errors.ts` removed (use `error-handler.ts`).
 - **T20:** CSP nonces via `frontend/proxy.ts` (`strict-dynamic`, FCM
   `connect-src`); static CSP line removed from `next.config.mjs`.
 
+
+## ARCHITECTURE CHANGE — DEEP TOPIC MIND MAPS (2026-11-17)
+
+Topic mind maps were flat: \uildSyllabusTopicMindmap\ split the topic title into
+a handful of branches with no children, so the fold/unfold canvas had nothing to
+fold. Maps are now systematic and multi-level.
+
+- **New:** \rontend/features/mindmap/topic-map-builder.ts\ —
+  \uildTopicMindmap()\ builds \Syllabus scope ? Unit context ? content
+  branches ? note-heading themes\ from the topic's own manifest payload
+  (notes, importantConcepts, keyPoints, formulas, examples, examShortTricks,
+  confusion, practiceQuestions) via \eatures/docs/doc-mindmap\; every branch
+  gets children so every node folds. Caps in \TOPIC_MAP_LIMITS\.
+  \uildUnitMindmap()\ gives the unit map a branch per topic.
+- **queries.ts:** \getTopicMindmap\ grounds the map in the embedded
+  \content/manifest.json\ payload (cached index, no extra fetch) + unit context;
+  authored maps still win. \	opicTitleToBranches\ delegates to
+  \splitTopicTitle\; \uildSyllabusUnitMindmap\ delegates to the builder.
+- **mindmap-interface.tsx:** progressive disclosure — an \L1/L2/L3/All\ depth
+  control (\initialDepth\, default 2; galleries pass 1) replaces the old
+  expand/collapse-all pair, per-node folding unchanged, node counter shows
+  visible/total.
+- **topic-visuals.tsx (\uildTopicBranches\):** raised branch caps via
+  \BRANCH_LIMITS\ (concepts 6?12, formulas 6?12, traps 5?10, …), branches 5?7,
+  terms split by focus, an "How it is asked" sub-branch, a new
+  "Last-minute revision" branch, palette extended to 8 colours.
+- **topic-mindmap.tsx (lab canvas):** leaves per sub-branch 4 ? selectable
+  4/8/12 (default 8).
+- **Validation:** \rontend/tests/lib/topic-map-builder.test.ts\ 8/8 (depth,
+  every branch foldable, no empty labels/duplicate ids, unit context, content-less
+  topics still open); mindmap/visual suites 68/68; \	sc --noEmit\ clean.
+- **Known:** \
+pm run lint:ratchet\ still fails on 86 pre-existing findings in
+  untouched files (ai/community/lab 3D + \lib/api/auth.ts\
+  \useFirebaseClientAuth\ rules-of-hooks errors) — not introduced here.

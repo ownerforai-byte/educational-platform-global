@@ -57,7 +57,7 @@ export function MindMapViewer({
           </span>
         </div>
         <p className="text-xs font-normal text-muted-foreground">
-          {mediaUrl ? "Uploaded image map" : "Interactive mind map — scroll to zoom, drag to pan, click nodes to collapse/expand"}
+          {mediaUrl ? "Uploaded image map" : "Interactive mind map — scroll to zoom, drag to pan, click a node to fold or unfold it (L1–L3 sets the depth)"}
         </p>
       </CardHeader>
       <CardContent className="pt-0">
@@ -69,7 +69,7 @@ export function MindMapViewer({
             className="mx-auto max-h-[420px] rounded-md border border-border"
           />
         ) : root ? (
-          <MindmapInterface title={title} root={root} source={source} />
+          <MindmapInterface title={title} root={root} source={source} initialDepth={1} />
         ) : (
           <div className="flex flex-col items-center justify-center py-12 text-center gap-2">
             <MapIcon className="h-8 w-8 text-muted-foreground/40" />

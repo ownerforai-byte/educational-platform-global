@@ -705,7 +705,16 @@ export const KIND_LABEL: Record<DiagramKind, string> = {
 
 /* ═══════════════════ 5. branches derived from the topic ══════════════════ */
 
-const PALETTE = ["#38bdf8", "#a855f7", "#10b981", "#f59e0b", "#ef4444"];
+const PALETTE = [
+  "#38bdf8",
+  "#a855f7",
+  "#10b981",
+  "#f59e0b",
+  "#ef4444",
+  "#14b8a6",
+  "#6366f1",
+  "#ec4899",
+];
 
 let uidCounter = 0;
 const nextId = (prefix: string) => `${prefix}-${(uidCounter += 1)}`;
@@ -779,17 +788,36 @@ function pick(items: KnowledgeItem[], kinds: KnowledgeKind[], limit: number): Kn
  * this topic's words. Two units therefore never render the same tree — which is
  * exactly what the shared generic fallback used to do.
  */
+/**
+ * How much material each branch family may carry. Raised (2026-11) so a topic
+ * map branches deeply instead of showing a token handful of leaves; the
+ * fold/unfold control in the mindmap keeps the larger tree navigable.
+ */
+const BRANCH_LIMITS = {
+  concepts: 12,
+  laws: 8,
+  formulas: 12,
+  processes: 10,
+  traps: 10,
+  exams: 10,
+  numericals: 8,
+  scope: 8,
+  branches: 7,
+  subBranches: 4,
+  leavesPerSubBranch: 10,
+} as const;
+
 export function buildTopicBranches(knowledge: TopicKnowledge): MindMapBranch[] {
   const { items, unitTitle, topicTitle } = knowledge;
   const uid = `tv-${(knowledge.unitId || knowledge.topicSlug || "topic").replace(/[^a-z0-9-]+/gi, "-")}`;
 
-  const concepts = pick(items, ["concept"], 6);
-  const laws = pick(items, ["law"], 4);
-  const formulas = pick(items, ["formula"], 6);
-  const processes = pick(items, ["process"], 6);
-  const traps = pick(items, ["trap"], 5);
-  const exams = pick(items, ["exam"], 5);
-  const numericals = pick(items, ["numerical"], 4);
+  const concepts = pick(items, ["concept"], BRANCH_LIMITS.concepts);
+  const laws = pick(items, ["law"], BRANCH_LIMITS.laws);
+  const formulas = pick(items, ["formula"], BRANCH_LIMITS.formulas);
+  const processes = pick(items, ["process"], BRANCH_LIMITS.processes);
+  const traps = pick(items, ["trap"], BRANCH_LIMITS.traps);
+  const exams = pick(items, ["exam"], BRANCH_LIMITS.exams);
+  const numericals = pick(items, ["numerical"], BRANCH_LIMITS.numericals);
 
   const built: (MindMapBranch | null)[] = [];
 
@@ -799,7 +827,7 @@ export function buildTopicBranches(knowledge: TopicKnowledge): MindMapBranch[] {
   const scopeOrdered = [
     ...knowledge.focus,
     ...knowledge.scope.filter((s) => !knowledge.focus.includes(s)),
-  ].slice(0, 5);
+  ].slice(0, BRANCH_LIMITS.scope);
   const scopeSubs: MindMapSubBranch[] = scopeOrdered.map((statement, i) => {
     const related = items
       .filter((it) => focusScore(statement, new Set(words(statement))) > 0)
@@ -823,17 +851,32 @@ export function buildTopicBranches(knowledge: TopicKnowledge): MindMapBranch[] {
     );
   });
 
-  // 2. Definitions & terms.
+  // 2. Definitions & terms — split by focus so the topic's own vocabulary
+  //    leads and the wider unit vocabulary follows as a second sub-branch.
   const definitionSubs: MindMapSubBranch[] = [];
   if (concepts.length) {
+    const focused = concepts.filter((c) => c.focus > 0).slice(0, BRANCH_LIMITS.leavesPerSubBranch);
+    const wider = concepts.filter((c) => c.focus <= 0).slice(0, BRANCH_LIMITS.leavesPerSubBranch);
     definitionSubs.push(
       subBranch(
         `${uid}-terms`,
-        "Definitions examiners quote",
+        focused.length > 0 ? "This topic's terms" : "Definitions examiners quote",
         "The precise vocabulary marks are awarded for.",
-        concepts.map((c, i) => leafNode(c, i + 1)),
+        (focused.length > 0 ? focused : concepts)
+          .slice(0, BRANCH_LIMITS.leavesPerSubBranch)
+          .map((c, i) => leafNode(c, i + 1)),
       ),
     );
+    if (focused.length > 0 && wider.length > 0) {
+      definitionSubs.push(
+        subBranch(
+          `${uid}-terms-unit`,
+          "Related unit vocabulary",
+          "Neighbouring terms from the same unit that reappear in the paper.",
+          wider.map((c, i) => leafNode(c, i + 1)),
+        ),
+      );
+    }
   }
   if (knowledge.grounded) {
     definitionSubs.push(
@@ -915,21 +958,56 @@ export function buildTopicBranches(knowledge: TopicKnowledge): MindMapBranch[] {
     ]),
   );
 
-  // 5. Exam traps — the wrong belief beside the truth.
-  built.push(
-    branchOf(`${uid}-traps`, "Exam Traps & Misconceptions", 3, 4, [
+  // 5. Exam traps — the wrong belief beside the truth, plus how it is asked.
+  const trapSubs: MindMapSubBranch[] = [
+    subBranch(
+      `${uid}-traps-sb`,
+      "Wrong belief vs truth",
+      "What loses marks here, and the correction.",
+      traps.map((t, i) => leafNode(t, i + 1)),
+    ),
+  ];
+  if (exams.length > 0) {
+    trapSubs.push(
       subBranch(
-        `${uid}-traps-sb`,
-        "Wrong belief vs truth",
-        "What loses marks here, and the correction.",
-        traps.map((t, i) => leafNode(t, i + 1)),
+        `${uid}-exam-sb`,
+        "How it is asked",
+        "Question shapes this topic actually appears in.",
+        exams
+          .slice(0, BRANCH_LIMITS.leavesPerSubBranch)
+          .map((e, i) => leafNode(e, i + 1)),
+      ),
+    );
+  }
+  built.push(branchOf(`${uid}-traps`, "Exam Traps & Misconceptions", 3, 4, trapSubs));
+
+  // 6. Revision snapshot — the highest-yield lines only, for last-minute
+  //    revision. Built from exam pointers and trap truths, never new text.
+  const revision: KnowledgeItem[] = [
+    ...exams.slice(0, 4),
+    ...traps.slice(0, 4).map((t) => ({
+      ...t,
+      kind: "exam" as const,
+      name: t.name || "Correction",
+      detail: t.detail,
+    })),
+  ];
+  built.push(
+    branchOf(`${uid}-revision`, "Last-minute revision", 4, 5, [
+      subBranch(
+        `${uid}-revision-sb`,
+        "High-yield lines",
+        "The statements worth re-reading right before the exam.",
+        revision
+          .slice(0, BRANCH_LIMITS.leavesPerSubBranch)
+          .map((r, i) => leafNode(r, i + 1)),
       ),
     ]),
   );
 
   const tree = built
     .filter((b): b is MindMapBranch => b !== null)
-    .slice(0, 5);
+    .slice(0, BRANCH_LIMITS.branches);
 
   const n = tree.length;
   tree.forEach((b, idx) => {

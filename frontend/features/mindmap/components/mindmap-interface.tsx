@@ -163,7 +163,8 @@ function buildLayoutTree(
   node: MindmapNode,
   depth: number,
   parentId: string | null,
-  assignedBranchIndex: number
+  assignedBranchIndex: number,
+  collapseAtDepth: number
 ): LayoutNode {
   const lines = wrapLabel(node.label);
   const w = estimateNodeWidth(lines);
@@ -183,9 +184,11 @@ function buildLayoutTree(
     children: (node.children ?? []).map((c, idx) => {
       // Depth 0 children determine the root branches (0, 1, 2...)
       const childBranch = depth === 0 ? idx : assignedBranchIndex;
-      return buildLayoutTree(c, depth + 1, node.id, childBranch);
+      return buildLayoutTree(c, depth + 1, node.id, childBranch, collapseAtDepth);
     }),
-    collapsed: false,
+    // Progressive disclosure: everything below the chosen depth starts folded,
+    // so a 200-node map opens as a readable outline and unfolds on demand.
+    collapsed: depth >= collapseAtDepth,
   };
 }
 
@@ -238,11 +241,14 @@ export function MindmapInterface({
   root,
   source = "syllabus",
   className,
+  initialDepth = 2,
 }: {
   title: string;
   root: MindmapNode;
   source?: MindmapSource;
   className?: string;
+  /** Levels opened on first paint. Galleries pass 1; topic pages keep 2. */
+  initialDepth?: number;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const svgRef = useRef<SVGSVGElement>(null);
@@ -257,38 +263,31 @@ export function MindmapInterface({
   const lastTapRef = useRef<{ t: number; x: number; y: number } | null>(null);
   const [treeRoot, setTreeRoot] = useState<LayoutNode | null>(null);
 
+  // Progressive disclosure depth: 1 = root + branches, 2 = + sub-branches, …
+  // `Infinity` opens every node.
+  const [expandDepth, setExpandDepth] = useState<number>(initialDepth);
+
   // Build tree layout with branch indexing
   useEffect(() => {
-    const raw = buildLayoutTree(root, 0, null, -1);
+    const raw = buildLayoutTree(root, 0, null, -1, expandDepth);
     layoutTree(raw, 60, 40);
     setTreeRoot(raw);
-  }, [root]);
+  }, [root, expandDepth]);
 
   // Branch isolation: clicking a legend chip fades other branches.
   const [isolatedBranch, setIsolatedBranch] = useState<number | null>(null);
 
-  // Track how many root-branch subtrees are folded (for Expand/Collapse all).
-  const rootBranchIds = useMemo(
-    () => (treeRoot?.children ?? []).map((c) => c.id),
-    [treeRoot],
-  );
-  const collapsedRootCount = useMemo(() => {
+  // How many nodes are currently hidden by the depth control (for the badge).
+  const totalNodeCount = useMemo(() => {
     if (!treeRoot) return 0;
-    return treeRoot.children.filter((c) => c.collapsed).length;
+    const count = (n: LayoutNode): number =>
+      1 + (n.collapsed ? 0 : n.children.reduce((s, c) => s + count(c), 0));
+    return count(treeRoot);
   }, [treeRoot]);
 
-  const setAllRootBranches = useCallback(
-    (collapsed: boolean) => {
-      setTreeRoot((prev) => {
-        if (!prev) return prev;
-        return {
-          ...prev,
-          children: prev.children.map((c) => ({ ...c, collapsed })),
-        };
-      });
-    },
-    [],
-  );
+  const setAllRootBranches = useCallback((collapsed: boolean) => {
+    setExpandDepth(collapsed ? 1 : Number.POSITIVE_INFINITY);
+  }, []);
 
   // Live mirrors of the transform for the non-passive wheel listener.
   const scaleRef = useRef(scale);
@@ -556,11 +555,11 @@ export function MindmapInterface({
             onClick={() => setAllRootBranches(false)}
             className={cn(
               "inline-flex items-center gap-1.5 rounded-xl border px-2.5 py-1.5 text-xs font-semibold transition-all",
-              collapsedRootCount === 0
-                ? "border-slate-700/60 bg-slate-800/50 text-slate-500"
-                : "border-emerald-500/50 bg-emerald-500/15 text-emerald-300 hover:bg-emerald-500/25",
+              expandDepth === Number.POSITIVE_INFINITY
+                ? "border-emerald-500/50 bg-emerald-500/15 text-emerald-300"
+                : "border-slate-700/80 bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white",
             )}
-            title="Expand every root branch"
+            title="Expand every level"
           >
             <UnfoldVertical className="h-3.5 w-3.5" />
             <span className="hidden md:inline">Expand all</span>
@@ -569,20 +568,42 @@ export function MindmapInterface({
             onClick={() => setAllRootBranches(true)}
             className={cn(
               "inline-flex items-center gap-1.5 rounded-xl border px-2.5 py-1.5 text-xs font-semibold transition-all",
-              collapsedRootCount === rootBranchIds.length && rootBranchIds.length > 0
-                ? "border-slate-700/60 bg-slate-800/50 text-slate-500"
-                : "border-amber-500/50 bg-amber-500/15 text-amber-300 hover:bg-amber-500/25",
+              expandDepth === 1
+                ? "border-amber-500/50 bg-amber-500/15 text-amber-300"
+                : "border-slate-700/80 bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white",
             )}
-            title="Fold every root branch back to its trunk"
+            title="Fold every branch back to its trunk"
           >
             <FoldVertical className="h-3.5 w-3.5" />
             <span className="hidden md:inline">Collapse all</span>
-            {collapsedRootCount > 0 && (
-              <span className="rounded bg-amber-500/25 px-1 text-[10px] font-extrabold">
-                {collapsedRootCount}
-              </span>
-            )}
           </button>
+          <div
+            className="inline-flex items-center gap-0.5 rounded-xl border border-slate-700/80 bg-slate-800/80 p-0.5"
+            role="group"
+            aria-label="Visible depth"
+          >
+            {[
+              { label: "L1", value: 1, title: "Show the main branches only" },
+              { label: "L2", value: 2, title: "Show branches and their sub-branches" },
+              { label: "L3", value: 3, title: "Show three levels of detail" },
+              { label: "All", value: Number.POSITIVE_INFINITY, title: "Show every node" },
+            ].map((level) => (
+              <button
+                key={level.label}
+                type="button"
+                onClick={() => setExpandDepth(level.value)}
+                title={level.title}
+                className={cn(
+                  "rounded-lg px-1.5 py-1 text-[11px] font-bold transition-all",
+                  expandDepth === level.value
+                    ? "bg-indigo-500/30 text-indigo-200"
+                    : "text-slate-400 hover:bg-slate-700 hover:text-white",
+                )}
+              >
+                {level.label}
+              </button>
+            ))}
+          </div>
           <button
             onClick={handleExport}
             className="p-1.5 rounded-xl border border-slate-700/80 bg-slate-800/80 text-slate-300 hover:bg-slate-700 hover:text-white transition-all text-xs"
@@ -591,7 +612,7 @@ export function MindmapInterface({
             <Download className="h-3.5 w-3.5" />
           </button>
           <span className="text-[11px] font-mono text-slate-400 hidden md:inline ml-1">
-            {nodeCount} concepts · depth {maxDepth}
+            {nodeCount}/{totalNodeCount} nodes · depth {maxDepth}
           </span>
         </div>
       </div>
@@ -932,7 +953,7 @@ export function MindmapInterface({
               <span>Search Match</span>
             </span>
             <span className="hidden sm:inline text-slate-500">
-              Pan: Drag · Zoom: Wheel · Expand: Click node · Keyboard: Tab + Enter
+              Pan: Drag · Zoom: Wheel · Fold: Click node · Depth: L1–L3 · Keyboard: Tab + Enter
             </span>
           </div>
         </div>
