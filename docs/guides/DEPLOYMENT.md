@@ -16,7 +16,7 @@ The former backend host is decommissioned. Never push `main` with failing
 
 **Build command:** `cd frontend && npm install && npm run build`
 **Output directory:** `frontend/.next`
-**Node version:** 20+
+**Node version:** 22+ (matches `engines` and CI)
 
 Required environment variables (set in Vercel dashboard → Settings → Environment):
 
@@ -48,7 +48,7 @@ Production uses **`https://harindrasah.com.np`** only. The repository must not l
 **Deploy command:** `firebase deploy --only functions:functions-api:api` (from the repo root;
 deploys the `api` function from the `functions-api` codebase, gen2, region `us-central1` —
 note `--only functions:api` silently targets the bot codebase instead)
-**Node version:** 20+
+**Node version:** 22 (the `nodejs22` runtime pinned in `firebase/firebase.json`)
 
 Required environment variables (set in the Cloud Functions environment for
 the `api` function):
@@ -86,16 +86,13 @@ the old keep-alive workflow was removed with the decommission.
 
 ## Database migrations
 
-Run from inside `backend/`:
-```bash
-# Apply pending migrations
-npx supabase migration up
+There is no migration directory committed in this repository. The database
+schema is managed on the Supabase project itself (dashboard → SQL editor, or
+a Supabase CLI project linked outside this repo).
 
-# Generate a new migration
-npx supabase migration new <description>
-```
-
-Migrations live in `backend/supabase/migrations/`.
+`@supabase/supabase-js` is included only as a **client** in `backend/` and
+`frontend/` — nothing under `backend/` generates or applies migrations, so
+there is no `npx supabase migration up` step in this deploy flow.
 
 ## Content build
 

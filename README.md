@@ -24,7 +24,7 @@ A full-stack study platform covering Physics, Chemistry, Biology, Mathematics, E
 | Layer | Technology |
 |---|---|
 | Frontend | Next.js 16 · React 19 · TypeScript · Tailwind CSS · shadcn/ui |
-| Backend | Express 4 · TypeScript ESM · Supabase (PostgreSQL) |
+| Backend | Express 5 · TypeScript ESM · Supabase (PostgreSQL) |
 | AI | Agnes (primary) · 10 free OpenAI-compatible fallbacks (LLM7, OVHcloud, OpenRouter …) |
 | Deploy | Vercel (frontend) · Firebase Cloud Functions (backend) |
 | CI | GitHub Actions — CI, E2E smoke, Lighthouse, URL hygiene |
@@ -67,7 +67,7 @@ A full-stack study platform covering Physics, Chemistry, Biology, Mathematics, E
 ## Quick start
 
 ```bash
-# Prerequisites: Node 24+, npm 11+
+# Prerequisites: Node 22+, npm 10+
 
 npm install
 

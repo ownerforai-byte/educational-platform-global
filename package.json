@@ -109,7 +109,13 @@
     "prune:vercel": "node scripts/deploy/prune-vercel-deployments.mjs",
     "prune:vercel:dry": "node scripts/deploy/prune-vercel-deployments.mjs --dry-run",
     "brief": "node scripts/agent-brief.mjs brief",
-    "impact": "node scripts/agent-brief.mjs impact"
+    "impact": "node scripts/agent-brief.mjs impact",
+    "cf": "wrangler",
+    "cf:login": "wrangler login",
+    "cf:logout": "wrangler logout",
+    "cf:whoami": "wrangler whoami",
+    "cf:zones": "wrangler zones list",
+    "cf:deploy": "wrangler deploy"
   },
   "overrides": {
     "body-parser": "1.20.9",
