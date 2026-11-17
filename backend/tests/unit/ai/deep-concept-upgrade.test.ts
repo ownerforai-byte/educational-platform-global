@@ -72,6 +72,7 @@ vi.mock("../../../src/middleware/auth", async (original) => {
 vi.mock("../../../src/middleware/aiSparkGate", () => ({
   aiSparkGateIfAuthed: (_req: Request, _res: Response, next: () => void) => next(),
   requirePlusAiStudio: () => (_req: Request, _res: Response, next: () => void) => next(),
+  requireVeerChatTier: () => (_req: Request, _res: Response, next: () => void) => next(),
 }));
 
 import chatRoutes from "../../../src/api/ai/chat.controller";

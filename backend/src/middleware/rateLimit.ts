@@ -3,6 +3,7 @@ import type { AuthedRequest } from "./auth";
 import { getClientIp } from "../utils/clientIp";
 import {
   configureRateLimitStore,
+  failClosedOnStoreError,
   getRateLimitStore,
   resetRateLimitStoreForTests,
 } from "./rateLimitStore";
@@ -108,7 +109,10 @@ function tierFor(originalUrl: string | undefined): Tier {
   ) {
     return "ai-image";
   }
-  if (url.startsWith("/api/ai")) return "default-unlimited";
+  // /api/ai/* now uses the same per-IP tier as everything else (was
+  // "default-unlimited" / max: Infinity). This caps AI-spam and provider
+  // cost drain while keeping the free-tier provider chain intact upstream.
+  if (url.startsWith("/api/ai")) return "default";
   return "default";
 }
 
@@ -195,7 +199,14 @@ async function applyLimit(
     }
     next();
   } catch {
-    // Store failure must not take down the API — fail open for this request.
+    // Store failure must not take down the API. Fail CLOSED in production when
+    // a shared store is configured: a Redis outage can never silently disable
+    // rate limiting.
+    if (failClosedOnStoreError) {
+      res.setHeader("Retry-After", "1");
+      res.status(429).json({ error: "Too many requests" });
+      return;
+    }
     next();
   }
 }

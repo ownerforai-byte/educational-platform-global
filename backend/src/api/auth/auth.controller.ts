@@ -613,6 +613,34 @@ router.post("/signup", async (req: Request, res: Response) => {
       return;
     }
 
+    // Enforce email-verified signup: Supabase returns `needsEmailConfirmation`
+    // when the user must confirm their email before the session can be used.
+    // Unconfirmed accounts are held at PENDING and the client must flip to the
+    // email-confirmation screen rather than receiving a session. This prevents
+    // unverified/phantom accounts from being created against the platform.
+    if (result.user && result.needsEmailConfirmation) {
+      const { error: profileErr } = await updateProfileFields(
+        result.user.id,
+        {
+          access_status: "PENDING",
+          role: "member",
+          plan: "member",
+          premium_status: false,
+          full_name: parsed.data.fullName,
+        },
+      );
+      if (profileErr) console.error("[auth] signup profile tier write failed:", profileErr.message);
+      if (!ownerSignup) await ensureAccessRequest(result.user.id);
+
+      res.status(202).json({
+        user: null,
+        accessToken: null,
+        message: "Check your email to confirm your account before logging in.",
+        accessStatus: "PENDING",
+      } satisfies SignupResponse);
+      return;
+    }
+
     // Bind the new account to this device before any early return, so a
     // pending or email-confirmation signup still counts as the device's one
     // account. Best-effort — never fails the signup response.

@@ -46,7 +46,7 @@ export function getAllowedOrigins(): string[] {
 export function isOriginAllowed(origin: string): boolean {
   if (!origin) return true;
   const allowed = getAllowedOrigins();
-  if (allowed.includes(origin)) return true;
+  if (allowed.length > 0 && allowed.includes(origin)) return true;
   try {
     const url = new URL(origin);
     const isLocalhost =

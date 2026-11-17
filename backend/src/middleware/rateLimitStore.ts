@@ -83,6 +83,11 @@ export class UpstashStore implements RateLimitStore {
 
 let activeStore: RateLimitStore = new MemoryStore();
 
+/** Whether store failure is fail-closed (429) in production. Set to false
+ * only in local/dev/test. Defaults to true (fail-closed).
+ */
+export let failClosedOnStoreError = true;
+
 export function getRateLimitStore(): RateLimitStore {
   return activeStore;
 }
