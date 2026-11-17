@@ -153,9 +153,11 @@ async function readAccessStatus(userId: string, email?: string): Promise<AccessS
  * the waiting screen and polls /api/auth/account-status with the signed
  * statusToken. No session is issued on this path.
  */
-function pendingApproval(res: Response, userId: string): void {
-  // Best-effort: (re)start the timed access-bot clock for FCM automation.
-  void ensureAccessRequest(userId);
+async function pendingApproval(res: Response, userId: string): Promise<void> {
+  // Ensure the timed access-bot clock (FCM automation) is started
+  await ensureAccessRequest(userId).catch((err) => {
+    console.error("[auth] ensureAccessRequest failed in pendingApproval:", err);
+  });
   res.status(200).json({
     code: "PENDING_APPROVAL",
     message: PENDING_MESSAGE,
@@ -339,6 +341,7 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
     await ensureAuthProfile(identity.id, {
       email: identity.email,
       fullName: identity.fullName,
+      isSignup: true,
     });
 
     const accessStatus = await readAccessStatus(identity.id, identity.email);
@@ -359,7 +362,7 @@ router.post("/oauth/session", async (req: Request, res: Response) => {
       await bindDeviceToAccount(device.deviceId, identity.id);
       // PENDING is not a deny: 200 + statusToken → the client shows the
       // waiting screen while the bot auto-approves within ~5 minutes.
-      pendingApproval(res, identity.id);
+      await pendingApproval(res, identity.id);
       return;
     }
 
@@ -421,7 +424,7 @@ router.post("/login", async (req: Request, res: Response) => {
       return;
     }
     if (accessStatus !== "ACTIVE") {
-      pendingApproval(res, verified.uid);
+      await pendingApproval(res, verified.uid);
       return;
     }
     const user = await resolveSessionUser(verified.uid, accountEmail);
@@ -451,7 +454,7 @@ router.post("/login", async (req: Request, res: Response) => {
     return;
   }
   if (accessStatus !== "ACTIVE") {
-    pendingApproval(res, data.user.id);
+    await pendingApproval(res, data.user.id);
     return;
   }
 

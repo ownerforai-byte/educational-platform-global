@@ -14,6 +14,7 @@ import {
   rememberAccessOutcome,
   rememberPendingSignup,
   WAITING_ROUTE,
+  DENIED_ROUTE,
 } from "../pending-signup-identity";
 import { authFailureDetail, authFailureMessage } from "../public-messages";
 import type { OAuthSessionResponse } from "@/types/api";
@@ -158,6 +159,21 @@ export function SocialAuthButtons({
       redirected = true;
     } catch (oauthError) {
       sessionStorage.removeItem("neb_oauth_csrf");
+      const authErr = oauthError as { code?: string; statusToken?: string };
+      if (authErr?.code === "PENDING_APPROVAL" && authErr?.statusToken) {
+        rememberPendingSignup(authErr.statusToken);
+        rememberAccessOutcome("PENDING");
+        router.replace(WAITING_ROUTE);
+        redirected = true;
+        return;
+      }
+      if (authErr?.code === "ACCOUNT_REJECTED") {
+        if (authErr.statusToken) rememberPendingSignup(authErr.statusToken);
+        rememberAccessOutcome("REJECTED");
+        router.replace(DENIED_ROUTE);
+        redirected = true;
+        return;
+      }
       onError?.(authFailureMessage(oauthError, "oauth"), authFailureDetail(oauthError));
     } finally {
       if (!redirected) setSocialLoading(false);

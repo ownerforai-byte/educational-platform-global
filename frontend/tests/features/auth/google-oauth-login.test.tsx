@@ -56,6 +56,7 @@ vi.mock("@/lib/firebase/client-auth", async (importOriginal) => {
 });
 
 import { LoginForm } from "@/features/auth/components/login-form";
+import { SocialAuthButtons } from "@/features/auth/components/social-auth-buttons";
 import AuthCallbackPage from "@/app/auth/callback/page";
 
 beforeEach(() => {
@@ -244,5 +245,26 @@ describe("Social login", () => {
     await waitFor(() => expect(mocks.push).toHaveBeenCalledWith("/welcome/pending"));
     expect(localStorage.getItem("neb_signup_status_token")).toBe("signed-status-token");
     expect(mocks.refresh).not.toHaveBeenCalled();
+  });
+
+  it("creates account with Google via popup in signup mode and routes to /welcome/pending", async () => {
+    mocks.firebaseMode = true;
+    mocks.firebaseGoogleSignIn.mockResolvedValueOnce("firebase-id-token");
+    mocks.apiFetch
+      .mockResolvedValueOnce({ csrfToken: "b".repeat(64) })
+      .mockResolvedValueOnce({
+        code: "PENDING_APPROVAL",
+        statusToken: "pending-status-token-from-google-signup",
+      });
+
+    render(<SocialAuthButtons mode="signup" />);
+    const signupBtn = screen.getByRole("button", { name: /sign up with google/i });
+    expect(signupBtn).toBeInTheDocument();
+
+    fireEvent.click(signupBtn);
+
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledWith("/welcome/pending"));
+    expect(localStorage.getItem("neb_signup_status_token")).toBe("pending-status-token-from-google-signup");
+    expect(localStorage.getItem("neb_signup_access_outcome")).toBe("PENDING");
   });
 });

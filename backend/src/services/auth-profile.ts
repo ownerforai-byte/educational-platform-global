@@ -58,6 +58,9 @@ export async function ensureAuthProfile(
         ? carriedStatus
         : "PENDING";
     fields.created_at = knownCreatedAt ?? new Date().toISOString();
+    fields.role = owner ? "owner" : "member";
+    fields.plan = owner ? "pro" : "member";
+    fields.premium_status = owner ? true : false;
   }
 
   if (options.isSignup) {
