@@ -1,5 +1,6 @@
 import { Router } from "express";
 import chatRouter from "./chat.controller.js";
+import curateNotesRouter from "./curate-notes.controller.js";
 import deepDiveRouter from "./deep-dive.controller.js";
 import enhanceRouter from "./enhance.controller.js";
 import evaluateRouter from "./evaluate.controller.js";
@@ -31,6 +32,7 @@ router.use("/enhance", enhanceRouter);
 router.use("/solve-math", mathRouter);
 router.use("/deep-dive", deepDiveRouter);
 router.use("/platform-guide", platformGuideRouter);
+router.use("/curate-notes", curateNotesRouter);
 router.use("/", chatRouter);
 
 export { quizHistoryRouter };

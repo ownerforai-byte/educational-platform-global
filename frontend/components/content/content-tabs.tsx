@@ -487,7 +487,14 @@ function TabPanel({
   }
 
   if (tab.kind === "curated") {
-    return <CuratedNotesTab subjectSlug={subjectSlug} />;
+    return (
+      <CuratedNotesTab
+        classSlug={classSlug}
+        subjectSlug={subjectSlug}
+        unitId={unitId}
+        topicTitle={topicTitle}
+      />
+    );
   }
 
   if (!tab.field) return null;

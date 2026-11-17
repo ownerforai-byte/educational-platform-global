@@ -1792,4 +1792,24 @@ export function createAIService(): AIService {
   return new AIService();
 }
 
+/**
+ * Agnes-only one-shot completion — the AI behind the "Curate my notes" block
+ * (owner 2026-11-09: "simply the ai behind 'curate my notes' is agnes working
+ * with agnes api key").
+ *
+ * Deliberately NO ordered chain and NO fallback: curation IS Agnes. The key
+ * comes from `config.getAgnesKey()` (backend env only — never logged, never
+ * returned to any client) and the reply text is all that leaves this process.
+ * Throws when Agnes is not configured; the caller owns the honest error.
+ */
+export async function agnesComplete(
+  messages: Array<AIChatMessage>,
+): Promise<string> {
+  const key = getAgnesKey();
+  if (!key) {
+    throw new Error("Agnes is not configured (AGNES_API_KEY is missing)");
+  }
+  return new AgnesProvider(key).chat(messages);
+}
+
 
