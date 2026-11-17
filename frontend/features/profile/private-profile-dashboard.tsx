@@ -77,7 +77,7 @@ import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerAccount } from "@/lib/owner";
 import { getAiSparkUsage, type AiSparkUsage } from "@/lib/api/ai";
 import { AI_SPARK_LIMITS } from "@/lib/ai/ai-spark-tiers";
-import { ACCESS_LABELS, accessLevelFor, type AccessLevel } from "@/lib/core/access-level";
+import { ACCESS_LABELS, accessLevelFor, hasLevel, type AccessLevel } from "@/lib/core/access-level";
 import { entryStatus, topicHref } from "@/lib/progress/catalog";
 import { getProgress } from "@/lib/api/progress";
 import { SYLLABUS } from "@/lib/core/syllabus";
@@ -670,8 +670,9 @@ export function PrivateProfileDashboard({
 
   const owner = isOwnerAccount(user);
   const tier = accessLevelFor(user);
+  const veerUnlocked = hasLevel(user, "plus");
   const tierLimit = AI_SPARK_LIMITS[tier];
-  const tierMetered = Number.isFinite(tierLimit);
+  const tierMetered = Number.isFinite(tierLimit) && tierLimit > 0;
   const sparkUsed = sparkUsage?.used ?? 0;
   const resetCountdown = useUtcResetCountdown();
 
@@ -1780,25 +1781,27 @@ export function PrivateProfileDashboard({
               </CardContent>
             </Card>
 
-            <Card className="border-fuchsia-500/30 bg-fuchsia-500/[0.06]">
-              <CardHeader className="pb-2">
-                <CardTitle className="flex items-center gap-2 text-sm font-semibold">
-                  <Sparkles className="h-4 w-4 text-fuchsia-500" aria-hidden="true" />
-                  Continue with Veer
-                </CardTitle>
-                <CardDescription className="text-xs">
-                  Chat with your AI study buddy — powered by daily AI sparks.
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="flex flex-wrap gap-2">
-                <Button asChild size="sm" className="rounded-xl text-xs">
-                  <Link href="/chat">Open Chat</Link>
-                </Button>
-                <Button asChild size="sm" variant="outline" className="rounded-xl text-xs">
-                  <Link href="/ai/history">Chat History</Link>
-                </Button>
-              </CardContent>
-            </Card>
+            {veerUnlocked ? (
+              <Card className="border-fuchsia-500/30 bg-fuchsia-500/[0.06]">
+                <CardHeader className="pb-2">
+                  <CardTitle className="flex items-center gap-2 text-sm font-semibold">
+                    <Sparkles className="h-4 w-4 text-fuchsia-500" aria-hidden="true" />
+                    Continue with Veer
+                  </CardTitle>
+                  <CardDescription className="text-xs">
+                    Chat with your AI study buddy — powered by daily AI sparks.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-wrap gap-2">
+                  <Button asChild size="sm" className="rounded-xl text-xs">
+                    <Link href="/chat">Open Chat</Link>
+                  </Button>
+                  <Button asChild size="sm" variant="outline" className="rounded-xl text-xs">
+                    <Link href="/ai/history">Chat History</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ) : null}
           </div>
         </TabsContent>
 
@@ -1839,7 +1842,11 @@ export function PrivateProfileDashboard({
                     {ACCESS_LABELS[tier]}
                   </span>
                   <span className="text-xs text-muted-foreground">
-                    {tierMetered ? `${tierLimit} Veer sparks/day` : "Unlimited Veer sparks"}
+                    {veerUnlocked
+                      ? tierMetered
+                        ? `${tierLimit} Veer sparks/day`
+                        : "Unlimited Veer sparks"
+                      : "Veer chat on Plus"}
                   </span>
                 </span>
               </div>

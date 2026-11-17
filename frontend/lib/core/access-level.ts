@@ -18,7 +18,7 @@ import {
  *
  *   guest  → signed out. The home chat widget only; no notes, labs, or Veer.
  *   member → any signed-in account. Community posts, Community Chat, and
- *              Community bot answers; public study questions on the board.
+ *              Community bot answers; no private Veer chat.
  *   plus   → search, Student Desk, Class 11 + 12 notes, formula sheets,
  *              practice sets, the notice board, labs, simulations, and Veer
  *              studio — 25 Veer sparks a day.
@@ -65,7 +65,7 @@ export const ACCESS_LABELS: Record<AccessLevel, string> = {
 /** The same rung in plain words, shown on the public overview + /plans. */
 export const ACCESS_TAGLINES: Record<AccessLevel, string> = {
   guest: "Home chat widget only",
-  member: "Community, chat, and bot answers",
+  member: "Community, chat, and bot answers (no private Veer)",
   plus: "Search, notes, labs, and Veer studio",
   pro: "Every index, 50 Veer sparks a day",
   owner: "Everything, plus the rails and console",
@@ -109,7 +109,7 @@ export function tierHomePathFor(
 /** Veer AI sparks per UTC day, hardcoded by rung (client-safe display map). */
 export const TIER_SPARKS: Record<AccessLevel, string> = {
   guest: "Home guide",
-  member: "13 / day",
+  member: "Plus plan",
   plus: "25 / day",
   pro: "50 / day",
   owner: "Unlimited",

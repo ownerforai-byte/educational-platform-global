@@ -16,7 +16,7 @@ export const metadata: Metadata = {
  * summarize, and a chat → AI-quiz handoff. The green "online" ping dot in
  * the header is kept exactly as it has always been.
  *
- * Open from the Member rung up, metered by AI sparks (member 13/day) — not an
+ * Opens from Plus upward, metered by AI sparks (25/50/day; owner unlimited) — not an
  * owner surface since 2026-10-13.
  *
  * ?q= (owner 2026-10-27): the left-side Veer panel routes DEEP questions

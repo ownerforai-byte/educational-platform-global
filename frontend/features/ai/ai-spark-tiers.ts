@@ -9,7 +9,7 @@ import { isOwnerEmail } from "@/lib/owner";
  * IS the platform access ladder (lib/access-level.ts aliases it):
  *
  *   guest  (signed out)        → no Veer access (home guide widget only)
- *   member (signed-in base)    → 13 messages / UTC day
+ *   member (signed-in base)    → no private Veer chat (Community only)
  *   plus   (granted plan/role) → 25 messages / UTC day
  *   pro    (granted plan/role) → 50 messages / UTC day
  *   owner  (allowlist/role)    → unlimited (never counted, never blocked)
@@ -27,7 +27,7 @@ export type AiSparkTier = "guest" | "member" | "plus" | "pro" | "owner";
 /** Daily Veer message allowance per tier (owner = unlimited). */
 export const AI_SPARK_LIMITS: Record<AiSparkTier, number> = {
   guest: 0,
-  member: 13,
+  member: 0,
   plus: 25,
   pro: 50,
   owner: Number.POSITIVE_INFINITY,

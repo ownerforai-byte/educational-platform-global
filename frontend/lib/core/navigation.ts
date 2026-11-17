@@ -27,7 +27,8 @@
  */
 
 import type { ComponentType } from "react";
-import { ACCESS_RANK, type AccessLevel } from "@/lib/core/access-level";
+import { ACCESS_RANK, hasLevel, type AccessLevel } from "@/lib/core/access-level";
+import type { AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
 import {
   Home,
   BookOpen,
@@ -99,6 +100,8 @@ export type NavItem = {
   minLevel?: AccessLevel;
   /** Keep this destination in the registry/footer, but omit it from the sidebar and drawer. */
   hideFromSidebar?: boolean;
+  /** When the viewer is below `minLevel`, hide this row entirely (not a muted chip). */
+  hideWhenLocked?: boolean;
 };
 
 /** A collapsible group of navigation links (one section in the sidebar). */
@@ -125,6 +128,17 @@ export function navMinLevel(
 
 export function isSidebarNavItem(item: NavItem): boolean {
   return !item.hideFromSidebar;
+}
+
+/** Sidebar/drawer: omit locked rows that opt into `hideWhenLocked`. */
+export function isNavItemVisibleToViewer(
+  item: NavItem,
+  viewer: AiSparkUserLike | null | undefined,
+  section?: Pick<NavSection, "minLevel">,
+): boolean {
+  const tier = navMinLevel(item, section);
+  if (hasLevel(viewer, tier)) return true;
+  return !item.hideWhenLocked;
 }
 
 // ─── Grouped nav visuals (Settings / Profile-style rows) ─────────────────────
@@ -179,7 +193,7 @@ const primaryItems: NavItem[] = [
   { href: "/analytics",     label: "Analytics",          icon: LineChart,     minLevel: "pro" },
   { href: "/streaks",       label: "Streaks and Badges", icon: Award,         minLevel: "member",  hideFromSidebar: true },
   { href: "/community",     label: "Study Spaces",       icon: Users,         minLevel: "plus"    },
-  { href: "/ask",           label: "Ask Veer",           icon: HelpCircle,    minLevel: "plus"  },
+  { href: "/ask",           label: "Ask Veer",           icon: HelpCircle,    minLevel: "plus", hideWhenLocked: true },
   { href: "/my-notes",      label: "My Notes",           icon: NotebookPen,   minLevel: "member",  hideFromSidebar: true },
   { href: "/downloads",     label: "Offline Study",      icon: Download,      minLevel: "owner",   hideFromSidebar: true },
   { href: "/billing",       label: "Billing",            icon: Receipt,       minLevel: "member", hideFromSidebar: true },
@@ -267,35 +281,27 @@ const stemAndRigorItems: NavItem[] = [
 ];
 
 /**
- * AI & Practice — Veer AI chat, quiz tools, exam prep.
- * Members get 13 Veer chats/day on the three chat consoles.
- * Plus and above unlock the full AI studio (math, diagrams, deep-dive, etc.).
+ * AI & Practice — Veer AI chat, quiz tools, exam prep (Plus+ only for private Veer).
  */
 const toolsItems: NavItem[] = [
-  // Available to Members (13 AI sparks/day)
-  // Reachable as soon as an account is approved (member, 13 sparks/day).
-  { href: "/chat",         label: "Veer Study Assistant",    icon: Sparkles,   minLevel: "plus" },
-  { href: "/chat/nepali",  label: "Nepali Assistant",        icon: Languages,  minLevel: "plus" },
-  { href: "/chat/grammar", label: "Grammar Console",         icon: BookOpen,   minLevel: "plus" },
-
-  // Available to Plus and above (full AI studio).
-  // Practice Hub stays out of the sidebar (the footer already links it) and
-  // is grouped here so AI Tools is its parent. Community is the public feed.
-  { href: "/ai",           label: "AI Tools",                icon: Bot,        minLevel: "plus", hideFromSidebar: true },
-  { href: "/practice",     label: "Practice Hub",            icon: Target,     minLevel: "plus", hideFromSidebar: true },
+  { href: "/chat",         label: "Veer Study Assistant",    icon: Sparkles,   minLevel: "plus", hideWhenLocked: true },
+  { href: "/chat/nepali",  label: "Nepali Assistant",        icon: Languages,  minLevel: "plus", hideWhenLocked: true },
+  { href: "/chat/grammar", label: "Grammar Console",         icon: BookOpen,   minLevel: "plus", hideWhenLocked: true },
+  { href: "/ai",           label: "AI Tools",                icon: Bot,        minLevel: "plus", hideFromSidebar: true, hideWhenLocked: true },
+  { href: "/practice",     label: "Practice Hub",            icon: Target,     minLevel: "plus", hideFromSidebar: true, hideWhenLocked: true },
   { href: "/ai/community", label: "Community",               icon: Users,      minLevel: "guest" },
-  { href: "/ai/math",      label: "Veer Math Solver",        icon: Sigma,      minLevel: "plus"  },
-  { href: "/ai/deep-dive", label: "Deep Concept Studio",     icon: Lightbulb,  minLevel: "plus"  },
-  { href: "/ai/diagrams",  label: "Diagram Hub",             icon: Shapes,     minLevel: "plus"  },
-  { href: "/ai/tutor",     label: "Veer Tutor Console",      icon: Bot,        minLevel: "plus"  },
-  { href: "/ai/search",    label: "Veer Curriculum Search",  icon: Search,     minLevel: "plus"  },
-  { href: "/ai/workspace", label: "AI Workspace",            icon: Bot,        minLevel: "plus"  },
-  { href: "/ai/subjects",  label: "Subject Classrooms",      icon: BookOpen,   minLevel: "plus"  },
-  { href: "/ai/history",   label: "AI History",              icon: History,    minLevel: "plus"  },
-  { href: "/ai-quiz",      label: "Adaptive Veer Quiz",      icon: HelpCircle, minLevel: "plus", hideFromSidebar: true },
-  { href: "/ai-quiz/history", label: "Quiz History",         icon: History,    minLevel: "plus"  },
-  { href: "/practice/history", label: "Practice History",    icon: History,    minLevel: "plus"  },
-  { href: "/quiz",         label: "Practice Quiz Bank",      icon: Target,     minLevel: "plus", hideFromSidebar: true },
+  { href: "/ai/math",      label: "Veer Math Solver",        icon: Sigma,      minLevel: "plus", hideWhenLocked: true },
+  { href: "/ai/deep-dive", label: "Deep Concept Studio",     icon: Lightbulb,  minLevel: "plus", hideWhenLocked: true },
+  { href: "/ai/diagrams",  label: "Diagram Hub",             icon: Shapes,     minLevel: "plus", hideWhenLocked: true },
+  { href: "/ai/tutor",     label: "Veer Tutor Console",      icon: Bot,        minLevel: "plus", hideWhenLocked: true },
+  { href: "/ai/search",    label: "Veer Curriculum Search",  icon: Search,     minLevel: "plus", hideWhenLocked: true },
+  { href: "/ai/workspace", label: "AI Workspace",            icon: Bot,        minLevel: "plus", hideWhenLocked: true },
+  { href: "/ai/subjects",  label: "Subject Classrooms",      icon: BookOpen,   minLevel: "plus", hideWhenLocked: true },
+  { href: "/ai/history",   label: "AI History",              icon: History,    minLevel: "plus", hideWhenLocked: true },
+  { href: "/ai-quiz",      label: "Adaptive Veer Quiz",      icon: HelpCircle, minLevel: "plus", hideFromSidebar: true, hideWhenLocked: true },
+  { href: "/ai-quiz/history", label: "Quiz History",         icon: History,    minLevel: "plus", hideWhenLocked: true },
+  { href: "/practice/history", label: "Practice History",    icon: History,    minLevel: "plus", hideWhenLocked: true },
+  { href: "/quiz",         label: "Practice Quiz Bank",      icon: Target,     minLevel: "plus", hideFromSidebar: true, hideWhenLocked: true },
   { href: "/exam-countdown", label: "Exam Countdown",        icon: Target,     minLevel: "pro"   },
 
   // Exam tracks (Plus and above)
@@ -481,4 +487,18 @@ export function quickLinkMinTier(href: string): AccessLevel {
 /** Returns true when a viewer at `level` can open the given quick link. */
 export function quickLinkUnlocked(level: AccessLevel, href: string): boolean {
   return ACCESS_RANK[level] >= ACCESS_RANK[quickLinkMinTier(href)];
+}
+
+export function navItemForHref(href: string): NavItem | undefined {
+  for (const section of NAV_SECTIONS) {
+    const found = section.items.find((item) => item.href === href);
+    if (found) return found;
+  }
+  return undefined;
+}
+
+/** Quick-link strip: hide (not mute) Plus-only Veer doors for Members. */
+export function quickLinkShownForTier(tier: AccessLevel, href: string): boolean {
+  if (quickLinkUnlocked(tier, href)) return true;
+  return !navItemForHref(href)?.hideWhenLocked;
 }

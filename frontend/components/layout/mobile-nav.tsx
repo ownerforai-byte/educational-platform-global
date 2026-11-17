@@ -10,7 +10,14 @@ import { createPortal } from "react-dom";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isNavItemActive } from "@/lib/nav-active";
 import { isOwnerAccount } from "@/lib/owner";
-import { isSidebarNavItem, NAV_SECTIONS, NAV_SECTION_FEATURES, navAccent, navMinLevel } from "@/lib/core/navigation";
+import {
+  isNavItemVisibleToViewer,
+  isSidebarNavItem,
+  NAV_SECTIONS,
+  NAV_SECTION_FEATURES,
+  navAccent,
+  navMinLevel,
+} from "@/lib/core/navigation";
 import { ACCESS_LABELS, hasLevel } from "@/lib/core/access-level";
 
 /**
@@ -112,6 +119,7 @@ export function MobileNav() {
       rows: sec.items
         .filter((item) =>
           isSidebarNavItem(item) &&
+          isNavItemVisibleToViewer(item, user ?? null, sec) &&
           // Owner-only entries (AI chat) never reach non-owners, even by search.
           (item.ownerOnly ? isOwnerAccount(user) : true) &&
           (query === "" ||

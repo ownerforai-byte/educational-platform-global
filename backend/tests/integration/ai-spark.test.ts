@@ -12,7 +12,7 @@ import {
  * never blocked), and the daily allowance is effectively unlimited. This
  * is the user-facing promise that "owner is never asked for spark".
  *
- * The other rungs are pinned to their known daily caps (guest 0, member 13,
+ * The other rungs are pinned to their known daily caps (guest 0, member 0,
  * plus 25, pro 50) so a stray edit to the tier table cannot silently regress.
  * The retired visitor name is guest and the phantom plus_20 pass is gone —
  * legacy plus_20 plan rows resolve to Plus, with no expiry.
@@ -42,7 +42,7 @@ describe("aiSpark — owner is never asked for spark", () => {
 
   it("non-owner tiers stay on their documented daily caps", () => {
     expect(AI_SPARK_LIMITS.guest).toBe(0);
-    expect(AI_SPARK_LIMITS.member).toBe(13);
+    expect(AI_SPARK_LIMITS.member).toBe(0);
     expect(AI_SPARK_LIMITS.plus).toBe(25);
     expect(AI_SPARK_LIMITS.pro).toBe(50);
   });

@@ -10,6 +10,7 @@ import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerAccount } from "@/lib/owner";
 import { isNavItemActive } from "@/lib/nav-active";
 import {
+  isNavItemVisibleToViewer,
   isSidebarNavItem,
   NAV_SECTIONS,
   NAV_SECTION_FEATURES,
@@ -242,6 +243,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
   const rowsFor = (section: (typeof NAV_SECTIONS)[number]): NavRow[] =>
     section.items
       .filter(isSidebarNavItem)
+      .filter((item) => isNavItemVisibleToViewer(item, viewer, section))
       .filter((item) => (item.ownerOnly ? isOwnerAccount(user) : true))
       .map((item) => {
         const tier = navMinLevel(item, section);
@@ -267,7 +269,12 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
   };
 
   const primaryRows: NavRow[] = primaryItems
-    .filter((item) => isSidebarNavItem(item) && (item.ownerOnly ? isOwnerAccount(user) : true))
+    .filter(
+      (item) =>
+        isSidebarNavItem(item) &&
+        isNavItemVisibleToViewer(item, viewer) &&
+        (item.ownerOnly ? isOwnerAccount(user) : true),
+    )
     .map((item) => {
       const tier = navMinLevel(item);
       return { item, tier, locked: !hasLevel(viewer, tier) };

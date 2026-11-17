@@ -46,7 +46,7 @@ import { WelcomeGoButton } from "@/features/auth/components/welcome-go-button";
 type UserTier = Exclude<AccessLevel, "guest">;
 
 const TIER_HEADLINE: Record<UserTier, string> = {
-  member: "Your three Veer chats are open.",
+  member: "Community and study questions are open.",
   plus: "Class 11 + Class 12, exam-ready.",
   pro: "Everything, no caps.",
   owner: "Everything, plus the controls.",
@@ -54,7 +54,7 @@ const TIER_HEADLINE: Record<UserTier, string> = {
 
 const TIER_BLURB: Record<UserTier, string> = {
   member:
-    "You have 13 Veer sparks a day, on the Study, Nepali, and Grammar chats. Search, notes, formula sheets, practice sets, and the notice board open at Plus.",
+    "Post on Community, read bot answers, and track progress. Private Veer Study, Nepali, and Grammar chats open on Plus.",
   plus:
     "Search, the Student Desk, Class 11 notes, formula sheets, practice sets, the notice board, labs, and Veer studio are open, along with Class 12 and past papers.",
   pro:

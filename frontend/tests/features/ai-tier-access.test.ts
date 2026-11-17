@@ -15,13 +15,13 @@ const read = (p: string) => readLibSource(process.cwd(), p);
 const readRoot = (p: string) => readFileSync(path.resolve("..", p), "utf8");
 
 describe("AI spark tier table", () => {
-  it("allowances: guest 0 · member 13 · plus 25 · pro 50 · owner unlimited", () => {
+  it("allowances: guest 0 · member 0 · plus 25 · pro 50 · owner unlimited", () => {
     expect(AI_SPARK_LIMITS.guest).toBe(0);
-    expect(AI_SPARK_LIMITS.member).toBe(13);
+    expect(AI_SPARK_LIMITS.member).toBe(0);
     expect(AI_SPARK_LIMITS.plus).toBe(25);
     expect(AI_SPARK_LIMITS.pro).toBe(50);
     expect(Number.isFinite(AI_SPARK_LIMITS.owner)).toBe(false);
-    expect(aiSparkLimitLabel("member")).toBe("13");
+    expect(aiSparkLimitLabel("member")).toBe("0");
     expect(aiSparkLimitLabel("owner")).toBe("Unlimited");
   });
 
@@ -29,7 +29,7 @@ describe("AI spark tier table", () => {
     const backend = readRoot("backend/src/utils/aiSpark.ts");
     for (const [tier, limit] of Object.entries({
       guest: 0,
-      member: 13,
+      member: 0,
       plus: 25,
       pro: 50,
     })) {
@@ -112,19 +112,22 @@ describe("Veer chat: routes stay metered, professor workspace is Plus-gated", ()
     expect(exemptBlock).not.toContain('"/chat"');
   });
 
-  it("the chat API meters AI sparks and is not owner-gated", () => {
-    const route = readBackendApiSource("ai.ts");
+  it("the chat API meters AI sparks and blocks Member tier", () => {
+    const route = readRoot("backend/src/api/ai/chat.controller.ts");
     expect(route).not.toContain("requireOwnerEmail");
-    expect(route).toContain('router.post("/", requireAuth, async');
+    expect(route).toContain('router.post("/", requireAuth, requireVeerChatTier(), async');
     expect(route).toContain("consumeUserSlot");
     expect(route).toContain("aiSparkTierFor");
-    // Owner tier draws nothing — the metered check is explicit.
     expect(route).toContain("aiSparkIsMetered(tier)");
   });
 
   it("AI Studio routes meter AI sparks, not content sparks", () => {
-    for (const file of ["ai-math.ts", "ai-deep-dive.ts", "ai-generate.ts"]) {
-      const src = readBackendApiSource(file);
+    for (const file of [
+      "backend/src/api/ai/math.controller.ts",
+      "backend/src/api/ai/deep-dive.controller.ts",
+      "backend/src/api/ai/generate.controller.ts",
+    ]) {
+      const src = readRoot(file);
       expect(src).toContain("aiSparkGateIfAuthed");
       expect(src).not.toContain('requireCredit("aiChat")');
     }

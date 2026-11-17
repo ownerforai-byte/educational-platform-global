@@ -18,7 +18,7 @@ export const ACCESS_RANK: Record<AccessLevel, number> = {
 
 export const TIER_DAILY_SPARKS: Record<AccessLevel, number> = {
   guest: 0,
-  member: 13,
+  member: 0,
   plus: 25,
   pro: 50,
   owner: 999999,

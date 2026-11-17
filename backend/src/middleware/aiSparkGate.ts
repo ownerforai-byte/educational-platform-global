@@ -70,10 +70,30 @@ export function requireAiSpark(): (
 }
 
 const STUDIO_TIERS = new Set<AiSparkTier>(["plus", "pro", "owner"]);
+const VEER_CHAT_TIERS = STUDIO_TIERS;
+
+const veerChatDenied = (res: Response) => {
+  res.status(403).json({
+    error: "Veer chat opens at Plus",
+    message:
+      "Members can use Community and bot answers on posts. Private Veer Study, Nepali, and Grammar chats open on the Plus plan.",
+  });
+};
+
+/** After `requireAuth` — blocks Member tier from private Veer chat routes. */
+export function requireVeerChatTier() {
+  return (req: Request, res: Response, next: NextFunction) => {
+    const user = (req as AuthedRequest).user;
+    if (!user || !VEER_CHAT_TIERS.has(aiSparkTierFor(user))) {
+      veerChatDenied(res);
+      return;
+    }
+    next();
+  };
+}
 
 /**
  * Math, diagrams, deep-dive, search, and quiz are Plus and above.
- * Members keep the three chat consoles only (13 messages / day).
  */
 export function requirePlusAiStudio(): (
   req: Request,
@@ -86,7 +106,7 @@ export function requirePlusAiStudio(): (
       res.status(403).json({
         error: "Veer studio opens at Plus",
         message:
-          "Members get 13 Veer chats per day. Math, diagrams, deep-dive, and quiz open on the Plus plan.",
+          "Math, diagrams, deep-dive, and quiz open on the Plus plan.",
       });
       return;
     }

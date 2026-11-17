@@ -65,10 +65,8 @@ describe("navigation menu", () => {
     for (const ownerHref of ["/owner", "/owner/users", "/controller"]) {
       expect(publicHrefs).not.toContain(ownerHref);
     }
-    // Veer chat entries are OPEN to every signed-in tier (owner policy
-    // 2026-10-13, superseding the 2026-10-05 owner-only gate): chat is metered
-    // by AI sparks — member 13 / plus 25 / pro 50 / owner unlimited per UTC
-    // day — not hidden behind an allowlist.
+    // Veer chat routes stay in the registry for Plus+ (footer/index); Members
+    // use Community instead — UI hides locked Veer rows via hideWhenLocked.
     for (const aiHref of ["/ai", "/chat", "/chat/nepali", "/chat/grammar", "/ai/tutor", "/ai/search"]) {
       expect(publicHrefs).toContain(aiHref);
     }
@@ -92,9 +90,7 @@ describe("navigation menu", () => {
     const sidebarHrefs = entries
       .filter(({ item }) => isSidebarNavItem(item))
       .map(({ item }) => item.href);
-    // /chat is the exception: it is the one footer destination that also
-    // belongs in the sidebar, because Veer chat is a Member feature and needs a
-    // visible door at that rung (owner 2026-11-11).
+    // /chat stays out of the footer list (quick links / AI tab carry Veer for Plus+).
     const footerHrefs = [
       "/class-11-notes", "/class-12-notes", "/syllabus", "/pyqs", "/exams",
       "/ai", "/ai-quiz", "/quiz", "/practice",

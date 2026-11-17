@@ -36,6 +36,7 @@ import { SECTIONS } from "@/lib/sections";
 import {
   QUICK_LINKS,
   quickLinkMinTier,
+  quickLinkShownForTier,
   quickLinkUnlocked,
 } from "@/lib/core/navigation";
 import { SparkGate } from "@/features/credits/spark-gate";
@@ -299,7 +300,7 @@ function QuickLinksRail({ tier }: { tier: AccessLevel }) {
         </p>
       </div>
       <div className="mt-3 flex flex-wrap gap-2">
-        {QUICK_LINKS.map((link) => {
+        {QUICK_LINKS.filter((link) => quickLinkShownForTier(tier, link.href)).map((link) => {
           const unlocked = quickLinkUnlocked(tier, link.href);
           if (!unlocked) {
             // Plans live in the footer only; render a muted, disabled chip.
@@ -422,11 +423,9 @@ export function MemberHome({ rails }: { rails: ReactNode }) {
       rails={rails}
       tier="member"
       headline="Your study desk is open."
-      blurb="Search the whole library, keep your Class 11 notes and formula sheets close, ask Veer when a concept will not click, and track your progress — everything a Member needs, in one place."
+      blurb="Community posts, study questions, and your progress — Veer private chat opens on Plus."
       spotlights={[
-        // Veer chat is a member feature (13 sparks/day), so it gets a door here
-        // rather than living only behind the muted quick-link chip.
-        { title: "Ask Veer", desc: "Study, Nepali or Grammar chat — 13 sparks a day.", href: "/chat", icon: Sparkles },
+        { title: "Community", desc: "Ask on the board and read bot answers.", href: "/ai/community", icon: MessageCircle },
         { title: "Search", desc: "The whole library, one query away.", href: "/search", icon: Search },
         { title: "Class 11 Notes", desc: "Core theory notes across all six CDC subjects.", href: "/class-11-notes", icon: BookOpen },
         { title: "Formula Sheets", desc: "One-page rails per unit — revision at a glance.", href: "/legend", icon: Sigma },

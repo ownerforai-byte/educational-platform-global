@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { APP_TABS, quickLinkMinTier } from "@/lib/core/navigation";
-import { hasLevel } from "@/lib/core/access-level";
+import { APP_TABS, quickLinkMinTier, quickLinkShownForTier } from "@/lib/core/navigation";
+import { accessLevelFor, hasLevel } from "@/lib/core/access-level";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isNavItemActive } from "@/lib/nav-active";
 import { cn } from "@/lib/utils";
@@ -17,6 +17,8 @@ import { cn } from "@/lib/utils";
 export function BottomTabBar() {
   const pathname = usePathname();
   const { user } = useSession();
+  const tier = accessLevelFor(user);
+  const tabs = APP_TABS.filter((tab) => quickLinkShownForTier(tier, tab.href));
 
   return (
     <nav
@@ -29,7 +31,7 @@ export function BottomTabBar() {
       )}
     >
       <ul className="flex items-stretch justify-around">
-        {APP_TABS.map((tab) => {
+        {tabs.map((tab) => {
           const Icon = tab.icon;
           const active = isNavItemActive(pathname, tab.href);
           const unlocked = hasLevel(user, quickLinkMinTier(tab.href));

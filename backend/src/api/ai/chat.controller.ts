@@ -9,6 +9,7 @@ import {
   aiSparkLimitFor,
   aiSparkTierFor,
 } from "../../utils/aiSpark";
+import { requireVeerChatTier } from "../../middleware/aiSparkGate";
 // (Owner policy 2026-10-13, tightened 2026-10-26: this route is signed-in
 // only and metered by AI sparks — member 3 / plus 25 / pro 50 per UTC day,
 // owner unlimited. Guests have no Veer access at all: the /api/ai/guest
@@ -82,7 +83,7 @@ router.get("/spark", requireAuth, async (req: Request, res: Response) => {
   }
 });
 
-router.post("/", requireAuth, async (req: Request, res: Response) => {
+router.post("/", requireAuth, requireVeerChatTier(), async (req: Request, res: Response) => {
   // Veer chat costs no CONTENT sparks (owner policy 2026-10-12). It is,
   // however, metered by AI sparks per tier since 2026-10-13 — see the gate
   // below. streamState survives to know whether the student saw anything.
