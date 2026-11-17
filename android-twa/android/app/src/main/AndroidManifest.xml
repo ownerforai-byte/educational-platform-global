@@ -160,7 +160,7 @@
                 <category android:name="android.intent.category.BROWSABLE"/>
                 <data
                     android:scheme="https"
-                    android:host="www.harindrasah.com.np"
+                    android:host="harindrasah.com.np"
                     android:pathPrefix="/" />
             </intent-filter>
 

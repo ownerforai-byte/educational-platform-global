@@ -56,9 +56,9 @@ function enforcePlayTargetSdk() {
 
 async function main() {
   fs.writeFileSync(LOG, "");
-  logFile("[1/4] Fetching web manifest from www.harindrasah.com.np ...");
+  logFile("[1/4] Fetching web manifest from harindrasah.com.np ...");
   const twaManifest = await TwaManifest.fromWebManifest(
-    "https://www.harindrasah.com.np/manifest.json",
+    "https://harindrasah.com.np/manifest.json",
   );
 
   twaManifest.host = "harindrasah.com.np";
@@ -72,13 +72,13 @@ async function main() {
   twaManifest.orientation = "portrait";
   twaManifest.themeColor = require("color")("#3b82f6");
   twaManifest.backgroundColor = require("color")("#0f172a");
-  twaManifest.iconUrl = "https://www.harindrasah.com.np/icon-512.png";
-  twaManifest.maskableIconUrl = "https://www.harindrasah.com.np/icon-512.png";
+  twaManifest.iconUrl = "https://harindrasah.com.np/icon-512.png";
+  twaManifest.maskableIconUrl = "https://harindrasah.com.np/icon-512.png";
   twaManifest.enableNotifications = true;
   twaManifest.minSdkVersion = 30;
   twaManifest.generatorApp = "bubblewrap";
   twaManifest.webManifestUrl = new URL(
-    "https://www.harindrasah.com.np/manifest.json",
+    "https://harindrasah.com.np/manifest.json",
   );
   twaManifest.features = {};
 
