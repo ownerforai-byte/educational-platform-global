@@ -3,7 +3,19 @@
  * Profile avatars/covers use Sharp + image/* only (see profile-hub.controller).
  */
 
-export type BinaryFileKind = "png" | "jpeg" | "pdf" | "ole" | "zip" | "txt";
+export type BinaryFileKind =
+  | "png"
+  | "jpeg"
+  | "pdf"
+  | "ole"
+  | "zip"
+  | "txt"
+  | "isom"
+  | "webm"
+  | "mp3"
+  | "aac"
+  | "ogg"
+  | "wav";
 
 export interface BinaryFileSpec {
   mime: string;
@@ -32,6 +44,16 @@ export const BINARY_FILE_BY_EXTENSION: Record<string, BinaryFileSpec> = {
     kind: "zip",
   },
   txt: { mime: "text/plain", kind: "txt" },
+  mp4: { mime: "video/mp4", kind: "isom" },
+  mov: { mime: "video/quicktime", kind: "isom" },
+  webm: { mime: "video/webm", kind: "webm" },
+  mp3: { mime: "audio/mpeg", kind: "mp3" },
+  m4a: { mime: "audio/mp4", kind: "isom" },
+  aac: { mime: "audio/aac", kind: "aac" },
+  ogg: { mime: "audio/ogg", kind: "ogg" },
+  oga: { mime: "audio/ogg", kind: "ogg" },
+  wav: { mime: "audio/wav", kind: "wav" },
+  weba: { mime: "audio/webm", kind: "webm" },
 };
 
 export const COMMUNITY_ATTACHMENT_MAX_BYTES = 3 * 1024 * 1024;
@@ -50,6 +72,15 @@ export const STORAGE_API_ALLOWED_MIMES = [
   "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
   "application/vnd.openxmlformats-officedocument.presentationml.presentation",
   "text/plain",
+  "video/mp4",
+  "video/quicktime",
+  "video/webm",
+  "audio/mpeg",
+  "audio/mp4",
+  "audio/aac",
+  "audio/ogg",
+  "audio/wav",
+  "audio/webm",
 ] as const;
 
 export type StorageApiMime = (typeof STORAGE_API_ALLOWED_MIMES)[number];
@@ -113,6 +144,37 @@ export function matchBinaryMagic(buf: Buffer, kind: BinaryFileKind): boolean {
       buf[1] === 0x4b &&
       (buf[2] === 0x03 || buf[2] === 0x05 || buf[2] === 0x07) &&
       (buf[3] === 0x04 || buf[3] === 0x06 || buf[3] === 0x08)
+    );
+  }
+  if (kind === "isom") {
+    // ISO-BMFF container (MP4/MOV/M4A): "ftyp" box starts at offset 4.
+    return buf.length >= 8 && buf.subarray(4, 8).toString("latin1") === "ftyp";
+  }
+  if (kind === "webm") {
+    // Matroska/EBML magic (WebM, also Weba audio).
+    return (
+      buf.length >= 4 &&
+      buf[0] === 0x1a &&
+      buf[1] === 0x45 &&
+      buf[2] === 0xdf &&
+      buf[3] === 0xa3
+    );
+  }
+  if (kind === "mp3") {
+    if (buf.length >= 3 && buf.subarray(0, 3).toString("latin1") === "ID3") return true;
+    // MPEG audio frame sync: 0xFF then the top three bits set (0xE0 mask).
+    return buf.length >= 2 && buf[0] === 0xff && (buf[1] & 0xe0) === 0xe0;
+  }
+  if (kind === "aac") {
+    // ADTS frame header: 0xFF then 0xF1/0xF9 (MPEG-4 AAC).
+    return buf.length >= 2 && buf[0] === 0xff && (buf[1] & 0xf6) === 0xf0;
+  }
+  if (kind === "ogg") return buf.length >= 4 && buf.subarray(0, 4).toString("latin1") === "OggS";
+  if (kind === "wav") {
+    return (
+      buf.length >= 12 &&
+      buf.subarray(0, 4).toString("latin1") === "RIFF" &&
+      buf.subarray(8, 12).toString("latin1") === "WAVE"
     );
   }
   const slice = buf.subarray(0, Math.min(buf.length, 8192));
