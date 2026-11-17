@@ -11,6 +11,7 @@ export const COMMUNITY_CATEGORIES = [
 ] as const;
 
 export type CommunityCategory = (typeof COMMUNITY_CATEGORIES)[number]["id"];
+export type CommunityFeedFilter = "latest" | "unanswered";
 
 export interface FeedAuthor {
   id: string;
@@ -73,6 +74,7 @@ export interface FeedDetail {
 export interface PersonResponse {
   profile: FeedAuthor | null;
   posts: FeedPost[];
+  nextCursor?: number | null;
   migrated: boolean;
 }
 
@@ -96,23 +98,50 @@ async function call<T>(path: string, init?: RequestInit): Promise<T> {
   return apiFetch<T>(path, init);
 }
 
-export function listFeed(params: { q?: string; category?: string; cursor?: number | null; authorId?: string } = {}): Promise<FeedList> {
+export function listFeed(
+  params: {
+    q?: string;
+    category?: string;
+    cursor?: number | null;
+    authorId?: string;
+    filter?: CommunityFeedFilter;
+    ids?: string[];
+    signal?: AbortSignal;
+  } = {},
+): Promise<FeedList> {
   const search = new URLSearchParams();
   if (params.q) search.set("q", params.q);
   if (params.category) search.set("category", params.category);
   if (params.authorId) search.set("authorId", params.authorId);
+  if (params.filter && params.filter !== "latest") search.set("filter", params.filter);
+  if (params.ids !== undefined) search.set("ids", params.ids.join(","));
   if (params.cursor) search.set("cursor", String(params.cursor));
   const qs = search.toString();
-  return call<FeedList>(`${ROOT}/feed${qs ? `?${qs}` : ""}`);
+  return call<FeedList>(
+    `${ROOT}/feed${qs ? `?${qs}` : ""}`,
+    params.signal ? { signal: params.signal } : undefined,
+  );
 }
 
-export function listMine(params: { q?: string; category?: string; cursor?: number | null } = {}): Promise<FeedList> {
+export function listMine(
+  params: {
+    q?: string;
+    category?: string;
+    cursor?: number | null;
+    filter?: CommunityFeedFilter;
+    signal?: AbortSignal;
+  } = {},
+): Promise<FeedList> {
   const search = new URLSearchParams();
   if (params.q) search.set("q", params.q);
   if (params.category) search.set("category", params.category);
+  if (params.filter && params.filter !== "latest") search.set("filter", params.filter);
   if (params.cursor) search.set("cursor", String(params.cursor));
   const qs = search.toString();
-  return call<FeedList>(`${ROOT}/feed/mine${qs ? `?${qs}` : ""}`);
+  return call<FeedList>(
+    `${ROOT}/feed/mine${qs ? `?${qs}` : ""}`,
+    params.signal ? { signal: params.signal } : undefined,
+  );
 }
 
 export function createPost(input: PostInput): Promise<{ post: FeedPost }> {
@@ -181,8 +210,17 @@ export function deleteAttachment(id: string): Promise<{ ok: boolean }> {
   return call(`${ROOT}/feed/attachments/${id}`, { method: "DELETE" });
 }
 
-export function getPerson(userId: string): Promise<PersonResponse> {
-  return call(`${ROOT}/people/${userId}`);
+export function getPerson(
+  userId: string,
+  params: { cursor?: number | null; signal?: AbortSignal } = {},
+): Promise<PersonResponse> {
+  const search = new URLSearchParams();
+  if (params.cursor) search.set("cursor", String(params.cursor));
+  const qs = search.toString();
+  return call(
+    `${ROOT}/people/${userId}${qs ? `?${qs}` : ""}`,
+    params.signal ? { signal: params.signal } : undefined,
+  );
 }
 
 const ATTACHMENT_MIME_BY_EXT: Record<string, string> = {

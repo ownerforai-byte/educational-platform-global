@@ -1,7 +1,7 @@
 /**
  * Community spaces: one study space per class and subject, derived from the
- * curriculum source of truth (syllabus.ts). Pure; no posts are stored, because
- * the platform has no community backend yet.
+ * curriculum source of truth (syllabus.ts). Threads, replies, and upvotes are
+ * backed by `/api/community/:spaceId/threads*`.
  */
 
 import { listGoalSubjects, type GoalSubject } from "@/lib/study-goals";

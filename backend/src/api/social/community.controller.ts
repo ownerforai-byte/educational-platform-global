@@ -24,6 +24,14 @@ import { maskName } from "./leaderboard.controller";
 const router = Router();
 
 const MAX_LIST = 50;
+const SPACE_ID_RE = /^[a-z0-9][a-z0-9-]{0,79}$/i;
+const THREAD_ID_RE = /^[a-z0-9-]{1,128}$/i;
+
+function isDuplicateViolation(error: { message?: string; code?: string } | null): boolean {
+  const code = (error?.code ?? "").toUpperCase();
+  const msg = (error?.message ?? "").toLowerCase();
+  return code === "23505" || msg.includes("duplicate") || msg.includes("unique");
+}
 
 interface ThreadRow {
   id: string;
@@ -135,48 +143,61 @@ router.get(
   requireAuth,
   asyncHandler(async (req: Request, res: Response) => {
     const user = (req as Request & { user: { id: string } }).user;
-    const { threadId } = req.params;
-
-    const { data: threadRows, error } = await supabaseAdmin
-      .from("community_threads")
-      .select("id, space_id, user_id, title, body, created_at")
-      .eq("id", threadId)
-      .limit(1);
-
-    if (error) {
-      if (isDegradedCommunityStore(error)) {
-        res.json({ thread: null, replies: [], migrated: false });
-        return;
-      }
-      serverError(res, error, "community");
+    const threadId = String(req.params.threadId ?? "").trim();
+    if (!THREAD_ID_RE.test(threadId)) {
+      res.status(404).json({ error: "Thread not found" });
       return;
     }
 
-    const thread = (threadRows ?? [])[0] as ThreadRow | undefined;
+    const [threadQuery, replyQuery] = await Promise.all([
+      supabaseAdmin
+        .from("community_threads")
+        .select("id, space_id, user_id, title, body, created_at")
+        .eq("id", threadId)
+        .limit(1),
+      supabaseAdmin
+        .from("community_replies")
+        .select("id, thread_id, user_id, body, created_at")
+        .eq("thread_id", threadId)
+        .order("created_at", { ascending: true })
+        .limit(500),
+    ]);
+
+    if (threadQuery.error) {
+      if (isMissingTable(threadQuery.error)) {
+        res.json({ thread: null, replies: [], migrated: false });
+        return;
+      }
+      // `GET /threads/:threadId` only filters by `id`; a 22P02 syntax error on
+      // `id` means the caller supplied a non-UUID threadId, not an unmigrated DB.
+      if (isLegacyUuidIdentityError(threadQuery.error)) {
+        res.status(404).json({ error: "Thread not found" });
+        return;
+      }
+      serverError(res, threadQuery.error, "community");
+      return;
+    }
+
+    const thread = (threadQuery.data ?? [])[0] as ThreadRow | undefined;
     if (!thread) {
       res.status(404).json({ error: "Thread not found" });
       return;
     }
 
-    const { data: replyRows, error: replyError } = await supabaseAdmin
-      .from("community_replies")
-      .select("id, thread_id, user_id, body, created_at")
-      .eq("thread_id", threadId)
-      .order("created_at", { ascending: true })
-      .limit(500);
-
-    if (replyError) {
-      if (isDegradedCommunityStore(replyError)) {
+    if (replyQuery.error) {
+      if (isMissingTable(replyQuery.error)) {
         res.json({ thread: null, replies: [], migrated: false });
         return;
       }
-      serverError(res, replyError, "community");
+      serverError(res, replyQuery.error, "community");
       return;
     }
 
-    const replies = (replyRows ?? []) as ReplyRow[];
-    const names = await maskedNames([thread.user_id, ...replies.map((r) => r.user_id)]);
-    const { counts, mine } = await upvoteMaps([thread.id], user.id);
+    const replies = (replyQuery.data ?? []) as ReplyRow[];
+    const [names, { counts, mine }] = await Promise.all([
+      maskedNames([thread.user_id, ...replies.map((r) => r.user_id)]),
+      upvoteMaps([thread.id], user.id),
+    ]);
 
     res.setHeader("Cache-Control", "private, no-store");
     res.json({
@@ -278,7 +299,7 @@ router.post(
           .from("community_upvotes")
           .insert({ thread_id: threadId, user_id: user.id });
 
-    if (write.error) {
+    if (write.error && !( !hasVoted && isDuplicateViolation(write.error) )) {
       if (isDegradedCommunityStore(write.error)) {
         res.json({ upvotes: 0, upvotedByYou: false, migrated: false });
         return;
@@ -287,10 +308,10 @@ router.post(
       return;
     }
 
-    const { counts } = await upvoteMaps([threadId], user.id);
+    const { counts, mine } = await upvoteMaps([threadId], user.id);
     res.json({
       upvotes: counts.get(threadId) ?? 0,
-      upvotedByYou: !hasVoted,
+      upvotedByYou: mine.has(threadId),
       migrated: true,
     });
   }),
@@ -303,7 +324,11 @@ router.get(
   requireAuth,
   asyncHandler(async (req: Request, res: Response) => {
     const user = (req as Request & { user: { id: string } }).user;
-    const { spaceId } = req.params;
+    const spaceId = String(req.params.spaceId ?? "").trim();
+    if (!SPACE_ID_RE.test(spaceId)) {
+      res.status(400).json({ error: "Invalid space id." });
+      return;
+    }
 
     const { data, error } = await supabaseAdmin
       .from("community_threads")
@@ -323,8 +348,11 @@ router.get(
 
     const threads = (data ?? []) as ThreadRow[];
     const ids = threads.map((t) => t.id);
-    const names = await maskedNames(threads.map((t) => t.user_id));
-    const [replies, upvotes] = await Promise.all([replyCounts(ids), upvoteMaps(ids, user.id)]);
+    const [names, replies, upvotes] = await Promise.all([
+      maskedNames(threads.map((t) => t.user_id)),
+      replyCounts(ids),
+      upvoteMaps(ids, user.id),
+    ]);
 
     res.setHeader("Cache-Control", "private, no-store");
     res.json({
@@ -349,7 +377,11 @@ router.post(
   requireAuth,
   asyncHandler(async (req: Request, res: Response) => {
     const user = (req as Request & { user: { id: string } }).user;
-    const { spaceId } = req.params;
+    const spaceId = String(req.params.spaceId ?? "").trim();
+    if (!SPACE_ID_RE.test(spaceId)) {
+      res.status(400).json({ error: "Invalid space id." });
+      return;
+    }
     const parsed = threadCreateSchema.safeParse(req.body);
     if (!parsed.success) {
       res

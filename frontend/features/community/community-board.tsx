@@ -1,16 +1,30 @@
 "use client";
 
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-  type FormEvent,
-} from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { publicUrl } from "@/lib/site-url";
 import { useRouter, useSearchParams } from "next/navigation";
+import {
+  AlertCircle,
+  Bookmark,
+  Check,
+  Ellipsis,
+  Heart,
+  Link2,
+  Loader2,
+  MessageCircle,
+  Pencil,
+  Plus,
+  Trash2,
+} from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { publicUrl } from "@/lib/site-url";
 import { useSession } from "@/features/auth/hooks/use-session";
+import type { SessionUser } from "@/features/auth/types";
 import {
   addComment,
   deleteComment,
@@ -23,19 +37,35 @@ import {
   sharePath,
   toggleLike,
   updateComment,
+  type CommunityFeedFilter,
   type FeedComment,
+  type FeedDetail,
+  type FeedList,
   type FeedPost,
   type PersonResponse,
 } from "@/lib/api/community-feed";
-import type { SessionUser } from "@/features/auth/types";
+import { isCommunityBot } from "@/lib/community-bot";
+import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { PostAuthorHeader } from "@/features/community/post-author-header";
 import { AttachmentList } from "@/features/community/attachment-list";
 import { BotAnswerButton } from "@/features/community/bot-answer-button";
 import { CommunityFeed } from "@/features/community/community-feed";
+import { CommunitySubnav } from "@/features/community/community-subnav";
+import { FeedPostRow } from "@/features/community/feed-post-row";
+import { CommentList } from "@/features/community/comment-list";
+import { CommentComposer } from "@/features/community/comment-composer";
 import { PostComposer } from "@/features/community/post-composer";
 import { MarkdownBody } from "@/features/community/markdown-body";
-import { MemberOnlyMarkdown } from "@/features/community/member-only-markdown";
-import { isCommunityBot } from "@/lib/community-bot";
+import {
+  feedListCacheKey,
+  feedPersonCacheKey,
+  feedPostCacheKey,
+  invalidateCommunityCacheWhere,
+  peekCommunityCache,
+  prefetchCommunityResource,
+  writeCommunityCache,
+} from "@/features/community/community-cache";
+import { useSavedPosts } from "@/features/community/saved-posts";
 import {
   POLL_MS,
   type BoardView,
@@ -54,27 +84,10 @@ import {
   categoryLabel,
   chipBtn,
   emptyStatePanel,
-  ghostLink,
-  glassShell,
-  inputClass,
-  primaryCta,
   surfaceCard,
   surfaceCardFlat,
 } from "@/features/community/community-ui";
 import { cn } from "@/lib/utils";
-import {
-  AlertCircle,
-  Bot,
-  Check,
-  Heart,
-  Link2,
-  MessageCircle,
-  MessageSquare,
-  Pencil,
-  Plus,
-  Send,
-  Trash2,
-} from "lucide-react";
 
 function useCopyLink() {
   const [copiedId, setCopiedId] = useState<string | null>(null);
@@ -86,9 +99,6 @@ function useCopyLink() {
   }, []);
   return { copiedId, copy };
 }
-
-/** Pause feed polling briefly so background refresh does not undo optimistic UI. */
-const INTERACTION_POLL_PAUSE_MS = 8_000;
 
 function optimisticCommentId(): string {
   return `pending-comment-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
@@ -118,81 +128,103 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
   const searchParams = useSearchParams();
   const { user, isLoading: sessionLoading } = useSession();
   const { copiedId, copy } = useCopyLink();
-  const filters = useRef({ q: "", category: "" });
-  const [query, setQuery] = useState("");
+  const { savedIds, savedCount, isSaved, toggle: toggleSaved } = useSavedPosts(user?.id);
+
+  const savedView = view === "feed" && searchParams.get("view") === "saved";
+  const listMode: "feed" | "saved" | "mine" =
+    view === "mine" ? "mine" : savedView ? "saved" : "feed";
+
+  const [appliedQuery, setAppliedQuery] = useState("");
   const [category, setCategory] = useState("");
+  const [filter, setFilter] = useState<CommunityFeedFilter>("latest");
+
   const [posts, setPosts] = useState<FeedPost[]>([]);
+  const [queuedNewPosts, setQueuedNewPosts] = useState<FeedPost[]>([]);
   const [post, setPost] = useState<FeedPost | null>(null);
   const [person, setPerson] = useState<PersonResponse | null>(null);
   const [cursor, setCursor] = useState<number | null>(null);
+  const [personCursor, setPersonCursor] = useState<number | null>(null);
   const [migrated, setMigrated] = useState(true);
-  const [loading, setLoading] = useState(view === "feed" || view === "mine" || view === "post" || view === "edit" || view === "person");
+  const [loading, setLoading] = useState(
+    view === "feed" || view === "mine" || view === "post" || view === "edit" || view === "person",
+  );
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [commentBody, setCommentBody] = useState("");
-  const [editingComment, setEditingComment] = useState<string | null>(null);
-  const [commentDraft, setCommentDraft] = useState("");
-  const [aiReplyBusy, setAiReplyBusy] = useState(false);
+
+  const [aiReplyBusyIds, setAiReplyBusyIds] = useState<Set<string>>(() => new Set());
   const [followUpBotCommentId, setFollowUpBotCommentId] = useState<string | null>(null);
   const [commentComposerOpen, setCommentComposerOpen] = useState(false);
-  const commentComposerRef = useRef<HTMLFormElement | null>(null);
-  const likeInFlight = useRef(new Set<string>());
-  const pollPausedUntil = useRef(0);
+  const [composerFocusTrigger, setComposerFocusTrigger] = useState(0);
 
-  const bumpPollPause = useCallback(() => {
-    pollPausedUntil.current = Date.now() + INTERACTION_POLL_PAUSE_MS;
+  const likeInFlight = useRef(new Set<string>());
+  const likeSeqRef = useRef(new Map<string, number>());
+  const listRequestSeqRef = useRef(0);
+  const listAbortRef = useRef<AbortController | null>(null);
+  const savedIdsKey = savedIds.join(",");
+
+  const openAndFocusComposer = useCallback((botCommentId?: string | null) => {
+    if (botCommentId !== undefined) {
+      setFollowUpBotCommentId(botCommentId);
+    }
+    setCommentComposerOpen(true);
+    setComposerFocusTrigger((n) => n + 1);
   }, []);
 
   useEffect(() => {
     if (view !== "post") {
       setCommentComposerOpen(false);
+      setFollowUpBotCommentId(null);
       return;
     }
     if (searchParams.get("comment") === "1") {
       setCommentComposerOpen(true);
+      setComposerFocusTrigger((n) => n + 1);
     }
   }, [view, searchParams]);
 
-  useEffect(() => {
-    if (!commentComposerOpen || view !== "post") return;
-    const node = commentComposerRef.current;
-    if (!node) return;
-    node.scrollIntoView({ behavior: "smooth", block: "nearest" });
-  }, [commentComposerOpen, view]);
-
   const patchPostEverywhere = useCallback((postId: string, patch: (item: FeedPost) => FeedPost) => {
     setPosts((current) => current.map((item) => (item.id === postId ? patch(item) : item)));
-    setPost((current) => (current?.id === postId ? patch(current) : current));
+    setQueuedNewPosts((current) => current.map((item) => (item.id === postId ? patch(item) : item)));
+    setPost((current) => {
+      if (current?.id !== postId) return current;
+      const updated = patch(current);
+      writeCommunityCache<FeedDetail>(feedPostCacheKey(user?.id, postId), {
+        post: updated,
+        migrated: true,
+      });
+      return updated;
+    });
     setPerson((current) =>
-      current ? { ...current, posts: current.posts.map((item) => (item.id === postId ? patch(item) : item)) } : current,
+      current
+        ? { ...current, posts: current.posts.map((item) => (item.id === postId ? patch(item) : item)) }
+        : current,
     );
-  }, []);
+  }, [user?.id]);
 
-  const refreshPostForBotReply = useCallback(async (postId: string, beforeIds: Set<string>) => {
-    for (let attempt = 0; attempt < 10; attempt += 1) {
-      await new Promise((resolve) => window.setTimeout(resolve, 2_500));
-      try {
-        const fresh = await getPost(postId);
-        const incoming = fresh.post;
-        if (!incoming) continue;
-        const botRows = (incoming.comments ?? []).filter((row) => isCommunityBot(row.author.id));
-        const gained = botRows.some((row) => !beforeIds.has(row.id));
-        if (gained || (incoming.comments?.length ?? 0) > beforeIds.size) {
-          patchPostEverywhere(postId, (item) => mergePostSnapshot(item, incoming));
-          return;
+  // Wait specifically for a newly arrived bot comment (never stop early on the student's own comment).
+  const refreshPostForBotReply = useCallback(
+    async (postId: string, beforeBotCommentIds: Set<string>) => {
+      for (let attempt = 0; attempt < 10; attempt += 1) {
+        await new Promise((resolve) => window.setTimeout(resolve, 2_500));
+        try {
+          const fresh = await getPost(postId);
+          const incoming = fresh.post;
+          if (!incoming) continue;
+          const botRows = (incoming.comments ?? []).filter(
+            (row) => row.author.role === "assistant" || isCommunityBot(row.author.id),
+          );
+          const gainedBotReply = botRows.some((row) => !beforeBotCommentIds.has(row.id));
+          if (gainedBotReply) {
+            patchPostEverywhere(postId, (item) => mergePostSnapshot(item, incoming));
+            return;
+          }
+        } catch {
+          /* polling is best-effort */
         }
-      } catch {
-        /* polling is best-effort */
       }
-    }
-  }, [patchPostEverywhere]);
-
-  const applyLike = useCallback((postId: string, likeCount: number, likedByYou: boolean) => {
-    const patch = (item: FeedPost) => item.id === postId ? { ...item, likeCount, likedByYou } : item;
-    setPosts((current) => current.map(patch));
-    setPost((current) => (current ? patch(current) : current));
-    setPerson((current) => current ? { ...current, posts: current.posts.map(patch) } : current);
-  }, []);
+    },
+    [patchPostEverywhere],
+  );
 
   const patchAuthorFollowing = useCallback((authorId: string, following: boolean) => {
     const patchAuthor = (item: FeedPost) =>
@@ -214,47 +246,140 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
     setPosts((current) => current.map(patch));
     setPost((current) => (current ? patch(current) : current));
     setPerson((current) =>
-      current ? { ...current, posts: current.posts.map(patch) } : current,
+      current
+        ? {
+            ...current,
+            profile:
+              current.profile?.id === authorId
+                ? { ...current.profile, followingByYou: following }
+                : current.profile,
+            posts: current.posts.map(patch),
+          }
+        : current,
     );
   }, []);
 
-  const loadList = useCallback(async (append: boolean, nextCursor?: number | null) => {
-    if (view === "mine" && !user) return;
-    const params = {
-      q: filters.current.q,
-      category: filters.current.category,
-      cursor: append ? nextCursor ?? 0 : 0,
-    };
-    const result = view === "mine" ? await listMine(params) : await listFeed(params);
-    setMigrated(result.migrated);
-    setCursor(result.nextCursor);
-    setPosts((current) => (append ? [...current, ...result.posts.filter((item) => !current.some((have) => have.id === item.id))] : result.posts));
-  }, [user, view]);
+  const fetchFeedPage = useCallback(
+    async (opts: {
+      q: string;
+      category: string;
+      filter: CommunityFeedFilter;
+      mode: "feed" | "saved" | "mine";
+      ids: string[];
+      cursor: number;
+      signal?: AbortSignal;
+    }): Promise<FeedList> => {
+      if (opts.mode === "saved") {
+        if (opts.ids.length === 0) {
+          return { posts: [], nextCursor: null, migrated: true };
+        }
+        return listFeed({
+          q: opts.q,
+          category: opts.category,
+          filter: opts.filter,
+          ids: opts.ids.slice(0, 50),
+          cursor: opts.cursor,
+          signal: opts.signal,
+        });
+      }
+      if (opts.mode === "mine") {
+        return listMine({
+          q: opts.q,
+          category: opts.category,
+          filter: opts.filter,
+          cursor: opts.cursor,
+          signal: opts.signal,
+        });
+      }
+      return listFeed({
+        q: opts.q,
+        category: opts.category,
+        filter: opts.filter,
+        cursor: opts.cursor,
+        signal: opts.signal,
+      });
+    },
+    [],
+  );
 
+  // Primary list loader with SWR warm-cache hydration + request-version superseding.
   useEffect(() => {
     if (view !== "feed" && view !== "mine") return;
     if (view === "mine" && sessionLoading) return;
     if (view === "mine" && !user) {
       setLoading(false);
       setPosts([]);
+      setCursor(null);
       setError("Sign in to see your posts.");
       return;
     }
-    let cancel = false;
-    setLoading(true);
+
+    const seq = ++listRequestSeqRef.current;
+    listAbortRef.current?.abort();
+    const controller = new AbortController();
+    listAbortRef.current = controller;
+
+    const currentSavedIds = savedIdsKey ? savedIdsKey.split(",") : [];
+    const cacheKey = feedListCacheKey(user?.id, listMode, {
+      q: appliedQuery,
+      category,
+      filter,
+      idsKey: listMode === "saved" ? savedIdsKey : "",
+    });
+
+    const warm = peekCommunityCache<FeedList>(cacheKey);
+    if (warm) {
+      setPosts(warm.value.posts);
+      setCursor(warm.value.nextCursor);
+      setMigrated(warm.value.migrated);
+      setLoading(false);
+    } else {
+      setLoading(true);
+    }
+    setQueuedNewPosts([]);
     setError(null);
-    loadList(false)
+
+    fetchFeedPage({
+      q: appliedQuery,
+      category,
+      filter,
+      mode: listMode,
+      ids: currentSavedIds,
+      cursor: 0,
+      signal: controller.signal,
+    })
+      .then((result) => {
+        if (seq !== listRequestSeqRef.current) return;
+        setMigrated(result.migrated);
+        setCursor(result.nextCursor);
+        setPosts(result.posts);
+        writeCommunityCache(cacheKey, result);
+      })
       .catch((err) => {
-        if (!cancel) setError(statusOf(err) === 401 ? "Sign in to see your posts." : messageOf(err));
+        if (controller.signal.aborted || seq !== listRequestSeqRef.current) return;
+        // Keep stale cached content visible on transient failures; still surface error.
+        setError(statusOf(err) === 401 ? "Sign in to see your posts." : messageOf(err));
       })
       .finally(() => {
-        if (!cancel) setLoading(false);
+        if (seq === listRequestSeqRef.current) setLoading(false);
       });
-    return () => {
-      cancel = true;
-    };
-  }, [view, user, sessionLoading, loadList]);
 
+    return () => {
+      controller.abort();
+    };
+  }, [
+    view,
+    listMode,
+    appliedQuery,
+    category,
+    filter,
+    savedIdsKey,
+    user,
+    sessionLoading,
+    fetchFeedPage,
+  ]);
+
+  // Post detail & edit loader with warm-cache hydration.
   useEffect(() => {
     if (view !== "post" && view !== "edit") return;
     if (!id) return;
@@ -264,9 +389,19 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
       setError("Sign in to edit posts.");
       return;
     }
+
     let cancel = false;
-    setLoading(true);
+    const cacheKey = feedPostCacheKey(user?.id, id);
+    const warm = view === "post" ? peekCommunityCache<FeedDetail>(cacheKey) : undefined;
+    if (warm?.value.post) {
+      setPost(warm.value.post);
+      setMigrated(warm.value.migrated);
+      setLoading(false);
+    } else {
+      setLoading(true);
+    }
     setError(null);
+
     getPost(id)
       .then((detail) => {
         if (cancel) return;
@@ -288,26 +423,43 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
         }
         setPost(detail.post);
         setMigrated(detail.migrated);
+        writeCommunityCache(cacheKey, detail);
       })
       .catch((err) => {
         if (cancel) return;
-        if (statusOf(err) === 404 || statusOf(err) === 403) router.replace("/ai/community/unavailable");
-        else if (statusOf(err) === 401) setError("Sign in to edit posts.");
-        else setError(messageOf(err));
+        if (statusOf(err) === 404 || statusOf(err) === 403) {
+          router.replace("/ai/community/unavailable");
+        } else if (statusOf(err) === 401) {
+          setError("Sign in to edit posts.");
+        } else {
+          setError(messageOf(err));
+        }
       })
       .finally(() => {
         if (!cancel) setLoading(false);
       });
+
     return () => {
       cancel = true;
     };
   }, [view, id, user, sessionLoading, router]);
 
+  // Person profile loader with warm-cache hydration.
   useEffect(() => {
     if (view !== "person" || !id) return;
     let cancel = false;
-    setLoading(true);
+    const cacheKey = feedPersonCacheKey(user?.id, id);
+    const warm = peekCommunityCache<PersonResponse>(cacheKey);
+    if (warm?.value.profile) {
+      setPerson(warm.value);
+      setPersonCursor(warm.value.nextCursor ?? null);
+      setMigrated(warm.value.migrated);
+      setLoading(false);
+    } else {
+      setLoading(true);
+    }
     setError(null);
+
     getPerson(id)
       .then((result) => {
         if (cancel) return;
@@ -316,7 +468,9 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
           return;
         }
         setPerson(result);
+        setPersonCursor(result.nextCursor ?? null);
         setMigrated(result.migrated);
+        writeCommunityCache(cacheKey, result);
       })
       .catch((err) => {
         if (cancel) return;
@@ -327,27 +481,52 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
       .finally(() => {
         if (!cancel) setLoading(false);
       });
+
     return () => {
       cancel = true;
     };
-  }, [view, id, router]);
+  }, [view, id, user?.id, router]);
 
+  // Non-disruptive background polling: queues newly arrived feed posts behind a button
+  // and pauses while hidden or while composition is open.
   useEffect(() => {
     if (view !== "feed" && view !== "mine" && view !== "post" && view !== "person") return;
     const timer = window.setInterval(() => {
       if (typeof document !== "undefined" && document.visibilityState === "hidden") return;
-      if (Date.now() < pollPausedUntil.current) return;
-      if (view === "feed" || (view === "mine" && user)) {
-        const params = { q: filters.current.q, category: filters.current.category };
-        const request = view === "mine" ? listMine(params) : listFeed(params);
-        request
+      if (commentComposerOpen) return;
+
+      if ((view === "feed" || (view === "mine" && user)) && listMode !== "saved") {
+        fetchFeedPage({
+          q: appliedQuery,
+          category,
+          filter,
+          mode: listMode,
+          ids: [],
+          cursor: 0,
+        })
           .then((result) => {
             setMigrated(result.migrated);
-            setPosts((current) => mergeById(current, result.posts));
+            setPosts((current) => {
+              if (current.length === 0) return result.posts;
+              const knownIds = new Set(current.map((p) => p.id));
+              const newlyArrived = result.posts.filter((p) => !knownIds.has(p.id));
+              const existingUpdates = result.posts.filter(
+                (p) => knownIds.has(p.id) && !likeInFlight.current.has(p.id),
+              );
+              if (newlyArrived.length > 0) {
+                setQueuedNewPosts((queued) => {
+                  const seen = new Set(queued.map((q) => q.id));
+                  const fresh = newlyArrived.filter((p) => !seen.has(p.id));
+                  return fresh.length > 0 ? [...fresh, ...queued] : queued;
+                });
+              }
+              return existingUpdates.length > 0 ? mergeById(current, existingUpdates) : current;
+            });
           })
           .catch(() => undefined);
         return;
       }
+
       if (view === "post" && id) {
         if (likeInFlight.current.has(id)) return;
         getPost(id)
@@ -360,666 +539,752 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
             );
           })
           .catch(() => undefined);
-        return;
-      }
-      if (view === "person" && id) {
-        getPerson(id)
-          .then((result) => {
-            setPerson((current) => {
-              if (!current) return result;
-              return { ...result, posts: mergeById(current.posts, result.posts) };
-            });
-          })
-          .catch(() => undefined);
       }
     }, POLL_MS);
+
     return () => window.clearInterval(timer);
-  }, [view, id, user]);
+  }, [
+    view,
+    listMode,
+    appliedQuery,
+    category,
+    filter,
+    id,
+    user,
+    commentComposerOpen,
+    fetchFeedPage,
+  ]);
 
-  function onLike(target: FeedPost) {
-    if (!user) {
-      setError("Sign in to like posts.");
-      return;
-    }
-    if (likeInFlight.current.has(target.id)) return;
+  const handlePrefetchPost = useCallback(
+    (postId: string) => {
+      const cacheKey = feedPostCacheKey(user?.id, postId);
+      prefetchCommunityResource<FeedDetail>(
+        cacheKey,
+        () => getPost(postId),
+        (res) => Boolean(res.post),
+      );
+    },
+    [user?.id],
+  );
 
-    const prevLiked = target.likedByYou;
-    const prevCount = target.likeCount;
-    const nextLiked = !prevLiked;
-    const nextCount = Math.max(0, prevCount + (nextLiked ? 1 : -1));
-
-    bumpPollPause();
-    likeInFlight.current.add(target.id);
-    patchPostEverywhere(target.id, (item) => ({
-      ...item,
-      likedByYou: nextLiked,
-      likeCount: nextCount,
-    }));
-
-    void toggleLike(target.id)
-      .then((result) => {
-        applyLike(target.id, result.likeCount, result.likedByYou);
-      })
-      .catch((err) => {
-        patchPostEverywhere(target.id, (item) => ({
-          ...item,
-          likedByYou: prevLiked,
-          likeCount: prevCount,
-        }));
-        setError(statusOf(err) === 401 ? "Sign in to like posts." : messageOf(err));
-      })
-      .finally(() => {
-        likeInFlight.current.delete(target.id);
-      });
-  }
-
-  async function onDeletePost(postId: string) {
-    if (!user) {
-      setError("Sign in to delete posts.");
-      return;
-    }
-    if (!window.confirm("Delete this post?")) return;
-
-    bumpPollPause();
-    let postsBackup: FeedPost[] | null = null;
-    let personBackup: PersonResponse | null = null;
-    let postBackup: FeedPost | null = null;
-
-    setPosts((current) => {
-      postsBackup = current;
-      return current.filter((item) => item.id !== postId);
-    });
-    setPerson((current) => {
-      if (!current) return current;
-      personBackup = current;
-      return { ...current, posts: current.posts.filter((item) => item.id !== postId) };
-    });
-    setPost((current) => {
-      if (current?.id === postId) postBackup = current;
-      return current?.id === postId ? null : current;
-    });
-
-    try {
-      await deletePost(postId);
-      if (view === "post") router.push("/ai/community");
-    } catch (err) {
-      if (postsBackup) setPosts(postsBackup);
-      if (personBackup) setPerson(personBackup);
-      if (postBackup) setPost(postBackup);
-      setError(statusOf(err) === 401 ? "Sign in to delete posts." : messageOf(err));
-    }
-  }
-
-  async function onComment(event: FormEvent) {
-    event.preventDefault();
-    if (!post) return;
-    if (!user) {
-      setError("Sign in to comment.");
-      return;
-    }
-    const body = commentBody.trim();
-    if (!body) return;
-
-    const followUpToBot =
-      followUpBotCommentId != null || isCommunityBot(post.author.id);
-    const pending = optimisticComment(body, user);
-    const postId = post.id;
-    const commentIdsBefore = new Set((post.comments ?? []).map((row) => row.id));
-
-    bumpPollPause();
-    setCommentBody("");
-    setFollowUpBotCommentId(null);
-    patchPostEverywhere(postId, (item) => ({
-      ...item,
-      commentCount: item.commentCount + 1,
-      comments: [...(item.comments ?? []), pending],
-    }));
-
-    try {
-      const result = await addComment(postId, body, { followUpToBot });
-      const added = [result.comment, ...(result.botComment ? [result.botComment] : [])];
-      patchPostEverywhere(postId, (item) => {
-        const withoutPending = (item.comments ?? []).filter((c) => c.id !== pending.id);
-        return {
-          ...item,
-          commentCount: withoutPending.length + added.length,
-          comments: [...withoutPending, ...added],
-        };
-      });
-      if (result.botReplyPending) {
-        void refreshPostForBotReply(postId, commentIdsBefore);
+  const onLike = useCallback(
+    (target: FeedPost) => {
+      if (!user) {
+        setError("Sign in to like posts.");
+        return;
       }
-      setCommentComposerOpen(false);
-    } catch (err) {
+      if (likeInFlight.current.has(target.id)) return;
+
+      const prevLiked = target.likedByYou;
+      const prevCount = target.likeCount;
+      const nextLiked = !prevLiked;
+      const nextCount = Math.max(0, prevCount + (nextLiked ? 1 : -1));
+      const seq = (likeSeqRef.current.get(target.id) ?? 0) + 1;
+      likeSeqRef.current.set(target.id, seq);
+
+      likeInFlight.current.add(target.id);
+      patchPostEverywhere(target.id, (item) => ({
+        ...item,
+        likedByYou: nextLiked,
+        likeCount: nextCount,
+      }));
+
+      void toggleLike(target.id)
+        .then((result) => {
+          if (likeSeqRef.current.get(target.id) !== seq) return;
+          patchPostEverywhere(target.id, (item) => ({
+            ...item,
+            likeCount: result.likeCount,
+            likedByYou: result.likedByYou,
+          }));
+          invalidateCommunityCacheWhere((k) => k.startsWith("feed-list::"));
+        })
+        .catch((err) => {
+          if (likeSeqRef.current.get(target.id) !== seq) return;
+          patchPostEverywhere(target.id, (item) => ({
+            ...item,
+            likedByYou: prevLiked,
+            likeCount: prevCount,
+          }));
+          setError(statusOf(err) === 401 ? "Sign in to like posts." : messageOf(err));
+        })
+        .finally(() => {
+          likeInFlight.current.delete(target.id);
+        });
+    },
+    [patchPostEverywhere, user],
+  );
+
+  const onDeletePost = useCallback(
+    async (postId: string) => {
+      if (!user) {
+        setError("Sign in to delete posts.");
+        return;
+      }
+      if (!window.confirm("Delete this post?")) return;
+
+      let postsBackup: FeedPost[] | null = null;
+      let personBackup: PersonResponse | null = null;
+      let postBackup: FeedPost | null = null;
+
+      setPosts((current) => {
+        postsBackup = current;
+        return current.filter((item) => item.id !== postId);
+      });
+      setPerson((current) => {
+        if (!current) return current;
+        personBackup = current;
+        return { ...current, posts: current.posts.filter((item) => item.id !== postId) };
+      });
+      setPost((current) => {
+        if (current?.id === postId) postBackup = current;
+        return current?.id === postId ? null : current;
+      });
+
+      try {
+        await deletePost(postId);
+        invalidateCommunityCacheWhere((k) => k.startsWith("feed-"));
+        if (view === "post") router.push("/ai/community");
+      } catch (err) {
+        if (postsBackup) setPosts(postsBackup);
+        if (personBackup) setPerson(personBackup);
+        if (postBackup) setPost(postBackup);
+        setError(statusOf(err) === 401 ? "Sign in to delete posts." : messageOf(err));
+      }
+    },
+    [router, user, view],
+  );
+
+  const handleSubmitComment = useCallback(
+    async (body: string, followUpToBot: boolean): Promise<{ ok: boolean; error?: string }> => {
+      if (!post || !user) return { ok: false, error: "Sign in to comment." };
+      const pending = optimisticComment(body, user);
+      const postId = post.id;
+      const beforeBotCommentIds = new Set(
+        (post.comments ?? [])
+          .filter((row) => row.author.role === "assistant" || isCommunityBot(row.author.id))
+          .map((row) => row.id),
+      );
+
+      setFollowUpBotCommentId(null);
+      patchPostEverywhere(postId, (item) => ({
+        ...item,
+        commentCount: item.commentCount + 1,
+        comments: [...(item.comments ?? []), pending],
+      }));
+
+      try {
+        const result = await addComment(postId, body, { followUpToBot });
+        const added = [result.comment, ...(result.botComment ? [result.botComment] : [])];
+        patchPostEverywhere(postId, (item) => {
+          const withoutPending = (item.comments ?? []).filter((c) => c.id !== pending.id);
+          const hadCommentsLoaded = item.comments !== undefined;
+          return {
+            ...item,
+            commentCount: hadCommentsLoaded
+              ? withoutPending.length + added.length
+              : Math.max(0, item.commentCount - 1) + added.length,
+            comments: [...withoutPending, ...added],
+          };
+        });
+        invalidateCommunityCacheWhere((k) => k.startsWith("feed-list::"));
+        if (result.botReplyPending) {
+          void refreshPostForBotReply(postId, beforeBotCommentIds);
+        }
+        return { ok: true };
+      } catch (err) {
+        patchPostEverywhere(postId, (item) => ({
+          ...item,
+          commentCount: Math.max(0, item.commentCount - 1),
+          comments: (item.comments ?? []).filter((c) => c.id !== pending.id),
+        }));
+        const msg = statusOf(err) === 401 ? "Sign in to comment." : messageOf(err);
+        return { ok: false, error: msg };
+      }
+    },
+    [patchPostEverywhere, post, refreshPostForBotReply, user],
+  );
+
+  const handleSaveCommentEdit = useCallback(
+    async (commentId: string, nextBody: string): Promise<{ ok: boolean; error?: string }> => {
+      if (!post || !user) return { ok: false, error: "Sign in to edit comments." };
+      try {
+        const result = await updateComment(post.id, commentId, nextBody);
+        patchPostEverywhere(post.id, (item) => ({
+          ...item,
+          comments: (item.comments ?? []).map((entry) =>
+            entry.id === commentId ? result.comment : entry,
+          ),
+        }));
+        return { ok: true };
+      } catch (err) {
+        const msg = statusOf(err) === 401 ? "Sign in to edit comments." : messageOf(err);
+        return { ok: false, error: msg };
+      }
+    },
+    [patchPostEverywhere, post, user],
+  );
+
+  const handleDeleteComment = useCallback(
+    (commentId: string) => {
+      if (!post || !user) return;
+      if (!window.confirm("Delete this comment?")) return;
+      const postId = post.id;
+      const prevComments = post.comments ?? [];
+      const prevCount = post.commentCount;
+
       patchPostEverywhere(postId, (item) => ({
         ...item,
         commentCount: Math.max(0, item.commentCount - 1),
-        comments: (item.comments ?? []).filter((c) => c.id !== pending.id),
+        comments: (item.comments ?? []).filter((entry) => entry.id !== commentId),
       }));
-      setCommentBody(body);
-      setError(statusOf(err) === 401 ? "Sign in to comment." : messageOf(err));
-    }
-  }
 
-  function onAssistantReply(target: FeedPost) {
-    if (aiReplyBusy) return;
-    setAiReplyBusy(true);
-    setError(null);
-    bumpPollPause();
-    void Promise.resolve(publishAssistantReply(target.id))
+      void deleteComment(postId, commentId)
+        .then(() => {
+          invalidateCommunityCacheWhere((k) => k.startsWith("feed-list::"));
+        })
+        .catch((err) => {
+          patchPostEverywhere(postId, (item) => ({
+            ...item,
+            commentCount: prevCount,
+            comments: prevComments,
+          }));
+          setError(statusOf(err) === 401 ? "Sign in to delete comments." : messageOf(err));
+        });
+    },
+    [patchPostEverywhere, post, user],
+  );
+
+  const onAssistantReply = useCallback(
+    (target: FeedPost) => {
+      if (aiReplyBusyIds.has(target.id)) return;
+      setAiReplyBusyIds((prev) => new Set(prev).add(target.id));
+      setError(null);
+
+      void Promise.resolve(publishAssistantReply(target.id))
+        .then((result) => {
+          patchPostEverywhere(target.id, (item) => ({
+            ...item,
+            commentCount: item.commentCount + 1,
+            assistantReply: result.assistantReply,
+            comments: item.comments ? [...item.comments, result.comment] : item.comments,
+          }));
+          invalidateCommunityCacheWhere((k) => k.startsWith("feed-list::"));
+        })
+        .catch((err) =>
+          setError(
+            statusOf(err) === 401
+              ? "Sign in to ask Veer to reply."
+              : statusOf(err) === 403
+                ? "Only the post author or a platform owner can publish a Veer reply on this post."
+                : statusOf(err) === 409
+                  ? "A Veer reply is already on this post."
+                  : statusOf(err) === 429
+                    ? "Too many Veer replies right now. Try again in a few minutes."
+                    : messageOf(err, "Could not publish the assistant reply."),
+          ),
+        )
+        .finally(() => {
+          setAiReplyBusyIds((prev) => {
+            const next = new Set(prev);
+            next.delete(target.id);
+            return next;
+          });
+        });
+    },
+    [aiReplyBusyIds, patchPostEverywhere],
+  );
+
+  const handleLoadMoreFeed = useCallback(() => {
+    if (cursor == null || loadingMore) return;
+    setLoadingMore(true);
+    const currentSavedIds = savedIdsKey ? savedIdsKey.split(",") : [];
+    fetchFeedPage({
+      q: appliedQuery,
+      category,
+      filter,
+      mode: listMode,
+      ids: currentSavedIds,
+      cursor,
+    })
       .then((result) => {
-        patchPostEverywhere(target.id, (item) => ({
-          ...item,
-          commentCount: item.commentCount + 1,
-          assistantReply: result.assistantReply,
-          comments: [...(item.comments ?? []), result.comment],
-        }));
+        setMigrated(result.migrated);
+        setCursor(result.nextCursor);
+        setPosts((current) => [
+          ...current,
+          ...result.posts.filter((item) => !current.some((have) => have.id === item.id)),
+        ]);
       })
-      .catch((err) =>
-        setError(
-          statusOf(err) === 401
-            ? "Sign in to ask Veer to reply."
-            : statusOf(err) === 403
-              ? "Only the post author can ask Veer to reply on this thread."
-              : statusOf(err) === 409
-                ? "A Community bot reply is already on this post."
-                : statusOf(err) === 429
-                  ? "Too many Veer replies just now. Try again in a few minutes."
-                  : messageOf(err, "Could not publish the assistant reply."),
-        ),
-      )
-      .finally(() => setAiReplyBusy(false));
-  }
+      .catch((err) => setError(messageOf(err)))
+      .finally(() => setLoadingMore(false));
+  }, [appliedQuery, category, cursor, fetchFeedPage, filter, listMode, loadingMore, savedIdsKey]);
 
-  function renderCard(item: FeedPost, detailed = false) {
-    const own = user?.id === item.author.id;
-    const moderate = canModerate(user);
-    const canInvokeBot = Boolean(user && item.assistantReply?.canApprove && !item.assistantReply.posted);
-    return (
-      <article
-        className={cn(
-          surfaceCard,
-          "space-y-3 p-4 sm:p-5",
-          isCommunityBot(item.author.id) && "border-primary/25 bg-gradient-to-b from-primary/[0.04] via-card to-card",
-        )}
-      >
-        <PostAuthorHeader
-          author={item.author}
-          createdAt={item.createdAt}
-          viewerId={user?.id}
-          onFollowChange={(following) => patchAuthorFollowing(item.author.id, following)}
-        />
-        <div className="flex flex-wrap items-start justify-between gap-2">
-          <div className="min-w-0 flex-1">
-            <h2 className="text-lg font-semibold leading-snug tracking-tight">
-              <Link href={sharePath(item.id)} className="transition-colors hover:text-primary hover:underline">
-                {item.title}
-              </Link>
-            </h2>
-            <p className="mt-1">
-              <span className="inline-flex items-center rounded-md border border-border/80 bg-muted/40 px-1.5 py-0.5 text-xs font-medium text-muted-foreground">
-                {categoryLabel(item.category)}
-              </span>
-            </p>
-          </div>
-          <button
-            type="button"
-            className={cn(chipBtn, "min-h-11", copiedId === item.id && "border-primary/40 text-primary")}
-            onClick={() => void copy(item.id)}
-            aria-label={copiedId === item.id ? "Link copied" : "Copy post link"}
-          >
-            {copiedId === item.id ? (
-              <>
-                <Check className="h-3.5 w-3.5" aria-hidden />
-                Copied
-              </>
-            ) : (
-              <>
-                <Link2 className="h-3.5 w-3.5" aria-hidden />
-                Share
-              </>
-            )}
-          </button>
-        </div>
-        <MarkdownBody
-          text={item.body}
-          clamp={!detailed}
-          className={cn(
-            "text-sm leading-relaxed",
-            !detailed && "text-muted-foreground",
-          )}
-        />
-        {item.attachments.length > 0 ? <AttachmentList files={item.attachments} /> : null}
-        <div className="flex flex-wrap items-center gap-1 rounded-xl border-t border-border/60 bg-muted/[0.12] px-1 py-1 pt-3 sm:gap-2 sm:px-1.5">
-          <button
-            type="button"
-            className={cn(
-              actionBtn,
-              "min-h-11 min-w-11",
-              item.likedByYou
-                ? "text-primary hover:bg-primary/10 motion-safe:hover:scale-105"
-                : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
-            )}
-            onClick={() => onLike(item)}
-            aria-pressed={item.likedByYou}
-            aria-label={item.likedByYou ? "Unlike post" : "Like post"}
-          >
-            <Heart className={cn("h-4 w-4", item.likedByYou && "fill-current")} aria-hidden />
-            <span>{item.likeCount}</span>
-            <span className="sr-only">{item.likedByYou ? "Liked" : "Like"}</span>
-          </button>
-          <button
-            type="button"
-            className={cn(actionBtn, "min-h-11 min-w-11 text-muted-foreground hover:bg-muted/60 hover:text-foreground")}
-            aria-label={`${item.commentCount} comments`}
-            onClick={() => router.push(`${sharePath(item.id)}?comment=1`)}
-          >
-            <MessageCircle className="h-4 w-4" aria-hidden />
-            {item.commentCount}
-            <span className="hidden sm:inline">comments</span>
-          </button>
-          {canInvokeBot && looksLikeQuestion(item) ? (
-            <BotAnswerButton
-              visible
-              busy={aiReplyBusy}
-              variant="comment"
-              onPublish={() => onAssistantReply(item)}
-            />
-          ) : null}
-          {(own || moderate) && (
-            <Link
-              href={`/ai/community/posts/${item.id}/edit`}
-              className={cn(actionBtn, "min-h-11 min-w-11 text-muted-foreground hover:bg-muted/60 hover:text-foreground")}
-              aria-label="Edit post"
-            >
-              <Pencil className="h-4 w-4" aria-hidden />
-              Edit
-            </Link>
-          )}
-          {(own || moderate) && (
-            <button
-              type="button"
-              className={cn(actionBtn, "min-h-11 min-w-11 text-muted-foreground hover:bg-destructive/10 hover:text-destructive")}
-              onClick={() => void onDeletePost(item.id)}
-              aria-label="Delete post"
-            >
-              <Trash2 className="h-4 w-4" aria-hidden />
-              Delete
-            </button>
-          )}
-        </div>
-      </article>
-    );
-  }
+  const handleLoadMorePerson = useCallback(() => {
+    if (!id || personCursor == null || loadingMore) return;
+    setLoadingMore(true);
+    getPerson(id, { cursor: personCursor })
+      .then((result) => {
+        setPersonCursor(result.nextCursor ?? null);
+        setPerson((current) =>
+          current
+            ? {
+                ...current,
+                posts: [
+                  ...current.posts,
+                  ...result.posts.filter(
+                    (item) => !current.posts.some((have) => have.id === item.id),
+                  ),
+                ],
+              }
+            : result,
+        );
+      })
+      .catch((err) => setError(messageOf(err)))
+      .finally(() => setLoadingMore(false));
+  }, [id, loadingMore, personCursor]);
 
   if (view === "unavailable") return <CommunityUnavailable />;
 
-  return (
-    <div className="mx-auto w-full max-w-3xl space-y-5 px-3 py-6 sm:px-4 sm:py-8">
-      {view === "feed" || view === "mine" ? (
-        <CommunityFeed
-          view={view}
-          query={query}
-          category={category}
-          filters={filters}
-          posts={posts}
-          cursor={cursor}
-          loading={loading}
-          loadingMore={loadingMore}
-          migrated={migrated}
-          error={error}
-          setQuery={setQuery}
-          setCategory={setCategory}
-          setLoading={setLoading}
-          setLoadingMore={setLoadingMore}
-          setError={setError}
-          loadList={loadList}
-          renderCard={(item) => renderCard(item)}
-        />
-      ) : null}
+  const moderate = canModerate(user);
 
-      {view === "new" ? (
-        <header className="space-y-3">
-          <CommunityBackLink href="/ai/community" label="Back to feed" />
-          <h1 className="flex items-center gap-2 text-2xl font-semibold tracking-tight">
-            <Plus className="h-6 w-6 text-primary" aria-hidden />
-            New post
-          </h1>
-        </header>
-      ) : null}
-      {view === "person" && person?.profile ? (
-        <header className={cn(surfaceCard, "space-y-3 p-4 sm:p-5")}>
-          <CommunityBackLink href="/ai/community" label="Back to feed" />
-          <PostAuthorHeader
-            author={person.profile}
-            viewerId={user?.id}
-            onFollowChange={(following) => patchAuthorFollowing(person.profile!.id, following)}
-          />
-          <p className="text-sm text-muted-foreground">
-            {person.posts.length} public {person.posts.length === 1 ? "post" : "posts"}
-            {person.profile.role && person.profile.role !== "member" ? (
-              <span> · {person.profile.role}</span>
-            ) : null}
+  // Dedicated centered reading/writing column (max 800px) for post, new, and edit views
+  if (view === "new" || view === "edit" || view === "post") {
+    return (
+      <div className="mx-auto w-full max-w-[800px] space-y-5 px-4 py-6 sm:px-6">
+        {view === "new" ? (
+          <>
+            <header className="space-y-3">
+              <CommunityBackLink href="/ai/community" label="Back to feed" />
+              <h1 className="flex items-center gap-2 font-display text-2xl font-bold tracking-tight">
+                <Plus className="h-6 w-6 text-primary" aria-hidden />
+                New post
+              </h1>
+            </header>
+            <PostComposer user={user} sessionLoading={sessionLoading} mode="create" redirectOnSuccess />
+          </>
+        ) : null}
+
+        {!migrated ? (
+          <p className={cn(surfaceCard, "flex items-start gap-2 p-3.5 text-sm text-muted-foreground")}>
+            <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+            Community posts are not set up on this deployment yet.
           </p>
-        </header>
-      ) : null}
+        ) : null}
 
-      {!migrated ? (
-        <p className={cn(surfaceCard, "flex items-start gap-2 p-3 text-sm text-muted-foreground")}>
-          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
-          Community is waiting for database migration 018.
-        </p>
-      ) : null}
-      {error ? (
-        <p className="flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/5 px-3 py-2 text-sm text-red-600 dark:text-red-400">
-          <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
-          {error}
-        </p>
-      ) : null}
-      {loading && view !== "feed" && view !== "mine" ? <CommunityLoading /> : null}
+        {error ? (
+          <p
+            role="alert"
+            className="flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/5 px-3.5 py-2.5 text-sm text-destructive"
+          >
+            <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+            {error}
+          </p>
+        ) : null}
 
-      {view === "new" ? (
-        <PostComposer user={user} sessionLoading={sessionLoading} mode="create" redirectOnSuccess />
-      ) : null}
-      {view === "edit" && post ? (
-        <>
-          <header className="space-y-3">
-            <CommunityBackLink href={sharePath(post.id)} label="Back to post" />
-          </header>
-          <PostComposer
-            user={user}
-            sessionLoading={sessionLoading}
-            mode="edit"
-            initial={post}
-            redirectOnSuccess
-          />
-        </>
-      ) : null}
+        {loading && !post && view !== "new" ? <CommunityLoading /> : null}
 
-      {view === "post" && post ? (
-        <div className="space-y-4">
-          <CommunityBackLink href="/ai/community" label="Back to feed" />
-          {renderCard(post, true)}
-          <BotAnswerButton
-            visible={Boolean(user && post.assistantReply?.canApprove && !post.assistantReply.posted)}
-            busy={aiReplyBusy}
-            question={looksLikeQuestion(post)}
-            onPublish={() => onAssistantReply(post)}
-          />
-          {post.assistantReply?.posted ? (
-            <p
-              className={cn(
-                surfaceCard,
-                "flex items-center gap-2 border-primary/25 bg-primary/5 p-3 text-sm text-muted-foreground shadow-none hover:shadow-none",
-              )}
-              role="status"
-            >
-              <Bot className="h-4 w-4 shrink-0 text-primary" aria-hidden />
-              Community bot replied on this post.
-            </p>
-          ) : null}
-          <section className="space-y-3">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <h2 className="flex items-center gap-2 text-base font-semibold tracking-tight">
-                <MessageCircle className="h-5 w-5 text-primary" aria-hidden />
-                Comments
-                <span className="rounded-full bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground">
-                  {(post.comments ?? []).length}
-                </span>
-              </h2>
-              <div className="flex flex-wrap items-center gap-2">
+        {view === "edit" && post ? (
+          <>
+            <header className="space-y-3">
+              <CommunityBackLink href={sharePath(post.id)} label="Back to post" />
+            </header>
+            <PostComposer
+              user={user}
+              sessionLoading={sessionLoading}
+              mode="edit"
+              initial={post}
+              redirectOnSuccess
+            />
+          </>
+        ) : null}
+
+        {view === "post" && post ? (
+          <div className="space-y-6">
+            <CommunityBackLink href="/ai/community" label="Back to feed" />
+
+            <article className={cn(surfaceCardFlat, "space-y-4 p-5 sm:p-6")}>
+              <div className="flex items-start justify-between gap-3">
+                <div className="min-w-0 flex-1 space-y-2">
+                  <div className="flex flex-wrap items-center gap-2">
+                    {(() => {
+                      const visual =
+                        post.category !== "general" ? getSubjectVisual(post.category) : null;
+                      return (
+                        <span
+                          className={cn(
+                            "inline-flex items-center gap-1 rounded-md px-2 py-0.5 text-xs font-medium",
+                            visual
+                              ? visual.badge
+                              : "border border-border/80 bg-muted/50 text-foreground",
+                          )}
+                        >
+                          {visual ? <span aria-hidden>{visual.glyph}</span> : null}
+                          {categoryLabel(post.category)}
+                        </span>
+                      );
+                    })()}
+                  </div>
+                  <h1 className="font-display text-xl font-bold leading-snug tracking-tight text-foreground sm:text-2xl">
+                    {post.title}
+                  </h1>
+                </div>
+
+                {(user?.id === post.author.id || moderate) ? (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <button
+                        type="button"
+                        aria-label="Post options"
+                        className={cn(
+                          actionBtn,
+                          "min-h-11 min-w-11 justify-center px-2 text-muted-foreground hover:bg-muted/70 hover:text-foreground",
+                        )}
+                      >
+                        <Ellipsis className="h-4 w-4" aria-hidden />
+                      </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="end" className="w-44 rounded-xl p-1 shadow-elev-3">
+                      <DropdownMenuItem asChild>
+                        <Link
+                          href={`/ai/community/posts/${post.id}/edit`}
+                          className="flex min-h-10 cursor-pointer items-center gap-2 rounded-lg px-2.5 text-[13px]"
+                        >
+                          <Pencil className="h-4 w-4" aria-hidden />
+                          Edit post
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem
+                        onSelect={() => void onDeletePost(post.id)}
+                        className="min-h-10 cursor-pointer rounded-lg px-2.5 text-[13px] text-destructive focus:bg-destructive/10 focus:text-destructive"
+                      >
+                        <Trash2 className="h-4 w-4" aria-hidden />
+                        Delete post
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : null}
+              </div>
+
+              <PostAuthorHeader
+                author={post.author}
+                createdAt={post.createdAt}
+                viewerId={user?.id}
+                onFollowChange={(following) => patchAuthorFollowing(post.author.id, following)}
+              />
+
+              <MarkdownBody text={post.body} className="text-base leading-relaxed text-foreground" />
+
+              {post.attachments.length > 0 ? <AttachmentList files={post.attachments} /> : null}
+
+              {/* Clean single action line */}
+              <div className="flex flex-wrap items-center gap-1.5 border-t border-border/60 pt-3">
                 <button
                   type="button"
-                  className={cn(chipBtn, "min-h-10", commentComposerOpen && "border-primary/40 text-primary")}
-                  aria-expanded={commentComposerOpen}
-                  onClick={() => {
-                    setCommentComposerOpen((open) => !open);
-                    setError(null);
-                  }}
-                >
-                  <MessageCircle className="h-3.5 w-3.5" aria-hidden />
-                  {commentComposerOpen ? "Hide comment box" : "Add comment"}
-                </button>
-                <BotAnswerButton
-                  visible={Boolean(
-                    user &&
-                      !isCommunityBot(post.author.id) &&
-                      post.assistantReply?.canApprove &&
-                      !post.assistantReply.posted,
+                  onClick={() => onLike(post)}
+                  aria-pressed={post.likedByYou}
+                  aria-label={post.likedByYou ? "Unlike post" : "Like post"}
+                  className={cn(
+                    actionBtn,
+                    "min-h-11 px-3 text-[13px] tabular-nums",
+                    post.likedByYou
+                      ? "bg-primary/10 font-semibold text-primary hover:bg-primary/15"
+                      : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
                   )}
-                  busy={aiReplyBusy}
-                  variant="comment"
-                  onPublish={() => onAssistantReply(post)}
-                />
-              </div>
-            </div>
-            {isCommunityBot(post.author.id) && user ? (
-              <p className="text-xs text-muted-foreground">
-                Ask Community bot anything in a comment — it will reply on this thread.
-              </p>
-            ) : null}
-            {(post.comments ?? []).length === 0 ? (
-              <p className={cn(emptyStatePanel, "p-6 text-center text-sm text-muted-foreground")}>
-                <MessageSquare className="mx-auto mb-2 h-8 w-8 text-primary/35" aria-hidden />
-                No comments yet. Start the conversation.
-              </p>
-            ) : (
-              <ul className="space-y-2">
-                {(post.comments ?? []).map((comment, commentIndex) => {
-                  const botComment =
-                    comment.author.role === "assistant" || isCommunityBot(comment.author.id);
-                  const pendingComment = comment.id.startsWith("pending-comment-");
-                  return (
-                  <li
-                    key={comment.id}
-                    className={cn(
-                      surfaceCardFlat,
-                      "card-rise-in space-y-1 p-3 motion-safe:hover:shadow-sm sm:p-4",
-                      pendingComment && "opacity-90",
-                      botComment &&
-                        "border-primary/25 bg-primary/[0.04] shadow-sm shadow-primary/5 ring-1 ring-primary/10",
-                    )}
-                    style={{ animationDelay: `${Math.min(commentIndex * 45, 280)}ms` }}
-                  >
-                    <PostAuthorHeader
-                      author={comment.author}
-                      createdAt={comment.createdAt}
-                      viewerId={user?.id}
-                      compact
-                      onFollowChange={(following) => patchAuthorFollowing(comment.author.id, following)}
-                    />
-                    {editingComment === comment.id ? (
-                      <form
-                        className="mt-2 space-y-2"
-                        onSubmit={(event) => {
-                          event.preventDefault();
-                          if (!user) {
-                            setError("Sign in to edit comments.");
-                            return;
-                          }
-                          const nextBody = commentDraft.trim();
-                          if (!nextBody) return;
-                          const postId = post.id;
-                          const commentId = comment.id;
-                          const prevBody = comment.body;
-                          bumpPollPause();
-                          patchPostEverywhere(postId, (item) => ({
-                            ...item,
-                            comments: (item.comments ?? []).map((entry) =>
-                              entry.id === commentId ? { ...entry, body: nextBody, updatedAt: new Date().toISOString() } : entry,
-                            ),
-                          }));
-                          setEditingComment(null);
-                          void updateComment(postId, commentId, nextBody)
-                            .then((result) => {
-                              patchPostEverywhere(postId, (item) => ({
-                                ...item,
-                                comments: (item.comments ?? []).map((entry) =>
-                                  entry.id === commentId ? result.comment : entry,
-                                ),
-                              }));
-                            })
-                            .catch((err) => {
-                              patchPostEverywhere(postId, (item) => ({
-                                ...item,
-                                comments: (item.comments ?? []).map((entry) =>
-                                  entry.id === commentId ? { ...entry, body: prevBody } : entry,
-                                ),
-                              }));
-                              setEditingComment(commentId);
-                              setCommentDraft(prevBody);
-                              setError(statusOf(err) === 401 ? "Sign in to edit comments." : messageOf(err));
-                            });
-                        }}
-                      >
-                        <textarea
-                          value={commentDraft}
-                          onChange={(event) => setCommentDraft(event.target.value)}
-                          rows={3}
-                          aria-label="Edit comment"
-                          className={cn(inputClass, "text-sm")}
-                        />
-                        <button type="submit" className={cn(ghostLink, "min-h-11")}>
-                          <Check className="h-4 w-4" aria-hidden />
-                          Save comment
-                        </button>
-                      </form>
-                    ) : (
-                      <div className="mt-1">
-                        <MemberOnlyMarkdown
-                          text={comment.body}
-                          locked={botComment && !user}
-                        />
-                      </div>
-                    )}
-                    {user && botComment ? (
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        <button
-                          type="button"
-                          className={cn(
-                            chipBtn,
-                            "min-h-10",
-                            followUpBotCommentId === comment.id &&
-                              "border-primary/50 bg-primary/10 text-primary",
-                          )}
-                          aria-pressed={followUpBotCommentId === comment.id}
-                          aria-label="Ask Community bot a follow-up"
-                          onClick={() => {
-                            setFollowUpBotCommentId((current) =>
-                              current === comment.id ? null : comment.id,
-                            );
-                            setError(null);
-                          }}
-                        >
-                          <MessageCircle className="h-3.5 w-3.5" aria-hidden />
-                          {followUpBotCommentId === comment.id ? "Follow-up on" : "Ask follow-up"}
-                        </button>
-                      </div>
-                    ) : null}
-                    {user &&
-                    ((user.id === comment.author.id && !botComment) ||
-                      canModerate(user)) ? (
-                      <div className="mt-2 flex flex-wrap gap-2">
-                        {user.id === comment.author.id && comment.author.role !== "assistant" ? (
-                          <button
-                            type="button"
-                            className={cn(actionBtn, "min-h-11 text-xs text-muted-foreground hover:bg-muted/60 hover:text-foreground")}
-                            onClick={() => {
-                              setEditingComment(comment.id);
-                              setCommentDraft(comment.body);
-                            }}
-                          >
-                            <Pencil className="h-3.5 w-3.5" aria-hidden />
-                            Edit
-                          </button>
-                        ) : null}
-                        <button
-                          type="button"
-                          className={cn(actionBtn, "min-h-11 text-xs text-muted-foreground hover:bg-destructive/10 hover:text-destructive")}
-                          aria-label="Delete comment"
-                          onClick={() => {
-                            if (!window.confirm("Delete this comment?")) return;
-                            const postId = post.id;
-                            const commentId = comment.id;
-                            const prevComments = post.comments ?? [];
-                            const prevCount = post.commentCount;
-                            bumpPollPause();
-                            patchPostEverywhere(postId, (item) => ({
-                              ...item,
-                              commentCount: Math.max(0, item.commentCount - 1),
-                              comments: (item.comments ?? []).filter((entry) => entry.id !== commentId),
-                            }));
-                            void deleteComment(postId, commentId)
-                              .catch((err) => {
-                                patchPostEverywhere(postId, (item) => ({
-                                  ...item,
-                                  commentCount: prevCount,
-                                  comments: prevComments,
-                                }));
-                                setError(statusOf(err) === 401 ? "Sign in to delete comments." : messageOf(err));
-                              });
-                          }}
-                        >
-                          <Trash2 className="h-3.5 w-3.5" aria-hidden />
-                          Delete
-                        </button>
-                      </div>
-                    ) : null}
-                  </li>
-                );
-                })}
-              </ul>
-            )}
-            {commentComposerOpen ? (
-              <form
-                ref={commentComposerRef}
-                className={cn(glassShell, "space-y-3 p-4")}
-                onSubmit={(event) => void onComment(event)}
-              >
-                <label className="block text-sm">
-                  <span className="mb-1.5 flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
-                    <MessageSquare className="h-3.5 w-3.5" aria-hidden />
-                    {user
-                      ? followUpBotCommentId || isCommunityBot(post.author.id)
-                        ? "Question for Community bot (it replies after you post)"
-                        : "Write a comment"
-                      : "Sign in to comment."}
-                  </span>
-                  <textarea
-                    value={commentBody}
-                    onChange={(event) => setCommentBody(event.target.value)}
-                    rows={3}
-                    aria-label="Write a comment"
-                    className={inputClass}
-                  />
-                </label>
-                <button type="submit" className={cn(primaryCta, "min-h-11 px-3 py-2")}>
-                  <Send className="h-4 w-4" aria-hidden />
-                  Comment
+                >
+                  <Heart className={cn("h-4 w-4", post.likedByYou && "fill-current")} aria-hidden />
+                  <span>{post.likeCount}</span>
                 </button>
-              </form>
-            ) : null}
-          </section>
-        </div>
-      ) : null}
 
-      {view === "person" && person ? (
-        <div className="space-y-4">
-          {person.posts.length === 0 ? (
-            <p className={cn(emptyStatePanel, "p-6 text-center text-sm text-muted-foreground")}>
-              No public posts yet.
+                <button
+                  type="button"
+                  onClick={() => toggleSaved(post.id)}
+                  aria-pressed={isSaved(post.id)}
+                  aria-label={isSaved(post.id) ? "Saved post" : "Save post"}
+                  className={cn(
+                    actionBtn,
+                    "min-h-11 px-3 text-[13px]",
+                    isSaved(post.id)
+                      ? "bg-primary/12 font-semibold text-primary hover:bg-primary/18"
+                      : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
+                  )}
+                >
+                  <Bookmark
+                    className={cn("h-4 w-4", isSaved(post.id) && "fill-current")}
+                    aria-hidden
+                  />
+                  <span>{isSaved(post.id) ? "Saved" : "Save post"}</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => void copy(post.id)}
+                  aria-label={copiedId === post.id ? "Link copied" : "Copy post link"}
+                  className={cn(
+                    actionBtn,
+                    "min-h-11 px-3 text-[13px]",
+                    copiedId === post.id
+                      ? "text-primary"
+                      : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
+                  )}
+                >
+                  {copiedId === post.id ? (
+                    <>
+                      <Check className="h-4 w-4" aria-hidden />
+                      Copied
+                    </>
+                  ) : (
+                    <>
+                      <Link2 className="h-4 w-4" aria-hidden />
+                      Copy link
+                    </>
+                  )}
+                </button>
+
+                <span className="ml-auto inline-flex items-center gap-1.5 px-2 text-[13px] tabular-nums text-muted-foreground">
+                  <MessageCircle className="h-4 w-4" aria-hidden />
+                  {(post.comments ?? []).length}{" "}
+                  {(post.comments ?? []).length === 1 ? "comment" : "comments"}
+                </span>
+              </div>
+            </article>
+
+            {/* Comments & single Answer-with-Veer entry point */}
+            <section aria-labelledby="post-comments-heading" className="space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <h2
+                  id="post-comments-heading"
+                  className="flex items-center gap-2 text-base font-semibold tracking-tight"
+                >
+                  Comments
+                  <span className="rounded-full bg-muted px-2.5 py-0.5 text-xs font-semibold tabular-nums text-muted-foreground">
+                    {(post.comments ?? []).length}
+                  </span>
+                </h2>
+
+                <div className="flex flex-wrap items-center gap-2">
+                  <button
+                    type="button"
+                    className={cn(
+                      chipBtn,
+                      "min-h-11 text-[13px]",
+                      commentComposerOpen && "border-primary/40 bg-primary/10 text-primary",
+                    )}
+                    aria-expanded={commentComposerOpen}
+                    onClick={() => {
+                      if (commentComposerOpen) {
+                        setCommentComposerOpen(false);
+                      } else {
+                        openAndFocusComposer();
+                      }
+                      setError(null);
+                    }}
+                  >
+                    <MessageCircle className="h-4 w-4" aria-hidden />
+                    {commentComposerOpen ? "Hide comment box" : "Add comment"}
+                  </button>
+
+                  {/* Single Answer-with-Veer control (never repeated, hidden once posted) */}
+                  <BotAnswerButton
+                    visible={Boolean(
+                      user &&
+                        !isCommunityBot(post.author.id) &&
+                        post.assistantReply?.canApprove &&
+                        !post.assistantReply.posted,
+                    )}
+                    busy={aiReplyBusyIds.has(post.id)}
+                    question={looksLikeQuestion(post)}
+                    variant="comment"
+                    onPublish={() => onAssistantReply(post)}
+                  />
+                </div>
+              </div>
+
+              {aiReplyBusyIds.has(post.id) ? (
+                <div
+                  role="status"
+                  className="flex items-center gap-2 rounded-xl border border-primary/25 bg-primary/5 px-3.5 py-2.5 text-[13px] font-medium text-primary"
+                >
+                  <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+                  Generating Veer reply…
+                </div>
+              ) : null}
+
+              <CommentList
+                comments={post.comments ?? []}
+                viewer={user}
+                followUpBotCommentId={followUpBotCommentId}
+                onSelectFollowUp={(commentId) => {
+                  const next = followUpBotCommentId === commentId ? null : commentId;
+                  setFollowUpBotCommentId(next);
+                  setError(null);
+                  if (next) {
+                    openAndFocusComposer(next);
+                  }
+                }}
+                onOpenComposer={() => openAndFocusComposer()}
+                onFollowChange={patchAuthorFollowing}
+                onSaveEdit={handleSaveCommentEdit}
+                onDelete={handleDeleteComment}
+              />
+
+              {commentComposerOpen ? (
+                <CommentComposer
+                  signedIn={Boolean(user)}
+                  isBotPost={isCommunityBot(post.author.id)}
+                  followUpCommentId={followUpBotCommentId}
+                  focusTrigger={composerFocusTrigger}
+                  onClearFollowUp={() => setFollowUpBotCommentId(null)}
+                  onSubmitComment={handleSubmitComment}
+                />
+              ) : null}
+            </section>
+          </div>
+        ) : null}
+      </div>
+    );
+  }
+
+  // Two-column layout with local community rail for feed / saved / mine / person
+  return (
+    <div className="mx-auto w-full max-w-[1216px] px-4 py-4 sm:px-6 sm:py-6">
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-6">
+        <CommunitySubnav
+          active={view === "mine" ? "mine" : savedView ? "saved" : "feed"}
+          savedCount={savedCount}
+        />
+
+        <div className="min-w-0 flex-1 space-y-4">
+          {!migrated ? (
+            <p className={cn(surfaceCard, "flex items-start gap-2 p-3.5 text-sm text-muted-foreground")}>
+              <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+              Community posts are not set up on this deployment yet.
             </p>
-          ) : person.posts.map((item, index) => (
-            <div
-              key={item.id}
-              className="motion-safe:animate-fade-in motion-reduce:animate-none"
-              style={{ animationDelay: index < 12 ? `${Math.min(index * 35, 300)}ms` : undefined }}
+          ) : null}
+
+          {error ? (
+            <p
+              role="alert"
+              className="flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/5 px-3.5 py-2.5 text-sm text-destructive"
             >
-              {renderCard(item)}
+              <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
+              {error}
+            </p>
+          ) : null}
+
+          {view === "feed" || view === "mine" ? (
+            <CommunityFeed
+              mode={listMode}
+              appliedQuery={appliedQuery}
+              category={category}
+              filter={filter}
+              posts={posts}
+              queuedNewCount={queuedNewPosts.length}
+              cursor={cursor}
+              loading={loading}
+              loadingMore={loadingMore}
+              migrated={migrated}
+              error={error}
+              viewerId={user?.id}
+              canModerate={moderate}
+              copiedId={copiedId}
+              aiReplyBusyIds={aiReplyBusyIds}
+              isSaved={isSaved}
+              onApplySearch={(nextQuery) => setAppliedQuery(nextQuery)}
+              onSelectCategory={(nextCategory) => setCategory(nextCategory)}
+              onSelectFilter={(nextFilter) => setFilter(nextFilter)}
+              onClearAllFilters={() => {
+                setAppliedQuery("");
+                setCategory("");
+                setFilter("latest");
+              }}
+              onRevealQueuedPosts={() => {
+                setPosts((current) => mergeById(current, [...queuedNewPosts, ...current]));
+                setQueuedNewPosts([]);
+              }}
+              onLoadMore={handleLoadMoreFeed}
+              onLike={onLike}
+              onToggleSave={toggleSaved}
+              onCopyLink={(postId) => void copy(postId)}
+              onDelete={(postId) => void onDeletePost(postId)}
+              onAssistantReply={onAssistantReply}
+              onPrefetchPost={handlePrefetchPost}
+            />
+          ) : null}
+
+          {view === "person" ? (
+            <div className="space-y-4">
+              {loading && !person ? <CommunityLoading /> : null}
+              {person?.profile ? (
+                <header className={cn(surfaceCardFlat, "space-y-3 p-4 sm:p-5")}>
+                  <CommunityBackLink href="/ai/community" label="Back to feed" />
+                  <PostAuthorHeader
+                    author={person.profile}
+                    viewerId={user?.id}
+                    onFollowChange={(following) => patchAuthorFollowing(person.profile!.id, following)}
+                  />
+                  <p className="text-[13px] text-muted-foreground">
+                    {person.posts.length} public {person.posts.length === 1 ? "post" : "posts"}
+                    {person.profile.role && person.profile.role !== "member" ? (
+                      <span> · {person.profile.role}</span>
+                    ) : null}
+                  </p>
+                </header>
+              ) : null}
+
+              {person ? (
+                person.posts.length === 0 ? (
+                  <p className={cn(emptyStatePanel, "p-8 text-center text-sm text-muted-foreground")}>
+                    No public posts yet.
+                  </p>
+                ) : (
+                  <>
+                    <div className="divide-y divide-border/60 overflow-hidden rounded-2xl border border-border/80 bg-card shadow-elev-0">
+                      {person.posts.map((item, idx) => (
+                        <FeedPostRow
+                          key={item.id}
+                          item={item}
+                          isLeading={idx === 0}
+                          viewerId={user?.id}
+                          canModerate={moderate}
+                          saved={isSaved(item.id)}
+                          copied={copiedId === item.id}
+                          aiReplyBusy={aiReplyBusyIds.has(item.id)}
+                          onLike={onLike}
+                          onToggleSave={toggleSaved}
+                          onCopyLink={(postId) => void copy(postId)}
+                          onDelete={(postId) => void onDeletePost(postId)}
+                          onAssistantReply={onAssistantReply}
+                          onPrefetch={handlePrefetchPost}
+                        />
+                      ))}
+                    </div>
+                    {personCursor != null ? (
+                      <button
+                        type="button"
+                        disabled={loadingMore}
+                        onClick={handleLoadMorePerson}
+                        className={cn(
+                          chipBtn,
+                          "mx-auto flex min-h-11 w-full justify-center py-2.5 text-sm sm:w-auto sm:px-6",
+                        )}
+                      >
+                        {loadingMore ? (
+                          <>
+                            <Loader2 className="h-4 w-4 animate-spin" aria-hidden />
+                            Loading…
+                          </>
+                        ) : (
+                          "Load more posts"
+                        )}
+                      </button>
+                    ) : null}
+                  </>
+                )
+              ) : null}
             </div>
-          ))}
+          ) : null}
         </div>
-      ) : null}
+      </div>
     </div>
   );
 }

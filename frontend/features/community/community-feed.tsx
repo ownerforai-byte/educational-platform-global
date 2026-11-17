@@ -1,15 +1,30 @@
 "use client";
 
-import type { MutableRefObject, ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import {
+  ArrowUp,
+  ChevronDown,
+  Loader2,
+  Plus,
+  Search,
+  X,
+} from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
   COMMUNITY_CATEGORIES,
+  type CommunityFeedFilter,
   type FeedPost,
 } from "@/lib/api/community-feed";
+import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import {
   chipActive,
   chipBtn,
-  glassShell,
   inputClass,
   primaryCta,
 } from "@/features/community/community-ui";
@@ -17,217 +32,350 @@ import {
   CommunityBackLink,
   CommunityLoading,
   FeedEmpty,
-  messageOf,
 } from "@/features/community/community-helpers";
+import { FeedPostRow } from "@/features/community/feed-post-row";
 import { cn } from "@/lib/utils";
-import { Filter, Loader2, MessageSquare, Plus, Radio, Search, UserRound } from "lucide-react";
 
-function applyCategoryFilter(
-  nextCategory: string,
-  query: string,
-  filters: MutableRefObject<{ q: string; category: string }>,
-  setCategory: (value: string) => void,
-  setLoading: (value: boolean) => void,
-  loadList: (append: boolean) => Promise<void>,
-  setError: (value: string | null) => void,
-) {
-  setCategory(nextCategory);
-  filters.current = { q: query.trim(), category: nextCategory };
-  setLoading(true);
-  loadList(false)
-    .catch((err) => setError(messageOf(err)))
-    .finally(() => setLoading(false));
-}
+const MOBILE_INLINE_CATEGORIES = 4;
 
-export function CommunityFeed({
-  view,
-  query,
-  category,
-  filters,
-  posts,
-  cursor,
-  loading,
-  loadingMore,
-  migrated,
-  error,
-  setQuery,
-  setCategory,
-  setLoading,
-  setLoadingMore,
-  setError,
-  loadList,
-  renderCard,
-}: {
-  view: "feed" | "mine";
-  query: string;
+export interface CommunityFeedProps {
+  mode: "feed" | "saved" | "mine";
+  appliedQuery: string;
   category: string;
-  filters: MutableRefObject<{ q: string; category: string }>;
+  filter: CommunityFeedFilter;
   posts: FeedPost[];
+  queuedNewCount: number;
   cursor: number | null;
   loading: boolean;
   loadingMore: boolean;
   migrated: boolean;
   error: string | null;
-  setQuery: (value: string) => void;
-  setCategory: (value: string) => void;
-  setLoading: (value: boolean) => void;
-  setLoadingMore: (value: boolean) => void;
-  setError: (value: string | null) => void;
-  loadList: (append: boolean, nextCursor?: number | null) => Promise<void>;
-  renderCard: (item: FeedPost) => ReactNode;
-}) {
+  viewerId?: string | null;
+  canModerate: boolean;
+  copiedId: string | null;
+  aiReplyBusyIds: ReadonlySet<string>;
+  isSaved: (postId: string) => boolean;
+  onApplySearch: (nextQuery: string) => void;
+  onSelectCategory: (nextCategory: string) => void;
+  onSelectFilter: (nextFilter: CommunityFeedFilter) => void;
+  onClearAllFilters: () => void;
+  onRevealQueuedPosts: () => void;
+  onLoadMore: () => void;
+  onLike: (item: FeedPost) => void;
+  onToggleSave: (postId: string) => void;
+  onCopyLink: (postId: string) => void;
+  onDelete: (postId: string) => void;
+  onAssistantReply: (item: FeedPost) => void;
+  onPrefetchPost: (postId: string) => void;
+}
+
+export function CommunityFeed({
+  mode,
+  appliedQuery,
+  category,
+  filter,
+  posts,
+  queuedNewCount,
+  cursor,
+  loading,
+  loadingMore,
+  migrated,
+  error,
+  viewerId,
+  canModerate,
+  copiedId,
+  aiReplyBusyIds,
+  isSaved,
+  onApplySearch,
+  onSelectCategory,
+  onSelectFilter,
+  onClearAllFilters,
+  onRevealQueuedPosts,
+  onLoadMore,
+  onLike,
+  onToggleSave,
+  onCopyLink,
+  onDelete,
+  onAssistantReply,
+  onPrefetchPost,
+}: CommunityFeedProps) {
+  // Local input state keeps search keystrokes completely isolated from feed rows.
+  const [searchInput, setSearchInput] = useState(appliedQuery);
+  const debounceRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    setSearchInput(appliedQuery);
+  }, [appliedQuery]);
+
+  useEffect(() => {
+    return () => {
+      if (debounceRef.current !== null) window.clearTimeout(debounceRef.current);
+    };
+  }, []);
+
+  function handleSearchInputChange(next: string) {
+    setSearchInput(next);
+    if (debounceRef.current !== null) window.clearTimeout(debounceRef.current);
+    debounceRef.current = window.setTimeout(() => {
+      onApplySearch(next.trim());
+    }, 260);
+  }
+
+  function flushSearchSubmit() {
+    if (debounceRef.current !== null) {
+      window.clearTimeout(debounceRef.current);
+      debounceRef.current = null;
+    }
+    onApplySearch(searchInput.trim());
+  }
+
+  const inlineCategories = COMMUNITY_CATEGORIES.slice(0, MOBILE_INLINE_CATEGORIES);
+  const overflowCategories = COMMUNITY_CATEGORIES.slice(MOBILE_INLINE_CATEGORIES);
+  const activeOverflowCategory = overflowCategories.find((item) => item.id === category);
+
+  const hasActiveFilter = Boolean(appliedQuery.trim() || category || filter !== "latest");
+  const heading =
+    mode === "mine" ? "My posts" : mode === "saved" ? "Saved posts" : "Community";
+
   return (
-    <>
+    <div className="min-w-0 flex-1 space-y-3">
       <header className="space-y-3">
-        {view === "mine" ? (
+        {mode === "mine" || mode === "saved" ? (
           <CommunityBackLink href="/ai/community" label="Back to feed" />
         ) : null}
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="min-w-0">
-            <h1 className="flex items-center gap-2 text-xl font-semibold tracking-tight sm:text-2xl">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-border/80 bg-card text-primary shadow-sm ring-1 ring-primary/10 sm:h-10 sm:w-10 sm:rounded-xl">
-                <MessageSquare className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden />
-              </span>
-              <span className="truncate">{view === "mine" ? "My posts" : "Community"}</span>
-            </h1>
-            {view === "feed" ? (
-              <p className="mt-1 line-clamp-2 text-xs text-muted-foreground sm:text-sm">
-                Bot study notes, member questions, and quick visuals.
-              </p>
-            ) : (
-              <p className="mt-1 text-xs text-muted-foreground sm:text-sm">Posts you have published.</p>
-            )}
-          </div>
-          <div className="flex shrink-0 flex-wrap gap-1.5 sm:gap-2">
-            <Link href="/ai/community/new" className={cn(primaryCta, "min-h-11 px-3 py-2")}>
+
+        {/* Row 1: Page heading & primary action (56px target) */}
+        <div className="flex min-h-14 flex-wrap items-center justify-between gap-3">
+          <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
+            {heading}
+          </h1>
+          <div className="flex items-center gap-2">
+            <Link href="/ai/community/new" className={cn(primaryCta, "min-h-11 px-4 py-2")}>
               <Plus className="h-4 w-4" aria-hidden />
               New post
             </Link>
-            <Link
-              href="/ai/community/chat"
-              className={cn(chipBtn, "min-h-11 text-foreground")}
-              data-testid="community-chat-link"
-            >
-              <Radio className="h-3.5 w-3.5" aria-hidden />
-              Chat
-            </Link>
-            <Link
-              href="/ai/community/me"
-              className={cn(chipBtn, "min-h-11 text-foreground")}
-            >
-              <UserRound className="h-3.5 w-3.5" aria-hidden />
-              My posts
-            </Link>
           </div>
         </div>
-        {view === "feed" ? (
-          <form
-            className={cn(glassShell, "flex flex-wrap items-center gap-2 p-3 sm:p-4")}
-            onSubmit={(event) => {
-              event.preventDefault();
-              filters.current = { q: query.trim(), category };
-              setLoading(true);
-              loadList(false)
-                .catch((err) => setError(messageOf(err)))
-                .finally(() => setLoading(false));
-            }}
+
+        {/* Row 2: Search & Latest / No-comments server filter (44px controls) */}
+        <form
+          className="flex flex-col gap-2 sm:flex-row sm:items-center"
+          onSubmit={(event) => {
+            event.preventDefault();
+            flushSearchSubmit();
+          }}
+        >
+          <div className="relative min-w-0 flex-1">
+            <Search
+              className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
+              aria-hidden
+            />
+            <input
+              value={searchInput}
+              onChange={(event) => handleSearchInputChange(event.target.value)}
+              placeholder="Search posts"
+              aria-label="Search posts"
+              className={cn(inputClass, "min-h-11 pl-10 pr-9 text-base sm:text-sm")}
+            />
+            {searchInput ? (
+              <button
+                type="button"
+                onClick={() => {
+                  setSearchInput("");
+                  if (debounceRef.current !== null) window.clearTimeout(debounceRef.current);
+                  onApplySearch("");
+                }}
+                aria-label="Clear search"
+                className="absolute right-2 top-1/2 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-md text-muted-foreground hover:bg-muted hover:text-foreground"
+              >
+                <X className="h-4 w-4" aria-hidden />
+              </button>
+            ) : null}
+          </div>
+
+          <div
+            role="group"
+            aria-label="Filter posts"
+            className="inline-flex min-h-11 shrink-0 items-center rounded-xl border border-border/80 bg-card p-1"
           >
-            <div className="relative min-w-[12rem] flex-1">
-              <Search
-                className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
-                aria-hidden
-              />
-              <input
-                value={query}
-                onChange={(event) => setQuery(event.target.value)}
-                placeholder="Search posts"
-                aria-label="Search posts"
-                className={cn(inputClass, "min-h-11 pl-9")}
-              />
-            </div>
-            <select
-              value={category}
-              aria-label="Category"
-              onChange={(event) => {
-                const next = event.target.value;
-                setCategory(next);
-                filters.current = { q: query.trim(), category: next };
-                setLoading(true);
-                loadList(false)
-                  .catch((err) => setError(messageOf(err)))
-                  .finally(() => setLoading(false));
-              }}
-              className={cn(inputClass, "min-h-11 w-auto min-w-[10rem] pr-8")}
-            >
-              <option value="">All categories</option>
-              {COMMUNITY_CATEGORIES.map((item) => (
-                <option key={item.id} value={item.id}>{item.label}</option>
-              ))}
-            </select>
-            <button type="submit" className={cn(chipBtn, "min-h-11 shrink-0 text-foreground")}>
-              <Filter className="h-3.5 w-3.5" aria-hidden />
-              Apply
-            </button>
-          </form>
-        ) : null}
-        {view === "feed" ? (
-          <div className="flex flex-wrap gap-1.5" role="group" aria-label="Browse by category">
             <button
               type="button"
-              className={cn(chipBtn, "min-h-11", chipActive(!category))}
-              onClick={() =>
-                applyCategoryFilter("", query, filters, setCategory, setLoading, () => loadList(false), setError)
-              }
+              onClick={() => onSelectFilter("latest")}
+              aria-pressed={filter === "latest"}
+              className={cn(
+                "min-h-9 rounded-lg px-3 text-[13px] font-medium transition-colors",
+                filter === "latest"
+                  ? "bg-primary/12 font-semibold text-primary"
+                  : "text-muted-foreground hover:text-foreground",
+              )}
             >
-              All
+              Latest
             </button>
-            {COMMUNITY_CATEGORIES.map((item) => (
+            <button
+              type="button"
+              onClick={() => onSelectFilter("unanswered")}
+              aria-pressed={filter === "unanswered"}
+              className={cn(
+                "min-h-9 rounded-lg px-3 text-[13px] font-medium transition-colors",
+                filter === "unanswered"
+                  ? "bg-primary/12 font-semibold text-primary"
+                  : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              No comments
+            </button>
+          </div>
+        </form>
+
+        {/* Row 3: Category strip (44px controls, responsive overflow on mobile) */}
+        <div className="flex flex-wrap items-center gap-2" role="group" aria-label="Browse by category">
+          <button
+            type="button"
+            className={cn(chipBtn, "min-h-11 text-[13px]", chipActive(!category))}
+            onClick={() => onSelectCategory("")}
+          >
+            All
+          </button>
+
+          {inlineCategories.map((item) => {
+            const visual = item.id !== "general" ? getSubjectVisual(item.id) : null;
+            return (
               <button
                 key={item.id}
                 type="button"
-                className={cn(chipBtn, "min-h-11", chipActive(category === item.id))}
-                onClick={() =>
-                  applyCategoryFilter(
-                    item.id,
-                    query,
-                    filters,
-                    setCategory,
-                    setLoading,
-                    () => loadList(false),
-                    setError,
-                  )
-                }
+                className={cn(chipBtn, "min-h-11 text-[13px]", chipActive(category === item.id))}
+                onClick={() => onSelectCategory(item.id)}
               >
+                {visual ? <span aria-hidden>{visual.glyph}</span> : null}
                 {item.label}
               </button>
-            ))}
-          </div>
-        ) : null}
+            );
+          })}
+
+          {/* Desktop shows remaining categories directly */}
+          {overflowCategories.map((item) => {
+            const visual = item.id !== "general" ? getSubjectVisual(item.id) : null;
+            return (
+              <button
+                key={item.id}
+                type="button"
+                className={cn(
+                  chipBtn,
+                  "hidden min-h-11 text-[13px] md:inline-flex",
+                  chipActive(category === item.id),
+                )}
+                onClick={() => onSelectCategory(item.id)}
+              >
+                {visual ? <span aria-hidden>{visual.glyph}</span> : null}
+                {item.label}
+              </button>
+            );
+          })}
+
+          {/* Mobile sheet/menu for overflow categories so chips never wrap into 3 rows */}
+          {overflowCategories.length > 0 ? (
+            <div className="md:hidden">
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    type="button"
+                    className={cn(
+                      chipBtn,
+                      "min-h-11 text-[13px]",
+                      chipActive(Boolean(activeOverflowCategory)),
+                    )}
+                  >
+                    {activeOverflowCategory ? activeOverflowCategory.label : "More categories"}
+                    <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" aria-hidden />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start" className="w-48 rounded-xl p-1 shadow-elev-3">
+                  {overflowCategories.map((item) => {
+                    const visual = item.id !== "general" ? getSubjectVisual(item.id) : null;
+                    const active = category === item.id;
+                    return (
+                      <DropdownMenuItem
+                        key={item.id}
+                        onSelect={() => onSelectCategory(item.id)}
+                        className={cn(
+                          "min-h-10 cursor-pointer rounded-lg px-3 text-[13px]",
+                          active && "bg-primary/10 font-semibold text-primary",
+                        )}
+                      >
+                        {visual ? <span aria-hidden>{visual.glyph}</span> : null}
+                        {item.label}
+                      </DropdownMenuItem>
+                    );
+                  })}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+          ) : null}
+        </div>
       </header>
 
-      {loading ? <CommunityLoading /> : null}
-      {!loading && migrated && posts.length === 0 && !error ? <FeedEmpty mine={view === "mine"} /> : null}
-      <div className="space-y-4">
-        {posts.map((item, index) => (
-          <div
-            key={item.id}
-            className="motion-safe:animate-fade-in motion-reduce:animate-none"
-            style={{ animationDelay: index < 12 ? `${Math.min(index * 35, 300)}ms` : undefined }}
-          >
-            {renderCard(item)}
-          </div>
-        ))}
-        {cursor != null ? (
+      {/* Non-disruptive arrival banner when background poll discovers newer posts */}
+      {queuedNewCount > 0 ? (
+        <button
+          type="button"
+          onClick={onRevealQueuedPosts}
+          className={cn(
+            chipBtn,
+            "min-h-11 w-full justify-center border-primary/35 bg-primary/10 text-sm font-semibold text-primary hover:bg-primary/15",
+          )}
+        >
+          <ArrowUp className="h-4 w-4" aria-hidden />
+          Show {queuedNewCount} new {queuedNewCount === 1 ? "post" : "posts"}
+        </button>
+      ) : null}
+
+      {loading && posts.length === 0 ? <CommunityLoading /> : null}
+
+      {!loading && migrated && posts.length === 0 && !error ? (
+        <FeedEmpty
+          kind={
+            hasActiveFilter
+              ? "filtered"
+              : mode === "saved"
+                ? "saved"
+                : mode === "mine"
+                  ? "mine"
+                  : "default"
+          }
+          onClearFilters={hasActiveFilter ? onClearAllFilters : undefined}
+        />
+      ) : null}
+
+      {posts.length > 0 ? (
+        <div className="divide-y divide-border/60 overflow-hidden rounded-2xl border border-border/80 bg-card shadow-elev-0">
+          {posts.map((item, index) => (
+            <FeedPostRow
+              key={item.id}
+              item={item}
+              isLeading={index === 0}
+              viewerId={viewerId}
+              canModerate={canModerate}
+              saved={isSaved(item.id)}
+              copied={copiedId === item.id}
+              aiReplyBusy={aiReplyBusyIds.has(item.id)}
+              onLike={onLike}
+              onToggleSave={onToggleSave}
+              onCopyLink={onCopyLink}
+              onDelete={onDelete}
+              onAssistantReply={onAssistantReply}
+              onPrefetch={onPrefetchPost}
+            />
+          ))}
+        </div>
+      ) : null}
+
+      {cursor != null ? (
+        <div className="pt-1">
           <button
             type="button"
             disabled={loadingMore}
-            className={cn(chipBtn, "mx-auto min-h-11 w-full justify-center py-2.5 text-sm sm:w-auto")}
-            onClick={() => {
-              setLoadingMore(true);
-              loadList(true, cursor)
-                .catch((err) => setError(messageOf(err)))
-                .finally(() => setLoadingMore(false));
-            }}
+            className={cn(chipBtn, "mx-auto flex min-h-11 w-full justify-center py-2.5 text-sm sm:w-auto sm:px-6")}
+            onClick={onLoadMore}
           >
             {loadingMore ? (
               <>
@@ -235,11 +383,11 @@ export function CommunityFeed({
                 Loading…
               </>
             ) : (
-              "Load more"
+              "Load more posts"
             )}
           </button>
-        ) : null}
-      </div>
-    </>
+        </div>
+      ) : null}
+    </div>
   );
 }
