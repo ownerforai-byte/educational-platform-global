@@ -73,7 +73,10 @@ function useUrlStatusToken() {
     // Done from window.location (not useSearchParams) so the /welcome page
     // stays prerender-safe — no Suspense boundary required.
     const url = new URL(window.location.href);
-    const fromUrl = url.searchParams.get("status_token");
+    const fromUrl =
+      url.searchParams.get("status_token") ||
+      url.searchParams.get("token") ||
+      url.searchParams.get("statusToken");
     if (!fromUrl) return;
     // Persist to all three hardcoded mirrors before dropping the query string.
     rememberPendingSignup(fromUrl);

@@ -219,10 +219,26 @@ export function readStatusToken(): string | null {
   if (!isBrowser()) return null;
 
   try {
-    const fromUrl = new URL(window.location.href).searchParams.get("status_token");
+    const url = new URL(window.location.href);
+    const fromUrl =
+      url.searchParams.get("status_token") ||
+      url.searchParams.get("token") ||
+      url.searchParams.get("statusToken");
     if (fromUrl) {
       rememberPendingSignup(fromUrl);
       return fromUrl;
+    }
+    const hash = window.location.hash.startsWith("#") ? window.location.hash.slice(1) : "";
+    if (hash) {
+      const hashParams = new URLSearchParams(hash);
+      const fromHash =
+        hashParams.get("status_token") ||
+        hashParams.get("token") ||
+        hashParams.get("statusToken");
+      if (fromHash) {
+        rememberPendingSignup(fromHash);
+        return fromHash;
+      }
     }
   } catch {
     /* window.location unavailable */

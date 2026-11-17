@@ -549,12 +549,12 @@ router.post("/signup", async (req: Request, res: Response) => {
       ownerSignup
         ? { access_status: "ACTIVE", role: "owner", plan: "pro", premium_status: true, full_name: fullName }
         : {
-            access_status: "PENDING",
-            role: "member",
-            plan: "member",
-            premium_status: false,
-            full_name: fullName,
-          },
+          access_status: "PENDING",
+          role: "member",
+          plan: "member",
+          premium_status: false,
+          full_name: fullName,
+        },
     );
     if (profileErr) console.error("[auth] signup profile tier write failed:", profileErr.message);
     if (!ownerSignup) await ensureAccessRequest(uid);
@@ -633,11 +633,13 @@ router.post("/signup", async (req: Request, res: Response) => {
       if (!ownerSignup) await ensureAccessRequest(result.user.id);
 
       res.status(202).json({
+        code: "PENDING_APPROVAL",
+        statusToken: createStatusToken(result.user.id),
         user: null,
         accessToken: null,
         message: "Check your email to confirm your account before logging in.",
         accessStatus: "PENDING",
-      } satisfies SignupResponse);
+      } satisfies SignupResponse & { code: string; statusToken: string });
       return;
     }
 
@@ -658,11 +660,11 @@ router.post("/signup", async (req: Request, res: Response) => {
         ownerSignup
           ? { access_status: "ACTIVE", role: "owner", plan: "pro", premium_status: true }
           : {
-              access_status: "PENDING",
-              role: "member",
-              plan: "member",
-              premium_status: false,
-            },
+            access_status: "PENDING",
+            role: "member",
+            plan: "member",
+            premium_status: false,
+          },
       );
       if (profileErr) {
         console.error("[auth] signup profile tier write failed:", profileErr.message);

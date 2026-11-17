@@ -16,7 +16,9 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 const TOKEN_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days to get approved
 
 function hmac(payload: string): string {
-  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const key =
+    process.env.SUPABASE_SERVICE_ROLE_KEY ||
+    (process.env.NODE_ENV === "test" ? "test-supabase-service-role-key" : undefined);
   if (!key) {
     // Fail closed: never emit an unsigned token.
     throw new Error("status token signing key missing (SUPABASE_SERVICE_ROLE_KEY)");

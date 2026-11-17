@@ -4,18 +4,33 @@ import { useEffect, useState } from "react";
 import {
   resolveLiveApprovalRoute,
   resolveLiveApprovalRouteFallback,
+  routeForLiveAccess,
 } from "./live-approval-route";
+import {
+  NORMAL_ROUTE,
+  WAITING_ROUTE,
+  readAccessOutcome,
+  readStatusToken,
+} from "./pending-signup-identity";
 
 /**
  * Live welcome-screen route for this browser.
- * `null` while the first account-status check is in flight.
+ * Initializes with the best-effort synchronously known route on client,
+ * so screens render without an empty/flickering gap, while polling confirms live status.
  */
 const LIVE_ROUTE_RETRY_MS = 2500;
 /** After repeated account-status failures, fall back so auth screens recover. */
 const LIVE_ROUTE_FAIL_OPEN_ATTEMPTS = 4;
 
+function initialRoute(): string | null {
+  if (typeof window === "undefined") return null;
+  const token = readStatusToken();
+  if (!token) return NORMAL_ROUTE;
+  return null;
+}
+
 export function useLiveApprovalRoute(): string | null {
-  const [route, setRoute] = useState<string | null>(null);
+  const [route, setRoute] = useState<string | null>(initialRoute);
 
   useEffect(() => {
     let cancelled = false;
