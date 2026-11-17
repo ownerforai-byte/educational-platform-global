@@ -643,97 +643,97 @@ router.post("/signup", async (req: Request, res: Response) => {
       return;
     }
 
-    // Bind the new account to this device before any early return, so a
-    // pending or email-confirmation signup still counts as the device's one
-    // account. Best-effort — never fails the signup response.
-    if (result.user && deviceId) {
-      await bindDeviceToAccount(deviceId, result.user.id);
-    }
+// Bind the new account to this device before any early return, so a
+// pending or email-confirmation signup still counts as the device's one
+// account. Best-effort — never fails the signup response.
+if (result.user && deviceId) {
+  await bindDeviceToAccount(deviceId, result.user.id);
+}
 
-    // Force the live profile tier on every signup. The profiles.role column
-    // must accept ladder text (member/plus/pro/owner); a leftover user_role
-    // enum made these writes fail silently and left STUDENT/OWNER defaults
-    // that graded as owner. Non-owner emails always enter as PENDING members.
-    if (result.user) {
-      const { error: profileErr } = await updateProfileFields(
-        result.user.id,
-        ownerSignup
-          ? { access_status: "ACTIVE", role: "owner", plan: "pro", premium_status: true }
-          : {
-            access_status: "PENDING",
-            role: "member",
-            plan: "member",
-            premium_status: false,
-          },
-      );
-      if (profileErr) {
-        console.error("[auth] signup profile tier write failed:", profileErr.message);
-      }
-      // Start the timed access-bot clock (Firebase Functions + FCM).
-      if (!ownerSignup) {
-        await ensureAccessRequest(result.user.id);
-      }
-    }
-
-    if (result.needsEmailConfirmation || !result.user || !result.session) {
-      const body: SignupResponse = {
-        user: null,
-        accessToken: null,
-        message: "Check your email to confirm your account before logging in.",
-      };
-      res.status(202).json(body);
-      return;
-    }
-
-    // ── Account creation flow: new accounts start PENDING ──
-    // NO session cookies are issued; the client gets a signed status token
-    // and is sent to the waiting screen instead of being logged in. The bot
-    // auto-approves within ~5 minutes (200, not a hard deny).
-    const accessStatus = await readAccessStatus(result.user.id, result.user.email);
-    if (accessStatus !== "ACTIVE") {
-      if (accessStatus === "REJECTED") {
-        accessDenied(res, accessStatus, result.user.id);
-        return;
-      }
-      await ensureAccessRequest(result.user.id);
-      const body: SignupResponse & { code: string } = {
-        code: "PENDING_APPROVAL",
-        user: null,
-        accessToken: null,
-        message: PENDING_MESSAGE,
-        statusToken: createStatusToken(result.user.id),
-        accessStatus: "PENDING",
-      };
-      res.json(body);
-      return;
-    }
-
-    const user = await resolveSessionUser(result.user.id, result.user.email);
-    const extended = await buildExtendedUser(
-      user.id,
-      user.email,
-      user.role,
-      parsed.data.fullName ?? null,
-    );
-
-    setSessionCookie(res, result.session.access_token, result.session.expires_in);
-    if (result.session.refresh_token) setRefreshCookie(res, result.session.refresh_token);
-
-    const body: SignupResponse = { user: extended, accessToken: result.session.access_token };
-    res.json(body);
-  } catch (err) {
-    if (err instanceof AuthProviderError) {
-      const tooMany = err.code === "over_email_send_rate_limit" || err.status === 429;
-      res.status(err.status === 429 ? 429 : err.status || 400).json({
-        error: tooMany
-          ? "Too many signup attempts right now — please wait a minute and try again."
-          : err.message,
-        code: err.code ?? undefined,
-      });
-      return;
-    }
-    throw err;
+// Force the live profile tier on every signup. The profiles.role column
+// must accept ladder text (member/plus/pro/owner); a leftover user_role
+// enum made these writes fail silently and left STUDENT/OWNER defaults
+// that graded as owner. Non-owner emails always enter as PENDING members.
+if (result.user) {
+  const { error: profileErr } = await updateProfileFields(
+    result.user.id,
+    ownerSignup
+      ? { access_status: "ACTIVE", role: "owner", plan: "pro", premium_status: true }
+      : {
+        access_status: "PENDING",
+        role: "member",
+        plan: "member",
+        premium_status: false,
+      },
+  );
+  if (profileErr) {
+    console.error("[auth] signup profile tier write failed:", profileErr.message);
   }
+  // Start the timed access-bot clock (Firebase Functions + FCM).
+  if (!ownerSignup) {
+    await ensureAccessRequest(result.user.id);
+  }
+}
+
+if (result.needsEmailConfirmation || !result.user || !result.session) {
+  const body: SignupResponse = {
+    user: null,
+    accessToken: null,
+    message: "Check your email to confirm your account before logging in.",
+  };
+  res.status(202).json(body);
+  return;
+}
+
+// ── Account creation flow: new accounts start PENDING ──
+// NO session cookies are issued; the client gets a signed status token
+// and is sent to the waiting screen instead of being logged in. The bot
+// auto-approves within ~5 minutes (200, not a hard deny).
+const accessStatus = await readAccessStatus(result.user.id, result.user.email);
+if (accessStatus !== "ACTIVE") {
+  if (accessStatus === "REJECTED") {
+    accessDenied(res, accessStatus, result.user.id);
+    return;
+  }
+  await ensureAccessRequest(result.user.id);
+  const body: SignupResponse & { code: string } = {
+    code: "PENDING_APPROVAL",
+    user: null,
+    accessToken: null,
+    message: PENDING_MESSAGE,
+    statusToken: createStatusToken(result.user.id),
+    accessStatus: "PENDING",
+  };
+  res.json(body);
+  return;
+}
+
+const user = await resolveSessionUser(result.user.id, result.user.email);
+const extended = await buildExtendedUser(
+  user.id,
+  user.email,
+  user.role,
+  parsed.data.fullName ?? null,
+);
+
+setSessionCookie(res, result.session.access_token, result.session.expires_in);
+if (result.session.refresh_token) setRefreshCookie(res, result.session.refresh_token);
+
+const body: SignupResponse = { user: extended, accessToken: result.session.access_token };
+res.json(body);
+  } catch (err) {
+  if (err instanceof AuthProviderError) {
+    const tooMany = err.code === "over_email_send_rate_limit" || err.status === 429;
+    res.status(err.status === 429 ? 429 : err.status || 400).json({
+      error: tooMany
+        ? "Too many signup attempts right now — please wait a minute and try again."
+        : err.message,
+      code: err.code ?? undefined,
+    });
+    return;
+  }
+  throw err;
+}
 });
 
 /**
