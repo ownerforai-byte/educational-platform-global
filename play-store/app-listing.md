@@ -13,8 +13,9 @@ _(Count: 80. Adjust if your app name changes length.)_
 _Compliance note (2026-11-11): rejected under **Misleading Claims**. The
 disclaimer now opens and closes the description and the official `.gov.np`
 sources sit directly under the feature list — see /official-sources in the app.
-Use **https://neb.gov.np/** (no `www`); Play’s link checker hits HTTP 500 on
-https://www.neb.gov.np/._
+Use **https://neb.gov.np/** (no `www`). The `www` host is DEAD — it serves an
+invalid TLS certificate (Play's link checker got HTTP 500 on it) and was
+removed from this listing by the 2026-11-18 source-link audit._
 
 ```text
 DISCLAIMER: Verner is an independent educational platform and is NOT affiliated with, endorsed by, authorized by, or connected to the National Examination Board (NEB), the Curriculum Development Centre (CDC), or any government entity of Nepal.
