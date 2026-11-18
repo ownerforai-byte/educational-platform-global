@@ -32,6 +32,8 @@ vi.mock("next/navigation", () => ({
 vi.mock("sonner", () => ({ toast: (...args: unknown[]) => mocks.toast(...args) }));
 vi.mock("@/lib/notifications", () => ({
   pushNotification: (...args: unknown[]) => mocks.pushNotification(...args),
+  inferCategoryFromKind: (kind?: string) =>
+    kind && kind.startsWith("account_") ? "account" : "system",
 }));
 vi.mock("@/providers/auth-provider", () => ({
   useAuth: () => ({ user: { id: "u1" }, isLoading: false, refresh: mocks.refresh, logoutUser: vi.fn() }),

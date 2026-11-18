@@ -3,7 +3,11 @@
 import { useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { pushNotification } from "@/lib/notifications";
+import {
+  inferCategoryFromKind,
+  pushNotification,
+  type NotificationCategory,
+} from "@/lib/notifications";
 import {
   APPROVED_ROUTE,
   readStatusToken,
@@ -133,14 +137,24 @@ export function FcmNotificationListener() {
             });
           }
 
+          const category: NotificationCategory =
+            data.category &&
+            (["curriculum", "ai", "account", "system"] as const).includes(
+              data.category as NotificationCategory,
+            )
+              ? (data.category as NotificationCategory)
+              : inferCategoryFromKind(data.kind);
+
+          const actionLabel = data.actionLabel || (isApproval ? "Sign In" : "Open");
+
           step(() => {
             pushNotification({
               id,
-              category: "account",
+              category,
               title,
               body,
               href: deepLink,
-              actionLabel: "Open",
+              actionLabel,
             });
           });
 

@@ -18,6 +18,55 @@
 
 export type NotificationCategory = "curriculum" | "ai" | "account" | "system";
 
+export type NotificationKind =
+  // Account & Auth
+  | "account_approved"
+  | "account_created"
+  | "account_rejected"
+  | "sparks_refilled"
+  | "sparks_low"
+  | "device_limit_warning"
+  | "new_device_login"
+  // Curriculum & Study
+  | "streak_milestone"
+  | "streak_freeze_used"
+  | "study_reminder"
+  | "quiz_completed"
+  | "new_content"
+  // AI & Veer Tutor
+  | "ai_insight_ready"
+  | "ai_deep_dive_ready"
+  // System & Platform
+  | "system_notice"
+  | "system_maintenance";
+
+/**
+ * Infer the matching category for any notification kind.
+ */
+export function inferCategoryFromKind(kind?: string): NotificationCategory {
+  if (!kind) return "system";
+  if (
+    kind.startsWith("account_") ||
+    kind.startsWith("sparks_") ||
+    kind.startsWith("device_") ||
+    kind.startsWith("new_device_")
+  ) {
+    return "account";
+  }
+  if (
+    kind.startsWith("streak_") ||
+    kind.startsWith("study_") ||
+    kind.startsWith("quiz_") ||
+    kind.startsWith("new_content")
+  ) {
+    return "curriculum";
+  }
+  if (kind.startsWith("ai_")) {
+    return "ai";
+  }
+  return "system";
+}
+
 export interface NotificationItem {
   /** Stable id derived from the real event, so a read never comes back. */
   id: string;
