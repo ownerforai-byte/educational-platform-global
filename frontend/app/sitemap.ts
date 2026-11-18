@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { PLATFORM_SITE_URL } from "@/lib/ai/prompts";
 import { SYLLABUS, getUnitTopicEntries } from "@/lib/core/syllabus";
+import { guides } from "@/lib/platform-content";
 
 /**
  * /sitemap.xml — the machine-readable map of everything a crawler should
@@ -77,5 +78,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  return [...hubs, ...corpus];
+  // Every public journal article, so answer engines can discover the full
+  // citable corpus from sitemap.xml — not just the /blog index.
+  const articles: MetadataRoute.Sitemap = guides.map((guide) => ({
+    url: `${BASE}/blog/${guide.slug}`,
+    lastModified: new Date(guide.updated),
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
+  return [...hubs, ...articles, ...corpus];
 }

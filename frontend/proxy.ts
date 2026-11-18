@@ -1,7 +1,7 @@
 import { randomBytes } from "node:crypto";
 import { type NextRequest, NextResponse } from "next/server";
 import { PUBLIC_SUPABASE_URL } from "@/lib/supabase/public-config";
-import { isBlockedAutomatedClient } from "@rn/shared/utils";
+import { isAiSearchCrawler, isBlockedAutomatedClient } from "@rn/shared/utils";
 
 // Depends on @rn/shared (packages/shared); keep a frontend touch when shared or root .well-known changes so Vercel builds run.
 /**
@@ -216,14 +216,58 @@ function isSpeculativeRequest(request: NextRequest) {
   return purpose === "prefetch";
 }
 
+/**
+ * Routes an AI search / indexing crawler is allowed to read.
+ *
+ * These are the ungated, public, citable surfaces — the marketing/knowledge
+ * pages under `app/` (outside the `(app)` shell) plus the two public hub roots
+ * the approval wall leaves open (`/home`, `/plans`). Everything else — the whole
+ * `(app)` study library, `/api/*`, and any other dynamic route behind the login
+ * wall — is denied to crawlers, so "AI can read it" never becomes "AI can read
+ * the private app".
+ *
+ * Deliberately allowlist-based (not a blocklist): a new app route added later is
+ * private-by-default, so a crawler can never reach a page that was not
+ * explicitly opened here.
+ */
+const CITABLE_PUBLIC_PATHS = [
+  "/",
+  "/about",
+  "/blog",
+  "/contact",
+  "/features",
+  "/help",
+  "/how-it-works",
+  "/legal",
+  "/neb-updates",
+  "/official-sources",
+  "/parents",
+  "/school",
+  "/teachers",
+  "/what-it-has",
+  "/sitemap-page",
+  "/sitemap.xml",
+  "/robots.txt",
+  "/llms.txt",
+  "/home",
+  "/plans",
+] as const;
+
+function isCitablePublicPath(pathname: string): boolean {
+  // Strip a trailing slash so "/blog/" matches "/blog".
+  const path = pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
+  return CITABLE_PUBLIC_PATHS.some((p) => p === path || path.startsWith(`${p}/`));
+}
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const userAgent = request.headers.get("user-agent");
 
   if (pathname.startsWith("/.well-known/")) {
     return NextResponse.next();
   }
 
-  if (isBlockedAutomatedClient(request.headers.get("user-agent"))) {
+  if (isBlockedAutomatedClient(userAgent)) {
     const denied = NextResponse.json(
       { error: "Automated client access denied" },
       { status: 403 },
@@ -232,6 +276,30 @@ export function proxy(request: NextRequest) {
     denied.headers.set("x-robots-tag", "noindex, nofollow, noarchive");
     setSecurityHeaders(denied, "default-src 'none'; frame-ancestors 'none';");
     return denied;
+  }
+
+  // AI search / indexing crawlers (GPTBot, ClaudeBot, PerplexityBot, …) are
+  // WELCOME on the public, ungated pages so answer engines can read and cite the
+  // platform. Every private surface — the (app) shell, /api/*, /data/* and the
+  // approval-walled library — stays closed to them. Coding-agent user-agents
+  // were already refused above; this runs before the asset bypass so a crawler
+  // cannot slip through to /data/* on the "static asset" path.
+  if (isAiSearchCrawler(userAgent)) {
+    if (!isCitablePublicPath(pathname)) {
+      const denied = NextResponse.json(
+        { error: "Automated client access denied" },
+        { status: 403 },
+      );
+      denied.headers.set("cache-control", "private, no-store");
+      denied.headers.set("x-robots-tag", "noindex, nofollow, noarchive");
+      setSecurityHeaders(denied, "default-src 'none'; frame-ancestors 'none';");
+      return denied;
+    }
+    // Static, non-user-specific page: no nonce needed, no per-IP page budget.
+    const crawlerPolicy = buildContentSecurityPolicy(null);
+    const crawlerResponse = NextResponse.next();
+    setSecurityHeaders(crawlerResponse, crawlerPolicy);
+    return crawlerResponse;
   }
 
   if (

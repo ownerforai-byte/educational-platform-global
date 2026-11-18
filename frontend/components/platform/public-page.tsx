@@ -2,6 +2,10 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ArrowRight, BookOpen } from "lucide-react";
 import { Footer } from "@/components/layout/footer";
+import { CANONICAL_SITE_URL } from "@/lib/site-url";
+import { JsonLd } from "./json-ld";
+
+const PUBLIC_SITE = CANONICAL_SITE_URL.replace(/\/+$/, "");
 
 export const platformLinks = [
   ["About", "/about"], ["What it has", "/what-it-has"], ["Blog", "/blog"], ["NEB Updates", "/neb-updates"],
@@ -31,7 +35,47 @@ export function Panel({ title, children, eyebrow }: {
 export function PublicPage({ current, eyebrow, title, intro, children }: {
   current: string; eyebrow: string; title: string; intro: string; children: ReactNode;
 }) {
+  const currentLabel = platformLinks.find(([, href]) => href === current)?.[0] ?? "Information";
+  const pageUrl = `${PUBLIC_SITE}${current}`;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": `${PUBLIC_SITE}/#organization`,
+        name: "Ravikisan's Platform",
+        url: PUBLIC_SITE,
+        description: "An independent, syllabus-first study companion for NEB (+2) Class 11 and 12 students in Nepal.",
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${PUBLIC_SITE}/#website`,
+        url: PUBLIC_SITE,
+        name: "Ravikisan's Platform",
+        inLanguage: "en",
+        publisher: { "@id": `${PUBLIC_SITE}/#organization` },
+      },
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: title,
+        description: intro,
+        isPartOf: { "@id": `${PUBLIC_SITE}/#website` },
+        breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: `${PUBLIC_SITE}/` },
+          { "@type": "ListItem", position: 2, name: currentLabel, item: pageUrl },
+        ],
+      },
+    ],
+  };
   return <div className="relative flex min-h-screen flex-col bg-background text-foreground">
+    <JsonLd data={structuredData} />
     <a href="#platform-content" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-primary focus:p-3 focus:text-primary-foreground">Skip to content</a>
     <header className="border-b border-border bg-background">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-4 py-5 sm:px-6">

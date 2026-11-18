@@ -1,7 +1,7 @@
 import type { RequestHandler } from "express";
 import helmet from "helmet";
 import { isProductionEnv } from "../config/env";
-import { isBlockedAutomatedClient } from "../utils/botPolicy";
+import { isAiSearchCrawler, isBlockedAutomatedClient } from "../utils/botPolicy";
 
 /**
  * Security response headers — pre-deploy checklist (2026-09-25).
@@ -94,7 +94,7 @@ export const securityHeaders: RequestHandler = (req, res, next) => {
   const handler = isProductionEnv() ? productionHeaders : developmentHeaders;
   handler(req, res, (error) => {
     if (error) return next(error);
-    if (isBlockedAutomatedClient(req.get("user-agent"))) {
+    if (isBlockedAutomatedClient(req.get("user-agent")) || isAiSearchCrawler(req.get("user-agent"))) {
       res.set("Cache-Control", "private, no-store");
       res.set("X-Robots-Tag", "noindex, nofollow, noarchive");
       res.status(403).json({ error: "Automated client access denied" });

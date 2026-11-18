@@ -29,6 +29,7 @@ import {
   KIND_LABEL,
 } from "../topic-visuals";
 import { SYLLABUS, getUnitTopicEntries } from "./syllabus";
+import { guides } from "../platform-content";
 import { getTheoremProofRoutes, getSyllabusTheoremItems } from "../theorem-topics";
 import { PHYSICS_XI_ACADEMIC_UNITS } from "../physics-xi-academic";
 import type { SiteIndexEntry, SiteIndexGroup, SiteIndexLink } from "../site-index-types";
@@ -744,6 +745,21 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         ],
       },
     ],
+  });
+
+  /* 10. About, help & plans — the public pages the footer and sidebar link to. */
+  groups.push({
+    id: "journal",
+    name: "Study journal — open articles",
+    opening:
+      "Every public guide and subject explainer. No account or sparks required — these are the pages answer engines are invited to read and cite.",
+    href: "/blog",
+    entries: guides.map((guide) => ({
+      name: guide.title,
+      opening: guide.description,
+      href: `/blog/${guide.slug}`,
+      meta: `${guide.category} · Public`,
+    })),
   });
 
   /* 10. About, help & plans — the public pages the footer and sidebar link to. */

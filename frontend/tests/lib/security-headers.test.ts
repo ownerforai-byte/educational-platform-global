@@ -76,25 +76,36 @@ describe("proxy security headers", () => {
 });
 
 describe("automated client access", () => {
-  it.each([
+  const CODING_AGENTS = [
     "OpenCode/1.0",
     "codex-cli/1.0",
     "OpenAI/1.0",
+    "Claude-Code/2.0",
+    "ClaudeCode/2.0",
+    "Claude/2.0",
+  ];
+  const AI_SEARCH_CRAWLERS = [
     "Mozilla/5.0 (compatible; GPTBot/1.2)",
     "ChatGPT-User/1.0",
     "OAI-SearchBot/1.0",
     "ClaudeBot/1.0",
-    "claude-code/2.0",
-    "ClaudeCode/2.0",
     "Claude-User/1.0",
     "Claude-SearchBot/1.0",
     "anthropic-ai/1.0",
-  ])("rejects %s on pages, APIs, speculative requests and assets", async (userAgent) => {
-    for (const path of [
-      "/home", "/api/ai", "/api/auth/me", "/notes?_rsc=abc",
-      "/_next/static/chunk.js", "/_next/image?url=x", "/data/private.json",
-      "/favicon.ico", "/icon-192.png", "/sw.js", "/all_elements.json",
-    ]) {
+    "PerplexityBot/1.0",
+    "Google-Extended",
+  ];
+  const PUBLIC_PATHS = [
+    "/", "/about", "/blog", "/blog/newtons-laws-of-motion-class-11",
+    "/features", "/help", "/plans", "/home", "/llms.txt", "/sitemap.xml", "/robots.txt",
+  ];
+  const PRIVATE_PATHS = [
+    "/notes", "/dashboard", "/lab", "/chat", "/profile", "/owner",
+    "/api/ai", "/api/auth/me", "/data/private.json",
+  ];
+
+  it.each(CODING_AGENTS)("coding agent %s is rejected on every surface", async (userAgent) => {
+    for (const path of [...PUBLIC_PATHS, ...PRIVATE_PATHS, "/favicon.ico", "/sw.js"]) {
       const response = proxy(new NextRequest(`${APEX}${path}`, {
         headers: { "user-agent": userAgent, authorization: "Bearer valid-session" },
       }));
@@ -102,6 +113,22 @@ describe("automated client access", () => {
       expect(response.headers.get("cache-control")).toContain("no-store");
       expect(response.headers.get("x-middleware-next")).toBeNull();
       expect(await response.json()).toEqual({ error: "Automated client access denied" });
+    }
+  });
+
+  it.each(AI_SEARCH_CRAWLERS)("AI crawler %s reads public pages only", async (userAgent) => {
+    for (const path of PUBLIC_PATHS) {
+      const response = proxy(new NextRequest(`${APEX}${path}`, {
+        headers: { "user-agent": userAgent },
+      }));
+      expect(response.status).toBe(200);
+    }
+    for (const path of PRIVATE_PATHS) {
+      const response = proxy(new NextRequest(`${APEX}${path}`, {
+        headers: { "user-agent": userAgent },
+      }));
+      expect(response.status).toBe(403);
+      expect(response.headers.get("x-robots-tag")).toContain("noindex");
     }
   });
 
@@ -114,7 +141,7 @@ describe("automated client access", () => {
     }
   });
 
-  it("rejects named clients regardless of HTTP method", () => {
+  it("rejects named coding agents regardless of HTTP method", () => {
     for (const method of ["GET", "HEAD", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]) {
       expect(proxy(new NextRequest(`${APEX}/api/ai`, {
         method, headers: { "user-agent": "cOdEx/1.0" },
@@ -122,12 +149,20 @@ describe("automated client access", () => {
     }
   });
 
-  it("covers public assets in the matcher and publishes AI crawler disallows", () => {
+  it("covers public assets in the matcher and publishes the split crawler policy", () => {
     expect(config.matcher).toBe("/:path*");
     const rules = robots().rules;
-    expect(Array.isArray(rules) && rules[0]).toMatchObject({
-      userAgent: expect.arrayContaining(["OpenCode", "Codex", "ClaudeBot", "GPTBot"]),
+    expect(Array.isArray(rules)).toBe(true);
+    const list = rules as Array<Record<string, unknown>>;
+    // Rule 0: coding agents are refused everywhere.
+    expect(list[0]).toMatchObject({
+      userAgent: expect.arrayContaining(["OpenCode", "Codex", "Claude", "Anthropic"]),
       disallow: "/",
+    });
+    // Rule 1: AI search crawlers are welcomed on public pages.
+    expect(list[1]).toMatchObject({
+      userAgent: expect.arrayContaining(["GPTBot", "ClaudeBot", "OAI-SearchBot"]),
+      allow: "/",
     });
   });
 });
