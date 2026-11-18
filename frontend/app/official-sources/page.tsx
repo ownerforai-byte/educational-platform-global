@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { PublicPage, Panel, Action } from "@/components/platform/public-page";
-import {
-  INDEPENDENCE_DISCLAIMER,
-} from "@/components/platform/independence-disclaimer";
+import { INDEPENDENCE_DISCLAIMER } from "@/components/platform/independence-disclaimer";
+import { OFFICIAL_GOVERNMENT_SOURCES } from "@/lib/official-government-sources";
 
 export const metadata: Metadata = {
   title: "Official Sources & References | Verner",
@@ -25,41 +24,12 @@ export const metadata: Metadata = {
  *  - no invented URLs — each domain below is the authority's own home page;
  *    deeper pages (syllabus PDFs) are reached from there rather than guessed.
  */
-const SOURCES: Array<{
-  name: string;
-  abbr: string;
-  url: string;
-  publishes: string;
-}> = [
-  {
-    name: "Curriculum Development Centre (CDC)",
-    abbr: "CDC",
-    url: "https://moecdc.gov.np/",
-    publishes:
-      "The national curriculum framework and the Class 11 & 12 subject curricula that the syllabus on this platform is arranged around.",
-  },
-  {
-    name: "National Examination Board (NEB)",
-    abbr: "NEB",
-    url: "https://neb.gov.np/",
-    publishes:
-      "Exam notices, examination routines, model questions, results and administrative announcements for the Grade 11 and 12 examinations.",
-  },
-  {
-    name: "Ministry of Education, Science and Technology (MoEST)",
-    abbr: "MoEST",
-    url: "https://moest.gov.np/",
-    publishes:
-      "The education policy and the ministry-level notices that the CDC curriculum and NEB exams operate under.",
-  },
-];
-
 function ExternalSource({
   name,
   abbr,
   url,
   publishes,
-}: (typeof SOURCES)[number]) {
+}: (typeof OFFICIAL_GOVERNMENT_SOURCES)[number]) {
   return (
     <div className="rounded-2xl border border-border bg-card p-5">
       <div className="flex items-start gap-3">
@@ -111,7 +81,7 @@ export default function OfficialSourcesPage() {
           especially before quoting a date or a rule.
         </p>
         <div className="grid gap-3">
-          {SOURCES.map((source) => (
+          {OFFICIAL_GOVERNMENT_SOURCES.map((source) => (
             <ExternalSource key={source.url} {...source} />
           ))}
         </div>

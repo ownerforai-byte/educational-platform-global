@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { INDEPENDENCE_DISCLAIMER } from "@/components/platform/independence-disclaimer";
+import { OFFICIAL_GOVERNMENT_SOURCES } from "@/lib/official-government-sources";
 import { LegalDoc } from "../legal-doc";
 
 /** PLAY STORE TEMP (2026-11-16): Privacy shows full infra detail without LegalBlurGate.
@@ -32,6 +34,29 @@ export default function PrivacyPolicy() {
           <li>Country: Nepal</li>
           <li>Support email: <a className="font-medium" href="mailto:sahrocky81@gmail.com">sahrocky81@gmail.com</a></li>
         </ul>
+        <h3>Independence disclaimer</h3>
+        <p>
+          <strong>Disclaimer:</strong> {INDEPENDENCE_DISCLAIMER}
+        </p>
+        <p>
+          The curriculum and examination standards the content is aligned to are published by
+          Government of Nepal bodies —{" "}
+          {OFFICIAL_GOVERNMENT_SOURCES.map((source, index) => (
+            <span key={source.url}>
+              {index > 0 ? (index < OFFICIAL_GOVERNMENT_SOURCES.length - 1 ? ", " : ", and ") : null}
+              <a className="font-medium" href={source.url} target="_blank" rel="noopener noreferrer">
+                {source.abbr}
+              </a>
+              {" "}
+              (<span className="break-all">{source.url}</span>)
+            </span>
+          ))}
+          . See also{" "}
+          <Link className="font-medium" href="/official-sources">
+            Official sources &amp; references
+          </Link>{" "}
+          inside the App.
+        </p>
       </section>
 
       <section>

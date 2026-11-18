@@ -24,11 +24,15 @@ providers, cookies, credit/premium system) so it matches reality.
 2. **Verify the filled-in values** (developer name, address, jurisdiction,
    support site, refund window) in both the `.md` files and the `host/*.html`
    files are correct.
-3. **Host the 4 legal pages** from `host/` at stable public URLs, e.g.:
-   - `https://harindrasah.com.np/privacy-policy`
-   - `https://harindrasah.com.np/terms`
-   - `https://harindrasah.com.np/cookie-policy`
-   - `https://harindrasah.com.np/purchase-refund-policy`
+3. **Host the 4 legal pages** at stable public URLs (canonical in-app routes), e.g.:
+   - `https://harindrasah.com.np/legal/privacy`
+   - `https://harindrasah.com.np/legal/terms`
+   - `https://harindrasah.com.np/legal/cookies`
+   - `https://harindrasah.com.np/legal/purchases`
+
+   The `host/*.html` copies mirror the same policy text for static drop-in hosting
+   if needed. Government disclaimer links use **apex** `https://neb.gov.np/` —
+   not `www.neb.gov.np` (invalid TLS / Play checker failure).
 
    The HTML files are self-contained (inline CSS, no external deps) — drop
    them into your Next.js frontend as static pages, or host on any static

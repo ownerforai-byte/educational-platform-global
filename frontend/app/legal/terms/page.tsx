@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { INDEPENDENCE_DISCLAIMER } from "@/components/platform/independence-disclaimer";
 import { LegalDoc } from "../legal-doc";
 import { LegalBlurGate } from "../legal-blur-gate";
 
@@ -90,6 +91,13 @@ export default function TermsOfService() {
 
       <section>
         <h2>8. Disclaimers</h2>
+        <p>
+          <strong>Independence:</strong> {INDEPENDENCE_DISCLAIMER}{" "}
+          <Link className="font-medium" href="/official-sources">
+            Official government sources
+          </Link>{" "}
+          are listed on the App for syllabus and examination notices.
+        </p>
         <p>
           The Service is provided <strong>“as is” and “as available”</strong>{" "}
           without warranties, including fitness for a particular exam. We do
