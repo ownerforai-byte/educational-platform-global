@@ -79,7 +79,13 @@ describe("CommunityBoard composer", () => {
     render(<CommunityBoard view="feed" />);
 
     expect(await screen.findByRole("heading", { name: "Community" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /new post/i })).toHaveAttribute("href", "/ai/community/new");
+    // Every New-post affordance (header CTA + empty-state CTA) goes to the
+    // dedicated composer route.
+    const newPostLinks = screen.getAllByRole("link", { name: /new post/i });
+    expect(newPostLinks.length).toBeGreaterThan(0);
+    for (const link of newPostLinks) {
+      expect(link).toHaveAttribute("href", "/ai/community/new");
+    }
     expect(screen.getByTestId("community-chat-link")).toHaveAttribute("href", "/ai/community/chat");
     expect(screen.getByLabelText("Search posts")).toBeInTheDocument();
     expect(screen.queryByLabelText("Title")).not.toBeInTheDocument();
