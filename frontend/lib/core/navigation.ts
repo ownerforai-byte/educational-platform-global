@@ -69,6 +69,7 @@ import {
   Receipt,
   Repeat,
   Shapes,
+  Grid2x2,
   LayoutDashboard,
   Settings,
   Rocket,
@@ -297,6 +298,10 @@ const toolsItems: NavItem[] = [
   { href: "/ai/search",    label: "Veer Curriculum Search",  icon: Search,     minLevel: "plus", hideWhenLocked: true },
   { href: "/ai/workspace", label: "AI Workspace",            icon: Bot,        minLevel: "plus", hideWhenLocked: true },
   { href: "/ai/subjects",  label: "Subject Classrooms",      icon: BookOpen,   minLevel: "plus", hideWhenLocked: true },
+  // Owner-only for now (owner 2026-11-18: the four-model comparison desk).
+  // `ownerOnly` keeps it out of every non-owner menu; the page and the API
+  // enforce the rung themselves.
+  { href: "/ai/quad",      label: "Model Quad",              icon: Grid2x2,    minLevel: "owner", ownerOnly: true, hideWhenLocked: true },
   { href: "/ai/history",   label: "AI History",              icon: History,    minLevel: "plus", hideWhenLocked: true },
   { href: "/ai-quiz",      label: "Adaptive Veer Quiz",      icon: HelpCircle, minLevel: "plus", hideFromSidebar: true, hideWhenLocked: true },
   { href: "/ai-quiz/history", label: "Quiz History",         icon: History,    minLevel: "plus", hideWhenLocked: true },

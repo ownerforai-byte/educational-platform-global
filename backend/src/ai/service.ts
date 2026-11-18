@@ -58,6 +58,10 @@ export const REPLY_TEMPERATURE = Number(process.env.AI_TEMPERATURE) || 0.7;
 export type SupportedProvider =
   | "internal"
   | "agnes"
+  // Second Agnes gateway model (Model Quad's "two with agnes" lane).
+  | "agnes-2"
+  // Second NVIDIA NIM model on the same key (Model Quad's fourth square).
+  | "nvidia-2"
   | "groq"
   | "cloudflare"
   | "cerebras"
@@ -513,7 +517,7 @@ class InternalProvider implements AIProvider {
 }
 
 class AgnesProvider implements AIProvider {
-  name = "agnes";
+  name: string;
   // Official Agnes AI gateway (OpenAI-compatible). api.agnes.ai is a different,
   // dead product — do not use it.
   private apiUrl = "https://apihub.agnes-ai.com/v1/chat/completions";
@@ -531,13 +535,16 @@ class AgnesProvider implements AIProvider {
     return this.lastFinishReason;
   }
 
-  constructor(apiKey: string) {
+  constructor(apiKey: string, opts: { name?: string; model?: string } = {}) {
     this.apiKey = apiKey;
+    // `opts` registers a SECOND Agnes lane on the same key under a different
+    // gateway model (owner 2026-11-18: the Model Quad runs "two with agnes").
+    this.name = opts.name ?? "agnes";
     // Env-overridable in case the endpoint or model slug changes. The default
     // MUST be apihub.agnes-ai.com: api.agnes.ai is dead DNS (verified
     // 2026-09-26) and the comment above explicitly warns against it.
     this.apiUrl = process.env.AGNES_API_URL || this.apiUrl;
-    this.model = process.env.AGNES_MODEL || this.model;
+    this.model = opts.model ?? (process.env.AGNES_MODEL || this.model);
     // Fail fast so the chain can reach internal when Agnes is down.
     //
     // 2026-09-30 (owner: "answers must cover all aspects, i have given it time,
@@ -823,7 +830,7 @@ function freeLlmMaxOutputTokens(): number {
  * keys beyond that.
  */
 class OpenAICompatProvider implements AIProvider {
-  readonly name: FreeLlmProviderName;
+  readonly name: string;
   private apiUrl: string;
   private model: string;
   private apiKey: string;
@@ -835,12 +842,20 @@ class OpenAICompatProvider implements AIProvider {
     return this.lastFinishReason;
   }
 
-  constructor(spec: FreeLlmProviderSpec, apiKey: string) {
-    this.name = spec.name;
+  constructor(
+    spec: FreeLlmProviderSpec,
+    apiKey: string,
+    opts: { name?: string; model?: string } = {},
+  ) {
+    // `opts` registers a SECOND lane on the same provider/key under a
+    // different model (owner 2026-11-18: the Model Quad runs "2 free models
+    // from nvidia … wire the same nvidia key for those 2").
+    this.name = opts.name ?? spec.name;
     this.label = spec.label;
     this.apiKey = apiKey;
     this.apiUrl = chatCompletionsUrl(spec);
-    this.model = (process.env[spec.modelEnv] || spec.defaultModel).trim();
+    this.model =
+      opts.model ?? (process.env[spec.modelEnv] || spec.defaultModel).trim();
     this.timeoutMs =
       Number(process.env.FREE_LLM_TIMEOUT_MS || process.env[spec.timeoutEnv]) || 120000;
   }
@@ -1444,7 +1459,24 @@ export class AIService {
       process.env.AI_DEFAULT_PROVIDER ?? process.env.AI_PROVIDER
     )?.toLowerCase();
 
-    if (agnesKey) this.providers.set("agnes", new AgnesProvider(agnesKey));
+    if (agnesKey) {
+      this.providers.set("agnes", new AgnesProvider(agnesKey));
+      // The Model Quad's SECOND Agnes lane (owner 2026-11-18: "two with
+      // agnes"): same key, a second gateway model (AGNES_MODEL_2, default
+      // agnes-2.5-flash). Live-verified 2026-11-18 against the gateway: the
+      // pro slugs (agnes-2.5-pro / -beta / -alpha) return 403
+      // "insufficient_user_quota" on a zero-balance key — 2.5 Flash is the
+      // second model this key actually answers with. Registered OUTSIDE
+      // AI_CHAIN_ORDER, so it answers ONLY when a route names it explicitly
+      // (POST /api/ai/quad) — never an ordinary tutor chat turn.
+      this.providers.set(
+        "agnes-2",
+        new AgnesProvider(agnesKey, {
+          name: "agnes-2",
+          model: process.env.AGNES_MODEL_2 || "agnes-2.5-flash",
+        }),
+      );
+    }
     if (groqKey) this.providers.set("groq", new GroqProvider(groqKey));
     if (cerebrasKey) this.providers.set("cerebras", new CerebrasProvider(cerebrasKey));
     if (geminiKey) this.providers.set("gemini", new GeminiProvider(geminiKey));
@@ -1473,6 +1505,23 @@ export class AIService {
     // at all (free anonymous tiers); FREE_LLM_DISABLED=1 keeps the pool out.
     for (const { spec, apiKey } of configuredFreeLlmProviders()) {
       this.providers.set(spec.name, new OpenAICompatProvider(spec, apiKey));
+      // The Model Quad's SECOND NVIDIA lane (owner 2026-11-18: "keep 2 free
+      // models from nvidia and call both from same key — wire it to 2
+      // place"): the SAME key on a second free NIM model (NVIDIA_MODEL_2,
+      // default mistralai/mistral-large-4-1t-a52b — live-verified 2026-11-18
+      // on the owner's key: plain `content`, HTTP 200; the nemotron-3.5-*
+      // reasoning models return null content and are unusable here).
+      // Quad-only: registered outside AI_CHAIN_ORDER, so it answers ONLY
+      // when a route names it explicitly (POST /api/ai/quad).
+      if (spec.name === "nvidia") {
+        this.providers.set(
+          "nvidia-2",
+          new OpenAICompatProvider(spec, apiKey, {
+            name: "nvidia-2",
+            model: process.env.NVIDIA_MODEL_2 || "mistralai/mistral-large-4-1t-a52b",
+          }),
+        );
+      }
     }
 
     if (defaultProvider && this.providers.has(defaultProvider)) {

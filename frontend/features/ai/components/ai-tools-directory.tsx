@@ -18,6 +18,7 @@ import {
   ChevronRight,
   Dna,
   FlaskConical,
+  Grid2x2,
   History,
   Languages,
   Lightbulb,
@@ -221,6 +222,17 @@ const CORE_TOOLS: Tool[] = [
     minLevel: "owner",
     icon: Shapes,
     iconBg: "bg-pink-100 text-pink-600 dark:bg-pink-900/30 dark:text-pink-400",
+  },
+  {
+    href: "/ai/quad",
+    title: "Model Quad",
+    category: "Study Tools",
+    description:
+      "One prompt, four AI models answering in four squares — owner depth, one history per subject.",
+    minLevel: "owner",
+    icon: Grid2x2,
+    iconBg: "bg-amber-100 text-amber-600 dark:bg-amber-900/30 dark:text-amber-400",
+    badge: "New",
   },
 ];
 

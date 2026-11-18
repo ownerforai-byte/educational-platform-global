@@ -387,6 +387,45 @@ export async function enhancePrompt(prompt: string): Promise<{ prompt: string }>
   });
 }
 
+/**
+ * One model square of the owner's four-model comparison desk.
+ * `configured: false` means no key backs that lane on this deployment.
+ */
+export interface QuadLaneReply {
+  name: string;
+  label: string;
+  model: string;
+  configured: boolean;
+  ok: boolean;
+  answer: string;
+  error?: string;
+  ms: number;
+}
+
+export interface QuadReplyResponse {
+  prompt: string;
+  session: string;
+  subject: string;
+  replies: QuadLaneReply[];
+}
+
+/**
+ * Owner-only four-model desk: one prompt answered by four distinct models in
+ * parallel (`POST /api/ai/quad`, gated by `requireOwnerEmail`). The lanes are
+ * resolved server-side, so the reply labels are truthful by construction.
+ */
+export async function quadReply(input: {
+  prompt: string;
+  subject?: string;
+  session?: string;
+  messages?: Array<{ role: "user" | "assistant" | "system"; content: string }>;
+}): Promise<QuadReplyResponse> {
+  return apiFetch<QuadReplyResponse>("/api/ai/quad", {
+    method: "POST",
+    body: JSON.stringify(input),
+  });
+}
+
 export interface ChatHistoryMessage {
   id?: string;
   role: "user" | "assistant";

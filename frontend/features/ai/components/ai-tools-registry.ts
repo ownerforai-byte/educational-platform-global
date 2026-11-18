@@ -4,6 +4,7 @@ import {
   Brain,
   Calculator,
   Compass,
+  Grid2x2,
   History,
   LayoutGrid,
   MessageCircle,
@@ -27,6 +28,12 @@ export interface AiTool {
   group: AiToolGroup;
   /** Accent for the icon chip. */
   accent: string;
+  /**
+   * Owner-only surface: hidden from every rail and deck until the session
+   * resolves to an owner account (`AiToolGate`). The page and the API enforce
+   * access themselves — this flag only keeps the menus honest.
+   */
+  ownerOnly?: boolean;
 }
 
 export type AiToolGroup = "Study" | "Solve" | "Create" | "Review";
@@ -81,6 +88,15 @@ export const AI_TOOLS: AiTool[] = [
     icon: Compass,
     group: "Solve",
     accent: "border-teal-500/25 bg-teal-500/10 text-teal-600 dark:text-teal-400",
+  },
+  {
+    href: "/ai/quad",
+    label: "Model Quad",
+    blurb: "One prompt answered by four models in four squares — owner depth, per-subject history.",
+    icon: Grid2x2,
+    group: "Solve",
+    accent: "border-amber-500/25 bg-amber-500/10 text-amber-600 dark:text-amber-400",
+    ownerOnly: true,
   },
   {
     href: "/search",

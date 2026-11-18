@@ -14,6 +14,7 @@ import imageHistoryRouter from "./image-history.controller.js";
 import imageSearchRouter from "./image-search.controller.js";
 import mathRouter from "./math.controller.js";
 import platformGuideRouter from "./platform-guide.controller.js";
+import quadRouter from "./quad.controller.js";
 import quizHistoryRouter from "./quiz-history.controller.js";
 
 const router = Router();
@@ -33,6 +34,9 @@ router.use("/solve-math", mathRouter);
 router.use("/deep-dive", deepDiveRouter);
 router.use("/platform-guide", platformGuideRouter);
 router.use("/curate-notes", curateNotesRouter);
+// Owner-only four-model comparison desk — mounted before the default chat
+// router so "/quad" cannot fall through to the chat POST.
+router.use("/quad", quadRouter);
 router.use("/", chatRouter);
 
 export { quizHistoryRouter };

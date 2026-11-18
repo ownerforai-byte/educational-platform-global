@@ -41,6 +41,9 @@ const NOT_INDEXED = [
   "/owner/users",
   "/controller",
   "/mind-studio",
+  // Owner-only for now (2026-11-18) — the four-model comparison desk under
+  // AI Tools, reachable from the gated directory card and the owner menu.
+  "/ai/quad",
   // Search is a front door, not an index target — site-index.ts documents
   // why the Ctrl-K bar, not a card, is where the library is searched.
   "/search",

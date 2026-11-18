@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import {
   ArrowLeft,
   ChevronDown,
@@ -8,6 +9,7 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { AI_TOOLS, AI_TOOL_GROUPS } from "./ai-tools-registry";
+import { AiToolGate } from "./ai-tool-gate";
 
 /**
  * The console frame every Veer tool shares.
@@ -111,8 +113,8 @@ export function AiToolShell({
                     {AI_TOOLS.filter((tool) => tool.group === group).map((tool) => {
                       const active = tool.href === current;
                       const ToolIcon = tool.icon;
-                      return (
-                        <li key={tool.href}>
+                      const row = (
+                        <li>
                           <Link
                             href={tool.href}
                             aria-current={active ? "page" : undefined}
@@ -129,6 +131,13 @@ export function AiToolShell({
                             <ChevronRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground/60" aria-hidden="true" />
                           </Link>
                         </li>
+                      );
+                      // Owner-only rows are hidden from every other viewer's
+                      // menu (AiToolGate); access is enforced by the page/API.
+                      return tool.ownerOnly ? (
+                        <AiToolGate key={tool.href}>{row}</AiToolGate>
+                      ) : (
+                        <Fragment key={tool.href}>{row}</Fragment>
                       );
                     })}
                   </ul>
@@ -148,8 +157,8 @@ export function AiToolShell({
                   {AI_TOOLS.filter((tool) => tool.group === group).map((tool) => {
                     const active = tool.href === current;
                     const ToolIcon = tool.icon;
-                    return (
-                      <li key={tool.href}>
+                    const row = (
+                      <li>
                         <Link
                           href={tool.href}
                           aria-current={active ? "page" : undefined}
@@ -166,6 +175,13 @@ export function AiToolShell({
                           {active && <ChevronRight className="h-3 w-3 shrink-0" aria-hidden="true" />}
                         </Link>
                       </li>
+                    );
+                    // Owner-only rows are hidden from every other viewer's
+                    // menu (AiToolGate); access is enforced by the page/API.
+                    return tool.ownerOnly ? (
+                      <AiToolGate key={tool.href}>{row}</AiToolGate>
+                    ) : (
+                      <Fragment key={tool.href}>{row}</Fragment>
                     );
                   })}
                 </ul>

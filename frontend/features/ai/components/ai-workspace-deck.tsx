@@ -1,5 +1,7 @@
+import { Fragment } from "react";
 import { Leaf } from "lucide-react";
 import { AI_TOOL_GROUPS, toolsInGroup } from "./ai-tools-registry";
+import { AiToolGate } from "./ai-tool-gate";
 import { AdSlot } from "@/components/ai/ad-slot";
 import { VeerChip, VeerSection } from "@/components/ai/veer-chip";
 import { VEER_CHAT_SUGGESTIONS, VEER_NATURE_SECTION_ICONS } from "@/features/ai/lib/veer-home";
@@ -49,9 +51,17 @@ export function AiWorkspaceDeck() {
               border="dash"
               scroll="x"
             >
-              {tools.map((tool) => (
-                <VeerChip key={tool.href} label={tool.label} title={tool.blurb} href={tool.href} />
-              ))}
+              {tools.map((tool) => {
+                const chip = (
+                  <VeerChip label={tool.label} title={tool.blurb} href={tool.href} />
+                );
+                // Owner-only rows stay out of every other viewer's deck.
+                return tool.ownerOnly ? (
+                  <AiToolGate key={tool.href}>{chip}</AiToolGate>
+                ) : (
+                  <Fragment key={tool.href}>{chip}</Fragment>
+                );
+              })}
             </VeerSection>
           );
         })}
