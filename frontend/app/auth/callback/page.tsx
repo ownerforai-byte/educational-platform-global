@@ -13,7 +13,7 @@ import {
 import { apiFetch, setStoredToken } from "@/lib/api-client";
 import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
-import { tierWelcomePathFor } from "@/lib/core/access-level";
+import { tierHomePathFor } from "@/lib/core/access-level";
 import {
   DENIED_ROUTE,
   WAITING_ROUTE,
@@ -117,7 +117,7 @@ function AuthCallbackContent() {
         setStoredToken(response.accessToken);
         writeCachedSession(response.user, response.accessToken);
         refresh();
-        router.replace(tierWelcomePathFor(response.user));
+        router.replace(tierHomePathFor(response.user));
       } catch (callbackError) {
         if (callbackError instanceof FirebaseMfaRequiredError) {
           const mfaMessage =

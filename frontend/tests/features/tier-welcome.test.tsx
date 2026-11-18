@@ -185,15 +185,15 @@ describe("welcome pages and post-auth landings are wired", () => {
     expect(read("app/welcome/guest/page.tsx")).toContain("UniversalWelcome");
   });
 
-  it("every post-auth landing goes to the viewer's welcome page", () => {
+  it("every post-auth landing goes to the viewer's tier dashboard", () => {
     for (const file of [
       "app/auth/callback/page.tsx",
       "features/auth/components/login-form.tsx",
       "features/auth/components/signup-form.tsx",
       "app/login/logged-in-redirect.tsx",
     ]) {
-      expect(read(file), file).toContain("tierWelcomePathFor");
-      expect(read(file), file).not.toContain("tierHomePathFor");
+      expect(read(file), file).toContain("tierHomePathFor");
+      expect(read(file), file).not.toContain("tierWelcomePathFor");
     }
     // /welcome is a dispatcher (5cd13702); the waiting screen with WelcomeStatus lives at /welcome/pending.
     expect(read("app/welcome/page.tsx")).toContain("ApprovalDispatch");

@@ -10,7 +10,7 @@ import { signupAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
-import { tierWelcomePathFor } from "@/lib/core/access-level";
+import { tierHomePathFor } from "@/lib/core/access-level";
 import {
   DENIED_ROUTE,
   WAITING_ROUTE,
@@ -65,7 +65,7 @@ export function SignupForm() {
       refresh();
       // Fresh accounts land on their own tier WELCOME page first (2026-10-23) —
       // its Go button opens the tier home with all study materials.
-      router.push(tierWelcomePathFor(result.user));
+      router.push(tierHomePathFor(result.user));
     } else if (result.code === "ACCOUNT_REJECTED") {
       if (result.statusToken) rememberPendingSignup(result.statusToken);
       rememberAccessOutcome("REJECTED");

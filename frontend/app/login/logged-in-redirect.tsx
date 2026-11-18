@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/providers/auth-provider";
-import { tierWelcomePathFor } from "@/lib/core/access-level";
+import { tierHomePathFor } from "@/lib/core/access-level";
 
 /**
  * Renders nothing; when the session resolves and a user is present, bounce
@@ -17,7 +17,7 @@ export function LoggedInRedirect() {
     if (!isLoading && user) {
       // Auth screens never render to a signed-in viewer. Route only to that
       // viewer's resolved tier welcome; a ?next= path cannot bypass the flow.
-      router.replace(tierWelcomePathFor(user));
+      router.replace(tierHomePathFor(user));
     }
   }, [isLoading, user, router]);
 

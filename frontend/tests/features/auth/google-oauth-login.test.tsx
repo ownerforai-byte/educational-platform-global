@@ -78,7 +78,7 @@ beforeEach(() => {
 });
 
 describe("Social login", () => {
-  it("successful password login always opens the user's tier welcome before any next path", async () => {
+  it("successful password login routes to the user's tier dashboard", async () => {
     mocks.loginAction.mockResolvedValue({
       ok: true,
       user: { id: "user-1", email: "student@example.com" },
@@ -92,7 +92,7 @@ describe("Social login", () => {
     });
     fireEvent.click(screen.getByRole("button", { name: /sign in/i }));
 
-    await waitFor(() => expect(mocks.push).toHaveBeenCalledWith("/welcome/member"));
+    await waitFor(() => expect(mocks.push).toHaveBeenCalledWith("/home/member"));
     expect(mocks.refresh).toHaveBeenCalledOnce();
   });
 
@@ -127,8 +127,8 @@ describe("Social login", () => {
     expect(mocks.signInWithOAuth).not.toHaveBeenCalled();
   });
 
-  it("does not forward a requested destination that could skip the tier welcome", async () => {
-    // A supplied next path must not bypass the required tier welcome screen.
+  it("does not forward a requested destination (next path is ignored)", async () => {
+    // A supplied next path is ignored; the user always lands on their tier dashboard.
     render(<LoginForm />);
     fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
 
@@ -142,7 +142,7 @@ describe("Social login", () => {
     expect(mocks.signInWithOAuth).not.toHaveBeenCalled();
   });
 
-  it("completes Firebase Google popup login directly and navigates to welcome screen", async () => {
+  it("completes Firebase Google popup login directly and navigates to the dashboard", async () => {
     mocks.firebaseMode = true;
     mocks.firebaseGoogleSignIn.mockResolvedValueOnce("firebase-popup-id-token");
     mocks.apiFetch
@@ -152,7 +152,7 @@ describe("Social login", () => {
     render(<LoginForm />);
     fireEvent.click(screen.getByRole("button", { name: /continue with google/i }));
 
-    await waitFor(() => expect(mocks.replace).toHaveBeenCalledWith("/welcome/member"));
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledWith("/home/member"));
     expect(mocks.firebaseGoogleSignIn).toHaveBeenCalledWith("popup");
     expect(mocks.apiFetch).toHaveBeenCalledWith("/api/auth/oauth/session", {
       method: "POST",
@@ -163,7 +163,7 @@ describe("Social login", () => {
     expect(mocks.refresh).toHaveBeenCalledOnce();
   });
 
-  it("exchanges the Firebase token and always shows the resolved tier welcome before home", async () => {
+  it("exchanges the Firebase token and routes to the resolved tier dashboard", async () => {
     // Firebase-only callback (Supabase auth removed 2026-01): the page consumes
     // the Firebase redirect credential and hands the ID token to the app backend.
     mocks.firebaseMode = true;
@@ -175,7 +175,7 @@ describe("Social login", () => {
 
     render(<AuthCallbackPage />);
 
-    await waitFor(() => expect(mocks.replace).toHaveBeenCalledWith("/welcome/member"));
+    await waitFor(() => expect(mocks.replace).toHaveBeenCalledWith("/home/member"));
     expect(mocks.apiFetch).toHaveBeenCalledWith("/api/auth/oauth/session", {
       method: "POST",
       headers: { "X-CSRF-Token": state },
