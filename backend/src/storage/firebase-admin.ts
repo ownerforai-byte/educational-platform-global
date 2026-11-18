@@ -25,6 +25,7 @@ export type FirebaseAuthAdmin = {
   createUser: (props: Record<string, unknown>) => Promise<{ uid: string; email?: string }>;
   updateUser: (uid: string, props: Record<string, unknown>) => Promise<void>;
   getUserByEmail: (email: string) => Promise<{ uid: string; email?: string; displayName?: string }>;
+  createCustomToken?: (uid: string, developerClaims?: object) => Promise<string>;
   generatePasswordResetLink: (
     email: string,
     actionCodeSettings?: { url: string },

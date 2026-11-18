@@ -32,25 +32,25 @@ export function CreatedAccountGate({
   // account-status poll — a cold backend or 5xx on /account-status used to
   // leave login/signup on "Checking your account status" forever while email,
   // Google, and password flows stayed unreachable.
+  //
+  // For signup: the visitor must always be able to view and submit the account
+  // creation form to register a new account.
   const hasSignupToken = Boolean(readStatusToken());
   const live = useLiveApprovalRoute();
 
-  if (!hasSignupToken) {
+  if (!hasSignupToken || mode === "signup") {
     return <>{children}</>;
   }
 
   useEffect(() => {
-    if (!live) return;
+    if (!live || mode !== "login") return;
     if (live === WAITING_ROUTE) {
       router.replace(WAITING_ROUTE);
       return;
     }
-    if (mode === "login" && live === DENIED_ROUTE) {
+    if (live === DENIED_ROUTE) {
       router.replace(DENIED_ROUTE);
       return;
-    }
-    if (mode === "signup" && live === APPROVED_ROUTE) {
-      router.replace(APPROVED_ROUTE);
     }
   }, [live, mode, router]);
 
@@ -74,14 +74,6 @@ export function CreatedAccountGate({
     return (
       <div className="flex justify-center py-6">
         <VerifyingStatus compact label="Opening denied screen" />
-      </div>
-    );
-  }
-
-  if (mode === "signup" && live === APPROVED_ROUTE) {
-    return (
-      <div className="flex justify-center py-6">
-        <VerifyingStatus compact label="Opening approved screen" />
       </div>
     );
   }

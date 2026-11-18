@@ -462,7 +462,9 @@ describe("auth flow", () => {
   test.each([
     { name: "pending", profile: { role: "member", access_status: "PENDING" }, error: null },
     { name: "rejected", profile: { role: "member", access_status: "REJECTED" }, error: null },
-    { name: "unknown status", profile: { role: "member", access_status: "APPROVED" }, error: null },
+    // "approved" is a recognized state (normalized to ACTIVE); fail-closed is
+    // asserted with a genuinely unknown status value.
+    { name: "unknown status", profile: { role: "member", access_status: "bogus_status" }, error: null },
     { name: "missing status", profile: { role: "member" }, error: null },
     { name: "missing profile", profile: null, error: null },
     { name: "profile lookup failure", profile: null, error: { message: "Unavailable" } },
@@ -639,7 +641,9 @@ describe("auth flow", () => {
   test.each([
     { name: "PENDING", profile: { role: "member", access_status: "PENDING" }, error: null },
     { name: "REJECTED", profile: { role: "member", access_status: "REJECTED" }, error: null },
-    { name: "unknown status", profile: { role: "member", access_status: "APPROVED" }, error: null },
+    // "approved" is a recognized state (normalized to ACTIVE); fail-closed is
+    // asserted with a genuinely unknown status value.
+    { name: "unknown status", profile: { role: "member", access_status: "bogus_status" }, error: null },
     { name: "missing status", profile: { role: "member" }, error: null },
     { name: "missing profile", profile: null, error: null },
     { name: "profile read error", profile: null, error: { message: "Profile unavailable" } },

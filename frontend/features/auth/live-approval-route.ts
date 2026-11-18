@@ -39,7 +39,13 @@ export function routeForLiveAccess(status: AccessOutcome): string {
  * Token present → waiting screen (signup still in flight); otherwise normal.
  */
 export function resolveLiveApprovalRouteFallback(): string {
-  return readStatusToken() ? WAITING_ROUTE : NORMAL_ROUTE;
+  if (!readStatusToken()) return NORMAL_ROUTE;
+  // Honor the last live status we recorded so a transient outage never bounces
+  // an already-approved (or denied) account back to the waiting screen.
+  const outcome = readAccessOutcome();
+  if (outcome === "ACTIVE") return APPROVED_ROUTE;
+  if (outcome === "REJECTED") return DENIED_ROUTE;
+  return WAITING_ROUTE;
 }
 
 export async function resolveLiveApprovalRoute(): Promise<string> {

@@ -44,4 +44,16 @@ describe("CreatedAccountGate", () => {
     await waitFor(() => expect(nav.replace).toHaveBeenCalledWith("/welcome/pending"));
     expect(screen.queryByTestId("auth-form")).toBeNull();
   });
+
+  it("renders signup form immediately even if device has a status token so user can create an account", () => {
+    rememberPendingSignup("device-token");
+    apiFetch.mockResolvedValue({ accessStatus: "ACTIVE" });
+    render(
+      <CreatedAccountGate mode="signup">
+        <div data-testid="signup-form">create account form</div>
+      </CreatedAccountGate>,
+    );
+    expect(screen.getByTestId("signup-form")).toBeInTheDocument();
+    expect(nav.replace).not.toHaveBeenCalled();
+  });
 });

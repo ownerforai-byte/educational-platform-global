@@ -96,12 +96,19 @@ export async function signupWithFirebaseIdToken(
 export async function signup(
   data: AuthSignupRequest
 ): Promise<AuthSignupResponse> {
-  const payload = useFirebaseClientAuth()
-    ? {
-        idToken: await firebaseEmailSignup(data.email, data.password),
+  let payload: Record<string, unknown> = { ...data };
+  if (useFirebaseClientAuth()) {
+    try {
+      const idToken = await firebaseEmailSignup(data.email, data.password, data.fullName);
+      payload = {
+        idToken,
         fullName: data.fullName,
-      }
-    : data;
+      };
+    } catch (clientErr) {
+      console.warn("[auth] client Firebase signup failed, attempting server-side registration:", clientErr);
+      payload = { ...data };
+    }
+  }
   const res = await apiFetch<AuthSignupResponse>("/api/auth/signup", {
     method: "POST",
     body: JSON.stringify(payload),

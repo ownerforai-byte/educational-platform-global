@@ -110,6 +110,20 @@ export async function firebaseCreateUser(input: {
   }
 }
 
+export async function firebaseCreateCustomToken(
+  uid: string,
+  claims?: Record<string, unknown>,
+): Promise<string | null> {
+  const adminAuth = auth();
+  if (!adminAuth || typeof adminAuth.createCustomToken !== "function") return null;
+  try {
+    return await adminAuth.createCustomToken(uid, claims);
+  } catch (err) {
+    console.warn("[Auth] firebaseCreateCustomToken failed:", err instanceof Error ? err.message : err);
+    return null;
+  }
+}
+
 export async function firebaseUpdatePassword(uid: string, password: string): Promise<boolean> {
   const adminAuth = auth();
   if (!adminAuth) return false;

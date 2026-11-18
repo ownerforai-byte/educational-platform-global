@@ -6,6 +6,7 @@ import { createAuthClient, supabaseAdmin } from "../../db/supabase";
 import {
   getProfileById,
   updateProfileFields,
+  upsertProfileFields,
 } from "../../db/repositories/user.repository.js";
 import { ensureDailyCredits } from "../../services/credit.service.js";
 import {
@@ -18,6 +19,7 @@ import { ensureAccessRequest } from "../../services/access-requests";
 import { useFirebaseAuth } from "../../auth/auth-mode.js";
 import {
   firebaseCreateUser,
+  firebaseCreateCustomToken,
   firebaseSendPasswordResetEmail,
   firebaseUpdatePassword,
   isFirebaseAuthReady,
@@ -506,6 +508,13 @@ router.post("/signup", async (req: Request, res: Response) => {
       email = accountEmail;
       fullName = fullName ?? verified.displayName;
     } else if (parsed.data.email && parsed.data.password) {
+      if (!isFirebaseAuthReady()) {
+        res.status(503).json({
+          error: "Firebase Admin is not configured on the API",
+          code: "FIREBASE_ADMIN_NOT_CONFIGURED",
+        });
+        return;
+      }
       const created = await firebaseCreateUser({
         email: parsed.data.email,
         password: parsed.data.password,
@@ -513,18 +522,11 @@ router.post("/signup", async (req: Request, res: Response) => {
         emailVerified: isOwnerEmail(parsed.data.email),
       });
       if (!created) {
-        res.status(400).json({ error: "Something went wrong. Please try again." });
+        res.status(400).json({ error: "Could not create account. Email may already be in use." });
         return;
       }
       uid = created.uid;
       email = created.email;
-      res.status(202).json({
-        user: null,
-        accessToken: null,
-        message: "Account created — sign in to continue.",
-      } satisfies SignupResponse);
-      await ensureAuthProfile(uid, { email, fullName, isSignup: true });
-      return;
     } else {
       res.status(400).json({ error: "Invalid signup details" });
       return;
@@ -579,6 +581,9 @@ router.post("/signup", async (req: Request, res: Response) => {
 
     const user = await resolveSessionUser(uid, email);
     const extended = await buildExtendedUser(user.id, user.email, user.role, fullName);
+    if (!accessToken) {
+      accessToken = (await firebaseCreateCustomToken(uid)) ?? "";
+    }
     if (!accessToken) {
       res.status(400).json({ error: "Missing idToken for signup session" });
       return;

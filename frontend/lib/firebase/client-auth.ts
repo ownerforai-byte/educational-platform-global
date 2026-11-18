@@ -71,10 +71,22 @@ export async function firebaseEmailLogin(email: string, password: string): Promi
   }
 }
 
-export async function firebaseEmailSignup(email: string, password: string): Promise<string> {
+export async function firebaseEmailSignup(
+  email: string,
+  password: string,
+  displayName?: string | null,
+): Promise<string> {
   const auth = getFirebaseAuth();
   if (!auth) throw new Error("Firebase Auth is not configured");
   const cred = await createUserWithEmailAndPassword(auth, email, password);
+  if (displayName?.trim() && cred.user) {
+    try {
+      const { updateProfile } = await import("firebase/auth");
+      await updateProfile(cred.user, { displayName: displayName.trim() });
+    } catch {
+      /* ignore display name update failure */
+    }
+  }
   return cred.user.getIdToken();
 }
 

@@ -144,8 +144,26 @@ async function readProfileSources(userId: string, columns: string): Promise<Prof
   };
 }
 
+/**
+ * Canonicalize an `access_status` value. Stored data is not always the
+ * canonical uppercase triple — seeds/console writes use lowercase
+ * "approved" / "denied" — and the auth gate only trusts "ACTIVE"/"REJECTED".
+ * Normalizing here (the single merge choke point for both read paths) keeps
+ * already-approved accounts from being mis-read as PENDING and bounced back
+ * to the waiting screen on every login/refresh.
+ */
+function normalizeAccessStatus(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  const v = value.trim().toLowerCase();
+  if (!v) return null;
+  if (v === "active" || v === "approved") return "ACTIVE";
+  if (v === "rejected" || v === "denied") return "REJECTED";
+  if (v === "pending") return "PENDING";
+  return value.trim();
+}
+
 function mergeAccessStatus(docValue: unknown, rowValue: unknown): string | null {
-  const values = [docValue, rowValue];
+  const values = [normalizeAccessStatus(docValue), normalizeAccessStatus(rowValue)];
   if (values.some((v) => v === "REJECTED")) return "REJECTED";
   if (values.some((v) => v === "ACTIVE")) return "ACTIVE";
   return (values.find((v) => typeof v === "string" && v) as string | undefined) ?? null;
