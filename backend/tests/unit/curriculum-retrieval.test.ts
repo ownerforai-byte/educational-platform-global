@@ -254,7 +254,10 @@ describe("deep-answer contract + source hierarchy reach every chat request", () 
     expect(DEEP_ANSWER_RULES).toContain("OUTPUT THE LEARNER SEES, NOT RAW CODE");
     expect(DEEP_ANSWER_RULES).toContain("EASY GRAMMAR FIRST");
     expect(MASTER_ACADEMIC_PROMPT).toContain("NEB PYQs + LIKELY PRACTICE");
-    expect(MASTER_ACADEMIC_PROMPT).toContain("practice possibilities, not predictions");
+    // Owner law 2026-11-18: practice questions moved from "at most 1–2 likely
+    // practice" bullets to the mandatory ≥5-MCQ end block, so the prompt now
+    // points the PYQ section at that block instead.
+    expect(MASTER_ACADEMIC_PROMPT).toContain("Practice MCQs (PYQ + conceptual)** end block (owner law 2026-11-18)");
     expect(MASTER_ACADEMIC_PROMPT).toContain("a few scannable bullets");
   });
 
