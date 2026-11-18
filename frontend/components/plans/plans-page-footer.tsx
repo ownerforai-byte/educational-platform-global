@@ -103,10 +103,10 @@ export function PlansPageFooter() {
             <div className="absolute inset-0 flex items-center justify-start">
               <span className="inline-flex items-center gap-1 rounded-md border border-border/70 bg-background/85 px-2 py-1 text-[9px] font-bold uppercase tracking-widest text-muted-foreground">
                 <Lock className="h-2.5 w-2.5" aria-hidden="true" />
-                Confidential
+                Not Good
               </span>
             </div>
-            <span className="sr-only">Further — Confidential. For schools, teachers, and parents.</span>
+            <span className="sr-only">Further — Not Good. For schools, teachers, and parents.</span>
           </div>
         </nav>
       </div>
