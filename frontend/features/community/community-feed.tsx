@@ -33,7 +33,7 @@ import {
   CommunityLoading,
   FeedEmpty,
 } from "@/features/community/community-helpers";
-import { FeedPostRow } from "@/features/community/feed-post-row";
+import { FeedPostRow, type FeedPostRowThreadProps } from "@/features/community/feed-post-row";
 import { cn } from "@/lib/utils";
 
 const MOBILE_INLINE_CATEGORIES = 4;
@@ -63,6 +63,7 @@ export interface CommunityFeedProps {
   onLoadMore: () => void;
   onLike: (item: FeedPost) => void;
   onToggleSave: (postId: string) => void;
+  threadPropsForPost: (postId: string) => FeedPostRowThreadProps;
   onCopyLink: (postId: string) => void;
   onDelete: (postId: string) => void;
   onAssistantReply: (item: FeedPost) => void;
@@ -94,6 +95,7 @@ export function CommunityFeed({
   onLoadMore,
   onLike,
   onToggleSave,
+  threadPropsForPost,
   onCopyLink,
   onDelete,
   onAssistantReply,
@@ -347,7 +349,7 @@ export function CommunityFeed({
       ) : null}
 
       {posts.length > 0 ? (
-        <div className="divide-y divide-border/60 overflow-hidden rounded-2xl border border-border/80 bg-card shadow-elev-0">
+        <div className="space-y-3">
           {posts.map((item, index) => (
             <FeedPostRow
               key={item.id}
@@ -355,7 +357,6 @@ export function CommunityFeed({
               isLeading={index === 0}
               viewerId={viewerId}
               canModerate={canModerate}
-              saved={isSaved(item.id)}
               copied={copiedId === item.id}
               aiReplyBusy={aiReplyBusyIds.has(item.id)}
               onLike={onLike}
@@ -364,6 +365,7 @@ export function CommunityFeed({
               onDelete={onDelete}
               onAssistantReply={onAssistantReply}
               onPrefetch={onPrefetchPost}
+              {...threadPropsForPost(item.id)}
             />
           ))}
         </div>

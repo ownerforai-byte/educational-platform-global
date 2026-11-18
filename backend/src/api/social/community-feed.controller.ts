@@ -121,6 +121,7 @@ interface CommentRow {
   body: string;
   created_at: string;
   updated_at: string;
+  parent_comment_id?: string | null;
 }
 
 const postSchema = z.object({
@@ -133,6 +134,8 @@ const commentSchema = z.object({
   body: z.string().trim().min(1).max(8000),
   /** When true, Community bot auto-replies after the member comment is saved. */
   followUpToBot: z.boolean().optional(),
+  /** Optional explicit reply target (comment id on the same post). */
+  replyToCommentId: z.string().trim().optional(),
 });
 
 const attachmentSchema = z.object({
@@ -252,6 +255,15 @@ function toAuthor(
   };
 }
 
+/** Minimal "Replying to @x" identity — resolved server-side from ids only. */
+function toReplyToRef(
+  id: string,
+  profile?: ProfileRow,
+): { id: string; fullName: string; username: string | null } {
+  const author = toAuthor(id, profile);
+  return { id: author.id, fullName: author.fullName, username: author.username };
+}
+
 async function profilesById(ids: string[]): Promise<Map<string, ProfileRow>> {
   const map = new Map<string, ProfileRow>();
   const unique = [...new Set(ids)].filter(Boolean);
@@ -274,6 +286,8 @@ async function publishBotThreadReply(opts: {
   postId: string;
   post: PostRow;
   question: string;
+  /** Human comment that triggered the follow-up; the reply threads under it. */
+  parentCommentId?: string | null;
 }): Promise<{
   comment: {
     id: string;
@@ -308,6 +322,7 @@ async function publishBotThreadReply(opts: {
       post_id: opts.postId,
       author_id: COMMUNITY_BOT_ID,
       body,
+      parent_comment_id: opts.parentCommentId ?? null,
       created_at: now,
       updated_at: now,
     });
@@ -370,15 +385,17 @@ async function followingByAuthor(
 async function sideData(postIds: string[]): Promise<
   | {
       likes: Array<{ post_id: string; user_id: string }>;
+      saves: Array<{ post_id: string; user_id: string }>;
       comments: Array<{ post_id: string }>;
       attachments: AttachmentRow[];
     }
   | { missing: true }
   | { error: DbError }
 > {
-  if (postIds.length === 0) return { likes: [], comments: [], attachments: [] };
-  const [likesRes, commentsRes, attachmentsRes] = await Promise.all([
+  if (postIds.length === 0) return { likes: [], saves: [], comments: [], attachments: [] };
+  const [likesRes, savesRes, commentsRes, attachmentsRes] = await Promise.all([
     supabaseAdmin.from("community_feed_likes").select("post_id, user_id").in("post_id", postIds),
+    supabaseAdmin.from("community_feed_saves").select("post_id, user_id").in("post_id", postIds),
     supabaseAdmin.from("community_feed_comments").select("post_id").in("post_id", postIds),
     supabaseAdmin
       .from("community_feed_attachments")
@@ -389,8 +406,16 @@ async function sideData(postIds: string[]): Promise<
     if (isMissingTable(error)) return { missing: true };
     if (error) return { error };
   }
+  // Saves (migration 026) may be absent on older databases; reads then show 0.
+  let saves: Array<{ post_id: string; user_id: string }> = [];
+  if (savesRes.error) {
+    if (!isMissingTable(savesRes.error)) return { error: savesRes.error };
+  } else {
+    saves = (savesRes.data ?? []) as Array<{ post_id: string; user_id: string }>;
+  }
   return {
     likes: (likesRes.data ?? []) as Array<{ post_id: string; user_id: string }>,
+    saves,
     comments: (commentsRes.data ?? []) as Array<{ post_id: string }>,
     attachments: (attachmentsRes.data ?? []) as AttachmentRow[],
   };
@@ -400,12 +425,14 @@ function presentPost(
   row: PostRow,
   profiles: Map<string, ProfileRow>,
   likes: Array<{ post_id: string; user_id: string }>,
+  saves: Array<{ post_id: string; user_id: string }>,
   commentRows: Array<{ post_id: string }>,
   attachments: AttachmentRow[],
   viewerId: string | null,
   followingAuthors: Set<string>,
 ) {
   const postLikes = likes.filter((like) => like.post_id === row.id);
+  const postSaves = saves.filter((save) => save.post_id === row.id);
   const files = attachments
     .filter((file) => file.post_id === row.id)
     .sort((a, b) => String(a.created_at ?? "").localeCompare(String(b.created_at ?? "")));
@@ -424,6 +451,8 @@ function presentPost(
     ),
     likeCount: postLikes.length,
     likedByYou: viewerId ? postLikes.some((like) => like.user_id === viewerId) : false,
+    saveCount: postSaves.length,
+    savedByYou: viewerId ? postSaves.some((save) => save.user_id === viewerId) : false,
     commentCount: commentRows.filter((comment) => comment.post_id === row.id).length,
     attachments: files.map((file) => ({
       id: file.id,
@@ -445,7 +474,7 @@ async function presentMany(rows: PostRow[], viewerId: string | null) {
   );
   return {
     posts: rows.map((row) =>
-      presentPost(row, profiles, side.likes, side.comments, side.attachments, viewerId, followingAuthors),
+      presentPost(row, profiles, side.likes, side.saves, side.comments, side.attachments, viewerId, followingAuthors),
     ),
   };
 }
@@ -636,6 +665,9 @@ async function deletePostTree(postId: string): Promise<{ missing: true } | { err
     if (isMissingTable(likes.error)) return { missing: true };
     return { error: likes.error };
   }
+  // Saves (migration 026) are best-effort here so deletes still work on older databases.
+  const saves = await supabaseAdmin.from("community_feed_saves").delete().eq("post_id", postId);
+  if (saves.error && !isMissingTable(saves.error)) return { error: saves.error };
   const comments = await supabaseAdmin.from("community_feed_comments").delete().eq("post_id", postId);
   if (comments.error) {
     if (isMissingTable(comments.error)) return { missing: true };
@@ -717,6 +749,8 @@ router.post(
           }),
           likeCount: 0,
           likedByYou: false,
+          saveCount: 0,
+          savedByYou: false,
           commentCount: 0,
           attachments: [],
         },
@@ -910,7 +944,7 @@ router.get(
     }
     const { data: commentRows, error: commentError } = await supabaseAdmin
       .from("community_feed_comments")
-      .select("id, post_id, author_id, body, created_at, updated_at")
+      .select("id, post_id, author_id, body, created_at, updated_at, parent_comment_id")
       .eq("post_id", postId)
       .order("created_at", { ascending: true })
       .limit(500);
@@ -924,29 +958,75 @@ router.get(
       return;
     }
     const comments = (commentRows ?? []) as CommentRow[];
-    const profiles = await profilesById(comments.map((comment) => comment.author_id));
+    const parentIds = [
+      ...new Set(
+        comments
+          .map((comment) => comment.parent_comment_id)
+          .filter((id): id is string => typeof id === "string" && id.length > 0),
+      ),
+    ];
+    const parentAuthors = new Map<string, string>();
+    if (parentIds.length > 0) {
+      const { data: parentRows, error: parentError } = await supabaseAdmin
+        .from("community_feed_comments")
+        .select("id, author_id")
+        .in("id", parentIds);
+      if (parentError) {
+        if (isMissingTable(parentError)) {
+          noStore(res);
+          res.json({ post: null, migrated: false });
+          return;
+        }
+        serverError(res, parentError, "community-feed");
+        return;
+      }
+      for (const row of (parentRows ?? []) as Array<{ id: string; author_id: string }>) {
+        parentAuthors.set(row.id, row.author_id);
+      }
+    }
+    const profiles = await profilesById([
+      ...comments.map((comment) => comment.author_id),
+      ...parentAuthors.values(),
+      found.row.author_id,
+    ]);
     const commentFollows = await followingByAuthor(
       viewer?.id ?? null,
       comments.map((comment) => comment.author_id),
     );
     const assistantReply = await assistantReplyMeta(postId, found.row.author_id, viewer);
+    const postAuthorId = found.row.author_id;
     noStore(res);
     res.json({
       post: {
         ...presented.posts[0],
         commentCount: comments.length,
         assistantReply,
-        comments: comments.map((comment) => ({
-          id: comment.id,
-          body: comment.body,
-          createdAt: comment.created_at,
-          updatedAt: comment.updated_at,
-          author: toAuthor(
-            comment.author_id,
-            profiles.get(comment.author_id),
-            commentFollows.has(comment.author_id),
-          ),
-        })),
+        comments: comments.map((comment) => {
+          let replyTo: { id: string; fullName: string; username: string | null } | null = null;
+          if (comment.parent_comment_id) {
+            // Reply: "Replying to @<parent comment author>".
+            const parentAuthorId = parentAuthors.get(comment.parent_comment_id);
+            if (parentAuthorId) {
+              replyTo = toReplyToRef(parentAuthorId, profiles.get(parentAuthorId));
+            }
+          } else if (isCommunityBotId(comment.author_id)) {
+            // Top-level bot answer: "Replying to @<post author>".
+            replyTo = toReplyToRef(postAuthorId, profiles.get(postAuthorId));
+          }
+          return {
+            id: comment.id,
+            body: comment.body,
+            createdAt: comment.created_at,
+            updatedAt: comment.updated_at,
+            parentId: comment.parent_comment_id ?? null,
+            replyTo,
+            author: toAuthor(
+              comment.author_id,
+              profiles.get(comment.author_id),
+              commentFollows.has(comment.author_id),
+            ),
+          };
+        }),
       },
       migrated: true,
     });
@@ -1035,6 +1115,7 @@ router.post(
         post_id: postId,
         author_id: COMMUNITY_BOT_ID,
         body,
+        parent_comment_id: null,
         created_at: now,
         updated_at: now,
       });
@@ -1061,7 +1142,7 @@ router.post(
         serverError(res, ledgerError, "community-feed");
         return;
       }
-      const botProfiles = await profilesById([COMMUNITY_BOT_ID]);
+      const replyProfiles = await profilesById([COMMUNITY_BOT_ID, found.row.author_id]);
       noStore(res);
       res.status(201).json({
         comment: {
@@ -1069,9 +1150,11 @@ router.post(
           body,
           createdAt: now,
           updatedAt: now,
+          parentId: null,
+          replyTo: toReplyToRef(found.row.author_id, replyProfiles.get(found.row.author_id)),
           author: toAuthor(
             COMMUNITY_BOT_ID,
-            botProfiles.get(COMMUNITY_BOT_ID),
+            replyProfiles.get(COMMUNITY_BOT_ID),
             false,
           ),
         },
@@ -1156,6 +1239,8 @@ router.patch(
         author: toAuthor(found.row.author_id),
         likeCount: 0,
         likedByYou: false,
+        saveCount: 0,
+        savedByYou: false,
         commentCount: 0,
         attachments: [],
       },
@@ -1301,6 +1386,97 @@ router.post(
 );
 
 router.post(
+  "/feed/:postId/save",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = userOf(req);
+    const postId = param(req.params.postId);
+    if (!isUuid(postId)) {
+      bad(res, "Post not found", 404);
+      return;
+    }
+    const found = await findPost(postId);
+    if ("missing" in found) {
+      unavailable(res);
+      return;
+    }
+    if ("error" in found) {
+      serverError(res, found.error, "community-feed");
+      return;
+    }
+    if (!found.row) {
+      bad(res, "Post not found", 404);
+      return;
+    }
+    await ensureProfile(user);
+    const existing = await supabaseAdmin
+      .from("community_feed_saves")
+      .select("post_id, user_id")
+      .eq("post_id", postId)
+      .eq("user_id", user.id)
+      .maybeSingle();
+    if (existing.error) {
+      if (isMissingTable(existing.error)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, existing.error, "community-feed");
+      return;
+    }
+    if (existing.data) {
+      const removed = await supabaseAdmin
+        .from("community_feed_saves")
+        .delete()
+        .eq("post_id", postId)
+        .eq("user_id", user.id);
+      if (removed.error) {
+        if (isMissingTable(removed.error)) {
+          unavailable(res);
+          return;
+        }
+        serverError(res, removed.error, "community-feed");
+        return;
+      }
+    } else {
+      const inserted = await supabaseAdmin.from("community_feed_saves").insert({
+        post_id: postId,
+        user_id: user.id,
+        created_at: new Date().toISOString(),
+      });
+      if (inserted.error) {
+        if (isMissingTable(inserted.error)) {
+          unavailable(res);
+          return;
+        }
+        // A concurrent duplicate insert is fine — the toggle stays idempotent.
+        if (!isUniqueViolation(inserted.error)) {
+          serverError(res, inserted.error, "community-feed");
+          return;
+        }
+      }
+    }
+    const { data: saves, error: countError } = await supabaseAdmin
+      .from("community_feed_saves")
+      .select("user_id")
+      .eq("post_id", postId);
+    if (countError) {
+      if (isMissingTable(countError)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, countError, "community-feed");
+      return;
+    }
+    const rows = (saves ?? []) as Array<{ user_id: string }>;
+    noStore(res);
+    res.json({
+      saveCount: rows.length,
+      savedByYou: rows.some((row) => row.user_id === user.id),
+    });
+  }),
+);
+
+router.post(
   "/feed/:postId/comments",
   requireAuth,
   asyncHandler(async (req, res) => {
@@ -1329,6 +1505,45 @@ router.post(
       return;
     }
     await ensureProfile(user);
+    // Resolve the reply target server-side from ids only (never client names).
+    let parentComment: { id: string; author_id: string } | null = null;
+    const replyToCommentId = parsed.data.replyToCommentId?.trim() ?? "";
+    if (replyToCommentId) {
+      if (!isUuid(replyToCommentId)) {
+        bad(res, "Reply target not found", 404);
+        return;
+      }
+      const { data: target, error: targetError } = await supabaseAdmin
+        .from("community_feed_comments")
+        .select("id, author_id")
+        .eq("id", replyToCommentId)
+        .eq("post_id", postId)
+        .maybeSingle();
+      if (targetError) {
+        if (isMissingTable(targetError)) {
+          unavailable(res);
+          return;
+        }
+        serverError(res, targetError, "community-feed");
+        return;
+      }
+      if (!target) {
+        bad(res, "Reply target not found", 404);
+        return;
+      }
+      parentComment = target as { id: string; author_id: string };
+    } else if (parsed.data.followUpToBot === true) {
+      // A human follow-up threads under the latest Community bot comment.
+      const { data: botComment } = await supabaseAdmin
+        .from("community_feed_comments")
+        .select("id, author_id")
+        .eq("post_id", postId)
+        .eq("author_id", COMMUNITY_BOT_ID)
+        .order("created_at", { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      if (botComment) parentComment = botComment as { id: string; author_id: string };
+    }
     const now = new Date().toISOString();
     const id = randomUUID();
     const { error } = await supabaseAdmin.from("community_feed_comments").insert({
@@ -1336,6 +1551,7 @@ router.post(
       post_id: postId,
       author_id: user.id,
       body: parsed.data.body,
+      parent_comment_id: parentComment?.id ?? null,
       created_at: now,
       updated_at: now,
     });
@@ -1347,11 +1563,16 @@ router.post(
       serverError(res, error, "community-feed");
       return;
     }
+    const parentProfiles = await profilesById(parentComment ? [parentComment.author_id] : []);
     const humanComment = {
       id,
       body: parsed.data.body,
       createdAt: now,
       updatedAt: now,
+      parentId: parentComment?.id ?? null,
+      replyTo: parentComment
+        ? toReplyToRef(parentComment.author_id, parentProfiles.get(parentComment.author_id))
+        : null,
       author: toAuthor(user.id, {
         id: user.id,
         full_name: user.fullName,
@@ -1374,6 +1595,7 @@ router.post(
         postId,
         post: found.row,
         question: parsed.data.body,
+        parentCommentId: id,
       }).catch((err) => {
         const errorId = newErrorId();
         logServerError(err, errorId, "community-feed-bot-deferred");
@@ -1436,7 +1658,7 @@ router.patch(
     }
     const { data, error } = await supabaseAdmin
       .from("community_feed_comments")
-      .select("id, post_id, author_id, body, created_at, updated_at")
+      .select("id, post_id, author_id, body, created_at, updated_at, parent_comment_id")
       .eq("id", commentId)
       .eq("post_id", postId)
       .maybeSingle();
@@ -1471,6 +1693,23 @@ router.patch(
       serverError(res, saved.error, "community-feed");
       return;
     }
+    // Recompute thread linkage for the response so an edit keeps its
+    // "Replying to @X" identity (matches GET: parent author when threaded,
+    // otherwise none for a human comment).
+    const parentId = row.parent_comment_id ?? null;
+    let replyTo: { id: string; fullName: string; username: string | null } | null = null;
+    if (row.parent_comment_id) {
+      const { data: parentRow } = await supabaseAdmin
+        .from("community_feed_comments")
+        .select("author_id")
+        .eq("id", row.parent_comment_id)
+        .maybeSingle();
+      const parentAuthorId = (parentRow as { author_id: string } | null)?.author_id ?? null;
+      if (parentAuthorId) {
+        const parentProfiles = await profilesById([parentAuthorId]);
+        replyTo = toReplyToRef(parentAuthorId, parentProfiles.get(parentAuthorId));
+      }
+    }
     noStore(res);
     res.json({
       comment: {
@@ -1478,6 +1717,8 @@ router.patch(
         body: parsed.data.body,
         createdAt: row.created_at,
         updatedAt,
+        parentId,
+        replyTo,
         author: toAuthor(user.id, {
           id: user.id,
           full_name: user.fullName,

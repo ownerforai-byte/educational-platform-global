@@ -36,6 +36,7 @@ import {
   publishAssistantReply,
   sharePath,
   toggleLike,
+  toggleSave as toggleSaveRequest,
   updateComment,
   type CommunityFeedFilter,
   type FeedComment,
@@ -93,7 +94,20 @@ function useCopyLink() {
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const copy = useCallback(async (id: string) => {
     const url = publicUrl(sharePath(id));
-    await navigator.clipboard.writeText(url);
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(url);
+    } else {
+      const input = document.createElement("textarea");
+      input.value = url;
+      input.setAttribute("readonly", "");
+      input.style.position = "fixed";
+      input.style.opacity = "0";
+      document.body.appendChild(input);
+      input.select();
+      const copied = document.execCommand("copy");
+      input.remove();
+      if (!copied) throw new Error("Clipboard access is unavailable.");
+    }
     setCopiedId(id);
     window.setTimeout(() => setCopiedId((current) => (current === id ? null : current)), 2000);
   }, []);
@@ -128,7 +142,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
   const searchParams = useSearchParams();
   const { user, isLoading: sessionLoading } = useSession();
   const { copiedId, copy } = useCopyLink();
-  const { savedIds, savedCount, isSaved, toggle: toggleSaved } = useSavedPosts(user?.id);
+  const { savedIds, savedCount, isSaved, reconcile: reconcileSaved } = useSavedPosts(user?.id);
 
   const savedView = view === "feed" && searchParams.get("view") === "saved";
   const listMode: "feed" | "saved" | "mine" =
@@ -142,6 +156,8 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
   const [queuedNewPosts, setQueuedNewPosts] = useState<FeedPost[]>([]);
   const [post, setPost] = useState<FeedPost | null>(null);
   const [person, setPerson] = useState<PersonResponse | null>(null);
+  const [expandedPostId, setExpandedPostId] = useState<string | null>(null);
+  const [threadStates, setThreadStates] = useState<Record<string, { post: FeedPost | null; loading: boolean; error: string | null }>>({});
   const [cursor, setCursor] = useState<number | null>(null);
   const [personCursor, setPersonCursor] = useState<number | null>(null);
   const [migrated, setMigrated] = useState(true);
@@ -157,6 +173,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
   const [composerFocusTrigger, setComposerFocusTrigger] = useState(0);
 
   const likeInFlight = useRef(new Set<string>());
+  const saveInFlight = useRef(new Set<string>());
   const likeSeqRef = useRef(new Map<string, number>());
   const listRequestSeqRef = useRef(0);
   const listAbortRef = useRef<AbortController | null>(null);
@@ -199,6 +216,11 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
         ? { ...current, posts: current.posts.map((item) => (item.id === postId ? patch(item) : item)) }
         : current,
     );
+    setThreadStates((current) => {
+      const thread = current[postId];
+      if (!thread?.post) return current;
+      return { ...current, [postId]: { ...thread, post: patch(thread.post) } };
+    });
   }, [user?.id]);
 
   // Wait specifically for a newly arrived bot comment (never stop early on the student's own comment).
@@ -244,7 +266,18 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
         : item;
     const patch = (item: FeedPost) => patchComments(patchAuthor(item));
     setPosts((current) => current.map(patch));
+    setQueuedNewPosts((current) => current.map(patch));
     setPost((current) => (current ? patch(current) : current));
+    setThreadStates((current) => {
+      let changed = false;
+      const next = { ...current };
+      for (const [postId, state] of Object.entries(current)) {
+        if (!state.post) continue;
+        next[postId] = { ...state, post: patch(state.post) };
+        changed = true;
+      }
+      return changed ? next : current;
+    });
     setPerson((current) =>
       current
         ? {
@@ -493,7 +526,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
     if (view !== "feed" && view !== "mine" && view !== "post" && view !== "person") return;
     const timer = window.setInterval(() => {
       if (typeof document !== "undefined" && document.visibilityState === "hidden") return;
-      if (commentComposerOpen) return;
+      if (commentComposerOpen || expandedPostId) return;
 
       if ((view === "feed" || (view === "mine" && user)) && listMode !== "saved") {
         fetchFeedPage({
@@ -552,20 +585,88 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
     id,
     user,
     commentComposerOpen,
+    expandedPostId,
     fetchFeedPage,
   ]);
+
+  const knownPost = useCallback(
+    (postId: string) =>
+      threadStates[postId]?.post ??
+      posts.find((item) => item.id === postId) ??
+      person?.posts.find((item) => item.id === postId) ??
+      (post?.id === postId ? post : null),
+    [person?.posts, post, posts, threadStates],
+  );
 
   const handlePrefetchPost = useCallback(
     (postId: string) => {
       const cacheKey = feedPostCacheKey(user?.id, postId);
-      prefetchCommunityResource<FeedDetail>(
-        cacheKey,
-        () => getPost(postId),
-        (res) => Boolean(res.post),
-      );
+      prefetchCommunityResource<FeedDetail>(cacheKey, () => getPost(postId), (res) => Boolean(res.post));
     },
     [user?.id],
   );
+
+  const toggleInlineComments = useCallback((postId: string) => {
+    if (expandedPostId === postId) {
+      setExpandedPostId(null);
+      return;
+    }
+    setExpandedPostId(postId);
+    setFollowUpBotCommentId(null);
+    setComposerFocusTrigger((n) => n + 1);
+    const cachedThread = threadStates[postId]?.post;
+    const cached = cachedThread ?? knownPost(postId);
+    if (cachedThread?.comments !== undefined) {
+      setThreadStates((current) => ({ ...current, [postId]: { post: cachedThread, loading: false, error: null } }));
+      return;
+    }
+    if (threadStates[postId]?.loading) return;
+    setThreadStates((current) => ({ ...current, [postId]: { post: current[postId]?.post ?? cached ?? null, loading: true, error: null } }));
+    void getPost(postId)
+      .then((detail) => {
+        if (!detail.post) throw new Error("Comments are unavailable for this post.");
+        setThreadStates((current) => ({ ...current, [postId]: { post: detail.post, loading: false, error: null } }));
+        patchPostEverywhere(postId, (item) => mergePostSnapshot(item, detail.post!));
+      })
+      .catch((err) => setThreadStates((current) => ({
+        ...current,
+        [postId]: { post: current[postId]?.post ?? cached ?? null, loading: false, error: messageOf(err, "Could not load comments.") },
+      })));
+  }, [expandedPostId, knownPost, patchPostEverywhere, threadStates]);
+
+  const onToggleSave = useCallback((postId: string) => {
+    if (!user) {
+      setError("Sign in to save posts.");
+      return;
+    }
+    if (saveInFlight.current.has(postId)) return;
+    saveInFlight.current.add(postId);
+    const target = knownPost(postId);
+    const previousSaved = target?.savedByYou ?? isSaved(postId);
+    const nextSaved = !previousSaved;
+    reconcileSaved(postId, nextSaved);
+    if (target) {
+      patchPostEverywhere(postId, (item) => ({
+        ...item,
+        saveCount: Math.max(0, item.saveCount + (nextSaved ? 1 : -1)),
+        savedByYou: nextSaved,
+      }));
+    }
+    void toggleSaveRequest(postId)
+      .then((result) => {
+        reconcileSaved(postId, result.savedByYou);
+        patchPostEverywhere(postId, (item) => ({ ...item, saveCount: result.saveCount, savedByYou: result.savedByYou }));
+        invalidateCommunityCacheWhere((key) => key.startsWith("feed-list::"));
+      })
+      .catch((err) => {
+        reconcileSaved(postId, previousSaved);
+        if (target) {
+          patchPostEverywhere(postId, (item) => ({ ...item, saveCount: target.saveCount, savedByYou: previousSaved }));
+        }
+        setError(statusOf(err) === 401 ? "Sign in to save posts." : messageOf(err));
+      })
+      .finally(() => saveInFlight.current.delete(postId));
+  }, [isSaved, knownPost, patchPostEverywhere, reconcileSaved, user]);
 
   const onLike = useCallback(
     (target: FeedPost) => {
@@ -656,12 +757,12 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
   );
 
   const handleSubmitComment = useCallback(
-    async (body: string, followUpToBot: boolean): Promise<{ ok: boolean; error?: string }> => {
-      if (!post || !user) return { ok: false, error: "Sign in to comment." };
+    async (postId: string, body: string, followUpToBot: boolean): Promise<{ ok: boolean; error?: string }> => {
+      const targetPost = knownPost(postId);
+      if (!targetPost || !user) return { ok: false, error: "Sign in to comment." };
       const pending = optimisticComment(body, user);
-      const postId = post.id;
       const beforeBotCommentIds = new Set(
-        (post.comments ?? [])
+        (targetPost.comments ?? [])
           .filter((row) => row.author.role === "assistant" || isCommunityBot(row.author.id))
           .map((row) => row.id),
       );
@@ -688,9 +789,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
           };
         });
         invalidateCommunityCacheWhere((k) => k.startsWith("feed-list::"));
-        if (result.botReplyPending) {
-          void refreshPostForBotReply(postId, beforeBotCommentIds);
-        }
+        if (result.botReplyPending) void refreshPostForBotReply(postId, beforeBotCommentIds);
         return { ok: true };
       } catch (err) {
         patchPostEverywhere(postId, (item) => ({
@@ -698,62 +797,84 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
           commentCount: Math.max(0, item.commentCount - 1),
           comments: (item.comments ?? []).filter((c) => c.id !== pending.id),
         }));
-        const msg = statusOf(err) === 401 ? "Sign in to comment." : messageOf(err);
-        return { ok: false, error: msg };
+        return { ok: false, error: statusOf(err) === 401 ? "Sign in to comment." : messageOf(err) };
       }
     },
-    [patchPostEverywhere, post, refreshPostForBotReply, user],
+    [knownPost, patchPostEverywhere, refreshPostForBotReply, user],
   );
 
   const handleSaveCommentEdit = useCallback(
-    async (commentId: string, nextBody: string): Promise<{ ok: boolean; error?: string }> => {
-      if (!post || !user) return { ok: false, error: "Sign in to edit comments." };
+    async (postId: string, commentId: string, nextBody: string): Promise<{ ok: boolean; error?: string }> => {
+      if (!knownPost(postId) || !user) return { ok: false, error: "Sign in to edit comments." };
       try {
-        const result = await updateComment(post.id, commentId, nextBody);
-        patchPostEverywhere(post.id, (item) => ({
+        const result = await updateComment(postId, commentId, nextBody);
+        patchPostEverywhere(postId, (item) => ({
           ...item,
           comments: (item.comments ?? []).map((entry) =>
-            entry.id === commentId ? result.comment : entry,
+            entry.id === commentId
+              ? {
+                  ...result.comment,
+                  // The PATCH response may omit thread linkage; preserve it so
+                  // editing a reply keeps its "Replying to @X" label.
+                  replyTo: result.comment.replyTo ?? entry.replyTo,
+                  parentId: result.comment.parentId ?? entry.parentId,
+                }
+              : entry,
           ),
         }));
         return { ok: true };
       } catch (err) {
-        const msg = statusOf(err) === 401 ? "Sign in to edit comments." : messageOf(err);
-        return { ok: false, error: msg };
+        return { ok: false, error: statusOf(err) === 401 ? "Sign in to edit comments." : messageOf(err) };
       }
     },
-    [patchPostEverywhere, post, user],
+    [knownPost, patchPostEverywhere, user],
   );
 
   const handleDeleteComment = useCallback(
-    (commentId: string) => {
-      if (!post || !user) return;
-      if (!window.confirm("Delete this comment?")) return;
-      const postId = post.id;
-      const prevComments = post.comments ?? [];
-      const prevCount = post.commentCount;
-
+    (postId: string, commentId: string) => {
+      const targetPost = knownPost(postId);
+      if (!targetPost || !user || !window.confirm("Delete this comment?")) return;
+      const prevComments = targetPost.comments ?? [];
+      const prevCount = targetPost.commentCount;
       patchPostEverywhere(postId, (item) => ({
         ...item,
         commentCount: Math.max(0, item.commentCount - 1),
         comments: (item.comments ?? []).filter((entry) => entry.id !== commentId),
       }));
-
       void deleteComment(postId, commentId)
-        .then(() => {
-          invalidateCommunityCacheWhere((k) => k.startsWith("feed-list::"));
-        })
+        .then(() => invalidateCommunityCacheWhere((k) => k.startsWith("feed-list::")))
         .catch((err) => {
-          patchPostEverywhere(postId, (item) => ({
-            ...item,
-            commentCount: prevCount,
-            comments: prevComments,
-          }));
+          patchPostEverywhere(postId, (item) => ({ ...item, commentCount: prevCount, comments: prevComments }));
           setError(statusOf(err) === 401 ? "Sign in to delete comments." : messageOf(err));
         });
     },
-    [patchPostEverywhere, post, user],
+    [knownPost, patchPostEverywhere, user],
   );
+
+  const threadPropsForPost = useCallback((postId: string) => {
+    const state = threadStates[postId];
+    const threadPost = state?.post ?? knownPost(postId);
+    const commentsExpanded = expandedPostId === postId;
+    return {
+      viewer: user,
+      commentsExpanded,
+      threadComments: threadPost?.comments ?? [],
+      threadLoading: Boolean(commentsExpanded && state?.loading),
+      threadError: commentsExpanded ? state?.error ?? null : null,
+      followUpBotCommentId: commentsExpanded ? followUpBotCommentId : null,
+      composerFocusTrigger: commentsExpanded ? composerFocusTrigger : 0,
+      onToggleComments: toggleInlineComments,
+      onSelectFollowUp: (commentId: string) => {
+        setFollowUpBotCommentId((current) => current === commentId ? null : commentId);
+        setComposerFocusTrigger((n) => n + 1);
+      },
+      onClearFollowUp: () => setFollowUpBotCommentId(null),
+      onFollowChange: patchAuthorFollowing,
+      onSubmitComment: handleSubmitComment,
+      onSaveCommentEdit: handleSaveCommentEdit,
+      onDeleteComment: handleDeleteComment,
+    };
+  }, [composerFocusTrigger, expandedPostId, followUpBotCommentId, handleDeleteComment, handleSaveCommentEdit, handleSubmitComment, knownPost, patchAuthorFollowing, threadStates, toggleInlineComments, user]);
 
   const onAssistantReply = useCallback(
     (target: FeedPost) => {
@@ -997,22 +1118,22 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
 
                 <button
                   type="button"
-                  onClick={() => toggleSaved(post.id)}
-                  aria-pressed={isSaved(post.id)}
-                  aria-label={isSaved(post.id) ? "Saved post" : "Save post"}
+                  onClick={() => onToggleSave(post.id)}
+                  aria-pressed={post.savedByYou || isSaved(post.id)}
+                  aria-label={post.savedByYou || isSaved(post.id) ? "Saved post" : "Save post"}
                   className={cn(
                     actionBtn,
                     "min-h-11 px-3 text-[13px]",
-                    isSaved(post.id)
+                    (post.savedByYou || isSaved(post.id))
                       ? "bg-primary/12 font-semibold text-primary hover:bg-primary/18"
                       : "text-muted-foreground hover:bg-muted/60 hover:text-foreground",
                   )}
                 >
                   <Bookmark
-                    className={cn("h-4 w-4", isSaved(post.id) && "fill-current")}
+                    className={cn("h-4 w-4", (post.savedByYou || isSaved(post.id)) && "fill-current")}
                     aria-hidden
                   />
-                  <span>{isSaved(post.id) ? "Saved" : "Save post"}</span>
+                  <span className="tabular-nums">{post.saveCount}</span>
                 </button>
 
                 <button
@@ -1062,27 +1183,6 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                 </h2>
 
                 <div className="flex flex-wrap items-center gap-2">
-                  <button
-                    type="button"
-                    className={cn(
-                      chipBtn,
-                      "min-h-11 text-[13px]",
-                      commentComposerOpen && "border-primary/40 bg-primary/10 text-primary",
-                    )}
-                    aria-expanded={commentComposerOpen}
-                    onClick={() => {
-                      if (commentComposerOpen) {
-                        setCommentComposerOpen(false);
-                      } else {
-                        openAndFocusComposer();
-                      }
-                      setError(null);
-                    }}
-                  >
-                    <MessageCircle className="h-4 w-4" aria-hidden />
-                    {commentComposerOpen ? "Hide comment box" : "Add comment"}
-                  </button>
-
                   {/* Single Answer-with-Veer control (never repeated, hidden once posted) */}
                   <BotAnswerButton
                     visible={Boolean(
@@ -1123,20 +1223,18 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                 }}
                 onOpenComposer={() => openAndFocusComposer()}
                 onFollowChange={patchAuthorFollowing}
-                onSaveEdit={handleSaveCommentEdit}
-                onDelete={handleDeleteComment}
+                onSaveEdit={(commentId, body) => handleSaveCommentEdit(post.id, commentId, body)}
+                onDelete={(commentId) => handleDeleteComment(post.id, commentId)}
               />
 
-              {commentComposerOpen ? (
-                <CommentComposer
-                  signedIn={Boolean(user)}
-                  isBotPost={isCommunityBot(post.author.id)}
-                  followUpCommentId={followUpBotCommentId}
-                  focusTrigger={composerFocusTrigger}
-                  onClearFollowUp={() => setFollowUpBotCommentId(null)}
-                  onSubmitComment={handleSubmitComment}
-                />
-              ) : null}
+              <CommentComposer
+                signedIn={Boolean(user)}
+                isBotPost={isCommunityBot(post.author.id)}
+                followUpCommentId={followUpBotCommentId}
+                focusTrigger={composerFocusTrigger}
+                onClearFollowUp={() => setFollowUpBotCommentId(null)}
+                onSubmitComment={(body, followUp) => handleSubmitComment(post.id, body, followUp)}
+              />
             </section>
           </div>
         ) : null}
@@ -1189,6 +1287,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
               copiedId={copiedId}
               aiReplyBusyIds={aiReplyBusyIds}
               isSaved={isSaved}
+              threadPropsForPost={threadPropsForPost}
               onApplySearch={(nextQuery) => setAppliedQuery(nextQuery)}
               onSelectCategory={(nextCategory) => setCategory(nextCategory)}
               onSelectFilter={(nextFilter) => setFilter(nextFilter)}
@@ -1203,7 +1302,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
               }}
               onLoadMore={handleLoadMoreFeed}
               onLike={onLike}
-              onToggleSave={toggleSaved}
+              onToggleSave={onToggleSave}
               onCopyLink={(postId) => void copy(postId)}
               onDelete={(postId) => void onDeletePost(postId)}
               onAssistantReply={onAssistantReply}
@@ -1238,7 +1337,7 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                   </p>
                 ) : (
                   <>
-                    <div className="divide-y divide-border/60 overflow-hidden rounded-2xl border border-border/80 bg-card shadow-elev-0">
+                    <div className="space-y-3">
                       {person.posts.map((item, idx) => (
                         <FeedPostRow
                           key={item.id}
@@ -1246,15 +1345,15 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
                           isLeading={idx === 0}
                           viewerId={user?.id}
                           canModerate={moderate}
-                          saved={isSaved(item.id)}
                           copied={copiedId === item.id}
                           aiReplyBusy={aiReplyBusyIds.has(item.id)}
                           onLike={onLike}
-                          onToggleSave={toggleSaved}
+                          onToggleSave={onToggleSave}
                           onCopyLink={(postId) => void copy(postId)}
                           onDelete={(postId) => void onDeletePost(postId)}
                           onAssistantReply={onAssistantReply}
                           onPrefetch={handlePrefetchPost}
+                          {...threadPropsForPost(item.id)}
                         />
                       ))}
                     </div>

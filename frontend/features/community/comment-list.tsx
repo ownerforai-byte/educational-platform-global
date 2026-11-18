@@ -96,7 +96,7 @@ const CommentRow = memo(function CommentRow({
         ) : null}
 
         <div className="flex items-start justify-between gap-2">
-          <div className="min-w-0 flex-1">
+          <div className="min-w-0 flex-1 space-y-1.5">
             <PostAuthorHeader
               author={comment.author}
               createdAt={comment.createdAt}
@@ -104,6 +104,11 @@ const CommentRow = memo(function CommentRow({
               compact
               onFollowChange={(following) => onFollowChange(comment.author.id, following)}
             />
+            {comment.replyTo && (botComment || Boolean(comment.parentId)) ? (
+              <p className="pl-10 text-xs font-medium text-muted-foreground">
+                Replying to @{comment.replyTo.username || comment.replyTo.fullName}
+              </p>
+            ) : null}
           </div>
 
           {(canEdit || canDelete) && !pendingComment ? (
@@ -257,15 +262,6 @@ export function CommentList({
         <p className="text-sm text-muted-foreground">
           Add the first answer, explanation, or follow-up question.
         </p>
-        <div className="pt-1">
-          <button
-            type="button"
-            onClick={onOpenComposer}
-            className={cn(chipBtn, "min-h-11")}
-          >
-            Add comment
-          </button>
-        </div>
       </div>
     );
   }

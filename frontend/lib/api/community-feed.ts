@@ -30,12 +30,26 @@ export interface FeedAttachment {
   byteSize: number;
 }
 
+export interface FeedCommentReplyTo {
+  id: string;
+  fullName: string;
+  username?: string | null;
+}
+
 export interface FeedComment {
   id: string;
   body: string;
   createdAt: string;
   updatedAt: string;
   author: FeedAuthor;
+  /**
+   * Author this comment replies to (the post author for top-level comments,
+   * or the parent comment's author when threaded). Used for the
+   * "Replying to @name" affordance. Optional for older payloads.
+   */
+  replyTo?: FeedCommentReplyTo | null;
+  /** Parent comment id when this is a threaded reply; null/absent for top-level. */
+  parentId?: string | null;
 }
 
 export interface FeedAssistantReply {
@@ -55,6 +69,8 @@ export interface FeedPost {
   likeCount: number;
   likedByYou: boolean;
   commentCount: number;
+  saveCount: number;
+  savedByYou: boolean;
   attachments: FeedAttachment[];
   comments?: FeedComment[];
   assistantReply?: FeedAssistantReply;
@@ -168,6 +184,10 @@ export function deletePost(id: string): Promise<{ ok: boolean }> {
 
 export function toggleLike(id: string): Promise<{ likeCount: number; likedByYou: boolean }> {
   return call(`${ROOT}/feed/${id}/like`, { method: "POST" });
+}
+
+export function toggleSave(id: string): Promise<{ saveCount: number; savedByYou: boolean }> {
+  return call(`${ROOT}/feed/${id}/save`, { method: "POST" });
 }
 
 export function addComment(

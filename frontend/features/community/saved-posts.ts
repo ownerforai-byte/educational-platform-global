@@ -112,23 +112,24 @@ export function readSavedPostIds(): string[] {
   return savedIdsFromDoc(readSavedPostsDoc());
 }
 
-export function toggleSavedPost(postId: string, signedIn: boolean): boolean {
+export function setSavedPost(postId: string, saved: boolean, signedIn: boolean): void {
   const scope = storageScope();
   const current = readSavedPostsDoc();
-  const nextSaved = !current.items[postId]?.saved;
   const nextDoc = normalizeSavedDoc({
     items: {
       ...current.items,
-      [postId]: {
-        saved: nextSaved,
-        updatedAt: new Date().toISOString(),
-      },
+      [postId]: { saved, updatedAt: new Date().toISOString() },
     },
   });
   writeSavedPostsDocForScope(nextDoc, scope);
   if (signedIn && isCurrentScope(scope)) {
     scheduleNamespacePush(COMMUNITY_SAVED_NAMESPACE, nextDoc);
   }
+}
+
+export function toggleSavedPost(postId: string, signedIn: boolean): boolean {
+  const nextSaved = !readSavedPostsDoc().items[postId]?.saved;
+  setSavedPost(postId, nextSaved, signedIn);
   return nextSaved;
 }
 
@@ -187,7 +188,15 @@ export function useSavedPosts(userId?: string | null) {
     [userId],
   );
 
-  return { savedIds, savedSet, savedCount: savedIds.length, isSaved, toggle };
+  const reconcile = useCallback(
+    (postId: string, saved: boolean) => {
+      setSavedPost(postId, saved, Boolean(userId));
+      setDoc(readSavedPostsDoc());
+    },
+    [userId],
+  );
+
+  return { savedIds, savedSet, savedCount: savedIds.length, isSaved, toggle, reconcile };
 }
 
 /* ── Composer local draft autosave (account + route scoped) ─────────────── */

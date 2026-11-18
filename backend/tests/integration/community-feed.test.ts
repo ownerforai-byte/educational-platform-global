@@ -160,6 +160,20 @@ const memory = vi.hoisted(() => {
             return this.result;
           }
         }
+        if (this.table === "community_feed_saves") {
+          const duplicate = this.payload.some((row) =>
+            tables[this.table].some(
+              (existing) => existing.post_id === row.post_id && existing.user_id === row.user_id,
+            ),
+          );
+          if (duplicate) {
+            this.result = {
+              data: null,
+              error: { message: "duplicate key value violates unique constraint", code: "23505" },
+            } as { data: Row | Row[] | null; error: null };
+            return this.result;
+          }
+        }
         tables[this.table].push(...this.payload.map((row) => ({ ...row })));
         const stored = tables[this.table].slice(-this.payload.length);
         this.result = {
@@ -253,7 +267,7 @@ const memory = vi.hoisted(() => {
   };
 
   reset();
-  return { client, reset, USER_ID, OTHER_ID, OWNER_ID };
+  return { client, reset, tables, USER_ID, OTHER_ID, OWNER_ID };
 });
 
 const USER_ID = memory.USER_ID;
@@ -265,7 +279,9 @@ vi.mock("../../src/db/supabase", () => ({
 }));
 
 vi.mock("../../src/services/community-ai-reply", () => ({
+  CommunityAssistantReplyError: class CommunityAssistantReplyError extends Error {},
   generateCommunityAssistantReply: vi.fn(async () => "Grounded **assistant** reply for the post."),
+  generateCommunityFollowUpReply: vi.fn(async () => "Follow-up **assistant** answer for the thread."),
 }));
 
 vi.mock("../../src/lib/community-bot", async (importOriginal) => {
@@ -339,6 +355,35 @@ function memberHeaders(json = false): HeadersInit {
     Authorization: "Bearer member-token",
     ...(json ? { "Content-Type": "application/json" } : {}),
   };
+}
+
+async function waitForComments(
+  postId: string,
+  minCount: number,
+): Promise<
+  Array<{
+    id: string;
+    parentId: string | null;
+    replyTo: { id: string; fullName: string; username?: string | null } | null;
+    author: { id: string; fullName: string; username?: string | null };
+  }>
+> {
+  for (let attempt = 0; attempt < 100; attempt += 1) {
+    const res = await fetch(`${base}/feed/${postId}`);
+    const body = (await res.json()) as {
+      post: {
+        comments: Array<{
+          id: string;
+          parentId: string | null;
+          replyTo: { id: string; fullName: string; username?: string | null } | null;
+          author: { id: string; fullName: string; username?: string | null };
+        }>;
+      };
+    };
+    if (body.post.comments.length >= minCount) return body.post.comments;
+    await new Promise((resolve) => setTimeout(resolve, 10));
+  }
+  throw new Error(`Timed out waiting for ${minCount} comments on ${postId}`);
 }
 
 describe("community feed", () => {
@@ -728,5 +773,192 @@ describe("community feed", () => {
     expect(file.status).toBe(200);
     expect(file.headers.get("content-type")).toContain("application/pdf");
     expect(Buffer.from(await file.arrayBuffer()).equals(pdf)).toBe(true);
+  });
+
+  it("toggles saves and serializes saveCount/savedByYou in list and detail", async () => {
+    const created = await fetch(`${base}/feed`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({ title: "Bookmark me", body: "Worth saving.", category: "general" }),
+    });
+    expect(created.status).toBe(201);
+    const createdBody = (await created.json()) as {
+      post: { id: string; saveCount: number; savedByYou: boolean };
+    };
+    expect(createdBody.post.saveCount).toBe(0);
+    expect(createdBody.post.savedByYou).toBe(false);
+    const postId = createdBody.post.id;
+
+    // insert
+    const saved = await fetch(`${base}/feed/${postId}/save`, { method: "POST", headers: memberHeaders() });
+    expect(saved.status).toBe(200);
+    expect(await saved.json()).toEqual({ saveCount: 1, savedByYou: true });
+
+    // remove
+    const removed = await fetch(`${base}/feed/${postId}/save`, { method: "POST", headers: memberHeaders() });
+    expect(removed.status).toBe(200);
+    expect(await removed.json()).toEqual({ saveCount: 0, savedByYou: false });
+
+    // re-save stays one row per (post, user)
+    const again = await fetch(`${base}/feed/${postId}/save`, { method: "POST", headers: memberHeaders() });
+    expect(await again.json()).toEqual({ saveCount: 1, savedByYou: true });
+
+    const byOther = await fetch(`${base}/feed/${postId}/save`, {
+      method: "POST",
+      headers: { Authorization: "Bearer other-token" },
+    });
+    expect(await byOther.json()).toEqual({ saveCount: 2, savedByYou: true });
+
+    // public serialization in the list
+    const listed = await fetch(`${base}/feed`);
+    const listBody = (await listed.json()) as {
+      posts: Array<{ id: string; saveCount: number; savedByYou: boolean }>;
+    };
+    expect(listBody.posts.find((item) => item.id === postId)).toMatchObject({
+      saveCount: 2,
+      savedByYou: false,
+    });
+
+    // ...and in detail, per viewer
+    const memberView = (await (
+      await fetch(`${base}/feed/${postId}`, { headers: memberHeaders() })
+    ).json()) as { post: { saveCount: number; savedByYou: boolean } };
+    expect(memberView.post).toMatchObject({ saveCount: 2, savedByYou: true });
+
+    const guestView = (await (await fetch(`${base}/feed/${postId}`)).json()) as {
+      post: { saveCount: number; savedByYou: boolean };
+    };
+    expect(guestView.post).toMatchObject({ saveCount: 2, savedByYou: false });
+
+    // rows stay unique per (post, user)
+    const rows = (memory.tables.community_feed_saves ?? []) as Array<{
+      post_id: string;
+      user_id: string;
+    }>;
+    expect(rows.filter((row) => row.post_id === postId && row.user_id === USER_ID)).toHaveLength(1);
+    expect(rows.filter((row) => row.post_id === postId && row.user_id === OTHER_ID)).toHaveLength(1);
+
+    const guestSave = await fetch(`${base}/feed/${postId}/save`, { method: "POST" });
+    expect(guestSave.status).toBe(401);
+  });
+
+  it("keeps saves consistent when duplicate saves race", async () => {
+    const created = await fetch(`${base}/feed`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({ title: "Race the save", body: "Double click.", category: "general" }),
+    });
+    expect(created.status).toBe(201);
+    const { post } = (await created.json()) as { post: { id: string } };
+    const postId = post.id;
+
+    const [first, second] = await Promise.all([
+      fetch(`${base}/feed/${postId}/save`, { method: "POST", headers: memberHeaders() }),
+      fetch(`${base}/feed/${postId}/save`, { method: "POST", headers: memberHeaders() }),
+    ]);
+    expect(first.status).toBe(200);
+    expect(second.status).toBe(200);
+
+    const rows = (
+      (memory.tables.community_feed_saves ?? []) as Array<{ post_id: string; user_id: string }>
+    ).filter((row) => row.post_id === postId);
+    const pairs = rows.map((row) => `${row.post_id}:${row.user_id}`);
+    expect(new Set(pairs).size).toBe(pairs.length);
+
+    const detail = (await (await fetch(`${base}/feed/${postId}`)).json()) as {
+      post: { saveCount: number };
+    };
+    expect(detail.post.saveCount).toBe(rows.length);
+  });
+
+  it("threads bot and human replies with parentId/replyTo resolution", async () => {
+    const created = await fetch(`${base}/feed`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({
+        title: "Threaded help",
+        body: "Explain projectile motion simply.",
+        category: "physics",
+      }),
+    });
+    expect(created.status).toBe(201);
+    const { post } = (await created.json()) as { post: { id: string } };
+    const postId = post.id;
+
+    // (a) Initial bot reply is top-level and answers the post author.
+    const published = await fetch(`${base}/feed/${postId}/ai-assistant/reply`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({ approve: true }),
+    });
+    expect(published.status).toBe(201);
+    const publishedBody = (await published.json()) as {
+      comment: {
+        id: string;
+        parentId: string | null;
+        replyTo: { id: string; fullName: string; username?: string | null } | null;
+      };
+    };
+    expect(publishedBody.comment.parentId).toBeNull();
+    expect(publishedBody.comment.replyTo).toMatchObject({ id: USER_ID, fullName: "Member Student" });
+
+    // (d) A human follow-up threads under the bot comment ("Replying to @Community bot").
+    const followUp = await fetch(`${base}/feed/${postId}/comments`, {
+      method: "POST",
+      headers: { Authorization: "Bearer other-token", "Content-Type": "application/json" },
+      body: JSON.stringify({ body: "Can you simplify the math?", followUpToBot: true }),
+    });
+    expect(followUp.status).toBe(201);
+    const followUpBody = (await followUp.json()) as {
+      comment: {
+        id: string;
+        parentId: string | null;
+        replyTo: { id: string; fullName: string; username?: string | null } | null;
+      };
+    };
+    const humanCommentId = followUpBody.comment.id;
+    expect(followUpBody.comment.parentId).toBe(publishedBody.comment.id);
+    expect(followUpBody.comment.replyTo).toMatchObject({
+      id: "rn-study-assistant",
+      fullName: "Community bot",
+      username: "community-bot",
+    });
+
+    // (b) The deferred bot follow-up threads under the triggering human comment.
+    const afterBot = await waitForComments(postId, 3);
+    const botFollowUp = afterBot.find(
+      (comment) => comment.author.id === "rn-study-assistant" && comment.id !== publishedBody.comment.id,
+    );
+    expect(botFollowUp).toBeTruthy();
+    expect(botFollowUp?.parentId).toBe(humanCommentId);
+    expect(botFollowUp?.replyTo).toMatchObject({ id: OTHER_ID, fullName: "Other Student" });
+
+    // (c) A plain human comment is top-level with no replyTo.
+    const plain = await fetch(`${base}/feed/${postId}/comments`, {
+      method: "POST",
+      headers: memberHeaders(true),
+      body: JSON.stringify({ body: "Top-level thoughts." }),
+    });
+    expect(plain.status).toBe(201);
+    const plainBody = (await plain.json()) as {
+      comment: { id: string; parentId: string | null; replyTo: unknown };
+    };
+    expect(plainBody.comment.parentId).toBeNull();
+    expect(plainBody.comment.replyTo).toBeNull();
+
+    // Final detail serialization keeps every resolution.
+    const detail = await waitForComments(postId, 4);
+    expect(detail.find((comment) => comment.id === publishedBody.comment.id)).toMatchObject({
+      parentId: null,
+      replyTo: { id: USER_ID, fullName: "Member Student" },
+    });
+    expect(detail.find((comment) => comment.id === humanCommentId)).toMatchObject({
+      parentId: publishedBody.comment.id,
+      replyTo: { id: "rn-study-assistant", fullName: "Community bot", username: "community-bot" },
+    });
+    expect(detail.find((comment) => comment.id === plainBody.comment.id)).toMatchObject({
+      parentId: null,
+      replyTo: null,
+    });
   });
 });
