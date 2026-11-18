@@ -17,6 +17,7 @@
 import { useMemo, useSyncExternalStore } from "react";
 import { getQuizHistory, type QuizHistoryRow } from "@/lib/api/ai-quiz-history";
 import { getProgress } from "@/lib/api/progress";
+import { mergeQuizRows, practiceRowsForAnalytics } from "@/features/practice/history";
 import {
   accuracyBySubject,
   accuracyByTopic,
@@ -67,9 +68,11 @@ async function refresh(): Promise<void> {
     getQuizHistory(100),
     getProgress(),
   ]);
+  const serverQuizRows = quiz.status === "fulfilled" ? (quiz.value?.rows ?? []) : [];
+  const localPracticeRows = practiceRowsForAnalytics();
   snapshot = {
     loading: false,
-    quizRows: quiz.status === "fulfilled" ? (quiz.value?.rows ?? []) : [],
+    quizRows: mergeQuizRows(serverQuizRows, localPracticeRows),
     progressEntries: progress.status === "fulfilled" ? (progress.value ?? []) : [],
   };
   emit();

@@ -8,8 +8,16 @@
  */
 
 import { key } from "@/lib/state/scoped-storage";
-import type { QuizHistoryRow } from "@/lib/api/ai-quiz-history";
-import type { Difficulty, PracticeMode } from "./types";
+import { saveQuizHistory, type QuizHistoryRow } from "@/lib/api/ai-quiz-history";
+import type { GeneratedQuestion } from "@/types/api";
+import type {
+  Difficulty,
+  McqQuestion,
+  OptionId,
+  PracticeMode,
+  WritingQuestion,
+} from "./types";
+import { OPTION_IDS } from "./types";
 
 const LOG_KEY = "neb-practice-log:v1";
 const DRAFT_KEY = "neb-practice-draft:v1";
@@ -103,6 +111,198 @@ export function recordPracticeAttempt(attempt: PracticeAttempt): void {
     MAX_ATTEMPTS,
   );
   writeJson(LOG_KEY, next);
+  logCache = null;
+}
+
+type PracticeQuestion = McqQuestion | WritingQuestion;
+
+function isMcqQuestion(q: PracticeQuestion): q is McqQuestion {
+  return "options" in q;
+}
+
+function optionLabel(q: McqQuestion, id: OptionId): string {
+  const opt = q.options.find((o) => o.id === id);
+  return opt ? `${id}. ${opt.text}` : id;
+}
+
+function mcqToGenerated(q: McqQuestion): GeneratedQuestion {
+  return {
+    prompt: q.stem,
+    options: q.options.map((o) => o.text),
+    correctIndex: OPTION_IDS.indexOf(q.correctId),
+    difficulty: q.difficulty,
+    subject: q.subject,
+    topic: q.topic,
+    explanation: q.explanations[q.correctId],
+    optionAnalysis: {
+      A: q.explanations.A,
+      B: q.explanations.B,
+      C: q.explanations.C,
+      D: q.explanations.D,
+    },
+    format: "mcq",
+  };
+}
+
+function writingToGenerated(q: WritingQuestion): GeneratedQuestion {
+  return {
+    prompt: q.prompt,
+    options: [],
+    correctIndex: -1,
+    difficulty: "intermediate",
+    subject: q.subject,
+    topic: q.topic,
+    explanation: q.modelAnswer,
+    format: "long-answer",
+    modelAnswer: q.modelAnswer,
+    rubric: q.markingPoints,
+    maxScore: q.marks,
+  };
+}
+
+function dominantDifficulty(questions: PracticeQuestion[]): Difficulty | null {
+  const mcq = questions.filter(isMcqQuestion);
+  if (mcq.length === 0) return null;
+  const counts: Record<Difficulty, number> = { easy: 0, intermediate: 0, hard: 0 };
+  for (const q of mcq) counts[q.difficulty] += 1;
+  return (Object.entries(counts).sort((a, b) => b[1] - a[1])[0]?.[0] ??
+    null) as Difficulty | null;
+}
+
+function dominantTopic(questions: PracticeQuestion[]): string | null {
+  const counts = new Map<string, number>();
+  for (const q of questions) {
+    counts.set(q.topic, (counts.get(q.topic) ?? 0) + 1);
+  }
+  let best: string | null = null;
+  let max = 0;
+  for (const [topic, n] of counts) {
+    if (n > max) {
+      max = n;
+      best = topic;
+    }
+  }
+  return best;
+}
+
+export interface FinishPracticeSetInput {
+  mode: PracticeMode;
+  subjectSlug: string;
+  subjectLabel: string;
+  classSlug: string | null;
+  timed: boolean;
+  seconds: number;
+  questions: PracticeQuestion[];
+  choices: Record<string, OptionId>;
+  drafts: Record<string, string>;
+  selfScores: Record<string, number>;
+  summary: {
+    answered: number;
+    correctMcq: number;
+    markedWriting: number;
+    accuracy: number;
+    xp: number;
+  };
+}
+
+/**
+ * Persist a scored practice set on-device and, when the student is signed in,
+ * mirror it to quiz history so analytics and cross-device lists stay accurate.
+ */
+export async function finishPracticeSet(input: FinishPracticeSetInput): Promise<PracticeAttempt> {
+  const {
+    mode,
+    subjectSlug,
+    subjectLabel,
+    classSlug,
+    timed,
+    seconds,
+    questions,
+    choices,
+    drafts,
+    selfScores,
+    summary,
+  } = input;
+
+  const id =
+    typeof crypto !== "undefined" && "randomUUID" in crypto
+      ? crypto.randomUUID()
+      : `practice-${Date.now()}`;
+  const createdAt = new Date().toISOString();
+  const correct =
+    mode === "mcq" ? summary.correctMcq : summary.markedWriting;
+
+  const review: PracticeReviewItem[] = [];
+  for (const q of questions) {
+    if (isMcqQuestion(q)) {
+      const chosen = choices[q.id];
+      if (!chosen) continue;
+      const ok = chosen === q.correctId;
+      review.push({
+        id: q.id,
+        prompt: q.stem,
+        topic: q.topic,
+        chosen: optionLabel(q, chosen),
+        answer: optionLabel(q, q.correctId),
+        correct: ok,
+        explanation: q.explanations[chosen],
+      });
+    } else {
+      const text = (drafts[q.id] ?? "").trim();
+      const score = selfScores[q.id];
+      if (!text || score === undefined) continue;
+      review.push({
+        id: q.id,
+        prompt: q.prompt,
+        topic: q.topic,
+        chosen: text,
+        answer: q.modelAnswer,
+        correct: score >= 60,
+        explanation: q.markingPoints.join(" · "),
+      });
+    }
+  }
+
+  const attempt: PracticeAttempt = {
+    id,
+    createdAt,
+    mode,
+    subjectSlug,
+    subjectLabel,
+    classSlug,
+    topic: dominantTopic(questions),
+    difficulty: dominantDifficulty(questions),
+    timed,
+    seconds,
+    answered: summary.answered,
+    correct,
+    scorePct: summary.accuracy,
+    xp: summary.xp,
+    review,
+  };
+
+  recordPracticeAttempt(attempt);
+
+  const generated = questions.map((q) => (isMcqQuestion(q) ? mcqToGenerated(q) : writingToGenerated(q)));
+
+  try {
+    await saveQuizHistory({
+      title: `${subjectLabel} practice`,
+      classSlug: classSlug ?? undefined,
+      subjectSlug,
+      topic: attempt.topic ?? undefined,
+      difficulty: attempt.difficulty ?? undefined,
+      format: mode === "writing" ? "long-answer" : "mcq",
+      questions: generated,
+      answered: summary.answered,
+      correct,
+      scorePct: summary.accuracy,
+    });
+  } catch {
+    /* guest or network — the device log still has the set */
+  }
+
+  return attempt;
 }
 
 function loadDraft(): PracticeDraft | null {

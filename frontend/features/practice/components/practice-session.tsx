@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -19,6 +19,8 @@ import type {
   WritingQuestion,
 } from "@/lib/practice/types";
 import { xpForSet, xpLevel } from "@/lib/practice/xp";
+import { finishPracticeSet } from "@/features/practice/history";
+import { notifyLiveStatsChanged } from "@/lib/hooks/use-live-stats";
 import { McqQuestion as McqCard } from "./mcq-question";
 import { WritingQuestion as WritingCard, type SelfScore } from "./writing-question";
 
@@ -43,15 +45,21 @@ function accuracyTone(pct: number): string {
  */
 export function PracticeSession({
   mode,
+  subjectSlug,
   subjectLabel,
+  classSlug,
   subjectHref,
   questions,
+  timed = false,
   onExit,
 }: {
   mode: PracticeMode;
+  subjectSlug: string;
   subjectLabel: string;
+  classSlug: string | null;
   subjectHref: string;
   questions: PracticeQuestion[];
+  timed?: boolean;
   onExit: () => void;
 }) {
   const [index, setIndex] = useState(0);
@@ -60,6 +68,8 @@ export function PracticeSession({
   const [submitted, setSubmitted] = useState<Record<string, boolean>>({});
   const [selfScores, setSelfScores] = useState<Record<string, SelfScore>>({});
   const [finished, setFinished] = useState(false);
+  const startedAtRef = useRef<number>(Date.now());
+  const persistedRef = useRef(false);
 
   const total = questions.length;
   const question = questions[index];
@@ -99,6 +109,43 @@ export function PracticeSession({
     setFinished(true);
   }
 
+  useEffect(() => {
+    if (!finished || persistedRef.current || summary.answered === 0) return;
+    persistedRef.current = true;
+    const seconds = Math.max(1, Math.round((Date.now() - startedAtRef.current) / 1000));
+    void finishPracticeSet({
+      mode,
+      subjectSlug,
+      subjectLabel,
+      classSlug,
+      timed,
+      seconds,
+      questions,
+      choices,
+      drafts,
+      selfScores,
+      summary: {
+        answered: summary.answered,
+        correctMcq: summary.correctMcq,
+        markedWriting: summary.markedWriting,
+        accuracy: summary.accuracy,
+        xp: summary.xp,
+      },
+    }).finally(() => notifyLiveStatsChanged());
+  }, [
+    finished,
+    mode,
+    subjectSlug,
+    subjectLabel,
+    classSlug,
+    timed,
+    questions,
+    choices,
+    drafts,
+    selfScores,
+    summary,
+  ]);
+
   if (total === 0) {
     return (
       <div className="mx-auto max-w-2xl rounded-2xl border border-border bg-card p-8 text-center">
@@ -129,6 +176,8 @@ export function PracticeSession({
           setSubmitted({});
           setSelfScores({});
           setFinished(false);
+          persistedRef.current = false;
+          startedAtRef.current = Date.now();
         }}
         onExit={onExit}
       />

@@ -31,7 +31,8 @@ export default function PracticeHistoryPage() {
           Practice history
         </h1>
         <p className="mt-1 text-sm text-muted-foreground">
-          Every set you finish on this device, newest first. Open one to review the questions you missed.
+          Every set you finish is saved here (and to your account when signed in), newest first. Open one to
+          review the questions you missed.
         </p>
       </header>
 

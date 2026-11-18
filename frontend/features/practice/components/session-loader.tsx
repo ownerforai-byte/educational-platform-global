@@ -43,6 +43,7 @@ export function PracticeSessionLoader() {
 
   const label = found.subject.name;
   const subjectHref = `/practice/${found.subject.slug}`;
+  const timed = params.get("timed") === "1";
   const questions: PracticeQuestion[] =
     mode === "mcq"
       ? mcqQuestionsForSubject(found.subject.slug)
@@ -52,9 +53,12 @@ export function PracticeSessionLoader() {
     <PracticeSession
       key={`${mode}:${found.subject.slug}`}
       mode={mode}
+      subjectSlug={found.subject.slug}
       subjectLabel={label}
+      classSlug={found.classSlug}
       subjectHref={subjectHref}
       questions={questions}
+      timed={timed}
       onExit={() => router.push(subjectHref)}
     />
   );
