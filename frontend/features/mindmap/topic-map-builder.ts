@@ -25,16 +25,20 @@ export interface TopicMapInput extends MindMapInput {
   unitTopics?: string[];
 }
 
-/** Guard rails: a map stays navigable even for the densest topic. */
+/** Guard rails: a map stays navigable even for the densest topic.
+ *  2026-11-17 (owner: "improve the mindmaps — more detailed"): the caps were
+ *  cutting real content off dense topics — 16 branches / 14 children / depth
+ *  4 and 3 retained lines per item. Raised so every syllabus field unfolds,
+ *  while the folding tree keeps its shape. */
 export const TOPIC_MAP_LIMITS = {
-  branches: 16,
-  children: 14,
-  depth: 4,
+  branches: 24,
+  children: 20,
+  depth: 5,
 } as const;
 
 type Draft = { label: string; children: Draft[] };
 
-const MAX_LABEL = 96;
+const MAX_LABEL = 120;
 
 function cleanText(text: string): string {
   return text
@@ -57,7 +61,7 @@ function splitLead(text: string): { term: string; body: string } | null {
   const term = cleanText(match[1]).replace(/[:：]\s*$/, "");
   const body = match[2].replace(/\s+/g, " ").trim();
   if (!term) return null;
-  return { term: shorten(term, 60), body: body ? shorten(body) : "" };
+  return { term: shorten(term, 80), body: body ? shorten(body) : "" };
 }
 
 /** First line of a multi-line item, so derivations keep their shape. */
@@ -71,7 +75,7 @@ function remainingLines(text: string): string[] {
     .split("\n")
     .map((l) => l.replace(/^\s*[-•]\s*/, "").trim())
     .filter(Boolean);
-  return lines.slice(1, 4).map((l) => shorten(l, 80));
+  return lines.slice(1, 6).map((l) => shorten(l, 110));
 }
 
 /** Split a NEB topic title into its syllabus parts. */
@@ -196,12 +200,12 @@ function docBranchToDraft(branch: DocConceptMap["branches"][number]): Draft | nu
   for (const sub of branch.subtopics ?? []) {
     children.push({
       label: shorten(sub.name, 60),
-      children: (sub.points ?? []).slice(0, 5).map((point) => ({ label: shorten(point, 80), children: [] })),
+      children: (sub.points ?? []).slice(0, 8).map((point) => ({ label: shorten(point, 110), children: [] })),
     });
   }
 
   const grouped = groupDetails(branch.details);
-  const limit = branch.subtopics?.length ? 4 : TOPIC_MAP_LIMITS.children;
+  const limit = branch.subtopics?.length ? 6 : TOPIC_MAP_LIMITS.children;
   for (const node of grouped) {
     if (children.length >= limit) break;
     children.push(node);
