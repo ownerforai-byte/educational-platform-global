@@ -5,13 +5,25 @@ import { platformLinks } from "@/components/platform/public-page";
 import { IndependenceDisclaimer } from "@/components/platform/independence-disclaimer";
 import { DEPLOY_VERSION } from "@/lib/deploy-version";
 
-/** Guest-visible info destinations — same set as public platform pages. */
-const PLANS_INFO_LINKS: ReadonlyArray<readonly [string, string]> = [
-  ...platformLinks,
-  ["Features", "/features"],
+/**
+ * Schools / teachers / parents — hidden under the sealed "Further" group and
+ * removed from Platform information (owner request).
+ */
+const FURTHER_LINKS: ReadonlyArray<readonly [string, string]> = [
   ["For Schools", "/school"],
   ["For Teachers", "/teachers"],
+  ["For Parents", "/parents"],
 ];
+const FURTHER_HREFS = new Set(FURTHER_LINKS.map(([, href]) => href));
+
+/** Guest-visible info destinations — same set as public platform pages. */
+const INFO_LINKS: ReadonlyArray<readonly [string, string]> = [
+  ...platformLinks,
+  ["Features", "/features"],
+];
+const PLANS_INFO_LINKS: ReadonlyArray<readonly [string, string]> = INFO_LINKS.filter(
+  ([, href]) => !FURTHER_HREFS.has(href),
+);
 
 /**
  * Public legal & info footer for /plans — every link is guest-accessible
@@ -66,21 +78,26 @@ export function PlansPageFooter() {
           </ul>
         </nav>
 
-        {/* Further — locked. Owner request 2026-07-10: a third group for schools,
-            teachers and parents, sealed behind a Confidential overlay. The
-            destination is not public yet, so the row is inert (not a link) and
-            the content sits under a blurred Confidential mark. */}
+        {/* Further — hidden. Schools, teachers and parents live here (removed
+            from Platform information) as links, sealed behind a Confidential
+            overlay so they stay hidden until the destinations go public. */}
         <nav aria-label="Further">
           <h3 className="text-xs font-semibold uppercase tracking-widest text-primary">
             Further
           </h3>
           <div className="relative mt-3">
             <ul className="flex flex-wrap gap-x-4 gap-y-2" aria-hidden="true">
-              <li>
-                <span className="inline-flex min-h-8 items-center gap-1.5 text-xs text-muted-foreground/60 blur-[3px] select-none">
-                  For schools, teachers, and parents
-                </span>
-              </li>
+              {FURTHER_LINKS.map(([label, href]) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    tabIndex={-1}
+                    className="inline-flex min-h-8 items-center gap-1.5 text-xs text-muted-foreground/60 blur-[3px] select-none"
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
             {/* Confidential overlay — the section is locked. */}
             <div className="absolute inset-0 flex items-center justify-start">
