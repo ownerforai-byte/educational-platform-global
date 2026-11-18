@@ -14,6 +14,7 @@ import {
   withProfessorContext,
 } from "../../src/ai/prompts";
 import { DEEP_ANSWER_RULES } from "../../src/ai/deep-answer";
+import { MCQ_PRACTICE_RULES } from "../../src/ai/mcq-practice-rules";
 import { CLASS_SCOPE_RULES } from "../../src/ai/class-scope";
 import { SOURCE_REGISTRY_RULES } from "../../src/ai/source-registry";
 
@@ -254,9 +255,16 @@ describe("verified tier answer boundaries", () => {
     }
   });
 
-  test("verified owner tier is the final server-context directive", async () => {
+  test("the mandatory MCQ block rides after the verified tier directive", async () => {
     const context = await buildProfessorContext("define a capacitor", "", "owner");
-    expect(context.trimEnd().endsWith(answerTierRules("owner"))).toBe(true);
+    // Owner law 2026-11-18: the ≥5-MCQ end block is the FINAL server-context
+    // directive, appended after the tier boundary so it overrides the tier
+    // practice limit for every tier.
+    expect(context.trimEnd().endsWith(MCQ_PRACTICE_RULES)).toBe(true);
+    expect(context.indexOf(answerTierRules("owner"))).toBeGreaterThan(-1);
+    expect(context.indexOf(answerTierRules("owner"))).toBeLessThan(
+      context.indexOf(MCQ_PRACTICE_RULES),
+    );
   }, CONTEXT_TIMEOUT);
 });
 
