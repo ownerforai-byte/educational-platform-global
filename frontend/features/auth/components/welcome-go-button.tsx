@@ -2,21 +2,35 @@
 
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { NORMAL_ROUTE } from "@/features/auth/pending-signup-identity";
+import {
+  APPROVED_ROUTE,
+  NORMAL_ROUTE,
+} from "@/features/auth/pending-signup-identity";
 import { useLiveApprovalRoute } from "@/features/auth/use-live-approval-route";
 
 /**
  * Guest welcome primary CTA — href follows live approval status.
  *   - no live signup → /signup
+ *   - approved → /login (plan home is after sign-in)
  *   - otherwise → the confirmed welcome screen
  */
 export function WelcomeGoButton() {
   const liveRoute = useLiveApprovalRoute();
   const href =
-    !liveRoute || liveRoute === NORMAL_ROUTE ? "/signup" : liveRoute;
+    !liveRoute || liveRoute === NORMAL_ROUTE
+      ? "/signup"
+      : liveRoute === APPROVED_ROUTE
+        ? "/login"
+        : liveRoute;
   const label =
-    href === "/signup" ? "Go — create account" : "Go — check approval status";
-  const pending = Boolean(liveRoute && liveRoute !== NORMAL_ROUTE);
+    href === "/signup"
+      ? "Go — create account"
+      : href === "/login"
+        ? "Go — sign in to your plan"
+        : "Go — check approval status";
+  const pending = Boolean(
+    liveRoute && liveRoute !== NORMAL_ROUTE && liveRoute !== APPROVED_ROUTE,
+  );
 
   return (
     <Link

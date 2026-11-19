@@ -45,7 +45,7 @@ describe("CreatedAccountGate", () => {
     expect(screen.queryByTestId("auth-form")).toBeNull();
   });
 
-  it("renders signup form immediately even if device has a status token so user can create an account", () => {
+  it("redirects approved signups away from Create Account to sign in", async () => {
     rememberPendingSignup("device-token");
     apiFetch.mockResolvedValue({ accessStatus: "ACTIVE" });
     render(
@@ -53,7 +53,19 @@ describe("CreatedAccountGate", () => {
         <div data-testid="signup-form">create account form</div>
       </CreatedAccountGate>,
     );
-    expect(screen.getByTestId("signup-form")).toBeInTheDocument();
-    expect(nav.replace).not.toHaveBeenCalled();
+    await waitFor(() => expect(nav.replace).toHaveBeenCalledWith("/login"));
+    expect(screen.queryByTestId("signup-form")).toBeNull();
+  });
+
+  it("redirects pending signups away from Create Account to the waiting screen", async () => {
+    rememberPendingSignup("device-token");
+    apiFetch.mockResolvedValue({ accessStatus: "PENDING" });
+    render(
+      <CreatedAccountGate mode="signup">
+        <div data-testid="signup-form">create account form</div>
+      </CreatedAccountGate>,
+    );
+    await waitFor(() => expect(nav.replace).toHaveBeenCalledWith("/welcome/pending"));
+    expect(screen.queryByTestId("signup-form")).toBeNull();
   });
 });

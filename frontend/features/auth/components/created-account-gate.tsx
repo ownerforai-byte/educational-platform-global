@@ -17,7 +17,7 @@ type Mode = "login" | "signup";
  * Created accounts never sit on login/signup while still PENDING.
  *   PENDING  → /welcome/pending
  *   DENIED   → login opens denied screen; signup stays (new account after denial)
- *   ACTIVE   → login stays (sign in); signup goes to /welcome/approved
+ *   ACTIVE   → signup opens sign-in; login stays (sign in → tier home)
  *   none     → stay on the form
  */
 export function CreatedAccountGate({
@@ -32,26 +32,23 @@ export function CreatedAccountGate({
   // account-status poll — a cold backend or 5xx on /account-status used to
   // leave login/signup on "Checking your account status" forever while email,
   // Google, and password flows stayed unreachable.
-  //
-  // For signup: the visitor must always be able to view and submit the account
-  // creation form to register a new account.
   const hasSignupToken = Boolean(readStatusToken());
   const live = useLiveApprovalRoute();
 
-  if (!hasSignupToken || mode === "signup") {
+  if (!hasSignupToken) {
     return <>{children}</>;
   }
 
   useEffect(() => {
-    if (!live || mode !== "login") return;
-    if (live === WAITING_ROUTE) {
-      router.replace(WAITING_ROUTE);
+    if (!live) return;
+    if (mode === "login") {
+      if (live === WAITING_ROUTE) router.replace(WAITING_ROUTE);
+      if (live === DENIED_ROUTE) router.replace(DENIED_ROUTE);
       return;
     }
-    if (live === DENIED_ROUTE) {
-      router.replace(DENIED_ROUTE);
-      return;
-    }
+    // Signup: account already exists on this device — never show Create Account again.
+    if (live === WAITING_ROUTE) router.replace(WAITING_ROUTE);
+    if (live === APPROVED_ROUTE) router.replace("/login");
   }, [live, mode, router]);
 
   if (!live) {
@@ -62,6 +59,25 @@ export function CreatedAccountGate({
     );
   }
 
+  if (mode === "login") {
+    if (live === WAITING_ROUTE) {
+      return (
+        <div className="flex justify-center py-6">
+          <VerifyingStatus compact label="Opening your account status" />
+        </div>
+      );
+    }
+    if (live === DENIED_ROUTE) {
+      return (
+        <div className="flex justify-center py-6">
+          <VerifyingStatus compact label="Opening denied screen" />
+        </div>
+      );
+    }
+    return <>{children}</>;
+  }
+
+  // signup + device token
   if (live === WAITING_ROUTE) {
     return (
       <div className="flex justify-center py-6">
@@ -69,13 +85,15 @@ export function CreatedAccountGate({
       </div>
     );
   }
-
-  if (mode === "login" && live === DENIED_ROUTE) {
+  if (live === APPROVED_ROUTE) {
     return (
       <div className="flex justify-center py-6">
-        <VerifyingStatus compact label="Opening denied screen" />
+        <VerifyingStatus compact label="Opening sign in" />
       </div>
     );
+  }
+  if (live === DENIED_ROUTE) {
+    return <>{children}</>;
   }
 
   return <>{children}</>;

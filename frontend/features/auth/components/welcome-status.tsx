@@ -15,7 +15,6 @@ import { apiFetch } from "@/lib/api-client";
 import { VisitorExitNote } from "@/components/layout/visitor-exit-note";
 import { VerifyingStatus } from "./verifying-status";
 import {
-  APPROVED_ROUTE,
   NORMAL_ROUTE,
   DENIED_ROUTE,
   clearPendingSignup,
@@ -154,7 +153,7 @@ export function WelcomeStatus() {
   // Terminal / empty outcomes leave the waiting page for the live screen.
   useEffect(() => {
     if (state === "ACTIVE") {
-      window.location.replace(APPROVED_ROUTE);
+      window.location.replace("/login");
       return;
     }
     if (state === "REJECTED") {

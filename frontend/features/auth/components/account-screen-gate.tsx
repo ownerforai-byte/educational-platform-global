@@ -94,7 +94,7 @@ export function ApprovedScreen() {
   return (
     <AuthShell
       title="Access granted"
-      subtitle="Sign in to open the library."
+      subtitle="Sign in to open your plan dashboard and study library."
     >
       <LoggedInRedirect />
       <div className="space-y-5" data-testid="approved-account-card">
