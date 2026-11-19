@@ -33,7 +33,19 @@ describe("CreatedAccountGate", () => {
     expect(apiFetch).not.toHaveBeenCalled();
   });
 
-  it("redirects pending signups away from login", async () => {
+  it("keeps login reachable while account status is loading", () => {
+    rememberPendingSignup("device-token");
+    apiFetch.mockImplementation(() => new Promise(() => {}));
+    render(
+      <CreatedAccountGate mode="login">
+        <div data-testid="auth-form">sign-in form</div>
+      </CreatedAccountGate>,
+    );
+    expect(screen.getByTestId("auth-form")).toBeInTheDocument();
+    expect(screen.queryByText(/Checking your account status/i)).toBeNull();
+  });
+
+  it("redirects pending signups away from login once status is known", async () => {
     rememberPendingSignup("device-token");
     apiFetch.mockResolvedValue({ accessStatus: "PENDING" });
     render(
@@ -42,7 +54,6 @@ describe("CreatedAccountGate", () => {
       </CreatedAccountGate>,
     );
     await waitFor(() => expect(nav.replace).toHaveBeenCalledWith("/welcome/pending"));
-    expect(screen.queryByTestId("auth-form")).toBeNull();
   });
 
   it("redirects approved signups away from Create Account to sign in", async () => {

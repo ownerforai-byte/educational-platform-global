@@ -51,7 +51,10 @@ export function CreatedAccountGate({
     if (live === APPROVED_ROUTE) router.replace("/login");
   }, [live, mode, router]);
 
-  if (!live) {
+  // Signup must not flash "Create account" while status is unknown; login must
+  // stay reachable — a device token plus a slow /account-status poll used to
+  // block the whole sign-in form until the poll finished (or failed open).
+  if (!live && mode === "signup") {
     return (
       <div className="flex justify-center py-6">
         <VerifyingStatus compact label="Checking your account status" />

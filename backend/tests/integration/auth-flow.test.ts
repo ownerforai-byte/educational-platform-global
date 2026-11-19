@@ -507,7 +507,8 @@ describe("auth flow", () => {
         const tables = mocked.from.mock.calls.map((call) => call[0]);
         expect(tables[0]).toBe("profiles");
         if (name === "rejected") {
-          expect(tables).toEqual(["profiles"]);
+          expect(tables.filter((t) => t === "profiles").length).toBeGreaterThanOrEqual(1);
+          expect(tables).not.toContain("user_access_requests");
         } else {
           expect(tables).toContain("user_access_requests");
         }

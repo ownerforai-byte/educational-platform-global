@@ -34,7 +34,7 @@ import {
   signOut,
   AuthProviderError,
 } from "../../auth/supabase";
-import { ensureAuthProfile } from "../../services/auth-profile.js";
+import { ensureAuthProfile, promoteDuePendingProfile } from "../../services/auth-profile.js";
 import {
   SESSION_COOKIE,
   extractToken,
@@ -144,6 +144,11 @@ const PENDING_MESSAGE =
  * with any not-yet-migrated legacy row via the profile repository.
  */
 async function readAccessStatus(userId: string, email?: string): Promise<AccessStatus> {
+  if (!isOwnerEmail(email)) {
+    await promoteDuePendingProfile(userId).catch((err) => {
+      console.error("[auth] promoteDuePendingProfile:", err);
+    });
+  }
   const { role, accessStatus } = await loadProfileAccess(userId);
   if (isApprovedAccount({ email, role }, accessStatus)) return "ACTIVE";
   return accessStatus === "REJECTED" ? "REJECTED" : "PENDING";
@@ -900,6 +905,10 @@ router.get("/account-status", async (req: Request, res: Response) => {
     req.query.bump === "1" ||
     req.query.bump === "true" ||
     req.query.bump === "yes";
+
+  await promoteDuePendingProfile(userId).catch((err) => {
+    console.error("[auth] account-status promoteDuePendingProfile:", err);
+  });
 
   const { data: profile } = await getProfileById(
     userId,
