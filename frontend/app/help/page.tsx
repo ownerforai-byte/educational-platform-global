@@ -1,9 +1,24 @@
 import type { Metadata } from "next";
 import { PublicPage, Panel, Action } from "@/components/platform/public-page";
 import { HelpSearch } from "@/components/platform/help-search";
+import { JsonLd } from "@/components/platform/json-ld";
+import { helpItems } from "@/lib/platform-content";
+
 export const metadata: Metadata = { title: "Help Center | Ravikisan's Platform", description: "Search answers about accounts, access levels, AI sparks, content unlocks, privacy, and troubleshooting." };
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: helpItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+};
+
 export default function HelpPage() {
   return <PublicPage current="/help" eyebrow="The help center" title="Less confusion. A useful next step." intro="Find out how accounts, access, and sparks work, or narrow down a problem before getting in touch.">
+    <JsonLd data={faqJsonLd} />
     <div className="grid gap-5 md:grid-cols-3">{[
       ["New here?", "Start with the study workflow.", "/how-it-works", "How it works"],
       ["Need to report something?", "Prepare the details that make a support request useful.", "/contact", "Contact checklist"],

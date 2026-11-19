@@ -64,8 +64,12 @@ function buildLlmsTxt(): string {
   out.push("");
   out.push("## Machine-readable indexes");
   out.push("");
-  out.push(`- [sitemap.xml](${base}/sitemap.xml): full URL list of public pages.`);
+  out.push(`- [sitemap.xml](${base}/sitemap.xml): full URL list of public pages and articles.`);
   out.push(`- [robots.txt](${base}/robots.txt): crawler directives.`);
+  out.push(`- [llms-full.txt](${base}/llms-full.txt): full plain-text corpus of every article below.`);
+  out.push(`- [rss.xml](${base}/rss.xml): the journal as an RSS feed.`);
+  out.push("");
+  out.push("Each article above is also available as clean Markdown at `/blog/<slug>/markdown` (for example `/blog/about-ravikisan-platform/markdown`).");
   out.push("");
   return out.join("\n");
 }

@@ -61,6 +61,7 @@ export function PublicPage({ current, eyebrow, title, intro, children }: {
         url: pageUrl,
         name: title,
         description: intro,
+        isAccessibleForFree: true,
         isPartOf: { "@id": `${PUBLIC_SITE}/#website` },
         breadcrumb: { "@id": `${pageUrl}#breadcrumb` },
       },

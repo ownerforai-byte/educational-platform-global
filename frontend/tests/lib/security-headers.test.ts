@@ -122,6 +122,7 @@ describe("automated client access", () => {
         headers: { "user-agent": userAgent },
       }));
       expect(response.status).toBe(200);
+      expect(response.headers.get("x-robots-tag")).toContain("index");
     }
     for (const path of PRIVATE_PATHS) {
       const response = proxy(new NextRequest(`${APEX}${path}`, {

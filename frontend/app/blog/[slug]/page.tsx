@@ -42,6 +42,7 @@ export default async function GuidePage({ params }: Props) {
         headline: guide.title,
         description: guide.description,
         inLanguage: "en",
+        isAccessibleForFree: true,
         datePublished: guide.updated,
         dateModified: guide.updated,
         keywords: guide.tags.join(", "),

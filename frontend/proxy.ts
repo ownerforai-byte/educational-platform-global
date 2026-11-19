@@ -249,6 +249,8 @@ const CITABLE_PUBLIC_PATHS = [
   "/sitemap.xml",
   "/robots.txt",
   "/llms.txt",
+  "/llms-full.txt",
+  "/rss.xml",
   "/home",
   "/plans",
 ] as const;
@@ -299,6 +301,7 @@ export function proxy(request: NextRequest) {
     const crawlerPolicy = buildContentSecurityPolicy(null);
     const crawlerResponse = NextResponse.next();
     setSecurityHeaders(crawlerResponse, crawlerPolicy);
+    crawlerResponse.headers.set("x-robots-tag", "index, follow");
     return crawlerResponse;
   }
 
@@ -325,6 +328,12 @@ export function proxy(request: NextRequest) {
 
   const response = NextResponse.next({ request: { headers: requestHeaders } });
   setSecurityHeaders(response, contentSecurityPolicy);
+
+  // Explicit indexing hint on the open pages crawlers are invited to read. This
+  // does not override any per-route `noindex` (those routes are not citable).
+  if (isCitablePublicPath(request.nextUrl.pathname)) {
+    response.headers.set("x-robots-tag", "index, follow");
+  }
 
   // AI chat is unlimited by design (2026-09-20): skip the generic per-IP cap
   // for AI routes; abuse limits live upstream at the provider gateway.
