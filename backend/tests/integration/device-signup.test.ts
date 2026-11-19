@@ -237,7 +237,7 @@ describe("device signup limit (one account per device without approval)", () => 
       code: "DEVICE_SIGNUP_LIMIT",
     });
     expect(DEVICE_SIGNUP_LIMIT_MESSAGE).toBe(
-      "Only one account can be created from one device ~ be careful",
+      "Only one account can be created from this device until the owner approves it.",
     );
     // The blocked attempt never creates an auth user or a second binding.
     expect(h.signUp).toHaveBeenCalledTimes(1);
@@ -253,7 +253,7 @@ describe("device signup limit (one account per device without approval)", () => 
     expect(h.signUp).toHaveBeenCalledTimes(2);
   });
 
-  it("approving the bound account (ACTIVE) releases the device for another signup", async () => {
+  it("an approved (ACTIVE) account still blocks a second signup on the same device", async () => {
     const { signup } = await mount();
     const first = await signup("first@example.com");
     const boundKey = [...h.store.usage.keys()][0];
@@ -261,10 +261,10 @@ describe("device signup limit (one account per device without approval)", () => 
     h.store.profiles.get(userId)!.access_status = "ACTIVE";
 
     const second = await signup("second@example.com", first.deviceCookie);
-    expect(second.status).toBe(200);
-    expect(second.body.accessStatus).toBe("PENDING");
-    expect(h.signUp).toHaveBeenCalledTimes(2);
-    expect(h.store.usage.size).toBe(2);
+    expect(second.status).toBe(403);
+    expect(second.body.code).toBe("DEVICE_SIGNUP_LIMIT");
+    expect(h.signUp).toHaveBeenCalledTimes(1);
+    expect(h.store.usage.size).toBe(1);
   });
 
   it("a REJECTED bound account releases the device for normal guest signup", async () => {

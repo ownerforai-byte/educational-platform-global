@@ -26,12 +26,12 @@ import {
 /**
  * WAITING screen body — polls live access for this device's status token.
  *
- *   PENDING  → stay here (bot approval is automatic, ~5 minutes)
+ *   PENDING  → stay here until owner console approval
  *   ACTIVE   → remember outcome + open /welcome/approved
  *   REJECTED → remember outcome + open /welcome/denied
  */
 
-/** Gentle interval — approval is automatic (bot, ~5 min); focus re-checks catch it sooner. */
+/** Gentle interval — owner approval is manual; focus re-checks catch it sooner. */
 const POLL_MS = 15000;
 
 type StatusState =
@@ -56,7 +56,7 @@ const STEP_INDEX: Record<StatusState, number> = {
 
 const STEPS = [
   { icon: UserCheck, label: "Account created", hint: "Your details are saved" },
-  { icon: Clock3, label: "Awaiting approval", hint: "Automatic — about 5 minutes" },
+  { icon: Clock3, label: "Awaiting approval", hint: "Owner review in the console" },
   { icon: BadgeCheck, label: "Access granted", hint: "Sign in and start learning" },
 ];
 
@@ -291,7 +291,7 @@ export function WelcomeStatus() {
           }
           title="Awaiting approval"
           badge={<StatusPill status="PENDING" />}
-          body={`Approval is automatic — system verification activates your account, usually within about 5 minutes. This page re-checks on its own (checked ${checkCount}×), so keep it open or come back anytime.`}
+          body={`An owner must approve your account in the console before you can sign in. This page re-checks on its own (checked ${checkCount}×), so keep it open or come back after approval.`}
           actions={
             <>
               <button
@@ -313,7 +313,7 @@ export function WelcomeStatus() {
       {/* ── Trust footer — kept, with its sign, below the note (owner 2026-10-17) ── */}
       <p className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground">
         <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
-        Approval is automatic — handled by system verification, usually within about 5 minutes.
+        Access is granted manually by the owner — not automatic.
       </p>
     </div>
   );

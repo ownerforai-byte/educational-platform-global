@@ -12,6 +12,7 @@ import { authEmailsById, invalidateAuthEmailsCache } from "../../utils/authEmail
 import { aiSparkLimitFor, aiSparkTierFor } from "../../utils/aiSpark";
 import { sendApprovalEmail } from "../../utils/mailer";
 import { cancelOpenAccessRequests } from "../../services/access-requests";
+import { updateProfileFields } from "../../db/repositories/user.repository.js";
 import { assignedBadgeIdsSchema, PROFILE_EXTRAS_BADGE_KEY } from "../../badges/assigned-badges.js";
 import { compactProfileExtras } from "../../services/profile-storage.js";
 
@@ -457,10 +458,7 @@ router.post("/users/bulk-status", requireAuth, async (req: Request, res: Respons
         continue;
       }
 
-      const { error } = await supabaseAdmin
-        .from("profiles")
-        .update(decision)
-        .eq("id", userId);
+      const { error } = await updateProfileFields(userId, decision);
 
       if (error) {
         skipped.push({ userId, reason: "Update failed" });
@@ -806,11 +804,11 @@ router.patch("/users/:id/status", requireAuth, async (req: Request<{ id: string 
       return;
     }
 
-    // Approval + tier in one write (see accessDecisionPayload).
-    const { error } = await supabaseAdmin
-      .from("profiles")
-      .update(accessDecisionPayload(status, role))
-      .eq("id", req.params.id);
+    // Approval + tier in one write (see accessDecisionPayload); dual-write Firestore + Supabase.
+    const { error } = await updateProfileFields(
+      req.params.id,
+      accessDecisionPayload(status, role),
+    );
 
     if (error) {
       console.error("[owner] access status update failed:", error.message);

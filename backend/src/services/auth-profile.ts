@@ -1,51 +1,18 @@
 import { isOwnerEmail } from "../middleware/auth.js";
 import {
   getProfileById,
-  updateProfileFields,
   upsertProfileFields,
 } from "../db/repositories/user.repository.js";
 import { readProfileDoc } from "../storage/firebase-store.js";
-
-/** Must match `APPROVAL_DELAY_MS` in firebase/functions approval bot (300 s). */
-export const APPROVAL_DELAY_MS = 300_000;
-
-function createdAtMillis(value: unknown): number | null {
-  if (typeof value !== "string" || !value.trim()) return null;
-  const ms = Date.parse(value.trim());
-  return Number.isFinite(ms) ? ms : null;
-}
-
-/**
- * When the Firebase scheduler is down or a profile never landed in Firestore,
- * promote PENDING → ACTIVE once `created_at` is at least 5 minutes old — same
- * rule as `approvePendingProfiles`. Idempotent; never touches REJECTED.
- */
-export async function promoteDuePendingProfile(userId: string): Promise<boolean> {
-  const { data } = await getProfileById(userId, "access_status, created_at");
-  if (!data) return false;
-  const status = typeof data.access_status === "string" ? data.access_status : null;
-  if (status === "ACTIVE" || status === "REJECTED") return false;
-  const createdMs = createdAtMillis(data.created_at);
-  if (createdMs === null) return false;
-  if (Date.now() - createdMs < APPROVAL_DELAY_MS) return false;
-
-  const { error } = await updateProfileFields(userId, { access_status: "ACTIVE" });
-  if (error) {
-    console.error("[auth] promoteDuePendingProfile failed:", error.message);
-    return false;
-  }
-  return true;
-}
 
 /**
  * Ensure a `profiles` doc exists for a Firebase (or any) auth uid on first
  * login. Supabase's `handle_new_user` trigger is deprecated when
  * `USE_FIREBASE_AUTH=true`.
  *
- * Firestore `profiles` (doc id = uid) is the contract store shared with the
- * auto-approval Cloud Function (firebase/functions): new signups are created
- * with `access_status: "PENDING"` and `created_at = now`, and the bot flips
- * them to "ACTIVE" 300s after `created_at`.
+ * Firestore `profiles` (doc id = uid) is the contract store for access fields.
+ * New signups are created with `access_status: "PENDING"`; the owner console
+ * flips them to ACTIVE (manual approval only).
  */
 export async function ensureAuthProfile(
   userId: string,

@@ -1,31 +1,20 @@
 import { createHash } from "node:crypto";
 import type { Request, Response } from "express";
 import { supabaseAdmin } from "../db/supabase";
+import { getProfileAccessRow } from "../db/repositories/user.repository.js";
 import { getGuestDeviceId, issueGuestDeviceCookie } from "./guestQuota";
 
 /**
- * One account per device without approval (owner policy 2026-11-09):
- * "without approval no more than one account can be created from one device".
+ * One account per device until owner approval (policy 2026-11-19):
+ * A device may hold at most one signup that is still PENDING or already ACTIVE.
+ * REJECTED releases the binding so the guest can try again with a new account.
  *
- * A device is the HttpOnly `neb-gid` cookie minted by guestQuota — JS cannot
- * read or selectively rewrite it, and it survives IP changes. The first
- * account created on a device is bound to it; while that account is still
- * PENDING, a second signup from the same device is refused with
- * DEVICE_SIGNUP_LIMIT_MESSAGE. Once the account becomes ACTIVE or REJECTED
- * (REJECTED) the bound account, the device returns to normal guest use and may
- * create another account — denial must not trap the device on a status screen.
- *
- * Bindings live in guest_chat_usage (migration 004) under a NON-expiring day
- * so the hourly quota cleanup (which trims day < today) never removes them —
- * this is a permanent binding, not a daily quota. The bound user id is encoded
- * in the key so approval is checked live against profiles; no new table/DDL is
- * needed. If the table is unavailable, an in-memory mirror enforces the limit
- * per instance (same degradation as the guest chat quota).
+ * Device id = HttpOnly `neb-gid` cookie (guestQuota). Bindings live in
+ * `guest_chat_usage` under a non-expiring day so quota cleanup never drops them.
  */
 
-/** Exact owner wording — shown before sign-in and on a blocked signup. */
 export const DEVICE_SIGNUP_LIMIT_MESSAGE =
-  "Only one account can be created from one device ~ be careful";
+  "Only one account can be created from this device until the owner approves it.";
 
 /** Far-future day: survives the guest_chat_usage `day < today` cleanup. */
 const PERMANENT_DAY = "9999-12-31";
@@ -69,7 +58,7 @@ async function boundUserIds(deviceId: string): Promise<string[]> {
 }
 
 export interface DeviceSignupCheck {
-  /** True when the device already holds an unapproved account. */
+  /** True when the device already holds an unapproved or approved account. */
   limited: boolean;
   /** The device identity (existing cookie or freshly minted). */
   deviceId: string;
@@ -77,12 +66,7 @@ export interface DeviceSignupCheck {
 
 /**
  * Decide whether this device may create ANOTHER account. `exceptUserId`
- * excludes an account from the check (the OAuth path re-checks the same
- * account that is signing in, which must not block itself).
- *
- * Mints the device cookie when absent so the identity persists for the next
- * attempt. Fails OPEN on a profile-read error: the approval gate still keeps
- * any new account PENDING, so a storage hiccup never grants access.
+ * excludes an account from the check (OAuth re-check must not block itself).
  */
 export async function checkDeviceSignupLimit(
   req: Request,
@@ -94,17 +78,11 @@ export async function checkDeviceSignupLimit(
   if (userIds.length === 0) return { limited: false, deviceId };
 
   try {
-    const { data, error } = await supabaseAdmin
-      .from("profiles")
-      .select("id, access_status")
-      .in("id", userIds);
-    if (error) {
-      console.warn("[device-signup] status read failed, allowing signup:", error.message);
-      return { limited: false, deviceId };
-    }
-    // Only a live PENDING bind blocks the device. DENIED (REJECTED) clears the
-    // trap so the device can browse as a guest and create a new account.
-    const limited = (data ?? []).some((row) => row.access_status === "PENDING");
+    const rows = await Promise.all(userIds.map((id) => getProfileAccessRow(id)));
+    const limited = rows.some((row) => {
+      const status = row?.access_status ?? "PENDING";
+      return status === "PENDING" || status === "ACTIVE";
+    });
     return { limited, deviceId };
   } catch (err) {
     console.warn("[device-signup] status read threw, allowing signup:", err instanceof Error ? err.message : err);

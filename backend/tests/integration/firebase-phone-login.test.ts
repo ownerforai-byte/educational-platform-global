@@ -54,7 +54,6 @@ vi.mock("../../src/auth/firebase-admin-auth.js", () => ({
 
 vi.mock("../../src/services/auth-profile.js", () => ({
   ensureAuthProfile: vi.fn().mockResolvedValue(undefined),
-  promoteDuePendingProfile: vi.fn().mockResolvedValue(false),
 }));
 
 vi.mock("../../src/storage/firebase-store.js", async (importOriginal) => {

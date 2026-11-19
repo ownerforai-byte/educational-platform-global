@@ -2,10 +2,9 @@
  * Waiting screen (/welcome/pending) — the belt-and-suspenders path of the
  * automated account-approval flow.
  *
- * The status poll reads GET /api/auth/account-status and flips the device to
- * the approved screen the moment the account is ACTIVE — even when the FCM
- * push never arrives. Contract: the server flips PENDING → ACTIVE ~5 minutes
- * after creation.
+ * The status poll reads GET /api/auth/account-status and sends the device to
+ * sign-in the moment the account is ACTIVE — even when the FCM push never
+ * arrives. Contract: the owner flips PENDING → ACTIVE from the owner console.
  */
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
@@ -50,16 +49,14 @@ beforeEach(() => {
 });
 
 describe("WelcomeStatus poll → approved screen", () => {
-  it("flips to /welcome/approved when the poll returns ACTIVE", async () => {
+  it("sends an approved account to sign-in when the poll returns ACTIVE", async () => {
     stubLocation();
     rememberPendingSignup("signed-status-token");
     apiFetch.mockResolvedValue({ accessStatus: "ACTIVE", fullName: "Ada Lovelace" });
 
     render(<WelcomeStatus />);
 
-    await waitFor(() =>
-      expect(locationReplace).toHaveBeenCalledWith("/welcome/approved"),
-    );
+    await waitFor(() => expect(locationReplace).toHaveBeenCalledWith("/login"));
     expect(apiFetch).toHaveBeenCalledWith(
       expect.stringContaining("/api/auth/account-status?"),
     );
@@ -112,7 +109,7 @@ describe("WelcomeStatus poll → approved screen", () => {
     );
   });
 
-  it("recovers after a transient failure and still flips on ACTIVE", async () => {
+  it("recovers after a transient failure and still sends ACTIVE to sign-in", async () => {
     stubLocation();
     rememberPendingSignup("signed-status-token");
     apiFetch.mockRejectedValueOnce(Object.assign(new Error("blip"), { status: 503 }));
@@ -124,9 +121,7 @@ describe("WelcomeStatus poll → approved screen", () => {
     const retry = await screen.findByRole("button", { name: /check now/i });
     fireEvent.click(retry);
 
-    await waitFor(() =>
-      expect(locationReplace).toHaveBeenCalledWith("/welcome/approved"),
-    );
+    await waitFor(() => expect(locationReplace).toHaveBeenCalledWith("/login"));
     expect(apiFetch).toHaveBeenCalledTimes(2);
   });
 });

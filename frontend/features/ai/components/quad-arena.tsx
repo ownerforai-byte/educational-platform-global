@@ -527,7 +527,7 @@ export function QuadArena() {
               </div>
 
               <div
-                className="grid grid-cols-1 gap-3 sm:grid-cols-2"
+                className="grid grid-cols-2 gap-2 sm:gap-3"
                 aria-label="Four model replies"
               >
                 {(pending ? placeholderLanes : turn.panels).map((panel, panelIndex) => {
@@ -537,7 +537,7 @@ export function QuadArena() {
                     <article
                       key={key}
                       aria-label={`Reply from ${panel.label}`}
-                      className={`flex min-h-[300px] flex-col overflow-hidden rounded-3xl border-2 bg-card sm:aspect-square ${
+                      className={`flex max-h-[70vh] min-h-[280px] min-w-0 flex-col overflow-hidden rounded-2xl border-2 bg-card sm:min-h-[340px] sm:rounded-3xl ${
                         pending
                           ? "border-border/60"
                           : panel.ok
@@ -545,7 +545,7 @@ export function QuadArena() {
                             : "border-destructive/40"
                       }`}
                     >
-                      <header className="flex items-center justify-between gap-2 border-b border-border/70 bg-muted/40 px-3.5 py-2">
+                      <header className="flex shrink-0 items-center justify-between gap-2 border-b border-border/70 bg-muted/40 px-2.5 py-2 sm:px-3.5">
                         <div className="min-w-0">
                           <p className="truncate text-[11px] font-extrabold text-foreground">
                             {panel.label}
@@ -572,7 +572,7 @@ export function QuadArena() {
                           </button>
                         )}
                       </header>
-                      <div className="min-h-0 flex-1 space-y-2 overflow-y-auto px-4 py-3">
+                      <div className="min-h-0 flex-1 space-y-2 overflow-y-auto overscroll-contain px-3 py-3 sm:px-4">
                         {pending ? (
                           <p className="text-[11px] italic text-muted-foreground">
                             {panel.label} is thinking…

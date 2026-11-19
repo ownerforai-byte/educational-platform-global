@@ -280,7 +280,7 @@ describe("signup stores the account", () => {
     expect(res.status).toBe(200);
     expect(body.code).toBe("PENDING_APPROVAL");
     expect(typeof body.statusToken).toBe("string");
-    expect(body.message).toMatch(/being verified/i);
+    expect(body.message).toMatch(/waiting for owner approval/i);
   });
 
   it("lets the owner through immediately with a session", async () => {
@@ -348,7 +348,7 @@ describe("login reflects the stored approval state", () => {
 });
 
 describe("one account per device while unapproved", () => {
-  it("refuses a second signup from the same device and reallows it after approval", async () => {
+  it("refuses a second signup from the same device, even after approval", async () => {
     const first = await signup(NEW_UID, "one@example.com");
     expect(first.res.status).toBe(200);
 
@@ -357,9 +357,11 @@ describe("one account per device while unapproved", () => {
     expect(second.body.code).toBe("DEVICE_SIGNUP_LIMIT");
     expect(second.body.error).toBe(DEVICE_SIGNUP_LIMIT_MESSAGE);
 
-    // An approved account frees the device again.
+    // Owner approval does not release the device — the binding is permanent
+    // for PENDING and ACTIVE accounts (policy 2026-11-19).
     await approve(NEW_UID);
     const third = await signup("uid-second", "two@example.com", first.deviceCookie);
-    expect(third.res.status).toBe(200);
+    expect(third.res.status).toBe(403);
+    expect(third.body.code).toBe("DEVICE_SIGNUP_LIMIT");
   });
 });

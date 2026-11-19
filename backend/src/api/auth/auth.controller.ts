@@ -34,7 +34,7 @@ import {
   signOut,
   AuthProviderError,
 } from "../../auth/supabase";
-import { ensureAuthProfile, promoteDuePendingProfile } from "../../services/auth-profile.js";
+import { ensureAuthProfile } from "../../services/auth-profile.js";
 import {
   SESSION_COOKIE,
   extractToken,
@@ -136,19 +136,12 @@ const oauthSessionSchema = z.object({
 type AccessStatus = "PENDING" | "ACTIVE" | "REJECTED";
 
 const PENDING_MESSAGE =
-  "Your account is being verified — approval is automatic and usually completes within 5 minutes.";
+  "Your account is waiting for owner approval — you can sign in once it is approved in the owner console.";
 
 /**
- * Live approval state — reads the Firestore `profiles` doc (auth migration
- * contract; the auto-approval bot flips it PENDING → ACTIVE there) merged
- * with any not-yet-migrated legacy row via the profile repository.
+ * Live approval state — Firestore `profiles` merged with the legacy Supabase row.
  */
 async function readAccessStatus(userId: string, email?: string): Promise<AccessStatus> {
-  if (!isOwnerEmail(email)) {
-    await promoteDuePendingProfile(userId).catch((err) => {
-      console.error("[auth] promoteDuePendingProfile:", err);
-    });
-  }
   const { role, accessStatus } = await loadProfileAccess(userId);
   if (isApprovedAccount({ email, role }, accessStatus)) return "ACTIVE";
   return accessStatus === "REJECTED" ? "REJECTED" : "PENDING";
@@ -156,15 +149,10 @@ async function readAccessStatus(userId: string, email?: string): Promise<AccessS
 
 /**
  * 200 "waiting" response for a PENDING account on login/signup — NOT a deny.
- * The account is auto-approved by the bot within ~5 minutes; the client shows
- * the waiting screen and polls /api/auth/account-status with the signed
- * statusToken. No session is issued on this path.
+ * The client shows the waiting screen and polls /api/auth/account-status with
+ * the signed statusToken until the owner grants ACTIVE. No session on this path.
  */
 async function pendingApproval(res: Response, userId: string): Promise<void> {
-  // Ensure the timed access-bot clock (FCM automation) is started
-  await ensureAccessRequest(userId).catch((err) => {
-    console.error("[auth] ensureAccessRequest failed in pendingApproval:", err);
-  });
   res.status(200).json({
     code: "PENDING_APPROVAL",
     message: PENDING_MESSAGE,
@@ -905,10 +893,6 @@ router.get("/account-status", async (req: Request, res: Response) => {
     req.query.bump === "1" ||
     req.query.bump === "true" ||
     req.query.bump === "yes";
-
-  await promoteDuePendingProfile(userId).catch((err) => {
-    console.error("[auth] account-status promoteDuePendingProfile:", err);
-  });
 
   const { data: profile } = await getProfileById(
     userId,

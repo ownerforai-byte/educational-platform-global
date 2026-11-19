@@ -1,6 +1,6 @@
 export const ACCESS_NOTICE =
-  "After signing, your account is approved automatically by system verification — usually within about 5 minutes.";
+  "After signing up, an owner must approve your account before you can sign in and use the platform.";
 
-/** Owner wording 2026-11-09 — shown before sign-in and on the signup form. */
+/** Owner wording — shown before sign-in and on the signup form. */
 export const DEVICE_SIGNUP_NOTICE =
-  "Only one account can be created from one device ~ be careful";
+  "Only one account can be created from this device until the owner approves it.";

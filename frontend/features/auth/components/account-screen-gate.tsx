@@ -62,7 +62,7 @@ export function WelcomeApprovalScreen({ waiting }: { waiting: ReactNode }) {
   return (
     <AuthShell
       title="Your account is on its way"
-      subtitle="Approval is automatic — system verification usually activates your account within about 5 minutes."
+      subtitle="An owner must approve your account in the console before you can sign in."
     >
       <LoggedInRedirect />
       {waiting}

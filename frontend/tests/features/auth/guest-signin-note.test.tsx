@@ -29,7 +29,7 @@ describe("GuestSignInNote", () => {
     });
     expect(
       screen.getByText(
-        /After signing, your account is approved automatically by system verification — usually within about 5 minutes\./,
+        /After signing up, an owner must approve your account before you can sign in and use the platform\./,
       ),
     ).toBeInTheDocument();
   });

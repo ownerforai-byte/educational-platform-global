@@ -502,16 +502,13 @@ describe("auth flow", () => {
         expect(body.user).toBeNull();
       }
       expect(setCookiesOf(res)).toEqual([]);
-      // PENDING paths fire ensureAccessRequest (user_access_requests); REJECTED does not.
+      // Approval is manual (owner console), so login never starts the timed
+      // access-request clock — no PENDING path touches user_access_requests.
       await vi.waitFor(() => {
         const tables = mocked.from.mock.calls.map((call) => call[0]);
         expect(tables[0]).toBe("profiles");
-        if (name === "rejected") {
-          expect(tables.filter((t) => t === "profiles").length).toBeGreaterThanOrEqual(1);
-          expect(tables).not.toContain("user_access_requests");
-        } else {
-          expect(tables).toContain("user_access_requests");
-        }
+        expect(tables.filter((t) => t === "profiles").length).toBeGreaterThanOrEqual(1);
+        expect(tables).not.toContain("user_access_requests");
       });
     } finally {
       vi.unstubAllEnvs();
