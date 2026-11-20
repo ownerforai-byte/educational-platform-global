@@ -7,129 +7,149 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "Matter is made of molecules in motion. In a solid they vibrate about fixed positions. In a liquid they move through the liquid. In a gas they move almost freely and collide. The energy of this motion, and of the molecular forces, is the internal energy of the body.",
-    "Temperature is the quantity that indicates how hot a body is. For an ideal gas it is proportional to the average translational kinetic energy of the molecules. A higher temperature means faster molecular motion, not a larger object.",
-    "Heat is energy that flows from one body to another because their temperatures differ. It is not a substance stored in a tank. Once the energy has entered a body it is part of that body's internal energy, and it is no longer called heat.",
-    "The direction of the flow is from the higher temperature to the lower temperature. The flow stops, in the sense that net transfer ends, when the two bodies reach the same temperature. That shared state is thermal equilibrium.",
-    "A large mass at a moderate temperature can hold more internal energy than a small mass at a higher temperature. Heat flow does not follow the amount of energy stored. It follows the temperature difference.",
-    "Putting a warm hand on a metal rail feels colder than putting it on wood at the same temperature because the metal conducts heat away faster. The temperatures were equal. The rates of flow were not.",
-    "# Molecular concept of thermal energy, heat and temperature; cause and direction of heat flow\n\n## 1. Introduction\nPhysical picture of **Molecular concept of thermal energy** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Heat and Temperature fill pass.\n\n## 2. Concepts and laws\n### Molecular concept of thermal energy\n### heat and temperature\n### cause and direction of heat flow\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and relations**\n\n| Quantity | Symbol + SI unit | Relation | Graph to read |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Molecular concept of thermal energy — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Molecular concept of thermal energy — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Molecular concept of thermal energy — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Molecular concept of thermal energy — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Two Words That Are Not Synonyms\n\n\"Heat\" and \"temperature\" are used interchangeably in daily speech — and wrongly in physics. Temperature measures the average kinetic energy of molecules; heat is energy *in transit* because of a temperature difference. A sparkler's spark is far hotter than a boiling kettle, yet the kettle scalds worse — energy versus intensity.",
+    "## 2. Fundamental Concepts (NEB 2021, 2022, 2024)\n\n### 2.1 Molecular concept of thermal energy\n\nMatter is made of particles in ceaseless random motion. **Thermal energy** is the total internal energy of these particles — kinetic (translation, rotation, vibration) plus potential (intermolecular). Raising temperature increases the average kinetic energy; heating can also change potential energy (as during melting, with no temperature change).\n\n### 2.2 Temperature\n\n**Temperature** is the degree of hotness — a measure of the **average translational kinetic energy** of the molecules: $\\bar{KE} = \\frac{3}{2}k_B T$. It determines the *direction* of spontaneous heat flow. SI unit: **kelvin (K)**; common scale °C ($T_K = T_C + 273.15$).\n\n### 2.3 Heat\n\n**Heat** is the energy transferred between bodies (or systems) **because of a temperature difference**, flowing spontaneously from hotter to colder until equilibrium. SI unit: **joule (J)**; historical unit calorie (1 cal = 4.186 J). Heat is *energy in transit* — a body does not \"contain heat\".\n\n### 2.4 Cause and direction of heat flow\n\n- **Cause:** temperature difference (drives the transfer); molecular collision/diffusion mechanisms (conduction), bulk motion (convection), radiation.\n- **Direction:** always from the body at higher temperature to the body at lower temperature — never spontaneously reversed (second law).\n- Thermal contact: energy exchange continues until **thermal equilibrium** — equal temperatures, no net flow.\n\n### 2.5 Distinguish heat vs temperature (NEB 2021, 2022, 2024)\n\n| Heat | Temperature |\n|---|---|\n| Form of energy in transit | Degree of hotness (average molecular KE) |\n| Unit: joule | Unit: kelvin |\n| Depends on mass, material, temperature change | Independent of mass |\n| Measured by calorimeter | Measured by thermometer |\n| Flows due to ΔT | Determines flow direction |\n| Additive (extensive) | Not additive (intensive) |\n\n**Illustration:** a cup of tea at 90 °C has higher temperature than a bathtub at 40 °C, but the bathtub holds far more thermal energy.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 44:** thermal equilibrium and the zeroth law formalise \"no net heat flow\".\n- **To Kinetic theory (Unit 13):** $\\bar{KE} = \\frac{3}{2}k_BT$ makes temperature molecular.\n- **To Quantity of heat (Unit 11):** Q = mcΔT quantifies heat.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Heat | Heat & temperature | Differentiate between heat and temperature. | 2 | Difference |\n| 2078/2022 | Heat | Heat & temperature | What is the difference between heat and temperature? Give their SI units. | 2 | Difference |\n| 2080/2024 | Heat | Heat & temperature | What is the difference between heat and temperature? Give their SI units. | 2 | Difference |\n\n### 4.2 Model answer (2m)\n\n**Heat** is the energy transferred because of a temperature difference — SI unit joule. **Temperature** is the degree of hotness, measuring the average kinetic energy of molecules — SI unit kelvin. Heat depends on the body's mass; temperature does not.\n\n### 4.3 Common examination mistakes\n\n1. Saying \"heat is contained in a body\" — heat is only in transit; the body contains internal energy.\n2. Giving °C as the SI unit of temperature — it is kelvin.\n3. Missing the mass-dependence distinction in the difference table."
   ],
   "confusion": [
-    "Heat and temperature are not the same quantity.",
-    "Heat does not flow from the body with more total energy. It flows from the hotter body.",
-    "A body does not contain heat. It contains internal energy.",
-    "Thermal equilibrium means equal temperatures, not necessarily equal energies."
+    "**Heat ≠ temperature:** heat is energy in transit (J); temperature is average molecular KE (K).",
+    "**Bodies don't 'contain heat'** — they contain internal energy; heat describes the transfer."
   ],
   "bounds": [
     "Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)."
   ],
   "practice": [
-    "Write Heat flows from higher temperature to lower temperature. and say what each symbol means.",
-    "Mark the known values, then substitute one step at a time.",
-    "Finish with the number, the unit, and the direction when the quantity has one."
+    "Why does metal at 20 °C feel colder than wood at 20 °C?"
   ],
   "universalFacts": [
-    "Heat flows from higher temperature to lower temperature.",
-    "ΔU is the change in internal energy."
+    "Absolute zero (0 K = −273.15 °C) is the temperature of minimum possible molecular kinetic energy."
   ],
   "examples": [
-    "Matter is made of molecules in motion. In a solid they vibrate about fixed positions. In a liquid they move through the liquid. In a gas they move almost freely and collide. The energy of this motion, and of the molecular forces, is the internal energy of the body.",
-    "Temperature is the quantity that indicates how hot a body is. For an ideal gas it is proportional to the average translational kinetic energy of the molecules. A higher temperature means faster molecular motion, not a larger object.",
-    "A 1 kg block of iron at 80°C is placed against a 5 kg block of iron at 30°C, with no heat lost to the room. Which way does heat flow, and when does the net flow stop?"
+    "***Sparkler vs bathtub*** — a 1000 °C spark has tiny energy; a 40 °C bathtub scalds — temperature ≠ energy."
   ],
   "practiceQuestions": [
-    "What does temperature measure for an ideal gas?",
-    "In which direction does heat flow?",
-    "Why can metal feel colder than wood at the same temperature?"
+    "**Short (2m): A red-hot nail and a bucket of warm water — which has more thermal energy? Which has higher temperature?** — The nail has higher temperature; the bucket of water (much larger mass) has more thermal energy. Temperature is intensive, energy extensive."
   ],
   "formulas": [
-    "Heat flows from higher temperature to lower temperature.",
-    "ΔU is the change in internal energy."
+    "- T_K = T_C + 273.15\n- KE_avg = (3/2)k_B T\n- 1 cal = 4.186 J"
   ],
   "numericals": [
     "A 1 kg block of iron at 80°C is placed against a 5 kg block of iron at 30°C, with no heat lost to the room. Which way does heat flow, and when does the net flow stop?"
   ],
   "keyPoints": [
-    "Temperature marks the average kinetic energy of molecules.",
-    "Heat is energy in transit.",
-    "Internal energy is stored in the body.",
-    "Flow continues until the temperatures match."
+    "Temperature ∝ average translational KE; heat flows hot → cold due to ΔT.",
+    "Units: heat — joule; temperature — kelvin."
   ],
-  "summary": "Molecules in motion store internal energy. Temperature indicates how hot a body is and, for an ideal gas, tracks the average kinetic energy. Heat is energy flowing from the hotter body to the cooler one until the temperatures are equal.",
+  "summary": "Molecules of every body are in ceaseless random motion; their total kinetic and potential energies make up **thermal energy**. **Temperature** measures the *average* translational kinetic energy ($\\bar{KE} = \\frac{3}{2}k_BT$) — an intensive quantity in kelvin that decides the direction of heat flow. **Heat** is the energy *in transit* between bodies because of a temperature difference — an extensive quantity in joules, flowing spontaneously from hotter to colder until thermal equilibrium. A sparkler's spark outranks a bathtub in temperature but not in energy. NEB asks the distinction repeatedly (2021, 2022, 2024, 2m): definition, unit, mass-dependence, measuring instrument.",
   "mcqs": [
     {
-      "question": "Heat flows",
+      "question": "Temperature measures:",
       "options": [
-        "From lower temperature to higher temperature by itself",
-        "From higher temperature to lower temperature",
-        "From larger mass to smaller mass always",
-        "Only in gases"
+        "Total molecular energy",
+        "Average translational KE of molecules",
+        "Heat content",
+        "Pressure"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "T ∝ average KE."
     },
     {
-      "question": "Temperature of an ideal gas tracks",
+      "question": "The SI unit of heat is:",
       "options": [
-        "The total mass",
-        "The average translational kinetic energy of the molecules",
-        "The volume alone",
-        "The colour"
+        "Kelvin",
+        "Joule",
+        "Calorie",
+        "Watt"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Joule; calorie is historical."
     },
     {
-      "question": "At thermal equilibrium",
+      "question": "The SI unit of temperature is:",
       "options": [
-        "Heat is still flowing one way",
-        "The temperatures are equal",
-        "The masses must be equal",
-        "Internal energy is zero"
+        "°C",
+        "°F",
+        "K",
+        "J/kg"
       ],
-      "answer": "B"
+      "answer": "C",
+      "explanation": "Kelvin."
     },
     {
-      "question": "A metal feels colder than wood at the same temperature because",
+      "question": "Heat flows spontaneously from:",
       "options": [
-        "The metal is actually colder",
-        "The metal conducts heat from the hand faster",
-        "Wood has no molecules",
-        "Temperature does not apply to solids"
+        "Cold to hot",
+        "Hot to cold",
+        "Both ways equally",
+        "High mass to low mass"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Driven by temperature difference."
+    },
+    {
+      "question": "Which is an intensive property?",
+      "options": [
+        "Heat",
+        "Internal energy",
+        "Temperature",
+        "Volume"
+      ],
+      "answer": "C",
+      "explanation": "Independent of system size."
+    },
+    {
+      "question": "A cup of tea at 90 °C vs a bathtub at 40 °C:",
+      "options": [
+        "Tea has more thermal energy",
+        "Bathtub has more thermal energy",
+        "Equal energies",
+        "Neither has energy"
+      ],
+      "answer": "B",
+      "explanation": "Mass dominates the energy total."
+    },
+    {
+      "question": "Heat flow between two bodies stops when:",
+      "options": [
+        "Both have equal heat",
+        "Both reach equal temperature",
+        "One is insulated",
+        "Masses equalize"
+      ],
+      "answer": "B",
+      "explanation": "Thermal equilibrium = equal T."
+    },
+    {
+      "question": "0 K corresponds to:",
+      "options": [
+        "0 °C",
+        "−273.15 °C",
+        "100 °C",
+        "−100 °C"
+      ],
+      "answer": "B",
+      "explanation": "Absolute zero."
     }
   ],
   "importantStatements": [
-    "Matter is made of molecules in motion. In a solid they vibrate about fixed positions. In a liquid they move through the liquid. In a gas they move almost freely and collide. The energy of this motion, and of the molecular forces, is the internal energy of the body.",
-    "Temperature is the quantity that indicates how hot a body is. For an ideal gas it is proportional to the average translational kinetic energy of the molecules. A higher temperature means faster molecular motion, not a larger object.",
-    "Heat is energy that flows from one body to another because their temperatures differ. It is not a substance stored in a tank. Once the energy has entered a body it is part of that body's internal energy, and it is no longer called heat."
+    "\"Heat is the energy in transit due to temperature difference; temperature measures the average kinetic energy of molecules.\""
   ],
   "examNotes": [
-    "Definition, then formula, then substitution.",
-    "A vector answer is incomplete without its direction."
+    "The 2m difference question appeared in three years — memorise the four contrasts."
   ],
   "examShortTricks": [
-    "Temperature decides the direction. Mass does not.",
-    "Heat is transit. Internal energy is storage."
+    "\"Two-row table: definition, unit, mass-dependence, instrument.\""
   ],
   "specialNotes": [
     "The zeroth law says that if each of two bodies is in equilibrium with a third, they are in equilibrium with each other. That is what makes a thermometer possible.",
     "Absolute zero is 0 K, about −273°C, where the classical molecular picture reaches its lowest energy."
   ],
   "importantNotes": [
-    "Name the two temperatures before stating the direction of flow.",
-    "A thermometer must be much smaller in heat capacity than the body it measures, or it will change that body."
+    "Verified PYQs: difference question (2021, 2022, 2024 — 2m each) — a NEB favourite."
   ],
   "importantConcepts": [
-    "Molecular motion",
-    "Temperature",
-    "Heat as transit",
-    "Thermal equilibrium"
+    "**Intensive vs extensive:** temperature is intensive (independent of size); heat/thermal energy is extensive (scales with mass)."
   ],
   "importantTasks": [
     "Copy the worked example and hide the result until the last step.",
@@ -189,5 +209,51 @@
       ],
       "answer": "Heat flows from the 80°C block to the 30°C block until the temperatures are equal."
     }
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Two Words That Are Not Synonyms\n\n\"Heat\" and \"temperature\" are used interchangeably in daily speech — and wrongly in physics. Temperature measures the average kinetic energy of molecules; heat is energy *in transit* because of a temperature difference. A sparkler's spark is far hotter than a boiling kettle, yet the kettle scalds worse — energy versus intensity.",
+      "## 2. Fundamental Concepts (NEB 2021, 2022, 2024)\n\n### 2.1 Molecular concept of thermal energy\n\nMatter is made of particles in ceaseless random motion. **Thermal energy** is the total internal energy of these particles — kinetic (translation, rotation, vibration) plus potential (intermolecular). Raising temperature increases the average kinetic energy; heating can also change potential energy (as during melting, with no temperature change).\n\n### 2.2 Temperature\n\n**Temperature** is the degree of hotness — a measure of the **average translational kinetic energy** of the molecules: $\\bar{KE} = \\frac{3}{2}k_B T$. It determines the *direction* of spontaneous heat flow. SI unit: **kelvin (K)**; common scale °C ($T_K = T_C + 273.15$).\n\n### 2.3 Heat\n\n**Heat** is the energy transferred between bodies (or systems) **because of a temperature difference**, flowing spontaneously from hotter to colder until equilibrium. SI unit: **joule (J)**; historical unit calorie (1 cal = 4.186 J). Heat is *energy in transit* — a body does not \"contain heat\".\n\n### 2.4 Cause and direction of heat flow\n\n- **Cause:** temperature difference (drives the transfer); molecular collision/diffusion mechanisms (conduction), bulk motion (convection), radiation.\n- **Direction:** always from the body at higher temperature to the body at lower temperature — never spontaneously reversed (second law).\n- Thermal contact: energy exchange continues until **thermal equilibrium** — equal temperatures, no net flow.\n\n### 2.5 Distinguish heat vs temperature (NEB 2021, 2022, 2024)\n\n| Heat | Temperature |\n|---|---|\n| Form of energy in transit | Degree of hotness (average molecular KE) |\n| Unit: joule | Unit: kelvin |\n| Depends on mass, material, temperature change | Independent of mass |\n| Measured by calorimeter | Measured by thermometer |\n| Flows due to ΔT | Determines flow direction |\n| Additive (extensive) | Not additive (intensive) |\n\n**Illustration:** a cup of tea at 90 °C has higher temperature than a bathtub at 40 °C, but the bathtub holds far more thermal energy.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 44:** thermal equilibrium and the zeroth law formalise \"no net heat flow\".\n- **To Kinetic theory (Unit 13):** $\\bar{KE} = \\frac{3}{2}k_BT$ makes temperature molecular.\n- **To Quantity of heat (Unit 11):** Q = mcΔT quantifies heat.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Heat | Heat & temperature | Differentiate between heat and temperature. | 2 | Difference |\n| 2078/2022 | Heat | Heat & temperature | What is the difference between heat and temperature? Give their SI units. | 2 | Difference |\n| 2080/2024 | Heat | Heat & temperature | What is the difference between heat and temperature? Give their SI units. | 2 | Difference |\n\n### 4.2 Model answer (2m)\n\n**Heat** is the energy transferred because of a temperature difference — SI unit joule. **Temperature** is the degree of hotness, measuring the average kinetic energy of molecules — SI unit kelvin. Heat depends on the body's mass; temperature does not.\n\n### 4.3 Common examination mistakes\n\n1. Saying \"heat is contained in a body\" — heat is only in transit; the body contains internal energy.\n2. Giving °C as the SI unit of temperature — it is kelvin.\n3. Missing the mass-dependence distinction in the difference table."
+    ],
+    "confusion": [
+      "**Heat ≠ temperature:** heat is energy in transit (J); temperature is average molecular KE (K).",
+      "**Bodies don't 'contain heat'** — they contain internal energy; heat describes the transfer."
+    ],
+    "keyPoints": [
+      "Temperature ∝ average translational KE; heat flows hot → cold due to ΔT.",
+      "Units: heat — joule; temperature — kelvin."
+    ],
+    "importantConcepts": [
+      "**Intensive vs extensive:** temperature is intensive (independent of size); heat/thermal energy is extensive (scales with mass)."
+    ],
+    "examples": [
+      "***Sparkler vs bathtub*** — a 1000 °C spark has tiny energy; a 40 °C bathtub scalds — temperature ≠ energy."
+    ],
+    "universalFacts": [
+      "Absolute zero (0 K = −273.15 °C) is the temperature of minimum possible molecular kinetic energy."
+    ],
+    "importantStatements": [
+      "\"Heat is the energy in transit due to temperature difference; temperature measures the average kinetic energy of molecules.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: difference question (2021, 2022, 2024 — 2m each) — a NEB favourite."
+    ],
+    "examShortTricks": [
+      "\"Two-row table: definition, unit, mass-dependence, instrument.\""
+    ],
+    "examNotes": [
+      "The 2m difference question appeared in three years — memorise the four contrasts."
+    ],
+    "formulas": [
+      "- T_K = T_C + 273.15\n- KE_avg = (3/2)k_B T\n- 1 cal = 4.186 J"
+    ],
+    "practice": [
+      "Why does metal at 20 °C feel colder than wood at 20 °C?"
+    ],
+    "practiceQuestions": [
+      "**Short (2m): A red-hot nail and a bucket of warm water — which has more thermal energy? Which has higher temperature?** — The nail has higher temperature; the bucket of water (much larger mass) has more thermal energy. Temperature is intensive, energy extensive."
+    ]
+  }
 }

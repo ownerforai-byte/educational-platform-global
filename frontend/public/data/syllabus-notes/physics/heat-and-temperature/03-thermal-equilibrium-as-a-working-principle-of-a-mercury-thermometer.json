@@ -7,20 +7,12 @@
   "animation3D": "heat-and-temperature",
   "motionGraphics": "heat-and-temperature",
   "visualType": "thermometer",
-  "summary": "A mercury thermometer works on the principle of thermal equilibrium and thermal expansion. When the thermometer bulb contacts a body, heat flows until both reach the same temperature (thermal equilibrium). Mercury expands uniformly and the level in the capillary tube indicates temperature.",
+  "summary": "A mercury thermometer works by **thermal equilibrium**: bulb in contact with the body, heat flows until temperatures match, and the zeroth law guarantees the thermometer's temperature then equals the body's. Mercury's **uniform expansion** in a capillary is the thermometric property, calibrated at the ice and steam points (0 °C, 100 °C). Mercury is chosen for its wide liquid range (−39 to 357 °C), opacity, non-wetting and low specific heat. A faulty thermometer is rescued by linear interpolation: reading $R = R_1 + \\frac{(R_2-R_1)T}{100}$ — for one reading −5 °C at ice and 105 °C at steam, true 40 °C shows as 39 °C (NEB 2023).",
   "notes": [
-    "Thermal Equilibrium: Two bodies in thermal contact are in thermal equilibrium when they are at the same temperature and no net heat flows between them.",
-    "Zeroth Law of Thermodynamics: If bodies A and B are each in thermal equilibrium with body C, then A and B are in thermal equilibrium with each other. This establishes temperature as a measurable property.",
-    "Mercury Thermometer Working: The bulb contains mercury. When placed in contact with a body, mercury absorbs heat and expands. The expansion moves the mercury column up the capillary tube. The height is calibrated to read temperature.",
-    "Why Mercury: Mercury has uniform thermal expansion, high boiling point (357°C), low freezing point (-39°C), does not wet glass, and is easily visible due to its shiny surface.",
-    "Thermometer Calibration: Two fixed points are used — lower fixed point (ice point, 0°C) and upper fixed point (steam point, 100°C). The interval is divided into 100 equal parts (Celsius scale).",
-    "Temperature Reading: Temperature T = ((L_t - L_0)/(L_100 - L_0)) × 100°C, where L_t is length at temperature T, L_0 at ice point, L_100 at steam point.",
-    "# Thermal equilibrium as a working principle of a mercury thermometer\n\n## 1. Introduction\nPhysical picture of **Thermal equilibrium as a working principle of a mercury thermometer** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Heat and Temperature fill pass.\n\n## 2. Concepts and laws\n### Thermal equilibrium as a working principle of a mercury thermometer\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Circuit elements and combinations**\n\n| Element or combo | Diagram ref | Equivalent value | Remark |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Thermal equilibrium as a working principle of a mercury thermometer — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Thermal equilibrium as a working principle of a mercury thermometer — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Thermal equilibrium as a working principle of a mercury thermometer — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Thermal equilibrium as a working principle of a mercury thermometer — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Reading Temperature by Equilibrium\n\nA mercury thermometer does not \"measure\" temperature directly — it *joins* the body it touches, reaches thermal equilibrium with it, and then displays its own temperature. The zeroth law guarantees that this shared temperature equals the body's. The scale calibration then converts mercury length to degrees.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Working principle\n\n1. **Thermal contact:** the bulb is placed in contact with the body; heat flows between them until **thermal equilibrium** (zeroth law: the thermometer then reads the body's temperature).\n2. **Thermometric property:** mercury expands **uniformly** with temperature — its length in a fine capillary is the thermometric property. (Other choices: electrical resistance, gas pressure, thermo-emf.)\n3. **Scale calibration:** two fixed points — ice point (0 °C) and steam point (100 °C) at normal pressure — divided into equal divisions on the assumption of uniform expansion.\n\n### 2.2 Properties that make mercury suitable\n\n- Uniform expansion over a wide range (−39 °C to 357 °C — liquid across the whole Celsius range).\n- Opaque and shiny — easily read.\n- Does not wet glass (clean meniscus).\n- Good thermal conductor — quick equilibrium; small specific heat capacity — responds fast with minimal heat drain.\n- Low vapour pressure at high temperatures.\n\n**Why not water?** Water wets glass, expands non-uniformly (anomalous below 4 °C), and freezes at 0 °C.\n\n### 2.3 Non-ideal thermometer calibration (NEB 2023)\n\nA real thermometer may read $R_1$ at the ice point (true 0 °C) and $R_2$ at the steam point (true 100 °C). Assuming linear behaviour between the fixed points, the true temperature $T$ maps to reading $R$:\n$$R = R_1 + \\frac{R_2 - R_1}{100}\\,T \\quad\\Longleftrightarrow\\quad T = \\frac{100(R - R_1)}{R_2 - R_1}$$\n\n### 2.4 Worked numerical (NEB 2023)\n\n**Q (3m, 2023):** A thermometer reads −5 °C when placed in ice water and 105 °C in boiling water. What reading does it give when placed in a liquid at 40 °C?\n- Scale factor: $\\dfrac{105 - (-5)}{100} = \\dfrac{110}{100} = 1.1$ °C reading per °C true\n- $R = -5 + 1.1 \\times 40 = -5 + 44 = \\boxed{39\\ °C}$",
+    "## 3. Conceptual Relationships\n\n- **To Topic 44:** the zeroth law is the logical foundation of the reading.\n- **To Thermal expansion (Unit 10):** mercury's expansion coefficient sets the scale spacing.\n- **To Temperature scales:** the same fixed-point logic builds kelvin and Fahrenheit scales.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Heat | Thermometer | A thermometer reads −5 °C when placed in ice water and 105 °C in boiling water. What reading does it give when placed in a liquid at 40 °C? | 3 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Explain the working principle of a mercury thermometer (3m).\n2. Why is mercury preferred over water? (2m)\n3. Reverse numerical: true temperature from a faulty reading (3m).\n\n### 4.3 Common examination mistakes\n\n1. Dividing by 110 instead of 100 for the scale factor — the *true* range is 100 °C.\n2. Forgetting the offset (−5) when computing the reading.\n3. Saying the thermometer \"measures heat\" — it reads its own equilibrium temperature."
   ],
   "specificConditions": [
     "Thermal Equilibrium Condition: The thermometer must be in good thermal contact with the body and left undisturbed until the mercury column becomes steady (no further change in level).",
@@ -29,72 +21,39 @@
     "Range Limitation: Mercury thermometers are suitable for approximately -39°C to 357°C. Outside this range, mercury freezes or boils."
   ],
   "formulas": [
-    "Temperature from length: T = ((L_t - L_0)/(L_100 - L_0)) × 100°C",
-    "Linear expansion: ΔL = L₀ α ΔT, where α is coefficient of linear expansion",
-    "Zeroth Law: If T_A = T_C and T_B = T_C, then T_A = T_B (thermal equilibrium transitive property)"
+    "- R = R₁ + (R₂ − R₁)T/100\n- T = 100(R − R₁)/(R₂ − R₁)"
   ],
   "keyPoints": [
-    "Thermal equilibrium means equal temperature and no net heat flow.",
-    "Zeroth law establishes temperature as a valid measurable quantity.",
-    "Mercury thermometer works by thermal expansion at thermal equilibrium.",
-    "Calibration uses ice point (0°C) and steam point (100°C) as fixed points.",
-    "Temperature reading is proportional to mercury column length change."
+    "Principle: thermal contact → equilibrium → mercury length = thermometric property.",
+    "Faulty scale: R = R₁ + (R₂−R₁)T/100; NEB 2023: −5, 105 → 39 °C at true 40 °C."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "\"A thermometer measures its own temperature at equilibrium, which the zeroth law equates with the body's.\""
+  ],
   "importantNotes": [
-    "Thermal equilibrium takes time — the thermometer must remain in contact until readings stabilize.",
-    "Mercury does not wet glass, ensuring smooth movement in the capillary tube.",
-    "The stem of the thermometer should be at the same temperature as the bulb for accurate readings.",
-    "Mercury's uniform expansion makes the temperature scale linear.",
-    "Parallax error can occur — read the meniscus at eye level."
+    "Verified PYQ: faulty-thermometer numerical (2023, 3m)."
   ],
   "examShortTricks": [
-    "Thermal equilibrium = same temperature, no heat flow.",
-    "Zeroth law = temperature is transitive (A=C, B=C → A=B).",
-    "Mercury expands uniformly — scale is linear.",
-    "Two fixed points: ice point (0°C) and steam point (100°C).",
-    "Read meniscus at eye level to avoid parallax error."
+    "\"Scale factor = (R₂−R₁)/100; then R = R₁ + factor × T.\""
   ],
   "examNotes": [
-    "NEB frequently asks to explain the working of a mercury thermometer using thermal equilibrium.",
-    "Zeroth law questions often ask why temperature is a fundamental property.",
-    "Thermometer calibration formula T = ((L_t - L_0)/(L_100 - L_0)) × 100 is a standard numerical.",
-    "Advantages of mercury: uniform expansion, visible, doesn't wet glass, wide liquid range.",
-    "Limitations: cannot measure below -39°C or above 357°C."
+    "The 2023 numerical is the pattern: two fixed points, linear map, one substitution."
   ],
   "examples": [
-    "Mercury column length at ice point L_0 = 10 cm, at steam point L_100 = 25 cm. At body temperature L_t = 16 cm: T = ((16-10)/(25-10)) × 100 = (6/15) × 100 = 40°C.",
-    "If L_t = 15 cm, L_0 = 10 cm, L_100 = 30 cm: T = ((15-10)/(30-10)) × 100 = (5/20) × 100 = 25°C.",
-    "A mercury thermometer reads 37°C for human body temperature — the normal temperature at thermal equilibrium with the body."
+    "***NEB 2023*** — reads −5 at 0 °C and 105 at 100 °C → 39 °C reading at true 40 °C."
   ],
   "practiceQuestions": [
-    "Q1. Explain the working of a mercury thermometer based on thermal equilibrium.",
-    "Q2. State the zeroth law of thermodynamics and its significance.",
-    "Q3. Why is mercury used in thermometers instead of water or alcohol?",
-    "Q4. How is a mercury thermometer calibrated? What are the two fixed points?",
-    "Q5. Calculate temperature given mercury lengths at ice point, steam point, and unknown temperature.",
-    "Q6. What is parallax error and how can it be avoided in thermometer reading?"
+    "**Numerical (3m): A faulty thermometer reads 4 °C in melting ice and 98 °C in steam. What is the true temperature when it reads 60 °C?** — T = 100(60−4)/(98−4) = 5600/94 = 59.6 °C."
   ],
   "practice": [
-    "Explain thermal equilibrium with everyday examples.",
-    "Apply the zeroth law to determine if two bodies are at the same temperature.",
-    "Use the calibration formula to compute temperature from mercury length.",
-    "List advantages and disadvantages of mercury thermometers.",
-    "Identify sources of error in temperature measurement."
+    "Why must a clinical thermometer be shaken down before use?"
   ],
   "universalFacts": [
-    "Daniel Gabriel Fahrenheit invented the mercury thermometer in 1714.",
-    "The Celsius scale was defined by Anders Celsius in 1742, originally with 0° as boiling point and 100° as freezing point (later inverted).",
-    "Mercury freezes at -38.83°C and boils at 356.7°C, giving a useful liquid range for thermometers.",
-    "Galileo's thermoscope (c. 1593) was an early temperature-measuring device without a scale.",
-    "The triple point of water (0.01°C) is now used as the fundamental fixed point for precise temperature measurement."
+    "Mercury is liquid from −39 °C to 357 °C — spanning every ordinary temperature; alcohol thermometers extend to −115 °C."
   ],
   "confusion": [
-    "Confusing thermal equilibrium with thermal expansion: Equilibrium = same temperature; Expansion = volume change due to temperature.",
-    "Thinking thermometer measures the body's temperature instantly: It takes time to reach thermal equilibrium.",
-    "Believing all liquids expand uniformly: Mercury's expansion is nearly uniform; water's is not (anomalous expansion near 4°C).",
-    "Confusing the two fixed points: Ice point = 0°C (lower fixed point), Steam point = 100°C (upper fixed point).",
-    "Thinking thermometer stem temperature doesn't matter: Stem conduction can affect accuracy."
+    "**The thermometer reads its own temperature** — trusted only because equilibrium makes it equal to the body's.",
+    "**True range is 100 °C** even when the faulty scale spans 110 reading-degrees."
   ],
   "mcs": [
     {
@@ -153,5 +112,144 @@
       "explanation": "Parallax error occurs when the scale is viewed from an angle instead of at eye level."
     }
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Reading Temperature by Equilibrium\n\nA mercury thermometer does not \"measure\" temperature directly — it *joins* the body it touches, reaches thermal equilibrium with it, and then displays its own temperature. The zeroth law guarantees that this shared temperature equals the body's. The scale calibration then converts mercury length to degrees.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Working principle\n\n1. **Thermal contact:** the bulb is placed in contact with the body; heat flows between them until **thermal equilibrium** (zeroth law: the thermometer then reads the body's temperature).\n2. **Thermometric property:** mercury expands **uniformly** with temperature — its length in a fine capillary is the thermometric property. (Other choices: electrical resistance, gas pressure, thermo-emf.)\n3. **Scale calibration:** two fixed points — ice point (0 °C) and steam point (100 °C) at normal pressure — divided into equal divisions on the assumption of uniform expansion.\n\n### 2.2 Properties that make mercury suitable\n\n- Uniform expansion over a wide range (−39 °C to 357 °C — liquid across the whole Celsius range).\n- Opaque and shiny — easily read.\n- Does not wet glass (clean meniscus).\n- Good thermal conductor — quick equilibrium; small specific heat capacity — responds fast with minimal heat drain.\n- Low vapour pressure at high temperatures.\n\n**Why not water?** Water wets glass, expands non-uniformly (anomalous below 4 °C), and freezes at 0 °C.\n\n### 2.3 Non-ideal thermometer calibration (NEB 2023)\n\nA real thermometer may read $R_1$ at the ice point (true 0 °C) and $R_2$ at the steam point (true 100 °C). Assuming linear behaviour between the fixed points, the true temperature $T$ maps to reading $R$:\n$$R = R_1 + \\frac{R_2 - R_1}{100}\\,T \\quad\\Longleftrightarrow\\quad T = \\frac{100(R - R_1)}{R_2 - R_1}$$\n\n### 2.4 Worked numerical (NEB 2023)\n\n**Q (3m, 2023):** A thermometer reads −5 °C when placed in ice water and 105 °C in boiling water. What reading does it give when placed in a liquid at 40 °C?\n- Scale factor: $\\dfrac{105 - (-5)}{100} = \\dfrac{110}{100} = 1.1$ °C reading per °C true\n- $R = -5 + 1.1 \\times 40 = -5 + 44 = \\boxed{39\\ °C}$",
+      "## 3. Conceptual Relationships\n\n- **To Topic 44:** the zeroth law is the logical foundation of the reading.\n- **To Thermal expansion (Unit 10):** mercury's expansion coefficient sets the scale spacing.\n- **To Temperature scales:** the same fixed-point logic builds kelvin and Fahrenheit scales.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Heat | Thermometer | A thermometer reads −5 °C when placed in ice water and 105 °C in boiling water. What reading does it give when placed in a liquid at 40 °C? | 3 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Explain the working principle of a mercury thermometer (3m).\n2. Why is mercury preferred over water? (2m)\n3. Reverse numerical: true temperature from a faulty reading (3m).\n\n### 4.3 Common examination mistakes\n\n1. Dividing by 110 instead of 100 for the scale factor — the *true* range is 100 °C.\n2. Forgetting the offset (−5) when computing the reading.\n3. Saying the thermometer \"measures heat\" — it reads its own equilibrium temperature."
+    ],
+    "confusion": [
+      "**The thermometer reads its own temperature** — trusted only because equilibrium makes it equal to the body's.",
+      "**True range is 100 °C** even when the faulty scale spans 110 reading-degrees."
+    ],
+    "keyPoints": [
+      "Principle: thermal contact → equilibrium → mercury length = thermometric property.",
+      "Faulty scale: R = R₁ + (R₂−R₁)T/100; NEB 2023: −5, 105 → 39 °C at true 40 °C."
+    ],
+    "importantConcepts": [
+      "**Linear interpolation between fixed points** rescues any faulty thermometer — the 2023 numerical pattern."
+    ],
+    "examples": [
+      "***NEB 2023*** — reads −5 at 0 °C and 105 at 100 °C → 39 °C reading at true 40 °C."
+    ],
+    "universalFacts": [
+      "Mercury is liquid from −39 °C to 357 °C — spanning every ordinary temperature; alcohol thermometers extend to −115 °C."
+    ],
+    "importantStatements": [
+      "\"A thermometer measures its own temperature at equilibrium, which the zeroth law equates with the body's.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: faulty-thermometer numerical (2023, 3m)."
+    ],
+    "examShortTricks": [
+      "\"Scale factor = (R₂−R₁)/100; then R = R₁ + factor × T.\""
+    ],
+    "examNotes": [
+      "The 2023 numerical is the pattern: two fixed points, linear map, one substitution."
+    ],
+    "formulas": [
+      "- R = R₁ + (R₂ − R₁)T/100\n- T = 100(R − R₁)/(R₂ − R₁)"
+    ],
+    "practice": [
+      "Why must a clinical thermometer be shaken down before use?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A faulty thermometer reads 4 °C in melting ice and 98 °C in steam. What is the true temperature when it reads 60 °C?** — T = 100(60−4)/(98−4) = 5600/94 = 59.6 °C."
+    ]
+  },
+  "importantConcepts": [
+    "**Linear interpolation between fixed points** rescues any faulty thermometer — the 2023 numerical pattern."
+  ],
+  "mcqs": [
+    {
+      "question": "A thermometer works on the principle of:",
+      "options": [
+        "Heat capacity",
+        "Thermal equilibrium (zeroth law)",
+        "Convection",
+        "Radiation"
+      ],
+      "answer": "B",
+      "explanation": "It shares the body's temperature."
+    },
+    {
+      "question": "The thermometric property in a mercury thermometer is:",
+      "options": [
+        "Volume of the bulb",
+        "Length of mercury in the capillary",
+        "Density of mercury",
+        "Resistance"
+      ],
+      "answer": "B",
+      "explanation": "Uniform expansion drives the column."
+    },
+    {
+      "question": "NEB 2023: reads −5 at ice, 105 at steam; at true 40 °C it reads:",
+      "options": [
+        "38 °C",
+        "39 °C",
+        "40 °C",
+        "44 °C"
+      ],
+      "answer": "B",
+      "explanation": "R = −5 + 1.1×40 = 39."
+    },
+    {
+      "question": "Mercury is preferred over water because water:",
+      "options": [
+        "Is transparent",
+        "Wets glass and expands non-uniformly",
+        "Has low density",
+        "Boils at 100 °C"
+      ],
+      "answer": "B",
+      "explanation": "Wetting + anomaly below 4 °C."
+    },
+    {
+      "question": "The fixed points of the Celsius scale are:",
+      "options": [
+        "0 K and 100 K",
+        "Ice point and steam point at 1 atm",
+        "−5 and 105",
+        "Body temperature and ice"
+      ],
+      "answer": "B",
+      "explanation": "0 °C and 100 °C."
+    },
+    {
+      "question": "Mercury's liquid range is about:",
+      "options": [
+        "0–100 °C",
+        "−39 to 357 °C",
+        "−115 to 78 °C",
+        "−273 to 0 °C"
+      ],
+      "answer": "B",
+      "explanation": "Wide span suits ordinary use."
+    },
+    {
+      "question": "A small specific heat in the thermometer means:",
+      "options": [
+        "Slow response",
+        "Minimal heat drain, quick equilibrium",
+        "Large capacity",
+        "Poor conduction"
+      ],
+      "answer": "B",
+      "explanation": "Less energy borrowed from the body."
+    },
+    {
+      "question": "For a faulty thermometer reading 4 at ice and 98 at steam, a 60 reading corresponds to:",
+      "options": [
+        "56 °C",
+        "59.6 °C",
+        "60 °C",
+        "62.8 °C"
+      ],
+      "answer": "B",
+      "explanation": "100(56)/94 = 59.6."
+    }
+  ]
 }

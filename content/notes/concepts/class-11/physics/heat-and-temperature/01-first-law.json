@@ -5,90 +5,55 @@
   "topicTitle": "Meaning of thermal equilibrium and Zeroth law of thermodynamics",
   "relevance": 83,
   "notes": [
-    "The first law is energy conservation for a thermodynamic system. With heat Q positive into the system and work W positive when done by the system, ΔU=Q−W. Internal energy U is a state function; heat and work are energy transfers across the boundary.",
-    "For a gas expanding against constant pressure, W=PΔV. If 500 J of heat enters and the gas does 180 J of work, then ΔU=500−180=320 J.",
-    "At constant volume, boundary work is zero, so Q=ΔU if no other work is present. In an adiabatic process Q=0 and ΔU=−W. Over a full cycle ΔU=0, hence net Q=net W.",
-    "For a monatomic ideal gas ΔU=(3/2)nRΔT. For 2 mol heated by 10 K, ΔU≈(3/2)(2)(8.314)(10)=249 J, independent of the path between the states.",
-    "A p–V diagram makes work visible: work done by a gas is the area under the process curve, W=∫P dV. Expansion gives positive work under this convention; compression gives negative work.",
-    "The first law says the rise in internal energy equals the heat added to the system plus the work done on the system. A common school form writes ΔQ = ΔU + ΔW with ΔW the work done by the gas. The two forms agree if you keep the sign of W consistent. This note uses work done on the gas."
+    "## 1. Topic Introduction — The Law That Makes Thermometers Possible\n\nTouch a hot stove and heat flows; touch a table and nothing happens. \"Nothing happening\" is thermal equilibrium — and the zeroth law turns it into a definition of temperature. Without it, comparing temperatures with a thermometer would have no logical basis.",
+    "## 2. Fundamental Concepts (NEB 2023, 2024)\n\n### 2.1 Thermal equilibrium\n\nTwo bodies in thermal contact are in **thermal equilibrium** when no net heat flows between them — they share the **same temperature**. Equilibrium is reached as energy transfers from the hotter to the colder body until temperatures equalise.\n\n### 2.2 The zeroth law — statement and explanation\n\n**Statement:** *If two bodies A and B are separately in thermal equilibrium with a third body C, then A and B are in thermal equilibrium with each other.*\n\n**Explanation:** \"Being in thermal equilibrium\" is a **transitive** relation. Body C (a thermometer) reading the same for A and for B means A and B share the same temperature — they would exchange no heat if brought into contact. This is what allows a thermometer to *define* and *compare* temperatures: the thermometer's own state (its mercury column length) tags a set of bodies all mutually in equilibrium.\n\n### 2.3 Why is it called the \"zeroth\" law? (NEB 2023, 2024)\n\nThe first and second laws of thermodynamics were already established when physicists (Fowler, 1930s) realised this more basic principle underlies the very definition of temperature used in those laws. Since it is logically **prior** to the first law, it could not be called \"third\" — it was given the number **zero**.\n\n### 2.4 Worked reasoning (NEB 2024)\n\n**Q (2m, 2024):** Body A is in thermal equilibrium with body C, and body B is also in thermal equilibrium with body C. What can you conclude about A and B?\n**A and B are in thermal equilibrium with each other** (zeroth law) — they have the same temperature and no heat would flow between them on contact.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 43:** equilibrium is the endpoint of heat flow.\n- **To Topic 45:** a mercury thermometer works *by* the zeroth law — it reaches equilibrium with the body and reports its shared temperature.\n- **To first law (Unit 11):** energy bookkeeping presupposes a well-defined temperature — supplied by the zeroth law.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Heat | Thermal equilibrium | State and explain the zeroth law of thermodynamics. Why is it called the zeroth law? | 2 | Statement + reasoning |\n| 2080/2024 | Heat | Thermal equilibrium | State and explain the zeroth law of thermodynamics. Why is it called the zeroth law? | 2 | Statement + reasoning |\n| 2080/2024 | Heat | Thermal equilibrium | Body A is in thermal equilibrium with body C, and body B is also in thermal equilibrium with body C. What can you conclude about A and B? | 2 | Reasoning |\n\n### 4.2 Model answer (2m)\n\nStatement: if A and B are each separately in thermal equilibrium with C, then A and B are in thermal equilibrium with each other. Explanation: thermal equilibrium is transitive — equal temperature to C means equal temperature to each other, so no net heat flows between A and B. It is called the **zeroth** law because it is more fundamental than the first and second laws (it underlies the definition of temperature) yet was formulated after them — so it was numbered zero rather than three.\n\n### 4.3 Common examination mistakes\n\n1. Stating the law without the transitivity explanation.\n2. Saying \"so A and B have equal heat\" — they have equal *temperature*.\n3. Confusing the numbering story (it was formulated *after* the first and second laws)."
   ],
   "confusion": [
-    "Some books define work on the system as positive and write ΔU=Q+Won; do not mix conventions.",
-    "At constant volume, Q=ΔU only if no other work is present.",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**Equal temperature ≠ equal heat:** equilibrium equalises temperature, not energy content.",
+    "**Zeroth, not third:** formulated after the first two laws but logically prior to them."
   ],
   "practice": [
-    "A gas absorbs 900 J and 350 J of work is done on it. Find ΔU using the stated convention.",
-    "What does the first law imply for a complete cycle?",
-    "Compare adiabatic expansion with constant-volume heating."
+    "Why can't a thermometer measure temperature instantaneously?"
   ],
   "universalFacts": [
-    "State the sign convention before substituting values.",
-    "Q and W depend on path; ΔU depends only on endpoints.",
-    "For a cycle, ΔU=0."
+    "Mercury-in-glass thermometers work only because glass+mercury reach equilibrium with the body measured."
   ],
   "animation3D": "heat-and-temperature",
   "motionGraphics": "heat-and-temperature",
   "examples": [
-    "Q=500 J into a gas and W=180 J by it gives ΔU=320 J.",
-    "At fixed volume, 250 J of heat gives ΔU=250 J when no other work occurs.",
-    "The first law says the rise in internal energy equals the heat added to the system plus the work done on the system. A common school form writes ΔQ = ΔU + ΔW with ΔW the work done by the gas. The two forms agree if you keep the sign of W consistent. This note uses work done on the gas.",
-    "The working relations are ΔU = Q + W, with W the work done on the gas in this sign and An isobaric expansion does work. Name each symbol, convert the data into SI units, and only then substitute.",
-    "A gas absorbs 200 J of heat and does 50 J of work on the piston. Find the change in internal energy, taking work done on the gas as negative when the gas expands."
+    "***NEB 2024*** — A~C, B~C ⇒ A~B: same temperature, no net flow on contact."
   ],
   "practiceQuestions": [
-    "A gas absorbs 900 J and 350 J of work is done on it. Find ΔU using the stated convention.",
-    "What does the first law imply for a complete cycle?",
-    "Compare adiabatic expansion with constant-volume heating."
+    "**Short (2m): Why does a thermometer need to stay in a liquid before reading?** — It must reach thermal equilibrium with the liquid (zeroth law); only then does its reading equal the liquid's temperature."
   ],
   "formulas": [
-    "First law: ΔU=Q−W with Q into system and W by system positive.",
-    "At constant external pressure W=PΔV; monatomic ideal gas ΔU=(3/2)nRΔT."
+    "- A ~ C and B ~ C ⇒ A ~ B\n- Equilibrium condition: T_A = T_B (no net heat flow)"
   ],
   "keyPoints": [
-    "State the sign convention before substituting values.",
-    "Q and W depend on path; ΔU depends only on endpoints.",
-    "For a cycle, ΔU=0.",
-    "ΔU = Q + W, with W the work done on the gas in this sign",
-    "An isobaric expansion does work",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "A~C and B~C ⇒ A~B (transitivity of thermal equilibrium).",
+    "The zeroth law underlies the very definition of temperature."
   ],
-  "summary": "The first law accounts for heat and work as energy transfers: ΔU=Q−W when work by the system is positive. Apply the convention consistently to expansion, compression, adiabatic and cyclic processes.",
+  "summary": "Bodies in thermal contact exchange energy until **thermal equilibrium** — equal temperature, no net heat flow. The **zeroth law** states that if A and B are each separately in thermal equilibrium with C, then A and B are in thermal equilibrium with each other: equilibrium is transitive, and this transitivity is precisely what licenses thermometers to compare temperatures (NEB 2023, 2024). It is called the *zeroth* law because although formulated after the first and second laws, it is logically prior to them — the definition of temperature itself rests on it. A~C and B~C therefore means A and B share a temperature and would exchange no heat on contact (NEB 2024).",
   "specialNotes": [
     "Some books define work on the system as positive and write ΔU=Q+Won; do not mix conventions.",
     "At constant volume, Q=ΔU only if no other work is present."
   ],
   "importantStatements": [
-    "State the sign convention before substituting values.",
-    "Q and W depend on path; ΔU depends only on endpoints.",
-    "For a cycle, ΔU=0."
+    "\"Bodies in thermal equilibrium have the same temperature.\""
   ],
   "importantNotes": [
-    "State the sign convention before substituting values.",
-    "Q and W depend on path; ΔU depends only on endpoints.",
-    "For a cycle, ΔU=0."
+    "Verified PYQs: zeroth law statement + numbering (2023, 2024 — 2m); A-C-B reasoning (2024 — 2m)."
   ],
   "examShortTricks": [
-    "First law: ΔU=Q−W with Q into system and W by system positive.",
-    "At constant external pressure W=PΔV; monatomic ideal gas ΔU=(3/2)nRΔT."
+    "\"Statement → transitivity → 'logically prior, numbered zero'.\""
   ],
   "examNotes": [
-    "A gas absorbs 900 J and 350 J of work is done on it. Find ΔU using the stated convention.",
-    "What does the first law imply for a complete cycle?",
-    "Compare adiabatic expansion with constant-volume heating."
+    "The same 2m question appeared in 2023 and 2024 — a near-certain repeat."
   ],
   "importantConcepts": [
-    "State the sign convention before substituting values.",
-    "Q and W depend on path; ΔU depends only on endpoints.",
-    "For a cycle, ΔU=0.",
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**The thermometer's licence:** the zeroth law is what lets one instrument compare temperatures of many bodies."
   ],
   "importantTasks": [
     "A gas absorbs 900 J and 350 J of work is done on it. Find ΔU using the stated convention.",
@@ -145,44 +110,92 @@
   ],
   "mcqs": [
     {
-      "question": "The first law is",
+      "question": "Bodies in thermal equilibrium have equal:",
       "options": [
-        "Conservation of charge",
-        "Conservation of energy",
-        "Newton's third law",
-        "Snell's law"
+        "Heat",
+        "Temperature",
+        "Mass",
+        "Volume"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Equal T; energies may differ."
     },
     {
-      "question": "If the gas expands, work done on the gas is",
+      "question": "The zeroth law establishes:",
       "options": [
-        "Positive in this sign convention",
-        "Negative in this sign convention",
-        "Zero",
-        "Equal to Q always"
+        "Energy conservation",
+        "Transitivity of thermal equilibrium",
+        "Entropy increase",
+        "Heat flow direction"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "A~C, B~C ⇒ A~B."
     },
     {
-      "question": "An adiabatic process has",
+      "question": "The zeroth law is numbered 'zero' because it:",
       "options": [
-        "Q = 0",
-        "ΔU = 0 always",
-        "W = 0 always",
-        "No first law"
+        "Was discovered first",
+        "Is logically prior to the first law",
+        "Has no content",
+        "Failed as the third law"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Underlies the definition of temperature."
     },
     {
-      "question": "Isothermal ideal-gas internal energy",
+      "question": "A thermometer reads correctly only when it:",
       "options": [
-        "Changes with volume",
-        "Stays constant because temperature stays constant",
-        "Equals the pressure",
-        "Is zero"
+        "Is vertical",
+        "Reaches thermal equilibrium with the body",
+        "Contains mercury only",
+        "Is shaken"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Zeroth law in action."
+    },
+    {
+      "question": "If A~C and B~C, then bringing A and B together causes:",
+      "options": [
+        "Heat flow A→B",
+        "Heat flow B→A",
+        "No net heat flow",
+        "Boiling"
+      ],
+      "answer": "C",
+      "explanation": "Same temperature."
+    },
+    {
+      "question": "Thermal equilibrium means:",
+      "options": [
+        "Equal heat content",
+        "No net energy exchange",
+        "Equal masses",
+        "Equal volumes"
+      ],
+      "answer": "B",
+      "explanation": "Net flow vanishes at equal T."
+    },
+    {
+      "question": "The zeroth law was formulated:",
+      "options": [
+        "Before the first law",
+        "By Newton",
+        "In the 20th century (Fowler)",
+        "By Carnot"
+      ],
+      "answer": "C",
+      "explanation": "1930s, after the first two laws."
+    },
+    {
+      "question": "Which relation is transitive according to the zeroth law?",
+      "options": [
+        "Heat content",
+        "Thermal equilibrium",
+        "Mass equality",
+        "Pressure equality"
+      ],
+      "answer": "B",
+      "explanation": "Equilibrium propagates."
     }
   ],
   "exercises": [
@@ -197,5 +210,51 @@
       ],
       "answer": "ΔU = 150 J."
     }
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Law That Makes Thermometers Possible\n\nTouch a hot stove and heat flows; touch a table and nothing happens. \"Nothing happening\" is thermal equilibrium — and the zeroth law turns it into a definition of temperature. Without it, comparing temperatures with a thermometer would have no logical basis.",
+      "## 2. Fundamental Concepts (NEB 2023, 2024)\n\n### 2.1 Thermal equilibrium\n\nTwo bodies in thermal contact are in **thermal equilibrium** when no net heat flows between them — they share the **same temperature**. Equilibrium is reached as energy transfers from the hotter to the colder body until temperatures equalise.\n\n### 2.2 The zeroth law — statement and explanation\n\n**Statement:** *If two bodies A and B are separately in thermal equilibrium with a third body C, then A and B are in thermal equilibrium with each other.*\n\n**Explanation:** \"Being in thermal equilibrium\" is a **transitive** relation. Body C (a thermometer) reading the same for A and for B means A and B share the same temperature — they would exchange no heat if brought into contact. This is what allows a thermometer to *define* and *compare* temperatures: the thermometer's own state (its mercury column length) tags a set of bodies all mutually in equilibrium.\n\n### 2.3 Why is it called the \"zeroth\" law? (NEB 2023, 2024)\n\nThe first and second laws of thermodynamics were already established when physicists (Fowler, 1930s) realised this more basic principle underlies the very definition of temperature used in those laws. Since it is logically **prior** to the first law, it could not be called \"third\" — it was given the number **zero**.\n\n### 2.4 Worked reasoning (NEB 2024)\n\n**Q (2m, 2024):** Body A is in thermal equilibrium with body C, and body B is also in thermal equilibrium with body C. What can you conclude about A and B?\n**A and B are in thermal equilibrium with each other** (zeroth law) — they have the same temperature and no heat would flow between them on contact.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 43:** equilibrium is the endpoint of heat flow.\n- **To Topic 45:** a mercury thermometer works *by* the zeroth law — it reaches equilibrium with the body and reports its shared temperature.\n- **To first law (Unit 11):** energy bookkeeping presupposes a well-defined temperature — supplied by the zeroth law.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Heat | Thermal equilibrium | State and explain the zeroth law of thermodynamics. Why is it called the zeroth law? | 2 | Statement + reasoning |\n| 2080/2024 | Heat | Thermal equilibrium | State and explain the zeroth law of thermodynamics. Why is it called the zeroth law? | 2 | Statement + reasoning |\n| 2080/2024 | Heat | Thermal equilibrium | Body A is in thermal equilibrium with body C, and body B is also in thermal equilibrium with body C. What can you conclude about A and B? | 2 | Reasoning |\n\n### 4.2 Model answer (2m)\n\nStatement: if A and B are each separately in thermal equilibrium with C, then A and B are in thermal equilibrium with each other. Explanation: thermal equilibrium is transitive — equal temperature to C means equal temperature to each other, so no net heat flows between A and B. It is called the **zeroth** law because it is more fundamental than the first and second laws (it underlies the definition of temperature) yet was formulated after them — so it was numbered zero rather than three.\n\n### 4.3 Common examination mistakes\n\n1. Stating the law without the transitivity explanation.\n2. Saying \"so A and B have equal heat\" — they have equal *temperature*.\n3. Confusing the numbering story (it was formulated *after* the first and second laws)."
+    ],
+    "confusion": [
+      "**Equal temperature ≠ equal heat:** equilibrium equalises temperature, not energy content.",
+      "**Zeroth, not third:** formulated after the first two laws but logically prior to them."
+    ],
+    "keyPoints": [
+      "A~C and B~C ⇒ A~B (transitivity of thermal equilibrium).",
+      "The zeroth law underlies the very definition of temperature."
+    ],
+    "importantConcepts": [
+      "**The thermometer's licence:** the zeroth law is what lets one instrument compare temperatures of many bodies."
+    ],
+    "examples": [
+      "***NEB 2024*** — A~C, B~C ⇒ A~B: same temperature, no net flow on contact."
+    ],
+    "universalFacts": [
+      "Mercury-in-glass thermometers work only because glass+mercury reach equilibrium with the body measured."
+    ],
+    "importantStatements": [
+      "\"Bodies in thermal equilibrium have the same temperature.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: zeroth law statement + numbering (2023, 2024 — 2m); A-C-B reasoning (2024 — 2m)."
+    ],
+    "examShortTricks": [
+      "\"Statement → transitivity → 'logically prior, numbered zero'.\""
+    ],
+    "examNotes": [
+      "The same 2m question appeared in 2023 and 2024 — a near-certain repeat."
+    ],
+    "formulas": [
+      "- A ~ C and B ~ C ⇒ A ~ B\n- Equilibrium condition: T_A = T_B (no net heat flow)"
+    ],
+    "practice": [
+      "Why can't a thermometer measure temperature instantaneously?"
+    ],
+    "practiceQuestions": [
+      "**Short (2m): Why does a thermometer need to stay in a liquid before reading?** — It must reach thermal equilibrium with the liquid (zeroth law); only then does its reading equal the liquid's temperature."
+    ]
+  }
 }
