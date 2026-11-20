@@ -7,75 +7,55 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "A reflex is a rapid, automatic response to a stimulus. The path is a reflex arc: receptor, sensory neuron, a coordinator in the spinal cord or brain, motor neuron, and effector. The knee-jerk arc is handled in the spinal cord, so the leg extends before the brain has finished registering the tap.",
-    "Taxes are directed movements toward or away from a stimulus. Positive phototaxis is movement toward light. Negative phototaxis is movement away from it. Chemotaxis follows a chemical, geotaxis follows gravity, and thigmotaxis follows touch.",
-    "Kinesis is a change in speed or turning rate when a stimulus changes, without a fixed direction. An animal that simply moves faster in a dry patch, and slows down in a moist patch, shows kinesis. It is not a taxis, because it is not aimed.",
-    "Innate behavior is present without being taught, as in a reflex or a taxis. Learned behavior changes with experience. Most real behavior mixes the two: the ability to learn is innate, the particular lesson is not.",
-    "Dominance is a social ranking in which some individuals get priority to food, mates or resting sites. A pecking order in birds is a linear dominance hierarchy. Leadership is the tendency of a group to follow one individual when moving or fleeing. The leader is not always the most dominant animal.",
-    "These patterns matter in the wild because they decide who feeds, who breeds and how a herd escapes a predator. A reflex protects the body immediately. A taxis places the animal in a better spot. A hierarchy reduces constant fighting inside the group.",
-    "# Animal behavior: Reflex action, taxes, dominance and leadership\n\n## 1. Introduction\nOpening frame for **Animal behavior** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Biota and Environment fill pass.\n\n## 2. Hierarchy body — every syllabus sub-point\n### Animal behavior: Reflex action\n### taxes\n### dominance and leadership\n\nFill order per concept: definition → structure → process → significance (§3.2). Step-by-step numbered points, Pioneer style.",
-    "## 3. Classified tables\n\n**Table 1 — Key ideas and worked angles**\n\n| Idea | Statement | Where used | Worked example |\n| --- | --- | --- | --- |\n\n**Table 2 — Key ideas and worked angles**\n\n| Idea | Statement | Where used | Worked example |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB marks trend |\n| --- | --- | --- |\n\nTables carry examples in every classification and characteristics row, ≤ 12 rows, and each is referenced from the body text (§3.3).",
-    "## 4. Diagrams and figures\n- **D1** — Animal behavior — structure (authored SVG — English labels, viewBox 900×640)\n- **D2** — Animal behavior — process or life-cycle flow (authored SVG — English labels)\n- **D3** — Animal behavior — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Animal behavior — comparison or application figure (curated external — license recorded at fill)\n\nFigure slots are declared up front (§3.4): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y), every external figure license-recorded at fill.",
-    "## 5. Worked examples and applications\n≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass.\n\n## 6. Key terms and statements\nEvery new term defined once; exam-grade definitions live here and in keyPoints (block VI).",
-    "## 7. Exam Zone\nNEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.",
-    "## 8. Summary and self-check\n5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Why Animals Move and Act\n\nBehaviour is the coordinated response of an organism to stimuli. Some responses are hard-wired reflexes; others are oriented movements (taxes); some are social (dominance and leadership); and some move whole populations across continents (fish and bird migration). The syllabus groups them here.",
+    "## 2. Reflex Action\n\n**Definition:** a rapid, automatic, involuntary response of an organ to a stimulus, mediated by the **reflex arc**.\n\n| Component of the reflex arc | Role |\n|---|---|\n| **Receptor** | Sense organ detects the stimulus |\n| **Sensory (afferent) neuron** | Carries the impulse to the spinal cord |\n| **Integration centre (spinal cord)** | Synapse; the impulse is redirected |\n| **Motor (efferent) neuron** | Carries the impulse to the effector |\n| **Effector** | Muscle or gland produces the response |\n\n**Example:** the knee-jerk (patellar) reflex — tapping the tendon stretches the muscle; the sensory neuron fires; the spinal cord directly excites the motor neuron; the muscle contracts and the leg kicks. Withdrawal of the hand from a hot object is another spinal reflex.\n\n**Properties:** rapid, involuntary, stereotyped; the brain is bypassed (though informed afterwards) — spinal reflexes survive even when the brain is absent.",
+    "## 3. Taxes — Oriented Movements\n\n**Taxis (plural taxes):** an oriented locomotor response toward (+) or away from (−) a stimulus.\n\n| Taxis | Stimulus | Example |\n|---|---|---|\n| **Phototaxis** | Light | Moths fly toward light (+); cockroaches flee light (−) |\n| **Chemotaxis** | Chemicals | Sperm toward the egg; mosquitoes toward body odours (+); planaria away from harmful chemicals (−) |\n| **Geotaxis** | Gravity | Earthworms move toward gravity (+); some insects fly against it (−) |\n| **Thigmotaxis** | Touch | Earthworms and woodlice press against surfaces (+) |\n| **Rheotaxis** | Water current | Fish orienting against the current (+) |\n| **Thermotaxis** | Temperature | Snakes seeking warm rocks (+) |\n\nTaxes are innate (instinctive) behaviours — the whole animal orients; contrast with tropisms, which are growth responses of plants.",
+    "## 4. Dominance and Leadership\n\n### 4.1 Dominance hierarchy (peck order)\n\n**Definition:** a social ranking within a group in which some individuals (dominants) gain priority of access to food, mates and space while subordinates defer.\n\n| Feature | Detail |\n|---|---|\n| Established by | Agonistic displays, fights, ritualised threats — settled once and remembered |\n| Benefits | Reduces repeated fighting; group stability; priority access for dominants |\n| Examples | Hens' pecking order; wolf packs with alpha pair; langur troops |\n\n### 4.2 Leadership\n\n**Definition:** an individual or individuals that guide group movement and decisions.\n\n| Feature | Detail |\n|---|---|\n| Basis | Experience, strength, age or knowledge — not always dominance |\n| Function | Guides migration routes, warns of danger, leads to water and food |\n| Examples | The lead elephant matriarch (oldest female, remembers water sources); lead fish in schools; experienced lead goose in flight |\n\n**Dominance ≠ leadership:** a dominant individual may win fights without leading; a leader may guide by knowledge without dominating.",
+    "## 5. Fish and Bird Migration\n\n### 5.1 Fish migration\n\n| Type | Movement | Example |\n|---|---|---|\n| **Anadromous** | Sea → rivers to spawn | Salmon, *Hilsa* (ilish — Nepal's plains rivers via Bay of Bengal link) |\n| **Catadromous** | Rivers → sea to spawn | Eel (*Anguilla*) |\n| **Potamodromous** | Within river systems/lakes | Trout movements |\n\nTriggers: temperature, flow, hormonal state; cues for navigation: smell (imprinting), sun compass, magnetic field.\n\n### 5.2 Bird migration\n\n**Definition:** regular seasonal movement between breeding and wintering grounds.\n\n| Feature | Detail |\n|---|---|\n| Trigger | Changing day length (photoperiod), temperature, food supply; hormonal changes |\n| Navigation | Sun compass, star patterns, **Earth's magnetic field**, landmark memory |\n| Examples | Siberian cranes historically to Nepal's wetlands; demoiselle cranes over the Himalaya to India; bar-headed goose crossing the Himalaya |",
+    "## 6. Conceptual Relationships\n\n- **Topic 48 → here:** behaviour is the physiological-behavioural side of adaptation.\n- **Here → Topic 50:** migration exposes animals to habitat change and pollution along flyways.\n- **Here → Unit 10:** migratory species need international conservation cooperation (Ramsar wetlands).\n- **Here → physiology:** reflex arcs use the nervous system's simplest circuit.",
+    "## 7. Exam Orientation\n\n### 7.1 Previous year questions\n\nNo behaviour/migration question exists in the authored bank. Questions below are **NEB-style practice**, clearly labelled.\n\n### 7.2 NEB-style practice questions with model answers\n\n**Q1 (3m) — Define reflex action and describe the reflex arc with an example.**\nAnswer: A **reflex action** is a rapid, automatic, involuntary response to a stimulus. The **reflex arc**: a **receptor** detects the stimulus; a **sensory (afferent) neuron** carries the impulse to the **spinal cord**, where it synapses; a **motor (efferent) neuron** carries it to the **effector** (muscle or gland), which responds. Example: withdrawing the hand from a hot object — the arm is pulled away before the brain consciously registers the heat.\n\n**Q2 (2m) — Define taxis and give two examples.**\nAnswer: Taxis is an innate oriented movement of an organism toward (+) or away from (−) a stimulus. Examples: **phototaxis** — moths flying toward light; **chemotaxis** — sperm swimming toward chemicals released by the egg.\n\n**Q3 (3m) — Explain dominance hierarchy and leadership in animals.**\nAnswer: A **dominance hierarchy** is a social ranking in which dominant individuals gain priority access to food, mates and space while subordinates defer; it is established by fights or displays and then reduces conflict (hens' pecking order, wolf packs). **Leadership** is the guidance of group movement and decisions by an individual with experience or knowledge — e.g. the elephant matriarch leading the herd to water. Dominance is won by force; leadership rests on knowledge — one individual may be dominant without leading, or lead without dominating.\n\n**Q4 (3m) — What is bird migration? State the triggers and navigation cues.**\nAnswer: **Bird migration** is the regular seasonal movement of birds between breeding and wintering grounds. **Triggers:** changing photoperiod, temperature and food availability, acting through hormonal changes. **Navigation cues:** the sun compass, star patterns, the Earth's magnetic field and landmark memory. Example: demoiselle cranes crossing the Himalaya to winter in the Indian subcontinent.\n\n### 7.3 Common examination mistakes\n\n1. Confusing taxis (whole-animal movement) with tropism (plant growth response).\n2. Saying reflexes are controlled by the brain — spinal reflexes bypass the brain.\n3. Treating dominance and leadership as the same — dominance is won in conflict; leadership rests on knowledge.\n4. Calling migration random dispersal — it is regular, seasonal and navigated.\n5. Confusing anadromous (sea → river, salmon) with catadromous (river → sea, eel)."
   ],
   "confusion": [
-    "A taxis is directed. A kinesis is not. Calling every movement a taxis loses the distinction.",
-    "A reflex does not require a conscious decision. The brain may be informed afterwards, but the knee-jerk does not wait for that.",
-    "The dominant animal is not automatically the leader of every movement. Dominance is about priority. Leadership is about being followed.",
-    "Negative phototaxis is not a failure to respond to light. It is an active movement away from light."
+    "**Taxis vs tropism:** taxis is the whole animal orienting its movement; tropism is a plant's growth response.",
+    "**Anadromous vs catadromous:** anadromous fish spawn in rivers after living at sea (salmon); catadromous fish spawn at sea after living in rivers (eel)."
   ],
   "keyPoints": [
-    "Reflex arc: receptor, sensory neuron, coordinator, motor neuron, effector.",
-    "Taxis: directed movement, named by the stimulus and by the sign (positive or negative).",
-    "Kinesis: non-directional change in activity.",
-    "Dominance is a ranking for priority. Leadership is being followed during movement.",
-    "The knee-jerk coordinator is the spinal cord."
+    "Reflex arc: receptor → sensory neuron → spinal cord → motor neuron → effector; rapid, involuntary; brain bypassed.",
+    "Taxes: photo-, chemo-, geo-, thigmo-, rheo-, thermotaxis — oriented movement toward (+) or away (−) from a stimulus.",
+    "Dominance hierarchy: peck order, priority access, reduces fighting. Leadership: guides by experience/knowledge (elephant matriarch).",
+    "Fish migration: anadromous (salmon, sea→river), catadromous (eel, river→sea). Bird migration: photoperiod-triggered; sun/star/magnetic navigation; demoiselle crane over Himalaya."
   ],
   "importantStatements": [
-    "A reflex is fast because the arc is short and does not depend on conscious thought.",
-    "Taxes orient an animal in a gradient. Kinesis only changes how much the animal moves.",
-    "Social rank reduces repeated fights by making the outcome of a contest predictable."
+    "\"A reflex is faster than thought because it never reaches thought.\""
   ],
   "examples": [
-    "The knee-jerk: a tap on the tendon stretches a receptor, and the leg extends.",
-    "Maggots often move away from light, a negative phototaxis.",
-    "Woodlice move more in dry air and slow down in moist air, a kinesis that leaves them in the moist place."
+    "***Knee-jerk reflex*** — spinal reflex arc with only two synapse levels."
   ],
   "universalFacts": [
-    "The same reflex arc parts appear in vertebrates: a sensor, an incoming nerve, a central connection, an outgoing nerve and a muscle or gland.",
-    "Pecking order is the classic name for a linear dominance hierarchy, first described in flocks of hens."
+    "The bar-headed goose crosses the Himalaya at altitudes near 8,000 m — the highest bird migration known."
   ],
   "formulas": [
     "Reflex arc order: receptor → sensory neuron → coordinator → motor neuron → effector.",
     "Sign of a taxis: positive = toward the stimulus, negative = away from it."
   ],
   "practice": [
-    "List the five parts of a reflex arc in order.",
-    "Classify knee-jerk, movement toward food odour, and speeding up in bright light as reflex, taxis or kinesis.",
-    "Distinguish dominance from leadership with one example."
+    "Why does the spinal cord, not the brain, run spinal reflexes?"
   ],
   "practiceQuestions": [
-    "Why can a knee-jerk happen before you feel the tap?",
-    "How would you tell a taxis from a kinesis in a simple experiment?",
-    "What advantage does a stable hierarchy give a group?"
+    "**Short answer (2m): Distinguish anadromous from catadromous migration.** — Anadromous fish live at sea and migrate up rivers to spawn (salmon, Hilsa); catadromous fish live in rivers and migrate to the sea to spawn (eel)."
   ],
   "examNotes": [
-    "Draw the reflex arc and label all five parts. An unlabelled list is weaker.",
-    "Give the stimulus name and the sign for any taxis you mention, for example negative phototaxis."
+    "Most likely items: reflex arc definition and components; two taxes with examples; dominance vs leadership; anadromous vs catadromous."
   ],
   "examShortTricks": [
-    "Taxis has a direction. Kinesis has only a speed.",
-    "Knee-jerk lives in the spinal cord, not the knee and not the thinking part of the brain."
+    "\"Receptor-sensory-cord-motor-effector — the reflex arc in five words.\""
   ],
   "specialNotes": [
     "Name the stimulus in the taxis: photo, chemo, geo or thigmo.",
     "Do not call a reflex a taxis. One is a body response through a nerve arc. The other is locomotion aimed at a stimulus."
   ],
   "importantNotes": [
-    "The order of the arc is the usual lost-credit point. Write it in one direction only.",
-    "Add a social example, pecking order or a moving herd, if the question mentions dominance or leadership."
+    "No verified PYQ in the bank; practise reflex arc, taxes and migration as NEB-style practice."
   ],
   "mcs": [
     {
@@ -120,11 +100,7 @@
     }
   ],
   "importantConcepts": [
-    "Reflex arc",
-    "Positive and negative taxis",
-    "Kinesis",
-    "Dominance hierarchy",
-    "Leadership in a group"
+    "**Dominance ≠ leadership:** one is won by force, the other earned by knowledge — a group can have different individuals in each role."
   ],
   "importantTasks": [
     "Label a five-part reflex arc.",
@@ -142,47 +118,143 @@
       "answer": "It is a kinesis: activity falls in the damp place, so the animal accumulates there without a directed path."
     }
   ],
-  "summary": "Animal behaviour at this level covers the reflex arc, directed taxes, undirected kinesis, and social dominance and leadership. Reflexes protect the body through a short nerve path. Taxes and kineses place the animal in a better environment. Rank and leadership organise the group.",
+  "summary": "Behaviour spans reflexes, oriented movements, social order and mass movement. Reflex actions — rapid, involuntary responses through the five-part reflex arc (receptor, sensory neuron, spinal cord, motor neuron, effector) — bypass the brain, as in the knee-jerk. Taxes orient the whole animal toward or away from stimuli: moths to light, sperm to egg chemicals, earthworms to gravity and touch. In societies, dominance hierarchies rank access to resources and dampen conflict, while leadership guides group movement by knowledge, as with the elephant matriarch. Fish migrate anadromously (salmon, sea to river) or catadromously (eel, river to sea); birds answer photoperiod and navigate by sun, stars and magnetic field — demoiselle cranes cross the Himalaya each year.",
   "mcqs": [
     {
-      "question": "The knee-jerk reflex is coordinated by the",
+      "question": "The correct order of the reflex arc is:",
       "options": [
-        "Heart",
-        "Spinal cord",
-        "Stomach",
-        "Liver"
+        "Effector → receptor → spinal cord",
+        "Receptor → sensory neuron → spinal cord → motor neuron → effector",
+        "Receptor → motor neuron → brain → effector",
+        "Sensory neuron → receptor → effector"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "The reflex arc runs receptor → sensory neuron → integration in the cord → motor neuron → effector."
     },
     {
-      "question": "Movement directly away from light is",
+      "question": "Moths flying toward light is an example of:",
       "options": [
+        "Chemotaxis",
         "Positive phototaxis",
-        "Negative phototaxis",
-        "Kinesis",
-        "A pecking order"
+        "Geotaxis",
+        "Thigmotaxis"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Oriented movement toward light is positive phototaxis."
     },
     {
-      "question": "Kinesis differs from taxis because kinesis",
+      "question": "Salmon migrating from the sea into rivers to spawn shows:",
       "options": [
-        "Always uses the brain",
-        "Has no fixed direction",
-        "Is always learned",
-        "Requires a leader"
+        "Catadromous migration",
+        "Anadromous migration",
+        "Latitudinal drift",
+        "Random dispersal"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Anadromous = sea to river for spawning; catadromous (eel) is the reverse."
     },
     {
-      "question": "A pecking order is a",
+      "question": "The elephant matriarch leading her herd to water is an example of:",
       "options": [
-        "Reflex arc",
         "Dominance hierarchy",
-        "Type of geotaxis",
-        "Seed bank"
+        "Leadership",
+        "Phototaxis",
+        "Reflex action"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Leadership guides group movement by experience and knowledge."
+    },
+    {
+      "question": "A dominance hierarchy primarily reduces:",
+      "options": [
+        "Group size",
+        "Repeated fighting within the group",
+        "Food supply",
+        "Predation"
+      ],
+      "answer": "B",
+      "explanation": "Once ranks are settled, ritualised deference replaces repeated fights."
+    },
+    {
+      "question": "Sperm swimming toward chemicals released by the egg shows:",
+      "options": [
+        "Positive chemotaxis",
+        "Negative chemotaxis",
+        "Rheotaxis",
+        "Thermotaxis"
+      ],
+      "answer": "A",
+      "explanation": "Movement toward a chemical gradient is positive chemotaxis."
+    },
+    {
+      "question": "A key navigation cue for migrating birds is:",
+      "options": [
+        "Moon phase only",
+        "Earth's magnetic field",
+        "Rainfall",
+        "Wind direction alone"
+      ],
+      "answer": "B",
+      "explanation": "Birds navigate with the sun compass, stars and Earth's magnetic field."
+    },
+    {
+      "question": "Eels migrating from rivers to the sea to spawn show:",
+      "options": [
+        "Anadromous migration",
+        "Catadromous migration",
+        "Potamodromous migration",
+        "No migration"
+      ],
+      "answer": "B",
+      "explanation": "Catadromous = river to sea for spawning (eel)."
     }
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Why Animals Move and Act\n\nBehaviour is the coordinated response of an organism to stimuli. Some responses are hard-wired reflexes; others are oriented movements (taxes); some are social (dominance and leadership); and some move whole populations across continents (fish and bird migration). The syllabus groups them here.",
+      "## 2. Reflex Action\n\n**Definition:** a rapid, automatic, involuntary response of an organ to a stimulus, mediated by the **reflex arc**.\n\n| Component of the reflex arc | Role |\n|---|---|\n| **Receptor** | Sense organ detects the stimulus |\n| **Sensory (afferent) neuron** | Carries the impulse to the spinal cord |\n| **Integration centre (spinal cord)** | Synapse; the impulse is redirected |\n| **Motor (efferent) neuron** | Carries the impulse to the effector |\n| **Effector** | Muscle or gland produces the response |\n\n**Example:** the knee-jerk (patellar) reflex — tapping the tendon stretches the muscle; the sensory neuron fires; the spinal cord directly excites the motor neuron; the muscle contracts and the leg kicks. Withdrawal of the hand from a hot object is another spinal reflex.\n\n**Properties:** rapid, involuntary, stereotyped; the brain is bypassed (though informed afterwards) — spinal reflexes survive even when the brain is absent.",
+      "## 3. Taxes — Oriented Movements\n\n**Taxis (plural taxes):** an oriented locomotor response toward (+) or away from (−) a stimulus.\n\n| Taxis | Stimulus | Example |\n|---|---|---|\n| **Phototaxis** | Light | Moths fly toward light (+); cockroaches flee light (−) |\n| **Chemotaxis** | Chemicals | Sperm toward the egg; mosquitoes toward body odours (+); planaria away from harmful chemicals (−) |\n| **Geotaxis** | Gravity | Earthworms move toward gravity (+); some insects fly against it (−) |\n| **Thigmotaxis** | Touch | Earthworms and woodlice press against surfaces (+) |\n| **Rheotaxis** | Water current | Fish orienting against the current (+) |\n| **Thermotaxis** | Temperature | Snakes seeking warm rocks (+) |\n\nTaxes are innate (instinctive) behaviours — the whole animal orients; contrast with tropisms, which are growth responses of plants.",
+      "## 4. Dominance and Leadership\n\n### 4.1 Dominance hierarchy (peck order)\n\n**Definition:** a social ranking within a group in which some individuals (dominants) gain priority of access to food, mates and space while subordinates defer.\n\n| Feature | Detail |\n|---|---|\n| Established by | Agonistic displays, fights, ritualised threats — settled once and remembered |\n| Benefits | Reduces repeated fighting; group stability; priority access for dominants |\n| Examples | Hens' pecking order; wolf packs with alpha pair; langur troops |\n\n### 4.2 Leadership\n\n**Definition:** an individual or individuals that guide group movement and decisions.\n\n| Feature | Detail |\n|---|---|\n| Basis | Experience, strength, age or knowledge — not always dominance |\n| Function | Guides migration routes, warns of danger, leads to water and food |\n| Examples | The lead elephant matriarch (oldest female, remembers water sources); lead fish in schools; experienced lead goose in flight |\n\n**Dominance ≠ leadership:** a dominant individual may win fights without leading; a leader may guide by knowledge without dominating.",
+      "## 5. Fish and Bird Migration\n\n### 5.1 Fish migration\n\n| Type | Movement | Example |\n|---|---|---|\n| **Anadromous** | Sea → rivers to spawn | Salmon, *Hilsa* (ilish — Nepal's plains rivers via Bay of Bengal link) |\n| **Catadromous** | Rivers → sea to spawn | Eel (*Anguilla*) |\n| **Potamodromous** | Within river systems/lakes | Trout movements |\n\nTriggers: temperature, flow, hormonal state; cues for navigation: smell (imprinting), sun compass, magnetic field.\n\n### 5.2 Bird migration\n\n**Definition:** regular seasonal movement between breeding and wintering grounds.\n\n| Feature | Detail |\n|---|---|\n| Trigger | Changing day length (photoperiod), temperature, food supply; hormonal changes |\n| Navigation | Sun compass, star patterns, **Earth's magnetic field**, landmark memory |\n| Examples | Siberian cranes historically to Nepal's wetlands; demoiselle cranes over the Himalaya to India; bar-headed goose crossing the Himalaya |",
+      "## 6. Conceptual Relationships\n\n- **Topic 48 → here:** behaviour is the physiological-behavioural side of adaptation.\n- **Here → Topic 50:** migration exposes animals to habitat change and pollution along flyways.\n- **Here → Unit 10:** migratory species need international conservation cooperation (Ramsar wetlands).\n- **Here → physiology:** reflex arcs use the nervous system's simplest circuit.",
+      "## 7. Exam Orientation\n\n### 7.1 Previous year questions\n\nNo behaviour/migration question exists in the authored bank. Questions below are **NEB-style practice**, clearly labelled.\n\n### 7.2 NEB-style practice questions with model answers\n\n**Q1 (3m) — Define reflex action and describe the reflex arc with an example.**\nAnswer: A **reflex action** is a rapid, automatic, involuntary response to a stimulus. The **reflex arc**: a **receptor** detects the stimulus; a **sensory (afferent) neuron** carries the impulse to the **spinal cord**, where it synapses; a **motor (efferent) neuron** carries it to the **effector** (muscle or gland), which responds. Example: withdrawing the hand from a hot object — the arm is pulled away before the brain consciously registers the heat.\n\n**Q2 (2m) — Define taxis and give two examples.**\nAnswer: Taxis is an innate oriented movement of an organism toward (+) or away from (−) a stimulus. Examples: **phototaxis** — moths flying toward light; **chemotaxis** — sperm swimming toward chemicals released by the egg.\n\n**Q3 (3m) — Explain dominance hierarchy and leadership in animals.**\nAnswer: A **dominance hierarchy** is a social ranking in which dominant individuals gain priority access to food, mates and space while subordinates defer; it is established by fights or displays and then reduces conflict (hens' pecking order, wolf packs). **Leadership** is the guidance of group movement and decisions by an individual with experience or knowledge — e.g. the elephant matriarch leading the herd to water. Dominance is won by force; leadership rests on knowledge — one individual may be dominant without leading, or lead without dominating.\n\n**Q4 (3m) — What is bird migration? State the triggers and navigation cues.**\nAnswer: **Bird migration** is the regular seasonal movement of birds between breeding and wintering grounds. **Triggers:** changing photoperiod, temperature and food availability, acting through hormonal changes. **Navigation cues:** the sun compass, star patterns, the Earth's magnetic field and landmark memory. Example: demoiselle cranes crossing the Himalaya to winter in the Indian subcontinent.\n\n### 7.3 Common examination mistakes\n\n1. Confusing taxis (whole-animal movement) with tropism (plant growth response).\n2. Saying reflexes are controlled by the brain — spinal reflexes bypass the brain.\n3. Treating dominance and leadership as the same — dominance is won in conflict; leadership rests on knowledge.\n4. Calling migration random dispersal — it is regular, seasonal and navigated.\n5. Confusing anadromous (sea → river, salmon) with catadromous (river → sea, eel)."
+    ],
+    "confusion": [
+      "**Taxis vs tropism:** taxis is the whole animal orienting its movement; tropism is a plant's growth response.",
+      "**Anadromous vs catadromous:** anadromous fish spawn in rivers after living at sea (salmon); catadromous fish spawn at sea after living in rivers (eel)."
+    ],
+    "keyPoints": [
+      "Reflex arc: receptor → sensory neuron → spinal cord → motor neuron → effector; rapid, involuntary; brain bypassed.",
+      "Taxes: photo-, chemo-, geo-, thigmo-, rheo-, thermotaxis — oriented movement toward (+) or away (−) from a stimulus.",
+      "Dominance hierarchy: peck order, priority access, reduces fighting. Leadership: guides by experience/knowledge (elephant matriarch).",
+      "Fish migration: anadromous (salmon, sea→river), catadromous (eel, river→sea). Bird migration: photoperiod-triggered; sun/star/magnetic navigation; demoiselle crane over Himalaya."
+    ],
+    "importantConcepts": [
+      "**Dominance ≠ leadership:** one is won by force, the other earned by knowledge — a group can have different individuals in each role."
+    ],
+    "examples": [
+      "***Knee-jerk reflex*** — spinal reflex arc with only two synapse levels."
+    ],
+    "universalFacts": [
+      "The bar-headed goose crosses the Himalaya at altitudes near 8,000 m — the highest bird migration known."
+    ],
+    "importantStatements": [
+      "\"A reflex is faster than thought because it never reaches thought.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ in the bank; practise reflex arc, taxes and migration as NEB-style practice."
+    ],
+    "examShortTricks": [
+      "\"Receptor-sensory-cord-motor-effector — the reflex arc in five words.\""
+    ],
+    "examNotes": [
+      "Most likely items: reflex arc definition and components; two taxes with examples; dominance vs leadership; anadromous vs catadromous."
+    ],
+    "practice": [
+      "Why does the spinal cord, not the brain, run spinal reflexes?"
+    ],
+    "practiceQuestions": [
+      "**Short answer (2m): Distinguish anadromous from catadromous migration.** — Anadromous fish live at sea and migrate up rivers to spawn (salmon, Hilsa); catadromous fish live in rivers and migrate to the sea to spawn (eel)."
+    ]
+  }
 }

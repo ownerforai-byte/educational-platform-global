@@ -7,75 +7,54 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "Pollution is the addition of substances or energy to air, water or soil at a rate the environment cannot make harmless. A pollutant is harmful because of its amount, its toxicity, or both.",
-    "Air pollutants include sulphur dioxide and nitrogen oxides from burning fuel, carbon monoxide from incomplete burning, smoke and dust, and ground-level ozone formed in sunlight from vehicle exhaust. They irritate lungs, damage leaves, and form acid rain when sulphur and nitrogen oxides dissolve in cloud water.",
-    "Water is polluted by untreated sewage, factory effluent, fertiliser washed off fields, and oil. Sewage and fertiliser add nutrients. Algae then bloom, die and are decomposed, and the decomposers use up dissolved oxygen. Fish die in that oxygen-poor water. This is eutrophication.",
-    "Soil is polluted by persistent pesticides, plastics and heavy metals from industry and dumps. DDT and similar fat-soluble poisons increase in concentration along a food chain, so top predators carry the highest dose. That increase is biomagnification.",
-    "Control follows the source. Use cleaner fuel and maintain engines for air. Treat sewage before it enters a river. Match fertiliser to the crop so the surplus does not run off. Prefer pesticides that break down, and do not burn plastic on fields.",
-    "Laws and local habits both matter. A treatment plant that is bypassed, or a pesticide that is sprayed on the day of harvest, undoes the technical control. Monitoring of river oxygen and of air smoke tells whether the control is working.",
-    "# Environmental pollution: Sources, effects and control measures of air, water and soil pollution\n\n## 1. Introduction\nOpening frame for **Environmental pollution** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Biota and Environment fill pass.\n\n## 2. Hierarchy body — every syllabus sub-point\n### Environmental pollution: Sources\n### effects and control measures of air\n### water and soil pollution\n\nFill order per concept: definition → structure → process → significance (§3.2). Step-by-step numbered points, Pioneer style.",
-    "## 3. Classified tables\n\n**Table 1 — Key ideas and worked angles**\n\n| Idea | Statement | Where used | Worked example |\n| --- | --- | --- | --- |\n\n**Table 2 — Key ideas and worked angles**\n\n| Idea | Statement | Where used | Worked example |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB marks trend |\n| --- | --- | --- |\n\nTables carry examples in every classification and characteristics row, ≤ 12 rows, and each is referenced from the body text (§3.3).",
-    "## 4. Diagrams and figures\n- **D1** — Growth curves / cause–effect–control diagrams (authored SVG — English labels, viewBox 900×640)\n- **D2** — Environmental pollution — process or life-cycle flow (authored SVG — English labels)\n- **D3** — Environmental pollution — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Environmental pollution — comparison or application figure (curated external — license recorded at fill)\n\nFigure slots are declared up front (§3.4): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y), every external figure license-recorded at fill.",
-    "## 5. Worked examples and applications\n≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass.\n\n## 6. Key terms and statements\nEvery new term defined once; exam-grade definitions live here and in keyPoints (block VI).",
-    "## 7. Exam Zone\nNEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.",
-    "## 8. Summary and self-check\n5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — When Waste Outruns Assimilation\n\nEnvironmental pollution is the addition of substances or energy to the environment at a rate faster than it can be dispersed, diluted or decomposed into harmless forms. The syllabus covers air, water and soil pollution — their sources, effects and control — and their consequences: greenhouse effect, acid rain and eutrophication.",
+    "## 2. Fundamental Concepts\n\n| Term | Definition |\n|---|---|\n| **Pollutant** | Any substance or agent added to the environment that causes harmful effects |\n| **Primary pollutant** | Emitted directly (CO, SO₂, dust) |\n| **Secondary pollutant** | Formed in air by reactions (ozone, PAN in smog) |\n| **BOD (Biochemical Oxygen Demand)** | Oxygen (mg/L) needed by microbes to decompose organic matter in water over 5 days at 20°C — a measure of organic pollution |\n| **Eutrophication** | Nutrient (N, P) enrichment of water → algal bloom → oxygen depletion → death of aquatic life |",
+    "## 3. Air Pollution\n\n### 3.1 Sources\n\n| Source | Pollutants |\n|---|---|\n| Vehicle exhaust | CO, NOₓ, hydrocarbons, lead |\n| Industry and power plants | SO₂, particulates, CO₂ |\n| Brick kilns (major in Nepal) | CO, SO₂, particulates |\n| Burning of solid waste and crop residue | CO₂, CO, dioxins, smoke |\n| Indoor cooking (biomass, kerosene) | CO, particulates — a major household killer |\n\n### 3.2 Effects\n\n- **Respiratory disease** (asthma, bronchitis); CO binds haemoglobin → tissue hypoxia.\n- **Greenhouse effect:** CO₂, CH₄, N₂O trap infrared radiation → global warming, glacier retreat (Himalaya), sea-level rise, erratic monsoon.\n- **Acid rain:** SO₂ + NOₓ dissolve in rain → H₂SO₄/HNO₃ — acidifies lakes and soils, corrodes buildings.\n- **Photochemical smog:** NOₓ + hydrocarbons + sunlight → ozone and PAN — eye irritation, plant damage.\n- Damage to crops, materials and visibility (haze over Kathmandu valley).\n\n### 3.3 Control\n\n- **Catalytic converters** and vehicle emission testing; **electrostatic precipitators and scrubbers** on chimneys; **filters** for particulates.\n- Cleaner fuels (LPG, electricity), public transport, electric vehicles; brick kilns upgraded to improved technology.\n- Afforestation; ban on open burning.",
+    "## 4. Water Pollution\n\n### 4.1 Sources\n\n| Source | Pollutants |\n|---|---|\n| Sewage | Organic waste, pathogens |\n| Industry | Heavy metals (lead, mercury, cadmium, arsenic), acids, dyes |\n| Agriculture | Nitrates and phosphates from fertilisers; pesticides |\n| Solid waste dumping | Leachate into rivers and groundwater |\n\n### 4.2 Effects\n\n- **High BOD:** sewage and organic waste raise BOD; microbes consume oxygen → dissolved oxygen falls → fish and other aquatic life suffocate; water turns anaerobic and foul-smelling.\n- **Eutrophication:** fertiliser runoff enriches lakes → algal blooms → oxygen depletion on decay → fish kills (e.g. Phewa Lake's creeping eutrophication).\n- **Heavy metals:** mercury biomagnifies up the food chain (Minamata disease); arsenic in Terai groundwater.\n- **Pathogens:** cholera, typhoid, dysentery.\n\n### 4.3 Control\n\n- Sewage treatment: **primary** (screening, sedimentation) → **secondary** (activated sludge/trickling filter — microbial digestion) → **tertiary** (chemical polishing).\n- Effluent treatment before discharge; laws and monitoring; constructed wetlands; community sanitation.",
+    "## 5. Soil Pollution and Erosion (NEB 2024)\n\n**Sources:** excess fertilisers and pesticides, industrial waste, mining spoil, plastic dumping, sewage sludge.\n\n**Soil erosion:** removal of topsoil by water and wind, accelerated by deforestation, overgrazing and unscientific farming. Topsoil is the most fertile layer — its loss degrades productivity and silts rivers and reservoirs.\n\n**Conservation measures practised in Nepal:**\n\n1. **Terracing and contour farming** on slopes — slows runoff.\n2. **Afforestation and community forestry** — root systems hold soil (Nepal's community forests reversed erosion).\n3. **Cover crops, mulching and crop rotation** — protect and rebuild soil.\n4. **Gully plugging, check dams and embankments** on steep slopes and river banks.\n5. Controlled grazing; banning slope cutting without retaining walls.",
+    "## 6. Conceptual Relationships\n\n- **Topic 25/48 → here:** adaptations cannot outrun pollution — sensitive species are the first bioindicators (lichens and SO₂).\n- **Here → Unit 5 (vegetation):** deforestation links air, soil and water degradation.\n- **Here → Unit 10 (conservation):** pollution control is conservation's frontline.\n- **Here → Unit 4 (ecology):** eutrophication is a nutrient-cycle imbalance; biomagnification is a food-chain phenomenon.",
+    "## 7. Exam Orientation and Previous Year Questions (NEB)\n\n### 7.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Biota and Environment | Air pollution | What are the major causes and effects of air pollution? | 3 | Short answer |\n| 2080/2024 | Biota and Environment | Water pollution | What is BOD? Why is high BOD harmful for aquatic life? | 2 | Short answer |\n| 2080/2024 | Biota and Environment | Soil | What is soil erosion? Suggest any three conservation measures practised in Nepal. | 3 | Short answer |\n\n### 7.2 Model answers\n\n**Q1 (3m, 2024) — Major causes and effects of air pollution.**\nAnswer: **Causes:** vehicle exhaust (CO, NOₓ, hydrocarbons), industry and brick kilns (SO₂, particulates), burning of fossil fuels and solid waste, and indoor biomass cooking. **Effects:** respiratory diseases (asthma, bronchitis) and CO poisoning; the **greenhouse effect** from CO₂ and CH₄ driving global warming and glacier retreat; **acid rain** from SO₂ and NOₓ acidifying lakes, soils and corroding buildings; **photochemical smog** (ozone, PAN) irritating eyes and damaging crops.\n\n**Q2 (2m, 2024) — What is BOD? Why is high BOD harmful?**\nAnswer: **BOD (Biochemical Oxygen Demand)** is the amount of dissolved oxygen, in mg/L, consumed by microorganisms while decomposing the organic matter in a water sample over 5 days at 20°C — a measure of organic pollution. **High BOD is harmful** because microbes consume the dissolved oxygen that fish and other aquatic organisms need; oxygen falls, anaerobic decomposition takes over producing foul-smelling gases, and aquatic life dies.\n\n**Q3 (3m, 2024) — What is soil erosion? Suggest three conservation measures practised in Nepal.**\nAnswer: **Soil erosion** is the removal of the fertile topsoil by water and wind, accelerated by deforestation, overgrazing and unscientific farming. **Measures:** (1) **terracing and contour farming** on slopes to slow runoff; (2) **afforestation and community forestry**, whose roots bind the soil; (3) **cover crops, mulching and crop rotation** to protect and rebuild soil — with check dams and controlled grazing as further options.\n\n### 7.3 Common examination mistakes\n\n1. Defining BOD as \"oxygen in water\" — it is oxygen **demanded by microbes to decompose organics**.\n2. Confusing primary pollutants (emitted directly) with secondary pollutants (formed in air).\n3. Listing pollution effects without naming the pollutant responsible.\n4. Saying eutrophication enriches water with oxygen — nutrients enrich, then **oxygen collapses**.\n5. Giving \"plant trees\" alone for soil conservation — name the specific mechanism (roots bind soil, terraces slow runoff)."
   ],
   "confusion": [
-    "Eutrophication is caused by too many nutrients, not by a poison in the ordinary sense. The fish die from lack of oxygen after the algal bloom collapses.",
-    "Biomagnification is not the same as bioaccumulation. Accumulation is the build-up inside one organism. Magnification is the rise in concentration from prey to predator along the chain.",
-    "Carbon dioxide from ordinary breathing is not listed with the classical air pollutants such as sulphur dioxide, nitrogen oxides, carbon monoxide and particulates.",
-    "Biodegradable sewage is still a pollutant when there is more of it than the river can decompose without losing its oxygen."
+    "**Primary vs secondary pollutants:** primary are emitted directly (CO, SO₂); secondary form in air by reactions (ozone, PAN).",
+    "**BOD vs DO:** BOD is the oxygen demanded by decomposers; DO is the oxygen actually available — high BOD means low DO."
   ],
   "keyPoints": [
-    "Air: SO2, NOx, CO, particulates; acid rain and lung damage.",
-    "Water: sewage and fertiliser cause eutrophication and oxygen loss.",
-    "Soil: pesticides, plastics, heavy metals.",
-    "Biomagnification: fat-soluble poisons such as DDT rise along the food chain.",
-    "Control means treating the source: fuel, sewage, fertiliser dose and pesticide choice."
+    "Air: vehicles/industry/kilns → CO, SO₂, NOₓ, particulates → respiratory disease, greenhouse effect, acid rain, smog; control by catalytic converters, scrubbers, cleaner fuels.",
+    "Water: sewage, industry (heavy metals), fertiliser runoff → high BOD, eutrophication, biomagnification, pathogens; control by primary–secondary–tertiary sewage treatment.",
+    "Soil: excess fertiliser/pesticide, erosion of topsoil by water/wind; Nepal measures — terracing, community forestry, cover crops, check dams, controlled grazing."
   ],
   "importantStatements": [
-    "A pollutant is defined by harm at the concentration present, not only by being unnatural.",
-    "Eutrophication kills fish by oxygen depletion after an algal bloom, not by the fertiliser burning them.",
-    "Biomagnification makes a dilute pesticide dangerous to top predators."
+    "\"Pollution is a resource in the wrong place at the wrong concentration.\""
   ],
   "examples": [
-    "Sulphur dioxide from coal and diesel contributes to acid rain that damages leaves and acidifies lakes.",
-    "Fertiliser runoff into a lake produces green algal scum, then a fish kill.",
-    "DDT residues have been highest in fish-eating birds, a textbook case of biomagnification."
+    "***Phewa Lake*** — creeping eutrophication from nutrient runoff."
   ],
   "universalFacts": [
-    "Dissolved oxygen falls when bacteria decompose a large mass of dead algae.",
-    "Fat-soluble pesticides persist in body fat and are passed on when one animal eats another."
+    "Lichens die where SO₂ is high — bioindicators of air quality."
   ],
   "formulas": [
     "Eutrophication sequence: nutrients → algal bloom → death and decay → oxygen used up → fish death.",
     "Biomagnification: concentration rises at each step of the food chain for persistent fat-soluble substances."
   ],
   "practice": [
-    "Trace eutrophication from a sack of fertiliser to a dead fish in five steps.",
-    "Explain why a heron can carry more DDT than the water it fishes in.",
-    "Give one control for air pollution and one for sewage."
+    "Why does eutrophication kill fish even though nutrients 'enrich' the water?"
   ],
   "practiceQuestions": [
-    "How does acid rain form from sulphur dioxide?",
-    "Why is biodegradable waste still able to pollute a small river?",
-    "Distinguish bioaccumulation from biomagnification."
+    "**Short answer (2m): Name two secondary pollutants and how they form.** — Ozone and PAN form in photochemical smog when NOₓ and hydrocarbons react in sunlight."
   ],
   "examNotes": [
-    "Separate the answer into air, water and soil, with source, effect and control for each.",
-    "Write the eutrophication chain in order. Skipping the oxygen step loses the point."
+    "Most-tested: the three 2024 short answers — air pollution, BOD, soil erosion with Nepal measures."
   ],
   "examShortTricks": [
-    "Fertiliser does not suffocate fish directly. Rotting algae do, by using the oxygen.",
-    "DDT climbs the menu. The top eater holds the most."
+    "\"BOD up, oxygen down, fish gone.\""
   ],
   "specialNotes": [
     "Name the gases. 'Smoke' alone is too vague for sulphur dioxide and nitrogen oxides.",
     "Mention plastics under soil pollution. They are now a standard example beside pesticides."
   ],
   "importantNotes": [
-    "Use the sequence for eutrophication every time the question mentions a green lake and dead fish.",
-    "Pair each pollutant with a control, not only with the harm."
+    "Verified 2024 PYQs: air pollution 3m, BOD 2m, soil erosion 3m — all in this topic."
   ],
   "mcs": [
     {
@@ -120,11 +99,7 @@
     }
   ],
   "importantConcepts": [
-    "Air pollutants and acid rain",
-    "Eutrophication",
-    "Biomagnification",
-    "Soil pesticides and plastics",
-    "Source control"
+    "**BOD is the pollution meter:** the 2024 2m question — high BOD starves water of dissolved oxygen and aquatic life suffocates."
   ],
   "importantTasks": [
     "Write the eutrophication chain in order.",
@@ -142,47 +117,142 @@
       "answer": "The fish die from oxygen loss after the nutrient-driven algal bloom collapses and decays. This is eutrophication."
     }
   ],
-  "summary": "Air, water and soil are polluted when harmful substances arrive faster than they can be made safe. Sulphur and nitrogen oxides acidify rain. Sewage and fertiliser drive eutrophication and oxygen loss. Persistent pesticides such as DDT biomagnify up food chains. Control works at the source: cleaner burning, sewage treatment, careful fertiliser use and pesticides that do not persist.",
+  "summary": "Pollution is waste added faster than the environment can assimilate it. Air pollution from vehicles, industry, brick kilns and indoor biomass burning drives respiratory disease, the greenhouse effect, acid rain and photochemical smog, controlled by catalytic converters, scrubbers, cleaner fuels and afforestation. Water pollution from sewage, industrial heavy metals and fertiliser runoff raises BOD — microbes strip the dissolved oxygen, fish suffocate — and drives eutrophication and biomagnification, controlled by staged sewage treatment and effluent laws. Soil pollution and erosion strip the fertile topsoil; Nepal answers with terracing and contour farming, community forestry, cover crops, check dams and controlled grazing. Every pollution problem is a nutrient or energy cycle pushed out of balance.",
   "mcqs": [
     {
-      "question": "Fish die in a eutrophic lake mainly because",
+      "question": "BOD measures:",
       "options": [
-        "The fertiliser is a nerve poison",
-        "Decay of the algal bloom uses up dissolved oxygen",
-        "The water becomes pure distilled water",
-        "Acid rain removes all ions"
+        "Oxygen dissolved in water",
+        "Oxygen consumed by microbes decomposing organic matter",
+        "Nitrogen in water",
+        "Water temperature"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "BOD is the oxygen demanded by microbes to break down organic matter over 5 days at 20°C."
     },
     {
-      "question": "Biomagnification is best shown by",
+      "question": "High BOD in a lake is harmful because it:",
       "options": [
-        "A higher DDT level in a heron than in the fish it eats",
-        "A factory chimney",
-        "A single tree absorbing CO2",
-        "A reflex arc"
+        "Raises water level",
+        "Depletes dissolved oxygen, killing aquatic life",
+        "Adds nutrients directly",
+        "Lowers temperature"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Microbial decomposition consumes the oxygen fish need; the water turns anaerobic."
     },
     {
-      "question": "Acid rain is linked especially to",
+      "question": "Ozone and PAN in photochemical smog are:",
       "options": [
-        "Oxygen and nitrogen gas as such",
-        "Sulphur dioxide and nitrogen oxides",
-        "Seed banks",
-        "Table salt"
+        "Primary pollutants",
+        "Secondary pollutants formed in sunlight",
+        "Natural gases",
+        "Heavy metals"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "They form in air when NOₓ and hydrocarbons react in sunlight."
     },
     {
-      "question": "The most direct control of sewage pollution is",
+      "question": "Acid rain results mainly from:",
       "options": [
-        "Spraying more DDT",
-        "Treating sewage before release",
-        "Draining every wetland",
-        "Banning all trees"
+        "CO₂ and CH₄",
+        "SO₂ and NOₓ dissolving in rain",
+        "Dust and pollen",
+        "Ozone at ground level only"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "SO₂ and NOₓ form H₂SO₄ and HNO₃ in rain — acidifying lakes, soils and corroding buildings."
+    },
+    {
+      "question": "Mercury poisoning biomagnifies because:",
+      "options": [
+        "Fish excrete it",
+        "Concentration increases at each trophic level",
+        "It dilutes up the chain",
+        "Plants fix it"
+      ],
+      "answer": "B",
+      "explanation": "Predators accumulate the mercury of all their prey — concentration rises up the food chain."
+    },
+    {
+      "question": "The most fertile soil layer lost to erosion is the:",
+      "options": [
+        "Bedrock",
+        "Subsoil",
+        "Topsoil",
+        "Parent rock"
+      ],
+      "answer": "C",
+      "explanation": "Topsoil holds humus and nutrients — its loss degrades productivity."
+    },
+    {
+      "question": "Terracing controls erosion by:",
+      "options": [
+        "Adding fertiliser",
+        "Slowing runoff on slopes",
+        "Deepening topsoil",
+        "Killing pests"
+      ],
+      "answer": "B",
+      "explanation": "Terraces break long slopes into steps, slowing water flow and soil loss."
+    },
+    {
+      "question": "Eutrophication begins with:",
+      "options": [
+        "Oxygen enrichment",
+        "Nutrient (N, P) enrichment causing algal blooms",
+        "Oil spills",
+        "Thermal shock"
+      ],
+      "answer": "B",
+      "explanation": "Nutrient enrichment fuels algal blooms; their decay then depletes oxygen."
     }
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — When Waste Outruns Assimilation\n\nEnvironmental pollution is the addition of substances or energy to the environment at a rate faster than it can be dispersed, diluted or decomposed into harmless forms. The syllabus covers air, water and soil pollution — their sources, effects and control — and their consequences: greenhouse effect, acid rain and eutrophication.",
+      "## 2. Fundamental Concepts\n\n| Term | Definition |\n|---|---|\n| **Pollutant** | Any substance or agent added to the environment that causes harmful effects |\n| **Primary pollutant** | Emitted directly (CO, SO₂, dust) |\n| **Secondary pollutant** | Formed in air by reactions (ozone, PAN in smog) |\n| **BOD (Biochemical Oxygen Demand)** | Oxygen (mg/L) needed by microbes to decompose organic matter in water over 5 days at 20°C — a measure of organic pollution |\n| **Eutrophication** | Nutrient (N, P) enrichment of water → algal bloom → oxygen depletion → death of aquatic life |",
+      "## 3. Air Pollution\n\n### 3.1 Sources\n\n| Source | Pollutants |\n|---|---|\n| Vehicle exhaust | CO, NOₓ, hydrocarbons, lead |\n| Industry and power plants | SO₂, particulates, CO₂ |\n| Brick kilns (major in Nepal) | CO, SO₂, particulates |\n| Burning of solid waste and crop residue | CO₂, CO, dioxins, smoke |\n| Indoor cooking (biomass, kerosene) | CO, particulates — a major household killer |\n\n### 3.2 Effects\n\n- **Respiratory disease** (asthma, bronchitis); CO binds haemoglobin → tissue hypoxia.\n- **Greenhouse effect:** CO₂, CH₄, N₂O trap infrared radiation → global warming, glacier retreat (Himalaya), sea-level rise, erratic monsoon.\n- **Acid rain:** SO₂ + NOₓ dissolve in rain → H₂SO₄/HNO₃ — acidifies lakes and soils, corrodes buildings.\n- **Photochemical smog:** NOₓ + hydrocarbons + sunlight → ozone and PAN — eye irritation, plant damage.\n- Damage to crops, materials and visibility (haze over Kathmandu valley).\n\n### 3.3 Control\n\n- **Catalytic converters** and vehicle emission testing; **electrostatic precipitators and scrubbers** on chimneys; **filters** for particulates.\n- Cleaner fuels (LPG, electricity), public transport, electric vehicles; brick kilns upgraded to improved technology.\n- Afforestation; ban on open burning.",
+      "## 4. Water Pollution\n\n### 4.1 Sources\n\n| Source | Pollutants |\n|---|---|\n| Sewage | Organic waste, pathogens |\n| Industry | Heavy metals (lead, mercury, cadmium, arsenic), acids, dyes |\n| Agriculture | Nitrates and phosphates from fertilisers; pesticides |\n| Solid waste dumping | Leachate into rivers and groundwater |\n\n### 4.2 Effects\n\n- **High BOD:** sewage and organic waste raise BOD; microbes consume oxygen → dissolved oxygen falls → fish and other aquatic life suffocate; water turns anaerobic and foul-smelling.\n- **Eutrophication:** fertiliser runoff enriches lakes → algal blooms → oxygen depletion on decay → fish kills (e.g. Phewa Lake's creeping eutrophication).\n- **Heavy metals:** mercury biomagnifies up the food chain (Minamata disease); arsenic in Terai groundwater.\n- **Pathogens:** cholera, typhoid, dysentery.\n\n### 4.3 Control\n\n- Sewage treatment: **primary** (screening, sedimentation) → **secondary** (activated sludge/trickling filter — microbial digestion) → **tertiary** (chemical polishing).\n- Effluent treatment before discharge; laws and monitoring; constructed wetlands; community sanitation.",
+      "## 5. Soil Pollution and Erosion (NEB 2024)\n\n**Sources:** excess fertilisers and pesticides, industrial waste, mining spoil, plastic dumping, sewage sludge.\n\n**Soil erosion:** removal of topsoil by water and wind, accelerated by deforestation, overgrazing and unscientific farming. Topsoil is the most fertile layer — its loss degrades productivity and silts rivers and reservoirs.\n\n**Conservation measures practised in Nepal:**\n\n1. **Terracing and contour farming** on slopes — slows runoff.\n2. **Afforestation and community forestry** — root systems hold soil (Nepal's community forests reversed erosion).\n3. **Cover crops, mulching and crop rotation** — protect and rebuild soil.\n4. **Gully plugging, check dams and embankments** on steep slopes and river banks.\n5. Controlled grazing; banning slope cutting without retaining walls.",
+      "## 6. Conceptual Relationships\n\n- **Topic 25/48 → here:** adaptations cannot outrun pollution — sensitive species are the first bioindicators (lichens and SO₂).\n- **Here → Unit 5 (vegetation):** deforestation links air, soil and water degradation.\n- **Here → Unit 10 (conservation):** pollution control is conservation's frontline.\n- **Here → Unit 4 (ecology):** eutrophication is a nutrient-cycle imbalance; biomagnification is a food-chain phenomenon.",
+      "## 7. Exam Orientation and Previous Year Questions (NEB)\n\n### 7.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Biota and Environment | Air pollution | What are the major causes and effects of air pollution? | 3 | Short answer |\n| 2080/2024 | Biota and Environment | Water pollution | What is BOD? Why is high BOD harmful for aquatic life? | 2 | Short answer |\n| 2080/2024 | Biota and Environment | Soil | What is soil erosion? Suggest any three conservation measures practised in Nepal. | 3 | Short answer |\n\n### 7.2 Model answers\n\n**Q1 (3m, 2024) — Major causes and effects of air pollution.**\nAnswer: **Causes:** vehicle exhaust (CO, NOₓ, hydrocarbons), industry and brick kilns (SO₂, particulates), burning of fossil fuels and solid waste, and indoor biomass cooking. **Effects:** respiratory diseases (asthma, bronchitis) and CO poisoning; the **greenhouse effect** from CO₂ and CH₄ driving global warming and glacier retreat; **acid rain** from SO₂ and NOₓ acidifying lakes, soils and corroding buildings; **photochemical smog** (ozone, PAN) irritating eyes and damaging crops.\n\n**Q2 (2m, 2024) — What is BOD? Why is high BOD harmful?**\nAnswer: **BOD (Biochemical Oxygen Demand)** is the amount of dissolved oxygen, in mg/L, consumed by microorganisms while decomposing the organic matter in a water sample over 5 days at 20°C — a measure of organic pollution. **High BOD is harmful** because microbes consume the dissolved oxygen that fish and other aquatic organisms need; oxygen falls, anaerobic decomposition takes over producing foul-smelling gases, and aquatic life dies.\n\n**Q3 (3m, 2024) — What is soil erosion? Suggest three conservation measures practised in Nepal.**\nAnswer: **Soil erosion** is the removal of the fertile topsoil by water and wind, accelerated by deforestation, overgrazing and unscientific farming. **Measures:** (1) **terracing and contour farming** on slopes to slow runoff; (2) **afforestation and community forestry**, whose roots bind the soil; (3) **cover crops, mulching and crop rotation** to protect and rebuild soil — with check dams and controlled grazing as further options.\n\n### 7.3 Common examination mistakes\n\n1. Defining BOD as \"oxygen in water\" — it is oxygen **demanded by microbes to decompose organics**.\n2. Confusing primary pollutants (emitted directly) with secondary pollutants (formed in air).\n3. Listing pollution effects without naming the pollutant responsible.\n4. Saying eutrophication enriches water with oxygen — nutrients enrich, then **oxygen collapses**.\n5. Giving \"plant trees\" alone for soil conservation — name the specific mechanism (roots bind soil, terraces slow runoff)."
+    ],
+    "confusion": [
+      "**Primary vs secondary pollutants:** primary are emitted directly (CO, SO₂); secondary form in air by reactions (ozone, PAN).",
+      "**BOD vs DO:** BOD is the oxygen demanded by decomposers; DO is the oxygen actually available — high BOD means low DO."
+    ],
+    "keyPoints": [
+      "Air: vehicles/industry/kilns → CO, SO₂, NOₓ, particulates → respiratory disease, greenhouse effect, acid rain, smog; control by catalytic converters, scrubbers, cleaner fuels.",
+      "Water: sewage, industry (heavy metals), fertiliser runoff → high BOD, eutrophication, biomagnification, pathogens; control by primary–secondary–tertiary sewage treatment.",
+      "Soil: excess fertiliser/pesticide, erosion of topsoil by water/wind; Nepal measures — terracing, community forestry, cover crops, check dams, controlled grazing."
+    ],
+    "importantConcepts": [
+      "**BOD is the pollution meter:** the 2024 2m question — high BOD starves water of dissolved oxygen and aquatic life suffocates."
+    ],
+    "examples": [
+      "***Phewa Lake*** — creeping eutrophication from nutrient runoff."
+    ],
+    "universalFacts": [
+      "Lichens die where SO₂ is high — bioindicators of air quality."
+    ],
+    "importantStatements": [
+      "\"Pollution is a resource in the wrong place at the wrong concentration.\""
+    ],
+    "importantNotes": [
+      "Verified 2024 PYQs: air pollution 3m, BOD 2m, soil erosion 3m — all in this topic."
+    ],
+    "examShortTricks": [
+      "\"BOD up, oxygen down, fish gone.\""
+    ],
+    "examNotes": [
+      "Most-tested: the three 2024 short answers — air pollution, BOD, soil erosion with Nepal measures."
+    ],
+    "practice": [
+      "Why does eutrophication kill fish even though nutrients 'enrich' the water?"
+    ],
+    "practiceQuestions": [
+      "**Short answer (2m): Name two secondary pollutants and how they form.** — Ozone and PAN form in photochemical smog when NOₓ and hydrocarbons react in sunlight."
+    ]
+  }
 }
