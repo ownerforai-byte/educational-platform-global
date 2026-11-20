@@ -5,44 +5,21 @@
   "topicTitle": "Relative velocity",
   "relevance": 100,
   "notes": [
-    "**Definition of relative velocity:** The velocity of an object B as measured from the reference frame of another moving object A. It is the velocity of B relative to A.",
-    "**Same direction (one-dimensional):** If car A moves at velocity v_A and car B at v_B in the same direction, the velocity of B relative to A is v_{B/A} = v_B - v_A. If v_B > v_A, B moves ahead relative to A; if v_B < v_A, B falls behind.",
-    "**Opposite directions (one-dimensional):** If A and B move toward each other with speeds v_A and v_B, the relative speed (magnitude of relative velocity) is v_{rel} = v_A + v_B. The direction of v_{B/A} is toward A if B is moving toward A.",
-    "**Vector form (two/three dimensions):** \\vec{v}_{B/A} = \\vec{v}_B - \\vec{v}_A. This is the velocity of B in the ground frame minus the velocity of A in the ground frame. In components: (v_{B/A})_x = v_{Bx} - v_{Ax}, etc.",
-    "**Relative velocity in 2D — Rain example:** If rain falls vertically downward at speed v_r and a person runs horizontally at speed v_p, the rain appears to come at the person at an angle \theta where tan\theta = v_p / v_r. The apparent speed is \\sqrt{v_r^2 + v_p^2}.",
-    "**River crossing (boat relative to water vs. ground):** Let \\vec{v}_{bw} be the boat's velocity relative to the water (its heading and speed), and \\vec{v}_{wg} be the water's velocity relative to ground (current). Then the boat's ground velocity is \\vec{v}_{bg} = \\vec{v}_{bw} + \\vec{v}_{wg}. To reach a point directly across, the boat must angle upstream.",
-    "**Relative velocity of approach/separation:** For two objects approaching, the rate at which their separation decreases is v_{rel} = v_A + v_B (if opposite directions) or |v_B - v_A| (if same direction). For collision problems, relative velocity is crucial.",
-    "**Frame of reference transformation:** To transform from frame A to frame B, subtract the velocity of frame A: \\vec{v}' = \\vec{v} - \\vec{v}_A. The laws of physics (Newton's laws) are the same in all inertial frames (Galilean relativity).",
-    "**Galilean velocity addition:** In classical mechanics, velocities add vectorially: \\vec{v}_{B/C} = \\vec{v}_{B/A} + \\vec{v}_{A/C}. This chain rule allows finding velocity of B relative to C via an intermediate frame A.",
-    "**Relative motion on an incline:** If a block slides down an incline at speed v relative to the incline, and the incline itself moves (e.g., on a truck), the block's ground velocity is the vector sum of its velocity relative to the incline and the incline's velocity relative to ground.",
-    "**Closing speed vs. relative velocity:** Closing speed is the rate at which the distance between two objects decreases. For objects moving directly toward each other, closing speed = |v_A| + |v_B|. This is the magnitude of the relative velocity only if they are on a collision course.",
-    "# Relative velocity\n\n## 1. Introduction\nPhysical picture of **Relative velocity** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Kinematics fill pass.\n\n## 2. Concepts and laws\n### Relative velocity\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Relative velocity — motion graphs with slope and area marked (authored SVG, plotted from note data)\n- **D2** — Relative velocity — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Relative velocity — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Relative velocity — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Motion Depends on Who Is Watching\n\nA passenger walking forward at 1 m/s in a train moving at 20 m/s moves at 21 m/s relative to the ground but 1 m/s relative to the train. Velocity has meaning only **relative to a frame** — this topic defines relative velocity and works the standard cases: same direction, opposite direction, perpendicular crossing (rain-umbrella, boat-river).",
+    "## 2. Fundamental Concepts (NEB 2017)\n\n**Relative velocity:** the velocity of body A as observed from body B:\n$$\\vec v_{AB} = \\vec v_A - \\vec v_B$$\n(velocity of A minus velocity of B, vector subtraction).\n\n| Case | Relative velocity |\n|---|---|\n| Same direction | $v_{AB} = v_A - v_B$ (difference of magnitudes) |\n| Opposite directions | $v_{AB} = v_A + v_B$ (sum of magnitudes) |\n| At angle θ | magnitude $\\sqrt{v_A^2 + v_B^2 - 2v_Av_B\\cos\\theta}$ (vector subtraction) |\n\n**Worked numerical (NEB 2017, 2m):** Two cars move in the same direction at 20 m/s and 25 m/s. Find their relative velocity.\n$v_{rel} = 25 - 20 = $ **5 m/s** (the faster car pulls ahead at 5 m/s; from the slower car, the faster one approaches at 5 m/s).\n\n### 2.1 Classic applications\n\n- **Overtaking:** time to catch = initial separation / relative speed.\n- **Rain and umbrella:** rain falling vertically at $v_r$; person walking at $v_p$ sees rain at $\\vec v_{rain,person} = \\vec v_r - \\vec v_p$ — slanting backward at angle $\\tan\\theta = v_p/v_r$ from vertical; tilt the umbrella forward by θ.\n- **Boat–river:** to cross straight across, the boat must aim upstream at angle θ with $\\sin\\theta = v_{river}/v_{boat}$; crossing time = width/$v_{boat}\\cos\\theta$... (for straight crossing, effective upstream drift cancelled); if aimed straight across, drift = $v_{river} \\times$ crossing time.\n- **Head-on collision closing speed:** sum of speeds.",
+    "## 3. Worked Numericals\n\n**Q1:** A boat crosses a 200 m river, current 3 m/s, boat speed 4 m/s in still water, aimed straight across. Find crossing time and drift.\n*Crossing time:* t = width/$v_{boat}$ = 200/4 = 50 s.\n*Drift:* = $v_{river} \\times t$ = 3 × 50 = 150 m downstream.\n*Resultant velocity:* $\\sqrt{4^2 + 3^2} = 5$ m/s at $\\tan^{-1}(3/4) = 36.9°$ from straight-across.\n\n**Q2:** Rain falls vertically at 8 m/s; a cyclist moves at 6 m/s. At what angle should the umbrella be held?\n$\\tan\\theta = v_p/v_r = 6/8 = 0.75 → \\theta = 36.9°$ from vertical, **tilted forward**.",
+    "## 4. Conceptual Relationships\n\n- **To Topic 6:** relative velocity is velocity defined against a moving frame — same derivative idea, different reference.\n- **To Vectors:** relative velocity is vector subtraction — the magnitude formula mirrors the cosine rule.\n- **To Dynamics:** all of Newton's laws hold in inertial frames; relative velocity tells you when your frame differs from another's.\n- **To real life:** overtaking safety, aircraft headwinds/tailwinds, and river ferries are relative-velocity problems.",
+    "## 5. Exam Orientation and Previous Year Questions (NEB)\n\n### 5.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2073/2017 | Kinematics | Relative velocity | Define relative velocity. Two cars move in the same direction with velocities 20 m s⁻¹ and 25 m s⁻¹. Find their relative velocity. | 2 | Definition + numerical |\n\n### 5.2 Model answer\n\n**Q (2m, 2017):** **Relative velocity** of A with respect to B is the velocity of A as seen from B — the vector difference $\\vec v_{AB} = \\vec v_A - \\vec v_B$. For the two cars moving in the same direction: $v_{rel} = 25 - 20 = 5$ m/s — the faster car moves at 5 m/s relative to the slower one.\n\n### 5.3 Common examination mistakes\n\n1. Subtracting in the wrong order — $\\vec v_{AB} = \\vec v_A - \\vec v_B$, not the reverse.\n2. Adding speeds for same-direction motion (they subtract) or subtracting for opposite motion (they add).\n3. Ignoring direction in angled relative-velocity problems — use vector subtraction, not magnitude arithmetic.\n4. In boat–river problems, forgetting that aiming straight across always causes downstream drift.\n5. Giving the rain-umbrella angle without saying which way to tilt the umbrella."
   ],
   "confusion": [
-    "Relative velocity is NOT the same as the difference in speeds. For two cars moving at 60 km/h and 40 km/h in the SAME direction, the relative speed is 20 km/h, NOT 100 km/h. For opposite directions, the relative speed is the SUM (100 km/h).",
-    "When subtracting vectors, the ORDER MATTERS: \\vec{v}_{B/A} = \\vec{v}_B - \\vec{v}_A. This is the velocity of B AS SEEN BY A. \\vec{v}_{A/B} = \\vec{v}_A - \\vec{v}_B = -\\vec{v}_{B/A}. They are equal in magnitude but opposite in direction.",
-    "A common mistake in river problems: students add the boat's speed to the current speed as scalars. You must add them as VECTORS: the boat's velocity relative to water PLUS water's velocity relative to ground. The angle matters!",
-    "In the rain problem, the rain does NOT change its actual velocity — it still falls vertically. Only the APPARENT velocity (relative to the moving person) is angled. The person tilts their umbrella forward to block the apparent rain.",
-    "Galilean relativity breaks down at speeds close to the speed of light (c). Einstein's special relativity replaces it with the Lorentz velocity addition formula: v = (v1 + v2)/(1 + v1v2/c^2). For everyday speeds (<< c), this reduces to Galilean addition."
+    "**v_AB vs v_BA:** v_AB = v_A − v_B (A seen from B); v_BA is its negative — same magnitude, opposite direction.",
+    "**Relative speed in same vs opposite direction:** same direction subtracts; opposite directions add."
   ],
   "practice": [
-    "Two trains A and B are moving on parallel tracks. Train A moves east at 60 km/h. Train B moves east at 80 km/h. Find the velocity of B relative to A, and the velocity of A relative to B. Solution: v_{B/A} = 80 - 60 = 20 km/h east (B moves ahead of A at 20 km/h). v_{A/B} = 60 - 80 = -20 km/h (20 km/h west, meaning A falls behind B).",
-    "Rain is falling vertically at 30 m/s. A man runs horizontally at 10 m/s. At what angle from vertical does the rain appear to fall? What is the apparent speed? Solution: tan\theta = v_man/v_rain = 10/30 = 1/3. \theta = \tan^{-1}(1/3) = 18.4° from vertical. Apparent speed = \\sqrt{30^2 + 10^2} = \\sqrt{1000} = 31.6 m/s.",
-    "A boat's speed in still water is 5 m/s. The river flows at 3 m/s east. The boat wants to reach a point directly across the river (north). (a) At what angle must the boat head? (b) What is its ground speed? (c) Time to cross a 100 m wide river? Solution: (a) Boat must cancel eastward current: 5 sin\theta = 3 → \theta = 36.9° west of north. (b) v_ground = 5 cos\theta = 5 × 0.8 = 4 m/s north. (c) t = width/v_ground = 100/4 = 25 s.",
-    "Two particles move on the x-axis. Particle A: x_A(t) = 2t + 1. Particle B: x_B(t) = -3t + 10. Find their relative velocity at t = 2 s. Solution: v_A = dx_A/dt = 2 m/s. v_B = dx_B/dt = -3 m/s. v_{B/A} = v_B - v_A = -3 - 2 = -5 m/s. The distance between them decreases at 5 m/s.",
-    "An airplane flies at 400 km/h relative to air. The wind blows at 100 km/h from the west (toward east). What is the plane's ground speed and direction if it heads (a) north? (b) northeast? Solution: (a) v_ground = \\sqrt{400^2 + 100^2} = 412 km/h. Direction: tan\theta = 100/400 = 1/4 → \theta = 14° east of north. (b) v_plane = 400/\\sqrt{2} north + 400/\\sqrt{2} east. v_wind = 100 east. v_ground = (400/\\sqrt{2}) north + (400/\\sqrt{2} + 100) east = 283 north + 383 east. Speed = \\sqrt{283^2 + 383^2} = 476 km/h."
+    "Why does rain appear slanted to a moving observer?"
   ],
   "universalFacts": [
-    "Galilean relativity (velocity addition v' = v - u) was the standard until Einstein's special relativity (1905) showed it is only an approximation valid for v ≪ c. At everyday speeds, the error is completely negligible.",
-    "Relative velocity is a fundamental concept in all of physics — from classical mechanics to electromagnetism (magnetic fields are electric fields viewed from a moving frame) to special relativity.",
-    "The principle of Galilean relativity: the laws of motion are identical in all inertial frames. If you toss a ball up in a moving train (constant velocity), it lands back in your hand — the ball has the train's forward velocity added to its motion.",
-    "In collision problems, the relative velocity of approach is often more useful than individual velocities. For elastic collisions, the relative velocity of separation equals the relative velocity of approach (in magnitude).",
-    "The concept of relative velocity explains why we don't feel Earth's orbital speed (30 km/s) or rotation speed (0.46 km/s at equator) — we move with the Earth, so our velocity relative to Earth is zero. Only in non-inertial frames (acceleration) do we feel fictitious forces."
+    "Aeroplane timetables account for jet streams — the same aircraft flies Kathmandu–Doha faster westward-to-eastward because the wind is a relative-velocity term."
   ],
   "animation3D": "kinematics",
   "motionGraphics": "kinematics",
@@ -53,35 +30,36 @@
     "**Apparent vs Real Motion:** In the rain/river problems, the actual velocity of the rain/boat is unchanged; only the *observed* (relative) velocity changes when the observer moves. The rain still falls vertically; the umbrella is tilted to match the apparent velocity."
   ],
   "keyPoints": [
-    "Connection of Relative Velocity to other topics"
+    "v_AB = v_A − v_B (vector subtraction).",
+    "Same direction: difference of speeds; opposite: sum; angle θ: √(v_A² + v_B² − 2v_Av_B cos θ).",
+    "Rain-umbrella: tan θ = v_person/v_rain, tilt forward. Boat-river: aim straight → drift = v_river × t."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Relative Velocity",
-    "Statement 2: Theorem related to Relative Velocity",
-    "Statement 3: Condition for Relative Velocity to be valid",
-    "Statement 4: Principle governing Relative Velocity",
-    "Statement 5: Corollary or consequence of Relative Velocity"
+    "\"There is no absolute rest — only frames.\""
   ],
   "importantNotes": [
-    "Relative Velocity is based on fundamental principles."
+    "Verified PYQ: define relative velocity + two-car numerical (2017, 2m)."
   ],
   "examShortTricks": [
-    "Recall the formula for Relative Velocity."
+    "\"Same direction minus, opposite plus, angled — cosine rule.\""
   ],
   "importantConcepts": [
-    "Definition and significance of Relative Velocity."
+    "**All velocity is relative:** stating a velocity without naming the frame is incomplete — the ground frame is just a convention."
   ],
   "examples": [
-    "Application of Relative Velocity"
+    "***20 m/s and 25 m/s same direction*** — relative velocity 5 m/s (NEB 2017)."
   ],
   "practiceQuestions": [
-    "Q1. Define Relative Velocity.",
-    "Q3. Problem on Relative Velocity."
+    "**Numerical (3m): A river 200 m wide flows at 3 m/s; a boat aimed straight across moves at 4 m/s. Find crossing time and downstream drift.** — t = 200/4 = 50 s; drift = 3 × 50 = 150 m; resultant speed 5 m/s at 36.9° from straight-across."
   ],
-  "formulas": [],
-  "summary": "Relative Velocity covers essential principles and applications.",
+  "formulas": [
+    "- v_AB = v_A − v_B\n- Same direction: v_rel = |v_A − v_B|; opposite: v_rel = v_A + v_B\n- Rain-umbrella: tan θ = v_p/v_r"
+  ],
+  "summary": "Velocity is frame-dependent: the relative velocity of A with respect to B is the vector difference $\\vec v_{AB} = \\vec v_A - \\vec v_B$. Same-direction motion subtracts speeds (20 and 25 m/s give 5 m/s — NEB 2017); opposite-direction motion adds them; angled motion needs the cosine rule. Classic applications follow: the rain-umbrella problem tilts the umbrella forward by $\\tan\\theta = v_p/v_r$; the boat-river problem shows that aiming straight across always drifts downstream by $v_{river} \\times$ crossing time, while cancelling the drift requires aiming upstream. Every stated velocity is an answer to \"relative to what?\" — the ground frame is only a convention.",
   "specialNotes": [],
-  "examNotes": [],
+  "examNotes": [
+    "Most-tested: the definition + same-direction numerical (2017). Boat-river and rain-umbrella are the classic extension problems."
+  ],
   "importantTasks": [],
   "source": "skeleton-v2",
   "mindmap": {
@@ -124,5 +102,233 @@
         ]
       }
     ]
-  }
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Motion Depends on Who Is Watching\n\nA passenger walking forward at 1 m/s in a train moving at 20 m/s moves at 21 m/s relative to the ground but 1 m/s relative to the train. Velocity has meaning only **relative to a frame** — this topic defines relative velocity and works the standard cases: same direction, opposite direction, perpendicular crossing (rain-umbrella, boat-river).",
+      "## 2. Fundamental Concepts (NEB 2017)\n\n**Relative velocity:** the velocity of body A as observed from body B:\n$$\\vec v_{AB} = \\vec v_A - \\vec v_B$$\n(velocity of A minus velocity of B, vector subtraction).\n\n| Case | Relative velocity |\n|---|---|\n| Same direction | $v_{AB} = v_A - v_B$ (difference of magnitudes) |\n| Opposite directions | $v_{AB} = v_A + v_B$ (sum of magnitudes) |\n| At angle θ | magnitude $\\sqrt{v_A^2 + v_B^2 - 2v_Av_B\\cos\\theta}$ (vector subtraction) |\n\n**Worked numerical (NEB 2017, 2m):** Two cars move in the same direction at 20 m/s and 25 m/s. Find their relative velocity.\n$v_{rel} = 25 - 20 = $ **5 m/s** (the faster car pulls ahead at 5 m/s; from the slower car, the faster one approaches at 5 m/s).\n\n### 2.1 Classic applications\n\n- **Overtaking:** time to catch = initial separation / relative speed.\n- **Rain and umbrella:** rain falling vertically at $v_r$; person walking at $v_p$ sees rain at $\\vec v_{rain,person} = \\vec v_r - \\vec v_p$ — slanting backward at angle $\\tan\\theta = v_p/v_r$ from vertical; tilt the umbrella forward by θ.\n- **Boat–river:** to cross straight across, the boat must aim upstream at angle θ with $\\sin\\theta = v_{river}/v_{boat}$; crossing time = width/$v_{boat}\\cos\\theta$... (for straight crossing, effective upstream drift cancelled); if aimed straight across, drift = $v_{river} \\times$ crossing time.\n- **Head-on collision closing speed:** sum of speeds.",
+      "## 3. Worked Numericals\n\n**Q1:** A boat crosses a 200 m river, current 3 m/s, boat speed 4 m/s in still water, aimed straight across. Find crossing time and drift.\n*Crossing time:* t = width/$v_{boat}$ = 200/4 = 50 s.\n*Drift:* = $v_{river} \\times t$ = 3 × 50 = 150 m downstream.\n*Resultant velocity:* $\\sqrt{4^2 + 3^2} = 5$ m/s at $\\tan^{-1}(3/4) = 36.9°$ from straight-across.\n\n**Q2:** Rain falls vertically at 8 m/s; a cyclist moves at 6 m/s. At what angle should the umbrella be held?\n$\\tan\\theta = v_p/v_r = 6/8 = 0.75 → \\theta = 36.9°$ from vertical, **tilted forward**.",
+      "## 4. Conceptual Relationships\n\n- **To Topic 6:** relative velocity is velocity defined against a moving frame — same derivative idea, different reference.\n- **To Vectors:** relative velocity is vector subtraction — the magnitude formula mirrors the cosine rule.\n- **To Dynamics:** all of Newton's laws hold in inertial frames; relative velocity tells you when your frame differs from another's.\n- **To real life:** overtaking safety, aircraft headwinds/tailwinds, and river ferries are relative-velocity problems.",
+      "## 5. Exam Orientation and Previous Year Questions (NEB)\n\n### 5.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2073/2017 | Kinematics | Relative velocity | Define relative velocity. Two cars move in the same direction with velocities 20 m s⁻¹ and 25 m s⁻¹. Find their relative velocity. | 2 | Definition + numerical |\n\n### 5.2 Model answer\n\n**Q (2m, 2017):** **Relative velocity** of A with respect to B is the velocity of A as seen from B — the vector difference $\\vec v_{AB} = \\vec v_A - \\vec v_B$. For the two cars moving in the same direction: $v_{rel} = 25 - 20 = 5$ m/s — the faster car moves at 5 m/s relative to the slower one.\n\n### 5.3 Common examination mistakes\n\n1. Subtracting in the wrong order — $\\vec v_{AB} = \\vec v_A - \\vec v_B$, not the reverse.\n2. Adding speeds for same-direction motion (they subtract) or subtracting for opposite motion (they add).\n3. Ignoring direction in angled relative-velocity problems — use vector subtraction, not magnitude arithmetic.\n4. In boat–river problems, forgetting that aiming straight across always causes downstream drift.\n5. Giving the rain-umbrella angle without saying which way to tilt the umbrella."
+    ],
+    "confusion": [
+      "**v_AB vs v_BA:** v_AB = v_A − v_B (A seen from B); v_BA is its negative — same magnitude, opposite direction.",
+      "**Relative speed in same vs opposite direction:** same direction subtracts; opposite directions add."
+    ],
+    "keyPoints": [
+      "v_AB = v_A − v_B (vector subtraction).",
+      "Same direction: difference of speeds; opposite: sum; angle θ: √(v_A² + v_B² − 2v_Av_B cos θ).",
+      "Rain-umbrella: tan θ = v_person/v_rain, tilt forward. Boat-river: aim straight → drift = v_river × t."
+    ],
+    "importantConcepts": [
+      "**All velocity is relative:** stating a velocity without naming the frame is incomplete — the ground frame is just a convention."
+    ],
+    "examples": [
+      "***20 m/s and 25 m/s same direction*** — relative velocity 5 m/s (NEB 2017)."
+    ],
+    "universalFacts": [
+      "Aeroplane timetables account for jet streams — the same aircraft flies Kathmandu–Doha faster westward-to-eastward because the wind is a relative-velocity term."
+    ],
+    "importantStatements": [
+      "\"There is no absolute rest — only frames.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: define relative velocity + two-car numerical (2017, 2m)."
+    ],
+    "examShortTricks": [
+      "\"Same direction minus, opposite plus, angled — cosine rule.\""
+    ],
+    "examNotes": [
+      "Most-tested: the definition + same-direction numerical (2017). Boat-river and rain-umbrella are the classic extension problems."
+    ],
+    "formulas": [
+      "- v_AB = v_A − v_B\n- Same direction: v_rel = |v_A − v_B|; opposite: v_rel = v_A + v_B\n- Rain-umbrella: tan θ = v_p/v_r"
+    ],
+    "practice": [
+      "Why does rain appear slanted to a moving observer?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A river 200 m wide flows at 3 m/s; a boat aimed straight across moves at 4 m/s. Find crossing time and downstream drift.** — t = 200/4 = 50 s; drift = 3 × 50 = 150 m; resultant speed 5 m/s at 36.9° from straight-across."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "The relative velocity of A with respect to B is:",
+      "options": [
+        "v_A + v_B",
+        "v_A − v_B",
+        "v_B − v_A",
+        "v_A·v_B"
+      ],
+      "answer": "B",
+      "explanation": "v_AB = v_A − v_B — vector subtraction."
+    },
+    {
+      "question": "Two cars at 20 m/s and 25 m/s in the same direction have relative velocity:",
+      "options": [
+        "45 m/s",
+        "5 m/s",
+        "22.5 m/s",
+        "100 m/s"
+      ],
+      "answer": "B",
+      "explanation": "Same direction: 25 − 20 = 5 m/s (NEB 2017)."
+    },
+    {
+      "question": "Two trains approach each other head-on at 15 m/s and 20 m/s. Closing speed is:",
+      "options": [
+        "5 m/s",
+        "17.5 m/s",
+        "35 m/s",
+        "300 m/s"
+      ],
+      "answer": "C",
+      "explanation": "Opposite directions add: 15 + 20 = 35 m/s."
+    },
+    {
+      "question": "Rain falls vertically; a person walks forward. To the person, rain appears:",
+      "options": [
+        "Vertical",
+        "Slanted backward",
+        "Slanted forward",
+        "Horizontal always"
+      ],
+      "answer": "B",
+      "explanation": "v_rain,person = v_r − v_p points backward — tilt the umbrella forward."
+    },
+    {
+      "question": "A boat aimed straight across a river will:",
+      "options": [
+        "Cross straight",
+        "Drift downstream",
+        "Drift upstream",
+        "Sink"
+      ],
+      "answer": "B",
+      "explanation": "The current adds a downstream component — drift = v_river × crossing time."
+    },
+    {
+      "question": "To cross a river straight across, the boat must aim:",
+      "options": [
+        "Straight across",
+        "Upstream at an angle",
+        "Downstream",
+        "Anywhere"
+      ],
+      "answer": "B",
+      "explanation": "Aim upstream so the upstream component cancels the current."
+    },
+    {
+      "question": "The magnitude of v_AB for velocities at angle θ is:",
+      "options": [
+        "v_A + v_B",
+        "√(v_A² + v_B² − 2v_Av_B cos θ)",
+        "√(v_A² + v_B² + 2v_Av_B cos θ)",
+        "v_A − v_B always"
+      ],
+      "answer": "B",
+      "explanation": "Vector subtraction uses the cosine rule with a minus sign."
+    },
+    {
+      "question": "Overtaking time equals:",
+      "options": [
+        "Separation × relative speed",
+        "Separation / relative speed",
+        "Separation × sum of speeds",
+        "Independent of separation"
+      ],
+      "answer": "B",
+      "explanation": "Time = gap divided by the closing (relative) speed."
+    }
+  ],
+  "mcs": [
+    {
+      "question": "The relative velocity of A with respect to B is:",
+      "options": [
+        "v_A + v_B",
+        "v_A − v_B",
+        "v_B − v_A",
+        "v_A·v_B"
+      ],
+      "answer": "B",
+      "explanation": "v_AB = v_A − v_B — vector subtraction."
+    },
+    {
+      "question": "Two cars at 20 m/s and 25 m/s in the same direction have relative velocity:",
+      "options": [
+        "45 m/s",
+        "5 m/s",
+        "22.5 m/s",
+        "100 m/s"
+      ],
+      "answer": "B",
+      "explanation": "Same direction: 25 − 20 = 5 m/s (NEB 2017)."
+    },
+    {
+      "question": "Two trains approach each other head-on at 15 m/s and 20 m/s. Closing speed is:",
+      "options": [
+        "5 m/s",
+        "17.5 m/s",
+        "35 m/s",
+        "300 m/s"
+      ],
+      "answer": "C",
+      "explanation": "Opposite directions add: 15 + 20 = 35 m/s."
+    },
+    {
+      "question": "Rain falls vertically; a person walks forward. To the person, rain appears:",
+      "options": [
+        "Vertical",
+        "Slanted backward",
+        "Slanted forward",
+        "Horizontal always"
+      ],
+      "answer": "B",
+      "explanation": "v_rain,person = v_r − v_p points backward — tilt the umbrella forward."
+    },
+    {
+      "question": "A boat aimed straight across a river will:",
+      "options": [
+        "Cross straight",
+        "Drift downstream",
+        "Drift upstream",
+        "Sink"
+      ],
+      "answer": "B",
+      "explanation": "The current adds a downstream component — drift = v_river × crossing time."
+    },
+    {
+      "question": "To cross a river straight across, the boat must aim:",
+      "options": [
+        "Straight across",
+        "Upstream at an angle",
+        "Downstream",
+        "Anywhere"
+      ],
+      "answer": "B",
+      "explanation": "Aim upstream so the upstream component cancels the current."
+    },
+    {
+      "question": "The magnitude of v_AB for velocities at angle θ is:",
+      "options": [
+        "v_A + v_B",
+        "√(v_A² + v_B² − 2v_Av_B cos θ)",
+        "√(v_A² + v_B² + 2v_Av_B cos θ)",
+        "v_A − v_B always"
+      ],
+      "answer": "B",
+      "explanation": "Vector subtraction uses the cosine rule with a minus sign."
+    },
+    {
+      "question": "Overtaking time equals:",
+      "options": [
+        "Separation × relative speed",
+        "Separation / relative speed",
+        "Separation × sum of speeds",
+        "Independent of separation"
+      ],
+      "answer": "B",
+      "explanation": "Time = gap divided by the closing (relative) speed."
+    }
+  ]
 }

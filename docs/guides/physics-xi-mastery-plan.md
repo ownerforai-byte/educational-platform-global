@@ -34,11 +34,11 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 3 | Vectors (4h) | Triangle, parallelogram and polygon laws of vectors |  | **Completed** |
 | 4 | Vectors (4h) | Resolution of vectors; unit vectors |  | **Completed** |
 | 5 | Vectors (4h) | Scalar and vector products |  | **Completed** |
-| 6 | Kinematics (5h) | Instantaneous velocity and acceleration | TBD | Not started |
-| 7 | Kinematics (5h) | Relative velocity | TBD | Not started |
-| 8 | Kinematics (5h) | Equation of motion (graphical treatment) | TBD | Not started |
-| 9 | Kinematics (5h) | Motion of a freely falling body | TBD | Not started |
-| 10 | Kinematics (5h) | Projectile motion and its applications | TBD | Not started |
+| 6 | Kinematics (5h) | Instantaneous velocity and acceleration | `01-instantaneous-velocity-and-acceleration.json` | **Completed** |
+| 7 | Kinematics (5h) | Relative velocity | `02-relative-velocity.json` | **Completed** |
+| 8 | Kinematics (5h) | Equation of motion (graphical treatment) | `03-equation-of-motion-graphical-treatment.json` | **Completed** |
+| 9 | Kinematics (5h) | Motion of a freely falling body | `04-motion-of-a-freely-falling-body.json` | **Completed** |
+| 10 | Kinematics (5h) | Projectile motion and its applications | `05-projectile-motion-and-its-applications.json` | **Completed** |
 | 11 | Dynamics (6h) | Linear momentum, impulse | TBD | Not started |
 | 12 | Dynamics (6h) | Conservation of linear momentum | TBD | Not started |
 | 13 | Dynamics (6h) | Application of Newton's laws | TBD | Not started |
@@ -151,3 +151,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 
 - Session 1 — Plan created; Unit 1 (Physical Quantities, 2 topics) upgraded: precision & significant figures; dimensions & dimensional analysis. Verified PYQs from `content/practice/questions/class-11/physics/` year files (neb-2014…neb-2024) matched per topic. Next: Unit 2 Vectors (3 topics).
 - Session 2 — Unit 2 Vectors (3 topics) upgraded: triangle/parallelogram/polygon laws; resolution & unit vectors; scalar & vector products. Verified PYQs used: 2021 parallelogram numerical 5m + component addition 3m, 2020 scalar vs vector 2m, 2024 rectangular components 3m, 2023 dot/cross definitions 3m. Next: Unit 3 Kinematics (5 topics).
+- Session 3 — Unit 3 Kinematics (5 topics) upgraded: instantaneous velocity/acceleration; relative velocity; equations of motion (graphical); freely falling body; projectile motion. Verified PYQs used: 2024 position/velocity/acceleration definitions 2m, 2014 car numerical 3m, 2017 relative velocity 2m, 2023 car numerical 3m, 2023 dropped-stone 3m, 2024 projectile 3m, 2022 complementary-angles 3m + horizontal projection 5m + vertical projection 4m, 2019 T=2·t_up derivation 3m. Next: Unit 4 Dynamics (5 topics).

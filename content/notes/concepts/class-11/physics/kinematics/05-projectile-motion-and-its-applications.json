@@ -7,76 +7,41 @@
   "duplicateType": 2,
   "tabGroup": "projectile-motion",
   "notes": [
-    "**Type 2 — alternate treatment:** this version builds projectile motion from the independence of the two components and derives all standard results step by step — the derivation chain NEB expects.",
-    "**The governing idea:** horizontal and vertical motions are INDEPENDENT. Gravity acts only vertically, so the horizontal velocity stays constant ($v_x = u\\cos\\theta$) while the vertical motion is free fall with initial speed $u\\sin\\theta$. The path is the combination — a parabola.",
-    "**Component equations (up positive, launch at angle $\\theta$ with speed $u$):** horizontal: $x = (u\\cos\\theta)t$, $v_x = u\\cos\\theta$; vertical: $y = (u\\sin\\theta)t - \\tfrac{1}{2}gt^2$, $v_y = u\\sin\\theta - gt$.",
-    "**Time of flight:** set $y = 0$ on landing: $T = \\dfrac{2u\\sin\\theta}{g}$ — twice the time to the top ($u\\sin\\theta/g$).",
-    "**Maximum height:** at the top $v_y = 0$: $H = \\dfrac{u^2\\sin^2\\theta}{2g}$ — vertical throw with initial speed $u\\sin\\theta$.",
-    "**Horizontal range:** $R = v_x T = \\dfrac{u^2\\sin 2\\theta}{g}$. Since $\\sin 2\\theta$ peaks at $2\\theta = 90°$, **maximum range at $\\theta = 45°$**, and complementary angles ($30°$ & $60°$, $15°$ & $75°$) give the SAME range.",
-    "**Velocity at any instant:** $v = \\sqrt{(u\\cos\\theta)^2 + (u\\sin\\theta - gt)^2}$ at angle $\\phi = \\tan^{-1}\\!\\left(\\frac{u\\sin\\theta - gt}{u\\cos\\theta}\\right)$ below/above horizontal. On landing, magnitude equals $u$ (symmetry) with direction $-\\theta$.",
-    "**Trajectory equation:** eliminate $t$: $y = x\\tan\\theta - \\dfrac{g x^2}{2u^2\\cos^2\\theta}$ — a parabola. Also useful: $R = 4H\\cot\\theta$ connecting range and height.",
-    "**Applications to quote:** cannon/artillery ranges, projectile games (javelin, football), water-fountain arcs, bombing-release problems (bomb keeps the plane's horizontal velocity), and projectile on an inclined plane (extension: $R = \\frac{2u^2\\cos\\theta\\sin(\\theta-\\alpha)}{g\\cos^2\\alpha}$ for incline angle $\\alpha$ — beyond syllabus but good insight).",
-    "**NEB exam focus:** state independence of motions; derive $T$, $H$, $R$; prove max range at 45°; show complementary angles share range; compute velocity (magnitude and direction) at a given time or height; draw the labelled trajectory.",
-    "# Projectile motion and its applications\n\n## 1. Introduction\nPhysical picture of **Projectile motion and its applications** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Kinematics fill pass.\n\n## 2. Concepts and laws\n### Projectile motion and its applications\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Projectile motion and its applications — motion graphs with slope and area marked (authored SVG, plotted from note data)\n- **D2** — Projectile motion and its applications — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Projectile motion and its applications — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Projectile motion and its applications — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Two Motions Wearing One Body\n\nA projectile is free fall with a head start: uniform horizontal velocity (a = 0) superposed on vertical free fall (a = g). Because the components are independent, the whole parabolic story unfolds from two one-dimensional problems sharing one clock.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Projectile launched at angle θ with speed u (level ground)\n\n| Quantity | Formula |\n|---|---|\n| Horizontal component | $u_x = u\\cos\\theta$ (constant throughout) |\n| Vertical component | $u_y = u\\sin\\theta$ (changes by g) |\n| Time to maximum height | $t_{up} = u\\sin\\theta/g$ |\n| **Time of flight** | $T = 2u\\sin\\theta/g$ |\n| **Maximum height** | $H = u^2\\sin^2\\theta/2g$ |\n| **Horizontal range** | $R = u^2\\sin2\\theta/g$ |\n| Trajectory | parabola: $y = x\\tan\\theta - gx^2/2u^2\\cos^2\\theta$ |\n\n**Key results:**\n- $R$ is maximum at **θ = 45°** ($R_{max} = u^2/g$).\n- Complementary angles (θ and 90° − θ) give the **same range** — $R(30°) = R(60°)$; ratio 1:1.\n- Range ratio for two angles: $R_1/R_2 = \\sin2\\theta_1/\\sin2\\theta_2$.\n\n### 2.2 Horizontal projection from a height\n\nA body projected horizontally with speed u from height h:\n- **Time of flight:** $t = \\sqrt{2h/g}$ (depends only on h).\n- **Horizontal range:** $R = u\\sqrt{2h/g}$.\n- **Velocity on striking:** $v = \\sqrt{u^2 + 2gh}$ at angle $\\tan\\alpha = \\sqrt{2gh}/u$ below horizontal.\n\n### 2.3 Vertical projection\n\n$T = 2u/g$, $H = u^2/2g$ (Topic 9's results).",
+    "## 3. Worked Numericals\n\n**Q1 (3m, 2024):** A body is projected with velocity 20 m/s at 30° to the horizontal. Find its maximum height and horizontal range. (g = 10 m/s²)\n*Given:* u = 20 m/s, θ = 30°.\n*Substitution:* $H = u^2\\sin^2\\theta/2g = 400 \\times 0.25/20 = 5$ m.\n$R = u^2\\sin2\\theta/g = 400 \\times \\sin60°/10 = 40 \\times 0.866 = 34.6$ m.\n*Answer:* **H = 5 m, R ≈ 34.6 m.**\n\n**Q2 (5m, 2022):** A projectile is fired horizontally from a tower 80 m high with velocity 20 m/s. Find (i) time of flight, (ii) horizontal range, (iii) velocity on striking the ground. (g = 10 m/s²)\n*Substitution:* (i) $t = \\sqrt{2h/g} = \\sqrt{16} = 4$ s.\n(ii) $R = ut = 20 \\times 4 = 80$ m.\n(iii) $v_y = gt = 40$ m/s; $v = \\sqrt{u^2 + v_y^2} = \\sqrt{400 + 1600} = \\sqrt{2000} = 44.7$ m/s at $\\tan\\alpha = 40/20 = 2 → \\alpha = 63.4°$ below horizontal.\n*Answer:* **t = 4 s, R = 80 m, v ≈ 44.7 m/s at 63.4° below horizontal.**\n\n**Q3 (4m, 2022):** A stone is projected vertically upwards with 49 m/s (g = 9.8). Find time to maximum height, maximum height, total time.\n$t_{up} = u/g = 5$ s; $H = u^2/2g = 122.5$ m; $T = 2u/g = 10$ s.",
+    "## 4. Derivation asked at NEB (2019, 2022)\n\n**Time of flight is double the time to maximum height (3m, 2019):**\nAt maximum height the vertical velocity vanishes: $0 = u\\sin\\theta - gt_{up} → t_{up} = u\\sin\\theta/g$. The projectile lands when the vertical displacement returns to zero: $0 = u\\sin\\theta\\,T - \\frac{1}{2}gT^2 → T = 2u\\sin\\theta/g$. Hence **T = 2 t_up** — the flight is symmetric about the highest point.\n\n**Range is the same for complementary angles (3m, 2022):**\n$R = \\frac{u^2\\sin2\\theta}{g}$. For θ and (90° − θ): $\\sin2(90°-\\theta) = \\sin(180° - 2\\theta) = \\sin2\\theta$ — identical. So $R(30°) = R(60°)$; **the ratio of ranges for 30° and 60° is 1:1**.",
+    "## 5. Conceptual Relationships\n\n- **To Topic 4 (resolution):** the whole topic is resolution in action — $u\\cos\\theta$ and $u\\sin\\theta$ start two independent problems.\n- **To Topic 9:** the vertical half is free fall; the horizontal half is uniform velocity.\n- **To Energy:** speed at any height follows from energy conservation — $v^2 = u^2 - 2gy$.\n- **To real life:** ballistics, water fountains, javelin throws and fire hoses all obey $R = u^2\\sin2\\theta/g$.",
+    "## 6. Exam Orientation and Previous Year Questions (NEB)\n\n### 6.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Kinematics | Projectile | A body is projected with velocity 20 m s⁻¹ at 30° to the horizontal. Find its maximum height and horizontal range. | 3 | Numerical |\n| 2078/2022 | Kinematics | Projectile | Show that the horizontal range of a projectile is the same for complementary angles of projection. Find the ratio of ranges for 30° and 60°. | 3 | Derivation |\n| 2078/2022 | Kinematics | Horizontal projection | A projectile is fired horizontally from a tower 80 m high with velocity 20 m/s. Find: (i) time of flight, (ii) horizontal range, (iii) velocity on striking the ground. | 5 | Numerical |\n| 2078/2022 | Kinematics | Vertical projection | A stone is projected vertically upwards with a velocity of 49 m/s. Taking g = 9.8 m/s², find the time taken to reach maximum height, the maximum height... | 4 | Numerical |\n| 2075/2019 | Kinematics | Projectile | Prove that the time of flight of a projectile is double the time taken to reach the maximum height. | 3 | Derivation |\n\n### 6.2 Model answers — see worked numericals and derivations in §3–§4.\n\n### 6.3 Common examination mistakes\n\n1. Using $\\sin\\theta$ instead of $\\sin2\\theta$ in the range formula.\n2. Applying $T = 2u\\sin\\theta/g$ to horizontal projection — there $t = \\sqrt{2h/g}$.\n3. Mixing components: horizontal velocity never changes; vertical velocity never stays.\n4. Forgetting that maximum range needs 45° only on **level ground**.\n5. In horizontal-projection numericals, using u in the vertical equations."
   ],
   "confusion": [
-    "❌ 'A projectile's horizontal velocity decreases during flight.' ✅ $v_x = u\\cos\\theta$ is CONSTANT (no horizontal force in the ideal model); only $v_y$ changes.",
-    "❌ 'At the top of the trajectory the velocity is zero.' ✅ Only $v_y = 0$; the horizontal component $u\\cos\\theta$ persists — speed at the top is $u\\cos\\theta$, the MINIMUM of the flight.",
-    "❌ 'The path is part of a circle / straight line decaying.' ✅ The trajectory is a PARABOLA — the graph of $y = x\\tan\\theta - gx^2/(2u^2\\cos^2\\theta)$.",
-    "❌ Using $\\sin\\theta$ instead of $\\sin 2\\theta$ in the range. ✅ $R = u^2\\sin 2\\theta/g$; and $\\sin 2\\theta$ is maximal at $\\theta = 45°$, not $90°$.",
-    "❌ 'Complementary angles give different ranges.' ✅ $\\sin 2(90°-\\theta) = \\sin(180°-2\\theta) = \\sin 2\\theta$ — $30°$ and $60°$ land at the SAME spot (the 60° shot flies higher).",
-    "❌ Doubling $u$ doubles the range. ✅ $R \\propto u^2$ — doubling launch speed QUADRUPLES range (and quadruples max height too)."
+    "**Angle projection vs horizontal projection:** angled launch uses T = 2u sinθ/g; horizontal launch from a height uses t = √(2h/g) — different formulas for different setups.",
+    "**Maximum range at 45°:** true only for level ground (launch and landing at the same height)."
   ],
   "practice": [
-    "A ball is kicked at 20 m/s at 30°. Find $T$, $H$, $R$ ($g = 10$). — $T = 2$ s; $H = 5$ m; $R = 34.6$ m.",
-    "Prove that the speed on landing equals the launch speed, using components at $t = T$.",
-    "A projectile has range 100 m and time of flight 4 s. Find its horizontal velocity and launch angle. — $v_x = 25$ m/s; $u_y = gt/2 = 20$ m/s → $\\theta = \\tan^{-1}(20/25) = 38.7°$.",
-    "Two projectiles are fired at 30° and 60° with the same speed 40 m/s. Show both have $R = 141$ m, and compare their maximum heights (1 : 3).",
-    "From a 45 m cliff a stone is thrown horizontally at 10 m/s. When and where does it land? — fall time $t = 3$ s; horizontal landing distance $= 30$ m; impact speed $= \\sqrt{10^2 + 30^2} \\approx 31.6$ m/s."
+    "Why do 30° and 60° give the same range but different maximum heights?"
   ],
   "universalFacts": [
-    "Galileo's *Dialogues* (1638) first showed projectile motion is a parabola by superposing uniform horizontal motion with vertical fall — the first known composition of motions.",
-    "Artillery fire above ~30 km (Paris Gun, WWI) deviates from the parabola: thin air changes drag and $g$'s direction varies — ideal parabolic flight is a near-Earth, no-air model.",
-    "Long-jump athletes take off near 21°, not 45°, because take-off speed itself drops with steeper angles — the real optimum balances range angle against speed loss.",
-    "Basketball free throws exploit the high-arc (complementary-angle) region: a steep entry angle enlarges the effective hoop target, even though the flatter shot travels the same distance."
+    "Without air resistance a bullet fired horizontally and a bullet dropped from the same height hit the ground at the same instant."
   ],
   "animation3D": "kinematics",
   "motionGraphics": "kinematics",
   "examples": [
-    "Example 1 (horizontal launch): a stone thrown horizontally at 15 m/s from a 20 m tower: $t = \\sqrt{2 \\times 20/10} = 2$ s; lands 30 m out — vertical fall sets the TIME, horizontal speed sets the DISTANCE.",
-    "Example 2 (full trajectory): $u = 25$ m/s at $\\theta = 37°$ ($\\sin 37° = 0.6$, $\\cos 37° = 0.8$): $T = 3$ s, $H = 11.25$ m, $R = 60$ m — the classic 3-4-5 projectile.",
-    "Example 3 (velocity at top): speed at the top $= u\\cos\\theta = 20$ m/s for the previous shot — the projectile is never at rest.",
-    "Example 4 (45° range): maximum range with $u = 30$ m/s is $R_{max} = u^2/g = 90$ m at 45°, with $H = R/4 = 22.5$ m — note $R_{max} = 4H$.",
-    "Example 5 (bomb release): a plane at 500 m flying level at 100 m/s releases a bomb — it lands after $t = 10$ s, $500$ m ahead of the release point (it keeps the plane's horizontal velocity)."
+    "***20 m/s at 30°*** — H = 5 m, R = 34.6 m (NEB 2024)."
   ],
   "practiceQuestions": [
-    "Q1. Show that the path of a projectile is a parabola by eliminating $t$ from the equations of motion.",
-    "Q2. Derive $R = \\dfrac{u^2 \\sin 2\\theta}{g}$ and hence prove that the range is maximum for $\\theta = 45°$.",
-    "Q3. Show that two angles of projection differing by 90° give the same horizontal range.",
-    "Q4. A projectile is fired at 50 m/s at 60°. Find (a) time of flight, (b) maximum height, (c) velocity after 2 s.",
-    "Q5. Show that the relation between range and maximum height is $R = 4H\\cot\\theta$, and verify it for $\\theta = 45°$ where $R = 4H$."
+    "**Numerical (3m): Find the maximum range of a projectile launched at 40 m/s on level ground.** — R_max = u²/g at 45° = 1600/10 = 160 m (g = 10 m/s²)."
   ],
   "formulas": [
-    "Components: $v_x = u\\cos\\theta$ (constant); $v_y = u\\sin\\theta - gt$",
-    "Time of flight: $T = \\dfrac{2u\\sin\\theta}{g}$",
-    "Maximum height: $H = \\dfrac{u^2\\sin^2\\theta}{2g}$",
-    "Range: $R = \\dfrac{u^2\\sin 2\\theta}{g}$; $R_{max} = \\dfrac{u^2}{g}$ at $\\theta = 45°$",
-    "Trajectory: $y = x\\tan\\theta - \\dfrac{gx^2}{2u^2\\cos^2\\theta}$ (parabola); $R = 4H\\cot\\theta$"
+    "- uₓ = u cos θ; u_y = u sin θ\n- T = 2u sin θ/g; H = u² sin²θ/2g; R = u² sin 2θ/g\n- Horizontal projection: t = √(2h/g); R = u√(2h/g); v = √(u² + 2gh)\n- Trajectory: y = x tan θ − gx²/(2u² cos²θ)"
   ],
   "keyPoints": [
-    "Horizontal and vertical motions are independent; they share only TIME.",
-    "$v_x$ is constant; $v_y$ changes by $g$ every second; the path is a parabola.",
-    "At the top: $v_y = 0$, speed $= u\\cos\\theta$ (minimum), $a = g$ downward.",
-    "Landing speed equals launch speed; landing angle equals −launch angle (symmetry).",
-    "$R$ is maximum at 45°; complementary angles give equal ranges but different heights.",
-    "$R \\propto u^2$ and $H \\propto u^2$ — doubling launch speed quadruples both."
+    "Components: u cos θ constant horizontal; u sin θ vertical under g.",
+    "T = 2u sinθ/g; H = u²sin²θ/2g; R = u²sin2θ/g; R max at 45°.",
+    "Complementary angles (θ, 90°−θ) give equal ranges — 30° and 60° ratio 1:1.",
+    "Horizontal projection: t = √(2h/g), R = ut, v = √(u² + 2gh)."
   ],
-  "summary": "Projectile motion is the superposition of constant horizontal velocity and vertical free fall, giving a parabolic path. The three headline results — $T = 2u\\sin\\theta/g$, $H = u^2\\sin^2\\theta/2g$, $R = u^2\\sin2\\theta/g$ — all follow from the component equations, with maximum range at 45° and equal ranges at complementary angles. Speed at the top is $u\\cos\\theta$ (never zero), landing speed equals launch speed, and horizontal-launch problems are handled by letting the vertical fall set the time. These results assume no air resistance and constant $g$.",
+  "summary": "A projectile runs two independent motions on one clock: uniform horizontal velocity $u\\cos\\theta$ and vertical free fall from $u\\sin\\theta$. For an angled launch on level ground, the time of flight is $T = 2u\\sin\\theta/g$ (exactly twice the time to the top — NEB 2019), the maximum height is $H = u^2\\sin^2\\theta/2g$, and the range is $R = u^2\\sin2\\theta/g$ — maximal at 45° and identical for complementary angles, so 30° and 60° ranges stand in ratio 1:1 (NEB 2022). Horizontal projection from a tower is the mirror case: $t = \\sqrt{2h/g}$ sets the clock (4 s for 80 m), range $R = ut$, and impact speed $\\sqrt{u^2 + 2gh}$ at 63.4° below horizontal (NEB 2022, 5m). NEB 2024's 20 m/s at 30° lands at H = 5 m, R = 34.6 m.",
   "specialNotes": [
     "Note 1: In horizontal-launch problems, get the time from the VERTICAL fall first, then multiply by $v_x$.",
     "Note 2: Memorise $\\sin 37° = 0.6$, $\\cos 37° = 0.8$ and $\\sin 2\\theta$ values for 30°/45°/60° — NEB numericals use them constantly.",
@@ -84,29 +49,16 @@
     "Note 4: State the assumptions (no air resistance, constant $g$, flat ground) in theory answers — they define the model."
   ],
   "importantStatements": [
-    "Statement 1: A projectile's horizontal and vertical motions are completely independent; gravity acts only on the vertical component.",
-    "Statement 2: The horizontal velocity of a projectile remains constant throughout the flight (no air resistance).",
-    "Statement 3: The trajectory of an ideal projectile is a parabola.",
-    "Statement 4: The horizontal range is maximum at 45° and equal for complementary angles of projection."
+    "\"A projectile writes a parabola because one axis coasts while the other falls.\""
   ],
   "importantNotes": [
-    "Note 1: At the highest point the velocity is purely horizontal: $v = u\\cos\\theta$ — not zero.",
-    "Note 2: Landing speed equals launch speed and the landing angle mirrors the launch angle (energy/symmetry).",
-    "Note 3: $R \\propto u^2$: small speed increases at launch produce large range gains.",
-    "Note 4: For horizontal projection from a height, time of flight depends ONLY on the height: $t = \\sqrt{2h/g}$."
+    "Verified PYQs: 2024 numerical 3m; 2022 complementary-angles derivation 3m; 2022 horizontal-projection 5m; 2022 vertical projection 4m; 2019 T = 2·t_up derivation 3m."
   ],
   "examShortTricks": [
-    "Trick 1: $R = u^2\\sin2\\theta/g$ — for 30° and 60°, $\\sin 2\\theta = \\sin 60° = 0.866$; write the common range instantly.",
-    "Trick 2: At 45°, $R = 4H$ — if a question gives one, the other is a division away.",
-    "Trick 3: Horizontal launch from height $h$: time $= \\sqrt{2h/g}$, landing speed $= \\sqrt{v_x^2 + 2gh}$.",
-    "Trick 4: Velocity direction at time $t$: $\\tan\\phi = \\dfrac{u\\sin\\theta - gt}{u\\cos\\theta}$ — positive above the horizontal, negative below.",
-    "Trick 5: In 'bomb released from plane' questions, the bomb retains the plane's horizontal speed — range = plane speed × fall time."
+    "\"Range reads sin 2θ — 45° splits it best.\""
   ],
   "examNotes": [
-    "Exam Tip 1: Derivations of $T$, $H$ and $R$ from components are standard 4-mark questions — write the two component tables first.",
-    "Exam Tip 2: Draw the trajectory with $v_x$ arrows equal everywhere and $v_y$ arrows shrinking/rising — examiners look for the independence idea.",
-    "Exam Tip 3: For 'velocity at height h' questions use $v_y^2 = (u\\sin\\theta)^2 - 2gh$ — avoids solving a quadratic in $t$.",
-    "Exam Tip 4: State the no-air-resistance assumption; if a question mentions drag, the parabola model no longer applies."
+    "Most-tested unit so far: five verified questions. Practise all three setups (angled, horizontal, vertical) and both derivations."
   ],
   "mcs": [
     {
@@ -162,11 +114,7 @@
     }
   ],
   "importantConcepts": [
-    "Concept 1: Independence of horizontal (uniform) and vertical (accelerated) motions.",
-    "Concept 2: Component kinematics — $v_x$ constant, $v_y$ with $-gt$; time is the shared variable.",
-    "Concept 3: Standard results: $T = 2u\\sin\\theta/g$, $H = u^2\\sin^2\\theta/2g$, $R = u^2\\sin2\\theta/g$.",
-    "Concept 4: Symmetry — equal speeds at equal heights; landing mirrors launching.",
-    "Concept 5: Trajectory parabola and the $R$–$H$ relation $R = 4H\\cot\\theta$."
+    "**Independence again:** the horizontal motion never knows about gravity; the vertical motion never knows about u cos θ — one clock, two independent problems."
   ],
   "importantTasks": [
     "Task 1: Derive $T$, $H$, $R$ from components in writing, then specialise to $\\theta = 45°$.",
@@ -231,5 +179,145 @@
         ]
       }
     ]
-  }
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Two Motions Wearing One Body\n\nA projectile is free fall with a head start: uniform horizontal velocity (a = 0) superposed on vertical free fall (a = g). Because the components are independent, the whole parabolic story unfolds from two one-dimensional problems sharing one clock.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Projectile launched at angle θ with speed u (level ground)\n\n| Quantity | Formula |\n|---|---|\n| Horizontal component | $u_x = u\\cos\\theta$ (constant throughout) |\n| Vertical component | $u_y = u\\sin\\theta$ (changes by g) |\n| Time to maximum height | $t_{up} = u\\sin\\theta/g$ |\n| **Time of flight** | $T = 2u\\sin\\theta/g$ |\n| **Maximum height** | $H = u^2\\sin^2\\theta/2g$ |\n| **Horizontal range** | $R = u^2\\sin2\\theta/g$ |\n| Trajectory | parabola: $y = x\\tan\\theta - gx^2/2u^2\\cos^2\\theta$ |\n\n**Key results:**\n- $R$ is maximum at **θ = 45°** ($R_{max} = u^2/g$).\n- Complementary angles (θ and 90° − θ) give the **same range** — $R(30°) = R(60°)$; ratio 1:1.\n- Range ratio for two angles: $R_1/R_2 = \\sin2\\theta_1/\\sin2\\theta_2$.\n\n### 2.2 Horizontal projection from a height\n\nA body projected horizontally with speed u from height h:\n- **Time of flight:** $t = \\sqrt{2h/g}$ (depends only on h).\n- **Horizontal range:** $R = u\\sqrt{2h/g}$.\n- **Velocity on striking:** $v = \\sqrt{u^2 + 2gh}$ at angle $\\tan\\alpha = \\sqrt{2gh}/u$ below horizontal.\n\n### 2.3 Vertical projection\n\n$T = 2u/g$, $H = u^2/2g$ (Topic 9's results).",
+      "## 3. Worked Numericals\n\n**Q1 (3m, 2024):** A body is projected with velocity 20 m/s at 30° to the horizontal. Find its maximum height and horizontal range. (g = 10 m/s²)\n*Given:* u = 20 m/s, θ = 30°.\n*Substitution:* $H = u^2\\sin^2\\theta/2g = 400 \\times 0.25/20 = 5$ m.\n$R = u^2\\sin2\\theta/g = 400 \\times \\sin60°/10 = 40 \\times 0.866 = 34.6$ m.\n*Answer:* **H = 5 m, R ≈ 34.6 m.**\n\n**Q2 (5m, 2022):** A projectile is fired horizontally from a tower 80 m high with velocity 20 m/s. Find (i) time of flight, (ii) horizontal range, (iii) velocity on striking the ground. (g = 10 m/s²)\n*Substitution:* (i) $t = \\sqrt{2h/g} = \\sqrt{16} = 4$ s.\n(ii) $R = ut = 20 \\times 4 = 80$ m.\n(iii) $v_y = gt = 40$ m/s; $v = \\sqrt{u^2 + v_y^2} = \\sqrt{400 + 1600} = \\sqrt{2000} = 44.7$ m/s at $\\tan\\alpha = 40/20 = 2 → \\alpha = 63.4°$ below horizontal.\n*Answer:* **t = 4 s, R = 80 m, v ≈ 44.7 m/s at 63.4° below horizontal.**\n\n**Q3 (4m, 2022):** A stone is projected vertically upwards with 49 m/s (g = 9.8). Find time to maximum height, maximum height, total time.\n$t_{up} = u/g = 5$ s; $H = u^2/2g = 122.5$ m; $T = 2u/g = 10$ s.",
+      "## 4. Derivation asked at NEB (2019, 2022)\n\n**Time of flight is double the time to maximum height (3m, 2019):**\nAt maximum height the vertical velocity vanishes: $0 = u\\sin\\theta - gt_{up} → t_{up} = u\\sin\\theta/g$. The projectile lands when the vertical displacement returns to zero: $0 = u\\sin\\theta\\,T - \\frac{1}{2}gT^2 → T = 2u\\sin\\theta/g$. Hence **T = 2 t_up** — the flight is symmetric about the highest point.\n\n**Range is the same for complementary angles (3m, 2022):**\n$R = \\frac{u^2\\sin2\\theta}{g}$. For θ and (90° − θ): $\\sin2(90°-\\theta) = \\sin(180° - 2\\theta) = \\sin2\\theta$ — identical. So $R(30°) = R(60°)$; **the ratio of ranges for 30° and 60° is 1:1**.",
+      "## 5. Conceptual Relationships\n\n- **To Topic 4 (resolution):** the whole topic is resolution in action — $u\\cos\\theta$ and $u\\sin\\theta$ start two independent problems.\n- **To Topic 9:** the vertical half is free fall; the horizontal half is uniform velocity.\n- **To Energy:** speed at any height follows from energy conservation — $v^2 = u^2 - 2gy$.\n- **To real life:** ballistics, water fountains, javelin throws and fire hoses all obey $R = u^2\\sin2\\theta/g$.",
+      "## 6. Exam Orientation and Previous Year Questions (NEB)\n\n### 6.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Kinematics | Projectile | A body is projected with velocity 20 m s⁻¹ at 30° to the horizontal. Find its maximum height and horizontal range. | 3 | Numerical |\n| 2078/2022 | Kinematics | Projectile | Show that the horizontal range of a projectile is the same for complementary angles of projection. Find the ratio of ranges for 30° and 60°. | 3 | Derivation |\n| 2078/2022 | Kinematics | Horizontal projection | A projectile is fired horizontally from a tower 80 m high with velocity 20 m/s. Find: (i) time of flight, (ii) horizontal range, (iii) velocity on striking the ground. | 5 | Numerical |\n| 2078/2022 | Kinematics | Vertical projection | A stone is projected vertically upwards with a velocity of 49 m/s. Taking g = 9.8 m/s², find the time taken to reach maximum height, the maximum height... | 4 | Numerical |\n| 2075/2019 | Kinematics | Projectile | Prove that the time of flight of a projectile is double the time taken to reach the maximum height. | 3 | Derivation |\n\n### 6.2 Model answers — see worked numericals and derivations in §3–§4.\n\n### 6.3 Common examination mistakes\n\n1. Using $\\sin\\theta$ instead of $\\sin2\\theta$ in the range formula.\n2. Applying $T = 2u\\sin\\theta/g$ to horizontal projection — there $t = \\sqrt{2h/g}$.\n3. Mixing components: horizontal velocity never changes; vertical velocity never stays.\n4. Forgetting that maximum range needs 45° only on **level ground**.\n5. In horizontal-projection numericals, using u in the vertical equations."
+    ],
+    "confusion": [
+      "**Angle projection vs horizontal projection:** angled launch uses T = 2u sinθ/g; horizontal launch from a height uses t = √(2h/g) — different formulas for different setups.",
+      "**Maximum range at 45°:** true only for level ground (launch and landing at the same height)."
+    ],
+    "keyPoints": [
+      "Components: u cos θ constant horizontal; u sin θ vertical under g.",
+      "T = 2u sinθ/g; H = u²sin²θ/2g; R = u²sin2θ/g; R max at 45°.",
+      "Complementary angles (θ, 90°−θ) give equal ranges — 30° and 60° ratio 1:1.",
+      "Horizontal projection: t = √(2h/g), R = ut, v = √(u² + 2gh)."
+    ],
+    "importantConcepts": [
+      "**Independence again:** the horizontal motion never knows about gravity; the vertical motion never knows about u cos θ — one clock, two independent problems."
+    ],
+    "examples": [
+      "***20 m/s at 30°*** — H = 5 m, R = 34.6 m (NEB 2024)."
+    ],
+    "universalFacts": [
+      "Without air resistance a bullet fired horizontally and a bullet dropped from the same height hit the ground at the same instant."
+    ],
+    "importantStatements": [
+      "\"A projectile writes a parabola because one axis coasts while the other falls.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: 2024 numerical 3m; 2022 complementary-angles derivation 3m; 2022 horizontal-projection 5m; 2022 vertical projection 4m; 2019 T = 2·t_up derivation 3m."
+    ],
+    "examShortTricks": [
+      "\"Range reads sin 2θ — 45° splits it best.\""
+    ],
+    "examNotes": [
+      "Most-tested unit so far: five verified questions. Practise all three setups (angled, horizontal, vertical) and both derivations."
+    ],
+    "formulas": [
+      "- uₓ = u cos θ; u_y = u sin θ\n- T = 2u sin θ/g; H = u² sin²θ/2g; R = u² sin 2θ/g\n- Horizontal projection: t = √(2h/g); R = u√(2h/g); v = √(u² + 2gh)\n- Trajectory: y = x tan θ − gx²/(2u² cos²θ)"
+    ],
+    "practice": [
+      "Why do 30° and 60° give the same range but different maximum heights?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): Find the maximum range of a projectile launched at 40 m/s on level ground.** — R_max = u²/g at 45° = 1600/10 = 160 m (g = 10 m/s²)."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "The horizontal range of a projectile is:",
+      "options": [
+        "u²sinθ/g",
+        "u²sin2θ/g",
+        "u²sin²θ/2g",
+        "2u sinθ/g"
+      ],
+      "answer": "B",
+      "explanation": "R = u² sin 2θ/g — note the double angle."
+    },
+    {
+      "question": "The range is maximum at an angle of:",
+      "options": [
+        "30°",
+        "45°",
+        "60°",
+        "90°"
+      ],
+      "answer": "B",
+      "explanation": "sin 2θ peaks at 1 when 2θ = 90°."
+    },
+    {
+      "question": "Ranges at 30° and 60° (same u) are in the ratio:",
+      "options": [
+        "1:2",
+        "1:√3",
+        "1:1",
+        "2:1"
+      ],
+      "answer": "C",
+      "explanation": "Complementary angles share sin 2θ — equal ranges (NEB 2022)."
+    },
+    {
+      "question": "The time of flight equals:",
+      "options": [
+        "u sinθ/g",
+        "2u sinθ/g",
+        "2u cosθ/g",
+        "u²sinθ/2g"
+      ],
+      "answer": "B",
+      "explanation": "T = 2u sinθ/g — twice the time to maximum height (NEB 2019)."
+    },
+    {
+      "question": "A body projected horizontally from height h lands after:",
+      "options": [
+        "u/g",
+        "√(2h/g)",
+        "2h/g",
+        "h/u"
+      ],
+      "answer": "B",
+      "explanation": "Vertical free fall from rest sets the clock: t = √(2h/g)."
+    },
+    {
+      "question": "The horizontal velocity of a projectile (no air resistance):",
+      "options": [
+        "Increases",
+        "Decreases",
+        "Remains u cos θ",
+        "Becomes zero at the top"
+      ],
+      "answer": "C",
+      "explanation": "No horizontal force — u cos θ persists throughout."
+    },
+    {
+      "question": "20 m/s at 30° gives a maximum height of (g = 10):",
+      "options": [
+        "5 m",
+        "10 m",
+        "20 m",
+        "34.6 m"
+      ],
+      "answer": "A",
+      "explanation": "H = 400 × 0.25/20 = 5 m (NEB 2024)."
+    },
+    {
+      "question": "Its horizontal range is about:",
+      "options": [
+        "20 m",
+        "34.6 m",
+        "40 m",
+        "80 m"
+      ],
+      "answer": "B",
+      "explanation": "R = 400 × sin60°/10 = 34.6 m (NEB 2024)."
+    }
+  ]
 }

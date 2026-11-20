@@ -7,75 +7,38 @@
   "duplicateType": 2,
   "tabGroup": "freely-falling-body",
   "notes": [
-    "**Type 2 — alternate treatment:** this version works free fall entirely through the equations of motion with sign conventions and the up-and-down symmetry argument — the pattern NEB numericals follow.",
-    "**Definition:** a freely falling body moves under gravity ALONE — no air resistance, no push after release. All bodies fall with the same acceleration $g \\approx 9.8$ m/s² (take 10 m/s² in numericals) independent of mass — Galileo's famous result.",
-    "**Sign convention method:** choose upward positive. Then for a body projected up at $u$: $v = u - gt$, $h = ut - \\tfrac{1}{2}gt^2$, $v^2 = u^2 - 2gh$. The SAME equations with $u = 0$ describe a dropped body; with the throw downward, $u$ enters negative.",
-    "**Up–down symmetry:** a body thrown up with speed $u$ returns to the launch point with the same speed (downward); time up = time down $= u/g$; total flight $T = 2u/g$. Air resistance would break this symmetry — its absence is the point of 'free' fall.",
-    "**Key instants for a body thrown up:** at the top, $v = 0$ but $a = g$ downward (never zero); height reached $h_{max} = u^2/2g$; velocities at equal heights going up and down are equal in magnitude and opposite in direction.",
-    "**Dropped from a height $h$:** $v = gt$, $h = \\tfrac{1}{2}gt^2$, $v = \\sqrt{2gh}$. Time to fall: $t = \\sqrt{2h/g}$. Falling 1:3:5:7 distances each second (Galileo's odd-number rule).",
-    "**Bodies with initial downward or upward motion from a height** (e.g. a ball thrown down at 5 m/s): $v^2 = u^2 + 2gh$ with BOTH terms positive when down is the direction of travel — the third equation handles every case once signs are set.",
-    "**Relative fall problems:** a ball dropped from a descending/ascending lift, or two balls released with a time gap — write each body's position $y_i(t)$ with the same origin, then use their difference. E.g. separation between a dropped ball and one thrown down 1 s later grows as $\\Delta y = \\tfrac{1}{2}g + (u)t$.",
-    "**NEB exam focus:** state that $g$ is mass-independent (with the Galileo/feather-coin argument); compute maximum height, time of flight, velocity on impact; apply up–down symmetry; solve dropped/thrown-from-lift problems with one consistent sign convention.",
-    "# Motion of a freely falling body\n\n## 1. Introduction\nPhysical picture of **Motion of a freely falling body** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Kinematics fill pass.\n\n## 2. Concepts and laws\n### Motion of a freely falling body\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Motion of a freely falling body — motion graphs with slope and area marked (authored SVG, plotted from note data)\n- **D2** — Motion of a freely falling body — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Motion of a freely falling body — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Motion of a freely falling body — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Cleanest Laboratory in Physics\n\nDrop anything near Earth's surface and, ignoring air resistance, it falls with the same constant acceleration g ≈ 9.8 m/s² — regardless of mass. Free fall is the equations of motion with a fixed a, and its sign bookkeeping (up positive or down positive) is the examinable skill.",
+    "## 2. Fundamental Concepts\n\n- **Free fall:** motion under gravity alone (no air resistance, no thrust).\n- **g ≈ 9.8 m/s²** (often taken as 10 m/s² in NEB numericals) directed **downward** everywhere near the surface; independent of mass, size, material (Galileo's result).\n- **Sign convention:** choose one positive direction and keep it. With **up positive**: a = −g; with **down positive**: a = +g.\n\n| Situation (up positive) | Equations |\n|---|---|\n| Dropped from rest | $v = -gt$; $h_{down} = \\frac{1}{2}gt^2$; $v = -\\sqrt{2gh}$ at ground |\n| Thrown up with u | $v = u - gt$; $h = ut - \\frac{1}{2}gt^2$ |\n| At maximum height | $v = 0 → t_{up} = u/g$; $h_{max} = u^2/2g$ |\n| Time of flight (return to start) | $T = 2u/g$ |\n| Velocity on return | same magnitude as u, opposite direction |\n\n**Worked numerical (NEB 2023, 3m):** A stone is dropped from a height of 200 m. Calculate (i) the time to hit the ground, (ii) the velocity on impact. (g = 10 m/s²)\n*Given:* u = 0, h = 200 m (down positive), a = g = 10 m/s².\n*Substitution:* (i) $h = \\frac{1}{2}gt^2 → 200 = 5t^2 → t^2 = 40 → t = 6.32$ s.\n(ii) $v = gt = 10 \\times 6.32 = 63.2$ m/s (or $v = \\sqrt{2gh} = \\sqrt{4000} = 63.2$ m/s).\n*Answer:* **t ≈ 6.32 s, v ≈ 63.2 m/s downward.**",
+    "## 3. Conceptual Relationships\n\n- **To Topic 8:** free fall is $s = ut + \\frac{1}{2}at^2$ with a = g — the same three equations.\n- **To Topic 10:** projectile motion is free fall superposed on uniform horizontal motion.\n- **To Energy (Unit 5):** conservation of energy verified for a freely falling body — mgh converts to ½mv² (NEB 2020 asks exactly this).\n- **To Gravitation (Unit 8):** g's value and its variation with altitude/depth are gravitation topics; here g is a constant.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Kinematics | Free fall | A stone is dropped from a height of 200 m. Calculate: (i) the time it takes to hit the ground, (ii) its velocity on impact. (g = 10 m/s²) | 3 | Numerical |\n\n*(The 2020 question \"State the law of conservation of energy and verify it for a freely falling body\" belongs to the energy topic but is also free-fall material — it will be cited there.)*\n\n### 4.2 Model answer\n\n**Q (3m, 2023):** see worked numerical in §2 — t = √40 ≈ 6.32 s; v = √(2gh) = √4000 ≈ 63.2 m/s downward. (With g = 10 m/s², air resistance neglected.)\n\n### 4.3 Common examination mistakes\n\n1. Mixing sign conventions mid-problem — pick up-positive or down-positive and hold it.\n2. Using v = u + at with u = 0 forgotten for dropped bodies.\n3. Giving the impact velocity without its direction.\n4. Forgetting that mass never enters free-fall kinematics (no air resistance).\n5. Confusing time of flight (2u/g) with time to maximum height (u/g)."
   ],
   "confusion": [
-    "❌ 'Heavier bodies fall faster.' ✅ In free fall ALL bodies have the same acceleration $g$; observed differences come from air resistance — demonstrated by the Apollo 15 hammer–feather drop on the Moon.",
-    "❌ 'At the top of the flight, acceleration is zero because the body stops.' ✅ $v = 0$ but $a = g$ downward at ALL points of the flight. If $a$ were zero at the top, the body would stay there!",
-    "❌ Using $g = -10$ m/s² AND taking $h$ positive upward in $h = \\tfrac{1}{2}gt^2$. ✅ Put the sign in ONCE: either $g$ negative with up positive, or down positive with $g$ positive — never both conventions mixed.",
-    "❌ 'A body thrown up takes longer to rise than to fall.' ✅ Without air resistance the times are EXACTLY equal ($u/g$ each way); with air resistance the fall takes LONGER, not the rise.",
-    "❌ 'Velocity on returning to the thrower is less than the launch speed.' ✅ Equal in magnitude (symmetry). Only air resistance or bounce changes it.",
-    "❌ Treating 'dropped' and 'thrown down' identically. ✅ Dropped means $u = 0$; thrown down means $u \\ne 0$ downward — the equations differ by that initial term."
+    "**Dropped vs thrown down:** dropped means u = 0; thrown down means u ≠ 0 downward — different v and t.",
+    "**Time to top vs time of flight:** t_up = u/g; total flight T = 2u/g — double, by symmetry."
   ],
   "practice": [
-    "A stone is thrown up at 29.4 m/s. Find (a) max height, (b) time to top, (c) total flight time ($g = 9.8$). — (a) 44.1 m; (b) 3 s; (c) 6 s.",
-    "A ball dropped from a tower takes 2.5 s to land. Find the tower height and impact speed ($g = 10$). — $h = 31.25$ m; $v = 25$ m/s.",
-    "A body is thrown down at 4 m/s from a 50 m building. When does it land and at what speed? — $50 = 4t + 5t^2 \\Rightarrow t = 2.78$ s; $v = 4 + 10(2.78) \\approx 31.8$ m/s.",
-    "A ball thrown up passes a window at 10 m/s going up. When does it pass the window again (same speed downward)? — By symmetry it returns with 10 m/s; time gap $= 2u/g = 2$ s.",
-    "From a lift descending at 4 m/s, a coin is dropped. Relative to the lift floor, describe its motion; relative to the ground, find its acceleration. — Relative to lift: falls with $g$ from rest; relative to ground: $u = 4$ m/s down, $a = g$ down."
+    "Why does a crumpled paper fall slower than a flat sheet?"
   ],
   "universalFacts": [
-    "Apollo 15 commander David Scott dropped a hammer and falcon feather on the Moon (1971): both hit the dust together — the most-watched verification that $g$ is mass-independent.",
-    "Vacuum-tube 'Guinea and feather' demonstrations in classrooms reproduce the same result; air resistance, not gravity, distinguishes everyday falls.",
-    "$g$ varies over Earth: about 9.78 m/s² at the equator and 9.83 m/s² at the poles — precise free-fall experiments are used by geophysicists to survey underground density (gravimetry).",
-    "Skydivers reach terminal velocity (~55 m/s belly-down) only because air resistance grows with speed; in free fall proper, speed would grow by 9.8 m/s every second without limit."
+    "Galileo's Leaning Tower demonstration (probably apocryphal but conceptually right): two different masses hit the ground together."
   ],
   "animation3D": "kinematics",
   "motionGraphics": "kinematics",
   "examples": [
-    "Example 1 (dropped): a mango falls from a 20 m tree — $t = \\sqrt{2h/g} = \\sqrt{4} = 2$ s; strikes at $v = \\sqrt{2(10)(20)} = 20$ m/s.",
-    "Example 2 (thrown up): a ball goes up at 15 m/s — top after 1.5 s, $h_{max} = 11.25$ m, back in hand after 3 s at 15 m/s (symmetry).",
-    "Example 3 (through a window): a ball dropped past a 2 m window takes 0.1 s — speed at window top $\\approx \\frac{2}{0.1} - \\tfrac{1}{2}(10)(0.1) \\approx 19.5$ m/s, hence fall height $\\approx 19$ m.",
-    "Example 4 (two balls): one dropped and one thrown down at 10 m/s from the same tower stay $10t$ apart — both gain speed at $g$; the throw only adds a constant offset.",
-    "Example 5 (lift): a lift falls freely — objects inside float relative to the cabin because both cabin and objects have $a = g$ (weightlessness in free fall)."
+    "***Stone dropped from 200 m*** — t = 6.32 s, v = 63.2 m/s (NEB 2023, g = 10)."
   ],
   "practiceQuestions": [
-    "Q1. Prove that the time of ascent equals the time of descent for a body projected vertically upward (neglect air resistance).",
-    "Q2. A stone dropped from a bridge strikes the water in 3 s. Find the bridge height and the striking velocity ($g = 10$).",
-    "Q3. A ball is thrown upward and rises 45 m. Find its initial speed and total time of flight.",
-    "Q4. Show that a body thrown up returns to the starting point with the same speed, using $v^2 = u^2 - 2gh$.",
-    "Q5. A coin is dropped from a lift moving up at constant velocity 6 m/s. Find its acceleration relative to (a) the lift, (b) the ground."
+    "**Numerical (3m): A ball is thrown upward at 29.4 m/s. Find the maximum height and total time of flight (g = 9.8 m/s²).** — h_max = u²/2g = 29.4²/19.6 = 44.1 m; T = 2u/g = 58.8/9.8 = 6 s."
   ],
   "formulas": [
-    "Dropped from rest: $v = gt$, $h = \\tfrac{1}{2}gt^2$, $v = \\sqrt{2gh}$",
-    "Thrown up (up positive): $v = u - gt$, $h = ut - \\tfrac{1}{2}gt^2$, $v^2 = u^2 - 2gh$",
-    "Maximum height: $h_{max} = \\dfrac{u^2}{2g}$ (at $v = 0$)",
-    "Times: $t_{up} = t_{down} = \\dfrac{u}{g}$, total flight $T = \\dfrac{2u}{g}$",
-    "$n$-th second fall distance: $s_n = \\tfrac{g}{2}(2n - 1)$ — ratio $1:3:5:7\\ldots$"
+    "- Dropped: h = ½gt²; v = √(2gh)\n- Thrown up: t_up = u/g; h_max = u²/2g; T = 2u/g\n- Sign convention: up positive → a = −g"
   ],
   "keyPoints": [
-    "Free fall acceleration $g$ is independent of mass, size and material.",
-    "At every instant of the flight, $a = g$ downward — including the top ($v = 0$, $a \\ne 0$).",
-    "Up–down symmetry: equal speeds at equal heights, equal times up and down.",
-    "Use ONE sign convention throughout a problem; put $g$'s sign in consistently.",
-    "'Dropped' = $u = 0$; 'thrown' = $u \\ne 0$ — the equations differ by the $ut$ term.",
-    "Air resistance is neglected in free fall; it is what produces terminal velocity in reality."
+    "Free fall: a = g ≈ 9.8 (or 10) m/s² downward, independent of mass.",
+    "Dropped: h = ½gt², v = √(2gh). Thrown up: t_up = u/g, h_max = u²/2g, T = 2u/g.",
+    "Fix one sign convention and keep it through the whole problem."
   ],
-  "summary": "Free fall is uniform acceleration $g$ with no air resistance: all bodies fall alike. With one consistent sign convention, the three equations of motion give every free-fall result — dropped bodies ($h = \\tfrac{1}{2}gt^2$, $v = \\sqrt{2gh}$), bodies thrown up ($h_{max} = u^2/2g$, $T = 2u/g$), and mixed cases. The up–down symmetry (equal times and speeds) is the key structural insight, and $v = 0$ with $a = g$ at the top is the classic conceptual test point.",
+  "summary": "Free fall strips motion to its essence: constant acceleration g ≈ 9.8 m/s² downward, independent of mass. With one sign convention held throughout, the equations of motion specialise: a dropped body falls $h = \\frac{1}{2}gt^2$ and hits at $v = \\sqrt{2gh}$ — a stone from 200 m takes 6.32 s and lands at 63.2 m/s (NEB 2023, g = 10). A body thrown up with speed u rises for $u/g$ seconds to $h_{max} = u^2/2g$ and returns after $T = 2u/g$ with equal and opposite velocity. Mass never enters; air resistance is the only spoiler. The same motion verifies conservation of energy — mgh becoming ½mv² — and is the vertical half of every projectile.",
   "specialNotes": [
     "Note 1: Take $g = 9.8$ m/s² unless the question says 10 — and say which you used.",
     "Note 2: For a body thrown up, do not put $t = T/2$ anywhere except the top; the position equation is valid for the whole flight.",
@@ -83,29 +46,16 @@
     "Note 4: Two-body fall problems: write $y_1(t)$ and $y_2(t)$ with one origin; separation is their difference — accelerations add no relative change if both are $g$."
   ],
   "importantStatements": [
-    "Statement 1: In free fall, every body accelerates at $g$ regardless of its mass — gravity acts identically on all masses.",
-    "Statement 2: At the highest point of vertical flight the velocity is zero but the acceleration is still $g$ downward.",
-    "Statement 3: Neglecting air resistance, the time of ascent equals the time of descent, and the body returns with its launch speed.",
-    "Statement 4: A body falling from rest covers distances in the ratio 1 : 3 : 5 : 7 in successive equal time intervals."
+    "\"Free fall forgets the mass — only g remains.\""
   ],
   "importantNotes": [
-    "Note 1: Fix one positive direction per problem; the sign of $g$ follows from it (up positive ⇒ $a = -g$).",
-    "Note 2: $v = \\sqrt{2gh}$ gives impact speed without needing time — quickest route for drop problems.",
-    "Note 3: Inside a freely falling lift, objects appear weightless — relative acceleration between cabin and objects is zero.",
-    "Note 4: Real falls approach terminal velocity because air resistance grows with speed; the free-fall model ignores this."
+    "Verified PYQ: dropped stone numerical (2023, 3m). The 2020 energy-verification question uses the same motion."
   ],
   "examShortTricks": [
-    "Trick 1: 'Maximum height' ⇒ remember $u^2/2g$; 'time to top' ⇒ $u/g$; both come from $v = 0$ in the first and third equations.",
-    "Trick 2: Total flight time of a return throw: $T = 2u/g$ — read the word 'returns' and write it instantly.",
-    "Trick 3: For drops, ratio the times: heights fallen in $t$, $2t$, $3t$ are in ratio $1:4:9$; per-second distances $1:3:5$.",
-    "Trick 4: Sign shortcut: throw up ⇒ $a$ enters negative; throw down or drop ⇒ $a$ and motion share sign — no algebra mistakes.",
-    "Trick 5: Ball dropped from a moving lift: relative to the lift it simply falls from rest ($g$) — use the lift frame to halve the work."
+    "\"v = √(2gh) — the two-line answer for dropped bodies.\""
   ],
   "examNotes": [
-    "Exam Tip 1: NEB loves the ascent = descent proof — quote $v = u - gt$ at top and bottom points and use symmetry.",
-    "Exam Tip 2: In 'velocity on reaching ground' questions, prefer $v^2 = u^2 + 2gh$; finding $t$ first wastes a step and invites rounding error.",
-    "Exam Tip 3: Always sketch the motion (up, top, down) and mark $v = 0$ at the top — diagrams earn marks and prevent sign slips.",
-    "Exam Tip 4: State 'neglecting air resistance' in theory answers — it defines the free-fall model."
+    "Most-tested: drop numericals (2023). Also expect thrown-up questions (h_max, T) and the energy verification (2020)."
   ],
   "mcs": [
     {
@@ -162,11 +112,7 @@
     }
   ],
   "importantConcepts": [
-    "Concept 1: Universality of free fall — $g$ is the same for all masses (Galileo).",
-    "Concept 2: Sign-convention discipline — one axis, one consistent $g$ sign per problem.",
-    "Concept 3: Top-of-flight state — $v = 0$, $a = g$: zero velocity is not zero acceleration.",
-    "Concept 4: Up–down symmetry — equal times and speeds at equal heights.",
-    "Concept 5: Odd-number/1:4:9 patterns for falls from rest — quick checks on fall distances."
+    "**Mass never appears:** in vacuum a feather and a hammer fall identically — Apollo 15 proved it on the Moon."
   ],
   "importantTasks": [
     "Task 1: Solve five thrown-up problems: $h_{max}$, $t_{up}$, $T$, and return speed, all from $u$ and $g$.",
@@ -222,5 +168,142 @@
         ]
       }
     ]
-  }
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Cleanest Laboratory in Physics\n\nDrop anything near Earth's surface and, ignoring air resistance, it falls with the same constant acceleration g ≈ 9.8 m/s² — regardless of mass. Free fall is the equations of motion with a fixed a, and its sign bookkeeping (up positive or down positive) is the examinable skill.",
+      "## 2. Fundamental Concepts\n\n- **Free fall:** motion under gravity alone (no air resistance, no thrust).\n- **g ≈ 9.8 m/s²** (often taken as 10 m/s² in NEB numericals) directed **downward** everywhere near the surface; independent of mass, size, material (Galileo's result).\n- **Sign convention:** choose one positive direction and keep it. With **up positive**: a = −g; with **down positive**: a = +g.\n\n| Situation (up positive) | Equations |\n|---|---|\n| Dropped from rest | $v = -gt$; $h_{down} = \\frac{1}{2}gt^2$; $v = -\\sqrt{2gh}$ at ground |\n| Thrown up with u | $v = u - gt$; $h = ut - \\frac{1}{2}gt^2$ |\n| At maximum height | $v = 0 → t_{up} = u/g$; $h_{max} = u^2/2g$ |\n| Time of flight (return to start) | $T = 2u/g$ |\n| Velocity on return | same magnitude as u, opposite direction |\n\n**Worked numerical (NEB 2023, 3m):** A stone is dropped from a height of 200 m. Calculate (i) the time to hit the ground, (ii) the velocity on impact. (g = 10 m/s²)\n*Given:* u = 0, h = 200 m (down positive), a = g = 10 m/s².\n*Substitution:* (i) $h = \\frac{1}{2}gt^2 → 200 = 5t^2 → t^2 = 40 → t = 6.32$ s.\n(ii) $v = gt = 10 \\times 6.32 = 63.2$ m/s (or $v = \\sqrt{2gh} = \\sqrt{4000} = 63.2$ m/s).\n*Answer:* **t ≈ 6.32 s, v ≈ 63.2 m/s downward.**",
+      "## 3. Conceptual Relationships\n\n- **To Topic 8:** free fall is $s = ut + \\frac{1}{2}at^2$ with a = g — the same three equations.\n- **To Topic 10:** projectile motion is free fall superposed on uniform horizontal motion.\n- **To Energy (Unit 5):** conservation of energy verified for a freely falling body — mgh converts to ½mv² (NEB 2020 asks exactly this).\n- **To Gravitation (Unit 8):** g's value and its variation with altitude/depth are gravitation topics; here g is a constant.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Kinematics | Free fall | A stone is dropped from a height of 200 m. Calculate: (i) the time it takes to hit the ground, (ii) its velocity on impact. (g = 10 m/s²) | 3 | Numerical |\n\n*(The 2020 question \"State the law of conservation of energy and verify it for a freely falling body\" belongs to the energy topic but is also free-fall material — it will be cited there.)*\n\n### 4.2 Model answer\n\n**Q (3m, 2023):** see worked numerical in §2 — t = √40 ≈ 6.32 s; v = √(2gh) = √4000 ≈ 63.2 m/s downward. (With g = 10 m/s², air resistance neglected.)\n\n### 4.3 Common examination mistakes\n\n1. Mixing sign conventions mid-problem — pick up-positive or down-positive and hold it.\n2. Using v = u + at with u = 0 forgotten for dropped bodies.\n3. Giving the impact velocity without its direction.\n4. Forgetting that mass never enters free-fall kinematics (no air resistance).\n5. Confusing time of flight (2u/g) with time to maximum height (u/g)."
+    ],
+    "confusion": [
+      "**Dropped vs thrown down:** dropped means u = 0; thrown down means u ≠ 0 downward — different v and t.",
+      "**Time to top vs time of flight:** t_up = u/g; total flight T = 2u/g — double, by symmetry."
+    ],
+    "keyPoints": [
+      "Free fall: a = g ≈ 9.8 (or 10) m/s² downward, independent of mass.",
+      "Dropped: h = ½gt², v = √(2gh). Thrown up: t_up = u/g, h_max = u²/2g, T = 2u/g.",
+      "Fix one sign convention and keep it through the whole problem."
+    ],
+    "importantConcepts": [
+      "**Mass never appears:** in vacuum a feather and a hammer fall identically — Apollo 15 proved it on the Moon."
+    ],
+    "examples": [
+      "***Stone dropped from 200 m*** — t = 6.32 s, v = 63.2 m/s (NEB 2023, g = 10)."
+    ],
+    "universalFacts": [
+      "Galileo's Leaning Tower demonstration (probably apocryphal but conceptually right): two different masses hit the ground together."
+    ],
+    "importantStatements": [
+      "\"Free fall forgets the mass — only g remains.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: dropped stone numerical (2023, 3m). The 2020 energy-verification question uses the same motion."
+    ],
+    "examShortTricks": [
+      "\"v = √(2gh) — the two-line answer for dropped bodies.\""
+    ],
+    "examNotes": [
+      "Most-tested: drop numericals (2023). Also expect thrown-up questions (h_max, T) and the energy verification (2020)."
+    ],
+    "formulas": [
+      "- Dropped: h = ½gt²; v = √(2gh)\n- Thrown up: t_up = u/g; h_max = u²/2g; T = 2u/g\n- Sign convention: up positive → a = −g"
+    ],
+    "practice": [
+      "Why does a crumpled paper fall slower than a flat sheet?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A ball is thrown upward at 29.4 m/s. Find the maximum height and total time of flight (g = 9.8 m/s²).** — h_max = u²/2g = 29.4²/19.6 = 44.1 m; T = 2u/g = 58.8/9.8 = 6 s."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "A stone dropped from 200 m (g = 10 m/s²) hits the ground after about:",
+      "options": [
+        "4.5 s",
+        "6.3 s",
+        "10 s",
+        "20 s"
+      ],
+      "answer": "B",
+      "explanation": "t = √(2h/g) = √40 = 6.32 s (NEB 2023)."
+    },
+    {
+      "question": "Its impact speed is:",
+      "options": [
+        "40 m/s",
+        "63.2 m/s",
+        "100 m/s",
+        "200 m/s"
+      ],
+      "answer": "B",
+      "explanation": "v = √(2gh) = √4000 = 63.2 m/s."
+    },
+    {
+      "question": "The time to reach maximum height for u thrown up is:",
+      "options": [
+        "u/g",
+        "2u/g",
+        "g/u",
+        "u²/2g"
+      ],
+      "answer": "A",
+      "explanation": "v = u − gt = 0 → t_up = u/g."
+    },
+    {
+      "question": "The total time of flight is:",
+      "options": [
+        "u/g",
+        "2u/g",
+        "u²/g",
+        "√(2u/g)"
+      ],
+      "answer": "B",
+      "explanation": "By symmetry the fall takes the same time: T = 2u/g."
+    },
+    {
+      "question": "Two bodies of different masses dropped together in vacuum:",
+      "options": [
+        "Heavier lands first",
+        "Lighter lands first",
+        "Land together",
+        "Never land"
+      ],
+      "answer": "C",
+      "explanation": "Free-fall acceleration is mass-independent — Galileo's principle."
+    },
+    {
+      "question": "With up chosen positive, a freely falling body has acceleration:",
+      "options": [
+        "+g",
+        "−g",
+        "0",
+        "g/2"
+      ],
+      "answer": "B",
+      "explanation": "Acceleration points downward — negative in the up-positive convention."
+    },
+    {
+      "question": "The maximum height of a body thrown up at u is:",
+      "options": [
+        "u²/g",
+        "u²/2g",
+        "2u²/g",
+        "u/2g"
+      ],
+      "answer": "B",
+      "explanation": "v² = u² − 2gh at the top → h_max = u²/2g."
+    },
+    {
+      "question": "A ball returns to the thrower with velocity:",
+      "options": [
+        "u, same direction",
+        "−u (equal magnitude, opposite direction)",
+        "Zero",
+        "2u"
+      ],
+      "answer": "B",
+      "explanation": "Symmetric flight returns it with equal speed downward."
+    }
+  ]
 }

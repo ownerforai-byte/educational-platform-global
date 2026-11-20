@@ -7,93 +7,56 @@
   "duplicateType": 2,
   "tabGroup": "instantaneous-velocity-acceleration",
   "notes": [
-    "**Type 2 — alternate treatment:** this version complements the original note with the limit-definition approach, calculus forms and graphical slope reasoning for instantaneous velocity and acceleration.",
-    "**Average quantities first:** average velocity $v_{avg} = \\frac{\\Delta x}{\\Delta t}$ uses the whole interval; average acceleration $a_{avg} = \\frac{\\Delta v}{\\Delta t}$ likewise. They smooth out everything that happened in between — a car doing 100 km in 2 h has $v_{avg} = 50$ km/h regardless of traffic.",
-    "**The limit idea:** instantaneous velocity is the average velocity as $\\Delta t \\to 0$: $v = \\lim_{\\Delta t \\to 0}\\frac{\\Delta x}{\\Delta t} = \\frac{dx}{dt}$. It answers 'how fast RIGHT NOW' — exactly what a speedometer reads.",
-    "**Instantaneous acceleration:** $a = \\lim_{\\Delta t \\to 0}\\frac{\\Delta v}{\\Delta t} = \\frac{dv}{dt} = \\frac{d^2x}{dt^2}$. Acceleration is the derivative of velocity — the 'slope of the slope'.",
-    "**Graphical meaning:** on an $x$–$t$ graph, velocity = slope of the tangent at the instant (not the chord); on a $v$–$t$ graph, acceleration = slope of the tangent, and the AREA under the curve between two times gives the displacement.",
-    "**Sign reasoning:** $v > 0$ → moving forward; $v < 0$ → moving backward; $a > 0$ with $v > 0$ → speeding up; $a > 0$ with $v < 0$ → slowing down (a negative velocity becoming more negative). 'Slowing down' means $v$ and $a$ have OPPOSITE signs — the classic exam trap.",
-    "**Worked calculus example:** $x(t) = 5t^2 - 3t$. Then $v = dx/dt = 10t - 3$ and $a = dv/dt = 10\\,\\text{m/s}^2$ (constant). At $t = 2$ s: $v = 17$ m/s; the particle is momentarily at rest when $t = 0.3$ s.",
-    "**Uniform vs non-uniform acceleration:** if $a$ is constant the SUVAT equations apply; if $a$ varies with time, position or velocity, only the calculus definitions (or graphs) work. This is why the derivative definition is the more general and more fundamental one.",
-    "**NEB exam focus:** define instantaneous velocity/acceleration as limits; differentiate a given $x(t)$; find when a particle is at rest or reverses; convert between $x$–$t$, $v$–$t$ and $a$–$t$ graphs (slopes and areas).",
-    "# Instantaneous velocity and acceleration\n\n## 1. Introduction\nPhysical picture of **Instantaneous velocity and acceleration** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Kinematics fill pass.\n\n## 2. Concepts and laws\n### Instantaneous velocity and acceleration\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Instantaneous velocity and acceleration — motion graphs with slope and area marked (authored SVG, plotted from note data)\n- **D2** — Instantaneous velocity and acceleration — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Instantaneous velocity and acceleration — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Instantaneous velocity and acceleration — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — From Average to Instantaneous\n\nA car's speedometer does not show its average speed over the whole trip; it shows the velocity **right now**. Defining velocity and acceleration at an instant — as limits of shrinking time intervals — is the conceptual heart of kinematics, and the gateway to calculus-based physics.",
+    "## 2. Fundamental Concepts (NEB 2024)\n\n| Quantity | Definition | Unit | Nature |\n|---|---|---|---|\n| **Position** ($\\vec r$) | Location relative to an origin, with direction | m | Vector |\n| **Displacement** ($\\Delta\\vec r$) | Change of position: final − initial | m | Vector |\n| **Average velocity** | $\\vec v_{av} = \\Delta\\vec r/\\Delta t$ over a finite interval | m/s | Vector |\n| **Instantaneous velocity** | $\\vec v = \\lim_{\\Delta t \\to 0}\\Delta\\vec r/\\Delta t = d\\vec r/dt$ — velocity at an instant | m/s | Vector |\n| **Average acceleration** | $\\vec a_{av} = \\Delta\\vec v/\\Delta t$ | m/s² | Vector |\n| **Instantaneous acceleration** | $\\vec a = \\lim_{\\Delta t\\to 0}\\Delta\\vec v/\\Delta t = d\\vec v/dt$ | m/s² | Vector |\n\n**Key distinctions:**\n- **Speed** (scalar) = path length/time; **velocity** (vector) = displacement/time. A body in circular motion at constant speed has continuously changing velocity.\n- A body can have zero velocity and non-zero acceleration **at an instant** (a ball at the top of its vertical flight: v = 0, a = g downward).\n- Negative acceleration means acceleration opposite to the chosen positive direction — not necessarily \"slowing\".",
+    "## 3. Graphical Meaning\n\n- On a **position–time graph**, instantaneous velocity is the **slope of the tangent** at that instant (average velocity is the slope of the chord).\n- On a **velocity–time graph**, instantaneous acceleration is the slope of the tangent; the **area under the v–t curve** gives displacement.\n\n**Worked numerical (NEB 2014, 3m):** A car accelerates uniformly from rest to 20 m/s in 10 s. Find its acceleration and the distance covered.\n*Given:* u = 0, v = 20 m/s, t = 10 s.\n*Formula:* $a = (v-u)/t$; $s = ut + \\frac{1}{2}at^2$.\n*Substitution:* $a = 20/10 = 2$ m/s²; $s = 0 + \\frac{1}{2}(2)(10^2) = 100$ m.\n*Answer:* **a = 2 m/s², s = 100 m.**",
+    "## 4. Conceptual Relationships\n\n- **To Topic 7:** relative velocity is velocity measured from a moving frame.\n- **To Topic 8:** the equations of motion are the integrals of constant acceleration — the graphical treatment makes this visible.\n- **To Vectors:** velocity and acceleration are vectors; components are handled by resolution.\n- **To Calculus (Maths):** $v = dr/dt$, $a = dv/dt$ — kinematics is applied differentiation.",
+    "## 5. Exam Orientation and Previous Year Questions (NEB)\n\n### 5.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Kinematics | Definitions | Define position, velocity, and acceleration in kinematics. | 2 | Definition |\n| 2071/2014 | Kinematics | Uniform acceleration | A car accelerates uniformly from rest to 20 m s⁻¹ in 10 s. Find its acceleration and the distance covered. | 3 | Numerical |\n\n### 5.2 Model answers\n\n**Q1 (2m, 2024):** **Position** is the location of a body relative to a chosen origin, expressed with direction (a vector, in metres). **Velocity** is the rate of change of position — $v = \\lim_{\\Delta t\\to 0}\\Delta r/\\Delta t = dr/dt$ (m/s). **Acceleration** is the rate of change of velocity — $a = dv/dt$ (m/s²). All three are vector quantities.\n\n**Q2 (3m, 2014):** see worked numerical in §3 — a = 2 m/s², s = 100 m.\n\n### 5.3 Common examination mistakes\n\n1. Confusing speed with velocity — speed has no direction.\n2. Saying a body at the top of vertical flight has zero acceleration — v = 0 but a = g.\n3. Using average velocity when the question asks for instantaneous velocity (tangent slope).\n4. Forgetting that acceleration is a vector — direction must be stated or implied by sign.\n5. Treating \"negative acceleration\" as always deceleration."
   ],
   "confusion": [
-    "❌ 'Instantaneous velocity equals average velocity.' ✅ Only when motion is uniform. In general $v_{inst} = dx/dt$ while $v_{avg} = \\Delta x/\\Delta t$; they coincide only if the $x$–$t$ graph is a straight line.",
-    "❌ 'Negative acceleration always means slowing down.' ✅ Slowing means $v$ and $a$ have OPPOSITE signs. A ball thrown upward (up = positive) has $v > 0$ with $a = -g$ — it slows going up and speeds up coming down, with the SAME downward acceleration throughout.",
-    "❌ 'The area under an $x$–$t$ graph gives velocity.' ✅ The SLOPE of $x$–$t$ gives velocity; the AREA under a $v$–$t$ graph gives displacement. Mixing these up is the classic graph-question error.",
-    "❌ 'At the turning point, acceleration is zero.' ✅ At a reversal, $v = 0$ but $a$ is NOT zero (e.g. a ball at the top of its flight has $v = 0$, $a = g$ downward). Zero velocity ≠ zero acceleration.",
-    "❌ 'Speed can be negative.' ✅ Speed is $|v|$, always non-negative; velocity carries the sign (direction).",
-    "❌ 'If $v = 0$ at an instant, the particle has stopped permanently.' ✅ $v = 0$ can be a momentary pause (top of a throw) — check the acceleration to know what happens next."
+    "**Speed vs velocity:** speed is the scalar path-length rate; velocity is the vector displacement rate — equal only in straight-line motion without reversal.",
+    "**Zero velocity vs zero acceleration:** at the top of a vertical throw v = 0 but a = g downward; in uniform velocity motion a = 0."
   ],
   "practice": [
-    "Given $x(t) = 4t^3 - 2t^2 + 5$ (m): find $v(t)$ and $a(t)$; evaluate at $t = 1$ s. — $v = 12t^2 - 4t = 8$ m/s; $a = 24t - 4 = 20$ m/s².",
-    "A particle's velocity is $v(t) = 6t - 3t^2$ (m/s). When is it instantaneously at rest, and what is its acceleration then? — $t = 0$ or $2$ s; at $t = 2$: $a = 6 - 6t = -6$ m/s².",
-    "From a $v$–$t$ graph consisting of a straight line from (0, 4) to (4, 12) m/s, find the acceleration and the displacement in 4 s. — $a = 2$ m/s²; displacement = area $= \\frac{4+12}{2}\\times4 = 32$ m.",
-    "A stone is thrown up at 20 m/s ($g = 10$ m/s²). Find its velocity and acceleration at the highest point. — $v = 0$; $a = 10$ m/s² downward — zero velocity, non-zero acceleration.",
-    "The position of two trains is $x_1 = 20t$ and $x_2 = 5t^2$ (m). When are their instantaneous velocities equal, and where? — $20 = 10t$ → $t = 2$ s at $x = 40$ m."
+    "Can a body have constant speed and non-zero acceleration?"
   ],
   "universalFacts": [
-    "Calculus was invented (Newton and Leibniz, 1660s–70s) precisely to handle instantaneous quantities — physics and calculus were born together, and Newton's name for the derivative was the 'fluxion'.",
-    "Car speedometers show instantaneous speed, while trip computers computing distance ÷ time show average speed — the two can differ enormously in city traffic.",
-    "Radar guns and GPS speed trackers estimate instantaneous velocity by measuring position over very small time windows — a physical implementation of the limit $\\Delta x/\\Delta t$ with $\\Delta t \\to 0$.",
-    "In relativity and quantum mechanics, instantaneous velocity remains fundamental: particle accelerators track beam particles through billions of instantaneous velocity updates per second."
+    "A body can move with increasing speed and decreasing acceleration — acceleration measures how fast velocity changes, not how large velocity is."
   ],
   "animation3D": "kinematics",
   "motionGraphics": "kinematics",
-  "examples": [],
+  "examples": [
+    "***Car from rest to 20 m/s in 10 s*** — a = 2 m/s², s = 100 m (NEB 2014)."
+  ],
   "practiceQuestions": [
-    "Q2. Distinguish between average acceleration and instantaneous acceleration with one example each.",
-    "Q3. For $x(t) = 2t^3 - 9t^2 + 12t$ (m), find when the velocity is zero and classify each instant (pause vs reversal).",
-    "Q4. Sketch the $v$–$t$ graph for a ball thrown vertically upward and returning; mark where $v = 0$ and the sign of $a$ throughout.",
-    "Q5. A particle moves with $v = kt$ where $k = 2$ m/s². Find its instantaneous acceleration and displacement after 3 s from rest."
+    "**Numerical (3m): A car moving at 10 m/s accelerates uniformly at 2 m/s² for 4 s. Find the final velocity and distance travelled.** — v = u + at = 10 + 2×4 = 18 m/s; s = ut + ½at² = 10×4 + ½×2×16 = 40 + 16 = 56 m (NEB 2023)."
   ],
   "formulas": [
-    "Instantaneous velocity: $v = \\lim_{\\Delta t \\to 0}\\frac{\\Delta x}{\\Delta t} = \\frac{dx}{dt}$",
-    "Instantaneous acceleration: $a = \\frac{dv}{dt} = \\frac{d^2x}{dt^2}$",
-    "Displacement from velocity: $x_2 - x_1 = \\int_{t_1}^{t_2} v\\,dt$ (area under $v$–$t$ curve)",
-    "Velocity from acceleration: $v_2 - v_1 = \\int_{t_1}^{t_2} a\\,dt$",
-    "Rest condition: $v = \\frac{dx}{dt} = 0$; reversal check: sign change of $v$ around that instant"
+    "- v = dr/dt; a = dv/dt\n- Average: v_av = Δr/Δt; a_av = Δv/Δt\n- Uniform a: v = u + at; s = ut + ½at²"
   ],
   "keyPoints": [
-    "Instantaneous velocity is the slope of the tangent of the $x$–$t$ graph; instantaneous acceleration is the slope of the $v$–$t$ graph.",
-    "Displacement is the area under the $v$–$t$ graph; change in velocity is the area under the $a$–$t$ graph.",
-    "$v = 0$ does not imply $a = 0$ — turning points have zero velocity but non-zero acceleration.",
-    "Speeding up ⟺ $v$ and $a$ share the same sign; slowing down ⟺ opposite signs.",
-    "Derivatives go down the chain $x \\to v \\to a$; integrals go up $a \\to v \\to x$, using initial conditions.",
-    "The limit definition is valid for ANY motion — SUVAT equations are special cases of constant acceleration only."
+    "Instantaneous velocity v = dr/dt (slope of x–t tangent); instantaneous acceleration a = dv/dt (slope of v–t tangent).",
+    "Area under v–t graph = displacement.",
+    "Uniform acceleration numericals: a = (v−u)/t; s = ut + ½at²."
   ],
-  "summary": "Instantaneous velocity and acceleration are defined as limits: $v = dx/dt$ and $a = dv/dt = d^2x/dt^2$. Graphically, $v$ is the tangent slope of the $x$–$t$ curve and $a$ the tangent slope of the $v$–$t$ curve, while areas under $v$–$t$ and $a$–$t$ curves give displacement and velocity change. These definitions work for all motion — uniform or not — making them more fundamental than the constant-acceleration equations. Key exam skills: differentiating given $x(t)$, locating rest/reversal instants, and reading slopes and areas correctly with attention to signs.",
+  "summary": "Kinematics begins with three vectors: **position** (location from an origin), **velocity** (rate of change of position, $v = dr/dt$) and **acceleration** (rate of change of velocity, $a = dv/dt$). Average values span a finite interval; instantaneous values are their limits as the interval shrinks — the tangent slope on a position–time graph gives instantaneous velocity, the tangent slope on a velocity–time graph gives acceleration, and the area under v–t gives displacement. Speed is velocity without direction; a body can hold zero velocity with full acceleration (top of a vertical throw). Uniform-acceleration numericals flow from $a = (v-u)/t$ and $s = ut + \\frac{1}{2}at^2$ — the NEB 2014 car reaching 20 m/s in 10 s gains a = 2 m/s² and s = 100 m.",
   "specialNotes": [
     "Note 1: Carry units through calculus: if $x$ is in metres and $t$ in seconds, $v$ is m/s and $a$ is m/s² automatically.",
     "Note 2: NEB graph questions award marks for BOTH slope reasoning and area reasoning — label which you used.",
     "Note 3: When integrating acceleration, always determine integration constants from given initial conditions.",
     "Note 4: In 'is the particle speeding up?' questions, compare signs of $v$ and $a$ at that instant — not the sign of $a$ alone."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "\"The speedometer reads instantaneous speed; the odometer averages.\""
+  ],
   "importantNotes": [
-    "Note 1: Zero instantaneous velocity does not imply zero acceleration (turning points).",
-    "Note 2: Instantaneous speed equals the magnitude of instantaneous velocity, but never carries a direction.",
-    "Note 3: For constant acceleration only, $v_{avg} = (u+v)/2$; this shortcut fails when $a$ varies.",
-    "Note 4: The calculus definitions apply to ALL motion; SUVAT equations are the special case of constant $a$."
+    "Verified PYQs: define position/velocity/acceleration (2024, 2m); uniform-acceleration numerical (2014, 3m)."
   ],
   "examShortTricks": [
-    "Trick 1: 'At rest' ⇒ set $dx/dt = 0$ and solve for $t$; then check the sign of $v$ on both sides to classify pause vs reversal.",
-    "Trick 2: In graph MCQs, remember: slope of $x$–$t$ = $v$; slope of $v$–$t$ = $a$; area of $v$–$t$ = $x$; area of $a$–$t$ = $v$.",
-    "Trick 3: If $x(t)$ is a polynomial, differentiate term-by-term ($d(t^n)/dt = nt^{n-1}$) — no formula sheet needed.",
-    "Trick 4: 'Maximum/minimum position' questions ⇒ set $v = dx/dt = 0$, exactly like turning points in calculus.",
-    "Trick 5: Units self-check: differentiate $x$ in metres → $v$ in m/s → $a$ in m/s²; if your units don't cascade, recheck the algebra."
+    "\"Slope of x–t gives v; slope of v–t gives a; area under v–t gives s.\""
   ],
   "examNotes": [
-    "Exam Tip 1: NEB regularly sets 2-3 mark calculus questions: differentiate $x(t)$, evaluate $v$ and $a$ at a given time — show the derivative step explicitly.",
-    "Exam Tip 2: In graph-conversion questions (given $v$–$t$, sketch $x$–$t$), track curvature: constant $v$ → straight $x$ line; linear $v$ → parabolic $x$.",
-    "Exam Tip 3: When asked 'when is the particle at rest', also state the acceleration at that instant — examiners expect the follow-through.",
-    "Exam Tip 4: Define the limit properly in theory questions: shrinking interval, ratio of small changes — vague wording loses marks."
+    "Most-tested: definitions (2024) and two-equation numericals (2014, 2023). Graph-reading questions use slopes and areas."
   ],
   "mcs": [
     {
@@ -148,11 +111,7 @@
     }
   ],
   "importantConcepts": [
-    "Concept 1: Limit definition — instantaneous quantities are average quantities over a vanishing interval.",
-    "Concept 2: Derivative chain: $x \\xrightarrow{d/dt} v \\xrightarrow{d/dt} a$; integrals run the reverse way with initial conditions.",
-    "Concept 3: Graph duality — slopes give rates (v, a); areas give accumulations (x, v).",
-    "Concept 4: Sign logic — direction of motion from sign of $v$; speeding up/slowing down from relative signs of $v$ and $a$.",
-    "Concept 5: Generality — the derivative definitions hold for any acceleration; constant-$a$ equations are a special case."
+    "**The limit is the idea:** instantaneous values are average values over an interval shrunk to zero — the derivative before calculus names it."
   ],
   "importantTasks": [
     "Task 1: Differentiate five polynomial position functions, evaluating $v$ and $a$ at specified instants.",
@@ -207,5 +166,143 @@
         ]
       }
     ]
-  }
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — From Average to Instantaneous\n\nA car's speedometer does not show its average speed over the whole trip; it shows the velocity **right now**. Defining velocity and acceleration at an instant — as limits of shrinking time intervals — is the conceptual heart of kinematics, and the gateway to calculus-based physics.",
+      "## 2. Fundamental Concepts (NEB 2024)\n\n| Quantity | Definition | Unit | Nature |\n|---|---|---|---|\n| **Position** ($\\vec r$) | Location relative to an origin, with direction | m | Vector |\n| **Displacement** ($\\Delta\\vec r$) | Change of position: final − initial | m | Vector |\n| **Average velocity** | $\\vec v_{av} = \\Delta\\vec r/\\Delta t$ over a finite interval | m/s | Vector |\n| **Instantaneous velocity** | $\\vec v = \\lim_{\\Delta t \\to 0}\\Delta\\vec r/\\Delta t = d\\vec r/dt$ — velocity at an instant | m/s | Vector |\n| **Average acceleration** | $\\vec a_{av} = \\Delta\\vec v/\\Delta t$ | m/s² | Vector |\n| **Instantaneous acceleration** | $\\vec a = \\lim_{\\Delta t\\to 0}\\Delta\\vec v/\\Delta t = d\\vec v/dt$ | m/s² | Vector |\n\n**Key distinctions:**\n- **Speed** (scalar) = path length/time; **velocity** (vector) = displacement/time. A body in circular motion at constant speed has continuously changing velocity.\n- A body can have zero velocity and non-zero acceleration **at an instant** (a ball at the top of its vertical flight: v = 0, a = g downward).\n- Negative acceleration means acceleration opposite to the chosen positive direction — not necessarily \"slowing\".",
+      "## 3. Graphical Meaning\n\n- On a **position–time graph**, instantaneous velocity is the **slope of the tangent** at that instant (average velocity is the slope of the chord).\n- On a **velocity–time graph**, instantaneous acceleration is the slope of the tangent; the **area under the v–t curve** gives displacement.\n\n**Worked numerical (NEB 2014, 3m):** A car accelerates uniformly from rest to 20 m/s in 10 s. Find its acceleration and the distance covered.\n*Given:* u = 0, v = 20 m/s, t = 10 s.\n*Formula:* $a = (v-u)/t$; $s = ut + \\frac{1}{2}at^2$.\n*Substitution:* $a = 20/10 = 2$ m/s²; $s = 0 + \\frac{1}{2}(2)(10^2) = 100$ m.\n*Answer:* **a = 2 m/s², s = 100 m.**",
+      "## 4. Conceptual Relationships\n\n- **To Topic 7:** relative velocity is velocity measured from a moving frame.\n- **To Topic 8:** the equations of motion are the integrals of constant acceleration — the graphical treatment makes this visible.\n- **To Vectors:** velocity and acceleration are vectors; components are handled by resolution.\n- **To Calculus (Maths):** $v = dr/dt$, $a = dv/dt$ — kinematics is applied differentiation.",
+      "## 5. Exam Orientation and Previous Year Questions (NEB)\n\n### 5.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Kinematics | Definitions | Define position, velocity, and acceleration in kinematics. | 2 | Definition |\n| 2071/2014 | Kinematics | Uniform acceleration | A car accelerates uniformly from rest to 20 m s⁻¹ in 10 s. Find its acceleration and the distance covered. | 3 | Numerical |\n\n### 5.2 Model answers\n\n**Q1 (2m, 2024):** **Position** is the location of a body relative to a chosen origin, expressed with direction (a vector, in metres). **Velocity** is the rate of change of position — $v = \\lim_{\\Delta t\\to 0}\\Delta r/\\Delta t = dr/dt$ (m/s). **Acceleration** is the rate of change of velocity — $a = dv/dt$ (m/s²). All three are vector quantities.\n\n**Q2 (3m, 2014):** see worked numerical in §3 — a = 2 m/s², s = 100 m.\n\n### 5.3 Common examination mistakes\n\n1. Confusing speed with velocity — speed has no direction.\n2. Saying a body at the top of vertical flight has zero acceleration — v = 0 but a = g.\n3. Using average velocity when the question asks for instantaneous velocity (tangent slope).\n4. Forgetting that acceleration is a vector — direction must be stated or implied by sign.\n5. Treating \"negative acceleration\" as always deceleration."
+    ],
+    "confusion": [
+      "**Speed vs velocity:** speed is the scalar path-length rate; velocity is the vector displacement rate — equal only in straight-line motion without reversal.",
+      "**Zero velocity vs zero acceleration:** at the top of a vertical throw v = 0 but a = g downward; in uniform velocity motion a = 0."
+    ],
+    "keyPoints": [
+      "Instantaneous velocity v = dr/dt (slope of x–t tangent); instantaneous acceleration a = dv/dt (slope of v–t tangent).",
+      "Area under v–t graph = displacement.",
+      "Uniform acceleration numericals: a = (v−u)/t; s = ut + ½at²."
+    ],
+    "importantConcepts": [
+      "**The limit is the idea:** instantaneous values are average values over an interval shrunk to zero — the derivative before calculus names it."
+    ],
+    "examples": [
+      "***Car from rest to 20 m/s in 10 s*** — a = 2 m/s², s = 100 m (NEB 2014)."
+    ],
+    "universalFacts": [
+      "A body can move with increasing speed and decreasing acceleration — acceleration measures how fast velocity changes, not how large velocity is."
+    ],
+    "importantStatements": [
+      "\"The speedometer reads instantaneous speed; the odometer averages.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: define position/velocity/acceleration (2024, 2m); uniform-acceleration numerical (2014, 3m)."
+    ],
+    "examShortTricks": [
+      "\"Slope of x–t gives v; slope of v–t gives a; area under v–t gives s.\""
+    ],
+    "examNotes": [
+      "Most-tested: definitions (2024) and two-equation numericals (2014, 2023). Graph-reading questions use slopes and areas."
+    ],
+    "formulas": [
+      "- v = dr/dt; a = dv/dt\n- Average: v_av = Δr/Δt; a_av = Δv/Δt\n- Uniform a: v = u + at; s = ut + ½at²"
+    ],
+    "practice": [
+      "Can a body have constant speed and non-zero acceleration?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A car moving at 10 m/s accelerates uniformly at 2 m/s² for 4 s. Find the final velocity and distance travelled.** — v = u + at = 10 + 2×4 = 18 m/s; s = ut + ½at² = 10×4 + ½×2×16 = 40 + 16 = 56 m (NEB 2023)."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "Instantaneous velocity is:",
+      "options": [
+        "Total distance/total time",
+        "The limit of Δr/Δt as Δt → 0",
+        "Always equal to speed",
+        "The area under the x–t graph"
+      ],
+      "answer": "B",
+      "explanation": "It is the derivative dr/dt — the tangent slope of the position–time graph."
+    },
+    {
+      "question": "At the highest point of a ball thrown vertically upward:",
+      "options": [
+        "v = 0, a = 0",
+        "v = 0, a = g downward",
+        "v = g, a = 0",
+        "v maximum, a = g"
+      ],
+      "answer": "B",
+      "explanation": "Velocity vanishes at the top but gravity keeps acting — a = 9.8 m/s² downward."
+    },
+    {
+      "question": "The area under a velocity–time graph gives:",
+      "options": [
+        "Acceleration",
+        "Displacement",
+        "Jerk",
+        "Force"
+      ],
+      "answer": "B",
+      "explanation": "∫v dt = displacement."
+    },
+    {
+      "question": "A car goes from rest to 20 m/s in 10 s. Its acceleration is:",
+      "options": [
+        "1 m/s²",
+        "2 m/s²",
+        "5 m/s²",
+        "20 m/s²"
+      ],
+      "answer": "B",
+      "explanation": "a = (20 − 0)/10 = 2 m/s² (NEB 2014)."
+    },
+    {
+      "question": "Which pair are both vectors?",
+      "options": [
+        "Speed and distance",
+        "Velocity and acceleration",
+        "Distance and displacement",
+        "Speed and acceleration"
+      ],
+      "answer": "B",
+      "explanation": "Velocity and acceleration both carry direction; speed and distance are scalars."
+    },
+    {
+      "question": "A body with negative acceleration:",
+      "options": [
+        "Always moves backward",
+        "Has acceleration opposite to the chosen positive direction",
+        "Must be slowing in every frame",
+        "Has zero velocity"
+      ],
+      "answer": "B",
+      "explanation": "The sign is relative to the axis choice — 'deceleration' depends on the direction of motion."
+    },
+    {
+      "question": "Average velocity over an interval equals the slope of:",
+      "options": [
+        "The tangent to the x–t graph",
+        "The chord of the x–t graph",
+        "The tangent to the v–t graph",
+        "The area under v–t"
+      ],
+      "answer": "B",
+      "explanation": "Average velocity is Δr/Δt — the chord slope; instantaneous is the tangent."
+    },
+    {
+      "question": "A body in uniform circular motion has:",
+      "options": [
+        "Constant velocity",
+        "Constant speed and changing velocity",
+        "Zero acceleration",
+        "Constant acceleration magnitude and direction"
+      ],
+      "answer": "B",
+      "explanation": "Speed is constant but direction changes continuously — velocity changes, so acceleration exists."
+    }
+  ]
 }
