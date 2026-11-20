@@ -8,117 +8,78 @@
   "motionGraphics": "gravitation",
   "visualType": "satellite-orbit",
   "notes": [
-    "Escape velocity is the minimum speed at radius r that lets an object reach infinity with zero final speed when no further thrust or drag acts. With gravitational potential energy zero at infinity, energy conservation gives (1/2)mv²−GMm/r=0.",
-    "Solving gives ve=√(2GM/r). At the surface r=R, g=GM/R², so ve=√(2gR). The escaping object’s mass cancels, so the ideal threshold is independent of its mass.",
-    "Worked Earth estimate: g=9.81 m s⁻² and R=6.37×10⁶ m give ve=√(2gR)≈1.12×10⁴ m s⁻¹=11.2 km s⁻¹.",
-    "At altitude h, use r=R+h: ve(h)/ve(0)=√[R/(R+h)]. At h=R, local escape speed is 1/√2 of its surface value.",
-    "Circular orbital speed at the same radius is vc=√(GM/r), so ve=√2 vc. This is an ideal energy threshold; real launches must account for atmosphere, rotation, gravity losses and propulsion.",
-    "Escape velocity is the speed that lets a projectile coast to infinity, where the gravitational potential is taken as zero. It does not depend on the mass of the projectile. From the Earth's surface it is about 11 km/s, which is √2 times the speed of a low circular orbit.",
-    "# Escape velocity\n\n## 1. Introduction\nPhysical picture of **Escape velocity** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Gravitation fill pass.\n\n## 2. Concepts and laws\n### Escape velocity\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Escape velocity — motion graphs with slope and area marked (authored SVG, plotted from note data)\n- **D2** — Escape velocity — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Escape velocity — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Escape velocity — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Speed That Leaves\n\nThrow a ball up and it returns; launch it fast enough and it never comes back. The boundary speed — the escape velocity — depends only on the planet's mass and radius, not on the projectile. It is the speed at which kinetic energy exactly cancels the gravitational binding.",
+    "## 2. Fundamental Concepts (NEB 2022, 2023)\n\n### 2.1 Definition\n\n**Escape velocity** is the minimum velocity with which a body must be projected from a planet's surface so that it escapes the planet's gravitational field completely (reaches infinity with zero speed).\n\n### 2.2 Derivation (NEB 2023, 5m)\n\nBy conservation of mechanical energy (taking potential zero at infinity):\n$$\\underbrace{\\tfrac{1}{2}mv_e^2 - \\frac{GMm}{R}}_{\\text{total energy at surface}} = \\underbrace{0 + 0}_{\\text{at infinity, just escaping}}$$\n$$\\tfrac{1}{2}mv_e^2 = \\frac{GMm}{R} \\Rightarrow \\boxed{v_e = \\sqrt{\\frac{2GM}{R}}}$$\n\nUsing $g = GM/R^2$:\n$$v_e = \\sqrt{2gR}$$\n\n**Value for Earth:** $v_e = \\sqrt{2 \\times 9.8 \\times 6.4\\times10^6} = \\sqrt{1.254\\times10^8} = 1.12 \\times 10^4$ m/s = **11.2 km/s**.\n\n**Key properties:**\n- Independent of the mass of the escaping body and of the direction of projection (neglecting atmosphere).\n- $v_e = \\sqrt{2}\\,v_o$ — escape speed is only 41% more than orbital speed.\n- Smaller/denser bodies can have high escape speeds; the Moon's is 2.4 km/s (why it lost its atmosphere).\n\n### 2.3 Worked numericals\n\n**Q (5m, 2023):** Derive the expression for escape velocity of Earth. Hence calculate its value. (R = 6.4×10⁶ m, g = 9.8 m/s²)\nDerivation as §2.2; $v_e = \\sqrt{2gR} = \\sqrt{2 \\times 9.8 \\times 6.4\\times10^6} = 11.2$ km/s.\n\n**Q (3m, 2022):** Calculate the escape velocity from the surface of a planet whose surface gravity is 5 m/s² and radius is $6 \\times 10^6$ m.\n$$v_e = \\sqrt{2gR} = \\sqrt{2 \\times 5 \\times 6\\times10^6} = \\sqrt{6\\times10^7} = 7.75 \\times 10^3 \\text{ m/s} = 7.75 \\text{ km/s}$$",
+    "## 3. Conceptual Relationships\n\n- **To Topic 30:** the derivation is pure energy conservation with $U = -GMm/r$.\n- **To Topic 33:** $v_e = \\sqrt{2}v_o$ at the same radius.\n- **To atmospheres:** gas molecules with rms speed comparable to $v_e$ leak away over time — why the Moon (2.4 km/s) is airless and Earth (11.2 km/s) kept its air.\n- **To black holes:** when $v_e = c$, nothing escapes — the Schwarzschild criterion.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Mechanics | Gravitation | What is escape velocity? Derive the expression for escape velocity of Earth. Hence calculate its value. (R = 6.4×10⁶ m, g = 9.8 m/s²) | 5 | Definition + derivation + numerical |\n| 2078/2022 | Mechanics | Gravitation | State the concept of escape velocity. Calculate the escape velocity from the surface of a planet whose surface gravity is 5 m/s² and radius is 6×10⁶ m. | 3 | Definition + numerical |\n\n### 4.2 Model answer skeleton (5m)\n\nDefinition (1m) → energy conservation equation (1m–2m) → $v_e = \\sqrt{2GM/R} = \\sqrt{2gR}$ (1m) → substitution → 11.2 km/s (1m).\n\n### 4.3 Common examination mistakes\n\n1. Using $v_e = \\sqrt{gR}$ (that is the orbital speed).\n2. Forgetting the factor 2 in $\\sqrt{2gR}$.\n3. Including the projectile's mass — it cancels.\n4. Claiming direction matters (it doesn't, ignoring air resistance)."
   ],
   "formulas": [
-    "At radius r: ve=√(2GM/r); at surface ve=√(2GM/R)=√(2gR).",
-    "At the same radius, ve=√2 vc where vc=√(GM/r)."
+    "- ½mv_e² = GMm/R → v_e = √(2GM/R) = √(2gR)\n- Earth: v_e = 11.2 km/s\n- v_e = √2 · v_o"
   ],
   "examples": [
-    "Earth: √(2×9.81×6.37×10⁶)≈11.2 km s⁻¹.",
-    "At h=R, ve(h)/ve(0)=1/√2.",
-    "Escape velocity is the speed that lets a projectile coast to infinity, where the gravitational potential is taken as zero. It does not depend on the mass of the projectile. From the Earth's surface it is about 11 km/s, which is √2 times the speed of a low circular orbit.",
-    "The working relations are v_esc = √(2 g R) at the surface and v_esc = √(2 G M / R). Name each symbol, convert the data into SI units, and only then substitute.",
-    "Take g = 10 m/s^2 and R = 6.4 × 10^6 m. Estimate the escape speed from the surface."
+    "***NEB 2022 planet*** — g = 5 m/s², R = 6×10⁶ m → v_e = 7.75 km/s."
   ],
   "practiceQuestions": [
-    "Derive escape speed using energy conservation.",
-    "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
-    "Why is escape speed independent of projectile mass?"
+    "**Numerical (3m): Find the escape velocity from Mars (M = 6.4×10²³ kg, R = 3.4×10⁶ m).** — v_e = √(2GM/R) = √(2×6.67×10⁻¹¹×6.4×10²³/3.4×10⁶) = √(2.51×10⁷) = 5.0 km/s."
   ],
   "keyPoints": [
-    "At escape threshold, total mechanical energy is zero at infinity.",
-    "Use r=R+h for altitude, not the surface radius.",
-    "The orbital-speed relation compares both speeds at the same radius.",
-    "v_esc = √(2 g R) at the surface",
-    "v_esc = √(2 G M / R)",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "$v_e = \\sqrt{2GM/R} = \\sqrt{2gR}$; Earth: 11.2 km/s; Moon: 2.4 km/s.",
+    "$v_e = \\sqrt{2}\\,v_o$; direction-independent (no atmosphere)."
   ],
-  "summary": "Energy conservation gives ve=√(2GM/R)=√(2gR) for an ideal surface launch. It is independent of projectile mass and √2 times circular speed at the same radius.",
+  "summary": "**Escape velocity** is the minimum launch speed that lets a body leave a planet's gravitational field, reaching infinity with zero speed. Energy conservation between the surface and infinity, $\\frac{1}{2}mv_e^2 - \\frac{GMm}{R} = 0$, gives $v_e = \\sqrt{2GM/R} = \\sqrt{2gR}$ — independent of the projectile's mass and direction (NEB 2023, 5m). For Earth, $\\sqrt{2 \\times 9.8 \\times 6.4\\times10^6} = 11.2$ km/s; for a planet with g = 5 m/s² and R = 6×10⁶ m, 7.75 km/s (NEB 2022). Escape speed is $\\sqrt{2}$ times orbital speed, and its ratio to molecular speeds decides whether a world keeps an atmosphere — the Moon's 2.4 km/s could not.",
   "specificConditions": [
     "At altitude h, use r=R+h in v_e=√(2GM/r); do not reuse the surface radius in the general expression.",
     "The derivation assumes no air resistance, spherical symmetry, negligible external bodies and no continuing thrust after launch."
   ],
   "enrichedContent": {
     "notes": [
-      "Escape velocity is the minimum speed at radius r that lets an object reach infinity with zero final speed when no further thrust or drag acts. With gravitational potential energy zero at infinity, energy conservation gives (1/2)mv²−GMm/r=0.",
-      "Solving gives ve=√(2GM/r). At the surface r=R, g=GM/R², so ve=√(2gR). The escaping object’s mass cancels, so the ideal threshold is independent of its mass.",
-      "Worked Earth estimate: g=9.81 m s⁻² and R=6.37×10⁶ m give ve=√(2gR)≈1.12×10⁴ m s⁻¹=11.2 km s⁻¹.",
-      "At altitude h, use r=R+h: ve(h)/ve(0)=√[R/(R+h)]. At h=R, local escape speed is 1/√2 of its surface value.",
-      "Circular orbital speed at the same radius is vc=√(GM/r), so ve=√2 vc. This is an ideal energy threshold; real launches must account for atmosphere, rotation, gravity losses and propulsion."
+      "## 1. Topic Introduction — The Speed That Leaves\n\nThrow a ball up and it returns; launch it fast enough and it never comes back. The boundary speed — the escape velocity — depends only on the planet's mass and radius, not on the projectile. It is the speed at which kinetic energy exactly cancels the gravitational binding.",
+      "## 2. Fundamental Concepts (NEB 2022, 2023)\n\n### 2.1 Definition\n\n**Escape velocity** is the minimum velocity with which a body must be projected from a planet's surface so that it escapes the planet's gravitational field completely (reaches infinity with zero speed).\n\n### 2.2 Derivation (NEB 2023, 5m)\n\nBy conservation of mechanical energy (taking potential zero at infinity):\n$$\\underbrace{\\tfrac{1}{2}mv_e^2 - \\frac{GMm}{R}}_{\\text{total energy at surface}} = \\underbrace{0 + 0}_{\\text{at infinity, just escaping}}$$\n$$\\tfrac{1}{2}mv_e^2 = \\frac{GMm}{R} \\Rightarrow \\boxed{v_e = \\sqrt{\\frac{2GM}{R}}}$$\n\nUsing $g = GM/R^2$:\n$$v_e = \\sqrt{2gR}$$\n\n**Value for Earth:** $v_e = \\sqrt{2 \\times 9.8 \\times 6.4\\times10^6} = \\sqrt{1.254\\times10^8} = 1.12 \\times 10^4$ m/s = **11.2 km/s**.\n\n**Key properties:**\n- Independent of the mass of the escaping body and of the direction of projection (neglecting atmosphere).\n- $v_e = \\sqrt{2}\\,v_o$ — escape speed is only 41% more than orbital speed.\n- Smaller/denser bodies can have high escape speeds; the Moon's is 2.4 km/s (why it lost its atmosphere).\n\n### 2.3 Worked numericals\n\n**Q (5m, 2023):** Derive the expression for escape velocity of Earth. Hence calculate its value. (R = 6.4×10⁶ m, g = 9.8 m/s²)\nDerivation as §2.2; $v_e = \\sqrt{2gR} = \\sqrt{2 \\times 9.8 \\times 6.4\\times10^6} = 11.2$ km/s.\n\n**Q (3m, 2022):** Calculate the escape velocity from the surface of a planet whose surface gravity is 5 m/s² and radius is $6 \\times 10^6$ m.\n$$v_e = \\sqrt{2gR} = \\sqrt{2 \\times 5 \\times 6\\times10^6} = \\sqrt{6\\times10^7} = 7.75 \\times 10^3 \\text{ m/s} = 7.75 \\text{ km/s}$$",
+      "## 3. Conceptual Relationships\n\n- **To Topic 30:** the derivation is pure energy conservation with $U = -GMm/r$.\n- **To Topic 33:** $v_e = \\sqrt{2}v_o$ at the same radius.\n- **To atmospheres:** gas molecules with rms speed comparable to $v_e$ leak away over time — why the Moon (2.4 km/s) is airless and Earth (11.2 km/s) kept its air.\n- **To black holes:** when $v_e = c$, nothing escapes — the Schwarzschild criterion.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Mechanics | Gravitation | What is escape velocity? Derive the expression for escape velocity of Earth. Hence calculate its value. (R = 6.4×10⁶ m, g = 9.8 m/s²) | 5 | Definition + derivation + numerical |\n| 2078/2022 | Mechanics | Gravitation | State the concept of escape velocity. Calculate the escape velocity from the surface of a planet whose surface gravity is 5 m/s² and radius is 6×10⁶ m. | 3 | Definition + numerical |\n\n### 4.2 Model answer skeleton (5m)\n\nDefinition (1m) → energy conservation equation (1m–2m) → $v_e = \\sqrt{2GM/R} = \\sqrt{2gR}$ (1m) → substitution → 11.2 km/s (1m).\n\n### 4.3 Common examination mistakes\n\n1. Using $v_e = \\sqrt{gR}$ (that is the orbital speed).\n2. Forgetting the factor 2 in $\\sqrt{2gR}$.\n3. Including the projectile's mass — it cancels.\n4. Claiming direction matters (it doesn't, ignoring air resistance)."
     ],
     "confusion": [
-      "The formula neglects air resistance, rotation, external bodies and continued thrust.",
-      "Escape speed is not the practical rocket delta-v from the launch pad."
+      "**Orbital vs escape:** √(gR) = 7.9 km/s keeps you circling; √(2gR) = 11.2 km/s sets you free.",
+      "**Mass of the projectile is irrelevant** — a proton and a rocket share the same escape speed."
     ],
     "practice": [
-      "Derive escape speed using energy conservation.",
-      "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
-      "Why is escape speed independent of projectile mass?"
+      "Why do rockets not need 11.2 km/s at lift-off?"
     ],
     "universalFacts": [
-      "At escape threshold, total mechanical energy is zero at infinity.",
-      "Use r=R+h for altitude, not the surface radius.",
-      "The orbital-speed relation compares both speeds at the same radius."
+      "The Moon's low escape velocity (2.4 km/s) is why it cannot retain an atmosphere; Earth's 11.2 km/s holds nitrogen and oxygen."
     ],
     "examples": [
-      "Earth: √(2×9.81×6.37×10⁶)≈11.2 km s⁻¹.",
-      "At h=R, ve(h)/ve(0)=1/√2."
+      "***NEB 2022 planet*** — g = 5 m/s², R = 6×10⁶ m → v_e = 7.75 km/s."
     ],
     "practiceQuestions": [
-      "Derive escape speed using energy conservation.",
-      "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
-      "Why is escape speed independent of projectile mass?"
+      "**Numerical (3m): Find the escape velocity from Mars (M = 6.4×10²³ kg, R = 3.4×10⁶ m).** — v_e = √(2GM/R) = √(2×6.67×10⁻¹¹×6.4×10²³/3.4×10⁶) = √(2.51×10⁷) = 5.0 km/s."
     ],
     "formulas": [
-      "At radius r: ve=√(2GM/r); at surface ve=√(2GM/R)=√(2gR).",
-      "At the same radius, ve=√2 vc where vc=√(GM/r)."
+      "- ½mv_e² = GMm/R → v_e = √(2GM/R) = √(2gR)\n- Earth: v_e = 11.2 km/s\n- v_e = √2 · v_o"
     ],
     "keyPoints": [
-      "At escape threshold, total mechanical energy is zero at infinity.",
-      "Use r=R+h for altitude, not the surface radius.",
-      "The orbital-speed relation compares both speeds at the same radius."
+      "$v_e = \\sqrt{2GM/R} = \\sqrt{2gR}$; Earth: 11.2 km/s; Moon: 2.4 km/s.",
+      "$v_e = \\sqrt{2}\\,v_o$; direction-independent (no atmosphere)."
     ],
-    "summary": "Energy conservation gives ve=√(2GM/R)=√(2gR) for an ideal surface launch. It is independent of projectile mass and √2 times circular speed at the same radius.",
+    "summary": "**Escape velocity** is the minimum launch speed that lets a body leave a planet's gravitational field, reaching infinity with zero speed. Energy conservation between the surface and infinity, $\\frac{1}{2}mv_e^2 - \\frac{GMm}{R} = 0$, gives $v_e = \\sqrt{2GM/R} = \\sqrt{2gR}$ — independent of the projectile's mass and direction (NEB 2023, 5m). For Earth, $\\sqrt{2 \\times 9.8 \\times 6.4\\times10^6} = 11.2$ km/s; for a planet with g = 5 m/s² and R = 6×10⁶ m, 7.75 km/s (NEB 2022). Escape speed is $\\sqrt{2}$ times orbital speed, and its ratio to molecular speeds decides whether a world keeps an atmosphere — the Moon's 2.4 km/s could not.",
     "specialNotes": [
       "The formula neglects air resistance, rotation, external bodies and continued thrust.",
       "Escape speed is not the practical rocket delta-v from the launch pad."
     ],
     "importantStatements": [
-      "At escape threshold, total mechanical energy is zero at infinity.",
-      "Use r=R+h for altitude, not the surface radius.",
-      "The orbital-speed relation compares both speeds at the same radius."
+      "\"Escape velocity is the minimum velocity needed to escape the gravitational field of a planet.\""
     ],
     "importantNotes": [
-      "At escape threshold, total mechanical energy is zero at infinity.",
-      "Use r=R+h for altitude, not the surface radius.",
-      "The orbital-speed relation compares both speeds at the same radius."
+      "Verified PYQs: derivation + value (2023, 5m); planet numerical (2022, 3m)."
     ],
     "examShortTricks": [
-      "At radius r: ve=√(2GM/r); at surface ve=√(2GM/R)=√(2gR).",
-      "At the same radius, ve=√2 vc where vc=√(GM/r)."
+      "\"v_e = √(2gR): two numbers, one square root.\""
     ],
     "examNotes": [
-      "Derive escape speed using energy conservation.",
-      "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
-      "Why is escape speed independent of projectile mass?"
+      "2023 asked the full 5m derivation — practise writing it from the energy equation."
     ],
     "importantConcepts": [
-      "At escape threshold, total mechanical energy is zero at infinity.",
-      "Use r=R+h for altitude, not the surface radius.",
-      "The orbital-speed relation compares both speeds at the same radius."
+      "**Energy conservation is the whole derivation:** ½mv² = GMm/R — KE must pay the full binding energy."
     ],
     "importantTasks": [
       "Derive escape speed using energy conservation.",
@@ -211,54 +172,33 @@
     ]
   },
   "confusion": [
-    "The formula neglects air resistance, rotation, external bodies and continued thrust.",
-    "Escape speed is not the practical rocket delta-v from the launch pad.",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**Orbital vs escape:** √(gR) = 7.9 km/s keeps you circling; √(2gR) = 11.2 km/s sets you free.",
+    "**Mass of the projectile is irrelevant** — a proton and a rocket share the same escape speed."
   ],
   "practice": [
-    "Derive escape speed using energy conservation.",
-    "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
-    "Why is escape speed independent of projectile mass?"
+    "Why do rockets not need 11.2 km/s at lift-off?"
   ],
   "universalFacts": [
-    "At escape threshold, total mechanical energy is zero at infinity.",
-    "Use r=R+h for altitude, not the surface radius.",
-    "The orbital-speed relation compares both speeds at the same radius."
+    "The Moon's low escape velocity (2.4 km/s) is why it cannot retain an atmosphere; Earth's 11.2 km/s holds nitrogen and oxygen."
   ],
   "specialNotes": [
     "The formula neglects air resistance, rotation, external bodies and continued thrust.",
     "Escape speed is not the practical rocket delta-v from the launch pad."
   ],
   "importantStatements": [
-    "At escape threshold, total mechanical energy is zero at infinity.",
-    "Use r=R+h for altitude, not the surface radius.",
-    "The orbital-speed relation compares both speeds at the same radius."
+    "\"Escape velocity is the minimum velocity needed to escape the gravitational field of a planet.\""
   ],
   "importantNotes": [
-    "At escape threshold, total mechanical energy is zero at infinity.",
-    "Use r=R+h for altitude, not the surface radius.",
-    "The orbital-speed relation compares both speeds at the same radius."
+    "Verified PYQs: derivation + value (2023, 5m); planet numerical (2022, 3m)."
   ],
   "examShortTricks": [
-    "At radius r: ve=√(2GM/r); at surface ve=√(2GM/R)=√(2gR).",
-    "At the same radius, ve=√2 vc where vc=√(GM/r)."
+    "\"v_e = √(2gR): two numbers, one square root.\""
   ],
   "examNotes": [
-    "Derive escape speed using energy conservation.",
-    "Find ve for M=6.0×10²⁴ kg and R=6.0×10⁶ m.",
-    "Why is escape speed independent of projectile mass?"
+    "2023 asked the full 5m derivation — practise writing it from the energy equation."
   ],
   "importantConcepts": [
-    "At escape threshold, total mechanical energy is zero at infinity.",
-    "Use r=R+h for altitude, not the surface radius.",
-    "The orbital-speed relation compares both speeds at the same radius.",
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**Energy conservation is the whole derivation:** ½mv² = GMm/R — KE must pay the full binding energy."
   ],
   "importantTasks": [
     "Derive escape speed using energy conservation.",
@@ -309,44 +249,92 @@
   ],
   "mcqs": [
     {
-      "question": "Escape speed depends on the projectile's mass",
+      "question": "Escape velocity from Earth's surface is about:",
       "options": [
-        "Strongly",
-        "Not at all, in this formula",
-        "Only if the planet is small",
-        "Through the colour of the rocket"
+        "7.9 km/s",
+        "9.8 km/s",
+        "11.2 km/s",
+        "15 km/s"
       ],
-      "answer": "B"
+      "answer": "C",
+      "explanation": "√(2gR) = 11.2 km/s."
     },
     {
-      "question": "v_esc equals",
+      "question": "Escape velocity depends on:",
       "options": [
-        "√(g R)",
-        "√(2 g R)",
-        "g R",
-        "2 g R"
+        "Mass of the escaping body",
+        "Direction of projection",
+        "Planet's mass and radius",
+        "Time of day"
       ],
-      "answer": "B"
+      "answer": "C",
+      "explanation": "Only M and R of the planet."
     },
     {
-      "question": "Compared with a low circular orbit, escape speed is",
+      "question": "NEB 2022: g = 5 m/s², R = 6×10⁶ m → v_e =",
       "options": [
-        "The same",
-        "√2 times larger",
-        "Half",
-        "Zero"
+        "5.5 km/s",
+        "7.75 km/s",
+        "11.2 km/s",
+        "9.5 km/s"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "√(6×10⁷) = 7.75 km/s."
     },
     {
-      "question": "At infinity the potential is taken as",
+      "question": "The derivation of v_e uses:",
       "options": [
+        "Newton's third law",
+        "Conservation of energy",
+        "Conservation of momentum",
+        "Torque balance"
+      ],
+      "answer": "B",
+      "explanation": "KE + PE = 0 between surface and infinity."
+    },
+    {
+      "question": "v_e in terms of orbital velocity v_o:",
+      "options": [
+        "v_o",
+        "√2 v_o",
+        "2v_o",
+        "v_o/√2"
+      ],
+      "answer": "B",
+      "explanation": "Both from GM/r — factor √2 apart."
+    },
+    {
+      "question": "If a planet's radius doubles at fixed density, v_e:",
+      "options": [
+        "Halves",
+        "Doubles",
+        "Quadruples",
+        "Stays same"
+      ],
+      "answer": "B",
+      "explanation": "M ∝ R³ at fixed ρ → v_e ∝ R."
+    },
+    {
+      "question": "The Moon loses its atmosphere because its v_e is:",
+      "options": [
+        "Too high",
+        "Only 2.4 km/s",
         "Zero",
-        "−G M m / R",
-        "g",
-        "Infinite and negative"
+        "Same as Earth's"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Gas molecules easily exceed 2.4 km/s."
+    },
+    {
+      "question": "At escape speed the total mechanical energy is:",
+      "options": [
+        "Negative",
+        "Zero",
+        "Positive",
+        "Infinite"
+      ],
+      "answer": "B",
+      "explanation": "½mv² − GMm/R = 0 defines escape."
     }
   ],
   "exercises": [

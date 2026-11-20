@@ -6,42 +6,22 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:14.898Z",
   "notes": [
-    "# GPS\n\n## 1. Introduction\nPhysical picture of **GPS** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Gravitation fill pass.\n\n## 2. Concepts and laws\n### GPS\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — GPS — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — GPS — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — GPS — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — GPS — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Gravity as Navigation\n\nThe Global Positioning System puts 24+ satellites in precisely known orbits and asks a simple question: how long does a radio signal take to reach me? Time-of-flight gives distance; distance from four satellites pins down position. Newton's gravitation determines the orbits; relativity corrects the clocks.",
+    "## 2. Fundamental Concepts\n\n### 2.1 How GPS works\n\n1. **Constellation:** at least 24 satellites in six orbital planes, ~20 200 km altitude, period ≈ 12 hours — visible from any point on Earth at any time (4+ satellites overhead).\n2. **Each satellite broadcasts** its identity, exact orbital position and an atomic-clock timestamp.\n3. **Receiver measures signal travel time** $t$; distance = $c \\times t$ (pseudorange).\n4. **Trilateration:** one satellite puts you on a sphere; two → a circle; three → two points (one discarded); the **fourth** satellite resolves the receiver's clock error — hence 4 satellites minimum.\n\n### 2.2 The gravitational connection\n\n- Satellite orbits follow $v = \\sqrt{GM/r}$ and $T = 2\\pi\\sqrt{r^3/GM}$ — the constellation's geometry is Newtonian gravitation in action.\n- **Relativistic clock corrections:** at 20 200 km, satellite clocks run *faster* than ground clocks by ~38 μs/day (special relativity slows them 7 μs; general relativity's weaker gravity speeds them 45 μs). Uncorrected, GPS positions would drift by ~10 km per day.\n\n### 2.3 Accuracy and error sources\n\n| Error source | Effect |\n|---|---|\n| Ionosphere/troposphere delay | metres — modelled or dual-frequency corrected |\n| Multipath reflection | metres near buildings |\n| Satellite clock/orbit error | controlled by ground segment |\n| With corrections (DGPS) | sub-metre |\n\n### 2.4 Applications\n\nNavigation (roads, aviation, maritime), surveying and mapping, geodesy (plate motion, earthquake displacement), time synchronization for networks and power grids, agriculture and logistics.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 33:** GPS orbits obey the same $T^2 \\propto r^3$ law — 12-hour period → ~20 200 km radius.\n- **To Topic 36:** geostationary satellites serve communication; GPS deliberately uses faster, multi-plane orbits for global coverage and accuracy.\n- **To Topic 31:** the gravitational redshift part of the clock correction is $g$-field physics at scale.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the working principle, the four-satellite requirement and applications as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. Describe the working principle of GPS (4m).\n2. Why are at least four satellites needed? (2m)\n3. List applications of GPS (2m).\n\n### 4.3 Common examination mistakes\n\n1. Saying GPS satellites are geostationary — they are not.\n2. Omitting the fourth satellite's clock-error role.\n3. Confusing trilateration (distances) with triangulation (angles)."
   ],
   "examNotes": [
-    "The working principle of GPS (time-delay ranging) is a classic short answer.",
-    "Why four satellites — guaranteed exam question.",
-    "GPS orbit parameters (altitude, period) derive from satellite formulas — show the computation.",
-    "Relativistic correction in GPS is a famous applied-physics question.",
-    "Sources of GPS error and how they are corrected appear in applied sections."
+    "Describe the four steps: broadcast, time-of-flight, pseudorange, trilateration — then the corrections."
   ],
   "examShortTricks": [
-    "Four satellites = four unknowns (x, y, z, t) — the key reasoning line.",
-    "1 µs clock error ≈ 300 m of position error — instant conversion.",
-    "GPS altitude 20,200 km / period 12 h — memorise as anchor numbers.",
-    "Relativity numbers: +45 µs (GR slower ground) − 7 µs (SR) → +38 µs/day net.",
-    "Distance = speed of light × delay — always use c ≈ 3×10⁸ m/s."
+    "\"3 satellites = position; 4th = clock correction.\""
   ],
   "practiceQuestions": [
-    "A GPS satellite orbits at 20,200 km. Find its orbital speed and period.",
-    "Why does a receiver need four satellites instead of three?",
-    "If a GPS signal takes 65 ms to arrive, how far away is that satellite?",
-    "Explain both special and general relativistic corrections to GPS clocks.",
-    "Estimate the daily position error if all relativistic corrections were ignored.",
-    "Explain how dual-frequency GPS removes ionospheric delay."
+    "**Short (2m): Why does GPS need four satellites, not three?** — Three spheres intersect in two points and leave the receiver clock error uncorrected; the fourth measurement solves for the clock offset along with the three coordinates."
   ],
   "practice": [
-    "Show that a satellite at 20,200 km altitude has a period ≈ 12 h.",
-    "Explain why at least four satellites are needed for a position fix.",
-    "Compute the extra path delay if a signal takes 67 ms to reach a receiver.",
-    "Find the speed of a GPS satellite from GM and r.",
-    "Explain the special and general relativistic clock corrections.",
-    "Estimate the position error if the receiver clock is off by 1 µs."
+    "Why would GPS fail without general relativity?"
   ],
   "mcs": [
     {
@@ -93,6 +73,169 @@
         "lunar orbit"
       ],
       "answer": "B"
+    }
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Gravity as Navigation\n\nThe Global Positioning System puts 24+ satellites in precisely known orbits and asks a simple question: how long does a radio signal take to reach me? Time-of-flight gives distance; distance from four satellites pins down position. Newton's gravitation determines the orbits; relativity corrects the clocks.",
+      "## 2. Fundamental Concepts\n\n### 2.1 How GPS works\n\n1. **Constellation:** at least 24 satellites in six orbital planes, ~20 200 km altitude, period ≈ 12 hours — visible from any point on Earth at any time (4+ satellites overhead).\n2. **Each satellite broadcasts** its identity, exact orbital position and an atomic-clock timestamp.\n3. **Receiver measures signal travel time** $t$; distance = $c \\times t$ (pseudorange).\n4. **Trilateration:** one satellite puts you on a sphere; two → a circle; three → two points (one discarded); the **fourth** satellite resolves the receiver's clock error — hence 4 satellites minimum.\n\n### 2.2 The gravitational connection\n\n- Satellite orbits follow $v = \\sqrt{GM/r}$ and $T = 2\\pi\\sqrt{r^3/GM}$ — the constellation's geometry is Newtonian gravitation in action.\n- **Relativistic clock corrections:** at 20 200 km, satellite clocks run *faster* than ground clocks by ~38 μs/day (special relativity slows them 7 μs; general relativity's weaker gravity speeds them 45 μs). Uncorrected, GPS positions would drift by ~10 km per day.\n\n### 2.3 Accuracy and error sources\n\n| Error source | Effect |\n|---|---|\n| Ionosphere/troposphere delay | metres — modelled or dual-frequency corrected |\n| Multipath reflection | metres near buildings |\n| Satellite clock/orbit error | controlled by ground segment |\n| With corrections (DGPS) | sub-metre |\n\n### 2.4 Applications\n\nNavigation (roads, aviation, maritime), surveying and mapping, geodesy (plate motion, earthquake displacement), time synchronization for networks and power grids, agriculture and logistics.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 33:** GPS orbits obey the same $T^2 \\propto r^3$ law — 12-hour period → ~20 200 km radius.\n- **To Topic 36:** geostationary satellites serve communication; GPS deliberately uses faster, multi-plane orbits for global coverage and accuracy.\n- **To Topic 31:** the gravitational redshift part of the clock correction is $g$-field physics at scale.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the working principle, the four-satellite requirement and applications as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. Describe the working principle of GPS (4m).\n2. Why are at least four satellites needed? (2m)\n3. List applications of GPS (2m).\n\n### 4.3 Common examination mistakes\n\n1. Saying GPS satellites are geostationary — they are not.\n2. Omitting the fourth satellite's clock-error role.\n3. Confusing trilateration (distances) with triangulation (angles)."
+    ],
+    "confusion": [
+      "**GPS ≠ geostationary:** 24+ satellites at 20 200 km, 12-hour periods, six planes — designed for whole-Earth coverage.",
+      "**The fourth satellite fixes your clock,** not just your position."
+    ],
+    "keyPoints": [
+      "Distance = c × time-of-flight; four satellites → latitude, longitude, altitude, clock error.",
+      "Relativistic correction ≈ 38 μs/day; without it positions drift ~10 km/day."
+    ],
+    "importantConcepts": [
+      "**Time becomes distance:** because c is known, measuring time-of-flight measures position — the clock correction is gravitational physics."
+    ],
+    "examples": [
+      "***Constellation*** — 24+ satellites, 20 200 km, T ≈ 12 h: any point on Earth always sees 4+."
+    ],
+    "universalFacts": [
+      "GPS satellites carry atomic clocks (cesium/rubidium) accurate to ~1 ns — timing errors of 1 μs mean 300 m of position error."
+    ],
+    "importantStatements": [
+      "\"A GPS receiver computes its position by measuring the travel time of signals from at least four satellites.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (principle 4m, four-satellite reasoning 2m, applications 2m)."
+    ],
+    "examShortTricks": [
+      "\"3 satellites = position; 4th = clock correction.\""
+    ],
+    "examNotes": [
+      "Describe the four steps: broadcast, time-of-flight, pseudorange, trilateration — then the corrections."
+    ],
+    "formulas": [
+      "- Distance = c × Δt\n- Orbit: v = √(GM/r); T = 2π√(r³/GM) ≈ 12 h at 20 200 km\n- Clock correction ≈ +38 μs/day"
+    ],
+    "practice": [
+      "Why would GPS fail without general relativity?"
+    ],
+    "practiceQuestions": [
+      "**Short (2m): Why does GPS need four satellites, not three?** — Three spheres intersect in two points and leave the receiver clock error uncorrected; the fourth measurement solves for the clock offset along with the three coordinates."
+    ]
+  },
+  "confusion": [
+    "**GPS ≠ geostationary:** 24+ satellites at 20 200 km, 12-hour periods, six planes — designed for whole-Earth coverage.",
+    "**The fourth satellite fixes your clock,** not just your position."
+  ],
+  "keyPoints": [
+    "Distance = c × time-of-flight; four satellites → latitude, longitude, altitude, clock error.",
+    "Relativistic correction ≈ 38 μs/day; without it positions drift ~10 km/day."
+  ],
+  "importantConcepts": [
+    "**Time becomes distance:** because c is known, measuring time-of-flight measures position — the clock correction is gravitational physics."
+  ],
+  "examples": [
+    "***Constellation*** — 24+ satellites, 20 200 km, T ≈ 12 h: any point on Earth always sees 4+."
+  ],
+  "universalFacts": [
+    "GPS satellites carry atomic clocks (cesium/rubidium) accurate to ~1 ns — timing errors of 1 μs mean 300 m of position error."
+  ],
+  "importantStatements": [
+    "\"A GPS receiver computes its position by measuring the travel time of signals from at least four satellites.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ; NEB-style practice (principle 4m, four-satellite reasoning 2m, applications 2m)."
+  ],
+  "formulas": [
+    "- Distance = c × Δt\n- Orbit: v = √(GM/r); T = 2π√(r³/GM) ≈ 12 h at 20 200 km\n- Clock correction ≈ +38 μs/day"
+  ],
+  "summary": "GPS places 24+ satellites in six orbital planes at ~20 200 km with 12-hour periods — orbits computed from the same gravitation as any satellite: $v = \\sqrt{GM/r}$, $T^2 \\propto r^3$. Each satellite broadcasts an atomic-clock timestamp; the receiver multiplies travel time by $c$ to get pseudoranges and **trilaterates**: three satellites fix a position, the fourth solves the receiver's clock error. Gravity enters twice — fixing the orbits and demanding a +38 μs/day relativistic clock correction (without it, errors grow ~10 km/day). Applications span navigation, surveying, geodesy, and the time synchronization underpinning networks and power grids.",
+  "mcqs": [
+    {
+      "question": "The minimum number of GPS satellites for a 3D fix is:",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answer": "D",
+      "explanation": "The fourth corrects the receiver clock."
+    },
+    {
+      "question": "GPS satellites orbit at about:",
+      "options": [
+        "400 km",
+        "20 200 km",
+        "36 000 km",
+        "384 000 km"
+      ],
+      "answer": "B",
+      "explanation": "12-hour period → 20 200 km."
+    },
+    {
+      "question": "The GPS orbital period is about:",
+      "options": [
+        "90 min",
+        "12 h",
+        "24 h",
+        "27 days"
+      ],
+      "answer": "B",
+      "explanation": "Half a sidereal day."
+    },
+    {
+      "question": "A GPS receiver measures:",
+      "options": [
+        "Angles to satellites",
+        "Signal travel times",
+        "Signal strength only",
+        "Doppler only"
+      ],
+      "answer": "B",
+      "explanation": "Distance = c × time."
+    },
+    {
+      "question": "GPS satellite clocks need correction because:",
+      "options": [
+        "They drift randomly",
+        "Relativity changes their rate",
+        "They are cheap quartz",
+        "Signals bounce"
+      ],
+      "answer": "B",
+      "explanation": "Special + general relativistic effects, net +38 μs/day."
+    },
+    {
+      "question": "Without relativistic corrections, GPS error would grow about:",
+      "options": [
+        "10 m/day",
+        "10 km/day",
+        "100 km/day",
+        "1 m/day"
+      ],
+      "answer": "B",
+      "explanation": "~10 km per day of clock drift."
+    },
+    {
+      "question": "GPS constellation uses:",
+      "options": [
+        "One equatorial plane",
+        "Six orbital planes",
+        "Two polar planes",
+        "Random orbits"
+      ],
+      "answer": "B",
+      "explanation": "Six planes × 4 satellites for global coverage."
+    },
+    {
+      "question": "Which is NOT a typical GPS application?",
+      "options": [
+        "Surveying",
+        "Earthquake geodesy",
+        "Network time sync",
+        "Measuring G in the lab"
+      ],
+      "answer": "D",
+      "explanation": "G is measured by torsion balance."
     }
   ]
 }

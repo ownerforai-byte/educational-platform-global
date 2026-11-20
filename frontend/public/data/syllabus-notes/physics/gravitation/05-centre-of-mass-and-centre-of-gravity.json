@@ -6,11 +6,274 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:14.871Z",
   "notes": [
-    "# Centre of mass and centre of gravity\n\n## 1. Introduction\nPhysical picture of **Centre of mass and centre of gravity** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Gravitation fill pass.\n\n## 2. Concepts and laws\n### Centre of mass and centre of gravity\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Centre of mass and centre of gravity — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Centre of mass and centre of gravity — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Centre of mass and centre of gravity — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Centre of mass and centre of gravity — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Where an Object \"Is\"\n\nEvery extended body behaves, under gravity and in collisions, as if all its mass were concentrated at one point. For most objects that point — the centre of mass — and the point where gravity effectively acts — the centre of gravity — coincide. Knowing where they sit explains balancing, stability and tumbling.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Centre of mass\n\nThe **centre of mass (COM)** is the point where the total mass of a system may be assumed to be concentrated for translational motion:\n$$\\vec r_{COM} = \\frac{\\sum m_i \\vec r_i}{\\sum m_i} \\qquad \\text{(continuous body: } \\vec r_{COM} = \\frac{1}{M}\\int \\vec r\\, dm\\text{)}$$\n\nTwo-particle shortcut: the COM divides the line joining $m_1, m_2$ in the ratio $m_2 : m_1$ (closer to the heavier mass).\n\n### 2.2 Centre of gravity\n\nThe **centre of gravity (COG)** is the point where the **total gravitational torque** on the body is zero — the point at which the resultant weight may be considered to act:\n$$\\vec r_{COG} = \\frac{\\sum m_i g_i \\vec r_i}{\\sum m_i g_i}$$\n\n**When do they coincide?** When $g$ is uniform over the body — true for everyday objects. They differ for very tall/large structures where g varies measurably with height (the COG sits slightly below the COM).\n\n### 2.3 Key properties\n\n- The COM of a **uniform symmetric body** is at its geometric centre (sphere, cube, rod, disc).\n- The COM may lie **outside the material** — a ring's COM is at its centre; a boomerang's is in the gap.\n- Motion of isolated systems: the COM of an isolated system moves with constant velocity (momentum conservation).\n- **Stability:** a body topples when the vertical line through its COG falls outside the base.\n\n### 2.4 Worked numericals\n\n**Q (NEB-style):** Masses 2 kg and 6 kg sit at x = 0 and x = 2 m. Find the COM.\n$x_{COM} = \\dfrac{2(0) + 6(2)}{8} = 1.5$ m — three-quarters of the way toward the heavier mass.\n\n**Q (NEB-style):** Where is the COM of a uniform L-shaped lamina made of two 20 cm rods (equal mass per length) joined at right angles?\nTreat each rod's mass at its midpoint: (10, 0) and (0, 10) cm with equal masses → COM at (5, 5) cm — inside the corner gap, outside both rods.",
+    "## 3. Conceptual Relationships\n\n- **To Unit 4 (torque and equilibrium):** the COG is where weight's torque acts; equilibrium requires it above the base.\n- **To momentum conservation (Topic 12):** $\\vec F_{ext} = M\\vec a_{COM}$ — Newton's second law for systems.\n- **To satellites:** two-body orbits are rotations about the common COM (barycentre).",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the definitions, the two-body calculation and the COM-vs-COG distinction as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. Distinguish centre of mass and centre of gravity (2–3m).\n2. Find the COM of two masses (3m).\n3. When do COM and COG coincide? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Assuming the COM must lie inside the object (ring/boomerang counterexamples).\n2. Weighing both masses equally in the ratio — the COM is *closer to the heavier* mass.\n3. Treating COG and COM as always different — they coincide in a uniform field."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Where an Object \"Is\"\n\nEvery extended body behaves, under gravity and in collisions, as if all its mass were concentrated at one point. For most objects that point — the centre of mass — and the point where gravity effectively acts — the centre of gravity — coincide. Knowing where they sit explains balancing, stability and tumbling.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Centre of mass\n\nThe **centre of mass (COM)** is the point where the total mass of a system may be assumed to be concentrated for translational motion:\n$$\\vec r_{COM} = \\frac{\\sum m_i \\vec r_i}{\\sum m_i} \\qquad \\text{(continuous body: } \\vec r_{COM} = \\frac{1}{M}\\int \\vec r\\, dm\\text{)}$$\n\nTwo-particle shortcut: the COM divides the line joining $m_1, m_2$ in the ratio $m_2 : m_1$ (closer to the heavier mass).\n\n### 2.2 Centre of gravity\n\nThe **centre of gravity (COG)** is the point where the **total gravitational torque** on the body is zero — the point at which the resultant weight may be considered to act:\n$$\\vec r_{COG} = \\frac{\\sum m_i g_i \\vec r_i}{\\sum m_i g_i}$$\n\n**When do they coincide?** When $g$ is uniform over the body — true for everyday objects. They differ for very tall/large structures where g varies measurably with height (the COG sits slightly below the COM).\n\n### 2.3 Key properties\n\n- The COM of a **uniform symmetric body** is at its geometric centre (sphere, cube, rod, disc).\n- The COM may lie **outside the material** — a ring's COM is at its centre; a boomerang's is in the gap.\n- Motion of isolated systems: the COM of an isolated system moves with constant velocity (momentum conservation).\n- **Stability:** a body topples when the vertical line through its COG falls outside the base.\n\n### 2.4 Worked numericals\n\n**Q (NEB-style):** Masses 2 kg and 6 kg sit at x = 0 and x = 2 m. Find the COM.\n$x_{COM} = \\dfrac{2(0) + 6(2)}{8} = 1.5$ m — three-quarters of the way toward the heavier mass.\n\n**Q (NEB-style):** Where is the COM of a uniform L-shaped lamina made of two 20 cm rods (equal mass per length) joined at right angles?\nTreat each rod's mass at its midpoint: (10, 0) and (0, 10) cm with equal masses → COM at (5, 5) cm — inside the corner gap, outside both rods.",
+      "## 3. Conceptual Relationships\n\n- **To Unit 4 (torque and equilibrium):** the COG is where weight's torque acts; equilibrium requires it above the base.\n- **To momentum conservation (Topic 12):** $\\vec F_{ext} = M\\vec a_{COM}$ — Newton's second law for systems.\n- **To satellites:** two-body orbits are rotations about the common COM (barycentre).",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the definitions, the two-body calculation and the COM-vs-COG distinction as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. Distinguish centre of mass and centre of gravity (2–3m).\n2. Find the COM of two masses (3m).\n3. When do COM and COG coincide? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Assuming the COM must lie inside the object (ring/boomerang counterexamples).\n2. Weighing both masses equally in the ratio — the COM is *closer to the heavier* mass.\n3. Treating COG and COM as always different — they coincide in a uniform field."
+    ],
+    "confusion": [
+      "**COM vs COG:** COM is mass-weighted position; COG is weight-torque-weighted position — identical only in a uniform g field.",
+      "**COM can be empty space:** a ring's COM is at its hollow centre."
+    ],
+    "keyPoints": [
+      "$\\vec r_{COM} = \\sum m_i\\vec r_i/\\sum m_i$; COG = point of zero gravitational torque.",
+      "They coincide when g is uniform; COG sits below COM for tall structures."
+    ],
+    "importantConcepts": [
+      "**The whole body acts as a point mass at its COM** for translational motion and two-body orbits."
+    ],
+    "examples": [
+      "***2 kg + 6 kg at 2 m apart*** → COM 1.5 m from the 2 kg mass."
+    ],
+    "universalFacts": [
+      "High jumpers arch over the bar so their COM passes *under* it — less height needed for the same clearance."
+    ],
+    "importantStatements": [
+      "\"The centre of gravity is the point at which the resultant weight of the body acts.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (definitions 2–3m, two-body numerical 3m)."
+    ],
+    "examShortTricks": [
+      "\"COM divides the join in ratio m₂:m₁ — closer to heavier.\""
+    ],
+    "examNotes": [
+      "Most likely: the distinction question and a two-mass COM calculation."
+    ],
+    "formulas": [
+      "- r_COM = Σmᵢrᵢ/Σmᵢ\n- Two bodies: x = m₂d/(m₁+m₂) from m₁\n- F_ext = M a_COM"
+    ],
+    "practice": [
+      "Why does a leaning tower not topple until its COG line leaves the base?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): Masses 1 kg, 2 kg, 3 kg sit at x = 0, 1, 2 m. Find the COM.** — x = (1×0 + 2×1 + 3×2)/6 = 8/6 = 1.33 m."
+    ]
+  },
+  "confusion": [
+    "**COM vs COG:** COM is mass-weighted position; COG is weight-torque-weighted position — identical only in a uniform g field.",
+    "**COM can be empty space:** a ring's COM is at its hollow centre."
+  ],
+  "keyPoints": [
+    "$\\vec r_{COM} = \\sum m_i\\vec r_i/\\sum m_i$; COG = point of zero gravitational torque.",
+    "They coincide when g is uniform; COG sits below COM for tall structures."
+  ],
+  "importantConcepts": [
+    "**The whole body acts as a point mass at its COM** for translational motion and two-body orbits."
+  ],
+  "examples": [
+    "***2 kg + 6 kg at 2 m apart*** → COM 1.5 m from the 2 kg mass."
+  ],
+  "universalFacts": [
+    "High jumpers arch over the bar so their COM passes *under* it — less height needed for the same clearance."
+  ],
+  "importantStatements": [
+    "\"The centre of gravity is the point at which the resultant weight of the body acts.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ; NEB-style practice (definitions 2–3m, two-body numerical 3m)."
+  ],
+  "examShortTricks": [
+    "\"COM divides the join in ratio m₂:m₁ — closer to heavier.\""
+  ],
+  "examNotes": [
+    "Most likely: the distinction question and a two-mass COM calculation."
+  ],
+  "formulas": [
+    "- r_COM = Σmᵢrᵢ/Σmᵢ\n- Two bodies: x = m₂d/(m₁+m₂) from m₁\n- F_ext = M a_COM"
+  ],
+  "practice": [
+    "Why does a leaning tower not topple until its COG line leaves the base?"
+  ],
+  "practiceQuestions": [
+    "**Numerical (3m): Masses 1 kg, 2 kg, 3 kg sit at x = 0, 1, 2 m. Find the COM.** — x = (1×0 + 2×1 + 3×2)/6 = 8/6 = 1.33 m."
+  ],
+  "summary": "The **centre of mass** $\\vec r_{COM} = \\sum m_i\\vec r_i/\\sum m_i$ is the point where a system's mass acts concentrated for translation; the **centre of gravity** is where the resultant weight acts (zero net gravitational torque). They coincide in a uniform gravitational field — all everyday cases — and separate only when g varies across the body, the COG then sitting slightly below the COM. The COM divides the line between two masses in the ratio $m_2:m_1$, may lie outside the material (a ring), and obeys $\\vec F_{ext} = M\\vec a_{COM}$, which is momentum conservation restated. Stability is a COG story: a body topples when the vertical through its COG leaves its base.",
+  "mcqs": [
+    {
+      "question": "The centre of mass of a uniform ring lies:",
+      "options": [
+        "On the rim",
+        "At the centre (empty space)",
+        "At the bottom",
+        "Nowhere"
+      ],
+      "answer": "B",
+      "explanation": "Symmetry places it at the geometric centre."
+    },
+    {
+      "question": "COM and COG coincide when:",
+      "options": [
+        "Masses are equal",
+        "g is uniform over the body",
+        "The body is small only",
+        "Never"
+      ],
+      "answer": "B",
+      "explanation": "Uniform field makes the g-weighting identical."
+    },
+    {
+      "question": "Masses 2 kg and 6 kg, 2 m apart — COM from the 2 kg mass:",
+      "options": [
+        "0.5 m",
+        "1 m",
+        "1.5 m",
+        "2 m"
+      ],
+      "answer": "C",
+      "explanation": "x = 6×2/8 = 1.5 m."
+    },
+    {
+      "question": "The COM of an isolated system:",
+      "options": [
+        "Accelerates",
+        "Moves with constant velocity",
+        "Stays at origin",
+        "Oscillates"
+      ],
+      "answer": "B",
+      "explanation": "No external force → constant COM velocity."
+    },
+    {
+      "question": "A body topples when:",
+      "options": [
+        "Its COM is high",
+        "The vertical through COG leaves the base",
+        "Its mass is large",
+        "Friction is low only"
+      ],
+      "answer": "B",
+      "explanation": "Torque about the base edge then overturns it."
+    },
+    {
+      "question": "For a very tall building, the COG lies:",
+      "options": [
+        "Above the COM",
+        "Below the COM",
+        "At the COM",
+        "At the ground"
+      ],
+      "answer": "B",
+      "explanation": "g is stronger lower down, weighting lower parts more."
+    },
+    {
+      "question": "The equation of motion for a system's COM is:",
+      "options": [
+        "F = ma for each particle",
+        "F_ext = M a_COM",
+        "F = 0 always",
+        "F = mv"
+      ],
+      "answer": "B",
+      "explanation": "Internal forces cancel in pairs."
+    },
+    {
+      "question": "The COM of two particles divides their separation:",
+      "options": [
+        "Equally",
+        "In ratio m₁:m₂ from m₁",
+        "In ratio m₂:m₁ from m₁",
+        "Randomly"
+      ],
+      "answer": "C",
+      "explanation": "Closer to the heavier mass."
+    }
+  ],
+  "mcs": [
+    {
+      "question": "The centre of mass of a uniform ring lies:",
+      "options": [
+        "On the rim",
+        "At the centre (empty space)",
+        "At the bottom",
+        "Nowhere"
+      ],
+      "answer": "B",
+      "explanation": "Symmetry places it at the geometric centre."
+    },
+    {
+      "question": "COM and COG coincide when:",
+      "options": [
+        "Masses are equal",
+        "g is uniform over the body",
+        "The body is small only",
+        "Never"
+      ],
+      "answer": "B",
+      "explanation": "Uniform field makes the g-weighting identical."
+    },
+    {
+      "question": "Masses 2 kg and 6 kg, 2 m apart — COM from the 2 kg mass:",
+      "options": [
+        "0.5 m",
+        "1 m",
+        "1.5 m",
+        "2 m"
+      ],
+      "answer": "C",
+      "explanation": "x = 6×2/8 = 1.5 m."
+    },
+    {
+      "question": "The COM of an isolated system:",
+      "options": [
+        "Accelerates",
+        "Moves with constant velocity",
+        "Stays at origin",
+        "Oscillates"
+      ],
+      "answer": "B",
+      "explanation": "No external force → constant COM velocity."
+    },
+    {
+      "question": "A body topples when:",
+      "options": [
+        "Its COM is high",
+        "The vertical through COG leaves the base",
+        "Its mass is large",
+        "Friction is low only"
+      ],
+      "answer": "B",
+      "explanation": "Torque about the base edge then overturns it."
+    },
+    {
+      "question": "For a very tall building, the COG lies:",
+      "options": [
+        "Above the COM",
+        "Below the COM",
+        "At the COM",
+        "At the ground"
+      ],
+      "answer": "B",
+      "explanation": "g is stronger lower down, weighting lower parts more."
+    },
+    {
+      "question": "The equation of motion for a system's COM is:",
+      "options": [
+        "F = ma for each particle",
+        "F_ext = M a_COM",
+        "F = 0 always",
+        "F = mv"
+      ],
+      "answer": "B",
+      "explanation": "Internal forces cancel in pairs."
+    },
+    {
+      "question": "The COM of two particles divides their separation:",
+      "options": [
+        "Equally",
+        "In ratio m₁:m₂ from m₁",
+        "In ratio m₂:m₁ from m₁",
+        "Randomly"
+      ],
+      "answer": "C",
+      "explanation": "Closer to the heavier mass."
+    }
   ]
 }

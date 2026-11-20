@@ -5,20 +5,10 @@
   "topicTitle": "Gravitational potential; gravitational potential energy",
   "relevance": 100,
   "notes": [
-    "Gravitational Potential: Gravitational potential $V$ at a point is the work done per unit mass in bringing a test mass from infinity to that point: $V = W/m = -GM/r$. It is a scalar quantity with SI unit J/kg. Potential is zero at infinity (reference) and negative everywhere else.",
-    "Gravitational Potential Energy: Potential energy $U$ of mass $m$ at a point where potential is $V$: $U = mV = -GMm/r$. Near Earth's surface ($h \\ll R$): $U = mgh$ (relative to surface). Change in PE: $\\Delta U = mg\\Delta h$.",
-    "Work Done by Gravitational Force: Work done in moving mass $m$ from $r_1$ to $r_2$: $W = -\\Delta U = GMm(1/r_2 - 1/r_1)$. Work is path-independent (conservative force).",
-    "Gravitational Field and Potential Relation: $\\vec{g} = -\\nabla V$ or $g = -dV/dr$ for radial field. Field points in direction of decreasing potential.",
-    "Potential Due to Spherical Shell: Outside ($r > R$): $V = -GM/r$. Inside ($r < R$): $V = -GM/R$ (constant, equal to surface value). Field inside is zero but potential is not zero.",
-    "Potential Due to Solid Sphere: Outside ($r > R$): $V = -GM/r$. Inside ($r \\le R$): $V = -\\frac{GM}{2R^3}(3R^2 - r^2)$. At center: $V = -3GM/2R$.",
-    "Escape Velocity: Minimum speed to escape to infinity from surface: $v_\\text{esc} = \\sqrt{2GM/R} = \\sqrt{2gR}$. For Earth: $\\approx 11.2\\text{ km/s}$. Derived from energy conservation: $\\frac{1}{2}mv^2 - GMm/R = 0$.",
-    "Gravitational Potential is Scalar: Unlike field (vector), potential adds algebraically. Potential at a point due to multiple masses: $V = -\\sum Gm_i/r_i$.",
-    "# Gravitational potential; gravitational potential energy\n\n## 1. Introduction\nPhysical picture of **Gravitational potential; gravitational potential energy** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Gravitation fill pass.\n\n## 2. Concepts and laws\n### Gravitational potential\n### gravitational potential energy\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Gravitational potential; gravitational potential energy — geometry and force diagram (authored SVG)\n- **D2** — Gravitational potential; gravitational potential energy — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Gravitational potential; gravitational potential energy — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Gravitational potential; gravitational potential energy — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — The Energy Ledger of Gravity\n\nPotential energy near Earth's surface ($mgh$) is only an approximation. The exact bookkeeping — valid to any distance — uses the inverse-square law: gravitational potential energy $U = -GMm/r$, negative because gravity binds. The potential per unit mass, $V = -GM/r$, extends this to any test mass.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Definitions\n\n**Gravitational potential energy (U):** the work done by an external agent to bring a mass $m$ from infinity (zero reference) to a distance $r$ from mass $M$:\n$$U = -\\frac{GMm}{r}$$\n**Negative sign meaning:** gravity does positive work as the mass approaches; the field is attractive, so the bound system's energy is below zero. Infinity is the zero of energy — free escape.\n\n**Gravitational potential (V):** potential energy per unit mass:\n$$V = -\\frac{GM}{r} \\quad \\text{(J/kg)}$$\n$V$ at a point is the work done per unit mass bringing a test mass from infinity to that point.\n\n### 2.2 Derivation\n\nWork done moving $m$ from infinity to $r$ against gravity:\n$$U = \\int_\\infty^r \\frac{GMm}{x^2}\\,dx\\;(\\text{external work}) = -\\int_\\infty^r \\frac{GMm}{x^2}\\,dx = \\left[\\frac{GMm}{x}\\right]_\\infty^r = -\\frac{GMm}{r}$$\n\n### 2.3 Relation between field and potential\n\n$$g = -\\frac{dV}{dr}$$\nThe field points down the potential gradient — masses \"roll downhill\" toward lower (more negative) potential.\n\n### 2.4 Worked numerical (NEB 2021)\n\n**Q (3m, 2021):** Find the gravitational potential energy of a satellite of mass 200 kg orbiting at a height of 400 km above Earth's surface. (R = 6.4×10⁶ m, M = 6×10²⁴ kg, G = 6.67×10⁻¹¹)\n- $r = R + h = 6.8 \\times 10^6$ m\n- $U = -\\dfrac{GMm}{r} = -\\dfrac{6.67\\times10^{-11} \\times 6\\times10^{24} \\times 200}{6.8\\times10^6} = -\\dfrac{8.00\\times10^{16}}{6.8\\times10^6} = -1.18 \\times 10^{10}$ J\n\n**Q (NEB-style):** Find the potential at that orbit.\n$V = -GM/r = -\\dfrac{4.00\\times10^{14}}{6.8\\times10^6} = -5.9 \\times 10^7$ J/kg.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 19:** near Earth's surface $U = mgh$ is the linear approximation of $-GMm/r$ for $h \\ll R$.\n- **To Topic 34:** escape velocity follows from total energy ≥ 0: $\\frac{1}{2}mv^2 - \\frac{GMm}{R} = 0$.\n- **To Topic 35:** satellite total energy $E = -GMm/2r$ — half the PE.\n- **To electrostatics:** identical mathematics with $1/4\\pi\\epsilon_0$ replacing G.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Mechanics | Gravitation | Find the gravitational potential energy of a satellite of mass 200 kg orbiting at a height of 400 km above Earth's surface. (R = 6.4×10⁶ m, M = 6×10²⁴ kg, G = 6.67×10⁻¹¹) | 3 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Define gravitational potential; derive $V = -GM/r$ (3m).\n2. Why is gravitational PE negative? (2m)\n3. Relation $g = -dV/dr$ (2m).\n\n### 4.3 Common examination mistakes\n\n1. Dropping the minus sign — the negative is the physics (bound system).\n2. Using $R$ instead of $R + h$ for orbital radius.\n3. Confusing potential (J/kg) with potential energy (J).\n4. Taking the zero of potential at the surface instead of at infinity."
   ],
   "specificConditions": [
     "Reference at Infinity: Potential is defined with $V(\\infty) = 0$. This makes all finite-distance potentials negative — work must be done to separate masses.",
@@ -26,78 +16,39 @@
     "Potential is Not Field: Potential is scalar (can be negative), field is vector. $\\vec{g} = -\\nabla V$ — field points toward lower potential."
   ],
   "formulas": [
-    "Gravitational potential: $V = -GM/r$",
-    "Gravitational PE: $U = mV = -GMm/r$",
-    "Near surface PE: $U = mgh$ ($h \\ll R$)",
-    "Field-potential relation: $g = -dV/dr$",
-    "Work done: $W = -\\Delta U = GMm(1/r_2 - 1/r_1)$",
-    "Shell outside: $V = -GM/r$; inside: $V = -GM/R$",
-    "Solid sphere inside: $V = -\\frac{GM}{2R^3}(3R^2 - r^2)$",
-    "Escape velocity: $v_\\text{esc} = \\sqrt{2GM/R} = \\sqrt{2gR}$"
+    "- U = −GMm/r; V = −GM/r\n- g = −dV/dr\n- Near surface: U ≈ mgh"
   ],
   "keyPoints": [
-    "Gravitational potential $V = -GM/r$ (scalar, J/kg, zero at infinity).",
-    "Potential energy $U = -GMm/r$; near surface $U = mgh$.",
-    "Potential is scalar — add algebraically for multiple masses.",
-    "$\\vec{g} = -\\nabla V$ — field points toward decreasing potential.",
-    "Shell: potential constant inside, $-GM/R$; field zero inside.",
-    "Escape velocity $v_\\text{esc} = \\sqrt{2GM/R} \\approx 11.2\\text{ km/s}$ for Earth."
+    "$U = -GMm/r$; $V = -GM/r$ (zero at infinity); $g = -dV/dr$.",
+    "Near the surface $-GMm/r$ reduces to $mgh$ (h ≪ R)."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "\"Gravitational potential at a point is the work done per unit mass in bringing a test mass from infinity to that point.\""
+  ],
   "importantNotes": [
-    "Potential is negative because gravity is attractive — work must be done against gravity to move mass to infinity.",
-    "Reference point for potential is arbitrary; only differences matter physically. Infinity = 0 is conventional.",
-    "Inside a spherical shell, field is zero but potential is constant ($-GM/R$) — not zero.",
-    "Escape velocity is independent of the escaping object's mass."
+    "Verified PYQ: satellite PE numerical (2021, 3m)."
   ],
   "examShortTricks": [
-    "Potential $V = -GM/r$ is always negative (infinity = 0 reference).",
-    "Near surface: use $U = mgh$; far from Earth: use $U = -GMm/r$.",
-    "Escape velocity: $v_\\text{esc} = \\sqrt{2gR}$ — no need for G and M if g and R known.",
-    "Potential is scalar — just add values, no vector components.",
-    "Orbital velocity is $\\sqrt{2}$ times smaller than escape velocity at same radius."
+    "\"r = R + h first; then U = −GMm/r with the minus sign.\""
   ],
   "examNotes": [
-    "NEB frequently asks for derivation of gravitational potential and potential energy.",
-    "Distinguish potential (scalar, J/kg) from potential energy (scalar, J) and field (vector, N/kg).",
-    "Escape velocity derivation using energy conservation is a standard question.",
-    "Shell theorem results: field = 0 inside, potential = constant inside shell."
+    "The 2021 numerical is the pattern: orbital radius → one substitution."
   ],
   "examples": [
-    "Potential at Earth's surface: $V = -GM/R = -(6.67\\times 10^{-11})(5.97\\times 10^{24})/(6.4\\times 10^6) = -6.25 \\times 10^7\\text{ J/kg}$.",
-    "PE of 2 kg mass at Earth's surface: $U = mV = 2 \\times (-6.25 \\times 10^7) = -1.25 \\times 10^8\\text{ J}$.",
-    "Escape velocity from Earth: $v_\\text{esc} = \\sqrt{2 \\times 9.8 \\times 6.4\\times 10^6} = 11{}200\\text{ m/s} = 11.2\\text{ km/s}$.",
-    "PE change lifting 5 kg by 10 m: $\\Delta U = mgh = 5 \\times 9.8 \\times 10 = 490\\text{ J}$."
+    "***NEB 2021*** — 200 kg satellite at 400 km: r = 6.8×10⁶ m → U = −1.18×10¹⁰ J."
   ],
   "practiceQuestions": [
-    "Q2. Derive $V = -GM/r$ for gravitational potential due to a point mass.",
-    "Q3. Show that escape velocity is $v_\\text{esc} = \\sqrt{2GM/R}$ using energy conservation.",
-    "Q4. Calculate gravitational potential at Earth's surface given $M = 5.97\\times 10^{24}\\text{ kg}$, $R = 6.4\\times 10^6\\text{ m}$.",
-    "Q5. Distinguish between gravitational potential and gravitational potential energy.",
-    "Q6. Find potential inside and outside a thin spherical shell of mass M and radius R.",
-    "Q7. A 10 kg mass is moved from Earth's surface to height 2R. Find change in potential energy."
+    "**Numerical (3m): Find the potential at Earth's surface (M = 6×10²⁴ kg, R = 6.4×10⁶ m).** — V = −GM/R = −(6.67×10⁻¹¹ × 6×10²⁴)/6.4×10⁶ = −6.25×10⁷ J/kg."
   ],
   "practice": [
-    "Calculate gravitational potential due to point mass and spherical bodies.",
-    "Compute potential energy changes using $U = -GMm/r$ or $mgh$ as appropriate.",
-    "Derive and apply escape velocity formula.",
-    "Use relation $\\vec{g} = -\\nabla V$ to find field from potential.",
-    "Solve problems involving potential inside/outside spherical shells and solid spheres.",
-    "Calculate work done in moving masses in gravitational fields."
+    "Why is the zero of gravitational potential taken at infinity?"
   ],
   "universalFacts": [
-    "Gravitational potential energy is negative because gravity is attractive — bound systems have negative total energy.",
-    "Escape velocity from Earth (11.2 km/s) is much higher than orbital velocity (7.9 km/s) — escaping requires $\\sqrt{2}$ times orbital speed.",
-    "Gravitational potential is a scalar — no direction, unlike gravitational field which is a vector.",
-    "The gravitational potential at the center of Earth is $-3GM/2R$ — about 1.5 times the surface value (more negative).",
-    "Black holes have escape velocity exceeding speed of light — nothing, not even light, can escape."
+    "The Moon's PE in Earth's field is about −7.6×10²⁸ J — bound bodies always carry negative PE."
   ],
   "confusion": [
-    "Confusing potential (V, J/kg) with potential energy (U, J): $U = mV$ — multiply by mass.",
-    "Thinking potential is always positive: Gravitational potential is negative (infinity = 0 reference).",
-    "Believing field inside shell is zero means potential is also zero: Field = 0 but potential = constant ($-GM/R$).",
-    "Using $mgh$ for large heights: Valid only for $h \\ll R$; use $-GMm/r$ for space problems.",
-    "Confusing escape velocity with orbital velocity: $v_\\text{esc} = \\sqrt{2}\\,v_\\text{orb}$ at same radius."
+    "**Potential vs potential energy:** V = −GM/r (J/kg, per unit mass); U = −GMm/r (J, for mass m).",
+    "**Why negative:** with zero at infinity, bringing a mass closer against attraction *releases* energy — the bound system sits below zero."
   ],
   "mcs": [
     {
@@ -159,6 +110,145 @@
   "animation3D": "gravitational-potential",
   "motionGraphics": "potential-well",
   "visualType": "gravitational-potential",
-  "summary": "Gravitational potential $V = -GM/r$ is work per unit mass from infinity; potential energy $U = mV = -GMm/r$ (or $mgh$ near surface). Potential is scalar and negative; field $\\vec{g} = -\\nabla V$ points toward lower potential. Escape velocity $v_\\text{esc} = \\sqrt{2GM/R}$ is the minimum speed to escape to infinity.",
-  "source": "skeleton-v2"
+  "summary": "Gravitational **potential energy** $U = -GMm/r$ and **potential** $V = -GM/r$ (J/kg) are measured from a zero at infinity; the minus sign encodes attraction — a bound system's energy lies below zero, and escape requires supplying energy. The integral $\\int_\\infty^r GMm/x^2\\,dx$ yields both, and the field is the potential gradient: $g = -dV/dr$. Near the surface the formula collapses to the familiar $mgh$. A 200 kg satellite orbiting 400 km up (r = 6.8×10⁶ m) has $U = -1.18 \\times 10^{10}$ J (NEB 2021) and sits in a potential of −5.9×10⁷ J/kg. This mathematics transfers unchanged to electrostatics with $1/4\\pi\\epsilon_0$ in place of G.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — The Energy Ledger of Gravity\n\nPotential energy near Earth's surface ($mgh$) is only an approximation. The exact bookkeeping — valid to any distance — uses the inverse-square law: gravitational potential energy $U = -GMm/r$, negative because gravity binds. The potential per unit mass, $V = -GM/r$, extends this to any test mass.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Definitions\n\n**Gravitational potential energy (U):** the work done by an external agent to bring a mass $m$ from infinity (zero reference) to a distance $r$ from mass $M$:\n$$U = -\\frac{GMm}{r}$$\n**Negative sign meaning:** gravity does positive work as the mass approaches; the field is attractive, so the bound system's energy is below zero. Infinity is the zero of energy — free escape.\n\n**Gravitational potential (V):** potential energy per unit mass:\n$$V = -\\frac{GM}{r} \\quad \\text{(J/kg)}$$\n$V$ at a point is the work done per unit mass bringing a test mass from infinity to that point.\n\n### 2.2 Derivation\n\nWork done moving $m$ from infinity to $r$ against gravity:\n$$U = \\int_\\infty^r \\frac{GMm}{x^2}\\,dx\\;(\\text{external work}) = -\\int_\\infty^r \\frac{GMm}{x^2}\\,dx = \\left[\\frac{GMm}{x}\\right]_\\infty^r = -\\frac{GMm}{r}$$\n\n### 2.3 Relation between field and potential\n\n$$g = -\\frac{dV}{dr}$$\nThe field points down the potential gradient — masses \"roll downhill\" toward lower (more negative) potential.\n\n### 2.4 Worked numerical (NEB 2021)\n\n**Q (3m, 2021):** Find the gravitational potential energy of a satellite of mass 200 kg orbiting at a height of 400 km above Earth's surface. (R = 6.4×10⁶ m, M = 6×10²⁴ kg, G = 6.67×10⁻¹¹)\n- $r = R + h = 6.8 \\times 10^6$ m\n- $U = -\\dfrac{GMm}{r} = -\\dfrac{6.67\\times10^{-11} \\times 6\\times10^{24} \\times 200}{6.8\\times10^6} = -\\dfrac{8.00\\times10^{16}}{6.8\\times10^6} = -1.18 \\times 10^{10}$ J\n\n**Q (NEB-style):** Find the potential at that orbit.\n$V = -GM/r = -\\dfrac{4.00\\times10^{14}}{6.8\\times10^6} = -5.9 \\times 10^7$ J/kg.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 19:** near Earth's surface $U = mgh$ is the linear approximation of $-GMm/r$ for $h \\ll R$.\n- **To Topic 34:** escape velocity follows from total energy ≥ 0: $\\frac{1}{2}mv^2 - \\frac{GMm}{R} = 0$.\n- **To Topic 35:** satellite total energy $E = -GMm/2r$ — half the PE.\n- **To electrostatics:** identical mathematics with $1/4\\pi\\epsilon_0$ replacing G.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Mechanics | Gravitation | Find the gravitational potential energy of a satellite of mass 200 kg orbiting at a height of 400 km above Earth's surface. (R = 6.4×10⁶ m, M = 6×10²⁴ kg, G = 6.67×10⁻¹¹) | 3 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Define gravitational potential; derive $V = -GM/r$ (3m).\n2. Why is gravitational PE negative? (2m)\n3. Relation $g = -dV/dr$ (2m).\n\n### 4.3 Common examination mistakes\n\n1. Dropping the minus sign — the negative is the physics (bound system).\n2. Using $R$ instead of $R + h$ for orbital radius.\n3. Confusing potential (J/kg) with potential energy (J).\n4. Taking the zero of potential at the surface instead of at infinity."
+    ],
+    "confusion": [
+      "**Potential vs potential energy:** V = −GM/r (J/kg, per unit mass); U = −GMm/r (J, for mass m).",
+      "**Why negative:** with zero at infinity, bringing a mass closer against attraction *releases* energy — the bound system sits below zero."
+    ],
+    "keyPoints": [
+      "$U = -GMm/r$; $V = -GM/r$ (zero at infinity); $g = -dV/dr$.",
+      "Near the surface $-GMm/r$ reduces to $mgh$ (h ≪ R)."
+    ],
+    "importantConcepts": [
+      "**Negative PE = bound:** the escape-velocity calculation is exactly the statement that total energy must reach zero."
+    ],
+    "examples": [
+      "***NEB 2021*** — 200 kg satellite at 400 km: r = 6.8×10⁶ m → U = −1.18×10¹⁰ J."
+    ],
+    "universalFacts": [
+      "The Moon's PE in Earth's field is about −7.6×10²⁸ J — bound bodies always carry negative PE."
+    ],
+    "importantStatements": [
+      "\"Gravitational potential at a point is the work done per unit mass in bringing a test mass from infinity to that point.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: satellite PE numerical (2021, 3m)."
+    ],
+    "examShortTricks": [
+      "\"r = R + h first; then U = −GMm/r with the minus sign.\""
+    ],
+    "examNotes": [
+      "The 2021 numerical is the pattern: orbital radius → one substitution."
+    ],
+    "formulas": [
+      "- U = −GMm/r; V = −GM/r\n- g = −dV/dr\n- Near surface: U ≈ mgh"
+    ],
+    "practice": [
+      "Why is the zero of gravitational potential taken at infinity?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): Find the potential at Earth's surface (M = 6×10²⁴ kg, R = 6.4×10⁶ m).** — V = −GM/R = −(6.67×10⁻¹¹ × 6×10²⁴)/6.4×10⁶ = −6.25×10⁷ J/kg."
+    ]
+  },
+  "importantConcepts": [
+    "**Negative PE = bound:** the escape-velocity calculation is exactly the statement that total energy must reach zero."
+  ],
+  "mcqs": [
+    {
+      "question": "Gravitational potential at distance r from M is:",
+      "options": [
+        "+GM/r",
+        "−GM/r",
+        "−GMm/r",
+        "+GMm/r"
+      ],
+      "answer": "B",
+      "explanation": "Per unit mass, negative for attraction."
+    },
+    {
+      "question": "The zero of gravitational potential is conventionally at:",
+      "options": [
+        "Earth's surface",
+        "The body's centre",
+        "Infinity",
+        "Sea level"
+      ],
+      "answer": "C",
+      "explanation": "U → 0 as r → ∞."
+    },
+    {
+      "question": "NEB 2021: 200 kg at r = 6.8×10⁶ m has U ≈:",
+      "options": [
+        "−1.18×10¹⁰ J",
+        "+1.18×10¹⁰ J",
+        "−1.18×10⁷ J",
+        "−6.25×10⁷ J"
+      ],
+      "answer": "A",
+      "explanation": "U = −GMm/r."
+    },
+    {
+      "question": "Gravitational PE is negative because:",
+      "options": [
+        "Mass is negative",
+        "The force is attractive and zero is at infinity",
+        "g is negative",
+        "Distances are negative"
+      ],
+      "answer": "B",
+      "explanation": "Bound systems sit below the infinity reference."
+    },
+    {
+      "question": "The relation between field and potential is:",
+      "options": [
+        "g = dV/dr",
+        "g = −dV/dr",
+        "V = −dg/dr",
+        "g = Vr"
+      ],
+      "answer": "B",
+      "explanation": "Field points down the potential gradient."
+    },
+    {
+      "question": "Near Earth's surface, −GMm/r approximates:",
+      "options": [
+        "mv²",
+        "mgh",
+        "½mv²",
+        "mGR"
+      ],
+      "answer": "B",
+      "explanation": "Linearise for h ≪ R."
+    },
+    {
+      "question": "The unit of gravitational potential is:",
+      "options": [
+        "J",
+        "J/kg",
+        "N/kg·m²",
+        "N"
+      ],
+      "answer": "B",
+      "explanation": "Energy per unit mass."
+    },
+    {
+      "question": "As r → ∞, gravitational potential:",
+      "options": [
+        "→ −∞",
+        "→ 0",
+        "→ +∞",
+        "Stays constant"
+      ],
+      "answer": "B",
+      "explanation": "V = −GM/r → ⁰."
+    }
+  ]
 }

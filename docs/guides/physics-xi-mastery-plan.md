@@ -56,16 +56,16 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 25 | Circular Motion (6h) | Conical pendulum | `03-conical-pendulum.json` | **Completed** |
 | 26 | Circular Motion (6h) | Motion in a vertical circle | `05-motion-in-a-vertical-circle.json` | **Completed** |
 | 27 | Circular Motion (6h) | Applications of banking | `06-applications-of-banking.json` | **Completed** |
-| 28 | Gravitation (7h) | Newton's law of gravitation | TBD | Not started |
-| 29 | Gravitation (7h) | Gravitational field strength | TBD | Not started |
-| 30 | Gravitation (7h) | Gravitational potential; gravitational potential energy | TBD | Not started |
+| 28 | Gravitation (7h) | Newton's law of gravitation | `01-newton-s-law-of-gravitation.json` | **Completed** |
+| 29 | Gravitation (7h) | Gravitational field strength | `02-gravitational-field-strength.json` | **Completed** |
+| 30 | Gravitation (7h) | Gravitational potential; gravitational potential energy | `03-gravitational-potential-gravitational-potential-energy.json` | **Completed** |
 | 31 | Gravitation (7h) | Variation in value of 'g' due to altitude and depth | TBD | Not started |
-| 32 | Gravitation (7h) | Centre of mass and centre of gravity | TBD | Not started |
+| 32 | Gravitation (7h) | Centre of mass and centre of gravity | `05-centre-of-mass-and-centre-of-gravity.json` | **Completed** |
 | 33 | Gravitation (7h) | Motion of a satellite: orbital velocity and time period of the satellite | TBD | Not started |
-| 34 | Gravitation (7h) | Escape velocity | TBD | Not started |
-| 35 | Gravitation (7h) | Potential and kinetic energy of the satellite | TBD | Not started |
-| 36 | Gravitation (7h) | Geostationary satellite | TBD | Not started |
-| 37 | Gravitation (7h) | GPS | TBD | Not started |
+| 34 | Gravitation (7h) | Escape velocity | `07-escape-velocity.json` | **Completed** |
+| 35 | Gravitation (7h) | Potential and kinetic energy of the satellite | `08-potential-and-kinetic-energy-of-the-satellite.json` | **Completed** |
+| 36 | Gravitation (7h) | Geostationary satellite | `09-geostationary-satellite.json` | **Completed** |
+| 37 | Gravitation (7h) | GPS | `10-gps.json` | **Completed** |
 | 38 | Elasticity (4h) | Hooke's law: force constant | TBD | Not started |
 | 39 | Elasticity (4h) | Stress; strain; elasticity and plasticity | TBD | Not started |
 | 40 | Elasticity (4h) | Elastic modulus: Young modulus, bulk modulus, shear modulus | TBD | Not started |
@@ -155,3 +155,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 - Session 4 — Unit 4 Dynamics (5 topics) upgraded: linear momentum & impulse; conservation of linear momentum; application of Newton’s laws; moment/torque/equilibrium; solid friction. Verified PYQs used: 2024 gun recoil 3m, 2023 force numerical 3m, 2018 conservation derivation 3m, 2022 bullet-block 4m, 2021+2022+2024 three laws 3m each, 2020 mass vs weight 2m, 2014 second law 2m, 2021 terminal velocity 2m, 2023 static friction 3m, 2021 incline friction 3m, 2024 angle of repose 3m. No PYQ for torque (NEB-style labelled). Next: Unit 5 Work, Energy and Power (6 topics).
 - Session 5 — Unit 5 Work, Energy and Power (6 topics) upgraded: work (constant/variable); power; work-energy theorem & KE/PE; conservation of energy; conservative vs non-conservative forces; elastic & inelastic collisions. Verified PYQs used: 2024 spring work 3m + motor 3m + car power 3m + kWh 2m + mechanical-energy conservation 3m + WET proof 5m, 2022 motor 3m + staircase 3m, 2021 definitions 3m, 2023 WET proof 5m + falling-body KE 4m, 2020 WET statement 3m + conservation verification 3m + elastic vs inelastic 3m, 2022 bullet-block 4m. No PYQ for conservative forces (NEB-style labelled). Next: Unit 6 Circular Motion (6 topics).
 - Session 6 — Canonical-file audit: replicated noteMatchesTopic + selectCanonicalNoteEntry over the physics manifest; found 7 earlier topics whose mastery content sat in non-served duplicate files. Ported mastery content into the served canonical files (vectors 02-addition..., kinematics 03-equation-of-motion-graphical, 05-projectile-motion; dynamics 01-linear-momentum-impulse, 03-moment-torque-and-equilibrium, 05-solid-friction; work-energy 02-power--2) and reverted the duplicate files to pre-edit state. All 21 done topics now resolve to mastery files. Then Unit 6 Circular Motion (6 topics) upgraded: angular quantities; angular-linear relations; centripetal acceleration & force; conical pendulum; vertical circle; banking. Verified PYQs used: flywheel 2023 4m, wheel 2024 3m, car-turn 2022+2024 3m, centripetal derivation 2023+2024 5m, conical pendulum 2024 3m, vertical-circle top speed 2024 3m, banking derivation+numerical 2024 5m. Next: Unit 7 Gravitation (9 topics).
+- Session 7 — Unit 7 Gravitation (10 topics) upgraded: Newton's law of gravitation; gravitational field strength; gravitational potential & PE; variation of g (altitude/depth); centre of mass & gravity; satellite motion (orbital velocity & period); escape velocity; satellite PE/KE; geostationary satellite; GPS. Verified PYQs used: law + G 2024 2m, third law 2019 2m, planet g 2021 3m, satellite PE 2021 3m, orbital speed 2022 4m, escape derivation 2023 5m, escape planet 2022 3m. Field strength, potential/PE, centre of mass, geostationary and GPS labelled NEB-style (no verified PYQ). Next: Unit 8 Elasticity (5 topics).

@@ -6,42 +6,22 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:14.895Z",
   "notes": [
-    "# Geostationary satellite\n\n## 1. Introduction\nPhysical picture of **Geostationary satellite** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Gravitation fill pass.\n\n## 2. Concepts and laws\n### Geostationary satellite\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Cases and comparisons**\n\n| Case | Condition | Governing equation | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Geostationary satellite — geometry and force diagram (authored SVG)\n- **D2** — Geostationary satellite — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Geostationary satellite — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Geostationary satellite — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Hanging Over One Spot\n\nA satellite that circles Earth in exactly 24 hours — moving with Earth's rotation — appears to hover over a fixed point on the equator. That demanding condition fixes its orbit precisely: one radius, one plane, one speed. Every TV dish and weather satellite image depends on it.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Conditions for a geostationary orbit\n\n1. **Period = Earth's rotation period** (23 h 56 min 4 s ≈ 24 h — sidereal day).\n2. **Orbit in the equatorial plane** (otherwise it would drift north–south).\n3. **Circular orbit**, moving west→east (same sense as Earth's rotation).\n4. Fixed **longitude** over the equator.\n\n### 2.2 Derivation of the orbital radius\n\nFrom $T = 2\\pi\\sqrt{r^3/GM}$:\n$$r^3 = \\frac{GMT^2}{4\\pi^2} \\Rightarrow r = \\left(\\frac{GMT^2}{4\\pi^2}\\right)^{1/3}$$\nWith $M = 6\\times10^{24}$ kg, $T = 86400$ s:\n$$r^3 = \\frac{6.67\\times10^{-11} \\times 6\\times10^{24} \\times (8.64\\times10^4)^2}{39.48} = 7.54\\times10^{22} \\text{ m}^3 \\Rightarrow r = 4.23\\times10^7 \\text{ m}$$\n\n**Height above surface:** $h = r - R = 4.23\\times10^7 - 6.4\\times10^6 = 3.59 \\times 10^7$ m ≈ **36 000 km**.\n\n**Orbital speed:** $v = 2\\pi r/T = 2\\pi \\times 4.23\\times10^7/86400 = 3.1$ km/s.\n\n### 2.3 Uses\n\n- **Communication:** fixed antennas point once, forever (TV, telephone relays).\n- **Weather watching:** continuous images of the same hemisphere.\n- **Broadcasting and military reconnaissance.**\n\n**Limitations:** cannot serve polar regions (low elevation angle), signal delay ≈ 0.24 s round trip, and the orbit slot is a limited international resource.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 33:** the geostationary radius is the answer to \"what r gives T = 24 h?\" — $r = (GMT^2/4\\pi^2)^{1/3}$.\n- **To Kepler's third law:** $T^2 \\propto r^3$ fixes the radius once T is fixed.\n- **To GPS (Topic 37):** GPS satellites are NOT geostationary — they orbit at ~20 200 km with 12-hour periods, needing six orbital planes.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank (the 2022 satellite numerical belongs to Topic 33). Practise the conditions, radius derivation and uses as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. What is a geostationary satellite? State its conditions and uses (3–5m).\n2. Calculate the height of a geostationary orbit (4m).\n3. Why must the orbit lie in the equatorial plane? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Writing the height as 42 300 km — that is the **radius**; the height is r − R ≈ 36 000 km.\n2. Saying \"24 hours\" without noting it should be the sidereal day.\n3. Omitting the equatorial-plane condition."
   ],
   "examNotes": [
-    "Computing the geostationary orbit radius from T = 24 h is a classic numerical.",
-    "Conditions for a geostationary orbit are a frequent short-answer question.",
-    "Geosynchronous vs geostationary distinction appears in MCQs.",
-    "Applications (telecom, weather, broadcasting) are direct marks.",
-    "Energy in geostationary orbit is tested together with satellite topic."
+    "The height calculation (4m) is the likely numerical; quote h ≈ 36 000 km."
   ],
   "examShortTricks": [
-    "Memorise: geostationary altitude ≈ 36,000 km (35,800 km more precisely).",
-    "From T to r: r = (GMT²/4π²)^(1/3) — plug 86400 s directly.",
-    "Speed shortcut: v = 2πr/T or v = √(GM/r); both give ≈ 3 km/s.",
-    "If T = 24 h BUT orbit is inclined — it's geosynchronous, not geostationary (quick MCQ trap).",
-    "Energy: just use E = −GMm/2r; KE = GMm/2r."
+    "\"r³ = GMT²/4π² — memorise the cube-root formula.\""
   ],
   "practiceQuestions": [
-    "Calculate the radius and altitude of a geostationary orbit using G, M and T = 24 h.",
-    "What is the orbital speed of a satellite in geostationary orbit?",
-    "Why must a geostationary satellite lie in the equatorial plane?",
-    "Distinguish between geostationary and geosynchronous satellites with a diagram.",
-    "Find the total energy and kinetic energy of a 2000 kg satellite in geostationary orbit.",
-    "A satellite has a 24-h period but an inclined orbit. Is it geostationary? Explain."
+    "**Numerical (4m): Calculate the radius and period-consistency of a geostationary orbit (M = 6×10²⁴ kg, T = 8.64×10⁴ s).** — r³ = GMT²/4π² = (4.00×10¹⁴ × 7.46×10⁹)/39.48 = 7.56×10²² m³ → r = 4.23×10⁷ m; h = 3.59×10⁷ m ≈ 36 000 km."
   ],
   "practice": [
-    "Verify the geostationary altitude using T = 86400 s, G and M.",
-    "Compute the orbital speed of a geostationary satellite.",
-    "Explain why the orbit must be equatorial for a satellite to be geostationary.",
-    "Distinguish between geostationary and geosynchronous satellites.",
-    "Find the total energy of a 500 kg satellite in geostationary orbit.",
-    "Why are weather and communication satellites placed in geostationary orbits?"
+    "Why can a geostationary satellite not observe the poles?"
   ],
   "mcs": [
     {
@@ -93,6 +73,169 @@
         "low Earth orbit"
       ],
       "answer": "B"
+    }
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Hanging Over One Spot\n\nA satellite that circles Earth in exactly 24 hours — moving with Earth's rotation — appears to hover over a fixed point on the equator. That demanding condition fixes its orbit precisely: one radius, one plane, one speed. Every TV dish and weather satellite image depends on it.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Conditions for a geostationary orbit\n\n1. **Period = Earth's rotation period** (23 h 56 min 4 s ≈ 24 h — sidereal day).\n2. **Orbit in the equatorial plane** (otherwise it would drift north–south).\n3. **Circular orbit**, moving west→east (same sense as Earth's rotation).\n4. Fixed **longitude** over the equator.\n\n### 2.2 Derivation of the orbital radius\n\nFrom $T = 2\\pi\\sqrt{r^3/GM}$:\n$$r^3 = \\frac{GMT^2}{4\\pi^2} \\Rightarrow r = \\left(\\frac{GMT^2}{4\\pi^2}\\right)^{1/3}$$\nWith $M = 6\\times10^{24}$ kg, $T = 86400$ s:\n$$r^3 = \\frac{6.67\\times10^{-11} \\times 6\\times10^{24} \\times (8.64\\times10^4)^2}{39.48} = 7.54\\times10^{22} \\text{ m}^3 \\Rightarrow r = 4.23\\times10^7 \\text{ m}$$\n\n**Height above surface:** $h = r - R = 4.23\\times10^7 - 6.4\\times10^6 = 3.59 \\times 10^7$ m ≈ **36 000 km**.\n\n**Orbital speed:** $v = 2\\pi r/T = 2\\pi \\times 4.23\\times10^7/86400 = 3.1$ km/s.\n\n### 2.3 Uses\n\n- **Communication:** fixed antennas point once, forever (TV, telephone relays).\n- **Weather watching:** continuous images of the same hemisphere.\n- **Broadcasting and military reconnaissance.**\n\n**Limitations:** cannot serve polar regions (low elevation angle), signal delay ≈ 0.24 s round trip, and the orbit slot is a limited international resource.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 33:** the geostationary radius is the answer to \"what r gives T = 24 h?\" — $r = (GMT^2/4\\pi^2)^{1/3}$.\n- **To Kepler's third law:** $T^2 \\propto r^3$ fixes the radius once T is fixed.\n- **To GPS (Topic 37):** GPS satellites are NOT geostationary — they orbit at ~20 200 km with 12-hour periods, needing six orbital planes.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank (the 2022 satellite numerical belongs to Topic 33). Practise the conditions, radius derivation and uses as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. What is a geostationary satellite? State its conditions and uses (3–5m).\n2. Calculate the height of a geostationary orbit (4m).\n3. Why must the orbit lie in the equatorial plane? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Writing the height as 42 300 km — that is the **radius**; the height is r − R ≈ 36 000 km.\n2. Saying \"24 hours\" without noting it should be the sidereal day.\n3. Omitting the equatorial-plane condition."
+    ],
+    "confusion": [
+      "**Radius vs height:** the geostationary *radius* is 42 300 km; the *height above surface* is ≈ 36 000 km.",
+      "**Geostationary ≠ GPS:** GPS satellites orbit at 20 200 km with 12-hour periods across six planes."
+    ],
+    "keyPoints": [
+      "Conditions: T = 24 h (sidereal), equatorial plane, circular, west→east.",
+      "r = (GMT²/4π²)^(1/3) = 42 300 km; h ≈ 36 000 km; v ≈ 3.1 km/s."
+    ],
+    "importantConcepts": [
+      "**One period fixes one radius:** T² ∝ r³ means a 24-hour orbit has exactly one possible size."
+    ],
+    "examples": [
+      "***Radius calculation*** — r³ = GMT²/4π² = 7.54×10²² m³ → r = 4.23×10⁷ m."
+    ],
+    "universalFacts": [
+      "Only about 1 800 usable geostationary slots exist; their assignment is coordinated internationally (ITU)."
+    ],
+    "importantStatements": [
+      "\"A geostationary satellite appears stationary relative to Earth's surface.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (conditions+uses 3–5m, height numerical 4m)."
+    ],
+    "examShortTricks": [
+      "\"r³ = GMT²/4π² — memorise the cube-root formula.\""
+    ],
+    "examNotes": [
+      "The height calculation (4m) is the likely numerical; quote h ≈ 36 000 km."
+    ],
+    "formulas": [
+      "- r = (GMT²/4π²)^(1/3) = 4.23×10⁷ m\n- h = r − R ≈ 3.6×10⁷ m\n- v = 2πr/T ≈ 3.1 km/s"
+    ],
+    "practice": [
+      "Why can a geostationary satellite not observe the poles?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (4m): Calculate the radius and period-consistency of a geostationary orbit (M = 6×10²⁴ kg, T = 8.64×10⁴ s).** — r³ = GMT²/4π² = (4.00×10¹⁴ × 7.46×10⁹)/39.48 = 7.56×10²² m³ → r = 4.23×10⁷ m; h = 3.59×10⁷ m ≈ 36 000 km."
+    ]
+  },
+  "confusion": [
+    "**Radius vs height:** the geostationary *radius* is 42 300 km; the *height above surface* is ≈ 36 000 km.",
+    "**Geostationary ≠ GPS:** GPS satellites orbit at 20 200 km with 12-hour periods across six planes."
+  ],
+  "keyPoints": [
+    "Conditions: T = 24 h (sidereal), equatorial plane, circular, west→east.",
+    "r = (GMT²/4π²)^(1/3) = 42 300 km; h ≈ 36 000 km; v ≈ 3.1 km/s."
+  ],
+  "importantConcepts": [
+    "**One period fixes one radius:** T² ∝ r³ means a 24-hour orbit has exactly one possible size."
+  ],
+  "examples": [
+    "***Radius calculation*** — r³ = GMT²/4π² = 7.54×10²² m³ → r = 4.23×10⁷ m."
+  ],
+  "universalFacts": [
+    "Only about 1 800 usable geostationary slots exist; their assignment is coordinated internationally (ITU)."
+  ],
+  "importantStatements": [
+    "\"A geostationary satellite appears stationary relative to Earth's surface.\""
+  ],
+  "importantNotes": [
+    "No verified PYQ; NEB-style practice (conditions+uses 3–5m, height numerical 4m)."
+  ],
+  "formulas": [
+    "- r = (GMT²/4π²)^(1/3) = 4.23×10⁷ m\n- h = r − R ≈ 3.6×10⁷ m\n- v = 2πr/T ≈ 3.1 km/s"
+  ],
+  "summary": "A **geostationary satellite** keeps pace with Earth's rotation, hovering over a fixed equatorial point. Its conditions: period equal to the sidereal day (≈ 24 h), circular orbit **in the equatorial plane**, revolving west→east. Kepler's third law then fixes a unique radius: $r = (GMT^2/4\\pi^2)^{1/3} = 4.23 \\times 10^7$ m — a height of about 36 000 km, with orbital speed ≈ 3.1 km/s. The fixed position lets ground antennas point permanently, powering communication, broadcasting and continuous weather imaging — though polar regions are poorly served and signal delay is ~0.24 s. GPS deliberately breaks all these conditions, using faster 12-hour orbits in six planes.",
+  "mcqs": [
+    {
+      "question": "The period of a geostationary satellite is:",
+      "options": [
+        "12 h",
+        "24 h",
+        "365 days",
+        "90 min"
+      ],
+      "answer": "B",
+      "explanation": "Matched to Earth's rotation."
+    },
+    {
+      "question": "The geostationary orbit radius is about:",
+      "options": [
+        "6 400 km",
+        "20 200 km",
+        "36 000 km",
+        "42 300 km"
+      ],
+      "answer": "D",
+      "explanation": "Radius 42 300 km; height 36 000 km."
+    },
+    {
+      "question": "A geostationary satellite must orbit:",
+      "options": [
+        "Over the poles",
+        "In the equatorial plane",
+        "In any plane",
+        "Retrograde"
+      ],
+      "answer": "B",
+      "explanation": "Otherwise it drifts north–south."
+    },
+    {
+      "question": "Its orbital speed is about:",
+      "options": [
+        "7.9 km/s",
+        "3.1 km/s",
+        "11.2 km/s",
+        "1 km/s"
+      ],
+      "answer": "B",
+      "explanation": "v = 2πr/T."
+    },
+    {
+      "question": "The main use of geostationary satellites is:",
+      "options": [
+        "Polar mapping",
+        "Communication and weather watching",
+        "GPS navigation",
+        "Deep-space probes"
+      ],
+      "answer": "B",
+      "explanation": "Fixed position suits fixed antennas."
+    },
+    {
+      "question": "GPS satellites differ from geostationary ones in:",
+      "options": [
+        "Nothing",
+        "Period and orbital planes",
+        "Mass only",
+        "Colour"
+      ],
+      "answer": "B",
+      "explanation": "12-hour periods, six planes, 20 200 km."
+    },
+    {
+      "question": "If Earth spun faster, the geostationary radius would:",
+      "options": [
+        "Increase",
+        "Decrease",
+        "Stay same",
+        "Become zero"
+      ],
+      "answer": "B",
+      "explanation": "T² ∝ r³ — smaller T, smaller r."
+    },
+    {
+      "question": "The signal round-trip delay to a geostationary satellite is about:",
+      "options": [
+        "0.002 s",
+        "0.24 s",
+        "2.4 s",
+        "24 s"
+      ],
+      "answer": "B",
+      "explanation": "2 × 36 000 km / c ≈ 0.24 s."
     }
   ]
 }

@@ -5,19 +5,10 @@
   "topicTitle": "Variation in value of 'g' due to altitude and depth",
   "relevance": 100,
   "notes": [
-    "Acceleration Due to Gravity: At Earth's surface, $g = GM/R^2 \\approx 9.8\\text{ m/s}^2$. It varies with location due to altitude, depth, Earth's rotation, and shape.",
-    "Variation with Altitude: At height $h$ above surface: $g_h = GM/(R+h)^2 = g(1+h/R)^{-2} \\approx g(1 - 2h/R)$ for $h \\ll R$. Gravity decreases with altitude — inverse square law.",
-    "Variation with Depth: At depth $d$ below surface (assuming uniform density): $g_d = g(1 - d/R) = g(R-d)/R$. Gravity decreases linearly with depth, becoming zero at Earth's center.",
-    "Comparison: For small $h$ and $d$, decrease at height $h$ ($\\Delta g \\approx -2gh/R$) is twice the decrease at depth $d$ ($\\Delta g = -gd/R$). Gravity decreases faster with altitude than with depth.",
-    "Earth's Rotation: Effective gravity at latitude $\\lambda$: $g' = g - \\omega^2 R \\cos^2\\lambda$. Maximum at poles ($\\lambda = 90^\\circ$, no rotation effect), minimum at equator ($\\lambda = 0^\\circ$, maximum centrifugal reduction).",
-    "Earth's Shape: Earth is oblate (equatorial radius > polar radius). Since $g \\propto 1/R^2$, $g$ is higher at poles (closer to center) and lower at equator.",
-    "Combined Effects: The measured $g$ varies from about $9.78\\text{ m/s}^2$ at equator to $9.83\\text{ m/s}^2$ at poles due to rotation + shape + altitude.",
-    "# Variation in value of 'g' due to altitude and depth\n\n## 1. Introduction\nPhysical picture of **Variation in value of 'g' due to altitude and depth** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Gravitation fill pass.\n\n## 2. Concepts and laws\n### Variation in value of 'g' due to altitude and depth\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Variation in value of 'g' due to altitude and depth — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Variation in value of 'g' due to altitude and depth — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Variation in value of 'g' due to altitude and depth — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Variation in value of 'g' due to altitude and depth — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — A Weight That Depends on Where\n\nStep up a mountain and you weigh a little less; dive into a mine and you weigh less too — but for different reasons. Altitude thins the inverse-square pull by moving you away from Earth's centre; depth weakens the pull because part of Earth stops pulling you net-ward.",
+    "## 2. Fundamental Concepts\n\n### 2.1 At the surface\n\n$$g_0 = \\frac{GM}{R^2}$$\n\n### 2.2 At height h (altitude)\n\nDistance from centre becomes $R + h$:\n$$g_h = \\frac{GM}{(R+h)^2} = g_0\\left(1 + \\frac{h}{R}\\right)^{-2} \\approx g_0\\left(1 - \\frac{2h}{R}\\right) \\quad (h \\ll R)$$\ng **decreases** with altitude; for h ≪ R the decrease is linear at rate $2g_0/R \\approx 3.1$ m/s² per km... (i.e. $g$ drops ≈ 0.31 % per 10 km).\n\n### 2.3 At depth d\n\nOnly the mass inside radius $(R - d)$ pulls (shell theorem — outer shells cancel):\n$$g_d = \\frac{G\\,\\frac{4}{3}\\pi (R-d)^3 \\rho}{(R-d)^2} = \\frac{4}{3}\\pi G\\rho (R-d) = g_0\\left(1 - \\frac{d}{R}\\right)$$\ng **decreases linearly** with depth, reaching **zero at the centre**.\n\n### 2.4 Comparison\n\n| Location | Formula | Behaviour |\n|---|---|---|\n| Height h | $g_h = g_0(1 - 2h/R)$ approx | Quadratic → linear decrease |\n| Depth d | $g_d = g_0(1 - d/R)$ | Exactly linear decrease |\n| Centre | 0 | Zero |\n\n### 2.5 Worked numericals\n\n**Q (3m, 2021):** The mass of a planet is 8 times that of the earth and its radius is twice that of the earth. Find the acceleration due to gravity on the surface of the planet. (g = 9.8 m/s²)\n$$g_p = \\frac{GM_p}{R_p^2} = \\frac{G(8M)}{(2R)^2} = 2\\frac{GM}{R^2} = 2 \\times 9.8 = 19.6 \\text{ m/s}^2$$\n\n**Q (NEB-style):** Find g at depth 3.2 km (R = 6400 km).\n$g_d = 9.8(1 - 3.2/6400) = 9.8 \\times 0.9995 = 9.795$ m/s².",
+    "## 3. Conceptual Relationships\n\n- **To Topic 29:** these are evaluations of $g = GM/r^2$ at different radii.\n- **To density:** depth formula assumes uniform density — real Earth's core is denser, so actual g stays nearly constant in the upper mantle.\n- **To satellites:** weightlessness in orbit is not zero gravity — the field is ~89% of surface value at ISS height; free fall removes the *sensation* of weight.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Mechanics | Gravitation | The mass of a planet is 8 times that of the earth and its radius is twice that of the earth. Find the acceleration due to gravity on the surface of the planet. (g = 9.8 m/s²) | 3 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Show that g decreases linearly with depth (4m).\n2. At what height does g become half its surface value? (3m — h = R(√2 − 1) ≈ 2650 km)\n3. Compare decrease with altitude vs depth (2m).\n\n### 4.3 Common examination mistakes\n\n1. Using $(1 - h/R)$ for altitude — the altitude factor is $(1 + h/R)^{-2}$.\n2. Forgetting the shell theorem in the depth derivation.\n3. Saying g is zero in orbit — it is the *apparent weight* that vanishes in free fall."
   ],
   "specificConditions": [
     "Uniform Density Assumption: The depth formula $g_d = g(1-d/R)$ assumes Earth has uniform density. Real Earth has varying density, so actual variation is more complex.",
@@ -25,75 +16,38 @@
     "Latitude Effect: Rotation effect on g depends on latitude — zero at poles, maximum at equator."
   ],
   "formulas": [
-    "Surface gravity: $g = GM/R^2$",
-    "At height h: $g_h = g(R/(R+h))^2 \\approx g(1 - 2h/R)$",
-    "At depth d: $g_d = g(1 - d/R) = g(R-d)/R$",
-    "At center: $g = 0$",
-    "Rotation effect: $g' = g - \\omega^2 R \\cos^2\\lambda$",
-    "Comparison: $\\Delta g_\\text{height} \\approx 2\\times\\Delta g_\\text{depth}$ for equal h and d"
+    "- g_h = GM/(R+h)² ≈ g₀(1 − 2h/R)\n- g_d = g₀(1 − d/R)\n- Planet: g = GM/R²"
   ],
   "keyPoints": [
-    "Gravity decreases with altitude: $g_h = g(R/(R+h))^2$.",
-    "Gravity decreases with depth: $g_d = g(1-d/R)$, zero at center.",
-    "For equal h and d, decrease at height is approximately twice decrease at depth.",
-    "Rotation reduces effective gravity most at equator, none at poles.",
-    "Earth's oblateness makes g higher at poles, lower at equator."
+    "$g_h = g_0(1+h/R)^{-2} \\approx g_0(1-2h/R)$; $g_d = g_0(1-d/R)$; g = 0 at the centre."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "\"The value of g decreases with altitude quadratically and with depth linearly, vanishing at the centre.\""
+  ],
   "importantNotes": [
-    "g decreases with both altitude and depth but at different rates.",
-    "At Earth's center, g = 0 (mass symmetrically distributed in all directions).",
-    "The depth formula assumes uniform density — real Earth has core, mantle, crust with different densities.",
-    "Rotation effect is a centrifugal effect in the rotating frame of Earth."
+    "Verified PYQ: planet surface gravity (2021, 3m)."
   ],
   "examShortTricks": [
-    "Height: $g_h \\approx g(1-2h/R)$; Depth: $g_d = g(1-d/R)$.",
-    "For same h = d: change at height is twice change at depth.",
-    "Zero at center, max at poles, min at equator.",
-    "Use binomial approximation $(1+x)^n \\approx 1+nx$ for small h/R."
+    "\"Planet scaling: g_p/g = (M_p/M)(R/R_p)².\""
   ],
   "examNotes": [
-    "NEB frequently asks to derive variation of g with altitude and depth.",
-    "Compare rate of decrease with height vs depth — a common conceptual question.",
-    "Numerical problems: find g at given height/depth, or find height/depth where g is a fraction of surface value.",
-    "Rotation effect: poles vs equator difference."
+    "Master the ratio method — the 2021 question is pure ratio, no G needed."
   ],
   "examples": [
-    "g at height 100 km: $g_h = 9.8(1 - 2\\times100/6400) = 9.8(1 - 0.03125) = 9.49\\text{ m/s}^2$.",
-    "g at depth 100 km: $g_d = 9.8(1 - 100/6400) = 9.8(1 - 0.015625) = 9.65\\text{ m/s}^2$.",
-    "g at height equal to R (h = R): $g_h = g(R/2R)^2 = g/4 = 2.45\\text{ m/s}^2$.",
-    "Depth where g = g/2: $g/2 = g(1-d/R) \\Rightarrow d = R/2 = 3200\\text{ km}$.",
-    "Height where g = g/2: $g/2 = g(R/(R+h))^2 \\Rightarrow R+h = R\\sqrt{2} \\Rightarrow h = 0.414R \\approx 2650\\text{ km}$."
+    "***NEB 2021*** — planet 8M, 2R: g_p = (8/4)g = 19.6 m/s²."
   ],
   "practiceQuestions": [
-    "Q1. Derive expression for variation of g with altitude.",
-    "Q2. Derive expression for variation of g with depth (assume uniform density).",
-    "Q3. Compare the rate of decrease of g with altitude and depth.",
-    "Q4. Find height where g becomes 1% less than surface value.",
-    "Q5. Find depth where g becomes 50% of surface value.",
-    "Q6. Explain why g is maximum at poles and minimum at equator.",
-    "Q7. Calculate g at the top of Mount Everest (h ≈ 8.8 km)."
+    "**Numerical (3m): At what height above Earth's surface does g become half its surface value?** — GM/(R+h)² = GM/2R² → (R+h)² = 2R² → h = R(√2−1) = 6400×0.414 = 2650 km."
   ],
   "practice": [
-    "Calculate g at various heights using $g_h = g(R/(R+h))^2$.",
-    "Calculate g at various depths using $g_d = g(1-d/R)$.",
-    "Find height/depth where g is a specified fraction of surface value.",
-    "Compare altitude and depth effects for same numerical displacement.",
-    "Account for Earth's rotation in effective gravity at different latitudes."
+    "Where is g larger: 3.2 km up or 3.2 km down?"
   ],
   "universalFacts": [
-    "g varies from 9.78 m/s² at equator to 9.83 m/s² at poles — about 0.5% variation.",
-    "At Earth's center, a mass would be weightless because gravitational pulls from all directions cancel.",
-    "Satellites experience microgravity not because g is zero (g ≈ 8.7 m/s² at ISS altitude) but because they are in free fall.",
-    "The GRACE mission measures Earth's gravity field variations to study groundwater, ice sheets, and ocean currents.",
-    "Olympic records in jumping events are slightly easier at high altitude (lower g) and near equator."
+    "At the ISS (~400 km) g ≈ 8.7 m/s² — astronauts float because they fall with their spacecraft, not because gravity vanished."
   ],
   "confusion": [
-    "Thinking g decreases at same rate with height and depth: Height decrease (~2h/R) is approximately twice depth decrease (d/R).",
-    "Believing g is zero at Earth's center because no mass below: It's zero because mass surrounds symmetrically — pulls cancel.",
-    "Ignoring Earth's rotation in g variation: Rotation contributes significantly to equator-pole difference.",
-    "Using depth formula without uniform density assumption: Real Earth's density varies, so actual g(d) is not linear.",
-    "Confusing g variation with altitude vs gravitational potential variation."
+    "**Altitude vs depth:** both decrease g, but altitude does so quadratically (≈ 2h/R) while depth is exactly linear (d/R).",
+    "**Weightlessness ≠ zero gravity:** in orbit g is still ~90% of surface value; free fall removes apparent weight."
   ],
   "mcs": [
     {
@@ -155,6 +109,144 @@
   "animation3D": "variation-of-g",
   "motionGraphics": "gravity-profile",
   "visualType": "g-variation",
-  "summary": "Acceleration due to gravity decreases with altitude ($g_h \\approx g(1-2h/R)$) and depth ($g_d = g(1-d/R)$), becoming zero at Earth's center. Rotation and Earth's oblateness cause g to be maximum at poles and minimum at equator. For equal h and d, gravity decreases about twice as fast with altitude.",
-  "source": "skeleton-v2"
+  "summary": "Surface gravity $g_0 = GM/R^2$ is not constant. At height $h$, $g_h = GM/(R+h)^2 \\approx g_0(1 - 2h/R)$ — a quadratic-then-linear decrease. At depth $d$, the shell theorem leaves only the inner sphere pulling, giving $g_d = g_0(1 - d/R)$ — exactly linear, zero at the centre. The ratio method solves planet problems instantly: a planet with 8× Earth's mass and 2× its radius has $g_p = (8/4) \\times 9.8 = 19.6$ m/s² (NEB 2021). Astronauts float not because gravity is absent at 400 km (it is ~8.7 m/s²) but because they and their spacecraft fall together.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — A Weight That Depends on Where\n\nStep up a mountain and you weigh a little less; dive into a mine and you weigh less too — but for different reasons. Altitude thins the inverse-square pull by moving you away from Earth's centre; depth weakens the pull because part of Earth stops pulling you net-ward.",
+      "## 2. Fundamental Concepts\n\n### 2.1 At the surface\n\n$$g_0 = \\frac{GM}{R^2}$$\n\n### 2.2 At height h (altitude)\n\nDistance from centre becomes $R + h$:\n$$g_h = \\frac{GM}{(R+h)^2} = g_0\\left(1 + \\frac{h}{R}\\right)^{-2} \\approx g_0\\left(1 - \\frac{2h}{R}\\right) \\quad (h \\ll R)$$\ng **decreases** with altitude; for h ≪ R the decrease is linear at rate $2g_0/R \\approx 3.1$ m/s² per km... (i.e. $g$ drops ≈ 0.31 % per 10 km).\n\n### 2.3 At depth d\n\nOnly the mass inside radius $(R - d)$ pulls (shell theorem — outer shells cancel):\n$$g_d = \\frac{G\\,\\frac{4}{3}\\pi (R-d)^3 \\rho}{(R-d)^2} = \\frac{4}{3}\\pi G\\rho (R-d) = g_0\\left(1 - \\frac{d}{R}\\right)$$\ng **decreases linearly** with depth, reaching **zero at the centre**.\n\n### 2.4 Comparison\n\n| Location | Formula | Behaviour |\n|---|---|---|\n| Height h | $g_h = g_0(1 - 2h/R)$ approx | Quadratic → linear decrease |\n| Depth d | $g_d = g_0(1 - d/R)$ | Exactly linear decrease |\n| Centre | 0 | Zero |\n\n### 2.5 Worked numericals\n\n**Q (3m, 2021):** The mass of a planet is 8 times that of the earth and its radius is twice that of the earth. Find the acceleration due to gravity on the surface of the planet. (g = 9.8 m/s²)\n$$g_p = \\frac{GM_p}{R_p^2} = \\frac{G(8M)}{(2R)^2} = 2\\frac{GM}{R^2} = 2 \\times 9.8 = 19.6 \\text{ m/s}^2$$\n\n**Q (NEB-style):** Find g at depth 3.2 km (R = 6400 km).\n$g_d = 9.8(1 - 3.2/6400) = 9.8 \\times 0.9995 = 9.795$ m/s².",
+      "## 3. Conceptual Relationships\n\n- **To Topic 29:** these are evaluations of $g = GM/r^2$ at different radii.\n- **To density:** depth formula assumes uniform density — real Earth's core is denser, so actual g stays nearly constant in the upper mantle.\n- **To satellites:** weightlessness in orbit is not zero gravity — the field is ~89% of surface value at ISS height; free fall removes the *sensation* of weight.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Mechanics | Gravitation | The mass of a planet is 8 times that of the earth and its radius is twice that of the earth. Find the acceleration due to gravity on the surface of the planet. (g = 9.8 m/s²) | 3 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Show that g decreases linearly with depth (4m).\n2. At what height does g become half its surface value? (3m — h = R(√2 − 1) ≈ 2650 km)\n3. Compare decrease with altitude vs depth (2m).\n\n### 4.3 Common examination mistakes\n\n1. Using $(1 - h/R)$ for altitude — the altitude factor is $(1 + h/R)^{-2}$.\n2. Forgetting the shell theorem in the depth derivation.\n3. Saying g is zero in orbit — it is the *apparent weight* that vanishes in free fall."
+    ],
+    "confusion": [
+      "**Altitude vs depth:** both decrease g, but altitude does so quadratically (≈ 2h/R) while depth is exactly linear (d/R).",
+      "**Weightlessness ≠ zero gravity:** in orbit g is still ~90% of surface value; free fall removes apparent weight."
+    ],
+    "keyPoints": [
+      "$g_h = g_0(1+h/R)^{-2} \\approx g_0(1-2h/R)$; $g_d = g_0(1-d/R)$; g = 0 at the centre."
+    ],
+    "importantConcepts": [
+      "**Shell theorem drives the depth result:** outer shells cancel, so only the inner sphere's mass counts."
+    ],
+    "examples": [
+      "***NEB 2021*** — planet 8M, 2R: g_p = (8/4)g = 19.6 m/s²."
+    ],
+    "universalFacts": [
+      "At the ISS (~400 km) g ≈ 8.7 m/s² — astronauts float because they fall with their spacecraft, not because gravity vanished."
+    ],
+    "importantStatements": [
+      "\"The value of g decreases with altitude quadratically and with depth linearly, vanishing at the centre.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: planet surface gravity (2021, 3m)."
+    ],
+    "examShortTricks": [
+      "\"Planet scaling: g_p/g = (M_p/M)(R/R_p)².\""
+    ],
+    "examNotes": [
+      "Master the ratio method — the 2021 question is pure ratio, no G needed."
+    ],
+    "formulas": [
+      "- g_h = GM/(R+h)² ≈ g₀(1 − 2h/R)\n- g_d = g₀(1 − d/R)\n- Planet: g = GM/R²"
+    ],
+    "practice": [
+      "Where is g larger: 3.2 km up or 3.2 km down?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): At what height above Earth's surface does g become half its surface value?** — GM/(R+h)² = GM/2R² → (R+h)² = 2R² → h = R(√2−1) = 6400×0.414 = 2650 km."
+    ]
+  },
+  "importantConcepts": [
+    "**Shell theorem drives the depth result:** outer shells cancel, so only the inner sphere's mass counts."
+  ],
+  "mcqs": [
+    {
+      "question": "At height h ≪ R, g decreases approximately as:",
+      "options": [
+        "g₀(1−h/R)",
+        "g₀(1−2h/R)",
+        "g₀(1+h/R)",
+        "g₀(1−h²/R²)"
+      ],
+      "answer": "B",
+      "explanation": "Binomial expansion of (1+h/R)⁻²."
+    },
+    {
+      "question": "At depth d, g equals:",
+      "options": [
+        "g₀(1−d/R)",
+        "g₀(1−2d/R)",
+        "g₀(1+d/R)",
+        "g₀(1−d²/R²)"
+      ],
+      "answer": "A",
+      "explanation": "Linear decrease by shell theorem."
+    },
+    {
+      "question": "NEB 2021: planet 8× mass, 2× radius → g =",
+      "options": [
+        "4.9 m/s²",
+        "9.8 m/s²",
+        "19.6 m/s²",
+        "39.2 m/s²"
+      ],
+      "answer": "C",
+      "explanation": "8/4 × 9.8."
+    },
+    {
+      "question": "The value of g at Earth's centre is:",
+      "options": [
+        "9.8 m/s²",
+        "Infinite",
+        "Zero",
+        "g₀/2"
+      ],
+      "answer": "C",
+      "explanation": "All shell contributions cancel."
+    },
+    {
+      "question": "g becomes half its surface value at height:",
+      "options": [
+        "R",
+        "R(√2−1)",
+        "2R",
+        "R/2"
+      ],
+      "answer": "B",
+      "explanation": "(R+h)² = 2R²."
+    },
+    {
+      "question": "The depth formula assumes:",
+      "options": [
+        "Point mass Earth",
+        "Uniform density",
+        "Zero rotation",
+        "No atmosphere"
+      ],
+      "answer": "B",
+      "explanation": "M_inner ∝ (R−d)³ needs uniform ρ."
+    },
+    {
+      "question": "Astronauts are weightless in orbit because:",
+      "options": [
+        "g is zero there",
+        "They are in free fall",
+        "They are beyond gravity",
+        "Air drag cancels weight"
+      ],
+      "answer": "B",
+      "explanation": "Everything falls with the same acceleration."
+    },
+    {
+      "question": "Which decreases g faster near the surface?",
+      "options": [
+        "Altitude",
+        "Depth",
+        "Both equally",
+        "Neither"
+      ],
+      "answer": "A",
+      "explanation": "2h/R vs d/R — altitude effect is twice as fast."
+    }
+  ]
 }
