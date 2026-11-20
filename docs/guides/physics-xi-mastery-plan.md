@@ -118,9 +118,9 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 87 | Electric Field (5h) | Electric field due to point charges; field lines | `01-electric-field-due-to-point-charges-field-lines.json` | **Completed** |
 | 88 | Electric Field (5h) | Gauss law: electric flux | `02-gauss-law-electric-flux.json` | **Completed** |
 | 89 | Electric Field (5h) | Application of Gauss law: field of a charge sphere, line charge, charged plane conductor | `03-application-of-gauss-law-field-of-a-charge-sphere-line-charge-charged-plane-conductor.json` | **Completed** |
-| 90 | Potential, Potential Difference and Potential Energy (5h) | Potential difference, potential due to a point charge, potential energy, electron volt | TBD | Not started |
-| 91 | Potential, Potential Difference and Potential Energy (5h) | Equipotential lines and surfaces | TBD | Not started |
-| 92 | Potential, Potential Difference and Potential Energy (5h) | Potential gradient | TBD | Not started |
+| 90 | Potential, Potential Difference and Potential Energy (5h) | Potential difference, potential due to a point charge, potential energy, electron volt | `01-potential-difference-potential-due-to-a-point-charge-potential-energy-electron-volt.json` | **Completed** |
+| 91 | Potential, Potential Difference and Potential Energy (5h) | Equipotential lines and surfaces | `02-equipotential-lines-and-surfaces.json` | **Completed** |
+| 92 | Potential, Potential Difference and Potential Energy (5h) | Potential gradient | `03-potential-gradient.json` | **Completed** |
 | 93 | Capacitor (4h) | Capacitance and capacitor | TBD | Not started |
 | 94 | Capacitor (4h) | Parallel plate capacitor | TBD | Not started |
 | 95 | Capacitor (4h) | Combination of capacitors | TBD | Not started |
@@ -130,7 +130,7 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 | 99 | DC Circuits (7h) | Ohm's law; electrical resistance; resistivity; conductivity | TBD | Not started |
 | 100 | DC Circuits (7h) | Current-voltage relations; ohmic and non-ohmic resistance | TBD | Not started |
 | 101 | DC Circuits (7h) | Resistances in series and parallel | TBD | Not started |
-| 102 | DC Circuits (7h) | Potential divider | TBD | Not started |
+| 102 | DC Circuits (7h) | Potential divider | `01-potential-difference-potential-due-to-a-point-charge-potential-energy-electron-volt.json` | **Completed** |
 | 103 | DC Circuits (7h) | Electromotive force of a source, internal resistance | TBD | Not started |
 | 104 | DC Circuits (7h) | Work and power in electrical circuits | TBD | Not started |
 | 105 | Nuclear Physics (6h) | Nucleus: discovery of nucleus | TBD | Not started |
@@ -169,3 +169,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 - Session 18 — Unit 18 Dispersion (3 topics) upgraded: pure spectrum & dispersive power (angular dispersion, ω formula, rainbow); chromatic & spherical aberration; achromatism & applications (achromatic combination condition). Verified PYQs used: dispersion + reason 2022 3m & 2024 3m, deviation vs dispersion 2020 3m, ω derivation 2021 4m, definitions 2024 3m, ω numerical 2024 3m, rainbow 2024 3m, red/violet 2024 2m, achromatic combination 2024 3m. Next: Unit 19 Electric Charges (4 topics).
 - Session 19 — Unit 19 Electric Charges (4 topics) upgraded: electric charges (quantisation, conservation, additivity); charging by induction (four-step process); Coulomb’s law (statement + numericals); force between multiple charges (superposition). Verified PYQs used: quantisation 2021 3m, Coulomb law + 5.4 N 2024 3m, 0.15 N attractive MCQ 2022 1m. Induction and superposition topics: NEB-style practice. Next: Unit 20 Electric Field (3 topics).
 - Session 20 — Unit 20 Electric Field (3 topics) upgraded: field due to point charges & field lines (dipole too); Gauss’s law & electric flux (plane sheet); applications of Gauss’s law (spherical shell, line charge, conducting plane). Verified PYQs used: E from 4 μC 2023 3m, E from 6 μC 2024 2m, midpoint cancellation 2020 3m, field-line properties 2024 2m, dipole 2024 3m, Gauss + plane sheet 2023 5m & 2024 5m, shell 2024 5m, zero field in conductor 2024 2m. Next: Unit 21 Potential (3 topics).
+- Session 21 — Unit 21 Potential (3 topics) upgraded: potential difference, point-charge potential, potential energy & electron volt; equipotential surfaces; potential gradient (E = −dV/dr, shell interior). Verified PYQs used: definitions 2021 2m, volt MCQ 2023 1m, W–V–n 2022 4m, eV numerical 2020 3m, V numerical 2024 2m, eV definition 2024 2m, PE numerical 2024 3m, equipotential properties 2024 3m, potential+unit+E–V 2024 3m, hollow sphere 2024 3m. Next: Unit 22 Capacitor (5 topics).
