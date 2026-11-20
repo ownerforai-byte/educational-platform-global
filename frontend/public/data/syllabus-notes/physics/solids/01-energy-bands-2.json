@@ -5,51 +5,34 @@
   "topicTitle": "Energy Bands in Solids",
   "relevance": 100,
   "notes": [
-    "**Band formation:** In isolated atoms, electrons occupy discrete energy levels. When $N$ atoms aggregate into a solid, each atomic level splits into $N$ closely spaced levels, forming near-continuous energy bands. The broadening width is $\\sim 1\\text{--}10\\,\\text{eV}$, with individual levels separated by $\\sim 10^{-22}\\,\\text{eV}$.",
-    "**Valence band:** The highest energy band that is occupied (filled) at absolute zero. Formed from the valence-shell atomic orbitals. When completely filled with electrons, it cannot conduct electricity unless electrons are promoted to the conduction band.",
-    "**Conduction band:** The next higher energy band, empty at absolute zero. Electrons here are delocalized across the crystal and are free to move under an applied electric field, contributing to electrical conduction.",
-    "**Band gap $E_g$:** The energy difference between the top of the valence band and the bottom of the conduction band. It is the defining parameter: $E_g$ determines whether a material is a metal ($E_g = 0$, overlap), semiconductor ($E_g \\sim 0.5\\text{--}3\\,\\text{eV}$), or insulator ($E_g > 3\\,\\text{eV}$).",
-    "**Forbidden gap:** The range of energies between the valence band top and conduction band bottom where no allowed electronic states exist. An electron must gain exactly $E_g$ energy to traverse this gap.",
-    "**Direct vs indirect band gap:** In direct-gap materials (GaAs, InP), the minimum of the conduction band aligns in $k$-space with the maximum of the valence band. An electron can recombine with a hole without changing momentum, emitting a photon efficiently. In indirect-gap materials (Si, Ge), momentum offset means phonon involvement is required, making recombination less efficient for light emission.",
-    "**Temperature effect on $E_g$:** In most semiconductors, $E_g$ decreases with temperature as $E_g(T) = E_g(0) - \\alpha T^2/(T + \\beta)$. For silicon: $E_g(T) = 1.17 - 4.73\\times 10^{-4} T^2/(T + 636)$ in eV. This is why the resistivity of semiconductors decreases with temperature.",
-    "**Bloch theorem:** Electron wavefunctions in a periodic crystal have the form $\\psi_{nk}(\\mathbf{r}) = e^{i\\mathbf{k}\\cdot\\mathbf{r}} u_{nk}(\\mathbf{r})$, where $u_{nk}$ has the same periodicity as the crystal lattice. This explains why electrons in a solid behave like plane waves modulated by the periodic potential.",
-    "**Effective mass:** Electrons near the band minimum behave as if they have a different mass $m^*$ due to the band curvature: $1/m^* = (1/\\hbar^2)(d^2E/dk^2)$. $m^*$ can be lighter or heavier than the free electron mass, and differs for electrons vs holes."
+    "## 1. Topic Introduction — From Levels to Bands\n\nAn isolated atom has sharp energy levels. Bring 10²³ atoms together and each level splits into a near-continuous **band**. Which bands are full, empty or partly filled decides whether a solid conducts, insulates or sits in between — the whole story of electronics.",
+    "## 2. Fundamental Concepts (NEB 2023, 2024)\n\n### 2.1 How bands form\n\nIn a crystal, neighbouring atoms' overlapping wavefunctions make each discrete atomic level split into N closely spaced levels — a **band**. Between bands lie **forbidden gaps** (no allowed states).\n\n- **Valence band:** the highest band filled by valence electrons at 0 K.\n- **Conduction band:** the next higher band; electrons here move freely and conduct.\n- **Forbidden gap (E_g):** the energy interval between them; electrons must acquire E_g to cross.\n\n### 2.2 Band theory of solids (NEB 2023/2024, 5m)\n\nIn solids, atomic energy levels split into bands due to overlapping wavefunctions:\n- **Metals:** valence band overlaps the conduction band (no gap), or the conduction band is partially filled — electrons move freely. Example: Cu, Ag.\n- **Insulators:** a large forbidden gap (E_g > 3 eV) between a full valence band and an empty conduction band blocks electrons from reaching conduction states. Example: diamond (E_g ≈ 6 eV).\n- **Semiconductors:** a small gap (E_g ≈ 1 eV; Si 1.1 eV, Ge 0.7 eV) — thermal energy promotes some electrons across, leaving holes behind; conductivity is intermediate and strongly temperature-dependent.\n\n### 2.3 Worked reasoning\n\n**Q (NEB-style):** Why does the conductivity of a semiconductor increase with temperature while that of a metal decreases?\nHeating a **semiconductor** breaks more covalent bonds, creating extra electron–hole pairs — more carriers, higher conductivity. Heating a **metal** only agitates the lattice ions, which scatter the already-free electrons more — the same carriers, more collisions, lower conductivity.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 113:** the gap size classifies metals, insulators and semiconductors.\n- **To Topic 114:** doping and intrinsic excitation both populate the conduction band.\n- **To drift velocity (Topic 98):** carriers in bands drift under fields just as free electrons do.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Modern physics | Solids | Explain the energy band theory of solids. How does it differentiate metals, insulators, and semiconductors? | 5 | Explanation |\n| 2080/2024 | Modern physics | Solids | Explain the energy band theory of solids. How does it differentiate metals, insulators, and semiconductors? | 5 | Explanation |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Define valence band, conduction band and forbidden gap (3m).\n2. Semiconductor vs metal conductivity with temperature (2m).\n3. Sketch band diagrams for the three classes (3m).\n\n### 4.3 Common examination mistakes\n\n1. Forgetting the example materials (Cu, diamond, Si/Ge) and the gap values.\n2. Confusing the valence band with the conduction band.\n3. Omitting the temperature argument — it is a favourite 2m follow-up."
   ],
   "confusion": [
-    "Confusion: In metals, the conduction band is partially filled, OR the valence band overlaps the conduction band. Students often assume conduction band = empty, which is only true for insulators and semiconductors at absolute zero.",
-    "Confusion: A large band gap ($> 3\\,\\text{eV}$) means the material is an insulator only at room temperature. Diamond ($E_g = 5.5\\,\\text{eV}$) is an excellent insulator but can be doped like a semiconductor, making it useful for high-power electronics.",
-    "Confusion: The band gap is an energy difference, not a physical distance. $E_g = 1\\,\\text{eV}$ means electrons need $1\\,\\text{eV}$ of energy to jump from valence to conduction band — no spatial thickness is implied.",
-    "Confusion: The valence band is filled with electrons in insulators/semiconductors at 0 K, so no current flows. But a completely empty valence band would also not conduct — it is the partial occupancy (holes) that enables conduction.",
-    "Confusion: In p-type semiconductors, the valence band holes are NOT vacancies created by removing electrons from the valence band. They are treated as positively charged particles because electrons in a nearly-full band respond to electric fields as if they were holes.",
-    "Confusion: The effective mass $m^*$ is NOT a fixed constant — it depends on the band curvature at the Fermi level and direction in anisotropic crystals (e.g., silicon has different $m^*$ along different crystal directions).",
-    "Confusion: The forbidden gap has NO electronic states, but phonons (lattice vibrations) can have energies within this range. The term \"forbidden\" refers only to electronic states."
+    "**Bands come from overlap, not from magic** — N atoms split each level into N states.",
+    "**E_g > 3 eV = insulator; ~1 eV = semiconductor; 0 = metal.**"
   ],
   "practice": [
-    "Problem: Silicon has $E_g \\approx 1.12\\,\\text{eV}$ at $300\\,\\text{K}$. (a) What is the minimum photon wavelength (in nm) that can create an electron-hole pair? (b) Express this wavelength in terms of $hc \\approx 1240\\,\\text{eV}\\cdot\\text{nm}$. [Solution: (a) $\\lambda_{\\text{threshold}} = hc/E_g = 1240/1.12 \\approx 1107\\,\\text{nm}$ (near-infrared). Wavelengths shorter than this (visible light) can generate carriers in silicon.]",
-    "Problem: GaAs is a direct-gap semiconductor with $E_g = 1.43\\,\\text{eV}$. LED light emission from GaAs is at $\\lambda \\approx 870\\,\\text{nm}$ (infrared). For a GaAsP alloy with $E_g = 1.90\\,\\text{eV}$, what emission wavelength is expected? [Solution: $\\lambda = 1240/1.90 \\approx 653\\,\\text{nm}$ (red light). This is why GaAsP is used for red LEDs.]",
-    "Problem: A semiconductor has $E_g = 0.7\\,\\text{eV}$. At $T = 300\\,\\text{K}$, thermal energy $k_B T \\approx 0.0259\\,\\text{eV}$. What fraction of valence electrons would be thermally excited to the conduction band if $E_g$ were the only barrier? [Solution: The fraction is exponentially suppressed: $\\exp(-E_g/k_B T) = \\exp(-0.7/0.0259) \\approx e^{-27} \\approx 1.9 \\times 10^{-12}$. Only a tiny fraction are excited — but for $n \\sim 10^{22}\\,\\text{cm}^{-3}$, this still gives $\\sim 10^{10}\\,\\text{cm}^{-3}$ intrinsic carriers.]",
-    "Problem: Germanium has $E_g = 0.67\\,\\text{eV}$ and intrinsic carrier concentration $n_i \\approx 2.4\\times 10^{19}\\,\\text{m}^{-3}$ at $300\\,\\text{K}$. If an electron is excited from the valence band to the conduction band, list all conserved quantities. [Solution: Charge: $0 \\rightarrow -1 + +1$ (net 0). Spin: integer (boson $\\gamma$ splits to two fermions $e^- + e^+$). Energy: photon energy $= 2m_e c^2 + K.E._{e^-} + K.E._{e^+}$. Momentum: nucleus must recoil.]",
-    "Problem: The speed of electron in a band can be estimated by $v = \\hbar^{-1} dE/dk$. For a free electron with $E = \\hbar^2 k^2/2m$, show that $v = \\hbar k / m$. For an electron in a band with $E(k) = E_0 - A k^2$, is $v$ positive or negative near $k=0$? [Solution: $v = (1/\\hbar) dE/dk = (1/\\hbar)(-2Ak) = -2Ak/\\hbar$. Near $k=0$, $v \\approx 0$. The sign is negative for positive $k$, meaning the electron moves opposite to increasing $k$ — consistent with negative charge.]"
+    "Why is a completely filled band unable to conduct?"
   ],
   "universalFacts": [
-    "Fact (Historical): Felix Bloch developed band theory in 1928, applying quantum mechanics to electron motion in crystals. Edward Fermi, Julian Schwinger, and others refined it into the nearly-free electron model and tight-binding model that form the foundation of modern solid-state physics.",
-    "Fact (Application): Laser diodes (VCSELs, edge emitters) work only in direct-gap semiconductors (GaAs, InP). Silicon is an indirect-gap material — electron-hole recombination in silicon is inefficient for light emission, which is why silicon photonics is challenging.",
-    "Fact (Exam tip): For NEB, the key question is: Is there an energy gap? If $E_g = 0$ (overlap), it's a metal. If $0 < E_g < 3\\,\\text{eV}$ (small gap), it's a semiconductor. If $E_g > 3\\,\\text{eV}$, it's an insulator. Memorize silicon ($1.12\\,\\text{eV}$), germanium ($0.67\\,\\text{eV}$), and GaAs ($1.43\\,\\text{eV}$).",
-    "Fact (Connection): The band gap of a semiconductor decreases with temperature. This means more carriers are thermally excited at higher temperatures, explaining why semiconductor resistance decreases with temperature (negative temperature coefficient), opposite to metals.",
-    "Fact (Everyday): Photovoltaic (solar) cells are made from semiconductors. The band gap determines the maximum efficiency via the Shockley-Queisser limit: ~33% for a single-junction cell with $E_g \\approx 1.34\\,\\text{eV}$ (close to GaAs at 1.43 eV).",
-    "Fact (Scale): $1\\,\\text{eV} = 1.602\\times 10^{-19}\\,\\text{J}$. Chemical bond energies are $\\sim 1\\text{--}5\\,\\text{eV}$, while nuclear binding energies are $\\sim \\text{MeV}$. The band gap sits at the chemical energy scale — roughly $10^6$ times smaller than nuclear energies.",
-    "Fact (Origin): The band gap arises from the periodic crystal potential. In a free electron gas (no periodic potential), there is no gap. The periodic potential of ions creates Bragg reflections at Brillouin zone boundaries, opening gaps where standing waves form with different charge densities."
+    "Heating helps semiconductors and hurts metals — opposite signs, same lattice."
   ],
-  "examples": [],
+  "examples": [
+    "***Diamond*** — E_g ≈ 6 eV: an insulator; ***Si*** — 1.1 eV: a semiconductor."
+  ],
   "practiceQuestions": [
-    "Q2. Solve problems related to Energy bands in solids (qualitative ideas).",
-    "Q3. Differentiate between various aspects of Energy bands in solids (qualitative ideas).",
-    "Q4. Derive the key formula related to Energy bands in solids (qualitative ideas).",
-    "Q5. What are the applications of Energy bands in solids (qualitative ideas)?"
+    "**NEB 2024 (5m): Explain energy band theory and its differentiation of metals, insulators and semiconductors.** — Overlapping orbitals split levels into bands. Metals: bands overlap or CB half-full → free conduction (Cu, Ag). Insulators: E_g > 3 eV, VB full, CB empty → no conduction (diamond). Semiconductors: E_g ≈ 1 eV → thermal excitation creates electron–hole pairs (Si 1.1 eV, Ge 0.7 eV)."
   ],
-  "formulas": [],
-  "keyPoints": [],
-  "summary": "Energy bands in solids (qualitative ideas) is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "formulas": [
+    "- E_g(insulator) > 3 eV\n- E_g(Si) = 1.1 eV; E_g(Ge) = 0.7 eV"
+  ],
+  "keyPoints": [
+    "Valence band, conduction band, forbidden gap E_g; metals overlap, insulators E_g > 3 eV, semiconductors ~1 eV."
+  ],
+  "summary": "In a crystal, overlapping atomic orbitals split each atomic level into a near-continuous **band**; the highest filled one is the **valence band**, the next the **conduction band**, separated by the **forbidden gap** E_g. **Metals** (Cu, Ag) have overlapping or partly-filled bands — free conduction. **Insulators** (diamond, E_g ≈ 6 eV) have a wide gap (> 3 eV) blocking excitation. **Semiconductors** (Si 1.1 eV, Ge 0.7 eV) have a narrow gap — thermal energy creates electron–hole pairs. Hence heating raises a semiconductor's conductivity (more carriers) but lowers a metal's (more scattering) — NEB 2023 and 2024 both asked the 5m band-theory explanation.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Energy bands in solids (qualitative ideas) applies",
     "Note 2: Energy bands in solids (qualitative ideas) connects to multiple other topics in Science",
@@ -57,25 +40,17 @@
     "Note 4: Remember the units and dimensions involved in Energy bands in solids (qualitative ideas)",
     "Note 5: Energy bands in solids (qualitative ideas) frequently appears in examination questions"
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "\"In solids, overlapping atomic orbitals split discrete levels into energy bands separated by forbidden gaps.\""
+  ],
   "importantNotes": [
-    "Note 2: Remember the distinction between different types in Energy bands in solids (qualitative ideas)",
-    "Note 3: Energy bands in solids (qualitative ideas) has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Energy bands in solids (qualitative ideas)",
-    "Note 5: Cross-check your answers using alternative methods for Energy bands in solids (qualitative ideas)"
+    "Verified PYQs: band theory + differentiation (2023, 2024 — 5m each); conductivity vs temperature (2024, 2m)."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Energy bands in solids (qualitative ideas) formula",
-    "Trick 2: Elimination technique for Energy bands in solids (qualitative ideas) MCQs",
-    "Trick 3: Dimensional analysis shortcut for Energy bands in solids (qualitative ideas)",
-    "Trick 4: Memory aid for Energy bands in solids (qualitative ideas) formulas",
-    "Trick 5: Time-saving approach for Energy bands in solids (qualitative ideas) problems"
+    "\"Draw three band diagrams side by side: overlap / wide gap / narrow gap.\""
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Energy bands in solids (qualitative ideas)",
-    "Exam Tip 2: Practice previous year questions on Energy bands in solids (qualitative ideas)",
-    "Exam Tip 4: Learn the derivations for Energy bands in solids (qualitative ideas) thoroughly",
-    "Exam Tip 5: Review common mistakes related to Energy bands in solids (qualitative ideas)"
+    "Include gap values: Si 1.1 eV, Ge 0.7 eV, diamond ~6 eV."
   ],
   "mcs": [
     {
@@ -120,11 +95,7 @@
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Energy bands in solids (qualitative ideas)",
-    "Concept 2: Key theorem or principle in Energy bands in solids (qualitative ideas)",
-    "Concept 3: Important application area of Energy bands in solids (qualitative ideas)",
-    "Concept 4: Fundamental relationship in Energy bands in solids (qualitative ideas)",
-    "Concept 5: Connection between Energy bands in solids (qualitative ideas) and other topics"
+    "**Conduction needs electrons in partly-empty bands** — a full band carries no net current."
   ],
   "importantTasks": [
     "Task 1: Solve 10 numerical problems on Energy bands in solids (qualitative ideas)",
@@ -133,5 +104,140 @@
     "Task 4: Practice previous year exam questions on Energy bands in solids (qualitative ideas)",
     "Task 5: Explain Energy bands in solids (qualitative ideas) to a peer or study group"
   ],
-  "tabGroup": "energy-bands-in-solids"
+  "tabGroup": "energy-bands-in-solids",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — From Levels to Bands\n\nAn isolated atom has sharp energy levels. Bring 10²³ atoms together and each level splits into a near-continuous **band**. Which bands are full, empty or partly filled decides whether a solid conducts, insulates or sits in between — the whole story of electronics.",
+      "## 2. Fundamental Concepts (NEB 2023, 2024)\n\n### 2.1 How bands form\n\nIn a crystal, neighbouring atoms' overlapping wavefunctions make each discrete atomic level split into N closely spaced levels — a **band**. Between bands lie **forbidden gaps** (no allowed states).\n\n- **Valence band:** the highest band filled by valence electrons at 0 K.\n- **Conduction band:** the next higher band; electrons here move freely and conduct.\n- **Forbidden gap (E_g):** the energy interval between them; electrons must acquire E_g to cross.\n\n### 2.2 Band theory of solids (NEB 2023/2024, 5m)\n\nIn solids, atomic energy levels split into bands due to overlapping wavefunctions:\n- **Metals:** valence band overlaps the conduction band (no gap), or the conduction band is partially filled — electrons move freely. Example: Cu, Ag.\n- **Insulators:** a large forbidden gap (E_g > 3 eV) between a full valence band and an empty conduction band blocks electrons from reaching conduction states. Example: diamond (E_g ≈ 6 eV).\n- **Semiconductors:** a small gap (E_g ≈ 1 eV; Si 1.1 eV, Ge 0.7 eV) — thermal energy promotes some electrons across, leaving holes behind; conductivity is intermediate and strongly temperature-dependent.\n\n### 2.3 Worked reasoning\n\n**Q (NEB-style):** Why does the conductivity of a semiconductor increase with temperature while that of a metal decreases?\nHeating a **semiconductor** breaks more covalent bonds, creating extra electron–hole pairs — more carriers, higher conductivity. Heating a **metal** only agitates the lattice ions, which scatter the already-free electrons more — the same carriers, more collisions, lower conductivity.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 113:** the gap size classifies metals, insulators and semiconductors.\n- **To Topic 114:** doping and intrinsic excitation both populate the conduction band.\n- **To drift velocity (Topic 98):** carriers in bands drift under fields just as free electrons do.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Modern physics | Solids | Explain the energy band theory of solids. How does it differentiate metals, insulators, and semiconductors? | 5 | Explanation |\n| 2080/2024 | Modern physics | Solids | Explain the energy band theory of solids. How does it differentiate metals, insulators, and semiconductors? | 5 | Explanation |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Define valence band, conduction band and forbidden gap (3m).\n2. Semiconductor vs metal conductivity with temperature (2m).\n3. Sketch band diagrams for the three classes (3m).\n\n### 4.3 Common examination mistakes\n\n1. Forgetting the example materials (Cu, diamond, Si/Ge) and the gap values.\n2. Confusing the valence band with the conduction band.\n3. Omitting the temperature argument — it is a favourite 2m follow-up."
+    ],
+    "confusion": [
+      "**Bands come from overlap, not from magic** — N atoms split each level into N states.",
+      "**E_g > 3 eV = insulator; ~1 eV = semiconductor; 0 = metal.**"
+    ],
+    "keyPoints": [
+      "Valence band, conduction band, forbidden gap E_g; metals overlap, insulators E_g > 3 eV, semiconductors ~1 eV."
+    ],
+    "importantConcepts": [
+      "**Conduction needs electrons in partly-empty bands** — a full band carries no net current."
+    ],
+    "examples": [
+      "***Diamond*** — E_g ≈ 6 eV: an insulator; ***Si*** — 1.1 eV: a semiconductor."
+    ],
+    "universalFacts": [
+      "Heating helps semiconductors and hurts metals — opposite signs, same lattice."
+    ],
+    "importantStatements": [
+      "\"In solids, overlapping atomic orbitals split discrete levels into energy bands separated by forbidden gaps.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: band theory + differentiation (2023, 2024 — 5m each); conductivity vs temperature (2024, 2m)."
+    ],
+    "examShortTricks": [
+      "\"Draw three band diagrams side by side: overlap / wide gap / narrow gap.\""
+    ],
+    "examNotes": [
+      "Include gap values: Si 1.1 eV, Ge 0.7 eV, diamond ~6 eV."
+    ],
+    "formulas": [
+      "- E_g(insulator) > 3 eV\n- E_g(Si) = 1.1 eV; E_g(Ge) = 0.7 eV"
+    ],
+    "practice": [
+      "Why is a completely filled band unable to conduct?"
+    ],
+    "practiceQuestions": [
+      "**NEB 2024 (5m): Explain energy band theory and its differentiation of metals, insulators and semiconductors.** — Overlapping orbitals split levels into bands. Metals: bands overlap or CB half-full → free conduction (Cu, Ag). Insulators: E_g > 3 eV, VB full, CB empty → no conduction (diamond). Semiconductors: E_g ≈ 1 eV → thermal excitation creates electron–hole pairs (Si 1.1 eV, Ge 0.7 eV)."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "Energy bands arise from:",
+      "options": [
+        "Atomic overlap of wavefunctions",
+        "Nuclear forces",
+        "Gravity",
+        "Magnetism"
+      ],
+      "answer": "A",
+      "explanation": "Level splitting."
+    },
+    {
+      "question": "An insulator's gap is:",
+      "options": [
+        "< 1 eV",
+        "> 3 eV",
+        "Zero",
+        "1.1 eV"
+      ],
+      "answer": "B",
+      "explanation": "Wide gap."
+    },
+    {
+      "question": "Silicon's gap is:",
+      "options": [
+        "0.7 eV",
+        "1.1 eV",
+        "6 eV",
+        "0 eV"
+      ],
+      "answer": "B",
+      "explanation": "Semiconductor."
+    },
+    {
+      "question": "A metal's bands:",
+      "options": [
+        "Overlap or are partly filled",
+        "Have a 3 eV gap",
+        "Are always full",
+        "Are always empty"
+      ],
+      "answer": "A",
+      "explanation": "Free conduction."
+    },
+    {
+      "question": "Heating a semiconductor:",
+      "options": [
+        "Lowers conductivity",
+        "Raises conductivity",
+        "No effect",
+        "Melts it"
+      ],
+      "answer": "B",
+      "explanation": "More carriers."
+    },
+    {
+      "question": "Heating a metal:",
+      "options": [
+        "Raises conductivity",
+        "Lowers conductivity",
+        "No effect",
+        "Creates holes"
+      ],
+      "answer": "B",
+      "explanation": "More scattering."
+    },
+    {
+      "question": "The conduction band is:",
+      "options": [
+        "Always full",
+        "The band where electrons move freely",
+        "Below the valence band",
+        "In the nucleus"
+      ],
+      "answer": "B",
+      "explanation": "Mobile states."
+    },
+    {
+      "question": "NEB asked band theory for:",
+      "options": [
+        "2 marks",
+        "3 marks",
+        "5 marks",
+        "4 marks"
+      ],
+      "answer": "C",
+      "explanation": "2023 and 2024."
+    }
+  ]
 }
