@@ -6,30 +6,22 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:15.234Z",
   "notes": [
-    "# Combination of capacitors\n\n## 1. Introduction\nPhysical picture of **Combination of capacitors** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Capacitor fill pass.\n\n## 2. Concepts and laws\n### Combination of capacitors\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Circuit elements and combinations**\n\n| Element or combo | Diagram ref | Equivalent value | Remark |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Combination of capacitors — circuit diagram with standard symbols (authored SVG)\n- **D2** — Combination of capacitors — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Combination of capacitors — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Combination of capacitors — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Wiring Capacitors Together\n\nCapacitors in series divide the voltage; in parallel they share the charge. Their combination rules run *opposite* to resistors', and NEB 2024 tested both in one 3-mark numerical.",
+    "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Series combination\n\nCapacitors end to end carry the **same charge** Q (induced plate by plate); voltages add:\n$$V = V_1 + V_2 = \\frac{Q}{C_1} + \\frac{Q}{C_2} \\Rightarrow \\frac{1}{C_s} = \\frac{1}{C_1} + \\frac{1}{C_2}$$\n— the equivalent capacitance is **smaller than the smallest**; series withstands higher total voltage.\n\n### 2.2 Parallel combination\n\nCapacitors wired across the same two points share the **same voltage** V; charges add:\n$$Q = Q_1 + Q_2 \\Rightarrow C_p = C_1 + C_2$$\n— the equivalent capacitance is **larger than the largest**; parallel stores more charge at the same voltage.\n\n### 2.3 Comparison with resistors\n\n| Combination | Capacitors | Resistors |\n|---|---|---|\n| Series | 1/C adds | R adds |\n| Parallel | C adds | 1/R adds |\n\n### 2.4 Worked numerical\n\n**Q (3m, 2024):** Capacitors of 2 μF and 3 μF are connected (i) in series and (ii) in parallel. Find the equivalent capacitance in each case.\n- **Series:** $\\frac{1}{C} = \\frac{1}{2} + \\frac{1}{3} = \\frac{5}{6}$ → C = **1.2 μF** (smaller than either).\n- **Parallel:** C = 2 + 3 = **5 μF**.\n\n**Q (NEB-style):** Three capacitors 2, 3 and 6 μF in series. Find C_s.\n$\\frac{1}{C_s} = \\frac{1}{2} + \\frac{1}{3} + \\frac{1}{6} = 1$ → C_s = 1 μF.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 93/94:** each capacitor still obeys Q = CV individually.\n- **To Topic 96:** energy storage sums (parallel) or must be computed per capacitor (series).\n- **To resistors (Unit 25):** the rules swap — a favourite conceptual MCQ.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Electricity | Capacitor | Capacitors of 2 μF and 3 μF are connected (i) in series and (ii) in parallel. Find the equivalent capacitance in each case. | 3 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Three-capacitor series/parallel numerical (3m).\n2. Why does series give smaller C? (2m)\n3. Charge and voltage on each capacitor in series (3m).\n\n### 4.3 Common examination mistakes\n\n1. Adding capacitances in series instead of reciprocals.\n2. Forgetting that series capacitors carry the same *charge*, not the same voltage.\n3. Mixing the resistor and capacitor rules."
   ],
   "examNotes": [
-    "Derivation of common potential and electrostatic energy loss on sharing charges is a prominent 4-mark derivation in NEB exams."
+    "Quote the comparison with resistors if asked conceptually."
   ],
   "examShortTricks": [
-    "Two capacitors in series: product over sum $C_s = (C_1 C_2) / (C_1 + C_2)$.",
-    "Energy loss is always positive: $\\Delta U \\ge 0$, vanishing only when initial voltages are already identical ($V_1 = V_2$).",
-    "Ratio $C_p / C_s = N^2$ for $N$ identical capacitors."
+    "\"Two in series: C = C₁C₂/(C₁+C₂) — product over sum.\""
   ],
   "practiceQuestions": [
-    "Q1. Derive expressions for the equivalent capacitance of three capacitors connected (a) in series, and (b) in parallel.",
-    "Q2. Two capacitors C₁ and C₂ charged to potentials V₁ and V₂ are connected in parallel. Derive the expression for the common potential and the energy dissipated during charge sharing.",
-    "Q3. How would you connect three capacitors of 6 μF each to obtain an equivalent capacitance of (a) 9 μF, (b) 4 μF?",
-    "Q4. Why does charge sharing between two charged capacitors always result in a net loss of electrostatic potential energy?"
+    "**Numerical (3m): 2, 3 and 6 μF in parallel; find C and the charge on the 3 μF at 10 V.** — C_p = 11 μF; Q₃ = 3 μF × 10 V = 30 μC."
   ],
   "practice": [
-    "Three capacitors of $2\\,\\mu\\text{F}$, $3\\,\\mu\\text{F}$, and $6\\,\\mu\\text{F}$ are connected (a) in series, (b) in parallel across $100\\text{ V}$. Find $C_{eq}$ and charge in each case. Solution: (a) Series: $\\frac{1}{C_s} = \\frac{1}{2} + \\frac{1}{3} + \\frac{1}{6} = \\frac{3+2+1}{6} = 1 \\implies C_s = 1\\,\\mu\\text{F}$. Charge $Q = C_s V = 10^{-6} \\times 100 = 100\\,\\mu\\text{C}$ on each. (b) Parallel: $C_p = 2 + 3 + 6 = 11\\,\\mu\\text{F}$. Total charge $Q = 11 \\times 100 = 1100\\,\\mu\\text{C}$.",
-    "A $4\\,\\mu\\text{F}$ capacitor is charged to $200\\text{ V}$ and then connected in parallel with an uncharged $2\\,\\mu\\text{F}$ capacitor. Find common potential and energy lost. Solution: $V_c = \\frac{C_1 V_1 + C_2 (0)}{C_1 + C_2} = \\frac{4 \\times 200}{4 + 2} = \\frac{800}{6} = 133.33\\text{ V}$. Energy lost $\\Delta U = \\frac{1}{2}\\frac{C_1 C_2}{C_1 + C_2}(V_1 - 0)^2 = \\frac{1}{2}\\frac{4 \\times 2}{6} \\times 10^{-6} \\times (200)^2 = \\frac{4}{6} \\times 10^{-6} \\times 40000 = 0.0267\\text{ J} = 26.7\\text{ mJ}$."
+    "Why do engineers put capacitors in series for high-voltage work?"
   ],
   "mcs": [
     {
@@ -64,6 +56,167 @@
       ],
       "answer": "C",
       "explanation": "C_p = nC and C_s = C/n. Therefore C_p / C_s = nC / (C/n) = n²."
+    }
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Wiring Capacitors Together\n\nCapacitors in series divide the voltage; in parallel they share the charge. Their combination rules run *opposite* to resistors', and NEB 2024 tested both in one 3-mark numerical.",
+      "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 Series combination\n\nCapacitors end to end carry the **same charge** Q (induced plate by plate); voltages add:\n$$V = V_1 + V_2 = \\frac{Q}{C_1} + \\frac{Q}{C_2} \\Rightarrow \\frac{1}{C_s} = \\frac{1}{C_1} + \\frac{1}{C_2}$$\n— the equivalent capacitance is **smaller than the smallest**; series withstands higher total voltage.\n\n### 2.2 Parallel combination\n\nCapacitors wired across the same two points share the **same voltage** V; charges add:\n$$Q = Q_1 + Q_2 \\Rightarrow C_p = C_1 + C_2$$\n— the equivalent capacitance is **larger than the largest**; parallel stores more charge at the same voltage.\n\n### 2.3 Comparison with resistors\n\n| Combination | Capacitors | Resistors |\n|---|---|---|\n| Series | 1/C adds | R adds |\n| Parallel | C adds | 1/R adds |\n\n### 2.4 Worked numerical\n\n**Q (3m, 2024):** Capacitors of 2 μF and 3 μF are connected (i) in series and (ii) in parallel. Find the equivalent capacitance in each case.\n- **Series:** $\\frac{1}{C} = \\frac{1}{2} + \\frac{1}{3} = \\frac{5}{6}$ → C = **1.2 μF** (smaller than either).\n- **Parallel:** C = 2 + 3 = **5 μF**.\n\n**Q (NEB-style):** Three capacitors 2, 3 and 6 μF in series. Find C_s.\n$\\frac{1}{C_s} = \\frac{1}{2} + \\frac{1}{3} + \\frac{1}{6} = 1$ → C_s = 1 μF.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 93/94:** each capacitor still obeys Q = CV individually.\n- **To Topic 96:** energy storage sums (parallel) or must be computed per capacitor (series).\n- **To resistors (Unit 25):** the rules swap — a favourite conceptual MCQ.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Electricity | Capacitor | Capacitors of 2 μF and 3 μF are connected (i) in series and (ii) in parallel. Find the equivalent capacitance in each case. | 3 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Three-capacitor series/parallel numerical (3m).\n2. Why does series give smaller C? (2m)\n3. Charge and voltage on each capacitor in series (3m).\n\n### 4.3 Common examination mistakes\n\n1. Adding capacitances in series instead of reciprocals.\n2. Forgetting that series capacitors carry the same *charge*, not the same voltage.\n3. Mixing the resistor and capacitor rules."
+    ],
+    "confusion": [
+      "**Series capacitors: same Q, divided V. Parallel: same V, divided Q** — the exact mirror of resistors.",
+      "**Series C is smaller than the smallest member.**"
+    ],
+    "keyPoints": [
+      "Series: 1/C = 1/C₁ + 1/C₂; parallel: C = C₁ + C₂."
+    ],
+    "importantConcepts": [
+      "**Capacitor rules are resistor rules inverted** — a classic conceptual trap."
+    ],
+    "examples": [
+      "***NEB 2024*** — 2 μF and 3 μF: series 1.2 μF, parallel 5 μF."
+    ],
+    "universalFacts": [
+      "Series stacking lets capacitors survive higher voltages — each takes only its share."
+    ],
+    "importantStatements": [
+      "\"In series the charge is the same on each capacitor; in parallel the potential difference is the same.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: series + parallel numerical (2024, 3m)."
+    ],
+    "examShortTricks": [
+      "\"Two in series: C = C₁C₂/(C₁+C₂) — product over sum.\""
+    ],
+    "examNotes": [
+      "Quote the comparison with resistors if asked conceptually."
+    ],
+    "formulas": [
+      "- Series: 1/C_s = Σ1/Cᵢ; two: C₁C₂/(C₁+C₂)\n- Parallel: C_p = ΣCᵢ"
+    ],
+    "practice": [
+      "Why do engineers put capacitors in series for high-voltage work?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): 2, 3 and 6 μF in parallel; find C and the charge on the 3 μF at 10 V.** — C_p = 11 μF; Q₃ = 3 μF × 10 V = 30 μC."
+    ]
+  },
+  "confusion": [
+    "**Series capacitors: same Q, divided V. Parallel: same V, divided Q** — the exact mirror of resistors.",
+    "**Series C is smaller than the smallest member.**"
+  ],
+  "keyPoints": [
+    "Series: 1/C = 1/C₁ + 1/C₂; parallel: C = C₁ + C₂."
+  ],
+  "importantConcepts": [
+    "**Capacitor rules are resistor rules inverted** — a classic conceptual trap."
+  ],
+  "examples": [
+    "***NEB 2024*** — 2 μF and 3 μF: series 1.2 μF, parallel 5 μF."
+  ],
+  "universalFacts": [
+    "Series stacking lets capacitors survive higher voltages — each takes only its share."
+  ],
+  "importantStatements": [
+    "\"In series the charge is the same on each capacitor; in parallel the potential difference is the same.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ: series + parallel numerical (2024, 3m)."
+  ],
+  "formulas": [
+    "- Series: 1/C_s = Σ1/Cᵢ; two: C₁C₂/(C₁+C₂)\n- Parallel: C_p = ΣCᵢ"
+  ],
+  "summary": "Capacitors combine in two ways. **Series** (end-to-end): each carries the same induced charge Q while voltages add, giving $\\frac{1}{C_s} = \\frac{1}{C_1} + \\frac{1}{C_2}$ — equivalent capacitance *smaller than the smallest*, but withstanding higher total voltage. **Parallel** (same two nodes): each sees the same V while charges add, giving $C_p = C_1 + C_2$ — larger than the largest, storing more charge. NEB 2024's pair (2 μF, 3 μF) gives 1.2 μF in series and 5 μF in parallel (3m). The rules are the exact inverse of resistor combinations — the classic exam contrast.",
+  "mcqs": [
+    {
+      "question": "NEB 2024: 2 μF and 3 μF in series =",
+      "options": [
+        "5 μF",
+        "1.2 μF",
+        "2.5 μF",
+        "6 μF"
+      ],
+      "answer": "B",
+      "explanation": "Product/sum."
+    },
+    {
+      "question": "NEB 2024: 2 μF and 3 μF in parallel =",
+      "options": [
+        "1.2 μF",
+        "2.5 μF",
+        "5 μF",
+        "6 μF"
+      ],
+      "answer": "C",
+      "explanation": "Direct sum."
+    },
+    {
+      "question": "In series, each capacitor has the same:",
+      "options": [
+        "Voltage",
+        "Charge",
+        "Energy",
+        "Area"
+      ],
+      "answer": "B",
+      "explanation": "Induced equal charges."
+    },
+    {
+      "question": "In parallel, each capacitor has the same:",
+      "options": [
+        "Charge",
+        "Voltage",
+        "Capacitance",
+        "Current"
+      ],
+      "answer": "B",
+      "explanation": "Common nodes."
+    },
+    {
+      "question": "Series equivalent capacitance is:",
+      "options": [
+        "Larger than the largest",
+        "Smaller than the smallest",
+        "The average",
+        "Equal to the sum"
+      ],
+      "answer": "B",
+      "explanation": "Reciprocal addition."
+    },
+    {
+      "question": "Capacitors in parallel compare to resistors in:",
+      "options": [
+        "Series",
+        "Parallel",
+        "Neither",
+        "Both"
+      ],
+      "answer": "A",
+      "explanation": "Rules swap."
+    },
+    {
+      "question": "Two identical capacitors C in series give:",
+      "options": [
+        "2C",
+        "C",
+        "C/2",
+        "C²"
+      ],
+      "answer": "C",
+      "explanation": "Half."
+    },
+    {
+      "question": "Two identical capacitors C in parallel give:",
+      "options": [
+        "2C",
+        "C",
+        "C/2",
+        "C²"
+      ],
+      "answer": "A",
+      "explanation": "Double."
     }
   ]
 }

@@ -7,27 +7,14 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Energy stored.** The work done charging a capacitor is stored as electrostatic energy U = ½CV² = Q²/2C = ½QV, where C is capacitance, Q the charge and V the potential difference.",
-    "**Energy density.** The energy per unit volume between the plates is u = ½ε₀E²; the same expression gives the energy density of any electric field in vacuum.",
-    "**Charging a capacitor.** A battery of emf V supplies energy QV while charging, but only half (½QV) is stored — the rest is dissipated as heat in the circuit resistance.",
-    "**Sharing between capacitors.** When a charged capacitor shares charge with an uncharged one, total charge is conserved but energy is lost as heat until the potentials equalise.",
-    "**Applications.** Stored capacitor energy drives camera flashes, defibrillators and pulsed lasers, where energy must be released very rapidly.",
-    "The energy of a charged capacitor is spread through the volume of the electric field, with density one half ε0 E squared in vacuum. Doubling the field multiplies that density by four, which is why a breakdown field stores so much energy per cubic metre.",
-    "# Energy of charged capacitor\n\n## 1. Introduction\nPhysical picture of **Energy of charged capacitor** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Capacitor fill pass.\n\n## 2. Concepts and laws\n### Energy of charged capacitor\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Circuit elements and combinations**\n\n| Element or combo | Diagram ref | Equivalent value | Remark |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Energy of charged capacitor — circuit diagram with standard symbols (authored SVG)\n- **D2** — Energy of charged capacitor — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Energy of charged capacitor — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Energy of charged capacitor — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Energy Held in Empty Space\n\nA charged capacitor stores energy in the electric field between its plates — no moving parts, no chemistry. Discharge it through a flash lamp or a defibrillator and the field's work arrives in a burst. U = ½CV² is the formula NEB keeps testing.",
+    "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 Deriving the stored energy\n\nCharging a capacitor is a gradual process: when charge q has been transferred, the remaining work pushes charge against potential v = q/C. The total work is the area under the Q–V straight line:\n$$W = \\int_0^Q \\frac{q}{C}dq = \\frac{1}{2}\\frac{Q^2}{C} = \\frac{1}{2}CV^2 = \\frac{1}{2}QV$$\n— stored as field energy between the plates. The ½ appears because the *average* voltage during charging is V/2.\n\n### 2.2 Energy density\n\nThe energy per unit volume of an electric field:\n$$u = \\frac{1}{2}\\varepsilon_0 E^2$$\n— energy lives in the field itself, a fact that generalises to electromagnetic waves.\n\n### 2.3 Worked numericals\n\n**Q (3m, 2022):** A capacitor of capacitance 6 μF is charged to a potential difference of 100 V. Calculate the energy stored.\n$$U = \\frac{1}{2}CV^2 = \\frac{1}{2} \\times 6\\times10^{-6} \\times (100)^2 = \\frac{1}{2} \\times 6\\times10^{-6} \\times 10^4 = 0.03 \\text{ J}$$\n\n**Q (2m, 2024):** A 12 μF capacitor is charged to 100 V. How much energy is stored in it?\n$$U = \\frac{1}{2} \\times 12\\times10^{-6} \\times 10^4 = 0.06 \\text{ J}$$\n\n**Q (NEB-style):** A 2 μF capacitor stores 0.01 J. Find the charge.\n$Q = \\sqrt{2UC} = \\sqrt{2 \\times 0.01 \\times 2\\times10^{-6}} = \\sqrt{4\\times10^{-8}} = 2\\times10^{-4}$ C = 200 μC.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 90:** U = ½QV is the area under the charging curve — potential energy language.\n- **To Topic 93/94:** C sets the storage capacity.\n- **To fields:** energy density ½ε₀E² makes field energy a real, localised physical quantity.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Electricity | Capacitor | A capacitor of capacitance 6 μF is charged to a potential difference of 100 V. Calculate the energy stored in it. | 3 | Numerical |\n| 2080/2024 | Electricity | Capacitor | A 12 μF capacitor is charged to 100 V. How much energy is stored in it? | 2 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Derive U = ½CV² (3–4m).\n2. Find Q or V from stored energy (2–3m).\n3. State the energy density of an electric field (2m).\n\n### 4.3 Common examination mistakes\n\n1. Dropping the ½ — writing U = CV².\n2. Forgetting to square V.\n3. Mixing μF and F — 6 μF is 6×10⁻⁶ F."
   ],
   "confusion": [
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d)..",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**The ½ is real:** U = ½CV² = ½QV = Q²/2C — three equivalent forms.",
+    "**Energy sits in the field**, not \"on the plates\" — density ½ε₀E²."
   ],
   "bounds": [
     "Covers only: energy of charged capacitor (within Capacitor).",
@@ -36,108 +23,135 @@
     "Limit to remember: capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d)."
   ],
   "practice": [
-    "Write u = (1/2) ε0 E^2 and say what each symbol means.",
-    "Mark the known values, then substitute one step at a time.",
-    "Finish with the number, the unit, and the direction when the quantity has one."
+    "Why does a capacitor deliver its energy faster than a battery?"
   ],
   "universalFacts": [
-    "Capacitance C = Q/V; parallel-plate C = ε₀A/d (larger with dielectric: C = ε₀εᵣA/d).",
-    "Energy stored U = ½CV² = Q²/2C.",
-    "Series: 1/C = Σ1/C (same Q); Parallel: C = ΣC (same V)."
+    "A defibrillator's ~200 J arrives from a capacitor of a few hundred μF charged to nearly a kilovolt."
   ],
   "examples": [
-    "The energy of a charged capacitor is spread through the volume of the electric field, with density one half ε0 E squared in vacuum. Doubling the field multiplies that density by four, which is why a breakdown field stores so much energy per cubic metre.",
-    "The working relations are u = (1/2) ε0 E^2 and U = (1/2) Q V. Name each symbol, convert the data into SI units, and only then substitute.",
-    "Find the energy density in a vacuum field of 1.0 × 10^6 V/m. Use ε0 = 8.85 × 10^−12."
+    "***NEB 2022*** — 6 μF at 100 V: 0.03 J. ***NEB 2024*** — 12 μF at 100 V: 0.06 J."
   ],
   "practiceQuestions": [
-    "Write u = (1/2) ε0 E^2 and name the symbols.",
-    "What does U = (1/2) Q V tell you?",
-    "Which unit must be converted before the substitution?"
+    "**Numerical (3m): Find the energy in a 100 μF capacitor at 50 V.** — U = ½ × 10⁻⁴ × 2500 = 0.125 J."
   ],
   "formulas": [
-    "C = Q/V",
-    "C = ε₀A/d",
-    "U = ½CV²"
+    "- U = ½CV² = ½QV = Q²/2C\n- Energy density: u = ½ε₀E²"
   ],
   "numericals": [
     "Find the energy density in a vacuum field of 1.0 × 10^6 V/m. Use ε0 = 8.85 × 10^−12."
   ],
   "keyPoints": [
-    "u = (1/2) ε0 E^2",
-    "U = (1/2) Q V",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "U = ½CV² = ½QV = Q²/2C."
   ],
-  "summary": "Capacitor energy may be written (1/2) Q V, and the same energy sits in the field at a density (1/2) ε0 E squared. The density follows the square of the field, so it is a property of the field itself.",
+  "summary": "Charging a capacitor stores energy in its electric field: integrating the charging work gives $U = \\frac{1}{2}CV^2 = \\frac{1}{2}QV = \\frac{Q^2}{2C}$ — the ½ because the average charging voltage is V/2. NEB 2022's 6 μF at 100 V stores 0.03 J (3m); NEB 2024's 12 μF at 100 V stores 0.06 J (2m). Per unit volume the field holds $u = \\frac{1}{2}\\varepsilon_0 E^2$ — energy localised in space itself, the seed idea of electromagnetic waves. Discharged rapidly (flash, defibrillator), the field's work arrives in a burst no battery can match.",
   "mcqs": [
     {
-      "question": "Energy density in vacuum is",
+      "question": "Energy stored in a capacitor is:",
       "options": [
-        "(1/2) ε0 E^2",
-        "ε0 E",
-        "C V",
-        "Q/V"
+        "CV²",
+        "½CV²",
+        "2CV²",
+        "½C²V"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Three equivalent forms."
     },
     {
-      "question": "Doubling E multiplies the energy density by",
+      "question": "NEB 2022: 6 μF at 100 V stores:",
+      "options": [
+        "0.03 J",
+        "0.06 J",
+        "0.6 J",
+        "3 J"
+      ],
+      "answer": "A",
+      "explanation": "½ × 6×10⁻⁶ × 10⁴."
+    },
+    {
+      "question": "NEB 2024: 12 μF at 100 V stores:",
+      "options": [
+        "0.03 J",
+        "0.06 J",
+        "0.6 J",
+        "1.2 J"
+      ],
+      "answer": "B",
+      "explanation": "½ × 12×10⁻⁶ × 10⁴."
+    },
+    {
+      "question": "The ½ in U = ½CV² arises because:",
+      "options": [
+        "Of energy loss",
+        "Average voltage is V/2 during charging",
+        "C changes",
+        "Of the dielectric"
+      ],
+      "answer": "B",
+      "explanation": "Q–V line area."
+    },
+    {
+      "question": "Energy density of an electric field is:",
+      "options": [
+        "ε₀E²",
+        "½ε₀E²",
+        "2ε₀E²",
+        "E²/ε₀"
+      ],
+      "answer": "B",
+      "explanation": "Field energy per volume."
+    },
+    {
+      "question": "U in terms of Q and C:",
+      "options": [
+        "Q²C",
+        "Q²/2C",
+        "QC",
+        "Q/C"
+      ],
+      "answer": "B",
+      "explanation": "Eliminate V."
+    },
+    {
+      "question": "A charged capacitor's energy resides:",
+      "options": [
+        "On the positive plate",
+        "On the negative plate",
+        "In the field between plates",
+        "In the wires"
+      ],
+      "answer": "C",
+      "explanation": "Field energy."
+    },
+    {
+      "question": "Doubling V at fixed C multiplies U by:",
       "options": [
         "2",
         "4",
-        "1/2",
-        "ε0"
+        "8",
+        "16"
       ],
-      "answer": "B"
-    },
-    {
-      "question": "U = (1/2) Q V is",
-      "options": [
-        "Wrong by definition",
-        "Equivalent to (1/2) C V^2",
-        "The battery work with no half",
-        "A magnetic energy"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "The energy is stored",
-      "options": [
-        "In the field between the plates",
-        "Only in the connecting wire",
-        "As kinetic energy of the plates",
-        "In the battery after disconnection"
-      ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "V² dependence."
     }
   ],
   "importantStatements": [
-    "The energy of a charged capacitor is spread through the volume of the electric field, with density one half ε0 E squared in vacuum. Doubling the field multiplies that density by four, which is why a breakdown field stores so much energy per cubic metre.",
-    "The working relations are u = (1/2) ε0 E^2 and U = (1/2) Q V. Name each symbol, convert the data into SI units, and only then substitute.",
-    "Find the energy density in a vacuum field of 1.0 × 10^6 V/m. Use ε0 = 8.85 × 10^−12. u = (1/2) ε0 E^2. E^2 = 1.0 × 10^12."
+    "\"The energy stored in a charged capacitor is half the product of its capacitance and the square of the potential difference.\""
   ],
   "examNotes": [
-    "Definition, then formula, then substitution.",
-    "A vector answer is incomplete without its direction."
+    "Quote all three equivalent forms; the derivation from Q–V area earns full marks."
   ],
   "examShortTricks": [
-    "SI units first, then the formula.",
-    "The last line is the number, the unit, and the direction if there is one."
+    "\"U = ½ × μF × V² — watch the exponents.\""
   ],
   "specialNotes": [
     "A sketched sign convention is part of the data.",
     "A dimensionless ratio still needs the two quantities named."
   ],
   "importantNotes": [
-    "Do not skip the unit conversion.",
-    "Match the formula to the situation drawn, not to a neighbouring topic."
+    "Verified PYQs: 0.03 J (2022, 3m); 0.06 J (2024, 2m)."
   ],
   "importantConcepts": [
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**Average voltage V/2 during charging** is where the ½ comes from."
   ],
   "importantTasks": [
     "Copy the worked example and hide the result until the last step.",
@@ -197,5 +211,50 @@
       ],
       "answer": "4.4 J/m^3."
     }
-  ]
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Energy Held in Empty Space\n\nA charged capacitor stores energy in the electric field between its plates — no moving parts, no chemistry. Discharge it through a flash lamp or a defibrillator and the field's work arrives in a burst. U = ½CV² is the formula NEB keeps testing.",
+      "## 2. Fundamental Concepts (NEB 2022, 2024)\n\n### 2.1 Deriving the stored energy\n\nCharging a capacitor is a gradual process: when charge q has been transferred, the remaining work pushes charge against potential v = q/C. The total work is the area under the Q–V straight line:\n$$W = \\int_0^Q \\frac{q}{C}dq = \\frac{1}{2}\\frac{Q^2}{C} = \\frac{1}{2}CV^2 = \\frac{1}{2}QV$$\n— stored as field energy between the plates. The ½ appears because the *average* voltage during charging is V/2.\n\n### 2.2 Energy density\n\nThe energy per unit volume of an electric field:\n$$u = \\frac{1}{2}\\varepsilon_0 E^2$$\n— energy lives in the field itself, a fact that generalises to electromagnetic waves.\n\n### 2.3 Worked numericals\n\n**Q (3m, 2022):** A capacitor of capacitance 6 μF is charged to a potential difference of 100 V. Calculate the energy stored.\n$$U = \\frac{1}{2}CV^2 = \\frac{1}{2} \\times 6\\times10^{-6} \\times (100)^2 = \\frac{1}{2} \\times 6\\times10^{-6} \\times 10^4 = 0.03 \\text{ J}$$\n\n**Q (2m, 2024):** A 12 μF capacitor is charged to 100 V. How much energy is stored in it?\n$$U = \\frac{1}{2} \\times 12\\times10^{-6} \\times 10^4 = 0.06 \\text{ J}$$\n\n**Q (NEB-style):** A 2 μF capacitor stores 0.01 J. Find the charge.\n$Q = \\sqrt{2UC} = \\sqrt{2 \\times 0.01 \\times 2\\times10^{-6}} = \\sqrt{4\\times10^{-8}} = 2\\times10^{-4}$ C = 200 μC.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 90:** U = ½QV is the area under the charging curve — potential energy language.\n- **To Topic 93/94:** C sets the storage capacity.\n- **To fields:** energy density ½ε₀E² makes field energy a real, localised physical quantity.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2078/2022 | Electricity | Capacitor | A capacitor of capacitance 6 μF is charged to a potential difference of 100 V. Calculate the energy stored in it. | 3 | Numerical |\n| 2080/2024 | Electricity | Capacitor | A 12 μF capacitor is charged to 100 V. How much energy is stored in it? | 2 | Numerical |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Derive U = ½CV² (3–4m).\n2. Find Q or V from stored energy (2–3m).\n3. State the energy density of an electric field (2m).\n\n### 4.3 Common examination mistakes\n\n1. Dropping the ½ — writing U = CV².\n2. Forgetting to square V.\n3. Mixing μF and F — 6 μF is 6×10⁻⁶ F."
+    ],
+    "confusion": [
+      "**The ½ is real:** U = ½CV² = ½QV = Q²/2C — three equivalent forms.",
+      "**Energy sits in the field**, not \"on the plates\" — density ½ε₀E²."
+    ],
+    "keyPoints": [
+      "U = ½CV² = ½QV = Q²/2C."
+    ],
+    "importantConcepts": [
+      "**Average voltage V/2 during charging** is where the ½ comes from."
+    ],
+    "examples": [
+      "***NEB 2022*** — 6 μF at 100 V: 0.03 J. ***NEB 2024*** — 12 μF at 100 V: 0.06 J."
+    ],
+    "universalFacts": [
+      "A defibrillator's ~200 J arrives from a capacitor of a few hundred μF charged to nearly a kilovolt."
+    ],
+    "importantStatements": [
+      "\"The energy stored in a charged capacitor is half the product of its capacitance and the square of the potential difference.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: 0.03 J (2022, 3m); 0.06 J (2024, 2m)."
+    ],
+    "examShortTricks": [
+      "\"U = ½ × μF × V² — watch the exponents.\""
+    ],
+    "examNotes": [
+      "Quote all three equivalent forms; the derivation from Q–V area earns full marks."
+    ],
+    "formulas": [
+      "- U = ½CV² = ½QV = Q²/2C\n- Energy density: u = ½ε₀E²"
+    ],
+    "practice": [
+      "Why does a capacitor deliver its energy faster than a battery?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): Find the energy in a 100 μF capacitor at 50 V.** — U = ½ × 10⁻⁴ × 2500 = 0.125 J."
+    ]
+  }
 }

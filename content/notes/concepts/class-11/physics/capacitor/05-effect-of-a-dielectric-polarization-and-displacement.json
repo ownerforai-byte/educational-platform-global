@@ -6,29 +6,22 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:15.247Z",
   "notes": [
-    "# Effect of a dielectric: polarization and displacement\n\n## 1. Introduction\nPhysical picture of **Effect of a dielectric** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Capacitor fill pass.\n\n## 2. Concepts and laws\n### Effect of a dielectric: polarization and displacement\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Effect of a dielectric — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Effect of a dielectric — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Effect of a dielectric — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Effect of a dielectric — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Slipping an Insulator into the Field\n\nSlide a slab of glass between capacitor plates and the capacitance jumps — with the battery disconnected, the voltage *drops* on its own. The dielectric's molecules polarise, partially cancelling the internal field, and C rises by the dielectric constant εᵣ.",
+    "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 What is a dielectric?\n\nA **dielectric** is an insulating material (mica, paper, glass, ceramic, pure water) whose molecules **polarise** in an electric field — no free electrons, but charges shift slightly within each molecule.\n\n- **Polar** dielectrics (water, HCl): molecules are permanent dipoles that align with the field.\n- **Non-polar** dielectrics (N₂, benzene): the field *induces* stretched dipoles.\n\n### 2.2 Polarization and the increased capacitance (NEB 2024, 3m)\n\nInserting a dielectric slab between charged plates:\n1. The field polarises the slab — induced (+ and −) surface charges appear on its faces.\n2. These induced charges create an **opposing internal field**, weakening the net field inside: E = E₀/εᵣ.\n3. With Q fixed (battery disconnected), V = Ed **falls** by the factor εᵣ.\n4. Since C = Q/V, capacitance **rises**:\n$$C = \\varepsilon_r C_0 = \\frac{\\varepsilon_r\\varepsilon_0 A}{d}$$\nεᵣ (relative permittivity/dielectric constant) ranges from ~1 (air) to ~6 (mica) to ~80 (water).\n\n**Polarization** is the aligned-dipole state; **displacement** refers to the slight shift of bound charges (or, in modern terms, the displacement field D = ε₀E + P).\n\n### 2.3 Worked numerical\n\n**Q (NEB-style):** A 177 pF air capacitor is filled with mica (εᵣ = 6). Find the new capacitance.\n$C = \\varepsilon_r C_0 = 6 \\times 177 = 1062$ pF ≈ 1.06 nF.\n\n**Q (NEB-style):** With the battery disconnected, a 500 V air capacitor's gap is filled with εᵣ = 5 material. Find the new voltage and field ratio.\nV' = V/εᵣ = 100 V; E' = E₀/5.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 94:** C = εᵣε₀A/d is the dielectric-corrected parallel-plate result.\n- **To Topic 96:** with V fixed by a battery, stored energy rises εᵣ-fold; with Q fixed, it falls.\n- **To conductors:** a conductor reduces E to zero inside; a dielectric only *reduces* it — partial cancellation.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Electricity | Capacitor | What is a dielectric? Explain how inserting a dielectric slab increases the capacitance of a capacitor. | 3 | Explanation |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Distinguish polar and non-polar dielectrics (2m).\n2. Numerical: new C or V with a dielectric (2–3m).\n3. Why does a dielectric reduce the field but not to zero? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Saying the dielectric \"conducts charge between plates\" — it is an insulator; only polarisation occurs.\n2. Forgetting the two cases: battery connected (V fixed) vs disconnected (Q fixed).\n3. Writing εᵣ < 1 — it is always ≥ 1."
   ],
   "examNotes": [
-    "Questions on the distinction between polar and non-polar dielectrics and the derivation of $\\kappa = 1 + \\chi_e$ are standard 3 to 4-mark questions in NEB Class 11 Physics exams."
+    "Name εᵣ values for air (≈1), mica (≈6) if asked for examples."
   ],
   "examShortTricks": [
-    "Bound charge trick: $\\sigma_p = \\sigma(1 - 1/\\kappa)$; for large $\\kappa$, $\\sigma_p \\approx \\sigma$.",
-    "Relative permittivity identity: $\\kappa = 1 + \\chi_e$.",
-    "Electric displacement in uniform plate capacitor: $D = \\sigma_{free} = Q/A$, completely unaffected by dielectric insertion."
+    "\"Chain: polarise → induced charges → E weakens → V falls (Q fixed) → C rises.\""
   ],
   "practiceQuestions": [
-    "Q1. Differentiate between polar and non-polar dielectrics with two examples of each.",
-    "Q2. Define electric polarization vector P and electric displacement vector D. Write their SI units and dimensional formulas.",
-    "Q3. Derive the relation between dielectric constant κ and electric susceptibility χ_e, showing that κ = 1 + χ_e.",
-    "Q4. A parallel plate capacitor is charged and isolated. Explain what happens to the electric field, potential difference, and capacitance when a dielectric slab fills the plate gap."
+    "**Numerical (3m): A 200 pF air capacitor is filled with εᵣ = 5 material with the battery disconnected after charging to 100 V. Find new C and V.** — C' = 1000 pF; Q fixed ⇒ V' = 100/5 = 20 V."
   ],
   "practice": [
-    "A parallel plate capacitor with plate area 100 cm² and plate separation 2 mm is charged to 100 V with air. A dielectric slab of κ = 5 is inserted with battery disconnected. Find (a) initial capacitance, (b) free surface charge density on plates, (c) net electric field inside dielectric, and (d) induced bound surface charge density. Solution: (a) C₀ = ε₀A/d = (8.854 × 10⁻¹²)(0.01) / (2 × 10⁻³) = 44.27 pF. (b) Q = C₀V₀ = 4.427 nC; σ = Q/A = 4.427 × 10⁻⁷ C/m². (c) E₀ = V₀/d = 50000 V/m; inside dielectric E = E₀/κ = 10000 V/m. (d) Bound charge density σ_p = P = (κ - 1)ε₀E = 4 × (8.854 × 10⁻¹²) × 10000 = 3.542 × 10⁻⁷ C/m²."
+    "Why do high-voltage capacitors use oil or mica filling?"
   ],
   "mcs": [
     {
@@ -66,9 +59,164 @@
     }
   ],
   "keyPoints": [
-    "Dielectric constant K = C_dielectric/C_vacuum.",
-    "Polarisation: induced dipoles create an opposing internal field E/K.",
-    "With dielectric inserted: C increases K-fold; E and V decrease K-fold at fixed Q.",
-    "Energy stored falls by K at fixed charge; rises by K at fixed voltage."
+    "Dielectric polarises → internal field weakens → C rises εᵣ-fold."
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Slipping an Insulator into the Field\n\nSlide a slab of glass between capacitor plates and the capacitance jumps — with the battery disconnected, the voltage *drops* on its own. The dielectric's molecules polarise, partially cancelling the internal field, and C rises by the dielectric constant εᵣ.",
+      "## 2. Fundamental Concepts (NEB 2024)\n\n### 2.1 What is a dielectric?\n\nA **dielectric** is an insulating material (mica, paper, glass, ceramic, pure water) whose molecules **polarise** in an electric field — no free electrons, but charges shift slightly within each molecule.\n\n- **Polar** dielectrics (water, HCl): molecules are permanent dipoles that align with the field.\n- **Non-polar** dielectrics (N₂, benzene): the field *induces* stretched dipoles.\n\n### 2.2 Polarization and the increased capacitance (NEB 2024, 3m)\n\nInserting a dielectric slab between charged plates:\n1. The field polarises the slab — induced (+ and −) surface charges appear on its faces.\n2. These induced charges create an **opposing internal field**, weakening the net field inside: E = E₀/εᵣ.\n3. With Q fixed (battery disconnected), V = Ed **falls** by the factor εᵣ.\n4. Since C = Q/V, capacitance **rises**:\n$$C = \\varepsilon_r C_0 = \\frac{\\varepsilon_r\\varepsilon_0 A}{d}$$\nεᵣ (relative permittivity/dielectric constant) ranges from ~1 (air) to ~6 (mica) to ~80 (water).\n\n**Polarization** is the aligned-dipole state; **displacement** refers to the slight shift of bound charges (or, in modern terms, the displacement field D = ε₀E + P).\n\n### 2.3 Worked numerical\n\n**Q (NEB-style):** A 177 pF air capacitor is filled with mica (εᵣ = 6). Find the new capacitance.\n$C = \\varepsilon_r C_0 = 6 \\times 177 = 1062$ pF ≈ 1.06 nF.\n\n**Q (NEB-style):** With the battery disconnected, a 500 V air capacitor's gap is filled with εᵣ = 5 material. Find the new voltage and field ratio.\nV' = V/εᵣ = 100 V; E' = E₀/5.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 94:** C = εᵣε₀A/d is the dielectric-corrected parallel-plate result.\n- **To Topic 96:** with V fixed by a battery, stored energy rises εᵣ-fold; with Q fixed, it falls.\n- **To conductors:** a conductor reduces E to zero inside; a dielectric only *reduces* it — partial cancellation.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Electricity | Capacitor | What is a dielectric? Explain how inserting a dielectric slab increases the capacitance of a capacitor. | 3 | Explanation |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Distinguish polar and non-polar dielectrics (2m).\n2. Numerical: new C or V with a dielectric (2–3m).\n3. Why does a dielectric reduce the field but not to zero? (2m)\n\n### 4.3 Common examination mistakes\n\n1. Saying the dielectric \"conducts charge between plates\" — it is an insulator; only polarisation occurs.\n2. Forgetting the two cases: battery connected (V fixed) vs disconnected (Q fixed).\n3. Writing εᵣ < 1 — it is always ≥ 1."
+    ],
+    "confusion": [
+      "**Dielectric ≠ conductor:** the insulator's bound charges only *weaken* the field (E₀/εᵣ), never cancel it.",
+      "**Two scenarios:** battery connected → V fixed, Q rises; battery disconnected → Q fixed, V falls."
+    ],
+    "keyPoints": [
+      "Dielectric polarises → internal field weakens → C rises εᵣ-fold."
+    ],
+    "importantConcepts": [
+      "**Polarisation is the mechanism; εᵣ is the measure** — C = εᵣC₀."
+    ],
+    "examples": [
+      "***Mica-filled capacitor*** — εᵣ ≈ 6: six times the air capacitance."
+    ],
+    "universalFacts": [
+      "Water's εᵣ ≈ 80 makes it a superb solvent for ions — the same polarisation physics at molecular scale."
+    ],
+    "importantStatements": [
+      "\"Inserting a dielectric between the plates of a capacitor increases its capacitance by the dielectric constant of the material.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: dielectric + capacitance increase explanation (2024, 3m)."
+    ],
+    "examShortTricks": [
+      "\"Chain: polarise → induced charges → E weakens → V falls (Q fixed) → C rises.\""
+    ],
+    "examNotes": [
+      "Name εᵣ values for air (≈1), mica (≈6) if asked for examples."
+    ],
+    "formulas": [
+      "- E = E₀/εᵣ inside dielectric\n- C = εᵣC₀ = εᵣε₀A/d\n- V' = V/εᵣ (Q fixed)"
+    ],
+    "practice": [
+      "Why do high-voltage capacitors use oil or mica filling?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A 200 pF air capacitor is filled with εᵣ = 5 material with the battery disconnected after charging to 100 V. Find new C and V.** — C' = 1000 pF; Q fixed ⇒ V' = 100/5 = 20 V."
+    ]
+  },
+  "confusion": [
+    "**Dielectric ≠ conductor:** the insulator's bound charges only *weaken* the field (E₀/εᵣ), never cancel it.",
+    "**Two scenarios:** battery connected → V fixed, Q rises; battery disconnected → Q fixed, V falls."
+  ],
+  "importantConcepts": [
+    "**Polarisation is the mechanism; εᵣ is the measure** — C = εᵣC₀."
+  ],
+  "examples": [
+    "***Mica-filled capacitor*** — εᵣ ≈ 6: six times the air capacitance."
+  ],
+  "universalFacts": [
+    "Water's εᵣ ≈ 80 makes it a superb solvent for ions — the same polarisation physics at molecular scale."
+  ],
+  "importantStatements": [
+    "\"Inserting a dielectric between the plates of a capacitor increases its capacitance by the dielectric constant of the material.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ: dielectric + capacitance increase explanation (2024, 3m)."
+  ],
+  "formulas": [
+    "- E = E₀/εᵣ inside dielectric\n- C = εᵣC₀ = εᵣε₀A/d\n- V' = V/εᵣ (Q fixed)"
+  ],
+  "summary": "A **dielectric** is an insulator whose molecules **polarise** in a field — permanent dipoles align (polar) or induced dipoles stretch (non-polar). Between capacitor plates the polarised slab develops induced surface charges that oppose the plate field, weakening the net field to E₀/εᵣ; with charge fixed the voltage falls and $C = Q/V$ rises to $\\varepsilon_r C_0$ (NEB 2024, 3m) — giving the corrected parallel-plate formula C = εᵣε₀A/d. εᵣ spans ~1 for air to ~80 for water. Whether the energy rises (battery connected, V fixed) or falls (Q fixed) depends on which quantity the source holds fixed — the subtle half of the story.",
+  "mcqs": [
+    {
+      "question": "A dielectric is:",
+      "options": [
+        "A conductor",
+        "An insulator that polarises",
+        "A semiconductor",
+        "A magnet"
+      ],
+      "answer": "B",
+      "explanation": "Bound charges shift."
+    },
+    {
+      "question": "Inside a dielectric the field is:",
+      "options": [
+        "Zero",
+        "E₀/εᵣ",
+        "E₀εᵣ",
+        "Unchanged"
+      ],
+      "answer": "B",
+      "explanation": "Partial cancellation."
+    },
+    {
+      "question": "NEB 2024: inserting a dielectric increases C because:",
+      "options": [
+        "Plates grow",
+        "V falls at fixed Q",
+        "Q falls",
+        "d grows"
+      ],
+      "answer": "B",
+      "explanation": "C = Q/V."
+    },
+    {
+      "question": "εᵣ for a vacuum is:",
+      "options": [
+        "0",
+        "1",
+        "6",
+        "80"
+      ],
+      "answer": "B",
+      "explanation": "Reference value."
+    },
+    {
+      "question": "Polar dielectrics have:",
+      "options": [
+        "Induced dipoles only",
+        "Permanent dipoles",
+        "Free electrons",
+        "No response"
+      ],
+      "answer": "B",
+      "explanation": "Pre-aligned molecules exist."
+    },
+    {
+      "question": "With Q fixed and εᵣ inserted, stored energy:",
+      "options": [
+        "Rises εᵣ-fold",
+        "Falls εᵣ-fold",
+        "Unchanged",
+        "Doubles"
+      ],
+      "answer": "B",
+      "explanation": "U = Q²/2C."
+    },
+    {
+      "question": "NEB 2024 asked the dielectric explanation for:",
+      "options": [
+        "2 marks",
+        "3 marks",
+        "5 marks",
+        "1 mark"
+      ],
+      "answer": "B",
+      "explanation": "2024 paper."
+    },
+    {
+      "question": "The displacement of bound charges in a dielectric is called:",
+      "options": [
+        "Conduction",
+        "Polarization",
+        "Induction",
+        "Ionisation"
+      ],
+      "answer": "B",
+      "explanation": "Molecular alignment."
+    }
   ]
 }
