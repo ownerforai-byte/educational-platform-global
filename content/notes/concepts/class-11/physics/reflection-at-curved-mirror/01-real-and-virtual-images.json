@@ -5,96 +5,55 @@
   "topicTitle": "Real and virtual images",
   "relevance": 100,
   "notes": [
-    "A real image forms where reflected rays physically converge. It can be projected onto a screen and is commonly inverted for a single concave-mirror image of a real object beyond F.",
-    "A virtual image forms where reflected rays only appear to originate when extended backward. It cannot be projected on a screen; a plane mirror forms an upright virtual image behind the mirror.",
-    "For a concave mirror, an object beyond F generally gives a real image; an object between pole and F gives a virtual, upright, magnified image. A convex mirror gives a virtual, upright, diminished image for a real object.",
-    "Ray test: follow reflected rays forward. If they meet, the image is real; if only backward extensions meet, it is virtual. This geometric test is more reliable than judging whether the image seems behind the mirror.",
-    "Example: a shaving mirror used close to the face has the face inside the concave mirror’s focal length, producing an upright virtual magnified image.",
-    "A real image is a place where the rays themselves meet, so a screen put there shows the picture. A virtual image is a place where only the backward extensions of diverging rays meet. The eye can see it, but a screen at that place stays dark. A plane mirror's image is virtual.",
-    "# Real and virtual images\n\n## 1. Introduction\nPhysical picture of **Real and virtual images** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Reflection at Curved Mirror fill pass.\n\n## 2. Concepts and laws\n### Real and virtual images\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Real and virtual images — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Real and virtual images — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Real and virtual images — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Real and virtual images — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Where Images Come From\n\nBring an object up to a spoon and its face appears; move it out and the image flips. Spherical mirrors — concave and convex — build images by redirecting light rays, and where those rays actually (or apparently) meet decides whether the image is real or virtual.",
+    "## 2. Fundamental Concepts (NEB 2020, 2023, 2024)\n\n### 2.1 Real vs virtual images\n\n- **Real image:** reflected rays **actually intersect**; can be caught on a screen; always **inverted** (for a mirror acting alone). Formed **in front of** a concave mirror.\n- **Virtual image:** reflected rays only **appear to diverge from** a point behind the mirror; cannot be caught on a screen; always **erect**. Formed **behind** a concave mirror (object inside F) or **behind** a convex mirror (always).\n\n### 2.2 Concave vs convex mirror (NEB 2020)\n\n| Point | Concave mirror | Convex mirror |\n|---|---|---|\n| Reflecting surface | Inner (cave) side | Outer side |\n| Nature | Converging | Diverging |\n| Focal length (Cartesian) | Negative | Positive |\n| Images | Real or virtual; inverted or erect; any size | Always virtual, erect, diminished |\n| Uses | Headlights, torches, projectors, dentist mirrors, telescopes | Rear-view and blind-corner mirrors |\n\n### 2.3 Image formation by a concave mirror (NEB 2023)\n\nObject position → image nature:\n- **Beyond C:** between F and C — real, inverted, diminished.\n- **At C:** at C — real, inverted, same size ($m = -1$).\n- **Between C and F:** beyond C — real, inverted, magnified (projector principle).\n- **At F ($u = f$):** rays reflect **parallel to the axis** — image **at infinity** (NEB 2023, 3m). Used in searchlights and headlights.\n- **Between P and F:** behind the mirror — virtual, erect, magnified (shaving mirror).\n\n### 2.4 Applications (NEB 2024)\n\n- **Concave mirror in a car headlight (2m):** the bulb sits at the **focus**; rays from the focus reflect **parallel to the principal axis**, producing a strong directed beam instead of scattering.\n- **Convex rear-view mirror (2m):** always erect, diminished image with a **wide field of view**.\n- **Concave shaving/make-up mirror:** object inside F → erect, magnified virtual image.",
+    "## 3. Conceptual Relationships\n\n- **To ray optics of plane mirrors (Class X base):** a plane mirror is the limiting case m = +1, always virtual.\n- **To Topic 69:** the mirror formula turns these qualitative cases into numbers.\n- **To reversibility of light:** the \"focus → parallel beam\" property is just the reverse of \"parallel rays → focus\".",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Optics | Mirror | Explain why an object placed at the focus of a concave mirror produces an image at infinity, and state what happens for objects placed at C and between C and F. | 3 | Reasoning |\n| 2076/2020 | Optics | Mirror | Differentiate between a concave mirror and a convex mirror. | 3 | Differentiate |\n| 2080/2024 | Optics | Mirror | Write two uses each of concave and convex mirrors. | 2 | Uses |\n| 2080/2024 | Optics | Mirror | Why is a concave mirror used in a car headlight? Explain with a ray diagram description. | 2 | Reasoning |\n\n### 4.2 Common examination mistakes\n\n1. Saying virtual images are always formed by convex mirrors only — a concave mirror makes them too (object inside F).\n2. Missing \"real images can be caught on a screen\" in definitions.\n3. Forgetting that the headlight answer needs the **focus → parallel beam** idea."
   ],
   "confusion": [
-    "Virtual describes ray geometry, not image brightness.",
-    "State the equation’s sign convention when giving image distances.",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**Virtual ≠ fake:** a virtual image has a definite position and can be photographed — the rays just don't really meet there.",
+    "**Concave mirrors can give both kinds of image; convex mirrors give only virtual, erect, diminished ones.**"
   ],
   "practice": [
-    "Compare real and virtual images by ray convergence and screen projection.",
-    "Where is the image for an object between P and F of a concave mirror?",
-    "Can a convex mirror form a real image of a real object?"
+    "Why does a dentist use a small concave mirror rather than a plane mirror?"
   ],
   "universalFacts": [
-    "Real rays meet; virtual rays do not.",
-    "Object position controls mirror image type.",
-    "A screen test distinguishes a real image."
+    "Convex mirrors are chosen for vehicles not because they form \"better\" images but because their diminished erect images fit a wide field of view into a small mirror."
   ],
   "animation3D": "reflection-at-curved-mirror",
   "motionGraphics": "reflection-at-curved-mirror",
   "examples": [
-    "A plane mirror produces a virtual image at equal distance behind the mirror.",
-    "A concave mirror with an object inside F forms an upright virtual image.",
-    "A real image is a place where the rays themselves meet, so a screen put there shows the picture. A virtual image is a place where only the backward extensions of diverging rays meet. The eye can see it, but a screen at that place stays dark. A plane mirror's image is virtual.",
-    "The working relations are A real image can be caught on a screen and A virtual image is where backward ray extensions meet. Name each symbol, convert the data into SI units, and only then substitute.",
-    "An object is 20 cm in front of a plane mirror. Classify the image and give its position."
+    "***NEB 2024 headlight*** — bulb at focus → reflected beam parallel to axis."
   ],
   "practiceQuestions": [
-    "Compare real and virtual images by ray convergence and screen projection.",
-    "Where is the image for an object between P and F of a concave mirror?",
-    "Can a convex mirror form a real image of a real object?"
+    "**Reasoning (2m): A dentist's mirror gives an erect, magnified image. Where must the tooth be relative to the mirror?** — Within the focal length (between pole and focus), where a concave mirror forms a virtual, erect, magnified image."
   ],
   "formulas": [
-    "Mirror equation: 1/f=1/u+1/v in a real-positive convention.",
-    "Magnification m=−v/u; negative indicates inverted orientation."
+    "- m = −v/u (Cartesian); |m| > 1 enlarged, |m| < 1 diminished\n- Object at F: image at infinity; object at C: m = −1"
   ],
   "keyPoints": [
-    "Real rays meet; virtual rays do not.",
-    "Object position controls mirror image type.",
-    "A screen test distinguishes a real image.",
-    "A real image can be caught on a screen",
-    "A virtual image is where backward ray extensions meet",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "Real image: rays actually meet, can be caught on screen, inverted.",
+    "Virtual image: rays appear to meet behind the mirror, erect, not on a screen."
   ],
-  "summary": "Ray geometry defines image type: physical convergence forms a real image, while backward extensions form a virtual image. This predicts screen projection and orientation.",
+  "summary": "Spherical mirrors form images by reflection. A **real image** is where reflected rays truly intersect — it can be thrown on a screen and is inverted; a **virtual image** is where rays only *appear* to meet — erect, behind the mirror, never on a screen. A **concave** (converging, f negative) mirror gives the whole range: diminished inside C, equal at C, magnified between C and F, image at infinity when the object is at F (rays reflect parallel — searchlights), and a virtual erect magnified image inside F (shaving mirror). A **convex** (diverging, f positive) mirror always gives a virtual, erect, diminished image with a wide field — ideal for rear-view mirrors (NEB 2020, 2023, 2024).",
   "specialNotes": [
     "Virtual describes ray geometry, not image brightness.",
     "State the equation’s sign convention when giving image distances."
   ],
   "importantStatements": [
-    "Real rays meet; virtual rays do not.",
-    "Object position controls mirror image type.",
-    "A screen test distinguishes a real image."
+    "\"A real image is formed by the actual intersection of reflected rays; a virtual image by their apparent intersection.\""
   ],
   "importantNotes": [
-    "Real rays meet; virtual rays do not.",
-    "Object position controls mirror image type.",
-    "A screen test distinguishes a real image."
+    "Verified PYQs: image at infinity + object positions 2023 3m; concave vs convex 2020 3m; uses 2024 2m; headlight 2024 2m."
   ],
   "examShortTricks": [
-    "Mirror equation: 1/f=1/u+1/v in a real-positive convention.",
-    "Magnification m=−v/u; negative indicates inverted orientation."
+    "\"Object position ladder: beyond C → small; at C → same; inside C → big; at F → infinity; inside F → virtual erect magnified.\""
   ],
   "examNotes": [
-    "Compare real and virtual images by ray convergence and screen projection.",
-    "Where is the image for an object between P and F of a concave mirror?",
-    "Can a convex mirror form a real image of a real object?"
+    "Answer the 2023-style question with all three positions (F, C, between C and F)."
   ],
   "importantConcepts": [
-    "Real rays meet; virtual rays do not.",
-    "Object position controls mirror image type.",
-    "A screen test distinguishes a real image.",
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**Object at F of a concave mirror → image at infinity** (reflected rays parallel) — the searchlight principle."
   ],
   "importantTasks": [
     "Compare real and virtual images by ray convergence and screen projection.",
@@ -146,44 +105,92 @@
   ],
   "mcqs": [
     {
-      "question": "A real image",
+      "question": "A real image is one where:",
       "options": [
-        "Can be formed on a screen",
-        "Is always behind a plane mirror",
-        "Is made of ray extensions only",
-        "Cannot be photographed"
+        "Rays appear to meet",
+        "Rays actually meet",
+        "Rays diverge forever",
+        "No rays exist"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Actual intersection."
     },
     {
-      "question": "A virtual image is where",
+      "question": "An object at the focus of a concave mirror forms an image:",
       "options": [
-        "Rays meet",
-        "Backward extensions meet",
-        "The focus of a concave mirror always is, for a distant object",
-        "The screen is brightest"
+        "At C",
+        "At infinity",
+        "At the pole",
+        "Erect and small"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Rays reflect parallel to axis."
     },
     {
-      "question": "A plane-mirror image is",
+      "question": "A convex mirror always forms an image that is:",
       "options": [
+        "Real and inverted",
+        "Virtual, erect, diminished",
+        "Real and magnified",
+        "Virtual and magnified"
+      ],
+      "answer": "B",
+      "explanation": "Diverging mirror."
+    },
+    {
+      "question": "NEB 2024: a headlight uses a concave mirror because the bulb at F gives:",
+      "options": [
+        "A diffuse glow",
+        "A parallel beam",
+        "A virtual image",
+        "Inverted image"
+      ],
+      "answer": "B",
+      "explanation": "Focus ↔ parallel reversibility."
+    },
+    {
+      "question": "An object between C and F of a concave mirror gives an image that is:",
+      "options": [
+        "Virtual and diminished",
+        "Real, inverted, magnified",
+        "Erect and same size",
+        "At infinity"
+      ],
+      "answer": "B",
+      "explanation": "Projector case."
+    },
+    {
+      "question": "Which mirror gives the widest field of view?",
+      "options": [
+        "Plane",
+        "Concave",
+        "Convex",
+        "Parabolic only"
+      ],
+      "answer": "C",
+      "explanation": "Diminished erect images fit more scene."
+    },
+    {
+      "question": "A virtual image formed by a concave mirror is always:",
+      "options": [
+        "Inverted",
+        "Erect and magnified",
+        "Same size",
+        "Real too"
+      ],
+      "answer": "B",
+      "explanation": "Object inside F."
+    },
+    {
+      "question": "Rear-view mirrors use convex mirrors mainly because the image is:",
+      "options": [
+        "Magnified",
+        "Erect with wide field",
         "Real",
-        "Virtual",
-        "Inverted top to bottom",
-        "At the focus"
+        "Free of aberration"
       ],
-      "answer": "B"
-    },
-    {
-      "question": "A screen at a virtual image",
-      "options": [
-        "Shows a bright picture from those rays",
-        "Does not catch the rays",
-        "Becomes the object",
-        "Measures f"
-      ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Traffic safety."
     }
   ],
   "exercises": [
@@ -199,5 +206,51 @@
       "answer": "A virtual image, 20 cm behind the mirror."
     }
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Where Images Come From\n\nBring an object up to a spoon and its face appears; move it out and the image flips. Spherical mirrors — concave and convex — build images by redirecting light rays, and where those rays actually (or apparently) meet decides whether the image is real or virtual.",
+      "## 2. Fundamental Concepts (NEB 2020, 2023, 2024)\n\n### 2.1 Real vs virtual images\n\n- **Real image:** reflected rays **actually intersect**; can be caught on a screen; always **inverted** (for a mirror acting alone). Formed **in front of** a concave mirror.\n- **Virtual image:** reflected rays only **appear to diverge from** a point behind the mirror; cannot be caught on a screen; always **erect**. Formed **behind** a concave mirror (object inside F) or **behind** a convex mirror (always).\n\n### 2.2 Concave vs convex mirror (NEB 2020)\n\n| Point | Concave mirror | Convex mirror |\n|---|---|---|\n| Reflecting surface | Inner (cave) side | Outer side |\n| Nature | Converging | Diverging |\n| Focal length (Cartesian) | Negative | Positive |\n| Images | Real or virtual; inverted or erect; any size | Always virtual, erect, diminished |\n| Uses | Headlights, torches, projectors, dentist mirrors, telescopes | Rear-view and blind-corner mirrors |\n\n### 2.3 Image formation by a concave mirror (NEB 2023)\n\nObject position → image nature:\n- **Beyond C:** between F and C — real, inverted, diminished.\n- **At C:** at C — real, inverted, same size ($m = -1$).\n- **Between C and F:** beyond C — real, inverted, magnified (projector principle).\n- **At F ($u = f$):** rays reflect **parallel to the axis** — image **at infinity** (NEB 2023, 3m). Used in searchlights and headlights.\n- **Between P and F:** behind the mirror — virtual, erect, magnified (shaving mirror).\n\n### 2.4 Applications (NEB 2024)\n\n- **Concave mirror in a car headlight (2m):** the bulb sits at the **focus**; rays from the focus reflect **parallel to the principal axis**, producing a strong directed beam instead of scattering.\n- **Convex rear-view mirror (2m):** always erect, diminished image with a **wide field of view**.\n- **Concave shaving/make-up mirror:** object inside F → erect, magnified virtual image.",
+      "## 3. Conceptual Relationships\n\n- **To ray optics of plane mirrors (Class X base):** a plane mirror is the limiting case m = +1, always virtual.\n- **To Topic 69:** the mirror formula turns these qualitative cases into numbers.\n- **To reversibility of light:** the \"focus → parallel beam\" property is just the reverse of \"parallel rays → focus\".",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Optics | Mirror | Explain why an object placed at the focus of a concave mirror produces an image at infinity, and state what happens for objects placed at C and between C and F. | 3 | Reasoning |\n| 2076/2020 | Optics | Mirror | Differentiate between a concave mirror and a convex mirror. | 3 | Differentiate |\n| 2080/2024 | Optics | Mirror | Write two uses each of concave and convex mirrors. | 2 | Uses |\n| 2080/2024 | Optics | Mirror | Why is a concave mirror used in a car headlight? Explain with a ray diagram description. | 2 | Reasoning |\n\n### 4.2 Common examination mistakes\n\n1. Saying virtual images are always formed by convex mirrors only — a concave mirror makes them too (object inside F).\n2. Missing \"real images can be caught on a screen\" in definitions.\n3. Forgetting that the headlight answer needs the **focus → parallel beam** idea."
+    ],
+    "confusion": [
+      "**Virtual ≠ fake:** a virtual image has a definite position and can be photographed — the rays just don't really meet there.",
+      "**Concave mirrors can give both kinds of image; convex mirrors give only virtual, erect, diminished ones.**"
+    ],
+    "keyPoints": [
+      "Real image: rays actually meet, can be caught on screen, inverted.",
+      "Virtual image: rays appear to meet behind the mirror, erect, not on a screen."
+    ],
+    "importantConcepts": [
+      "**Object at F of a concave mirror → image at infinity** (reflected rays parallel) — the searchlight principle."
+    ],
+    "examples": [
+      "***NEB 2024 headlight*** — bulb at focus → reflected beam parallel to axis."
+    ],
+    "universalFacts": [
+      "Convex mirrors are chosen for vehicles not because they form \"better\" images but because their diminished erect images fit a wide field of view into a small mirror."
+    ],
+    "importantStatements": [
+      "\"A real image is formed by the actual intersection of reflected rays; a virtual image by their apparent intersection.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: image at infinity + object positions 2023 3m; concave vs convex 2020 3m; uses 2024 2m; headlight 2024 2m."
+    ],
+    "examShortTricks": [
+      "\"Object position ladder: beyond C → small; at C → same; inside C → big; at F → infinity; inside F → virtual erect magnified.\""
+    ],
+    "examNotes": [
+      "Answer the 2023-style question with all three positions (F, C, between C and F)."
+    ],
+    "formulas": [
+      "- m = −v/u (Cartesian); |m| > 1 enlarged, |m| < 1 diminished\n- Object at F: image at infinity; object at C: m = −1"
+    ],
+    "practice": [
+      "Why does a dentist use a small concave mirror rather than a plane mirror?"
+    ],
+    "practiceQuestions": [
+      "**Reasoning (2m): A dentist's mirror gives an erect, magnified image. Where must the tooth be relative to the mirror?** — Within the focal length (between pole and focus), where a concave mirror forms a virtual, erect, magnified image."
+    ]
+  }
 }

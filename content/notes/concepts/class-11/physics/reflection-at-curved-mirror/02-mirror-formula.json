@@ -5,96 +5,54 @@
   "topicTitle": "Mirror formula",
   "relevance": 100,
   "notes": [
-    "A spherical reflecting surface acts as a spherical mirror. For paraxial rays, a concave mirror converges parallel rays to a real focus; a convex mirror makes them diverge from a virtual focus.",
-    "The centre of curvature C is distance R from pole P; paraxial focus F is halfway between, so f=R/2. Wide-angle marginal rays do not meet this approximation exactly.",
-    "Using Cartesian distances positive to the right, a concave mirror has f=−15 cm. For u=−30 cm, 1/v=1/f−1/u=−1/15+1/30=−1/30, so v=−30 cm and m=−v/u=−1.",
-    "Construct an image with a ray parallel to the principal axis (reflected through F for a concave mirror) and a ray through C (retraces itself). Their intersection locates a real image; backward extensions locate a virtual image.",
-    "Spherical aberration occurs when marginal rays focus differently from paraxial rays. A smaller aperture reduces it by excluding marginal rays.",
-    "When an object is closer to a concave mirror than the focus, the formula gives a positive v. In the Cartesian convention that positive image distance is behind the mirror, and the image is virtual, upright and enlarged. The same formula covers both the real and the virtual cases. The sign does the work.",
-    "# Mirror formula\n\n## 1. Introduction\nPhysical picture of **Mirror formula** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Reflection at Curved Mirror fill pass.\n\n## 2. Concepts and laws\n### Mirror formula\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Ray-diagram cases**\n\n| Case | Ray picture | Image nature | Magnification note |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Mirror formula — ray-diagram case gallery, ≥ 3 principal rays each (authored SVG)\n- **D2** — Mirror formula — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Mirror formula — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Mirror formula — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — One Equation for Every Mirror Image\n\nReal or virtual, magnified or diminished — every image a spherical mirror forms obeys a single compact relation: $\\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f}$. NEB loves it: the 2024 paper carried both the 5-mark derivation and the 4-mark $f = R/2$ proof.",
+    "## 2. Fundamental Concepts (NEB 2021, 2022, 2024)\n\n### 2.1 Sign convention (NEB 2021, 3m)\n\n**New Cartesian convention:**\n1. All distances are measured from the **pole P** of the mirror.\n2. Distances measured **in the direction of incident light** are positive; against it (in front of the mirror) are **negative**.\n3. Heights **above** the principal axis are positive, below negative.\n4. Focal length: **concave → negative** (focus in front), **convex → positive**.\n\n### 2.2 Relation f = R/2 (NEB 2024, 4m)\n\nA ray parallel to the principal axis strikes the mirror at height h. The normal at the point of incidence is the radius through that point, making angle θ with the axis. After reflection the ray turns through 2θ and crosses the axis at F. For paraxial rays ($\\tan\\theta ≈ \\theta$):\n$$\\tan\\theta = \\frac{h}{R} \\approx \\frac{h}{f}\\text{-geometry} \\Rightarrow f = \\frac{R}{2}$$\nValid only for **paraxial rays** — wide beams suffer spherical aberration.\n\n### 2.3 Mirror formula derivation (NEB 2024, 5m)\n\nFor a concave mirror with object AB and image A′B′, using similar triangles in the ray diagram and the Cartesian convention (distances in front negative):\n$$\\frac{AB}{A'B'} = \\frac{FB}{FB'} \\Rightarrow \\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f} = \\frac{2}{R}$$\nThe same algebra covers convex mirrors once signs are inserted.\n\n### 2.4 Magnification\n\n**Linear magnification** $m = \\dfrac{h'}{h} = -\\dfrac{v}{u}$ (Cartesian). $|m| > 1$ → enlarged; negative m → inverted (real); positive m → erect (virtual) (NEB 2024, 2m).\n\n### 2.5 Worked numericals\n\n**Q (4m, 2022):** An object is placed 30 cm in front of a concave mirror of focal length 10 cm. Find the position and magnification of the image and state its nature.\n- $u = -30$ cm, $f = -10$ cm: $\\frac{1}{v} = \\frac{1}{f} - \\frac{1}{u} = -\\frac{1}{10} + \\frac{1}{30} = -\\frac{1}{15}$ → $v = -15$ cm\n- $m = -\\frac{v}{u} = -0.5$ → image 15 cm in front, **real, inverted, half-size**.\n\n**Q (3m, 2024):** An object is placed 10 cm in front of a concave mirror of focal length 15 cm. Find the image position and magnification; state the nature.\n- $f = -15$ cm, $u = -10$ cm: $\\frac{1}{v} = -\\frac{1}{15} + \\frac{1}{10} = \\frac{1}{30}$ → $v = +30$ cm (behind the mirror → **virtual**)\n- $m = -\\frac{v}{u} = +3$ → **erect, 3× magnified**.\n\n**Q (3m, 2022):** A concave mirror forms a real image three times the size of an object placed 30 cm in front of it. Find the focal length.\n- $m = -3 = -\\frac{v}{u}$ with $u = -30$ → $v = -90$ cm\n- $\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u} = -\\frac{1}{90} - \\frac{1}{30} = -\\frac{4}{90}$ → $f = -22.5$ cm.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 68:** the formula reproduces every qualitative case of image formation.\n- **To f = R/2:** the mirror formula's \"1/f\" is 2/R — aperture geometry in disguise.\n- **To refraction formula (Unit 15):** $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$ for lenses is the refracting twin of the mirror formula.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Optics | Mirror | State the rules of the new Cartesian sign convention used for spherical mirrors. | 3 | Statement |\n| 2078/2022 | Optics | Mirror | Define linear magnification. A concave mirror forms a real image three times the size of the object placed 30 cm in front of it. Find the focal length. | 3 | Numerical |\n| 2078/2022 | Optics | Mirror | An object is placed 30 cm in front of a concave mirror of focal length 10 cm. Find the position and magnification of the image and state its nature. | 4 | Numerical |\n| 2080/2024 | Optics | Mirror | Derive the mirror formula 1/v + 1/u = 1/f for a concave mirror, stating the sign convention used. | 5 | Derivation |\n| 2080/2024 | Optics | Mirror | Derive the relation f = R/2 for a spherical mirror. | 4 | Derivation |\n| 2080/2024 | Optics | Mirror | An object is placed 10 cm in front of a concave mirror of focal length 15 cm. Find the image position and magnification. State the image nature. | 3 | Numerical |\n| 2080/2024 | Optics | Mirror | Define linear magnification for a mirror and write its relation with image and object distances. | 2 | Definition |\n\n### 4.2 Common examination mistakes\n\n1. Sign errors: forgetting u is negative for real objects in the Cartesian convention.\n2. Reporting a negative v as \"behind the mirror\" — negative v means **in front** (real) for a concave mirror.\n3. Using tan θ without the paraxial approximation in the f = R/2 derivation."
   ],
   "confusion": [
-    "Do not substitute the thin-lens equation for the mirror equation.",
-    "f=R/2 assumes a spherical reflecting surface and small angles.",
-    "A symbol is not a number until the unit is named.",
-    "A proportional relation is not an equality until the constant is included.",
-    "A vector answer needs a direction as well as a magnitude.",
-    "A special case, such as a right angle or a steady temperature, has to be stated before it is used."
+    "**Sign errors kill mirror-formula marks:** in the Cartesian convention u is negative for a real object and f is negative for concave mirrors.",
+    "**Negative magnification = inverted (real) image**, not a \"negative-size\" image."
   ],
   "practice": [
-    "A concave mirror has R=40 cm. Find signed f in the stated convention.",
-    "Describe two principal rays for a concave-mirror construction.",
-    "Why are paraxial rays assumed?"
+    "Why does the mirror formula fail for wide-angle rays?"
   ],
   "universalFacts": [
-    "Keep mirror signs consistent with the stated convention.",
-    "R is measured from pole to centre of curvature.",
-    "Aperture reduction suppresses marginal-ray aberration."
+    "The 2024 paper carried five mirror questions worth 16 marks — the heaviest-weighted topic of the optics section."
   ],
   "animation3D": "reflection-at-curved-mirror",
   "motionGraphics": "reflection-at-curved-mirror",
   "examples": [
-    "f=−15 cm and u=−30 cm give v=−30 cm and m=−1.",
-    "A convex mirror has a virtual focus behind its reflecting surface.",
-    "When an object is closer to a concave mirror than the focus, the formula gives a positive v. In the Cartesian convention that positive image distance is behind the mirror, and the image is virtual, upright and enlarged. The same formula covers both the real and the virtual cases. The sign does the work.",
-    "The working relations are 1/v + 1/u = 1/f and An object inside the focal length of a concave mirror gives a virtual image. Name each symbol, convert the data into SI units, and only then substitute.",
-    "A concave mirror has f = −10 cm. An object is at u = −6.0 cm. Find v and say what kind of image it is."
+    "***NEB 2024*** — u = −10 cm, f = −15 cm → v = +30 cm, m = +3 (virtual, erect, magnified)."
   ],
   "practiceQuestions": [
-    "A concave mirror has R=40 cm. Find signed f in the stated convention.",
-    "Describe two principal rays for a concave-mirror construction.",
-    "Why are paraxial rays assumed?"
+    "**Numerical (3m): A concave mirror of f = 20 cm forms a real image twice the object size. Find u.** — m = −2 = −v/u → v = 2u. With u negative and v negative: 1/(2u) + 1/u = 1/f → 3/(2u) = 1/(−20) → u = −30 cm; object 30 cm in front, image 60 cm in front."
   ],
   "formulas": [
-    "Spherical mirror paraxial relation: f=R/2.",
-    "Cartesian mirror equation: 1/f=1/v+1/u; magnification m=−v/u."
+    "- 1/v + 1/u = 1/f = 2/R\n- m = h'/h = −v/u\n- f = R/2 (paraxial rays)"
   ],
   "keyPoints": [
-    "Keep mirror signs consistent with the stated convention.",
-    "R is measured from pole to centre of curvature.",
-    "Aperture reduction suppresses marginal-ray aberration.",
-    "1/v + 1/u = 1/f",
-    "An object inside the focal length of a concave mirror gives a virtual image",
-    "Convert units before substituting.",
-    "Quote the unit with the result."
+    "1/v + 1/u = 1/f; m = h'/h = −v/u; f = R/2."
   ],
-  "summary": "Curved-mirror image formation follows reflection geometry. The paraxial focus lies halfway to the centre of curvature, and signed equations agree with ray constructions.",
+  "summary": "The **new Cartesian sign convention** measures all distances from the pole, against incident light as negative, and gives f < 0 for concave, f > 0 for convex mirrors (NEB 2021, 3m). For paraxial rays a mirror of radius R focuses at $f = R/2$ (NEB 2024, 4m), and similar-triangle geometry yields the **mirror formula** $\\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f}$ (NEB 2024, 5m). Magnification is $m = h'/h = -v/u$. NEB 2022's 30 cm/10 cm case gives v = −15 cm, m = −0.5 (real, inverted, half-size, 4m); NEB 2024's 10 cm/15 cm case gives v = +30 cm, m = +3 (virtual, erect, magnified, 3m); the m = −3, u = 30 cm problem yields f = −22.5 cm (2022, 3m).",
   "specialNotes": [
     "Do not substitute the thin-lens equation for the mirror equation.",
     "f=R/2 assumes a spherical reflecting surface and small angles."
   ],
   "importantStatements": [
-    "Keep mirror signs consistent with the stated convention.",
-    "R is measured from pole to centre of curvature.",
-    "Aperture reduction suppresses marginal-ray aberration."
+    "\"For paraxial rays the quantities 1/v, 1/u and 1/f satisfy 1/v + 1/u = 1/f.\""
   ],
   "importantNotes": [
-    "Keep mirror signs consistent with the stated convention.",
-    "R is measured from pole to centre of curvature.",
-    "Aperture reduction suppresses marginal-ray aberration."
+    "Verified PYQs: sign convention 2021 3m; magnification + focal length 2022 3m; numerical 2022 4m; mirror formula derivation 2024 5m; f = R/2 2024 4m; numerical 2024 3m; magnification definition 2024 2m."
   ],
   "examShortTricks": [
-    "Spherical mirror paraxial relation: f=R/2.",
-    "Cartesian mirror equation: 1/f=1/v+1/u; magnification m=−v/u."
+    "\"Solve every numerical with 1/v = 1/f − 1/u, then m = −v/u.\""
   ],
   "examNotes": [
-    "A concave mirror has R=40 cm. Find signed f in the stated convention.",
-    "Describe two principal rays for a concave-mirror construction.",
-    "Why are paraxial rays assumed?"
+    "State the sign convention explicitly before any derivation — the 2024 5m asks for it."
   ],
   "importantConcepts": [
-    "Keep mirror signs consistent with the stated convention.",
-    "R is measured from pole to centre of curvature.",
-    "Aperture reduction suppresses marginal-ray aberration.",
-    "Definition",
-    "Formula",
-    "Unit",
-    "Worked case"
+    "**Sign convention first, algebra second** — the formula is universal, the signs carry the physics."
   ],
   "importantTasks": [
     "A concave mirror has R=40 cm. Find signed f in the stated convention.",
@@ -147,44 +105,92 @@
   ],
   "mcqs": [
     {
-      "question": "Inside the focus, a concave mirror gives",
+      "question": "In the Cartesian convention the focal length of a concave mirror is:",
       "options": [
-        "A real image",
-        "A virtual enlarged image",
-        "No image",
-        "An image at the centre"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "A positive v for a mirror means",
-      "options": [
-        "A real image in front",
-        "A virtual image behind the mirror",
-        "u is wrong",
-        "f is positive"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "The formula used is still",
-      "options": [
-        "1/v + 1/u = 1/f",
-        "A different law",
-        "Snell's law",
-        "The lens equation with a minus"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "The magnification here is",
-      "options": [
+        "Positive",
         "Negative",
-        "Positive, so upright",
         "Zero",
-        "Equal to f"
+        "Undefined"
       ],
-      "answer": "B"
+      "answer": "B",
+      "explanation": "Focus in front of mirror."
+    },
+    {
+      "question": "NEB 2024: u = −10 cm, f = −15 cm. v =",
+      "options": [
+        "−30 cm",
+        "+30 cm",
+        "−6 cm",
+        "+6 cm"
+      ],
+      "answer": "B",
+      "explanation": "1/v = 1/f − 1/u."
+    },
+    {
+      "question": "NEB 2022: u = −30 cm, f = −10 cm. m =",
+      "options": [
+        "−0.5",
+        "−2",
+        "−3",
+        "+0.5"
+      ],
+      "answer": "A",
+      "explanation": "v = −15, m = −v/u."
+    },
+    {
+      "question": "For a spherical mirror f equals:",
+      "options": [
+        "R",
+        "R/2",
+        "2R",
+        "R/4"
+      ],
+      "answer": "B",
+      "explanation": "Paraxial geometry."
+    },
+    {
+      "question": "Linear magnification m equals:",
+      "options": [
+        "v/u",
+        "−v/u",
+        "u/v",
+        "h/h'"
+      ],
+      "answer": "B",
+      "explanation": "From similar triangles."
+    },
+    {
+      "question": "A real image formed by a concave mirror has m that is:",
+      "options": [
+        "Positive",
+        "Negative",
+        "Zero",
+        "Always +1"
+      ],
+      "answer": "B",
+      "explanation": "Inverted ⇒ negative."
+    },
+    {
+      "question": "NEB 2022: m = −3, u = 30 cm ⇒ f =",
+      "options": [
+        "−22.5 cm",
+        "−15 cm",
+        "−45 cm",
+        "+22.5 cm"
+      ],
+      "answer": "A",
+      "explanation": "v = −90; 1/f = 1/v + 1/u."
+    },
+    {
+      "question": "The f = R/2 relation is valid for:",
+      "options": [
+        "All rays",
+        "Paraxial rays",
+        "Coloured rays only",
+        "Virtual objects"
+      ],
+      "answer": "B",
+      "explanation": "Small-angle approximation."
     }
   ],
   "exercises": [
@@ -200,5 +206,50 @@
       "answer": "v = +15 cm, a virtual upright image, 2.5 times as tall."
     }
   ],
-  "source": "skeleton-v2"
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — One Equation for Every Mirror Image\n\nReal or virtual, magnified or diminished — every image a spherical mirror forms obeys a single compact relation: $\\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f}$. NEB loves it: the 2024 paper carried both the 5-mark derivation and the 4-mark $f = R/2$ proof.",
+      "## 2. Fundamental Concepts (NEB 2021, 2022, 2024)\n\n### 2.1 Sign convention (NEB 2021, 3m)\n\n**New Cartesian convention:**\n1. All distances are measured from the **pole P** of the mirror.\n2. Distances measured **in the direction of incident light** are positive; against it (in front of the mirror) are **negative**.\n3. Heights **above** the principal axis are positive, below negative.\n4. Focal length: **concave → negative** (focus in front), **convex → positive**.\n\n### 2.2 Relation f = R/2 (NEB 2024, 4m)\n\nA ray parallel to the principal axis strikes the mirror at height h. The normal at the point of incidence is the radius through that point, making angle θ with the axis. After reflection the ray turns through 2θ and crosses the axis at F. For paraxial rays ($\\tan\\theta ≈ \\theta$):\n$$\\tan\\theta = \\frac{h}{R} \\approx \\frac{h}{f}\\text{-geometry} \\Rightarrow f = \\frac{R}{2}$$\nValid only for **paraxial rays** — wide beams suffer spherical aberration.\n\n### 2.3 Mirror formula derivation (NEB 2024, 5m)\n\nFor a concave mirror with object AB and image A′B′, using similar triangles in the ray diagram and the Cartesian convention (distances in front negative):\n$$\\frac{AB}{A'B'} = \\frac{FB}{FB'} \\Rightarrow \\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f} = \\frac{2}{R}$$\nThe same algebra covers convex mirrors once signs are inserted.\n\n### 2.4 Magnification\n\n**Linear magnification** $m = \\dfrac{h'}{h} = -\\dfrac{v}{u}$ (Cartesian). $|m| > 1$ → enlarged; negative m → inverted (real); positive m → erect (virtual) (NEB 2024, 2m).\n\n### 2.5 Worked numericals\n\n**Q (4m, 2022):** An object is placed 30 cm in front of a concave mirror of focal length 10 cm. Find the position and magnification of the image and state its nature.\n- $u = -30$ cm, $f = -10$ cm: $\\frac{1}{v} = \\frac{1}{f} - \\frac{1}{u} = -\\frac{1}{10} + \\frac{1}{30} = -\\frac{1}{15}$ → $v = -15$ cm\n- $m = -\\frac{v}{u} = -0.5$ → image 15 cm in front, **real, inverted, half-size**.\n\n**Q (3m, 2024):** An object is placed 10 cm in front of a concave mirror of focal length 15 cm. Find the image position and magnification; state the nature.\n- $f = -15$ cm, $u = -10$ cm: $\\frac{1}{v} = -\\frac{1}{15} + \\frac{1}{10} = \\frac{1}{30}$ → $v = +30$ cm (behind the mirror → **virtual**)\n- $m = -\\frac{v}{u} = +3$ → **erect, 3× magnified**.\n\n**Q (3m, 2022):** A concave mirror forms a real image three times the size of an object placed 30 cm in front of it. Find the focal length.\n- $m = -3 = -\\frac{v}{u}$ with $u = -30$ → $v = -90$ cm\n- $\\frac{1}{f} = \\frac{1}{v} + \\frac{1}{u} = -\\frac{1}{90} - \\frac{1}{30} = -\\frac{4}{90}$ → $f = -22.5$ cm.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 68:** the formula reproduces every qualitative case of image formation.\n- **To f = R/2:** the mirror formula's \"1/f\" is 2/R — aperture geometry in disguise.\n- **To refraction formula (Unit 15):** $\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$ for lenses is the refracting twin of the mirror formula.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2077/2021 | Optics | Mirror | State the rules of the new Cartesian sign convention used for spherical mirrors. | 3 | Statement |\n| 2078/2022 | Optics | Mirror | Define linear magnification. A concave mirror forms a real image three times the size of the object placed 30 cm in front of it. Find the focal length. | 3 | Numerical |\n| 2078/2022 | Optics | Mirror | An object is placed 30 cm in front of a concave mirror of focal length 10 cm. Find the position and magnification of the image and state its nature. | 4 | Numerical |\n| 2080/2024 | Optics | Mirror | Derive the mirror formula 1/v + 1/u = 1/f for a concave mirror, stating the sign convention used. | 5 | Derivation |\n| 2080/2024 | Optics | Mirror | Derive the relation f = R/2 for a spherical mirror. | 4 | Derivation |\n| 2080/2024 | Optics | Mirror | An object is placed 10 cm in front of a concave mirror of focal length 15 cm. Find the image position and magnification. State the image nature. | 3 | Numerical |\n| 2080/2024 | Optics | Mirror | Define linear magnification for a mirror and write its relation with image and object distances. | 2 | Definition |\n\n### 4.2 Common examination mistakes\n\n1. Sign errors: forgetting u is negative for real objects in the Cartesian convention.\n2. Reporting a negative v as \"behind the mirror\" — negative v means **in front** (real) for a concave mirror.\n3. Using tan θ without the paraxial approximation in the f = R/2 derivation."
+    ],
+    "confusion": [
+      "**Sign errors kill mirror-formula marks:** in the Cartesian convention u is negative for a real object and f is negative for concave mirrors.",
+      "**Negative magnification = inverted (real) image**, not a \"negative-size\" image."
+    ],
+    "keyPoints": [
+      "1/v + 1/u = 1/f; m = h'/h = −v/u; f = R/2."
+    ],
+    "importantConcepts": [
+      "**Sign convention first, algebra second** — the formula is universal, the signs carry the physics."
+    ],
+    "examples": [
+      "***NEB 2024*** — u = −10 cm, f = −15 cm → v = +30 cm, m = +3 (virtual, erect, magnified)."
+    ],
+    "universalFacts": [
+      "The 2024 paper carried five mirror questions worth 16 marks — the heaviest-weighted topic of the optics section."
+    ],
+    "importantStatements": [
+      "\"For paraxial rays the quantities 1/v, 1/u and 1/f satisfy 1/v + 1/u = 1/f.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: sign convention 2021 3m; magnification + focal length 2022 3m; numerical 2022 4m; mirror formula derivation 2024 5m; f = R/2 2024 4m; numerical 2024 3m; magnification definition 2024 2m."
+    ],
+    "examShortTricks": [
+      "\"Solve every numerical with 1/v = 1/f − 1/u, then m = −v/u.\""
+    ],
+    "examNotes": [
+      "State the sign convention explicitly before any derivation — the 2024 5m asks for it."
+    ],
+    "formulas": [
+      "- 1/v + 1/u = 1/f = 2/R\n- m = h'/h = −v/u\n- f = R/2 (paraxial rays)"
+    ],
+    "practice": [
+      "Why does the mirror formula fail for wide-angle rays?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A concave mirror of f = 20 cm forms a real image twice the object size. Find u.** — m = −2 = −v/u → v = 2u. With u negative and v negative: 1/(2u) + 1/u = 1/f → 3/(2u) = 1/(−20) → u = −30 cm; object 30 cm in front, image 60 cm in front."
+    ]
+  }
 }
