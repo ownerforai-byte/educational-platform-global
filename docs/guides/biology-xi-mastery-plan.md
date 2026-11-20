@@ -65,8 +65,8 @@ Every upgraded topic note fills the note JSON with:
 | 25 | Ecology | Hydrophytes and xerophytes | `04-ecological-adaptation.json` | **Completed** |
 | 26 | Ecology | Ecological imbalances | `05-ecological-imbalances.json` | **Completed** |
 | 27 | Vegetation (3) | Vegetation types in Nepal | `01-vegetation-types.json` | Not started |
-| 28 | Vegetation | In-situ and ex-situ conservation | `02-conservation-in-situ-ex-situ.json` | Not started |
-| 29 | Vegetation | Vegetation and human activities | `02-conservation-in-situ-ex-situ.json` (merged) | Not started |
+| 28 | Vegetation | In-situ and ex-situ conservation | `02-conservation-in-situ-ex-situ.json` | **Completed** |
+| 29 | Vegetation | Vegetation and human activities | `02-conservation-in-situ-ex-situ.json` (merged) | **Completed** |
 | 30 | Introduction to Biology (2) | Scope and fields of biology | `01-scope-fields-biology.json` | Not started |
 | 31 | Introduction to Biology | Relation with other sciences | `02-relation-other-sciences.json` | Not started |
 | 32 | Evolutionary Biology (15) | Origin of life; Oparin-Haldane; Miller-Urey | `01-origin-life.json` | Not started |
@@ -108,3 +108,5 @@ canonical files — their upgrade must cover every mapped syllabus topic.)*
 - Next: Unit 4 Ecology (6 topics) — canonical files 01-ecosystem-ecology…, 02-food-chain-food-web…, 02-concept-of-ecosystem…, 04-biogeochemical-cycles…, 04-ecological-adaptation…, 06-ecological-imbalances….
 - Session 5 — Unit 4 Ecology (Topics 21–26: concept/biotic-abiotic/interactions; food chain-web-pyramids-productivity; ecosystem structure pond/forest; biogeochemical cycles + succession; ecological adaptation hydrophytes/xerophytes; ecological imbalances + eutrophication) upgraded. Verified PYQs used: 2024 interactions (3m), 2024 food chain vs web + 10% law (3m), 2024 energy pyramid upright (3m), 2023 numbers vs biomass inversion (2m), 2022 NPP numerical (3m), 2023+2024 ecosystem structure 5m, 2022+2024 succession/xerosere (3m), 2024 eutrophication (3m).
 - Next: Unit 5 Vegetation (3 topics) — canonical files 01-vegetation-introduction…, 02-in-situ-protected-areas…, 03-natural-environment-vegetation-and-human-activities.
+- Session 6 — Unit 5 Vegetation (Topics 27–29: vegetation zones of Nepal; in-situ/ex-situ conservation; natural environment-vegetation-human activities) upgraded. Verified PYQs used: 2023 zones 5m, 2024 zones 3m + deciduous vs evergreen 3m + sal 2m + deforestation 2m + community forestry 3m + in-situ vs ex-situ 3m, 2022 Terai/Bhabar 3m, 2021 conifer vs broad-leaved 2m.
+- Next: Unit 6 Introduction to Biology (2 topics) — canonical files 01-introduction-to-biology-scope-and-fields-of-biology, 02-relation-of-biology-with-other-sciences.
