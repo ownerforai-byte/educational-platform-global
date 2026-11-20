@@ -8,7 +8,7 @@ import { QUAD_SIZE, selectQuadLanes } from "../../src/api/ai/quad.controller";
  * squares, the squares must be REAL model lanes (never the internal keyword
  * engine, never the Diagram Hub lane), the owner's pinned four — Agnes twice
  * (3.0 Flash + 2.5 Flash on one key) and two NVIDIA NIM models (Nemotron 3
- * Ultra + Mistral Large 4 on one key) — must win whenever their keys are
+ * Ultra + Gemma 4 31B on one key) — must win whenever their keys are
  * live, and a square whose lane has no key must say so honestly instead of
  * silently answering with another model.
  */

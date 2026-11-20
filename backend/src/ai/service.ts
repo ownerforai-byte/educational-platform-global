@@ -856,8 +856,14 @@ class OpenAICompatProvider implements AIProvider {
     this.apiUrl = chatCompletionsUrl(spec);
     this.model =
       opts.model ?? (process.env[spec.modelEnv] || spec.defaultModel).trim();
+    // 240s (not 120s) to match Agnes/Groq/Cloudflare and QUAD_LANE_TIMEOUT_MS:
+    // the free-NIM models that answer deep prompts are SLOW (nemotron/gemma run
+    // ~60-120s on a full owner-depth quad context) and a 120s transport abort
+    // killed them at exactly ~119s. The chat chain still bounds each link via
+    // its own withDeadline cap, so this only gives slow-but-working models their
+    // full budget when a route calls them directly (the Model Quad).
     this.timeoutMs =
-      Number(process.env.FREE_LLM_TIMEOUT_MS || process.env[spec.timeoutEnv]) || 120000;
+      Number(process.env.FREE_LLM_TIMEOUT_MS || process.env[spec.timeoutEnv]) || 240000;
   }
 
   private headers(): Record<string, string> {
@@ -1507,10 +1513,13 @@ export class AIService {
       this.providers.set(spec.name, new OpenAICompatProvider(spec, apiKey));
       // The Model Quad's SECOND NVIDIA lane (owner 2026-11-18: "keep 2 free
       // models from nvidia and call both from same key — wire it to 2
-      // place"): the SAME key on a second free NIM model (NVIDIA_MODEL_2,
-      // default mistralai/mistral-large-4-1t-a52b — live-verified 2026-11-18
-      // on the owner's key: plain `content`, HTTP 200; the nemotron-3.5-*
-      // reasoning models return null content and are unusable here).
+      // place"): the SAME NVIDIA key on a second free NIM model (NVIDIA_MODEL_2).
+      // Best free NIM models through this key, live-verified 2026-11-20:
+      //   · nvidia/nemotron-3-ultra-550b-a55b — flagship, real prose (lane 1)
+      //   · google/gemma-4-31b-it — second model that returns real prose (lane 2)
+      // The earlier pick mistral-large-4 cannot finish a deep quad answer (times
+      // out), and kimi/step/minimax/glm/nemotron-3.5-* are reasoning models that
+      // return EMPTY content — all unusable on a square. NVIDIA_MODEL_2 overrides.
       // Quad-only: registered outside AI_CHAIN_ORDER, so it answers ONLY
       // when a route names it explicitly (POST /api/ai/quad).
       if (spec.name === "nvidia") {
@@ -1518,7 +1527,7 @@ export class AIService {
           "nvidia-2",
           new OpenAICompatProvider(spec, apiKey, {
             name: "nvidia-2",
-            model: process.env.NVIDIA_MODEL_2 || "mistralai/mistral-large-4-1t-a52b",
+            model: process.env.NVIDIA_MODEL_2 || "google/gemma-4-31b-it",
           }),
         );
       }

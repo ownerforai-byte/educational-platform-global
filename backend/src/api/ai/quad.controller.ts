@@ -19,7 +19,7 @@ import { DEFAULT_FREE_GEMINI_MODEL, DIAGRAM_HUB_PROVIDER } from "../../ai/config
  * 2026-11-18, latest word: "remove gemini — keep 2 free models from nvidia
  * and call both from same key — wire it to 2 place"): Agnes 3.0 Flash,
  * Agnes 2.5 Flash (one Agnes key, two gateway models) and two free NVIDIA NIM
- * models — Nemotron 3 Ultra + Mistral Large 4 — both on the SAME NVIDIA key. The rules that keep the comparison honest:
+ * models — Nemotron 3 Ultra + Gemma 4 31B — both on the SAME NVIDIA key. The rules that keep the comparison honest:
  *
  *   · OWNER ONLY — `requireAuth` + `requireOwnerEmail` is the whole gate. No
  *     AI spark is drawn (owners are never metered) and no credit is spent.
@@ -97,11 +97,13 @@ const QUAD_LANE_BLUEPRINTS: QuadLaneBlueprint[] = [
   },
   {
     name: "nvidia-2",
-    label: "NVIDIA · Mistral Large 4",
-    // Same NVIDIA key, second free NIM model (live-verified 2026-11-18:
-    // plain content, HTTP 200; nemotron-3.5-* reasoning models return null
-    // content and are unusable on a square).
-    model: () => (process.env.NVIDIA_MODEL_2 || "mistralai/mistral-large-4-1t-a52b").trim(),
+    label: "NVIDIA · Gemma 4 31B",
+    // Same NVIDIA key, second free NIM model. Best free models through this
+    // key, live-verified 2026-11-20: google/gemma-4-31b-it returns real prose
+    // (the earlier pick mistral-large-4 times out on a deep quad answer, and
+    // kimi/step/minimax/glm/nemotron-3.5-* are reasoning models that return
+    // EMPTY content). NVIDIA_MODEL_2 overrides.
+    model: () => (process.env.NVIDIA_MODEL_2 || "google/gemma-4-31b-it").trim(),
   },
   // ── Fillers: a pinned lane whose key is missing borrows the next
   //    configured one so the desk still shows four honest squares ──
