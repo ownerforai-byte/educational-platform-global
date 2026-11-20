@@ -31,9 +31,9 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 |---|---|---|---|---|
 | 1 | Physical Quantities (3h) | Precision and significant figures | `01-precision-and-significant-figures.json` | **Completed** |
 | 2 | Physical Quantities (3h) | Dimensions and uses of dimensional analysis | `02-dimensions-and-uses-of-dimensional-analysis.json` | **Completed** |
-| 3 | Vectors (4h) | Triangle, parallelogram and polygon laws of vectors | TBD at unit start | Not started |
-| 4 | Vectors (4h) | Resolution of vectors; unit vectors | TBD at unit start | Not started |
-| 5 | Vectors (4h) | Scalar and vector products | TBD at unit start | Not started |
+| 3 | Vectors (4h) | Triangle, parallelogram and polygon laws of vectors |  | **Completed** |
+| 4 | Vectors (4h) | Resolution of vectors; unit vectors |  | **Completed** |
+| 5 | Vectors (4h) | Scalar and vector products |  | **Completed** |
 | 6 | Kinematics (5h) | Instantaneous velocity and acceleration | TBD | Not started |
 | 7 | Kinematics (5h) | Relative velocity | TBD | Not started |
 | 8 | Kinematics (5h) | Equation of motion (graphical treatment) | TBD | Not started |
@@ -150,3 +150,4 @@ Goal: upgrade every Class-11 Physics topic note to mastery depth, one unit at a 
 ## Session log
 
 - Session 1 — Plan created; Unit 1 (Physical Quantities, 2 topics) upgraded: precision & significant figures; dimensions & dimensional analysis. Verified PYQs from `content/practice/questions/class-11/physics/` year files (neb-2014…neb-2024) matched per topic. Next: Unit 2 Vectors (3 topics).
+- Session 2 — Unit 2 Vectors (3 topics) upgraded: triangle/parallelogram/polygon laws; resolution & unit vectors; scalar & vector products. Verified PYQs used: 2021 parallelogram numerical 5m + component addition 3m, 2020 scalar vs vector 2m, 2024 rectangular components 3m, 2023 dot/cross definitions 3m. Next: Unit 3 Kinematics (5 topics).

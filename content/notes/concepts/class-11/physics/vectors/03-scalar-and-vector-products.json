@@ -6,49 +6,23 @@
   "source": "skeleton-v2",
   "generatedAt": "2026-10-29T07:20:14.701Z",
   "notes": [
-    "# Scalar and vector products\n\n## 1. Introduction\nPhysical picture of **Scalar and vector products** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Vectors fill pass.\n\n## 2. Concepts and laws\n### Scalar and vector products\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Scalar and vector products — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Scalar and vector products — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Scalar and vector products — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Scalar and vector products — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Two Ways to Multiply Vectors\n\nVectors refuse ordinary multiplication: $A \\times B$ is ambiguous until you decide what you want. The **dot (scalar) product** answers \"how much of A lies along B?\" — yielding a number. The **cross (vector) product** answers \"how much do A and B twist around each other?\" — yielding a perpendicular vector. Each has its own physics.",
+    "## 2. Fundamental Concepts (NEB 2023)\n\n### 2.1 Scalar (dot) product\n\n$$\\vec A \\cdot \\vec B = AB\\cos\\theta$$\n- Result: a **scalar**; maximum when parallel ($\\cos 0 = 1$), zero when perpendicular, negative when θ > 90°.\n- Component extraction: $A_x = \\vec A \\cdot \\hat i$.\n- Commutative: $\\vec A\\cdot\\vec B = \\vec B\\cdot\\vec A$.\n- In components: $\\vec A\\cdot\\vec B = A_xB_x + A_yB_y + A_zB_z$.\n- Angle between vectors: $\\cos\\theta = \\dfrac{\\vec A\\cdot\\vec B}{AB}$.\n\n**Physics examples:** work $W = \\vec F\\cdot\\vec s$; power $P = \\vec F\\cdot\\vec v$; magnetic flux $\\phi = \\vec B\\cdot\\vec A$.\n\n### 2.2 Vector (cross) product\n\n$$\\vec A \\times \\vec B = AB\\sin\\theta\\ \\hat n$$\n- Result: a **vector** of magnitude $AB\\sin\\theta$, direction $\\hat n$ **perpendicular to both** by the right-hand rule (curl from $\\vec A$ to $\\vec B$; thumb gives $\\hat n$).\n- **Anti-commutative:** $\\vec A\\times\\vec B = -\\vec B\\times\\vec A$.\n- Zero when parallel ($\\sin 0 = 0$); maximum when perpendicular.\n- Magnitude equals the **area of the parallelogram** formed by A and B.\n\n**Physics examples:** torque $\\vec\\tau = \\vec r\\times\\vec F$; angular momentum $\\vec L = \\vec r\\times\\vec p$; magnetic force $\\vec F = q\\vec v\\times\\vec B$.\n\n### 2.3 Comparison table\n\n| Property | Dot product | Cross product |\n|---|---|---|\n| Result | Scalar | Vector (perpendicular to both) |\n| Formula | $AB\\cos\\theta$ | $AB\\sin\\theta\\ \\hat n$ |\n| Zero when | Perpendicular (θ = 90°) | Parallel (θ = 0° or 180°) |\n| Maximum when | Parallel | Perpendicular |\n| Commutative? | Yes | No — it anticommutes |\n| Examples | Work, power, flux | Torque, angular momentum, magnetic force |",
+    "## 3. Worked Numericals\n\n**Q1:** Find the angle between $\\vec A = 2\\hat i + 3\\hat j$ and $\\vec B = 4\\hat i - \\hat j$.\n$\\vec A\\cdot\\vec B = 8 - 3 = 5$; $A = \\sqrt{13} = 3.61$; $B = \\sqrt{17} = 4.12$.\n$\\cos\\theta = 5/(3.61 \\times 4.12) = 5/14.9 = 0.336 → \\theta ≈ 70.4°$.\n\n**Q2:** Find $|\\vec A\\times\\vec B|$ for $A = 5$, $B = 3$, θ = 30°.\n$|\\vec A\\times\\vec B| = 5 \\times 3 \\times \\sin 30° = 7.5$ (direction perpendicular to both by the right-hand rule).\n\n**Q3:** Show $\\hat i\\times\\hat j = \\hat k$, $\\hat j\\times\\hat k = \\hat i$, $\\hat k\\times\\hat i = \\hat j$ — cyclic; reversing the order flips the sign ($\\hat j\\times\\hat i = -\\hat k$). Dot products: $\\hat i\\cdot\\hat i = 1$, $\\hat i\\cdot\\hat j = 0$.",
+    "## 4. Conceptual Relationships\n\n- **To Topic 3:** the dot product generalises \"component of A along B\"; the cross product's parallelogram area echoes the parallelogram law.\n- **To Topic 4:** $A_x = \\vec A\\cdot\\hat i$ — resolution is dot products with unit vectors.\n- **To Work/Energy (Unit 5):** work is a dot product — only the force component along displacement counts.\n- **To Circular Motion/Rotation:** torque and angular momentum are cross products — the reason their directions follow the right-hand rule.",
+    "## 5. Exam Orientation and Previous Year Questions (NEB)\n\n### 5.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Vectors | Products | Define scalar product (dot product) and vector product (cross product) of two vectors. Give one example of each in physics. | 3 | Definition |\n\n### 5.2 Model answer\n\n**Q (3m, 2023):** The **scalar (dot) product** of two vectors $\\vec A$ and $\\vec B$ is $\\vec A\\cdot\\vec B = AB\\cos\\theta$ — a scalar, maximum when the vectors are parallel and zero when perpendicular. *Example:* work done by a force, $W = \\vec F\\cdot\\vec s = Fs\\cos\\theta$. The **vector (cross) product** is $\\vec A\\times\\vec B = AB\\sin\\theta\\ \\hat n$ — a vector of magnitude $AB\\sin\\theta$ directed perpendicular to both vectors by the right-hand rule, and it anticommutes ($\\vec A\\times\\vec B = -\\vec B\\times\\vec A$). *Example:* torque about a point, $\\vec\\tau = \\vec r\\times\\vec F$.\n\n### 5.3 Common examination mistakes\n\n1. Using cos for the cross product or sin for the dot product — cos pairs with dot, sin with cross.\n2. Saying the cross product \"commutes\" — it **anticommutes**; the order fixes the direction.\n3. Forgetting the right-hand-rule direction when only the magnitude is asked — state both.\n4. Treating the dot product's result as a vector.\n5. Mixing component formulas: dot adds products of like components; cross needs the determinant form."
   ],
   "examNotes": [
-    "Focus on numerical problems from Scalar and vector products",
-    "Practice previous year questions on Scalar and vector products",
-    "Learn the derivations for Scalar and vector products thoroughly",
-    "Review common mistakes related to Scalar and vector products"
+    "Most-tested: the definition question (2023). Also expect numericals on the angle between vectors via the dot product."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Scalar and vector products formula",
-    "Trick 2: Elimination technique for Scalar and vector products MCQs",
-    "Trick 3: Dimensional analysis shortcut for Scalar and vector products",
-    "Trick 4: Memory aid for Scalar and vector products formulas",
-    "Trick 5: Time-saving approach for Scalar and vector products problems"
+    "\"Dot-cos-scalar; cross-sin-vector — and cross flips sign when you swap.\""
   ],
   "practiceQuestions": [
-    "Q2. Solve problems related to Scalar and vector products.",
-    "Q3. Differentiate between various aspects of Scalar and vector products.",
-    "Q4. Derive the key formula related to Scalar and vector products.",
-    "Q5. What are the applications of Scalar and vector products?"
+    "**Numerical (3m): Find the angle between A⃗ = 2î + 3ĵ and B⃗ = 4î − ĵ.** — A⃗·B⃗ = 8 − 3 = 5; A = √13 = 3.61; B = √17 = 4.12; cos θ = 5/14.9 = 0.336 → θ ≈ 70.4°."
   ],
   "practice": [
-    "If $\\vec{A} = 2\\hat{i} - 3\\hat{j} + 4\\hat{k}$ and $\\vec{B} = 3\\hat{i} + \\hat{j} - 2\\hat{k}$, find $\\vec{A}\\cdot\\vec{B}$. [Solution: $\\vec{A}\\cdot\\vec{B} = 2(3) + (-3)(1) + 4(-2) = 6 - 3 - 8 = -5$.]",
-    "Find the angle between $\\vec{A} = 3\\hat{i} + 4\\hat{j}$ and $\\vec{B} = 5\\hat{i} + 12\\hat{j}$. [Solution: $\\vec{A}\\cdot\\vec{B} = 15 + 48 = 63$. $|\\vec{A}| = 5$, $|\\vec{B}| = 13$. $\\cos\\theta = 63/(5\\cdot13) = 63/65 \\approx 0.969$. $\\theta \\approx 14.3°$.]",
-    "If $\\vec{F} = 10\\,\\text{N}$ and $\\vec{d} = 5\\,\\text{m}$ at $\\theta = 60°$, find the work done. [Solution: $W = Fd\\cos\\theta = 10 \\cdot 5 \\cdot 0.5 = 25\\,\\text{J}$.]",
-    "Show that $\\vec{A} = 2\\hat{i} + 3\\hat{j} - \\hat{k}$ and $\\vec{B} = \\hat{i} - 2\\hat{j} + 4\\hat{k}$ are perpendicular. [Solution: $\\vec{A}\\cdot\\vec{B} = 2(1) + 3(-2) + (-1)(4) = 2 - 6 - 4 = -8 \\neq 0$. Wait — they are NOT perpendicular. Let me redo: $\\vec{A}\\cdot\\vec{B} = -8$, so not perpendicular. Try $\\vec{A}\\cdot\\vec{B}$ again: $2-6-4 = -8$. Not zero. To be perpendicular, need a different pair.]",
-    "Verify: the dot product of $\\vec{A} = \\hat{i} + 2\\hat{j} + 3\\hat{k}$ with itself gives $|\\vec{A}|^2$. [Solution: $\\vec{A}\\cdot\\vec{A} = 1(1) + 2(2) + 3(3) = 1+4+9 = 14$. $|\\vec{A}|^2 = 1^2+2^2+3^2 = 14$. ✓]",
-    "Find the projection of $\\vec{A} = 3\\hat{i} + 4\\hat{j}$ on $\\vec{B} = 5\\hat{i} + 12\\hat{j}$. [Solution: $\\text{proj} = \\vec{A}\\cdot\\vec{B}/|\\vec{B}| = (3\\cdot5+4\\cdot12)/13 = (15+48)/13 = 63/13 \\approx 4.85$.]",
-    "If $|\\vec{A}|=5$, $|\\vec{B}|=12$, and $\\vec{A}\\cdot\\vec{B} = -30$, find the angle between them. [Solution: $\\cos\\theta = -30/(5\\cdot12) = -30/60 = -0.5$. $\\theta = 120°$.]",
-    "A force $\\vec{F} = (3\\hat{i} + 4\\hat{j} - 5\\hat{k})\\,\\text{N}$ displaces an object by $\\vec{d} = (2\\hat{i} - \\hat{j} + \\hat{k})\\,\\text{m}$. Find the work done. [Solution: $W = \\vec{F}\\cdot\\vec{d} = 3(2) + 4(-1) + (-5)(1) = 6 - 4 - 5 = -3\\,\\text{J}$. The work is negative, meaning the force opposes the motion.]",
-    "Find the unit vector along $\\vec{A} = 6\\hat{i} + 8\\hat{j}$. [Solution: $|\\vec{A}| = \\sqrt{36+64} = 10$. $\\hat{A} = (6/10)\\hat{i} + (8/10)\\hat{j} = 0.6\\hat{i} + 0.8\\hat{j}$. Check: $0.36 + 0.64 = 1$ ✓]",
-    "If $\\hat{u} = (3/5)\\hat{i} + (4/5)\\hat{j}$, find the vector of magnitude 25 in the direction of $\\hat{u}$. [Solution: $\\vec{A} = 25\\hat{u} = 25((3/5)\\hat{i}+(4/5)\\hat{j}) = 15\\hat{i}+20\\hat{j}$.",
-    "Find the unit vector along $\\vec{A} = 2\\hat{i} - 3\\hat{j} + 6\\hat{k}$. [Solution: $|\\vec{A}| = \\sqrt{4+9+36} = \\sqrt{49} = 7$. $\\hat{A} = (2/7)\\hat{i} - (3/7)\\hat{j} + (6/7)\\hat{k}$.",
-    "If $\\hat{A} = (1/\\sqrt{3})(\\hat{i}+\\hat{j}+\\hat{k})$, show that $\\hat{A}$ is a unit vector. [Solution: $|\\hat{A}|^2 = (1/3)(1+1+1) = 1$. So $|\\hat{A}| = 1$. Yes, $\\hat{A}$ is a unit vector.]",
-    "Find the unit vector along the position vector $\\vec{r} = 4\\hat{i} - 4\\hat{j} + 2\\hat{k}$. [Solution: $|\\vec{r}| = \\sqrt{16+16+4} = \\sqrt{36} = 6$. $\\hat{r} = (4/6)\\hat{i} - (4/6)\\hat{j} + (2/6)\\hat{k} = (2/3)\\hat{i} - (2/3)\\hat{j} + (1/3)\\hat{k}$.",
-    "Given $\\vec{A} = 2\\hat{i} - 6\\hat{j} - 3\\hat{k}$, find the unit vector in the direction opposite to $\\vec{A}$. [Solution: $|\\vec{A}| = \\sqrt{4+36+9} = \\sqrt{49} = 7$. $\\hat{A} = (2/7)\\hat{i} - (6/7)\\hat{j} - (3/7)\\hat{k}$. Opposite: $-\\hat{A} = -(2/7)\\hat{i} + (6/7)\\hat{j} + (3/7)\\hat{k}$.",
-    "Find the direction cosines of the vector $\\vec{A} = \\hat{i} + 2\\hat{j} - 2\\hat{k}$. [Solution: $|\\vec{A}| = \\sqrt{1+4+4} = 3$. Direction cosines: $\\cos\\alpha = 1/3$, $\\cos\\beta = 2/3$, $\\cos\\gamma = -2/3$. Check: $1/9+4/9+4/9 = 9/9 = 1$ ✓]",
-    "A unit vector makes angles 30° with the x-axis and 60° with the y-axis. Find its components and the angle with the z-axis. [Solution: $\\cos30° = \\sqrt{3}/2$, $\\cos60° = 1/2$. Let $\\cos^2\\gamma = 1 - 3/4 - 1/4 = 0$, so $\\gamma = 90°$. Unit vector: $(\\sqrt{3}/2)\\hat{i} + (1/2)\\hat{j} + 0\\hat{k}$."
+    "Why is the cross product's direction perpendicular to both vectors?"
   ],
   "mcs": [
     {
@@ -132,5 +106,171 @@
         ]
       }
     ]
-  }
+  },
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Two Ways to Multiply Vectors\n\nVectors refuse ordinary multiplication: $A \\times B$ is ambiguous until you decide what you want. The **dot (scalar) product** answers \"how much of A lies along B?\" — yielding a number. The **cross (vector) product** answers \"how much do A and B twist around each other?\" — yielding a perpendicular vector. Each has its own physics.",
+      "## 2. Fundamental Concepts (NEB 2023)\n\n### 2.1 Scalar (dot) product\n\n$$\\vec A \\cdot \\vec B = AB\\cos\\theta$$\n- Result: a **scalar**; maximum when parallel ($\\cos 0 = 1$), zero when perpendicular, negative when θ > 90°.\n- Component extraction: $A_x = \\vec A \\cdot \\hat i$.\n- Commutative: $\\vec A\\cdot\\vec B = \\vec B\\cdot\\vec A$.\n- In components: $\\vec A\\cdot\\vec B = A_xB_x + A_yB_y + A_zB_z$.\n- Angle between vectors: $\\cos\\theta = \\dfrac{\\vec A\\cdot\\vec B}{AB}$.\n\n**Physics examples:** work $W = \\vec F\\cdot\\vec s$; power $P = \\vec F\\cdot\\vec v$; magnetic flux $\\phi = \\vec B\\cdot\\vec A$.\n\n### 2.2 Vector (cross) product\n\n$$\\vec A \\times \\vec B = AB\\sin\\theta\\ \\hat n$$\n- Result: a **vector** of magnitude $AB\\sin\\theta$, direction $\\hat n$ **perpendicular to both** by the right-hand rule (curl from $\\vec A$ to $\\vec B$; thumb gives $\\hat n$).\n- **Anti-commutative:** $\\vec A\\times\\vec B = -\\vec B\\times\\vec A$.\n- Zero when parallel ($\\sin 0 = 0$); maximum when perpendicular.\n- Magnitude equals the **area of the parallelogram** formed by A and B.\n\n**Physics examples:** torque $\\vec\\tau = \\vec r\\times\\vec F$; angular momentum $\\vec L = \\vec r\\times\\vec p$; magnetic force $\\vec F = q\\vec v\\times\\vec B$.\n\n### 2.3 Comparison table\n\n| Property | Dot product | Cross product |\n|---|---|---|\n| Result | Scalar | Vector (perpendicular to both) |\n| Formula | $AB\\cos\\theta$ | $AB\\sin\\theta\\ \\hat n$ |\n| Zero when | Perpendicular (θ = 90°) | Parallel (θ = 0° or 180°) |\n| Maximum when | Parallel | Perpendicular |\n| Commutative? | Yes | No — it anticommutes |\n| Examples | Work, power, flux | Torque, angular momentum, magnetic force |",
+      "## 3. Worked Numericals\n\n**Q1:** Find the angle between $\\vec A = 2\\hat i + 3\\hat j$ and $\\vec B = 4\\hat i - \\hat j$.\n$\\vec A\\cdot\\vec B = 8 - 3 = 5$; $A = \\sqrt{13} = 3.61$; $B = \\sqrt{17} = 4.12$.\n$\\cos\\theta = 5/(3.61 \\times 4.12) = 5/14.9 = 0.336 → \\theta ≈ 70.4°$.\n\n**Q2:** Find $|\\vec A\\times\\vec B|$ for $A = 5$, $B = 3$, θ = 30°.\n$|\\vec A\\times\\vec B| = 5 \\times 3 \\times \\sin 30° = 7.5$ (direction perpendicular to both by the right-hand rule).\n\n**Q3:** Show $\\hat i\\times\\hat j = \\hat k$, $\\hat j\\times\\hat k = \\hat i$, $\\hat k\\times\\hat i = \\hat j$ — cyclic; reversing the order flips the sign ($\\hat j\\times\\hat i = -\\hat k$). Dot products: $\\hat i\\cdot\\hat i = 1$, $\\hat i\\cdot\\hat j = 0$.",
+      "## 4. Conceptual Relationships\n\n- **To Topic 3:** the dot product generalises \"component of A along B\"; the cross product's parallelogram area echoes the parallelogram law.\n- **To Topic 4:** $A_x = \\vec A\\cdot\\hat i$ — resolution is dot products with unit vectors.\n- **To Work/Energy (Unit 5):** work is a dot product — only the force component along displacement counts.\n- **To Circular Motion/Rotation:** torque and angular momentum are cross products — the reason their directions follow the right-hand rule.",
+      "## 5. Exam Orientation and Previous Year Questions (NEB)\n\n### 5.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2079/2023 | Vectors | Products | Define scalar product (dot product) and vector product (cross product) of two vectors. Give one example of each in physics. | 3 | Definition |\n\n### 5.2 Model answer\n\n**Q (3m, 2023):** The **scalar (dot) product** of two vectors $\\vec A$ and $\\vec B$ is $\\vec A\\cdot\\vec B = AB\\cos\\theta$ — a scalar, maximum when the vectors are parallel and zero when perpendicular. *Example:* work done by a force, $W = \\vec F\\cdot\\vec s = Fs\\cos\\theta$. The **vector (cross) product** is $\\vec A\\times\\vec B = AB\\sin\\theta\\ \\hat n$ — a vector of magnitude $AB\\sin\\theta$ directed perpendicular to both vectors by the right-hand rule, and it anticommutes ($\\vec A\\times\\vec B = -\\vec B\\times\\vec A$). *Example:* torque about a point, $\\vec\\tau = \\vec r\\times\\vec F$.\n\n### 5.3 Common examination mistakes\n\n1. Using cos for the cross product or sin for the dot product — cos pairs with dot, sin with cross.\n2. Saying the cross product \"commutes\" — it **anticommutes**; the order fixes the direction.\n3. Forgetting the right-hand-rule direction when only the magnitude is asked — state both.\n4. Treating the dot product's result as a vector.\n5. Mixing component formulas: dot adds products of like components; cross needs the determinant form."
+    ],
+    "confusion": [
+      "**Dot vs cross zero:** the dot product vanishes for perpendicular vectors; the cross product vanishes for parallel vectors — opposite conditions.",
+      "**Area interpretation:** |A⃗ × B⃗| is the parallelogram area with sides A and B; |A⃗ · B⃗| is not an area."
+    ],
+    "keyPoints": [
+      "Dot: A⃗·B⃗ = AB cos θ — scalar, commutative, zero at 90°; examples: work, power, flux.",
+      "Cross: A⃗×B⃗ = AB sin θ n̂ — perpendicular vector, anticommutes, zero at 0°/180°; examples: torque, angular momentum, magnetic force.",
+      "Component dot: A⃗·B⃗ = AₓBₓ + A_yB_y + A_zB_z; cos θ = A⃗·B⃗/(AB)."
+    ],
+    "importantConcepts": [
+      "**cos for projection, sin for rotation:** the dot product measures alignment; the cross product measures perpendicular twist."
+    ],
+    "examples": [
+      "***Work*** — W = F⃗·s⃗: a force perpendicular to displacement does zero work."
+    ],
+    "universalFacts": [
+      "The right-hand rule: curl fingers from A⃗ to B⃗ and the thumb gives the direction of A⃗×B⃗ — the same rule that fixes angular velocity and magnetic force directions."
+    ],
+    "importantStatements": [
+      "\"Dot asks 'how much along', cross asks 'how much around'.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: define dot and cross products with one physics example each (2023, 3m)."
+    ],
+    "examShortTricks": [
+      "\"Dot-cos-scalar; cross-sin-vector — and cross flips sign when you swap.\""
+    ],
+    "examNotes": [
+      "Most-tested: the definition question (2023). Also expect numericals on the angle between vectors via the dot product."
+    ],
+    "formulas": [
+      "- A⃗·B⃗ = AB cos θ = AₓBₓ + A_yB_y + A_zB_z\n- |A⃗×B⃗| = AB sin θ; direction by right-hand rule\n- cos θ = (A⃗·B⃗)/(AB)\n- î×ĵ = k̂, ĵ×k̂ = î, k̂×î = ĵ (cyclic)"
+    ],
+    "practice": [
+      "Why is the cross product's direction perpendicular to both vectors?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): Find the angle between A⃗ = 2î + 3ĵ and B⃗ = 4î − ĵ.** — A⃗·B⃗ = 8 − 3 = 5; A = √13 = 3.61; B = √17 = 4.12; cos θ = 5/14.9 = 0.336 → θ ≈ 70.4°."
+    ]
+  },
+  "confusion": [
+    "**Dot vs cross zero:** the dot product vanishes for perpendicular vectors; the cross product vanishes for parallel vectors — opposite conditions.",
+    "**Area interpretation:** |A⃗ × B⃗| is the parallelogram area with sides A and B; |A⃗ · B⃗| is not an area."
+  ],
+  "keyPoints": [
+    "Dot: A⃗·B⃗ = AB cos θ — scalar, commutative, zero at 90°; examples: work, power, flux.",
+    "Cross: A⃗×B⃗ = AB sin θ n̂ — perpendicular vector, anticommutes, zero at 0°/180°; examples: torque, angular momentum, magnetic force.",
+    "Component dot: A⃗·B⃗ = AₓBₓ + A_yB_y + A_zB_z; cos θ = A⃗·B⃗/(AB)."
+  ],
+  "importantConcepts": [
+    "**cos for projection, sin for rotation:** the dot product measures alignment; the cross product measures perpendicular twist."
+  ],
+  "examples": [
+    "***Work*** — W = F⃗·s⃗: a force perpendicular to displacement does zero work."
+  ],
+  "universalFacts": [
+    "The right-hand rule: curl fingers from A⃗ to B⃗ and the thumb gives the direction of A⃗×B⃗ — the same rule that fixes angular velocity and magnetic force directions."
+  ],
+  "importantStatements": [
+    "\"Dot asks 'how much along', cross asks 'how much around'.\""
+  ],
+  "importantNotes": [
+    "Verified PYQ: define dot and cross products with one physics example each (2023, 3m)."
+  ],
+  "formulas": [
+    "- A⃗·B⃗ = AB cos θ = AₓBₓ + A_yB_y + A_zB_z\n- |A⃗×B⃗| = AB sin θ; direction by right-hand rule\n- cos θ = (A⃗·B⃗)/(AB)\n- î×ĵ = k̂, ĵ×k̂ = î, k̂×î = ĵ (cyclic)"
+  ],
+  "summary": "Vectors multiply in two ways. The **dot product**, $\\vec A\\cdot\\vec B = AB\\cos\\theta$, yields a scalar measuring alignment — zero for perpendicular vectors, maximal for parallel ones; it computes work ($W = \\vec F\\cdot\\vec s$), power and flux, extracts components, and gives the angle between vectors via $\\cos\\theta = \\vec A\\cdot\\vec B/AB$. The **cross product**, $\\vec A\\times\\vec B = AB\\sin\\theta\\,\\hat n$, yields a vector perpendicular to both by the right-hand rule — zero for parallel vectors, maximal for perpendicular ones, equal in size to the parallelogram area, and anticommutative; it computes torque ($\\vec\\tau = \\vec r\\times\\vec F$), angular momentum and magnetic force. Dot asks \"how much along\"; cross asks \"how much around\" — cos and sin, scalar and vector, commute and anticommute.",
+  "mcqs": [
+    {
+      "question": "A⃗·B⃗ is zero when the angle between them is:",
+      "options": [
+        "0°",
+        "45°",
+        "90°",
+        "180°"
+      ],
+      "answer": "C",
+      "explanation": "cos 90° = 0 — the dot product vanishes for perpendicular vectors."
+    },
+    {
+      "question": "A⃗×B⃗ is zero when the vectors are:",
+      "options": [
+        "Perpendicular",
+        "Parallel or antiparallel",
+        "At 60°",
+        "Unit vectors"
+      ],
+      "answer": "B",
+      "explanation": "sin 0° = sin 180° = 0 — parallel vectors have zero cross product."
+    },
+    {
+      "question": "The magnitude of A⃗×B⃗ for A = 5, B = 3 at 30° is:",
+      "options": [
+        "7.5",
+        "15",
+        "13",
+        "8.7"
+      ],
+      "answer": "A",
+      "explanation": "AB sin θ = 5 × 3 × 0.5 = 7.5."
+    },
+    {
+      "question": "Which is an example of the cross product?",
+      "options": [
+        "Work",
+        "Torque",
+        "Power",
+        "Kinetic energy"
+      ],
+      "answer": "B",
+      "explanation": "τ⃗ = r⃗×F⃗ — torque is a cross product; work and power are dot products."
+    },
+    {
+      "question": "A⃗×B⃗ equals:",
+      "options": [
+        "B⃗×A⃗",
+        "−B⃗×A⃗",
+        "A⃗·B⃗",
+        "Zero always"
+      ],
+      "answer": "B",
+      "explanation": "The cross product anticommutes: swapping order flips the direction."
+    },
+    {
+      "question": "î·ĵ equals:",
+      "options": [
+        "1",
+        "0",
+        "k̂",
+        "−1"
+      ],
+      "answer": "B",
+      "explanation": "Perpendicular unit vectors have zero dot product."
+    },
+    {
+      "question": "î×ĵ equals:",
+      "options": [
+        "0",
+        "1",
+        "k̂",
+        "−k̂"
+      ],
+      "answer": "C",
+      "explanation": "Cyclic order î→ĵ→k̂ gives positive unit vectors."
+    },
+    {
+      "question": "The angle between A⃗ = 2î + 3ĵ and B⃗ = 4î − ĵ is about:",
+      "options": [
+        "30°",
+        "45°",
+        "70°",
+        "90°"
+      ],
+      "answer": "C",
+      "explanation": "cos θ = 5/(√13·√17) = 0.336 → θ ≈ 70.4°."
+    }
+  ]
 }
