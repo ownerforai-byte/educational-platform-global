@@ -5,20 +5,10 @@
   "topicTitle": "Cubical expansion, superficial expansion and their relation with linear expansion",
   "relevance": 100,
   "notes": [
-    "Linear Expansion: When a solid is heated, its length increases: ΔL = αL₀ΔT where α is coefficient of linear expansion (K⁻¹), L₀ original length, ΔT temperature rise.",
-    "Superficial (Area) Expansion: Area increases: ΔA = βA₀ΔT where β ≈ 2α is coefficient of superficial expansion. For isotropic solid, β = 2α.",
-    "Cubical (Volume) Expansion: Volume increases: ΔV = γV₀ΔT where γ ≈ 3α is coefficient of cubical expansion. For isotropic solid, γ = 3α.",
-    "Relations: α : β : γ = 1 : 2 : 3 for isotropic solids. β = 2α, γ = 3α.",
-    "Isotropic vs Anisotropic: Relations β = 2α, γ = 3α hold for isotropic materials. For anisotropic (crystals), expansion differs along different axes.",
-    "Liquid Expansion: Liquids have only cubical expansion (no fixed shape). Apparent expansion differs from real expansion due to container expansion.",
-    "Real vs Apparent Expansion of Liquids: γ_real = γ_apparent + γ_container. The container expands too, so apparent rise is less than real expansion.",
-    "Anomalous Expansion of Water: Water contracts from 0°C to 4°C (maximum density at 4°C), then expands above 4°C. Negative expansion coefficient below 4°C.",
-    "# Cubical expansion, superficial expansion and their relation with linear expansion\n\n## 1. Introduction\nPhysical picture of **Cubical expansion** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Thermal Expansion fill pass.\n\n## 2. Concepts and laws\n### Cubical expansion\n### superficial expansion and their relation with linear expansion\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and relations**\n\n| Quantity | Symbol + SI unit | Relation | Graph to read |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Cubical expansion — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Cubical expansion — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Cubical expansion — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Cubical expansion — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Expanding in Two and Three Dimensions\n\nA heated plate grows in area; a heated block grows in volume. Because every edge obeys the same linear law, the area and volume coefficients follow automatically: β = 2α and γ = 3α. One measurement of α pins down the whole thermal fingerprint.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Superficial (area) expansion\n\nA plate of area $A_0$ heated by ΔT:\n$$A_T = A_0(1 + \\beta \\Delta T), \\qquad \\beta = \\frac{\\Delta A / A_0}{\\Delta T}$$\nβ = coefficient of superficial expansion, unit K⁻¹.\n\n**Relation β = 2α:** a square of side $L_0$ expands to $L = L_0(1+\\alpha\\Delta T)$, so\n$$A_T = L^2 = L_0^2(1+\\alpha\\Delta T)^2 \\approx A_0(1 + 2\\alpha\\Delta T)$$\n(neglecting the tiny α²ΔT² term) — hence **β = 2α**.\n\n### 2.2 Cubical (volume) expansion\n\nA solid of volume $V_0$ heated by ΔT:\n$$V_T = V_0(1 + \\gamma \\Delta T), \\qquad \\gamma = \\frac{\\Delta V/V_0}{\\Delta T}$$\n\n**Relation γ = 3α:** a cube of side $L_0$:\n$$V_T = L_0^3(1+\\alpha\\Delta T)^3 \\approx V_0(1 + 3\\alpha\\Delta T) \\Rightarrow \\gamma = 3\\alpha$$\n\n**Ratio chain:** $\\alpha : \\beta : \\gamma = 1 : 2 : 3$.\n\n### 2.3 Worked numericals\n\n**Q (NEB-style):** A steel plate has area 2 m² at 20 °C (α = 12×10⁻⁶ K⁻¹). Find its area at 120 °C.\n- $\\beta = 2\\alpha = 2.4\\times10^{-5}$ K⁻¹; ΔT = 100\n- $\\Delta A = \\beta A \\Delta T = 2.4\\times10^{-5} \\times 2 \\times 100 = 4.8 \\times 10^{-3}$ m²\n- $A = 2.0048$ m²\n\n**Q (NEB-style):** The volume of a lead sphere is 1 dm³ at 0 °C (α = 2.9×10⁻⁵ K⁻¹). Find its volume at 100 °C.\n- $\\gamma = 3\\alpha = 8.7\\times10^{-5}$ K⁻¹\n- $\\Delta V = \\gamma V \\Delta T = 8.7\\times10^{-5} \\times 10^{-3} \\times 100 = 8.7\\times10^{-6}$ m³\n- $V = 1.0000087$ dm³ ≈ 1.0000087×10⁻³ m³",
+    "## 3. Conceptual Relationships\n\n- **To Topic 46:** everything derives from ΔL = αLΔT.\n- **To Topic 48:** liquids have only cubical expansion (no fixed shape).\n- **To density:** heated solid's density falls as $\\rho_T = \\rho_0/(1+\\gamma\\Delta T)$.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank; the related linear-expansion questions (2019–2024) belong to Topic 46. Practise the β = 2α, γ = 3α derivations and area/volume numericals as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. Show that β = 2α (3m).\n2. Show that γ = 3α (3m).\n3. Area or volume numerical (3m).\n\n### 4.3 Common examination mistakes\n\n1. Forgetting to drop the α²ΔT² (and α³ΔT³) terms in the binomial expansion.\n2. Using α where β or γ is needed.\n3. Writing the ratio as 1:3:2."
   ],
   "specificConditions": [
     "Isotropic Material: γ = 3α and β = 2α only for isotropic solids. Crystalline anisotropic materials have different α along different axes.",
@@ -26,72 +16,38 @@
     "Solid Container: For liquid expansion, container expansion must be accounted for to get real expansion."
   ],
   "formulas": [
-    "Linear: ΔL = αL₀ΔT",
-    "Superficial: ΔA = βA₀ΔT, β = 2α",
-    "Cubical: ΔV = γV₀ΔT, γ = 3α",
-    "Relation: α : β : γ = 1 : 2 : 3",
-    "New dimensions: L = L₀(1+αΔT), A = A₀(1+βΔT), V = V₀(1+γΔT)",
-    "Liquid real expansion: γ_real = γ_apparent + γ_container"
+    "- A = A₀(1+βΔT); β = 2α\n- V = V₀(1+γΔT); γ = 3α\n- α : β : γ = 1 : 2 : 3"
   ],
   "keyPoints": [
-    "Linear: ΔL = αL₀ΔT; coefficient α (K⁻¹).",
-    "Superficial: ΔA = βA₀ΔT, β = 2α.",
-    "Cubical: ΔV = γV₀ΔT, γ = 3α.",
-    "Relation α : β : γ = 1 : 2 : 3 for isotropic solids.",
-    "Relations valid only for isotropic materials.",
-    "Liquids have only volume expansion; real = apparent + container."
+    "β = 2α; γ = 3α; A = A₀(1+βΔT); V = V₀(1+γΔT)."
   ],
-  "importantStatements": [],
+  "importantStatements": [
+    "\"The coefficient of cubical expansion is three times the coefficient of linear expansion.\""
+  ],
   "importantNotes": [
-    "γ = 3α can be derived: V = L³ → ΔV/V ≈ 3ΔL/L → γ = 3α (neglecting higher order terms α², α³).",
-    "α values: steel ~12×10⁻⁶ K⁻¹, aluminum ~24×10⁻⁶ K⁻¹, copper ~17×10⁻⁶ K⁻¹, invar ~1.2×10⁻⁶ K⁻¹.",
-    "Higher order terms (α²ΔT², α³ΔT³) are negligible since α ~ 10⁻⁵ to 10⁻⁶.",
-    "Bimetallic strips use different α of two metals."
+    "No verified PYQ; NEB-style practice (derivations 3m, numericals 3m)."
   ],
   "examShortTricks": [
-    "α : β : γ = 1 : 2 : 3 — memorize this ratio.",
-    "β = 2α, γ = 3α for isotropic solids.",
-    "New dimension = original × (1 + coefficient × ΔT).",
-    "Liquid real expansion: γ_r = γ_a + γ_c."
+    "\"Need ΔA? Use 2α. Need ΔV? Use 3α.\""
   ],
   "examNotes": [
-    "NEB frequently asks for derivation of γ = 3α and numericals on linear/volume expansion.",
-    "Distinguish real vs apparent expansion of liquids.",
-    "Calculate change in length, area, or volume given coefficient and ΔT.",
-    "Bimetallic strip and thermal stress applications."
+    "The β = 2α and γ = 3α derivations are the likely 3m questions."
   ],
   "examples": [
-    "Steel rod L₀ = 2 m, α = 12×10⁻⁶ K⁻¹, ΔT = 50 K: ΔL = 12×10⁻⁶ × 2 × 50 = 1.2×10⁻³ m = 1.2 mm.",
-    "Cube side 10 cm, α = 24×10⁻⁶ K⁻¹, ΔT = 100 K: ΔV = 3αV₀ΔT = 3×24×10⁻⁶ × 1000 × 100 = 0.72 cm³.",
-    "Mercury in glass: γ_real(Hg) = 1.8×10⁻⁴ K⁻¹, γ_glass = 2.5×10⁻⁵ K⁻¹. γ_apparent = 1.55×10⁻⁴ K⁻¹.",
-    "Water density maximum at 4°C — lakes freeze from top, protecting aquatic life."
+    "***Steel plate*** — 2 m² over 100 °C: ΔA = 4.8×10⁻³ m²."
   ],
   "practiceQuestions": [
-    "Q2. Derive the relation γ = 3α for an isotropic solid.",
-    "Q3. Show that β = 2α for isotropic solids.",
-    "Q4. A steel bridge 100 m long experiences ΔT = 30°C (α = 12×10⁻⁶ K⁻¹). Find expansion.",
-    "Q5. Distinguish real and apparent expansion of liquids.",
-    "Q6. Explain anomalous expansion of water and its significance."
+    "**Numerical (3m): A copper cube of volume 500 cm³ at 0 °C is heated to 200 °C (α = 1.7×10⁻⁵ K⁻¹). Find ΔV.** — γ = 5.1×10⁻⁵ K⁻¹; ΔV = 5.1×10⁻⁵ × 500×10⁻⁶ × 200 = 5.1×10⁻⁹ m³ = 5.1 cm³... check: 5.1×10⁻⁵×5×10⁻⁴×200 = 5.1×10⁻⁶ m³ = 5.1 cm³."
   ],
   "practice": [
-    "Calculate ΔL, ΔA, ΔV given coefficient, original dimension, ΔT.",
-    "Use α:β:γ = 1:2:3 to find missing coefficient.",
-    "Solve liquid expansion problems (real vs apparent).",
-    "Calculate thermal stress in constrained expansion.",
-    "Apply bimetallic strip concept."
+    "Why does a tight metal lid loosen under hot water?"
   ],
   "universalFacts": [
-    "Railway tracks have expansion gaps to prevent buckling in summer.",
-    "Invar (Fe-Ni alloy) has near-zero α — used in precision instruments, pendulum rods.",
-    "Concrete and steel have similar α (~12×10⁻⁶) — steel reinforcement bonds well with concrete.",
-    "Glass cookware (Pyrex) has low α to resist thermal shock."
+    "A heated hole in a plate expands too — the hole behaves as if made of the surrounding material."
   ],
   "confusion": [
-    "Applying γ = 3α to anisotropic crystals: Only valid for isotropic materials.",
-    "Forgetting container expansion in liquid problems: Real expansion = apparent + container.",
-    "Confusing coefficient of linear expansion with fractional expansion: α = ΔL/(L₀ΔT).",
-    "Using Celsius vs Kelvin for ΔT: Only ΔT matters, same in °C or K.",
-    "Neglecting higher order terms: α²ΔT² is tiny (~10⁻¹⁰) and ignored."
+    "**The 1:2:3 chain:** α : β : γ = 1 : 2 : 3 — memorise it and half the numericals solve themselves.",
+    "**Binomial truncation:** (1+αΔT)² ≈ 1+2αΔT only because αΔT is tiny."
   ],
   "mcs": [
     {
@@ -153,6 +109,144 @@
   "animation3D": "thermal-expansion",
   "motionGraphics": "expansion-coefficients",
   "visualType": "thermal-expansion",
-  "summary": "Linear ΔL = αL₀ΔT, superficial ΔA = βA₀ΔT (β = 2α), cubical ΔV = γV₀ΔT (γ = 3α) for isotropic solids. α:β:γ = 1:2:3. Liquids have only volume expansion; real = apparent + container. Water shows anomalous expansion below 4°C.",
-  "source": "skeleton-v2"
+  "summary": "Every edge of a heated solid obeys $\\Delta L = \\alpha L \\Delta T$, so area and volume follow automatically: $A = A_0(1+2\\alpha\\Delta T)$ and $V = V_0(1+3\\alpha\\Delta T)$ — the binomial's higher terms vanish because αΔT is minuscule. Hence the **superficial coefficient β = 2α** and the **cubical coefficient γ = 3α**, with the ratio chain $\\alpha:\\beta:\\gamma = 1:2:3$. A 2 m² steel plate over 100 °C gains 4.8×10⁻³ m² of area; a 1 dm³ lead sphere over 100 °C gains 8.7 mm³ of volume. Even holes expand as if filled with surrounding material — a hot lid loosens, never tightens.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Expanding in Two and Three Dimensions\n\nA heated plate grows in area; a heated block grows in volume. Because every edge obeys the same linear law, the area and volume coefficients follow automatically: β = 2α and γ = 3α. One measurement of α pins down the whole thermal fingerprint.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Superficial (area) expansion\n\nA plate of area $A_0$ heated by ΔT:\n$$A_T = A_0(1 + \\beta \\Delta T), \\qquad \\beta = \\frac{\\Delta A / A_0}{\\Delta T}$$\nβ = coefficient of superficial expansion, unit K⁻¹.\n\n**Relation β = 2α:** a square of side $L_0$ expands to $L = L_0(1+\\alpha\\Delta T)$, so\n$$A_T = L^2 = L_0^2(1+\\alpha\\Delta T)^2 \\approx A_0(1 + 2\\alpha\\Delta T)$$\n(neglecting the tiny α²ΔT² term) — hence **β = 2α**.\n\n### 2.2 Cubical (volume) expansion\n\nA solid of volume $V_0$ heated by ΔT:\n$$V_T = V_0(1 + \\gamma \\Delta T), \\qquad \\gamma = \\frac{\\Delta V/V_0}{\\Delta T}$$\n\n**Relation γ = 3α:** a cube of side $L_0$:\n$$V_T = L_0^3(1+\\alpha\\Delta T)^3 \\approx V_0(1 + 3\\alpha\\Delta T) \\Rightarrow \\gamma = 3\\alpha$$\n\n**Ratio chain:** $\\alpha : \\beta : \\gamma = 1 : 2 : 3$.\n\n### 2.3 Worked numericals\n\n**Q (NEB-style):** A steel plate has area 2 m² at 20 °C (α = 12×10⁻⁶ K⁻¹). Find its area at 120 °C.\n- $\\beta = 2\\alpha = 2.4\\times10^{-5}$ K⁻¹; ΔT = 100\n- $\\Delta A = \\beta A \\Delta T = 2.4\\times10^{-5} \\times 2 \\times 100 = 4.8 \\times 10^{-3}$ m²\n- $A = 2.0048$ m²\n\n**Q (NEB-style):** The volume of a lead sphere is 1 dm³ at 0 °C (α = 2.9×10⁻⁵ K⁻¹). Find its volume at 100 °C.\n- $\\gamma = 3\\alpha = 8.7\\times10^{-5}$ K⁻¹\n- $\\Delta V = \\gamma V \\Delta T = 8.7\\times10^{-5} \\times 10^{-3} \\times 100 = 8.7\\times10^{-6}$ m³\n- $V = 1.0000087$ dm³ ≈ 1.0000087×10⁻³ m³",
+      "## 3. Conceptual Relationships\n\n- **To Topic 46:** everything derives from ΔL = αLΔT.\n- **To Topic 48:** liquids have only cubical expansion (no fixed shape).\n- **To density:** heated solid's density falls as $\\rho_T = \\rho_0/(1+\\gamma\\Delta T)$.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank; the related linear-expansion questions (2019–2024) belong to Topic 46. Practise the β = 2α, γ = 3α derivations and area/volume numericals as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. Show that β = 2α (3m).\n2. Show that γ = 3α (3m).\n3. Area or volume numerical (3m).\n\n### 4.3 Common examination mistakes\n\n1. Forgetting to drop the α²ΔT² (and α³ΔT³) terms in the binomial expansion.\n2. Using α where β or γ is needed.\n3. Writing the ratio as 1:3:2."
+    ],
+    "confusion": [
+      "**The 1:2:3 chain:** α : β : γ = 1 : 2 : 3 — memorise it and half the numericals solve themselves.",
+      "**Binomial truncation:** (1+αΔT)² ≈ 1+2αΔT only because αΔT is tiny."
+    ],
+    "keyPoints": [
+      "β = 2α; γ = 3α; A = A₀(1+βΔT); V = V₀(1+γΔT)."
+    ],
+    "importantConcepts": [
+      "**All expansion is linear expansion wearing different clothes** — area and volume laws derive from the edge law."
+    ],
+    "examples": [
+      "***Steel plate*** — 2 m² over 100 °C: ΔA = 4.8×10⁻³ m²."
+    ],
+    "universalFacts": [
+      "A heated hole in a plate expands too — the hole behaves as if made of the surrounding material."
+    ],
+    "importantStatements": [
+      "\"The coefficient of cubical expansion is three times the coefficient of linear expansion.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (derivations 3m, numericals 3m)."
+    ],
+    "examShortTricks": [
+      "\"Need ΔA? Use 2α. Need ΔV? Use 3α.\""
+    ],
+    "examNotes": [
+      "The β = 2α and γ = 3α derivations are the likely 3m questions."
+    ],
+    "formulas": [
+      "- A = A₀(1+βΔT); β = 2α\n- V = V₀(1+γΔT); γ = 3α\n- α : β : γ = 1 : 2 : 3"
+    ],
+    "practice": [
+      "Why does a tight metal lid loosen under hot water?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A copper cube of volume 500 cm³ at 0 °C is heated to 200 °C (α = 1.7×10⁻⁵ K⁻¹). Find ΔV.** — γ = 5.1×10⁻⁵ K⁻¹; ΔV = 5.1×10⁻⁵ × 500×10⁻⁶ × 200 = 5.1×10⁻⁹ m³ = 5.1 cm³... check: 5.1×10⁻⁵×5×10⁻⁴×200 = 5.1×10⁻⁶ m³ = 5.1 cm³."
+    ]
+  },
+  "importantConcepts": [
+    "**All expansion is linear expansion wearing different clothes** — area and volume laws derive from the edge law."
+  ],
+  "mcqs": [
+    {
+      "question": "β (superficial) equals:",
+      "options": [
+        "α",
+        "2α",
+        "3α",
+        "α/2"
+      ],
+      "answer": "B",
+      "explanation": "Area ∝ length²."
+    },
+    {
+      "question": "γ (cubical) equals:",
+      "options": [
+        "α",
+        "2α",
+        "3α",
+        "6α"
+      ],
+      "answer": "C",
+      "explanation": "Volume ∝ length³."
+    },
+    {
+      "question": "α : β : γ =",
+      "options": [
+        "1:2:3",
+        "1:3:2",
+        "2:3:1",
+        "1:1:1"
+      ],
+      "answer": "A",
+      "explanation": "Derived from powers of (1+αΔT)."
+    },
+    {
+      "question": "A 2 m² steel plate (α = 12×10⁻⁶) over 100 °C gains area:",
+      "options": [
+        "2.4×10⁻³ m²",
+        "4.8×10⁻³ m²",
+        "2.4×10⁻⁵ m²",
+        "4.8 m²"
+      ],
+      "answer": "B",
+      "explanation": "ΔA = 2αAΔT."
+    },
+    {
+      "question": "The neglected term in (1+αΔT)² is:",
+      "options": [
+        "αΔT",
+        "α²ΔT²",
+        "2αΔT",
+        "1"
+      ],
+      "answer": "B",
+      "explanation": "Second-order, negligible."
+    },
+    {
+      "question": "A heated hole in a metal plate:",
+      "options": [
+        "Shrinks",
+        "Expands",
+        "Stays same",
+        "Becomes oval always"
+      ],
+      "answer": "B",
+      "explanation": "It expands as if filled with metal."
+    },
+    {
+      "question": "Density of a heated solid:",
+      "options": [
+        "Increases",
+        "Decreases as ρ₀/(1+γΔT)",
+        "Stays same",
+        "Doubles"
+      ],
+      "answer": "B",
+      "explanation": "Mass fixed, volume grows."
+    },
+    {
+      "question": "Liquids have which expansion coefficient?",
+      "options": [
+        "α only",
+        "β only",
+        "γ only",
+        "All three"
+      ],
+      "answer": "C",
+      "explanation": "No fixed shape — cubical only."
+    }
+  ]
 }

@@ -5,19 +5,10 @@
   "topicTitle": "Dulong and Petit method of determining expansivity of liquid",
   "relevance": 100,
   "notes": [
-    "Dulong and Petit's Method: Experimental method to determine absolute coefficient of expansion of a liquid using a U-tube with two limbs at different temperatures. One limb (hot) and one limb (cold) contain the same liquid; columns balance when pressures equal.",
-    "Principle: Pressure at same horizontal level in continuous liquid is equal. For two columns of heights h₁ (cold, t₁) and h₂ (hot, t₂) with densities ρ₁, ρ₂: h₁ρ₁g = h₂ρ₂g. Using ρ₂ = ρ₁/(1 + γΔt): derive γ = (h₁ - h₂)/(h₂·t₂ - h₁·t₁).",
-    "Formula: γ = (h₁ - h₂)/(h₂t₂ - h₁t₁) where h₁ = cold column height, h₂ = hot column height, t₁ = cold temperature, t₂ = hot temperature.",
-    "Absolute vs Apparent: Dulong-Petit gives absolute expansivity (liquid relative to vacuum) since the glass expansion cancels out in the pressure balance method.",
-    "Experimental Setup: U-tube with one limb in ice bath (0°C) and other in steam bath or heated bath. Adjust levels until balance, measure heights and temperatures.",
-    "Corrections: Account for vapor pressure of liquid, capillary effects, and non-uniform temperature along columns.",
-    "Applications: Used for liquids like water, mercury, alcohol where accurate expansivity needed for thermometer design and thermal engineering.",
-    "# Dulong and Petit method of determining expansivity of liquid\n\n## 1. Introduction\nPhysical picture of **Dulong and Petit method of determining expansivity of liquid** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Thermal Expansion fill pass.\n\n## 2. Concepts and laws\n### Dulong and Petit method of determining expansivity of liquid\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and graph reading**\n\n| Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Dulong and Petit method of determining expansivity of liquid — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Dulong and Petit method of determining expansivity of liquid — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Dulong and Petit method of determining expansivity of liquid — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Dulong and Petit method of determining expansivity of liquid — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Weighing an Invisible Expansion\n\nLiquids expand far too little to measure directly by eye. Dulong and Petit's genius was to *cancel* the vessel's contribution: the same liquid in two different vessels shows level rises that differ by exactly the liquid's true expansion. The apparatus turns an apparent effect into an absolute measurement.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Principle\n\nA liquid's **apparent** expansion in a vessel = real expansion − vessel's expansion:\n$$\\gamma_a = \\gamma_r - \\gamma_g$$\nIn two vessels of cubical coefficients $\\gamma_1$ and $\\gamma_2$ (same liquid, same ΔT):\n$$\\gamma_{a1} = \\gamma_r - \\gamma_1, \\qquad \\gamma_{a2} = \\gamma_r - \\gamma_2$$\nSubtracting:\n$$\\boxed{\\gamma_2 - \\gamma_1 = \\gamma_{a1} - \\gamma_{a2}}$$\n— the difference of apparent coefficients equals the difference of vessel coefficients, independent of the liquid! Measuring the level changes gives the vessel coefficients; then $\\gamma_r = \\gamma_{a} + \\gamma_g$ for either vessel.\n\n### 2.2 Apparatus and procedure\n\n1. **Two identical bulbs** (glass and metal, e.g. iron and copper) joined by a U-tube containing the liquid (historically mercury).\n2. The whole assembly is heated uniformly through ΔT.\n3. Each vessel's liquid column height changes according to its apparent expansion: the difference in column heights directly reads $\\gamma_{a1} - \\gamma_{a2}$.\n4. With vessel coefficients known (from α of the materials, γ = 3α), the liquid's real coefficient follows: $\\gamma_r = \\gamma_a + \\gamma_g$.\n\n### 2.3 Worked numerical\n\n**Q (NEB-style):** In a Dulong–Petit experiment, mercury's apparent coefficients in a glass vessel (γ_g = 2.5×10⁻⁵ K⁻¹) and a copper vessel (γ_Cu = 5.1×10⁻⁵ K⁻¹) are measured. If the apparent coefficient in glass is 1.8×10⁻⁴ K⁻¹, find (a) the real coefficient of mercury, (b) the apparent coefficient in copper.\n- (a) $\\gamma_r = \\gamma_a + \\gamma_g = 1.8\\times10^{-4} + 2.5\\times10^{-5} = 2.05 \\times 10^{-4}$ K⁻¹\n- (b) $\\gamma_{a,Cu} = \\gamma_r - \\gamma_{Cu} = 2.05\\times10^{-4} - 5.1\\times10^{-5} = 1.54 \\times 10^{-4}$ K⁻¹",
+    "## 3. Conceptual Relationships\n\n- **To Topic 48:** the experiment operationalises γ_r = γ_a + γ_g.\n- **To Topic 47:** vessel coefficients come from γ = 3α.\n- **To history:** Dulong and Petit (1818) also discovered the law of constant atomic heat — a different, famous result.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the principle, the subtraction equation and a numerical as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. Describe Dulong and Petit's method to determine the real expansivity of a liquid (4m).\n2. Show that γ₂ − γ₁ = γ_{a1} − γ_{a2} (3m).\n3. Numerical on two-vessel apparent coefficients (3m).\n\n### 4.3 Common examination mistakes\n\n1. Confusing apparent and real coefficients in the subtraction.\n2. Forgetting γ = 3α when converting vessel material data.\n3. Omitting the U-tube/two-bulb description."
   ],
   "specificConditions": [
     "Liquid Columns in Communication: Two limbs must contain same liquid connected at bottom — pressure equality at bottom.",
@@ -25,75 +16,39 @@
     "No Flow: Static equilibrium — liquid not flowing, columns stationary."
   ],
   "formulas": [
-    "Pressure balance: h₁ρ₁g = h₂ρ₂g",
-    "Density relation: ρ₂ = ρ₁/(1 + γΔt)",
-    "Expansivity: γ = (h₁ - h₂)/(h₂t₂ - h₁t₁)",
-    "Absolute expansivity: γ_absolute = γ_apparent + γ_glass"
+    "- γ_a = γ_r − γ_g\n- γ₂ − γ₁ = γ_{a1} − γ_{a2}\n- γ_g = 3α (vessel material)"
   ],
   "keyPoints": [
-    "Dulong-Petit determines absolute liquid expansivity using U-tube at two temperatures.",
-    "Pressure equality: h₁ρ₁ = h₂ρ₂ at same level.",
-    "Formula: γ = (h₁ - h₂)/(h₂t₂ - h₁t₁).",
-    "Method eliminates container expansion effect.",
-    "Requires two temperature baths and height measurements."
+    "γ_a = γ_r − γ_g; two vessels ⇒ γ₂ − γ₁ = γ_{a1} − γ_{a2}.",
+    "Apparatus: two bulbs (different materials) + U-tube, heated uniformly."
   ],
   "importantStatements": [
-    "Statement 1: Dulong-Petit method uses a U-tube with liquid columns at two different temperatures.",
-    "Statement 2: Pressure balance at bottom: h₁ρ₁g = h₂ρ₂g.",
-    "Statement 3: Absolute expansivity γ = (h₁ - h₂)/(h₂t₂ - h₁t₁).",
-    "Statement 4: Method gives absolute expansivity independent of container expansion.",
-    "Statement 5: One limb at reference temperature (0°C), other at measured higher temperature."
+    "\"The difference of the apparent expansivities in two vessels equals the difference of the cubical expansivities of the vessels.\""
   ],
   "importantNotes": [
-    "The method determines absolute expansivity — glass expansion doesn't enter the formula.",
-    "Accuracy depends on precise height and temperature measurements.",
-    "Vapor pressure and capillary effects must be minimized or corrected.",
-    "Commonly used for mercury, water, alcohol expansivity determination."
+    "No verified PYQ; NEB-style practice (description 4m, derivation 3m, numerical 3m)."
   ],
   "examShortTricks": [
-    "γ = (h₁ - h₂)/(h₂t₂ - h₁t₁) — memorize formula.",
-    "h₁ = cold (denser, taller column), h₂ = hot (less dense, shorter column).",
-    "Denominator can be written h₂t₂ - h₁t₁ — check signs.",
-    "Method gives absolute expansivity directly."
+    "\"Write γ_a = γ_r − γ_g for both vessels, then subtract.\""
   ],
   "examNotes": [
-    "NEB frequently asks to describe Dulong-Petit method with diagram and derive formula.",
-    "Derive from pressure balance h₁ρ₁ = h₂ρ₂.",
-    "Explain why method gives absolute (not apparent) expansivity.",
-    "State experimental procedure and precautions."
+    "The two-vessel subtraction equation is the heart of any answer here."
   ],
   "examples": [
-    "h₁ = 100 cm at t₁ = 0°C, h₂ = 96 cm at t₂ = 80°C: γ = (100-96)/(96×80 - 100×0) = 4/7680 = 5.2×10⁻⁴ /°C.",
-    "Water expansivity ~2.1×10⁻⁴ /°C (20-50°C range), mercury ~1.8×10⁻⁴ /°C.",
-    "If h₁ = h₂ (equal heights), γ = 0 — no expansion (or temperatures equal)."
+    "***Mercury example*** — γ_a(glass) = 1.8×10⁻⁴, γ_glass = 2.5×10⁻⁵ → γ_r(Hg) = 2.05×10⁻⁴ K⁻¹."
   ],
   "practiceQuestions": [
-    "Q1. Describe Dulong-Petit method for determining absolute expansivity of a liquid.",
-    "Q2. Derive γ = (h₁ - h₂)/(h₂t₂ - h₁t₁) from pressure balance.",
-    "Q3. Explain why Dulong-Petit gives absolute expansivity.",
-    "Q4. Given h₁ = 120 cm at 0°C, h₂ = 115 cm at 100°C, find liquid expansivity.",
-    "Q5. What precautions are needed in Dulong-Petit experiment?",
-    "Q6. Distinguish between absolute and apparent expansivity of liquids."
+    "**Numerical (3m): In a Dulong–Petit experiment the liquid levels in glass (γ_g = 2.7×10⁻⁵) and iron (γ_Fe = 3.6×10⁻⁵) vessels differ such that γ_{a1} − γ_{a2} = 9×10⁻⁶ K⁻¹. If γ_a(glass) = 1.75×10⁻⁴, find γ_r.** — γ_r = γ_a + γ_g = 1.75×10⁻⁴ + 2.7×10⁻⁵ = 2.02×10⁻⁴ K⁻¹ (consistency: γ_a(Fe) = 2.02×10⁻⁴ − 3.6×10⁻⁵ = 1.66×10⁻⁴; difference 9×10⁻⁶ ✓)."
   ],
   "practice": [
-    "Derive expansivity formula from pressure balance.",
-    "Calculate γ from measured h₁, h₂, t₁, t₂.",
-    "Describe experimental setup with diagram.",
-    "Explain absolute vs apparent expansivity.",
-    "Identify sources of error and corrections."
+    "Why must both bulbs be heated uniformly?"
   ],
   "universalFacts": [
-    "Dulong and Petit (French physicists, early 19th century) also known for Dulong-Petit law of specific heat (c ≈ 3R for solids).",
-    "Mercury expansivity ~1.8×10⁻⁴ /°C makes it suitable for thermometers (uniform expansion).",
-    "Water expansivity varies with temperature — negative below 4°C, positive above.",
-    "Absolute expansivity needed for designing accurate liquid thermometers."
+    "Dulong and Petit also gave the law of constant atomic heat capacity (1818) — unrelated but bearing their name."
   ],
   "confusion": [
-    "Confusing absolute with apparent expansivity: Dulong-Petit gives absolute (no container correction needed).",
-    "Swapping h₁ and h₂ in formula: h₁ is colder/denser/taller column.",
-    "Thinking container expansion matters: It cancels in this method.",
-    "Forgetting temperatures must be different for measurement.",
-    "Using Celsius temperatures directly — fine since ΔT same in °C and K."
+    "**The trick is cancellation:** the liquid's expansion difference between two vessels equals the vessels' expansion difference — no direct measurement of tiny expansions needed.",
+    "**Apparent = real − vessel:** keep the signs straight."
   ],
   "mcs": [
     {
@@ -155,6 +110,145 @@
   "animation3D": "dulong-petit-method",
   "motionGraphics": "liquid-expansion-utube",
   "visualType": "dulong-petit",
-  "summary": "Dulong-Petit method determines absolute liquid expansivity using U-tube with columns at two temperatures. Pressure balance h₁ρ₁ = h₂ρ₂ gives γ = (h₁ - h₂)/(h₂t₂ - h₁t₁). Method eliminates container expansion, giving absolute expansivity directly.",
-  "source": "skeleton-v2"
+  "summary": "Dulong and Petit's method measures a liquid's **real cubical expansivity** by cancelling the vessel effect. The apparent expansion in any vessel obeys $\\gamma_a = \\gamma_r - \\gamma_g$; using the same liquid in two vessels of coefficients γ₁ and γ₂ gives $\\gamma_2 - \\gamma_1 = \\gamma_{a1} - \\gamma_{a2}$ — a relation independent of the liquid. The apparatus is two bulbs of different materials (glass and metal) joined by a U-tube, heated uniformly through ΔT; the liquid columns shift by the difference of apparent expansions, the vessel coefficients follow from γ = 3α of their materials, and the liquid's real coefficient is then $\\gamma_r = \\gamma_a + \\gamma_g$. For mercury in glass (γ_g = 2.5×10⁻⁵, γ_a = 1.8×10⁻⁴), γ_r = 2.05×10⁻⁴ K⁻¹.",
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Weighing an Invisible Expansion\n\nLiquids expand far too little to measure directly by eye. Dulong and Petit's genius was to *cancel* the vessel's contribution: the same liquid in two different vessels shows level rises that differ by exactly the liquid's true expansion. The apparatus turns an apparent effect into an absolute measurement.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Principle\n\nA liquid's **apparent** expansion in a vessel = real expansion − vessel's expansion:\n$$\\gamma_a = \\gamma_r - \\gamma_g$$\nIn two vessels of cubical coefficients $\\gamma_1$ and $\\gamma_2$ (same liquid, same ΔT):\n$$\\gamma_{a1} = \\gamma_r - \\gamma_1, \\qquad \\gamma_{a2} = \\gamma_r - \\gamma_2$$\nSubtracting:\n$$\\boxed{\\gamma_2 - \\gamma_1 = \\gamma_{a1} - \\gamma_{a2}}$$\n— the difference of apparent coefficients equals the difference of vessel coefficients, independent of the liquid! Measuring the level changes gives the vessel coefficients; then $\\gamma_r = \\gamma_{a} + \\gamma_g$ for either vessel.\n\n### 2.2 Apparatus and procedure\n\n1. **Two identical bulbs** (glass and metal, e.g. iron and copper) joined by a U-tube containing the liquid (historically mercury).\n2. The whole assembly is heated uniformly through ΔT.\n3. Each vessel's liquid column height changes according to its apparent expansion: the difference in column heights directly reads $\\gamma_{a1} - \\gamma_{a2}$.\n4. With vessel coefficients known (from α of the materials, γ = 3α), the liquid's real coefficient follows: $\\gamma_r = \\gamma_a + \\gamma_g$.\n\n### 2.3 Worked numerical\n\n**Q (NEB-style):** In a Dulong–Petit experiment, mercury's apparent coefficients in a glass vessel (γ_g = 2.5×10⁻⁵ K⁻¹) and a copper vessel (γ_Cu = 5.1×10⁻⁵ K⁻¹) are measured. If the apparent coefficient in glass is 1.8×10⁻⁴ K⁻¹, find (a) the real coefficient of mercury, (b) the apparent coefficient in copper.\n- (a) $\\gamma_r = \\gamma_a + \\gamma_g = 1.8\\times10^{-4} + 2.5\\times10^{-5} = 2.05 \\times 10^{-4}$ K⁻¹\n- (b) $\\gamma_{a,Cu} = \\gamma_r - \\gamma_{Cu} = 2.05\\times10^{-4} - 5.1\\times10^{-5} = 1.54 \\times 10^{-4}$ K⁻¹",
+      "## 3. Conceptual Relationships\n\n- **To Topic 48:** the experiment operationalises γ_r = γ_a + γ_g.\n- **To Topic 47:** vessel coefficients come from γ = 3α.\n- **To history:** Dulong and Petit (1818) also discovered the law of constant atomic heat — a different, famous result.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\nNo verified PYQ for this exact topic in the bank. Practise the principle, the subtraction equation and a numerical as **NEB-style practice**.\n\n### 4.2 Likely question forms\n\n1. Describe Dulong and Petit's method to determine the real expansivity of a liquid (4m).\n2. Show that γ₂ − γ₁ = γ_{a1} − γ_{a2} (3m).\n3. Numerical on two-vessel apparent coefficients (3m).\n\n### 4.3 Common examination mistakes\n\n1. Confusing apparent and real coefficients in the subtraction.\n2. Forgetting γ = 3α when converting vessel material data.\n3. Omitting the U-tube/two-bulb description."
+    ],
+    "confusion": [
+      "**The trick is cancellation:** the liquid's expansion difference between two vessels equals the vessels' expansion difference — no direct measurement of tiny expansions needed.",
+      "**Apparent = real − vessel:** keep the signs straight."
+    ],
+    "keyPoints": [
+      "γ_a = γ_r − γ_g; two vessels ⇒ γ₂ − γ₁ = γ_{a1} − γ_{a2}.",
+      "Apparatus: two bulbs (different materials) + U-tube, heated uniformly."
+    ],
+    "importantConcepts": [
+      "**Measure differences, not absolutes:** Dulong–Petit sidesteps the impossible direct measurement of a liquid's true expansion."
+    ],
+    "examples": [
+      "***Mercury example*** — γ_a(glass) = 1.8×10⁻⁴, γ_glass = 2.5×10⁻⁵ → γ_r(Hg) = 2.05×10⁻⁴ K⁻¹."
+    ],
+    "universalFacts": [
+      "Dulong and Petit also gave the law of constant atomic heat capacity (1818) — unrelated but bearing their name."
+    ],
+    "importantStatements": [
+      "\"The difference of the apparent expansivities in two vessels equals the difference of the cubical expansivities of the vessels.\""
+    ],
+    "importantNotes": [
+      "No verified PYQ; NEB-style practice (description 4m, derivation 3m, numerical 3m)."
+    ],
+    "examShortTricks": [
+      "\"Write γ_a = γ_r − γ_g for both vessels, then subtract.\""
+    ],
+    "examNotes": [
+      "The two-vessel subtraction equation is the heart of any answer here."
+    ],
+    "formulas": [
+      "- γ_a = γ_r − γ_g\n- γ₂ − γ₁ = γ_{a1} − γ_{a2}\n- γ_g = 3α (vessel material)"
+    ],
+    "practice": [
+      "Why must both bulbs be heated uniformly?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): In a Dulong–Petit experiment the liquid levels in glass (γ_g = 2.7×10⁻⁵) and iron (γ_Fe = 3.6×10⁻⁵) vessels differ such that γ_{a1} − γ_{a2} = 9×10⁻⁶ K⁻¹. If γ_a(glass) = 1.75×10⁻⁴, find γ_r.** — γ_r = γ_a + γ_g = 1.75×10⁻⁴ + 2.7×10⁻⁵ = 2.02×10⁻⁴ K⁻¹ (consistency: γ_a(Fe) = 2.02×10⁻⁴ − 3.6×10⁻⁵ = 1.66×10⁻⁴; difference 9×10⁻⁶ ✓)."
+    ]
+  },
+  "importantConcepts": [
+    "**Measure differences, not absolutes:** Dulong–Petit sidesteps the impossible direct measurement of a liquid's true expansion."
+  ],
+  "mcqs": [
+    {
+      "question": "Dulong–Petit's method determines:",
+      "options": [
+        "α of a solid",
+        "Real expansivity of a liquid",
+        "Vapour pressure",
+        "Specific heat"
+      ],
+      "answer": "B",
+      "explanation": "γ_r of liquids via two vessels."
+    },
+    {
+      "question": "The key relation is:",
+      "options": [
+        "γ_r = γ_a + γ_g",
+        "γ₂ − γ₁ = γ_{a1} − γ_{a2}",
+        "Both",
+        "Neither"
+      ],
+      "answer": "C",
+      "explanation": "Both express the same principle."
+    },
+    {
+      "question": "The apparatus consists of:",
+      "options": [
+        "One bulb",
+        "Two bulbs joined by a U-tube",
+        "A calorimeter",
+        "A barometer"
+      ],
+      "answer": "B",
+      "explanation": "Different materials, same liquid."
+    },
+    {
+      "question": "Vessel cubical coefficients come from:",
+      "options": [
+        "Direct volume measurement",
+        "γ = 3α of the material",
+        "Liquid density",
+        "Boiling point"
+      ],
+      "answer": "B",
+      "explanation": "γ_g = 3α_g."
+    },
+    {
+      "question": "Mercury: γ_a = 1.8×10⁻⁴ in glass with γ_g = 2.5×10⁻⁵. γ_r =",
+      "options": [
+        "1.55×10⁻⁴",
+        "2.05×10⁻⁴",
+        "1.8×10⁻⁴",
+        "4.3×10⁻⁴"
+      ],
+      "answer": "B",
+      "explanation": "Add vessel coefficient."
+    },
+    {
+      "question": "The difference γ_{a1} − γ_{a2} is independent of:",
+      "options": [
+        "The vessels",
+        "The liquid",
+        "Temperature rise",
+        "Everything"
+      ],
+      "answer": "B",
+      "explanation": "It equals γ₂ − γ₁ only."
+    },
+    {
+      "question": "Apparent expansion is smaller than real because:",
+      "options": [
+        "Liquid leaks",
+        "Vessel expands too",
+        "Gravity",
+        "Evaporation"
+      ],
+      "answer": "B",
+      "explanation": "Cavity growth swallows part of it."
+    },
+    {
+      "question": "Both bulbs must be heated uniformly so that:",
+      "options": [
+        "Liquid boils",
+        "Both experience the same ΔT",
+        "Colours match",
+        "Pressure drops"
+      ],
+      "answer": "B",
+      "explanation": "Common ΔT makes the subtraction valid."
+    }
+  ]
 }

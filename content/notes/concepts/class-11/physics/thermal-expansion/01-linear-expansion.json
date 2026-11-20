@@ -5,80 +5,33 @@
   "topicTitle": "Linear Expansion",
   "relevance": 100,
   "notes": [
-    "**Linear Expansion:** This topic covers the fundamental concepts of linear expansion in the physics curriculum.",
-    "Understanding linear expansion is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to linear expansion should be memorized and practiced regularly.",
-    "**Linear expansion definition:** When a solid is heated, its length increases. The fractional increase in length per unit rise in temperature is called the coefficient of linear expansion, $\\alpha$.",
-    "**Formula:** $\\Delta L = L_0 \\alpha \\Delta T$, where $L_0$ is the original length, $\\alpha$ is the coefficient of linear expansion (unit: K⁻¹ or °C⁻¹), and $\\Delta T$ is the temperature change.",
-    "**New length:** $L = L_0(1 + \\alpha\\Delta T)$. For small $\\alpha\\Delta T$, this is an excellent approximation. For large temperature ranges, $\\alpha$ may vary and must be treated as a function of temperature.",
-    "**Physical origin:** Heating increases the amplitude of atomic vibrations in the lattice. Because the interatomic potential is asymmetric (steeper on the compression side), the average separation increases with temperature, causing expansion.",
-    "**Coefficient of linear expansion for common materials:** Steel: $\\alpha \\approx 12 \\times 10^{-6}$ K⁻¹. Aluminum: $\\alpha \\approx 24 \\times 10^{-6}$ K⁻¹. Copper: $\\alpha \\approx 17 \\times 10^{-6}$ K⁻¹. Invar (Fe-Ni alloy): $\\alpha \\approx 1.2 \\times 10^{-6}$ K⁻¹. Quartz: $\\alpha \\approx 0.5 \\times 10^{-6}$ K⁻¹.",
-    "**Why metals expand more:** Metals with weaker interatomic bonds (larger bond length, lower melting point) tend to have larger $\\alpha$. Lead ($\\alpha \\approx 29 \\times 10^{-6}$) expands more than steel because its atomic bonds are weaker.",
-    "**Bimetallic strip:** Two metals with different $\\alpha$ bonded together bend when heated — the higher-$\\alpha$ metal expands more, forcing the strip to curve. Used in thermostats, circuit breakers, and temperature indicators.",
-    "**Railway tracks — expansion gaps:** Steel rails expand by $\\Delta L = L_0 \\alpha \\Delta T$. For a 12 m rail and $\\Delta T = 40°C$: $\\Delta L = 12 \\times 12 \\times 10^{-6} \\times 40 = 5.76$ mm. Gaps are left between rails to accommodate this expansion, otherwise buckling occurs.",
-    "**Measuring $\\alpha$ — Searle's apparatus:** A metal rod is heated uniformly. The expansion is measured by a micrometer screw gauge. $\\alpha = \\frac{\\Delta L}{L_0 \\Delta T}$. The apparatus minimizes errors from thermal expansion of the frame.",
-    "**Measuring $\\alpha$ — Hoke's apparatus:** Uses a glass tube filled with liquid. As the solid rod inside expands, it displaces liquid. The volume of displaced liquid gives $\\Delta L$ indirectly. This is an elegant optical-mechanical method.",
-    "**NEB exam focus:** State the formula $\\Delta L = L_0 \\alpha \\Delta T$. Explain the bimetallic strip principle. Describe Searle's apparatus for measuring $\\alpha$. Solve numerical problems involving expansion of rods, bridges, and railways.",
-    "**Effect on precision instruments:** Clock pendulums expand with temperature, increasing their period and causing the clock to run slow. $T = 2\\pi\\sqrt{L/g}$, so $\\Delta T/T = \\frac{1}{2}\\alpha\\Delta T$. For steel ($\\alpha = 12 \\times 10^{-6}$), a 10°C rise causes the clock to lose about 5 seconds per day.",
-    "**Composite rod problem:** Two rods of different materials joined end-to-end: total expansion $\\Delta L = L_{01}\\alpha_1\\Delta T + L_{02}\\alpha_2\\Delta T$. The junction shifts by the expansion of the first rod.",
-    "**Thermal stress:** If a rod is constrained from expanding, thermal stress develops: $\\sigma = Y\\alpha\\Delta T$, where $Y$ is Young's modulus. For steel ($Y = 200$ GPa, $\\alpha = 12 \\times 10^{-6}$), a 50°C constraint gives $\\sigma = 120$ MPa — significant structural stress.",
-    "**Practical consequence:** Bridges have expansion joints. Glass bottles crack when hot water is poured in because the inner surface expands faster than the outer. Telephone wires sag more in summer than in winter."
+    "## 1. Topic Introduction — Solids Grow When Warm\n\nRailway tracks buckle in summer, bridges have toothed expansion joints, and a pendulum clock keeps different time in winter and summer. All trace to one simple law: a solid's length grows in proportion to its original length and its temperature rise.",
+    "## 2. Fundamental Concepts (NEB 2019, 2021, 2022, 2024)\n\n### 2.1 Coefficient of linear expansion\n\n**Definition:** the fractional increase in length per degree rise in temperature:\n$$\\alpha = \\frac{\\Delta L / L}{\\Delta T} \\Rightarrow \\Delta L = \\alpha L \\Delta T, \\quad L_T = L_0(1 + \\alpha \\Delta T)$$\n**SI unit: K⁻¹** (or °C⁻¹ — the same size interval). Typical values: steel 12×10⁻⁶, aluminium 24×10⁻⁶, invar 1.2×10⁻⁶ K⁻¹.\n\n### 2.2 Measurement of α (comparison method)\n\nA rod is supported on a horizontal frame with one end fixed; a **micrometer screw / optical lever** at the other end measures the tiny extension $\\Delta L$ when the rod's temperature rises by $\\Delta T$ (measured with a thermocouple or thermometer). Then $\\alpha = \\Delta L/(L\\,\\Delta T)$.\n\n### 2.3 Worked numericals\n\n**Q (2m, 2019):** Define the coefficient of linear expansion. A metal rod is 1 m long at 0 °C and 1.0017 m at 100 °C. Find α.\n- Definition as above. $\\alpha = \\dfrac{1.0017 - 1}{1 \\times 100} = 1.7 \\times 10^{-5}$ K⁻¹\n\n**Q (3m, 2021):** A metal rod of length 1 m at 20 °C is heated to 100 °C. If α = 1.2×10⁻⁵ K⁻¹, find the increase in length and the final length.\n- $\\Delta L = \\alpha L \\Delta T = 1.2\\times10^{-5} \\times 1 \\times 80 = 9.6 \\times 10^{-4}$ m = 0.96 mm\n- $L = 1.00096$ m\n\n**Q (2m, 2024):** A steel rod 2 m long at 20 °C is heated to 120 °C. By how much does it expand? (α = 12×10⁻⁶ K⁻¹)\n- $\\Delta L = 12\\times10^{-6} \\times 2 \\times 100 = 2.4 \\times 10^{-3}$ m = **2.4 mm**\n\n### 2.4 Pendulum clock (NEB 2024)\n\n**Q (2m, 2024):** A pendulum clock keeps correct time in winter but loses time in summer. Explain why.\nThe pendulum's length increases in summer ($L_T = L_0(1+\\alpha\\Delta T)$), so its period $T = 2\\pi\\sqrt{L/g}$ **increases** — each swing takes longer and the clock runs slow (loses time). In winter L decreases and it gains.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 47:** $\\beta = 2\\alpha$ (superficial), $\\gamma = 3\\alpha$ (cubical) — one coefficient generates all three.\n- **To SHM/pendulum:** period depends on length — thermal expansion perturbs timekeeping.\n- **To engineering:** expansion joints, bimetallic strips (thermostats), gaps in rails.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2075/2019 | Heat | Thermal expansion | Define the coefficient of linear expansion. A metal rod is 1 m long at 0 °C and 1.0017 m at 100 °C. Find α. | 2 | Definition + numerical |\n| 2077/2021 | Heat | Thermal expansion | A metal rod of length 1 m at 20 °C is heated to 100 °C. If α = 1.2×10⁻⁵ K⁻¹, find the increase in length and the final length. | 3 | Numerical |\n| 2078/2022 | Heat | Thermal expansion | Define the coefficient of linear expansivity and write its formula and SI unit. | 2 | Definition |\n| 2080/2024 | Heat | Thermal expansion | A steel rod 2 m long at 20 °C is heated to 120 °C. By how much does it expand? (α = 12×10⁻⁶ K⁻¹) | 2 | Numerical |\n| 2080/2024 | Heat | Thermal expansion | A pendulum clock keeps correct time in winter but loses time in summer. Explain why. | 2 | Explanation |\n\n### 4.2 Common examination mistakes\n\n1. Using °C change and forgetting the final length needs ΔL added to L.\n2. Writing the unit as K instead of K⁻¹.\n3. For the clock: omitting the $T = 2\\pi\\sqrt{L/g}$ link."
   ],
   "confusion": [
-    "Carefully distinguish between similar-looking concepts in linear expansion.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding.",
-    "❌ $\\Delta L = L_0 \\alpha \\Delta T$ works for any temperature range. ✅ It is valid only for moderate $\\Delta T$ where $\\alpha$ is approximately constant. For very large temperature ranges, $\\alpha$ varies and the formula becomes approximate.",
-    "❌ All solids expand at the same rate. ✅ Different materials have very different $\\alpha$ values. Invar ($\\alpha \\approx 1.2 \\times 10^{-6}$) expands 24 times less than aluminum ($\\alpha \\approx 24 \\times 10^{-6}$).",
-    "❌ The coefficient $\\alpha$ has units of temperature. ✅ $\\alpha$ has units of K⁻¹ (or °C⁻¹). It is a fractional change per degree, not an absolute change.",
-    "❌ A hole in a metal plate shrinks when heated. ✅ The hole EXPANDS — the material around it expands outward, making the hole larger. This is equivalent to a disk of the same material expanding.",
-    "❌ Linear expansion applies to liquids. ✅ Liquids do not have a fixed shape, so linear expansion is meaningless for them. Only cubical (volume) expansion is defined for liquids.",
-    "❌ The expansion gap for railway tracks should be as large as possible. ✅ The gap must be just large enough to prevent buckling. Too large a gap causes excessive noise and wear at the joints.",
-    "❌ Thermal stress depends only on $\\alpha$ and $\\Delta T$. ✅ Thermal stress is $\\sigma = Y\\alpha\\Delta T$ — it also depends on Young's modulus $Y$. A stiffer material develops more stress for the same constraint."
+    "**α's unit is K⁻¹**, not K — it is per-degree fractional change.",
+    "**Clocks lose time in summer** because longer pendulum → longer period → slower ticking."
   ],
   "practice": [
-    "Solve at least 5 problems on linear expansion from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type.",
-    "A steel rail 10 m long at 20°C is heated to 60°C. Find the increase in length. $\\alpha_{steel} = 12 \\times 10^{-6}$ K⁻¹. $\\Delta L = 10 \\times 12 \\times 10^{-6} \\times 40 = 4.8 \\times 10^{-3}$ m = 4.8 mm.",
-    "An aluminum rod is 2.000 m long at 20°C. What is its length at 100°C? $\\alpha_{Al} = 24 \\times 10^{-6}$ K⁻¹. $L = 2.000(1 + 24 \\times 10^{-6} \\times 80) = 2.000(1 + 0.00192) = 2.00384$ m.",
-    "A brass pendulum clock keeps correct time at 20°C. How much does it lose per day at 40°C? $\\alpha_{brass} = 19 \\times 10^{-6}$ K⁻¹. Fractional period change: $\\Delta T/T = \\frac{1}{2}\\alpha\\Delta T = \\frac{1}{2} \\times 19 \\times 10^{-6} \\times 20 = 1.9 \\times 10^{-4}$. Loss per day: $1.9 \\times 10^{-4} \\times 86400 = 16.4$ seconds.",
-    "A steel rod of length 1 m is rigidly fixed at both ends. If temperature rises by 50°C, find the thermal stress. $\\sigma = Y\\alpha\\Delta T = 200 \\times 10^9 \\times 12 \\times 10^{-6} \\times 50 = 120 \\times 10^6$ Pa = 120 MPa.",
-    "A bimetallic strip is made of brass ($\\alpha = 19 \\times 10^{-6}$) and iron ($\\alpha = 12 \\times 10^{-6}$). When heated, which metal is on the outer side of the curve? Brass expands more, so it is on the OUTER side of the curve (the convex side). The strip curves with brass on the outside.",
-    "A metal rod expands by 0.12% when heated from 0°C to 100°C. Find $\\alpha$. $\\frac{\\Delta L}{L_0} = 0.0012 = \\alpha \\times 100$. $\\alpha = 12 \\times 10^{-6}$ K⁻¹. This is typical of steel."
+    "Why are railway rails welded in segments with gaps in hot climates?"
   ],
   "universalFacts": [
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding linear expansion builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of linear expansion span engineering, physics, economics, and computer science.",
-    "The concept of thermal expansion was first quantified by René Antoine Ferchault de Réaumur in 1730, who showed that different materials expand by different amounts for the same temperature change.",
-    "The coefficient of linear expansion is related to the material's melting point — materials with higher melting points generally have smaller $\\alpha$ because their atomic bonds are stronger.",
-    "Invar (Fe-36%Ni) was invented by Charles Édouard Guillaume in 1896 specifically for its near-zero expansion. He won the Nobel Prize in Physics in 1920 for this discovery.",
-    "Thermal expansion is exploited in \"shrink fitting\" — a metal ring is heated, placed over a shaft, and as it cools it contracts to form an extremely tight interference fit. This is used in bearing installation.",
-    "The Earth's crust experiences thermal expansion and contraction daily, contributing to weathering and rock fracturing. This is one of the most important physical weathering processes in geology."
+    "Invar (α ≈ 1.2×10⁻⁶ K⁻¹) is used for pendulum rods and precision instruments because it barely expands."
   ],
   "animation3D": "thermal-expansion",
   "motionGraphics": "thermal-expansion",
   "examples": [
-    "Real-world application of Linear Expansion",
-    "Practical demonstration of Linear Expansion concepts",
-    "Diagram-based question on Linear Expansion",
-    "Application in daily life involving Linear Expansion"
+    "***NEB 2024*** — 2 m steel rod, 100 °C rise: ΔL = 2.4 mm."
   ],
   "practiceQuestions": [
-    "Q2. Solve problems related to Linear Expansion.",
-    "Q3. Differentiate between various aspects of Linear Expansion.",
-    "Q4. Derive the key formula related to Linear Expansion.",
-    "Q5. What are the applications of Linear Expansion?"
+    "**Numerical (3m): A brass rod 80 cm long at 15 °C is heated to 75 °C (α = 1.9×10⁻⁵ K⁻¹). Find ΔL.** — ΔL = 1.9×10⁻⁵ × 0.8 × 60 = 9.12×10⁻⁴ m ≈ 0.91 mm."
   ],
   "formulas": [
-    "Key Formula 2: Mathematical expression of Linear Expansion",
-    "Key Formula 3: Application formula for Linear Expansion",
-    "Key Formula 4: Derivation result for Linear Expansion",
-    "Key Formula 5: Important relation in Linear Expansion"
+    "- ΔL = αLΔT; L_T = L₀(1 + αΔT)\n- α = ΔL/(LΔT)\n- T_pendulum = 2π√(L/g)"
   ],
-  "summary": "Linear Expansion is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "Solids expand on heating according to $\\Delta L = \\alpha L \\Delta T$, where the **coefficient of linear expansion** α (K⁻¹) is the fractional length increase per degree (NEB 2019, 2022 definitions). It is measured by fixing one end of a rod and reading the tiny extension at the other with a micrometer screw or optical lever while the temperature rises by ΔT. NEB's numericals: α = 1.7×10⁻⁵ K⁻¹ from a 1 m rod growing 1.7 mm per 100 °C (2019); a 1 m rod over 80 °C gains 0.96 mm (2021); a 2 m steel rod over 100 °C gains 2.4 mm (2024). Consequences are everywhere — and a pendulum clock **loses time in summer** because $T = 2\\pi\\sqrt{L/g}$ lengthens with the rod (NEB 2024).",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Linear Expansion applies",
     "Note 2: Linear Expansion connects to multiple other topics in Science",
@@ -87,23 +40,13 @@
     "Note 5: Linear Expansion frequently appears in examination questions"
   ],
   "importantNotes": [
-    "Note 2: Remember the distinction between different types in Linear Expansion",
-    "Note 3: Linear Expansion has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Linear Expansion",
-    "Note 5: Cross-check your answers using alternative methods for Linear Expansion"
+    "Verified PYQs: definition 2019+2022 2m; rod numericals 2021 3m, 2024 2m; pendulum clock 2024 2m."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Linear Expansion formula",
-    "Trick 2: Elimination technique for Linear Expansion MCQs",
-    "Trick 3: Dimensional analysis shortcut for Linear Expansion",
-    "Trick 4: Memory aid for Linear Expansion formulas",
-    "Trick 5: Time-saving approach for Linear Expansion problems"
+    "\"ΔL = αLΔT — three multiplies, one answer.\""
   ],
   "examNotes": [
-    "Focus on numerical problems from Linear Expansion",
-    "Practice previous year questions on Linear Expansion",
-    "Learn the derivations for Linear Expansion thoroughly",
-    "Review common mistakes related to Linear Expansion"
+    "Five PYQs in five years — this is the most-tested heat topic so far."
   ],
   "mcs": [
     {
@@ -148,11 +91,7 @@
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Linear Expansion",
-    "Concept 2: Key theorem or principle in Linear Expansion",
-    "Concept 3: Important application area of Linear Expansion",
-    "Concept 4: Fundamental relationship in Linear Expansion",
-    "Concept 5: Connection between Linear Expansion and other topics"
+    "**One coefficient, three expansions:** α (linear), β = 2α (superficial), γ = 3α (cubical)."
   ],
   "importantTasks": [
     "Task 1: Solve 10 numerical problems on Linear Expansion",
@@ -163,16 +102,146 @@
   ],
   "visualType": "thermal-expansion",
   "keyPoints": [
-    "Key Point 2: Essential theorem or principle related to Linear Expansion",
-    "Key Point 3: Important condition or constraint for Linear Expansion",
-    "Key Point 4: Common applications of Linear Expansion",
-    "Key Point 5: Connection to other topics in Science"
+    "$\\Delta L = \\alpha L \\Delta T$; α in K⁻¹; steel 12×10⁻⁶.",
+    "Clock: T = 2π√(L/g) grows with L — summer slow."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Linear Expansion",
-    "Statement 2: Theorem related to Linear Expansion",
-    "Statement 3: Condition for Linear Expansion to be valid",
-    "Statement 4: Principle governing Linear Expansion",
-    "Statement 5: Corollary or consequence of Linear Expansion"
+    "\"The coefficient of linear expansion is the increase in length per unit original length per degree rise in temperature.\""
+  ],
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Solids Grow When Warm\n\nRailway tracks buckle in summer, bridges have toothed expansion joints, and a pendulum clock keeps different time in winter and summer. All trace to one simple law: a solid's length grows in proportion to its original length and its temperature rise.",
+      "## 2. Fundamental Concepts (NEB 2019, 2021, 2022, 2024)\n\n### 2.1 Coefficient of linear expansion\n\n**Definition:** the fractional increase in length per degree rise in temperature:\n$$\\alpha = \\frac{\\Delta L / L}{\\Delta T} \\Rightarrow \\Delta L = \\alpha L \\Delta T, \\quad L_T = L_0(1 + \\alpha \\Delta T)$$\n**SI unit: K⁻¹** (or °C⁻¹ — the same size interval). Typical values: steel 12×10⁻⁶, aluminium 24×10⁻⁶, invar 1.2×10⁻⁶ K⁻¹.\n\n### 2.2 Measurement of α (comparison method)\n\nA rod is supported on a horizontal frame with one end fixed; a **micrometer screw / optical lever** at the other end measures the tiny extension $\\Delta L$ when the rod's temperature rises by $\\Delta T$ (measured with a thermocouple or thermometer). Then $\\alpha = \\Delta L/(L\\,\\Delta T)$.\n\n### 2.3 Worked numericals\n\n**Q (2m, 2019):** Define the coefficient of linear expansion. A metal rod is 1 m long at 0 °C and 1.0017 m at 100 °C. Find α.\n- Definition as above. $\\alpha = \\dfrac{1.0017 - 1}{1 \\times 100} = 1.7 \\times 10^{-5}$ K⁻¹\n\n**Q (3m, 2021):** A metal rod of length 1 m at 20 °C is heated to 100 °C. If α = 1.2×10⁻⁵ K⁻¹, find the increase in length and the final length.\n- $\\Delta L = \\alpha L \\Delta T = 1.2\\times10^{-5} \\times 1 \\times 80 = 9.6 \\times 10^{-4}$ m = 0.96 mm\n- $L = 1.00096$ m\n\n**Q (2m, 2024):** A steel rod 2 m long at 20 °C is heated to 120 °C. By how much does it expand? (α = 12×10⁻⁶ K⁻¹)\n- $\\Delta L = 12\\times10^{-6} \\times 2 \\times 100 = 2.4 \\times 10^{-3}$ m = **2.4 mm**\n\n### 2.4 Pendulum clock (NEB 2024)\n\n**Q (2m, 2024):** A pendulum clock keeps correct time in winter but loses time in summer. Explain why.\nThe pendulum's length increases in summer ($L_T = L_0(1+\\alpha\\Delta T)$), so its period $T = 2\\pi\\sqrt{L/g}$ **increases** — each swing takes longer and the clock runs slow (loses time). In winter L decreases and it gains.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 47:** $\\beta = 2\\alpha$ (superficial), $\\gamma = 3\\alpha$ (cubical) — one coefficient generates all three.\n- **To SHM/pendulum:** period depends on length — thermal expansion perturbs timekeeping.\n- **To engineering:** expansion joints, bimetallic strips (thermostats), gaps in rails.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2075/2019 | Heat | Thermal expansion | Define the coefficient of linear expansion. A metal rod is 1 m long at 0 °C and 1.0017 m at 100 °C. Find α. | 2 | Definition + numerical |\n| 2077/2021 | Heat | Thermal expansion | A metal rod of length 1 m at 20 °C is heated to 100 °C. If α = 1.2×10⁻⁵ K⁻¹, find the increase in length and the final length. | 3 | Numerical |\n| 2078/2022 | Heat | Thermal expansion | Define the coefficient of linear expansivity and write its formula and SI unit. | 2 | Definition |\n| 2080/2024 | Heat | Thermal expansion | A steel rod 2 m long at 20 °C is heated to 120 °C. By how much does it expand? (α = 12×10⁻⁶ K⁻¹) | 2 | Numerical |\n| 2080/2024 | Heat | Thermal expansion | A pendulum clock keeps correct time in winter but loses time in summer. Explain why. | 2 | Explanation |\n\n### 4.2 Common examination mistakes\n\n1. Using °C change and forgetting the final length needs ΔL added to L.\n2. Writing the unit as K instead of K⁻¹.\n3. For the clock: omitting the $T = 2\\pi\\sqrt{L/g}$ link."
+    ],
+    "confusion": [
+      "**α's unit is K⁻¹**, not K — it is per-degree fractional change.",
+      "**Clocks lose time in summer** because longer pendulum → longer period → slower ticking."
+    ],
+    "keyPoints": [
+      "$\\Delta L = \\alpha L \\Delta T$; α in K⁻¹; steel 12×10⁻⁶.",
+      "Clock: T = 2π√(L/g) grows with L — summer slow."
+    ],
+    "importantConcepts": [
+      "**One coefficient, three expansions:** α (linear), β = 2α (superficial), γ = 3α (cubical)."
+    ],
+    "examples": [
+      "***NEB 2024*** — 2 m steel rod, 100 °C rise: ΔL = 2.4 mm."
+    ],
+    "universalFacts": [
+      "Invar (α ≈ 1.2×10⁻⁶ K⁻¹) is used for pendulum rods and precision instruments because it barely expands."
+    ],
+    "importantStatements": [
+      "\"The coefficient of linear expansion is the increase in length per unit original length per degree rise in temperature.\""
+    ],
+    "importantNotes": [
+      "Verified PYQs: definition 2019+2022 2m; rod numericals 2021 3m, 2024 2m; pendulum clock 2024 2m."
+    ],
+    "examShortTricks": [
+      "\"ΔL = αLΔT — three multiplies, one answer.\""
+    ],
+    "examNotes": [
+      "Five PYQs in five years — this is the most-tested heat topic so far."
+    ],
+    "formulas": [
+      "- ΔL = αLΔT; L_T = L₀(1 + αΔT)\n- α = ΔL/(LΔT)\n- T_pendulum = 2π√(L/g)"
+    ],
+    "practice": [
+      "Why are railway rails welded in segments with gaps in hot climates?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A brass rod 80 cm long at 15 °C is heated to 75 °C (α = 1.9×10⁻⁵ K⁻¹). Find ΔL.** — ΔL = 1.9×10⁻⁵ × 0.8 × 60 = 9.12×10⁻⁴ m ≈ 0.91 mm."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "The SI unit of the coefficient of linear expansion is:",
+      "options": [
+        "K",
+        "K⁻¹",
+        "K m⁻¹",
+        "K m"
+      ],
+      "answer": "B",
+      "explanation": "Fractional change per kelvin."
+    },
+    {
+      "question": "NEB 2019: 1 m → 1.0017 m over 100 °C. α =",
+      "options": [
+        "1.7×10⁻⁵ K⁻¹",
+        "1.7×10⁻³ K⁻¹",
+        "1.2×10⁻⁵ K⁻¹",
+        "0.0017 K⁻¹"
+      ],
+      "answer": "A",
+      "explanation": "0.0017/100."
+    },
+    {
+      "question": "NEB 2024: 2 m steel rod, 100 °C rise, α = 12×10⁻⁶. ΔL =",
+      "options": [
+        "1.2 mm",
+        "2.4 mm",
+        "24 mm",
+        "0.24 mm"
+      ],
+      "answer": "B",
+      "explanation": "12×10⁻⁶×2×100."
+    },
+    {
+      "question": "A pendulum clock loses time in summer because:",
+      "options": [
+        "g decreases",
+        "L increases → period increases",
+        "Mass increases",
+        "Air is denser"
+      ],
+      "answer": "B",
+      "explanation": "T = 2π√(L/g)."
+    },
+    {
+      "question": "The superficial coefficient β relates to α as:",
+      "options": [
+        "β = α",
+        "β = 2α",
+        "β = 3α",
+        "β = α²"
+      ],
+      "answer": "B",
+      "explanation": "Area doubles the effect."
+    },
+    {
+      "question": "Which material expands least?",
+      "options": [
+        "Aluminium",
+        "Steel",
+        "Invar",
+        "Brass"
+      ],
+      "answer": "C",
+      "explanation": "Invar α ≈ 1.2×10⁻⁶."
+    },
+    {
+      "question": "NEB 2021: 1 m rod, 20→100 °C, α = 1.2×10⁻⁵. Final length:",
+      "options": [
+        "1.00096 m",
+        "1.0096 m",
+        "1.096 m",
+        "1.96 m"
+      ],
+      "answer": "A",
+      "explanation": "ΔL = 0.96 mm."
+    },
+    {
+      "question": "Expansion joints in bridges exist because:",
+      "options": [
+        "Bridges sink",
+        "Solids expand on heating",
+        "Wind moves them",
+        "Paint peels"
+      ],
+      "answer": "B",
+      "explanation": "Thermal expansion needs room."
+    }
   ]
 }

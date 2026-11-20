@@ -5,89 +5,33 @@
   "topicTitle": "Liquid expansion: absolute and apparent",
   "relevance": 100,
   "notes": [
-    "**Why liquids need special treatment:** Unlike solids, liquids cannot maintain a fixed shape and must be contained. When heated, BOTH the liquid and the container expand, making direct measurement of liquid expansion impossible without correction.",
-    "**Absolute (real) expansion:** The actual increase in volume of the liquid itself, independent of the container. $\\Delta V_{abs} = V_0 \\gamma_{liq} \\Delta T$, where $\\gamma_{liq}$ is the coefficient of cubical expansion of the liquid.",
-    "**Apparent expansion:** The observed increase in volume of the liquid as read from the container's scale. Since the container also expands, the scale marks move apart, making the liquid level appear to rise LESS than it actually does.",
-    "**Formula:** $\\gamma_{app} = \\gamma_{liq} - \\gamma_{container}$. Therefore $\\gamma_{liq} = \\gamma_{app} + \\gamma_{container}$. The absolute expansion equals the apparent expansion plus the container's expansion.",
-    "**Physical picture:** Imagine a flask marked with graduated lines. When heated, the glass expands and the marks move farther apart. The liquid also expands and rises. The net rise on the (now-spreading) scale is the apparent expansion.",
-    "**Mercury thermometer principle:** Mercury has $\\gamma \\approx 182 \\times 10^{-6}$ K⁻¹ while glass has $\\gamma \\approx 27 \\times 10^{-6}$ K⁻¹. The apparent expansion coefficient is $\\gamma_{app} = 155 \\times 10^{-6}$ K⁻¹, large enough to give readable scale divisions.",
-    "**Anomalous expansion of water:** Water CONTRACTS from 0°C to 4°C and expands above 4°C. Its density is maximum at 4°C ($\\rho = 1.0000$ g/cm³). Below 4°C, $\\gamma$ is negative — water behaves opposite to normal liquids.",
-    "**Consequence for lakes:** In winter, surface water cools to 4°C and sinks (maximum density). Water below 4°C is less dense and stays at the bottom. Ice forms at 0°C on the surface, insulating the water below and allowing aquatic life to survive.",
-    "**Measuring $\\gamma_{liq}$ — the weight thermometer:** A glass bulb with a capillary is filled with mercury or the liquid. It is weighed empty, filled, then heated. The mass of liquid expelled is measured. $\\gamma_{app} = \\frac{m_{expelled}}{m_{remaining} \\times \\Delta T}$.",
-    "**Correction for glass expansion:** Since the glass bulb also expands, the true coefficient is $\\gamma_{liq} = \\gamma_{app} + \\gamma_{glass}$. For mercury in glass: $\\gamma_{liq} = 155 \\times 10^{-6} + 27 \\times 10^{-6} = 182 \\times 10^{-6}$ K⁻¹.",
-    "**NEB exam focus:** Distinguish between absolute and apparent expansion. Derive $\\gamma_{liq} = \\gamma_{app} + \\gamma_{glass}$. Explain the anomalous expansion of water and its ecological significance. Solve weight thermometer problems.",
-    "**Ethanol vs. mercury:** Ethanol ($\\gamma \\approx 750 \\times 10^{-6}$ K⁻¹) expands much more than mercury, making ethanol thermometers more sensitive. However, ethanol's boiling point (78°C) limits its range, while mercury works to 357°C.",
-    "**Practical application — liquid-in-glass thermometers:** The scale is calibrated using fixed points (ice point 0°C, steam point 100°C). The apparent expansion determines the distance between divisions. Different liquids give different scales.",
-    "**Common values:** Mercury: $\\gamma = 182 \\times 10^{-6}$ K⁻¹. Ethanol: $\\gamma = 750 \\times 10^{-6}$ K⁻¹. Glycerin: $\\gamma = 500 \\times 10^{-6}$ K⁻¹. Water (above 4°C): $\\gamma \\approx 210 \\times 10^{-6}$ K⁻¹ at 20°C.",
-    "**Why $\\gamma_{liq} > \\gamma_{solid}$ always:** In liquids, molecules are less tightly bound than in solids. Heating gives molecules more kinetic energy to overcome intermolecular forces, leading to larger volume increases per degree.",
-    "**Liquid Expansion:** This topic covers the fundamental concepts of liquid expansion in the physics curriculum.",
-    "Understanding liquid expansion is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to liquid expansion should be memorized and practiced regularly.",
-    "# Liquid expansion: absolute and apparent\n\n## 1. Introduction\nPhysical picture of **Liquid expansion** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I). Prose depth is written in the Thermal Expansion fill pass.\n\n## 2. Concepts and laws\n### Liquid expansion: absolute and apparent\n\nEach law is stated in words plus its equation, symbols, SI units, sign convention and limits of validity (§3, block II).",
-    "## 3. Derivation block\nAssumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.\n\n**Table 1 — Law and result sheet**\n\n| Law or result | Statement (words) | Equation + symbols | SI units | When it holds |\n| --- | --- | --- | --- | --- |",
-    "## 4. Formula and units table\n\n**Table 2 — Quantities and relations**\n\n| Quantity | Symbol + SI unit | Relation | Graph to read |\n| --- | --- | --- | --- |\n\n**Table 3 — Summary and marks map**\n\n| Sub-topic | One-line essence | NEB pattern trend |\n| --- | --- | --- |\n\nEvery formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1).",
-    "## 5. Diagrams and figures\n- **D1** — Liquid expansion — free-body and field picture (authored SVG — English labels, viewBox 900×640)\n- **D2** — Liquid expansion — graph or second construction (authored SVG — axes, units and labels)\n- **D3** — Liquid expansion — detailed reference plate (curated external — English labels; source, author and license recorded at fill)\n- **D4** — Liquid expansion — apparatus or application figure (curated external — license recorded at fill)\n\nSlots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y); graphs are plotted from numbers the note provides.",
-    "## 6. Worked numericals\n≥ 5 on calculation topics, Pioneer and Jha style: Given → Formula → Substitution → Answer with unit and significant figures, difficulty ladder (block V) — written in the unit fill pass.\n\n## 7. Key terms, signs and traps\nSign conventions, common mistakes and validity conditions gathered where the derivation points to them (block VIII part).",
-    "## 8. Exam Zone and self-check\nNEB derivation list plus typical numericals, topic MCQs with explanations, short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.\n\nKey-result table, self-check problems and the common-mistakes list (block VIII) — completed in the unit fill pass."
+    "## 1. Topic Introduction — Liquids Take the Shape of the Question\n\nA heated liquid expands — but observed through a container, part of the expansion is swallowed by the expanding glass. Physics separates the **apparent** expansion (what you see) from the **absolute** expansion (what really happens): their difference is the container's expansion. And water, uniquely, breaks the rule between 0 °C and 4 °C.",
+    "## 2. Fundamental Concepts\n\n### 2.1 Real (absolute) and apparent expansion\n\nWhen a liquid in a vessel of volume $V_0$ is heated by ΔT:\n- **Absolute (real) expansion:** the true volume increase of the liquid: $\\Delta V_{real} = \\gamma_r V_0 \\Delta T$, with γ_r the **coefficient of absolute (real) cubical expansion**.\n- **Apparent expansion:** the observed increase (liquid level in the vessel): $\\Delta V_{app} = \\gamma_a V_0 \\Delta T$, with γ_a the **apparent coefficient**.\n- The vessel's cavity expands too: $\\Delta V_{vessel} = \\gamma_g V_0 \\Delta T$ (γ_g = cubical coefficient of the vessel material).\n\n$$\\gamma_r = \\gamma_a + \\gamma_g$$\n— the real expansion is the apparent expansion plus the vessel's expansion.\n\n### 2.2 Density change\n\n$$\\rho_T = \\frac{\\rho_0}{1 + \\gamma_r \\Delta T} \\approx \\rho_0(1 - \\gamma_r \\Delta T)$$\n\n### 2.3 Anomalous expansion of water (NEB 2024)\n\n**Q (3m, 2024):** What is the anomalous expansion of water? Explain its importance for aquatic life in cold climates.\n\n**Answer:** Between 0 °C and 4 °C, water **contracts on heating** (and expands on cooling) — the opposite of normal behaviour. Water has **maximum density at 4 °C** (999.97 kg/m³); below 4 °C it expands, so ice floats and 0 °C water sits above 4 °C water.\n\n**Importance for aquatic life:** in winter, a lake cools from the top; when surface water reaches 4 °C it sinks (densest), circulating until the whole lake is at 4 °C. Further cooling makes the surface *less* dense, so it stays on top and finally freezes. The ice layer insulates the water below, which remains at ~4 °C — fish and other aquatic life survive the winter in this denser, unfrozen bottom layer.\n\n### 2.4 Worked numericals\n\n**Q (NEB-style):** The apparent expansion of a liquid in a glass vessel is 0.9×10⁻⁴ K⁻¹. If γ_glass = 2.5×10⁻⁵ K⁻¹, find the real coefficient.\n$\\gamma_r = \\gamma_a + \\gamma_g = 9\\times10^{-5} + 2.5\\times10^{-5} = 1.15 \\times 10^{-4}$ K⁻¹.\n\n**Q (NEB-style):** A density bottle holds 100 g of liquid at 0 °C and 96 g at 100 °C (bottle calibrated). Find γ_r of the liquid.\nMass expelled = 4 g from 100 g → ΔV/V = 4/96 = 0.0417 over 100 °C → γ_r = 4.17×10⁻⁴ K⁻¹.",
+    "## 3. Conceptual Relationships\n\n- **To Topic 47:** γ_r and γ_a are cubical coefficients; the vessel's γ_g = 3α_glass.\n- **To Topic 49:** Dulong–Petit measures γ_r using the apparent expansion in two different vessels.\n- **To density bottle / hydrometer:** liquid expansion instruments.",
+    "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Heat | Thermal expansion | What is the anomalous expansion of water? Explain its importance for aquatic life in cold climates. | 3 | Explanation |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Distinguish real and apparent expansion; derive γ_r = γ_a + γ_g (4m).\n2. Density-bottle numerical (3m).\n\n### 4.3 Common examination mistakes\n\n1. Adding γ_g with the wrong sign — real = apparent + vessel.\n2. Omitting the 4 °C maximum-density fact in the anomaly answer.\n3. Saying \"ice is denser than water\" — ice floats because it is *less* dense."
   ],
   "confusion": [
-    "❌ Apparent expansion equals absolute expansion. ✅ Apparent expansion is LESS than absolute expansion because the container also expands. $\\gamma_{app} = \\gamma_{liq} - \\gamma_{container} < \\gamma_{liq}$.",
-    "❌ The apparent expansion of a liquid is independent of the container material. ✅ The apparent expansion DEPENDS on the container. A liquid in a copper container ($\\gamma_{Cu} \\approx 51 \\times 10^{-6}$) shows less apparent expansion than in glass ($\\gamma_{glass} \\approx 27 \\times 10^{-6}$).",
-    "❌ Water expands uniformly when cooled from 10°C to 0°C. ✅ Water CONTRACTS when cooled from 10°C to 4°C (reaches maximum density at 4°C), then EXPANDS from 4°C to 0°C. This anomalous behavior is unique among common liquids.",
-    "❌ A liquid's absolute expansion can be measured directly with any container. ✅ It CANNOT — the container always expands. You must either use a container with negligible expansion (impossible) or apply the correction $\\gamma_{liq} = \\gamma_{app} + \\gamma_{container}$.",
-    "❌ The weight of the liquid changes when heated. ✅ The MASS is constant. Only the volume changes. The weight thermometer measures the mass of liquid expelled, not its weight changing.",
-    "❌ All liquids expand when heated. ✅ Most liquids expand, but water between 0°C and 4°C CONTRACTS. Some alloys (like invar) also show anomalous expansion behavior over certain temperature ranges.",
-    "❌ Ice floating is due to water's density being the same as liquid water. ✅ Ice is LESS dense than liquid water (about 9% less) because water EXPANDS upon freezing. This is a direct consequence of the anomalous expansion below 4°C.",
-    "Carefully distinguish between similar-looking concepts in liquid expansion.",
-    "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "**Real vs apparent:** you see the apparent; the real includes the vessel's own expansion: γ_r = γ_a + γ_g.",
+    "**Water's anomaly is 0–4 °C only** — above 4 °C water behaves normally."
   ],
   "practice": [
-    "A glass flask of 200 cm³ capacity is filled with mercury at 20°C. Both are heated to 80°C. Find the amount of mercury that overflows. $\\gamma_{glass} = 27 \\times 10^{-6}$, $\\gamma_{Hg} = 182 \\times 10^{-6}$, $\\Delta T = 60$ K. Overflow = $V_0(\\gamma_{Hg} - \\gamma_{glass})\\Delta T = 200 \\times 155 \\times 10^{-6} \\times 60 = 1.86$ cm³.",
-    "A weight thermometer contains 50 g of mercury at 10°C. When heated to 60°C, 0.75 g of mercury is expelled. Find $\\gamma_{app}$ and $\\gamma_{liq}$ of mercury. $\\gamma_{app} = \\frac{0.75}{50 - 0.75} \\times \\frac{1}{50} = \\frac{0.75}{49.25 \\times 50} = 3.05 \\times 10^{-4}$ K⁻¹. $\\gamma_{liq} = 3.05 \\times 10^{-4} + 2.7 \\times 10^{-5} = 3.32 \\times 10^{-4}$ K⁻¹ ≈ 182 × 10⁻⁶ (reasonable for Hg).",
-    "Why does a fully filled glass bottle of water crack when frozen? Water expands by about 9% when it freezes (0°C liquid → 0°C ice). The container cannot accommodate this volume increase, creating enormous pressure that exceeds glass's tensile strength.",
-    "A liquid has $\\gamma_{app} = 1.5 \\times 10^{-4}$ K⁻¹ in a glass container ($\\gamma_{glass} = 2.7 \\times 10^{-5}$ K⁻¹). What is its absolute expansion coefficient? $\\gamma_{liq} = \\gamma_{app} + \\gamma_{glass} = 1.5 \\times 10^{-4} + 0.27 \\times 10^{-4} = 1.77 \\times 10^{-4}$ K⁻¹.",
-    "A 100 cm³ py Volum flask is filled with water at 4°C (density max). If heated to 100°C, how much water overflows? $\\gamma_{water} \\approx 2.1 \\times 10^{-4}$ K⁻¹ (average). $\\gamma_{glass} = 2.7 \\times 10^{-5}$ K⁻¹. $\\Delta V = 100 \\times (2.1 \\times 10^{-4} - 0.27 \\times 10^{-4}) \\times 96 = 100 \\times 1.83 \\times 10^{-4} \\times 96 = 1.76$ cm³.",
-    "Explain why a thermometer gives a false reading if the glass bulb expands differently. If the glass bulb's expansion is not uniform (e.g., due to manufacturing defects), the scale calibration is wrong. The apparent expansion $\\gamma_{app}$ varies across the scale, giving inaccurate readings at different temperatures.",
-    "Solve at least 5 problems on liquid expansion from your textbook.",
-    "Try to derive the key formulas from first principles.",
-    "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Why does a mercury thermometer's reading change if you warm the bulb *after* reading?"
   ],
   "universalFacts": [
-    "The anomalous expansion of water was first studied by Daniel Bernoulli in the 18th century. It remains one of the most important anomalies in nature, making life on Earth possible.",
-    "The weight thermometer method for measuring liquid expansion was devised by Dulong and Petit in 1816. It remains the standard laboratory method for determining coefficients of cubical expansion.",
-    "Mercury's relatively low expansion coefficient ($\\gamma = 182 \\times 10^{-6}$) compared to organic liquids makes mercury thermometers stable over a wide range (−39°C to 357°C), which is why they were the standard for over a century.",
-    "The fact that ice floats (density 0.917 g/cm³ vs. water's 1.000 g/cm³) is directly responsible for the survival of aquatic ecosystems in polar regions. Without this anomaly, Earth's climate would be dramatically different.",
-    "Modern digital thermometers have largely replaced liquid-in-glass thermometers in many applications, but the principle of differential expansion between liquid and container remains fundamental to thermal measurement.",
-    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
-    "Understanding liquid expansion builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of liquid expansion span engineering, physics, economics, and computer science."
+    "If water were normal, lakes would freeze from the bottom up and fish would die every winter."
   ],
   "animation3D": "thermal-expansion",
   "motionGraphics": "thermal-expansion",
   "examples": [
-    "Real-world application of Liquid expansion: absolute and apparent",
-    "Practical demonstration of Liquid expansion: absolute and apparent concepts",
-    "Diagram-based question on Liquid expansion: absolute and apparent",
-    "Application in daily life involving Liquid expansion: absolute and apparent",
-    "Real-world application of Liquid Expansion",
-    "Practical demonstration of Liquid Expansion concepts",
-    "Diagram-based question on Liquid Expansion",
-    "Application in daily life involving Liquid Expansion"
+    "***NEB 2024*** — anomaly + aquatic life: ice insulates; fish live in the unfrozen 4 °C layer."
   ],
   "practiceQuestions": [
-    "Q2. Solve problems related to Liquid expansion: absolute and apparent.",
-    "Q3. Differentiate between various aspects of Liquid expansion: absolute and apparent.",
-    "Q4. Derive the key formula related to Liquid expansion: absolute and apparent.",
-    "Q5. What are the applications of Liquid expansion: absolute and apparent?",
-    "Q2. Solve problems related to Liquid Expansion.",
-    "Q3. Differentiate between various aspects of Liquid Expansion.",
-    "Q4. Derive the key formula related to Liquid Expansion.",
-    "Q5. What are the applications of Liquid Expansion?"
+    "**Numerical (3m): A liquid shows apparent γ_a = 1.2×10⁻⁴ K⁻¹ in a copper vessel (α_Cu = 1.7×10⁻⁵ K⁻¹). Find γ_r.** — γ_g = 3α = 5.1×10⁻⁵; γ_r = 1.2×10⁻⁴ + 5.1×10⁻⁵ = 1.71×10⁻⁴ K⁻¹."
   ],
-  "formulas": [],
-  "summary": "Liquid expansion: absolute and apparent is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics. Liquid Expansion is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "formulas": [
+    "- γ_r = γ_a + γ_g\n- ρ_T = ρ₀/(1 + γ_rΔT)\n- Water: max density at 4 °C"
+  ],
+  "summary": "A heated liquid's true growth is its **absolute (real) expansion** $\\Delta V_r = \\gamma_r V_0 \\Delta T$, but a vessel observer sees only the **apparent expansion** $\\Delta V_a = \\gamma_a V_0 \\Delta T$, because the vessel's cavity expands too: $\\gamma_r = \\gamma_a + \\gamma_g$ (γ_g = 3α of the vessel material). Density falls as $\\rho_T = \\rho_0/(1+\\gamma_r\\Delta T)$. **Water is anomalous**: between 0 °C and 4 °C it *contracts* on heating, reaching maximum density at 4 °C — so winter lakes stratify with 4 °C water at the bottom, ice forms and floats on top as an insulating blanket, and aquatic life survives (NEB 2024, 3m).",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Liquid expansion: absolute and apparent applies",
     "Note 2: Liquid expansion: absolute and apparent connects to multiple other topics in Science",
@@ -101,36 +45,13 @@
     "Note 5: Liquid Expansion frequently appears in examination questions"
   ],
   "importantNotes": [
-    "Note 2: Remember the distinction between different types in Liquid expansion: absolute and apparent",
-    "Note 3: Liquid expansion: absolute and apparent has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Liquid expansion: absolute and apparent",
-    "Note 5: Cross-check your answers using alternative methods for Liquid expansion: absolute and apparent",
-    "Note 2: Remember the distinction between different types in Liquid Expansion",
-    "Note 3: Liquid Expansion has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Liquid Expansion",
-    "Note 5: Cross-check your answers using alternative methods for Liquid Expansion"
+    "Verified PYQ: anomalous expansion + aquatic life (2024, 3m)."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Liquid expansion: absolute and apparent formula",
-    "Trick 2: Elimination technique for Liquid expansion: absolute and apparent MCQs",
-    "Trick 3: Dimensional analysis shortcut for Liquid expansion: absolute and apparent",
-    "Trick 4: Memory aid for Liquid expansion: absolute and apparent formulas",
-    "Trick 5: Time-saving approach for Liquid expansion: absolute and apparent problems",
-    "Trick 1: Quick method to identify applicable Liquid Expansion formula",
-    "Trick 2: Elimination technique for Liquid Expansion MCQs",
-    "Trick 3: Dimensional analysis shortcut for Liquid Expansion",
-    "Trick 4: Memory aid for Liquid Expansion formulas",
-    "Trick 5: Time-saving approach for Liquid Expansion problems"
+    "\"Anomaly answer: 0–4 °C contracts → max density 4 °C → ice floats → insulated lake → life survives.\""
   ],
   "examNotes": [
-    "Focus on numerical problems from Liquid expansion: absolute and apparent",
-    "Practice previous year questions on Liquid expansion: absolute and apparent",
-    "Learn the derivations for Liquid expansion: absolute and apparent thoroughly",
-    "Review common mistakes related to Liquid expansion: absolute and apparent",
-    "Focus on numerical problems from Liquid Expansion",
-    "Practice previous year questions on Liquid Expansion",
-    "Learn the derivations for Liquid Expansion thoroughly",
-    "Review common mistakes related to Liquid Expansion"
+    "The 2024 question is a 3m explanation — write the lake-stratification chain in order."
   ],
   "mcs": [
     {
@@ -215,16 +136,7 @@
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Liquid expansion: absolute and apparent",
-    "Concept 2: Key theorem or principle in Liquid expansion: absolute and apparent",
-    "Concept 3: Important application area of Liquid expansion: absolute and apparent",
-    "Concept 4: Fundamental relationship in Liquid expansion: absolute and apparent",
-    "Concept 5: Connection between Liquid expansion: absolute and apparent and other topics",
-    "Concept 1: Core definition of Liquid Expansion",
-    "Concept 2: Key theorem or principle in Liquid Expansion",
-    "Concept 3: Important application area of Liquid Expansion",
-    "Concept 4: Fundamental relationship in Liquid Expansion",
-    "Concept 5: Connection between Liquid Expansion and other topics"
+    "**The 4 °C refuge:** the anomaly stratifies winter lakes with dense 4 °C water at the bottom."
   ],
   "importantTasks": [
     "Task 1: Solve 10 numerical problems on Liquid expansion: absolute and apparent",
@@ -238,7 +150,148 @@
     "Task 4: Practice previous year exam questions on Liquid Expansion",
     "Task 5: Explain Liquid Expansion to a peer or study group"
   ],
-  "keyPoints": [],
-  "importantStatements": [],
-  "source": "skeleton-v2"
+  "keyPoints": [
+    "γ_r = γ_a + γ_g; water's maximum density at 4 °C.",
+    "Anomaly → ice floats → lakes freeze top-down → aquatic life survives at ~4 °C."
+  ],
+  "importantStatements": [
+    "\"Water has maximum density at 4 °C; between 0 °C and 4 °C it contracts on heating.\""
+  ],
+  "source": "skeleton-v2",
+  "enrichedContent": {
+    "notes": [
+      "## 1. Topic Introduction — Liquids Take the Shape of the Question\n\nA heated liquid expands — but observed through a container, part of the expansion is swallowed by the expanding glass. Physics separates the **apparent** expansion (what you see) from the **absolute** expansion (what really happens): their difference is the container's expansion. And water, uniquely, breaks the rule between 0 °C and 4 °C.",
+      "## 2. Fundamental Concepts\n\n### 2.1 Real (absolute) and apparent expansion\n\nWhen a liquid in a vessel of volume $V_0$ is heated by ΔT:\n- **Absolute (real) expansion:** the true volume increase of the liquid: $\\Delta V_{real} = \\gamma_r V_0 \\Delta T$, with γ_r the **coefficient of absolute (real) cubical expansion**.\n- **Apparent expansion:** the observed increase (liquid level in the vessel): $\\Delta V_{app} = \\gamma_a V_0 \\Delta T$, with γ_a the **apparent coefficient**.\n- The vessel's cavity expands too: $\\Delta V_{vessel} = \\gamma_g V_0 \\Delta T$ (γ_g = cubical coefficient of the vessel material).\n\n$$\\gamma_r = \\gamma_a + \\gamma_g$$\n— the real expansion is the apparent expansion plus the vessel's expansion.\n\n### 2.2 Density change\n\n$$\\rho_T = \\frac{\\rho_0}{1 + \\gamma_r \\Delta T} \\approx \\rho_0(1 - \\gamma_r \\Delta T)$$\n\n### 2.3 Anomalous expansion of water (NEB 2024)\n\n**Q (3m, 2024):** What is the anomalous expansion of water? Explain its importance for aquatic life in cold climates.\n\n**Answer:** Between 0 °C and 4 °C, water **contracts on heating** (and expands on cooling) — the opposite of normal behaviour. Water has **maximum density at 4 °C** (999.97 kg/m³); below 4 °C it expands, so ice floats and 0 °C water sits above 4 °C water.\n\n**Importance for aquatic life:** in winter, a lake cools from the top; when surface water reaches 4 °C it sinks (densest), circulating until the whole lake is at 4 °C. Further cooling makes the surface *less* dense, so it stays on top and finally freezes. The ice layer insulates the water below, which remains at ~4 °C — fish and other aquatic life survive the winter in this denser, unfrozen bottom layer.\n\n### 2.4 Worked numericals\n\n**Q (NEB-style):** The apparent expansion of a liquid in a glass vessel is 0.9×10⁻⁴ K⁻¹. If γ_glass = 2.5×10⁻⁵ K⁻¹, find the real coefficient.\n$\\gamma_r = \\gamma_a + \\gamma_g = 9\\times10^{-5} + 2.5\\times10^{-5} = 1.15 \\times 10^{-4}$ K⁻¹.\n\n**Q (NEB-style):** A density bottle holds 100 g of liquid at 0 °C and 96 g at 100 °C (bottle calibrated). Find γ_r of the liquid.\nMass expelled = 4 g from 100 g → ΔV/V = 4/96 = 0.0417 over 100 °C → γ_r = 4.17×10⁻⁴ K⁻¹.",
+      "## 3. Conceptual Relationships\n\n- **To Topic 47:** γ_r and γ_a are cubical coefficients; the vessel's γ_g = 3α_glass.\n- **To Topic 49:** Dulong–Petit measures γ_r using the apparent expansion in two different vessels.\n- **To density bottle / hydrometer:** liquid expansion instruments.",
+      "## 4. Exam Orientation and Previous Year Questions (NEB)\n\n### 4.1 Verified PYQs from the solved-paper bank\n\n| Year | Unit | Topic | Question | Marks | Type |\n|---|---|---|---|---|---|\n| 2080/2024 | Heat | Thermal expansion | What is the anomalous expansion of water? Explain its importance for aquatic life in cold climates. | 3 | Explanation |\n\n### 4.2 Likely additional forms (NEB-style)\n\n1. Distinguish real and apparent expansion; derive γ_r = γ_a + γ_g (4m).\n2. Density-bottle numerical (3m).\n\n### 4.3 Common examination mistakes\n\n1. Adding γ_g with the wrong sign — real = apparent + vessel.\n2. Omitting the 4 °C maximum-density fact in the anomaly answer.\n3. Saying \"ice is denser than water\" — ice floats because it is *less* dense."
+    ],
+    "confusion": [
+      "**Real vs apparent:** you see the apparent; the real includes the vessel's own expansion: γ_r = γ_a + γ_g.",
+      "**Water's anomaly is 0–4 °C only** — above 4 °C water behaves normally."
+    ],
+    "keyPoints": [
+      "γ_r = γ_a + γ_g; water's maximum density at 4 °C.",
+      "Anomaly → ice floats → lakes freeze top-down → aquatic life survives at ~4 °C."
+    ],
+    "importantConcepts": [
+      "**The 4 °C refuge:** the anomaly stratifies winter lakes with dense 4 °C water at the bottom."
+    ],
+    "examples": [
+      "***NEB 2024*** — anomaly + aquatic life: ice insulates; fish live in the unfrozen 4 °C layer."
+    ],
+    "universalFacts": [
+      "If water were normal, lakes would freeze from the bottom up and fish would die every winter."
+    ],
+    "importantStatements": [
+      "\"Water has maximum density at 4 °C; between 0 °C and 4 °C it contracts on heating.\""
+    ],
+    "importantNotes": [
+      "Verified PYQ: anomalous expansion + aquatic life (2024, 3m)."
+    ],
+    "examShortTricks": [
+      "\"Anomaly answer: 0–4 °C contracts → max density 4 °C → ice floats → insulated lake → life survives.\""
+    ],
+    "examNotes": [
+      "The 2024 question is a 3m explanation — write the lake-stratification chain in order."
+    ],
+    "formulas": [
+      "- γ_r = γ_a + γ_g\n- ρ_T = ρ₀/(1 + γ_rΔT)\n- Water: max density at 4 °C"
+    ],
+    "practice": [
+      "Why does a mercury thermometer's reading change if you warm the bulb *after* reading?"
+    ],
+    "practiceQuestions": [
+      "**Numerical (3m): A liquid shows apparent γ_a = 1.2×10⁻⁴ K⁻¹ in a copper vessel (α_Cu = 1.7×10⁻⁵ K⁻¹). Find γ_r.** — γ_g = 3α = 5.1×10⁻⁵; γ_r = 1.2×10⁻⁴ + 5.1×10⁻⁵ = 1.71×10⁻⁴ K⁻¹."
+    ]
+  },
+  "mcqs": [
+    {
+      "question": "Real expansion equals apparent expansion plus:",
+      "options": [
+        "Linear expansion",
+        "Vessel expansion",
+        "Surface expansion",
+        "Nothing"
+      ],
+      "answer": "B",
+      "explanation": "γ_r = γ_a + γ_g."
+    },
+    {
+      "question": "Water has maximum density at:",
+      "options": [
+        "0 °C",
+        "4 °C",
+        "100 °C",
+        "−4 °C"
+      ],
+      "answer": "B",
+      "explanation": "The anomaly peak."
+    },
+    {
+      "question": "Between 0 and 4 °C, water:",
+      "options": [
+        "Expands on heating",
+        "Contracts on heating",
+        "Stays same",
+        "Freezes"
+      ],
+      "answer": "B",
+      "explanation": "Anomalous behaviour."
+    },
+    {
+      "question": "Fish survive frozen lakes because:",
+      "options": [
+        "Ice is warm",
+        "Bottom water stays ~4 °C",
+        "They migrate down",
+        "Ice conducts heat"
+      ],
+      "answer": "B",
+      "explanation": "Dense 4 °C layer under insulating ice."
+    },
+    {
+      "question": "NEB-style: γ_a = 0.9×10⁻⁴, γ_glass = 2.5×10⁻⁵ → γ_r =",
+      "options": [
+        "6.5×10⁻⁵",
+        "1.15×10⁻⁴",
+        "2.25×10⁻⁹",
+        "9×10⁻⁵"
+      ],
+      "answer": "B",
+      "explanation": "Add the two."
+    },
+    {
+      "question": "On heating a liquid (normal behaviour), its density:",
+      "options": [
+        "Increases",
+        "Decreases",
+        "Constant",
+        "Doubles"
+      ],
+      "answer": "B",
+      "explanation": "Volume grows at fixed mass."
+    },
+    {
+      "question": "Ice floats on water because:",
+      "options": [
+        "It is colder",
+        "It is less dense",
+        "It is heavier",
+        "Surface tension"
+      ],
+      "answer": "B",
+      "explanation": "Expansion on freezing lowers density."
+    },
+    {
+      "question": "The cubical coefficient of the vessel equals:",
+      "options": [
+        "α of vessel",
+        "2α",
+        "3α",
+        "γ of liquid"
+      ],
+      "answer": "C",
+      "explanation": "Solid vessel: γ = 3α."
+    }
+  ]
 }
