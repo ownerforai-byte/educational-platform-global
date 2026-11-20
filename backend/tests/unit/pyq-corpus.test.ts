@@ -161,7 +161,12 @@ describe("pyq bank — retrieval reaches the bank", () => {
     expect(context).toContain("NEB 2023:");
     expect(context).toContain("Derive expressions");
     // The exam block supplies question stems only, not entire worked solutions.
-    expect(context).not.toContain("vertical displacement returns to zero");
+    // Assert on the PYQ block itself: the attached concept notes legitimately
+    // carry worked solutions now (peer commit 4e0d3f83 ported mastery notes
+    // into the canonical note files), so checking the whole context would
+    // test the notes rather than the bank's stem-only contract.
+    const pyqBlock = context.slice(context.indexOf("[VERIFIED NEB PAST QUESTIONS"));
+    expect(pyqBlock).not.toContain("vertical displacement returns to zero");
   }, 15_000);
 
   test("past question retrieval rejects tangential keyword mentions", () => {

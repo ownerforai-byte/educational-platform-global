@@ -18,6 +18,7 @@ import {
   isGoogleCseConfigured,
   isImageGenConfigured,
   DEFAULT_FREE_GEMINI_MODEL,
+  FREE_GEMINI_MODELS,
   DIAGRAM_HUB_PROVIDER,
   getDiagramHubKey,
   getDiagramHubModel,
@@ -149,7 +150,11 @@ describe("Diagram Hub free Gemini lane", () => {
   it("uses its own provider name and the current free-tier Flash model", () => {
     expect(DIAGRAM_HUB_PROVIDER).toBe("diagram-hub");
     expect(DIAGRAM_HUB_PROVIDER).not.toBe("gemini");
-    expect(DEFAULT_FREE_GEMINI_MODEL).toBe("gemini-3.8-flash");
+    // The default is the HEAD of the free chain, not one pinned id: the free
+    // tier 503s a whole model for hours, so the provider walks the rest.
+    expect(DEFAULT_FREE_GEMINI_MODEL).toBe(FREE_GEMINI_MODELS[0]);
+    expect(FREE_GEMINI_MODELS).toContain(DEFAULT_FREE_GEMINI_MODEL);
+    expect(getDiagramHubModel()).toBe(FREE_GEMINI_MODELS[0]);
     // Deliberately outside the ordinary work lanes and the chat chain.
     expect(Object.values(AI_WORK_LANES)).not.toContain(DIAGRAM_HUB_PROVIDER);
   });
