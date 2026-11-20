@@ -78,21 +78,21 @@ Every upgraded topic note fills the note JSON with:
 | 38 | Faunal Diversity (34) | Protista; Protozoa classification | `01-protista-outline-classification-protozoa-diagnostic-features-and-classification-up-to-class-with.json` | Not started |
 | 39 | Faunal Diversity | Paramecium and Plasmodium | `02-paramecium-caudatum-plasmodium-vivax-habits-and-habitat-structure-reproduction-life-cycle.json` | Not started |
 | 40 | Faunal Diversity | Economic importance of P. falciparum | `03-economic-importance-of-p-falciparum.json` | Not started |
-| 41 | Faunal Diversity | Animalia: organization, symmetry, body plans | `02-animalia-phyla.json` | Not started |
-| 42 | Faunal Diversity | Phyla classification (Porifera → Chordata) | `02-animalia-phyla.json` (merged) | Not started |
-| 43 | Faunal Diversity | Earthworm: external + digestive | `03-earthworm.json` | Not started |
-| 44 | Faunal Diversity | Earthworm: excretory, nervous, reproductive | `04-earthworm-excretory-nervous-and-reproductive-systems.json` | Not started |
-| 45 | Faunal Diversity | Frog: external + digestive | `05-frog-habit-and-habitat-external-features.json` | Not started |
-| 46 | Faunal Diversity | Frog: circulatory + respiratory | `06-frog-digestive-system-blood-vascular-system-structure-and-working-mechanism-of-heart-respiratory-system-respiratory-organs-and-physiology-of-respiration.json` | Not started |
-| 47 | Faunal Diversity | Frog: reproductive system | `04-frog.json` (merged) | Not started |
-| 48 | Biota and Environment (10) | Animal adaptation | `01-animal-adaptation-aquatic-terrestrial-and-volant-adaptation.json` | Not started |
-| 49 | Biota and Environment | Animal behaviour; fish and bird migration | `02-animal-behavior.json` | Not started |
-| 50 | Biota and Environment | Environmental pollution | `03-environmental-pollution.json` | Not started |
-| 51 | Biota and Environment | Pesticides and their effects | `03-environmental-pollution.json` (merged) | Not started |
-| 52 | Conservation Biology (3) | Biodiversity concept and conservation | `01-biodiversity-conservation.json` | Not started |
-| 53 | Conservation Biology | Protected areas, hotspots, Ramsar | `02-protected-areas.json` | Not started |
-| 54 | Conservation Biology | Wildlife; IUCN categories; endangered species of Nepal | `02-protected-areas.json` (merged) | Not started |
-| 55 | Conservation Biology | Endangered species in Nepal | `02-protected-areas.json` (merged) | Not started |
+| 41 | Faunal Diversity | Animalia: organization, symmetry, body plans | `02-animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-in-animals-diagnostic-features-and-classification-of-phyla-up-to-class.json` | Not started |
+| 42 | Faunal Diversity | Phyla classification (Porifera → Chordata) | `05-diagnostic-features-and-classification-of-phyla-up-to-class-porifera-coelenterata-cnidaria-platy.json` | Not started |
+| 43 | Faunal Diversity | Earthworm: external + digestive | `06-earthworm-pheretima-posthuma-habit-and-habitat-external-features-digestive-system-alimentary-can.json` | Not started |
+| 44 | Faunal Diversity | Earthworm: excretory, nervous, reproductive | `07-earthworm-excretory-system-types-of-nephridia-structure-and-arrangement-of-septal-nephridia-nerv.json` | Not started |
+| 45 | Faunal Diversity | Frog: external + digestive | `09-frog-rana-tigrina-habit-and-habitat-external-features-digestive-system-alimentary-canal-digestiv.json` | Not started |
+| 46 | Faunal Diversity | Frog: circulatory + respiratory | `10-frog-blood-vascular-system-structure-and-working-mechanism-of-heart-respiratory-system-respirato.json` | Not started |
+| 47 | Faunal Diversity | Frog: reproductive system | `07-frog-reproductive-system-male-and-female-reproductive-organs.json` | Not started |
+| 48 | Biota and Environment (10) | Animal adaptation | `01-animal-adaptation-aquatic-primary-and-secondary-terrestrial-cursorial-fossorial-and-arboreal-and.json` | Not started |
+| 49 | Biota and Environment | Animal behaviour; fish and bird migration | `02-animal-behavior-reflex-action-taxes-dominance-and-leadership.json` | Not started |
+| 50 | Biota and Environment | Environmental pollution | `04-environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution.json` | Not started |
+| 51 | Biota and Environment | Pesticides and their effects | `03-environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects.json` | Not started |
+| 52 | Conservation Biology (3) | Biodiversity concept and conservation | `01-conservation-biology-concept-of-biodiversity-biodiversity-conservation.json` | Not started |
+| 53 | Conservation Biology | Protected areas, hotspots, Ramsar | `02-national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sit.json` | Not started |
+| 54 | Conservation Biology | Wildlife; IUCN categories; endangered species of Nepal | `02-national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sites-wildlife-importance-causes-of-extinction-and-conservation-strategies-iucn-categories-of-threatened-species-endangered-species-in-nepal.json` | Not started |
+| 55 | Conservation Biology | Endangered species in Nepal | `05-endangered-species-in-nepal.json` | Not started |
 
 *(Rows 6/8/9, 10, 22, 29, 36/37, 39/40, 47, 51, 54/55 are syllabus topics served by merged
 canonical files — their upgrade must cover every mapped syllabus topic.)*
